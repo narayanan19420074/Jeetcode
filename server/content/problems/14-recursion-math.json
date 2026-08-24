@@ -1,0 +1,618 @@
+[
+  {
+    "title": "Fibonacci Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Dynamic Programming",
+      "Recursion"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer n, return the nth Fibonacci number (F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2)).",
+    "examples": [
+      {
+        "input": "n = 4",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "0 <= n <= 30"
+    ],
+    "functionName": "fibonacciNumber",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          2
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          4
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          10
+        ],
+        "expected": 55,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "N-th Tribonacci Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "The Tribonacci sequence is defined by T(0)=0, T(1)=1, T(2)=1, and T(n)=T(n-1)+T(n-2)+T(n-3) for n>=3. Given n, return T(n).",
+    "examples": [
+      {
+        "input": "n = 4",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "0 <= n <= 37"
+    ],
+    "functionName": "tribonacciNumber",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          4
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          25
+        ],
+        "expected": 1389537,
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Unique Binary Search Trees",
+    "difficulty": "Medium",
+    "tags": [
+      "Math",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer n, return the number of structurally unique binary search trees that can be formed using exactly n distinct node values.",
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "5"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 19"
+    ],
+    "functionName": "uniqueBinarySearchTrees",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          3
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": 42,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Min Cost Climbing Stairs",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array where cost[i] is the cost of stepping on stair i, and you can climb 1 or 2 steps at a time starting from step 0 or 1, return the minimum cost to reach the top (beyond the last stair).",
+    "examples": [
+      {
+        "input": "cost = [10,15,20]",
+        "output": "15"
+      }
+    ],
+    "constraints": [
+      "2 <= cost.length <= 1000"
+    ],
+    "functionName": "minCostClimbingStairs",
+    "params": [
+      {
+        "name": "cost",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            10,
+            15,
+            20
+          ]
+        ],
+        "expected": 15,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            100,
+            1,
+            1,
+            1,
+            100,
+            1,
+            1,
+            100,
+            1
+          ]
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Ugly Number II",
+    "difficulty": "Medium",
+    "tags": [
+      "Math",
+      "Dynamic Programming",
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "An ugly number is a positive integer whose only prime factors are 2, 3, and 5. Given an integer n, return the nth ugly number (1 is considered the first ugly number).",
+    "examples": [
+      {
+        "input": "n = 10",
+        "output": "12"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 1690"
+    ],
+    "functionName": "nthUglyNumber",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          10
+        ],
+        "expected": 12,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          15
+        ],
+        "expected": 24,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Sum of Two Integers",
+    "difficulty": "Medium",
+    "tags": [
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given two integers, return their sum without using the + or - operators.",
+    "examples": [
+      {
+        "input": "a = 1, b = 2",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "-1000 <= a, b <= 1000"
+    ],
+    "functionName": "sumOfTwoIntegers",
+    "params": [
+      {
+        "name": "a",
+        "type": "int"
+      },
+      {
+        "name": "b",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          1,
+          2
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          2,
+          3
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          -2,
+          3
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          -10,
+          -20
+        ],
+        "expected": -30,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Single Number II",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer array where every element appears exactly three times except for one which appears exactly once, find that single element.",
+    "examples": [
+      {
+        "input": "nums = [2,2,3,2]",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 3*10^4"
+    ],
+    "functionName": "singleNumberII",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            2,
+            3,
+            2
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            99
+          ]
+        ],
+        "expected": 99,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            30,
+            30,
+            30,
+            6,
+            6,
+            6,
+            10
+          ]
+        ],
+        "expected": 10,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Single Number III",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an integer array where exactly two elements appear once and every other element appears exactly twice, return the two single elements, sorted in ascending order.",
+    "examples": [
+      {
+        "input": "nums = [1,2,1,3,2,5]",
+        "output": "[3,5]"
+      }
+    ],
+    "constraints": [
+      "2 <= nums.length <= 3*10^4"
+    ],
+    "functionName": "singleNumberIII",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            1,
+            3,
+            2,
+            5
+          ]
+        ],
+        "expected": [
+          3,
+          5
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            -1,
+            0
+          ]
+        ],
+        "expected": [
+          -1,
+          0
+        ],
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Add Binary",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "String",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "Given two binary strings, return their sum, also as a binary string.",
+    "examples": [
+      {
+        "input": "a = \"11\", b = \"1\"",
+        "output": "\"100\""
+      }
+    ],
+    "constraints": [
+      "1 <= a.length, b.length <= 10^4"
+    ],
+    "functionName": "addBinary",
+    "params": [
+      {
+        "name": "a",
+        "type": "string"
+      },
+      {
+        "name": "b",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "11",
+          "1"
+        ],
+        "expected": "100",
+        "isSample": true
+      },
+      {
+        "args": [
+          "1010",
+          "1011"
+        ],
+        "expected": "10101",
+        "isSample": true
+      },
+      {
+        "args": [
+          "0",
+          "0"
+        ],
+        "expected": "0",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Integer Break",
+    "difficulty": "Medium",
+    "tags": [
+      "Math",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer n (n >= 2), break it into a sum of at least two positive integers and maximize the product of those integers. Return the maximum product achievable.",
+    "examples": [
+      {
+        "input": "n = 10",
+        "output": "36"
+      }
+    ],
+    "constraints": [
+      "2 <= n <= 58"
+    ],
+    "functionName": "integerBreak",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          2
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          10
+        ],
+        "expected": 36,
+        "isSample": true
+      },
+      {
+        "args": [
+          8
+        ],
+        "expected": 18,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

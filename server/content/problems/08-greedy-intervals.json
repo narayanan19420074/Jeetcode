@@ -1,0 +1,841 @@
+[
+  {
+    "title": "Best Time to Buy and Sell Stock II",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an array of daily stock prices, you may complete as many buy-sell transactions as you like (buy then sell before buying again). Return the maximum total profit achievable.",
+    "examples": [
+      {
+        "input": "prices = [7,1,5,3,6,4]",
+        "output": "7"
+      }
+    ],
+    "constraints": [
+      "1 <= prices.length <= 3*10^4"
+    ],
+    "functionName": "maxProfitMultipleTransactions",
+    "params": [
+      {
+        "name": "prices",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            7,
+            1,
+            5,
+            3,
+            6,
+            4
+          ]
+        ],
+        "expected": 7,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            7,
+            6,
+            4,
+            3,
+            1
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Gas Station",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Greedy"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "There are n gas stations along a circular route, with gas[i] fuel available and cost[i] fuel required to travel to the next station. Return the starting station index from which you can complete the full circuit, or -1 if it's impossible. Assume a unique solution exists if one is possible.",
+    "examples": [
+      {
+        "input": "gas = [1,2,3,4,5], cost = [3,4,5,1,2]",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "n == gas.length == cost.length",
+      "1 <= n <= 10^5"
+    ],
+    "functionName": "canCompleteCircuit",
+    "params": [
+      {
+        "name": "gas",
+        "type": "int[]"
+      },
+      {
+        "name": "cost",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5,
+            1,
+            2
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4,
+            3
+          ]
+        ],
+        "expected": -1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            5,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            4,
+            1,
+            5,
+            1
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Non-overlapping Intervals",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Sorting"
+    ],
+    "companies": [
+      "Facebook",
+      "Google"
+    ],
+    "description": "Given an array of intervals, return the minimum number of intervals you need to remove so that the rest do not overlap.",
+    "examples": [
+      {
+        "input": "intervals = [[1,2],[2,3],[3,4],[1,3]]",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "1 <= intervals.length <= 10^5"
+    ],
+    "functionName": "eraseOverlapIntervals",
+    "params": [
+      {
+        "name": "intervals",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Insert Interval",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sorting"
+    ],
+    "companies": [
+      "Google",
+      "LinkedIn"
+    ],
+    "description": "Given a set of non-overlapping intervals sorted by start time, and a new interval, insert the new interval into the set (merging as necessary) and return the resulting sorted, non-overlapping set of intervals.",
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[6,9]], newInterval = [2,5]",
+        "output": "[[1,5],[6,9]]"
+      }
+    ],
+    "constraints": [
+      "0 <= intervals.length <= 10^4"
+    ],
+    "functionName": "insertInterval",
+    "params": [
+      {
+        "name": "intervals",
+        "type": "int[][]"
+      },
+      {
+        "name": "newInterval",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[][]",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              3
+            ],
+            [
+              6,
+              9
+            ]
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            5
+          ],
+          [
+            6,
+            9
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              12,
+              16
+            ]
+          ],
+          [
+            4,
+            8
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            12,
+            16
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [],
+          [
+            5,
+            7
+          ]
+        ],
+        "expected": [
+          [
+            5,
+            7
+          ]
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Meeting Rooms",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Sorting"
+    ],
+    "companies": [
+      "Facebook",
+      "Google"
+    ],
+    "description": "Given an array of meeting time intervals, determine whether a single person could attend all of the meetings (no two meetings overlap).",
+    "examples": [
+      {
+        "input": "intervals = [[0,30],[5,10],[15,20]]",
+        "output": "false"
+      }
+    ],
+    "constraints": [
+      "0 <= intervals.length <= 10^4"
+    ],
+    "functionName": "canAttendAllMeetings",
+    "params": [
+      {
+        "name": "intervals",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              0,
+              30
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              15,
+              20
+            ]
+          ]
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              10
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              5
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Partition Labels",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Greedy",
+      "Hash Table"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "Given a string, partition it into as many contiguous parts as possible so that each letter appears in at most one part. Return an array of the sizes of these parts, in order.",
+    "examples": [
+      {
+        "input": "s = \"ababcbacadefegdehijhklij\"",
+        "output": "[9,7,8]"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 500"
+    ],
+    "functionName": "partitionLabels",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          "ababcbacadefegdehijhklij"
+        ],
+        "expected": [
+          9,
+          7,
+          8
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          "eccbbbbdec"
+        ],
+        "expected": [
+          10
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": [
+          1
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Candy Distribution",
+    "difficulty": "Hard",
+    "tags": [
+      "Array",
+      "Greedy"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Children stand in a line, each with a rating. Every child must get at least one candy, and any child with a higher rating than an adjacent neighbor must get more candy than that neighbor. Return the minimum total candies needed.",
+    "examples": [
+      {
+        "input": "ratings = [1,0,2]",
+        "output": "5"
+      }
+    ],
+    "constraints": [
+      "1 <= ratings.length <= 2*10^4"
+    ],
+    "functionName": "candyDistribution",
+    "params": [
+      {
+        "name": "ratings",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            0,
+            2
+          ]
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            2
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            3,
+            2,
+            2,
+            1
+          ]
+        ],
+        "expected": 7,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Jump Game II",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Given an array where each element is the maximum jump length from that position, return the minimum number of jumps needed to reach the last index, starting from index 0. It is guaranteed the last index is reachable.",
+    "examples": [
+      {
+        "input": "nums = [2,3,1,1,4]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^4"
+    ],
+    "functionName": "jumpGameII",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            3,
+            1,
+            1,
+            4
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            0,
+            1,
+            4
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 3,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Minimum Number of Arrows to Burst Balloons",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given balloons represented as [xStart, xEnd] ranges, an arrow shot at position x bursts every balloon whose range includes x. Return the minimum number of arrows needed to burst all balloons.",
+    "examples": [
+      {
+        "input": "points = [[10,16],[2,8],[1,6],[7,12]]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= points.length <= 10^5"
+    ],
+    "functionName": "minArrowsToBurstBalloons",
+    "params": [
+      {
+        "name": "points",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              10,
+              16
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              7,
+              12
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Task Scheduler",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Greedy"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "Given a string of task labels (one character per task) and a cooldown n meaning the same task must be separated by at least n other tasks or idle slots, return the minimum number of time units needed to finish all tasks.",
+    "examples": [
+      {
+        "input": "tasks = \"AAABBB\", n = 2",
+        "output": "6"
+      }
+    ],
+    "constraints": [
+      "1 <= tasks.length <= 10^4"
+    ],
+    "functionName": "taskScheduler",
+    "params": [
+      {
+        "name": "tasks",
+        "type": "string"
+      },
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "AAABBB",
+          2
+        ],
+        "expected": 8,
+        "isSample": true
+      },
+      {
+        "args": [
+          "AAAAA",
+          0
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          "AAABBB",
+          0
+        ],
+        "expected": 6,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

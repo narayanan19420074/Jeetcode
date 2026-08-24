@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Mensuration",
+    "slug": "mensuration",
+    "description": "Problems on area, volume, and surface area of 2D and 3D shapes.",
+    "order": 11,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "The volume of a cube is 512 cm³. What is its side length?",
+      "options": [
+        { "text": "6 cm" },
+        { "text": "7 cm" },
+        { "text": "8 cm" },
+        { "text": "9 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = side³ = 512 => side = 8 cm.",
+      "order": 1
+    },
+    {
+      "questionText": "The surface area of a cube is 150 cm². What is its side length?",
+      "options": [
+        { "text": "3 cm" },
+        { "text": "4 cm" },
+        { "text": "5 cm" },
+        { "text": "6 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Surface area = 6a² = 150 => a² = 25 => a = 5 cm.",
+      "order": 2
+    },
+    {
+      "questionText": "The volume of a cylinder is 616 cm³. If its radius is 7 cm, what is its height? (Use π = 22/7)",
+      "options": [
+        { "text": "2 cm" },
+        { "text": "3 cm" },
+        { "text": "4 cm" },
+        { "text": "5 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = πr²h = 616 => (22/7)*49*h = 616 => h = 4 cm.",
+      "order": 3
+    },
+    {
+      "questionText": "The volume of a sphere is 288π cm³. What is its radius?",
+      "options": [
+        { "text": "4 cm" },
+        { "text": "5 cm" },
+        { "text": "6 cm" },
+        { "text": "7 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = (4/3)πr³ = 288π => r³ = 216 => r = 6 cm.",
+      "order": 4
+    },
+    {
+      "questionText": "The surface area of a sphere is 154 cm². What is its radius? (Use π = 22/7)",
+      "options": [
+        { "text": "2.5 cm" },
+        { "text": "3 cm" },
+        { "text": "3.5 cm" },
+        { "text": "4 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Surface area = 4πr² = 154 => 4*(22/7)*r² = 154 => r² = 12.25 => r = 3.5 cm.",
+      "order": 5
+    },
+    {
+      "questionText": "The volume of a cuboid is 240 cm³. If its length is 8 cm and breadth is 5 cm, what is its height?",
+      "options": [
+        { "text": "4 cm" },
+        { "text": "5 cm" },
+        { "text": "6 cm" },
+        { "text": "7 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = l*b*h = 240 => 8*5*h = 240 => h = 6 cm.",
+      "order": 6
+    },
+    {
+      "questionText": "The curved surface area of a cylinder is 440 cm². If its radius is 7 cm, what is its height? (Use π = 22/7)",
+      "options": [
+        { "text": "8 cm" },
+        { "text": "9 cm" },
+        { "text": "10 cm" },
+        { "text": "11 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "CSA = 2πrh = 440 => 2*(22/7)*7*h = 440 => h = 10 cm.",
+      "order": 7
+    },
+    {
+      "questionText": "The total surface area of a cylinder is 528 cm². If its radius is 7 cm, what is its height? (Use π = 22/7)",
+      "options": [
+        { "text": "3 cm" },
+        { "text": "4 cm" },
+        { "text": "5 cm" },
+        { "text": "6 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "TSA = 2πr(r+h) = 528 => 2*(22/7)*7*(7+h) = 528 => 44(7+h) = 528 => 7+h = 12 => h = 5 cm.",
+      "order": 8
+    },
+    {
+      "questionText": "The volume of a cone is 1232 cm³. If its radius is 7 cm, what is its height? (Use π = 22/7)",
+      "options": [
+        { "text": "18 cm" },
+        { "text": "20 cm" },
+        { "text": "22 cm" },
+        { "text": "24 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = (1/3)πr²h = 1232 => (1/3)*(22/7)*49*h = 1232 => h = 24 cm.",
+      "order": 9
+    },
+    {
+      "questionText": "The surface area of a cube is 216 cm². What is its volume?",
+      "options": [
+        { "text": "144 cm³" },
+        { "text": "196 cm³" },
+        { "text": "216 cm³" },
+        { "text": "256 cm³" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "6a² = 216 => a² = 36 => a = 6 cm. Volume = 6³ = 216 cm³.",
+      "order": 10
+    },
+    {
+      "questionText": "The volume of a cylinder is 770 cm³. If its height is 10 cm, what is its radius? (Use π = 22/7)",
+      "options": [
+        { "text": "3 cm" },
+        { "text": "4 cm" },
+        { "text": "5 cm" },
+        { "text": "6 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = πr²h = 770 => (22/7)*r²*10 = 770 => r² = 24.5 => r = 4.95 cm ≈ 5 cm.",
+      "order": 11
+    },
+    {
+      "questionText": "The volume of a sphere is 36π cm³. What is its radius?",
+      "options": [
+        { "text": "2 cm" },
+        { "text": "3 cm" },
+        { "text": "4 cm" },
+        { "text": "5 cm" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Volume = (4/3)πr³ = 36π => r³ = 27 => r = 3 cm.",
+      "order": 12
+    },
+    {
+      "questionText": "The lateral surface area of a cube is 64 cm². What is its volume?",
+      "options": [
+        { "text": "32 cm³" },
+        { "text": "48 cm³" },
+        { "text": "64 cm³" },
+        { "text": "80 cm³" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LSA = 4a² = 64 => a² = 16 => a = 4 cm. Volume = 4³ = 64 cm³.",
+      "order": 13
+    },
+    {
+      "questionText": "The total surface area of a cuboid is 148 cm². If its length is 6 cm and breadth is 4 cm, what is its height?",
+      "options": [
+        { "text": "3 cm" },
+        { "text": "4 cm" },
+        { "text": "5 cm" },
+        { "text": "6 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "TSA = 2(lb+bh+hl) = 148 => 2(24+4h+6h) = 148 => 24+10h = 74 => 10h = 50 => h = 5 cm.",
+      "order": 14
+    },
+    {
+      "questionText": "The volume of a cone is 308 cm³. If its height is 6 cm, what is its radius? (Use π = 22/7)",
+      "options": [
+        { "text": "5 cm" },
+        { "text": "6 cm" },
+        { "text": "7 cm" },
+        { "text": "8 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = (1/3)πr²h = 308 => (1/3)*(22/7)*r²*6 = 308 => r² = 49 => r = 7 cm.",
+      "order": 15
+    },
+    {
+      "questionText": "The curved surface area of a cone is 550 cm². If its slant height is 25 cm, what is its radius? (Use π = 22/7)",
+      "options": [
+        { "text": "5 cm" },
+        { "text": "6 cm" },
+        { "text": "7 cm" },
+        { "text": "8 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "CSA = πrl = 550 => (22/7)*r*25 = 550 => r = 7 cm.",
+      "order": 16
+    },
+    {
+      "questionText": "The volume of a cuboid is 360 cm³. If its length is 10 cm and height is 4 cm, what is its breadth?",
+      "options": [
+        { "text": "6 cm" },
+        { "text": "7 cm" },
+        { "text": "8 cm" },
+        { "text": "9 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = l*b*h = 360 => 10*b*4 = 360 => b = 9 cm.",
+      "order": 17
+    },
+    {
+      "questionText": "The total surface area of a sphere is 616 cm². What is its radius? (Use π = 22/7)",
+      "options": [
+        { "text": "5 cm" },
+        { "text": "6 cm" },
+        { "text": "7 cm" },
+        { "text": "8 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "TSA = 4πr² = 616 => 4*(22/7)*r² = 616 => r² = 49 => r = 7 cm.",
+      "order": 18
+    },
+    {
+      "questionText": "The volume of a cylinder is 1760 cm³. If its radius is 10 cm, what is its height? (Use π = 22/7)",
+      "options": [
+        { "text": "4 cm" },
+        { "text": "5 cm" },
+        { "text": "5.6 cm" },
+        { "text": "6 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = πr²h = 1760 => (22/7)*100*h = 1760 => h = 5.6 cm.",
+      "order": 19
+    },
+    {
+      "questionText": "The surface area of a cube is 294 cm². What is its side length?",
+      "options": [
+        { "text": "5 cm" },
+        { "text": "6 cm" },
+        { "text": "7 cm" },
+        { "text": "8 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "6a² = 294 => a² = 49 => a = 7 cm.",
+      "order": 20
+    },
+    {
+      "questionText": "The volume of a cone is 1232 cm³. If its height is 24 cm, what is its radius? (Use π = 22/7)",
+      "options": [
+        { "text": "5 cm" },
+        { "text": "6 cm" },
+        { "text": "7 cm" },
+        { "text": "8 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = (1/3)πr²h = 1232 => (1/3)*(22/7)*r²*24 = 1232 => r² = 49 => r = 7 cm.",
+      "order": 21
+    },
+    {
+      "questionText": "The curved surface area of a cylinder is 264 cm². If its height is 6 cm, what is its radius? (Use π = 22/7)",
+      "options": [
+        { "text": "5 cm" },
+        { "text": "6 cm" },
+        { "text": "7 cm" },
+        { "text": "8 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "CSA = 2πrh = 264 => 2*(22/7)*r*6 = 264 => r = 7 cm.",
+      "order": 22
+    },
+    {
+      "questionText": "The volume of a sphere is 4/3π cm³. What is its radius?",
+      "options": [
+        { "text": "0.5 cm" },
+        { "text": "1 cm" },
+        { "text": "1.5 cm" },
+        { "text": "2 cm" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Volume = (4/3)πr³ = (4/3)π => r³ = 1 => r = 1 cm.",
+      "order": 23
+    },
+    {
+      "questionText": "The total surface area of a cylinder is 660 cm². If its height is 10 cm, what is its radius? (Use π = 22/7)",
+      "options": [
+        { "text": "3 cm" },
+        { "text": "4 cm" },
+        { "text": "5 cm" },
+        { "text": "6 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "TSA = 2πr(r+h) = 660 => 2*(22/7)*r*(r+10) = 660 => r(r+10) = 105 => r=5 cm.",
+      "order": 24
+    },
+    {
+      "questionText": "The volume of a cuboid is 720 cm³. If its breadth is 8 cm and height is 6 cm, what is its length?",
+      "options": [
+        { "text": "12 cm" },
+        { "text": "13 cm" },
+        { "text": "14 cm" },
+        { "text": "15 cm" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Volume = l*b*h = 720 => l*8*6 = 720 => l = 15 cm.",
+      "order": 25
+    }
+  ]
+}

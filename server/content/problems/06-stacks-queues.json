@@ -1,0 +1,724 @@
+[
+  {
+    "title": "Baseball Game Score",
+    "difficulty": "Easy",
+    "tags": [
+      "Stack",
+      "Simulation"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "You are keeping score for a baseball game with unusual rules. Given a list of operations as strings \u2014 an integer (a new score), 'C' (invalidate the previous score), 'D' (double the previous score), or '+' (sum of the previous two valid scores) \u2014 return the total of all scores remaining after applying every operation in order.",
+    "examples": [
+      {
+        "input": "ops = [\"5\",\"2\",\"C\",\"D\",\"+\"]",
+        "output": "30"
+      }
+    ],
+    "constraints": [
+      "1 <= ops.length <= 1000"
+    ],
+    "functionName": "baseballGameScore",
+    "params": [
+      {
+        "name": "ops",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            "5",
+            "2",
+            "C",
+            "D",
+            "+"
+          ]
+        ],
+        "expected": 30,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "5",
+            "-2",
+            "4",
+            "C",
+            "D",
+            "9",
+            "+",
+            "+"
+          ]
+        ],
+        "expected": 27,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "1"
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Next Greater Element I",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Stack"
+    ],
+    "companies": [
+      "Amazon",
+      "Bloomberg"
+    ],
+    "description": "Given two arrays where nums1 is a subset of nums2, for each element of nums1 find the next element in nums2 that is greater than it and appears to its right. Return -1 if there is none.",
+    "examples": [
+      {
+        "input": "nums1 = [4,1,2], nums2 = [1,3,4,2]",
+        "output": "[-1,3,-1]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums1.length <= nums2.length <= 1000"
+    ],
+    "functionName": "nextGreaterElement",
+    "params": [
+      {
+        "name": "nums1",
+        "type": "int[]"
+      },
+      {
+        "name": "nums2",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            4,
+            1,
+            2
+          ],
+          [
+            1,
+            3,
+            4,
+            2
+          ]
+        ],
+        "expected": [
+          -1,
+          3,
+          -1
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          3,
+          -1
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            3,
+            5,
+            2,
+            4
+          ],
+          [
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            7
+          ]
+        ],
+        "expected": [
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Daily Temperatures",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Given a list of daily temperatures, return an array where each value is the number of days you'd have to wait after that day to get a warmer temperature. Use 0 if there is no future day with a warmer temperature.",
+    "examples": [
+      {
+        "input": "temperatures = [73,74,75,71,69,72,76,73]",
+        "output": "[1,1,4,2,1,1,0,0]"
+      }
+    ],
+    "constraints": [
+      "1 <= temperatures.length <= 10^5"
+    ],
+    "functionName": "dailyTemperatures",
+    "params": [
+      {
+        "name": "temperatures",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            73,
+            74,
+            75,
+            71,
+            69,
+            72,
+            76,
+            73
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          4,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            30,
+            40,
+            50,
+            60
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            30,
+            60,
+            90
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          0
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Evaluate Reverse Polish Notation",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Stack",
+      "Math"
+    ],
+    "companies": [
+      "Amazon",
+      "LinkedIn"
+    ],
+    "description": "Given an array of tokens representing an arithmetic expression in Reverse Polish (postfix) Notation, evaluate it and return the result. Division between integers should truncate toward zero.",
+    "examples": [
+      {
+        "input": "tokens = [\"2\",\"1\",\"+\",\"3\",\"*\"]",
+        "output": "9"
+      }
+    ],
+    "constraints": [
+      "1 <= tokens.length <= 10^4"
+    ],
+    "functionName": "evalRPN",
+    "params": [
+      {
+        "name": "tokens",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            "2",
+            "1",
+            "+",
+            "3",
+            "*"
+          ]
+        ],
+        "expected": 9,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "4",
+            "13",
+            "5",
+            "/",
+            "+"
+          ]
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "10",
+            "6",
+            "9",
+            "3",
+            "+",
+            "-11",
+            "*",
+            "/",
+            "*",
+            "17",
+            "+",
+            "5",
+            "+"
+          ]
+        ],
+        "expected": 22,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Remove All Adjacent Duplicates in String",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Stack"
+    ],
+    "companies": [
+      "Amazon",
+      "Oracle"
+    ],
+    "description": "Given a string, repeatedly remove any two adjacent identical characters until no such pair remains, and return the final string.",
+    "examples": [
+      {
+        "input": "s = \"abbaca\"",
+        "output": "\"ca\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^5"
+    ],
+    "functionName": "removeAdjacentDuplicates",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "abbaca"
+        ],
+        "expected": "ca",
+        "isSample": true
+      },
+      {
+        "args": [
+          "azxxzy"
+        ],
+        "expected": "ay",
+        "isSample": true
+      },
+      {
+        "args": [
+          "aabb"
+        ],
+        "expected": "",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Decode String",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Stack",
+      "Recursion"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Facebook"
+    ],
+    "description": "Given an encoded string where a pattern like k[substring] means the substring is repeated k times, decode it fully and return the resulting string. Encodings may be nested.",
+    "examples": [
+      {
+        "input": "s = \"3[a]2[bc]\"",
+        "output": "\"aaabcbc\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 30"
+    ],
+    "functionName": "decodeString",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "3[a]2[bc]"
+        ],
+        "expected": "aaabcbc",
+        "isSample": true
+      },
+      {
+        "args": [
+          "3[a2[c]]"
+        ],
+        "expected": "accaccacc",
+        "isSample": true
+      },
+      {
+        "args": [
+          "2[abc]3[cd]ef"
+        ],
+        "expected": "abcabccdcdcdef",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Backspace String Compare",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Stack",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Google",
+      "Facebook"
+    ],
+    "description": "Given two strings that may contain '#' characters representing a backspace (deleting the previous character), determine whether the two strings are equal after applying all backspaces.",
+    "examples": [
+      {
+        "input": "s = \"ab#c\", t = \"ad#c\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length, t.length <= 200"
+    ],
+    "functionName": "backspaceCompare",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "ab#c",
+          "ad#c"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "ab##",
+          "c#d#"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a#c",
+          "b"
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Asteroid Collision",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Stack",
+      "Simulation"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an array of integers representing asteroids in a row (absolute value is size, sign is direction \u2014 positive moves right, negative moves left), simulate collisions where the smaller asteroid explodes (equal sizes both explode) and return the state of the asteroids after all collisions resolve.",
+    "examples": [
+      {
+        "input": "asteroids = [5,10,-5]",
+        "output": "[5,10]"
+      }
+    ],
+    "constraints": [
+      "2 <= asteroids.length <= 10^4"
+    ],
+    "functionName": "asteroidCollision",
+    "params": [
+      {
+        "name": "asteroids",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            5,
+            10,
+            -5
+          ]
+        ],
+        "expected": [
+          5,
+          10
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            8,
+            -8
+          ]
+        ],
+        "expected": [],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            10,
+            2,
+            -5
+          ]
+        ],
+        "expected": [
+          10
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            -2,
+            -1,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          -2,
+          -1,
+          1,
+          2
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Simplify Unix Path",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Stack"
+    ],
+    "companies": [
+      "Amazon",
+      "Bloomberg"
+    ],
+    "description": "Given an absolute Unix-style file path (which may contain '.', '..', and multiple consecutive slashes), return the simplified canonical path.",
+    "examples": [
+      {
+        "input": "path = \"/home/\"",
+        "output": "\"/home\""
+      }
+    ],
+    "constraints": [
+      "1 <= path.length <= 3000"
+    ],
+    "functionName": "simplifyPath",
+    "params": [
+      {
+        "name": "path",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "/home/"
+        ],
+        "expected": "/home",
+        "isSample": true
+      },
+      {
+        "args": [
+          "/../"
+        ],
+        "expected": "/",
+        "isSample": true
+      },
+      {
+        "args": [
+          "/home//foo/"
+        ],
+        "expected": "/home/foo",
+        "isSample": false
+      },
+      {
+        "args": [
+          "/a/./b/../../c/"
+        ],
+        "expected": "/c",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Minimum Remove to Make Valid Parentheses",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Stack"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "Given a string containing lowercase letters and parentheses, remove the minimum number of parentheses so the resulting string is valid (every open parenthesis has a matching close, in the correct order), and return any valid result.",
+    "examples": [
+      {
+        "input": "s = \"lee(t(c)o)de)\"",
+        "output": "\"lee(t(c)o)de\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^5"
+    ],
+    "functionName": "minRemoveToMakeValid",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "lee(t(c)o)de)"
+        ],
+        "expected": "lee(t(c)o)de",
+        "isSample": true
+      },
+      {
+        "args": [
+          "))(("
+        ],
+        "expected": "",
+        "isSample": true
+      },
+      {
+        "args": [
+          "a)b(c)d"
+        ],
+        "expected": "ab(c)d",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

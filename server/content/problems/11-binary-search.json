@@ -1,0 +1,807 @@
+[
+  {
+    "title": "Search Insert Position",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be inserted to keep the array sorted.",
+    "examples": [
+      {
+        "input": "nums = [1,3,5,6], target = 5",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^4"
+    ],
+    "functionName": "searchInsertPosition",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            3,
+            5,
+            6
+          ],
+          5
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            3,
+            5,
+            6
+          ],
+          2
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            3,
+            5,
+            6
+          ],
+          7
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Single Element in a Sorted Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "Given a sorted array where every element appears exactly twice except for one element which appears exactly once, return that single element.",
+    "examples": [
+      {
+        "input": "nums = [1,1,2,3,3,4,4,8,8]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "singleElementInSortedArray",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            8,
+            8
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            3,
+            3,
+            7,
+            7,
+            10,
+            11,
+            11
+          ]
+        ],
+        "expected": 10,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given a sorted array of integers and a target value, return the starting and ending index of the target's occurrences as [first, last]. Return [-1,-1] if the target is not found.",
+    "examples": [
+      {
+        "input": "nums = [5,7,7,8,8,10], target = 8",
+        "output": "[3,4]"
+      }
+    ],
+    "constraints": [
+      "0 <= nums.length <= 10^5"
+    ],
+    "functionName": "findFirstAndLastPosition",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            5,
+            7,
+            7,
+            8,
+            8,
+            10
+          ],
+          8
+        ],
+        "expected": [
+          3,
+          4
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            5,
+            7,
+            7,
+            8,
+            8,
+            10
+          ],
+          6
+        ],
+        "expected": [
+          -1,
+          -1
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [],
+          0
+        ],
+        "expected": [
+          -1,
+          -1
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Search a 2D Matrix",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given an m x n matrix where each row is sorted ascending and the first integer of each row is greater than the last integer of the previous row, determine whether a target value exists in the matrix.",
+    "examples": [
+      {
+        "input": "matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= m, n <= 100"
+    ],
+    "functionName": "search2DMatrix",
+    "params": [
+      {
+        "name": "matrix",
+        "type": "int[][]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              5,
+              7
+            ],
+            [
+              10,
+              11,
+              16,
+              20
+            ],
+            [
+              23,
+              30,
+              34,
+              60
+            ]
+          ],
+          3
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              5,
+              7
+            ],
+            [
+              10,
+              11,
+              16,
+              20
+            ],
+            [
+              23,
+              30,
+              34,
+              60
+            ]
+          ],
+          13
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1
+            ]
+          ],
+          2
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Peak Index in a Mountain Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Given an array that strictly increases then strictly decreases (a 'mountain'), return the index of the peak element.",
+    "examples": [
+      {
+        "input": "arr = [0,1,0]",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "3 <= arr.length <= 10^5"
+    ],
+    "functionName": "peakIndexInMountainArray",
+    "params": [
+      {
+        "name": "arr",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            2,
+            1,
+            0
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            10,
+            5,
+            2
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Find the Duplicate Number",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an array of n+1 integers where every value is between 1 and n, and exactly one value repeats (possibly more than once), find that repeated value without modifying the array.",
+    "examples": [
+      {
+        "input": "nums = [1,3,4,2,2]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 10^5"
+    ],
+    "functionName": "findTheDuplicateNumber",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            3,
+            4,
+            2,
+            2
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            3,
+            1,
+            3,
+            4,
+            2
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "H-Index",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sorting"
+    ],
+    "companies": [
+      "Google",
+      "Facebook"
+    ],
+    "description": "Given an array of integers representing the number of citations for each of a researcher's papers, return their h-index \u2014 the largest h such that at least h papers have at least h citations each.",
+    "examples": [
+      {
+        "input": "citations = [3,0,6,1,5]",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= citations.length <= 5000"
+    ],
+    "functionName": "hIndex",
+    "params": [
+      {
+        "name": "citations",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            0,
+            6,
+            1,
+            5
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            3,
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Kth Smallest Element in a Sorted Matrix",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Matrix",
+      "Heap"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an n x n matrix where each row and column is sorted in ascending order, and an integer k, return the kth smallest element in the matrix.",
+    "examples": [
+      {
+        "input": "matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8",
+        "output": "13"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 300"
+    ],
+    "functionName": "kthSmallestInSortedMatrix",
+    "params": [
+      {
+        "name": "matrix",
+        "type": "int[][]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              5,
+              9
+            ],
+            [
+              10,
+              11,
+              13
+            ],
+            [
+              12,
+              13,
+              15
+            ]
+          ],
+          8
+        ],
+        "expected": 13,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              -5
+            ]
+          ],
+          1
+        ],
+        "expected": -5,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          2
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Median of Two Sorted Arrays",
+    "difficulty": "Hard",
+    "tags": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Google",
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given two sorted arrays, return the median of the combined set of all elements.",
+    "examples": [
+      {
+        "input": "nums1 = [1,3], nums2 = [2]",
+        "output": "2.0"
+      }
+    ],
+    "constraints": [
+      "0 <= nums1.length, nums2.length <= 1000"
+    ],
+    "functionName": "medianOfTwoSortedArrays",
+    "params": [
+      {
+        "name": "nums1",
+        "type": "int[]"
+      },
+      {
+        "name": "nums2",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "float",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            3
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": 2.0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "expected": 2.5,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "expected": 0.0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Count Negative Numbers in a Sorted Matrix",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Matrix"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "Given a matrix sorted in non-increasing order both row-wise and column-wise, return the count of negative numbers in it.",
+    "examples": [
+      {
+        "input": "grid = [[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]",
+        "output": "8"
+      }
+    ],
+    "constraints": [
+      "1 <= m, n <= 100"
+    ],
+    "functionName": "countNegativesInSortedMatrix",
+    "params": [
+      {
+        "name": "grid",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              4,
+              3,
+              2,
+              -1
+            ],
+            [
+              3,
+              2,
+              1,
+              -1
+            ],
+            [
+              1,
+              1,
+              -1,
+              -2
+            ],
+            [
+              -1,
+              -1,
+              -2,
+              -3
+            ]
+          ]
+        ],
+        "expected": 8,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              2
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              5
+            ]
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

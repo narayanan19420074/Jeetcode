@@ -1,0 +1,731 @@
+[
+  {
+    "title": "Excel Sheet Column Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "String"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given a column title as it appears in an Excel spreadsheet (e.g. 'A', 'AB', 'ZY'), return its corresponding column number.",
+    "examples": [
+      {
+        "input": "columnTitle = \"AB\"",
+        "output": "28"
+      }
+    ],
+    "constraints": [
+      "1 <= columnTitle.length <= 7"
+    ],
+    "functionName": "excelColumnNumber",
+    "params": [
+      {
+        "name": "columnTitle",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "A"
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          "AB"
+        ],
+        "expected": 28,
+        "isSample": true
+      },
+      {
+        "args": [
+          "ZY"
+        ],
+        "expected": 701,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Excel Sheet Column Title",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "String"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given a positive integer, return its corresponding Excel spreadsheet column title (e.g. 1 -> 'A', 28 -> 'AB').",
+    "examples": [
+      {
+        "input": "columnNumber = 28",
+        "output": "\"AB\""
+      }
+    ],
+    "constraints": [
+      "1 <= columnNumber <= 2^31 - 1"
+    ],
+    "functionName": "excelColumnTitle",
+    "params": [
+      {
+        "name": "columnNumber",
+        "type": "int"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          1
+        ],
+        "expected": "A",
+        "isSample": true
+      },
+      {
+        "args": [
+          28
+        ],
+        "expected": "AB",
+        "isSample": true
+      },
+      {
+        "args": [
+          701
+        ],
+        "expected": "ZY",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Factorial Trailing Zeroes",
+    "difficulty": "Medium",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Given an integer n, return the number of trailing zeroes in n factorial.",
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "0 <= n <= 10^4"
+    ],
+    "functionName": "factorialTrailingZeroes",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          3
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          25
+        ],
+        "expected": 6,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Pow(x, n)",
+    "difficulty": "Medium",
+    "tags": [
+      "Math",
+      "Recursion"
+    ],
+    "companies": [
+      "LinkedIn",
+      "Amazon"
+    ],
+    "description": "Implement pow(x, n), which calculates x raised to the power n, for integer n (which may be negative).",
+    "examples": [
+      {
+        "input": "x = 2.0, n = 10",
+        "output": "1024.0"
+      }
+    ],
+    "constraints": [
+      "-100.0 < x < 100.0",
+      "-2^31 <= n <= 2^31-1"
+    ],
+    "functionName": "myPow",
+    "params": [
+      {
+        "name": "x",
+        "type": "float"
+      },
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "float",
+    "testCases": [
+      {
+        "args": [
+          2.0,
+          10
+        ],
+        "expected": 1024.0,
+        "isSample": true
+      },
+      {
+        "args": [
+          0.5,
+          2
+        ],
+        "expected": 0.25,
+        "isSample": true
+      },
+      {
+        "args": [
+          2.0,
+          -2
+        ],
+        "expected": 0.25,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Valid Perfect Square",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Binary Search"
+    ],
+    "companies": [
+      "LinkedIn"
+    ],
+    "description": "Given a positive integer, determine whether it is a perfect square (the square of some integer), without using a built-in square-root function.",
+    "examples": [
+      {
+        "input": "num = 16",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= num <= 2^31 - 1"
+    ],
+    "functionName": "isPerfectSquare",
+    "params": [
+      {
+        "name": "num",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          16
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          14
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Divide Two Integers",
+    "difficulty": "Medium",
+    "tags": [
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given two integers dividend and divisor, divide them without using multiplication, division, or the modulo operator, and return the quotient truncated toward zero (clamped to the signed 32-bit range).",
+    "examples": [
+      {
+        "input": "dividend = 10, divisor = 3",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "-2^31 <= dividend, divisor <= 2^31-1",
+      "divisor != 0"
+    ],
+    "functionName": "divideTwoIntegers",
+    "params": [
+      {
+        "name": "dividend",
+        "type": "int"
+      },
+      {
+        "name": "divisor",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          10,
+          3
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          7,
+          -3
+        ],
+        "expected": -2,
+        "isSample": true
+      },
+      {
+        "args": [
+          -2147483648,
+          -1
+        ],
+        "expected": 2147483647,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Find All Duplicates in an Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of n integers where each value is between 1 and n, and each value appears either once or twice, return an array of all the values that appear twice, in ascending order.",
+    "examples": [
+      {
+        "input": "nums = [4,3,2,7,8,2,3,1]",
+        "output": "[2,3]"
+      }
+    ],
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 10^5"
+    ],
+    "functionName": "findAllDuplicates",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            4,
+            3,
+            2,
+            7,
+            8,
+            2,
+            3,
+            1
+          ]
+        ],
+        "expected": [
+          2,
+          3
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          1
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": [],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Rotate Image",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft",
+      "Apple"
+    ],
+    "description": "Given an n x n matrix representing an image, return the matrix rotated 90 degrees clockwise.",
+    "examples": [
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[[7,4,1],[8,5,2],[9,6,3]]"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 20"
+    ],
+    "functionName": "rotateImage",
+    "params": [
+      {
+        "name": "matrix",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int[][]",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            7,
+            4,
+            1
+          ],
+          [
+            8,
+            5,
+            2
+          ],
+          [
+            9,
+            6,
+            3
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            1
+          ]
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Set Matrix Zeroes",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given an m x n matrix, if an element is 0, set its entire row and column to 0, and return the resulting matrix.",
+    "examples": [
+      {
+        "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
+        "output": "[[1,0,1],[0,0,0],[1,0,1]]"
+      }
+    ],
+    "constraints": [
+      "1 <= m, n <= 200"
+    ],
+    "functionName": "setMatrixZeroes",
+    "params": [
+      {
+        "name": "matrix",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int[][]",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              1,
+              2,
+              0
+            ],
+            [
+              3,
+              4,
+              5,
+              2
+            ],
+            [
+              1,
+              3,
+              1,
+              5
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            5,
+            0
+          ],
+          [
+            0,
+            3,
+            1,
+            0
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            1
+          ]
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Third Maximum Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer array, return the third distinct maximum value. If it does not exist, return the maximum value instead.",
+    "examples": [
+      {
+        "input": "nums = [3,2,1]",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^4"
+    ],
+    "functionName": "thirdMax",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            2,
+            3,
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Time and Work",
+    "slug": "time-and-work",
+    "description": "Work efficiency, pipes and cisterns, and combined work problems.",
+    "order": 3,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "A can complete a work in 12 days and B in 18 days. In how many days can they complete it working together?",
+      "options": [
+        { "text": "7.2 days" },
+        { "text": "8 days" },
+        { "text": "7.5 days" },
+        { "text": "8.5 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A's 1 day work = 1/12, B's = 1/18. Together = 1/12 + 1/18 = 5/36. Days = 36/5 = 7.2 days.",
+      "order": 1
+    },
+    {
+      "questionText": "A can do a work in 20 days and B in 30 days. They work together for 5 days, then A leaves. In how many days will B complete the remaining work?",
+      "options": [
+        { "text": "15 days" },
+        { "text": "17.5 days" },
+        { "text": "18 days" },
+        { "text": "20 days" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A+B's 5 days work = 5*(1/20+1/30) = 5*(5/60) = 5/12. Remaining = 7/12. B's time = (7/12)/(1/30) = 17.5 days.",
+      "order": 2
+    },
+    {
+      "questionText": "A pipe can fill a tank in 12 hours and another in 15 hours. Both pipes are opened together. How long will it take to fill the tank?",
+      "options": [
+        { "text": "6 hours 40 minutes" },
+        { "text": "7 hours" },
+        { "text": "6 hours" },
+        { "text": "7 hours 30 minutes" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate = 1/12 + 1/15 = 9/60 = 3/20. Time = 20/3 hours = 6 hours 40 minutes.",
+      "order": 3
+    },
+    {
+      "questionText": "A can do a work in 8 days, B in 12 days, and C in 16 days. In how many days can they complete the work together?",
+      "options": [
+        { "text": "3.69 days" },
+        { "text": "4 days" },
+        { "text": "3.5 days" },
+        { "text": "4.5 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1/8 + 1/12 + 1/16 = 6/48 + 4/48 + 3/48 = 13/48. Days = 48/13 = 3.69 days.",
+      "order": 4
+    },
+    {
+      "questionText": "A can complete a work in 10 days. B is 50% more efficient than A. In how many days can B complete the work alone?",
+      "options": [
+        { "text": "6.67 days" },
+        { "text": "7 days" },
+        { "text": "6 days" },
+        { "text": "7.5 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A's rate = 1/10. B's rate = 1.5 * 1/10 = 3/20. Days = 20/3 = 6.67 days.",
+      "order": 5
+    },
+    {
+      "questionText": "Two pipes A and B can fill a tank in 8 hours and 12 hours respectively. A third pipe C can empty it in 6 hours. If all three are opened together, how long will it take to fill the tank?",
+      "options": [
+        { "text": "24 hours" },
+        { "text": "20 hours" },
+        { "text": "18 hours" },
+        { "text": "22 hours" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/8 + 1/12 - 1/6 = 3/24 + 2/24 - 4/24 = 1/24. Time = 24 hours.",
+      "order": 6
+    },
+    {
+      "questionText": "A and B can do a piece of work in 18 days and 24 days respectively. They start together but B leaves after 6 days. In how many more days will A complete the remaining work?",
+      "options": [
+        { "text": "10.5 days" },
+        { "text": "12 days" },
+        { "text": "11 days" },
+        { "text": "13 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A+B's 6 days work = 6*(1/18+1/24) = 6*(7/72) = 7/12. Remaining = 5/12. A's time = (5/12)/(1/18) = 7.5 days.",
+      "order": 7
+    },
+    {
+      "questionText": "A can do a work in 15 days and B in 20 days. They work together for 4 days, then A leaves. How long will B take to finish the remaining work?",
+      "options": [
+        { "text": "10.67 days" },
+        { "text": "11 days" },
+        { "text": "10 days" },
+        { "text": "12 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "4 days work = 4*(1/15+1/20) = 4*(7/60) = 7/15. Remaining = 8/15. B's time = (8/15)/(1/20) = 10.67 days.",
+      "order": 8
+    },
+    {
+      "questionText": "A tap can fill a tank in 6 hours. After half the tank is filled, three more similar taps are opened. What is the total time taken to fill the tank completely?",
+      "options": [
+        { "text": "3 hours 45 minutes" },
+        { "text": "4 hours" },
+        { "text": "3.5 hours" },
+        { "text": "4 hours 15 minutes" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "First half: 3 hours. Remaining half: rate = 4 taps, time = 3/4 = 0.75 hours = 45 min. Total = 3h 45m.",
+      "order": 9
+    },
+    {
+      "questionText": "A can do a work in 12 days, B in 18 days, and C in 24 days. In how many days can A, B, and C together complete the work?",
+      "options": [
+        { "text": "5.33 days" },
+        { "text": "5.5 days" },
+        { "text": "6 days" },
+        { "text": "5 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1/12 + 1/18 + 1/24 = 6/72 + 4/72 + 3/72 = 13/72. Days = 72/13 = 5.54 ≈ 5.33 days.",
+      "order": 10
+    },
+    {
+      "questionText": "A and B together can complete a work in 20 days. A alone can complete it in 30 days. In how many days can B alone complete the work?",
+      "options": [
+        { "text": "60 days" },
+        { "text": "50 days" },
+        { "text": "40 days" },
+        { "text": "45 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1/A + 1/B = 1/20. 1/30 + 1/B = 1/20 => 1/B = 1/20 - 1/30 = 1/60. B = 60 days.",
+      "order": 11
+    },
+    {
+      "questionText": "A pipe can fill a tank in 10 hours. Due to a leak, it takes 15 hours to fill the tank. How long will the leak take to empty the full tank?",
+      "options": [
+        { "text": "25 hours" },
+        { "text": "30 hours" },
+        { "text": "20 hours" },
+        { "text": "35 hours" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Leak rate = 1/10 - 1/15 = 1/30. Time to empty = 30 hours.",
+      "order": 12
+    },
+    {
+      "questionText": "A can do a work in 16 days and B in 20 days. They work together for 5 days. What fraction of the work is completed?",
+      "options": [
+        { "text": "9/16" },
+        { "text": "1/2" },
+        { "text": "5/8" },
+        { "text": "3/4" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "5*(1/16+1/20) = 5*(5/80+4/80) = 5*(9/80) = 45/80 = 9/16.",
+      "order": 13
+    },
+    {
+      "questionText": "A and B can complete a work in 12 days and 15 days respectively. A starts the work and works for 4 days, then B joins. In how many days will the remaining work be completed?",
+      "options": [
+        { "text": "6.22 days" },
+        { "text": "6 days" },
+        { "text": "6.5 days" },
+        { "text": "7 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A's 4 days work = 4/12 = 1/3. Remaining = 2/3. Together rate = 1/12+1/15 = 9/60 = 3/20. Time = (2/3)/(3/20) = 40/9 = 4.44 days.",
+      "order": 14
+    },
+    {
+      "questionText": "A can do a work in 25 days and B in 20 days. They work together for 5 days, then B leaves. How long will A take to finish the remaining work?",
+      "options": [
+        { "text": "15 days" },
+        { "text": "14 days" },
+        { "text": "16 days" },
+        { "text": "13.75 days" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "5 days work = 5*(1/25+1/20) = 5*(9/100) = 45/100 = 9/20. Remaining = 11/20. A's time = (11/20)/(1/25) = 55/4 = 13.75 days.",
+      "order": 15
+    },
+    {
+      "questionText": "Three pipes A, B, and C can fill a tank in 6, 8, and 12 hours respectively. How long will they take to fill the tank together?",
+      "options": [
+        { "text": "2.67 hours" },
+        { "text": "3 hours" },
+        { "text": "2.5 hours" },
+        { "text": "3.5 hours" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1/6 + 1/8 + 1/12 = 4/24 + 3/24 + 2/24 = 9/24 = 3/8. Time = 8/3 = 2.67 hours.",
+      "order": 16
+    },
+    {
+      "questionText": "A can complete a work in 18 days, B in 24 days, and C in 36 days. In how many days can they complete it together?",
+      "options": [
+        { "text": "8.31 days" },
+        { "text": "8 days" },
+        { "text": "9 days" },
+        { "text": "7.5 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1/18+1/24+1/36 = 4/72+3/72+2/72 = 9/72 = 1/8. Days = 8.31 ≈ 8.31 days.",
+      "order": 17
+    },
+    {
+      "questionText": "A and B together can do a work in 10 days. A alone can do it in 15 days. In how many days can B alone do it?",
+      "options": [
+        { "text": "30 days" },
+        { "text": "25 days" },
+        { "text": "20 days" },
+        { "text": "35 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1/15 + 1/B = 1/10 => 1/B = 1/10 - 1/15 = 1/30. B = 30 days.",
+      "order": 18
+    },
+    {
+      "questionText": "A tap can fill a tank in 8 hours. A second tap can fill it in 12 hours. If both taps are opened together, how long will it take?",
+      "options": [
+        { "text": "4 hours 48 minutes" },
+        { "text": "5 hours" },
+        { "text": "4.5 hours" },
+        { "text": "5.5 hours" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1/8 + 1/12 = 3/24 + 2/24 = 5/24. Time = 24/5 = 4.8 hours = 4h 48m.",
+      "order": 19
+    },
+    {
+      "questionText": "A can do a work in 9 days and B in 12 days. They start together but after 3 days, A leaves. How long will B take to finish the remaining work?",
+      "options": [
+        { "text": "5 days" },
+        { "text": "6 days" },
+        { "text": "5.5 days" },
+        { "text": "4.5 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "3 days work = 3*(1/9+1/12) = 3*(7/36) = 7/12. Remaining = 5/12. B's time = (5/12)/(1/12) = 5 days.",
+      "order": 20
+    },
+    {
+      "questionText": "A pipe can fill a tank in 5 hours. Another pipe can empty it in 7 hours. If both are opened together, how long will it take to fill the tank?",
+      "options": [
+        { "text": "17.5 hours" },
+        { "text": "15 hours" },
+        { "text": "18 hours" },
+        { "text": "20 hours" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/5 - 1/7 = 2/35. Time = 35/2 = 17.5 hours.",
+      "order": 21
+    },
+    {
+      "questionText": "A and B can complete a work in 6 days and 8 days respectively. They work together for 2 days, then B leaves. In how many days will A complete the remaining work?",
+      "options": [
+        { "text": "3.5 days" },
+        { "text": "4 days" },
+        { "text": "3 days" },
+        { "text": "4.5 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "2 days work = 2*(1/6+1/8) = 2*(7/24) = 7/12. Remaining = 5/12. A's time = (5/12)/(1/6) = 2.5 days.",
+      "order": 22
+    },
+    {
+      "questionText": "A can do a work in 20 days and B in 30 days. They start together but A leaves after 6 days. In how many days will B complete the remaining work?",
+      "options": [
+        { "text": "15 days" },
+        { "text": "18 days" },
+        { "text": "16 days" },
+        { "text": "17 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "6 days work = 6*(1/20+1/30) = 6*(5/60) = 1/2. Remaining = 1/2. B's time = (1/2)/(1/30) = 15 days.",
+      "order": 23
+    },
+    {
+      "questionText": "Two taps can fill a tank in 10 hours and 15 hours respectively. A third tap can empty it in 12 hours. If all are opened together, how long will it take to fill the tank?",
+      "options": [
+        { "text": "8.57 hours" },
+        { "text": "9 hours" },
+        { "text": "8 hours" },
+        { "text": "9.5 hours" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/10 + 1/15 - 1/12 = 6/60+4/60-5/60 = 5/60 = 1/12. Time = 12 hours.",
+      "order": 24
+    },
+    {
+      "questionText": "A can complete a work in 14 days and B in 21 days. In how many days can they complete it working together?",
+      "options": [
+        { "text": "8.4 days" },
+        { "text": "8 days" },
+        { "text": "9 days" },
+        { "text": "7.5 days" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1/14 + 1/21 = 3/42 + 2/42 = 5/42. Days = 42/5 = 8.4 days.",
+      "order": 25
+    }
+  ]
+}

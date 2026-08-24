@@ -1,0 +1,803 @@
+[
+  {
+    "title": "Two Sum II - Sorted Input",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given a 1-indexed array of integers already sorted in ascending order, find two numbers that add up to a target. Return their 1-indexed positions as [index1, index2].",
+    "examples": [
+      {
+        "input": "numbers = [2,7,11,15], target = 9",
+        "output": "[1,2]"
+      }
+    ],
+    "constraints": [
+      "2 <= numbers.length <= 3*10^4"
+    ],
+    "functionName": "twoSumSorted",
+    "params": [
+      {
+        "name": "numbers",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            7,
+            11,
+            15
+          ],
+          9
+        ],
+        "expected": [
+          1,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            4
+          ],
+          6
+        ],
+        "expected": [
+          1,
+          3
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            -1,
+            0
+          ],
+          -1
+        ],
+        "expected": [
+          1,
+          2
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Container With Most Water",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "companies": [
+      "Amazon",
+      "Bloomberg"
+    ],
+    "description": "Given an array where each value represents the height of a vertical line at that index, find two lines that together with the x-axis form a container holding the most water, and return that maximum area.",
+    "examples": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "output": "49"
+      }
+    ],
+    "constraints": [
+      "2 <= height.length <= 10^5"
+    ],
+    "functionName": "maxWaterArea",
+    "params": [
+      {
+        "name": "height",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            8,
+            6,
+            2,
+            5,
+            4,
+            8,
+            3,
+            7
+          ]
+        ],
+        "expected": 49,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            3,
+            2,
+            1,
+            4
+          ]
+        ],
+        "expected": 16,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Minimum Size Subarray Sum",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given a target sum and an array of positive integers, return the minimal length of a contiguous subarray whose sum is greater than or equal to the target. Return 0 if no such subarray exists.",
+    "examples": [
+      {
+        "input": "target = 7, nums = [2,3,1,2,4,3]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= target <= 10^9",
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "minSubArrayLen",
+    "params": [
+      {
+        "name": "target",
+        "type": "int"
+      },
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          7,
+          [
+            2,
+            3,
+            1,
+            2,
+            4,
+            3
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          4,
+          [
+            1,
+            4,
+            4
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          11,
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Search in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook",
+      "Microsoft"
+    ],
+    "description": "Given a sorted array that has been rotated at an unknown pivot, and a target value, return the index of the target if it exists, otherwise -1. All values are distinct.",
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 5000"
+    ],
+    "functionName": "searchRotated",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            4,
+            5,
+            6,
+            7,
+            0,
+            1,
+            2
+          ],
+          0
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            5,
+            6,
+            7,
+            0,
+            1,
+            2
+          ],
+          3
+        ],
+        "expected": -1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ],
+          0
+        ],
+        "expected": -1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Find Minimum in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given a sorted array of distinct integers that has been rotated at an unknown pivot, return the minimum element.",
+    "examples": [
+      {
+        "input": "nums = [3,4,5,1,2]",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 5000"
+    ],
+    "functionName": "findMinRotated",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            4,
+            5,
+            1,
+            2
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            5,
+            6,
+            7,
+            0,
+            1,
+            2
+          ]
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            11,
+            13,
+            15,
+            17
+          ]
+        ],
+        "expected": 11,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Kth Largest Element in an Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Heap"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an integer array and an integer k, return the kth largest element in the array (kth largest in sorted order, not necessarily distinct).",
+    "examples": [
+      {
+        "input": "nums = [3,2,1,5,6,4], k = 2",
+        "output": "5"
+      }
+    ],
+    "constraints": [
+      "1 <= k <= nums.length <= 10^5"
+    ],
+    "functionName": "findKthLargest",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            2,
+            1,
+            5,
+            6,
+            4
+          ],
+          2
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            3,
+            2,
+            3,
+            1,
+            2,
+            4,
+            5,
+            5,
+            6
+          ],
+          4
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ],
+          1
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Subarray Sum Equals K",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Facebook",
+      "Google"
+    ],
+    "description": "Given an array of integers and an integer k, return the total number of contiguous subarrays whose elements sum to exactly k.",
+    "examples": [
+      {
+        "input": "nums = [1,1,1], k = 2",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 2*10^4"
+    ],
+    "functionName": "subarraySumCount",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ],
+          3
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            -1,
+            0
+          ],
+          0
+        ],
+        "expected": 3,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "3Sum Closest",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon",
+      "Adobe"
+    ],
+    "description": "Given an array of integers and a target, find three numbers in the array whose sum is closest to the target, and return that sum.",
+    "examples": [
+      {
+        "input": "nums = [-1,2,1,-4], target = 1",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "3 <= nums.length <= 500"
+    ],
+    "functionName": "threeSumClosest",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            -1,
+            2,
+            1,
+            -4
+          ],
+          1
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            0,
+            0
+          ],
+          1
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          -100
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Sort Colors",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Microsoft",
+      "Facebook"
+    ],
+    "description": "Given an array containing only the values 0, 1, and 2, return the array sorted in ascending order.",
+    "examples": [
+      {
+        "input": "nums = [2,0,2,1,1,0]",
+        "output": "[0,0,1,1,2,2]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 300"
+    ],
+    "functionName": "sortColors",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            0,
+            2,
+            1,
+            1,
+            0
+          ]
+        ],
+        "expected": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "expected": [
+          0,
+          1,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": [
+          0
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Merge Two Sorted Arrays",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given two arrays already sorted in ascending order, return a single array containing all elements from both, in ascending order.",
+    "examples": [
+      {
+        "input": "nums1 = [1,2,3], nums2 = [2,5,6]",
+        "output": "[1,2,2,3,5,6]"
+      }
+    ],
+    "constraints": [
+      "0 <= nums1.length, nums2.length <= 200"
+    ],
+    "functionName": "mergeSortedArrays",
+    "params": [
+      {
+        "name": "nums1",
+        "type": "int[]"
+      },
+      {
+        "name": "nums2",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          2,
+          3,
+          5,
+          6
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [],
+          [
+            1
+          ]
+        ],
+        "expected": [
+          1
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

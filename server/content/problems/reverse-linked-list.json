@@ -1,0 +1,31 @@
+{
+  "title": "Reverse Linked List",
+  "difficulty": "Easy",
+  "tags": ["Linked List", "Recursion"],
+  "companies": ["Amazon", "Microsoft", "Apple"],
+  "description": "Given the `head` of a singly linked list, reverse the list, and return the reversed list's head.",
+  "examples": [{ "input": "head = [1,2,3,4,5]", "output": "[5,4,3,2,1]" }],
+  "constraints": ["The number of nodes is in the range [0, 5000]."],
+
+  "_comment": "Linked lists aren't one of the generator's supported types (int, float, string, bool, and 1D/2D arrays of those only) — so this problem supplies starterCode + driverCode by hand instead of functionName/params/returnType. stdin/stdout still uses plain JSON arrays; the driver converts array <-> linked list itself.",
+
+  "starterCode": {
+    "javascript": "function reverseList(head) {\n  \n}",
+    "python": "def reverseList(head):\n    ",
+    "cpp": "class Solution {\npublic:\n    ListNode* reverseList(ListNode* head) {\n        \n    }\n};"
+  },
+
+  "driverCode": {
+    "javascript": "function ListNode(val, next) { this.val = val; this.next = next === undefined ? null : next; }\nfunction arrayToList(arr) { let head = null, tail = null; for (const v of arr) { const n = new ListNode(v); if (!head) head = tail = n; else { tail.next = n; tail = n; } } return head; }\nfunction listToArray(node) { const out = []; while (node) { out.push(node.val); node = node.next; } return out; }\n\nconst __data = JSON.parse(require('fs').readFileSync(0, 'utf-8'));\nconst __head = arrayToList(__data[0]);\n\n/*__USER_CODE__*/\n\nconst __result = reverseList(__head);\nconsole.log(JSON.stringify(listToArray(__result)));",
+    "python": "import sys, json\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef array_to_list(arr):\n    head = tail = None\n    for v in arr:\n        n = ListNode(v)\n        if head is None:\n            head = tail = n\n        else:\n            tail.next = n\n            tail = n\n    return head\n\ndef list_to_array(node):\n    out = []\n    while node:\n        out.append(node.val)\n        node = node.next\n    return out\n\n/*__USER_CODE__*/\n\ndef __main():\n    __data = json.loads(sys.stdin.read())\n    __head = array_to_list(__data[0])\n    __result = reverseList(__head)\n    print(json.dumps(list_to_array(__result), separators=(',', ':')))\n\n__main()",
+    "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct ListNode {\n    int val;\n    ListNode *next;\n    ListNode(int x) : val(x), next(nullptr) {}\n};\n\nListNode* arrayToList(vector<int>& arr) {\n    ListNode *head = nullptr, *tail = nullptr;\n    for (int v : arr) {\n        ListNode* n = new ListNode(v);\n        if (!head) head = tail = n; else { tail->next = n; tail = n; }\n    }\n    return head;\n}\nvector<int> listToArray(ListNode* node) {\n    vector<int> out;\n    while (node) { out.push_back(node->val); node = node->next; }\n    return out;\n}\nvector<int> parseIntArray(const string& s) {\n    vector<int> result; string num;\n    for (char c : s) {\n        if (c=='['||c==']'||c==',') { if (!num.empty()) { result.push_back(stoi(num)); num.clear(); } }\n        else if (!isspace((unsigned char)c)) num += c;\n    }\n    if (!num.empty()) result.push_back(stoi(num));\n    return result;\n}\n\n/*__USER_CODE__*/\n\nint main() {\n    string line; getline(cin, line);\n    vector<int> arr = parseIntArray(line);\n    ListNode* head = arrayToList(arr);\n    Solution sol;\n    ListNode* result = sol.reverseList(head);\n    vector<int> out = listToArray(result);\n    cout << \"[\";\n    for (size_t i = 0; i < out.size(); i++) { cout << out[i]; if (i+1<out.size()) cout << \",\"; }\n    cout << \"]\" << endl;\n    return 0;\n}"
+  },
+
+  "testCases": [
+    { "args": [[1, 2, 3, 4, 5]], "expected": [5, 4, 3, 2, 1], "isSample": true },
+    { "args": [[1, 2]], "expected": [2, 1], "isSample": true },
+    { "args": [[]], "expected": [], "isSample": false }
+  ],
+
+  "isPublished": true
+}

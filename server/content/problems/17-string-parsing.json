@@ -1,0 +1,531 @@
+[
+  {
+    "title": "Reverse Only Letters",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Google",
+      "Facebook"
+    ],
+    "description": "Given a string containing letters and non-letter characters, reverse only the positions of the letters, leaving all other characters in their original positions.",
+    "examples": [
+      {
+        "input": "s = \"ab-cd\"",
+        "output": "\"dc-ba\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 100"
+    ],
+    "functionName": "reverseOnlyLetters",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "ab-cd"
+        ],
+        "expected": "dc-ba",
+        "isSample": true
+      },
+      {
+        "args": [
+          "a-bC-dEf-ghIj"
+        ],
+        "expected": "j-Ih-gfE-dCba",
+        "isSample": true
+      },
+      {
+        "args": [
+          "Test1ng-Leet=code-Q!"
+        ],
+        "expected": "Qedo1ct-eeLg=ntse-T!",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Reverse Vowels of a String",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given a string, reverse only the vowels in it (case preserved at each position, both upper and lowercase vowels count) and return the result.",
+    "examples": [
+      {
+        "input": "s = \"hello\"",
+        "output": "\"holle\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 3*10^5"
+    ],
+    "functionName": "reverseVowels",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "hello"
+        ],
+        "expected": "holle",
+        "isSample": true
+      },
+      {
+        "args": [
+          "leetcode"
+        ],
+        "expected": "leotcede",
+        "isSample": true
+      },
+      {
+        "args": [
+          "aA"
+        ],
+        "expected": "Aa",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "To Lower Case",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Apple"
+    ],
+    "description": "Given a string, return it with every uppercase letter converted to lowercase.",
+    "examples": [
+      {
+        "input": "s = \"Hello\"",
+        "output": "\"hello\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 100"
+    ],
+    "functionName": "toLowerCase",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "Hello"
+        ],
+        "expected": "hello",
+        "isSample": true
+      },
+      {
+        "args": [
+          "here"
+        ],
+        "expected": "here",
+        "isSample": true
+      },
+      {
+        "args": [
+          "LOVELY"
+        ],
+        "expected": "lovely",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Detect Capital",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "A word's capitalization is considered correct if: all letters are uppercase, all letters are lowercase, or only the first letter is uppercase. Given a word, determine whether its usage of capitals is correct.",
+    "examples": [
+      {
+        "input": "word = \"USA\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= word.length <= 100"
+    ],
+    "functionName": "detectCapitalUse",
+    "params": [
+      {
+        "name": "word",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "USA"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "FlaG"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "leetcode"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "Google"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Goat Latin",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given a sentence, convert it to 'Goat Latin': words starting with a vowel get 'ma' appended; words starting with a consonant have their first letter moved to the end plus 'ma'; then each word gets one additional trailing 'a' per its 1-indexed position in the sentence. Return the resulting sentence.",
+    "examples": [
+      {
+        "input": "s = \"I speak Goat Latin\"",
+        "output": "\"Imaa peaksmaaa oatGmaaaa atinLmaaaaa\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 150"
+    ],
+    "functionName": "goatLatin",
+    "params": [
+      {
+        "name": "sentence",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "I speak Goat Latin"
+        ],
+        "expected": "Imaa peaksmaaa oatGmaaaa atinLmaaaaa",
+        "isSample": true
+      },
+      {
+        "args": [
+          "The quick brown fox jumped over the lazy dog"
+        ],
+        "expected": "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa",
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Word in Dictionary Through Deleting",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given a string s and a list of candidate words, return the longest word in the list that can be formed by deleting some characters from s without reordering the rest. If there's a tie, return the lexicographically smallest. Return an empty string if no word qualifies.",
+    "examples": [
+      {
+        "input": "s = \"abpcplea\", dictionary = [\"ale\",\"apple\",\"monkey\",\"plea\"]",
+        "output": "\"apple\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 1000"
+    ],
+    "functionName": "longestWordInDictionaryThroughDeleting",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "dictionary",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "abpcplea",
+          [
+            "ale",
+            "apple",
+            "monkey",
+            "plea"
+          ]
+        ],
+        "expected": "apple",
+        "isSample": true
+      },
+      {
+        "args": [
+          "abpcplea",
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ],
+        "expected": "a",
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Repeated Substring Pattern",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "String Matching"
+    ],
+    "companies": [
+      "Bloomberg"
+    ],
+    "description": "Given a string, determine whether it can be constructed by taking a substring of it and repeating that substring multiple times.",
+    "examples": [
+      {
+        "input": "s = \"abab\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^4"
+    ],
+    "functionName": "repeatedSubstringPattern",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "abab"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "aba"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "abcabcabcabc"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "License Key Formatting",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given a license key string containing alphanumeric characters and dashes, and a group size k, reformat it so groups (from the right) have exactly k characters except possibly the first group, inserting dashes between groups, with all letters uppercased.",
+    "examples": [
+      {
+        "input": "s = \"5F3Z-2e-9-w\", k = 4",
+        "output": "\"5F3Z-2E9W\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^5"
+    ],
+    "functionName": "licenseKeyFormatting",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "5F3Z-2e-9-w",
+          4
+        ],
+        "expected": "5F3Z-2E9W",
+        "isSample": true
+      },
+      {
+        "args": [
+          "2-5g-3-J",
+          2
+        ],
+        "expected": "2-5G-3J",
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Minimum Add to Make Parentheses Valid",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Stack",
+      "Greedy"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "Given a string of just '(' and ')' characters, return the minimum number of parentheses you'd need to add to make the string valid.",
+    "examples": [
+      {
+        "input": "s = \"())\"",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 1000"
+    ],
+    "functionName": "minimumAddToMakeParenthesesValid",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "())"
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          "((("
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "()"
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Count Binary Substrings",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given a binary string, count the number of substrings that have an equal number of consecutive 0's and 1's, with all 0's grouped together and all 1's grouped together within that substring.",
+    "examples": [
+      {
+        "input": "s = \"00110011\"",
+        "output": "6"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 5*10^4"
+    ],
+    "functionName": "countBinarySubstrings",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "00110011"
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          "10101"
+        ],
+        "expected": 4,
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  }
+]

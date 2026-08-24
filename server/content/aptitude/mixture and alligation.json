@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Mixtures and Alligations",
+    "slug": "mixtures-and-alligations",
+    "description": "Mixtures of liquids and related ratio problems.",
+    "order": 8,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "A mixture contains milk and water in the ratio 4:1. If the total quantity is 50 liters, how much milk is there?",
+      "options": [
+        { "text": "30 liters" },
+        { "text": "35 liters" },
+        { "text": "40 liters" },
+        { "text": "45 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk = 4/5 * 50 = 40 liters.",
+      "order": 1
+    },
+    {
+      "questionText": "A mixture of 60 liters contains milk and water in the ratio 3:2. How much water must be added to make the ratio 2:3?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" },
+        { "text": "35 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk = 36 liters, Water = 24 liters. Let water added be x. 36/(24+x) = 2/3 => 108 = 48+2x => 2x=60 => x=30 liters.",
+      "order": 2
+    },
+    {
+      "questionText": "A mixture contains alcohol and water in the ratio 7:3. If the mixture contains 21 liters of alcohol, what is the total quantity?",
+      "options": [
+        { "text": "25 liters" },
+        { "text": "28 liters" },
+        { "text": "30 liters" },
+        { "text": "32 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "7 parts = 21 => 1 part = 3. Total = 10*3 = 30 liters.",
+      "order": 3
+    },
+    {
+      "questionText": "A vessel contains 80 liters of milk. 20 liters are removed and replaced with water. What is the ratio of milk to water now?",
+      "options": [
+        { "text": "3:1" },
+        { "text": "3:2" },
+        { "text": "4:1" },
+        { "text": "5:3" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Milk left = 80-20 = 60 liters. Water = 20 liters. Ratio = 60:20 = 3:1.",
+      "order": 4
+    },
+    {
+      "questionText": "A mixture contains sugar and water in the ratio 5:3. If the mixture weighs 40 kg, how much sugar is there?",
+      "options": [
+        { "text": "20 kg" },
+        { "text": "22 kg" },
+        { "text": "25 kg" },
+        { "text": "28 kg" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sugar = 5/8 * 40 = 25 kg.",
+      "order": 5
+    },
+    {
+      "questionText": "A container has 50 liters of milk and water in the ratio 3:2. How much milk must be added to make the ratio 5:2?",
+      "options": [
+        { "text": "15 liters" },
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Milk = 30 liters, Water = 20 liters. Let milk added be x. (30+x)/20 = 5/2 => 60+2x = 100 => 2x=40 => x=20 liters.",
+      "order": 6
+    },
+    {
+      "questionText": "A mixture contains two liquids A and B in the ratio 5:3. If the mixture is 40 liters, how much of liquid A is there?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "22 liters" },
+        { "text": "25 liters" },
+        { "text": "28 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A = 5/8 * 40 = 25 liters.",
+      "order": 7
+    },
+    {
+      "questionText": "A vessel contains 60 liters of milk and water in the ratio 4:1. How much water must be added to make the ratio 3:2?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" },
+        { "text": "35 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk = 48 liters, Water = 12 liters. Let water added be x. 48/(12+x) = 3/2 => 96 = 36+3x => 3x=60 => x=20 liters.",
+      "order": 8
+    },
+    {
+      "questionText": "A mixture contains 30% alcohol. How much water must be added to 50 liters of the mixture to make it 20% alcohol?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" },
+        { "text": "35 liters" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alcohol = 30% of 50 = 15 liters. Let water added be x. 15/(50+x) = 20/100 = 1/5 => 75 = 50+x => x=25 liters.",
+      "order": 9
+    },
+    {
+      "questionText": "A container has 40 liters of milk. 10 liters are removed and replaced with water. This process is repeated once. What is the final quantity of milk?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "22.5 liters" },
+        { "text": "25 liters" },
+        { "text": "27.5 liters" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Milk left = 40*(1 - 10/40)^2 = 40*(3/4)^2 = 40*9/16 = 22.5 liters.",
+      "order": 10
+    },
+    {
+      "questionText": "A mixture contains acid and water in the ratio 4:3. If the mixture is 42 liters, how much acid is there?",
+      "options": [
+        { "text": "18 liters" },
+        { "text": "20 liters" },
+        { "text": "24 liters" },
+        { "text": "28 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Acid = 4/7 * 42 = 24 liters.",
+      "order": 11
+    },
+    {
+      "questionText": "A vessel contains 30 liters of milk and water in the ratio 2:1. How much water must be added to make the ratio 1:2?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" },
+        { "text": "35 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk = 20 liters, Water = 10 liters. Let water added be x. 20/(10+x) = 1/2 => 40 = 10+x => x=30 liters.",
+      "order": 12
+    },
+    {
+      "questionText": "A mixture contains 40% milk and 60% water. How much water must be evaporated from 100 liters to make it 50% milk?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" },
+        { "text": "35 liters" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Milk = 40 liters. Let water evaporated be x. 40/(100-x) = 50/100 = 1/2 => 80 = 100-x => x=20 liters.",
+      "order": 13
+    },
+    {
+      "questionText": "A mixture contains two liquids X and Y in the ratio 6:5. If the mixture is 55 liters, how much of liquid X is there?",
+      "options": [
+        { "text": "25 liters" },
+        { "text": "28 liters" },
+        { "text": "30 liters" },
+        { "text": "33 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "X = 6/11 * 55 = 30 liters.",
+      "order": 14
+    },
+    {
+      "questionText": "A container has 70 liters of milk and water in the ratio 5:2. How much water must be added to make the ratio 3:2?",
+      "options": [
+        { "text": "15 liters" },
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Milk = 50 liters, Water = 20 liters. Let water added be x. 50/(20+x) = 3/2 => 100 = 60+3x => 3x=40 => x=13.33 liters.",
+      "order": 15
+    },
+    {
+      "questionText": "A mixture contains 25% alcohol. How much water must be added to 80 liters to make it 20% alcohol?",
+      "options": [
+        { "text": "15 liters" },
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alcohol = 25% of 80 = 20 liters. Let water added be x. 20/(80+x) = 20/100 = 1/5 => 100 = 80+x => x=20 liters.",
+      "order": 16
+    },
+    {
+      "questionText": "A vessel contains 45 liters of milk. 9 liters are removed and replaced with water. What is the ratio of milk to water now?",
+      "options": [
+        { "text": "4:1" },
+        { "text": "4:5" },
+        { "text": "5:4" },
+        { "text": "5:1" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Milk left = 45-9 = 36 liters. Water = 9 liters. Ratio = 36:9 = 4:1.",
+      "order": 17
+    },
+    {
+      "questionText": "A mixture contains sugar and water in the ratio 3:2. If the mixture weighs 25 kg, how much sugar is there?",
+      "options": [
+        { "text": "10 kg" },
+        { "text": "12 kg" },
+        { "text": "15 kg" },
+        { "text": "18 kg" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sugar = 3/5 * 25 = 15 kg.",
+      "order": 18
+    },
+    {
+      "questionText": "A container has 50 liters of milk and water in the ratio 2:3. How much milk must be added to make the ratio 3:2?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" },
+        { "text": "35 liters" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Milk = 20 liters, Water = 30 liters. Let milk added be x. (20+x)/30 = 3/2 => 40+2x = 90 => 2x=50 => x=25 liters.",
+      "order": 19
+    },
+    {
+      "questionText": "A mixture contains 60% milk and 40% water. How much water must be added to 100 liters to make it 50% milk?",
+      "options": [
+        { "text": "15 liters" },
+        { "text": "20 liters" },
+        { "text": "25 liters" },
+        { "text": "30 liters" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Milk = 60 liters. Let water added be x. 60/(100+x) = 50/100 = 1/2 => 120 = 100+x => x=20 liters.",
+      "order": 20
+    },
+    {
+      "questionText": "A vessel contains 36 liters of milk and water in the ratio 5:1. How much water must be added to make the ratio 3:1?",
+      "options": [
+        { "text": "4 liters" },
+        { "text": "6 liters" },
+        { "text": "8 liters" },
+        { "text": "10 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk = 30 liters, Water = 6 liters. Let water added be x. 30/(6+x) = 3/1 => 30 = 18+3x => 3x=12 => x=4 liters.",
+      "order": 21
+    },
+    {
+      "questionText": "A mixture contains 35% alcohol. How much water must be added to 60 liters to make it 25% alcohol?",
+      "options": [
+        { "text": "20 liters" },
+        { "text": "24 liters" },
+        { "text": "28 liters" },
+        { "text": "30 liters" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alcohol = 35% of 60 = 21 liters. Let water added be x. 21/(60+x) = 25/100 = 1/4 => 84 = 60+x => x=24 liters.",
+      "order": 22
+    },
+    {
+      "questionText": "A container has 64 liters of milk. 16 liters are removed and replaced with water. What is the final quantity of milk?",
+      "options": [
+        { "text": "36 liters" },
+        { "text": "40 liters" },
+        { "text": "48 liters" },
+        { "text": "52 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk left = 64*(1 - 16/64) = 64*(3/4) = 48 liters.",
+      "order": 23
+    },
+    {
+      "questionText": "A mixture contains two liquids in the ratio 7:5. If the mixture is 60 liters, how much of the first liquid is there?",
+      "options": [
+        { "text": "25 liters" },
+        { "text": "30 liters" },
+        { "text": "35 liters" },
+        { "text": "40 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "First liquid = 7/12 * 60 = 35 liters.",
+      "order": 24
+    },
+    {
+      "questionText": "A vessel contains 80 liters of milk and water in the ratio 3:1. How much water must be added to make the ratio 2:3?",
+      "options": [
+        { "text": "40 liters" },
+        { "text": "50 liters" },
+        { "text": "60 liters" },
+        { "text": "70 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk = 60 liters, Water = 20 liters. Let water added be x. 60/(20+x) = 2/3 => 180 = 40+2x => 2x=140 => x=70 liters.",
+      "order": 25
+    }
+  ]
+}

@@ -1,0 +1,625 @@
+[
+  {
+    "title": "Climbing Stairs",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Adobe"
+    ],
+    "description": "You are climbing a staircase with n steps. Each time you can climb 1 or 2 steps. Return the number of distinct ways to reach the top.",
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "functionName": "climbStairs",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          2
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          3
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": 8,
+        "isSample": false
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Power of Two",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer, determine whether it is a power of two.",
+    "examples": [
+      {
+        "input": "n = 16",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "-2^31 <= n <= 2^31 - 1"
+    ],
+    "functionName": "isPowerOfTwo",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          1
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          16
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          3
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Happy Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "A happy number is defined by repeatedly replacing a number with the sum of the squares of its digits until it equals 1 (happy) or loops forever in a cycle that never reaches 1 (not happy). Given a number, determine if it is happy.",
+    "examples": [
+      {
+        "input": "n = 19",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "functionName": "isHappyNumber",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          19
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          2
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          7
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Count Primes",
+    "difficulty": "Medium",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon",
+      "LinkedIn"
+    ],
+    "description": "Given an integer n, return the number of prime numbers strictly less than n.",
+    "examples": [
+      {
+        "input": "n = 10",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "0 <= n <= 5*10^6"
+    ],
+    "functionName": "countPrimes",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          10
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          30
+        ],
+        "expected": 10,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Integer Square Root",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Binary Search"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "Given a non-negative integer x, return the integer square root of x (the square root rounded down to the nearest integer).",
+    "examples": [
+      {
+        "input": "x = 8",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "0 <= x <= 2^31 - 1"
+    ],
+    "functionName": "mySqrt",
+    "params": [
+      {
+        "name": "x",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          4
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          8
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          2147395599
+        ],
+        "expected": 46339,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Add Digits",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer, repeatedly add all its digits together until the result has only one digit. Return that digit.",
+    "examples": [
+      {
+        "input": "num = 38",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "0 <= num <= 2^31 - 1"
+    ],
+    "functionName": "addDigits",
+    "params": [
+      {
+        "name": "num",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          38
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          9999
+        ],
+        "expected": 9,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Reverse Integer",
+    "difficulty": "Medium",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon",
+      "Apple"
+    ],
+    "description": "Given a signed 32-bit integer, reverse its digits. If reversing causes the value to go outside the signed 32-bit range, return 0.",
+    "examples": [
+      {
+        "input": "x = 123",
+        "output": "321"
+      }
+    ],
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "functionName": "reverseInteger",
+    "params": [
+      {
+        "name": "x",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          123
+        ],
+        "expected": 321,
+        "isSample": true
+      },
+      {
+        "args": [
+          -123
+        ],
+        "expected": -321,
+        "isSample": true
+      },
+      {
+        "args": [
+          120
+        ],
+        "expected": 21,
+        "isSample": false
+      },
+      {
+        "args": [
+          1534236469
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Fizz Buzz",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "String",
+      "Simulation"
+    ],
+    "companies": [
+      "Amazon",
+      "Uber"
+    ],
+    "description": "Given an integer n, return a string array where, for each i from 1 to n: if i is divisible by 3 and 5 output 'FizzBuzz', if only by 3 output 'Fizz', if only by 5 output 'Buzz', otherwise output the number as a string.",
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 10^4"
+    ],
+    "functionName": "fizzBuzz",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "string[]",
+    "testCases": [
+      {
+        "args": [
+          5
+        ],
+        "expected": [
+          "1",
+          "2",
+          "Fizz",
+          "4",
+          "Buzz"
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          3
+        ],
+        "expected": [
+          "1",
+          "2",
+          "Fizz"
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          15
+        ],
+        "expected": [
+          "1",
+          "2",
+          "Fizz",
+          "4",
+          "Buzz",
+          "Fizz",
+          "7",
+          "8",
+          "Fizz",
+          "Buzz",
+          "11",
+          "Fizz",
+          "13",
+          "14",
+          "FizzBuzz"
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Pascal's Triangle Row",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Math",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given a zero-indexed row number, return that row of Pascal's Triangle.",
+    "examples": [
+      {
+        "input": "rowIndex = 3",
+        "output": "[1,3,3,1]"
+      }
+    ],
+    "constraints": [
+      "0 <= rowIndex <= 33"
+    ],
+    "functionName": "getPascalRow",
+    "params": [
+      {
+        "name": "rowIndex",
+        "type": "int"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          3
+        ],
+        "expected": [
+          1,
+          3,
+          3,
+          1
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": [
+          1
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": [
+          1,
+          5,
+          10,
+          10,
+          5,
+          1
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Number of 1 Bits",
+    "difficulty": "Easy",
+    "tags": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon",
+      "Apple"
+    ],
+    "description": "Given a non-negative integer, return the number of 1 bits in its binary representation (Hamming weight).",
+    "examples": [
+      {
+        "input": "n = 11",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "0 <= n <= 2^31 - 1"
+    ],
+    "functionName": "hammingWeight",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          11
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          128
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          2147483645
+        ],
+        "expected": 30,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

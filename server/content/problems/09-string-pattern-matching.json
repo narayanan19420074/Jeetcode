@@ -1,0 +1,587 @@
+[
+  {
+    "title": "Implement strStr()",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given two strings haystack and needle, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.",
+    "examples": [
+      {
+        "input": "haystack = \"sadbutsad\", needle = \"sad\"",
+        "output": "0"
+      }
+    ],
+    "constraints": [
+      "1 <= haystack.length, needle.length <= 10^4"
+    ],
+    "functionName": "strStr",
+    "params": [
+      {
+        "name": "haystack",
+        "type": "string"
+      },
+      {
+        "name": "needle",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "sadbutsad",
+          "sad"
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          "leetcode",
+          "leeto"
+        ],
+        "expected": -1,
+        "isSample": true
+      },
+      {
+        "args": [
+          "hello",
+          "ll"
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Zigzag Conversion",
+    "difficulty": "Medium",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Amazon",
+      "PayPal"
+    ],
+    "description": "Given a string and a number of rows, write the string in a zigzag pattern across that many rows, then read it row by row and return the resulting string.",
+    "examples": [
+      {
+        "input": "s = \"PAYPALISHIRING\", numRows = 3",
+        "output": "\"PAHNAPLSIIGYIR\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "functionName": "zigzagConvert",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "numRows",
+        "type": "int"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "PAYPALISHIRING",
+          3
+        ],
+        "expected": "PAHNAPLSIIGYIR",
+        "isSample": true
+      },
+      {
+        "args": [
+          "PAYPALISHIRING",
+          4
+        ],
+        "expected": "PINALSIGYAHRPI",
+        "isSample": true
+      },
+      {
+        "args": [
+          "A",
+          1
+        ],
+        "expected": "A",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Count and Say",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Recursion"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "The count-and-say sequence starts with '1'; each subsequent term describes the previous term by counting consecutive same digits and stating the count followed by the digit. Given n, return the nth term.",
+    "examples": [
+      {
+        "input": "n = 4",
+        "output": "\"1211\""
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 30"
+    ],
+    "functionName": "countAndSay",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          1
+        ],
+        "expected": "1",
+        "isSample": true
+      },
+      {
+        "args": [
+          4
+        ],
+        "expected": "1211",
+        "isSample": true
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": "111221",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Multiply Strings",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Math"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given two non-negative integers represented as strings, return the product of the two numbers, also represented as a string, without converting either input directly to a native large-integer type.",
+    "examples": [
+      {
+        "input": "num1 = \"2\", num2 = \"3\"",
+        "output": "\"6\""
+      }
+    ],
+    "constraints": [
+      "1 <= num1.length, num2.length <= 200"
+    ],
+    "functionName": "multiplyStrings",
+    "params": [
+      {
+        "name": "num1",
+        "type": "string"
+      },
+      {
+        "name": "num2",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "2",
+          "3"
+        ],
+        "expected": "6",
+        "isSample": true
+      },
+      {
+        "args": [
+          "123",
+          "456"
+        ],
+        "expected": "56088",
+        "isSample": true
+      },
+      {
+        "args": [
+          "0",
+          "12"
+        ],
+        "expected": "0",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Compare Version Numbers",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Facebook",
+      "Microsoft"
+    ],
+    "description": "Given two version numbers as dot-separated strings, compare them by numeric value of each revision (missing revisions count as 0). Return -1 if version1 < version2, 1 if version1 > version2, or 0 if equal.",
+    "examples": [
+      {
+        "input": "version1 = \"1.01\", version2 = \"1.001\"",
+        "output": "0"
+      }
+    ],
+    "constraints": [
+      "1 <= version1.length, version2.length <= 500"
+    ],
+    "functionName": "compareVersion",
+    "params": [
+      {
+        "name": "version1",
+        "type": "string"
+      },
+      {
+        "name": "version2",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "1.01",
+          "1.001"
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          "1.0",
+          "1.0.0"
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          "0.1",
+          "1.1"
+        ],
+        "expected": -1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Ransom Note",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given two strings ransomNote and magazine, determine whether ransomNote can be constructed by using letters from magazine, where each letter in magazine can only be used once.",
+    "examples": [
+      {
+        "input": "ransomNote = \"aa\", magazine = \"aab\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= ransomNote.length, magazine.length <= 10^5"
+    ],
+    "functionName": "canConstructRansomNote",
+    "params": [
+      {
+        "name": "ransomNote",
+        "type": "string"
+      },
+      {
+        "name": "magazine",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "a",
+          "b"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "aa",
+          "ab"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "aa",
+          "aab"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Isomorphic Strings",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Uber"
+    ],
+    "description": "Given two strings s and t, determine whether they are isomorphic \u2014 characters in s can be consistently replaced (one-to-one mapping in both directions) to obtain t.",
+    "examples": [
+      {
+        "input": "s = \"egg\", t = \"add\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 5*10^4"
+    ],
+    "functionName": "isIsomorphic",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "egg",
+          "add"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "foo",
+          "bar"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "paper",
+          "title"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Word Pattern",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table"
+    ],
+    "companies": [
+      "Dropbox"
+    ],
+    "description": "Given a pattern string of characters and a string s of space-separated words, determine whether s follows the same pattern \u2014 a consistent one-to-one mapping between pattern letters and words.",
+    "examples": [
+      {
+        "input": "pattern = \"abba\", s = \"dog cat cat dog\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= pattern.length <= 300"
+    ],
+    "functionName": "wordPattern",
+    "params": [
+      {
+        "name": "pattern",
+        "type": "string"
+      },
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "abba",
+          "dog cat cat dog"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "abba",
+          "dog cat cat fish"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "aaaa",
+          "dog cat cat dog"
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "String Compression (Run-Length)",
+    "difficulty": "Medium",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given a string, compress it using run-length encoding: each run of consecutive identical characters becomes that character followed by the run length (omit the count if the run length is 1). Return the compressed string.",
+    "examples": [
+      {
+        "input": "s = \"aabcccccaaa\"",
+        "output": "\"a2bc5a3\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 2000"
+    ],
+    "functionName": "stringCompression",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "aabcccccaaa"
+        ],
+        "expected": "a2bc5a3",
+        "isSample": true
+      },
+      {
+        "args": [
+          "abbbbbbbbbbbb"
+        ],
+        "expected": "ab12",
+        "isSample": true
+      },
+      {
+        "args": [
+          "abc"
+        ],
+        "expected": "abc",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Palindromic Substring",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given a string, return the longest substring that reads the same forwards and backwards.",
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 1000"
+    ],
+    "functionName": "longestPalindromicSubstring",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "babad"
+        ],
+        "expected": "bab",
+        "isSample": true
+      },
+      {
+        "args": [
+          "cbbd"
+        ],
+        "expected": "bb",
+        "isSample": true
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": "a",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

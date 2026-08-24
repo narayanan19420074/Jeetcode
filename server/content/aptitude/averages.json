@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Averages",
+    "slug": "averages",
+    "description": "Average calculation, weighted averages, missing number problems, and age-related averages.",
+    "order": 1,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "The average of 11 numbers is 42. If one number is excluded, the average becomes 40. What is the excluded number?",
+      "options": [
+        { "text": "62" },
+        { "text": "58" },
+        { "text": "60" },
+        { "text": "56" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 11 numbers = 11 * 42 = 462. Sum of 10 numbers = 10 * 40 = 400. Excluded number = 462 - 400 = 62.",
+      "order": 1
+    },
+    {
+      "questionText": "The average weight of 15 students is 45 kg. If the teacher's weight is included, the average increases by 1 kg. What is the teacher's weight?",
+      "options": [
+        { "text": "58 kg" },
+        { "text": "60 kg" },
+        { "text": "61 kg" },
+        { "text": "59 kg" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of 15 students = 15 * 45 = 675. New average = 46, sum of 16 = 16 * 46 = 736. Teacher's weight = 736 - 675 = 61 kg.",
+      "order": 2
+    },
+    {
+      "questionText": "The average marks of three groups of students with 30, 40, and 50 students are 60, 70, and 80 respectively. What is the average marks of all students combined?",
+      "options": [
+        { "text": "70" },
+        { "text": "72" },
+        { "text": "71" },
+        { "text": "73" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total marks = 30*60 + 40*70 + 50*80 = 1800 + 2800 + 4000 = 8600. Total students = 120. Average = 8600/120 = 71.67 ≈ 71.",
+      "order": 3
+    },
+    {
+      "questionText": "The average of five consecutive even numbers is 48. What is the largest number?",
+      "options": [
+        { "text": "50" },
+        { "text": "52" },
+        { "text": "48" },
+        { "text": "54" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let numbers be x, x+2, x+4, x+6, x+8. Average = (5x+20)/5 = x+4 = 48 => x = 44. Largest = 44+8 = 52.",
+      "order": 4
+    },
+    {
+      "questionText": "The average age of a class of 40 students is 15 years. When the teacher's age is included, the average increases by 0.5 years. What is the teacher's age?",
+      "options": [
+        { "text": "32 years" },
+        { "text": "35 years" },
+        { "text": "33 years" },
+        { "text": "34 years" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sum of 40 students = 40*15 = 600. New average = 15.5, sum of 41 = 41*15.5 = 635.5. Teacher's age = 635.5 - 600 = 35.5 ≈ 35 years.",
+      "order": 5
+    },
+    {
+      "questionText": "The average of 6 numbers is 8. If one number is 12, what is the average of the remaining 5 numbers?",
+      "options": [
+        { "text": "7.2" },
+        { "text": "7.5" },
+        { "text": "8.0" },
+        { "text": "6.8" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 6 numbers = 6*8 = 48. Sum of remaining 5 = 48 - 12 = 36. Average = 36/5 = 7.2.",
+      "order": 6
+    },
+    {
+      "questionText": "The average of 10 numbers is 25. If each number is multiplied by 3, what is the new average?",
+      "options": [
+        { "text": "25" },
+        { "text": "50" },
+        { "text": "75" },
+        { "text": "100" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "If each number is multiplied by a constant, the average also gets multiplied by that constant. New average = 25 * 3 = 75.",
+      "order": 7
+    },
+    {
+      "questionText": "The average weight of 8 men is increased by 2.5 kg when one of them weighing 65 kg is replaced by a new man. What is the weight of the new man?",
+      "options": [
+        { "text": "80 kg" },
+        { "text": "82 kg" },
+        { "text": "85 kg" },
+        { "text": "78 kg" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total weight increase = 8 * 2.5 = 20 kg. New man's weight = 65 + 20 = 85 kg.",
+      "order": 8
+    },
+    {
+      "questionText": "The average monthly salary of 20 employees is Rs. 15,000. If the manager's salary is included, the average becomes Rs. 16,000. What is the manager's salary?",
+      "options": [
+        { "text": "Rs. 30,000" },
+        { "text": "Rs. 35,000" },
+        { "text": "Rs. 32,000" },
+        { "text": "Rs. 36,000" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of 20 employees = 20*15000 = 300000. New sum = 21*16000 = 336000. Manager's salary = 336000 - 300000 = 36000.",
+      "order": 9
+    },
+    {
+      "questionText": "The average of four numbers is 36. The average of the first three numbers is 34. What is the fourth number?",
+      "options": [
+        { "text": "42" },
+        { "text": "38" },
+        { "text": "40" },
+        { "text": "36" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of four numbers = 4*36 = 144. Sum of first three = 3*34 = 102. Fourth number = 144 - 102 = 42.",
+      "order": 10
+    },
+    {
+      "questionText": "The average of 12 observations is 15. If two observations 18 and 22 are removed, what is the new average?",
+      "options": [
+        { "text": "14" },
+        { "text": "13" },
+        { "text": "14.5" },
+        { "text": "13.5" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 12 observations = 12*15 = 180. Sum of remaining 10 = 180 - (18+22) = 140. New average = 140/10 = 14.",
+      "order": 11
+    },
+    {
+      "questionText": "The average age of 5 boys is 12 years. If the age of one boy is 10 years, what is the average age of the remaining 4 boys?",
+      "options": [
+        { "text": "12.5 years" },
+        { "text": "13 years" },
+        { "text": "12 years" },
+        { "text": "11.5 years" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 5 boys = 5*12 = 60. Sum of remaining 4 = 60 - 10 = 50. Average = 50/4 = 12.5 years.",
+      "order": 12
+    },
+    {
+      "questionText": "The average of 7 numbers is 18. If one number is 24, what is the average of the other 6 numbers?",
+      "options": [
+        { "text": "16" },
+        { "text": "17" },
+        { "text": "18" },
+        { "text": "15" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sum of 7 numbers = 7*18 = 126. Sum of other 6 = 126 - 24 = 102. Average = 102/6 = 17.",
+      "order": 13
+    },
+    {
+      "questionText": "The average weight of a group of 10 students is 50 kg. If two students weighing 45 kg and 55 kg leave, what is the new average?",
+      "options": [
+        { "text": "48 kg" },
+        { "text": "49 kg" },
+        { "text": "50 kg" },
+        { "text": "51 kg" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of 10 students = 10*50 = 500. Sum of remaining 8 = 500 - (45+55) = 400. New average = 400/8 = 50 kg.",
+      "order": 14
+    },
+    {
+      "questionText": "The average marks of 6 students is 72. If the marks of one student is 80, what is the average of the remaining 5 students?",
+      "options": [
+        { "text": "70.4" },
+        { "text": "71.2" },
+        { "text": "70" },
+        { "text": "72" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 6 students = 6*72 = 432. Sum of remaining 5 = 432 - 80 = 352. Average = 352/5 = 70.4.",
+      "order": 15
+    },
+    {
+      "questionText": "The average of 9 numbers is 25. If one number is 30, what is the average of the remaining 8 numbers?",
+      "options": [
+        { "text": "24.375" },
+        { "text": "24.5" },
+        { "text": "25" },
+        { "text": "23.75" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 9 numbers = 9*25 = 225. Sum of remaining 8 = 225 - 30 = 195. Average = 195/8 = 24.375.",
+      "order": 16
+    },
+    {
+      "questionText": "The average age of 8 members of a family is 30 years. If the youngest member is 15 years old, what is the average age of the other 7 members?",
+      "options": [
+        { "text": "32.14 years" },
+        { "text": "31.5 years" },
+        { "text": "33 years" },
+        { "text": "30 years" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 8 members = 8*30 = 240. Sum of other 7 = 240 - 15 = 225. Average = 225/7 = 32.14 years.",
+      "order": 17
+    },
+    {
+      "questionText": "The average of 5 numbers is 20. If each number is increased by 5, what is the new average?",
+      "options": [
+        { "text": "20" },
+        { "text": "25" },
+        { "text": "30" },
+        { "text": "15" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "If each number is increased by a constant, the average also increases by that constant. New average = 20 + 5 = 25.",
+      "order": 18
+    },
+    {
+      "questionText": "The average temperature for Monday, Tuesday, and Wednesday is 40°C. The average for Tuesday, Wednesday, and Thursday is 41°C. If Thursday's temperature is 42°C, what is Monday's temperature?",
+      "options": [
+        { "text": "39°C" },
+        { "text": "40°C" },
+        { "text": "41°C" },
+        { "text": "38°C" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum (Mon+Tue+Wed) = 3*40 = 120. Sum (Tue+Wed+Thu) = 3*41 = 123. Difference = Thu - Mon = 3 => Mon = 42 - 3 = 39°C.",
+      "order": 19
+    },
+    {
+      "questionText": "The average of 10 numbers is 30. If two numbers 25 and 35 are added, what is the new average?",
+      "options": [
+        { "text": "30" },
+        { "text": "31" },
+        { "text": "29" },
+        { "text": "32" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 10 numbers = 10*30 = 300. New sum = 300 + 25 + 35 = 360. New average = 360/12 = 30.",
+      "order": 20
+    },
+    {
+      "questionText": "The average weight of 6 students is 48 kg. If one student weighing 52 kg leaves and another weighing 60 kg joins, what is the new average?",
+      "options": [
+        { "text": "49.33 kg" },
+        { "text": "50 kg" },
+        { "text": "48.67 kg" },
+        { "text": "49 kg" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 6 students = 6*48 = 288. New sum = 288 - 52 + 60 = 296. New average = 296/6 = 49.33 kg.",
+      "order": 21
+    },
+    {
+      "questionText": "The average of 8 numbers is 35. If one number is 42, what is the average of the remaining 7 numbers?",
+      "options": [
+        { "text": "34" },
+        { "text": "33" },
+        { "text": "35" },
+        { "text": "32" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 8 numbers = 8*35 = 280. Sum of remaining 7 = 280 - 42 = 238. Average = 238/7 = 34.",
+      "order": 22
+    },
+    {
+      "questionText": "The average of 4 numbers is 28. If the average of the first two numbers is 25, what is the average of the last two numbers?",
+      "options": [
+        { "text": "31" },
+        { "text": "30" },
+        { "text": "29" },
+        { "text": "32" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of 4 numbers = 4*28 = 112. Sum of first two = 2*25 = 50. Sum of last two = 112 - 50 = 62. Average = 62/2 = 31.",
+      "order": 23
+    },
+    {
+      "questionText": "The average marks of 15 students is 65. If the marks of 5 students are 70, 75, 80, 85, and 90, what is the average of the remaining 10 students?",
+      "options": [
+        { "text": "58.5" },
+        { "text": "59" },
+        { "text": "60" },
+        { "text": "57.5" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of 15 students = 15*65 = 975. Sum of 5 students = 70+75+80+85+90 = 400. Sum of remaining 10 = 975 - 400 = 575. Average = 575/10 = 57.5.",
+      "order": 24
+    },
+    {
+      "questionText": "The average age of 20 students is 18 years. If the teacher's age is included, the average becomes 19 years. What is the teacher's age?",
+      "options": [
+        { "text": "36 years" },
+        { "text": "37 years" },
+        { "text": "38 years" },
+        { "text": "39 years" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of 20 students = 20*18 = 360. New sum = 21*19 = 399. Teacher's age = 399 - 360 = 39 years.",
+      "order": 25
+    }
+  ]
+}

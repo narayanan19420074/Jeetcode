@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Percentages",
+    "slug": "percentages",
+    "description": "Percentage change, profit/loss, mixtures — core TCS NQT quant pattern.",
+    "order": 2,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "A number is increased by 25% and then decreased by 25%. What is the net percentage change?",
+      "options": [
+        { "text": "No change" },
+        { "text": "6.25% decrease" },
+        { "text": "6.25% increase" },
+        { "text": "12.5% decrease" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net change = a + b + (ab/100) = 25 - 25 - (25*25/100) = -6.25%.",
+      "order": 1
+    },
+    {
+      "questionText": "A's salary is 20% more than B's salary. By what percentage is B's salary less than A's salary?",
+      "options": [
+        { "text": "20%" },
+        { "text": "16.67%" },
+        { "text": "25%" },
+        { "text": "15%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "If A = 120 and B = 100, then B is less than A by 20/120 * 100 = 16.67%.",
+      "order": 2
+    },
+    {
+      "questionText": "In an examination, a student scored 75% marks. If the maximum marks are 600, how many marks did he score?",
+      "options": [
+        { "text": "420" },
+        { "text": "450" },
+        { "text": "480" },
+        { "text": "500" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Marks = 75% of 600 = 0.75 * 600 = 450.",
+      "order": 3
+    },
+    {
+      "questionText": "The population of a town increased by 10% annually. If the present population is 1,00,000, what was the population 2 years ago?",
+      "options": [
+        { "text": "82,644" },
+        { "text": "80,000" },
+        { "text": "90,000" },
+        { "text": "85,000" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Population 2 years ago = 100000 / (1.1)^2 = 100000 / 1.21 = 82644.6 ≈ 82,644.",
+      "order": 4
+    },
+    {
+      "questionText": "A shopkeeper marks his goods 30% above cost price and gives a discount of 10%. What is his profit percentage?",
+      "options": [
+        { "text": "17%" },
+        { "text": "18%" },
+        { "text": "19%" },
+        { "text": "20%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let CP = 100. MP = 130. SP = 130 * 0.9 = 117. Profit = 17%.",
+      "order": 5
+    },
+    {
+      "questionText": "If 60% of a number is 240, what is 25% of the same number?",
+      "options": [
+        { "text": "80" },
+        { "text": "100" },
+        { "text": "120" },
+        { "text": "150" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let number be x. 0.6x = 240 => x = 400. 25% of 400 = 100.",
+      "order": 6
+    },
+    {
+      "questionText": "A number is decreased by 30% and then increased by 30%. What is the net change?",
+      "options": [
+        { "text": "9% increase" },
+        { "text": "9% decrease" },
+        { "text": "No change" },
+        { "text": "15% decrease" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net change = -30 + 30 + (-30*30/100) = -9% decrease.",
+      "order": 7
+    },
+    {
+      "questionText": "In a class of 50 students, 40% are girls. How many boys are there?",
+      "options": [
+        { "text": "20" },
+        { "text": "25" },
+        { "text": "30" },
+        { "text": "35" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Girls = 40% of 50 = 20. Boys = 50 - 20 = 30.",
+      "order": 8
+    },
+    {
+      "questionText": "A fruit seller bought oranges at Rs. 20 per dozen and sold them at Rs. 25 per dozen. What is his profit percentage?",
+      "options": [
+        { "text": "20%" },
+        { "text": "25%" },
+        { "text": "30%" },
+        { "text": "15%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Profit = 25 - 20 = 5. Profit % = 5/20 * 100 = 25%.",
+      "order": 9
+    },
+    {
+      "questionText": "If 30% of a number is 150, what is 60% of the same number?",
+      "options": [
+        { "text": "300" },
+        { "text": "250" },
+        { "text": "350" },
+        { "text": "200" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "0.3x = 150 => x = 500. 60% of 500 = 300.",
+      "order": 10
+    },
+    {
+      "questionText": "A seller gives a discount of 15% on an item marked at Rs. 800. What is the selling price?",
+      "options": [
+        { "text": "Rs. 680" },
+        { "text": "Rs. 700" },
+        { "text": "Rs. 720" },
+        { "text": "Rs. 650" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 800 * (1 - 0.15) = 800 * 0.85 = Rs. 680.",
+      "order": 11
+    },
+    {
+      "questionText": "The price of a commodity increased by 20%. By what percentage should consumption be reduced so that expenditure remains the same?",
+      "options": [
+        { "text": "16.67%" },
+        { "text": "20%" },
+        { "text": "25%" },
+        { "text": "15%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Reduction in consumption = (20/120)*100 = 16.67%.",
+      "order": 12
+    },
+    {
+      "questionText": "A student scored 80 marks in an exam. If he scored 64% marks, what were the maximum marks?",
+      "options": [
+        { "text": "120" },
+        { "text": "125" },
+        { "text": "130" },
+        { "text": "135" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "64% of max marks = 80 => max marks = 80/0.64 = 125.",
+      "order": 13
+    },
+    {
+      "questionText": "A shopkeeper buys an article for Rs. 400 and sells it at a profit of 25%. What is the selling price?",
+      "options": [
+        { "text": "Rs. 480" },
+        { "text": "Rs. 500" },
+        { "text": "Rs. 520" },
+        { "text": "Rs. 450" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SP = 400 * 1.25 = Rs. 500.",
+      "order": 14
+    },
+    {
+      "questionText": "If 45% of a number is 270, what is 15% of the same number?",
+      "options": [
+        { "text": "80" },
+        { "text": "90" },
+        { "text": "100" },
+        { "text": "75" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "0.45x = 270 => x = 600. 15% of 600 = 90.",
+      "order": 15
+    },
+    {
+      "questionText": "A number is increased by 40% and then decreased by 20%. What is the net percentage change?",
+      "options": [
+        { "text": "12% increase" },
+        { "text": "12% decrease" },
+        { "text": "20% increase" },
+        { "text": "8% increase" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net change = 40 - 20 - (40*20/100) = 20 - 8 = 12% increase.",
+      "order": 16
+    },
+    {
+      "questionText": "In a mixture of 80 liters, milk and water are in the ratio 3:2. What is the percentage of milk in the mixture?",
+      "options": [
+        { "text": "40%" },
+        { "text": "50%" },
+        { "text": "60%" },
+        { "text": "65%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk = 3/5 * 80 = 48 liters. Percentage = 48/80 * 100 = 60%.",
+      "order": 17
+    },
+    {
+      "questionText": "A seller marks an article 50% above cost price and gives a discount of 20%. What is his profit percentage?",
+      "options": [
+        { "text": "20%" },
+        { "text": "25%" },
+        { "text": "30%" },
+        { "text": "15%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let CP = 100. MP = 150. SP = 150 * 0.8 = 120. Profit = 20%.",
+      "order": 18
+    },
+    {
+      "questionText": "If 20% of a number is 80, what is 50% of the same number?",
+      "options": [
+        { "text": "150" },
+        { "text": "200" },
+        { "text": "250" },
+        { "text": "300" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "0.2x = 80 => x = 400. 50% of 400 = 200.",
+      "order": 19
+    },
+    {
+      "questionText": "The population of a town decreased by 8% annually. If the present population is 92,000, what was the population a year ago?",
+      "options": [
+        { "text": "1,00,000" },
+        { "text": "95,000" },
+        { "text": "98,000" },
+        { "text": "1,02,000" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Population a year ago = 92000 / 0.92 = 100000.",
+      "order": 20
+    },
+    {
+      "questionText": "A number is first increased by 10% and then decreased by 20%. What is the net change?",
+      "options": [
+        { "text": "10% decrease" },
+        { "text": "12% decrease" },
+        { "text": "15% decrease" },
+        { "text": "8% decrease" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net change = 10 - 20 - (10*20/100) = -10 - 2 = -12% decrease.",
+      "order": 21
+    },
+    {
+      "questionText": "In an examination, a student scored 35% marks and failed by 40 marks. If the passing marks are 40%, what are the maximum marks?",
+      "options": [
+        { "text": "400" },
+        { "text": "500" },
+        { "text": "600" },
+        { "text": "800" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let max marks be x. 0.4x - 0.35x = 40 => 0.05x = 40 => x = 800.",
+      "order": 22
+    },
+    {
+      "questionText": "A shopkeeper buys an article for Rs. 250 and sells it at a loss of 12%. What is the selling price?",
+      "options": [
+        { "text": "Rs. 210" },
+        { "text": "Rs. 220" },
+        { "text": "Rs. 230" },
+        { "text": "Rs. 200" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SP = 250 * (1 - 0.12) = 250 * 0.88 = Rs. 220.",
+      "order": 23
+    },
+    {
+      "questionText": "If 75% of a number is 300, what is 25% of the same number?",
+      "options": [
+        { "text": "75" },
+        { "text": "100" },
+        { "text": "125" },
+        { "text": "150" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "0.75x = 300 => x = 400. 25% of 400 = 100.",
+      "order": 24
+    },
+    {
+      "questionText": "A product is sold at a profit of 15%. If the cost price is Rs. 600, what is the selling price?",
+      "options": [
+        { "text": "Rs. 660" },
+        { "text": "Rs. 690" },
+        { "text": "Rs. 700" },
+        { "text": "Rs. 720" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SP = 600 * 1.15 = Rs. 690.",
+      "order": 25
+    }
+  ]
+}

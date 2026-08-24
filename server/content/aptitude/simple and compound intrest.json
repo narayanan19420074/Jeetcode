@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Simple and Compound Interest",
+    "slug": "simple-and-compound-interest",
+    "description": "Simple Interest, Compound Interest, and their formulas.",
+    "order": 5,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "What is the simple interest on Rs. 5,000 at 6% per annum for 3 years?",
+      "options": [
+        { "text": "Rs. 800" },
+        { "text": "Rs. 900" },
+        { "text": "Rs. 1000" },
+        { "text": "Rs. 750" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = P*r*t/100 = 5000 * 6 * 3 / 100 = Rs. 900.",
+      "order": 1
+    },
+    {
+      "questionText": "A sum of money amounts to Rs. 720 in 2 years and Rs. 800 in 3 years at simple interest. What is the principal?",
+      "options": [
+        { "text": "Rs. 560" },
+        { "text": "Rs. 580" },
+        { "text": "Rs. 600" },
+        { "text": "Rs. 620" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Interest for 1 year = 800 - 720 = 80. Principal = 720 - 2*80 = 560.",
+      "order": 2
+    },
+    {
+      "questionText": "What is the compound interest on Rs. 10,000 at 10% per annum for 2 years compounded annually?",
+      "options": [
+        { "text": "Rs. 2,000" },
+        { "text": "Rs. 2,100" },
+        { "text": "Rs. 2,200" },
+        { "text": "Rs. 2,500" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CI = P[(1+r/100)^n - 1] = 10000[(1.1)^2 - 1] = 10000 * 0.21 = Rs. 2,100.",
+      "order": 3
+    },
+    {
+      "questionText": "At what rate of simple interest will a sum of money double itself in 8 years?",
+      "options": [
+        { "text": "10%" },
+        { "text": "12.5%" },
+        { "text": "15%" },
+        { "text": "8%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = P, time = 8 years. Rate = (SI*100)/(P*T) = (100)/(8) = 12.5%.",
+      "order": 4
+    },
+    {
+      "questionText": "The simple interest on a sum of money for 4 years at 5% per annum is Rs. 600. What is the principal?",
+      "options": [
+        { "text": "Rs. 2,500" },
+        { "text": "Rs. 3,000" },
+        { "text": "Rs. 3,500" },
+        { "text": "Rs. 4,000" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = P*r*t/100 => 600 = P*5*4/100 => P = 600*100/20 = Rs. 3,000.",
+      "order": 5
+    },
+    {
+      "questionText": "What is the compound interest on Rs. 8,000 at 5% per annum for 3 years compounded annually?",
+      "options": [
+        { "text": "Rs. 1,200" },
+        { "text": "Rs. 1,261" },
+        { "text": "Rs. 1,300" },
+        { "text": "Rs. 1,500" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CI = 8000[(1.05)^3 - 1] = 8000 * 0.157625 = Rs. 1,261.",
+      "order": 6
+    },
+    {
+      "questionText": "A sum of money at simple interest amounts to Rs. 1,200 in 3 years and Rs. 1,400 in 5 years. What is the principal?",
+      "options": [
+        { "text": "Rs. 800" },
+        { "text": "Rs. 900" },
+        { "text": "Rs. 1,000" },
+        { "text": "Rs. 1,100" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Interest for 2 years = 1400 - 1200 = 200. SI per year = 100. Principal = 1200 - 3*100 = 900.",
+      "order": 7
+    },
+    {
+      "questionText": "What is the simple interest on Rs. 2,500 at 8% per annum for 2.5 years?",
+      "options": [
+        { "text": "Rs. 400" },
+        { "text": "Rs. 450" },
+        { "text": "Rs. 500" },
+        { "text": "Rs. 550" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SI = 2500 * 8 * 2.5 / 100 = Rs. 500.",
+      "order": 8
+    },
+    {
+      "questionText": "The difference between compound interest and simple interest on Rs. 5,000 for 2 years is Rs. 80. What is the rate of interest?",
+      "options": [
+        { "text": "5%" },
+        { "text": "8%" },
+        { "text": "10%" },
+        { "text": "12%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CI - SI = P*(r/100)^2 = 5000*(r^2/10000) = 80 => r^2 = 160 => r ≈ 8%.",
+      "order": 9
+    },
+    {
+      "questionText": "A sum of money triples itself in 10 years at simple interest. What is the rate of interest?",
+      "options": [
+        { "text": "15%" },
+        { "text": "20%" },
+        { "text": "25%" },
+        { "text": "30%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = 2P, time = 10 years. Rate = (2P*100)/(P*10) = 20%.",
+      "order": 10
+    },
+    {
+      "questionText": "What is the compound interest on Rs. 6,000 at 12% per annum for 2 years compounded annually?",
+      "options": [
+        { "text": "Rs. 1,440" },
+        { "text": "Rs. 1,526" },
+        { "text": "Rs. 1,600" },
+        { "text": "Rs. 1,700" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CI = 6000[(1.12)^2 - 1] = 6000 * 0.2544 = Rs. 1,526.4.",
+      "order": 11
+    },
+    {
+      "questionText": "At what rate of simple interest will Rs. 2,000 amount to Rs. 2,600 in 4 years?",
+      "options": [
+        { "text": "6%" },
+        { "text": "7.5%" },
+        { "text": "8%" },
+        { "text": "10%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = 2600 - 2000 = 600. Rate = (600*100)/(2000*4) = 7.5%.",
+      "order": 12
+    },
+    {
+      "questionText": "The simple interest on Rs. 4,000 for 3 years is Rs. 720. What is the rate of interest?",
+      "options": [
+        { "text": "5%" },
+        { "text": "6%" },
+        { "text": "7%" },
+        { "text": "8%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate = (720*100)/(4000*3) = 6%.",
+      "order": 13
+    },
+    {
+      "questionText": "What is the amount on Rs. 7,500 at 10% per annum compound interest for 2 years?",
+      "options": [
+        { "text": "Rs. 9,000" },
+        { "text": "Rs. 9,075" },
+        { "text": "Rs. 9,500" },
+        { "text": "Rs. 8,500" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Amount = 7500*(1.1)^2 = 7500 * 1.21 = Rs. 9,075.",
+      "order": 14
+    },
+    {
+      "questionText": "A sum of money doubles itself in 6 years at simple interest. What is the rate of interest?",
+      "options": [
+        { "text": "12.5%" },
+        { "text": "16.67%" },
+        { "text": "20%" },
+        { "text": "25%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = P, time = 6 years. Rate = (100/6) = 16.67%.",
+      "order": 15
+    },
+    {
+      "questionText": "What is the simple interest on Rs. 3,200 at 7.5% per annum for 2 years?",
+      "options": [
+        { "text": "Rs. 480" },
+        { "text": "Rs. 500" },
+        { "text": "Rs. 520" },
+        { "text": "Rs. 450" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SI = 3200 * 7.5 * 2 / 100 = Rs. 480.",
+      "order": 16
+    },
+    {
+      "questionText": "The difference between compound interest and simple interest on Rs. 10,000 for 2 years is Rs. 100. What is the rate of interest?",
+      "options": [
+        { "text": "5%" },
+        { "text": "10%" },
+        { "text": "15%" },
+        { "text": "20%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CI - SI = P*(r/100)^2 = 10000*(r^2/10000) = 100 => r^2 = 100 => r = 10%.",
+      "order": 17
+    },
+    {
+      "questionText": "A sum of money amounts to Rs. 1,500 in 3 years and Rs. 1,800 in 5 years at simple interest. What is the principal?",
+      "options": [
+        { "text": "Rs. 1,000" },
+        { "text": "Rs. 1,050" },
+        { "text": "Rs. 1,100" },
+        { "text": "Rs. 1,200" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interest for 2 years = 1800 - 1500 = 300. SI per year = 150. Principal = 1500 - 3*150 = Rs. 1,050.",
+      "order": 18
+    },
+    {
+      "questionText": "What is the compound interest on Rs. 4,000 at 8% per annum for 2 years compounded annually?",
+      "options": [
+        { "text": "Rs. 640" },
+        { "text": "Rs. 665.6" },
+        { "text": "Rs. 700" },
+        { "text": "Rs. 600" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CI = 4000[(1.08)^2 - 1] = 4000 * 0.1664 = Rs. 665.6.",
+      "order": 19
+    },
+    {
+      "questionText": "At what rate of simple interest will Rs. 3,000 amount to Rs. 3,900 in 5 years?",
+      "options": [
+        { "text": "5%" },
+        { "text": "6%" },
+        { "text": "7%" },
+        { "text": "8%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SI = 3900 - 3000 = 900. Rate = (900*100)/(3000*5) = 6%.",
+      "order": 20
+    },
+    {
+      "questionText": "The simple interest on Rs. 2,500 for 2 years is Rs. 400. What is the rate of interest?",
+      "options": [
+        { "text": "6%" },
+        { "text": "7%" },
+        { "text": "8%" },
+        { "text": "10%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rate = (400*100)/(2500*2) = 8%.",
+      "order": 21
+    },
+    {
+      "questionText": "What is the amount on Rs. 5,000 at 6% per annum compound interest for 3 years?",
+      "options": [
+        { "text": "Rs. 5,900" },
+        { "text": "Rs. 5,955" },
+        { "text": "Rs. 6,000" },
+        { "text": "Rs. 6,200" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Amount = 5000*(1.06)^3 = 5000 * 1.191016 = Rs. 5,955.08.",
+      "order": 22
+    },
+    {
+      "questionText": "A sum of money becomes 4 times itself in 15 years at simple interest. What is the rate of interest?",
+      "options": [
+        { "text": "15%" },
+        { "text": "20%" },
+        { "text": "25%" },
+        { "text": "30%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = 3P, time = 15 years. Rate = (3P*100)/(P*15) = 20%.",
+      "order": 23
+    },
+    {
+      "questionText": "What is the simple interest on Rs. 1,800 at 9% per annum for 2.5 years?",
+      "options": [
+        { "text": "Rs. 400" },
+        { "text": "Rs. 405" },
+        { "text": "Rs. 450" },
+        { "text": "Rs. 500" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = 1800 * 9 * 2.5 / 100 = Rs. 405.",
+      "order": 24
+    },
+    {
+      "questionText": "The difference between compound interest and simple interest on Rs. 8,000 for 2 years is Rs. 128. What is the rate of interest?",
+      "options": [
+        { "text": "4%" },
+        { "text": "5%" },
+        { "text": "6%" },
+        { "text": "8%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "CI - SI = P*(r/100)^2 = 8000*(r^2/10000) = 128 => r^2 = 160 => r = 4%.",
+      "order": 25
+    }
+  ]
+}

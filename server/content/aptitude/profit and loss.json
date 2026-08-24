@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Profit and Loss",
+    "slug": "profit-and-loss",
+    "description": "Cost price, selling price, profit percentage, discount, and marked price problems.",
+    "order": 4,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "A shopkeeper buys an article for Rs. 500 and sells it for Rs. 600. What is his profit percentage?",
+      "options": [
+        { "text": "15%" },
+        { "text": "20%" },
+        { "text": "25%" },
+        { "text": "10%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Profit = 600 - 500 = 100. Profit % = 100/500 * 100 = 20%.",
+      "order": 1
+    },
+    {
+      "questionText": "A person sold an article at a loss of 10%. If the selling price was Rs. 450, what was the cost price?",
+      "options": [
+        { "text": "Rs. 500" },
+        { "text": "Rs. 480" },
+        { "text": "Rs. 520" },
+        { "text": "Rs. 550" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = CP * 0.9 => 450 = 0.9 CP => CP = 500.",
+      "order": 2
+    },
+    {
+      "questionText": "A shopkeeper marks his goods 25% above cost price and gives a discount of 10%. What is his profit percentage?",
+      "options": [
+        { "text": "12.5%" },
+        { "text": "15%" },
+        { "text": "10%" },
+        { "text": "17.5%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let CP = 100. MP = 125. SP = 125 * 0.9 = 112.5. Profit = 12.5%.",
+      "order": 3
+    },
+    {
+      "questionText": "A person buys a product for Rs. 800 and sells it at a profit of 15%. What is the selling price?",
+      "options": [
+        { "text": "Rs. 900" },
+        { "text": "Rs. 920" },
+        { "text": "Rs. 950" },
+        { "text": "Rs. 880" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SP = 800 * 1.15 = Rs. 920.",
+      "order": 4
+    },
+    {
+      "questionText": "An article was sold at a loss of 5%. If it was sold for Rs. 570, what was the cost price?",
+      "options": [
+        { "text": "Rs. 600" },
+        { "text": "Rs. 580" },
+        { "text": "Rs. 620" },
+        { "text": "Rs. 650" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = CP * 0.95 => 570 = 0.95 CP => CP = 600.",
+      "order": 5
+    },
+    {
+      "questionText": "A shopkeeper sold an article at a profit of 20%. If the cost price was Rs. 250, what was the selling price?",
+      "options": [
+        { "text": "Rs. 280" },
+        { "text": "Rs. 300" },
+        { "text": "Rs. 320" },
+        { "text": "Rs. 260" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SP = 250 * 1.2 = Rs. 300.",
+      "order": 6
+    },
+    {
+      "questionText": "A person sold an item for Rs. 720 at a profit of 20%. What was the cost price?",
+      "options": [
+        { "text": "Rs. 600" },
+        { "text": "Rs. 580" },
+        { "text": "Rs. 650" },
+        { "text": "Rs. 620" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 1.2 CP => 720 = 1.2 CP => CP = 600.",
+      "order": 7
+    },
+    {
+      "questionText": "A shopkeeper sells an article at a discount of 15% on the marked price of Rs. 800. What is the selling price?",
+      "options": [
+        { "text": "Rs. 680" },
+        { "text": "Rs. 700" },
+        { "text": "Rs. 720" },
+        { "text": "Rs. 650" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 800 * 0.85 = Rs. 680.",
+      "order": 8
+    },
+    {
+      "questionText": "A person buys an article for Rs. 400 and sells it at a loss of 25%. What is the selling price?",
+      "options": [
+        { "text": "Rs. 300" },
+        { "text": "Rs. 320" },
+        { "text": "Rs. 280" },
+        { "text": "Rs. 350" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 400 * 0.75 = Rs. 300.",
+      "order": 9
+    },
+    {
+      "questionText": "A shopkeeper marks his goods 40% above cost price and gives a discount of 20%. What is his profit percentage?",
+      "options": [
+        { "text": "12%" },
+        { "text": "15%" },
+        { "text": "10%" },
+        { "text": "18%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let CP = 100. MP = 140. SP = 140 * 0.8 = 112. Profit = 12%.",
+      "order": 10
+    },
+    {
+      "questionText": "A person sold an item at a profit of 25%. If the profit was Rs. 50, what was the cost price?",
+      "options": [
+        { "text": "Rs. 200" },
+        { "text": "Rs. 180" },
+        { "text": "Rs. 220" },
+        { "text": "Rs. 250" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Profit = 25% of CP = 0.25 CP = 50 => CP = 200.",
+      "order": 11
+    },
+    {
+      "questionText": "A shopkeeper sells an article for Rs. 880 at a profit of 10%. What was the cost price?",
+      "options": [
+        { "text": "Rs. 800" },
+        { "text": "Rs. 780" },
+        { "text": "Rs. 850" },
+        { "text": "Rs. 820" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 1.1 CP => 880 = 1.1 CP => CP = 800.",
+      "order": 12
+    },
+    {
+      "questionText": "A person buys an article for Rs. 300 and sells it for Rs. 255. What is his loss percentage?",
+      "options": [
+        { "text": "10%" },
+        { "text": "12%" },
+        { "text": "15%" },
+        { "text": "18%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Loss = 300 - 255 = 45. Loss % = 45/300 * 100 = 15%.",
+      "order": 13
+    },
+    {
+      "questionText": "A shopkeeper sold an article at a profit of 18%. If the selling price was Rs. 590, what was the cost price?",
+      "options": [
+        { "text": "Rs. 500" },
+        { "text": "Rs. 520" },
+        { "text": "Rs. 480" },
+        { "text": "Rs. 550" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 1.18 CP => 590 = 1.18 CP => CP = 500.",
+      "order": 14
+    },
+    {
+      "questionText": "A shopkeeper marks his goods 50% above cost price and gives a discount of 30%. What is his profit percentage?",
+      "options": [
+        { "text": "5%" },
+        { "text": "8%" },
+        { "text": "10%" },
+        { "text": "12%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let CP = 100. MP = 150. SP = 150 * 0.7 = 105. Profit = 5%.",
+      "order": 15
+    },
+    {
+      "questionText": "A person sold an item for Rs. 420 at a loss of 16%. What was the cost price?",
+      "options": [
+        { "text": "Rs. 500" },
+        { "text": "Rs. 480" },
+        { "text": "Rs. 520" },
+        { "text": "Rs. 550" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 0.84 CP => 420 = 0.84 CP => CP = 500.",
+      "order": 16
+    },
+    {
+      "questionText": "A shopkeeper buys an article for Rs. 350 and sells it at a profit of 20%. What is the selling price?",
+      "options": [
+        { "text": "Rs. 420" },
+        { "text": "Rs. 400" },
+        { "text": "Rs. 450" },
+        { "text": "Rs. 380" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 350 * 1.2 = Rs. 420.",
+      "order": 17
+    },
+    {
+      "questionText": "A person sells an article at a profit of 12%. If the cost price was Rs. 250, what was the selling price?",
+      "options": [
+        { "text": "Rs. 280" },
+        { "text": "Rs. 300" },
+        { "text": "Rs. 270" },
+        { "text": "Rs. 260" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 250 * 1.12 = Rs. 280.",
+      "order": 18
+    },
+    {
+      "questionText": "A shopkeeper sold an article at a loss of 8%. If the selling price was Rs. 460, what was the cost price?",
+      "options": [
+        { "text": "Rs. 500" },
+        { "text": "Rs. 480" },
+        { "text": "Rs. 520" },
+        { "text": "Rs. 550" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 0.92 CP => 460 = 0.92 CP => CP = 500.",
+      "order": 19
+    },
+    {
+      "questionText": "A shopkeeper marks his goods 20% above cost price and gives a discount of 15%. What is his profit percentage?",
+      "options": [
+        { "text": "2%" },
+        { "text": "3%" },
+        { "text": "4%" },
+        { "text": "5%" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let CP = 100. MP = 120. SP = 120 * 0.85 = 102. Profit = 2%.",
+      "order": 20
+    },
+    {
+      "questionText": "A person buys an article for Rs. 150 and sells it for Rs. 180. What is his profit percentage?",
+      "options": [
+        { "text": "15%" },
+        { "text": "20%" },
+        { "text": "25%" },
+        { "text": "30%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Profit = 180 - 150 = 30. Profit % = 30/150 * 100 = 20%.",
+      "order": 21
+    },
+    {
+      "questionText": "A shopkeeper sold an article at a profit of 30%. If the profit was Rs. 60, what was the cost price?",
+      "options": [
+        { "text": "Rs. 200" },
+        { "text": "Rs. 180" },
+        { "text": "Rs. 220" },
+        { "text": "Rs. 250" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Profit = 30% of CP = 0.3 CP = 60 => CP = 200.",
+      "order": 22
+    },
+    {
+      "questionText": "A person sells an article for Rs. 360 at a loss of 10%. What was the cost price?",
+      "options": [
+        { "text": "Rs. 400" },
+        { "text": "Rs. 380" },
+        { "text": "Rs. 420" },
+        { "text": "Rs. 450" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 0.9 CP => 360 = 0.9 CP => CP = 400.",
+      "order": 23
+    },
+    {
+      "questionText": "A shopkeeper buys an article for Rs. 220 and sells it at a loss of 15%. What is the selling price?",
+      "options": [
+        { "text": "Rs. 187" },
+        { "text": "Rs. 200" },
+        { "text": "Rs. 180" },
+        { "text": "Rs. 195" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 220 * 0.85 = Rs. 187.",
+      "order": 24
+    },
+    {
+      "questionText": "A person sold an item at a profit of 22%. If the selling price was Rs. 610, what was the cost price?",
+      "options": [
+        { "text": "Rs. 500" },
+        { "text": "Rs. 520" },
+        { "text": "Rs. 480" },
+        { "text": "Rs. 550" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SP = 1.22 CP => 610 = 1.22 CP => CP = 500.",
+      "order": 25
+    }
+  ]
+}

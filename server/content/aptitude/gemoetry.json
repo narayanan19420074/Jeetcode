@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Data Interpretation",
+    "slug": "data-interpretation",
+    "description": "Tables, charts, and graph-based questions.",
+    "order": 9,
+    "passPercentage": 70,
+    "timeLimitMinutes": 25
+  },
+  "questions": [
+    {
+      "questionText": "Study the table and answer: In 2015, sales of product A were 250 units and in 2016 it was 300 units. What is the percentage increase?",
+      "options": [
+        { "text": "15%" },
+        { "text": "18%" },
+        { "text": "20%" },
+        { "text": "25%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increase = 300-250 = 50. Percentage = 50/250 * 100 = 20%.",
+      "order": 1
+    },
+    {
+      "questionText": "Study the bar chart: If sales in 2017 is 400 and in 2018 is 480, what is the percentage increase?",
+      "options": [
+        { "text": "15%" },
+        { "text": "18%" },
+        { "text": "20%" },
+        { "text": "25%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increase = 480-400 = 80. Percentage = 80/400 * 100 = 20%.",
+      "order": 2
+    },
+    {
+      "questionText": "From the table, if total sales of A, B, and C are 200, 300, and 500 respectively, what is the total sales?",
+      "options": [
+        { "text": "800" },
+        { "text": "900" },
+        { "text": "1000" },
+        { "text": "1100" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 200+300+500 = 1000.",
+      "order": 3
+    },
+    {
+      "questionText": "In a pie chart, sector A represents 40% of the total. If the total is 500, what is the value of sector A?",
+      "options": [
+        { "text": "150" },
+        { "text": "180" },
+        { "text": "200" },
+        { "text": "250" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Value = 40% of 500 = 200.",
+      "order": 4
+    },
+    {
+      "questionText": "Study the line graph: If production in 2016 is 300 and in 2017 is 360, what is the percentage increase?",
+      "options": [
+        { "text": "15%" },
+        { "text": "18%" },
+        { "text": "20%" },
+        { "text": "25%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increase = 360-300 = 60. Percentage = 60/300 * 100 = 20%.",
+      "order": 5
+    },
+    {
+      "questionText": "From the table, if the sales of product X in 2019 is 150 and in 2020 is 180, what is the percentage increase?",
+      "options": [
+        { "text": "15%" },
+        { "text": "18%" },
+        { "text": "20%" },
+        { "text": "25%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increase = 180-150 = 30. Percentage = 30/150 * 100 = 20%.",
+      "order": 6
+    },
+    {
+      "questionText": "In a bar chart, if the heights of bars A, B, C are 4, 6, 10 units respectively, what is the ratio of A to C?",
+      "options": [
+        { "text": "2:3" },
+        { "text": "2:5" },
+        { "text": "4:10" },
+        { "text": "5:2" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ratio A:C = 4:10 = 2:5.",
+      "order": 7
+    },
+    {
+      "questionText": "From the table, if total marks of five subjects are 400, 350, 450, 500, 300, what is the average?",
+      "options": [
+        { "text": "380" },
+        { "text": "390" },
+        { "text": "400" },
+        { "text": "410" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 400+350+450+500+300 = 2000. Average = 2000/5 = 400.",
+      "order": 8
+    },
+    {
+      "questionText": "In a pie chart, sector B is 25% of the total. If the total is 800, what is the value of sector B?",
+      "options": [
+        { "text": "150" },
+        { "text": "180" },
+        { "text": "200" },
+        { "text": "250" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Value = 25% of 800 = 200.",
+      "order": 9
+    },
+    {
+      "questionText": "Study the line graph: If sales in 2018 is 200 and in 2019 is 240, what is the percentage increase?",
+      "options": [
+        { "text": "15%" },
+        { "text": "18%" },
+        { "text": "20%" },
+        { "text": "25%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increase = 240-200 = 40. Percentage = 40/200 * 100 = 20%.",
+      "order": 10
+    },
+    {
+      "questionText": "From the table, if the total population in 2010 is 50,000 and in 2020 is 65,000, what is the percentage increase?",
+      "options": [
+        { "text": "25%" },
+        { "text": "30%" },
+        { "text": "35%" },
+        { "text": "40%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increase = 65000-50000 = 15000. Percentage = 15000/50000 * 100 = 30%.",
+      "order": 11
+    },
+    {
+      "questionText": "In a bar chart, if the heights of bars are 5, 10, 15, what is the average height?",
+      "options": [
+        { "text": "8" },
+        { "text": "9" },
+        { "text": "10" },
+        { "text": "11" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Average = (5+10+15)/3 = 10.",
+      "order": 12
+    },
+    {
+      "questionText": "From the table, if sales of product P in 2016 is 120 and in 2017 is 150, what is the percentage increase?",
+      "options": [
+        { "text": "20%" },
+        { "text": "25%" },
+        { "text": "30%" },
+        { "text": "35%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increase = 150-120 = 30. Percentage = 30/120 * 100 = 25%.",
+      "order": 13
+    },
+    {
+      "questionText": "In a pie chart, sector C is 30% of the total. If the total is 600, what is the value of sector C?",
+      "options": [
+        { "text": "150" },
+        { "text": "160" },
+        { "text": "170" },
+        { "text": "180" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Value = 30% of 600 = 180.",
+      "order": 14
+    },
+    {
+      "questionText": "Study the line graph: If production in 2015 is 100 and in 2016 is 130, what is the percentage increase?",
+      "options": [
+        { "text": "25%" },
+        { "text": "30%" },
+        { "text": "35%" },
+        { "text": "40%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increase = 130-100 = 30. Percentage = 30/100 * 100 = 30%.",
+      "order": 15
+    },
+    {
+      "questionText": "From the table, if the total marks of 6 students are 320, 350, 380, 400, 420, 450, what is the average?",
+      "options": [
+        { "text": "380" },
+        { "text": "385" },
+        { "text": "390" },
+        { "text": "395" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total = 320+350+380+400+420+450 = 2320. Average = 2320/6 = 386.67 ≈ 380.",
+      "order": 16
+    },
+    {
+      "questionText": "In a bar chart, if the heights of bars are 8, 12, 16, 20, what is the average height?",
+      "options": [
+        { "text": "12" },
+        { "text": "13" },
+        { "text": "14" },
+        { "text": "15" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Average = (8+12+16+20)/4 = 14.",
+      "order": 17
+    },
+    {
+      "questionText": "From the table, if sales of product Q in 2018 is 200 and in 2019 is 260, what is the percentage increase?",
+      "options": [
+        { "text": "25%" },
+        { "text": "30%" },
+        { "text": "35%" },
+        { "text": "40%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increase = 260-200 = 60. Percentage = 60/200 * 100 = 30%.",
+      "order": 18
+    },
+    {
+      "questionText": "In a pie chart, sector D is 15% of the total. If the total is 400, what is the value of sector D?",
+      "options": [
+        { "text": "50" },
+        { "text": "55" },
+        { "text": "60" },
+        { "text": "65" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Value = 15% of 400 = 60.",
+      "order": 19
+    },
+    {
+      "questionText": "Study the line graph: If sales in 2020 is 180 and in 2021 is 220, what is the percentage increase?",
+      "options": [
+        { "text": "20%" },
+        { "text": "22.22%" },
+        { "text": "25%" },
+        { "text": "28%" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increase = 220-180 = 40. Percentage = 40/180 * 100 = 22.22%.",
+      "order": 20
+    },
+    {
+      "questionText": "From the table, if the total revenue in 2019 is 1,20,000 and in 2020 is 1,50,000, what is the percentage increase?",
+      "options": [
+        { "text": "20%" },
+        { "text": "22%" },
+        { "text": "25%" },
+        { "text": "30%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increase = 150000-120000 = 30000. Percentage = 30000/120000 * 100 = 25%.",
+      "order": 21
+    },
+    {
+      "questionText": "In a bar chart, if the heights of bars are 3, 6, 9, 12, 15, what is the average height?",
+      "options": [
+        { "text": "7" },
+        { "text": "8" },
+        { "text": "9" },
+        { "text": "10" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Average = (3+6+9+12+15)/5 = 9.",
+      "order": 22
+    },
+    {
+      "questionText": "From the table, if sales of product R in 2017 is 180 and in 2018 is 234, what is the percentage increase?",
+      "options": [
+        { "text": "25%" },
+        { "text": "28%" },
+        { "text": "30%" },
+        { "text": "35%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increase = 234-180 = 54. Percentage = 54/180 * 100 = 30%.",
+      "order": 23
+    },
+    {
+      "questionText": "In a pie chart, sector E is 20% of the total. If the total is 750, what is the value of sector E?",
+      "options": [
+        { "text": "120" },
+        { "text": "130" },
+        { "text": "140" },
+        { "text": "150" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Value = 20% of 750 = 150.",
+      "order": 24
+    },
+    {
+      "questionText": "Study the line graph: If production in 2019 is 150 and in 2020 is 195, what is the percentage increase?",
+      "options": [
+        { "text": "25%" },
+        { "text": "28%" },
+        { "text": "30%" },
+        { "text": "35%" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increase = 195-150 = 45. Percentage = 45/150 * 100 = 30%.",
+      "order": 25
+    }
+  ]
+}

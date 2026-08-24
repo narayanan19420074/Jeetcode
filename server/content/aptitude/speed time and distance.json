@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Speed, Time and Distance",
+    "slug": "speed-time-and-distance",
+    "description": "Relative speed, average speed, and distance problems.",
+    "order": 7,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "A car travels at 60 km/h for 3 hours. What distance does it cover?",
+      "options": [
+        { "text": "150 km" },
+        { "text": "160 km" },
+        { "text": "180 km" },
+        { "text": "200 km" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Distance = Speed * Time = 60 * 3 = 180 km.",
+      "order": 1
+    },
+    {
+      "questionText": "A person covers 240 km in 4 hours. What is his speed?",
+      "options": [
+        { "text": "50 km/h" },
+        { "text": "55 km/h" },
+        { "text": "60 km/h" },
+        { "text": "65 km/h" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Speed = Distance / Time = 240 / 4 = 60 km/h.",
+      "order": 2
+    },
+    {
+      "questionText": "A train travels at 72 km/h. What is its speed in m/s?",
+      "options": [
+        { "text": "15 m/s" },
+        { "text": "18 m/s" },
+        { "text": "20 m/s" },
+        { "text": "25 m/s" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "1 km/h = 5/18 m/s. 72 km/h = 72 * 5/18 = 20 m/s.",
+      "order": 3
+    },
+    {
+      "questionText": "A man walks at 4 km/h and takes 3 hours to reach a destination. What is the distance?",
+      "options": [
+        { "text": "10 km" },
+        { "text": "12 km" },
+        { "text": "14 km" },
+        { "text": "16 km" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Distance = 4 * 3 = 12 km.",
+      "order": 4
+    },
+    {
+      "questionText": "A car travels from City A to City B at 80 km/h and returns at 60 km/h. What is the average speed for the entire journey?",
+      "options": [
+        { "text": "65 km/h" },
+        { "text": "68.57 km/h" },
+        { "text": "70 km/h" },
+        { "text": "72 km/h" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Average speed = 2ab/(a+b) = 2*80*60/(80+60) = 9600/140 = 68.57 km/h.",
+      "order": 5
+    },
+    {
+      "questionText": "Two trains start from the same point in opposite directions at 50 km/h and 70 km/h. How far apart will they be after 2 hours?",
+      "options": [
+        { "text": "200 km" },
+        { "text": "220 km" },
+        { "text": "240 km" },
+        { "text": "260 km" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Relative speed = 50+70 = 120 km/h. Distance = 120 * 2 = 240 km.",
+      "order": 6
+    },
+    {
+      "questionText": "A person crosses a 500 m long bridge in 2 minutes. What is his speed in km/h?",
+      "options": [
+        { "text": "12 km/h" },
+        { "text": "15 km/h" },
+        { "text": "18 km/h" },
+        { "text": "20 km/h" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Speed = 500/120 = 25/6 m/s. In km/h = (25/6)*18/5 = 15 km/h.",
+      "order": 7
+    },
+    {
+      "questionText": "A train 200 m long passes a pole in 10 seconds. What is its speed?",
+      "options": [
+        { "text": "60 km/h" },
+        { "text": "65 km/h" },
+        { "text": "70 km/h" },
+        { "text": "72 km/h" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Speed = 200/10 = 20 m/s. In km/h = 20 * 18/5 = 72 km/h.",
+      "order": 8
+    },
+    {
+      "questionText": "A man walks at 5 km/h for 2 hours and then at 4 km/h for 3 hours. What is his average speed?",
+      "options": [
+        { "text": "4.4 km/h" },
+        { "text": "4.6 km/h" },
+        { "text": "4.8 km/h" },
+        { "text": "5 km/h" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total distance = 5*2 + 4*3 = 10+12 = 22 km. Total time = 5 hours. Average speed = 22/5 = 4.4 km/h.",
+      "order": 9
+    },
+    {
+      "questionText": "A car covers a distance of 360 km in 5 hours. What is its speed?",
+      "options": [
+        { "text": "60 km/h" },
+        { "text": "65 km/h" },
+        { "text": "70 km/h" },
+        { "text": "72 km/h" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Speed = 360/5 = 72 km/h.",
+      "order": 10
+    },
+    {
+      "questionText": "Two persons start from the same point in the same direction at 30 km/h and 40 km/h. How far apart will they be after 3 hours?",
+      "options": [
+        { "text": "20 km" },
+        { "text": "25 km" },
+        { "text": "30 km" },
+        { "text": "35 km" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Relative speed = 40-30 = 10 km/h. Distance = 10 * 3 = 30 km.",
+      "order": 11
+    },
+    {
+      "questionText": "A train 150 m long passes a 250 m long bridge in 20 seconds. What is its speed?",
+      "options": [
+        { "text": "60 km/h" },
+        { "text": "65 km/h" },
+        { "text": "70 km/h" },
+        { "text": "72 km/h" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total distance = 150+250 = 400 m. Speed = 400/20 = 20 m/s = 72 km/h.",
+      "order": 12
+    },
+    {
+      "questionText": "A person walks at 6 km/h for 2.5 hours. What is the distance covered?",
+      "options": [
+        { "text": "12 km" },
+        { "text": "13 km" },
+        { "text": "14 km" },
+        { "text": "15 km" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Distance = 6 * 2.5 = 15 km.",
+      "order": 13
+    },
+    {
+      "questionText": "A car travels at 90 km/h for 2 hours and then at 60 km/h for 3 hours. What is the total distance covered?",
+      "options": [
+        { "text": "300 km" },
+        { "text": "320 km" },
+        { "text": "340 km" },
+        { "text": "360 km" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Distance = 90*2 + 60*3 = 180+180 = 360 km.",
+      "order": 14
+    },
+    {
+      "questionText": "A train travels at 54 km/h. How long will it take to cover 270 km?",
+      "options": [
+        { "text": "4 hours" },
+        { "text": "4.5 hours" },
+        { "text": "5 hours" },
+        { "text": "5.5 hours" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time = 270/54 = 5 hours.",
+      "order": 15
+    },
+    {
+      "questionText": "A person walks at 3 km/h for 2 hours and then at 5 km/h for 1 hour. What is his average speed?",
+      "options": [
+        { "text": "3.5 km/h" },
+        { "text": "3.67 km/h" },
+        { "text": "4 km/h" },
+        { "text": "4.5 km/h" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total distance = 3*2 + 5*1 = 6+5 = 11 km. Total time = 3 hours. Average speed = 11/3 = 3.67 km/h.",
+      "order": 16
+    },
+    {
+      "questionText": "Two trains start from stations 150 km apart towards each other at 40 km/h and 60 km/h. When will they meet?",
+      "options": [
+        { "text": "1 hour" },
+        { "text": "1.5 hours" },
+        { "text": "2 hours" },
+        { "text": "2.5 hours" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Relative speed = 40+60 = 100 km/h. Time = 150/100 = 1.5 hours.",
+      "order": 17
+    },
+    {
+      "questionText": "A person covers 180 km in 3 hours. What is his speed in m/s?",
+      "options": [
+        { "text": "10 m/s" },
+        { "text": "12.5 m/s" },
+        { "text": "15 m/s" },
+        { "text": "16.67 m/s" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Speed = 180/3 = 60 km/h = 60*5/18 = 16.67 m/s.",
+      "order": 18
+    },
+    {
+      "questionText": "A man walks at 4 km/h for 1.5 hours. What distance does he cover?",
+      "options": [
+        { "text": "4 km" },
+        { "text": "5 km" },
+        { "text": "6 km" },
+        { "text": "7 km" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Distance = 4 * 1.5 = 6 km.",
+      "order": 19
+    },
+    {
+      "questionText": "A train crosses a man standing on a platform in 8 seconds. If the train is 160 m long, what is its speed?",
+      "options": [
+        { "text": "60 km/h" },
+        { "text": "65 km/h" },
+        { "text": "70 km/h" },
+        { "text": "72 km/h" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Speed = 160/8 = 20 m/s = 72 km/h.",
+      "order": 20
+    },
+    {
+      "questionText": "A car travels at 75 km/h for 4 hours. What is the distance covered?",
+      "options": [
+        { "text": "250 km" },
+        { "text": "280 km" },
+        { "text": "300 km" },
+        { "text": "320 km" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Distance = 75 * 4 = 300 km.",
+      "order": 21
+    },
+    {
+      "questionText": "A person walks at 5 km/h for 2 hours and then at 3 km/h for 2 hours. What is his average speed?",
+      "options": [
+        { "text": "3.5 km/h" },
+        { "text": "4 km/h" },
+        { "text": "4.5 km/h" },
+        { "text": "5 km/h" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total distance = 5*2 + 3*2 = 10+6 = 16 km. Total time = 4 hours. Average speed = 16/4 = 4 km/h.",
+      "order": 22
+    },
+    {
+      "questionText": "A train 300 m long passes a pole in 15 seconds. What is its speed in km/h?",
+      "options": [
+        { "text": "60 km/h" },
+        { "text": "65 km/h" },
+        { "text": "70 km/h" },
+        { "text": "72 km/h" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Speed = 300/15 = 20 m/s = 72 km/h.",
+      "order": 23
+    },
+    {
+      "questionText": "A person covers 120 km in 3 hours. What is his speed?",
+      "options": [
+        { "text": "30 km/h" },
+        { "text": "35 km/h" },
+        { "text": "40 km/h" },
+        { "text": "45 km/h" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Speed = 120/3 = 40 km/h.",
+      "order": 24
+    },
+    {
+      "questionText": "A car travels at 80 km/h for 2.5 hours. What distance does it cover?",
+      "options": [
+        { "text": "180 km" },
+        { "text": "200 km" },
+        { "text": "220 km" },
+        { "text": "240 km" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Distance = 80 * 2.5 = 200 km.",
+      "order": 25
+    }
+  ]
+}

@@ -1,0 +1,618 @@
+[
+  {
+    "title": "Valid Anagram",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon",
+      "Uber"
+    ],
+    "description": "Given two strings, determine if the second is an anagram of the first (uses exactly the same letters, same counts, any order).",
+    "examples": [
+      {
+        "input": "s = \"anagram\", t = \"nagaram\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length, t.length <= 5*10^4"
+    ],
+    "functionName": "isAnagram",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "anagram",
+          "nagaram"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "rat",
+          "car"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a",
+          "ab"
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          "",
+          ""
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Valid Palindrome",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Facebook",
+      "Microsoft"
+    ],
+    "description": "Given a string, consider only alphanumeric characters and ignore case. Determine if it reads the same forwards and backwards.",
+    "examples": [
+      {
+        "input": "s = \"A man, a plan, a canal: Panama\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 2*10^5"
+    ],
+    "functionName": "isPalindromeAlnum",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "A man, a plan, a canal: Panama"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "race a car"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          " "
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "0P"
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "First Unique Character",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Bloomberg"
+    ],
+    "description": "Given a string, return the index of the first character that does not repeat anywhere else in the string. Return -1 if every character repeats.",
+    "examples": [
+      {
+        "input": "s = \"leetcode\"",
+        "output": "0"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^5"
+    ],
+    "functionName": "firstUniqChar",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "leetcode"
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          "loveleetcode"
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          "aabb"
+        ],
+        "expected": -1,
+        "isSample": false
+      },
+      {
+        "args": [
+          "z"
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Reverse Words in a String",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Microsoft",
+      "LinkedIn"
+    ],
+    "description": "Given a string containing words separated by spaces (possibly with extra leading, trailing, or multiple spaces between words), return a string with the words in reverse order, single-space separated, no leading/trailing spaces.",
+    "examples": [
+      {
+        "input": "s = \"the sky is blue\"",
+        "output": "\"blue is sky the\""
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^4"
+    ],
+    "functionName": "reverseWords",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "the sky is blue"
+        ],
+        "expected": "blue is sky the",
+        "isSample": true
+      },
+      {
+        "args": [
+          "  hello world  "
+        ],
+        "expected": "world hello",
+        "isSample": true
+      },
+      {
+        "args": [
+          "a good   example"
+        ],
+        "expected": "example good a",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Common Prefix",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Google",
+      "Yelp"
+    ],
+    "description": "Given an array of strings, return the longest common prefix shared by all of them. Return an empty string if there is none.",
+    "examples": [
+      {
+        "input": "strs = [\"flower\",\"flow\",\"flight\"]",
+        "output": "\"fl\""
+      }
+    ],
+    "constraints": [
+      "1 <= strs.length <= 200"
+    ],
+    "functionName": "longestCommonPrefix",
+    "params": [
+      {
+        "name": "strs",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          [
+            "flower",
+            "flow",
+            "flight"
+          ]
+        ],
+        "expected": "fl",
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "dog",
+            "racecar",
+            "car"
+          ]
+        ],
+        "expected": "",
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "interview"
+          ]
+        ],
+        "expected": "interview",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Length of Last Word",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "description": "Given a string consisting of words and spaces, return the length of the last word in the string.",
+    "examples": [
+      {
+        "input": "s = \"Hello World\"",
+        "output": "5"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^4"
+    ],
+    "functionName": "lengthOfLastWord",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "Hello World"
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          "   fly me   to   the moon  "
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          "luffy is still joyboy"
+        ],
+        "expected": 6,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Roman to Integer",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Math"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given a Roman numeral string, convert it to an integer.",
+    "examples": [
+      {
+        "input": "s = \"MCMXCIV\"",
+        "output": "1994"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 15"
+    ],
+    "functionName": "romanToInt",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "III"
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "LVIII"
+        ],
+        "expected": 58,
+        "isSample": true
+      },
+      {
+        "args": [
+          "MCMXCIV"
+        ],
+        "expected": 1994,
+        "isSample": false
+      },
+      {
+        "args": [
+          "IX"
+        ],
+        "expected": 9,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Integer to Roman",
+    "difficulty": "Medium",
+    "tags": [
+      "Math",
+      "String"
+    ],
+    "companies": [
+      "Amazon",
+      "Twitter"
+    ],
+    "description": "Given an integer, convert it to a Roman numeral string.",
+    "examples": [
+      {
+        "input": "num = 1994",
+        "output": "\"MCMXCIV\""
+      }
+    ],
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "functionName": "intToRoman",
+    "params": [
+      {
+        "name": "num",
+        "type": "int"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          3
+        ],
+        "expected": "III",
+        "isSample": true
+      },
+      {
+        "args": [
+          58
+        ],
+        "expected": "LVIII",
+        "isSample": true
+      },
+      {
+        "args": [
+          1994
+        ],
+        "expected": "MCMXCIV",
+        "isSample": false
+      },
+      {
+        "args": [
+          9
+        ],
+        "expected": "IX",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Is Subsequence",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Google",
+      "Pinterest"
+    ],
+    "description": "Given two strings s and t, determine whether s is a subsequence of t (s's characters appear in t in the same relative order, not necessarily contiguous).",
+    "examples": [
+      {
+        "input": "s = \"abc\", t = \"ahbgdc\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "0 <= s.length <= 100",
+      "0 <= t.length <= 10^4"
+    ],
+    "functionName": "isSubsequence",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "abc",
+          "ahbgdc"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "axc",
+          "ahbgdc"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "",
+          "abc"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "b",
+          "abc"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Substring Without Repeating Characters",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Bloomberg"
+    ],
+    "description": "Given a string, find the length of the longest substring that contains no repeating characters.",
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "0 <= s.length <= 5*10^4"
+    ],
+    "functionName": "lengthOfLongestSubstring",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "abcabcbb"
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "bbbbb"
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          "pwwkew"
+        ],
+        "expected": 3,
+        "isSample": false
+      },
+      {
+        "args": [
+          ""
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

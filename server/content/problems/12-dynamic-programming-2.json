@@ -1,0 +1,675 @@
+[
+  {
+    "title": "Longest Increasing Subsequence",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given an integer array, return the length of the longest strictly increasing subsequence.",
+    "examples": [
+      {
+        "input": "nums = [10,9,2,5,3,7,101,18]",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 2500"
+    ],
+    "functionName": "longestIncreasingSubsequence",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            10,
+            9,
+            2,
+            5,
+            3,
+            7,
+            101,
+            18
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            0,
+            3,
+            2,
+            3
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            7,
+            7,
+            7,
+            7
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Edit Distance",
+    "difficulty": "Hard",
+    "tags": [
+      "String",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Google",
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Given two strings, return the minimum number of single-character insertions, deletions, or substitutions needed to convert the first string into the second.",
+    "examples": [
+      {
+        "input": "word1 = \"horse\", word2 = \"ros\"",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "0 <= word1.length, word2.length <= 500"
+    ],
+    "functionName": "editDistance",
+    "params": [
+      {
+        "name": "word1",
+        "type": "string"
+      },
+      {
+        "name": "word2",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "horse",
+          "ros"
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "intention",
+          "execution"
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          "",
+          "abc"
+        ],
+        "expected": 3,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Common Subsequence",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given two strings, return the length of their longest common subsequence (a sequence that appears in both, not necessarily contiguous). Return 0 if there is none.",
+    "examples": [
+      {
+        "input": "text1 = \"abcde\", text2 = \"ace\"",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= text1.length, text2.length <= 1000"
+    ],
+    "functionName": "longestCommonSubsequence",
+    "params": [
+      {
+        "name": "text1",
+        "type": "string"
+      },
+      {
+        "name": "text2",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "abcde",
+          "ace"
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "abc",
+          "abc"
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "abc",
+          "def"
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Triangle Minimum Path Sum",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given a triangle array (each row one element longer than the last), return the minimum path sum from top to bottom, moving to adjacent numbers on the row below at each step.",
+    "examples": [
+      {
+        "input": "triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]",
+        "output": "11"
+      }
+    ],
+    "constraints": [
+      "1 <= triangle.length <= 200"
+    ],
+    "functionName": "triangleMinPathSum",
+    "params": [
+      {
+        "name": "triangle",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              6,
+              5,
+              7
+            ],
+            [
+              4,
+              1,
+              8,
+              3
+            ]
+          ]
+        ],
+        "expected": 11,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              -10
+            ]
+          ]
+        ],
+        "expected": -10,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        ],
+        "expected": 3,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Decode Ways",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "A string of digits can be decoded to letters using A=1 up to Z=26. Given a digit string, return the number of ways it can be decoded.",
+    "examples": [
+      {
+        "input": "s = \"12\"",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 100"
+    ],
+    "functionName": "decodeWays",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "12"
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          "226"
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "06"
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          "10"
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Perfect Squares",
+    "difficulty": "Medium",
+    "tags": [
+      "Math",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given an integer n, return the minimum number of perfect square numbers (1, 4, 9, 16, ...) that sum to n.",
+    "examples": [
+      {
+        "input": "n = 12",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 10^4"
+    ],
+    "functionName": "perfectSquares",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          12
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          13
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Combination Sum IV",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of distinct positive integers and a target, return the number of possible combinations (order matters, elements can repeat) that add up to the target.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3], target = 4",
+        "output": "7"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 200"
+    ],
+    "functionName": "combinationSum4",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ],
+          4
+        ],
+        "expected": 7,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            9
+          ],
+          3
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            3
+          ],
+          5
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Palindromic Subsequence",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Given a string, return the length of the longest subsequence (not necessarily contiguous) that is a palindrome.",
+    "examples": [
+      {
+        "input": "s = \"bbbab\"",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 1000"
+    ],
+    "functionName": "longestPalindromicSubsequence",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "bbbab"
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          "cbbd"
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Minimum Path Sum",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an m x n grid of non-negative numbers, find a path from top-left to bottom-right (moving only right or down) that minimizes the sum of numbers along the path, and return that sum.",
+    "examples": [
+      {
+        "input": "grid = [[1,3,1],[1,5,1],[4,2,1]]",
+        "output": "7"
+      }
+    ],
+    "constraints": [
+      "1 <= m, n <= 200"
+    ],
+    "functionName": "minimumPathSum",
+    "params": [
+      {
+        "name": "grid",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              3,
+              1
+            ],
+            [
+              1,
+              5,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ]
+          ]
+        ],
+        "expected": 7,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ]
+          ]
+        ],
+        "expected": 12,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              5
+            ]
+          ]
+        ],
+        "expected": 5,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Delete and Earn",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers, you may pick any number, earning points equal to its value, but doing so deletes every element equal to that number minus one and plus one from the array. Return the maximum points you can earn.",
+    "examples": [
+      {
+        "input": "nums = [3,4,2]",
+        "output": "6"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 2*10^4"
+    ],
+    "functionName": "deleteAndEarn",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            4,
+            2
+          ]
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            2,
+            3,
+            3,
+            3,
+            4
+          ]
+        ],
+        "expected": 9,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

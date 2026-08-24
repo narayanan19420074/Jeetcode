@@ -1,0 +1,751 @@
+[
+  {
+    "title": "Top K Frequent Elements",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Sorting",
+      "Heap"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an integer array and an integer k, return the k most frequent elements. If there are ties in frequency, break ties by value. Return the result sorted in ascending order.",
+    "examples": [
+      {
+        "input": "nums = [1,1,1,2,2,3], k = 2",
+        "output": "[1,2]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "topKFrequentElementsAscending",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ],
+          1
+        ],
+        "expected": [
+          1
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            1,
+            -1,
+            2,
+            -1,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": [
+          -1,
+          2
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Sort Array by Increasing Frequency",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers, sort it by increasing frequency. If two values have the same frequency, sort those by decreasing value.",
+    "examples": [
+      {
+        "input": "nums = [1,1,2,2,2,3]",
+        "output": "[3,1,1,2,2,2]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 100"
+    ],
+    "functionName": "sortArrayByIncreasingFrequency",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            2,
+            2,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          3,
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            1,
+            3,
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          3,
+          3,
+          2,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            -1,
+            1,
+            -6,
+            4,
+            5,
+            -6,
+            1,
+            4,
+            1
+          ]
+        ],
+        "expected": [
+          5,
+          -1,
+          4,
+          4,
+          -6,
+          -6,
+          1,
+          1,
+          1
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Contains Duplicate II",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Sliding Window"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer array and an integer k, determine whether there are two distinct indices i and j such that nums[i] == nums[j] and the absolute difference between i and j is at most k.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1], k = 3",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "containsDuplicateII",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            1
+          ],
+          3
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          1
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            1,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Consecutive Sequence",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table"
+    ],
+    "companies": [
+      "Google",
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "Given an unsorted array of integers, return the length of the longest run of consecutive integers (values need not be contiguous in the array).",
+    "examples": [
+      {
+        "input": "nums = [100,4,200,1,3,2]",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "0 <= nums.length <= 10^5"
+    ],
+    "functionName": "longestConsecutiveSequence",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            100,
+            4,
+            200,
+            1,
+            3,
+            2
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            3,
+            7,
+            2,
+            5,
+            8,
+            4,
+            6,
+            0,
+            1
+          ]
+        ],
+        "expected": 9,
+        "isSample": true
+      },
+      {
+        "args": [
+          []
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Subarray Sums Divisible by K",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer array and an integer k, return the number of contiguous subarrays whose sum is divisible by k.",
+    "examples": [
+      {
+        "input": "nums = [4,5,0,-2,-3,1], k = 5",
+        "output": "7"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 3*10^4"
+    ],
+    "functionName": "subarraySumsDivisibleByK",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            4,
+            5,
+            0,
+            -2,
+            -3,
+            1
+          ],
+          5
+        ],
+        "expected": 7,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            5
+          ],
+          9
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            -1,
+            2,
+            9
+          ],
+          2
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Continuous Subarray Sum",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Given an integer array and an integer k, determine whether the array has a contiguous subarray of length at least 2 whose sum is a multiple of k (0 is a multiple of every k).",
+    "examples": [
+      {
+        "input": "nums = [23,2,4,6,7], k = 6",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "continuousSubarraySum",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            23,
+            2,
+            4,
+            6,
+            7
+          ],
+          6
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            23,
+            2,
+            6,
+            4,
+            7
+          ],
+          6
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            23,
+            2,
+            6,
+            4,
+            7
+          ],
+          13
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Two Sum Less Than K",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "Given an array of integers and an integer k, find the maximum sum of two distinct elements that is strictly less than k. Return -1 if no such pair exists.",
+    "examples": [
+      {
+        "input": "nums = [34,23,1,24,75,33,54,8], k = 60",
+        "output": "58"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 100"
+    ],
+    "functionName": "twoSumLessThanK",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            34,
+            23,
+            1,
+            24,
+            75,
+            33,
+            54,
+            8
+          ],
+          60
+        ],
+        "expected": 58,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            10,
+            20,
+            30
+          ],
+          15
+        ],
+        "expected": -1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ],
+          3
+        ],
+        "expected": -1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Number of Distinct Anagram Groups",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "String"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of strings, group the strings that are anagrams of each other, and return the number of distinct groups formed.",
+    "examples": [
+      {
+        "input": "strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= strs.length <= 10^4"
+    ],
+    "functionName": "numberOfDistinctAnagramGroups",
+    "params": [
+      {
+        "name": "strs",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            "eat",
+            "tea",
+            "tan",
+            "ate",
+            "nat",
+            "bat"
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            ""
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "a"
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Maximum Number of Balloons",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given a string of lowercase letters, return the maximum number of times you can form the word 'balloon' using its letters (each letter used at most as many times as it appears).",
+    "examples": [
+      {
+        "input": "s = \"nlaebolko\"",
+        "output": "1"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^4"
+    ],
+    "functionName": "maximumNumberOfBalloons",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "nlaebolko"
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          "loonbalxballpoon"
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          "leetcode"
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Find the Difference",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "String t is generated by shuffling string s and adding one extra letter at a random position. Given s and t, return that extra letter.",
+    "examples": [
+      {
+        "input": "s = \"abcd\", t = \"abcde\"",
+        "output": "\"e\""
+      }
+    ],
+    "constraints": [
+      "0 <= s.length <= 1000"
+    ],
+    "functionName": "findTheDifference",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "abcd",
+          "abcde"
+        ],
+        "expected": "e",
+        "isSample": true
+      },
+      {
+        "args": [
+          "",
+          "y"
+        ],
+        "expected": "y",
+        "isSample": true
+      },
+      {
+        "args": [
+          "ae",
+          "aea"
+        ],
+        "expected": "a",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

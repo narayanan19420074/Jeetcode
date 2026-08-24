@@ -1,0 +1,419 @@
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import {
+  Box,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+  Chip,
+  Stack,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  TextField,
+  InputAdornment,
+  ToggleButtonGroup,
+  ToggleButton,
+  Button,
+  CircularProgress,
+  Alert,
+  Pagination,
+} from '@mui/material';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import DifficultyChip from '../../components/DifficultyChip';
+import ProgressRing from '../../components/ProgressRing';
+import ActivityHeatmap from '../../components/ActivityHeatmap';
+import FeatureTile from '../../components/FeatureTile';
+import { problemsApi } from '../../api/problemsApi';
+import { usersApi } from '../../api/usersApi';
+import { submissionsApi } from '../../api/submissionsApi';
+import { extractErrorMessage } from '../../api/apiClient';
+
+const PROBLEMS_PAGE_SIZE = 10;
+
+const statusColor = {
+  Accepted: 'success',
+  'Wrong Answer': 'error',
+  'Time Limit Exceeded': 'warning',
+  'Runtime Error': 'error',
+  'Compilation Error': 'error',
+  Pending: 'default',
+  Judging: 'default',
+};
+
+// Deterministic "featured problem of the day" — picks the same problem all
+// day without needing a dedicated backend field. Uses page=N, limit=1 so we
+// only ever transfer one problem, not the whole catalog.
+function featuredPageForToday(total) {
+  const dayIndex = Math.floor(Date.now() / 86400000);
+  return (dayIndex % total) + 1;
+}
+
+export default function DashboardPage() {
+  const navigate = useNavigate();
+  const { isAuthenticated, user } = useSelector((s) => s.auth);
+
+  const [problems, setProblems] = useState([]);
+  const [problemsPagination, setProblemsPagination] = useState({ page: 1, totalPages: 1, total: 0 });
+  const [problemsLoading, setProblemsLoading] = useState(true);
+  const [problemsError, setProblemsError] = useState(null);
+
+  const [activity, setActivity] = useState([]);
+  const [submissions, setSubmissions] = useState([]);
+
+  // Featured problem + per-difficulty totals (for progress ring max values).
+  // Deliberately NOT reusing the paginated table's `problems` state — that
+  // holds one page of 10, and a large one-shot `limit: 500` fetch risks
+  // silently failing if the backend caps the limit param. Small limit:1
+  // requests avoid both problems.
+  const [featured, setFeatured] = useState(null);
+  const [difficultyTotals, setDifficultyTotals] = useState({ Easy: 1, Medium: 1, Hard: 1 });
+
+  useEffect(() => {
+    Promise.all([
+      problemsApi.list({ page: 1, limit: 1 }),
+      problemsApi.list({ page: 1, limit: 1, difficulty: 'Easy' }),
+      problemsApi.list({ page: 1, limit: 1, difficulty: 'Medium' }),
+      problemsApi.list({ page: 1, limit: 1, difficulty: 'Hard' }),
+    ])
+      .then(([all, easy, medium, hard]) => {
+        setDifficultyTotals({
+          Easy: Math.max(easy.data.data.pagination.total, 1),
+          Medium: Math.max(medium.data.data.pagination.total, 1),
+          Hard: Math.max(hard.data.data.pagination.total, 1),
+        });
+        const total = all.data.data.pagination.total;
+        if (total > 0) {
+          return problemsApi.list({ page: featuredPageForToday(total), limit: 1 });
+        }
+        return null;
+      })
+      .then((res) => {
+        if (res) setFeatured(res.data.data.items[0]);
+      })
+      .catch(() => {});
+  }, []);
+
+  const [search, setSearch] = useState('');
+  const [difficultyFilter, setDifficultyFilter] = useState('All');
+  const [problemsPage, setProblemsPage] = useState(1);
+
+  useEffect(() => {
+    setProblemsLoading(true);
+    problemsApi
+      .list({
+        page: problemsPage,
+        limit: PROBLEMS_PAGE_SIZE,
+        difficulty: difficultyFilter === 'All' ? undefined : difficultyFilter,
+        search: search || undefined,
+      })
+      .then(({ data }) => {
+        setProblems(data.data.items);
+        setProblemsPagination(data.data.pagination);
+        setProblemsError(null);
+      })
+      .catch((err) => setProblemsError(extractErrorMessage(err)))
+      .finally(() => setProblemsLoading(false));
+  }, [problemsPage, difficultyFilter, search]);
+
+  // Reset to page 1 whenever a filter changes — otherwise you can get stuck
+  // on page 4 of "All" after switching to "Hard", which has fewer pages.
+  useEffect(() => {
+    setProblemsPage(1);
+  }, [difficultyFilter, search]);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    usersApi.activity().then(({ data }) => setActivity(data.data)).catch(() => {});
+    submissionsApi.history({ limit: 5 }).then(({ data }) => setSubmissions(data.data.items)).catch(() => {});
+  }, [isAuthenticated]);
+
+  const totalSolved = user ? user.easySolved + user.mediumSolved + user.hardSolved : 0;
+
+  return (
+    <Container maxWidth="lg" sx={{ py: 4 }}>
+      {!isAuthenticated && (
+        <Paper
+          variant="outlined"
+          sx={{ p: 2, mb: 3, borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}
+        >
+          <Typography variant="body2" color="text.secondary">
+            You're browsing as a guest. Sign up to save streaks, track submissions, and unlock AI hints — free.
+          </Typography>
+          <Button variant="contained" disableElevation size="small" onClick={() => navigate('/login')} sx={{ fontWeight: 700 }}>
+            Sign up free
+          </Button>
+        </Paper>
+      )}
+
+      <Grid container spacing={3} sx={{ mb: 1 }}>
+        {/* Streak + progress overview */}
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%' }}>
+            <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 2 }}>
+              <LocalFireDepartmentRoundedIcon sx={{ color: 'warning.main' }} />
+              <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                {user?.streakDays ?? 0}-day streak
+              </Typography>
+            </Stack>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              Longest streak: {user?.longestStreak ?? 0} days
+            </Typography>
+            {isAuthenticated ? (
+              <ActivityHeatmap data={activity.length ? activity : Array.from({ length: 49 }, (_, i) => ({ day: i, submissions: 0 }))} />
+            ) : (
+              <Typography variant="caption" color="text.secondary">
+                Sign in to start tracking your daily streak.
+              </Typography>
+            )}
+          </Paper>
+        </Grid>
+
+        {/* Progress rings */}
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%' }}>
+            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+              Your progress
+            </Typography>
+            <Stack direction="row" spacing={3} sx={{ justifyContent: 'space-around', flexWrap: 'wrap' }}>
+              <ProgressRing value={user?.easySolved ?? 0} max={difficultyTotals.Easy} label="Easy" color="#10B981" size={96} strokeWidth={8} />
+              <ProgressRing value={user?.mediumSolved ?? 0} max={difficultyTotals.Medium} label="Medium" color="#F59E0B" size={96} strokeWidth={8} />
+              <ProgressRing value={user?.hardSolved ?? 0} max={difficultyTotals.Hard} label="Hard" color="#EF4444" size={96} strokeWidth={8} />
+            </Stack>
+            <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center', mt: 2 }}>
+              {totalSolved} solved
+            </Typography>
+          </Paper>
+        </Grid>
+
+        {/* Featured problem */}
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <Paper
+            variant="outlined"
+            sx={{
+              p: 2.5,
+              borderRadius: 3,
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              background: (t) => (t.palette.mode === 'dark' ? 'linear-gradient(160deg, rgba(59,130,246,0.14), transparent)' : 'linear-gradient(160deg, rgba(59,130,246,0.08), transparent)'),
+            }}
+          >
+            {featured ? (
+              <>
+                <Box>
+                  <Typography variant="overline" color="primary.main" sx={{ fontWeight: 700, fontSize: '0.65rem' }}>
+                    Featured
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 700, mt: 0.5 }}>
+                    {featured.title}
+                  </Typography>
+                  <DifficultyChip difficulty={featured.difficulty} />
+                </Box>
+                <Button
+                  variant="contained"
+                  disableElevation
+                  sx={{ fontWeight: 700, mt: 2 }}
+                  onClick={() => navigate(`/workspace/${featured.slug}`)}
+                >
+                  Solve now
+                </Button>
+              </>
+            ) : (
+              <Typography variant="body2" color="text.secondary">
+                No problems published yet.
+              </Typography>
+            )}
+          </Paper>
+        </Grid>
+
+        {/* Slot 4 — reserved for the next feature card */}
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <Paper
+            variant="outlined"
+            sx={{
+              p: 2.5,
+              borderRadius: 3,
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderStyle: 'dashed',
+              color: 'text.secondary',
+            }}
+          >
+            <Typography variant="caption" sx={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Coming soon
+            </Typography>
+          </Paper>
+        </Grid>
+      </Grid>
+
+      {/* Feature tiles — compact, one row, room to add more here later */}
+      <Grid container spacing={2} sx={{ mt: 3 }}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <FeatureTile
+            icon={<SchoolRoundedIcon fontSize="small" />}
+            title="TCS NQT Aptitude"
+            description="Practice pattern-wise, take timed tests, unlock as you go"
+            to="/aptitude"
+            accentColor="success.main"
+          />
+        </Grid>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <FeatureTile
+            icon={<BarChartRoundedIcon fontSize="small" />}
+            title="Algorithm Visualizer"
+            description="Watch sorting, trees, graphs, and DP run step by step"
+            to="/visualizer"
+            accentColor="primary.main"
+          />
+        </Grid>
+      </Grid>
+
+      {/* Problem explorer */}
+      <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, mt: 3 }}>
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={2}
+          sx={{ alignItems: { sm: 'center' }, justifyContent: 'space-between', mb: 2 }}
+        >
+          <Box>
+            <Typography variant="h6" sx={{ fontWeight: 700 }}>
+              Problem Explorer
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              {problemsPagination.total} problems
+            </Typography>
+          </Box>
+          <Stack direction="row" spacing={1.5} sx={{ flexWrap: 'wrap' }}>
+            <TextField
+              size="small"
+              placeholder="Search problems"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              InputProps={{ startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> }}
+            />
+            <ToggleButtonGroup size="small" exclusive value={difficultyFilter} onChange={(e, v) => v && setDifficultyFilter(v)}>
+              <ToggleButton value="All">All</ToggleButton>
+              <ToggleButton value="Easy">Easy</ToggleButton>
+              <ToggleButton value="Medium">Medium</ToggleButton>
+              <ToggleButton value="Hard">Hard</ToggleButton>
+            </ToggleButtonGroup>
+          </Stack>
+        </Stack>
+
+        {problemsError && <Alert severity="error" sx={{ mb: 2 }}>{problemsError}</Alert>}
+
+        {problemsLoading ? (
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+            <CircularProgress size={28} />
+          </Box>
+        ) : problems.length === 0 ? (
+          <Typography variant="body2" color="text.secondary" sx={{ py: 2 }}>
+            No problems match your filters yet.
+          </Typography>
+        ) : (
+          <>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell padding="checkbox" />
+                  <TableCell>Title</TableCell>
+                  <TableCell>Difficulty</TableCell>
+                  <TableCell>Companies</TableCell>
+                  <TableCell align="right">Acceptance</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {problems.map((p) => (
+                  <TableRow key={p._id} hover sx={{ cursor: 'pointer' }} onClick={() => navigate(`/workspace/${p.slug}`)}>
+                    <TableCell padding="checkbox">
+                      {p.solvedByMe && <CheckCircleRoundedIcon fontSize="small" sx={{ color: 'success.main' }} />}
+                    </TableCell>
+                    <TableCell sx={{ fontWeight: 600 }}>{p.title}</TableCell>
+                    <TableCell>
+                      <DifficultyChip difficulty={p.difficulty} />
+                    </TableCell>
+                    <TableCell>
+                      <Stack direction="row" spacing={0.5} sx={{ flexWrap: 'wrap' }}>
+                        {(p.companies || []).slice(0, 2).map((c) => (
+                          <Chip key={c} label={c} size="small" variant="outlined" />
+                        ))}
+                      </Stack>
+                    </TableCell>
+                    <TableCell align="right">{p.acceptanceRate ?? 0}%</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+
+            {problemsPagination.totalPages > 1 && (
+              <Stack sx={{ alignItems: 'center', mt: 3 }}>
+                <Pagination
+                  count={problemsPagination.totalPages}
+                  page={problemsPage}
+                  onChange={(e, v) => setProblemsPage(v)}
+                  color="primary"
+                  shape="rounded"
+                  size="small"
+                />
+              </Stack>
+            )}
+          </>
+        )}
+      </Paper>
+
+      {/* Recent submissions */}
+      {isAuthenticated && (
+        <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, mt: 3 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+            Recent Submissions
+          </Typography>
+          {submissions.length === 0 ? (
+            <Typography variant="body2" color="text.secondary">
+              No submissions yet — solve a problem to see your history here.
+            </Typography>
+          ) : (
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Problem</TableCell>
+                  <TableCell>Status</TableCell>
+                  <TableCell>Language</TableCell>
+                  <TableCell>Runtime</TableCell>
+                  <TableCell align="right">When</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {submissions.map((s) => (
+                  <TableRow key={s._id} hover>
+                    <TableCell sx={{ fontWeight: 600 }}>{s.problem?.title ?? 'Unknown'}</TableCell>
+                    <TableCell>
+                      <Chip label={s.status} size="small" color={statusColor[s.status] || 'default'} variant="outlined" />
+                    </TableCell>
+                    <TableCell sx={{ textTransform: 'capitalize' }}>{s.language}</TableCell>
+                    <TableCell>{s.runtimeMs != null ? `${s.runtimeMs}ms` : '-'}</TableCell>
+                    <TableCell align="right" sx={{ color: 'text.secondary' }}>
+                      {new Date(s.createdAt).toLocaleString()}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          )}
+        </Paper>
+      )}
+    </Container>
+  );
+}

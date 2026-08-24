@@ -1,0 +1,844 @@
+[
+  {
+    "title": "Contains Duplicate",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Yahoo"
+    ],
+    "description": "Given an array of integers, determine whether any value appears at least twice in the array.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "hasDuplicate",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            1
+          ]
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            3,
+            3,
+            4,
+            3,
+            2,
+            4,
+            2
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            7
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Missing Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon",
+      "Bloomberg"
+    ],
+    "description": "You are given an array containing n distinct numbers taken from the range 0 to n. Find the one number in that range that is missing from the array.",
+    "examples": [
+      {
+        "input": "nums = [3,0,1]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 10^4"
+    ],
+    "functionName": "findMissingNumber",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            0,
+            1
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            1
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            9,
+            6,
+            4,
+            2,
+            3,
+            5,
+            7,
+            0,
+            1
+          ]
+        ],
+        "expected": 8,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Single Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon",
+      "Airbnb"
+    ],
+    "description": "Given a non-empty array of integers where every element appears exactly twice except for one, find that single element.",
+    "examples": [
+      {
+        "input": "nums = [4,1,2,1,2]",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 3*10^4"
+    ],
+    "functionName": "findSingleNumber",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            1,
+            2,
+            1,
+            2
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            5,
+            3,
+            5,
+            7,
+            3
+          ]
+        ],
+        "expected": 7,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Majority Element",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table"
+    ],
+    "companies": [
+      "Google",
+      "Adobe"
+    ],
+    "description": "Given an array of size n, return the element that appears more than n/2 times. You may assume such an element always exists.",
+    "examples": [
+      {
+        "input": "nums = [2,2,1,1,1,2,2]",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 5*10^4"
+    ],
+    "functionName": "findMajorityElement",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            2,
+            3
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            2,
+            1,
+            1,
+            1,
+            2,
+            2
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            6,
+            5,
+            5
+          ]
+        ],
+        "expected": 5,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Move Zeroes To End",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Facebook",
+      "Bloomberg"
+    ],
+    "description": "Given an array of integers, return the array with all zeroes moved to the end while keeping the relative order of the non-zero elements.",
+    "examples": [
+      {
+        "input": "nums = [0,1,0,3,12]",
+        "output": "[1,3,12,0,0]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^4"
+    ],
+    "functionName": "moveZeroesToEnd",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            0,
+            1,
+            0,
+            3,
+            12
+          ]
+        ],
+        "expected": [
+          1,
+          3,
+          12,
+          0,
+          0
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": [
+          0
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "expected": [
+          1,
+          0,
+          0
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Plus One",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Math"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "You are given an array of digits representing a large non-negative integer, most significant digit first. Add one to the number and return the resulting array of digits.",
+    "examples": [
+      {
+        "input": "digits = [1,2,3]",
+        "output": "[1,2,4]"
+      }
+    ],
+    "constraints": [
+      "1 <= digits.length <= 100",
+      "0 <= digits[i] <= 9"
+    ],
+    "functionName": "plusOne",
+    "params": [
+      {
+        "name": "digits",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          4
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            3,
+            2,
+            1
+          ]
+        ],
+        "expected": [
+          4,
+          3,
+          2,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            9
+          ]
+        ],
+        "expected": [
+          1,
+          0
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            9,
+            9,
+            9
+          ]
+        ],
+        "expected": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Running Sum of Array",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of numbers, return a new array where each element is the sum of itself and all previous elements in the original array.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "[1,3,6,10]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 1000"
+    ],
+    "functionName": "runningSum",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          3,
+          6,
+          10
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            3,
+            1,
+            2,
+            10,
+            1
+          ]
+        ],
+        "expected": [
+          3,
+          4,
+          6,
+          16,
+          17
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Find Pivot Index",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "Given an array of integers, return the leftmost index where the sum of all values to its left equals the sum of all values to its right. Return -1 if no such index exists.",
+    "examples": [
+      {
+        "input": "nums = [1,7,3,6,5,6]",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^4"
+    ],
+    "functionName": "pivotIndex",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            7,
+            3,
+            6,
+            5,
+            6
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": -1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            1,
+            -1
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "expected": -1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Number of Good Pairs",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers, count the number of pairs (i, j) where i < j and nums[i] == nums[j].",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1,1,3]",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 100"
+    ],
+    "functionName": "countGoodPairs",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            1,
+            1,
+            3
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Intersection of Two Arrays",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Sorting"
+    ],
+    "companies": [
+      "Facebook",
+      "Google"
+    ],
+    "description": "Given two integer arrays, return an array of their unique intersecting values, sorted in ascending order.",
+    "examples": [
+      {
+        "input": "nums1 = [1,2,2,1], nums2 = [2,2]",
+        "output": "[2]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums1.length, nums2.length <= 1000"
+    ],
+    "functionName": "intersectionUnique",
+    "params": [
+      {
+        "name": "nums1",
+        "type": "int[]"
+      },
+      {
+        "name": "nums2",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "expected": [
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            9,
+            5
+          ],
+          [
+            9,
+            4,
+            9,
+            8,
+            4
+          ]
+        ],
+        "expected": [
+          4,
+          9
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

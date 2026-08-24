@@ -1,0 +1,568 @@
+[
+  {
+    "title": "Greatest Common Divisor of Two Numbers",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given two positive integers, return their greatest common divisor.",
+    "examples": [
+      {
+        "input": "a = 12, b = 18",
+        "output": "6"
+      }
+    ],
+    "constraints": [
+      "1 <= a, b <= 10^9"
+    ],
+    "functionName": "gcdOfTwoNumbers",
+    "params": [
+      {
+        "name": "a",
+        "type": "int"
+      },
+      {
+        "name": "b",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          12,
+          18
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          7,
+          13
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          100,
+          75
+        ],
+        "expected": 25,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Least Common Multiple of Two Numbers",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given two positive integers, return their least common multiple.",
+    "examples": [
+      {
+        "input": "a = 4, b = 6",
+        "output": "12"
+      }
+    ],
+    "constraints": [
+      "1 <= a, b <= 10^5"
+    ],
+    "functionName": "lcmOfTwoNumbers",
+    "params": [
+      {
+        "name": "a",
+        "type": "int"
+      },
+      {
+        "name": "b",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          4,
+          6
+        ],
+        "expected": 12,
+        "isSample": true
+      },
+      {
+        "args": [
+          21,
+          6
+        ],
+        "expected": 42,
+        "isSample": true
+      },
+      {
+        "args": [
+          5,
+          7
+        ],
+        "expected": 35,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Ugly Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "An ugly number is a positive integer whose only prime factors are 2, 3, and 5. Given an integer, determine whether it is an ugly number.",
+    "examples": [
+      {
+        "input": "n = 6",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "-2^31 <= n <= 2^31 - 1"
+    ],
+    "functionName": "isUglyNumber",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          6
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          14
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Power of Three",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Recursion"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Given an integer, determine whether it is a power of three.",
+    "examples": [
+      {
+        "input": "n = 27",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "-2^31 <= n <= 2^31 - 1"
+    ],
+    "functionName": "isPowerOfThree",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          27
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          45
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Power of Four",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an integer, determine whether it is a power of four.",
+    "examples": [
+      {
+        "input": "n = 16",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "-2^31 <= n <= 2^31 - 1"
+    ],
+    "functionName": "isPowerOfFour",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          16
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Base 7",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given an integer, return its base-7 string representation.",
+    "examples": [
+      {
+        "input": "num = 100",
+        "output": "\"202\""
+      }
+    ],
+    "constraints": [
+      "-10^7 <= num <= 10^7"
+    ],
+    "functionName": "base7Conversion",
+    "params": [
+      {
+        "name": "num",
+        "type": "int"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          100
+        ],
+        "expected": "202",
+        "isSample": true
+      },
+      {
+        "args": [
+          -7
+        ],
+        "expected": "-10",
+        "isSample": true
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": "0",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Complement of Base 10 Integer",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "The complement of a binary number flips every bit. Given a non-negative integer, return the decimal value of its complement (based on its minimal binary representation, no leading zeros).",
+    "examples": [
+      {
+        "input": "num = 5",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "0 <= num <= 10^9"
+    ],
+    "functionName": "complementOfBase10Number",
+    "params": [
+      {
+        "name": "num",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          5
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          7
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          10
+        ],
+        "expected": 5,
+        "isSample": false
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Binary Gap",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given a positive integer n, return the longest distance between any two adjacent 1's in its binary representation. Return 0 if there are fewer than two 1's.",
+    "examples": [
+      {
+        "input": "n = 22",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 10^9"
+    ],
+    "functionName": "binaryGap",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          22
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          8
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Self Dividing Numbers",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "A self-dividing number is divisible by every digit it contains (and contains no zero digits). Given a range [left, right], return the count of self-dividing numbers within it.",
+    "examples": [
+      {
+        "input": "left = 1, right = 22",
+        "output": "13"
+      }
+    ],
+    "constraints": [
+      "1 <= left <= right <= 10^4"
+    ],
+    "functionName": "countSelfDividingNumbersInRange",
+    "params": [
+      {
+        "name": "left",
+        "type": "int"
+      },
+      {
+        "name": "right",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          1,
+          22
+        ],
+        "expected": 13,
+        "isSample": true
+      },
+      {
+        "args": [
+          47,
+          85
+        ],
+        "expected": 4,
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Armstrong Number",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "An Armstrong number equals the sum of its own digits each raised to the power of the number of digits. Given an integer, determine whether it is an Armstrong number.",
+    "examples": [
+      {
+        "input": "n = 153",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 10^8"
+    ],
+    "functionName": "isArmstrongNumber",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          153
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          123
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          9474
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          10
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

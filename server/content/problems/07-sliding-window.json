@@ -1,0 +1,728 @@
+[
+  {
+    "title": "Maximum Average Subarray",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Sliding Window"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers and an integer k, find the contiguous subarray of length k with the maximum average value, and return that average.",
+    "examples": [
+      {
+        "input": "nums = [1,12,-5,-6,50,3], k = 4",
+        "output": "12.75"
+      }
+    ],
+    "constraints": [
+      "1 <= k <= nums.length <= 10^5"
+    ],
+    "functionName": "maxAverageSubarray",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "float",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            12,
+            -5,
+            -6,
+            50,
+            3
+          ],
+          4
+        ],
+        "expected": 12.75,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            5
+          ],
+          1
+        ],
+        "expected": 5.0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            4,
+            0,
+            3,
+            2
+          ],
+          1
+        ],
+        "expected": 4.0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Repeating Character Replacement",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "companies": [
+      "Google",
+      "Facebook"
+    ],
+    "description": "Given a string of uppercase letters and an integer k, you may replace up to k characters with any other uppercase letter. Return the length of the longest substring you can make containing only one repeated letter.",
+    "examples": [
+      {
+        "input": "s = \"ABAB\", k = 2",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^5"
+    ],
+    "functionName": "longestRepeatingCharReplace",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "ABAB",
+          2
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          "AABABBA",
+          1
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          "ABCDE",
+          1
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Permutation in String",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "companies": [
+      "Microsoft",
+      "Facebook"
+    ],
+    "description": "Given two strings s1 and s2, determine whether s2 contains a contiguous substring that is a permutation of s1.",
+    "examples": [
+      {
+        "input": "s1 = \"ab\", s2 = \"eidbaooo\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= s1.length <= s2.length <= 10^4"
+    ],
+    "functionName": "permutationInString",
+    "params": [
+      {
+        "name": "s1",
+        "type": "string"
+      },
+      {
+        "name": "s2",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "ab",
+          "eidbaooo"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "ab",
+          "eidboaoo"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "adc",
+          "dcda"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Find All Anagrams in a String",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "Given two strings s and p, return an array of all the start indices of p's anagrams found as substrings within s.",
+    "examples": [
+      {
+        "input": "s = \"cbaebabacd\", p = \"abc\"",
+        "output": "[0,6]"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length, p.length <= 3*10^4"
+    ],
+    "functionName": "findAllAnagrams",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "p",
+        "type": "string"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          "cbaebabacd",
+          "abc"
+        ],
+        "expected": [
+          0,
+          6
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          "abab",
+          "ab"
+        ],
+        "expected": [
+          0,
+          1,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          "a",
+          "ab"
+        ],
+        "expected": [],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Max Consecutive Ones III",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sliding Window"
+    ],
+    "companies": [
+      "Google",
+      "Facebook"
+    ],
+    "description": "Given a binary array and an integer k, you may flip at most k zeroes to ones. Return the maximum length of a contiguous run of ones you can achieve.",
+    "examples": [
+      {
+        "input": "nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2",
+        "output": "6"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "maxConsecutiveOnesIII",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          2
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          3
+        ],
+        "expected": 10,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1
+          ],
+          0
+        ],
+        "expected": 3,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Fruit Into Baskets",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given an array representing fruit types on a row of trees, you have two baskets and each can hold only one type of fruit. Return the maximum number of fruits you can collect from a contiguous run of trees.",
+    "examples": [
+      {
+        "input": "fruits = [1,2,1]",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= fruits.length <= 10^5"
+    ],
+    "functionName": "fruitIntoBaskets",
+    "params": [
+      {
+        "name": "fruits",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            2,
+            2
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            2,
+            2
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Subarray of 1's After Deleting One Element",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given a binary array, you must delete exactly one element. Return the length of the longest contiguous run of 1's remaining after that deletion.",
+    "examples": [
+      {
+        "input": "nums = [1,1,0,1]",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "longestSubarrayAfterDeletingOne",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            0,
+            1
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Maximum Sum Subarray of Size K",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Sliding Window"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers and an integer k, return the maximum sum of any contiguous subarray of exactly length k.",
+    "examples": [
+      {
+        "input": "nums = [2,1,5,1,3,2], k = 3",
+        "output": "9"
+      }
+    ],
+    "constraints": [
+      "1 <= k <= nums.length <= 10^5"
+    ],
+    "functionName": "maxSumSubarraySizeK",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            1,
+            5,
+            1,
+            3,
+            2
+          ],
+          3
+        ],
+        "expected": 9,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            4,
+            1,
+            5
+          ],
+          2
+        ],
+        "expected": 7,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            5
+          ],
+          1
+        ],
+        "expected": 5,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Minimum Window Substring Length",
+    "difficulty": "Hard",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "companies": [
+      "Facebook",
+      "Uber"
+    ],
+    "description": "Given two strings s and t, return the length of the smallest substring of s that contains every character of t (including duplicates). Return 0 if no such substring exists.",
+    "examples": [
+      {
+        "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+        "output": "4"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length, t.length <= 10^5"
+    ],
+    "functionName": "minWindowSubstringLength",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "ADOBECODEBANC",
+          "ABC"
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a",
+          "a"
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a",
+          "aa"
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Count Number of Nice Subarrays",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Sliding Window"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "description": "Given an array of integers and an integer k, a subarray is 'nice' if it contains exactly k odd numbers. Return the number of nice subarrays.",
+    "examples": [
+      {
+        "input": "nums = [1,1,2,1,1], k = 3",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 5*10^4"
+    ],
+    "functionName": "countNiceSubarrays",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            2,
+            1,
+            1
+          ],
+          3
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            4,
+            6
+          ],
+          1
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            2,
+            2,
+            1,
+            2,
+            2,
+            1,
+            2,
+            2,
+            2
+          ],
+          2
+        ],
+        "expected": 16,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]

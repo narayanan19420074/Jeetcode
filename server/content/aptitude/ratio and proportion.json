@@ -1,0 +1,312 @@
+{
+  "pattern": {
+    "title": "Ratio and Proportion",
+    "slug": "ratio-and-proportion",
+    "description": "Ratio, proportion, and related problems.",
+    "order": 6,
+    "passPercentage": 70,
+    "timeLimitMinutes": 20
+  },
+  "questions": [
+    {
+      "questionText": "The ratio of two numbers is 3:5 and their sum is 48. What are the numbers?",
+      "options": [
+        { "text": "15 and 25" },
+        { "text": "18 and 30" },
+        { "text": "12 and 20" },
+        { "text": "21 and 35" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let numbers be 3x and 5x. 3x+5x=48 => 8x=48 => x=6. Numbers are 18 and 30.",
+      "order": 1
+    },
+    {
+      "questionText": "The ratio of boys to girls in a class is 7:5. If there are 28 boys, how many girls are there?",
+      "options": [
+        { "text": "15" },
+        { "text": "20" },
+        { "text": "25" },
+        { "text": "30" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "7 parts = 28 => 1 part = 4. Girls = 5*4 = 20.",
+      "order": 2
+    },
+    {
+      "questionText": "Two numbers are in the ratio 4:7. If the difference between them is 15, what is the smaller number?",
+      "options": [
+        { "text": "12" },
+        { "text": "16" },
+        { "text": "20" },
+        { "text": "24" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let numbers be 4x and 7x. 7x-4x=15 => 3x=15 => x=5. Smaller = 4*5 = 20.",
+      "order": 3
+    },
+    {
+      "questionText": "If A:B = 2:3 and B:C = 4:5, what is A:C?",
+      "options": [
+        { "text": "8:15" },
+        { "text": "2:5" },
+        { "text": "4:9" },
+        { "text": "6:10" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A:B = 2:3 = 8:12. B:C = 4:5 = 12:15. A:C = 8:15.",
+      "order": 4
+    },
+    {
+      "questionText": "The ratio of ages of A and B is 5:7. After 4 years, the ratio will be 3:4. What is A's present age?",
+      "options": [
+        { "text": "16 years" },
+        { "text": "20 years" },
+        { "text": "24 years" },
+        { "text": "28 years" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let ages be 5x and 7x. (5x+4)/(7x+4) = 3/4 => 20x+16 = 21x+12 => x=4. A's age = 5*4 = 20 years.",
+      "order": 5
+    },
+    {
+      "questionText": "If x:y = 3:4 and y:z = 8:9, what is x:z?",
+      "options": [
+        { "text": "2:3" },
+        { "text": "3:4" },
+        { "text": "4:5" },
+        { "text": "5:6" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "x:y = 3:4 = 6:8. y:z = 8:9. x:z = 6:9 = 2:3.",
+      "order": 6
+    },
+    {
+      "questionText": "The sum of two numbers is 72 and their ratio is 5:7. What is the larger number?",
+      "options": [
+        { "text": "30" },
+        { "text": "35" },
+        { "text": "40" },
+        { "text": "42" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let numbers be 5x and 7x. 12x=72 => x=6. Larger = 7*6 = 42.",
+      "order": 7
+    },
+    {
+      "questionText": "In a mixture of 60 liters, the ratio of milk to water is 3:2. How much milk is there?",
+      "options": [
+        { "text": "24 liters" },
+        { "text": "30 liters" },
+        { "text": "36 liters" },
+        { "text": "40 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Milk = 3/5 * 60 = 36 liters.",
+      "order": 8
+    },
+    {
+      "questionText": "If A:B = 3:5 and B:C = 6:7, what is A:C?",
+      "options": [
+        { "text": "18:35" },
+        { "text": "15:28" },
+        { "text": "12:25" },
+        { "text": "9:14" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A:B = 3:5 = 18:30. B:C = 6:7 = 30:35. A:C = 18:35.",
+      "order": 9
+    },
+    {
+      "questionText": "The ratio of salaries of A and B is 4:5. If A's salary is Rs. 20,000, what is B's salary?",
+      "options": [
+        { "text": "Rs. 22,000" },
+        { "text": "Rs. 24,000" },
+        { "text": "Rs. 25,000" },
+        { "text": "Rs. 28,000" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "4 parts = 20000 => 1 part = 5000. B = 5*5000 = Rs. 25,000.",
+      "order": 10
+    },
+    {
+      "questionText": "Two numbers are in the ratio 2:5. If 6 is added to each, the ratio becomes 1:2. What are the numbers?",
+      "options": [
+        { "text": "6 and 15" },
+        { "text": "8 and 20" },
+        { "text": "10 and 25" },
+        { "text": "12 and 30" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let numbers be 2x and 5x. (2x+6)/(5x+6) = 1/2 => 4x+12 = 5x+6 => x=6. Numbers are 12 and 30.",
+      "order": 11
+    },
+    {
+      "questionText": "If x:y = 5:6 and y:z = 3:4, what is x:z?",
+      "options": [
+        { "text": "5:8" },
+        { "text": "3:5" },
+        { "text": "4:7" },
+        { "text": "6:11" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "x:y = 5:6. y:z = 3:4 = 6:8. x:z = 5:8.",
+      "order": 12
+    },
+    {
+      "questionText": "The ratio of copper to zinc in an alloy is 7:5. If the alloy weighs 72 kg, how much copper is there?",
+      "options": [
+        { "text": "30 kg" },
+        { "text": "36 kg" },
+        { "text": "42 kg" },
+        { "text": "45 kg" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Copper = 7/12 * 72 = 42 kg.",
+      "order": 13
+    },
+    {
+      "questionText": "If A:B = 4:9 and B:C = 3:5, what is A:C?",
+      "options": [
+        { "text": "4:15" },
+        { "text": "12:35" },
+        { "text": "8:21" },
+        { "text": "16:45" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A:B = 4:9. B:C = 3:5 = 9:15. A:C = 4:15.",
+      "order": 14
+    },
+    {
+      "questionText": "The ratio of incomes of A and B is 3:2. If A's income is Rs. 36,000, what is B's income?",
+      "options": [
+        { "text": "Rs. 20,000" },
+        { "text": "Rs. 24,000" },
+        { "text": "Rs. 28,000" },
+        { "text": "Rs. 30,000" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "3 parts = 36000 => 1 part = 12000. B = 2*12000 = Rs. 24,000.",
+      "order": 15
+    },
+    {
+      "questionText": "The ratio of ages of A and B is 3:4. The sum of their ages is 49. What is A's age?",
+      "options": [
+        { "text": "18 years" },
+        { "text": "21 years" },
+        { "text": "24 years" },
+        { "text": "27 years" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let ages be 3x and 4x. 7x=49 => x=7. A's age = 3*7 = 21 years.",
+      "order": 16
+    },
+    {
+      "questionText": "If x:y = 7:9 and y:z = 5:6, what is x:z?",
+      "options": [
+        { "text": "35:54" },
+        { "text": "7:12" },
+        { "text": "14:27" },
+        { "text": "21:40" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "x:y = 7:9 = 35:45. y:z = 5:6 = 45:54. x:z = 35:54.",
+      "order": 17
+    },
+    {
+      "questionText": "The ratio of boys to girls in a school is 5:3. If there are 450 girls, how many boys are there?",
+      "options": [
+        { "text": "600" },
+        { "text": "650" },
+        { "text": "700" },
+        { "text": "750" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "3 parts = 450 => 1 part = 150. Boys = 5*150 = 750.",
+      "order": 18
+    },
+    {
+      "questionText": "Two numbers are in the ratio 3:8. If the difference between them is 25, what is the larger number?",
+      "options": [
+        { "text": "30" },
+        { "text": "35" },
+        { "text": "40" },
+        { "text": "45" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let numbers be 3x and 8x. 8x-3x=25 => 5x=25 => x=5. Larger = 8*5 = 40.",
+      "order": 19
+    },
+    {
+      "questionText": "If A:B = 2:5 and B:C = 10:11, what is A:C?",
+      "options": [
+        { "text": "4:11" },
+        { "text": "5:11" },
+        { "text": "6:11" },
+        { "text": "8:11" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A:B = 2:5 = 4:10. B:C = 10:11. A:C = 4:11.",
+      "order": 20
+    },
+    {
+      "questionText": "The ratio of milk to water in a mixture is 4:3. If the mixture contains 28 liters of milk, how much water is there?",
+      "options": [
+        { "text": "15 liters" },
+        { "text": "18 liters" },
+        { "text": "21 liters" },
+        { "text": "24 liters" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "4 parts = 28 => 1 part = 7. Water = 3*7 = 21 liters.",
+      "order": 21
+    },
+    {
+      "questionText": "If x:y = 3:2 and y:z = 4:3, what is x:z?",
+      "options": [
+        { "text": "1:1" },
+        { "text": "2:1" },
+        { "text": "3:2" },
+        { "text": "4:3" }
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "x:y = 3:2 = 6:4. y:z = 4:3. x:z = 6:3 = 2:1.",
+      "order": 22
+    },
+    {
+      "questionText": "The ratio of ages of A and B is 2:5. After 6 years, the ratio will be 1:2. What is B's present age?",
+      "options": [
+        { "text": "24 years" },
+        { "text": "26 years" },
+        { "text": "28 years" },
+        { "text": "30 years" }
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let ages be 2x and 5x. (2x+6)/(5x+6) = 1/2 => 4x+12 = 5x+6 => x=6. B's age = 5*6 = 30 years.",
+      "order": 23
+    },
+    {
+      "questionText": "If A:B = 5:6 and B:C = 4:7, what is A:C?",
+      "options": [
+        { "text": "10:21" },
+        { "text": "15:28" },
+        { "text": "20:35" },
+        { "text": "25:42" }
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A:B = 5:6 = 10:12. B:C = 4:7 = 12:21. A:C = 10:21.",
+      "order": 24
+    },
+    {
+      "questionText": "The ratio of incomes of A and B is 5:7. If B earns Rs. 35,000, what is A's income?",
+      "options": [
+        { "text": "Rs. 20,000" },
+        { "text": "Rs. 22,000" },
+        { "text": "Rs. 25,000" },
+        { "text": "Rs. 28,000" }
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "7 parts = 35000 => 1 part = 5000. A = 5*5000 = Rs. 25,000.",
+      "order": 25
+    }
+  ]
+}

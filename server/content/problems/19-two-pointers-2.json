@@ -1,0 +1,659 @@
+[
+  {
+    "title": "Remove Duplicates from Sorted Array",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft",
+      "Facebook"
+    ],
+    "description": "Given a sorted array of integers, return a new array with duplicates removed, keeping only the first occurrence of each value, preserving order.",
+    "examples": [
+      {
+        "input": "nums = [0,0,1,1,1,2,2,3,3,4]",
+        "output": "[0,1,2,3,4]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 3*10^4"
+    ],
+    "functionName": "removeDuplicatesFromSortedArray",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ],
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Remove Element",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an array of integers and a value val, return a new array with every occurrence of val removed, preserving the order of the remaining elements.",
+    "examples": [
+      {
+        "input": "nums = [3,2,2,3], val = 3",
+        "output": "[2,2]"
+      }
+    ],
+    "constraints": [
+      "0 <= nums.length <= 100"
+    ],
+    "functionName": "removeElement",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "val",
+        "type": "int"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            2,
+            2,
+            3
+          ],
+          3
+        ],
+        "expected": [
+          2,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            2,
+            2,
+            3,
+            0,
+            4,
+            2
+          ],
+          2
+        ],
+        "expected": [
+          0,
+          1,
+          3,
+          0,
+          4
+        ],
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Trapping Rain Water",
+    "difficulty": "Hard",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming",
+      "Stack"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Facebook"
+    ],
+    "description": "Given an array representing an elevation map where each value is the width-1 bar height, return the total amount of rainwater that can be trapped between the bars after raining.",
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6"
+      }
+    ],
+    "constraints": [
+      "1 <= height.length <= 2*10^4"
+    ],
+    "functionName": "trappingRainWater",
+    "params": [
+      {
+        "name": "height",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            0,
+            1,
+            0,
+            2,
+            1,
+            0,
+            1,
+            3,
+            2,
+            1,
+            2,
+            1
+          ]
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            2,
+            0,
+            3,
+            2,
+            5
+          ]
+        ],
+        "expected": 9,
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Squares of a Sorted Array",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "Given an array of integers sorted in non-decreasing order, return an array of the squares of each number, also sorted in non-decreasing order.",
+    "examples": [
+      {
+        "input": "nums = [-4,-1,0,3,10]",
+        "output": "[0,1,9,16,100]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^4"
+    ],
+    "functionName": "squaresOfSortedArray",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            -4,
+            -1,
+            0,
+            3,
+            10
+          ]
+        ],
+        "expected": [
+          0,
+          1,
+          9,
+          16,
+          100
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            -7,
+            -3,
+            2,
+            3,
+            11
+          ]
+        ],
+        "expected": [
+          4,
+          9,
+          9,
+          49,
+          121
+        ],
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Count Pairs With Given Sum",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers and a target sum, return the number of pairs (i, j) with i < j such that nums[i] + nums[j] equals target.",
+    "examples": [
+      {
+        "input": "nums = [1,1,1,1], target = 2",
+        "output": "6"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "countPairsWithGivenSum",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            5,
+            7,
+            -1
+          ],
+          6
+        ],
+        "expected": 2,
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Valid Triangle Number",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting",
+      "Greedy"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers representing side lengths, return the number of triplets that could form the three sides of a valid triangle.",
+    "examples": [
+      {
+        "input": "nums = [2,2,3,4]",
+        "output": "3"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 1000"
+    ],
+    "functionName": "validTriangleNumber",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Valid Palindrome II",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "description": "Given a string, determine whether it can become a palindrome after deleting at most one character.",
+    "examples": [
+      {
+        "input": "s = \"aba\"",
+        "output": "true"
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 10^5"
+    ],
+    "functionName": "validPalindromeII",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "aba"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "abca"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "abc"
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Sort Array By Parity",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers, rearrange it so that all even elements come before all odd elements. Any order within each group is acceptable, but this implementation groups by a stable two-pointer swap.",
+    "examples": [
+      {
+        "input": "nums = [3,1,2,4]",
+        "output": "[4,1,2,3]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 5000"
+    ],
+    "functionName": "sortArrayByParity",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            1,
+            2,
+            4
+          ]
+        ],
+        "expected": [
+          4,
+          2,
+          1,
+          3
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": [
+          0
+        ],
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Segregate Even and Odd (Stable)",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers, rearrange it so all even numbers come first followed by all odd numbers, preserving the relative order within each group.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,4,5,6]",
+        "output": "[2,4,6,1,3,5]"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 5000"
+    ],
+    "functionName": "segregateEvenAndOddStable",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          2,
+          4,
+          6,
+          1,
+          3,
+          5
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          2,
+          3,
+          1
+        ],
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Max Number of K-Sum Pairs",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "description": "Given an array of integers and an integer k, in each operation you may remove two numbers that sum to k. Return the maximum number of such operations you can perform.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,4], k = 5",
+        "output": "2"
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5"
+    ],
+    "functionName": "maxNumberOfKSumPairs",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          5
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            3,
+            1,
+            3,
+            4,
+            3
+          ],
+          6
+        ],
+        "expected": 1,
+        "isSample": true
+      }
+    ],
+    "isPublished": true
+  }
+]
