@@ -29,6 +29,40 @@ export const loginUser = createAsyncThunk('auth/login', async (payload, { reject
   }
 });
 
+// OAuth thunks — all 3 return the exact same {accessToken, user} shape as
+// loginUser, so they share loginUser's fulfilled/rejected reducer logic
+// below instead of duplicating it.
+
+export const googleSignIn = createAsyncThunk('auth/google', async ({ idToken }, { rejectWithValue }) => {
+  try {
+    const { data } = await authApi.googleSignIn(idToken);
+    return data.data;
+  } catch (err) {
+    return rejectWithValue(extractErrorMessage(err));
+  }
+});
+
+export const githubSignIn = createAsyncThunk('auth/github', async ({ code }, { rejectWithValue }) => {
+  try {
+    const { data } = await authApi.githubSignIn(code);
+    return data.data;
+  } catch (err) {
+    return rejectWithValue(extractErrorMessage(err));
+  }
+});
+
+export const linkedinSignIn = createAsyncThunk(
+  'auth/linkedin',
+  async ({ code, redirectUri }, { rejectWithValue }) => {
+    try {
+      const { data } = await authApi.linkedinSignIn(code, redirectUri);
+      return data.data;
+    } catch (err) {
+      return rejectWithValue(extractErrorMessage(err));
+    }
+  }
+);
+
 // Called once on app boot. Tries to silently restore a session from the
 // httpOnly refresh cookie — succeeds quietly if the user was already
 // logged in, fails quietly (falls back to guest) if not. Never shown as
@@ -47,6 +81,28 @@ export const logoutUser = createAsyncThunk('auth/logout', async () => {
   return null;
 });
 
+// Shared success/failure handlers — register/login/google/github/linkedin
+// all resolve to the same {accessToken, user} payload shape, so one pair
+// of reducer functions covers all 5 instead of repeating the same 6 lines
+// per provider.
+const handleAuthFulfilled = (state, action) => {
+  state.status = 'idle';
+  state.isAuthenticated = true;
+  state.user = action.payload.user;
+  state.role = action.payload.user.role;
+  setAccessToken(action.payload.accessToken);
+};
+
+const handleAuthRejected = (state, action) => {
+  state.status = 'error';
+  state.error = action.payload;
+};
+
+const handleAuthPending = (state) => {
+  state.status = 'loading';
+  state.error = null;
+};
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -54,37 +110,25 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       // register
-      .addCase(registerUser.pending, (state) => {
-        state.status = 'loading';
-        state.error = null;
-      })
-      .addCase(registerUser.fulfilled, (state, action) => {
-        state.status = 'idle';
-        state.isAuthenticated = true;
-        state.user = action.payload.user;
-        state.role = action.payload.user.role;
-        setAccessToken(action.payload.accessToken);
-      })
-      .addCase(registerUser.rejected, (state, action) => {
-        state.status = 'error';
-        state.error = action.payload;
-      })
+      .addCase(registerUser.pending, handleAuthPending)
+      .addCase(registerUser.fulfilled, handleAuthFulfilled)
+      .addCase(registerUser.rejected, handleAuthRejected)
       // login
-      .addCase(loginUser.pending, (state) => {
-        state.status = 'loading';
-        state.error = null;
-      })
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.status = 'idle';
-        state.isAuthenticated = true;
-        state.user = action.payload.user;
-        state.role = action.payload.user.role;
-        setAccessToken(action.payload.accessToken);
-      })
-      .addCase(loginUser.rejected, (state, action) => {
-        state.status = 'error';
-        state.error = action.payload;
-      })
+      .addCase(loginUser.pending, handleAuthPending)
+      .addCase(loginUser.fulfilled, handleAuthFulfilled)
+      .addCase(loginUser.rejected, handleAuthRejected)
+      // google
+      .addCase(googleSignIn.pending, handleAuthPending)
+      .addCase(googleSignIn.fulfilled, handleAuthFulfilled)
+      .addCase(googleSignIn.rejected, handleAuthRejected)
+      // github
+      .addCase(githubSignIn.pending, handleAuthPending)
+      .addCase(githubSignIn.fulfilled, handleAuthFulfilled)
+      .addCase(githubSignIn.rejected, handleAuthRejected)
+      // linkedin
+      .addCase(linkedinSignIn.pending, handleAuthPending)
+      .addCase(linkedinSignIn.fulfilled, handleAuthFulfilled)
+      .addCase(linkedinSignIn.rejected, handleAuthRejected)
       // bootstrap (silent)
       .addCase(bootstrapSession.fulfilled, (state, action) => {
         state.isAuthenticated = true;

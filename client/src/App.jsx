@@ -8,6 +8,8 @@ import SignupPage from './features/auth/SignupPage';
 import DashboardPage from './features/dashboard/DashboardPage';
 import ProblemsPage from './features/problems/ProblemsPage';
 import HomePage from './features/home/HomePage';
+import GithubCallbackPage from './features/auth/GithubCallbackPage';
+import LinkedinCallbackPage from './features/auth/LinkedinCallbackPage';
 
 
 // Monaco editor and the admin console are heavy — code-split so the
@@ -34,6 +36,9 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
+
+         <Route path="/auth/github/callback" element={<GithubCallbackPage />} />
+            <Route path="/auth/linkedin/callback" element={<LinkedinCallbackPage />} />
 
       <Route element={<MainLayout />}>
 
