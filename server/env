@@ -1,0 +1,68 @@
+NODE_ENV=development
+PORT=5000
+
+# MongoDB Atlas connection string — Atlas dashboard > Connect > Drivers.
+MONGODB_URI=mongodb://127.0.0.1:27017/jeetcode
+
+# Generate strong random secrets, e.g.: node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+JWT_ACCESS_SECRET=1ef9127dc833471ae6b89ab6120277f58749f5add1adb8bdfdcca0fde8f988539835b29b33a8b44b03c9913b0ab833b0
+JWT_REFRESH_SECRET=16f939ab7a84562f015683813463c5e7f94efd553829ff2eab9b3f6da2bedb773ac31fdb77d87a5fa34a0e76f4a49c5a
+JWT_ACCESS_EXPIRY=15m
+JWT_REFRESH_EXPIRY=30d
+
+# Your deployed frontend URL (Vercel/Netlify/etc). Required for CORS + cookies.
+CLIENT_ORIGIN=http://localhost:5173
+
+# Judge0 — free public instance by default.
+JUDGE0_API_URL=https://ce.judge0.com
+JUDGE0_API_KEY=
+JUDGE0_API_HOST=
+
+# Optional in dev (submissions process inline without it).
+REDIS_URL=
+
+# AI hint drawer configuration
+GEMINI_API_KEY=AIzaSyDmusYYVWI5MudcACvEa6u3MX58uZFKbVc
+GEMINI_MODEL=gemini-2.0-flash
+
+# ANTHROPIC_API_KEY is used only as a fallback if GEMINI_API_KEY is unset.
+ANTHROPIC_API_KEY=
+ANTHROPIC_MODEL=claude-haiku-4-5-20251001
+
+#SEEDING DATA TO MONGODB USING SCRIPT
+SEED_ADMIN_USER_ID=6a783d95eb0d786013dc6f84
+
+# --- OAuth — Google Sign-In ---
+# Google Cloud Console > APIs & Services > Credentials > OAuth Client ID
+# (type: Web application). Same value must also go in client/.env as
+# VITE_GOOGLE_CLIENT_ID.
+GOOGLE_CLIENT_ID=138244959721-igup48jhbuf8l11s995nsqgf2b6ee7b3.apps.googleusercontent.com
+
+# --- OAuth — GitHub Sign-In ---
+# GitHub > Settings > Developer settings > OAuth Apps > New OAuth App.
+# Callback URL: http://localhost:5173/auth/github/callback (dev).
+# CLIENT_ID also needed in client/.env as VITE_GITHUB_CLIENT_ID — the
+# secret stays server-side only, never in client/.env.
+GITHUB_CLIENT_ID=Ov23li0tabLftOfeMapS
+GITHUB_CLIENT_SECRET=5ea20808a40693dfd980de00ba0cdd90ff866794
+
+# --- OAuth — LinkedIn Sign-In (Sign In with LinkedIn using OpenID Connect) ---
+# linkedin.com/developers/apps > your app > Products > request
+# "Sign In with LinkedIn using OpenID Connect" (needs approval first).
+# Callback URL: http://localhost:5173/auth/linkedin/callback (dev).
+LINKEDIN_CLIENT_ID=
+LINKEDIN_CLIENT_SECRET=
+
+# --- Razorpay billing (Pro subscriptions) ---
+# Dashboard > Settings > API Keys. Use test mode keys until launch.
+RAZORPAY_KEY_ID=
+RAZORPAY_KEY_SECRET=
+
+# Dashboard > Settings > Webhooks > create endpoint pointing at
+# POST /api/billing/webhook, then copy the secret shown there.
+RAZORPAY_WEBHOOK_SECRET=
+
+# Dashboard > Subscriptions > Plans > create one Monthly, one Yearly plan
+# first — you need the plan_id (starts "plan_") before this works.
+RAZORPAY_PLAN_ID_MONTHLY=
+RAZORPAY_PLAN_ID_YEARLY=

@@ -22,27 +22,34 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     },
-    passwordHash: { type: String, required: true, select: false },
+
+    // Not required for OAuth-only accounts (Google/GitHub/LinkedIn sign-in
+    // never sets a password). Required only when the user has no provider
+    // id at all — i.e. classic email+password signup.
+    passwordHash: {
+      type: String,
+      select: false,
+      required: function () {
+        return !this.googleId && !this.githubId && !this.linkedinId;
+      },
+    },
+
+    // --- OAuth provider ids ---
+    // unique + sparse: many users will have none of these, and `sparse`
+    // means Mongo only enforces uniqueness among documents where the field
+    // actually exists — so multiple password-only users (no googleId at
+    // all) don't collide on a shared "null".
+    googleId: { type: String, unique: true, sparse: true },
+    githubId: { type: String, unique: true, sparse: true },
+    linkedinId: { type: String, unique: true, sparse: true },
+    avatarUrl: { type: String, default: null },
+
     role: { type: String, enum: ['learner', 'admin'], default: 'learner', index: true },
 
     // Hash of the currently-valid refresh token. Rotated on every refresh,
     // cleared on logout — lets us revoke a stolen refresh token server-side
     // without maintaining a full session store.
     refreshTokenHash: { type: String, select: false, default: null },
-
-    // --- Pro subscription (Razorpay) ---
-    // isPro is the fast-path flag most reads check. proExpiresAt is the
-    // safety net: even if a cancel/charge-failure webhook is ever missed,
-    // checkProAccess.middleware.js treats an expired date as no access
-    // regardless of what isPro says, so access can't get stuck "on".
-    isPro: { type: Boolean, default: false, index: true },
-    proPlan: { type: String, enum: ['monthly', 'yearly', null], default: null },
-    proExpiresAt: { type: Date, default: null },
-    // Internal billing IDs — never exposed via toPublicJSON, select: false
-    // like the token-hash fields above so a stray `User.find()` elsewhere
-    // in the app doesn't accidentally leak them either.
-    razorpayCustomerId: { type: String, default: null, select: false },
-    razorpaySubscriptionId: { type: String, default: null, select: false },
 
     // --- Progress / streak counters ---
     // Denormalized on the user doc (rather than aggregated from Submissions
@@ -68,6 +75,9 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.methods.comparePassword = function (plain) {
+  // OAuth-only accounts have no passwordHash — treat as "never matches"
+  // instead of letting bcrypt.compare throw on an undefined hash.
+  if (!this.passwordHash) return Promise.resolve(false);
   return bcrypt.compare(plain, this.passwordHash);
 };
 
@@ -78,9 +88,7 @@ userSchema.methods.toPublicJSON = function () {
     handle: this.handle,
     email: this.email,
     role: this.role,
-    isPro: this.isPro,
-    proPlan: this.proPlan,
-    proExpiresAt: this.proExpiresAt,
+    avatarUrl: this.avatarUrl,
     streakDays: this.streakDays,
     longestStreak: this.longestStreak,
     easySolved: this.easySolved,

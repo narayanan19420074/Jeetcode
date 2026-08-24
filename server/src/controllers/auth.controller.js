@@ -1,34 +1,10 @@
-import crypto from 'node:crypto';
 import bcrypt from 'bcryptjs';
 import { User } from '../models/User.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
-import { signAccessToken, signRefreshToken, verifyRefreshToken } from '../utils/tokenUtils.js';
-import { env, isProd } from '../config/env.js';
-
-const hashToken = (token) => crypto.createHash('sha256').update(token).digest('hex');
-
-const REFRESH_COOKIE = 'jc_refresh';
-const cookieOptions = {
-  httpOnly: true,
-  secure: isProd,
-  sameSite: isProd ? 'none' : 'lax', // 'none' needed cross-site in prod (separate frontend/backend origins on Render)
-  maxAge: 30 * 24 * 60 * 60 * 1000,
-  path: '/api/auth',
-};
-
-async function issueTokens(res, user) {
-  const payload = { sub: user._id.toString(), role: user.role, handle: user.handle };
-  const accessToken = signAccessToken(payload);
-  const refreshToken = signRefreshToken(payload);
-
-  user.refreshTokenHash = hashToken(refreshToken);
-  await user.save();
-
-  res.cookie(REFRESH_COOKIE, refreshToken, cookieOptions);
-  return accessToken;
-}
+import { verifyRefreshToken } from '../utils/tokenUtils.js';
+import { issueTokens, hashToken, REFRESH_COOKIE } from '../services/authToken.service.js';
 
 export const register = asyncHandler(async (req, res) => {
   const { name, handle, email, password } = req.body;
