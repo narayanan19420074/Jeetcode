@@ -1,3 +1,4 @@
+import bcrypt from 'bcryptjs';
 import { User } from '../models/User.js';
 import { Submission } from '../models/Submission.js';
 import { ApiError } from '../utils/ApiError.js';
@@ -41,4 +42,41 @@ export const toggleBookmark = asyncHandler(async (req, res) => {
   else user.bookmarks.push(problemId);
   await user.save();
   new ApiResponse(200, { bookmarked: idx < 0 }).send(res);
+});
+
+// PATCH /api/users/me/profile — body: { name?, avatarUrl? }. Either field
+// is optional so the Settings form can save just one at a time if needed.
+export const updateProfile = asyncHandler(async (req, res) => {
+  const { name, avatarUrl } = req.body;
+  const user = req.fullUser;
+
+  if (name !== undefined) user.name = name;
+  if (avatarUrl !== undefined) user.avatarUrl = avatarUrl || null;
+
+  await user.save();
+  new ApiResponse(200, user.toPublicJSON(), 'Profile updated').send(res);
+});
+
+// PATCH /api/users/me/password — body: { currentPassword?, newPassword }.
+// currentPassword is required UNLESS the account has no password yet
+// (OAuth-only signup) — in that case this call sets the first password,
+// letting an OAuth user add email+password login without a separate flow.
+export const changePassword = asyncHandler(async (req, res) => {
+  const { currentPassword, newPassword } = req.body;
+
+  // req.fullUser (from loadFullUser) won't have passwordHash selected
+  // (schema default select: false) — re-fetch it explicitly here.
+  const user = await User.findById(req.fullUser._id).select('+passwordHash');
+
+  if (user.passwordHash) {
+    if (!currentPassword) {
+      throw ApiError.badRequest('Current password is required to change your password');
+    }
+    const matches = await user.comparePassword(currentPassword);
+    if (!matches) throw ApiError.unauthorized('Current password is incorrect');
+  }
+
+  user.passwordHash = await bcrypt.hash(newPassword, 12);
+  await user.save();
+  new ApiResponse(200, null, user.passwordHash ? 'Password updated' : 'Password set').send(res);
 });

@@ -27,7 +27,14 @@ export async function exchangeGithubCode(code) {
   const tokenData = await tokenRes.json();
 
   if (tokenData.error || !tokenData.access_token) {
-    throw new Error(tokenData.error_description || 'GitHub token exchange failed');
+    // Surface GitHub's actual error (e.g. "bad_verification_code",
+    // "redirect_uri_mismatch") instead of a generic message — this is
+    // what shows up server-side in the thrown error and helps pinpoint
+    // exactly which of the 3 usual causes (code reused, secret mismatch,
+    // redirect_uri mismatch) it actually is.
+    throw new Error(
+      `GitHub token exchange failed: ${tokenData.error || 'no access_token in response'} — ${tokenData.error_description || 'no description'}`
+    );
   }
   const accessToken = tokenData.access_token;
 

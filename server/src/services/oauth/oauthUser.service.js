@@ -30,6 +30,12 @@ async function generateUniqueHandle(email) {
  * later sign in with Google/GitHub using the same email address). If
  * neither exists, creates a brand-new user.
  *
+ * On every sign-in — both the direct provider-id match and the
+ * email-link fallback — `name`/`avatarUrl` are synced to the freshest
+ * values from the provider payload. Without this, a user's name/photo
+ * would freeze at whatever they were on first signup, even if the user
+ * changes their Google display name or profile photo later.
+ *
  * `providerField` is generic ('googleId' | 'githubId' | 'linkedinId') so
  * every provider's controller calls this exact same function — adding
  * GitHub or LinkedIn later means writing a verify function, not a second
@@ -38,17 +44,35 @@ async function generateUniqueHandle(email) {
 export async function findOrCreateOAuthUser({ providerField, providerId, email, name, avatarUrl }) {
   const normalizedEmail = email.toLowerCase();
 
+  // Path 1: already linked to this provider — sync latest profile data.
   let user = await User.findOne({ [providerField]: providerId });
-  if (user) return user;
+  if (user) {
+    let changed = false;
+    if (name && user.name !== name) {
+      user.name = name;
+      changed = true;
+    }
+    if (avatarUrl && user.avatarUrl !== avatarUrl) {
+      user.avatarUrl = avatarUrl;
+      changed = true;
+    }
+    if (changed) await user.save();
+    return user;
+  }
 
+  // Path 2: not linked yet, but a user with this email already exists
+  // (e.g. signed up with a password originally) — link this provider id
+  // and sync profile data too.
   user = await User.findOne({ email: normalizedEmail });
   if (user) {
     user[providerField] = providerId;
-    if (!user.avatarUrl && avatarUrl) user.avatarUrl = avatarUrl;
+    if (name && user.name !== name) user.name = name;
+    if (avatarUrl && user.avatarUrl !== avatarUrl) user.avatarUrl = avatarUrl;
     await user.save();
     return user;
   }
 
+  // Path 3: brand-new user.
   const handle = await generateUniqueHandle(normalizedEmail);
   user = await User.create({
     name: name || handle,
