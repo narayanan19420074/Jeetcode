@@ -14,17 +14,8 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  TextField,
-  InputAdornment,
-  ToggleButtonGroup,
-  ToggleButton,
   Button,
-  CircularProgress,
-  Alert,
-  Pagination,
 } from '@mui/material';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
@@ -32,12 +23,12 @@ import DifficultyChip from '../../components/DifficultyChip';
 import ProgressRing from '../../components/ProgressRing';
 import ActivityHeatmap from '../../components/ActivityHeatmap';
 import FeatureTile from '../../components/FeatureTile';
+import ProblemExplorer from '../../components/ProblemExplorer';
 import { problemsApi } from '../../api/problemsApi';
 import { usersApi } from '../../api/usersApi';
 import { submissionsApi } from '../../api/submissionsApi';
-import { extractErrorMessage } from '../../api/apiClient';
 
-const PROBLEMS_PAGE_SIZE = 10;
+const DASHBOARD_PROBLEMS_PAGE_SIZE = 10;
 
 const statusColor = {
   Accepted: 'success',
@@ -61,19 +52,14 @@ export default function DashboardPage() {
   const navigate = useNavigate();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
 
-  const [problems, setProblems] = useState([]);
-  const [problemsPagination, setProblemsPagination] = useState({ page: 1, totalPages: 1, total: 0 });
-  const [problemsLoading, setProblemsLoading] = useState(true);
-  const [problemsError, setProblemsError] = useState(null);
-
   const [activity, setActivity] = useState([]);
   const [submissions, setSubmissions] = useState([]);
 
   // Featured problem + per-difficulty totals (for progress ring max values).
-  // Deliberately NOT reusing the paginated table's `problems` state — that
-  // holds one page of 10, and a large one-shot `limit: 500` fetch risks
-  // silently failing if the backend caps the limit param. Small limit:1
-  // requests avoid both problems.
+  // Deliberately NOT reusing ProblemExplorer's internal list state — that's
+  // a filtered/paginated view, and a large one-shot `limit: 500` fetch
+  // risks silently failing if the backend caps the limit param. Small
+  // limit:1 requests avoid both problems.
   const [featured, setFeatured] = useState(null);
   const [difficultyTotals, setDifficultyTotals] = useState({ Easy: 1, Medium: 1, Hard: 1 });
 
@@ -101,34 +87,6 @@ export default function DashboardPage() {
       })
       .catch(() => {});
   }, []);
-
-  const [search, setSearch] = useState('');
-  const [difficultyFilter, setDifficultyFilter] = useState('All');
-  const [problemsPage, setProblemsPage] = useState(1);
-
-  useEffect(() => {
-    setProblemsLoading(true);
-    problemsApi
-      .list({
-        page: problemsPage,
-        limit: PROBLEMS_PAGE_SIZE,
-        difficulty: difficultyFilter === 'All' ? undefined : difficultyFilter,
-        search: search || undefined,
-      })
-      .then(({ data }) => {
-        setProblems(data.data.items);
-        setProblemsPagination(data.data.pagination);
-        setProblemsError(null);
-      })
-      .catch((err) => setProblemsError(extractErrorMessage(err)))
-      .finally(() => setProblemsLoading(false));
-  }, [problemsPage, difficultyFilter, search]);
-
-  // Reset to page 1 whenever a filter changes — otherwise you can get stuck
-  // on page 4 of "All" after switching to "Hard", which has fewer pages.
-  useEffect(() => {
-    setProblemsPage(1);
-  }, [difficultyFilter, search]);
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -281,98 +239,19 @@ export default function DashboardPage() {
         </Grid>
       </Grid>
 
-      {/* Problem explorer */}
-      <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, mt: 3 }}>
-        <Stack
-          direction={{ xs: 'column', sm: 'row' }}
-          spacing={2}
-          sx={{ alignItems: { sm: 'center' }, justifyContent: 'space-between', mb: 2 }}
-        >
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: 700 }}>
-              Problem Explorer
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              {problemsPagination.total} problems
-            </Typography>
-          </Box>
-          <Stack direction="row" spacing={1.5} sx={{ flexWrap: 'wrap' }}>
-            <TextField
-              size="small"
-              placeholder="Search problems"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              InputProps={{ startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> }}
-            />
-            <ToggleButtonGroup size="small" exclusive value={difficultyFilter} onChange={(e, v) => v && setDifficultyFilter(v)}>
-              <ToggleButton value="All">All</ToggleButton>
-              <ToggleButton value="Easy">Easy</ToggleButton>
-              <ToggleButton value="Medium">Medium</ToggleButton>
-              <ToggleButton value="Hard">Hard</ToggleButton>
-            </ToggleButtonGroup>
-          </Stack>
-        </Stack>
-
-        {problemsError && <Alert severity="error" sx={{ mb: 2 }}>{problemsError}</Alert>}
-
-        {problemsLoading ? (
-          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
-            <CircularProgress size={28} />
-          </Box>
-        ) : problems.length === 0 ? (
-          <Typography variant="body2" color="text.secondary" sx={{ py: 2 }}>
-            No problems match your filters yet.
-          </Typography>
-        ) : (
-          <>
-            <Table size="small">
-              <TableHead>
-                <TableRow>
-                  <TableCell padding="checkbox" />
-                  <TableCell>Title</TableCell>
-                  <TableCell>Difficulty</TableCell>
-                  <TableCell>Companies</TableCell>
-                  <TableCell align="right">Acceptance</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {problems.map((p) => (
-                  <TableRow key={p._id} hover sx={{ cursor: 'pointer' }} onClick={() => navigate(`/workspace/${p.slug}`)}>
-                    <TableCell padding="checkbox">
-                      {p.solvedByMe && <CheckCircleRoundedIcon fontSize="small" sx={{ color: 'success.main' }} />}
-                    </TableCell>
-                    <TableCell sx={{ fontWeight: 600 }}>{p.title}</TableCell>
-                    <TableCell>
-                      <DifficultyChip difficulty={p.difficulty} />
-                    </TableCell>
-                    <TableCell>
-                      <Stack direction="row" spacing={0.5} sx={{ flexWrap: 'wrap' }}>
-                        {(p.companies || []).slice(0, 2).map((c) => (
-                          <Chip key={c} label={c} size="small" variant="outlined" />
-                        ))}
-                      </Stack>
-                    </TableCell>
-                    <TableCell align="right">{p.acceptanceRate ?? 0}%</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-
-            {problemsPagination.totalPages > 1 && (
-              <Stack sx={{ alignItems: 'center', mt: 3 }}>
-                <Pagination
-                  count={problemsPagination.totalPages}
-                  page={problemsPage}
-                  onChange={(e, v) => setProblemsPage(v)}
-                  color="primary"
-                  shape="rounded"
-                  size="small"
-                />
-              </Stack>
-            )}
-          </>
-        )}
-      </Paper>
+      {/* Problem explorer — same shared component (and same filters: search,
+          Pick One, difficulty, solved status, sort, pattern/company rows,
+          mobile cards with lock icons) as the full /problems page, so this
+          panel and that page can never quietly drift apart again. */}
+      <Box sx={{ mt: 3 }}>
+        <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.5 }}>
+          Problem Explorer
+        </Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+          Same filters as the full Problems page, right here on your dashboard.
+        </Typography>
+        <ProblemExplorer pageSize={DASHBOARD_PROBLEMS_PAGE_SIZE} />
+      </Box>
 
       {/* Recent submissions */}
       {isAuthenticated && (

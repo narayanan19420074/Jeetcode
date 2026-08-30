@@ -23,6 +23,10 @@ const AptitudePracticePage = lazy(() => import('./features/aptitude/AptitudePrac
 const AptitudeResultsPage = lazy(() => import('./features/aptitude/AptitudeResultsPage'));
 const VisualizerPage = lazy(() => import('./features/visualizer/VisualizerPage'));
 const PricingPage = lazy(() => import('./features/billing/PricingPage'));
+const SettingsPage = lazy(() => import('./features/settings/SettingsPage'));
+const LearnHomePage = lazy(() => import('./features/learn/LearnHomePage'));
+const LearnTopicPage = lazy(() => import('./features/learn/LearnTopicPage'));
+const PracticePage = lazy(() => import('./features/learn/PracticePage'));
 
 const RouteFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -94,6 +98,10 @@ export default function App() {
         element={<Suspense fallback={<RouteFallback />}><AptitudeResultsPage /></Suspense>}
       />
       <Route path="/pricing" element={<Suspense fallback={<RouteFallback />}><PricingPage /></Suspense>} />
+      <Route path="/settings" element={<Suspense fallback={<RouteFallback />}><SettingsPage /></Suspense>} />
+      <Route path="/learn" element={<Suspense fallback={<RouteFallback />}><LearnHomePage /></Suspense>} />
+      <Route path="/learn/:topicSlug" element={<Suspense fallback={<RouteFallback />}><LearnTopicPage /></Suspense>} />
+      <Route path="/learn/:topicSlug/practice" element={<Suspense fallback={<RouteFallback />}><PracticePage /></Suspense>} />
       </Route>
       
 

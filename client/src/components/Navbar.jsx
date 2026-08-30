@@ -51,6 +51,12 @@ export default function Navbar() {
     navigate('/');
   };
 
+  const handleSettingsClick = () => {
+    setAnchorEl(null);
+    setMobileOpen(false);
+    navigate('/settings');
+  };
+
   // Same link set powers both the desktop inline buttons and the mobile
   // drawer list — one array, two renderings, so a new nav link never
   // needs to be added in two places and drift out of sync.
@@ -58,6 +64,7 @@ export default function Navbar() {
     { to: '/dashboard', label: 'Dashboard' },
     { to: '/problems', label: 'Problems' },
     { to: '/visualizer', label: 'Visualizer' },
+    { to: '/learn', label: 'Learn' },
     ...(role === 'admin' ? [{ to: '/admin', label: 'Admin' }] : []),
     { to: '/pricing', label: 'Pricing' },
   ];
@@ -152,7 +159,7 @@ export default function Navbar() {
               </Box>
               <Divider />
               <MenuItem onClick={() => setAnchorEl(null)}>Profile</MenuItem>
-              <MenuItem onClick={() => setAnchorEl(null)}>Settings</MenuItem>
+              <MenuItem onClick={handleSettingsClick}>Settings</MenuItem>
               <Divider />
               <MenuItem onClick={handleLogout}>Log out</MenuItem>
             </Menu>

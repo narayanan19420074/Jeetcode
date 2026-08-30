@@ -106,7 +106,16 @@ const handleAuthPending = (state) => {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    // Patches the logged-in user object in place — used by the Settings
+    // page after a successful profile update, so the Navbar/dashboard
+    // reflect the new name/avatar immediately without a full re-login.
+    userUpdated(state, action) {
+      if (state.user) {
+        state.user = { ...state.user, ...action.payload };
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       // register
@@ -153,4 +162,5 @@ const authSlice = createSlice({
   },
 });
 
+export const { userUpdated } = authSlice.actions;
 export default authSlice.reducer;
