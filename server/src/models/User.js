@@ -51,6 +51,18 @@ const userSchema = new mongoose.Schema(
     // without maintaining a full session store.
     refreshTokenHash: { type: String, select: false, default: null },
 
+    // --- Pro / license status ---
+    // Denormalized here (rather than always joining License/CompanyProgress
+    // collections) because "is this user Pro" is checked on nearly every
+    // gated request (checkProAccess middleware) — one flag read beats a
+    // lookup on every problem list/detail fetch. The License collection
+    // (see License.js) remains the source of truth / audit trail for HOW
+    // a user became Pro (Razorpay subscription vs. a redeemed license key);
+    // this field is just the fast-path cache of that state.
+    isPro: { type: Boolean, default: false },
+    proExpiresAt: { type: Date, default: null }, // null = no expiry (e.g. a lifetime license key)
+    proPlan: { type: String, enum: ['monthly', 'yearly', 'license-key', null], default: null },
+
     // --- Progress / streak counters ---
     // Denormalized on the user doc (rather than aggregated from Submissions
     // on every dashboard load) because dashboard reads vastly outnumber
@@ -89,6 +101,9 @@ userSchema.methods.toPublicJSON = function () {
     email: this.email,
     role: this.role,
     avatarUrl: this.avatarUrl,
+    isPro: this.isPro,
+    proExpiresAt: this.proExpiresAt,
+    proPlan: this.proPlan,
     streakDays: this.streakDays,
     longestStreak: this.longestStreak,
     easySolved: this.easySolved,

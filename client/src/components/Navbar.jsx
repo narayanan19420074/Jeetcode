@@ -24,9 +24,11 @@ import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
+import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
 import { toggleThemeMode } from '../app/uiSlice';
 import { logoutUser } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
+import ActivateLicenseModal from '../components/ActivateLicenseModal';
 
 const initialsFromName = (name) =>
   (name || 'U')
@@ -43,6 +45,7 @@ export default function Navbar() {
   const { isAuthenticated, user, role } = useSelector((s) => s.auth);
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [licenseModalOpen, setLicenseModalOpen] = useState(false);
 
   const handleLogout = async () => {
     setAnchorEl(null);
@@ -55,6 +58,12 @@ export default function Navbar() {
     setAnchorEl(null);
     setMobileOpen(false);
     navigate('/settings');
+  };
+
+  const handleActivateLicenseClick = () => {
+    setAnchorEl(null);
+    setMobileOpen(false);
+    setLicenseModalOpen(true);
   };
 
   // Same link set powers both the desktop inline buttons and the mobile
@@ -160,6 +169,12 @@ export default function Navbar() {
               <Divider />
               <MenuItem onClick={() => setAnchorEl(null)}>Profile</MenuItem>
               <MenuItem onClick={handleSettingsClick}>Settings</MenuItem>
+              {!user?.isPro && (
+                <MenuItem onClick={handleActivateLicenseClick}>
+                  <VpnKeyRoundedIcon fontSize="small" sx={{ mr: 1.5, color: 'text.secondary' }} />
+                  Activate License
+                </MenuItem>
+              )}
               <Divider />
               <MenuItem onClick={handleLogout}>Log out</MenuItem>
             </Menu>
@@ -208,6 +223,12 @@ export default function Navbar() {
                 <ListItemText primary={link.label} primaryTypographyProps={{ fontWeight: 600 }} />
               </ListItemButton>
             ))}
+            {isAuthenticated && !user?.isPro && (
+              <ListItemButton onClick={handleActivateLicenseClick}>
+                <VpnKeyRoundedIcon fontSize="small" sx={{ mr: 1.5, color: 'text.secondary' }} />
+                <ListItemText primary="Activate License" primaryTypographyProps={{ fontWeight: 600 }} />
+              </ListItemButton>
+            )}
           </List>
 
           {!isAuthenticated && (
@@ -227,6 +248,8 @@ export default function Navbar() {
           )}
         </Box>
       </Drawer>
+
+      <ActivateLicenseModal open={licenseModalOpen} onClose={() => setLicenseModalOpen(false)} />
     </AppBar>
   );
 }

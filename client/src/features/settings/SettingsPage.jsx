@@ -12,10 +12,14 @@ import {
   Avatar,
   CircularProgress,
   Grid,
+  Chip,
 } from '@mui/material';
+import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
+import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { usersApi } from '../../api/usersApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from '../auth/authSlice';
+import ActivateLicenseModal from '../../components/ActivateLicenseModal';
 
 const initialsFromName = (name) =>
   (name || 'U')
@@ -55,6 +59,9 @@ export default function SettingsPage() {
   const [passwordStatus, setPasswordStatus] = useState('idle');
   const [passwordError, setPasswordError] = useState(null);
   const [passwordSuccessMsg, setPasswordSuccessMsg] = useState(null);
+
+  // --- License activation ---
+  const [licenseModalOpen, setLicenseModalOpen] = useState(false);
 
   const handleProfileSubmit = async (e) => {
     e.preventDefault();
@@ -182,6 +189,44 @@ export default function SettingsPage() {
           )}
         </Paper>
 
+        {/* --- License / Pro status --- */}
+        <Paper elevation={0} variant="outlined" sx={{ p: { xs: 3, sm: 4 }, borderRadius: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
+            License
+          </Typography>
+
+          {user.isPro ? (
+            <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
+              <Chip
+                icon={<WorkspacePremiumRoundedIcon />}
+                label="Pro active"
+                color="warning"
+                sx={{ fontWeight: 700 }}
+              />
+              <Typography variant="body2" color="text.secondary">
+                {user.proPlan === 'license-key'
+                  ? 'Activated via license key'
+                  : `${user.proPlan === 'yearly' ? 'Yearly' : 'Monthly'} subscription`}
+                {user.proExpiresAt && ` — renews/expires ${new Date(user.proExpiresAt).toLocaleDateString()}`}
+              </Typography>
+            </Stack>
+          ) : (
+            <Stack spacing={2} alignItems="flex-start">
+              <Typography variant="body2" color="text.secondary">
+                Have a license key? Activate it here to unlock Pro instantly.
+              </Typography>
+              <Button
+                variant="outlined"
+                startIcon={<VpnKeyRoundedIcon />}
+                onClick={() => setLicenseModalOpen(true)}
+                sx={{ fontWeight: 600 }}
+              >
+                Activate license
+              </Button>
+            </Stack>
+          )}
+        </Paper>
+
         {/* --- Password --- */}
         <Paper elevation={0} variant="outlined" sx={{ p: { xs: 3, sm: 4 }, borderRadius: 3 }}>
           <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
@@ -242,6 +287,8 @@ export default function SettingsPage() {
           </Box>
         </Paper>
       </Stack>
+
+      <ActivateLicenseModal open={licenseModalOpen} onClose={() => setLicenseModalOpen(false)} />
     </Box>
   );
 }
