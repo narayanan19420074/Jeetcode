@@ -8,6 +8,7 @@ import aiRoutes from './ai.routes.js';
 import aptitudeRoutes from './aptitude.routes.js'; 
 import billingRoutes from './billing.routes.js';
 import licenseRoutes from './license.routes.js';
+import prepRoutes from './prep.routes.js';
 
 const router = Router();
 
@@ -22,6 +23,7 @@ router.use('/admin', adminRoutes);
 router.use('/ai', aiRoutes);
 router.use('/aptitude', aptitudeRoutes); 
 router.use('/licenses', licenseRoutes);
+router.use('/prep', prepRoutes);
 
 
 export default router;

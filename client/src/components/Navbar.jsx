@@ -18,6 +18,7 @@ import {
   List,
   ListItemButton,
   ListItemText,
+  ListSubheader,
 } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
@@ -25,6 +26,7 @@ import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import { toggleThemeMode } from '../app/uiSlice';
 import { logoutUser } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
@@ -38,12 +40,31 @@ const initialsFromName = (name) =>
     .map((p) => p[0]?.toUpperCase())
     .join('');
 
+// Primary links — core product flows the user hits often. Kept inline on
+// desktop so they're always one click away.
+const PRIMARY_LINKS = [
+  { to: '/dashboard', label: 'Dashboard' },
+  { to: '/problems', label: 'Problems' },
+  { to: '/prep', label: 'Prep by Company' },
+];
+
+// Secondary/reference links — browsed occasionally, not core to the daily
+// loop. Grouped under an "Explore" dropdown on desktop so the toolbar
+// doesn't sprawl to 7 buttons; still one click away, just not inline.
+const EXPLORE_LINKS = [
+  { to: '/aptitude', label: 'Aptitude Practice' },
+  { to: '/visualizer', label: 'Visualizer' },
+  { to: '/learn', label: 'Learn' },
+  { to: '/pricing', label: 'Pricing' },
+];
+
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const mode = useSelector((s) => s.ui.mode);
   const { isAuthenticated, user, role } = useSelector((s) => s.auth);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [exploreAnchorEl, setExploreAnchorEl] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [licenseModalOpen, setLicenseModalOpen] = useState(false);
 
@@ -66,17 +87,17 @@ export default function Navbar() {
     setLicenseModalOpen(true);
   };
 
-  // Same link set powers both the desktop inline buttons and the mobile
-  // drawer list — one array, two renderings, so a new nav link never
-  // needs to be added in two places and drift out of sync.
-  const navLinks = [
-    { to: '/dashboard', label: 'Dashboard' },
-    { to: '/problems', label: 'Problems' },
-    { to: '/visualizer', label: 'Visualizer' },
-    { to: '/learn', label: 'Learn' },
-    ...(role === 'admin' ? [{ to: '/admin', label: 'Admin' }] : []),
-    { to: '/pricing', label: 'Pricing' },
-  ];
+  // Admin stays a standalone top-level link (not folded into Explore) —
+  // it's conditional on role so it adds zero clutter for the ~all-users
+  // who never see it, and the admins who do see it expect it front and
+  // center, not buried a click deeper.
+  const adminLink = role === 'admin' ? { to: '/admin', label: 'Admin' } : null;
+
+  // Mobile drawer flattens everything into one scrollable list (vertical
+  // space isn't as tight as toolbar width), but keeps the same
+  // primary/explore grouping via a subheader so the split reads the same
+  // way it does on desktop.
+  const mobileLinks = [...PRIMARY_LINKS, ...(adminLink ? [adminLink] : [])];
 
   return (
     <AppBar position="sticky" elevation={0}>
@@ -103,12 +124,38 @@ export default function Navbar() {
         </Box>
 
         {/* Desktop nav links — hidden below md, replaced by the drawer */}
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5 }}>
-          {navLinks.map((link) => (
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5 }}>
+          {PRIMARY_LINKS.map((link) => (
             <Button key={link.to} component={RouterLink} to={link.to} color="inherit" sx={{ fontWeight: 600 }}>
               {link.label}
             </Button>
           ))}
+          {adminLink && (
+            <Button component={RouterLink} to={adminLink.to} color="inherit" sx={{ fontWeight: 600 }}>
+              {adminLink.label}
+            </Button>
+          )}
+
+          <Button
+            onClick={(e) => setExploreAnchorEl(e.currentTarget)}
+            color="inherit"
+            endIcon={<ExpandMoreRoundedIcon />}
+            sx={{ fontWeight: 600 }}
+          >
+            Explore
+          </Button>
+          <Menu anchorEl={exploreAnchorEl} open={Boolean(exploreAnchorEl)} onClose={() => setExploreAnchorEl(null)}>
+            {EXPLORE_LINKS.map((link) => (
+              <MenuItem
+                key={link.to}
+                component={RouterLink}
+                to={link.to}
+                onClick={() => setExploreAnchorEl(null)}
+              >
+                {link.label}
+              </MenuItem>
+            ))}
+          </Menu>
         </Box>
 
         <Box sx={{ flexGrow: 1 }} />
@@ -186,8 +233,9 @@ export default function Navbar() {
         )}
       </Toolbar>
 
-      {/* Mobile drawer — mirrors the desktop nav links, plus the streak
-          and Pro badge that got hidden from the toolbar on small screens. */}
+      {/* Mobile drawer — mirrors the desktop primary/Explore split via a
+          subheader, plus the streak and Pro badge that got hidden from
+          the toolbar on small screens. */}
       <Drawer anchor="left" open={mobileOpen} onClose={() => setMobileOpen(false)}>
         <Box sx={{ width: 260, pt: 2 }} role="presentation">
           <Box sx={{ px: 2, pb: 2, display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -213,7 +261,26 @@ export default function Navbar() {
           <Divider sx={{ mb: 1 }} />
 
           <List>
-            {navLinks.map((link) => (
+            {mobileLinks.map((link) => (
+              <ListItemButton
+                key={link.to}
+                component={RouterLink}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+              >
+                <ListItemText primary={link.label} primaryTypographyProps={{ fontWeight: 600 }} />
+              </ListItemButton>
+            ))}
+          </List>
+
+          <List
+            subheader={
+              <ListSubheader component="div" sx={{ lineHeight: 2.5, fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.05em' }}>
+                EXPLORE
+              </ListSubheader>
+            }
+          >
+            {EXPLORE_LINKS.map((link) => (
               <ListItemButton
                 key={link.to}
                 component={RouterLink}

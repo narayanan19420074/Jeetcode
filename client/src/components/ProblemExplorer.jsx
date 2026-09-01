@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Box,
   Paper,
@@ -242,6 +242,14 @@ function ProblemCard({ p, onClick }) {
 // drift out of sync with each other again.
 export default function ProblemExplorer({ pageSize = 20 }) {
   const navigate = useNavigate();
+  // Read once on mount to seed initial filter state — e.g. PrepRoadmapPage
+  // links here as `/problems?company=TCS&difficulty=Hard` for its
+  // "Practice" buttons. NOT kept in sync afterward (filter changes don't
+  // rewrite the URL) — that would be a nice follow-up, but the one-way
+  // "deep link sets initial state" direction is what actually mattered:
+  // without it, that Practice button silently landed on an unfiltered
+  // page no matter what it linked to.
+  const [searchParams] = useSearchParams();
 
   const [problems, setProblems] = useState([]);
   const [pagination, setPagination] = useState({ page: 1, totalPages: 1, total: 0 });
@@ -250,15 +258,18 @@ export default function ProblemExplorer({ pageSize = 20 }) {
   const [error, setError] = useState(null);
 
   const [search, setSearch] = useState('');
-  const [difficultyFilter, setDifficultyFilter] = useState('All');
+  const [difficultyFilter, setDifficultyFilter] = useState(() => {
+    const fromUrl = searchParams.get('difficulty');
+    return ['Easy', 'Medium', 'Hard'].includes(fromUrl) ? fromUrl : 'All';
+  });
   const [statusFilter, setStatusFilter] = useState('All');
   const [sortBy, setSortBy] = useState('newest');
   const [page, setPage] = useState(1);
 
   const [availableTags, setAvailableTags] = useState([]);
-  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState(() => searchParams.getAll('tag'));
   const [availableCompanies, setAvailableCompanies] = useState([]);
-  const [selectedCompanies, setSelectedCompanies] = useState([]);
+  const [selectedCompanies, setSelectedCompanies] = useState(() => searchParams.getAll('company'));
 
   const [progress, setProgress] = useState(null);
   const [pickingRandom, setPickingRandom] = useState(false);

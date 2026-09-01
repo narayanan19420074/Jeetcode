@@ -12,6 +12,7 @@
     "start": "node src/server.js",
     "worker": "node src/queue/submissionWorker.js",
     "seed": "node src/scripts/seedProblems.js",
+    "seed:tcs-nqt": "node src/scripts/seedTcsNqt.js",
     "import:problems": "node src/scripts/importProblems.js"
   },
   "keywords": [

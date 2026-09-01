@@ -17,18 +17,16 @@ import {
   Button,
 } from '@mui/material';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
-import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
-import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import DifficultyChip from '../../components/DifficultyChip';
 import ProgressRing from '../../components/ProgressRing';
 import ActivityHeatmap from '../../components/ActivityHeatmap';
-import FeatureTile from '../../components/FeatureTile';
-import ProblemExplorer from '../../components/ProblemExplorer';
+import PrepReadinessCard from '../../components/PrepReadinessCard';
 import { problemsApi } from '../../api/problemsApi';
 import { usersApi } from '../../api/usersApi';
 import { submissionsApi } from '../../api/submissionsApi';
 
-const DASHBOARD_PROBLEMS_PAGE_SIZE = 10;
+const SUGGESTED_PROBLEMS_COUNT = 5;
 
 const statusColor = {
   Accepted: 'success',
@@ -54,12 +52,9 @@ export default function DashboardPage() {
 
   const [activity, setActivity] = useState([]);
   const [submissions, setSubmissions] = useState([]);
+  const [suggested, setSuggested] = useState([]);
 
   // Featured problem + per-difficulty totals (for progress ring max values).
-  // Deliberately NOT reusing ProblemExplorer's internal list state — that's
-  // a filtered/paginated view, and a large one-shot `limit: 500` fetch
-  // risks silently failing if the backend caps the limit param. Small
-  // limit:1 requests avoid both problems.
   const [featured, setFeatured] = useState(null);
   const [difficultyTotals, setDifficultyTotals] = useState({ Easy: 1, Medium: 1, Hard: 1 });
 
@@ -85,6 +80,16 @@ export default function DashboardPage() {
       .then((res) => {
         if (res) setFeatured(res.data.data.items[0]);
       })
+      .catch(() => {});
+
+    // Lightweight "Suggested Problems" list — deliberately just 5 items
+    // with no search/filter/pagination UI. Deep browsing lives on the
+    // dedicated /problems page; duplicating that whole experience here
+    // was confusing (two places doing the same job) and slowed the
+    // dashboard down for no real benefit.
+    problemsApi
+      .list({ page: 1, limit: SUGGESTED_PROBLEMS_COUNT, sort: 'newest' })
+      .then(({ data }) => setSuggested(data.data.items))
       .catch(() => {});
   }, []);
 
@@ -112,9 +117,10 @@ export default function DashboardPage() {
         </Paper>
       )}
 
-      <Grid container spacing={3} sx={{ mb: 1 }}>
-        {/* Streak + progress overview */}
-        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+      {/* Stats row — quick-glance personal numbers. Kept intentionally
+          compact; this is context, not the main event. */}
+      <Grid container spacing={3} sx={{ mb: 3 }}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%' }}>
             <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 2 }}>
               <LocalFireDepartmentRoundedIcon sx={{ color: 'warning.main' }} />
@@ -135,8 +141,7 @@ export default function DashboardPage() {
           </Paper>
         </Grid>
 
-        {/* Progress rings */}
-        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%' }}>
             <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
               Your progress
@@ -152,8 +157,7 @@ export default function DashboardPage() {
           </Paper>
         </Grid>
 
-        {/* Featured problem */}
-        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <Paper
             variant="outlined"
             sx={{
@@ -193,64 +197,61 @@ export default function DashboardPage() {
             )}
           </Paper>
         </Grid>
-
-        {/* Slot 4 — reserved for the next feature card */}
-        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-          <Paper
-            variant="outlined"
-            sx={{
-              p: 2.5,
-              borderRadius: 3,
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderStyle: 'dashed',
-              color: 'text.secondary',
-            }}
-          >
-            <Typography variant="caption" sx={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Coming soon
-            </Typography>
-          </Paper>
-        </Grid>
       </Grid>
 
-      {/* Feature tiles — compact, one row, room to add more here later */}
-      <Grid container spacing={2} sx={{ mt: 3 }}>
-        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-          <FeatureTile
-            icon={<SchoolRoundedIcon fontSize="small" />}
-            title="TCS NQT Aptitude"
-            description="Practice pattern-wise, take timed tests, unlock as you go"
-            to="/aptitude"
-            accentColor="success.main"
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-          <FeatureTile
-            icon={<BarChartRoundedIcon fontSize="small" />}
-            title="Algorithm Visualizer"
-            description="Watch sorting, trees, graphs, and DP run step by step"
-            to="/visualizer"
-            accentColor="primary.main"
-          />
-        </Grid>
-      </Grid>
+      {/* Prep hero — full width, visually distinct from the stat cards
+          above. This is the flagship next-action, not one tile among
+          several. */}
+      <PrepReadinessCard />
 
-      {/* Problem explorer — same shared component (and same filters: search,
-          Pick One, difficulty, solved status, sort, pattern/company rows,
-          mobile cards with lock icons) as the full /problems page, so this
-          panel and that page can never quietly drift apart again. */}
+      {/* Suggested problems — a short taste, not the whole catalog.
+          Deep browsing (search/filter/pagination) belongs on /problems;
+          duplicating that entire experience here was confusing and slow. */}
       <Box sx={{ mt: 3 }}>
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.5 }}>
-          Problem Explorer
-        </Typography>
-        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
-          Same filters as the full Problems page, right here on your dashboard.
-        </Typography>
-        <ProblemExplorer pageSize={DASHBOARD_PROBLEMS_PAGE_SIZE} />
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            Suggested Problems
+          </Typography>
+          <Button
+            size="small"
+            endIcon={<ArrowForwardRoundedIcon />}
+            onClick={() => navigate('/problems')}
+            sx={{ fontWeight: 700 }}
+          >
+            View all
+          </Button>
+        </Box>
+        <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
+          {suggested.length === 0 ? (
+            <Typography variant="body2" color="text.secondary" sx={{ p: 3 }}>
+              No problems to suggest yet.
+            </Typography>
+          ) : (
+            suggested.map((p, i) => (
+              <Box
+                key={p._id}
+                onClick={() => navigate(`/workspace/${p.slug}`)}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: 2,
+                  px: 2.5,
+                  py: 1.75,
+                  cursor: 'pointer',
+                  borderTop: i === 0 ? 'none' : '1px solid',
+                  borderColor: 'divider',
+                  '&:hover': { bgcolor: 'action.hover' },
+                }}
+              >
+                <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                  {p.title}
+                </Typography>
+                <DifficultyChip difficulty={p.difficulty} />
+              </Box>
+            ))
+          )}
+        </Paper>
       </Box>
 
       {/* Recent submissions */}
