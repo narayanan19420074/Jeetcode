@@ -58,11 +58,17 @@ const EXPLORE_LINKS = [
   { to: '/pricing', label: 'Pricing' },
 ];
 
+// NOTE: Admin no longer has a Navbar link, on purpose. It now has its own
+// entry point at /admin/login (AdminLoginPage.jsx / adminLoginUser thunk)
+// with its own backend endpoint (/api/auth/admin-login) — admins reach it
+// by navigating directly, not through the regular user nav. See
+// ProtectedRoute's redirectTo prop for how /admin sends unauthenticated
+// visitors to /admin/login instead of the general /login.
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const mode = useSelector((s) => s.ui.mode);
-  const { isAuthenticated, user, role } = useSelector((s) => s.auth);
+  const { isAuthenticated, user } = useSelector((s) => s.auth);
   const [anchorEl, setAnchorEl] = useState(null);
   const [exploreAnchorEl, setExploreAnchorEl] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -87,17 +93,11 @@ export default function Navbar() {
     setLicenseModalOpen(true);
   };
 
-  // Admin stays a standalone top-level link (not folded into Explore) —
-  // it's conditional on role so it adds zero clutter for the ~all-users
-  // who never see it, and the admins who do see it expect it front and
-  // center, not buried a click deeper.
-  const adminLink = role === 'admin' ? { to: '/admin', label: 'Admin' } : null;
-
   // Mobile drawer flattens everything into one scrollable list (vertical
   // space isn't as tight as toolbar width), but keeps the same
   // primary/explore grouping via a subheader so the split reads the same
   // way it does on desktop.
-  const mobileLinks = [...PRIMARY_LINKS, ...(adminLink ? [adminLink] : [])];
+  const mobileLinks = [...PRIMARY_LINKS];
 
   return (
     <AppBar position="sticky" elevation={0}>
@@ -130,11 +130,6 @@ export default function Navbar() {
               {link.label}
             </Button>
           ))}
-          {adminLink && (
-            <Button component={RouterLink} to={adminLink.to} color="inherit" sx={{ fontWeight: 600 }}>
-              {adminLink.label}
-            </Button>
-          )}
 
           <Button
             onClick={(e) => setExploreAnchorEl(e.currentTarget)}

@@ -29,6 +29,18 @@ export const loginUser = createAsyncThunk('auth/login', async (payload, { reject
   }
 });
 
+// Separate admin-only login — posts to /auth/admin-login (see authApi.js).
+// Resolves to the same {accessToken, user} shape as loginUser, so it
+// shares the same fulfilled/rejected/pending handlers below.
+export const adminLoginUser = createAsyncThunk('auth/adminLogin', async (payload, { rejectWithValue }) => {
+  try {
+    const { data } = await authApi.adminLogin(payload);
+    return data.data;
+  } catch (err) {
+    return rejectWithValue(extractErrorMessage(err));
+  }
+});
+
 // OAuth thunks — all 3 return the exact same {accessToken, user} shape as
 // loginUser, so they share loginUser's fulfilled/rejected reducer logic
 // below instead of duplicating it.
@@ -81,10 +93,10 @@ export const logoutUser = createAsyncThunk('auth/logout', async () => {
   return null;
 });
 
-// Shared success/failure handlers — register/login/google/github/linkedin
-// all resolve to the same {accessToken, user} payload shape, so one pair
-// of reducer functions covers all 5 instead of repeating the same 6 lines
-// per provider.
+// Shared success/failure handlers — register/login/adminLogin/google/
+// github/linkedin all resolve to the same {accessToken, user} payload
+// shape, so one pair of reducer functions covers all 6 instead of
+// repeating the same 6 lines per provider.
 const handleAuthFulfilled = (state, action) => {
   state.status = 'idle';
   state.isAuthenticated = true;
@@ -126,6 +138,10 @@ const authSlice = createSlice({
       .addCase(loginUser.pending, handleAuthPending)
       .addCase(loginUser.fulfilled, handleAuthFulfilled)
       .addCase(loginUser.rejected, handleAuthRejected)
+      // admin login
+      .addCase(adminLoginUser.pending, handleAuthPending)
+      .addCase(adminLoginUser.fulfilled, handleAuthFulfilled)
+      .addCase(adminLoginUser.rejected, handleAuthRejected)
       // google
       .addCase(googleSignIn.pending, handleAuthPending)
       .addCase(googleSignIn.fulfilled, handleAuthFulfilled)

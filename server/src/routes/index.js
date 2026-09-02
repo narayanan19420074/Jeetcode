@@ -3,7 +3,7 @@ import authRoutes from './auth.routes.js';
 import problemRoutes from './problem.routes.js';
 import submissionRoutes from './submission.routes.js';
 import userRoutes from './user.routes.js';
-import adminRoutes from './admin.routes.js';
+import adminRoutes from './admin/admin.routes.js';
 import aiRoutes from './ai.routes.js';
 import aptitudeRoutes from './aptitude.routes.js'; 
 import billingRoutes from './billing.routes.js';

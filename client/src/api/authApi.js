@@ -13,4 +13,5 @@ export const authApi = {
   googleSignIn: (idToken) => apiClient.post('/auth/google', { idToken }),
   githubSignIn: (code) => apiClient.post('/auth/github', { code }),
   linkedinSignIn: (code, redirectUri) => apiClient.post('/auth/linkedin', { code, redirectUri }),
+   adminLogin: (payload) => apiClient.post('/auth/admin-login', payload),
 };

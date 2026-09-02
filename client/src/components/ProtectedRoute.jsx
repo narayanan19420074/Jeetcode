@@ -3,13 +3,17 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
-// Guards a route behind authentication, and optionally a specific role (e.g. 'admin').
-export default function ProtectedRoute({ children, requireRole }) {
+// Guards a route behind authentication, and optionally a specific role
+// (e.g. 'admin'). `redirectTo` lets a section send unauthenticated users
+// to its own login page instead of the general one — e.g. /admin uses
+// redirectTo="/admin/login" — while every other existing caller keeps the
+// old default ('/login') with zero changes needed at the call site.
+export default function ProtectedRoute({ children, requireRole, redirectTo = '/login' }) {
   const { isAuthenticated, role } = useSelector((s) => s.auth);
   const location = useLocation();
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to={redirectTo} state={{ from: location }} replace />;
   }
 
   if (requireRole && role !== requireRole) {
