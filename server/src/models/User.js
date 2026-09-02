@@ -44,7 +44,12 @@ const userSchema = new mongoose.Schema(
     linkedinId: { type: String, unique: true, sparse: true },
     avatarUrl: { type: String, default: null },
 
-    role: { type: String, enum: ['learner', 'admin'], default: 'learner', index: true },
+    // 'learner' = default signup role. 'contributor' = can propose problems
+    // (draft/submitted, cannot publish). 'moderator' = can review/approve
+    // contributor submissions. 'admin' = full access, including
+    // destructive actions (delete/bulk-delete) — see requireFreshRole in
+    // auth.middleware.js.
+    role: { type: String, enum: ['learner', 'contributor', 'moderator', 'admin'], default: 'learner', index: true },
 
     // Hash of the currently-valid refresh token. Rotated on every refresh,
     // cleared on logout — lets us revoke a stolen refresh token server-side

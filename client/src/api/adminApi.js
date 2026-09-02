@@ -8,4 +8,6 @@ export const adminApi = {
   updateProblem: (id, payload) => apiClient.patch(`/admin/problems/${id}`, payload),
   publishProblem: (id, isPublished) => apiClient.patch(`/admin/problems/${id}/publish`, { isPublished }),
   deleteProblem: (id) => apiClient.delete(`/admin/problems/${id}`),
+  bulkDeleteProblems: (ids) => apiClient.post('/admin/problems/bulk-delete', { ids }),
+  restoreProblem: (id) => apiClient.patch(`/admin/problems/${id}/restore`),
 };

@@ -9,6 +9,7 @@ import aptitudeRoutes from './aptitude.routes.js';
 import billingRoutes from './billing.routes.js';
 import licenseRoutes from './license.routes.js';
 import prepRoutes from './prep.routes.js';
+import '../models/AdminActionLog.js';
 
 const router = Router();
 

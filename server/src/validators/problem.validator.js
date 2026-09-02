@@ -69,6 +69,13 @@ export const createProblemSchema = refineAuthoringPath(baseProblemSchema);
 // touch e.g. `tags`, and shouldn't be forced to re-supply the full spec.
 export const updateProblemSchema = baseProblemSchema.partial();
 
+// ids capped at 500 per request — matches the general spirit of keeping
+// any single admin action's blast radius bounded and reviewable, rather
+// than allowing an unbounded "delete everything" payload in one call.
+export const bulkDeleteProblemsSchema = z.object({
+  ids: z.array(z.string().min(1)).min(1).max(500),
+});
+
 // z.array(z.string()) accepts BOTH a single value ("tag=Array") and a
 // real array ("tag=Array&tag=DP") — axios/qs sends one string when
 // there's a single selection and an array when there are several, and
@@ -92,4 +99,7 @@ export const listProblemsQuerySchema = z.object({
   // them correctly.
   status: z.enum(['solved', 'unsolved']).optional(),
   sort: z.enum(['newest', 'oldest', 'difficulty-asc', 'difficulty-desc', 'acceptance-asc', 'acceptance-desc']).optional(),
+  // Admin-only Trash tab toggle. Harmless no-op on the public listProblems
+  // route since buildProblemFilter never reads it.
+  trash: z.coerce.boolean().optional(),
 });

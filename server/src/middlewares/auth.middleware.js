@@ -51,6 +51,33 @@ export const requireRole = (...roles) => (req, res, next) => {
   next();
 };
 
+// Stricter than requireRole: re-fetches the user's role from the DB
+// instead of trusting the JWT payload. requireAuth's role check is fine
+// for ordinary admin reads/writes, but it trusts whatever role was baked
+// into the access token at login time — if an admin gets demoted mid-token
+// lifetime (before it expires), requireRole alone would still let them
+// through until the token naturally expires. For destructive, hard-to-undo
+// actions (delete, bulk-delete) that gap isn't acceptable, so this pays
+// one extra DB read to confirm the role is still current.
+//
+// Must run AFTER requireAuth (needs req.user.id already set).
+export const requireFreshRole = (...roles) =>
+  asyncHandler(async (req, res, next) => {
+    if (!req.user) throw ApiError.unauthorized();
+
+    const current = await User.findById(req.user.id).select('role').lean();
+    if (!current) throw ApiError.unauthorized('User no longer exists');
+
+    if (!roles.includes(current.role)) {
+      throw ApiError.forbidden(`Requires one of roles: ${roles.join(', ')}`);
+    }
+
+    // Keep req.user.role in sync for the rest of the request (e.g. audit
+    // logging downstream) in case it had drifted from the token payload.
+    req.user.role = current.role;
+    next();
+  });
+
 // Fetches the full Mongo document when a controller needs more than the
 // JWT payload (e.g. updating counters). Kept separate from requireAuth so
 // routes that don't need it stay fast (no DB round-trip).

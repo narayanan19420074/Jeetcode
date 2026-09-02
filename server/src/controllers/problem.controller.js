@@ -5,6 +5,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { slugify } from '../utils/slugify.js';
 import { applyHarnessGeneration } from '../services/harnessGenerator.service.js';
+import { logAdminAction } from '../utils/adminAudit.js';
 
 const DIFFICULTY_RANK = {
   $switch: {
@@ -30,7 +31,10 @@ const ACCEPTANCE_COMPUTED = {
 // fetching the user's solved list only when a status filter or the
 // solvedByMe annotation actually needs it.
 async function buildProblemFilter({ difficulty, tag, company, search, status, userId }) {
-  const filter = { isPublished: true };
+  // isDeleted excluded here too as defense-in-depth, even though delete
+  // already flips isPublished:false (which alone would exclude it) — in
+  // case those two fields were ever set inconsistently by some other path.
+  const filter = { isPublished: true, isDeleted: { $ne: true } };
   if (difficulty) filter.difficulty = difficulty;
   if (tag) filter.tags = { $in: Array.isArray(tag) ? tag : [tag] };
   if (company) filter.companies = { $in: Array.isArray(company) ? company : [company] };
@@ -142,7 +146,7 @@ export const listProblems = asyncHandler(async (req, res) => {
 // sorted by frequency. Powers the topics filter row.
 export const listProblemTags = asyncHandler(async (req, res) => {
   const tags = await Problem.aggregate([
-    { $match: { isPublished: true } },
+    { $match: { isPublished: true, isDeleted: { $ne: true } } },
     { $unwind: '$tags' },
     { $group: { _id: '$tags', count: { $sum: 1 } } },
     { $sort: { count: -1 } },
@@ -154,7 +158,7 @@ export const listProblemTags = asyncHandler(async (req, res) => {
 // GET /api/problems/companies — same idea as /tags, for the company filter.
 export const listProblemCompanies = asyncHandler(async (req, res) => {
   const companies = await Problem.aggregate([
-    { $match: { isPublished: true } },
+    { $match: { isPublished: true, isDeleted: { $ne: true } } },
     { $unwind: '$companies' },
     { $group: { _id: '$companies', count: { $sum: 1 } } },
     { $sort: { count: -1 } },
@@ -168,7 +172,7 @@ export const listProblemCompanies = asyncHandler(async (req, res) => {
 // totals with solved counts at 0.
 export const getProblemsProgress = asyncHandler(async (req, res) => {
   const totalsAgg = await Problem.aggregate([
-    { $match: { isPublished: true } },
+    { $match: { isPublished: true, isDeleted: { $ne: true } } },
     { $group: { _id: '$difficulty', count: { $sum: 1 } } },
   ]);
   const totals = { Easy: 0, Medium: 0, Hard: 0 };
@@ -182,7 +186,7 @@ export const getProblemsProgress = asyncHandler(async (req, res) => {
     const solvedIds = user?.solvedProblems || [];
     if (solvedIds.length > 0) {
       const solvedAgg = await Problem.aggregate([
-        { $match: { _id: { $in: solvedIds }, isPublished: true } },
+        { $match: { _id: { $in: solvedIds }, isPublished: true, isDeleted: { $ne: true } } },
         { $group: { _id: '$difficulty', count: { $sum: 1 } } },
       ]);
       solvedAgg.forEach((s) => {
@@ -217,7 +221,7 @@ export const getRandomProblem = asyncHandler(async (req, res) => {
 // view here; the description/examples/starter code are the paid content.
 export const getProblemBySlug = asyncHandler(async (req, res) => {
   const problem = await Problem.findOne(
-    { slug: req.params.slug, isPublished: true },
+    { slug: req.params.slug, isPublished: true, isDeleted: { $ne: true } },
     Problem.publicProjection()
   ).lean();
   if (!problem) throw ApiError.notFound('Problem not found');
@@ -232,13 +236,18 @@ export const getProblemBySlug = asyncHandler(async (req, res) => {
 
 // --- Admin ---
 
-// GET /api/admin/problems — includes unpublished + full detail, for the review queue.
+// GET /api/admin/problems — includes unpublished + full detail, for the
+// review queue. ?trash=true switches to the Trash tab (deleted problems
+// only); default view excludes deleted problems entirely so they don't
+// clutter the normal list once removed.
 export const adminListProblems = asyncHandler(async (req, res) => {
-  const { page, limit } = req.query;
+  const { page, limit, trash } = req.query;
   const skip = (page - 1) * limit;
+  const filter = trash ? { isDeleted: true } : { isDeleted: { $ne: true } };
+
   const [items, total] = await Promise.all([
-    Problem.find().sort({ createdAt: -1 }).skip(skip).limit(limit).lean(),
-    Problem.countDocuments(),
+    Problem.find(filter).sort({ createdAt: -1 }).skip(skip).limit(limit).lean(),
+    Problem.countDocuments(filter),
   ]);
   new ApiResponse(200, { items, pagination: { page, limit, total, totalPages: Math.ceil(total / limit) } }).send(res);
 });
@@ -251,22 +260,117 @@ export const createProblem = asyncHandler(async (req, res) => {
 
   const payload = applyHarnessGeneration({ ...req.body });
   const problem = await Problem.create({ ...payload, slug, createdBy: req.user.id });
+
+  await logAdminAction(req, {
+    action: 'problem_create',
+    targetType: 'Problem',
+    targetId: problem._id,
+    metadata: { slug: problem.slug, title: problem.title },
+  });
+
   new ApiResponse(201, problem, 'Problem created').send(res);
 });
 
 export const updateProblem = asyncHandler(async (req, res) => {
+  const existing = await Problem.findById(req.params.id).select('isDeleted').lean();
+  if (!existing) throw ApiError.notFound('Problem not found');
+  // Editing a trashed problem would silently resurrect stale content
+  // without going through an explicit restore — force restore first so
+  // there's always a deliberate "bring this back" action in the audit log.
+  if (existing.isDeleted) {
+    throw ApiError.conflict('This problem is in the trash — restore it first before editing');
+  }
+
   const update = applyHarnessGeneration({ ...req.body });
   if (update.title) update.slug = slugify(update.title);
 
   const problem = await Problem.findByIdAndUpdate(req.params.id, update, { new: true, runValidators: true });
   if (!problem) throw ApiError.notFound('Problem not found');
+
+  await logAdminAction(req, {
+    action: 'problem_update',
+    targetType: 'Problem',
+    targetId: problem._id,
+    metadata: { slug: problem.slug, fields: Object.keys(req.body) },
+  });
+
   new ApiResponse(200, problem, 'Problem updated').send(res);
 });
 
+// DELETE /api/admin/problems/:id — SOFT delete. Never removes the
+// document (see Problem.js comment). Setting isPublished:false alongside
+// isDeleted:true means every public/dashboard/prep query — which already
+// filters on isPublished:true — excludes this problem immediately, for
+// every user worldwide, with zero changes needed to those queries.
 export const deleteProblem = asyncHandler(async (req, res) => {
-  const problem = await Problem.findByIdAndDelete(req.params.id);
+  const problem = await Problem.findById(req.params.id);
   if (!problem) throw ApiError.notFound('Problem not found');
-  new ApiResponse(200, null, 'Problem deleted').send(res);
+  if (problem.isDeleted) throw ApiError.conflict('Problem is already in the trash');
+
+  problem.isDeleted = true;
+  problem.isPublished = false;
+  problem.deletedAt = new Date();
+  problem.deletedBy = req.user.id;
+  await problem.save();
+
+  await logAdminAction(req, {
+    action: 'problem_delete',
+    targetType: 'Problem',
+    targetId: problem._id,
+    metadata: { slug: problem.slug, title: problem.title },
+  });
+
+  new ApiResponse(200, null, 'Problem moved to trash').send(res);
+});
+
+// POST /api/admin/problems/bulk-delete — same soft-delete semantics as
+// deleteProblem, applied to many ids in one write. Silently skips ids
+// that don't exist or are already deleted rather than failing the whole
+// batch over one bad id — the response reports exactly how many were
+// actually affected so the admin isn't left guessing.
+export const bulkDeleteProblem = asyncHandler(async (req, res) => {
+  const { ids } = req.body;
+
+  const targets = await Problem.find({ _id: { $in: ids }, isDeleted: { $ne: true } }).select('slug').lean();
+  if (targets.length === 0) throw ApiError.notFound('No matching, non-deleted problems found for the given ids');
+
+  const targetIds = targets.map((p) => p._id);
+  await Problem.updateMany(
+    { _id: { $in: targetIds } },
+    { $set: { isDeleted: true, isPublished: false, deletedAt: new Date(), deletedBy: req.user.id } }
+  );
+
+  await logAdminAction(req, {
+    action: 'problem_bulk_delete',
+    targetType: 'Problem',
+    metadata: { count: targetIds.length, slugs: targets.map((p) => p.slug) },
+  });
+
+  new ApiResponse(200, { deletedCount: targetIds.length }, `${targetIds.length} problem(s) moved to trash`).send(res);
+});
+
+// PATCH /api/admin/problems/:id/restore — undoes a soft delete. Restoring
+// deliberately does NOT auto-republish (isPublished stays false) —
+// bringing content back and deciding it's ready to go live again are two
+// separate admin decisions, not one automatic step.
+export const restoreProblem = asyncHandler(async (req, res) => {
+  const problem = await Problem.findById(req.params.id);
+  if (!problem) throw ApiError.notFound('Problem not found');
+  if (!problem.isDeleted) throw ApiError.conflict('Problem is not in the trash');
+
+  problem.isDeleted = false;
+  problem.deletedAt = null;
+  problem.deletedBy = null;
+  await problem.save();
+
+  await logAdminAction(req, {
+    action: 'problem_restore',
+    targetType: 'Problem',
+    targetId: problem._id,
+    metadata: { slug: problem.slug },
+  });
+
+  new ApiResponse(200, problem, 'Problem restored to drafts — publish it again when ready').send(res);
 });
 
 export const publishProblem = asyncHandler(async (req, res) => {
