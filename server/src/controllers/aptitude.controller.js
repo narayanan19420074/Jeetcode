@@ -1,6 +1,7 @@
 import { AptitudePattern } from '../models/AptitudePattern.js';
 import { AptitudeQuestion } from '../models/AptitudeQuestion.js';
 import { AptitudeAttempt } from '../models/AptitudeAttempt.js';
+import { AptitudeProgress } from '../models/AptitudeProgress.js'; // NEW
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
@@ -15,18 +16,31 @@ export const listPatterns = asyncHandler(async (req, res) => {
 });
 
 // GET /api/aptitude/patterns/:slug — pattern detail + recent test attempts.
+// FIXED: previously never returned `progress`, so AptitudePatternDetailPage
+// had no way to know bestScore/learnCompleted for the Learn/Practice/Test
+// cards. Now shaped the same way listPatterns shapes it per-pattern.
 export const getPatternBySlug = asyncHandler(async (req, res) => {
   const pattern = await AptitudePattern.findOne({ slug: req.params.slug, isPublished: true }).lean();
   if (!pattern) throw ApiError.notFound('Pattern not found');
 
   await aptitudeService.assertPatternUnlocked(req.user.id, pattern);
 
+  const progressDoc = await AptitudeProgress.findOne({ user: req.user.id, pattern: pattern._id }).lean();
+
   const recentAttempts = await AptitudeAttempt.find({ user: req.user.id, pattern: pattern._id, mode: 'test' })
     .sort({ createdAt: -1 })
     .limit(5)
     .select('score status createdAt timeTakenSec');
 
-  new ApiResponse(200, { pattern, recentAttempts }).send(res);
+  new ApiResponse(200, {
+    pattern,
+    progress: {
+      bestScore: progressDoc?.bestScore ?? 0,
+      attemptsCount: progressDoc?.attemptsCount ?? 0,
+      learnCompleted: progressDoc?.learnCompleted ?? false,
+    },
+    recentAttempts,
+  }).send(res);
 });
 
 // GET /api/aptitude/patterns/:slug/attempts — full history for this pattern.
@@ -42,12 +56,16 @@ export const getAttemptHistory = asyncHandler(async (req, res) => {
 });
 
 // POST /api/aptitude/patterns/:slug/start — mode: 'test' | 'practice'.
+// UPDATED: now also asserts Learn is completed for this pattern before
+// either mode can start — server-side gate, same principle as
+// assertPatternUnlocked (never trust a client-only lock).
 export const startAttempt = asyncHandler(async (req, res) => {
   const { mode } = req.body;
   const pattern = await AptitudePattern.findOne({ slug: req.params.slug, isPublished: true });
   if (!pattern) throw ApiError.notFound('Pattern not found');
 
   await aptitudeService.assertPatternUnlocked(req.user.id, pattern);
+  await aptitudeService.assertLearnCompleted(req.user.id, pattern); // NEW
 
   const attempt = await aptitudeService.startAttempt({ userId: req.user.id, pattern, mode });
   new ApiResponse(
@@ -55,6 +73,18 @@ export const startAttempt = asyncHandler(async (req, res) => {
     { attemptId: attempt._id, mode: attempt.mode, expiresAt: attempt.expiresAt, totalCount: attempt.totalCount },
     'Attempt started'
   ).send(res);
+});
+
+// NEW — POST /api/aptitude/patterns/:slug/complete-learn
+// Marks the Learn section done for this user+pattern, unlocking
+// Practice/Test on AptitudePatternDetailPage. Called from LearnTopicPage
+// when the user reaches the last subsection and clicks "Mark as Learned".
+export const completeLearnSection = asyncHandler(async (req, res) => {
+  const pattern = await AptitudePattern.findOne({ slug: req.params.slug, isPublished: true });
+  if (!pattern) throw ApiError.notFound('Pattern not found');
+
+  await aptitudeService.markLearnCompleted(req.user.id, pattern._id);
+  new ApiResponse(200, null, 'Learn section marked complete').send(res);
 });
 
 // GET /api/aptitude/attempts/:attemptId/questions — publicProjection only,

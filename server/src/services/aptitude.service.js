@@ -29,6 +29,7 @@ export async function getPatternsWithProgress(userId) {
       progress: {
         bestScore,
         attemptsCount: progress?.attemptsCount ?? 0,
+        learnCompleted: progress?.learnCompleted ?? false, // NEW — drives the Learn/Practice/Test cards
         unlocked: !!userId && unlocked,
       },
     };
@@ -51,6 +52,31 @@ export async function assertPatternUnlocked(userId, pattern) {
   if (!passed) {
     throw ApiError.forbidden('Complete the previous pattern first');
   }
+}
+
+/**
+ * NEW — Guards Practice/Test start (server-side, same "never trust the
+ * client" reasoning as assertPatternUnlocked). Learn must be marked done
+ * for THIS pattern before either mode can be started.
+ */
+export async function assertLearnCompleted(userId, pattern) {
+  const progress = await AptitudeProgress.findOne({ user: userId, pattern: pattern._id });
+  if (!progress?.learnCompleted) {
+    throw ApiError.forbidden('Complete the Learn section first');
+  }
+}
+
+/**
+ * NEW — Called when the user reaches the last Learn subsection for a
+ * pattern and clicks "Mark as Learned". Upserts so a user who never had
+ * a progress doc yet (hasn't attempted a test) still gets one.
+ */
+export async function markLearnCompleted(userId, patternId) {
+  return AptitudeProgress.findOneAndUpdate(
+    { user: userId, pattern: patternId },
+    { $set: { learnCompleted: true } },
+    { upsert: true, new: true }
+  );
 }
 
 export async function startAttempt({ userId, pattern, mode }) {

@@ -37,9 +37,11 @@ const AptitudeResultsPage = lazy(() => import('./features/aptitude/AptitudeResul
 const VisualizerPage = lazy(() => import('./features/visualizer/VisualizerPage'));
 const PricingPage = lazy(() => import('./features/billing/PricingPage'));
 const SettingsPage = lazy(() => import('./features/settings/SettingsPage'));
-const LearnHomePage = lazy(() => import('./features/learn/LearnHomePage'));
+// REMOVED: LearnHomePage — the standalone "/learn" topic list is gone.
+// Topics are now reached via a pattern's Learn card on AptitudePatternDetailPage.
 const LearnTopicPage = lazy(() => import('./features/learn/LearnTopicPage'));
-const PracticePage = lazy(() => import('./features/learn/PracticePage'));
+// REMOVED: PracticePage (Learn's own leveled practice bank) — Practice
+// now lives on the Aptitude module (AptitudePracticePage) instead.
 const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage'));
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
 
@@ -132,9 +134,9 @@ export default function App() {
         />
         <Route path="/pricing" element={<Suspense fallback={<RouteFallback />}><PricingPage /></Suspense>} />
         <Route path="/settings" element={<Suspense fallback={<RouteFallback />}><SettingsPage /></Suspense>} />
-        <Route path="/learn" element={<Suspense fallback={<RouteFallback />}><LearnHomePage /></Suspense>} />
+        {/* REMOVED: <Route path="/learn" .../> (LearnHomePage) */}
         <Route path="/learn/:topicSlug" element={<Suspense fallback={<RouteFallback />}><LearnTopicPage /></Suspense>} />
-        <Route path="/learn/:topicSlug/practice" element={<Suspense fallback={<RouteFallback />}><PracticePage /></Suspense>} />
+        {/* REMOVED: <Route path="/learn/:topicSlug/practice" .../> (PracticePage) */}
       </Route>
 
       <Route path="*" element={<Navigate to="/dashboard" replace />} />

@@ -51,10 +51,14 @@ const PRIMARY_LINKS = [
 // Secondary/reference links — browsed occasionally, not core to the daily
 // loop. Grouped under an "Explore" dropdown on desktop so the toolbar
 // doesn't sprawl to 7 buttons; still one click away, just not inline.
+//
+// UPDATED: standalone "Learn" entry removed — Learn topics were dead-ended
+// here with no path to Practice/Test. They're now reached through
+// "Aptitude Practice" -> a pattern -> the Learn card on its 3-card
+// Learn/Practice/Test flow (see AptitudePatternDetailPage).
 const EXPLORE_LINKS = [
   { to: '/aptitude', label: 'Aptitude Practice' },
   { to: '/visualizer', label: 'Visualizer' },
-  { to: '/learn', label: 'Learn' },
   { to: '/pricing', label: 'Pricing' },
 ];
 

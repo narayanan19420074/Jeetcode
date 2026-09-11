@@ -29,6 +29,22 @@ export const startAttempt = createAsyncThunk(
   }
 );
 
+// NEW — marks the Learn section done for a pattern (called from
+// LearnTopicPage when the user reaches the last subsection). On success,
+// flips progress.learnCompleted locally so AptitudePatternDetailPage
+// unlocks Practice/Test without waiting for a refetch.
+export const completeLearn = createAsyncThunk(
+  'aptitude/completeLearn',
+  async (slug, { rejectWithValue }) => {
+    try {
+      await aptitudeApi.completeLearn(slug);
+      return slug;
+    } catch (err) {
+      return rejectWithValue(extractErrorMessage(err));
+    }
+  }
+);
+
 export const checkAnswer = createAsyncThunk(
   'aptitude/checkAnswer',
   async ({ attemptId, questionId, selectedOption }, { rejectWithValue }) => {
@@ -105,6 +121,14 @@ const aptitudeSlice = createSlice({
       .addCase(fetchPatterns.rejected, (state, action) => {
         state.patternsStatus = 'failed';
         state.error = action.payload;
+      })
+
+      // NEW — flip learnCompleted locally on success so the pattern list
+      // (and anything reading it from redux) reflects it immediately,
+      // without needing a fresh fetchPatterns round-trip.
+      .addCase(completeLearn.fulfilled, (state, action) => {
+        const pattern = state.patterns.find((p) => p.slug === action.payload);
+        if (pattern?.progress) pattern.progress.learnCompleted = true;
       })
 
       // Starting a new attempt clears any stale result/answers from a

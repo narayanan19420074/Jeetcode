@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { useParams, Navigate, Link as RouterLink } from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import {
   Box,
   Grid,
@@ -12,15 +13,10 @@ import {
   Divider,
   Chip,
   Button,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
-  Alert,
 } from '@mui/material';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { getTopicBySlug } from './content/topics';
 import { ANIMATION_REGISTRY } from './animations/registry';
+import { completeLearn } from '../aptitude/aptitudeSlice';
 
 // Accepts a normal watch URL, a youtu.be short link, or an already-embed
 // URL, and returns an embeddable src — or null if it can't be parsed
@@ -39,87 +35,15 @@ function toYoutubeEmbedUrl(url) {
   }
 }
 
-function PracticeQuiz({ questions }) {
-  const [answers, setAnswers] = useState({});
-  const [submitted, setSubmitted] = useState(false);
-
-  const score = useMemo(
-    () => questions.filter((q) => answers[q.id] === q.correctIndex).length,
-    [answers, questions]
-  );
-
-  return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
-      <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
-        Practice
-      </Typography>
-      <Stack spacing={3}>
-        {questions.map((q, qi) => {
-          const selected = answers[q.id];
-          const isCorrect = selected === q.correctIndex;
-          return (
-            <Box key={q.id}>
-              <Typography variant="body2" sx={{ fontWeight: 600, mb: 1 }}>
-                {qi + 1}. {q.question}
-              </Typography>
-              <RadioGroup
-                value={selected ?? ''}
-                onChange={(e) => setAnswers((prev) => ({ ...prev, [q.id]: Number(e.target.value) }))}
-              >
-                {q.options.map((opt, oi) => (
-                  <FormControlLabel
-                    key={oi}
-                    value={oi}
-                    control={<Radio size="small" />}
-                    label={opt}
-                    disabled={submitted}
-                  />
-                ))}
-              </RadioGroup>
-              {submitted && selected !== undefined && (
-                <Alert severity={isCorrect ? 'success' : 'error'} sx={{ mt: 1 }}>
-                  {isCorrect ? 'Correct — ' : 'Not quite — '}
-                  {q.explanation}
-                </Alert>
-              )}
-            </Box>
-          );
-        })}
-      </Stack>
-
-      <Divider sx={{ my: 3 }} />
-
-      {submitted ? (
-        <Stack direction="row" alignItems="center" spacing={2}>
-          <Typography sx={{ fontWeight: 700 }}>
-            Score: {score} / {questions.length}
-          </Typography>
-          <Button
-            onClick={() => {
-              setSubmitted(false);
-              setAnswers({});
-            }}
-          >
-            Retry
-          </Button>
-        </Stack>
-      ) : (
-        <Button
-          variant="contained"
-          disableElevation
-          disabled={Object.keys(answers).length < questions.length}
-          onClick={() => setSubmitted(true)}
-          sx={{ fontWeight: 700 }}
-        >
-          Check answers
-        </Button>
-      )}
-    </Paper>
-  );
-}
+// NOTE: PracticeQuiz (inline quick-check) and the "Ready for full
+// practice?" practiceBank CTA have been removed on purpose — Practice and
+// Test now live one level up, on AptitudePatternDetailPage's 3-card flow,
+// gated behind the "Mark as Learned" button below.
 
 export default function LearnTopicPage() {
   const { topicSlug } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const topic = getTopicBySlug(topicSlug);
 
   // Flatten sections into a single ordered list of subsections for easy
@@ -136,6 +60,12 @@ export default function LearnTopicPage() {
 
   const AnimationComponent = active?.animationKey ? ANIMATION_REGISTRY[active.animationKey] : null;
   const embedUrl = toYoutubeEmbedUrl(active?.videoUrl);
+  const isLastSubsection = flatSubsections[flatSubsections.length - 1]?.id === activeId;
+
+  const handleMarkLearned = async () => {
+    await dispatch(completeLearn(topicSlug));
+    navigate(`/aptitude/${topicSlug}`);
+  };
 
   return (
     <Box sx={{ maxWidth: 1200, mx: 'auto', px: 2, py: 4 }}>
@@ -219,45 +149,21 @@ export default function LearnTopicPage() {
             )}
           </Grid>
 
-          <Divider sx={{ my: 4 }} />
-
-          <PracticeQuiz questions={topic.practiceQuestions} />
-
-          {topic.practiceBank && (
-            <Paper
-              elevation={0}
-              sx={{
-                mt: 3,
-                p: { xs: 2.5, sm: 3 },
-                borderRadius: 3,
-                bgcolor: 'primary.main',
-                color: 'primary.contrastText',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: 2,
-              }}
-            >
-              <Box>
-                <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
-                  Ready for full practice?
-                </Typography>
-                <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                  40 questions across 3 difficulty levels — Basics, Moderate, Advanced.
-                </Typography>
-              </Box>
+          {/* Only shows on the last subsection — reading every subsection
+              is the gate for unlocking Practice/Test on the pattern page. */}
+          {isLastSubsection && (
+            <>
+              <Divider sx={{ my: 4 }} />
               <Button
-                component={RouterLink}
-                to={`/learn/${topic.slug}/practice`}
                 variant="contained"
                 disableElevation
-                endIcon={<ArrowForwardRoundedIcon />}
-                sx={{ fontWeight: 700, bgcolor: 'background.paper', color: 'primary.main', '&:hover': { bgcolor: 'grey.100' } }}
+                fullWidth
+                onClick={handleMarkLearned}
+                sx={{ fontWeight: 700, py: 1.5 }}
               >
-                Start Practice
+                Mark as Learned — go to Practice &amp; Test
               </Button>
-            </Paper>
+            </>
           )}
         </Grid>
       </Grid>

@@ -9,6 +9,7 @@ export const aptitudeApi = {
   },
 
   startAttempt: (slug, mode) => apiClient.post(`/aptitude/patterns/${slug}/start`, { mode }),
+  completeLearn: (slug) => apiClient.post(`/aptitude/patterns/${slug}/complete-learn`), // NEW
   getAttemptQuestions: (attemptId) => apiClient.get(`/aptitude/attempts/${attemptId}/questions`),
   checkAnswer: (attemptId, questionId, selectedOption) =>
     apiClient.post(`/aptitude/attempts/${attemptId}/check`, { questionId, selectedOption }),
