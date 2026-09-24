@@ -29,7 +29,8 @@ export async function getPatternsWithProgress(userId) {
       progress: {
         bestScore,
         attemptsCount: progress?.attemptsCount ?? 0,
-        learnCompleted: progress?.learnCompleted ?? false, // NEW — drives the Learn/Practice/Test cards
+        learnCompleted: progress?.learnCompleted ?? false,
+        completedSubsections: progress?.completedSubsections ?? [],
         unlocked: !!userId && unlocked,
       },
     };
@@ -55,7 +56,7 @@ export async function assertPatternUnlocked(userId, pattern) {
 }
 
 /**
- * NEW — Guards Practice/Test start (server-side, same "never trust the
+ * Guards Practice/Test start (server-side, same "never trust the
  * client" reasoning as assertPatternUnlocked). Learn must be marked done
  * for THIS pattern before either mode can be started.
  */
@@ -67,9 +68,13 @@ export async function assertLearnCompleted(userId, pattern) {
 }
 
 /**
- * NEW — Called when the user reaches the last Learn subsection for a
- * pattern and clicks "Mark as Learned". Upserts so a user who never had
- * a progress doc yet (hasn't attempted a test) still gets one.
+ * Called when the user reaches the last Learn subsection for a
+ * pattern and clicks "Mark as Learned" (legacy path — kept for backward
+ * compat with older clients). Upserts so a user who never had a
+ * progress doc yet (hasn't attempted a test) still gets one.
+ *
+ * The new path is markSubsectionComplete below, which auto-flips
+ * learnCompleted once every subsection is done.
  */
 export async function markLearnCompleted(userId, patternId) {
   return AptitudeProgress.findOneAndUpdate(
@@ -77,6 +82,32 @@ export async function markLearnCompleted(userId, patternId) {
     { $set: { learnCompleted: true } },
     { upsert: true, new: true }
   );
+}
+
+/**
+ * NEW — Called by LearnTopicPage every time a subsection is completed
+ * (MicroCheck answered correctly, or Next clicked on a subsection with
+ * no checkQuestion). Adds the ID to the user's completedSubsections for
+ * this pattern, then auto-flips learnCompleted once every subsection is
+ * done (count comparison, no per-pattern whitelist on the backend).
+ *
+ * totalSubsections comes from the client — it's a harmless count, not a
+ * security input (worst case: learnCompleted flips slightly early/late,
+ * nothing else). Subsection IDs are free-form strings.
+ */
+export async function markSubsectionComplete(userId, patternId, subsectionId, totalSubsections) {
+  const progress = await AptitudeProgress.findOneAndUpdate(
+    { user: userId, pattern: patternId },
+    { $addToSet: { completedSubsections: subsectionId } },
+    { upsert: true, new: true, setDefaultsOnInsert: true }
+  );
+
+  if (!progress.learnCompleted && progress.completedSubsections.length >= totalSubsections) {
+    progress.learnCompleted = true;
+    await progress.save();
+  }
+
+  return progress;
 }
 
 export async function startAttempt({ userId, pattern, mode }) {

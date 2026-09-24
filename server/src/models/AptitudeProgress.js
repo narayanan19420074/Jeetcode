@@ -13,10 +13,17 @@ const aptitudeProgressSchema = new mongoose.Schema(
     attemptsCount: { type: Number, default: 0 },
     unlocked: { type: Boolean, default: false },
 
-    // NEW — set true only by aptitude.service.js#markLearnCompleted, when
-    // the user reaches the last subsection on LearnTopicPage and clicks
-    // "Mark as Learned". Gates Practice/Test start (assertLearnCompleted).
+    // Set true either by aptitude.service.js#markLearnCompleted (legacy
+    // "Mark as Learned" button) OR auto-flipped by markSubsectionComplete
+    // once every Learn subsection has been completed. Gates Practice/Test
+    // start (assertLearnCompleted).
     learnCompleted: { type: Boolean, default: false },
+
+    // NEW — free-form subsection IDs completed by the user on
+    // LearnTopicPage. IDs come from the frontend content file (e.g.
+    // 'equation-based-questions', 'average-speed-trap'). Auto-flips
+    // learnCompleted when length >= totalSubsections passed by the client.
+    completedSubsections: { type: [String], default: [] },
 
     lastAttemptAt: { type: Date },
   },

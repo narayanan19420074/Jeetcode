@@ -5,11 +5,14 @@ export const aptitudeApi = {
   getPattern: (slug) => apiClient.get(`/aptitude/patterns/${slug}`),
   getAttemptHistory: (slug) => apiClient.get(`/aptitude/patterns/${slug}/attempts`),
   getAttempt(attemptId) {
-  return apiClient.get(`/aptitude/attempts/${attemptId}`);
+    return apiClient.get(`/aptitude/attempts/${attemptId}`);
   },
 
   startAttempt: (slug, mode) => apiClient.post(`/aptitude/patterns/${slug}/start`, { mode }),
-  completeLearn: (slug) => apiClient.post(`/aptitude/patterns/${slug}/complete-learn`), // NEW
+  completeLearn: (slug) => apiClient.post(`/aptitude/patterns/${slug}/complete-learn`),
+  markSubsectionComplete: (slug, subsectionId, totalSubsections) =>
+    apiClient.post(`/aptitude/patterns/${slug}/learn-progress`, { subsectionId, totalSubsections }),
+
   getAttemptQuestions: (attemptId) => apiClient.get(`/aptitude/attempts/${attemptId}/questions`),
   checkAnswer: (attemptId, questionId, selectedOption) =>
     apiClient.post(`/aptitude/attempts/${attemptId}/check`, { questionId, selectedOption }),

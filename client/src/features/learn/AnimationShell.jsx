@@ -4,16 +4,16 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
+import FastForwardRoundedIcon from '@mui/icons-material/FastForwardRounded';
 import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
 
 // Drives any step-based animation: current step index + play/pause/next/
-// prev/reset. Autoplay advances one step every `stepDurationMs` and stops
-// automatically at the last step. Every animation in /learn should use
-// this instead of rolling its own timer — keeps play/pause behavior
-// consistent across topics.
-export function useStepPlayer(totalSteps, stepDurationMs = 1800) {
+// prev/reset/skipToEnd. Autoplay advances one step every `stepDurationMs`
+// and stops automatically at the last step. `autoplay` (default true)
+// starts playing on mount — pass false for manual-only visuals.
+export function useStepPlayer(totalSteps, stepDurationMs = 1800, autoplay = true) {
   const [step, setStep] = useState(0);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(autoplay);
   const intervalRef = useRef(null);
 
   useEffect(() => {
@@ -36,24 +36,38 @@ export function useStepPlayer(totalSteps, stepDurationMs = 1800) {
     setStep,
     next: () => setStep((s) => Math.min(s + 1, totalSteps - 1)),
     prev: () => setStep((s) => Math.max(s - 1, 0)),
+    skipToEnd: () => {
+      setPlaying(false);
+      setStep(totalSteps - 1);
+    },
     reset: () => {
       setStep(0);
       setPlaying(false);
     },
-    togglePlay: () =>
-      setStep((s) => {
-        // Restart from 0 if we're replaying after reaching the end.
-        if (s >= totalSteps - 1 && !playing) {
-          setPlaying(true);
-          return 0;
-        }
+    // Read step/playing from state directly (not nested inside a setState
+    // updater) — React 19 StrictMode double-invokes updater functions,
+    // which double-fired the old nested setPlaying call.
+    togglePlay: () => {
+      if (step >= totalSteps - 1 && !playing) {
+        setStep(0);
+        setPlaying(true);
+      } else {
         setPlaying((p) => !p);
-        return s;
-      }),
+      }
+    },
   };
 }
 
-export function AnimationControls({ step, totalSteps, playing, onPrev, onNext, onTogglePlay, onReset }) {
+export function AnimationControls({
+  step,
+  totalSteps,
+  playing,
+  onPrev,
+  onNext,
+  onSkipToEnd,
+  onTogglePlay,
+  onReset,
+}) {
   return (
     <Stack direction="row" spacing={1} alignItems="center" sx={{ mt: 2 }}>
       <Tooltip title="Previous step">
@@ -76,6 +90,13 @@ export function AnimationControls({ step, totalSteps, playing, onPrev, onNext, o
         <span>
           <IconButton size="small" onClick={onNext} disabled={step === totalSteps - 1}>
             <SkipNextRoundedIcon />
+          </IconButton>
+        </span>
+      </Tooltip>
+      <Tooltip title="Skip to end">
+        <span>
+          <IconButton size="small" onClick={onSkipToEnd} disabled={step === totalSteps - 1}>
+            <FastForwardRoundedIcon />
           </IconButton>
         </span>
       </Tooltip>

@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "archiver": "^8.0.0"
+  },
+  "scripts": {
+  "zip": "node zip-project.js"
+}
+}

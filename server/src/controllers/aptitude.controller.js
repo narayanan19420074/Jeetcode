@@ -1,7 +1,7 @@
 import { AptitudePattern } from '../models/AptitudePattern.js';
 import { AptitudeQuestion } from '../models/AptitudeQuestion.js';
 import { AptitudeAttempt } from '../models/AptitudeAttempt.js';
-import { AptitudeProgress } from '../models/AptitudeProgress.js'; // NEW
+import { AptitudeProgress } from '../models/AptitudeProgress.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
@@ -16,9 +16,7 @@ export const listPatterns = asyncHandler(async (req, res) => {
 });
 
 // GET /api/aptitude/patterns/:slug — pattern detail + recent test attempts.
-// FIXED: previously never returned `progress`, so AptitudePatternDetailPage
-// had no way to know bestScore/learnCompleted for the Learn/Practice/Test
-// cards. Now shaped the same way listPatterns shapes it per-pattern.
+// Returns the user's progress including per-subsection Learn completion.
 export const getPatternBySlug = asyncHandler(async (req, res) => {
   const pattern = await AptitudePattern.findOne({ slug: req.params.slug, isPublished: true }).lean();
   if (!pattern) throw ApiError.notFound('Pattern not found');
@@ -38,6 +36,7 @@ export const getPatternBySlug = asyncHandler(async (req, res) => {
       bestScore: progressDoc?.bestScore ?? 0,
       attemptsCount: progressDoc?.attemptsCount ?? 0,
       learnCompleted: progressDoc?.learnCompleted ?? false,
+      completedSubsections: progressDoc?.completedSubsections ?? [],
     },
     recentAttempts,
   }).send(res);
@@ -56,16 +55,15 @@ export const getAttemptHistory = asyncHandler(async (req, res) => {
 });
 
 // POST /api/aptitude/patterns/:slug/start — mode: 'test' | 'practice'.
-// UPDATED: now also asserts Learn is completed for this pattern before
-// either mode can start — server-side gate, same principle as
-// assertPatternUnlocked (never trust a client-only lock).
+// Asserts Learn is completed for this pattern before either mode starts —
+// server-side gate, same principle as assertPatternUnlocked.
 export const startAttempt = asyncHandler(async (req, res) => {
   const { mode } = req.body;
   const pattern = await AptitudePattern.findOne({ slug: req.params.slug, isPublished: true });
   if (!pattern) throw ApiError.notFound('Pattern not found');
 
   await aptitudeService.assertPatternUnlocked(req.user.id, pattern);
-  await aptitudeService.assertLearnCompleted(req.user.id, pattern); // NEW
+  await aptitudeService.assertLearnCompleted(req.user.id, pattern);
 
   const attempt = await aptitudeService.startAttempt({ userId: req.user.id, pattern, mode });
   new ApiResponse(
@@ -75,16 +73,46 @@ export const startAttempt = asyncHandler(async (req, res) => {
   ).send(res);
 });
 
-// NEW — POST /api/aptitude/patterns/:slug/complete-learn
-// Marks the Learn section done for this user+pattern, unlocking
-// Practice/Test on AptitudePatternDetailPage. Called from LearnTopicPage
-// when the user reaches the last subsection and clicks "Mark as Learned".
+// POST /api/aptitude/patterns/:slug/complete-learn
+// Legacy — marks the entire Learn section done in one shot, unlocking
+// Practice/Test. Kept for backward compat; the new per-subsection endpoint
+// (markSubsectionComplete below) auto-flips this once every subsection is
+// done, so this route is no longer called by the current frontend.
 export const completeLearnSection = asyncHandler(async (req, res) => {
   const pattern = await AptitudePattern.findOne({ slug: req.params.slug, isPublished: true });
   if (!pattern) throw ApiError.notFound('Pattern not found');
 
   await aptitudeService.markLearnCompleted(req.user.id, pattern._id);
   new ApiResponse(200, null, 'Learn section marked complete').send(res);
+});
+
+// POST /api/aptitude/patterns/:slug/learn-progress
+// Body: { subsectionId: string, totalSubsections: number }
+// Marks one Learn subsection as done for this user+pattern.
+// Auto-flips AptitudeProgress.learnCompleted when ALL subsections are
+// done — Practice/Test on AptitudePatternDetailPage unlock automatically
+// without any separate "mark as learned" click required.
+export const markSubsectionComplete = asyncHandler(async (req, res) => {
+  const { subsectionId, totalSubsections } = req.body;
+
+  if (typeof subsectionId !== 'string' || !subsectionId.trim() || subsectionId.length > 100) {
+    throw ApiError.badRequest('subsectionId is required and must be a string under 100 chars');
+  }
+  if (!Number.isInteger(totalSubsections) || totalSubsections < 1 || totalSubsections > 50) {
+    throw ApiError.badRequest('totalSubsections must be an integer between 1 and 50');
+  }
+
+  const pattern = await AptitudePattern.findOne({ slug: req.params.slug, isPublished: true });
+  if (!pattern) throw ApiError.notFound('Pattern not found');
+
+  await aptitudeService.markSubsectionComplete(
+    req.user.id,
+    pattern._id,
+    subsectionId.trim(),
+    totalSubsections
+  );
+
+  new ApiResponse(200, null, 'Subsection marked complete').send(res);
 });
 
 // GET /api/aptitude/attempts/:attemptId/questions — publicProjection only,
@@ -136,8 +164,6 @@ export const submitAttempt = asyncHandler(async (req, res) => {
 });
 
 // --- Admin ---
-// Mirrors createProblem/updateProblem/deleteProblem/publishProblem exactly.
-// This IS "namma pudhu aptitude pattern/questions add pannuradhu".
 
 export const adminListPatterns = asyncHandler(async (req, res) => {
   const patterns = await AptitudePattern.find().sort({ order: 1 }).lean();
@@ -218,19 +244,17 @@ export const getAttempt = asyncHandler(async (req, res) => {
   const attempt = await AptitudeAttempt.findOne({
     _id: req.params.attemptId,
     user: req.user.id,
-  }).populate('answers.question'); // Populates the 'question' field inside the answers array
+  }).populate('answers.question');
 
   if (!attempt) throw ApiError.notFound('Attempt not found');
 
-  // Re-shape the response to match the exact structure the frontend expects:
-  // { score, correctCount, totalCount, status, answers: [ { question: {...}, selectedOption, isCorrect } ] }
   const result = {
     score: attempt.score,
     correctCount: attempt.correctCount,
     totalCount: attempt.totalCount,
     status: attempt.status,
     answers: attempt.answers.map((ans) => ({
-      question: ans.question, // fully populated question object
+      question: ans.question,
       selectedOption: ans.selectedOption,
       isCorrect: ans.isCorrect,
     })),
