@@ -1,6 +1,10 @@
+import dns from 'node:dns';
 import mongoose from 'mongoose';
 import { env } from './env.js';
 import { logger } from '../utils/logger.js';
+
+// Some ISPs/routers refuse SRV lookups, which Atlas (mongodb+srv) needs.
+dns.setServers(['8.8.8.8', '1.1.1.1']);
 
 mongoose.set('strictQuery', true);
 
@@ -18,6 +22,7 @@ export async function connectDB() {
     logger.info(`MongoDB connected: ${mongoose.connection.host}`);
   } catch (err) {
     logger.error('MongoDB connection failed', err);
+    console.error(err.reason);
     // Fail fast — an API server with no DB should not accept traffic.
     process.exit(1);
   }

@@ -1,3 +1,6 @@
+import dns from 'node:dns';
+dns.setServers(['8.8.8.8', '1.1.1.1']);
+
 // Run with: node src/scripts/promoteToAdmin.js you@example.com
 // Sets that user's role to 'admin'. Prints the before/after role so you
 // can confirm the change happened.

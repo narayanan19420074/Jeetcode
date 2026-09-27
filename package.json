@@ -1,8 +1,9 @@
 {
   "devDependencies": {
+    "adm-zip": "^0.6.1",
     "archiver": "^8.0.0"
   },
   "scripts": {
-  "zip": "node zip-project.js"
-}
+    "zip": "node zip-project.cjs"
+  }
 }

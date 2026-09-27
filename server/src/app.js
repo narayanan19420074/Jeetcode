@@ -10,6 +10,7 @@ import { generalLimiter } from './middlewares/rateLimiter.js';
 import { mongoSanitizeSafe } from './middlewares/sanitize.js';
 import { env, isProd } from './config/env.js';
 import { handleWebhook } from './controllers/billing.controller.js';
+import { mountClient, shouldServeClient } from './serveClient.js';
 
 export function createApp() {
   const app = express();
@@ -18,7 +19,9 @@ export function createApp() {
   // (rate limiting, logging) and secure cookies to work.
   app.set('trust proxy', 1);
 
-  app.use(helmet());
+  // Default CSP blocks Monaco, Google Sign-In, Google Fonts, Razorpay.
+  // Skip it only when this service also serves the client.
+  app.use(helmet({ contentSecurityPolicy: shouldServeClient() ? false : true }));
   app.use(
     cors({
       origin: env.CLIENT_ORIGIN,
@@ -27,20 +30,19 @@ export function createApp() {
   );
   app.use(compression());
 
-  // Razorpay webhook — MUST be registered before express.json() below.
-  // It needs the raw request body to compute the HMAC signature; once
-  // express.json() runs, req.body becomes a parsed object and signature
-  // verification breaks. Mounted directly here rather than through
-  // routes/index.js, since that router only gets attached further down,
-  // after express.json() has already consumed the body.
+  // Razorpay webhook — MUST be registered before express.json() below
+  // (needs the raw body for HMAC signature verification).
   app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), handleWebhook);
 
-  app.use(express.json({ limit: '256kb' })); // submissions can carry ~20KB of code; 256kb is generous headroom
+  app.use(express.json({ limit: '256kb' }));
   app.use(cookieParser());
-  app.use(mongoSanitizeSafe); // strips $/. operators from user input to block NoSQL injection, Express-5-safe
+  app.use(mongoSanitizeSafe);
   app.use(morgan(isProd ? 'combined' : 'dev'));
 
   app.use('/api', generalLimiter, routes);
+
+  // Serve client/dist in production (does nothing unless SERVE_CLIENT=true)
+  mountClient(app);
 
   app.use(notFoundHandler);
   app.use(errorHandler);

@@ -1,0 +1,39 @@
+# Render Blueprint — ONE free web service that runs the API AND serves the
+# built React client (same origin => no CORS / cookie headaches).
+# Put this file at the ROOT of your repo (next to /client and /server).
+services:
+  - type: web
+    name: jeetcode            # URL becomes https://jeetcode.onrender.com (if the name is free)
+    runtime: node
+    plan: free
+    region: singapore         # closest free region to India
+    branch: YOUR_BRANCH_NAME  # <-- CHANGE THIS to the git branch you want deployed
+    autoDeploy: true          # every push to that branch redeploys
+
+    # Runs from the repo root. --include=dev is REQUIRED: Render sets
+    # NODE_ENV=production, which would otherwise skip devDependencies (vite).
+    buildCommand: npm --prefix client ci --include=dev && npm --prefix client run build && npm --prefix server ci
+    startCommand: npm --prefix server start
+    healthCheckPath: /api/health
+
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: SERVE_CLIENT     # makes Express serve client/dist
+        value: "true"
+      - key: VITE_API_BASE_URL  # baked into the client at build time
+        value: /api
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: JWT_ACCESS_EXPIRY
+        value: 15m
+      - key: JWT_REFRESH_EXPIRY
+        value: 30d
+      - key: JUDGE0_API_URL
+        value: https://ce.judge0.com
+      - key: MONGODB_URI      # Render will ask you for this when you apply the Blueprint
+        sync: false
