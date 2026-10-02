@@ -7,7 +7,7 @@ services:
     runtime: node
     plan: free
     region: singapore         # closest free region to India
-    branch: YOUR_BRANCH_NAME  # <-- CHANGE THIS to the git branch you want deployed
+    branch: feature/aptitude  # <-- CHANGE THIS to the git branch you want deployed
     autoDeploy: true          # every push to that branch redeploys
 
     # Runs from the repo root. --include=dev is REQUIRED: Render sets
