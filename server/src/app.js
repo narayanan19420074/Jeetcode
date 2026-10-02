@@ -21,7 +21,7 @@ export function createApp() {
 
   // Default CSP blocks Monaco, Google Sign-In, Google Fonts, Razorpay.
   // Skip it only when this service also serves the client.
-  app.use(helmet({ contentSecurityPolicy: shouldServeClient() ? false : true }));
+  app.use(helmet({ contentSecurityPolicy: shouldServeClient() ? false : true,crossOriginOpenerPolicy:{ policy: 'same-origin-allow-popups'}, }));
   app.use(
     cors({
       origin: env.CLIENT_ORIGIN,
