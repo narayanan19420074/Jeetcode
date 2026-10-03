@@ -120,44 +120,48 @@ export default function DashboardPage() {
       {/* Stats row — quick-glance personal numbers. Kept intentionally
           compact; this is context, not the main event. */}
       <Grid container spacing={3} sx={{ mb: 3 }}>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%' }}>
-            <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 2 }}>
+        <Grid size={{ xs: 12, md: 8 }}>
+          <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3, height: '100%', minWidth: 0 }}>
+            <Stack direction="row" spacing={1} sx={{ alignItems: 'center', flexWrap: 'wrap', rowGap: 0.5 }}>
               <LocalFireDepartmentRoundedIcon sx={{ color: 'warning.main' }} />
               <Typography variant="h6" sx={{ fontWeight: 700 }}>
                 {user?.streakDays ?? 0}-day streak
               </Typography>
-            </Stack>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              Longest streak: {user?.longestStreak ?? 0} days
-            </Typography>
-            {isAuthenticated ? (
-              <ActivityHeatmap data={activity.length ? activity : Array.from({ length: 49 }, (_, i) => ({ day: i, submissions: 0 }))} />
-            ) : (
-              <Typography variant="caption" color="text.secondary">
-                Sign in to start tracking your daily streak.
+              <Typography variant="body2" color="text.secondary" sx={{ ml: 'auto !important' }}>
+                Longest: {user?.longestStreak ?? 0} days
               </Typography>
-            )}
-          </Paper>
-        </Grid>
-
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%' }}>
-            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-              Your progress
-            </Typography>
-            <Stack direction="row" spacing={3} sx={{ justifyContent: 'space-around', flexWrap: 'wrap' }}>
-              <ProgressRing value={user?.easySolved ?? 0} max={difficultyTotals.Easy} label="Easy" color="#10B981" size={96} strokeWidth={8} />
-              <ProgressRing value={user?.mediumSolved ?? 0} max={difficultyTotals.Medium} label="Medium" color="#F59E0B" size={96} strokeWidth={8} />
-              <ProgressRing value={user?.hardSolved ?? 0} max={difficultyTotals.Hard} label="Hard" color="#EF4444" size={96} strokeWidth={8} />
             </Stack>
-            <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center', mt: 2 }}>
-              {totalSolved} solved
-            </Typography>
+
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={{ xs: 2, sm: 4 }}
+              sx={{ mt: 2, alignItems: { xs: 'stretch', sm: 'center' } }}
+            >
+              <Box sx={{ flexShrink: 0 }}>
+                <Stack direction="row" spacing={{ xs: 1, sm: 3 }} sx={{ justifyContent: 'space-around' }}>
+                  <ProgressRing value={user?.easySolved ?? 0} max={difficultyTotals.Easy} label="Easy" color="#10B981" size={84} strokeWidth={8} />
+                  <ProgressRing value={user?.mediumSolved ?? 0} max={difficultyTotals.Medium} label="Medium" color="#F59E0B" size={84} strokeWidth={8} />
+                  <ProgressRing value={user?.hardSolved ?? 0} max={difficultyTotals.Hard} label="Hard" color="#EF4444" size={84} strokeWidth={8} />
+                </Stack>
+                <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center', mt: 1.5 }}>
+                  {totalSolved} solved
+                </Typography>
+              </Box>
+
+              <Box sx={{ flex: 1, minWidth: 0 }}>
+                {isAuthenticated ? (
+                  <ActivityHeatmap data={activity.length ? activity : Array.from({ length: 49 }, (_, i) => ({ day: i, submissions: 0 }))} />
+                ) : (
+                  <Typography variant="caption" color="text.secondary">
+                    Sign in to start tracking your daily streak.
+                  </Typography>
+                )}
+              </Box>
+            </Stack>
           </Paper>
         </Grid>
 
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Paper
             variant="outlined"
             sx={{
@@ -256,7 +260,7 @@ export default function DashboardPage() {
 
       {/* Recent submissions */}
       {isAuthenticated && (
-        <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, mt: 3 }}>
+        <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3, mt: 3, overflow: 'hidden' }}>
           <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
             Recent Submissions
           </Typography>
@@ -265,32 +269,55 @@ export default function DashboardPage() {
               No submissions yet — solve a problem to see your history here.
             </Typography>
           ) : (
-            <Table size="small">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Problem</TableCell>
-                  <TableCell>Status</TableCell>
-                  <TableCell>Language</TableCell>
-                  <TableCell>Runtime</TableCell>
-                  <TableCell align="right">When</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {submissions.map((s) => (
-                  <TableRow key={s._id} hover>
-                    <TableCell sx={{ fontWeight: 600 }}>{s.problem?.title ?? 'Unknown'}</TableCell>
-                    <TableCell>
-                      <Chip label={s.status} size="small" color={statusColor[s.status] || 'default'} variant="outlined" />
-                    </TableCell>
-                    <TableCell sx={{ textTransform: 'capitalize' }}>{s.language}</TableCell>
-                    <TableCell>{s.runtimeMs != null ? `${s.runtimeMs}ms` : '-'}</TableCell>
-                    <TableCell align="right" sx={{ color: 'text.secondary' }}>
-                      {new Date(s.createdAt).toLocaleString()}
-                    </TableCell>
+            <>
+            <Stack sx={{ display: { xs: 'flex', sm: 'none' } }}>
+              {submissions.map((s, i) => (
+                <Box key={s._id} sx={{ py: 1.5, borderTop: i === 0 ? 'none' : '1px solid', borderColor: 'divider' }}>
+                  <Stack direction="row" spacing={1} sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Typography variant="body2" noWrap sx={{ fontWeight: 600, minWidth: 0 }}>
+                      {s.problem?.title ?? 'Unknown'}
+                    </Typography>
+                    <Chip label={s.status} size="small" color={statusColor[s.status] || 'default'} variant="outlined" sx={{ flexShrink: 0 }} />
+                  </Stack>
+                  <Typography variant="caption" color="text.secondary">
+                    <span style={{ textTransform: 'capitalize' }}>{s.language}</span>
+                    {' · '}
+                    {s.runtimeMs != null ? `${s.runtimeMs}ms` : '-'}
+                    {' · '}
+                    {new Date(s.createdAt).toLocaleDateString()}
+                  </Typography>
+                </Box>
+              ))}
+            </Stack>
+            <Box sx={{ display: { xs: 'none', sm: 'block' }, overflowX: 'auto' }}>
+              <Table size="small">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Problem</TableCell>
+                    <TableCell>Status</TableCell>
+                    <TableCell>Language</TableCell>
+                    <TableCell>Runtime</TableCell>
+                    <TableCell align="right">When</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHead>
+                <TableBody>
+                  {submissions.map((s) => (
+                    <TableRow key={s._id} hover>
+                      <TableCell sx={{ fontWeight: 600 }}>{s.problem?.title ?? 'Unknown'}</TableCell>
+                      <TableCell>
+                        <Chip label={s.status} size="small" color={statusColor[s.status] || 'default'} variant="outlined" />
+                      </TableCell>
+                      <TableCell sx={{ textTransform: 'capitalize' }}>{s.language}</TableCell>
+                      <TableCell>{s.runtimeMs != null ? `${s.runtimeMs}ms` : '-'}</TableCell>
+                      <TableCell align="right" sx={{ color: 'text.secondary' }}>
+                        {new Date(s.createdAt).toLocaleString()}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+            </>
           )}
         </Paper>
       )}
