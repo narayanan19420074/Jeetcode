@@ -51,6 +51,7 @@ const envSchema = z.object({
   RAZORPAY_WEBHOOK_SECRET: z.string().optional(),
   RAZORPAY_PLAN_ID_MONTHLY: z.string().optional(),
   RAZORPAY_PLAN_ID_YEARLY: z.string().optional(),
+  FREE_ACCESS_UNTIL: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
