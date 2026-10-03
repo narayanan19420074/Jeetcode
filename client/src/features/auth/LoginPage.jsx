@@ -56,24 +56,37 @@ export default function LoginPage() {
 
   // Google Identity Services — renders its own icon-only button into
   // googleBtnRef once the GSI script (loaded via index.html) is ready.
+  // The GSI script in index.html is `async defer`, so on a fresh page load it
+  // may not exist yet when this component mounts. Poll briefly until it does.
   useEffect(() => {
-    if (!GOOGLE_CLIENT_ID || !window.google?.accounts?.id || !googleBtnRef.current) return;
+    if (!GOOGLE_CLIENT_ID) return undefined;
 
-    window.google.accounts.id.initialize({
-      client_id: GOOGLE_CLIENT_ID,
-      callback: async (response) => {
-        const result = await dispatch(googleSignIn({ idToken: response.credential }));
-        if (googleSignIn.fulfilled.match(result)) {
-          goToDest(result.payload.user);
-        }
-      },
-    });
-    window.google.accounts.id.renderButton(googleBtnRef.current, {
-      type: 'icon',
-      theme: 'outline',
-      size: 'large',
-      shape: 'rectangular',
-    });
+    let timer;
+    let tries = 0;
+    const render = () => {
+      if (!window.google?.accounts?.id || !googleBtnRef.current) {
+        if (tries++ < 50) timer = setTimeout(render, 200); // ~10s max
+        return;
+      }
+      window.google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: async (response) => {
+          const result = await dispatch(googleSignIn({ idToken: response.credential }));
+          if (googleSignIn.fulfilled.match(result)) {
+            goToDest(result.payload.user);
+          }
+        },
+      });
+      googleBtnRef.current.innerHTML = '';
+      window.google.accounts.id.renderButton(googleBtnRef.current, {
+        type: 'icon',
+        theme: 'outline',
+        size: 'large',
+        shape: 'rectangular',
+      });
+    };
+    render();
+    return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

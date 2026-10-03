@@ -16,12 +16,10 @@ import {
   TableCell,
   Button,
 } from '@mui/material';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import DifficultyChip from '../../components/DifficultyChip';
-import ProgressRing from '../../components/ProgressRing';
-import ActivityHeatmap from '../../components/ActivityHeatmap';
 import PrepReadinessCard from '../../components/PrepReadinessCard';
+import SolvedCard from '../../components/SolvedCard';
 import { problemsApi } from '../../api/problemsApi';
 import { usersApi } from '../../api/usersApi';
 import { submissionsApi } from '../../api/submissionsApi';
@@ -121,44 +119,7 @@ export default function DashboardPage() {
           compact; this is context, not the main event. */}
       <Grid container spacing={3} sx={{ mb: 3 }}>
         <Grid size={{ xs: 12, md: 8 }}>
-          <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3, height: '100%', minWidth: 0 }}>
-            <Stack direction="row" spacing={1} sx={{ alignItems: 'center', flexWrap: 'wrap', rowGap: 0.5 }}>
-              <LocalFireDepartmentRoundedIcon sx={{ color: 'warning.main' }} />
-              <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                {user?.streakDays ?? 0}-day streak
-              </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ ml: 'auto !important' }}>
-                Longest: {user?.longestStreak ?? 0} days
-              </Typography>
-            </Stack>
-
-            <Stack
-              direction={{ xs: 'column', sm: 'row' }}
-              spacing={{ xs: 2, sm: 4 }}
-              sx={{ mt: 2, alignItems: { xs: 'stretch', sm: 'center' } }}
-            >
-              <Box sx={{ flexShrink: 0 }}>
-                <Stack direction="row" spacing={{ xs: 1, sm: 3 }} sx={{ justifyContent: 'space-around' }}>
-                  <ProgressRing value={user?.easySolved ?? 0} max={difficultyTotals.Easy} label="Easy" color="#10B981" size={84} strokeWidth={8} />
-                  <ProgressRing value={user?.mediumSolved ?? 0} max={difficultyTotals.Medium} label="Medium" color="#F59E0B" size={84} strokeWidth={8} />
-                  <ProgressRing value={user?.hardSolved ?? 0} max={difficultyTotals.Hard} label="Hard" color="#EF4444" size={84} strokeWidth={8} />
-                </Stack>
-                <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center', mt: 1.5 }}>
-                  {totalSolved} solved
-                </Typography>
-              </Box>
-
-              <Box sx={{ flex: 1, minWidth: 0 }}>
-                {isAuthenticated ? (
-                  <ActivityHeatmap data={activity.length ? activity : Array.from({ length: 49 }, (_, i) => ({ day: i, submissions: 0 }))} />
-                ) : (
-                  <Typography variant="caption" color="text.secondary">
-                    Sign in to start tracking your daily streak.
-                  </Typography>
-                )}
-              </Box>
-            </Stack>
-          </Paper>
+          <SolvedCard user={user} isAuthenticated={isAuthenticated} totals={difficultyTotals} activity={activity} />
         </Grid>
 
         <Grid size={{ xs: 12, md: 4 }}>
