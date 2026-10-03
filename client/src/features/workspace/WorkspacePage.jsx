@@ -20,6 +20,10 @@ import {
   Tooltip,
   Paper,
   Alert,
+  useMediaQuery,
+  useTheme,
+  ToggleButtonGroup,
+  ToggleButton,
 } from '@mui/material';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
@@ -65,6 +69,9 @@ export default function WorkspacePage() {
   } = useSelector((s) => s.workspace);
 
   const [descTab, setDescTab] = useState(0);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [mobileView, setMobileView] = useState('problem');
   const [aiInput, setAiInput] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiMessages, setAiMessages] = useState([
@@ -154,15 +161,37 @@ export default function WorkspacePage() {
   const resultToShow = submitResult || runResult;
 
   return (
-    <Box sx={{ display: 'flex', height: 'calc(100vh - 64px)', overflow: 'hidden' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', md: 'row' },
+        height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' },
+        overflow: 'hidden',
+      }}
+    >
+      {isMobile && (
+        <ToggleButtonGroup
+          exclusive
+          fullWidth
+          size="small"
+          value={mobileView}
+          onChange={(e, v) => v && setMobileView(v)}
+          sx={{ p: 1, flexShrink: 0 }}
+        >
+          <ToggleButton value="problem">Problem</ToggleButton>
+          <ToggleButton value="code">Code</ToggleButton>
+        </ToggleButtonGroup>
+      )}
       {/* Left pane — problem description */}
       <Box
         sx={{
-          width: '42%',
-          minWidth: 340,
-          borderRight: '1px solid',
+          width: { xs: '100%', md: '42%' },
+          minWidth: { xs: 0, md: 340 },
+          flex: { xs: 1, md: 'none' },
+          minHeight: 0,
+          borderRight: { md: '1px solid' },
           borderColor: 'divider',
-          display: 'flex',
+          display: { xs: mobileView === 'problem' ? 'flex' : 'none', md: 'flex' },
           flexDirection: 'column',
           overflow: 'hidden',
         }}
@@ -232,13 +261,22 @@ export default function WorkspacePage() {
       </Box>
 
       {/* Right pane — editor + runner */}
-      <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      <Box
+        sx={{
+          flex: 1,
+          minWidth: 0,
+          minHeight: 0,
+          display: { xs: mobileView === 'code' ? 'flex' : 'none', md: 'flex' },
+          flexDirection: 'column',
+          overflow: 'hidden',
+        }}
+      >
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ px: 2, py: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
           <Select
             size="small"
             value={activeLanguage}
             onChange={(e) => dispatch(setLanguage(e.target.value))}
-            sx={{ minWidth: 140 }}
+            sx={{ minWidth: { xs: 100, md: 140 } }}
           >
             {LANGUAGES.map((l) => (
               <MenuItem key={l.id} value={l.id}>

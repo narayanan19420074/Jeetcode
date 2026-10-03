@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { env } from '../config/env.js';
 import authRoutes from './auth.routes.js';
 import problemRoutes from './problem.routes.js';
 import submissionRoutes from './submission.routes.js';
@@ -13,7 +14,13 @@ import '../models/AdminActionLog.js';
 
 const router = Router();
 
-router.get('/health', (req, res) => res.json({ success: true, message: 'JeetCode API is up' }));
+router.get('/health', (req, res) =>
+  res.json({
+    success: true,
+    message: 'JeetCode API is up',
+    freeAccessUntil: env.FREE_ACCESS_UNTIL || null,
+  })
+);
 
 router.use('/auth', authRoutes);
 router.use('/problems', problemRoutes);

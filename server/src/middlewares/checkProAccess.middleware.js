@@ -1,6 +1,6 @@
 import { User } from '../models/User.js';
+import { env } from '../config/env.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
-import {env} from "../config/env.js"
 
 // Deliberately NOT read from the JWT payload like requireAuth's req.user —
 // Pro status changes async via Razorpay webhooks (renewal, cancellation,
@@ -16,7 +16,8 @@ export const checkProAccess = asyncHandler(async (req, res, next) => {
     req.hasProAccess = false;
     return next();
   }
-  if (env.FREE_ACCESS_UNTIL && new Date()<new Date(env.FREE_ACCESS_UNTIL)){
+  // Launch offer: free Pro for all logged-in users until FREE_ACCESS_UNTIL.
+  if (env.FREE_ACCESS_UNTIL && new Date() < new Date(env.FREE_ACCESS_UNTIL)) {
     req.hasProAccess = true;
     return next();
   }
