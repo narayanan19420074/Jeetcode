@@ -3,28 +3,34 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
 import {
   Box,
-  Paper,
-  TextField,
   Button,
   Typography,
   Alert,
   Divider,
   Link,
   Stack,
+  IconButton,
+  Tooltip,
   CircularProgress,
 } from '@mui/material';
-import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { loginUser, googleSignIn, githubSignIn } from './authSlice';
+import { loginUser, googleSignIn } from './authSlice';
+import AuthShell, { AuthField } from './AuthShell';
 
-// These 3 env vars must exist in client/.env — see WIRING.md section on
-// frontend setup. GOOGLE_CLIENT_ID must match the backend's, GITHUB/LINKEDIN
-// redirect URIs must EXACTLY match what's registered on each provider's app
-// settings (trailing slashes matter).
+// These env vars must exist in client/.env. GITHUB redirect URI must EXACTLY
+// match what's registered on GitHub's app settings (trailing slashes matter).
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 const GITHUB_CLIENT_ID = import.meta.env.VITE_GITHUB_CLIENT_ID;
 const GITHUB_REDIRECT_URI = `${window.location.origin}/auth/github/callback`;
+
+const iconBtnSx = {
+  width: 40,
+  height: 40,
+  border: '1px solid',
+  borderColor: 'divider',
+  borderRadius: 1,
+};
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -48,10 +54,8 @@ export default function LoginPage() {
     }
   };
 
-  // Google Identity Services — renders its own styled button into
-  // googleBtnRef once the GSI script (loaded via index.html, see
-  // WIRING.md) is ready. The button itself hands us a signed idToken via
-  // this callback; we never touch Google credentials directly.
+  // Google Identity Services — renders its own icon-only button into
+  // googleBtnRef once the GSI script (loaded via index.html) is ready.
   useEffect(() => {
     if (!GOOGLE_CLIENT_ID || !window.google?.accounts?.id || !googleBtnRef.current) return;
 
@@ -65,17 +69,15 @@ export default function LoginPage() {
       },
     });
     window.google.accounts.id.renderButton(googleBtnRef.current, {
+      type: 'icon',
       theme: 'outline',
       size: 'large',
-      width: 360,
-      text: 'continue_with',
+      shape: 'rectangular',
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // GitHub — no SDK, just redirect to GitHub's consent screen. GitHub
-  // redirects back to /auth/github/callback?code=..., which is a
-  // separate page (GithubCallbackPage.jsx) that finishes the sign-in.
+  // GitHub — no SDK, just redirect to GitHub's consent screen.
   const handleGithubClick = () => {
     const url = new URL('https://github.com/login/oauth/authorize');
     url.searchParams.set('client_id', GITHUB_CLIENT_ID);
@@ -85,121 +87,85 @@ export default function LoginPage() {
   };
 
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'background.default',
-        px: 2,
-      }}
-    >
-      <Paper
-        elevation={0}
-        variant="outlined"
-        sx={{ p: { xs: 3, sm: 5 }, width: '100%', maxWidth: 440, borderRadius: 3 }}
-      >
-        <Stack alignItems="center" spacing={1} sx={{ mb: 3 }}>
-          <CodeRoundedIcon sx={{ fontSize: 36, color: 'primary.main' }} />
-          <Typography variant="h5" sx={{ fontWeight: 800 }}>
-            Welcome back
-          </Typography>
-          <Typography variant="body2" color="text.secondary" textAlign="center">
-            Free, forever. No paywalls between you and your next offer.
-          </Typography>
-        </Stack>
-
-        {error && (
-          <Alert severity="error" sx={{ mb: 2 }}>
-            {error}
-          </Alert>
-        )}
-
-        <Box component="form" onSubmit={handleSubmit}>
-          <Stack spacing={2}>
-            <TextField
-              label="Email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              fullWidth
-              required
-              autoFocus
-            />
-            <TextField
-              label="Password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              fullWidth
-              required
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              disableElevation
-              size="large"
-              disabled={status === 'loading'}
-              sx={{ fontWeight: 700, py: 1.2 }}
-            >
-              {status === 'loading' ? <CircularProgress size={22} color="inherit" /> : 'Sign in'}
-            </Button>
-          </Stack>
-        </Box>
-
-        <Divider sx={{ my: 3 }}>
-          <Typography variant="caption" color="text.secondary">
-            OR
-          </Typography>
-        </Divider>
-
-        <Stack spacing={1.5}>
-          {/* Google renders its own button here via the GSI script */}
-          <Box ref={googleBtnRef} sx={{ display: 'flex', justifyContent: 'center' }} />
-
-          <Button
-            fullWidth
-            variant="outlined"
-            startIcon={<GitHubIcon />}
-            onClick={handleGithubClick}
-            sx={{ fontWeight: 600 }}
-          >
-            Continue with GitHub
-          </Button>
-
-          {/* LinkedIn: pending product approval on LinkedIn's side — see
-              WIRING.md. Button wired but will 401 until that clears. */}
-          <Button
-            fullWidth
-            variant="outlined"
-            startIcon={<LinkedInIcon />}
-            disabled
-            sx={{ fontWeight: 600 }}
-          >
-            Continue with LinkedIn (pending approval)
-          </Button>
-        </Stack>
-
-        <Divider sx={{ my: 3 }} />
-
-        <Button
-          component={RouterLink}
-          to="/dashboard"
-          fullWidth
-          variant="outlined"
-          sx={{ fontWeight: 600 }}
-        >
-          Continue as Guest
-        </Button>
-
-        <Typography variant="body2" textAlign="center" sx={{ mt: 3 }}>
-          New here?{' '}
+    <AuthShell
+      title="Sign in to JeetCode"
+      footer={
+        <>
+          New to JeetCode?{' '}
           <Link component={RouterLink} to="/signup" underline="hover" sx={{ fontWeight: 600 }}>
-            Create a free account
+            Create an account
           </Link>
+        </>
+      }
+    >
+      {error && (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          {error}
+        </Alert>
+      )}
+
+      <Box component="form" onSubmit={handleSubmit}>
+        <Stack spacing={2}>
+          <AuthField
+            id="login-email"
+            label="Email"
+            type="email"
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <AuthField
+            id="login-password"
+            label="Password"
+            type="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            disableElevation
+            fullWidth
+            disabled={status === 'loading'}
+            sx={{ fontWeight: 600 }}
+          >
+            {status === 'loading' ? <CircularProgress size={20} color="inherit" /> : 'Sign in'}
+          </Button>
+        </Stack>
+      </Box>
+
+      <Divider sx={{ my: 2.5 }}>
+        <Typography variant="caption" color="text.secondary">
+          or continue with
         </Typography>
-      </Paper>
-    </Box>
+      </Divider>
+
+      <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
+        {/* Google renders its own icon button here */}
+        <Box ref={googleBtnRef} sx={{ height: 40, display: 'flex', alignItems: 'center' }} />
+
+        <Tooltip title="GitHub">
+          <IconButton aria-label="Continue with GitHub" onClick={handleGithubClick} sx={iconBtnSx}>
+            <GitHubIcon fontSize="small" />
+          </IconButton>
+        </Tooltip>
+
+        {/* LinkedIn: pending product approval on LinkedIn's side */}
+        <Tooltip title="LinkedIn (coming soon)">
+          <span>
+            <IconButton aria-label="LinkedIn (coming soon)" disabled sx={iconBtnSx}>
+              <LinkedInIcon fontSize="small" />
+            </IconButton>
+          </span>
+        </Tooltip>
+      </Stack>
+
+      <Typography variant="body2" sx={{ textAlign: 'center', mt: 2.5 }}>
+        <Link component={RouterLink} to="/dashboard" underline="hover" color="text.secondary">
+          Continue as guest
+        </Link>
+      </Typography>
+    </AuthShell>
   );
 }

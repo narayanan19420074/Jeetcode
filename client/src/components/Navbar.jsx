@@ -118,7 +118,7 @@ export default function Navbar() {
 
         <Box
           component={RouterLink}
-          to="/"
+          to={isAuthenticated ? '/dashboard' : '/'}
           sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', color: 'inherit', mr: { xs: 0, md: 2 } }}
         >
           <CodeRoundedIcon sx={{ color: 'primary.main' }} />
