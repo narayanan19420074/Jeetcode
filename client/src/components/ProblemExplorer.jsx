@@ -4,13 +4,7 @@ import {
   Box,
   Paper,
   Typography,
-  Chip,
   Stack,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
   TextField,
   InputAdornment,
   ToggleButtonGroup,
@@ -22,17 +16,22 @@ import {
   Button,
   Select,
   MenuItem,
+  Collapse,
+  IconButton,
+  Tooltip,
+  useMediaQuery,
   alpha,
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUncheckedRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
+import TuneRoundedIcon from '@mui/icons-material/TuneRounded';
 import KeyboardDoubleArrowDownRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowDownRounded';
 import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowUpRounded';
-import DifficultyChip from './DifficultyChip';
 import { problemsApi } from '../api/problemsApi';
 import { extractErrorMessage } from '../api/apiClient';
 
@@ -167,8 +166,8 @@ function ProgressSummary({ progress }) {
   const solvedAll = difficulties.reduce((sum, d) => sum + progress.solved[d], 0);
 
   return (
-    <Box sx={{ mb: 2.5 }}>
-      <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 1 }}>
+    <Box sx={{ mb: 1.5 }}>
+      <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 0.75 }}>
         <Typography variant="body2" sx={{ fontWeight: 700 }}>
           {solvedAll} / {totalAll} solved
         </Typography>
@@ -202,36 +201,48 @@ function ProblemStatusIcon({ solved }) {
   );
 }
 
-// Mobile/tablet card — the table's 6 columns don't fit a phone screen, so
-// below `md` this renders instead of <Table>.
-function ProblemCard({ p, onClick }) {
+// LeetCode-style compact row: status icon, "N. Title", acceptance (sm+),
+// difficulty as coloured text. Tags/companies live in the filters, not here.
+const DIFF_TEXT = { Easy: 'success.main', Medium: 'warning.main', Hard: 'error.main' };
+
+function ProblemRow({ p, index, onClick }) {
   return (
-    <Paper variant="outlined" onClick={onClick} sx={{ p: 2, borderRadius: 2, cursor: 'pointer', '&:active': { bgcolor: 'action.hover' } }}>
-      <Stack direction="row" spacing={1} sx={{ alignItems: 'flex-start', mb: 1 }}>
-        <Box sx={{ mt: 0.25 }}>
-          <ProblemStatusIcon solved={p.solvedByMe} />
-        </Box>
-        <Typography variant="body1" sx={{ fontWeight: 600, flex: 1 }}>
-          {p.title}
-        </Typography>
-        {p.locked && <LockRoundedIcon fontSize="small" color="disabled" />}
-      </Stack>
-
-      <Stack direction="row" spacing={0.75} sx={{ flexWrap: 'wrap', alignItems: 'center', mb: p.tags?.length ? 1 : 0 }}>
-        <DifficultyChip difficulty={p.difficulty} />
-        <Typography variant="caption" color="text.secondary">
-          {p.acceptanceRate ?? 0}% acceptance
-        </Typography>
-      </Stack>
-
-      {(p.tags || []).length > 0 && (
-        <Stack direction="row" spacing={0.5} sx={{ flexWrap: 'wrap' }}>
-          {p.tags.slice(0, 3).map((t) => (
-            <Chip key={t} label={t} size="small" variant="outlined" />
-          ))}
-        </Stack>
-      )}
-    </Paper>
+    <Box
+      onClick={onClick}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1.5,
+        px: { xs: 1.5, sm: 2.5 },
+        py: 1.25,
+        cursor: 'pointer',
+        borderBottom: '1px solid',
+        borderColor: 'divider',
+        '&:hover': { bgcolor: 'action.hover' },
+        '&:active': { bgcolor: 'action.selected' },
+      }}
+    >
+      <Box sx={{ display: 'flex', flexShrink: 0 }}>
+        <ProblemStatusIcon solved={p.solvedByMe} />
+      </Box>
+      <Typography variant="body2" noWrap sx={{ flex: 1, minWidth: 0, fontWeight: 500 }}>
+        {index}. {p.title}
+      </Typography>
+      {p.locked && <LockRoundedIcon sx={{ fontSize: 16, flexShrink: 0 }} color="disabled" />}
+      <Typography
+        variant="caption"
+        color="text.secondary"
+        sx={{ display: { xs: 'none', sm: 'block' }, width: 48, textAlign: 'right', flexShrink: 0 }}
+      >
+        {p.acceptanceRate ?? 0}%
+      </Typography>
+      <Typography
+        variant="caption"
+        sx={{ fontWeight: 600, color: DIFF_TEXT[p.difficulty] || 'text.secondary', width: 52, textAlign: 'right', flexShrink: 0 }}
+      >
+        {p.difficulty}
+      </Typography>
+    </Box>
   );
 }
 
@@ -270,6 +281,10 @@ export default function ProblemExplorer({ pageSize = 20 }) {
   const [selectedTags, setSelectedTags] = useState(() => searchParams.getAll('tag'));
   const [availableCompanies, setAvailableCompanies] = useState([]);
   const [selectedCompanies, setSelectedCompanies] = useState(() => searchParams.getAll('company'));
+
+  const theme = useTheme();
+  const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const [progress, setProgress] = useState(null);
   const [pickingRandom, setPickingRandom] = useState(false);
@@ -346,174 +361,181 @@ export default function ProblemExplorer({ pageSize = 20 }) {
       .finally(() => setPickingRandom(false));
   };
 
-  return (
-    <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
-      <ProgressSummary progress={progress} />
+  const activeFilterCount =
+    (difficultyFilter !== 'All' ? 1 : 0) + (statusFilter !== 'All' ? 1 : 0) + selectedTags.length + selectedCompanies.length;
+  const offset = (page - 1) * pageSize;
 
-      <Stack spacing={1.5} sx={{ mb: 2 }}>
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ alignItems: { sm: 'center' } }}>
+  return (
+    // Fills whatever height the parent gives it: the top block (progress,
+    // search, filters) and the pagination stay fixed, only the list scrolls.
+    <Paper
+      variant="outlined"
+      sx={{ borderRadius: 3, height: '100%', minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
+    >
+      <Box sx={{ p: { xs: 1.5, sm: 2.5 }, pb: { xs: 1.25, sm: 2 }, flexShrink: 0, borderBottom: '1px solid', borderColor: 'divider' }}>
+        <ProgressSummary progress={progress} />
+
+        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
           <TextField
             size="small"
             placeholder="Search problems"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            sx={{ minWidth: { sm: 220 }, flex: { sm: 1 } }}
+            sx={{ flex: 1, minWidth: 0 }}
             InputProps={{ startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> }}
           />
+
+          <Button
+            variant={activeFilterCount > 0 ? 'contained' : 'outlined'}
+            disableElevation
+            size="small"
+            startIcon={<TuneRoundedIcon fontSize="small" />}
+            onClick={() => setFiltersOpen((v) => !v)}
+            sx={{ display: { xs: 'inline-flex', sm: 'none' }, flexShrink: 0, minWidth: 0 }}
+          >
+            {activeFilterCount > 0 ? activeFilterCount : 'Filter'}
+          </Button>
+
           <Button
             variant="outlined"
             size="small"
             startIcon={pickingRandom ? <CircularProgress size={14} /> : <ShuffleRoundedIcon fontSize="small" />}
             onClick={handlePickOne}
             disabled={pickingRandom}
-            sx={{ flexShrink: 0 }}
+            sx={{ display: { xs: 'none', sm: 'inline-flex' }, flexShrink: 0 }}
           >
             Pick One
           </Button>
+          <Tooltip title="Pick a random problem">
+            <span>
+              <IconButton
+                size="small"
+                onClick={handlePickOne}
+                disabled={pickingRandom}
+                aria-label="Pick a random problem"
+                sx={{ display: { xs: 'inline-flex', sm: 'none' }, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}
+              >
+                {pickingRandom ? <CircularProgress size={16} /> : <ShuffleRoundedIcon fontSize="small" />}
+              </IconButton>
+            </span>
+          </Tooltip>
         </Stack>
 
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ alignItems: { sm: 'center' }, justifyContent: 'space-between' }}>
-          <Stack direction="row" spacing={1.5} sx={{ flexWrap: 'wrap', rowGap: 1 }}>
-            <ToggleButtonGroup size="small" exclusive value={difficultyFilter} onChange={(e, v) => v && setDifficultyFilter(v)}>
-              <ToggleButton value="All">All</ToggleButton>
-              <ToggleButton value="Easy">Easy</ToggleButton>
-              <ToggleButton value="Medium">Medium</ToggleButton>
-              <ToggleButton value="Hard">Hard</ToggleButton>
-            </ToggleButtonGroup>
+        {/* Filters: collapsed behind the Filter button on phones, always
+            visible from sm up. The panel scrolls on its own if it gets tall. */}
+        <Collapse in={isSmUp || filtersOpen}>
+          <Box sx={{ maxHeight: { xs: '45vh', sm: 'none' }, overflowY: 'auto', pt: 1.5 }}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ alignItems: { sm: 'center' }, justifyContent: 'space-between', mb: 1.5 }}>
+              <Stack direction="row" spacing={1.5} sx={{ flexWrap: 'wrap', rowGap: 1 }}>
+                <ToggleButtonGroup size="small" exclusive value={difficultyFilter} onChange={(e, v) => v && setDifficultyFilter(v)}>
+                  <ToggleButton value="All">All</ToggleButton>
+                  <ToggleButton value="Easy">Easy</ToggleButton>
+                  <ToggleButton value="Medium">Medium</ToggleButton>
+                  <ToggleButton value="Hard">Hard</ToggleButton>
+                </ToggleButtonGroup>
 
-            <ToggleButtonGroup size="small" exclusive value={statusFilter} onChange={(e, v) => v && setStatusFilter(v)}>
-              <ToggleButton value="All">All</ToggleButton>
-              <ToggleButton value="solved">Solved</ToggleButton>
-              <ToggleButton value="unsolved">Unsolved</ToggleButton>
-            </ToggleButtonGroup>
-          </Stack>
+                <ToggleButtonGroup size="small" exclusive value={statusFilter} onChange={(e, v) => v && setStatusFilter(v)}>
+                  <ToggleButton value="All">All</ToggleButton>
+                  <ToggleButton value="solved">Solved</ToggleButton>
+                  <ToggleButton value="unsolved">Unsolved</ToggleButton>
+                </ToggleButtonGroup>
+              </Stack>
 
-          {!search && (
-            <Select size="small" value={sortBy} onChange={(e) => setSortBy(e.target.value)} sx={{ minWidth: 190 }}>
-              {SORT_OPTIONS.map((opt) => (
-                <MenuItem key={opt.value} value={opt.value}>
-                  {opt.label}
-                </MenuItem>
-              ))}
-            </Select>
+              {!search && (
+                <Select size="small" value={sortBy} onChange={(e) => setSortBy(e.target.value)} sx={{ minWidth: 190 }}>
+                  {SORT_OPTIONS.map((opt) => (
+                    <MenuItem key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </MenuItem>
+                  ))}
+                </Select>
+              )}
+            </Stack>
+
+            {availableTags.length > 0 && (
+              <Box sx={{ mb: 1.5 }}>
+                <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.secondary', display: 'block', mb: 0.5 }}>
+                  Filter by pattern
+                </Typography>
+                <CollapsibleFilterRow items={availableTags} itemKey="tag" selected={selectedTags} onToggle={toggleTag} />
+              </Box>
+            )}
+
+            {availableCompanies.length > 0 && (
+              <Box sx={{ mb: 0.5 }}>
+                <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.secondary', display: 'block', mb: 0.5 }}>
+                  Filter by company
+                </Typography>
+                <CollapsibleFilterRow
+                  items={availableCompanies}
+                  itemKey="company"
+                  selected={selectedCompanies}
+                  onToggle={toggleCompany}
+                  extraTrailing={
+                    hasActiveFilters && (
+                      <Button size="small" startIcon={<ClearRoundedIcon fontSize="small" />} onClick={clearAllFilters} sx={{ minWidth: 0 }}>
+                        Clear filters
+                      </Button>
+                    )
+                  }
+                />
+              </Box>
+            )}
+
+            {hasActiveFilters && availableCompanies.length === 0 && (
+              <Button size="small" startIcon={<ClearRoundedIcon fontSize="small" />} onClick={clearAllFilters} sx={{ minWidth: 0 }}>
+                Clear filters
+              </Button>
+            )}
+          </Box>
+        </Collapse>
+      </Box>
+
+      {(randomError || error) && (
+        <Box sx={{ px: { xs: 1.5, sm: 2.5 }, pt: 1.5, flexShrink: 0 }}>
+          {randomError && (
+            <Alert severity="warning" sx={{ mb: 1 }} onClose={() => setRandomError(null)}>
+              {randomError}
+            </Alert>
           )}
-        </Stack>
-      </Stack>
-
-      {randomError && (
-        <Alert severity="warning" sx={{ mb: 2 }} onClose={() => setRandomError(null)}>
-          {randomError}
-        </Alert>
-      )}
-
-      {availableTags.length > 0 && (
-        <Box sx={{ mb: 2 }}>
-          <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.secondary', display: 'block', mb: 0.5 }}>
-            Filter by pattern
-          </Typography>
-          <CollapsibleFilterRow items={availableTags} itemKey="tag" selected={selectedTags} onToggle={toggleTag} />
+          {error && <Alert severity="error">{error}</Alert>}
         </Box>
       )}
 
-      {availableCompanies.length > 0 && (
-        <Box sx={{ mb: 2 }}>
-          <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.secondary', display: 'block', mb: 0.5 }}>
-            Filter by company
+      {/* The only scrolling part of the page */}
+      <Box sx={{ flex: 1, minHeight: 0, overflowY: 'auto', position: 'relative' }}>
+        {loading ? (
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
+            <CircularProgress size={28} />
+          </Box>
+        ) : problems.length === 0 ? (
+          <Typography variant="body2" color="text.secondary" sx={{ p: 3 }}>
+            No problems match your filters.
           </Typography>
-          <CollapsibleFilterRow
-            items={availableCompanies}
-            itemKey="company"
-            selected={selectedCompanies}
-            onToggle={toggleCompany}
-            extraTrailing={
-              hasActiveFilters && (
-                <Button size="small" startIcon={<ClearRoundedIcon fontSize="small" />} onClick={clearAllFilters} sx={{ minWidth: 0 }}>
-                  Clear filters
-                </Button>
-              )
-            }
+        ) : (
+          <>
+            {refetching && <LinearProgress sx={{ position: 'sticky', top: 0, height: 2, zIndex: 1 }} />}
+            <Box sx={{ opacity: refetching ? 0.5 : 1, transition: 'opacity 0.15s ease' }}>
+              {problems.map((p, i) => (
+                <ProblemRow key={p._id} p={p} index={offset + i + 1} onClick={() => navigate(`/workspace/${p.slug}`)} />
+              ))}
+            </Box>
+          </>
+        )}
+      </Box>
+
+      {pagination.totalPages > 1 && (
+        <Box sx={{ flexShrink: 0, borderTop: '1px solid', borderColor: 'divider', py: 1, display: 'flex', justifyContent: 'center' }}>
+          <Pagination
+            count={pagination.totalPages}
+            page={page}
+            onChange={(e, v) => setPage(v)}
+            color="primary"
+            shape="rounded"
+            size="small"
+            siblingCount={isSmUp ? 1 : 0}
           />
         </Box>
-      )}
-
-      {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
-
-      {loading ? (
-        <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
-          <CircularProgress size={28} />
-        </Box>
-      ) : problems.length === 0 ? (
-        <Typography variant="body2" color="text.secondary" sx={{ py: 3 }}>
-          No problems match your filters.
-        </Typography>
-      ) : (
-        <>
-          <Box sx={{ height: 3, mb: 1.5 }}>{refetching && <LinearProgress sx={{ height: 3, borderRadius: 2 }} />}</Box>
-
-          <Box sx={{ opacity: refetching ? 0.5 : 1, transition: 'opacity 0.15s ease' }}>
-            <Stack spacing={1.5} sx={{ display: { xs: 'flex', md: 'none' } }}>
-              {problems.map((p) => (
-                <ProblemCard key={p._id} p={p} onClick={() => navigate(`/workspace/${p.slug}`)} />
-              ))}
-            </Stack>
-
-            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-              <Table size="small">
-                <TableHead>
-                  <TableRow>
-                    <TableCell padding="checkbox" />
-                    <TableCell>Title</TableCell>
-                    <TableCell>Difficulty</TableCell>
-                    <TableCell>Tags</TableCell>
-                    <TableCell>Companies</TableCell>
-                    <TableCell align="right">Acceptance</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {problems.map((p) => (
-                    <TableRow key={p._id} hover sx={{ cursor: 'pointer' }} onClick={() => navigate(`/workspace/${p.slug}`)}>
-                      <TableCell padding="checkbox">
-                        <ProblemStatusIcon solved={p.solvedByMe} />
-                      </TableCell>
-                      <TableCell sx={{ fontWeight: 600 }}>{p.title}</TableCell>
-                      <TableCell>
-                        <DifficultyChip difficulty={p.difficulty} />
-                      </TableCell>
-                      <TableCell>
-                        <Stack direction="row" spacing={0.5} flexWrap="wrap">
-                          {(p.tags || []).slice(0, 2).map((t) => (
-                            <Chip key={t} label={t} size="small" variant="outlined" color={selectedTags.includes(t) ? 'primary' : 'default'} />
-                          ))}
-                        </Stack>
-                      </TableCell>
-                      <TableCell>
-                        <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }} flexWrap="wrap">
-                          {p.locked && <LockRoundedIcon fontSize="small" color="disabled" />}
-                          {(p.companies || []).slice(0, 2).map((c) => (
-                            <Chip
-                              key={c}
-                              label={c}
-                              size="small"
-                              variant="outlined"
-                              color={selectedCompanies.includes(c) ? 'primary' : 'default'}
-                            />
-                          ))}
-                        </Stack>
-                      </TableCell>
-                      <TableCell align="right">{p.acceptanceRate ?? 0}%</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </Box>
-          </Box>
-
-          {pagination.totalPages > 1 && (
-            <Stack alignItems="center" sx={{ mt: 3 }}>
-              <Pagination count={pagination.totalPages} page={page} onChange={(e, v) => setPage(v)} color="primary" shape="rounded" />
-            </Stack>
-          )}
-        </>
       )}
     </Paper>
   );
