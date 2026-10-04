@@ -40,17 +40,23 @@ async function buildProblemFilter({ difficulty, tag, company, search, status, us
   if (company) filter.companies = { $in: Array.isArray(company) ? company : [company] };
   if (search) filter.$text = { $search: search };
 
+  // Two shapes on purpose: Problem.aggregate() does NOT cast strings to
+  // ObjectId inside $match, so the status filter must use the real ObjectIds
+  // (strings never match, which made "Solved" return nothing and "Unsolved"
+  // exclude nothing). The string form is only for solvedByMe lookups.
+  let solvedObjectIds = [];
   let solvedIds = [];
   if (userId) {
     const user = await User.findById(userId).select('solvedProblems').lean();
-    solvedIds = (user?.solvedProblems || []).map((id) => id.toString());
+    solvedObjectIds = user?.solvedProblems || [];
+    solvedIds = solvedObjectIds.map((id) => id.toString());
   }
 
   if (status === 'solved') {
     if (!userId) throw ApiError.unauthorized('Log in to filter by solved status');
-    filter._id = { $in: solvedIds };
+    filter._id = { $in: solvedObjectIds };
   } else if (status === 'unsolved') {
-    if (userId) filter._id = { $nin: solvedIds };
+    if (userId) filter._id = { $nin: solvedObjectIds };
   }
 
   return { filter, solvedIds };
