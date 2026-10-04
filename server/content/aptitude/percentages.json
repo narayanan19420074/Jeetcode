@@ -1,0 +1,2721 @@
+{
+ "pattern": {
+  "title": "Percentages",
+  "slug": "percentages",
+  "description": "Percentage change, successive change and real-life percentage models.",
+  "order": 4,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "basic-percentage-conversions",
+    "title": "Basic percentage & conversions"
+   },
+   {
+    "slug": "successive-percentage-change",
+    "title": "Successive percentage change"
+   },
+   {
+    "slug": "population-growth-decrease",
+    "title": "Population growth & decrease"
+   },
+   {
+    "slug": "price-consumption-relation",
+    "title": "Price-consumption relation"
+   },
+   {
+    "slug": "election-votes",
+    "title": "Election & votes"
+   },
+   {
+    "slug": "exam-marks-pass-percentage",
+    "title": "Exam marks & pass percentage"
+   },
+   {
+    "slug": "fraction-percentage-equivalents",
+    "title": "Fraction-percentage equivalents"
+   },
+   {
+    "slug": "income-expenditure-savings",
+    "title": "Income, expenditure & savings"
+   },
+   {
+    "slug": "percentage-comparison-a-more-than-b",
+    "title": "Percentage comparison (A more than B)"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The price of a book fell from Rs 1100 to Rs 825. What is the percentage decrease?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "26%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "24%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decrease = 1100 - 825 = 275. % decrease = (275/1100) x 100 = 25%.",
+   "order": 1,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Percentage change is always change divided by the ORIGINAL value, times 100."
+  },
+  {
+   "questionText": "What is 30% of 1440?",
+   "options": [
+    {
+     "text": "4320"
+    },
+    {
+     "text": "432"
+    },
+    {
+     "text": "540"
+    },
+    {
+     "text": "864"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "30% of 1440 = (30 x 1440) / 100 = 432.",
+   "order": 2,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take 10% of 1440 = 144 and 5% = 72; build 30% from these blocks."
+  },
+  {
+   "questionText": "What is 20% of 400?",
+   "options": [
+    {
+     "text": "100"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "800"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "20% of 400 = (20 x 400) / 100 = 80.",
+   "order": 3,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Take 10% of 400 = 40 and 5% = 20; build 20% from these blocks."
+  },
+  {
+   "questionText": "The price of a book fell from Rs 3150 to Rs 1575. What is the percentage decrease?",
+   "options": [
+    {
+     "text": "100%"
+    },
+    {
+     "text": "49%"
+    },
+    {
+     "text": "55%"
+    },
+    {
+     "text": "50%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decrease = 3150 - 1575 = 1575. % decrease = (1575/3150) x 100 = 50%.",
+   "order": 4,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Percentage change is always change divided by the ORIGINAL value, times 100."
+  },
+  {
+   "questionText": "What is 120% of 1380?",
+   "options": [
+    {
+     "text": "1242"
+    },
+    {
+     "text": "1656"
+    },
+    {
+     "text": "16560"
+    },
+    {
+     "text": "2070"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "120% of 1380 = (120 x 1380) / 100 = 1656.",
+   "order": 5,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Take 10% of 1380 = 138 and 5% = 69; build 120% from these blocks."
+  },
+  {
+   "questionText": "What is 45% of 540?",
+   "options": [
+    {
+     "text": "162"
+    },
+    {
+     "text": "486"
+    },
+    {
+     "text": "2430"
+    },
+    {
+     "text": "243"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "45% of 540 = (45 x 540) / 100 = 243.",
+   "order": 6,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take 10% of 540 = 54 and 5% = 27; build 45% from these blocks."
+  },
+  {
+   "questionText": "The monthly rent rose from Rs 3850 to Rs 5775. What is the percentage increase?",
+   "options": [
+    {
+     "text": "49%"
+    },
+    {
+     "text": "60%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "55%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Increase = 5775 - 3850 = 1925. % increase = (1925/3850) x 100 = 50%.",
+   "order": 7,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Percentage change is always change divided by the ORIGINAL value, times 100."
+  },
+  {
+   "questionText": "The price of a book rose from Rs 4850 to Rs 5335. What is the percentage increase?",
+   "options": [
+    {
+     "text": "10%"
+    },
+    {
+     "text": "9%"
+    },
+    {
+     "text": "15%"
+    },
+    {
+     "text": "12%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Increase = 5335 - 4850 = 485. % increase = (485/4850) x 100 = 10%.",
+   "order": 8,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Percentage change is always change divided by the ORIGINAL value, times 100."
+  },
+  {
+   "questionText": "In a class of 720 students, 1008 are girls. What percent of the class are girls?",
+   "options": [
+    {
+     "text": "210%"
+    },
+    {
+     "text": "168%"
+    },
+    {
+     "text": "105%"
+    },
+    {
+     "text": "140%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentage = (1008 / 720) x 100 = 140%.",
+   "order": 9,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Reduce 1008/720 to a simple fraction, then convert: 1008/720 = 140/100."
+  },
+  {
+   "questionText": "After a 20% hike, a salary becomes Rs 60600. What was the original salary?",
+   "options": [
+    {
+     "text": "Rs 40400"
+    },
+    {
+     "text": "Rs 75750"
+    },
+    {
+     "text": "Rs 50500"
+    },
+    {
+     "text": "Rs 48480"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let original = x. x(1 + 20/100) = 60600, so x = 60600 x 100 / 120 = 50500.",
+   "order": 10,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "New = 120% of old, so old = 60600 / 120 x 100."
+  },
+  {
+   "questionText": "1875 is what percent of 1500?",
+   "options": [
+    {
+     "text": "250%"
+    },
+    {
+     "text": "125%"
+    },
+    {
+     "text": "150%"
+    },
+    {
+     "text": "80%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Percentage = (1875 / 1500) x 100 = 125%.",
+   "order": 11,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Reduce 1875/1500 to a simple fraction, then convert: 1875/1500 = 125/100."
+  },
+  {
+   "questionText": "In a class of 1020 students, 255 are girls. What percent of the class are girls?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "23%"
+    },
+    {
+     "text": "400%"
+    },
+    {
+     "text": "20%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Percentage = (255 / 1020) x 100 = 25%.",
+   "order": 12,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Reduce 255/1020 to a simple fraction, then convert: 255/1020 = 25/100."
+  },
+  {
+   "questionText": "In a class of 300 students, 168 are girls. What percent of the class are girls?",
+   "options": [
+    {
+     "text": "58%"
+    },
+    {
+     "text": "70%"
+    },
+    {
+     "text": "84%"
+    },
+    {
+     "text": "56%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentage = (168 / 300) x 100 = 56%.",
+   "order": 13,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Reduce 168/300 to a simple fraction, then convert: 168/300 = 56/100."
+  },
+  {
+   "questionText": "After a 10% hike, a salary becomes Rs 32450. What was the original salary?",
+   "options": [
+    {
+     "text": "Rs 29500"
+    },
+    {
+     "text": "Rs 14750"
+    },
+    {
+     "text": "Rs 59000"
+    },
+    {
+     "text": "Rs 29205"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let original = x. x(1 + 10/100) = 32450, so x = 32450 x 100 / 110 = 29500.",
+   "order": 14,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "New = 110% of old, so old = 32450 / 110 x 100."
+  },
+  {
+   "questionText": "After a 10% hike, a salary becomes Rs 48950. What was the original salary?",
+   "options": [
+    {
+     "text": "Rs 44055"
+    },
+    {
+     "text": "Rs 44500"
+    },
+    {
+     "text": "Rs 89000"
+    },
+    {
+     "text": "Rs 48950"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let original = x. x(1 + 10/100) = 48950, so x = 48950 x 100 / 110 = 44500.",
+   "order": 15,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "New = 110% of old, so old = 48950 / 110 x 100."
+  },
+  {
+   "questionText": "In a class of 1560 students, 195 are girls. What percent of the class are girls?",
+   "options": [
+    {
+     "text": "10%"
+    },
+    {
+     "text": "6.25%"
+    },
+    {
+     "text": "12.5%"
+    },
+    {
+     "text": "800%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Percentage = (195 / 1560) x 100 = 12.5%.",
+   "order": 16,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Reduce 195/1560 to a simple fraction, then convert: 195/1560 = 12.5/100."
+  },
+  {
+   "questionText": "A shirt is sold for Rs 17575 after a 5% discount. What was its marked price?",
+   "options": [
+    {
+     "text": "Rs 18500"
+    },
+    {
+     "text": "Rs 22200"
+    },
+    {
+     "text": "Rs 13875"
+    },
+    {
+     "text": "Rs 18453.75"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let marked price = x. x(1 - 5/100) = 17575, so x = 17575 x 100 / 95 = 18500.",
+   "order": 17,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Selling price = 95% of marked price, so marked = 17575 / 95 x 100."
+  },
+  {
+   "questionText": "A shirt is sold for Rs 2125 after a 15% discount. What was its marked price?",
+   "options": [
+    {
+     "text": "Rs 5000"
+    },
+    {
+     "text": "Rs 2443.75"
+    },
+    {
+     "text": "Rs 3000"
+    },
+    {
+     "text": "Rs 2500"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let marked price = x. x(1 - 15/100) = 2125, so x = 2125 x 100 / 85 = 2500.",
+   "order": 18,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Selling price = 85% of marked price, so marked = 2125 / 85 x 100."
+  },
+  {
+   "questionText": "A shirt is sold for Rs 10500 after a 30% discount. What was its marked price?",
+   "options": [
+    {
+     "text": "Rs 13650"
+    },
+    {
+     "text": "Rs 15000"
+    },
+    {
+     "text": "Rs 30000"
+    },
+    {
+     "text": "Rs 18000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let marked price = x. x(1 - 30/100) = 10500, so x = 10500 x 100 / 70 = 15000.",
+   "order": 19,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Selling price = 70% of marked price, so marked = 10500 / 70 x 100."
+  },
+  {
+   "questionText": "A shop sold 295 items out of a stock of 1180. What percent of the stock was sold?",
+   "options": [
+    {
+     "text": "27%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "25%"
+    },
+    {
+     "text": "400%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Percentage = (295 / 1180) x 100 = 25%.",
+   "order": 20,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Reduce 295/1180 to a simple fraction, then convert: 295/1180 = 25/100."
+  },
+  {
+   "questionText": "25% of a number is 85 more than 15% of the same number. Find the number.",
+   "options": [
+    {
+     "text": "935"
+    },
+    {
+     "text": "850"
+    },
+    {
+     "text": "340"
+    },
+    {
+     "text": "1020"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "(25 - 15)% of the number = 85. So number = 85 x 100 / 10 = 850.",
+   "order": 21,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract the percentages first (25% - 15% = 10%), then divide: 85 / 10% = 850."
+  },
+  {
+   "questionText": "28% of a number is 48 more than 12% of the same number. Find the number.",
+   "options": [
+    {
+     "text": "360"
+    },
+    {
+     "text": "200"
+    },
+    {
+     "text": "600"
+    },
+    {
+     "text": "300"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(28 - 12)% of the number = 48. So number = 48 x 100 / 16 = 300.",
+   "order": 22,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract the percentages first (28% - 12% = 16%), then divide: 48 / 16% = 300."
+  },
+  {
+   "questionText": "If A's income is 150% more than B's income, then B's income is what percent less than A's income?",
+   "options": [
+    {
+     "text": "150%"
+    },
+    {
+     "text": "61%"
+    },
+    {
+     "text": "60%"
+    },
+    {
+     "text": "45%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let B = 100, then A = 250. Difference = 150, based on A: (150/250) x 100 = 60%.",
+   "order": 23,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Use r/(100 + r) x 100 = 150/250 x 100 = 60%."
+  },
+  {
+   "questionText": "If A's income is 20% less than B's income, then B's income is what percent more than A's income?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "24%"
+    },
+    {
+     "text": "27%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let B = 100, then A = 80. Difference = 20, based on A: (20/80) x 100 = 25%.",
+   "order": 24,
+   "subPattern": "basic-percentage-conversions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use r/(100 - r) x 100 = 20/80 x 100 = 25%."
+  },
+  {
+   "questionText": "What single discount is equivalent to two successive discounts of 15% and 25%?",
+   "options": [
+    {
+     "text": "36.25%"
+    },
+    {
+     "text": "40%"
+    },
+    {
+     "text": "35.25%"
+    },
+    {
+     "text": "34.25%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Net discount = a + b - ab/100 = 15 + 25 - (15 x 25)/100 = 36.25%.",
+   "order": 25,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Formula: a + b - ab/100. After 15% the price is 85%, then x 75% gives 63.75% of the original."
+  },
+  {
+   "questionText": "What single discount is equivalent to two successive discounts of 20% and 40%?",
+   "options": [
+    {
+     "text": "57%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "52%"
+    },
+    {
+     "text": "60%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Net discount = a + b - ab/100 = 20 + 40 - (20 x 40)/100 = 52%.",
+   "order": 26,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Formula: a + b - ab/100. After 20% the price is 80%, then x 60% gives 48% of the original."
+  },
+  {
+   "questionText": "The price of an article is increased successively by 5% and 25%. What is the net percentage increase?",
+   "options": [
+    {
+     "text": "30%"
+    },
+    {
+     "text": "31.25%"
+    },
+    {
+     "text": "62.5%"
+    },
+    {
+     "text": "32.25%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Net = a + b + ab/100 = 5 + 25 + (5 x 25)/100 = 31.25%.",
+   "order": 27,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Formula: a + b + ab/100. Do not just add 5 + 25."
+  },
+  {
+   "questionText": "The price of an article is increased successively by 50% and 20%. What is the net percentage increase?",
+   "options": [
+    {
+     "text": "60%"
+    },
+    {
+     "text": "72%"
+    },
+    {
+     "text": "70%"
+    },
+    {
+     "text": "80%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Net = a + b + ab/100 = 50 + 20 + (50 x 20)/100 = 80%.",
+   "order": 28,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Formula: a + b + ab/100. Do not just add 50 + 20."
+  },
+  {
+   "questionText": "A shopkeeper raises the price of an item by 50% and then reduces it by 40%. What is the net change?",
+   "options": [
+    {
+     "text": "8% decrease"
+    },
+    {
+     "text": "20% decrease"
+    },
+    {
+     "text": "10% decrease"
+    },
+    {
+     "text": "10% increase"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Net = a - b - ab/100 = 50 - 40 - (50 x 40)/100 = -10%, i.e. a 10% decrease.",
+   "order": 29,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the factors: 1.5 x 0.6 = 0.9; compare with 1."
+  },
+  {
+   "questionText": "A shopkeeper raises the price of an item by 30% and then reduces it by 40%. What is the net change?",
+   "options": [
+    {
+     "text": "27% decrease"
+    },
+    {
+     "text": "22% decrease"
+    },
+    {
+     "text": "22% increase"
+    },
+    {
+     "text": "10% decrease"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Net = a - b - ab/100 = 30 - 40 - (30 x 40)/100 = -22%, i.e. a 22% decrease.",
+   "order": 30,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the factors: 1.3 x 0.6 = 0.78; compare with 1."
+  },
+  {
+   "questionText": "A shopkeeper raises the price of an item by 50% and then reduces it by 10%. What is the net change?",
+   "options": [
+    {
+     "text": "33% increase"
+    },
+    {
+     "text": "35% decrease"
+    },
+    {
+     "text": "40% increase"
+    },
+    {
+     "text": "35% increase"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Net = a - b - ab/100 = 50 - 10 - (50 x 10)/100 = 35%, i.e. a 35% increase.",
+   "order": 31,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the factors: 1.5 x 0.9 = 1.35; compare with 1."
+  },
+  {
+   "questionText": "A shopkeeper raises the price of an item by 20% and then reduces it by 60%. What is the net change?",
+   "options": [
+    {
+     "text": "52% decrease"
+    },
+    {
+     "text": "40% decrease"
+    },
+    {
+     "text": "52% increase"
+    },
+    {
+     "text": "65% decrease"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Net = a - b - ab/100 = 20 - 60 - (20 x 60)/100 = -52%, i.e. a 52% decrease.",
+   "order": 32,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Multiply the factors: 1.2 x 0.4 = 0.48; compare with 1."
+  },
+  {
+   "questionText": "A shopkeeper raises the price of an item by 40% and then reduces it by 20%. What is the net change?",
+   "options": [
+    {
+     "text": "20% increase"
+    },
+    {
+     "text": "12% decrease"
+    },
+    {
+     "text": "6% decrease"
+    },
+    {
+     "text": "12% increase"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Net = a - b - ab/100 = 40 - 20 - (40 x 20)/100 = 12%, i.e. a 12% increase.",
+   "order": 33,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the factors: 1.4 x 0.8 = 1.12; compare with 1."
+  },
+  {
+   "questionText": "A shopkeeper raises the price of an item by 50% and then reduces it by 20%. What is the net change?",
+   "options": [
+    {
+     "text": "20% increase"
+    },
+    {
+     "text": "20% decrease"
+    },
+    {
+     "text": "30% increase"
+    },
+    {
+     "text": "22% increase"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Net = a - b - ab/100 = 50 - 20 - (50 x 20)/100 = 20%, i.e. a 20% increase.",
+   "order": 34,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the factors: 1.5 x 0.8 = 1.2; compare with 1."
+  },
+  {
+   "questionText": "A trader increases the price of an item by 50%, then by another 10%, and finally gives a discount of 40%. What is the net change in price?",
+   "options": [
+    {
+     "text": "1% increase"
+    },
+    {
+     "text": "1.5% decrease"
+    },
+    {
+     "text": "1% decrease"
+    },
+    {
+     "text": "20% increase"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Final factor = 1.5 x 1.1 x 0.6 = 0.99. Net change = 1% decrease.",
+   "order": 35,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Multiply the three multipliers (1+a, 1+b, 1-c) together and subtract 1."
+  },
+  {
+   "questionText": "A trader increases the price of an item by 25%, then by another 20%, and finally gives a discount of 20%. What is the net change in price?",
+   "options": [
+    {
+     "text": "25% increase"
+    },
+    {
+     "text": "20% increase"
+    },
+    {
+     "text": "20% decrease"
+    },
+    {
+     "text": "15% decrease"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Final factor = 1.25 x 1.2 x 0.8 = 1.2. Net change = 20% increase.",
+   "order": 36,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the three multipliers (1+a, 1+b, 1-c) together and subtract 1."
+  },
+  {
+   "questionText": "A trader increases the price of an item by 25%, then by another 20%, and finally gives a discount of 10%. What is the net change in price?",
+   "options": [
+    {
+     "text": "35% decrease"
+    },
+    {
+     "text": "26.25% increase"
+    },
+    {
+     "text": "37% increase"
+    },
+    {
+     "text": "35% increase"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Final factor = 1.25 x 1.2 x 0.9 = 1.35. Net change = 35% increase.",
+   "order": 37,
+   "subPattern": "successive-percentage-change",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the three multipliers (1+a, 1+b, 1-c) together and subtract 1."
+  },
+  {
+   "questionText": "The population of a town is 245000. It increases by 10% every year. What will the population be after 2 years?",
+   "options": [
+    {
+     "text": "592900"
+    },
+    {
+     "text": "296450"
+    },
+    {
+     "text": "326095"
+    },
+    {
+     "text": "294000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Population = 245000 x (1 + 10/100)^2 = 296450.",
+   "order": 38,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Two-year growth of 10% per year is 10+10+10x10/100 = 21% (not 20%)."
+  },
+  {
+   "questionText": "The population of a town is 265000. It increases by 20% every year. What will the population be after 2 years?",
+   "options": [
+    {
+     "text": "381600"
+    },
+    {
+     "text": "457920"
+    },
+    {
+     "text": "508800"
+    },
+    {
+     "text": "371000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Population = 265000 x (1 + 20/100)^2 = 381600.",
+   "order": 39,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Two-year growth of 20% per year is 20+20+20x20/100 = 44% (not 40%)."
+  },
+  {
+   "questionText": "The population of a town is 222500. It increases by 20% every year. What will the population be after 2 years?",
+   "options": [
+    {
+     "text": "213600"
+    },
+    {
+     "text": "311500"
+    },
+    {
+     "text": "320400"
+    },
+    {
+     "text": "640800"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Population = 222500 x (1 + 20/100)^2 = 320400.",
+   "order": 40,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Two-year growth of 20% per year is 20+20+20x20/100 = 44% (not 40%)."
+  },
+  {
+   "questionText": "The value of a plot of land increases by 20% every year. If it is worth Rs 92000 now, what will it be worth after 3 years?",
+   "options": [
+    {
+     "text": "Rs 158976"
+    },
+    {
+     "text": "Rs 147200"
+    },
+    {
+     "text": "Rs 119232"
+    },
+    {
+     "text": "Rs 238464"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Value = 92000 x (1 + 20/100)^3 = Rs 158976.",
+   "order": 41,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Multiply by 1.2 three times."
+  },
+  {
+   "questionText": "The value of a plot of land increases by 20% every year. If it is worth Rs 34000 now, what will it be worth after 3 years?",
+   "options": [
+    {
+     "text": "Rs 39168"
+    },
+    {
+     "text": "Rs 54400"
+    },
+    {
+     "text": "Rs 58752"
+    },
+    {
+     "text": "Rs 29376"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Value = 34000 x (1 + 20/100)^3 = Rs 58752.",
+   "order": 42,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Multiply by 1.2 three times."
+  },
+  {
+   "questionText": "The population of a city is 212500. It grows by 20% in the first year and then falls by 10% in the second year. What is the population at the end of 2 years?",
+   "options": [
+    {
+     "text": "153000"
+    },
+    {
+     "text": "233750"
+    },
+    {
+     "text": "344250"
+    },
+    {
+     "text": "229500"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Population = 212500 x (1 + 20/100) x (1 - 10/100) = 229500.",
+   "order": 43,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Net factor = 1.2 x 0.9; do not just do 20 - 10."
+  },
+  {
+   "questionText": "The population of a city is 155000. It grows by 20% in the first year and then falls by 25% in the second year. What is the population at the end of 2 years?",
+   "options": [
+    {
+     "text": "147250"
+    },
+    {
+     "text": "139500"
+    },
+    {
+     "text": "69750"
+    },
+    {
+     "text": "104625"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Population = 155000 x (1 + 20/100) x (1 - 25/100) = 139500.",
+   "order": 44,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Net factor = 1.2 x 0.75; do not just do 20 - 25."
+  },
+  {
+   "questionText": "The value of a plot of land increases by 10% every year. If it is worth Rs 48000 now, what will it be worth after 3 years?",
+   "options": [
+    {
+     "text": "Rs 62400"
+    },
+    {
+     "text": "Rs 127776"
+    },
+    {
+     "text": "Rs 63888"
+    },
+    {
+     "text": "Rs 42592"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Value = 48000 x (1 + 10/100)^3 = Rs 63888.",
+   "order": 45,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Multiply by 1.1 three times."
+  },
+  {
+   "questionText": "The value of a plot of land increases by 10% every year. If it is worth Rs 111000 now, what will it be worth after 3 years?",
+   "options": [
+    {
+     "text": "Rs 144300"
+    },
+    {
+     "text": "Rs 196988"
+    },
+    {
+     "text": "Rs 295482"
+    },
+    {
+     "text": "Rs 147741"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Value = 111000 x (1 + 10/100)^3 = Rs 147741.",
+   "order": 46,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply by 1.1 three times."
+  },
+  {
+   "questionText": "The value of a plot of land increases by 10% every year. If it is worth Rs 78000 now, what will it be worth after 3 years?",
+   "options": [
+    {
+     "text": "Rs 103818"
+    },
+    {
+     "text": "Rs 101400"
+    },
+    {
+     "text": "Rs 51909"
+    },
+    {
+     "text": "Rs 69212"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Value = 78000 x (1 + 10/100)^3 = Rs 103818.",
+   "order": 47,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply by 1.1 three times."
+  },
+  {
+   "questionText": "The population of a town is 393250 after growing at 10% per year for 2 years. What was the population 2 years ago?",
+   "options": [
+    {
+     "text": "314600"
+    },
+    {
+     "text": "325000"
+    },
+    {
+     "text": "292500"
+    },
+    {
+     "text": "487500"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "P x (1 + 10/100)^2 = 393250, so P = 393250 / 1.21 = 325000.",
+   "order": 48,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide by the growth factor twice: 393250 / 1.1 / 1.1."
+  },
+  {
+   "questionText": "The population of a town is 511200 after growing at 20% per year for 2 years. What was the population 2 years ago?",
+   "options": [
+    {
+     "text": "177500"
+    },
+    {
+     "text": "355000"
+    },
+    {
+     "text": "426000"
+    },
+    {
+     "text": "306720"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "P x (1 + 20/100)^2 = 511200, so P = 511200 / 1.44 = 355000.",
+   "order": 49,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide by the growth factor twice: 511200 / 1.2 / 1.2."
+  },
+  {
+   "questionText": "A machine depreciates at 10% per year. If its value is Rs 113400 after 2 years, what was its original value?",
+   "options": [
+    {
+     "text": "Rs 136080"
+    },
+    {
+     "text": "Rs 168000"
+    },
+    {
+     "text": "Rs 140000"
+    },
+    {
+     "text": "Rs 126000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "P x (1 - 10/100)^2 = 113400, so P = 113400 / 0.81 = Rs 140000.",
+   "order": 50,
+   "subPattern": "population-growth-decrease",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Divide by 0.9 twice (not multiply by 1.2)."
+  },
+  {
+   "questionText": "The price of petrol rises by 150%. By what percent must a family reduce its consumption so that the expenditure stays the same?",
+   "options": [
+    {
+     "text": "60%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "150%"
+    },
+    {
+     "text": "54%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let old price = 100, so new price = 250. Consumption must fall by 150/250 x 100 = 60%.",
+   "order": 51,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reduction = r/(100 + r) x 100 = 150/250 x 100."
+  },
+  {
+   "questionText": "The price of sugar rises by 150%. By what percent must a family reduce its consumption so that the expenditure stays the same?",
+   "options": [
+    {
+     "text": "72%"
+    },
+    {
+     "text": "150%"
+    },
+    {
+     "text": "120%"
+    },
+    {
+     "text": "60%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let old price = 100, so new price = 250. Consumption must fall by 150/250 x 100 = 60%.",
+   "order": 52,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reduction = r/(100 + r) x 100 = 150/250 x 100."
+  },
+  {
+   "questionText": "The price of petrol rises by 60%. By what percent must a family reduce its consumption so that the expenditure stays the same?",
+   "options": [
+    {
+     "text": "37.5%"
+    },
+    {
+     "text": "42.5%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "60%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let old price = 100, so new price = 160. Consumption must fall by 60/160 x 100 = 37.5%.",
+   "order": 53,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Reduction = r/(100 + r) x 100 = 60/160 x 100."
+  },
+  {
+   "questionText": "The price of sugar rises by 400%. By what percent must a family reduce its consumption so that the expenditure stays the same?",
+   "options": [
+    {
+     "text": "64%"
+    },
+    {
+     "text": "80%"
+    },
+    {
+     "text": "400%"
+    },
+    {
+     "text": "96%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let old price = 100, so new price = 500. Consumption must fall by 400/500 x 100 = 80%.",
+   "order": 54,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Reduction = r/(100 + r) x 100 = 400/500 x 100."
+  },
+  {
+   "questionText": "The price of milk falls by 75%. By what percent can a family increase its consumption without changing its expenditure?",
+   "options": [
+    {
+     "text": "200%"
+    },
+    {
+     "text": "270%"
+    },
+    {
+     "text": "300%"
+    },
+    {
+     "text": "75%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let old price = 100, so new price = 25. Consumption can rise by 75/25 x 100 = 300%.",
+   "order": 55,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Increase = r/(100 - r) x 100 = 75/25 x 100."
+  },
+  {
+   "questionText": "The price of wheat falls by 60%. By what percent can a family increase its consumption without changing its expenditure?",
+   "options": [
+    {
+     "text": "300%"
+    },
+    {
+     "text": "60%"
+    },
+    {
+     "text": "120%"
+    },
+    {
+     "text": "150%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let old price = 100, so new price = 40. Consumption can rise by 60/40 x 100 = 150%.",
+   "order": 56,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Increase = r/(100 - r) x 100 = 60/40 x 100."
+  },
+  {
+   "questionText": "The price of cooking oil falls by 75%. By what percent can a family increase its consumption without changing its expenditure?",
+   "options": [
+    {
+     "text": "300%"
+    },
+    {
+     "text": "375%"
+    },
+    {
+     "text": "600%"
+    },
+    {
+     "text": "75%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let old price = 100, so new price = 25. Consumption can rise by 75/25 x 100 = 300%.",
+   "order": 57,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Increase = r/(100 - r) x 100 = 75/25 x 100."
+  },
+  {
+   "questionText": "The price of milk falls by 50%. By what percent can a family increase its consumption without changing its expenditure?",
+   "options": [
+    {
+     "text": "75%"
+    },
+    {
+     "text": "100%"
+    },
+    {
+     "text": "90%"
+    },
+    {
+     "text": "50%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let old price = 100, so new price = 50. Consumption can rise by 50/50 x 100 = 100%.",
+   "order": 58,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Increase = r/(100 - r) x 100 = 50/50 x 100."
+  },
+  {
+   "questionText": "The price of cooking oil falls by 50%. By what percent can a family increase its consumption without changing its expenditure?",
+   "options": [
+    {
+     "text": "90%"
+    },
+    {
+     "text": "120%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "100%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let old price = 100, so new price = 50. Consumption can rise by 50/50 x 100 = 100%.",
+   "order": 59,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Increase = r/(100 - r) x 100 = 50/50 x 100."
+  },
+  {
+   "questionText": "The price of wheat falls by 80%. By what percent can a family increase its consumption without changing its expenditure?",
+   "options": [
+    {
+     "text": "500%"
+    },
+    {
+     "text": "80%"
+    },
+    {
+     "text": "400%"
+    },
+    {
+     "text": "320%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let old price = 100, so new price = 20. Consumption can rise by 80/20 x 100 = 400%.",
+   "order": 60,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Increase = r/(100 - r) x 100 = 80/20 x 100."
+  },
+  {
+   "questionText": "The price of an item goes up by 10% and a family cuts its consumption by 10%. What is the change in the family's expenditure on it?",
+   "options": [
+    {
+     "text": "6% decrease"
+    },
+    {
+     "text": "1% increase"
+    },
+    {
+     "text": "1% decrease"
+    },
+    {
+     "text": "0.5% increase"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Expenditure = price x quantity = 1.1 x 0.9 = 0.99 of the old. Change = 1% decrease.",
+   "order": 61,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Expenditure changes by the same rule as successive percentage changes: a - b - ab/100."
+  },
+  {
+   "questionText": "The price of an item goes up by 20% and a family cuts its consumption by 10%. What is the change in the family's expenditure on it?",
+   "options": [
+    {
+     "text": "8% decrease"
+    },
+    {
+     "text": "8% increase"
+    },
+    {
+     "text": "9.6% increase"
+    },
+    {
+     "text": "10% increase"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Expenditure = price x quantity = 1.2 x 0.9 = 1.08 of the old. Change = 8% increase.",
+   "order": 62,
+   "subPattern": "price-consumption-relation",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Expenditure changes by the same rule as successive percentage changes: a - b - ab/100."
+  },
+  {
+   "questionText": "In an election between two candidates, the winner gets 65% of the total votes polled and wins by 10050 votes. How many votes were polled? (All votes are valid.)",
+   "options": [
+    {
+     "text": "16750"
+    },
+    {
+     "text": "30150"
+    },
+    {
+     "text": "26800"
+    },
+    {
+     "text": "33500"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Winner - loser = (65 - 35)% = 30% of total = 10050. Total = 10050 x 100 / 30 = 33500.",
+   "order": 63,
+   "subPattern": "election-votes",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Margin % = 2p - 100 = 30%; total = margin x 100 / 30."
+  },
+  {
+   "questionText": "In an election between two candidates, the winner gets 65% of the total votes polled and wins by 25050 votes. How many votes were polled? (All votes are valid.)",
+   "options": [
+    {
+     "text": "83500"
+    },
+    {
+     "text": "91850"
+    },
+    {
+     "text": "62625"
+    },
+    {
+     "text": "66800"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Winner - loser = (65 - 35)% = 30% of total = 25050. Total = 25050 x 100 / 30 = 83500.",
+   "order": 64,
+   "subPattern": "election-votes",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Margin % = 2p - 100 = 30%; total = margin x 100 / 30."
+  },
+  {
+   "questionText": "In an election between two candidates, the winner gets 70% of the total votes polled and wins by 1600 votes. How many votes were polled? (All votes are valid.)",
+   "options": [
+    {
+     "text": "3000"
+    },
+    {
+     "text": "4000"
+    },
+    {
+     "text": "4400"
+    },
+    {
+     "text": "3600"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Winner - loser = (70 - 30)% = 40% of total = 1600. Total = 1600 x 100 / 40 = 4000.",
+   "order": 65,
+   "subPattern": "election-votes",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Margin % = 2p - 100 = 40%; total = margin x 100 / 40."
+  },
+  {
+   "questionText": "In an election between two candidates, the winner gets 52% of the total votes polled and wins by 720 votes. How many votes were polled? (All votes are valid.)",
+   "options": [
+    {
+     "text": "13500"
+    },
+    {
+     "text": "27000"
+    },
+    {
+     "text": "18000"
+    },
+    {
+     "text": "22500"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Winner - loser = (52 - 48)% = 4% of total = 720. Total = 720 x 100 / 4 = 18000.",
+   "order": 66,
+   "subPattern": "election-votes",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Margin % = 2p - 100 = 4%; total = margin x 100 / 4."
+  },
+  {
+   "questionText": "In an election, 69000 votes were cast and 25% of them were invalid. The winner received 60% of the valid votes. How many valid votes did the loser get?",
+   "options": [
+    {
+     "text": "25875"
+    },
+    {
+     "text": "41400"
+    },
+    {
+     "text": "27600"
+    },
+    {
+     "text": "20700"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Valid votes = 69000 x 75/100 = 51750. Winner = 60% of 51750 = 31050; loser = 20700. The loser got 20700.",
+   "order": 67,
+   "subPattern": "election-votes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "First remove invalid votes; apply the percentage on VALID votes only."
+  },
+  {
+   "questionText": "In an election, 100000 votes were cast and 5% of them were invalid. The winner received 65% of the valid votes. How many valid votes did the loser get?",
+   "options": [
+    {
+     "text": "33250"
+    },
+    {
+     "text": "35000"
+    },
+    {
+     "text": "29925"
+    },
+    {
+     "text": "16625"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Valid votes = 100000 x 95/100 = 95000. Winner = 65% of 95000 = 61750; loser = 33250. The loser got 33250.",
+   "order": 68,
+   "subPattern": "election-votes",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "First remove invalid votes; apply the percentage on VALID votes only."
+  },
+  {
+   "questionText": "In an election, 25000 votes were cast and 10% of them were invalid. The winner received 70% of the valid votes. How many valid votes did the winner get?",
+   "options": [
+    {
+     "text": "14175"
+    },
+    {
+     "text": "15750"
+    },
+    {
+     "text": "17500"
+    },
+    {
+     "text": "12600"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Valid votes = 25000 x 90/100 = 22500. Winner = 70% of 22500 = 15750; loser = 6750. The winner got 15750.",
+   "order": 69,
+   "subPattern": "election-votes",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "First remove invalid votes; apply the percentage on VALID votes only."
+  },
+  {
+   "questionText": "In an election, 89000 votes were cast and 10% of them were invalid. The winner received 55% of the valid votes. How many valid votes did the loser get?",
+   "options": [
+    {
+     "text": "40050"
+    },
+    {
+     "text": "48060"
+    },
+    {
+     "text": "43254"
+    },
+    {
+     "text": "36045"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Valid votes = 89000 x 90/100 = 80100. Winner = 55% of 80100 = 44055; loser = 36045. The loser got 36045.",
+   "order": 70,
+   "subPattern": "election-votes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First remove invalid votes; apply the percentage on VALID votes only."
+  },
+  {
+   "questionText": "In an election, 60000 votes were cast and 5% of them were invalid. The winner received 60% of the valid votes. How many valid votes did the winner get?",
+   "options": [
+    {
+     "text": "34200"
+    },
+    {
+     "text": "51300"
+    },
+    {
+     "text": "36000"
+    },
+    {
+     "text": "37620"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Valid votes = 60000 x 95/100 = 57000. Winner = 60% of 57000 = 34200; loser = 22800. The winner got 34200.",
+   "order": 71,
+   "subPattern": "election-votes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First remove invalid votes; apply the percentage on VALID votes only."
+  },
+  {
+   "questionText": "In an election, 44000 votes were cast and 20% of them were invalid. The winner received 65% of the valid votes. How many valid votes did the loser get?",
+   "options": [
+    {
+     "text": "11088"
+    },
+    {
+     "text": "9240"
+    },
+    {
+     "text": "12320"
+    },
+    {
+     "text": "15400"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Valid votes = 44000 x 80/100 = 35200. Winner = 65% of 35200 = 22880; loser = 12320. The loser got 12320.",
+   "order": 72,
+   "subPattern": "election-votes",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "First remove invalid votes; apply the percentage on VALID votes only."
+  },
+  {
+   "questionText": "Two candidates contested an election. 25% of the votes polled were invalid. The winner got 60% of the valid votes and won by 4650 votes. How many votes were polled in total?",
+   "options": [
+    {
+     "text": "37200"
+    },
+    {
+     "text": "23250"
+    },
+    {
+     "text": "31000"
+    },
+    {
+     "text": "15500"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Margin = 20% of valid votes = 4650, so valid = 4650 x 100 / 20 = 23250. Total = 23250 x 100 / 75 = 31000.",
+   "order": 73,
+   "subPattern": "election-votes",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Work backwards: margin -> valid votes -> total votes (divide by 75%)."
+  },
+  {
+   "questionText": "Two candidates contested an election. 5% of the votes polled were invalid. The winner got 70% of the valid votes and won by 61940 votes. How many votes were polled in total?",
+   "options": [
+    {
+     "text": "154850"
+    },
+    {
+     "text": "146700"
+    },
+    {
+     "text": "203750"
+    },
+    {
+     "text": "163000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Margin = 40% of valid votes = 61940, so valid = 61940 x 100 / 40 = 154850. Total = 154850 x 100 / 95 = 163000.",
+   "order": 74,
+   "subPattern": "election-votes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Work backwards: margin -> valid votes -> total votes (divide by 95%)."
+  },
+  {
+   "questionText": "Two candidates contested an election. 10% of the votes polled were invalid. The winner got 65% of the valid votes and won by 38880 votes. How many votes were polled in total?",
+   "options": [
+    {
+     "text": "72000"
+    },
+    {
+     "text": "144000"
+    },
+    {
+     "text": "129600"
+    },
+    {
+     "text": "115200"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Margin = 30% of valid votes = 38880, so valid = 38880 x 100 / 30 = 129600. Total = 129600 x 100 / 90 = 144000.",
+   "order": 75,
+   "subPattern": "election-votes",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Work backwards: margin -> valid votes -> total votes (divide by 90%)."
+  },
+  {
+   "questionText": "A student scored 52% marks in an exam with maximum marks 300. How many marks did the student score?",
+   "options": [
+    {
+     "text": "156"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "208"
+    },
+    {
+     "text": "144"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Marks scored = 52% of the maximum 300 = (52 x 300)/100 = 156.",
+   "order": 76,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "10% of 300 is 30; scale to 52%."
+  },
+  {
+   "questionText": "A student scored 35% marks in an exam with maximum marks 200. How many marks did the student score?",
+   "options": [
+    {
+     "text": "77"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "130"
+    },
+    {
+     "text": "84"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Marks scored = 35% of the maximum 200 = (35 x 200)/100 = 70.",
+   "order": 77,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "10% of 200 is 20; scale to 35%."
+  },
+  {
+   "questionText": "A student scored 56% marks in an exam with maximum marks 400. How many marks did the student score?",
+   "options": [
+    {
+     "text": "224"
+    },
+    {
+     "text": "176"
+    },
+    {
+     "text": "280"
+    },
+    {
+     "text": "336"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Marks scored = 56% of the maximum 400 = (56 x 400)/100 = 224.",
+   "order": 78,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "10% of 400 is 40; scale to 56%."
+  },
+  {
+   "questionText": "A student scored 40% marks in an exam with maximum marks 200. How many marks did the student score?",
+   "options": [
+    {
+     "text": "100"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Marks scored = 40% of the maximum 200 = (40 x 200)/100 = 80.",
+   "order": 79,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "10% of 200 is 20; scale to 40%."
+  },
+  {
+   "questionText": "A candidate needs 40% marks to pass. He scores 50 marks and fails by 30 marks. What are the maximum marks?",
+   "options": [
+    {
+     "text": "125"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "150"
+    },
+    {
+     "text": "200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pass marks = 50 + 30 = 80. This is 40% of the maximum, so maximum = 80 x 100 / 40 = 200.",
+   "order": 80,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Pass marks = scored + shortfall = 80; divide by 40% to get the maximum."
+  },
+  {
+   "questionText": "A candidate needs 35% marks to pass. He scores 55 marks and fails by 15 marks. What are the maximum marks?",
+   "options": [
+    {
+     "text": "160"
+    },
+    {
+     "text": "150"
+    },
+    {
+     "text": "400"
+    },
+    {
+     "text": "200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pass marks = 55 + 15 = 70. This is 35% of the maximum, so maximum = 70 x 100 / 35 = 200.",
+   "order": 81,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Pass marks = scored + shortfall = 70; divide by 35% to get the maximum."
+  },
+  {
+   "questionText": "A candidate needs 35% marks to pass. He scores 116 marks and fails by 24 marks. What are the maximum marks?",
+   "options": [
+    {
+     "text": "480"
+    },
+    {
+     "text": "400"
+    },
+    {
+     "text": "500"
+    },
+    {
+     "text": "440"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pass marks = 116 + 24 = 140. This is 35% of the maximum, so maximum = 140 x 100 / 35 = 400.",
+   "order": 82,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Pass marks = scored + shortfall = 140; divide by 35% to get the maximum."
+  },
+  {
+   "questionText": "A candidate needs 30% marks to pass. He scores 60 marks and fails by 30 marks. What are the maximum marks?",
+   "options": [
+    {
+     "text": "600"
+    },
+    {
+     "text": "150"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "200"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pass marks = 60 + 30 = 90. This is 30% of the maximum, so maximum = 90 x 100 / 30 = 300.",
+   "order": 83,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Pass marks = scored + shortfall = 90; divide by 30% to get the maximum."
+  },
+  {
+   "questionText": "A candidate needs 45% marks to pass. He scores 415 marks and fails by 35 marks. What are the maximum marks?",
+   "options": [
+    {
+     "text": "1000"
+    },
+    {
+     "text": "800"
+    },
+    {
+     "text": "750"
+    },
+    {
+     "text": "1500"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pass marks = 415 + 35 = 450. This is 45% of the maximum, so maximum = 450 x 100 / 45 = 1000.",
+   "order": 84,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Pass marks = scored + shortfall = 450; divide by 45% to get the maximum."
+  },
+  {
+   "questionText": "A candidate needs 40% marks to pass. He scores 388 marks and fails by 12 marks. What are the maximum marks?",
+   "options": [
+    {
+     "text": "900"
+    },
+    {
+     "text": "1000"
+    },
+    {
+     "text": "970"
+    },
+    {
+     "text": "2000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pass marks = 388 + 12 = 400. This is 40% of the maximum, so maximum = 400 x 100 / 40 = 1000.",
+   "order": 85,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Pass marks = scored + shortfall = 400; divide by 40% to get the maximum."
+  },
+  {
+   "questionText": "In an exam, 67% of the candidates passed in Mathematics and 60% passed in English. If 8% failed in both subjects, what percent passed in both?",
+   "options": [
+    {
+     "text": "35%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "70%"
+    },
+    {
+     "text": "27%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Passed in at least one = 100 - 8 = 92%. Passed both = 67 + 60 - 92 = 35%.",
+   "order": 86,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Passed both = P(Maths) + P(English) - (100 - failed both)."
+  },
+  {
+   "questionText": "Ravi scores 30% marks and fails by 42 marks. Sita scores 40% marks and passes by 58 marks. What are the maximum marks?",
+   "options": [
+    {
+     "text": "1100"
+    },
+    {
+     "text": "1250"
+    },
+    {
+     "text": "1000"
+    },
+    {
+     "text": "250"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference in marks scored = 42 + 58 = 100, which is (40 - 30)% of the maximum. Maximum = 100 x 100 / 10 = 1000.",
+   "order": 87,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Gap in percent = 10% corresponds to 42 + 58 = 100 marks."
+  },
+  {
+   "questionText": "Ravi scores 25% marks and fails by 10 marks. Sita scores 30% marks and passes by 5 marks. What are the maximum marks?",
+   "options": [
+    {
+     "text": "330"
+    },
+    {
+     "text": "50"
+    },
+    {
+     "text": "600"
+    },
+    {
+     "text": "300"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference in marks scored = 10 + 5 = 15, which is (30 - 25)% of the maximum. Maximum = 15 x 100 / 5 = 300.",
+   "order": 88,
+   "subPattern": "exam-marks-pass-percentage",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Gap in percent = 5% corresponds to 10 + 5 = 15 marks."
+  },
+  {
+   "questionText": "A man earns Rs 50000 per month. He spends 30% on rent and food and 20% on other expenses. How much does he save each month?",
+   "options": [
+    {
+     "text": "Rs 12500"
+    },
+    {
+     "text": "Rs 25000"
+    },
+    {
+     "text": "Rs 37500"
+    },
+    {
+     "text": "Rs 22500"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Savings % = 100 - 30 - 20 = 50%. Savings = 50000 x 50/100 = Rs 25000.",
+   "order": 89,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Savings is 50% of income; do not stop at the 50% spent."
+  },
+  {
+   "questionText": "A man earns Rs 37500 per month. He spends 30% on rent and food and 20% on other expenses. How much does he save each month?",
+   "options": [
+    {
+     "text": "Rs 37500"
+    },
+    {
+     "text": "Rs 25000"
+    },
+    {
+     "text": "Rs 18750"
+    },
+    {
+     "text": "Rs 9375"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Savings % = 100 - 30 - 20 = 50%. Savings = 37500 x 50/100 = Rs 18750.",
+   "order": 90,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Savings is 50% of income; do not stop at the 50% spent."
+  },
+  {
+   "questionText": "A man earns Rs 92500 per month. He spends 30% on rent and food and 20% on other expenses. How much does he save each month?",
+   "options": [
+    {
+     "text": "Rs 46250"
+    },
+    {
+     "text": "Rs 55500"
+    },
+    {
+     "text": "Rs 23125"
+    },
+    {
+     "text": "Rs 50875"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Savings % = 100 - 30 - 20 = 50%. Savings = 92500 x 50/100 = Rs 46250.",
+   "order": 91,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Savings is 50% of income; do not stop at the 50% spent."
+  },
+  {
+   "questionText": "A person saves 10% of his income. His income rises by 25% while his expenditure stays the same. By what percent do his savings increase?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "200%"
+    },
+    {
+     "text": "125%"
+    },
+    {
+     "text": "250%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let income = 100, so savings = 10, expenditure = 90. New income = 125, new savings = 35. Increase = 25/10 x 100 = 250%.",
+   "order": 92,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Extra income goes entirely into savings: 25/10 x 100."
+  },
+  {
+   "questionText": "A person saves 40% of his income. His income rises by 30% while his expenditure stays the same. By what percent do his savings increase?",
+   "options": [
+    {
+     "text": "30%"
+    },
+    {
+     "text": "100%"
+    },
+    {
+     "text": "60%"
+    },
+    {
+     "text": "75%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let income = 100, so savings = 40, expenditure = 60. New income = 130, new savings = 70. Increase = 30/40 x 100 = 75%.",
+   "order": 93,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Extra income goes entirely into savings: 30/40 x 100."
+  },
+  {
+   "questionText": "A person saves 25% of his income. His income rises by 5% while his expenditure stays the same. By what percent do his savings increase?",
+   "options": [
+    {
+     "text": "40%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "15%"
+    },
+    {
+     "text": "5%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let income = 100, so savings = 25, expenditure = 75. New income = 105, new savings = 30. Increase = 5/25 x 100 = 20%.",
+   "order": 94,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Extra income goes entirely into savings: 5/25 x 100."
+  },
+  {
+   "questionText": "A person saves 40% of his income. His income rises by 10% while his expenditure stays the same. By what percent do his savings increase?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "26%"
+    },
+    {
+     "text": "30%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let income = 100, so savings = 40, expenditure = 60. New income = 110, new savings = 50. Increase = 10/40 x 100 = 25%.",
+   "order": 95,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Extra income goes entirely into savings: 10/40 x 100."
+  },
+  {
+   "questionText": "A person saves 20% of his income. His income rises by 20% while his expenditure stays the same. By what percent do his savings increase?",
+   "options": [
+    {
+     "text": "120%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "100%"
+    },
+    {
+     "text": "20%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let income = 100, so savings = 20, expenditure = 80. New income = 120, new savings = 40. Increase = 20/20 x 100 = 100%.",
+   "order": 96,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Extra income goes entirely into savings: 20/20 x 100."
+  },
+  {
+   "questionText": "A person saves 20% of his income. His income rises by 30% while his expenditure stays the same. By what percent do his savings increase?",
+   "options": [
+    {
+     "text": "120%"
+    },
+    {
+     "text": "165%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "150%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let income = 100, so savings = 20, expenditure = 80. New income = 130, new savings = 50. Increase = 30/20 x 100 = 150%.",
+   "order": 97,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Extra income goes entirely into savings: 30/20 x 100."
+  },
+  {
+   "questionText": "A person saves 10% of his income. His income rises by 15% while his expenditure stays the same. By what percent do his savings increase?",
+   "options": [
+    {
+     "text": "180%"
+    },
+    {
+     "text": "150%"
+    },
+    {
+     "text": "15%"
+    },
+    {
+     "text": "225%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let income = 100, so savings = 10, expenditure = 90. New income = 115, new savings = 25. Increase = 15/10 x 100 = 150%.",
+   "order": 98,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Extra income goes entirely into savings: 15/10 x 100."
+  },
+  {
+   "questionText": "A person saves 20% of his income. His income increases by 25% and his expenditure increases by 25%. What is the percentage change in his savings?",
+   "options": [
+    {
+     "text": "20% decrease"
+    },
+    {
+     "text": "25% decrease"
+    },
+    {
+     "text": "25% increase"
+    },
+    {
+     "text": "50% decrease"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Income = 100: expenditure = 80, savings = 20. New income = 125; new expenditure = 100; new savings = 25. Change = 25% increase.",
+   "order": 99,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Take income = 100, compute old and new savings, then (new - old)/old x 100."
+  },
+  {
+   "questionText": "A person saves 25% of his income. His income increases by 10% and his expenditure increases by 10%. What is the percentage change in his savings?",
+   "options": [
+    {
+     "text": "10% increase"
+    },
+    {
+     "text": "8% decrease"
+    },
+    {
+     "text": "10% decrease"
+    },
+    {
+     "text": "12% increase"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Income = 100: expenditure = 75, savings = 25. New income = 110; new expenditure = 82.5; new savings = 27.5. Change = 10% increase.",
+   "order": 100,
+   "subPattern": "income-expenditure-savings",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take income = 100, compute old and new savings, then (new - old)/old x 100."
+  }
+ ]
+}

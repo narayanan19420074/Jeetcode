@@ -1,0 +1,1879 @@
+{
+  "questions": [
+    {
+      "questionText": "A can do a work in 18 days, B in 45 days and C in 15 days. A works every day, while B and C help on alternate days: B on day 1, C on day 2, B on day 3, and so on. In how many days is the work finished?",
+      "options": [
+        "10 days",
+        "15 days",
+        "12 days",
+        "5 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total = 90 units. Odd days: A + B = 7 units; even days: A + C = 11 units. Two days = 18 units. Continuing the cycle, the work is complete exactly at the end of day 10.",
+      "shortcut": "Treat two days as one cycle (A+B then A+C), find full cycles, finish the rest day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "24 men can complete a work in 18 days. After 8 days, 4 men leave. In how many more days will the remaining work be completed?",
+      "options": [
+        "24 days",
+        "6 days",
+        "12 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total work = 24 x 18 = 432 man-days. Done in 8 days = 192. Left = 240 man-days. With 20 men: 240/20 = 12 days.",
+      "shortcut": "Convert to man-days: left = total - done, then divide by the new number of men.",
+      "subPattern": "men-days-hours",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can finish a piece of work in 20 days and B can finish it in 60 days. Working together, in how many days will they finish it?",
+      "options": [
+        "40 days",
+        "30 days",
+        "10 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A's 1-day work = 1/20, B's = 1/60. Together = 1/20 + 1/60 = 80/1200. Time = 1200/80 = 15 days.",
+      "shortcut": "Two workers: time = (a x b)/(a + b) = (20 x 60)/80.",
+      "subPattern": "combined-work",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a work in 45 days, B in 18 days and C in 10 days. A works every day, while B and C help on alternate days: B on day 1, C on day 2, B on day 3, and so on. In how many days is the work finished?",
+      "options": [
+        "8 days",
+        "11 days",
+        "10 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 90 units. Odd days: A + B = 7 units; even days: A + C = 11 units. Two days = 18 units. Continuing the cycle, the work is complete exactly at the end of day 10.",
+      "shortcut": "Treat two days as one cycle (A+B then A+C), find full cycles, finish the rest day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 4 times as fast as B and takes 30 days less than B to complete a work. How many days will they take together?",
+      "options": [
+        "6 days",
+        "3 days",
+        "10 days",
+        "8 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A takes x days, B takes 4x days. 4x - x = 30, so x = 10; B = 40. Together = (10 x 40)/(10 + 40) = 8 days.",
+      "shortcut": "Time ratio A : B = 1 : 4; the difference (3 parts) = 30, so 1 part = 10.",
+      "subPattern": "comparative-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a work in 60 days, B in 10 days and C in 15 days. A works every day, while B and C help on alternate days: B on day 1, C on day 2, B on day 3, and so on. In how many days is the work finished?",
+      "options": [
+        "9 days",
+        "10 days",
+        "8 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total = 60 units. Odd days: A + B = 7 units; even days: A + C = 5 units. Two days = 12 units. Continuing the cycle, the work is complete exactly at the end of day 10.",
+      "shortcut": "Treat two days as one cycle (A+B then A+C), find full cycles, finish the rest day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 60, 12 and 10 days. They work in turns, one day each in the order A, B, C, A, B, C, and so on. In how many days will the job be completed?",
+      "options": [
+        "13 days",
+        "20 days",
+        "15 days",
+        "5 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total work = 60 units; per-day units A = 1, B = 5, C = 6. One 3-day cycle = 12 units. Simulating the cycles, the work completes exactly at the end of day 15.",
+      "shortcut": "Compute units per 3-day cycle, subtract full cycles, then finish the remainder day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 60, 20 and 10 days respectively. If all three work together, how many days will they need?",
+      "options": [
+        "3 days",
+        "6 days",
+        "4 days",
+        "30 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Combined 1-day work = 1/60 + 1/20 + 1/10 = 1/6. Time = 6 = 6 days.",
+      "shortcut": "Take LCM 60 as total work: efficiencies 1, 3, 6; time = 60 / 10.",
+      "subPattern": "combined-work",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do 1/4 of a work in 5 days and B can do 1/5 of it in 4 days. Working together, how many days will they take to finish the whole work?",
+      "options": [
+        "9 days",
+        "10 days",
+        "12 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A's rate = 1/4/5 = 1/20. B's rate = 1/5/4 = 1/20. Together = 1/10. Time = 10 days.",
+      "shortcut": "Convert each statement to work per day first, then add the rates.",
+      "subPattern": "work-fraction",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 4 times as efficient as B. Working together they finish a task in 8 days. How many days would A alone take?",
+      "options": [
+        "10 days",
+        "15 days",
+        "16 days",
+        "5 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Efficiency A : B = 4 : 1, so together = 5 units/day. Total work = 8 x 5 = 40 units. B alone = 40/1 = 40 days; A alone = 40/4 = 10 days.",
+      "shortcut": "Total work = 8 x (ratio sum 5). Divide by that person's efficiency.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The efficiencies of A and B are in the ratio 3:1. A alone can finish a job in 20 days. In how many days can A and B together finish it?",
+      "options": [
+        "15 days",
+        "60 days",
+        "10 days",
+        "5 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let A = 3 units/day, so total work = 60. Together = 4 units/day. Time = 60/4 = 15 days.",
+      "shortcut": "Total work = 3 x 20; combined efficiency = 3 + 1.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do 3/4 of a work in 5 days and B can do 1/5 of it in 4 days. Working together, how many days will they take to finish the whole work?",
+      "options": [
+        "7 days",
+        "9 days",
+        "5 days",
+        "4 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A's rate = 3/4/5 = 3/20. B's rate = 1/5/4 = 1/20. Together = 1/5. Time = 5 days.",
+      "shortcut": "Convert each statement to work per day first, then add the rates.",
+      "subPattern": "work-fraction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B can do a job in 60 and 24 days. They start working, and C, who can do the whole job in 30 days, joins them after 3 days. The total wages are Rs 4500, shared by the work each does. What is C's share?",
+      "options": [
+        "Rs 900",
+        "Rs 1080",
+        "Rs 1500",
+        "Rs 1350"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let total time = x days: x(1/60 + 1/24) + (x - 3)1/30 = 1, so x = 12. C works 9 days and does 0.3 of the work. C's share = Rs 1350.",
+      "shortcut": "Share = (fraction of work done by that person) x total wages; C works only (x - t) days.",
+      "subPattern": "work-and-wages",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 36, 24 and 18 days. They work in turns, one day each in the order A, B, C, A, B, C, and so on. In how many days will the job be completed?",
+      "options": [
+        "8 days",
+        "24 days",
+        "16 days",
+        "22 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total work = 72 units; per-day units A = 2, B = 3, C = 4. One 3-day cycle = 9 units. Simulating the cycles, the work completes exactly at the end of day 24.",
+      "shortcut": "Compute units per 3-day cycle, subtract full cycles, then finish the remainder day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a piece of work in 20 days and B in 8 days. They complete it together for Rs 3850. What is A's share?",
+      "options": [
+        "Rs 825",
+        "Rs 1320",
+        "Rs 1100",
+        "Rs 2750"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Wages are shared in the ratio of work done, i.e. A : B = 1/20 : 1/8 = 8 : 20. A's share = 3850 x 8/28 = Rs 1100.",
+      "shortcut": "The faster worker (fewer days) gets the larger share: ratio is inverse of days = 8 : 20.",
+      "subPattern": "work-and-wages",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "6 men working 9 hours a day can finish a job in 20 days. How many days will 16 men working 5 hours a day take to finish the same job?",
+      "options": [
+        "12.15 days",
+        "7.5 days",
+        "6.75 days",
+        "13.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Man-hours: 6 x 9 x 20 = 1080. Days = 1080 / (16 x 5) = 13.5.",
+      "shortcut": "Total work = men x hours/day x days. Keep it equal on both sides.",
+      "subPattern": "men-days-hours",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A painter completes 1/6 of a job in 18 days. In how many days can he complete the whole job at the same rate?",
+      "options": [
+        "216 days",
+        "81 days",
+        "108 days",
+        "3 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time for whole = 18 / (1/6) = 108 days.",
+      "shortcut": "Divide the days by the fraction: 18 x 6/1.",
+      "subPattern": "work-fraction",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 12, 45 and 36 days respectively. If all three work together, how many days will they need?",
+      "options": [
+        "7.5 days",
+        "6 days",
+        "31 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Combined 1-day work = 1/12 + 1/45 + 1/36 = 2/15. Time = 15/2 = 7.5 days.",
+      "shortcut": "Take LCM 180 as total work: efficiencies 15, 4, 5; time = 180 / 24.",
+      "subPattern": "combined-work",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a work in 18 days and B in 36 days. They work on alternate days, starting with A. In how many days will the work be completed?",
+      "options": [
+        "24 days",
+        "12 days",
+        "32 days",
+        "30 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total work = LCM = 36 units. A does 2/day, B does 1/day. Every 2 days = 3 units. Day-by-day, the work finishes exactly at the end of day 24.",
+      "shortcut": "Find the work done in a 2-day cycle, count full cycles, then check the leftover day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 100% more efficient than B. B alone takes 36 days to finish a job. How many days will A alone take?",
+      "options": [
+        "18 days",
+        "19 days",
+        "12 days",
+        "31 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Time is inversely proportional to efficiency. A's time = 36 x 100/200 = 18 days.",
+      "shortcut": "Efficiency ratio A : B = 200 : 100, so time ratio = 100 : 200.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can complete a work in 24 days and B in 60 days. A starts the work and B joins him after 3 days. In how many days from the start is the work completed?",
+      "options": [
+        "15 days",
+        "12 days",
+        "17 days",
+        "18 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A alone does 3/24 in 3 days. Remaining = 7/8. Together rate = 7/120, so 15 more days. Total = 3 + 15 = 18 days.",
+      "shortcut": "Count the days from the very start: head-start days + days of working together.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can complete a work in 36 days and B in 20 days. A starts the work and B joins him after 8 days. In how many days from the start is the work completed?",
+      "options": [
+        "18 days",
+        "10 days",
+        "24 days",
+        "13 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A alone does 8/36 in 8 days. Remaining = 7/9. Together rate = 7/90, so 10 more days. Total = 8 + 10 = 18 days.",
+      "shortcut": "Count the days from the very start: head-start days + days of working together.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 3 times as fast as B and takes 16 days less than B to complete a work. How many days will they take together?",
+      "options": [
+        "8 days",
+        "3 days",
+        "9 days",
+        "6 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A takes x days, B takes 3x days. 3x - x = 16, so x = 8; B = 24. Together = (8 x 24)/(8 + 24) = 6 days.",
+      "shortcut": "Time ratio A : B = 1 : 3; the difference (2 parts) = 16, so 1 part = 8.",
+      "subPattern": "comparative-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can complete a work in 15 days and B in 40 days. A starts the work and B joins him after 4 days. In how many days from the start is the work completed?",
+      "options": [
+        "12 days",
+        "9 days",
+        "11 days",
+        "8 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A alone does 4/15 in 4 days. Remaining = 11/15. Together rate = 11/120, so 8 more days. Total = 4 + 8 = 12 days.",
+      "shortcut": "Count the days from the very start: head-start days + days of working together.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job in 15, 10 and 6 days respectively. They work together and are paid Rs 2300 in all. How much does C get?",
+      "options": [
+        "Rs 1265",
+        "Rs 920",
+        "Rs 1150",
+        "Rs 575"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Take total work = 30. Efficiencies: A = 2, B = 3, C = 5. Ratio = 2 : 3 : 5. C's share = Rs 1150.",
+      "shortcut": "Wages follow efficiency (work per day), not the number of days.",
+      "subPattern": "work-and-wages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 2 times as fast as B and takes 12 days less than B to complete a work. How many days will they take together?",
+      "options": [
+        "8 days",
+        "12 days",
+        "10 days",
+        "7 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A takes x days, B takes 2x days. 2x - x = 12, so x = 12; B = 24. Together = (12 x 24)/(12 + 24) = 8 days.",
+      "shortcut": "Time ratio A : B = 1 : 2; the difference (1 parts) = 12, so 1 part = 12.",
+      "subPattern": "comparative-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B can do a work in 12 and 24 days respectively. They work together for 5 days and then A leaves. In how many more days will B finish the remaining work?",
+      "options": [
+        "9 days",
+        "10 days",
+        "8 days",
+        "4.5 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Work done in 5 days = 5(1/12 + 1/24) = 5/8. Remaining = 3/8. B alone needs 3/8 x 24 = 9 days.",
+      "shortcut": "Total work = LCM(12,24) = 24; subtract 5 days of combined work, divide by B's daily units.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 48, 24 and 16 days respectively. If all three work together, how many days will they need?",
+      "options": [
+        "9 days",
+        "10 days",
+        "8 days",
+        "13 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Combined 1-day work = 1/48 + 1/24 + 1/16 = 1/8. Time = 8 = 8 days.",
+      "shortcut": "Take LCM 48 as total work: efficiencies 1, 2, 3; time = 48 / 6.",
+      "subPattern": "combined-work",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can finish a work 12 days faster than B. Working together they finish it in 8 days. In how many days can A alone finish the work?",
+      "options": [
+        "10 days",
+        "24 days",
+        "13 days",
+        "12 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let A take x days, B takes x + 12. 1/x + 1/(x + 12) = 1/8, giving x^2 + -4x - 96 = 0, so x = 12. (Check: 1/12 + 1/24 = 1/8.)",
+      "shortcut": "Try values: A = 12 and B = 24 satisfy both the difference (12) and the combined time (8).",
+      "subPattern": "comparative-time",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do 2/3 of a work in 8 days and B can do 3/4 of it in 3 days. Working together, how many days will they take to finish the whole work?",
+      "options": [
+        "4 days",
+        "11 days",
+        "3 days",
+        "8 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A's rate = 2/3/8 = 1/12. B's rate = 3/4/3 = 1/4. Together = 1/3. Time = 3 days.",
+      "shortcut": "Convert each statement to work per day first, then add the rates.",
+      "subPattern": "work-fraction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can finish a work 40 days faster than B. Working together they finish it in 15 days. In how many days can A alone finish the work?",
+      "options": [
+        "16 days",
+        "20 days",
+        "15 days",
+        "60 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let A take x days, B takes x + 40. 1/x + 1/(x + 40) = 1/15, giving x^2 + 10x - 600 = 0, so x = 20. (Check: 1/20 + 1/60 = 1/15.)",
+      "shortcut": "Try values: A = 20 and B = 60 satisfy both the difference (40) and the combined time (15).",
+      "subPattern": "comparative-time",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can do a work in 12, 30 and 60 days respectively. They start together, but C leaves 8 days before the work is finished. In how many days is the work completed?",
+      "options": [
+        "9.35 days",
+        "9.5 days",
+        "0.5 days",
+        "8.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let total time = x days. x/12 + x/30 + (x - 8)/60 = 1, so x(1/12 + 1/30 + 1/60) = 1 + 8/60. x = 8.5 days.",
+      "shortcut": "Give the person who leaves (x - k) days in the equation; the others work all x days.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 3 times as efficient as B. Working together they finish a task in 12 days. How many days would A alone take?",
+      "options": [
+        "14 days",
+        "16 days",
+        "15 days",
+        "24 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Efficiency A : B = 3 : 1, so together = 4 units/day. Total work = 12 x 4 = 48 units. B alone = 48/1 = 48 days; A alone = 48/3 = 16 days.",
+      "shortcut": "Total work = 12 x (ratio sum 4). Divide by that person's efficiency.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The efficiencies of A and B are in the ratio 3:1. A alone can finish a job in 18 days. In how many days can A and B together finish it?",
+      "options": [
+        "54 days",
+        "13.5 days",
+        "4.5 days",
+        "12.5 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let A = 3 units/day, so total work = 54. Together = 4 units/day. Time = 54/4 = 13.5 days.",
+      "shortcut": "Total work = 3 x 18; combined efficiency = 3 + 1.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can finish a piece of work in 24 days and B can finish it in 40 days. Working together, in how many days will they finish it?",
+      "options": [
+        "20 days",
+        "15 days",
+        "32 days",
+        "30 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A's 1-day work = 1/24, B's = 1/40. Together = 1/24 + 1/40 = 64/960. Time = 960/64 = 15 days.",
+      "shortcut": "Two workers: time = (a x b)/(a + b) = (24 x 40)/64.",
+      "subPattern": "combined-work",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can finish a work 5 days faster than B. Working together they finish it in 6 days. In how many days can A alone finish the work?",
+      "options": [
+        "15 days",
+        "8 days",
+        "12 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let A take x days, B takes x + 5. 1/x + 1/(x + 5) = 1/6, giving x^2 + -7x - 30 = 0, so x = 10. (Check: 1/10 + 1/15 = 1/6.)",
+      "shortcut": "Try values: A = 10 and B = 15 satisfy both the difference (5) and the combined time (6).",
+      "subPattern": "comparative-time",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job in 30, 40 and 8 days respectively. They work together and are paid Rs 2200 in all. How much does C get?",
+      "options": [
+        "Rs 1875",
+        "Rs 2000",
+        "Rs 1500",
+        "Rs 1650"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Take total work = 120. Efficiencies: A = 4, B = 3, C = 15. Ratio = 4 : 3 : 15. C's share = Rs 1500.",
+      "shortcut": "Wages follow efficiency (work per day), not the number of days.",
+      "subPattern": "work-and-wages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 15, 24 and 60 days. They work in turns, one day each in the order A, B, C, A, B, C, and so on. In how many days will the job be completed?",
+      "options": [
+        "24 days",
+        "26 days",
+        "36 days",
+        "8 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total work = 120 units; per-day units A = 8, B = 5, C = 2. One 3-day cycle = 15 units. Simulating the cycles, the work completes exactly at the end of day 24.",
+      "shortcut": "Compute units per 3-day cycle, subtract full cycles, then finish the remainder day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do 2/3 of a work in 2 days and B can do 1/3 of it in 5 days. Working together, how many days will they take to finish the whole work?",
+      "options": [
+        "2.5 days",
+        "7 days",
+        "2.25 days",
+        "4.5 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A's rate = 2/3/2 = 1/3. B's rate = 1/3/5 = 1/15. Together = 2/5. Time = 2.5 days.",
+      "shortcut": "Convert each statement to work per day first, then add the rates.",
+      "subPattern": "work-fraction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 2 times as efficient as B. Working together they finish a task in 16 days. How many days would A alone take?",
+      "options": [
+        "12 days",
+        "29 days",
+        "32 days",
+        "24 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Efficiency A : B = 2 : 1, so together = 3 units/day. Total work = 16 x 3 = 48 units. B alone = 48/1 = 48 days; A alone = 48/2 = 24 days.",
+      "shortcut": "Total work = 16 x (ratio sum 3). Divide by that person's efficiency.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The efficiencies of A and B are in the ratio 2:3. A alone can finish a job in 20 days. In how many days can A and B together finish it?",
+      "options": [
+        "10 days",
+        "12 days",
+        "6 days",
+        "8 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let A = 2 units/day, so total work = 40. Together = 5 units/day. Time = 40/5 = 8 days.",
+      "shortcut": "Total work = 2 x 20; combined efficiency = 2 + 3.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B can do a work in 20 and 60 days respectively. They work together for 6 days and then A leaves. In how many more days will B finish the remaining work?",
+      "options": [
+        "12 days",
+        "45 days",
+        "36 days",
+        "37 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Work done in 6 days = 6(1/20 + 1/60) = 2/5. Remaining = 3/5. B alone needs 3/5 x 60 = 36 days.",
+      "shortcut": "Total work = LCM(20,60) = 60; subtract 6 days of combined work, divide by B's daily units.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "20 men working 9 hours a day can finish a job in 15 days. How many days will 4 men working 9 hours a day take to finish the same job?",
+      "options": [
+        "150 days",
+        "75 days",
+        "90 days",
+        "100 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Man-hours: 20 x 9 x 15 = 2700. Days = 2700 / (4 x 9) = 75.",
+      "shortcut": "Total work = men x hours/day x days. Keep it equal on both sides.",
+      "subPattern": "men-days-hours",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A worker completes 1/5 of a job in 12 days. In how many days can he complete the whole job at the same rate?",
+      "options": [
+        "65 days",
+        "60 days",
+        "2.4 days",
+        "48 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time for whole = 12 / (1/5) = 60 days.",
+      "shortcut": "Divide the days by the fraction: 12 x 5/1.",
+      "subPattern": "work-fraction",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B together can do 3/5 of a job in 6 days. A alone can do 2/5 of the job in 8 days. How many days will B alone take to complete the whole job?",
+      "options": [
+        "10 days",
+        "20 days",
+        "18 days",
+        "19 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "(A + B) rate = 3/5/6 = 1/10. A's rate = 2/5/8 = 1/20. B's rate = 1/20. B alone = 1/1/20 = 20 days.",
+      "shortcut": "B's rate = (A + B) rate - A's rate; take the reciprocal for days.",
+      "subPattern": "work-fraction",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can do a work in 20, 60 and 15 days respectively. They start together, but C leaves 8 days before the work is finished. In how many days is the work completed?",
+      "options": [
+        "3.5 days",
+        "11.5 days",
+        "16.5 days",
+        "10.5 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let total time = x days. x/20 + x/60 + (x - 8)/15 = 1, so x(1/20 + 1/60 + 1/15) = 1 + 8/15. x = 11.5 days.",
+      "shortcut": "Give the person who leaves (x - k) days in the equation; the others work all x days.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 men working 10 hours a day can finish a job in 15 days. How many days will 4 men working 6 hours a day take to finish the same job?",
+      "options": [
+        "68.75 days",
+        "37.5 days",
+        "56.25 days",
+        "62.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Man-hours: 10 x 10 x 15 = 1500. Days = 1500 / (4 x 6) = 62.5.",
+      "shortcut": "Total work = men x hours/day x days. Keep it equal on both sides.",
+      "subPattern": "men-days-hours",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "8 men can complete a piece of work in 24 days. How many days will 6 men take to complete the same work?",
+      "options": [
+        "27 days",
+        "40 days",
+        "32 days",
+        "18 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Men x days = constant. 8 x 24 = 6 x d, so d = 192/6 = 32 days.",
+      "shortcut": "More men -> fewer days (inverse proportion): men x days stays constant.",
+      "subPattern": "men-days-hours",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B together can complete a job in 20 days, B and C together in 35 days, and A and C together in 28 days. In how many days can A, B and C together complete it?",
+      "options": [
+        "21 days",
+        "15.5 days",
+        "14 days",
+        "17.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "2(A + B + C) = 1/20 + 1/35 + 1/28. With total work 280 units: A+B = 14, B+C = 8, A+C = 10 units/day, so A+B+C = 16 units/day. Time = 280/16 = 17.5 days.",
+      "shortcut": "Add the three pair rates and halve: that gives the combined rate of all three.",
+      "subPattern": "combined-work",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 50% more efficient than B. B alone takes 15 days to finish a job. How many days will A alone take?",
+      "options": [
+        "15 days",
+        "7.5 days",
+        "20 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Time is inversely proportional to efficiency. A's time = 15 x 100/150 = 10 days.",
+      "shortcut": "Efficiency ratio A : B = 150 : 100, so time ratio = 100 : 150.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can complete a work in 12 days and B in 60 days. A starts the work and B joins him after 3 days. In how many days from the start is the work completed?",
+      "options": [
+        "10.5 days",
+        "7.5 days",
+        "8.5 days",
+        "9.45 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A alone does 3/12 in 3 days. Remaining = 3/4. Together rate = 1/10, so 7.5 more days. Total = 3 + 7.5 = 10.5 days.",
+      "shortcut": "Count the days from the very start: head-start days + days of working together.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a piece of work in 40 days and B in 10 days. They complete it together for Rs 1150. What is A's share?",
+      "options": [
+        "Rs 253",
+        "Rs 920",
+        "Rs 184",
+        "Rs 230"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Wages are shared in the ratio of work done, i.e. A : B = 1/40 : 1/10 = 10 : 40. A's share = 1150 x 10/50 = Rs 230.",
+      "shortcut": "The faster worker (fewer days) gets the larger share: ratio is inverse of days = 10 : 40.",
+      "subPattern": "work-and-wages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can complete a work in 24 days and B in 40 days. A starts the work and B joins him after 8 days. In how many days from the start is the work completed?",
+      "options": [
+        "27 days",
+        "24 days",
+        "18 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A alone does 8/24 in 8 days. Remaining = 2/3. Together rate = 1/15, so 10 more days. Total = 8 + 10 = 18 days.",
+      "shortcut": "Count the days from the very start: head-start days + days of working together.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 36, 30 and 20 days. They work in turns, one day each in the order A, B, C, A, B, C, and so on. In how many days will the job be completed?",
+      "options": [
+        "32 days",
+        "27 days",
+        "25 days",
+        "9 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total work = 180 units; per-day units A = 5, B = 6, C = 9. One 3-day cycle = 20 units. Simulating the cycles, the work completes exactly at the end of day 27.",
+      "shortcut": "Compute units per 3-day cycle, subtract full cycles, then finish the remainder day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can complete a work in 20 days and B in 15 days. A starts the work and B joins him after 6 days. In how many days from the start is the work completed?",
+      "options": [
+        "11 days",
+        "6 days",
+        "12 days",
+        "13 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A alone does 6/20 in 6 days. Remaining = 7/10. Together rate = 7/60, so 6 more days. Total = 6 + 6 = 12 days.",
+      "shortcut": "Count the days from the very start: head-start days + days of working together.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can finish a work 48 days faster than B. Working together they finish it in 7 days. In how many days can A alone finish the work?",
+      "options": [
+        "6 days",
+        "8 days",
+        "56 days",
+        "16 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let A take x days, B takes x + 48. 1/x + 1/(x + 48) = 1/7, giving x^2 + 34x - 336 = 0, so x = 8. (Check: 1/8 + 1/56 = 1/7.)",
+      "shortcut": "Try values: A = 8 and B = 56 satisfy both the difference (48) and the combined time (7).",
+      "subPattern": "comparative-time",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can finish a piece of work in 30 days and B can finish it in 15 days. Working together, in how many days will they finish it?",
+      "options": [
+        "15 days",
+        "10 days",
+        "11 days",
+        "22.5 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A's 1-day work = 1/30, B's = 1/15. Together = 1/30 + 1/15 = 45/450. Time = 450/45 = 10 days.",
+      "shortcut": "Two workers: time = (a x b)/(a + b) = (30 x 15)/45.",
+      "subPattern": "combined-work",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The efficiencies of A and B are in the ratio 3:2. A alone can finish a job in 15 days. In how many days can A and B together finish it?",
+      "options": [
+        "22.5 days",
+        "6 days",
+        "9 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let A = 3 units/day, so total work = 45. Together = 5 units/day. Time = 45/5 = 9 days.",
+      "shortcut": "Total work = 3 x 15; combined efficiency = 3 + 2.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a work in 30 days and B in 60 days. They work on alternate days, starting with A. In how many days will the work be completed?",
+      "options": [
+        "50 days",
+        "40 days",
+        "20 days",
+        "80 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total work = LCM = 60 units. A does 2/day, B does 1/day. Every 2 days = 3 units. Day-by-day, the work finishes exactly at the end of day 40.",
+      "shortcut": "Find the work done in a 2-day cycle, count full cycles, then check the leftover day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The efficiencies of A and B are in the ratio 2:3. A alone can finish a job in 60 days. In how many days can A and B together finish it?",
+      "options": [
+        "29 days",
+        "40 days",
+        "36 days",
+        "24 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let A = 2 units/day, so total work = 120. Together = 5 units/day. Time = 120/5 = 24 days.",
+      "shortcut": "Total work = 2 x 60; combined efficiency = 2 + 3.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The efficiencies of A and B are in the ratio 2:3. A alone can finish a job in 40 days. In how many days can A and B together finish it?",
+      "options": [
+        "12 days",
+        "24 days",
+        "20 days",
+        "16 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let A = 2 units/day, so total work = 80. Together = 5 units/day. Time = 80/5 = 16 days.",
+      "shortcut": "Total work = 2 x 40; combined efficiency = 2 + 3.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B can do a work in 30 and 15 days respectively. They work together for 4 days and then A leaves. In how many more days will B finish the remaining work?",
+      "options": [
+        "10 days",
+        "18 days",
+        "9 days",
+        "4 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Work done in 4 days = 4(1/30 + 1/15) = 2/5. Remaining = 3/5. B alone needs 3/5 x 15 = 9 days.",
+      "shortcut": "Total work = LCM(30,15) = 30; subtract 4 days of combined work, divide by B's daily units.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 2 times as fast as B and takes 15 days less than B to complete a work. How many days will they take together?",
+      "options": [
+        "10 days",
+        "15 days",
+        "12 days",
+        "11 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A takes x days, B takes 2x days. 2x - x = 15, so x = 15; B = 30. Together = (15 x 30)/(15 + 30) = 10 days.",
+      "shortcut": "Time ratio A : B = 1 : 2; the difference (1 parts) = 15, so 1 part = 15.",
+      "subPattern": "comparative-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do 3/5 of a work in 3 days and B can do 3/5 of it in 2 days. Working together, how many days will they take to finish the whole work?",
+      "options": [
+        "2 days",
+        "1 days",
+        "3 days",
+        "5 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A's rate = 3/5/3 = 1/5. B's rate = 3/5/2 = 3/10. Together = 1/2. Time = 2 days.",
+      "shortcut": "Convert each statement to work per day first, then add the rates.",
+      "subPattern": "work-fraction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a piece of work in 60 days and B in 20 days. They complete it together for Rs 3800. What is A's share?",
+      "options": [
+        "Rs 950",
+        "Rs 2850",
+        "Rs 475",
+        "Rs 760"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Wages are shared in the ratio of work done, i.e. A : B = 1/60 : 1/20 = 20 : 60. A's share = 3800 x 20/80 = Rs 950.",
+      "shortcut": "The faster worker (fewer days) gets the larger share: ratio is inverse of days = 20 : 60.",
+      "subPattern": "work-and-wages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B can finish a work in 24 and 40 days respectively. They start together, but A leaves 4 days before the work is completed. In how many days is the work completed?",
+      "options": [
+        "13.5 days",
+        "22.5 days",
+        "8.75 days",
+        "17.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A works (x - 4) days and B works x days: (x - 4)/24 + x/40 = 1, so x(1/24 + 1/40) = 1 + 4/24, giving x = 17.5 days.",
+      "shortcut": "Split the timeline: (x - k) days together, then k days of B alone.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 3 times as fast as B and takes 8 days less than B to complete a work. How many days will they take together?",
+      "options": [
+        "2 days",
+        "8 days",
+        "3 days",
+        "4 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A takes x days, B takes 3x days. 3x - x = 8, so x = 4; B = 12. Together = (4 x 12)/(4 + 12) = 3 days.",
+      "shortcut": "Time ratio A : B = 1 : 3; the difference (2 parts) = 8, so 1 part = 4.",
+      "subPattern": "comparative-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job in 40, 30 and 24 days respectively. They work together and are paid Rs 5200 in all. How much does A get?",
+      "options": [
+        "Rs 2600",
+        "Rs 1170",
+        "Rs 1300",
+        "Rs 1560"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Take total work = 120. Efficiencies: A = 3, B = 4, C = 5. Ratio = 3 : 4 : 5. A's share = Rs 1300.",
+      "shortcut": "Wages follow efficiency (work per day), not the number of days.",
+      "subPattern": "work-and-wages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B together can complete a job in 48 days, B and C together in 42 days, and A and C together in 56 days. In how many days can A, B and C together complete it?",
+      "options": [
+        "33 days",
+        "24 days",
+        "16 days",
+        "32 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "2(A + B + C) = 1/48 + 1/42 + 1/56. With total work 672 units: A+B = 14, B+C = 16, A+C = 12 units/day, so A+B+C = 21 units/day. Time = 672/21 = 32 days.",
+      "shortcut": "Add the three pair rates and halve: that gives the combined rate of all three.",
+      "subPattern": "combined-work",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 30, 6 and 20 days respectively. If all three work together, how many days will they need?",
+      "options": [
+        "3 days",
+        "5 days",
+        "4 days",
+        "6 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Combined 1-day work = 1/30 + 1/6 + 1/20 = 1/4. Time = 4 = 4 days.",
+      "shortcut": "Take LCM 60 as total work: efficiencies 2, 10, 3; time = 60 / 15.",
+      "subPattern": "combined-work",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "12 men can complete a work in 18 days. After 8 days, 2 men leave. In how many more days will the remaining work be completed?",
+      "options": [
+        "10 days",
+        "12 days",
+        "9 days",
+        "24 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total work = 12 x 18 = 216 man-days. Done in 8 days = 96. Left = 120 man-days. With 10 men: 120/10 = 12 days.",
+      "shortcut": "Convert to man-days: left = total - done, then divide by the new number of men.",
+      "subPattern": "men-days-hours",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "30 men can complete a piece of work in 15 days. How many days will 45 men take to complete the same work?",
+      "options": [
+        "8 days",
+        "22.5 days",
+        "10 days",
+        "9 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Men x days = constant. 30 x 15 = 45 x d, so d = 450/45 = 10 days.",
+      "shortcut": "More men -> fewer days (inverse proportion): men x days stays constant.",
+      "subPattern": "men-days-hours",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "20 men working 6 hours a day can finish a job in 15 days. How many days will 24 men working 10 hours a day take to finish the same job?",
+      "options": [
+        "12.5 days",
+        "7.5 days",
+        "15 days",
+        "8.5 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Man-hours: 20 x 6 x 15 = 1800. Days = 1800 / (24 x 10) = 7.5.",
+      "shortcut": "Total work = men x hours/day x days. Keep it equal on both sides.",
+      "subPattern": "men-days-hours",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B together can do 1/2 of a job in 3 days. A alone can do 1/6 of the job in 5 days. How many days will B alone take to complete the whole job?",
+      "options": [
+        "6 days",
+        "7.5 days",
+        "6.75 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "(A + B) rate = 1/2/3 = 1/6. A's rate = 1/6/5 = 1/30. B's rate = 2/15. B alone = 1/2/15 = 7.5 days.",
+      "shortcut": "B's rate = (A + B) rate - A's rate; take the reciprocal for days.",
+      "subPattern": "work-fraction",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B can do a work in 20 and 30 days respectively. They work together for 8 days and then A leaves. In how many more days will B finish the remaining work?",
+      "options": [
+        "10 days",
+        "9 days",
+        "5 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Work done in 8 days = 8(1/20 + 1/30) = 2/3. Remaining = 1/3. B alone needs 1/3 x 30 = 10 days.",
+      "shortcut": "Total work = LCM(20,30) = 60; subtract 8 days of combined work, divide by B's daily units.",
+      "subPattern": "leaving-and-joining",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 100% more efficient than B, and A alone takes 18 days less than B to complete a job. How many days will A and B take together?",
+      "options": [
+        "13 days",
+        "12 days",
+        "18 days",
+        "9 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time ratio A : B = 100 : 200. Difference = 100 parts = 18, so 1 part = 0.18 day, so A = 18 days and B = 36 days. Together = (18 x 36)/(18 + 36) = 12 days.",
+      "shortcut": "Convert efficiency % into a time ratio (inverse), use the day difference to find one part.",
+      "subPattern": "comparative-time",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "24 men can complete a piece of work in 6 days. How many days will 16 men take to complete the same work?",
+      "options": [
+        "18 days",
+        "14 days",
+        "4 days",
+        "9 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Men x days = constant. 24 x 6 = 16 x d, so d = 144/16 = 9 days.",
+      "shortcut": "More men -> fewer days (inverse proportion): men x days stays constant.",
+      "subPattern": "men-days-hours",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "12 men can complete a work in 36 days. After 8 days, 4 more men join. In how many more days will the remaining work be completed?",
+      "options": [
+        "21 days",
+        "28 days",
+        "16 days",
+        "23 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total work = 12 x 36 = 432 man-days. Done in 8 days = 96. Left = 336 man-days. With 16 men: 336/16 = 21 days.",
+      "shortcut": "Convert to man-days: left = total - done, then divide by the new number of men.",
+      "subPattern": "men-days-hours",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 48, 16 and 60 days respectively. If all three work together, how many days will they need?",
+      "options": [
+        "10 days",
+        "9 days",
+        "8 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Combined 1-day work = 1/48 + 1/16 + 1/60 = 1/10. Time = 10 = 10 days.",
+      "shortcut": "Take LCM 240 as total work: efficiencies 5, 15, 4; time = 240 / 24.",
+      "subPattern": "combined-work",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 20, 60 and 30 days. They work in turns, one day each in the order A, B, C, A, B, C, and so on. In how many days will the job be completed?",
+      "options": [
+        "32 days",
+        "10 days",
+        "30 days",
+        "45 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total work = 60 units; per-day units A = 3, B = 1, C = 2. One 3-day cycle = 6 units. Simulating the cycles, the work completes exactly at the end of day 30.",
+      "shortcut": "Compute units per 3-day cycle, subtract full cycles, then finish the remainder day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job in 6, 10 and 15 days respectively. They work together and are paid Rs 1100 in all. How much does C get?",
+      "options": [
+        "Rs 198",
+        "Rs 440",
+        "Rs 264",
+        "Rs 220"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Take total work = 30. Efficiencies: A = 5, B = 3, C = 2. Ratio = 5 : 3 : 2. C's share = Rs 220.",
+      "shortcut": "Wages follow efficiency (work per day), not the number of days.",
+      "subPattern": "work-and-wages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 25% more efficient than B, and A alone takes 18 days less than B to complete a job. How many days will A and B take together?",
+      "options": [
+        "32 days",
+        "40 days",
+        "72 days",
+        "41 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time ratio A : B = 100 : 125. Difference = 25 parts = 18, so 1 part = 0.72 day, so A = 72 days and B = 90 days. Together = (72 x 90)/(72 + 90) = 40 days.",
+      "shortcut": "Convert efficiency % into a time ratio (inverse), use the day difference to find one part.",
+      "subPattern": "comparative-time",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 3 times as efficient as B. Working together they finish a task in 6 days. How many days would A alone take?",
+      "options": [
+        "8 days",
+        "12 days",
+        "6 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Efficiency A : B = 3 : 1, so together = 4 units/day. Total work = 6 x 4 = 24 units. B alone = 24/1 = 24 days; A alone = 24/3 = 8 days.",
+      "shortcut": "Total work = 6 x (ratio sum 4). Divide by that person's efficiency.",
+      "subPattern": "efficiency-and-ratio",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A painter completes 1/2 of a job in 4 days. In how many days can he complete the whole job at the same rate?",
+      "options": [
+        "2 days",
+        "8 days",
+        "4 days",
+        "16 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time for whole = 4 / (1/2) = 8 days.",
+      "shortcut": "Divide the days by the fraction: 4 x 2/1.",
+      "subPattern": "work-fraction",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do 2/5 of a work in 8 days and B can do 1/3 of it in 4 days. Working together, how many days will they take to finish the whole work?",
+      "options": [
+        "12 days",
+        "10 days",
+        "9 days",
+        "7.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A's rate = 2/5/8 = 1/20. B's rate = 1/3/4 = 1/12. Together = 2/15. Time = 7.5 days.",
+      "shortcut": "Convert each statement to work per day first, then add the rates.",
+      "subPattern": "work-fraction",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 30, 24 and 36 days. They work in turns, one day each in the order A, B, C, A, B, C, and so on. In how many days will the job be completed?",
+      "options": [
+        "30 days",
+        "29 days",
+        "28 days",
+        "58 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total work = 360 units; per-day units A = 12, B = 15, C = 10. One 3-day cycle = 37 units. Simulating the cycles, the work completes exactly at the end of day 29.",
+      "shortcut": "Compute units per 3-day cycle, subtract full cycles, then finish the remainder day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 3 times as fast as B and takes 12 days less than B to complete a work. How many days will they take together?",
+      "options": [
+        "4.5 days",
+        "3.5 days",
+        "6.5 days",
+        "6 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A takes x days, B takes 3x days. 3x - x = 12, so x = 6; B = 18. Together = (6 x 18)/(6 + 18) = 4.5 days.",
+      "shortcut": "Time ratio A : B = 1 : 3; the difference (2 parts) = 12, so 1 part = 6.",
+      "subPattern": "comparative-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "6 men working 10 hours a day can finish a job in 18 days. How many days will 4 men working 6 hours a day take to finish the same job?",
+      "options": [
+        "45 days",
+        "27 days",
+        "47 days",
+        "30 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Man-hours: 6 x 10 x 18 = 1080. Days = 1080 / (4 x 6) = 45.",
+      "shortcut": "Total work = men x hours/day x days. Keep it equal on both sides.",
+      "subPattern": "men-days-hours",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "12 men working 10 hours a day can finish a job in 15 days. How many days will 20 men working 10 hours a day take to finish the same job?",
+      "options": [
+        "9 days",
+        "6 days",
+        "7 days",
+        "11 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Man-hours: 12 x 10 x 15 = 1800. Days = 1800 / (20 x 10) = 9.",
+      "shortcut": "Total work = men x hours/day x days. Keep it equal on both sides.",
+      "subPattern": "men-days-hours",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do 2/5 of a work in 10 days and B can do 2/5 of it in 10 days. Working together, how many days will they take to finish the whole work?",
+      "options": [
+        "20 days",
+        "12.5 days",
+        "25 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A's rate = 2/5/10 = 1/25. B's rate = 2/5/10 = 1/25. Together = 2/25. Time = 12.5 days.",
+      "shortcut": "Convert each statement to work per day first, then add the rates.",
+      "subPattern": "work-fraction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job in 10, 40 and 8 days respectively. They work together and are paid Rs 5600 in all. How much does A get?",
+      "options": [
+        "Rs 2688",
+        "Rs 2464",
+        "Rs 1680",
+        "Rs 2240"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Take total work = 40. Efficiencies: A = 4, B = 1, C = 5. Ratio = 4 : 1 : 5. A's share = Rs 2240.",
+      "shortcut": "Wages follow efficiency (work per day), not the number of days.",
+      "subPattern": "work-and-wages",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "15 men can complete a piece of work in 30 days. How many days will 30 men take to complete the same work?",
+      "options": [
+        "60 days",
+        "14 days",
+        "15 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Men x days = constant. 15 x 30 = 30 x d, so d = 450/30 = 15 days.",
+      "shortcut": "More men -> fewer days (inverse proportion): men x days stays constant.",
+      "subPattern": "men-days-hours",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 10, 45 and 36 days. They work in turns, one day each in the order A, B, C, A, B, C, and so on. In how many days will the job be completed?",
+      "options": [
+        "19 days",
+        "38 days",
+        "17 days",
+        "18 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total work = 180 units; per-day units A = 18, B = 4, C = 5. One 3-day cycle = 27 units. Simulating the cycles, the work completes exactly at the end of day 19.",
+      "shortcut": "Compute units per 3-day cycle, subtract full cycles, then finish the remainder day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can finish a piece of work in 15 days and B can finish it in 10 days. Working together, in how many days will they finish it?",
+      "options": [
+        "4 days",
+        "12.5 days",
+        "6 days",
+        "7 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A's 1-day work = 1/15, B's = 1/10. Together = 1/15 + 1/10 = 25/150. Time = 150/25 = 6 days.",
+      "shortcut": "Two workers: time = (a x b)/(a + b) = (15 x 10)/25.",
+      "subPattern": "combined-work",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job alone in 20, 8 and 40 days respectively. If all three work together, how many days will they need?",
+      "options": [
+        "6 days",
+        "5 days",
+        "10 days",
+        "4 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Combined 1-day work = 1/20 + 1/8 + 1/40 = 1/5. Time = 5 = 5 days.",
+      "shortcut": "Take LCM 40 as total work: efficiencies 2, 5, 1; time = 40 / 8.",
+      "subPattern": "combined-work",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is 100% more efficient than B, and A alone takes 15 days less than B to complete a job. How many days will A and B take together?",
+      "options": [
+        "9 days",
+        "12 days",
+        "10 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time ratio A : B = 100 : 200. Difference = 100 parts = 15, so 1 part = 0.15 day, so A = 15 days and B = 30 days. Together = (15 x 30)/(15 + 30) = 10 days.",
+      "shortcut": "Convert efficiency % into a time ratio (inverse), use the day difference to find one part.",
+      "subPattern": "comparative-time",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a work in 36 days and B in 12 days. They work on alternate days, starting with A. In how many days will the work be completed?",
+      "options": [
+        "9 days",
+        "24 days",
+        "18 days",
+        "12 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total work = LCM = 36 units. A does 1/day, B does 3/day. Every 2 days = 4 units. Day-by-day, the work finishes exactly at the end of day 18.",
+      "shortcut": "Find the work done in a 2-day cycle, count full cycles, then check the leftover day by day.",
+      "subPattern": "alternate-days",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B can do a job in 30 and 15 days. They start working, and C, who can do the whole job in 10 days, joins them after 1 days. The total wages are Rs 1000, shared by the work each does. What is C's share?",
+      "options": [
+        "Rs 495",
+        "Rs 540",
+        "Rs 360",
+        "Rs 450"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let total time = x days: x(1/30 + 1/15) + (x - 1)1/10 = 1, so x = 5.5. C works 4.5 days and does 0.45 of the work. C's share = Rs 450.",
+      "shortcut": "Share = (fraction of work done by that person) x total wages; C works only (x - t) days.",
+      "subPattern": "work-and-wages",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A can do a piece of work in 40 days and B in 8 days. They complete it together for Rs 600. What is A's share?",
+      "options": [
+        "Rs 500",
+        "Rs 150",
+        "Rs 110",
+        "Rs 100"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Wages are shared in the ratio of work done, i.e. A : B = 1/40 : 1/8 = 8 : 40. A's share = 600 x 8/48 = Rs 100.",
+      "shortcut": "The faster worker (fewer days) gets the larger share: ratio is inverse of days = 8 : 40.",
+      "subPattern": "work-and-wages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A, B and C can complete a job in 30, 15 and 40 days respectively. They work together and are paid Rs 1500 in all. How much does A get?",
+      "options": [
+        "Rs 400",
+        "Rs 320",
+        "Rs 500",
+        "Rs 480"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Take total work = 120. Efficiencies: A = 4, B = 8, C = 3. Ratio = 4 : 8 : 3. A's share = Rs 400.",
+      "shortcut": "Wages follow efficiency (work per day), not the number of days.",
+      "subPattern": "work-and-wages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}
