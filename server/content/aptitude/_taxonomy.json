@@ -1,0 +1,2555 @@
+{
+ "version": 1,
+ "topics": [
+  {
+   "order": 1,
+   "slug": "number-system",
+   "title": "Number System",
+   "category": "Quantitative Aptitude",
+   "description": "Divisibility, remainders, factors, unit digits and number properties.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 23,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "types-of-numbers-classification",
+     "title": "Types of numbers & classification"
+    },
+    {
+     "slug": "divisibility-rules",
+     "title": "Divisibility rules"
+    },
+    {
+     "slug": "factors-number-of-factors",
+     "title": "Factors & number of factors"
+    },
+    {
+     "slug": "remainder-theorems-cyclicity",
+     "title": "Remainder theorems & cyclicity"
+    },
+    {
+     "slug": "unit-digit-last-two-digits",
+     "title": "Unit digit & last two digits"
+    },
+    {
+     "slug": "trailing-zeros-factorials",
+     "title": "Trailing zeros & factorials"
+    },
+    {
+     "slug": "base-conversion-binary",
+     "title": "Base conversion & binary"
+    },
+    {
+     "slug": "prime-numbers",
+     "title": "Prime numbers"
+    },
+    {
+     "slug": "recurring-decimals-rational-numbers",
+     "title": "Recurring decimals & rational numbers"
+    },
+    {
+     "slug": "sum-of-series-natural-squares-cubes",
+     "title": "Sum of series (natural, squares, cubes)"
+    },
+    {
+     "slug": "digit-missing-digit-problems",
+     "title": "Digit & missing-digit problems"
+    }
+   ]
+  },
+  {
+   "order": 2,
+   "slug": "hcf-and-lcm",
+   "title": "HCF and LCM",
+   "category": "Quantitative Aptitude",
+   "description": "Highest common factor, least common multiple and their word-problem forms.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 32,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "factorization-method",
+     "title": "Factorization method"
+    },
+    {
+     "slug": "hcf-lcm-of-fractions",
+     "title": "HCF & LCM of fractions"
+    },
+    {
+     "slug": "product-of-two-numbers-relation",
+     "title": "Product of two numbers relation"
+    },
+    {
+     "slug": "greatest-number-with-given-remainders",
+     "title": "Greatest number with given remainders"
+    },
+    {
+     "slug": "least-number-with-given-remainders",
+     "title": "Least number with given remainders"
+    },
+    {
+     "slug": "bells-lights-timing-lcm",
+     "title": "Bells, lights & timing (LCM)"
+    },
+    {
+     "slug": "tiles-ropes-cutting-hcf",
+     "title": "Tiles, ropes & cutting (HCF)"
+    },
+    {
+     "slug": "co-prime-word-problems",
+     "title": "Co-prime & word problems"
+    }
+   ]
+  },
+  {
+   "order": 3,
+   "slug": "simplification-and-approximation",
+   "title": "Simplification and Approximation",
+   "category": "Quantitative Aptitude",
+   "description": "Fast calculation: BODMAS, roots, surds, indices and estimation.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 32,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "bodmas",
+     "title": "BODMAS"
+    },
+    {
+     "slug": "fractions-decimals",
+     "title": "Fractions & decimals"
+    },
+    {
+     "slug": "square-cube-roots",
+     "title": "Square & cube roots"
+    },
+    {
+     "slug": "surds-indices",
+     "title": "Surds & indices"
+    },
+    {
+     "slug": "approximation-estimation",
+     "title": "Approximation & estimation"
+    },
+    {
+     "slug": "missing-number-in-expression",
+     "title": "Missing number in expression"
+    },
+    {
+     "slug": "comparison-of-fractions",
+     "title": "Comparison of fractions"
+    },
+    {
+     "slug": "speed-maths-shortcuts-squares-multiplication",
+     "title": "Speed-maths shortcuts (squares, multiplication)"
+    }
+   ]
+  },
+  {
+   "order": 4,
+   "slug": "percentages",
+   "title": "Percentages",
+   "category": "Quantitative Aptitude",
+   "description": "Percentage change, successive change and real-life percentage models.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 28,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "basic-percentage-conversions",
+     "title": "Basic percentage & conversions"
+    },
+    {
+     "slug": "successive-percentage-change",
+     "title": "Successive percentage change"
+    },
+    {
+     "slug": "population-growth-decrease",
+     "title": "Population growth & decrease"
+    },
+    {
+     "slug": "price-consumption-relation",
+     "title": "Price-consumption relation"
+    },
+    {
+     "slug": "election-votes",
+     "title": "Election & votes"
+    },
+    {
+     "slug": "exam-marks-pass-percentage",
+     "title": "Exam marks & pass percentage"
+    },
+    {
+     "slug": "fraction-percentage-equivalents",
+     "title": "Fraction-percentage equivalents"
+    },
+    {
+     "slug": "income-expenditure-savings",
+     "title": "Income, expenditure & savings"
+    },
+    {
+     "slug": "percentage-comparison-a-more-than-b",
+     "title": "Percentage comparison (A more than B)"
+    }
+   ]
+  },
+  {
+   "order": 5,
+   "slug": "profit-and-loss",
+   "title": "Profit and Loss",
+   "category": "Quantitative Aptitude",
+   "description": "Cost price, selling price, discount and dishonest-dealer problems.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 28,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "basic-cp-sp-profit",
+     "title": "Basic CP, SP & profit %"
+    },
+    {
+     "slug": "successive-discounts",
+     "title": "Successive discounts"
+    },
+    {
+     "slug": "marked-price-discount",
+     "title": "Marked price & discount"
+    },
+    {
+     "slug": "false-weights",
+     "title": "False weights"
+    },
+    {
+     "slug": "dishonest-dealer",
+     "title": "Dishonest dealer"
+    },
+    {
+     "slug": "same-selling-price-gain-loss",
+     "title": "Same selling price gain & loss"
+    },
+    {
+     "slug": "mixed-items-combined-sales",
+     "title": "Mixed items & combined sales"
+    },
+    {
+     "slug": "reverse-find-cp-from-sp",
+     "title": "Reverse (find CP from SP)"
+    },
+    {
+     "slug": "profit-on-part-of-the-stock",
+     "title": "Profit on part of the stock"
+    }
+   ]
+  },
+  {
+   "order": 6,
+   "slug": "ratio-and-proportion",
+   "title": "Ratio and Proportion",
+   "category": "Quantitative Aptitude",
+   "description": "Ratios, proportions, variation and sharing.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 32,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "basic-ratio-simplification",
+     "title": "Basic ratio & simplification"
+    },
+    {
+     "slug": "compound-ratio",
+     "title": "Compound ratio"
+    },
+    {
+     "slug": "direct-inverse-proportion",
+     "title": "Direct & inverse proportion"
+    },
+    {
+     "slug": "mean-third-fourth-proportional",
+     "title": "Mean, third & fourth proportional"
+    },
+    {
+     "slug": "dividing-a-quantity-in-a-ratio",
+     "title": "Dividing a quantity in a ratio"
+    },
+    {
+     "slug": "ratio-of-incomes-expenses",
+     "title": "Ratio of incomes & expenses"
+    },
+    {
+     "slug": "changing-ratios-add-remove",
+     "title": "Changing ratios (add/remove)"
+    },
+    {
+     "slug": "partial-variation",
+     "title": "Partial variation"
+    }
+   ]
+  },
+  {
+   "order": 7,
+   "slug": "partnership",
+   "title": "Partnership",
+   "category": "Quantitative Aptitude",
+   "description": "Profit sharing by capital and time.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "simple-partnership",
+     "title": "Simple partnership"
+    },
+    {
+     "slug": "time-based-investment",
+     "title": "Time-based investment"
+    },
+    {
+     "slug": "sleeping-partner-salary",
+     "title": "Sleeping partner & salary"
+    },
+    {
+     "slug": "changing-capital-mid-year",
+     "title": "Changing capital mid-year"
+    },
+    {
+     "slug": "partner-joining-or-leaving",
+     "title": "Partner joining or leaving"
+    }
+   ]
+  },
+  {
+   "order": 8,
+   "slug": "averages",
+   "title": "Averages",
+   "category": "Quantitative Aptitude",
+   "description": "Mean, weighted mean and change-in-average problems.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 28,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "basic-average",
+     "title": "Basic average"
+    },
+    {
+     "slug": "weighted-average",
+     "title": "Weighted average"
+    },
+    {
+     "slug": "adding-or-removing-an-element",
+     "title": "Adding or removing an element"
+    },
+    {
+     "slug": "age-based-averages",
+     "title": "Age-based averages"
+    },
+    {
+     "slug": "average-speed",
+     "title": "Average speed"
+    },
+    {
+     "slug": "consecutive-numbers",
+     "title": "Consecutive numbers"
+    },
+    {
+     "slug": "corrected-mistake-problems",
+     "title": "Corrected-mistake problems"
+    },
+    {
+     "slug": "cricket-batting-averages",
+     "title": "Cricket / batting averages"
+    },
+    {
+     "slug": "group-replacement",
+     "title": "Group replacement"
+    }
+   ]
+  },
+  {
+   "order": 9,
+   "slug": "problems-on-ages",
+   "title": "Problems on Ages",
+   "category": "Quantitative Aptitude",
+   "description": "Age equations and ratios across time.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "present-age-equations",
+     "title": "Present age equations"
+    },
+    {
+     "slug": "ratio-based-ages",
+     "title": "Ratio-based ages"
+    },
+    {
+     "slug": "past-future-ages",
+     "title": "Past & future ages"
+    },
+    {
+     "slug": "sum-difference-of-ages",
+     "title": "Sum & difference of ages"
+    },
+    {
+     "slug": "average-age",
+     "title": "Average age"
+    },
+    {
+     "slug": "parent-child-age-puzzles",
+     "title": "Parent-child age puzzles"
+    }
+   ]
+  },
+  {
+   "order": 10,
+   "slug": "mixtures-and-alligations",
+   "title": "Mixtures and Alligations",
+   "category": "Quantitative Aptitude",
+   "description": "Alligation, replacement and dilution problems.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 36,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "alligation-rule",
+     "title": "Alligation rule"
+    },
+    {
+     "slug": "replacement-repeated-removal",
+     "title": "Replacement & repeated removal"
+    },
+    {
+     "slug": "mixing-two-varieties",
+     "title": "Mixing two varieties"
+    },
+    {
+     "slug": "price-based-mixtures",
+     "title": "Price-based mixtures"
+    },
+    {
+     "slug": "water-milk-dilution",
+     "title": "Water-milk dilution"
+    },
+    {
+     "slug": "three-ingredient-mixtures",
+     "title": "Three-ingredient mixtures"
+    },
+    {
+     "slug": "profit-through-dilution",
+     "title": "Profit through dilution"
+    }
+   ]
+  },
+  {
+   "order": 11,
+   "slug": "simple-and-compound-interest",
+   "title": "Simple and Compound Interest",
+   "category": "Quantitative Aptitude",
+   "description": "SI, CI, instalments and growth/depreciation.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 28,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "simple-interest-basics",
+     "title": "Simple interest basics"
+    },
+    {
+     "slug": "compound-interest-annual",
+     "title": "Compound interest (annual)"
+    },
+    {
+     "slug": "half-yearly-quarterly-compounding",
+     "title": "Half-yearly & quarterly compounding"
+    },
+    {
+     "slug": "difference-between-ci-and-si",
+     "title": "Difference between CI and SI"
+    },
+    {
+     "slug": "instalments",
+     "title": "Instalments"
+    },
+    {
+     "slug": "doubling-tripling-time",
+     "title": "Doubling & tripling time"
+    },
+    {
+     "slug": "different-rates-per-year",
+     "title": "Different rates per year"
+    },
+    {
+     "slug": "money-lent-in-parts",
+     "title": "Money lent in parts"
+    },
+    {
+     "slug": "growth-depreciation",
+     "title": "Growth & depreciation"
+    }
+   ]
+  },
+  {
+   "order": 12,
+   "slug": "time-and-work",
+   "title": "Time and Work",
+   "category": "Quantitative Aptitude",
+   "description": "Work rates, efficiency, wages and group work.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 32,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "basic-time-work",
+     "title": "Basic time & work"
+    },
+    {
+     "slug": "efficiency-method",
+     "title": "Efficiency method"
+    },
+    {
+     "slug": "alternate-day-work",
+     "title": "Alternate-day work"
+    },
+    {
+     "slug": "man-days-chain-relations",
+     "title": "Man-days & chain relations"
+    },
+    {
+     "slug": "wages-sharing",
+     "title": "Wages sharing"
+    },
+    {
+     "slug": "leaving-joining-mid-work",
+     "title": "Leaving & joining mid-work"
+    },
+    {
+     "slug": "fraction-of-work-done",
+     "title": "Fraction of work done"
+    },
+    {
+     "slug": "men-women-children-groups",
+     "title": "Men, women & children groups"
+    }
+   ]
+  },
+  {
+   "order": 13,
+   "slug": "pipes-and-cisterns",
+   "title": "Pipes and Cisterns",
+   "category": "Quantitative Aptitude",
+   "description": "Filling/emptying tanks and leaks.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "inlet-outlet-pipes",
+     "title": "Inlet & outlet pipes"
+    },
+    {
+     "slug": "leak-problems",
+     "title": "Leak problems"
+    },
+    {
+     "slug": "alternate-opening",
+     "title": "Alternate opening"
+    },
+    {
+     "slug": "combined-filling-emptying",
+     "title": "Combined filling-emptying"
+    },
+    {
+     "slug": "partial-fill-timing",
+     "title": "Partial fill timing"
+    }
+   ]
+  },
+  {
+   "order": 14,
+   "slug": "speed-time-and-distance",
+   "title": "Speed, Time and Distance",
+   "category": "Quantitative Aptitude",
+   "description": "Speed-distance-time models and relative motion.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 28,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "unit-conversion-basics",
+     "title": "Unit conversion & basics"
+    },
+    {
+     "slug": "average-speed",
+     "title": "Average speed"
+    },
+    {
+     "slug": "relative-speed",
+     "title": "Relative speed"
+    },
+    {
+     "slug": "meeting-overtaking",
+     "title": "Meeting & overtaking"
+    },
+    {
+     "slug": "late-early-arrival",
+     "title": "Late/early arrival"
+    },
+    {
+     "slug": "ratio-of-speeds-and-times",
+     "title": "Ratio of speeds and times"
+    },
+    {
+     "slug": "stoppages",
+     "title": "Stoppages"
+    },
+    {
+     "slug": "chase-problems",
+     "title": "Chase problems"
+    },
+    {
+     "slug": "moving-walkway-escalator-problems",
+     "title": "Moving-walkway & escalator problems"
+    }
+   ]
+  },
+  {
+   "order": 15,
+   "slug": "problems-on-trains",
+   "title": "Problems on Trains",
+   "category": "Quantitative Aptitude",
+   "description": "Trains crossing poles, platforms and each other.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 36,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "train-crossing-a-pole-or-platform",
+     "title": "Train crossing a pole or platform"
+    },
+    {
+     "slug": "two-trains-same-direction",
+     "title": "Two trains same direction"
+    },
+    {
+     "slug": "two-trains-opposite-direction",
+     "title": "Two trains opposite direction"
+    },
+    {
+     "slug": "train-and-moving-man",
+     "title": "Train and moving man"
+    },
+    {
+     "slug": "bridge-tunnel",
+     "title": "Bridge & tunnel"
+    },
+    {
+     "slug": "meeting-time-problems",
+     "title": "Meeting-time problems"
+    },
+    {
+     "slug": "finding-length-of-train",
+     "title": "Finding length of train"
+    }
+   ]
+  },
+  {
+   "order": 16,
+   "slug": "boats-and-streams",
+   "title": "Boats and Streams",
+   "category": "Quantitative Aptitude",
+   "description": "Upstream/downstream motion.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "upstream-downstream-speed",
+     "title": "Upstream & downstream speed"
+    },
+    {
+     "slug": "speed-of-stream",
+     "title": "Speed of stream"
+    },
+    {
+     "slug": "round-trip-problems",
+     "title": "Round-trip problems"
+    },
+    {
+     "slug": "still-water-speed",
+     "title": "Still-water speed"
+    },
+    {
+     "slug": "ratio-based-problems",
+     "title": "Ratio-based problems"
+    },
+    {
+     "slug": "time-comparison",
+     "title": "Time comparison"
+    }
+   ]
+  },
+  {
+   "order": 17,
+   "slug": "races-and-circular-tracks",
+   "title": "Races and Circular Tracks",
+   "category": "Quantitative Aptitude",
+   "description": "Races, head starts and motion on circular tracks.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "head-start-dead-heat",
+     "title": "Head start & dead heat"
+    },
+    {
+     "slug": "circular-track-meeting",
+     "title": "Circular track meeting"
+    },
+    {
+     "slug": "beats-games",
+     "title": "Beats & games"
+    },
+    {
+     "slug": "laps-overlap",
+     "title": "Laps & overlap"
+    },
+    {
+     "slug": "meeting-at-starting-point",
+     "title": "Meeting at starting point"
+    }
+   ]
+  },
+  {
+   "order": 18,
+   "slug": "permutation-and-combination",
+   "title": "Permutation and Combination",
+   "category": "Quantitative Aptitude",
+   "description": "Counting, arrangements and selections.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "fundamental-counting-principle",
+     "title": "Fundamental counting principle"
+    },
+    {
+     "slug": "permutations",
+     "title": "Permutations"
+    },
+    {
+     "slug": "combinations",
+     "title": "Combinations"
+    },
+    {
+     "slug": "circular-permutations",
+     "title": "Circular permutations"
+    },
+    {
+     "slug": "word-arrangements-with-repetition",
+     "title": "Word arrangements (with repetition)"
+    },
+    {
+     "slug": "committee-selection",
+     "title": "Committee selection"
+    },
+    {
+     "slug": "number-formation-from-digits",
+     "title": "Number formation from digits"
+    },
+    {
+     "slug": "distribution-stars-bars",
+     "title": "Distribution (stars & bars)"
+    },
+    {
+     "slug": "handshakes-diagonals-geometry-counting",
+     "title": "Handshakes, diagonals & geometry counting"
+    },
+    {
+     "slug": "derangements-restrictions",
+     "title": "Derangements & restrictions"
+    }
+   ]
+  },
+  {
+   "order": 19,
+   "slug": "probability",
+   "title": "Probability",
+   "category": "Quantitative Aptitude",
+   "description": "Classical probability across coins, dice, cards and bags.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 28,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "coins",
+     "title": "Coins"
+    },
+    {
+     "slug": "dice",
+     "title": "Dice"
+    },
+    {
+     "slug": "playing-cards",
+     "title": "Playing cards"
+    },
+    {
+     "slug": "balls-from-a-bag",
+     "title": "Balls from a bag"
+    },
+    {
+     "slug": "conditional-probability",
+     "title": "Conditional probability"
+    },
+    {
+     "slug": "independent-mutually-exclusive-events",
+     "title": "Independent & mutually exclusive events"
+    },
+    {
+     "slug": "at-least-one-problems",
+     "title": "At-least-one problems"
+    },
+    {
+     "slug": "expected-value-basics",
+     "title": "Expected value basics"
+    },
+    {
+     "slug": "bayes-theorem-basic",
+     "title": "Bayes theorem (basic)"
+    }
+   ]
+  },
+  {
+   "order": 20,
+   "slug": "mensuration",
+   "title": "Mensuration",
+   "category": "Quantitative Aptitude",
+   "description": "Areas, perimeters, volumes and surface areas.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 32,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "2d-area-perimeter",
+     "title": "2D area & perimeter"
+    },
+    {
+     "slug": "circle-sector-segment",
+     "title": "Circle, sector & segment"
+    },
+    {
+     "slug": "cuboid-cube",
+     "title": "Cuboid & cube"
+    },
+    {
+     "slug": "cylinder-cone-sphere",
+     "title": "Cylinder, cone & sphere"
+    },
+    {
+     "slug": "frustum-composite-solids",
+     "title": "Frustum & composite solids"
+    },
+    {
+     "slug": "melting-recasting",
+     "title": "Melting & recasting"
+    },
+    {
+     "slug": "paths-rings-borders",
+     "title": "Paths, rings & borders"
+    },
+    {
+     "slug": "cost-of-painting-fencing-flooring",
+     "title": "Cost of painting, fencing & flooring"
+    }
+   ]
+  },
+  {
+   "order": 21,
+   "slug": "geometry",
+   "title": "Geometry",
+   "category": "Quantitative Aptitude",
+   "description": "Plane geometry and coordinate geometry.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "lines-angles",
+     "title": "Lines & angles"
+    },
+    {
+     "slug": "triangles-centres",
+     "title": "Triangles & centres"
+    },
+    {
+     "slug": "similarity-congruence",
+     "title": "Similarity & congruence"
+    },
+    {
+     "slug": "circles-chords-tangents",
+     "title": "Circles (chords, tangents)"
+    },
+    {
+     "slug": "quadrilaterals-polygons",
+     "title": "Quadrilaterals & polygons"
+    },
+    {
+     "slug": "coordinate-geometry",
+     "title": "Coordinate geometry"
+    }
+   ]
+  },
+  {
+   "order": 22,
+   "slug": "trigonometry",
+   "title": "Trigonometry",
+   "category": "Quantitative Aptitude",
+   "description": "Trig ratios, identities, heights and distances.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 38,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "basic-ratios-values",
+     "title": "Basic ratios & values"
+    },
+    {
+     "slug": "identities",
+     "title": "Identities"
+    },
+    {
+     "slug": "heights-distances",
+     "title": "Heights & distances"
+    },
+    {
+     "slug": "maxima-minima-simplification",
+     "title": "Maxima-minima & simplification"
+    }
+   ]
+  },
+  {
+   "order": 23,
+   "slug": "algebra",
+   "title": "Algebra",
+   "category": "Quantitative Aptitude",
+   "description": "Equations, progressions, logs and inequalities.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 32,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "linear-equations",
+     "title": "Linear equations"
+    },
+    {
+     "slug": "quadratic-equations",
+     "title": "Quadratic equations"
+    },
+    {
+     "slug": "simultaneous-equations",
+     "title": "Simultaneous equations"
+    },
+    {
+     "slug": "inequalities",
+     "title": "Inequalities"
+    },
+    {
+     "slug": "arithmetic-geometric-progressions",
+     "title": "Arithmetic & geometric progressions"
+    },
+    {
+     "slug": "logarithms",
+     "title": "Logarithms"
+    },
+    {
+     "slug": "functions-polynomials",
+     "title": "Functions & polynomials"
+    },
+    {
+     "slug": "modulus",
+     "title": "Modulus"
+    }
+   ]
+  },
+  {
+   "order": 24,
+   "slug": "calendar-and-clock",
+   "title": "Calendar and Clock",
+   "category": "Quantitative Aptitude",
+   "description": "Day-of-week calculations and clock-hand problems.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "odd-days-day-of-week",
+     "title": "Odd days & day of week"
+    },
+    {
+     "slug": "leap-years-repeating-calendars",
+     "title": "Leap years & repeating calendars"
+    },
+    {
+     "slug": "clock-angle",
+     "title": "Clock angle"
+    },
+    {
+     "slug": "overlap-right-angle-positions",
+     "title": "Overlap & right-angle positions"
+    },
+    {
+     "slug": "gaining-losing-clocks",
+     "title": "Gaining & losing clocks"
+    },
+    {
+     "slug": "mirror-reflection-of-clocks",
+     "title": "Mirror & reflection of clocks"
+    }
+   ]
+  },
+  {
+   "order": 25,
+   "slug": "chain-rule",
+   "title": "Chain Rule",
+   "category": "Quantitative Aptitude",
+   "description": "Chained proportion problems.",
+   "tier": "minor",
+   "minQuestions": 100,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "direct-chain-rule",
+     "title": "Direct chain rule"
+    },
+    {
+     "slug": "inverse-chain-rule",
+     "title": "Inverse chain rule"
+    },
+    {
+     "slug": "mixed-chain-rule",
+     "title": "Mixed chain rule"
+    },
+    {
+     "slug": "work-wages-in-chain-rule",
+     "title": "Work & wages in chain rule"
+    }
+   ]
+  },
+  {
+   "order": 26,
+   "slug": "true-and-bankers-discount",
+   "title": "True and Banker's Discount",
+   "category": "Quantitative Aptitude",
+   "description": "Discounting of bills.",
+   "tier": "minor",
+   "minQuestions": 100,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "true-discount",
+     "title": "True discount"
+    },
+    {
+     "slug": "banker-s-discount",
+     "title": "Banker's discount"
+    },
+    {
+     "slug": "banker-s-gain",
+     "title": "Banker's gain"
+    },
+    {
+     "slug": "present-worth",
+     "title": "Present worth"
+    }
+   ]
+  },
+  {
+   "order": 27,
+   "slug": "stocks-and-shares",
+   "title": "Stocks and Shares",
+   "category": "Quantitative Aptitude",
+   "description": "Share, dividend and brokerage problems.",
+   "tier": "minor",
+   "minQuestions": 100,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "face-value-market-value-dividend",
+     "title": "Face value, market value & dividend"
+    },
+    {
+     "slug": "brokerage",
+     "title": "Brokerage"
+    },
+    {
+     "slug": "returns-comparison",
+     "title": "Returns comparison"
+    },
+    {
+     "slug": "income-from-investments",
+     "title": "Income from investments"
+    }
+   ]
+  },
+  {
+   "order": 28,
+   "slug": "number-series",
+   "title": "Number Series",
+   "category": "Logical Reasoning",
+   "description": "Find the pattern, missing or wrong term.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 36,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "arithmetic-geometric-series",
+     "title": "Arithmetic & geometric series"
+    },
+    {
+     "slug": "difference-of-differences",
+     "title": "Difference-of-differences"
+    },
+    {
+     "slug": "squares-cubes-primes",
+     "title": "Squares, cubes & primes"
+    },
+    {
+     "slug": "alternating-two-pattern-series",
+     "title": "Alternating / two-pattern series"
+    },
+    {
+     "slug": "wrong-number-in-series",
+     "title": "Wrong number in series"
+    },
+    {
+     "slug": "missing-number",
+     "title": "Missing number"
+    },
+    {
+     "slug": "number-pairs-analogies",
+     "title": "Number pairs & analogies"
+    }
+   ]
+  },
+  {
+   "order": 29,
+   "slug": "letter-and-alphabet-series",
+   "title": "Letter and Alphabet Series",
+   "category": "Logical Reasoning",
+   "description": "Alphabet position and letter-pattern problems.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "letter-series",
+     "title": "Letter series"
+    },
+    {
+     "slug": "position-based-alphabet-tests",
+     "title": "Position-based alphabet tests"
+    },
+    {
+     "slug": "letter-shift-patterns",
+     "title": "Letter-shift patterns"
+    },
+    {
+     "slug": "missing-letter-groups",
+     "title": "Missing letter groups"
+    },
+    {
+     "slug": "alphanumeric-series",
+     "title": "Alphanumeric series"
+    }
+   ]
+  },
+  {
+   "order": 30,
+   "slug": "coding-decoding",
+   "title": "Coding and Decoding",
+   "category": "Logical Reasoning",
+   "description": "Encoding schemes and decoding logic.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 42,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "letter-coding",
+     "title": "Letter coding"
+    },
+    {
+     "slug": "number-coding",
+     "title": "Number coding"
+    },
+    {
+     "slug": "symbol-coding",
+     "title": "Symbol coding"
+    },
+    {
+     "slug": "fictitious-language-coding",
+     "title": "Fictitious language coding"
+    },
+    {
+     "slug": "mixed-substitution-coding",
+     "title": "Mixed / substitution coding"
+    },
+    {
+     "slug": "conditional-coding",
+     "title": "Conditional coding"
+    }
+   ]
+  },
+  {
+   "order": 31,
+   "slug": "blood-relations",
+   "title": "Blood Relations",
+   "category": "Logical Reasoning",
+   "description": "Family-tree and relationship deduction.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "direct-relations",
+     "title": "Direct relations"
+    },
+    {
+     "slug": "coded-relations",
+     "title": "Coded relations"
+    },
+    {
+     "slug": "family-tree-puzzles",
+     "title": "Family tree puzzles"
+    },
+    {
+     "slug": "pointing-to-photo-problems",
+     "title": "Pointing-to-photo problems"
+    },
+    {
+     "slug": "generation-chain",
+     "title": "Generation chain"
+    }
+   ]
+  },
+  {
+   "order": 32,
+   "slug": "direction-sense",
+   "title": "Direction Sense",
+   "category": "Logical Reasoning",
+   "description": "Directions, turns and displacement.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "simple-turns-final-direction",
+     "title": "Simple turns & final direction"
+    },
+    {
+     "slug": "distance-displacement",
+     "title": "Distance & displacement"
+    },
+    {
+     "slug": "shadow-problems",
+     "title": "Shadow problems"
+    },
+    {
+     "slug": "multi-person-direction",
+     "title": "Multi-person direction"
+    },
+    {
+     "slug": "pythagorean-displacement",
+     "title": "Pythagorean displacement"
+    }
+   ]
+  },
+  {
+   "order": 33,
+   "slug": "ranking-and-order",
+   "title": "Ranking and Order",
+   "category": "Logical Reasoning",
+   "description": "Position and ranking logic.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "rank-from-left-right",
+     "title": "Rank from left/right"
+    },
+    {
+     "slug": "total-number-of-persons",
+     "title": "Total number of persons"
+    },
+    {
+     "slug": "interchange-of-positions",
+     "title": "Interchange of positions"
+    },
+    {
+     "slug": "height-weight-ordering",
+     "title": "Height/weight ordering"
+    },
+    {
+     "slug": "alphabetical-numerical-ordering",
+     "title": "Alphabetical & numerical ordering"
+    }
+   ]
+  },
+  {
+   "order": 34,
+   "slug": "seating-arrangement",
+   "title": "Seating Arrangement",
+   "category": "Logical Reasoning",
+   "description": "Seating puzzles. Use sets for shared stimulus.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "linear-arrangement",
+     "title": "Linear arrangement"
+    },
+    {
+     "slug": "circular-arrangement-facing-in",
+     "title": "Circular arrangement (facing in)"
+    },
+    {
+     "slug": "circular-arrangement-mixed-facing",
+     "title": "Circular arrangement (mixed facing)"
+    },
+    {
+     "slug": "square-rectangular-table",
+     "title": "Square / rectangular table"
+    },
+    {
+     "slug": "multi-variable-arrangement",
+     "title": "Multi-variable arrangement"
+    }
+   ]
+  },
+  {
+   "order": 35,
+   "slug": "logical-puzzles",
+   "title": "Logical Puzzles",
+   "category": "Logical Reasoning",
+   "description": "Multi-condition logic puzzles. Use sets for shared stimulus.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 36,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "floor-box-puzzles",
+     "title": "Floor / box puzzles"
+    },
+    {
+     "slug": "day-schedule-puzzles",
+     "title": "Day & schedule puzzles"
+    },
+    {
+     "slug": "comparison-puzzles",
+     "title": "Comparison puzzles"
+    },
+    {
+     "slug": "truth-teller-liar",
+     "title": "Truth-teller & liar"
+    },
+    {
+     "slug": "weighing-measuring",
+     "title": "Weighing & measuring"
+    },
+    {
+     "slug": "selection-with-conditions",
+     "title": "Selection with conditions"
+    },
+    {
+     "slug": "grid-table-puzzles",
+     "title": "Grid / table puzzles"
+    }
+   ]
+  },
+  {
+   "order": 36,
+   "slug": "syllogisms",
+   "title": "Syllogisms",
+   "category": "Logical Reasoning",
+   "description": "Categorical-statement conclusions.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "all-some-no-statements",
+     "title": "All / some / no statements"
+    },
+    {
+     "slug": "possibility-cases",
+     "title": "Possibility cases"
+    },
+    {
+     "slug": "either-or-conclusions",
+     "title": "Either-or conclusions"
+    },
+    {
+     "slug": "three-statement-syllogisms",
+     "title": "Three-statement syllogisms"
+    },
+    {
+     "slug": "reverse-syllogism",
+     "title": "Reverse syllogism"
+    }
+   ]
+  },
+  {
+   "order": 37,
+   "slug": "statements-and-conclusions",
+   "title": "Statements and Conclusions",
+   "category": "Logical Reasoning",
+   "description": "Assumption, argument and conclusion questions.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "statement-conclusion",
+     "title": "Statement-conclusion"
+    },
+    {
+     "slug": "statement-assumption",
+     "title": "Statement-assumption"
+    },
+    {
+     "slug": "statement-argument",
+     "title": "Statement-argument"
+    },
+    {
+     "slug": "statement-course-of-action",
+     "title": "Statement-course of action"
+    },
+    {
+     "slug": "inference-from-passage",
+     "title": "Inference from passage"
+    }
+   ]
+  },
+  {
+   "order": 38,
+   "slug": "venn-diagrams",
+   "title": "Venn Diagrams",
+   "category": "Logical Reasoning",
+   "description": "Set relationships and overlap counting.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "relationship-venn-diagrams",
+     "title": "Relationship Venn diagrams"
+    },
+    {
+     "slug": "set-counting-two-sets",
+     "title": "Set counting (two sets)"
+    },
+    {
+     "slug": "set-counting-three-sets",
+     "title": "Set counting (three sets)"
+    },
+    {
+     "slug": "overlap-only-in-one-set",
+     "title": "Overlap & only-in-one-set"
+    },
+    {
+     "slug": "venn-based-reasoning",
+     "title": "Venn-based reasoning"
+    }
+   ]
+  },
+  {
+   "order": 39,
+   "slug": "cubes-and-dice",
+   "title": "Cubes and Dice",
+   "category": "Logical Reasoning",
+   "description": "Cube painting and dice problems (text-described).",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "painted-cube-counting",
+     "title": "Painted cube counting"
+    },
+    {
+     "slug": "cutting-cubes",
+     "title": "Cutting cubes"
+    },
+    {
+     "slug": "dice-opposite-faces",
+     "title": "Dice opposite faces"
+    },
+    {
+     "slug": "dice-positions",
+     "title": "Dice positions"
+    },
+    {
+     "slug": "cube-nets-described",
+     "title": "Cube nets (described)"
+    }
+   ]
+  },
+  {
+   "order": 40,
+   "slug": "analogy-and-classification",
+   "title": "Analogy and Classification",
+   "category": "Logical Reasoning",
+   "description": "Relationship and odd-one-out questions.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "word-analogy",
+     "title": "Word analogy"
+    },
+    {
+     "slug": "number-analogy",
+     "title": "Number analogy"
+    },
+    {
+     "slug": "letter-analogy",
+     "title": "Letter analogy"
+    },
+    {
+     "slug": "odd-one-out-words",
+     "title": "Odd one out (words)"
+    },
+    {
+     "slug": "odd-one-out-numbers",
+     "title": "Odd one out (numbers)"
+    },
+    {
+     "slug": "classification",
+     "title": "Classification"
+    }
+   ]
+  },
+  {
+   "order": 41,
+   "slug": "mathematical-operations",
+   "title": "Mathematical Operations",
+   "category": "Logical Reasoning",
+   "description": "Operator-substitution and fictitious operations.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "symbol-substitution",
+     "title": "Symbol substitution"
+    },
+    {
+     "slug": "operator-interchange",
+     "title": "Operator interchange"
+    },
+    {
+     "slug": "equation-based",
+     "title": "Equation based"
+    },
+    {
+     "slug": "fictitious-operations",
+     "title": "Fictitious operations"
+    },
+    {
+     "slug": "number-based-operations",
+     "title": "Number-based operations"
+    }
+   ]
+  },
+  {
+   "order": 42,
+   "slug": "coded-inequalities",
+   "title": "Coded Inequalities",
+   "category": "Logical Reasoning",
+   "description": "Inequality chains with symbols.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 38,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "direct-inequality-chains",
+     "title": "Direct inequality chains"
+    },
+    {
+     "slug": "coded-symbols",
+     "title": "Coded symbols"
+    },
+    {
+     "slug": "either-or-conclusions",
+     "title": "Either-or conclusions"
+    },
+    {
+     "slug": "definite-vs-possible-conclusions",
+     "title": "Definite vs possible conclusions"
+    }
+   ]
+  },
+  {
+   "order": 43,
+   "slug": "data-sufficiency",
+   "title": "Data Sufficiency",
+   "category": "Logical Reasoning",
+   "description": "Is the data enough to answer?",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 38,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "quantitative-sufficiency",
+     "title": "Quantitative sufficiency"
+    },
+    {
+     "slug": "logical-sufficiency",
+     "title": "Logical sufficiency"
+    },
+    {
+     "slug": "two-statement-format",
+     "title": "Two-statement format"
+    },
+    {
+     "slug": "yes-no-sufficiency",
+     "title": "Yes/No sufficiency"
+    }
+   ]
+  },
+  {
+   "order": 44,
+   "slug": "critical-reasoning",
+   "title": "Critical Reasoning",
+   "category": "Logical Reasoning",
+   "description": "Argument analysis for placement and CAT-style rounds.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "strengthen-the-argument",
+     "title": "Strengthen the argument"
+    },
+    {
+     "slug": "weaken-the-argument",
+     "title": "Weaken the argument"
+    },
+    {
+     "slug": "assumption",
+     "title": "Assumption"
+    },
+    {
+     "slug": "inference",
+     "title": "Inference"
+    },
+    {
+     "slug": "flaw-detection",
+     "title": "Flaw detection"
+    },
+    {
+     "slug": "paradox-resolve",
+     "title": "Paradox / resolve"
+    }
+   ]
+  },
+  {
+   "order": 45,
+   "slug": "input-output-and-machine",
+   "title": "Input-Output and Machine Logic",
+   "category": "Logical Reasoning",
+   "description": "Machine input-output step logic.",
+   "tier": "minor",
+   "minQuestions": 100,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "word-rearrangement",
+     "title": "Word rearrangement"
+    },
+    {
+     "slug": "number-rearrangement",
+     "title": "Number rearrangement"
+    },
+    {
+     "slug": "step-identification",
+     "title": "Step identification"
+    },
+    {
+     "slug": "final-output-prediction",
+     "title": "Final-output prediction"
+    }
+   ]
+  },
+  {
+   "order": 46,
+   "slug": "reading-comprehension",
+   "title": "Reading Comprehension",
+   "category": "Verbal Ability",
+   "description": "Passage-based comprehension. Every question needs a passage set.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 42,
+   "testQuestionCount": 15,
+   "timeLimitMinutes": 20,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": true,
+   "subPatterns": [
+    {
+     "slug": "main-idea",
+     "title": "Main idea"
+    },
+    {
+     "slug": "inference",
+     "title": "Inference"
+    },
+    {
+     "slug": "vocabulary-in-context",
+     "title": "Vocabulary in context"
+    },
+    {
+     "slug": "tone-attitude",
+     "title": "Tone & attitude"
+    },
+    {
+     "slug": "fact-vs-opinion",
+     "title": "Fact vs opinion"
+    },
+    {
+     "slug": "title-selection",
+     "title": "Title selection"
+    }
+   ]
+  },
+  {
+   "order": 47,
+   "slug": "sentence-correction",
+   "title": "Sentence Correction and Error Spotting",
+   "category": "Verbal Ability",
+   "description": "Find and fix grammatical errors.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 42,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "spot-the-error",
+     "title": "Spot the error"
+    },
+    {
+     "slug": "sentence-improvement",
+     "title": "Sentence improvement"
+    },
+    {
+     "slug": "subject-verb-agreement-errors",
+     "title": "Subject-verb agreement errors"
+    },
+    {
+     "slug": "tense-modifier-errors",
+     "title": "Tense & modifier errors"
+    },
+    {
+     "slug": "parallelism",
+     "title": "Parallelism"
+    },
+    {
+     "slug": "pronoun-errors",
+     "title": "Pronoun errors"
+    }
+   ]
+  },
+  {
+   "order": 48,
+   "slug": "fill-in-the-blanks",
+   "title": "Fill in the Blanks",
+   "category": "Verbal Ability",
+   "description": "Choose the word that fits.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 42,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "grammar-based-blanks",
+     "title": "Grammar-based blanks"
+    },
+    {
+     "slug": "vocabulary-based-blanks",
+     "title": "Vocabulary-based blanks"
+    },
+    {
+     "slug": "double-blanks",
+     "title": "Double blanks"
+    },
+    {
+     "slug": "prepositions-in-blanks",
+     "title": "Prepositions in blanks"
+    },
+    {
+     "slug": "phrasal-verbs",
+     "title": "Phrasal verbs"
+    },
+    {
+     "slug": "collocations",
+     "title": "Collocations"
+    }
+   ]
+  },
+  {
+   "order": 49,
+   "slug": "synonyms-and-antonyms",
+   "title": "Synonyms and Antonyms",
+   "category": "Verbal Ability",
+   "description": "Meaning and opposites.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "synonyms",
+     "title": "Synonyms"
+    },
+    {
+     "slug": "antonyms",
+     "title": "Antonyms"
+    },
+    {
+     "slug": "words-in-context",
+     "title": "Words in context"
+    },
+    {
+     "slug": "commonly-asked-word-lists",
+     "title": "Commonly asked word lists"
+    },
+    {
+     "slug": "contextual-choice",
+     "title": "Contextual choice"
+    }
+   ]
+  },
+  {
+   "order": 50,
+   "slug": "idioms-and-phrases",
+   "title": "Idioms and Phrases",
+   "category": "Verbal Ability",
+   "description": "Meaning of idioms and phrases.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "common-idioms",
+     "title": "Common idioms"
+    },
+    {
+     "slug": "phrasal-verbs",
+     "title": "Phrasal verbs"
+    },
+    {
+     "slug": "proverbs",
+     "title": "Proverbs"
+    },
+    {
+     "slug": "idiom-in-context",
+     "title": "Idiom in context"
+    },
+    {
+     "slug": "foreign-legal-phrases",
+     "title": "Foreign / legal phrases"
+    }
+   ]
+  },
+  {
+   "order": 51,
+   "slug": "one-word-substitution",
+   "title": "One Word Substitution",
+   "category": "Verbal Ability",
+   "description": "A single word for a phrase.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "people-professions",
+     "title": "People & professions"
+    },
+    {
+     "slug": "fear-study-terms",
+     "title": "Fear & study terms"
+    },
+    {
+     "slug": "collective-nouns",
+     "title": "Collective nouns"
+    },
+    {
+     "slug": "abstract-nouns",
+     "title": "Abstract nouns"
+    },
+    {
+     "slug": "miscellaneous",
+     "title": "Miscellaneous"
+    }
+   ]
+  },
+  {
+   "order": 52,
+   "slug": "para-jumbles",
+   "title": "Para Jumbles",
+   "category": "Verbal Ability",
+   "description": "Rearrange sentences logically.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "sentence-ordering-4-sentences",
+     "title": "Sentence ordering (4 sentences)"
+    },
+    {
+     "slug": "sentence-ordering-5-6-sentences",
+     "title": "Sentence ordering (5-6 sentences)"
+    },
+    {
+     "slug": "opening-sentence",
+     "title": "Opening sentence"
+    },
+    {
+     "slug": "closing-sentence",
+     "title": "Closing sentence"
+    },
+    {
+     "slug": "odd-sentence-out",
+     "title": "Odd sentence out"
+    }
+   ]
+  },
+  {
+   "order": 53,
+   "slug": "cloze-test",
+   "title": "Cloze Test",
+   "category": "Verbal Ability",
+   "description": "Passage with multiple blanks. Use sets.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 38,
+   "testQuestionCount": 15,
+   "timeLimitMinutes": 20,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": true,
+   "subPatterns": [
+    {
+     "slug": "passage-with-5-blanks",
+     "title": "Passage with 5 blanks"
+    },
+    {
+     "slug": "grammar-cloze",
+     "title": "Grammar cloze"
+    },
+    {
+     "slug": "vocabulary-cloze",
+     "title": "Vocabulary cloze"
+    },
+    {
+     "slug": "connector-cloze",
+     "title": "Connector cloze"
+    }
+   ]
+  },
+  {
+   "order": 54,
+   "slug": "voice-and-speech",
+   "title": "Active-Passive Voice and Direct-Indirect Speech",
+   "category": "Verbal Ability",
+   "description": "Voice and reported speech.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "active-to-passive",
+     "title": "Active to passive"
+    },
+    {
+     "slug": "passive-to-active",
+     "title": "Passive to active"
+    },
+    {
+     "slug": "direct-to-indirect",
+     "title": "Direct to indirect"
+    },
+    {
+     "slug": "indirect-to-direct",
+     "title": "Indirect to direct"
+    },
+    {
+     "slug": "mixed-tenses-questions",
+     "title": "Mixed tenses & questions"
+    }
+   ]
+  },
+  {
+   "order": 55,
+   "slug": "english-grammar",
+   "title": "English Grammar",
+   "category": "Verbal Ability",
+   "description": "Core grammar rules tested in placements.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 32,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "tenses",
+     "title": "Tenses"
+    },
+    {
+     "slug": "articles",
+     "title": "Articles"
+    },
+    {
+     "slug": "prepositions",
+     "title": "Prepositions"
+    },
+    {
+     "slug": "subject-verb-agreement",
+     "title": "Subject-verb agreement"
+    },
+    {
+     "slug": "pronouns",
+     "title": "Pronouns"
+    },
+    {
+     "slug": "conjunctions-connectors",
+     "title": "Conjunctions & connectors"
+    },
+    {
+     "slug": "adjectives-adverbs",
+     "title": "Adjectives & adverbs"
+    },
+    {
+     "slug": "modals-conditionals",
+     "title": "Modals & conditionals"
+    }
+   ]
+  },
+  {
+   "order": 56,
+   "slug": "vocabulary-and-spellings",
+   "title": "Vocabulary and Spellings",
+   "category": "Verbal Ability",
+   "description": "Spelling and word-use.",
+   "tier": "minor",
+   "minQuestions": 100,
+   "minPerSubPattern": 25,
+   "testQuestionCount": 25,
+   "timeLimitMinutes": 25,
+   "passPercentage": 70,
+   "usesSets": false,
+   "setsRequired": false,
+   "subPatterns": [
+    {
+     "slug": "spelling-correction",
+     "title": "Spelling correction"
+    },
+    {
+     "slug": "commonly-confused-words",
+     "title": "Commonly confused words"
+    },
+    {
+     "slug": "word-formation-prefix-suffix",
+     "title": "Word formation (prefix/suffix)"
+    },
+    {
+     "slug": "verbal-analogies",
+     "title": "Verbal analogies"
+    }
+   ]
+  },
+  {
+   "order": 57,
+   "slug": "di-tables",
+   "title": "DI: Tables",
+   "category": "Data Interpretation",
+   "description": "Table-based data interpretation. Every question needs a table set.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 15,
+   "timeLimitMinutes": 20,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": true,
+   "subPatterns": [
+    {
+     "slug": "basic-table-reading",
+     "title": "Basic table reading"
+    },
+    {
+     "slug": "percentage-ratio-from-tables",
+     "title": "Percentage & ratio from tables"
+    },
+    {
+     "slug": "average-growth-from-tables",
+     "title": "Average & growth from tables"
+    },
+    {
+     "slug": "missing-data-tables",
+     "title": "Missing-data tables"
+    },
+    {
+     "slug": "comparison-across-rows",
+     "title": "Comparison across rows"
+    }
+   ]
+  },
+  {
+   "order": 58,
+   "slug": "di-bar-graphs",
+   "title": "DI: Bar Graphs",
+   "category": "Data Interpretation",
+   "description": "Bar-graph based DI.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 15,
+   "timeLimitMinutes": 20,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": true,
+   "subPatterns": [
+    {
+     "slug": "single-bar-graph",
+     "title": "Single bar graph"
+    },
+    {
+     "slug": "grouped-bar-graph",
+     "title": "Grouped bar graph"
+    },
+    {
+     "slug": "stacked-bar-graph",
+     "title": "Stacked bar graph"
+    },
+    {
+     "slug": "percentage-change-from-bars",
+     "title": "Percentage change from bars"
+    },
+    {
+     "slug": "ratio-average-from-bars",
+     "title": "Ratio & average from bars"
+    }
+   ]
+  },
+  {
+   "order": 59,
+   "slug": "di-line-graphs",
+   "title": "DI: Line Graphs",
+   "category": "Data Interpretation",
+   "description": "Line-graph based DI.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 15,
+   "timeLimitMinutes": 20,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": true,
+   "subPatterns": [
+    {
+     "slug": "single-line-graph",
+     "title": "Single line graph"
+    },
+    {
+     "slug": "multi-line-comparison",
+     "title": "Multi-line comparison"
+    },
+    {
+     "slug": "growth-rate-trend",
+     "title": "Growth rate & trend"
+    },
+    {
+     "slug": "intersection-crossover",
+     "title": "Intersection / crossover"
+    },
+    {
+     "slug": "average-from-lines",
+     "title": "Average from lines"
+    }
+   ]
+  },
+  {
+   "order": 60,
+   "slug": "di-pie-charts",
+   "title": "DI: Pie Charts",
+   "category": "Data Interpretation",
+   "description": "Pie-chart based DI.",
+   "tier": "core",
+   "minQuestions": 250,
+   "minPerSubPattern": 50,
+   "testQuestionCount": 15,
+   "timeLimitMinutes": 20,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": true,
+   "subPatterns": [
+    {
+     "slug": "single-pie-chart",
+     "title": "Single pie chart"
+    },
+    {
+     "slug": "two-pie-charts",
+     "title": "Two pie charts"
+    },
+    {
+     "slug": "pie-table",
+     "title": "Pie + table"
+    },
+    {
+     "slug": "angle-percentage-conversion",
+     "title": "Angle & percentage conversion"
+    },
+    {
+     "slug": "ratio-between-sectors",
+     "title": "Ratio between sectors"
+    }
+   ]
+  },
+  {
+   "order": 61,
+   "slug": "di-caselets",
+   "title": "DI: Caselets",
+   "category": "Data Interpretation",
+   "description": "Text-only caselets with numeric data.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 38,
+   "testQuestionCount": 15,
+   "timeLimitMinutes": 20,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": true,
+   "subPatterns": [
+    {
+     "slug": "paragraph-caselet",
+     "title": "Paragraph caselet"
+    },
+    {
+     "slug": "venn-set-caselet",
+     "title": "Venn / set caselet"
+    },
+    {
+     "slug": "arrangement-caselet",
+     "title": "Arrangement caselet"
+    },
+    {
+     "slug": "percentage-caselet",
+     "title": "Percentage caselet"
+    }
+   ]
+  },
+  {
+   "order": 62,
+   "slug": "di-mixed-charts",
+   "title": "DI: Mixed and Advanced",
+   "category": "Data Interpretation",
+   "description": "Combination and advanced DI sets.",
+   "tier": "standard",
+   "minQuestions": 150,
+   "minPerSubPattern": 30,
+   "testQuestionCount": 15,
+   "timeLimitMinutes": 20,
+   "passPercentage": 70,
+   "usesSets": true,
+   "setsRequired": true,
+   "subPatterns": [
+    {
+     "slug": "table-bar",
+     "title": "Table + bar"
+    },
+    {
+     "slug": "table-line",
+     "title": "Table + line"
+    },
+    {
+     "slug": "bar-pie",
+     "title": "Bar + pie"
+    },
+    {
+     "slug": "missing-data-interpretation",
+     "title": "Missing data interpretation"
+    },
+    {
+     "slug": "data-sufficiency-style-di",
+     "title": "Data-sufficiency style DI"
+    }
+   ]
+  }
+ ]
+}

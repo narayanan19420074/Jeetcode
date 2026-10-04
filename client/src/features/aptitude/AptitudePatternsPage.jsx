@@ -246,7 +246,7 @@ export default function AptitudePatternsPage() {
           hardcoded weight here, or this page's heading drifts from every
           other h5 in the app (Dashboard, Problems, etc). */}
       <Typography variant="h5" sx={{ mb: 0.5 }}>
-        TCS NQT Aptitude
+        Aptitude
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
         Clear each level in Test mode to unlock the next.

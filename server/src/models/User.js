@@ -56,6 +56,26 @@ const userSchema = new mongoose.Schema(
     // without maintaining a full session store.
     refreshTokenHash: { type: String, select: false, default: null },
 
+    // Multi-device / multi-tab refresh sessions. Each login or refresh pushes
+    // a new entry; a rotated entry is kept for a short grace window
+    // (graceUntil) so two concurrent refreshes carrying the same cookie
+    // (React StrictMode double-boot, two tabs reloading together, a flaky
+    // network retry) don't invalidate each other and log the user out.
+    // `refreshTokenHash` above is kept only so sessions issued before this
+    // change keep working until their next refresh.
+    refreshSessions: {
+      type: [
+        {
+          _id: false,
+          hash: { type: String, required: true },
+          createdAt: { type: Date, default: Date.now },
+          graceUntil: { type: Date, default: null },
+        },
+      ],
+      select: false,
+      default: [],
+    },
+
     // --- Pro / license status ---
     // Denormalized here (rather than always joining License/CompanyProgress
     // collections) because "is this user Pro" is checked on nearly every

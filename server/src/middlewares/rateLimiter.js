@@ -30,6 +30,7 @@ export const generalLimiter = rateLimit({
 export const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   limit: 20,
+  skipSuccessfulRequests: true, // only failed attempts count — real users on a shared college/office IP aren't locked out
   standardHeaders: true,
   legacyHeaders: false,
   store: buildStore(),

@@ -79,10 +79,40 @@ export const linkedinSignIn = createAsyncThunk(
 // httpOnly refresh cookie — succeeds quietly if the user was already
 // logged in, fails quietly (falls back to guest) if not. Never shown as
 // an error to the user.
+//
+// Two things keep a reload from logging the user out:
+//  1. De-duplicated: React StrictMode (dev) and fast remounts fire this
+//     twice; both callers share ONE /auth/refresh request instead of racing
+//     two requests with the same rotating cookie.
+//  2. Only a real 401 means "not logged in". Network errors, 429 and 5xx
+//     (e.g. Render free tier waking up from sleep) are retried, so a slow
+//     or briefly unavailable server doesn't look like a logout.
+let bootstrapPromise = null;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function refreshWithRetry() {
+  const maxAttempts = 4;
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      const { data } = await authApi.refresh();
+      return data.data;
+    } catch (err) {
+      const status = err?.response?.status;
+      const definitelyLoggedOut = status === 401 || status === 403;
+      if (definitelyLoggedOut || attempt >= maxAttempts) throw err;
+      await sleep(1000 * attempt); // 1s, 2s, 3s
+    }
+  }
+}
+
 export const bootstrapSession = createAsyncThunk('auth/bootstrap', async (_, { rejectWithValue }) => {
+  if (!bootstrapPromise) {
+    bootstrapPromise = refreshWithRetry().finally(() => {
+      bootstrapPromise = null;
+    });
+  }
   try {
-    const { data } = await authApi.refresh();
-    return data.data;
+    return await bootstrapPromise;
   } catch {
     return rejectWithValue(null);
   }

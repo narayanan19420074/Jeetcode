@@ -17,7 +17,7 @@ export const register = asyncHandler(async (req, res) => {
   const passwordHash = await bcrypt.hash(password, 12);
   const user = await User.create({ name, handle, email, passwordHash });
 
-  const accessToken = await issueTokens(res, user);
+  const accessToken = await issueTokens(res, user, req.cookies?.[REFRESH_COOKIE]);
   new ApiResponse(201, { accessToken, user: user.toPublicJSON() }, 'Account created').send(res);
 });
 
@@ -29,7 +29,7 @@ export const login = asyncHandler(async (req, res) => {
     throw ApiError.unauthorized('Invalid email or password');
   }
 
-  const accessToken = await issueTokens(res, user);
+  const accessToken = await issueTokens(res, user, req.cookies?.[REFRESH_COOKIE]);
   new ApiResponse(200, { accessToken, user: user.toPublicJSON() }, 'Logged in').send(res);
 });
 
@@ -44,14 +44,21 @@ export const refresh = asyncHandler(async (req, res) => {
     throw ApiError.unauthorized('Invalid or expired refresh token');
   }
 
-  const user = await User.findById(payload.sub).select('+refreshTokenHash');
-  if (!user || user.refreshTokenHash !== hashToken(token)) {
-    // Hash mismatch means this refresh token was already rotated/used —
-    // treat as possible theft and force a full re-login.
+  const user = await User.findById(payload.sub).select('+refreshTokenHash +refreshSessions');
+  const tokenHash = hashToken(token);
+  const now = Date.now();
+  const session = user?.refreshSessions?.find(
+    (x) => x.hash === tokenHash && (!x.graceUntil || x.graceUntil.getTime() > now)
+  );
+  // `refreshTokenHash` = sessions issued before multi-session support; still honoured once.
+  const legacyMatch = user && user.refreshTokenHash && user.refreshTokenHash === tokenHash;
+  if (!user || (!session && !legacyMatch)) {
+    // Unknown or fully-expired refresh token (logged out, revoked, or
+    // rotated longer ago than the grace window) — force a re-login.
     throw ApiError.unauthorized('Refresh token no longer valid, please log in again');
   }
 
-  const accessToken = await issueTokens(res, user); // rotates the refresh token too
+  const accessToken = await issueTokens(res, user, token); // rotates this session's token
   new ApiResponse(200, { accessToken, user: user.toPublicJSON() }, 'Token refreshed').send(res);
 });
 
@@ -60,7 +67,10 @@ export const logout = asyncHandler(async (req, res) => {
   if (token) {
     try {
       const payload = verifyRefreshToken(token);
-      await User.updateOne({ _id: payload.sub }, { $set: { refreshTokenHash: null } });
+      // Revoke only THIS browser's session; other devices stay logged in.
+      const h = hashToken(token);
+      await User.updateOne({ _id: payload.sub }, { $pull: { refreshSessions: { hash: h } } });
+      await User.updateOne({ _id: payload.sub, refreshTokenHash: h }, { $set: { refreshTokenHash: null } });
     } catch {
       // Token already invalid/expired — nothing to revoke.
     }

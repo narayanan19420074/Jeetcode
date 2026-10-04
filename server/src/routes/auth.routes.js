@@ -19,7 +19,10 @@ router.post('/admin-login', authLimiter, validate(loginSchema), adminLogin);
 router.post('/google', authLimiter, googleSignIn);
 router.post('/github', authLimiter, githubSignIn);
 router.post('/linkedin', authLimiter, linkedinSignIn);
-router.post('/refresh', authLimiter, refresh);
+// No authLimiter here: every page reload calls /refresh, so counting it against
+// the 20-per-15-min brute-force budget logged users out after ~20 reloads.
+// It still sits behind generalLimiter and needs a valid signed cookie.
+router.post('/refresh', refresh);
 router.post('/logout', logout);
 router.get('/me', requireAuth, loadFullUser, me);
 
