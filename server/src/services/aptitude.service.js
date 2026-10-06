@@ -216,19 +216,20 @@ export async function getPracticeStats(userId, pattern) {
   let attempted = 0;
   for (const q of meta) {
     const p = progByQ.get(String(q._id));
-    byDifficulty[q.difficulty].total += 1;
+    const diff = byDifficulty[q.difficulty] ?? byDifficulty.medium; // legacy docs may lack difficulty
+    diff.total += 1;
     const sub = subMap.get(q.subPattern);
     if (sub) sub.total += 1;
     if (!p) continue;
     attempted += 1;
     if (sub) {
       sub.attempted += 1;
-      sub.tries += p.attempts;
-      sub.correct += p.correctAttempts;
+      sub.tries += p.attempts ?? 0;
+      sub.correct += p.correctAttempts ?? 0;
     }
     if (p.status === 'solved') {
       solved += 1;
-      byDifficulty[q.difficulty].solved += 1;
+      diff.solved += 1;
       if (sub) sub.solved += 1;
     }
   }
