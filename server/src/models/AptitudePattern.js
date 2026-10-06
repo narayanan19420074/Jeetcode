@@ -9,7 +9,19 @@ const aptitudePatternSchema = new mongoose.Schema(
     title: { type: String, required: true, trim: true, maxlength: 150 },
     slug: { type: String, required: true, unique: true, index: true, lowercase: true },
     description: { type: String, default: '' },
+    category: { type: String, default: '' }, // e.g. 'Quantitative Aptitude'
     order: { type: Number, required: true, index: true },
+
+    // Sub-patterns (topic tags) — slug is what AptitudeQuestion.subPattern
+    // stores. Order here = order shown on the hub's mastery map.
+    subPatterns: {
+      type: [new mongoose.Schema({ slug: { type: String, required: true }, title: { type: String, required: true } }, { _id: false })],
+      default: [],
+    },
+
+    // How many questions a Test attempt draws from the bank. Without this the
+    // test would serve every question in the pattern.
+    testQuestionCount: { type: Number, default: 25, min: 1 },
 
     // Denormalized — kept in sync by the admin controller whenever a
     // question under this pattern is created/deleted/published, same

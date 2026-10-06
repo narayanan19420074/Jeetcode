@@ -5,6 +5,11 @@ const answerSchema = new mongoose.Schema(
     question: { type: mongoose.Schema.Types.ObjectId, ref: 'AptitudeQuestion', required: true },
     selectedOption: { type: Number, min: 0, max: 3, default: null },
     isCorrect: { type: Boolean, default: null },
+    // Exam-interface state (TCS iON style palette). Autosaved while the test
+    // is running so a refresh / crash resumes exactly where the learner was.
+    visited: { type: Boolean, default: false },
+    markedForReview: { type: Boolean, default: false },
+    timeSpentSec: { type: Number, default: 0, min: 0 },
   },
   { _id: false }
 );

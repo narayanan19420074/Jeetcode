@@ -31,8 +31,13 @@ const AdminAuditLogPage = lazy(() => import('./features/admin/pages/AdminAuditLo
 
 const AptitudePatternsPage = lazy(() => import('./features/aptitude/AptitudePatternsPage'));
 const AptitudePatternDetailPage = lazy(() => import('./features/aptitude/AptitudePatternDetailPage'));
+// Test = TCS iON style: an instructions screen inside the normal layout, then the
+// exam interface itself as a standalone full-screen route (no site navbar).
+const AptitudeTestInstructionsPage = lazy(() => import('./features/aptitude/AptitudeTestInstructionsPage'));
 const AptitudeTestPage = lazy(() => import('./features/aptitude/AptitudeTestPage'));
+const AptitudeLearnPage = lazy(() => import('./features/aptitude/AptitudeLearnPage'));
 const AptitudePracticePage = lazy(() => import('./features/aptitude/AptitudePracticePage'));
+const AptitudePracticeQuestionPage = lazy(() => import('./features/aptitude/AptitudePracticeQuestionPage'));
 const AptitudeResultsPage = lazy(() => import('./features/aptitude/AptitudeResultsPage'));
 const VisualizerPage = lazy(() => import('./features/visualizer/VisualizerPage'));
 const PricingPage = lazy(() => import('./features/billing/PricingPage'));
@@ -94,6 +99,20 @@ export default function App() {
         <Route path="audit-log" element={<Suspense fallback={<RouteFallback />}><AdminAuditLogPage /></Suspense>} />
       </Route>
 
+      {/* iON-style exam interface — standalone full-screen shell, deliberately
+          outside <MainLayout> so the site navbar can't pull a learner out of a
+          timed paper. Protected: it needs the logged-in session. */}
+      <Route
+        path="/aptitude/:slug/test/:attemptId"
+        element={
+          <ProtectedRoute>
+            <Suspense fallback={<RouteFallback />}>
+              <AptitudeTestPage />
+            </Suspense>
+          </ProtectedRoute>
+        }
+      />
+
       <Route element={<MainLayout />}>
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/problems" element={<ProblemsPage />} />
@@ -118,20 +137,30 @@ export default function App() {
           element={<Suspense fallback={<RouteFallback />}><AptitudePatternDetailPage /></Suspense>}
         />
         <Route
+          path="/aptitude/:slug/learn"
+          element={<Suspense fallback={<RouteFallback />}><AptitudeLearnPage /></Suspense>}
+        />
+        <Route
           path="/aptitude/:slug/test"
-          element={<Suspense fallback={<RouteFallback />}><AptitudeTestPage /></Suspense>}
+          element={<Suspense fallback={<RouteFallback />}><AptitudeTestInstructionsPage /></Suspense>}
         />
         <Route
           path="/aptitude/:slug/practice"
           element={<Suspense fallback={<RouteFallback />}><AptitudePracticePage /></Suspense>}
         />
+        <Route
+          path="/aptitude/:slug/practice/:questionId"
+          element={<Suspense fallback={<RouteFallback />}><AptitudePracticeQuestionPage /></Suspense>}
+        />
         <Route path="/prep" element={<Suspense fallback={<RouteFallback />}><PrepCompaniesPage /></Suspense>} />
         <Route path="/prep/:companySlug" element={<Suspense fallback={<RouteFallback />}><PrepRoadmapPage /></Suspense>} />
 
         <Route
-          path="/aptitude/:slug/results"
+          path="/aptitude/:slug/results/:attemptId"
           element={<Suspense fallback={<RouteFallback />}><AptitudeResultsPage /></Suspense>}
         />
+        {/* Old results URL carried no attempt id (lost on refresh) — send to the hub. */}
+        <Route path="/aptitude/:slug/results" element={<Navigate to=".." relative="path" replace />} />
         <Route path="/pricing" element={<Suspense fallback={<RouteFallback />}><PricingPage /></Suspense>} />
         <Route path="/settings" element={<Suspense fallback={<RouteFallback />}><SettingsPage /></Suspense>} />
         {/* REMOVED: <Route path="/learn" .../> (LearnHomePage) */}
