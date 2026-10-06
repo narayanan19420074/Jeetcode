@@ -1,198 +1,437 @@
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useEffect, useMemo, useState } from 'react';
+import { useNavigate, useParams, Link as RouterLink } from 'react-router-dom';
 import {
-  Box,
-  Container,
-  Paper,
-  Typography,
-  Stack,
-  Chip,
-  CircularProgress,
   Alert,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Divider,
+  Box,
+  Breadcrumbs,
+  Button,
+  Chip,
+  Container,
+  LinearProgress,
+  Link,
+  Paper,
+  Skeleton,
+  Stack,
+  Typography,
+  alpha,
 } from '@mui/material';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
-import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
-import LockRoundedIcon from '@mui/icons-material/LockRounded';
+import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
+import TimerRoundedIcon from '@mui/icons-material/TimerRounded';
+import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
+import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { startAttempt } from './aptitudeSlice';
+import { getLessonsForPattern } from './lessons';
 import { getTopicBySlug } from '../learn/content/topics';
+import Ring from './components/Ring';
+import { DIFFICULTY, formatClock, formatDuration } from './components/aptitudeUi';
 
-// One of the three Learn / Practice / Test cards. `locked` = Learn isn't
-// done yet for this pattern (Practice/Test only); `disabled` = no Learn
-// content exists for this slug yet (Learn card only); `done` = green
-// check state (Learn card once marked learned).
-function StepCard({ icon, title, subtitle, locked, done, onClick, disabled }) {
+/* ---------------------------------------------------------------- */
+/* Mode card (Learn / Practice / Test)                              */
+/* ---------------------------------------------------------------- */
+function ModeCard({ icon, accent, eyebrow, title, lines, progress, cta, onClick, disabled, highlight }) {
   return (
     <Paper
       variant="outlined"
-      onClick={!locked && !disabled ? onClick : undefined}
       sx={{
-        p: 3,
+        p: 2.5,
         borderRadius: 3,
-        textAlign: 'center',
-        cursor: locked || disabled ? 'not-allowed' : 'pointer',
-        opacity: locked || disabled ? 0.55 : 1,
-        transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-        borderColor: done ? 'success.main' : 'divider',
-        '&:hover': !locked && !disabled ? { transform: 'translateY(-2px)', boxShadow: 3 } : undefined,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1.5,
+        flex: 1,
+        minWidth: 0,
+        borderColor: highlight ? accent : 'divider',
+        boxShadow: highlight ? `0 0 0 3px ${alpha(accent, 0.14)}` : 'none',
+        transition: 'transform .15s ease, box-shadow .15s ease',
+        '&:hover': disabled ? undefined : { transform: 'translateY(-2px)', boxShadow: 3 },
       }}
     >
-      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1.5 }}>
-        {locked ? <LockRoundedIcon color="disabled" /> : done ? <CheckCircleRoundedIcon color="success" /> : icon}
-      </Box>
-      <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-        {title}
-      </Typography>
-      <Typography variant="caption" color="text.secondary">
-        {locked ? 'Complete Learn first' : subtitle}
-      </Typography>
+      <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
+        <Box
+          sx={{
+            width: 40,
+            height: 40,
+            borderRadius: 2,
+            display: 'grid',
+            placeItems: 'center',
+            bgcolor: alpha(accent, 0.12),
+            color: accent,
+          }}
+        >
+          {icon}
+        </Box>
+        <Box sx={{ minWidth: 0 }}>
+          <Typography variant="overline" sx={{ lineHeight: 1.2, color: 'text.secondary', letterSpacing: '0.08em', fontWeight: 700 }}>
+            {eyebrow}
+          </Typography>
+          <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.2 }}>
+            {title}
+          </Typography>
+        </Box>
+      </Stack>
+
+      <Stack spacing={0.4} sx={{ flexGrow: 1 }}>
+        {lines.map((l) => (
+          <Typography key={l} variant="body2" color="text.secondary">
+            {l}
+          </Typography>
+        ))}
+      </Stack>
+
+      {progress != null && (
+        <LinearProgress
+          variant="determinate"
+          value={progress}
+          sx={{ height: 6, borderRadius: 3, '& .MuiLinearProgress-bar': { bgcolor: accent }, bgcolor: alpha(accent, 0.12) }}
+        />
+      )}
+
+      <Button
+        variant={highlight ? 'contained' : 'outlined'}
+        disableElevation
+        disabled={disabled}
+        onClick={onClick}
+        endIcon={<ArrowForwardRoundedIcon />}
+        sx={{ alignSelf: 'stretch', ...(highlight && { bgcolor: accent, '&:hover': { bgcolor: accent, filter: 'brightness(0.92)' } }), ...(!highlight && { color: accent, borderColor: alpha(accent, 0.5) }) }}
+      >
+        {cta}
+      </Button>
     </Paper>
   );
 }
 
+/* ---------------------------------------------------------------- */
+/* Sub-pattern tile                                                 */
+/* ---------------------------------------------------------------- */
+function SubPatternTile({ sub, onClick }) {
+  const empty = sub.total === 0;
+  const pct = sub.total ? (sub.solved / sub.total) * 100 : 0;
+  const mastered = sub.total > 0 && sub.solved === sub.total;
+  const accColor = sub.accuracy == null ? 'text.disabled' : sub.accuracy >= 75 ? 'success.main' : sub.accuracy >= 50 ? 'warning.main' : 'error.main';
+
+  return (
+    <Paper
+      variant="outlined"
+      onClick={empty ? undefined : onClick}
+      sx={{
+        p: 1.75,
+        borderRadius: 2.5,
+        cursor: empty ? 'default' : 'pointer',
+        opacity: empty ? 0.55 : 1,
+        borderColor: mastered ? 'success.main' : 'divider',
+        transition: 'border-color .15s, transform .15s',
+        '&:hover': empty ? undefined : { borderColor: 'primary.main', transform: 'translateY(-1px)' },
+      }}
+    >
+      <Stack direction="row" spacing={1} sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }}>
+        <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
+          {sub.title}
+        </Typography>
+        {mastered && <CheckCircleRoundedIcon sx={{ fontSize: 18, color: 'success.main', flexShrink: 0 }} />}
+      </Stack>
+      <LinearProgress
+        variant="determinate"
+        value={pct}
+        sx={{ my: 1.25, height: 5, borderRadius: 3, '& .MuiLinearProgress-bar': { bgcolor: mastered ? 'success.main' : 'primary.main' } }}
+      />
+      <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
+        <Typography variant="caption" color="text.secondary" sx={{ fontFamily: '"JetBrains Mono", monospace' }}>
+          {empty ? 'Coming soon' : `${sub.solved} / ${sub.total} solved`}
+        </Typography>
+        {!empty && (
+          <Typography variant="caption" sx={{ fontWeight: 700, color: accColor }}>
+            {sub.accuracy == null ? 'No attempts' : `${sub.accuracy}% accuracy`}
+          </Typography>
+        )}
+      </Stack>
+    </Paper>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/* Page                                                             */
+/* ---------------------------------------------------------------- */
 export default function AptitudePatternDetailPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
-  const [pattern, setPattern] = useState(null);
-  const [progress, setProgress] = useState(null);
-  const [recentAttempts, setRecentAttempts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [launching, setLaunching] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
+    let cancelled = false;
+    setData(null);
+    setError(null);
     aptitudeApi
       .getPattern(slug)
-      .then(({ data }) => {
-        setPattern(data.data.pattern);
-        setProgress(data.data.progress);
-        setRecentAttempts(data.data.recentAttempts);
-        setError(null);
+      .then(({ data: res }) => {
+        if (!cancelled) setData(res.data);
       })
-      .catch((err) => setError(extractErrorMessage(err)))
-      .finally(() => setLoading(false));
+      .catch((err) => {
+        if (!cancelled) setError(extractErrorMessage(err));
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [slug]);
 
-  const handleStart = async (mode) => {
-    setLaunching(true);
-    try {
-      await dispatch(startAttempt({ slug, mode })).unwrap();
-      navigate(`/aptitude/${slug}/${mode}`);
-    } catch (err) {
-      // If the server-side assertLearnCompleted guard rejects (e.g. stale
-      // frontend state), this surfaces the message instead of navigating.
-      setError(err);
-    } finally {
-      setLaunching(false);
-    }
-  };
+  // Resume countdown for an in-progress test.
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    if (!data?.activeTest) return undefined;
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, [data?.activeTest]);
 
-  if (loading) {
-    return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
-        <CircularProgress size={28} />
-      </Box>
-    );
-  }
+  const lessons = getLessonsForPattern(slug);
+  const hasLegacyLearn = !!getTopicBySlug(slug);
+  const hasLearn = !!lessons || hasLegacyLearn;
+  const learnTotal = lessons?.length ?? 0;
 
-  if (error && !pattern) {
+  const learnDone = useMemo(() => {
+    if (!data || !lessons) return 0;
+    const ids = new Set(data.progress.completedSubsections);
+    return lessons.filter((l) => ids.has(l.id)).length;
+  }, [data, lessons]);
+
+  if (error && !data) {
     return (
       <Container maxWidth="sm" sx={{ py: 6 }}>
-        <Alert severity="error">{error}</Alert>
+        <Alert severity="error" action={<Button color="inherit" size="small" onClick={() => navigate('/aptitude')}>Back</Button>}>
+          {error}
+        </Alert>
       </Container>
     );
   }
 
-  const hasLearnContent = !!getTopicBySlug(slug);
-  const learnDone = !!progress?.learnCompleted;
+  if (!data) {
+    return (
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Skeleton width={220} height={24} />
+        <Skeleton width={360} height={44} sx={{ mb: 3 }} />
+        <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
+          <Skeleton variant="rounded" height={190} sx={{ flex: 1 }} />
+          <Skeleton variant="rounded" height={190} sx={{ flex: 1 }} />
+          <Skeleton variant="rounded" height={190} sx={{ flex: 1 }} />
+        </Stack>
+      </Container>
+    );
+  }
+
+  const { pattern, progress, practice, recentAttempts, activeTest, testPlan } = data;
+  const { totals, byDifficulty, bySubPattern, recommendedSubPattern, bookmarkedCount } = practice;
+  const solvedPct = totals.total ? Math.round((totals.solved / totals.total) * 100) : 0;
+  const rec = bySubPattern.find((s) => s.slug === recommendedSubPattern);
+  const bestPassed = progress.bestScore >= pattern.passPercentage;
+  const remainingSec = activeTest ? Math.max(0, (new Date(activeTest.expiresAt).getTime() - now) / 1000) : 0;
+
+  const goLearn = () => (lessons ? navigate(`/aptitude/${slug}/learn`) : navigate(`/learn/${slug}`));
+  const goPractice = (sub) => navigate(`/aptitude/${slug}/practice${sub ? `?subPattern=${sub}` : ''}`);
+  const goTest = () =>
+    activeTest ? navigate(`/aptitude/${slug}/test/${activeTest.attemptId}`) : navigate(`/aptitude/${slug}/test`);
+
+  const learnLines = lessons
+    ? [`${learnTotal} short lessons, one per question type`, 'Formulas, exam shortcuts, worked examples']
+    : hasLegacyLearn
+      ? ['Concepts and worked examples']
+      : ['Lessons for this topic are coming soon'];
+  const learnCta = !hasLearn ? 'Coming soon' : lessons ? (learnDone === 0 ? 'Start learning' : learnDone >= learnTotal ? 'Review lessons' : 'Continue learning') : 'Open Learn';
 
   return (
-    <Container maxWidth="sm" sx={{ py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
-        {pattern.title}
-      </Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-        {pattern.description}
-      </Typography>
+    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
+      <Breadcrumbs sx={{ mb: 1, fontSize: 13 }}>
+        <Link component={RouterLink} to="/aptitude" underline="hover" color="text.secondary">
+          Aptitude
+        </Link>
+        {pattern.category && <Typography variant="body2" color="text.secondary">{pattern.category}</Typography>}
+        <Typography variant="body2" color="text.primary" sx={{ fontWeight: 600 }}>
+          {pattern.title}
+        </Typography>
+      </Breadcrumbs>
+
+      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ alignItems: { sm: 'flex-end' }, justifyContent: 'space-between', mb: 3 }}>
+        <Box>
+          <Typography variant="h4" sx={{ fontWeight: 800, letterSpacing: '-0.02em' }}>
+            {pattern.title}
+          </Typography>
+          <Typography color="text.secondary" sx={{ mt: 0.5, maxWidth: 640 }}>
+            {pattern.description}
+          </Typography>
+        </Box>
+        <Stack direction="row" spacing={1} useFlexGap sx={{ flexWrap: 'wrap' }}>
+          <Chip size="small" variant="outlined" label={`${totals.total} questions`} />
+          <Chip size="small" variant="outlined" label={`${testPlan.questionCount}-question test · ${pattern.timeLimitMinutes} min`} />
+          <Chip size="small" variant="outlined" label={`Pass ${pattern.passPercentage}%`} />
+        </Stack>
+      </Stack>
 
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
 
-      <Stack direction="row" spacing={1} sx={{ mb: 3 }}>
-        <Chip label={`${pattern.totalQuestions} questions`} size="small" variant="outlined" />
-        <Chip label={`${pattern.timeLimitMinutes} min test`} size="small" variant="outlined" />
-        <Chip label={`Pass ${pattern.passPercentage}%`} size="small" variant="outlined" />
-      </Stack>
-
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mb: 3 }}>
-        <StepCard
-          icon={<MenuBookRoundedIcon color="primary" />}
+      {/* Learn → Practice → Test */}
+      <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} sx={{ mb: 3 }}>
+        <ModeCard
+          icon={<MenuBookRoundedIcon />}
+          accent="#3B82F6"
+          eyebrow="Step 1 · Understand"
           title="Learn"
-          subtitle={hasLearnContent ? 'Concepts & examples' : 'Coming soon'}
-          disabled={!hasLearnContent}
-          done={learnDone}
-          onClick={() => navigate(`/learn/${slug}`)}
+          lines={learnLines}
+          progress={lessons ? (learnDone / learnTotal) * 100 : null}
+          cta={lessons && learnDone > 0 && learnDone < learnTotal ? `${learnCta} (${learnDone}/${learnTotal})` : learnCta}
+          disabled={!hasLearn}
+          highlight={hasLearn && learnDone === 0 && totals.solved === 0}
+          onClick={goLearn}
         />
-        <StepCard
-          icon={<SchoolRoundedIcon color="primary" />}
+        <ModeCard
+          icon={<CodeRoundedIcon />}
+          accent="#10B981"
+          eyebrow="Step 2 · Build speed"
           title="Practice"
-          subtitle="No time limit"
-          locked={!learnDone}
-          onClick={() => handleStart('practice')}
+          lines={[`${totals.solved} of ${totals.total} solved`, 'Filter by topic, difficulty or status; instant answers + shortcuts']}
+          progress={solvedPct}
+          cta={totals.solved === 0 ? 'Start practising' : 'Continue practising'}
+          highlight={(learnDone > 0 || !hasLearn) && !activeTest && totals.solved < totals.total}
+          onClick={() => goPractice(rec && totals.attempted > 0 ? rec.slug : null)}
         />
-        <StepCard
-          icon={<PlayArrowRoundedIcon color="primary" />}
+        <ModeCard
+          icon={<TimerRoundedIcon />}
+          accent="#F59E0B"
+          eyebrow="Step 3 · Exam simulation"
           title="Test"
-          subtitle={`${pattern.timeLimitMinutes} min, timed`}
-          locked={!learnDone}
-          onClick={() => handleStart('test')}
+          lines={
+            activeTest
+              ? [`Test in progress · ${activeTest.answeredCount}/${activeTest.totalCount} answered`, `Time left ${formatClock(remainingSec)}`]
+              : [
+                  `${testPlan.questionCount} questions · ${pattern.timeLimitMinutes} min · TCS iON style`,
+                  progress.attemptsCount > 0 ? `Best score ${progress.bestScore}%${bestPassed ? ' · passed' : ''}` : 'Mixed difficulty, no negative marking',
+                ]
+          }
+          cta={activeTest ? 'Resume test' : progress.attemptsCount > 0 ? 'Retake test' : 'Take the test'}
+          highlight={!!activeTest}
+          onClick={goTest}
         />
       </Stack>
 
-      {launching && (
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-          <CircularProgress size={20} />
-        </Box>
-      )}
-
-      {recentAttempts.length > 0 && (
-        <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
-          <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1.5 }}>
-            Recent Test Attempts
-          </Typography>
-          <Divider sx={{ mb: 1 }} />
-          <Table size="small">
-            <TableHead>
-              <TableRow>
-                <TableCell>Date</TableCell>
-                <TableCell align="right">Score</TableCell>
-                <TableCell align="right">Time</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {recentAttempts.map((a) => (
-                <TableRow key={a._id}>
-                  <TableCell>{new Date(a.createdAt).toLocaleDateString()}</TableCell>
-                  <TableCell align="right">{a.score}%</TableCell>
-                  <TableCell align="right">{a.timeTakenSec ? `${Math.round(a.timeTakenSec / 60)}m` : '—'}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+      {rec && (
+        <Paper
+          variant="outlined"
+          sx={{ p: 2, mb: 3, borderRadius: 3, display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap', bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}
+        >
+          <BoltRoundedIcon color="primary" />
+          <Box sx={{ flexGrow: 1, minWidth: 220 }}>
+            <Typography variant="body2" sx={{ fontWeight: 700 }}>
+              {totals.attempted === 0 ? 'Where to start' : 'Recommended next'}: {rec.title}
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              {rec.accuracy != null && rec.accuracy < 75
+                ? `Your accuracy here is ${rec.accuracy}% — the quickest place to gain marks.`
+                : `${rec.total - rec.solved} unsolved questions in this topic.`}
+            </Typography>
+          </Box>
+          <Button size="small" variant="contained" disableElevation onClick={() => goPractice(rec.slug)}>
+            Practise this topic
+          </Button>
         </Paper>
       )}
+
+      <Stack direction={{ xs: 'column', lg: 'row' }} spacing={3} sx={{ alignItems: 'flex-start' }}>
+        {/* Topic map */}
+        <Box sx={{ flex: 1, minWidth: 0, width: '100%' }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1.5 }}>
+            Topic mastery
+          </Typography>
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', xl: 'repeat(3, 1fr)' }, gap: 1.5 }}>
+            {bySubPattern.map((s) => (
+              <SubPatternTile key={s.slug} sub={s} onClick={() => goPractice(s.slug)} />
+            ))}
+          </Box>
+        </Box>
+
+        {/* Right rail */}
+        <Stack spacing={2} sx={{ width: { xs: '100%', lg: 330 }, flexShrink: 0 }}>
+          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+            <Typography variant="subtitle2" sx={{ fontWeight: 800, mb: 2 }}>
+              Your progress
+            </Typography>
+            <Stack direction="row" spacing={2.5} sx={{ alignItems: 'center' }}>
+              <Ring value={solvedPct} size={104} label={`${totals.solved}`} sublabel={`/ ${totals.total} solved`} />
+              <Stack spacing={1.1} sx={{ flexGrow: 1 }}>
+                {Object.entries(DIFFICULTY).map(([key, meta]) => {
+                  const d = byDifficulty[key];
+                  return (
+                    <Box key={key}>
+                      <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
+                        <Typography variant="caption" sx={{ fontWeight: 700, color: meta.color }}>
+                          {meta.label}
+                        </Typography>
+                        <Typography variant="caption" color="text.secondary" sx={{ fontFamily: '"JetBrains Mono", monospace' }}>
+                          {d.solved}/{d.total}
+                        </Typography>
+                      </Stack>
+                      <LinearProgress
+                        variant="determinate"
+                        value={d.total ? (d.solved / d.total) * 100 : 0}
+                        sx={{ height: 4, borderRadius: 2, bgcolor: alpha(meta.color, 0.15), '& .MuiLinearProgress-bar': { bgcolor: meta.color } }}
+                      />
+                    </Box>
+                  );
+                })}
+              </Stack>
+            </Stack>
+            {bookmarkedCount > 0 && (
+              <Button size="small" sx={{ mt: 1.5 }} onClick={() => navigate(`/aptitude/${slug}/practice?status=bookmarked`)}>
+                {bookmarkedCount} bookmarked
+              </Button>
+            )}
+          </Paper>
+
+          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+            <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
+              <Typography variant="subtitle2" sx={{ fontWeight: 800 }}>
+                Recent tests
+              </Typography>
+              {bestPassed && <EmojiEventsRoundedIcon sx={{ color: 'warning.main', fontSize: 20 }} />}
+            </Stack>
+            {recentAttempts.length === 0 ? (
+              <Typography variant="body2" color="text.secondary">
+                No tests yet. Warm up with practice, then take the timed test.
+              </Typography>
+            ) : (
+              <Stack divider={<Box sx={{ borderTop: '1px solid', borderColor: 'divider' }} />}>
+                {recentAttempts.map((a) => (
+                  <Box
+                    key={a._id}
+                    onClick={() => navigate(`/aptitude/${slug}/results/${a._id}`)}
+                    sx={{ py: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' }, mx: -1, px: 1, borderRadius: 1 }}
+                  >
+                    <Box>
+                      <Typography variant="body2" sx={{ fontWeight: 700 }}>
+                        {a.correctCount}/{a.totalCount} correct
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        {new Date(a.createdAt).toLocaleDateString()} · {formatDuration(a.timeTakenSec)}
+                      </Typography>
+                    </Box>
+                    <Chip
+                      size="small"
+                      label={`${a.score}%`}
+                      sx={{
+                        fontWeight: 800,
+                        fontFamily: '"JetBrains Mono", monospace',
+                        bgcolor: (t) => alpha(a.score >= pattern.passPercentage ? t.palette.success.main : t.palette.error.main, 0.14),
+                        color: a.score >= pattern.passPercentage ? 'success.main' : 'error.main',
+                      }}
+                    />
+                  </Box>
+                ))}
+              </Stack>
+            )}
+          </Paper>
+        </Stack>
+      </Stack>
     </Container>
   );
 }
