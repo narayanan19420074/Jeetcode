@@ -10,6 +10,7 @@ import aptitudeRoutes from './aptitude.routes.js';
 import billingRoutes from './billing.routes.js';
 import licenseRoutes from './license.routes.js';
 import prepRoutes from './prep.routes.js';
+import roomRoutes from './room.routes.js';
 import '../models/AdminActionLog.js';
 
 const router = Router();
@@ -32,6 +33,7 @@ router.use('/ai', aiRoutes);
 router.use('/aptitude', aptitudeRoutes); 
 router.use('/licenses', licenseRoutes);
 router.use('/prep', prepRoutes);
+router.use('/rooms', roomRoutes);
 
 
 export default router;

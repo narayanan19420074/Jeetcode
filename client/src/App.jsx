@@ -40,6 +40,8 @@ const AptitudePracticePage = lazy(() => import('./features/aptitude/AptitudePrac
 const AptitudePracticeQuestionPage = lazy(() => import('./features/aptitude/AptitudePracticeQuestionPage'));
 const AptitudeResultsPage = lazy(() => import('./features/aptitude/AptitudeResultsPage'));
 const VisualizerPage = lazy(() => import('./features/visualizer/VisualizerPage'));
+const PairLobbyPage = lazy(() => import('./features/room/PairLobbyPage'));
+const RoomPage = lazy(() => import('./features/room/RoomPage'));
 const PricingPage = lazy(() => import('./features/billing/PricingPage'));
 const SettingsPage = lazy(() => import('./features/settings/SettingsPage'));
 // REMOVED: LearnHomePage — the standalone "/learn" topic list is gone.
@@ -113,7 +115,11 @@ export default function App() {
         }
       />
 
+      {/* Pair-coding room — public (guests allowed via invite link), full-screen, no site navbar. */}
+      <Route path="/room/:roomId" element={<Suspense fallback={<RouteFallback />}><RoomPage /></Suspense>} />
+
       <Route element={<MainLayout />}>
+        <Route path="/pair" element={<Suspense fallback={<RouteFallback />}><PairLobbyPage /></Suspense>} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/problems" element={<ProblemsPage />} />
         <Route

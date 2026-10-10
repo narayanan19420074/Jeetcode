@@ -32,6 +32,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import DifficultyChip from '../../components/DifficultyChip';
+import InviteButton from '../room/InviteButton';
 import { aiApi } from '../../api/aiApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import {
@@ -296,6 +297,7 @@ export default function WorkspacePage() {
           </Select>
 
           <Stack direction="row" spacing={1}>
+            <InviteButton problem={problem} language={activeLanguage} code={code} />
             <Tooltip title="AI assistant">
               <IconButton onClick={() => dispatch(toggleAiDrawer())} color={aiDrawerOpen ? 'primary' : 'default'}>
                 <AutoAwesomeRoundedIcon />

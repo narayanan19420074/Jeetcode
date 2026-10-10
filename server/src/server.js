@@ -5,6 +5,7 @@ import { createApp } from './app.js';
 import { connectDB } from './config/db.js';
 import { env } from './config/env.js';
 import { logger } from './utils/logger.js';
+import { attachRealtime } from './realtime/socket.js';
 
 
 async function main() {
@@ -17,6 +18,9 @@ async function main() {
       logger.warn('Reminder: no REDIS_URL set — submissions are judged inline in this process, not queued.');
     }
   });
+
+  // Pair-coding rooms: Socket.IO shares this HTTP server (same port, same origin).
+  attachRealtime(server);
 
   // Graceful shutdown — let in-flight requests finish instead of dropping
   // them when the platform (Render/Railway) sends SIGTERM on redeploy.
