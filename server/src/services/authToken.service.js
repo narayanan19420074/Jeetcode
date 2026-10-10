@@ -2,6 +2,7 @@ import crypto from 'node:crypto';
 import { signAccessToken, signRefreshToken } from '../utils/tokenUtils.js';
 import { isProd } from '../config/env.js';
 import { User } from '../models/User.js';
+import { logSecurityEvent } from './securityLog.service.js';
 
 export const REFRESH_COOKIE = 'jc_refresh';
 
@@ -37,6 +38,13 @@ export async function issueTokens(res, user, previousToken = null) {
   const refreshToken = signRefreshToken(payload);
   const now = Date.now();
 
+  // Device info for Settings -> Sessions. Express exposes the request as res.req,
+  // so no caller needs to change.
+  const req = res.req;
+  const userAgent = (req?.get?.('user-agent') || '').slice(0, 300);
+  const ip = req?.ip || null;
+  const isRotation = /\/auth\/refresh/.test(req?.originalUrl || '');
+
   // 1. Drop expired sessions and rotated ones whose grace window is over.
   await Promise.all([
     User.updateOne({ _id: user._id }, { $pull: { refreshSessions: { graceUntil: { $lt: new Date(now) } } } }),
@@ -55,19 +63,30 @@ export async function issueTokens(res, user, previousToken = null) {
     );
   }
 
+  // Keep the original sign-in time across rotations.
+  let loginAt = new Date(now);
+  if (previousToken && isRotation) {
+    const prevHash = hashToken(previousToken);
+    const doc = await User.findById(user._id).select('+refreshSessions').lean();
+    const prev = doc?.refreshSessions?.find((s) => s.hash === prevHash);
+    if (prev) loginAt = prev.loginAt || prev.createdAt || loginAt;
+  }
+
   // 3. Add the new session, keeping only the newest MAX_SESSIONS.
   await User.updateOne(
     { _id: user._id },
     {
       $push: {
         refreshSessions: {
-          $each: [{ hash: hashToken(refreshToken), createdAt: new Date(now), graceUntil: null }],
+          $each: [{ hash: hashToken(refreshToken), createdAt: new Date(now), graceUntil: null, userAgent, ip, loginAt, lastUsedAt: new Date(now) }],
           $slice: -MAX_SESSIONS,
         },
       },
       $set: { refreshTokenHash: null }, // legacy single-session field no longer used
     }
   );
+
+  if (!isRotation) await logSecurityEvent(user._id, req, 'login');
 
   res.cookie(REFRESH_COOKIE, refreshToken, cookieOptions);
   return accessToken;

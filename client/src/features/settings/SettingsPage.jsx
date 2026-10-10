@@ -1,294 +1,169 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  Box,
-  Paper,
-  TextField,
-  Button,
-  Typography,
-  Alert,
-  Divider,
-  Stack,
-  Avatar,
-  CircularProgress,
-  Grid,
-  Chip,
-} from '@mui/material';
-import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
-import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
-import { usersApi } from '../../api/usersApi';
-import { extractErrorMessage } from '../../api/apiClient';
-import { userUpdated } from '../auth/authSlice';
-import ActivateLicenseModal from '../../components/ActivateLicenseModal';
+import { Suspense, lazy, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link as RouterLink, Navigate, useParams } from 'react-router-dom';
+import { alpha } from '@mui/material/styles';
+import { Avatar, Box, Button, CircularProgress, InputAdornment, List, ListItemButton, ListItemIcon, ListItemText, Stack, TextField, Typography } from '@mui/material';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import { SETTINGS_GROUPS, SETTINGS_ITEMS, DEFAULT_SECTION } from './settingsNav';
+import { initialsFromName } from './components/SettingsUi';
 
-const initialsFromName = (name) =>
-  (name || 'U')
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase())
-    .join('');
+// Each section is its own chunk — opening Settings stays light.
+const SECTIONS = {
+  profile: lazy(() => import('./sections/ProfileSection')),
+  account: lazy(() => import('./sections/AccountSection')),
+  billing: lazy(() => import('./sections/BillingSection')),
+  appearance: lazy(() => import('./sections/AppearanceSection')),
+  accessibility: lazy(() => import('./sections/AccessibilitySection')),
+  editor: lazy(() => import('./sections/EditorSection')),
+  notifications: lazy(() => import('./sections/NotificationsSection')),
+  password: lazy(() => import('./sections/PasswordSection')),
+  sessions: lazy(() => import('./sections/SessionsSection')),
+  'security-log': lazy(() => import('./sections/SecurityLogSection')),
+};
 
-function StatBlock({ label, value }) {
+function NavItem({ item, active }) {
+  const Icon = item.icon;
   return (
-    <Box>
-      <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.2 }}>
-        {value}
-      </Typography>
-      <Typography variant="caption" color="text.secondary">
-        {label}
-      </Typography>
-    </Box>
+    <ListItemButton
+      component={RouterLink}
+      to={`/settings/${item.key}`}
+      selected={active}
+      aria-current={active ? 'page' : undefined}
+      sx={(t) => ({
+        borderRadius: '8px',
+        gap: 1.25,
+        px: 1.25,
+        py: 0.9,
+        position: 'relative',
+        '&.Mui-selected': { bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.16 : 0.1), color: 'primary.main', '&:hover': { bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.2 : 0.14) } },
+        '&.Mui-selected::before': { content: '""', position: 'absolute', left: -10, top: 8, bottom: 8, width: 3, borderRadius: 3, bgcolor: 'primary.main' },
+      })}
+    >
+      <ListItemIcon sx={{ minWidth: 0, color: 'inherit' }}>
+        <Icon sx={{ fontSize: 20 }} />
+      </ListItemIcon>
+      <ListItemText primary={item.label} slotProps={{ primary: { sx: { fontSize: '0.875rem', fontWeight: active ? 700 : 500 } } }} />
+    </ListItemButton>
   );
 }
 
 export default function SettingsPage() {
-  const dispatch = useDispatch();
   const user = useSelector((s) => s.auth.user);
+  const params = useParams();
+  const section = params['*']?.split('/')[0] || '';
+  const [query, setQuery] = useState('');
 
-  // --- Profile form state ---
-  const [name, setName] = useState(user?.name || '');
-  const [avatarUrl, setAvatarUrl] = useState(user?.avatarUrl || '');
-  const [profileStatus, setProfileStatus] = useState('idle'); // idle | loading | error | success
-  const [profileError, setProfileError] = useState(null);
-
-  // --- Password form state ---
-  const [currentPassword, setCurrentPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [passwordStatus, setPasswordStatus] = useState('idle');
-  const [passwordError, setPasswordError] = useState(null);
-  const [passwordSuccessMsg, setPasswordSuccessMsg] = useState(null);
-
-  // --- License activation ---
-  const [licenseModalOpen, setLicenseModalOpen] = useState(false);
-
-  const handleProfileSubmit = async (e) => {
-    e.preventDefault();
-    setProfileStatus('loading');
-    setProfileError(null);
-    try {
-      const { data } = await usersApi.updateProfile({ name, avatarUrl: avatarUrl || null });
-      dispatch(userUpdated(data.data));
-      setProfileStatus('success');
-    } catch (err) {
-      setProfileStatus('error');
-      setProfileError(extractErrorMessage(err));
-    }
-  };
-
-  const handlePasswordSubmit = async (e) => {
-    e.preventDefault();
-    setPasswordError(null);
-    setPasswordSuccessMsg(null);
-
-    if (newPassword !== confirmPassword) {
-      setPasswordError("New passwords don't match");
-      return;
-    }
-
-    setPasswordStatus('loading');
-    try {
-      const { data } = await usersApi.changePassword({
-        currentPassword: currentPassword || undefined,
-        newPassword,
-      });
-      setPasswordStatus('success');
-      setPasswordSuccessMsg(data.message || 'Password updated');
-      setCurrentPassword('');
-      setNewPassword('');
-      setConfirmPassword('');
-    } catch (err) {
-      setPasswordStatus('error');
-      setPasswordError(extractErrorMessage(err));
-    }
-  };
+  const groups = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return SETTINGS_GROUPS;
+    return SETTINGS_GROUPS.map((g) => ({
+      ...g,
+      items: g.items.filter((i) => `${i.label} ${i.keywords}`.toLowerCase().includes(q)),
+    })).filter((g) => g.items.length);
+  }, [query]);
 
   if (!user) return null;
+  if (!SECTIONS[section]) return <Navigate to={`/settings/${DEFAULT_SECTION}`} replace />;
+  const Section = SECTIONS[section];
+  const current = SETTINGS_ITEMS.find((i) => i.key === section);
 
   return (
-    <Box sx={{ maxWidth: 640, mx: 'auto', px: 2, py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 3 }}>
-        Settings
-      </Typography>
-
-      <Stack spacing={3}>
-        {/* --- Profile --- */}
-        <Paper elevation={0} variant="outlined" sx={{ p: { xs: 3, sm: 4 }, borderRadius: 3 }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
-            Profile
-          </Typography>
-
-          {profileStatus === 'error' && (
-            <Alert severity="error" sx={{ mb: 2 }}>
-              {profileError}
-            </Alert>
-          )}
-          {profileStatus === 'success' && (
-            <Alert severity="success" sx={{ mb: 2 }} onClose={() => setProfileStatus('idle')}>
-              Profile updated
-            </Alert>
-          )}
-
-          <Box component="form" onSubmit={handleProfileSubmit}>
-            <Stack spacing={2}>
-              <Stack direction="row" spacing={2} alignItems="center">
-                <Avatar src={avatarUrl || undefined} sx={{ width: 56, height: 56, bgcolor: 'primary.main', fontWeight: 700 }}>
-                  {initialsFromName(name)}
-                </Avatar>
-                <TextField
-                  label="Avatar URL"
-                  value={avatarUrl}
-                  onChange={(e) => setAvatarUrl(e.target.value)}
-                  fullWidth
-                  placeholder="https://..."
-                  helperText="Paste an image URL. Leave blank to show initials instead."
-                />
-              </Stack>
-              <TextField label="Full name" value={name} onChange={(e) => setName(e.target.value)} fullWidth required />
-              <TextField label="Email" value={user.email || ''} fullWidth disabled helperText="Email can't be changed here" />
-              <TextField label="Handle" value={`@${user.handle || ''}`} fullWidth disabled />
-              <Box>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  disableElevation
-                  disabled={profileStatus === 'loading'}
-                  sx={{ fontWeight: 700, px: 3 }}
-                >
-                  {profileStatus === 'loading' ? <CircularProgress size={22} color="inherit" /> : 'Save changes'}
-                </Button>
-              </Box>
-            </Stack>
-          </Box>
-        </Paper>
-
-        {/* --- Account info (read-only) --- */}
-        <Paper elevation={0} variant="outlined" sx={{ p: { xs: 3, sm: 4 }, borderRadius: 3 }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
-            Account
-          </Typography>
-          <Grid container spacing={3}>
-            <Grid item xs={6} sm={3}>
-              <StatBlock label="Role" value={user.role} />
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <StatBlock label="Current streak" value={`${user.streakDays ?? 0}d`} />
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <StatBlock label="Longest streak" value={`${user.longestStreak ?? 0}d`} />
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <StatBlock label="Total solved" value={user.totalSolved ?? 0} />
-            </Grid>
-          </Grid>
-          {user.createdAt && (
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 2 }}>
-              Member since {new Date(user.createdAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long' })}
+    <Box sx={{ maxWidth: 1120, mx: 'auto', px: { xs: 2, md: 3 }, py: { xs: 2.5, md: 4 } }}>
+      {/* Header — who these settings belong to */}
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 1.75, mb: { xs: 2, md: 3.5 } }}>
+        <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 700 }}>
+          {initialsFromName(user.name)}
+        </Avatar>
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography sx={{ fontWeight: 800, lineHeight: 1.25 }} noWrap>
+            {user.name}{' '}
+            <Typography component="span" color="text.secondary" sx={{ fontWeight: 500 }}>
+              @{user.handle}
             </Typography>
-          )}
-        </Paper>
-
-        {/* --- License / Pro status --- */}
-        <Paper elevation={0} variant="outlined" sx={{ p: { xs: 3, sm: 4 }, borderRadius: 3 }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
-            License
           </Typography>
-
-          {user.isPro ? (
-            <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
-              <Chip
-                icon={<WorkspacePremiumRoundedIcon />}
-                label="Pro active"
-                color="warning"
-                sx={{ fontWeight: 700 }}
-              />
-              <Typography variant="body2" color="text.secondary">
-                {user.proPlan === 'license-key'
-                  ? 'Activated via license key'
-                  : `${user.proPlan === 'yearly' ? 'Yearly' : 'Monthly'} subscription`}
-                {user.proExpiresAt && ` — renews/expires ${new Date(user.proExpiresAt).toLocaleDateString()}`}
-              </Typography>
-            </Stack>
-          ) : (
-            <Stack spacing={2} alignItems="flex-start">
-              <Typography variant="body2" color="text.secondary">
-                Have a license key? Activate it here to unlock Pro instantly.
-              </Typography>
-              <Button
-                variant="outlined"
-                startIcon={<VpnKeyRoundedIcon />}
-                onClick={() => setLicenseModalOpen(true)}
-                sx={{ fontWeight: 600 }}
-              >
-                Activate license
-              </Button>
-            </Stack>
-          )}
-        </Paper>
-
-        {/* --- Password --- */}
-        <Paper elevation={0} variant="outlined" sx={{ p: { xs: 3, sm: 4 }, borderRadius: 3 }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
-            Password
+          <Typography variant="body2" color="text.secondary">
+            Your personal account
           </Typography>
-
-          {passwordStatus === 'error' && (
-            <Alert severity="error" sx={{ mb: 2 }}>
-              {passwordError}
-            </Alert>
-          )}
-          {passwordStatus === 'success' && (
-            <Alert severity="success" sx={{ mb: 2 }} onClose={() => setPasswordStatus('idle')}>
-              {passwordSuccessMsg}
-            </Alert>
-          )}
-
-          <Box component="form" onSubmit={handlePasswordSubmit}>
-            <Stack spacing={2}>
-              <TextField
-                label="Current password"
-                type="password"
-                value={currentPassword}
-                onChange={(e) => setCurrentPassword(e.target.value)}
-                fullWidth
-                helperText="Leave blank if you signed in with Google or GitHub and have never set a password"
-              />
-              <Divider />
-              <TextField
-                label="New password"
-                type="password"
-                value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
-                fullWidth
-                required
-                helperText="At least 8 characters"
-              />
-              <TextField
-                label="Confirm new password"
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                fullWidth
-                required
-              />
-              <Box>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  disableElevation
-                  disabled={passwordStatus === 'loading'}
-                  sx={{ fontWeight: 700, px: 3 }}
-                >
-                  {passwordStatus === 'loading' ? <CircularProgress size={22} color="inherit" /> : 'Update password'}
-                </Button>
-              </Box>
-            </Stack>
-          </Box>
-        </Paper>
+        </Box>
+        <Button component={RouterLink} to="/dashboard" size="small" variant="outlined" startIcon={<ArrowBackRoundedIcon />} sx={{ display: { xs: 'none', sm: 'inline-flex' }, color: 'text.primary', borderColor: 'divider' }}>
+          Back to dashboard
+        </Button>
       </Stack>
 
-      <ActivateLicenseModal open={licenseModalOpen} onClose={() => setLicenseModalOpen(false)} />
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: '264px minmax(0, 1fr)' }, gap: { xs: 2, md: 5 }, alignItems: 'start' }}>
+        {/* Phones: a swipeable strip instead of the sidebar */}
+        <Box
+          component="nav"
+          aria-label="Settings sections"
+          sx={{ display: { xs: 'flex', md: 'none' }, gap: 1, overflowX: 'auto', pb: 0.5, mx: -2, px: 2, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}
+        >
+          {SETTINGS_ITEMS.map((i) => {
+            const Icon = i.icon;
+            const active = i.key === section;
+            return (
+              <Button
+                key={i.key}
+                component={RouterLink}
+                to={`/settings/${i.key}`}
+                size="small"
+                variant={active ? 'contained' : 'outlined'}
+                disableElevation
+                startIcon={<Icon sx={{ fontSize: 18 }} />}
+                sx={{ flexShrink: 0, borderRadius: 99, whiteSpace: 'nowrap', ...(active ? {} : { color: 'text.primary', borderColor: 'divider' }) }}
+              >
+                {i.label}
+              </Button>
+            );
+          })}
+        </Box>
+
+        {/* Desktop sidebar */}
+        <Box component="nav" aria-label="Settings sections" sx={{ display: { xs: 'none', md: 'block' }, position: 'sticky', top: 88 }}>
+          <TextField
+            size="small"
+            fullWidth
+            placeholder="Find a setting"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            slotProps={{
+              input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> },
+              htmlInput: { 'aria-label': 'Find a setting' },
+            }}
+            sx={{ mb: 2 }}
+          />
+          {groups.length === 0 && (
+            <Typography variant="body2" color="text.secondary" sx={{ px: 1 }}>
+              No settings match “{query}”.
+            </Typography>
+          )}
+          {groups.map((g) => (
+            <Box key={g.label} sx={{ mb: 2 }}>
+              <Typography variant="overline" color="text.secondary" sx={{ px: 1.25, fontWeight: 700, letterSpacing: '0.08em', lineHeight: 2 }}>
+                {g.label}
+              </Typography>
+              <List disablePadding sx={{ display: 'grid', gap: 0.25, pl: 1.25 }}>
+                {g.items.map((i) => (
+                  <NavItem key={i.key} item={i} active={i.key === section} />
+                ))}
+              </List>
+            </Box>
+          ))}
+        </Box>
+
+        {/* Content */}
+        <Box component="main" sx={{ minWidth: 0, maxWidth: 780 }} aria-label={current?.label}>
+          <Suspense
+            fallback={
+              <Box sx={{ display: 'flex', justifyContent: 'center', py: 10 }}>
+                <CircularProgress />
+              </Box>
+            }
+          >
+            <Section key={section} />
+          </Suspense>
+        </Box>
+      </Box>
     </Box>
   );
 }

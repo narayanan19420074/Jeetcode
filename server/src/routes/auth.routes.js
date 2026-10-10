@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { register, login, refresh, logout, me } from '../controllers/auth.controller.js';
+import { listSessions, revokeSession, revokeOtherSessions } from '../controllers/sessions.controller.js';
 import { adminLogin } from '../controllers/adminAuth.controller.js';
 import { googleSignIn, githubSignIn, linkedinSignIn } from '../controllers/oauth.controller.js';
 import { validate } from '../middlewares/validate.js';
@@ -25,5 +26,10 @@ router.post('/linkedin', authLimiter, linkedinSignIn);
 router.post('/refresh', refresh);
 router.post('/logout', logout);
 router.get('/me', requireAuth, loadFullUser, me);
+
+// Settings -> Sessions (under /auth so the path-scoped refresh cookie is sent)
+router.get('/sessions', requireAuth, listSessions);
+router.delete('/sessions', requireAuth, revokeOtherSessions);
+router.delete('/sessions/:id', requireAuth, revokeSession);
 
 export default router;

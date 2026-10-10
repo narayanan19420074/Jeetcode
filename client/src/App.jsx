@@ -31,7 +31,7 @@ const AdminAuditLogPage = lazy(() => import('./features/admin/pages/AdminAuditLo
 
 const AptitudePatternsPage = lazy(() => import('./features/aptitude/AptitudePatternsPage'));
 const AptitudePatternDetailPage = lazy(() => import('./features/aptitude/AptitudePatternDetailPage'));
-// Test = TCS iON style: an instructions screen inside the normal layout, then the
+// Test = exam style: an instructions screen inside the normal layout, then the
 // exam interface itself as a standalone full-screen route (no site navbar).
 const AptitudeTestInstructionsPage = lazy(() => import('./features/aptitude/AptitudeTestInstructionsPage'));
 const AptitudeTestPage = lazy(() => import('./features/aptitude/AptitudeTestPage'));
@@ -99,7 +99,7 @@ export default function App() {
         <Route path="audit-log" element={<Suspense fallback={<RouteFallback />}><AdminAuditLogPage /></Suspense>} />
       </Route>
 
-      {/* iON-style exam interface — standalone full-screen shell, deliberately
+      {/* exam-style interface — standalone full-screen shell, deliberately
           outside <MainLayout> so the site navbar can't pull a learner out of a
           timed paper. Protected: it needs the logged-in session. */}
       <Route
@@ -162,7 +162,7 @@ export default function App() {
         {/* Old results URL carried no attempt id (lost on refresh) — send to the hub. */}
         <Route path="/aptitude/:slug/results" element={<Navigate to=".." relative="path" replace />} />
         <Route path="/pricing" element={<Suspense fallback={<RouteFallback />}><PricingPage /></Suspense>} />
-        <Route path="/settings" element={<Suspense fallback={<RouteFallback />}><SettingsPage /></Suspense>} />
+        <Route path="/settings/*" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><SettingsPage /></Suspense></ProtectedRoute>} />
         {/* REMOVED: <Route path="/learn" .../> (LearnHomePage) */}
         <Route path="/learn/:topicSlug" element={<Suspense fallback={<RouteFallback />}><LearnTopicPage /></Suspense>} />
         {/* REMOVED: <Route path="/learn/:topicSlug/practice" .../> (PracticePage) */}

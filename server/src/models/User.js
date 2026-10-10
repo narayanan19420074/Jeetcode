@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
+import { ACCENTS, THEMES, DENSITIES, FONT_SCALES, CONTRASTS, MOTION, EDITOR_THEMES, LANGUAGES, DEFAULT_PREFERENCES as D } from '../config/preferences.js';
 
 const userSchema = new mongoose.Schema(
   {
@@ -70,6 +71,12 @@ const userSchema = new mongoose.Schema(
           hash: { type: String, required: true },
           createdAt: { type: Date, default: Date.now },
           graceUntil: { type: Date, default: null },
+          // Device info shown on Settings -> Sessions. loginAt survives
+          // rotation (createdAt does not — it is the last refresh).
+          userAgent: { type: String, default: '' },
+          ip: { type: String, default: null },
+          loginAt: { type: Date, default: null },
+          lastUsedAt: { type: Date, default: null },
         },
       ],
       select: false,
@@ -107,6 +114,73 @@ const userSchema = new mongoose.Schema(
     solvedProblems: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Problem' }],
 
     bookmarks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Problem' }],
+
+    // --- Public profile (Settings -> Public profile) ---
+    bio: { type: String, trim: true, maxlength: 160, default: '' },
+    location: { type: String, trim: true, maxlength: 60, default: '' },
+    company: { type: String, trim: true, maxlength: 60, default: '' }, // college or company
+    website: { type: String, trim: true, maxlength: 200, default: '' },
+    socials: {
+      github: { type: String, trim: true, maxlength: 39, default: '' },
+      linkedin: { type: String, trim: true, maxlength: 100, default: '' },
+      x: { type: String, trim: true, maxlength: 15, default: '' },
+      leetcode: { type: String, trim: true, maxlength: 40, default: '' },
+    },
+
+    // --- Preferences (Settings -> Appearance / Accessibility / Editor / Notifications) ---
+    // Validated by config/preferences.js; the enums here are a second line of defence.
+    preferences: {
+      appearance: {
+        theme: { type: String, enum: THEMES, default: D.appearance.theme },
+        accent: { type: String, enum: ACCENTS, default: D.appearance.accent },
+        density: { type: String, enum: DENSITIES, default: D.appearance.density },
+        fontScale: { type: String, enum: FONT_SCALES, default: D.appearance.fontScale },
+        contrast: { type: String, enum: CONTRASTS, default: D.appearance.contrast },
+        // null until the user saves appearance once — lets the client tell
+        // "never chose" from "chose the default" and not clobber a visitor's
+        // local theme with the server default after login.
+        syncedAt: { type: Date, default: null },
+      },
+      accessibility: {
+        reduceMotion: { type: String, enum: MOTION, default: D.accessibility.reduceMotion },
+        underlineLinks: { type: Boolean, default: D.accessibility.underlineLinks },
+      },
+      editor: {
+        fontSize: { type: Number, min: 10, max: 28, default: D.editor.fontSize },
+        tabSize: { type: Number, enum: [2, 4, 8], default: D.editor.tabSize },
+        wordWrap: { type: Boolean, default: D.editor.wordWrap },
+        minimap: { type: Boolean, default: D.editor.minimap },
+        lineNumbers: { type: Boolean, default: D.editor.lineNumbers },
+        ligatures: { type: Boolean, default: D.editor.ligatures },
+        autoClose: { type: Boolean, default: D.editor.autoClose },
+        theme: { type: String, enum: EDITOR_THEMES, default: D.editor.theme },
+        defaultLanguage: { type: String, enum: LANGUAGES, default: D.editor.defaultLanguage },
+      },
+      notifications: {
+        streakReminder: { type: Boolean, default: D.notifications.streakReminder },
+        weeklyDigest: { type: Boolean, default: D.notifications.weeklyDigest },
+        achievements: { type: Boolean, default: D.notifications.achievements },
+        productUpdates: { type: Boolean, default: D.notifications.productUpdates },
+        reminderTime: { type: String, default: D.notifications.reminderTime },
+        timezone: { type: String, default: D.notifications.timezone },
+      },
+    },
+
+    // --- Security log (Settings -> Security log). Newest last, capped at 50 by securityLog.service ---
+    securityLog: {
+      type: [
+        {
+          _id: false,
+          type: { type: String, required: true },
+          detail: { type: String, default: '' },
+          at: { type: Date, default: Date.now },
+          ip: { type: String, default: null },
+          userAgent: { type: String, default: '' },
+        },
+      ],
+      select: false,
+      default: [],
+    },
   },
   { timestamps: true }
 );
@@ -126,6 +200,18 @@ userSchema.methods.toPublicJSON = function () {
     email: this.email,
     role: this.role,
     avatarUrl: this.avatarUrl,
+    bio: this.bio || '',
+    location: this.location || '',
+    company: this.company || '',
+    website: this.website || '',
+    socials: {
+      github: this.socials?.github || '',
+      linkedin: this.socials?.linkedin || '',
+      x: this.socials?.x || '',
+      leetcode: this.socials?.leetcode || '',
+    },
+    providers: { google: !!this.googleId, github: !!this.githubId, linkedin: !!this.linkedinId },
+    preferences: this.toObject().preferences,
     isPro: this.isPro,
     proExpiresAt: this.proExpiresAt,
     proPlan: this.proPlan,

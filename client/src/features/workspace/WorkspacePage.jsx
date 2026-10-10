@@ -54,6 +54,9 @@ export default function WorkspacePage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((s) => s.auth);
+  // Settings -> Editor / Appearance
+  const editorPrefs = useSelector((s) => s.ui.editor);
+  const uiMode = useSelector((s) => s.ui.mode);
 
   const {
     currentProblem: problem,
@@ -84,6 +87,13 @@ export default function WorkspacePage() {
   useEffect(() => {
     dispatch(fetchProblem(slug));
   }, [dispatch, slug]);
+
+  // Start in the language chosen in Settings -> Editor (once per page visit;
+  // switching language in the toolbar afterwards still works as before).
+  useEffect(() => {
+    if (editorPrefs?.defaultLanguage) dispatch(setLanguage(editorPrefs.defaultLanguage));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const code = problem
     ? codeByProblem[problem._id]?.[activeLanguage] ?? problem.starterCode[activeLanguage]
@@ -322,15 +332,20 @@ export default function WorkspacePage() {
           <Editor
             height="100%"
             language={activeLanguage === 'cpp' ? 'cpp' : activeLanguage}
-            theme="vs-dark"
+            theme={editorPrefs.theme === 'auto' ? (uiMode === 'dark' ? 'vs-dark' : 'vs') : editorPrefs.theme}
             value={code}
             onChange={handleEditorChange}
             options={{
-              fontSize: 14,
-              minimap: { enabled: false },
+              fontSize: editorPrefs.fontSize,
+              minimap: { enabled: editorPrefs.minimap },
+              wordWrap: editorPrefs.wordWrap ? 'on' : 'off',
+              lineNumbers: editorPrefs.lineNumbers ? 'on' : 'off',
+              fontLigatures: editorPrefs.ligatures,
+              autoClosingBrackets: editorPrefs.autoClose ? 'languageDefined' : 'never',
+              autoClosingQuotes: editorPrefs.autoClose ? 'languageDefined' : 'never',
               scrollBeyondLastLine: false,
               automaticLayout: true,
-              tabSize: 2,
+              tabSize: editorPrefs.tabSize,
             }}
           />
         </Box>
