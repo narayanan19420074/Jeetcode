@@ -1,0 +1,1868 @@
+{
+  "questions": [
+    {
+      "questionText": "Two cards are drawn at random without replacement from a pack of 52. What is the probability that they are both kings?",
+      "options": [
+        "1/223",
+        "1/221",
+        "1/222",
+        "1/169"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Favourable = 4C2 = 6. Total = 52C2 = 1326. Probability = 1/221.",
+      "shortcut": "Use combinations: favourable pairs / total pairs.",
+      "subPattern": "playing-cards",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 3 blue, 3 black and 5 red balls. Two balls are drawn at random without replacement. What is the probability that both are blue?",
+      "options": [
+        "58/55",
+        "4/55",
+        "9/121",
+        "3/55"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Choose both balls from the 3 blue balls out of 11: 3C2/11C2 = 3/55 = 3/55.",
+      "shortcut": "Both same colour: nC2 / total C2.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 1/2 and P(B) = 2/5. What is P(A or B)?",
+      "options": [
+        "7/10",
+        "7/20",
+        "4/5",
+        "9/10"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 1/2 + 2/5 - 1/5 = 7/10.",
+      "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The probability of an event is 7/15. What are the odds against the event? (give as against : in favour)",
+      "options": [
+        "7:8",
+        "8:7",
+        "1:1",
+        "8:9"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Odds in favour = 7:8, so odds against = 8:7 = 8:7.",
+      "shortcut": "Odds against = (1 - p) : p.",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word LEADER are arranged at random. What is the probability that the arrangement begins and ends with a consonant?",
+      "options": [
+        "1/15",
+        "1/2",
+        "1/6",
+        "1/5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total arrangements = 360. Those beginning and ending with a consonant = 72. Probability = 1/5.",
+      "shortcut": "Choose the end letters first, then arrange the middle.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 3 red, 3 white and 4 green balls. Three balls are drawn at random without replacement. What is the probability that one ball of each colour is drawn?",
+      "options": [
+        "3/10",
+        "1/10",
+        "9/250",
+        "2/5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Favourable = 3 x 3 x 4 = 36. Total = 10C3 = 120. Probability = 3/10.",
+      "shortcut": "One of each: multiply the counts, divide by total C3.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 1/6 and P(B) = 1/9. What is P(A or B)?",
+      "options": [
+        "34/27",
+        "7/27",
+        "5/18",
+        "7/54"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 1/6 + 1/9 - 1/54 = 7/27.",
+      "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two people are chosen at random from a group of 3 men and 5 women. What is the probability that both are men?",
+      "options": [
+        "3/28",
+        "9/64",
+        "31/28",
+        "9/28"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Choose both people from the 3 men among 8 people: 3C2/8C2 = 3/28 = 3/28.",
+      "shortcut": "Favourable pairs / total pairs.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The probability of an event is 2/5. What are the odds against the event? (give as against : in favour)",
+      "options": [
+        "3:2",
+        "2:3",
+        "1:2",
+        "1:1"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Odds in favour = 2:3, so odds against = 3:2 = 3:2.",
+      "shortcut": "Odds against = (1 - p) : p.",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three persons A, B and C try to hit a target independently with probabilities 3/8, 3/10 and 1/4 respectively. What is the probability that the target is hit by at least one of them?",
+      "options": [
+        "9/320",
+        "43/64",
+        "11/16",
+        "129/64"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(all miss) = (1 - 3/8)(1 - 3/10)(1 - 1/4) = 21/64. P(at least one hit) = 43/64.",
+      "shortcut": "1 - product of the miss probabilities.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two fair dice are thrown. What is the probability that the product of the two numbers is a multiple of 6?",
+      "options": [
+        "5/24",
+        "5/17",
+        "5/12",
+        "1/2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Counting the pairs (a, b) whose product is a multiple of 6: 15 out of 36. Probability = 5/12.",
+      "shortcut": "Count favourable pairs among the 36 outcomes.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two fair dice are thrown. What is the probability that the sum of the numbers equals 3?",
+      "options": [
+        "1/36",
+        "1/6",
+        "1/9",
+        "1/18"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Out of 36 equally likely outcomes, 2 have a sum that equals 3. Probability = 2/36 = 1/18.",
+      "shortcut": "List pairs by sum; total outcomes = 36.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 1/8 and P(B) = 1/5. What is P(A and B)?",
+      "options": [
+        "1/41",
+        "1/40",
+        "1/80",
+        "13/40"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For independent events P(A and B) = P(A) x P(B) = 1/8 x 1/5 = 1/40.",
+      "shortcut": "Independent: multiply.",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two people are chosen at random from a group of 5 men and 3 women. What is the probability that both are men?",
+      "options": [
+        "25/64",
+        "19/14",
+        "5/42",
+        "5/14"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Choose both people from the 5 men among 8 people: 5C2/8C2 = 10/28 = 5/14.",
+      "shortcut": "Favourable pairs / total pairs.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 7 red, 3 blue and 2 black balls. Two balls are drawn at random without replacement. What is the probability that both are black?",
+      "options": [
+        "1/22",
+        "1/67",
+        "1/66",
+        "1/36"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Choose both balls from the 2 black balls out of 12: 2C2/12C2 = 1/66 = 1/66.",
+      "shortcut": "Both same colour: nC2 / total C2.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word FLOWER are arranged at random. What is the probability that the arrangement starts with a vowel?",
+      "options": [
+        "4/3",
+        "1/4",
+        "1/6",
+        "1/3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "2 of the 6 letters are vowels, so by symmetry P = 2/6 = 1/3 (checked by counting 240 of 720 arrangements).",
+      "shortcut": "First-letter probability = (vowels)/(letters).",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A committee of 3 is chosen at random from 6 men and 3 women. What is the probability that it has exactly 2 women?",
+      "options": [
+        "3/14",
+        "17/14",
+        "3/28",
+        "1/3"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total = 9C3 = 84. Favourable = 18. Probability = 3/14.",
+      "shortcut": "Count by gender split; divide by total C3.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair die is rolled 2 times. What is the probability of getting at least one even number?",
+      "options": [
+        "3/5",
+        "7/4",
+        "1/4",
+        "3/4"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "P(no even number in a roll) = 1/2. For 2 rolls: (1/2)^2 = 1/4. P(at least one) = 1 - 1/4 = 3/4.",
+      "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair die is rolled 3 times. What is the probability of getting at least one number greater than 4?",
+      "options": [
+        "46/27",
+        "19/54",
+        "8/27",
+        "19/27"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "P(no number greater than 4 in a roll) = 2/3. For 3 rolls: (2/3)^3 = 8/27. P(at least one) = 1 - 8/27 = 19/27.",
+      "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three persons A, B and C try to hit a target independently with probabilities 1/7, 1/9 and 1/10 respectively. What is the probability that the target is hit by at least one of them?",
+      "options": [
+        "11/35",
+        "11/70",
+        "11/37",
+        "1/630"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(all miss) = (1 - 1/7)(1 - 1/9)(1 - 1/10) = 24/35. P(at least one hit) = 11/35.",
+      "shortcut": "1 - product of the miss probabilities.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cards are drawn at random without replacement from a pack of 52. What is the probability of getting at least one ace?",
+      "options": [
+        "33/221",
+        "66/221",
+        "254/221",
+        "1/13"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total ways = 52C2 = 1326. Counting the favourable pairs for 'at least one ace' gives probability 33/221.",
+      "shortcut": "Count favourable pairs (or use the complement) over 52C2.",
+      "subPattern": "playing-cards",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair die is rolled 4 times. What is the probability of getting at least one number less than 3?",
+      "options": [
+        "16/81",
+        "130/81",
+        "65/81",
+        "65/162"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(no number less than 3 in a roll) = 2/3. For 4 rolls: (2/3)^4 = 16/81. P(at least one) = 1 - 16/81 = 65/81.",
+      "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 2 black, 7 green and 4 red balls. One ball is drawn at random. What is the probability that it is red?",
+      "options": [
+        "8/13",
+        "1/3",
+        "4/13",
+        "12/13"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Favourable = 4, total = 13. Probability = 4/13.",
+      "shortcut": "Favourable / total.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A two-digit number is chosen at random. What is the probability that it is divisible by 8?",
+      "options": [
+        "11/101",
+        "11/90",
+        "1/8",
+        "2/15"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "There are 90 two-digit numbers. Multiples of 8 among them: 11. Probability = 11/90 = 11/90.",
+      "shortcut": "Count multiples in the range, divide by 90.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 7 green, 5 white and 4 red balls. Two balls are drawn at random without replacement. What is the probability that both are green?",
+      "options": [
+        "1/5",
+        "49/256",
+        "7/20",
+        "7/40"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Choose both balls from the 7 green balls out of 16: 7C2/16C2 = 21/120 = 7/40.",
+      "shortcut": "Both same colour: nC2 / total C2.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two fair dice are thrown. What is the probability that the product of the two numbers is even?",
+      "options": [
+        "1",
+        "1/2",
+        "3/4",
+        "5/4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Counting the pairs (a, b) whose product is even: 27 out of 36. Probability = 3/4.",
+      "shortcut": "Count favourable pairs among the 36 outcomes.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair coin is tossed 6 times. What is the probability of getting at least one head?",
+      "options": [
+        "1",
+        "1/64",
+        "63/64",
+        "63/65"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(no head) = 1/2^6 = 1/64. P(at least one head) = 1 - 1/64 = 63/64.",
+      "shortcut": "At least one = 1 - P(none).",
+      "subPattern": "at-least-one-event",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two fair dice are thrown. What is the probability that the sum of the numbers equals 6?",
+      "options": [
+        "5/41",
+        "5/36",
+        "5/12",
+        "1/6"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Out of 36 equally likely outcomes, 5 have a sum that equals 6. Probability = 5/36 = 5/36.",
+      "shortcut": "List pairs by sum; total outcomes = 36.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word ORANGE are arranged at random. What is the probability that the arrangement starts with a vowel?",
+      "options": [
+        "1/3",
+        "1/6",
+        "1/2",
+        "3/2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "3 of the 6 letters are vowels, so by symmetry P = 3/6 = 1/2 (checked by counting 360 of 720 arrangements).",
+      "shortcut": "First-letter probability = (vowels)/(letters).",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word SIGNAL are arranged at random. What is the probability that all the vowels come together?",
+      "options": [
+        "1/4",
+        "1/3",
+        "4/3",
+        "1/2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total arrangements = 720. Arrangements with the vowels together = 240. Probability = 1/3.",
+      "shortcut": "Vowel block as one unit, times the internal arrangements.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two fair dice are thrown. What is the probability that the sum of the numbers is at most 3?",
+      "options": [
+        "13/12",
+        "1/6",
+        "1/4",
+        "1/12"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Out of 36 equally likely outcomes, 3 have a sum that is at most 3. Probability = 3/36 = 1/12.",
+      "shortcut": "List pairs by sum; total outcomes = 36.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word DELHI are arranged at random. What is the probability that the arrangement starts with a vowel?",
+      "options": [
+        "2/5",
+        "4/5",
+        "6/5",
+        "2/15"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "2 of the 5 letters are vowels, so by symmetry P = 2/5 = 2/5 (checked by counting 48 of 120 arrangements).",
+      "shortcut": "First-letter probability = (vowels)/(letters).",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 3/5 and P(B) = 2/3. What is P(A or B)?",
+      "options": [
+        "13/15",
+        "13/16",
+        "28/15",
+        "19/15"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 3/5 + 2/3 - 2/5 = 13/15.",
+      "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair coin is tossed 2 times. What is the probability of getting at least one head?",
+      "options": [
+        "3/4",
+        "1/4",
+        "9/4",
+        "3/7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(no head) = 1/2^2 = 1/4. P(at least one head) = 1 - 1/4 = 3/4.",
+      "shortcut": "At least one = 1 - P(none).",
+      "subPattern": "at-least-one-event",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The odds in favour of an event are 5:8. What is the probability that the event occurs?",
+      "options": [
+        "5/8",
+        "5/13",
+        "10/13",
+        "7/13"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Probability = favourable/(favourable + unfavourable) = 5/(5 + 8) = 5/13.",
+      "shortcut": "Odds a:b in favour -> probability a/(a+b).",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The odds in favour of an event are 3:5. What is the probability that the event occurs?",
+      "options": [
+        "1/2",
+        "5/8",
+        "3/8",
+        "3/5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Probability = favourable/(favourable + unfavourable) = 3/(3 + 5) = 3/8.",
+      "shortcut": "Odds a:b in favour -> probability a/(a+b).",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 6 black, 2 green and 3 red balls. Two balls are drawn at random without replacement. What is the probability that both are black?",
+      "options": [
+        "5/11",
+        "3/11",
+        "36/121",
+        "1/11"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Choose both balls from the 6 black balls out of 11: 6C2/11C2 = 15/55 = 3/11.",
+      "shortcut": "Both same colour: nC2 / total C2.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair die is rolled 2 times. What is the probability of getting at least one number greater than 4?",
+      "options": [
+        "5/27",
+        "5/9",
+        "4/9",
+        "14/9"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(no number greater than 4 in a roll) = 2/3. For 2 rolls: (2/3)^2 = 4/9. P(at least one) = 1 - 4/9 = 5/9.",
+      "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two fair dice are thrown. What is the probability that the sum of the numbers is at most 6?",
+      "options": [
+        "5/12",
+        "1/6",
+        "5/6",
+        "1/2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Out of 36 equally likely outcomes, 15 have a sum that is at most 6. Probability = 15/36 = 5/12.",
+      "shortcut": "List pairs by sum; total outcomes = 36.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A two-digit number is chosen at random. What is the probability that it is divisible by 7?",
+      "options": [
+        "7/45",
+        "13/90",
+        "13/103",
+        "1/7"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "There are 90 two-digit numbers. Multiples of 7 among them: 13. Probability = 13/90 = 13/90.",
+      "shortcut": "Count multiples in the range, divide by 90.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The probability of an event is 2/3. What are the odds against the event? (give as against : in favour)",
+      "options": [
+        "1:1",
+        "3:2",
+        "1:2",
+        "2:1"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Odds in favour = 2:1, so odds against = 1:2 = 1:2.",
+      "shortcut": "Odds against = (1 - p) : p.",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair coin is tossed 5 times. What is the probability of getting exactly 3 head(s)?",
+      "options": [
+        "5/16",
+        "15/16",
+        "3/5",
+        "5/21"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Favourable outcomes = 5C3 = 10. Total = 2^5 = 32. Probability = 5/16.",
+      "shortcut": "P = nCk / 2^n.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A two-digit number is chosen at random. What is the probability that it is divisible by 9?",
+      "options": [
+        "1/11",
+        "10/9",
+        "1/9",
+        "1/10"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "There are 90 two-digit numbers. Multiples of 9 among them: 10. Probability = 10/90 = 1/9.",
+      "shortcut": "Count multiples in the range, divide by 90.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A two-digit number is chosen at random. What is the probability that it is divisible by 5?",
+      "options": [
+        "1/5",
+        "3/5",
+        "1/6",
+        "1/10"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "There are 90 two-digit numbers. Multiples of 5 among them: 18. Probability = 18/90 = 1/5.",
+      "shortcut": "Count multiples in the range, divide by 90.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair die is rolled 3 times. What is the probability of getting at least one even number?",
+      "options": [
+        "7/9",
+        "21/8",
+        "1/8",
+        "7/8"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "P(no even number in a roll) = 1/2. For 3 rolls: (1/2)^3 = 1/8. P(at least one) = 1 - 1/8 = 7/8.",
+      "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 6 blue, 6 red and 6 black balls. Three balls are drawn at random without replacement. What is the probability that one ball of each colour is drawn?",
+      "options": [
+        "27/34",
+        "5/17",
+        "9/34",
+        "1/27"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Favourable = 6 x 6 x 6 = 216. Total = 18C3 = 816. Probability = 9/34.",
+      "shortcut": "One of each: multiply the counts, divide by total C3.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cards are drawn at random without replacement from a pack of 52. What is the probability of getting one king and one queen?",
+      "options": [
+        "8/663",
+        "8/221",
+        "4/663",
+        "1/13"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total ways = 52C2 = 1326. Counting the favourable pairs for 'one king and one queen' gives probability 8/663.",
+      "shortcut": "Count favourable pairs (or use the complement) over 52C2.",
+      "subPattern": "playing-cards",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A player rolls a die and wins Rs 50 if the number is a 5 or a 6; otherwise he loses Rs 10. What is his expected gain per roll (in Rs)?",
+      "options": [
+        "40",
+        "11",
+        "10",
+        "5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(win) = 1/3. Expected gain = 1/3 x 50 - 2/3 x 10 = 10.",
+      "shortcut": "Expected value = sum of (outcome x probability).",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 1/10 and P(B) = 3/10. What is P(A and B)?",
+      "options": [
+        "2/5",
+        "3/200",
+        "3/100",
+        "9/100"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For independent events P(A and B) = P(A) x P(B) = 1/10 x 3/10 = 3/100.",
+      "shortcut": "Independent: multiply.",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair die is rolled 2 times. What is the probability of getting at least one six?",
+      "options": [
+        "25/36",
+        "11/12",
+        "13/36",
+        "11/36"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "P(no six in a roll) = 5/6. For 2 rolls: (5/6)^2 = 25/36. P(at least one) = 1 - 25/36 = 11/36.",
+      "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The probability of an event is 3/20. What are the odds against the event? (give as against : in favour)",
+      "options": [
+        "17:3",
+        "17:2",
+        "3:17",
+        "17:5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Odds in favour = 3:17, so odds against = 17:3 = 17:3.",
+      "shortcut": "Odds against = (1 - p) : p.",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word LEADER are arranged at random. What is the probability that all the vowels come together?",
+      "options": [
+        "1/5",
+        "2/5",
+        "1/2",
+        "1/6"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total arrangements = 360. Arrangements with the vowels together = 72. Probability = 1/5.",
+      "shortcut": "Vowel block as one unit, times the internal arrangements.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cards are drawn at random without replacement from a pack of 52. What is the probability that they are both aces?",
+      "options": [
+        "1/169",
+        "1/222",
+        "1/221",
+        "3/221"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Favourable = 4C2 = 6. Total = 52C2 = 1326. Probability = 1/221.",
+      "shortcut": "Use combinations: favourable pairs / total pairs.",
+      "subPattern": "playing-cards",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "For two events A and B, P(A) = 3/10, P(B) = 2/9 and P(A or B) = 67/180. What is P(A and B)?",
+      "options": [
+        "3/20",
+        "23/20",
+        "1/4",
+        "1/15"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(A and B) = P(A) + P(B) - P(A or B) = 3/10 + 2/9 - 67/180 = 3/20.",
+      "shortcut": "Inclusion-exclusion rearranged.",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 3/8 and P(B) = 1/5. What is P(A or B)?",
+      "options": [
+        "1/4",
+        "1/2",
+        "3/2",
+        "23/40"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 3/8 + 1/5 - 3/40 = 1/2.",
+      "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word PLANET are arranged at random. What is the probability that all the vowels come together?",
+      "options": [
+        "1/2",
+        "1/5",
+        "1/3",
+        "1/6"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total arrangements = 720. Arrangements with the vowels together = 240. Probability = 1/3.",
+      "shortcut": "Vowel block as one unit, times the internal arrangements.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair coin is tossed 5 times. What is the probability of getting exactly 4 head(s)?",
+      "options": [
+        "4/5",
+        "5/32",
+        "15/32",
+        "5/33"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Favourable outcomes = 5C4 = 5. Total = 2^5 = 32. Probability = 5/32.",
+      "shortcut": "P = nCk / 2^n.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 1/10 and P(B) = 2/3. What is P(A or B)?",
+      "options": [
+        "7/10",
+        "7/17",
+        "23/30",
+        "9/10"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 1/10 + 2/3 - 1/15 = 7/10.",
+      "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One card is drawn at random from a standard pack of 52 cards. What is the probability of getting a black card that is not a face card?",
+      "options": [
+        "5/13",
+        "15/13",
+        "1/13",
+        "5/14"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "There are 20 such cards out of 52. Probability = 20/52 = 5/13.",
+      "shortcut": "Favourable cards / 52.",
+      "subPattern": "playing-cards",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word CHANGE are arranged at random. What is the probability that the arrangement begins and ends with a consonant?",
+      "options": [
+        "2/5",
+        "1/2",
+        "2/15",
+        "2/7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total arrangements = 720. Those beginning and ending with a consonant = 288. Probability = 2/5.",
+      "shortcut": "Choose the end letters first, then arrange the middle.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 6 white, 6 black and 6 blue balls. One ball is drawn at random. What is the probability that it is white?",
+      "options": [
+        "1/5",
+        "1",
+        "2/3",
+        "1/3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Favourable = 6, total = 18. Probability = 1/3.",
+      "shortcut": "Favourable / total.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A player rolls a die and wins Rs 80 if the number is 6; otherwise he loses Rs 10. What is his expected gain per roll (in Rs)?",
+      "options": [
+        "5/3",
+        "7",
+        "5",
+        "70"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(win) = 1/6. Expected gain = 1/6 x 80 - 5/6 x 10 = 5.",
+      "shortcut": "Expected value = sum of (outcome x probability).",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One card is drawn at random from a standard pack of 52 cards. What is the probability of getting an ace?",
+      "options": [
+        "1/26",
+        "1/15",
+        "1/39",
+        "1/13"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "There are 4 such cards out of 52. Probability = 4/52 = 1/13.",
+      "shortcut": "Favourable cards / 52.",
+      "subPattern": "playing-cards",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cards are drawn at random without replacement from a pack of 52. What is the probability that they are both face cards?",
+      "options": [
+        "11/232",
+        "9/169",
+        "11/663",
+        "11/221"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Favourable = 12C2 = 66. Total = 52C2 = 1326. Probability = 11/221.",
+      "shortcut": "Use combinations: favourable pairs / total pairs.",
+      "subPattern": "playing-cards",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair die is rolled 4 times. What is the probability of getting at least one even number?",
+      "options": [
+        "1/16",
+        "45/16",
+        "15/16",
+        "5/6"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(no even number in a roll) = 1/2. For 4 rolls: (1/2)^4 = 1/16. P(at least one) = 1 - 1/16 = 15/16.",
+      "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two people are chosen at random from a group of 3 men and 3 women. What is the probability that both are men?",
+      "options": [
+        "1/5",
+        "1/4",
+        "2/5",
+        "6/5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Choose both people from the 3 men among 6 people: 3C2/6C2 = 3/15 = 1/5.",
+      "shortcut": "Favourable pairs / total pairs.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The probability of an event is 1/4. What are the odds against the event? (give as against : in favour)",
+      "options": [
+        "1:3",
+        "4:1",
+        "2:1",
+        "3:1"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Odds in favour = 1:3, so odds against = 3:1 = 3:1.",
+      "shortcut": "Odds against = (1 - p) : p.",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word CHANGE are arranged at random. What is the probability that all the vowels come together?",
+      "options": [
+        "1",
+        "2/3",
+        "1/2",
+        "1/3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total arrangements = 720. Arrangements with the vowels together = 240. Probability = 1/3.",
+      "shortcut": "Vowel block as one unit, times the internal arrangements.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 3 black, 7 blue and 6 white balls. One ball is drawn at random. What is the probability that it is blue?",
+      "options": [
+        "7/16",
+        "1/3",
+        "7/18",
+        "7/32"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Favourable = 7, total = 16. Probability = 7/16.",
+      "shortcut": "Favourable / total.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two people are chosen at random from a group of 7 men and 5 women. What is the probability that both are men?",
+      "options": [
+        "49/144",
+        "29/22",
+        "7/23",
+        "7/22"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Choose both people from the 7 men among 12 people: 7C2/12C2 = 21/66 = 7/22.",
+      "shortcut": "Favourable pairs / total pairs.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word WINDOW are arranged at random. What is the probability that all the vowels come together?",
+      "options": [
+        "1/4",
+        "1/9",
+        "1/3",
+        "1/2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total arrangements = 360. Arrangements with the vowels together = 120. Probability = 1/3.",
+      "shortcut": "Vowel block as one unit, times the internal arrangements.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair coin is tossed 5 times. What is the probability of getting exactly 2 head(s)?",
+      "options": [
+        "5/18",
+        "5/16",
+        "5/21",
+        "2/5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Favourable outcomes = 5C2 = 10. Total = 2^5 = 32. Probability = 5/16.",
+      "shortcut": "P = nCk / 2^n.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 5 blue, 6 black and 6 white balls. Two balls are drawn at random without replacement. What is the probability that both are black?",
+      "options": [
+        "5/46",
+        "15/151",
+        "36/289",
+        "15/136"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Choose both balls from the 6 black balls out of 17: 6C2/17C2 = 15/136 = 15/136.",
+      "shortcut": "Both same colour: nC2 / total C2.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A committee of 3 is chosen at random from 6 men and 5 women. What is the probability that it has at least 1 woman?",
+      "options": [
+        "29/11",
+        "1/3",
+        "29/33",
+        "29/35"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 11C3 = 165. Favourable = 145. Probability = 29/33.",
+      "shortcut": "Count by gender split; divide by total C3.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One card is drawn at random from a standard pack of 52 cards. What is the probability of getting a red face card?",
+      "options": [
+        "1/13",
+        "29/26",
+        "3/26",
+        "9/26"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "There are 6 such cards out of 52. Probability = 6/52 = 3/26.",
+      "shortcut": "Favourable cards / 52.",
+      "subPattern": "playing-cards",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A two-digit number is chosen at random. What is the probability that it is divisible by 4?",
+      "options": [
+        "11/56",
+        "11/45",
+        "11/47",
+        "1/4"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "There are 90 two-digit numbers. Multiples of 4 among them: 22. Probability = 22/90 = 11/45.",
+      "shortcut": "Count multiples in the range, divide by 90.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 3 red, 6 white and 6 black balls. Two balls are drawn at random without replacement. What is the probability that both are white?",
+      "options": [
+        "1/7",
+        "3/7",
+        "1/21",
+        "4/25"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Choose both balls from the 6 white balls out of 15: 6C2/15C2 = 15/105 = 1/7.",
+      "shortcut": "Both same colour: nC2 / total C2.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair coin is tossed 5 times. What is the probability of getting at least one head?",
+      "options": [
+        "31/63",
+        "31/32",
+        "63/32",
+        "1/32"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(no head) = 1/2^5 = 1/32. P(at least one head) = 1 - 1/32 = 31/32.",
+      "shortcut": "At least one = 1 - P(none).",
+      "subPattern": "at-least-one-event",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One card is drawn at random from a standard pack of 52 cards. What is the probability of getting a face card?",
+      "options": [
+        "3/14",
+        "3/13",
+        "3/26",
+        "1/13"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "There are 12 such cards out of 52. Probability = 12/52 = 3/13.",
+      "shortcut": "Favourable cards / 52.",
+      "subPattern": "playing-cards",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 5 black, 4 white and 5 red balls. One ball is drawn at random. What is the probability that it is red?",
+      "options": [
+        "5/16",
+        "5/14",
+        "1/3",
+        "1/2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Favourable = 5, total = 14. Probability = 5/14.",
+      "shortcut": "Favourable / total.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 1/5 and P(B) = 1/5. What is P(A and B)?",
+      "options": [
+        "1/50",
+        "2/5",
+        "1/25",
+        "3/25"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For independent events P(A and B) = P(A) x P(B) = 1/5 x 1/5 = 1/25.",
+      "shortcut": "Independent: multiply.",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A two-digit number is chosen at random. What is the probability that it is divisible by 12?",
+      "options": [
+        "1/12",
+        "4/45",
+        "4/135",
+        "1/9"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "There are 90 two-digit numbers. Multiples of 12 among them: 8. Probability = 8/90 = 4/45.",
+      "shortcut": "Count multiples in the range, divide by 90.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bag contains 4 black, 2 white and 6 red balls. Three balls are drawn at random without replacement. What is the probability that one ball of each colour is drawn?",
+      "options": [
+        "1/36",
+        "4/55",
+        "14/55",
+        "12/55"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Favourable = 4 x 2 x 6 = 48. Total = 12C3 = 220. Probability = 12/55.",
+      "shortcut": "One of each: multiply the counts, divide by total C3.",
+      "subPattern": "balls-from-a-bag",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 1/6 and P(B) = 1/3. What is P(A and B)?",
+      "options": [
+        "1/19",
+        "19/18",
+        "1/2",
+        "1/18"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "For independent events P(A and B) = P(A) x P(B) = 1/6 x 1/3 = 1/18.",
+      "shortcut": "Independent: multiply.",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three persons A, B and C try to hit a target independently with probabilities 1/6, 1/6 and 1/2 respectively. What is the probability that the target is hit by at least one of them?",
+      "options": [
+        "47/119",
+        "47/72",
+        "1/72",
+        "47/36"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(all miss) = (1 - 1/6)(1 - 1/6)(1 - 1/2) = 25/72. P(at least one hit) = 47/72.",
+      "shortcut": "1 - product of the miss probabilities.",
+      "subPattern": "at-least-one-event",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fair coin is tossed 3 times. What is the probability of getting exactly 1 head(s)?",
+      "options": [
+        "3/4",
+        "3/16",
+        "1/3",
+        "3/8"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Favourable outcomes = 3C1 = 3. Total = 2^3 = 8. Probability = 3/8.",
+      "shortcut": "P = nCk / 2^n.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The probability of an event is 1/20. What are the odds against the event? (give as against : in favour)",
+      "options": [
+        "19:3",
+        "1:19",
+        "21:1",
+        "19:1"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Odds in favour = 1:19, so odds against = 19:1 = 19:1.",
+      "shortcut": "Odds against = (1 - p) : p.",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cards are drawn at random without replacement from a pack of 52. What is the probability that they are both red cards?",
+      "options": [
+        "25/127",
+        "1/4",
+        "9/34",
+        "25/102"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Favourable = 26C2 = 325. Total = 52C2 = 1326. Probability = 25/102.",
+      "shortcut": "Use combinations: favourable pairs / total pairs.",
+      "subPattern": "playing-cards",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cards are drawn at random without replacement from a pack of 52. What is the probability that they are both spades?",
+      "options": [
+        "1/34",
+        "1/16",
+        "1/51",
+        "1/17"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Favourable = 13C2 = 78. Total = 52C2 = 1326. Probability = 1/17.",
+      "shortcut": "Use combinations: favourable pairs / total pairs.",
+      "subPattern": "playing-cards",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The odds in favour of an event are 2:5. What is the probability that the event occurs?",
+      "options": [
+        "2/9",
+        "2/7",
+        "2/5",
+        "3/7"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Probability = favourable/(favourable + unfavourable) = 2/(2 + 5) = 2/7.",
+      "shortcut": "Odds a:b in favour -> probability a/(a+b).",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 1/8 and P(B) = 2/5. What is P(A or B)?",
+      "options": [
+        "19/41",
+        "19/80",
+        "19/40",
+        "21/40"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 1/8 + 2/5 - 1/20 = 19/40.",
+      "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two fair dice are thrown. What is the probability that the sum of the numbers equals 5?",
+      "options": [
+        "1/10",
+        "1/6",
+        "1/9",
+        "2/9"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Out of 36 equally likely outcomes, 4 have a sum that equals 5. Probability = 4/36 = 1/9.",
+      "shortcut": "List pairs by sum; total outcomes = 36.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The odds in favour of an event are 1:2. What is the probability that the event occurs?",
+      "options": [
+        "1/3",
+        "1/4",
+        "4/3",
+        "1/2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Probability = favourable/(favourable + unfavourable) = 1/(1 + 2) = 1/3.",
+      "shortcut": "Odds a:b in favour -> probability a/(a+b).",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A committee of 3 is chosen at random from 4 men and 3 women. What is the probability that it has exactly 2 women?",
+      "options": [
+        "12/37",
+        "1/3",
+        "12/35",
+        "6/35"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 7C3 = 35. Favourable = 12. Probability = 12/35.",
+      "shortcut": "Count by gender split; divide by total C3.",
+      "subPattern": "selection-and-number-probability",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A player rolls a die and wins Rs 60 if the number is 6; otherwise he loses Rs 10. What is his expected gain per roll (in Rs)?",
+      "options": [
+        "7/3",
+        "50",
+        "1",
+        "5/3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "P(win) = 1/6. Expected gain = 1/6 x 60 - 5/6 x 10 = 5/3.",
+      "shortcut": "Expected value = sum of (outcome x probability).",
+      "subPattern": "odds-and-expected-value",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B are independent events with P(A) = 3/8 and P(B) = 3/10. What is the probability that exactly one of them occurs?",
+      "options": [
+        "27/40",
+        "9/10",
+        "9/20",
+        "27/20"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(exactly one) = P(A)(1 - P(B)) + P(B)(1 - P(A)) = 21/80 + 3/16 = 9/20.",
+      "shortcut": "Exactly one = A without B + B without A.",
+      "subPattern": "independent-and-mutually-exclusive-events",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word MARKET are arranged at random. What is the probability that all the vowels come together?",
+      "options": [
+        "2/3",
+        "1/3",
+        "1/2",
+        "1/6"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total arrangements = 720. Arrangements with the vowels together = 240. Probability = 1/3.",
+      "shortcut": "Vowel block as one unit, times the internal arrangements.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two fair dice are thrown. What is the probability that the sum of the numbers equals 10?",
+      "options": [
+        "1/36",
+        "1/12",
+        "1/6",
+        "1/13"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Out of 36 equally likely outcomes, 3 have a sum that equals 10. Probability = 3/36 = 1/12.",
+      "shortcut": "List pairs by sum; total outcomes = 36.",
+      "subPattern": "coins-and-dice",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cards are drawn at random without replacement from a pack of 52. What is the probability that they are both hearts?",
+      "options": [
+        "3/17",
+        "1/17",
+        "1/16",
+        "1/18"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Favourable = 13C2 = 78. Total = 52C2 = 1326. Probability = 1/17.",
+      "shortcut": "Use combinations: favourable pairs / total pairs.",
+      "subPattern": "playing-cards",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The letters of the word ORANGE are arranged at random. What is the probability that all the vowels come together?",
+      "options": [
+        "1/5",
+        "2/5",
+        "6/5",
+        "1/2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total arrangements = 720. Arrangements with the vowels together = 144. Probability = 1/5.",
+      "shortcut": "Vowel block as one unit, times the internal arrangements.",
+      "subPattern": "word-arrangement-probability",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    }
+  ]
+}

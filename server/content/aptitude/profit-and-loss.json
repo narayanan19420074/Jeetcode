@@ -1,0 +1,2716 @@
+{
+ "pattern": {
+  "title": "Profit and Loss",
+  "slug": "profit-and-loss",
+  "description": "Cost price, selling price, discount and dishonest-dealer problems.",
+  "order": 5,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "basic-cp-sp-profit",
+    "title": "Basic CP, SP & profit %"
+   },
+   {
+    "slug": "successive-discounts",
+    "title": "Successive discounts"
+   },
+   {
+    "slug": "marked-price-discount",
+    "title": "Marked price & discount"
+   },
+   {
+    "slug": "false-weights",
+    "title": "False weights"
+   },
+   {
+    "slug": "dishonest-dealer",
+    "title": "Dishonest dealer"
+   },
+   {
+    "slug": "same-selling-price-gain-loss",
+    "title": "Same selling price gain & loss"
+   },
+   {
+    "slug": "mixed-items-combined-sales",
+    "title": "Mixed items & combined sales"
+   },
+   {
+    "slug": "reverse-find-cp-from-sp",
+    "title": "Reverse (find CP from SP)"
+   },
+   {
+    "slug": "profit-on-part-of-the-stock",
+    "title": "Profit on part of the stock"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "If the cost price of 12 articles is equal to the selling price of 8 articles, what is the profit or loss percent?",
+   "options": [
+    {
+     "text": "52% loss"
+    },
+    {
+     "text": "50% loss"
+    },
+    {
+     "text": "50% profit"
+    },
+    {
+     "text": "100% profit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let each article cost 1. CP of 12 = 12 = SP of 8, so SP per article = 1.5. Profit = 50%.",
+   "order": 1,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Profit % = (m - n)/n x 100 when m > n; loss % = (n - m)/n x 100 when m < n."
+  },
+  {
+   "questionText": "If the cost price of 30 articles is equal to the selling price of 24 articles, what is the profit or loss percent?",
+   "options": [
+    {
+     "text": "27% loss"
+    },
+    {
+     "text": "25% profit"
+    },
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "25% loss"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let each article cost 1. CP of 30 = 30 = SP of 24, so SP per article = 1.25. Profit = 25%.",
+   "order": 2,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Profit % = (m - n)/n x 100 when m > n; loss % = (n - m)/n x 100 when m < n."
+  },
+  {
+   "questionText": "A shopkeeper buys a mobile phone for Rs 1900 and sells it for Rs 2850. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "50% profit"
+    },
+    {
+     "text": "52% profit"
+    },
+    {
+     "text": "50% loss"
+    },
+    {
+     "text": "100% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Profit = |2850 - 1900| = 950. Profit % = (950/1900) x 100 = 50%.",
+   "order": 3,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Profit or loss percent is always calculated on the COST price, not the selling price."
+  },
+  {
+   "questionText": "A shopkeeper buys a school bag for Rs 1150 and sells it for Rs 1265. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "10% loss"
+    },
+    {
+     "text": "8% profit"
+    },
+    {
+     "text": "12% loss"
+    },
+    {
+     "text": "10% profit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Profit = |1265 - 1150| = 115. Profit % = (115/1150) x 100 = 10%.",
+   "order": 4,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Profit or loss percent is always calculated on the COST price, not the selling price."
+  },
+  {
+   "questionText": "A shopkeeper buys a school bag for Rs 1950 and sells it for Rs 1755. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "10% loss"
+    },
+    {
+     "text": "7.5% loss"
+    },
+    {
+     "text": "10% profit"
+    },
+    {
+     "text": "5% profit"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Loss = |1755 - 1950| = 195. Loss % = (195/1950) x 100 = 10%.",
+   "order": 5,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Profit or loss percent is always calculated on the COST price, not the selling price."
+  },
+  {
+   "questionText": "If the cost price of 16 articles is equal to the selling price of 8 articles, what is the profit or loss percent?",
+   "options": [
+    {
+     "text": "100% loss"
+    },
+    {
+     "text": "100% profit"
+    },
+    {
+     "text": "125% loss"
+    },
+    {
+     "text": "50% profit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let each article cost 1. CP of 16 = 16 = SP of 8, so SP per article = 2. Profit = 100%.",
+   "order": 6,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Profit % = (m - n)/n x 100 when m > n; loss % = (n - m)/n x 100 when m < n."
+  },
+  {
+   "questionText": "If the cost price of 16 articles is equal to the selling price of 20 articles, what is the profit or loss percent?",
+   "options": [
+    {
+     "text": "15% loss"
+    },
+    {
+     "text": "25% profit"
+    },
+    {
+     "text": "20% loss"
+    },
+    {
+     "text": "20% profit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let each article cost 1. CP of 16 = 16 = SP of 20, so SP per article = 0.8. Loss = 20%.",
+   "order": 7,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Profit % = (m - n)/n x 100 when m > n; loss % = (n - m)/n x 100 when m < n."
+  },
+  {
+   "questionText": "A shopkeeper buys a table for Rs 1950 and sells it for Rs 2535. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "30% loss"
+    },
+    {
+     "text": "32% profit"
+    },
+    {
+     "text": "25% loss"
+    },
+    {
+     "text": "30% profit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Profit = |2535 - 1950| = 585. Profit % = (585/1950) x 100 = 30%.",
+   "order": 8,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Profit or loss percent is always calculated on the COST price, not the selling price."
+  },
+  {
+   "questionText": "A vendor buys 15 oranges for Rs 120 and sells 12 oranges for Rs 120. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "12.5% profit"
+    },
+    {
+     "text": "23% profit"
+    },
+    {
+     "text": "25% profit"
+    },
+    {
+     "text": "25% loss"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "CP per orange = 120/15 = 8. SP per orange = 120/12 = 10. Change = (10 - 8)/8 x 100 = 25%, a 25% profit.",
+   "order": 9,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Compare cost and selling price PER ARTICLE; never compare totals of different quantities."
+  },
+  {
+   "questionText": "A man buys a mobile phone for Rs 7500, spends Rs 1300 on repairs and then sells it for Rs 11440. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "30% loss"
+    },
+    {
+     "text": "30% profit"
+    },
+    {
+     "text": "22.5% profit"
+    },
+    {
+     "text": "36% profit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total cost = 7500 + 1300 = 8800. Gain = 11440 - 8800 = 2640. Percent = (2640/8800) x 100 = 30%, i.e. a 30% profit.",
+   "order": 10,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Add overheads (repairs, transport) to the cost price before finding the percentage."
+  },
+  {
+   "questionText": "A man buys a mobile phone for Rs 4500, spends Rs 2000 on repairs and then sells it for Rs 8450. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "30% profit"
+    },
+    {
+     "text": "35% loss"
+    },
+    {
+     "text": "25% loss"
+    },
+    {
+     "text": "30% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total cost = 4500 + 2000 = 6500. Gain = 8450 - 6500 = 1950. Percent = (1950/6500) x 100 = 30%, i.e. a 30% profit.",
+   "order": 11,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Add overheads (repairs, transport) to the cost price before finding the percentage."
+  },
+  {
+   "questionText": "A vendor buys 15 oranges for Rs 390 and sells 5 oranges for Rs 143. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "8% loss"
+    },
+    {
+     "text": "12% profit"
+    },
+    {
+     "text": "10% loss"
+    },
+    {
+     "text": "10% profit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "CP per orange = 390/15 = 26. SP per orange = 143/5 = 28.6. Change = (28.6 - 26)/26 x 100 = 10%, a 10% profit.",
+   "order": 12,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Compare cost and selling price PER ARTICLE; never compare totals of different quantities."
+  },
+  {
+   "questionText": "A man buys a mobile phone for Rs 30000, spends Rs 1700 on repairs and then sells it for Rs 38040. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "26.8% profit"
+    },
+    {
+     "text": "15% loss"
+    },
+    {
+     "text": "20% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total cost = 30000 + 1700 = 31700. Gain = 38040 - 31700 = 6340. Percent = (6340/31700) x 100 = 20%, i.e. a 20% profit.",
+   "order": 13,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Add overheads (repairs, transport) to the cost price before finding the percentage."
+  },
+  {
+   "questionText": "A man buys a watch for Rs 15000, spends Rs 200 on repairs and then sells it for Rs 14440. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "6% loss"
+    },
+    {
+     "text": "5% loss"
+    },
+    {
+     "text": "5% profit"
+    },
+    {
+     "text": "7.5% profit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total cost = 15000 + 200 = 15200. Gain = 14440 - 15200 = -760. Percent = (-760/15200) x 100 = -5%, i.e. a 5% loss.",
+   "order": 14,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Add overheads (repairs, transport) to the cost price before finding the percentage."
+  },
+  {
+   "questionText": "A vendor buys 20 oranges for Rs 150 and sells 16 oranges for Rs 168. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "80% profit"
+    },
+    {
+     "text": "40% loss"
+    },
+    {
+     "text": "40% profit"
+    },
+    {
+     "text": "12% profit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "CP per orange = 150/20 = 7.5. SP per orange = 168/16 = 10.5. Change = (10.5 - 7.5)/7.5 x 100 = 40%, a 40% profit.",
+   "order": 15,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Compare cost and selling price PER ARTICLE; never compare totals of different quantities."
+  },
+  {
+   "questionText": "A vendor buys 6 oranges for Rs 180 and sells 10 oranges for Rs 450. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "50% loss"
+    },
+    {
+     "text": "100% profit"
+    },
+    {
+     "text": "150% profit"
+    },
+    {
+     "text": "50% profit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "CP per orange = 180/6 = 30. SP per orange = 450/10 = 45. Change = (45 - 30)/30 x 100 = 50%, a 50% profit.",
+   "order": 16,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Compare cost and selling price PER ARTICLE; never compare totals of different quantities."
+  },
+  {
+   "questionText": "A vendor buys 8 oranges for Rs 160 and sells 12 oranges for Rs 288. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "80% profit"
+    },
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "20% loss"
+    },
+    {
+     "text": "25% loss"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "CP per orange = 160/8 = 20. SP per orange = 288/12 = 24. Change = (24 - 20)/20 x 100 = 20%, a 20% profit.",
+   "order": 17,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare cost and selling price PER ARTICLE; never compare totals of different quantities."
+  },
+  {
+   "questionText": "A man buys a bicycle for Rs 19000, spends Rs 1600 on repairs and then sells it for Rs 16480. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "25% profit"
+    },
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "24% loss"
+    },
+    {
+     "text": "20% loss"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total cost = 19000 + 1600 = 20600. Gain = 16480 - 20600 = -4120. Percent = (-4120/20600) x 100 = -20%, i.e. a 20% loss.",
+   "order": 18,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Add overheads (repairs, transport) to the cost price before finding the percentage."
+  },
+  {
+   "questionText": "A vendor buys 8 oranges for Rs 80 and sells 10 oranges for Rs 80. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "22% loss"
+    },
+    {
+     "text": "20% loss"
+    },
+    {
+     "text": "25% profit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "CP per orange = 80/8 = 10. SP per orange = 80/10 = 8. Change = (8 - 10)/10 x 100 = -20%, a 20% loss.",
+   "order": 19,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare cost and selling price PER ARTICLE; never compare totals of different quantities."
+  },
+  {
+   "questionText": "A man buys a school bag for Rs 27000, spends Rs 1300 on repairs and then sells it for Rs 33960. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "20% loss"
+    },
+    {
+     "text": "25% loss"
+    },
+    {
+     "text": "16% profit"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total cost = 27000 + 1300 = 28300. Gain = 33960 - 28300 = 5660. Percent = (5660/28300) x 100 = 20%, i.e. a 20% profit.",
+   "order": 20,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Add overheads (repairs, transport) to the cost price before finding the percentage."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 50% above cost price but gives 6 articles for the price of 5. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "25% profit"
+    },
+    {
+     "text": "30% profit"
+    },
+    {
+     "text": "25% loss"
+    },
+    {
+     "text": "31.25% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let each article cost 1. Marked price = 1.5. Customer pays 5 x 1.5 = 7.5 for 6 articles that cost 6. Result = 25%, a 25% profit.",
+   "order": 21,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Compare what the customer pays with the cost of everything handed over."
+  },
+  {
+   "questionText": "A man sells an article at a profit of 40%. Had he bought it at 20% less and sold it for Rs 1144 less, he would have gained 20%. What is the cost price of the article?",
+   "options": [
+    {
+     "text": "Rs 2860"
+    },
+    {
+     "text": "Rs 2080"
+    },
+    {
+     "text": "Rs 4576"
+    },
+    {
+     "text": "Rs 2600"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let CP = x. Original SP = 1.4x. New CP = 0.8x, new SP = 0.96x. Difference = 0.44x = 1144, so x = Rs 2600.",
+   "order": 22,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Write both selling prices as multiples of the original CP; their difference equals the given rupee amount."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 50% above cost price but gives 10 articles for the price of 9. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "35% loss"
+    },
+    {
+     "text": "43.75% profit"
+    },
+    {
+     "text": "35% profit"
+    },
+    {
+     "text": "40% profit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let each article cost 1. Marked price = 1.5. Customer pays 9 x 1.5 = 13.5 for 10 articles that cost 10. Result = 35%, a 35% profit.",
+   "order": 23,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Compare what the customer pays with the cost of everything handed over."
+  },
+  {
+   "questionText": "A man sells an article at a profit of 20%. Had he bought it at 20% less and sold it for Rs 142 less, he would have gained 40%. What is the cost price of the article?",
+   "options": [
+    {
+     "text": "Rs 568"
+    },
+    {
+     "text": "Rs 1775"
+    },
+    {
+     "text": "Rs 2130"
+    },
+    {
+     "text": "Rs 3550"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let CP = x. Original SP = 1.2x. New CP = 0.8x, new SP = 1.12x. Difference = 0.08x = 142, so x = Rs 1775.",
+   "order": 24,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Write both selling prices as multiples of the original CP; their difference equals the given rupee amount."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 80% above cost price but gives 5 articles for the price of 4. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "44% loss"
+    },
+    {
+     "text": "44% profit"
+    },
+    {
+     "text": "60% profit"
+    },
+    {
+     "text": "42% loss"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let each article cost 1. Marked price = 1.8. Customer pays 4 x 1.8 = 7.2 for 5 articles that cost 5. Result = 44%, a 44% profit.",
+   "order": 25,
+   "subPattern": "basic-cp-sp-profit",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Compare what the customer pays with the cost of everything handed over."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 20% above the cost price and then allows a discount of 10%. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "12% profit"
+    },
+    {
+     "text": "8% loss"
+    },
+    {
+     "text": "8% profit"
+    },
+    {
+     "text": "10% profit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let CP = 100. Marked price = 120. SP = 120 x 90/100 = 108. Gain = 8%, a 8% profit.",
+   "order": 26,
+   "subPattern": "successive-discounts",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Net = x - y - xy/100 = 20 - 10 - 2."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 30% above the cost price and then allows a discount of 5%. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "23.5% loss"
+    },
+    {
+     "text": "25% profit"
+    },
+    {
+     "text": "11.75% loss"
+    },
+    {
+     "text": "23.5% profit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let CP = 100. Marked price = 130. SP = 130 x 95/100 = 123.5. Gain = 23.5%, a 23.5% profit.",
+   "order": 27,
+   "subPattern": "successive-discounts",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Net = x - y - xy/100 = 30 - 5 - 1.5."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 50% above the cost price and then allows a discount of 30%. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "5% profit"
+    },
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "4% loss"
+    },
+    {
+     "text": "5% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let CP = 100. Marked price = 150. SP = 150 x 70/100 = 105. Gain = 5%, a 5% profit.",
+   "order": 28,
+   "subPattern": "successive-discounts",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Net = x - y - xy/100 = 50 - 30 - 15."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 30% above the cost price and then allows a discount of 30%. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "4% profit"
+    },
+    {
+     "text": "9% loss"
+    },
+    {
+     "text": "9% profit"
+    },
+    {
+     "text": "11% loss"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let CP = 100. Marked price = 130. SP = 130 x 70/100 = 91. Gain = -9%, a 9% loss.",
+   "order": 29,
+   "subPattern": "successive-discounts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Net = x - y - xy/100 = 30 - 30 - 9."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 60% above cost. What rate of discount must he allow to earn a profit of 12%?",
+   "options": [
+    {
+     "text": "35%"
+    },
+    {
+     "text": "29%"
+    },
+    {
+     "text": "48%"
+    },
+    {
+     "text": "30%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let CP = 100, marked = 160. SP needed = 112. Discount = (160 - 112)/160 x 100 = 30%.",
+   "order": 30,
+   "subPattern": "successive-discounts",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "SP/Marked = 112/160; discount = 1 minus that ratio."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 60% above cost. What rate of discount must he allow to earn a profit of 52%?",
+   "options": [
+    {
+     "text": "8%"
+    },
+    {
+     "text": "7%"
+    },
+    {
+     "text": "5%"
+    },
+    {
+     "text": "3%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let CP = 100, marked = 160. SP needed = 152. Discount = (160 - 152)/160 x 100 = 5%.",
+   "order": 31,
+   "subPattern": "successive-discounts",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "SP/Marked = 152/160; discount = 1 minus that ratio."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 20% above cost. What rate of discount must he allow to earn a profit of 14%?",
+   "options": [
+    {
+     "text": "5%"
+    },
+    {
+     "text": "6%"
+    },
+    {
+     "text": "4%"
+    },
+    {
+     "text": "3%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let CP = 100, marked = 120. SP needed = 114. Discount = (120 - 114)/120 x 100 = 5%.",
+   "order": 32,
+   "subPattern": "successive-discounts",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "SP/Marked = 114/120; discount = 1 minus that ratio."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 60% above cost. What rate of discount must he allow to earn a profit of 20%?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "40%"
+    },
+    {
+     "text": "27%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let CP = 100, marked = 160. SP needed = 120. Discount = (160 - 120)/160 x 100 = 25%.",
+   "order": 33,
+   "subPattern": "successive-discounts",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "SP/Marked = 120/160; discount = 1 minus that ratio."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 60% above cost. What rate of discount must he allow to earn a profit of 28%?",
+   "options": [
+    {
+     "text": "32%"
+    },
+    {
+     "text": "18%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "19%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let CP = 100, marked = 160. SP needed = 128. Discount = (160 - 128)/160 x 100 = 20%.",
+   "order": 34,
+   "subPattern": "successive-discounts",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "SP/Marked = 128/160; discount = 1 minus that ratio."
+  },
+  {
+   "questionText": "A shopkeeper marks his goods 40% above cost. What rate of discount must he allow to earn a profit of 19%?",
+   "options": [
+    {
+     "text": "12%"
+    },
+    {
+     "text": "15%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "21%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let CP = 100, marked = 140. SP needed = 119. Discount = (140 - 119)/140 x 100 = 15%.",
+   "order": 35,
+   "subPattern": "successive-discounts",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "SP/Marked = 119/140; discount = 1 minus that ratio."
+  },
+  {
+   "questionText": "A shopkeeper wants to earn a profit of 35% after allowing a discount of 20% on the marked price. By what percent must he mark up the cost price?",
+   "options": [
+    {
+     "text": "82.5%"
+    },
+    {
+     "text": "55%"
+    },
+    {
+     "text": "137.5%"
+    },
+    {
+     "text": "68.75%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let CP = 100. Needed SP = 135. Marked price M satisfies 80% of M = 135, so M = 135 x 100/80 = 168.75. Mark-up = 68.75%.",
+   "order": 36,
+   "subPattern": "successive-discounts",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Marked price = desired SP / (1 - discount). Do not just add the two percentages."
+  },
+  {
+   "questionText": "A shopkeeper wants to earn a profit of 15% after allowing a discount of 20% on the marked price. By what percent must he mark up the cost price?",
+   "options": [
+    {
+     "text": "48.75%"
+    },
+    {
+     "text": "43.75%"
+    },
+    {
+     "text": "42.75%"
+    },
+    {
+     "text": "35%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let CP = 100. Needed SP = 115. Marked price M satisfies 80% of M = 115, so M = 115 x 100/80 = 143.75. Mark-up = 43.75%.",
+   "order": 37,
+   "subPattern": "successive-discounts",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Marked price = desired SP / (1 - discount). Do not just add the two percentages."
+  },
+  {
+   "questionText": "A shopkeeper wants to earn a profit of 30% after allowing a discount of 20% on the marked price. By what percent must he mark up the cost price?",
+   "options": [
+    {
+     "text": "50%"
+    },
+    {
+     "text": "75%"
+    },
+    {
+     "text": "125%"
+    },
+    {
+     "text": "62.5%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let CP = 100. Needed SP = 130. Marked price M satisfies 80% of M = 130, so M = 130 x 100/80 = 162.5. Mark-up = 62.5%.",
+   "order": 38,
+   "subPattern": "successive-discounts",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Marked price = desired SP / (1 - discount). Do not just add the two percentages."
+  },
+  {
+   "questionText": "A wall clock is marked at Rs 7250. A discount of 10% is offered. What is the selling price?",
+   "options": [
+    {
+     "text": "Rs 6525"
+    },
+    {
+     "text": "Rs 7975"
+    },
+    {
+     "text": "Rs 725"
+    },
+    {
+     "text": "Rs 7830"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Discount = 10% of 7250 = 725. SP = 7250 - 725 = Rs 6525.",
+   "order": 39,
+   "subPattern": "marked-price-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "SP = 90% of marked price = 7250 x 90/100."
+  },
+  {
+   "questionText": "A laptop bag is marked at Rs 3900. A discount of 10% is offered. What is the selling price?",
+   "options": [
+    {
+     "text": "Rs 3861"
+    },
+    {
+     "text": "Rs 4290"
+    },
+    {
+     "text": "Rs 3510"
+    },
+    {
+     "text": "Rs 390"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Discount = 10% of 3900 = 390. SP = 3900 - 390 = Rs 3510.",
+   "order": 40,
+   "subPattern": "marked-price-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "SP = 90% of marked price = 3900 x 90/100."
+  },
+  {
+   "questionText": "A laptop bag is marked at Rs 3550. A discount of 40% is offered. What is the selling price?",
+   "options": [
+    {
+     "text": "Rs 4970"
+    },
+    {
+     "text": "Rs 1420"
+    },
+    {
+     "text": "Rs 2130"
+    },
+    {
+     "text": "Rs 4260"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Discount = 40% of 3550 = 1420. SP = 3550 - 1420 = Rs 2130.",
+   "order": 41,
+   "subPattern": "marked-price-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "SP = 60% of marked price = 3550 x 60/100."
+  },
+  {
+   "questionText": "A jacket is marked at Rs 2400. A discount of 15% is offered. What is the selling price?",
+   "options": [
+    {
+     "text": "Rs 2040"
+    },
+    {
+     "text": "Rs 360"
+    },
+    {
+     "text": "Rs 3060"
+    },
+    {
+     "text": "Rs 2760"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Discount = 15% of 2400 = 360. SP = 2400 - 360 = Rs 2040.",
+   "order": 42,
+   "subPattern": "marked-price-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "SP = 85% of marked price = 2400 x 85/100."
+  },
+  {
+   "questionText": "A laptop bag marked at Rs 8100 is sold for Rs 4860. What is the rate of discount?",
+   "options": [
+    {
+     "text": "80%"
+    },
+    {
+     "text": "40%"
+    },
+    {
+     "text": "32%"
+    },
+    {
+     "text": "48%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Discount = 8100 - 4860 = 3240. Rate = (3240/8100) x 100 = 40%.",
+   "order": 43,
+   "subPattern": "marked-price-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Discount percent is always calculated on the MARKED price."
+  },
+  {
+   "questionText": "A pair of shoes marked at Rs 7700 is sold for Rs 6930. What is the rate of discount?",
+   "options": [
+    {
+     "text": "9%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "11%"
+    },
+    {
+     "text": "10%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Discount = 7700 - 6930 = 770. Rate = (770/7700) x 100 = 10%.",
+   "order": 44,
+   "subPattern": "marked-price-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Discount percent is always calculated on the MARKED price."
+  },
+  {
+   "questionText": "A laptop bag marked at Rs 800 is sold for Rs 640. What is the rate of discount?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "40%"
+    },
+    {
+     "text": "19%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Discount = 800 - 640 = 160. Rate = (160/800) x 100 = 20%.",
+   "order": 45,
+   "subPattern": "marked-price-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Discount percent is always calculated on the MARKED price."
+  },
+  {
+   "questionText": "A pair of shoes marked at Rs 4000 is sold for Rs 3400. What is the rate of discount?",
+   "options": [
+    {
+     "text": "30%"
+    },
+    {
+     "text": "17%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "15%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Discount = 4000 - 3400 = 600. Rate = (600/4000) x 100 = 15%.",
+   "order": 46,
+   "subPattern": "marked-price-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Discount percent is always calculated on the MARKED price."
+  },
+  {
+   "questionText": "A pair of shoes marked at Rs 3000 is sold for Rs 2100. What is the rate of discount?",
+   "options": [
+    {
+     "text": "15%"
+    },
+    {
+     "text": "28%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "20%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Discount = 3000 - 2100 = 900. Rate = (900/3000) x 100 = 30%.",
+   "order": 47,
+   "subPattern": "marked-price-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Discount percent is always calculated on the MARKED price."
+  },
+  {
+   "questionText": "A pair of shoes marked at Rs 3700 is sold for Rs 2590. What is the rate of discount?",
+   "options": [
+    {
+     "text": "30%"
+    },
+    {
+     "text": "45%"
+    },
+    {
+     "text": "28%"
+    },
+    {
+     "text": "60%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Discount = 3700 - 2590 = 1110. Rate = (1110/3700) x 100 = 30%.",
+   "order": 48,
+   "subPattern": "marked-price-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Discount percent is always calculated on the MARKED price."
+  },
+  {
+   "questionText": "A shopkeeper marks an article at Rs 4700 and allows successive discounts of 25% and 5%. If the cost price of the article is Rs 4700, what is his profit or loss percent?",
+   "options": [
+    {
+     "text": "28.75% profit"
+    },
+    {
+     "text": "34.5% loss"
+    },
+    {
+     "text": "28.75% loss"
+    },
+    {
+     "text": "26.75% loss"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "SP = 4700 x 0.75 x 0.95 = 3348.75. Gain = -1351.25. Percent = (-1351.25/4700) x 100 = 28.75%, a 28.75% loss.",
+   "order": 49,
+   "subPattern": "marked-price-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Apply the two discounts one after the other (multiply the factors), then compare SP with CP."
+  },
+  {
+   "questionText": "A shopkeeper marks an article at Rs 4300 and allows successive discounts of 15% and 25%. If the cost price of the article is Rs 1500, what is his profit or loss percent?",
+   "options": [
+    {
+     "text": "82.75% profit"
+    },
+    {
+     "text": "99.3% loss"
+    },
+    {
+     "text": "80.75% loss"
+    },
+    {
+     "text": "82.75% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "SP = 4300 x 0.85 x 0.75 = 2741.25. Gain = 1241.25. Percent = (1241.25/1500) x 100 = 82.75%, a 82.75% profit.",
+   "order": 50,
+   "subPattern": "marked-price-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Apply the two discounts one after the other (multiply the factors), then compare SP with CP."
+  },
+  {
+   "questionText": "A dishonest shopkeeper claims to sell at cost price but uses a weight of 400 g in place of 1 kg while selling wheat. What is his gain percent?",
+   "options": [
+    {
+     "text": "60%"
+    },
+    {
+     "text": "120%"
+    },
+    {
+     "text": "100%"
+    },
+    {
+     "text": "150%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "He gives 400 g but charges for 1000 g. Gain = (1000 - 400)/400 x 100 = 150%.",
+   "order": 51,
+   "subPattern": "false-weights",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Gain % = (error / true weight given) x 100. Divide by what he actually GIVES."
+  },
+  {
+   "questionText": "A dishonest shopkeeper claims to sell at cost price but uses a weight of 640 g in place of 1 kg while selling flour. What is his gain percent?",
+   "options": [
+    {
+     "text": "54.25%"
+    },
+    {
+     "text": "56.25%"
+    },
+    {
+     "text": "36%"
+    },
+    {
+     "text": "57.25%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "He gives 640 g but charges for 1000 g. Gain = (1000 - 640)/640 x 100 = 56.25%.",
+   "order": 52,
+   "subPattern": "false-weights",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Gain % = (error / true weight given) x 100. Divide by what he actually GIVES."
+  },
+  {
+   "questionText": "A dishonest shopkeeper claims to sell at cost price but uses a weight of 500 g in place of 1 kg while selling flour. What is his gain percent?",
+   "options": [
+    {
+     "text": "100%"
+    },
+    {
+     "text": "150%"
+    },
+    {
+     "text": "110%"
+    },
+    {
+     "text": "50%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He gives 500 g but charges for 1000 g. Gain = (1000 - 500)/500 x 100 = 100%.",
+   "order": 53,
+   "subPattern": "false-weights",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Gain % = (error / true weight given) x 100. Divide by what he actually GIVES."
+  },
+  {
+   "questionText": "A shopkeeper sells rice at cost price but his false weight makes him gain 100%. How many grams does his '1 kg' weight actually weigh?",
+   "options": [
+    {
+     "text": "450 g"
+    },
+    {
+     "text": "500 g"
+    },
+    {
+     "text": "250 g"
+    },
+    {
+     "text": "1000 g"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the weight be w g. (1000 - w)/w x 100 = 100, so 1000/w = 2 and w = 500 g.",
+   "order": 54,
+   "subPattern": "false-weights",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Weight = 1000 / (1 + gain/100) = 1000/2."
+  },
+  {
+   "questionText": "A shopkeeper sells sugar at cost price but his false weight makes him gain 60%. How many grams does his '1 kg' weight actually weigh?",
+   "options": [
+    {
+     "text": "750 g"
+    },
+    {
+     "text": "500 g"
+    },
+    {
+     "text": "375 g"
+    },
+    {
+     "text": "625 g"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the weight be w g. (1000 - w)/w x 100 = 60, so 1000/w = 1.6 and w = 625 g.",
+   "order": 55,
+   "subPattern": "false-weights",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Weight = 1000 / (1 + gain/100) = 1000/1.6."
+  },
+  {
+   "questionText": "A shopkeeper sells rice at cost price but his false weight makes him gain 60%. How many grams does his '1 kg' weight actually weigh?",
+   "options": [
+    {
+     "text": "1250 g"
+    },
+    {
+     "text": "500 g"
+    },
+    {
+     "text": "625 g"
+    },
+    {
+     "text": "375 g"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let the weight be w g. (1000 - w)/w x 100 = 60, so 1000/w = 1.6 and w = 625 g.",
+   "order": 56,
+   "subPattern": "false-weights",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Weight = 1000 / (1 + gain/100) = 1000/1.6."
+  },
+  {
+   "questionText": "A shopkeeper sells flour at cost price but his false weight makes him gain 25%. How many grams does his '1 kg' weight actually weigh?",
+   "options": [
+    {
+     "text": "800 g"
+    },
+    {
+     "text": "200 g"
+    },
+    {
+     "text": "1200 g"
+    },
+    {
+     "text": "880 g"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the weight be w g. (1000 - w)/w x 100 = 25, so 1000/w = 1.25 and w = 800 g.",
+   "order": 57,
+   "subPattern": "false-weights",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Weight = 1000 / (1 + gain/100) = 1000/1.25."
+  },
+  {
+   "questionText": "A shopkeeper sells pulses at cost price but his false weight makes him gain 100%. How many grams does his '1 kg' weight actually weigh?",
+   "options": [
+    {
+     "text": "550 g"
+    },
+    {
+     "text": "450 g"
+    },
+    {
+     "text": "625 g"
+    },
+    {
+     "text": "500 g"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the weight be w g. (1000 - w)/w x 100 = 100, so 1000/w = 2 and w = 500 g.",
+   "order": 58,
+   "subPattern": "false-weights",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Weight = 1000 / (1 + gain/100) = 1000/2."
+  },
+  {
+   "questionText": "A shopkeeper sells sugar at cost price but his false weight makes him gain 150%. How many grams does his '1 kg' weight actually weigh?",
+   "options": [
+    {
+     "text": "600 g"
+    },
+    {
+     "text": "200 g"
+    },
+    {
+     "text": "400 g"
+    },
+    {
+     "text": "500 g"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let the weight be w g. (1000 - w)/w x 100 = 150, so 1000/w = 2.5 and w = 400 g.",
+   "order": 59,
+   "subPattern": "false-weights",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Weight = 1000 / (1 + gain/100) = 1000/2.5."
+  },
+  {
+   "questionText": "A shopkeeper sells wheat at cost price but his false weight makes him gain 25%. How many grams does his '1 kg' weight actually weigh?",
+   "options": [
+    {
+     "text": "600 g"
+    },
+    {
+     "text": "800 g"
+    },
+    {
+     "text": "200 g"
+    },
+    {
+     "text": "720 g"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the weight be w g. (1000 - w)/w x 100 = 25, so 1000/w = 1.25 and w = 800 g.",
+   "order": 60,
+   "subPattern": "false-weights",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Weight = 1000 / (1 + gain/100) = 1000/1.25."
+  },
+  {
+   "questionText": "A dealer uses a 800 g weight instead of 1 kg for flour and also marks up his price by 20% above cost. What is his overall profit percent?",
+   "options": [
+    {
+     "text": "50%"
+    },
+    {
+     "text": "55%"
+    },
+    {
+     "text": "52%"
+    },
+    {
+     "text": "45%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "For 800 g he takes the price of 1000 g at 120% of cost. Gain factor = 1.2 x 1000/800 = 1.5. Profit = 50%.",
+   "order": 61,
+   "subPattern": "false-weights",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two gain factors (price mark-up and false weight); do not add the percentages."
+  },
+  {
+   "questionText": "A dealer uses a 625 g weight instead of 1 kg for rice and also marks up his price by 20% above cost. What is his overall profit percent?",
+   "options": [
+    {
+     "text": "80%"
+    },
+    {
+     "text": "184%"
+    },
+    {
+     "text": "92%"
+    },
+    {
+     "text": "69%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "For 625 g he takes the price of 1000 g at 120% of cost. Gain factor = 1.2 x 1000/625 = 1.92. Profit = 92%.",
+   "order": 62,
+   "subPattern": "false-weights",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two gain factors (price mark-up and false weight); do not add the percentages."
+  },
+  {
+   "questionText": "A dealer uses a 500 g weight instead of 1 kg for sugar and also marks up his price by 25% above cost. What is his overall profit percent?",
+   "options": [
+    {
+     "text": "125%"
+    },
+    {
+     "text": "300%"
+    },
+    {
+     "text": "180%"
+    },
+    {
+     "text": "150%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "For 500 g he takes the price of 1000 g at 125% of cost. Gain factor = 1.25 x 1000/500 = 2.5. Profit = 150%.",
+   "order": 63,
+   "subPattern": "false-weights",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two gain factors (price mark-up and false weight); do not add the percentages."
+  },
+  {
+   "questionText": "A man sells two articles at Rs 1600 each. On one he gains 12% and on the other he loses 12%. What is his overall gain or loss percent?",
+   "options": [
+    {
+     "text": "2.88% loss"
+    },
+    {
+     "text": "1.44% loss"
+    },
+    {
+     "text": "1.44% profit"
+    },
+    {
+     "text": "12% profit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When two articles are sold at the same price with equal profit and loss percent, there is always a loss of x^2/100 = 12^2/100 = 1.44%.",
+   "order": 64,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Shortcut: loss % = (12)^2 / 100 = 1.44%."
+  },
+  {
+   "questionText": "A man sells two articles at Rs 2200 each. On one he gains 15% and on the other he loses 15%. What is his overall gain or loss percent?",
+   "options": [
+    {
+     "text": "2.25% loss"
+    },
+    {
+     "text": "2.25% profit"
+    },
+    {
+     "text": "0.25% loss"
+    },
+    {
+     "text": "15% profit"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When two articles are sold at the same price with equal profit and loss percent, there is always a loss of x^2/100 = 15^2/100 = 2.25%.",
+   "order": 65,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Shortcut: loss % = (15)^2 / 100 = 2.25%."
+  },
+  {
+   "questionText": "A man sells two articles at Rs 500 each. On one he gains 20% and on the other he loses 20%. What is his overall gain or loss percent?",
+   "options": [
+    {
+     "text": "4% profit"
+    },
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "4% loss"
+    },
+    {
+     "text": "2% loss"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When two articles are sold at the same price with equal profit and loss percent, there is always a loss of x^2/100 = 20^2/100 = 4%.",
+   "order": 66,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Shortcut: loss % = (20)^2 / 100 = 4%."
+  },
+  {
+   "questionText": "A man sells two articles at Rs 5000 each. On one he gains 40% and on the other he loses 40%. What is his overall gain or loss percent?",
+   "options": [
+    {
+     "text": "32% profit"
+    },
+    {
+     "text": "16% loss"
+    },
+    {
+     "text": "40% profit"
+    },
+    {
+     "text": "16% profit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When two articles are sold at the same price with equal profit and loss percent, there is always a loss of x^2/100 = 40^2/100 = 16%.",
+   "order": 67,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Shortcut: loss % = (40)^2 / 100 = 16%."
+  },
+  {
+   "questionText": "A trader sells two radios at Rs 4320 each, one at a gain of 20% and the other at a loss of 20%. What is his net loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 180"
+    },
+    {
+     "text": "Rs 864"
+    },
+    {
+     "text": "Rs 396"
+    },
+    {
+     "text": "Rs 360"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "CP of first = 4320 x 100/120 = 3600. CP of second = 4320 x 100/80 = 5400. Total CP = 9000, total SP = 8640. Loss = Rs 360.",
+   "order": 68,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find each cost price from its own selling price (divide), then compare totals."
+  },
+  {
+   "questionText": "A trader sells two radios at Rs 1320 each, one at a gain of 20% and the other at a loss of 20%. What is his net loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 99"
+    },
+    {
+     "text": "Rs 110"
+    },
+    {
+     "text": "Rs 220"
+    },
+    {
+     "text": "Rs 264"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "CP of first = 1320 x 100/120 = 1100. CP of second = 1320 x 100/80 = 1650. Total CP = 2750, total SP = 2640. Loss = Rs 110.",
+   "order": 69,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find each cost price from its own selling price (divide), then compare totals."
+  },
+  {
+   "questionText": "A trader sells two radios at Rs 4380 each, one at a gain of 50% and the other at a loss of 50%. What is his net loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 2920"
+    },
+    {
+     "text": "Rs 3504"
+    },
+    {
+     "text": "Rs 2190"
+    },
+    {
+     "text": "Rs 2336"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "CP of first = 4380 x 100/150 = 2920. CP of second = 4380 x 100/50 = 8760. Total CP = 11680, total SP = 8760. Loss = Rs 2920.",
+   "order": 70,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find each cost price from its own selling price (divide), then compare totals."
+  },
+  {
+   "questionText": "A trader sells two radios at Rs 3000 each, one at a gain of 50% and the other at a loss of 50%. What is his net loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 4000"
+    },
+    {
+     "text": "Rs 2200"
+    },
+    {
+     "text": "Rs 1500"
+    },
+    {
+     "text": "Rs 2000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "CP of first = 3000 x 100/150 = 2000. CP of second = 3000 x 100/50 = 6000. Total CP = 8000, total SP = 6000. Loss = Rs 2000.",
+   "order": 71,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Find each cost price from its own selling price (divide), then compare totals."
+  },
+  {
+   "questionText": "A trader sells two radios at Rs 4140 each, one at a gain of 25% and the other at a loss of 25%. What is his net loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 1104"
+    },
+    {
+     "text": "Rs 1035"
+    },
+    {
+     "text": "Rs 552"
+    },
+    {
+     "text": "Rs 414"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "CP of first = 4140 x 100/125 = 3312. CP of second = 4140 x 100/75 = 5520. Total CP = 8832, total SP = 8280. Loss = Rs 552.",
+   "order": 72,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find each cost price from its own selling price (divide), then compare totals."
+  },
+  {
+   "questionText": "A trader sells two radios at Rs 5640 each, one at a gain of 50% and the other at a loss of 50%. What is his net loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 2820"
+    },
+    {
+     "text": "Rs 1880"
+    },
+    {
+     "text": "Rs 4512"
+    },
+    {
+     "text": "Rs 3760"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "CP of first = 5640 x 100/150 = 3760. CP of second = 5640 x 100/50 = 11280. Total CP = 15040, total SP = 11280. Loss = Rs 3760.",
+   "order": 73,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find each cost price from its own selling price (divide), then compare totals."
+  },
+  {
+   "questionText": "A dealer sells two machines at Rs 1500 each. On the first he gains 20% and on the second he loses 40%. What is his overall profit or loss percent?",
+   "options": [
+    {
+     "text": "16% profit"
+    },
+    {
+     "text": "20% loss"
+    },
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "25% profit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "CP1 = 1250, CP2 = 2500. Total CP = 3750, total SP = 3000. Net = -750, which is 20% of total CP: a 20% loss.",
+   "order": 74,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Never average the percentages; always compare total SP with total CP."
+  },
+  {
+   "questionText": "A dealer sells two machines at Rs 5760 each. On the first he gains 50% and on the second he loses 10%. What is his overall profit or loss percent?",
+   "options": [
+    {
+     "text": "12.5% profit"
+    },
+    {
+     "text": "12.5% loss"
+    },
+    {
+     "text": "40% profit"
+    },
+    {
+     "text": "10.5% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "CP1 = 3840, CP2 = 6400. Total CP = 10240, total SP = 11520. Net = 1280, which is 12.5% of total CP: a 12.5% profit.",
+   "order": 75,
+   "subPattern": "same-selling-price-gain-loss",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Never average the percentages; always compare total SP with total CP."
+  },
+  {
+   "questionText": "A trader sells one-fourth of his goods at a profit of 10% and the rest at a loss of 20%. What is his overall profit or loss percent?",
+   "options": [
+    {
+     "text": "6.25% profit"
+    },
+    {
+     "text": "12.5% profit"
+    },
+    {
+     "text": "12.5% loss"
+    },
+    {
+     "text": "10% loss"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let total CP = 100. Profit on first part = 2.5, loss on the rest = 15. Net = -12.5, a 12.5% loss.",
+   "order": 76,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Weight each percentage by the share of goods it applies to (assuming total cost = 100)."
+  },
+  {
+   "questionText": "A trader sells half of his goods at a profit of 25% and the rest at a loss of 10%. What is his overall profit or loss percent?",
+   "options": [
+    {
+     "text": "7.5% loss"
+    },
+    {
+     "text": "12.5% profit"
+    },
+    {
+     "text": "7.5% profit"
+    },
+    {
+     "text": "15% profit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let total CP = 100. Profit on first part = 12.5, loss on the rest = 5. Net = 7.5, a 7.5% profit.",
+   "order": 77,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Weight each percentage by the share of goods it applies to (assuming total cost = 100)."
+  },
+  {
+   "questionText": "A trader sells half of his goods at a profit of 25% and the rest at a loss of 20%. What is his overall profit or loss percent?",
+   "options": [
+    {
+     "text": "2.5% profit"
+    },
+    {
+     "text": "0.5% profit"
+    },
+    {
+     "text": "2.5% loss"
+    },
+    {
+     "text": "5% profit"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let total CP = 100. Profit on first part = 12.5, loss on the rest = 10. Net = 2.5, a 2.5% profit.",
+   "order": 78,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Weight each percentage by the share of goods it applies to (assuming total cost = 100)."
+  },
+  {
+   "questionText": "A trader buys goods worth Rs 12000. He sells half of them at a profit of 30% and the remaining at a loss of 5%. What is his net profit or loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 3000"
+    },
+    {
+     "text": "Rs 1500"
+    },
+    {
+     "text": "Rs 750"
+    },
+    {
+     "text": "Rs 1650"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Profit on the first part = 6000 x 30% = 1800. Loss on the rest = 6000 x 5% = 300. Net = Rs 1500 profit.",
+   "order": 79,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Split the total cost into the two parts first, then compute each part's gain or loss separately."
+  },
+  {
+   "questionText": "A trader buys goods worth Rs 22500. He sells one-third of them at a profit of 10% and the remaining at a loss of 10%. What is his net profit or loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 22500"
+    },
+    {
+     "text": "Rs 675"
+    },
+    {
+     "text": "Rs 375"
+    },
+    {
+     "text": "Rs 750"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Profit on the first part = 7500 x 10% = 750. Loss on the rest = 15000 x 10% = 1500. Net = Rs 750 loss.",
+   "order": 80,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Split the total cost into the two parts first, then compute each part's gain or loss separately."
+  },
+  {
+   "questionText": "A trader buys goods worth Rs 28000. He sells two-fifths of them at a profit of 10% and the remaining at a loss of 15%. What is his net profit or loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 1680"
+    },
+    {
+     "text": "Rs 1400"
+    },
+    {
+     "text": "Rs -1400"
+    },
+    {
+     "text": "Rs 1120"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Profit on the first part = 11200 x 10% = 1120. Loss on the rest = 16800 x 15% = 2520. Net = Rs 1400 loss.",
+   "order": 81,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Split the total cost into the two parts first, then compute each part's gain or loss separately."
+  },
+  {
+   "questionText": "A trader buys goods worth Rs 30000. He sells two-fifths of them at a profit of 10% and the remaining at a loss of 5%. What is his net profit or loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 300"
+    },
+    {
+     "text": "Rs 1500"
+    },
+    {
+     "text": "Rs 225"
+    },
+    {
+     "text": "Rs 150"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Profit on the first part = 12000 x 10% = 1200. Loss on the rest = 18000 x 5% = 900. Net = Rs 300 profit.",
+   "order": 82,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Split the total cost into the two parts first, then compute each part's gain or loss separately."
+  },
+  {
+   "questionText": "A trader buys goods worth Rs 10000. He sells half of them at a profit of 10% and the remaining at a loss of 15%. What is his net profit or loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 200"
+    },
+    {
+     "text": "Rs -500"
+    },
+    {
+     "text": "Rs 225"
+    },
+    {
+     "text": "Rs 250"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Profit on the first part = 5000 x 10% = 500. Loss on the rest = 5000 x 15% = 750. Net = Rs 250 loss.",
+   "order": 83,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Split the total cost into the two parts first, then compute each part's gain or loss separately."
+  },
+  {
+   "questionText": "A trader buys goods worth Rs 21000. He sells three-fourths of them at a profit of 30% and the remaining at a loss of 10%. What is his net profit or loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 4620"
+    },
+    {
+     "text": "Rs 5250"
+    },
+    {
+     "text": "Rs 4200"
+    },
+    {
+     "text": "Rs 3780"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Profit on the first part = 15750 x 30% = 4725. Loss on the rest = 5250 x 10% = 525. Net = Rs 4200 profit.",
+   "order": 84,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Split the total cost into the two parts first, then compute each part's gain or loss separately."
+  },
+  {
+   "questionText": "A trader buys goods worth Rs 22000. He sells two-fifths of them at a profit of 20% and the remaining at a loss of 20%. What is his net profit or loss in rupees?",
+   "options": [
+    {
+     "text": "Rs 1056"
+    },
+    {
+     "text": "Rs 22000"
+    },
+    {
+     "text": "Rs 880"
+    },
+    {
+     "text": "Rs 792"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Profit on the first part = 8800 x 20% = 1760. Loss on the rest = 13200 x 20% = 2640. Net = Rs 880 loss.",
+   "order": 85,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Split the total cost into the two parts first, then compute each part's gain or loss separately."
+  },
+  {
+   "questionText": "A trader sells one-fifth of his goods at a profit of 10%. At what percent loss must he sell the rest to break even overall?",
+   "options": [
+    {
+     "text": "2.75%"
+    },
+    {
+     "text": "2.5%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "0.5%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let total CP = 100. Profit on the first part = 2. To reach an overall 0, the rest must make a loss of 2 on a cost of 80. Loss % = 2/80 x 100 = 2.5%.",
+   "order": 86,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Set (profit on part 1) - (loss on part 2) = target gain, then solve for the loss percent."
+  },
+  {
+   "questionText": "A trader sells two-fifths of his goods at a profit of 30%. At what percent loss must he sell the rest to break even overall?",
+   "options": [
+    {
+     "text": "22%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "20%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let total CP = 100. Profit on the first part = 12. To reach an overall 0, the rest must make a loss of 12 on a cost of 60. Loss % = 12/60 x 100 = 20%.",
+   "order": 87,
+   "subPattern": "mixed-items-combined-sales",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Set (profit on part 1) - (loss on part 2) = target gain, then solve for the loss percent."
+  },
+  {
+   "questionText": "An article is sold for Rs 3990 at a loss of 5%. What is its cost price?",
+   "options": [
+    {
+     "text": "Rs 4200"
+    },
+    {
+     "text": "Rs 2100"
+    },
+    {
+     "text": "Rs 4189.5"
+    },
+    {
+     "text": "Rs 8400"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "SP = 95% of CP, so CP = 3990 x 100/95 = Rs 4200.",
+   "order": 88,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "CP = SP / 0.95."
+  },
+  {
+   "questionText": "An article is sold for Rs 3645 at a loss of 10%. What is its cost price?",
+   "options": [
+    {
+     "text": "Rs 4009.5"
+    },
+    {
+     "text": "Rs 8100"
+    },
+    {
+     "text": "Rs 4050"
+    },
+    {
+     "text": "Rs 6075"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "SP = 90% of CP, so CP = 3645 x 100/90 = Rs 4050.",
+   "order": 89,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "CP = SP / 0.9."
+  },
+  {
+   "questionText": "An article is sold for Rs 1950 at a loss of 40%. What is its cost price?",
+   "options": [
+    {
+     "text": "Rs 2730"
+    },
+    {
+     "text": "Rs 3575"
+    },
+    {
+     "text": "Rs 2925"
+    },
+    {
+     "text": "Rs 3250"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "SP = 60% of CP, so CP = 1950 x 100/60 = Rs 3250.",
+   "order": 90,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "CP = SP / 0.6."
+  },
+  {
+   "questionText": "An article is sold for Rs 4545 at a loss of 10%. What is its cost price?",
+   "options": [
+    {
+     "text": "Rs 7575"
+    },
+    {
+     "text": "Rs 5050"
+    },
+    {
+     "text": "Rs 4545"
+    },
+    {
+     "text": "Rs 4999.5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "SP = 90% of CP, so CP = 4545 x 100/90 = Rs 5050.",
+   "order": 91,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "CP = SP / 0.9."
+  },
+  {
+   "questionText": "A man sells an article for Rs 1575 at a loss of 25%. At what price should he sell it to gain 10%?",
+   "options": [
+    {
+     "text": "Rs 2310"
+    },
+    {
+     "text": "Rs 1540"
+    },
+    {
+     "text": "Rs 2541"
+    },
+    {
+     "text": "Rs 1732.5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "CP = 1575 x 100/75 = 2100. Required SP = 2100 x 110/100 = Rs 2310.",
+   "order": 92,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "First recover the cost price from the loss; then apply the new profit on that CP."
+  },
+  {
+   "questionText": "A man sells an article for Rs 4505 at a loss of 15%. At what price should he sell it to gain 10%?",
+   "options": [
+    {
+     "text": "Rs 6413"
+    },
+    {
+     "text": "Rs 5830"
+    },
+    {
+     "text": "Rs 8745"
+    },
+    {
+     "text": "Rs 4955.5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "CP = 4505 x 100/85 = 5300. Required SP = 5300 x 110/100 = Rs 5830.",
+   "order": 93,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First recover the cost price from the loss; then apply the new profit on that CP."
+  },
+  {
+   "questionText": "A man sells an article for Rs 2520 at a loss of 10%. At what price should he sell it to gain 30%?",
+   "options": [
+    {
+     "text": "Rs 2730"
+    },
+    {
+     "text": "Rs 4004"
+    },
+    {
+     "text": "Rs 3640"
+    },
+    {
+     "text": "Rs 3276"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "CP = 2520 x 100/90 = 2800. Required SP = 2800 x 130/100 = Rs 3640.",
+   "order": 94,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "First recover the cost price from the loss; then apply the new profit on that CP."
+  },
+  {
+   "questionText": "A man sells an article for Rs 400 at a loss of 20%. At what price should he sell it to gain 30%?",
+   "options": [
+    {
+     "text": "Rs 520"
+    },
+    {
+     "text": "Rs 715"
+    },
+    {
+     "text": "Rs 1300"
+    },
+    {
+     "text": "Rs 650"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "CP = 400 x 100/80 = 500. Required SP = 500 x 130/100 = Rs 650.",
+   "order": 95,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "First recover the cost price from the loss; then apply the new profit on that CP."
+  },
+  {
+   "questionText": "A man sells an article for Rs 1710 at a loss of 10%. At what price should he sell it to gain 30%?",
+   "options": [
+    {
+     "text": "Rs 2470"
+    },
+    {
+     "text": "Rs 2223"
+    },
+    {
+     "text": "Rs 2717"
+    },
+    {
+     "text": "Rs 1235"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "CP = 1710 x 100/90 = 1900. Required SP = 1900 x 130/100 = Rs 2470.",
+   "order": 96,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First recover the cost price from the loss; then apply the new profit on that CP."
+  },
+  {
+   "questionText": "A man sells an article for Rs 4050 at a loss of 25%. At what price should he sell it to gain 25%?",
+   "options": [
+    {
+     "text": "Rs 5062.5"
+    },
+    {
+     "text": "Rs 6750"
+    },
+    {
+     "text": "Rs 13500"
+    },
+    {
+     "text": "Rs 3375"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "CP = 4050 x 100/75 = 5400. Required SP = 5400 x 125/100 = Rs 6750.",
+   "order": 97,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "First recover the cost price from the loss; then apply the new profit on that CP."
+  },
+  {
+   "questionText": "A sells an article to B at a profit of 40%, and B sells it to C at a profit of 10%. If C pays Rs 924, what did A pay for it?",
+   "options": [
+    {
+     "text": "Rs 600"
+    },
+    {
+     "text": "Rs 616"
+    },
+    {
+     "text": "Rs 400"
+    },
+    {
+     "text": "Rs 750"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "C's price = A's cost x 1.4 x 1.1. So A's cost = 924 / 1.54 = Rs 600.",
+   "order": 98,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Chain the multipliers; divide by each in turn (not by the sum of the percentages)."
+  },
+  {
+   "questionText": "If an article is sold for Rs 4025, there is a profit of 15%. If it is sold for Rs 3325, there is a loss of 5%. What is the cost price?",
+   "options": [
+    {
+     "text": "Rs 700"
+    },
+    {
+     "text": "Rs 7000"
+    },
+    {
+     "text": "Rs 3500"
+    },
+    {
+     "text": "Rs 4200"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The two selling prices differ by 700, which equals (15 + 5)% of CP. CP = 700 x 100/20 = Rs 3500.",
+   "order": 99,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Price gap = (15 + 5)% of CP, so CP = gap x 100 / 20."
+  },
+  {
+   "questionText": "If an article is sold for Rs 6600, there is a profit of 10%. If it is sold for Rs 5400, there is a loss of 10%. What is the cost price?",
+   "options": [
+    {
+     "text": "Rs 7200"
+    },
+    {
+     "text": "Rs 1200"
+    },
+    {
+     "text": "Rs 5400"
+    },
+    {
+     "text": "Rs 6000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The two selling prices differ by 1200, which equals (10 + 10)% of CP. CP = 1200 x 100/20 = Rs 6000.",
+   "order": 100,
+   "subPattern": "reverse-find-cp-from-sp",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Price gap = (10 + 10)% of CP, so CP = gap x 100 / 20."
+  }
+ ]
+}

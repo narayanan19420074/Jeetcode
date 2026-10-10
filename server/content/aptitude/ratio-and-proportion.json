@@ -1,0 +1,2720 @@
+{
+ "pattern": {
+  "title": "Ratio and Proportion",
+  "slug": "ratio-and-proportion",
+  "description": "Ratios, proportions, variation and sharing.",
+  "order": 6,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "basic-ratio-simplification",
+    "title": "Basic ratio & simplification"
+   },
+   {
+    "slug": "compound-ratio",
+    "title": "Compound ratio"
+   },
+   {
+    "slug": "direct-inverse-proportion",
+    "title": "Direct & inverse proportion"
+   },
+   {
+    "slug": "mean-third-fourth-proportional",
+    "title": "Mean, third & fourth proportional"
+   },
+   {
+    "slug": "dividing-a-quantity-in-a-ratio",
+    "title": "Dividing a quantity in a ratio"
+   },
+   {
+    "slug": "ratio-of-incomes-expenses",
+    "title": "Ratio of incomes & expenses"
+   },
+   {
+    "slug": "changing-ratios-add-remove",
+    "title": "Changing ratios (add/remove)"
+   },
+   {
+    "slug": "partial-variation",
+    "title": "Partial variation"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "If A:B = 7:8 and B:C = 2:3, find A:C.",
+   "options": [
+    {
+     "text": "7:11"
+    },
+    {
+     "text": "7:12"
+    },
+    {
+     "text": "5:12"
+    },
+    {
+     "text": "9:11"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A/C = (A/B) x (B/C) = (7/8) x (2/3) = 14/24, so A:C = 7:12.",
+   "order": 1,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Multiply the two fractions; B cancels."
+  },
+  {
+   "questionText": "If A:B = 5:6 and B:C = 4:5, find A:C.",
+   "options": [
+    {
+     "text": "2:5"
+    },
+    {
+     "text": "4:3"
+    },
+    {
+     "text": "9:11"
+    },
+    {
+     "text": "2:3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A/C = (A/B) x (B/C) = (5/6) x (4/5) = 20/30, so A:C = 2:3.",
+   "order": 2,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two fractions; B cancels."
+  },
+  {
+   "questionText": "If A:B = 2:5 and B:C = 7:8, find A:C.",
+   "options": [
+    {
+     "text": "7:20"
+    },
+    {
+     "text": "3:10"
+    },
+    {
+     "text": "2:5"
+    },
+    {
+     "text": "9:13"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A/C = (A/B) x (B/C) = (2/5) x (7/8) = 14/40, so A:C = 7:20.",
+   "order": 3,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two fractions; B cancels."
+  },
+  {
+   "questionText": "If A:B = 4:5 and B:C = 2:3, find A:C.",
+   "options": [
+    {
+     "text": "4:7"
+    },
+    {
+     "text": "7:15"
+    },
+    {
+     "text": "8:15"
+    },
+    {
+     "text": "3:4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A/C = (A/B) x (B/C) = (4/5) x (2/3) = 8/15, so A:C = 8:15.",
+   "order": 4,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two fractions; B cancels."
+  },
+  {
+   "questionText": "If A:B = 3:5 and B:C = 2:5, find A:B:C.",
+   "options": [
+    {
+     "text": "6:10:25"
+    },
+    {
+     "text": "7:10:25"
+    },
+    {
+     "text": "4:10:25"
+    },
+    {
+     "text": "3:5:5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Make B equal in both: A:B = 6:10 and B:C = 10:25. So A:B:C = 6:10:25 = 6:10:25.",
+   "order": 5,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match."
+  },
+  {
+   "questionText": "If A:B = 2:3 and B:C = 2:5, find A:B:C.",
+   "options": [
+    {
+     "text": "2:3:5"
+    },
+    {
+     "text": "4:8:15"
+    },
+    {
+     "text": "4:6:17"
+    },
+    {
+     "text": "4:6:15"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Make B equal in both: A:B = 4:6 and B:C = 6:15. So A:B:C = 4:6:15 = 4:6:15.",
+   "order": 6,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match."
+  },
+  {
+   "questionText": "If A:B = 3:4 and B:C = 7:8, find A:B:C.",
+   "options": [
+    {
+     "text": "21:27:32"
+    },
+    {
+     "text": "3:4:8"
+    },
+    {
+     "text": "21:28:32"
+    },
+    {
+     "text": "21:29:32"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Make B equal in both: A:B = 21:28 and B:C = 28:32. So A:B:C = 21:28:32 = 21:28:32.",
+   "order": 7,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match."
+  },
+  {
+   "questionText": "If A:B = 3:5 and B:C = 4:5, find A:B:C.",
+   "options": [
+    {
+     "text": "3:5:5"
+    },
+    {
+     "text": "12:20:25"
+    },
+    {
+     "text": "12:19:25"
+    },
+    {
+     "text": "14:20:25"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Make B equal in both: A:B = 12:20 and B:C = 20:25. So A:B:C = 12:20:25 = 12:20:25.",
+   "order": 8,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match."
+  },
+  {
+   "questionText": "If A:B = 2:3 and B:C = 3:4, find A:B:C.",
+   "options": [
+    {
+     "text": "2:3:4"
+    },
+    {
+     "text": "1:3:4"
+    },
+    {
+     "text": "1:1:2"
+    },
+    {
+     "text": "2:1:4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Make B equal in both: A:B = 6:9 and B:C = 9:12. So A:B:C = 6:9:12 = 2:3:4.",
+   "order": 9,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match."
+  },
+  {
+   "questionText": "If A:B = 4:5 and B:C = 3:4, find A:B:C.",
+   "options": [
+    {
+     "text": "4:5:7"
+    },
+    {
+     "text": "12:15:22"
+    },
+    {
+     "text": "12:15:20"
+    },
+    {
+     "text": "4:5:4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Make B equal in both: A:B = 12:15 and B:C = 15:20. So A:B:C = 12:15:20 = 12:15:20.",
+   "order": 10,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match."
+  },
+  {
+   "questionText": "A, B and C share Rs 6970 such that A:B = 3:5 and B:C = 2:5. What is C's share?",
+   "options": [
+    {
+     "text": "Rs 2125"
+    },
+    {
+     "text": "Rs 1020"
+    },
+    {
+     "text": "Rs 8500"
+    },
+    {
+     "text": "Rs 4250"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A:B:C = 6:10:25. Sum of parts = 41. C's share = 6970 x 25/41 = Rs 4250.",
+   "order": 11,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Combine into A:B:C first, then divide the amount by the sum of parts."
+  },
+  {
+   "questionText": "A, B and C share Rs 180 such that A:B = 3:4 and B:C = 4:5. What is C's share?",
+   "options": [
+    {
+     "text": "Rs 60"
+    },
+    {
+     "text": "Rs 75"
+    },
+    {
+     "text": "Rs 45"
+    },
+    {
+     "text": "Rs 50"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A:B:C = 3:4:5. Sum of parts = 12. C's share = 180 x 5/12 = Rs 75.",
+   "order": 12,
+   "subPattern": "basic-ratio-simplification",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Combine into A:B:C first, then divide the amount by the sum of parts."
+  },
+  {
+   "questionText": "Find the compound ratio of 7:9 and 2:5.",
+   "options": [
+    {
+     "text": "14:45"
+    },
+    {
+     "text": "14:43"
+    },
+    {
+     "text": "16:45"
+    },
+    {
+     "text": "9:14"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compound ratio = (7 x 2) : (9 x 5) = 14:45 = 14:45.",
+   "order": 13,
+   "subPattern": "compound-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Multiply the antecedents together and the consequents together."
+  },
+  {
+   "questionText": "Find the compound ratio of 5:6 and 3:5.",
+   "options": [
+    {
+     "text": "1:1"
+    },
+    {
+     "text": "3:2"
+    },
+    {
+     "text": "8:11"
+    },
+    {
+     "text": "1:2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Compound ratio = (5 x 3) : (6 x 5) = 15:30 = 1:2.",
+   "order": 14,
+   "subPattern": "compound-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the antecedents together and the consequents together."
+  },
+  {
+   "questionText": "Find the compound ratio of 3:4 and 2:5.",
+   "options": [
+    {
+     "text": "1:3"
+    },
+    {
+     "text": "10:3"
+    },
+    {
+     "text": "3:10"
+    },
+    {
+     "text": "5:9"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Compound ratio = (3 x 2) : (4 x 5) = 6:20 = 3:10.",
+   "order": 15,
+   "subPattern": "compound-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Multiply the antecedents together and the consequents together."
+  },
+  {
+   "questionText": "Find the compound of the duplicate ratio of 3:5 and the sub-duplicate ratio of 9:16.",
+   "options": [
+    {
+     "text": "3:11"
+    },
+    {
+     "text": "27:100"
+    },
+    {
+     "text": "9:34"
+    },
+    {
+     "text": "81:400"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Duplicate of 3:5 = 9:25. Sub-duplicate of 9:16 = 3:4. Compound = (9 x 3) : (25 x 4) = 27:100.",
+   "order": 16,
+   "subPattern": "compound-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Duplicate = square both terms; sub-duplicate = square root of both terms."
+  },
+  {
+   "questionText": "Find the compound of the duplicate ratio of 4:5 and the sub-duplicate ratio of 25:36.",
+   "options": [
+    {
+     "text": "8:15"
+    },
+    {
+     "text": "15:8"
+    },
+    {
+     "text": "8:17"
+    },
+    {
+     "text": "4:9"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Duplicate of 4:5 = 16:25. Sub-duplicate of 25:36 = 5:6. Compound = (16 x 5) : (25 x 6) = 8:15.",
+   "order": 17,
+   "subPattern": "compound-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Duplicate = square both terms; sub-duplicate = square root of both terms."
+  },
+  {
+   "questionText": "Find the compound of the duplicate ratio of 3:5 and the sub-duplicate ratio of 9:25.",
+   "options": [
+    {
+     "text": "28:125"
+    },
+    {
+     "text": "1:5"
+    },
+    {
+     "text": "27:125"
+    },
+    {
+     "text": "81:625"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Duplicate of 3:5 = 9:25. Sub-duplicate of 9:25 = 3:5. Compound = (9 x 3) : (25 x 5) = 27:125.",
+   "order": 18,
+   "subPattern": "compound-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Duplicate = square both terms; sub-duplicate = square root of both terms."
+  },
+  {
+   "questionText": "Find the compound of the duplicate ratio of 2:3 and the sub-duplicate ratio of 9:25.",
+   "options": [
+    {
+     "text": "1:5"
+    },
+    {
+     "text": "4:15"
+    },
+    {
+     "text": "1:4"
+    },
+    {
+     "text": "4:25"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Duplicate of 2:3 = 4:9. Sub-duplicate of 9:25 = 3:5. Compound = (4 x 3) : (9 x 5) = 4:15.",
+   "order": 19,
+   "subPattern": "compound-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Duplicate = square both terms; sub-duplicate = square root of both terms."
+  },
+  {
+   "questionText": "Find the compound of the duplicate ratio of 2:3 and the sub-duplicate ratio of 4:25.",
+   "options": [
+    {
+     "text": "16:225"
+    },
+    {
+     "text": "1:5"
+    },
+    {
+     "text": "45:8"
+    },
+    {
+     "text": "8:45"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Duplicate of 2:3 = 4:9. Sub-duplicate of 4:25 = 2:5. Compound = (4 x 2) : (9 x 5) = 8:45.",
+   "order": 20,
+   "subPattern": "compound-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Duplicate = square both terms; sub-duplicate = square root of both terms."
+  },
+  {
+   "questionText": "Find the compound of the duplicate ratio of 2:3 and the sub-duplicate ratio of 25:36.",
+   "options": [
+    {
+     "text": "11:27"
+    },
+    {
+     "text": "25:81"
+    },
+    {
+     "text": "10:29"
+    },
+    {
+     "text": "10:27"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Duplicate of 2:3 = 4:9. Sub-duplicate of 25:36 = 5:6. Compound = (4 x 5) : (9 x 6) = 10:27.",
+   "order": 21,
+   "subPattern": "compound-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Duplicate = square both terms; sub-duplicate = square root of both terms."
+  },
+  {
+   "questionText": "Find the compound of the duplicate ratio of 3:4 and the sub-duplicate ratio of 4:25.",
+   "options": [
+    {
+     "text": "9:40"
+    },
+    {
+     "text": "3:13"
+    },
+    {
+     "text": "40:9"
+    },
+    {
+     "text": "9:100"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Duplicate of 3:4 = 9:16. Sub-duplicate of 4:25 = 2:5. Compound = (9 x 2) : (16 x 5) = 9:40.",
+   "order": 22,
+   "subPattern": "compound-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Duplicate = square both terms; sub-duplicate = square root of both terms."
+  },
+  {
+   "questionText": "Two numbers are in the ratio that is the compound of 3:4 and 4:7. If the first number is 270, what is the second?",
+   "options": [
+    {
+     "text": "756"
+    },
+    {
+     "text": "630"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "420"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compound ratio = 12:28. So 270/second = 12/28, giving second = 270 x 28/12 = 630.",
+   "order": 23,
+   "subPattern": "compound-ratio",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Form the compound ratio first, then use unitary method on the given number."
+  },
+  {
+   "questionText": "Two numbers are in the ratio that is the compound of 5:6 and 3:4. If the first number is 370, what is the second?",
+   "options": [
+    {
+     "text": "1184"
+    },
+    {
+     "text": "888"
+    },
+    {
+     "text": "592"
+    },
+    {
+     "text": "444"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Compound ratio = 15:24. So 370/second = 15/24, giving second = 370 x 24/15 = 592.",
+   "order": 24,
+   "subPattern": "compound-ratio",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Form the compound ratio first, then use unitary method on the given number."
+  },
+  {
+   "questionText": "Two numbers are in the ratio that is the compound of 5:6 and 2:5. If the first number is 65, what is the second?",
+   "options": [
+    {
+     "text": "234"
+    },
+    {
+     "text": "195"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "130"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compound ratio = 10:30. So 65/second = 10/30, giving second = 65 x 30/10 = 195.",
+   "order": 25,
+   "subPattern": "compound-ratio",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Form the compound ratio first, then use unitary method on the given number."
+  },
+  {
+   "questionText": "If 12 mangoes cost Rs 60, what is the cost of 24 mangoes?",
+   "options": [
+    {
+     "text": "Rs 108"
+    },
+    {
+     "text": "Rs 30"
+    },
+    {
+     "text": "Rs 180"
+    },
+    {
+     "text": "Rs 120"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cost is directly proportional to quantity. 12 : 60 = 24 : x, so x = 60 x 24/12 = Rs 120.",
+   "order": 26,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Cost of 1 = 5; multiply by 24."
+  },
+  {
+   "questionText": "If 20 mangoes cost Rs 100, what is the cost of 18 mangoes?",
+   "options": [
+    {
+     "text": "Rs 90"
+    },
+    {
+     "text": "Rs 120"
+    },
+    {
+     "text": "Rs 180"
+    },
+    {
+     "text": "Rs 72"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cost is directly proportional to quantity. 20 : 100 = 18 : x, so x = 100 x 18/20 = Rs 90.",
+   "order": 27,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Cost of 1 = 5; multiply by 18."
+  },
+  {
+   "questionText": "If 10 mangoes cost Rs 100, what is the cost of 18 mangoes?",
+   "options": [
+    {
+     "text": "Rs 360"
+    },
+    {
+     "text": "Rs 162"
+    },
+    {
+     "text": "Rs 180"
+    },
+    {
+     "text": "Rs 198"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cost is directly proportional to quantity. 10 : 100 = 18 : x, so x = 100 x 18/10 = Rs 180.",
+   "order": 28,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Cost of 1 = 10; multiply by 18."
+  },
+  {
+   "questionText": "If 6 notebooks cost Rs 36, what is the cost of 25 notebooks?",
+   "options": [
+    {
+     "text": "Rs 135"
+    },
+    {
+     "text": "Rs 150"
+    },
+    {
+     "text": "Rs 8.64"
+    },
+    {
+     "text": "Rs 100"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cost is directly proportional to quantity. 6 : 36 = 25 : x, so x = 36 x 25/6 = Rs 150.",
+   "order": 29,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cost of 1 = 6; multiply by 25."
+  },
+  {
+   "questionText": "A train takes 6 hours at a speed of 72 km/h. At 54 km/h, how many hours will it take for the same journey?",
+   "options": [
+    {
+     "text": "8 hours"
+    },
+    {
+     "text": "4.5 hours"
+    },
+    {
+     "text": "10 hours"
+    },
+    {
+     "text": "6 hours"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Time is inversely proportional to speed. 72 x 6 = 54 x t, so t = 432/54 = 8 hours.",
+   "order": 30,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Speed x time = constant (distance)."
+  },
+  {
+   "questionText": "y is directly proportional to the square of x. If y = 32 when x = 4, what is y when x = 10?",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "y = kx^2, so k = 32/4^2 = 2. For x = 10: y = 2 x 10^2 = 200.",
+   "order": 31,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "y2 = y1 x (x2/x1)^2 = 32 x (10/4)^2."
+  },
+  {
+   "questionText": "A train takes 12 hours at a speed of 50 km/h. At 100 km/h, how many hours will it take for the same journey?",
+   "options": [
+    {
+     "text": "24 hours"
+    },
+    {
+     "text": "8 hours"
+    },
+    {
+     "text": "6 hours"
+    },
+    {
+     "text": "4 hours"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Time is inversely proportional to speed. 50 x 12 = 100 x t, so t = 600/100 = 6 hours.",
+   "order": 32,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Speed x time = constant (distance)."
+  },
+  {
+   "questionText": "A train takes 15 hours at a speed of 72 km/h. At 48 km/h, how many hours will it take for the same journey?",
+   "options": [
+    {
+     "text": "30 hours"
+    },
+    {
+     "text": "22.5 hours"
+    },
+    {
+     "text": "10 hours"
+    },
+    {
+     "text": "27.5 hours"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Time is inversely proportional to speed. 72 x 15 = 48 x t, so t = 1080/48 = 22.5 hours.",
+   "order": 33,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Speed x time = constant (distance)."
+  },
+  {
+   "questionText": "A train takes 12 hours at a speed of 40 km/h. At 120 km/h, how many hours will it take for the same journey?",
+   "options": [
+    {
+     "text": "36 hours"
+    },
+    {
+     "text": "6 hours"
+    },
+    {
+     "text": "4 hours"
+    },
+    {
+     "text": "2 hours"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Time is inversely proportional to speed. 40 x 12 = 120 x t, so t = 480/120 = 4 hours.",
+   "order": 34,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Speed x time = constant (distance)."
+  },
+  {
+   "questionText": "y is directly proportional to the square of x. If y = 32 when x = 2, what is y when x = 15?",
+   "options": [
+    {
+     "text": "240"
+    },
+    {
+     "text": "900"
+    },
+    {
+     "text": "2400"
+    },
+    {
+     "text": "1800"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "y = kx^2, so k = 32/2^2 = 8. For x = 15: y = 8 x 15^2 = 1800.",
+   "order": 35,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "y2 = y1 x (x2/x1)^2 = 32 x (15/2)^2."
+  },
+  {
+   "questionText": "A varies directly as B and inversely as C. If A = 3 when B = 5 and C = 4, find A when B = 5 and C = 6.",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A = kB/C, so k = A x C/B = 3 x 4/5 = 2.4. Then A = 2.4 x 5/6 = 2.",
+   "order": 36,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "A2 = A1 x (B2/B1) x (C1/C2): multiply by the direct ratio and the inverted inverse ratio."
+  },
+  {
+   "questionText": "A varies directly as B and inversely as C. If A = 5 when B = 4 and C = 12, find A when B = 8 and C = 3.",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "42"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A = kB/C, so k = A x C/B = 5 x 12/4 = 15. Then A = 15 x 8/3 = 40.",
+   "order": 37,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "A2 = A1 x (B2/B1) x (C1/C2): multiply by the direct ratio and the inverted inverse ratio."
+  },
+  {
+   "questionText": "A varies directly as B and inversely as C. If A = 8 when B = 6 and C = 9, find A when B = 10 and C = 4.",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A = kB/C, so k = A x C/B = 8 x 9/6 = 12. Then A = 12 x 10/4 = 30.",
+   "order": 38,
+   "subPattern": "direct-inverse-proportion",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "A2 = A1 x (B2/B1) x (C1/C2): multiply by the direct ratio and the inverted inverse ratio."
+  },
+  {
+   "questionText": "Find x if 4 : 12 = 12 : x.",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "37"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Product of extremes = product of means: 4 x x = 12 x 12, so x = 144/4 = 36.",
+   "order": 39,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cross-multiply: x = (second x third) / first."
+  },
+  {
+   "questionText": "Find x if 6 : 24 = 9 : x.",
+   "options": [
+    {
+     "text": "38"
+    },
+    {
+     "text": "2.25"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Product of extremes = product of means: 6 x x = 24 x 9, so x = 216/6 = 36.",
+   "order": 40,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Cross-multiply: x = (second x third) / first."
+  },
+  {
+   "questionText": "Find x if 6 : 24 = 15 : x.",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "54"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "3.75"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Product of extremes = product of means: 6 x x = 24 x 15, so x = 360/6 = 60.",
+   "order": 41,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Cross-multiply: x = (second x third) / first."
+  },
+  {
+   "questionText": "Find x if 9 : 18 = 6 : x.",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Product of extremes = product of means: 9 x x = 18 x 6, so x = 108/9 = 12.",
+   "order": 42,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Cross-multiply: x = (second x third) / first."
+  },
+  {
+   "questionText": "What is the mean proportional between 10 and 40?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "15"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Mean proportional = sqrt(a x b) = sqrt(10 x 40) = sqrt(400) = 20.",
+   "order": 43,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Mean proportional = square root of the product."
+  },
+  {
+   "questionText": "What is the third proportional to 5 and 30?",
+   "options": [
+    {
+     "text": "225"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "270"
+    },
+    {
+     "text": "180"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "If a : b = b : c, then c = b^2/a = 30^2/5 = 180.",
+   "order": 44,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Third proportional = (second)^2 / first."
+  },
+  {
+   "questionText": "What is the mean proportional between 3 and 192?",
+   "options": [
+    {
+     "text": "97.5"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Mean proportional = sqrt(a x b) = sqrt(3 x 192) = sqrt(576) = 24.",
+   "order": 45,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Mean proportional = square root of the product."
+  },
+  {
+   "questionText": "What is the third proportional to 8 and 8?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If a : b = b : c, then c = b^2/a = 8^2/8 = 8.",
+   "order": 46,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Third proportional = (second)^2 / first."
+  },
+  {
+   "questionText": "What is the mean proportional between 3 and 12?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "7.5"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Mean proportional = sqrt(a x b) = sqrt(3 x 12) = sqrt(36) = 6.",
+   "order": 47,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Mean proportional = square root of the product."
+  },
+  {
+   "questionText": "What is the third proportional to 2 and 12?",
+   "options": [
+    {
+     "text": "14"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "54"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If a : b = b : c, then c = b^2/a = 12^2/2 = 72.",
+   "order": 48,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Third proportional = (second)^2 / first."
+  },
+  {
+   "questionText": "If x : y = 3 : 5, find (3x + 2y) : (2x - y).",
+   "options": [
+    {
+     "text": "19:1"
+    },
+    {
+     "text": "19:2"
+    },
+    {
+     "text": "18:1"
+    },
+    {
+     "text": "5:1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let x = 3k and y = 5k. Numerator = 3(3k) + 2(5k) = 19k. Denominator = 2(3k) - 1(5k) = 1k. Ratio = 19:1.",
+   "order": 49,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Substitute x = (first)k, y = (second)k; k cancels."
+  },
+  {
+   "questionText": "If (a + b) : (a - b) = 12 : 2, find a : b.",
+   "options": [
+    {
+     "text": "6:1"
+    },
+    {
+     "text": "5:7"
+    },
+    {
+     "text": "7:4"
+    },
+    {
+     "text": "7:5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "By componendo and dividendo: a/b = (12 + 2)/(12 - 2) = 14/10 = 7:5.",
+   "order": 50,
+   "subPattern": "mean-third-fourth-proportional",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "For (a+b)/(a-b) = m/n, a/b = (m+n)/(m-n)."
+  },
+  {
+   "questionText": "A bag contains Rs 1, Rs 2 and Rs 5 coins in the ratio 4:5:6. The total value is Rs 1144. How many Rs 2 coins are there?",
+   "options": [
+    {
+     "text": "260"
+    },
+    {
+     "text": "130"
+    },
+    {
+     "text": "143"
+    },
+    {
+     "text": "572"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the coin counts be 4k, 5k, 6k. Value = 4k + 2(5k) + 5(6k) = 44k = 1144, so k = 26. Rs 2 coins = 5 x 26 = 130.",
+   "order": 51,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Total value per k = (count x coin value) summed; solve for k."
+  },
+  {
+   "questionText": "A bag contains Rs 1, Rs 2 and Rs 5 coins in the ratio 3:4:5. The total value is Rs 648. How many Rs 2 coins are there?",
+   "options": [
+    {
+     "text": "324"
+    },
+    {
+     "text": "108"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "48"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let the coin counts be 3k, 4k, 5k. Value = 3k + 2(4k) + 5(5k) = 36k = 648, so k = 18. Rs 2 coins = 4 x 18 = 72.",
+   "order": 52,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Total value per k = (count x coin value) summed; solve for k."
+  },
+  {
+   "questionText": "A bag contains Rs 1, Rs 2 and Rs 5 coins in the ratio 5:3:2. The total value is Rs 462. How many Rs 2 coins are there?",
+   "options": [
+    {
+     "text": "44"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "88"
+    },
+    {
+     "text": "231"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the coin counts be 5k, 3k, 2k. Value = 5k + 2(3k) + 5(2k) = 21k = 462, so k = 22. Rs 2 coins = 3 x 22 = 66.",
+   "order": 53,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Total value per k = (count x coin value) summed; solve for k."
+  },
+  {
+   "questionText": "Rs 2240 is divided between Farid and Anil in the ratio 2:5. How much does Anil get?",
+   "options": [
+    {
+     "text": "Rs 1600"
+    },
+    {
+     "text": "Rs 1440"
+    },
+    {
+     "text": "Rs 640"
+    },
+    {
+     "text": "Rs 1760"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total parts = 2 + 5 = 7. One part = 2240/7 = 320. Anil gets 5 x 320 = Rs 1600.",
+   "order": 54,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Value of 1 part = total / 7; multiply by your share's parts."
+  },
+  {
+   "questionText": "Rs 1680 is divided between Farid and Divya in the ratio 2:5. How much does Farid get?",
+   "options": [
+    {
+     "text": "Rs 640"
+    },
+    {
+     "text": "Rs 384"
+    },
+    {
+     "text": "Rs 480"
+    },
+    {
+     "text": "Rs 1200"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total parts = 2 + 5 = 7. One part = 1680/7 = 240. Farid gets 2 x 240 = Rs 480.",
+   "order": 55,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Value of 1 part = total / 7; multiply by your share's parts."
+  },
+  {
+   "questionText": "Rs 2340 is divided between Divya and Esha in the ratio 4:5. How much does Divya get?",
+   "options": [
+    {
+     "text": "Rs 1300"
+    },
+    {
+     "text": "Rs 780"
+    },
+    {
+     "text": "Rs 1248"
+    },
+    {
+     "text": "Rs 1040"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total parts = 4 + 5 = 9. One part = 2340/9 = 260. Divya gets 4 x 260 = Rs 1040.",
+   "order": 56,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Value of 1 part = total / 9; multiply by your share's parts."
+  },
+  {
+   "questionText": "Rs 1820 is divided between Anil and Charu in the ratio 2:5. How much does Anil get?",
+   "options": [
+    {
+     "text": "Rs 520"
+    },
+    {
+     "text": "Rs 1300"
+    },
+    {
+     "text": "Rs 572"
+    },
+    {
+     "text": "Rs 468"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total parts = 2 + 5 = 7. One part = 1820/7 = 260. Anil gets 2 x 260 = Rs 520.",
+   "order": 57,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Value of 1 part = total / 7; multiply by your share's parts."
+  },
+  {
+   "questionText": "A purse has Rs 1, Rs 2 and Rs 5 coins in the ratio 5:3:2 and their total value is Rs 798. How many coins are there in all?",
+   "options": [
+    {
+     "text": "190"
+    },
+    {
+     "text": "380"
+    },
+    {
+     "text": "798"
+    },
+    {
+     "text": "456"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Value per k = 5 x 1 + 3 x 2 + 2 x 5 = 21. So k = 798/21 = 38. Total coins = (5 + 3 + 2) x 38 = 380.",
+   "order": 58,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k."
+  },
+  {
+   "questionText": "Rs 1170 is divided among Anil, Divya and Esha in the ratio 1:3:5. What is the difference between the largest and the smallest shares?",
+   "options": [
+    {
+     "text": "Rs 650"
+    },
+    {
+     "text": "Rs 416"
+    },
+    {
+     "text": "Rs 780"
+    },
+    {
+     "text": "Rs 520"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "One part = 1170/9 = 130. Difference in parts = 5 - 1 = 4. Difference = 4 x 130 = Rs 520.",
+   "order": 59,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Largest minus smallest = (5 - 1) parts; one part = total/9."
+  },
+  {
+   "questionText": "A purse has Rs 1, Rs 2 and Rs 5 coins in the ratio 6:5:4 and their total value is Rs 1008. How many coins are there in all?",
+   "options": [
+    {
+     "text": "504"
+    },
+    {
+     "text": "1008"
+    },
+    {
+     "text": "420"
+    },
+    {
+     "text": "336"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Value per k = 6 x 1 + 5 x 2 + 4 x 5 = 36. So k = 1008/36 = 28. Total coins = (6 + 5 + 4) x 28 = 420.",
+   "order": 60,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k."
+  },
+  {
+   "questionText": "Rs 3900 is divided among Anil, Bala and Farid in the ratio 4:5:6. What is the difference between the largest and the smallest shares?",
+   "options": [
+    {
+     "text": "Rs 520"
+    },
+    {
+     "text": "Rs 572"
+    },
+    {
+     "text": "Rs 1560"
+    },
+    {
+     "text": "Rs 624"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "One part = 3900/15 = 260. Difference in parts = 6 - 4 = 2. Difference = 2 x 260 = Rs 520.",
+   "order": 61,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Largest minus smallest = (6 - 4) parts; one part = total/15."
+  },
+  {
+   "questionText": "Rs 1680 is divided among Anil, Charu and Divya in the ratio 3:4:5. What is the difference between the largest and the smallest shares?",
+   "options": [
+    {
+     "text": "Rs 700"
+    },
+    {
+     "text": "Rs 224"
+    },
+    {
+     "text": "Rs 420"
+    },
+    {
+     "text": "Rs 280"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "One part = 1680/12 = 140. Difference in parts = 5 - 3 = 2. Difference = 2 x 140 = Rs 280.",
+   "order": 62,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Largest minus smallest = (5 - 3) parts; one part = total/12."
+  },
+  {
+   "questionText": "A purse has Rs 1, Rs 2 and Rs 5 coins in the ratio 2:3:4 and their total value is Rs 196. How many coins are there in all?",
+   "options": [
+    {
+     "text": "84"
+    },
+    {
+     "text": "63"
+    },
+    {
+     "text": "42"
+    },
+    {
+     "text": "196"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Value per k = 2 x 1 + 3 x 2 + 4 x 5 = 28. So k = 196/28 = 7. Total coins = (2 + 3 + 4) x 7 = 63.",
+   "order": 63,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k."
+  },
+  {
+   "questionText": "Rs 200 is divided among Farid, Anil and Charu in the ratio 2:3:5. What is the difference between the largest and the smallest shares?",
+   "options": [
+    {
+     "text": "Rs 100"
+    },
+    {
+     "text": "Rs 75"
+    },
+    {
+     "text": "Rs 60"
+    },
+    {
+     "text": "Rs 40"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "One part = 200/10 = 20. Difference in parts = 5 - 2 = 3. Difference = 3 x 20 = Rs 60.",
+   "order": 64,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Largest minus smallest = (5 - 2) parts; one part = total/10."
+  },
+  {
+   "questionText": "A purse has Rs 1, Rs 2 and Rs 5 coins in the ratio 4:5:6 and their total value is Rs 1100. How many coins are there in all?",
+   "options": [
+    {
+     "text": "450"
+    },
+    {
+     "text": "375"
+    },
+    {
+     "text": "1100"
+    },
+    {
+     "text": "250"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Value per k = 4 x 1 + 5 x 2 + 6 x 5 = 44. So k = 1100/44 = 25. Total coins = (4 + 5 + 6) x 25 = 375.",
+   "order": 65,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k."
+  },
+  {
+   "questionText": "A purse has Rs 1, Rs 2 and Rs 5 coins in the ratio 2:3:4 and their total value is Rs 1064. How many coins are there in all?",
+   "options": [
+    {
+     "text": "342"
+    },
+    {
+     "text": "1064"
+    },
+    {
+     "text": "684"
+    },
+    {
+     "text": "171"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Value per k = 2 x 1 + 3 x 2 + 4 x 5 = 28. So k = 1064/28 = 38. Total coins = (2 + 3 + 4) x 38 = 342.",
+   "order": 66,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k."
+  },
+  {
+   "questionText": "A purse has Rs 1, Rs 2 and Rs 5 coins in the ratio 5:3:2 and their total value is Rs 462. How many coins are there in all?",
+   "options": [
+    {
+     "text": "462"
+    },
+    {
+     "text": "275"
+    },
+    {
+     "text": "198"
+    },
+    {
+     "text": "220"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Value per k = 5 x 1 + 3 x 2 + 2 x 5 = 21. So k = 462/21 = 22. Total coins = (5 + 3 + 2) x 22 = 220.",
+   "order": 67,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k."
+  },
+  {
+   "questionText": "Rs 3600 is divided among Charu, Anil and Bala in the ratio 4:5:6. What is the difference between the largest and the smallest shares?",
+   "options": [
+    {
+     "text": "Rs 432"
+    },
+    {
+     "text": "Rs 1440"
+    },
+    {
+     "text": "Rs 480"
+    },
+    {
+     "text": "Rs 384"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "One part = 3600/15 = 240. Difference in parts = 6 - 4 = 2. Difference = 2 x 240 = Rs 480.",
+   "order": 68,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Largest minus smallest = (6 - 4) parts; one part = total/15."
+  },
+  {
+   "questionText": "Rs 1800 is divided among Farid, Bala and Divya in the ratio 2:3:5. What is the difference between the largest and the smallest shares?",
+   "options": [
+    {
+     "text": "Rs 270"
+    },
+    {
+     "text": "Rs 900"
+    },
+    {
+     "text": "Rs 540"
+    },
+    {
+     "text": "Rs 1080"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "One part = 1800/10 = 180. Difference in parts = 5 - 2 = 3. Difference = 3 x 180 = Rs 540.",
+   "order": 69,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Largest minus smallest = (5 - 2) parts; one part = total/10."
+  },
+  {
+   "questionText": "A purse has Rs 1, Rs 2 and Rs 5 coins in the ratio 2:3:4 and their total value is Rs 1036. How many coins are there in all?",
+   "options": [
+    {
+     "text": "333"
+    },
+    {
+     "text": "222"
+    },
+    {
+     "text": "444"
+    },
+    {
+     "text": "1036"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Value per k = 2 x 1 + 3 x 2 + 4 x 5 = 28. So k = 1036/28 = 37. Total coins = (2 + 3 + 4) x 37 = 333.",
+   "order": 70,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k."
+  },
+  {
+   "questionText": "Rs 3240 is made up of Rs 1, Rs 2 and Rs 5 notes/coins such that the amounts in each denomination are in the ratio 3:4:5. How many Rs 5 pieces are there?",
+   "options": [
+    {
+     "text": "540"
+    },
+    {
+     "text": "297"
+    },
+    {
+     "text": "1350"
+    },
+    {
+     "text": "270"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Amount in Rs 5 pieces = 3240 x 5/12 = 1350. Number = 1350/5 = 270.",
+   "order": 71,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Here the ratio is of AMOUNTS, so divide the Rs 5 amount by 5 to get the count."
+  },
+  {
+   "questionText": "Rs 2800 is shared among Charu, Farid and Anil. Charu gets 2/5 of what the other two get together, and Farid gets 3/5 of what the other two get together. How much does Anil get?",
+   "options": [
+    {
+     "text": "Rs 1140"
+    },
+    {
+     "text": "Rs 950"
+    },
+    {
+     "text": "Rs 1850"
+    },
+    {
+     "text": "Rs 1045"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Charu = 2/(2+5) of total = 2/7 x 2800 = 800. Farid = 3/8 x 2800 = 1050. Anil = 2800 - 800 - 1050 = Rs 950.",
+   "order": 72,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "'x/y of the rest' means x/(x+y) of the TOTAL."
+  },
+  {
+   "questionText": "Rs 360 is shared among Charu, Farid and Divya. Charu gets 1/3 of what the other two get together, and Farid gets 1/2 of what the other two get together. How much does Divya get?",
+   "options": [
+    {
+     "text": "Rs 210"
+    },
+    {
+     "text": "Rs 120"
+    },
+    {
+     "text": "Rs 75"
+    },
+    {
+     "text": "Rs 150"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Charu = 1/(1+3) of total = 1/4 x 360 = 90. Farid = 1/3 x 360 = 120. Divya = 360 - 90 - 120 = Rs 150.",
+   "order": 73,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "'x/y of the rest' means x/(x+y) of the TOTAL."
+  },
+  {
+   "questionText": "Rs 1500 is made up of Rs 1, Rs 2 and Rs 5 notes/coins such that the amounts in each denomination are in the ratio 2:5:8. How many Rs 5 pieces are there?",
+   "options": [
+    {
+     "text": "160"
+    },
+    {
+     "text": "800"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "200"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Amount in Rs 5 pieces = 1500 x 8/15 = 800. Number = 800/5 = 160.",
+   "order": 74,
+   "subPattern": "dividing-a-quantity-in-a-ratio",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Here the ratio is of AMOUNTS, so divide the Rs 5 amount by 5 to get the count."
+  },
+  {
+   "questionText": "The incomes of A and B are in the ratio 5:4 and their expenditures are in the ratio 5:2. If each saves Rs 10000, what is A's income?",
+   "options": [
+    {
+     "text": "Rs 16500"
+    },
+    {
+     "text": "Rs 7500"
+    },
+    {
+     "text": "Rs 15000"
+    },
+    {
+     "text": "Rs 12000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let incomes be 5k, 4k and expenditures 5m, 2m. 5k - 5m = 4k - 2m = 10000. From the first equality, k = 3m. Solving with 5k - 5m = 10000 gives k = 3000, so A's income = 5 x 3000 = Rs 15000.",
+   "order": 75,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Equal savings give (a - b)k = (c - d)m; substitute into one savings equation."
+  },
+  {
+   "questionText": "The incomes of A and B are in the ratio 5:4 and their expenditures are in the ratio 5:3. If each saves Rs 1750, what is A's income?",
+   "options": [
+    {
+     "text": "Rs 2625"
+    },
+    {
+     "text": "Rs 3500"
+    },
+    {
+     "text": "Rs 4375"
+    },
+    {
+     "text": "Rs 2800"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let incomes be 5k, 4k and expenditures 5m, 3m. 5k - 5m = 4k - 3m = 1750. From the first equality, k = 2m. Solving with 5k - 5m = 1750 gives k = 700, so A's income = 5 x 700 = Rs 3500.",
+   "order": 76,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Equal savings give (a - b)k = (c - d)m; substitute into one savings equation."
+  },
+  {
+   "questionText": "The incomes of A and B are in the ratio 5:4 and their expenditures are in the ratio 5:2. If each saves Rs 5000, what is A's income?",
+   "options": [
+    {
+     "text": "Rs 6000"
+    },
+    {
+     "text": "Rs 9000"
+    },
+    {
+     "text": "Rs 15000"
+    },
+    {
+     "text": "Rs 7500"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let incomes be 5k, 4k and expenditures 5m, 2m. 5k - 5m = 4k - 2m = 5000. From the first equality, k = 3m. Solving with 5k - 5m = 5000 gives k = 1500, so A's income = 5 x 1500 = Rs 7500.",
+   "order": 77,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Equal savings give (a - b)k = (c - d)m; substitute into one savings equation."
+  },
+  {
+   "questionText": "The incomes of A and B are in the ratio 3:2 and their expenditures are in the ratio 5:2. If each saves Rs 400, what is A's income?",
+   "options": [
+    {
+     "text": "Rs 900"
+    },
+    {
+     "text": "Rs 450"
+    },
+    {
+     "text": "Rs 1800"
+    },
+    {
+     "text": "Rs 600"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let incomes be 3k, 2k and expenditures 5m, 2m. 3k - 5m = 2k - 2m = 400. From the first equality, k = 3m. Solving with 3k - 5m = 400 gives k = 300, so A's income = 3 x 300 = Rs 900.",
+   "order": 78,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Equal savings give (a - b)k = (c - d)m; substitute into one savings equation."
+  },
+  {
+   "questionText": "The ratio of a person's income to expenditure is 7:5. If he saves Rs 500, what is his income?",
+   "options": [
+    {
+     "text": "Rs 875"
+    },
+    {
+     "text": "Rs 3500"
+    },
+    {
+     "text": "Rs 1750"
+    },
+    {
+     "text": "Rs 1250"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Income = 7x, expenditure = 5x, savings = 2x = 500. So x = 250 and income = 7x = Rs 1750.",
+   "order": 79,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Savings = (7 - 5) parts; income = 7 parts."
+  },
+  {
+   "questionText": "The ratio of a person's income to expenditure is 7:5. If he saves Rs 6750, what is his income?",
+   "options": [
+    {
+     "text": "Rs 16875"
+    },
+    {
+     "text": "Rs 23625"
+    },
+    {
+     "text": "Rs 28350"
+    },
+    {
+     "text": "Rs 31500"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Income = 7x, expenditure = 5x, savings = 2x = 6750. So x = 3375 and income = 7x = Rs 23625.",
+   "order": 80,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Savings = (7 - 5) parts; income = 7 parts."
+  },
+  {
+   "questionText": "The ratio of a person's income to expenditure is 9:7. If he saves Rs 750, what is his income?",
+   "options": [
+    {
+     "text": "Rs 2625"
+    },
+    {
+     "text": "Rs 6750"
+    },
+    {
+     "text": "Rs 4050"
+    },
+    {
+     "text": "Rs 3375"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Income = 9x, expenditure = 7x, savings = 2x = 750. So x = 375 and income = 9x = Rs 3375.",
+   "order": 81,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Savings = (9 - 7) parts; income = 9 parts."
+  },
+  {
+   "questionText": "The ratio of a person's income to expenditure is 10:7. If he saves Rs 3750, what is his income?",
+   "options": [
+    {
+     "text": "Rs 8750"
+    },
+    {
+     "text": "Rs 12500"
+    },
+    {
+     "text": "Rs 15000"
+    },
+    {
+     "text": "Rs 13750"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Income = 10x, expenditure = 7x, savings = 3x = 3750. So x = 1250 and income = 10x = Rs 12500.",
+   "order": 82,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Savings = (10 - 7) parts; income = 10 parts."
+  },
+  {
+   "questionText": "The ratio of a person's income to expenditure is 7:5. If he saves Rs 750, what is his income?",
+   "options": [
+    {
+     "text": "Rs 2625"
+    },
+    {
+     "text": "Rs 3500"
+    },
+    {
+     "text": "Rs 1750"
+    },
+    {
+     "text": "Rs 1875"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Income = 7x, expenditure = 5x, savings = 2x = 750. So x = 375 and income = 7x = Rs 2625.",
+   "order": 83,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Savings = (7 - 5) parts; income = 7 parts."
+  },
+  {
+   "questionText": "The ratio of a person's income to expenditure is 9:7. If he saves Rs 6250, what is his income?",
+   "options": [
+    {
+     "text": "Rs 33750"
+    },
+    {
+     "text": "Rs 22500"
+    },
+    {
+     "text": "Rs 28125"
+    },
+    {
+     "text": "Rs 21875"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Income = 9x, expenditure = 7x, savings = 2x = 6250. So x = 3125 and income = 9x = Rs 28125.",
+   "order": 84,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Savings = (9 - 7) parts; income = 9 parts."
+  },
+  {
+   "questionText": "The incomes of A and B are in the ratio 9:7 and their expenditures are in the ratio 3:1. A saves Rs 8250 and B saves Rs 6950. What is A's income?",
+   "options": [
+    {
+     "text": "Rs 7350"
+    },
+    {
+     "text": "Rs 4725"
+    },
+    {
+     "text": "Rs 9450"
+    },
+    {
+     "text": "Rs 11340"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let incomes be 9k, 7k and expenditures 3m, m. 9k - 3m = 8250 and 7k - m = 6950. Solving the two equations gives k = 1050 and m = 400. A's income = 9 x 1050 = Rs 9450.",
+   "order": 85,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Two unknowns (k, m): eliminate m by multiplying the equations suitably."
+  },
+  {
+   "questionText": "The incomes of A and B are in the ratio 5:4 and their expenditures are in the ratio 4:3. A saves Rs 3850 and B saves Rs 3200. What is A's income?",
+   "options": [
+    {
+     "text": "Rs 5000"
+    },
+    {
+     "text": "Rs 7500"
+    },
+    {
+     "text": "Rs 5625"
+    },
+    {
+     "text": "Rs 6250"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let incomes be 5k, 4k and expenditures 4m, 3m. 5k - 4m = 3850 and 4k - 3m = 3200. Solving the two equations gives k = 1250 and m = 600. A's income = 5 x 1250 = Rs 6250.",
+   "order": 86,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Two unknowns (k, m): eliminate m by multiplying the equations suitably."
+  },
+  {
+   "questionText": "The incomes of A and B are in the ratio 9:7 and their expenditures are in the ratio 2:1. A saves Rs 5900 and B saves Rs 5200. What is A's income?",
+   "options": [
+    {
+     "text": "Rs 4050"
+    },
+    {
+     "text": "Rs 8100"
+    },
+    {
+     "text": "Rs 6300"
+    },
+    {
+     "text": "Rs 10800"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let incomes be 9k, 7k and expenditures 2m, m. 9k - 2m = 5900 and 7k - m = 5200. Solving the two equations gives k = 900 and m = 1100. A's income = 9 x 900 = Rs 8100.",
+   "order": 87,
+   "subPattern": "ratio-of-incomes-expenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Two unknowns (k, m): eliminate m by multiplying the equations suitably."
+  },
+  {
+   "questionText": "The ratio of two numbers is 3:5 and their sum is 176. What is the larger number?",
+   "options": [
+    {
+     "text": "110"
+    },
+    {
+     "text": "132"
+    },
+    {
+     "text": "121"
+    },
+    {
+     "text": "66"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Parts = 3 + 5 = 8. One part = 176/8 = 22. Larger = 5 x 22 = 110.",
+   "order": 88,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Larger number = sum x 5/8."
+  },
+  {
+   "questionText": "The ratio of two numbers is 3:4 and their sum is 35. What is the larger number?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "21"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Parts = 3 + 4 = 7. One part = 35/7 = 5. Larger = 4 x 5 = 20.",
+   "order": 89,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Larger number = sum x 4/7."
+  },
+  {
+   "questionText": "The ratio of two numbers is 3:4 and their sum is 133. What is the larger number?",
+   "options": [
+    {
+     "text": "57"
+    },
+    {
+     "text": "95"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "76"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Parts = 3 + 4 = 7. One part = 133/7 = 19. Larger = 4 x 19 = 76.",
+   "order": 90,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Larger number = sum x 4/7."
+  },
+  {
+   "questionText": "The ratio of two numbers is 4:7 and their sum is 429. What is the larger number?",
+   "options": [
+    {
+     "text": "273"
+    },
+    {
+     "text": "182"
+    },
+    {
+     "text": "156"
+    },
+    {
+     "text": "364"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Parts = 4 + 7 = 11. One part = 429/11 = 39. Larger = 7 x 39 = 273.",
+   "order": 91,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Larger number = sum x 7/11."
+  },
+  {
+   "questionText": "What number should be added to each term of the ratio 3:5 so that it becomes 4:5?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "(3 + x)/(5 + x) = 4/5. Cross-multiplying: 5(3 + x) = 4(5 + x), so x(5 - 4) = 20 - 15, giving x = 5.",
+   "order": 92,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c)."
+  },
+  {
+   "questionText": "What number should be added to each term of the ratio 5:9 so that it becomes 3:5?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(5 + x)/(9 + x) = 3/5. Cross-multiplying: 5(5 + x) = 3(9 + x), so x(5 - 3) = 27 - 25, giving x = 1.",
+   "order": 93,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c)."
+  },
+  {
+   "questionText": "What number should be added to each term of the ratio 5:9 so that it becomes 4:5?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(5 + x)/(9 + x) = 4/5. Cross-multiplying: 5(5 + x) = 4(9 + x), so x(5 - 4) = 36 - 25, giving x = 11.",
+   "order": 94,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c)."
+  },
+  {
+   "questionText": "What number should be added to each term of the ratio 3:7 so that it becomes 7:8?",
+   "options": [
+    {
+     "text": "26"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "(3 + x)/(7 + x) = 7/8. Cross-multiplying: 8(3 + x) = 7(7 + x), so x(8 - 7) = 49 - 24, giving x = 25.",
+   "order": 95,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c)."
+  },
+  {
+   "questionText": "What number should be added to each term of the ratio 4:9 so that it becomes 2:3?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(4 + x)/(9 + x) = 2/3. Cross-multiplying: 3(4 + x) = 2(9 + x), so x(3 - 2) = 18 - 12, giving x = 6.",
+   "order": 96,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c)."
+  },
+  {
+   "questionText": "What number should be added to each term of the ratio 3:7 so that it becomes 2:3?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(3 + x)/(7 + x) = 2/3. Cross-multiplying: 3(3 + x) = 2(7 + x), so x(3 - 2) = 14 - 9, giving x = 5.",
+   "order": 97,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c)."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 4:7. If 20 is subtracted from each, the ratio becomes 6:13. What is the larger number?",
+   "options": [
+    {
+     "text": "98"
+    },
+    {
+     "text": "147"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "56"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the numbers be 4k and 7k. (4k - 20)/(7k - 20) = 6/13. Cross-multiplying: k(52 - 42) = 20(13 - 6), so k = 14. Larger = 7 x 14 = 98.",
+   "order": 98,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Form the equation with k, cross-multiply, solve for k; then multiply by the right ratio part."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 5:9. If 20 is subtracted from each, the ratio becomes 1:2. What is the larger number?",
+   "options": [
+    {
+     "text": "160"
+    },
+    {
+     "text": "198"
+    },
+    {
+     "text": "100"
+    },
+    {
+     "text": "180"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the numbers be 5k and 9k. (5k - 20)/(9k - 20) = 1/2. Cross-multiplying: k(10 - 9) = 20(2 - 1), so k = 20. Larger = 9 x 20 = 180.",
+   "order": 99,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Form the equation with k, cross-multiply, solve for k; then multiply by the right ratio part."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 3:4. If 20 is subtracted from each, the ratio becomes 1:2. What is the larger number?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the numbers be 3k and 4k. (3k - 20)/(4k - 20) = 1/2. Cross-multiplying: k(6 - 4) = 20(2 - 1), so k = 10. Larger = 4 x 10 = 40.",
+   "order": 100,
+   "subPattern": "changing-ratios-add-remove",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Form the equation with k, cross-multiply, solve for k; then multiply by the right ratio part."
+  }
+ ]
+}

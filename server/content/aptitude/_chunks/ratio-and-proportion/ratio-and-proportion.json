@@ -11,7 +11,7 @@
       "correctOptionIndex": 2,
       "explanation": "Parts = 3 + 5 = 8. One part = 176/8 = 22. Larger = 5 x 22 = 110.",
       "shortcut": "Larger number = sum x 5/8.",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -68,7 +68,7 @@
       "correctOptionIndex": 3,
       "explanation": "Income = 7x, expenditure = 5x, savings = 2x = 500. So x = 250 and income = 7x = Rs 1750.",
       "shortcut": "Savings = (7 - 5) parts; income = 7 parts.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -87,7 +87,7 @@
       "correctOptionIndex": 0,
       "explanation": "Time is inversely proportional to speed. 72 x 6 = 54 x t, so t = 432/54 = 8 hours.",
       "shortcut": "Speed x time = constant (distance).",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -106,7 +106,7 @@
       "correctOptionIndex": 3,
       "explanation": "Income = 7x, expenditure = 5x, savings = 2x = 6750. So x = 3375 and income = 7x = Rs 23625.",
       "shortcut": "Savings = (7 - 5) parts; income = 7 parts.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -144,7 +144,7 @@
       "correctOptionIndex": 1,
       "explanation": "Let incomes be 5k, 4k and expenditures 5m, 2m. 5k - 5m = 4k - 2m = 10000. From the first equality, k = 3m. Solving with 5k - 5m = 10000 gives k = 3000, so A's income = 5 x 3000 = Rs 15000.",
       "shortcut": "Equal savings give (a - b)k = (c - d)m; substitute into one savings equation.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -163,7 +163,7 @@
       "correctOptionIndex": 3,
       "explanation": "Make B equal in both: A:B = 6:10 and B:C = 10:25. So A:B:C = 6:10:25 = 6:10:25.",
       "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -182,7 +182,7 @@
       "correctOptionIndex": 1,
       "explanation": "y = kx^2, so k = 32/4^2 = 2. For x = 10: y = 2 x 10^2 = 200.",
       "shortcut": "y2 = y1 x (x2/x1)^2 = 32 x (10/4)^2.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -201,7 +201,7 @@
       "correctOptionIndex": 0,
       "explanation": "Value per k = 5 x 1 + 3 x 2 + 2 x 5 = 21. So k = 798/21 = 38. Total coins = (5 + 3 + 2) x 38 = 380.",
       "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -219,7 +219,7 @@
       "correctOptionIndex": 2,
       "explanation": "A/C = (A/B) x (B/C) = (7/8) x (2/3) = 14/24, so A:C = 7:12.",
       "shortcut": "Multiply the two fractions; B cancels.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -238,7 +238,7 @@
       "correctOptionIndex": 1,
       "explanation": "Amount in Rs 5 pieces = 3240 x 5/12 = 1350. Number = 1350/5 = 270.",
       "shortcut": "Here the ratio is of AMOUNTS, so divide the Rs 5 amount by 5 to get the count.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -257,7 +257,7 @@
       "correctOptionIndex": 3,
       "explanation": "A/C = (A/B) x (B/C) = (5/6) x (4/5) = 20/30, so A:C = 2:3.",
       "shortcut": "Multiply the two fractions; B cancels.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -276,7 +276,7 @@
       "correctOptionIndex": 2,
       "explanation": "(3 + x)/(5 + x) = 4/5. Cross-multiplying: 5(3 + x) = 4(5 + x), so x(5 - 4) = 20 - 15, giving x = 5.",
       "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c).",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -312,7 +312,7 @@
       "correctOptionIndex": 1,
       "explanation": "Let the coin counts be 4k, 5k, 6k. Value = 4k + 2(5k) + 5(6k) = 44k = 1144, so k = 26. Rs 2 coins = 5 x 26 = 130.",
       "shortcut": "Total value per k = (count x coin value) summed; solve for k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -331,7 +331,7 @@
       "correctOptionIndex": 1,
       "explanation": "Let the coin counts be 3k, 4k, 5k. Value = 3k + 2(4k) + 5(5k) = 36k = 648, so k = 18. Rs 2 coins = 4 x 18 = 72.",
       "shortcut": "Total value per k = (count x coin value) summed; solve for k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -350,7 +350,7 @@
       "correctOptionIndex": 2,
       "explanation": "One part = 1170/9 = 130. Difference in parts = 5 - 1 = 4. Difference = 4 x 130 = Rs 520.",
       "shortcut": "Largest minus smallest = (5 - 1) parts; one part = total/9.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -369,7 +369,7 @@
       "correctOptionIndex": 3,
       "explanation": "Value per k = 6 x 1 + 5 x 2 + 4 x 5 = 36. So k = 1008/36 = 28. Total coins = (6 + 5 + 4) x 28 = 420.",
       "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -387,7 +387,7 @@
       "correctOptionIndex": 0,
       "explanation": "Charu = 2/(2+5) of total = 2/7 x 2800 = 800. Farid = 3/8 x 2800 = 1050. Anil = 2800 - 800 - 1050 = Rs 950.",
       "shortcut": "'x/y of the rest' means x/(x+y) of the TOTAL.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -405,7 +405,7 @@
       "correctOptionIndex": 2,
       "explanation": "One part = 3900/15 = 260. Difference in parts = 6 - 4 = 2. Difference = 2 x 260 = Rs 520.",
       "shortcut": "Largest minus smallest = (6 - 4) parts; one part = total/15.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -442,7 +442,7 @@
       "correctOptionIndex": 1,
       "explanation": "Let the coin counts be 5k, 3k, 2k. Value = 5k + 2(3k) + 5(2k) = 21k = 462, so k = 22. Rs 2 coins = 3 x 22 = 66.",
       "shortcut": "Total value per k = (count x coin value) summed; solve for k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -461,7 +461,7 @@
       "correctOptionIndex": 2,
       "explanation": "Let incomes be 9k, 7k and expenditures 3m, m. 9k - 3m = 8250 and 7k - m = 6950. Solving the two equations gives k = 1050 and m = 400. A's income = 9 x 1050 = Rs 9450.",
       "shortcut": "Two unknowns (k, m): eliminate m by multiplying the equations suitably.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -480,7 +480,7 @@
       "correctOptionIndex": 1,
       "explanation": "Cost is directly proportional to quantity. 12 : 60 = 24 : x, so x = 60 x 24/12 = Rs 120.",
       "shortcut": "Cost of 1 = 5; multiply by 24.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "easy",
       "examStyles": [
         "cat-style",
@@ -499,7 +499,7 @@
       "correctOptionIndex": 2,
       "explanation": "Let the numbers be 4k and 7k. (4k - 20)/(7k - 20) = 6/13. Cross-multiplying: k(52 - 42) = 20(13 - 6), so k = 14. Larger = 7 x 14 = 98.",
       "shortcut": "Form the equation with k, cross-multiply, solve for k; then multiply by the right ratio part.",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -518,7 +518,7 @@
       "correctOptionIndex": 3,
       "explanation": "Make B equal in both: A:B = 4:6 and B:C = 6:15. So A:B:C = 4:6:15 = 4:6:15.",
       "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -536,7 +536,7 @@
       "correctOptionIndex": 1,
       "explanation": "Make B equal in both: A:B = 21:28 and B:C = 28:32. So A:B:C = 21:28:32 = 21:28:32.",
       "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -554,7 +554,7 @@
       "correctOptionIndex": 0,
       "explanation": "Let the numbers be 5k and 9k. (5k - 20)/(9k - 20) = 1/2. Cross-multiplying: k(10 - 9) = 20(2 - 1), so k = 20. Larger = 9 x 20 = 180.",
       "shortcut": "Form the equation with k, cross-multiply, solve for k; then multiply by the right ratio part.",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -573,7 +573,7 @@
       "correctOptionIndex": 1,
       "explanation": "Income = 9x, expenditure = 7x, savings = 2x = 750. So x = 375 and income = 9x = Rs 3375.",
       "shortcut": "Savings = (9 - 7) parts; income = 9 parts.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -592,7 +592,7 @@
       "correctOptionIndex": 3,
       "explanation": "A = kB/C, so k = A x C/B = 3 x 4/5 = 2.4. Then A = 2.4 x 5/6 = 2.",
       "shortcut": "A2 = A1 x (B2/B1) x (C1/C2): multiply by the direct ratio and the inverted inverse ratio.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "hard",
       "examStyles": [
         "banking",
@@ -611,7 +611,7 @@
       "correctOptionIndex": 2,
       "explanation": "Let x = 3k and y = 5k. Numerator = 3(3k) + 2(5k) = 19k. Denominator = 2(3k) - 1(5k) = 1k. Ratio = 19:1.",
       "shortcut": "Substitute x = (first)k, y = (second)k; k cancels.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -629,7 +629,7 @@
       "correctOptionIndex": 2,
       "explanation": "Let incomes be 5k, 4k and expenditures 5m, 3m. 5k - 5m = 4k - 3m = 1750. From the first equality, k = 2m. Solving with 5k - 5m = 1750 gives k = 700, so A's income = 5 x 700 = Rs 3500.",
       "shortcut": "Equal savings give (a - b)k = (c - d)m; substitute into one savings equation.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -648,7 +648,7 @@
       "correctOptionIndex": 3,
       "explanation": "Time is inversely proportional to speed. 50 x 12 = 100 x t, so t = 600/100 = 6 hours.",
       "shortcut": "Speed x time = constant (distance).",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -704,7 +704,7 @@
       "correctOptionIndex": 0,
       "explanation": "Cost is directly proportional to quantity. 20 : 100 = 18 : x, so x = 100 x 18/20 = Rs 90.",
       "shortcut": "Cost of 1 = 5; multiply by 18.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -723,7 +723,7 @@
       "correctOptionIndex": 1,
       "explanation": "Income = 10x, expenditure = 7x, savings = 3x = 3750. So x = 1250 and income = 10x = Rs 12500.",
       "shortcut": "Savings = (10 - 7) parts; income = 10 parts.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -742,7 +742,7 @@
       "correctOptionIndex": 0,
       "explanation": "Income = 7x, expenditure = 5x, savings = 2x = 750. So x = 375 and income = 7x = Rs 2625.",
       "shortcut": "Savings = (7 - 5) parts; income = 7 parts.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -761,7 +761,7 @@
       "correctOptionIndex": 2,
       "explanation": "One part = 1680/12 = 140. Difference in parts = 5 - 3 = 2. Difference = 2 x 140 = Rs 280.",
       "shortcut": "Largest minus smallest = (5 - 3) parts; one part = total/12.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -780,7 +780,7 @@
       "correctOptionIndex": 3,
       "explanation": "Total parts = 2 + 5 = 7. One part = 2240/7 = 320. Anil gets 5 x 320 = Rs 1600.",
       "shortcut": "Value of 1 part = total / 7; multiply by your share's parts.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -799,7 +799,7 @@
       "correctOptionIndex": 1,
       "explanation": "A/C = (A/B) x (B/C) = (2/5) x (7/8) = 14/40, so A:C = 7:20.",
       "shortcut": "Multiply the two fractions; B cancels.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -817,7 +817,7 @@
       "correctOptionIndex": 0,
       "explanation": "Charu = 1/(1+3) of total = 1/4 x 360 = 90. Farid = 1/3 x 360 = 120. Divya = 360 - 90 - 120 = Rs 150.",
       "shortcut": "'x/y of the rest' means x/(x+y) of the TOTAL.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -855,7 +855,7 @@
       "correctOptionIndex": 2,
       "explanation": "A = kB/C, so k = A x C/B = 5 x 12/4 = 15. Then A = 15 x 8/3 = 40.",
       "shortcut": "A2 = A1 x (B2/B1) x (C1/C2): multiply by the direct ratio and the inverted inverse ratio.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "hard",
       "examStyles": [
         "banking",
@@ -874,7 +874,7 @@
       "correctOptionIndex": 1,
       "explanation": "Let incomes be 5k, 4k and expenditures 4m, 3m. 5k - 4m = 3850 and 4k - 3m = 3200. Solving the two equations gives k = 1250 and m = 600. A's income = 5 x 1250 = Rs 6250.",
       "shortcut": "Two unknowns (k, m): eliminate m by multiplying the equations suitably.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "hard",
       "examStyles": [
         "ssc",
@@ -912,7 +912,7 @@
       "correctOptionIndex": 2,
       "explanation": "A/C = (A/B) x (B/C) = (4/5) x (2/3) = 8/15, so A:C = 8:15.",
       "shortcut": "Multiply the two fractions; B cancels.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -930,7 +930,7 @@
       "correctOptionIndex": 2,
       "explanation": "Let incomes be 5k, 4k and expenditures 5m, 2m. 5k - 5m = 4k - 2m = 5000. From the first equality, k = 3m. Solving with 5k - 5m = 5000 gives k = 1500, so A's income = 5 x 1500 = Rs 7500.",
       "shortcut": "Equal savings give (a - b)k = (c - d)m; substitute into one savings equation.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -949,7 +949,7 @@
       "correctOptionIndex": 2,
       "explanation": "Income = 9x, expenditure = 7x, savings = 2x = 6250. So x = 3125 and income = 9x = Rs 28125.",
       "shortcut": "Savings = (9 - 7) parts; income = 9 parts.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -968,7 +968,7 @@
       "correctOptionIndex": 0,
       "explanation": "Value per k = 2 x 1 + 3 x 2 + 4 x 5 = 28. So k = 196/28 = 7. Total coins = (2 + 3 + 4) x 7 = 63.",
       "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -986,7 +986,7 @@
       "correctOptionIndex": 0,
       "explanation": "(5 + x)/(9 + x) = 3/5. Cross-multiplying: 5(5 + x) = 3(9 + x), so x(5 - 3) = 27 - 25, giving x = 1.",
       "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c).",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1005,7 +1005,7 @@
       "correctOptionIndex": 0,
       "explanation": "By componendo and dividendo: a/b = (12 + 2)/(12 - 2) = 14/10 = 7:5.",
       "shortcut": "For (a+b)/(a-b) = m/n, a/b = (m+n)/(m-n).",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -1024,7 +1024,7 @@
       "correctOptionIndex": 2,
       "explanation": "Amount in Rs 5 pieces = 1500 x 8/15 = 800. Number = 800/5 = 160.",
       "shortcut": "Here the ratio is of AMOUNTS, so divide the Rs 5 amount by 5 to get the count.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "hard",
       "examStyles": [
         "banking",
@@ -1043,7 +1043,7 @@
       "correctOptionIndex": 3,
       "explanation": "Let incomes be 3k, 2k and expenditures 5m, 2m. 3k - 5m = 2k - 2m = 400. From the first equality, k = 3m. Solving with 3k - 5m = 400 gives k = 300, so A's income = 3 x 300 = Rs 900.",
       "shortcut": "Equal savings give (a - b)k = (c - d)m; substitute into one savings equation.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -1062,7 +1062,7 @@
       "correctOptionIndex": 2,
       "explanation": "Mean proportional = sqrt(a x b) = sqrt(10 x 40) = sqrt(400) = 20.",
       "shortcut": "Mean proportional = square root of the product.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1081,7 +1081,7 @@
       "correctOptionIndex": 2,
       "explanation": "Total parts = 2 + 5 = 7. One part = 1680/7 = 240. Farid gets 2 x 240 = Rs 480.",
       "shortcut": "Value of 1 part = total / 7; multiply by your share's parts.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "easy",
       "examStyles": [
         "cat-style",
@@ -1100,7 +1100,7 @@
       "correctOptionIndex": 3,
       "explanation": "Parts = 3 + 4 = 7. One part = 35/7 = 5. Larger = 4 x 5 = 20.",
       "shortcut": "Larger number = sum x 4/7.",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1138,7 +1138,7 @@
       "correctOptionIndex": 1,
       "explanation": "A = kB/C, so k = A x C/B = 8 x 9/6 = 12. Then A = 12 x 10/4 = 30.",
       "shortcut": "A2 = A1 x (B2/B1) x (C1/C2): multiply by the direct ratio and the inverted inverse ratio.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -1156,7 +1156,7 @@
       "correctOptionIndex": 2,
       "explanation": "(5 + x)/(9 + x) = 4/5. Cross-multiplying: 5(5 + x) = 4(9 + x), so x(5 - 4) = 36 - 25, giving x = 11.",
       "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c).",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1174,7 +1174,7 @@
       "correctOptionIndex": 3,
       "explanation": "If a : b = b : c, then c = b^2/a = 30^2/5 = 180.",
       "shortcut": "Third proportional = (second)^2 / first.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1193,7 +1193,7 @@
       "correctOptionIndex": 0,
       "explanation": "Total parts = 4 + 5 = 9. One part = 2340/9 = 260. Divya gets 4 x 260 = Rs 1040.",
       "shortcut": "Value of 1 part = total / 9; multiply by your share's parts.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1211,7 +1211,7 @@
       "correctOptionIndex": 3,
       "explanation": "One part = 200/10 = 20. Difference in parts = 5 - 2 = 3. Difference = 3 x 20 = Rs 60.",
       "shortcut": "Largest minus smallest = (5 - 2) parts; one part = total/10.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1230,7 +1230,7 @@
       "correctOptionIndex": 0,
       "explanation": "Value per k = 4 x 1 + 5 x 2 + 6 x 5 = 44. So k = 1100/44 = 25. Total coins = (4 + 5 + 6) x 25 = 375.",
       "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -1249,7 +1249,7 @@
       "correctOptionIndex": 1,
       "explanation": "Make B equal in both: A:B = 12:20 and B:C = 20:25. So A:B:C = 12:20:25 = 12:20:25.",
       "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1268,7 +1268,7 @@
       "correctOptionIndex": 0,
       "explanation": "(3 + x)/(7 + x) = 7/8. Cross-multiplying: 8(3 + x) = 7(7 + x), so x(8 - 7) = 49 - 24, giving x = 25.",
       "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c).",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1286,7 +1286,7 @@
       "correctOptionIndex": 3,
       "explanation": "Parts = 3 + 4 = 7. One part = 133/7 = 19. Larger = 4 x 19 = 76.",
       "shortcut": "Larger number = sum x 4/7.",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1304,7 +1304,7 @@
       "correctOptionIndex": 1,
       "explanation": "Make B equal in both: A:B = 6:9 and B:C = 9:12. So A:B:C = 6:9:12 = 2:3:4.",
       "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1323,7 +1323,7 @@
       "correctOptionIndex": 0,
       "explanation": "Mean proportional = sqrt(a x b) = sqrt(3 x 192) = sqrt(576) = 24.",
       "shortcut": "Mean proportional = square root of the product.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1341,7 +1341,7 @@
       "correctOptionIndex": 2,
       "explanation": "Time is inversely proportional to speed. 72 x 15 = 48 x t, so t = 1080/48 = 22.5 hours.",
       "shortcut": "Speed x time = constant (distance).",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1359,7 +1359,7 @@
       "correctOptionIndex": 3,
       "explanation": "(4 + x)/(9 + x) = 2/3. Cross-multiplying: 3(4 + x) = 2(9 + x), so x(3 - 2) = 18 - 12, giving x = 6.",
       "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c).",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1377,7 +1377,7 @@
       "correctOptionIndex": 2,
       "explanation": "Value per k = 2 x 1 + 3 x 2 + 4 x 5 = 28. So k = 1064/28 = 38. Total coins = (2 + 3 + 4) x 38 = 342.",
       "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1396,7 +1396,7 @@
       "correctOptionIndex": 3,
       "explanation": "Product of extremes = product of means: 4 x x = 12 x 12, so x = 144/4 = 36.",
       "shortcut": "Cross-multiply: x = (second x third) / first.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1414,7 +1414,7 @@
       "correctOptionIndex": 0,
       "explanation": "Product of extremes = product of means: 6 x x = 24 x 9, so x = 216/6 = 36.",
       "shortcut": "Cross-multiply: x = (second x third) / first.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1433,7 +1433,7 @@
       "correctOptionIndex": 1,
       "explanation": "Total parts = 2 + 5 = 7. One part = 1820/7 = 260. Anil gets 2 x 260 = Rs 520.",
       "shortcut": "Value of 1 part = total / 7; multiply by your share's parts.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "easy",
       "examStyles": [
         "cat-style",
@@ -1452,7 +1452,7 @@
       "correctOptionIndex": 3,
       "explanation": "Product of extremes = product of means: 6 x x = 24 x 15, so x = 360/6 = 60.",
       "shortcut": "Cross-multiply: x = (second x third) / first.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1490,7 +1490,7 @@
       "correctOptionIndex": 2,
       "explanation": "Cost is directly proportional to quantity. 10 : 100 = 18 : x, so x = 100 x 18/10 = Rs 180.",
       "shortcut": "Cost of 1 = 10; multiply by 18.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1509,7 +1509,7 @@
       "correctOptionIndex": 2,
       "explanation": "Value per k = 5 x 1 + 3 x 2 + 2 x 5 = 21. So k = 462/21 = 22. Total coins = (5 + 3 + 2) x 22 = 220.",
       "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1528,7 +1528,7 @@
       "correctOptionIndex": 1,
       "explanation": "A:B:C = 6:10:25. Sum of parts = 41. C's share = 6970 x 25/41 = Rs 4250.",
       "shortcut": "Combine into A:B:C first, then divide the amount by the sum of parts.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -1546,7 +1546,7 @@
       "correctOptionIndex": 0,
       "explanation": "Product of extremes = product of means: 9 x x = 18 x 6, so x = 108/9 = 12.",
       "shortcut": "Cross-multiply: x = (second x third) / first.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1565,7 +1565,7 @@
       "correctOptionIndex": 1,
       "explanation": "Time is inversely proportional to speed. 40 x 12 = 120 x t, so t = 480/120 = 4 hours.",
       "shortcut": "Speed x time = constant (distance).",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1584,7 +1584,7 @@
       "correctOptionIndex": 3,
       "explanation": "If a : b = b : c, then c = b^2/a = 8^2/8 = 8.",
       "shortcut": "Third proportional = (second)^2 / first.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1603,7 +1603,7 @@
       "correctOptionIndex": 2,
       "explanation": "One part = 3600/15 = 240. Difference in parts = 6 - 4 = 2. Difference = 2 x 240 = Rs 480.",
       "shortcut": "Largest minus smallest = (6 - 4) parts; one part = total/15.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1621,7 +1621,7 @@
       "correctOptionIndex": 0,
       "explanation": "A:B:C = 3:4:5. Sum of parts = 12. C's share = 180 x 5/12 = Rs 75.",
       "shortcut": "Combine into A:B:C first, then divide the amount by the sum of parts.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -1639,7 +1639,7 @@
       "correctOptionIndex": 0,
       "explanation": "(3 + x)/(7 + x) = 2/3. Cross-multiplying: 3(3 + x) = 2(7 + x), so x(3 - 2) = 14 - 9, giving x = 5.",
       "shortcut": "Cross-multiply and collect x terms: x = (bc - ad)/(d - c).",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1676,7 +1676,7 @@
       "correctOptionIndex": 1,
       "explanation": "One part = 1800/10 = 180. Difference in parts = 5 - 2 = 3. Difference = 3 x 180 = Rs 540.",
       "shortcut": "Largest minus smallest = (5 - 2) parts; one part = total/10.",
-      "subPattern": "basic-ratio-sharing",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1694,7 +1694,7 @@
       "correctOptionIndex": 0,
       "explanation": "y = kx^2, so k = 32/2^2 = 8. For x = 15: y = 8 x 15^2 = 1800.",
       "shortcut": "y2 = y1 x (x2/x1)^2 = 32 x (15/2)^2.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1713,7 +1713,7 @@
       "correctOptionIndex": 1,
       "explanation": "Let the numbers be 3k and 4k. (3k - 20)/(4k - 20) = 1/2. Cross-multiplying: k(6 - 4) = 20(2 - 1), so k = 10. Larger = 4 x 10 = 40.",
       "shortcut": "Form the equation with k, cross-multiply, solve for k; then multiply by the right ratio part.",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -1732,7 +1732,7 @@
       "correctOptionIndex": 0,
       "explanation": "Mean proportional = sqrt(a x b) = sqrt(3 x 12) = sqrt(36) = 6.",
       "shortcut": "Mean proportional = square root of the product.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1751,7 +1751,7 @@
       "correctOptionIndex": 2,
       "explanation": "Parts = 4 + 7 = 11. One part = 429/11 = 39. Larger = 7 x 39 = 273.",
       "shortcut": "Larger number = sum x 7/11.",
-      "subPattern": "adding-subtracting-to-ratio",
+      "subPattern": "changing-ratios-add-remove",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1770,7 +1770,7 @@
       "correctOptionIndex": 1,
       "explanation": "If a : b = b : c, then c = b^2/a = 12^2/2 = 72.",
       "shortcut": "Third proportional = (second)^2 / first.",
-      "subPattern": "proportion-fourth-third-mean",
+      "subPattern": "mean-third-fourth-proportional",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1789,7 +1789,7 @@
       "correctOptionIndex": 1,
       "explanation": "Cost is directly proportional to quantity. 6 : 36 = 25 : x, so x = 36 x 25/6 = Rs 150.",
       "shortcut": "Cost of 1 = 6; multiply by 25.",
-      "subPattern": "direct-inverse-variation",
+      "subPattern": "direct-inverse-proportion",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1807,7 +1807,7 @@
       "correctOptionIndex": 2,
       "explanation": "Let incomes be 9k, 7k and expenditures 2m, m. 9k - 2m = 5900 and 7k - m = 5200. Solving the two equations gives k = 900 and m = 1100. A's income = 9 x 900 = Rs 8100.",
       "shortcut": "Two unknowns (k, m): eliminate m by multiplying the equations suitably.",
-      "subPattern": "income-expenditure-ratio",
+      "subPattern": "ratio-of-incomes-expenses",
       "difficulty": "hard",
       "examStyles": [
         "ssc",
@@ -1845,7 +1845,7 @@
       "correctOptionIndex": 0,
       "explanation": "Make B equal in both: A:B = 12:15 and B:C = 15:20. So A:B:C = 12:15:20 = 12:15:20.",
       "shortcut": "Multiply the first ratio by c and the second by b so the B-terms match.",
-      "subPattern": "combining-ratios",
+      "subPattern": "basic-ratio-simplification",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1863,7 +1863,7 @@
       "correctOptionIndex": 1,
       "explanation": "Value per k = 2 x 1 + 3 x 2 + 4 x 5 = 28. So k = 1036/28 = 37. Total coins = (2 + 3 + 4) x 37 = 333.",
       "shortcut": "Find k from the total value, then total coins = sum of ratio parts x k.",
-      "subPattern": "coins-and-money-ratio",
+      "subPattern": "dividing-a-quantity-in-a-ratio",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
