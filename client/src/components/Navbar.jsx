@@ -60,7 +60,7 @@ const PRIMARY_LINKS = [
 // Reference links — grouped under "Explore" on desktop, second group on mobile.
 // (Learn topics are reached through Aptitude Practice -> a pattern.)
 const EXPLORE_LINKS = [
-  { to: '/aptitude', label: 'Aptitude Practice', icon: CalculateRoundedIcon },
+  { to: '/aptitude', label: 'One for All Aptitude', icon: CalculateRoundedIcon },
   { to: '/visualizer', label: 'Visualizer', icon: BarChartRoundedIcon },
   { to: '/pricing', label: 'Pricing', icon: WorkspacePremiumRoundedIcon },
 ];

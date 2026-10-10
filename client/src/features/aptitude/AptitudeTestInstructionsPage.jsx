@@ -18,7 +18,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { PALETTE, formatClock } from './components/aptitudeUi';
 
 // "General instructions" screen shown before the timed paper, modelled on the
-// TCS iON candidate instructions page: the learner reads the rules, sees the
+// exam candidate instructions page: the learner reads the rules, sees the
 // question-palette legend, ticks the declaration and only then starts the clock.
 
 export function PaletteSymbol({ kind, size = 30, children }) {

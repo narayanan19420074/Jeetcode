@@ -26,14 +26,27 @@ import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { getLessonsForPattern } from './lessons';
 import { getTopicBySlug } from '../learn/content/topics';
+import { motion } from 'framer-motion';
+import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
+import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
+import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
+import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import Ring from './components/Ring';
+import Alien3D from './components/Alien3D';
+import HeroPanel from './components/HeroPanel';
+import { CountUp, TiltCard, XpBar, popChild, staggerParent } from './components/MotionBits';
+import { ALIENS, buildBadges, moduleXp, rankForXp } from './components/gamification';
 import { DIFFICULTY, formatClock, formatDuration } from './components/aptitudeUi';
 
 /* ---------------------------------------------------------------- */
 /* Mode card (Learn / Practice / Test)                              */
 /* ---------------------------------------------------------------- */
-function ModeCard({ icon, accent, eyebrow, title, lines, progress, cta, onClick, disabled, highlight }) {
+function ModeCard({ icon, accent, eyebrow, title, lines, progress, cta, onClick, disabled, highlight, step }) {
   return (
+    <TiltCard variants={popChild}>
     <Paper
       variant="outlined"
       sx={{
@@ -44,23 +57,25 @@ function ModeCard({ icon, accent, eyebrow, title, lines, progress, cta, onClick,
         gap: 1.5,
         flex: 1,
         minWidth: 0,
+        position: 'relative',
+        overflow: 'hidden',
         borderColor: highlight ? accent : 'divider',
-        boxShadow: highlight ? `0 0 0 3px ${alpha(accent, 0.14)}` : 'none',
-        transition: 'transform .15s ease, box-shadow .15s ease',
-        '&:hover': disabled ? undefined : { transform: 'translateY(-2px)', boxShadow: 3 },
+        background: (t) => `linear-gradient(160deg, ${alpha(accent, t.palette.mode === 'dark' ? 0.16 : 0.09)} 0%, transparent 55%)`,
+        boxShadow: highlight ? `0 0 0 3px ${alpha(accent, 0.18)}, 0 12px 34px ${alpha(accent, 0.22)}` : 'none',
+        transition: 'box-shadow .2s ease, border-color .2s ease',
+        '&:hover': disabled ? undefined : { boxShadow: `0 14px 36px ${alpha(accent, 0.28)}`, borderColor: accent },
       }}
     >
+      <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${accent}, ${alpha(accent, 0.2)})` }} />
+      <Typography aria-hidden sx={{ position: 'absolute', right: 12, top: -6, fontSize: 92, fontWeight: 900, lineHeight: 1, color: alpha(accent, 0.09), fontFamily: '"JetBrains Mono", monospace', userSelect: 'none' }}>
+        {step}
+      </Typography>
       <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
         <Box
-          sx={{
-            width: 40,
-            height: 40,
-            borderRadius: 2,
-            display: 'grid',
-            placeItems: 'center',
-            bgcolor: alpha(accent, 0.12),
-            color: accent,
-          }}
+          component={motion.div}
+          whileHover={{ rotate: [0, -12, 12, 0], scale: 1.12 }}
+          transition={{ duration: 0.5 }}
+          sx={{ width: 46, height: 46, borderRadius: 2.5, display: 'grid', placeItems: 'center', bgcolor: accent, color: '#fff', boxShadow: `0 6px 16px ${alpha(accent, 0.45)}`, position: 'relative' }}
         >
           {icon}
         </Box>
@@ -101,6 +116,7 @@ function ModeCard({ icon, accent, eyebrow, title, lines, progress, cta, onClick,
         {cta}
       </Button>
     </Paper>
+    </TiltCard>
   );
 }
 
@@ -115,6 +131,9 @@ function SubPatternTile({ sub, onClick }) {
 
   return (
     <Paper
+      component={motion.div}
+      variants={popChild}
+      whileHover={empty ? undefined : { y: -3 }}
       variant="outlined"
       onClick={empty ? undefined : onClick}
       sx={{
@@ -149,6 +168,46 @@ function SubPatternTile({ sub, onClick }) {
         )}
       </Stack>
     </Paper>
+  );
+}
+
+
+const BADGE_ICONS = {
+  bolt: BoltRoundedIcon,
+  book: MenuBookRoundedIcon,
+  fire: LocalFireDepartmentRoundedIcon,
+  star: StarRoundedIcon,
+  shield: ShieldRoundedIcon,
+  crown: WorkspacePremiumRoundedIcon,
+  trophy: EmojiEventsRoundedIcon,
+  rocket: RocketLaunchRoundedIcon,
+};
+
+function BadgeTile({ badge }) {
+  const Icon = BADGE_ICONS[badge.icon] ?? StarRoundedIcon;
+  return (
+    <Box
+      component={motion.div}
+      variants={popChild}
+      whileHover={{ y: -4, scale: 1.04 }}
+      title={badge.desc}
+      sx={{ textAlign: 'center', p: 1.5, borderRadius: 3, border: '1px solid', borderColor: badge.earned ? alpha(badge.color, 0.55) : 'divider', bgcolor: badge.earned ? alpha(badge.color, 0.09) : 'transparent', position: 'relative', overflow: 'hidden' }}
+    >
+      <Box
+        component={motion.div}
+        animate={badge.earned ? { rotate: [0, -8, 8, 0] } : undefined}
+        transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
+        sx={{ width: 52, height: 52, mx: 'auto', mb: 1, borderRadius: '50%', display: 'grid', placeItems: 'center', color: badge.earned ? '#fff' : 'text.disabled', background: badge.earned ? `linear-gradient(145deg, ${badge.color}, ${alpha(badge.color, 0.6)})` : 'transparent', border: badge.earned ? 'none' : '2px dashed', borderColor: 'divider', boxShadow: badge.earned ? `0 8px 20px ${alpha(badge.color, 0.45)}` : 'none' }}
+      >
+        {badge.earned ? <Icon /> : <LockRoundedIcon sx={{ fontSize: 20 }} />}
+      </Box>
+      <Typography variant="body2" sx={{ fontWeight: 800, lineHeight: 1.2, color: badge.earned ? 'text.primary' : 'text.secondary' }}>
+        {badge.name}
+      </Typography>
+      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', lineHeight: 1.3, mt: 0.25 }}>
+        {badge.earned ? badge.desc : `${badge.have}/${badge.need} · ${badge.desc}`}
+      </Typography>
+    </Box>
   );
 }
 
@@ -227,6 +286,10 @@ export default function AptitudePatternDetailPage() {
   const solvedPct = totals.total ? Math.round((totals.solved / totals.total) * 100) : 0;
   const rec = bySubPattern.find((s) => s.slug === recommendedSubPattern);
   const bestPassed = progress.bestScore >= pattern.passPercentage;
+  const xp = moduleXp({ practice, progress, learnDone, pattern });
+  const rank = rankForXp(xp);
+  const badges = buildBadges({ practice, progress, learnDone, learnTotal, pattern });
+  const earnedCount = badges.filter((b) => b.earned).length;
   const remainingSec = activeTest ? Math.max(0, (new Date(activeTest.expiresAt).getTime() - now) / 1000) : 0;
 
   const goLearn = () => (lessons ? navigate(`/aptitude/${slug}/learn`) : navigate(`/learn/${slug}`));
@@ -253,27 +316,85 @@ export default function AptitudePatternDetailPage() {
         </Typography>
       </Breadcrumbs>
 
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ alignItems: { sm: 'flex-end' }, justifyContent: 'space-between', mb: 3 }}>
-        <Box>
-          <Typography variant="h4" sx={{ fontWeight: 800, letterSpacing: '-0.02em' }}>
-            {pattern.title}
-          </Typography>
-          <Typography color="text.secondary" sx={{ mt: 0.5, maxWidth: 640 }}>
-            {pattern.description}
-          </Typography>
-        </Box>
-        <Stack direction="row" spacing={1} useFlexGap sx={{ flexWrap: 'wrap' }}>
-          <Chip size="small" variant="outlined" label={`${totals.total} questions`} />
-          <Chip size="small" variant="outlined" label={`${testPlan.questionCount}-question test · ${pattern.timeLimitMinutes} min`} />
-          <Chip size="small" variant="outlined" label={`Pass ${pattern.passPercentage}%`} />
+      <HeroPanel glow={rank.alien.glow} sx={{ mb: 3 }}>
+        <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 3, md: 4 }} sx={{ position: 'relative', alignItems: { md: 'center' } }}>
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <Chip size="small" variant="outlined" color="primary" icon={<AutoAwesomeRoundedIcon sx={{ fontSize: 15 }} />} label={`The One for All Aptitude · ${pattern.category || 'Quantitative'}`} sx={{ fontWeight: 700, mb: 1.5 }} />
+            <Typography variant="h3" sx={{ fontWeight: 800, letterSpacing: '-0.03em', fontSize: { xs: 32, md: 44 }, lineHeight: 1.08 }}>
+              {pattern.title}
+            </Typography>
+            <Typography color="text.secondary" sx={{ mt: 1, maxWidth: 560 }}>
+              {pattern.description}
+            </Typography>
+
+            <Stack direction="row" spacing={0} divider={<Box sx={{ width: '1px', bgcolor: 'divider', mx: { xs: 1.5, sm: 3 } }} />} sx={{ mt: 3, flexWrap: 'wrap', rowGap: 2 }}>
+              {[
+                [totals.solved, 'Solved', `/${totals.total}`],
+                [learnDone, 'Lessons', learnTotal ? `/${learnTotal}` : ''],
+                [progress.attemptsCount > 0 ? Math.round(progress.bestScore) : 0, 'Best test', '%'],
+                [earnedCount, 'Badges', `/${badges.length}`],
+              ].map(([v, k, suf]) => (
+                <Box key={k}>
+                  <Typography sx={{ fontWeight: 800, fontSize: 26, lineHeight: 1, fontFamily: '"JetBrains Mono", monospace' }}>
+                    <CountUp value={v} />
+                    <Box component="span" sx={{ fontSize: 14, color: 'text.secondary', fontWeight: 700 }}>
+                      {suf}
+                    </Box>
+                  </Typography>
+                  <Typography variant="caption" color="text.secondary" sx={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                    {k}
+                  </Typography>
+                </Box>
+              ))}
+            </Stack>
+
+            <Stack direction="row" useFlexGap spacing={1} sx={{ flexWrap: 'wrap', mt: 2.5 }}>
+              {[`${testPlan.questionCount}-question test`, `${pattern.timeLimitMinutes} min`, `Pass ${pattern.passPercentage}%`, 'No negative marking'].map((c) => (
+                <Chip key={c} size="small" label={c} variant="outlined" />
+              ))}
+            </Stack>
+          </Box>
+
+          <Box sx={{ width: { xs: '100%', md: 300 }, flexShrink: 0, p: 2, borderRadius: '12px', bgcolor: (t) => alpha(t.palette.background.default, t.palette.mode === 'dark' ? 0.55 : 0.7), border: '1px solid', borderColor: 'divider' }}>
+            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+              <Alien3D kind={rank.alien.key} size={104} wave spin />
+              <Box sx={{ minWidth: 0 }}>
+                <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  Your alien
+                </Typography>
+                <Typography sx={{ fontWeight: 800, fontSize: 22, lineHeight: 1.15 }}>{rank.alien.name}</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {rank.alien.title}
+                </Typography>
+                <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 0.5 }}>
+                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
+                  <Typography variant="body2" sx={{ fontWeight: 800, fontFamily: '"JetBrains Mono", monospace' }}>
+                    <CountUp value={xp} /> XP
+                  </Typography>
+                </Stack>
+              </Box>
+            </Stack>
+            <Box sx={{ mt: 1.5 }}>
+              <XpBar pct={rank.pct} color={rank.alien.color} height={8} track="rgba(148,163,184,.22)" />
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75 }}>
+                {rank.next ? `${rank.toNext} XP to evolve into ${rank.next.name}` : 'Max evolution reached'}
+              </Typography>
+              <Stack direction="row" spacing={0.75} sx={{ mt: 1 }}>
+                {ALIENS.map((a, i) => (
+                  <Box key={a.key} sx={{ flex: 1, height: 4, borderRadius: 2, bgcolor: i <= rank.index ? a.color : 'action.disabledBackground' }} />
+                ))}
+              </Stack>
+            </Box>
+          </Box>
         </Stack>
-      </Stack>
+      </HeroPanel>
 
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
 
       {/* Learn → Practice → Test */}
-      <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} sx={{ mb: 3 }}>
+      <Stack component={motion.div} variants={staggerParent} initial="hidden" animate="show" direction={{ xs: 'column', md: 'row' }} spacing={2} sx={{ mb: 3 }}>
         <ModeCard
+          step="1"
           icon={<MenuBookRoundedIcon />}
           accent="#3B82F6"
           eyebrow="Step 1 · Understand"
@@ -286,6 +407,7 @@ export default function AptitudePatternDetailPage() {
           onClick={goLearn}
         />
         <ModeCard
+          step="2"
           icon={<CodeRoundedIcon />}
           accent="#10B981"
           eyebrow="Step 2 · Build speed"
@@ -297,6 +419,7 @@ export default function AptitudePatternDetailPage() {
           onClick={() => goPractice(rec && totals.attempted > 0 ? rec.slug : null)}
         />
         <ModeCard
+          step="3"
           icon={<TimerRoundedIcon />}
           accent="#F59E0B"
           eyebrow="Step 3 · Exam simulation"
@@ -305,7 +428,7 @@ export default function AptitudePatternDetailPage() {
             activeTest
               ? [`Test in progress · ${activeTest.answeredCount}/${activeTest.totalCount} answered`, `Time left ${formatClock(remainingSec)}`]
               : [
-                  `${testPlan.questionCount} questions · ${pattern.timeLimitMinutes} min · TCS iON style`,
+                  `${testPlan.questionCount} questions · ${pattern.timeLimitMinutes} min · exam-style interface`,
                   progress.attemptsCount > 0 ? `Best score ${progress.bestScore}%${bestPassed ? ' · passed' : ''}` : 'Mixed difficulty, no negative marking',
                 ]
           }
@@ -337,13 +460,27 @@ export default function AptitudePatternDetailPage() {
         </Paper>
       )}
 
+      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3, mb: 3 }}>
+        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
+            Badges
+          </Typography>
+          <Chip size="small" label={`${earnedCount} / ${badges.length} unlocked`} sx={{ fontWeight: 700 }} />
+        </Stack>
+        <Box component={motion.div} variants={staggerParent} initial="hidden" animate="show" sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(4, 1fr)', lg: 'repeat(8, 1fr)' }, gap: 1.25 }}>
+          {badges.map((b) => (
+            <BadgeTile key={b.id} badge={b} />
+          ))}
+        </Box>
+      </Paper>
+
       <Stack direction={{ xs: 'column', lg: 'row' }} spacing={3} sx={{ alignItems: 'flex-start' }}>
         {/* Topic map */}
         <Box sx={{ flex: 1, minWidth: 0, width: '100%' }}>
           <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1.5 }}>
             Topic mastery
           </Typography>
-          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', xl: 'repeat(3, 1fr)' }, gap: 1.5 }}>
+          <Box component={motion.div} variants={staggerParent} initial="hidden" animate="show" sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', xl: 'repeat(3, 1fr)' }, gap: 1.5 }}>
             {bySubPattern.map((s) => (
               <SubPatternTile key={s.slug} sub={s} onClick={() => goPractice(s.slug)} />
             ))}

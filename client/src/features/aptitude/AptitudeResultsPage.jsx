@@ -26,7 +26,11 @@ import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import FlagRoundedIcon from '@mui/icons-material/FlagRounded';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
+import { motion } from 'framer-motion';
 import Ring from './components/Ring';
+import Alien3D from './components/Alien3D';
+import { Confetti, CountUp } from './components/MotionBits';
+import { ALIENS, testXp } from './components/gamification';
 import QuestionStimulus from './components/QuestionStimulus';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from './components/aptitudeUi';
 
@@ -263,15 +267,28 @@ export default function AptitudeResultsPage() {
         <Typography variant="body2" sx={{ fontWeight: 600 }}>Test result</Typography>
       </Breadcrumbs>
 
+      {passed && <Confetti />}
       {/* Scorecard */}
-      <Paper variant="outlined" sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3, mb: 3 }}>
+      <Paper
+        component={motion.div}
+        initial={{ opacity: 0, y: 16, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 22 }}
+        variant="outlined"
+        sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: '14px', mb: 3, position: 'relative', overflow: 'hidden', background: (t) => `linear-gradient(135deg, ${alpha(passed ? t.palette.success.main : t.palette.error.main, 0.12)}, transparent 60%)` }}
+      >
+
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 3, md: 5 }} sx={{ alignItems: { xs: 'center', md: 'center' } }}>
-          <Ring value={result.score} size={156} thickness={4} color={passed ? 'success.main' : 'error.main'} label={`${Math.round(result.score)}%`} sublabel="score" />
+          <Stack sx={{ alignItems: 'center', position: 'relative' }}>
+            <Alien3D kind={ALIENS[passed ? Math.min(ALIENS.length - 1, Math.floor(result.score / 21)) : 0].key} size={120} wave={passed} sx={{ mb: -1.5, zIndex: 1 }} />
+            <Ring value={result.score} size={156} thickness={4} color={passed ? 'success.main' : 'error.main'} label={<CountUp value={Math.round(result.score)} suffix="%" />} sublabel="score" />
+          </Stack>
           <Box sx={{ flexGrow: 1, width: '100%' }}>
             <Stack direction="row" spacing={1} useFlexGap sx={{ alignItems: 'center', flexWrap: 'wrap', mb: 0.5 }}>
               <Typography variant="h5" sx={{ fontWeight: 800 }}>
-                {passed ? 'You passed' : 'Not passed yet'}
+                {passed ? 'Mission cleared!' : 'Not passed yet'}
               </Typography>
+              <Chip size="small" label={`+${testXp(result.score, passed)} XP`} sx={{ fontWeight: 900, bgcolor: '#FACC15', color: '#0F172A' }} />
               <Chip size="small" color={passed ? 'success' : 'error'} label={`Pass mark ${pattern.passPercentage}%`} />
               {result.percentile != null && <Chip size="small" variant="outlined" label={`Better than ${result.percentile}% of test takers`} />}
               {timedOut && <Chip size="small" color="warning" label="Auto-submitted" />}

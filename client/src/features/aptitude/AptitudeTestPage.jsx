@@ -40,7 +40,7 @@ import QuestionStimulus from './components/QuestionStimulus';
 import { PaletteSymbol } from './AptitudeTestInstructionsPage';
 import { OPTION_LABELS, PALETTE, formatClock } from './components/aptitudeUi';
 
-// TCS iON-style exam interface. Everything the learner does is autosaved to
+// Exam-style interface. Everything the learner does is autosaved to
 // the server (answers, review flags, per-question time), the countdown is
 // derived from the SERVER clock + expiresAt, and a refresh resumes the paper.
 
@@ -648,7 +648,7 @@ function ExamInterface() {
 
 // The exam always renders in the light "exam hall" theme, whatever mode the
 // rest of the app is in — fixed colours (white paper, navy header) must stay
-// legible, exactly like the real iON screen.
+// legible, exactly like a real exam screen.
 const examTheme = getTheme('light');
 
 export default function AptitudeTestPage() {

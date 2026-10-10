@@ -30,7 +30,7 @@ export function formatDuration(totalSec) {
 
 export const OPTION_LABELS = ['A', 'B', 'C', 'D'];
 
-// TCS iON question-palette colours — fixed on purpose so the screen looks
+// Exam question-palette colours — fixed on purpose so the screen looks
 // like the real exam the candidate will face.
 export const PALETTE = {
   notVisited: { bg: '#E5E7EB', fg: '#374151', label: 'Not Visited' },

@@ -28,7 +28,10 @@ import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
+import { motion } from 'framer-motion';
 import QuestionStimulus from './components/QuestionStimulus';
+import { Confetti, XpPop } from './components/MotionBits';
+import { XP_PER_SOLVE } from './components/gamification';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './components/aptitudeUi';
 
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
@@ -285,9 +288,14 @@ export default function AptitudePracticeQuestionPage() {
       </Paper>
 
       {/* Result */}
+      {result?.isCorrect && <Confetti pieces={26} />}
       {result && (
         <Stack spacing={2} sx={{ mt: 2.5 }}>
           <Paper
+            component={motion.div}
+            initial={result.isCorrect ? { scale: 0.94, opacity: 0 } : { x: 0, opacity: 0 }}
+            animate={result.isCorrect ? { scale: 1, opacity: 1 } : { x: [0, -10, 10, -7, 7, 0], opacity: 1 }}
+            transition={{ duration: result.isCorrect ? 0.35 : 0.45 }}
             variant="outlined"
             sx={{
               p: 2.25,
@@ -298,6 +306,7 @@ export default function AptitudePracticeQuestionPage() {
           >
             <Stack direction="row" spacing={1.5} useFlexGap sx={{ alignItems: 'center', flexWrap: 'wrap' }}>
               {result.isCorrect ? <CheckCircleRoundedIcon color="success" /> : <CancelRoundedIcon color="error" />}
+              {result.isCorrect && result.progress?.correctAttempts === 1 && <XpPop key={questionId} amount={XP_PER_SOLVE[question.difficulty] ?? 10} />}
               <Typography sx={{ fontWeight: 800, fontSize: 17, color: result.isCorrect ? 'success.main' : 'error.main' }}>
                 {result.isCorrect ? 'Correct' : 'Not quite'}
               </Typography>

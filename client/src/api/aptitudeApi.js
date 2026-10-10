@@ -28,7 +28,7 @@ export const aptitudeApi = {
   bookmarkQuestion: (slug, questionId, bookmarked) =>
     apiClient.post(`/aptitude/patterns/${slug}/practice/questions/${questionId}/bookmark`, { bookmarked }),
 
-  // Test — TCS iON style exam. startAttempt is idempotent for tests (resumes).
+  // Test — exam-style test. startAttempt is idempotent for tests (resumes).
   startAttempt: (slug, mode = 'test') => apiClient.post(`/aptitude/patterns/${slug}/start`, { mode }),
   getAttemptQuestions: (attemptId) => apiClient.get(`/aptitude/attempts/${attemptId}/questions`),
   saveAttempt: (attemptId, updates) => apiClient.post(`/aptitude/attempts/${attemptId}/save`, { updates }),
