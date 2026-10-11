@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import {
   Box, Typography, Paper, Button, TextField, Alert, Slider,
   FormControl, InputLabel, Select, MenuItem, ListSubheader,
 } from '@mui/material';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
 import TuneRoundedIcon from '@mui/icons-material/TuneRounded';
+import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import VisualizerCanvas from './components/VisualizerCanvas';
 import ControlPanel from './components/ControlPanel';
 import ComplexityPanel from './components/ComplexityPanel';
@@ -14,6 +15,11 @@ import { linearSearchSteps, binarySearchSteps } from './algorithms/searching';
 import { bfsSteps, dfsSteps, dijkstraSteps, defaultGraph } from './algorithms/graph';
 import { bstInsertSteps, bstTraversalSteps } from './algorithms/trees';
 import { fibonacciSteps, knapsackSteps, defaultKnapsack } from './algorithms/dp';
+
+// Blip's guided lesson (3D mascot + speech) is only downloaded when someone
+// clicks Teach.
+const loadTeachGuide = () => import('./teach/TeachGuide');
+const TeachGuide = lazy(loadTeachGuide);
 
 const ALGO_GROUPS = [
   { label: 'Sorting', algos: ['bubbleSort', 'mergeSort', 'quickSort', 'heapSort'] },
@@ -59,6 +65,12 @@ export default function VisualizerPage() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(3);
   const timerRef = useRef(null);
+
+  // ---- Teach (Blip's guided lesson) -------------------------------------
+  const [teaching, setTeaching] = useState(false);
+  const liveRef = useRef({});
+  const savedSpeed = useRef(3);
+  const runAfterTarget = useRef(false);
 
   const algo = COMPLEXITY_DATA[algoKey];
   const category = algo.category;
@@ -124,6 +136,48 @@ export default function VisualizerPage() {
 
   const currentStep = steps[stepIndex];
 
+  liveRef.current = { algoKey, algo, category, steps, stepIndex, isPlaying, speed, array, target, isSearchAlgo, isFibonacci, showArrayControls };
+
+  // Search algorithms need a target before they have any steps. When Blip
+  // fills one in for the demo, recompute as soon as that value has landed.
+  useEffect(() => {
+    if (runAfterTarget.current) {
+      runAfterTarget.current = false;
+      runAlgorithm();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target]);
+
+  // The only door Blip's tour has into this page.
+  const teachPage = useMemo(() => ({
+    get: () => liveRef.current,
+    begin: () => {
+      savedSpeed.current = liveRef.current.speed;
+      setIsPlaying(false);
+      setStepIndex(0);
+    },
+    end: () => {
+      setSpeed(savedSpeed.current);
+      setIsPlaying(false);
+    },
+    stepTo: (i) => {
+      setIsPlaying(false);
+      setStepIndex(i);
+    },
+    setSpeed: (v) => setSpeed(v),
+    restoreSpeed: () => setSpeed(savedSpeed.current),
+    prepare: () => {
+      const { array: arr, target: tg } = liveRef.current;
+      if (tg.trim() === '' || Number.isNaN(Number(tg))) {
+        const pick = arr[Math.min(arr.length - 1, Math.floor(arr.length * 0.65))];
+        if (pick !== undefined) {
+          runAfterTarget.current = true;
+          setTarget(String(pick));
+        }
+      }
+    },
+  }), []);
+
   const applyCustomArray = () => {
     const { values, error } = parseCustomArray(customInput);
     if (error) { setCustomError(error); return; }
@@ -160,10 +214,33 @@ export default function VisualizerPage() {
     >
       {/* Compact header + all controls in one row */}
       <Box sx={{ mb: 2, flexShrink: 0 }}>
-        <Typography variant="h6" sx={{ fontWeight: 800, mb: 1 }}>Algorithm Visualizer</Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, mb: 1 }}>
+          <Typography variant="h6" sx={{ fontWeight: 800 }}>Algorithm Visualizer</Typography>
+          <Button
+            data-teach="teach"
+            onClick={() => setTeaching(true)}
+            onMouseEnter={loadTeachGuide}
+            onFocus={loadTeachGuide}
+            disabled={teaching}
+            startIcon={<AutoAwesomeRoundedIcon />}
+            variant="contained"
+            size="small"
+            sx={{
+              fontWeight: 800,
+              borderRadius: 99,
+              px: 2,
+              color: '#04281c',
+              background: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)',
+              boxShadow: '0 4px 14px rgba(16,185,129,0.4)',
+              '&:hover': { background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)' },
+            }}
+          >
+            Teach
+          </Button>
+        </Box>
 
         <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-          <FormControl size="small" sx={{ minWidth: 220 }}>
+          <FormControl data-teach="algo" size="small" sx={{ minWidth: 220 }}>
             <InputLabel id="algo-select-label">Algorithm</InputLabel>
             <Select
               labelId="algo-select-label"
@@ -182,13 +259,13 @@ export default function VisualizerPage() {
           </FormControl>
 
           {showArrayControls && (
-            <Button startIcon={<ShuffleRoundedIcon />} onClick={() => setArray(randomArray(arraySize))} variant="outlined" size="small" sx={{ fontWeight: 600, height: 40 }}>
+            <Button data-teach="new-array" startIcon={<ShuffleRoundedIcon />} onClick={() => setArray(randomArray(arraySize))} variant="outlined" size="small" sx={{ fontWeight: 600, height: 40 }}>
               New array
             </Button>
           )}
 
           {showArrayControls && (
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Box data-teach="size" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <TuneRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
               <Slider
                 size="small"
@@ -206,6 +283,7 @@ export default function VisualizerPage() {
           )}
 
           {showArrayControls && (
+            <Box data-teach="custom" sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
             <TextField
               size="small"
               label={category === 'tree' ? 'Custom values' : 'Custom array'}
@@ -217,15 +295,15 @@ export default function VisualizerPage() {
               helperText={customError || ' '}
               sx={{ width: 190 }}
             />
-          )}
-          {showArrayControls && (
             <Button onClick={applyCustomArray} variant="text" size="small" sx={{ fontWeight: 600, height: 40 }}>
               Apply
             </Button>
+            </Box>
           )}
 
           {isSearchAlgo && (
             <TextField
+              data-teach="target"
               size="small"
               label="Target"
               value={target}
@@ -239,6 +317,7 @@ export default function VisualizerPage() {
           )}
           {isFibonacci && (
             <TextField
+              data-teach="fib-n"
               size="small"
               label="n (0–25)"
               value={dpN}
@@ -261,7 +340,7 @@ export default function VisualizerPage() {
       {/* Main area — fills remaining height, no page scroll on md+ */}
       <Box sx={{ flex: 1, minHeight: 0, display: 'flex', gap: 2, flexDirection: { xs: 'column', md: 'row' } }}>
         <Paper variant="outlined" sx={{ flex: 2, minHeight: 0, display: 'flex', flexDirection: 'column', p: 2, borderRadius: 3 }}>
-          <Box sx={{ flex: 1, minHeight: 0, overflow: 'auto', display: 'flex', alignItems: 'center', width: '100%' }}>
+          <Box data-teach="stage" sx={{ flex: 1, minHeight: 0, overflow: 'auto', display: 'flex', alignItems: 'center', width: '100%' }}>
             {currentStep ? (
               <VisualizerCanvas category={category} step={currentStep} graph={defaultGraph} />
             ) : isSearchAlgo ? (
@@ -291,6 +370,12 @@ export default function VisualizerPage() {
           <ComplexityPanel algo={algo} opsCount={currentStep?.opsCount} description={currentStep?.description} />
         </Box>
       </Box>
+
+      {teaching && (
+        <Suspense fallback={null}>
+          <TeachGuide page={teachPage} onClose={() => setTeaching(false)} />
+        </Suspense>
+      )}
     </Box>
   );
 }

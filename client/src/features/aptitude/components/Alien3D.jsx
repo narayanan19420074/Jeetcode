@@ -159,7 +159,7 @@ function buildMascot(kind) {
   const root = new THREE.Group();
   const body = new THREE.Group();
   root.add(body);
-  const rig = { root, body, eyes: [], pulse: [], flames: [], spin: [], emitters: [], legs: null, arms: null, head: null, torso: null, orb: null, orbit: null, sparks: null, mouth: null };
+  const rig = { root, body, eyes: [], pulse: [], flames: [], spin: [], emitters: [], legs: null, arms: null, head: null, torso: null, orb: null, orbit: null, sparks: null, mouth: null, blipMouth: null };
 
   const makeEye = (parent, x, y, z, s) => {
     const g = new THREE.Group();
@@ -239,7 +239,7 @@ function buildMascot(kind) {
       orb.add(eye);
       rig.eyes.push(eye);
     });
-    mesh(orb, new THREE.TorusGeometry(0.17, 0.028, 8, 20, Math.PI), ink, [0, -0.2, 0.9], [1, 1, 1], [0, 0, Math.PI]);
+    rig.blipMouth = mesh(orb, new THREE.TorusGeometry(0.17, 0.028, 8, 20, Math.PI), ink, [0, -0.2, 0.9], [1, 1, 1], [0, 0, Math.PI]);
     const ring = mesh(orb, new THREE.TorusGeometry(1.35, 0.022, 8, 80), glow(f.accent, 1.4), [0, 0, 0], [1, 1, 1], [1.2, 0.2, 0]);
     rig.spin.push(ring);
     [0, 1, 2].forEach((i) => {
@@ -418,12 +418,13 @@ function webglOk() {
  *   heading — -1..1, turns toward the direction of travel
  *   wave    — occasionally waves when standing
  *   spin    — gentle showcase sway (hero use)
+ *   talking — moves the mouth like speech (Blip's Teach guide uses it)
  */
-export default function Alien3D({ kind = 'blip', size = 140, walking = false, heading = 0, wave = true, spin = false, sx }) {
+export default function Alien3D({ kind = 'blip', size = 140, walking = false, heading = 0, wave = true, spin = false, talking = false, sx }) {
   const mountRef = useRef(null);
-  const live = useRef({ walking, heading, wave, spin });
+  const live = useRef({ walking, heading, wave, spin, talking });
   const [fallback, setFallback] = useState(false);
-  live.current = { walking, heading, wave, spin };
+  live.current = { walking, heading, wave, spin, talking };
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -488,6 +489,7 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
     let t = 0;
     let phase = 0;
     let walkBlend = 0;
+    let talkBlend = 0;
     let yaw = 0;
     const io = new IntersectionObserver(([e]) => {
       visible = e.isIntersecting;
@@ -507,6 +509,8 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
       const sp = reduce ? 0 : 1;
       walkBlend += ((p.walking && !reduce ? 1 : 0) - walkBlend) * Math.min(1, dt * 9);
       phase += dt * 11 * walkBlend * sp;
+      talkBlend += ((p.talking && !reduce ? 1 : 0) - talkBlend) * Math.min(1, dt * 10);
+      const talkWave = talkBlend * Math.abs(Math.sin(t * 13 + Math.sin(t * 5) * 2));
       const idle = 1 - walkBlend;
       const bounce = Math.abs(Math.sin(phase));
 
@@ -517,6 +521,8 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
         rig.orb.scale.set(1 / Math.sqrt(stretch), stretch, 1 / Math.sqrt(stretch));
         rig.orb.rotation.z = Math.sin(phase) * 0.12 * walkBlend;
         rig.orb.rotation.y = Math.sin(t * 0.9) * 0.25 * idle * sp;
+        if (rig.blipMouth) rig.blipMouth.scale.set(1 + talkWave * 0.25, 1 + talkWave * 1.9, 1);
+        rig.orb.scale.multiplyScalar(1 + talkWave * 0.035);
       } else {
         const sL = Math.sin(phase);
         rig.legs[0].rotation.x = sL * 0.95 * walkBlend;
@@ -532,7 +538,7 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
         rig.head.rotation.y = Math.sin(t * 0.8) * 0.22 * idle * sp;
         rig.head.rotation.z = Math.sin(t * 1.3) * 0.05 * idle * sp;
         rig.head.rotation.x = -0.05 * walkBlend;
-        rig.mouth.scale.y = 1 + walkBlend * 0.8 + Math.sin(t * 3) * 0.05 * sp;
+        rig.mouth.scale.y = 1 + walkBlend * 0.8 + Math.sin(t * 3) * 0.05 * sp + talkWave * 1.8;
         const squash = 1 - bounce * 0.04 * walkBlend;
         rig.torso.scale.set(1 / Math.sqrt(squash), squash, 1 / Math.sqrt(squash));
       }
