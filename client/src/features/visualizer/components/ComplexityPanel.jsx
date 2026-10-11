@@ -2,7 +2,7 @@ import { Paper, Typography, Box, Chip, Divider, Stack } from '@mui/material';
 
 export default function ComplexityPanel({ algo, opsCount, description }) {
   return (
-    <Paper data-teach="complexity" variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+    <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
       <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 0.5 }}>{algo.name}</Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>{algo.description}</Typography>
 
@@ -18,7 +18,7 @@ export default function ComplexityPanel({ algo, opsCount, description }) {
       <Typography variant="caption" sx={{ color: 'text.secondary', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
         Live counters
       </Typography>
-      <Box data-teach="counters" sx={{ display: 'flex', gap: 1, mt: 1, flexWrap: 'wrap' }}>
+      <Box sx={{ display: 'flex', gap: 1, mt: 1, flexWrap: 'wrap' }}>
         {Object.entries(opsCount || {}).map(([key, value]) => (
           <Chip key={key} label={`${key}: ${value}`} size="small" sx={{ fontFamily: (t) => t.typography.monospace.fontFamily, fontWeight: 700 }} />
         ))}
