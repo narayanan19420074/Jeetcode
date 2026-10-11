@@ -42,6 +42,9 @@
     "nanoid": "^3.3.17",
     "rate-limit-redis": "^6.0.1",
     "razorpay": "^2.9.8",
+    "socket.io": "^4.8.4",
+    "socket.io-client": "^4.8.4",
+    "yjs": "^13.6.33",
     "zod": "^4.4.3"
   },
   "devDependencies": {
