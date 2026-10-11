@@ -51,6 +51,10 @@ const LearnTopicPage = lazy(() => import('./features/learn/LearnTopicPage'));
 // now lives on the Aptitude module (AptitudePracticePage) instead.
 const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage'));
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
+const StudyPlansPage = lazy(() => import('./features/studyplan/StudyPlansPage'));
+const StudyPlanDetailPage = lazy(() => import('./features/studyplan/StudyPlanDetailPage'));
+const StudyPlanJoinPage = lazy(() => import('./features/studyplan/StudyPlanJoinPage'));
+const LeaderboardPage = lazy(() => import('./features/leaderboard/LeaderboardPage'));
 
 const RouteFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -160,6 +164,11 @@ export default function App() {
         />
         <Route path="/prep" element={<Suspense fallback={<RouteFallback />}><PrepCompaniesPage /></Suspense>} />
         <Route path="/prep/:companySlug" element={<Suspense fallback={<RouteFallback />}><PrepRoadmapPage /></Suspense>} />
+        {/* Study plans — each is a private-by-membership plan; invite links land on /plans/join/:code */}
+        <Route path="/plans" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><StudyPlansPage /></Suspense></ProtectedRoute>} />
+        <Route path="/plans/join/:code" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><StudyPlanJoinPage /></Suspense></ProtectedRoute>} />
+        <Route path="/plans/:id" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><StudyPlanDetailPage /></Suspense></ProtectedRoute>} />
+        <Route path="/leaderboard" element={<Suspense fallback={<RouteFallback />}><LeaderboardPage /></Suspense>} />
 
         <Route
           path="/aptitude/:slug/results/:attemptId"

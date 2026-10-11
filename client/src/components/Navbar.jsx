@@ -37,6 +37,8 @@ import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import EventNoteRoundedIcon from '@mui/icons-material/EventNoteRounded';
+import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import { toggleThemeMode } from '../app/uiSlice';
 import { logoutUser } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
@@ -55,12 +57,14 @@ const PRIMARY_LINKS = [
   { to: '/dashboard', label: 'Dashboard', icon: DashboardRoundedIcon },
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
   { to: '/prep', label: 'Prep by Company', icon: BusinessRoundedIcon },
+  { to: '/plans', label: 'Study Plans', icon: EventNoteRoundedIcon },
 ];
 
 // Reference links — grouped under "Explore" on desktop, second group on mobile.
 // (Learn topics are reached through Aptitude Practice -> a pattern.)
 const EXPLORE_LINKS = [
   { to: '/aptitude', label: 'One for All Aptitude', icon: CalculateRoundedIcon },
+  { to: '/leaderboard', label: 'Leaderboard', icon: EmojiEventsRoundedIcon },
   { to: '/visualizer', label: 'Visualizer', icon: BarChartRoundedIcon },
   { to: '/pricing', label: 'Pricing', icon: WorkspacePremiumRoundedIcon },
 ];

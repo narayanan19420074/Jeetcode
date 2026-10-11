@@ -11,6 +11,8 @@ import billingRoutes from './billing.routes.js';
 import licenseRoutes from './license.routes.js';
 import prepRoutes from './prep.routes.js';
 import roomRoutes from './room.routes.js';
+import studyPlanRoutes from './studyPlan.routes.js';
+import leaderboardRoutes from './leaderboard.routes.js';
 import '../models/AdminActionLog.js';
 
 const router = Router();
@@ -34,6 +36,8 @@ router.use('/aptitude', aptitudeRoutes);
 router.use('/licenses', licenseRoutes);
 router.use('/prep', prepRoutes);
 router.use('/rooms', roomRoutes);
+router.use('/study-plans', studyPlanRoutes);
+router.use('/leaderboard', leaderboardRoutes);
 
 
 export default router;
