@@ -18,11 +18,13 @@ import DashboardSidebar from './components/DashboardSidebar';
 import PromoCarousel from './components/PromoCarousel';
 import ProblemLibrary from './components/ProblemLibrary';
 import RightRail from './components/RightRail';
-import { ExploreView, ListView, QuestsView, StudyPlanView } from './components/DashboardViews';
+import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
+import StudyPlannerView from '../studyplan/StudyPlannerView';
+import LeaderboardView from '../leaderboard/LeaderboardView';
 import useProblemLists from './useProblemLists';
 import { STATUS_COLOR, featuredPageForToday, surface, utcKey } from './dashboardUtils';
 
-const VIEWS = ['library', 'quests', 'explore', 'plans', 'list'];
+const VIEWS = ['library', 'quests', 'explore', 'plans', 'leaderboard', 'list'];
 
 export default function DashboardPage() {
   const navigate = useNavigate();
@@ -32,6 +34,20 @@ export default function DashboardPage() {
 
   const [params, setParams] = useSearchParams();
   const listsApi = useProblemLists(user?.id);
+
+  // A study-plan invite link carries ?join=CODE, but the login redirect only keeps the path.
+  // Remember the code across login, then reopen the Study Plan view with the join card.
+  useEffect(() => {
+    const code = params.get('join');
+    if (code && !isAuthenticated) sessionStorage.setItem('jeetcode.pendingJoin', code);
+    if (isAuthenticated) {
+      const pending = sessionStorage.getItem('jeetcode.pendingJoin');
+      if (pending) {
+        sessionStorage.removeItem('jeetcode.pendingJoin');
+        setParams({ view: 'plans', join: pending }, { replace: true });
+      }
+    }
+  }, [isAuthenticated, params, setParams]);
 
   const [progress, setProgress] = useState(null);
   const [featured, setFeatured] = useState(null);
@@ -288,7 +304,8 @@ export default function DashboardPage() {
                     <QuestsView user={user} isAuthenticated={isAuthenticated} checkedIn={checkedIn} onPick={pickRandom} />
                   )}
                   {currentView === 'explore' && <ExploreView onBrowse={browse} />}
-                  {currentView === 'plans' && <StudyPlanView />}
+                  {currentView === 'plans' && <StudyPlannerView isAuthenticated={isAuthenticated} />}
+                  {currentView === 'leaderboard' && <LeaderboardView isAuthenticated={isAuthenticated} />}
                   {currentView === 'list' && activeList && (
                     <ListView
                       list={activeList}

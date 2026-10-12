@@ -4,6 +4,7 @@ import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
@@ -15,6 +16,7 @@ export const NAV_ITEMS = [
   { view: 'quests', label: 'Quests', icon: EmojiEventsRoundedIcon },
   { view: 'explore', label: 'Explore', icon: ExploreRoundedIcon },
   { view: 'plans', label: 'Study Plan', icon: SchoolRoundedIcon },
+  { view: 'leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon },
 ];
 
 function NavButton({ active, icon: Icon, label, count, accent, onClick, trailing }) {
