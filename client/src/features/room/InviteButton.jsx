@@ -34,8 +34,8 @@ export default function InviteButton({ problem, language, code }) {
   return (
     <Tooltip title="Invite a friend to code together">
       <span>
-        <IconButton onClick={invite} disabled={busy || !problem}>
-          {busy ? <CircularProgress size={20} /> : <GroupAddRoundedIcon />}
+        <IconButton size="small" onClick={invite} disabled={busy || !problem} aria-label="Invite a friend" sx={{ width: 36, height: 36 }}>
+          {busy ? <CircularProgress size={18} /> : <GroupAddRoundedIcon sx={{ fontSize: 20 }} />}
         </IconButton>
       </span>
     </Tooltip>

@@ -230,7 +230,7 @@ export default function DashboardPage() {
             transition: 'grid-template-columns .4s cubic-bezier(.4,0,.2,1)',
           }}
         >
-          <Box sx={{ position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0 }}>
+          <Box className="autohide-scroll" sx={{ position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0 }}>
             <DashboardSidebar
               view={currentView}
               activeListId={activeList?.id}
@@ -244,6 +244,7 @@ export default function DashboardPage() {
 
           <Box
             component="section"
+            className="autohide-scroll"
             aria-label="Dashboard content"
             sx={{
               minWidth: 0,
@@ -253,7 +254,6 @@ export default function DashboardPage() {
                 overflowY: ownScroll ? 'hidden' : 'auto',
                 overflowX: 'hidden',
                 pr: ownScroll ? 0 : 1,
-                scrollbarWidth: 'thin',
                 scrollbarGutter: ownScroll ? 'auto' : 'stable',
               }),
             }}
@@ -360,6 +360,7 @@ export default function DashboardPage() {
           {/* Streak + calendar rail. Slides away on Study Plan and Leaderboard. */}
           {isLg ? (
             <Box
+              className="autohide-scroll"
               aria-hidden={!showRail}
               sx={{
                 minWidth: 0,
@@ -368,7 +369,6 @@ export default function DashboardPage() {
                 overflowX: 'hidden',
                 overflowY: showRail ? 'auto' : 'hidden',
                 pl: 3,
-                scrollbarWidth: 'thin',
                 opacity: showRail ? 1 : 0,
                 transform: showRail ? 'none' : 'translateX(28px)',
                 pointerEvents: showRail ? 'auto' : 'none',

@@ -282,12 +282,12 @@ export default function WorkspacePage() {
           overflow: 'hidden',
         }}
       >
-        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ px: 2, py: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
+        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.25, md: 2 }, py: 0.75, borderBottom: '1px solid', borderColor: 'divider' }}>
           <Select
             size="small"
             value={activeLanguage}
             onChange={(e) => dispatch(setLanguage(e.target.value))}
-            sx={{ minWidth: { xs: 100, md: 140 } }}
+            sx={{ minWidth: { xs: 108, md: 140 }, height: 36, fontSize: '0.85rem', fontWeight: 600, '& .MuiSelect-select': { py: 0.5 } }}
           >
             {LANGUAGES.map((l) => (
               <MenuItem key={l.id} value={l.id}>
@@ -296,28 +296,65 @@ export default function WorkspacePage() {
             ))}
           </Select>
 
-          <Stack direction="row" spacing={1}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: { xs: 0.5, md: 1 } }}>
             <InviteButton problem={problem} language={activeLanguage} code={code} />
             <Tooltip title="AI assistant">
-              <IconButton onClick={() => dispatch(toggleAiDrawer())} color={aiDrawerOpen ? 'primary' : 'default'}>
-                <AutoAwesomeRoundedIcon />
+              <IconButton
+                size="small"
+                aria-label="AI assistant"
+                onClick={() => dispatch(toggleAiDrawer())}
+                color={aiDrawerOpen ? 'primary' : 'default'}
+                sx={{ width: 36, height: 36 }}
+              >
+                <AutoAwesomeRoundedIcon sx={{ fontSize: 20 }} />
               </IconButton>
             </Tooltip>
+
+            {/* Phones: compact icon buttons. md+: small labelled buttons. */}
+            <Tooltip title="Run">
+              <span>
+                <IconButton
+                  size="small"
+                  aria-label="Run"
+                  onClick={handleRun}
+                  disabled={runStatus === 'running' || submitStatus === 'running'}
+                  sx={(t) => ({ display: { xs: 'inline-flex', md: 'none' }, width: 36, height: 36, border: `1px solid ${t.palette.primary.main}`, color: 'primary.main' })}
+                >
+                  {runStatus === 'running' ? <CircularProgress size={18} /> : <PlayArrowRoundedIcon sx={{ fontSize: 22 }} />}
+                </IconButton>
+              </span>
+            </Tooltip>
+            <Tooltip title="Submit">
+              <span>
+                <IconButton
+                  size="small"
+                  aria-label="Submit"
+                  onClick={handleSubmit}
+                  disabled={runStatus === 'running' || submitStatus === 'running'}
+                  sx={{ display: { xs: 'inline-flex', md: 'none' }, width: 36, height: 36, bgcolor: 'primary.main', color: 'primary.contrastText', '&:hover': { bgcolor: 'primary.dark' }, '&.Mui-disabled': { bgcolor: 'action.disabledBackground' } }}
+                >
+                  {submitStatus === 'running' ? <CircularProgress size={18} color="inherit" /> : <CloudUploadRoundedIcon sx={{ fontSize: 20 }} />}
+                </IconButton>
+              </span>
+            </Tooltip>
             <Button
+              size="small"
               variant="outlined"
-              startIcon={runStatus === 'running' ? <CircularProgress size={16} /> : <PlayArrowRoundedIcon />}
+              startIcon={runStatus === 'running' ? <CircularProgress size={14} /> : <PlayArrowRoundedIcon sx={{ fontSize: '18px !important' }} />}
               onClick={handleRun}
               disabled={runStatus === 'running' || submitStatus === 'running'}
+              sx={{ display: { xs: 'none', md: 'inline-flex' }, height: 36 }}
             >
               Run
             </Button>
             <Button
+              size="small"
               variant="contained"
               disableElevation
-              startIcon={submitStatus === 'running' ? <CircularProgress size={16} color="inherit" /> : <CloudUploadRoundedIcon />}
+              startIcon={submitStatus === 'running' ? <CircularProgress size={14} color="inherit" /> : <CloudUploadRoundedIcon sx={{ fontSize: '18px !important' }} />}
               onClick={handleSubmit}
               disabled={runStatus === 'running' || submitStatus === 'running'}
-              sx={{ fontWeight: 700 }}
+              sx={{ display: { xs: 'none', md: 'inline-flex' }, height: 36, fontWeight: 700 }}
             >
               Submit
             </Button>

@@ -38,3 +38,25 @@ body {
     height: 4px;
   }
 }
+
+/* Auto-hide scrollbar (like Claude's sidebar): invisible until the pointer is
+   over the panel or it is being scrolled, then a slim soft thumb fades in. */
+.autohide-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.autohide-scroll:hover,
+.autohide-scroll:focus-within {
+  scrollbar-color: rgba(128, 138, 155, 0.45) transparent;
+}
+@supports not (scrollbar-width: thin) {
+  .autohide-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .autohide-scroll::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  .autohide-scroll:hover::-webkit-scrollbar-thumb {
+    background: rgba(128, 138, 155, 0.45);
+  }
+}
