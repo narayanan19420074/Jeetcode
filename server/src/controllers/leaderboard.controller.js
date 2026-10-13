@@ -2,7 +2,7 @@ import { StudyPlan } from '../models/StudyPlan.js';
 import { User } from '../models/User.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
-import { getRanking, assignRanks, POINTS } from '../services/leaderboard.service.js';
+import { getRanking, assignRanks, getTotalUsers, publicRow, POINTS } from '../services/leaderboard.service.js';
 
 // Score / solved count for the selected track (overall | coding | aptitude).
 const scoreFor = (r, track) =>
@@ -57,13 +57,9 @@ export const getLeaderboard = asyncHandler(async (req, res) => {
     const present = new Set(rows.map((r) => r.userId));
     const missing = [...friendIds].filter((id) => !present.has(id));
     if (missing.length) {
-      const users = await User.find({ _id: { $in: missing }, role: { $ne: 'admin' } }).select('name handle avatarUrl streakDays company').lean();
+      const users = await User.find({ _id: { $in: missing }, role: { $ne: 'admin' } }).select('name handle avatarUrl streakDays lastActivityDate company').lean();
       users.forEach((u) =>
-        rows.push({
-          userId: String(u._id), handle: u.handle, name: u.name, avatarUrl: u.avatarUrl || null,
-          company: u.company || '', streak: u.streakDays || 0,
-          easy: 0, medium: 0, hard: 0, aptitude: 0, solved: 0, score: 0, recent: 0,
-        })
+        rows.push({ ...publicRow(u), easy: 0, medium: 0, hard: 0, aptitude: 0, solved: 0, score: 0, recent: 0 })
       );
       rows.sort(byScore);
     }
@@ -96,6 +92,7 @@ export const getLeaderboard = asyncHandler(async (req, res) => {
     page,
     limit,
     updatedAt: new Date(entry.at),
+    totalUsers: await getTotalUsers(),
     me: mine,
     neighbors: mine ? { above: brief(above) && { ...brief(above), gap: above.score - mine.score }, below: brief(below) && { ...brief(below), gap: mine.score - below.score } } : null,
     // Top 3 always come back (even on page 2+ or while searching) so the podium never disappears.

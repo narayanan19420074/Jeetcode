@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Alert, Avatar, Box, Button, ButtonBase, IconButton, Skeleton, TextField, Tooltip, Typography } from '@mui/material';
+import { Alert, Avatar, Box, Button, ButtonBase, Collapse, IconButton, Skeleton, TextField, Tooltip, Typography } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import { studyPlanApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import ProgressRing from '../../components/ProgressRing';
@@ -42,6 +44,53 @@ function RailGroup({ title, plans, planId, onSelect }) {
         );
       })}
     </>
+  );
+}
+
+// Who is studying with you: the people in the open plan, or across all your plans on the Overview.
+function FriendsCard({ plans, planId }) {
+  const [open, setOpen] = useState(true);
+  const friends = useMemo(() => {
+    if (!plans) return [];
+    const scoped = planId ? plans.filter((p) => p.id === planId) : plans;
+    const byId = new Map();
+    scoped.forEach((p) => (p.members || []).forEach((m) => {
+      if (m.isMe) return;
+      const cur = byId.get(m.id) || { ...m, shared: 0 };
+      cur.shared += 1;
+      byId.set(m.id, cur);
+    }));
+    return [...byId.values()].sort((a, b) => b.shared - a.shared || a.name.localeCompare(b.name));
+  }, [plans, planId]);
+
+  if (plans === null) return null;
+  return (
+    <Box sx={[surface, { display: { xs: 'none', md: 'block' }, overflow: 'hidden' }]}>
+      <ButtonBase onClick={() => setOpen((o) => !o)} aria-expanded={open} sx={{ width: '100%', justifyContent: 'flex-start', gap: 1, px: 1.75, py: 1.1, fontFamily: 'inherit', textAlign: 'left' }}>
+        <GroupsRoundedIcon sx={{ fontSize: 20, color: 'primary.main' }} />
+        <Typography variant="body2" sx={{ fontWeight: 700, flex: 1 }}>{planId ? 'In this plan' : 'Friends'}</Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>{friends.length}</Typography>
+        <ExpandMoreRoundedIcon sx={{ fontSize: 20, color: 'text.secondary', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />
+      </ButtonBase>
+      <Collapse in={open} timeout={220}>
+        <Box sx={(t) => ({ borderTop: `1px solid ${t.palette.divider}`, maxHeight: 260, overflowY: 'auto', scrollbarWidth: 'thin', py: 0.5 })}>
+          {friends.length === 0 ? (
+            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.75, py: 1.25 }}>
+              {planId ? 'No one else has joined yet. Share the invite link.' : 'Invite friends to a plan and they will show up here.'}
+            </Typography>
+          ) : friends.map((f) => (
+            <Box key={f.id} sx={{ display: 'flex', alignItems: 'center', gap: 1.1, px: 1.75, py: 0.7 }}>
+              <Avatar src={f.avatarUrl || undefined} sx={{ width: 26, height: 26, fontSize: 12, fontWeight: 700 }}>{f.name?.[0]?.toUpperCase()}</Avatar>
+              <Box sx={{ minWidth: 0, flex: 1 }}>
+                <Typography variant="body2" noWrap sx={{ fontWeight: 600, lineHeight: 1.25 }}>{f.name}</Typography>
+                <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>@{f.handle}</Typography>
+              </Box>
+              {!planId && f.shared > 1 && <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>{f.shared} plans</Typography>}
+            </Box>
+          ))}
+        </Box>
+      </Collapse>
+    </Box>
   );
 }
 
@@ -110,7 +159,7 @@ function Overview({ plans, onSelect, onNew }) {
   const withToday = plans.filter((p) => p.today.length > 0);
 
   return (
-    <Box sx={{ display: 'grid', gap: 2 }}>
+    <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: 'minmax(0, 1fr)' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         <Box sx={{ flex: 1 }}>
           <Typography variant="h5" sx={{ fontWeight: 700 }}>Study Plan</Typography>
@@ -263,11 +312,12 @@ export default function StudyPlannerView({ isAuthenticated }) {
 
   return (
     <Box sx={{ display: 'grid', gap: 2, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: '200px minmax(0,1fr)' } }}>
-      <Box sx={{ position: { md: 'sticky' }, top: { md: 84 } }}>
+      <Box sx={{ position: { md: 'sticky' }, top: { md: 84, lg: 0 }, display: 'grid', gap: 2, gridTemplateColumns: 'minmax(0, 1fr)', maxHeight: { lg: 'calc(100dvh - 150px)' }, overflowY: { lg: 'auto' }, scrollbarWidth: 'thin' }}>
         <PlanRail
           plans={plans} planId={planId} onOverview={() => go()} onSelect={(id) => go({ plan: id })} onNew={() => setBuilder({})}
           onJoinCode={joinFromInput} codeInput={codeInput} setCodeInput={(v) => { setCodeInput(v); setCodeError(''); }} codeError={codeError}
         />
+        <FriendsCard plans={plans} planId={planId} />
       </Box>
 
       <Box sx={{ minWidth: 0 }}>

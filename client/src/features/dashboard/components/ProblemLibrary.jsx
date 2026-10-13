@@ -528,102 +528,119 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
 
       <TopicRow tags={tags} selected={q.tags} onToggle={toggleTag} />
 
-      {/* Toolbar */}
-      <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-        <TextField
-          inputRef={searchRef}
-          size="small"
-          placeholder="Search questions"
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          sx={{ flex: 1, minWidth: 0, maxWidth: 420, '& .MuiOutlinedInput-root': { borderRadius: 999 } }}
-          slotProps={{
-            input: {
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchRoundedIcon fontSize="small" />
-                </InputAdornment>
-              ),
-              endAdornment: searchText ? undefined : (
-                <InputAdornment position="end">
-                  <Box
-                    component="kbd"
-                    sx={(t) => ({
-                      display: { xs: 'none', md: 'block' },
-                      px: 0.75,
-                      borderRadius: '6px',
-                      border: `1px solid ${t.palette.divider}`,
-                      fontFamily: 'inherit',
-                      fontSize: '0.7rem',
-                      color: 'text.secondary',
-                    })}
-                  >
-                    /
-                  </Box>
-                </InputAdornment>
-              ),
-            },
-          }}
-        />
+      {/* Search + filters stay pinned while the problem list scrolls underneath */}
+      <Box
+        sx={(t) => ({
+          position: { md: 'sticky' },
+          top: 0,
+          zIndex: 3,
+          py: 0.75,
+          mx: -0.5,
+          px: 0.5,
+          display: 'grid',
+          gap: 1,
+          bgcolor: { md: t.palette.background.default },
+        })}
+      >
+        {/* Toolbar */}
+        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+          <TextField
+            inputRef={searchRef}
+            size="small"
+            placeholder="Search questions"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            sx={{ flex: 1, minWidth: 0, maxWidth: 420, '& .MuiOutlinedInput-root': { borderRadius: 999 } }}
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchRoundedIcon fontSize="small" />
+                  </InputAdornment>
+                ),
+                endAdornment: searchText ? undefined : (
+                  <InputAdornment position="end">
+                    <Box
+                      component="kbd"
+                      sx={(t) => ({
+                        display: { xs: 'none', md: 'block' },
+                        px: 0.75,
+                        borderRadius: '6px',
+                        border: `1px solid ${t.palette.divider}`,
+                        fontFamily: 'inherit',
+                        fontSize: '0.7rem',
+                        color: 'text.secondary',
+                      })}
+                    >
+                      /
+                    </Box>
+                  </InputAdornment>
+                ),
+              },
+            }}
+          />
 
-        <Tooltip title={sortDisabled ? 'Results are ranked by relevance while searching' : 'Sort'}>
-          <span>
+          <Tooltip title={sortDisabled ? 'Results are ranked by relevance while searching' : 'Sort'}>
+            <span>
+              <IconButton
+                onClick={(e) => setSortAnchor(e.currentTarget)}
+                disabled={sortDisabled}
+                aria-label="Sort problems"
+                sx={(t) => ({ border: `1px solid ${t.palette.divider}`, borderRadius: '10px' })}
+              >
+                <SwapVertRoundedIcon fontSize="small" />
+              </IconButton>
+            </span>
+          </Tooltip>
+
+          <Tooltip title="Filter">
             <IconButton
-              onClick={(e) => setSortAnchor(e.currentTarget)}
-              disabled={sortDisabled}
-              aria-label="Sort problems"
+              onClick={(e) => setFilterAnchor(e.currentTarget)}
+              aria-label="Filter problems"
               sx={(t) => ({ border: `1px solid ${t.palette.divider}`, borderRadius: '10px' })}
             >
-              <SwapVertRoundedIcon fontSize="small" />
+              <Badge variant="dot" color="error" invisible={filterCount === 0} overlap="circular">
+                <FilterListRoundedIcon fontSize="small" />
+              </Badge>
             </IconButton>
-          </span>
-        </Tooltip>
+          </Tooltip>
 
-        <Tooltip title="Filter">
-          <IconButton
-            onClick={(e) => setFilterAnchor(e.currentTarget)}
-            aria-label="Filter problems"
-            sx={(t) => ({ border: `1px solid ${t.palette.divider}`, borderRadius: '10px' })}
-          >
-            <Badge variant="dot" color="error" invisible={filterCount === 0} overlap="circular">
-              <FilterListRoundedIcon fontSize="small" />
-            </Badge>
-          </IconButton>
-        </Tooltip>
+          <Tooltip title="Pick a random problem from this view">
+            <span>
+              <IconButton
+                onClick={pickOne}
+                disabled={picking}
+                aria-label="Pick a random problem"
+                sx={(t) => ({ border: `1px solid ${t.palette.divider}`, borderRadius: '10px' })}
+              >
+                {picking ? <CircularProgress size={18} /> : <ShuffleRoundedIcon fontSize="small" />}
+              </IconButton>
+            </span>
+          </Tooltip>
 
-        <Tooltip title="Pick a random problem from this view">
-          <span>
-            <IconButton
-              onClick={pickOne}
-              disabled={picking}
-              aria-label="Pick a random problem"
-              sx={(t) => ({ border: `1px solid ${t.palette.divider}`, borderRadius: '10px' })}
-            >
-              {picking ? <CircularProgress size={18} /> : <ShuffleRoundedIcon fontSize="small" />}
-            </IconButton>
-          </span>
-        </Tooltip>
-
-        <Box sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }} />
-        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-          <SolvedMeter solved={solvedAll} total={totalAll} />
-        </Box>
-      </Stack>
-
-      {/* Active filters */}
-      {anyActive && (
-        <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, alignItems: 'center' }}>
-          {q.search && <Chip size="small" label={`Search: ${q.search}`} onDelete={() => setSearchText('')} />}
-          {q.difficulty !== 'All' && <Chip size="small" label={q.difficulty} onDelete={() => patch({ difficulty: 'All' })} sx={{ color: DIFF_COLOR[q.difficulty] }} />}
-          {q.status !== 'All' && <Chip size="small" label={q.status === 'solved' ? 'Solved' : 'Unsolved'} onDelete={() => patch({ status: 'All' })} />}
-          {q.companies.map((c) => (
-            <Chip key={c} size="small" label={c} onDelete={() => toggleCompany(c)} />
-          ))}
-          <Button size="small" onClick={clearAll} sx={{ minWidth: 0, fontWeight: 700 }}>
-            Clear all
-          </Button>
+          <Box sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }} />
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <SolvedMeter solved={solvedAll} total={totalAll} />
+          </Box>
         </Stack>
-      )}
+
+        {/* Active filters */}
+        {anyActive && (
+          <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, alignItems: 'center' }}>
+            {q.search && <Chip size="small" label={`Search: ${q.search}`} onDelete={() => setSearchText('')} />}
+            {q.difficulty !== 'All' && <Chip size="small" label={q.difficulty} onDelete={() => patch({ difficulty: 'All' })} sx={{ color: DIFF_COLOR[q.difficulty] }} />}
+            {q.status !== 'All' && <Chip size="small" label={q.status === 'solved' ? 'Solved' : 'Unsolved'} onDelete={() => patch({ status: 'All' })} />}
+            {q.companies.map((c) => (
+              <Chip key={c} size="small" label={c} onDelete={() => toggleCompany(c)} />
+            ))}
+            <Button size="small" onClick={clearAll} sx={{ minWidth: 0, fontWeight: 700 }}>
+              Clear all
+            </Button>
+          </Stack>
+        )}
+
+
+      </Box>
 
       {/* The list */}
       <Box sx={[surface, { overflow: 'hidden' }]}>

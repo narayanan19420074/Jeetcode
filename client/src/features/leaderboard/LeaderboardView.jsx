@@ -1,28 +1,31 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useReducedMotion } from 'framer-motion';
 import {
-  Alert, Avatar, Box, ButtonBase, Button, Collapse, InputAdornment, Pagination, Skeleton, Stack, Tab, Tabs, TextField,
+  Alert, Avatar, Badge, Box, ButtonBase, Collapse, IconButton, InputAdornment, Popover, Skeleton, Stack, TextField,
   ToggleButton, ToggleButtonGroup, Tooltip, Typography,
 } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
-import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
-import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
-import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import TuneRoundedIcon from '@mui/icons-material/TuneRounded';
+import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
+import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
-import MyLocationRoundedIcon from '@mui/icons-material/MyLocationRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { leaderboardApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, surface } from '../dashboard/dashboardUtils';
-import { CountUp, Rise } from '../studyplan/motion';
-import { TIERS, tierFor } from './tiers';
+import { tierFor } from './tiers';
 
-const LIMIT = 25;
+const LIMIT = 30;
 const MEDAL = { 1: '#F59E0B', 2: '#94A3B8', 3: '#B45309' };
+const APT_COLOR = '#8B5CF6';
 const PERIODS = [['all', 'All time'], ['week', 'This week'], ['month', 'This month']];
+const TRACKS = [['overall', 'Overall'], ['coding', 'Coding'], ['aptitude', 'Aptitude']];
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
-const GRID = { xs: '44px minmax(0,1fr) 84px', sm: '64px minmax(0,1fr) 150px 64px 64px 88px', md: '64px minmax(0,1fr) 170px 64px 70px 96px' };
+// rank | player (profile + name) | streak | score | chevron
+const GRID = { xs: '36px minmax(0,1fr) 54px 62px 22px', sm: '52px minmax(0,1fr) 84px 92px 26px' };
+const SCROLL = { scrollbarWidth: 'thin', scrollbarGutter: 'stable' };
 
 function useDebounced(value, ms = 350) {
   const [v, setV] = useState(value);
@@ -30,147 +33,162 @@ function useDebounced(value, ms = 350) {
   return v;
 }
 
-function TierBadge({ tier, small }) {
+const utcDay = (d = new Date()) => d.toISOString().slice(0, 10);
+function activeLabel(lastActive) {
+  if (!lastActive) return { text: 'Not started', color: 'text.disabled', live: false };
+  const days = Math.round((Date.parse(utcDay()) - Date.parse(lastActive)) / 86400000);
+  if (days <= 0) return { text: 'Active today', color: 'success.main', live: true };
+  if (days === 1) return { text: 'Active yesterday', color: 'warning.main', live: false };
+  return { text: `${days}d ago`, color: 'text.disabled', live: false };
+}
+
+function Streak({ value }) {
   return (
-    <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4, color: tier.color, fontWeight: 700, fontSize: small ? 12 : 14 }}>
-      <WorkspacePremiumRoundedIcon sx={{ fontSize: small ? 16 : 20 }} />{tier.name}
+    <Box sx={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 0.25 }}>
+      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: value ? 'warning.main' : 'text.disabled' }} />
+      <Typography variant="caption" sx={[{ fontWeight: 700 }, mono]}>{value}<Box component="span" sx={{ display: { xs: 'none', sm: 'inline' }, color: 'text.secondary', fontWeight: 500 }}>d</Box></Typography>
     </Box>
   );
 }
 
-function Movement({ row }) {
-  if (row.isNew) return <Typography component="span" sx={{ fontSize: 10, fontWeight: 800, color: 'info.main' }}>NEW</Typography>;
-  if (!row.movement) return <Box component="span" sx={{ color: 'text.disabled', fontSize: 12 }}>–</Box>;
-  const up = row.movement > 0;
-  const Icon = up ? ArrowDropUpRoundedIcon : ArrowDropDownRoundedIcon;
+// What this player has solved, and how far the next level is.
+function RowDetail({ row }) {
+  const { tier, next, progress, toNext } = tierFor(row.score);
+  const tiles = [
+    ['Easy', row.easy, 10, DIFF_COLOR.Easy],
+    ['Medium', row.medium, 20, DIFF_COLOR.Medium],
+    ['Hard', row.hard, 40, DIFF_COLOR.Hard],
+    ['Aptitude', row.aptitude, 5, APT_COLOR],
+  ];
   return (
-    <Tooltip title={`${up ? 'Up' : 'Down'} ${Math.abs(row.movement)} since last week`}>
-      <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', color: up ? 'success.main' : 'error.main', fontSize: 12, fontWeight: 700, ...mono }}>
-        <Icon sx={{ fontSize: 20, mx: -0.5 }} />{Math.abs(row.movement)}
-      </Box>
-    </Tooltip>
-  );
-}
-
-function Stat({ index, label, children, sub }) {
-  return (
-    <Rise index={index}>
-      <Box sx={[surface, { p: 2, height: '100%' }]}>
-        <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, letterSpacing: 0.4 }}>{label.toUpperCase()}</Typography>
-        <Typography sx={[{ fontSize: 26, fontWeight: 700, lineHeight: 1.25 }, mono]}>{children}</Typography>
-        {sub && <Typography variant="caption" color="text.secondary">{sub}</Typography>}
-      </Box>
-    </Rise>
-  );
-}
-
-function MyPosition({ me, total, scope, neighbors, onJump }) {
-  const reduce = useReducedMotion();
-  const { tier, next, progress, toNext } = tierFor(me.score);
-  return (
-    <Rise>
-      <Box sx={[surface, { p: 2.5 }]}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 3, flexWrap: 'wrap' }}>
-          <Box>
-            <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, letterSpacing: 0.4 }}>YOUR RANK</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1 }}>
-              <Typography sx={[{ fontSize: 44, fontWeight: 700, lineHeight: 1 }, mono]}>#<CountUp value={me.rank} /></Typography>
-              <Movement row={me} />
-            </Box>
-            <Typography variant="caption" color="text.secondary">of {total.toLocaleString()} {scope === 'friends' ? 'in your circle' : 'learners'}</Typography>
-          </Box>
-
-          <Box sx={{ flex: 1, minWidth: 240 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.75 }}>
-              <TierBadge tier={tier} />
-              <Typography sx={[{ fontWeight: 700 }, mono]}><CountUp value={me.score} /> pts</Typography>
-            </Box>
-            <Box sx={{ height: 8, borderRadius: 4, bgcolor: 'action.hover', overflow: 'hidden' }}>
-              <motion.div initial={reduce ? false : { width: 0 }} animate={{ width: `${progress}%` }} transition={{ duration: 0.9, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 4, background: tier.color }} />
-            </Box>
-            <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, display: 'block' }}>
-              {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top tier reached'}
-              {neighbors?.above ? ` · ${neighbors.above.gap + 1} pts to pass @${neighbors.above.handle}` : ''}
-              {neighbors?.below ? ` · ${neighbors.below.gap} pts ahead of @${neighbors.below.handle}` : ''}
-            </Typography>
-          </Box>
-
-          <Button size="small" variant="outlined" startIcon={<MyLocationRoundedIcon />} onClick={onJump} sx={{ fontWeight: 700 }}>Find me</Button>
-        </Box>
-      </Box>
-    </Rise>
-  );
-}
-
-function Podium({ podium }) {
-  const reduce = useReducedMotion();
-  const slots = [{ row: podium[1], place: 2, lift: 14 }, { row: podium[0], place: 1, lift: 0 }, { row: podium[2], place: 3, lift: 26 }];
-  return (
-    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: { xs: 1, sm: 2 }, alignItems: 'start' }}>
-      {slots.map(({ row, place, lift }) => {
-        if (!row) return <Box key={place} />;
-        const { tier } = tierFor(row.score);
-        return (
-          <motion.div key={place} initial={reduce ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: lift }} transition={{ duration: 0.45, delay: place === 1 ? 0.05 : place === 2 ? 0.15 : 0.25, ease: 'easeOut' }}>
-            <Box sx={[surface, { p: { xs: 1.25, sm: 2 }, textAlign: 'center', borderTop: `3px solid ${MEDAL[place]}` }]}>
-              <Box sx={{ position: 'relative', display: 'inline-block' }}>
-                <Avatar src={row.avatarUrl || undefined} sx={{ width: place === 1 ? 64 : 52, height: place === 1 ? 64 : 52, fontSize: 22, fontWeight: 700, border: `2px solid ${MEDAL[place]}` }}>{row.name?.[0]?.toUpperCase()}</Avatar>
-                <Box sx={{ position: 'absolute', right: -6, bottom: -4, width: 22, height: 22, borderRadius: '50%', bgcolor: MEDAL[place], color: '#fff', display: 'grid', placeItems: 'center', fontSize: 12, fontWeight: 800 }}>{place}</Box>
-              </Box>
-              <Typography noWrap sx={{ fontWeight: 700, mt: 1, fontSize: 14 }}>{row.name}</Typography>
-              <Typography noWrap variant="caption" color="text.secondary" sx={{ display: 'block' }}>@{row.handle}</Typography>
-              <Typography sx={[{ fontWeight: 700, fontSize: 20, mt: 0.5 }, mono]}><CountUp value={row.score} /></Typography>
-              <TierBadge tier={tier} small />
-            </Box>
-          </motion.div>
-        );
-      })}
-    </Box>
-  );
-}
-
-const METRICS = [['score', 'Score'], ['easy', 'Easy'], ['medium', 'Medium'], ['hard', 'Hard'], ['aptitude', 'Aptitude'], ['streak', 'Streak']];
-
-// Inline detail (no popup): breakdown for this learner, plus a head-to-head against you.
-function RowDetail({ row, me }) {
-  const reduce = useReducedMotion();
-  const max = Math.max(1, row.easy, row.medium, row.hard, row.aptitude);
-  const bars = [['Easy', row.easy, DIFF_COLOR.Easy], ['Medium', row.medium, DIFF_COLOR.Medium], ['Hard', row.hard, DIFF_COLOR.Hard], ['Aptitude', row.aptitude, '#8B5CF6']];
-  const versus = me && me.userId !== row.userId;
-  return (
-    <Box sx={(t) => ({ px: 2, py: 1.5, bgcolor: t.palette.action.hover, display: 'grid', gap: 3, gridTemplateColumns: { xs: 'minmax(0,1fr)', md: versus ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)' } })}>
-      <Box>
-        <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: 0.4 }} color="text.secondary">SOLVED BY DIFFICULTY</Typography>
-        {bars.map(([label, v, color]) => (
-          <Box key={label} sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.75 }}>
-            <Typography variant="caption" sx={{ width: 62 }}>{label}</Typography>
-            <Box sx={{ flex: 1, height: 6, borderRadius: 3, bgcolor: 'divider', overflow: 'hidden' }}>
-              <motion.div initial={reduce ? false : { width: 0 }} animate={{ width: `${(v / max) * 100}%` }} transition={{ duration: 0.5 }} style={{ height: '100%', background: color, borderRadius: 3 }} />
-            </Box>
-            <Typography variant="caption" sx={[{ width: 30, textAlign: 'right', fontWeight: 700 }, mono]}>{v}</Typography>
+    <Box sx={(t) => ({ px: { xs: 1.5, sm: 2 }, py: 1.5, bgcolor: t.palette.action.hover, display: 'grid', gap: 1.5 })}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 1 }}>
+        {tiles.map(([label, n, pts, color]) => (
+          <Box key={label} sx={[surface, { p: 1, textAlign: 'center', minWidth: 0 }]}>
+            <Typography sx={[{ fontWeight: 800, fontSize: 18, lineHeight: 1.2, color }, mono]}>{n}</Typography>
+            <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', fontWeight: 600 }}>{label}</Typography>
+            <Typography variant="caption" color="text.disabled" sx={[{ fontSize: 10.5 }, mono]}>{n * pts} pts</Typography>
           </Box>
         ))}
-        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
-          {row.recent} solved in the last 7 days{row.company ? ` · ${row.company}` : ''}
-        </Typography>
       </Box>
 
-      {versus && (
-        <Box>
-          <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: 0.4 }} color="text.secondary">YOU VS @{row.handle.toUpperCase()}</Typography>
-          {METRICS.map(([k, label]) => {
-            const a = me[k] ?? 0;
-            const b = row[k] ?? 0;
+      <Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: 700, fontSize: 13 }}>
+            <WorkspacePremiumRoundedIcon sx={{ fontSize: 18 }} />{tier.name}
+          </Box>
+          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
+            {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top level reached'}
+          </Typography>
+        </Box>
+        <Box sx={{ height: 6, borderRadius: 3, bgcolor: 'divider', overflow: 'hidden' }}>
+          <Box sx={{ height: '100%', width: `${progress}%`, bgcolor: tier.color, borderRadius: 3, transition: 'width .5s ease' }} />
+        </Box>
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75 }}>
+          {row.recent} solved in the last 7 days
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
+
+function Row({ row, isMe, expanded, onToggle, pinned }) {
+  const medal = MEDAL[row.rank];
+  return (
+    <Box id={isMe && !pinned ? 'lb-me' : undefined}>
+      <ButtonBase
+        onClick={onToggle}
+        aria-expanded={expanded}
+        sx={(t) => ({
+          width: '100%', display: 'grid', gridTemplateColumns: GRID, gap: { xs: 0.75, sm: 1 }, alignItems: 'center', textAlign: 'left',
+          px: { xs: 1.25, sm: 2 }, py: 1, fontFamily: 'inherit', borderBottom: `1px solid ${t.palette.divider}`,
+          bgcolor: isMe ? `${t.palette.primary.main}14` : 'transparent', boxShadow: isMe ? `inset 3px 0 0 ${t.palette.primary.main}` : 'none',
+          '&:hover': { bgcolor: isMe ? undefined : t.palette.action.hover },
+        })}
+      >
+        <Typography sx={[{ fontWeight: 800, fontSize: medal ? 17 : 14, color: medal || 'text.secondary', textAlign: 'center' }, mono]}>{row.rank}</Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
+          <Avatar src={row.avatarUrl || undefined} sx={{ width: 34, height: 34, fontSize: 14, fontWeight: 700, ...(medal && { border: `2px solid ${medal}` }) }}>{row.name?.[0]?.toUpperCase()}</Avatar>
+          <Typography variant="body2" noWrap sx={{ fontWeight: 700, minWidth: 0 }}>{row.name}{isMe ? ' (you)' : ''}</Typography>
+        </Box>
+        <Streak value={row.streak} />
+        <Typography sx={[{ fontWeight: 800, textAlign: 'right' }, mono]}>{row.score.toLocaleString()}</Typography>
+        <ExpandMoreRoundedIcon sx={{ fontSize: 20, color: 'text.disabled', transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />
+      </ButtonBase>
+      <Collapse in={expanded} timeout={220} unmountOnExit><RowDetail row={row} /></Collapse>
+    </Box>
+  );
+}
+
+function SkeletonRows({ count = 14 }) {
+  return Array.from({ length: count }, (_, i) => (
+    <Box key={i} sx={(t) => ({ display: 'grid', gridTemplateColumns: GRID, gap: 1, alignItems: 'center', px: { xs: 1.25, sm: 2 }, py: 1, borderBottom: `1px solid ${t.palette.divider}` })}>
+      <Skeleton variant="text" width={20} sx={{ mx: 'auto' }} />
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
+        <Skeleton variant="circular" width={34} height={34} />
+        <Skeleton variant="text" width={`${55 + ((i * 17) % 35)}%`} />
+      </Box>
+      <Skeleton variant="text" width={32} sx={{ mx: 'auto' }} />
+      <Skeleton variant="text" width={44} sx={{ ml: 'auto' }} />
+      <span />
+    </Box>
+  ));
+}
+
+// Friends: one small card, opens to show how each friend is doing right now.
+function FriendsCard({ enabled }) {
+  const [open, setOpen] = useState(false);
+  const [state, setState] = useState({ rows: null, error: '' });
+
+  useEffect(() => {
+    if (!open || !enabled || state.rows) return undefined;
+    let cancelled = false;
+    leaderboardApi
+      .get({ period: 'all', scope: 'friends', track: 'overall', limit: 50 })
+      .then(({ data }) => {
+        if (cancelled) return;
+        const me = data.data.me?.userId;
+        setState({ rows: data.data.rows.filter((r) => r.userId !== me), error: '' });
+      })
+      .catch((err) => !cancelled && setState({ rows: [], error: extractErrorMessage(err) }));
+    return () => { cancelled = true; };
+  }, [open, enabled, state.rows]);
+
+  const rows = state.rows;
+  return (
+    <Box sx={[surface, { overflow: 'hidden', flexShrink: 0 }]}>
+      <ButtonBase onClick={() => setOpen((o) => !o)} aria-expanded={open} sx={{ width: '100%', justifyContent: 'flex-start', gap: 1.25, px: 1.5, py: 1, fontFamily: 'inherit', textAlign: 'left' }}>
+        <GroupsRoundedIcon sx={{ color: 'primary.main' }} />
+        <Typography variant="body2" sx={{ fontWeight: 700, flex: 1 }}>Friends</Typography>
+        {rows && <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>{rows.length}</Typography>}
+        <ExpandMoreRoundedIcon sx={{ fontSize: 20, color: 'text.secondary', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />
+      </ButtonBase>
+      <Collapse in={open} timeout={220}>
+        <Box sx={(t) => ({ borderTop: `1px solid ${t.palette.divider}`, maxHeight: 220, overflowY: 'auto', ...SCROLL })}>
+          {!enabled && <Typography variant="body2" color="text.secondary" sx={{ p: 1.75 }}>Log in to see your friends.</Typography>}
+          {enabled && !rows && [0, 1, 2].map((i) => <Skeleton key={i} height={40} sx={{ mx: 1.5 }} />)}
+          {enabled && rows && state.error && <Typography variant="body2" color="error" sx={{ p: 1.75 }}>{state.error}</Typography>}
+          {enabled && rows && !state.error && rows.length === 0 && (
+            <Typography variant="body2" color="text.secondary" sx={{ p: 1.75 }}>Join a friend's study plan and they will show up here.</Typography>
+          )}
+          {rows?.map((f) => {
+            const st = activeLabel(f.lastActive);
             return (
-              <Box key={k} sx={{ display: 'grid', gridTemplateColumns: '1fr 70px 1fr', alignItems: 'center', mt: 0.5 }}>
-                <Typography variant="caption" sx={[{ textAlign: 'right', fontWeight: a > b ? 800 : 500, color: a > b ? 'success.main' : 'text.primary' }, mono]}>{a.toLocaleString()}</Typography>
-                <Typography variant="caption" color="text.secondary" sx={{ textAlign: 'center' }}>{label}</Typography>
-                <Typography variant="caption" sx={[{ fontWeight: b > a ? 800 : 500, color: b > a ? 'error.main' : 'text.primary' }, mono]}>{b.toLocaleString()}</Typography>
+              <Box key={f.userId} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, px: 1.5, py: 0.9 }}>
+                <Badge variant="dot" overlap="circular" invisible={!st.live} color="success" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+                  <Avatar src={f.avatarUrl || undefined} sx={{ width: 30, height: 30, fontSize: 13, fontWeight: 700 }}>{f.name?.[0]?.toUpperCase()}</Avatar>
+                </Badge>
+                <Box sx={{ minWidth: 0, flex: 1 }}>
+                  <Typography variant="body2" noWrap sx={{ fontWeight: 700, lineHeight: 1.25 }}>{f.name}</Typography>
+                  <Typography variant="caption" noWrap sx={{ display: 'block', color: st.color, fontWeight: 600 }}>{st.text}</Typography>
+                </Box>
+                <Streak value={f.streak} />
+                <Typography variant="caption" sx={[{ fontWeight: 700, width: 54, textAlign: 'right' }, mono]}>{f.score.toLocaleString()}</Typography>
               </Box>
             );
           })}
         </Box>
-      )}
+      </Collapse>
     </Box>
   );
 }
@@ -181,174 +199,144 @@ export default function LeaderboardView({ isAuthenticated }) {
   const [scope, setScope] = useState('global');
   const [track, setTrack] = useState('overall');
   const [search, setSearch] = useState('');
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [filterAnchor, setFilterAnchor] = useState(null);
   const [page, setPage] = useState(1);
-  const [data, setData] = useState(null);
+  const [rows, setRows] = useState([]);
+  const [meta, setMeta] = useState(null); // latest response: { me, total, totalUsers, points, ... }
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(null);
   const q = useDebounced(search);
-  const jumping = useRef(false);
+  const scroller = useRef(null);
+  const sentinel = useRef(null);
+  const reqId = useRef(0);
+
+  const hasMore = meta ? rows.length < meta.total : false;
+  const firstLoad = loading && rows.length === 0;
 
   useEffect(() => { setPage(1); }, [q]);
 
   useEffect(() => {
-    let cancelled = false;
+    const id = ++reqId.current;
     setLoading(true);
     leaderboardApi
       .get({ period, scope, track, q: q || undefined, page, limit: LIMIT })
-      .then(({ data: res }) => { if (!cancelled) { setData(res.data); setError(''); } })
-      .catch((err) => { if (!cancelled) setError(extractErrorMessage(err)); })
-      .finally(() => { if (!cancelled) setLoading(false); });
-    return () => { cancelled = true; };
+      .then(({ data: res }) => {
+        if (id !== reqId.current) return;
+        setRows((prev) => (page === 1 ? res.data.rows : [...prev, ...res.data.rows.filter((r) => !prev.some((p) => p.userId === r.userId))]));
+        setMeta(res.data);
+        setError('');
+      })
+      .catch((err) => { if (id === reqId.current) setError(extractErrorMessage(err)); })
+      .finally(() => { if (id === reqId.current) setLoading(false); });
   }, [period, scope, track, q, page]);
 
-  // "Find me": jump to my page, then bring my row into view.
+  // Endless list: load the next page when the bottom comes into view.
   useEffect(() => {
-    if (jumping.current && data && !loading) {
-      jumping.current = false;
-      document.getElementById('lb-me')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
-    }
-  }, [data, loading, reduce]);
+    const el = sentinel.current;
+    if (!el || !hasMore || loading) return undefined;
+    const io = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) setPage((p) => p + 1); }, { root: scroller.current, rootMargin: '120px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [hasMore, loading, rows.length]);
 
-  const jumpToMe = () => {
-    if (!data?.me) return;
-    jumping.current = true;
-    setSearch('');
-    setPage(Math.max(1, Math.ceil(data.me.rank / LIMIT)));
-  };
+  const reset = useCallback(() => {
+    setPage(1);
+    setRows([]);
+    setMeta((m) => (m ? { ...m, total: 0 } : m));
+    setOpen(null);
+    scroller.current?.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  }, [reduce]);
 
-  const pages = data ? Math.max(1, Math.ceil(data.total / LIMIT)) : 1;
-  const myTier = useMemo(() => (data?.me ? tierFor(data.me.score).tier.key : null), [data?.me]);
-  const points = data?.points || { easy: 10, medium: 20, hard: 40, aptitude: 5 };
-  const searching = Boolean(q);
-
-  const change = (setter) => (_, v) => { if (v) { setter(v); setPage(1); setOpen(null); } };
+  const pick = (setter) => (_, v) => { if (v) { setter(v); reset(); } };
+  const me = isAuthenticated ? meta?.me : null;
+  const filtersOn = period !== 'all' || track !== 'overall' || scope !== 'global';
+  const players = meta?.totalUsers ?? null;
 
   return (
-    <Stack spacing={2}>
-      <Box>
-        <Typography variant="h5" sx={{ fontWeight: 700 }}>Leaderboard</Typography>
-        <Typography variant="body2" color="text.secondary">
-          Easy {points.easy} · Medium {points.medium} · Hard {points.hard} · Aptitude {points.aptitude} points. Each question counts once.
-        </Typography>
-      </Box>
-
-      <Box sx={[surface, { px: 2, pt: 0.5, pb: 1.5 }]}>
-        <Tabs value={period} onChange={change(setPeriod)} sx={{ minHeight: 44, '& .MuiTab-root': { minHeight: 44, textTransform: 'none', fontWeight: 700 } }}>
-          {PERIODS.map(([v, l]) => <Tab key={v} value={v} label={l} />)}
-        </Tabs>
-        <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap', alignItems: 'center', mt: 1 }}>
-          <ToggleButtonGroup size="small" exclusive value={track} onChange={change(setTrack)}>
-            {[['overall', 'Overall'], ['coding', 'Coding'], ['aptitude', 'Aptitude']].map(([v, l]) => <ToggleButton key={v} value={v} sx={{ px: 1.75, fontWeight: 600 }}>{l}</ToggleButton>)}
-          </ToggleButtonGroup>
-          <ToggleButtonGroup size="small" exclusive value={scope} onChange={change(setScope)}>
-            <ToggleButton value="global" sx={{ px: 1.75, fontWeight: 600 }}>Global</ToggleButton>
-            <ToggleButton value="friends" disabled={!isAuthenticated} sx={{ px: 1.75, fontWeight: 600 }}>Friends</ToggleButton>
-          </ToggleButtonGroup>
-          <TextField
-            size="small" placeholder="Search name or @handle" value={search} onChange={(e) => setSearch(e.target.value)} sx={{ ml: { sm: 'auto' }, minWidth: { xs: '100%', sm: 240 } }}
-            slotProps={{ input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> }, htmlInput: { 'aria-label': 'Search learners' } }}
-          />
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25, height: { xs: 'calc(100dvh - 150px)', lg: '100%' }, minHeight: 420 }}>
+      {/* Header: title, player count, and a few small icon buttons */}
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexShrink: 0 }}>
+        <Box sx={{ flex: 1, minWidth: 0 }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, lineHeight: 1.2 }}>Leaderboard</Typography>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: 'text.secondary' }}>
+            <PeopleAltRoundedIcon sx={{ fontSize: 15 }} />
+            {players === null ? <Skeleton width={90} /> : <Typography variant="caption" sx={{ fontWeight: 700 }}>{players.toLocaleString()} players</Typography>}
+          </Box>
         </Box>
+        <Tooltip title="Search"><IconButton onClick={() => { setSearchOpen((o) => !o); if (searchOpen) setSearch(''); }} aria-label="Search players" sx={(t) => ({ border: `1px solid ${t.palette.divider}`, borderRadius: '10px' })}>{searchOpen ? <CloseRoundedIcon fontSize="small" /> : <SearchRoundedIcon fontSize="small" />}</IconButton></Tooltip>
+        <Tooltip title="Filters"><IconButton onClick={(e) => setFilterAnchor(e.currentTarget)} aria-label="Leaderboard filters" sx={(t) => ({ border: `1px solid ${t.palette.divider}`, borderRadius: '10px' })}><Badge variant="dot" color="error" invisible={!filtersOn} overlap="circular"><TuneRoundedIcon fontSize="small" /></Badge></IconButton></Tooltip>
       </Box>
 
-      {error && <Alert severity="error">{error}</Alert>}
+      <Collapse in={searchOpen} timeout={200} sx={{ flexShrink: 0 }}>
+        <TextField
+          size="small" fullWidth placeholder="Search name or @handle" value={search} onChange={(e) => setSearch(e.target.value)}
+          sx={{ '& .MuiOutlinedInput-root': { borderRadius: 999 } }}
+          slotProps={{ input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> }, htmlInput: { 'aria-label': 'Search players' } }}
+        />
+      </Collapse>
 
-      {isAuthenticated && data?.me && <MyPosition key={`${period}${scope}${track}`} me={data.me} total={data.stats.learners} scope={scope} neighbors={data.neighbors} onJump={jumpToMe} />}
-      {isAuthenticated && data && !data.me && (
-        <Box sx={[surface, { p: 2 }]}><Typography color="text.secondary">Solve a question {period === 'all' ? '' : 'in this period '}to enter the leaderboard.</Typography></Box>
-      )}
+      <FriendsCard enabled={isAuthenticated} />
 
-      {data?.stats ? (
-        <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'repeat(2, minmax(0,1fr))', md: 'repeat(4, minmax(0,1fr))' } }}>
-          <Stat index={0} label="Learners ranked"><CountUp value={data.stats.learners} /></Stat>
-          <Stat index={1} label="Questions solved"><CountUp value={data.stats.solved} /></Stat>
-          <Stat index={2} label="Top score"><CountUp value={data.stats.topScore} /></Stat>
-          <Stat index={3} label="Your standing" sub={data.stats.topPercent ? 'of all ranked learners' : undefined}>{data.stats.topPercent ? <>Top <CountUp value={data.stats.topPercent} />%</> : '—'}</Stat>
-        </Box>
-      ) : loading && <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' } }}>{[0, 1, 2, 3].map((i) => <Skeleton key={i} variant="rounded" height={84} sx={{ borderRadius: '14px' }} />)}</Box>}
+      {error && <Alert severity="error" sx={{ flexShrink: 0 }}>{error}</Alert>}
 
-      {data && data.podium.length > 0 && !searching && page === 1 && <Podium key={`${period}${scope}${track}`} podium={data.podium} />}
-
-      <Box sx={{ display: 'grid', gap: 1, gridTemplateColumns: { xs: 'repeat(3, minmax(0,1fr))', md: 'repeat(6, minmax(0,1fr))' } }}>
-        {TIERS.map((t, i) => (
-          <Rise key={t.key} index={i}>
-            <Box sx={[surface, { p: 1.25, textAlign: 'center', borderColor: myTier === t.key ? t.color : undefined }]}>
-              <WorkspacePremiumRoundedIcon sx={{ color: t.color, fontSize: 26 }} />
-              <Typography sx={{ fontWeight: 700, fontSize: 13 }}>{t.name}</Typography>
-              <Typography variant="caption" color="text.secondary" sx={mono}>{t.min.toLocaleString()}+</Typography>
-            </Box>
-          </Rise>
-        ))}
-      </Box>
-
-      {/* Ranking table */}
-      <Box sx={[surface, { overflow: 'hidden' }]}>
-        <Box sx={(t) => ({ display: 'grid', gridTemplateColumns: GRID, gap: 1, px: 2, py: 1, borderBottom: `1px solid ${t.palette.divider}`, color: 'text.secondary' })}>
-          <Typography variant="caption" sx={{ fontWeight: 800 }}>RANK</Typography>
-          <Typography variant="caption" sx={{ fontWeight: 800 }}>LEARNER</Typography>
-          <Typography variant="caption" sx={{ fontWeight: 800, textAlign: 'center', display: { xs: 'none', sm: 'block' } }}>E · M · H · APT</Typography>
-          <Typography variant="caption" sx={{ fontWeight: 800, textAlign: 'center', display: { xs: 'none', sm: 'block' } }}>7 DAYS</Typography>
-          <Typography variant="caption" sx={{ fontWeight: 800, textAlign: 'center', display: { xs: 'none', sm: 'block' } }}>STREAK</Typography>
+      {/* The list: the only thing on this page that scrolls */}
+      <Box sx={[surface, { flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }]}>
+        <Box sx={(t) => ({ display: 'grid', gridTemplateColumns: GRID, gap: { xs: 0.75, sm: 1 }, px: { xs: 1.25, sm: 2 }, py: 0.9, borderBottom: `1px solid ${t.palette.divider}`, color: 'text.secondary', flexShrink: 0 })}>
+          <Typography variant="caption" sx={{ fontWeight: 800, textAlign: 'center' }}>#</Typography>
+          <Typography variant="caption" sx={{ fontWeight: 800 }}>PLAYER</Typography>
+          <Typography variant="caption" sx={{ fontWeight: 800, textAlign: 'center' }}>STREAK</Typography>
           <Typography variant="caption" sx={{ fontWeight: 800, textAlign: 'right' }}>SCORE</Typography>
+          <span />
         </Box>
 
-        <Box sx={{ opacity: loading && data ? 0.5 : 1, transition: 'opacity .2s' }}>
-          {!data && loading && [0, 1, 2, 3, 4].map((i) => <Skeleton key={i} height={56} sx={{ mx: 2 }} />)}
-          {data?.rows.map((r, i) => {
-            const isMe = data.me?.userId === r.userId;
-            const { tier } = tierFor(r.score);
-            const expanded = open === r.userId;
-            return (
-              <motion.div key={r.userId} initial={reduce ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: Math.min(i, 10) * 0.025, duration: 0.2 }}>
-                <ButtonBase
-                  id={isMe ? 'lb-me' : undefined} onClick={() => setOpen(expanded ? null : r.userId)} aria-expanded={expanded}
-                  sx={(t) => ({
-                    width: '100%', display: 'grid', gridTemplateColumns: GRID, gap: 1, alignItems: 'center', textAlign: 'left', px: 2, py: 1, fontFamily: 'inherit',
-                    borderBottom: `1px solid ${t.palette.divider}`, bgcolor: isMe ? `${t.palette.primary.main}14` : 'transparent', boxShadow: isMe ? `inset 3px 0 0 ${t.palette.primary.main}` : 'none',
-                    '&:hover': { bgcolor: isMe ? undefined : t.palette.action.hover },
-                  })}
-                >
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
-                    {MEDAL[r.rank] ? <EmojiEventsRoundedIcon sx={{ color: MEDAL[r.rank], fontSize: 20 }} /> : <Typography sx={[{ fontWeight: 700, minWidth: 22 }, mono]}>{r.rank}</Typography>}
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}><Movement row={r} /></Box>
-                  </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
-                    <Avatar src={r.avatarUrl || undefined} sx={{ width: 34, height: 34, fontSize: 14, fontWeight: 700 }}>{r.name?.[0]?.toUpperCase()}</Avatar>
-                    <Box sx={{ minWidth: 0 }}>
-                      <Typography variant="body2" noWrap sx={{ fontWeight: 700, lineHeight: 1.25 }}>{r.name}{isMe ? ' (you)' : ''}</Typography>
-                      <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>@{r.handle} · <Box component="span" sx={{ color: tier.color, fontWeight: 700 }}>{tier.name}</Box></Typography>
-                    </Box>
-                  </Box>
-                  <Stack direction="row" spacing={0.5} sx={{ justifyContent: 'center', display: { xs: 'none', sm: 'flex' } }}>
-                    {[[r.easy, DIFF_COLOR.Easy], [r.medium, DIFF_COLOR.Medium], [r.hard, DIFF_COLOR.Hard], [r.aptitude, '#8B5CF6']].map(([v, c], k) => (
-                      <Typography key={k} component="span" sx={[{ minWidth: 28, textAlign: 'center', fontSize: 12, fontWeight: 700, py: 0.1, borderRadius: 999, color: c, bgcolor: `${c}1A` }, mono]}>{v}</Typography>
-                    ))}
-                  </Stack>
-                  <Typography variant="caption" sx={[{ textAlign: 'center', fontWeight: 700, color: r.recent ? 'success.main' : 'text.disabled', display: { xs: 'none', sm: 'block' } }, mono]}>{r.recent ? `+${r.recent}` : '0'}</Typography>
-                  <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', alignItems: 'center', gap: 0.25 }}>
-                    <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: r.streak ? 'warning.main' : 'text.disabled' }} />
-                    <Typography variant="caption" sx={[{ fontWeight: 700 }, mono]}>{r.streak}</Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 0.25 }}>
-                    <Typography sx={[{ fontWeight: 700 }, mono]}>{r.score.toLocaleString()}</Typography>
-                    <ExpandMoreRoundedIcon sx={{ fontSize: 18, color: 'text.disabled', transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform .15s' }} />
-                  </Box>
-                </ButtonBase>
-                <Collapse in={expanded} unmountOnExit><RowDetail row={r} me={data.me} /></Collapse>
-              </motion.div>
-            );
-          })}
-          {data && data.rows.length === 0 && (
+        <Box ref={scroller} sx={{ flex: 1, minHeight: 0, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', ...SCROLL, scrollbarGutter: firstLoad ? 'auto' : 'stable' }}>
+          {firstLoad && <SkeletonRows />}
+          {rows.map((r) => (
+            <Row key={r.userId} row={r} isMe={me?.userId === r.userId} expanded={open === r.userId} onToggle={() => setOpen(open === r.userId ? null : r.userId)} />
+          ))}
+          {!loading && rows.length === 0 && !error && (
             <Typography color="text.secondary" sx={{ p: 4, textAlign: 'center' }}>
-              {searching ? `No learner matches "${q}".` : scope === 'friends' ? 'Join a friend’s study plan and they will show up here.' : 'No one has scored in this period yet. Be the first.'}
+              {q ? `No player matches "${q}".` : scope === 'friends' ? 'Join a friend’s study plan and they will show up here.' : 'No one has scored in this period yet. Be the first.'}
             </Typography>
           )}
+          {hasMore && <Box ref={sentinel} sx={{ height: 1 }} />}
+          {loading && rows.length > 0 && <SkeletonRows count={3} />}
         </Box>
+
+        {/* My own position stays pinned under the list */}
+        {me && (
+          <Box sx={(t) => ({ flexShrink: 0, borderTop: `2px solid ${t.palette.primary.main}`, maxHeight: '55%', overflowY: 'auto' })}>
+            <Row row={me} isMe pinned expanded={open === 'pinned-me'} onToggle={() => setOpen(open === 'pinned-me' ? null : 'pinned-me')} />
+          </Box>
+        )}
+        {isAuthenticated && meta && !meta.me && !loading && (
+          <Typography variant="caption" color="text.secondary" sx={(t) => ({ flexShrink: 0, px: 2, py: 1, borderTop: `1px solid ${t.palette.divider}` })}>
+            Solve a question{period === 'all' ? '' : ' in this period'} to enter the leaderboard.
+          </Typography>
+        )}
       </Box>
 
-      {pages > 1 && <Box sx={{ display: 'flex', justifyContent: 'center' }}><Pagination count={pages} page={page} onChange={(_, v) => { setPage(v); setOpen(null); }} /></Box>}
-      {data?.updatedAt && <Typography variant="caption" color="text.secondary" sx={{ textAlign: 'center' }}>Updated {new Date(data.updatedAt).toLocaleTimeString()} · refreshes every few minutes · rank change compares with last week</Typography>}
-    </Stack>
+      <Popover
+        anchorEl={filterAnchor} open={Boolean(filterAnchor)} onClose={() => setFilterAnchor(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        slotProps={{ paper: { sx: { borderRadius: '14px', p: 2, width: 320, maxWidth: 'calc(100vw - 24px)', mt: 0.5 } } }}
+      >
+        <Stack spacing={1.75}>
+          {[['Period', period, setPeriod, PERIODS], ['Track', track, setTrack, TRACKS], ['Show', scope, setScope, [['global', 'Everyone'], ['friends', 'Friends']]]].map(([title, value, setter, opts]) => (
+            <Box key={title}>
+              <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 800, letterSpacing: 0.4 }}>{title.toUpperCase()}</Typography>
+              <ToggleButtonGroup size="small" exclusive fullWidth value={value} onChange={pick(setter)} sx={{ mt: 0.5 }}>
+                {opts.map(([v, l]) => <ToggleButton key={v} value={v} disabled={v === 'friends' && !isAuthenticated} sx={{ fontWeight: 700, textTransform: 'none', px: 1 }}>{l}</ToggleButton>)}
+              </ToggleButtonGroup>
+            </Box>
+          ))}
+          <Typography variant="caption" color="text.secondary">
+            Easy {meta?.points?.easy ?? 10} · Medium {meta?.points?.medium ?? 20} · Hard {meta?.points?.hard ?? 40} · Aptitude {meta?.points?.aptitude ?? 5} points. Each question counts once.
+          </Typography>
+        </Stack>
+      </Popover>
+    </Box>
   );
 }

@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useSnackbar } from 'notistack';
-import { Box, Button, Container, Stack, Typography, alpha } from '@mui/material';
+import { Box, Button, Collapse, Container, Stack, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
@@ -22,6 +22,7 @@ import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
 import StudyPlannerView from '../studyplan/StudyPlannerView';
 import LeaderboardView from '../leaderboard/LeaderboardView';
 import useProblemLists from './useProblemLists';
+import useViewportFill from './useViewportFill';
 import { STATUS_COLOR, featuredPageForToday, surface, utcKey } from './dashboardUtils';
 
 const VIEWS = ['library', 'quests', 'explore', 'plans', 'leaderboard', 'list'];
@@ -32,6 +33,9 @@ export default function DashboardPage() {
   const { enqueueSnackbar } = useSnackbar();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
 
+  const theme = useTheme();
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const rootRef = useRef(null);
   const [params, setParams] = useSearchParams();
   const listsApi = useProblemLists(user?.id);
 
@@ -93,6 +97,12 @@ export default function DashboardPage() {
   const listId = params.get('list') || 'favorite';
   const activeList = listsApi.lists.find((l) => l.id === listId);
   const currentView = view === 'list' && !activeList ? 'library' : view;
+
+  // On wide screens the page is exactly one window tall: sidebar and streak rail stay put and
+  // only the middle column scrolls (the leaderboard scrolls its own list instead).
+  const fillH = useViewportFill(rootRef, isLg);
+  const showRail = currentView !== 'plans' && currentView !== 'leaderboard';
+  const ownScroll = currentView === 'leaderboard';
 
   const goView = useCallback((v) => setParams(v === 'library' ? {} : { view: v }), [setParams]);
   const selectList = useCallback((id) => setParams({ view: 'list', list: id }), [setParams]);
@@ -193,8 +203,9 @@ export default function DashboardPage() {
 
   return (
     <Box
+      ref={rootRef}
       sx={(t) => ({
-        minHeight: 'calc(100vh - 64px)',
+        ...(fillH ? { height: fillH, overflow: 'hidden' } : { minHeight: 'calc(100vh - 64px)' }),
         backgroundImage:
           t.palette.mode === 'dark'
             ? 'radial-gradient(900px 380px at 78% -60px, rgba(59,130,246,0.13), transparent 70%), radial-gradient(700px 320px at 6% 0, rgba(139,92,246,0.08), transparent 70%)'
@@ -202,16 +213,24 @@ export default function DashboardPage() {
         backgroundRepeat: 'no-repeat',
       })}
     >
-      <Container maxWidth={false} sx={{ maxWidth: 1480, py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
+      <Container maxWidth={false} sx={{ maxWidth: 1480, py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 }, height: fillH ? '100%' : 'auto' }}>
         <Box
           sx={{
             display: 'grid',
-            gap: { xs: 2, md: 3 },
+            rowGap: { xs: 2, md: 3 },
+            columnGap: { xs: 0, md: 3, lg: 0 },
             alignItems: 'start',
-            gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: '200px minmax(0, 1fr)', lg: '208px minmax(0, 1fr) 316px' },
+            height: fillH ? '100%' : 'auto',
+            gridTemplateRows: fillH ? 'minmax(0, 1fr)' : undefined,
+            gridTemplateColumns: {
+              xs: 'minmax(0, 1fr)',
+              md: '200px minmax(0, 1fr)',
+              lg: `232px minmax(0, 1fr) ${showRail ? '340px' : '0px'}`,
+            },
+            transition: 'grid-template-columns .4s cubic-bezier(.4,0,.2,1)',
           }}
         >
-          <Box sx={{ position: { md: 'sticky' }, top: { md: 84 } }}>
+          <Box sx={{ position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0 }}>
             <DashboardSidebar
               view={currentView}
               activeListId={activeList?.id}
@@ -223,7 +242,22 @@ export default function DashboardPage() {
             />
           </Box>
 
-          <Box component="section" aria-label="Dashboard content" sx={{ minWidth: 0 }}>
+          <Box
+            component="section"
+            aria-label="Dashboard content"
+            sx={{
+              minWidth: 0,
+              minHeight: 0,
+              ...(fillH && {
+                height: '100%',
+                overflowY: ownScroll ? 'hidden' : 'auto',
+                overflowX: 'hidden',
+                pr: ownScroll ? 0 : 1,
+                scrollbarWidth: 'thin',
+                scrollbarGutter: ownScroll ? 'auto' : 'stable',
+              }),
+            }}
+          >
             {/* The library stays mounted while other views are open, so
                 filters, page and search survive a trip to Quests or Explore. */}
             <Box sx={{ display: currentView === 'library' ? 'block' : 'none' }}>
@@ -323,9 +357,35 @@ export default function DashboardPage() {
             )}
           </Box>
 
-          <Box sx={{ gridColumn: { xs: 'auto', md: '1 / -1', lg: 'auto' } }}>
-            <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} submissions={submissions} />
-          </Box>
+          {/* Streak + calendar rail. Slides away on Study Plan and Leaderboard. */}
+          {isLg ? (
+            <Box
+              aria-hidden={!showRail}
+              sx={{
+                minWidth: 0,
+                minHeight: 0,
+                height: '100%',
+                overflowX: 'hidden',
+                overflowY: showRail ? 'auto' : 'hidden',
+                pl: 3,
+                scrollbarWidth: 'thin',
+                opacity: showRail ? 1 : 0,
+                transform: showRail ? 'none' : 'translateX(28px)',
+                pointerEvents: showRail ? 'auto' : 'none',
+                transition: 'opacity .3s ease, transform .4s cubic-bezier(.4,0,.2,1)',
+              }}
+            >
+              <Box sx={{ width: 316 }}>
+                <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
+              </Box>
+            </Box>
+          ) : (
+            <Box sx={{ gridColumn: { xs: 'auto', md: '1 / -1' } }}>
+              <Collapse in={showRail} timeout={350} unmountOnExit>
+                <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
+              </Collapse>
+            </Box>
+          )}
         </Box>
       </Container>
     </Box>

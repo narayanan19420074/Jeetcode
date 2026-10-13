@@ -1,24 +1,18 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { useSnackbar } from 'notistack';
-import { Box, Button, IconButton, LinearProgress, Stack, Tooltip, Typography, alpha } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Box, Button, Collapse, IconButton, LinearProgress, Stack, Tooltip, Typography, alpha } from '@mui/material';
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
-import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
-import ProBadge from '../../../components/ProBadge';
-import ActivateLicenseModal from '../../../components/ActivateLicenseModal';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import {
   DIFF_COLOR,
   MONTHLY_BADGE_GOAL,
-  STATUS_COLOR,
   formatCountdown,
   monthCells,
   msUntilUtcMidnight,
   surface,
-  timeAgo,
   utcKey,
   weekSegments,
 } from '../dashboardUtils';
@@ -30,12 +24,26 @@ const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 const Card = ({ children, sx }) => <Box sx={[surface, { p: 2.25 }, ...[].concat(sx || [])]}>{children}</Box>;
 
-const CardTitle = ({ children, trailing }) => (
-  <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
-    <Typography sx={{ fontWeight: 800, fontSize: '0.95rem' }}>{children}</Typography>
-    {trailing}
-  </Stack>
-);
+// Small cards fold away behind a chevron so the rail stays short and calm.
+function FoldCard({ title, trailing, defaultOpen = true, children }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <Card sx={{ py: 1.5 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
+        <Typography sx={{ fontWeight: 800, fontSize: '0.95rem' }}>{title}</Typography>
+        <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
+          {trailing}
+          <IconButton size="small" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-label={open ? `Collapse ${title}` : `Expand ${title}`}>
+            <ExpandMoreRoundedIcon fontSize="small" sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />
+          </IconButton>
+        </Stack>
+      </Stack>
+      <Collapse in={open} timeout={250}>
+        <Box sx={{ pt: 1.25 }}>{children}</Box>
+      </Collapse>
+    </Card>
+  );
+}
 
 // ------------------------------------------------------------------ calendar
 
@@ -275,17 +283,14 @@ function WeeklyGoalCard({ isAuthenticated, byDate }) {
   const daysLeft = current >= 0 ? segments[current].end - d : 0;
 
   return (
-    <Card>
-      <CardTitle
-        trailing={
-          <Typography variant="caption" sx={{ fontWeight: 700, color: 'warning.main' }}>
-            {daysLeft === 0 ? 'Last day' : `${daysLeft} days left`}
-          </Typography>
-        }
-      >
-        Weekly goal
-      </CardTitle>
-
+    <FoldCard
+      title="Weekly goal"
+      trailing={
+        <Typography variant="caption" sx={{ fontWeight: 700, color: 'warning.main' }}>
+          {daysLeft === 0 ? 'Last day' : `${daysLeft} days left`}
+        </Typography>
+      }
+    >
       <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
         {segments.map((s, i) => {
           const done = counts[i] >= s.goal;
@@ -325,7 +330,7 @@ function WeeklyGoalCard({ isAuthenticated, byDate }) {
       <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.5 }}>
         Submit a solution on 5 different days in a week to complete it.
       </Typography>
-    </Card>
+    </FoldCard>
   );
 }
 
@@ -392,8 +397,7 @@ function ProgressCard({ user, progress }) {
   const solved = progress?.solved || { Easy: user?.easySolved ?? 0, Medium: user?.mediumSolved ?? 0, Hard: user?.hardSolved ?? 0 };
 
   return (
-    <Card>
-      <CardTitle>Your progress</CardTitle>
+    <FoldCard title="Your progress">
       <Stack direction="row" spacing={2.25} sx={{ alignItems: 'center' }}>
         <TriRing easy={solved.Easy} medium={solved.Medium} hard={solved.Hard} totals={totals} />
         <Stack spacing={1.25} sx={{ flex: 1, minWidth: 0 }}>
@@ -422,169 +426,21 @@ function ProgressCard({ user, progress }) {
           })}
         </Stack>
       </Stack>
-    </Card>
-  );
-}
-
-// ------------------------------------------------------ recent submissions
-
-function RecentSubmissionsCard({ submissions }) {
-  return (
-    <Card>
-      <CardTitle>Recent submissions</CardTitle>
-      {submissions.length === 0 ? (
-        <Typography variant="body2" color="text.secondary">
-          Nothing submitted yet. Solve a problem and it will show up here.
-        </Typography>
-      ) : (
-        <Stack divider={<Box sx={{ borderTop: '1px solid', borderColor: 'divider' }} />} spacing={0}>
-          {submissions.map((s) => {
-            const slug = s.problem?.slug;
-            const color = STATUS_COLOR[s.status] || '#64748B';
-            const detail = [s.language, s.runtimeMs != null ? `${s.runtimeMs} ms` : null, timeAgo(s.createdAt)].filter(Boolean).join(', ');
-            return (
-              <Box
-                key={s._id}
-                component={slug ? RouterLink : 'div'}
-                {...(slug ? { to: `/workspace/${slug}` } : {})}
-                sx={{ py: 1.1, color: 'inherit', textDecoration: 'none', display: 'block', borderRadius: '8px', '&:hover .sub-title': { color: 'primary.main' } }}
-              >
-                <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-                  <Typography className="sub-title" variant="body2" noWrap sx={{ fontWeight: 600, minWidth: 0 }}>
-                    {s.problem?.title ?? 'Deleted problem'}
-                  </Typography>
-                  <Typography variant="caption" sx={{ fontWeight: 700, color, flexShrink: 0 }}>
-                    {s.status}
-                  </Typography>
-                </Stack>
-                <Typography variant="caption" color="text.secondary" sx={{ textTransform: 'capitalize' }}>
-                  {detail}
-                </Typography>
-              </Box>
-            );
-          })}
-        </Stack>
-      )}
-    </Card>
-  );
-}
-
-// ---------------------------------------------------------------- pro / key
-
-function ProCard({ user, isAuthenticated }) {
-  const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
-  const isPro = Boolean(user?.isPro);
-  const expiry = user?.proExpiresAt ? new Date(user.proExpiresAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : null;
-
-  return (
-    <Card
-      sx={(t) => ({
-        background: `linear-gradient(135deg, ${alpha('#F59E0B', t.palette.mode === 'dark' ? 0.16 : 0.12)}, transparent 70%), ${t.palette.background.paper}`,
-      })}
-    >
-      {isPro ? (
-        <>
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 0.75 }}>
-            <ProBadge />
-            <Typography sx={{ fontWeight: 800, fontSize: '0.95rem' }}>Pro is active</Typography>
-          </Stack>
-          <Typography variant="body2" color="text.secondary">
-            {expiry ? `Your plan runs until ${expiry}.` : 'Your access has no expiry date.'} Every company problem is unlocked.
-          </Typography>
-        </>
-      ) : (
-        <>
-          <Typography sx={{ fontWeight: 800, fontSize: '0.95rem', mb: 0.5 }}>Unlock company problems</Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-            Pro opens every problem tagged with a company. Have a license key? Redeem it here.
-          </Typography>
-          <Stack direction="row" spacing={1}>
-            <Button size="small" variant="contained" disableElevation onClick={() => navigate('/pricing')} sx={{ fontWeight: 700 }}>
-              See plans
-            </Button>
-            <Button
-              size="small"
-              variant="outlined"
-              color="inherit"
-              startIcon={<VpnKeyRoundedIcon fontSize="small" />}
-              onClick={() => (isAuthenticated ? setOpen(true) : navigate('/login'))}
-              sx={{ fontWeight: 700 }}
-            >
-              Redeem key
-            </Button>
-          </Stack>
-        </>
-      )}
-      <ActivateLicenseModal open={open} onClose={() => setOpen(false)} />
-    </Card>
-  );
-}
-
-// ----------------------------------------------------------------- check-in
-
-function CheckInCard({ isAuthenticated, checkedIn }) {
-  const { enqueueSnackbar } = useSnackbar();
-
-  const invite = async () => {
-    const url = `${window.location.origin}/signup`;
-    try {
-      if (navigator.share) {
-        await navigator.share({ title: 'JeetCode', text: 'Come practice coding problems with me on JeetCode.', url });
-        return;
-      }
-      await navigator.clipboard.writeText(url);
-      enqueueSnackbar('Invite link copied', { variant: 'success', autoHideDuration: 2200 });
-    } catch (err) {
-      if (err?.name !== 'AbortError') {
-        enqueueSnackbar('Could not copy the link. Share this page address instead.', { variant: 'warning' });
-      }
-    }
-  };
-
-  return (
-    <Card>
-      <CardTitle>Check-in</CardTitle>
-      <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', mb: 1.5 }}>
-        <Box
-          sx={{
-            width: 28,
-            height: 28,
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexShrink: 0,
-            bgcolor: checkedIn ? EMERALD : 'transparent',
-            border: checkedIn ? 'none' : '2px dashed',
-            borderColor: 'divider',
-            color: '#fff',
-          }}
-        >
-          {checkedIn && <CheckRoundedIcon sx={{ fontSize: 18 }} />}
-        </Box>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>
-          {!isAuthenticated ? 'Log in to check in each day.' : checkedIn ? 'You checked in today.' : 'Submit a solution to check in today.'}
-        </Typography>
-      </Stack>
-      <Button size="small" variant="outlined" color="inherit" startIcon={<PersonAddAlt1RoundedIcon fontSize="small" />} onClick={invite} sx={{ fontWeight: 700 }}>
-        Invite a friend
-      </Button>
-    </Card>
+    </FoldCard>
   );
 }
 
 // --------------------------------------------------------------------- rail
 
-export default function RightRail({ user, isAuthenticated, progress, activity, submissions }) {
+export default function RightRail({ user, isAuthenticated, progress, activity }) {
   const byDate = useMemo(() => new Map((activity || []).map((a) => [a.date, a.submissions])), [activity]);
-  const checkedIn = (byDate.get(utcKey(new Date())) || 0) > 0;
 
   return (
     <Box
       sx={{
         display: 'grid',
         gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))', lg: 'minmax(0, 1fr)' },
+        pb: { lg: 1 },
         gap: 2,
         alignItems: 'start',
       }}
@@ -592,9 +448,6 @@ export default function RightRail({ user, isAuthenticated, progress, activity, s
       <StreakCalendarCard user={user} isAuthenticated={isAuthenticated} byDate={byDate} />
       <WeeklyGoalCard isAuthenticated={isAuthenticated} byDate={byDate} />
       <ProgressCard user={user} progress={progress} />
-      {isAuthenticated && <RecentSubmissionsCard submissions={submissions} />}
-      <ProCard user={user} isAuthenticated={isAuthenticated} />
-      <CheckInCard isAuthenticated={isAuthenticated} checkedIn={checkedIn} />
     </Box>
   );
 }

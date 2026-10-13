@@ -13,6 +13,40 @@ const MAX_ROWS = 10000;
 const TTL_MS = { all: 60 * 1000, week: 5 * 60 * 1000, month: 5 * 60 * 1000 };
 const cache = new Map(); // period -> { at, rows }
 
+// Streak counters only change when someone solves something, so a lapsed streak still reads
+// as its old value on the user document. Show 0 once a full day has been missed.
+const todayUtc = () => {
+  const n = new Date();
+  return Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
+};
+const liveStreak = (u) => {
+  if (!u.streakDays || !u.lastActivityDate) return 0;
+  const last = new Date(u.lastActivityDate);
+  const lastUtc = Date.UTC(last.getUTCFullYear(), last.getUTCMonth(), last.getUTCDate());
+  return (todayUtc() - lastUtc) / DAY_MS <= 1 ? u.streakDays : 0;
+};
+const dayKey = (d) => (d ? new Date(d).toISOString().slice(0, 10) : null);
+
+// Everyone with an account (admins excluded) — the "players" number shown on the board.
+let totalUsersCache = { at: 0, count: 0 };
+export async function getTotalUsers() {
+  if (Date.now() - totalUsersCache.at < 5 * 60 * 1000) return totalUsersCache.count;
+  const count = await User.countDocuments({ role: { $ne: 'admin' } });
+  totalUsersCache = { at: Date.now(), count };
+  return count;
+}
+
+// Shape shared by the ranking rows and the friends who haven't solved anything yet.
+export const publicRow = (u) => ({
+  userId: String(u._id),
+  handle: u.handle,
+  name: u.name,
+  avatarUrl: u.avatarUrl || null,
+  company: u.company || '',
+  streak: liveStreak(u),
+  lastActive: dayKey(u.lastActivityDate),
+});
+
 const toScore = (e, m, h, a) => e * POINTS.easy + m * POINTS.medium + h * POINTS.hard + a * POINTS.aptitude;
 
 async function aptitudeCounts(since) {
@@ -66,18 +100,13 @@ async function buildRanking(period) {
 
   const ids = [...stats.keys()].map((k) => new mongoose.Types.ObjectId(k));
   const users = await User.find({ _id: { $in: ids }, role: { $ne: 'admin' } })
-    .select('name handle avatarUrl streakDays company')
+    .select('name handle avatarUrl streakDays lastActivityDate company')
     .lean();
 
   const rows = users.map((u) => {
     const s = stats.get(String(u._id));
     return {
-      userId: String(u._id),
-      handle: u.handle,
-      name: u.name,
-      avatarUrl: u.avatarUrl || null,
-      company: u.company || '',
-      streak: u.streakDays || 0,
+      ...publicRow(u),
       easy: s.e,
       medium: s.m,
       hard: s.h,

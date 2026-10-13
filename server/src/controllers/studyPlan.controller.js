@@ -36,6 +36,12 @@ export const listMyPlans = asyncHandler(async (req, res) => {
   const me = req.user.id;
   const today = localToday(req.query.tzOffset);
   const plans = await StudyPlan.find({ 'members.user': me }).sort({ createdAt: -1 }).limit(MAX_PLANS_PER_USER);
+
+  // One lookup for everyone in these plans, so the rail can show who is studying with you.
+  const memberIds = [...new Set(plans.flatMap((p) => p.members.map((m) => String(m.user))))];
+  const people = memberIds.length ? await User.find({ _id: { $in: memberIds } }).select('name handle avatarUrl').lean() : [];
+  const personById = new Map(people.map((u) => [String(u._id), u]));
+
   const data = await Promise.all(
     plans.map(async (plan) => {
       const progress = await loadMemberProgress(plan, [me]);
@@ -45,7 +51,11 @@ export const listMyPlans = asyncHandler(async (req, res) => {
         .sort((a, b) => a.date - b.date || a.order - b.order)
         .slice(0, 8)
         .map((i) => serializeItem(i, doneIds, today));
-      return { ...header(plan, me), summary: summarize(plan, doneIds, today), today: todayItems };
+      const members = plan.members
+        .map((m) => personById.get(String(m.user)))
+        .filter(Boolean)
+        .map((u) => ({ ...publicUser(u), isMe: String(u._id) === me }));
+      return { ...header(plan, me), members, summary: summarize(plan, doneIds, today), today: todayItems };
     })
   );
   new ApiResponse(200, data).send(res);

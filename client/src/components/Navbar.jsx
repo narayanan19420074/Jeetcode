@@ -17,8 +17,6 @@ import {
   Chip,
   Tooltip,
   Drawer,
-  List,
-  ListItemButton,
   alpha,
 } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -37,6 +35,11 @@ import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
+import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
+import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
 import { toggleThemeMode } from '../app/uiSlice';
 import { logoutUser } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
@@ -70,40 +73,63 @@ const EXPLORE_LINKS = [
 
 const isActivePath = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
-const DRAWER_WIDTH = 'min(86vw, 320px)';
+// Sections of the dashboard, reachable straight from the phone menu.
+const DASH_SECTIONS = [
+  { to: '/dashboard', label: 'Library', icon: LibraryBooksRoundedIcon, view: null },
+  { to: '/dashboard?view=quests', label: 'Quests', icon: EmojiEventsRoundedIcon, view: 'quests' },
+  { to: '/dashboard?view=explore', label: 'Explore', icon: ExploreRoundedIcon, view: 'explore' },
+  { to: '/dashboard?view=plans', label: 'Study Plan', icon: SchoolRoundedIcon, view: 'plans' },
+  { to: '/dashboard?view=leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon, view: 'leaderboard' },
+];
 
-function DrawerLink({ link, active, onNavigate }) {
-  const Icon = link.icon;
+// Big tappable tile used in the full-screen phone menu.
+function MenuTile({ to, label, icon: Icon, active, onNavigate }) {
   return (
-    <ListItemButton
+    <Box
       component={RouterLink}
-      to={link.to}
+      to={to}
       onClick={onNavigate}
       aria-current={active ? 'page' : undefined}
       sx={(t) => ({
-        mx: 1.5,
-        mb: 0.25,
-        px: 1.5,
-        py: 1.1,
-        borderRadius: '10px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'space-between',
         gap: 1.5,
-        color: active ? t.palette.text.primary : t.palette.text.secondary,
-        bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.16 : 0.1) : 'transparent',
-        '&:hover': { bgcolor: active ? undefined : t.palette.action.hover, color: t.palette.text.primary },
+        minHeight: 92,
+        p: 1.75,
+        borderRadius: '16px',
+        textDecoration: 'none',
+        color: 'inherit',
+        border: `1px solid ${active ? t.palette.primary.main : t.palette.divider}`,
+        bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.16 : 0.08) : t.palette.background.paper,
+        transition: 'transform .12s, border-color .15s',
+        '&:active': { transform: 'scale(0.97)' },
       })}
     >
-      <Icon sx={{ fontSize: 21, color: active ? 'primary.main' : 'inherit' }} />
-      <Typography variant="body2" sx={{ fontWeight: active ? 700 : 600 }}>
-        {link.label}
+      <Box sx={(t) => ({ width: 38, height: 38, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
+        <Icon sx={{ fontSize: 22 }} />
+      </Box>
+      <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.2 }}>
+        {label}
       </Typography>
-    </ListItemButton>
+    </Box>
+  );
+}
+
+function MenuHeading({ children }) {
+  return (
+    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 0.5, mb: 1, fontWeight: 800, letterSpacing: 0.6 }}>
+      {children}
+    </Typography>
   );
 }
 
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
+  const dashView = new URLSearchParams(search).get('view');
   const mode = useSelector((s) => s.ui.mode);
   const { isAuthenticated, user } = useSelector((s) => s.auth);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -302,56 +328,68 @@ export default function Navbar() {
         )}
       </Toolbar>
 
-      {/* Mobile drawer: account on top, two link groups, account actions pinned to the bottom. */}
+      {/* Phone menu: opens as a full screen sheet — profile, big link tiles, account actions at the bottom. */}
       <Drawer
         anchor="left"
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        slotProps={{ paper: { sx: { width: DRAWER_WIDTH, display: 'flex', flexDirection: 'column' } } }}
+        transitionDuration={220}
+        slotProps={{
+          paper: {
+            sx: {
+              width: '100vw',
+              maxWidth: '100vw',
+              height: '100dvh',
+              display: 'flex',
+              flexDirection: 'column',
+              backgroundImage: 'none',
+              pb: 'env(safe-area-inset-bottom)',
+            },
+          },
+        }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, height: 56, flexShrink: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, height: 60, flexShrink: 0 }}>
           <CodeRoundedIcon sx={{ color: 'primary.main' }} />
           <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: '-0.02em', flex: 1 }}>
             Jeet<Box component="span" sx={{ color: 'primary.main' }}>Code</Box>
           </Typography>
+          <IconButton onClick={() => dispatch(toggleThemeMode())} aria-label="Toggle color theme">
+            {mode === 'dark' ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
+          </IconButton>
           <IconButton onClick={() => setMobileOpen(false)} aria-label="Close navigation menu" edge="end">
             <CloseRoundedIcon />
           </IconButton>
         </Box>
         <Divider />
 
-        <Box sx={{ flex: 1, overflowY: 'auto', py: 1.5 }} component="nav" aria-label="Main navigation">
+        <Box sx={{ flex: 1, overflowY: 'auto', px: 2, py: 2 }} component="nav" aria-label="Main navigation">
           {isAuthenticated && (
             <Box
               component={RouterLink}
               to="/settings"
               onClick={() => setMobileOpen(false)}
               sx={(t) => ({
-                mx: 1.5,
-                mb: 1.5,
-                p: 1.5,
+                mb: 2.5,
+                p: 1.75,
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1.5,
-                borderRadius: '12px',
+                borderRadius: '16px',
                 textDecoration: 'none',
                 color: 'inherit',
                 border: `1px solid ${t.palette.divider}`,
-                '&:hover': { bgcolor: t.palette.action.hover },
+                bgcolor: t.palette.background.paper,
               })}
             >
-              <Avatar
-                src={user?.avatarUrl || undefined}
-                sx={{ bgcolor: 'primary.main', width: 40, height: 40, fontSize: '0.9rem', fontWeight: 700 }}
-              >
+              <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: 'primary.main', width: 48, height: 48, fontSize: '1rem', fontWeight: 700 }}>
                 {initialsFromName(user?.name)}
               </Avatar>
               <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Typography variant="body2" noWrap sx={{ fontWeight: 700 }}>
+                <Typography noWrap sx={{ fontWeight: 800 }}>
                   {user?.name}
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.25 }}>
-                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: 15, color: 'warning.main' }} />
+                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
                   <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
                     {user?.streakDays ?? 0}-day streak
                   </Typography>
@@ -361,68 +399,68 @@ export default function Navbar() {
             </Box>
           )}
 
-          <List disablePadding>
-            {PRIMARY_LINKS.map((link) => (
-              <DrawerLink key={link.to} link={link} active={isActivePath(pathname, link.to)} onNavigate={() => setMobileOpen(false)} />
+          <MenuHeading>MENU</MenuHeading>
+          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 1.25, mb: 2.5 }}>
+            {[...PRIMARY_LINKS, ...EXPLORE_LINKS].map((link) => (
+              <MenuTile key={link.to} {...link} active={isActivePath(pathname, link.to)} onNavigate={() => setMobileOpen(false)} />
             ))}
-          </List>
+          </Box>
 
-          <Divider sx={{ my: 1.5, mx: 2 }} />
-
-          <List disablePadding>
-            {EXPLORE_LINKS.map((link) => (
-              <DrawerLink key={link.to} link={link} active={isActivePath(pathname, link.to)} onNavigate={() => setMobileOpen(false)} />
-            ))}
-          </List>
+          <MenuHeading>DASHBOARD</MenuHeading>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+            {DASH_SECTIONS.map(({ to, label, icon: Icon, view }) => {
+              const active = pathname === '/dashboard' && (dashView || null) === view;
+              return (
+                <Box
+                  key={label}
+                  component={RouterLink}
+                  to={to}
+                  onClick={() => setMobileOpen(false)}
+                  sx={(t) => ({
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 0.75,
+                    px: 1.75,
+                    py: 1,
+                    borderRadius: 999,
+                    textDecoration: 'none',
+                    fontWeight: 700,
+                    fontSize: '0.875rem',
+                    border: `1px solid ${active ? 'transparent' : t.palette.divider}`,
+                    bgcolor: active ? t.palette.text.primary : 'transparent',
+                    color: active ? t.palette.background.paper : t.palette.text.primary,
+                  })}
+                >
+                  <Icon sx={{ fontSize: 18 }} />
+                  {label}
+                </Box>
+              );
+            })}
+          </Box>
         </Box>
 
         <Divider />
-        <Box sx={{ p: 1.5, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+        <Box sx={{ p: 2, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
           {isAuthenticated ? (
-            <>
+            <Box sx={{ display: 'grid', gridTemplateColumns: user?.isPro ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', gap: 1 }}>
               {!user?.isPro && (
-                <ListItemButton onClick={handleActivateLicenseClick} sx={{ borderRadius: '10px', gap: 1.5, px: 1.5 }}>
-                  <VpnKeyRoundedIcon sx={{ fontSize: 21, color: 'text.secondary' }} />
-                  <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                    Activate license
-                  </Typography>
-                </ListItemButton>
+                <Button onClick={handleActivateLicenseClick} color="inherit" variant="outlined" startIcon={<VpnKeyRoundedIcon />} sx={{ fontWeight: 700, borderRadius: '12px', textTransform: 'none', px: 1 }}>
+                  License
+                </Button>
               )}
-              <ListItemButton onClick={handleSettingsClick} sx={{ borderRadius: '10px', gap: 1.5, px: 1.5 }}>
-                <SettingsRoundedIcon sx={{ fontSize: 21, color: 'text.secondary' }} />
-                <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  Settings
-                </Typography>
-              </ListItemButton>
-              <ListItemButton onClick={handleLogout} sx={{ borderRadius: '10px', gap: 1.5, px: 1.5 }}>
-                <LogoutRoundedIcon sx={{ fontSize: 21, color: 'text.secondary' }} />
-                <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  Log out
-                </Typography>
-              </ListItemButton>
-            </>
+              <Button onClick={handleSettingsClick} color="inherit" variant="outlined" startIcon={<SettingsRoundedIcon />} sx={{ fontWeight: 700, borderRadius: '12px', textTransform: 'none', px: 1 }}>
+                Settings
+              </Button>
+              <Button onClick={handleLogout} color="inherit" variant="outlined" startIcon={<LogoutRoundedIcon />} sx={{ fontWeight: 700, borderRadius: '12px', textTransform: 'none', px: 1 }}>
+                Log out
+              </Button>
+            </Box>
           ) : (
             <>
-              <Button
-                component={RouterLink}
-                to="/login"
-                onClick={() => setMobileOpen(false)}
-                variant="contained"
-                disableElevation
-                fullWidth
-                sx={{ fontWeight: 700, py: 1 }}
-              >
+              <Button component={RouterLink} to="/login" onClick={() => setMobileOpen(false)} variant="contained" disableElevation fullWidth sx={{ fontWeight: 700, py: 1.1, borderRadius: '12px' }}>
                 Sign in
               </Button>
-              <Button
-                component={RouterLink}
-                to="/signup"
-                onClick={() => setMobileOpen(false)}
-                variant="outlined"
-                color="inherit"
-                fullWidth
-                sx={{ fontWeight: 700, py: 1 }}
-              >
+              <Button component={RouterLink} to="/signup" onClick={() => setMobileOpen(false)} variant="outlined" color="inherit" fullWidth sx={{ fontWeight: 700, py: 1.1, borderRadius: '12px' }}>
                 Create account
               </Button>
             </>

@@ -69,7 +69,7 @@ export default function OverviewTab({ plan, today, onOpenTeam }) {
   const team = [...plan.members].sort((a, b) => (b.todayTotal ? b.todayDone / b.todayTotal : -1) - (a.todayTotal ? a.todayDone / a.todayTotal : -1) || b.percent - a.percent);
 
   return (
-    <Box sx={{ display: 'grid', gap: 2 }}>
+    <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: 'minmax(0, 1fr)' }}>
       <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'repeat(2, minmax(0,1fr))', md: 'repeat(4, minmax(0,1fr))' } }}>
         <Stat index={0} label="Progress" sub={`${s.done} of ${s.total} questions`}>
           <ProgressRing value={s.percent} max={100} label="Done" size={64} strokeWidth={7} />
@@ -91,8 +91,8 @@ export default function OverviewTab({ plan, today, onOpenTeam }) {
         </Stat>
       </Box>
 
-      <Box sx={{ display: 'grid', gap: 2, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1fr) 290px' } }}>
-        <Box sx={{ display: 'grid', gap: 2, minWidth: 0 }}>
+      <Box sx={{ display: 'grid', gap: 2, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', lg: 'minmax(0,1fr) 290px' } }}>
+        <Box sx={{ display: 'grid', gap: 2, minWidth: 0, gridTemplateColumns: 'minmax(0, 1fr)' }}>
           <Rise index={4}>
             <Box sx={[surface, { p: 2 }]}>
               <Typography sx={{ fontWeight: 700, mb: 0.5 }}>Today{s.overdue ? ' + overdue' : ''}</Typography>
