@@ -10,6 +10,8 @@ html, body, #root {
 }
 
 body {
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
   font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,4 +29,12 @@ body {
 
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* Phones: slim scrollbars so they never eat into the layout */
+@media (max-width: 899.95px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
 }

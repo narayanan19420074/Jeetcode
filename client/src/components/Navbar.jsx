@@ -82,8 +82,8 @@ const DASH_SECTIONS = [
   { to: '/dashboard?view=leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon, view: 'leaderboard' },
 ];
 
-// Big tappable tile used in the full-screen phone menu.
-function MenuTile({ to, label, icon: Icon, active, onNavigate }) {
+// GPay-style row used in the phone menu: tonal icon bubble + label, full width.
+function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
   return (
     <Box
       component={RouterLink}
@@ -92,34 +92,27 @@ function MenuTile({ to, label, icon: Icon, active, onNavigate }) {
       aria-current={active ? 'page' : undefined}
       sx={(t) => ({
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        justifyContent: 'space-between',
-        gap: 1.5,
-        minHeight: 92,
-        p: 1.75,
+        alignItems: 'center',
+        gap: 2,
+        minHeight: 56,
+        px: 1.5,
         borderRadius: '16px',
         textDecoration: 'none',
-        color: 'inherit',
-        border: `1px solid ${active ? t.palette.primary.main : t.palette.divider}`,
-        bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.16 : 0.08) : t.palette.background.paper,
-        transition: 'transform .12s, border-color .15s',
-        '&:active': { transform: 'scale(0.97)' },
+        color: active ? t.palette.primary.main : 'inherit',
+        bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.2 : 0.12) : 'transparent',
+        transition: 'background-color .15s',
+        '&:active': { bgcolor: alpha(t.palette.primary.main, 0.16) },
       })}
     >
-      <Box sx={(t) => ({ width: 38, height: 38, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
-        <Icon sx={{ fontSize: 22 }} />
-      </Box>
-      <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.2 }}>
-        {label}
-      </Typography>
+      <Icon sx={{ fontSize: 24, color: 'primary.main' }} />
+      <Typography sx={{ fontWeight: active ? 800 : 500, fontSize: '1rem' }}>{label}</Typography>
     </Box>
   );
 }
 
 function MenuHeading({ children }) {
   return (
-    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 0.5, mb: 1, fontWeight: 800, letterSpacing: 0.6 }}>
+    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, mb: 0.5, fontWeight: 800, letterSpacing: 0.6 }}>
       {children}
     </Typography>
   );
@@ -328,7 +321,7 @@ export default function Navbar() {
         )}
       </Toolbar>
 
-      {/* Phone menu: opens as a full screen sheet — profile, big link tiles, account actions at the bottom. */}
+      {/* Phone menu: GPay-style side sheet — profile card, icon rows, account actions at the bottom. */}
       <Drawer
         anchor="left"
         open={mobileOpen}
@@ -337,12 +330,13 @@ export default function Navbar() {
         slotProps={{
           paper: {
             sx: {
-              width: '100vw',
-              maxWidth: '100vw',
+              width: 'min(88vw, 360px)',
               height: '100dvh',
               display: 'flex',
               flexDirection: 'column',
-              backgroundImage: 'none',
+              borderRadius: '0 28px 28px 0',
+              backgroundImage: (t) => `linear-gradient(180deg, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.14 : 0.2)} 0, transparent 220px)`,
+              pt: 'env(safe-area-inset-top)',
               pb: 'env(safe-area-inset-bottom)',
             },
           },
@@ -374,11 +368,10 @@ export default function Navbar() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1.5,
-                borderRadius: '16px',
+                borderRadius: '24px',
                 textDecoration: 'none',
                 color: 'inherit',
-                border: `1px solid ${t.palette.divider}`,
-                bgcolor: t.palette.background.paper,
+                bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.18 : 0.12),
               })}
             >
               <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: 'primary.main', width: 48, height: 48, fontSize: '1rem', fontWeight: 700 }}>
@@ -400,42 +393,26 @@ export default function Navbar() {
           )}
 
           <MenuHeading>MENU</MenuHeading>
-          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 1.25, mb: 2.5 }}>
+          <Box sx={{ display: 'grid', gap: 0.25, mb: 1.5 }}>
             {[...PRIMARY_LINKS, ...EXPLORE_LINKS].map((link) => (
-              <MenuTile key={link.to} {...link} active={isActivePath(pathname, link.to)} onNavigate={() => setMobileOpen(false)} />
+              <MenuRow key={link.to} {...link} active={isActivePath(pathname, link.to)} onNavigate={() => setMobileOpen(false)} />
             ))}
           </Box>
 
+          <Divider sx={{ my: 1.5 }} />
+
           <MenuHeading>DASHBOARD</MenuHeading>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-            {DASH_SECTIONS.map(({ to, label, icon: Icon, view }) => {
-              const active = pathname === '/dashboard' && (dashView || null) === view;
-              return (
-                <Box
-                  key={label}
-                  component={RouterLink}
-                  to={to}
-                  onClick={() => setMobileOpen(false)}
-                  sx={(t) => ({
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 0.75,
-                    px: 1.75,
-                    py: 1,
-                    borderRadius: 999,
-                    textDecoration: 'none',
-                    fontWeight: 700,
-                    fontSize: '0.875rem',
-                    border: `1px solid ${active ? 'transparent' : t.palette.divider}`,
-                    bgcolor: active ? t.palette.text.primary : 'transparent',
-                    color: active ? t.palette.background.paper : t.palette.text.primary,
-                  })}
-                >
-                  <Icon sx={{ fontSize: 18 }} />
-                  {label}
-                </Box>
-              );
-            })}
+          <Box sx={{ display: 'grid', gap: 0.25 }}>
+            {DASH_SECTIONS.map(({ to, label, icon, view }) => (
+              <MenuRow
+                key={label}
+                to={to}
+                label={label}
+                icon={icon}
+                active={pathname === '/dashboard' && (dashView || null) === view}
+                onNavigate={() => setMobileOpen(false)}
+              />
+            ))}
           </Box>
         </Box>
 

@@ -2,9 +2,10 @@ import { Suspense, lazy, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, Navigate, useParams } from 'react-router-dom';
 import { alpha } from '@mui/material/styles';
-import { Avatar, Box, Button, CircularProgress, InputAdornment, List, ListItemButton, ListItemIcon, ListItemText, Stack, TextField, Typography } from '@mui/material';
+import { Avatar, Box, Button, CircularProgress, Divider, IconButton, InputAdornment, List, ListItemButton, ListItemIcon, ListItemText, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { SETTINGS_GROUPS, SETTINGS_ITEMS, DEFAULT_SECTION } from './settingsNav';
 import { initialsFromName } from './components/SettingsUi';
 
@@ -48,11 +49,106 @@ function NavItem({ item, active }) {
   );
 }
 
+// Phone row, GPay style: blue icon, label, soft chevron.
+function PhoneRow({ item }) {
+  const Icon = item.icon;
+  return (
+    <ListItemButton
+      component={RouterLink}
+      to={`/settings/${item.key}`}
+      sx={{ minHeight: 60, px: 2, gap: 2, borderRadius: '16px', '&:active': { bgcolor: 'action.selected' } }}
+    >
+      <ListItemIcon sx={{ minWidth: 0, color: 'primary.main' }}>
+        <Icon sx={{ fontSize: 26 }} />
+      </ListItemIcon>
+      <ListItemText primary={item.label} slotProps={{ primary: { sx: { fontSize: '1.05rem', fontWeight: 500 } } }} />
+      <ChevronRightRoundedIcon sx={{ color: 'text.secondary', fontSize: 22 }} />
+    </ListItemButton>
+  );
+}
+
+// Phone landing screen: big title, profile card, search, then grouped rows split by dividers.
+function PhoneMenu({ user, groups, query, setQuery }) {
+  return (
+    <Box sx={{ maxWidth: 560, mx: 'auto', px: 1.5, pt: 1, pb: 3 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, px: 0.5 }}>
+        <IconButton component={RouterLink} to="/dashboard" aria-label="Back to dashboard" edge="start">
+          <ArrowBackRoundedIcon />
+        </IconButton>
+      </Stack>
+      <Typography variant="h4" sx={{ fontWeight: 500, px: 1.5, mt: 1, mb: 2.5, letterSpacing: '-0.01em' }}>
+        Settings
+      </Typography>
+
+      <Box
+        component={RouterLink}
+        to="/settings/profile"
+        sx={(t) => ({
+          display: 'flex',
+          alignItems: 'center',
+          gap: 1.75,
+          p: 2,
+          mb: 2,
+          borderRadius: '24px',
+          textDecoration: 'none',
+          color: 'inherit',
+          bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.18 : 0.12),
+        })}
+      >
+        <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 56, height: 56, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 700 }}>
+          {initialsFromName(user.name)}
+        </Avatar>
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography noWrap sx={{ fontWeight: 800, fontSize: '1.05rem' }}>
+            {user.name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" noWrap>
+            @{user.handle}
+          </Typography>
+        </Box>
+        <ChevronRightRoundedIcon sx={{ color: 'text.secondary' }} />
+      </Box>
+
+      <TextField
+        fullWidth
+        placeholder="Find a setting"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        slotProps={{
+          input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon /></InputAdornment>, sx: { borderRadius: 99 } },
+          htmlInput: { 'aria-label': 'Find a setting' },
+        }}
+        sx={{ mb: 1.5 }}
+      />
+
+      {groups.length === 0 && (
+        <Typography variant="body2" color="text.secondary" sx={{ px: 1.5, py: 2 }}>
+          No settings match “{query}”.
+        </Typography>
+      )}
+      {groups.map((g, gi) => (
+        <Box key={g.label}>
+          {gi > 0 && <Divider sx={{ my: 1 }} />}
+          <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 2, pt: 1, pb: 0.5, fontWeight: 800, letterSpacing: 0.6, textTransform: 'uppercase' }}>
+            {g.label}
+          </Typography>
+          <List disablePadding>
+            {g.items.map((i) => (
+              <PhoneRow key={i.key} item={i} />
+            ))}
+          </List>
+        </Box>
+      ))}
+    </Box>
+  );
+}
+
 export default function SettingsPage() {
   const user = useSelector((s) => s.auth.user);
   const params = useParams();
   const section = params['*']?.split('/')[0] || '';
   const [query, setQuery] = useState('');
+  const isPhone = useMediaQuery((t) => t.breakpoints.down('md'));
 
   const groups = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -64,14 +160,16 @@ export default function SettingsPage() {
   }, [query]);
 
   if (!user) return null;
-  if (!SECTIONS[section]) return <Navigate to={`/settings/${DEFAULT_SECTION}`} replace />;
+  // Phones land on the settings list; desktop jumps straight into a section.
+  if (isPhone && !section) return <PhoneMenu user={user} groups={groups} query={query} setQuery={setQuery} />;
+  if (!SECTIONS[section]) return <Navigate to={isPhone ? '/settings' : `/settings/${DEFAULT_SECTION}`} replace />;
   const Section = SECTIONS[section];
   const current = SETTINGS_ITEMS.find((i) => i.key === section);
 
   return (
     <Box sx={{ maxWidth: 1120, mx: 'auto', px: { xs: 2, md: 3 }, py: { xs: 2.5, md: 4 } }}>
       {/* Header — who these settings belong to */}
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 1.75, mb: { xs: 2, md: 3.5 } }}>
+      <Stack direction="row" sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1.75, mb: 3.5 }}>
         <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 700 }}>
           {initialsFromName(user.name)}
         </Avatar>
@@ -92,31 +190,15 @@ export default function SettingsPage() {
       </Stack>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: '264px minmax(0, 1fr)' }, gap: { xs: 2, md: 5 }, alignItems: 'start' }}>
-        {/* Phones: a swipeable strip instead of the sidebar */}
-        <Box
-          component="nav"
-          aria-label="Settings sections"
-          sx={{ display: { xs: 'flex', md: 'none' }, gap: 1, overflowX: 'auto', pb: 0.5, mx: -2, px: 2, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}
-        >
-          {SETTINGS_ITEMS.map((i) => {
-            const Icon = i.icon;
-            const active = i.key === section;
-            return (
-              <Button
-                key={i.key}
-                component={RouterLink}
-                to={`/settings/${i.key}`}
-                size="small"
-                variant={active ? 'contained' : 'outlined'}
-                disableElevation
-                startIcon={<Icon sx={{ fontSize: 18 }} />}
-                sx={{ flexShrink: 0, borderRadius: 99, whiteSpace: 'nowrap', ...(active ? {} : { color: 'text.primary', borderColor: 'divider' }) }}
-              >
-                {i.label}
-              </Button>
-            );
-          })}
-        </Box>
+        {/* Phones: back arrow + big title instead of the sidebar */}
+        <Stack direction="row" sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', gap: 1, mx: -1 }}>
+          <IconButton component={RouterLink} to="/settings" aria-label="Back to settings">
+            <ArrowBackRoundedIcon />
+          </IconButton>
+          <Typography variant="h5" sx={{ fontWeight: 500 }}>
+            {current?.label}
+          </Typography>
+        </Stack>
 
         {/* Desktop sidebar */}
         <Box component="nav" aria-label="Settings sections" sx={{ display: { xs: 'none', md: 'block' }, position: 'sticky', top: 88 }}>

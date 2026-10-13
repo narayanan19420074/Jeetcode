@@ -28,13 +28,21 @@ const typography = {
   monospace: { fontFamily: '"JetBrains Mono", "Fira Code", monospace' },
 };
 
-const shape = { borderRadius: 10 };
+const shape = { borderRadius: 16 };
+
+// GPay-style surfaces: soft blue-tinted page, white cards, tonal blue containers.
+const gpay = {
+  light: { bg: '#F5F8FE', paper: '#FFFFFF', tonal: '#E3ECFC', hero: '#CFE0FB', text: '#1F2328', muted: '#5C6675', line: '#E3E8F0' },
+  dark: { bg: '#111318', paper: '#1B1E25', tonal: '#23304A', hero: '#1A2C4F', text: '#E6E9EF', muted: '#9AA4B2', line: 'rgba(255,255,255,0.09)' },
+};
+export const gpayTokens = gpay;
 
 // Accent colours offered in Settings -> Appearance. `blue` is the original
 // brand colour and is identical in both modes; the others use a deeper shade
 // on light backgrounds so links/buttons keep enough contrast.
 export const ACCENTS = {
-  blue: { label: 'Blue', dark: ['#3B82F6', '#2563EB'], light: ['#3B82F6', '#2563EB'], text: '#FFFFFF' },
+  // Google-Pay style blue: deep blue on light, soft periwinkle on dark.
+  blue: { label: 'Blue', dark: ['#8AB4F8', '#669DF6'], light: ['#1A73E8', '#0B57D0'], text: '#FFFFFF', darkText: '#0B2A5B' },
   violet: { label: 'Violet', dark: ['#8B5CF6', '#7C3AED'], light: ['#7C3AED', '#6D28D9'], text: '#FFFFFF' },
   emerald: { label: 'Emerald', dark: ['#10B981', '#059669'], light: ['#059669', '#047857'], text: '#FFFFFF' },
   amber: { label: 'Amber', dark: ['#F59E0B', '#D97706'], light: ['#B45309', '#92400E'], text: '#111827' },
@@ -57,20 +65,20 @@ export const getTheme = (mode, opts = {}) => {
     spacing: compact ? 7 : 8,
     palette: {
       mode,
-      primary: { main, dark, contrastText: a.text },
+      primary: { main, dark, contrastText: mode === 'dark' && a.darkText ? a.darkText : a.text },
       success: { main: tokens.emerald },
       warning: { main: tokens.amber },
       error: { main: tokens.red },
       ...(mode === 'dark'
         ? {
-            background: { default: tokens.slate900, paper: tokens.slate800 },
-            text: { primary: highContrast ? '#FFFFFF' : tokens.slate50, secondary: highContrast ? '#CBD5E1' : tokens.slate500 },
-            divider: highContrast ? 'rgba(226, 232, 240, 0.4)' : 'rgba(148, 163, 184, 0.12)',
+            background: { default: gpay.dark.bg, paper: gpay.dark.paper },
+            text: { primary: highContrast ? '#FFFFFF' : gpay.dark.text, secondary: highContrast ? '#CBD5E1' : gpay.dark.muted },
+            divider: highContrast ? 'rgba(226, 232, 240, 0.4)' : gpay.dark.line,
           }
         : {
-            background: { default: tokens.slate50, paper: '#FFFFFF' },
-            text: { primary: highContrast ? '#000000' : tokens.slate900, secondary: highContrast ? '#334155' : tokens.slate500 },
-            divider: highContrast ? '#64748B' : tokens.slate200,
+            background: { default: gpay.light.bg, paper: gpay.light.paper },
+            text: { primary: highContrast ? '#000000' : gpay.light.text, secondary: highContrast ? '#334155' : gpay.light.muted },
+            divider: highContrast ? '#64748B' : gpay.light.line,
           }),
     },
     typography: { ...typography, fontSize: 14 * (FONT_SCALE[fontScale] ?? 1) },
@@ -86,7 +94,7 @@ export const getTheme = (mode, opts = {}) => {
       },
       ...(compact
         ? {
-            MuiButton: { defaultProps: { size: 'small' }, styleOverrides: { root: { borderRadius: 8, paddingInline: 14 } } },
+            MuiButton: { defaultProps: { size: 'small' }, styleOverrides: { root: { borderRadius: 999, paddingInline: 14 } } },
             MuiIconButton: { defaultProps: { size: 'small' } },
             MuiTextField: { defaultProps: { size: 'small' } },
             MuiFormControl: { defaultProps: { size: 'small' } },
@@ -98,7 +106,7 @@ export const getTheme = (mode, opts = {}) => {
         : {
             MuiButton: {
               styleOverrides: {
-                root: { borderRadius: 8, paddingInline: 16 },
+                root: { borderRadius: 999, paddingInline: 18 },
               },
             },
           }),
@@ -106,6 +114,18 @@ export const getTheme = (mode, opts = {}) => {
         styleOverrides: {
           root: { backgroundImage: 'none' },
         },
+      },
+      MuiCard: {
+        styleOverrides: { root: { borderRadius: 20 } },
+      },
+      MuiDialog: {
+        styleOverrides: { paper: { borderRadius: 28 } },
+      },
+      MuiMenu: {
+        styleOverrides: { paper: { borderRadius: 16 } },
+      },
+      MuiDrawer: {
+        styleOverrides: { paper: { backgroundImage: 'none' } },
       },
       MuiChip: {
         defaultProps: compact ? { size: 'small' } : {},
@@ -119,6 +139,8 @@ export const getTheme = (mode, opts = {}) => {
             backgroundColor: theme.palette.background.paper,
             color: theme.palette.text.primary,
             borderBottom: `1px solid ${theme.palette.divider}`,
+            // keep the bar clear of the phone notch / status bar
+            paddingTop: 'env(safe-area-inset-top)',
           }),
         },
       },
