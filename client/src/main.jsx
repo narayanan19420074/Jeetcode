@@ -90,3 +90,10 @@ createRoot(document.getElementById('root')).render(
     </Provider>
   </StrictMode>
 );
+
+// PWA: lets phones install JeetCode to the home screen. Production only, so local dev is never affected.
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}

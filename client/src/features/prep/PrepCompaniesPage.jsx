@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Container, Box, Typography, Grid, Paper, CircularProgress, LinearProgress, Chip } from '@mui/material';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Container, Box, Typography, Grid, Paper, CircularProgress, LinearProgress, Chip, Button } from '@mui/material';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
-import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { prepApi } from '../../api/prepApi';
+import CompanyAvatar from '../../components/CompanyAvatar';
 
 const readinessColor = (pct) => {
   if (pct === null) return 'primary.main';
@@ -26,12 +27,19 @@ export default function PrepCompaniesPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
-        Prep by Company
-      </Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-        Pick a company — see the exact exam pattern, and exactly how ready you are for it.
-      </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 2, mb: 3 }}>
+        <Box>
+          <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
+            Prep by Company
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Pick a company — see the exact exam pattern, and exactly how ready you are for it.
+          </Typography>
+        </Box>
+        <Button component={RouterLink} to="/companies" size="small" endIcon={<ChevronRightRoundedIcon />} sx={{ flexShrink: 0, fontWeight: 700 }}>
+          All companies
+        </Button>
+      </Box>
 
       {loading ? (
         <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
@@ -57,9 +65,7 @@ export default function PrepCompaniesPage() {
                 }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: 2, bgcolor: 'primary.main', color: '#fff' }}>
-                    <BusinessRoundedIcon fontSize="small" />
-                  </Box>
+                  <CompanyAvatar name={c.name} logoUrl={c.logoUrl} size={44} />
                   <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>{c.name}</Typography>
                 </Box>
 

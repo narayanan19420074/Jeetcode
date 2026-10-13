@@ -49,6 +49,8 @@ const SettingsPage = lazy(() => import('./features/settings/SettingsPage'));
 const LearnTopicPage = lazy(() => import('./features/learn/LearnTopicPage'));
 // REMOVED: PracticePage (Learn's own leveled practice bank) — Practice
 // now lives on the Aptitude module (AptitudePracticePage) instead.
+const CompaniesPage = lazy(() => import('./features/companies/CompaniesPage'));
+const YouPage = lazy(() => import('./features/profile/YouPage'));
 const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage'));
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
 
@@ -158,6 +160,8 @@ export default function App() {
           path="/aptitude/:slug/practice/:questionId"
           element={<Suspense fallback={<RouteFallback />}><AptitudePracticeQuestionPage /></Suspense>}
         />
+        <Route path="/companies" element={<Suspense fallback={<RouteFallback />}><CompaniesPage /></Suspense>} />
+        <Route path="/you" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><YouPage /></Suspense></ProtectedRoute>} />
         <Route path="/prep" element={<Suspense fallback={<RouteFallback />}><PrepCompaniesPage /></Suspense>} />
         <Route path="/prep/:companySlug" element={<Suspense fallback={<RouteFallback />}><PrepRoadmapPage /></Suspense>} />
 

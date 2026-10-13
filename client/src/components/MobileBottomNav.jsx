@@ -13,7 +13,7 @@ const ITEMS = [
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
   { to: '/aptitude', label: 'Aptitude', icon: CalculateRoundedIcon },
   { to: '/prep', label: 'Prep', icon: BusinessRoundedIcon },
-  { to: '/settings', label: 'You', icon: PersonRoundedIcon },
+  { to: '/you', label: 'You', icon: PersonRoundedIcon },
 ];
 
 // The code workspace needs the full phone height, so no bottom bar there.
