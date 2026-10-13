@@ -1,0 +1,1148 @@
+[
+  {
+    "title": "Best Time to Buy and Sell Stock",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "You are given `prices`, where `prices[i]` is a stock's price on day `i`. Buy on one day and sell on a later day. Return the maximum profit possible, or 0 if no profit can be made.",
+    "examples": [
+      {
+        "input": "prices = [7,1,5,3,6,4]",
+        "output": "5",
+        "explanation": "Buy at 1, sell at 6 \u2192 profit 5."
+      },
+      {
+        "input": "prices = [7,6,4,3,1]",
+        "output": "0",
+        "explanation": "Prices only fall, so no trade is made."
+      }
+    ],
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "functionName": "maxProfit",
+    "params": [
+      {
+        "name": "prices",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            7,
+            1,
+            5,
+            3,
+            6,
+            4
+          ]
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            7,
+            6,
+            4,
+            3,
+            1
+          ]
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            5
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            4,
+            1
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            3,
+            3
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            1,
+            2,
+            0,
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Maximum Product of Three Numbers",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Math",
+      "Sorting"
+    ],
+    "companies": [
+      "Google",
+      "Microsoft"
+    ],
+    "description": "Given an integer array `nums`, pick any three different elements and return the largest product you can get. Remember that two negatives multiply to a positive.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "24",
+        "explanation": "4 \u00d7 3 \u00d7 2 = 24."
+      },
+      {
+        "input": "nums = [-10,-10,5,2]",
+        "output": "500",
+        "explanation": "(-10) \u00d7 (-10) \u00d7 5 = 500."
+      }
+    ],
+    "constraints": [
+      "3 <= nums.length <= 10^4",
+      "-1000 <= nums[i] <= 1000"
+    ],
+    "functionName": "maximumProduct",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": 24,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            -10,
+            -10,
+            5,
+            2
+          ]
+        ],
+        "expected": 500,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            -1,
+            -2,
+            -3
+          ]
+        ],
+        "expected": -6,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            -5,
+            -4,
+            0,
+            1,
+            2
+          ]
+        ],
+        "expected": 40,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            -100,
+            -98,
+            -1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": 39200,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Valid Mountain Array",
+    "difficulty": "Easy",
+    "tags": [
+      "Array"
+    ],
+    "companies": [
+      "Amazon",
+      "Adobe"
+    ],
+    "description": "Return true if `arr` is a mountain: it has at least 3 elements, strictly increases up to a peak, then strictly decreases. The peak can't be the first or last element, and equal neighbours are not allowed.",
+    "examples": [
+      {
+        "input": "arr = [0,3,2,1]",
+        "output": "true",
+        "explanation": "Rises to 3, then falls."
+      },
+      {
+        "input": "arr = [3,5,5]",
+        "output": "false",
+        "explanation": "Equal neighbours break strictness."
+      }
+    ],
+    "constraints": [
+      "1 <= arr.length <= 10^4",
+      "0 <= arr[i] <= 10^4"
+    ],
+    "functionName": "validMountainArray",
+    "params": [
+      {
+        "name": "arr",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            0,
+            3,
+            2,
+            1
+          ]
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            3,
+            5,
+            5
+          ]
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            1
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            3,
+            2
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            2,
+            1
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Palindrome From Letters",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Greedy"
+    ],
+    "companies": [
+      "Amazon",
+      "Goldman Sachs"
+    ],
+    "description": "Given a string `s` of upper and lower case letters (case-sensitive), return the length of the longest palindrome you can build using some or all of its characters.",
+    "examples": [
+      {
+        "input": "s = \"abccccdd\"",
+        "output": "7",
+        "explanation": "\"dccaccd\" is one valid palindrome of length 7."
+      },
+      {
+        "input": "s = \"a\"",
+        "output": "1",
+        "explanation": "A single letter is a palindrome."
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 2000",
+      "s contains only English letters"
+    ],
+    "functionName": "longestPalindrome",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "abccccdd"
+        ],
+        "expected": 7,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          "Aa"
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          "aaaa"
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          "abcabcabc"
+        ],
+        "expected": 7,
+        "isSample": false
+      },
+      {
+        "args": [
+          "zzzxyyx"
+        ],
+        "expected": 7,
+        "isSample": false
+      },
+      {
+        "args": [
+          "AAbbCC"
+        ],
+        "expected": 6,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "House Robber II",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Houses stand in a circle, so the first and last house are neighbours. Each house holds `nums[i]` money, and robbing two adjacent houses triggers an alarm. Return the maximum amount you can rob without setting it off.",
+    "examples": [
+      {
+        "input": "nums = [2,3,2]",
+        "output": "3",
+        "explanation": "Houses 1 and 3 are adjacent in the circle, so take house 2 \u2192 3."
+      },
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "4",
+        "explanation": "Rob houses 1 and 3 \u2192 4."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000"
+    ],
+    "functionName": "rob",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            3,
+            2
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            1
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            5
+          ]
+        ],
+        "expected": 5,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            200,
+            3,
+            140,
+            20,
+            10
+          ]
+        ],
+        "expected": 340,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            4,
+            1,
+            2,
+            7,
+            5,
+            3,
+            1
+          ]
+        ],
+        "expected": 14,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Partition Equal Subset Sum",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given an array of positive integers `nums`, decide whether it can be split into two groups with exactly the same sum.",
+    "examples": [
+      {
+        "input": "nums = [1,5,11,5]",
+        "output": "true",
+        "explanation": "[1,5,5] and [11] both sum to 11."
+      },
+      {
+        "input": "nums = [1,2,3,5]",
+        "output": "false",
+        "explanation": "Total is 11 (odd), so impossible."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "1 <= nums[i] <= 100"
+    ],
+    "functionName": "canPartition",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            5,
+            11,
+            5
+          ]
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            5
+          ]
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            3,
+            3,
+            4,
+            5
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            100,
+            100,
+            100,
+            100,
+            99,
+            1
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            5
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Palindromic Substrings",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Facebook",
+      "Microsoft"
+    ],
+    "description": "Count how many substrings of `s` are palindromes. Substrings at different positions count separately, even if their text is identical.",
+    "examples": [
+      {
+        "input": "s = \"abc\"",
+        "output": "3",
+        "explanation": "Only \"a\", \"b\", \"c\" \u2192 3."
+      },
+      {
+        "input": "s = \"aaa\"",
+        "output": "6",
+        "explanation": "a, a, a, aa, aa, aaa \u2192 6."
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s has only lowercase letters"
+    ],
+    "functionName": "countSubstrings",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "abc"
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "aaa"
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          "abba"
+        ],
+        "expected": 6,
+        "isSample": false
+      },
+      {
+        "args": [
+          "racecar"
+        ],
+        "expected": 10,
+        "isSample": false
+      },
+      {
+        "args": [
+          "abacdfgdcaba"
+        ],
+        "expected": 14,
+        "isSample": false
+      },
+      {
+        "args": [
+          "zxzxz"
+        ],
+        "expected": 9,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Mountain in Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "A mountain subarray has length \u2265 3, strictly rises to a peak, then strictly falls. Return the length of the longest mountain subarray in `arr`, or 0 if none exists.",
+    "examples": [
+      {
+        "input": "arr = [2,1,4,7,3,2,5]",
+        "output": "5",
+        "explanation": "[1,4,7,3,2] has length 5."
+      },
+      {
+        "input": "arr = [2,2,2]",
+        "output": "0",
+        "explanation": "No mountain exists."
+      }
+    ],
+    "constraints": [
+      "1 <= arr.length <= 10^4",
+      "0 <= arr[i] <= 10^4"
+    ],
+    "functionName": "longestMountain",
+    "params": [
+      {
+        "name": "arr",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            1,
+            4,
+            7,
+            3,
+            2,
+            5
+          ]
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "expected": 3,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            3,
+            2,
+            2,
+            1,
+            4,
+            6,
+            5
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            875,
+            884,
+            239,
+            731,
+            723,
+            685
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "First Missing Positive",
+    "difficulty": "Hard",
+    "tags": [
+      "Array",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Microsoft"
+    ],
+    "description": "Given an unsorted integer array `nums`, return the smallest positive integer (1, 2, 3, \u2026) that does not appear in it. A solution using O(n) time and O(1) extra space is the real challenge.",
+    "examples": [
+      {
+        "input": "nums = [1,2,0]",
+        "output": "3",
+        "explanation": "1 and 2 exist, so the answer is 3."
+      },
+      {
+        "input": "nums = [7,8,9,11,12]",
+        "output": "1",
+        "explanation": "1 is missing."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "functionName": "firstMissingPositive",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            0
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            7,
+            8,
+            9,
+            11,
+            12
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            3,
+            4,
+            -1,
+            1
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            -1,
+            -2,
+            -3
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            4,
+            1,
+            6,
+            5
+          ]
+        ],
+        "expected": 7,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Valid Parentheses",
+    "difficulty": "Hard",
+    "tags": [
+      "String",
+      "Stack",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Given a string made only of `(` and `)`, return the length of the longest substring that is a well-formed (properly balanced) set of parentheses.",
+    "examples": [
+      {
+        "input": "s = \"(()\"",
+        "output": "2",
+        "explanation": "Longest valid piece is \"()\" \u2192 2."
+      },
+      {
+        "input": "s = \")()())\"",
+        "output": "4",
+        "explanation": "\"()()\" \u2192 4."
+      }
+    ],
+    "constraints": [
+      "0 <= s.length <= 3*10^4",
+      "s[i] is '(' or ')'"
+    ],
+    "functionName": "longestValidParentheses",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "(()"
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          ")()())"
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          ""
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          "()(()"
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          "((()))"
+        ],
+        "expected": 6,
+        "isSample": false
+      },
+      {
+        "args": [
+          "()(())"
+        ],
+        "expected": 6,
+        "isSample": false
+      },
+      {
+        "args": [
+          ")("
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          "(()())"
+        ],
+        "expected": 6,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]
