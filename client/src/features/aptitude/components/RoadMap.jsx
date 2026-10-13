@@ -21,16 +21,22 @@ const BOTTOM = 90;
 const AMP = 0.16;
 const NODE = 72;
 
-function roadPath(pts, W) {
+// Desktop keeps the roomy layout with big label cards. Phones get a compact,
+// Candy-Crush style map: small nodes, a road that swings almost edge to edge,
+// and a short row height so many levels fit on one screen.
+const DESKTOP = { ROW, TOP, BOTTOM, AMP, NODE, TURN: Math.PI / 2 };
+const MOBILE = { ROW: 96, TOP: 64, BOTTOM: 80, AMP: 0.34, NODE: 52, TURN: Math.PI / 3 };
+
+function roadPath(pts, W, g) {
   if (!pts.length) return '';
   const sx = W * 0.14;
-  const sy = TOP / 2;
+  const sy = g.TOP / 2;
   const f = pts[0];
-  let d = `M ${sx} ${sy} L ${f.x - W * 0.1} ${sy} C ${f.x} ${sy}, ${f.x} ${f.y - ROW / 2}, ${f.x} ${f.y}`;
+  let d = `M ${sx} ${sy} L ${f.x - W * 0.1} ${sy} C ${f.x} ${sy}, ${f.x} ${f.y - g.ROW / 2}, ${f.x} ${f.y}`;
   for (let i = 1; i < pts.length; i += 1) {
     const a = pts[i - 1];
     const b = pts[i];
-    d += ` C ${a.x} ${a.y + ROW / 2}, ${b.x} ${b.y - ROW / 2}, ${b.x} ${b.y}`;
+    d += ` C ${a.x} ${a.y + g.ROW / 2}, ${b.x} ${b.y - g.ROW / 2}, ${b.x} ${b.y}`;
   }
   return d;
 }
@@ -55,7 +61,7 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
   const passed = status === 'completed';
   const best = Math.round(pattern.progress.bestScore || 0);
   const stars = starsFor(pattern.progress.bestScore, pattern.passPercentage);
-  const size = narrow ? 62 : NODE;
+  const size = narrow ? MOBILE.NODE : NODE;
   const box = size + 28;
   const ringR = size / 2 + 7;
   const circ = 2 * Math.PI * ringR;
@@ -128,11 +134,50 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
         }}
       >
         {status === 'locked' && <LockRoundedIcon sx={{ color: text.secondary, fontSize: 24 }} />}
-        {passed && (isLast ? <EmojiEventsRoundedIcon sx={{ color: '#fff', fontSize: 30 }} /> : <StarRoundedIcon sx={{ color: '#fff', fontSize: 32 }} />)}
-        {status === 'current' && <Typography sx={{ color: '#fff', fontWeight: 800, fontSize: 24, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
+        {passed && narrow && <Typography sx={{ color: '#fff', fontWeight: 800, fontSize: 20, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
+        {passed && !narrow && (isLast ? <EmojiEventsRoundedIcon sx={{ color: '#fff', fontSize: 30 }} /> : <StarRoundedIcon sx={{ color: '#fff', fontSize: 32 }} />)}
+        {status === 'current' && <Typography sx={{ color: '#fff', fontWeight: 800, fontSize: narrow ? 20 : 24, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
       </Box>
 
+      {/* compact phone label: stars on the disc, short title underneath */}
+      {narrow && passed && (
+        <Box sx={{ position: 'absolute', left: '50%', bottom: -9, transform: 'translateX(-50%)', display: 'flex', zIndex: 3, pointerEvents: 'none' }}>
+          {[0, 1, 2].map((n) => (
+            <StarRoundedIcon key={n} sx={{ fontSize: 14, mx: '-1px', color: n < stars ? warning.main : 'action.disabled', filter: 'drop-shadow(0 1px 1px rgba(0,0,0,.35))' }} />
+          ))}
+        </Box>
+      )}
+      {narrow && (
+        <Typography
+          variant="caption"
+          sx={{
+            position: 'absolute',
+            top: size + 12,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: 104,
+            textAlign: 'center',
+            fontWeight: 700,
+            fontSize: 11,
+            lineHeight: 1.2,
+            px: 0.5,
+            py: 0.15,
+            borderRadius: '6px',
+            bgcolor: alpha(theme.palette.background.paper, 0.88),
+            color: status === 'locked' ? 'text.secondary' : 'text.primary',
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            pointerEvents: 'none',
+          }}
+        >
+          {pattern.title}
+        </Typography>
+      )}
+
       {/* label card */}
+      {!narrow && (
       <Box
         sx={{
           position: 'absolute',
@@ -197,6 +242,7 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
           </>
         )}
       </Box>
+      )}
     </Box>
   );
 }
@@ -204,7 +250,7 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
 /* ---------------------------------------------------------------- */
 /* Walker: follows the road from START to the current level         */
 /* ---------------------------------------------------------------- */
-function Walker({ d, kind, size, onGo }) {
+function Walker({ d, kind, size, onGo, node = NODE, perch = 0 }) {
   const reduce = useReducedMotion();
   const pathRef = useRef(null);
   const [pos, setPos] = useState(null);
@@ -215,12 +261,19 @@ function Walker({ d, kind, size, onGo }) {
     const path = pathRef.current;
     if (!path || !d) return undefined;
     const total = path.getTotalLength();
-    const stop = Math.max(0, total - NODE / 2 - 30); // stand on the road just before the node
+    const stop = Math.max(0, total - node / 2 - 30); // stand on the road just before the node
     const at = (l) => {
       const p = path.getPointAtLength(l);
       const q = path.getPointAtLength(Math.min(total, l + 4));
       return { x: p.x, y: p.y, lean: Math.max(-12, Math.min(12, (q.x - p.x) * 5)) };
     };
+    if (perch) {
+      // Phone: no long walk. The alien stands beside the current level.
+      const end = path.getPointAtLength(total);
+      setPos({ x: end.x + perch * (node / 2 + 30), y: end.y + 22, lean: 0 });
+      setWalking(false);
+      return undefined;
+    }
     if (reduce || stop < 2) {
       setPos({ ...at(stop), lean: 0 });
       setWalking(false);
@@ -239,7 +292,7 @@ function Walker({ d, kind, size, onGo }) {
       },
     });
     return () => controls.stop();
-  }, [d, run, reduce]);
+  }, [d, run, reduce, perch, node]);
 
   return (
     <>
@@ -314,13 +367,23 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen }) {
 
   const narrow = W > 0 && W < 620;
   const below = W > 0 && W < 480;
-  const H = TOP + ROW * patterns.length + BOTTOM;
+  const g = narrow ? MOBILE : DESKTOP;
+  const H = g.TOP + g.ROW * patterns.length + g.BOTTOM;
 
-  const pts = useMemo(() => patterns.map((_, i) => ({ x: W * (0.5 + AMP * Math.sin((i * Math.PI) / 2)), y: TOP + ROW * i + ROW / 2 })), [patterns, W]);
-  const fullD = useMemo(() => (W ? roadPath(pts, W) : ''), [pts, W]);
-  const walkD = useMemo(() => (W ? roadPath(pts.slice(0, currentIndex + 1), W) : ''), [pts, W, currentIndex]);
+  const pts = useMemo(() => patterns.map((_, i) => ({ x: W * (0.5 + g.AMP * Math.sin(i * g.TURN)), y: g.TOP + g.ROW * i + g.ROW / 2 })), [patterns, W, g]);
+  const fullD = useMemo(() => (W ? roadPath(pts, W, g) : ''), [pts, W, g]);
+  const walkD = useMemo(() => (W ? roadPath(pts.slice(0, currentIndex + 1), W, g) : ''), [pts, W, g, currentIndex]);
   const cleared = patterns.filter((p) => p.progress.bestScore >= p.passPercentage).length;
-  const trackW = narrow ? 12 : 14;
+  const trackW = narrow ? 10 : 14;
+
+  // Phone: open the map around the current level (like Candy Crush) instead of at the top.
+  const scrolled = useRef(false);
+  useEffect(() => {
+    if (!narrow || scrolled.current || !patterns.length || !wrapRef.current) return;
+    scrolled.current = true;
+    const top = wrapRef.current.getBoundingClientRect().top + window.scrollY + MOBILE.TOP + MOBILE.ROW * currentIndex - window.innerHeight * 0.45;
+    window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+  }, [narrow, patterns.length, currentIndex, reduce]);
 
   return (
     <Box
@@ -328,11 +391,12 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen }) {
       sx={{
         position: 'relative',
         height: H,
-        borderRadius: '14px',
+        borderRadius: narrow ? 0 : '14px',
         overflow: 'hidden',
         bgcolor: 'background.paper',
         border: '1px solid',
         borderColor: 'divider',
+        ...(narrow ? { borderLeft: 0, borderRight: 0 } : {}),
         backgroundImage: `radial-gradient(${alpha(text.secondary, dark ? 0.22 : 0.28)} 1px, transparent 1px), radial-gradient(640px 320px at 50% 0%, ${alpha(primary.main, dark ? 0.16 : 0.08)}, transparent 70%)`,
         backgroundSize: '22px 22px, 100% 100%',
       }}
@@ -361,7 +425,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen }) {
           </svg>
 
           {/* START */}
-          <Box sx={{ position: 'absolute', left: W * 0.14, top: TOP / 2, transform: 'translate(-50%, -50%)', zIndex: 3 }}>
+          <Box sx={{ position: 'absolute', left: W * 0.14, top: g.TOP / 2, transform: 'translate(-50%, -50%)', zIndex: 3 }}>
             <Box
               component={motion.div}
               initial={{ opacity: 0, x: -16 }}
@@ -392,7 +456,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen }) {
             );
           })}
 
-          {patterns.length > 0 && <Walker key={`${W}-${currentIndex}-${cleared}`} d={walkD} kind={alienKind} size={narrow ? 104 : 136} onGo={() => onOpen(patterns[currentIndex])} />}
+          {patterns.length > 0 && <Walker key={`${W}-${currentIndex}-${cleared}`} d={walkD} kind={alienKind} size={narrow ? 56 : 136} node={g.NODE} perch={narrow ? (pts[currentIndex].x < W / 2 ? 1 : -1) : 0} onGo={() => onOpen(patterns[currentIndex])} />}
         </>
       )}
     </Box>
