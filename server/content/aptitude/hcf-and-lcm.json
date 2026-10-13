@@ -1,0 +1,2720 @@
+{
+ "pattern": {
+  "title": "HCF and LCM",
+  "slug": "hcf-and-lcm",
+  "description": "Highest common factor, least common multiple and their word-problem forms.",
+  "order": 2,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "factorization-method",
+    "title": "Factorization method"
+   },
+   {
+    "slug": "hcf-lcm-of-fractions",
+    "title": "HCF & LCM of fractions"
+   },
+   {
+    "slug": "product-of-two-numbers-relation",
+    "title": "Product of two numbers relation"
+   },
+   {
+    "slug": "greatest-number-with-given-remainders",
+    "title": "Greatest number with given remainders"
+   },
+   {
+    "slug": "least-number-with-given-remainders",
+    "title": "Least number with given remainders"
+   },
+   {
+    "slug": "bells-lights-timing-lcm",
+    "title": "Bells, lights & timing (LCM)"
+   },
+   {
+    "slug": "tiles-ropes-cutting-hcf",
+    "title": "Tiles, ropes & cutting (HCF)"
+   },
+   {
+    "slug": "co-prime-word-problems",
+    "title": "Co-prime & word problems"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Find the HCF of 165 and 143.",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "2145"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Euclid: 165 = 1 x 143 + 22; 143 = 6 x 22 + 11; 22 = 2 x 11 + 0. HCF = 11.",
+   "order": 1,
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Use Euclid's division method: keep dividing until the remainder is 0."
+  },
+  {
+   "questionText": "Find the HCF of 442 and 374.",
+   "options": [
+    {
+     "text": "51"
+    },
+    {
+     "text": "4862"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Euclid: 442 = 1 x 374 + 68; 374 = 5 x 68 + 34; 68 = 2 x 34 + 0. HCF = 34.",
+   "order": 2,
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Use Euclid's division method: keep dividing until the remainder is 0."
+  },
+  {
+   "questionText": "Find the HCF of 510 and 300.",
+   "options": [
+    {
+     "text": "5100"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Euclid: 510 = 1 x 300 + 210; 300 = 1 x 210 + 90; 210 = 2 x 90 + 30; 90 = 3 x 30 + 0. HCF = 30.",
+   "order": 3,
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Use Euclid's division method: keep dividing until the remainder is 0."
+  },
+  {
+   "questionText": "Find the HCF of 585 and 156.",
+   "options": [
+    {
+     "text": "2340"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "39"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Euclid: 585 = 3 x 156 + 117; 156 = 1 x 117 + 39; 117 = 3 x 39 + 0. HCF = 39.",
+   "order": 4,
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Use Euclid's division method: keep dividing until the remainder is 0."
+  },
+  {
+   "questionText": "What is the LCM of 15, 25 and 48?",
+   "options": [
+    {
+     "text": "2400"
+    },
+    {
+     "text": "18000"
+    },
+    {
+     "text": "1600"
+    },
+    {
+     "text": "1200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Prime factorisations: 15 = 3 x 5; 25 = 5^2; 48 = 2^4 x 3. LCM = product of the highest powers of each prime = 1200.",
+   "order": 5,
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take every prime at its highest power across the numbers."
+  },
+  {
+   "questionText": "What is the LCM of 15, 40 and 48?",
+   "options": [
+    {
+     "text": "240"
+    },
+    {
+     "text": "480"
+    },
+    {
+     "text": "320"
+    },
+    {
+     "text": "28800"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Prime factorisations: 15 = 3 x 5; 40 = 2^3 x 5; 48 = 2^4 x 3. LCM = product of the highest powers of each prime = 240.",
+   "order": 6,
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Take every prime at its highest power across the numbers."
+  },
+  {
+   "questionText": "What is the LCM of 15, 16 and 25?",
+   "options": [
+    {
+     "text": "1500"
+    },
+    {
+     "text": "1200"
+    },
+    {
+     "text": "800"
+    },
+    {
+     "text": "6000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Prime factorisations: 15 = 3 x 5; 16 = 2^4; 25 = 5^2. LCM = product of the highest powers of each prime = 1200.",
+   "order": 7,
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take every prime at its highest power across the numbers."
+  },
+  {
+   "questionText": "What is the LCM of 12, 15 and 42?",
+   "options": [
+    {
+     "text": "462"
+    },
+    {
+     "text": "7560"
+    },
+    {
+     "text": "420"
+    },
+    {
+     "text": "525"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Prime factorisations: 12 = 2^2 x 3; 15 = 3 x 5; 42 = 2 x 3 x 7. LCM = product of the highest powers of each prime = 420.",
+   "order": 8,
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take every prime at its highest power across the numbers."
+  },
+  {
+   "questionText": "What is the LCM of 16, 45 and 54?",
+   "options": [
+    {
+     "text": "2880"
+    },
+    {
+     "text": "1944"
+    },
+    {
+     "text": "38880"
+    },
+    {
+     "text": "2160"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Prime factorisations: 16 = 2^4; 45 = 3^2 x 5; 54 = 2 x 3^3. LCM = product of the highest powers of each prime = 2160.",
+   "order": 9,
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Take every prime at its highest power across the numbers."
+  },
+  {
+   "questionText": "What is the LCM of 15, 16 and 24?",
+   "options": [
+    {
+     "text": "264"
+    },
+    {
+     "text": "288"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "5760"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Prime factorisations: 15 = 3 x 5; 16 = 2^4; 24 = 2^3 x 3. LCM = product of the highest powers of each prime = 240.",
+   "order": 10,
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Take every prime at its highest power across the numbers."
+  },
+  {
+   "questionText": "Find the LCM of 12, 15, 30 and 35.",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "420"
+    },
+    {
+     "text": "462"
+    },
+    {
+     "text": "630"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Prime factorisations: 12 = 2^2 x 3; 15 = 3 x 5; 30 = 2 x 3 x 5; 35 = 5 x 7. LCM = 420.",
+   "order": 11,
+   "subPattern": "factorization-method",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Highest power of each prime appearing in any number."
+  },
+  {
+   "questionText": "Find the LCM of 9, 21, 30 and 35.",
+   "options": [
+    {
+     "text": "630"
+    },
+    {
+     "text": "840"
+    },
+    {
+     "text": "693"
+    },
+    {
+     "text": "567"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Prime factorisations: 9 = 3^2; 21 = 3 x 7; 30 = 2 x 3 x 5; 35 = 5 x 7. LCM = 630.",
+   "order": 12,
+   "subPattern": "factorization-method",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Highest power of each prime appearing in any number."
+  },
+  {
+   "questionText": "Find the HCF of 7/5, 6/7, 10/9.",
+   "options": [
+    {
+     "text": "210"
+    },
+    {
+     "text": "1/316"
+    },
+    {
+     "text": "1/317"
+    },
+    {
+     "text": "1/315"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF of fractions = HCF of numerators / LCM of denominators = HCF(7, 6, 10) / LCM(5, 7, 9) = 1/315 = 1/315.",
+   "order": 13,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "HCF(fractions) = HCF(numerators) / LCM(denominators)."
+  },
+  {
+   "questionText": "Find the HCF of 3/13, 11/5, 5/3.",
+   "options": [
+    {
+     "text": "165"
+    },
+    {
+     "text": "1/195"
+    },
+    {
+     "text": "1/197"
+    },
+    {
+     "text": "1/585"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "HCF of fractions = HCF of numerators / LCM of denominators = HCF(3, 11, 5) / LCM(13, 5, 3) = 1/195 = 1/195.",
+   "order": 14,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "HCF(fractions) = HCF(numerators) / LCM(denominators)."
+  },
+  {
+   "questionText": "Find the HCF of 7/9, 2/11, 4/5.",
+   "options": [
+    {
+     "text": "1/1485"
+    },
+    {
+     "text": "2/495"
+    },
+    {
+     "text": "1/495"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "HCF of fractions = HCF of numerators / LCM of denominators = HCF(7, 2, 4) / LCM(9, 11, 5) = 1/495 = 1/495.",
+   "order": 15,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "HCF(fractions) = HCF(numerators) / LCM(denominators)."
+  },
+  {
+   "questionText": "Find the HCF of 3/11, 7/9, 4/5.",
+   "options": [
+    {
+     "text": "1/495"
+    },
+    {
+     "text": "2/495"
+    },
+    {
+     "text": "496/495"
+    },
+    {
+     "text": "84"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "HCF of fractions = HCF of numerators / LCM of denominators = HCF(3, 7, 4) / LCM(11, 9, 5) = 1/495 = 1/495.",
+   "order": 16,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "HCF(fractions) = HCF(numerators) / LCM(denominators)."
+  },
+  {
+   "questionText": "Find the LCM of 9/10, 3/7, 1/3.",
+   "options": [
+    {
+     "text": "9/2"
+    },
+    {
+     "text": "1/210"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM of fractions = LCM of numerators / HCF of denominators = LCM(9, 3, 1) / HCF(10, 7, 3) = 9/1 = 9.",
+   "order": 17,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "LCM(fractions) = LCM(numerators) / HCF(denominators)."
+  },
+  {
+   "questionText": "Find the LCM of 3/7, 1/3, 11/5.",
+   "options": [
+    {
+     "text": "99"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "1/105"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM of fractions = LCM of numerators / HCF of denominators = LCM(3, 1, 11) / HCF(7, 3, 5) = 33/1 = 33.",
+   "order": 18,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "LCM(fractions) = LCM(numerators) / HCF(denominators)."
+  },
+  {
+   "questionText": "Find the LCM of 2/7, 11/7, 11/10.",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "1/70"
+    },
+    {
+     "text": "23"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM of fractions = LCM of numerators / HCF of denominators = LCM(2, 11, 11) / HCF(7, 7, 10) = 22/1 = 22.",
+   "order": 19,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "LCM(fractions) = LCM(numerators) / HCF(denominators)."
+  },
+  {
+   "questionText": "Find the LCM of 11/9, 9/7, 10/11.",
+   "options": [
+    {
+     "text": "990"
+    },
+    {
+     "text": "1/693"
+    },
+    {
+     "text": "1980"
+    },
+    {
+     "text": "2970"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM of fractions = LCM of numerators / HCF of denominators = LCM(11, 9, 10) / HCF(9, 7, 11) = 990/1 = 990.",
+   "order": 20,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "LCM(fractions) = LCM(numerators) / HCF(denominators)."
+  },
+  {
+   "questionText": "Find the LCM of 6/7, 9/13, 7/5.",
+   "options": [
+    {
+     "text": "126/127"
+    },
+    {
+     "text": "126"
+    },
+    {
+     "text": "127"
+    },
+    {
+     "text": "1/455"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM of fractions = LCM of numerators / HCF of denominators = LCM(6, 9, 7) / HCF(7, 13, 5) = 126/1 = 126.",
+   "order": 21,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "LCM(fractions) = LCM(numerators) / HCF(denominators)."
+  },
+  {
+   "questionText": "Find the LCM of 6/13, 11/3, 10/11.",
+   "options": [
+    {
+     "text": "165"
+    },
+    {
+     "text": "331"
+    },
+    {
+     "text": "330"
+    },
+    {
+     "text": "1/429"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM of fractions = LCM of numerators / HCF of denominators = LCM(6, 11, 10) / HCF(13, 3, 11) = 330/1 = 330.",
+   "order": 22,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "LCM(fractions) = LCM(numerators) / HCF(denominators)."
+  },
+  {
+   "questionText": "What is the product of the HCF and the LCM of 6/13, 7/11, 5/13?",
+   "options": [
+    {
+     "text": "1/143"
+    },
+    {
+     "text": "210"
+    },
+    {
+     "text": "105/143"
+    },
+    {
+     "text": "210/143"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF = 1/143, LCM = 210. Product = 210/143.",
+   "order": 23,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compute HCF and LCM of the fractions separately, then multiply."
+  },
+  {
+   "questionText": "What is the product of the HCF and the LCM of 8/7, 1/3, 5/3?",
+   "options": [
+    {
+     "text": "40/21"
+    },
+    {
+     "text": "1/21"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "HCF = 1/21, LCM = 40. Product = 40/21.",
+   "order": 24,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Compute HCF and LCM of the fractions separately, then multiply."
+  },
+  {
+   "questionText": "What is the product of the HCF and the LCM of 1/3, 4/9, 2/15?",
+   "options": [
+    {
+     "text": "1/45"
+    },
+    {
+     "text": "4/3"
+    },
+    {
+     "text": "4/135"
+    },
+    {
+     "text": "1/34"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "HCF = 1/45, LCM = 4/3. Product = 4/135.",
+   "order": 25,
+   "subPattern": "hcf-lcm-of-fractions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Compute HCF and LCM of the fractions separately, then multiply."
+  },
+  {
+   "questionText": "The HCF of two numbers is 7 and their LCM is 294. If one number is 98, what is the other?",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "42"
+    },
+    {
+     "text": "196"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Product of two numbers = HCF x LCM. Other number = (7 x 294)/98 = 21.",
+   "order": 26,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Number1 x Number2 = HCF x LCM."
+  },
+  {
+   "questionText": "The HCF of two numbers is 19 and their LCM is 494. If one number is 247, what is the other?",
+   "options": [
+    {
+     "text": "26"
+    },
+    {
+     "text": "247"
+    },
+    {
+     "text": "57"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Product of two numbers = HCF x LCM. Other number = (19 x 494)/247 = 38.",
+   "order": 27,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Number1 x Number2 = HCF x LCM."
+  },
+  {
+   "questionText": "The HCF of two numbers is 15 and their LCM is 90. If one number is 45, what is the other?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Product of two numbers = HCF x LCM. Other number = (15 x 90)/45 = 30.",
+   "order": 28,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Number1 x Number2 = HCF x LCM."
+  },
+  {
+   "questionText": "The HCF of two numbers is 6 and their LCM is 1092. If one number is 78, what is the other?",
+   "options": [
+    {
+     "text": "84"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "182"
+    },
+    {
+     "text": "1014"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Product of two numbers = HCF x LCM. Other number = (6 x 1092)/78 = 84.",
+   "order": 29,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Number1 x Number2 = HCF x LCM."
+  },
+  {
+   "questionText": "The product of two numbers is 4056 and their HCF is 13. What is their LCM?",
+   "options": [
+    {
+     "text": "156"
+    },
+    {
+     "text": "312"
+    },
+    {
+     "text": "234"
+    },
+    {
+     "text": "52728"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = product/HCF = 4056/13 = 312.",
+   "order": 30,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "LCM = product / HCF."
+  },
+  {
+   "questionText": "The product of two numbers is 2016 and their HCF is 12. What is their LCM?",
+   "options": [
+    {
+     "text": "252"
+    },
+    {
+     "text": "24192"
+    },
+    {
+     "text": "336"
+    },
+    {
+     "text": "168"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM = product/HCF = 2016/12 = 168.",
+   "order": 31,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "LCM = product / HCF."
+  },
+  {
+   "questionText": "The product of two numbers is 21866 and their HCF is 29. What is their LCM?",
+   "options": [
+    {
+     "text": "377"
+    },
+    {
+     "text": "1131"
+    },
+    {
+     "text": "754"
+    },
+    {
+     "text": "634114"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM = product/HCF = 21866/29 = 754.",
+   "order": 32,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "LCM = product / HCF."
+  },
+  {
+   "questionText": "The product of two numbers is 270 and their HCF is 3. What is their LCM?",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "99"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "810"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM = product/HCF = 270/3 = 90.",
+   "order": 33,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "LCM = product / HCF."
+  },
+  {
+   "questionText": "The product of two numbers is 18720 and their HCF is 12. What is their LCM?",
+   "options": [
+    {
+     "text": "1170"
+    },
+    {
+     "text": "1560"
+    },
+    {
+     "text": "224640"
+    },
+    {
+     "text": "2340"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = product/HCF = 18720/12 = 1560.",
+   "order": 34,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "LCM = product / HCF."
+  },
+  {
+   "questionText": "The product of two numbers is 61152 and their HCF is 28. What is their LCM?",
+   "options": [
+    {
+     "text": "2730"
+    },
+    {
+     "text": "2912"
+    },
+    {
+     "text": "1712256"
+    },
+    {
+     "text": "2184"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM = product/HCF = 61152/28 = 2184.",
+   "order": 35,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "LCM = product / HCF."
+  },
+  {
+   "questionText": "The HCF and LCM of two numbers are 9 and 252. If one number is 36, what is the sum of the two numbers?",
+   "options": [
+    {
+     "text": "99"
+    },
+    {
+     "text": "132"
+    },
+    {
+     "text": "261"
+    },
+    {
+     "text": "63"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Other number = (9 x 252)/36 = 63. Sum = 36 + 63 = 99.",
+   "order": 36,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the other number from HCF x LCM, then add."
+  },
+  {
+   "questionText": "The HCF and LCM of two numbers are 14 and 2156. If one number is 196, what is the sum of the two numbers?",
+   "options": [
+    {
+     "text": "280"
+    },
+    {
+     "text": "154"
+    },
+    {
+     "text": "350"
+    },
+    {
+     "text": "2170"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Other number = (14 x 2156)/196 = 154. Sum = 196 + 154 = 350.",
+   "order": 37,
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the other number from HCF x LCM, then add."
+  },
+  {
+   "questionText": "What is the greatest number that divides 451 and 204 leaving a remainder of 14 in each case?",
+   "options": [
+    {
+     "text": "21"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "19"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Required number = HCF(451 - 14, 204 - 14) = HCF(437, 190) = 19.",
+   "order": 38,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Subtract the remainder from each number, then take the HCF."
+  },
+  {
+   "questionText": "What is the greatest number that divides 149 and 127 leaving a remainder of 6 in each case?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Required number = HCF(149 - 6, 127 - 6) = HCF(143, 121) = 11.",
+   "order": 39,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Subtract the remainder from each number, then take the HCF."
+  },
+  {
+   "questionText": "What is the greatest number that divides 1013 and 367 leaving a remainder of 27 in each case?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Required number = HCF(1013 - 27, 367 - 27) = HCF(986, 340) = 34.",
+   "order": 40,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Subtract the remainder from each number, then take the HCF."
+  },
+  {
+   "questionText": "What is the greatest number that divides 226, 170 and 122 leaving the same remainder 2 each time?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "HCF(226 - 2, 170 - 2, 122 - 2) = HCF(224, 168, 120) = 8.",
+   "order": 41,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Take the HCF after removing the common remainder."
+  },
+  {
+   "questionText": "What is the greatest number that divides 889, 313 and 153 leaving the same remainder 25 each time?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "HCF(889 - 25, 313 - 25, 153 - 25) = HCF(864, 288, 128) = 32.",
+   "order": 42,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take the HCF after removing the common remainder."
+  },
+  {
+   "questionText": "What is the greatest number that divides 185, 177 and 65 leaving the same remainder 1 each time?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "HCF(185 - 1, 177 - 1, 65 - 1) = HCF(184, 176, 64) = 8.",
+   "order": 43,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Take the HCF after removing the common remainder."
+  },
+  {
+   "questionText": "What is the greatest number that divides 695, 579 and 318 leaving the same remainder 28 each time?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF(695 - 28, 579 - 28, 318 - 28) = HCF(667, 551, 290) = 29.",
+   "order": 44,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Take the HCF after removing the common remainder."
+  },
+  {
+   "questionText": "What is the greatest number that divides 239, 215 and 111 leaving the same remainder 7 each time?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF(239 - 7, 215 - 7, 111 - 7) = HCF(232, 208, 104) = 8.",
+   "order": 45,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Take the HCF after removing the common remainder."
+  },
+  {
+   "questionText": "What is the greatest number that divides 526, 422 and 188 leaving the same remainder 6 each time?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "HCF(526 - 6, 422 - 6, 188 - 6) = HCF(520, 416, 182) = 26.",
+   "order": 46,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Take the HCF after removing the common remainder."
+  },
+  {
+   "questionText": "What is the greatest number that divides 712, 582 and 244 leaving the same remainder 10 each time?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "HCF(712 - 10, 582 - 10, 244 - 10) = HCF(702, 572, 234) = 26.",
+   "order": 47,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Take the HCF after removing the common remainder."
+  },
+  {
+   "questionText": "What is the greatest number that divides 235 leaving remainder 1 and divides 382 leaving remainder 5?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The number divides 235 - 1 = 234 and 382 - 5 = 377 exactly. HCF(234, 377) = 13.",
+   "order": 48,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Subtract each number's own remainder, then take the HCF of the results."
+  },
+  {
+   "questionText": "What is the greatest number that divides 237 leaving remainder 13 and divides 592 leaving remainder 4?",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "42"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The number divides 237 - 13 = 224 and 592 - 4 = 588 exactly. HCF(224, 588) = 28.",
+   "order": 49,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract each number's own remainder, then take the HCF of the results."
+  },
+  {
+   "questionText": "What is the greatest number that divides 836 leaving remainder 20 and divides 463 leaving remainder 21?",
+   "options": [
+    {
+     "text": "68"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The number divides 836 - 20 = 816 and 463 - 21 = 442 exactly. HCF(816, 442) = 34.",
+   "order": 50,
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract each number's own remainder, then take the HCF of the results."
+  },
+  {
+   "questionText": "What is the smallest number which, when divided by 4, 5 and 30, leaves a remainder of 3 in each case?",
+   "options": [
+    {
+     "text": "57"
+    },
+    {
+     "text": "63"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "126"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM(4, 5, 30) = 60. Required number = 60 + 3 = 63.",
+   "order": 51,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "LCM + common remainder."
+  },
+  {
+   "questionText": "What is the smallest number which, when divided by 18, 20 and 30, leaves a remainder of 4 in each case?",
+   "options": [
+    {
+     "text": "184"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "230"
+    },
+    {
+     "text": "176"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM(18, 20, 30) = 180. Required number = 180 + 4 = 184.",
+   "order": 52,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "LCM + common remainder."
+  },
+  {
+   "questionText": "What is the smallest number which, when divided by 5, 6 and 8, leaves a remainder of 4 in each case?",
+   "options": [
+    {
+     "text": "93"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "124"
+    },
+    {
+     "text": "116"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM(5, 6, 8) = 120. Required number = 120 + 4 = 124.",
+   "order": 53,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "LCM + common remainder."
+  },
+  {
+   "questionText": "What is the smallest number which, when divided by 6, 10 and 12, leaves a remainder of 5 in each case?",
+   "options": [
+    {
+     "text": "55"
+    },
+    {
+     "text": "65"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "78"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM(6, 10, 12) = 60. Required number = 60 + 5 = 65.",
+   "order": 54,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "LCM + common remainder."
+  },
+  {
+   "questionText": "What is the smallest number which, when increased by 3, becomes exactly divisible by 6, 8 and 25?",
+   "options": [
+    {
+     "text": "796"
+    },
+    {
+     "text": "603"
+    },
+    {
+     "text": "600"
+    },
+    {
+     "text": "597"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The number + 3 must be a multiple of LCM(6, 8, 25) = 600. Smallest number = 600 - 3 = 597.",
+   "order": 55,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "LCM - the amount needed to reach a multiple."
+  },
+  {
+   "questionText": "What is the smallest number which, when increased by 2, becomes exactly divisible by 8, 20 and 24?",
+   "options": [
+    {
+     "text": "118"
+    },
+    {
+     "text": "122"
+    },
+    {
+     "text": "59"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The number + 2 must be a multiple of LCM(8, 20, 24) = 120. Smallest number = 120 - 2 = 118.",
+   "order": 56,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "LCM - the amount needed to reach a multiple."
+  },
+  {
+   "questionText": "What is the smallest number which, when increased by 4, becomes exactly divisible by 8, 9 and 12?",
+   "options": [
+    {
+     "text": "72"
+    },
+    {
+     "text": "85"
+    },
+    {
+     "text": "76"
+    },
+    {
+     "text": "68"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The number + 4 must be a multiple of LCM(8, 9, 12) = 72. Smallest number = 72 - 4 = 68.",
+   "order": 57,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "LCM - the amount needed to reach a multiple."
+  },
+  {
+   "questionText": "What is the smallest number which, when increased by 2, becomes exactly divisible by 6, 12 and 20?",
+   "options": [
+    {
+     "text": "62"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "60"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The number + 2 must be a multiple of LCM(6, 12, 20) = 60. Smallest number = 60 - 2 = 58.",
+   "order": 58,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "LCM - the amount needed to reach a multiple."
+  },
+  {
+   "questionText": "What is the smallest number which, when increased by 8, becomes exactly divisible by 15, 18 and 20?",
+   "options": [
+    {
+     "text": "180"
+    },
+    {
+     "text": "215"
+    },
+    {
+     "text": "172"
+    },
+    {
+     "text": "188"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The number + 8 must be a multiple of LCM(15, 18, 20) = 180. Smallest number = 180 - 8 = 172.",
+   "order": 59,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "LCM - the amount needed to reach a multiple."
+  },
+  {
+   "questionText": "What is the smallest number which, when increased by 6, becomes exactly divisible by 15, 20 and 30?",
+   "options": [
+    {
+     "text": "54"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "56"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The number + 6 must be a multiple of LCM(15, 20, 30) = 60. Smallest number = 60 - 6 = 54.",
+   "order": 60,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "LCM - the amount needed to reach a multiple."
+  },
+  {
+   "questionText": "What is the smallest number which leaves remainder 4 when divided by 8, 15 or 16, and is exactly divisible by 11?",
+   "options": [
+    {
+     "text": "484"
+    },
+    {
+     "text": "968"
+    },
+    {
+     "text": "244"
+    },
+    {
+     "text": "726"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Numbers of the form 240k + 4 (LCM = 240). Testing k = 1, 2, 3 and so on, the first one divisible by 11 is k = 2, giving 484.",
+   "order": 61,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Form LCM x k + remainder and test k until the extra condition holds."
+  },
+  {
+   "questionText": "What is the smallest number which leaves remainder 3 when divided by 9, 18 or 20, and is exactly divisible by 7?",
+   "options": [
+    {
+     "text": "1806"
+    },
+    {
+     "text": "183"
+    },
+    {
+     "text": "903"
+    },
+    {
+     "text": "602"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Numbers of the form 180k + 3 (LCM = 180). Testing k = 1, 2, 3 and so on, the first one divisible by 7 is k = 5, giving 903.",
+   "order": 62,
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Form LCM x k + remainder and test k until the extra condition holds."
+  },
+  {
+   "questionText": "Three bells ring at intervals of 15, 36 and 40 seconds. If they ring together now, after how many seconds will they next ring together?",
+   "options": [
+    {
+     "text": "288"
+    },
+    {
+     "text": "91"
+    },
+    {
+     "text": "540"
+    },
+    {
+     "text": "360"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "They ring together again after LCM(15, 36, 40) = 360 seconds.",
+   "order": 63,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Time to coincide = LCM of the intervals."
+  },
+  {
+   "questionText": "Three bells ring at intervals of 8, 40 and 60 seconds. If they ring together now, after how many seconds will they next ring together?",
+   "options": [
+    {
+     "text": "240"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "108"
+    },
+    {
+     "text": "144"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They ring together again after LCM(8, 40, 60) = 120 seconds.",
+   "order": 64,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Time to coincide = LCM of the intervals."
+  },
+  {
+   "questionText": "Three bells ring at intervals of 8, 10 and 15 seconds. If they ring together now, after how many seconds will they next ring together?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "132"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They ring together again after LCM(8, 10, 15) = 120 seconds.",
+   "order": 65,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Time to coincide = LCM of the intervals."
+  },
+  {
+   "questionText": "Three bells ring at intervals of 20, 36 and 45 seconds. If they ring together now, after how many seconds will they next ring together?",
+   "options": [
+    {
+     "text": "180"
+    },
+    {
+     "text": "270"
+    },
+    {
+     "text": "198"
+    },
+    {
+     "text": "101"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They ring together again after LCM(20, 36, 45) = 180 seconds.",
+   "order": 66,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Time to coincide = LCM of the intervals."
+  },
+  {
+   "questionText": "Three bells toll at intervals of 8, 24 and 30 seconds and all toll together at the start. How many times will they toll together in 60 minutes, including the one at the start?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "32"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM = 120 s. In 60 minutes = 3600 s they toll together 3600//120 = 30 more times, plus the start: 31.",
+   "order": 67,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Count = (total time / LCM) + 1 including the start."
+  },
+  {
+   "questionText": "Three bells toll at intervals of 10, 12 and 15 seconds and all toll together at the start. How many times will they toll together in 90 minutes, including the one at the start?",
+   "options": [
+    {
+     "text": "90"
+    },
+    {
+     "text": "182"
+    },
+    {
+     "text": "92"
+    },
+    {
+     "text": "91"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM = 60 s. In 90 minutes = 5400 s they toll together 5400//60 = 90 more times, plus the start: 91.",
+   "order": 68,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Count = (total time / LCM) + 1 including the start."
+  },
+  {
+   "questionText": "Three bells toll at intervals of 8, 12 and 20 seconds and all toll together at the start. How many times will they toll together in 30 minutes, including the one at the start?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "32"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = 120 s. In 30 minutes = 1800 s they toll together 1800//120 = 15 more times, plus the start: 16.",
+   "order": 69,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Count = (total time / LCM) + 1 including the start."
+  },
+  {
+   "questionText": "Three bells toll at intervals of 6, 10 and 20 seconds and all toll together at the start. How many times will they toll together in 60 minutes, including the one at the start?",
+   "options": [
+    {
+     "text": "61"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "62"
+    },
+    {
+     "text": "122"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM = 60 s. In 60 minutes = 3600 s they toll together 3600//60 = 60 more times, plus the start: 61.",
+   "order": 70,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Count = (total time / LCM) + 1 including the start."
+  },
+  {
+   "questionText": "Three bells toll at intervals of 8, 10 and 20 seconds and all toll together at the start. How many times will they toll together in 30 minutes, including the one at the start?",
+   "options": [
+    {
+     "text": "47"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "46"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM = 40 s. In 30 minutes = 1800 s they toll together 1800//40 = 45 more times, plus the start: 46.",
+   "order": 71,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Count = (total time / LCM) + 1 including the start."
+  },
+  {
+   "questionText": "Three bells toll at intervals of 8, 18 and 30 seconds and all toll together at the start. How many times will they toll together in 30 minutes, including the one at the start?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM = 360 s. In 30 minutes = 1800 s they toll together 1800//360 = 5 more times, plus the start: 6.",
+   "order": 72,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Count = (total time / LCM) + 1 including the start."
+  },
+  {
+   "questionText": "Traffic lights at three crossings change after 54, 90 and 120 seconds respectively. If they change together at 9:00:00 am, when will they next change together?",
+   "options": [
+    {
+     "text": "9:18:54 am"
+    },
+    {
+     "text": "9:19:00 am"
+    },
+    {
+     "text": "9:19:30 am"
+    },
+    {
+     "text": "9:18:00 am"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM(54, 90, 120) = 1080 s = 18 min 0 s. Next time = 9:00:00 am + 18 min 0 s = 9:18:00 am.",
+   "order": 73,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add the LCM of the intervals to the starting time."
+  },
+  {
+   "questionText": "Traffic lights at three crossings change after 48, 72 and 90 seconds respectively. If they change together at 8:30:00 am, when will they next change together?",
+   "options": [
+    {
+     "text": "8:36:00 am"
+    },
+    {
+     "text": "8:42:00 am"
+    },
+    {
+     "text": "8:41:12 am"
+    },
+    {
+     "text": "8:43:00 am"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM(48, 72, 90) = 720 s = 12 min 0 s. Next time = 8:30:00 am + 12 min 0 s = 8:42:00 am.",
+   "order": 74,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add the LCM of the intervals to the starting time."
+  },
+  {
+   "questionText": "Traffic lights at three crossings change after 48, 108 and 144 seconds respectively. If they change together at 8:45:00 am, when will they next change together?",
+   "options": [
+    {
+     "text": "8:52:12 am"
+    },
+    {
+     "text": "8:53:00 am"
+    },
+    {
+     "text": "8:48:36 am"
+    },
+    {
+     "text": "8:54:00 am"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM(48, 108, 144) = 432 s = 7 min 12 s. Next time = 8:45:00 am + 7 min 12 s = 8:52:12 am.",
+   "order": 75,
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add the LCM of the intervals to the starting time."
+  },
+  {
+   "questionText": "A room is 54 cm long and 78 cm wide. What is the side of the largest square tile that can be used to cover the floor exactly without cutting?",
+   "options": [
+    {
+     "text": "7 cm"
+    },
+    {
+     "text": "12 cm"
+    },
+    {
+     "text": "6 cm"
+    },
+    {
+     "text": "702 cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Side = HCF(54, 78) = 6 cm. (78 = 1 x 54 + 24; 54 = 2 x 24 + 6; 24 = 4 x 6 + 0. HCF = 6).",
+   "order": 76,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Largest square tile = HCF of length and breadth."
+  },
+  {
+   "questionText": "A room is 252 cm long and 196 cm wide. What is the side of the largest square tile that can be used to cover the floor exactly without cutting?",
+   "options": [
+    {
+     "text": "1764 cm"
+    },
+    {
+     "text": "30 cm"
+    },
+    {
+     "text": "33 cm"
+    },
+    {
+     "text": "28 cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Side = HCF(252, 196) = 28 cm. (252 = 1 x 196 + 56; 196 = 3 x 56 + 28; 56 = 2 x 28 + 0. HCF = 28).",
+   "order": 77,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Largest square tile = HCF of length and breadth."
+  },
+  {
+   "questionText": "A room is 504 cm long and 468 cm wide. What is the side of the largest square tile that can be used to cover the floor exactly without cutting?",
+   "options": [
+    {
+     "text": "34 cm"
+    },
+    {
+     "text": "72 cm"
+    },
+    {
+     "text": "36 cm"
+    },
+    {
+     "text": "6552 cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Side = HCF(504, 468) = 36 cm. (504 = 1 x 468 + 36; 468 = 13 x 36 + 0. HCF = 36).",
+   "order": 78,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Largest square tile = HCF of length and breadth."
+  },
+  {
+   "questionText": "A hall 185 m long and 444 m wide is to be paved with square stones of the same size. What is the least number of stones required?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "2220"
+    },
+    {
+     "text": "59"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Side of largest stone = HCF(185, 444) = 37 m. Number = (185/37) x (444/37) = 5 x 12 = 60.",
+   "order": 79,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Least stones = (l x b) / (HCF)^2."
+  },
+  {
+   "questionText": "A hall 232 m long and 203 m wide is to be paved with square stones of the same size. What is the least number of stones required?",
+   "options": [
+    {
+     "text": "56"
+    },
+    {
+     "text": "1624"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "55"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Side of largest stone = HCF(232, 203) = 29 m. Number = (232/29) x (203/29) = 8 x 7 = 56.",
+   "order": 80,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Least stones = (l x b) / (HCF)^2."
+  },
+  {
+   "questionText": "A hall 195 m long and 351 m wide is to be paved with square stones of the same size. What is the least number of stones required?",
+   "options": [
+    {
+     "text": "45"
+    },
+    {
+     "text": "50"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "1755"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Side of largest stone = HCF(195, 351) = 39 m. Number = (195/39) x (351/39) = 5 x 9 = 45.",
+   "order": 81,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Least stones = (l x b) / (HCF)^2."
+  },
+  {
+   "questionText": "A hall 245 m long and 420 m wide is to be paved with square stones of the same size. What is the least number of stones required?",
+   "options": [
+    {
+     "text": "112"
+    },
+    {
+     "text": "84"
+    },
+    {
+     "text": "2940"
+    },
+    {
+     "text": "126"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Side of largest stone = HCF(245, 420) = 35 m. Number = (245/35) x (420/35) = 7 x 12 = 84.",
+   "order": 82,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Least stones = (l x b) / (HCF)^2."
+  },
+  {
+   "questionText": "A hall 532 m long and 190 m wide is to be paved with square stones of the same size. What is the least number of stones required?",
+   "options": [
+    {
+     "text": "63"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "2660"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Side of largest stone = HCF(532, 190) = 38 m. Number = (532/38) x (190/38) = 14 x 5 = 70.",
+   "order": 83,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Least stones = (l x b) / (HCF)^2."
+  },
+  {
+   "questionText": "A hall 104 m long and 130 m wide is to be paved with square stones of the same size. What is the least number of stones required?",
+   "options": [
+    {
+     "text": "520"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Side of largest stone = HCF(104, 130) = 26 m. Number = (104/26) x (130/26) = 4 x 5 = 20.",
+   "order": 84,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Least stones = (l x b) / (HCF)^2."
+  },
+  {
+   "questionText": "A hall 78 m long and 18 m wide is to be paved with square stones of the same size. What is the least number of stones required?",
+   "options": [
+    {
+     "text": "44"
+    },
+    {
+     "text": "234"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "78"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Side of largest stone = HCF(78, 18) = 6 m. Number = (78/6) x (18/6) = 13 x 3 = 39.",
+   "order": 85,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Least stones = (l x b) / (HCF)^2."
+  },
+  {
+   "questionText": "Three iron rods of lengths 80 cm, 90 cm and 120 cm are cut into pieces of equal length, as long as possible. How many pieces are obtained in all?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Piece length = HCF(80, 90, 120) = 10 cm. Pieces = (80 + 90 + 120)/10 = 29.",
+   "order": 86,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Pieces = total length / HCF of the lengths."
+  },
+  {
+   "questionText": "Three iron rods of lengths 80 cm, 112 cm and 176 cm are cut into pieces of equal length, as long as possible. How many pieces are obtained in all?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "23"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Piece length = HCF(80, 112, 176) = 16 cm. Pieces = (80 + 112 + 176)/16 = 23.",
+   "order": 87,
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Pieces = total length / HCF of the lengths."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 4:9 and their HCF is 14. What is their LCM?",
+   "options": [
+    {
+     "text": "504"
+    },
+    {
+     "text": "336"
+    },
+    {
+     "text": "182"
+    },
+    {
+     "text": "7056"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The numbers are 4 x 14 = 56 and 9 x 14 = 126. LCM = 14 x 4 x 9 = 504.",
+   "order": 88,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "For co-prime ratio p:q and HCF h, LCM = h x p x q."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 3:8 and their HCF is 4. What is their LCM?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "384"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The numbers are 3 x 4 = 12 and 8 x 4 = 32. LCM = 4 x 3 x 8 = 96.",
+   "order": 89,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "For co-prime ratio p:q and HCF h, LCM = h x p x q."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 3:5 and their HCF is 23. What is their LCM?",
+   "options": [
+    {
+     "text": "460"
+    },
+    {
+     "text": "7935"
+    },
+    {
+     "text": "184"
+    },
+    {
+     "text": "345"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The numbers are 3 x 23 = 69 and 5 x 23 = 115. LCM = 23 x 3 x 5 = 345.",
+   "order": 90,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "For co-prime ratio p:q and HCF h, LCM = h x p x q."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 4:11 and their HCF is 3. What is their LCM?",
+   "options": [
+    {
+     "text": "45"
+    },
+    {
+     "text": "264"
+    },
+    {
+     "text": "132"
+    },
+    {
+     "text": "396"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The numbers are 4 x 3 = 12 and 11 x 3 = 33. LCM = 3 x 4 x 11 = 132.",
+   "order": 91,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "For co-prime ratio p:q and HCF h, LCM = h x p x q."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 1:3 and their LCM is 24. What is the larger number?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Numbers = 1x and 3x, LCM = 1 x 3 x x = 24, so x = 8. Larger = 3 x 8 = 24.",
+   "order": 92,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "For co-prime ratio p:q, LCM = pq x (HCF)."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 5:11 and their LCM is 660. What is the larger number?",
+   "options": [
+    {
+     "text": "132"
+    },
+    {
+     "text": "99"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "264"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Numbers = 5x and 11x, LCM = 5 x 11 x x = 660, so x = 12. Larger = 11 x 12 = 132.",
+   "order": 93,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "For co-prime ratio p:q, LCM = pq x (HCF)."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 1:4 and their LCM is 80. What is the larger number?",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "160"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Numbers = 1x and 4x, LCM = 1 x 4 x x = 80, so x = 20. Larger = 4 x 20 = 80.",
+   "order": 94,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "For co-prime ratio p:q, LCM = pq x (HCF)."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 3:8 and their LCM is 288. What is the larger number?",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "128"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Numbers = 3x and 8x, LCM = 3 x 8 x x = 288, so x = 12. Larger = 8 x 12 = 96.",
+   "order": 95,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "For co-prime ratio p:q, LCM = pq x (HCF)."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 1:8 and their LCM is 88. What is the larger number?",
+   "options": [
+    {
+     "text": "66"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "88"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Numbers = 1x and 8x, LCM = 1 x 8 x x = 88, so x = 11. Larger = 8 x 11 = 88.",
+   "order": 96,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "For co-prime ratio p:q, LCM = pq x (HCF)."
+  },
+  {
+   "questionText": "Two numbers are in the ratio 5:6 and their LCM is 720. What is the larger number?",
+   "options": [
+    {
+     "text": "216"
+    },
+    {
+     "text": "288"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "144"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Numbers = 5x and 6x, LCM = 5 x 6 x x = 720, so x = 24. Larger = 6 x 24 = 144.",
+   "order": 97,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "For co-prime ratio p:q, LCM = pq x (HCF)."
+  },
+  {
+   "questionText": "The sum of two numbers is 180, their HCF is 10 and their LCM is 770. What is the larger number?",
+   "options": [
+    {
+     "text": "110"
+    },
+    {
+     "text": "132"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "770"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the numbers be 10m and 10n with m, n co-prime. m + n = 18 and mn = 77. So m, n = 7, 11 and the larger number = 10 x 11 = 110.",
+   "order": 98,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Divide sum and LCM by the HCF to get m + n and mn."
+  },
+  {
+   "questionText": "The sum of two numbers is 420, their HCF is 21 and their LCM is 2079. What is the larger number?",
+   "options": [
+    {
+     "text": "154"
+    },
+    {
+     "text": "2079"
+    },
+    {
+     "text": "231"
+    },
+    {
+     "text": "189"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let the numbers be 21m and 21n with m, n co-prime. m + n = 20 and mn = 99. So m, n = 9, 11 and the larger number = 21 x 11 = 231.",
+   "order": 99,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Divide sum and LCM by the HCF to get m + n and mn."
+  },
+  {
+   "questionText": "The sum of two numbers is 260, their HCF is 20 and their LCM is 800. What is the larger number?",
+   "options": [
+    {
+     "text": "800"
+    },
+    {
+     "text": "160"
+    },
+    {
+     "text": "100"
+    },
+    {
+     "text": "192"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the numbers be 20m and 20n with m, n co-prime. m + n = 13 and mn = 40. So m, n = 5, 8 and the larger number = 20 x 8 = 160.",
+   "order": 100,
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Divide sum and LCM by the HCF to get m + n and mn."
+  }
+ ]
+}

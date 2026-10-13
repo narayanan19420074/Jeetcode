@@ -1,0 +1,2723 @@
+{
+ "pattern": {
+  "title": "Number Series",
+  "slug": "number-series",
+  "description": "Find the pattern, missing or wrong term.",
+  "order": 28,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Logical Reasoning",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "arithmetic-geometric-series",
+    "title": "Arithmetic & geometric series"
+   },
+   {
+    "slug": "difference-of-differences",
+    "title": "Difference-of-differences"
+   },
+   {
+    "slug": "squares-cubes-primes",
+    "title": "Squares, cubes & primes"
+   },
+   {
+    "slug": "alternating-two-pattern-series",
+    "title": "Alternating / two-pattern series"
+   },
+   {
+    "slug": "wrong-number-in-series",
+    "title": "Wrong number in series"
+   },
+   {
+    "slug": "missing-number",
+    "title": "Missing number"
+   },
+   {
+    "slug": "number-pairs-analogies",
+    "title": "Number pairs & analogies"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "What comes next in the series: 3, 6, 12, 24, 48, 96, ?",
+   "options": [
+    {
+     "text": "96"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "144"
+    },
+    {
+     "text": "192"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each term is 2 times the previous one, so the next term is 192.",
+   "order": 1,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide consecutive terms: the ratio is 2."
+  },
+  {
+   "questionText": "What comes next in the series: 2, 10, 50, 250, 1250, 6250, ?",
+   "options": [
+    {
+     "text": "31250"
+    },
+    {
+     "text": "43750"
+    },
+    {
+     "text": "33750"
+    },
+    {
+     "text": "7500"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term is 5 times the previous one, so the next term is 31250.",
+   "order": 2,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Divide consecutive terms: the ratio is 5."
+  },
+  {
+   "questionText": "What comes next in the series: 3, 12, 48, 192, 768, 3072, ?",
+   "options": [
+    {
+     "text": "11520"
+    },
+    {
+     "text": "12288"
+    },
+    {
+     "text": "3840"
+    },
+    {
+     "text": "18432"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each term is 4 times the previous one, so the next term is 12288.",
+   "order": 3,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide consecutive terms: the ratio is 4."
+  },
+  {
+   "questionText": "What comes next in the series: 18, 27, 36, 45, 54, 63, ?",
+   "options": [
+    {
+     "text": "63"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "81"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The terms change by a constant 9 each time, so the missing term is 72.",
+   "order": 4,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 9."
+  },
+  {
+   "questionText": "What comes next in the series: 24, 30, 36, 42, 48, 54, ?",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "61"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The terms change by a constant 6 each time, so the missing term is 60.",
+   "order": 5,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 6."
+  },
+  {
+   "questionText": "What comes next in the series: 44, 49, 54, 59, 64, 69, ?",
+   "options": [
+    {
+     "text": "84"
+    },
+    {
+     "text": "74"
+    },
+    {
+     "text": "75"
+    },
+    {
+     "text": "79"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The terms change by a constant 5 each time, so the missing term is 74.",
+   "order": 6,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 5."
+  },
+  {
+   "questionText": "What comes next in the series: 32, 40, 48, 56, 64, 72, ?",
+   "options": [
+    {
+     "text": "81"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "88"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The terms change by a constant 8 each time, so the missing term is 80.",
+   "order": 7,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 8."
+  },
+  {
+   "questionText": "What comes next in the series: 6, 12, 24, 48, 96, 192, ?",
+   "options": [
+    {
+     "text": "576"
+    },
+    {
+     "text": "288"
+    },
+    {
+     "text": "480"
+    },
+    {
+     "text": "384"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each term is 2 times the previous one, so the next term is 384.",
+   "order": 8,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Divide consecutive terms: the ratio is 2."
+  },
+  {
+   "questionText": "Find the missing number in the series: 72, 87, 102, ?, 132, 147, 162",
+   "options": [
+    {
+     "text": "147"
+    },
+    {
+     "text": "117"
+    },
+    {
+     "text": "119"
+    },
+    {
+     "text": "116"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The terms change by a constant 15 each time, so the missing term is 117.",
+   "order": 9,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 15."
+  },
+  {
+   "questionText": "What comes next in the series: 2, -6, 18, -54, 162, -486, ?",
+   "options": [
+    {
+     "text": "486"
+    },
+    {
+     "text": "1782"
+    },
+    {
+     "text": "1458"
+    },
+    {
+     "text": "1944"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The ratio is -3: the sign alternates and the size is multiplied by 3. Next term = 1458.",
+   "order": 10,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Ratio is negative, so the signs alternate."
+  },
+  {
+   "questionText": "What comes next in the series: 1, -3, 9, -27, 81, -243, ?",
+   "options": [
+    {
+     "text": "729"
+    },
+    {
+     "text": "972"
+    },
+    {
+     "text": "486"
+    },
+    {
+     "text": "243"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The ratio is -3: the sign alternates and the size is multiplied by 3. Next term = 729.",
+   "order": 11,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Ratio is negative, so the signs alternate."
+  },
+  {
+   "questionText": "What comes next in the series: 8192, 2048, 512, 128, 32, 8, ?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each term is divided by 4 to get the next, giving 2.",
+   "order": 12,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Divide consecutive terms: ratio 1/4."
+  },
+  {
+   "questionText": "What comes next in the series: 1458, 486, 162, 54, 18, 6, ?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "-1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each term is divided by 3 to get the next, giving 2.",
+   "order": 13,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Divide consecutive terms: ratio 1/3."
+  },
+  {
+   "questionText": "Find the missing number in the series: 1, 5, 13, 29, ?, 125, 253",
+   "options": [
+    {
+     "text": "61"
+    },
+    {
+     "text": "65"
+    },
+    {
+     "text": "67"
+    },
+    {
+     "text": "59"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term = previous x 2 + 3. The missing term is 61.",
+   "order": 14,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Test: x2 and then add 3 each time."
+  },
+  {
+   "questionText": "Find the missing number in the series: 105, 115, 125, ?, 145, 155, 165",
+   "options": [
+    {
+     "text": "136"
+    },
+    {
+     "text": "135"
+    },
+    {
+     "text": "137"
+    },
+    {
+     "text": "145"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The terms change by a constant 10 each time, so the missing term is 135.",
+   "order": 15,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 10."
+  },
+  {
+   "questionText": "Find the missing number in the series: 93, 108, ?, 138, 153, 168, 183",
+   "options": [
+    {
+     "text": "153"
+    },
+    {
+     "text": "121"
+    },
+    {
+     "text": "138"
+    },
+    {
+     "text": "123"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The terms change by a constant 15 each time, so the missing term is 123.",
+   "order": 16,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 15."
+  },
+  {
+   "questionText": "Find the missing number in the series: 37, 56, ?, 94, 113, 132, 151",
+   "options": [
+    {
+     "text": "76"
+    },
+    {
+     "text": "94"
+    },
+    {
+     "text": "75"
+    },
+    {
+     "text": "77"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The terms change by a constant 19 each time, so the missing term is 75.",
+   "order": 17,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 19."
+  },
+  {
+   "questionText": "What comes next in the series: 729, 243, 81, 27, 9, 3, ?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each term is divided by 3 to get the next, giving 1.",
+   "order": 18,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Divide consecutive terms: ratio 1/3."
+  },
+  {
+   "questionText": "Find the missing number in the series: 117, 136, ?, 174, 193, 212, 231",
+   "options": [
+    {
+     "text": "117"
+    },
+    {
+     "text": "155"
+    },
+    {
+     "text": "153"
+    },
+    {
+     "text": "157"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The terms change by a constant 19 each time, so the missing term is 155.",
+   "order": 19,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 19."
+  },
+  {
+   "questionText": "Find the missing number in the series: 61, 75, 89, 103, ?, 131, 145",
+   "options": [
+    {
+     "text": "117"
+    },
+    {
+     "text": "118"
+    },
+    {
+     "text": "116"
+    },
+    {
+     "text": "115"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The terms change by a constant 14 each time, so the missing term is 117.",
+   "order": 20,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 14."
+  },
+  {
+   "questionText": "Find the missing number in the series: 18, 21, 24, ?, 30, 33, 36",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The terms change by a constant 3 each time, so the missing term is 27.",
+   "order": 21,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is 3."
+  },
+  {
+   "questionText": "What comes next in the series: 1, 3, 8, 19, 42, 89, ?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "184"
+    },
+    {
+     "text": "179"
+    },
+    {
+     "text": "181"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each term = previous x 2 + n, where n = 1, 2, 3, ... The next term is 184.",
+   "order": 22,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Test x2 followed by an increasing addition (+1, +2, +3, ...)."
+  },
+  {
+   "questionText": "What comes next in the series: 2, 2, 4, 12, 48, 240, ?",
+   "options": [
+    {
+     "text": "1920"
+    },
+    {
+     "text": "480"
+    },
+    {
+     "text": "1392"
+    },
+    {
+     "text": "1440"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Multipliers increase by 1 each time: x1, x2, x3, ... The next term is 1440.",
+   "order": 23,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Look at the ratios: 1, 2, 3, 4, ... (increasing multipliers)."
+  },
+  {
+   "questionText": "What comes next in the series: 3, 3, 6, 18, 72, 360, ?",
+   "options": [
+    {
+     "text": "2160"
+    },
+    {
+     "text": "720"
+    },
+    {
+     "text": "2880"
+    },
+    {
+     "text": "2304"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Multipliers increase by 1 each time: x1, x2, x3, ... The next term is 2160.",
+   "order": 24,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Look at the ratios: 1, 2, 3, 4, ... (increasing multipliers)."
+  },
+  {
+   "questionText": "Find the missing number in the series: 159, 143, 127, 111, ?, 79, 63",
+   "options": [
+    {
+     "text": "63"
+    },
+    {
+     "text": "93"
+    },
+    {
+     "text": "111"
+    },
+    {
+     "text": "95"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The terms change by a constant -16 each time, so the missing term is 95.",
+   "order": 25,
+   "subPattern": "arithmetic-geometric-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract consecutive terms: the common difference is -16."
+  },
+  {
+   "questionText": "What comes next in the series: 23, 26, 31, 38, 47, 58, ?",
+   "options": [
+    {
+     "text": "67"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "69"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The differences are 3, 5, 7, 9, 11, 13, which themselves follow a pattern, so the next difference gives 71.",
+   "order": 26,
+   "subPattern": "difference-of-differences",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "What comes next in the series: 21, 23, 27, 33, 41, 51, ?",
+   "options": [
+    {
+     "text": "63"
+    },
+    {
+     "text": "87"
+    },
+    {
+     "text": "61"
+    },
+    {
+     "text": "65"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The differences are 2, 4, 6, 8, 10, 12, which themselves follow a pattern, so the next difference gives 63.",
+   "order": 27,
+   "subPattern": "difference-of-differences",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "What comes next in the series: 11, 14, 19, 26, 35, 46, ?",
+   "options": [
+    {
+     "text": "72"
+    },
+    {
+     "text": "57"
+    },
+    {
+     "text": "59"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The differences are 3, 5, 7, 9, 11, 13, which themselves follow a pattern, so the next difference gives 59.",
+   "order": 28,
+   "subPattern": "difference-of-differences",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "What comes next in the series: 28, 30, 33, 37, 42, 48, ?",
+   "options": [
+    {
+     "text": "59"
+    },
+    {
+     "text": "55"
+    },
+    {
+     "text": "62"
+    },
+    {
+     "text": "54"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The differences are 2, 3, 4, 5, 6, 7, which themselves follow a pattern, so the next difference gives 55.",
+   "order": 29,
+   "subPattern": "difference-of-differences",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "Find the missing number in the series: 15, 17, ?, 30, 41, 55, 72",
+   "options": [
+    {
+     "text": "39"
+    },
+    {
+     "text": "69"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The differences are 2, 5, 8, 11, 14, 17, which themselves follow a pattern, so the next difference gives 22.",
+   "order": 30,
+   "subPattern": "difference-of-differences",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "Find the missing number in the series: 23, 28, ?, 47, 61, 78, 98",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "95"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The differences are 5, 8, 11, 14, 17, 20, which themselves follow a pattern, so the next difference gives 36.",
+   "order": 31,
+   "subPattern": "difference-of-differences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "Find the missing number in the series: 15, 17, ?, 27, 35, 45, 57",
+   "options": [
+    {
+     "text": "-3"
+    },
+    {
+     "text": "55"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The differences are 2, 4, 6, 8, 10, 12, which themselves follow a pattern, so the next difference gives 21.",
+   "order": 32,
+   "subPattern": "difference-of-differences",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "Find the missing number in the series: 21, 24, 30, ?, 51, 66, 84",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "81"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The differences are 3, 6, 9, 12, 15, 18, which themselves follow a pattern, so the next difference gives 39.",
+   "order": 33,
+   "subPattern": "difference-of-differences",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "Find the missing number in the series: 4, 6, 10, ?, 24, 34, 46",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The differences are 2, 4, 6, 8, 10, 12, which themselves follow a pattern, so the next difference gives 16.",
+   "order": 34,
+   "subPattern": "difference-of-differences",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "Find the missing number in the series: 21, 25, ?, 42, 55, 71, 90",
+   "options": [
+    {
+     "text": "51"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "87"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The differences are 4, 7, 10, 13, 16, 19, which themselves follow a pattern, so the next difference gives 32.",
+   "order": 35,
+   "subPattern": "difference-of-differences",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "What comes next in the series: 21, 22, 25, 31, 41, 56, 77, ?",
+   "options": [
+    {
+     "text": "98"
+    },
+    {
+     "text": "107"
+    },
+    {
+     "text": "103"
+    },
+    {
+     "text": "105"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The differences are 1, 3, 6, 10, 15, 21, 28, which themselves follow a pattern, so the next difference gives 105.",
+   "order": 36,
+   "subPattern": "difference-of-differences",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "What comes next in the series: 5, 6, 10, 19, 35, 60, 96, ?",
+   "options": [
+    {
+     "text": "132"
+    },
+    {
+     "text": "147"
+    },
+    {
+     "text": "145"
+    },
+    {
+     "text": "47"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The differences are 1, 4, 9, 16, 25, 36, 49, which themselves follow a pattern, so the next difference gives 145.",
+   "order": 37,
+   "subPattern": "difference-of-differences",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Write the differences between consecutive terms, then look for the pattern in those differences."
+  },
+  {
+   "questionText": "What comes next in the series: 3, 5, 7, 11, 13, 17, ?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "19"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "These are consecutive prime numbers, so the next term is 19.",
+   "order": 38,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Recognise the primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37."
+  },
+  {
+   "questionText": "What comes next in the series: 29, 40, 53, 68, 85, 104, ?",
+   "options": [
+    {
+     "text": "146"
+    },
+    {
+     "text": "125"
+    },
+    {
+     "text": "104"
+    },
+    {
+     "text": "83"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The terms are (5^2, 6^2, ...) + 4, so the next term is 125.",
+   "order": 39,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Check whether the terms are close to perfect squares."
+  },
+  {
+   "questionText": "What comes next in the series: 2, 3, 5, 7, 11, 13, ?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "21"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "These are consecutive prime numbers, so the next term is 17.",
+   "order": 40,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Recognise the primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37."
+  },
+  {
+   "questionText": "Find the missing number in the series: 22, 33, ?, 61, 78, 97, 118",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "46"
+    },
+    {
+     "text": "59"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The terms are n^2 - 3 for n = 5, 6, ...; the missing term is 46.",
+   "order": 41,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Add the constant back to each term and see whether you get perfect squares."
+  },
+  {
+   "questionText": "Find the missing number in the series: 30, 68, ?, 222, 350, 520, 738",
+   "options": [
+    {
+     "text": "140"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "130"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The terms are n^3 + n for n = 3, 4, ...; the missing term is 130.",
+   "order": 42,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Compare with cubes: each term is a cube plus its own base."
+  },
+  {
+   "questionText": "Find the missing number in the series: 14, 23, 34, 47, ?, 79, 98",
+   "options": [
+    {
+     "text": "72"
+    },
+    {
+     "text": "52"
+    },
+    {
+     "text": "84"
+    },
+    {
+     "text": "62"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The terms are n^2 - 2 for n = 4, 5, ...; the missing term is 62.",
+   "order": 43,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Add the constant back to each term and see whether you get perfect squares."
+  },
+  {
+   "questionText": "Find the missing number in the series: 2, 10, 30, 68, ?, 222, 350",
+   "options": [
+    {
+     "text": "130"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "170"
+    },
+    {
+     "text": "150"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The terms are n^3 + n for n = 1, 2, ...; the missing term is 130.",
+   "order": 44,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Compare with cubes: each term is a cube plus its own base."
+  },
+  {
+   "questionText": "Find the missing number in the series: 2, 10, ?, 68, 130, 222, 350",
+   "options": [
+    {
+     "text": "50"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The terms are n^3 + n for n = 1, 2, ...; the missing term is 30.",
+   "order": 45,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Compare with cubes: each term is a cube plus its own base."
+  },
+  {
+   "questionText": "Find the missing number in the series: 68, 130, 222, ?, 520, 738, 1010",
+   "options": [
+    {
+     "text": "350"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "340"
+    },
+    {
+     "text": "330"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The terms are n^3 + n for n = 4, 5, ...; the missing term is 350.",
+   "order": 46,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare with cubes: each term is a cube plus its own base."
+  },
+  {
+   "questionText": "Find the missing number in the series: 68, 130, 222, 350, ?, 738, 1010",
+   "options": [
+    {
+     "text": "560"
+    },
+    {
+     "text": "500"
+    },
+    {
+     "text": "540"
+    },
+    {
+     "text": "520"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The terms are n^3 + n for n = 4, 5, ...; the missing term is 520.",
+   "order": 47,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Compare with cubes: each term is a cube plus its own base."
+  },
+  {
+   "questionText": "What comes next in the series: 49, 121, 169, 289, 361, 529, ?",
+   "options": [
+    {
+     "text": "831"
+    },
+    {
+     "text": "841"
+    },
+    {
+     "text": "851"
+    },
+    {
+     "text": "1903"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "These are squares of consecutive primes (7^2, 11^2, ...), so the next term is 841.",
+   "order": 48,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Take square roots: they are consecutive primes."
+  },
+  {
+   "questionText": "What comes next in the series: 11, 15, 23, 27, 35, 39, ?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "51"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each term is 2 x prime + 1 (5, 7, ... doubled, plus 1), so the next term is 47.",
+   "order": 49,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Subtract 1 and halve: the primes appear."
+  },
+  {
+   "questionText": "What comes next in the series: 4, 9, 25, 49, 121, 169, ?",
+   "options": [
+    {
+     "text": "631"
+    },
+    {
+     "text": "-53"
+    },
+    {
+     "text": "460"
+    },
+    {
+     "text": "289"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "These are squares of consecutive primes (2^2, 3^2, ...), so the next term is 289.",
+   "order": 50,
+   "subPattern": "squares-cubes-primes",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Take square roots: they are consecutive primes."
+  },
+  {
+   "questionText": "What comes next in the series: 29, 22, 35, 25, 41, 28, 47, ?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "37"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The terms at odd places go up by 6 and those at even places go up by 3. The next term is 31.",
+   "order": 51,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Split into two interleaved series: positions 1, 3, 5, 7 and positions 2, 4, 6."
+  },
+  {
+   "questionText": "What comes next in the series: 25, 4, 31, 7, 37, 10, 43, ?",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The terms at odd places go up by 6 and those at even places go up by 3. The next term is 13.",
+   "order": 52,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Split into two interleaved series: positions 1, 3, 5, 7 and positions 2, 4, 6."
+  },
+  {
+   "questionText": "What comes next in the series: 9, 19, 12, 22, 15, 25, 18, ?",
+   "options": [
+    {
+     "text": "28"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "34"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The terms at odd places go up by 3 and those at even places go up by 3. The next term is 28.",
+   "order": 53,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Split into two interleaved series: positions 1, 3, 5, 7 and positions 2, 4, 6."
+  },
+  {
+   "questionText": "What comes next in the series: 22, 1, 25, 4, 28, 7, 31, ?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The terms at odd places go up by 3 and those at even places go up by 3. The next term is 10.",
+   "order": 54,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Split into two interleaved series: positions 1, 3, 5, 7 and positions 2, 4, 6."
+  },
+  {
+   "questionText": "Find the missing number in the series: 29, 54, ?, 49, 43, 44, 50, 39",
+   "options": [
+    {
+     "text": "50"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Odd-place terms increase by 7; even-place terms decrease by 5. The missing term is 36.",
+   "order": 55,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Treat odd and even places as two separate series."
+  },
+  {
+   "questionText": "Find the missing number in the series: 18, 46, 22, ?, 26, 34, 30, 28",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Odd-place terms increase by 4; even-place terms decrease by 6. The missing term is 40.",
+   "order": 56,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat odd and even places as two separate series."
+  },
+  {
+   "questionText": "Find the missing number in the series: 14, 54, ?, 52, 26, 50, 32, 48",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Odd-place terms increase by 6; even-place terms decrease by 2. The missing term is 20.",
+   "order": 57,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Treat odd and even places as two separate series."
+  },
+  {
+   "questionText": "Find the missing number in the series: 1, 34, 8, ?, 15, 26, 22, 22",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Odd-place terms increase by 7; even-place terms decrease by 4. The missing term is 30.",
+   "order": 58,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Treat odd and even places as two separate series."
+  },
+  {
+   "questionText": "Find the missing number in the series: 4, 67, ?, 61, 16, 55, 22, 49",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "-2"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Odd-place terms increase by 6; even-place terms decrease by 6. The missing term is 10.",
+   "order": 59,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat odd and even places as two separate series."
+  },
+  {
+   "questionText": "Find the missing number in the series: 1, 68, 9, ?, 17, 60, 25, 56",
+   "options": [
+    {
+     "text": "56"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "72"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Odd-place terms increase by 8; even-place terms decrease by 4. The missing term is 64.",
+   "order": 60,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Treat odd and even places as two separate series."
+  },
+  {
+   "questionText": "What comes next in the series: 3, 23, 6, 31, 12, 39, 24, ?",
+   "options": [
+    {
+     "text": "47"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "55"
+    },
+    {
+     "text": "49"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Odd places are multiplied by 2 each time, even places increase by 8. The next term is 47.",
+   "order": 61,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Separate the two interleaved series; one is geometric, the other arithmetic."
+  },
+  {
+   "questionText": "What comes next in the series: 4, 23, 12, 30, 36, 37, 108, ?",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Odd places are multiplied by 3 each time, even places increase by 7. The next term is 44.",
+   "order": 62,
+   "subPattern": "alternating-two-pattern-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Separate the two interleaved series; one is geometric, the other arithmetic."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 1, 4, 9, 16, 22, 36, 49",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "49"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The terms are consecutive perfect squares, so the term at that place should be 25 but the series shows 22. The wrong number is 22.",
+   "order": 63,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 4, 9, 16, 18, 36, 49, 64",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "49"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The terms are consecutive perfect squares, so the term at that place should be 25 but the series shows 18. The wrong number is 18.",
+   "order": 64,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 13, 18, 23, 21, 33, 38, 43",
+   "options": [
+    {
+     "text": "38"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "21"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The series is an AP with difference 5, so the term at that place should be 28 but the series shows 21. The wrong number is 21.",
+   "order": 65,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 5, 8, 11, 6, 17, 20, 23",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The series is an AP with difference 3, so the term at that place should be 14 but the series shows 6. The wrong number is 6.",
+   "order": 66,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 4, 14, 24, 28, 44, 54, 64",
+   "options": [
+    {
+     "text": "54"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The series is an AP with difference 10, so the term at that place should be 34 but the series shows 28. The wrong number is 28.",
+   "order": 67,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 125, 216, 343, 512, 733, 1000, 1331",
+   "options": [
+    {
+     "text": "733"
+    },
+    {
+     "text": "343"
+    },
+    {
+     "text": "216"
+    },
+    {
+     "text": "512"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The terms are consecutive cubes, so the term at that place should be 729 but the series shows 733. The wrong number is 733.",
+   "order": 68,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 1, 4, 8, 13, 12, 26, 34",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The differences increase by 1 each time, so the term at that place should be 19 but the series shows 12. The wrong number is 12.",
+   "order": 69,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 1, 3, 9, 27, 75, 243, 729",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "75"
+    },
+    {
+     "text": "729"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each term is 3 times the previous one, so the term at that place should be 81 but the series shows 75. The wrong number is 75.",
+   "order": 70,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 8, 11, 16, 23, 29, 43, 56",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "56"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The differences increase by 2 each time, so the term at that place should be 32 but the series shows 29. The wrong number is 29.",
+   "order": 71,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 3, 9, 27, 78, 243, 729, 2187",
+   "options": [
+    {
+     "text": "2187"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each term is 3 times the previous one, so the term at that place should be 81 but the series shows 78. The wrong number is 78.",
+   "order": 72,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 2, 4, 8, 7, 22, 32, 44",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The differences increase by 2 each time, so the term at that place should be 14 but the series shows 7. The wrong number is 7.",
+   "order": 73,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "Find the wrong number in the series: 8, 27, 64, 133, 216, 343, 512",
+   "options": [
+    {
+     "text": "64"
+    },
+    {
+     "text": "133"
+    },
+    {
+     "text": "512"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The terms are consecutive cubes, so the term at that place should be 125 but the series shows 133. The wrong number is 133.",
+   "order": 74,
+   "subPattern": "wrong-number-in-series",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find the rule from most terms, then spot the term that breaks it."
+  },
+  {
+   "questionText": "What comes next in the series: 1, 4, 13, 40, 121, 364, ?",
+   "options": [
+    {
+     "text": "1095"
+    },
+    {
+     "text": "1094"
+    },
+    {
+     "text": "1093"
+    },
+    {
+     "text": "1087"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each term is previous x 3 + 1, so the next term is 1093.",
+   "order": 75,
+   "subPattern": "missing-number",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Test x3 then +1."
+  },
+  {
+   "questionText": "What comes next in the series: 5, 6, 11, 17, 28, 45, 73, ?",
+   "options": [
+    {
+     "text": "118"
+    },
+    {
+     "text": "135"
+    },
+    {
+     "text": "74"
+    },
+    {
+     "text": "112"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term is the sum of the two terms before it, so the next term is 118.",
+   "order": 76,
+   "subPattern": "missing-number",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add the last two terms to get the next."
+  },
+  {
+   "questionText": "What comes next in the series: 5, 3, 8, 11, 19, 30, 49, ?",
+   "options": [
+    {
+     "text": "82"
+    },
+    {
+     "text": "73"
+    },
+    {
+     "text": "50"
+    },
+    {
+     "text": "79"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each term is the sum of the two terms before it, so the next term is 79.",
+   "order": 77,
+   "subPattern": "missing-number",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Add the last two terms to get the next."
+  },
+  {
+   "questionText": "What comes next in the series: 1, 6, 7, 13, 20, 33, 53, ?",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "54"
+    },
+    {
+     "text": "86"
+    },
+    {
+     "text": "92"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each term is the sum of the two terms before it, so the next term is 86.",
+   "order": 78,
+   "subPattern": "missing-number",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Add the last two terms to get the next."
+  },
+  {
+   "questionText": "What comes next in the series: 2, 11, 38, 119, 362, 1091, ?",
+   "options": [
+    {
+     "text": "3283"
+    },
+    {
+     "text": "3278"
+    },
+    {
+     "text": "3288"
+    },
+    {
+     "text": "3284"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each term is previous x 3 + 5, so the next term is 3278.",
+   "order": 79,
+   "subPattern": "missing-number",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Test x3 then +5."
+  },
+  {
+   "questionText": "What comes next in the series: 6, 23, 74, 227, 686, 2063, ?",
+   "options": [
+    {
+     "text": "6194"
+    },
+    {
+     "text": "6200"
+    },
+    {
+     "text": "6204"
+    },
+    {
+     "text": "6188"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term is previous x 3 + 5, so the next term is 6194.",
+   "order": 80,
+   "subPattern": "missing-number",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Test x3 then +5."
+  },
+  {
+   "questionText": "What comes next in the series: 2, 9, 30, 93, 282, 849, ?",
+   "options": [
+    {
+     "text": "2556"
+    },
+    {
+     "text": "2553"
+    },
+    {
+     "text": "2550"
+    },
+    {
+     "text": "2547"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each term is previous x 3 + 3, so the next term is 2550.",
+   "order": 81,
+   "subPattern": "missing-number",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test x3 then +3."
+  },
+  {
+   "questionText": "What comes next in the series: 4, 6, 10, 16, 26, 42, 68, ?",
+   "options": [
+    {
+     "text": "110"
+    },
+    {
+     "text": "107"
+    },
+    {
+     "text": "69"
+    },
+    {
+     "text": "78"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term is the sum of the two terms before it, so the next term is 110.",
+   "order": 82,
+   "subPattern": "missing-number",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Add the last two terms to get the next."
+  },
+  {
+   "questionText": "What comes next in the series: 8, 9, 13, 22, 38, 63, ?",
+   "options": [
+    {
+     "text": "149"
+    },
+    {
+     "text": "109"
+    },
+    {
+     "text": "124"
+    },
+    {
+     "text": "99"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The differences are consecutive squares 1, 4, 9, 16, ... The next term is 99.",
+   "order": 83,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Differences are 1^2, 2^2, 3^2, ..."
+  },
+  {
+   "questionText": "What comes next in the series: 5, 1, 11, 13, 35, 61, 131, ?",
+   "options": [
+    {
+     "text": "250"
+    },
+    {
+     "text": "253"
+    },
+    {
+     "text": "257"
+    },
+    {
+     "text": "96"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each term = previous term + 2 x the term before it, so the next term is 253.",
+   "order": 84,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test combinations such as (last) + 2 x (second last)."
+  },
+  {
+   "questionText": "What comes next in the series: 5, 14, 40, 117, 347, 1036, ?",
+   "options": [
+    {
+     "text": "3096"
+    },
+    {
+     "text": "3102"
+    },
+    {
+     "text": "3105"
+    },
+    {
+     "text": "3099"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each term = previous x 3 - n, with n = 1, 2, 3, ... The next term is 3102.",
+   "order": 85,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test x3 followed by a growing subtraction."
+  },
+  {
+   "questionText": "What comes next in the series: 5, 5, 15, 25, 55, 105, 215, ?",
+   "options": [
+    {
+     "text": "425"
+    },
+    {
+     "text": "160"
+    },
+    {
+     "text": "417"
+    },
+    {
+     "text": "419"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term = previous term + 2 x the term before it, so the next term is 425.",
+   "order": 86,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Test combinations such as (last) + 2 x (second last)."
+  },
+  {
+   "questionText": "What comes next in the series: 4, 6, 12, 20, 34, 56, 92, ?",
+   "options": [
+    {
+     "text": "90"
+    },
+    {
+     "text": "146"
+    },
+    {
+     "text": "150"
+    },
+    {
+     "text": "147"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each term = sum of the previous two + 2, so the next term is 150.",
+   "order": 87,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Check sum of two previous terms, then the extra constant."
+  },
+  {
+   "questionText": "What comes next in the series: 6, 7, 11, 20, 36, 61, ?",
+   "options": [
+    {
+     "text": "102"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "147"
+    },
+    {
+     "text": "97"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The differences are consecutive squares 1, 4, 9, 16, ... The next term is 97.",
+   "order": 88,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Differences are 1^2, 2^2, 3^2, ..."
+  },
+  {
+   "questionText": "What comes next in the series: 3, 5, 8, 13, 22, 39, ?",
+   "options": [
+    {
+     "text": "76"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "74"
+    },
+    {
+     "text": "72"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each term = previous x 2 - n, with n = 1, 2, 3, ... The next term is 72.",
+   "order": 89,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Test x2 followed by a growing subtraction."
+  },
+  {
+   "questionText": "What comes next in the series: 4, 5, 9, 18, 34, 59, ?",
+   "options": [
+    {
+     "text": "100"
+    },
+    {
+     "text": "95"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "45"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The differences are consecutive squares 1, 4, 9, 16, ... The next term is 95.",
+   "order": 90,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Differences are 1^2, 2^2, 3^2, ..."
+  },
+  {
+   "questionText": "What comes next in the series: 3, 2, 6, 9, 16, 26, 43, ?",
+   "options": [
+    {
+     "text": "70"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term = sum of the previous two + 1, so the next term is 70.",
+   "order": 91,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Check sum of two previous terms, then the extra constant."
+  },
+  {
+   "questionText": "What comes next in the series: 7, 8, 12, 21, 37, 62, ?",
+   "options": [
+    {
+     "text": "108"
+    },
+    {
+     "text": "73"
+    },
+    {
+     "text": "98"
+    },
+    {
+     "text": "48"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The differences are consecutive squares 1, 4, 9, 16, ... The next term is 98.",
+   "order": 92,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Differences are 1^2, 2^2, 3^2, ..."
+  },
+  {
+   "questionText": "What comes next in the series: 4, 5, 13, 23, 49, 95, 193, ?",
+   "options": [
+    {
+     "text": "144"
+    },
+    {
+     "text": "383"
+    },
+    {
+     "text": "389"
+    },
+    {
+     "text": "380"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each term = previous term + 2 x the term before it, so the next term is 383.",
+   "order": 93,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test combinations such as (last) + 2 x (second last)."
+  },
+  {
+   "questionText": "What comes next in the series: 2, 2, 6, 10, 22, 42, 86, ?",
+   "options": [
+    {
+     "text": "170"
+    },
+    {
+     "text": "174"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "178"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term = previous term + 2 x the term before it, so the next term is 170.",
+   "order": 94,
+   "subPattern": "missing-number",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Test combinations such as (last) + 2 x (second last)."
+  },
+  {
+   "questionText": "What comes next in the series: 1, 3, 4, 8, 15, 27, 50, ?",
+   "options": [
+    {
+     "text": "77"
+    },
+    {
+     "text": "98"
+    },
+    {
+     "text": "92"
+    },
+    {
+     "text": "97"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each term is the sum of the previous three terms, so the next term is 92.",
+   "order": 95,
+   "subPattern": "missing-number",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Try summing the last three terms."
+  },
+  {
+   "questionText": "What comes next in the series: 4, 8, 13, 26, 31, 62, 67, ?",
+   "options": [
+    {
+     "text": "129"
+    },
+    {
+     "text": "132"
+    },
+    {
+     "text": "138"
+    },
+    {
+     "text": "134"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The operations alternate: x2, +5, x2, +5, ... The next term is 134.",
+   "order": 96,
+   "subPattern": "missing-number",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "When differences look irregular, test alternating operations."
+  },
+  {
+   "questionText": "What comes next in the series: 2, 4, 5, 10, 11, 22, 23, ?",
+   "options": [
+    {
+     "text": "44"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "46"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The operations alternate: x2, +1, x2, +1, ... The next term is 46.",
+   "order": 97,
+   "subPattern": "missing-number",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "When differences look irregular, test alternating operations."
+  },
+  {
+   "questionText": "What comes next in the series: 3, 2, 5, 10, 17, 32, 59, ?",
+   "options": [
+    {
+     "text": "98"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "91"
+    },
+    {
+     "text": "108"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each term is the sum of the previous three terms, so the next term is 108.",
+   "order": 98,
+   "subPattern": "missing-number",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Try summing the last three terms."
+  },
+  {
+   "questionText": "What comes next in the series: 4, 8, 10, 20, 22, 44, 46, ?",
+   "options": [
+    {
+     "text": "94"
+    },
+    {
+     "text": "92"
+    },
+    {
+     "text": "88"
+    },
+    {
+     "text": "96"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The operations alternate: x2, +2, x2, +2, ... The next term is 92.",
+   "order": 99,
+   "subPattern": "missing-number",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "When differences look irregular, test alternating operations."
+  },
+  {
+   "questionText": "What comes next in the series: 2, 2, 4, 8, 14, 26, 48, ?",
+   "options": [
+    {
+     "text": "88"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "93"
+    },
+    {
+     "text": "74"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each term is the sum of the previous three terms, so the next term is 88.",
+   "order": 100,
+   "subPattern": "missing-number",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Try summing the last three terms."
+  }
+ ]
+}

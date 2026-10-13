@@ -1,0 +1,1873 @@
+{
+  "questions": [
+    {
+      "questionText": "In a right-angled triangle the hypotenuse is 20 cm. Find the length of the median drawn to the hypotenuse.",
+      "options": [
+        "10 cm",
+        "8 cm",
+        "5 cm",
+        "20 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The median to the hypotenuse equals half the hypotenuse: 20/2 = 10 cm.",
+      "shortcut": "Midpoint of the hypotenuse is the circumcentre.",
+      "subPattern": "triangles-centres",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The two perpendicular sides of a right-angled triangle are 12 cm and 16 cm. Find its hypotenuse.",
+      "options": [
+        "25 cm",
+        "28 cm",
+        "20 cm",
+        "22 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hypotenuse = sqrt(12^2 + 16^2) = sqrt(400) = 20 cm.",
+      "shortcut": "Learn the triples 3-4-5, 5-12-13, 8-15-17, 7-24-25 and their multiples.",
+      "subPattern": "triangles-centres",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two angles of a triangle are 26° and 28°. What is the third angle?",
+      "options": [
+        "126°",
+        "54°",
+        "189°",
+        "63°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Angles of a triangle sum to 180°. Third angle = 180 - 26 - 28 = 126°.",
+      "shortcut": "Subtract the two given angles from 180°.",
+      "subPattern": "lines-angles",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The parallel sides of a trapezium are 28 cm and 32 cm. Find the length of the line joining the midpoints of the non-parallel sides.",
+      "options": [
+        "30 cm",
+        "14 cm",
+        "31 cm",
+        "36 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The median of a trapezium = (sum of parallel sides)/2 = (28 + 32)/2 = 30 cm.",
+      "shortcut": "Midsegment = average of the parallel sides.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "O is the circumcentre of an acute triangle ABC. If angle A = 64°, find angle BOC.",
+      "options": [
+        "160°",
+        "64°",
+        "116°",
+        "128°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Angle at the centre is twice the angle at the circumference: BOC = 2 x 64 = 128°.",
+      "shortcut": "Circumcentre: BOC = 2A.",
+      "subPattern": "triangles-centres",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many diagonals does a polygon with 15 sides have?",
+      "options": [
+        "180",
+        "90",
+        "135",
+        "60"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diagonals = n(n - 3)/2 = 15 x 12/2 = 90.",
+      "shortcut": "Each vertex gives n - 3 diagonals; divide by 2 to avoid double counting.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sides of a rectangle are 20 cm and 15 cm. Find the length of its diagonal.",
+      "options": [
+        "20 cm",
+        "25 cm",
+        "23 cm",
+        "35 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diagonal = sqrt(20^2 + 15^2) = 25 cm.",
+      "shortcut": "A diagonal splits the rectangle into two right triangles.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of the interior angles of a polygon with 6 sides?",
+      "options": [
+        "1080°",
+        "792°",
+        "720°",
+        "360°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum = (n - 2) x 180 = 4 x 180 = 720°.",
+      "shortcut": "Sum of interior angles = (n - 2) x 180°.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "ABCD is a trapezium with AB parallel to CD, AB = 27 cm and CD = 6 cm. Its diagonals meet at O. Find the ratio AO : OC.",
+      "options": [
+        "81 : 4",
+        "9 : 2",
+        "11 : 9",
+        "2 : 9"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Triangles AOB and COD are similar, so AO/OC = AB/CD = 27/6 = 9 : 2.",
+      "shortcut": "In a trapezium the diagonals divide each other in the ratio of the parallel sides.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Triangles ABC and PQR are similar. AB = 35 cm corresponds to PQ = 14 cm. If BC = 35 cm, find QR.",
+      "options": [
+        "87.5 cm",
+        "15 cm",
+        "14 cm",
+        "19 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ratio PQ/AB = 14/35 = 2/5. QR = 35 x 2/5 = 14 cm.",
+      "shortcut": "Corresponding sides are in a constant ratio.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A chord of length 32 cm lies in a circle of radius 20 cm. How far is the chord from the centre?",
+      "options": [
+        "17 cm",
+        "16 cm",
+        "12 cm",
+        "8 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Half chord = 16. Distance = sqrt(20^2 - 16^2) = sqrt(144) = 12 cm.",
+      "shortcut": "Distance = sqrt(r^2 - (chord/2)^2).",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the inradius of a triangle with sides 6 cm, 25 cm and 29 cm.",
+      "options": [
+        "2 cm",
+        "30 cm",
+        "3 cm",
+        "4 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "s = 30; Area = sqrt(30 x 24 x 5 x 1) = 60. Inradius = Area/s = 60/30 = 2 cm.",
+      "shortcut": "Inradius = Area / semi-perimeter.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One side of a rectangle is 12 cm and its area is 72 sq cm. Find its perimeter.",
+      "options": [
+        "36 cm",
+        "54 cm",
+        "41 cm",
+        "72 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Other side = 72/12 = 6 cm. Perimeter = 2(12 + 6) = 36 cm.",
+      "shortcut": "Find the missing side from area first.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A 25-m ladder leans against a vertical wall with its foot 20 m from the wall. How high up the wall does it reach?",
+      "options": [
+        "5 m",
+        "15 m",
+        "12 m",
+        "13 m"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Height = sqrt(25^2 - 20^2) = sqrt(225) = 15 m.",
+      "shortcut": "Ladder, wall and ground form a right triangle with the ladder as hypotenuse.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pole 5 m high casts a shadow 2 m long. At the same time a tower casts a shadow 12 m long. Find the height of the tower.",
+      "options": [
+        "28 m",
+        "24 m",
+        "30 m",
+        "15 m"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Heights are proportional to shadows: H/5 = 12/2, so H = 30 m.",
+      "shortcut": "At the same time, height/shadow is the same for all objects.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of the interior angles of a polygon is 2340°. How many sides does it have?",
+      "options": [
+        "14",
+        "15",
+        "30",
+        "13"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "(n - 2) x 180 = 2340, so n - 2 = 13 and n = 15.",
+      "shortcut": "Divide the sum by 180 and add 2.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the point that divides the line joining (-4, 0) and (14, 18) internally in the ratio 2 : 4.",
+      "options": [
+        "(2, 7)",
+        "(2, 6)",
+        "(2, -6)",
+        "(6, 2)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "x = (2 x 14 + 4 x (-4))/6 = 2; y = (2 x 18 + 4 x 0)/6 = 6.",
+      "shortcut": "Section formula: (m x2 + n x1)/(m + n).",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Is a triangle with sides 40, 96, 105 (in cm) right-angled?",
+      "options": [
+        "Cannot be determined",
+        "Only if isosceles",
+        "No",
+        "Yes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "40^2 + 96^2 = 10816 but 105^2 = 11025, not equal, so it is not right-angled.",
+      "shortcut": "Check whether the sum of squares of the two shorter sides equals the square of the longest.",
+      "subPattern": "triangles-centres",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, DE is parallel to BC with AD : DB = 3 : 1. Find the ratio of the area of triangle ADE to the area of triangle ABC.",
+      "options": [
+        "3 : 4",
+        "9 : 1",
+        "3 : 1",
+        "9 : 16"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "AD/AB = 3/4. Similar triangles: area ratio = (3/4)^2 = 9 : 16.",
+      "shortcut": "AD : AB = a : (a + b); square it for the area ratio.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the circumradius of a right-angled triangle with sides 24, 10 and 26 cm.",
+      "options": [
+        "26 cm",
+        "13 cm",
+        "15 cm",
+        "18 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The circumcentre is the midpoint of the hypotenuse, so R = 26/2 = 13 cm.",
+      "shortcut": "R = hypotenuse/2 in a right triangle.",
+      "subPattern": "triangles-centres",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two co-interior angles between parallel lines are (3x + 21)° and (2x + 9)°. Find x.",
+      "options": [
+        "32",
+        "36",
+        "24",
+        "30"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Co-interior angles add up to 180°: 5x + 30 = 180, so 5x = 150 and x = 30.",
+      "shortcut": "Set the sum of the two expressions equal to 180.",
+      "subPattern": "lines-angles",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Each interior angle of a regular polygon is 156°. How many sides does it have?",
+      "options": [
+        "15",
+        "2",
+        "14",
+        "10"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Exterior angle = 180 - 156 = 24°. Sides = 360/24 = 15.",
+      "shortcut": "Find the exterior angle first, then divide 360 by it.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The two perpendicular sides of a right-angled triangle are 24 cm and 7 cm. Find its hypotenuse.",
+      "options": [
+        "25 cm",
+        "31 cm",
+        "20 cm",
+        "27 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hypotenuse = sqrt(24^2 + 7^2) = sqrt(625) = 25 cm.",
+      "shortcut": "Learn the triples 3-4-5, 5-12-13, 8-15-17, 7-24-25 and their multiples.",
+      "subPattern": "triangles-centres",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of the interior angles of a polygon with 9 sides?",
+      "options": [
+        "360°",
+        "1620°",
+        "1680°",
+        "1260°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum = (n - 2) x 180 = 7 x 180 = 1260°.",
+      "shortcut": "Sum of interior angles = (n - 2) x 180°.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One side of a rectangle is 4 cm and its area is 24 sq cm. Find its perimeter.",
+      "options": [
+        "22 cm",
+        "40 cm",
+        "24 cm",
+        "20 cm"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Other side = 24/4 = 6 cm. Perimeter = 2(4 + 6) = 20 cm.",
+      "shortcut": "Find the missing side from area first.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The angles of a triangle are in the ratio 4 : 5 : 6. Find the largest angle.",
+      "options": [
+        "60°",
+        "48°",
+        "72°",
+        "36°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of ratio parts = 15. One part = 180/15 = 12°. Largest = 6 x 12 = 72°.",
+      "shortcut": "Divide 180 by the total of the ratio parts, then multiply by the largest term.",
+      "subPattern": "lines-angles",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the inradius of a triangle with sides 10 cm, 10 cm and 12 cm.",
+      "options": [
+        "5 cm",
+        "2 cm",
+        "3 cm",
+        "24 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "s = 16; Area = sqrt(16 x 6 x 6 x 4) = 48. Inradius = Area/s = 48/16 = 3 cm.",
+      "shortcut": "Inradius = Area / semi-perimeter.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "For what value of k are the points (-2, -4), (-1, 0) and (0, k) collinear?",
+      "options": [
+        "5",
+        "9",
+        "4",
+        "2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Slope of the first two points = 4. Collinear means the same slope: (k - (-4))/2 = 4, so k = (-4) + 8 = 4.",
+      "shortcut": "Equal slopes between consecutive points means collinear.",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The parallel sides of a trapezium are 22 cm and 10 cm and the distance between them is 18 cm. Find its area.",
+      "options": [
+        "384 sq cm",
+        "576 sq cm",
+        "396 sq cm",
+        "288 sq cm"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Area = (1/2)(22 + 10) x 18 = 288 sq cm.",
+      "shortcut": "Trapezium area = average of parallel sides x height.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Triangles ABC and PQR are similar. AB = 4 cm corresponds to PQ = 10 cm. If BC = 4 cm, find QR.",
+      "options": [
+        "1.6 cm",
+        "15 cm",
+        "10 cm",
+        "11 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ratio PQ/AB = 10/4 = 5/2. QR = 4 x 5/2 = 10 cm.",
+      "shortcut": "Corresponding sides are in a constant ratio.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the inradius of a right-angled triangle with sides 21 cm, 20 cm and 29 cm.",
+      "options": [
+        "8 cm",
+        "6 cm",
+        "3 cm",
+        "210 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Inradius of a right triangle = (a + b - c)/2 = (21 + 20 - 29)/2 = 6 cm.",
+      "shortcut": "r = (leg1 + leg2 - hypotenuse)/2.",
+      "subPattern": "triangles-centres",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of the interior angles of a polygon is 2700°. How many sides does it have?",
+      "options": [
+        "12",
+        "15",
+        "16",
+        "17"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "(n - 2) x 180 = 2700, so n - 2 = 15 and n = 17.",
+      "shortcut": "Divide the sum by 180 and add 2.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man walks 24 km north and then 18 km east. How far is he from the starting point?",
+      "options": [
+        "30 km",
+        "35 km",
+        "42 km",
+        "60 km"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Distance = sqrt(24^2 + 18^2) = 30 km.",
+      "shortcut": "North and east are perpendicular, so use Pythagoras.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "An arc subtends an angle of 84° at the centre of a circle. What angle does it subtend at a point on the remaining part of the circle?",
+      "options": [
+        "84°",
+        "37°",
+        "168°",
+        "42°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The angle at the circumference is half the angle at the centre: 84/2 = 42°.",
+      "shortcut": "Angle at centre = 2 x angle at circumference.",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the distance between the points (8, -8) and (48, -17).",
+      "options": [
+        "46",
+        "41",
+        "42",
+        "49"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Distance = sqrt((48-(8))^2 + (-17-(-8))^2) = sqrt(1600 + 81) = 41.",
+      "shortcut": "Distance formula: sqrt(dx^2 + dy^2).",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two similar triangles have corresponding sides 5 cm and 11 cm. If the area of the smaller triangle is 300 sq cm, find the area of the larger.",
+      "options": [
+        "2178 sq cm",
+        "1452 sq cm",
+        "660 sq cm",
+        "1815 sq cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Areas are in the ratio of squares of sides: 11^2/5^2. Area = 300 x 121/25 = 1452 sq cm.",
+      "shortcut": "Ratio of areas = (ratio of sides)^2.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the point that divides the line joining (6, -1) and (12, 23) internally in the ratio 2 : 4.",
+      "options": [
+        "(-8, 7)",
+        "(9, 7)",
+        "(7, 6)",
+        "(8, 7)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "x = (2 x 12 + 4 x 6)/6 = 8; y = (2 x 23 + 4 x (-1))/6 = 7.",
+      "shortcut": "Section formula: (m x2 + n x1)/(m + n).",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the circumradius of a triangle with sides 15 cm, 15 cm and 24 cm.",
+      "options": [
+        "18.75 cm",
+        "12.5 cm",
+        "11.5 cm",
+        "4 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Area = 108 (Heron's formula). R = abc/(4 x Area) = 5400/432 = 12.5 cm.",
+      "shortcut": "R = abc / (4 x Area).",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A chord of length 30 cm lies in a circle of radius 17 cm. How far is the chord from the centre?",
+      "options": [
+        "10 cm",
+        "15 cm",
+        "8 cm",
+        "6 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Half chord = 15. Distance = sqrt(17^2 - 15^2) = sqrt(64) = 8 cm.",
+      "shortcut": "Distance = sqrt(r^2 - (chord/2)^2).",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The parallel sides of a trapezium are 23 cm and 26 cm and the distance between them is 16 cm. Find its area.",
+      "options": [
+        "784 sq cm",
+        "294 sq cm",
+        "368 sq cm",
+        "392 sq cm"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Area = (1/2)(23 + 26) x 16 = 392 sq cm.",
+      "shortcut": "Trapezium area = average of parallel sides x height.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, angle A = 68°. The bisectors of the exterior angles at B and C meet at O. Find angle BOC.",
+      "options": [
+        "84°",
+        "56°",
+        "124°",
+        "54°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Angle BOC = 90 - A/2 = 90 - 34 = 56°.",
+      "shortcut": "Angle between external bisectors of B and C = 90 - A/2.",
+      "subPattern": "lines-angles",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, DE is parallel to BC with D on AB and E on AC. If AD = 9 cm, DB = 4 cm and AE = 9 cm, find EC.",
+      "options": [
+        "5 cm",
+        "4 cm",
+        "6 cm",
+        "20.25 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "By the basic proportionality theorem AD/DB = AE/EC, so EC = 4 x 9/9 = 4 cm.",
+      "shortcut": "AD/DB = AE/EC for a line parallel to the third side.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the point that divides the line joining (-7, -8) and (-1, -20) internally in the ratio 2 : 4.",
+      "options": [
+        "(-10, -12)",
+        "(-5, -12)",
+        "(-12, -5)",
+        "(-6, -13)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "x = (2 x (-1) + 4 x (-7))/6 = -5; y = (2 x (-20) + 4 x (-8))/6 = -12.",
+      "shortcut": "Section formula: (m x2 + n x1)/(m + n).",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of the interior angles of a polygon with 18 sides?",
+      "options": [
+        "3240°",
+        "360°",
+        "4320°",
+        "2880°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum = (n - 2) x 180 = 16 x 180 = 2880°.",
+      "shortcut": "Sum of interior angles = (n - 2) x 180°.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The two perpendicular sides of a right-angled triangle are 21 cm and 20 cm. Find its hypotenuse.",
+      "options": [
+        "27 cm",
+        "29 cm",
+        "34 cm",
+        "41 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hypotenuse = sqrt(21^2 + 20^2) = sqrt(841) = 29 cm.",
+      "shortcut": "Learn the triples 3-4-5, 5-12-13, 8-15-17, 7-24-25 and their multiples.",
+      "subPattern": "triangles-centres",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "AB is a diameter of a circle and C is a point on the circle. If angle CAB = 58°, find angle CBA.",
+      "options": [
+        "32°",
+        "48°",
+        "58°",
+        "27°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Angle ACB = 90° (angle in a semicircle), so angle CBA = 180 - 90 - 58 = 32°.",
+      "shortcut": "Angle in a semicircle is 90°.",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the slope of the line joining (0, -6) and (3, -2).",
+      "options": [
+        "3/4",
+        "5/3",
+        "2",
+        "4/3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Slope = (y2 - y1)/(x2 - x1) = (4)/(3) = 4/3.",
+      "shortcut": "Slope = rise/run.",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The angles of a triangle are in the ratio 1 : 2 : 3. Find the largest angle.",
+      "options": [
+        "90°",
+        "135°",
+        "60°",
+        "99°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of ratio parts = 6. One part = 180/6 = 30°. Largest = 3 x 30 = 90°.",
+      "shortcut": "Divide 180 by the total of the ratio parts, then multiply by the largest term.",
+      "subPattern": "lines-angles",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the inradius of a triangle with sides 25 cm, 25 cm and 14 cm.",
+      "options": [
+        "84 cm",
+        "3.5 cm",
+        "5.25 cm",
+        "6.3 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "s = 32; Area = sqrt(32 x 7 x 7 x 18) = 168. Inradius = Area/s = 168/32 = 21/4 cm.",
+      "shortcut": "Inradius = Area / semi-perimeter.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, DE is parallel to BC with D on AB and E on AC. If AD = 5 cm, DB = 6 cm and AE = 10 cm, find EC.",
+      "options": [
+        "12 cm",
+        "9 cm",
+        "16 cm",
+        "11 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "By the basic proportionality theorem AD/DB = AE/EC, so EC = 6 x 10/5 = 12 cm.",
+      "shortcut": "AD/DB = AE/EC for a line parallel to the third side.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the inradius of a triangle with sides 9 cm, 10 cm and 17 cm.",
+      "options": [
+        "4 cm",
+        "18 cm",
+        "2 cm",
+        "1 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "s = 18; Area = sqrt(18 x 9 x 8 x 1) = 36. Inradius = Area/s = 36/18 = 2 cm.",
+      "shortcut": "Inradius = Area / semi-perimeter.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "AB is a diameter of a circle and C is a point on the circle. If angle CAB = 25°, find angle CBA.",
+      "options": [
+        "52°",
+        "25°",
+        "130°",
+        "65°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Angle ACB = 90° (angle in a semicircle), so angle CBA = 180 - 90 - 25 = 65°.",
+      "shortcut": "Angle in a semicircle is 90°.",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "An arc subtends an angle of 148° at the centre of a circle. What angle does it subtend at a point on the remaining part of the circle?",
+      "options": [
+        "296°",
+        "74°",
+        "111°",
+        "148°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The angle at the circumference is half the angle at the centre: 148/2 = 74°.",
+      "shortcut": "Angle at centre = 2 x angle at circumference.",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The distance between the centres of two circles of radii 8 cm and 3 cm is 13 cm. Find the length of the direct common tangent.",
+      "options": [
+        "12 cm",
+        "15 cm",
+        "6 cm",
+        "7 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Direct tangent = sqrt(d^2 - (r1 - r2)^2) = sqrt(169 - 25) = 12 cm.",
+      "shortcut": "Direct common tangent: sqrt(d^2 - (r1 - r2)^2).",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The distance of a point from the centre of a circle of radius 9 cm is 15 cm. Find the length of the tangent drawn from the point.",
+      "options": [
+        "12 cm",
+        "17 cm",
+        "6 cm",
+        "8 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Tangent is perpendicular to the radius: length = sqrt(15^2 - 9^2) = 12 cm.",
+      "shortcut": "Tangent length = sqrt(d^2 - r^2).",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The diagonals of a rhombus are 12 cm and 16 cm. Find its side.",
+      "options": [
+        "8 cm",
+        "10 cm",
+        "12 cm",
+        "14 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diagonals bisect at right angles: side = sqrt(6^2 + 8^2) = 10 cm.",
+      "shortcut": "Side of a rhombus = sqrt((d1/2)^2 + (d2/2)^2).",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a parallelogram ABCD, angle A = 68°. Find angle B.",
+      "options": [
+        "112°",
+        "168°",
+        "84°",
+        "68°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Adjacent angles of a parallelogram are supplementary: B = 180 - 68 = 112°.",
+      "shortcut": "Adjacent angles add to 180°.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sides of a rectangle are 24 cm and 7 cm. Find the length of its diagonal.",
+      "options": [
+        "31 cm",
+        "24 cm",
+        "25 cm",
+        "20 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Diagonal = sqrt(24^2 + 7^2) = 25 cm.",
+      "shortcut": "A diagonal splits the rectangle into two right triangles.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Each exterior angle of a regular polygon is 40°. How many sides does it have?",
+      "options": [
+        "14",
+        "4",
+        "9",
+        "12"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Number of sides = 360/40 = 9.",
+      "shortcut": "Sides = 360 / exterior angle.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "For what value of k are the points (4, -1), (5, 3) and (6, k) collinear?",
+      "options": [
+        "14",
+        "8",
+        "7",
+        "2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Slope of the first two points = 4. Collinear means the same slope: (k - (-1))/2 = 4, so k = (-1) + 8 = 7.",
+      "shortcut": "Equal slopes between consecutive points means collinear.",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Triangles ABC and PQR are similar. AB = 8 cm corresponds to PQ = 6 cm. If BC = 12 cm, find QR.",
+      "options": [
+        "10 cm",
+        "9 cm",
+        "11 cm",
+        "16 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ratio PQ/AB = 6/8 = 3/4. QR = 12 x 3/4 = 9 cm.",
+      "shortcut": "Corresponding sides are in a constant ratio.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the point that divides the line joining (-8, -2) and (10, -8) internally in the ratio 2 : 4.",
+      "options": [
+        "(-3, -5)",
+        "(-1, -4)",
+        "(-2, 4)",
+        "(-2, -4)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "x = (2 x 10 + 4 x (-8))/6 = -2; y = (2 x (-8) + 4 x (-2))/6 = -4.",
+      "shortcut": "Section formula: (m x2 + n x1)/(m + n).",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of the interior angles of a polygon is 900°. How many sides does it have?",
+      "options": [
+        "6",
+        "8",
+        "5",
+        "7"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "(n - 2) x 180 = 900, so n - 2 = 5 and n = 7.",
+      "shortcut": "Divide the sum by 180 and add 2.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is each interior angle of a regular polygon with 12 sides?",
+      "options": [
+        "135°",
+        "150°",
+        "30°",
+        "100°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interior angle = 180(n - 2)/n = 180 x 10/12 = 150°.",
+      "shortcut": "Each exterior angle = 360/n; interior = 180 - exterior.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a parallelogram ABCD, angle A = 80°. Find angle B.",
+      "options": [
+        "80°",
+        "120°",
+        "90°",
+        "100°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Adjacent angles of a parallelogram are supplementary: B = 180 - 80 = 100°.",
+      "shortcut": "Adjacent angles add to 180°.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "O is the circumcentre of an acute triangle ABC. If angle A = 72°, find angle BOC.",
+      "options": [
+        "108°",
+        "144°",
+        "72°",
+        "180°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Angle at the centre is twice the angle at the circumference: BOC = 2 x 72 = 144°.",
+      "shortcut": "Circumcentre: BOC = 2A.",
+      "subPattern": "triangles-centres",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "For what value of k are the points (1, -2), (2, 2) and (3, k) collinear?",
+      "options": [
+        "7",
+        "8",
+        "1",
+        "6"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Slope of the first two points = 4. Collinear means the same slope: (k - (-2))/2 = 4, so k = (-2) + 8 = 6.",
+      "shortcut": "Equal slopes between consecutive points means collinear.",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sides of a rectangle are 8 cm and 15 cm. Find the length of its diagonal.",
+      "options": [
+        "16 cm",
+        "23 cm",
+        "17 cm",
+        "22 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Diagonal = sqrt(8^2 + 15^2) = 17 cm.",
+      "shortcut": "A diagonal splits the rectangle into two right triangles.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the point that divides the line joining (-4, 4) and (0, 16) internally in the ratio 1 : 3.",
+      "options": [
+        "(-6, 7)",
+        "(7, -3)",
+        "(-3, 7)",
+        "(-4, 6)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "x = (1 x 0 + 3 x (-4))/4 = -3; y = (1 x 16 + 3 x 4)/4 = 7.",
+      "shortcut": "Section formula: (m x2 + n x1)/(m + n).",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two angles of a triangle are 49° and 51°. What is the third angle?",
+      "options": [
+        "64°",
+        "96°",
+        "100°",
+        "80°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Angles of a triangle sum to 180°. Third angle = 180 - 49 - 51 = 80°.",
+      "shortcut": "Subtract the two given angles from 180°.",
+      "subPattern": "lines-angles",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, DE is parallel to BC with AD : DB = 1 : 3. Find the ratio of the area of triangle ADE to the area of triangle ABC.",
+      "options": [
+        "1 : 3",
+        "1 : 9",
+        "1 : 4",
+        "1 : 16"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "AD/AB = 1/4. Similar triangles: area ratio = (1/4)^2 = 1 : 16.",
+      "shortcut": "AD : AB = a : (a + b); square it for the area ratio.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, DE is parallel to BC with D on AB and E on AC. If AD = 3 cm, DB = 6 cm and AE = 7 cm, find EC.",
+      "options": [
+        "14 cm",
+        "13 cm",
+        "3.5 cm",
+        "7 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "By the basic proportionality theorem AD/DB = AE/EC, so EC = 6 x 7/3 = 14 cm.",
+      "shortcut": "AD/DB = AE/EC for a line parallel to the third side.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the midpoint of the line joining (4, 8) and (14, 12).",
+      "options": [
+        "(10, 10)",
+        "(-9, 10)",
+        "(9, 10)",
+        "(9, 11)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Midpoint = ((4 + 14)/2, (8 + 12)/2) = (9, 10).",
+      "shortcut": "Average the x-coordinates and the y-coordinates.",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the inradius of a right-angled triangle with sides 3 cm, 4 cm and 5 cm.",
+      "options": [
+        "1 cm",
+        "3 cm",
+        "2 cm",
+        "6 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Inradius of a right triangle = (a + b - c)/2 = (3 + 4 - 5)/2 = 1 cm.",
+      "shortcut": "r = (leg1 + leg2 - hypotenuse)/2.",
+      "subPattern": "triangles-centres",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, angle A = 78°. The bisectors of the exterior angles at B and C meet at O. Find angle BOC.",
+      "options": [
+        "51°",
+        "34°",
+        "102°",
+        "129°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Angle BOC = 90 - A/2 = 90 - 39 = 51°.",
+      "shortcut": "Angle between external bisectors of B and C = 90 - A/2.",
+      "subPattern": "lines-angles",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the circumradius of a triangle with sides 10 cm, 10 cm and 12 cm.",
+      "options": [
+        "11.25 cm",
+        "6.25 cm",
+        "7.5 cm",
+        "3 cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Area = 48 (Heron's formula). R = abc/(4 x Area) = 1200/192 = 6.25 cm.",
+      "shortcut": "R = abc / (4 x Area).",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two chords AB and CD of a circle intersect at P inside the circle. If AP = 11 cm, PB = 10 cm and CP = 2 cm, find PD.",
+      "options": [
+        "53 cm",
+        "50 cm",
+        "19 cm",
+        "55 cm"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "AP x PB = CP x PD, so PD = 11 x 10/2 = 55 cm.",
+      "shortcut": "Intersecting chords: product of the segments of one = product of the other.",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Triangles ABC and PQR are similar. AB = 15 cm corresponds to PQ = 6 cm. If BC = 40 cm, find QR.",
+      "options": [
+        "100 cm",
+        "15 cm",
+        "16 cm",
+        "32 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ratio PQ/AB = 6/15 = 2/5. QR = 40 x 2/5 = 16 cm.",
+      "shortcut": "Corresponding sides are in a constant ratio.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the point that divides the line joining (-8, -4) and (6, -18) internally in the ratio 3 : 4.",
+      "options": [
+        "(-2, -10)",
+        "(-4, -10)",
+        "(-1, -10)",
+        "(-10, -2)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "x = (3 x 6 + 4 x (-8))/7 = -2; y = (3 x (-18) + 4 x (-4))/7 = -10.",
+      "shortcut": "Section formula: (m x2 + n x1)/(m + n).",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "H is the orthocentre of triangle ABC. If angle A = 64°, find angle BHC.",
+      "options": [
+        "64°",
+        "116°",
+        "174°",
+        "122°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In triangle BHC, angle BHC = 180 - A = 116°.",
+      "shortcut": "Orthocentre: BHC = 180 - A.",
+      "subPattern": "triangles-centres",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In an isosceles triangle the angle between the two equal sides is 68°. What is each base angle?",
+      "options": [
+        "58°",
+        "68°",
+        "55°",
+        "56°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Base angles are equal and sum to 180 - 68 = 112°, so each is 56°.",
+      "shortcut": "Base angle = (180 - apex angle)/2.",
+      "subPattern": "lines-angles",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, side BC is extended to D. If angle A = 36° and angle B = 33°, find the exterior angle ACD.",
+      "options": [
+        "92°",
+        "69°",
+        "46°",
+        "111°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An exterior angle equals the sum of the two interior opposite angles: 36 + 33 = 69°.",
+      "shortcut": "Exterior angle = sum of the two far interior angles.",
+      "subPattern": "lines-angles",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The hypotenuse of a right-angled triangle is 30 cm and one side is 18 cm. Find the other side.",
+      "options": [
+        "24 cm",
+        "12 cm",
+        "26 cm",
+        "32 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Other side = sqrt(30^2 - 18^2) = sqrt(576) = 24 cm.",
+      "shortcut": "Subtract squares: leg = sqrt(hyp^2 - other^2).",
+      "subPattern": "triangles-centres",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A rhombus has side 10 cm and one diagonal 16 cm. Find its other diagonal.",
+      "options": [
+        "12 cm",
+        "17 cm",
+        "6 cm",
+        "14 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Half of the known diagonal = 8. Half of the other = sqrt(10^2 - 8^2) = 6. Other diagonal = 12 cm.",
+      "shortcut": "Diagonals bisect at right angles; use Pythagoras in one quarter.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pole 5 m high casts a shadow 6 m long. At the same time a tower casts a shadow 30 m long. Find the height of the tower.",
+      "options": [
+        "25 m",
+        "29 m",
+        "26 m",
+        "20 m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Heights are proportional to shadows: H/5 = 30/6, so H = 25 m.",
+      "shortcut": "At the same time, height/shadow is the same for all objects.",
+      "subPattern": "similarity-congruence",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A polygon has 44 diagonals. How many sides does it have?",
+      "options": [
+        "11",
+        "6",
+        "12",
+        "10"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "n(n - 3)/2 = 44 gives n^2 - 3n - 88 = 0, i.e. (n - 11)(n + 8) = 0. So n = 11.",
+      "shortcut": "Test n(n - 3)/2 for the likely values of n.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the midpoint of the line joining (-8, 6) and (-4, 12).",
+      "options": [
+        "(9, -6)",
+        "(-6, -9)",
+        "(-6, 10)",
+        "(-6, 9)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Midpoint = ((-8 + -4)/2, (6 + 12)/2) = (-6, 9).",
+      "shortcut": "Average the x-coordinates and the y-coordinates.",
+      "subPattern": "coordinate-geometry",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man walks 10 km north and then 24 km east. How far is he from the starting point?",
+      "options": [
+        "34 km",
+        "28 km",
+        "26 km",
+        "39 km"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Distance = sqrt(10^2 + 24^2) = 26 km.",
+      "shortcut": "North and east are perpendicular, so use Pythagoras.",
+      "subPattern": "triangles-centres",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of the interior angles of a polygon is 720°. How many sides does it have?",
+      "options": [
+        "4",
+        "5",
+        "12",
+        "6"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "(n - 2) x 180 = 720, so n - 2 = 4 and n = 6.",
+      "shortcut": "Divide the sum by 180 and add 2.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One side of a rectangle is 6 cm and its area is 42 sq cm. Find its perimeter.",
+      "options": [
+        "39 cm",
+        "42 cm",
+        "26 cm",
+        "31 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Other side = 42/6 = 7 cm. Perimeter = 2(6 + 7) = 26 cm.",
+      "shortcut": "Find the missing side from area first.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The angles of a triangle are in the ratio 2 : 3 : 5. Find the largest angle.",
+      "options": [
+        "54°",
+        "99°",
+        "90°",
+        "135°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of ratio parts = 10. One part = 180/10 = 18°. Largest = 5 x 18 = 90°.",
+      "shortcut": "Divide 180 by the total of the ratio parts, then multiply by the largest term.",
+      "subPattern": "lines-angles",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the area of a rhombus whose diagonals are 10 cm and 28 cm.",
+      "options": [
+        "280 sq cm",
+        "140 sq cm",
+        "154 sq cm",
+        "112 sq cm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Area = (d1 x d2)/2 = (10 x 28)/2 = 140 sq cm.",
+      "shortcut": "Rhombus area = half the product of diagonals.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In triangle ABC, side BC is extended to D. If angle A = 80° and angle B = 32°, find the exterior angle ACD.",
+      "options": [
+        "168°",
+        "56°",
+        "112°",
+        "68°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "An exterior angle equals the sum of the two interior opposite angles: 80 + 32 = 112°.",
+      "shortcut": "Exterior angle = sum of the two far interior angles.",
+      "subPattern": "lines-angles",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A chord of length 48 cm lies in a circle of radius 26 cm. How far is the chord from the centre?",
+      "options": [
+        "10 cm",
+        "11 cm",
+        "24 cm",
+        "15 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Half chord = 24. Distance = sqrt(26^2 - 24^2) = sqrt(100) = 10 cm.",
+      "shortcut": "Distance = sqrt(r^2 - (chord/2)^2).",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two co-interior angles between parallel lines are (3x + 6)° and (3x - 12)°. Find x.",
+      "options": [
+        "30",
+        "31",
+        "62",
+        "33"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Co-interior angles add up to 180°: 6x + -6 = 180, so 6x = 186 and x = 31.",
+      "shortcut": "Set the sum of the two expressions equal to 180.",
+      "subPattern": "lines-angles",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the inradius of a right-angled triangle with sides 12 cm, 9 cm and 15 cm.",
+      "options": [
+        "6 cm",
+        "54 cm",
+        "3 cm",
+        "4 cm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Inradius of a right triangle = (a + b - c)/2 = (12 + 9 - 15)/2 = 3 cm.",
+      "shortcut": "r = (leg1 + leg2 - hypotenuse)/2.",
+      "subPattern": "triangles-centres",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The distance between the centres of two circles of radii 7 cm and 2 cm is 13 cm. Find the length of the direct common tangent.",
+      "options": [
+        "12 cm",
+        "18 cm",
+        "9 cm",
+        "11 cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Direct tangent = sqrt(d^2 - (r1 - r2)^2) = sqrt(169 - 25) = 12 cm.",
+      "shortcut": "Direct common tangent: sqrt(d^2 - (r1 - r2)^2).",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The parallel sides of a trapezium are 24 cm and 10 cm and the distance between them is 15 cm. Find its area.",
+      "options": [
+        "255 sq cm",
+        "360 sq cm",
+        "510 sq cm",
+        "170 sq cm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Area = (1/2)(24 + 10) x 15 = 255 sq cm.",
+      "shortcut": "Trapezium area = average of parallel sides x height.",
+      "subPattern": "quadrilaterals-polygons",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The distance of a point from the centre of a circle of radius 3 cm is 5 cm. Find the length of the tangent drawn from the point.",
+      "options": [
+        "3 cm",
+        "8 cm",
+        "2 cm",
+        "4 cm"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Tangent is perpendicular to the radius: length = sqrt(5^2 - 3^2) = 4 cm.",
+      "shortcut": "Tangent length = sqrt(d^2 - r^2).",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The distance of a point from the centre of a circle of radius 7 cm is 25 cm. Find the length of the tangent drawn from the point.",
+      "options": [
+        "18 cm",
+        "23 cm",
+        "29 cm",
+        "24 cm"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Tangent is perpendicular to the radius: length = sqrt(25^2 - 7^2) = 24 cm.",
+      "shortcut": "Tangent length = sqrt(d^2 - r^2).",
+      "subPattern": "circles-chords-tangents",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}

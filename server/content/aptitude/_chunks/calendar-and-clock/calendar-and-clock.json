@@ -1,0 +1,1874 @@
+{
+  "questions": [
+    {
+      "questionText": "At what time between 2 o'clock and 3 o'clock are the hands of a clock exactly opposite each other (in a straight line)? (give minutes past 2)",
+      "options": [
+        "43 10/11 minutes",
+        "43 7/11 minutes",
+        "43 4/11 minutes",
+        "16 4/11 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Solve |5.5m - 60| = 180: m = 43 7/11 minutes past 2.",
+      "shortcut": "Opposite hands: 5.5m = 30h ± 180.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 9 ordinary (non-leap) years?",
+      "options": [
+        "4",
+        "2",
+        "3",
+        "6"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each ordinary year has 365 = 52 weeks + 1 odd day, so 9 years give 9 odd days, i.e. 2 after removing complete weeks.",
+      "shortcut": "An ordinary year has 1 odd day; a leap year has 2.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 4:05?",
+      "options": [
+        "6:45",
+        "7:55",
+        "8:00",
+        "9:55"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mirror image time = 11:60 - 4:05 = 7:55.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 10:00?",
+      "options": [
+        "40°",
+        "61°",
+        "300°",
+        "60°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Hour hand = 30 x 10 + 0.5 x 0 = 300°. Minute hand = 6 x 0 = 0°. Angle = 60° (smaller one).",
+      "shortcut": "Angle = |30h - 5.5m|; take the smaller angle.",
+      "subPattern": "clock-angle",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 1970 that will have exactly the same calendar as 1970?",
+      "options": [
+        "1981",
+        "1982",
+        "1975",
+        "1974"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1970 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Thursday) is 1981, i.e. 11 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock loses 3 minutes every hour. It is set right at 8:00 AM. What time will it show when the real time is 12:00 PM?",
+      "options": [
+        "11:43",
+        "1:48",
+        "11:48",
+        "10:48"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 4 hours the clock loses 3 x 4 = 12 minutes, so it shows 11:48.",
+      "shortcut": "Shown time = real time - (loss per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 2023 that will have exactly the same calendar as 2023?",
+      "options": [
+        "2029",
+        "2030",
+        "2034",
+        "2028"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "2023 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Sunday) is 2034, i.e. 11 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "After 4 o'clock, at what time (in minutes past 4) do the hands of a clock first make a right angle?",
+      "options": [
+        "5 2/11 minutes",
+        "6 5/11 minutes",
+        "5 5/11 minutes",
+        "5 3/11 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The minute hand must be 90° from the hour hand. Solving 5.5m - 120 = ±90 for the first valid m in [0, 60) gives 5 5/11 minutes past 4.",
+      "shortcut": "Set |5.5m - 30h| = 90 and take the first solution.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the leap year 2020, how many days are there from 20 February 2020 to 8 July 2020, counting both days?",
+      "options": [
+        "154",
+        "139",
+        "140",
+        "141"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Counting both end dates in the leap year (February has 29 days) gives 140 days.",
+      "shortcut": "In a leap year February contributes 29 days.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 9:40?",
+      "options": [
+        "50°",
+        "100°",
+        "30°",
+        "40°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hour hand = 290°, minute hand = 240°. Difference = 50°, so the smaller angle = 50°.",
+      "shortcut": "Hour hand moves 0.5° per minute, minute hand 6° per minute.",
+      "subPattern": "clock-angle",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the leap year 2020, how many days are there from 27 February 2020 to 26 May 2020, counting both days?",
+      "options": [
+        "89",
+        "90",
+        "91",
+        "45"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Counting both end dates in the leap year (February has 29 days) gives 90 days.",
+      "shortcut": "In a leap year February contributes 29 days.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many days are there from 13 August 2027 to 25 November 2027 (not counting the first day)?",
+      "options": [
+        "103",
+        "78",
+        "104",
+        "105"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Counting the days month by month from 13 August 2027 to 25 November 2027 gives 104 days.",
+      "shortcut": "Add the remaining days of the first month, full months, and the days of the last month.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 2091 that will have exactly the same calendar as 2091?",
+      "options": [
+        "2103",
+        "2102",
+        "2095",
+        "2097"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "2091 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Monday) is 2103, i.e. 12 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 8:45?",
+      "options": [
+        "30°",
+        "6°",
+        "12.5°",
+        "7.5°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Hour hand = 262.5°, minute hand = 270°. Difference = 7.5°, so the smaller angle = 7.5°.",
+      "shortcut": "Hour hand moves 0.5° per minute, minute hand 6° per minute.",
+      "subPattern": "clock-angle",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 6:50?",
+      "options": [
+        "5:15",
+        "5:20",
+        "5:10",
+        "6:15"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Mirror image time = 11:60 - 6:50 = 5:10.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 8:05?",
+      "options": [
+        "147.5°",
+        "73.75°",
+        "221.25°",
+        "210°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hour hand = 242.5°, minute hand = 30°. Difference = 212.5°, so the smaller angle = 147.5°.",
+      "shortcut": "Hour hand moves 0.5° per minute, minute hand 6° per minute.",
+      "subPattern": "clock-angle",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "After 11 o'clock, at what time (in minutes past 11) do the hands of a clock first make a right angle?",
+      "options": [
+        "9 10/11 minutes",
+        "10 9/11 minutes",
+        "10 10/11 minutes",
+        "49 1/11 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The minute hand must be 90° from the hour hand. Solving 5.5m - 330 = ±90 for the first valid m in [0, 60) gives 10 10/11 minutes past 11.",
+      "shortcut": "Set |5.5m - 30h| = 90 and take the first solution.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 21 June 2010 was a Monday, what day of the week will it be after 342 days?",
+      "options": [
+        "Sunday",
+        "Thursday",
+        "Monday",
+        "Saturday"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "342 = 7 x 48 + 6, so the day moves forward by 6 from Monday, landing on Sunday.",
+      "shortcut": "Divide the days by 7; only the remainder shifts the weekday.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 2:45?",
+      "options": [
+        "9:20",
+        "10:20",
+        "8:15",
+        "9:15"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Mirror image time = 11:60 - 2:45 = 9:15.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "After 6 o'clock, at what time (in minutes past 6) do the hands of a clock first make a right angle?",
+      "options": [
+        "16 6/11 minutes",
+        "16 5/11 minutes",
+        "16 7/11 minutes",
+        "16 4/11 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The minute hand must be 90° from the hour hand. Solving 5.5m - 180 = ±90 for the first valid m in [0, 60) gives 16 4/11 minutes past 6.",
+      "shortcut": "Set |5.5m - 30h| = 90 and take the first solution.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 10:30?",
+      "options": [
+        "90°",
+        "300°",
+        "162°",
+        "135°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Hour hand = 30 x 10 + 0.5 x 30 = 315°. Minute hand = 6 x 30 = 180°. Angle = 135° (smaller one).",
+      "shortcut": "Angle = |30h - 5.5m|; take the smaller angle.",
+      "subPattern": "clock-angle",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 9:05?",
+      "options": [
+        "3:00",
+        "1:45",
+        "4:55",
+        "2:55"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Mirror image time = 11:60 - 9:05 = 2:55.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what time between 6 o'clock and 7 o'clock do the two hands of a clock coincide? (give minutes past 6)",
+      "options": [
+        "32 9/11 minutes",
+        "32 10/11 minutes",
+        "32 8/11 minutes",
+        "31 8/11 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hands coincide when the minute hand gains 180° on the hour hand at 5.5° per minute: 180/5.5 = 32 8/11 minutes past 6.",
+      "shortcut": "Coincidence: m = 60h/11 minutes past h.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 2028 that will have exactly the same calendar as 2028?",
+      "options": [
+        "2056",
+        "2032",
+        "2034",
+        "2037"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "2028 is a leap year. The next year with the same leap status whose 1 January falls on the same weekday (Saturday) is 2056, i.e. 28 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What day of the week was 20 May 2027?",
+      "options": [
+        "Thursday",
+        "Saturday",
+        "Tuesday",
+        "Monday"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Counting odd days from a known reference date, 20 May 2027 falls on Thursday.",
+      "shortcut": "Count odd days (days mod 7) from a known date.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what time between 10 o'clock and 11 o'clock are the hands of a clock exactly opposite each other (in a straight line)? (give minutes past 10)",
+      "options": [
+        "22 1/11 minutes",
+        "21 6/11 minutes",
+        "21 9/11 minutes",
+        "21 10/11 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Solve |5.5m - 300| = 180: m = 21 9/11 minutes past 10.",
+      "shortcut": "Opposite hands: 5.5m = 30h ± 180.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 2021 that will have exactly the same calendar as 2021?",
+      "options": [
+        "2028",
+        "2026",
+        "2032",
+        "2027"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "2021 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Friday) is 2027, i.e. 6 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many days are there from 11 October 1985 to 15 March 2011 (not counting the first day)?",
+      "options": [
+        "8921",
+        "13929",
+        "9651",
+        "9286"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The period spans 26 year boundaries including leap days; the exact count is 9286 days.",
+      "shortcut": "Count the years in 365-day blocks, add leap days, then adjust for the months.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 6:20?",
+      "options": [
+        "60°",
+        "70°",
+        "84°",
+        "105°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hour hand = 190°, minute hand = 120°. Difference = 70°, so the smaller angle = 70°.",
+      "shortcut": "Hour hand moves 0.5° per minute, minute hand 6° per minute.",
+      "subPattern": "clock-angle",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock gains 2 minutes every hour. After how many hours will it have gained exactly 1 hour (60 minutes)?",
+      "options": [
+        "2 hours",
+        "15 hours",
+        "30 hours",
+        "45 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gain per hour = 2 minutes. Time to gain 60 minutes = 60/2 = 30 hours.",
+      "shortcut": "Hours = total gain needed / gain per hour.",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 6 ordinary (non-leap) years?",
+      "options": [
+        "1",
+        "5",
+        "4",
+        "6"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Each ordinary year has 365 = 52 weeks + 1 odd day, so 6 years give 6 odd days, i.e. 6 after removing complete weeks.",
+      "shortcut": "An ordinary year has 1 odd day; a leap year has 2.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hands of a clock at 5:28?",
+      "options": [
+        "6°",
+        "18°",
+        "4°",
+        "9°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hour hand = 30 x 5 + 0.5 x 28 = 164°. Minute hand = 6 x 28 = 168°. Difference = 4°; the smaller angle is 4°.",
+      "shortcut": "Use |30h - 5.5m| and take the smaller angle.",
+      "subPattern": "clock-angle",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 10 ordinary (non-leap) years?",
+      "options": [
+        "5",
+        "3",
+        "1",
+        "2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each ordinary year has 365 = 52 weeks + 1 odd day, so 10 years give 10 odd days, i.e. 3 after removing complete weeks.",
+      "shortcut": "An ordinary year has 1 odd day; a leap year has 2.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 300 years?",
+      "options": [
+        "6",
+        "4",
+        "3",
+        "1"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "300 years contain 72 leap years (Gregorian rule) and 228 ordinary years. Odd days = (228 x 1 + 72 x 2) mod 7 = 1.",
+      "shortcut": "Leap years: every 4th year except centuries not divisible by 400.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "After 8 o'clock, at what time (in minutes past 8) do the hands of a clock first make a right angle?",
+      "options": [
+        "27 5/11 minutes",
+        "32 8/11 minutes",
+        "27 minutes",
+        "27 3/11 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The minute hand must be 90° from the hour hand. Solving 5.5m - 240 = ±90 for the first valid m in [0, 60) gives 27 3/11 minutes past 8.",
+      "shortcut": "Set |5.5m - 30h| = 90 and take the first solution.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there from 5 August 2017 to 4 August 2021 (counting the days from the first date up to the second)?",
+      "options": [
+        "5",
+        "6",
+        "0",
+        "4"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The number of days from 5 August 2017 to 4 August 2021 is 1460. 1460 mod 7 = 4 odd days.",
+      "shortcut": "Odd days = (number of days) mod 7.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 8:15?",
+      "options": [
+        "3:45",
+        "4:50",
+        "3:40",
+        "3:55"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Mirror image time = 11:60 - 8:15 = 3:45.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 8:05?",
+      "options": [
+        "4:10",
+        "5:00",
+        "3:55",
+        "4:55"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Mirror image time = 11:60 - 8:05 = 3:55.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what time between 9 o'clock and 10 o'clock do the two hands of a clock coincide? (give minutes past 9)",
+      "options": [
+        "48 1/11 minutes",
+        "49 1/11 minutes",
+        "50 1/11 minutes",
+        "48 9/11 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hands coincide when the minute hand gains 270° on the hour hand at 5.5° per minute: 270/5.5 = 49 1/11 minutes past 9.",
+      "shortcut": "Coincidence: m = 60h/11 minutes past h.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock loses 6 minutes every hour. It is set right at 10:00 AM. What time will it show when the real time is 8:00 PM?",
+      "options": [
+        "7:00",
+        "6:00",
+        "7:10",
+        "6:55"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 10 hours the clock loses 6 x 10 = 60 minutes, so it shows 7:00.",
+      "shortcut": "Shown time = real time - (loss per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 1928 that will have exactly the same calendar as 1928?",
+      "options": [
+        "1932",
+        "1956",
+        "1939",
+        "1935"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "1928 is a leap year. The next year with the same leap status whose 1 January falls on the same weekday (Sunday) is 1956, i.e. 28 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many days are there from 12 December 1984 to 6 March 2005 (not counting the first day)?",
+      "options": [
+        "7024",
+        "7754",
+        "14778",
+        "7389"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The period spans 21 year boundaries including leap days; the exact count is 7389 days.",
+      "shortcut": "Count the years in 365-day blocks, add leap days, then adjust for the months.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 15 October 1979 was a Monday, what day of the week was 18 April 1958?",
+      "options": [
+        "Sunday",
+        "Tuesday",
+        "Monday",
+        "Friday"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The two dates are 7850 days apart. 7850 mod 7 = 3, so the day is Friday.",
+      "shortcut": "Find the number of days between the dates modulo 7.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a mirror, a clock appears to show 5:20. What is the actual time?",
+      "options": [
+        "7:45",
+        "6:40",
+        "6:45",
+        "6:50"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Actual time = 11:60 - 5:20 = 6:40.",
+      "shortcut": "The same formula works both ways: 11:60 minus the shown time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 800 years?",
+      "options": [
+        "5",
+        "0",
+        "1",
+        "3"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "800 years contain 194 leap years (Gregorian rule) and 606 ordinary years. Odd days = (606 x 1 + 194 x 2) mod 7 = 0.",
+      "shortcut": "Leap years: every 4th year except centuries not divisible by 400.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 1998 that will have exactly the same calendar as 1998?",
+      "options": [
+        "2002",
+        "2003",
+        "2009",
+        "2007"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "1998 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Thursday) is 2009, i.e. 11 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 14 November 2022 was a Monday, what day of the week will it be after 57 days?",
+      "options": [
+        "Wednesday",
+        "Friday",
+        "Thursday",
+        "Tuesday"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "57 = 7 x 8 + 1, so the day moves forward by 1 from Monday, landing on Tuesday.",
+      "shortcut": "Divide the days by 7; only the remainder shifts the weekday.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock gains 10 minutes every hour. After how many hours will it have gained exactly 1 hour (60 minutes)?",
+      "options": [
+        "10 hours",
+        "4 hours",
+        "12 hours",
+        "6 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Gain per hour = 10 minutes. Time to gain 60 minutes = 60/10 = 6 hours.",
+      "shortcut": "Hours = total gain needed / gain per hour.",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What day of the week was 5 November 2000?",
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Wednesday",
+        "Friday"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Counting odd days from a known reference date, 5 November 2000 falls on Sunday.",
+      "shortcut": "Count odd days (days mod 7) from a known date.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 2:35?",
+      "options": [
+        "132.5°",
+        "159°",
+        "150°",
+        "198.75°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hour hand = 77.5°, minute hand = 210°. Difference = 132.5°, so the smaller angle = 132.5°.",
+      "shortcut": "Hour hand moves 0.5° per minute, minute hand 6° per minute.",
+      "subPattern": "clock-angle",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 4:50?",
+      "options": [
+        "7:10",
+        "7:20",
+        "8:10",
+        "7:25"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Mirror image time = 11:60 - 4:50 = 7:10.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hands of a clock at 4:52?",
+      "options": [
+        "166°",
+        "332°",
+        "249°",
+        "192°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hour hand = 30 x 4 + 0.5 x 52 = 146°. Minute hand = 6 x 52 = 312°. Difference = 166°; the smaller angle is 166°.",
+      "shortcut": "Use |30h - 5.5m| and take the smaller angle.",
+      "subPattern": "clock-angle",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 200 years?",
+      "options": [
+        "0",
+        "3",
+        "2",
+        "1"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "200 years contain 48 leap years (Gregorian rule) and 152 ordinary years. Odd days = (152 x 1 + 48 x 2) mod 7 = 3.",
+      "shortcut": "Leap years: every 4th year except centuries not divisible by 400.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many days are there from 26 July 1944 to 25 March 2022 (not counting the first day)?",
+      "options": [
+        "28731",
+        "28366",
+        "28001",
+        "14183"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The period spans 78 year boundaries including leap days; the exact count is 28366 days.",
+      "shortcut": "Count the years in 365-day blocks, add leap days, then adjust for the months.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the leap year 2020, how many days are there from 11 January 2020 to 2 April 2020, counting both days?",
+      "options": [
+        "83",
+        "82",
+        "166",
+        "84"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Counting both end dates in the leap year (February has 29 days) gives 83 days.",
+      "shortcut": "In a leap year February contributes 29 days.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a mirror, a clock appears to show 8:11. What is the actual time?",
+      "options": [
+        "2:39",
+        "4:49",
+        "3:54",
+        "3:49"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Actual time = 11:60 - 8:11 = 3:49.",
+      "shortcut": "The same formula works both ways: 11:60 minus the shown time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 8 June 2007 was a Friday, what day of the week will it be after 397 days?",
+      "options": [
+        "Tuesday",
+        "Monday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "397 = 7 x 56 + 5, so the day moves forward by 5 from Friday, landing on Wednesday.",
+      "shortcut": "Divide the days by 7; only the remainder shifts the weekday.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 2010 that will have exactly the same calendar as 2010?",
+      "options": [
+        "2017",
+        "2021",
+        "2019",
+        "2015"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "2010 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Friday) is 2021, i.e. 11 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a mirror, a clock appears to show 10:19. What is the actual time?",
+      "options": [
+        "2:46",
+        "1:41",
+        "1:51",
+        "1:46"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Actual time = 11:60 - 10:19 = 1:41.",
+      "shortcut": "The same formula works both ways: 11:60 minus the shown time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 2020 that will have exactly the same calendar as 2020?",
+      "options": [
+        "2026",
+        "2027",
+        "2024",
+        "2048"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "2020 is a leap year. The next year with the same leap status whose 1 January falls on the same weekday (Wednesday) is 2048, i.e. 28 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many days are there from 5 August 2008 to 5 November 2008 (not counting the first day)?",
+      "options": [
+        "91",
+        "92",
+        "93",
+        "184"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Counting the days month by month from 5 August 2008 to 5 November 2008 gives 92 days.",
+      "shortcut": "Add the remaining days of the first month, full months, and the days of the last month.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 26 April 2010 was a Monday, what day of the week was 21 July 2029?",
+      "options": [
+        "Saturday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The two dates are 7026 days apart. 7026 mod 7 = 5, so the day is Saturday.",
+      "shortcut": "Find the number of days between the dates modulo 7.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 2022 that will have exactly the same calendar as 2022?",
+      "options": [
+        "2026",
+        "2029",
+        "2033",
+        "2028"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "2022 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Saturday) is 2033, i.e. 11 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock gains 10 minutes every hour. It is set right at 8:00 AM. What time will it show when the real time is 10:00 AM?",
+      "options": [
+        "10:20",
+        "9:10",
+        "11:20",
+        "10:35"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 2 hours the clock gains 10 x 2 = 20 minutes, so it shows 20 min extra: 10:20.",
+      "shortcut": "Shown time = real time + (gain per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the leap year 2000, how many days are there from 8 January 2000 to 27 April 2000, counting both days?",
+      "options": [
+        "111",
+        "110",
+        "74",
+        "112"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Counting both end dates in the leap year (February has 29 days) gives 111 days.",
+      "shortcut": "In a leap year February contributes 29 days.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 9:25?",
+      "options": [
+        "265°",
+        "119.25°",
+        "120°",
+        "132.5°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Hour hand = 282.5°, minute hand = 150°. Difference = 132.5°, so the smaller angle = 132.5°.",
+      "shortcut": "Hour hand moves 0.5° per minute, minute hand 6° per minute.",
+      "subPattern": "clock-angle",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 1000 years?",
+      "options": [
+        "4",
+        "2",
+        "6",
+        "3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "1000 years contain 242 leap years (Gregorian rule) and 758 ordinary years. Odd days = (758 x 1 + 242 x 2) mod 7 = 3.",
+      "shortcut": "Leap years: every 4th year except centuries not divisible by 400.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what time between 7 o'clock and 8 o'clock do the two hands of a clock coincide? (give minutes past 7)",
+      "options": [
+        "38 4/11 minutes",
+        "39 2/11 minutes",
+        "38 2/11 minutes",
+        "21 9/11 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hands coincide when the minute hand gains 210° on the hour hand at 5.5° per minute: 210/5.5 = 38 2/11 minutes past 7.",
+      "shortcut": "Coincidence: m = 60h/11 minutes past h.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 11 April 2004 was a Sunday, what day of the week will it be after 422 days?",
+      "options": [
+        "Thursday",
+        "Wednesday",
+        "Saturday",
+        "Tuesday"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "422 = 7 x 60 + 2, so the day moves forward by 2 from Sunday, landing on Tuesday.",
+      "shortcut": "Divide the days by 7; only the remainder shifts the weekday.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 2002 that will have exactly the same calendar as 2002?",
+      "options": [
+        "2009",
+        "2008",
+        "2013",
+        "2006"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "2002 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Tuesday) is 2013, i.e. 11 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 1200 years?",
+      "options": [
+        "6",
+        "0",
+        "5",
+        "4"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "1200 years contain 291 leap years (Gregorian rule) and 909 ordinary years. Odd days = (909 x 1 + 291 x 2) mod 7 = 0.",
+      "shortcut": "Leap years: every 4th year except centuries not divisible by 400.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 12 ordinary (non-leap) years?",
+      "options": [
+        "5",
+        "4",
+        "1",
+        "2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Each ordinary year has 365 = 52 weeks + 1 odd day, so 12 years give 12 odd days, i.e. 5 after removing complete weeks.",
+      "shortcut": "An ordinary year has 1 odd day; a leap year has 2.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 1999 that will have exactly the same calendar as 1999?",
+      "options": [
+        "2008",
+        "2006",
+        "2005",
+        "2010"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "1999 is an ordinary year. The next year with the same leap status whose 1 January falls on the same weekday (Friday) is 2010, i.e. 11 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 14 July 2001 was a Saturday, what day of the week will it be after 44 days?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Saturday",
+        "Tuesday"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "44 = 7 x 6 + 2, so the day moves forward by 2 from Saturday, landing on Monday.",
+      "shortcut": "Divide the days by 7; only the remainder shifts the weekday.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many days are there from 23 April 2024 to 1 August 2024 (not counting the first day)?",
+      "options": [
+        "100",
+        "101",
+        "200",
+        "99"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Counting the days month by month from 23 April 2024 to 1 August 2024 gives 100 days.",
+      "shortcut": "Add the remaining days of the first month, full months, and the days of the last month.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what time between 4 o'clock and 5 o'clock are the hands of a clock exactly opposite each other (in a straight line)? (give minutes past 4)",
+      "options": [
+        "54 7/11 minutes",
+        "53 6/11 minutes",
+        "54 4/11 minutes",
+        "54 6/11 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Solve |5.5m - 120| = 180: m = 54 6/11 minutes past 4.",
+      "shortcut": "Opposite hands: 5.5m = 30h ± 180.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock loses 2 minutes every hour. It is set right at 6:00 AM. What time will it show when the real time is 12:00 PM?",
+      "options": [
+        "12:48",
+        "11:53",
+        "11:48",
+        "1:48"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 6 hours the clock loses 2 x 6 = 12 minutes, so it shows 11:48.",
+      "shortcut": "Shown time = real time - (loss per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 7:00?",
+      "options": [
+        "210°",
+        "300°",
+        "180°",
+        "150°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Hour hand = 30 x 7 + 0.5 x 0 = 210°. Minute hand = 6 x 0 = 0°. Angle = 150° (smaller one).",
+      "shortcut": "Angle = |30h - 5.5m|; take the smaller angle.",
+      "subPattern": "clock-angle",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the leap year 2020, how many days are there from 20 January 2020 to 22 April 2020, counting both days?",
+      "options": [
+        "188",
+        "93",
+        "94",
+        "95"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Counting both end dates in the leap year (February has 29 days) gives 94 days.",
+      "shortcut": "In a leap year February contributes 29 days.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 26 February 2009 was a Thursday, what day of the week will it be after 348 days?",
+      "options": [
+        "Sunday",
+        "Thursday",
+        "Tuesday",
+        "Saturday"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "348 = 7 x 49 + 5, so the day moves forward by 5 from Thursday, landing on Tuesday.",
+      "shortcut": "Divide the days by 7; only the remainder shifts the weekday.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What day of the week was 8 April 2008?",
+      "options": [
+        "Tuesday",
+        "Friday",
+        "Wednesday",
+        "Saturday"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Counting odd days from a known reference date, 8 April 2008 falls on Tuesday.",
+      "shortcut": "Count odd days (days mod 7) from a known date.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 3:05?",
+      "options": [
+        "8:50",
+        "8:55",
+        "7:45",
+        "9:00"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mirror image time = 11:60 - 3:05 = 8:55.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "After 7 o'clock, at what time (in minutes past 7) do the hands of a clock first make a right angle?",
+      "options": [
+        "22 1/11 minutes",
+        "21 9/11 minutes",
+        "20 9/11 minutes",
+        "21 8/11 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The minute hand must be 90° from the hour hand. Solving 5.5m - 210 = ±90 for the first valid m in [0, 60) gives 21 9/11 minutes past 7.",
+      "shortcut": "Set |5.5m - 30h| = 90 and take the first solution.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the leap year 2012, how many days are there from 8 February 2012 to 7 April 2012, counting both days?",
+      "options": [
+        "59",
+        "40",
+        "60",
+        "61"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Counting both end dates in the leap year (February has 29 days) gives 60 days.",
+      "shortcut": "In a leap year February contributes 29 days.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock loses 2 minutes every hour. It is set right at 9:00 AM. What time will it show when the real time is 1:00 PM?",
+      "options": [
+        "12:52",
+        "2:52",
+        "1:52",
+        "1:57"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 4 hours the clock loses 2 x 4 = 8 minutes, so it shows 12:52.",
+      "shortcut": "Shown time = real time - (loss per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What day of the week was 4 November 1965?",
+      "options": [
+        "Sunday",
+        "Saturday",
+        "Thursday",
+        "Tuesday"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Counting odd days from a known reference date, 4 November 1965 falls on Thursday.",
+      "shortcut": "Count odd days (days mod 7) from a known date.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 11:45?",
+      "options": [
+        "11:15",
+        "12:15",
+        "2:15",
+        "12:20"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mirror image time = 11:60 - 11:45 = 12:15.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock loses 6 minutes every hour. It is set right at 9:00 AM. What time will it show when the real time is 3:00 PM?",
+      "options": [
+        "2:39",
+        "1:14",
+        "2:24",
+        "3:24"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 6 hours the clock loses 6 x 6 = 36 minutes, so it shows 2:24.",
+      "shortcut": "Shown time = real time - (loss per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "After 1 o'clock, at what time (in minutes past 1) do the hands of a clock first make a right angle?",
+      "options": [
+        "21 9/11 minutes",
+        "20 9/11 minutes",
+        "22 minutes",
+        "21 7/11 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The minute hand must be 90° from the hour hand. Solving 5.5m - 30 = ±90 for the first valid m in [0, 60) gives 21 9/11 minutes past 1.",
+      "shortcut": "Set |5.5m - 30h| = 90 and take the first solution.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there in 500 years?",
+      "options": [
+        "5",
+        "6",
+        "0",
+        "3"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "500 years contain 121 leap years (Gregorian rule) and 379 ordinary years. Odd days = (379 x 1 + 121 x 2) mod 7 = 5.",
+      "shortcut": "Leap years: every 4th year except centuries not divisible by 400.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the angle between the hour hand and the minute hand of a clock at 4:30?",
+      "options": [
+        "120°",
+        "45°",
+        "47°",
+        "30°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hour hand = 30 x 4 + 0.5 x 30 = 135°. Minute hand = 6 x 30 = 180°. Angle = 45° (smaller one).",
+      "shortcut": "Angle = |30h - 5.5m|; take the smaller angle.",
+      "subPattern": "clock-angle",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd days are there from 20 June 1993 to 13 March 1996 (counting the days from the first date up to the second)?",
+      "options": [
+        "0",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The number of days from 20 June 1993 to 13 March 1996 is 997. 997 mod 7 = 3 odd days.",
+      "shortcut": "Odd days = (number of days) mod 7.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the time shown in the mirror image of a clock that shows 6:00?",
+      "options": [
+        "5:55",
+        "7:00",
+        "6:00",
+        "5:00"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Mirror image time = 11:60 - 6:00 = 6:00.",
+      "shortcut": "Mirror image = 11:60 minus the real time.",
+      "subPattern": "mirror-reflection-of-clocks",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock gains 6 minutes every hour. It is set right at 6:00 AM. What time will it show when the real time is 9:00 AM?",
+      "options": [
+        "9:18",
+        "10:23",
+        "11:18",
+        "9:13"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 3 hours the clock gains 6 x 3 = 18 minutes, so it shows 18 min extra: 9:18.",
+      "shortcut": "Shown time = real time + (gain per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock loses 4 minutes every hour. It is set right at 6:00 AM. What time will it show when the real time is 12:00 PM?",
+      "options": [
+        "11:31",
+        "11:36",
+        "10:36",
+        "10:26"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In 6 hours the clock loses 4 x 6 = 24 minutes, so it shows 11:36.",
+      "shortcut": "Shown time = real time - (loss per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock loses 12 minutes every hour. It is set right at 9:00 AM. What time will it show when the real time is 9:00 PM?",
+      "options": [
+        "6:46",
+        "6:36",
+        "6:41",
+        "5:36"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In 12 hours the clock loses 12 x 12 = 144 minutes, so it shows 6:36.",
+      "shortcut": "Shown time = real time - (loss per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what time between 3 o'clock and 4 o'clock do the two hands of a clock coincide? (give minutes past 3)",
+      "options": [
+        "43 7/11 minutes",
+        "16 5/11 minutes",
+        "15 4/11 minutes",
+        "16 4/11 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Hands coincide when the minute hand gains 90° on the hour hand at 5.5° per minute: 90/5.5 = 16 4/11 minutes past 3.",
+      "shortcut": "Coincidence: m = 60h/11 minutes past h.",
+      "subPattern": "overlap-right-angle-positions",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A clock gains 5 minutes every hour. It is set right at 6:00 AM. What time will it show when the real time is 12:00 PM?",
+      "options": [
+        "12:30",
+        "1:30",
+        "12:40",
+        "12:45"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 6 hours the clock gains 5 x 6 = 30 minutes, so it shows 30 min extra: 12:30.",
+      "shortcut": "Shown time = real time + (gain per hour x hours).",
+      "subPattern": "gaining-losing-clocks",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which is the next year after 1980 that will have exactly the same calendar as 1980?",
+      "options": [
+        "2008",
+        "1992",
+        "1989",
+        "1986"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1980 is a leap year. The next year with the same leap status whose 1 January falls on the same weekday (Tuesday) is 2008, i.e. 28 years later.",
+      "shortcut": "Same calendar needs the same leap status and the same weekday for 1 January.",
+      "subPattern": "leap-years-repeating-calendars",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the leap year 2000, how many days are there from 27 February 2000 to 17 June 2000, counting both days?",
+      "options": [
+        "113",
+        "56",
+        "112",
+        "111"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Counting both end dates in the leap year (February has 29 days) gives 112 days.",
+      "shortcut": "In a leap year February contributes 29 days.",
+      "subPattern": "odd-days-day-of-week",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}

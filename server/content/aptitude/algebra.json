@@ -1,0 +1,2718 @@
+{
+ "pattern": {
+  "title": "Algebra",
+  "slug": "algebra",
+  "description": "Equations, progressions, logs and inequalities.",
+  "order": 23,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "linear-equations",
+    "title": "Linear equations"
+   },
+   {
+    "slug": "quadratic-equations",
+    "title": "Quadratic equations"
+   },
+   {
+    "slug": "simultaneous-equations",
+    "title": "Simultaneous equations"
+   },
+   {
+    "slug": "inequalities",
+    "title": "Inequalities"
+   },
+   {
+    "slug": "arithmetic-geometric-progressions",
+    "title": "Arithmetic & geometric progressions"
+   },
+   {
+    "slug": "logarithms",
+    "title": "Logarithms"
+   },
+   {
+    "slug": "functions-polynomials",
+    "title": "Functions & polynomials"
+   },
+   {
+    "slug": "modulus",
+    "title": "Modulus"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Solve for x: 9x + 9 = 36",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "-3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "9x + 9 = 36, so 9x = 36 - (9) = 27, giving x = 27/9 = 3.",
+   "order": 1,
+   "subPattern": "linear-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Move the constant to the right, then divide by the coefficient of x."
+  },
+  {
+   "questionText": "The sum of two numbers is 112 and their difference is 38. Find the smaller number.",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "75"
+    },
+    {
+     "text": "55"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Smaller = (sum - difference)/2 = (112 - 38)/2 = 37.",
+   "order": 2,
+   "subPattern": "linear-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Smaller = (sum - difference)/2."
+  },
+  {
+   "questionText": "Solve for x: 2x + 29 = 33",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2x + 29 = 33, so 2x = 33 - (29) = 4, giving x = 4/2 = 2.",
+   "order": 3,
+   "subPattern": "linear-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Move the constant to the right, then divide by the coefficient of x."
+  },
+  {
+   "questionText": "Solve for x: 4x + 5 = 65",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "-15"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "15"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "4x + 5 = 65, so 4x = 65 - (5) = 60, giving x = 60/4 = 15.",
+   "order": 4,
+   "subPattern": "linear-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Move the constant to the right, then divide by the coefficient of x."
+  },
+  {
+   "questionText": "The sum of two numbers is 116 and their difference is 60. Find the larger number.",
+   "options": [
+    {
+     "text": "88"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "-88"
+    },
+    {
+     "text": "91"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Larger = (sum + difference)/2 = (116 + 60)/2 = 88.",
+   "order": 5,
+   "subPattern": "linear-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Larger = (sum + difference)/2; smaller = (sum - difference)/2."
+  },
+  {
+   "questionText": "Solve for x: 3x - 6 = 27",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "3x - 6 = 27, so 3x = 27 - (-6) = 33, giving x = 33/3 = 11.",
+   "order": 6,
+   "subPattern": "linear-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Move the constant to the right, then divide by the coefficient of x."
+  },
+  {
+   "questionText": "The sum of two numbers is 126 and their difference is 54. Find the larger number.",
+   "options": [
+    {
+     "text": "95"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "93"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Larger = (sum + difference)/2 = (126 + 54)/2 = 90.",
+   "order": 7,
+   "subPattern": "linear-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Larger = (sum + difference)/2; smaller = (sum - difference)/2."
+  },
+  {
+   "questionText": "Solve for x: 2(x + 6) = 32",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Divide by 2: x + 6 = 16, so x = 10.",
+   "order": 8,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Divide both sides by the outside multiplier first."
+  },
+  {
+   "questionText": "The sum of three consecutive even numbers is 24. Find the smallest.",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The middle number is 8; the smallest is 6.",
+   "order": 9,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide by 3 to get the middle even number."
+  },
+  {
+   "questionText": "Solve for x: x/3 + x/5 = 32",
+   "options": [
+    {
+     "text": "256"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "61"
+    },
+    {
+     "text": "60"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "x(1/3 + 1/5) = 32, i.e. x x 8/15 = 32, so x = 60.",
+   "order": 10,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Combine the fractions: 1/3 + 1/5 = 8/15."
+  },
+  {
+   "questionText": "Solve for x: x/3 + x/4 = 7",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "49"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x(1/3 + 1/4) = 7, i.e. x x 7/12 = 7, so x = 12.",
+   "order": 11,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Combine the fractions: 1/3 + 1/4 = 7/12."
+  },
+  {
+   "questionText": "Solve for x: 2(x + 2) = 34",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "32"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Divide by 2: x + 2 = 17, so x = 15.",
+   "order": 12,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Divide both sides by the outside multiplier first."
+  },
+  {
+   "questionText": "One-third of a number exceeds one-fourth of it by 48. Find the number.",
+   "options": [
+    {
+     "text": "288"
+    },
+    {
+     "text": "579"
+    },
+    {
+     "text": "336"
+    },
+    {
+     "text": "576"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "x/3 - x/4 = x/12 = 48, so x = 576.",
+   "order": 13,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "1/3 - 1/4 = 1/12 of the number."
+  },
+  {
+   "questionText": "One-third of a number exceeds one-fourth of it by 53. Find the number.",
+   "options": [
+    {
+     "text": "371"
+    },
+    {
+     "text": "636"
+    },
+    {
+     "text": "318"
+    },
+    {
+     "text": "631"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x/3 - x/4 = x/12 = 53, so x = 636.",
+   "order": 14,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "1/3 - 1/4 = 1/12 of the number."
+  },
+  {
+   "questionText": "One-third of a number exceeds one-fourth of it by 32. Find the number.",
+   "options": [
+    {
+     "text": "224"
+    },
+    {
+     "text": "379"
+    },
+    {
+     "text": "384"
+    },
+    {
+     "text": "192"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x/3 - x/4 = x/12 = 32, so x = 384.",
+   "order": 15,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "1/3 - 1/4 = 1/12 of the number."
+  },
+  {
+   "questionText": "One-third of a number exceeds one-fourth of it by 13. Find the number.",
+   "options": [
+    {
+     "text": "156"
+    },
+    {
+     "text": "153"
+    },
+    {
+     "text": "91"
+    },
+    {
+     "text": "78"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "x/3 - x/4 = x/12 = 13, so x = 156.",
+   "order": 16,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "1/3 - 1/4 = 1/12 of the number."
+  },
+  {
+   "questionText": "One-third of a number exceeds one-fourth of it by 46. Find the number.",
+   "options": [
+    {
+     "text": "552"
+    },
+    {
+     "text": "555"
+    },
+    {
+     "text": "276"
+    },
+    {
+     "text": "322"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "x/3 - x/4 = x/12 = 46, so x = 552.",
+   "order": 17,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "1/3 - 1/4 = 1/12 of the number."
+  },
+  {
+   "questionText": "One-third of a number exceeds one-fourth of it by 37. Find the number.",
+   "options": [
+    {
+     "text": "441"
+    },
+    {
+     "text": "444"
+    },
+    {
+     "text": "259"
+    },
+    {
+     "text": "222"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x/3 - x/4 = x/12 = 37, so x = 444.",
+   "order": 18,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "1/3 - 1/4 = 1/12 of the number."
+  },
+  {
+   "questionText": "Solve for x: x/3 + x/5 = 24",
+   "options": [
+    {
+     "text": "192"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x(1/3 + 1/5) = 24, i.e. x x 8/15 = 24, so x = 45.",
+   "order": 19,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Combine the fractions: 1/3 + 1/5 = 8/15."
+  },
+  {
+   "questionText": "Solve for x: 2(x + 4) = 12",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "-2"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Divide by 2: x + 4 = 6, so x = 2.",
+   "order": 20,
+   "subPattern": "linear-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Divide both sides by the outside multiplier first."
+  },
+  {
+   "questionText": "In a two-digit number the tens digit is twice the units digit. The number exceeds the number obtained on reversing its digits by 36. Find the number.",
+   "options": [
+    {
+     "text": "81"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "84"
+    },
+    {
+     "text": "86"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let units = u, tens = 2u. Number - reversed = 9(2u - u) = 9u = 36, so u = 4. Number = 84.",
+   "order": 21,
+   "subPattern": "linear-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "A two-digit number minus its reverse = 9 x (tens - units)."
+  },
+  {
+   "questionText": "A number when increased by 40% of itself becomes 98. Find the number.",
+   "options": [
+    {
+     "text": "71"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "70"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Number x (1 + 40/100) = 98, so x = 98 x 100/140 = 70.",
+   "order": 22,
+   "subPattern": "linear-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "New value = number x (100 + p)/100."
+  },
+  {
+   "questionText": "Solve for x: (x + 7) / (2x + 46) = 1/4",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cross-multiply: 4(x + 7) = 1(2x + 46), i.e. 4x + 28 = 2x + 46. So 2x = 18 and x = 9.",
+   "order": 23,
+   "subPattern": "linear-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Cross-multiply, then collect like terms."
+  },
+  {
+   "questionText": "Solve for x: x/4 + x/3 - x/5 = 23",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "92"
+    },
+    {
+     "text": "61"
+    },
+    {
+     "text": "63"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "x(1/4 + 1/3 - 1/5) = x x 23/60 = 23, so x = 60.",
+   "order": 24,
+   "subPattern": "linear-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the LCM of the denominators and combine."
+  },
+  {
+   "questionText": "Find the larger root of x^2 - 1 = 0",
+   "options": [
+    {
+     "text": "-2"
+    },
+    {
+     "text": "-1"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Factorise: (x - (-1))(x - 1) = 0, so the roots are -1 and 1. Larger root = 1.",
+   "order": 25,
+   "subPattern": "quadratic-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find two numbers with sum = -(coefficient of x) and product = constant."
+  },
+  {
+   "questionText": "What is the sum of the roots of x^2 + 5x - 36 = 0",
+   "options": [
+    {
+     "text": "-5"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "-8"
+    },
+    {
+     "text": "-36"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of roots = -(coefficient of x)/(coefficient of x^2) = -5.",
+   "order": 26,
+   "subPattern": "quadratic-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sum of roots = -b/a."
+  },
+  {
+   "questionText": "Find the larger root of x^2 - 25 = 0",
+   "options": [
+    {
+     "text": "-5"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Factorise: (x - (-5))(x - 5) = 0, so the roots are -5 and 5. Larger root = 5.",
+   "order": 27,
+   "subPattern": "quadratic-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find two numbers with sum = -(coefficient of x) and product = constant."
+  },
+  {
+   "questionText": "Find the larger root of x^2 + 2x - 35 = 0",
+   "options": [
+    {
+     "text": "-7"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "-5"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Factorise: (x - 5)(x - (-7)) = 0, so the roots are -7 and 5. Larger root = 5.",
+   "order": 28,
+   "subPattern": "quadratic-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find two numbers with sum = -(coefficient of x) and product = constant."
+  },
+  {
+   "questionText": "If one root of x^2 + 7x + 12 = 0 is -3, what is the other root?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "-3"
+    },
+    {
+     "text": "-4"
+    },
+    {
+     "text": "-6"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of roots = -7, so the other root = -7 - (-3) = -4.",
+   "order": 29,
+   "subPattern": "quadratic-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Other root = sum - known root."
+  },
+  {
+   "questionText": "If one root of x^2 + 14x + 45 = 0 is -5, what is the other root?",
+   "options": [
+    {
+     "text": "-5"
+    },
+    {
+     "text": "-9"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "-7"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of roots = -14, so the other root = -14 - (-5) = -9.",
+   "order": 30,
+   "subPattern": "quadratic-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Other root = sum - known root."
+  },
+  {
+   "questionText": "What is the product of the roots of x^2 + 9x + 14 = 0",
+   "options": [
+    {
+     "text": "-9"
+    },
+    {
+     "text": "-14"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Product of roots = c/a = 14.",
+   "order": 31,
+   "subPattern": "quadratic-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Product of roots = c/a."
+  },
+  {
+   "questionText": "If one root of x^2 + 8x - 9 = 0 is 1, what is the other root?",
+   "options": [
+    {
+     "text": "-9"
+    },
+    {
+     "text": "-5"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of roots = -8, so the other root = -8 - (1) = -9.",
+   "order": 32,
+   "subPattern": "quadratic-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Other root = sum - known root."
+  },
+  {
+   "questionText": "What is the product of the roots of x^2 - 3x - 40 = 0",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "-42"
+    },
+    {
+     "text": "-40"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Product of roots = c/a = -40.",
+   "order": 33,
+   "subPattern": "quadratic-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Product of roots = c/a."
+  },
+  {
+   "questionText": "If one root of x^2 - 5x - 6 = 0 is -1, what is the other root?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "-1"
+    },
+    {
+     "text": "-6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of roots = 5, so the other root = 5 - (-1) = 6.",
+   "order": 34,
+   "subPattern": "quadratic-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Other root = sum - known root."
+  },
+  {
+   "questionText": "For what value of c does x^2 - 24x + c = 0 have equal roots?",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "144"
+    },
+    {
+     "text": "-144"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Equal roots need discriminant 0: (24)^2 - 4c = 0, so c = 144.",
+   "order": 35,
+   "subPattern": "quadratic-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Equal roots: b^2 = 4ac."
+  },
+  {
+   "questionText": "What is the discriminant of x^2 - x - 6 = 0",
+   "options": [
+    {
+     "text": "25"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "-23"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Discriminant = b^2 - 4ac = (-1)^2 - 4(1)(-6) = 25.",
+   "order": 36,
+   "subPattern": "quadratic-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Discriminant = b^2 - 4ac."
+  },
+  {
+   "questionText": "If a and b are the roots of x^2 - x - 12 = 0, find a^2 + b^2.",
+   "options": [
+    {
+     "text": "25"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "a^2 + b^2 = (a + b)^2 - 2ab = 1^2 - 2(-12) = 25.",
+   "order": 37,
+   "subPattern": "quadratic-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "a^2 + b^2 = (a + b)^2 - 2ab."
+  },
+  {
+   "questionText": "If 4x + 4y = 4 and 3x + 6y = 18, find x.",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "-9"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "-4"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Eliminate one variable: multiplying and subtracting gives x = -4, y = 5. Check in the first equation: 4(-4) + 4(5) = 4.",
+   "order": 38,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Make the coefficients of one variable equal, then subtract."
+  },
+  {
+   "questionText": "If 5x + 5y = 0 and 4x - 4y = 8, find x.",
+   "options": [
+    {
+     "text": "-1"
+    },
+    {
+     "text": "-2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Eliminate one variable: multiplying and subtracting gives x = 1, y = -1. Check in the first equation: 5(1) + 5(-1) = 0.",
+   "order": 39,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Make the coefficients of one variable equal, then subtract."
+  },
+  {
+   "questionText": "If 6x + 4y = 68 and 4x + 4y = 48, find y.",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Eliminate one variable: multiplying and subtracting gives x = 10, y = 2. Check in the first equation: 6(10) + 4(2) = 68.",
+   "order": 40,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Make the coefficients of one variable equal, then subtract."
+  },
+  {
+   "questionText": "If 2x + 2y = 26 and x - 4y = -2, find x.",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "-10"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Eliminate one variable: multiplying and subtracting gives x = 10, y = 3. Check in the first equation: 2(10) + 2(3) = 26.",
+   "order": 41,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Make the coefficients of one variable equal, then subtract."
+  },
+  {
+   "questionText": "If 6x + 2y = -4 and 6x + y = -11, find x + y.",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "-10"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Solving: x = -3, y = 7. Check: 6(-3) + (1)(7) = -11. So x + y = 4.",
+   "order": 42,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Solve for both variables, then add."
+  },
+  {
+   "questionText": "If 5x + 2y = 39 and 4x - 3y = 45, find x + y.",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Solving: x = 9, y = -3. Check: 4(9) + (-3)(-3) = 45. So x + y = 6.",
+   "order": 43,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Solve for both variables, then add."
+  },
+  {
+   "questionText": "If 5x + y = 36 and 3x + y = 22, find x + y.",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Solving: x = 7, y = 1. Check: 3(7) + (1)(1) = 22. So x + y = 8.",
+   "order": 44,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Solve for both variables, then add."
+  },
+  {
+   "questionText": "If 2x + 5y = 44 and x - 5y = -23, find x + y.",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "-13"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Solving: x = 7, y = 6. Check: 1(7) + (-5)(6) = -23. So x + y = 13.",
+   "order": 45,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Solve for both variables, then add."
+  },
+  {
+   "questionText": "If 5x + 2y = 40 and 2x + 3y = 5, find x + y.",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Solving: x = 10, y = -5. Check: 2(10) + (3)(-5) = 5. So x + y = 5.",
+   "order": 46,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Solve for both variables, then add."
+  },
+  {
+   "questionText": "If 3x + 2y = 6 and 4x + 4y = 4, find x + y.",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "-4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Solving: x = 4, y = -3. Check: 4(4) + (4)(-3) = 4. So x + y = 1.",
+   "order": 47,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Solve for both variables, then add."
+  },
+  {
+   "questionText": "If 5x + y = -11 and 6x - y = -33, find 3x - 2y.",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "-32"
+    },
+    {
+     "text": "-29"
+    },
+    {
+     "text": "-30"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Solving: x = -4, y = 9. Then 3(-4) - 2(9) = -30.",
+   "order": 48,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "First solve for x and y by elimination, then substitute."
+  },
+  {
+   "questionText": "If 4x + 3y = 22 and x + y = 6, find 2x - 2y.",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "-1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Solving: x = 4, y = 2. Then 2(4) - 2(2) = 4.",
+   "order": 49,
+   "subPattern": "simultaneous-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "First solve for x and y by elimination, then substitute."
+  },
+  {
+   "questionText": "Find the smallest integer x satisfying 2x + 1 > 40.",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2x > 39, so x > 39/2. The smallest integer is 20.",
+   "order": 50,
+   "subPattern": "inequalities",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Solve like an equation, then pick the next integer above the bound."
+  },
+  {
+   "questionText": "Find the smallest integer x satisfying 6x + 8 > 20.",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "6x > 12, so x > 2. The smallest integer is 3.",
+   "order": 51,
+   "subPattern": "inequalities",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Solve like an equation, then pick the next integer above the bound."
+  },
+  {
+   "questionText": "Find the largest integer x satisfying 2x + 8 < 23.",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "-7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2x < 15, so x < 15/2. The largest integer is 7.",
+   "order": 52,
+   "subPattern": "inequalities",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Solve like an equation, then pick the nearest integer below the bound."
+  },
+  {
+   "questionText": "Find the smallest integer x satisfying 6x + 1 > 13.",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "-3"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "6x > 12, so x > 2. The smallest integer is 3.",
+   "order": 53,
+   "subPattern": "inequalities",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Solve like an equation, then pick the next integer above the bound."
+  },
+  {
+   "questionText": "How many integers satisfy -5 <= x < 9?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Since x < 9 is strict, the largest integer allowed is 8. Counting from -5 to 8 gives 9-(-5) = 14 integers.",
+   "order": 54,
+   "subPattern": "inequalities",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Count = upper - lower when only one end is included."
+  },
+  {
+   "questionText": "How many integers satisfy -3 <= x < 8?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Since x < 8 is strict, the largest integer allowed is 7. Counting from -3 to 7 gives 8-(-3) = 11 integers.",
+   "order": 55,
+   "subPattern": "inequalities",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Count = upper - lower when only one end is included."
+  },
+  {
+   "questionText": "How many integers satisfy 0 <= x < 1?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Since x < 1 is strict, the largest integer allowed is 0. Counting from 0 to 0 gives 1-(0) = 1 integers.",
+   "order": 56,
+   "subPattern": "inequalities",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Count = upper - lower when only one end is included."
+  },
+  {
+   "questionText": "How many integers x satisfy (x - (-6))(x - 5) <= 0?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The product is non-positive for -6 <= x <= 5. That is 12 integers.",
+   "order": 57,
+   "subPattern": "inequalities",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Include the roots when the inequality is non-strict."
+  },
+  {
+   "questionText": "Find the 11th term of the AP 0, 3, 6, ...",
+   "options": [
+    {
+     "text": "-30"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "T_n = a + (n - 1)d = 0 + 10 x 3 = 30.",
+   "order": 58,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "T_n = a + (n - 1)d."
+  },
+  {
+   "questionText": "Find the 25th term of the AP 9, 18, 27, ...",
+   "options": [
+    {
+     "text": "225"
+    },
+    {
+     "text": "224"
+    },
+    {
+     "text": "234"
+    },
+    {
+     "text": "-225"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "T_n = a + (n - 1)d = 9 + 24 x 9 = 225.",
+   "order": 59,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "T_n = a + (n - 1)d."
+  },
+  {
+   "questionText": "Find the 8th term of the AP -1, 6, 13, ...",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "55"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "T_n = a + (n - 1)d = -1 + 7 x 7 = 48.",
+   "order": 60,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "T_n = a + (n - 1)d."
+  },
+  {
+   "questionText": "Find the sum of the first 29 terms of the AP 8, 14, 20, ...",
+   "options": [
+    {
+     "text": "2697"
+    },
+    {
+     "text": "2668"
+    },
+    {
+     "text": "2494"
+    },
+    {
+     "text": "2667"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "S_n = n/2 [2a + (n - 1)d] = 29/2 x [16 + 168] = 2668.",
+   "order": 61,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "S_n = n/2 [2a + (n - 1)d]."
+  },
+  {
+   "questionText": "Find the 5th term of the GP 6, 12, 24, ...",
+   "options": [
+    {
+     "text": "192"
+    },
+    {
+     "text": "99"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "48"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "T_n = a r^(n-1) = 6 x 2^4 = 96.",
+   "order": 62,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "T_n = a x r^(n - 1)."
+  },
+  {
+   "questionText": "Find the sum of the first 6 terms of the GP 4, 12, 36, ...",
+   "options": [
+    {
+     "text": "1456"
+    },
+    {
+     "text": "1460"
+    },
+    {
+     "text": "4368"
+    },
+    {
+     "text": "-1456"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "S_n = a(r^n - 1)/(r - 1) = 4(3^6 - 1)/2 = 1456.",
+   "order": 63,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "S_n = a(r^n - 1)/(r - 1) for r > 1."
+  },
+  {
+   "questionText": "Find the sum of the first 6 terms of the GP 1, 2, 4, ...",
+   "options": [
+    {
+     "text": "126"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "-63"
+    },
+    {
+     "text": "63"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "S_n = a(r^n - 1)/(r - 1) = 1(2^6 - 1)/1 = 63.",
+   "order": 64,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "S_n = a(r^n - 1)/(r - 1) for r > 1."
+  },
+  {
+   "questionText": "How many terms are there in the AP 9, 15, 21, ..., 111?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "-18"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "n = (last - first)/d + 1 = (111 - 9)/6 + 1 = 18.",
+   "order": 65,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "n = (l - a)/d + 1."
+  },
+  {
+   "questionText": "Find the 5th term of the GP 2, 6, 18, ...",
+   "options": [
+    {
+     "text": "54"
+    },
+    {
+     "text": "159"
+    },
+    {
+     "text": "162"
+    },
+    {
+     "text": "486"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "T_n = a r^(n-1) = 2 x 3^4 = 162.",
+   "order": 66,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "T_n = a x r^(n - 1)."
+  },
+  {
+   "questionText": "Find the sum of the first 5 terms of the GP 5, 15, 45, ...",
+   "options": [
+    {
+     "text": "605"
+    },
+    {
+     "text": "604"
+    },
+    {
+     "text": "610"
+    },
+    {
+     "text": "1815"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "S_n = a(r^n - 1)/(r - 1) = 5(3^5 - 1)/2 = 605.",
+   "order": 67,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "S_n = a(r^n - 1)/(r - 1) for r > 1."
+  },
+  {
+   "questionText": "What is the sum of the first 16 natural numbers?",
+   "options": [
+    {
+     "text": "256"
+    },
+    {
+     "text": "272"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "136"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = n(n + 1)/2 = 16(17)/2 = 136.",
+   "order": 68,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "1 + 2 + ... + n = n(n + 1)/2."
+  },
+  {
+   "questionText": "The 5th term of an AP is 11 and its common difference is 2. Find the first term.",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "T5 = a + 4d, so a = 11 - 4 x 2 = 3.",
+   "order": 69,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "First term = nth term - (n - 1)d."
+  },
+  {
+   "questionText": "Find the sum to infinity of the GP 18, 9, 4.5, ...",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "37"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Common ratio = 1/2. S = a/(1 - r) = 18/1/2 = 36.",
+   "order": 70,
+   "subPattern": "arithmetic-geometric-progressions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "S_infinity = a/(1 - r) when |r| < 1."
+  },
+  {
+   "questionText": "Find the remainder when x^3 - 2x^2 + x + 4 is divided by (x + 3).",
+   "options": [
+    {
+     "text": "-41"
+    },
+    {
+     "text": "-44"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "-43"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "By the remainder theorem the remainder is p(-3) = -44.",
+   "order": 71,
+   "subPattern": "functions-polynomials",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Remainder = value of the polynomial at the root of the divisor."
+  },
+  {
+   "questionText": "Find the remainder when x^3 - 6x^2 - 2x + 1 is divided by (x + 3).",
+   "options": [
+    {
+     "text": "-73"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "-72"
+    },
+    {
+     "text": "-74"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "By the remainder theorem the remainder is p(-3) = -74.",
+   "order": 72,
+   "subPattern": "functions-polynomials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Remainder = value of the polynomial at the root of the divisor."
+  },
+  {
+   "questionText": "Find the remainder when x^3 + 6x^2 - 3 is divided by (x - 3).",
+   "options": [
+    {
+     "text": "39"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "79"
+    },
+    {
+     "text": "-3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "By the remainder theorem the remainder is p(3) = 78.",
+   "order": 73,
+   "subPattern": "functions-polynomials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Remainder = value of the polynomial at the root of the divisor."
+  },
+  {
+   "questionText": "Find the remainder when x^3 + 6x - 6 is divided by (x - 4).",
+   "options": [
+    {
+     "text": "82"
+    },
+    {
+     "text": "81"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "-6"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "By the remainder theorem the remainder is p(4) = 82.",
+   "order": 74,
+   "subPattern": "functions-polynomials",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Remainder = value of the polynomial at the root of the divisor."
+  },
+  {
+   "questionText": "If a + b = 9 and ab = 2, find a^2 + b^2.",
+   "options": [
+    {
+     "text": "82"
+    },
+    {
+     "text": "81"
+    },
+    {
+     "text": "77"
+    },
+    {
+     "text": "80"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "a^2 + b^2 = (a + b)^2 - 2ab = 81 - 4 = 77.",
+   "order": 75,
+   "subPattern": "functions-polynomials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Square the sum and subtract twice the product."
+  },
+  {
+   "questionText": "If a - b = 12 and ab = 19, find a^2 + b^2.",
+   "options": [
+    {
+     "text": "91"
+    },
+    {
+     "text": "144"
+    },
+    {
+     "text": "184"
+    },
+    {
+     "text": "182"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "a^2 + b^2 = (a - b)^2 + 2ab = 144 + 38 = 182.",
+   "order": 76,
+   "subPattern": "functions-polynomials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Square the difference and add twice the product."
+  },
+  {
+   "questionText": "If a + b = 5 and ab = 9, find a^2 + b^2.",
+   "options": [
+    {
+     "text": "-7"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "a^2 + b^2 = (a + b)^2 - 2ab = 25 - 18 = 7.",
+   "order": 77,
+   "subPattern": "functions-polynomials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Square the sum and subtract twice the product."
+  },
+  {
+   "questionText": "If x - 1/x = 4, find x^2 + 1/x^2.",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "23"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Square both sides: x^2 - 2 + 1/x^2 = 16, so x^2 + 1/x^2 = 18.",
+   "order": 78,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Squaring x - 1/x gives x^2 + 1/x^2 - 2."
+  },
+  {
+   "questionText": "What is the remainder when 2x^2 + 3x - 4 is divided by (x - 3)?",
+   "options": [
+    {
+     "text": "26"
+    },
+    {
+     "text": "-4"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "By the remainder theorem, the remainder is the value of the polynomial at x = 3: p(3) = 23.",
+   "order": 79,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Substitute x = a into the polynomial."
+  },
+  {
+   "questionText": "If a + b = 7 and ab = 2, find (a - b)^2.",
+   "options": [
+    {
+     "text": "41"
+    },
+    {
+     "text": "57"
+    },
+    {
+     "text": "46"
+    },
+    {
+     "text": "43"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(a - b)^2 = (a + b)^2 - 4ab = 49 - 8 = 41.",
+   "order": 80,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "(a - b)^2 = (a + b)^2 - 4ab."
+  },
+  {
+   "questionText": "If (x - 2) is a factor of 2x^3 + kx^2 - 3x + 6, find k.",
+   "options": [
+    {
+     "text": "-5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "-2"
+    },
+    {
+     "text": "-4"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "p(2) = 0: 2(8) + k(4) + (-3)(2) + (6) = 0, so 4k = -16 and k = -4.",
+   "order": 81,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "If (x - a) is a factor then p(a) = 0."
+  },
+  {
+   "questionText": "If a + b = 7 and ab = 8, find a^3 + b^3.",
+   "options": [
+    {
+     "text": "172"
+    },
+    {
+     "text": "175"
+    },
+    {
+     "text": "343"
+    },
+    {
+     "text": "176"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "a^3 + b^3 = (a + b)^3 - 3ab(a + b) = 343 - 168 = 175.",
+   "order": 82,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "a^3 + b^3 = (a + b)^3 - 3ab(a + b)."
+  },
+  {
+   "questionText": "What is the remainder when 2x^2 - 3 is divided by (x + 2)?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "-3"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "By the remainder theorem, the remainder is the value of the polynomial at x = -2: p(-2) = 5.",
+   "order": 83,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Substitute x = a into the polynomial."
+  },
+  {
+   "questionText": "If x - 1/x = 8, find x^2 + 1/x^2.",
+   "options": [
+    {
+     "text": "132"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Square both sides: x^2 - 2 + 1/x^2 = 64, so x^2 + 1/x^2 = 66.",
+   "order": 84,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Squaring x - 1/x gives x^2 + 1/x^2 - 2."
+  },
+  {
+   "questionText": "What is the remainder when x^2 + x + 2 is divided by (x - 2)?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "By the remainder theorem, the remainder is the value of the polynomial at x = 2: p(2) = 8.",
+   "order": 85,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Substitute x = a into the polynomial."
+  },
+  {
+   "questionText": "What is the remainder when 2x^2 + 4x - 1 is divided by (x - 2)?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "-1"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "By the remainder theorem, the remainder is the value of the polynomial at x = 2: p(2) = 15.",
+   "order": 86,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Substitute x = a into the polynomial."
+  },
+  {
+   "questionText": "If x - 1/x = 2, find x^2 + 1/x^2.",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Square both sides: x^2 - 2 + 1/x^2 = 4, so x^2 + 1/x^2 = 6.",
+   "order": 87,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Squaring x - 1/x gives x^2 + 1/x^2 - 2."
+  },
+  {
+   "questionText": "If a + b = 6 and ab = 7, find a^3 + b^3.",
+   "options": [
+    {
+     "text": "-90"
+    },
+    {
+     "text": "85"
+    },
+    {
+     "text": "216"
+    },
+    {
+     "text": "90"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "a^3 + b^3 = (a + b)^3 - 3ab(a + b) = 216 - 126 = 90.",
+   "order": 88,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "a^3 + b^3 = (a + b)^3 - 3ab(a + b)."
+  },
+  {
+   "questionText": "What is the remainder when x^2 - 3x - 4 is divided by (x - 1)?",
+   "options": [
+    {
+     "text": "-6"
+    },
+    {
+     "text": "-7"
+    },
+    {
+     "text": "-11"
+    },
+    {
+     "text": "-4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "By the remainder theorem, the remainder is the value of the polynomial at x = 1: p(1) = -6.",
+   "order": 89,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Substitute x = a into the polynomial."
+  },
+  {
+   "questionText": "If a + b = 8 and ab = 9, find a^3 + b^3.",
+   "options": [
+    {
+     "text": "592"
+    },
+    {
+     "text": "294"
+    },
+    {
+     "text": "512"
+    },
+    {
+     "text": "296"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "a^3 + b^3 = (a + b)^3 - 3ab(a + b) = 512 - 216 = 296.",
+   "order": 90,
+   "subPattern": "functions-polynomials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "a^3 + b^3 = (a + b)^3 - 3ab(a + b)."
+  },
+  {
+   "questionText": "If x + y = 10 and x^2 + y^2 = 52, find xy.",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "2xy = (x + y)^2 - (x^2 + y^2) = 100 - 52 = 48, so xy = 24.",
+   "order": 91,
+   "subPattern": "functions-polynomials",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "xy = [(x + y)^2 - (x^2 + y^2)]/2."
+  },
+  {
+   "questionText": "Find the remainder when x^43 - 1 is divided by (x + 1).",
+   "options": [
+    {
+     "text": "-4"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "-2"
+    },
+    {
+     "text": "-1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "p(-1) = (-1)^43 + (-1) = -1 + (-1) = -2.",
+   "order": 92,
+   "subPattern": "functions-polynomials",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Substitute x = -1; even powers give 1, odd powers give -1."
+  },
+  {
+   "questionText": "If a + b + c = 6 and ab + bc + ca = 13, find a^2 + b^2 + c^2.",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "a^2 + b^2 + c^2 = (a + b + c)^2 - 2(ab + bc + ca) = 36 - 26 = 10.",
+   "order": 93,
+   "subPattern": "functions-polynomials",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Square the sum of three numbers."
+  },
+  {
+   "questionText": "If a + b + c = 6 and ab + bc + ca = 9, find a^2 + b^2 + c^2.",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "a^2 + b^2 + c^2 = (a + b + c)^2 - 2(ab + bc + ca) = 36 - 18 = 18.",
+   "order": 94,
+   "subPattern": "functions-polynomials",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Square the sum of three numbers."
+  },
+  {
+   "questionText": "Find the remainder when x^76 + 3 is divided by (x + 1).",
+   "options": [
+    {
+     "text": "-4"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "p(-1) = (-1)^76 + (3) = 1 + (3) = 4.",
+   "order": 95,
+   "subPattern": "functions-polynomials",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Substitute x = -1; even powers give 1, odd powers give -1."
+  },
+  {
+   "questionText": "How many integers x satisfy |x + 1| < 7?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "-8 < x < 6, which contains 13 integers.",
+   "order": 96,
+   "subPattern": "modulus",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "|x - a| < b means a - b < x < a + b (strict)."
+  },
+  {
+   "questionText": "What is the sum of all solutions of |2x - 3| = 5?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "-3"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2x - 3 = 5 or -5, so x = 4 or -1. Sum = 3.",
+   "order": 97,
+   "subPattern": "modulus",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "The two solutions of |ax - c| = k sum to 2c/a."
+  },
+  {
+   "questionText": "How many integers x satisfy |x + 5| < 7?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "15"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "-12 < x < 2, which contains 13 integers.",
+   "order": 98,
+   "subPattern": "modulus",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "|x - a| < b means a - b < x < a + b (strict)."
+  },
+  {
+   "questionText": "What is the minimum value of |x - 2| + |x - 7|?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The sum of distances from x to 2 and 7 is smallest when x lies between them, equal to |2 - 7| = 5.",
+   "order": 99,
+   "subPattern": "modulus",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "min |x - a| + |x - b| = |a - b|."
+  },
+  {
+   "questionText": "What is the minimum value of |x - (-2)| + |x - 5|?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The sum of distances from x to -2 and 5 is smallest when x lies between them, equal to |-2 - 5| = 7.",
+   "order": 100,
+   "subPattern": "modulus",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "min |x - a| + |x - b| = |a - b|."
+  }
+ ]
+}

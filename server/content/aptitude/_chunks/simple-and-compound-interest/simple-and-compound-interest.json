@@ -1,0 +1,1877 @@
+{
+  "questions": [
+    {
+      "questionText": "What amount will Rs 35500 become in 4 years 6 months at 6% per annum simple interest?",
+      "options": [
+        "Rs 45085",
+        "Rs 44020",
+        "Rs 54102",
+        "Rs 9585"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Time = 4 + 6/12 = 4.5 years. SI = (35500 x 6 x 9/2)/100 = 9585. Amount = 35500 + 9585 = Rs 45085.",
+      "shortcut": "Convert months to years first (months/12); amount = principal + interest.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what rate percent per annum will Rs 42500 earn simple interest of Rs 6800 in 2 years?",
+      "options": [
+        "6%",
+        "12%",
+        "16%",
+        "8%"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "R = (SI x 100)/(P x T) = (6800 x 100)/(42500 x 2) = 8%.",
+      "shortcut": "Yearly interest = 6800/2 = 3400; as a percent of 42500 that is 8%.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The difference between the compound interest and the simple interest on a sum for 2 years at 4% per annum is Rs 92. What is the sum?",
+      "options": [
+        "Rs 43125",
+        "Rs 2300",
+        "Rs 57500",
+        "Rs 71875"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(R/100)^2 = 92, so P = 92 x 10000/16 = Rs 57500.",
+      "shortcut": "P = difference x 10000 / 4^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What amount will Rs 21000 become in 2 years 8 months at 12% per annum simple interest?",
+      "options": [
+        "Rs 26040",
+        "Rs 6720",
+        "Rs 22176",
+        "Rs 27720"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Time = 2 + 8/12 = 8/3 years. SI = (21000 x 12 x 8/3)/100 = 6720. Amount = 21000 + 6720 = Rs 27720.",
+      "shortcut": "Convert months to years first (months/12); amount = principal + interest.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man borrows Rs 72000 at 5% simple interest per annum and lends it at 7% per annum. What is his total gain in 3 years?",
+      "options": [
+        "Rs 15120",
+        "Rs 4320",
+        "Rs 6480",
+        "Rs 4752"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gain per year = 72000 x (7 - 5)/100 = 1440. Gain in 3 years = Rs 4320.",
+      "shortcut": "Net gain = principal x (lending rate - borrowing rate) x time / 100.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the amount on Rs 13000 at 20% per annum compound interest (compounded annually) after 3 years?",
+      "options": [
+        "Rs 33696",
+        "Rs 16848",
+        "Rs 20800",
+        "Rs 22464"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Amount = 13000 x (1 + 20/100)^3 = 13000 x 1.728 = Rs 22464.",
+      "shortcut": "Multiply by 1.2 three times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man borrows Rs 32000 at 8% simple interest per annum and lends it at 11% per annum. What is his total gain in 3 years?",
+      "options": [
+        "Rs 2304",
+        "Rs 10560",
+        "Rs 1440",
+        "Rs 2880"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Gain per year = 32000 x (11 - 8)/100 = 960. Gain in 3 years = Rs 2880.",
+      "shortcut": "Net gain = principal x (lending rate - borrowing rate) x time / 100.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The difference between the compound interest and the simple interest on a sum for 2 years at 10% per annum is Rs 895. What is the sum?",
+      "options": [
+        "Rs 107400",
+        "Rs 89500",
+        "Rs 44750",
+        "Rs 8950"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(R/100)^2 = 895, so P = 895 x 10000/100 = Rs 89500.",
+      "shortcut": "P = difference x 10000 / 10^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man borrows Rs 8000 at 6% simple interest per annum and lends it at 8% per annum. What is his total gain in 3 years?",
+      "options": [
+        "Rs 1920",
+        "Rs 576",
+        "Rs 720",
+        "Rs 480"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Gain per year = 8000 x (8 - 6)/100 = 160. Gain in 3 years = Rs 480.",
+      "shortcut": "Net gain = principal x (lending rate - borrowing rate) x time / 100.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 76000 is invested at compound interest for 3 years at 15%, 20% and 25% per annum in the 1st, 2nd and 3rd years respectively. What is the final amount?",
+      "options": [
+        "Rs 121600",
+        "Rs 131100",
+        "Rs 117990",
+        "Rs 98325"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Amount = 76000 x 1.15 x 1.2 x 1.25 = Rs 131100.",
+      "shortcut": "With changing rates, multiply the yearly growth factors one by one.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money becomes five times itself in 8 years at simple interest. What is the rate of interest per annum?",
+      "options": [
+        "62.5%",
+        "50%",
+        "75%",
+        "55%"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interest = (5 - 1)P = 4P in 8 years. R = (4P x 100)/(P x 8) = 50%.",
+      "shortcut": "Rate = (multiple - 1) x 100 / years = 4 x 100/8.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the amount on Rs 51200 at 20% per annum for 1 year when interest is compounded half-yearly.",
+      "options": [
+        "Rs 123904",
+        "Rs 46464",
+        "Rs 61440",
+        "Rs 61952"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rate per half-year = 10%, periods = 2. Amount = 51200 x (1 + 0.1)^2 = Rs 61952.",
+      "shortcut": "Half-yearly: halve the rate, double the number of periods.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the compound interest on Rs 78000 at 20% per annum for 1.5 years, compounded half-yearly?",
+      "options": [
+        "Rs 12909",
+        "Rs 34424",
+        "Rs 23400",
+        "Rs 25818"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rate per half-year = 10%, periods = 3. Amount = 78000 x 1.1^3 = 103818. CI = 103818 - 78000 = Rs 25818.",
+      "shortcut": "1.5 years = 3 half-years; compute (1 + r/2)^3 and subtract the principal.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the difference between the compound interest on Rs 49600 for 1 year at 10% per annum when compounded half-yearly and when compounded annually.",
+      "options": [
+        "Rs 2480",
+        "Rs 62",
+        "Rs 186",
+        "Rs 124"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Annual: 49600 x 10% = 4960. Half-yearly: 49600[(1 + 0.05)^2 - 1] = 5084. Difference = Rs 124.",
+      "shortcut": "Difference for one year = P x (R/200)^2 = P x R^2 / 40000.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money doubles itself in 6 years at compound interest. In how many years will it become 8 times itself?",
+      "options": [
+        "42 years",
+        "18 years",
+        "48 years",
+        "19 years"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Doubling takes 6 years at compound interest, so each further doubling takes 6 years. 8 = 2^3, hence 3 x 6 = 18 years.",
+      "shortcut": "At compound interest, the doubling time stays constant; 4x = 2 doublings, 8x = 3, 16x = 4.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the simple interest on Rs 25000 at 5% per annum for 2 years.",
+      "options": [
+        "Rs 2500",
+        "Rs 1250",
+        "Rs 1875",
+        "Rs 27500"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SI = PRT/100 = (25000 x 5 x 2)/100 = Rs 2500.",
+      "shortcut": "Interest per year = 5% of 25000 = 1250; multiply by 2 years.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 7360 is divided into two parts so that the simple interest on the first part at 10% for 3 years equals the simple interest on the second part at 4% for 4 years. What is the larger part?",
+      "options": [
+        "Rs 4800",
+        "Rs 2560",
+        "Rs 3200",
+        "Rs 7200"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P1 x 10 x 3 = P2 x 4 x 4, so P1 : P2 = 16 : 30 = 8 : 15. Larger part = 7360 x 15/23 = Rs 4800.",
+      "shortcut": "Equal interest means principal is inversely proportional to (rate x time).",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What amount will Rs 9500 become in 2 years 8 months at 6% per annum simple interest?",
+      "options": [
+        "Rs 9918",
+        "Rs 10640",
+        "Rs 1520",
+        "Rs 11020"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Time = 2 + 8/12 = 8/3 years. SI = (9500 x 6 x 8/3)/100 = 1520. Amount = 9500 + 1520 = Rs 11020.",
+      "shortcut": "Convert months to years first (months/12); amount = principal + interest.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the amount on Rs 16000 at 20% per annum for 1 year when interest is compounded half-yearly.",
+      "options": [
+        "Rs 9680",
+        "Rs 24200",
+        "Rs 19360",
+        "Rs 19200"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rate per half-year = 10%, periods = 2. Amount = 16000 x (1 + 0.1)^2 = Rs 19360.",
+      "shortcut": "Half-yearly: halve the rate, double the number of periods.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will Rs 68000 amount to Rs 106250 at 25% per annum compound interest (compounded annually)?",
+      "options": [
+        "2 years",
+        "3 years",
+        "2.25 years",
+        "1 years"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "(1 + 25/100)^n = 106250/68000 = 1.5625 = 1.25^2, so n = 2 years.",
+      "shortcut": "Divide A by P, then see which power of 1.25 it equals.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man borrows Rs 40000 at 8% simple interest per annum and lends it at 10% per annum. What is his total gain in 3 years?",
+      "options": [
+        "Rs 3600",
+        "Rs 12000",
+        "Rs 2400",
+        "Rs 2880"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gain per year = 40000 x (10 - 8)/100 = 800. Gain in 3 years = Rs 2400.",
+      "shortcut": "Net gain = principal x (lending rate - borrowing rate) x time / 100.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the compound interest on Rs 33500 at 10% per annum for 2 years, compounded annually.",
+      "options": [
+        "Rs 6700",
+        "Rs 4690",
+        "Rs 9380",
+        "Rs 7035"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Amount = 33500 x (1 + 10/100)^2 = 40535. CI = 40535 - 33500 = Rs 7035.",
+      "shortcut": "Two-year growth = 10 + 10 + 10x10/100 = 21%; apply to 33500.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money at 5% per annum compound interest (compounded annually) amounts to Rs 57330 in 2 years. What is the sum?",
+      "options": [
+        "Rs 62400",
+        "Rs 52000",
+        "Rs 41600",
+        "Rs 65000"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P = A/(1 + R/100)^2 = 57330/1.1025 = Rs 52000.",
+      "shortcut": "Divide by 1.05 2 times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the compound interest on Rs 26500 at 10% per annum for 2 years, compounded annually.",
+      "options": [
+        "Rs 6678",
+        "Rs 5300",
+        "Rs 5565",
+        "Rs 7420"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Amount = 26500 x (1 + 10/100)^2 = 32065. CI = 32065 - 26500 = Rs 5565.",
+      "shortcut": "Two-year growth = 10 + 10 + 10x10/100 = 21%; apply to 26500.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 19000 is invested at compound interest for 3 years at 15%, 10% and 20% per annum in the 1st, 2nd and 3rd years respectively. What is the final amount?",
+      "options": [
+        "Rs 14421",
+        "Rs 27550",
+        "Rs 28842",
+        "Rs 38456"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Amount = 19000 x 1.15 x 1.1 x 1.2 = Rs 28842.",
+      "shortcut": "With changing rates, multiply the yearly growth factors one by one.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what rate percent per annum compound interest will Rs 36800 amount to Rs 52992 in 2 years?",
+      "options": [
+        "18%",
+        "20%",
+        "24%",
+        "22%"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(1 + R/100)^2 = A, so (1 + R/100)^2 = 52992/36800 = 1.44 or 1.2^2. Hence R = 20%.",
+      "shortcut": "Take the square root of A/P = 1.44.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money becomes four times itself in 8 years at simple interest. What is the rate of interest per annum?",
+      "options": [
+        "56.25%",
+        "50%",
+        "38.5%",
+        "37.5%"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Interest = (4 - 1)P = 3P in 8 years. R = (3P x 100)/(P x 8) = 37.5%.",
+      "shortcut": "Rate = (multiple - 1) x 100 / years = 3 x 100/8.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the amount on Rs 6000 at 10% per annum compound interest (compounded annually) after 3 years?",
+      "options": [
+        "Rs 7986",
+        "Rs 7800",
+        "Rs 3993",
+        "Rs 15972"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Amount = 6000 x (1 + 10/100)^3 = 6000 x 1.331 = Rs 7986.",
+      "shortcut": "Multiply by 1.1 three times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money becomes 3 times itself in 12 years at simple interest. In how many years will it become 5 times itself?",
+      "options": [
+        "24 years",
+        "32 years",
+        "20 years",
+        "18 years"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Interest in 12 years = 2P. For 5 times, interest needed = 4P. Time = 12 x 4/2 = 24 years.",
+      "shortcut": "Time is proportional to (multiple - 1): T2 = T1 x (b - 1)/(a - 1).",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the difference between the compound interest and the simple interest on Rs 48000 at 5% per annum for 3 years?",
+      "options": [
+        "Rs 366",
+        "Rs 120",
+        "Rs 244",
+        "Rs 488"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "CI = 48000[(1 + 5/100)^3 - 1] = 7566. SI = 48000 x 5 x 3/100 = 7200. Difference = Rs 366.",
+      "shortcut": "3-year difference = P(R/100)^2 (3 + R/100).",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 330 is divided into two parts so that the simple interest on the first part at 6% for 2 years equals the simple interest on the second part at 12% for 2 years. What is the larger part?",
+      "options": [
+        "Rs 110",
+        "Rs 330",
+        "Rs 165",
+        "Rs 220"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "P1 x 6 x 2 = P2 x 12 x 2, so P1 : P2 = 24 : 12 = 2 : 1. Larger part = 330 x 2/3 = Rs 220.",
+      "shortcut": "Equal interest means principal is inversely proportional to (rate x time).",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the difference between the compound interest on Rs 38400 for 1 year at 40% per annum when compounded half-yearly and when compounded annually.",
+      "options": [
+        "Rs 1536",
+        "Rs 7680",
+        "Rs 1152",
+        "Rs 2304"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Annual: 38400 x 40% = 15360. Half-yearly: 38400[(1 + 0.2)^2 - 1] = 16896. Difference = Rs 1536.",
+      "shortcut": "Difference for one year = P x (R/200)^2 = P x R^2 / 40000.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will Rs 34500 earn simple interest of Rs 13800 at 10% per annum?",
+      "options": [
+        "6 years",
+        "40 years",
+        "2 years",
+        "4 years"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "T = (SI x 100)/(P x R) = (13800 x 100)/(34500 x 10) = 4 years.",
+      "shortcut": "Yearly interest = 3450; time = 13800 / 3450.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man borrows Rs 31000 at 6% simple interest per annum and lends it at 10% per annum. What is his total gain in 2 years?",
+      "options": [
+        "Rs 1860",
+        "Rs 2480",
+        "Rs 3720",
+        "Rs 6200"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gain per year = 31000 x (10 - 6)/100 = 1240. Gain in 2 years = Rs 2480.",
+      "shortcut": "Net gain = principal x (lending rate - borrowing rate) x time / 100.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The difference between the compound interest and the simple interest on a sum for 2 years at 8% per annum is Rs 608. What is the sum?",
+      "options": [
+        "Rs 7600",
+        "Rs 47500",
+        "Rs 95000",
+        "Rs 76000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(R/100)^2 = 608, so P = 608 x 10000/64 = Rs 95000.",
+      "shortcut": "P = difference x 10000 / 8^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will a sum of money double itself at 20% per annum simple interest?",
+      "options": [
+        "7 years",
+        "20 years",
+        "10 years",
+        "5 years"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Interest needed = principal, so P x 20 x T/100 = P, giving T = 100/20 = 5 years.",
+      "shortcut": "Time to double = 100 / rate = 100/20.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the amount on Rs 53000 at 20% per annum compound interest (compounded annually) after 3 years?",
+      "options": [
+        "Rs 84800",
+        "Rs 91584",
+        "Rs 137376",
+        "Rs 183168"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Amount = 53000 x (1 + 20/100)^3 = 53000 x 1.728 = Rs 91584.",
+      "shortcut": "Multiply by 1.2 three times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 26000 is invested for 6 months at 60% per annum, interest compounded quarterly. What is the amount?",
+      "options": [
+        "Rs 33800",
+        "Rs 68770",
+        "Rs 41262",
+        "Rs 34385"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rate per quarter = 15%, periods = 2. Amount = 26000 x 1.15^2 = Rs 34385.",
+      "shortcut": "Quarterly: divide the rate by 4, multiply the periods by 4.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money lent at 5% simple interest per annum amounts to Rs 25200 in 4 years. What is the sum?",
+      "options": [
+        "Rs 20160",
+        "Rs 21000",
+        "Rs 14000",
+        "Rs 25200"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A = P(1 + RT/100) = P x 120/100 = 25200, so P = 25200 x 100/120 = Rs 21000.",
+      "shortcut": "Amount is 120% of the principal; divide by 1.2.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the amount on Rs 2000 at 20% per annum compound interest (compounded annually) after 3 years?",
+      "options": [
+        "Rs 3200",
+        "Rs 1728",
+        "Rs 3456",
+        "Rs 2592"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Amount = 2000 x (1 + 20/100)^3 = 2000 x 1.728 = Rs 3456.",
+      "shortcut": "Multiply by 1.2 three times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What amount will Rs 55000 become in 3 years 6 months at 8% per annum simple interest?",
+      "options": [
+        "Rs 140800",
+        "Rs 15400",
+        "Rs 70400",
+        "Rs 68200"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time = 3 + 6/12 = 3.5 years. SI = (55000 x 8 x 7/2)/100 = 15400. Amount = 55000 + 15400 = Rs 70400.",
+      "shortcut": "Convert months to years first (months/12); amount = principal + interest.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will Rs 48500 earn simple interest of Rs 5820 at 4% per annum?",
+      "options": [
+        "3 years",
+        "1 years",
+        "2 years",
+        "12 years"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "T = (SI x 100)/(P x R) = (5820 x 100)/(48500 x 4) = 3 years.",
+      "shortcut": "Yearly interest = 1940; time = 5820 / 1940.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man borrows Rs 12000 at 4% simple interest per annum and lends it at 7% per annum. What is his total gain in 4 years?",
+      "options": [
+        "Rs 2880",
+        "Rs 1296",
+        "Rs 3360",
+        "Rs 1440"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Gain per year = 12000 x (7 - 4)/100 = 360. Gain in 4 years = Rs 1440.",
+      "shortcut": "Net gain = principal x (lending rate - borrowing rate) x time / 100.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 360 is divided into two parts so that the simple interest on the first part at 6% for 4 years equals the simple interest on the second part at 4% for 2 years. What is the larger part?",
+      "options": [
+        "Rs 270",
+        "Rs 90",
+        "Rs 405",
+        "Rs 135"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P1 x 6 x 4 = P2 x 4 x 2, so P1 : P2 = 8 : 24 = 1 : 3. Larger part = 360 x 3/4 = Rs 270.",
+      "shortcut": "Equal interest means principal is inversely proportional to (rate x time).",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money becomes 3 times itself in 4 years at simple interest. In how many years will it become 7 times itself?",
+      "options": [
+        "7 years",
+        "12 years",
+        "8 years",
+        "10 years"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interest in 4 years = 2P. For 7 times, interest needed = 6P. Time = 4 x 6/2 = 12 years.",
+      "shortcut": "Time is proportional to (multiple - 1): T2 = T1 x (b - 1)/(a - 1).",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will Rs 23000 amount to Rs 33120 at 20% per annum compound interest (compounded annually)?",
+      "options": [
+        "2.2 years",
+        "2 years",
+        "1 years",
+        "7 years"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "(1 + 20/100)^n = 33120/23000 = 1.44 = 1.2^2, so n = 2 years.",
+      "shortcut": "Divide A by P, then see which power of 1.2 it equals.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money lent at 8% simple interest per annum amounts to Rs 20880 in 2 years. What is the sum?",
+      "options": [
+        "Rs 18000",
+        "Rs 27000",
+        "Rs 19800",
+        "Rs 17539.2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A = P(1 + RT/100) = P x 116/100 = 20880, so P = 20880 x 100/116 = Rs 18000.",
+      "shortcut": "Amount is 116% of the principal; divide by 1.16.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 47200 is invested for 6 months at 20% per annum, interest compounded quarterly. What is the amount?",
+      "options": [
+        "Rs 51920",
+        "Rs 52038",
+        "Rs 104076",
+        "Rs 69384"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate per quarter = 5%, periods = 2. Amount = 47200 x 1.05^2 = Rs 52038.",
+      "shortcut": "Quarterly: divide the rate by 4, multiply the periods by 4.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money at 10% per annum compound interest (compounded annually) amounts to Rs 77198 in 3 years. What is the sum?",
+      "options": [
+        "Rs 63800",
+        "Rs 43500",
+        "Rs 58000",
+        "Rs 29000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P = A/(1 + R/100)^3 = 77198/1.331 = Rs 58000.",
+      "shortcut": "Divide by 1.1 3 times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will Rs 38000 earn simple interest of Rs 34200 at 15% per annum?",
+      "options": [
+        "12 years",
+        "90 years",
+        "5 years",
+        "6 years"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "T = (SI x 100)/(P x R) = (34200 x 100)/(38000 x 15) = 6 years.",
+      "shortcut": "Yearly interest = 5700; time = 34200 / 5700.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the simple interest on Rs 6500 at 5% per annum for 3 years.",
+      "options": [
+        "Rs 7475",
+        "Rs 975",
+        "Rs 1170",
+        "Rs 325"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = PRT/100 = (6500 x 5 x 3)/100 = Rs 975.",
+      "shortcut": "Interest per year = 5% of 6500 = 325; multiply by 3 years.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what rate percent per annum compound interest will Rs 2000 amount to Rs 2420 in 2 years?",
+      "options": [
+        "10.5%",
+        "12%",
+        "10%",
+        "9%"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(1 + R/100)^2 = A, so (1 + R/100)^2 = 2420/2000 = 1.21 or 1.1^2. Hence R = 10%.",
+      "shortcut": "Take the square root of A/P = 1.21.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money at 10% per annum compound interest (compounded annually) amounts to Rs 45254 in 3 years. What is the sum?",
+      "options": [
+        "Rs 27200",
+        "Rs 17000",
+        "Rs 51000",
+        "Rs 34000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "P = A/(1 + R/100)^3 = 45254/1.331 = Rs 34000.",
+      "shortcut": "Divide by 1.1 3 times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what rate percent per annum compound interest will Rs 50400 amount to Rs 72576 in 2 years?",
+      "options": [
+        "22%",
+        "15%",
+        "20%",
+        "40%"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(1 + R/100)^2 = A, so (1 + R/100)^2 = 72576/50400 = 1.44 or 1.2^2. Hence R = 20%.",
+      "shortcut": "Take the square root of A/P = 1.44.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what rate percent per annum will Rs 4000 earn simple interest of Rs 1800 in 5 years?",
+      "options": [
+        "9%",
+        "45%",
+        "14%",
+        "10%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "R = (SI x 100)/(P x T) = (1800 x 100)/(4000 x 5) = 9%.",
+      "shortcut": "Yearly interest = 1800/5 = 360; as a percent of 4000 that is 9%.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 72400 is invested for 6 months at 40% per annum, interest compounded quarterly. What is the amount?",
+      "options": [
+        "Rs 87604",
+        "Rs 65703",
+        "Rs 131406",
+        "Rs 86880"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate per quarter = 10%, periods = 2. Amount = 72400 x 1.1^2 = Rs 87604.",
+      "shortcut": "Quarterly: divide the rate by 4, multiply the periods by 4.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 57000 is lent partly at 4% and partly at 5% simple interest per annum. The total interest for one year is Rs 2440. How much is lent at 4%?",
+      "options": [
+        "Rs 41000",
+        "Rs 20500",
+        "Rs 16000",
+        "Rs 45100"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let x be lent at 4%. 4x/100 + 5(57000 - x)/100 = 2440. So 285000 - 1x = 244000, giving x = Rs 41000.",
+      "shortcut": "Alligation: compare the average rate with the two rates to get the ratio of the parts.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The difference between the compound interest and the simple interest on a sum for 2 years at 25% per annum is Rs 5750. What is the sum?",
+      "options": [
+        "Rs 23000",
+        "Rs 184000",
+        "Rs 92000",
+        "Rs 73600"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(R/100)^2 = 5750, so P = 5750 x 10000/625 = Rs 92000.",
+      "shortcut": "P = difference x 10000 / 25^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 3600 is invested for 6 months at 40% per annum, interest compounded quarterly. What is the amount?",
+      "options": [
+        "Rs 2904",
+        "Rs 4320",
+        "Rs 4356",
+        "Rs 2178"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rate per quarter = 10%, periods = 2. Amount = 3600 x 1.1^2 = Rs 4356.",
+      "shortcut": "Quarterly: divide the rate by 4, multiply the periods by 4.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the compound interest on Rs 8000 at 10% per annum for 2 years, compounded annually.",
+      "options": [
+        "Rs 1512",
+        "Rs 1600",
+        "Rs 1680",
+        "Rs 2016"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Amount = 8000 x (1 + 10/100)^2 = 9680. CI = 9680 - 8000 = Rs 1680.",
+      "shortcut": "Two-year growth = 10 + 10 + 10x10/100 = 21%; apply to 8000.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what rate percent per annum will Rs 5000 earn simple interest of Rs 1250 in 5 years?",
+      "options": [
+        "6%",
+        "5%",
+        "4%",
+        "25%"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "R = (SI x 100)/(P x T) = (1250 x 100)/(5000 x 5) = 5%.",
+      "shortcut": "Yearly interest = 1250/5 = 250; as a percent of 5000 that is 5%.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money becomes four times itself in 16 years at simple interest. What is the rate of interest per annum?",
+      "options": [
+        "19.75%",
+        "25%",
+        "17.75%",
+        "18.75%"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Interest = (4 - 1)P = 3P in 16 years. R = (3P x 100)/(P x 16) = 18.75%.",
+      "shortcut": "Rate = (multiple - 1) x 100 / years = 3 x 100/16.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the amount on Rs 24000 at 10% per annum for 1 year when interest is compounded half-yearly.",
+      "options": [
+        "Rs 26400",
+        "Rs 26460",
+        "Rs 17640",
+        "Rs 39690"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate per half-year = 5%, periods = 2. Amount = 24000 x (1 + 0.05)^2 = Rs 26460.",
+      "shortcut": "Half-yearly: halve the rate, double the number of periods.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The difference between the compound interest and the simple interest on a sum for 2 years at 5% per annum is Rs 110. What is the sum?",
+      "options": [
+        "Rs 52800",
+        "Rs 2200",
+        "Rs 44000",
+        "Rs 22000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(R/100)^2 = 110, so P = 110 x 10000/25 = Rs 44000.",
+      "shortcut": "P = difference x 10000 / 5^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What amount will Rs 2500 become in 1 years 9 months at 12% per annum simple interest?",
+      "options": [
+        "Rs 2800",
+        "Rs 3025",
+        "Rs 3630",
+        "Rs 525"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time = 1 + 9/12 = 1.75 years. SI = (2500 x 12 x 7/4)/100 = 525. Amount = 2500 + 525 = Rs 3025.",
+      "shortcut": "Convert months to years first (months/12); amount = principal + interest.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of Rs 27000 is lent for 5 years at simple interest. The rate is 8% for the first 2 year(s), 10% for the next 2 year(s) and 15% for the last 1 year(s). What is the total interest?",
+      "options": [
+        "Rs 9180",
+        "Rs 15147",
+        "Rs 13770",
+        "Rs 14850"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total interest = 27000(8 x 2 + 10 x 2 + 15 x 1)/100 = 27000 x 51/100 = Rs 13770.",
+      "shortcut": "Add up (rate x years) for each period, then apply it once to the principal.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will Rs 39500 earn simple interest of Rs 37920 at 12% per annum?",
+      "options": [
+        "96 years",
+        "10 years",
+        "8 years",
+        "6 years"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "T = (SI x 100)/(P x R) = (37920 x 100)/(39500 x 12) = 8 years.",
+      "shortcut": "Yearly interest = 4740; time = 37920 / 4740.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the simple interest on Rs 21000 at 12% per annum for 5 years.",
+      "options": [
+        "Rs 15120",
+        "Rs 33600",
+        "Rs 2520",
+        "Rs 12600"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "SI = PRT/100 = (21000 x 12 x 5)/100 = Rs 12600.",
+      "shortcut": "Interest per year = 12% of 21000 = 2520; multiply by 5 years.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the compound interest on Rs 40000 at 20% per annum for 2 years, compounded annually.",
+      "options": [
+        "Rs 19360",
+        "Rs 16000",
+        "Rs 26400",
+        "Rs 17600"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Amount = 40000 x (1 + 20/100)^2 = 57600. CI = 57600 - 40000 = Rs 17600.",
+      "shortcut": "Two-year growth = 20 + 20 + 20x20/100 = 44%; apply to 40000.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will Rs 20500 earn simple interest of Rs 2050 at 4% per annum?",
+      "options": [
+        "1.25 years",
+        "2.5 years",
+        "0.5 years",
+        "10 years"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "T = (SI x 100)/(P x R) = (2050 x 100)/(20500 x 4) = 2.5 years.",
+      "shortcut": "Yearly interest = 820; time = 2050 / 820.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the amount on Rs 8000 at 20% per annum compound interest (compounded annually) after 3 years?",
+      "options": [
+        "Rs 13824",
+        "Rs 20736",
+        "Rs 12800",
+        "Rs 9216"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Amount = 8000 x (1 + 20/100)^3 = 8000 x 1.728 = Rs 13824.",
+      "shortcut": "Multiply by 1.2 three times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the simple interest on Rs 1500 at 4% per annum for 5 years.",
+      "options": [
+        "Rs 60",
+        "Rs 300",
+        "Rs 1800",
+        "Rs 225"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SI = PRT/100 = (1500 x 4 x 5)/100 = Rs 300.",
+      "shortcut": "Interest per year = 4% of 1500 = 60; multiply by 5 years.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money doubles itself in 20 years at simple interest. What is the rate of interest per annum?",
+      "options": [
+        "10%",
+        "6%",
+        "4%",
+        "5%"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Interest = (2 - 1)P = 1P in 20 years. R = (1P x 100)/(P x 20) = 5%.",
+      "shortcut": "Rate = (multiple - 1) x 100 / years = 1 x 100/20.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the difference between the compound interest and the simple interest on Rs 74000 at 20% per annum for 2 years?",
+      "options": [
+        "Rs 2664",
+        "Rs 14800",
+        "Rs 2960",
+        "Rs 2368"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For 2 years, CI - SI = P(R/100)^2 = 74000 x (20/100)^2 = Rs 2960.",
+      "shortcut": "2-year difference = P x (R/100)^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what rate percent per annum will Rs 38500 earn simple interest of Rs 18480 in 6 years?",
+      "options": [
+        "8%",
+        "7%",
+        "48%",
+        "6%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "R = (SI x 100)/(P x T) = (18480 x 100)/(38500 x 6) = 8%.",
+      "shortcut": "Yearly interest = 18480/6 = 3080; as a percent of 38500 that is 8%.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The difference between the compound interest and the simple interest on a sum for 2 years at 20% per annum is Rs 340. What is the sum?",
+      "options": [
+        "Rs 8500",
+        "Rs 9350",
+        "Rs 17000",
+        "Rs 1700"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(R/100)^2 = 340, so P = 340 x 10000/400 = Rs 8500.",
+      "shortcut": "P = difference x 10000 / 20^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The difference between the compound interest and the simple interest on a sum for 2 years at 5% per annum is Rs 245. What is the sum?",
+      "options": [
+        "Rs 49000",
+        "Rs 98000",
+        "Rs 117600",
+        "Rs 4900"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "P(R/100)^2 = 245, so P = 245 x 10000/25 = Rs 98000.",
+      "shortcut": "P = difference x 10000 / 5^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money becomes 4 times itself in 12 years at simple interest. In how many years will it become 7 times itself?",
+      "options": [
+        "24 years",
+        "12 years",
+        "23 years",
+        "21 years"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Interest in 12 years = 3P. For 7 times, interest needed = 6P. Time = 12 x 6/3 = 24 years.",
+      "shortcut": "Time is proportional to (multiple - 1): T2 = T1 x (b - 1)/(a - 1).",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 57000 is lent partly at 5% and partly at 10% simple interest per annum. The total interest for one year is Rs 4300. How much is lent at 5%?",
+      "options": [
+        "Rs 29000",
+        "Rs 28000",
+        "Rs 33600",
+        "Rs 25200"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let x be lent at 5%. 5x/100 + 10(57000 - x)/100 = 4300. So 570000 - 5x = 430000, giving x = Rs 28000.",
+      "shortcut": "Alligation: compare the average rate with the two rates to get the ratio of the parts.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the difference between the compound interest and the simple interest on Rs 78000 at 20% per annum for 2 years?",
+      "options": [
+        "Rs 15600",
+        "Rs 3744",
+        "Rs 3120",
+        "Rs 4160"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For 2 years, CI - SI = P(R/100)^2 = 78000 x (20/100)^2 = Rs 3120.",
+      "shortcut": "2-year difference = P x (R/100)^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man borrows Rs 22000 at 7% simple interest per annum and lends it at 10% per annum. What is his total gain in 2 years?",
+      "options": [
+        "Rs 1452",
+        "Rs 990",
+        "Rs 1320",
+        "Rs 4400"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gain per year = 22000 x (10 - 7)/100 = 660. Gain in 2 years = Rs 1320.",
+      "shortcut": "Net gain = principal x (lending rate - borrowing rate) x time / 100.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the amount on Rs 5000 at 10% per annum compound interest (compounded annually) after 3 years?",
+      "options": [
+        "Rs 6500",
+        "Rs 6655",
+        "Rs 13310",
+        "Rs 5324"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Amount = 5000 x (1 + 10/100)^3 = 5000 x 1.331 = Rs 6655.",
+      "shortcut": "Multiply by 1.1 three times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will a sum of money double itself at 5% per annum simple interest?",
+      "options": [
+        "22 years",
+        "5 years",
+        "20 years",
+        "24 years"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Interest needed = principal, so P x 5 x T/100 = P, giving T = 100/5 = 20 years.",
+      "shortcut": "Time to double = 100 / rate = 100/5.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the difference between the compound interest and the simple interest on Rs 2000 at 20% per annum for 3 years?",
+      "options": [
+        "Rs 320",
+        "Rs 256",
+        "Rs 384",
+        "Rs 80"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CI = 2000[(1 + 20/100)^3 - 1] = 1456. SI = 2000 x 20 x 3/100 = 1200. Difference = Rs 256.",
+      "shortcut": "3-year difference = P(R/100)^2 (3 + R/100).",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "At what rate percent per annum compound interest will Rs 62400 amount to Rs 89856 in 2 years?",
+      "options": [
+        "15%",
+        "22%",
+        "20%",
+        "10%"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P(1 + R/100)^2 = A, so (1 + R/100)^2 = 89856/62400 = 1.44 or 1.2^2. Hence R = 20%.",
+      "shortcut": "Take the square root of A/P = 1.44.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money becomes four times itself in 10 years at simple interest. What is the rate of interest per annum?",
+      "options": [
+        "28%",
+        "30%",
+        "40%",
+        "31%"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interest = (4 - 1)P = 3P in 10 years. R = (3P x 100)/(P x 10) = 30%.",
+      "shortcut": "Rate = (multiple - 1) x 100 / years = 3 x 100/10.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Rs 35000 is lent partly at 5% and partly at 10% simple interest per annum. The total interest for one year is Rs 2825. How much is lent at 5%?",
+      "options": [
+        "Rs 13500",
+        "Rs 21500",
+        "Rs 14850",
+        "Rs 9000"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let x be lent at 5%. 5x/100 + 10(35000 - x)/100 = 2825. So 350000 - 5x = 282500, giving x = Rs 13500.",
+      "shortcut": "Alligation: compare the average rate with the two rates to get the ratio of the parts.",
+      "subPattern": "money-lent-in-parts",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money at 25% per annum compound interest (compounded annually) amounts to Rs 125000 in 3 years. What is the sum?",
+      "options": [
+        "Rs 64000",
+        "Rs 128000",
+        "Rs 96000",
+        "Rs 76800"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P = A/(1 + R/100)^3 = 125000/1.953125 = Rs 64000.",
+      "shortcut": "Divide by 1.25 3 times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money becomes five times itself in 25 years at simple interest. What is the rate of interest per annum?",
+      "options": [
+        "20%",
+        "15%",
+        "11%",
+        "16%"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Interest = (5 - 1)P = 4P in 25 years. R = (4P x 100)/(P x 25) = 16%.",
+      "shortcut": "Rate = (multiple - 1) x 100 / years = 4 x 100/25.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the amount on Rs 50800 at 10% per annum for 1 year when interest is compounded half-yearly.",
+      "options": [
+        "Rs 56007",
+        "Rs 74676",
+        "Rs 37338",
+        "Rs 55880"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate per half-year = 5%, periods = 2. Amount = 50800 x (1 + 0.05)^2 = Rs 56007.",
+      "shortcut": "Half-yearly: halve the rate, double the number of periods.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of Rs 17000 is lent for 5 years at simple interest. The rate is 6% for the first 1 year(s), 5% for the next 2 year(s) and 10% for the last 2 year(s). What is the total interest?",
+      "options": [
+        "Rs 5508",
+        "Rs 4080",
+        "Rs 6120",
+        "Rs 5950"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total interest = 17000(6 x 1 + 5 x 2 + 10 x 2)/100 = 17000 x 36/100 = Rs 6120.",
+      "shortcut": "Add up (rate x years) for each period, then apply it once to the principal.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the difference between the compound interest on Rs 54400 for 1 year at 10% per annum when compounded half-yearly and when compounded annually.",
+      "options": [
+        "Rs 2720",
+        "Rs 102",
+        "Rs 272",
+        "Rs 136"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Annual: 54400 x 10% = 5440. Half-yearly: 54400[(1 + 0.05)^2 - 1] = 5576. Difference = Rs 136.",
+      "shortcut": "Difference for one year = P x (R/200)^2 = P x R^2 / 40000.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will Rs 2000 earn simple interest of Rs 1200 at 8% per annum?",
+      "options": [
+        "7.5 years",
+        "60 years",
+        "8.5 years",
+        "11.25 years"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "T = (SI x 100)/(P x R) = (1200 x 100)/(2000 x 8) = 7.5 years.",
+      "shortcut": "Yearly interest = 160; time = 1200 / 160.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In how many years will a sum of money double itself at 12.5% per annum simple interest?",
+      "options": [
+        "8 years",
+        "12.5 years",
+        "13 years",
+        "12 years"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Interest needed = principal, so P x 12.5 x T/100 = P, giving T = 100/12.5 = 8 years.",
+      "shortcut": "Time to double = 100 / rate = 100/12.5.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the difference between the compound interest and the simple interest on Rs 96000 at 5% per annum for 2 years?",
+      "options": [
+        "Rs 240",
+        "Rs 300",
+        "Rs 180",
+        "Rs 4800"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For 2 years, CI - SI = P(R/100)^2 = 96000 x (5/100)^2 = Rs 240.",
+      "shortcut": "2-year difference = P x (R/100)^2.",
+      "subPattern": "difference-between-ci-and-si",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money at 20% per annum compound interest (compounded annually) amounts to Rs 27648 in 3 years. What is the sum?",
+      "options": [
+        "Rs 17600",
+        "Rs 17280",
+        "Rs 12000",
+        "Rs 16000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "P = A/(1 + R/100)^3 = 27648/1.728 = Rs 16000.",
+      "shortcut": "Divide by 1.2 3 times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the compound interest on Rs 39000 at 20% per annum for 1.5 years, compounded half-yearly?",
+      "options": [
+        "Rs 11700",
+        "Rs 12909",
+        "Rs 8606",
+        "Rs 17212"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate per half-year = 10%, periods = 3. Amount = 39000 x 1.1^3 = 51909. CI = 51909 - 39000 = Rs 12909.",
+      "shortcut": "1.5 years = 3 half-years; compute (1 + r/2)^3 and subtract the principal.",
+      "subPattern": "half-yearly-quarterly-compounding",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What amount will Rs 21000 become in 3 years 4 months at 6% per annum simple interest?",
+      "options": [
+        "Rs 4200",
+        "Rs 22680",
+        "Rs 25200",
+        "Rs 24780"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time = 3 + 4/12 = 10/3 years. SI = (21000 x 6 x 10/3)/100 = 4200. Amount = 21000 + 4200 = Rs 25200.",
+      "shortcut": "Convert months to years first (months/12); amount = principal + interest.",
+      "subPattern": "simple-interest-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money at 20% per annum compound interest (compounded annually) amounts to Rs 67392 in 3 years. What is the sum?",
+      "options": [
+        "Rs 39000",
+        "Rs 19500",
+        "Rs 42120",
+        "Rs 26000"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P = A/(1 + R/100)^3 = 67392/1.728 = Rs 39000.",
+      "shortcut": "Divide by 1.2 3 times.",
+      "subPattern": "compound-interest-annual",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A sum of money doubles itself in 8 years at simple interest. In how many years will it become three times itself?",
+      "options": [
+        "21 years",
+        "12 years",
+        "16 years",
+        "24 years"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Doubling means interest = P in 8 years, so interest per year = P/8. Tripling needs interest = 2P, i.e. 2 x 8 = 16 years.",
+      "shortcut": "Interest per year is constant: doubling takes n years, tripling 2n, quadrupling 3n.",
+      "subPattern": "doubling-tripling-time",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}

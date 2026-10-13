@@ -1,0 +1,1874 @@
+{
+  "questions": [
+    {
+      "questionText": "The average of 10 numbers is 42. When one number is removed, the average of the remaining numbers becomes 29. What is the number that was removed?",
+      "options": [
+        "13",
+        "159",
+        "318",
+        "106"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total = 10 x 42 = 420. Remaining total = 9 x 29 = 261. Removed number = 420 - 261 = 159.",
+      "shortcut": "Removed number = old total - new total.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of 39 students is 14 years. When the teacher's age is included, the average increases by 2 year(s). What is the teacher's age?",
+      "options": [
+        "16 years",
+        "92 years",
+        "94 years",
+        "47 years"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "New average = 16. Total with teacher = 40 x 16 = 640. Students' total = 39 x 14 = 546. Teacher = 94 years.",
+      "shortcut": "Teacher's age = old average + (n + 1) x rise = 14 + 40 x 2.",
+      "subPattern": "age-based-averages",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 7 consecutive odd numbers is 39. What is the smallest of these numbers?",
+      "options": [
+        "36",
+        "28",
+        "32",
+        "33"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The middle number is 39. Consecutive odd numbers differ by 2, so the smallest = 39 - 2 x 3 = 33.",
+      "shortcut": "Smallest = average - (n - 1) = 39 - 6.",
+      "subPattern": "basic-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of three numbers is 12. The numbers are in the ratio 2:3:7. What is the largest number?",
+      "options": [
+        "21",
+        "6",
+        "22",
+        "19"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum = 3 x 12 = 36. Parts = 2 + 3 + 7 = 12. Largest = 36 x 7/12 = 21.",
+      "shortcut": "Total = n x average; split the total in the given ratio.",
+      "subPattern": "basic-average",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman has an average of 35 runs after 14 innings. How many runs must he score in his next innings to raise his average by 3?",
+      "options": [
+        "77 runs",
+        "80 runs",
+        "38 runs",
+        "88 runs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Required total after 15 innings = 15 x 38 = 570. Current total = 490. Runs needed = 80.",
+      "shortcut": "Runs needed = old average + (innings + 1) x rise = 35 + 15 x 3.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman's average for 22 innings is 42. After two more innings his average becomes 45. If his score in the second of these innings was 8 more than in the first, what was his score in the second innings?",
+      "options": [
+        "74 runs",
+        "82 runs",
+        "41 runs",
+        "78 runs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "New total = 24 x 45 = 1080. Old total = 924. Two innings sum = 156. If the first is x, then x + (x + 8) = 156, so x = 74 and the second = 82.",
+      "shortcut": "Find the combined score of the two innings, then split it using the given gap.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of a class of 30 students is 66. The boys' average is 69 and the girls' average is 64. How many boys are there?",
+      "options": [
+        "8",
+        "12",
+        "18",
+        "11"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Boys : girls = (66 - 64) : (69 - 66) = 2 : 3 = 2:3. Boys = 30 x 2/5 = 12.",
+      "shortcut": "Alligation: boys : girls = (class avg - girls avg) : (boys avg - class avg).",
+      "subPattern": "weighted-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of a class of 40 students is 62. The boys' average is 77 and the girls' average is 53. How many boys are there?",
+      "options": [
+        "15",
+        "30",
+        "25",
+        "12"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Boys : girls = (62 - 53) : (77 - 62) = 9 : 15 = 3:5. Boys = 40 x 3/8 = 15.",
+      "shortcut": "Alligation: boys : girls = (class avg - girls avg) : (boys avg - class avg).",
+      "subPattern": "weighted-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 8 numbers is 47. The average of 6 of them is 42. What is the average of the remaining 2 numbers?",
+      "options": [
+        "31",
+        "47",
+        "62",
+        "124"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 376. Total of the 6 numbers = 252. Remaining total = 124. Average = 124/2 = 62.",
+      "shortcut": "Subtract the known group total from the overall total, then divide by the leftover count.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman's average after 14 innings is 47. He scores 77 runs in his next innings. What is his new average?",
+      "options": [
+        "62",
+        "49",
+        "51",
+        "48"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total after 14 innings = 658. New total = 735. New average = 735/15 = 49.",
+      "shortcut": "New average = (old total + new score) / (innings + 1).",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of five numbers is 23. The average of the first two is 21 and of the last two is 26. What is the middle number?",
+      "options": [
+        "19",
+        "26",
+        "23",
+        "21"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total = 115. First two = 42, last two = 52. Middle = 115 - 42 - 52 = 21.",
+      "shortcut": "Middle = total - (first group total + last group total).",
+      "subPattern": "group-replacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average weight of 10 persons increases by 1 kg when a person weighing 40 kg is replaced by a new person. What is the weight of the new person?",
+      "options": [
+        "41 kg",
+        "25 kg",
+        "50 kg",
+        "30 kg"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Change in total = 10 x 1 = 10 kg. New person = 40 + 10 = 50 kg.",
+      "shortcut": "Change in total = number of persons x change in average; apply it to the replaced value.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 5 consecutive odd numbers is 75. What is the smallest of these numbers?",
+      "options": [
+        "71",
+        "73",
+        "70",
+        "142"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The middle number is 75. Consecutive odd numbers differ by 2, so the smallest = 75 - 2 x 2 = 71.",
+      "shortcut": "Smallest = average - (n - 1) = 75 - 4.",
+      "subPattern": "basic-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of 29 students is 12 years. When the teacher's age is included, the average increases by 2 year(s). What is the teacher's age?",
+      "options": [
+        "70 years",
+        "48 years",
+        "72 years",
+        "14 years"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "New average = 14. Total with teacher = 30 x 14 = 420. Students' total = 29 x 12 = 348. Teacher = 72 years.",
+      "shortcut": "Teacher's age = old average + (n + 1) x rise = 12 + 30 x 2.",
+      "subPattern": "age-based-averages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman's average after 10 innings is 53. He scores 75 runs in his next innings. What is his new average?",
+      "options": [
+        "64",
+        "44",
+        "57",
+        "55"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total after 10 innings = 530. New total = 605. New average = 605/11 = 55.",
+      "shortcut": "New average = (old total + new score) / (innings + 1).",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of the first 20 natural numbers?",
+      "options": [
+        "10",
+        "12.5",
+        "5.25",
+        "10.5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Average of the first n natural numbers = (n + 1)/2 = (20 + 1)/2 = 10.5.",
+      "shortcut": "First n natural numbers: (n+1)/2.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of the first 40 even natural numbers?",
+      "options": [
+        "41",
+        "36",
+        "46",
+        "20"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Average of the first n even natural numbers = n + 1 = 40 + 1 = 41.",
+      "shortcut": "First n even numbers: n + 1.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average weight of 15 persons decreases by 1.5 kg when a person weighing 52 kg is replaced by a new person. What is the weight of the new person?",
+      "options": [
+        "50.5 kg",
+        "29.5 kg",
+        "74.5 kg",
+        "35.4 kg"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Change in total = 15 x 1.5 = 22.5 kg. New person = 52 - 22.5 = 29.5 kg.",
+      "shortcut": "Change in total = number of persons x change in average; apply it to the replaced value.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 8 numbers is 11. Each number is increased by 2 and then multiplied by 5. What is the new average?",
+      "options": [
+        "65",
+        "78",
+        "130",
+        "57"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "After adding 2: average = 13. After multiplying by 5: 13 x 5 = 65.",
+      "shortcut": "Apply the same operations to the average, in the same order.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of 24 students in a test is 84. A new student scoring 34 marks joins them. What is the new average?",
+      "options": [
+        "59",
+        "123",
+        "82",
+        "41"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Old total = 24 x 84 = 2016. New total = 2016 + 34 = 2050. New average = 2050/25 = 82.",
+      "shortcut": "Rebuild the total (n x average), add the new value, divide by the new count.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman has an average of 58 runs after 10 innings. How many runs must he score in his next innings to raise his average by 4?",
+      "options": [
+        "98 runs",
+        "204 runs",
+        "102 runs",
+        "62 runs"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Required total after 11 innings = 11 x 62 = 682. Current total = 580. Runs needed = 102.",
+      "shortcut": "Runs needed = old average + (innings + 1) x rise = 58 + 11 x 4.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of all odd numbers between 34 and 74?",
+      "options": [
+        "54",
+        "72",
+        "81",
+        "54.5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The odd numbers run from 35 to 73. They are evenly spaced, so average = (35 + 73)/2 = 54.",
+      "shortcut": "For an evenly spaced list: average = (first + last)/2.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 10 numbers is 13. If each number is increased by 6, what is the new average?",
+      "options": [
+        "18",
+        "24",
+        "19",
+        "78"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Adding 6 to every number adds 6 to the average: 13 + 6 = 19.",
+      "shortcut": "Adding a constant to every value adds it to the average.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of a family of 6 members is 36 years and the youngest member is 11 years old. What was the average age of the family at the time of the birth of the youngest member?",
+      "options": [
+        "30 years",
+        "60 years",
+        "25 years",
+        "32 years"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of ages of the other 5 members now = 216 - 11 = 205. At the birth, each was 11 years younger: 205 - 55 = 150. Average = 150/5 = 30 years.",
+      "shortcut": "Only 5 members existed at that time, and each was 11 years younger.",
+      "subPattern": "age-based-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of a family of 5 members is 31 years and the youngest member is 11 years old. What was the average age of the family at the time of the birth of the youngest member?",
+      "options": [
+        "23 years",
+        "20 years",
+        "24 years",
+        "25 years"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of ages of the other 4 members now = 155 - 11 = 144. At the birth, each was 11 years younger: 144 - 44 = 100. Average = 100/4 = 25 years.",
+      "shortcut": "Only 4 members existed at that time, and each was 11 years younger.",
+      "subPattern": "age-based-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a class, 40 boys have an average of 56 marks and 60 girls have an average of 66 marks. What is the average of the whole class?",
+      "options": [
+        "93",
+        "62",
+        "61",
+        "31"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total marks = 40 x 56 + 60 x 66 = 6200. Students = 100. Average = 62.",
+      "shortcut": "Weighted average: add the totals, then divide by the total head count.",
+      "subPattern": "weighted-average",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of the first n multiples of 4 is 52. What is the value of n?",
+      "options": [
+        "13",
+        "23",
+        "25",
+        "26"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Average of the first n multiples of 4 = 4(n + 1)/2 = 52, so n + 1 = 26 and n = 25.",
+      "shortcut": "n = 2 x average / 4 - 1.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 7 consecutive even numbers is 32. What is the smallest of these numbers?",
+      "options": [
+        "25",
+        "26",
+        "13",
+        "29"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The middle number is 32. Consecutive even numbers differ by 2, so the smallest = 32 - 2 x 3 = 26.",
+      "shortcut": "Smallest = average - (n - 1) = 32 - 6.",
+      "subPattern": "basic-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of five numbers is 34. The average of the first two is 35 and of the last two is 29. What is the middle number?",
+      "options": [
+        "34",
+        "42",
+        "21",
+        "37"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total = 170. First two = 70, last two = 58. Middle = 170 - 70 - 58 = 42.",
+      "shortcut": "Middle = total - (first group total + last group total).",
+      "subPattern": "group-replacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman has an average of 48 runs after 14 innings. How many runs must he score in his next innings to raise his average by 4?",
+      "options": [
+        "108 runs",
+        "52 runs",
+        "54 runs",
+        "104 runs"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Required total after 15 innings = 15 x 52 = 780. Current total = 672. Runs needed = 108.",
+      "shortcut": "Runs needed = old average + (innings + 1) x rise = 48 + 15 x 4.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of five numbers is 22. The average of the first two is 29 and of the last two is 20. What is the middle number?",
+      "options": [
+        "22",
+        "6",
+        "9",
+        "12"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total = 110. First two = 58, last two = 40. Middle = 110 - 58 - 40 = 12.",
+      "shortcut": "Middle = total - (first group total + last group total).",
+      "subPattern": "group-replacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of five numbers is 25. The average of the first two is 32 and of the last two is 20. What is the middle number?",
+      "options": [
+        "21",
+        "25",
+        "16",
+        "42"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total = 125. First two = 64, last two = 40. Middle = 125 - 64 - 40 = 21.",
+      "shortcut": "Middle = total - (first group total + last group total).",
+      "subPattern": "group-replacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of a class of 50 students is 68. The boys' average is 74 and the girls' average is 64. How many boys are there?",
+      "options": [
+        "20",
+        "40",
+        "24",
+        "30"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Boys : girls = (68 - 64) : (74 - 68) = 4 : 6 = 2:3. Boys = 50 x 2/5 = 20.",
+      "shortcut": "Alligation: boys : girls = (class avg - girls avg) : (boys avg - class avg).",
+      "subPattern": "weighted-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 20 numbers is 78. When two of the numbers, 29 and 82, are removed, what is the average of the remaining numbers?",
+      "options": [
+        "80.5",
+        "64.4",
+        "161",
+        "78"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total = 20 x 78 = 1560. After removal: 1560 - 29 - 82 = 1449. Average = 1449/18 = 80.5.",
+      "shortcut": "Subtract the removed values from the total; divide by the remaining count.",
+      "subPattern": "weighted-average",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 6 numbers is 49. If each number is increased by 6, what is the new average?",
+      "options": [
+        "294",
+        "60",
+        "44",
+        "55"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Adding 6 to every number adds 6 to the average: 49 + 6 = 55.",
+      "shortcut": "Adding a constant to every value adds it to the average.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman's average after 19 innings is 36. He scores 76 runs in his next innings. What is his new average?",
+      "options": [
+        "43",
+        "56",
+        "36",
+        "38"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total after 19 innings = 684. New total = 760. New average = 760/20 = 38.",
+      "shortcut": "New average = (old total + new score) / (innings + 1).",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a class, 25 boys have an average of 57 marks and 25 girls have an average of 70 marks. What is the average of the whole class?",
+      "options": [
+        "31.75",
+        "95.25",
+        "63.5",
+        "50.8"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total marks = 25 x 57 + 25 x 70 = 3175. Students = 50. Average = 63.5.",
+      "shortcut": "Weighted average: add the totals, then divide by the total head count.",
+      "subPattern": "weighted-average",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a class, 12 boys have an average of 60 marks and 18 girls have an average of 50 marks. What is the average of the whole class?",
+      "options": [
+        "55",
+        "54",
+        "49",
+        "108"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total marks = 12 x 60 + 18 x 50 = 1620. Students = 30. Average = 54.",
+      "shortcut": "Weighted average: add the totals, then divide by the total head count.",
+      "subPattern": "weighted-average",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 9 numbers is 49. The average of the first 5 numbers is 58 and the average of the last 5 numbers is 33. What is the middle number?",
+      "options": [
+        "45.5",
+        "12",
+        "14",
+        "19"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "First 5 total = 290, last 5 total = 165. Their sum counts the middle number twice: 455 - 9 x 49 = 14.",
+      "shortcut": "Middle number = (sum of the two overlapping group totals) - (total of all).",
+      "subPattern": "group-replacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 10 numbers was calculated as 57. It was later found that the number 59 had been wrongly read as 14. What is the correct average?",
+      "options": [
+        "61.5",
+        "102",
+        "30.75",
+        "49.2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Wrong total = 10 x 57 = 570. Correct total = 570 - 14 + 59 = 615. Correct average = 615/10 = 61.5.",
+      "shortcut": "Correct average = old average + (right - wrong)/10.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 7 consecutive even numbers is 36. What is the smallest of these numbers?",
+      "options": [
+        "29",
+        "30",
+        "24",
+        "33"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The middle number is 36. Consecutive even numbers differ by 2, so the smallest = 36 - 2 x 3 = 30.",
+      "shortcut": "Smallest = average - (n - 1) = 36 - 6.",
+      "subPattern": "basic-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of all even numbers between 18 and 68?",
+      "options": [
+        "38",
+        "44",
+        "43",
+        "43.5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The even numbers run from 20 to 66. They are evenly spaced, so average = (20 + 66)/2 = 43.",
+      "shortcut": "For an evenly spaced list: average = (first + last)/2.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman's average for 20 innings is 32. After two more innings his average becomes 36. If his score in the second of these innings was 14 more than in the first, what was his score in the second innings?",
+      "options": [
+        "76 runs",
+        "166 runs",
+        "69 runs",
+        "83 runs"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "New total = 22 x 36 = 792. Old total = 640. Two innings sum = 152. If the first is x, then x + (x + 14) = 152, so x = 69 and the second = 83.",
+      "shortcut": "Find the combined score of the two innings, then split it using the given gap.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of 24 students in a test is 70. A new student scoring 45 marks joins them. What is the new average?",
+      "options": [
+        "57.5",
+        "138",
+        "69",
+        "92"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Old total = 24 x 70 = 1680. New total = 1680 + 45 = 1725. New average = 1725/25 = 69.",
+      "shortcut": "Rebuild the total (n x average), add the new value, divide by the new count.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of a family of 4 members is 30 years and the youngest member is 9 years old. What was the average age of the family at the time of the birth of the youngest member?",
+      "options": [
+        "14 years",
+        "21 years",
+        "28 years",
+        "26 years"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of ages of the other 3 members now = 120 - 9 = 111. At the birth, each was 9 years younger: 111 - 27 = 84. Average = 84/3 = 28 years.",
+      "shortcut": "Only 3 members existed at that time, and each was 9 years younger.",
+      "subPattern": "age-based-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average weight of 20 persons increases by 2.5 kg when a person weighing 63 kg is replaced by a new person. What is the weight of the new person?",
+      "options": [
+        "13 kg",
+        "65.5 kg",
+        "113 kg",
+        "226 kg"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Change in total = 20 x 2.5 = 50 kg. New person = 63 + 50 = 113 kg.",
+      "shortcut": "Change in total = number of persons x change in average; apply it to the replaced value.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of a family of 4 members is 27 years and the youngest member is 9 years old. What was the average age of the family at the time of the birth of the youngest member?",
+      "options": [
+        "18 years",
+        "16 years",
+        "12 years",
+        "24 years"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of ages of the other 3 members now = 108 - 9 = 99. At the birth, each was 9 years younger: 99 - 27 = 72. Average = 72/3 = 24 years.",
+      "shortcut": "Only 3 members existed at that time, and each was 9 years younger.",
+      "subPattern": "age-based-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of a family of 6 members is 31 years and the youngest member is 11 years old. What was the average age of the family at the time of the birth of the youngest member?",
+      "options": [
+        "20 years",
+        "22 years",
+        "18 years",
+        "24 years"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of ages of the other 5 members now = 186 - 11 = 175. At the birth, each was 11 years younger: 175 - 55 = 120. Average = 120/5 = 24 years.",
+      "shortcut": "Only 5 members existed at that time, and each was 11 years younger.",
+      "subPattern": "age-based-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman's average for 18 innings is 30. After two more innings his average becomes 34. If his score in the second of these innings was 10 more than in the first, what was his score in the second innings?",
+      "options": [
+        "65 runs",
+        "150 runs",
+        "70 runs",
+        "75 runs"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "New total = 20 x 34 = 680. Old total = 540. Two innings sum = 140. If the first is x, then x + (x + 10) = 140, so x = 65 and the second = 75.",
+      "shortcut": "Find the combined score of the two innings, then split it using the given gap.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average weight of 5 persons increases by 1 kg when a person weighing 65 kg is replaced by a new person. What is the weight of the new person?",
+      "options": [
+        "66 kg",
+        "56 kg",
+        "60 kg",
+        "70 kg"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Change in total = 5 x 1 = 5 kg. New person = 65 + 5 = 70 kg.",
+      "shortcut": "Change in total = number of persons x change in average; apply it to the replaced value.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 5 numbers is 26. The average of 2 of them is 29. What is the average of the remaining 3 numbers?",
+      "options": [
+        "36",
+        "24",
+        "48",
+        "26"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total = 130. Total of the 2 numbers = 58. Remaining total = 72. Average = 72/3 = 24.",
+      "shortcut": "Subtract the known group total from the overall total, then divide by the leftover count.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 9 consecutive integers is 70. What is the largest of these integers?",
+      "options": [
+        "79",
+        "74",
+        "148",
+        "66"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For an odd count of consecutive integers the average is the middle number. Middle = 70, so the largest = 70 + 4 = 74.",
+      "shortcut": "Middle term = average; go 4 steps up for the largest.",
+      "subPattern": "basic-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of A and B is 36, the average of B and C is 32, and the average of A and C is 28. What is the value of A?",
+      "options": [
+        "32",
+        "37",
+        "40",
+        "24"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A + B = 72, B + C = 64, A + C = 56. A = (A + B) + (A + C) - (B + C) = 72 + 56 - 64 = 32.",
+      "shortcut": "A = (A+B)/2 + (A+C)/2 - (B+C)/2 in terms of the given averages.",
+      "subPattern": "group-replacement",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 20 numbers is 32. When two of the numbers, 20 and 26, are removed, what is the average of the remaining numbers?",
+      "options": [
+        "32",
+        "22",
+        "44",
+        "33"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total = 20 x 32 = 640. After removal: 640 - 20 - 26 = 594. Average = 594/18 = 33.",
+      "shortcut": "Subtract the removed values from the total; divide by the remaining count.",
+      "subPattern": "weighted-average",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of 19 students in a test is 56. A new student scoring 76 marks joins them. What is the new average?",
+      "options": [
+        "114",
+        "57",
+        "66",
+        "58"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Old total = 19 x 56 = 1064. New total = 1064 + 76 = 1140. New average = 1140/20 = 57.",
+      "shortcut": "Rebuild the total (n x average), add the new value, divide by the new count.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 9 numbers is 51. The average of the first 5 numbers is 43 and the average of the last 5 numbers is 60. What is the middle number?",
+      "options": [
+        "56",
+        "51.5",
+        "54",
+        "51"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "First 5 total = 215, last 5 total = 300. Their sum counts the middle number twice: 515 - 9 x 51 = 56.",
+      "shortcut": "Middle number = (sum of the two overlapping group totals) - (total of all).",
+      "subPattern": "group-replacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average weight of 5 persons increases by 2 kg when a person weighing 71 kg is replaced by a new person. What is the weight of the new person?",
+      "options": [
+        "73 kg",
+        "61 kg",
+        "81 kg",
+        "54 kg"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Change in total = 5 x 2 = 10 kg. New person = 71 + 10 = 81 kg.",
+      "shortcut": "Change in total = number of persons x change in average; apply it to the replaced value.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of the first n multiples of 8 is 56. What is the value of n?",
+      "options": [
+        "14",
+        "7",
+        "13",
+        "12"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Average of the first n multiples of 8 = 8(n + 1)/2 = 56, so n + 1 = 14 and n = 13.",
+      "shortcut": "n = 2 x average / 8 - 1.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman has an average of 31 runs after 10 innings. How many runs must he score in his next innings to raise his average by 5?",
+      "options": [
+        "172 runs",
+        "86 runs",
+        "36 runs",
+        "81 runs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Required total after 11 innings = 11 x 36 = 396. Current total = 310. Runs needed = 86.",
+      "shortcut": "Runs needed = old average + (innings + 1) x rise = 31 + 11 x 5.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 6 numbers is 29. The average of 2 of them is 44. What is the average of the remaining 4 numbers?",
+      "options": [
+        "29",
+        "21.5",
+        "17.2",
+        "23.5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total = 174. Total of the 2 numbers = 88. Remaining total = 86. Average = 86/4 = 21.5.",
+      "shortcut": "Subtract the known group total from the overall total, then divide by the leftover count.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 8 numbers is 38. If each number is increased by 2, what is the new average?",
+      "options": [
+        "36",
+        "76",
+        "32",
+        "40"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Adding 2 to every number adds 2 to the average: 38 + 2 = 40.",
+      "shortcut": "Adding a constant to every value adds it to the average.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman has an average of 42 runs after 19 innings. How many runs must he score in his next innings to raise his average by 2?",
+      "options": [
+        "82 runs",
+        "80 runs",
+        "44 runs",
+        "164 runs"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Required total after 20 innings = 20 x 44 = 880. Current total = 798. Runs needed = 82.",
+      "shortcut": "Runs needed = old average + (innings + 1) x rise = 42 + 20 x 2.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of all even numbers between 58 and 98?",
+      "options": [
+        "156",
+        "78.5",
+        "117",
+        "78"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The even numbers run from 60 to 96. They are evenly spaced, so average = (60 + 96)/2 = 78.",
+      "shortcut": "For an evenly spaced list: average = (first + last)/2.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of the numbers 52, 13, 29, 31, 30?",
+      "options": [
+        "38.75",
+        "26",
+        "31",
+        "32"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum = 155. Number of values = 5. Average = 155/5 = 31.",
+      "shortcut": "Average = sum of values / number of values.",
+      "subPattern": "basic-average",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of A and B is 23, the average of B and C is 20, and the average of A and C is 17. What is the value of A?",
+      "options": [
+        "10",
+        "14",
+        "26",
+        "20"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A + B = 46, B + C = 40, A + C = 34. A = (A + B) + (A + C) - (B + C) = 46 + 34 - 40 = 20.",
+      "shortcut": "A = (A+B)/2 + (A+C)/2 - (B+C)/2 in terms of the given averages.",
+      "subPattern": "group-replacement",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman's average after 9 innings is 40. He scores 90 runs in his next innings. What is his new average?",
+      "options": [
+        "65",
+        "45",
+        "47",
+        "40"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total after 9 innings = 360. New total = 450. New average = 450/10 = 45.",
+      "shortcut": "New average = (old total + new score) / (innings + 1).",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A batsman has an average of 47 runs after 14 innings. How many runs must he score in his next innings to raise his average by 3?",
+      "options": [
+        "138 runs",
+        "89 runs",
+        "92 runs",
+        "50 runs"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Required total after 15 innings = 15 x 50 = 750. Current total = 658. Runs needed = 92.",
+      "shortcut": "Runs needed = old average + (innings + 1) x rise = 47 + 15 x 3.",
+      "subPattern": "cricket-batting-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of a class of 50 students is 71. The boys' average is 80 and the girls' average is 50. How many boys are there?",
+      "options": [
+        "34",
+        "15",
+        "42",
+        "35"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Boys : girls = (71 - 50) : (80 - 71) = 21 : 9 = 7:3. Boys = 50 x 7/10 = 35.",
+      "shortcut": "Alligation: boys : girls = (class avg - girls avg) : (boys avg - class avg).",
+      "subPattern": "weighted-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 8 numbers is 37. When one number is removed, the average of the remaining numbers becomes 26. What is the number that was removed?",
+      "options": [
+        "114",
+        "76",
+        "11",
+        "57"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total = 8 x 37 = 296. Remaining total = 7 x 26 = 182. Removed number = 296 - 182 = 114.",
+      "shortcut": "Removed number = old total - new total.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 6 numbers is 43. Each number is increased by 4 and then multiplied by 3. What is the new average?",
+      "options": [
+        "141",
+        "282",
+        "188",
+        "133"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "After adding 4: average = 47. After multiplying by 3: 47 x 3 = 141.",
+      "shortcut": "Apply the same operations to the average, in the same order.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average weight of 20 persons increases by 4 kg when a person weighing 72 kg is replaced by a new person. What is the weight of the new person?",
+      "options": [
+        "190 kg",
+        "-8 kg",
+        "152 kg",
+        "76 kg"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Change in total = 20 x 4 = 80 kg. New person = 72 + 80 = 152 kg.",
+      "shortcut": "Change in total = number of persons x change in average; apply it to the replaced value.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of all multiples of 4 from 4 to 80?",
+      "options": [
+        "40",
+        "42",
+        "44",
+        "56"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The multiples are 4 x 1 up to 4 x 20. Average = 4 x (1 + 20)/2 = 42.",
+      "shortcut": "Average of multiples = k x (first + last index)/2.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of five numbers is 35. The average of the first two is 37 and of the last two is 30. What is the middle number?",
+      "options": [
+        "46",
+        "39",
+        "35",
+        "41"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total = 175. First two = 74, last two = 60. Middle = 175 - 74 - 60 = 41.",
+      "shortcut": "Middle = total - (first group total + last group total).",
+      "subPattern": "group-replacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of the numbers 61, 101, 77, 17?",
+      "options": [
+        "64",
+        "32",
+        "96",
+        "80"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum = 256. Number of values = 4. Average = 256/4 = 64.",
+      "shortcut": "Average = sum of values / number of values.",
+      "subPattern": "basic-average",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 9 consecutive integers is 34. What is the largest of these integers?",
+      "options": [
+        "38",
+        "30",
+        "37",
+        "43"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For an odd count of consecutive integers the average is the middle number. Middle = 34, so the largest = 34 + 4 = 38.",
+      "shortcut": "Middle term = average; go 4 steps up for the largest.",
+      "subPattern": "basic-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of A, B and C is 30 years. The average age of A and B is 25 years and that of B and C is 34 years. What is B's age?",
+      "options": [
+        "27 years",
+        "25 years",
+        "28 years",
+        "26 years"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A + B + C = 90. A + B = 50, B + C = 68. B = (A + B) + (B + C) - (A + B + C) = 50 + 68 - 90 = 28 years.",
+      "shortcut": "B = (A+B) + (B+C) - (A+B+C).",
+      "subPattern": "age-based-averages",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a class, 25 boys have an average of 88 marks and 25 girls have an average of 51 marks. What is the average of the whole class?",
+      "options": [
+        "69.5",
+        "55.6",
+        "34.75",
+        "76.45"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total marks = 25 x 88 + 25 x 51 = 3475. Students = 50. Average = 69.5.",
+      "shortcut": "Weighted average: add the totals, then divide by the total head count.",
+      "subPattern": "weighted-average",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of a class of 40 students is 65. The boys' average is 80 and the girls' average is 56. How many boys are there?",
+      "options": [
+        "17",
+        "15",
+        "25",
+        "14"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Boys : girls = (65 - 56) : (80 - 65) = 9 : 15 = 3:5. Boys = 40 x 3/8 = 15.",
+      "shortcut": "Alligation: boys : girls = (class avg - girls avg) : (boys avg - class avg).",
+      "subPattern": "weighted-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 6 numbers is 17. Each number is increased by 4 and then multiplied by 3. What is the new average?",
+      "options": [
+        "126",
+        "84",
+        "63",
+        "55"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "After adding 4: average = 21. After multiplying by 3: 21 x 3 = 63.",
+      "shortcut": "Apply the same operations to the average, in the same order.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 12 numbers is 39. Each number is increased by 5 and then multiplied by 2. What is the new average?",
+      "options": [
+        "83",
+        "88",
+        "110",
+        "66"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "After adding 5: average = 44. After multiplying by 2: 44 x 2 = 88.",
+      "shortcut": "Apply the same operations to the average, in the same order.",
+      "subPattern": "corrected-mistake-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of three numbers is 16. The numbers are in the ratio 3:4:5. What is the largest number?",
+      "options": [
+        "12",
+        "20",
+        "15",
+        "18"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sum = 3 x 16 = 48. Parts = 3 + 4 + 5 = 12. Largest = 48 x 5/12 = 20.",
+      "shortcut": "Total = n x average; split the total in the given ratio.",
+      "subPattern": "basic-average",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of all multiples of 4 from 4 to 48?",
+      "options": [
+        "26",
+        "21",
+        "24",
+        "13"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The multiples are 4 x 1 up to 4 x 12. Average = 4 x (1 + 12)/2 = 26.",
+      "shortcut": "Average of multiples = k x (first + last index)/2.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of 20 students is 16 years. When the teacher's age is included, the average increases by 2 year(s). What is the teacher's age?",
+      "options": [
+        "57 years",
+        "56 years",
+        "58 years",
+        "18 years"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "New average = 18. Total with teacher = 21 x 18 = 378. Students' total = 20 x 16 = 320. Teacher = 58 years.",
+      "shortcut": "Teacher's age = old average + (n + 1) x rise = 16 + 21 x 2.",
+      "subPattern": "age-based-averages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of the numbers 34, 45, 57, 97, 71, 56?",
+      "options": [
+        "60",
+        "59",
+        "72",
+        "66"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum = 360. Number of values = 6. Average = 360/6 = 60.",
+      "shortcut": "Average = sum of values / number of values.",
+      "subPattern": "basic-average",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of a class of 50 students is 58. The boys' average is 74 and the girls' average is 54. How many boys are there?",
+      "options": [
+        "10",
+        "9",
+        "20",
+        "40"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Boys : girls = (58 - 54) : (74 - 58) = 4 : 16 = 1:4. Boys = 50 x 1/5 = 10.",
+      "shortcut": "Alligation: boys : girls = (class avg - girls avg) : (boys avg - class avg).",
+      "subPattern": "weighted-average",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of the numbers 25, 133, 51, 80, 21?",
+      "options": [
+        "31",
+        "62",
+        "124",
+        "77.5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sum = 310. Number of values = 5. Average = 310/5 = 62.",
+      "shortcut": "Average = sum of values / number of values.",
+      "subPattern": "basic-average",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 7 numbers is 56. The average of the first 4 numbers is 63 and the average of the last 4 numbers is 68. What is the middle number?",
+      "options": [
+        "198",
+        "99",
+        "132",
+        "65.5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "First 4 total = 252, last 4 total = 272. Their sum counts the middle number twice: 524 - 7 x 56 = 132.",
+      "shortcut": "Middle number = (sum of the two overlapping group totals) - (total of all).",
+      "subPattern": "group-replacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of A and B is 22, the average of B and C is 34, and the average of A and C is 28. What is the value of A?",
+      "options": [
+        "28",
+        "16",
+        "40",
+        "14"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A + B = 44, B + C = 68, A + C = 56. A = (A + B) + (A + C) - (B + C) = 44 + 56 - 68 = 16.",
+      "shortcut": "A = (A+B)/2 + (A+C)/2 - (B+C)/2 in terms of the given averages.",
+      "subPattern": "group-replacement",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of 25 students is 17 years. When the teacher's age is included, the average increases by 2 year(s). What is the teacher's age?",
+      "options": [
+        "67 years",
+        "92 years",
+        "19 years",
+        "69 years"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "New average = 19. Total with teacher = 26 x 19 = 494. Students' total = 25 x 17 = 425. Teacher = 69 years.",
+      "shortcut": "Teacher's age = old average + (n + 1) x rise = 17 + 26 x 2.",
+      "subPattern": "age-based-averages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average marks of 11 students in a test is 63. A new student scoring 87 marks joins them. What is the new average?",
+      "options": [
+        "52",
+        "65",
+        "75",
+        "78"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Old total = 11 x 63 = 693. New total = 693 + 87 = 780. New average = 780/12 = 65.",
+      "shortcut": "Rebuild the total (n x average), add the new value, divide by the new count.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of all multiples of 7 from 7 to 70?",
+      "options": [
+        "35",
+        "37.5",
+        "42.35",
+        "38.5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The multiples are 7 x 1 up to 7 x 10. Average = 7 x (1 + 10)/2 = 38.5.",
+      "shortcut": "Average of multiples = k x (first + last index)/2.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of a family of 4 members is 30 years and the youngest member is 6 years old. What was the average age of the family at the time of the birth of the youngest member?",
+      "options": [
+        "32 years",
+        "16 years",
+        "37 years",
+        "24 years"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of ages of the other 3 members now = 120 - 6 = 114. At the birth, each was 6 years younger: 114 - 18 = 96. Average = 96/3 = 32 years.",
+      "shortcut": "Only 3 members existed at that time, and each was 6 years younger.",
+      "subPattern": "age-based-averages",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of all odd numbers between 14 and 54?",
+      "options": [
+        "34.5",
+        "33",
+        "17",
+        "34"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The odd numbers run from 15 to 53. They are evenly spaced, so average = (15 + 53)/2 = 34.",
+      "shortcut": "For an evenly spaced list: average = (first + last)/2.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average age of A, B and C is 36 years. The average age of A and B is 33 years and that of B and C is 39 years. What is B's age?",
+      "options": [
+        "54 years",
+        "35 years",
+        "33 years",
+        "36 years"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A + B + C = 108. A + B = 66, B + C = 78. B = (A + B) + (B + C) - (A + B + C) = 66 + 78 - 108 = 36 years.",
+      "shortcut": "B = (A+B) + (B+C) - (A+B+C).",
+      "subPattern": "age-based-averages",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of the first n multiples of 9 is 54. What is the value of n?",
+      "options": [
+        "11",
+        "13",
+        "12",
+        "6"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Average of the first n multiples of 9 = 9(n + 1)/2 = 54, so n + 1 = 12 and n = 11.",
+      "shortcut": "n = 2 x average / 9 - 1.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 7 numbers is 50. The average of the first 4 numbers is 61 and the average of the last 4 numbers is 32. What is the middle number?",
+      "options": [
+        "27",
+        "46.5",
+        "22",
+        "24"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "First 4 total = 244, last 4 total = 128. Their sum counts the middle number twice: 372 - 7 x 50 = 22.",
+      "shortcut": "Middle number = (sum of the two overlapping group totals) - (total of all).",
+      "subPattern": "group-replacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 10 numbers was calculated as 69. It was later found that the number 15 had been wrongly read as 10. What is the correct average?",
+      "options": [
+        "74",
+        "69.5",
+        "62.55",
+        "83.4"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Wrong total = 10 x 69 = 690. Correct total = 690 - 10 + 15 = 695. Correct average = 695/10 = 69.5.",
+      "shortcut": "Correct average = old average + (right - wrong)/10.",
+      "subPattern": "adding-or-removing-an-element",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of 20 numbers is 41. When two of the numbers, 38 and 62, are removed, what is the average of the remaining numbers?",
+      "options": [
+        "39",
+        "41",
+        "20",
+        "40"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total = 20 x 41 = 820. After removal: 820 - 38 - 62 = 720. Average = 720/18 = 40.",
+      "shortcut": "Subtract the removed values from the total; divide by the remaining count.",
+      "subPattern": "weighted-average",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the average of the first 25 even natural numbers?",
+      "options": [
+        "12.5",
+        "52",
+        "24",
+        "26"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Average of the first n even natural numbers = n + 1 = 25 + 1 = 26.",
+      "shortcut": "First n even numbers: n + 1.",
+      "subPattern": "consecutive-numbers",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The average of five numbers is 24. The average of the first two is 35 and of the last two is 22. What is the middle number?",
+      "options": [
+        "3",
+        "11",
+        "6",
+        "24"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 120. First two = 70, last two = 44. Middle = 120 - 70 - 44 = 6.",
+      "shortcut": "Middle = total - (first group total + last group total).",
+      "subPattern": "group-replacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    }
+  ]
+}

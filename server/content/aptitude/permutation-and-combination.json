@@ -1,0 +1,2732 @@
+{
+ "pattern": {
+  "title": "Permutation and Combination",
+  "slug": "permutation-and-combination",
+  "description": "Counting, arrangements and selections.",
+  "order": 18,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "fundamental-counting-principle",
+    "title": "Fundamental counting principle"
+   },
+   {
+    "slug": "permutations",
+    "title": "Permutations"
+   },
+   {
+    "slug": "combinations",
+    "title": "Combinations"
+   },
+   {
+    "slug": "circular-permutations",
+    "title": "Circular permutations"
+   },
+   {
+    "slug": "word-arrangements-with-repetition",
+    "title": "Word arrangements (with repetition)"
+   },
+   {
+    "slug": "committee-selection",
+    "title": "Committee selection"
+   },
+   {
+    "slug": "number-formation-from-digits",
+    "title": "Number formation from digits"
+   },
+   {
+    "slug": "distribution-stars-bars",
+    "title": "Distribution (stars & bars)"
+   },
+   {
+    "slug": "handshakes-diagonals-geometry-counting",
+    "title": "Handshakes, diagonals & geometry counting"
+   },
+   {
+    "slug": "derangements-restrictions",
+    "title": "Derangements & restrictions"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "What is the value of 10P2?",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "135"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "10P2 = 10!/(10 - 2)! = 10 x 9 = 90.",
+   "order": 1,
+   "subPattern": "fundamental-counting-principle",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "nPr = n x (n-1) x ... for r terms."
+  },
+  {
+   "questionText": "If nP2 = 56, find n.",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "nP2 = n(n - 1) = 56. So n^2 - n - 56 = 0, giving n = 8.",
+   "order": 2,
+   "subPattern": "fundamental-counting-principle",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Factor n(n-1) = k into two consecutive numbers."
+  },
+  {
+   "questionText": "If nC2 = 45, find n.",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "n(n - 1)/2 = 45, so n(n - 1) = 90 = 10 x 9, giving n = 10.",
+   "order": 3,
+   "subPattern": "fundamental-counting-principle",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Write n(n-1) = 2k and find two consecutive numbers."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word PLANET be arranged so that the arrangements end with a consonant?",
+   "options": [
+    {
+     "text": "240"
+    },
+    {
+     "text": "720"
+    },
+    {
+     "text": "600"
+    },
+    {
+     "text": "480"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word PLANET has 2 vowel(s) (A, E) and 4 consonant(s) (P, L, N, T); all letters are different. Counting all 720 distinct arrangements and keeping those that end with a consonant gives 480.",
+   "order": 4,
+   "subPattern": "permutations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word TRAINS be arranged so that the arrangements end with a consonant?",
+   "options": [
+    {
+     "text": "720"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "640"
+    },
+    {
+     "text": "480"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word TRAINS has 2 vowel(s) (A, I) and 4 consonant(s) (T, R, N, S); all letters are different. Counting all 720 distinct arrangements and keeping those that end with a consonant gives 480.",
+   "order": 5,
+   "subPattern": "permutations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word DOCTOR be arranged so that the arrangements begin with a consonant and end with a vowel?",
+   "options": [
+    {
+     "text": "360"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "144"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word DOCTOR has 2 vowel(s) (O, O) and 4 consonant(s) (D, C, T, R); O appears 2 times. Counting all 360 distinct arrangements and keeping those that begin with a consonant and end with a vowel gives 96.",
+   "order": 6,
+   "subPattern": "permutations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word SUNDAY be arranged so that the arrangements begin with a consonant and end with a vowel?",
+   "options": [
+    {
+     "text": "720"
+    },
+    {
+     "text": "192"
+    },
+    {
+     "text": "144"
+    },
+    {
+     "text": "96"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word SUNDAY has 2 vowel(s) (U, A) and 4 consonant(s) (S, N, D, Y); all letters are different. Counting all 720 distinct arrangements and keeping those that begin with a consonant and end with a vowel gives 192.",
+   "order": 7,
+   "subPattern": "permutations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word ORANGE be arranged so that the arrangements have all the vowels together?",
+   "options": [
+    {
+     "text": "144"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "720"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word ORANGE has 3 vowel(s) (O, A, E) and 3 consonant(s) (R, N, G); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 144.",
+   "order": 8,
+   "subPattern": "permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word PLANET be arranged so that the arrangements have all the vowels together?",
+   "options": [
+    {
+     "text": "160"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "720"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word PLANET has 2 vowel(s) (A, E) and 4 consonant(s) (P, L, N, T); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 240.",
+   "order": 9,
+   "subPattern": "permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word DOCTOR be arranged so that the arrangements have all the vowels together?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "60"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word DOCTOR has 2 vowel(s) (O, O) and 4 consonant(s) (D, C, T, R); O appears 2 times. Counting all 360 distinct arrangements and keeping those that have all the vowels together gives 120.",
+   "order": 10,
+   "subPattern": "permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word WINDOW be arranged so that the arrangements have all the vowels together?",
+   "options": [
+    {
+     "text": "240"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word WINDOW has 2 vowel(s) (I, O) and 4 consonant(s) (W, N, D, W); W appears 2 times. Counting all 360 distinct arrangements and keeping those that have all the vowels together gives 120.",
+   "order": 11,
+   "subPattern": "permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word MARKET be arranged so that the arrangements have all the vowels together?",
+   "options": [
+    {
+     "text": "720"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "160"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word MARKET has 2 vowel(s) (A, E) and 4 consonant(s) (M, R, K, T); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 240.",
+   "order": 12,
+   "subPattern": "permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word SUNDAY be arranged so that the arrangements have all the vowels together?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "720"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "264"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word SUNDAY has 2 vowel(s) (U, A) and 4 consonant(s) (S, N, D, Y); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 240.",
+   "order": 13,
+   "subPattern": "permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word MONDAY be arranged so that the arrangements have all the vowels together?",
+   "options": [
+    {
+     "text": "240"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "288"
+    },
+    {
+     "text": "720"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word MONDAY has 2 vowel(s) (O, A) and 4 consonant(s) (M, N, D, Y); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 240.",
+   "order": 14,
+   "subPattern": "permutations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word WINDOW be arranged so that the arrangements do not have all the vowels together?",
+   "options": [
+    {
+     "text": "360"
+    },
+    {
+     "text": "160"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "240"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word WINDOW has 2 vowel(s) (I, O) and 4 consonant(s) (W, N, D, W); W appears 2 times. Counting all 360 distinct arrangements and keeping those that do not have all the vowels together gives 240.",
+   "order": 15,
+   "subPattern": "permutations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word TRIANGLE be arranged so that the arrangements do not have all the vowels together?",
+   "options": [
+    {
+     "text": "18000"
+    },
+    {
+     "text": "36000"
+    },
+    {
+     "text": "40320"
+    },
+    {
+     "text": "72000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word TRIANGLE has 3 vowel(s) (I, A, E) and 5 consonant(s) (T, R, N, G, L); all letters are different. Counting all 40320 distinct arrangements and keeping those that do not have all the vowels together gives 36000.",
+   "order": 16,
+   "subPattern": "permutations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total."
+  },
+  {
+   "questionText": "What is the value of 10C4?",
+   "options": [
+    {
+     "text": "210"
+    },
+    {
+     "text": "231"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "5040"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "10C4 = 10P4/4! = 5040/24 = 210.",
+   "order": 17,
+   "subPattern": "combinations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "nCr = nPr / r!"
+  },
+  {
+   "questionText": "What is the value of 10C2?",
+   "options": [
+    {
+     "text": "46"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "45"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "10C2 = 10P2/2! = 90/2 = 45.",
+   "order": 18,
+   "subPattern": "combinations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "nCr = nPr / r!"
+  },
+  {
+   "questionText": "What is the value of 9C2?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "9C2 = 9P2/2! = 72/2 = 36.",
+   "order": 19,
+   "subPattern": "combinations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "nCr = nPr / r!"
+  },
+  {
+   "questionText": "Find the value of 13C5.",
+   "options": [
+    {
+     "text": "154440"
+    },
+    {
+     "text": "1716"
+    },
+    {
+     "text": "1287"
+    },
+    {
+     "text": "2574"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "13C5 = 13!/(5! x 8!) = 1287.",
+   "order": 20,
+   "subPattern": "combinations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use nCr = nC(n-r) to shorten the work."
+  },
+  {
+   "questionText": "Find the value of 11C3 + 11C2.",
+   "options": [
+    {
+     "text": "220"
+    },
+    {
+     "text": "165"
+    },
+    {
+     "text": "440"
+    },
+    {
+     "text": "198"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "11C3 + 11C2 = 165 + 55 = 220 (this equals 12C3).",
+   "order": 21,
+   "subPattern": "combinations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "nCr + nC(r-1) = (n+1)Cr."
+  },
+  {
+   "questionText": "Find the value of 11C5 + 11C4.",
+   "options": [
+    {
+     "text": "462"
+    },
+    {
+     "text": "396"
+    },
+    {
+     "text": "792"
+    },
+    {
+     "text": "990"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "11C5 + 11C4 = 462 + 330 = 792 (this equals 12C5).",
+   "order": 22,
+   "subPattern": "combinations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "nCr + nC(r-1) = (n+1)Cr."
+  },
+  {
+   "questionText": "Find the value of 12C6.",
+   "options": [
+    {
+     "text": "1232"
+    },
+    {
+     "text": "665280"
+    },
+    {
+     "text": "1386"
+    },
+    {
+     "text": "924"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "12C6 = 12!/(6! x 6!) = 924.",
+   "order": 23,
+   "subPattern": "combinations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use nCr = nC(n-r) to shorten the work."
+  },
+  {
+   "questionText": "Find the value of 14C4 + 14C3.",
+   "options": [
+    {
+     "text": "1001"
+    },
+    {
+     "text": "1365"
+    },
+    {
+     "text": "1638"
+    },
+    {
+     "text": "1820"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "14C4 + 14C3 = 1001 + 364 = 1365 (this equals 15C4).",
+   "order": 24,
+   "subPattern": "combinations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "nCr + nC(r-1) = (n+1)Cr."
+  },
+  {
+   "questionText": "Find the value of 12C5.",
+   "options": [
+    {
+     "text": "528"
+    },
+    {
+     "text": "1584"
+    },
+    {
+     "text": "95040"
+    },
+    {
+     "text": "792"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "12C5 = 12!/(5! x 7!) = 792.",
+   "order": 25,
+   "subPattern": "combinations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use nCr = nC(n-r) to shorten the work."
+  },
+  {
+   "questionText": "In how many ways can 8 people be seated around a circular table?",
+   "options": [
+    {
+     "text": "40320"
+    },
+    {
+     "text": "7560"
+    },
+    {
+     "text": "5040"
+    },
+    {
+     "text": "10080"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Circular arrangements of 8 people = (8 - 1)! = 5040.",
+   "order": 26,
+   "subPattern": "circular-permutations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Fix one person; arrange the rest: (n-1)!"
+  },
+  {
+   "questionText": "In how many ways can 7 people be seated around a circular table?",
+   "options": [
+    {
+     "text": "720"
+    },
+    {
+     "text": "480"
+    },
+    {
+     "text": "5040"
+    },
+    {
+     "text": "900"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Circular arrangements of 7 people = (7 - 1)! = 720.",
+   "order": 27,
+   "subPattern": "circular-permutations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Fix one person; arrange the rest: (n-1)!"
+  },
+  {
+   "questionText": "In how many ways can 4 people be seated around a circular table?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Circular arrangements of 4 people = (4 - 1)! = 6.",
+   "order": 28,
+   "subPattern": "circular-permutations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Fix one person; arrange the rest: (n-1)!"
+  },
+  {
+   "questionText": "In how many ways can 6 people be seated around a circular table?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "720"
+    },
+    {
+     "text": "150"
+    },
+    {
+     "text": "108"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Circular arrangements of 6 people = (6 - 1)! = 120.",
+   "order": 29,
+   "subPattern": "circular-permutations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Fix one person; arrange the rest: (n-1)!"
+  },
+  {
+   "questionText": "In how many ways can 9 people be seated around a round table so that two particular people always sit together?",
+   "options": [
+    {
+     "text": "40320"
+    },
+    {
+     "text": "11088"
+    },
+    {
+     "text": "10080"
+    },
+    {
+     "text": "8064"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Treat the two as one: (9 - 1 - 1)! = 5040 arrangements, times 2 for their internal order = 10080.",
+   "order": 30,
+   "subPattern": "circular-permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Together: 2 x (n-2)!"
+  },
+  {
+   "questionText": "In how many ways can 5 people be seated around a round table so that two particular people do NOT sit together?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total = 24. Together = 2 x 6 = 12. Not together = 12.",
+   "order": 31,
+   "subPattern": "circular-permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Not together = (n-1)! - 2(n-2)!"
+  },
+  {
+   "questionText": "In how many ways can 8 people be seated around a round table so that two particular people always sit together?",
+   "options": [
+    {
+     "text": "960"
+    },
+    {
+     "text": "1440"
+    },
+    {
+     "text": "1152"
+    },
+    {
+     "text": "5040"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Treat the two as one: (8 - 1 - 1)! = 720 arrangements, times 2 for their internal order = 1440.",
+   "order": 32,
+   "subPattern": "circular-permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Together: 2 x (n-2)!"
+  },
+  {
+   "questionText": "In how many ways can 7 people be seated around a round table so that two particular people always sit together?",
+   "options": [
+    {
+     "text": "160"
+    },
+    {
+     "text": "720"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "240"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Treat the two as one: (7 - 1 - 1)! = 120 arrangements, times 2 for their internal order = 240.",
+   "order": 33,
+   "subPattern": "circular-permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Together: 2 x (n-2)!"
+  },
+  {
+   "questionText": "In how many ways can 5 people be seated around a round table so that two particular people always sit together?",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Treat the two as one: (5 - 1 - 1)! = 6 arrangements, times 2 for their internal order = 12.",
+   "order": 34,
+   "subPattern": "circular-permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Together: 2 x (n-2)!"
+  },
+  {
+   "questionText": "In how many ways can 6 people be seated around a round table so that two particular people do NOT sit together?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "108"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 120. Together = 2 x 24 = 48. Not together = 72.",
+   "order": 35,
+   "subPattern": "circular-permutations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Not together = (n-1)! - 2(n-2)!"
+  },
+  {
+   "questionText": "In how many ways can 3 boys and 3 girls be seated around a round table so that boys and girls sit alternately?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Seat the boys in a circle: (3 - 1)! = 2. The girls then take the 3 gaps in 3! = 6 ways. Total = 12.",
+   "order": 36,
+   "subPattern": "circular-permutations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Circular arrangement of one group, then permute the other in the gaps."
+  },
+  {
+   "questionText": "In how many ways can 5 boys and 5 girls be seated around a round table so that boys and girls sit alternately?",
+   "options": [
+    {
+     "text": "2880"
+    },
+    {
+     "text": "3168"
+    },
+    {
+     "text": "14400"
+    },
+    {
+     "text": "2304"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Seat the boys in a circle: (5 - 1)! = 24. The girls then take the 5 gaps in 5! = 120 ways. Total = 2880.",
+   "order": 37,
+   "subPattern": "circular-permutations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Circular arrangement of one group, then permute the other in the gaps."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word MOTHER be arranged?",
+   "options": [
+    {
+     "text": "480"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "792"
+    },
+    {
+     "text": "720"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "All 6 letters are different, so arrangements = 6! = 720.",
+   "order": 38,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "n distinct letters can be arranged in n! ways."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word FRIDAY be arranged?",
+   "options": [
+    {
+     "text": "960"
+    },
+    {
+     "text": "1080"
+    },
+    {
+     "text": "720"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "All 6 letters are different, so arrangements = 6! = 720.",
+   "order": 39,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "n distinct letters can be arranged in n! ways."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word DELHI be arranged?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "108"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "All 5 letters are different, so arrangements = 5! = 120.",
+   "order": 40,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "n distinct letters can be arranged in n! ways."
+  },
+  {
+   "questionText": "In how many ways can the letters of the word SQUARE be arranged?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "540"
+    },
+    {
+     "text": "576"
+    },
+    {
+     "text": "720"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "All 6 letters are different, so arrangements = 6! = 720.",
+   "order": 41,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "n distinct letters can be arranged in n! ways."
+  },
+  {
+   "questionText": "In how many different ways can the letters of the word KOLKATA be arranged?",
+   "options": [
+    {
+     "text": "5040"
+    },
+    {
+     "text": "1575"
+    },
+    {
+     "text": "1260"
+    },
+    {
+     "text": "1512"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "7 letters, where A appears 2 times; K appears 2 times. Arrangements = 7!/(2! x 2!) = 1260.",
+   "order": 42,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide n! by the factorial of each repeated letter's count."
+  },
+  {
+   "questionText": "In how many different ways can the letters of the word SUCCESS be arranged?",
+   "options": [
+    {
+     "text": "420"
+    },
+    {
+     "text": "5040"
+    },
+    {
+     "text": "504"
+    },
+    {
+     "text": "560"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "7 letters, where C appears 2 times; S appears 3 times. Arrangements = 7!/(3! x 2!) = 420.",
+   "order": 43,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Divide n! by the factorial of each repeated letter's count."
+  },
+  {
+   "questionText": "In how many different ways can the letters of the word TOMATO be arranged?",
+   "options": [
+    {
+     "text": "135"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "720"
+    },
+    {
+     "text": "90"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "6 letters, where O appears 2 times; T appears 2 times. Arrangements = 6!/(2! x 2!) = 180.",
+   "order": 44,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Divide n! by the factorial of each repeated letter's count."
+  },
+  {
+   "questionText": "In how many different ways can the letters of the word BALLOON be arranged?",
+   "options": [
+    {
+     "text": "1008"
+    },
+    {
+     "text": "1260"
+    },
+    {
+     "text": "1575"
+    },
+    {
+     "text": "5040"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "7 letters, where L appears 2 times; O appears 2 times. Arrangements = 7!/(2! x 2!) = 1260.",
+   "order": 45,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide n! by the factorial of each repeated letter's count."
+  },
+  {
+   "questionText": "In how many different ways can the letters of the word LETTER be arranged?",
+   "options": [
+    {
+     "text": "180"
+    },
+    {
+     "text": "720"
+    },
+    {
+     "text": "144"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "6 letters, where E appears 2 times; T appears 2 times. Arrangements = 6!/(2! x 2!) = 180.",
+   "order": 46,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide n! by the factorial of each repeated letter's count."
+  },
+  {
+   "questionText": "In how many different ways can the letters of the word APPLE be arranged?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "54"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "5 letters, where P appears 2 times. Arrangements = 5!/(2!) = 60.",
+   "order": 47,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide n! by the factorial of each repeated letter's count."
+  },
+  {
+   "questionText": "How many distinct arrangements can be made from all the letters of the word MISSISSIPPI?",
+   "options": [
+    {
+     "text": "69300"
+    },
+    {
+     "text": "39916800"
+    },
+    {
+     "text": "27720"
+    },
+    {
+     "text": "34650"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "11 letters, where I appears 4 times; P appears 2 times; S appears 4 times. Arrangements = 11!/(4! x 4! x 2!) = 34650.",
+   "order": 48,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "n!/(p! q! r!) for repeated letters."
+  },
+  {
+   "questionText": "How many distinct arrangements can be made from all the letters of the word ALLAHABAD?",
+   "options": [
+    {
+     "text": "9450"
+    },
+    {
+     "text": "7560"
+    },
+    {
+     "text": "5040"
+    },
+    {
+     "text": "362880"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "9 letters, where A appears 4 times; L appears 2 times. Arrangements = 9!/(4! x 2!) = 7560.",
+   "order": 49,
+   "subPattern": "word-arrangements-with-repetition",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "n!/(p! q! r!) for repeated letters."
+  },
+  {
+   "questionText": "In how many ways can a committee of 5 members be chosen from 10 people?",
+   "options": [
+    {
+     "text": "168"
+    },
+    {
+     "text": "189"
+    },
+    {
+     "text": "30240"
+    },
+    {
+     "text": "252"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Order does not matter: 10C5 = 252.",
+   "order": 50,
+   "subPattern": "committee-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Selection (no order) uses nCr."
+  },
+  {
+   "questionText": "In how many ways can a panel of 2 members be chosen from 12 people?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "132"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "99"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Order does not matter: 12C2 = 66.",
+   "order": 51,
+   "subPattern": "committee-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Selection (no order) uses nCr."
+  },
+  {
+   "questionText": "In how many ways can a committee of 5 members be chosen from 8 people?",
+   "options": [
+    {
+     "text": "56"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "6720"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Order does not matter: 8C5 = 56.",
+   "order": 52,
+   "subPattern": "committee-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Selection (no order) uses nCr."
+  },
+  {
+   "questionText": "A committee of 3 is to be formed from 7 men and 5 women with exactly 2 woman/women. In how many ways can this be done?",
+   "options": [
+    {
+     "text": "140"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "220"
+    },
+    {
+     "text": "63"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Choose 2 from 5 women and 1 from 7 men: 5C2 x 7C1 = 10 x 7 = 70.",
+   "order": 53,
+   "subPattern": "committee-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A committee of 5 is to be formed from 6 men and 4 women with exactly 3 woman/women. In how many ways can this be done?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "252"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Choose 3 from 4 women and 2 from 6 men: 4C3 x 6C2 = 4 x 15 = 60.",
+   "order": 54,
+   "subPattern": "committee-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A committee of 3 is to be formed from 4 men and 5 women with exactly 1 woman/women. In how many ways can this be done?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "84"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Choose 1 from 5 women and 2 from 4 men: 5C1 x 4C2 = 5 x 6 = 30.",
+   "order": 55,
+   "subPattern": "committee-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A committee of 5 is to be formed from 4 men and 6 women with exactly 3 woman/women. In how many ways can this be done?",
+   "options": [
+    {
+     "text": "240"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "252"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Choose 3 from 6 women and 2 from 4 men: 6C3 x 4C2 = 20 x 6 = 120.",
+   "order": 56,
+   "subPattern": "committee-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A committee of 5 is to be formed from 5 men and 3 women with exactly 1 woman/women. In how many ways can this be done?",
+   "options": [
+    {
+     "text": "56"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Choose 1 from 3 women and 4 from 5 men: 3C1 x 5C4 = 3 x 5 = 15.",
+   "order": 57,
+   "subPattern": "committee-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A committee of 3 is to be formed from 8 men and 5 women with exactly 1 woman/women. In how many ways can this be done?",
+   "options": [
+    {
+     "text": "140"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "280"
+    },
+    {
+     "text": "286"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Choose 1 from 5 women and 2 from 8 men: 5C1 x 8C2 = 5 x 28 = 140.",
+   "order": 58,
+   "subPattern": "committee-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A committee of 3 is to be formed from 8 men and 4 women with exactly 2 woman/women. In how many ways can this be done?",
+   "options": [
+    {
+     "text": "64"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "220"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Choose 2 from 4 women and 1 from 8 men: 4C2 x 8C1 = 6 x 8 = 48.",
+   "order": 59,
+   "subPattern": "committee-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A committee of 4 is chosen from 7 men and 6 women. In how many ways can it be formed with at least 1 man?",
+   "options": [
+    {
+     "text": "770"
+    },
+    {
+     "text": "875"
+    },
+    {
+     "text": "715"
+    },
+    {
+     "text": "700"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total committees = 13C4 = 715. Counting the cases with at least 1 man (by gender split) gives 700.",
+   "order": 60,
+   "subPattern": "committee-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Add the valid gender splits, or subtract the invalid ones from the total."
+  },
+  {
+   "questionText": "A committee of 4 is chosen from 4 men and 6 women. In how many ways can it be formed with at least 2 women?",
+   "options": [
+    {
+     "text": "148"
+    },
+    {
+     "text": "222"
+    },
+    {
+     "text": "185"
+    },
+    {
+     "text": "210"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total committees = 10C4 = 210. Counting the cases with at least 2 women (by gender split) gives 185.",
+   "order": 61,
+   "subPattern": "committee-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add the valid gender splits, or subtract the invalid ones from the total."
+  },
+  {
+   "questionText": "A committee of 3 is chosen from 6 men and 6 women. In how many ways can it be formed with at least 2 women?",
+   "options": [
+    {
+     "text": "132"
+    },
+    {
+     "text": "121"
+    },
+    {
+     "text": "220"
+    },
+    {
+     "text": "110"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total committees = 12C3 = 220. Counting the cases with at least 2 women (by gender split) gives 110.",
+   "order": 62,
+   "subPattern": "committee-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Add the valid gender splits, or subtract the invalid ones from the total."
+  },
+  {
+   "questionText": "How many 2-digit numbers can be formed using the digits 1, 2, 3, 4, 5, 6, 7 if no digit is repeated?",
+   "options": [
+    {
+     "text": "49"
+    },
+    {
+     "text": "42"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "84"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Counting the numbers - 7P2: 7 x 6 = 42.",
+   "order": 63,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "With repetition: n^k. Without: nPk."
+  },
+  {
+   "questionText": "How many 4-digit numbers can be formed using the digits 1, 3, 4, 6, 9, 8 if no digit is repeated?",
+   "options": [
+    {
+     "text": "360"
+    },
+    {
+     "text": "1296"
+    },
+    {
+     "text": "480"
+    },
+    {
+     "text": "324"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Counting the numbers - 6P4: 6 x 5 x 4 x 3 = 360.",
+   "order": 64,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "With repetition: n^k. Without: nPk."
+  },
+  {
+   "questionText": "How many 4-digit numbers can be formed using the digits 1, 2, 3, 4, 5, 6 if digits may be repeated?",
+   "options": [
+    {
+     "text": "360"
+    },
+    {
+     "text": "1296"
+    },
+    {
+     "text": "648"
+    },
+    {
+     "text": "864"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Counting the numbers - each of the 4 places can take any of 6 digits: 6^4 = 1296.",
+   "order": 65,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "With repetition: n^k. Without: nPk."
+  },
+  {
+   "questionText": "How many 4-digit numbers can be formed using the digits 1, 2, 3, 4, 5 if digits may be repeated?",
+   "options": [
+    {
+     "text": "625"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "500"
+    },
+    {
+     "text": "1250"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Counting the numbers - each of the 4 places can take any of 5 digits: 5^4 = 625.",
+   "order": 66,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "With repetition: n^k. Without: nPk."
+  },
+  {
+   "questionText": "How many 3-digit even numbers can be formed using the digits 0, 2, 3, 5, 6, 7 without repeating any digit?",
+   "options": [
+    {
+     "text": "53"
+    },
+    {
+     "text": "100"
+    },
+    {
+     "text": "52"
+    },
+    {
+     "text": "57"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 52 such numbers out of 100 possible 3-digit numbers.",
+   "order": 67,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest."
+  },
+  {
+   "questionText": "How many 3-digit even numbers can be formed using the digits 0, 1, 2, 3, 4 without repeating any digit?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 30 such numbers out of 48 possible 3-digit numbers.",
+   "order": 68,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest."
+  },
+  {
+   "questionText": "How many 4-digit even numbers can be formed using the digits 1, 2, 3, 4, 6, 8 without repeating any digit?",
+   "options": [
+    {
+     "text": "360"
+    },
+    {
+     "text": "480"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "240"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 240 such numbers out of 360 possible 4-digit numbers.",
+   "order": 69,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest."
+  },
+  {
+   "questionText": "How many 4-digit even numbers can be formed using the digits 1, 2, 3, 4, 5, 6 without repeating any digit?",
+   "options": [
+    {
+     "text": "270"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "240"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 180 such numbers out of 360 possible 4-digit numbers.",
+   "order": 70,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest."
+  },
+  {
+   "questionText": "How many 4-digit even numbers can be formed using the digits 0, 1, 2, 3, 4, 5 without repeating any digit?",
+   "options": [
+    {
+     "text": "117"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "156"
+    },
+    {
+     "text": "312"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 156 such numbers out of 300 possible 4-digit numbers.",
+   "order": 71,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest."
+  },
+  {
+   "questionText": "How many 3-digit even numbers can be formed using the digits 1, 2, 3, 4, 5 without repeating any digit?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "60"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 24 such numbers out of 60 possible 3-digit numbers.",
+   "order": 72,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest."
+  },
+  {
+   "questionText": "How many 4-digit numbers greater than 4000 can be formed using the digits 0, 2, 4, 5, 6, 8 without repetition?",
+   "options": [
+    {
+     "text": "160"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "192"
+    },
+    {
+     "text": "300"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Of the 300 possible 4-digit numbers (no repeats, no leading 0), those greater than 4000 are found by counting the allowed leading digits and arranging the rest: 240.",
+   "order": 73,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Fix the leading digit options first, then permute the remaining places."
+  },
+  {
+   "questionText": "How many 4-digit numbers greater than 3000 can be formed using the digits 2, 3, 4, 5, 6, 7 without repetition?",
+   "options": [
+    {
+     "text": "300"
+    },
+    {
+     "text": "330"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "240"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Of the 360 possible 4-digit numbers (no repeats, no leading 0), those greater than 3000 are found by counting the allowed leading digits and arranging the rest: 300.",
+   "order": 74,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Fix the leading digit options first, then permute the remaining places."
+  },
+  {
+   "questionText": "How many 4-digit numbers greater than 4000 can be formed using the digits 0, 1, 2, 3, 4, 5 without repetition?",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "144"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Of the 300 possible 4-digit numbers (no repeats, no leading 0), those greater than 4000 are found by counting the allowed leading digits and arranging the rest: 120.",
+   "order": 75,
+   "subPattern": "number-formation-from-digits",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Fix the leading digit options first, then permute the remaining places."
+  },
+  {
+   "questionText": "At a party 11 people shake hands once with each other. How many handshakes take place?",
+   "options": [
+    {
+     "text": "110"
+    },
+    {
+     "text": "54"
+    },
+    {
+     "text": "53"
+    },
+    {
+     "text": "55"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each pair shakes hands once: 11C2 = 11(11 - 1)/2 = 55.",
+   "order": 76,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Handshakes = nC2."
+  },
+  {
+   "questionText": "At a party 8 people shake hands once with each other. How many handshakes take place?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "56"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each pair shakes hands once: 8C2 = 8(8 - 1)/2 = 28.",
+   "order": 77,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Handshakes = nC2."
+  },
+  {
+   "questionText": "At a party 7 people shake hands once with each other. How many handshakes take place?",
+   "options": [
+    {
+     "text": "42"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each pair shakes hands once: 7C2 = 7(7 - 1)/2 = 21.",
+   "order": 78,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Handshakes = nC2."
+  },
+  {
+   "questionText": "How many diagonals does a polygon with 12 sides have?",
+   "options": [
+    {
+     "text": "54"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "53"
+    },
+    {
+     "text": "66"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Diagonals = nC2 - n = 66 - 12 = 54.",
+   "order": 79,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Diagonals = n(n - 3)/2."
+  },
+  {
+   "questionText": "How many triangles can be formed by joining 6 points on a plane, no three of which are collinear?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Any 3 points form a triangle: 6C3 = 20.",
+   "order": 80,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Triangles = nC3 (minus collinear triples)."
+  },
+  {
+   "questionText": "How many triangles can be formed by joining 9 points on a plane, no three of which are collinear?",
+   "options": [
+    {
+     "text": "84"
+    },
+    {
+     "text": "168"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "63"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Any 3 points form a triangle: 9C3 = 84.",
+   "order": 81,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Triangles = nC3 (minus collinear triples)."
+  },
+  {
+   "questionText": "How many triangles can be formed by joining 12 points on a plane, no three of which are collinear?",
+   "options": [
+    {
+     "text": "198"
+    },
+    {
+     "text": "220"
+    },
+    {
+     "text": "275"
+    },
+    {
+     "text": "66"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Any 3 points form a triangle: 12C3 = 220.",
+   "order": 82,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Triangles = nC3 (minus collinear triples)."
+  },
+  {
+   "questionText": "How many diagonals does a polygon with 16 sides have?",
+   "options": [
+    {
+     "text": "78"
+    },
+    {
+     "text": "52"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "104"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Diagonals = nC2 - n = 120 - 16 = 104.",
+   "order": 83,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Diagonals = n(n - 3)/2."
+  },
+  {
+   "questionText": "How many triangles can be formed by joining 17 points on a plane, no three of which are collinear?",
+   "options": [
+    {
+     "text": "748"
+    },
+    {
+     "text": "136"
+    },
+    {
+     "text": "680"
+    },
+    {
+     "text": "1020"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Any 3 points form a triangle: 17C3 = 680.",
+   "order": 84,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Triangles = nC3 (minus collinear triples)."
+  },
+  {
+   "questionText": "How many triangles can be formed by joining 15 points on a plane, no three of which are collinear?",
+   "options": [
+    {
+     "text": "546"
+    },
+    {
+     "text": "910"
+    },
+    {
+     "text": "455"
+    },
+    {
+     "text": "105"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Any 3 points form a triangle: 15C3 = 455.",
+   "order": 85,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Triangles = nC3 (minus collinear triples)."
+  },
+  {
+   "questionText": "There are 9 points on a plane, of which 4 are collinear and no other three are collinear. How many different straight lines can be drawn through pairs of these points?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total pairs = 9C2 = 36. The 4 collinear points give only 1 line instead of 4C2 = 6. Lines = 36 - 6 + 1 = 31.",
+   "order": 86,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Replace the collinear pairs by a single line."
+  },
+  {
+   "questionText": "There are 12 points on a plane, of which 6 are collinear and no other three are collinear. How many triangles can be formed with these points as vertices?",
+   "options": [
+    {
+     "text": "400"
+    },
+    {
+     "text": "200"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "220"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total triples = 12C3 = 220. The 6 collinear points give no triangle: subtract 6C3 = 20. Answer = 200.",
+   "order": 87,
+   "subPattern": "handshakes-diagonals-geometry-counting",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Subtract the collinear triples."
+  },
+  {
+   "questionText": "In how many ways can a team of 3 be chosen from 12 players if a particular player must be included?",
+   "options": [
+    {
+     "text": "220"
+    },
+    {
+     "text": "54"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "55"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The particular player is fixed; choose the other 2 from 11: 11C2 = 55.",
+   "order": 88,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Fix the included person, choose the rest from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 6 be chosen from 11 players if a particular player must be included?",
+   "options": [
+    {
+     "text": "336"
+    },
+    {
+     "text": "462"
+    },
+    {
+     "text": "315"
+    },
+    {
+     "text": "252"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The particular player is fixed; choose the other 5 from 10: 10C5 = 252.",
+   "order": 89,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Fix the included person, choose the rest from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 3 be chosen from 11 players if a particular player must be included?",
+   "options": [
+    {
+     "text": "46"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "165"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The particular player is fixed; choose the other 2 from 10: 10C2 = 45.",
+   "order": 90,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Fix the included person, choose the rest from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 5 be chosen from 12 players if a particular player must be included?",
+   "options": [
+    {
+     "text": "297"
+    },
+    {
+     "text": "330"
+    },
+    {
+     "text": "792"
+    },
+    {
+     "text": "440"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The particular player is fixed; choose the other 4 from 11: 11C4 = 330.",
+   "order": 91,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Fix the included person, choose the rest from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 6 be chosen from 14 players if a particular player must be excluded?",
+   "options": [
+    {
+     "text": "1716"
+    },
+    {
+     "text": "2288"
+    },
+    {
+     "text": "3432"
+    },
+    {
+     "text": "3003"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Remove the player; choose 6 from the remaining 13: 13C6 = 1716.",
+   "order": 92,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Excluded: choose from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 4 be chosen from 14 players if a particular player must be excluded?",
+   "options": [
+    {
+     "text": "858"
+    },
+    {
+     "text": "715"
+    },
+    {
+     "text": "572"
+    },
+    {
+     "text": "1001"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Remove the player; choose 4 from the remaining 13: 13C4 = 715.",
+   "order": 93,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Excluded: choose from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 4 be chosen from 8 players if a particular player must be excluded?",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Remove the player; choose 4 from the remaining 7: 7C4 = 35.",
+   "order": 94,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Excluded: choose from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 3 be chosen from 11 players if a particular player must be excluded?",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "150"
+    },
+    {
+     "text": "165"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Remove the player; choose 3 from the remaining 10: 10C3 = 120.",
+   "order": 95,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Excluded: choose from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 5 be chosen from 12 players if a particular player must be excluded?",
+   "options": [
+    {
+     "text": "792"
+    },
+    {
+     "text": "308"
+    },
+    {
+     "text": "462"
+    },
+    {
+     "text": "693"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Remove the player; choose 5 from the remaining 11: 11C5 = 462.",
+   "order": 96,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Excluded: choose from n - 1."
+  },
+  {
+   "questionText": "In how many ways can a team of 6 be chosen from 10 players if a particular player must be excluded?",
+   "options": [
+    {
+     "text": "126"
+    },
+    {
+     "text": "210"
+    },
+    {
+     "text": "63"
+    },
+    {
+     "text": "84"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Remove the player; choose 6 from the remaining 9: 9C6 = 84.",
+   "order": 97,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Excluded: choose from n - 1."
+  },
+  {
+   "questionText": "A panel of 8 is to be chosen from 4 engineers, 5 doctors and 2 lawyers with exactly 3 engineers, 4 doctor(s) and 1 lawyer(s). In how many ways can this be done?",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "165"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "4C3 x 5C4 x 2C1 = 4 x 5 x 2 = 40.",
+   "order": 98,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A panel of 7 is to be chosen from 4 engineers, 3 doctors and 4 lawyers with exactly 3 engineers, 1 doctor(s) and 3 lawyer(s). In how many ways can this be done?",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "330"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "4C3 x 3C1 x 4C3 = 4 x 3 x 4 = 48.",
+   "order": 99,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  },
+  {
+   "questionText": "A panel of 10 is to be chosen from 8 engineers, 6 doctors and 3 lawyers with exactly 4 engineers, 4 doctor(s) and 2 lawyer(s). In how many ways can this be done?",
+   "options": [
+    {
+     "text": "19448"
+    },
+    {
+     "text": "1575"
+    },
+    {
+     "text": "3150"
+    },
+    {
+     "text": "2100"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "8C4 x 6C4 x 3C2 = 70 x 15 x 3 = 3150.",
+   "order": 100,
+   "subPattern": "derangements-restrictions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the selections from each group."
+  }
+ ]
+}

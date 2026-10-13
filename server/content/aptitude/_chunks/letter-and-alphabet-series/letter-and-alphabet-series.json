@@ -1,0 +1,1871 @@
+{
+  "questions": [
+    {
+      "questionText": "Find the missing letter in the series: C, F, E, ?, G, L, I, O",
+      "options": [
+        "H",
+        "F",
+        "I",
+        "K"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Two interleaved series: odd places step by 2, even places step by 3. The missing letter is I.",
+      "shortcut": "Separate odd and even places and find each step.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: f d b f d b f d _ f _ b",
+      "options": [
+        "d, b",
+        "b, d",
+        "g, l",
+        "c, i"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The pattern is that the block FDB repeats. The blanks are b, d.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: C1, F2, I4, L8, O16, ?",
+      "options": [
+        "S32",
+        "R30",
+        "O32",
+        "R32"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Letters move 3 forward each time; numbers double each time. Next term: R32.",
+      "shortcut": "Check letters and numbers separately: one arithmetic, one geometric.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: e g a e g _ e g a _ _ a",
+      "options": [
+        "a, f, h",
+        "a, e, g",
+        "b, b, i",
+        "f, g, a"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The pattern is that the block EGA repeats. The blanks are a, e, g.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: e g f d e g f d e g f d _ _ f _",
+      "options": [
+        "g, f, e",
+        "e, g, d",
+        "e, k, k",
+        "h, a, i"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The pattern is that the block EGFD repeats. The blanks are e, g, d.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: D, Y, E, V, F, S, G, ?",
+      "options": [
+        "P",
+        "Q",
+        "O",
+        "S"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Odd places go forward by 1 and even places go backward by 3. The next letter is P.",
+      "shortcut": "Split the series into two interleaved series.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: BC, DE, FG, HI, ?",
+      "options": [
+        "FG",
+        "HL",
+        "JK",
+        "KK"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each group moves 2 letters forward (both letters shift together). After HI comes JK.",
+      "shortcut": "Track the first letter of each group; the second letter follows it.",
+      "subPattern": "letter-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: BD, DF, FH, HJ, ?",
+      "options": [
+        "LN",
+        "JK",
+        "JL",
+        "HJ"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The two letters in each group are 2 apart, and each group shifts 2 places forward. Next: JL.",
+      "shortcut": "Follow the first letters; the second letter stays 2 places ahead.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the letters of the word MONKEY are written in reverse order, which letter will be 4th from the left?",
+      "options": [
+        "N",
+        "O",
+        "K",
+        "E"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Reversed word: YEKNOM. The 4th letter from the left is N.",
+      "shortcut": "Write the reversed word and count.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is exactly in the middle of E and S in the English alphabet?",
+      "options": [
+        "L",
+        "M",
+        "O",
+        "K"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Positions 5 and 19: the middle is (5 + 19)/2 = 12, which is L.",
+      "shortcut": "Middle position = average of the two positions.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: A, F, J, M, O, ?",
+      "options": [
+        "M",
+        "P",
+        "O",
+        "S"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gaps between consecutive letters decrease by 1: 5, 4, 3, 2. So the next gap is 1 and the next letter is P.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is the 9th letter from the right end of the English alphabet?",
+      "options": [
+        "S",
+        "P",
+        "T",
+        "R"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The 9th from the right is at position 27 - 9 = 18, which is R.",
+      "shortcut": "Position from the left = 27 - position from the right.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: FH, IK, LN, OQ, ?",
+      "options": [
+        "RT",
+        "UW",
+        "RS",
+        "OQ"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The two letters in each group are 2 apart, and each group shifts 3 places forward. Next: RT.",
+      "shortcut": "Follow the first letters; the second letter stays 2 places ahead.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: AB, CD, EF, GH, ?",
+      "options": [
+        "EF",
+        "IJ",
+        "JJ",
+        "GK"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each group moves 2 letters forward (both letters shift together). After GH comes IJ.",
+      "shortcut": "Track the first letter of each group; the second letter follows it.",
+      "subPattern": "letter-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the English alphabet is written in reverse order (Z to A), which letter is 12 places to the right of the letter that is at position 6 from the left end of this reversed alphabet?",
+      "options": [
+        "H",
+        "F",
+        "R",
+        "I"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In the reversed alphabet, position 18 from the left holds the letter with normal position 27 - 18 = 9, which is I.",
+      "shortcut": "In the reversed alphabet, position p holds the letter at 27 - p.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: D, G, J, M, ?, S",
+      "options": [
+        "N",
+        "P",
+        "R",
+        "Q"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The letters move 3 places forward each time, so the missing letter is P.",
+      "shortcut": "Use alphabet positions and look for the constant step.",
+      "subPattern": "letter-series",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: g d h g d h g _ h g d _",
+      "options": [
+        "d, h",
+        "g, b",
+        "k, k",
+        "c, c"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The pattern is that the block GDH repeats. The blanks are d, h.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is 8 places to the left of the 9th letter from the right end of the English alphabet?",
+      "options": [
+        "K",
+        "Z",
+        "M",
+        "J"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "9th from the right = position 18. Moving 8 places left gives 10, which is J.",
+      "shortcut": "Convert the position from the right first, then move.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: E2, G4, I8, K16, M32, ?",
+      "options": [
+        "M64",
+        "O62",
+        "O64",
+        "P64"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Letters move 2 forward each time; numbers double each time. Next term: O64.",
+      "shortcut": "Check letters and numbers separately: one arithmetic, one geometric.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: B, F, D, H, G, J, K, ?",
+      "options": [
+        "L",
+        "N",
+        "J",
+        "I"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Odd places: gaps grow (2, 3, 4); even places move 2 ahead each time. Next letter: L.",
+      "shortcut": "Split into two series and examine the gaps of each.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: B, W, C, T, D, Q, E, ?",
+      "options": [
+        "Q",
+        "P",
+        "K",
+        "N"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Odd places go forward by 1 and even places go backward by 3. The next letter is N.",
+      "shortcut": "Split the series into two interleaved series.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: B, H, M, Q, T, ?",
+      "options": [
+        "V",
+        "T",
+        "W",
+        "U"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaps between consecutive letters decrease by 1: 6, 5, 4, 3. So the next gap is 2 and the next letter is V.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: A, C, F, J, O, ?",
+      "options": [
+        "T",
+        "X",
+        "W",
+        "U"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Gaps between consecutive letters increase by 1: 2, 3, 4, 5. So the next gap is 6 and the next letter is U.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: FU, GT, HS, IR, ?",
+      "options": [
+        "KP",
+        "JR",
+        "JQ",
+        "IR"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The first letter moves forward by 1 and the second letter moves backward by 1 each time. After IR comes JQ.",
+      "shortcut": "Treat the first and second letters as two separate series.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: C, E, H, ?, Q",
+      "options": [
+        "I",
+        "M",
+        "K",
+        "L"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The gaps between letters increase by 1: 2, 3, 4, 5, 6. The missing letter is L.",
+      "shortcut": "Find the gaps between letters; they follow their own pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is the mirror (opposite) of S in the English alphabet, counting A as Z, B as Y, and so on?",
+      "options": [
+        "T",
+        "H",
+        "E",
+        "G"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mirror position = 27 - 19 = 8, which is H.",
+      "shortcut": "Letter at position p has its mirror at 27 - p.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: U, R, O, L, ?, F",
+      "options": [
+        "F",
+        "G",
+        "I",
+        "H"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The letters move 3 places backward each time, so the missing letter is I.",
+      "shortcut": "Use alphabet positions and look for the constant step.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the letters of the word CASTLE are arranged in alphabetical order, which letter will be 2nd from the right?",
+      "options": [
+        "C",
+        "S",
+        "A",
+        "L"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alphabetical order: ACELST. The 2nd letter from the right is S.",
+      "shortcut": "Sort the letters, then count from the right.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: U, R, ?, L, I, F",
+      "options": [
+        "P",
+        "O",
+        "N",
+        "L"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The letters move 3 places backward each time, so the missing letter is O.",
+      "shortcut": "Use alphabet positions and look for the constant step.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: AV, CU, ET, GS, ?",
+      "options": [
+        "IR",
+        "GS",
+        "KQ",
+        "IS"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The first letters move forward by 2 and the second letters move backward by 1. After GS comes IR.",
+      "shortcut": "Handle the first and second letters as two separate series.",
+      "subPattern": "letter-series",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the letters of the word MARKET are arranged in alphabetical order, which letter will be 2nd from the right?",
+      "options": [
+        "E",
+        "K",
+        "M",
+        "R"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Alphabetical order: AEKMRT. The 2nd letter from the right is R.",
+      "shortcut": "Sort the letters, then count from the right.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: EV, FU, GT, HS, ?",
+      "options": [
+        "IR",
+        "JQ",
+        "HS",
+        "IS"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The first letter moves forward by 1 and the second letter moves backward by 1 each time. After HS comes IR.",
+      "shortcut": "Treat the first and second letters as two separate series.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: B1, C2, D3, E4, F5, ?",
+      "options": [
+        "G7",
+        "H6",
+        "F6",
+        "G6"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Letters move 1 forward and numbers increase by 1. Next term: G6.",
+      "shortcut": "Letters and numbers form two separate patterns.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is 5 places to the right of E in the English alphabet?",
+      "options": [
+        "J",
+        "K",
+        "H",
+        "I"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "E is letter 5. Moving 5 places right gives 10, which is J.",
+      "shortcut": "Add the number of places to the alphabet position.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: A, C, F, H, K, M, ?",
+      "options": [
+        "Q",
+        "O",
+        "P",
+        "R"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gaps between consecutive letters alternate between 2 and 3: 2, 3, 2, 3, 2. So the next gap is 3 and the next letter is P.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is 4 places to the left of the 6th letter from the right end of the English alphabet?",
+      "options": [
+        "Q",
+        "Y",
+        "R",
+        "P"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "6th from the right = position 21. Moving 4 places left gives 17, which is Q.",
+      "shortcut": "Convert the position from the right first, then move.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the letters of the word MONKEY are arranged in alphabetical order, which letter will be 3rd from the left?",
+      "options": [
+        "Y",
+        "N",
+        "O",
+        "M"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Alphabetical order: EKMNOY. The 3rd letter from the left is M.",
+      "shortcut": "Sort the letters, then count.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many letters are there between C and G in the English alphabet?",
+      "options": [
+        "1",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Between positions 3 and 7 there are 7-3-1 = 3 letters.",
+      "shortcut": "Letters between = difference of positions - 1.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is the 10th letter from the right end of the English alphabet?",
+      "options": [
+        "P",
+        "T",
+        "S",
+        "Q"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The 10th from the right is at position 27 - 10 = 17, which is Q.",
+      "shortcut": "Position from the left = 27 - position from the right.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: B1, D2, F4, H8, J16, ?",
+      "options": [
+        "M32",
+        "J32",
+        "L30",
+        "L32"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Letters move 2 forward each time; numbers double each time. Next term: L32.",
+      "shortcut": "Check letters and numbers separately: one arithmetic, one geometric.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the letters of the word STRANGE are arranged in alphabetical order, which letter will be 2nd from the left?",
+      "options": [
+        "G",
+        "T",
+        "E",
+        "S"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Alphabetical order: AEGNRST. The 2nd letter from the left is E.",
+      "shortcut": "Sort the letters, then count.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: c g e _ g e c g e _ g _",
+      "options": [
+        "i, d, h",
+        "a, a, k",
+        "h, b, d",
+        "c, c, e"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The pattern is that the block CGE repeats. The blanks are c, c, e.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: DE, GH, JK, MN, ?",
+      "options": [
+        "MR",
+        "QQ",
+        "PQ",
+        "JK"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each group moves 3 letters forward (both letters shift together). After MN comes PQ.",
+      "shortcut": "Track the first letter of each group; the second letter follows it.",
+      "subPattern": "letter-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is the 11th letter from the right end of the English alphabet?",
+      "options": [
+        "S",
+        "O",
+        "P",
+        "M"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The 11th from the right is at position 27 - 11 = 16, which is P.",
+      "shortcut": "Position from the left = 27 - position from the right.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: A2, C4, E8, G16, I32, ?",
+      "options": [
+        "K62",
+        "L64",
+        "K64",
+        "I64"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Letters move 2 forward each time; numbers double each time. Next term: K64.",
+      "shortcut": "Check letters and numbers separately: one arithmetic, one geometric.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: D, F, H, ?, L, N",
+      "options": [
+        "K",
+        "H",
+        "I",
+        "J"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The letters move 2 places forward each time, so the missing letter is J.",
+      "shortcut": "Use alphabet positions and look for the constant step.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: a g h a g h _ g h _ g h",
+      "options": [
+        "c, a",
+        "c, f",
+        "a, a",
+        "d, f"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The pattern is that the block AGH repeats. The blanks are a, a.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: CV, EU, GT, IS, ?",
+      "options": [
+        "IS",
+        "MQ",
+        "KR",
+        "KS"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The first letters move forward by 2 and the second letters move backward by 1. After IS comes KR.",
+      "shortcut": "Handle the first and second letters as two separate series.",
+      "subPattern": "letter-series",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: B, D, D, F, G, H, K, ?",
+      "options": [
+        "M",
+        "H",
+        "J",
+        "G"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Odd places: gaps grow (2, 3, 4); even places move 2 ahead each time. Next letter: J.",
+      "shortcut": "Split into two series and examine the gaps of each.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: AC, DF, GI, JL, ?",
+      "options": [
+        "JL",
+        "PR",
+        "MN",
+        "MO"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The two letters in each group are 2 apart, and each group shifts 3 places forward. Next: MO.",
+      "shortcut": "Follow the first letters; the second letter stays 2 places ahead.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: h c e g _ c e g h c _ g h _ e g",
+      "options": [
+        "g, i, k",
+        "b, d, b",
+        "h, e, c",
+        "l, e, h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The pattern is that the block HCEG repeats. The blanks are h, e, c.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the letters of the word BASKET are written in reverse order, which letter will be 2nd from the left?",
+      "options": [
+        "A",
+        "E",
+        "S",
+        "K"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reversed word: TEKSAB. The 2nd letter from the left is E.",
+      "shortcut": "Write the reversed word and count.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: T, R, P, N, ?, J",
+      "options": [
+        "M",
+        "L",
+        "K",
+        "O"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The letters move 2 places backward each time, so the missing letter is L.",
+      "shortcut": "Use alphabet positions and look for the constant step.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: B, G, D, I, F, K, ?, M",
+      "options": [
+        "J",
+        "H",
+        "F",
+        "G"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Two interleaved series: odd places step by 2, even places step by 2. The missing letter is H.",
+      "shortcut": "Separate odd and even places and find each step.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: b f g b _ g b _ g b _ g",
+      "options": [
+        "f, f, f",
+        "d, f, k",
+        "k, f, j",
+        "g, h, h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The pattern is that the block BFG repeats. The blanks are f, f, f.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: B3, E4, H5, K6, N7, ?",
+      "options": [
+        "N8",
+        "Q8",
+        "R8",
+        "Q9"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Letters move 3 forward and numbers increase by 1. Next term: Q8.",
+      "shortcut": "Letters and numbers form two separate patterns.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: DW, EV, FU, GT, ?",
+      "options": [
+        "IR",
+        "HT",
+        "GT",
+        "HS"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The first letter moves forward by 1 and the second letter moves backward by 1 each time. After GT comes HS.",
+      "shortcut": "Treat the first and second letters as two separate series.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: A1, D2, G4, J8, M16, ?",
+      "options": [
+        "M32",
+        "P32",
+        "P30",
+        "Q32"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Letters move 3 forward each time; numbers double each time. Next term: P32.",
+      "shortcut": "Check letters and numbers separately: one arithmetic, one geometric.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: A, F, B, J, ?, N, D, R",
+      "options": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Two interleaved series: odd places step by 1, even places step by 4. The missing letter is C.",
+      "shortcut": "Separate odd and even places and find each step.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many vowels are there in the word WINTER?",
+      "options": [
+        "2",
+        "4",
+        "7",
+        "1"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The vowels in WINTER are I, E, so there are 2.",
+      "shortcut": "Scan for A, E, I, O, U.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: f g c a g h d _ h i e _ _ j f d",
+      "options": [
+        "c, i, d",
+        "b, l, d",
+        "b, c, i",
+        "h, i, e"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The pattern is that each block repeats the previous block shifted one letter forward. The blanks are b, c, i.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: A, E, I, M, ?, U",
+      "options": [
+        "R",
+        "O",
+        "T",
+        "Q"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The letters move 4 places forward each time, so the missing letter is Q.",
+      "shortcut": "Use alphabet positions and look for the constant step.",
+      "subPattern": "letter-series",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the letters of the word WINTER are arranged in alphabetical order, which letter will be 2nd from the right?",
+      "options": [
+        "R",
+        "T",
+        "I",
+        "E"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alphabetical order: EINRTW. The 2nd letter from the right is T.",
+      "shortcut": "Sort the letters, then count from the right.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: C, G, D, K, E, ?, F, S",
+      "options": [
+        "O",
+        "L",
+        "M",
+        "R"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Two interleaved series: odd places step by 1, even places step by 4. The missing letter is O.",
+      "shortcut": "Separate odd and even places and find each step.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: A, B, D, G, K, ?",
+      "options": [
+        "P",
+        "R",
+        "O",
+        "N"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaps between consecutive letters increase by 1: 1, 2, 3, 4. So the next gap is 5 and the next letter is P.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is 9 places to the right of K in the English alphabet?",
+      "options": [
+        "Q",
+        "V",
+        "R",
+        "T"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "K is letter 11. Moving 9 places right gives 20, which is T.",
+      "shortcut": "Add the number of places to the alphabet position.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many pairs of letters in the word FOREST have as many letters between them in the word as there are between them in the English alphabet?",
+      "options": [
+        "0",
+        "6",
+        "1",
+        "2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Check each pair of letters: the pairs whose gaps match are ST. Count = 1.",
+      "shortcut": "For each pair compare the position gap in the word with the position gap in the alphabet.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: B, D, G, K, P, ?",
+      "options": [
+        "X",
+        "U",
+        "V",
+        "T"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gaps between consecutive letters increase by 1: 2, 3, 4, 5. So the next gap is 6 and the next letter is V.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: D, Y, G, X, J, W, M, ?",
+      "options": [
+        "V",
+        "S",
+        "T",
+        "W"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Odd places go forward by 3 and even places go backward by 1. The next letter is V.",
+      "shortcut": "Split the series into two interleaved series.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: C, D, E, F, H, H, L, ?",
+      "options": [
+        "J",
+        "H",
+        "L",
+        "M"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Odd places: gaps grow (2, 3, 4); even places move 2 ahead each time. Next letter: J.",
+      "shortcut": "Split into two series and examine the gaps of each.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: C, I, N, R, U, ?",
+      "options": [
+        "V",
+        "Z",
+        "W",
+        "U"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gaps between consecutive letters decrease by 1: 6, 5, 4, 3. So the next gap is 2 and the next letter is W.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: E1, H2, K4, N8, Q16, ?",
+      "options": [
+        "U32",
+        "T32",
+        "Q32",
+        "T30"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Letters move 3 forward each time; numbers double each time. Next term: T32.",
+      "shortcut": "Check letters and numbers separately: one arithmetic, one geometric.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: E, G, I, K, M, O, ?",
+      "options": [
+        "S",
+        "N",
+        "Q",
+        "R"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each letter is 2 places after the previous one. After O comes Q.",
+      "shortcut": "Count the gap between consecutive letters: it is a constant 2.",
+      "subPattern": "letter-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many letters are there between I and R in the English alphabet?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "12"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Between positions 9 and 18 there are 18-9-1 = 8 letters.",
+      "shortcut": "Letters between = difference of positions - 1.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: B2, D4, F8, H16, J32, ?",
+      "options": [
+        "J64",
+        "L64",
+        "M64",
+        "L62"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Letters move 2 forward each time; numbers double each time. Next term: L64.",
+      "shortcut": "Check letters and numbers separately: one arithmetic, one geometric.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: C, D, F, I, M, ?",
+      "options": [
+        "S",
+        "Q",
+        "T",
+        "R"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Gaps between consecutive letters increase by 1: 1, 2, 3, 4. So the next gap is 5 and the next letter is R.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: C3, D4, F8, I17, M33, ?",
+      "options": [
+        "M58",
+        "R59",
+        "R58",
+        "S58"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Letter gaps are 1, 2, 3, 4, 5, ...; the numbers rise by 1, 4, 9, 16, 25, ... The next term is R58.",
+      "shortcut": "Look at letter gaps and number differences separately.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: C2, D3, F7, I16, M32, ?",
+      "options": [
+        "R57",
+        "M57",
+        "R58",
+        "S57"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Letter gaps are 1, 2, 3, 4, 5, ...; the numbers rise by 1, 4, 9, 16, 25, ... The next term is R57.",
+      "shortcut": "Look at letter gaps and number differences separately.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: B, C, E, H, L, ?",
+      "options": [
+        "P",
+        "N",
+        "S",
+        "Q"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Gaps between consecutive letters increase by 1: 1, 2, 3, 4. So the next gap is 5 and the next letter is Q.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: DE, HI, LM, PQ, ?",
+      "options": [
+        "PV",
+        "LM",
+        "TU",
+        "UU"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each group moves 4 letters forward (both letters shift together). After PQ comes TU.",
+      "shortcut": "Track the first letter of each group; the second letter follows it.",
+      "subPattern": "letter-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which letter is the mirror (opposite) of X in the English alphabet, counting A as Z, B as Y, and so on?",
+      "options": [
+        "C",
+        "F",
+        "Y",
+        "A"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Mirror position = 27 - 24 = 3, which is C.",
+      "shortcut": "Letter at position p has its mirror at 27 - p.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: W, U, S, ?, O, M",
+      "options": [
+        "Q",
+        "P",
+        "N",
+        "O"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The letters move 2 places backward each time, so the missing letter is Q.",
+      "shortcut": "Use alphabet positions and look for the constant step.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: h c d a i _ _ b j e f c k _ g d",
+      "options": [
+        "d, k, a",
+        "d, e, f",
+        "g, j, d",
+        "h, l, g"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The pattern is that each block repeats the previous block shifted one letter forward. The blanks are d, e, f.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many pairs of letters in the word FAMILY have as many letters between them in the word as there are between them in the English alphabet?",
+      "options": [
+        "1",
+        "6",
+        "0",
+        "2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Check each pair of letters: the pairs whose gaps match are FI. Count = 1.",
+      "shortcut": "For each pair compare the position gap in the word with the position gap in the alphabet.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the letters of the word BASKET are arranged in alphabetical order, which letter will be 4th from the right?",
+      "options": [
+        "K",
+        "E",
+        "S",
+        "B"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alphabetical order: ABEKST. The 4th letter from the right is E.",
+      "shortcut": "Sort the letters, then count from the right.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: A, D, D, ?, G, H, J, J",
+      "options": [
+        "E",
+        "H",
+        "C",
+        "F"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Two interleaved series: odd places step by 3, even places step by 2. The missing letter is F.",
+      "shortcut": "Separate odd and even places and find each step.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many vowels are there in the word STRANGE?",
+      "options": [
+        "3",
+        "5",
+        "2",
+        "4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The vowels in STRANGE are A, E, so there are 2.",
+      "shortcut": "Scan for A, E, I, O, U.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: C, E, H, L, Q, ?",
+      "options": [
+        "W",
+        "X",
+        "U",
+        "V"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaps between consecutive letters increase by 1: 2, 3, 4, 5. So the next gap is 6 and the next letter is W.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many pairs of letters in the word HUNTER have as many letters between them in the word as there are between them in the English alphabet?",
+      "options": [
+        "6",
+        "2",
+        "0",
+        "1"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Check each pair of letters: the pairs whose gaps match are TR. Count = 1.",
+      "shortcut": "For each pair compare the position gap in the word with the position gap in the alphabet.",
+      "subPattern": "position-based-alphabet-tests",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next term in the series: C1, E4, G7, I10, K13, ?",
+      "options": [
+        "N16",
+        "K16",
+        "M16",
+        "M17"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Letters move 2 forward and numbers increase by 3. Next term: M16.",
+      "shortcut": "Letters and numbers form two separate patterns.",
+      "subPattern": "alphanumeric-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: E, H, K, N, Q, T, ?",
+      "options": [
+        "W",
+        "V",
+        "T",
+        "X"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Each letter is 3 places after the previous one. After T comes W.",
+      "shortcut": "Count the gap between consecutive letters: it is a constant 3.",
+      "subPattern": "letter-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next group in the series: AW, CV, EU, GT, ?",
+      "options": [
+        "GT",
+        "IS",
+        "KR",
+        "IT"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The first letters move forward by 2 and the second letters move backward by 1. After GT comes IS.",
+      "shortcut": "Handle the first and second letters as two separate series.",
+      "subPattern": "letter-series",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: F, H, J, L, N, P, ?",
+      "options": [
+        "R",
+        "S",
+        "O",
+        "U"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Each letter is 2 places after the previous one. After P comes R.",
+      "shortcut": "Count the gap between consecutive letters: it is a constant 2.",
+      "subPattern": "letter-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: A, G, L, P, S, ?",
+      "options": [
+        "W",
+        "U",
+        "R",
+        "T"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gaps between consecutive letters decrease by 1: 6, 5, 4, 3. So the next gap is 2 and the next letter is U.",
+      "shortcut": "Write the gap between each pair of letters, then extend the gap pattern.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: U, R, O, ?, I, F",
+      "options": [
+        "O",
+        "N",
+        "J",
+        "L"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The letters move 3 places backward each time, so the missing letter is L.",
+      "shortcut": "Use alphabet positions and look for the constant step.",
+      "subPattern": "letter-series",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: C, I, F, M, I, Q, ?, U",
+      "options": [
+        "J",
+        "L",
+        "O",
+        "N"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Two interleaved series: odd places step by 3, even places step by 4. The missing letter is L.",
+      "shortcut": "Separate odd and even places and find each step.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: h g b i h c j _ d _ j _",
+      "options": [
+        "d, c, g",
+        "i, b, f",
+        "k, c, c",
+        "i, k, e"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The pattern is that each block repeats the previous block shifted one letter forward. The blanks are i, k, e.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the missing letter in the series: A, E, C, G, ?, I, G, K",
+      "options": [
+        "D",
+        "E",
+        "G",
+        "B"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Two interleaved series: odd places step by 2, even places step by 2. The missing letter is E.",
+      "shortcut": "Separate odd and even places and find each step.",
+      "subPattern": "letter-shift-patterns",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Fill in the blanks in order: c a b c a b c _ b _ a b",
+      "options": [
+        "h, h",
+        "a, e",
+        "l, i",
+        "a, c"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The pattern is that the block CAB repeats. The blanks are a, c.",
+      "shortcut": "Spot the repeating block, then fill each blank from the matching place in another block.",
+      "subPattern": "missing-letter-groups",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the next letter in the series: C, E, G, I, K, M, ?",
+      "options": [
+        "R",
+        "M",
+        "O",
+        "P"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each letter is 2 places after the previous one. After M comes O.",
+      "shortcut": "Count the gap between consecutive letters: it is a constant 2.",
+      "subPattern": "letter-series",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}

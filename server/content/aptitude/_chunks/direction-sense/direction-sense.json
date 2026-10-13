@@ -1,0 +1,1874 @@
+{
+  "questions": [
+    {
+      "questionText": "A man starts from a point and walks 16 m towards east, then turns left and walks 13 m, then turns left and walks 16 m, then turns left and walks 18 m. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "7 m North",
+        "5 m East",
+        "5 m South",
+        "5 m North"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "His net displacement from the start is 5 m South. To return he must walk 5 m North.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 11 m towards south, then turns left and walks 3 m, then turns left and walks 11 m, then turns right and walks 12 m. In which direction is he from his starting point?",
+      "options": [
+        "North",
+        "North-East",
+        "South-West",
+        "East"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net displacement is 15 east-wards and 0 south-wards (x = 15, y = 0 with north and east positive). So he is to the East of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing North-West. It is rotated 45° anticlockwise, then 90° clockwise, then 90° anticlockwise. In which direction does it point now?",
+      "options": [
+        "West",
+        "South-East",
+        "East",
+        "North-West"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Start at 315° (North = 0°, clockwise positive). Total rotation = -45°. Final bearing = 270°, which is West.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 13 km towards north, then turns left and walks 8 km, then turns right and walks 5 km, then turns right and walks 8 km. In which direction is he from his starting point?",
+      "options": [
+        "West",
+        "South",
+        "South-East",
+        "North"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net displacement is 0 west-wards and 18 north-wards (x = 0, y = 18 with north and east positive). So he is to the North of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the morning, Mohan's shadow falls to his left. Which direction is he facing?",
+      "options": [
+        "East",
+        "South",
+        "West",
+        "North"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In the morning shadows fall towards the West. The shadow is left of him, so he faces North.",
+      "shortcut": "Shadow direction is known; place it relative to him and rotate back.",
+      "subPattern": "shadow-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 15 km towards north, then turns left and walks 10 km, then turns left and walks 15 km, then turns right and walks 19 km. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "29 km West",
+        "29 km South",
+        "31 km East",
+        "29 km East"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "His net displacement from the start is 29 km West. To return he must walk 29 km East.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 16 m towards south, then turns right and walks 3 m, then turns right and walks 16 m. In which direction is he from his starting point?",
+      "options": [
+        "North-East",
+        "North",
+        "West",
+        "South-East"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Net displacement is 3 west-wards and 0 south-wards (x = -3, y = 0 with north and east positive). So he is to the West of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing South. It is rotated 90° anticlockwise, then 90° clockwise. In which direction does it point now?",
+      "options": [
+        "West",
+        "North",
+        "South",
+        "North-West"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Start at 180° (North = 0°, clockwise positive). Total rotation = 0°. Final bearing = 180°, which is South.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 20 km towards north, then turns left and walks 15 km. How far is he from the starting point?",
+      "options": [
+        "25 km",
+        "5 km",
+        "35 km",
+        "28 km"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "His displacement is a right triangle with legs 20 and 15: distance = sqrt(20^2 + 15^2) = 25 km.",
+      "shortcut": "Perpendicular legs: use Pythagoras (or a known triple).",
+      "subPattern": "distance-displacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "E is at a point. G is 9 m to the west of E. F is 4 m to the south of G. D is 5 m to the west of E. In which direction is D from E?",
+      "options": [
+        "South-East",
+        "West",
+        "North-East",
+        "North"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Coordinates (x east, y north) with E at (0, 0): E (0, 0), G (-9, 0), F (-9, -4), D (-5, 0). D relative to E is (-5, 0), i.e. West.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 7 km towards west, then turns left and walks 7 km, then turns left and walks 7 km, then turns right and walks 5 km. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "12 km South",
+        "12 km North",
+        "14 km North",
+        "12 km East"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "His net displacement from the start is 12 km South. To return he must walk 12 km North.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Amit and Anil start from the same point. Amit walks 3 km west and Anil walks 4 km south. How far apart are they?",
+      "options": [
+        "10 km",
+        "5 km",
+        "1 km",
+        "7 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Their paths are perpendicular: distance = sqrt(3^2 + 4^2) = 5 km.",
+      "shortcut": "Perpendicular paths from the same point form a right triangle.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing North-West. It is rotated 180° anticlockwise, then 90° anticlockwise, then 45° clockwise. In which direction does it point now?",
+      "options": [
+        "East",
+        "North-West",
+        "West",
+        "South"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Start at 315° (North = 0°, clockwise positive). Total rotation = -225°. Final bearing = 90°, which is East.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing south. He turns right, then turns right, then turns left, then turns right. In which direction is he facing now?",
+      "options": [
+        "East",
+        "West",
+        "North",
+        "South"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Starting South: turns right -> West, turns right -> North, turns left -> West, turns right -> North. Final direction: North.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Raj and Gita start from the same point. Raj walks 5 km west and Gita walks 12 km south. How far apart are they?",
+      "options": [
+        "15 km",
+        "7 km",
+        "13 km",
+        "17 km"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Their paths are perpendicular: distance = sqrt(5^2 + 12^2) = 13 km.",
+      "shortcut": "Perpendicular paths from the same point form a right triangle.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing north. He turns left, then turns left. In which direction is he facing now?",
+      "options": [
+        "West",
+        "North",
+        "South",
+        "East"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Starting North: turns left -> West, turns left -> South. Final direction: South.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing east. He turns left, then turns left, then turns right, then turns left. In which direction is he facing now?",
+      "options": [
+        "South",
+        "West",
+        "East",
+        "North"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Starting East: turns left -> North, turns left -> West, turns right -> North, turns left -> West. Final direction: West.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing north. He turns right, then turns right, then turns right, then turns right. In which direction is he facing now?",
+      "options": [
+        "East",
+        "North",
+        "South",
+        "West"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Starting North: turns right -> East, turns right -> South, turns right -> West, turns right -> North. Final direction: North.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 6 km towards south, then turns right and walks 17 km, then turns left and walks 11 km. In which direction is he from his starting point?",
+      "options": [
+        "South-West",
+        "West",
+        "South-East",
+        "North"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net displacement is 17 west-wards and 17 south-wards (x = -17, y = -17 with north and east positive). So he is to the South-West of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 17 km towards east, then turns left and walks 20 km, then turns left and walks 6 km, then turns left and walks 20 km. How far is he from the starting point?",
+      "options": [
+        "63 km",
+        "11 km",
+        "14 km",
+        "15 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net displacement after all legs: 11 km along one axis and 0 km along the other. Distance = sqrt(121 + 0) = 11 km.",
+      "shortcut": "Add up the movement along each axis separately (north-south and east-west), then use Pythagoras.",
+      "subPattern": "distance-displacement",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing North-East. It is rotated 90° anticlockwise, then 90° clockwise, then 135° clockwise. In which direction does it point now?",
+      "options": [
+        "South",
+        "North-East",
+        "North",
+        "South-East"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Start at 45° (North = 0°, clockwise positive). Total rotation = 135°. Final bearing = 180°, which is South.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the morning, Deepak stands facing the Sun. In which direction does his shadow fall?",
+      "options": [
+        "East",
+        "West",
+        "South",
+        "North"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Sun is in the East, so shadows fall opposite, towards the West.",
+      "shortcut": "Shadows always point away from the Sun.",
+      "subPattern": "shadow-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the evening, Kiran stands facing his own shadow. He turns right and then turns left. Which direction is he facing now?",
+      "options": [
+        "West",
+        "East",
+        "North",
+        "South"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The shadow falls East, so he first faces East. After turning right he faces South, then after turning left he faces East.",
+      "shortcut": "He faces the shadow direction first; then rotate for each turn.",
+      "subPattern": "shadow-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 8 km towards south, then turns left and walks 13 km, then turns left and walks 8 km. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "15 km West",
+        "13 km West",
+        "13 km North",
+        "13 km East"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "His net displacement from the start is 13 km East. To return he must walk 13 km West.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 13 km towards west, then turns left and walks 2 km, then turns left and walks 13 km. In which direction is he from his starting point?",
+      "options": [
+        "North-East",
+        "North",
+        "South",
+        "North-West"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Net displacement is 0 west-wards and 2 south-wards (x = 0, y = -2 with north and east positive). So he is to the South of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "G is at a point. E is 3 m to the south of G. B is 9 m to the east of G. C is 10 m to the north of G. In which direction is C from G?",
+      "options": [
+        "South-East",
+        "West",
+        "East",
+        "North"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Coordinates (x east, y north) with G at (0, 0): G (0, 0), E (0, -3), B (9, 0), C (0, 10). C relative to G is (0, 10), i.e. North.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 11 m towards west, then turns left and walks 24 m, then turns left and walks 4 m. How far is he from the starting point?",
+      "options": [
+        "25 m",
+        "27 m",
+        "31 m",
+        "39 m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net displacement after all legs: 7 m along one axis and 24 m along the other. Distance = sqrt(49 + 576) = 25 m.",
+      "shortcut": "Add up the movement along each axis separately (north-south and east-west), then use Pythagoras.",
+      "subPattern": "distance-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing North-West. It is rotated 180° anticlockwise, then 90° clockwise, then 180° anticlockwise, then 135° anticlockwise. In which direction does it point now?",
+      "options": [
+        "East",
+        "West",
+        "North",
+        "South-East"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Start at 315° (North = 0°, clockwise positive). Total rotation = -405°. Final bearing = 270°, which is West.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing north. He turns right, then turns left, then turns right, then turns right. In which direction is he facing now?",
+      "options": [
+        "West",
+        "East",
+        "North",
+        "South"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Starting North: turns right -> East, turns left -> North, turns right -> East, turns right -> South. Final direction: South.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 5 km towards south, then turns right and walks 4 km, then turns right and walks 5 km. How far is he from the starting point?",
+      "options": [
+        "14 km",
+        "8 km",
+        "4 km",
+        "6 km"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Net displacement after all legs: 4 km along one axis and 0 km along the other. Distance = sqrt(16 + 0) = 4 km.",
+      "shortcut": "Add up the movement along each axis separately (north-south and east-west), then use Pythagoras.",
+      "subPattern": "distance-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 20 m towards west, then turns right and walks 9 m, then turns right and walks 11 m. In which direction is he from his starting point?",
+      "options": [
+        "West",
+        "South-East",
+        "South",
+        "North-West"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net displacement is 9 west-wards and 9 north-wards (x = -9, y = 9 with north and east positive). So he is to the North-West of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the evening, Kiran stands facing his own shadow. He turns left and then turns left. Which direction is he facing now?",
+      "options": [
+        "North",
+        "East",
+        "South",
+        "West"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The shadow falls East, so he first faces East. After turning left he faces North, then after turning left he faces West.",
+      "shortcut": "He faces the shadow direction first; then rotate for each turn.",
+      "subPattern": "shadow-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the evening, Ajay's shadow falls in front of him. Which direction is he facing?",
+      "options": [
+        "West",
+        "East",
+        "North",
+        "South"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In the evening shadows fall towards the East. The shadow is in front of him, so he faces East.",
+      "shortcut": "Shadow direction is known; place it relative to him and rotate back.",
+      "subPattern": "shadow-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing east. He turns right, then turns right. In which direction is he facing now?",
+      "options": [
+        "West",
+        "East",
+        "North",
+        "South"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Starting East: turns right -> South, turns right -> West. Final direction: West.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Raj and Ram start from the same point. Raj walks 5 m south and Ram walks 9 m north. In which direction is Raj from Ram?",
+      "options": [
+        "East",
+        "South",
+        "North",
+        "South-East"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Put the start at the origin: Raj is at (0, -5), Ram is at (0, 9) (x east, y north). Raj - Ram = (0, -14), so Raj is to the South of Ram.",
+      "shortcut": "Subtract the coordinates (person - other) and read the signs.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 7 m towards south, then turns left and walks 11 m, then turns right and walks 4 m. In which direction is he from his starting point?",
+      "options": [
+        "North-West",
+        "South-East",
+        "North",
+        "South"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net displacement is 11 east-wards and 11 south-wards (x = 11, y = -11 with north and east positive). So he is to the South-East of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing South. It is rotated 135° clockwise, then 180° anticlockwise, then 135° clockwise. In which direction does it point now?",
+      "options": [
+        "East",
+        "South-West",
+        "West",
+        "South-East"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Start at 180° (North = 0°, clockwise positive). Total rotation = 90°. Final bearing = 270°, which is West.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing west. He turns left, then turns left, then turns right, then turns left. In which direction is he facing now?",
+      "options": [
+        "South",
+        "North",
+        "West",
+        "East"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Starting West: turns left -> South, turns left -> East, turns right -> South, turns left -> East. Final direction: East.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing west. He turns right, then turns left, then turns left, then turns right, then turns left, then makes a U-turn (turns around). In which direction is he facing now?",
+      "options": [
+        "North",
+        "West",
+        "South",
+        "East"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Starting West: turns right -> North, turns left -> West, turns left -> South, turns right -> West, turns left -> South, makes a U-turn -> North. Final direction: North.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the morning, Ajay stands facing the Sun. Which direction is on his right?",
+      "options": [
+        "North",
+        "East",
+        "South",
+        "West"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In the morning the Sun is in the East, so he faces East. His right is South.",
+      "shortcut": "Morning: Sun in the East; evening: Sun in the West.",
+      "subPattern": "shadow-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Amit and Sita start from the same point. Amit walks 21 m north. Sita walks 20 m east, then turns left and walks 6 m. How far apart are they now?",
+      "options": [
+        "24 m",
+        "50 m",
+        "47 m",
+        "25 m"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "With the start at the origin, Amit is at (0, 21) and Sita is at (20, 6). Difference = (-20, 15), distance = sqrt(625) = 25 m.",
+      "shortcut": "Place both on coordinates, then find the straight-line distance.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "B is at a point. A is 6 m to the west of B. C is 10 m to the west of B. D is 6 m to the east of C. In which direction is D from B?",
+      "options": [
+        "North-West",
+        "North",
+        "West",
+        "East"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Coordinates (x east, y north) with B at (0, 0): B (0, 0), A (-6, 0), C (-10, 0), D (-4, 0). D relative to B is (-4, 0), i.e. West.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 6 m towards west, then turns right and walks 16 m, then turns right and walks 6 m. In which direction is he from his starting point?",
+      "options": [
+        "North",
+        "West",
+        "South-West",
+        "North-West"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net displacement is 0 west-wards and 16 north-wards (x = 0, y = 16 with north and east positive). So he is to the North of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing east. He turns left, then turns right, then turns right, then turns left. In which direction is he facing now?",
+      "options": [
+        "West",
+        "South",
+        "North",
+        "East"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Starting East: turns left -> North, turns right -> East, turns right -> South, turns left -> East. Final direction: East.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Gita and Raj start from the same point. Gita walks 5 m east and Raj walks 12 m south. How far apart are they?",
+      "options": [
+        "7 m",
+        "16 m",
+        "13 m",
+        "17 m"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Their paths are perpendicular: distance = sqrt(5^2 + 12^2) = 13 m.",
+      "shortcut": "Perpendicular paths from the same point form a right triangle.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 18 km towards east, then turns right and walks 4 km, then turns right and walks 18 km. In which direction is he from his starting point?",
+      "options": [
+        "West",
+        "South",
+        "North",
+        "East"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net displacement is 0 west-wards and 4 south-wards (x = 0, y = -4 with north and east positive). So he is to the South of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 19 km towards east, then turns left and walks 12 km, then turns left and walks 19 km. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "12 km South",
+        "12 km West",
+        "12 km North",
+        "14 km South"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "His net displacement from the start is 12 km North. To return he must walk 12 km South.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 14 km towards west, then turns left and walks 3 km, then turns left and walks 14 km. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "3 km South",
+        "5 km North",
+        "3 km East",
+        "3 km North"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "His net displacement from the start is 3 km South. To return he must walk 3 km North.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the morning, Kiran's shadow falls in front of him. Which direction is he facing?",
+      "options": [
+        "South",
+        "West",
+        "North",
+        "East"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In the morning shadows fall towards the West. The shadow is in front of him, so he faces West.",
+      "shortcut": "Shadow direction is known; place it relative to him and rotate back.",
+      "subPattern": "shadow-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 7 km towards north, then turns left and walks 21 km, then turns right and walks 21 km. How far is he from the starting point?",
+      "options": [
+        "37 km",
+        "34 km",
+        "35 km",
+        "49 km"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Net displacement after all legs: 21 km along one axis and 28 km along the other. Distance = sqrt(441 + 784) = 35 km.",
+      "shortcut": "Add up the movement along each axis separately (north-south and east-west), then use Pythagoras.",
+      "subPattern": "distance-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Anil and Gita start from the same point. Anil walks 7 m east. Gita walks 6 m north, then turns right and walks 7 m. How far apart are they now?",
+      "options": [
+        "6 m",
+        "8 m",
+        "9 m",
+        "20 m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "With the start at the origin, Anil is at (7, 0) and Gita is at (7, 6). Difference = (0, -6), distance = sqrt(36) = 6 m.",
+      "shortcut": "Place both on coordinates, then find the straight-line distance.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing west. He turns left, then turns right. In which direction is he facing now?",
+      "options": [
+        "South",
+        "North",
+        "East",
+        "West"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Starting West: turns left -> South, turns right -> West. Final direction: West.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 17 m towards east, then turns left and walks 16 m, then turns right and walks 13 m. How far is he from the starting point?",
+      "options": [
+        "32 m",
+        "36 m",
+        "34 m",
+        "46 m"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Net displacement after all legs: 30 m along one axis and 16 m along the other. Distance = sqrt(900 + 256) = 34 m.",
+      "shortcut": "Add up the movement along each axis separately (north-south and east-west), then use Pythagoras.",
+      "subPattern": "distance-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing north. He turns right, then turns right, then turns left, then turns left, then turns right, then turns left. In which direction is he facing now?",
+      "options": [
+        "North",
+        "West",
+        "South",
+        "East"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Starting North: turns right -> East, turns right -> South, turns left -> East, turns left -> North, turns right -> East, turns left -> North. Final direction: North.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 18 m towards west, then turns left and walks 12 m, then turns left and walks 18 m. How far is he from the starting point?",
+      "options": [
+        "48 m",
+        "18 m",
+        "7 m",
+        "12 m"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net displacement after all legs: 0 m along one axis and 12 m along the other. Distance = sqrt(0 + 144) = 12 m.",
+      "shortcut": "Add up the movement along each axis separately (north-south and east-west), then use Pythagoras.",
+      "subPattern": "distance-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the morning, Ravi's shadow falls to his right. Which direction is he facing?",
+      "options": [
+        "South",
+        "North",
+        "East",
+        "West"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In the morning shadows fall towards the West. The shadow is right of him, so he faces South.",
+      "shortcut": "Shadow direction is known; place it relative to him and rotate back.",
+      "subPattern": "shadow-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 2 m towards north, then turns right and walks 8 m, then turns right and walks 2 m. In which direction is he from his starting point?",
+      "options": [
+        "West",
+        "South-West",
+        "East",
+        "North-West"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Net displacement is 8 east-wards and 0 south-wards (x = 8, y = 0 with north and east positive). So he is to the East of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 17 km towards south, then turns right and walks 10 km, then turns right and walks 14 km, then turns right and walks 10 km. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "5 km North",
+        "3 km North",
+        "3 km East",
+        "3 km South"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "His net displacement from the start is 3 km South. To return he must walk 3 km North.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing North-East. It is rotated 90° clockwise, then 45° clockwise. In which direction does it point now?",
+      "options": [
+        "South",
+        "West",
+        "North",
+        "North-East"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Start at 45° (North = 0°, clockwise positive). Total rotation = 135°. Final bearing = 180°, which is South.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "B is at a point. G is 12 m to the west of B. A is 12 m to the east of B. In which direction is A from B?",
+      "options": [
+        "South-East",
+        "North-West",
+        "East",
+        "North"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Coordinates (x east, y north) with B at (0, 0): B (0, 0), G (-12, 0), A (12, 0). A relative to B is (12, 0), i.e. East.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the evening, Mohan's shadow falls in front of him. Which direction is he facing?",
+      "options": [
+        "North",
+        "West",
+        "East",
+        "South"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In the evening shadows fall towards the East. The shadow is in front of him, so he faces East.",
+      "shortcut": "Shadow direction is known; place it relative to him and rotate back.",
+      "subPattern": "shadow-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Raj and Ram start from the same point. Raj walks 3 km south and Ram walks 4 km east. How far apart are they?",
+      "options": [
+        "-5 km",
+        "7 km",
+        "1 km",
+        "5 km"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Their paths are perpendicular: distance = sqrt(3^2 + 4^2) = 5 km.",
+      "shortcut": "Perpendicular paths from the same point form a right triangle.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "E is at a point. B is 11 m to the east of E. D is 11 m to the west of E. In which direction is D from E?",
+      "options": [
+        "North",
+        "West",
+        "South-East",
+        "North-West"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Coordinates (x east, y north) with E at (0, 0): E (0, 0), B (11, 0), D (-11, 0). D relative to E is (-11, 0), i.e. West.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Gita and Raj start from the same point. Gita walks 15 m east and Raj walks 8 m west. In which direction is Gita from Raj?",
+      "options": [
+        "South-West",
+        "South-East",
+        "West",
+        "East"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Put the start at the origin: Gita is at (15, 0), Raj is at (-8, 0) (x east, y north). Gita - Raj = (23, 0), so Gita is to the East of Raj.",
+      "shortcut": "Subtract the coordinates (person - other) and read the signs.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 9 km towards north, then turns right and walks 18 km, then turns right and walks 9 km. In which direction is he from his starting point?",
+      "options": [
+        "South",
+        "East",
+        "North",
+        "South-West"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net displacement is 18 east-wards and 0 south-wards (x = 18, y = 0 with north and east positive). So he is to the East of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing North-West. It is rotated 90° clockwise, then 90° anticlockwise. In which direction does it point now?",
+      "options": [
+        "North-West",
+        "North-East",
+        "East",
+        "South-East"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Start at 315° (North = 0°, clockwise positive). Total rotation = 0°. Final bearing = 315°, which is North-West.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "C is at a point. D is 4 m to the east of C. A is 8 m to the east of D. F is 7 m to the west of C. In which direction is F from C?",
+      "options": [
+        "South",
+        "South-West",
+        "North-East",
+        "West"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Coordinates (x east, y north) with C at (0, 0): C (0, 0), D (4, 0), A (12, 0), F (-7, 0). F relative to C is (-7, 0), i.e. West.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Sita and Amit start from the same point. Sita walks 10 km south. Amit walks 22 km north, then turns right and walks 24 km. How far apart are they now?",
+      "options": [
+        "40 km",
+        "56 km",
+        "41 km",
+        "37 km"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "With the start at the origin, Sita is at (0, -10) and Amit is at (24, 22). Difference = (-24, -32), distance = sqrt(1600) = 40 km.",
+      "shortcut": "Place both on coordinates, then find the straight-line distance.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the evening, Ajay stands facing the Sun. In which direction does his shadow fall?",
+      "options": [
+        "South",
+        "West",
+        "East",
+        "North"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Sun is in the West, so shadows fall opposite, towards the East.",
+      "shortcut": "Shadows always point away from the Sun.",
+      "subPattern": "shadow-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "C is at a point. G is 4 m to the west of C. D is 6 m to the south of C. E is 7 m to the west of G. In which direction is E from C?",
+      "options": [
+        "North-West",
+        "East",
+        "West",
+        "South-West"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Coordinates (x east, y north) with C at (0, 0): C (0, 0), G (-4, 0), D (0, -6), E (-11, 0). E relative to C is (-11, 0), i.e. West.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "C is at a point. F is 3 m to the north of C. B is 11 m to the east of F. E is 8 m to the north of C. In which direction is E from C?",
+      "options": [
+        "East",
+        "North",
+        "North-East",
+        "North-West"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Coordinates (x east, y north) with C at (0, 0): C (0, 0), F (0, 3), B (11, 3), E (0, 8). E relative to C is (0, 8), i.e. North.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Sita and Ram start from the same point. Sita walks 10 km west and Ram walks 20 km east. In which direction is Sita from Ram?",
+      "options": [
+        "West",
+        "North-East",
+        "North",
+        "South-West"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Put the start at the origin: Sita is at (-10, 0), Ram is at (20, 0) (x east, y north). Sita - Ram = (-30, 0), so Sita is to the West of Ram.",
+      "shortcut": "Subtract the coordinates (person - other) and read the signs.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A is at a point. E is 10 m to the west of A. C is 10 m to the east of A. In which direction is C from A?",
+      "options": [
+        "South-East",
+        "North",
+        "South",
+        "East"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Coordinates (x east, y north) with A at (0, 0): A (0, 0), E (-10, 0), C (10, 0). C relative to A is (10, 0), i.e. East.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 17 m towards south, then turns right and walks 2 m, then turns right and walks 17 m. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "2 m East",
+        "2 m West",
+        "2 m South",
+        "5 m East"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "His net displacement from the start is 2 m West. To return he must walk 2 m East.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing South-East. It is rotated 135° anticlockwise, then 90° clockwise, then 180° clockwise. In which direction does it point now?",
+      "options": [
+        "North-East",
+        "East",
+        "West",
+        "North"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Start at 135° (North = 0°, clockwise positive). Total rotation = 135°. Final bearing = 270°, which is West.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the evening, Ajay stands facing the Sun. Which direction is on his left?",
+      "options": [
+        "West",
+        "North",
+        "South",
+        "East"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "He faces West; his left is South.",
+      "shortcut": "Rotate 90° anticlockwise from the facing direction for left.",
+      "subPattern": "shadow-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 3 m towards east, then turns left and walks 4 m. How far is he from the starting point?",
+      "options": [
+        "1 m",
+        "5 m",
+        "10 m",
+        "7 m"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "His displacement is a right triangle with legs 3 and 4: distance = sqrt(3^2 + 4^2) = 5 m.",
+      "shortcut": "Perpendicular legs: use Pythagoras (or a known triple).",
+      "subPattern": "distance-displacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 9 km towards east, then turns left and walks 3 km, then turns left and walks 9 km, then turns right and walks 3 km. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "8 km South",
+        "6 km North",
+        "6 km West",
+        "6 km South"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "His net displacement from the start is 6 km North. To return he must walk 6 km South.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 24 m towards south, then turns right and walks 16 m, then turns right and walks 24 m. How far is he from the starting point?",
+      "options": [
+        "13 m",
+        "64 m",
+        "32 m",
+        "16 m"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net displacement after all legs: 16 m along one axis and 0 m along the other. Distance = sqrt(256 + 0) = 16 m.",
+      "shortcut": "Add up the movement along each axis separately (north-south and east-west), then use Pythagoras.",
+      "subPattern": "distance-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "F is at a point. B is 5 m to the west of F. C is 9 m to the south of B. A is 8 m to the south of F. In which direction is A from F?",
+      "options": [
+        "West",
+        "North-East",
+        "South",
+        "South-West"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Coordinates (x east, y north) with F at (0, 0): F (0, 0), B (-5, 0), C (-5, -9), A (0, -8). A relative to F is (0, -8), i.e. South.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 10 m towards north, then turns left and walks 24 m. How far is he from the starting point?",
+      "options": [
+        "26 m",
+        "34 m",
+        "52 m",
+        "14 m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "His displacement is a right triangle with legs 10 and 24: distance = sqrt(10^2 + 24^2) = 26 m.",
+      "shortcut": "Perpendicular legs: use Pythagoras (or a known triple).",
+      "subPattern": "distance-displacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 12 m towards east, then turns right and walks 20 m, then turns right and walks 12 m. In which direction is he from his starting point?",
+      "options": [
+        "South-West",
+        "North-West",
+        "North",
+        "South"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net displacement is 0 west-wards and 20 south-wards (x = 0, y = -20 with north and east positive). So he is to the South of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 24 km towards south, then turns right and walks 10 km. How far is he from the starting point?",
+      "options": [
+        "34 km",
+        "14 km",
+        "39 km",
+        "26 km"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "His displacement is a right triangle with legs 24 and 10: distance = sqrt(24^2 + 10^2) = 26 km.",
+      "shortcut": "Perpendicular legs: use Pythagoras (or a known triple).",
+      "subPattern": "distance-displacement",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man is facing south. He turns left, then turns right. In which direction is he facing now?",
+      "options": [
+        "South",
+        "North",
+        "East",
+        "West"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Starting South: turns left -> East, turns right -> South. Final direction: South.",
+      "shortcut": "Right = +90°, left = -90° (clockwise = right). Track the facing direction after each turn.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 20 km towards south, then turns right and walks 16 km, then turns left and walks 20 km, then turns left and walks 16 km. In which direction is he from his starting point?",
+      "options": [
+        "South-West",
+        "South",
+        "South-East",
+        "North"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net displacement is 0 west-wards and 40 south-wards (x = 0, y = -40 with north and east positive). So he is to the South of the start.",
+      "shortcut": "Track net east-west and north-south movement; their signs give the direction.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Sita and Ram start from the same point. Sita walks 20 km north and Ram walks 4 km south. In which direction is Sita from Ram?",
+      "options": [
+        "North-East",
+        "South-West",
+        "South-East",
+        "North"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Put the start at the origin: Sita is at (0, 20), Ram is at (0, -4) (x east, y north). Sita - Ram = (0, 24), so Sita is to the North of Ram.",
+      "shortcut": "Subtract the coordinates (person - other) and read the signs.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 19 m towards west, then turns left and walks 7 m, then turns left and walks 19 m, then turns right and walks 18 m. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "27 m North",
+        "25 m North",
+        "25 m East",
+        "25 m South"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "His net displacement from the start is 25 m South. To return he must walk 25 m North.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 9 m towards east, then turns left and walks 5 m, then turns left and walks 9 m, then turns left and walks 7 m. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "2 m North",
+        "2 m South",
+        "2 m East",
+        "5 m North"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "His net displacement from the start is 2 m South. To return he must walk 2 m North.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "G is at a point. F is 6 m to the south of G. D is 12 m to the west of F. C is 3 m to the south of G. In which direction is C from G?",
+      "options": [
+        "South-East",
+        "North-East",
+        "South",
+        "West"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Coordinates (x east, y north) with G at (0, 0): G (0, 0), F (0, -6), D (-12, -6), C (0, -3). C relative to G is (0, -3), i.e. South.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing South. It is rotated 90° clockwise, then 45° clockwise. In which direction does it point now?",
+      "options": [
+        "South",
+        "North-West",
+        "East",
+        "South-East"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Start at 180° (North = 0°, clockwise positive). Total rotation = 135°. Final bearing = 315°, which is North-West.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Sita and Anil start from the same point. Sita walks 19 km south and Anil walks 19 km north. In which direction is Sita from Anil?",
+      "options": [
+        "North-East",
+        "North-West",
+        "East",
+        "South"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Put the start at the origin: Sita is at (0, -19), Anil is at (0, 19) (x east, y north). Sita - Anil = (0, -38), so Sita is to the South of Anil.",
+      "shortcut": "Subtract the coordinates (person - other) and read the signs.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing North-East. It is rotated 135° anticlockwise, then 45° anticlockwise, then 180° anticlockwise. In which direction does it point now?",
+      "options": [
+        "North-East",
+        "North-West",
+        "South-West",
+        "North"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Start at 45° (North = 0°, clockwise positive). Total rotation = -360°. Final bearing = 45°, which is North-East.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 16 m towards west, then turns right and walks 10 m, then turns right and walks 2 m, then turns right and walks 10 m. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "14 m East",
+        "14 m West",
+        "14 m South",
+        "16 m East"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "His net displacement from the start is 14 m West. To return he must walk 14 m East.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the evening, Ajay stands facing his own shadow. He turns left and then turns left. Which direction is he facing now?",
+      "options": [
+        "West",
+        "East",
+        "South",
+        "North"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The shadow falls East, so he first faces East. After turning left he faces North, then after turning left he faces West.",
+      "shortcut": "He faces the shadow direction first; then rotate for each turn.",
+      "subPattern": "shadow-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Sita and Amit start from the same point. Sita walks 4 km east and Amit walks 9 km west. In which direction is Sita from Amit?",
+      "options": [
+        "South-West",
+        "East",
+        "South",
+        "North"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Put the start at the origin: Sita is at (4, 0), Amit is at (-9, 0) (x east, y north). Sita - Amit = (13, 0), so Sita is to the East of Amit.",
+      "shortcut": "Subtract the coordinates (person - other) and read the signs.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 3 km towards west, then turns right and walks 23 km, then turns right and walks 3 km, then turns left and walks 21 km. How far is he from the starting point?",
+      "options": [
+        "50 km",
+        "44 km",
+        "41 km",
+        "66 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net displacement after all legs: 0 km along one axis and 44 km along the other. Distance = sqrt(0 + 1936) = 44 km.",
+      "shortcut": "Add up the movement along each axis separately (north-south and east-west), then use Pythagoras.",
+      "subPattern": "distance-displacement",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "F is at a point. G is 3 m to the west of F. D is 10 m to the east of G. E is 11 m to the south of F. In which direction is E from F?",
+      "options": [
+        "North",
+        "South-West",
+        "South",
+        "West"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Coordinates (x east, y north) with F at (0, 0): F (0, 0), G (-3, 0), D (7, 0), E (0, -11). E relative to F is (0, -11), i.e. South.",
+      "shortcut": "Place each person on a grid, taking east and north as positive.",
+      "subPattern": "multi-person-direction",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man starts from a point and walks 17 m towards north, then turns left and walks 15 m, then turns right and walks 7 m, then turns right and walks 15 m. How far and in which direction must he walk to return to his starting point?",
+      "options": [
+        "26 m South",
+        "24 m West",
+        "24 m South",
+        "24 m North"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "His net displacement from the start is 24 m North. To return he must walk 24 m South.",
+      "shortcut": "The way back is the opposite of the net displacement.",
+      "subPattern": "pythagorean-displacement",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pointer is facing North-East. It is rotated 135° clockwise, then 180° clockwise, then 135° anticlockwise, then 135° anticlockwise. In which direction does it point now?",
+      "options": [
+        "East",
+        "South",
+        "South-East",
+        "West"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Start at 45° (North = 0°, clockwise positive). Total rotation = 45°. Final bearing = 90°, which is East.",
+      "shortcut": "Convert directions to bearings (N = 0°, NE = 45°, E = 90°, ...) and add clockwise turns.",
+      "subPattern": "simple-turns-final-direction",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In the evening, Ajay's shadow falls to his left. Which direction is he facing?",
+      "options": [
+        "North",
+        "West",
+        "South",
+        "East"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In the evening shadows fall towards the East. The shadow is left of him, so he faces South.",
+      "shortcut": "Shadow direction is known; place it relative to him and rotate back.",
+      "subPattern": "shadow-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}

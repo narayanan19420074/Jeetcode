@@ -1,0 +1,2708 @@
+{
+ "pattern": {
+  "title": "Coding and Decoding",
+  "slug": "coding-decoding",
+  "description": "Encoding schemes and decoding logic.",
+  "order": 30,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Logical Reasoning",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "letter-coding",
+    "title": "Letter coding"
+   },
+   {
+    "slug": "number-coding",
+    "title": "Number coding"
+   },
+   {
+    "slug": "symbol-coding",
+    "title": "Symbol coding"
+   },
+   {
+    "slug": "fictitious-language-coding",
+    "title": "Fictitious language coding"
+   },
+   {
+    "slug": "mixed-substitution-coding",
+    "title": "Mixed / substitution coding"
+   },
+   {
+    "slug": "conditional-coding",
+    "title": "Conditional coding"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "In a certain code language, every letter of a word is moved 1 place(s) forward. If the code word is CFE, what is the original word?",
+   "options": [
+    {
+     "text": "BED"
+    },
+    {
+     "text": "EHG"
+    },
+    {
+     "text": "EFC"
+    },
+    {
+     "text": "DGF"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Move each letter 1 place(s) back: CFE -> BED.",
+   "order": 1,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the coding: shift backward by the same number."
+  },
+  {
+   "questionText": "In a certain code, the letters of a word are moved forward by 1, 2, 3, ... places respectively (first letter by 1, second by 2, and so on). How is PARK written in that code?",
+   "options": [
+    {
+     "text": "TFXR"
+    },
+    {
+     "text": "QBSL"
+    },
+    {
+     "text": "PBTN"
+    },
+    {
+     "text": "QCUO"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Shift the letters by 1, 2, 3, ...: PARK -> QCUO.",
+   "order": 2,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The shift grows by one with each position."
+  },
+  {
+   "questionText": "In a certain code, NET is written as OFU. How is OWL written in that code?",
+   "options": [
+    {
+     "text": "MXP"
+    },
+    {
+     "text": "NVK"
+    },
+    {
+     "text": "PXM"
+    },
+    {
+     "text": "QYN"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each letter of NET moves 1 place(s) forward (NET -> OFU). Applying the same rule: OWL -> PXM.",
+   "order": 3,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Compare the first word with its code to find the shift, then apply it."
+  },
+  {
+   "questionText": "If A is coded as Z, B as Y, C as X and so on, how is DOG coded?",
+   "options": [
+    {
+     "text": "GOD"
+    },
+    {
+     "text": "WLT"
+    },
+    {
+     "text": "EPH"
+    },
+    {
+     "text": "YNV"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each letter is replaced by its mirror letter (position p -> 27 - p): DOG -> WLT.",
+   "order": 4,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Mirror letters add up to 27: A-Z, B-Y, C-X, ..."
+  },
+  {
+   "questionText": "If A is coded as Z, B as Y, C as X and so on, how is KEY coded?",
+   "options": [
+    {
+     "text": "LFZ"
+    },
+    {
+     "text": "YEK"
+    },
+    {
+     "text": "PVB"
+    },
+    {
+     "text": "RXD"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each letter is replaced by its mirror letter (position p -> 27 - p): KEY -> PVB.",
+   "order": 5,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Mirror letters add up to 27: A-Z, B-Y, C-X, ..."
+  },
+  {
+   "questionText": "In a certain code, BAT is written as FEX. How is NET written in that code?",
+   "options": [
+    {
+     "text": "TKZ"
+    },
+    {
+     "text": "JAP"
+    },
+    {
+     "text": "SJY"
+    },
+    {
+     "text": "RIX"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each letter of BAT moves 4 place(s) forward (BAT -> FEX). Applying the same rule: NET -> RIX.",
+   "order": 6,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Compare the first word with its code to find the shift, then apply it."
+  },
+  {
+   "questionText": "If A is coded as Z, B as Y, C as X and so on, how is BOX coded?",
+   "options": [
+    {
+     "text": "YLC"
+    },
+    {
+     "text": "CPY"
+    },
+    {
+     "text": "XOB"
+    },
+    {
+     "text": "ZMD"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each letter is replaced by its mirror letter (position p -> 27 - p): BOX -> YLC.",
+   "order": 7,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Mirror letters add up to 27: A-Z, B-Y, C-X, ..."
+  },
+  {
+   "questionText": "In a certain code language, every letter of a word is moved 2 place(s) forward. If the code word is FQI, what is the original word?",
+   "options": [
+    {
+     "text": "BME"
+    },
+    {
+     "text": "DOG"
+    },
+    {
+     "text": "IQF"
+    },
+    {
+     "text": "HSK"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Move each letter 2 place(s) back: FQI -> DOG.",
+   "order": 8,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Reverse the coding: shift backward by the same number."
+  },
+  {
+   "questionText": "In a certain code language, every letter of a word is moved 2 place(s) forward. If the code word is DTCKP, what is the original word?",
+   "options": [
+    {
+     "text": "NIARB"
+    },
+    {
+     "text": "FVEMR"
+    },
+    {
+     "text": "PKCTD"
+    },
+    {
+     "text": "BRAIN"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Move each letter 2 place(s) back: DTCKP -> BRAIN.",
+   "order": 9,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Reverse the coding: shift backward by the same number."
+  },
+  {
+   "questionText": "If A is coded as Z, B as Y, C as X and so on, how is OWL coded?",
+   "options": [
+    {
+     "text": "PXM"
+    },
+    {
+     "text": "LWO"
+    },
+    {
+     "text": "LDO"
+    },
+    {
+     "text": "ODL"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each letter is replaced by its mirror letter (position p -> 27 - p): OWL -> LDO.",
+   "order": 10,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Mirror letters add up to 27: A-Z, B-Y, C-X, ..."
+  },
+  {
+   "questionText": "In a certain code, the letters of a word are moved forward by 1, 2, 3, ... places respectively (first letter by 1, second by 2, and so on). How is GOLD written in that code?",
+   "options": [
+    {
+     "text": "GPNG"
+    },
+    {
+     "text": "HQOH"
+    },
+    {
+     "text": "JSQJ"
+    },
+    {
+     "text": "HPME"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Shift the letters by 1, 2, 3, ...: GOLD -> HQOH.",
+   "order": 11,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "The shift grows by one with each position."
+  },
+  {
+   "questionText": "In a certain code, the letters of a word are moved forward by 1, 2, 3, ... places respectively (first letter by 1, second by 2, and so on). How is TOP written in that code?",
+   "options": [
+    {
+     "text": "UQS"
+    },
+    {
+     "text": "XTV"
+    },
+    {
+     "text": "TPR"
+    },
+    {
+     "text": "UPQ"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shift the letters by 1, 2, 3, ...: TOP -> UQS.",
+   "order": 12,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "The shift grows by one with each position."
+  },
+  {
+   "questionText": "In a certain code, PIG is written as TMK. How is NET written in that code?",
+   "options": [
+    {
+     "text": "RIX"
+    },
+    {
+     "text": "JAP"
+    },
+    {
+     "text": "PGV"
+    },
+    {
+     "text": "SJY"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each letter of PIG moves 4 place(s) forward (PIG -> TMK). Applying the same rule: NET -> RIX.",
+   "order": 13,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Compare the first word with its code to find the shift, then apply it."
+  },
+  {
+   "questionText": "In a certain code language, every letter of a word is moved 1 place(s) forward. If the code word is DPJO, what is the original word?",
+   "options": [
+    {
+     "text": "EQKP"
+    },
+    {
+     "text": "OJPD"
+    },
+    {
+     "text": "COIN"
+    },
+    {
+     "text": "FRLQ"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Move each letter 1 place(s) back: DPJO -> COIN.",
+   "order": 14,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Reverse the coding: shift backward by the same number."
+  },
+  {
+   "questionText": "In a certain code, BED is written as FIH. How is RAT written in that code?",
+   "options": [
+    {
+     "text": "TAR"
+    },
+    {
+     "text": "VEX"
+    },
+    {
+     "text": "WFY"
+    },
+    {
+     "text": "UDW"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each letter of BED moves 4 place(s) forward (BED -> FIH). Applying the same rule: RAT -> VEX.",
+   "order": 15,
+   "subPattern": "letter-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Compare the first word with its code to find the shift, then apply it."
+  },
+  {
+   "questionText": "In a certain code, TABLE is written as UBCMF. What is the original word whose code is EPPS?",
+   "options": [
+    {
+     "text": "SPPE"
+    },
+    {
+     "text": "FQQT"
+    },
+    {
+     "text": "BMMP"
+    },
+    {
+     "text": "DOOR"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "From TABLE -> UBCMF, each letter moves 1 place(s) forward. Reversing it for EPPS gives DOOR.",
+   "order": 16,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find the shift from the example, then undo it."
+  },
+  {
+   "questionText": "In a certain code, TENT is written as VGPV. What is the original word whose code is VKIGT?",
+   "options": [
+    {
+     "text": "TIGER"
+    },
+    {
+     "text": "RGECP"
+    },
+    {
+     "text": "TGIKV"
+    },
+    {
+     "text": "XMKIV"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "From TENT -> VGPV, each letter moves 2 place(s) forward. Reversing it for VKIGT gives TIGER.",
+   "order": 17,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the shift from the example, then undo it."
+  },
+  {
+   "questionText": "In a certain code, LEMON is written as IBJLK. What is the original word whose code is QLM?",
+   "options": [
+    {
+     "text": "MLQ"
+    },
+    {
+     "text": "NIJ"
+    },
+    {
+     "text": "WRS"
+    },
+    {
+     "text": "TOP"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "From LEMON -> IBJLK, each letter moves 3 place(s) backward. Reversing it for QLM gives TOP.",
+   "order": 18,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the shift from the example, then undo it."
+  },
+  {
+   "questionText": "In a certain code, RAIN is written as TCKP. How is STONE written in that code?",
+   "options": [
+    {
+     "text": "QRMLC"
+    },
+    {
+     "text": "UVQPG"
+    },
+    {
+     "text": "VWRQH"
+    },
+    {
+     "text": "WXSRI"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each letter of RAIN moves 2 place(s) forward. So STONE -> UVQPG.",
+   "order": 19,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the shift (and its direction) from the given pair."
+  },
+  {
+   "questionText": "In a certain code, BOOK is written as ERRN. How is TREE written in that code?",
+   "options": [
+    {
+     "text": "XVII"
+    },
+    {
+     "text": "HHUW"
+    },
+    {
+     "text": "WUHH"
+    },
+    {
+     "text": "QOBB"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each letter of BOOK moves 3 place(s) forward. So TREE -> WUHH.",
+   "order": 20,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Find the shift (and its direction) from the given pair."
+  },
+  {
+   "questionText": "In a certain code, FISH is written as GKVL. How is LEMON written in that code?",
+   "options": [
+    {
+     "text": "MDNNO"
+    },
+    {
+     "text": "PJSVV"
+    },
+    {
+     "text": "MFNPO"
+    },
+    {
+     "text": "MGPSS"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Comparing FISH with GKVL: the letters move 1, 2, 3, ... places forward. So LEMON -> MGPSS.",
+   "order": 21,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Compare letter by letter; the shifts differ by position."
+  },
+  {
+   "questionText": "In a certain code, PARK is written as QBSL. How is WIND written in that code?",
+   "options": [
+    {
+     "text": "XJOE"
+    },
+    {
+     "text": "WIND"
+    },
+    {
+     "text": "YKPF"
+    },
+    {
+     "text": "VHMC"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each letter of PARK moves 1 place(s) forward. So WIND -> XJOE.",
+   "order": 22,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the shift (and its direction) from the given pair."
+  },
+  {
+   "questionText": "In a certain code, HORSE is written as SLIHV. How is APPLE written in that code?",
+   "options": [
+    {
+     "text": "ELPPA"
+    },
+    {
+     "text": "YJJNU"
+    },
+    {
+     "text": "ZKKOV"
+    },
+    {
+     "text": "VOKKZ"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "HORSE -> SLIHV follows the mirror-letter rule (A<->Z, B<->Y, ...). So APPLE -> ZKKOV.",
+   "order": 23,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Positions of a letter and its code add up to 27 for mirror coding."
+  },
+  {
+   "questionText": "In a certain code, WATER is written as DZGVI. How is BED written in that code?",
+   "options": [
+    {
+     "text": "WVY"
+    },
+    {
+     "text": "YVW"
+    },
+    {
+     "text": "XUV"
+    },
+    {
+     "text": "DEB"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "WATER -> DZGVI follows the mirror-letter rule (A<->Z, B<->Y, ...). So BED -> YVW.",
+   "order": 24,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Positions of a letter and its code add up to 27 for mirror coding."
+  },
+  {
+   "questionText": "In a certain code, FLAME is written as UOZNV. How is WIND written in that code?",
+   "options": [
+    {
+     "text": "GUPZ"
+    },
+    {
+     "text": "DRMW"
+    },
+    {
+     "text": "WMRD"
+    },
+    {
+     "text": "DNIW"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "FLAME -> UOZNV follows the mirror-letter rule (A<->Z, B<->Y, ...). So WIND -> DRMW.",
+   "order": 25,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Positions of a letter and its code add up to 27 for mirror coding."
+  },
+  {
+   "questionText": "In a certain code, WIND is written as XKQH. How is MOON written in that code?",
+   "options": [
+    {
+     "text": "NQRR"
+    },
+    {
+     "text": "NNPM"
+    },
+    {
+     "text": "NPPO"
+    },
+    {
+     "text": "LOPP"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Comparing WIND with XKQH: the letters move 1, 2, 3, ... places forward. So MOON -> NQRR.",
+   "order": 26,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare letter by letter; the shifts differ by position."
+  },
+  {
+   "questionText": "In a certain code, CHAIR is written as DJDMW. How is TENT written in that code?",
+   "options": [
+    {
+     "text": "UFOU"
+    },
+    {
+     "text": "SEOV"
+    },
+    {
+     "text": "UGQX"
+    },
+    {
+     "text": "UDOS"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Comparing CHAIR with DJDMW: the letters move 1, 2, 3, ... places forward. So TENT -> UGQX.",
+   "order": 27,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Compare letter by letter; the shifts differ by position."
+  },
+  {
+   "questionText": "In a certain code, FARM is written as GBSN. What is the original word whose code is IBU?",
+   "options": [
+    {
+     "text": "UBI"
+    },
+    {
+     "text": "JCV"
+    },
+    {
+     "text": "IBU"
+    },
+    {
+     "text": "HAT"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "From FARM -> GBSN, each letter moves 1 place(s) forward. Reversing it for IBU gives HAT.",
+   "order": 28,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the shift from the example, then undo it."
+  },
+  {
+   "questionText": "In a certain code, COIN is written as EQKP. What is the original word whose code is FQQT?",
+   "options": [
+    {
+     "text": "ROOD"
+    },
+    {
+     "text": "TQQF"
+    },
+    {
+     "text": "DOOR"
+    },
+    {
+     "text": "HSSV"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "From COIN -> EQKP, each letter moves 2 place(s) forward. Reversing it for FQQT gives DOOR.",
+   "order": 29,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the shift from the example, then undo it."
+  },
+  {
+   "questionText": "In a certain code, BRAIN is written as CTDMS. How is COIN written in that code?",
+   "options": [
+    {
+     "text": "DQLR"
+    },
+    {
+     "text": "DPJO"
+    },
+    {
+     "text": "DNJM"
+    },
+    {
+     "text": "RLQD"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Comparing BRAIN with CTDMS: the letters move 1, 2, 3, ... places forward. So COIN -> DQLR.",
+   "order": 30,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare letter by letter; the shifts differ by position."
+  },
+  {
+   "questionText": "In a certain code, TABLE is written as UCEPJ. How is SHIP written in that code?",
+   "options": [
+    {
+     "text": "TLJT"
+    },
+    {
+     "text": "TIJQ"
+    },
+    {
+     "text": "TGJO"
+    },
+    {
+     "text": "TJLT"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Comparing TABLE with UCEPJ: the letters move 1, 2, 3, ... places forward. So SHIP -> TJLT.",
+   "order": 31,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare letter by letter; the shifts differ by position."
+  },
+  {
+   "questionText": "In a certain code, LION is written as KHNM. What is the original word whose code is GNTRD?",
+   "options": [
+    {
+     "text": "FMSQC"
+    },
+    {
+     "text": "HOUSE"
+    },
+    {
+     "text": "DRTNG"
+    },
+    {
+     "text": "KRXVH"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "From LION -> KHNM, each letter moves 1 place(s) backward. Reversing it for GNTRD gives HOUSE.",
+   "order": 32,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the shift from the example, then undo it."
+  },
+  {
+   "questionText": "In a certain code, CLOUD is written as DNRYI. How is TIGER written in that code?",
+   "options": [
+    {
+     "text": "WIJKU"
+    },
+    {
+     "text": "UKJIW"
+    },
+    {
+     "text": "UJHFS"
+    },
+    {
+     "text": "UHHDS"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Comparing CLOUD with DNRYI: the letters move 1, 2, 3, ... places forward. So TIGER -> UKJIW.",
+   "order": 33,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare letter by letter; the shifts differ by position."
+  },
+  {
+   "questionText": "In a certain code, LION is written as MJPO. How is BIRD written in that code?",
+   "options": [
+    {
+     "text": "DKTF"
+    },
+    {
+     "text": "ESJC"
+    },
+    {
+     "text": "AHQC"
+    },
+    {
+     "text": "CJSE"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each letter of LION moves 1 place(s) forward. So BIRD -> CJSE.",
+   "order": 34,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the shift (and its direction) from the given pair."
+  },
+  {
+   "questionText": "In a certain code, CANDY is written as XZMWB. How is KEY written in that code?",
+   "options": [
+    {
+     "text": "PVB"
+    },
+    {
+     "text": "BVP"
+    },
+    {
+     "text": "YEK"
+    },
+    {
+     "text": "RXD"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "CANDY -> XZMWB follows the mirror-letter rule (A<->Z, B<->Y, ...). So KEY -> PVB.",
+   "order": 35,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Positions of a letter and its code add up to 27 for mirror coding."
+  },
+  {
+   "questionText": "In a certain code, BREAD is written as YIVZW. How is RAIN written in that code?",
+   "options": [
+    {
+     "text": "MRZI"
+    },
+    {
+     "text": "NIAR"
+    },
+    {
+     "text": "IZRM"
+    },
+    {
+     "text": "HYQL"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BREAD -> YIVZW follows the mirror-letter rule (A<->Z, B<->Y, ...). So RAIN -> IZRM.",
+   "order": 36,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Positions of a letter and its code add up to 27 for mirror coding."
+  },
+  {
+   "questionText": "In a certain code, FISH is written as URHS. How is SUN written in that code?",
+   "options": [
+    {
+     "text": "HFM"
+    },
+    {
+     "text": "NUS"
+    },
+    {
+     "text": "MFH"
+    },
+    {
+     "text": "KIP"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "FISH -> URHS follows the mirror-letter rule (A<->Z, B<->Y, ...). So SUN -> HFM.",
+   "order": 37,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Positions of a letter and its code add up to 27 for mirror coding."
+  },
+  {
+   "questionText": "In a certain code, CLOUD is written as DMPVE. How is PARK written in that code?",
+   "options": [
+    {
+     "text": "PARK"
+    },
+    {
+     "text": "QBSL"
+    },
+    {
+     "text": "KRAP"
+    },
+    {
+     "text": "RCTM"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each letter of CLOUD moves 1 place(s) forward. So PARK -> QBSL.",
+   "order": 38,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find the shift (and its direction) from the given pair."
+  },
+  {
+   "questionText": "In a certain code, TABLE is written as UBCMF. How is FARM written in that code?",
+   "options": [
+    {
+     "text": "IDUP"
+    },
+    {
+     "text": "MRAF"
+    },
+    {
+     "text": "HCTO"
+    },
+    {
+     "text": "GBSN"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each letter of TABLE moves 1 place(s) forward. So FARM -> GBSN.",
+   "order": 39,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the shift (and its direction) from the given pair."
+  },
+  {
+   "questionText": "In a certain code, RIVER is written as SKYIW. How is HOUSE written in that code?",
+   "options": [
+    {
+     "text": "KSZYL"
+    },
+    {
+     "text": "INVRF"
+    },
+    {
+     "text": "IQXWJ"
+    },
+    {
+     "text": "IPVTF"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Comparing RIVER with SKYIW: the letters move 1, 2, 3, ... places forward. So HOUSE -> IQXWJ.",
+   "order": 40,
+   "subPattern": "letter-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Compare letter by letter; the shifts differ by position."
+  },
+  {
+   "questionText": "In a certain code language, a word is coded by reversing the word and then moving each letter 1 place(s) forward. If the code is FTSPI, what is the original word?",
+   "options": [
+    {
+     "text": "HORSE"
+    },
+    {
+     "text": "ESROH"
+    },
+    {
+     "text": "IPSTF"
+    },
+    {
+     "text": "KRUVH"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Undo the steps in reverse order: move each letter 1 place(s) backward to get ESROH, then reverse it to get HORSE.",
+   "order": 41,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Undo the coding steps in the opposite order."
+  },
+  {
+   "questionText": "In a certain code, LION is written as OPJM. How is WHEAT written in that code?",
+   "options": [
+    {
+     "text": "XIFBU"
+    },
+    {
+     "text": "VCGJY"
+    },
+    {
+     "text": "TAEHW"
+    },
+    {
+     "text": "UBFIX"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The code moves each letter 1 place(s) forward and then reverses the word: LION -> MJPO -> OPJM. So WHEAT -> XIFBU -> UBFIX.",
+   "order": 42,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Check both a shift and a reversal when the code word looks scrambled."
+  },
+  {
+   "questionText": "In a certain code language, a word is coded by reversing the word and then moving each letter 3 place(s) forward. If the code is WDF, what is the original word?",
+   "options": [
+    {
+     "text": "TAC"
+    },
+    {
+     "text": "CAT"
+    },
+    {
+     "text": "FDW"
+    },
+    {
+     "text": "ECV"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Undo the steps in reverse order: move each letter 3 place(s) backward to get TAC, then reverse it to get CAT.",
+   "order": 43,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Undo the coding steps in the opposite order."
+  },
+  {
+   "questionText": "In a certain code, CHAIR is written as TKCJE. How is STONE written in that code?",
+   "options": [
+    {
+     "text": "IRSXW"
+    },
+    {
+     "text": "ENOTS"
+    },
+    {
+     "text": "GPQVU"
+    },
+    {
+     "text": "UVQPG"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The code moves each letter 2 place(s) forward and then reverses the word: CHAIR -> EJCKT -> TKCJE. So STONE -> UVQPG -> GPQVU.",
+   "order": 44,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Check both a shift and a reversal when the code word looks scrambled."
+  },
+  {
+   "questionText": "In a certain code, only the vowels are replaced by their mirror letters (A<->Z, B<->Y, ...) and the consonants stay unchanged. How is CUP written in that code?",
+   "options": [
+    {
+     "text": "CFP"
+    },
+    {
+     "text": "DGQ"
+    },
+    {
+     "text": "XUK"
+    },
+    {
+     "text": "XFK"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Vowels of CUP are replaced by mirror letters and consonants stay: CUP -> CFP.",
+   "order": 45,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Change only the vowels; copy consonants as they are."
+  },
+  {
+   "questionText": "In a certain code, the letters of a word are moved alternately 1 place forward and 1 place backward (first forward, second backward, and so on). How is BIRD written in that code?",
+   "options": [
+    {
+     "text": "AFQA"
+    },
+    {
+     "text": "CJSE"
+    },
+    {
+     "text": "CHSC"
+    },
+    {
+     "text": "AJQE"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Alternate +1, -1, +1, ...: BIRD -> CHSC.",
+   "order": 46,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Apply +1 and -1 alternately."
+  },
+  {
+   "questionText": "In a certain code language, a word is coded by reversing the word and then moving each letter 1 place(s) forward. If the code is LSBQ, what is the original word?",
+   "options": [
+    {
+     "text": "SDUN"
+    },
+    {
+     "text": "KRAP"
+    },
+    {
+     "text": "QBSL"
+    },
+    {
+     "text": "PARK"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Undo the steps in reverse order: move each letter 1 place(s) backward to get KRAP, then reverse it to get PARK.",
+   "order": 47,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Undo the coding steps in the opposite order."
+  },
+  {
+   "questionText": "In a certain code, only the vowels are replaced by their mirror letters (A<->Z, B<->Y, ...) and the consonants stay unchanged. How is PARK written in that code?",
+   "options": [
+    {
+     "text": "KRZP"
+    },
+    {
+     "text": "PZRK"
+    },
+    {
+     "text": "KAIP"
+    },
+    {
+     "text": "KZIP"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Vowels of PARK are replaced by mirror letters and consonants stay: PARK -> PZRK.",
+   "order": 48,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Change only the vowels; copy consonants as they are."
+  },
+  {
+   "questionText": "In a certain code, the letters of a word are moved forward by 1, 2, 3, ... places respectively. If the code is CQRO, what is the original word?",
+   "options": [
+    {
+     "text": "BPQN"
+    },
+    {
+     "text": "ERRN"
+    },
+    {
+     "text": "ORQC"
+    },
+    {
+     "text": "BOOK"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Move the letters back by 1, 2, 3, ... places respectively: CQRO -> BOOK.",
+   "order": 49,
+   "subPattern": "letter-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Undo each position's own shift."
+  },
+  {
+   "questionText": "If A = 1, B = 2, C = 3 and so on, what is the sum of the values of the letters in the word PIG?",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add positions: 16 + 9 + 7 = 32.",
+   "order": 50,
+   "subPattern": "number-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Write down each letter's position and add."
+  },
+  {
+   "questionText": "In a certain code, CUP is written as 3-21-16. How is FAN written in that code?",
+   "options": [
+    {
+     "text": "7-2-15"
+    },
+    {
+     "text": "14-1-6"
+    },
+    {
+     "text": "6-1-14"
+    },
+    {
+     "text": "5-0-13"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each letter is replaced by its position in the alphabet: FAN -> 6-1-14.",
+   "order": 51,
+   "subPattern": "number-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Letter code = alphabet position (A=1, ..., Z=26)."
+  },
+  {
+   "questionText": "In a certain code, SUN is written as 19-21-14. How is KEY written in that code?",
+   "options": [
+    {
+     "text": "12-6-26"
+    },
+    {
+     "text": "11-5-25"
+    },
+    {
+     "text": "25-5-11"
+    },
+    {
+     "text": "10-4-24"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each letter is replaced by its position in the alphabet: KEY -> 11-5-25.",
+   "order": 52,
+   "subPattern": "number-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Letter code = alphabet position (A=1, ..., Z=26)."
+  },
+  {
+   "questionText": "In a certain code, BED is written as 2-5-4. How is HAT written in that code?",
+   "options": [
+    {
+     "text": "7-0-19"
+    },
+    {
+     "text": "8-1-20"
+    },
+    {
+     "text": "20-1-8"
+    },
+    {
+     "text": "9-2-21"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each letter is replaced by its position in the alphabet: HAT -> 8-1-20.",
+   "order": 53,
+   "subPattern": "number-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Letter code = alphabet position (A=1, ..., Z=26)."
+  },
+  {
+   "questionText": "In a certain code, each letter is replaced by twice its position in the alphabet (A = 2, B = 4, ...). How is CAKE written in that code?",
+   "options": [
+    {
+     "text": "3-1-11-5"
+    },
+    {
+     "text": "5-3-13-7"
+    },
+    {
+     "text": "9-3-33-15"
+    },
+    {
+     "text": "6-2-22-10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Double each position: CAKE -> 6-2-22-10.",
+   "order": 54,
+   "subPattern": "number-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find each letter's position, then double it."
+  },
+  {
+   "questionText": "In a certain code, each letter is replaced by twice its position in the alphabet (A = 2, B = 4, ...). How is LEG written in that code?",
+   "options": [
+    {
+     "text": "36-15-21"
+    },
+    {
+     "text": "14-7-9"
+    },
+    {
+     "text": "24-10-14"
+    },
+    {
+     "text": "12-5-7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Double each position: LEG -> 24-10-14.",
+   "order": 55,
+   "subPattern": "number-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find each letter's position, then double it."
+  },
+  {
+   "questionText": "If A = 1, B = 2, ..., Z = 26, find the difference between the sum of the values of the letters of MOON and of PAPER (larger minus smaller).",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "113"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "MOON sums to 57 and PAPER sums to 56. Difference = 1.",
+   "order": 56,
+   "subPattern": "number-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Total each word separately, then subtract."
+  },
+  {
+   "questionText": "If A = 1, B = 2, ..., Z = 26, find the difference between the sum of the values of the letters of WATER and of RIVER (larger minus smaller).",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "139"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "WATER sums to 67 and RIVER sums to 72. Difference = 5.",
+   "order": 57,
+   "subPattern": "number-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Total each word separately, then subtract."
+  },
+  {
+   "questionText": "If A = 1, B = 2, ..., Z = 26, find the difference between the sum of the values of the letters of TABLE and of RIVER (larger minus smaller).",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "112"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "TABLE sums to 40 and RIVER sums to 72. Difference = 32.",
+   "order": 58,
+   "subPattern": "number-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Total each word separately, then subtract."
+  },
+  {
+   "questionText": "If A = 1, B = 2, ..., Z = 26, find the difference between the sum of the values of the letters of BOOK and of FISH (larger minus smaller).",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "85"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BOOK sums to 43 and FISH sums to 42. Difference = 1.",
+   "order": 59,
+   "subPattern": "number-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Total each word separately, then subtract."
+  },
+  {
+   "questionText": "If A = 1, B = 2, ..., Z = 26, find (value of first letter + value of last letter) - value of the middle letter of the word BRAIN.",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First = 2, last = 14, middle (A) = 1. Result = 2 + 14 - 1 = 15.",
+   "order": 60,
+   "subPattern": "number-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Identify the three letters first, then compute."
+  },
+  {
+   "questionText": "If A = 1, B = 2, ..., Z = 26, what is the product of the values of the vowels in the word MILK?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Vowel values: I = 9. Product = 9.",
+   "order": 61,
+   "subPattern": "number-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Pick the vowels and multiply their positions."
+  },
+  {
+   "questionText": "If A = 1, B = 2, ..., Z = 26, find (value of first letter + value of last letter) - value of the middle letter of the word TABLE.",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "46"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First = 20, last = 5, middle (B) = 2. Result = 20 + 5 - 2 = 23.",
+   "order": 62,
+   "subPattern": "number-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Identify the three letters first, then compute."
+  },
+  {
+   "questionText": "In a certain code language, 'sun slow' is written as 'BK MZ' and 'green sun' is written as 'BK HS'. How is 'sun' written in that code?",
+   "options": [
+    {
+     "text": "HS"
+    },
+    {
+     "text": "LJ"
+    },
+    {
+     "text": "MZ"
+    },
+    {
+     "text": "BK"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'sun' is the only word common to both sentences, and BK is the only code word common to both codes. So 'sun' = BK.",
+   "order": 63,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Find the word and the code word that appear in both statements."
+  },
+  {
+   "questionText": "In a certain code language, 'moon blue' is written as 'IU CR' and 'sun moon' is written as 'CR JN'. How is 'moon' written in that code?",
+   "options": [
+    {
+     "text": "JN"
+    },
+    {
+     "text": "QG"
+    },
+    {
+     "text": "CR"
+    },
+    {
+     "text": "IU"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'moon' is the only word common to both sentences, and CR is the only code word common to both codes. So 'moon' = CR.",
+   "order": 64,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the word and the code word that appear in both statements."
+  },
+  {
+   "questionText": "In a certain code language, 'slow sun' is written as 'PP EU' and 'bird sun' is written as 'PP MY'. How is 'sun' written in that code?",
+   "options": [
+    {
+     "text": "EU"
+    },
+    {
+     "text": "MY"
+    },
+    {
+     "text": "IE"
+    },
+    {
+     "text": "PP"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'sun' is the only word common to both sentences, and PP is the only code word common to both codes. So 'sun' = PP.",
+   "order": 65,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the word and the code word that appear in both statements."
+  },
+  {
+   "questionText": "In a certain code language, 'fast tree sun' is written as 'OW OF WD', 'sun slow' is written as 'OF UP' and 'big fast' is written as 'DN OW'. (The order of code words need not match the order of words.) How is 'tree' written in that code?",
+   "options": [
+    {
+     "text": "OF"
+    },
+    {
+     "text": "OW"
+    },
+    {
+     "text": "WD"
+    },
+    {
+     "text": "DN"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Common to the first two: 'sun' = OF. Common to the first and third: 'fast' = OW. The remaining code word in the first statement is WD, so 'tree' = WD.",
+   "order": 66,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use common words to peel off codes one by one."
+  },
+  {
+   "questionText": "In a certain code language, 'small red star' is written as 'OR OB RM', 'moon red' is written as 'RM JX' and 'small fast' is written as 'HY OB'. (The order of code words need not match the order of words.) How is 'star' written in that code?",
+   "options": [
+    {
+     "text": "OR"
+    },
+    {
+     "text": "OB"
+    },
+    {
+     "text": "RM"
+    },
+    {
+     "text": "HY"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Common to the first two: 'red' = RM. Common to the first and third: 'small' = OB. The remaining code word in the first statement is OR, so 'star' = OR.",
+   "order": 67,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Use common words to peel off codes one by one."
+  },
+  {
+   "questionText": "In a certain code language, 'fish fast red' is written as 'PN TR DQ', 'red tree' is written as 'PN PB' and 'fast big' is written as 'TR ND'. (The order of code words need not match the order of words.) How is 'fish' written in that code?",
+   "options": [
+    {
+     "text": "PN"
+    },
+    {
+     "text": "DQ"
+    },
+    {
+     "text": "ND"
+    },
+    {
+     "text": "TR"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Common to the first two: 'red' = PN. Common to the first and third: 'fast' = TR. The remaining code word in the first statement is DQ, so 'fish' = DQ.",
+   "order": 68,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Use common words to peel off codes one by one."
+  },
+  {
+   "questionText": "In a certain code language, 'green tree sky' is written as 'VR PA ZP', 'sun green' is written as 'ZP QS' and 'sky red' is written as 'WM VR'. (The order of code words need not match the order of words.) How is 'tree' written in that code?",
+   "options": [
+    {
+     "text": "VR"
+    },
+    {
+     "text": "PA"
+    },
+    {
+     "text": "WM"
+    },
+    {
+     "text": "ZP"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Common to the first two: 'green' = ZP. Common to the first and third: 'sky' = VR. The remaining code word in the first statement is PA, so 'tree' = PA.",
+   "order": 69,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Use common words to peel off codes one by one."
+  },
+  {
+   "questionText": "In a certain code language, 'red big sky' is written as 'FU NN LF', 'bird big' is written as 'CT LF' and 'small sky' is written as 'NN FT'. (The order of code words need not match the order of words.) How is 'red' written in that code?",
+   "options": [
+    {
+     "text": "FT"
+    },
+    {
+     "text": "LF"
+    },
+    {
+     "text": "NN"
+    },
+    {
+     "text": "FU"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Common to the first two: 'big' = LF. Common to the first and third: 'sky' = NN. The remaining code word in the first statement is FU, so 'red' = FU.",
+   "order": 70,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Use common words to peel off codes one by one."
+  },
+  {
+   "questionText": "In a certain code language, 'green blue big' is written as 'MD YV FF', 'blue small' is written as 'SJ YV' and 'green sky' is written as 'MD HQ'. (The order of code words need not match the order of words.) How is 'big' written in that code?",
+   "options": [
+    {
+     "text": "YV"
+    },
+    {
+     "text": "HQ"
+    },
+    {
+     "text": "FF"
+    },
+    {
+     "text": "MD"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Common to the first two: 'blue' = YV. Common to the first and third: 'green' = MD. The remaining code word in the first statement is FF, so 'big' = FF.",
+   "order": 71,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Use common words to peel off codes one by one."
+  },
+  {
+   "questionText": "In a certain code language, 'blue big star' is written as 'WU FN AK', 'small big' is written as 'AK XS' and 'green blue' is written as 'WU DU'. (The order of code words need not match the order of words.) How is 'star' written in that code?",
+   "options": [
+    {
+     "text": "FN"
+    },
+    {
+     "text": "WU"
+    },
+    {
+     "text": "DU"
+    },
+    {
+     "text": "AK"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Common to the first two: 'big' = AK. Common to the first and third: 'blue' = WU. The remaining code word in the first statement is FN, so 'star' = FN.",
+   "order": 72,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Use common words to peel off codes one by one."
+  },
+  {
+   "questionText": "In a certain code language, 'sun tree sky' is written as 'XY AJ NC', 'tree slow' is written as 'NR AJ' and 'sun green' is written as 'NC PZ'. (The order of code words need not match the order of words.) What does the code 'PZ' stand for?",
+   "options": [
+    {
+     "text": "sky"
+    },
+    {
+     "text": "sun"
+    },
+    {
+     "text": "tree"
+    },
+    {
+     "text": "green"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "From the statements: 'tree' = AJ and 'sun' = NC (common words). In the third statement the other code word, PZ, therefore stands for 'green'.",
+   "order": 73,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Identify the known code words in a statement; the remaining one belongs to the remaining word."
+  },
+  {
+   "questionText": "In a certain code language, 'sun blue big' is written as 'VZ GP JV', 'red blue' is written as 'VZ KY' and 'slow sun' is written as 'GX JV'. (The order of code words need not match the order of words.) What does the code 'GX' stand for?",
+   "options": [
+    {
+     "text": "blue"
+    },
+    {
+     "text": "slow"
+    },
+    {
+     "text": "sun"
+    },
+    {
+     "text": "big"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "From the statements: 'blue' = VZ and 'sun' = JV (common words). In the third statement the other code word, GX, therefore stands for 'slow'.",
+   "order": 74,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Identify the known code words in a statement; the remaining one belongs to the remaining word."
+  },
+  {
+   "questionText": "In a certain code language, 'blue tree fish' is written as 'YG QY FV', 'blue red' is written as 'ZU QY' and 'tree star' is written as 'YU YG'. (The order of code words need not match the order of words.) What does the code 'YU' stand for?",
+   "options": [
+    {
+     "text": "star"
+    },
+    {
+     "text": "fish"
+    },
+    {
+     "text": "blue"
+    },
+    {
+     "text": "tree"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "From the statements: 'blue' = QY and 'tree' = YG (common words). In the third statement the other code word, YU, therefore stands for 'star'.",
+   "order": 75,
+   "subPattern": "fictitious-language-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Identify the known code words in a statement; the remaining one belongs to the remaining word."
+  },
+  {
+   "questionText": "In a certain code, each vowel is replaced by the next letter in the alphabet and each consonant by the previous letter. How is NAIL written in that code?",
+   "options": [
+    {
+     "text": "OAIM"
+    },
+    {
+     "text": "ORZM"
+    },
+    {
+     "text": "MBJK"
+    },
+    {
+     "text": "LBJN"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Apply the stated rule to NAIL: MBJK.",
+   "order": 76,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, each vowel is replaced by the next letter in the alphabet and each consonant by the previous letter. How is RIVER written in that code?",
+   "options": [
+    {
+     "text": "SIWES"
+    },
+    {
+     "text": "PCTGP"
+    },
+    {
+     "text": "QJUFQ"
+    },
+    {
+     "text": "RJWFR"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Apply the stated rule to RIVER: QJUFQ.",
+   "order": 77,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, each vowel is replaced by the next letter in the alphabet and each consonant by the previous letter. How is STONE written in that code?",
+   "options": [
+    {
+     "text": "EUPOS"
+    },
+    {
+     "text": "CLMRQ"
+    },
+    {
+     "text": "TUOOE"
+    },
+    {
+     "text": "RSPMF"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Apply the stated rule to STONE: RSPMF.",
+   "order": 78,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, each consonant is replaced by the next letter in the alphabet and the vowels are left unchanged. How is LION written in that code?",
+   "options": [
+    {
+     "text": "MIOO"
+    },
+    {
+     "text": "NJPL"
+    },
+    {
+     "text": "LMGJ"
+    },
+    {
+     "text": "KJPM"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Apply the stated rule to LION: MIOO.",
+   "order": 79,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, the first and last letters are interchanged and every other letter is moved one place forward. How is HORSE written in that code?",
+   "options": [
+    {
+     "text": "GPQRF"
+    },
+    {
+     "text": "EPSTH"
+    },
+    {
+     "text": "CQPMF"
+    },
+    {
+     "text": "IOSTE"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Apply the stated rule to HORSE: EPSTH.",
+   "order": 80,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, the first and last letters are interchanged and every other letter is moved one place forward. How is MOUSE written in that code?",
+   "options": [
+    {
+     "text": "EPVTM"
+    },
+    {
+     "text": "NOUTE"
+    },
+    {
+     "text": "LPVRF"
+    },
+    {
+     "text": "CQSMK"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Apply the stated rule to MOUSE: EPVTM.",
+   "order": 81,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, the first and last letters are interchanged and every other letter is moved one place forward. How is LION written in that code?",
+   "options": [
+    {
+     "text": "MIOO"
+    },
+    {
+     "text": "LMGJ"
+    },
+    {
+     "text": "KJPM"
+    },
+    {
+     "text": "NJPL"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Apply the stated rule to LION: NJPL.",
+   "order": 82,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, the first and last letters are interchanged and every other letter is moved one place forward. How is CHAIR written in that code?",
+   "options": [
+    {
+     "text": "DIAIS"
+    },
+    {
+     "text": "RIBJC"
+    },
+    {
+     "text": "BGBJQ"
+    },
+    {
+     "text": "IRZSX"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Apply the stated rule to CHAIR: RIBJC.",
+   "order": 83,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, the first and last letters are interchanged and every other letter is moved one place forward. How is NAIL written in that code?",
+   "options": [
+    {
+     "text": "ORZM"
+    },
+    {
+     "text": "OAIM"
+    },
+    {
+     "text": "LBJN"
+    },
+    {
+     "text": "MBJK"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Apply the stated rule to NAIL: LBJN.",
+   "order": 84,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, the first and last letters are interchanged and every other letter is moved one place forward. How is MILK written in that code?",
+   "options": [
+    {
+     "text": "IJGK"
+    },
+    {
+     "text": "KJMM"
+    },
+    {
+     "text": "NIML"
+    },
+    {
+     "text": "LJKJ"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Apply the stated rule to MILK: KJMM.",
+   "order": 85,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, each letter is replaced by its mirror letter and the word is then reversed. How is WATER written in that code?",
+   "options": [
+    {
+     "text": "XAUES"
+    },
+    {
+     "text": "RBUFW"
+    },
+    {
+     "text": "VBSFQ"
+    },
+    {
+     "text": "IVGZD"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Apply the stated rule to WATER: IVGZD.",
+   "order": 86,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, each letter is replaced by its mirror letter and the word is then reversed. How is TABLE written in that code?",
+   "options": [
+    {
+     "text": "EBCMT"
+    },
+    {
+     "text": "UACME"
+    },
+    {
+     "text": "VOYZG"
+    },
+    {
+     "text": "SBAKF"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Apply the stated rule to TABLE: VOYZG.",
+   "order": 87,
+   "subPattern": "mixed-substitution-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Follow the rule exactly, letter by letter."
+  },
+  {
+   "questionText": "In a certain code, if the word has an even number of letters it is written in reverse; if it has an odd number of letters, the first and last letters are interchanged. How is MILK written in that code?",
+   "options": [
+    {
+     "text": "KLIM"
+    },
+    {
+     "text": "KILM"
+    },
+    {
+     "text": "LHKJ"
+    },
+    {
+     "text": "NJML"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check the condition for MILK and apply the matching rule: MILK -> KLIM.",
+   "order": 88,
+   "subPattern": "conditional-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the word has an even number of letters it is written in reverse; if it has an odd number of letters, the first and last letters are interchanged. How is WHEAT written in that code?",
+   "options": [
+    {
+     "text": "THEAW"
+    },
+    {
+     "text": "AEHTW"
+    },
+    {
+     "text": "TAEHW"
+    },
+    {
+     "text": "XIFBU"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check the condition for WHEAT and apply the matching rule: WHEAT -> THEAW.",
+   "order": 89,
+   "subPattern": "conditional-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the number of letters in the word is a multiple of 3, the letters are arranged in alphabetical order; otherwise the word is written in reverse. How is GOLD written in that code?",
+   "options": [
+    {
+     "text": "DOLG"
+    },
+    {
+     "text": "DLOG"
+    },
+    {
+     "text": "DGLO"
+    },
+    {
+     "text": "FNKC"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Check the condition for GOLD and apply the matching rule: GOLD -> DLOG.",
+   "order": 90,
+   "subPattern": "conditional-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the number of letters in the word is a multiple of 3, the letters are arranged in alphabetical order; otherwise the word is written in reverse. How is COIN written in that code?",
+   "options": [
+    {
+     "text": "DPJO"
+    },
+    {
+     "text": "BNHM"
+    },
+    {
+     "text": "NOIC"
+    },
+    {
+     "text": "NIOC"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Check the condition for COIN and apply the matching rule: COIN -> NIOC.",
+   "order": 91,
+   "subPattern": "conditional-coding",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the number of letters in the word is a multiple of 3, the letters are arranged in alphabetical order; otherwise the word is written in reverse. How is MOUSE written in that code?",
+   "options": [
+    {
+     "text": "LNTRD"
+    },
+    {
+     "text": "EOUSM"
+    },
+    {
+     "text": "ESUOM"
+    },
+    {
+     "text": "NPVTF"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Check the condition for MOUSE and apply the matching rule: MOUSE -> ESUOM.",
+   "order": 92,
+   "subPattern": "conditional-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the number of letters in the word is a multiple of 3, the letters are arranged in alphabetical order; otherwise the word is written in reverse. How is TOP written in that code?",
+   "options": [
+    {
+     "text": "POT"
+    },
+    {
+     "text": "SNO"
+    },
+    {
+     "text": "OPT"
+    },
+    {
+     "text": "UPQ"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Check the condition for TOP and apply the matching rule: TOP -> OPT.",
+   "order": 93,
+   "subPattern": "conditional-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the first letter of the word is a vowel, each letter is moved one place forward; otherwise each letter is moved one place backward. How is MILK written in that code?",
+   "options": [
+    {
+     "text": "LHKJ"
+    },
+    {
+     "text": "KILM"
+    },
+    {
+     "text": "KLIM"
+    },
+    {
+     "text": "IKLM"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check the condition for MILK and apply the matching rule: MILK -> LHKJ.",
+   "order": 94,
+   "subPattern": "conditional-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the number of letters in the word is a multiple of 3, the letters are arranged in alphabetical order; otherwise the word is written in reverse. How is NAIL written in that code?",
+   "options": [
+    {
+     "text": "LAIN"
+    },
+    {
+     "text": "AILN"
+    },
+    {
+     "text": "OBJM"
+    },
+    {
+     "text": "LIAN"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Check the condition for NAIL and apply the matching rule: NAIL -> LIAN.",
+   "order": 95,
+   "subPattern": "conditional-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the word has an even number of letters it is written in reverse; if it has an odd number of letters, the first and last letters are interchanged. How is SHIP written in that code?",
+   "options": [
+    {
+     "text": "HIPS"
+    },
+    {
+     "text": "PIHS"
+    },
+    {
+     "text": "PHIS"
+    },
+    {
+     "text": "RGHO"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Check the condition for SHIP and apply the matching rule: SHIP -> PIHS.",
+   "order": 96,
+   "subPattern": "conditional-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the word has an even number of letters it is written in reverse; if it has an odd number of letters, the first and last letters are interchanged. How is KEY written in that code?",
+   "options": [
+    {
+     "text": "YEK"
+    },
+    {
+     "text": "EKY"
+    },
+    {
+     "text": "LFZ"
+    },
+    {
+     "text": "JDX"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check the condition for KEY and apply the matching rule: KEY -> YEK.",
+   "order": 97,
+   "subPattern": "conditional-coding",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the word has an even number of letters it is written in reverse; if it has an odd number of letters, the first and last letters are interchanged. How is BREAD written in that code?",
+   "options": [
+    {
+     "text": "CSFBE"
+    },
+    {
+     "text": "DAERB"
+    },
+    {
+     "text": "ABDER"
+    },
+    {
+     "text": "DREAB"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Check the condition for BREAD and apply the matching rule: BREAD -> DREAB.",
+   "order": 98,
+   "subPattern": "conditional-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the number of letters in the word is a multiple of 3, the letters are arranged in alphabetical order; otherwise the word is written in reverse. How is CHAIR written in that code?",
+   "options": [
+    {
+     "text": "DIBJS"
+    },
+    {
+     "text": "ACHIR"
+    },
+    {
+     "text": "RIAHC"
+    },
+    {
+     "text": "RHAIC"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Check the condition for CHAIR and apply the matching rule: CHAIR -> RIAHC.",
+   "order": 99,
+   "subPattern": "conditional-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  },
+  {
+   "questionText": "In a certain code, if the first letter of the word is a vowel, each letter is moved one place forward; otherwise each letter is moved one place backward. How is LEG written in that code?",
+   "options": [
+    {
+     "text": "GEL"
+    },
+    {
+     "text": "KDF"
+    },
+    {
+     "text": "MFH"
+    },
+    {
+     "text": "EGL"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Check the condition for LEG and apply the matching rule: LEG -> KDF.",
+   "order": 100,
+   "subPattern": "conditional-coding",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the condition first, then pick the correct rule."
+  }
+ ]
+}

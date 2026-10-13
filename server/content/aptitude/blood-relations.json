@@ -1,0 +1,2711 @@
+{
+ "pattern": {
+  "title": "Blood Relations",
+  "slug": "blood-relations",
+  "description": "Family-tree and relationship deduction.",
+  "order": 31,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Logical Reasoning",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "direct-relations",
+    "title": "Direct relations"
+   },
+   {
+    "slug": "coded-relations",
+    "title": "Coded relations"
+   },
+   {
+    "slug": "family-tree-puzzles",
+    "title": "Family tree puzzles"
+   },
+   {
+    "slug": "pointing-to-photo-problems",
+    "title": "Pointing-to-photo problems"
+   },
+   {
+    "slug": "generation-chain",
+    "title": "Generation chain"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Meena is the wife of Bharat. Bharat is the son of Hema. How is Meena related to Hema?",
+   "options": [
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Meena is connected to Hema through marriage: Meena (wife of Bharat) -> Bharat (son of Hema). So Meena is the daughter-in-law of Hema.",
+   "order": 1,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Indu is the mother of Yogesh. Yogesh is the father of Rohit. How is Indu related to Rohit?",
+   "options": [
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "mother"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements step by step: Indu is the mother of Yogesh, who is the father of Rohit. So Indu is the grandmother of Rohit.",
+   "order": 2,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Divya is the daughter of Indu. Indu is the sister of Chitra. Chitra is a woman. How is Chitra related to Divya?",
+   "options": [
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "niece"
+    },
+    {
+     "text": "mother"
+    },
+    {
+     "text": "aunt"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Divya is the niece of Chitra, so from the other side, Chitra (a woman) is the aunt of Divya.",
+   "order": 3,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Radha is the sister of Manoj. Manoj is the brother of Uma. How is Radha related to Uma?",
+   "options": [
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "niece"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "daughter-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements step by step: Radha is the sister of Manoj, who is the brother of Uma. So Radha is the sister of Uma.",
+   "order": 4,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Neha is the wife of Kiran. Kiran is the son of Geeta. How is Neha related to Geeta?",
+   "options": [
+    {
+     "text": "granddaughter"
+    },
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "mother-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Neha is connected to Geeta through marriage: Neha (wife of Kiran) -> Kiran (son of Geeta). So Neha is the daughter-in-law of Geeta.",
+   "order": 5,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Suresh is the son of Uma. Uma is the daughter of Indu. How is Suresh related to Indu?",
+   "options": [
+    {
+     "text": "husband"
+    },
+    {
+     "text": "father"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "grandson"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements step by step: Suresh is the son of Uma, who is the daughter of Indu. So Suresh is the grandson of Indu.",
+   "order": 6,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Prakash is the son of Vikram. Vikram is the son of Divya. Divya is a woman. How is Divya related to Prakash?",
+   "options": [
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "mother"
+    },
+    {
+     "text": "daughter"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Prakash is the grandson of Divya, so from the other side, Divya (a woman) is the grandmother of Prakash.",
+   "order": 7,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Bhavna is the wife of Girish. Girish is the brother of Chitra. How is Bhavna related to Chitra?",
+   "options": [
+    {
+     "text": "daughter"
+    },
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "daughter-in-law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Bhavna is connected to Chitra through marriage: Bhavna (wife of Girish) -> Girish (brother of Chitra). So Bhavna is the sister-in-law of Chitra.",
+   "order": 8,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Manoj is the father of Hema. Hema is the mother of Imran. Imran is a man. How is Imran related to Manoj?",
+   "options": [
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "brother"
+    },
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "grandfather"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Manoj is the grandfather of Imran, so from the other side, Imran (a man) is the grandson of Manoj.",
+   "order": 9,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Divya is the sister of Rohit. Rohit is the father of Sunita. Sunita is a woman. How is Sunita related to Divya?",
+   "options": [
+    {
+     "text": "sister"
+    },
+    {
+     "text": "niece"
+    },
+    {
+     "text": "granddaughter"
+    },
+    {
+     "text": "aunt"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Divya is the aunt of Sunita, so from the other side, Sunita (a woman) is the niece of Divya.",
+   "order": 10,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Bhavna is the wife of Arun. Arun is the son of Lata. How is Bhavna related to Lata?",
+   "options": [
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Bhavna is connected to Lata through marriage: Bhavna (wife of Arun) -> Arun (son of Lata). So Bhavna is the daughter-in-law of Lata.",
+   "order": 11,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Bhavna is the daughter of Indu. Indu is the daughter of Lata. How is Bhavna related to Lata?",
+   "options": [
+    {
+     "text": "mother"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "granddaughter"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements step by step: Bhavna is the daughter of Indu, who is the daughter of Lata. So Bhavna is the granddaughter of Lata.",
+   "order": 12,
+   "subPattern": "direct-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Rohit is the brother of Imran. Imran is the husband of Divya. How is Rohit related to Divya?",
+   "options": [
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "father"
+    },
+    {
+     "text": "son-in-law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rohit is connected to Divya through marriage: Rohit (brother of Imran) -> Imran (husband of Divya). So Rohit is the brother-in-law of Divya.",
+   "order": 13,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Bhavna is the wife of Prakash. Prakash is the brother of Pooja. How is Bhavna related to Pooja?",
+   "options": [
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "granddaughter"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements step by step: Bhavna is the wife of Prakash, who is the brother of Pooja. So Bhavna is the sister-in-law of Pooja.",
+   "order": 14,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Uma is the daughter of Tara. Tara is the sister of Chetan. Chetan is a man. How is Chetan related to Uma?",
+   "options": [
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "brother"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "son"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Uma is the niece of Chetan, so from the other side, Chetan (a man) is the uncle of Uma.",
+   "order": 15,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Hema is the wife of Chetan. Chetan is the brother of Harish. How is Hema related to Harish?",
+   "options": [
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "sister-in-law"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hema is connected to Harish through marriage: Hema (wife of Chetan) -> Chetan (brother of Harish). So Hema is the sister-in-law of Harish.",
+   "order": 16,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Rohit is the brother of Divya. Divya is the wife of Deepak. Deepak is a man. How is Deepak related to Rohit?",
+   "options": [
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "brother-in-law"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rohit is the brother-in-law of Deepak, so from the other side, Deepak (a man) is the brother-in-law of Rohit.",
+   "order": 17,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Harish is the son of Tara. Tara is the wife of Deepak. Deepak is a man. How is Deepak related to Harish?",
+   "options": [
+    {
+     "text": "brother"
+    },
+    {
+     "text": "father"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "nephew"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Harish is the son of Deepak, so from the other side, Deepak (a man) is the father of Harish.",
+   "order": 18,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Anita is the daughter of Geeta. Geeta is the wife of Yogesh. Yogesh is a man. How is Yogesh related to Anita?",
+   "options": [
+    {
+     "text": "son"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "father"
+    },
+    {
+     "text": "son-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Anita is the daughter of Yogesh, so from the other side, Yogesh (a man) is the father of Anita.",
+   "order": 19,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Chetan is the brother of Harish. Harish is the son of Meena. How is Chetan related to Meena?",
+   "options": [
+    {
+     "text": "son"
+    },
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "grandson"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements step by step: Chetan is the brother of Harish, who is the son of Meena. So Chetan is the son of Meena.",
+   "order": 20,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Yogesh is the husband of Meena. Meena is the sister of Anita. How is Yogesh related to Anita?",
+   "options": [
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "brother"
+    },
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "father-in-law"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Yogesh is connected to Anita through marriage: Yogesh (husband of Meena) -> Meena (sister of Anita). So Yogesh is the brother-in-law of Anita.",
+   "order": 21,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Girish is the husband of Neha. Neha is the daughter of Bharat. How is Girish related to Bharat?",
+   "options": [
+    {
+     "text": "father"
+    },
+    {
+     "text": "grandfather"
+    },
+    {
+     "text": "husband"
+    },
+    {
+     "text": "son-in-law"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements step by step: Girish is the husband of Neha, who is the daughter of Bharat. So Girish is the son-in-law of Bharat.",
+   "order": 22,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Chetan is the father of Kiran. Kiran is the father of Radha. How is Chetan related to Radha?",
+   "options": [
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "grandfather"
+    },
+    {
+     "text": "father"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements step by step: Chetan is the father of Kiran, who is the father of Radha. So Chetan is the grandfather of Radha.",
+   "order": 23,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Lata is the daughter of Rohit. Rohit is the brother of Prakash. Prakash is a man. How is Prakash related to Lata?",
+   "options": [
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "nephew"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Lata is the niece of Prakash, so from the other side, Prakash (a man) is the uncle of Lata.",
+   "order": 24,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Lata is the daughter of Kiran. Kiran is the brother of Radha. Radha is a woman. How is Radha related to Lata?",
+   "options": [
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "wife"
+    },
+    {
+     "text": "niece"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Lata is the niece of Radha, so from the other side, Radha (a woman) is the aunt of Lata.",
+   "order": 25,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Kavita is the sister of Yogesh. Yogesh is the husband of Neha. How is Kavita related to Neha?",
+   "options": [
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "mother"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "sister-in-law"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Kavita is connected to Neha through marriage: Kavita (sister of Yogesh) -> Yogesh (husband of Neha). So Kavita is the sister-in-law of Neha.",
+   "order": 26,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Tara is the mother of Yogesh. Yogesh is the husband of Radha. How is Tara related to Radha?",
+   "options": [
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements step by step: Tara is the mother of Yogesh, who is the husband of Radha. So Tara is the mother-in-law of Radha.",
+   "order": 27,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Girish is the husband of Kavita. Kavita is the mother of Imran. How is Girish related to Imran?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "father"
+    },
+    {
+     "text": "father-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements step by step: Girish is the husband of Kavita, who is the mother of Imran. So Girish is the father of Imran.",
+   "order": 28,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Kavita is the mother of Tarun. Tarun is the husband of Divya. How is Kavita related to Divya?",
+   "options": [
+    {
+     "text": "niece"
+    },
+    {
+     "text": "mother"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "mother-in-law"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Kavita is connected to Divya through marriage: Kavita (mother of Tarun) -> Tarun (husband of Divya). So Kavita is the mother-in-law of Divya.",
+   "order": 29,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Pooja is the wife of Chetan. Chetan is the brother of Lata. How is Pooja related to Lata?",
+   "options": [
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "mother-in-law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pooja is connected to Lata through marriage: Pooja (wife of Chetan) -> Chetan (brother of Lata). So Pooja is the sister-in-law of Lata.",
+   "order": 30,
+   "subPattern": "direct-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Vikram is the father of Sunita. Sunita is the sister of Imran. Imran is the brother of Tara. Tara is a woman. How is Tara related to Vikram?",
+   "options": [
+    {
+     "text": "daughter"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "mother"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Vikram is the father of Tara, so from the other side, Tara (a woman) is the daughter of Vikram.",
+   "order": 31,
+   "subPattern": "direct-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Geeta is the mother of Vikram. Vikram is the brother of Kiran. Kiran is the father of Uma. Uma is a woman. How is Uma related to Geeta?",
+   "options": [
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "granddaughter"
+    },
+    {
+     "text": "wife"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Geeta is the grandmother of Uma, so from the other side, Uma (a woman) is the granddaughter of Geeta.",
+   "order": 32,
+   "subPattern": "direct-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Arun is the brother of Pooja. Pooja is the mother of Kavita. Kavita is the daughter of Prakash. How is Arun related to Prakash?",
+   "options": [
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "son-in-law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Arun is connected to Prakash through marriage: Arun (brother of Pooja) -> Pooja (mother of Kavita) -> Kavita (daughter of Prakash). So Arun is the brother-in-law of Prakash.",
+   "order": 33,
+   "subPattern": "direct-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Bharat is the brother of Bhavna. Bhavna is the mother of Yogesh. Yogesh is the son of Chetan. How is Bharat related to Chetan?",
+   "options": [
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "uncle"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bharat is connected to Chetan through marriage: Bharat (brother of Bhavna) -> Bhavna (mother of Yogesh) -> Yogesh (son of Chetan). So Bharat is the brother-in-law of Chetan.",
+   "order": 34,
+   "subPattern": "direct-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "Bharat is the husband of Chitra. Chitra is the sister of Yogesh. Yogesh is the brother of Anita. Anita is a woman. How is Anita related to Bharat?",
+   "options": [
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "sister-in-law"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bharat is the brother-in-law of Anita, so from the other side, Anita (a woman) is the sister-in-law of Bharat.",
+   "order": 35,
+   "subPattern": "direct-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "To reverse a relation, swap the people and re-apply gender: uncle <-> nephew/niece, grandfather <-> grandson/granddaughter."
+  },
+  {
+   "questionText": "Meena is the wife of Yogesh. Yogesh is the brother of Neha. Neha is the sister of Bharat. How is Meena related to Bharat?",
+   "options": [
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "wife"
+    },
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "granddaughter"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements step by step: Meena is the wife of Yogesh, who is the brother of Neha, who is the sister of Bharat. So Meena is the sister-in-law of Bharat.",
+   "order": 36,
+   "subPattern": "direct-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Yogesh is the son of Manoj. Manoj is the brother of Tara. Tara is the mother of Arun. How is Yogesh related to Arun?",
+   "options": [
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "husband"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements step by step: Yogesh is the son of Manoj, who is the brother of Tara, who is the mother of Arun. So Yogesh is the cousin of Arun.",
+   "order": 37,
+   "subPattern": "direct-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Work from the last statement backwards, keeping track of each person's gender and generation."
+  },
+  {
+   "questionText": "Chetan is the father of Bhavna. Bhavna is the daughter of Indu. Indu is the daughter of Vikram. How is Chetan related to Vikram?",
+   "options": [
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chetan is connected to Vikram through marriage: Chetan (father of Bhavna) -> Bhavna (daughter of Indu) -> Indu (daughter of Vikram). So Chetan is the son-in-law of Vikram.",
+   "order": 38,
+   "subPattern": "direct-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "In-laws arise when a marriage link is crossed: spouse's parent/sibling, sibling's spouse, child's spouse."
+  },
+  {
+   "questionText": "In a code, 'A - B' means A is the husband of B, 'A / B' means A is the sister of B, 'A x B' means A is the wife of B. In the expression 'P - Q / R', how is P related to R?",
+   "options": [
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "father"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read each pair: P - Q: P is the husband of Q; Q / R: Q is the sister of R. So P is the brother-in-law of R.",
+   "order": 39,
+   "subPattern": "coded-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A - B' means A is the sister of B, 'A x B' means A is the son of B, 'A + B' means A is the father of B. In the expression 'P - Q + R', how is P related to R?",
+   "options": [
+    {
+     "text": "mother"
+    },
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "niece"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read each pair: P - Q: P is the sister of Q; Q + R: Q is the father of R. So P is the aunt of R.",
+   "order": 40,
+   "subPattern": "coded-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A + B' means A is the son of B, 'A - B' means A is the mother of B, 'A x B' means A is the husband of B. In the expression 'P + Q x R', how is P related to R?",
+   "options": [
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "grandfather"
+    },
+    {
+     "text": "father"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read each pair: P + Q: P is the son of Q; Q x R: Q is the husband of R. So P is the son of R.",
+   "order": 41,
+   "subPattern": "coded-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A - B' means A is the daughter of B, 'A + B' means A is the son of B, 'A / B' means A is the father of B. In the expression 'P + Q + R', how is P related to R?",
+   "options": [
+    {
+     "text": "son"
+    },
+    {
+     "text": "grandfather"
+    },
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "brother-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read each pair: P + Q: P is the son of Q; Q + R: Q is the son of R. So P is the grandson of R.",
+   "order": 42,
+   "subPattern": "coded-relations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A x B' means A is the mother of B, 'A / B' means A is the sister of B, 'A - B' means A is the son of B. In the expression 'P / Q x R', how is P related to R?",
+   "options": [
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "mother"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read each pair: P / Q: P is the sister of Q; Q x R: Q is the mother of R. So P is the aunt of R.",
+   "order": 43,
+   "subPattern": "coded-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A + B' means A is the mother of B, 'A - B' means A is the sister of B, 'A x B' means A is the son of B. In the expression 'P x Q + R', how is P related to R?",
+   "options": [
+    {
+     "text": "husband"
+    },
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "brother"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read each pair: P x Q: P is the son of Q; Q + R: Q is the mother of R. So P is the brother of R.",
+   "order": 44,
+   "subPattern": "coded-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A + B' means A is the son of B, 'A - B' means A is the mother of B, 'A x B' means A is the daughter of B. In the expression 'P x Q + R', how is P related to R?",
+   "options": [
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "granddaughter"
+    },
+    {
+     "text": "mother"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read each pair: P x Q: P is the daughter of Q; Q + R: Q is the son of R. So P is the granddaughter of R.",
+   "order": 45,
+   "subPattern": "coded-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A + B' means A is the brother of B, 'A - B' means A is the husband of B, 'A / B' means A is the father of B. In the expression 'P + Q / R', how is P related to R?",
+   "options": [
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "husband"
+    },
+    {
+     "text": "father"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read each pair: P + Q: P is the brother of Q; Q / R: Q is the father of R. So P is the uncle of R.",
+   "order": 46,
+   "subPattern": "coded-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A - B' means A is the wife of B, 'A / B' means A is the son of B, 'A + B' means A is the mother of B. In the expression 'P + Q - R', how is P related to R?",
+   "options": [
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "wife"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "mother-in-law"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read each pair: P + Q: P is the mother of Q; Q - R: Q is the wife of R. So P is the mother-in-law of R.",
+   "order": 47,
+   "subPattern": "coded-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A - B' means A is the mother of B, 'A / B' means A is the father of B, 'A + B' means A is the son of B. In the expression 'P - Q / R', how is P related to R?",
+   "options": [
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "daughter"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read each pair: P - Q: P is the mother of Q; Q / R: Q is the father of R. So P is the grandmother of R.",
+   "order": 48,
+   "subPattern": "coded-relations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A + B' means A is the brother of B, 'A / B' means A is the sister of B, 'A - B' means A is the mother of B. In the expression 'P - Q / R - S', how is P related to S?",
+   "options": [
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "mother-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read each pair: P - Q: P is the mother of Q; Q / R: Q is the sister of R; R - S: R is the mother of S. So P is the grandmother of S.",
+   "order": 49,
+   "subPattern": "coded-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "In a code, 'A / B' means A is the brother of B, 'A + B' means A is the sister of B, 'A x B' means A is the husband of B. In the expression 'P / Q + R / S', how is P related to S?",
+   "options": [
+    {
+     "text": "brother"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "son-in-law"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read each pair: P / Q: P is the brother of Q; Q + R: Q is the sister of R; R / S: R is the brother of S. So P is the brother of S.",
+   "order": 50,
+   "subPattern": "coded-relations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Translate each symbol into its relation and then chain them."
+  },
+  {
+   "questionText": "Rohit has 4 brothers and 2 sisters. How many children are there in the family?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Children = Rohit + 4 brothers + 2 sisters = 7.",
+   "order": 51,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Don't forget to count the person himself."
+  },
+  {
+   "questionText": "Prakash has 1 brothers and 3 sisters. How many brothers does each of his sisters have?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each sister has Prakash and his 1 brothers as brothers: 2.",
+   "order": 52,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "A sister counts the speaker among her brothers."
+  },
+  {
+   "questionText": "Yogesh has 2 brothers and 3 sisters. How many sisters does each of his brothers have?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "All siblings share the same sisters. Yogesh's brothers also have 3 sisters.",
+   "order": 53,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Brothers of the same family have the same sisters."
+  },
+  {
+   "questionText": "Suresh has 1 brothers and 1 sisters. How many sisters does each of his brothers have?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "-2"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "All siblings share the same sisters. Suresh's brothers also have 1 sisters.",
+   "order": 54,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Brothers of the same family have the same sisters."
+  },
+  {
+   "questionText": "Manoj has 3 brothers and 2 sisters. How many brothers does each of his brothers have?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each brother has the other 2 brothers plus Manoj: 3.",
+   "order": 55,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Exclude the person himself but include {nm}."
+  },
+  {
+   "questionText": "Yogesh has 4 brothers and 3 sisters. How many brothers does each of his brothers have?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each brother has the other 3 brothers plus Yogesh: 4.",
+   "order": 56,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Exclude the person himself but include {nm}."
+  },
+  {
+   "questionText": "Yogesh has 5 brothers and 3 sisters. How many brothers does each of his brothers have?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each brother has the other 4 brothers plus Yogesh: 5.",
+   "order": 57,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Exclude the person himself but include {nm}."
+  },
+  {
+   "questionText": "Rohit has 2 brothers and 5 sisters. How many brothers does each of his brothers have?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each brother has the other 1 brothers plus Rohit: 2.",
+   "order": 58,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Exclude the person himself but include {nm}."
+  },
+  {
+   "questionText": "Bharat has 2 brothers and 3 sisters. How many sisters does each of his sisters have?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A sister does not count herself, so she has 2 sisters.",
+   "order": 59,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Exclude the person herself."
+  },
+  {
+   "questionText": "Kiran has 2 brothers and 2 sisters. How many sisters does each of his sisters have?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "-2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A sister does not count herself, so she has 1 sisters.",
+   "order": 60,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Exclude the person herself."
+  },
+  {
+   "questionText": "A man has 3 sons, and each son has 3 sisters. How many persons are there in the family, including the parents?",
+   "options": [
+    {
+     "text": "14"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "All sons share the same 3 sisters. Children = 3 + 3 = 6. With the 2 parents, total = 8.",
+   "order": 61,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Sisters of each son are the same girls, so don't multiply."
+  },
+  {
+   "questionText": "A man has 3 sons, and each son has 4 sisters. How many persons are there in the family, including the parents?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "All sons share the same 4 sisters. Children = 3 + 4 = 7. With the 2 parents, total = 9.",
+   "order": 62,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Sisters of each son are the same girls, so don't multiply."
+  },
+  {
+   "questionText": "A man has 4 sons, and each son has 4 sisters. How many persons are there in the family, including the parents?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "-10"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "All sons share the same 4 sisters. Children = 4 + 4 = 8. With the 2 parents, total = 10.",
+   "order": 63,
+   "subPattern": "family-tree-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Sisters of each son are the same girls, so don't multiply."
+  },
+  {
+   "questionText": "Pointing to a man in a photograph, Imran said, \"He is my mother's brother.\" How is the man related to Imran?",
+   "options": [
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "grandfather"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The man is my mother's brother. Tracing the relationship from Imran: the man is Imran's uncle.",
+   "order": 64,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a man in a photograph, Rohit said, \"He is my father's brother.\" How is the man related to Rohit?",
+   "options": [
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "father"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The man is my father's brother. Tracing the relationship from Rohit: the man is Rohit's uncle.",
+   "order": 65,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a man in a photograph, Prakash said, \"He is my daughter's son.\" How is the man related to Prakash?",
+   "options": [
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "father"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The man is my daughter's son. Tracing the relationship from Prakash: the man is Prakash's grandson.",
+   "order": 66,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a woman in a photograph, Meena said, \"She is the daughter of my mother's sister.\" How is the woman related to Meena?",
+   "options": [
+    {
+     "text": "sister"
+    },
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "sister-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The woman is the daughter of my mother's sister. Tracing the relationship from Meena: the woman is Meena's cousin.",
+   "order": 67,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a man in a photograph, Imran said, \"He is the husband of my mother's sister.\" How is the man related to Imran?",
+   "options": [
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "uncle"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The man is the husband of my mother's sister. Tracing the relationship from Imran: the man is Imran's uncle.",
+   "order": 68,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a woman in a photograph, Pooja said, \"She is the wife of my mother's brother.\" How is the woman related to Pooja?",
+   "options": [
+    {
+     "text": "wife"
+    },
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "daughter"
+    },
+    {
+     "text": "aunt"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The woman is the wife of my mother's brother. Tracing the relationship from Pooja: the woman is Pooja's aunt.",
+   "order": 69,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a woman in a photograph, Meena said, \"She is the wife of my father's brother.\" How is the woman related to Meena?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "daughter-in-law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The woman is the wife of my father's brother. Tracing the relationship from Meena: the woman is Meena's aunt.",
+   "order": 70,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a man in a photograph, Vikram said, \"He is the son of my mother's brother.\" How is the man related to Vikram?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "brother"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "nephew"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The man is the son of my mother's brother. Tracing the relationship from Vikram: the man is Vikram's cousin.",
+   "order": 71,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a woman in a photograph, Neha said, \"She is the wife of my father's brother.\" How is the woman related to Neha?",
+   "options": [
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "wife"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The woman is the wife of my father's brother. Tracing the relationship from Neha: the woman is Neha's aunt.",
+   "order": 72,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a man in a photograph, Radha said, \"He is the son of my father's brother.\" How is the man related to Radha?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "husband"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The man is the son of my father's brother. Tracing the relationship from Radha: the man is Radha's cousin.",
+   "order": 73,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a woman in a photograph, Lata said, \"She is the daughter of my mother's brother.\" How is the woman related to Lata?",
+   "options": [
+    {
+     "text": "granddaughter"
+    },
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "wife"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The woman is the daughter of my mother's brother. Tracing the relationship from Lata: the woman is Lata's cousin.",
+   "order": 74,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a man in a photograph, Indu said, \"He is the son of my father's brother.\" How is the man related to Indu?",
+   "options": [
+    {
+     "text": "grandfather"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "brother"
+    },
+    {
+     "text": "nephew"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The man is the son of my father's brother. Tracing the relationship from Indu: the man is Indu's cousin.",
+   "order": 75,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Pointing to a woman in a photograph, Kavita said, \"She is the wife of my father's brother.\" How is the woman related to Kavita?",
+   "options": [
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "wife"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "niece"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The woman is the wife of my father's brother. Tracing the relationship from Kavita: the woman is Kavita's aunt.",
+   "order": 76,
+   "subPattern": "pointing-to-photo-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Start from the speaker and apply each relation in order, tracking gender."
+  },
+  {
+   "questionText": "Bhavna is the daughter of Neha. Neha is the sister of Imran. How is Bhavna related to Imran?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "niece"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Tracing the chain: Bhavna (daughter of Neha) -> Neha (sister of Imran). Hence Bhavna is the niece of Imran.",
+   "order": 77,
+   "subPattern": "generation-chain",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Neha is the sister of Chitra. Chitra is the daughter of Radha. Radha is the daughter of Geeta. How is Neha related to Geeta?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "niece"
+    },
+    {
+     "text": "granddaughter"
+    },
+    {
+     "text": "daughter-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Chain: Neha (sister of Chitra) -> Chitra (daughter of Radha) -> Radha (daughter of Geeta). Combining all three, Neha is the granddaughter of Geeta.",
+   "order": 78,
+   "subPattern": "generation-chain",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Neha is the mother of Radha. Radha is the sister of Kavita. Kavita is the sister of Divya. How is Neha related to Divya?",
+   "options": [
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "mother"
+    },
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Chain: Neha (mother of Radha) -> Radha (sister of Kavita) -> Kavita (sister of Divya). Combining all three, Neha is the mother of Divya.",
+   "order": 79,
+   "subPattern": "generation-chain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Suresh is the son of Girish. Girish is the brother of Lata. Lata is the daughter of Kiran. How is Suresh related to Kiran?",
+   "options": [
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "brother"
+    },
+    {
+     "text": "father-in-law"
+    },
+    {
+     "text": "grandfather"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chain: Suresh (son of Girish) -> Girish (brother of Lata) -> Lata (daughter of Kiran). Combining all three, Suresh is the grandson of Kiran.",
+   "order": 80,
+   "subPattern": "generation-chain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Lata is the sister of Chitra. Chitra is the mother of Suresh. How is Lata related to Suresh?",
+   "options": [
+    {
+     "text": "sister"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "granddaughter"
+    },
+    {
+     "text": "aunt"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Tracing the chain: Lata (sister of Chitra) -> Chitra (mother of Suresh). Hence Lata is the aunt of Suresh.",
+   "order": 81,
+   "subPattern": "generation-chain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Kavita is the sister of Deepak. Deepak is the father of Chitra. How is Kavita related to Chitra?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "sister-in-law"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tracing the chain: Kavita (sister of Deepak) -> Deepak (father of Chitra). Hence Kavita is the aunt of Chitra.",
+   "order": 82,
+   "subPattern": "generation-chain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Lata is the daughter of Pooja. Pooja is the daughter of Indu. Indu is the wife of Arun. How is Lata related to Arun?",
+   "options": [
+    {
+     "text": "mother-in-law"
+    },
+    {
+     "text": "granddaughter"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "daughter-in-law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Chain: Lata (daughter of Pooja) -> Pooja (daughter of Indu) -> Indu (wife of Arun). Combining all three, Lata is the granddaughter of Arun.",
+   "order": 83,
+   "subPattern": "generation-chain",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Kiran is the son of Anita. Anita is the daughter of Meena. Meena is the mother of Hema. How is Kiran related to Hema?",
+   "options": [
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "son"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chain: Kiran (son of Anita) -> Anita (daughter of Meena) -> Meena (mother of Hema). Combining all three, Kiran is the nephew of Hema.",
+   "order": 84,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Tarun is the husband of Chitra. Chitra is the mother of Kavita. Kavita is the sister of Suresh. How is Tarun related to Suresh?",
+   "options": [
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "grandfather"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "father"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Chain: Tarun (husband of Chitra) -> Chitra (mother of Kavita) -> Kavita (sister of Suresh). Combining all three, Tarun is the father of Suresh.",
+   "order": 85,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Bhavna is the sister of Lata. Lata is the mother of Imran. How is Bhavna related to Imran?",
+   "options": [
+    {
+     "text": "daughter-in-law"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "granddaughter"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tracing the chain: Bhavna (sister of Lata) -> Lata (mother of Imran). Hence Bhavna is the aunt of Imran.",
+   "order": 86,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Prakash is the husband of Meena. Meena is the sister of Indu. Indu is the mother of Deepak. How is Prakash related to Deepak?",
+   "options": [
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "brother"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chain: Prakash (husband of Meena) -> Meena (sister of Indu) -> Indu (mother of Deepak). Combining all three, Prakash is the uncle of Deepak.",
+   "order": 87,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Vikram is the brother of Uma. Uma is the mother of Radha. How is Vikram related to Radha?",
+   "options": [
+    {
+     "text": "son"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "husband"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tracing the chain: Vikram (brother of Uma) -> Uma (mother of Radha). Hence Vikram is the uncle of Radha.",
+   "order": 88,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Prakash is the son of Naveen. Naveen is the brother of Bhavna. How is Prakash related to Bhavna?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "nephew"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Tracing the chain: Prakash (son of Naveen) -> Naveen (brother of Bhavna). Hence Prakash is the nephew of Bhavna.",
+   "order": 89,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Bharat is the father of Geeta. Geeta is the mother of Prakash. Prakash is the brother of Rohit. How is Bharat related to Rohit?",
+   "options": [
+    {
+     "text": "grandfather"
+    },
+    {
+     "text": "son"
+    },
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "grandson"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chain: Bharat (father of Geeta) -> Geeta (mother of Prakash) -> Prakash (brother of Rohit). Combining all three, Bharat is the grandfather of Rohit.",
+   "order": 90,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Suresh is the father of Sunita. Sunita is the sister of Chetan. Chetan is the brother of Yogesh. How is Suresh related to Yogesh?",
+   "options": [
+    {
+     "text": "brother-in-law"
+    },
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "father"
+    },
+    {
+     "text": "grandson"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Chain: Suresh (father of Sunita) -> Sunita (sister of Chetan) -> Chetan (brother of Yogesh). Combining all three, Suresh is the father of Yogesh.",
+   "order": 91,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Radha is the daughter of Manoj. Manoj is the brother of Hema. How is Radha related to Hema?",
+   "options": [
+    {
+     "text": "sister"
+    },
+    {
+     "text": "niece"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "mother-in-law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tracing the chain: Radha (daughter of Manoj) -> Manoj (brother of Hema). Hence Radha is the niece of Hema.",
+   "order": 92,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Kiran is the son of Anita. Anita is the sister of Suresh. How is Kiran related to Suresh?",
+   "options": [
+    {
+     "text": "husband"
+    },
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tracing the chain: Kiran (son of Anita) -> Anita (sister of Suresh). Hence Kiran is the nephew of Suresh.",
+   "order": 93,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Arun is the son of Yogesh. Yogesh is the brother of Bharat. How is Arun related to Bharat?",
+   "options": [
+    {
+     "text": "uncle"
+    },
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "cousin"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tracing the chain: Arun (son of Yogesh) -> Yogesh (brother of Bharat). Hence Arun is the nephew of Bharat.",
+   "order": 94,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Bhavna is the daughter of Suresh. Suresh is the brother of Chetan. How is Bhavna related to Chetan?",
+   "options": [
+    {
+     "text": "sister-in-law"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "daughter"
+    },
+    {
+     "text": "niece"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Tracing the chain: Bhavna (daughter of Suresh) -> Suresh (brother of Chetan). Hence Bhavna is the niece of Chetan.",
+   "order": 95,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Arun is the son of Deepak. Deepak is the brother of Sunita. Sunita is the daughter of Manoj. How is Arun related to Manoj?",
+   "options": [
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "son-in-law"
+    },
+    {
+     "text": "brother"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chain: Arun (son of Deepak) -> Deepak (brother of Sunita) -> Sunita (daughter of Manoj). Combining all three, Arun is the grandson of Manoj.",
+   "order": 96,
+   "subPattern": "generation-chain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Deepak is the brother of Chitra. Chitra is the daughter of Girish. Girish is the brother of Arun. How is Deepak related to Arun?",
+   "options": [
+    {
+     "text": "nephew"
+    },
+    {
+     "text": "grandson"
+    },
+    {
+     "text": "brother"
+    },
+    {
+     "text": "son-in-law"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chain: Deepak (brother of Chitra) -> Chitra (daughter of Girish) -> Girish (brother of Arun). Combining all three, Deepak is the nephew of Arun.",
+   "order": 97,
+   "subPattern": "generation-chain",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Radha is the sister of Vikram. Vikram is the brother of Tara. Tara is the mother of Pooja. How is Radha related to Pooja?",
+   "options": [
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "wife"
+    },
+    {
+     "text": "aunt"
+    },
+    {
+     "text": "granddaughter"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tracing the chain: Radha (sister of Vikram) -> Vikram (brother of Tara) -> Tara (mother of Pooja). Hence Radha is the aunt of Pooja.",
+   "order": 98,
+   "subPattern": "generation-chain",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  },
+  {
+   "questionText": "Uma is the daughter of Pooja. Pooja is the daughter of Vikram. Vikram is the father of Anita. How is Uma related to Anita?",
+   "options": [
+    {
+     "text": "daughter"
+    },
+    {
+     "text": "niece"
+    },
+    {
+     "text": "sister"
+    },
+    {
+     "text": "mother-in-law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Chain: Uma (daughter of Pooja) -> Pooja (daughter of Vikram) -> Vikram (father of Anita). Combining all three, Uma is the niece of Anita.",
+   "order": 99,
+   "subPattern": "generation-chain",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Draw a quick family tree with generation levels and gender."
+  },
+  {
+   "questionText": "Bhavna is the sister of Anita. Anita is the sister of Lata. Lata is the mother of Indu. How is Bhavna related to Indu?",
+   "options": [
+    {
+     "text": "daughter"
+    },
+    {
+     "text": "grandmother"
+    },
+    {
+     "text": "cousin"
+    },
+    {
+     "text": "aunt"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Tracing the chain: Bhavna (sister of Anita) -> Anita (sister of Lata) -> Lata (mother of Indu). Hence Bhavna is the aunt of Indu.",
+   "order": 100,
+   "subPattern": "generation-chain",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Uncle/aunt = parent's sibling; nephew/niece = sibling's child; cousin = child of parent's sibling."
+  }
+ ]
+}

@@ -1,0 +1,2711 @@
+{
+ "pattern": {
+  "title": "Races and Circular Tracks",
+  "slug": "races-and-circular-tracks",
+  "description": "Races, head starts and motion on circular tracks.",
+  "order": 17,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "head-start-dead-heat",
+    "title": "Head start & dead heat"
+   },
+   {
+    "slug": "circular-track-meeting",
+    "title": "Circular track meeting"
+   },
+   {
+    "slug": "beats-games",
+    "title": "Beats & games"
+   },
+   {
+    "slug": "laps-overlap",
+    "title": "Laps & overlap"
+   },
+   {
+    "slug": "meeting-at-starting-point",
+    "title": "Meeting at starting point"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A runs 400 m in 20 seconds and B runs 400 m in 25 seconds. What start should A give B in a 400 m race for a dead heat?",
+   "options": [
+    {
+     "text": "80 metres"
+    },
+    {
+     "text": "320 metres"
+    },
+    {
+     "text": "72 metres"
+    },
+    {
+     "text": "96 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "B covers 400 m in 25 s, so in 20 s he covers 320 m. A must give B a start of 400 - 320 = 80 m.",
+   "order": 1,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "B must run only the distance he can cover in A's time."
+  },
+  {
+   "questionText": "A runs 100 m in 20 seconds and B runs 100 m in 25 seconds. What start should A give B in a 100 m race for a dead heat?",
+   "options": [
+    {
+     "text": "10 metres"
+    },
+    {
+     "text": "80 metres"
+    },
+    {
+     "text": "25 metres"
+    },
+    {
+     "text": "20 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "B covers 100 m in 25 s, so in 20 s he covers 80 m. A must give B a start of 100 - 80 = 20 m.",
+   "order": 2,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "B must run only the distance he can cover in A's time."
+  },
+  {
+   "questionText": "The speeds of A and B are in the ratio 3:2. In a race of 300 m, how many metres has B run when A finishes?",
+   "options": [
+    {
+     "text": "450 metres"
+    },
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "160 metres"
+    },
+    {
+     "text": "180 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Distances in equal time are in the speed ratio. B runs 300 x 2/3 = 200 m.",
+   "order": 3,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "In the same time, distance is proportional to speed."
+  },
+  {
+   "questionText": "A runs 1000 m in 24 seconds and B runs 1000 m in 30 seconds. What start should A give B in a 1000 m race for a dead heat?",
+   "options": [
+    {
+     "text": "220 metres"
+    },
+    {
+     "text": "150 metres"
+    },
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "800 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "B covers 1000 m in 30 s, so in 24 s he covers 800 m. A must give B a start of 1000 - 800 = 200 m.",
+   "order": 4,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "B must run only the distance he can cover in A's time."
+  },
+  {
+   "questionText": "The speeds of A and B are in the ratio 7:5. In a race of 140 m, how many metres has B run when A finishes?",
+   "options": [
+    {
+     "text": "75 metres"
+    },
+    {
+     "text": "80 metres"
+    },
+    {
+     "text": "196 metres"
+    },
+    {
+     "text": "100 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Distances in equal time are in the speed ratio. B runs 140 x 5/7 = 100 m.",
+   "order": 5,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "In the same time, distance is proportional to speed."
+  },
+  {
+   "questionText": "The speeds of A and B are in the ratio 5:4. In a race of 100 m, how many metres has B run when A finishes?",
+   "options": [
+    {
+     "text": "40 metres"
+    },
+    {
+     "text": "80 metres"
+    },
+    {
+     "text": "96 metres"
+    },
+    {
+     "text": "125 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Distances in equal time are in the speed ratio. B runs 100 x 4/5 = 80 m.",
+   "order": 6,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In the same time, distance is proportional to speed."
+  },
+  {
+   "questionText": "The speeds of A and B are in the ratio 9:7. In a race of 360 m, how many metres has B run when A finishes?",
+   "options": [
+    {
+     "text": "336 metres"
+    },
+    {
+     "text": "224 metres"
+    },
+    {
+     "text": "280 metres"
+    },
+    {
+     "text": "560 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Distances in equal time are in the speed ratio. B runs 360 x 7/9 = 280 m.",
+   "order": 7,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "In the same time, distance is proportional to speed."
+  },
+  {
+   "questionText": "A is 3/2 times as fast as B. By how many metres does A beat B in a race of 300 m?",
+   "options": [
+    {
+     "text": "100 metres"
+    },
+    {
+     "text": "150 metres"
+    },
+    {
+     "text": "110 metres"
+    },
+    {
+     "text": "80 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When A runs 300, B runs 300 x 2/3 = 200. A beats B by 300 - 200 = 100 m.",
+   "order": 8,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Beating distance = race length x (a - b)/a."
+  },
+  {
+   "questionText": "A is 5/4 times as fast as B. By how many metres does A beat B in a race of 200 m?",
+   "options": [
+    {
+     "text": "44 metres"
+    },
+    {
+     "text": "40 metres"
+    },
+    {
+     "text": "50 metres"
+    },
+    {
+     "text": "39 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When A runs 200, B runs 200 x 4/5 = 160. A beats B by 200 - 160 = 40 m.",
+   "order": 9,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Beating distance = race length x (a - b)/a."
+  },
+  {
+   "questionText": "A gives B a start of 20 m in a 200 m race and the race ends in a dead heat. What is the ratio of A's speed to B's speed?",
+   "options": [
+    {
+     "text": "9:10"
+    },
+    {
+     "text": "10:11"
+    },
+    {
+     "text": "11:9"
+    },
+    {
+     "text": "10:9"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A runs 200 m while B runs 180 m in the same time. Speed ratio A : B = 200 : 180 = 10:9.",
+   "order": 10,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "In a dead heat the distances run are in the ratio of the speeds."
+  },
+  {
+   "questionText": "A is 5/3 times as fast as B. By how many metres does A beat B in a race of 200 m?",
+   "options": [
+    {
+     "text": "80 metres"
+    },
+    {
+     "text": "40 metres"
+    },
+    {
+     "text": "88 metres"
+    },
+    {
+     "text": "64 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When A runs 200, B runs 200 x 3/5 = 120. A beats B by 200 - 120 = 80 m.",
+   "order": 11,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Beating distance = race length x (a - b)/a."
+  },
+  {
+   "questionText": "A gives B a start of 40 m in a 200 m race and the race ends in a dead heat. What is the ratio of A's speed to B's speed?",
+   "options": [
+    {
+     "text": "4:5"
+    },
+    {
+     "text": "1:1"
+    },
+    {
+     "text": "5:4"
+    },
+    {
+     "text": "3:2"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A runs 200 m while B runs 160 m in the same time. Speed ratio A : B = 200 : 160 = 5:4.",
+   "order": 12,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In a dead heat the distances run are in the ratio of the speeds."
+  },
+  {
+   "questionText": "A gives B a start of 40 m in a 1000 m race and the race ends in a dead heat. What is the ratio of A's speed to B's speed?",
+   "options": [
+    {
+     "text": "25:24"
+    },
+    {
+     "text": "13:12"
+    },
+    {
+     "text": "24:25"
+    },
+    {
+     "text": "9:8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A runs 1000 m while B runs 960 m in the same time. Speed ratio A : B = 1000 : 960 = 25:24.",
+   "order": 13,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "In a dead heat the distances run are in the ratio of the speeds."
+  },
+  {
+   "questionText": "A is 4/3 times as fast as B. By how many metres does A beat B in a race of 400 m?",
+   "options": [
+    {
+     "text": "125 metres"
+    },
+    {
+     "text": "150 metres"
+    },
+    {
+     "text": "50 metres"
+    },
+    {
+     "text": "100 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When A runs 400, B runs 400 x 3/4 = 300. A beats B by 400 - 300 = 100 m.",
+   "order": 14,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Beating distance = race length x (a - b)/a."
+  },
+  {
+   "questionText": "A is 5/4 times as fast as B. By how many metres does A beat B in a race of 250 m?",
+   "options": [
+    {
+     "text": "62.5 metres"
+    },
+    {
+     "text": "50 metres"
+    },
+    {
+     "text": "51 metres"
+    },
+    {
+     "text": "52 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When A runs 250, B runs 250 x 4/5 = 200. A beats B by 250 - 200 = 50 m.",
+   "order": 15,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Beating distance = race length x (a - b)/a."
+  },
+  {
+   "questionText": "A gives B a start of 10 m in a 500 m race and the race ends in a dead heat. What is the ratio of A's speed to B's speed?",
+   "options": [
+    {
+     "text": "51:49"
+    },
+    {
+     "text": "25:24"
+    },
+    {
+     "text": "50:49"
+    },
+    {
+     "text": "49:50"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A runs 500 m while B runs 490 m in the same time. Speed ratio A : B = 500 : 490 = 50:49.",
+   "order": 16,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "In a dead heat the distances run are in the ratio of the speeds."
+  },
+  {
+   "questionText": "A gives B a start of 20 m in a 1000 m race and the race ends in a dead heat. What is the ratio of A's speed to B's speed?",
+   "options": [
+    {
+     "text": "49:50"
+    },
+    {
+     "text": "52:49"
+    },
+    {
+     "text": "50:47"
+    },
+    {
+     "text": "50:49"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A runs 1000 m while B runs 980 m in the same time. Speed ratio A : B = 1000 : 980 = 50:49.",
+   "order": 17,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "In a dead heat the distances run are in the ratio of the speeds."
+  },
+  {
+   "questionText": "A gives B a start of 10 m in a 200 m race and the race ends in a dead heat. What is the ratio of A's speed to B's speed?",
+   "options": [
+    {
+     "text": "19:20"
+    },
+    {
+     "text": "20:17"
+    },
+    {
+     "text": "20:19"
+    },
+    {
+     "text": "1:1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A runs 200 m while B runs 190 m in the same time. Speed ratio A : B = 200 : 190 = 20:19.",
+   "order": 18,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In a dead heat the distances run are in the ratio of the speeds."
+  },
+  {
+   "questionText": "A gives B a start of 40 m in a 500 m race and the race ends in a dead heat. What is the ratio of A's speed to B's speed?",
+   "options": [
+    {
+     "text": "25:23"
+    },
+    {
+     "text": "24:23"
+    },
+    {
+     "text": "27:23"
+    },
+    {
+     "text": "23:25"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A runs 500 m while B runs 460 m in the same time. Speed ratio A : B = 500 : 460 = 25:23.",
+   "order": 19,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In a dead heat the distances run are in the ratio of the speeds."
+  },
+  {
+   "questionText": "A is 9/7 times as fast as B. By how many metres does A beat B in a race of 900 m?",
+   "options": [
+    {
+     "text": "240 metres"
+    },
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "160 metres"
+    },
+    {
+     "text": "220 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When A runs 900, B runs 900 x 7/9 = 700. A beats B by 900 - 700 = 200 m.",
+   "order": 20,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Beating distance = race length x (a - b)/a."
+  },
+  {
+   "questionText": "A can give B a start such that A runs 10 units while B runs 9 units, and B can give C a start such that B runs 5 units while C runs 4 units, in the same time. What start can A give C in a 1000 m race for a dead heat?",
+   "options": [
+    {
+     "text": "210 metres"
+    },
+    {
+     "text": "420 metres"
+    },
+    {
+     "text": "100 metres"
+    },
+    {
+     "text": "280 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A : B = 10:9 and B : C = 5:4, so A : C = 50:36. C runs 1000 x 36/50 = 720 m while A runs 1000. Start = 280 m.",
+   "order": 21,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two speed ratios to get A : C, then find C's distance in the same time."
+  },
+  {
+   "questionText": "A runs 4/3 times as fast as B. In a race of 160 m, A gives B a start of 50 m. Who wins, and by how many metres?",
+   "options": [
+    {
+     "text": "A wins by 10 m"
+    },
+    {
+     "text": "B wins by 20 m"
+    },
+    {
+     "text": "B wins by 10 m"
+    },
+    {
+     "text": "A wins by 30 m"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A needs 40 units of time. In that time B runs 120 m, which with the 50 m start puts B at 170 m. So B wins by 10 m.",
+   "order": 22,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Compare B's total progress (start + distance run in A's time) with the race length."
+  },
+  {
+   "questionText": "A runs 5/3 times as fast as B. In a race of 200 m, A gives B a start of 20 m. Who wins, and by how many metres?",
+   "options": [
+    {
+     "text": "A wins by 60 m"
+    },
+    {
+     "text": "A wins by 120 m"
+    },
+    {
+     "text": "B wins by 60 m"
+    },
+    {
+     "text": "B wins by 80 m"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A needs 40 units of time. In that time B runs 120 m, which with the 20 m start puts B at 140 m. So A wins by 60 m.",
+   "order": 23,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Compare B's total progress (start + distance run in A's time) with the race length."
+  },
+  {
+   "questionText": "A can give B a start such that A runs 8 units while B runs 7 units, and B can give C a start such that B runs 10 units while C runs 9 units, in the same time. What start can A give C in a 1000 m race for a dead heat?",
+   "options": [
+    {
+     "text": "125 metres"
+    },
+    {
+     "text": "212.5 metres"
+    },
+    {
+     "text": "191.25 metres"
+    },
+    {
+     "text": "170 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A : B = 8:7 and B : C = 10:9, so A : C = 80:63. C runs 1000 x 63/80 = 787.5 m while A runs 1000. Start = 212.5 m.",
+   "order": 24,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two speed ratios to get A : C, then find C's distance in the same time."
+  },
+  {
+   "questionText": "A can give B a start such that A runs 6 units while B runs 5 units, and B can give C a start such that B runs 10 units while C runs 9 units, in the same time. What start can A give C in a 1000 m race for a dead heat?",
+   "options": [
+    {
+     "text": "275 metres"
+    },
+    {
+     "text": "167 metres"
+    },
+    {
+     "text": "375 metres"
+    },
+    {
+     "text": "250 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A : B = 6:5 and B : C = 10:9, so A : C = 60:45. C runs 1000 x 45/60 = 750 m while A runs 1000. Start = 250 m.",
+   "order": 25,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the two speed ratios to get A : C, then find C's distance in the same time."
+  },
+  {
+   "questionText": "A runs 7/5 times as fast as B. In a race of 700 m, A gives B a start of 100 m. Who wins, and by how many metres?",
+   "options": [
+    {
+     "text": "A wins by 100 m"
+    },
+    {
+     "text": "A wins by 200 m"
+    },
+    {
+     "text": "B wins by 120 m"
+    },
+    {
+     "text": "B wins by 100 m"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A needs 100 units of time. In that time B runs 500 m, which with the 100 m start puts B at 600 m. So A wins by 100 m.",
+   "order": 26,
+   "subPattern": "head-start-dead-heat",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare B's total progress (start + distance run in A's time) with the race length."
+  },
+  {
+   "questionText": "Two runners start from the same point on a circular track 1200 m long and run in opposite directions at 2 m/s and 4 m/s. After how many seconds do they first meet?",
+   "options": [
+    {
+     "text": "400 seconds"
+    },
+    {
+     "text": "250 seconds"
+    },
+    {
+     "text": "200 seconds"
+    },
+    {
+     "text": "600 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "They approach each other at 2 + 4 = 6 m/s and must cover 1200 m together. Time = 1200/6 = 200 seconds.",
+   "order": 27,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Opposite directions: relative speed = sum; distance = one lap."
+  },
+  {
+   "questionText": "Two runners start from the same point on a circular track 600 m long and run in opposite directions at 8 m/s and 4 m/s. After how many seconds do they first meet?",
+   "options": [
+    {
+     "text": "25 seconds"
+    },
+    {
+     "text": "50 seconds"
+    },
+    {
+     "text": "49 seconds"
+    },
+    {
+     "text": "150 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They approach each other at 8 + 4 = 12 m/s and must cover 600 m together. Time = 600/12 = 50 seconds.",
+   "order": 28,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Opposite directions: relative speed = sum; distance = one lap."
+  },
+  {
+   "questionText": "Two runners start from the same point on a circular track 300 m long and run in opposite directions at 2 m/s and 8 m/s. After how many seconds do they first meet?",
+   "options": [
+    {
+     "text": "50 seconds"
+    },
+    {
+     "text": "30 seconds"
+    },
+    {
+     "text": "20 seconds"
+    },
+    {
+     "text": "35 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They approach each other at 2 + 8 = 10 m/s and must cover 300 m together. Time = 300/10 = 30 seconds.",
+   "order": 29,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Opposite directions: relative speed = sum; distance = one lap."
+  },
+  {
+   "questionText": "Two runners start from the same point on a circular track 600 m long and run in opposite directions at 6 m/s and 4 m/s. After how many seconds do they first meet?",
+   "options": [
+    {
+     "text": "300 seconds"
+    },
+    {
+     "text": "75 seconds"
+    },
+    {
+     "text": "60 seconds"
+    },
+    {
+     "text": "40 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "They approach each other at 6 + 4 = 10 m/s and must cover 600 m together. Time = 600/10 = 60 seconds.",
+   "order": 30,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Opposite directions: relative speed = sum; distance = one lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point on a circular track 500 m long and run in the same direction at 4 m/s and 3 m/s. After how many seconds will the faster runner first catch up with the slower one?",
+   "options": [
+    {
+     "text": "500 seconds"
+    },
+    {
+     "text": "625 seconds"
+    },
+    {
+     "text": "550 seconds"
+    },
+    {
+     "text": "750 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The faster gains 4 - 3 = 1 m/s and must gain one full lap of 500 m. Time = 500/1 = 500 seconds.",
+   "order": 31,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Same direction: relative speed = difference; the faster must gain one lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point on a circular track 300 m long and run in the same direction at 5 m/s and 4 m/s. After how many seconds will the faster runner first catch up with the slower one?",
+   "options": [
+    {
+     "text": "270 seconds"
+    },
+    {
+     "text": "600 seconds"
+    },
+    {
+     "text": "240 seconds"
+    },
+    {
+     "text": "300 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The faster gains 5 - 4 = 1 m/s and must gain one full lap of 300 m. Time = 300/1 = 300 seconds.",
+   "order": 32,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same direction: relative speed = difference; the faster must gain one lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point on a circular track 1000 m long and run in the same direction at 12 m/s and 2 m/s. After how many seconds will the faster runner first catch up with the slower one?",
+   "options": [
+    {
+     "text": "125 seconds"
+    },
+    {
+     "text": "75 seconds"
+    },
+    {
+     "text": "80 seconds"
+    },
+    {
+     "text": "100 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The faster gains 12 - 2 = 10 m/s and must gain one full lap of 1000 m. Time = 1000/10 = 100 seconds.",
+   "order": 33,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same direction: relative speed = difference; the faster must gain one lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point on a circular track 500 m long and run in the same direction at 12 m/s and 2 m/s. After how many seconds will the faster runner first catch up with the slower one?",
+   "options": [
+    {
+     "text": "60 seconds"
+    },
+    {
+     "text": "50 seconds"
+    },
+    {
+     "text": "48 seconds"
+    },
+    {
+     "text": "45 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The faster gains 12 - 2 = 10 m/s and must gain one full lap of 500 m. Time = 500/10 = 50 seconds.",
+   "order": 34,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Same direction: relative speed = difference; the faster must gain one lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point on a circular track 1200 m long and run in the same direction at 6 m/s and 4 m/s. After how many seconds will the faster runner first catch up with the slower one?",
+   "options": [
+    {
+     "text": "600 seconds"
+    },
+    {
+     "text": "800 seconds"
+    },
+    {
+     "text": "120 seconds"
+    },
+    {
+     "text": "900 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The faster gains 6 - 4 = 2 m/s and must gain one full lap of 1200 m. Time = 1200/2 = 600 seconds.",
+   "order": 35,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same direction: relative speed = difference; the faster must gain one lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point on a circular track 1200 m long and run in the same direction at 4 m/s and 3 m/s. After how many seconds will the faster runner first catch up with the slower one?",
+   "options": [
+    {
+     "text": "1080 seconds"
+    },
+    {
+     "text": "960 seconds"
+    },
+    {
+     "text": "1200 seconds"
+    },
+    {
+     "text": "1600 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The faster gains 4 - 3 = 1 m/s and must gain one full lap of 1200 m. Time = 1200/1 = 1200 seconds.",
+   "order": 36,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same direction: relative speed = difference; the faster must gain one lap."
+  },
+  {
+   "questionText": "Two cyclists start from the same point on a circular track 900 m long and ride in opposite directions at 36 km/h and 45 km/h. After how many seconds do they first meet?",
+   "options": [
+    {
+     "text": "32 seconds"
+    },
+    {
+     "text": "40 seconds"
+    },
+    {
+     "text": "80 seconds"
+    },
+    {
+     "text": "360 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Speeds in m/s: 36 km/h = 10 m/s and 45 km/h = 12.5 m/s. Relative speed = 22.5 m/s. Time = 900/22.5 = 40 seconds.",
+   "order": 37,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert km/h to m/s (x 5/18) before dividing the track length."
+  },
+  {
+   "questionText": "Two cyclists start from the same point on a circular track 900 m long and ride in opposite directions at 45 km/h and 27 km/h. After how many seconds do they first meet?",
+   "options": [
+    {
+     "text": "50 seconds"
+    },
+    {
+     "text": "47 seconds"
+    },
+    {
+     "text": "180 seconds"
+    },
+    {
+     "text": "45 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Speeds in m/s: 45 km/h = 12.5 m/s and 27 km/h = 7.5 m/s. Relative speed = 20 m/s. Time = 900/20 = 45 seconds.",
+   "order": 38,
+   "subPattern": "circular-track-meeting",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Convert km/h to m/s (x 5/18) before dividing the track length."
+  },
+  {
+   "questionText": "In a 500 m race A beats B by 20 m and B beats C by 20 m. By how many metres does A beat C in the same race?",
+   "options": [
+    {
+     "text": "40 metres"
+    },
+    {
+     "text": "47.04 metres"
+    },
+    {
+     "text": "39.2 metres"
+    },
+    {
+     "text": "29.4 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When A runs 500, B runs 480. When B runs 500, C runs 480. So when A runs 500, C runs 480 x 480/500 = 460.8. A beats C by 39.2 m.",
+   "order": 39,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Chain the ratios: C's distance = (dist - x)(dist - y)/dist."
+  },
+  {
+   "questionText": "A can run 100 metres in 10 seconds and B can run it in 16 seconds. By how many metres does A beat B in a 100 m race?",
+   "options": [
+    {
+     "text": "37.5 metres"
+    },
+    {
+     "text": "6 metres"
+    },
+    {
+     "text": "50 metres"
+    },
+    {
+     "text": "35.5 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When A finishes (in 10 s), B has run 100/16 x 10 = 62.5 m. A wins by 100 - 62.5 = 37.5 m.",
+   "order": 40,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Distance B covers in A's time = 100 x (a/b); the rest is the beating distance."
+  },
+  {
+   "questionText": "In a 200 m race A beats B by 20 m and B beats C by 20 m. By how many metres does A beat C in the same race?",
+   "options": [
+    {
+     "text": "39 metres"
+    },
+    {
+     "text": "57 metres"
+    },
+    {
+     "text": "40 metres"
+    },
+    {
+     "text": "38 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When A runs 200, B runs 180. When B runs 200, C runs 180. So when A runs 200, C runs 180 x 180/200 = 162. A beats C by 38 m.",
+   "order": 41,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Chain the ratios: C's distance = (dist - x)(dist - y)/dist."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 100 seconds and beats B by 25 seconds. By how many metres does A beat B?",
+   "options": [
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "250 metres"
+    },
+    {
+     "text": "300 metres"
+    },
+    {
+     "text": "220 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "B's time = 100 + 25 = 125 s. B's speed = 1000/125. In the last 25 s B would cover 25 x 1000/125 = 200 m, which is the beating distance.",
+   "order": 42,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Beating distance = race length x (time difference / loser's time)."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 180 seconds and beats B by 20 seconds. By how many metres does A beat B?",
+   "options": [
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "110 metres"
+    },
+    {
+     "text": "100 metres"
+    },
+    {
+     "text": "125 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "B's time = 180 + 20 = 200 s. B's speed = 1000/200. In the last 20 s B would cover 20 x 1000/200 = 100 m, which is the beating distance.",
+   "order": 43,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Beating distance = race length x (time difference / loser's time)."
+  },
+  {
+   "questionText": "A can run 100 metres in 20 seconds and B can run it in 25 seconds. By how many metres does A beat B in a 100 m race?",
+   "options": [
+    {
+     "text": "24 metres"
+    },
+    {
+     "text": "20 metres"
+    },
+    {
+     "text": "5 metres"
+    },
+    {
+     "text": "10 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When A finishes (in 20 s), B has run 100/25 x 20 = 80 m. A wins by 100 - 80 = 20 m.",
+   "order": 44,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Distance B covers in A's time = 100 x (a/b); the rest is the beating distance."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 120 seconds and beats B by 5 seconds. By how many metres does A beat B?",
+   "options": [
+    {
+     "text": "40 metres"
+    },
+    {
+     "text": "20 metres"
+    },
+    {
+     "text": "50 metres"
+    },
+    {
+     "text": "44 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "B's time = 120 + 5 = 125 s. B's speed = 1000/125. In the last 5 s B would cover 5 x 1000/125 = 40 m, which is the beating distance.",
+   "order": 45,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Beating distance = race length x (time difference / loser's time)."
+  },
+  {
+   "questionText": "In a 500 m race A beats B by 100 m and B beats C by 100 m. By how many metres does A beat C in the same race?",
+   "options": [
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "144 metres"
+    },
+    {
+     "text": "180 metres"
+    },
+    {
+     "text": "240 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When A runs 500, B runs 400. When B runs 500, C runs 400. So when A runs 500, C runs 400 x 400/500 = 320. A beats C by 180 m.",
+   "order": 46,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Chain the ratios: C's distance = (dist - x)(dist - y)/dist."
+  },
+  {
+   "questionText": "A can run 100 metres in 18 seconds and B can run it in 20 seconds. By how many metres does A beat B in a 100 m race?",
+   "options": [
+    {
+     "text": "2 metres"
+    },
+    {
+     "text": "9 metres"
+    },
+    {
+     "text": "15 metres"
+    },
+    {
+     "text": "10 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When A finishes (in 18 s), B has run 100/20 x 18 = 90 m. A wins by 100 - 90 = 10 m.",
+   "order": 47,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Distance B covers in A's time = 100 x (a/b); the rest is the beating distance."
+  },
+  {
+   "questionText": "In a 100 m race A beats B by 10 m and B beats C by 20 m. By how many metres does A beat C in the same race?",
+   "options": [
+    {
+     "text": "23 metres"
+    },
+    {
+     "text": "28 metres"
+    },
+    {
+     "text": "30 metres"
+    },
+    {
+     "text": "26 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When A runs 100, B runs 90. When B runs 100, C runs 80. So when A runs 100, C runs 90 x 80/100 = 72. A beats C by 28 m.",
+   "order": 48,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Chain the ratios: C's distance = (dist - x)(dist - y)/dist."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 150 seconds and beats B by 10 seconds. By how many metres does A beat B?",
+   "options": [
+    {
+     "text": "62.5 metres"
+    },
+    {
+     "text": "125 metres"
+    },
+    {
+     "text": "100 metres"
+    },
+    {
+     "text": "68.75 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "B's time = 150 + 10 = 160 s. B's speed = 1000/160. In the last 10 s B would cover 10 x 1000/160 = 62.5 m, which is the beating distance.",
+   "order": 49,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Beating distance = race length x (time difference / loser's time)."
+  },
+  {
+   "questionText": "A can run 100 metres in 12 seconds and B can run it in 15 seconds. By how many metres does A beat B in a 100 m race?",
+   "options": [
+    {
+     "text": "15 metres"
+    },
+    {
+     "text": "22 metres"
+    },
+    {
+     "text": "3 metres"
+    },
+    {
+     "text": "20 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When A finishes (in 12 s), B has run 100/15 x 12 = 80 m. A wins by 100 - 80 = 20 m.",
+   "order": 50,
+   "subPattern": "beats-games",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Distance B covers in A's time = 100 x (a/b); the rest is the beating distance."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 188 seconds and beats B by 60 m. How long does B take to finish the race?",
+   "options": [
+    {
+     "text": "150 seconds"
+    },
+    {
+     "text": "248 seconds"
+    },
+    {
+     "text": "200 seconds"
+    },
+    {
+     "text": "250 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When A finishes, B has run 940 m in 188 s. B's time for 1000 m = 188 x 1000/940 = 200 seconds.",
+   "order": 51,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Time is proportional to distance for the same runner."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 247 seconds and beats B by 50 m. How long does B take to finish the race?",
+   "options": [
+    {
+     "text": "325 seconds"
+    },
+    {
+     "text": "260 seconds"
+    },
+    {
+     "text": "297 seconds"
+    },
+    {
+     "text": "286 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When A finishes, B has run 950 m in 247 s. B's time for 1000 m = 247 x 1000/950 = 260 seconds.",
+   "order": 52,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Time is proportional to distance for the same runner."
+  },
+  {
+   "questionText": "In a 100 m race A beats B by 10 m. If A finishes in 25 seconds, what is B's speed in m/s?",
+   "options": [
+    {
+     "text": "4 m/s"
+    },
+    {
+     "text": "5.4 m/s"
+    },
+    {
+     "text": "3.6 m/s"
+    },
+    {
+     "text": "4.32 m/s"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "B covers 100 - 10 = 90 m in the same 25 s. Speed = 90/25 = 3.6 m/s.",
+   "order": 53,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "In A's finishing time, B has run (race length - beating distance)."
+  },
+  {
+   "questionText": "In a 200 m race A beats B by 40 m and A beats C by 50 m. By how many metres does B beat C in a 200 m race?",
+   "options": [
+    {
+     "text": "12.5 metres"
+    },
+    {
+     "text": "10 metres"
+    },
+    {
+     "text": "10.5 metres"
+    },
+    {
+     "text": "6.25 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When A runs 200, B runs 160 and C runs 150. So B : C = 160 : 150. When B runs 200, C runs 187.5. B beats C by 12.5 m.",
+   "order": 54,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Express both losers' distances in A's time, then compare them."
+  },
+  {
+   "questionText": "In a 200 m race A beats B by 20 m. If A finishes in 25 seconds, what is B's speed in m/s?",
+   "options": [
+    {
+     "text": "8 m/s"
+    },
+    {
+     "text": "12.2 m/s"
+    },
+    {
+     "text": "5.2 m/s"
+    },
+    {
+     "text": "7.2 m/s"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "B covers 200 - 20 = 180 m in the same 25 s. Speed = 180/25 = 7.2 m/s.",
+   "order": 55,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "In A's finishing time, B has run (race length - beating distance)."
+  },
+  {
+   "questionText": "In a 200 m race A beats B by 50 m. If A finishes in 20 seconds, what is B's speed in m/s?",
+   "options": [
+    {
+     "text": "10 m/s"
+    },
+    {
+     "text": "7.5 m/s"
+    },
+    {
+     "text": "11.25 m/s"
+    },
+    {
+     "text": "2.5 m/s"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "B covers 200 - 50 = 150 m in the same 20 s. Speed = 150/20 = 7.5 m/s.",
+   "order": 56,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "In A's finishing time, B has run (race length - beating distance)."
+  },
+  {
+   "questionText": "In a 100 m race A beats B by 40 m. If A finishes in 50 seconds, what is B's speed in m/s?",
+   "options": [
+    {
+     "text": "2 m/s"
+    },
+    {
+     "text": "2.2 m/s"
+    },
+    {
+     "text": "1.2 m/s"
+    },
+    {
+     "text": "1.8 m/s"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "B covers 100 - 40 = 60 m in the same 50 s. Speed = 60/50 = 1.2 m/s.",
+   "order": 57,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In A's finishing time, B has run (race length - beating distance)."
+  },
+  {
+   "questionText": "In a 100 m race A beats B by 20 m and A beats C by 38 m. By how many metres does B beat C in a 100 m race?",
+   "options": [
+    {
+     "text": "21.5 metres"
+    },
+    {
+     "text": "18 metres"
+    },
+    {
+     "text": "15 metres"
+    },
+    {
+     "text": "22.5 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When A runs 100, B runs 80 and C runs 62. So B : C = 80 : 62. When B runs 100, C runs 77.5. B beats C by 22.5 m.",
+   "order": 58,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Express both losers' distances in A's time, then compare them."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 161 seconds and beats B by 80 m. How long does B take to finish the race?",
+   "options": [
+    {
+     "text": "175 seconds"
+    },
+    {
+     "text": "241 seconds"
+    },
+    {
+     "text": "350 seconds"
+    },
+    {
+     "text": "140 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When A finishes, B has run 920 m in 161 s. B's time for 1000 m = 161 x 1000/920 = 175 seconds.",
+   "order": 59,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Time is proportional to distance for the same runner."
+  },
+  {
+   "questionText": "In a 100 m race A beats B by 20 m. If A finishes in 80 seconds, what is B's speed in m/s?",
+   "options": [
+    {
+     "text": "2 m/s"
+    },
+    {
+     "text": "1 m/s"
+    },
+    {
+     "text": "6 m/s"
+    },
+    {
+     "text": "1.25 m/s"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "B covers 100 - 20 = 80 m in the same 80 s. Speed = 80/80 = 1 m/s.",
+   "order": 60,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "In A's finishing time, B has run (race length - beating distance)."
+  },
+  {
+   "questionText": "In a 100 m race A beats B by 20 m and A beats C by 36 m. By how many metres does B beat C in a 100 m race?",
+   "options": [
+    {
+     "text": "25 metres"
+    },
+    {
+     "text": "22 metres"
+    },
+    {
+     "text": "16 metres"
+    },
+    {
+     "text": "20 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When A runs 100, B runs 80 and C runs 64. So B : C = 80 : 64. When B runs 100, C runs 80. B beats C by 20 m.",
+   "order": 61,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Express both losers' distances in A's time, then compare them."
+  },
+  {
+   "questionText": "In a 200 m race A beats B by 20 m and A beats C by 38 m. By how many metres does B beat C in a 200 m race?",
+   "options": [
+    {
+     "text": "20 metres"
+    },
+    {
+     "text": "30 metres"
+    },
+    {
+     "text": "18 metres"
+    },
+    {
+     "text": "25 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When A runs 200, B runs 180 and C runs 162. So B : C = 180 : 162. When B runs 200, C runs 180. B beats C by 20 m.",
+   "order": 62,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Express both losers' distances in A's time, then compare them."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 87.5 seconds and beats B by 125 m. How long does B take to finish the race?",
+   "options": [
+    {
+     "text": "120 seconds"
+    },
+    {
+     "text": "75 seconds"
+    },
+    {
+     "text": "100 seconds"
+    },
+    {
+     "text": "212.5 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When A finishes, B has run 875 m in 87.5 s. B's time for 1000 m = 87.5 x 1000/875 = 100 seconds.",
+   "order": 63,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Time is proportional to distance for the same runner."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 224 seconds and beats B by 200 m. How long does B take to finish the race?",
+   "options": [
+    {
+     "text": "308 seconds"
+    },
+    {
+     "text": "280 seconds"
+    },
+    {
+     "text": "560 seconds"
+    },
+    {
+     "text": "424 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When A finishes, B has run 800 m in 224 s. B's time for 1000 m = 224 x 1000/800 = 280 seconds.",
+   "order": 64,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Time is proportional to distance for the same runner."
+  },
+  {
+   "questionText": "In a 100 m race A beats B by 50 m and A beats C by 60 m. By how many metres does B beat C in a 100 m race?",
+   "options": [
+    {
+     "text": "10 metres"
+    },
+    {
+     "text": "22 metres"
+    },
+    {
+     "text": "16 metres"
+    },
+    {
+     "text": "20 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When A runs 100, B runs 50 and C runs 40. So B : C = 50 : 40. When B runs 100, C runs 80. B beats C by 20 m.",
+   "order": 65,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Express both losers' distances in A's time, then compare them."
+  },
+  {
+   "questionText": "In a 1 km race A finishes in 122.5 seconds and beats B by 125 m. How long does B take to finish the race?",
+   "options": [
+    {
+     "text": "140 seconds"
+    },
+    {
+     "text": "247.5 seconds"
+    },
+    {
+     "text": "175 seconds"
+    },
+    {
+     "text": "112 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When A finishes, B has run 875 m in 122.5 s. B's time for 1000 m = 122.5 x 1000/875 = 140 seconds.",
+   "order": 66,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Time is proportional to distance for the same runner."
+  },
+  {
+   "questionText": "In a 1000 m race A beats B by 50 m. If A finishes in 50 seconds, what is B's speed in m/s?",
+   "options": [
+    {
+     "text": "20 m/s"
+    },
+    {
+     "text": "24 m/s"
+    },
+    {
+     "text": "19 m/s"
+    },
+    {
+     "text": "14 m/s"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "B covers 1000 - 50 = 950 m in the same 50 s. Speed = 950/50 = 19 m/s.",
+   "order": 67,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "In A's finishing time, B has run (race length - beating distance)."
+  },
+  {
+   "questionText": "In a 500 m race A beats B by 20 m and A beats C by 38 m. By how many metres does B beat C in a 500 m race?",
+   "options": [
+    {
+     "text": "23.75 metres"
+    },
+    {
+     "text": "18.75 metres"
+    },
+    {
+     "text": "18 metres"
+    },
+    {
+     "text": "37.5 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When A runs 500, B runs 480 and C runs 462. So B : C = 480 : 462. When B runs 500, C runs 481.25. B beats C by 18.75 m.",
+   "order": 68,
+   "subPattern": "beats-games",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Express both losers' distances in A's time, then compare them."
+  },
+  {
+   "questionText": "A runs 1 km in 150 seconds and B runs it in 160 seconds. If they run a 1 km race, how many metres from the finish is B when A finishes?",
+   "options": [
+    {
+     "text": "68.75 metres"
+    },
+    {
+     "text": "62.5 metres"
+    },
+    {
+     "text": "937.5 metres"
+    },
+    {
+     "text": "50 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "B covers 150/160 x 1000 = 937.5 m in A's time. Remaining = 1000 - 937.5 = 62.5 m.",
+   "order": 69,
+   "subPattern": "beats-games",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Distance covered in the same time is proportional to speed (inverse of time)."
+  },
+  {
+   "questionText": "In a 200 m race A beats B by 100 m and B beats C by 100 m. By how many metres does A beat C in a 200 m race?",
+   "options": [
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "300 metres"
+    },
+    {
+     "text": "225 metres"
+    },
+    {
+     "text": "150 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "C's distance when A runs 200: 100 x 100/200 = 50. A beats C by 200 - 50 = 150 m.",
+   "order": 70,
+   "subPattern": "beats-games",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Multiply the distance fractions B/A and C/B to get C/A."
+  },
+  {
+   "questionText": "In a 1500 m race A beats B by 100 m or by 8 seconds. How long does A take to run the race?",
+   "options": [
+    {
+     "text": "112 seconds"
+    },
+    {
+     "text": "120 seconds"
+    },
+    {
+     "text": "168 seconds"
+    },
+    {
+     "text": "140 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "B covers 100 m in 8 s, so B's speed = 12.5 m/s and B's time = 1500/12.5 = 120 s. A's time = 120 - 8 = 112 seconds.",
+   "order": 71,
+   "subPattern": "beats-games",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "The beating distance divided by the beating time gives the loser's speed."
+  },
+  {
+   "questionText": "In a 400 m race A beats B by 20 m or by 8 seconds. How long does A take to run the race?",
+   "options": [
+    {
+     "text": "228 seconds"
+    },
+    {
+     "text": "76 seconds"
+    },
+    {
+     "text": "152 seconds"
+    },
+    {
+     "text": "160 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "B covers 20 m in 8 s, so B's speed = 2.5 m/s and B's time = 400/2.5 = 160 s. A's time = 160 - 8 = 152 seconds.",
+   "order": 72,
+   "subPattern": "beats-games",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "The beating distance divided by the beating time gives the loser's speed."
+  },
+  {
+   "questionText": "In a 100 m race A beats B by 50 m and B beats C by 20 m. By how many metres does A beat C in a 100 m race?",
+   "options": [
+    {
+     "text": "60 metres"
+    },
+    {
+     "text": "59 metres"
+    },
+    {
+     "text": "66 metres"
+    },
+    {
+     "text": "70 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "C's distance when A runs 100: 50 x 80/100 = 40. A beats C by 100 - 40 = 60 m.",
+   "order": 73,
+   "subPattern": "beats-games",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the distance fractions B/A and C/B to get C/A."
+  },
+  {
+   "questionText": "In a 500 m race A beats B by 100 m and B beats C by 100 m. By how many metres does A beat C in a 500 m race?",
+   "options": [
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "225 metres"
+    },
+    {
+     "text": "180 metres"
+    },
+    {
+     "text": "144 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "C's distance when A runs 500: 400 x 400/500 = 320. A beats C by 500 - 320 = 180 m.",
+   "order": 74,
+   "subPattern": "beats-games",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Multiply the distance fractions B/A and C/B to get C/A."
+  },
+  {
+   "questionText": "A runs 1 km in 180 seconds and B runs it in 200 seconds. If they run a 1 km race, how many metres from the finish is B when A finishes?",
+   "options": [
+    {
+     "text": "150 metres"
+    },
+    {
+     "text": "100 metres"
+    },
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "900 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "B covers 180/200 x 1000 = 900 m in A's time. Remaining = 1000 - 900 = 100 m.",
+   "order": 75,
+   "subPattern": "beats-games",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Distance covered in the same time is proportional to speed (inverse of time)."
+  },
+  {
+   "questionText": "Two runners start from the same point of a circular track 500 m long and run in opposite directions at 3 m/s and 5 m/s. How many times do they meet in 8 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative distance in 8 min = (3 + 5) x 480 = 3840 m. Number of laps closed = 3840/500 = 7.68, so they meet 7 times.",
+   "order": 76,
+   "subPattern": "laps-overlap",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each meeting happens when the combined distance increases by one lap."
+  },
+  {
+   "questionText": "Two runners start from the same point of a circular track 500 m long and run in opposite directions at 5 m/s and 8 m/s. How many times do they meet in 15 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Relative distance in 15 min = (5 + 8) x 900 = 11700 m. Number of laps closed = 11700/500 = 23.4, so they meet 23 times.",
+   "order": 77,
+   "subPattern": "laps-overlap",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Each meeting happens when the combined distance increases by one lap."
+  },
+  {
+   "questionText": "Two runners start from the same point of a circular track 500 m long and run in opposite directions at 4 m/s and 3 m/s. How many times do they meet in 5 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative distance in 5 min = (4 + 3) x 300 = 2100 m. Number of laps closed = 2100/500 = 4.2, so they meet 4 times.",
+   "order": 78,
+   "subPattern": "laps-overlap",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each meeting happens when the combined distance increases by one lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point of a circular track 1000 m long and run in the same direction at 6 m/s and 5 m/s. How many times does the faster runner overtake the slower in 25 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gain in 25 min = (6 - 5) x 1500 = 1500 m = 1.5 laps. So the faster passes the slower 1 times.",
+   "order": 79,
+   "subPattern": "laps-overlap",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Each overtaking needs a gain of one full lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point of a circular track 1200 m long and run in the same direction at 5 m/s and 4 m/s. How many times does the faster runner overtake the slower in 30 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gain in 30 min = (5 - 4) x 1800 = 1800 m = 1.5 laps. So the faster passes the slower 1 times.",
+   "order": 80,
+   "subPattern": "laps-overlap",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Each overtaking needs a gain of one full lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point of a circular track 800 m long and run in the same direction at 4 m/s and 3 m/s. How many times does the faster runner overtake the slower in 10 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gain in 10 min = (4 - 3) x 600 = 600 m = 0.75 laps. So the faster passes the slower 0 times.",
+   "order": 81,
+   "subPattern": "laps-overlap",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each overtaking needs a gain of one full lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point of a circular track 1200 m long and run in the same direction at 8 m/s and 3 m/s. How many times does the faster runner overtake the slower in 30 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gain in 30 min = (8 - 3) x 1800 = 9000 m = 7.5 laps. So the faster passes the slower 7 times.",
+   "order": 82,
+   "subPattern": "laps-overlap",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Each overtaking needs a gain of one full lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point of a circular track 1200 m long and run in the same direction at 6 m/s and 5 m/s. How many times does the faster runner overtake the slower in 25 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gain in 25 min = (6 - 5) x 1500 = 1500 m = 1.25 laps. So the faster passes the slower 1 times.",
+   "order": 83,
+   "subPattern": "laps-overlap",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Each overtaking needs a gain of one full lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point of a circular track 400 m long and run in the same direction at 6 m/s and 5 m/s. How many times does the faster runner overtake the slower in 30 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gain in 30 min = (6 - 5) x 1800 = 1800 m = 4.5 laps. So the faster passes the slower 4 times.",
+   "order": 84,
+   "subPattern": "laps-overlap",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Each overtaking needs a gain of one full lap."
+  },
+  {
+   "questionText": "Two runners start together from the same point of a circular track 800 m long and run in the same direction at 12 m/s and 3 m/s. How many times does the faster runner overtake the slower in 30 minutes, not counting the start?",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gain in 30 min = (12 - 3) x 1800 = 16200 m = 20.25 laps. So the faster passes the slower 20 times.",
+   "order": 85,
+   "subPattern": "laps-overlap",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Each overtaking needs a gain of one full lap."
+  },
+  {
+   "questionText": "Two runners start together from the starting point of a circular track 450 m long and run in the same direction at 8 m/s and 2 m/s. How many times are they together at the starting point (not counting the start) in 45 minutes?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "They are together at the start every LCM(56.25, 225) = 225 s. In 2700 s that happens 2700//225 = 12 time(s).",
+   "order": 86,
+   "subPattern": "laps-overlap",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Count how many whole multiples of the LCM fit in the given time."
+  },
+  {
+   "questionText": "Two runners start together from the starting point of a circular track 600 m long and run in the same direction at 8 m/s and 4 m/s. How many times are they together at the starting point (not counting the start) in 40 minutes?",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They are together at the start every LCM(75, 150) = 150 s. In 2400 s that happens 2400//150 = 16 time(s).",
+   "order": 87,
+   "subPattern": "laps-overlap",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Count how many whole multiples of the LCM fit in the given time."
+  },
+  {
+   "questionText": "Two runners take 3 minutes and 15 minutes respectively to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will they next be together at the starting point?",
+   "options": [
+    {
+     "text": "20 minutes"
+    },
+    {
+     "text": "45 minutes"
+    },
+    {
+     "text": "12 minutes"
+    },
+    {
+     "text": "15 minutes"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "They are together at the start after LCM(3, 15) = 15 minutes.",
+   "order": 88,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Time = LCM of the two lap times."
+  },
+  {
+   "questionText": "Two runners take 12 minutes and 6 minutes respectively to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will they next be together at the starting point?",
+   "options": [
+    {
+     "text": "10 minutes"
+    },
+    {
+     "text": "72 minutes"
+    },
+    {
+     "text": "6 minutes"
+    },
+    {
+     "text": "12 minutes"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "They are together at the start after LCM(12, 6) = 12 minutes.",
+   "order": 89,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Time = LCM of the two lap times."
+  },
+  {
+   "questionText": "Two runners take 10 minutes and 2 minutes respectively to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will they next be together at the starting point?",
+   "options": [
+    {
+     "text": "20 minutes"
+    },
+    {
+     "text": "10 minutes"
+    },
+    {
+     "text": "12 minutes"
+    },
+    {
+     "text": "8 minutes"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They are together at the start after LCM(10, 2) = 10 minutes.",
+   "order": 90,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Time = LCM of the two lap times."
+  },
+  {
+   "questionText": "Two runners take 4 minutes and 2 minutes respectively to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will they next be together at the starting point?",
+   "options": [
+    {
+     "text": "5 minutes"
+    },
+    {
+     "text": "8 minutes"
+    },
+    {
+     "text": "4 minutes"
+    },
+    {
+     "text": "6 minutes"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "They are together at the start after LCM(4, 2) = 4 minutes.",
+   "order": 91,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Time = LCM of the two lap times."
+  },
+  {
+   "questionText": "Three runners take 15, 12 and 10 minutes to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will all three be together at the starting point again?",
+   "options": [
+    {
+     "text": "60 minutes"
+    },
+    {
+     "text": "72 minutes"
+    },
+    {
+     "text": "30 minutes"
+    },
+    {
+     "text": "120 minutes"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM(15, 12, 10) = 60 minutes.",
+   "order": 92,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Time = LCM of the three lap times."
+  },
+  {
+   "questionText": "Three runners take 15, 12 and 9 minutes to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will all three be together at the starting point again?",
+   "options": [
+    {
+     "text": "216 minutes"
+    },
+    {
+     "text": "60 minutes"
+    },
+    {
+     "text": "240 minutes"
+    },
+    {
+     "text": "180 minutes"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM(15, 12, 9) = 180 minutes.",
+   "order": 93,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Time = LCM of the three lap times."
+  },
+  {
+   "questionText": "Three runners take 6, 5 and 20 minutes to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will all three be together at the starting point again?",
+   "options": [
+    {
+     "text": "30 minutes"
+    },
+    {
+     "text": "60 minutes"
+    },
+    {
+     "text": "72 minutes"
+    },
+    {
+     "text": "59 minutes"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM(6, 5, 20) = 60 minutes.",
+   "order": 94,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Time = LCM of the three lap times."
+  },
+  {
+   "questionText": "Three runners take 24, 8 and 20 minutes to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will all three be together at the starting point again?",
+   "options": [
+    {
+     "text": "120 minutes"
+    },
+    {
+     "text": "60 minutes"
+    },
+    {
+     "text": "160 minutes"
+    },
+    {
+     "text": "24 minutes"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM(24, 8, 20) = 120 minutes.",
+   "order": 95,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Time = LCM of the three lap times."
+  },
+  {
+   "questionText": "Three runners take 9, 8 and 6 minutes to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will all three be together at the starting point again?",
+   "options": [
+    {
+     "text": "108 minutes"
+    },
+    {
+     "text": "36 minutes"
+    },
+    {
+     "text": "72 minutes"
+    },
+    {
+     "text": "144 minutes"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM(9, 8, 6) = 72 minutes.",
+   "order": 96,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Time = LCM of the three lap times."
+  },
+  {
+   "questionText": "Three runners take 15, 18 and 9 minutes to complete one lap of a circular track. They start together from the starting point in the same direction. After how many minutes will all three be together at the starting point again?",
+   "options": [
+    {
+     "text": "180 minutes"
+    },
+    {
+     "text": "90 minutes"
+    },
+    {
+     "text": "60 minutes"
+    },
+    {
+     "text": "120 minutes"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM(15, 18, 9) = 90 minutes.",
+   "order": 97,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Time = LCM of the three lap times."
+  },
+  {
+   "questionText": "Two runners run at 12 m/s and 5 m/s on a circular track 300 m long, starting together from the starting point in the same direction. After how many seconds will they first be together at the starting point?",
+   "options": [
+    {
+     "text": "225 seconds"
+    },
+    {
+     "text": "450 seconds"
+    },
+    {
+     "text": "360 seconds"
+    },
+    {
+     "text": "300 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lap times: 300/12 = 25 s and 300/5 = 60 s. They are together at the start after LCM(25, 60) = 300 seconds.",
+   "order": 98,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find each lap time, then take their LCM."
+  },
+  {
+   "questionText": "Two runners run at 5 m/s and 2 m/s on a circular track 600 m long, starting together from the starting point in the same direction. After how many seconds will they first be together at the starting point?",
+   "options": [
+    {
+     "text": "600 seconds"
+    },
+    {
+     "text": "750 seconds"
+    },
+    {
+     "text": "200 seconds"
+    },
+    {
+     "text": "450 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Lap times: 600/5 = 120 s and 600/2 = 300 s. They are together at the start after LCM(120, 300) = 600 seconds.",
+   "order": 99,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Find each lap time, then take their LCM."
+  },
+  {
+   "questionText": "Two runners run at 3 m/s and 2 m/s on a circular track 600 m long, starting together from the starting point in the same direction. After how many seconds will they first be together at the starting point?",
+   "options": [
+    {
+     "text": "540 seconds"
+    },
+    {
+     "text": "1200 seconds"
+    },
+    {
+     "text": "600 seconds"
+    },
+    {
+     "text": "300 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Lap times: 600/3 = 200 s and 600/2 = 300 s. They are together at the start after LCM(200, 300) = 600 seconds.",
+   "order": 100,
+   "subPattern": "meeting-at-starting-point",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find each lap time, then take their LCM."
+  }
+ ]
+}

@@ -1,0 +1,1877 @@
+{
+  "questions": [
+    {
+      "questionText": "If sin θ = 8/17 (θ acute), find sec θ + tan θ.",
+      "options": [
+        "17/15",
+        "2",
+        "7/3",
+        "5/3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "cos θ = 15/17, so sec θ = 17/15 and tan θ = 8/15. Sum = 25/15.",
+      "shortcut": "Draw the triangle: hyp/adj + opp/adj = (hyp + opp)/adj.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "From a point 51 m from the foot of a tower the angle of elevation of its top is 30°. Find the height of the tower.",
+      "options": [
+        "34 sqrt(3) m",
+        "17 sqrt(3) m",
+        "17 m",
+        "51 m"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "tan 30° = 1/sqrt(3) = height/51, so height = 51/sqrt(3) = 17 sqrt(3) m.",
+      "shortcut": "tan 30° = 1/sqrt(3): height = distance/sqrt(3).",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sin 30° x sin 45° cos 45°.",
+      "options": [
+        "3/4",
+        "1/3",
+        "4",
+        "1/4"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "From the standard table, sin 30° = 1/2 and sin 45° cos 45° = 1/2. Applying the operation gives 1/4.",
+      "shortcut": "Learn the table: sin 0,30,45,60,90 = 0, 1/2, 1/sqrt2, sqrt3/2, 1.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A flagpole 42 m high subtends an angle of 60° at a point on the ground. Find the distance of the point from the foot of the pole.",
+      "options": [
+        "24 sqrt(3) m",
+        "14 sqrt(3) m",
+        "42 m",
+        "14 sqrt(2) m"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "tan 60° = sqrt(3) = 42/distance, so distance = 42/sqrt(3) = 14 sqrt(3) m.",
+      "shortcut": "distance = height / sqrt(3) when the angle is 60°.",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if tan θ + cot θ = 2, where 0° < θ < 90°.",
+      "options": [
+        "30°",
+        "43°",
+        "45°",
+        "60°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Reducing to a standard angle within the stated range gives θ = 45°.",
+      "shortcut": "Convert to a single trig function equal to a table value, then solve for θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A vertical pole is 21 m high and its shadow is 21 m long. What is the sun's angle of elevation?",
+      "options": [
+        "36°",
+        "60°",
+        "30°",
+        "45°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "tan θ = 21/21 = 1, so θ = 45°.",
+      "shortcut": "Equal height and shadow: 45°.",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Convert pi radians to degrees.",
+      "options": [
+        "90°",
+        "135°",
+        "180°",
+        "360°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Degrees = radians x 180/pi = pi x 180/pi = 180°.",
+      "shortcut": "Replace pi by 180°.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sec 20° x sin 70°.",
+      "options": [
+        "0",
+        "1/2",
+        "1",
+        "2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "sin 70° = cos 20°, and sec 20° x cos 20° = 1.",
+      "shortcut": "sec and cos are reciprocals.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sin 47° / cos 43°.",
+      "options": [
+        "2",
+        "1",
+        "0",
+        "1/2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "cos 43° = sin 47°, so the ratio = 1.",
+      "shortcut": "cos(90 - θ) = sin θ.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sec 60° + cos 90°.",
+      "options": [
+        "4",
+        "1",
+        "2",
+        "3/2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "From the standard table, sec 60° = 2 and cos 90° = 0. Applying the operation gives 2.",
+      "shortcut": "Learn the table: sin 0,30,45,60,90 = 0, 1/2, 1/sqrt2, sqrt3/2, 1.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of tan 15° x tan 75°.",
+      "options": [
+        "tan 90°",
+        "0",
+        "2",
+        "1"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "tan(90° - θ) = cot θ, so the product = tan 15° x cot 15° = 1.",
+      "shortcut": "tan θ x cot θ = 1.",
+      "subPattern": "identities",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Evaluate: (cosec 30°) x (sin 30°) + cot^2 60°",
+      "options": [
+        "7/6",
+        "2",
+        "4/3",
+        "4/5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Substitute the table values: (2) x (1/2) + 1/3 = 4/3.",
+      "shortcut": "Multiply the two values, then add the third.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Evaluate: cosec^2 60° - sin^2 30°",
+      "options": [
+        "5/4",
+        "13/14",
+        "13/12",
+        "13/11"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "From the standard table, cosec^2 60° = 4/3 and sin^2 30° = 1/4. Applying the operation gives 13/12.",
+      "shortcut": "Square the table values: sin^2 30 = 1/4, sin^2 45 = 1/2, sin^2 60 = 3/4.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Evaluate: cosec^2 30° - cot^2 60°",
+      "options": [
+        "7/3",
+        "11/4",
+        "11/3",
+        "11/5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "From the standard table, cosec^2 30° = 4 and cot^2 60° = 1/3. Applying the operation gives 11/3.",
+      "shortcut": "Square the table values: sin^2 30 = 1/4, sin^2 45 = 1/2, sin^2 60 = 3/4.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if 4 sin^2 θ = 3, where 0° < θ < 90°.",
+      "options": [
+        "120°",
+        "30°",
+        "60°",
+        "59°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Solving within the given range gives θ = 60°.",
+      "shortcut": "Reduce to a standard angle, then divide by the multiple of θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A 52 m ladder leaning against a wall makes 60° with the ground. Its foot is pulled away until it makes 30° with the ground. How far does the top of the ladder slide down?",
+      "options": [
+        "26(sqrt(3) - 1) m",
+        "26(sqrt(3) + 1) m",
+        "26 sqrt(3) m",
+        "26 m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Initial height = 52 sin 60° = 26 sqrt(3). New height = 52 sin 30° = 26. Slide = 26 sqrt(3) - 26 = 26(sqrt(3) - 1) m.",
+      "shortcut": "Subtract the two heights L sin 60° and L sin 30°.",
+      "subPattern": "heights-distances",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If sin A = cos B for acute angles A and B, find A + B.",
+      "options": [
+        "90°",
+        "180°",
+        "45°",
+        "72°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "sin A = cos B = sin(90° - B), so A = 90° - B and A + B = 90°.",
+      "shortcut": "Equal sin and cos of acute angles mean the angles are complementary.",
+      "subPattern": "identities",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A 16 m ladder rests against a wall at 30° to the ground. Its top is raised until the ladder makes 60° with the ground. By how much does the foot move towards the wall?",
+      "options": [
+        "8 sqrt(3) m",
+        "8 m",
+        "8(sqrt(3) + 1) m",
+        "8(sqrt(3) - 1) m"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Initial foot distance = 16 cos 30° = 8 sqrt(3). New = 16 cos 60° = 8. Movement = 8(sqrt(3) - 1) m.",
+      "shortcut": "Subtract L cos 60° from L cos 30°.",
+      "subPattern": "heights-distances",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tower is 65 m high. Its shadow is 65 m long. What is the angle of elevation of the sun?",
+      "options": [
+        "43°",
+        "30°",
+        "45°",
+        "60°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "tan θ = height/shadow = 65/65 = 1, so θ = 45°.",
+      "shortcut": "Equal height and shadow means 45°.",
+      "subPattern": "heights-distances",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: sin A cos A (tan A + cot A)",
+      "options": [
+        "sec^2 A",
+        "2",
+        "1",
+        "0"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to 1.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If cosec θ = 5/4 (θ acute), find cot θ.",
+      "options": [
+        "3/4",
+        "5/4",
+        "1",
+        "4/3"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "sin θ = 4/5, adjacent = 3. cot θ = adjacent/opposite = 3/4.",
+      "shortcut": "cosec = hyp/opp; the adjacent side is the third side of the triple.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sin^2 68° + sin^2 22°.",
+      "options": [
+        "2",
+        "1",
+        "0",
+        "1/2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "sin 22° = cos 68°, so sin^2 68° + cos^2 68° = 1.",
+      "shortcut": "sin^2 + cos^2 = 1.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The angle of elevation of the top of a tower from a point 35 m from its foot on level ground is 45°. Find the height of the tower.",
+      "options": [
+        "70 m",
+        "30 m",
+        "33 m",
+        "35 m"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "tan 45° = 1 = height/35, so height = 35 m.",
+      "shortcut": "At 45° the height equals the horizontal distance.",
+      "subPattern": "heights-distances",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A vertical pole 60 m high casts a shadow of 20 sqrt(3) m. What is the angle of elevation of the sun?",
+      "options": [
+        "45°",
+        "30°",
+        "48°",
+        "60°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "tan θ = 60/(20 sqrt(3)) = sqrt(3), so θ = 60°.",
+      "shortcut": "tan θ = sqrt(3) gives 60°.",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if 3 tan^2 θ = 1, where 0° < θ < 90°.",
+      "options": [
+        "32°",
+        "60°",
+        "40°",
+        "30°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Solving within the given range gives θ = 30°.",
+      "shortcut": "Reduce to a standard angle, then divide by the multiple of θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The angle of elevation of the top of a tower from a point 75 m from its foot on level ground is 45°. Find the height of the tower.",
+      "options": [
+        "150 m",
+        "100 m",
+        "75 m",
+        "50 m"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "tan 45° = 1 = height/75, so height = 75 m.",
+      "shortcut": "At 45° the height equals the horizontal distance.",
+      "subPattern": "heights-distances",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: (sec^2 A - 1) cot^2 A",
+      "options": [
+        "sin^2 A",
+        "sin A cos A",
+        "1",
+        "2 sec^2 A"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to 1.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the maximum value of 8 sin θ + 15 cos θ.",
+      "options": [
+        "15",
+        "17",
+        "23",
+        "19"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Maximum of p sin θ + q cos θ is sqrt(p^2 + q^2) = sqrt(64 + 225) = 17.",
+      "shortcut": "Max of p sin θ + q cos θ = sqrt(p^2 + q^2).",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: (1 - tan^2 A) / (1 + tan^2 A)",
+      "options": [
+        "cos^2 A - sin^2 A",
+        "2",
+        "cos^2 A",
+        "1"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to cos^2 A - sin^2 A.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the maximum value of 5 sin θ + 12 cos θ.",
+      "options": [
+        "13",
+        "17",
+        "18",
+        "14"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Maximum of p sin θ + q cos θ is sqrt(p^2 + q^2) = sqrt(25 + 144) = 13.",
+      "shortcut": "Max of p sin θ + q cos θ = sqrt(p^2 + q^2).",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the acute angle θ if sec θ = 2.",
+      "options": [
+        "60°",
+        "65°",
+        "30°",
+        "62°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rearranging gives the standard value for θ = 60°.",
+      "shortcut": "Match the value with the standard trigonometric table.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: cos^2 A (1 + tan^2 A)",
+      "options": [
+        "cot A",
+        "1",
+        "cos^2 A - sin^2 A",
+        "sin^2 A - cos^2 A"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to 1.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If cos θ = 3/5 (θ acute), find tan θ.",
+      "options": [
+        "3/4",
+        "4/3",
+        "1",
+        "7/6"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Opposite side = sqrt(5^2 - 3^2) = 4. tan θ = 4/3.",
+      "shortcut": "tan = opposite/adjacent.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Convert 7pi/6 radians to degrees.",
+      "options": [
+        "315°",
+        "252°",
+        "105°",
+        "210°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Degrees = radians x 180/pi = 7pi/6 x 180/pi = 210°.",
+      "shortcut": "Replace pi by 180°.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: tan A + cot A",
+      "options": [
+        "sin A cos A",
+        "cos^2 A - sin^2 A",
+        "sec A cosec A",
+        "sin A"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to sec A cosec A.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If tan θ = 5/3, find the value of (2 sin θ + 6 cos θ) / (5 sin θ - 2 cos θ).",
+      "options": [
+        "30/19",
+        "27/19",
+        "8/7",
+        "28/19"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Divide numerator and denominator by cos θ: (2 tan θ + 6) / (5 tan θ - 2) = (10/3 + 6) / (25/3 - 2) = 28/19 = 28/19.",
+      "shortcut": "Divide top and bottom by cos θ to turn everything into tan θ.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Evaluate: sin^2 45° + sec^2 30°",
+      "options": [
+        "11/6",
+        "2",
+        "17/12",
+        "11/5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "From the standard table, sin^2 45° = 1/2 and sec^2 30° = 4/3. Applying the operation gives 11/6.",
+      "shortcut": "Square the table values: sin^2 30 = 1/4, sin^2 45 = 1/2, sin^2 60 = 3/4.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A vertical pole is 39 m high and its shadow is 39 m long. What is the sun's angle of elevation?",
+      "options": [
+        "30°",
+        "45°",
+        "50°",
+        "60°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "tan θ = 39/39 = 1, so θ = 45°.",
+      "shortcut": "Equal height and shadow: 45°.",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If tan θ = 6/5, find the value of (5 sin θ + 1 cos θ) / (3 sin θ + 5 cos θ).",
+      "options": [
+        "39/43",
+        "35/43",
+        "3/4",
+        "37/43"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Divide numerator and denominator by cos θ: (5 tan θ + 1) / (3 tan θ + 5) = (30/5 + 1) / (18/5 + 5) = 35/43 = 35/43.",
+      "shortcut": "Divide top and bottom by cos θ to turn everything into tan θ.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if sin θ + cos θ = sqrt(2), where 0° < θ < 90°.",
+      "options": [
+        "50°",
+        "30°",
+        "45°",
+        "60°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Reducing to a standard angle within the stated range gives θ = 45°.",
+      "shortcut": "Convert to a single trig function equal to a table value, then solve for θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If sin θ = 21/29 (θ acute), find cos θ.",
+      "options": [
+        "21/20",
+        "21/29",
+        "49/58",
+        "20/29"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "cos θ = sqrt(1 - sin^2 θ) = sqrt(1 - 441/841) = 20/29.",
+      "shortcut": "Use the Pythagorean triple: opposite 21, hypotenuse 29, adjacent 20.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of cos 1° x cos 2° x cos 3° x ... x cos 89° x cos 90°.",
+      "options": [
+        "1/2",
+        "0",
+        "1",
+        "-1"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The product includes cos 90° = 0, so the whole product is 0.",
+      "shortcut": "Any product containing cos 90° is zero.",
+      "subPattern": "identities",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: (1 - sin^2 A) x sec^2 A",
+      "options": [
+        "cos A",
+        "2 cosec A",
+        "1",
+        "sec A cosec A"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to 1.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Evaluate: cos^2 60° + sin^2 45°",
+      "options": [
+        "1/2",
+        "5/4",
+        "1",
+        "3/4"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "From the standard table, cos^2 60° = 1/4 and sin^2 45° = 1/2. Applying the operation gives 3/4.",
+      "shortcut": "Square the table values: sin^2 30 = 1/4, sin^2 45 = 1/2, sin^2 60 = 3/4.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Convert 7pi/4 radians to degrees.",
+      "options": [
+        "157°",
+        "630°",
+        "420°",
+        "315°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Degrees = radians x 180/pi = 7pi/4 x 180/pi = 315°.",
+      "shortcut": "Replace pi by 180°.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sec 21° x sin 69°.",
+      "options": [
+        "0",
+        "2",
+        "1",
+        "1/2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "sin 69° = cos 21°, and sec 21° x cos 21° = 1.",
+      "shortcut": "sec and cos are reciprocals.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "From a point 33 m from the foot of a tower the angle of elevation of its top is 30°. Find the height of the tower.",
+      "options": [
+        "11 sqrt(3) m",
+        "21 sqrt(3) m",
+        "22 sqrt(3) m",
+        "11 sqrt(2) m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "tan 30° = 1/sqrt(3) = height/33, so height = 33/sqrt(3) = 11 sqrt(3) m.",
+      "shortcut": "tan 30° = 1/sqrt(3): height = distance/sqrt(3).",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of tan 80° x tan 10°.",
+      "options": [
+        "1",
+        "0",
+        "tan 90°",
+        "2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "tan(90° - θ) = cot θ, so the product = tan 80° x cot 80° = 1.",
+      "shortcut": "tan θ x cot θ = 1.",
+      "subPattern": "identities",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A 4 m ladder makes an angle of 30° with the ground. How high up the wall does it reach?",
+      "options": [
+        "2 m",
+        "4 m",
+        "3 m",
+        "1 m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Height = 4 x sin 30° = 4 x 1/2 = 2 m.",
+      "shortcut": "sin 30° = 1/2.",
+      "subPattern": "heights-distances",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A 36 m ladder leans against a vertical wall making an angle of 60° with the ground. How high up the wall does it reach?",
+      "options": [
+        "18 m",
+        "18 sqrt(3) m",
+        "36 sqrt(3) m",
+        "18 sqrt(2) m"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Height = L sin 60° = 36 x sqrt(3)/2 = 18 sqrt(3) m.",
+      "shortcut": "Height = L sin(angle with ground).",
+      "subPattern": "heights-distances",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "From a point on the ground the angle of elevation of the top of a tower is 30°. On walking 52 m towards the tower the angle of elevation becomes 60°. Find the height of the tower.",
+      "options": [
+        "26 sqrt(2) m",
+        "26 sqrt(3) m",
+        "36 sqrt(3) m",
+        "26 m"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let height h and new distance d: h = d sqrt(3) and h/(d + 52) = 1/sqrt(3) give d + 52 = 3d, so d = 26. Height = 26 sqrt(3) m.",
+      "shortcut": "For 30° to 60° the new distance is half the distance walked.",
+      "subPattern": "heights-distances",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If tan θ = 5/5, find the value of (6 sin θ + 6 cos θ) / (3 sin θ + 6 cos θ).",
+      "options": [
+        "5/3",
+        "1",
+        "7/6",
+        "4/3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Divide numerator and denominator by cos θ: (6 tan θ + 6) / (3 tan θ + 6) = (30/5 + 6) / (15/5 + 6) = 60/45 = 4/3.",
+      "shortcut": "Divide top and bottom by cos θ to turn everything into tan θ.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Evaluate: 4 cot^2 60° + cos^2 45° - tan^2 45°",
+      "options": [
+        "1",
+        "7/6",
+        "6/5",
+        "5/6"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Substitute the table values: 4 x 1/3 + 1/2 - 1 = 5/6.",
+      "shortcut": "Convert every term to a fraction first, then combine.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: (cosec A - cot A)(1 + cos A)",
+      "options": [
+        "sin A",
+        "2 cosec A",
+        "1",
+        "sec A"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to sin A.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A 24 m ladder makes an angle of 60° with the ground. How far is its foot from the wall?",
+      "options": [
+        "48 m",
+        "17 m",
+        "12 m",
+        "10 m"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Distance = 24 x cos 60° = 12 m.",
+      "shortcut": "Foot distance = L cos(angle with ground).",
+      "subPattern": "heights-distances",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the minimum value of 9 sin θ - 12 cos θ.",
+      "options": [
+        "15",
+        "-15",
+        "-21",
+        "0"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The minimum is -sqrt(9^2 + 12^2) = -15.",
+      "shortcut": "Min of p sin θ + q cos θ = -sqrt(p^2 + q^2).",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "From a point 45 m from the foot of a tower the angle of elevation of its top is 30°. Find the height of the tower.",
+      "options": [
+        "45 m",
+        "15 m",
+        "15 sqrt(3) m",
+        "25 sqrt(3) m"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "tan 30° = 1/sqrt(3) = height/45, so height = 45/sqrt(3) = 15 sqrt(3) m.",
+      "shortcut": "tan 30° = 1/sqrt(3): height = distance/sqrt(3).",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tower 30 m high is seen at an angle of elevation of 30° from a point on the ground. How far is the point from the foot of the tower?",
+      "options": [
+        "40 sqrt(3) m",
+        "30 sqrt(2) m",
+        "30 m",
+        "30 sqrt(3) m"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "tan 30° = 30/distance = 1/sqrt(3), so distance = 30 sqrt(3) m.",
+      "shortcut": "distance = height / tan 30° = height x sqrt(3).",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of tan 30° tan 60° x sin 30°.",
+      "options": [
+        "1/2",
+        "1",
+        "1/3",
+        "1/4"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "From the standard table, tan 30° tan 60° = 1 and sin 30° = 1/2. Applying the operation gives 1/2.",
+      "shortcut": "Learn the table: sin 0,30,45,60,90 = 0, 1/2, 1/sqrt2, sqrt3/2, 1.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If tan θ = 7/24 (θ acute), find sin θ + cos θ.",
+      "options": [
+        "31/25",
+        "33/25",
+        "32/25",
+        "25/31"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hypotenuse = 25. sin θ + cos θ = (7 + 24)/25 = 31/25.",
+      "shortcut": "Hypotenuse from Pythagoras, then add sin and cos.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if sin 3θ = 1, where 0° < θ < 45°.",
+      "options": [
+        "31°",
+        "30°",
+        "28°",
+        "60°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Solving within the given range gives θ = 30°.",
+      "shortcut": "Reduce to a standard angle, then divide by the multiple of θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the maximum value of 9 sin θ cos θ?",
+      "options": [
+        "9/4",
+        "9",
+        "18",
+        "9/2"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "9 sin θ cos θ = (9/2) sin 2θ, whose maximum is 9/2.",
+      "shortcut": "sin θ cos θ = (1/2) sin 2θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A vertical pole is 42 m high and its shadow is 42 m long. What is the sun's angle of elevation?",
+      "options": [
+        "30°",
+        "60°",
+        "50°",
+        "45°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "tan θ = 42/42 = 1, so θ = 45°.",
+      "shortcut": "Equal height and shadow: 45°.",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the acute angle θ if 2 cos θ = 1.",
+      "options": [
+        "120°",
+        "30°",
+        "54°",
+        "60°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rearranging gives the standard value for θ = 60°.",
+      "shortcut": "Match the value with the standard trigonometric table.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of tan 30° tan 60° + sin 45° cos 45°.",
+      "options": [
+        "3",
+        "2/3",
+        "3/2",
+        "2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "From the standard table, tan 30° tan 60° = 1 and sin 45° cos 45° = 1/2. Applying the operation gives 3/2.",
+      "shortcut": "Learn the table: sin 0,30,45,60,90 = 0, 1/2, 1/sqrt2, sqrt3/2, 1.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if sin θ cos θ = sqrt(3)/4, where 0° < θ < 45°.",
+      "options": [
+        "30°",
+        "60°",
+        "33°",
+        "45°"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Reducing to a standard angle within the stated range gives θ = 30°.",
+      "shortcut": "Convert to a single trig function equal to a table value, then solve for θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A 12 m ladder makes an angle of 30° with the ground. How high up the wall does it reach?",
+      "options": [
+        "7 m",
+        "3 m",
+        "6 m",
+        "12 m"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Height = 12 x sin 30° = 12 x 1/2 = 6 m.",
+      "shortcut": "sin 30° = 1/2.",
+      "subPattern": "heights-distances",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tower 45 m high is seen at an angle of elevation of 30° from a point on the ground. How far is the point from the foot of the tower?",
+      "options": [
+        "45 sqrt(3) m",
+        "45 sqrt(2) m",
+        "15 sqrt(3) m",
+        "45 m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "tan 30° = 45/distance = 1/sqrt(3), so distance = 45 sqrt(3) m.",
+      "shortcut": "distance = height / tan 30° = height x sqrt(3).",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Evaluate: sec^2 60° + tan^2 45°",
+      "options": [
+        "7",
+        "5",
+        "5/2",
+        "5/3"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "From the standard table, sec^2 60° = 4 and tan^2 45° = 1. Applying the operation gives 5.",
+      "shortcut": "Square the table values: sin^2 30 = 1/4, sin^2 45 = 1/2, sin^2 60 = 3/4.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sin 61° / cos 29°.",
+      "options": [
+        "0",
+        "1/2",
+        "1",
+        "2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "cos 29° = sin 61°, so the ratio = 1.",
+      "shortcut": "cos(90 - θ) = sin θ.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Evaluate: sin^2 30° + sec^2 45°",
+      "options": [
+        "9/5",
+        "4/9",
+        "2",
+        "9/4"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "From the standard table, sin^2 30° = 1/4 and sec^2 45° = 2. Applying the operation gives 9/4.",
+      "shortcut": "Square the table values: sin^2 30 = 1/4, sin^2 45 = 1/2, sin^2 60 = 3/4.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If tan θ = 6/8 (θ acute), find sin θ + cos θ.",
+      "options": [
+        "7/5",
+        "1",
+        "7/6",
+        "5/7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hypotenuse = 10. sin θ + cos θ = (6 + 8)/10 = 7/5.",
+      "shortcut": "Hypotenuse from Pythagoras, then add sin and cos.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "From a point on the ground the angle of elevation of the top of a tower is 30°. On walking 64 m towards the tower the angle of elevation becomes 60°. Find the height of the tower.",
+      "options": [
+        "32 sqrt(3) m",
+        "32 sqrt(2) m",
+        "42 sqrt(3) m",
+        "32 m"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let height h and new distance d: h = d sqrt(3) and h/(d + 64) = 1/sqrt(3) give d + 64 = 3d, so d = 32. Height = 32 sqrt(3) m.",
+      "shortcut": "For 30° to 60° the new distance is half the distance walked.",
+      "subPattern": "heights-distances",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the least value of 3 sin^2 θ + 4 cos^2 θ.",
+      "options": [
+        "2",
+        "5",
+        "4",
+        "3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Write it as 4 + (3 - 4) sin^2 θ. Since 0 <= sin^2 θ <= 1 the least value is 3.",
+      "shortcut": "Between the two coefficients, the smaller one is the minimum.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If cosec θ = 25/24 (θ acute), find cot θ.",
+      "options": [
+        "1/3",
+        "24/7",
+        "31/48",
+        "7/24"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "sin θ = 24/25, adjacent = 7. cot θ = adjacent/opposite = 7/24.",
+      "shortcut": "cosec = hyp/opp; the adjacent side is the third side of the triple.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: (sec A - tan A)(sec A + tan A)",
+      "options": [
+        "tan^2 A",
+        "cos^2 A - sin^2 A",
+        "1",
+        "2 sec^2 A"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to 1.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if 2 cos^2 θ = 1, where 0° < θ < 90°.",
+      "options": [
+        "43°",
+        "90°",
+        "47°",
+        "45°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Solving within the given range gives θ = 45°.",
+      "shortcut": "Reduce to a standard angle, then divide by the multiple of θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A vertical pole 30 m high casts a shadow of 10 sqrt(3) m. What is the angle of elevation of the sun?",
+      "options": [
+        "30°",
+        "45°",
+        "59°",
+        "60°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "tan θ = 30/(10 sqrt(3)) = sqrt(3), so θ = 60°.",
+      "shortcut": "tan θ = sqrt(3) gives 60°.",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the acute angle θ if 2 sin θ = 1.",
+      "options": [
+        "60°",
+        "24°",
+        "45°",
+        "30°"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rearranging gives the standard value for θ = 30°.",
+      "shortcut": "Match the value with the standard trigonometric table.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If cos θ = 21/29 (θ acute), find tan θ.",
+      "options": [
+        "20/21",
+        "1",
+        "21/20",
+        "20/23"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Opposite side = sqrt(29^2 - 21^2) = 20. tan θ = 20/21.",
+      "shortcut": "tan = opposite/adjacent.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sec 71° x sin 19°.",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "1/2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "sin 19° = cos 71°, and sec 71° x cos 71° = 1.",
+      "shortcut": "sec and cos are reciprocals.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: (sin A + cos A)^2 + (sin A - cos A)^2",
+      "options": [
+        "2 cosec A",
+        "2",
+        "cos^2 A",
+        "cosec^2 A"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to 2.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of tan 20° x tan 30° x tan 60° x tan 70°.",
+      "options": [
+        "1/2",
+        "1",
+        "2",
+        "0"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The angles pair up as complementary angles (x and 90-x), and tan x x tan(90 - x) = 1 for every pair, so the product is 1.",
+      "shortcut": "Pair tan x with tan(90 - x): each pair multiplies to 1.",
+      "subPattern": "identities",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the acute angle θ if cot θ = 1.",
+      "options": [
+        "44°",
+        "45°",
+        "47°",
+        "30°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rearranging gives the standard value for θ = 45°.",
+      "shortcut": "Match the value with the standard trigonometric table.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A vertical pole 42 m high casts a shadow of 14 sqrt(3) m. What is the angle of elevation of the sun?",
+      "options": [
+        "30°",
+        "60°",
+        "120°",
+        "45°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "tan θ = 42/(14 sqrt(3)) = sqrt(3), so θ = 60°.",
+      "shortcut": "tan θ = sqrt(3) gives 60°.",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the least value of 4 sin^2 θ + 2 cos^2 θ.",
+      "options": [
+        "1",
+        "3",
+        "2",
+        "4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Write it as 2 + (4 - 2) sin^2 θ. Since 0 <= sin^2 θ <= 1 the least value is 2.",
+      "shortcut": "Between the two coefficients, the smaller one is the minimum.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: (1 - cos^2 A)(1 + cot^2 A)",
+      "options": [
+        "1",
+        "cosec A",
+        "0",
+        "2 sec^2 A"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to 1.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if sin 2θ = sqrt(3)/2, where 0° < θ < 45°.",
+      "options": [
+        "36°",
+        "30°",
+        "60°",
+        "32°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Solving within the given range gives θ = 30°.",
+      "shortcut": "Reduce to a standard angle, then divide by the multiple of θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the maximum value of 8 sin θ cos θ?",
+      "options": [
+        "4",
+        "2",
+        "8",
+        "16"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "8 sin θ cos θ = (8/2) sin 2θ, whose maximum is 4.",
+      "shortcut": "sin θ cos θ = (1/2) sin 2θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If tan θ = 24/7 (θ acute), find sin θ + cos θ.",
+      "options": [
+        "6/5",
+        "31/25",
+        "31/26",
+        "33/25"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hypotenuse = 25. sin θ + cos θ = (24 + 7)/25 = 31/25.",
+      "shortcut": "Hypotenuse from Pythagoras, then add sin and cos.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: sin A x sec A x cot A",
+      "options": [
+        "sin^2 A",
+        "cot A",
+        "1",
+        "cos^2 A - sin^2 A"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to 1.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Simplify: sin A / cos A",
+      "options": [
+        "tan^2 A",
+        "tan A",
+        "2 sec^2 A",
+        "0"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using the standard identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A, the expression reduces to tan A.",
+      "shortcut": "Convert everything to sin and cos, or substitute A = 45° to test which option matches.",
+      "subPattern": "identities",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find θ if cos 2θ = 1/2, where 0° < θ < 45°.",
+      "options": [
+        "35°",
+        "60°",
+        "30°",
+        "20°"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Solving within the given range gives θ = 30°.",
+      "shortcut": "Reduce to a standard angle, then divide by the multiple of θ.",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tower 55 m high is seen at an angle of elevation of 30° from a point on the ground. How far is the point from the foot of the tower?",
+      "options": [
+        "65 sqrt(3) m",
+        "55 sqrt(3) m",
+        "165 m",
+        "55 sqrt(2) m"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "tan 30° = 55/distance = 1/sqrt(3), so distance = 55 sqrt(3) m.",
+      "shortcut": "distance = height / tan 30° = height x sqrt(3).",
+      "subPattern": "heights-distances",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the maximum value of 6 sin θ + 8 cos θ.",
+      "options": [
+        "10",
+        "20",
+        "14",
+        "11"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Maximum of p sin θ + q cos θ is sqrt(p^2 + q^2) = sqrt(36 + 64) = 10.",
+      "shortcut": "Max of p sin θ + q cos θ = sqrt(p^2 + q^2).",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "sin 28° = cos ?°. Find the missing angle.",
+      "options": [
+        "28°",
+        "62°",
+        "93°",
+        "124°"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "sin θ = cos(90° - θ), so the angle is 90 - 28 = 62°.",
+      "shortcut": "Complementary angles swap sin and cos.",
+      "subPattern": "identities",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the value of sin^2 15° + sin^2 30° + sin^2 45° + sin^2 60° + sin^2 75°.",
+      "options": [
+        "5/2",
+        "5",
+        "2",
+        "7/2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Pair sin^2 x with sin^2(90° - x) = cos^2 x: each pair gives 1. With 5 terms the value is 5/2 (the unpaired term sin^2 45° = 1/2 included if present).",
+      "shortcut": "Complementary pairs each sum to 1; sin^2 45° contributes 1/2.",
+      "subPattern": "identities",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Find the maximum value of 3 sin θ + 4 cos θ.",
+      "options": [
+        "5",
+        "6",
+        "10",
+        "7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Maximum of p sin θ + q cos θ is sqrt(p^2 + q^2) = sqrt(9 + 16) = 5.",
+      "shortcut": "Max of p sin θ + q cos θ = sqrt(p^2 + q^2).",
+      "subPattern": "maxima-minima-simplification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If sin θ = 7/25 (θ acute), find cos θ.",
+      "options": [
+        "24/25",
+        "7/24",
+        "25/24",
+        "1"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "cos θ = sqrt(1 - sin^2 θ) = sqrt(1 - 49/625) = 24/25.",
+      "shortcut": "Use the Pythagorean triple: opposite 7, hypotenuse 25, adjacent 24.",
+      "subPattern": "basic-ratios-values",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "From the top of a cliff 54 m high the angle of depression of a boat is 30°. Find the distance of the boat from the foot of the cliff.",
+      "options": [
+        "162 m",
+        "54 sqrt(3) m",
+        "54 m",
+        "18 sqrt(3) m"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Angle of depression = angle of elevation from the boat = 30°. tan 30° = 54/distance, so distance = 54 sqrt(3) m.",
+      "shortcut": "Angle of depression equals the elevation angle from the object.",
+      "subPattern": "heights-distances",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    }
+  ]
+}

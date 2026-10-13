@@ -1,0 +1,1875 @@
+{
+  "questions": [
+    {
+      "questionText": "The speed of a bus excluding stoppages is 72 km/h and including stoppages it is 60 km/h. For how many minutes does the bus stop per hour?",
+      "options": [
+        "12 minutes",
+        "11 minutes",
+        "10 minutes",
+        "5 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 1 hour the bus loses 12 km. Time to cover 12 km at 72 km/h = 12/72 h = 10 minutes.",
+      "shortcut": "Stoppage per hour = (speed difference / speed excluding stops) x 60 minutes.",
+      "subPattern": "stoppages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person covers a distance of 180 km. The first 60 km is covered at 30 km/h and the rest at 40 km/h. How much time does the whole journey take (in hours)?",
+      "options": [
+        "6 hours",
+        "5 hours",
+        "4 hours",
+        "3 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time = 60/30 + 120/40 = 2 + 3 = 5 hours.",
+      "shortcut": "Add the times of the separate parts; never average the speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cars start at the same time from two towns 150 km apart and travel towards each other at 60 km/h and 90 km/h. After how many hours do they meet?",
+      "options": [
+        "75 hours",
+        "5 hours",
+        "2 hours",
+        "1 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Relative speed (towards each other) = 60 + 90 = 150 km/h. Time = 150/150 = 1 hours.",
+      "shortcut": "Moving towards each other: speeds add.",
+      "subPattern": "meeting-overtaking",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A train's speed excluding stoppages is 60 km/h. It stops for 10 minutes every hour. What is its speed including stoppages?",
+      "options": [
+        "45 km/h",
+        "55 km/h",
+        "50 km/h",
+        "48 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "It actually runs for 50 minutes per hour. Speed including stoppages = 60 x 50/60 = 50 km/h.",
+      "shortcut": "Effective speed = speed x (running minutes / 60).",
+      "subPattern": "stoppages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ravi leaves a station at 60 km/h. Suresh leaves the same station 3 hours later in the same direction at 75 km/h. How many hours after Suresh starts will he catch up with Ravi?",
+      "options": [
+        "2.4 hours",
+        "7 hours",
+        "12 hours",
+        "24 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Head start = 60 x 3 = 180 km. Relative speed = 75 - 60 = 15 km/h. Time = 180/15 = 12 hours.",
+      "shortcut": "Chasing: speeds subtract; divide the head-start distance by the relative speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A cyclist rides at 20 km/h for 45 minutes. How many kilometres does he cover?",
+      "options": [
+        "17 km",
+        "13 km",
+        "900 km",
+        "15 km"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Distance = 20 x 45/60 = 15 km.",
+      "shortcut": "Convert minutes to hours (divide by 60) before multiplying.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A cyclist rides at 12 km/h for 15 minutes. How many kilometres does he cover?",
+      "options": [
+        "2 km",
+        "180 km",
+        "3 km",
+        "4 km"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Distance = 12 x 15/60 = 3 km.",
+      "shortcut": "Convert minutes to hours (divide by 60) before multiplying.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Convert 5 m/s into kilometres per hour.",
+      "options": [
+        "12 km/h",
+        "13 km/h",
+        "17 km/h",
+        "18 km/h"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "5 m/s = 5 x 18/5 = 18 km/h.",
+      "shortcut": "m/s to km/h: multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bus covers 240 km in 3 hours including 2 stops of 15 minutes each. What is its speed excluding stoppages?",
+      "options": [
+        "64 km/h",
+        "80 km/h",
+        "96 km/h",
+        "192 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total stoppage = 2 x 15 = 30 min = 0.5 h. Running time = 3 - 0.5 = 2.5 h. Speed = 240/2.5 = 96 km/h.",
+      "shortcut": "Subtract all stoppage time from the total time before dividing the distance.",
+      "subPattern": "stoppages",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance. Their speeds are in the ratio 2:3 (B is faster) and B takes 5 hour(s) less than A. How many hours does A take?",
+      "options": [
+        "15 hours",
+        "20 hours",
+        "10 hours",
+        "17 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Time ratio A : B = 3 : 2. Difference = 1 parts = 5 h. A's time = 3 parts = 15 hours.",
+      "shortcut": "Time ratio = inverse speed ratio; the gap of parts equals the given time difference.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man goes to his office at 60 km/h and returns at 90 km/h. If the total travelling time is 5 hours, what is the distance to the office?",
+      "options": [
+        "120 km",
+        "375 km",
+        "240 km",
+        "180 km"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let distance = x. x/60 + x/90 = 5, so x(150)/(5400) = 5 and x = 180 km.",
+      "shortcut": "One-way distance = total time x s1 x s2 / (s1 + s2).",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person covers a distance of 180 km. The first 60 km is covered at 15 km/h and the rest at 30 km/h. How much time does the whole journey take (in hours)?",
+      "options": [
+        "10 hours",
+        "6 hours",
+        "16 hours",
+        "8 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Time = 60/15 + 120/30 = 4 + 4 = 8 hours.",
+      "shortcut": "Add the times of the separate parts; never average the speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man travels a certain distance at 60 km/h and returns the same way at 90 km/h. What is his average speed for the whole journey?",
+      "options": [
+        "144 km/h",
+        "75 km/h",
+        "54 km/h",
+        "72 km/h"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "For equal distances, average speed = 2xy/(x + y) = (2 x 60 x 90)/(60 + 90) = 72 km/h.",
+      "shortcut": "Equal distances -> harmonic mean 2xy/(x+y), never the simple average.",
+      "subPattern": "average-speed",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The speed of a bus excluding stoppages is 80 km/h and including stoppages it is 60 km/h. For how many minutes does the bus stop per hour?",
+      "options": [
+        "20 minutes",
+        "10 minutes",
+        "14 minutes",
+        "15 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In 1 hour the bus loses 20 km. Time to cover 20 km at 80 km/h = 20/80 h = 15 minutes.",
+      "shortcut": "Stoppage per hour = (speed difference / speed excluding stops) x 60 minutes.",
+      "subPattern": "stoppages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance. Their speeds are in the ratio 2:5 (B is faster) and B takes 3 hour(s) less than A. How many hours does A take?",
+      "options": [
+        "4 hours",
+        "6 hours",
+        "5 hours",
+        "2 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time ratio A : B = 5 : 2. Difference = 3 parts = 3 h. A's time = 5 parts = 5 hours.",
+      "shortcut": "Time ratio = inverse speed ratio; the gap of parts equals the given time difference.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A runner covers 600 metres in 12 seconds. What is his speed in km/h?",
+      "options": [
+        "180 km/h",
+        "216 km/h",
+        "240 km/h",
+        "50 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Speed = 600/12 = 50 m/s = 50 x 18/5 = 180 km/h.",
+      "shortcut": "Find m/s first, then multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "By how many metres per second is a speed of 108 km/h greater than a speed of 5 m/s?",
+      "options": [
+        "30 m/s",
+        "26 m/s",
+        "25 m/s",
+        "103 m/s"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "108 km/h = 108 x 5/18 = 30 m/s. Difference = 30 - 5 = 25 m/s.",
+      "shortcut": "Bring both speeds to the same unit before subtracting.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cars start from points 360 km apart. Travelling towards each other they meet in 4 hours; travelling in the same direction (the faster chasing the slower) the faster overtakes the slower in 18 hours. What is the speed of the faster car?",
+      "options": [
+        "90 km/h",
+        "55 km/h",
+        "66 km/h",
+        "35 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sum of speeds = 360/4 = 90. Difference = 360/18 = 20. Faster = (90 + 20)/2 = 55 km/h.",
+      "shortcut": "Opposite directions give the sum, same direction gives the difference; then (sum + difference)/2 is the larger speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many minutes will a person take to cover 10 km at 5 km/h?",
+      "options": [
+        "2 minutes",
+        "120 minutes",
+        "144 minutes",
+        "180 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time = 10/5 hours = 10/5 x 60 = 120 minutes.",
+      "shortcut": "Multiply hours by 60 to get minutes.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The speed of a bus excluding stoppages is 36 km/h and including stoppages it is 30 km/h. For how many minutes does the bus stop per hour?",
+      "options": [
+        "20 minutes",
+        "6 minutes",
+        "9 minutes",
+        "10 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In 1 hour the bus loses 6 km. Time to cover 6 km at 36 km/h = 6/36 h = 10 minutes.",
+      "shortcut": "Stoppage per hour = (speed difference / speed excluding stops) x 60 minutes.",
+      "subPattern": "stoppages",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cars start at the same time from two towns 200 km apart and travel towards each other at 40 km/h and 60 km/h. After how many hours do they meet?",
+      "options": [
+        "2 hours",
+        "10 hours",
+        "100 hours",
+        "7 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Relative speed (towards each other) = 40 + 60 = 100 km/h. Time = 200/100 = 2 hours.",
+      "shortcut": "Moving towards each other: speeds add.",
+      "subPattern": "meeting-overtaking",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man travels a certain distance at 20 km/h and returns the same way at 30 km/h. What is his average speed for the whole journey?",
+      "options": [
+        "24 km/h",
+        "25 km/h",
+        "12 km/h",
+        "19 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For equal distances, average speed = 2xy/(x + y) = (2 x 20 x 30)/(20 + 30) = 24 km/h.",
+      "shortcut": "Equal distances -> harmonic mean 2xy/(x+y), never the simple average.",
+      "subPattern": "average-speed",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car travels for 2 hours at 30 km/h and the next 2 hours at 50 km/h. What is its average speed?",
+      "options": [
+        "40 km/h",
+        "37.5 km/h",
+        "32 km/h",
+        "20 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Equal times, so average = (x + y)/2 = (30 + 50)/2 = 40 km/h. (Total distance 160 km / total time 4 h.)",
+      "shortcut": "Equal times -> arithmetic mean of the speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person walking at 5 km/h reaches his destination 12 minutes late. Walking at 6 km/h he reaches 15 minutes early. What is the distance?",
+      "options": [
+        "15.5 km",
+        "13.5 km",
+        "14.5 km",
+        "9 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "D/5 - D/6 = (12 + 15)/60 hours. D x (1)/(30) = 0.45, so D = 13.5 km.",
+      "shortcut": "The two time gaps add: (late + early) = difference in the two travel times.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person walking at 20 km/h reaches his destination 12 minutes late. Walking at 30 km/h he reaches 15 minutes early. What is the distance?",
+      "options": [
+        "18 km",
+        "27 km",
+        "28 km",
+        "36 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "D/20 - D/30 = (12 + 15)/60 hours. D x (10)/(600) = 0.45, so D = 27 km.",
+      "shortcut": "The two time gaps add: (late + early) = difference in the two travel times.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The speeds of A and B are in the ratio 3:4. If A takes 12 hours to cover a certain distance, how long will B take to cover the same distance?",
+      "options": [
+        "4 hours",
+        "9 hours",
+        "16 hours",
+        "6 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Speeds are in the ratio 3:4, so times are in the ratio 4:3. B's time = 12 x 3/4 = 9 hours.",
+      "shortcut": "For the same distance, time ratio is the inverse of speed ratio.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bus travels at 60 km/h for 8 hours. How far does it travel?",
+      "options": [
+        "432 km",
+        "7.5 km",
+        "528 km",
+        "480 km"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Distance = speed x time = 60 x 8 = 480 km.",
+      "shortcut": "Distance = speed x time.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A runner covers 150 metres in 15 seconds. What is his speed in km/h?",
+      "options": [
+        "31 km/h",
+        "41 km/h",
+        "36 km/h",
+        "10 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Speed = 150/15 = 10 m/s = 10 x 18/5 = 36 km/h.",
+      "shortcut": "Find m/s first, then multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers a total distance of 180 km in 5.5 hours. He covers part of it at 30 km/h and the rest at 40 km/h. How many km did he cover at 30 km/h?",
+      "options": [
+        "120 km",
+        "96 km",
+        "132 km",
+        "60 km"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let x km be at 30 km/h. x/30 + (180 - x)/40 = 5.5. Solving gives x = 120 km.",
+      "shortcut": "Alligation on speeds: compare the average speed D/T with the two speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ravi leaves a station at 30 km/h. Suresh leaves the same station 3 hours later in the same direction at 60 km/h. How many hours after Suresh starts will he catch up with Ravi?",
+      "options": [
+        "1.5 hours",
+        "6 hours",
+        "3 hours",
+        "5 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Head start = 30 x 3 = 90 km. Relative speed = 60 - 30 = 30 km/h. Time = 90/30 = 3 hours.",
+      "shortcut": "Chasing: speeds subtract; divide the head-start distance by the relative speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person covers a distance of 150 km. The first 75 km is covered at 15 km/h and the rest at 30 km/h. How much time does the whole journey take (in hours)?",
+      "options": [
+        "11.25 hours",
+        "6.5 hours",
+        "2.5 hours",
+        "7.5 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Time = 75/15 + 75/30 = 5 + 2.5 = 7.5 hours.",
+      "shortcut": "Add the times of the separate parts; never average the speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person covers a journey of 1080 km. If he increases his usual speed by 5 km/h, he saves 3 hour(s). What is his usual speed?",
+      "options": [
+        "5 km/h",
+        "40 km/h",
+        "48 km/h",
+        "45 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "D/s - D/(s + 5) = 3, so 1080 x 5 = 3 x s(s + 5), giving s(s + 5) = 1800. Hence s = 40 km/h.",
+      "shortcut": "Form s(s + v) = D x v / t, then find the pair of numbers with that product that differ by v.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Karan leaves a station at 40 km/h. Mohan leaves the same station 4 hours later in the same direction at 50 km/h. How many hours after Mohan starts will he catch up with Karan?",
+      "options": [
+        "16 hours",
+        "20 hours",
+        "3.2 hours",
+        "12 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Head start = 40 x 4 = 160 km. Relative speed = 50 - 40 = 10 km/h. Time = 160/10 = 16 hours.",
+      "shortcut": "Chasing: speeds subtract; divide the head-start distance by the relative speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance. Their speeds are in the ratio 3:4 (B is faster) and B takes 3 hour(s) less than A. How many hours does A take?",
+      "options": [
+        "24 hours",
+        "13 hours",
+        "12 hours",
+        "9 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time ratio A : B = 4 : 3. Difference = 1 parts = 3 h. A's time = 4 parts = 12 hours.",
+      "shortcut": "Time ratio = inverse speed ratio; the gap of parts equals the given time difference.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person walking at 5 km/h reaches his destination 12 minutes late. Walking at 8 km/h he reaches 15 minutes early. What is the distance?",
+      "options": [
+        "3 km",
+        "6 km",
+        "4 km",
+        "11 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "D/5 - D/8 = (12 + 15)/60 hours. D x (3)/(40) = 0.45, so D = 6 km.",
+      "shortcut": "The two time gaps add: (late + early) = difference in the two travel times.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Convert 18 km/h into metres per second.",
+      "options": [
+        "7 m/s",
+        "5 m/s",
+        "3 m/s",
+        "64.8 m/s"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "18 km/h = 18 x 5/18 = 5 m/s.",
+      "shortcut": "km/h to m/s: multiply by 5/18.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man goes to his office at 60 km/h and returns at 90 km/h. If the total travelling time is 6 hours, what is the distance to the office?",
+      "options": [
+        "432 km",
+        "450 km",
+        "108 km",
+        "216 km"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let distance = x. x/60 + x/90 = 6, so x(150)/(5400) = 6 and x = 216 km.",
+      "shortcut": "One-way distance = total time x s1 x s2 / (s1 + s2).",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A runner covers 600 metres in 20 seconds. What is his speed in km/h?",
+      "options": [
+        "108 km/h",
+        "30 km/h",
+        "144 km/h",
+        "162 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Speed = 600/20 = 30 m/s = 30 x 18/5 = 108 km/h.",
+      "shortcut": "Find m/s first, then multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bus covers 240 km at 60 km/h and then 180 km at 60 km/h. What is its average speed for the whole journey?",
+      "options": [
+        "60 km/h",
+        "80 km/h",
+        "55 km/h",
+        "45 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total distance = 420 km. Total time = 240/60 + 180/60 = 7 h. Average = 420/7 = 60 km/h.",
+      "shortcut": "Average speed = total distance / total time, always.",
+      "subPattern": "average-speed",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car travels for 4 hours at 45 km/h and the next 4 hours at 55 km/h. What is its average speed?",
+      "options": [
+        "52 km/h",
+        "50 km/h",
+        "49.5 km/h",
+        "100 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Equal times, so average = (x + y)/2 = (45 + 55)/2 = 50 km/h. (Total distance 400 km / total time 8 h.)",
+      "shortcut": "Equal times -> arithmetic mean of the speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ravi leaves a station at 50 km/h. Suresh leaves the same station 4 hours later in the same direction at 70 km/h. How many hours after Suresh starts will he catch up with Ravi?",
+      "options": [
+        "10 hours",
+        "15 hours",
+        "11 hours",
+        "20 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Head start = 50 x 4 = 200 km. Relative speed = 70 - 50 = 20 km/h. Time = 200/20 = 10 hours.",
+      "shortcut": "Chasing: speeds subtract; divide the head-start distance by the relative speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Karan leaves a station at 45 km/h. Mohan leaves the same station 4 hours later in the same direction at 75 km/h. How many hours after Mohan starts will he catch up with Karan?",
+      "options": [
+        "11 hours",
+        "2.4 hours",
+        "7 hours",
+        "6 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Head start = 45 x 4 = 180 km. Relative speed = 75 - 45 = 30 km/h. Time = 180/30 = 6 hours.",
+      "shortcut": "Chasing: speeds subtract; divide the head-start distance by the relative speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many minutes will a person take to cover 18 km at 15 km/h?",
+      "options": [
+        "144 minutes",
+        "1.2 minutes",
+        "36 minutes",
+        "72 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Time = 18/15 hours = 18/15 x 60 = 72 minutes.",
+      "shortcut": "Multiply hours by 60 to get minutes.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A train's speed excluding stoppages is 60 km/h. It stops for 20 minutes every hour. What is its speed including stoppages?",
+      "options": [
+        "36 km/h",
+        "45 km/h",
+        "40 km/h",
+        "35 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "It actually runs for 40 minutes per hour. Speed including stoppages = 60 x 40/60 = 40 km/h.",
+      "shortcut": "Effective speed = speed x (running minutes / 60).",
+      "subPattern": "stoppages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man travels a certain distance at 36 km/h and returns the same way at 60 km/h. What is his average speed for the whole journey?",
+      "options": [
+        "45 km/h",
+        "30 km/h",
+        "44 km/h",
+        "48 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For equal distances, average speed = 2xy/(x + y) = (2 x 36 x 60)/(36 + 60) = 45 km/h.",
+      "shortcut": "Equal distances -> harmonic mean 2xy/(x+y), never the simple average.",
+      "subPattern": "average-speed",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers three equal distances at 20 km/h, 30 km/h and 60 km/h respectively. What is his average speed?",
+      "options": [
+        "35 km/h",
+        "30 km/h",
+        "31 km/h",
+        "25 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Take each distance = 1 unit. Total time = 1/20 + 1/30 + 1/60 = 1/10. Average = 3/that = 30 km/h.",
+      "shortcut": "Equal distances: average = n / (sum of reciprocals of speeds).",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance. Their speeds are in the ratio 5:6 (B is faster) and B takes 4 hour(s) less than A. How many hours does A take?",
+      "options": [
+        "30 hours",
+        "24 hours",
+        "20 hours",
+        "22 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time ratio A : B = 6 : 5. Difference = 1 parts = 4 h. A's time = 6 parts = 24 hours.",
+      "shortcut": "Time ratio = inverse speed ratio; the gap of parts equals the given time difference.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car travels for 6 hours at 35 km/h and the next 6 hours at 45 km/h. What is its average speed?",
+      "options": [
+        "42 km/h",
+        "20 km/h",
+        "41 km/h",
+        "40 km/h"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Equal times, so average = (x + y)/2 = (35 + 45)/2 = 40 km/h. (Total distance 480 km / total time 12 h.)",
+      "shortcut": "Equal times -> arithmetic mean of the speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bus covers 120 km at 60 km/h and then 120 km at 40 km/h. What is its average speed for the whole journey?",
+      "options": [
+        "43 km/h",
+        "50 km/h",
+        "46 km/h",
+        "48 km/h"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total distance = 240 km. Total time = 120/60 + 120/40 = 5 h. Average = 240/5 = 48 km/h.",
+      "shortcut": "Average speed = total distance / total time, always.",
+      "subPattern": "average-speed",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many hours does a train take to cover 360 km at 45 km/h?",
+      "options": [
+        "8 hours",
+        "4 hours",
+        "16200 hours",
+        "10 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Time = distance/speed = 360/45 = 8 hours.",
+      "shortcut": "Time = distance / speed.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance. Their speeds are in the ratio 2:5 (B is faster) and B takes 6 hour(s) less than A. How many hours does A take?",
+      "options": [
+        "15 hours",
+        "11 hours",
+        "10 hours",
+        "4 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time ratio A : B = 5 : 2. Difference = 3 parts = 6 h. A's time = 5 parts = 10 hours.",
+      "shortcut": "Time ratio = inverse speed ratio; the gap of parts equals the given time difference.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ravi leaves a station at 60 km/h. Suresh leaves the same station 4 hours later in the same direction at 80 km/h. How many hours after Suresh starts will he catch up with Ravi?",
+      "options": [
+        "3 hours",
+        "10 hours",
+        "16 hours",
+        "12 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Head start = 60 x 4 = 240 km. Relative speed = 80 - 60 = 20 km/h. Time = 240/20 = 12 hours.",
+      "shortcut": "Chasing: speeds subtract; divide the head-start distance by the relative speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers 3/4 of a journey in 1/2 of the total time, at 60 km/h. At what speed must he travel the rest to finish on time?",
+      "options": [
+        "22 km/h",
+        "20 km/h",
+        "10 km/h",
+        "24 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Take distance D, time T. First speed = (3/4D)/(1/2T) = 60, so D/T = 40. Remaining speed = (0.25D)/(0.5T) = 20 km/h.",
+      "shortcut": "Speed = distance fraction / time fraction (times D/T): compare the two parts.",
+      "subPattern": "average-speed",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bus covers 90 km in 3 hours including 4 stops of 15 minutes each. What is its speed excluding stoppages?",
+      "options": [
+        "60 km/h",
+        "44 km/h",
+        "30 km/h",
+        "45 km/h"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total stoppage = 4 x 15 = 60 min = 1 h. Running time = 3 - 1 = 2 h. Speed = 90/2 = 45 km/h.",
+      "shortcut": "Subtract all stoppage time from the total time before dividing the distance.",
+      "subPattern": "stoppages",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person covers a distance of 240 km. The first 60 km is covered at 15 km/h and the rest at 30 km/h. How much time does the whole journey take (in hours)?",
+      "options": [
+        "11 hours",
+        "5 hours",
+        "10 hours",
+        "15 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time = 60/15 + 180/30 = 4 + 6 = 10 hours.",
+      "shortcut": "Add the times of the separate parts; never average the speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance. Their speeds are in the ratio 4:5 (B is faster) and B takes 2 hour(s) less than A. How many hours does A take?",
+      "options": [
+        "11 hours",
+        "5 hours",
+        "10 hours",
+        "8 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time ratio A : B = 5 : 4. Difference = 1 parts = 2 h. A's time = 5 parts = 10 hours.",
+      "shortcut": "Time ratio = inverse speed ratio; the gap of parts equals the given time difference.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Karan leaves a station at 50 km/h. Mohan leaves the same station 3 hours later in the same direction at 65 km/h. How many hours after Mohan starts will he catch up with Karan?",
+      "options": [
+        "10 hours",
+        "12 hours",
+        "5 hours",
+        "8 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Head start = 50 x 3 = 150 km. Relative speed = 65 - 50 = 15 km/h. Time = 150/15 = 10 hours.",
+      "shortcut": "Chasing: speeds subtract; divide the head-start distance by the relative speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A runner covers 500 metres in 40 seconds. What is his speed in km/h?",
+      "options": [
+        "46 km/h",
+        "12.5 km/h",
+        "45 km/h",
+        "47 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Speed = 500/40 = 12.5 m/s = 12.5 x 18/5 = 45 km/h.",
+      "shortcut": "Find m/s first, then multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many minutes will a person take to cover 4 km at 20 km/h?",
+      "options": [
+        "12 minutes",
+        "14 minutes",
+        "9 minutes",
+        "0.2 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Time = 4/20 hours = 4/20 x 60 = 12 minutes.",
+      "shortcut": "Multiply hours by 60 to get minutes.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers a total distance of 180 km in 7.5 hours. He covers part of it at 20 km/h and the rest at 40 km/h. How many km did he cover at 20 km/h?",
+      "options": [
+        "60 km",
+        "120 km",
+        "150 km",
+        "132 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let x km be at 20 km/h. x/20 + (180 - x)/40 = 7.5. Solving gives x = 120 km.",
+      "shortcut": "Alligation on speeds: compare the average speed D/T with the two speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Convert 40 m/s into kilometres per hour.",
+      "options": [
+        "96 km/h",
+        "216 km/h",
+        "144 km/h",
+        "108 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "40 m/s = 40 x 18/5 = 144 km/h.",
+      "shortcut": "m/s to km/h: multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cars start at the same time from two towns 600 km apart and travel towards each other at 45 km/h and 55 km/h. After how many hours do they meet?",
+      "options": [
+        "4 hours",
+        "6 hours",
+        "300 hours",
+        "60 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Relative speed (towards each other) = 45 + 55 = 100 km/h. Time = 600/100 = 6 hours.",
+      "shortcut": "Moving towards each other: speeds add.",
+      "subPattern": "meeting-overtaking",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cars start from points 240 km apart. Travelling towards each other they meet in 2 hours; travelling in the same direction (the faster chasing the slower) the faster overtakes the slower in 12 hours. What is the speed of the faster car?",
+      "options": [
+        "70 km/h",
+        "105 km/h",
+        "120 km/h",
+        "50 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of speeds = 240/2 = 120. Difference = 240/12 = 20. Faster = (120 + 20)/2 = 70 km/h.",
+      "shortcut": "Opposite directions give the sum, same direction gives the difference; then (sum + difference)/2 is the larger speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The speeds of A and B are in the ratio 3:4. If A takes 6 hours to cover a certain distance, how long will B take to cover the same distance?",
+      "options": [
+        "4.05 hours",
+        "2.5 hours",
+        "8 hours",
+        "4.5 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Speeds are in the ratio 3:4, so times are in the ratio 4:3. B's time = 6 x 3/4 = 4.5 hours.",
+      "shortcut": "For the same distance, time ratio is the inverse of speed ratio.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car covers 216 km in 4 hours. What is its average speed?",
+      "options": [
+        "52 km/h",
+        "54 km/h",
+        "864 km/h",
+        "108 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Speed = distance/time = 216/4 = 54 km/h.",
+      "shortcut": "Speed = distance / time.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Walking at 4/5 of his usual speed, a man reaches his office 36 minutes late. What is his usual time (in minutes) to reach the office?",
+      "options": [
+        "144 minutes",
+        "108 minutes",
+        "180 minutes",
+        "45 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Speed ratio = 4:5, so time ratio = 5:4. Extra 1 parts = 36 min, so 1 part = 36. Usual time = 4 parts = 144 minutes.",
+      "shortcut": "Time is inversely proportional to speed: extra time = usual time x (5 - 4)/4.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A cyclist rides at 36 km/h for 50 minutes. How many kilometres does he cover?",
+      "options": [
+        "1800 km",
+        "30 km",
+        "29 km",
+        "60 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Distance = 36 x 50/60 = 30 km.",
+      "shortcut": "Convert minutes to hours (divide by 60) before multiplying.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man travels a certain distance at 30 km/h and returns the same way at 20 km/h. What is his average speed for the whole journey?",
+      "options": [
+        "24 km/h",
+        "29 km/h",
+        "12 km/h",
+        "25 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For equal distances, average speed = 2xy/(x + y) = (2 x 30 x 20)/(30 + 20) = 24 km/h.",
+      "shortcut": "Equal distances -> harmonic mean 2xy/(x+y), never the simple average.",
+      "subPattern": "average-speed",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers a total distance of 180 km in 8 hours. He covers part of it at 20 km/h and the rest at 30 km/h. How many km did he cover at 20 km/h?",
+      "options": [
+        "90 km",
+        "144 km",
+        "120 km",
+        "60 km"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let x km be at 20 km/h. x/20 + (180 - x)/30 = 8. Solving gives x = 120 km.",
+      "shortcut": "Alligation on speeds: compare the average speed D/T with the two speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The speeds of A and B are in the ratio 2:3. If A takes 15 hours to cover a certain distance, how long will B take to cover the same distance?",
+      "options": [
+        "8 hours",
+        "10 hours",
+        "22.5 hours",
+        "9 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Speeds are in the ratio 2:3, so times are in the ratio 3:2. B's time = 15 x 2/3 = 10 hours.",
+      "shortcut": "For the same distance, time ratio is the inverse of speed ratio.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance and their speeds are in the ratio 3:4. A's speed is 60 km/h and B reaches 1 hour(s) earlier than A. What is the distance?",
+      "options": [
+        "60 km",
+        "288 km",
+        "240 km",
+        "120 km"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time ratio A : B = 4 : 3, so A takes 4 parts and B 3 parts; 1 parts = 1 h. A's time = 4 h. Distance = 60 x 4 = 240 km.",
+      "shortcut": "Find A's time from the ratio, then distance = speed x time.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person walking at 30 km/h reaches his destination 12 minutes late. Walking at 40 km/h he reaches 12 minutes early. What is the distance?",
+      "options": [
+        "24 km",
+        "48 km",
+        "32 km",
+        "53 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "D/30 - D/40 = (12 + 12)/60 hours. D x (10)/(1200) = 0.4, so D = 48 km.",
+      "shortcut": "The two time gaps add: (late + early) = difference in the two travel times.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person walking at 20 km/h reaches his destination 15 minutes late. Walking at 30 km/h he reaches 12 minutes early. What is the distance?",
+      "options": [
+        "22 km",
+        "36 km",
+        "18 km",
+        "27 km"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "D/20 - D/30 = (15 + 12)/60 hours. D x (10)/(600) = 0.45, so D = 27 km.",
+      "shortcut": "The two time gaps add: (late + early) = difference in the two travel times.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers three equal distances at 10 km/h, 15 km/h and 30 km/h respectively. What is his average speed?",
+      "options": [
+        "10 km/h",
+        "16 km/h",
+        "15 km/h",
+        "12 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Take each distance = 1 unit. Total time = 1/10 + 1/15 + 1/30 = 1/5. Average = 3/that = 15 km/h.",
+      "shortcut": "Equal distances: average = n / (sum of reciprocals of speeds).",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Walking at 3/5 of his usual speed, a man reaches his office 12 minutes late. What is his usual time (in minutes) to reach the office?",
+      "options": [
+        "24 minutes",
+        "18 minutes",
+        "20 minutes",
+        "60 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Speed ratio = 3:5, so time ratio = 5:3. Extra 2 parts = 12 min, so 1 part = 6. Usual time = 3 parts = 18 minutes.",
+      "shortcut": "Time is inversely proportional to speed: extra time = usual time x (5 - 3)/3.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers 3/4 of a journey in 1/2 of the total time, at 24 km/h. At what speed must he travel the rest to finish on time?",
+      "options": [
+        "4 km/h",
+        "8 km/h",
+        "12 km/h",
+        "16 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Take distance D, time T. First speed = (3/4D)/(1/2T) = 24, so D/T = 16. Remaining speed = (0.25D)/(0.5T) = 8 km/h.",
+      "shortcut": "Speed = distance fraction / time fraction (times D/T): compare the two parts.",
+      "subPattern": "average-speed",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A runner covers 100 metres in 40 seconds. What is his speed in km/h?",
+      "options": [
+        "10 km/h",
+        "11 km/h",
+        "9 km/h",
+        "2.5 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Speed = 100/40 = 2.5 m/s = 2.5 x 18/5 = 9 km/h.",
+      "shortcut": "Find m/s first, then multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car covers 240 km in 5 hours. What is its average speed?",
+      "options": [
+        "24 km/h",
+        "43 km/h",
+        "1200 km/h",
+        "48 km/h"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Speed = distance/time = 240/5 = 48 km/h.",
+      "shortcut": "Speed = distance / time.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A runner covers 100 metres in 20 seconds. What is his speed in km/h?",
+      "options": [
+        "36 km/h",
+        "18 km/h",
+        "5 km/h",
+        "16 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Speed = 100/20 = 5 m/s = 5 x 18/5 = 18 km/h.",
+      "shortcut": "Find m/s first, then multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A train's speed excluding stoppages is 80 km/h. It stops for 30 minutes every hour. What is its speed including stoppages?",
+      "options": [
+        "48 km/h",
+        "40 km/h",
+        "50 km/h",
+        "32 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "It actually runs for 30 minutes per hour. Speed including stoppages = 80 x 30/60 = 40 km/h.",
+      "shortcut": "Effective speed = speed x (running minutes / 60).",
+      "subPattern": "stoppages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance. Their speeds are in the ratio 2:3 (B is faster) and B takes 3 hour(s) less than A. How many hours does A take?",
+      "options": [
+        "9 hours",
+        "6 hours",
+        "14 hours",
+        "7 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Time ratio A : B = 3 : 2. Difference = 1 parts = 3 h. A's time = 3 parts = 9 hours.",
+      "shortcut": "Time ratio = inverse speed ratio; the gap of parts equals the given time difference.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers a total distance of 100 km in 4 hours. He covers part of it at 20 km/h and the rest at 40 km/h. How many km did he cover at 20 km/h?",
+      "options": [
+        "60 km",
+        "40 km",
+        "54 km",
+        "120 km"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let x km be at 20 km/h. x/20 + (100 - x)/40 = 4. Solving gives x = 60 km.",
+      "shortcut": "Alligation on speeds: compare the average speed D/T with the two speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A train's speed excluding stoppages is 60 km/h. It stops for 30 minutes every hour. What is its speed including stoppages?",
+      "options": [
+        "20 km/h",
+        "40 km/h",
+        "30 km/h",
+        "15 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "It actually runs for 30 minutes per hour. Speed including stoppages = 60 x 30/60 = 30 km/h.",
+      "shortcut": "Effective speed = speed x (running minutes / 60).",
+      "subPattern": "stoppages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Walking at 3/5 of his usual speed, a man reaches his office 30 minutes late. What is his usual time (in minutes) to reach the office?",
+      "options": [
+        "54 minutes",
+        "150 minutes",
+        "45 minutes",
+        "50 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Speed ratio = 3:5, so time ratio = 5:3. Extra 2 parts = 30 min, so 1 part = 15. Usual time = 3 parts = 45 minutes.",
+      "shortcut": "Time is inversely proportional to speed: extra time = usual time x (5 - 3)/3.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person walking at 30 km/h reaches his destination 12 minutes late. Walking at 40 km/h he reaches 15 minutes early. What is the distance?",
+      "options": [
+        "54 km",
+        "52 km",
+        "27 km",
+        "36 km"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "D/30 - D/40 = (12 + 15)/60 hours. D x (10)/(1200) = 0.45, so D = 54 km.",
+      "shortcut": "The two time gaps add: (late + early) = difference in the two travel times.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A and B travel the same distance and their speeds are in the ratio 3:4. A's speed is 40 km/h and B reaches 5 hour(s) earlier than A. What is the distance?",
+      "options": [
+        "880 km",
+        "200 km",
+        "800 km",
+        "960 km"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Time ratio A : B = 4 : 3, so A takes 4 parts and B 3 parts; 1 parts = 5 h. A's time = 20 h. Distance = 40 x 20 = 800 km.",
+      "shortcut": "Find A's time from the ratio, then distance = speed x time.",
+      "subPattern": "ratio-of-speeds-and-times",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car travels for 6 hours at 25 km/h and the next 6 hours at 35 km/h. What is its average speed?",
+      "options": [
+        "15 km/h",
+        "35 km/h",
+        "33 km/h",
+        "30 km/h"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Equal times, so average = (x + y)/2 = (25 + 35)/2 = 30 km/h. (Total distance 360 km / total time 12 h.)",
+      "shortcut": "Equal times -> arithmetic mean of the speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers 3/4 of a journey in 1/2 of the total time, at 48 km/h. At what speed must he travel the rest to finish on time?",
+      "options": [
+        "16 km/h",
+        "32 km/h",
+        "11 km/h",
+        "14 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Take distance D, time T. First speed = (3/4D)/(1/2T) = 48, so D/T = 32. Remaining speed = (0.25D)/(0.5T) = 16 km/h.",
+      "shortcut": "Speed = distance fraction / time fraction (times D/T): compare the two parts.",
+      "subPattern": "average-speed",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bus covers 90 km at 20 km/h and then 90 km at 60 km/h. What is its average speed for the whole journey?",
+      "options": [
+        "30 km/h",
+        "60 km/h",
+        "40 km/h",
+        "31 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total distance = 180 km. Total time = 90/20 + 90/60 = 6 h. Average = 180/6 = 30 km/h.",
+      "shortcut": "Average speed = total distance / total time, always.",
+      "subPattern": "average-speed",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "By how many metres per second is a speed of 126 km/h greater than a speed of 12 m/s?",
+      "options": [
+        "23 m/s",
+        "22 m/s",
+        "24 m/s",
+        "114 m/s"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "126 km/h = 126 x 5/18 = 35 m/s. Difference = 35 - 12 = 23 m/s.",
+      "shortcut": "Bring both speeds to the same unit before subtracting.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A person covers a journey of 240 km. If he increases his usual speed by 20 km/h, he saves 1 hour(s). What is his usual speed?",
+      "options": [
+        "30 km/h",
+        "60 km/h",
+        "80 km/h",
+        "20 km/h"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "D/s - D/(s + 20) = 1, so 240 x 20 = 1 x s(s + 20), giving s(s + 20) = 4800. Hence s = 60 km/h.",
+      "shortcut": "Form s(s + v) = D x v / t, then find the pair of numbers with that product that differ by v.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two cars start from points 160 km apart. Travelling towards each other they meet in 2 hours; travelling in the same direction (the faster chasing the slower) the faster overtakes the slower in 8 hours. What is the speed of the faster car?",
+      "options": [
+        "30 km/h",
+        "60 km/h",
+        "50 km/h",
+        "80 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of speeds = 160/2 = 80. Difference = 160/8 = 20. Faster = (80 + 20)/2 = 50 km/h.",
+      "shortcut": "Opposite directions give the sum, same direction gives the difference; then (sum + difference)/2 is the larger speed.",
+      "subPattern": "chase-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers a total distance of 180 km in 5 hours. He covers part of it at 30 km/h and the rest at 40 km/h. How many km did he cover at 30 km/h?",
+      "options": [
+        "120 km",
+        "40 km",
+        "48 km",
+        "60 km"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let x km be at 30 km/h. x/30 + (180 - x)/40 = 5. Solving gives x = 60 km.",
+      "shortcut": "Alligation on speeds: compare the average speed D/T with the two speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The speed of a bus excluding stoppages is 60 km/h and including stoppages it is 45 km/h. For how many minutes does the bus stop per hour?",
+      "options": [
+        "17 minutes",
+        "14 minutes",
+        "12 minutes",
+        "15 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In 1 hour the bus loses 15 km. Time to cover 15 km at 60 km/h = 15/60 h = 15 minutes.",
+      "shortcut": "Stoppage per hour = (speed difference / speed excluding stops) x 60 minutes.",
+      "subPattern": "stoppages",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A train's speed excluding stoppages is 72 km/h. It stops for 20 minutes every hour. What is its speed including stoppages?",
+      "options": [
+        "48 km/h",
+        "53 km/h",
+        "52 km/h",
+        "36 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "It actually runs for 40 minutes per hour. Speed including stoppages = 72 x 40/60 = 48 km/h.",
+      "shortcut": "Effective speed = speed x (running minutes / 60).",
+      "subPattern": "stoppages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Convert 20 m/s into kilometres per hour.",
+      "options": [
+        "36 km/h",
+        "90 km/h",
+        "48 km/h",
+        "72 km/h"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "20 m/s = 20 x 18/5 = 72 km/h.",
+      "shortcut": "m/s to km/h: multiply by 18/5.",
+      "subPattern": "unit-conversion-basics",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man covers a total distance of 140 km in 3 hours. He covers part of it at 40 km/h and the rest at 60 km/h. How many km did he cover at 40 km/h?",
+      "options": [
+        "96 km",
+        "80 km",
+        "60 km",
+        "160 km"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let x km be at 40 km/h. x/40 + (140 - x)/60 = 3. Solving gives x = 80 km.",
+      "shortcut": "Alligation on speeds: compare the average speed D/T with the two speeds.",
+      "subPattern": "average-speed",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A train's speed excluding stoppages is 54 km/h. It stops for 15 minutes every hour. What is its speed including stoppages?",
+      "options": [
+        "42.5 km/h",
+        "39 km/h",
+        "40.5 km/h",
+        "60.75 km/h"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "It actually runs for 45 minutes per hour. Speed including stoppages = 54 x 45/60 = 40.5 km/h.",
+      "shortcut": "Effective speed = speed x (running minutes / 60).",
+      "subPattern": "stoppages",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A bus covers 180 km in 2 hours including 3 stops of 10 minutes each. What is its speed excluding stoppages?",
+      "options": [
+        "120 km/h",
+        "90 km/h",
+        "180 km/h",
+        "80 km/h"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total stoppage = 3 x 10 = 30 min = 0.5 h. Running time = 2 - 0.5 = 1.5 h. Speed = 180/1.5 = 120 km/h.",
+      "shortcut": "Subtract all stoppage time from the total time before dividing the distance.",
+      "subPattern": "stoppages",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Walking at 5/6 of his usual speed, a man reaches his office 20 minutes late. What is his usual time (in minutes) to reach the office?",
+      "options": [
+        "120 minutes",
+        "24 minutes",
+        "80 minutes",
+        "100 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Speed ratio = 5:6, so time ratio = 6:5. Extra 1 parts = 20 min, so 1 part = 20. Usual time = 5 parts = 100 minutes.",
+      "shortcut": "Time is inversely proportional to speed: extra time = usual time x (6 - 5)/5.",
+      "subPattern": "late-early-arrival",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}

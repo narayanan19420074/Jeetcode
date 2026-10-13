@@ -1,0 +1,1871 @@
+{
+  "questions": [
+    {
+      "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 88. If the digits differ by 2 and the tens digit is larger, what is the number?",
+      "options": [
+        "48",
+        "53",
+        "51",
+        "35"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Number + reverse = 11(a + b) = 88, so a + b = 8. With a - b = 2: a = 5, b = 3. The number is 53.",
+      "shortcut": "Number + reverse = 11 x (sum of digits).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the value of 1^2 + 2^2 + 3^2 + ... + 12^2?",
+      "options": [
+        "6084",
+        "650",
+        "325",
+        "520"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sum of squares = n(n + 1)(2n + 1)/6 = 12 x 13 x 25/6 = 650.",
+      "shortcut": "n(n+1)(2n+1)/6.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 3^49 x 2^93?",
+      "options": [
+        "6",
+        "7",
+        "4",
+        "3"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unit digit of 3^49 = 3. Unit digit of 2^93 = 2. Product 3 x 2 ends in 6.",
+      "shortcut": "Find each unit digit separately, multiply them, keep the last digit.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the highest power of 7 that divides 120! exactly?",
+      "options": [
+        "18",
+        "17",
+        "19",
+        "38"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Highest power = floor(120/7) + floor(120/49) = 17 + 2 = 19.",
+      "shortcut": "Legendre: add the integer parts of n/p, n/p^2, n/p^3 and so on.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a two-digit number the digits are in the ratio 4:1 (tens : units). If the number exceeds the number formed by reversing its digits by 54, what is the number?",
+      "options": [
+        "82",
+        "123",
+        "28",
+        "164"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let the digits be 4x and 1x. Number - reversed = 9(4x - 1x) = 54, so x = 2. Digits = 8 and 2; the number is 82.",
+      "shortcut": "Express both digits using one unknown x and use number - reverse = 9(a - b).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the least number that must be subtracted from 8194 to make it a perfect square?",
+      "options": [
+        "87",
+        "47",
+        "94",
+        "188"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The nearest square below 8194 is 90^2 = 8100. Subtract 8194 - 8100 = 94.",
+      "shortcut": "Subtract the nearest perfect square below the number.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number 836x8 (x is a single digit) is divisible by 9, what is the value of x?",
+      "options": [
+        "5",
+        "9",
+        "7",
+        "2"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Digit sum of the other digits = 25. Total must be a multiple of 9, so x = 2 (number 83628).",
+      "shortcut": "A number is divisible by 9 if the sum of its digits is divisible by 9.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 64230 is divided by 11?",
+      "options": [
+        "4",
+        "5",
+        "1",
+        "9"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "64230 = 11 x 5839 + 1, so the remainder is 1.",
+      "shortcut": "Divide and keep the leftover.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many positive factors of 50 are perfect squares?",
+      "options": [
+        "7",
+        "3",
+        "6",
+        "2"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "50 = 2 x 5^2. A square factor needs even exponents: (0 + 1) x (1 + 1) = 2.",
+      "shortcut": "Square factors: use exponents 0, 2, 4, ... up to each prime's exponent.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 3^136?",
+      "options": [
+        "1",
+        "4",
+        "7",
+        "6"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The unit digits of powers of 3 repeat every 4 steps: 3, 9, 7, 1. 136 mod 4 = 0, so the unit digit is 1.",
+      "shortcut": "Find the cycle of unit digits, reduce the power modulo the cycle length.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many positive factors does 24 have?",
+      "options": [
+        "8",
+        "4",
+        "16",
+        "7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "24 = 2^3 x 3. Number of factors = (3 + 1) x (1 + 1) = 8.",
+      "shortcut": "Add 1 to each exponent and multiply.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 11^40 is divided by 9?",
+      "options": [
+        "3",
+        "6",
+        "0",
+        "7"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Powers of 11 mod 9 repeat every 6: 2, 4, 8, 7, 5, 1. 40 mod 6 = 4, so the remainder is 7.",
+      "shortcut": "Find the cycle of remainders, then reduce the power modulo the cycle length.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many positive factors does 441 have?",
+      "options": [
+        "8",
+        "4",
+        "6",
+        "9"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "441 = 3^2 x 7^2. Number of factors = (2 + 1) x (2 + 1) = 9.",
+      "shortcut": "Add 1 to each exponent and multiply.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many positive factors of 1323 are perfect squares?",
+      "options": [
+        "6",
+        "3",
+        "4",
+        "12"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "1323 = 3^3 x 7^2. A square factor needs even exponents: (1 + 1) x (1 + 1) = 4.",
+      "shortcut": "Square factors: use exponents 0, 2, 4, ... up to each prime's exponent.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 187. If the digits differ by 1 and the tens digit is larger, what is the number?",
+      "options": [
+        "196",
+        "49",
+        "98",
+        "89"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Number + reverse = 11(a + b) = 187, so a + b = 17. With a - b = 1: a = 9, b = 8. The number is 98.",
+      "shortcut": "Number + reverse = 11 x (sum of digits).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 4^52 x 8^143?",
+      "options": [
+        "2",
+        "5",
+        "8",
+        "9"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unit digit of 4^52 = 6. Unit digit of 8^143 = 2. Product 6 x 2 ends in 2.",
+      "shortcut": "Find each unit digit separately, multiply them, keep the last digit.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the smallest number by which 968 must be multiplied to make it a perfect square?",
+      "options": [
+        "484",
+        "2",
+        "1",
+        "4"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "968 = 2^3 x 11^2. Primes with odd powers: 2. Their product = 2, and 968 x 2 = 1936 = 44^2.",
+      "shortcut": "Multiply by each prime that appears an odd number of times.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number 6883x (x is a single digit) is divisible by 11, what is the value of x?",
+      "options": [
+        "3",
+        "8",
+        "1",
+        "0"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Digits of 68838: odd-place sum = 22, even-place sum = 11. The difference must be 0 or a multiple of 11, which gives x = 8.",
+      "shortcut": "A number is divisible by 11 if (sum of digits at odd places) - (sum at even places) is 0 or a multiple of 11.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of all numbers between 90 and 450 that are divisible by 9?",
+      "options": [
+        "10980",
+        "10431",
+        "10530",
+        "12636"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "First = 99, last = 441, count = 39. Sum = count x (first + last)/2 = 39 x 540/2 = 10530.",
+      "shortcut": "Evenly spaced terms: sum = count x (first + last)/2.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 1! + 2! + 3! + ... + 68!?",
+      "options": [
+        "1",
+        "7",
+        "3",
+        "9"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "From 5! onwards every factorial ends in 0. So only 1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33 matters. The unit digit is 3.",
+      "shortcut": "Factorials from 5! upward end in 0, so add only the first four.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many zeros are there at the end of 60! (factorial)?",
+      "options": [
+        "19",
+        "14",
+        "13",
+        "12"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Zeros = number of factors of 5 in 60! = 12 + 2 = 14.",
+      "shortcut": "Divide by 5, 25, 125, ... and add the quotients.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the value of 1^2 + 2^2 + 3^2 + ... + 9^2?",
+      "options": [
+        "570",
+        "2025",
+        "342",
+        "285"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of squares = n(n + 1)(2n + 1)/6 = 9 x 10 x 19/6 = 285.",
+      "shortcut": "n(n+1)(2n+1)/6.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 9^64 x 3^69?",
+      "options": [
+        "7",
+        "3",
+        "9",
+        "4"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Unit digit of 9^64 = 1. Unit digit of 3^69 = 3. Product 1 x 3 ends in 3.",
+      "shortcut": "Find each unit digit separately, multiply them, keep the last digit.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 2^197?",
+      "options": [
+        "3",
+        "2",
+        "8",
+        "7"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The unit digits of powers of 2 repeat every 4 steps: 2, 4, 8, 6. 197 mod 4 = 1, so the unit digit is 2.",
+      "shortcut": "Find the cycle of unit digits, reduce the power modulo the cycle length.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of the first 50 even natural numbers?",
+      "options": [
+        "2500",
+        "2550",
+        "1275",
+        "2805"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sum of the first 50 even natural numbers = n(n + 1) = 50 x 51 = 2550.",
+      "shortcut": "n(n+1)",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which of the following numbers is exactly divisible by 4?",
+      "options": [
+        "801",
+        "799",
+        "803",
+        "800"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "800 / 4 = 200 exactly. The others leave remainders: 803 -> 3, 799 -> 3, 801 -> 1.",
+      "shortcut": "A number is divisible by 4 if its last two digits are divisible by 4.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 3^126 x 7^47?",
+      "options": [
+        "9",
+        "5",
+        "3",
+        "7"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Unit digit of 3^126 = 9. Unit digit of 7^47 = 3. Product 9 x 3 ends in 7.",
+      "shortcut": "Find each unit digit separately, multiply them, keep the last digit.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 263 x 837 x 984 is divided by 17?",
+      "options": [
+        "4",
+        "0",
+        "1",
+        "5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Remainders: 263 -> 8, 837 -> 4, 984 -> 15. Product of remainders = 480, which leaves 4 when divided by 17.",
+      "shortcut": "Multiply the individual remainders, then take the remainder again.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number 4x72 (x is a single digit) is divisible by 11, what is the value of x?",
+      "options": [
+        "9",
+        "1",
+        "5",
+        "6"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Digits of 4972: odd-place sum = 11, even-place sum = 11. For 11 the difference must be 0 or a multiple of 11, which gives x = 9.",
+      "shortcut": "A number is divisible by 11 if (sum of digits at odd places) - (sum at even places) is 0 or a multiple of 11.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many zeros are there at the end of the product 6^6 x 10^6 x 15^2?",
+      "options": [
+        "16",
+        "12",
+        "10",
+        "8"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total power of 2 = 12, total power of 5 = 8. Each zero needs one 2 and one 5, so zeros = min(12, 8) = 8.",
+      "shortcut": "Count the 2s and 5s in the prime factorisation; zeros = the smaller count.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which of the following numbers is exactly divisible by 9?",
+      "options": [
+        "479",
+        "486",
+        "491",
+        "494"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "486 / 9 = 54 exactly. The others leave remainders: 494 -> 8, 479 -> 2, 491 -> 5.",
+      "shortcut": "A number is divisible by 9 if the sum of its digits is divisible by 9.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the least number that must be added to 2787 to make it a perfect square?",
+      "options": [
+        "83",
+        "17",
+        "22",
+        "33"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The next square above 2787 is 53^2 = 2809. Add 2809 - 2787 = 22.",
+      "shortcut": "Add the gap up to the next perfect square.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of all numbers between 51 and 315 that are divisible by 6?",
+      "options": [
+        "8052",
+        "7998",
+        "8370",
+        "6039"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "First = 54, last = 312, count = 44. Sum = count x (first + last)/2 = 44 x 366/2 = 8052.",
+      "shortcut": "Evenly spaced terms: sum = count x (first + last)/2.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 4^26 is divided by 7?",
+      "options": [
+        "2",
+        "6",
+        "3",
+        "0"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Powers of 4 mod 7 repeat every 3: 4, 2, 1. 26 mod 3 = 2, so the remainder is 2.",
+      "shortcut": "Find the cycle of remainders, then reduce the power modulo the cycle length.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of all positive factors of 1250?",
+      "options": [
+        "1562",
+        "10",
+        "2343",
+        "1251"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "1250 = 2 x 5^4. Sum of factors = (1+2) x (1+5+25+125+625) = 2343.",
+      "shortcut": "Sum of factors = product of (1 + p + ... + p^e) over the prime powers.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number 341x6 (x is a single digit) is divisible by 9, what is the value of x?",
+      "options": [
+        "6",
+        "4",
+        "0",
+        "7"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Digit sum of the other digits = 14. Total must be a multiple of 9, so x = 4 (number 34146).",
+      "shortcut": "A number is divisible by 9 if the sum of its digits is divisible by 9.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the smallest number by which 250 must be multiplied to make it a perfect cube?",
+      "options": [
+        "3",
+        "9",
+        "4",
+        "62"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "250 = 2 x 5^3. For a cube every exponent must be a multiple of 3, so multiply by 2^2 = 4.",
+      "shortcut": "Raise each prime's exponent to the next multiple of 3.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd positive factors does 7056 have?",
+      "options": [
+        "45",
+        "8",
+        "6",
+        "9"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "7056 = 2^4 x 3^2 x 7^2. Ignore the power of 2; odd factors = (2 + 1) x (2 + 1) = 9.",
+      "shortcut": "Odd factors come only from the odd prime powers.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which of the following numbers is exactly divisible by 11?",
+      "options": [
+        "539",
+        "534",
+        "542",
+        "538"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "539 / 11 = 49 exactly. The others leave remainders: 538 -> 10, 534 -> 6, 542 -> 3.",
+      "shortcut": "A number is divisible by 11 if (sum of digits at odd places) - (sum at even places) is 0 or a multiple of 11.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 66. If the digits differ by 2 and the tens digit is larger, what is the number?",
+      "options": [
+        "43",
+        "63",
+        "42",
+        "24"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Number + reverse = 11(a + b) = 66, so a + b = 6. With a - b = 2: a = 4, b = 2. The number is 42.",
+      "shortcut": "Number + reverse = 11 x (sum of digits).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 2^125?",
+      "options": [
+        "0",
+        "6",
+        "2",
+        "3"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The unit digits of powers of 2 repeat every 4 steps: 2, 4, 8, 6. 125 mod 4 = 1, so the unit digit is 2.",
+      "shortcut": "Find the cycle of unit digits, reduce the power modulo the cycle length.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the least number that must be added to 55291 so that the result is exactly divisible by 18?",
+      "options": [
+        "5",
+        "6",
+        "13",
+        "7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "55291 = 3071 x 18 + 13. Remainder = 13, so the least number to add = 18 - 13 = 5.",
+      "shortcut": "Least number to add = divisor - remainder.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many zeros are there at the end of 200! (factorial)?",
+      "options": [
+        "40",
+        "50",
+        "54",
+        "49"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Zeros = number of factors of 5 in 200! = 40 + 8 + 1 = 49.",
+      "shortcut": "Divide by 5, 25, 125, ... and add the quotients.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 52310 is divided by 13?",
+      "options": [
+        "3",
+        "8",
+        "11",
+        "0"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "52310 = 13 x 4023 + 11, so the remainder is 11.",
+      "shortcut": "Divide and keep the leftover.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the value of 1^3 + 2^3 + 3^3 + ... + 9^3?",
+      "options": [
+        "2700",
+        "2430",
+        "285",
+        "2025"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of cubes = [n(n + 1)/2]^2 = (45)^2 = 2025.",
+      "shortcut": "Sum of cubes = (sum of first n numbers)^2.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 55. If the digits differ by 5 and the tens digit is larger, what is the number?",
+      "options": [
+        "5",
+        "45",
+        "50",
+        "55"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Number + reverse = 11(a + b) = 55, so a + b = 5. With a - b = 5: a = 5, b = 0. The number is 50.",
+      "shortcut": "Number + reverse = 11 x (sum of digits).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many zeros are there at the end of 75! (factorial)?",
+      "options": [
+        "36",
+        "18",
+        "16",
+        "15"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Zeros = number of factors of 5 in 75! = 15 + 3 = 18.",
+      "shortcut": "Divide by 5, 25, 125, ... and add the quotients.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 110. If the digits differ by 6 and the tens digit is larger, what is the number?",
+      "options": [
+        "41",
+        "164",
+        "28",
+        "82"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Number + reverse = 11(a + b) = 110, so a + b = 10. With a - b = 6: a = 8, b = 2. The number is 82.",
+      "shortcut": "Number + reverse = 11 x (sum of digits).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of all positive factors of 18522?",
+      "options": [
+        "43200",
+        "18523",
+        "32",
+        "48000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "18522 = 2 x 3^3 x 7^3. Sum of factors = (1+2) x (1+3+9+27) x (1+7+49+343) = 48000.",
+      "shortcut": "Sum of factors = product of (1 + p + ... + p^e) over the prime powers.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of the first 20 even natural numbers?",
+      "options": [
+        "400",
+        "420",
+        "378",
+        "504"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sum of the first 20 even natural numbers = n(n + 1) = 20 x 21 = 420.",
+      "shortcut": "n(n+1)",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 22532 is divided by 18?",
+      "options": [
+        "7",
+        "14",
+        "15",
+        "2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "22532 = 18 x 1251 + 14, so the remainder is 14.",
+      "shortcut": "Divide and keep the leftover.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of the digits of a two-digit number is 6. If the number exceeds the number formed by reversing its digits by 18, what is the number?",
+      "options": [
+        "44",
+        "42",
+        "37",
+        "24"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let the number be 10a + b. a + b = 6 and 9(a - b) = 18, so a - b = 2. Then a = 4, b = 2 and the number is 42.",
+      "shortcut": "Number - reversed = 9 x (tens digit - units digit).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the highest power of 2 that divides 150! exactly?",
+      "options": [
+        "292",
+        "75",
+        "219",
+        "146"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Highest power = floor(150/2) + floor(150/4) + floor(150/8) + floor(150/16) + floor(150/32) + floor(150/64) + floor(150/128) = 75 + 37 + 18 + 9 + 4 + 2 + 1 = 146.",
+      "shortcut": "Legendre: add the integer parts of n/p, n/p^2, n/p^3 and so on.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the smallest number by which 1200 must be multiplied to make it a perfect square?",
+      "options": [
+        "3",
+        "4",
+        "400",
+        "8"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1200 = 2^4 x 3 x 5^2. Primes with odd powers: 3. Their product = 3, and 1200 x 3 = 3600 = 60^2.",
+      "shortcut": "Multiply by each prime that appears an odd number of times.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the highest power of 11 that divides 100! exactly?",
+      "options": [
+        "8",
+        "18",
+        "9",
+        "4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Highest power = floor(100/11) = 9 = 9.",
+      "shortcut": "Legendre: add the integer parts of n/p, n/p^2, n/p^3 and so on.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the smallest number by which 180 must be multiplied to make it a perfect square?",
+      "options": [
+        "6",
+        "7",
+        "36",
+        "5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "180 = 2^2 x 3^2 x 5. Primes with odd powers: 5. Their product = 5, and 180 x 5 = 900 = 30^2.",
+      "shortcut": "Multiply by each prime that appears an odd number of times.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the least number that must be subtracted from 219 to make it a perfect square?",
+      "options": [
+        "25",
+        "18",
+        "23",
+        "6"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The nearest square below 219 is 14^2 = 196. Subtract 219 - 196 = 23.",
+      "shortcut": "Subtract the nearest perfect square below the number.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of the digits of a two-digit number is 14. If the number exceeds the number formed by reversing its digits by 18, what is the number?",
+      "options": [
+        "86",
+        "68",
+        "129",
+        "172"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let the number be 10a + b. a + b = 14 and 9(a - b) = 18, so a - b = 2. Then a = 8, b = 6 and the number is 86.",
+      "shortcut": "Number - reversed = 9 x (tens digit - units digit).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Which of the following numbers is exactly divisible by 8?",
+      "options": [
+        "576",
+        "572",
+        "583",
+        "580"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "576 / 8 = 72 exactly. The others leave remainders: 580 -> 4, 572 -> 4, 583 -> 7.",
+      "shortcut": "A number is divisible by 8 if its last three digits are divisible by 8.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number 7x738 (x is a single digit) is divisible by 9, what is the value of x?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Digit sum of the other digits = 25. Total must be a multiple of 9, so x = 2 (number 72738).",
+      "shortcut": "A number is divisible by 9 if the sum of its digits is divisible by 9.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of the digits of a two-digit number is 15. If the number exceeds the number formed by reversing its digits by 9, what is the number?",
+      "options": [
+        "174",
+        "58",
+        "78",
+        "87"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let the number be 10a + b. a + b = 15 and 9(a - b) = 9, so a - b = 1. Then a = 8, b = 7 and the number is 87.",
+      "shortcut": "Number - reversed = 9 x (tens digit - units digit).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 9^117 x 8^58?",
+      "options": [
+        "8",
+        "4",
+        "6",
+        "9"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Unit digit of 9^117 = 9. Unit digit of 8^58 = 4. Product 9 x 4 ends in 6.",
+      "shortcut": "Find each unit digit separately, multiply them, keep the last digit.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the smallest number by which 2000 must be multiplied to make it a perfect cube?",
+      "options": [
+        "500",
+        "2",
+        "4",
+        "3"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "2000 = 2^4 x 5^3. For a cube every exponent must be a multiple of 3, so multiply by 2^2 = 4.",
+      "shortcut": "Raise each prime's exponent to the next multiple of 3.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of the first 50 natural numbers?",
+      "options": [
+        "2500",
+        "1700",
+        "2550",
+        "1275"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Sum of the first 50 natural numbers = n(n + 1)/2 = 50 x 51/2 = 1275.",
+      "shortcut": "n(n+1)/2",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 628 x 532 x 909 is divided by 11?",
+      "options": [
+        "6",
+        "1",
+        "5",
+        "9"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Remainders: 628 -> 1, 532 -> 4, 909 -> 7. Product of remainders = 28, which leaves 6 when divided by 11.",
+      "shortcut": "Multiply the individual remainders, then take the remainder again.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the highest power of 3 that divides 40! exactly?",
+      "options": [
+        "18",
+        "12",
+        "9",
+        "13"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Highest power = floor(40/3) + floor(40/9) + floor(40/27) = 13 + 4 + 1 = 18.",
+      "shortcut": "Legendre: add the integer parts of n/p, n/p^2, n/p^3 and so on.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of the first 75 natural numbers?",
+      "options": [
+        "5625",
+        "1425",
+        "2850",
+        "1900"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of the first 75 natural numbers = n(n + 1)/2 = 75 x 76/2 = 2850.",
+      "shortcut": "n(n+1)/2",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 2^78 is divided by 5?",
+      "options": [
+        "4",
+        "0",
+        "1",
+        "3"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Powers of 2 mod 5 repeat every 4: 2, 4, 3, 1. 78 mod 4 = 2, so the remainder is 4.",
+      "shortcut": "Find the cycle of remainders, then reduce the power modulo the cycle length.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many positive factors does 135 have?",
+      "options": [
+        "6",
+        "12",
+        "4",
+        "8"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "135 = 3^3 x 5. Number of factors = (3 + 1) x (1 + 1) = 8.",
+      "shortcut": "Add 1 to each exponent and multiply.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the smallest number by which 360 must be multiplied to make it a perfect square?",
+      "options": [
+        "9",
+        "36",
+        "10",
+        "8"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "360 = 2^3 x 3^2 x 5. Primes with odd powers: 2, 5. Their product = 10, and 360 x 10 = 3600 = 60^2.",
+      "shortcut": "Multiply by each prime that appears an odd number of times.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the value of 1^2 + 2^2 + 3^2 + ... + 20^2?",
+      "options": [
+        "3157",
+        "44100",
+        "2870",
+        "3444"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of squares = n(n + 1)(2n + 1)/6 = 20 x 21 x 41/6 = 2870.",
+      "shortcut": "n(n+1)(2n+1)/6.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 3^58 x 7^62?",
+      "options": [
+        "7",
+        "6",
+        "5",
+        "1"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Unit digit of 3^58 = 9. Unit digit of 7^62 = 9. Product 9 x 9 ends in 1.",
+      "shortcut": "Find each unit digit separately, multiply them, keep the last digit.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of all positive factors of 504?",
+      "options": [
+        "1560",
+        "24",
+        "505",
+        "2080"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "504 = 2^3 x 3^2 x 7. Sum of factors = (1+2+4+8) x (1+3+9) x (1+7) = 1560.",
+      "shortcut": "Sum of factors = product of (1 + p + ... + p^e) over the prime powers.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the value of 1^2 + 2^2 + 3^2 + ... + 15^2?",
+      "options": [
+        "1240",
+        "14400",
+        "1116",
+        "1860"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sum of squares = n(n + 1)(2n + 1)/6 = 15 x 16 x 31/6 = 1240.",
+      "shortcut": "n(n+1)(2n+1)/6.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of all positive factors of 100?",
+      "options": [
+        "217",
+        "434",
+        "9",
+        "101"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "100 = 2^2 x 5^2. Sum of factors = (1+2+4) x (1+5+25) = 217.",
+      "shortcut": "Sum of factors = product of (1 + p + ... + p^e) over the prime powers.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of all positive factors of 3920?",
+      "options": [
+        "30",
+        "10602",
+        "5301",
+        "3921"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "3920 = 2^4 x 5 x 7^2. Sum of factors = (1+2+4+8+16) x (1+5) x (1+7+49) = 10602.",
+      "shortcut": "Sum of factors = product of (1 + p + ... + p^e) over the prime powers.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number 2x74 (x is a single digit) is divisible by 9, what is the value of x?",
+      "options": [
+        "7",
+        "5",
+        "0",
+        "9"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Digit sum of the other digits = 13. Total must be a multiple of 9, so x = 5 (number 2574).",
+      "shortcut": "A number is divisible by 9 if the sum of its digits is divisible by 9.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many odd positive factors does 20580 have?",
+      "options": [
+        "11",
+        "14",
+        "16",
+        "48"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "20580 = 2^2 x 3 x 5 x 7^3. Ignore the power of 2; odd factors = (1 + 1) x (1 + 1) x (3 + 1) = 16.",
+      "shortcut": "Odd factors come only from the odd prime powers.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the least number that must be subtracted from 7818 to make it a perfect square?",
+      "options": [
+        "148",
+        "37",
+        "103",
+        "74"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The nearest square below 7818 is 88^2 = 7744. Subtract 7818 - 7744 = 74.",
+      "shortcut": "Subtract the nearest perfect square below the number.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 7^190?",
+      "options": [
+        "9",
+        "3",
+        "6",
+        "2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The unit digits of powers of 7 repeat every 4 steps: 7, 9, 3, 1. 190 mod 4 = 2, so the unit digit is 9.",
+      "shortcut": "Find the cycle of unit digits, reduce the power modulo the cycle length.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the unit digit of 1! + 2! + 3! + ... + 38!?",
+      "options": [
+        "3",
+        "8",
+        "6",
+        "7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "From 5! onwards every factorial ends in 0. So only 1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33 matters. The unit digit is 3.",
+      "shortcut": "Factorials from 5! upward end in 0, so add only the first four.",
+      "subPattern": "unit-digit-last-two-digits",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the sum of all numbers between 78 and 293 that are divisible by 7?",
+      "options": [
+        "5481",
+        "5565",
+        "5859",
+        "11130"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "First = 84, last = 287, count = 30. Sum = count x (first + last)/2 = 30 x 371/2 = 5565.",
+      "shortcut": "Evenly spaced terms: sum = count x (first + last)/2.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 9^59 is divided by 11?",
+      "options": [
+        "0",
+        "5",
+        "7",
+        "8"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Powers of 9 mod 11 repeat every 5: 9, 4, 3, 5, 1. 59 mod 5 = 4, so the remainder is 5.",
+      "shortcut": "Find the cycle of remainders, then reduce the power modulo the cycle length.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the value of 1^3 + 2^3 + 3^3 + ... + 10^3?",
+      "options": [
+        "6050",
+        "385",
+        "3025",
+        "3630"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sum of cubes = [n(n + 1)/2]^2 = (55)^2 = 3025.",
+      "shortcut": "Sum of cubes = (sum of first n numbers)^2.",
+      "subPattern": "sum-of-series-natural-squares-cubes",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the highest power of 7 that divides 50! exactly?",
+      "options": [
+        "10",
+        "8",
+        "4",
+        "7"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Highest power = floor(50/7) + floor(50/49) = 7 + 1 = 8.",
+      "shortcut": "Legendre: add the integer parts of n/p, n/p^2, n/p^3 and so on.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many positive factors of 1875 are perfect squares?",
+      "options": [
+        "10",
+        "3",
+        "2",
+        "8"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "1875 = 3 x 5^4. A square factor needs even exponents: (0 + 1) x (2 + 1) = 3.",
+      "shortcut": "Square factors: use exponents 0, 2, 4, ... up to each prime's exponent.",
+      "subPattern": "factors-number-of-factors",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 143. If the digits differ by 1 and the tens digit is larger, what is the number?",
+      "options": [
+        "76",
+        "67",
+        "38",
+        "95"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Number + reverse = 11(a + b) = 143, so a + b = 13. With a - b = 1: a = 7, b = 6. The number is 76.",
+      "shortcut": "Number + reverse = 11 x (sum of digits).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 99. If the digits differ by 7 and the tens digit is larger, what is the number?",
+      "options": [
+        "18",
+        "162",
+        "54",
+        "81"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Number + reverse = 11(a + b) = 99, so a + b = 9. With a - b = 7: a = 8, b = 1. The number is 81.",
+      "shortcut": "Number + reverse = 11 x (sum of digits).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many zeros are there at the end of 150! (factorial)?",
+      "options": [
+        "36",
+        "30",
+        "37",
+        "38"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Zeros = number of factors of 5 in 150! = 30 + 6 + 1 = 37.",
+      "shortcut": "Divide by 5, 25, 125, ... and add the quotients.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "How many zeros are there at the end of the product 16^4 x 25^6 x 18^4?",
+      "options": [
+        "24",
+        "12",
+        "7",
+        "20"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total power of 2 = 20, total power of 5 = 12. Each zero needs one 2 and one 5, so zeros = min(20, 12) = 12.",
+      "shortcut": "Count the 2s and 5s in the prime factorisation; zeros = the smaller count.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 2^67 is divided by 7?",
+      "options": [
+        "3",
+        "4",
+        "1",
+        "2"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Powers of 2 mod 7 repeat every 3: 2, 4, 1. 67 mod 3 = 1, so the remainder is 2.",
+      "shortcut": "Find the cycle of remainders, then reduce the power modulo the cycle length.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 3^91 is divided by 7?",
+      "options": [
+        "3",
+        "0",
+        "6",
+        "2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Powers of 3 mod 7 repeat every 6: 3, 2, 6, 4, 5, 1. 91 mod 6 = 1, so the remainder is 3.",
+      "shortcut": "Find the cycle of remainders, then reduce the power modulo the cycle length.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the least number that must be subtracted from 2168 to make it a perfect square?",
+      "options": [
+        "52",
+        "41",
+        "104",
+        "78"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The nearest square below 2168 is 46^2 = 2116. Subtract 2168 - 2116 = 52.",
+      "shortcut": "Subtract the nearest perfect square below the number.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 49877 is divided by 16?",
+      "options": [
+        "9",
+        "14",
+        "5",
+        "1"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "49877 = 16 x 3117 + 5, so the remainder is 5.",
+      "shortcut": "Divide and keep the leftover.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "In a two-digit number the digits are in the ratio 7:6 (tens : units). If the number exceeds the number formed by reversing its digits by 9, what is the number?",
+      "options": [
+        "67",
+        "76",
+        "114",
+        "152"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let the digits be 7x and 6x. Number - reversed = 9(7x - 6x) = 9, so x = 1. Digits = 7 and 6; the number is 76.",
+      "shortcut": "Express both digits using one unknown x and use number - reverse = 9(a - b).",
+      "subPattern": "digit-missing-digit-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the least number that must be subtracted from 6114 to make it a perfect square?",
+      "options": [
+        "24",
+        "25",
+        "127",
+        "30"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The nearest square below 6114 is 78^2 = 6084. Subtract 6114 - 6084 = 30.",
+      "shortcut": "Subtract the nearest perfect square below the number.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number 195x (x is a single digit) is divisible by 9, what is the value of x?",
+      "options": [
+        "9",
+        "3",
+        "2",
+        "0"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Digit sum of the other digits = 15. Total must be a multiple of 9, so x = 3 (number 1953).",
+      "shortcut": "A number is divisible by 9 if the sum of its digits is divisible by 9.",
+      "subPattern": "divisibility-rules",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the remainder when 683 x 356 x 283 is divided by 8?",
+      "options": [
+        "3",
+        "5",
+        "1",
+        "4"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Remainders: 683 -> 3, 356 -> 4, 283 -> 3. Product of remainders = 36, which leaves 4 when divided by 8.",
+      "shortcut": "Multiply the individual remainders, then take the remainder again.",
+      "subPattern": "remainder-theorems-cyclicity",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the highest power of 11 that divides 80! exactly?",
+      "options": [
+        "9",
+        "14",
+        "12",
+        "7"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Highest power = floor(80/11) = 7 = 7.",
+      "shortcut": "Legendre: add the integer parts of n/p, n/p^2, n/p^3 and so on.",
+      "subPattern": "trailing-zeros-factorials",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the least number that must be subtracted from 4657 to make it a perfect square?",
+      "options": [
+        "28",
+        "33",
+        "104",
+        "32"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The nearest square below 4657 is 68^2 = 4624. Subtract 4657 - 4624 = 33.",
+      "shortcut": "Subtract the nearest perfect square below the number.",
+      "subPattern": "types-of-numbers-classification",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}

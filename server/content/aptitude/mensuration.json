@@ -1,0 +1,2726 @@
+{
+ "pattern": {
+  "title": "Mensuration",
+  "slug": "mensuration",
+  "description": "Areas, perimeters, volumes and surface areas.",
+  "order": 20,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "2d-area-perimeter",
+    "title": "2D area & perimeter"
+   },
+   {
+    "slug": "circle-sector-segment",
+    "title": "Circle, sector & segment"
+   },
+   {
+    "slug": "cuboid-cube",
+    "title": "Cuboid & cube"
+   },
+   {
+    "slug": "cylinder-cone-sphere",
+    "title": "Cylinder, cone & sphere"
+   },
+   {
+    "slug": "frustum-composite-solids",
+    "title": "Frustum & composite solids"
+   },
+   {
+    "slug": "melting-recasting",
+    "title": "Melting & recasting"
+   },
+   {
+    "slug": "paths-rings-borders",
+    "title": "Paths, rings & borders"
+   },
+   {
+    "slug": "cost-of-painting-fencing-flooring",
+    "title": "Cost of painting, fencing & flooring"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "What is the area of a triangle with base 20 cm and height 21 cm?",
+   "options": [
+    {
+     "text": "252 sq. cm"
+    },
+    {
+     "text": "420 sq. cm"
+    },
+    {
+     "text": "210 sq. cm"
+    },
+    {
+     "text": "189 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Area = 1/2 x base x height = 1/2 x 20 x 21 = 210 sq. cm.",
+   "order": 1,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Area = (1/2) b h."
+  },
+  {
+   "questionText": "What is the perimeter of a rectangle of length 53 m and breadth 34 m?",
+   "options": [
+    {
+     "text": "232 m"
+    },
+    {
+     "text": "174 m"
+    },
+    {
+     "text": "1802 m"
+    },
+    {
+     "text": "116 m"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Perimeter = 2(l + b) = 2(53 + 34) = 174 m.",
+   "order": 2,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Perimeter = 2(l + b)."
+  },
+  {
+   "questionText": "What is the area of a triangle with base 22 cm and height 27 cm?",
+   "options": [
+    {
+     "text": "297 sq. cm"
+    },
+    {
+     "text": "198 sq. cm"
+    },
+    {
+     "text": "396 sq. cm"
+    },
+    {
+     "text": "594 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Area = 1/2 x base x height = 1/2 x 22 x 27 = 297 sq. cm.",
+   "order": 3,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Area = (1/2) b h."
+  },
+  {
+   "questionText": "What is the perimeter of a rectangle of length 37 m and breadth 14 m?",
+   "options": [
+    {
+     "text": "51 m"
+    },
+    {
+     "text": "204 m"
+    },
+    {
+     "text": "518 m"
+    },
+    {
+     "text": "102 m"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Perimeter = 2(l + b) = 2(37 + 14) = 102 m.",
+   "order": 4,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Perimeter = 2(l + b)."
+  },
+  {
+   "questionText": "What is the area of a triangle with base 16 cm and height 11 cm?",
+   "options": [
+    {
+     "text": "44 sq. cm"
+    },
+    {
+     "text": "88 sq. cm"
+    },
+    {
+     "text": "66 sq. cm"
+    },
+    {
+     "text": "176 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Area = 1/2 x base x height = 1/2 x 16 x 11 = 88 sq. cm.",
+   "order": 5,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Area = (1/2) b h."
+  },
+  {
+   "questionText": "What is the area of a rectangle of length 22 m and breadth 16 m?",
+   "options": [
+    {
+     "text": "76 sq. m"
+    },
+    {
+     "text": "264 sq. m"
+    },
+    {
+     "text": "352 sq. m"
+    },
+    {
+     "text": "176 sq. m"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Area = length x breadth = 22 x 16 = 352 sq. m.",
+   "order": 6,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Area = l x b."
+  },
+  {
+   "questionText": "What is the perimeter of a rectangle of length 35 m and breadth 56 m?",
+   "options": [
+    {
+     "text": "182 m"
+    },
+    {
+     "text": "1960 m"
+    },
+    {
+     "text": "91 m"
+    },
+    {
+     "text": "364 m"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Perimeter = 2(l + b) = 2(35 + 56) = 182 m.",
+   "order": 7,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Perimeter = 2(l + b)."
+  },
+  {
+   "questionText": "What is the area of a triangle with base 22 cm and height 25 cm?",
+   "options": [
+    {
+     "text": "220 sq. cm"
+    },
+    {
+     "text": "330 sq. cm"
+    },
+    {
+     "text": "550 sq. cm"
+    },
+    {
+     "text": "275 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Area = 1/2 x base x height = 1/2 x 22 x 25 = 275 sq. cm.",
+   "order": 8,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Area = (1/2) b h."
+  },
+  {
+   "questionText": "What is the area of a triangle whose sides are 14 cm, 15 cm and 13 cm?",
+   "options": [
+    {
+     "text": "84 sq. cm"
+    },
+    {
+     "text": "105 sq. cm"
+    },
+    {
+     "text": "168 sq. cm"
+    },
+    {
+     "text": "63 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "s = (14 + 15 + 13)/2 = 21. Area = sqrt(s(s - a)(s - b)(s - c)) = sqrt(21 x 7 x 6 x 8) = 84 sq. cm.",
+   "order": 9,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Heron's formula."
+  },
+  {
+   "questionText": "A right-angled triangle has legs 40 cm and 42 cm. What is its hypotenuse?",
+   "options": [
+    {
+     "text": "82 cm"
+    },
+    {
+     "text": "63 cm"
+    },
+    {
+     "text": "87 cm"
+    },
+    {
+     "text": "58 cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hypotenuse = sqrt(40^2 + 42^2) = sqrt(3364) = 58 cm.",
+   "order": 10,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Pythagoras: c^2 = a^2 + b^2."
+  },
+  {
+   "questionText": "What is the area of a triangle whose sides are 25 cm, 29 cm and 36 cm?",
+   "options": [
+    {
+     "text": "720 sq. cm"
+    },
+    {
+     "text": "360 sq. cm"
+    },
+    {
+     "text": "362 sq. cm"
+    },
+    {
+     "text": "432 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "s = (25 + 29 + 36)/2 = 45. Area = sqrt(s(s - a)(s - b)(s - c)) = sqrt(45 x 20 x 16 x 9) = 360 sq. cm.",
+   "order": 11,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Heron's formula."
+  },
+  {
+   "questionText": "The perimeter of a square is 152 m. What is its area?",
+   "options": [
+    {
+     "text": "2166 sq. m"
+    },
+    {
+     "text": "1083 sq. m"
+    },
+    {
+     "text": "1444 sq. m"
+    },
+    {
+     "text": "5776 sq. m"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Side = 152/4 = 38 m. Area = 38^2 = 1444 sq. m.",
+   "order": 12,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Side = perimeter/4; area = side squared."
+  },
+  {
+   "questionText": "A right-angled triangle has legs 60 cm and 63 cm. What is its hypotenuse?",
+   "options": [
+    {
+     "text": "116 cm"
+    },
+    {
+     "text": "87 cm"
+    },
+    {
+     "text": "174 cm"
+    },
+    {
+     "text": "123 cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hypotenuse = sqrt(60^2 + 63^2) = sqrt(7569) = 87 cm.",
+   "order": 13,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Pythagoras: c^2 = a^2 + b^2."
+  },
+  {
+   "questionText": "The perimeter of a square is 36 m. What is its area?",
+   "options": [
+    {
+     "text": "162 sq. m"
+    },
+    {
+     "text": "324 sq. m"
+    },
+    {
+     "text": "81 sq. m"
+    },
+    {
+     "text": "54 sq. m"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Side = 36/4 = 9 m. Area = 9^2 = 81 sq. m.",
+   "order": 14,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Side = perimeter/4; area = side squared."
+  },
+  {
+   "questionText": "The perimeter of a square is 80 m. What is its area?",
+   "options": [
+    {
+     "text": "400 sq. m"
+    },
+    {
+     "text": "360 sq. m"
+    },
+    {
+     "text": "200 sq. m"
+    },
+    {
+     "text": "1600 sq. m"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Side = 80/4 = 20 m. Area = 20^2 = 400 sq. m.",
+   "order": 15,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Side = perimeter/4; area = side squared."
+  },
+  {
+   "questionText": "The perimeter of a square is 84 m. What is its area?",
+   "options": [
+    {
+     "text": "588 sq. m"
+    },
+    {
+     "text": "294 sq. m"
+    },
+    {
+     "text": "1764 sq. m"
+    },
+    {
+     "text": "441 sq. m"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Side = 84/4 = 21 m. Area = 21^2 = 441 sq. m.",
+   "order": 16,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Side = perimeter/4; area = side squared."
+  },
+  {
+   "questionText": "A rectangular field is 18 m long and 26 m wide. What is the cost of fencing it all around at Rs 15 per metre?",
+   "options": [
+    {
+     "text": "Rs 1320"
+    },
+    {
+     "text": "Rs 7020"
+    },
+    {
+     "text": "Rs 1980"
+    },
+    {
+     "text": "Rs 1584"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Perimeter = 2(18 + 26) = 88 m. Cost = 88 x 15 = Rs 1320.",
+   "order": 17,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Fencing cost = perimeter x rate."
+  },
+  {
+   "questionText": "A right-angled triangle has legs 18 cm and 80 cm. What is its hypotenuse?",
+   "options": [
+    {
+     "text": "164 cm"
+    },
+    {
+     "text": "82 cm"
+    },
+    {
+     "text": "98 cm"
+    },
+    {
+     "text": "123 cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hypotenuse = sqrt(18^2 + 80^2) = sqrt(6724) = 82 cm.",
+   "order": 18,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Pythagoras: c^2 = a^2 + b^2."
+  },
+  {
+   "questionText": "What is the area of a triangle whose sides are 15 cm, 15 cm and 24 cm?",
+   "options": [
+    {
+     "text": "144 sq. cm"
+    },
+    {
+     "text": "81 sq. cm"
+    },
+    {
+     "text": "112 sq. cm"
+    },
+    {
+     "text": "108 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "s = (15 + 15 + 24)/2 = 27. Area = sqrt(s(s - a)(s - b)(s - c)) = sqrt(27 x 12 x 12 x 3) = 108 sq. cm.",
+   "order": 19,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Heron's formula."
+  },
+  {
+   "questionText": "The perimeter of a square is 96 m. What is its area?",
+   "options": [
+    {
+     "text": "720 sq. m"
+    },
+    {
+     "text": "864 sq. m"
+    },
+    {
+     "text": "576 sq. m"
+    },
+    {
+     "text": "2304 sq. m"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Side = 96/4 = 24 m. Area = 24^2 = 576 sq. m.",
+   "order": 20,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Side = perimeter/4; area = side squared."
+  },
+  {
+   "questionText": "An isosceles triangle has two equal sides of 13 cm and a base of 10 cm. What is its area?",
+   "options": [
+    {
+     "text": "65 sq. cm"
+    },
+    {
+     "text": "90 sq. cm"
+    },
+    {
+     "text": "60 sq. cm"
+    },
+    {
+     "text": "75 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Height = sqrt(13^2 - (10/2)^2) = sqrt(169 - 25) = 12 cm. Area = 1/2 x 10 x 12 = 60 sq. cm.",
+   "order": 21,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop the height to the base; it bisects the base."
+  },
+  {
+   "questionText": "What is the area of an equilateral triangle of side 20 cm?",
+   "options": [
+    {
+     "text": "96√3 sq. cm"
+    },
+    {
+     "text": "100√3 sq. cm"
+    },
+    {
+     "text": "98√3 sq. cm"
+    },
+    {
+     "text": "102√3 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Area = (sqrt(3)/4) x side^2 = (sqrt(3)/4) x 400 = 100√3 sq. cm.",
+   "order": 22,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Equilateral triangle: area = (√3/4) a^2."
+  },
+  {
+   "questionText": "The length and breadth of a rectangle are in the ratio 5:2 and its perimeter is 98 m. What is its area?",
+   "options": [
+    {
+     "text": "490 sq. m"
+    },
+    {
+     "text": "245 sq. m"
+    },
+    {
+     "text": "600 sq. m"
+    },
+    {
+     "text": "735 sq. m"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the sides be 5x and 2x. Perimeter = 2(5x + 2x) = 14x = 98, so x = 7. Area = 35 x 14 = 490 sq. m.",
+   "order": 23,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use the ratio parts: x = perimeter / (2 x sum of parts)."
+  },
+  {
+   "questionText": "The length and breadth of a rectangle are in the ratio 7:3 and its perimeter is 220 m. What is its area?",
+   "options": [
+    {
+     "text": "3025 sq. m"
+    },
+    {
+     "text": "1694 sq. m"
+    },
+    {
+     "text": "3388 sq. m"
+    },
+    {
+     "text": "2541 sq. m"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the sides be 7x and 3x. Perimeter = 2(7x + 3x) = 20x = 220, so x = 11. Area = 77 x 33 = 2541 sq. m.",
+   "order": 24,
+   "subPattern": "2d-area-perimeter",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Use the ratio parts: x = perimeter / (2 x sum of parts)."
+  },
+  {
+   "questionText": "What is the circumference of a circle of radius 14 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "132 cm"
+    },
+    {
+     "text": "616 cm"
+    },
+    {
+     "text": "110 cm"
+    },
+    {
+     "text": "88 cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Circumference = 2πr = 2 x 22/7 x 14 = 88 cm.",
+   "order": 25,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "C = 2πr; with r a multiple of 7, 7 cancels."
+  },
+  {
+   "questionText": "What is the circumference of a circle of radius 42 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "264 cm"
+    },
+    {
+     "text": "528 cm"
+    },
+    {
+     "text": "5544 cm"
+    },
+    {
+     "text": "176 cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Circumference = 2πr = 2 x 22/7 x 42 = 264 cm.",
+   "order": 26,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "C = 2πr; with r a multiple of 7, 7 cancels."
+  },
+  {
+   "questionText": "What is the length of an arc of a circle of radius 49 cm that subtends an angle of 270° at the centre? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "154 cm"
+    },
+    {
+     "text": "231 cm"
+    },
+    {
+     "text": "5659.5 cm"
+    },
+    {
+     "text": "462 cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Arc = (θ/360) x 2πr = (270/360) x 2 x 22/7 x 49 = 231 cm.",
+   "order": 27,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Arc = (θ/360) x circumference."
+  },
+  {
+   "questionText": "What is the area of a circle of radius 63 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "18711 sq. cm"
+    },
+    {
+     "text": "396 sq. cm"
+    },
+    {
+     "text": "12474 sq. cm"
+    },
+    {
+     "text": "24948 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Area = πr^2 = 22/7 x 63^2 = 12474 sq. cm.",
+   "order": 28,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "A = πr^2."
+  },
+  {
+   "questionText": "What is the length of an arc of a circle of radius 42 cm that subtends an angle of 72° at the centre? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "42.24 cm"
+    },
+    {
+     "text": "47.8 cm"
+    },
+    {
+     "text": "1108.8 cm"
+    },
+    {
+     "text": "52.8 cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Arc = (θ/360) x 2πr = (72/360) x 2 x 22/7 x 42 = 52.8 cm.",
+   "order": 29,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Arc = (θ/360) x circumference."
+  },
+  {
+   "questionText": "What is the length of an arc of a circle of radius 35 cm that subtends an angle of 135° at the centre? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "1443.75 cm"
+    },
+    {
+     "text": "41.25 cm"
+    },
+    {
+     "text": "82.5 cm"
+    },
+    {
+     "text": "123.75 cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Arc = (θ/360) x 2πr = (135/360) x 2 x 22/7 x 35 = 82.5 cm.",
+   "order": 30,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Arc = (θ/360) x circumference."
+  },
+  {
+   "questionText": "What is the circumference of a circle of radius 49 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "385 cm"
+    },
+    {
+     "text": "308 cm"
+    },
+    {
+     "text": "462 cm"
+    },
+    {
+     "text": "7546 cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Circumference = 2πr = 2 x 22/7 x 49 = 308 cm.",
+   "order": 31,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "C = 2πr; with r a multiple of 7, 7 cancels."
+  },
+  {
+   "questionText": "What is the area of a sector of angle 72° in a circle of radius 7 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "30.8 sq. cm"
+    },
+    {
+     "text": "38.5 sq. cm"
+    },
+    {
+     "text": "25.8 sq. cm"
+    },
+    {
+     "text": "8.8 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Area = (θ/360) x πr^2 = (72/360) x 22/7 x 7^2 = 30.8 sq. cm.",
+   "order": 32,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Sector area = (θ/360) x πr^2."
+  },
+  {
+   "questionText": "What is the area of a sector of angle 240° in a circle of radius 21 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "88 sq. cm"
+    },
+    {
+     "text": "924 sq. cm"
+    },
+    {
+     "text": "1386 sq. cm"
+    },
+    {
+     "text": "1232 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Area = (θ/360) x πr^2 = (240/360) x 22/7 x 21^2 = 924 sq. cm.",
+   "order": 33,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Sector area = (θ/360) x πr^2."
+  },
+  {
+   "questionText": "The area of a circle is 9856 sq. cm. What is its diameter? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "112 cm"
+    },
+    {
+     "text": "56 cm"
+    },
+    {
+     "text": "168 cm"
+    },
+    {
+     "text": "224 cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "πr^2 = 9856, so r^2 = 9856 x 7/22 = 3136 and r = 56 cm. Diameter = 112 cm.",
+   "order": 34,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "r^2 = A x 7/22; then double r."
+  },
+  {
+   "questionText": "The area of a circle is 2464 sq. cm. What is its diameter? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "54 cm"
+    },
+    {
+     "text": "112 cm"
+    },
+    {
+     "text": "28 cm"
+    },
+    {
+     "text": "56 cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "πr^2 = 2464, so r^2 = 2464 x 7/22 = 784 and r = 28 cm. Diameter = 56 cm.",
+   "order": 35,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "r^2 = A x 7/22; then double r."
+  },
+  {
+   "questionText": "What is the area of a sector of angle 45° in a circle of radius 35 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "577.5 sq. cm"
+    },
+    {
+     "text": "962.5 sq. cm"
+    },
+    {
+     "text": "481.25 sq. cm"
+    },
+    {
+     "text": "27.5 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Area = (θ/360) x πr^2 = (45/360) x 22/7 x 35^2 = 481.25 sq. cm.",
+   "order": 36,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sector area = (θ/360) x πr^2."
+  },
+  {
+   "questionText": "What is the area of a sector of angle 240° in a circle of radius 42 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "4928 sq. cm"
+    },
+    {
+     "text": "5544 sq. cm"
+    },
+    {
+     "text": "176 sq. cm"
+    },
+    {
+     "text": "3696 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Area = (θ/360) x πr^2 = (240/360) x 22/7 x 42^2 = 3696 sq. cm.",
+   "order": 37,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Sector area = (θ/360) x πr^2."
+  },
+  {
+   "questionText": "The area of a circle is 5544 sq. cm. What is its diameter? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "168 cm"
+    },
+    {
+     "text": "84 cm"
+    },
+    {
+     "text": "42 cm"
+    },
+    {
+     "text": "56 cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "πr^2 = 5544, so r^2 = 5544 x 7/22 = 1764 and r = 42 cm. Diameter = 84 cm.",
+   "order": 38,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "r^2 = A x 7/22; then double r."
+  },
+  {
+   "questionText": "The area of a circle is 15400 sq. cm. What is its diameter? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "140 cm"
+    },
+    {
+     "text": "70 cm"
+    },
+    {
+     "text": "280 cm"
+    },
+    {
+     "text": "154 cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "πr^2 = 15400, so r^2 = 15400 x 7/22 = 4900 and r = 70 cm. Diameter = 140 cm.",
+   "order": 39,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "r^2 = A x 7/22; then double r."
+  },
+  {
+   "questionText": "The circumference of a circle is 440 cm. What is its radius? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "63 cm"
+    },
+    {
+     "text": "140 cm"
+    },
+    {
+     "text": "70 cm"
+    },
+    {
+     "text": "105 cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2πr = 440, so r = 440 x 7/44 = 70 cm.",
+   "order": 40,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "r = C/(2π) = C x 7/44."
+  },
+  {
+   "questionText": "What is the area of a sector of angle 72° in a circle of radius 28 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "35.2 sq. cm"
+    },
+    {
+     "text": "542.08 sq. cm"
+    },
+    {
+     "text": "246.4 sq. cm"
+    },
+    {
+     "text": "492.8 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Area = (θ/360) x πr^2 = (72/360) x 22/7 x 28^2 = 492.8 sq. cm.",
+   "order": 41,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Sector area = (θ/360) x πr^2."
+  },
+  {
+   "questionText": "What is the area of a sector of angle 120° in a circle of radius 42 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "1848 sq. cm"
+    },
+    {
+     "text": "924 sq. cm"
+    },
+    {
+     "text": "88 sq. cm"
+    },
+    {
+     "text": "1232 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Area = (θ/360) x πr^2 = (120/360) x 22/7 x 42^2 = 1848 sq. cm.",
+   "order": 42,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Sector area = (θ/360) x πr^2."
+  },
+  {
+   "questionText": "What is the area of a sector of angle 90° in a circle of radius 7 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "19.25 sq. cm"
+    },
+    {
+     "text": "38.5 sq. cm"
+    },
+    {
+     "text": "46.2 sq. cm"
+    },
+    {
+     "text": "11 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Area = (θ/360) x πr^2 = (90/360) x 22/7 x 7^2 = 38.5 sq. cm.",
+   "order": 43,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sector area = (θ/360) x πr^2."
+  },
+  {
+   "questionText": "The circumference of a circle is 176 cm. What is its radius? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "35 cm"
+    },
+    {
+     "text": "14 cm"
+    },
+    {
+     "text": "28 cm"
+    },
+    {
+     "text": "56 cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2πr = 176, so r = 176 x 7/44 = 28 cm.",
+   "order": 44,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "r = C/(2π) = C x 7/44."
+  },
+  {
+   "questionText": "The radius of a wheel is 14 cm. How many complete revolutions does it make to cover 132 metres? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "150"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "135"
+    },
+    {
+     "text": "225"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Circumference = 2 x 22/7 x 14 = 88 cm. Distance = 132 x 100 = 13200 cm. Revolutions = 13200/88 = 150.",
+   "order": 45,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Revolutions = distance / circumference (same units)."
+  },
+  {
+   "questionText": "The radius of a wheel is 28 cm. How many complete revolutions does it make to cover 176 metres? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "90"
+    },
+    {
+     "text": "100"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Circumference = 2 x 22/7 x 28 = 176 cm. Distance = 176 x 100 = 17600 cm. Revolutions = 17600/176 = 100.",
+   "order": 46,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Revolutions = distance / circumference (same units)."
+  },
+  {
+   "questionText": "What is the perimeter of a sector of angle 180° in a circle of radius 14 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "48 cm"
+    },
+    {
+     "text": "44 cm"
+    },
+    {
+     "text": "36 cm"
+    },
+    {
+     "text": "72 cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Arc = (180/360) x 2πr = 44 cm. Perimeter = arc + 2r = 44 + 28 = 72 cm.",
+   "order": 47,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Perimeter of a sector = arc + two radii."
+  },
+  {
+   "questionText": "What is the perimeter of a sector of angle 60° in a circle of radius 42 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "256 cm"
+    },
+    {
+     "text": "44 cm"
+    },
+    {
+     "text": "128 cm"
+    },
+    {
+     "text": "96 cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Arc = (60/360) x 2πr = 44 cm. Perimeter = arc + 2r = 44 + 84 = 128 cm.",
+   "order": 48,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Perimeter of a sector = arc + two radii."
+  },
+  {
+   "questionText": "The radius of a wheel is 70 cm. How many complete revolutions does it make to cover 814 metres? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "370"
+    },
+    {
+     "text": "148"
+    },
+    {
+     "text": "185"
+    },
+    {
+     "text": "222"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Circumference = 2 x 22/7 x 70 = 440 cm. Distance = 814 x 100 = 81400 cm. Revolutions = 81400/440 = 185.",
+   "order": 49,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Revolutions = distance / circumference (same units)."
+  },
+  {
+   "questionText": "What is the perimeter of a sector of angle 180° in a circle of radius 28 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "288 cm"
+    },
+    {
+     "text": "144 cm"
+    },
+    {
+     "text": "192 cm"
+    },
+    {
+     "text": "88 cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Arc = (180/360) x 2πr = 88 cm. Perimeter = arc + 2r = 88 + 56 = 144 cm.",
+   "order": 50,
+   "subPattern": "circle-sector-segment",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Perimeter of a sector = arc + two radii."
+  },
+  {
+   "questionText": "What is the volume of a cuboid of dimensions 14 cm x 16 cm x 15 cm?",
+   "options": [
+    {
+     "text": "3360 cu. cm"
+    },
+    {
+     "text": "1348 cu. cm"
+    },
+    {
+     "text": "2688 cu. cm"
+    },
+    {
+     "text": "5040 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Volume = 14 x 16 x 15 = 3360 cu. cm.",
+   "order": 51,
+   "subPattern": "cuboid-cube",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "V = l x b x h."
+  },
+  {
+   "questionText": "What is the total surface area of a cuboid of dimensions 5 cm x 8 cm x 3 cm?",
+   "options": [
+    {
+     "text": "79 sq. cm"
+    },
+    {
+     "text": "120 sq. cm"
+    },
+    {
+     "text": "237 sq. cm"
+    },
+    {
+     "text": "158 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "TSA = 2(lb + bh + hl) = 2(40 + 24 + 15) = 158 sq. cm.",
+   "order": 52,
+   "subPattern": "cuboid-cube",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "TSA = 2(lb + bh + hl)."
+  },
+  {
+   "questionText": "What is the volume of a cuboid of dimensions 8 cm x 13 cm x 9 cm?",
+   "options": [
+    {
+     "text": "1872 cu. cm"
+    },
+    {
+     "text": "936 cu. cm"
+    },
+    {
+     "text": "624 cu. cm"
+    },
+    {
+     "text": "586 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Volume = 8 x 13 x 9 = 936 cu. cm.",
+   "order": 53,
+   "subPattern": "cuboid-cube",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "V = l x b x h."
+  },
+  {
+   "questionText": "What is the total surface area of a cuboid of dimensions 10 cm x 16 cm x 13 cm?",
+   "options": [
+    {
+     "text": "1494 sq. cm"
+    },
+    {
+     "text": "2080 sq. cm"
+    },
+    {
+     "text": "747 sq. cm"
+    },
+    {
+     "text": "996 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "TSA = 2(lb + bh + hl) = 2(160 + 208 + 130) = 996 sq. cm.",
+   "order": 54,
+   "subPattern": "cuboid-cube",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "TSA = 2(lb + bh + hl)."
+  },
+  {
+   "questionText": "What is the length of the diagonal of a cuboid of dimensions 4 cm x 6 cm x 12 cm?",
+   "options": [
+    {
+     "text": "14 cm"
+    },
+    {
+     "text": "9 cm"
+    },
+    {
+     "text": "15 cm"
+    },
+    {
+     "text": "22 cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Diagonal = sqrt(l^2 + b^2 + h^2) = sqrt(16 + 36 + 144) = sqrt(196) = 14 cm.",
+   "order": 55,
+   "subPattern": "cuboid-cube",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "d = sqrt(l^2 + b^2 + h^2)."
+  },
+  {
+   "questionText": "What is the length of the diagonal of a cuboid of dimensions 18 cm x 18 cm x 21 cm?",
+   "options": [
+    {
+     "text": "38 cm"
+    },
+    {
+     "text": "28 cm"
+    },
+    {
+     "text": "33 cm"
+    },
+    {
+     "text": "57 cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Diagonal = sqrt(l^2 + b^2 + h^2) = sqrt(324 + 324 + 441) = sqrt(1089) = 33 cm.",
+   "order": 56,
+   "subPattern": "cuboid-cube",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "d = sqrt(l^2 + b^2 + h^2)."
+  },
+  {
+   "questionText": "What is the length of the diagonal of a cuboid of dimensions 6 cm x 30 cm x 33 cm?",
+   "options": [
+    {
+     "text": "54 cm"
+    },
+    {
+     "text": "69 cm"
+    },
+    {
+     "text": "45 cm"
+    },
+    {
+     "text": "90 cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Diagonal = sqrt(l^2 + b^2 + h^2) = sqrt(36 + 900 + 1089) = sqrt(2025) = 45 cm.",
+   "order": 57,
+   "subPattern": "cuboid-cube",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "d = sqrt(l^2 + b^2 + h^2)."
+  },
+  {
+   "questionText": "What is the length of the diagonal of a cuboid of dimensions 12 cm x 12 cm x 14 cm?",
+   "options": [
+    {
+     "text": "38 cm"
+    },
+    {
+     "text": "22 cm"
+    },
+    {
+     "text": "27 cm"
+    },
+    {
+     "text": "33 cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Diagonal = sqrt(l^2 + b^2 + h^2) = sqrt(144 + 144 + 196) = sqrt(484) = 22 cm.",
+   "order": 58,
+   "subPattern": "cuboid-cube",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "d = sqrt(l^2 + b^2 + h^2)."
+  },
+  {
+   "questionText": "What is the length of the diagonal of a cuboid of dimensions 2 cm x 8 cm x 16 cm?",
+   "options": [
+    {
+     "text": "23 cm"
+    },
+    {
+     "text": "26 cm"
+    },
+    {
+     "text": "20 cm"
+    },
+    {
+     "text": "18 cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Diagonal = sqrt(l^2 + b^2 + h^2) = sqrt(4 + 64 + 256) = sqrt(324) = 18 cm.",
+   "order": 59,
+   "subPattern": "cuboid-cube",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "d = sqrt(l^2 + b^2 + h^2)."
+  },
+  {
+   "questionText": "What is the length of the diagonal of a cuboid of dimensions 3 cm x 4 cm x 12 cm?",
+   "options": [
+    {
+     "text": "13 cm"
+    },
+    {
+     "text": "19 cm"
+    },
+    {
+     "text": "15 cm"
+    },
+    {
+     "text": "12 cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Diagonal = sqrt(l^2 + b^2 + h^2) = sqrt(9 + 16 + 144) = sqrt(169) = 13 cm.",
+   "order": 60,
+   "subPattern": "cuboid-cube",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "d = sqrt(l^2 + b^2 + h^2)."
+  },
+  {
+   "questionText": "How many cubes of edge 4 cm can be cut from a cuboid measuring 16 cm x 16 cm x 16 cm?",
+   "options": [
+    {
+     "text": "64"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Along each side: 16/4 = 4, 16/4 = 4, 16/4 = 4. Cubes = 4 x 4 x 4 = 64.",
+   "order": 61,
+   "subPattern": "cuboid-cube",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Divide each dimension by the cube's edge and multiply."
+  },
+  {
+   "questionText": "How many cubes of edge 5 cm can be cut from a cuboid measuring 20 cm x 20 cm x 20 cm?",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "96"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Along each side: 20/5 = 4, 20/5 = 4, 20/5 = 4. Cubes = 4 x 4 x 4 = 64.",
+   "order": 62,
+   "subPattern": "cuboid-cube",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide each dimension by the cube's edge and multiply."
+  },
+  {
+   "questionText": "What is the volume of a cylinder of radius 21 cm and height 20 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "2640 cu. cm"
+    },
+    {
+     "text": "55440 cu. cm"
+    },
+    {
+     "text": "30492 cu. cm"
+    },
+    {
+     "text": "27720 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "V = πr^2h = 22/7 x 21^2 x 20 = 27720 cu. cm.",
+   "order": 63,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "V = πr^2 h."
+  },
+  {
+   "questionText": "What is the volume of a cylinder of radius 14 cm and height 23 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "21252 cu. cm"
+    },
+    {
+     "text": "14168 cu. cm"
+    },
+    {
+     "text": "2024 cu. cm"
+    },
+    {
+     "text": "7084 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "V = πr^2h = 22/7 x 14^2 x 23 = 14168 cu. cm.",
+   "order": 64,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "V = πr^2 h."
+  },
+  {
+   "questionText": "What is the volume of a cylinder of radius 35 cm and height 29 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "6380 cu. cm"
+    },
+    {
+     "text": "111650 cu. cm"
+    },
+    {
+     "text": "100485 cu. cm"
+    },
+    {
+     "text": "223300 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "V = πr^2h = 22/7 x 35^2 x 29 = 111650 cu. cm.",
+   "order": 65,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "V = πr^2 h."
+  },
+  {
+   "questionText": "What is the volume of a cylinder of radius 35 cm and height 6 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "20790 cu. cm"
+    },
+    {
+     "text": "27720 cu. cm"
+    },
+    {
+     "text": "23100 cu. cm"
+    },
+    {
+     "text": "1320 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "V = πr^2h = 22/7 x 35^2 x 6 = 23100 cu. cm.",
+   "order": 66,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "V = πr^2 h."
+  },
+  {
+   "questionText": "What is the curved surface area of a cylinder of radius 7 cm and height 15 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "660 sq. cm"
+    },
+    {
+     "text": "880 sq. cm"
+    },
+    {
+     "text": "2310 sq. cm"
+    },
+    {
+     "text": "330 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "CSA = 2πrh = 2 x 22/7 x 7 x 15 = 660 sq. cm.",
+   "order": 67,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "CSA = 2πrh."
+  },
+  {
+   "questionText": "What is the volume of a cone of base radius 28 cm and height 96 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "236544 cu. cm"
+    },
+    {
+     "text": "157696 cu. cm"
+    },
+    {
+     "text": "39424 cu. cm"
+    },
+    {
+     "text": "78848 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "V = (1/3)πr^2h = (1/3) x 22/7 x 28^2 x 96 = 78848 cu. cm.",
+   "order": 68,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Cone volume = one third of the cylinder with the same base and height."
+  },
+  {
+   "questionText": "What is the volume of a cone of base radius 14 cm and height 48 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "29568 cu. cm"
+    },
+    {
+     "text": "9856 cu. cm"
+    },
+    {
+     "text": "4928 cu. cm"
+    },
+    {
+     "text": "19712 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "V = (1/3)πr^2h = (1/3) x 22/7 x 14^2 x 48 = 9856 cu. cm.",
+   "order": 69,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Cone volume = one third of the cylinder with the same base and height."
+  },
+  {
+   "questionText": "What is the volume of a cone of base radius 7 cm and height 24 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "1540 cu. cm"
+    },
+    {
+     "text": "3696 cu. cm"
+    },
+    {
+     "text": "1232 cu. cm"
+    },
+    {
+     "text": "1848 cu. cm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "V = (1/3)πr^2h = (1/3) x 22/7 x 7^2 x 24 = 1232 cu. cm.",
+   "order": 70,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Cone volume = one third of the cylinder with the same base and height."
+  },
+  {
+   "questionText": "What is the curved surface area of a cylinder of radius 28 cm and height 28 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "3696 sq. cm"
+    },
+    {
+     "text": "7392 sq. cm"
+    },
+    {
+     "text": "68992 sq. cm"
+    },
+    {
+     "text": "4928 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "CSA = 2πrh = 2 x 22/7 x 28 x 28 = 4928 sq. cm.",
+   "order": 71,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "CSA = 2πrh."
+  },
+  {
+   "questionText": "What is the curved surface area of a cylinder of radius 14 cm and height 20 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "1760 sq. cm"
+    },
+    {
+     "text": "3520 sq. cm"
+    },
+    {
+     "text": "12320 sq. cm"
+    },
+    {
+     "text": "880 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "CSA = 2πrh = 2 x 22/7 x 14 x 20 = 1760 sq. cm.",
+   "order": 72,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "CSA = 2πrh."
+  },
+  {
+   "questionText": "A solid metal sphere of radius 21 cm is melted and recast into a cylinder of base radius 7 cm. What is the height of the cylinder?",
+   "options": [
+    {
+     "text": "336 cm"
+    },
+    {
+     "text": "252 cm"
+    },
+    {
+     "text": "21 cm"
+    },
+    {
+     "text": "378 cm"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Volume of sphere = (4/3)πR^3 = (4/3)π(21)^3. Cylinder volume = π(7)^2h. Equating, h = 4 x 21^3/(3 x 7^2) = 252 cm.",
+   "order": 73,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Volume is conserved: (4/3)R^3 = r^2 h."
+  },
+  {
+   "questionText": "A solid metal sphere of radius 84 cm is melted and recast into a cylinder of base radius 14 cm. What is the height of the cylinder?",
+   "options": [
+    {
+     "text": "6048 cm"
+    },
+    {
+     "text": "84 cm"
+    },
+    {
+     "text": "3024 cm"
+    },
+    {
+     "text": "4032 cm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Volume of sphere = (4/3)πR^3 = (4/3)π(84)^3. Cylinder volume = π(14)^2h. Equating, h = 4 x 84^3/(3 x 14^2) = 4032 cm.",
+   "order": 74,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Volume is conserved: (4/3)R^3 = r^2 h."
+  },
+  {
+   "questionText": "What is the surface area of a sphere of radius 21 cm? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "5544 sq. cm"
+    },
+    {
+     "text": "1386 sq. cm"
+    },
+    {
+     "text": "8316 sq. cm"
+    },
+    {
+     "text": "11088 sq. cm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Surface area = 4πr^2 = 4 x 22/7 x 21^2 = 5544 sq. cm.",
+   "order": 75,
+   "subPattern": "cylinder-cone-sphere",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sphere surface = 4πr^2."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 20% and its breadth by 30%. By what percent does its area increase?",
+   "options": [
+    {
+     "text": "42%"
+    },
+    {
+     "text": "112%"
+    },
+    {
+     "text": "56%"
+    },
+    {
+     "text": "50%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "New area = (1 + 20/100)(1 + 30/100) = 1.56 of the old. Increase = 56%.",
+   "order": 76,
+   "subPattern": "melting-recasting",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Area change = x + y + xy/100."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 40% and its breadth by 10%. By what percent does its area increase?",
+   "options": [
+    {
+     "text": "54%"
+    },
+    {
+     "text": "59%"
+    },
+    {
+     "text": "56%"
+    },
+    {
+     "text": "50%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New area = (1 + 40/100)(1 + 10/100) = 1.54 of the old. Increase = 54%.",
+   "order": 77,
+   "subPattern": "melting-recasting",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Area change = x + y + xy/100."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 40% and its breadth by 20%. By what percent does its area increase?",
+   "options": [
+    {
+     "text": "60%"
+    },
+    {
+     "text": "68%"
+    },
+    {
+     "text": "51%"
+    },
+    {
+     "text": "102%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New area = (1 + 40/100)(1 + 20/100) = 1.68 of the old. Increase = 68%.",
+   "order": 78,
+   "subPattern": "melting-recasting",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Area change = x + y + xy/100."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 25% and its breadth by 40%. By what percent does its area increase?",
+   "options": [
+    {
+     "text": "65%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "90%"
+    },
+    {
+     "text": "75%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "New area = (1 + 25/100)(1 + 40/100) = 1.75 of the old. Increase = 75%.",
+   "order": 79,
+   "subPattern": "melting-recasting",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Area change = x + y + xy/100."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 40% and its breadth is decreased by 20%. What is the net change in its area?",
+   "options": [
+    {
+     "text": "20% increase"
+    },
+    {
+     "text": "12% decrease"
+    },
+    {
+     "text": "12% increase"
+    },
+    {
+     "text": "14% decrease"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "New area = 1.4 x 0.8 = 1.12 of the old. Net change = a 12% increase.",
+   "order": 80,
+   "subPattern": "melting-recasting",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Multiply the two factors and compare with 1."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 10% and its breadth is decreased by 10%. What is the net change in its area?",
+   "options": [
+    {
+     "text": "0.75% increase"
+    },
+    {
+     "text": "1.25% decrease"
+    },
+    {
+     "text": "1% increase"
+    },
+    {
+     "text": "1% decrease"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "New area = 1.1 x 0.9 = 0.99 of the old. Net change = a 1% decrease.",
+   "order": 81,
+   "subPattern": "melting-recasting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the two factors and compare with 1."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 30% and its breadth is decreased by 10%. What is the net change in its area?",
+   "options": [
+    {
+     "text": "17% increase"
+    },
+    {
+     "text": "20% increase"
+    },
+    {
+     "text": "17% decrease"
+    },
+    {
+     "text": "15% decrease"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New area = 1.3 x 0.9 = 1.17 of the old. Net change = a 17% increase.",
+   "order": 82,
+   "subPattern": "melting-recasting",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two factors and compare with 1."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 20% and its breadth is decreased by 30%. What is the net change in its area?",
+   "options": [
+    {
+     "text": "10% decrease"
+    },
+    {
+     "text": "16% increase"
+    },
+    {
+     "text": "16% decrease"
+    },
+    {
+     "text": "18% decrease"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "New area = 1.2 x 0.7 = 0.84 of the old. Net change = a 16% decrease.",
+   "order": 83,
+   "subPattern": "melting-recasting",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Multiply the two factors and compare with 1."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 40% and its breadth is decreased by 40%. What is the net change in its area?",
+   "options": [
+    {
+     "text": "12% decrease"
+    },
+    {
+     "text": "16% decrease"
+    },
+    {
+     "text": "16% increase"
+    },
+    {
+     "text": "12.8% increase"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New area = 1.4 x 0.6 = 0.84 of the old. Net change = a 16% decrease.",
+   "order": 84,
+   "subPattern": "melting-recasting",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Multiply the two factors and compare with 1."
+  },
+  {
+   "questionText": "The length of a rectangle is increased by 5% and its breadth is decreased by 40%. What is the net change in its area?",
+   "options": [
+    {
+     "text": "18.5% decrease"
+    },
+    {
+     "text": "35% decrease"
+    },
+    {
+     "text": "37% decrease"
+    },
+    {
+     "text": "37% increase"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "New area = 1.05 x 0.6 = 0.63 of the old. Net change = a 37% decrease.",
+   "order": 85,
+   "subPattern": "melting-recasting",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Multiply the two factors and compare with 1."
+  },
+  {
+   "questionText": "The side of a square is increased by 20%. By what percent does its area increase?",
+   "options": [
+    {
+     "text": "44%"
+    },
+    {
+     "text": "55%"
+    },
+    {
+     "text": "40%"
+    },
+    {
+     "text": "39%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New area = (1.2)^2 = 1.44 of the old. Increase = 44%.",
+   "order": 86,
+   "subPattern": "melting-recasting",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Area (square) change = 2x + x^2/100."
+  },
+  {
+   "questionText": "The side of a square is increased by 10%. By what percent does its area increase?",
+   "options": [
+    {
+     "text": "20%"
+    },
+    {
+     "text": "16%"
+    },
+    {
+     "text": "23%"
+    },
+    {
+     "text": "21%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "New area = (1.1)^2 = 1.21 of the old. Increase = 21%.",
+   "order": 87,
+   "subPattern": "melting-recasting",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Area (square) change = 2x + x^2/100."
+  },
+  {
+   "questionText": "The radius of a circle is increased by 20%. By what percent does its area increase?",
+   "options": [
+    {
+     "text": "46%"
+    },
+    {
+     "text": "44%"
+    },
+    {
+     "text": "55%"
+    },
+    {
+     "text": "40%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Area is proportional to r^2: (1.2)^2 = 1.44. Increase = 44%.",
+   "order": 88,
+   "subPattern": "melting-recasting",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Area (circle) change = 2x + x^2/100."
+  },
+  {
+   "questionText": "A rectangular garden 58 m long and 12 m wide has a path 1 m wide running around it on the outside. What is the area of the path?",
+   "options": [
+    {
+     "text": "696 sq. m"
+    },
+    {
+     "text": "144 sq. m"
+    },
+    {
+     "text": "192 sq. m"
+    },
+    {
+     "text": "108 sq. m"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Outer rectangle = (58 + 2) x (12 + 2) = 840. Path = 840 - 696 = 144 sq. m.",
+   "order": 89,
+   "subPattern": "paths-rings-borders",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Path area = outer area - inner area."
+  },
+  {
+   "questionText": "A rectangular garden 26 m long and 32 m wide has a path 1 m wide running around it on the outside. What is the area of the path?",
+   "options": [
+    {
+     "text": "120 sq. m"
+    },
+    {
+     "text": "90 sq. m"
+    },
+    {
+     "text": "150 sq. m"
+    },
+    {
+     "text": "832 sq. m"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Outer rectangle = (26 + 2) x (32 + 2) = 952. Path = 952 - 832 = 120 sq. m.",
+   "order": 90,
+   "subPattern": "paths-rings-borders",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Path area = outer area - inner area."
+  },
+  {
+   "questionText": "A rectangular garden 50 m long and 14 m wide has a path 1 m wide running around it on the outside. What is the area of the path?",
+   "options": [
+    {
+     "text": "99 sq. m"
+    },
+    {
+     "text": "700 sq. m"
+    },
+    {
+     "text": "176 sq. m"
+    },
+    {
+     "text": "132 sq. m"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Outer rectangle = (50 + 2) x (14 + 2) = 832. Path = 832 - 700 = 132 sq. m.",
+   "order": 91,
+   "subPattern": "paths-rings-borders",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Path area = outer area - inner area."
+  },
+  {
+   "questionText": "A circular park has a radius of 35 m. A path 7 m wide runs around it on the outside. What is the area of the path? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "5544 sq. m"
+    },
+    {
+     "text": "3388 sq. m"
+    },
+    {
+     "text": "1694 sq. m"
+    },
+    {
+     "text": "2541 sq. m"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Area = π[(35 + 7)^2 - 35^2] = 22/7 x (1764 - 1225) = 1694 sq. m.",
+   "order": 92,
+   "subPattern": "paths-rings-borders",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Ring area = π(R^2 - r^2)."
+  },
+  {
+   "questionText": "A circular park has a radius of 42 m. A path 7 m wide runs around it on the outside. What is the area of the path? (Take π = 22/7)",
+   "options": [
+    {
+     "text": "2002 sq. m"
+    },
+    {
+     "text": "7546 sq. m"
+    },
+    {
+     "text": "3003 sq. m"
+    },
+    {
+     "text": "1001 sq. m"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Area = π[(42 + 7)^2 - 42^2] = 22/7 x (2401 - 1764) = 2002 sq. m.",
+   "order": 93,
+   "subPattern": "paths-rings-borders",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Ring area = π(R^2 - r^2)."
+  },
+  {
+   "questionText": "A rectangular lawn 36 m x 14 m has a path 1 m wide running all around it on the inside. What is the cost of paving the path at Rs 15 per sq. m?",
+   "options": [
+    {
+     "text": "Rs 720"
+    },
+    {
+     "text": "Rs 1440"
+    },
+    {
+     "text": "Rs 7560"
+    },
+    {
+     "text": "Rs 960"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inner lawn = (36 - 2) x (14 - 2) = 408. Path area = 504 - 408 = 96. Cost = 96 x 15 = Rs 1440.",
+   "order": 94,
+   "subPattern": "cost-of-painting-fencing-flooring",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Subtract the inner rectangle (each side reduced by 2w)."
+  },
+  {
+   "questionText": "A rectangular lawn 46 m x 36 m has a path 2 m wide running all around it on the inside. What is the cost of paving the path at Rs 12 per sq. m?",
+   "options": [
+    {
+     "text": "Rs 4680"
+    },
+    {
+     "text": "Rs 19872"
+    },
+    {
+     "text": "Rs 2808"
+    },
+    {
+     "text": "Rs 3744"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Inner lawn = (46 - 4) x (36 - 4) = 1344. Path area = 1656 - 1344 = 312. Cost = 312 x 12 = Rs 3744.",
+   "order": 95,
+   "subPattern": "cost-of-painting-fencing-flooring",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract the inner rectangle (each side reduced by 2w)."
+  },
+  {
+   "questionText": "A rectangular lawn 58 m x 34 m has a path 1 m wide running all around it on the inside. What is the cost of paving the path at Rs 15 per sq. m?",
+   "options": [
+    {
+     "text": "Rs 4050"
+    },
+    {
+     "text": "Rs 5400"
+    },
+    {
+     "text": "Rs 2700"
+    },
+    {
+     "text": "Rs 29580"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Inner lawn = (58 - 2) x (34 - 2) = 1792. Path area = 1972 - 1792 = 180. Cost = 180 x 15 = Rs 2700.",
+   "order": 96,
+   "subPattern": "cost-of-painting-fencing-flooring",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Subtract the inner rectangle (each side reduced by 2w)."
+  },
+  {
+   "questionText": "A rectangular lawn 48 m x 28 m has a path 2 m wide running all around it on the inside. What is the cost of paving the path at Rs 5 per sq. m?",
+   "options": [
+    {
+     "text": "Rs 1440"
+    },
+    {
+     "text": "Rs 6720"
+    },
+    {
+     "text": "Rs 2160"
+    },
+    {
+     "text": "Rs 1296"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Inner lawn = (48 - 4) x (28 - 4) = 1056. Path area = 1344 - 1056 = 288. Cost = 288 x 5 = Rs 1440.",
+   "order": 97,
+   "subPattern": "cost-of-painting-fencing-flooring",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Subtract the inner rectangle (each side reduced by 2w)."
+  },
+  {
+   "questionText": "A rectangular lawn 28 m x 14 m has a path 2 m wide running all around it on the inside. What is the cost of paving the path at Rs 15 per sq. m?",
+   "options": [
+    {
+     "text": "Rs 2736"
+    },
+    {
+     "text": "Rs 1140"
+    },
+    {
+     "text": "Rs 2280"
+    },
+    {
+     "text": "Rs 5880"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Inner lawn = (28 - 4) x (14 - 4) = 240. Path area = 392 - 240 = 152. Cost = 152 x 15 = Rs 2280.",
+   "order": 98,
+   "subPattern": "cost-of-painting-fencing-flooring",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Subtract the inner rectangle (each side reduced by 2w)."
+  },
+  {
+   "questionText": "A rectangular lawn 42 m x 30 m has a path 1 m wide running all around it on the inside. What is the cost of paving the path at Rs 15 per sq. m?",
+   "options": [
+    {
+     "text": "Rs 1050"
+    },
+    {
+     "text": "Rs 2100"
+    },
+    {
+     "text": "Rs 18900"
+    },
+    {
+     "text": "Rs 1400"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inner lawn = (42 - 2) x (30 - 2) = 1120. Path area = 1260 - 1120 = 140. Cost = 140 x 15 = Rs 2100.",
+   "order": 99,
+   "subPattern": "cost-of-painting-fencing-flooring",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Subtract the inner rectangle (each side reduced by 2w)."
+  },
+  {
+   "questionText": "A rectangular lawn 40 m x 30 m has a path 2 m wide running all around it on the inside. What is the cost of paving the path at Rs 10 per sq. m?",
+   "options": [
+    {
+     "text": "Rs 3300"
+    },
+    {
+     "text": "Rs 2112"
+    },
+    {
+     "text": "Rs 12000"
+    },
+    {
+     "text": "Rs 2640"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Inner lawn = (40 - 4) x (30 - 4) = 936. Path area = 1200 - 936 = 264. Cost = 264 x 10 = Rs 2640.",
+   "order": 100,
+   "subPattern": "cost-of-painting-fencing-flooring",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Subtract the inner rectangle (each side reduced by 2w)."
+  }
+ ]
+}

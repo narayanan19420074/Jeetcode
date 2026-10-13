@@ -1,0 +1,2715 @@
+{
+ "pattern": {
+  "title": "Problems on Ages",
+  "slug": "problems-on-ages",
+  "description": "Age equations and ratios across time.",
+  "order": 9,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "present-age-equations",
+    "title": "Present age equations"
+   },
+   {
+    "slug": "ratio-based-ages",
+    "title": "Ratio-based ages"
+   },
+   {
+    "slug": "past-future-ages",
+    "title": "Past & future ages"
+   },
+   {
+    "slug": "sum-difference-of-ages",
+    "title": "Sum & difference of ages"
+   },
+   {
+    "slug": "average-age",
+    "title": "Average age"
+   },
+   {
+    "slug": "parent-child-age-puzzles",
+    "title": "Parent-child age puzzles"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The sum of the present ages of a mother and his daughter is 59 years and the mother is 49 years older than the daughter. What is the mother's present age?",
+   "options": [
+    {
+     "text": "5 years"
+    },
+    {
+     "text": "54 years"
+    },
+    {
+     "text": "55 years"
+    },
+    {
+     "text": "29.5 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Older + younger = 59, older - younger = 49. Older = (59 + 49)/2 = 54 years.",
+   "order": 1,
+   "subPattern": "present-age-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Older = (sum + difference)/2; younger = (sum - difference)/2."
+  },
+  {
+   "questionText": "The sum of the present ages of a mother and his daughter is 84 years and the mother is 34 years older than the daughter. What is the mother's present age?",
+   "options": [
+    {
+     "text": "42 years"
+    },
+    {
+     "text": "25 years"
+    },
+    {
+     "text": "59 years"
+    },
+    {
+     "text": "54 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Older + younger = 84, older - younger = 34. Older = (84 + 34)/2 = 59 years.",
+   "order": 2,
+   "subPattern": "present-age-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Older = (sum + difference)/2; younger = (sum - difference)/2."
+  },
+  {
+   "questionText": "The sum of the present ages of a uncle and his nephew is 55 years and the uncle is 33 years older than the nephew. What is the uncle's present age?",
+   "options": [
+    {
+     "text": "11 years"
+    },
+    {
+     "text": "49 years"
+    },
+    {
+     "text": "27.5 years"
+    },
+    {
+     "text": "44 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Older + younger = 55, older - younger = 33. Older = (55 + 33)/2 = 44 years.",
+   "order": 3,
+   "subPattern": "present-age-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Older = (sum + difference)/2; younger = (sum - difference)/2."
+  },
+  {
+   "questionText": "The sum of the present ages of a teacher and his student is 53 years and the teacher is 21 years older than the student. What is the teacher's present age?",
+   "options": [
+    {
+     "text": "37 years"
+    },
+    {
+     "text": "26.5 years"
+    },
+    {
+     "text": "16 years"
+    },
+    {
+     "text": "38 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Older + younger = 53, older - younger = 21. Older = (53 + 21)/2 = 37 years.",
+   "order": 4,
+   "subPattern": "present-age-equations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Older = (sum + difference)/2; younger = (sum - difference)/2."
+  },
+  {
+   "questionText": "A father is 5 times as old as his son. If the sum of their ages is 66 years, what is the son's age?",
+   "options": [
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "22 years"
+    },
+    {
+     "text": "55 years"
+    },
+    {
+     "text": "11 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the son's age be x. Then x + 5x = 66, so 6x = 66 and x = 11 years.",
+   "order": 5,
+   "subPattern": "present-age-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "The ages are in the ratio 1:5; divide the sum into 6 parts."
+  },
+  {
+   "questionText": "A teacher is 2 times as old as his student. If the sum of their ages is 45 years, what is the student's age?",
+   "options": [
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "30 years"
+    },
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "20 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let the student's age be x. Then x + 2x = 45, so 3x = 45 and x = 15 years.",
+   "order": 6,
+   "subPattern": "present-age-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "The ages are in the ratio 1:2; divide the sum into 3 parts."
+  },
+  {
+   "questionText": "A mother is 4 times as old as his daughter. If the sum of their ages is 55 years, what is the daughter's age?",
+   "options": [
+    {
+     "text": "44 years"
+    },
+    {
+     "text": "11 years"
+    },
+    {
+     "text": "22 years"
+    },
+    {
+     "text": "13 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the daughter's age be x. Then x + 4x = 55, so 5x = 55 and x = 11 years.",
+   "order": 7,
+   "subPattern": "present-age-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "The ages are in the ratio 1:4; divide the sum into 5 parts."
+  },
+  {
+   "questionText": "A uncle is 2 times as old as his nephew. If the sum of their ages is 18 years, what is the nephew's age?",
+   "options": [
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "4 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "5 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the nephew's age be x. Then x + 2x = 18, so 3x = 18 and x = 6 years.",
+   "order": 8,
+   "subPattern": "present-age-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "The ages are in the ratio 1:2; divide the sum into 3 parts."
+  },
+  {
+   "questionText": "A teacher is 3 times as old as his student. If the sum of their ages is 36 years, what is the student's age?",
+   "options": [
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "27 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let the student's age be x. Then x + 3x = 36, so 4x = 36 and x = 9 years.",
+   "order": 9,
+   "subPattern": "present-age-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "The ages are in the ratio 1:3; divide the sum into 4 parts."
+  },
+  {
+   "questionText": "A mother is 4 times as old as his daughter. If the sum of their ages is 75 years, what is the daughter's age?",
+   "options": [
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "17 years"
+    },
+    {
+     "text": "60 years"
+    },
+    {
+     "text": "15 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the daughter's age be x. Then x + 4x = 75, so 5x = 75 and x = 15 years.",
+   "order": 10,
+   "subPattern": "present-age-equations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "The ages are in the ratio 1:4; divide the sum into 5 parts."
+  },
+  {
+   "questionText": "A uncle is 3 times as old as his nephew. The difference between their ages is 16 years. What is the uncle's age?",
+   "options": [
+    {
+     "text": "24 years"
+    },
+    {
+     "text": "48 years"
+    },
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "32 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the nephew's age be x: 3x - x = 16, so x = 8. The uncle is 3 x 8 = 24 years old.",
+   "order": 11,
+   "subPattern": "present-age-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Difference = (3 - 1) parts, so one part = 16/2."
+  },
+  {
+   "questionText": "A mother is 6 times as old as his daughter. The difference between their ages is 65 years. What is the mother's age?",
+   "options": [
+    {
+     "text": "52 years"
+    },
+    {
+     "text": "78 years"
+    },
+    {
+     "text": "390 years"
+    },
+    {
+     "text": "13 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the daughter's age be x: 6x - x = 65, so x = 13. The mother is 6 x 13 = 78 years old.",
+   "order": 12,
+   "subPattern": "present-age-equations",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Difference = (6 - 1) parts, so one part = 65/5."
+  },
+  {
+   "questionText": "The ages of a teacher and his student are in the ratio 9:4 and the difference between their ages is 25 years. What is the teacher's age?",
+   "options": [
+    {
+     "text": "50 years"
+    },
+    {
+     "text": "45 years"
+    },
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "25 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Difference = (9 - 4) parts = 25, so one part = 5. Teacher = 9 x 5 = 45 years.",
+   "order": 13,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Difference of the ratio terms corresponds to the age gap."
+  },
+  {
+   "questionText": "The ratio of the present ages of a uncle and his nephew is 3:2 and the sum of their ages is 15 years. What is the uncle's age?",
+   "options": [
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "7 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "6 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Parts = 3 + 2 = 5. One part = 15/5 = 3. Uncle = 3 x 3 = 9 years.",
+   "order": 14,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Divide the sum in the given ratio."
+  },
+  {
+   "questionText": "The ages of a father and his son are in the ratio 9:4 and the difference between their ages is 35 years. What is the father's age?",
+   "options": [
+    {
+     "text": "126 years"
+    },
+    {
+     "text": "35 years"
+    },
+    {
+     "text": "28 years"
+    },
+    {
+     "text": "63 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference = (9 - 4) parts = 35, so one part = 7. Father = 9 x 7 = 63 years.",
+   "order": 15,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Difference of the ratio terms corresponds to the age gap."
+  },
+  {
+   "questionText": "The ratio of the present ages of a father and his son is 3:2 and the sum of their ages is 30 years. What is the father's age?",
+   "options": [
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "24 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Parts = 3 + 2 = 5. One part = 30/5 = 6. Father = 3 x 6 = 18 years.",
+   "order": 16,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Divide the sum in the given ratio."
+  },
+  {
+   "questionText": "The ratio of the present ages of a father and his son is 5:2 and the sum of their ages is 49 years. What is the father's age?",
+   "options": [
+    {
+     "text": "33 years"
+    },
+    {
+     "text": "42 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "35 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Parts = 5 + 2 = 7. One part = 49/7 = 7. Father = 5 x 7 = 35 years.",
+   "order": 17,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Divide the sum in the given ratio."
+  },
+  {
+   "questionText": "The ages of a uncle and his nephew are in the ratio 4:1 and the difference between their ages is 15 years. What is the uncle's age?",
+   "options": [
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "5 years"
+    },
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "21 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference = (4 - 1) parts = 15, so one part = 5. Uncle = 4 x 5 = 20 years.",
+   "order": 18,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Difference of the ratio terms corresponds to the age gap."
+  },
+  {
+   "questionText": "The ratio of the present ages of a uncle and his nephew is 3:2 and the sum of their ages is 25 years. What is the uncle's age?",
+   "options": [
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "10 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Parts = 3 + 2 = 5. One part = 25/5 = 5. Uncle = 3 x 5 = 15 years.",
+   "order": 19,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Divide the sum in the given ratio."
+  },
+  {
+   "questionText": "The present ages of a uncle and his nephew are in the ratio 8:5. After 10 years the ratio will be 22:15. What is the uncle's present age?",
+   "options": [
+    {
+     "text": "84 years"
+    },
+    {
+     "text": "56 years"
+    },
+    {
+     "text": "35 years"
+    },
+    {
+     "text": "66 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the ages be 8k and 5k. (8k + 10)/(5k + 10) = 22/15. Cross-multiplying: k(120 - 110) = 10(22 - 15), so k = 7 and the uncle is 8 x 7 = 56 years old.",
+   "order": 20,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Put the ages as ak and bk, apply the change, cross-multiply and solve for k."
+  },
+  {
+   "questionText": "The present ages of a mother and his daughter are in the ratio 5:2. After 3 years the ratio will be 23:11. What is the mother's present age?",
+   "options": [
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "23 years"
+    },
+    {
+     "text": "8 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the ages be 5k and 2k. (5k + 3)/(2k + 3) = 23/11. Cross-multiplying: k(55 - 46) = 3(23 - 11), so k = 4 and the mother is 5 x 4 = 20 years old.",
+   "order": 21,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Put the ages as ak and bk, apply the change, cross-multiply and solve for k."
+  },
+  {
+   "questionText": "The ages of a uncle and his nephew are in the ratio 3:1. If the uncle is 18 years older than the nephew, how old will the nephew be after 5 years?",
+   "options": [
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "32 years"
+    },
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "14 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "One part = 18/(3 - 1) = 9. Nephew now = 1 x 9 = 9. After 5 years = 14 years.",
+   "order": 22,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the present age first, then add the years."
+  },
+  {
+   "questionText": "The ages of a teacher and his student are in the ratio 5:2. If the teacher is 33 years older than the student, how old will the student be after 5 years?",
+   "options": [
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "22 years"
+    },
+    {
+     "text": "27 years"
+    },
+    {
+     "text": "60 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "One part = 33/(5 - 2) = 11. Student now = 2 x 11 = 22. After 5 years = 27 years.",
+   "order": 23,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the present age first, then add the years."
+  },
+  {
+   "questionText": "The present ages of a mother and his daughter are in the ratio 7:5. After 8 years the ratio will be 29:23. What is the mother's present age?",
+   "options": [
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "19 years"
+    },
+    {
+     "text": "29 years"
+    },
+    {
+     "text": "15 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the ages be 7k and 5k. (7k + 8)/(5k + 8) = 29/23. Cross-multiplying: k(161 - 145) = 8(29 - 23), so k = 3 and the mother is 7 x 3 = 21 years old.",
+   "order": 24,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Put the ages as ak and bk, apply the change, cross-multiply and solve for k."
+  },
+  {
+   "questionText": "The ages of a mother and his daughter are in the ratio 9:4. If the mother is 40 years older than the daughter, how old will the daughter be after 5 years?",
+   "options": [
+    {
+     "text": "77 years"
+    },
+    {
+     "text": "35 years"
+    },
+    {
+     "text": "32 years"
+    },
+    {
+     "text": "37 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "One part = 40/(9 - 4) = 8. Daughter now = 4 x 8 = 32. After 5 years = 37 years.",
+   "order": 25,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the present age first, then add the years."
+  },
+  {
+   "questionText": "The ages of a father and his son are in the ratio 7:2. If the father is 45 years older than the son, how old will the son be after 5 years?",
+   "options": [
+    {
+     "text": "68 years"
+    },
+    {
+     "text": "28 years"
+    },
+    {
+     "text": "23 years"
+    },
+    {
+     "text": "18 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "One part = 45/(7 - 2) = 9. Son now = 2 x 9 = 18. After 5 years = 23 years.",
+   "order": 26,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the present age first, then add the years."
+  },
+  {
+   "questionText": "The ages of a father and his son are in the ratio 4:1. If the father is 33 years older than the son, how old will the son be after 5 years?",
+   "options": [
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "16 years"
+    },
+    {
+     "text": "49 years"
+    },
+    {
+     "text": "11 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "One part = 33/(4 - 1) = 11. Son now = 1 x 11 = 11. After 5 years = 16 years.",
+   "order": 27,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find the present age first, then add the years."
+  },
+  {
+   "questionText": "The present ages of a father and his son are in the ratio 7:5. After 8 years the ratio will be 25:19. What is the father's present age?",
+   "options": [
+    {
+     "text": "42 years"
+    },
+    {
+     "text": "50 years"
+    },
+    {
+     "text": "37 years"
+    },
+    {
+     "text": "30 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the ages be 7k and 5k. (7k + 8)/(5k + 8) = 25/19. Cross-multiplying: k(133 - 125) = 8(25 - 19), so k = 6 and the father is 7 x 6 = 42 years old.",
+   "order": 28,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Put the ages as ak and bk, apply the change, cross-multiply and solve for k."
+  },
+  {
+   "questionText": "The present ages of a mother and his daughter are in the ratio 3:2. After 8 years the ratio will be 17:14. What is the mother's present age?",
+   "options": [
+    {
+     "text": "7 years"
+    },
+    {
+     "text": "17 years"
+    },
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "9 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the ages be 3k and 2k. (3k + 8)/(2k + 8) = 17/14. Cross-multiplying: k(42 - 34) = 8(17 - 14), so k = 3 and the mother is 3 x 3 = 9 years old.",
+   "order": 29,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Put the ages as ak and bk, apply the change, cross-multiply and solve for k."
+  },
+  {
+   "questionText": "The ages of a uncle and his nephew are in the ratio 7:3. If the uncle is 24 years older than the nephew, how old will the nephew be after 5 years?",
+   "options": [
+    {
+     "text": "25 years"
+    },
+    {
+     "text": "23 years"
+    },
+    {
+     "text": "47 years"
+    },
+    {
+     "text": "18 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "One part = 24/(7 - 3) = 6. Nephew now = 3 x 6 = 18. After 5 years = 23 years.",
+   "order": 30,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Find the present age first, then add the years."
+  },
+  {
+   "questionText": "The present ages of a mother and his daughter are in the ratio 4:3. After 5 years the ratio will be 21:17. What is the mother's present age?",
+   "options": [
+    {
+     "text": "16 years"
+    },
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "15 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the ages be 4k and 3k. (4k + 5)/(3k + 5) = 21/17. Cross-multiplying: k(68 - 63) = 5(21 - 17), so k = 4 and the mother is 4 x 4 = 16 years old.",
+   "order": 31,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Put the ages as ak and bk, apply the change, cross-multiply and solve for k."
+  },
+  {
+   "questionText": "The ages of a mother and his daughter are in the ratio 7:2. If the mother is 55 years older than the daughter, how old will the daughter be after 5 years?",
+   "options": [
+    {
+     "text": "22 years"
+    },
+    {
+     "text": "82 years"
+    },
+    {
+     "text": "27 years"
+    },
+    {
+     "text": "28 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "One part = 55/(7 - 2) = 11. Daughter now = 2 x 11 = 22. After 5 years = 27 years.",
+   "order": 32,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find the present age first, then add the years."
+  },
+  {
+   "questionText": "The present ages of a teacher and his student are in the ratio 5:3. 2 years ago the ratio was 19:11. What is the student's present age?",
+   "options": [
+    {
+     "text": "40 years"
+    },
+    {
+     "text": "24 years"
+    },
+    {
+     "text": "22 years"
+    },
+    {
+     "text": "36 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the ages be 5k and 3k. (5k - 2)/(3k - 2) = 19/11. Cross-multiplying gives k(55 - 57) = 2(11 - 19), so k = 8. The student is 3 x 8 = 24 years old.",
+   "order": 33,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same method as the future case, but subtract the years."
+  },
+  {
+   "questionText": "The present ages of a father and his son are in the ratio 5:2. After 10 years the ratio will be 5:3. What is the difference between their ages?",
+   "options": [
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "7 years"
+    },
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "12 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the ages be 5k and 2k. (5k + 10)/(2k + 10) = 5/3 gives k = 4. Difference = (5 - 2) x 4 = 12 years.",
+   "order": 34,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The age gap never changes: it is (a - b) x k."
+  },
+  {
+   "questionText": "The present ages of a mother and his daughter are in the ratio 3:2. After 6 years the ratio will be 21:16. What is the difference between their ages?",
+   "options": [
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "5 years"
+    },
+    {
+     "text": "6 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let the ages be 3k and 2k. (3k + 6)/(2k + 6) = 21/16 gives k = 5. Difference = (3 - 2) x 5 = 5 years.",
+   "order": 35,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "The age gap never changes: it is (a - b) x k."
+  },
+  {
+   "questionText": "The present ages of a father and his son are in the ratio 8:5. 4 years ago the ratio was 5:3. What is the son's present age?",
+   "options": [
+    {
+     "text": "40 years"
+    },
+    {
+     "text": "64 years"
+    },
+    {
+     "text": "39 years"
+    },
+    {
+     "text": "36 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the ages be 8k and 5k. (8k - 4)/(5k - 4) = 5/3. Cross-multiplying gives k(24 - 25) = 4(3 - 5), so k = 8. The son is 5 x 8 = 40 years old.",
+   "order": 36,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Same method as the future case, but subtract the years."
+  },
+  {
+   "questionText": "The present ages of a teacher and his student are in the ratio 3:2. 2 years ago the ratio was 19:12. What is the student's present age?",
+   "options": [
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "14 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the ages be 3k and 2k. (3k - 2)/(2k - 2) = 19/12. Cross-multiplying gives k(36 - 38) = 2(12 - 19), so k = 7. The student is 2 x 7 = 14 years old.",
+   "order": 37,
+   "subPattern": "ratio-based-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Same method as the future case, but subtract the years."
+  },
+  {
+   "questionText": "A uncle is 31 years old and his nephew is 12 years old. In how many years will the uncle be twice as old as the nephew?",
+   "options": [
+    {
+     "text": "7 years"
+    },
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "19 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After t years: 31 + t = 2(12 + t), so t = 31 - 24 = 7 years.",
+   "order": 38,
+   "subPattern": "past-future-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Set up (older + t) = k x (younger + t) and solve."
+  },
+  {
+   "questionText": "5 years ago a uncle was 4 times as old as his nephew. If the nephew is 16 years old now, what is the uncle's present age?",
+   "options": [
+    {
+     "text": "50 years"
+    },
+    {
+     "text": "49 years"
+    },
+    {
+     "text": "64 years"
+    },
+    {
+     "text": "98 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Nephew's age 5 years ago = 11. The uncle then = 4 x 11 = 44. Now = 44 + 5 = 49 years.",
+   "order": 39,
+   "subPattern": "past-future-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Work in the past, then add the years back to get present age."
+  },
+  {
+   "questionText": "A uncle is 44 years old and his nephew is 16 years old. In how many years will the uncle be twice as old as the nephew?",
+   "options": [
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "28 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After t years: 44 + t = 2(16 + t), so t = 44 - 32 = 12 years.",
+   "order": 40,
+   "subPattern": "past-future-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Set up (older + t) = k x (younger + t) and solve."
+  },
+  {
+   "questionText": "6 years ago a uncle was 2 times as old as his nephew. If the nephew is 17 years old now, what is the uncle's present age?",
+   "options": [
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "34 years"
+    },
+    {
+     "text": "28 years"
+    },
+    {
+     "text": "33 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Nephew's age 6 years ago = 11. The uncle then = 2 x 11 = 22. Now = 22 + 6 = 28 years.",
+   "order": 41,
+   "subPattern": "past-future-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Work in the past, then add the years back to get present age."
+  },
+  {
+   "questionText": "6 years ago a teacher was 5 times as old as his student. If the student is 22 years old now, what is the teacher's present age?",
+   "options": [
+    {
+     "text": "43 years"
+    },
+    {
+     "text": "110 years"
+    },
+    {
+     "text": "129 years"
+    },
+    {
+     "text": "86 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Student's age 6 years ago = 16. The teacher then = 5 x 16 = 80. Now = 80 + 6 = 86 years.",
+   "order": 42,
+   "subPattern": "past-future-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Work in the past, then add the years back to get present age."
+  },
+  {
+   "questionText": "A teacher is 53 years old and his student is 14 years old. In how many years will the teacher be twice as old as the student?",
+   "options": [
+    {
+     "text": "25 years"
+    },
+    {
+     "text": "39 years"
+    },
+    {
+     "text": "26 years"
+    },
+    {
+     "text": "50 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After t years: 53 + t = 2(14 + t), so t = 53 - 28 = 25 years.",
+   "order": 43,
+   "subPattern": "past-future-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Set up (older + t) = k x (younger + t) and solve."
+  },
+  {
+   "questionText": "8 years ago a teacher was 5 times as old as his student. If the student is 24 years old now, what is the teacher's present age?",
+   "options": [
+    {
+     "text": "66 years"
+    },
+    {
+     "text": "88 years"
+    },
+    {
+     "text": "120 years"
+    },
+    {
+     "text": "44 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Student's age 8 years ago = 16. The teacher then = 5 x 16 = 80. Now = 80 + 8 = 88 years.",
+   "order": 44,
+   "subPattern": "past-future-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Work in the past, then add the years back to get present age."
+  },
+  {
+   "questionText": "A teacher is 37 years old and his student is 11 years old. In how many years will the teacher be twice as old as the student?",
+   "options": [
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "16 years"
+    },
+    {
+     "text": "17 years"
+    },
+    {
+     "text": "26 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After t years: 37 + t = 2(11 + t), so t = 37 - 22 = 15 years.",
+   "order": 45,
+   "subPattern": "past-future-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Set up (older + t) = k x (younger + t) and solve."
+  },
+  {
+   "questionText": "A father is 26 years old and his son is 16 years old. How many years ago was the father exactly 3 times as old as the son?",
+   "options": [
+    {
+     "text": "22 years"
+    },
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "11 years"
+    },
+    {
+     "text": "12 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "26 - t = 3(16 - t), so (3 - 1)t = 3 x 16 - 26 = 22, giving t = 11 years.",
+   "order": 46,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Subtract t from both ages and equate."
+  },
+  {
+   "questionText": "The sum of the ages of a uncle and his nephew will be 60 years after 4 years. If the uncle is 24 years older than the nephew, what is the uncle's present age?",
+   "options": [
+    {
+     "text": "30 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "39 years"
+    },
+    {
+     "text": "38 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Present sum = 60 - 2 x 4 = 52. Older = (52 + 24)/2 = 38 years.",
+   "order": 47,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Each person ages by t, so subtract 2t from the future sum to get today's sum."
+  },
+  {
+   "questionText": "A teacher is 32 years old and his student is 16 years old. How many years ago was the teacher exactly 3 times as old as the student?",
+   "options": [
+    {
+     "text": "13 years"
+    },
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "9 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "32 - t = 3(16 - t), so (3 - 1)t = 3 x 16 - 32 = 16, giving t = 8 years.",
+   "order": 48,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Subtract t from both ages and equate."
+  },
+  {
+   "questionText": "A teacher is 53 years old and his student is 21 years old. How many years ago was the teacher exactly 3 times as old as the student?",
+   "options": [
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "4 years"
+    },
+    {
+     "text": "5 years"
+    },
+    {
+     "text": "10 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "53 - t = 3(21 - t), so (3 - 1)t = 3 x 21 - 53 = 10, giving t = 5 years.",
+   "order": 49,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Subtract t from both ages and equate."
+  },
+  {
+   "questionText": "The sum of the ages of a mother and his daughter will be 45 years after 3 years. If the mother is 23 years older than the daughter, what is the mother's present age?",
+   "options": [
+    {
+     "text": "31 years"
+    },
+    {
+     "text": "36 years"
+    },
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "22.5 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Present sum = 45 - 2 x 3 = 39. Older = (39 + 23)/2 = 31 years.",
+   "order": 50,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each person ages by t, so subtract 2t from the future sum to get today's sum."
+  },
+  {
+   "questionText": "A uncle is 34 years old and his nephew is 22 years old. How many years ago was the uncle exactly 3 times as old as the nephew?",
+   "options": [
+    {
+     "text": "32 years"
+    },
+    {
+     "text": "16 years"
+    },
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "17 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "34 - t = 3(22 - t), so (3 - 1)t = 3 x 22 - 34 = 32, giving t = 16 years.",
+   "order": 51,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Subtract t from both ages and equate."
+  },
+  {
+   "questionText": "The sum of the ages of a uncle and his nephew will be 86 years after 8 years. If the uncle is 18 years older than the nephew, what is the uncle's present age?",
+   "options": [
+    {
+     "text": "43 years"
+    },
+    {
+     "text": "26 years"
+    },
+    {
+     "text": "88 years"
+    },
+    {
+     "text": "44 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Present sum = 86 - 2 x 8 = 70. Older = (70 + 18)/2 = 44 years.",
+   "order": 52,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Each person ages by t, so subtract 2t from the future sum to get today's sum."
+  },
+  {
+   "questionText": "A uncle is 33 years old and his nephew is 24 years old. How many years ago was the uncle exactly 4 times as old as the nephew?",
+   "options": [
+    {
+     "text": "16 years"
+    },
+    {
+     "text": "19 years"
+    },
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "22 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "33 - t = 4(24 - t), so (4 - 1)t = 4 x 24 - 33 = 63, giving t = 21 years.",
+   "order": 53,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Subtract t from both ages and equate."
+  },
+  {
+   "questionText": "The sum of the ages of a father and his son will be 75 years after 3 years. If the father is 9 years older than the son, what is the father's present age?",
+   "options": [
+    {
+     "text": "39 years"
+    },
+    {
+     "text": "44 years"
+    },
+    {
+     "text": "37.5 years"
+    },
+    {
+     "text": "30 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Present sum = 75 - 2 x 3 = 69. Older = (69 + 9)/2 = 39 years.",
+   "order": 54,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Each person ages by t, so subtract 2t from the future sum to get today's sum."
+  },
+  {
+   "questionText": "The sum of the ages of a uncle and his nephew will be 67 years after 4 years. If the uncle is 7 years older than the nephew, what is the uncle's present age?",
+   "options": [
+    {
+     "text": "33.5 years"
+    },
+    {
+     "text": "33 years"
+    },
+    {
+     "text": "26 years"
+    },
+    {
+     "text": "28 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Present sum = 67 - 2 x 4 = 59. Older = (59 + 7)/2 = 33 years.",
+   "order": 55,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each person ages by t, so subtract 2t from the future sum to get today's sum."
+  },
+  {
+   "questionText": "A teacher is 31 years old and his student is 22 years old. How many years ago was the teacher exactly 4 times as old as the student?",
+   "options": [
+    {
+     "text": "17 years"
+    },
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "19 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "31 - t = 4(22 - t), so (4 - 1)t = 4 x 22 - 31 = 57, giving t = 19 years.",
+   "order": 56,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Subtract t from both ages and equate."
+  },
+  {
+   "questionText": "The sum of the ages of a father and his son will be 61 years after 8 years. If the father is 17 years older than the son, what is the father's present age?",
+   "options": [
+    {
+     "text": "31 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "30.5 years"
+    },
+    {
+     "text": "29 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Present sum = 61 - 2 x 8 = 45. Older = (45 + 17)/2 = 31 years.",
+   "order": 57,
+   "subPattern": "past-future-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Each person ages by t, so subtract 2t from the future sum to get today's sum."
+  },
+  {
+   "questionText": "A teacher's age is 5 times his student's age. After 12 years the teacher will be 3 times as old as the student. What is the teacher's present age?",
+   "options": [
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "72 years"
+    },
+    {
+     "text": "60 years"
+    },
+    {
+     "text": "120 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let the student be x: 5x + 12 = 3(x + 12), so 2x = 24 and x = 12. The teacher is 5 x 12 = 60 years old.",
+   "order": 58,
+   "subPattern": "past-future-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Express both ages with x and equate after the shift."
+  },
+  {
+   "questionText": "A father's age is 5 times his son's age. After 6 years the father will be 4 times as old as the son. What is the father's present age?",
+   "options": [
+    {
+     "text": "96 years"
+    },
+    {
+     "text": "120 years"
+    },
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "90 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the son be x: 5x + 6 = 4(x + 6), so 1x = 18 and x = 18. The father is 5 x 18 = 90 years old.",
+   "order": 59,
+   "subPattern": "past-future-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Express both ages with x and equate after the shift."
+  },
+  {
+   "questionText": "4 years ago a mother was 7 times as old as his daughter. After 4 years, he will be 3 times as old as the daughter. What is the mother's present age?",
+   "options": [
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "32 years"
+    },
+    {
+     "text": "37 years"
+    },
+    {
+     "text": "34 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let daughter = x now, mother = f. f - 4 = 7(x - 4) and f + 4 = 3(x + 4). Subtracting: 8 = 3(x + 4) - 7(x - 4), which gives x = 8 and f = 32 years.",
+   "order": 60,
+   "subPattern": "past-future-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Write both conditions as equations in the two present ages and solve."
+  },
+  {
+   "questionText": "5 years ago a uncle was 3 times as old as his nephew. After 5 years, he will be 2 times as old as the nephew. What is the uncle's present age?",
+   "options": [
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "33 years"
+    },
+    {
+     "text": "35 years"
+    },
+    {
+     "text": "28 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let nephew = x now, uncle = f. f - 5 = 3(x - 5) and f + 5 = 2(x + 5). Subtracting: 10 = 2(x + 5) - 3(x - 5), which gives x = 15 and f = 35 years.",
+   "order": 61,
+   "subPattern": "past-future-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Write both conditions as equations in the two present ages and solve."
+  },
+  {
+   "questionText": "A uncle's age is 3 times his nephew's age. After 10 years the uncle will be 2 times as old as the nephew. What is the uncle's present age?",
+   "options": [
+    {
+     "text": "40 years"
+    },
+    {
+     "text": "45 years"
+    },
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "30 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the nephew be x: 3x + 10 = 2(x + 10), so 1x = 10 and x = 10. The uncle is 3 x 10 = 30 years old.",
+   "order": 62,
+   "subPattern": "past-future-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Express both ages with x and equate after the shift."
+  },
+  {
+   "questionText": "A teacher is 21 years old and his student is 5 years old. What will be the sum of their ages after 15 years?",
+   "options": [
+    {
+     "text": "41 years"
+    },
+    {
+     "text": "56 years"
+    },
+    {
+     "text": "112 years"
+    },
+    {
+     "text": "55 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each ages 15 years, so sum = 21 + 5 + 2 x 15 = 56 years.",
+   "order": 63,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "The sum of two ages rises by 2t after t years."
+  },
+  {
+   "questionText": "A mother is 44 years old and his daughter is 10 years old. What will be the sum of their ages after 5 years?",
+   "options": [
+    {
+     "text": "64 years"
+    },
+    {
+     "text": "59 years"
+    },
+    {
+     "text": "80 years"
+    },
+    {
+     "text": "96 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each ages 5 years, so sum = 44 + 10 + 2 x 5 = 64 years.",
+   "order": 64,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "The sum of two ages rises by 2t after t years."
+  },
+  {
+   "questionText": "A mother is 30 years old and his daughter is 9 years old. What will be the sum of their ages after 8 years?",
+   "options": [
+    {
+     "text": "47 years"
+    },
+    {
+     "text": "44 years"
+    },
+    {
+     "text": "57 years"
+    },
+    {
+     "text": "55 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each ages 8 years, so sum = 30 + 9 + 2 x 8 = 55 years.",
+   "order": 65,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "The sum of two ages rises by 2t after t years."
+  },
+  {
+   "questionText": "A mother is 35 years old and his daughter is 9 years old. What will be the sum of their ages after 12 years?",
+   "options": [
+    {
+     "text": "56 years"
+    },
+    {
+     "text": "68 years"
+    },
+    {
+     "text": "85 years"
+    },
+    {
+     "text": "51 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each ages 12 years, so sum = 35 + 9 + 2 x 12 = 68 years.",
+   "order": 66,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "The sum of two ages rises by 2t after t years."
+  },
+  {
+   "questionText": "A father is 2 times as old as his son who is 15 years old. How old will the father be when the son is 21 years old?",
+   "options": [
+    {
+     "text": "36 years"
+    },
+    {
+     "text": "37 years"
+    },
+    {
+     "text": "72 years"
+    },
+    {
+     "text": "42 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The father is 30 now. In 6 years the son will be 21, and the father will be 30 + 6 = 36 years.",
+   "order": 67,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Both age by the same number of years."
+  },
+  {
+   "questionText": "A uncle is 2 times as old as his nephew who is 13 years old. How old will the uncle be when the nephew is 17 years old?",
+   "options": [
+    {
+     "text": "34 years"
+    },
+    {
+     "text": "32 years"
+    },
+    {
+     "text": "30 years"
+    },
+    {
+     "text": "60 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The uncle is 26 now. In 4 years the nephew will be 17, and the uncle will be 26 + 4 = 30 years.",
+   "order": 68,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Both age by the same number of years."
+  },
+  {
+   "questionText": "A uncle is 2 times as old as his nephew who is 10 years old. How old will the uncle be when the nephew is 15 years old?",
+   "options": [
+    {
+     "text": "30 years"
+    },
+    {
+     "text": "50 years"
+    },
+    {
+     "text": "23 years"
+    },
+    {
+     "text": "25 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The uncle is 20 now. In 5 years the nephew will be 15, and the uncle will be 20 + 5 = 25 years.",
+   "order": 69,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Both age by the same number of years."
+  },
+  {
+   "questionText": "A uncle is 2 times as old as his nephew who is 12 years old. How old will the uncle be when the nephew is 22 years old?",
+   "options": [
+    {
+     "text": "44 years"
+    },
+    {
+     "text": "51 years"
+    },
+    {
+     "text": "34 years"
+    },
+    {
+     "text": "39 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The uncle is 24 now. In 10 years the nephew will be 22, and the uncle will be 24 + 10 = 34 years.",
+   "order": 70,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Both age by the same number of years."
+  },
+  {
+   "questionText": "A father is 2 times as old as his son who is 8 years old. How old will the father be when the son is 16 years old?",
+   "options": [
+    {
+     "text": "32 years"
+    },
+    {
+     "text": "24 years"
+    },
+    {
+     "text": "26 years"
+    },
+    {
+     "text": "48 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The father is 16 now. In 8 years the son will be 16, and the father will be 16 + 8 = 24 years.",
+   "order": 71,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Both age by the same number of years."
+  },
+  {
+   "questionText": "A father is 2 times as old as his son who is 13 years old. How old will the father be when the son is 17 years old?",
+   "options": [
+    {
+     "text": "30 years"
+    },
+    {
+     "text": "36 years"
+    },
+    {
+     "text": "35 years"
+    },
+    {
+     "text": "34 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The father is 26 now. In 4 years the son will be 17, and the father will be 26 + 4 = 30 years.",
+   "order": 72,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Both age by the same number of years."
+  },
+  {
+   "questionText": "The sum of the present ages of a teacher and his student is 90 years. 6 years ago the teacher was 69 years old. How old is the student today?",
+   "options": [
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "69 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The teacher is 69 + 6 = 75 years old today. Student = 90 - 75 = 15 years.",
+   "order": 73,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert the past age to the present age first, then use the sum."
+  },
+  {
+   "questionText": "The sum of the present ages of a teacher and his student is 84 years. 4 years ago the teacher was 66 years old. How old is the student today?",
+   "options": [
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "66 years"
+    },
+    {
+     "text": "16 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The teacher is 66 + 4 = 70 years old today. Student = 84 - 70 = 14 years.",
+   "order": 74,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Convert the past age to the present age first, then use the sum."
+  },
+  {
+   "questionText": "The sum of the present ages of a uncle and his nephew is 78 years. 5 years ago the uncle was 60 years old. How old is the nephew today?",
+   "options": [
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "11 years"
+    },
+    {
+     "text": "60 years"
+    },
+    {
+     "text": "13 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The uncle is 60 + 5 = 65 years old today. Nephew = 78 - 65 = 13 years.",
+   "order": 75,
+   "subPattern": "sum-difference-of-ages",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert the past age to the present age first, then use the sum."
+  },
+  {
+   "questionText": "5 children were born at intervals of 2 years each. If the youngest is 4 years old, how old is the eldest?",
+   "options": [
+    {
+     "text": "7 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "11 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "There are 4 gaps of 2 years between the youngest and the eldest. Eldest = 4 + 4 x 2 = 12 years.",
+   "order": 76,
+   "subPattern": "average-age",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Eldest = youngest + (number of children - 1) x interval."
+  },
+  {
+   "questionText": "6 children were born at intervals of 3 years each. If the youngest is 8 years old, how old is the eldest?",
+   "options": [
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "25 years"
+    },
+    {
+     "text": "23 years"
+    },
+    {
+     "text": "26 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "There are 5 gaps of 3 years between the youngest and the eldest. Eldest = 8 + 5 x 3 = 23 years.",
+   "order": 77,
+   "subPattern": "average-age",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Eldest = youngest + (number of children - 1) x interval."
+  },
+  {
+   "questionText": "4 children were born at intervals of 3 years each. If the youngest is 3 years old, how old is the eldest?",
+   "options": [
+    {
+     "text": "15 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "7 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "There are 3 gaps of 3 years between the youngest and the eldest. Eldest = 3 + 3 x 3 = 12 years.",
+   "order": 78,
+   "subPattern": "average-age",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Eldest = youngest + (number of children - 1) x interval."
+  },
+  {
+   "questionText": "6 children were born at intervals of 3 years each. If the youngest is 3 years old, how old is the eldest?",
+   "options": [
+    {
+     "text": "27 years"
+    },
+    {
+     "text": "13 years"
+    },
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "18 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "There are 5 gaps of 3 years between the youngest and the eldest. Eldest = 3 + 5 x 3 = 18 years.",
+   "order": 79,
+   "subPattern": "average-age",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Eldest = youngest + (number of children - 1) x interval."
+  },
+  {
+   "questionText": "The sum of the ages of 6 children born at intervals of 3 years each is 93 years. What is the age of the youngest child?",
+   "options": [
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "15.5 years"
+    },
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "4 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The ages are y, y + 3, y + 6 and so on up to y + 15. Sum = 6y + 3 x 15 = 93, so y = 8 years.",
+   "order": 80,
+   "subPattern": "average-age",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Average of the ages is the middle value; step back by half the span."
+  },
+  {
+   "questionText": "The sum of the ages of 5 children born at intervals of 4 years each is 85 years. What is the age of the youngest child?",
+   "options": [
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "11 years"
+    },
+    {
+     "text": "17 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The ages are y, y + 4, y + 8 and so on up to y + 16. Sum = 5y + 4 x 10 = 85, so y = 9 years.",
+   "order": 81,
+   "subPattern": "average-age",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Average of the ages is the middle value; step back by half the span."
+  },
+  {
+   "questionText": "The sum of the ages of 3 children born at intervals of 4 years each is 36 years. What is the age of the youngest child?",
+   "options": [
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "4 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "8 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The ages are y, y + 4, y + 8 and so on up to y + 8. Sum = 3y + 4 x 3 = 36, so y = 8 years.",
+   "order": 82,
+   "subPattern": "average-age",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Average of the ages is the middle value; step back by half the span."
+  },
+  {
+   "questionText": "The sum of the ages of 5 children born at intervals of 2 years each is 40 years. What is the age of the youngest child?",
+   "options": [
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "4 years"
+    },
+    {
+     "text": "2 years"
+    },
+    {
+     "text": "5 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The ages are y, y + 2, y + 4 and so on up to y + 8. Sum = 5y + 2 x 10 = 40, so y = 4 years.",
+   "order": 83,
+   "subPattern": "average-age",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Average of the ages is the middle value; step back by half the span."
+  },
+  {
+   "questionText": "The sum of the ages of 3 children born at intervals of 4 years each is 30 years. What is the age of the youngest child?",
+   "options": [
+    {
+     "text": "1 years"
+    },
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "10 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The ages are y, y + 4, y + 8 and so on up to y + 8. Sum = 3y + 4 x 3 = 30, so y = 6 years.",
+   "order": 84,
+   "subPattern": "average-age",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Average of the ages is the middle value; step back by half the span."
+  },
+  {
+   "questionText": "The sum of the ages of 3 children born at intervals of 3 years each is 30 years. What is the age of the youngest child?",
+   "options": [
+    {
+     "text": "5 years"
+    },
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "7 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The ages are y, y + 3, y + 6 and so on up to y + 6. Sum = 3y + 3 x 3 = 30, so y = 7 years.",
+   "order": 85,
+   "subPattern": "average-age",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Average of the ages is the middle value; step back by half the span."
+  },
+  {
+   "questionText": "The sum of the ages of 3 children born at intervals of 2 years each is 30 years. In how many years will the sum of their ages be 42 years?",
+   "options": [
+    {
+     "text": "3 years"
+    },
+    {
+     "text": "4 years"
+    },
+    {
+     "text": "8 years"
+    },
+    {
+     "text": "12 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Every child gains 1 year per year, so the sum rises by 3 per year. Years = (42 - 30)/3 = 4.",
+   "order": 86,
+   "subPattern": "average-age",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Sum of ages grows by (number of people) every year."
+  },
+  {
+   "questionText": "The sum of the ages of 4 children born at intervals of 4 years each is 68 years. In how many years will the sum of their ages be 92 years?",
+   "options": [
+    {
+     "text": "24 years"
+    },
+    {
+     "text": "1 years"
+    },
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "4 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Every child gains 1 year per year, so the sum rises by 4 per year. Years = (92 - 68)/4 = 6.",
+   "order": 87,
+   "subPattern": "average-age",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Sum of ages grows by (number of people) every year."
+  },
+  {
+   "questionText": "Bala is 4 years older than Divya, and Divya is 2 times as old as Anil. The sum of their ages is 34 years. How old is Anil?",
+   "options": [
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "11 years"
+    },
+    {
+     "text": "16 years"
+    },
+    {
+     "text": "12 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let Anil = x, Divya = 2x, Bala = 2x + 4. Sum = 5x + 4 = 34, so x = 6 years.",
+   "order": 88,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Express every age in terms of the youngest person."
+  },
+  {
+   "questionText": "Divya is 4 years older than Anil, and Anil is 3 times as old as Farid. The sum of their ages is 102 years. How old is Farid?",
+   "options": [
+    {
+     "text": "28 years"
+    },
+    {
+     "text": "42 years"
+    },
+    {
+     "text": "46 years"
+    },
+    {
+     "text": "14 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let Farid = x, Anil = 3x, Divya = 3x + 4. Sum = 7x + 4 = 102, so x = 14 years.",
+   "order": 89,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Express every age in terms of the youngest person."
+  },
+  {
+   "questionText": "Divya is 3 years older than Farid, and Farid is 3 times as old as Charan. The sum of their ages is 45 years. How old is Charan?",
+   "options": [
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "9 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let Charan = x, Farid = 3x, Divya = 3x + 3. Sum = 7x + 3 = 45, so x = 6 years.",
+   "order": 90,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Express every age in terms of the youngest person."
+  },
+  {
+   "questionText": "Anil is 5 years older than Charan, who is 3 years older than Bala. If the sum of the ages of all three is 50 years, what is Anil's age?",
+   "options": [
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "13 years"
+    },
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "16 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let Bala = x, Charan = x + 3, Anil = x + 8. Sum = 3x + 11 = 50, so x = 13 and Anil = 21 years.",
+   "order": 91,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Take the youngest as x and add the gaps."
+  },
+  {
+   "questionText": "Charan is 5 years older than Farid, who is 2 years older than Esha. If the sum of the ages of all three is 45 years, what is Charan's age?",
+   "options": [
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "19 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "20 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let Esha = x, Farid = x + 2, Charan = x + 7. Sum = 3x + 9 = 45, so x = 12 and Charan = 19 years.",
+   "order": 92,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take the youngest as x and add the gaps."
+  },
+  {
+   "questionText": "Divya is 7 years older than Bala, who is 5 years older than Farid. If the sum of the ages of all three is 44 years, what is Divya's age?",
+   "options": [
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "9 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "21 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let Farid = x, Bala = x + 5, Divya = x + 12. Sum = 3x + 17 = 44, so x = 9 and Divya = 21 years.",
+   "order": 93,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Take the youngest as x and add the gaps."
+  },
+  {
+   "questionText": "Charan is 4 years older than Anil, who is 7 years older than Esha. If the sum of the ages of all three is 39 years, what is Charan's age?",
+   "options": [
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "14 years"
+    },
+    {
+     "text": "7 years"
+    },
+    {
+     "text": "16 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let Esha = x, Anil = x + 7, Charan = x + 11. Sum = 3x + 18 = 39, so x = 7 and Charan = 18 years.",
+   "order": 94,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Take the youngest as x and add the gaps."
+  },
+  {
+   "questionText": "Farid is 6 years older than Charan, who is 2 years older than Esha. If the sum of the ages of all three is 46 years, what is Farid's age?",
+   "options": [
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "20 years"
+    },
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "14 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let Esha = x, Charan = x + 2, Farid = x + 8. Sum = 3x + 10 = 46, so x = 12 and Farid = 20 years.",
+   "order": 95,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Take the youngest as x and add the gaps."
+  },
+  {
+   "questionText": "Anil is 6 years older than Esha, who is 2 years older than Farid. If the sum of the ages of all three is 58 years, what is Anil's age?",
+   "options": [
+    {
+     "text": "16 years"
+    },
+    {
+     "text": "25 years"
+    },
+    {
+     "text": "24 years"
+    },
+    {
+     "text": "18 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let Farid = x, Esha = x + 2, Anil = x + 8. Sum = 3x + 10 = 58, so x = 16 and Anil = 24 years.",
+   "order": 96,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Take the youngest as x and add the gaps."
+  },
+  {
+   "questionText": "Bala is 5 years older than Anil, who is 2 years older than Esha. If the sum of the ages of all three is 54 years, what is Bala's age?",
+   "options": [
+    {
+     "text": "17 years"
+    },
+    {
+     "text": "22 years"
+    },
+    {
+     "text": "21 years"
+    },
+    {
+     "text": "15 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let Esha = x, Anil = x + 2, Bala = x + 7. Sum = 3x + 9 = 54, so x = 15 and Bala = 22 years.",
+   "order": 97,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take the youngest as x and add the gaps."
+  },
+  {
+   "questionText": "The ages of Anil and Farid are in the ratio 3:5, and the ages of Farid and Divya are in the ratio 2:3. If the sum of all three ages is 62 years, what is Divya's age?",
+   "options": [
+    {
+     "text": "12 years"
+    },
+    {
+     "text": "31 years"
+    },
+    {
+     "text": "30 years"
+    },
+    {
+     "text": "24 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Make Farid's part equal: Anil:Farid:Divya = 6:10:15. Sum of parts = 31, so one part = 62/31 = 2. Divya = 15 x 2 = 30 years.",
+   "order": 98,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Combine the two ratios into A:B:C first, then split the total."
+  },
+  {
+   "questionText": "The ages of Anil and Bala are in the ratio 3:5, and the ages of Bala and Esha are in the ratio 3:5. If the sum of all three ages is 98 years, what is Esha's age?",
+   "options": [
+    {
+     "text": "18 years"
+    },
+    {
+     "text": "52 years"
+    },
+    {
+     "text": "40 years"
+    },
+    {
+     "text": "50 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Make Bala's part equal: Anil:Bala:Esha = 9:15:25. Sum of parts = 49, so one part = 98/49 = 2. Esha = 25 x 2 = 50 years.",
+   "order": 99,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Combine the two ratios into A:B:C first, then split the total."
+  },
+  {
+   "questionText": "The ages of Charan and Divya are in the ratio 3:4, and the ages of Divya and Esha are in the ratio 5:6. If the sum of all three ages is 236 years, what is Esha's age?",
+   "options": [
+    {
+     "text": "96 years"
+    },
+    {
+     "text": "128 years"
+    },
+    {
+     "text": "144 years"
+    },
+    {
+     "text": "60 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Make Divya's part equal: Charan:Divya:Esha = 15:20:24. Sum of parts = 59, so one part = 236/59 = 4. Esha = 24 x 4 = 96 years.",
+   "order": 100,
+   "subPattern": "parent-child-age-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Combine the two ratios into A:B:C first, then split the total."
+  }
+ ]
+}

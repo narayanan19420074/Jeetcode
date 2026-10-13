@@ -1,0 +1,1881 @@
+{
+  "questions": [
+    {
+      "questionText": "Devi invests 20% more than Arun, and Arun invests 40% less than Ezhil. If the profit is Rs 8700, what is Ezhil's share?",
+      "options": [
+        "Rs 3000",
+        "Rs 5625",
+        "Rs 2900",
+        "Rs 3750"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let Ezhil = 100. Arun = 60. Devi = 60 x 1.2 = 72. Ratio Devi:Arun:Ezhil = 18:15:25. Ezhil's share = 8700 x 25/58 = Rs 3750.",
+      "shortcut": "Start from the person with no percentage given (take 100) and work outward.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun starts a business with Rs 24000. Chitra joins later with Rs 36000, and at the end of the year the profits are divided in the ratio 4:5. After how many months did Chitra join?",
+      "options": [
+        "10 months",
+        "2 months",
+        "1 months",
+        "3 months"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "24000 x 12 : 36000 x (12 - m) = 4 : 5. So 36000 x (12 - m) = 360000, giving 12 - m = 10 and m = 2 months.",
+      "shortcut": "Equate the capital-month ratio to the given profit ratio and solve for the time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three partners invest in the ratio 4:5:6. The share of the third partner is Rs 500 more than that of the first. What is the total profit?",
+      "options": [
+        "Rs 3750",
+        "Rs 4125",
+        "Rs 7500",
+        "Rs 3375"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "(6 - 4) parts = Rs 500, so one part = Rs 250. Total = 15 x 250 = Rs 3750.",
+      "shortcut": "Find the value of one part from the given difference, then multiply by the total parts.",
+      "subPattern": "simple-partnership",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan, Chitra and Devi invest Rs 10000, Rs 12000 and Rs 30000 for 12, 9 and 6 months respectively. If the total profit is Rs 17000, what is Devi's share?",
+      "options": [
+        "Rs 7500",
+        "Rs 15000",
+        "Rs 3750",
+        "Rs 5000"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Capital x months: 10000 x 12 = 120000, 12000 x 9 = 108000, 30000 x 6 = 180000. Ratio = 10:9:15. Devi's share = 17000 x 15/34 = Rs 7500.",
+      "shortcut": "Multiply each capital by its time, then split the profit in that ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil is a working partner and Chitra is a sleeping partner who invest Rs 30000 and Rs 20000. Ezhil gets 10% of the profit for managing and the rest is shared in the capital ratio. If the profit is Rs 12000, how much does Chitra get?",
+      "options": [
+        "Rs 4800",
+        "Rs 2880",
+        "Rs 5400",
+        "Rs 4320"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "After Ezhil's fee (10% = 1200), remaining = 10800. Chitra's share = 10800 x 20000/50000 = Rs 4320.",
+      "shortcut": "The sleeping partner receives only his capital-ratio share of the remaining profit.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun starts a business with Rs 40000. Ezhil joins later with Rs 50000, and at the end of the year the profits are divided in the ratio 12:5. After how many months did Ezhil join?",
+      "options": [
+        "4 months",
+        "9 months",
+        "8 months",
+        "3 months"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "40000 x 12 : 50000 x (12 - m) = 12 : 5. So 50000 x (12 - m) = 200000, giving 12 - m = 4 and m = 8 months.",
+      "shortcut": "Equate the capital-month ratio to the given profit ratio and solve for the time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil is a working partner and Devi is a sleeping partner who invest Rs 40000 and Rs 60000. Ezhil gets 10% of the profit for managing and the rest is shared in the capital ratio. If the profit is Rs 44000, how much does Devi get?",
+      "options": [
+        "Rs 26400",
+        "Rs 23760",
+        "Rs 35640",
+        "Rs 17820"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "After Ezhil's fee (10% = 4400), remaining = 39600. Devi's share = 39600 x 60000/100000 = Rs 23760.",
+      "shortcut": "The sleeping partner receives only his capital-ratio share of the remaining profit.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun is a working partner and Ezhil is a sleeping partner who invest Rs 50000 and Rs 25000. Arun gets 25% of the profit for managing and the rest is shared in the capital ratio. If the profit is Rs 34000, how much does Ezhil get?",
+      "options": [
+        "Rs 8500",
+        "Rs 6800",
+        "Rs 7650",
+        "Rs 9350"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "After Arun's fee (25% = 8500), remaining = 25500. Ezhil's share = 25500 x 25000/75000 = Rs 8500.",
+      "shortcut": "The sleeping partner receives only his capital-ratio share of the remaining profit.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi invests 25% more than Balu for the same period. If the total profit is Rs 4500, what is Devi's share?",
+      "options": [
+        "Rs 3750",
+        "Rs 2000",
+        "Rs 2500",
+        "Rs 3125"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let Balu = 100, then Devi = 125. Ratio = 125:100. Devi's share = 4500 x 125/225 = Rs 2500.",
+      "shortcut": "Let the smaller investment be 100 and apply the percentage.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests Rs 40000 and Devi invests Rs 30000. After 3 months Ezhil withdraws half of his capital, and after 6 months Devi increases his capital by 50%. If the annual profit is Rs 22500, what is Ezhil's share?",
+      "options": [
+        "Rs 9000",
+        "Rs 13500",
+        "Rs 9900",
+        "Rs 10800"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Ezhil: 40000 x 3 + 20000 x 9 = 300000. Devi: 30000 x 6 + 45000 x 6 = 450000. Ezhil's share = 22500 x 300000/750000 = Rs 9000.",
+      "shortcut": "Break each partner's year at the change points and add capital x months.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests 4 times as much as Balu, and Ezhil's money stays in the business for 2 times as long. If the total profit is Rs 1350, what is Ezhil's share?",
+      "options": [
+        "Rs 900",
+        "Rs 1320",
+        "Rs 1080",
+        "Rs 1200"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capital x time: Ezhil = 4 x 2 = 8, Balu = 1 x 1 = 1. Ratio = 8:1. Ezhil's share = 1350 x 8/9 = Rs 1200.",
+      "shortcut": "Multiply the capital ratio by the time ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil and Balu invest Rs 25000 and Rs 35000 in a business that suffers a loss of Rs 6000. What is Ezhil's share of the loss?",
+      "options": [
+        "Rs 3500",
+        "Rs 3750",
+        "Rs 5000",
+        "Rs 2500"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Loss is shared in the ratio of investments 25000:35000. Ezhil's loss = 6000 x 25000/60000 = Rs 2500.",
+      "shortcut": "Loss is divided exactly like profit: capital x time.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan and Devi start a business investing Rs 45000 and Rs 55000 respectively. At the end of the year the profit is Rs 60000. What is Farhan's share?",
+      "options": [
+        "Rs 30000",
+        "Rs 27000",
+        "Rs 33000",
+        "Rs 29700"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Profit is shared in the ratio of investments = 45000:55000 = 9:11. Farhan's share = 60000 x 45000/100000 = Rs 27000.",
+      "shortcut": "Same period: profit ratio = investment ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests 50% more than Chitra, and Chitra invests 40% less than Arun. If the profit is Rs 5250, what is Arun's share?",
+      "options": [
+        "Rs 1890",
+        "Rs 1750",
+        "Rs 2100",
+        "Rs 2800"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let Arun = 100. Chitra = 60. Farhan = 60 x 1.5 = 90. Ratio Farhan:Chitra:Arun = 9:6:10. Arun's share = 5250 x 10/25 = Rs 2100.",
+      "shortcut": "Start from the person with no percentage given (take 100) and work outward.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil and Devi invest Rs 15000 and Rs 35000. Ezhil also manages the business and gets 20% of the profit as his fee; the rest is divided in the ratio of capital. If the profit is Rs 21000, what is the total amount Ezhil gets?",
+      "options": [
+        "Rs 18480",
+        "Rs 6300",
+        "Rs 7392",
+        "Rs 9240"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Fee = 20% of 21000 = 4200. Remaining = 16800. Ezhil's share of the rest = 16800 x 15000/50000 = 5040. Total = Rs 9240.",
+      "shortcut": "Deduct the management fee first; divide only the remainder by capital.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 48000 and Arun invests Rs 36000. After 3 months Farhan withdraws half of his capital, and after 6 months Arun increases his capital by 50%. If the annual profit is Rs 27000, what is Farhan's share?",
+      "options": [
+        "Rs 10800",
+        "Rs 16200",
+        "Rs 21600",
+        "Rs 12960"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Farhan: 48000 x 3 + 24000 x 9 = 360000. Arun: 36000 x 6 + 54000 x 6 = 540000. Farhan's share = 27000 x 360000/900000 = Rs 10800.",
+      "shortcut": "Break each partner's year at the change points and add capital x months.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra, Farhan and Arun invest Rs 10000, Rs 20000 and Rs 15000 for 12, 6 and 3 months respectively. If the total profit is Rs 5700, what is Arun's share?",
+      "options": [
+        "Rs 1200",
+        "Rs 1900",
+        "Rs 900",
+        "Rs 810"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capital x months: 10000 x 12 = 120000, 20000 x 6 = 120000, 15000 x 3 = 45000. Ratio = 8:8:3. Arun's share = 5700 x 3/19 = Rs 900.",
+      "shortcut": "Multiply each capital by its time, then split the profit in that ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three partners invest in the ratio 4:5:6. The first partner's share of the loss is Rs 5800. What is the total loss?",
+      "options": [
+        "Rs 17400",
+        "Rs 21750",
+        "Rs 43500",
+        "Rs 14500"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "One part = 5800/4 = Rs 1450. Total loss = 15 x 1450 = Rs 21750.",
+      "shortcut": "First partner's share / their ratio part = value of one part.",
+      "subPattern": "simple-partnership",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan, Chitra and Arun invest in the ratio 2:3:5. The total profit is Rs 3000. What is the difference between the largest and the smallest share?",
+      "options": [
+        "Rs 900",
+        "Rs 450",
+        "Rs 1500",
+        "Rs 1350"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "One part = 3000/10 = 300. Difference = (5 - 2) x 300 = Rs 900.",
+      "shortcut": "Largest minus smallest = (c - a) parts of the profit.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi and Ezhil start a business investing Rs 12000 and Rs 18000 respectively. At the end of the year the profit is Rs 24000. What is Devi's share?",
+      "options": [
+        "Rs 6400",
+        "Rs 14400",
+        "Rs 12000",
+        "Rs 9600"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Profit is shared in the ratio of investments = 12000:18000 = 2:3. Devi's share = 24000 x 12000/30000 = Rs 9600.",
+      "shortcut": "Same period: profit ratio = investment ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil and Chitra invest Rs 25000 and Rs 35000 in a business that suffers a loss of Rs 12000. What is Ezhil's share of the loss?",
+      "options": [
+        "Rs 10000",
+        "Rs 3750",
+        "Rs 5000",
+        "Rs 7000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Loss is shared in the ratio of investments 25000:35000. Ezhil's loss = 12000 x 25000/60000 = Rs 5000.",
+      "shortcut": "Loss is divided exactly like profit: capital x time.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun and Farhan start a business investing Rs 45000 and Rs 55000 respectively. At the end of the year the profit is Rs 70000. What is Arun's share?",
+      "options": [
+        "Rs 35000",
+        "Rs 31500",
+        "Rs 38500",
+        "Rs 34650"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Profit is shared in the ratio of investments = 45000:55000 = 9:11. Arun's share = 70000 x 45000/100000 = Rs 31500.",
+      "shortcut": "Same period: profit ratio = investment ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests 40% more than Devi, and Devi invests 20% less than Arun. If the profit is Rs 26280, what is Arun's share?",
+      "options": [
+        "Rs 10800",
+        "Rs 8100",
+        "Rs 8760",
+        "Rs 9000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let Arun = 100. Devi = 80. Ezhil = 80 x 1.4 = 112. Ratio Ezhil:Devi:Arun = 28:20:25. Arun's share = 26280 x 25/73 = Rs 9000.",
+      "shortcut": "Start from the person with no percentage given (take 100) and work outward.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu starts a business with Rs 30000 and Ezhil joins him after 6 months with Rs 40000. In what ratio should they divide the annual profit?",
+      "options": [
+        "3:2",
+        "1:1",
+        "3:1",
+        "3:4"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Capital-months: 30000 x 12 = 360000 and 40000 x 6 = 240000. Ratio = 3:2.",
+      "shortcut": "Ratio of capital x time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu, Ezhil and Farhan invest in the ratio 4:5:6. The total profit is Rs 3000. What is the difference between the largest and the smallest share?",
+      "options": [
+        "Rs 500",
+        "Rs 1200",
+        "Rs 400",
+        "Rs 800"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "One part = 3000/15 = 200. Difference = (6 - 4) x 200 = Rs 400.",
+      "shortcut": "Largest minus smallest = (c - a) parts of the profit.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three partners invest in the ratio 2:3:5. The first partner's share of the loss is Rs 2700. What is the total loss?",
+      "options": [
+        "Rs 10800",
+        "Rs 8100",
+        "Rs 13500",
+        "Rs 18000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "One part = 2700/2 = Rs 1350. Total loss = 10 x 1350 = Rs 13500.",
+      "shortcut": "First partner's share / their ratio part = value of one part.",
+      "subPattern": "simple-partnership",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan and Arun invest Rs 30000 and Rs 20000. Farhan manages the business for 25% of the profit and the rest is divided in the ratio of capitals. If Farhan receives Rs 22800 more than Arun, what is the total profit?",
+      "options": [
+        "Rs 228000",
+        "Rs 68400",
+        "Rs 57000",
+        "Rs 51300"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let profit = P. Farhan gets 25% of P + 30000/50000 of 75% of P; Arun gets 20000/50000 of 75% of P. Difference = P x 0.4 = 22800, so P = Rs 57000.",
+      "shortcut": "Express both shares as fractions of P; their difference as a fraction gives P.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan and Devi start a business investing Rs 45000 and Rs 55000 respectively. At the end of the year the profit is Rs 70000. What is Farhan's share?",
+      "options": [
+        "Rs 35000",
+        "Rs 38500",
+        "Rs 31500",
+        "Rs 15750"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Profit is shared in the ratio of investments = 45000:55000 = 9:11. Farhan's share = 70000 x 45000/100000 = Rs 31500.",
+      "shortcut": "Same period: profit ratio = investment ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra, Arun and Farhan invest Rs 12000, Rs 15000 and Rs 20000 for 12, 8 and 4 months respectively. If the total profit is Rs 19350, what is Farhan's share?",
+      "options": [
+        "Rs 4500",
+        "Rs 3600",
+        "Rs 2250",
+        "Rs 6750"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Capital x months: 12000 x 12 = 144000, 15000 x 8 = 120000, 20000 x 4 = 80000. Ratio = 18:15:10. Farhan's share = 19350 x 10/43 = Rs 4500.",
+      "shortcut": "Multiply each capital by its time, then split the profit in that ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 15000 and Ezhil invests an unknown amount for the same period. The total profit is Rs 27500 and Farhan's share is Rs 7500. What did Ezhil invest?",
+      "options": [
+        "Rs 30000",
+        "Rs 32000",
+        "Rs 80000",
+        "Rs 40000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Ezhil's profit share = 27500 - 7500 = 20000. Investment ratio = profit ratio, so Ezhil's investment = 15000 x 20000/7500 = Rs 40000.",
+      "shortcut": "Profit ratio equals capital ratio when time is the same.",
+      "subPattern": "time-based-investment",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra invests Rs 60000 and Devi invests Rs 30000. After 4 months Devi withdraws Rs 15000. What is the ratio of their profits at the end of the year?",
+      "options": [
+        "3:1",
+        "2:1",
+        "1:3",
+        "1:1"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Chitra: 60000 x 12 = 720000. Devi: 30000 x 4 + 15000 x 8 = 240000. Ratio = 3:1.",
+      "shortcut": "Add the capital-months of each period before forming the ratio.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 24000 for 12 months and Balu invests Rs 36000 for 8 months. The business loses Rs 5760. What is Balu's share of the loss?",
+      "options": [
+        "Rs 3456",
+        "Rs 3600",
+        "Rs 2880",
+        "Rs 4320"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ratio = 24000 x 12 : 36000 x 8 = 1:1. Balu's loss = 5760 x 288000/576000 = Rs 2880.",
+      "shortcut": "Use capital-months for the loss ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra and Arun invest Rs 60000 and Rs 30000 in a business. After 4 months Chitra withdraws Rs 12000. If the profit at the end of the year is Rs 39360, what is Chitra's share?",
+      "options": [
+        "Rs 31200",
+        "Rs 26240",
+        "Rs 16640",
+        "Rs 24960"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Chitra: 60000 x 4 + 48000 x 8 = 624000. Arun: 30000 x 12 = 360000. Ratio = 26:15. Chitra's share = 39360 x 624000/984000 = Rs 24960.",
+      "shortcut": "After a withdrawal the capital changes; compute capital-months in two periods.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi starts a business with Rs 24000 and Farhan joins him after 6 months with Rs 36000. In what ratio should they divide the annual profit?",
+      "options": [
+        "4:3",
+        "2:1",
+        "2:3",
+        "3:4"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Capital-months: 24000 x 12 = 288000 and 36000 x 6 = 216000. Ratio = 4:3.",
+      "shortcut": "Ratio of capital x time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi invests 25% more than Balu for the same period. If the total profit is Rs 2250, what is Devi's share?",
+      "options": [
+        "Rs 1000",
+        "Rs 625",
+        "Rs 1500",
+        "Rs 1250"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let Balu = 100, then Devi = 125. Ratio = 125:100. Devi's share = 2250 x 125/225 = Rs 1250.",
+      "shortcut": "Let the smaller investment be 100 and apply the percentage.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu invests 20% more than Chitra, and Chitra invests 25% less than Arun. If the profit is Rs 12190, what is Arun's share?",
+      "options": [
+        "Rs 4600",
+        "Rs 6900",
+        "Rs 9200",
+        "Rs 4140"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Let Arun = 100. Chitra = 75. Balu = 75 x 1.2 = 90. Ratio Balu:Chitra:Arun = 18:15:20. Arun's share = 12190 x 20/53 = Rs 4600.",
+      "shortcut": "Start from the person with no percentage given (take 100) and work outward.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu invests Rs 30000 for 12 months and Arun invests for 9 months. Of a total profit of Rs 3825, Balu gets Rs 1700. How much did Arun invest?",
+      "options": [
+        "Rs 100000",
+        "Rs 62500",
+        "Rs 50000",
+        "Rs 37500"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Arun gets 3825 - 1700 = 2125. 30000 x 12 : Arun's capital x 9 = 1700 : 2125, so capital = 30000 x 12 x 2125/(1700 x 9) = Rs 50000.",
+      "shortcut": "Equate the capital-month ratio to the profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests Rs 45000 and Balu invests Rs 30000. After 4 months Ezhil withdraws half of his capital, and after 9 months Balu increases his capital by 50%. If the annual profit is Rs 22950, what is Ezhil's share?",
+      "options": [
+        "Rs 10800",
+        "Rs 9720",
+        "Rs 12150",
+        "Rs 21600"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Ezhil: 45000 x 4 + 22500 x 8 = 360000. Balu: 30000 x 9 + 45000 x 3 = 405000. Ezhil's share = 22950 x 360000/765000 = Rs 10800.",
+      "shortcut": "Break each partner's year at the change points and add capital x months.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra starts a business with Rs 40000 and Farhan joins him after 2 months with Rs 50000. In what ratio should they divide the annual profit?",
+      "options": [
+        "4:5",
+        "12:13",
+        "24:25",
+        "1:1"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capital-months: 40000 x 12 = 480000 and 50000 x 10 = 500000. Ratio = 24:25.",
+      "shortcut": "Ratio of capital x time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra and Farhan invest Rs 36000 and Rs 24000 in a business. After 3 months Chitra withdraws Rs 15000. If the profit at the end of the year is Rs 11700, what is Chitra's share?",
+      "options": [
+        "Rs 7020",
+        "Rs 4455",
+        "Rs 5346",
+        "Rs 5940"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Chitra: 36000 x 3 + 21000 x 9 = 297000. Farhan: 24000 x 12 = 288000. Ratio = 33:32. Chitra's share = 11700 x 297000/585000 = Rs 5940.",
+      "shortcut": "After a withdrawal the capital changes; compute capital-months in two periods.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun invests Rs 15000 for 10 months and Farhan invests Rs 20000 for 6 months. If the profit is Rs 5400, what is Farhan's share?",
+      "options": [
+        "Rs 2640",
+        "Rs 2400",
+        "Rs 3000",
+        "Rs 4800"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Profit ratio = 15000 x 10 : 20000 x 6 = 150000 : 120000 = 5:4. Farhan's share = 5400 x 120000/270000 = Rs 2400.",
+      "shortcut": "Profit ratio = (capital x months) ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra invests Rs 45000 and Ezhil invests Rs 30000. After 8 months Ezhil withdraws Rs 20000. What is the ratio of their profits at the end of the year?",
+      "options": [
+        "29:14",
+        "27:14",
+        "27:16",
+        "3:2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Chitra: 45000 x 12 = 540000. Ezhil: 30000 x 8 + 10000 x 4 = 280000. Ratio = 27:14.",
+      "shortcut": "Add the capital-months of each period before forming the ratio.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu and Chitra invest Rs 45000 and Rs 30000 in a business. After 4 months Balu withdraws Rs 12000. If the profit at the end of the year is Rs 8040, what is Balu's share?",
+      "options": [
+        "Rs 4440",
+        "Rs 4824",
+        "Rs 3552",
+        "Rs 4884"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Balu: 45000 x 4 + 33000 x 8 = 444000. Chitra: 30000 x 12 = 360000. Ratio = 37:30. Balu's share = 8040 x 444000/804000 = Rs 4440.",
+      "shortcut": "After a withdrawal the capital changes; compute capital-months in two periods.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 30000 and Arun invests an unknown amount for the same period. The total profit is Rs 9600 and Farhan's share is Rs 3600. What did Arun invest?",
+      "options": [
+        "Rs 40000",
+        "Rs 100000",
+        "Rs 50000",
+        "Rs 60000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Arun's profit share = 9600 - 3600 = 6000. Investment ratio = profit ratio, so Arun's investment = 30000 x 6000/3600 = Rs 50000.",
+      "shortcut": "Profit ratio equals capital ratio when time is the same.",
+      "subPattern": "time-based-investment",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan, Devi and Balu invest Rs 10000, Rs 18000 and Rs 20000 for 12, 10 and 5 months respectively. If the total profit is Rs 3000, what is Balu's share?",
+      "options": [
+        "Rs 1125",
+        "Rs 1250",
+        "Rs 750",
+        "Rs 500"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capital x months: 10000 x 12 = 120000, 18000 x 10 = 180000, 20000 x 5 = 100000. Ratio = 6:9:5. Balu's share = 3000 x 5/20 = Rs 750.",
+      "shortcut": "Multiply each capital by its time, then split the profit in that ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests Rs 15000 for 12 months and Arun invests Rs 20000 for 8 months. The business loses Rs 3400. What is Arun's share of the loss?",
+      "options": [
+        "Rs 1760",
+        "Rs 2000",
+        "Rs 1600",
+        "Rs 800"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ratio = 15000 x 12 : 20000 x 8 = 9:8. Arun's loss = 3400 x 160000/340000 = Rs 1600.",
+      "shortcut": "Use capital-months for the loss ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra starts a business with Rs 20000. After 6 months Ezhil joins with Rs 30000. If the profit at the end of the year is Rs 8400, what is Ezhil's share?",
+      "options": [
+        "Rs 1800",
+        "Rs 3600",
+        "Rs 3960",
+        "Rs 5040"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Chitra's capital-months = 20000 x 12 = 240000. Ezhil's = 30000 x 6 = 180000. Ratio = 4:3. Ezhil's share = 8400 x 180000/420000 = Rs 3600.",
+      "shortcut": "The late partner's time is (12 - months before joining).",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu invests Rs 24000 for 12 months and Farhan invests for 8 months. Of a total profit of Rs 650, Balu gets Rs 325. How much did Farhan invest?",
+      "options": [
+        "Rs 39600",
+        "Rs 27000",
+        "Rs 36000",
+        "Rs 24000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Farhan gets 650 - 325 = 325. 24000 x 12 : Farhan's capital x 8 = 325 : 325, so capital = 24000 x 12 x 325/(325 x 8) = Rs 36000.",
+      "shortcut": "Equate the capital-month ratio to the profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun invests 3 times as much as Devi, and Arun's money stays in the business for 2 times as long. If the total profit is Rs 3850, what is Arun's share?",
+      "options": [
+        "Rs 2640",
+        "Rs 3300",
+        "Rs 4950",
+        "Rs 2887.5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Capital x time: Arun = 3 x 2 = 6, Devi = 1 x 1 = 1. Ratio = 6:1. Arun's share = 3850 x 6/7 = Rs 3300.",
+      "shortcut": "Multiply the capital ratio by the time ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun, Balu and Ezhil start a business. Arun invests Rs 44000 and Balu invests Rs 55000 for the same period. Arun's profit share is Rs 600 and Ezhil's is Rs 900. How much did Ezhil invest?",
+      "options": [
+        "Rs 44000",
+        "Rs 66000",
+        "Rs 55000",
+        "Rs 88000"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ezhil : Arun = 900 : 600, so Ezhil's investment = 44000 x 900/600 = Rs 66000.",
+      "shortcut": "Same period: investment ratio = profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil starts a business with Rs 20000. After 6 months Balu joins with Rs 30000. If the profit at the end of the year is Rs 12600, what is Balu's share?",
+      "options": [
+        "Rs 8100",
+        "Rs 7560",
+        "Rs 4860",
+        "Rs 5400"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Ezhil's capital-months = 20000 x 12 = 240000. Balu's = 30000 x 6 = 180000. Ratio = 4:3. Balu's share = 12600 x 180000/420000 = Rs 5400.",
+      "shortcut": "The late partner's time is (12 - months before joining).",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 20000 for 12 months and Ezhil invests Rs 30000 for 9 months. If the profit is Rs 20400, what is Ezhil's share?",
+      "options": [
+        "Rs 12240",
+        "Rs 21600",
+        "Rs 10800",
+        "Rs 9720"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Profit ratio = 20000 x 12 : 30000 x 9 = 240000 : 270000 = 8:9. Ezhil's share = 20400 x 270000/510000 = Rs 10800.",
+      "shortcut": "Profit ratio = (capital x months) ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 24000 for 12 months and Balu invests for 6 months. Of a total profit of Rs 4725, Farhan gets Rs 2700. How much did Balu invest?",
+      "options": [
+        "Rs 36000",
+        "Rs 18000",
+        "Rs 72000",
+        "Rs 32400"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Balu gets 4725 - 2700 = 2025. 24000 x 12 : Balu's capital x 6 = 2700 : 2025, so capital = 24000 x 12 x 2025/(2700 x 6) = Rs 36000.",
+      "shortcut": "Equate the capital-month ratio to the profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan starts a business with Rs 20000 and Ezhil joins him after 3 months with Rs 30000. In what ratio should they divide the annual profit?",
+      "options": [
+        "2:3",
+        "7:9",
+        "8:11",
+        "8:9"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capital-months: 20000 x 12 = 240000 and 30000 x 9 = 270000. Ratio = 8:9.",
+      "shortcut": "Ratio of capital x time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil, Farhan and Balu invest in the ratio 1:2:3. The total profit is Rs 1200. What is the difference between the largest and the smallest share?",
+      "options": [
+        "Rs 400",
+        "Rs 500",
+        "Rs 360",
+        "Rs 600"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "One part = 1200/6 = 200. Difference = (3 - 1) x 200 = Rs 400.",
+      "shortcut": "Largest minus smallest = (c - a) parts of the profit.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi invests Rs 20000 for 12 months and Arun invests Rs 30000 for 8 months. The business loses Rs 14400. What is Arun's share of the loss?",
+      "options": [
+        "Rs 5400",
+        "Rs 7200",
+        "Rs 8640",
+        "Rs 14400"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ratio = 20000 x 12 : 30000 x 8 = 1:1. Arun's loss = 14400 x 240000/480000 = Rs 7200.",
+      "shortcut": "Use capital-months for the loss ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu starts a business with Rs 12000 and Farhan joins him after 5 months with Rs 18000. In what ratio should they divide the annual profit?",
+      "options": [
+        "8:9",
+        "2:3",
+        "8:7",
+        "1:1"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capital-months: 12000 x 12 = 144000 and 18000 x 7 = 126000. Ratio = 8:7.",
+      "shortcut": "Ratio of capital x time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi starts a business with Rs 30000. After 6 months Arun joins with Rs 40000. If the profit at the end of the year is Rs 18000, what is Arun's share?",
+      "options": [
+        "Rs 14400",
+        "Rs 7200",
+        "Rs 9600",
+        "Rs 7920"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Devi's capital-months = 30000 x 12 = 360000. Arun's = 40000 x 6 = 240000. Ratio = 3:2. Arun's share = 18000 x 240000/600000 = Rs 7200.",
+      "shortcut": "The late partner's time is (12 - months before joining).",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi is a working partner and Ezhil is a sleeping partner who invest Rs 50000 and Rs 25000. Devi gets 25% of the profit for managing and the rest is shared in the capital ratio. If the profit is Rs 50000, how much does Ezhil get?",
+      "options": [
+        "Rs 11250",
+        "Rs 9375",
+        "Rs 12500",
+        "Rs 15000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "After Devi's fee (25% = 12500), remaining = 37500. Ezhil's share = 37500 x 25000/75000 = Rs 12500.",
+      "shortcut": "The sleeping partner receives only his capital-ratio share of the remaining profit.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi invests 50% more than Chitra, and Chitra invests 50% less than Balu. If the profit is Rs 3060, what is Balu's share?",
+      "options": [
+        "Rs 1020",
+        "Rs 2040",
+        "Rs 1224",
+        "Rs 1360"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let Balu = 100. Chitra = 50. Devi = 50 x 1.5 = 75. Ratio Devi:Chitra:Balu = 3:2:4. Balu's share = 3060 x 4/9 = Rs 1360.",
+      "shortcut": "Start from the person with no percentage given (take 100) and work outward.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi and Ezhil invest Rs 50000 and Rs 25000. Devi manages the business for 25% of the profit and the rest is divided in the ratio of capitals. If Devi receives Rs 39500 more than Ezhil, what is the total profit?",
+      "options": [
+        "Rs 98750",
+        "Rs 395000",
+        "Rs 118500",
+        "Rs 79000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let profit = P. Devi gets 25% of P + 50000/75000 of 75% of P; Ezhil gets 25000/75000 of 75% of P. Difference = P x 0.5 = 39500, so P = Rs 79000.",
+      "shortcut": "Express both shares as fractions of P; their difference as a fraction gives P.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun is a working partner and Chitra is a sleeping partner who invest Rs 50000 and Rs 25000. Arun gets 10% of the profit for managing and the rest is shared in the capital ratio. If the profit is Rs 46000, how much does Chitra get?",
+      "options": [
+        "Rs 16560",
+        "Rs 17250",
+        "Rs 10350",
+        "Rs 13800"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "After Arun's fee (10% = 4600), remaining = 41400. Chitra's share = 41400 x 25000/75000 = Rs 13800.",
+      "shortcut": "The sleeping partner receives only his capital-ratio share of the remaining profit.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi invests Rs 45000 and Arun invests Rs 30000. After 4 months Arun withdraws Rs 15000. What is the ratio of their profits at the end of the year?",
+      "options": [
+        "11:4",
+        "9:4",
+        "9:2",
+        "3:2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Devi: 45000 x 12 = 540000. Arun: 30000 x 4 + 15000 x 8 = 240000. Ratio = 9:4.",
+      "shortcut": "Add the capital-months of each period before forming the ratio.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi, Chitra and Arun start a business. Devi invests Rs 26000 and Chitra invests Rs 65000 for the same period. Devi's profit share is Rs 600 and Arun's is Rs 2100. How much did Arun invest?",
+      "options": [
+        "Rs 91000",
+        "Rs 65000",
+        "Rs 72800",
+        "Rs 100100"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Arun : Devi = 2100 : 600, so Arun's investment = 26000 x 2100/600 = Rs 91000.",
+      "shortcut": "Same period: investment ratio = profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun invests Rs 40000 and Balu invests Rs 30000. After 3 months Balu withdraws Rs 15000. What is the ratio of their profits at the end of the year?",
+      "options": [
+        "32:15",
+        "2:1",
+        "34:15",
+        "4:3"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Arun: 40000 x 12 = 480000. Balu: 30000 x 3 + 15000 x 9 = 225000. Ratio = 32:15.",
+      "shortcut": "Add the capital-months of each period before forming the ratio.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu, Ezhil and Devi invest in the ratio 3:4:5. The total profit is Rs 6600. What is the difference between the largest and the smallest share?",
+      "options": [
+        "Rs 1100",
+        "Rs 2750",
+        "Rs 550",
+        "Rs 825"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "One part = 6600/12 = 550. Difference = (5 - 3) x 550 = Rs 1100.",
+      "shortcut": "Largest minus smallest = (c - a) parts of the profit.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun and Balu invest Rs 20000 and Rs 30000 in a business that suffers a loss of Rs 40000. What is Arun's share of the loss?",
+      "options": [
+        "Rs 20000",
+        "Rs 24000",
+        "Rs 32000",
+        "Rs 16000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Loss is shared in the ratio of investments 20000:30000. Arun's loss = 40000 x 20000/50000 = Rs 16000.",
+      "shortcut": "Loss is divided exactly like profit: capital x time.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi invests Rs 24000 and Farhan invests an unknown amount for the same period. The total profit is Rs 16000 and Devi's share is Rs 6400. What did Farhan invest?",
+      "options": [
+        "Rs 18000",
+        "Rs 48000",
+        "Rs 39600",
+        "Rs 36000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Farhan's profit share = 16000 - 6400 = 9600. Investment ratio = profit ratio, so Farhan's investment = 24000 x 9600/6400 = Rs 36000.",
+      "shortcut": "Profit ratio equals capital ratio when time is the same.",
+      "subPattern": "time-based-investment",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra invests Rs 30000 for 12 months and Ezhil invests for 4 months. Of a total profit of Rs 10850, Chitra gets Rs 6975. How much did Ezhil invest?",
+      "options": [
+        "Rs 50000",
+        "Rs 62500",
+        "Rs 37500",
+        "Rs 45000"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Ezhil gets 10850 - 6975 = 3875. 30000 x 12 : Ezhil's capital x 4 = 6975 : 3875, so capital = 30000 x 12 x 3875/(6975 x 4) = Rs 50000.",
+      "shortcut": "Equate the capital-month ratio to the profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan and Devi invest Rs 40000 and Rs 60000. Farhan also manages the business and gets 25% of the profit as his fee; the rest is divided in the ratio of capital. If the profit is Rs 70000, what is the total amount Farhan gets?",
+      "options": [
+        "Rs 48125",
+        "Rs 38500",
+        "Rs 28000",
+        "Rs 34650"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fee = 25% of 70000 = 17500. Remaining = 52500. Farhan's share of the rest = 52500 x 40000/100000 = 21000. Total = Rs 38500.",
+      "shortcut": "Deduct the management fee first; divide only the remainder by capital.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests Rs 24000 for 12 months and Farhan invests Rs 36000 for 8 months. If the profit is Rs 11520, what is Farhan's share?",
+      "options": [
+        "Rs 6912",
+        "Rs 5760",
+        "Rs 7200",
+        "Rs 5184"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Profit ratio = 24000 x 12 : 36000 x 8 = 288000 : 288000 = 1:1. Farhan's share = 11520 x 288000/576000 = Rs 5760.",
+      "shortcut": "Profit ratio = (capital x months) ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 12000 for the whole year. Devi invests Rs 18000 and after 3 months adds Rs 5000 more. If the annual profit is Rs 12150, what is Devi's share?",
+      "options": [
+        "Rs 10440",
+        "Rs 11745",
+        "Rs 7830",
+        "Rs 15660"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Farhan: 12000 x 12 = 144000. Devi: 18000 x 3 + 23000 x 9 = 261000. Ratio = 16:29. Devi's share = 12150 x 261000/405000 = Rs 7830.",
+      "shortcut": "Split a partner's year into periods with different capital and add the capital-months.",
+      "subPattern": "time-based-investment",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi invests Rs 45000 and Farhan invests Rs 30000. After 8 months Farhan withdraws Rs 12000. What is the ratio of their profits at the end of the year?",
+      "options": [
+        "23:13",
+        "45:26",
+        "3:2",
+        "45:28"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Devi: 45000 x 12 = 540000. Farhan: 30000 x 8 + 18000 x 4 = 312000. Ratio = 45:26.",
+      "shortcut": "Add the capital-months of each period before forming the ratio.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 40000 and Devi invests Rs 30000. After 4 months Devi withdraws Rs 15000. What is the ratio of their profits at the end of the year?",
+      "options": [
+        "4:3",
+        "2:1",
+        "1:1",
+        "1:2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Farhan: 40000 x 12 = 480000. Devi: 30000 x 4 + 15000 x 8 = 240000. Ratio = 2:1.",
+      "shortcut": "Add the capital-months of each period before forming the ratio.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi invests Rs 15000 for 12 months and Balu invests for 6 months. Of a total profit of Rs 4025, Devi gets Rs 1725. How much did Balu invest?",
+      "options": [
+        "Rs 40000",
+        "Rs 80000",
+        "Rs 20000",
+        "Rs 50000"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Balu gets 4025 - 1725 = 2300. 15000 x 12 : Balu's capital x 6 = 1725 : 2300, so capital = 15000 x 12 x 2300/(1725 x 6) = Rs 40000.",
+      "shortcut": "Equate the capital-month ratio to the profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra invests 10% more than Farhan, and Farhan invests 40% less than Ezhil. If the profit is Rs 42940, what is Ezhil's share?",
+      "options": [
+        "Rs 15200",
+        "Rs 14250",
+        "Rs 19000",
+        "Rs 23750"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let Ezhil = 100. Farhan = 60. Chitra = 60 x 1.1 = 66. Ratio Chitra:Farhan:Ezhil = 33:30:50. Ezhil's share = 42940 x 50/113 = Rs 19000.",
+      "shortcut": "Start from the person with no percentage given (take 100) and work outward.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil, Farhan and Balu invest Rs 12000, Rs 30000 and Rs 15000 for 12, 6 and 3 months respectively. If the total profit is Rs 14350, what is Balu's share?",
+      "options": [
+        "Rs 1925",
+        "Rs 2625",
+        "Rs 1750",
+        "Rs 3500"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capital x months: 12000 x 12 = 144000, 30000 x 6 = 180000, 15000 x 3 = 45000. Ratio = 16:20:5. Balu's share = 14350 x 5/41 = Rs 1750.",
+      "shortcut": "Multiply each capital by its time, then split the profit in that ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi, Chitra and Ezhil invest in the ratio 2:3:5. The total profit is Rs 5500. What is the difference between the largest and the smallest share?",
+      "options": [
+        "Rs 3300",
+        "Rs 2750",
+        "Rs 1650",
+        "Rs 1100"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "One part = 5500/10 = 550. Difference = (5 - 2) x 550 = Rs 1650.",
+      "shortcut": "Largest minus smallest = (c - a) parts of the profit.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi starts a business with Rs 20000. After 4 months Chitra joins with Rs 30000. If the profit at the end of the year is Rs 4800, what is Chitra's share?",
+      "options": [
+        "Rs 2880",
+        "Rs 2400",
+        "Rs 1800",
+        "Rs 4800"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Devi's capital-months = 20000 x 12 = 240000. Chitra's = 30000 x 8 = 240000. Ratio = 1:1. Chitra's share = 4800 x 240000/480000 = Rs 2400.",
+      "shortcut": "The late partner's time is (12 - months before joining).",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun, Devi and Farhan invest Rs 30000, Rs 10000 and Rs 20000 for 12, 6 and 3 months respectively. If the total profit is Rs 2800, what is Farhan's share?",
+      "options": [
+        "Rs 700",
+        "Rs 175",
+        "Rs 280",
+        "Rs 350"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capital x months: 30000 x 12 = 360000, 10000 x 6 = 60000, 20000 x 3 = 60000. Ratio = 6:1:1. Farhan's share = 2800 x 1/8 = Rs 350.",
+      "shortcut": "Multiply each capital by its time, then split the profit in that ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra invests 20% more than Farhan for the same period. If the total profit is Rs 7700, what is Chitra's share?",
+      "options": [
+        "Rs 5250",
+        "Rs 3500",
+        "Rs 3360",
+        "Rs 4200"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let Farhan = 100, then Chitra = 120. Ratio = 120:100. Chitra's share = 7700 x 120/220 = Rs 4200.",
+      "shortcut": "Let the smaller investment be 100 and apply the percentage.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi and Farhan invest Rs 15000 and Rs 35000. Devi also manages the business and gets 20% of the profit as his fee; the rest is divided in the ratio of capital. If the profit is Rs 13000, what is the total amount Devi gets?",
+      "options": [
+        "Rs 11440",
+        "Rs 3900",
+        "Rs 5720",
+        "Rs 6864"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Fee = 20% of 13000 = 2600. Remaining = 10400. Devi's share of the rest = 10400 x 15000/50000 = 3120. Total = Rs 5720.",
+      "shortcut": "Deduct the management fee first; divide only the remainder by capital.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu invests Rs 20000 for 12 months and Chitra invests Rs 30000 for 8 months. The business loses Rs 14400. What is Chitra's share of the loss?",
+      "options": [
+        "Rs 9000",
+        "Rs 5760",
+        "Rs 8640",
+        "Rs 7200"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Ratio = 20000 x 12 : 30000 x 8 = 1:1. Chitra's loss = 14400 x 240000/480000 = Rs 7200.",
+      "shortcut": "Use capital-months for the loss ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three partners invest in the ratio 3:5:7. The first partner's share of the loss is Rs 3900. What is the total loss?",
+      "options": [
+        "Rs 11700",
+        "Rs 23400",
+        "Rs 15600",
+        "Rs 19500"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "One part = 3900/3 = Rs 1300. Total loss = 15 x 1300 = Rs 19500.",
+      "shortcut": "First partner's share / their ratio part = value of one part.",
+      "subPattern": "simple-partnership",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests Rs 24000 for 12 months and Arun invests Rs 36000 for 4 months. If the profit is Rs 12960, what is Arun's share?",
+      "options": [
+        "Rs 4320",
+        "Rs 3456",
+        "Rs 2880",
+        "Rs 7776"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Profit ratio = 24000 x 12 : 36000 x 4 = 288000 : 144000 = 2:1. Arun's share = 12960 x 144000/432000 = Rs 4320.",
+      "shortcut": "Profit ratio = (capital x months) ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Devi, Chitra and Balu invest in the ratio 2:3:5. The total profit is Rs 7500. What is the difference between the largest and the smallest share?",
+      "options": [
+        "Rs 3750",
+        "Rs 2250",
+        "Rs 1800",
+        "Rs 1500"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "One part = 7500/10 = 750. Difference = (5 - 2) x 750 = Rs 2250.",
+      "shortcut": "Largest minus smallest = (c - a) parts of the profit.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun invests Rs 40000 and Farhan invests Rs 30000. After 4 months Farhan withdraws Rs 20000. What is the ratio of their profits at the end of the year?",
+      "options": [
+        "4:1",
+        "11:5",
+        "4:3",
+        "12:5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Arun: 40000 x 12 = 480000. Farhan: 30000 x 4 + 10000 x 8 = 200000. Ratio = 12:5.",
+      "shortcut": "Add the capital-months of each period before forming the ratio.",
+      "subPattern": "changing-capital-mid-year",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three partners invest in the ratio 3:4:5. The share of the third partner is Rs 800 more than that of the first. What is the total profit?",
+      "options": [
+        "Rs 6000",
+        "Rs 4800",
+        "Rs 3840",
+        "Rs 9600"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "(5 - 3) parts = Rs 800, so one part = Rs 400. Total = 12 x 400 = Rs 4800.",
+      "shortcut": "Find the value of one part from the given difference, then multiply by the total parts.",
+      "subPattern": "simple-partnership",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra invests Rs 20000 and Balu invests an unknown amount for the same period. The total profit is Rs 22100 and Chitra's share is Rs 6800. What did Balu invest?",
+      "options": [
+        "Rs 45000",
+        "Rs 36000",
+        "Rs 40000",
+        "Rs 33750"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Balu's profit share = 22100 - 6800 = 15300. Investment ratio = profit ratio, so Balu's investment = 20000 x 15300/6800 = Rs 45000.",
+      "shortcut": "Profit ratio equals capital ratio when time is the same.",
+      "subPattern": "time-based-investment",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra invests Rs 20000 for 12 months and Ezhil invests Rs 30000 for 8 months. The business loses Rs 14400. What is Ezhil's share of the loss?",
+      "options": [
+        "Rs 14400",
+        "Rs 7200",
+        "Rs 8640",
+        "Rs 6480"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ratio = 20000 x 12 : 30000 x 8 = 1:1. Ezhil's loss = 14400 x 240000/480000 = Rs 7200.",
+      "shortcut": "Use capital-months for the loss ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Balu is a working partner and Farhan is a sleeping partner who invest Rs 40000 and Rs 60000. Balu gets 20% of the profit for managing and the rest is shared in the capital ratio. If the profit is Rs 63000, how much does Farhan get?",
+      "options": [
+        "Rs 27216",
+        "Rs 30240",
+        "Rs 60480",
+        "Rs 37800"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "After Balu's fee (20% = 12600), remaining = 50400. Farhan's share = 50400 x 60000/100000 = Rs 30240.",
+      "shortcut": "The sleeping partner receives only his capital-ratio share of the remaining profit.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan invests Rs 24000 for 12 months and Ezhil invests Rs 36000 for 6 months. The business loses Rs 20160. What is Ezhil's share of the loss?",
+      "options": [
+        "Rs 7776",
+        "Rs 8640",
+        "Rs 12096",
+        "Rs 10368"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ratio = 24000 x 12 : 36000 x 6 = 4:3. Ezhil's loss = 20160 x 216000/504000 = Rs 8640.",
+      "shortcut": "Use capital-months for the loss ratio.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests Rs 20000 for the whole year. Chitra invests Rs 18000 and after 3 months adds Rs 6000 more. If the annual profit is Rs 15300, what is Chitra's share?",
+      "options": [
+        "Rs 9720",
+        "Rs 6075",
+        "Rs 8100",
+        "Rs 16200"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ezhil: 20000 x 12 = 240000. Chitra: 18000 x 3 + 24000 x 9 = 270000. Ratio = 8:9. Chitra's share = 15300 x 270000/510000 = Rs 8100.",
+      "shortcut": "Split a partner's year into periods with different capital and add the capital-months.",
+      "subPattern": "time-based-investment",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Farhan starts a business with Rs 24000. Chitra joins later with Rs 36000, and at the end of the year the profits are divided in the ratio 2:1. After how many months did Chitra join?",
+      "options": [
+        "12 months",
+        "8 months",
+        "13 months",
+        "4 months"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "24000 x 12 : 36000 x (12 - m) = 2 : 1. So 36000 x (12 - m) = 144000, giving 12 - m = 4 and m = 8 months.",
+      "shortcut": "Equate the capital-month ratio to the given profit ratio and solve for the time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil invests 20% more than Chitra, and Chitra invests 40% less than Devi. If the profit is Rs 15080, what is Devi's share?",
+      "options": [
+        "Rs 5200",
+        "Rs 3250",
+        "Rs 5850",
+        "Rs 6500"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Let Devi = 100. Chitra = 60. Ezhil = 60 x 1.2 = 72. Ratio Ezhil:Chitra:Devi = 18:15:25. Devi's share = 15080 x 25/58 = Rs 6500.",
+      "shortcut": "Start from the person with no percentage given (take 100) and work outward.",
+      "subPattern": "simple-partnership",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun invests Rs 24000 for 12 months and Devi invests for 4 months. Of a total profit of Rs 825, Arun gets Rs 550. How much did Devi invest?",
+      "options": [
+        "Rs 12000",
+        "Rs 36000",
+        "Rs 39600",
+        "Rs 45000"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Devi gets 825 - 550 = 275. 24000 x 12 : Devi's capital x 4 = 550 : 275, so capital = 24000 x 12 x 275/(550 x 4) = Rs 36000.",
+      "shortcut": "Equate the capital-month ratio to the profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil starts a business with Rs 15000 and Balu joins him after 3 months with Rs 30000. In what ratio should they divide the annual profit?",
+      "options": [
+        "1:1",
+        "1:2",
+        "2:1",
+        "2:3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capital-months: 15000 x 12 = 180000 and 30000 x 9 = 270000. Ratio = 2:3.",
+      "shortcut": "Ratio of capital x time.",
+      "subPattern": "partner-joining-or-leaving",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Arun and Devi invest Rs 12000 and Rs 18000 in a business that suffers a loss of Rs 21000. What is Arun's share of the loss?",
+      "options": [
+        "Rs 8400",
+        "Rs 10500",
+        "Rs 6720",
+        "Rs 12600"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Loss is shared in the ratio of investments 12000:18000. Arun's loss = 21000 x 12000/30000 = Rs 8400.",
+      "shortcut": "Loss is divided exactly like profit: capital x time.",
+      "subPattern": "simple-partnership",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Chitra, Farhan and Arun start a business. Chitra invests Rs 21000 and Farhan invests Rs 28000 for the same period. Chitra's profit share is Rs 750 and Arun's is Rs 1250. How much did Arun invest?",
+      "options": [
+        "Rs 35000",
+        "Rs 17500",
+        "Rs 70000",
+        "Rs 28000"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Arun : Chitra = 1250 : 750, so Arun's investment = 21000 x 1250/750 = Rs 35000.",
+      "shortcut": "Same period: investment ratio = profit ratio.",
+      "subPattern": "time-based-investment",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Ezhil and Arun invest Rs 40000 and Rs 60000. Ezhil also manages the business and gets 10% of the profit as his fee; the rest is divided in the ratio of capital. If the profit is Rs 49000, what is the total amount Ezhil gets?",
+      "options": [
+        "Rs 22540",
+        "Rs 16905",
+        "Rs 19600",
+        "Rs 20286"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Fee = 10% of 49000 = 4900. Remaining = 44100. Ezhil's share of the rest = 44100 x 40000/100000 = 17640. Total = Rs 22540.",
+      "shortcut": "Deduct the management fee first; divide only the remainder by capital.",
+      "subPattern": "sleeping-partner-salary",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    }
+  ]
+}

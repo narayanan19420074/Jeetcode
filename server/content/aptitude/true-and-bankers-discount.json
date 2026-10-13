@@ -1,0 +1,2706 @@
+{
+ "pattern": {
+  "title": "True and Banker's Discount",
+  "slug": "true-and-bankers-discount",
+  "description": "Discounting of bills.",
+  "order": 26,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "true-discount",
+    "title": "True discount"
+   },
+   {
+    "slug": "banker-s-discount",
+    "title": "Banker's discount"
+   },
+   {
+    "slug": "banker-s-gain",
+    "title": "Banker's gain"
+   },
+   {
+    "slug": "present-worth",
+    "title": "Present worth"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Find the true discount on a bill of Rs 2700 due 5 years hence at 10% per annum simple interest.",
+   "options": [
+    {
+     "text": "Rs 1350"
+    },
+    {
+     "text": "Rs 1080"
+    },
+    {
+     "text": "Rs 450"
+    },
+    {
+     "text": "Rs 900"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "PW = 2700 x 100/(100 + 10 x 5) = 1800. TD = A - PW = 2700 - 1800 = Rs 900.",
+   "order": 1,
+   "subPattern": "true-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "TD = A - PW, with PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The true discount on Rs 5040 due 2 years hence is Rs 1440. What is the rate percent per annum?",
+   "options": [
+    {
+     "text": "10%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "22%"
+    },
+    {
+     "text": "19%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "PW = 5040 - 1440 = 3600. R = TD x 100/(PW x T) = 1440 x 100/(3600 x 2) = 20%.",
+   "order": 2,
+   "subPattern": "true-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "R = 100 TD / (PW x T)."
+  },
+  {
+   "questionText": "Find the true discount on a bill of Rs 5920 due 3 years hence at 20% per annum simple interest.",
+   "options": [
+    {
+     "text": "Rs 1665"
+    },
+    {
+     "text": "Rs 3552"
+    },
+    {
+     "text": "Rs 2220"
+    },
+    {
+     "text": "Rs 2442"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "PW = 5920 x 100/(100 + 20 x 3) = 3700. TD = A - PW = 5920 - 3700 = Rs 2220.",
+   "order": 3,
+   "subPattern": "true-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "TD = A - PW, with PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "Find the true discount on a bill of Rs 1650 due 2 years hence at 5% per annum simple interest.",
+   "options": [
+    {
+     "text": "Rs 150"
+    },
+    {
+     "text": "Rs 165"
+    },
+    {
+     "text": "Rs 75"
+    },
+    {
+     "text": "Rs 100"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "PW = 1650 x 100/(100 + 5 x 2) = 1500. TD = A - PW = 1650 - 1500 = Rs 150.",
+   "order": 4,
+   "subPattern": "true-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "TD = A - PW, with PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The true discount on Rs 3250 due 5 years hence is Rs 650. What is the rate percent per annum?",
+   "options": [
+    {
+     "text": "10%"
+    },
+    {
+     "text": "4%"
+    },
+    {
+     "text": "5%"
+    },
+    {
+     "text": "7%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "PW = 3250 - 650 = 2600. R = TD x 100/(PW x T) = 650 x 100/(2600 x 5) = 5%.",
+   "order": 5,
+   "subPattern": "true-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "R = 100 TD / (PW x T)."
+  },
+  {
+   "questionText": "The true discount on Rs 2560 due 5 years hence is Rs 960. What is the rate percent per annum?",
+   "options": [
+    {
+     "text": "7.5%"
+    },
+    {
+     "text": "16%"
+    },
+    {
+     "text": "15%"
+    },
+    {
+     "text": "12%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "PW = 2560 - 960 = 1600. R = TD x 100/(PW x T) = 960 x 100/(1600 x 5) = 12%.",
+   "order": 6,
+   "subPattern": "true-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "R = 100 TD / (PW x T)."
+  },
+  {
+   "questionText": "Find the true discount on a bill of Rs 2760 due 1 year hence at 15% per annum simple interest.",
+   "options": [
+    {
+     "text": "Rs 480"
+    },
+    {
+     "text": "Rs 360"
+    },
+    {
+     "text": "Rs 432"
+    },
+    {
+     "text": "Rs 414"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "PW = 2760 x 100/(100 + 15 x 1) = 2400. TD = A - PW = 2760 - 2400 = Rs 360.",
+   "order": 7,
+   "subPattern": "true-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "TD = A - PW, with PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The true discount on Rs 4140 due 4 years hence is Rs 1840. What is the rate percent per annum?",
+   "options": [
+    {
+     "text": "20%"
+    },
+    {
+     "text": "25%"
+    },
+    {
+     "text": "24%"
+    },
+    {
+     "text": "15%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "PW = 4140 - 1840 = 2300. R = TD x 100/(PW x T) = 1840 x 100/(2300 x 4) = 20%.",
+   "order": 8,
+   "subPattern": "true-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "R = 100 TD / (PW x T)."
+  },
+  {
+   "questionText": "The true discount on Rs 4350 at 10% per annum is Rs 1450. In how many years is the sum due?",
+   "options": [
+    {
+     "text": "4 years"
+    },
+    {
+     "text": "3 years"
+    },
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "5 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "PW = 4350 - 1450 = 2900. T = TD x 100/(PW x R) = 1450 x 100/(2900 x 10) = 5 years.",
+   "order": 9,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "T = 100 TD / (PW x R)."
+  },
+  {
+   "questionText": "The true discount on Rs 650 at 6% per annum is Rs 150. In how many years is the sum due?",
+   "options": [
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "5 years"
+    },
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "4 years"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "PW = 650 - 150 = 500. T = TD x 100/(PW x R) = 150 x 100/(500 x 6) = 5 years.",
+   "order": 10,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "T = 100 TD / (PW x R)."
+  },
+  {
+   "questionText": "The true discount on Rs 1040 at 15% per annum is Rs 240. In how many years is the sum due?",
+   "options": [
+    {
+     "text": "4 years"
+    },
+    {
+     "text": "7 years"
+    },
+    {
+     "text": "2 years"
+    },
+    {
+     "text": "3 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "PW = 1040 - 240 = 800. T = TD x 100/(PW x R) = 240 x 100/(800 x 15) = 2 years.",
+   "order": 11,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "T = 100 TD / (PW x R)."
+  },
+  {
+   "questionText": "The true discount on Rs 1980 at 10% per annum is Rs 180. In how many years is the sum due?",
+   "options": [
+    {
+     "text": "1 years"
+    },
+    {
+     "text": "3 years"
+    },
+    {
+     "text": "2 years"
+    },
+    {
+     "text": "6 years"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "PW = 1980 - 180 = 1800. T = TD x 100/(PW x R) = 180 x 100/(1800 x 10) = 1 years.",
+   "order": 12,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "T = 100 TD / (PW x R)."
+  },
+  {
+   "questionText": "Find the true discount on Rs 1050 due in 3 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 50"
+    },
+    {
+     "text": "Rs 52.5"
+    },
+    {
+     "text": "Rs 40"
+    },
+    {
+     "text": "Rs 49"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "T = 3 months = 0.25 years. PW = 1050 x 100/(100 + 20 x 0.25) = 1000. TD = 1050 - 1000 = Rs 50.",
+   "order": 13,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Convert months to years before using PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "Find the true discount on Rs 4180 due in 15 months at 8% per annum.",
+   "options": [
+    {
+     "text": "Rs 760"
+    },
+    {
+     "text": "Rs 570"
+    },
+    {
+     "text": "Rs 380"
+    },
+    {
+     "text": "Rs 418"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "T = 15 months = 1.25 years. PW = 4180 x 100/(100 + 8 x 1.25) = 3800. TD = 4180 - 3800 = Rs 380.",
+   "order": 14,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Convert months to years before using PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "Find the true discount on Rs 630 due in 3 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 31.5"
+    },
+    {
+     "text": "Rs 40"
+    },
+    {
+     "text": "Rs 25"
+    },
+    {
+     "text": "Rs 30"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "T = 3 months = 0.25 years. PW = 630 x 100/(100 + 20 x 0.25) = 600. TD = 630 - 600 = Rs 30.",
+   "order": 15,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Convert months to years before using PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "Find the true discount on Rs 3450 due in 9 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 900"
+    },
+    {
+     "text": "Rs 450"
+    },
+    {
+     "text": "Rs 517.5"
+    },
+    {
+     "text": "Rs 225"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "T = 9 months = 0.75 years. PW = 3450 x 100/(100 + 20 x 0.75) = 3000. TD = 3450 - 3000 = Rs 450.",
+   "order": 16,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Convert months to years before using PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The true discount on Rs 640 at 12% per annum is Rs 240. In how many years is the sum due?",
+   "options": [
+    {
+     "text": "6 years"
+    },
+    {
+     "text": "3 years"
+    },
+    {
+     "text": "10 years"
+    },
+    {
+     "text": "5 years"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "PW = 640 - 240 = 400. T = TD x 100/(PW x R) = 240 x 100/(400 x 12) = 5 years.",
+   "order": 17,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "T = 100 TD / (PW x R)."
+  },
+  {
+   "questionText": "Find the true discount on Rs 770 due in 6 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 77"
+    },
+    {
+     "text": "Rs 70"
+    },
+    {
+     "text": "Rs 56"
+    },
+    {
+     "text": "Rs 35"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "T = 6 months = 0.5 years. PW = 770 x 100/(100 + 20 x 0.5) = 700. TD = 770 - 700 = Rs 70.",
+   "order": 18,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Convert months to years before using PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "Find the true discount on Rs 4810 due in 18 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 1110"
+    },
+    {
+     "text": "Rs 1443"
+    },
+    {
+     "text": "Rs 555"
+    },
+    {
+     "text": "Rs 740"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "T = 18 months = 1.5 years. PW = 4810 x 100/(100 + 20 x 1.5) = 3700. TD = 4810 - 3700 = Rs 1110.",
+   "order": 19,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Convert months to years before using PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The true discount on Rs 660 at 5% per annum is Rs 60. In how many years is the sum due?",
+   "options": [
+    {
+     "text": "4 years"
+    },
+    {
+     "text": "1 years"
+    },
+    {
+     "text": "2 years"
+    },
+    {
+     "text": "3 years"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "PW = 660 - 60 = 600. T = TD x 100/(PW x R) = 60 x 100/(600 x 5) = 2 years.",
+   "order": 20,
+   "subPattern": "true-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "T = 100 TD / (PW x R)."
+  },
+  {
+   "questionText": "The banker's discount on a bill of Rs 1690 due 3 years hence is Rs 507. What is the rate percent per annum?",
+   "options": [
+    {
+     "text": "20%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "5%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BD = A x R x T/100, so R = BD x 100/(A x T) = 507 x 100/(1690 x 3) = 10%.",
+   "order": 21,
+   "subPattern": "true-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "R = 100 BD / (A x T)."
+  },
+  {
+   "questionText": "The banker's discount on a bill of Rs 1120 due 4 years hence is Rs 672. What is the rate percent per annum?",
+   "options": [
+    {
+     "text": "10%"
+    },
+    {
+     "text": "60%"
+    },
+    {
+     "text": "12%"
+    },
+    {
+     "text": "15%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BD = A x R x T/100, so R = BD x 100/(A x T) = 672 x 100/(1120 x 4) = 15%.",
+   "order": 22,
+   "subPattern": "true-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "R = 100 BD / (A x T)."
+  },
+  {
+   "questionText": "The banker's discount on a bill of Rs 2640 due 2 years hence is Rs 264. What is the rate percent per annum?",
+   "options": [
+    {
+     "text": "4%"
+    },
+    {
+     "text": "7%"
+    },
+    {
+     "text": "5%"
+    },
+    {
+     "text": "10%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BD = A x R x T/100, so R = BD x 100/(A x T) = 264 x 100/(2640 x 2) = 5%.",
+   "order": 23,
+   "subPattern": "true-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "R = 100 BD / (A x T)."
+  },
+  {
+   "questionText": "The true discount on a bill due 1 year hence at 5% per annum is Rs 60. What is the amount of the bill?",
+   "options": [
+    {
+     "text": "Rs 1260"
+    },
+    {
+     "text": "Rs 1575"
+    },
+    {
+     "text": "Rs 1200"
+    },
+    {
+     "text": "Rs 1386"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "PW = TD x 100/(R x T) = 60 x 100/(5 x 1) = 1200. Amount = PW + TD = 1200 + 60 = Rs 1260.",
+   "order": 24,
+   "subPattern": "true-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "PW = 100 TD/(RT); A = PW + TD."
+  },
+  {
+   "questionText": "The true discount on a bill due 5 years hence at 10% per annum is Rs 1750. What is the amount of the bill?",
+   "options": [
+    {
+     "text": "Rs 7875"
+    },
+    {
+     "text": "Rs 5250"
+    },
+    {
+     "text": "Rs 4200"
+    },
+    {
+     "text": "Rs 3500"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "PW = TD x 100/(R x T) = 1750 x 100/(10 x 5) = 3500. Amount = PW + TD = 3500 + 1750 = Rs 5250.",
+   "order": 25,
+   "subPattern": "true-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "PW = 100 TD/(RT); A = PW + TD."
+  },
+  {
+   "questionText": "A bill of Rs 2310 is due in 6 months. Find the banker's discount at 10% per annum.",
+   "options": [
+    {
+     "text": "Rs 115.5"
+    },
+    {
+     "text": "Rs 173.25"
+    },
+    {
+     "text": "Rs 127.05"
+    },
+    {
+     "text": "Rs 110"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BD = 2310 x 10 x 0.5/100 = Rs 115.5.",
+   "order": 26,
+   "subPattern": "banker-s-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "T = months/12."
+  },
+  {
+   "questionText": "What is the banker's discount on a bill of Rs 4960 due 5 years hence at 12% per annum?",
+   "options": [
+    {
+     "text": "Rs 1860"
+    },
+    {
+     "text": "Rs 1488"
+    },
+    {
+     "text": "Rs 2976"
+    },
+    {
+     "text": "Rs 4464"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Banker's discount = simple interest on the face value = 4960 x 12 x 5/100 = Rs 2976.",
+   "order": 27,
+   "subPattern": "banker-s-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "BD = A x R x T / 100."
+  },
+  {
+   "questionText": "A bill of Rs 1260 is due in 3 months. Find the banker's discount at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 60"
+    },
+    {
+     "text": "Rs 84"
+    },
+    {
+     "text": "Rs 126"
+    },
+    {
+     "text": "Rs 63"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BD = 1260 x 20 x 0.25/100 = Rs 63.",
+   "order": 28,
+   "subPattern": "banker-s-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "T = months/12."
+  },
+  {
+   "questionText": "What is the banker's discount on a bill of Rs 3300 due 1 year hence at 10% per annum?",
+   "options": [
+    {
+     "text": "Rs 660"
+    },
+    {
+     "text": "Rs 300"
+    },
+    {
+     "text": "Rs 330"
+    },
+    {
+     "text": "Rs 165"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Banker's discount = simple interest on the face value = 3300 x 10 x 1/100 = Rs 330.",
+   "order": 29,
+   "subPattern": "banker-s-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "BD = A x R x T / 100."
+  },
+  {
+   "questionText": "A bill of Rs 4250 is due in 15 months. Find the banker's discount at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 850"
+    },
+    {
+     "text": "Rs 1062.5"
+    },
+    {
+     "text": "Rs 1168.75"
+    },
+    {
+     "text": "Rs 1593.75"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BD = 4250 x 20 x 1.25/100 = Rs 1062.5.",
+   "order": 30,
+   "subPattern": "banker-s-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "T = months/12."
+  },
+  {
+   "questionText": "What is the banker's discount on a bill of Rs 3480 due 2 years hence at 10% per annum?",
+   "options": [
+    {
+     "text": "Rs 696"
+    },
+    {
+     "text": "Rs 580"
+    },
+    {
+     "text": "Rs 464"
+    },
+    {
+     "text": "Rs 1392"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Banker's discount = simple interest on the face value = 3480 x 10 x 2/100 = Rs 696.",
+   "order": 31,
+   "subPattern": "banker-s-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "BD = A x R x T / 100."
+  },
+  {
+   "questionText": "What is the banker's discount on a bill of Rs 240 due 1 year hence at 20% per annum?",
+   "options": [
+    {
+     "text": "Rs 60"
+    },
+    {
+     "text": "Rs 40"
+    },
+    {
+     "text": "Rs 43"
+    },
+    {
+     "text": "Rs 48"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Banker's discount = simple interest on the face value = 240 x 20 x 1/100 = Rs 48.",
+   "order": 32,
+   "subPattern": "banker-s-discount",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "BD = A x R x T / 100."
+  },
+  {
+   "questionText": "A bill of Rs 1470 is due in 6 months. Find the banker's gain at 10% per annum.",
+   "options": [
+    {
+     "text": "Rs 73.5"
+    },
+    {
+     "text": "Rs 3.15"
+    },
+    {
+     "text": "Rs 3.5"
+    },
+    {
+     "text": "Rs 3.85"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BD = 73.5. PW = 1400, TD = 70. BG = BD - TD = Rs 3.5.",
+   "order": 33,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "Find the banker's discount on a bill of Rs 880 due in 15 months at 8% per annum.",
+   "options": [
+    {
+     "text": "Rs 80"
+    },
+    {
+     "text": "Rs 110"
+    },
+    {
+     "text": "Rs 176"
+    },
+    {
+     "text": "Rs 88"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BD = 880 x 8 x 1.25/100 = Rs 88.",
+   "order": 34,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "BD is interest on the whole face value."
+  },
+  {
+   "questionText": "A bill of Rs 4810 is due in 18 months. Find the banker's gain at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 333"
+    },
+    {
+     "text": "Rs 222"
+    },
+    {
+     "text": "Rs 1443"
+    },
+    {
+     "text": "Rs 444"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BD = 1443. PW = 3700, TD = 1110. BG = BD - TD = Rs 333.",
+   "order": 35,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "A bill of Rs 3440 is due in 9 months. Find the banker's gain at 10% per annum.",
+   "options": [
+    {
+     "text": "Rs 258"
+    },
+    {
+     "text": "Rs 18"
+    },
+    {
+     "text": "Rs 24"
+    },
+    {
+     "text": "Rs 12"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BD = 258. PW = 3200, TD = 240. BG = BD - TD = Rs 18.",
+   "order": 36,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "A bill of Rs 330 is due in 8 months. Find the banker's gain at 15% per annum.",
+   "options": [
+    {
+     "text": "Rs 4"
+    },
+    {
+     "text": "Rs 33"
+    },
+    {
+     "text": "Rs 3"
+    },
+    {
+     "text": "Rs 2"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BD = 33. PW = 300, TD = 30. BG = BD - TD = Rs 3.",
+   "order": 37,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "A bill of Rs 2860 is due in 6 months. Find the banker's gain at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 26"
+    },
+    {
+     "text": "Rs 24"
+    },
+    {
+     "text": "Rs 39"
+    },
+    {
+     "text": "Rs 286"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BD = 286. PW = 2600, TD = 260. BG = BD - TD = Rs 26.",
+   "order": 38,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "Find the banker's discount on a bill of Rs 2460 due in 6 months at 5% per annum.",
+   "options": [
+    {
+     "text": "Rs 123"
+    },
+    {
+     "text": "Rs 60"
+    },
+    {
+     "text": "Rs 55.35"
+    },
+    {
+     "text": "Rs 61.5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BD = 2460 x 5 x 0.5/100 = Rs 61.5.",
+   "order": 39,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "BD is interest on the whole face value."
+  },
+  {
+   "questionText": "A bill of Rs 1430 is due in 10 months. Find the banker's gain at 12% per annum.",
+   "options": [
+    {
+     "text": "Rs 26"
+    },
+    {
+     "text": "Rs 13"
+    },
+    {
+     "text": "Rs 11"
+    },
+    {
+     "text": "Rs 143"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BD = 143. PW = 1300, TD = 130. BG = BD - TD = Rs 13.",
+   "order": 40,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "Find the banker's discount on a bill of Rs 4250 due in 15 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 850"
+    },
+    {
+     "text": "Rs 2125"
+    },
+    {
+     "text": "Rs 956.25"
+    },
+    {
+     "text": "Rs 1062.5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BD = 4250 x 20 x 1.25/100 = Rs 1062.5.",
+   "order": 41,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BD is interest on the whole face value."
+  },
+  {
+   "questionText": "Find the banker's discount on a bill of Rs 520 due in 18 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 78"
+    },
+    {
+     "text": "Rs 156"
+    },
+    {
+     "text": "Rs 120"
+    },
+    {
+     "text": "Rs 234"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BD = 520 x 20 x 1.5/100 = Rs 156.",
+   "order": 42,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BD is interest on the whole face value."
+  },
+  {
+   "questionText": "A bill of Rs 1960 is due in 18 months. Find the banker's gain at 15% per annum.",
+   "options": [
+    {
+     "text": "Rs 441"
+    },
+    {
+     "text": "Rs 162"
+    },
+    {
+     "text": "Rs 81"
+    },
+    {
+     "text": "Rs 108"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BD = 441. PW = 1600, TD = 360. BG = BD - TD = Rs 81.",
+   "order": 43,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "Find the banker's discount on a bill of Rs 3360 due in 3 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 168"
+    },
+    {
+     "text": "Rs 252"
+    },
+    {
+     "text": "Rs 160"
+    },
+    {
+     "text": "Rs 224"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BD = 3360 x 20 x 0.25/100 = Rs 168.",
+   "order": 44,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "BD is interest on the whole face value."
+  },
+  {
+   "questionText": "Find the banker's discount on a bill of Rs 4550 due in 18 months at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 1365"
+    },
+    {
+     "text": "Rs 1638"
+    },
+    {
+     "text": "Rs 1820"
+    },
+    {
+     "text": "Rs 1050"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BD = 4550 x 20 x 1.5/100 = Rs 1365.",
+   "order": 45,
+   "subPattern": "banker-s-discount",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "BD is interest on the whole face value."
+  },
+  {
+   "questionText": "A bill of Rs 5000 due 5 years hence is discounted by a banker at 20% per annum. How much cash does the holder receive?",
+   "options": [
+    {
+     "text": "Rs 2500"
+    },
+    {
+     "text": "Rs 0"
+    },
+    {
+     "text": "Rs 2"
+    },
+    {
+     "text": "Rs 5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BD = 5000 x 20 x 5/100 = 5000. Cash received = 5000 - 5000 = Rs 0.",
+   "order": 46,
+   "subPattern": "banker-s-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Cash = face value - banker's discount."
+  },
+  {
+   "questionText": "A bill of Rs 1120 due 5 years hence is discounted by a banker at 12% per annum. How much cash does the holder receive?",
+   "options": [
+    {
+     "text": "Rs 560"
+    },
+    {
+     "text": "Rs 896"
+    },
+    {
+     "text": "Rs 700"
+    },
+    {
+     "text": "Rs 448"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BD = 1120 x 12 x 5/100 = 672. Cash received = 1120 - 672 = Rs 448.",
+   "order": 47,
+   "subPattern": "banker-s-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cash = face value - banker's discount."
+  },
+  {
+   "questionText": "A bill of Rs 2280 due 2 years hence is discounted by a banker at 10% per annum. How much cash does the holder receive?",
+   "options": [
+    {
+     "text": "Rs 1900"
+    },
+    {
+     "text": "Rs 2280"
+    },
+    {
+     "text": "Rs 1824"
+    },
+    {
+     "text": "Rs 1216"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BD = 2280 x 10 x 2/100 = 456. Cash received = 2280 - 456 = Rs 1824.",
+   "order": 48,
+   "subPattern": "banker-s-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cash = face value - banker's discount."
+  },
+  {
+   "questionText": "A trader discounts a bill of Rs 2760 due in 18 months at a bank at 10% per annum. How much more does he receive if the discount is the true discount rather than the banker's discount?",
+   "options": [
+    {
+     "text": "Rs 81"
+    },
+    {
+     "text": "Rs 72"
+    },
+    {
+     "text": "Rs 54"
+    },
+    {
+     "text": "Rs 414"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With banker's discount he gets 2760 - 414 = 2346. With true discount he gets 2760 - 360 = 2400. Difference = BG = Rs 54.",
+   "order": 49,
+   "subPattern": "banker-s-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Difference between the two cash amounts equals the banker's gain."
+  },
+  {
+   "questionText": "A trader discounts a bill of Rs 550 due in 6 months at a bank at 20% per annum. How much more does he receive if the discount is the true discount rather than the banker's discount?",
+   "options": [
+    {
+     "text": "Rs 3"
+    },
+    {
+     "text": "Rs 5"
+    },
+    {
+     "text": "Rs 6"
+    },
+    {
+     "text": "Rs 55"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With banker's discount he gets 550 - 55 = 495. With true discount he gets 550 - 50 = 500. Difference = BG = Rs 5.",
+   "order": 50,
+   "subPattern": "banker-s-discount",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Difference between the two cash amounts equals the banker's gain."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 300. What is the banker's gain if the rate is 15% per annum and the time is 1 year?",
+   "options": [
+    {
+     "text": "Rs 45"
+    },
+    {
+     "text": "Rs 44"
+    },
+    {
+     "text": "Rs 47"
+    },
+    {
+     "text": "Rs 300"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Banker's gain = simple interest on the true discount = 300 x 15 x 1/100 = Rs 45.",
+   "order": 51,
+   "subPattern": "banker-s-gain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BG = TD x R x T / 100."
+  },
+  {
+   "questionText": "Find the banker's gain on a bill of Rs 260 due 2 years hence at 15% per annum.",
+   "options": [
+    {
+     "text": "Rs 12"
+    },
+    {
+     "text": "Rs 20"
+    },
+    {
+     "text": "Rs 78"
+    },
+    {
+     "text": "Rs 18"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BD = 78, TD = 60. Banker's gain = BD - TD = Rs 18.",
+   "order": 52,
+   "subPattern": "banker-s-gain",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 400. What is the banker's gain if the rate is 5% per annum and the time is 5 years?",
+   "options": [
+    {
+     "text": "Rs 400"
+    },
+    {
+     "text": "Rs 100"
+    },
+    {
+     "text": "Rs 125"
+    },
+    {
+     "text": "Rs 75"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Banker's gain = simple interest on the true discount = 400 x 5 x 5/100 = Rs 100.",
+   "order": 53,
+   "subPattern": "banker-s-gain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "BG = TD x R x T / 100."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 1500. What is the banker's gain if the rate is 20% per annum and the time is 5 years?",
+   "options": [
+    {
+     "text": "Rs 2000"
+    },
+    {
+     "text": "Rs 1000"
+    },
+    {
+     "text": "Rs 1500"
+    },
+    {
+     "text": "Rs 1350"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Banker's gain = simple interest on the true discount = 1500 x 20 x 5/100 = Rs 1500.",
+   "order": 54,
+   "subPattern": "banker-s-gain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "BG = TD x R x T / 100."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 1000. What is the banker's gain if the rate is 10% per annum and the time is 5 years?",
+   "options": [
+    {
+     "text": "Rs 500"
+    },
+    {
+     "text": "Rs 1000"
+    },
+    {
+     "text": "Rs 375"
+    },
+    {
+     "text": "Rs 450"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Banker's gain = simple interest on the true discount = 1000 x 10 x 5/100 = Rs 500.",
+   "order": 55,
+   "subPattern": "banker-s-gain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BG = TD x R x T / 100."
+  },
+  {
+   "questionText": "Find the banker's gain on a bill of Rs 240 due 2 years hence at 10% per annum.",
+   "options": [
+    {
+     "text": "Rs 7"
+    },
+    {
+     "text": "Rs 6"
+    },
+    {
+     "text": "Rs 48"
+    },
+    {
+     "text": "Rs 8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BD = 48, TD = 40. Banker's gain = BD - TD = Rs 8.",
+   "order": 56,
+   "subPattern": "banker-s-gain",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "Find the banker's gain on a bill of Rs 1800 due 4 years hence at 20% per annum.",
+   "options": [
+    {
+     "text": "Rs 640"
+    },
+    {
+     "text": "Rs 1440"
+    },
+    {
+     "text": "Rs 960"
+    },
+    {
+     "text": "Rs 512"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BD = 1440, TD = 800. Banker's gain = BD - TD = Rs 640.",
+   "order": 57,
+   "subPattern": "banker-s-gain",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "BG = BD - TD."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 150 and its present worth is Rs 1500. What is the banker's gain?",
+   "options": [
+    {
+     "text": "Rs 20"
+    },
+    {
+     "text": "Rs 13"
+    },
+    {
+     "text": "Rs 135"
+    },
+    {
+     "text": "Rs 15"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BG = TD^2/PW = 150^2/1500 = 22500/1500 = Rs 15.",
+   "order": 58,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "BG = (TD)^2 / PW."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 60 and its present worth is Rs 400. What is the banker's gain?",
+   "options": [
+    {
+     "text": "Rs 6"
+    },
+    {
+     "text": "Rs 9"
+    },
+    {
+     "text": "Rs 51"
+    },
+    {
+     "text": "Rs 8"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BG = TD^2/PW = 60^2/400 = 3600/400 = Rs 9.",
+   "order": 59,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BG = (TD)^2 / PW."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 120 and its present worth is Rs 2400. What is the banker's gain?",
+   "options": [
+    {
+     "text": "Rs 9"
+    },
+    {
+     "text": "Rs 114"
+    },
+    {
+     "text": "Rs 6"
+    },
+    {
+     "text": "Rs 1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BG = TD^2/PW = 120^2/2400 = 14400/2400 = Rs 6.",
+   "order": 60,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BG = (TD)^2 / PW."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 20 and its present worth is Rs 200. What is the banker's gain?",
+   "options": [
+    {
+     "text": "Rs 2"
+    },
+    {
+     "text": "Rs 18"
+    },
+    {
+     "text": "Rs 7"
+    },
+    {
+     "text": "Rs 1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BG = TD^2/PW = 20^2/200 = 400/200 = Rs 2.",
+   "order": 61,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "BG = (TD)^2 / PW."
+  },
+  {
+   "questionText": "The true discount on a bill due 1 year hence at 15% per annum is Rs 330. What is the banker's discount?",
+   "options": [
+    {
+     "text": "Rs 303.6"
+    },
+    {
+     "text": "Rs 330"
+    },
+    {
+     "text": "Rs 379.5"
+    },
+    {
+     "text": "Rs 417.45"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BG = TD x R x T/100 = 49.5. BD = TD + BG = 330 + 49.5 = Rs 379.5.",
+   "order": 62,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "BD = TD(1 + RT/100)."
+  },
+  {
+   "questionText": "The true discount on a bill due 5 years hence at 5% per annum is Rs 300. What is the banker's discount?",
+   "options": [
+    {
+     "text": "Rs 300"
+    },
+    {
+     "text": "Rs 450"
+    },
+    {
+     "text": "Rs 250"
+    },
+    {
+     "text": "Rs 375"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BG = TD x R x T/100 = 75. BD = TD + BG = 300 + 75 = Rs 375.",
+   "order": 63,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "BD = TD(1 + RT/100)."
+  },
+  {
+   "questionText": "The true discount on a bill due 3 years hence at 10% per annum is Rs 990. What is the banker's discount?",
+   "options": [
+    {
+     "text": "Rs 1716"
+    },
+    {
+     "text": "Rs 1287"
+    },
+    {
+     "text": "Rs 990"
+    },
+    {
+     "text": "Rs 2574"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BG = TD x R x T/100 = 297. BD = TD + BG = 990 + 297 = Rs 1287.",
+   "order": 64,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "BD = TD(1 + RT/100)."
+  },
+  {
+   "questionText": "The true discount on a bill due 4 years hence at 15% per annum is Rs 240. What is the banker's discount?",
+   "options": [
+    {
+     "text": "Rs 576"
+    },
+    {
+     "text": "Rs 384"
+    },
+    {
+     "text": "Rs 240"
+    },
+    {
+     "text": "Rs 480"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BG = TD x R x T/100 = 144. BD = TD + BG = 240 + 144 = Rs 384.",
+   "order": 65,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "BD = TD(1 + RT/100)."
+  },
+  {
+   "questionText": "The true discount on a bill due 4 years hence at 10% per annum is Rs 1400. What is the banker's discount?",
+   "options": [
+    {
+     "text": "Rs 1960"
+    },
+    {
+     "text": "Rs 1400"
+    },
+    {
+     "text": "Rs 2940"
+    },
+    {
+     "text": "Rs 1568"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BG = TD x R x T/100 = 560. BD = TD + BG = 1400 + 560 = Rs 1960.",
+   "order": 66,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BD = TD(1 + RT/100)."
+  },
+  {
+   "questionText": "The true discount on a bill due 3 years hence at 20% per annum is Rs 1380. What is the banker's discount?",
+   "options": [
+    {
+     "text": "Rs 1656"
+    },
+    {
+     "text": "Rs 1380"
+    },
+    {
+     "text": "Rs 2208"
+    },
+    {
+     "text": "Rs 4416"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BG = TD x R x T/100 = 828. BD = TD + BG = 1380 + 828 = Rs 2208.",
+   "order": 67,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "BD = TD(1 + RT/100)."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 150 and its present worth is Rs 600. What is the banker's gain?",
+   "options": [
+    {
+     "text": "Rs 38.5"
+    },
+    {
+     "text": "Rs 112.5"
+    },
+    {
+     "text": "Rs 25"
+    },
+    {
+     "text": "Rs 37.5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BG = TD^2/PW = 150^2/600 = 22500/600 = Rs 37.5.",
+   "order": 68,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "BG = (TD)^2 / PW."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 150 and its present worth is Rs 2500. What is the banker's gain?",
+   "options": [
+    {
+     "text": "Rs 11"
+    },
+    {
+     "text": "Rs 6"
+    },
+    {
+     "text": "Rs 141"
+    },
+    {
+     "text": "Rs 9"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "BG = TD^2/PW = 150^2/2500 = 22500/2500 = Rs 9.",
+   "order": 69,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BG = (TD)^2 / PW."
+  },
+  {
+   "questionText": "The true discount on a bill is Rs 100 and its present worth is Rs 2000. What is the banker's gain?",
+   "options": [
+    {
+     "text": "Rs 3"
+    },
+    {
+     "text": "Rs 95"
+    },
+    {
+     "text": "Rs 5"
+    },
+    {
+     "text": "Rs 7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BG = TD^2/PW = 100^2/2000 = 10000/2000 = Rs 5.",
+   "order": 70,
+   "subPattern": "banker-s-gain",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "BG = (TD)^2 / PW."
+  },
+  {
+   "questionText": "The banker's gain on a bill due 5 years hence at 6% per annum is Rs 207. What is the true discount?",
+   "options": [
+    {
+     "text": "Rs 759"
+    },
+    {
+     "text": "Rs 690"
+    },
+    {
+     "text": "Rs 920"
+    },
+    {
+     "text": "Rs 897"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BG = TD x R x T/100, so TD = BG x 100/(R x T) = 207 x 100/(6 x 5) = Rs 690.",
+   "order": 71,
+   "subPattern": "banker-s-gain",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "BG is the interest on the true discount: TD = 100 BG/(RT)."
+  },
+  {
+   "questionText": "The banker's discount on a sum due 5 years hence at 6% per annum is Rs 663. What is the true discount?",
+   "options": [
+    {
+     "text": "Rs 510"
+    },
+    {
+     "text": "Rs 680"
+    },
+    {
+     "text": "Rs 561"
+    },
+    {
+     "text": "Rs 153"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "TD = BD x 100/(100 + RT) = 663 x 100/(100 + 6 x 5) = Rs 510.",
+   "order": 72,
+   "subPattern": "banker-s-gain",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "TD = 100 BD / (100 + RT)."
+  },
+  {
+   "questionText": "The banker's gain on a bill due 2 years hence at 5% per annum is Rs 27. What is the true discount?",
+   "options": [
+    {
+     "text": "Rs 270"
+    },
+    {
+     "text": "Rs 540"
+    },
+    {
+     "text": "Rs 297"
+    },
+    {
+     "text": "Rs 360"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BG = TD x R x T/100, so TD = BG x 100/(R x T) = 27 x 100/(5 x 2) = Rs 270.",
+   "order": 73,
+   "subPattern": "banker-s-gain",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "BG is the interest on the true discount: TD = 100 BG/(RT)."
+  },
+  {
+   "questionText": "The banker's discount on a sum due 5 years hence at 12% per annum is Rs 2976. What is the true discount?",
+   "options": [
+    {
+     "text": "Rs 1116"
+    },
+    {
+     "text": "Rs 2790"
+    },
+    {
+     "text": "Rs 2232"
+    },
+    {
+     "text": "Rs 1860"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "TD = BD x 100/(100 + RT) = 2976 x 100/(100 + 12 x 5) = Rs 1860.",
+   "order": 74,
+   "subPattern": "banker-s-gain",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "TD = 100 BD / (100 + RT)."
+  },
+  {
+   "questionText": "The banker's discount on a sum due 1 year hence at 10% per annum is Rs 231. What is the true discount?",
+   "options": [
+    {
+     "text": "Rs 140"
+    },
+    {
+     "text": "Rs 210"
+    },
+    {
+     "text": "Rs 21"
+    },
+    {
+     "text": "Rs 168"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "TD = BD x 100/(100 + RT) = 231 x 100/(100 + 10 x 1) = Rs 210.",
+   "order": 75,
+   "subPattern": "banker-s-gain",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "TD = 100 BD / (100 + RT)."
+  },
+  {
+   "questionText": "The banker's gain on a bill due 4 years hence at 5% per annum is Rs 24. What is the true discount?",
+   "options": [
+    {
+     "text": "Rs 144"
+    },
+    {
+     "text": "Rs 160"
+    },
+    {
+     "text": "Rs 120"
+    },
+    {
+     "text": "Rs 108"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "BG = TD x R x T/100, so TD = BG x 100/(R x T) = 24 x 100/(5 x 4) = Rs 120.",
+   "order": 76,
+   "subPattern": "banker-s-gain",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "BG is the interest on the true discount: TD = 100 BG/(RT)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 897 and the true discount is Rs 690. What is the sum (face value) of the bill?",
+   "options": [
+    {
+     "text": "Rs 1587"
+    },
+    {
+     "text": "Rs 1495"
+    },
+    {
+     "text": "Rs 2990"
+    },
+    {
+     "text": "Rs 3289"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = (897 x 690)/(897 - 690) = Rs 2990.",
+   "order": 77,
+   "subPattern": "present-worth",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sum = BD x TD / (BD - TD)."
+  },
+  {
+   "questionText": "What is the present worth of Rs 2100 due 1 year hence at 5% per annum simple interest?",
+   "options": [
+    {
+     "text": "Rs 2000"
+    },
+    {
+     "text": "Rs 1600"
+    },
+    {
+     "text": "Rs 1000"
+    },
+    {
+     "text": "Rs 1995"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "PW = 100A/(100 + RT) = 2100 x 100/(100 + 5 x 1) = Rs 2000.",
+   "order": 78,
+   "subPattern": "present-worth",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 216 and the true discount is Rs 180. What is the sum (face value) of the bill?",
+   "options": [
+    {
+     "text": "Rs 864"
+    },
+    {
+     "text": "Rs 1080"
+    },
+    {
+     "text": "Rs 396"
+    },
+    {
+     "text": "Rs 1188"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = (216 x 180)/(216 - 180) = Rs 1080.",
+   "order": 79,
+   "subPattern": "present-worth",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Sum = BD x TD / (BD - TD)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 132 and the true discount is Rs 120. What is the sum (face value) of the bill?",
+   "options": [
+    {
+     "text": "Rs 990"
+    },
+    {
+     "text": "Rs 1980"
+    },
+    {
+     "text": "Rs 252"
+    },
+    {
+     "text": "Rs 1320"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = (132 x 120)/(132 - 120) = Rs 1320.",
+   "order": 80,
+   "subPattern": "present-worth",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sum = BD x TD / (BD - TD)."
+  },
+  {
+   "questionText": "What is the present worth of Rs 3190 due 1 year hence at 10% per annum simple interest?",
+   "options": [
+    {
+     "text": "Rs 2871"
+    },
+    {
+     "text": "Rs 3480"
+    },
+    {
+     "text": "Rs 2900"
+    },
+    {
+     "text": "Rs 2320"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "PW = 100A/(100 + RT) = 3190 x 100/(100 + 10 x 1) = Rs 2900.",
+   "order": 81,
+   "subPattern": "present-worth",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 1053 and the true discount is Rs 810. What is the sum (face value) of the bill?",
+   "options": [
+    {
+     "text": "Rs 5265"
+    },
+    {
+     "text": "Rs 1863"
+    },
+    {
+     "text": "Rs 2340"
+    },
+    {
+     "text": "Rs 3510"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = (1053 x 810)/(1053 - 810) = Rs 3510.",
+   "order": 82,
+   "subPattern": "present-worth",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sum = BD x TD / (BD - TD)."
+  },
+  {
+   "questionText": "What is the present worth of Rs 2880 due 4 years hence at 5% per annum simple interest?",
+   "options": [
+    {
+     "text": "Rs 2400"
+    },
+    {
+     "text": "Rs 4800"
+    },
+    {
+     "text": "Rs 1600"
+    },
+    {
+     "text": "Rs 2304"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "PW = 100A/(100 + RT) = 2880 x 100/(100 + 5 x 4) = Rs 2400.",
+   "order": 83,
+   "subPattern": "present-worth",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "What is the present worth of Rs 2240 due 3 years hence at 20% per annum simple interest?",
+   "options": [
+    {
+     "text": "Rs 1050"
+    },
+    {
+     "text": "Rs 1400"
+    },
+    {
+     "text": "Rs 1680"
+    },
+    {
+     "text": "Rs 896"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "PW = 100A/(100 + RT) = 2240 x 100/(100 + 20 x 3) = Rs 1400.",
+   "order": 84,
+   "subPattern": "present-worth",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 132 and the true discount is Rs 120. What is the present worth of the bill?",
+   "options": [
+    {
+     "text": "Rs 2400"
+    },
+    {
+     "text": "Rs 1320"
+    },
+    {
+     "text": "Rs 1800"
+    },
+    {
+     "text": "Rs 1200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = 1320. PW = Sum - TD = 1320 - 120 = Rs 1200.",
+   "order": 85,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "First find the sum, then PW = sum - TD."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 1521 and the true discount is Rs 1170. What is the present worth of the bill?",
+   "options": [
+    {
+     "text": "Rs 5070"
+    },
+    {
+     "text": "Rs 5200"
+    },
+    {
+     "text": "Rs 3900"
+    },
+    {
+     "text": "Rs 1950"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = 5070. PW = Sum - TD = 5070 - 1170 = Rs 3900.",
+   "order": 86,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "First find the sum, then PW = sum - TD."
+  },
+  {
+   "questionText": "What is the present worth of Rs 2580 due in 9 months at 10% per annum?",
+   "options": [
+    {
+     "text": "Rs 4800"
+    },
+    {
+     "text": "Rs 2400"
+    },
+    {
+     "text": "Rs 2386.5"
+    },
+    {
+     "text": "Rs 3600"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "T = 0.75 years. PW = 2580 x 100/(100 + 10 x 0.75) = Rs 2400.",
+   "order": 87,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Months/12 for T, then PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "What is the present worth of Rs 4070 due in 15 months at 8% per annum?",
+   "options": [
+    {
+     "text": "Rs 3700"
+    },
+    {
+     "text": "Rs 1850"
+    },
+    {
+     "text": "Rs 5550"
+    },
+    {
+     "text": "Rs 3663"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "T = 1.25 years. PW = 4070 x 100/(100 + 8 x 1.25) = Rs 3700.",
+   "order": 88,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Months/12 for T, then PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 2349 and the true discount is Rs 1620. What is the present worth of the bill?",
+   "options": [
+    {
+     "text": "Rs 5220"
+    },
+    {
+     "text": "Rs 4800"
+    },
+    {
+     "text": "Rs 3600"
+    },
+    {
+     "text": "Rs 1800"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = 5220. PW = Sum - TD = 5220 - 1620 = Rs 3600.",
+   "order": 89,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "First find the sum, then PW = sum - TD."
+  },
+  {
+   "questionText": "What is the present worth of Rs 1040 due in 18 months at 20% per annum?",
+   "options": [
+    {
+     "text": "Rs 880"
+    },
+    {
+     "text": "Rs 800"
+    },
+    {
+     "text": "Rs 728"
+    },
+    {
+     "text": "Rs 1000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "T = 1.5 years. PW = 1040 x 100/(100 + 20 x 1.5) = Rs 800.",
+   "order": 90,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Months/12 for T, then PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 418 and the true discount is Rs 380. What is the present worth of the bill?",
+   "options": [
+    {
+     "text": "Rs 3800"
+    },
+    {
+     "text": "Rs 4750"
+    },
+    {
+     "text": "Rs 4180"
+    },
+    {
+     "text": "Rs 3040"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = 4180. PW = Sum - TD = 4180 - 380 = Rs 3800.",
+   "order": 91,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "First find the sum, then PW = sum - TD."
+  },
+  {
+   "questionText": "What is the present worth of Rs 3600 due in 15 months at 10% per annum?",
+   "options": [
+    {
+     "text": "Rs 3150"
+    },
+    {
+     "text": "Rs 4800"
+    },
+    {
+     "text": "Rs 1600"
+    },
+    {
+     "text": "Rs 3200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "T = 1.25 years. PW = 3600 x 100/(100 + 10 x 1.25) = Rs 3200.",
+   "order": 92,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Months/12 for T, then PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 552 and the true discount is Rs 460. What is the present worth of the bill?",
+   "options": [
+    {
+     "text": "Rs 2300"
+    },
+    {
+     "text": "Rs 2760"
+    },
+    {
+     "text": "Rs 4600"
+    },
+    {
+     "text": "Rs 1840"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = 2760. PW = Sum - TD = 2760 - 460 = Rs 2300.",
+   "order": 93,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "First find the sum, then PW = sum - TD."
+  },
+  {
+   "questionText": "What is the present worth of Rs 2300 due in 9 months at 20% per annum?",
+   "options": [
+    {
+     "text": "Rs 3000"
+    },
+    {
+     "text": "Rs 4000"
+    },
+    {
+     "text": "Rs 2000"
+    },
+    {
+     "text": "Rs 1955"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "T = 0.75 years. PW = 2300 x 100/(100 + 20 x 0.75) = Rs 2000.",
+   "order": 94,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Months/12 for T, then PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The banker's discount on a bill is Rs 396 and the true discount is Rs 360. What is the present worth of the bill?",
+   "options": [
+    {
+     "text": "Rs 5400"
+    },
+    {
+     "text": "Rs 3600"
+    },
+    {
+     "text": "Rs 4320"
+    },
+    {
+     "text": "Rs 3960"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum = (BD x TD)/(BD - TD) = 3960. PW = Sum - TD = 3960 - 360 = Rs 3600.",
+   "order": 95,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "First find the sum, then PW = sum - TD."
+  },
+  {
+   "questionText": "What is the present worth of Rs 1560 due in 18 months at 20% per annum?",
+   "options": [
+    {
+     "text": "Rs 600"
+    },
+    {
+     "text": "Rs 1092"
+    },
+    {
+     "text": "Rs 1800"
+    },
+    {
+     "text": "Rs 1200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "T = 1.5 years. PW = 1560 x 100/(100 + 20 x 1.5) = Rs 1200.",
+   "order": 96,
+   "subPattern": "present-worth",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Months/12 for T, then PW = 100A/(100 + RT)."
+  },
+  {
+   "questionText": "The banker's gain on a bill is Rs 39 and the true discount is Rs 390. What is the sum of the bill? (The rate and time are not given.)",
+   "options": [
+    {
+     "text": "Rs 4290"
+    },
+    {
+     "text": "Rs 6435"
+    },
+    {
+     "text": "Rs 3900"
+    },
+    {
+     "text": "Rs 5148"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "BD = TD + BG = 390 + 39 = 429. Sum = (BD x TD)/(BD - TD) = (429 x 390)/39 = Rs 4290.",
+   "order": 97,
+   "subPattern": "present-worth",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "BD = TD + BG, then the same sum formula."
+  },
+  {
+   "questionText": "The banker's gain on a bill is Rs 17 and the true discount is Rs 170. What is the sum of the bill? (The rate and time are not given.)",
+   "options": [
+    {
+     "text": "Rs 1683"
+    },
+    {
+     "text": "Rs 1870"
+    },
+    {
+     "text": "Rs 1700"
+    },
+    {
+     "text": "Rs 3740"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "BD = TD + BG = 170 + 17 = 187. Sum = (BD x TD)/(BD - TD) = (187 x 170)/17 = Rs 1870.",
+   "order": 98,
+   "subPattern": "present-worth",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "BD = TD + BG, then the same sum formula."
+  },
+  {
+   "questionText": "What is the total present worth of two bills, one of Rs 3240 due 2 years hence and the other of Rs 5100 due 5 years hence, at 10% per annum simple interest?",
+   "options": [
+    {
+     "text": "Rs 6710"
+    },
+    {
+     "text": "Rs 7625"
+    },
+    {
+     "text": "Rs 8340"
+    },
+    {
+     "text": "Rs 6100"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "PW1 = 3240 x 100/(100 + 10 x 2) = 2700. PW2 = 5100 x 100/(100 + 10 x 5) = 3400. Total = Rs 6100.",
+   "order": 99,
+   "subPattern": "present-worth",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find each bill's present worth separately, then add."
+  },
+  {
+   "questionText": "What is the total present worth of two bills, one of Rs 2700 due 1 year hence and the other of Rs 2520 due 5 years hence, at 8% per annum simple interest?",
+   "options": [
+    {
+     "text": "Rs 8600"
+    },
+    {
+     "text": "Rs 2150"
+    },
+    {
+     "text": "Rs 4300"
+    },
+    {
+     "text": "Rs 5220"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "PW1 = 2700 x 100/(100 + 8 x 1) = 2500. PW2 = 2520 x 100/(100 + 8 x 5) = 1800. Total = Rs 4300.",
+   "order": 100,
+   "subPattern": "present-worth",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find each bill's present worth separately, then add."
+  }
+ ]
+}

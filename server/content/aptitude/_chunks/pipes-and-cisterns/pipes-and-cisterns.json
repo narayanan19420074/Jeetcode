@@ -1,0 +1,1872 @@
+{
+  "questions": [
+    {
+      "questionText": "A pipe fills a tank in 5 hours. Because of a leak at the bottom, it takes 7 hours to fill the tank. In how many hours will the leak alone empty the full tank?",
+      "options": [
+        "2 hours",
+        "17.5 hours",
+        "8.75 hours",
+        "7 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Leak rate = 1/5 - 1/7 = 2/35 per hour. Time to empty = 17.5 hours.",
+      "shortcut": "Leak time = (a x b)/(b - a) = (5 x 7)/2.",
+      "subPattern": "leak-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is 1/3 full. A pipe can fill a full tank in 18 minutes and an outlet can empty a full tank in 24 minutes. If both are opened, how long will it take to fill the tank completely?",
+      "options": [
+        "48 minutes",
+        "43 minutes",
+        "60 minutes",
+        "12 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Remaining = 1 - 1/3 = 2/3. Net rate = 1/18 - 1/24 = 1/72. Time = 2/3 / 1/72 = 48 minutes.",
+      "shortcut": "Only the unfilled fraction needs to be covered, at the net rate.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe delivers 75 litres of water per minute and fills a tank in 12 minutes. What is the capacity of the tank in litres?",
+      "options": [
+        "900 litres",
+        "600 litres",
+        "1200 litres",
+        "87 litres"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Capacity = rate x time = 75 x 12 = 900 litres.",
+      "shortcut": "Capacity = flow rate x time.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A is 5 times as fast as pipe B and takes 24 minutes less than B to fill a tank. How long will both pipes together take?",
+      "options": [
+        "6 minutes",
+        "5 minutes",
+        "3 minutes",
+        "7 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A takes x min, B takes 5x min. 5x - x = 24, so x = 6 and B takes 30 min. Together = (6 x 30)/(6 + 30) = 5 minutes.",
+      "shortcut": "Time ratio A : B = 1 : 5; the difference of 4 parts = 24.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 15 minutes and an outlet empties it in 30 minutes. They are opened alternately for one minute each, the inlet first. In how many minutes will the tank be full?",
+      "options": [
+        "76 minutes",
+        "30 minutes",
+        "114 minutes",
+        "57 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capacity = 30 units. Inlet adds 2 and outlet removes 1 per minute. Net per 2-minute cycle = 1. Following the cycles, the tank is exactly full at the end of minute 57.",
+      "shortcut": "Compute the net gain per cycle; check the last partial cycle step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is 2/3 full. A pipe can fill a full tank in 6 minutes and an outlet can empty a full tank in 18 minutes. If both are opened, how long will it take to fill the tank completely?",
+      "options": [
+        "4 minutes",
+        "3 minutes",
+        "6 minutes",
+        "2 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Remaining = 1 - 2/3 = 1/3. Net rate = 1/6 - 1/18 = 1/9. Time = 1/3 / 1/9 = 3 minutes.",
+      "shortcut": "Only the unfilled fraction needs to be covered, at the net rate.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes deliver 20 litres and 40 litres per minute into a tank of capacity 480 litres. How long will they take to fill the empty tank when working together?",
+      "options": [
+        "8 minutes",
+        "12 minutes",
+        "4 minutes",
+        "24 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Combined rate = 20 + 40 = 60 litres/min. Time = 480/60 = 8 minutes.",
+      "shortcut": "Time = capacity / (sum of the flow rates).",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe delivers 75 litres of water per minute and fills a tank in 30 minutes. What is the capacity of the tank in litres?",
+      "options": [
+        "1500 litres",
+        "105 litres",
+        "2250 litres",
+        "3000 litres"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capacity = rate x time = 75 x 30 = 2250 litres.",
+      "shortcut": "Capacity = flow rate x time.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 40 and 24 minutes respectively. They are opened together. What fraction of the tank is still empty after 6 minutes?",
+      "options": [
+        "3/5",
+        "3/10",
+        "4/5",
+        "2/5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Both fill 1/15 per minute, so in 6 minutes they fill 2/5. Empty fraction = 1 - 2/5 = 3/5.",
+      "shortcut": "Add the rates, multiply by time, subtract from 1.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 12 minutes and an outlet empties it in 24 minutes. They are opened alternately for one minute each, the inlet first. In how many minutes will the tank be full?",
+      "options": [
+        "43 minutes",
+        "40 minutes",
+        "45 minutes",
+        "24 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capacity = 24 units. Inlet adds 2 and outlet removes 1 per minute. Net per 2-minute cycle = 1. Following the cycles, the tank is exactly full at the end of minute 45.",
+      "shortcut": "Compute the net gain per cycle; check the last partial cycle step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A is 2 times as fast as pipe B and takes 6 minutes less than B to fill a tank. How long will both pipes together take?",
+      "options": [
+        "4 minutes",
+        "3 minutes",
+        "6 minutes",
+        "2 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A takes x min, B takes 2x min. 2x - x = 6, so x = 6 and B takes 12 min. Together = (6 x 12)/(6 + 12) = 4 minutes.",
+      "shortcut": "Time ratio A : B = 1 : 2; the difference of 1 parts = 6.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A can fill a tank in 60 minutes and pipe B can fill it in 30 minutes. If both pipes are opened together, how long will they take to fill the tank?",
+      "options": [
+        "20 minutes",
+        "45 minutes",
+        "15 minutes",
+        "18 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 1 minute A fills 1/60 and B fills 1/30. Together = 1/20 per minute, so time = 20 minutes.",
+      "shortcut": "Two pipes: time = (a x b)/(a + b) = (60 x 30)/90.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes deliver 50 litres and 45 litres per minute into a tank of capacity 1900 litres. How long will they take to fill the empty tank when working together?",
+      "options": [
+        "15 minutes",
+        "20 minutes",
+        "16 minutes",
+        "38 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Combined rate = 50 + 45 = 95 litres/min. Time = 1900/95 = 20 minutes.",
+      "shortcut": "Time = capacity / (sum of the flow rates).",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes deliver 20 litres and 75 litres per minute into a tank of capacity 950 litres. How long will they take to fill the empty tank when working together?",
+      "options": [
+        "12 minutes",
+        "20 minutes",
+        "10 minutes",
+        "47.5 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Combined rate = 20 + 75 = 95 litres/min. Time = 950/95 = 10 minutes.",
+      "shortcut": "Time = capacity / (sum of the flow rates).",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three pipes A, B and C can fill a tank in 15, 20 and 12 minutes respectively. How long will the tank take to fill if all three are opened together?",
+      "options": [
+        "6 minutes",
+        "4 minutes",
+        "7 minutes",
+        "5 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Combined rate = 1/15 + 1/20 + 1/12 = 1/5 per minute. Time = 5 minutes.",
+      "shortcut": "Add the three fill rates and take the reciprocal.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three pipes A, B and C can fill a tank in 40, 60 and 8 minutes respectively. How long will the tank take to fill if all three are opened together?",
+      "options": [
+        "8 minutes",
+        "12 minutes",
+        "36 minutes",
+        "6 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Combined rate = 1/40 + 1/60 + 1/8 = 1/6 per minute. Time = 6 minutes.",
+      "shortcut": "Add the three fill rates and take the reciprocal.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 12 and 15 minutes. Both are opened together, but A is closed after 6 minutes. In how many minutes from the start is the tank full?",
+      "options": [
+        "5.5 minutes",
+        "15 minutes",
+        "7.5 minutes",
+        "2.5 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 6 minutes both fill 6 x 3/20 = 9/10. Remaining = 1/10. B alone takes 1/10 x 15 = 1.5 min. Total = 7.5 minutes.",
+      "shortcut": "Do the shared phase, then the remainder with the one pipe left.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A is 3 times as fast as pipe B and takes 8 minutes less than B to fill a tank. How long will both pipes together take?",
+      "options": [
+        "1 minutes",
+        "2 minutes",
+        "4 minutes",
+        "3 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A takes x min, B takes 3x min. 3x - x = 8, so x = 4 and B takes 12 min. Together = (4 x 12)/(4 + 12) = 3 minutes.",
+      "shortcut": "Time ratio A : B = 1 : 3; the difference of 2 parts = 8.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 24 and 40 minutes respectively. They are opened alternately for one minute each, starting with A. In how many minutes is the tank full?",
+      "options": [
+        "15 minutes",
+        "27 minutes",
+        "30 minutes",
+        "24 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Take capacity = 120 units. A adds 5 per minute and B adds 3. Alternating minute by minute, the tank is exactly full at the end of minute 30.",
+      "shortcut": "Find units added in a 2-minute cycle, count full cycles, then finish the rest step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three pipes A, B and C can fill a tank in 18, 10 and 15 minutes respectively. How long will the tank take to fill if all three are opened together?",
+      "options": [
+        "4.5 minutes",
+        "4.95 minutes",
+        "6.5 minutes",
+        "3.5 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Combined rate = 1/18 + 1/10 + 1/15 = 2/9 per minute. Time = 4.5 minutes.",
+      "shortcut": "Add the three fill rates and take the reciprocal.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 24 and 60 minutes. Both are opened together, but A is closed after 3 minutes. In how many minutes from the start is the tank full?",
+      "options": [
+        "63 minutes",
+        "42 minutes",
+        "52.5 minutes",
+        "53.5 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 3 minutes both fill 3 x 7/120 = 7/40. Remaining = 33/40. B alone takes 33/40 x 60 = 49.5 min. Total = 52.5 minutes.",
+      "shortcut": "Do the shared phase, then the remainder with the one pipe left.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A is 2 times as fast as pipe B and takes 3 minutes less than B to fill a tank. How long will both pipes together take?",
+      "options": [
+        "1 minutes",
+        "2 minutes",
+        "3 minutes",
+        "7 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A takes x min, B takes 2x min. 2x - x = 3, so x = 3 and B takes 6 min. Together = (3 x 6)/(3 + 6) = 2 minutes.",
+      "shortcut": "Time ratio A : B = 1 : 2; the difference of 1 parts = 3.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is filled by a pipe in 5 hours, and a leak can empty the full tank in 6 hours. If both the pipe and the leak are working, how long will the empty tank take to fill?",
+      "options": [
+        "35 hours",
+        "30 hours",
+        "24 hours",
+        "20 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net rate = 1/5 - 1/6 = 1/30 per hour. Time = 30 hours.",
+      "shortcut": "Time with the leak = (fill time x leak time)/(leak time - fill time).",
+      "subPattern": "leak-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A fills a tank in 60 minutes and pipe B in 12 minutes. A is opened first, and B is opened 3 minutes later. In how many minutes from the start is the tank full?",
+      "options": [
+        "14.5 minutes",
+        "11.25 minutes",
+        "10 minutes",
+        "12.5 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A alone fills 3/60 in 3 minutes. Remaining = 19/20. Together they fill 1/10 per minute, so 9.5 more minutes. Total = 12.5 minutes.",
+      "shortcut": "Time from the start = head-start time + time with both pipes.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A fills a tank 7 minutes faster than pipe B. Together they fill the tank in 12 minutes. How long does A alone take?",
+      "options": [
+        "28 minutes",
+        "20 minutes",
+        "21 minutes",
+        "19 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Let A take x min, B x + 7. 1/x + 1/(x + 7) = 1/12. This gives x = 21. (Check: 1/21 + 1/28 = 1/12.)",
+      "shortcut": "Form the equation with x and x + d, or test values satisfying both conditions.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A fills a tank 12 minutes faster than pipe B. Together they fill the tank in 8 minutes. How long does A alone take?",
+      "options": [
+        "7 minutes",
+        "12 minutes",
+        "14 minutes",
+        "24 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Let A take x min, B x + 12. 1/x + 1/(x + 12) = 1/8. This gives x = 12. (Check: 1/12 + 1/24 = 1/8.)",
+      "shortcut": "Form the equation with x and x + d, or test values satisfying both conditions.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B fill a tank in 20 and 60 minutes and pipe C empties it in 30 minutes. They are opened one after another for one minute each in the order A, B, C and the sequence repeats. In how many minutes will the tank be full?",
+      "options": [
+        "172 minutes",
+        "43 minutes",
+        "86 minutes",
+        "30 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capacity = 60 units: A adds 3, B adds 1, C removes 2 per minute. One 3-minute cycle gives 2. Tracking the cycles minute by minute, the tank is exactly full at the end of minute 86.",
+      "shortcut": "Net per cycle, then simulate the final cycle.",
+      "subPattern": "alternate-opening",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 15 minutes and an outlet empties it in 36 minutes. They are opened alternately for one minute each, the inlet first. In how many minutes will the tank be full?",
+      "options": [
+        "49 minutes",
+        "48 minutes",
+        "54 minutes",
+        "50 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Capacity = 180 units. Inlet adds 12 and outlet removes 5 per minute. Net per 2-minute cycle = 7. Following the cycles, the tank is exactly full at the end of minute 49.",
+      "shortcut": "Compute the net gain per cycle; check the last partial cycle step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 45 and 60 minutes, and a third pipe can empty it in 30 minutes. If all three are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "180 minutes",
+        "120 minutes",
+        "90 minutes",
+        "225 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/45 + 1/60 - 1/30 = 1/180 per minute. Time = 180 minutes.",
+      "shortcut": "Filling rates add; emptying rates subtract.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A fills a tank 2 times as fast as pipe B. Together they fill the tank in 6 minutes. How long will A alone take to fill it?",
+      "options": [
+        "7 minutes",
+        "9 minutes",
+        "11 minutes",
+        "12 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A's rate = 2 x B's rate, so together = 3 x B's rate = 1/6. B alone = 3 x 6 = 18 min; A alone = 18/2 = 9 min.",
+      "shortcut": "If A is k times as fast as B: B alone = (k + 1) x t, A alone = (k + 1)t/k.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 60 and 12 minutes respectively. They are opened alternately for one minute each, starting with A. In how many minutes is the tank full?",
+      "options": [
+        "20 minutes",
+        "19 minutes",
+        "18 minutes",
+        "10 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Take capacity = 60 units. A adds 1 per minute and B adds 5. Alternating minute by minute, the tank is exactly full at the end of minute 20.",
+      "shortcut": "Find units added in a 2-minute cycle, count full cycles, then finish the rest step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 10 and 60 minutes. Both are opened together, but A is closed after 8 minutes. In how many minutes from the start is the tank full?",
+      "options": [
+        "12 minutes",
+        "24 minutes",
+        "13 minutes",
+        "6 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 8 minutes both fill 8 x 7/60 = 14/15. Remaining = 1/15. B alone takes 1/15 x 60 = 4 min. Total = 12 minutes.",
+      "shortcut": "Do the shared phase, then the remainder with the one pipe left.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three pipes A, B and C can fill a tank in 12, 30 and 60 minutes respectively. How long will the tank take to fill if all three are opened together?",
+      "options": [
+        "34 minutes",
+        "6.75 minutes",
+        "7.5 minutes",
+        "2.5 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Combined rate = 1/12 + 1/30 + 1/60 = 2/15 per minute. Time = 7.5 minutes.",
+      "shortcut": "Add the three fill rates and take the reciprocal.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B fill a tank in 24 and 20 minutes and pipe C empties it in 36 minutes. They are opened one after another for one minute each in the order A, B, C and the sequence repeats. In how many minutes will the tank be full?",
+      "options": [
+        "51 minutes",
+        "48 minutes",
+        "69 minutes",
+        "46 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capacity = 360 units: A adds 15, B adds 18, C removes 10 per minute. One 3-minute cycle gives 23. Tracking the cycles minute by minute, the tank is exactly full at the end of minute 46.",
+      "shortcut": "Net per cycle, then simulate the final cycle.",
+      "subPattern": "alternate-opening",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A can fill a tank in 18 minutes and pipe B can fill it in 36 minutes. If both pipes are opened together, how long will they take to fill the tank?",
+      "options": [
+        "16 minutes",
+        "11 minutes",
+        "27 minutes",
+        "12 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In 1 minute A fills 1/18 and B fills 1/36. Together = 1/12 per minute, so time = 12 minutes.",
+      "shortcut": "Two pipes: time = (a x b)/(a + b) = (18 x 36)/54.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe delivers 20 litres of water per minute and fills a tank in 60 minutes. What is the capacity of the tank in litres?",
+      "options": [
+        "1500 litres",
+        "80 litres",
+        "960 litres",
+        "1200 litres"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capacity = rate x time = 20 x 60 = 1200 litres.",
+      "shortcut": "Capacity = flow rate x time.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes deliver 75 litres and 30 litres per minute into a tank of capacity 1575 litres. How long will they take to fill the empty tank when working together?",
+      "options": [
+        "52.5 minutes",
+        "21 minutes",
+        "15 minutes",
+        "17 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Combined rate = 75 + 30 = 105 litres/min. Time = 1575/105 = 15 minutes.",
+      "shortcut": "Time = capacity / (sum of the flow rates).",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe can fill a tank in 15 minutes. What fraction of the tank is still empty after 9 minutes?",
+      "options": [
+        "2/15",
+        "2/7",
+        "3/5",
+        "2/5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Fraction filled in 9 minutes = 9/15 = 3/5. Fraction empty = 1 - 3/5 = 2/5.",
+      "shortcut": "Fraction filled = time elapsed / total time.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 10 and 60 minutes respectively. They are opened together. What fraction of the tank is still empty after 5 minutes?",
+      "options": [
+        "5/14",
+        "5/12",
+        "7/12",
+        "5/17"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Both fill 7/60 per minute, so in 5 minutes they fill 7/12. Empty fraction = 1 - 7/12 = 5/12.",
+      "shortcut": "Add the rates, multiply by time, subtract from 1.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe delivers 50 litres of water per minute and fills a tank in 45 minutes. What is the capacity of the tank in litres?",
+      "options": [
+        "95 litres",
+        "1800 litres",
+        "1125 litres",
+        "2250 litres"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capacity = rate x time = 50 x 45 = 2250 litres.",
+      "shortcut": "Capacity = flow rate x time.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A fills a tank 3 times as fast as pipe B. Together they fill the tank in 18 minutes. How long will A alone take to fill it?",
+      "options": [
+        "36 minutes",
+        "48 minutes",
+        "54 minutes",
+        "24 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A's rate = 3 x B's rate, so together = 4 x B's rate = 1/18. B alone = 4 x 18 = 72 min; A alone = 72/3 = 24 min.",
+      "shortcut": "If A is k times as fast as B: B alone = (k + 1) x t, A alone = (k + 1)t/k.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes deliver 20 litres and 25 litres per minute into a tank of capacity 450 litres. How long will they take to fill the empty tank when working together?",
+      "options": [
+        "22.5 minutes",
+        "10 minutes",
+        "11 minutes",
+        "18 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Combined rate = 20 + 25 = 45 litres/min. Time = 450/45 = 10 minutes.",
+      "shortcut": "Time = capacity / (sum of the flow rates).",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 30 minutes and an outlet empties it in 60 minutes. They are opened alternately for one minute each, the inlet first. In how many minutes will the tank be full?",
+      "options": [
+        "78 minutes",
+        "60 minutes",
+        "117 minutes",
+        "156 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Capacity = 60 units. Inlet adds 2 and outlet removes 1 per minute. Net per 2-minute cycle = 1. Following the cycles, the tank is exactly full at the end of minute 117.",
+      "shortcut": "Compute the net gain per cycle; check the last partial cycle step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A can fill a tank in 6 minutes and pipe B in 10 minutes. If both are opened together, what is the ratio of the water delivered by A to that delivered by B?",
+      "options": [
+        "2:1",
+        "5:2",
+        "5:3",
+        "3:5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Delivery is proportional to rate. A : B = 1/6 : 1/10 = 10 : 6 = 5:3.",
+      "shortcut": "In the same time the volumes are in the ratio of the rates, i.e. the inverse of the times.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A can fill a tank in 15 minutes and pipe B can fill it in 60 minutes. If both pipes are opened together, how long will they take to fill the tank?",
+      "options": [
+        "15 minutes",
+        "37.5 minutes",
+        "24 minutes",
+        "12 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In 1 minute A fills 1/15 and B fills 1/60. Together = 1/12 per minute, so time = 12 minutes.",
+      "shortcut": "Two pipes: time = (a x b)/(a + b) = (15 x 60)/75.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe can fill a tank in 30 minutes. What fraction of the tank is filled after 6 minutes?",
+      "options": [
+        "3/5",
+        "1/6",
+        "1/5",
+        "4/5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Fraction filled in 6 minutes = 6/30 = 1/5. ",
+      "shortcut": "Fraction filled = time elapsed / total time.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 45 and 30 minutes respectively. They are opened alternately for one minute each, starting with A. In how many minutes is the tank full?",
+      "options": [
+        "18 minutes",
+        "35 minutes",
+        "36 minutes",
+        "45 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Take capacity = 90 units. A adds 2 per minute and B adds 3. Alternating minute by minute, the tank is exactly full at the end of minute 36.",
+      "shortcut": "Find units added in a 2-minute cycle, count full cycles, then finish the rest step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is 1/2 full. A pipe can fill a full tank in 15 minutes and an outlet can empty a full tank in 20 minutes. If both are opened, how long will it take to fill the tank completely?",
+      "options": [
+        "7.5 minutes",
+        "20 minutes",
+        "30 minutes",
+        "32 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Remaining = 1 - 1/2 = 1/2. Net rate = 1/15 - 1/20 = 1/60. Time = 1/2 / 1/60 = 30 minutes.",
+      "shortcut": "Only the unfilled fraction needs to be covered, at the net rate.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 6 hours. Because of a leak at the bottom, it takes 9 hours to fill the tank. In how many hours will the leak alone empty the full tank?",
+      "options": [
+        "9 hours",
+        "18 hours",
+        "3 hours",
+        "12 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Leak rate = 1/6 - 1/9 = 1/18 per hour. Time to empty = 18 hours.",
+      "shortcut": "Leak time = (a x b)/(b - a) = (6 x 9)/3.",
+      "subPattern": "leak-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 45 and 10 minutes respectively. They are opened together. What fraction of the tank is still empty after 6 minutes?",
+      "options": [
+        "1/3",
+        "4/15",
+        "11/15",
+        "2/15"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Both fill 11/90 per minute, so in 6 minutes they fill 11/15. Empty fraction = 1 - 11/15 = 4/15.",
+      "shortcut": "Add the rates, multiply by time, subtract from 1.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 12 and 18 hours respectively. When both are open, a leak makes them take 8 hours instead. In how many hours would the leak alone empty a full tank?",
+      "options": [
+        "90 hours",
+        "72 hours",
+        "108 hours",
+        "8 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Without the leak the rate is 1/12 + 1/18 = 5/36. With the leak it is 1/8. Leak rate = 5/36 - 1/8 = 1/72, so it empties the tank in 72 hours.",
+      "shortcut": "Leak rate = (rate without leak) - (rate with leak).",
+      "subPattern": "leak-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 36 and 10 minutes, and a third pipe can empty it in 9 minutes. If all three are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "90 minutes",
+        "66 minutes",
+        "62 minutes",
+        "60 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net rate = 1/36 + 1/10 - 1/9 = 1/60 per minute. Time = 60 minutes.",
+      "shortcut": "Filling rates add; emptying rates subtract.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 20 and 60 minutes. Both are opened together, but A is closed after 2 minutes. In how many minutes from the start is the tank full?",
+      "options": [
+        "15 minutes",
+        "27 minutes",
+        "54 minutes",
+        "53 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 2 minutes both fill 2 x 1/15 = 2/15. Remaining = 13/15. B alone takes 13/15 x 60 = 52 min. Total = 54 minutes.",
+      "shortcut": "Do the shared phase, then the remainder with the one pipe left.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 40 and 24 minutes respectively. They are opened together. What fraction of the tank is still empty after 8 minutes?",
+      "options": [
+        "7/16",
+        "8/15",
+        "14/15",
+        "7/15"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Both fill 1/15 per minute, so in 8 minutes they fill 8/15. Empty fraction = 1 - 8/15 = 7/15.",
+      "shortcut": "Add the rates, multiply by time, subtract from 1.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is filled by a pipe in 6 hours, and a leak can empty the full tank in 15 hours. If both the pipe and the leak are working, how long will the empty tank take to fill?",
+      "options": [
+        "8 hours",
+        "9 hours",
+        "10 hours",
+        "15 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Net rate = 1/6 - 1/15 = 1/10 per hour. Time = 10 hours.",
+      "shortcut": "Time with the leak = (fill time x leak time)/(leak time - fill time).",
+      "subPattern": "leak-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 6 and 10 hours respectively. When both are open, a leak makes them take 6 hours instead. In how many hours would the leak alone empty a full tank?",
+      "options": [
+        "10 hours",
+        "9 hours",
+        "6 hours",
+        "11 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Without the leak the rate is 1/6 + 1/10 = 4/15. With the leak it is 1/6. Leak rate = 4/15 - 1/6 = 1/10, so it empties the tank in 10 hours.",
+      "shortcut": "Leak rate = (rate without leak) - (rate with leak).",
+      "subPattern": "leak-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe can fill a tank in 15 minutes and another pipe can empty it in 40 minutes. If both are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "22 minutes",
+        "36 minutes",
+        "26 minutes",
+        "24 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net rate = 1/15 - 1/40 = 1/24 per minute. Time = 24 minutes.",
+      "shortcut": "Filling and emptying: time = (a x c)/(c - a) = (15 x 40)/25.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 15 minutes and an outlet empties it in 45 minutes. They are opened alternately for one minute each, the inlet first. In how many minutes will the tank be full?",
+      "options": [
+        "41 minutes",
+        "22.5 minutes",
+        "44 minutes",
+        "43 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capacity = 45 units. Inlet adds 3 and outlet removes 1 per minute. Net per 2-minute cycle = 2. Following the cycles, the tank is exactly full at the end of minute 43.",
+      "shortcut": "Compute the net gain per cycle; check the last partial cycle step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 36 and 45 minutes. Both are opened together, but A is closed after 8 minutes. In how many minutes from the start is the tank full?",
+      "options": [
+        "28 minutes",
+        "37 minutes",
+        "20 minutes",
+        "35 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In 8 minutes both fill 8 x 1/20 = 2/5. Remaining = 3/5. B alone takes 3/5 x 45 = 27 min. Total = 35 minutes.",
+      "shortcut": "Do the shared phase, then the remainder with the one pipe left.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 24 and 60 minutes respectively. They are opened together. What fraction of the tank is still empty after 3 minutes?",
+      "options": [
+        "7/40",
+        "17/20",
+        "33/40",
+        "7/8"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Both fill 7/120 per minute, so in 3 minutes they fill 7/40. Empty fraction = 1 - 7/40 = 33/40.",
+      "shortcut": "Add the rates, multiply by time, subtract from 1.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 20 minutes and an outlet empties it in 30 minutes. They are opened alternately for one minute each, the inlet first. In how many minutes will the tank be full?",
+      "options": [
+        "138 minutes",
+        "115 minutes",
+        "230 minutes",
+        "60 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Capacity = 60 units. Inlet adds 3 and outlet removes 2 per minute. Net per 2-minute cycle = 1. Following the cycles, the tank is exactly full at the end of minute 115.",
+      "shortcut": "Compute the net gain per cycle; check the last partial cycle step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A is 3 times as fast as pipe B and takes 4 minutes less than B to fill a tank. How long will both pipes together take?",
+      "options": [
+        "3 minutes",
+        "2 minutes",
+        "1.5 minutes",
+        "2.25 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A takes x min, B takes 3x min. 3x - x = 4, so x = 2 and B takes 6 min. Together = (2 x 6)/(2 + 6) = 1.5 minutes.",
+      "shortcut": "Time ratio A : B = 1 : 3; the difference of 2 parts = 4.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A fills a tank in 60 minutes and pipe B in 36 minutes. A is opened first, and B is opened 4 minutes later. In how many minutes from the start is the tank full?",
+      "options": [
+        "24 minutes",
+        "22.5 minutes",
+        "25 minutes",
+        "27 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A alone fills 4/60 in 4 minutes. Remaining = 14/15. Together they fill 2/45 per minute, so 21 more minutes. Total = 25 minutes.",
+      "shortcut": "Time from the start = head-start time + time with both pipes.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B fill a tank in 15 and 30 minutes and pipe C empties it in 20 minutes. All three are opened together; after 6 minutes C is closed. In how many minutes from the start will the tank be full?",
+      "options": [
+        "13 minutes",
+        "8 minutes",
+        "26 minutes",
+        "20 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 6 minutes the tank fills 6 x 1/20 = 3/10. Remaining = 7/10. Then A and B fill at 1/10 per minute, taking 7 min. Total = 13 minutes.",
+      "shortcut": "Do the first phase with all three pipes, then the remainder with A and B only.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 10 hours. Because of a leak at the bottom, it takes 12 hours to fill the tank. In how many hours will the leak alone empty the full tank?",
+      "options": [
+        "60 hours",
+        "2 hours",
+        "12 hours",
+        "75 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Leak rate = 1/10 - 1/12 = 1/60 per hour. Time to empty = 60 hours.",
+      "shortcut": "Leak time = (a x b)/(b - a) = (10 x 12)/2.",
+      "subPattern": "leak-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A is 3 times as fast as pipe B and takes 12 minutes less than B to fill a tank. How long will both pipes together take?",
+      "options": [
+        "4.5 minutes",
+        "3.5 minutes",
+        "6 minutes",
+        "9.5 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A takes x min, B takes 3x min. 3x - x = 12, so x = 6 and B takes 18 min. Together = (6 x 18)/(6 + 18) = 4.5 minutes.",
+      "shortcut": "Time ratio A : B = 1 : 3; the difference of 2 parts = 12.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A fills a tank in 12 minutes and pipe B in 36 minutes. A is opened first, and B is opened 4 minutes later. In how many minutes from the start is the tank full?",
+      "options": [
+        "8 minutes",
+        "9 minutes",
+        "5 minutes",
+        "10 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A alone fills 4/12 in 4 minutes. Remaining = 2/3. Together they fill 1/9 per minute, so 6 more minutes. Total = 10 minutes.",
+      "shortcut": "Time from the start = head-start time + time with both pipes.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A is 4 times as fast as pipe B and takes 30 minutes less than B to fill a tank. How long will both pipes together take?",
+      "options": [
+        "6 minutes",
+        "8 minutes",
+        "9 minutes",
+        "10 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A takes x min, B takes 4x min. 4x - x = 30, so x = 10 and B takes 40 min. Together = (10 x 40)/(10 + 40) = 8 minutes.",
+      "shortcut": "Time ratio A : B = 1 : 4; the difference of 3 parts = 30.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three pipes A, B and C can fill a tank in 24, 30 and 8 minutes respectively. How long will the tank take to fill if all three are opened together?",
+      "options": [
+        "7 minutes",
+        "5 minutes",
+        "3 minutes",
+        "4 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Combined rate = 1/24 + 1/30 + 1/8 = 1/5 per minute. Time = 5 minutes.",
+      "shortcut": "Add the three fill rates and take the reciprocal.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B fill a tank in 30 and 15 minutes and pipe C empties it in 60 minutes. All three are opened together; after 3 minutes C is closed. In how many minutes from the start will the tank be full?",
+      "options": [
+        "11.5 minutes",
+        "9.5 minutes",
+        "12 minutes",
+        "10.5 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In 3 minutes the tank fills 3 x 1/12 = 1/4. Remaining = 3/4. Then A and B fill at 1/10 per minute, taking 7.5 min. Total = 10.5 minutes.",
+      "shortcut": "Do the first phase with all three pipes, then the remainder with A and B only.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 60 and 15 minutes, and a third pipe can empty it in 20 minutes. If all three are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "30 minutes",
+        "12 minutes",
+        "33 minutes",
+        "60 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/60 + 1/15 - 1/20 = 1/30 per minute. Time = 30 minutes.",
+      "shortcut": "Filling rates add; emptying rates subtract.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B fill a tank in 40 and 10 minutes. They are opened together; after 4 minutes A is closed and an outlet pipe C, which can empty a full tank in 60 minutes, is opened. How many more minutes are needed to fill the tank?",
+      "options": [
+        "3 minutes",
+        "8 minutes",
+        "6 minutes",
+        "5 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Done in 4 minutes = 1/2. Remaining = 1/2. Now net rate = 1/10 - 1/60 = 1/12. More time = 6 minutes.",
+      "shortcut": "After the change, use the new net rate on the remaining fraction.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 10 and 30 minutes. Both are opened together, but A is closed after 6 minutes. In how many minutes from the start is the tank full?",
+      "options": [
+        "7.5 minutes",
+        "9 minutes",
+        "12 minutes",
+        "24 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 6 minutes both fill 6 x 2/15 = 4/5. Remaining = 1/5. B alone takes 1/5 x 30 = 6 min. Total = 12 minutes.",
+      "shortcut": "Do the shared phase, then the remainder with the one pipe left.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe can fill a tank in 30 minutes. What fraction of the tank is still empty after 9 minutes?",
+      "options": [
+        "3/10",
+        "7/10",
+        "7/11",
+        "7/30"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fraction filled in 9 minutes = 9/30 = 3/10. Fraction empty = 1 - 3/10 = 7/10.",
+      "shortcut": "Fraction filled = time elapsed / total time.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B fill a tank in 10 and 12 minutes. They are opened together; after 5 minutes A is closed and an outlet pipe C, which can empty a full tank in 20 minutes, is opened. How many more minutes are needed to fill the tank?",
+      "options": [
+        "1 minutes",
+        "2.5 minutes",
+        "2.25 minutes",
+        "2 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Done in 5 minutes = 11/12. Remaining = 1/12. Now net rate = 1/12 - 1/20 = 1/30. More time = 2.5 minutes.",
+      "shortcut": "After the change, use the new net rate on the remaining fraction.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A can fill a tank in 9 minutes and pipe B can fill it in 18 minutes. If both pipes are opened together, how long will they take to fill the tank?",
+      "options": [
+        "6 minutes",
+        "13.5 minutes",
+        "9 minutes",
+        "4 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In 1 minute A fills 1/9 and B fills 1/18. Together = 1/6 per minute, so time = 6 minutes.",
+      "shortcut": "Two pipes: time = (a x b)/(a + b) = (9 x 18)/27.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B fill a tank in 45 and 12 minutes and pipe C empties it in 24 minutes. They are opened one after another for one minute each in the order A, B, C and the sequence repeats. In how many minutes will the tank be full?",
+      "options": [
+        "49 minutes",
+        "22 minutes",
+        "55 minutes",
+        "44 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capacity = 360 units: A adds 8, B adds 30, C removes 15 per minute. One 3-minute cycle gives 23. Tracking the cycles minute by minute, the tank is exactly full at the end of minute 44.",
+      "shortcut": "Net per cycle, then simulate the final cycle.",
+      "subPattern": "alternate-opening",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes deliver 75 litres and 30 litres per minute into a tank of capacity 1050 litres. How long will they take to fill the empty tank when working together?",
+      "options": [
+        "10 minutes",
+        "5 minutes",
+        "14 minutes",
+        "35 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Combined rate = 75 + 30 = 105 litres/min. Time = 1050/105 = 10 minutes.",
+      "shortcut": "Time = capacity / (sum of the flow rates).",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A can fill a tank in 9 minutes and pipe B in 15 minutes. If both are opened together, what is the ratio of the water delivered by A to that delivered by B?",
+      "options": [
+        "5:2",
+        "3:5",
+        "5:3",
+        "1:1"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Delivery is proportional to rate. A : B = 1/9 : 1/15 = 15 : 9 = 5:3.",
+      "shortcut": "In the same time the volumes are in the ratio of the rates, i.e. the inverse of the times.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipes A and B can fill a tank in 60 and 24 minutes respectively. They are opened together. What fraction of the tank is still empty after 3 minutes?",
+      "options": [
+        "7/40",
+        "33/40",
+        "33/80",
+        "33/73"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Both fill 7/120 per minute, so in 3 minutes they fill 7/40. Empty fraction = 1 - 7/40 = 33/40.",
+      "shortcut": "Add the rates, multiply by time, subtract from 1.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe can fill a tank in 8 minutes and another pipe can empty it in 10 minutes. If both are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "40 minutes",
+        "30 minutes",
+        "32 minutes",
+        "50 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/8 - 1/10 = 1/40 per minute. Time = 40 minutes.",
+      "shortcut": "Filling and emptying: time = (a x c)/(c - a) = (8 x 10)/2.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 10 minutes and an outlet empties it in 40 minutes. They are opened alternately for one minute each, the inlet first. In how many minutes will the tank be full?",
+      "options": [
+        "30 minutes",
+        "26 minutes",
+        "20 minutes",
+        "25 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Capacity = 40 units. Inlet adds 4 and outlet removes 1 per minute. Net per 2-minute cycle = 3. Following the cycles, the tank is exactly full at the end of minute 25.",
+      "shortcut": "Compute the net gain per cycle; check the last partial cycle step by step.",
+      "subPattern": "alternate-opening",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 15 and 20 hours respectively. When both are open, a leak makes them take 10 hours instead. In how many hours would the leak alone empty a full tank?",
+      "options": [
+        "10 hours",
+        "66 hours",
+        "40 hours",
+        "60 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Without the leak the rate is 1/15 + 1/20 = 7/60. With the leak it is 1/10. Leak rate = 7/60 - 1/10 = 1/60, so it empties the tank in 60 hours.",
+      "shortcut": "Leak rate = (rate without leak) - (rate with leak).",
+      "subPattern": "leak-problems",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe can fill a tank in 6 minutes and another pipe can empty it in 8 minutes. If both are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "24 minutes",
+        "18 minutes",
+        "30 minutes",
+        "19 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/6 - 1/8 = 1/24 per minute. Time = 24 minutes.",
+      "shortcut": "Filling and emptying: time = (a x c)/(c - a) = (6 x 8)/2.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank at 100 litres per minute while a leak drains 10 litres per minute. The empty tank is filled in 12 minutes. What is the capacity of the tank?",
+      "options": [
+        "864 litres",
+        "1080 litres",
+        "540 litres",
+        "1200 litres"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net rate = 100 - 10 = 90 litres/min. Capacity = 90 x 12 = 1080 litres.",
+      "shortcut": "Use the net flow rate (inflow - leak) x time.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is filled by a pipe in 9 hours, and a leak can empty the full tank in 15 hours. If both the pipe and the leak are working, how long will the empty tank take to fill?",
+      "options": [
+        "22.5 hours",
+        "45 hours",
+        "33.75 hours",
+        "27.5 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/9 - 1/15 = 2/45 per hour. Time = 22.5 hours.",
+      "shortcut": "Time with the leak = (fill time x leak time)/(leak time - fill time).",
+      "subPattern": "leak-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is filled by a pipe in 4 hours, and a leak can empty the full tank in 12 hours. If both the pipe and the leak are working, how long will the empty tank take to fill?",
+      "options": [
+        "6 hours",
+        "7 hours",
+        "8 hours",
+        "3 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/4 - 1/12 = 1/6 per hour. Time = 6 hours.",
+      "shortcut": "Time with the leak = (fill time x leak time)/(leak time - fill time).",
+      "subPattern": "leak-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank at 40 litres per minute while a leak drains 25 litres per minute. The empty tank is filled in 15 minutes. What is the capacity of the tank?",
+      "options": [
+        "225 litres",
+        "300 litres",
+        "600 litres",
+        "150 litres"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 40 - 25 = 15 litres/min. Capacity = 15 x 15 = 225 litres.",
+      "shortcut": "Use the net flow rate (inflow - leak) x time.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 30 and 48 minutes, and a third pipe can empty it in 20 minutes. If all three are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "240 minutes",
+        "192 minutes",
+        "300 minutes",
+        "320 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Net rate = 1/30 + 1/48 - 1/20 = 1/240 per minute. Time = 240 minutes.",
+      "shortcut": "Filling rates add; emptying rates subtract.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three pipes A, B and C can fill a tank in 24, 20 and 30 minutes respectively. How long will the tank take to fill if all three are opened together?",
+      "options": [
+        "8 minutes",
+        "4 minutes",
+        "3 minutes",
+        "9 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Combined rate = 1/24 + 1/20 + 1/30 = 1/8 per minute. Time = 8 minutes.",
+      "shortcut": "Add the three fill rates and take the reciprocal.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 48 and 40 minutes, and a third pipe can empty it in 30 minutes. If all three are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "160 minutes",
+        "80 minutes",
+        "40 minutes",
+        "64 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net rate = 1/48 + 1/40 - 1/30 = 1/80 per minute. Time = 80 minutes.",
+      "shortcut": "Filling rates add; emptying rates subtract.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe can fill a tank in 20 minutes and another pipe can empty it in 24 minutes. If both are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "240 minutes",
+        "96 minutes",
+        "80 minutes",
+        "120 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net rate = 1/20 - 1/24 = 1/120 per minute. Time = 120 minutes.",
+      "shortcut": "Filling and emptying: time = (a x c)/(c - a) = (20 x 24)/4.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank in 10 hours. Because of a leak at the bottom, it takes 14 hours to fill the tank. In how many hours will the leak alone empty the full tank?",
+      "options": [
+        "4 hours",
+        "36 hours",
+        "14 hours",
+        "35 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Leak rate = 1/10 - 1/14 = 1/35 per hour. Time to empty = 35 hours.",
+      "shortcut": "Leak time = (a x b)/(b - a) = (10 x 14)/4.",
+      "subPattern": "leak-problems",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe fills a tank at 40 litres per minute while a leak drains 25 litres per minute. The empty tank is filled in 20 minutes. What is the capacity of the tank?",
+      "options": [
+        "240 litres",
+        "375 litres",
+        "800 litres",
+        "300 litres"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Net rate = 40 - 25 = 15 litres/min. Capacity = 15 x 20 = 300 litres.",
+      "shortcut": "Use the net flow rate (inflow - leak) x time.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pipe can fill a tank in 60 minutes. What fraction of the tank is filled after 50 minutes?",
+      "options": [
+        "5/7",
+        "5/6",
+        "5/2",
+        "1/6"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fraction filled in 50 minutes = 50/60 = 5/6. ",
+      "shortcut": "Fraction filled = time elapsed / total time.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is filled by a pipe in 4 hours, and a leak can empty the full tank in 8 hours. If both the pipe and the leak are working, how long will the empty tank take to fill?",
+      "options": [
+        "6 hours",
+        "4 hours",
+        "8 hours",
+        "10 hours"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Net rate = 1/4 - 1/8 = 1/8 per hour. Time = 8 hours.",
+      "shortcut": "Time with the leak = (fill time x leak time)/(leak time - fill time).",
+      "subPattern": "leak-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two pipes can fill a tank in 10 and 15 minutes, and a third pipe can empty it in 18 minutes. If all three are opened together, how long will the empty tank take to fill?",
+      "options": [
+        "12 minutes",
+        "9 minutes",
+        "6 minutes",
+        "7 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net rate = 1/10 + 1/15 - 1/18 = 1/9 per minute. Time = 9 minutes.",
+      "shortcut": "Filling rates add; emptying rates subtract.",
+      "subPattern": "combined-filling-emptying",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A tank is filled by a pipe in 2 hours, and a leak can empty the full tank in 4 hours. If both the pipe and the leak are working, how long will the empty tank take to fill?",
+      "options": [
+        "5 hours",
+        "4 hours",
+        "2 hours",
+        "6 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Net rate = 1/2 - 1/4 = 1/4 per hour. Time = 4 hours.",
+      "shortcut": "Time with the leak = (fill time x leak time)/(leak time - fill time).",
+      "subPattern": "leak-problems",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A can fill a tank in 10 minutes and pipe B in 6 minutes. If both are opened together, what is the ratio of the water delivered by A to that delivered by B?",
+      "options": [
+        "3:7",
+        "5:3",
+        "3:5",
+        "4:5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Delivery is proportional to rate. A : B = 1/10 : 1/6 = 6 : 10 = 3:5.",
+      "shortcut": "In the same time the volumes are in the ratio of the rates, i.e. the inverse of the times.",
+      "subPattern": "inlet-outlet-pipes",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Pipe A fills a tank in 30 minutes and pipe B in 12 minutes. A is opened first, and B is opened 2 minutes later. In how many minutes from the start is the tank full?",
+      "options": [
+        "11 minutes",
+        "10 minutes",
+        "15 minutes",
+        "5 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A alone fills 2/30 in 2 minutes. Remaining = 14/15. Together they fill 7/60 per minute, so 8 more minutes. Total = 10 minutes.",
+      "shortcut": "Time from the start = head-start time + time with both pipes.",
+      "subPattern": "partial-fill-timing",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    }
+  ]
+}

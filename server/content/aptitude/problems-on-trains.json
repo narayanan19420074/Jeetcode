@@ -1,0 +1,2717 @@
+{
+ "pattern": {
+  "title": "Problems on Trains",
+  "slug": "problems-on-trains",
+  "description": "Trains crossing poles, platforms and each other.",
+  "order": 15,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "train-crossing-a-pole-or-platform",
+    "title": "Train crossing a pole or platform"
+   },
+   {
+    "slug": "two-trains-same-direction",
+    "title": "Two trains same direction"
+   },
+   {
+    "slug": "two-trains-opposite-direction",
+    "title": "Two trains opposite direction"
+   },
+   {
+    "slug": "train-and-moving-man",
+    "title": "Train and moving man"
+   },
+   {
+    "slug": "bridge-tunnel",
+    "title": "Bridge & tunnel"
+   },
+   {
+    "slug": "meeting-time-problems",
+    "title": "Meeting-time problems"
+   },
+   {
+    "slug": "finding-length-of-train",
+    "title": "Finding length of train"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A train 60 metres long crosses a telegraph pole in 6 seconds. What is its speed in km/h?",
+   "options": [
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "10 km/h"
+    },
+    {
+     "text": "48 km/h"
+    },
+    {
+     "text": "54 km/h"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Speed = 60/6 = 10 m/s = 10 x 18/5 = 36 km/h.",
+   "order": 1,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Distance covered = length of the train. Convert m/s to km/h by x 18/5."
+  },
+  {
+   "questionText": "A train 200 metres long crosses a telegraph pole in 20 seconds. What is its speed in km/h?",
+   "options": [
+    {
+     "text": "31 km/h"
+    },
+    {
+     "text": "35 km/h"
+    },
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "10 km/h"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Speed = 200/20 = 10 m/s = 10 x 18/5 = 36 km/h.",
+   "order": 2,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Distance covered = length of the train. Convert m/s to km/h by x 18/5."
+  },
+  {
+   "questionText": "A train 200 metres long crosses a telegraph pole in 10 seconds. What is its speed in km/h?",
+   "options": [
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "48 km/h"
+    },
+    {
+     "text": "20 km/h"
+    },
+    {
+     "text": "72 km/h"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Speed = 200/10 = 20 m/s = 20 x 18/5 = 72 km/h.",
+   "order": 3,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Distance covered = length of the train. Convert m/s to km/h by x 18/5."
+  },
+  {
+   "questionText": "A train 250 metres long crosses a telegraph pole in 10 seconds. What is its speed in km/h?",
+   "options": [
+    {
+     "text": "25 km/h"
+    },
+    {
+     "text": "90 km/h"
+    },
+    {
+     "text": "45 km/h"
+    },
+    {
+     "text": "180 km/h"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Speed = 250/10 = 25 m/s = 25 x 18/5 = 90 km/h.",
+   "order": 4,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Distance covered = length of the train. Convert m/s to km/h by x 18/5."
+  },
+  {
+   "questionText": "A train running at 18 km/h crosses a pole in 8 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "38 metres"
+    },
+    {
+     "text": "144 metres"
+    },
+    {
+     "text": "40 metres"
+    },
+    {
+     "text": "48 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Speed = 18 km/h = 18 x 5/18 = 5 m/s. Length = 5 x 8 = 40 metres.",
+   "order": 5,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Convert km/h to m/s (x 5/18); length = speed x time."
+  },
+  {
+   "questionText": "A train running at 54 km/h crosses a pole in 18 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "405 metres"
+    },
+    {
+     "text": "270 metres"
+    },
+    {
+     "text": "180 metres"
+    },
+    {
+     "text": "972 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Speed = 54 km/h = 54 x 5/18 = 15 m/s. Length = 15 x 18 = 270 metres.",
+   "order": 6,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert km/h to m/s (x 5/18); length = speed x time."
+  },
+  {
+   "questionText": "A train running at 54 km/h crosses a pole in 6 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "90 metres"
+    },
+    {
+     "text": "180 metres"
+    },
+    {
+     "text": "72 metres"
+    },
+    {
+     "text": "324 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Speed = 54 km/h = 54 x 5/18 = 15 m/s. Length = 15 x 6 = 90 metres.",
+   "order": 7,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Convert km/h to m/s (x 5/18); length = speed x time."
+  },
+  {
+   "questionText": "A train running at 72 km/h crosses a pole in 12 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "864 metres"
+    },
+    {
+     "text": "480 metres"
+    },
+    {
+     "text": "180 metres"
+    },
+    {
+     "text": "240 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Speed = 72 km/h = 72 x 5/18 = 20 m/s. Length = 20 x 12 = 240 metres.",
+   "order": 8,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Convert km/h to m/s (x 5/18); length = speed x time."
+  },
+  {
+   "questionText": "A train running at 27 km/h crosses a pole in 24 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "270 metres"
+    },
+    {
+     "text": "180 metres"
+    },
+    {
+     "text": "648 metres"
+    },
+    {
+     "text": "216 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Speed = 27 km/h = 27 x 5/18 = 7.5 m/s. Length = 7.5 x 24 = 180 metres.",
+   "order": 9,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert km/h to m/s (x 5/18); length = speed x time."
+  },
+  {
+   "questionText": "A train running at 108 km/h crosses a pole in 15 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "450 metres"
+    },
+    {
+     "text": "405 metres"
+    },
+    {
+     "text": "1620 metres"
+    },
+    {
+     "text": "900 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Speed = 108 km/h = 108 x 5/18 = 30 m/s. Length = 30 x 15 = 450 metres.",
+   "order": 10,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Convert km/h to m/s (x 5/18); length = speed x time."
+  },
+  {
+   "questionText": "A train running at 54 km/h takes 15 seconds to cross a pole. If its speed were 50% higher, how many seconds would it take to cross the same pole?",
+   "options": [
+    {
+     "text": "9 seconds"
+    },
+    {
+     "text": "20 seconds"
+    },
+    {
+     "text": "10 seconds"
+    },
+    {
+     "text": "7.5 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Time is inversely proportional to speed. New time = 15 x 100/150 = 10 seconds. (Length stays 225 m.)",
+   "order": 11,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Higher speed -> time falls in the ratio 100 : (100 + x)."
+  },
+  {
+   "questionText": "A train running at 72 km/h takes 15 seconds to cross a pole. If its speed were 50% higher, how many seconds would it take to cross the same pole?",
+   "options": [
+    {
+     "text": "11 seconds"
+    },
+    {
+     "text": "8 seconds"
+    },
+    {
+     "text": "7.5 seconds"
+    },
+    {
+     "text": "10 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Time is inversely proportional to speed. New time = 15 x 100/150 = 10 seconds. (Length stays 300 m.)",
+   "order": 12,
+   "subPattern": "train-crossing-a-pole-or-platform",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Higher speed -> time falls in the ratio 100 : (100 + x)."
+  },
+  {
+   "questionText": "A 150 m long train running at 90 km/h overtakes a 300 m long train running at 63 km/h in the same direction. How many seconds does it take to completely pass it?",
+   "options": [
+    {
+     "text": "120 seconds"
+    },
+    {
+     "text": "75 seconds"
+    },
+    {
+     "text": "60 seconds"
+    },
+    {
+     "text": "90 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative speed = 90 - 63 = 27 km/h = 7.5 m/s. Distance = 450 m. Time = 60 seconds.",
+   "order": 13,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Same direction: speeds subtract; distance = sum of lengths."
+  },
+  {
+   "questionText": "A 240 m long train running at 54 km/h overtakes a 100 m long train running at 45 km/h in the same direction. How many seconds does it take to completely pass it?",
+   "options": [
+    {
+     "text": "136 seconds"
+    },
+    {
+     "text": "272 seconds"
+    },
+    {
+     "text": "102 seconds"
+    },
+    {
+     "text": "170 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relative speed = 54 - 45 = 9 km/h = 2.5 m/s. Distance = 340 m. Time = 136 seconds.",
+   "order": 14,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Same direction: speeds subtract; distance = sum of lengths."
+  },
+  {
+   "questionText": "A 300 m long train running at 108 km/h overtakes a 180 m long train running at 36 km/h in the same direction. How many seconds does it take to completely pass it?",
+   "options": [
+    {
+     "text": "12 seconds"
+    },
+    {
+     "text": "24 seconds"
+    },
+    {
+     "text": "23 seconds"
+    },
+    {
+     "text": "32 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Relative speed = 108 - 36 = 72 km/h = 20 m/s. Distance = 480 m. Time = 24 seconds.",
+   "order": 15,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same direction: speeds subtract; distance = sum of lengths."
+  },
+  {
+   "questionText": "A 200 m long train running at 63 km/h overtakes a 100 m long train running at 54 km/h in the same direction. How many seconds does it take to completely pass it?",
+   "options": [
+    {
+     "text": "144 seconds"
+    },
+    {
+     "text": "80 seconds"
+    },
+    {
+     "text": "90 seconds"
+    },
+    {
+     "text": "120 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative speed = 63 - 54 = 9 km/h = 2.5 m/s. Distance = 300 m. Time = 120 seconds.",
+   "order": 16,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Same direction: speeds subtract; distance = sum of lengths."
+  },
+  {
+   "questionText": "A 100 m long train running at 81 km/h passes a slower train running at 36 km/h in the same direction in 16 seconds. What is the length of the slower train?",
+   "options": [
+    {
+     "text": "90 metres"
+    },
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "100 metres"
+    },
+    {
+     "text": "80 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Distance covered = 12.5 x 16 = 200 m = 100 + length. Slower train = 100 m.",
+   "order": 17,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Distance = relative speed x time; subtract the known length."
+  },
+  {
+   "questionText": "A 120 m long train running at 63 km/h passes a slower train running at 45 km/h in the same direction in 54 seconds. What is the length of the slower train?",
+   "options": [
+    {
+     "text": "270 metres"
+    },
+    {
+     "text": "150 metres"
+    },
+    {
+     "text": "75 metres"
+    },
+    {
+     "text": "120 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Distance covered = 5 x 54 = 270 m = 120 + length. Slower train = 150 m.",
+   "order": 18,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Distance = relative speed x time; subtract the known length."
+  },
+  {
+   "questionText": "A 150 m long train running at 90 km/h passes a slower train running at 72 km/h in the same direction in 50 seconds. What is the length of the slower train?",
+   "options": [
+    {
+     "text": "90 metres"
+    },
+    {
+     "text": "250 metres"
+    },
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "100 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Distance covered = 5 x 50 = 250 m = 150 + length. Slower train = 100 m.",
+   "order": 19,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Distance = relative speed x time; subtract the known length."
+  },
+  {
+   "questionText": "A 150 m long train running at 108 km/h passes a slower train running at 72 km/h in the same direction in 33 seconds. What is the length of the slower train?",
+   "options": [
+    {
+     "text": "180 metres"
+    },
+    {
+     "text": "330 metres"
+    },
+    {
+     "text": "198 metres"
+    },
+    {
+     "text": "144 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Distance covered = 10 x 33 = 330 m = 150 + length. Slower train = 180 m.",
+   "order": 20,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Distance = relative speed x time; subtract the known length."
+  },
+  {
+   "questionText": "A 200 m long train running at 63 km/h passes a slower train running at 45 km/h in the same direction in 100 seconds. What is the length of the slower train?",
+   "options": [
+    {
+     "text": "300 metres"
+    },
+    {
+     "text": "360 metres"
+    },
+    {
+     "text": "500 metres"
+    },
+    {
+     "text": "330 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Distance covered = 5 x 100 = 500 m = 200 + length. Slower train = 300 m.",
+   "order": 21,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Distance = relative speed x time; subtract the known length."
+  },
+  {
+   "questionText": "A 120 m long train running at 90 km/h passes a slower train running at 81 km/h in the same direction in 108 seconds. What is the length of the slower train?",
+   "options": [
+    {
+     "text": "165 metres"
+    },
+    {
+     "text": "135 metres"
+    },
+    {
+     "text": "150 metres"
+    },
+    {
+     "text": "270 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Distance covered = 2.5 x 108 = 270 m = 120 + length. Slower train = 150 m.",
+   "order": 22,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Distance = relative speed x time; subtract the known length."
+  },
+  {
+   "questionText": "A train passes two men walking in the same direction at 9 km/h and 24 km/h in 8 seconds and 12 seconds respectively. What is the speed of the train in km/h?",
+   "options": [
+    {
+     "text": "33 km/h"
+    },
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "108 km/h"
+    },
+    {
+     "text": "54 km/h"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the train's speed be s. L = (s - 9)(5/18)(8) = (s - 24)(5/18)(12). Solving gives s = 54 km/h (and L = 100 m).",
+   "order": 23,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Equate the length from both passes and solve for the speed."
+  },
+  {
+   "questionText": "A train passes two men walking in the same direction at 18 km/h and 24 km/h in 15 seconds and 18 seconds respectively. What is the speed of the train in km/h?",
+   "options": [
+    {
+     "text": "42 km/h"
+    },
+    {
+     "text": "54 km/h"
+    },
+    {
+     "text": "27 km/h"
+    },
+    {
+     "text": "81 km/h"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the train's speed be s. L = (s - 18)(5/18)(15) = (s - 24)(5/18)(18). Solving gives s = 54 km/h (and L = 150 m).",
+   "order": 24,
+   "subPattern": "two-trains-same-direction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Equate the length from both passes and solve for the speed."
+  },
+  {
+   "questionText": "Two trains 200 m and 240 m long run at 45 km/h and 54 km/h in opposite directions on parallel tracks. How many seconds do they take to cross each other?",
+   "options": [
+    {
+     "text": "16 seconds"
+    },
+    {
+     "text": "176 seconds"
+    },
+    {
+     "text": "14 seconds"
+    },
+    {
+     "text": "32 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relative speed = 45 + 54 = 99 km/h = 27.5 m/s. Distance = 440 m. Time = 16 seconds.",
+   "order": 25,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Opposite directions: speeds add; distance = sum of lengths."
+  },
+  {
+   "questionText": "Two trains 100 m and 200 m long run at 72 km/h and 63 km/h in opposite directions on parallel tracks. How many seconds do they take to cross each other?",
+   "options": [
+    {
+     "text": "16 seconds"
+    },
+    {
+     "text": "3 seconds"
+    },
+    {
+     "text": "120 seconds"
+    },
+    {
+     "text": "8 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative speed = 72 + 63 = 135 km/h = 37.5 m/s. Distance = 300 m. Time = 8 seconds.",
+   "order": 26,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Opposite directions: speeds add; distance = sum of lengths."
+  },
+  {
+   "questionText": "Two trains 200 m and 240 m long run at 90 km/h and 108 km/h in opposite directions on parallel tracks. How many seconds do they take to cross each other?",
+   "options": [
+    {
+     "text": "13 seconds"
+    },
+    {
+     "text": "8 seconds"
+    },
+    {
+     "text": "88 seconds"
+    },
+    {
+     "text": "3 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Relative speed = 90 + 108 = 198 km/h = 55 m/s. Distance = 440 m. Time = 8 seconds.",
+   "order": 27,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Opposite directions: speeds add; distance = sum of lengths."
+  },
+  {
+   "questionText": "Two trains 200 m and 150 m long run in opposite directions. The first runs at 54 km/h and they cross each other in 10 seconds. What is the speed of the second train in km/h?",
+   "options": [
+    {
+     "text": "54 km/h"
+    },
+    {
+     "text": "126 km/h"
+    },
+    {
+     "text": "72 km/h"
+    },
+    {
+     "text": "36 km/h"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative speed = 350/10 = 35 m/s = 126 km/h. Second = 126 - 54 = 72 km/h.",
+   "order": 28,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Total distance / time gives the relative speed; subtract the known speed."
+  },
+  {
+   "questionText": "Two trains 200 m and 250 m long run in opposite directions. The first runs at 36 km/h and they cross each other in 15 seconds. What is the speed of the second train in km/h?",
+   "options": [
+    {
+     "text": "72 km/h"
+    },
+    {
+     "text": "108 km/h"
+    },
+    {
+     "text": "96 km/h"
+    },
+    {
+     "text": "36 km/h"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relative speed = 450/15 = 30 m/s = 108 km/h. Second = 108 - 36 = 72 km/h.",
+   "order": 29,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Total distance / time gives the relative speed; subtract the known speed."
+  },
+  {
+   "questionText": "Two trains 200 m and 120 m long run in opposite directions. The first runs at 72 km/h and they cross each other in 8 seconds. What is the speed of the second train in km/h?",
+   "options": [
+    {
+     "text": "144 km/h"
+    },
+    {
+     "text": "90 km/h"
+    },
+    {
+     "text": "108 km/h"
+    },
+    {
+     "text": "72 km/h"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative speed = 320/8 = 40 m/s = 144 km/h. Second = 144 - 72 = 72 km/h.",
+   "order": 30,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Total distance / time gives the relative speed; subtract the known speed."
+  },
+  {
+   "questionText": "Two trains 180 m and 120 m long run in opposite directions. The first runs at 63 km/h and they cross each other in 8 seconds. What is the speed of the second train in km/h?",
+   "options": [
+    {
+     "text": "135 km/h"
+    },
+    {
+     "text": "72 km/h"
+    },
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "90 km/h"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Relative speed = 300/8 = 37.5 m/s = 135 km/h. Second = 135 - 63 = 72 km/h.",
+   "order": 31,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Total distance / time gives the relative speed; subtract the known speed."
+  },
+  {
+   "questionText": "Two trains 240 m and 120 m long run in opposite directions. The first runs at 36 km/h and they cross each other in 18 seconds. What is the speed of the second train in km/h?",
+   "options": [
+    {
+     "text": "31 km/h"
+    },
+    {
+     "text": "54 km/h"
+    },
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "72 km/h"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative speed = 360/18 = 20 m/s = 72 km/h. Second = 72 - 36 = 36 km/h.",
+   "order": 32,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Total distance / time gives the relative speed; subtract the known speed."
+  },
+  {
+   "questionText": "Two trains 120 m and 180 m long run in opposite directions. The first runs at 36 km/h and they cross each other in 12 seconds. What is the speed of the second train in km/h?",
+   "options": [
+    {
+     "text": "53 km/h"
+    },
+    {
+     "text": "54 km/h"
+    },
+    {
+     "text": "90 km/h"
+    },
+    {
+     "text": "72 km/h"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Relative speed = 300/12 = 25 m/s = 90 km/h. Second = 90 - 36 = 54 km/h.",
+   "order": 33,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Total distance / time gives the relative speed; subtract the known speed."
+  },
+  {
+   "questionText": "Two trains 100 m and 250 m long run in opposite directions. The first runs at 45 km/h and they cross each other in 14 seconds. What is the speed of the second train in km/h?",
+   "options": [
+    {
+     "text": "46 km/h"
+    },
+    {
+     "text": "90 km/h"
+    },
+    {
+     "text": "45 km/h"
+    },
+    {
+     "text": "40 km/h"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative speed = 350/14 = 25 m/s = 90 km/h. Second = 90 - 45 = 45 km/h.",
+   "order": 34,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Total distance / time gives the relative speed; subtract the known speed."
+  },
+  {
+   "questionText": "Two trains of the same total length 360 m cross each other in 12 seconds when running in opposite directions, and in 36 seconds when running in the same direction. What is the speed of the faster train in km/h?",
+   "options": [
+    {
+     "text": "72 km/h"
+    },
+    {
+     "text": "144 km/h"
+    },
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "108 km/h"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Opposite: v1 + v2 = 360/12 = 30 m/s. Same: v1 - v2 = 360/36 = 10 m/s. Faster = (30 + 10)/2 = 20 m/s = 72 km/h.",
+   "order": 35,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Use sum and difference of speeds: faster = (sum + difference)/2."
+  },
+  {
+   "questionText": "Two trains of the same total length 600 m cross each other in 24 seconds when running in opposite directions, and in 120 seconds when running in the same direction. What is the speed of the faster train in km/h?",
+   "options": [
+    {
+     "text": "59 km/h"
+    },
+    {
+     "text": "90 km/h"
+    },
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "54 km/h"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Opposite: v1 + v2 = 600/24 = 25 m/s. Same: v1 - v2 = 600/120 = 5 m/s. Faster = (25 + 5)/2 = 15 m/s = 54 km/h.",
+   "order": 36,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Use sum and difference of speeds: faster = (sum + difference)/2."
+  },
+  {
+   "questionText": "Two trains of the same total length 360 m cross each other in 8 seconds when running in opposite directions, and in 72 seconds when running in the same direction. What is the speed of the faster train in km/h?",
+   "options": [
+    {
+     "text": "90 km/h"
+    },
+    {
+     "text": "108 km/h"
+    },
+    {
+     "text": "162 km/h"
+    },
+    {
+     "text": "72 km/h"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Opposite: v1 + v2 = 360/8 = 45 m/s. Same: v1 - v2 = 360/72 = 5 m/s. Faster = (45 + 5)/2 = 25 m/s = 90 km/h.",
+   "order": 37,
+   "subPattern": "two-trains-opposite-direction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Use sum and difference of speeds: faster = (sum + difference)/2."
+  },
+  {
+   "questionText": "A train 150 m long runs at 63 km/h. In how many seconds will it pass a man walking at 9 km/h in the same direction?",
+   "options": [
+    {
+     "text": "9 seconds"
+    },
+    {
+     "text": "5 seconds"
+    },
+    {
+     "text": "7.5 seconds"
+    },
+    {
+     "text": "10 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative speed = 63 - 9 = 54 km/h = 15 m/s. Time = 150/15 = 10 seconds.",
+   "order": 38,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same direction: speeds subtract. The train must cover only its own length."
+  },
+  {
+   "questionText": "A train 100 m long runs at 54 km/h. In how many seconds will it pass a man walking at 9 km/h in the same direction?",
+   "options": [
+    {
+     "text": "6 seconds"
+    },
+    {
+     "text": "8 seconds"
+    },
+    {
+     "text": "10 seconds"
+    },
+    {
+     "text": "4 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Relative speed = 54 - 9 = 45 km/h = 12.5 m/s. Time = 100/12.5 = 8 seconds.",
+   "order": 39,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Same direction: speeds subtract. The train must cover only its own length."
+  },
+  {
+   "questionText": "A train 200 m long runs at 81 km/h. In how many seconds will it pass a man walking at 9 km/h in the same direction?",
+   "options": [
+    {
+     "text": "8 seconds"
+    },
+    {
+     "text": "12 seconds"
+    },
+    {
+     "text": "10 seconds"
+    },
+    {
+     "text": "15 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative speed = 81 - 9 = 72 km/h = 20 m/s. Time = 200/20 = 10 seconds.",
+   "order": 40,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Same direction: speeds subtract. The train must cover only its own length."
+  },
+  {
+   "questionText": "A train 150 m long runs at 81 km/h. In how many seconds will it pass a man walking at 9 km/h in the same direction?",
+   "options": [
+    {
+     "text": "7.5 seconds"
+    },
+    {
+     "text": "6 seconds"
+    },
+    {
+     "text": "9 seconds"
+    },
+    {
+     "text": "6.5 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relative speed = 81 - 9 = 72 km/h = 20 m/s. Time = 150/20 = 7.5 seconds.",
+   "order": 41,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Same direction: speeds subtract. The train must cover only its own length."
+  },
+  {
+   "questionText": "A train 300 m long runs at 63 km/h. In how many seconds will it pass a man running at 9 km/h in the opposite direction?",
+   "options": [
+    {
+     "text": "17 seconds"
+    },
+    {
+     "text": "15 seconds"
+    },
+    {
+     "text": "20 seconds"
+    },
+    {
+     "text": "13 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Relative speed = 63 + 9 = 72 km/h = 20 m/s. Time = 300/20 = 15 seconds.",
+   "order": 42,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Opposite direction: speeds add."
+  },
+  {
+   "questionText": "A train 180 m long runs at 72 km/h. In how many seconds will it pass a man running at 9 km/h in the opposite direction?",
+   "options": [
+    {
+     "text": "9 seconds"
+    },
+    {
+     "text": "6 seconds"
+    },
+    {
+     "text": "10 seconds"
+    },
+    {
+     "text": "8 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative speed = 72 + 9 = 81 km/h = 22.5 m/s. Time = 180/22.5 = 8 seconds.",
+   "order": 43,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Opposite direction: speeds add."
+  },
+  {
+   "questionText": "A train 100 m long runs at 63 km/h. In how many seconds will it pass a man running at 9 km/h in the opposite direction?",
+   "options": [
+    {
+     "text": "6 seconds"
+    },
+    {
+     "text": "3 seconds"
+    },
+    {
+     "text": "5 seconds"
+    },
+    {
+     "text": "7 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative speed = 63 + 9 = 72 km/h = 20 m/s. Time = 100/20 = 5 seconds.",
+   "order": 44,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Opposite direction: speeds add."
+  },
+  {
+   "questionText": "A train 250 m long runs at 63 km/h. In how many seconds will it pass a man running at 9 km/h in the opposite direction?",
+   "options": [
+    {
+     "text": "12.5 seconds"
+    },
+    {
+     "text": "10.5 seconds"
+    },
+    {
+     "text": "18.75 seconds"
+    },
+    {
+     "text": "6.25 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relative speed = 63 + 9 = 72 km/h = 20 m/s. Time = 250/20 = 12.5 seconds.",
+   "order": 45,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Opposite direction: speeds add."
+  },
+  {
+   "questionText": "A train 250 m long runs at 81 km/h. In how many seconds will it pass a man running at 9 km/h in the opposite direction?",
+   "options": [
+    {
+     "text": "12 seconds"
+    },
+    {
+     "text": "12.5 seconds"
+    },
+    {
+     "text": "10 seconds"
+    },
+    {
+     "text": "20 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative speed = 81 + 9 = 90 km/h = 25 m/s. Time = 250/25 = 10 seconds.",
+   "order": 46,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Opposite direction: speeds add."
+  },
+  {
+   "questionText": "A train 100 m long runs at 81 km/h. In how many seconds will it pass a man running at 9 km/h in the opposite direction?",
+   "options": [
+    {
+     "text": "5 seconds"
+    },
+    {
+     "text": "6 seconds"
+    },
+    {
+     "text": "9 seconds"
+    },
+    {
+     "text": "4 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative speed = 81 + 9 = 90 km/h = 25 m/s. Time = 100/25 = 4 seconds.",
+   "order": 47,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Opposite direction: speeds add."
+  },
+  {
+   "questionText": "A train takes 6 seconds to pass a man walking in the same direction as the train and 5 seconds to pass him when he walks in the opposite direction, at the same speed. If the man walks at 9 km/h, what is the length of the train?",
+   "options": [
+    {
+     "text": "100 metres"
+    },
+    {
+     "text": "150 metres"
+    },
+    {
+     "text": "75 metres"
+    },
+    {
+     "text": "225 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let train speed = s km/h. L = (90 km/h)(6 s) = (108 km/h)(5 s). So s = 99 km/h and L = 25 x 6 = 150 m.",
+   "order": 48,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Both crossings cover the same length L; equate and solve for the train's speed first."
+  },
+  {
+   "questionText": "A train takes 12 seconds to pass a man walking in the same direction as the train and 10 seconds to pass him when he walks in the opposite direction, at the same speed. If the man walks at 9 km/h, what is the length of the train?",
+   "options": [
+    {
+     "text": "400 metres"
+    },
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "300 metres"
+    },
+    {
+     "text": "270 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let train speed = s km/h. L = (90 km/h)(12 s) = (108 km/h)(10 s). So s = 99 km/h and L = 25 x 12 = 300 m.",
+   "order": 49,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Both crossings cover the same length L; equate and solve for the train's speed first."
+  },
+  {
+   "questionText": "A train takes 12 seconds to pass a man walking in the same direction as the train and 6 seconds to pass him when he walks in the opposite direction, at the same speed. If the man walks at 18 km/h, what is the length of the train?",
+   "options": [
+    {
+     "text": "120 metres"
+    },
+    {
+     "text": "80 metres"
+    },
+    {
+     "text": "144 metres"
+    },
+    {
+     "text": "96 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let train speed = s km/h. L = (36 km/h)(12 s) = (72 km/h)(6 s). So s = 54 km/h and L = 10 x 12 = 120 m.",
+   "order": 50,
+   "subPattern": "train-and-moving-man",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Both crossings cover the same length L; equate and solve for the train's speed first."
+  },
+  {
+   "questionText": "A train 210 m long, running at 54 km/h, crosses a platform 330 m long. How many seconds does it take?",
+   "options": [
+    {
+     "text": "48 seconds"
+    },
+    {
+     "text": "14 seconds"
+    },
+    {
+     "text": "22 seconds"
+    },
+    {
+     "text": "36 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Distance = 210 + 330 = 540 m. Speed = 54 km/h = 15 m/s. Time = 540/15 = 36 seconds.",
+   "order": 51,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "To cross a platform, the train covers (its length + platform length)."
+  },
+  {
+   "questionText": "A train 130 m long, running at 36 km/h, crosses a platform 170 m long. How many seconds does it take?",
+   "options": [
+    {
+     "text": "17 seconds"
+    },
+    {
+     "text": "30 seconds"
+    },
+    {
+     "text": "13 seconds"
+    },
+    {
+     "text": "31 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Distance = 130 + 170 = 300 m. Speed = 36 km/h = 10 m/s. Time = 300/10 = 30 seconds.",
+   "order": 52,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "To cross a platform, the train covers (its length + platform length)."
+  },
+  {
+   "questionText": "A train 170 m long, running at 54 km/h, crosses a platform 130 m long. How many seconds does it take?",
+   "options": [
+    {
+     "text": "20 seconds"
+    },
+    {
+     "text": "22 seconds"
+    },
+    {
+     "text": "15 seconds"
+    },
+    {
+     "text": "10 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Distance = 170 + 130 = 300 m. Speed = 54 km/h = 15 m/s. Time = 300/15 = 20 seconds.",
+   "order": 53,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "To cross a platform, the train covers (its length + platform length)."
+  },
+  {
+   "questionText": "A train 150 m long, running at 54 km/h, crosses a platform 300 m long. How many seconds does it take?",
+   "options": [
+    {
+     "text": "29 seconds"
+    },
+    {
+     "text": "30 seconds"
+    },
+    {
+     "text": "20 seconds"
+    },
+    {
+     "text": "10 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Distance = 150 + 300 = 450 m. Speed = 54 km/h = 15 m/s. Time = 450/15 = 30 seconds.",
+   "order": 54,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "To cross a platform, the train covers (its length + platform length)."
+  },
+  {
+   "questionText": "A train 110 m long running at 54 km/h crosses a platform in 20 seconds. What is the length of the platform?",
+   "options": [
+    {
+     "text": "228 metres"
+    },
+    {
+     "text": "380 metres"
+    },
+    {
+     "text": "190 metres"
+    },
+    {
+     "text": "300 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Distance covered = 15 x 20 = 300 m. Platform = 300 - 110 = 190 metres.",
+   "order": 55,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Platform length = (speed x time) - train length."
+  },
+  {
+   "questionText": "A train 230 m long running at 90 km/h crosses a platform in 30 seconds. What is the length of the platform?",
+   "options": [
+    {
+     "text": "780 metres"
+    },
+    {
+     "text": "750 metres"
+    },
+    {
+     "text": "416 metres"
+    },
+    {
+     "text": "520 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Distance covered = 25 x 30 = 750 m. Platform = 750 - 230 = 520 metres.",
+   "order": 56,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Platform length = (speed x time) - train length."
+  },
+  {
+   "questionText": "A train 270 m long running at 72 km/h crosses a platform in 24 seconds. What is the length of the platform?",
+   "options": [
+    {
+     "text": "105 metres"
+    },
+    {
+     "text": "480 metres"
+    },
+    {
+     "text": "168 metres"
+    },
+    {
+     "text": "210 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Distance covered = 20 x 24 = 480 m. Platform = 480 - 270 = 210 metres.",
+   "order": 57,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Platform length = (speed x time) - train length."
+  },
+  {
+   "questionText": "A train 290 m long running at 108 km/h crosses a platform in 40 seconds. What is the length of the platform?",
+   "options": [
+    {
+     "text": "1001 metres"
+    },
+    {
+     "text": "910 metres"
+    },
+    {
+     "text": "1200 metres"
+    },
+    {
+     "text": "728 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Distance covered = 30 x 40 = 1200 m. Platform = 1200 - 290 = 910 metres.",
+   "order": 58,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Platform length = (speed x time) - train length."
+  },
+  {
+   "questionText": "A train 190 m long running at 72 km/h crosses a platform in 36 seconds. What is the length of the platform?",
+   "options": [
+    {
+     "text": "530 metres"
+    },
+    {
+     "text": "795 metres"
+    },
+    {
+     "text": "720 metres"
+    },
+    {
+     "text": "636 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Distance covered = 20 x 36 = 720 m. Platform = 720 - 190 = 530 metres.",
+   "order": 59,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Platform length = (speed x time) - train length."
+  },
+  {
+   "questionText": "A train 120 m long running at 90 km/h crosses a platform in 40 seconds. What is the length of the platform?",
+   "options": [
+    {
+     "text": "1000 metres"
+    },
+    {
+     "text": "1100 metres"
+    },
+    {
+     "text": "880 metres"
+    },
+    {
+     "text": "1760 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Distance covered = 25 x 40 = 1000 m. Platform = 1000 - 120 = 880 metres.",
+   "order": 60,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Platform length = (speed x time) - train length."
+  },
+  {
+   "questionText": "A train crosses a pole in 10 seconds and a platform 300 m long in 25 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "200 metres"
+    },
+    {
+     "text": "500 metres"
+    },
+    {
+     "text": "160 metres"
+    },
+    {
+     "text": "300 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the length be L. Speed = L/10. L + 300 = (L/10) x 25, so L(25 - 10) = 10 x 300 and L = 200 metres.",
+   "order": 61,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Length = platform x t1/(t2 - t1)."
+  },
+  {
+   "questionText": "A train crosses a pole in 10 seconds and a platform 720 m long in 50 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "720 metres"
+    },
+    {
+     "text": "180 metres"
+    },
+    {
+     "text": "135 metres"
+    },
+    {
+     "text": "900 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the length be L. Speed = L/10. L + 720 = (L/10) x 50, so L(50 - 10) = 10 x 720 and L = 180 metres.",
+   "order": 62,
+   "subPattern": "bridge-tunnel",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Length = platform x t1/(t2 - t1)."
+  },
+  {
+   "questionText": "Two stations A and B are 870 km apart. A train leaves A at 65 km/h and another leaves B at 80 km/h at the same time towards each other. After how many hours do they meet?",
+   "options": [
+    {
+     "text": "12 hours"
+    },
+    {
+     "text": "4 hours"
+    },
+    {
+     "text": "6 hours"
+    },
+    {
+     "text": "58 hours"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relative speed = 65 + 80 = 145 km/h. Time = 870/145 = 6 hours.",
+   "order": 63,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Towards each other: speeds add; time = distance / combined speed."
+  },
+  {
+   "questionText": "Two stations A and B are 405 km apart. A train leaves A at 70 km/h and another leaves B at 65 km/h at the same time towards each other. After how many hours do they meet?",
+   "options": [
+    {
+     "text": "4 hours"
+    },
+    {
+     "text": "8 hours"
+    },
+    {
+     "text": "81 hours"
+    },
+    {
+     "text": "3 hours"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative speed = 70 + 65 = 135 km/h. Time = 405/135 = 3 hours.",
+   "order": 64,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Towards each other: speeds add; time = distance / combined speed."
+  },
+  {
+   "questionText": "Two stations A and B are 240 km apart. A train leaves A at 40 km/h and another leaves B at 80 km/h at the same time towards each other. After how many hours do they meet?",
+   "options": [
+    {
+     "text": "4 hours"
+    },
+    {
+     "text": "1 hours"
+    },
+    {
+     "text": "6 hours"
+    },
+    {
+     "text": "2 hours"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Relative speed = 40 + 80 = 120 km/h. Time = 240/120 = 2 hours.",
+   "order": 65,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Towards each other: speeds add; time = distance / combined speed."
+  },
+  {
+   "questionText": "Two stations A and B are 460 km apart. A train leaves A at 60 km/h and another leaves B at 55 km/h at the same time, travelling towards each other. How far from A do they meet?",
+   "options": [
+    {
+     "text": "160 km"
+    },
+    {
+     "text": "216 km"
+    },
+    {
+     "text": "240 km"
+    },
+    {
+     "text": "220 km"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "They meet after 460/115 = 4 hours. Distance from A = 60 x 4 = 240 km.",
+   "order": 66,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Distance from A = (speed of A) x (meeting time)."
+  },
+  {
+   "questionText": "Two stations A and B are 360 km apart. A train leaves A at 50 km/h and another leaves B at 40 km/h at the same time, travelling towards each other. How far from A do they meet?",
+   "options": [
+    {
+     "text": "200 km"
+    },
+    {
+     "text": "220 km"
+    },
+    {
+     "text": "160 km"
+    },
+    {
+     "text": "150 km"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They meet after 360/90 = 4 hours. Distance from A = 50 x 4 = 200 km.",
+   "order": 67,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Distance from A = (speed of A) x (meeting time)."
+  },
+  {
+   "questionText": "Two stations A and B are 690 km apart. A train leaves A at 70 km/h and another leaves B at 45 km/h at the same time, travelling towards each other. How far from A do they meet?",
+   "options": [
+    {
+     "text": "270 km"
+    },
+    {
+     "text": "420 km"
+    },
+    {
+     "text": "378 km"
+    },
+    {
+     "text": "462 km"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They meet after 690/115 = 6 hours. Distance from A = 70 x 6 = 420 km.",
+   "order": 68,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Distance from A = (speed of A) x (meeting time)."
+  },
+  {
+   "questionText": "Two stations A and B are 360 km apart. A train leaves A at 55 km/h and another leaves B at 65 km/h at the same time, travelling towards each other. How far from A do they meet?",
+   "options": [
+    {
+     "text": "165 km"
+    },
+    {
+     "text": "195 km"
+    },
+    {
+     "text": "198 km"
+    },
+    {
+     "text": "330 km"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They meet after 360/120 = 3 hours. Distance from A = 55 x 3 = 165 km.",
+   "order": 69,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Distance from A = (speed of A) x (meeting time)."
+  },
+  {
+   "questionText": "Two stations A and B are 440 km apart. A train leaves A at 40 km/h and another leaves B at 70 km/h at the same time, travelling towards each other. How far from A do they meet?",
+   "options": [
+    {
+     "text": "200 km"
+    },
+    {
+     "text": "280 km"
+    },
+    {
+     "text": "176 km"
+    },
+    {
+     "text": "160 km"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "They meet after 440/110 = 4 hours. Distance from A = 40 x 4 = 160 km.",
+   "order": 70,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Distance from A = (speed of A) x (meeting time)."
+  },
+  {
+   "questionText": "Two stations A and B are 290 km apart. A train leaves A at 65 km/h and another leaves B at 80 km/h at the same time, travelling towards each other. How far from A do they meet?",
+   "options": [
+    {
+     "text": "160 km"
+    },
+    {
+     "text": "195 km"
+    },
+    {
+     "text": "130 km"
+    },
+    {
+     "text": "65 km"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "They meet after 290/145 = 2 hours. Distance from A = 65 x 2 = 130 km.",
+   "order": 71,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Distance from A = (speed of A) x (meeting time)."
+  },
+  {
+   "questionText": "Two stations A and B are 580 km apart. A train leaves A at 70 km/h and another leaves B at 75 km/h at the same time, travelling towards each other. How far from A do they meet?",
+   "options": [
+    {
+     "text": "210 km"
+    },
+    {
+     "text": "280 km"
+    },
+    {
+     "text": "300 km"
+    },
+    {
+     "text": "140 km"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They meet after 580/145 = 4 hours. Distance from A = 70 x 4 = 280 km.",
+   "order": 72,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Distance from A = (speed of A) x (meeting time)."
+  },
+  {
+   "questionText": "Two trains start at the same time from stations A and B towards each other at 80 km/h and 60 km/h. When they meet, the first train has travelled 150 km more than the second. What is the distance between A and B?",
+   "options": [
+    {
+     "text": "1050 km"
+    },
+    {
+     "text": "300 km"
+    },
+    {
+     "text": "945 km"
+    },
+    {
+     "text": "1260 km"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Distances covered are in the ratio of speeds 80:60. Difference = (80 - 60) parts = 150, so one part = 7.5. Total = (80 + 60) x 7.5 = 1050 km.",
+   "order": 73,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Distance ratio = speed ratio; difference of parts gives the value of one part."
+  },
+  {
+   "questionText": "Two trains start at the same time from stations A and B towards each other at 70 km/h and 50 km/h. When they meet, the first train has travelled 200 km more than the second. What is the distance between A and B?",
+   "options": [
+    {
+     "text": "1080 km"
+    },
+    {
+     "text": "2400 km"
+    },
+    {
+     "text": "400 km"
+    },
+    {
+     "text": "1200 km"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Distances covered are in the ratio of speeds 70:50. Difference = (70 - 50) parts = 200, so one part = 10. Total = (70 + 50) x 10 = 1200 km.",
+   "order": 74,
+   "subPattern": "meeting-time-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Distance ratio = speed ratio; difference of parts gives the value of one part."
+  },
+  {
+   "questionText": "A train crosses a platform 260 m long in 24 seconds and another platform 460 m long in 32 seconds. What is the speed of the train in m/s?",
+   "options": [
+    {
+     "text": "26 m/s"
+    },
+    {
+     "text": "25 m/s"
+    },
+    {
+     "text": "27 m/s"
+    },
+    {
+     "text": "20 m/s"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The extra distance 460 - 260 = 200 m takes 32 - 24 = 8 s. Speed = 200/8 = 25 m/s.",
+   "order": 75,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Difference in platform lengths / difference in times = speed."
+  },
+  {
+   "questionText": "A train crosses a platform 210 m long in 24 seconds and another platform 250 m long in 28 seconds. What is the speed of the train in m/s?",
+   "options": [
+    {
+     "text": "12 m/s"
+    },
+    {
+     "text": "11 m/s"
+    },
+    {
+     "text": "10 m/s"
+    },
+    {
+     "text": "9 m/s"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The extra distance 250 - 210 = 40 m takes 28 - 24 = 4 s. Speed = 40/4 = 10 m/s.",
+   "order": 76,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Difference in platform lengths / difference in times = speed."
+  },
+  {
+   "questionText": "Two trains 120 m and 200 m long cross a pole in 6 seconds and 10 seconds respectively. If they run in opposite directions, how many seconds will they take to cross each other?",
+   "options": [
+    {
+     "text": "9 seconds"
+    },
+    {
+     "text": "8 seconds"
+    },
+    {
+     "text": "4 seconds"
+    },
+    {
+     "text": "10 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Speeds: 120/6 = 20 m/s and 200/10 = 20 m/s. Relative speed = 40 m/s. Time = 320/40 = 8 seconds.",
+   "order": 77,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find each speed from its pole crossing, then use the relative speed."
+  },
+  {
+   "questionText": "Two trains 240 m and 200 m long cross a pole in 24 seconds and 20 seconds respectively. If they run in opposite directions, how many seconds will they take to cross each other?",
+   "options": [
+    {
+     "text": "23 seconds"
+    },
+    {
+     "text": "17 seconds"
+    },
+    {
+     "text": "22 seconds"
+    },
+    {
+     "text": "27 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Speeds: 240/24 = 10 m/s and 200/20 = 10 m/s. Relative speed = 20 m/s. Time = 440/20 = 22 seconds.",
+   "order": 78,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find each speed from its pole crossing, then use the relative speed."
+  },
+  {
+   "questionText": "Two trains 150 m and 300 m long cross a pole in 5 seconds and 20 seconds respectively. If they run in opposite directions, how many seconds will they take to cross each other?",
+   "options": [
+    {
+     "text": "12.5 seconds"
+    },
+    {
+     "text": "5 seconds"
+    },
+    {
+     "text": "9 seconds"
+    },
+    {
+     "text": "10 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Speeds: 150/5 = 30 m/s and 300/20 = 15 m/s. Relative speed = 45 m/s. Time = 450/45 = 10 seconds.",
+   "order": 79,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find each speed from its pole crossing, then use the relative speed."
+  },
+  {
+   "questionText": "Two trains 150 m and 300 m long cross a pole in 5 seconds and 10 seconds respectively. If they run in opposite directions, how many seconds will they take to cross each other?",
+   "options": [
+    {
+     "text": "7.5 seconds"
+    },
+    {
+     "text": "8.25 seconds"
+    },
+    {
+     "text": "6.75 seconds"
+    },
+    {
+     "text": "6.5 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Speeds: 150/5 = 30 m/s and 300/10 = 30 m/s. Relative speed = 60 m/s. Time = 450/60 = 7.5 seconds.",
+   "order": 80,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find each speed from its pole crossing, then use the relative speed."
+  },
+  {
+   "questionText": "A train crosses a platform 190 m long in 36 seconds and another platform 230 m long in 40 seconds. What is the speed of the train in m/s?",
+   "options": [
+    {
+     "text": "11 m/s"
+    },
+    {
+     "text": "10 m/s"
+    },
+    {
+     "text": "12 m/s"
+    },
+    {
+     "text": "5 m/s"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The extra distance 230 - 190 = 40 m takes 40 - 36 = 4 s. Speed = 40/4 = 10 m/s.",
+   "order": 81,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Difference in platform lengths / difference in times = speed."
+  },
+  {
+   "questionText": "A train crosses a platform 280 m long in 20 seconds and another platform 380 m long in 24 seconds. What is the speed of the train in m/s?",
+   "options": [
+    {
+     "text": "15 m/s"
+    },
+    {
+     "text": "50 m/s"
+    },
+    {
+     "text": "25 m/s"
+    },
+    {
+     "text": "27 m/s"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The extra distance 380 - 280 = 100 m takes 24 - 20 = 4 s. Speed = 100/4 = 25 m/s.",
+   "order": 82,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Difference in platform lengths / difference in times = speed."
+  },
+  {
+   "questionText": "Two trains 240 m and 180 m long cross a pole in 20 seconds and 12 seconds respectively. If they run in the same direction, how many seconds will the faster take to pass the slower?",
+   "options": [
+    {
+     "text": "140 seconds"
+    },
+    {
+     "text": "126 seconds"
+    },
+    {
+     "text": "168 seconds"
+    },
+    {
+     "text": "154 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Speeds: 12 m/s and 15 m/s. Relative speed = 3 m/s. Time = 420/3 = 140 seconds.",
+   "order": 83,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same direction: subtract the two speeds."
+  },
+  {
+   "questionText": "Two trains 150 m and 180 m long cross a pole in 5 seconds and 10 seconds respectively. If they run in the same direction, how many seconds will the faster take to pass the slower?",
+   "options": [
+    {
+     "text": "30.25 seconds"
+    },
+    {
+     "text": "22 seconds"
+    },
+    {
+     "text": "41.25 seconds"
+    },
+    {
+     "text": "27.5 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Speeds: 30 m/s and 18 m/s. Relative speed = 12 m/s. Time = 330/12 = 27.5 seconds.",
+   "order": 84,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Same direction: subtract the two speeds."
+  },
+  {
+   "questionText": "A train crosses a platform 140 m long in 40 seconds and another platform 230 m long in 46 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "600 metres"
+    },
+    {
+     "text": "368 metres"
+    },
+    {
+     "text": "690 metres"
+    },
+    {
+     "text": "460 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Speed = (230 - 140)/(46 - 40) = 15 m/s. Length = 15 x 40 - 140 = 460 metres.",
+   "order": 85,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the speed first from the two platforms, then L = speed x time - platform."
+  },
+  {
+   "questionText": "Two trains 240 m and 300 m long cross a pole in 12 seconds and 24 seconds respectively. If they run in the same direction, how many seconds will the faster take to pass the slower?",
+   "options": [
+    {
+     "text": "72 seconds"
+    },
+    {
+     "text": "90 seconds"
+    },
+    {
+     "text": "144 seconds"
+    },
+    {
+     "text": "108 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Speeds: 20 m/s and 12.5 m/s. Relative speed = 7.5 m/s. Time = 540/7.5 = 72 seconds.",
+   "order": 86,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Same direction: subtract the two speeds."
+  },
+  {
+   "questionText": "A train crosses a platform 190 m long in 24 seconds and another platform 238 m long in 28 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "147 metres"
+    },
+    {
+     "text": "49 metres"
+    },
+    {
+     "text": "98 metres"
+    },
+    {
+     "text": "288 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Speed = (238 - 190)/(28 - 24) = 12 m/s. Length = 12 x 24 - 190 = 98 metres.",
+   "order": 87,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the speed first from the two platforms, then L = speed x time - platform."
+  },
+  {
+   "questionText": "Two trains 240 m and 180 m long cross a pole in 5 seconds and 10 seconds respectively. If they run in the same direction, how many seconds will the faster take to pass the slower?",
+   "options": [
+    {
+     "text": "19 seconds"
+    },
+    {
+     "text": "14 seconds"
+    },
+    {
+     "text": "9 seconds"
+    },
+    {
+     "text": "7 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Speeds: 48 m/s and 18 m/s. Relative speed = 30 m/s. Time = 420/30 = 14 seconds.",
+   "order": 88,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Same direction: subtract the two speeds."
+  },
+  {
+   "questionText": "A train crosses a platform 190 m long in 30 seconds and another platform 238 m long in 34 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "170 metres"
+    },
+    {
+     "text": "153 metres"
+    },
+    {
+     "text": "255 metres"
+    },
+    {
+     "text": "360 metres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Speed = (238 - 190)/(34 - 30) = 12 m/s. Length = 12 x 30 - 190 = 170 metres.",
+   "order": 89,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the speed first from the two platforms, then L = speed x time - platform."
+  },
+  {
+   "questionText": "A train crosses a platform 190 m long in 30 seconds and another platform 286 m long in 38 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "204 metres"
+    },
+    {
+     "text": "170 metres"
+    },
+    {
+     "text": "153 metres"
+    },
+    {
+     "text": "360 metres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Speed = (286 - 190)/(38 - 30) = 12 m/s. Length = 12 x 30 - 190 = 170 metres.",
+   "order": 90,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the speed first from the two platforms, then L = speed x time - platform."
+  },
+  {
+   "questionText": "A train crosses a platform 130 m long in 24 seconds and another platform 230 m long in 28 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "235 metres"
+    },
+    {
+     "text": "600 metres"
+    },
+    {
+     "text": "705 metres"
+    },
+    {
+     "text": "470 metres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Speed = (230 - 130)/(28 - 24) = 25 m/s. Length = 25 x 24 - 130 = 470 metres.",
+   "order": 91,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the speed first from the two platforms, then L = speed x time - platform."
+  },
+  {
+   "questionText": "Two trains 150 m and 180 m long cross a pole in 30 seconds and 24 seconds respectively. If they run in the same direction, how many seconds will the faster take to pass the slower?",
+   "options": [
+    {
+     "text": "165 seconds"
+    },
+    {
+     "text": "26.4 seconds"
+    },
+    {
+     "text": "132 seconds"
+    },
+    {
+     "text": "198 seconds"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Speeds: 5 m/s and 7.5 m/s. Relative speed = 2.5 m/s. Time = 330/2.5 = 132 seconds.",
+   "order": 92,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Same direction: subtract the two speeds."
+  },
+  {
+   "questionText": "Two trains 240 m and 180 m long cross a pole in 10 seconds and 6 seconds respectively. If they run in the same direction, how many seconds will the faster take to pass the slower?",
+   "options": [
+    {
+     "text": "140 seconds"
+    },
+    {
+     "text": "70 seconds"
+    },
+    {
+     "text": "77 seconds"
+    },
+    {
+     "text": "63 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Speeds: 24 m/s and 30 m/s. Relative speed = 6 m/s. Time = 420/6 = 70 seconds.",
+   "order": 93,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Same direction: subtract the two speeds."
+  },
+  {
+   "questionText": "A train crosses a platform 110 m long in 24 seconds and another platform 190 m long in 28 seconds. What is the length of the train?",
+   "options": [
+    {
+     "text": "555 metres"
+    },
+    {
+     "text": "480 metres"
+    },
+    {
+     "text": "370 metres"
+    },
+    {
+     "text": "185 metres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Speed = (190 - 110)/(28 - 24) = 20 m/s. Length = 20 x 24 - 110 = 370 metres.",
+   "order": 94,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the speed first from the two platforms, then L = speed x time - platform."
+  },
+  {
+   "questionText": "Two trains of equal length take 8 seconds and 24 seconds to cross a pole. If they run in opposite directions, how many seconds will they take to cross each other?",
+   "options": [
+    {
+     "text": "6 seconds"
+    },
+    {
+     "text": "16 seconds"
+    },
+    {
+     "text": "8 seconds"
+    },
+    {
+     "text": "12 seconds"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let each length = L. Speeds are L/8 and L/24. Time = 2L/(L/8 + L/24) = 2 x 8 x 24/(8 + 24) = 12 seconds.",
+   "order": 95,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "For equal lengths, crossing time = 2 t1 t2/(t1 + t2)."
+  },
+  {
+   "questionText": "A train takes 20 seconds to cross a platform 280 m long and 26 seconds to cross a platform 400 m long. What is the speed of the train in km/h?",
+   "options": [
+    {
+     "text": "72 km/h"
+    },
+    {
+     "text": "36 km/h"
+    },
+    {
+     "text": "108 km/h"
+    },
+    {
+     "text": "20 km/h"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Speed = (400 - 280)/(26 - 20) = 20 m/s = 20 x 18/5 = 72 km/h.",
+   "order": 96,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Subtract the two situations, then convert m/s to km/h."
+  },
+  {
+   "questionText": "A train takes 40 seconds to cross a platform 220 m long and 50 seconds to cross a platform 370 m long. What is the speed of the train in km/h?",
+   "options": [
+    {
+     "text": "15 km/h"
+    },
+    {
+     "text": "49 km/h"
+    },
+    {
+     "text": "53 km/h"
+    },
+    {
+     "text": "54 km/h"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Speed = (370 - 220)/(50 - 40) = 15 m/s = 15 x 18/5 = 54 km/h.",
+   "order": 97,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Subtract the two situations, then convert m/s to km/h."
+  },
+  {
+   "questionText": "Two trains of equal length take 30 seconds and 15 seconds to cross a pole. If they run in opposite directions, how many seconds will they take to cross each other?",
+   "options": [
+    {
+     "text": "20 seconds"
+    },
+    {
+     "text": "22 seconds"
+    },
+    {
+     "text": "21 seconds"
+    },
+    {
+     "text": "22.5 seconds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let each length = L. Speeds are L/30 and L/15. Time = 2L/(L/30 + L/15) = 2 x 30 x 15/(30 + 15) = 20 seconds.",
+   "order": 98,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "For equal lengths, crossing time = 2 t1 t2/(t1 + t2)."
+  },
+  {
+   "questionText": "A train takes 20 seconds to cross a platform 240 m long and 26 seconds to cross a platform 360 m long. What is the speed of the train in km/h?",
+   "options": [
+    {
+     "text": "20 km/h"
+    },
+    {
+     "text": "48 km/h"
+    },
+    {
+     "text": "72 km/h"
+    },
+    {
+     "text": "90 km/h"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Speed = (360 - 240)/(26 - 20) = 20 m/s = 20 x 18/5 = 72 km/h.",
+   "order": 99,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Subtract the two situations, then convert m/s to km/h."
+  },
+  {
+   "questionText": "Two trains of equal length take 20 seconds and 12 seconds to cross a pole. If they run in opposite directions, how many seconds will they take to cross each other?",
+   "options": [
+    {
+     "text": "20 seconds"
+    },
+    {
+     "text": "15 seconds"
+    },
+    {
+     "text": "12 seconds"
+    },
+    {
+     "text": "16 seconds"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let each length = L. Speeds are L/20 and L/12. Time = 2L/(L/20 + L/12) = 2 x 20 x 12/(20 + 12) = 15 seconds.",
+   "order": 100,
+   "subPattern": "finding-length-of-train",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "For equal lengths, crossing time = 2 t1 t2/(t1 + t2)."
+  }
+ ]
+}

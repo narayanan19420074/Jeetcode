@@ -1,0 +1,2719 @@
+{
+ "pattern": {
+  "title": "Simplification and Approximation",
+  "slug": "simplification-and-approximation",
+  "description": "Fast calculation: BODMAS, roots, surds, indices and estimation.",
+  "order": 3,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "bodmas",
+    "title": "BODMAS"
+   },
+   {
+    "slug": "fractions-decimals",
+    "title": "Fractions & decimals"
+   },
+   {
+    "slug": "square-cube-roots",
+    "title": "Square & cube roots"
+   },
+   {
+    "slug": "surds-indices",
+    "title": "Surds & indices"
+   },
+   {
+    "slug": "approximation-estimation",
+    "title": "Approximation & estimation"
+   },
+   {
+    "slug": "missing-number-in-expression",
+    "title": "Missing number in expression"
+   },
+   {
+    "slug": "comparison-of-fractions",
+    "title": "Comparison of fractions"
+   },
+   {
+    "slug": "speed-maths-shortcuts-squares-multiplication",
+    "title": "Speed-maths shortcuts (squares, multiplication)"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Simplify: (33 + 13) x 11 - 4 x 3",
+   "options": [
+    {
+     "text": "988"
+    },
+    {
+     "text": "247"
+    },
+    {
+     "text": "164"
+    },
+    {
+     "text": "494"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bracket first: 33 + 13 = 46. Then 46 x 11 = 506 and 4 x 3 = 12, so the result is 506 - 12 = 494.",
+   "order": 1,
+   "subPattern": "bodmas",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Bracket first, then multiplication, then subtraction."
+  },
+  {
+   "questionText": "Simplify: 24 + 108 - 2",
+   "options": [
+    {
+     "text": "195"
+    },
+    {
+     "text": "130"
+    },
+    {
+     "text": "134"
+    },
+    {
+     "text": "143"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "24 + 108 = 132; 132 - 2 = 130.",
+   "order": 2,
+   "subPattern": "bodmas",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Add the first two numbers, then subtract."
+  },
+  {
+   "questionText": "Simplify: 27 - 30 / 5 + 6 x 5",
+   "options": [
+    {
+     "text": "68"
+    },
+    {
+     "text": "135"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Division and multiplication first: 30 / 5 = 6 and 6 x 5 = 30. Then 27 - 6 + 30 = 51.",
+   "order": 3,
+   "subPattern": "bodmas",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Handle / and x before + and -, working left to right."
+  },
+  {
+   "questionText": "Simplify: 96 + 36 - 9",
+   "options": [
+    {
+     "text": "123"
+    },
+    {
+     "text": "141"
+    },
+    {
+     "text": "246"
+    },
+    {
+     "text": "164"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "96 + 36 = 132; 132 - 9 = 123.",
+   "order": 4,
+   "subPattern": "bodmas",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Add the first two numbers, then subtract."
+  },
+  {
+   "questionText": "Simplify: 51 x 4 + 5 x (5 x 9) - 51",
+   "options": [
+    {
+     "text": "429"
+    },
+    {
+     "text": "504"
+    },
+    {
+     "text": "378"
+    },
+    {
+     "text": "252"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "51 x 4 = 204; inner bracket 5 x 9 = 45, so 5 x 45 = 225. Total = 204 + 225 - 51 = 378.",
+   "order": 5,
+   "subPattern": "bodmas",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Notice 51 x 4 - 51 = 51(4 - 1), then add the middle product."
+  },
+  {
+   "questionText": "Simplify: 3/4 of 380 + 2/5 of 720",
+   "options": [
+    {
+     "text": "382"
+    },
+    {
+     "text": "573"
+    },
+    {
+     "text": "764"
+    },
+    {
+     "text": "652"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "3/4 of 380 = 285; 2/5 of 720 = 288. Sum = 573.",
+   "order": 6,
+   "subPattern": "bodmas",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Divide the number by the denominator first, then multiply by the numerator."
+  },
+  {
+   "questionText": "Simplify: (81 - 12) x 2 + 40 / 5 x 4",
+   "options": [
+    {
+     "text": "170"
+    },
+    {
+     "text": "187"
+    },
+    {
+     "text": "255"
+    },
+    {
+     "text": "140"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bracket: 81 - 12 = 69; 69 x 2 = 138. Then 40 / 5 = 8, and 8 x 4 = 32. Total = 170.",
+   "order": 7,
+   "subPattern": "bodmas",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Left to right after the bracket: / and x in the order they appear, then +."
+  },
+  {
+   "questionText": "Simplify: (47 - 13) x 12 + 14 / 7 x 3",
+   "options": [
+    {
+     "text": "408"
+    },
+    {
+     "text": "552"
+    },
+    {
+     "text": "276"
+    },
+    {
+     "text": "414"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bracket: 47 - 13 = 34; 34 x 12 = 408. Then 14 / 7 = 2, and 2 x 3 = 6. Total = 414.",
+   "order": 8,
+   "subPattern": "bodmas",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Left to right after the bracket: / and x in the order they appear, then +."
+  },
+  {
+   "questionText": "Simplify: 40 x 6 + 6 x (5 x 8) - 40",
+   "options": [
+    {
+     "text": "480"
+    },
+    {
+     "text": "352"
+    },
+    {
+     "text": "440"
+    },
+    {
+     "text": "550"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "40 x 6 = 240; inner bracket 5 x 8 = 40, so 6 x 40 = 240. Total = 240 + 240 - 40 = 440.",
+   "order": 9,
+   "subPattern": "bodmas",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Notice 40 x 6 - 40 = 40(6 - 1), then add the middle product."
+  },
+  {
+   "questionText": "Simplify: 7/8 of 360 + 2/3 of 576",
+   "options": [
+    {
+     "text": "932"
+    },
+    {
+     "text": "699"
+    },
+    {
+     "text": "466"
+    },
+    {
+     "text": "712"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "7/8 of 360 = 315; 2/3 of 576 = 384. Sum = 699.",
+   "order": 10,
+   "subPattern": "bodmas",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide the number by the denominator first, then multiply by the numerator."
+  },
+  {
+   "questionText": "Simplify: 48 / 6 / 4 x 2 + 31",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "34"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "48 / 6 = 8; 8 / 4 = 2; 2 x 2 = 4; + 31 = 35.",
+   "order": 11,
+   "subPattern": "bodmas",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Strictly left to right for operations of equal rank (/ and x)."
+  },
+  {
+   "questionText": "Simplify: {70 - [11 + (12 - 4) x 3]} x 6",
+   "options": [
+    {
+     "text": "420"
+    },
+    {
+     "text": "354"
+    },
+    {
+     "text": "189"
+    },
+    {
+     "text": "210"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Innermost bracket: 12 - 4 = 8; 8 x 3 = 24. Square bracket: 11 + 24 = 35. Curly bracket: 70 - 35 = 35. Final: 35 x 6 = 210.",
+   "order": 12,
+   "subPattern": "bodmas",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Open brackets from the inside out: ( ) then [ ] then { }."
+  },
+  {
+   "questionText": "Simplify: 1/4 + 2/5",
+   "options": [
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "3/4"
+    },
+    {
+     "text": "33/40"
+    },
+    {
+     "text": "13/20"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM of 4 and 5 = 20. Result = 13/20.",
+   "order": 13,
+   "subPattern": "fractions-decimals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write both over the LCM of the denominators, then add or subtract the numerators."
+  },
+  {
+   "questionText": "Convert 0.333... (the digit 3 repeating) into a fraction.",
+   "options": [
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "1/4"
+    },
+    {
+     "text": "2/3"
+    },
+    {
+     "text": "3/10"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A single repeating digit n gives n/9, so the fraction is 3/9 = 1/3.",
+   "order": 14,
+   "subPattern": "fractions-decimals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "One repeating digit: put it over 9."
+  },
+  {
+   "questionText": "Simplify: 5/12 - 1/9",
+   "options": [
+    {
+     "text": "47/72"
+    },
+    {
+     "text": "11/36"
+    },
+    {
+     "text": "11/38"
+    },
+    {
+     "text": "2/7"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM of 12 and 9 = 36. Result = 11/36.",
+   "order": 15,
+   "subPattern": "fractions-decimals",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Write both over the LCM of the denominators, then add or subtract the numerators."
+  },
+  {
+   "questionText": "Convert 0.666... (the digit 6 repeating) into a fraction.",
+   "options": [
+    {
+     "text": "5/6"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2/3"
+    },
+    {
+     "text": "3/5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A single repeating digit n gives n/9, so the fraction is 6/9 = 2/3.",
+   "order": 16,
+   "subPattern": "fractions-decimals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "One repeating digit: put it over 9."
+  },
+  {
+   "questionText": "Simplify: 1/2 + 2/9",
+   "options": [
+    {
+     "text": "2/3"
+    },
+    {
+     "text": "13/18"
+    },
+    {
+     "text": "13/19"
+    },
+    {
+     "text": "3/11"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM of 2 and 9 = 18. Result = 13/18.",
+   "order": 17,
+   "subPattern": "fractions-decimals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write both over the LCM of the denominators, then add or subtract the numerators."
+  },
+  {
+   "questionText": "Convert 0.222... (the digit 2 repeating) into a fraction.",
+   "options": [
+    {
+     "text": "1/5"
+    },
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "2/9"
+    },
+    {
+     "text": "1/4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A single repeating digit n gives n/9, so the fraction is 2/9 = 2/9.",
+   "order": 18,
+   "subPattern": "fractions-decimals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "One repeating digit: put it over 9."
+  },
+  {
+   "questionText": "Simplify: 1/4 + 7/8",
+   "options": [
+    {
+     "text": "9/10"
+    },
+    {
+     "text": "2/3"
+    },
+    {
+     "text": "9/7"
+    },
+    {
+     "text": "9/8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM of 4 and 8 = 8. Result = 9/8.",
+   "order": 19,
+   "subPattern": "fractions-decimals",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Write both over the LCM of the denominators, then add or subtract the numerators."
+  },
+  {
+   "questionText": "Express 0.728728... (the three digits 728 repeating) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "728/999"
+    },
+    {
+     "text": "730/999"
+    },
+    {
+     "text": "91/125"
+    },
+    {
+     "text": "364/499"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three repeating digits: 728/999 = 728/999 in lowest terms.",
+   "order": 20,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Three repeating digits: put them over 999, then reduce."
+  },
+  {
+   "questionText": "Simplify: 2.1 x 0.7 + 4.8",
+   "options": [
+    {
+     "text": "62.7"
+    },
+    {
+     "text": "8.27"
+    },
+    {
+     "text": "8.36"
+    },
+    {
+     "text": "6.27"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2.1 x 0.7 = 1.47; adding 4.8 gives 6.27.",
+   "order": 21,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply ignoring the decimal points, then place the point using the total decimal places."
+  },
+  {
+   "questionText": "Express 0.203203... (the three digits 203 repeating) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "203/1000"
+    },
+    {
+     "text": "203/999"
+    },
+    {
+     "text": "68/333"
+    },
+    {
+     "text": "203/998"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three repeating digits: 203/999 = 203/999 in lowest terms.",
+   "order": 22,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Three repeating digits: put them over 999, then reduce."
+  },
+  {
+   "questionText": "Simplify: 5/4 + 3/5 - 1/2",
+   "options": [
+    {
+     "text": "27/20"
+    },
+    {
+     "text": "20/27"
+    },
+    {
+     "text": "27/19"
+    },
+    {
+     "text": "47/40"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Common denominator 20: result = 27/20.",
+   "order": 23,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert all three fractions to one common denominator at once."
+  },
+  {
+   "questionText": "Express 0.569569... (the three digits 569 repeating) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "999/569"
+    },
+    {
+     "text": "569/1001"
+    },
+    {
+     "text": "569/999"
+    },
+    {
+     "text": "569/1000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three repeating digits: 569/999 = 569/999 in lowest terms.",
+   "order": 24,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Three repeating digits: put them over 999, then reduce."
+  },
+  {
+   "questionText": "Simplify: 5/4 + 1/2 - 3/4",
+   "options": [
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Common denominator 4: result = 1.",
+   "order": 25,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Convert all three fractions to one common denominator at once."
+  },
+  {
+   "questionText": "Express 0.292929... (the digits 29 repeating) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "29/99"
+    },
+    {
+     "text": "99/29"
+    },
+    {
+     "text": "31/99"
+    },
+    {
+     "text": "29/100"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two repeating digits: 29/99 = 29/99 in lowest terms.",
+   "order": 26,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Two repeating digits: put them over 99, then reduce."
+  },
+  {
+   "questionText": "Express 0.707070... (the digits 70 repeating) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "70/101"
+    },
+    {
+     "text": "71/99"
+    },
+    {
+     "text": "70/99"
+    },
+    {
+     "text": "7/10"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two repeating digits: 70/99 = 70/99 in lowest terms.",
+   "order": 27,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Two repeating digits: put them over 99, then reduce."
+  },
+  {
+   "questionText": "Simplify: 5/6 + 1/3 - 3/4",
+   "options": [
+    {
+     "text": "12/5"
+    },
+    {
+     "text": "5/12"
+    },
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "7/12"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Common denominator 12: result = 5/12.",
+   "order": 28,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert all three fractions to one common denominator at once."
+  },
+  {
+   "questionText": "Express 0.898989... (the digits 89 repeating) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "89/100"
+    },
+    {
+     "text": "89/99"
+    },
+    {
+     "text": "10/11"
+    },
+    {
+     "text": "99/89"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Two repeating digits: 89/99 = 89/99 in lowest terms.",
+   "order": 29,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Two repeating digits: put them over 99, then reduce."
+  },
+  {
+   "questionText": "Express 0.363636... (the digits 36 repeating) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "4/11"
+    },
+    {
+     "text": "9/25"
+    },
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "6/11"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two repeating digits: 36/99 = 4/11 in lowest terms.",
+   "order": 30,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Two repeating digits: put them over 99, then reduce."
+  },
+  {
+   "questionText": "Simplify: 2.1 x 0.7 + 8.1",
+   "options": [
+    {
+     "text": "8.57"
+    },
+    {
+     "text": "95.7"
+    },
+    {
+     "text": "19.14"
+    },
+    {
+     "text": "9.57"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2.1 x 0.7 = 1.47; adding 8.1 gives 9.57.",
+   "order": 31,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Multiply ignoring the decimal points, then place the point using the total decimal places."
+  },
+  {
+   "questionText": "Simplify: 7.9 x 0.7 + 8.6",
+   "options": [
+    {
+     "text": "13.13"
+    },
+    {
+     "text": "19.13"
+    },
+    {
+     "text": "14.13"
+    },
+    {
+     "text": "141.3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "7.9 x 0.7 = 5.53; adding 8.6 gives 14.13.",
+   "order": 32,
+   "subPattern": "fractions-decimals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Multiply ignoring the decimal points, then place the point using the total decimal places."
+  },
+  {
+   "questionText": "What is 5 x 0.222... (digit 2 repeating), as a fraction in lowest terms?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "4/3"
+    },
+    {
+     "text": "19/18"
+    },
+    {
+     "text": "10/9"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The recurring decimal equals 2/9. Multiplying by 5 gives 10/9, which is 10/9 in lowest terms.",
+   "order": 33,
+   "subPattern": "fractions-decimals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Convert to a fraction first, then multiply."
+  },
+  {
+   "questionText": "Simplify: (4/5) / (5/6) x (3/4)",
+   "options": [
+    {
+     "text": "19/25"
+    },
+    {
+     "text": "32/25"
+    },
+    {
+     "text": "18/25"
+    },
+    {
+     "text": "25/18"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "4/5 / 5/6 = 24/25; x 3/4 = 18/25.",
+   "order": 34,
+   "subPattern": "fractions-decimals",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Divide by a fraction = multiply by its reciprocal; go left to right."
+  },
+  {
+   "questionText": "What is 6 x 0.111... (digit 1 repeating), as a fraction in lowest terms?",
+   "options": [
+    {
+     "text": "3/5"
+    },
+    {
+     "text": "2/3"
+    },
+    {
+     "text": "5/6"
+    },
+    {
+     "text": "2/5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The recurring decimal equals 1/9. Multiplying by 6 gives 6/9, which is 2/3 in lowest terms.",
+   "order": 35,
+   "subPattern": "fractions-decimals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Convert to a fraction first, then multiply."
+  },
+  {
+   "questionText": "Simplify: (5/12) / (7/8) x (4/5)",
+   "options": [
+    {
+     "text": "8/21"
+    },
+    {
+     "text": "21/8"
+    },
+    {
+     "text": "25/42"
+    },
+    {
+     "text": "2/5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "5/12 / 7/8 = 10/21; x 4/5 = 8/21.",
+   "order": 36,
+   "subPattern": "fractions-decimals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Divide by a fraction = multiply by its reciprocal; go left to right."
+  },
+  {
+   "questionText": "Find the value of 201^2.",
+   "options": [
+    {
+     "text": "40001"
+    },
+    {
+     "text": "40401"
+    },
+    {
+     "text": "80802"
+    },
+    {
+     "text": "53868"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "201 = 200 + 1. (200 + 1)^2 = 40000 + 400 + 1 = 40401.",
+   "order": 37,
+   "subPattern": "square-cube-roots",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Use (a + b)^2 with a = 200, b = 1."
+  },
+  {
+   "questionText": "What is the value of 4^3?",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "64"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "4^3 means 4 x 4 x 4: 4 x 4 = 16, then x 4 = 64.",
+   "order": 38,
+   "subPattern": "square-cube-roots",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Square first, then multiply once more."
+  },
+  {
+   "questionText": "Find the value of 51^2.",
+   "options": [
+    {
+     "text": "3468"
+    },
+    {
+     "text": "5202"
+    },
+    {
+     "text": "2601"
+    },
+    {
+     "text": "2501"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "51 = 50 + 1. (50 + 1)^2 = 2500 + 100 + 1 = 2601.",
+   "order": 39,
+   "subPattern": "square-cube-roots",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use (a + b)^2 with a = 50, b = 1."
+  },
+  {
+   "questionText": "Simplify: (24^2 - 7^2) / (24 - 7)",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(24^2 - 7^2) / (24 - 7) = (24 + 7) = 31.",
+   "order": 40,
+   "subPattern": "square-cube-roots",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Cancel (a - b) using the difference of squares."
+  },
+  {
+   "questionText": "Simplify: (76^2 - 9^2) / (76 - 9)",
+   "options": [
+    {
+     "text": "67"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "102"
+    },
+    {
+     "text": "85"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(76^2 - 9^2) / (76 - 9) = (76 + 9) = 85.",
+   "order": 41,
+   "subPattern": "square-cube-roots",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cancel (a - b) using the difference of squares."
+  },
+  {
+   "questionText": "Simplify: 99^2 + 2 x 99 x 11 + 11^2",
+   "options": [
+    {
+     "text": "9922"
+    },
+    {
+     "text": "12100"
+    },
+    {
+     "text": "15125"
+    },
+    {
+     "text": "9075"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "By (a + b)^2: (99 + 11)^2 = 110^2 = 12100.",
+   "order": 42,
+   "subPattern": "square-cube-roots",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Recognise the pattern a^2 + 2ab + b^2 = (a + b)^2."
+  },
+  {
+   "questionText": "Simplify: (41^2 - 15^2) / (41 - 15)",
+   "options": [
+    {
+     "text": "56"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "57"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(41^2 - 15^2) / (41 - 15) = (41 + 15) = 56.",
+   "order": 43,
+   "subPattern": "square-cube-roots",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Cancel (a - b) using the difference of squares."
+  },
+  {
+   "questionText": "Find the value of 201^3.",
+   "options": [
+    {
+     "text": "5413734"
+    },
+    {
+     "text": "16241202"
+    },
+    {
+     "text": "8120601"
+    },
+    {
+     "text": "121203"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "201^3 = 201 x 201 x 201 = 40401 x 201 = 8120601.",
+   "order": 44,
+   "subPattern": "square-cube-roots",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Square first, then multiply by the number again."
+  },
+  {
+   "questionText": "Simplify: (93^2 - 5^2) / (93 - 5)",
+   "options": [
+    {
+     "text": "49"
+    },
+    {
+     "text": "88"
+    },
+    {
+     "text": "196"
+    },
+    {
+     "text": "98"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(93^2 - 5^2) / (93 - 5) = (93 + 5) = 98.",
+   "order": 45,
+   "subPattern": "square-cube-roots",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Cancel (a - b) using the difference of squares."
+  },
+  {
+   "questionText": "Simplify: 58^2 + 2 x 58 x 6 + 6^2",
+   "options": [
+    {
+     "text": "4096"
+    },
+    {
+     "text": "3072"
+    },
+    {
+     "text": "2048"
+    },
+    {
+     "text": "3400"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "By (a + b)^2: (58 + 6)^2 = 64^2 = 4096.",
+   "order": 46,
+   "subPattern": "square-cube-roots",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Recognise the pattern a^2 + 2ab + b^2 = (a + b)^2."
+  },
+  {
+   "questionText": "If x + 1/x = 6, find x^3 + 1/x^3.",
+   "options": [
+    {
+     "text": "216"
+    },
+    {
+     "text": "198"
+    },
+    {
+     "text": "396"
+    },
+    {
+     "text": "99"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x^3 + 1/x^3 = (x + 1/x)^3 - 3(x + 1/x) = 216 - 18 = 198.",
+   "order": 47,
+   "subPattern": "square-cube-roots",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Use k^3 - 3k for the sum of cubes with x + 1/x = k."
+  },
+  {
+   "questionText": "If x + 1/x = 7, find x^3 + 1/x^3.",
+   "options": [
+    {
+     "text": "644"
+    },
+    {
+     "text": "483"
+    },
+    {
+     "text": "322"
+    },
+    {
+     "text": "343"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x^3 + 1/x^3 = (x + 1/x)^3 - 3(x + 1/x) = 343 - 21 = 322.",
+   "order": 48,
+   "subPattern": "square-cube-roots",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Use k^3 - 3k for the sum of cubes with x + 1/x = k."
+  },
+  {
+   "questionText": "If x + 1/x = 5, find x^3 + 1/x^3.",
+   "options": [
+    {
+     "text": "165"
+    },
+    {
+     "text": "125"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "220"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x^3 + 1/x^3 = (x + 1/x)^3 - 3(x + 1/x) = 125 - 15 = 110.",
+   "order": 49,
+   "subPattern": "square-cube-roots",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use k^3 - 3k for the sum of cubes with x + 1/x = k."
+  },
+  {
+   "questionText": "Evaluate: sqrt(484) + sqrt(289) + sqrt(4)",
+   "options": [
+    {
+     "text": "41"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "82"
+    },
+    {
+     "text": "43"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "sqrt(484) = 22, sqrt(289) = 17, sqrt(4) = 2. Sum = 41.",
+   "order": 50,
+   "subPattern": "surds-indices",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Recall squares up to 25: the roots are all whole numbers."
+  },
+  {
+   "questionText": "Evaluate: sqrt(576) + sqrt(121) + sqrt(36)",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "46"
+    },
+    {
+     "text": "41"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "sqrt(576) = 24, sqrt(121) = 11, sqrt(36) = 6. Sum = 41.",
+   "order": 51,
+   "subPattern": "surds-indices",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Recall squares up to 25: the roots are all whole numbers."
+  },
+  {
+   "questionText": "Evaluate: sqrt(324) + sqrt(121) + sqrt(4)",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "sqrt(324) = 18, sqrt(121) = 11, sqrt(4) = 2. Sum = 31.",
+   "order": 52,
+   "subPattern": "surds-indices",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Recall squares up to 25: the roots are all whole numbers."
+  },
+  {
+   "questionText": "Evaluate: sqrt(441) + sqrt(361) + sqrt(225)",
+   "options": [
+    {
+     "text": "57"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "55"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "sqrt(441) = 21, sqrt(361) = 19, sqrt(225) = 15. Sum = 55.",
+   "order": 53,
+   "subPattern": "surds-indices",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Recall squares up to 25: the roots are all whole numbers."
+  },
+  {
+   "questionText": "Find the value of cbrt(27) + sqrt(64)",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "cbrt(27) = 3 and sqrt(64) = 8. Sum = 11.",
+   "order": 54,
+   "subPattern": "surds-indices",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Recall cubes: 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728."
+  },
+  {
+   "questionText": "What is the value of sqrt(0.04)?",
+   "options": [
+    {
+     "text": "0.2"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "0.25"
+    },
+    {
+     "text": "0.24"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "0.04 = 400/10000, so the root is 20/100 = 0.2.",
+   "order": 55,
+   "subPattern": "surds-indices",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "A square with 4 decimal places has a root with 2 decimal places."
+  },
+  {
+   "questionText": "Evaluate: sqrt(448) x sqrt(847)",
+   "options": [
+    {
+     "text": "1232"
+    },
+    {
+     "text": "616"
+    },
+    {
+     "text": "88"
+    },
+    {
+     "text": "924"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "sqrt(448) x sqrt(847) = sqrt(379456) = 616.",
+   "order": 56,
+   "subPattern": "surds-indices",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Multiply under the root: 448 x 847 = 379456, a perfect square (616^2)."
+  },
+  {
+   "questionText": "Find the value of cbrt(1000) + sqrt(16)",
+   "options": [
+    {
+     "text": "14"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "21"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "cbrt(1000) = 10 and sqrt(16) = 4. Sum = 14.",
+   "order": 57,
+   "subPattern": "surds-indices",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Recall cubes: 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728."
+  },
+  {
+   "questionText": "Find the value of cbrt(1331) + sqrt(36)",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "66"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "cbrt(1331) = 11 and sqrt(36) = 6. Sum = 17.",
+   "order": 58,
+   "subPattern": "surds-indices",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Recall cubes: 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728."
+  },
+  {
+   "questionText": "Find the value of cbrt(27) + sqrt(81)",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "cbrt(27) = 3 and sqrt(81) = 9. Sum = 12.",
+   "order": 59,
+   "subPattern": "surds-indices",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Recall cubes: 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728."
+  },
+  {
+   "questionText": "If sqrt(x) = 6 and sqrt(y) = 4, find x + y.",
+   "options": [
+    {
+     "text": "47"
+    },
+    {
+     "text": "52"
+    },
+    {
+     "text": "100"
+    },
+    {
+     "text": "39"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x = 36 and y = 16, so x + y = 52.",
+   "order": 60,
+   "subPattern": "surds-indices",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Square each root to recover the numbers."
+  },
+  {
+   "questionText": "If sqrt(x) = 8 and sqrt(y) = 4, find x + y.",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "144"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x = 64 and y = 16, so x + y = 80.",
+   "order": 61,
+   "subPattern": "surds-indices",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Square each root to recover the numbers."
+  },
+  {
+   "questionText": "If sqrt(x) = 3 and sqrt(y) = 3, find x + y.",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "x = 9 and y = 9, so x + y = 18.",
+   "order": 62,
+   "subPattern": "surds-indices",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Square each root to recover the numbers."
+  },
+  {
+   "questionText": "Find the approximate value: 46.97 x 6.02 + 32.98",
+   "options": [
+    {
+     "text": "280"
+    },
+    {
+     "text": "420"
+    },
+    {
+     "text": "385"
+    },
+    {
+     "text": "315"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 315. The exact value is 315.74, nearest to 315.",
+   "order": 63,
+   "subPattern": "approximation-estimation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 33.05 x 9.04 + 58.02",
+   "options": [
+    {
+     "text": "315"
+    },
+    {
+     "text": "435"
+    },
+    {
+     "text": "355"
+    },
+    {
+     "text": "475"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 355. The exact value is 356.79, nearest to 355.",
+   "order": 64,
+   "subPattern": "approximation-estimation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 45.02 x 3.04 + 60.02",
+   "options": [
+    {
+     "text": "195"
+    },
+    {
+     "text": "215"
+    },
+    {
+     "text": "255"
+    },
+    {
+     "text": "175"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 195. The exact value is 196.88, nearest to 195.",
+   "order": 65,
+   "subPattern": "approximation-estimation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 58.97 x 3.97 + 32.98",
+   "options": [
+    {
+     "text": "299"
+    },
+    {
+     "text": "209"
+    },
+    {
+     "text": "329"
+    },
+    {
+     "text": "269"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 269. The exact value is 267.09, nearest to 269.",
+   "order": 66,
+   "subPattern": "approximation-estimation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 9.98% of 399.7 + 24.98% of 69.8",
+   "options": [
+    {
+     "text": "68"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "53"
+    },
+    {
+     "text": "73"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 58. The exact value is 57.33, nearest to 58.",
+   "order": 67,
+   "subPattern": "approximation-estimation",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 24.98% of 399.7 + 49.98% of 50.3",
+   "options": [
+    {
+     "text": "140"
+    },
+    {
+     "text": "95"
+    },
+    {
+     "text": "125"
+    },
+    {
+     "text": "170"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 125. The exact value is 124.98, nearest to 125.",
+   "order": 68,
+   "subPattern": "approximation-estimation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 39.99% of 699.5 + 19.98% of 50.3",
+   "options": [
+    {
+     "text": "260"
+    },
+    {
+     "text": "290"
+    },
+    {
+     "text": "320"
+    },
+    {
+     "text": "350"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 290. The exact value is 289.78, nearest to 290.",
+   "order": 69,
+   "subPattern": "approximation-estimation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 19.98% of 800.4 + 39.98% of 49.8",
+   "options": [
+    {
+     "text": "180"
+    },
+    {
+     "text": "160"
+    },
+    {
+     "text": "200"
+    },
+    {
+     "text": "220"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 180. The exact value is 179.83, nearest to 180.",
+   "order": 70,
+   "subPattern": "approximation-estimation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 50.02% of 299.7 + 25.02% of 89.8",
+   "options": [
+    {
+     "text": "212"
+    },
+    {
+     "text": "232"
+    },
+    {
+     "text": "152"
+    },
+    {
+     "text": "172"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 172. The exact value is 172.38, nearest to 172.",
+   "order": 71,
+   "subPattern": "approximation-estimation",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 29.99% of 599.7 + 49.98% of 59.8",
+   "options": [
+    {
+     "text": "235"
+    },
+    {
+     "text": "185"
+    },
+    {
+     "text": "210"
+    },
+    {
+     "text": "285"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 210. The exact value is 209.74, nearest to 210.",
+   "order": 72,
+   "subPattern": "approximation-estimation",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 54.97 x 8.05 / 2.02 + 69.97",
+   "options": [
+    {
+     "text": "320"
+    },
+    {
+     "text": "230"
+    },
+    {
+     "text": "290"
+    },
+    {
+     "text": "260"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 290. The exact value is 289.03, nearest to 290.",
+   "order": 73,
+   "subPattern": "approximation-estimation",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "Find the approximate value: 44.97 x 9.05 / 7.02 + 88.02",
+   "options": [
+    {
+     "text": "161"
+    },
+    {
+     "text": "176"
+    },
+    {
+     "text": "116"
+    },
+    {
+     "text": "146"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Round each number to the nearest convenient value and compute: the expression is close to 146. The exact value is 145.99, nearest to 146.",
+   "order": 74,
+   "subPattern": "approximation-estimation",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Round every number to a clean one first, compute, then pick the option nearest your answer."
+  },
+  {
+   "questionText": "? x 19 = 76",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "1444"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Divide both sides by 19: ? = 76 / 19 = 4.",
+   "order": 75,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide the right-hand side by the multiplier."
+  },
+  {
+   "questionText": "? x 25 = 675",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "16875"
+    },
+    {
+     "text": "32"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Divide both sides by 25: ? = 675 / 25 = 27.",
+   "order": 76,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide the right-hand side by the multiplier."
+  },
+  {
+   "questionText": "565 - ? = 274",
+   "options": [
+    {
+     "text": "194"
+    },
+    {
+     "text": "291"
+    },
+    {
+     "text": "388"
+    },
+    {
+     "text": "856"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Subtract the result from 565: ? = 565 - 274 = 291.",
+   "order": 77,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Subtract the result from the starting number."
+  },
+  {
+   "questionText": "? x 9 = 270",
+   "options": [
+    {
+     "text": "2430"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Divide both sides by 9: ? = 270 / 9 = 30.",
+   "order": 78,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide the right-hand side by the multiplier."
+  },
+  {
+   "questionText": "35% of 720 = ? % of 280",
+   "options": [
+    {
+     "text": "180%"
+    },
+    {
+     "text": "120%"
+    },
+    {
+     "text": "90%"
+    },
+    {
+     "text": "35%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "35% of 720 = 252. ? = 252 / 280 x 100 = 90%.",
+   "order": 79,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find 35% of 720 first, then express it as a percentage of 280."
+  },
+  {
+   "questionText": "sqrt(?) = 3 x 7 + 18",
+   "options": [
+    {
+     "text": "1521"
+    },
+    {
+     "text": "2028"
+    },
+    {
+     "text": "1014"
+    },
+    {
+     "text": "39"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "sqrt(?) = 21 + 18 = 39, so ? = 39^2 = 1521.",
+   "order": 80,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Evaluate the right side, then square it."
+  },
+  {
+   "questionText": "? x 11 + 63 = 481",
+   "options": [
+    {
+     "text": "38"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "418"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "? x 11 = 481 - 63 = 418; ? = 38.",
+   "order": 81,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Remove the added number first, then divide."
+  },
+  {
+   "questionText": "sqrt(?) = 2 x 6 + 24",
+   "options": [
+    {
+     "text": "2592"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "864"
+    },
+    {
+     "text": "1296"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "sqrt(?) = 12 + 24 = 36, so ? = 36^2 = 1296.",
+   "order": 82,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Evaluate the right side, then square it."
+  },
+  {
+   "questionText": "20% of 720 = ? % of 200",
+   "options": [
+    {
+     "text": "36%"
+    },
+    {
+     "text": "72%"
+    },
+    {
+     "text": "96%"
+    },
+    {
+     "text": "20%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "20% of 720 = 144. ? = 144 / 200 x 100 = 72%.",
+   "order": 83,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find 20% of 720 first, then express it as a percentage of 200."
+  },
+  {
+   "questionText": "sqrt(?) = 3 x 8 + 21",
+   "options": [
+    {
+     "text": "45"
+    },
+    {
+     "text": "1620"
+    },
+    {
+     "text": "2025"
+    },
+    {
+     "text": "2700"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "sqrt(?) = 24 + 21 = 45, so ? = 45^2 = 2025.",
+   "order": 84,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Evaluate the right side, then square it."
+  },
+  {
+   "questionText": "cbrt(?) + 9 x 5 = 59",
+   "options": [
+    {
+     "text": "4116"
+    },
+    {
+     "text": "1372"
+    },
+    {
+     "text": "2744"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "cbrt(?) = 59 - 45 = 14, so ? = 14^3 = 2744.",
+   "order": 85,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Isolate the cube root, then cube both sides."
+  },
+  {
+   "questionText": "cbrt(?) + 8 x 7 = 59",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "cbrt(?) = 59 - 56 = 3, so ? = 3^3 = 27.",
+   "order": 86,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Isolate the cube root, then cube both sides."
+  },
+  {
+   "questionText": "? + 3 x 12 = 70^2",
+   "options": [
+    {
+     "text": "4864"
+    },
+    {
+     "text": "3648"
+    },
+    {
+     "text": "7296"
+    },
+    {
+     "text": "4936"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "70^2 = 4900; ? = 4900 - 36 = 4864.",
+   "order": 87,
+   "subPattern": "missing-number-in-expression",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Evaluate the square and the product, then subtract."
+  },
+  {
+   "questionText": "Which is the greatest: 5/6, 1/3, 5/7, 1/5?",
+   "options": [
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "5/6"
+    },
+    {
+     "text": "5/7"
+    },
+    {
+     "text": "1/5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decimal values: 5/6 = 0.833, 1/3 = 0.333, 5/7 = 0.714, 1/5 = 0.200. The largest is 5/6.",
+   "order": 88,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Convert each fraction to a decimal or use a common denominator."
+  },
+  {
+   "questionText": "Which is the greatest: 3/7, 2/3, 2/5, 6/7?",
+   "options": [
+    {
+     "text": "6/7"
+    },
+    {
+     "text": "2/3"
+    },
+    {
+     "text": "3/7"
+    },
+    {
+     "text": "2/5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decimal values: 3/7 = 0.429, 2/3 = 0.667, 2/5 = 0.400, 6/7 = 0.857. The largest is 6/7.",
+   "order": 89,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert each fraction to a decimal or use a common denominator."
+  },
+  {
+   "questionText": "Which is the greatest: 1/3, 5/6, 4/7, 1/4?",
+   "options": [
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "1/4"
+    },
+    {
+     "text": "4/7"
+    },
+    {
+     "text": "5/6"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decimal values: 1/3 = 0.333, 5/6 = 0.833, 4/7 = 0.571, 1/4 = 0.250. The largest is 5/6.",
+   "order": 90,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Convert each fraction to a decimal or use a common denominator."
+  },
+  {
+   "questionText": "Which is the greatest: 1/4, 1/3, 1/8, 1/2?",
+   "options": [
+    {
+     "text": "1/8"
+    },
+    {
+     "text": "1/2"
+    },
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "1/4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decimal values: 1/4 = 0.250, 1/3 = 0.333, 1/8 = 0.125, 1/2 = 0.500. The largest is 1/2.",
+   "order": 91,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert each fraction to a decimal or use a common denominator."
+  },
+  {
+   "questionText": "Arrange in ascending order: 3/8, 1/2, 1/9.",
+   "options": [
+    {
+     "text": "3/8 < 1/9 < 1/2"
+    },
+    {
+     "text": "3/8 < 1/2 < 1/9"
+    },
+    {
+     "text": "1/9 < 3/8 < 1/2"
+    },
+    {
+     "text": "1/9 < 1/2 < 3/8"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decimal values: 3/8 = 0.375, 1/2 = 0.500, 1/9 = 0.111. Ascending order: 1/9 < 3/8 < 1/2.",
+   "order": 92,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Compare by cross-multiplication or by decimals."
+  },
+  {
+   "questionText": "Arrange in ascending order: 1/9, 1/7, 9/11.",
+   "options": [
+    {
+     "text": "9/11 < 1/7 < 1/9"
+    },
+    {
+     "text": "1/9 < 1/7 < 9/11"
+    },
+    {
+     "text": "9/11 < 1/9 < 1/7"
+    },
+    {
+     "text": "1/9 < 9/11 < 1/7"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decimal values: 1/9 = 0.111, 1/7 = 0.143, 9/11 = 0.818. Ascending order: 1/9 < 1/7 < 9/11.",
+   "order": 93,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare by cross-multiplication or by decimals."
+  },
+  {
+   "questionText": "Arrange in ascending order: 1/11, 1/8, 1/2.",
+   "options": [
+    {
+     "text": "1/11 < 1/2 < 1/8"
+    },
+    {
+     "text": "1/8 < 1/11 < 1/2"
+    },
+    {
+     "text": "1/2 < 1/11 < 1/8"
+    },
+    {
+     "text": "1/11 < 1/8 < 1/2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decimal values: 1/11 = 0.091, 1/8 = 0.125, 1/2 = 0.500. Ascending order: 1/11 < 1/8 < 1/2.",
+   "order": 94,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare by cross-multiplication or by decimals."
+  },
+  {
+   "questionText": "Arrange in ascending order: 1/6, 11/12, 10/11.",
+   "options": [
+    {
+     "text": "1/6 < 10/11 < 11/12"
+    },
+    {
+     "text": "10/11 < 11/12 < 1/6"
+    },
+    {
+     "text": "1/6 < 11/12 < 10/11"
+    },
+    {
+     "text": "11/12 < 1/6 < 10/11"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decimal values: 1/6 = 0.167, 11/12 = 0.917, 10/11 = 0.909. Ascending order: 1/6 < 10/11 < 11/12.",
+   "order": 95,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Compare by cross-multiplication or by decimals."
+  },
+  {
+   "questionText": "Arrange in ascending order: 7/8, 3/4, 1/5.",
+   "options": [
+    {
+     "text": "3/4 < 7/8 < 1/5"
+    },
+    {
+     "text": "1/5 < 7/8 < 3/4"
+    },
+    {
+     "text": "1/5 < 3/4 < 7/8"
+    },
+    {
+     "text": "7/8 < 3/4 < 1/5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decimal values: 7/8 = 0.875, 3/4 = 0.750, 1/5 = 0.200. Ascending order: 1/5 < 3/4 < 7/8.",
+   "order": 96,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare by cross-multiplication or by decimals."
+  },
+  {
+   "questionText": "Arrange in ascending order: 5/7, 1/11, 6/7.",
+   "options": [
+    {
+     "text": "1/11 < 5/7 < 6/7"
+    },
+    {
+     "text": "1/11 < 6/7 < 5/7"
+    },
+    {
+     "text": "6/7 < 1/11 < 5/7"
+    },
+    {
+     "text": "5/7 < 6/7 < 1/11"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decimal values: 5/7 = 0.714, 1/11 = 0.091, 6/7 = 0.857. Ascending order: 1/11 < 5/7 < 6/7.",
+   "order": 97,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Compare by cross-multiplication or by decimals."
+  },
+  {
+   "questionText": "Which of the fractions 8/13, 2/7, 2/9 is the middle (median) one in value?",
+   "options": [
+    {
+     "text": "none of these"
+    },
+    {
+     "text": "8/13"
+    },
+    {
+     "text": "2/9"
+    },
+    {
+     "text": "2/7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decimal values: 8/13 = 0.615, 2/7 = 0.286, 2/9 = 0.222. The middle value is 2/7.",
+   "order": 98,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Convert to decimals and pick the middle one."
+  },
+  {
+   "questionText": "Which is the largest among cbrt(4), sqrt(3) and sqrt(5)?",
+   "options": [
+    {
+     "text": "cbrt(4)"
+    },
+    {
+     "text": "sqrt(5)"
+    },
+    {
+     "text": "sqrt(3)"
+    },
+    {
+     "text": "cbrt(10)"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Numerical values: cbrt(4) = 1.587, sqrt(3) = 1.732, sqrt(5) = 2.236. Largest is sqrt(5).",
+   "order": 99,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Estimate each root: square or cube them to find which lies where."
+  },
+  {
+   "questionText": "Which is the largest among cbrt(5), sqrt(5) and sqrt(2)?",
+   "options": [
+    {
+     "text": "sqrt(2)"
+    },
+    {
+     "text": "cbrt(5)"
+    },
+    {
+     "text": "sqrt(11)"
+    },
+    {
+     "text": "sqrt(5)"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Numerical values: cbrt(5) = 1.710, sqrt(5) = 2.236, sqrt(2) = 1.414. Largest is sqrt(5).",
+   "order": 100,
+   "subPattern": "comparison-of-fractions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Estimate each root: square or cube them to find which lies where."
+  }
+ ]
+}

@@ -1,0 +1,1874 @@
+{
+  "questions": [
+    {
+      "questionText": "10 machines produce 480 items in 8 hours. How many items will 5 machines produce in 12 hours?",
+      "options": [
+        "432",
+        "180",
+        "360",
+        "240"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Output is proportional to machines x hours. Items = 480 x (5 x 12)/(10 x 8) = 360.",
+      "shortcut": "Output = k x machines x hours.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pump delivers 200 litres of water in 5 minutes. How long will it take to deliver 300 litres at the same rate?",
+      "options": [
+        "5.5 minutes",
+        "7.5 minutes",
+        "6.5 minutes",
+        "12.5 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate = 200/5 = 40 litres/min. Time = 300/40 = 7.5 minutes.",
+      "shortcut": "Time = volume / rate.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "8 men can complete a job in 20 days. How many days will 4 men take to complete the same job?",
+      "options": [
+        "40 days",
+        "10 days",
+        "35 days",
+        "50 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Men x days = constant: 8 x 20 = 4 x d, so d = 160/4 = 40 days.",
+      "shortcut": "More men -> fewer days: men x days is constant.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 12 kg of rice costs Rs 240, what is the cost of 2500 grams of rice?",
+      "options": [
+        "Rs 52",
+        "Rs 45",
+        "Rs 50",
+        "Rs 50000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cost per kg = 240/12 = 20. 2500 g = 2.5 kg, so cost = 20 x 2.5 = Rs 50.",
+      "shortcut": "Convert grams to kg first, then scale the price.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "5 machines produce 480 items in 8 hours. How many items will 3 machines produce in 4 hours?",
+      "options": [
+        "144",
+        "72",
+        "192",
+        "288"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Output is proportional to machines x hours. Items = 480 x (3 x 4)/(5 x 8) = 144.",
+      "shortcut": "Output = k x machines x hours.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number of workers on a job is increased by 150%, by what percent will the time needed decrease (assuming equal efficiency)?",
+      "options": [
+        "60%",
+        "61%",
+        "150%",
+        "58%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "New workers = 250% of the old, so new time = 100/250 of the old. Decrease = 150/250 x 100 = 60%.",
+      "shortcut": "Workers up by x% -> time down by 100x/(100 + x)%.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 15 kg of pulses costs Rs 540, what is the cost of 250 grams of pulses?",
+      "options": [
+        "Rs 9000",
+        "Rs 10",
+        "Rs 9",
+        "Rs 8"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cost per kg = 540/15 = 36. 250 g = 0.25 kg, so cost = 36 x 0.25 = Rs 9.",
+      "shortcut": "Convert grams to kg first, then scale the price.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "15 men can complete a piece of work in 24 days. After 10 days, the number of men is changed to 20. In how many more days will the work be completed?",
+      "options": [
+        "14 days",
+        "10.5 days",
+        "15.5 days",
+        "5.5 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total = 15 x 24 = 360 man-days. Done = 15 x 10 = 150. Left = 210. With 20 men: 210/20 = 10.5 days.",
+      "shortcut": "Convert to man-days, subtract the done part, divide by the new strength.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 workers working 9 hours a day for 8 days are paid Rs 8640 in all. How much will 15 workers working 5 hours a day for 10 days be paid at the same hourly rate?",
+      "options": [
+        "Rs 9000",
+        "Rs 12960",
+        "Rs 4500",
+        "Rs 13500"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate per worker-hour = 8640/(10 x 9 x 8) = 12. Worker-hours now = 15 x 5 x 10 = 750. Pay = Rs 9000.",
+      "shortcut": "Pay = rate x workers x hours x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 men working 6 hours a day for 5 days can build 120 metres of wall. How many metres can 16 men working 10 hours a day build in 4 days?",
+      "options": [
+        "320 metres",
+        "192 metres",
+        "256 metres",
+        "128 metres"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Work is proportional to men x hours x days. New work = 120 x (16 x 10 x 4)/(10 x 6 x 5) = 256 metres.",
+      "shortcut": "Work = k x men x hours x days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "2 men can do the work of 3 women. How many women can do the work of 6 men?",
+      "options": [
+        "4",
+        "7",
+        "9",
+        "6"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "1 man = 3/2 women. 6 men = 6 x 3/2 = 9 women.",
+      "shortcut": "Convert one unit into the other, then scale.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 machines produce 300 items in 12 hours. How many items will 9 machines produce in 12 hours?",
+      "options": [
+        "540",
+        "270",
+        "405",
+        "324"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Output is proportional to machines x hours. Items = 300 x (9 x 12)/(10 x 12) = 270.",
+      "shortcut": "Output = k x machines x hours.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "30 men can complete a job in 16 days. How many days will 40 men take to complete the same job?",
+      "options": [
+        "16 days",
+        "7 days",
+        "12 days",
+        "13 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Men x days = constant: 30 x 16 = 40 x d, so d = 480/40 = 12 days.",
+      "shortcut": "More men -> fewer days: men x days is constant.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "15 men working 10 hours a day can finish a job in 18 days. In how many days can 30 men working 9 hours a day finish it?",
+      "options": [
+        "9 days",
+        "10 days",
+        "5 days",
+        "12 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Man-hours = 15 x 10 x 18 = 2700. Days = 2700/(30 x 9) = 10.",
+      "shortcut": "Men x hours x days is the constant work.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car runs 15 km on 1 litre of petrol. How many litres will it need for 480 km?",
+      "options": [
+        "16 litres",
+        "32 litres",
+        "64 litres",
+        "7200 litres"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Litres = distance / mileage = 480/15 = 32.",
+      "shortcut": "Fuel = distance / km per litre.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A hostel has food for 360 students for 15 days. For how many days will the same food last if there are 300 students?",
+      "options": [
+        "12 days",
+        "12.5 days",
+        "18 days",
+        "19 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 360 x 15 = 5400 student-days. With 300 students: 5400/300 = 18 days.",
+      "shortcut": "Fixed stock = students x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A vehicle goes 80 km on 10 litres at normal speed. At a higher speed its fuel consumption per km rises by 20%. How many litres will it need for 160 km at the higher speed?",
+      "options": [
+        "24 litres",
+        "16 litres",
+        "20 litres",
+        "26 litres"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Normal consumption = 10/80 = 0.125 L/km. At higher speed = 0.125 x 1.2 = 0.15 L/km. For 160 km = 24 litres.",
+      "shortcut": "Adjust the per-km rate first, then multiply by distance.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 men earn Rs 6000 in 4 days. How much will 18 men earn in 5 days at the same rate?",
+      "options": [
+        "Rs 9000",
+        "Rs 13500",
+        "Rs 6750",
+        "Rs 10800"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Wage per man-day = 6000/(10 x 4) = 150. For 18 men x 5 days = 90 man-days: Rs 13500.",
+      "shortcut": "Wages are proportional to men x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "6 machines working 8 hours a day produce 720 items in 4 days. In how many days can 5 machines working 8 hours a day produce 1800 items?",
+      "options": [
+        "13 days",
+        "12 days",
+        "14 days",
+        "10 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Output per machine-hour = 720/(6 x 8 x 4) = 3.75. Machine-hours needed = 480. Days = that / (5 x 8) = 12.",
+      "shortcut": "Compound proportion: items, machines, hours and days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man earns Rs 1000 a day and a woman earns 3/4 of that. What is the total wage for 15 men and 10 women working for 2 days?",
+      "options": [
+        "Rs 22500",
+        "Rs 45000",
+        "Rs 40500",
+        "Rs 50000"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Woman's wage = 1000 x 3/4 = 750. Daily total = 15 x 1000 + 10 x 750 = 22500. For 2 days = Rs 45000.",
+      "shortcut": "Compute each group's daily wage, add, then multiply by days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "24 men can complete a job in 30 days. How many days will 9 men take to complete the same job?",
+      "options": [
+        "80 days",
+        "64 days",
+        "60 days",
+        "11.25 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Men x days = constant: 24 x 30 = 9 x d, so d = 720/9 = 80 days.",
+      "shortcut": "More men -> fewer days: men x days is constant.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 12 metres of cloth cost Rs 60, what is the cost of 4 metres of cloth?",
+      "options": [
+        "Rs 180",
+        "Rs 20",
+        "Rs 24",
+        "Rs 18"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cost of 1 = 60/12 = 5. Cost of 4 = 4 x 5 = Rs 20.",
+      "shortcut": "Direct proportion: cost2 = cost1 x (qty2/qty1).",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A hostel has food for 120 students for 18 days. For how many days will the same food last if there are 240 students?",
+      "options": [
+        "8 days",
+        "14 days",
+        "36 days",
+        "9 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total = 120 x 18 = 2160 student-days. With 240 students: 2160/240 = 9 days.",
+      "shortcut": "Fixed stock = students x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "8 men can complete a job in 20 days. How many days will 5 men take to complete the same job?",
+      "options": [
+        "34 days",
+        "32 days",
+        "12.5 days",
+        "33 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Men x days = constant: 8 x 20 = 5 x d, so d = 160/5 = 32 days.",
+      "shortcut": "More men -> fewer days: men x days is constant.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "6 men can complete a piece of work in 15 days. After 10 days, the number of men is changed to 5. In how many more days will the work be completed?",
+      "options": [
+        "5 days",
+        "1 days",
+        "6 days",
+        "4 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Total = 6 x 15 = 90 man-days. Done = 6 x 10 = 60. Left = 30. With 5 men: 30/5 = 6 days.",
+      "shortcut": "Convert to man-days, subtract the done part, divide by the new strength.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 workers working 6 hours a day for 5 days are paid Rs 1800 in all. How much will 15 workers working 8 hours a day for 4 days be paid at the same hourly rate?",
+      "options": [
+        "Rs 2880",
+        "Rs 3456",
+        "Rs 1920",
+        "Rs 2700"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate per worker-hour = 1800/(10 x 6 x 5) = 6. Worker-hours now = 15 x 8 x 4 = 480. Pay = Rs 2880.",
+      "shortcut": "Pay = rate x workers x hours x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A hostel has food for 360 students for 20 days. For how many days will the same food last if there are 480 students?",
+      "options": [
+        "17 days",
+        "15 days",
+        "18 days",
+        "30 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total = 360 x 20 = 7200 student-days. With 480 students: 7200/480 = 15 days.",
+      "shortcut": "Fixed stock = students x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "5 machines produce 240 items in 12 hours. How many hours will 9 machines need to produce 900 items?",
+      "options": [
+        "26 hours",
+        "45 hours",
+        "30 hours",
+        "25 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rate per machine-hour = 240/(5 x 12) = 4. Machine-hours needed = 900/4 = 225. Hours = 25.",
+      "shortcut": "Find the per machine-hour output, then divide.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 men working 6 hours a day for 5 days can build 150 metres of wall. How many metres can 20 men working 8 hours a day build in 6 days?",
+      "options": [
+        "480 metres",
+        "600 metres",
+        "720 metres",
+        "300 metres"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Work is proportional to men x hours x days. New work = 150 x (20 x 8 x 6)/(10 x 6 x 5) = 480 metres.",
+      "shortcut": "Work = k x men x hours x days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "6 workers working 6 hours a day for 6 days are paid Rs 1728 in all. How much will 4 workers working 5 hours a day for 10 days be paid at the same hourly rate?",
+      "options": [
+        "Rs 2000",
+        "Rs 1152",
+        "Rs 1600",
+        "Rs 1200"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rate per worker-hour = 1728/(6 x 6 x 6) = 8. Worker-hours now = 4 x 5 x 10 = 200. Pay = Rs 1600.",
+      "shortcut": "Pay = rate x workers x hours x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 12 kg of sugar costs Rs 288, what is the cost of 750 grams of sugar?",
+      "options": [
+        "Rs 18000",
+        "Rs 18",
+        "Rs 12",
+        "Rs 24"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cost per kg = 288/12 = 24. 750 g = 0.75 kg, so cost = 24 x 0.75 = Rs 18.",
+      "shortcut": "Convert grams to kg first, then scale the price.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "4 machines produce 300 items in 10 hours. How many hours will 16 machines need to produce 1200 items?",
+      "options": [
+        "9 hours",
+        "10 hours",
+        "40 hours",
+        "20 hours"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate per machine-hour = 300/(4 x 10) = 7.5. Machine-hours needed = 1200/7.5 = 160. Hours = 10.",
+      "shortcut": "Find the per machine-hour output, then divide.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car runs 16 km on 1 litre of petrol. How many litres will it need for 300 km?",
+      "options": [
+        "37.5 litres",
+        "4800 litres",
+        "17.75 litres",
+        "18.75 litres"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Litres = distance / mileage = 300/16 = 18.75.",
+      "shortcut": "Fuel = distance / km per litre.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fort has provisions for 150 soldiers for 60 days. How long will the provisions last for 100 soldiers?",
+      "options": [
+        "81 days",
+        "40 days",
+        "90 days",
+        "99 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Provisions = 150 x 60 = 9000 soldier-days. For 100 soldiers: 9000/100 = 90 days.",
+      "shortcut": "Provisions are fixed: soldiers x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "8 workers working 6 hours a day for 4 days are paid Rs 1920 in all. How much will 20 workers working 6 hours a day for 3 days be paid at the same hourly rate?",
+      "options": [
+        "Rs 3960",
+        "Rs 4800",
+        "Rs 3600",
+        "Rs 2700"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rate per worker-hour = 1920/(8 x 6 x 4) = 10. Worker-hours now = 20 x 6 x 3 = 360. Pay = Rs 3600.",
+      "shortcut": "Pay = rate x workers x hours x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 workers working 6 hours a day for 4 days are paid Rs 1920 in all. How much will 4 workers working 10 hours a day for 6 days be paid at the same hourly rate?",
+      "options": [
+        "Rs 1920",
+        "Rs 768",
+        "Rs 1728",
+        "Rs 2560"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate per worker-hour = 1920/(10 x 6 x 4) = 8. Worker-hours now = 4 x 10 x 6 = 240. Pay = Rs 1920.",
+      "shortcut": "Pay = rate x workers x hours x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One man's work equals the work of 3 women. 4 men and 6 women finish a job in 8 days. How many days will 3 men take to finish the same job?",
+      "options": [
+        "17 days",
+        "14 days",
+        "18 days",
+        "16 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In women-units: 4 men = 12 women, so the team = 18 women. Job = 18 x 8 = 144 woman-days. 3 men = 9 women, so days = 144/9 = 16.",
+      "shortcut": "Convert everyone into the same unit of worker.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "4 men can do the work of 7 women. How many women can do the work of 16 men?",
+      "options": [
+        "28",
+        "14",
+        "21",
+        "30"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1 man = 7/4 women. 16 men = 16 x 7/4 = 28 women.",
+      "shortcut": "Convert one unit into the other, then scale.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "3 men can do the work of 5 women. How many women can do the work of 15 men?",
+      "options": [
+        "9",
+        "30",
+        "20",
+        "25"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "1 man = 5/3 women. 15 men = 15 x 5/3 = 25 women.",
+      "shortcut": "Convert one unit into the other, then scale.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 men working 10 hours a day for 6 days can build 240 metres of wall. How many metres can 15 men working 5 hours a day build in 12 days?",
+      "options": [
+        "450 metres",
+        "324 metres",
+        "360 metres",
+        "396 metres"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Work is proportional to men x hours x days. New work = 240 x (15 x 5 x 12)/(10 x 10 x 6) = 360 metres.",
+      "shortcut": "Work = k x men x hours x days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The cost of 2 pens equals the cost of 5 pencils, and 4 pencils cost Rs 24. What is the cost of 8 pens?",
+      "options": [
+        "Rs 80",
+        "Rs 132",
+        "Rs 120",
+        "Rs 48"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "1 pencil = 6. 5 pencils = 30 = 2 pens, so 1 pen = 15. 8 pens = Rs 120.",
+      "shortcut": "Chain the equalities: pens -> pencils -> rupees.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If the number of workers on a job is increased by 100%, by what percent will the time needed decrease (assuming equal efficiency)?",
+      "options": [
+        "52%",
+        "50%",
+        "48%",
+        "100%"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "New workers = 200% of the old, so new time = 100/200 of the old. Decrease = 100/200 x 100 = 50%.",
+      "shortcut": "Workers up by x% -> time down by 100x/(100 + x)%.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "4 machines produce 300 items in 12 hours. How many hours will 3 machines need to produce 1200 items?",
+      "options": [
+        "64 hours",
+        "96 hours",
+        "48 hours",
+        "32 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate per machine-hour = 300/(4 x 12) = 6.25. Machine-hours needed = 1200/6.25 = 192. Hours = 64.",
+      "shortcut": "Find the per machine-hour output, then divide.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pump delivers 200 litres of water in 10 minutes. How long will it take to deliver 900 litres at the same rate?",
+      "options": [
+        "45 minutes",
+        "40 minutes",
+        "60 minutes",
+        "46 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate = 200/10 = 20 litres/min. Time = 900/20 = 45 minutes.",
+      "shortcut": "Time = volume / rate.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One man's work equals the work of 2 women. 3 men and 8 women finish a job in 9 days. How many days will 6 men take to finish the same job?",
+      "options": [
+        "10.5 days",
+        "4.5 days",
+        "5.25 days",
+        "11.5 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In women-units: 3 men = 6 women, so the team = 14 women. Job = 14 x 9 = 126 woman-days. 6 men = 12 women, so days = 126/12 = 10.5.",
+      "shortcut": "Convert everyone into the same unit of worker.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A hostel has food for 240 students for 24 days. For how many days will the same food last if there are 180 students?",
+      "options": [
+        "18 days",
+        "32 days",
+        "34 days",
+        "40 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total = 240 x 24 = 5760 student-days. With 180 students: 5760/180 = 32 days.",
+      "shortcut": "Fixed stock = students x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "3 men do the same work as 5 women, and 1 woman does the same work as 3 boys. 5 men, 8 women and 10 boys finish a job in 15 days. How many days will 3 men take to finish it?",
+      "options": [
+        "58 days",
+        "59 days",
+        "25 days",
+        "64 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "1 man = 5/3 women = 5 boys. Team in boy-units = 5 x 5 + 8 x 3 + 10 = 59. Job = 885 boy-days. 3 men = 15 boys, so days = 59.",
+      "shortcut": "Reduce everyone to the smallest worker (boy) and compare boy-days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fort has provisions for 150 soldiers for 45 days. How long will the provisions last for 250 soldiers?",
+      "options": [
+        "28 days",
+        "27 days",
+        "26 days",
+        "75 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Provisions = 150 x 45 = 6750 soldier-days. For 250 soldiers: 6750/250 = 27 days.",
+      "shortcut": "Provisions are fixed: soldiers x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A garrison of 200 men has provisions for 24 days. After 5 days, 100 men leave. For how many more days will the remaining provisions last?",
+      "options": [
+        "38 days",
+        "39 days",
+        "19 days",
+        "43 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Provisions left = 200 x (24 - 5) = 3800 man-days. Remaining men = 100. Days = 3800/100 = 38.",
+      "shortcut": "Count what is left in man-days, divide by the new strength.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "The cost of 2 pens equals the cost of 5 pencils, and 4 pencils cost Rs 40. What is the cost of 18 pens?",
+      "options": [
+        "Rs 450",
+        "Rs 600",
+        "Rs 300",
+        "Rs 180"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1 pencil = 10. 5 pencils = 50 = 2 pens, so 1 pen = 25. 18 pens = Rs 450.",
+      "shortcut": "Chain the equalities: pens -> pencils -> rupees.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A garrison of 500 men has provisions for 40 days. After 5 days a reinforcement of 200 men arrives. For how many more days will the provisions last now?",
+      "options": [
+        "25 days",
+        "35 days",
+        "23 days",
+        "30 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Provisions left = 500 x (40 - 5) = 17500 man-days. Men now = 700. Days = 17500/700 = 25.",
+      "shortcut": "Same method with the larger strength.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 men working 9 hours a day can finish a job in 20 days. In how many days can 6 men working 12 hours a day finish it?",
+      "options": [
+        "20 days",
+        "30 days",
+        "27 days",
+        "25 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Man-hours = 10 x 9 x 20 = 1800. Days = 1800/(6 x 12) = 25.",
+      "shortcut": "Men x hours x days is the constant work.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "8 machines produce 600 items in 10 hours. How many hours will 16 machines need to produce 900 items?",
+      "options": [
+        "6.5 hours",
+        "15 hours",
+        "9 hours",
+        "7.5 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rate per machine-hour = 600/(8 x 10) = 7.5. Machine-hours needed = 900/7.5 = 120. Hours = 7.5.",
+      "shortcut": "Find the per machine-hour output, then divide.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 men working 9 hours a day for 8 days can build 360 metres of wall. How many metres can 16 men working 12 hours a day build in 12 days?",
+      "options": [
+        "1728 metres",
+        "1152 metres",
+        "1536 metres",
+        "576 metres"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Work is proportional to men x hours x days. New work = 360 x (16 x 12 x 12)/(10 x 9 x 8) = 1152 metres.",
+      "shortcut": "Work = k x men x hours x days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pump delivers 200 litres of water in 10 minutes. How long will it take to deliver 1200 litres at the same rate?",
+      "options": [
+        "61 minutes",
+        "58 minutes",
+        "60 minutes",
+        "59 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rate = 200/10 = 20 litres/min. Time = 1200/20 = 60 minutes.",
+      "shortcut": "Time = volume / rate.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "3 men do the same work as 4 women, and 1 woman does the same work as 3 boys. 3 men, 6 women and 6 boys finish a job in 10 days. How many days will 5 men take to finish it?",
+      "options": [
+        "23 days",
+        "16 days",
+        "6 days",
+        "18 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "1 man = 4/3 women = 4 boys. Team in boy-units = 3 x 4 + 6 x 3 + 6 = 36. Job = 360 boy-days. 5 men = 20 boys, so days = 18.",
+      "shortcut": "Reduce everyone to the smallest worker (boy) and compare boy-days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "15 men earn Rs 12000 in 10 days. How much will 25 men earn in 6 days at the same rate?",
+      "options": [
+        "Rs 20000",
+        "Rs 12000",
+        "Rs 8000",
+        "Rs 18000"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Wage per man-day = 12000/(15 x 10) = 80. For 25 men x 6 days = 150 man-days: Rs 12000.",
+      "shortcut": "Wages are proportional to men x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A hostel has food for 120 students for 30 days. For how many days will the same food last if there are 90 students?",
+      "options": [
+        "22.5 days",
+        "32 days",
+        "38 days",
+        "40 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Total = 120 x 30 = 3600 student-days. With 90 students: 3600/90 = 40 days.",
+      "shortcut": "Fixed stock = students x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "12 men working 9 hours a day can finish a job in 20 days. In how many days can 24 men working 6 hours a day finish it?",
+      "options": [
+        "13 days",
+        "10 days",
+        "14 days",
+        "15 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Man-hours = 12 x 9 x 20 = 2160. Days = 2160/(24 x 6) = 15.",
+      "shortcut": "Men x hours x days is the constant work.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 20 notebooks cost Rs 400, what is the cost of 5 notebooks?",
+      "options": [
+        "Rs 200",
+        "Rs 80",
+        "Rs 1600",
+        "Rs 100"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Cost of 1 = 400/20 = 20. Cost of 5 = 5 x 20 = Rs 100.",
+      "shortcut": "Direct proportion: cost2 = cost1 x (qty2/qty1).",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 men earn Rs 9000 in 6 days. How much will 16 men earn in 12 days at the same rate?",
+      "options": [
+        "Rs 57600",
+        "Rs 14400",
+        "Rs 25920",
+        "Rs 28800"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Wage per man-day = 9000/(10 x 6) = 150. For 16 men x 12 days = 192 man-days: Rs 28800.",
+      "shortcut": "Wages are proportional to men x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "4 men working 8 hours a day for 5 days can build 360 metres of wall. How many metres can 20 men working 12 hours a day build in 12 days?",
+      "options": [
+        "7776 metres",
+        "1800 metres",
+        "6480 metres",
+        "5184 metres"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Work is proportional to men x hours x days. New work = 360 x (20 x 12 x 12)/(4 x 8 x 5) = 6480 metres.",
+      "shortcut": "Work = k x men x hours x days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pump delivers 450 litres of water in 12 minutes. How long will it take to deliver 300 litres at the same rate?",
+      "options": [
+        "18 minutes",
+        "8 minutes",
+        "6 minutes",
+        "16 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate = 450/12 = 37.5 litres/min. Time = 300/37.5 = 8 minutes.",
+      "shortcut": "Time = volume / rate.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A garrison of 200 men has provisions for 45 days. After 15 days, 40 men leave. For how many more days will the remaining provisions last?",
+      "options": [
+        "37.5 days",
+        "30 days",
+        "45 days",
+        "41.25 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Provisions left = 200 x (45 - 15) = 6000 man-days. Remaining men = 160. Days = 6000/160 = 37.5.",
+      "shortcut": "Count what is left in man-days, divide by the new strength.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A vehicle goes 64 km on 8 litres at normal speed. At a higher speed its fuel consumption per km rises by 40%. How many litres will it need for 100 km at the higher speed?",
+      "options": [
+        "17.5 litres",
+        "19.5 litres",
+        "14 litres",
+        "12.5 litres"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Normal consumption = 8/64 = 0.125 L/km. At higher speed = 0.125 x 1.4 = 0.175 L/km. For 100 km = 17.5 litres.",
+      "shortcut": "Adjust the per-km rate first, then multiply by distance.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 24 mangoes cost Rs 192, what is the cost of 9 mangoes?",
+      "options": [
+        "Rs 72",
+        "Rs 48",
+        "Rs 96",
+        "Rs 512"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cost of 1 = 192/24 = 8. Cost of 9 = 9 x 8 = Rs 72.",
+      "shortcut": "Direct proportion: cost2 = cost1 x (qty2/qty1).",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pump delivers 600 litres of water in 12 minutes. How long will it take to deliver 1000 litres at the same rate?",
+      "options": [
+        "21 minutes",
+        "7.2 minutes",
+        "20 minutes",
+        "25 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rate = 600/12 = 50 litres/min. Time = 1000/50 = 20 minutes.",
+      "shortcut": "Time = volume / rate.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 8 kg of sugar costs Rs 160, what is the cost of 250 grams of sugar?",
+      "options": [
+        "Rs 5000",
+        "Rs 5",
+        "Rs 4",
+        "Rs 10"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cost per kg = 160/8 = 20. 250 g = 0.25 kg, so cost = 20 x 0.25 = Rs 5.",
+      "shortcut": "Convert grams to kg first, then scale the price.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A car runs 16 km on 1 litre of petrol. How many litres will it need for 180 km?",
+      "options": [
+        "11.25 litres",
+        "9.25 litres",
+        "6.25 litres",
+        "2880 litres"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Litres = distance / mileage = 180/16 = 11.25.",
+      "shortcut": "Fuel = distance / km per litre.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "15 men can complete a piece of work in 10 days. After 6 days, the number of men is changed to 15. In how many more days will the work be completed?",
+      "options": [
+        "4 days",
+        "8 days",
+        "5 days",
+        "6 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total = 15 x 10 = 150 man-days. Done = 15 x 6 = 90. Left = 60. With 15 men: 60/15 = 4 days.",
+      "shortcut": "Convert to man-days, subtract the done part, divide by the new strength.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fort has provisions for 500 soldiers for 45 days. How long will the provisions last for 600 soldiers?",
+      "options": [
+        "18.75 days",
+        "54 days",
+        "37.5 days",
+        "50 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Provisions = 500 x 45 = 22500 soldier-days. For 600 soldiers: 22500/600 = 37.5 days.",
+      "shortcut": "Provisions are fixed: soldiers x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 12 kg of flour costs Rs 720, what is the cost of 2500 grams of flour?",
+      "options": [
+        "Rs 165",
+        "Rs 150",
+        "Rs 150000",
+        "Rs 135"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cost per kg = 720/12 = 60. 2500 g = 2.5 kg, so cost = 60 x 2.5 = Rs 150.",
+      "shortcut": "Convert grams to kg first, then scale the price.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "6 workers working 9 hours a day for 6 days are paid Rs 3888 in all. How much will 15 workers working 5 hours a day for 6 days be paid at the same hourly rate?",
+      "options": [
+        "Rs 9720",
+        "Rs 5400",
+        "Rs 4860",
+        "Rs 7200"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate per worker-hour = 3888/(6 x 9 x 6) = 12. Worker-hours now = 15 x 5 x 6 = 450. Pay = Rs 5400.",
+      "shortcut": "Pay = rate x workers x hours x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "4 machines working 10 hours a day produce 480 items in 8 days. In how many days can 10 machines working 5 hours a day produce 900 items?",
+      "options": [
+        "10 days",
+        "17 days",
+        "15 days",
+        "12 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Output per machine-hour = 480/(4 x 10 x 8) = 1.5. Machine-hours needed = 600. Days = that / (10 x 5) = 12.",
+      "shortcut": "Compound proportion: items, machines, hours and days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A garrison of 300 men has provisions for 24 days. After 6 days, 100 men leave. For how many more days will the remaining provisions last?",
+      "options": [
+        "29 days",
+        "18 days",
+        "22 days",
+        "27 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Provisions left = 300 x (24 - 6) = 5400 man-days. Remaining men = 200. Days = 5400/200 = 27.",
+      "shortcut": "Count what is left in man-days, divide by the new strength.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pump delivers 200 litres of water in 10 minutes. How long will it take to deliver 1000 litres at the same rate?",
+      "options": [
+        "2 minutes",
+        "48 minutes",
+        "60 minutes",
+        "50 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rate = 200/10 = 20 litres/min. Time = 1000/20 = 50 minutes.",
+      "shortcut": "Time = volume / rate.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "10 machines produce 300 items in 12 hours. How many hours will 16 machines need to produce 1200 items?",
+      "options": [
+        "48 hours",
+        "28 hours",
+        "40 hours",
+        "30 hours"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rate per machine-hour = 300/(10 x 12) = 2.5. Machine-hours needed = 1200/2.5 = 480. Hours = 30.",
+      "shortcut": "Find the per machine-hour output, then divide.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 15 kg of pulses costs Rs 300, what is the cost of 4000 grams of pulses?",
+      "options": [
+        "Rs 88",
+        "Rs 100",
+        "Rs 80",
+        "Rs 80000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cost per kg = 300/15 = 20. 4000 g = 4 kg, so cost = 20 x 4 = Rs 80.",
+      "shortcut": "Convert grams to kg first, then scale the price.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A garrison of 240 men has provisions for 36 days. After 15 days, 80 men leave. For how many more days will the remaining provisions last?",
+      "options": [
+        "42 days",
+        "31.5 days",
+        "37.8 days",
+        "21 days"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Provisions left = 240 x (36 - 15) = 5040 man-days. Remaining men = 160. Days = 5040/160 = 31.5.",
+      "shortcut": "Count what is left in man-days, divide by the new strength.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A pump delivers 450 litres of water in 6 minutes. How long will it take to deliver 750 litres at the same rate?",
+      "options": [
+        "3.6 minutes",
+        "10 minutes",
+        "9 minutes",
+        "12 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rate = 450/6 = 75 litres/min. Time = 750/75 = 10 minutes.",
+      "shortcut": "Time = volume / rate.",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man earns Rs 1000 a day and a woman earns 1/2 of that. What is the total wage for 6 men and 4 women working for 6 days?",
+      "options": [
+        "Rs 60000",
+        "Rs 72000",
+        "Rs 48000",
+        "Rs 96000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Woman's wage = 1000 x 1/2 = 500. Daily total = 6 x 1000 + 4 x 500 = 8000. For 6 days = Rs 48000.",
+      "shortcut": "Compute each group's daily wage, add, then multiply by days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A garrison of 240 men has provisions for 30 days. After 10 days, 80 men leave. For how many more days will the remaining provisions last?",
+      "options": [
+        "30 days",
+        "33 days",
+        "20 days",
+        "25 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Provisions left = 240 x (30 - 10) = 4800 man-days. Remaining men = 160. Days = 4800/160 = 30.",
+      "shortcut": "Count what is left in man-days, divide by the new strength.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One man's work equals the work of 2 women. 5 men and 4 women finish a job in 6 days. How many days will 6 men take to finish the same job?",
+      "options": [
+        "6 days",
+        "12 days",
+        "5 days",
+        "7 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In women-units: 5 men = 10 women, so the team = 14 women. Job = 14 x 6 = 84 woman-days. 6 men = 12 women, so days = 84/12 = 7.",
+      "shortcut": "Convert everyone into the same unit of worker.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "4 machines working 8 hours a day produce 480 items in 6 days. In how many days can 10 machines working 8 hours a day produce 900 items?",
+      "options": [
+        "4.95 days",
+        "6.75 days",
+        "11.25 days",
+        "4.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Output per machine-hour = 480/(4 x 8 x 6) = 2.5. Machine-hours needed = 360. Days = that / (10 x 8) = 4.5.",
+      "shortcut": "Compound proportion: items, machines, hours and days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "5 machines produce 360 items in 10 hours. How many hours will 5 machines need to produce 900 items?",
+      "options": [
+        "25 hours",
+        "50 hours",
+        "20 hours",
+        "23 hours"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rate per machine-hour = 360/(5 x 10) = 7.2. Machine-hours needed = 900/7.2 = 125. Hours = 25.",
+      "shortcut": "Find the per machine-hour output, then divide.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A hostel has food for 300 students for 24 days. For how many days will the same food last if there are 480 students?",
+      "options": [
+        "15 days",
+        "14 days",
+        "38.4 days",
+        "18 days"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Total = 300 x 24 = 7200 student-days. With 480 students: 7200/480 = 15 days.",
+      "shortcut": "Fixed stock = students x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One man's work equals the work of 3 women. 5 men and 4 women finish a job in 9 days. How many days will 3 men take to finish the same job?",
+      "options": [
+        "15 days",
+        "24 days",
+        "19 days",
+        "17 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In women-units: 5 men = 15 women, so the team = 19 women. Job = 19 x 9 = 171 woman-days. 3 men = 9 women, so days = 171/9 = 19.",
+      "shortcut": "Convert everyone into the same unit of worker.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "5 machines produce 360 items in 12 hours. How many items will 15 machines produce in 8 hours?",
+      "options": [
+        "576",
+        "360",
+        "1080",
+        "720"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Output is proportional to machines x hours. Items = 360 x (15 x 8)/(5 x 12) = 720.",
+      "shortcut": "Output = k x machines x hours.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "4 men can do the work of 7 women. How many women can do the work of 12 men?",
+      "options": [
+        "16",
+        "28",
+        "21",
+        "23"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "1 man = 7/4 women. 12 men = 12 x 7/4 = 21 women.",
+      "shortcut": "Convert one unit into the other, then scale.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "8 workers working 6 hours a day for 4 days are paid Rs 960 in all. How much will 20 workers working 5 hours a day for 4 days be paid at the same hourly rate?",
+      "options": [
+        "Rs 2400",
+        "Rs 2200",
+        "Rs 2000",
+        "Rs 1000"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rate per worker-hour = 960/(8 x 6 x 4) = 5. Worker-hours now = 20 x 5 x 4 = 400. Pay = Rs 2000.",
+      "shortcut": "Pay = rate x workers x hours x days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "2 men do the same work as 5 women, and 1 woman does the same work as 2 boys. 4 men, 6 women and 6 boys finish a job in 15 days. How many days will 6 men take to finish it?",
+      "options": [
+        "10 days",
+        "20 days",
+        "19 days",
+        "38 days"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "1 man = 5/2 women = 5 boys. Team in boy-units = 4 x 5 + 6 x 2 + 6 = 38. Job = 570 boy-days. 6 men = 30 boys, so days = 19.",
+      "shortcut": "Reduce everyone to the smallest worker (boy) and compare boy-days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A man earns Rs 400 a day and a woman earns 1/2 of that. What is the total wage for 12 men and 9 women working for 4 days?",
+      "options": [
+        "Rs 39600",
+        "Rs 52800",
+        "Rs 26400",
+        "Rs 33600"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Woman's wage = 400 x 1/2 = 200. Daily total = 12 x 400 + 9 x 200 = 6600. For 4 days = Rs 26400.",
+      "shortcut": "Compute each group's daily wage, add, then multiply by days.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A fort has provisions for 150 soldiers for 45 days. How long will the provisions last for 300 soldiers?",
+      "options": [
+        "27 days",
+        "90 days",
+        "17.5 days",
+        "22.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Provisions = 150 x 45 = 6750 soldier-days. For 300 soldiers: 6750/300 = 22.5 days.",
+      "shortcut": "Provisions are fixed: soldiers x days.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One man's work equals the work of 2 women. 4 men and 6 women finish a job in 12 days. How many days will 4 men take to finish the same job?",
+      "options": [
+        "23 days",
+        "12 days",
+        "16 days",
+        "21 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In women-units: 4 men = 8 women, so the team = 14 women. Job = 14 x 12 = 168 woman-days. 4 men = 8 women, so days = 168/8 = 21.",
+      "shortcut": "Convert everyone into the same unit of worker.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "If 20 mangoes cost Rs 240, what is the cost of 30 mangoes?",
+      "options": [
+        "Rs 540",
+        "Rs 450",
+        "Rs 360",
+        "Rs 160"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cost of 1 = 240/20 = 12. Cost of 30 = 30 x 12 = Rs 360.",
+      "shortcut": "Direct proportion: cost2 = cost1 x (qty2/qty1).",
+      "subPattern": "direct-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "cat-style",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A garrison of 200 men has provisions for 40 days. After 10 days, 40 men leave. For how many more days will the remaining provisions last?",
+      "options": [
+        "18.75 days",
+        "30 days",
+        "50 days",
+        "37.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Provisions left = 200 x (40 - 10) = 6000 man-days. Remaining men = 160. Days = 6000/160 = 37.5.",
+      "shortcut": "Count what is left in man-days, divide by the new strength.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "8 men working 6 hours a day for 5 days can build 240 metres of wall. How many metres can 9 men working 10 hours a day build in 9 days?",
+      "options": [
+        "810 metres",
+        "270 metres",
+        "540 metres",
+        "648 metres"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Work is proportional to men x hours x days. New work = 240 x (9 x 10 x 9)/(8 x 6 x 5) = 810 metres.",
+      "shortcut": "Work = k x men x hours x days.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A garrison of 500 men has provisions for 40 days. After 12 days a reinforcement of 200 men arrives. For how many more days will the provisions last now?",
+      "options": [
+        "24 days",
+        "28 days",
+        "22 days",
+        "20 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Provisions left = 500 x (40 - 12) = 14000 man-days. Men now = 700. Days = 14000/700 = 20.",
+      "shortcut": "Same method with the larger strength.",
+      "subPattern": "inverse-chain-rule",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "One man's work equals the work of 3 women. 6 men and 6 women finish a job in 6 days. How many days will 3 men take to finish the same job?",
+      "options": [
+        "21 days",
+        "12 days",
+        "20 days",
+        "16 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In women-units: 6 men = 18 women, so the team = 24 women. Job = 24 x 6 = 144 woman-days. 3 men = 9 women, so days = 144/9 = 16.",
+      "shortcut": "Convert everyone into the same unit of worker.",
+      "subPattern": "work-wages-in-chain-rule",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "15 men working 9 hours a day can finish a job in 24 days. In how many days can 16 men working 5 hours a day finish it?",
+      "options": [
+        "22.5 days",
+        "60.75 days",
+        "41.5 days",
+        "40.5 days"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Man-hours = 15 x 9 x 24 = 3240. Days = 3240/(16 x 5) = 40.5.",
+      "shortcut": "Men x hours x days is the constant work.",
+      "subPattern": "mixed-chain-rule",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it"
+      ],
+      "setId": null
+    }
+  ]
+}

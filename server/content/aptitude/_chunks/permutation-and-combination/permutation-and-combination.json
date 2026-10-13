@@ -11,7 +11,7 @@
       "correctOptionIndex": 2,
       "explanation": "7 letters, where A appears 2 times; K appears 2 times. Arrangements = 7!/(2! x 2!) = 1260.",
       "shortcut": "Divide n! by the factorial of each repeated letter's count.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -30,7 +30,7 @@
       "correctOptionIndex": 3,
       "explanation": "Order does not matter: 10C5 = 252.",
       "shortcut": "Selection (no order) uses nCr.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "easy",
       "examStyles": [
         "ssc",
@@ -49,7 +49,7 @@
       "correctOptionIndex": 3,
       "explanation": "Total committees = 13C4 = 715. Counting the cases with at least 1 man (by gender split) gives 700.",
       "shortcut": "Add the valid gender splits, or subtract the invalid ones from the total.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -68,7 +68,7 @@
       "correctOptionIndex": 1,
       "explanation": "All 6 letters are different, so arrangements = 6! = 720.",
       "shortcut": "n distinct letters can be arranged in n! ways.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -87,7 +87,7 @@
       "correctOptionIndex": 0,
       "explanation": "7 letters, where C appears 2 times; S appears 3 times. Arrangements = 7!/(3! x 2!) = 420.",
       "shortcut": "Divide n! by the factorial of each repeated letter's count.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -106,7 +106,7 @@
       "correctOptionIndex": 1,
       "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 52 such numbers out of 100 possible 3-digit numbers.",
       "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -125,7 +125,7 @@
       "correctOptionIndex": 1,
       "explanation": "The particular player is fixed; choose the other 2 from 11: 11C2 = 55.",
       "shortcut": "Fix the included person, choose the rest from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -144,7 +144,7 @@
       "correctOptionIndex": 1,
       "explanation": "The word PLANET has 2 vowel(s) (A, E) and 4 consonant(s) (P, L, N, T); all letters are different. Counting all 720 distinct arrangements and keeping those that end with a consonant gives 480.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -163,7 +163,7 @@
       "correctOptionIndex": 3,
       "explanation": "Remove the player; choose 6 from the remaining 13: 13C6 = 1716.",
       "shortcut": "Excluded: choose from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -181,7 +181,7 @@
       "correctOptionIndex": 2,
       "explanation": "13C5 = 13!/(5! x 8!) = 1287.",
       "shortcut": "Use nCr = nC(n-r) to shorten the work.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -200,7 +200,7 @@
       "correctOptionIndex": 0,
       "explanation": "11 letters, where I appears 4 times; P appears 2 times; S appears 4 times. Arrangements = 11!/(4! x 4! x 2!) = 34650.",
       "shortcut": "n!/(p! q! r!) for repeated letters.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -219,7 +219,7 @@
       "correctOptionIndex": 2,
       "explanation": "All 6 letters are different, so arrangements = 6! = 720.",
       "shortcut": "n distinct letters can be arranged in n! ways.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -238,7 +238,7 @@
       "correctOptionIndex": 1,
       "explanation": "11C3 + 11C2 = 165 + 55 = 220 (this equals 12C3).",
       "shortcut": "nCr + nC(r-1) = (n+1)Cr.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -257,7 +257,7 @@
       "correctOptionIndex": 2,
       "explanation": "Treat the two as one: (9 - 1 - 1)! = 5040 arrangements, times 2 for their internal order = 10080.",
       "shortcut": "Together: 2 x (n-2)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -276,7 +276,7 @@
       "correctOptionIndex": 2,
       "explanation": "Total committees = 10C4 = 210. Counting the cases with at least 2 women (by gender split) gives 185.",
       "shortcut": "Add the valid gender splits, or subtract the invalid ones from the total.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -295,7 +295,7 @@
       "correctOptionIndex": 3,
       "explanation": "The word ORANGE has 3 vowel(s) (O, A, E) and 3 consonant(s) (R, N, G); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 144.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -314,7 +314,7 @@
       "correctOptionIndex": 2,
       "explanation": "Remove the player; choose 4 from the remaining 13: 13C4 = 715.",
       "shortcut": "Excluded: choose from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -332,7 +332,7 @@
       "correctOptionIndex": 3,
       "explanation": "Total committees = 12C3 = 220. Counting the cases with at least 2 women (by gender split) gives 110.",
       "shortcut": "Add the valid gender splits, or subtract the invalid ones from the total.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -351,7 +351,7 @@
       "correctOptionIndex": 0,
       "explanation": "Each pair shakes hands once: 11C2 = 11(11 - 1)/2 = 55.",
       "shortcut": "Handshakes = nC2.",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -370,7 +370,7 @@
       "correctOptionIndex": 2,
       "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 30 such numbers out of 48 possible 3-digit numbers.",
       "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -389,7 +389,7 @@
       "correctOptionIndex": 2,
       "explanation": "Remove the player; choose 4 from the remaining 7: 7C4 = 35.",
       "shortcut": "Excluded: choose from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -407,7 +407,7 @@
       "correctOptionIndex": 1,
       "explanation": "6 letters, where O appears 2 times; T appears 2 times. Arrangements = 6!/(2! x 2!) = 180.",
       "shortcut": "Divide n! by the factorial of each repeated letter's count.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -426,7 +426,7 @@
       "correctOptionIndex": 2,
       "explanation": "Diagonals = nC2 - n = 66 - 12 = 54.",
       "shortcut": "Diagonals = n(n - 3)/2.",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -445,7 +445,7 @@
       "correctOptionIndex": 1,
       "explanation": "10C4 = 10P4/4! = 5040/24 = 210.",
       "shortcut": "nCr = nPr / r!",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -463,7 +463,7 @@
       "correctOptionIndex": 3,
       "explanation": "Any 3 points form a triangle: 6C3 = 20.",
       "shortcut": "Triangles = nC3 (minus collinear triples).",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -482,7 +482,7 @@
       "correctOptionIndex": 0,
       "explanation": "The word TRAINS has 2 vowel(s) (A, I) and 4 consonant(s) (T, R, N, S); all letters are different. Counting all 720 distinct arrangements and keeping those that end with a consonant gives 480.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -501,7 +501,7 @@
       "correctOptionIndex": 2,
       "explanation": "Any 3 points form a triangle: 9C3 = 84.",
       "shortcut": "Triangles = nC3 (minus collinear triples).",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -519,7 +519,7 @@
       "correctOptionIndex": 3,
       "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 240 such numbers out of 360 possible 4-digit numbers.",
       "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -538,7 +538,7 @@
       "correctOptionIndex": 1,
       "explanation": "The word MONDAY has 2 vowel(s) (O, A) and 4 consonant(s) (M, N, D, Y); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 240.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -557,7 +557,7 @@
       "correctOptionIndex": 0,
       "explanation": "Choose 2 from 5 women and 1 from 7 men: 5C2 x 7C1 = 10 x 7 = 70.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -575,7 +575,7 @@
       "correctOptionIndex": 2,
       "explanation": "Counting the numbers - 7P2: 7 x 6 = 42.",
       "shortcut": "With repetition: n^k. Without: nPk.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -594,7 +594,7 @@
       "correctOptionIndex": 2,
       "explanation": "Circular arrangements of 8 people = (8 - 1)! = 5040.",
       "shortcut": "Fix one person; arrange the rest: (n-1)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -613,7 +613,7 @@
       "correctOptionIndex": 2,
       "explanation": "All 5 letters are different, so arrangements = 5! = 120.",
       "shortcut": "n distinct letters can be arranged in n! ways.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "easy",
       "examStyles": [
         "ssc",
@@ -632,7 +632,7 @@
       "correctOptionIndex": 2,
       "explanation": "Total = 24. Together = 2 x 6 = 12. Not together = 12.",
       "shortcut": "Not together = (n-1)! - 2(n-2)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -651,7 +651,7 @@
       "correctOptionIndex": 3,
       "explanation": "Choose 3 from 4 women and 2 from 6 men: 4C3 x 6C2 = 4 x 15 = 60.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -670,7 +670,7 @@
       "correctOptionIndex": 1,
       "explanation": "nP2 = n(n - 1) = 56. So n^2 - n - 56 = 0, giving n = 8.",
       "shortcut": "Factor n(n-1) = k into two consecutive numbers.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "fundamental-counting-principle",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -689,7 +689,7 @@
       "correctOptionIndex": 0,
       "explanation": "Circular arrangements of 7 people = (7 - 1)! = 720.",
       "shortcut": "Fix one person; arrange the rest: (n-1)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "easy",
       "examStyles": [
         "ssc",
@@ -708,7 +708,7 @@
       "correctOptionIndex": 3,
       "explanation": "Remove the player; choose 3 from the remaining 10: 10C3 = 120.",
       "shortcut": "Excluded: choose from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -726,7 +726,7 @@
       "correctOptionIndex": 3,
       "explanation": "Counting the numbers - 6P4: 6 x 5 x 4 x 3 = 360.",
       "shortcut": "With repetition: n^k. Without: nPk.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "easy",
       "examStyles": [
         "cat-style",
@@ -745,7 +745,7 @@
       "correctOptionIndex": 1,
       "explanation": "Order does not matter: 12C2 = 66.",
       "shortcut": "Selection (no order) uses nCr.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "easy",
       "examStyles": [
         "ssc",
@@ -764,7 +764,7 @@
       "correctOptionIndex": 1,
       "explanation": "The word PLANET has 2 vowel(s) (A, E) and 4 consonant(s) (P, L, N, T); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 240.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -782,7 +782,7 @@
       "correctOptionIndex": 0,
       "explanation": "Choose 1 from 5 women and 2 from 4 men: 5C1 x 4C2 = 5 x 6 = 30.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -800,7 +800,7 @@
       "correctOptionIndex": 2,
       "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 180 such numbers out of 360 possible 4-digit numbers.",
       "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -819,7 +819,7 @@
       "correctOptionIndex": 3,
       "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 156 such numbers out of 300 possible 4-digit numbers.",
       "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -838,7 +838,7 @@
       "correctOptionIndex": 3,
       "explanation": "11C5 + 11C4 = 462 + 330 = 792 (this equals 12C5).",
       "shortcut": "nCr + nC(r-1) = (n+1)Cr.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -857,7 +857,7 @@
       "correctOptionIndex": 0,
       "explanation": "12C6 = 12!/(6! x 6!) = 924.",
       "shortcut": "Use nCr = nC(n-r) to shorten the work.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -876,7 +876,7 @@
       "correctOptionIndex": 2,
       "explanation": "Treat the two as one: (8 - 1 - 1)! = 720 arrangements, times 2 for their internal order = 1440.",
       "shortcut": "Together: 2 x (n-2)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -895,7 +895,7 @@
       "correctOptionIndex": 1,
       "explanation": "Choose 3 from 6 women and 2 from 4 men: 6C3 x 4C2 = 20 x 6 = 120.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -914,7 +914,7 @@
       "correctOptionIndex": 0,
       "explanation": "All 6 letters are different, so arrangements = 6! = 720.",
       "shortcut": "n distinct letters can be arranged in n! ways.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -933,7 +933,7 @@
       "correctOptionIndex": 2,
       "explanation": "The word WINDOW has 2 vowel(s) (I, O) and 4 consonant(s) (W, N, D, W); W appears 2 times. Counting all 360 distinct arrangements and keeping those that do not have all the vowels together gives 240.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -951,7 +951,7 @@
       "correctOptionIndex": 3,
       "explanation": "Of the 300 possible 4-digit numbers (no repeats, no leading 0), those greater than 4000 are found by counting the allowed leading digits and arranging the rest: 240.",
       "shortcut": "Fix the leading digit options first, then permute the remaining places.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -969,7 +969,7 @@
       "correctOptionIndex": 3,
       "explanation": "Treat the two as one: (7 - 1 - 1)! = 120 arrangements, times 2 for their internal order = 240.",
       "shortcut": "Together: 2 x (n-2)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -988,7 +988,7 @@
       "correctOptionIndex": 0,
       "explanation": "10P2 = 10!/(10 - 2)! = 10 x 9 = 90.",
       "shortcut": "nPr = n x (n-1) x ... for r terms.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "fundamental-counting-principle",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1007,7 +1007,7 @@
       "correctOptionIndex": 0,
       "explanation": "Seat the boys in a circle: (3 - 1)! = 2. The girls then take the 3 gaps in 3! = 6 ways. Total = 12.",
       "shortcut": "Circular arrangement of one group, then permute the other in the gaps.",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -1026,7 +1026,7 @@
       "correctOptionIndex": 3,
       "explanation": "Any 3 points form a triangle: 12C3 = 220.",
       "shortcut": "Triangles = nC3 (minus collinear triples).",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1044,7 +1044,7 @@
       "correctOptionIndex": 3,
       "explanation": "Remove the player; choose 5 from the remaining 11: 11C5 = 462.",
       "shortcut": "Excluded: choose from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1063,7 +1063,7 @@
       "correctOptionIndex": 0,
       "explanation": "14C4 + 14C3 = 1001 + 364 = 1365 (this equals 15C4).",
       "shortcut": "nCr + nC(r-1) = (n+1)Cr.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1082,7 +1082,7 @@
       "correctOptionIndex": 0,
       "explanation": "Circular arrangements of 4 people = (4 - 1)! = 6.",
       "shortcut": "Fix one person; arrange the rest: (n-1)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1101,7 +1101,7 @@
       "correctOptionIndex": 3,
       "explanation": "Choose 1 from 3 women and 4 from 5 men: 3C1 x 5C4 = 3 x 5 = 15.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1120,7 +1120,7 @@
       "correctOptionIndex": 0,
       "explanation": "9 letters, where A appears 4 times; L appears 2 times. Arrangements = 9!/(4! x 2!) = 7560.",
       "shortcut": "n!/(p! q! r!) for repeated letters.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "hard",
       "examStyles": [
         "banking",
@@ -1139,7 +1139,7 @@
       "correctOptionIndex": 0,
       "explanation": "Treat the two as one: (5 - 1 - 1)! = 6 arrangements, times 2 for their internal order = 12.",
       "shortcut": "Together: 2 x (n-2)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1158,7 +1158,7 @@
       "correctOptionIndex": 3,
       "explanation": "Total pairs = 9C2 = 36. The 4 collinear points give only 1 line instead of 4C2 = 6. Lines = 36 - 6 + 1 = 31.",
       "shortcut": "Replace the collinear pairs by a single line.",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "hard",
       "examStyles": [
         "ssc",
@@ -1177,7 +1177,7 @@
       "correctOptionIndex": 0,
       "explanation": "Of the 360 possible 4-digit numbers (no repeats, no leading 0), those greater than 3000 are found by counting the allowed leading digits and arranging the rest: 300.",
       "shortcut": "Fix the leading digit options first, then permute the remaining places.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -1195,7 +1195,7 @@
       "correctOptionIndex": 2,
       "explanation": "The particular player is fixed; choose the other 5 from 10: 10C5 = 252.",
       "shortcut": "Fix the included person, choose the rest from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -1214,7 +1214,7 @@
       "correctOptionIndex": 0,
       "explanation": "Diagonals = nC2 - n = 120 - 16 = 104.",
       "shortcut": "Diagonals = n(n - 3)/2.",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1233,7 +1233,7 @@
       "correctOptionIndex": 2,
       "explanation": "Each pair shakes hands once: 8C2 = 8(8 - 1)/2 = 28.",
       "shortcut": "Handshakes = nC2.",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1252,7 +1252,7 @@
       "correctOptionIndex": 0,
       "explanation": "Any 3 points form a triangle: 17C3 = 680.",
       "shortcut": "Triangles = nC3 (minus collinear triples).",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1271,7 +1271,7 @@
       "correctOptionIndex": 1,
       "explanation": "The units digit must be even. Counting by cases (and excluding a leading 0) gives 24 such numbers out of 60 possible 3-digit numbers.",
       "shortcut": "Fill the restricted place (units) first, then the leading place, then the rest.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1290,7 +1290,7 @@
       "correctOptionIndex": 1,
       "explanation": "Of the 300 possible 4-digit numbers (no repeats, no leading 0), those greater than 4000 are found by counting the allowed leading digits and arranging the rest: 120.",
       "shortcut": "Fix the leading digit options first, then permute the remaining places.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -1308,7 +1308,7 @@
       "correctOptionIndex": 3,
       "explanation": "The word DOCTOR has 2 vowel(s) (O, O) and 4 consonant(s) (D, C, T, R); O appears 2 times. Counting all 360 distinct arrangements and keeping those that have all the vowels together gives 120.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1326,7 +1326,7 @@
       "correctOptionIndex": 3,
       "explanation": "The particular player is fixed; choose the other 2 from 10: 10C2 = 45.",
       "shortcut": "Fix the included person, choose the rest from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1345,7 +1345,7 @@
       "correctOptionIndex": 3,
       "explanation": "n(n - 1)/2 = 45, so n(n - 1) = 90 = 10 x 9, giving n = 10.",
       "shortcut": "Write n(n-1) = 2k and find two consecutive numbers.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "fundamental-counting-principle",
       "difficulty": "hard",
       "examStyles": [
         "ssc",
@@ -1364,7 +1364,7 @@
       "correctOptionIndex": 3,
       "explanation": "The word DOCTOR has 2 vowel(s) (O, O) and 4 consonant(s) (D, C, T, R); O appears 2 times. Counting all 360 distinct arrangements and keeping those that begin with a consonant and end with a vowel gives 96.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1383,7 +1383,7 @@
       "correctOptionIndex": 1,
       "explanation": "Choose 1 from 5 women and 2 from 8 men: 5C1 x 8C2 = 5 x 28 = 140.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1401,7 +1401,7 @@
       "correctOptionIndex": 1,
       "explanation": "12C5 = 12!/(5! x 7!) = 792.",
       "shortcut": "Use nCr = nC(n-r) to shorten the work.",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1420,7 +1420,7 @@
       "correctOptionIndex": 3,
       "explanation": "Total triples = 12C3 = 220. The 6 collinear points give no triangle: subtract 6C3 = 20. Answer = 200.",
       "shortcut": "Subtract the collinear triples.",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -1439,7 +1439,7 @@
       "correctOptionIndex": 0,
       "explanation": "Seat the boys in a circle: (5 - 1)! = 24. The girls then take the 5 gaps in 5! = 120 ways. Total = 2880.",
       "shortcut": "Circular arrangement of one group, then permute the other in the gaps.",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -1457,7 +1457,7 @@
       "correctOptionIndex": 0,
       "explanation": "The word TRIANGLE has 3 vowel(s) (I, A, E) and 5 consonant(s) (T, R, N, G, L); all letters are different. Counting all 40320 distinct arrangements and keeping those that do not have all the vowels together gives 36000.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "hard",
       "examStyles": [
         "banking",
@@ -1476,7 +1476,7 @@
       "correctOptionIndex": 1,
       "explanation": "7 letters, where L appears 2 times; O appears 2 times. Arrangements = 7!/(2! x 2!) = 1260.",
       "shortcut": "Divide n! by the factorial of each repeated letter's count.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1495,7 +1495,7 @@
       "correctOptionIndex": 1,
       "explanation": "6 letters, where E appears 2 times; T appears 2 times. Arrangements = 6!/(2! x 2!) = 180.",
       "shortcut": "Divide n! by the factorial of each repeated letter's count.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1513,7 +1513,7 @@
       "correctOptionIndex": 0,
       "explanation": "4C3 x 5C4 x 2C1 = 4 x 5 x 2 = 40.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -1532,7 +1532,7 @@
       "correctOptionIndex": 2,
       "explanation": "4C3 x 3C1 x 4C3 = 4 x 3 x 4 = 48.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -1551,7 +1551,7 @@
       "correctOptionIndex": 1,
       "explanation": "10C2 = 10P2/2! = 90/2 = 45.",
       "shortcut": "nCr = nPr / r!",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1570,7 +1570,7 @@
       "correctOptionIndex": 0,
       "explanation": "Choose 2 from 4 women and 1 from 8 men: 4C2 x 8C1 = 6 x 8 = 48.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1589,7 +1589,7 @@
       "correctOptionIndex": 0,
       "explanation": "5 letters, where P appears 2 times. Arrangements = 5!/(2!) = 60.",
       "shortcut": "Divide n! by the factorial of each repeated letter's count.",
-      "subPattern": "arrangements-of-letters",
+      "subPattern": "word-arrangements-with-repetition",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1607,7 +1607,7 @@
       "correctOptionIndex": 2,
       "explanation": "Counting the numbers - each of the 4 places can take any of 6 digits: 6^4 = 1296.",
       "shortcut": "With repetition: n^k. Without: nPk.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1625,7 +1625,7 @@
       "correctOptionIndex": 2,
       "explanation": "Remove the player; choose 6 from the remaining 9: 9C6 = 84.",
       "shortcut": "Excluded: choose from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1644,7 +1644,7 @@
       "correctOptionIndex": 1,
       "explanation": "9C2 = 9P2/2! = 72/2 = 36.",
       "shortcut": "nCr = nPr / r!",
-      "subPattern": "permutation-combination-basics",
+      "subPattern": "combinations",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1663,7 +1663,7 @@
       "correctOptionIndex": 2,
       "explanation": "The word WINDOW has 2 vowel(s) (I, O) and 4 consonant(s) (W, N, D, W); W appears 2 times. Counting all 360 distinct arrangements and keeping those that have all the vowels together gives 120.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1681,7 +1681,7 @@
       "correctOptionIndex": 3,
       "explanation": "Order does not matter: 8C5 = 56.",
       "shortcut": "Selection (no order) uses nCr.",
-      "subPattern": "committees-and-selections",
+      "subPattern": "committee-selection",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -1700,7 +1700,7 @@
       "correctOptionIndex": 0,
       "explanation": "Total = 120. Together = 2 x 24 = 48. Not together = 72.",
       "shortcut": "Not together = (n-1)! - 2(n-2)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1719,7 +1719,7 @@
       "correctOptionIndex": 2,
       "explanation": "The word SUNDAY has 2 vowel(s) (U, A) and 4 consonant(s) (S, N, D, Y); all letters are different. Counting all 720 distinct arrangements and keeping those that begin with a consonant and end with a vowel gives 192.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "easy",
       "examStyles": [
         "ssc",
@@ -1738,7 +1738,7 @@
       "correctOptionIndex": 3,
       "explanation": "8C4 x 6C4 x 3C2 = 70 x 15 x 3 = 3150.",
       "shortcut": "Multiply the selections from each group.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "hard",
       "examStyles": [
         "ssc",
@@ -1757,7 +1757,7 @@
       "correctOptionIndex": 1,
       "explanation": "Circular arrangements of 6 people = (6 - 1)! = 120.",
       "shortcut": "Fix one person; arrange the rest: (n-1)!",
-      "subPattern": "circular-arrangements",
+      "subPattern": "circular-permutations",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1775,7 +1775,7 @@
       "correctOptionIndex": 1,
       "explanation": "Any 3 points form a triangle: 15C3 = 455.",
       "shortcut": "Triangles = nC3 (minus collinear triples).",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -1794,7 +1794,7 @@
       "correctOptionIndex": 1,
       "explanation": "The word MARKET has 2 vowel(s) (A, E) and 4 consonant(s) (M, R, K, T); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 240.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1813,7 +1813,7 @@
       "correctOptionIndex": 1,
       "explanation": "The particular player is fixed; choose the other 4 from 11: 11C4 = 330.",
       "shortcut": "Fix the included person, choose the rest from n - 1.",
-      "subPattern": "selection-with-restrictions",
+      "subPattern": "derangements-restrictions",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1832,7 +1832,7 @@
       "correctOptionIndex": 0,
       "explanation": "Counting the numbers - each of the 4 places can take any of 5 digits: 5^4 = 625.",
       "shortcut": "With repetition: n^k. Without: nPk.",
-      "subPattern": "forming-numbers-from-digits",
+      "subPattern": "number-formation-from-digits",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1850,7 +1850,7 @@
       "correctOptionIndex": 1,
       "explanation": "The word SUNDAY has 2 vowel(s) (U, A) and 4 consonant(s) (S, N, D, Y); all letters are different. Counting all 720 distinct arrangements and keeping those that have all the vowels together gives 240.",
       "shortcut": "Treat vowels together as one block; for 'never together' subtract that from the total.",
-      "subPattern": "arrangements-with-conditions",
+      "subPattern": "permutations",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1868,7 +1868,7 @@
       "correctOptionIndex": 2,
       "explanation": "Each pair shakes hands once: 7C2 = 7(7 - 1)/2 = 21.",
       "shortcut": "Handshakes = nC2.",
-      "subPattern": "handshakes-diagonals-triangles",
+      "subPattern": "handshakes-diagonals-geometry-counting",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"

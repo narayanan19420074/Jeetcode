@@ -1,0 +1,2701 @@
+{
+ "pattern": {
+  "title": "Stocks and Shares",
+  "slug": "stocks-and-shares",
+  "description": "Share, dividend and brokerage problems.",
+  "order": 27,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "face-value-market-value-dividend",
+    "title": "Face value, market value & dividend"
+   },
+   {
+    "slug": "brokerage",
+    "title": "Brokerage"
+   },
+   {
+    "slug": "returns-comparison",
+    "title": "Returns comparison"
+   },
+   {
+    "slug": "income-from-investments",
+    "title": "Income from investments"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A company has 14000 shares of face value Rs 50 each. It declares a dividend of 5%. What is the total dividend paid?",
+   "options": [
+    {
+     "text": "Rs 43750"
+    },
+    {
+     "text": "Rs 70000"
+    },
+    {
+     "text": "Rs 35000"
+    },
+    {
+     "text": "Rs 26250"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Share capital = 14000 x 50 = Rs 700000. Dividend = 5% of that = Rs 35000.",
+   "order": 1,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Total dividend = share capital x rate / 100."
+  },
+  {
+   "questionText": "What is the market value of a Rs 20 share quoted at 15% discount?",
+   "options": [
+    {
+     "text": "Rs 34"
+    },
+    {
+     "text": "Rs 22"
+    },
+    {
+     "text": "Rs 23"
+    },
+    {
+     "text": "Rs 17"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A share at 15% discount sells at face value minus 15% of Rs 20: 20 x 85/100 = Rs 17.",
+   "order": 2,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Market value = 20 x (85/100)."
+  },
+  {
+   "questionText": "A company has 44000 shares of face value Rs 50 each. It declares a dividend of 12%. What is the total dividend paid?",
+   "options": [
+    {
+     "text": "Rs 264000"
+    },
+    {
+     "text": "Rs 396000"
+    },
+    {
+     "text": "Rs 237600"
+    },
+    {
+     "text": "Rs 528000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Share capital = 44000 x 50 = Rs 2200000. Dividend = 12% of that = Rs 264000.",
+   "order": 3,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Total dividend = share capital x rate / 100."
+  },
+  {
+   "questionText": "What is the market value of a Rs 50 share quoted at 15% premium?",
+   "options": [
+    {
+     "text": "Rs 42.5"
+    },
+    {
+     "text": "Rs 57.5"
+    },
+    {
+     "text": "Rs 59.5"
+    },
+    {
+     "text": "Rs 56.5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A share at 15% premium sells at face value plus 15% of Rs 50: 50 x 115/100 = Rs 57.5.",
+   "order": 4,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Market value = 50 x (115/100)."
+  },
+  {
+   "questionText": "What is the market value of a Rs 20 share quoted at 20% premium?",
+   "options": [
+    {
+     "text": "Rs 16"
+    },
+    {
+     "text": "Rs 24"
+    },
+    {
+     "text": "Rs 30"
+    },
+    {
+     "text": "Rs 29"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A share at 20% premium sells at face value plus 20% of Rs 20: 20 x 120/100 = Rs 24.",
+   "order": 5,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Market value = 20 x (120/100)."
+  },
+  {
+   "questionText": "What is the market value of a Rs 20 share quoted at 30% discount?",
+   "options": [
+    {
+     "text": "Rs 14"
+    },
+    {
+     "text": "Rs 15"
+    },
+    {
+     "text": "Rs 26"
+    },
+    {
+     "text": "Rs 28"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A share at 30% discount sells at face value minus 30% of Rs 20: 20 x 70/100 = Rs 14.",
+   "order": 6,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Market value = 20 x (70/100)."
+  },
+  {
+   "questionText": "A company has 9000 shares of face value Rs 10 each. It declares a dividend of 5%. What is the total dividend paid?",
+   "options": [
+    {
+     "text": "Rs 5625"
+    },
+    {
+     "text": "Rs 4050"
+    },
+    {
+     "text": "Rs 45000"
+    },
+    {
+     "text": "Rs 4500"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Share capital = 9000 x 10 = Rs 90000. Dividend = 5% of that = Rs 4500.",
+   "order": 7,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Total dividend = share capital x rate / 100."
+  },
+  {
+   "questionText": "A company has 18000 shares of face value Rs 100 each. It declares a dividend of 8%. What is the total dividend paid?",
+   "options": [
+    {
+     "text": "Rs 288000"
+    },
+    {
+     "text": "Rs 172800"
+    },
+    {
+     "text": "Rs 144000"
+    },
+    {
+     "text": "Rs 180000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Share capital = 18000 x 100 = Rs 1800000. Dividend = 8% of that = Rs 144000.",
+   "order": 8,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Total dividend = share capital x rate / 100."
+  },
+  {
+   "questionText": "A company with 12000 shares of face value Rs 10 earns a profit of Rs 60000 and distributes 50% of it as dividends. What is the dividend rate on face value?",
+   "options": [
+    {
+     "text": "27%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "25%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dividend pool = 50% of 60000 = Rs 30000. Rate = 30000 / 120000 x 100 = 25%.",
+   "order": 9,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Dividend rate = total dividend / total share capital x 100."
+  },
+  {
+   "questionText": "A Rs 100 share is quoted at Rs 147. What is the percentage premium or discount?",
+   "options": [
+    {
+     "text": "57% premium"
+    },
+    {
+     "text": "47% premium"
+    },
+    {
+     "text": "52% premium"
+    },
+    {
+     "text": "47% discount"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Difference from face value = 47. As a percentage of Rs 100: 47/100 x 100 = 47%. Since market value is above face value it is a premium.",
+   "order": 10,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Premium/discount % is always measured on FACE value, not on market value."
+  },
+  {
+   "questionText": "A Rs 10 share is quoted at Rs 8.7. What is the percentage premium or discount?",
+   "options": [
+    {
+     "text": "23% discount"
+    },
+    {
+     "text": "18% discount"
+    },
+    {
+     "text": "13% discount"
+    },
+    {
+     "text": "13% premium"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference from face value = 1.3. As a percentage of Rs 10: 1.3/10 x 100 = 13%. Since market value is below face value it is a discount.",
+   "order": 11,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Premium/discount % is always measured on FACE value, not on market value."
+  },
+  {
+   "questionText": "A Rs 100 share is quoted at Rs 145. What is the percentage premium or discount?",
+   "options": [
+    {
+     "text": "45% premium"
+    },
+    {
+     "text": "50% premium"
+    },
+    {
+     "text": "45% discount"
+    },
+    {
+     "text": "55% premium"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Difference from face value = 45. As a percentage of Rs 100: 45/100 x 100 = 45%. Since market value is above face value it is a premium.",
+   "order": 12,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Premium/discount % is always measured on FACE value, not on market value."
+  },
+  {
+   "questionText": "A company with 4000 shares of face value Rs 100 earns a profit of Rs 100000 and distributes 60% of it as dividends. What is the dividend rate on face value?",
+   "options": [
+    {
+     "text": "60%"
+    },
+    {
+     "text": "15%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "10%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend pool = 60% of 100000 = Rs 60000. Rate = 60000 / 400000 x 100 = 15%.",
+   "order": 13,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Dividend rate = total dividend / total share capital x 100."
+  },
+  {
+   "questionText": "A company with 50000 shares of face value Rs 10 earns a profit of Rs 50000 and distributes 50% of it as dividends. What is the dividend rate on face value?",
+   "options": [
+    {
+     "text": "5%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "4%"
+    },
+    {
+     "text": "6%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend pool = 50% of 50000 = Rs 25000. Rate = 25000 / 500000 x 100 = 5%.",
+   "order": 14,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Dividend rate = total dividend / total share capital x 100."
+  },
+  {
+   "questionText": "A Rs 20 share is quoted at Rs 17.6. What is the percentage premium or discount?",
+   "options": [
+    {
+     "text": "17% discount"
+    },
+    {
+     "text": "12% premium"
+    },
+    {
+     "text": "22% discount"
+    },
+    {
+     "text": "12% discount"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference from face value = 2.4. As a percentage of Rs 20: 2.4/20 x 100 = 12%. Since market value is below face value it is a discount.",
+   "order": 15,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Premium/discount % is always measured on FACE value, not on market value."
+  },
+  {
+   "questionText": "A Rs 10 share is quoted at Rs 10.5. What is the percentage premium or discount?",
+   "options": [
+    {
+     "text": "10% premium"
+    },
+    {
+     "text": "5% discount"
+    },
+    {
+     "text": "5% premium"
+    },
+    {
+     "text": "15% premium"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference from face value = 0.5. As a percentage of Rs 10: 0.5/10 x 100 = 5%. Since market value is above face value it is a premium.",
+   "order": 16,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Premium/discount % is always measured on FACE value, not on market value."
+  },
+  {
+   "questionText": "A company with 33000 shares of face value Rs 10 earns a profit of Rs 52800 and distributes 50% of it as dividends. What is the dividend rate on face value?",
+   "options": [
+    {
+     "text": "8%"
+    },
+    {
+     "text": "16%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "4%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend pool = 50% of 52800 = Rs 26400. Rate = 26400 / 330000 x 100 = 8%.",
+   "order": 17,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Dividend rate = total dividend / total share capital x 100."
+  },
+  {
+   "questionText": "A company with 48000 shares of face value Rs 10 earns a profit of Rs 240000 and distributes 25% of it as dividends. What is the dividend rate on face value?",
+   "options": [
+    {
+     "text": "10.5%"
+    },
+    {
+     "text": "25%"
+    },
+    {
+     "text": "18.75%"
+    },
+    {
+     "text": "12.5%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dividend pool = 25% of 240000 = Rs 60000. Rate = 60000 / 480000 x 100 = 12.5%.",
+   "order": 18,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Dividend rate = total dividend / total share capital x 100."
+  },
+  {
+   "questionText": "A company with 30000 shares of face value Rs 100 earns a profit of Rs 900000 and distributes 50% of it as dividends. What is the dividend rate on face value?",
+   "options": [
+    {
+     "text": "20%"
+    },
+    {
+     "text": "15%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "17%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend pool = 50% of 900000 = Rs 450000. Rate = 450000 / 3000000 x 100 = 15%.",
+   "order": 19,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Dividend rate = total dividend / total share capital x 100."
+  },
+  {
+   "questionText": "A Rs 5 share is quoted at Rs 6.75. What is the percentage premium or discount?",
+   "options": [
+    {
+     "text": "40% premium"
+    },
+    {
+     "text": "35% discount"
+    },
+    {
+     "text": "35% premium"
+    },
+    {
+     "text": "45% premium"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference from face value = 1.75. As a percentage of Rs 5: 1.75/5 x 100 = 35%. Since market value is above face value it is a premium.",
+   "order": 20,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Premium/discount % is always measured on FACE value, not on market value."
+  },
+  {
+   "questionText": "A company has 1000 preference shares of Rs 100 (dividend 8%) and 7000 equity shares of Rs 10. Rs 50000 is available for dividends. After paying preference shareholders first, the rest goes to equity holders. What dividend rate do equity shareholders get?",
+   "options": [
+    {
+     "text": "72%"
+    },
+    {
+     "text": "62%"
+    },
+    {
+     "text": "80%"
+    },
+    {
+     "text": "60%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Preference dividend = 100000 x 8% = Rs 8000. Remainder = 50000 - 8000 = Rs 42000. Equity rate = 42000/70000 x 100 = 60%.",
+   "order": 21,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Pay preference dividends first, then divide the balance by the equity capital."
+  },
+  {
+   "questionText": "A company has 1000 preference shares of Rs 50 (dividend 8%) and 5000 equity shares of Rs 10. Rs 40000 is available for dividends. After paying preference shareholders first, the rest goes to equity holders. What dividend rate do equity shareholders get?",
+   "options": [
+    {
+     "text": "96%"
+    },
+    {
+     "text": "80%"
+    },
+    {
+     "text": "72%"
+    },
+    {
+     "text": "36%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Preference dividend = 50000 x 8% = Rs 4000. Remainder = 40000 - 4000 = Rs 36000. Equity rate = 36000/50000 x 100 = 72%.",
+   "order": 22,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Pay preference dividends first, then divide the balance by the equity capital."
+  },
+  {
+   "questionText": "A man buys 550 shares of face value Rs 10 at 20% discount. How much does he pay in all?",
+   "options": [
+    {
+     "text": "Rs 3960"
+    },
+    {
+     "text": "Rs 4400"
+    },
+    {
+     "text": "Rs 3520"
+    },
+    {
+     "text": "Rs 6600"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Price per share = 10 x 80/100 = Rs 8. Total = 550 x 8 = Rs 4400.",
+   "order": 23,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Pay 80% of face value on the total face value 5500."
+  },
+  {
+   "questionText": "A company has 3000 preference shares of Rs 100 (dividend 10%) and 2000 equity shares of Rs 10. Rs 100000 is available for dividends. After paying preference shareholders first, the rest goes to equity holders. What dividend rate do equity shareholders get?",
+   "options": [
+    {
+     "text": "350%"
+    },
+    {
+     "text": "315%"
+    },
+    {
+     "text": "500%"
+    },
+    {
+     "text": "420%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Preference dividend = 300000 x 10% = Rs 30000. Remainder = 100000 - 30000 = Rs 70000. Equity rate = 70000/20000 x 100 = 350%.",
+   "order": 24,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Pay preference dividends first, then divide the balance by the equity capital."
+  },
+  {
+   "questionText": "A man buys 900 shares of face value Rs 100 at 25% discount. How much does he pay in all?",
+   "options": [
+    {
+     "text": "Rs 67500"
+    },
+    {
+     "text": "Rs 50625"
+    },
+    {
+     "text": "Rs 45000"
+    },
+    {
+     "text": "Rs 112500"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Price per share = 100 x 75/100 = Rs 75. Total = 900 x 75 = Rs 67500.",
+   "order": 25,
+   "subPattern": "face-value-market-value-dividend",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Pay 75% of face value on the total face value 90000."
+  },
+  {
+   "questionText": "Find the cost of buying 800 shares of face value Rs 100 quoted at Rs 80, with brokerage of 1% on face value.",
+   "options": [
+    {
+     "text": "Rs 63200"
+    },
+    {
+     "text": "Rs 51840"
+    },
+    {
+     "text": "Rs 64000"
+    },
+    {
+     "text": "Rs 64800"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cost per share = 80 + 1 = 81. Total = 800 x 81 = Rs 64800.",
+   "order": 26,
+   "subPattern": "brokerage",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "When buying, brokerage is added to the price of each share."
+  },
+  {
+   "questionText": "Find the cost of buying 280 shares of face value Rs 100 quoted at Rs 90, with brokerage of 1/2% on face value.",
+   "options": [
+    {
+     "text": "Rs 25060"
+    },
+    {
+     "text": "Rs 30408"
+    },
+    {
+     "text": "Rs 25340"
+    },
+    {
+     "text": "Rs 25200"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cost per share = 90 + 0.5 = 90.5. Total = 280 x 90.5 = Rs 25340.",
+   "order": 27,
+   "subPattern": "brokerage",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "When buying, brokerage is added to the price of each share."
+  },
+  {
+   "questionText": "Find the cost of buying 680 shares of face value Rs 100 quoted at Rs 110, with brokerage of 3/4% on face value.",
+   "options": [
+    {
+     "text": "Rs 37655"
+    },
+    {
+     "text": "Rs 75310"
+    },
+    {
+     "text": "Rs 74800"
+    },
+    {
+     "text": "Rs 74290"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cost per share = 110 + 0.75 = 110.75. Total = 680 x 110.75 = Rs 75310.",
+   "order": 28,
+   "subPattern": "brokerage",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "When buying, brokerage is added to the price of each share."
+  },
+  {
+   "questionText": "Find the cost of buying 40 shares of face value Rs 100 quoted at Rs 100, with brokerage of 1/2% on face value.",
+   "options": [
+    {
+     "text": "Rs 8040"
+    },
+    {
+     "text": "Rs 3980"
+    },
+    {
+     "text": "Rs 4020"
+    },
+    {
+     "text": "Rs 4000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cost per share = 100 + 0.5 = 100.5. Total = 40 x 100.5 = Rs 4020.",
+   "order": 29,
+   "subPattern": "brokerage",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "When buying, brokerage is added to the price of each share."
+  },
+  {
+   "questionText": "A man sells 360 shares of face value Rs 100 quoted at Rs 80, paying brokerage of 1/2% on face value. How much does he receive?",
+   "options": [
+    {
+     "text": "Rs 19080"
+    },
+    {
+     "text": "Rs 28980"
+    },
+    {
+     "text": "Rs 28800"
+    },
+    {
+     "text": "Rs 28620"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Net price per share = 80 - 0.5 = 79.5. Total = 360 x 79.5 = Rs 28620.",
+   "order": 30,
+   "subPattern": "brokerage",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "When selling, brokerage is subtracted from the price of each share."
+  },
+  {
+   "questionText": "A man sells 80 shares of face value Rs 100 quoted at Rs 90, paying brokerage of 1/2% on face value. How much does he receive?",
+   "options": [
+    {
+     "text": "Rs 7200"
+    },
+    {
+     "text": "Rs 7160"
+    },
+    {
+     "text": "Rs 6444"
+    },
+    {
+     "text": "Rs 7240"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Net price per share = 90 - 0.5 = 89.5. Total = 80 x 89.5 = Rs 7160.",
+   "order": 31,
+   "subPattern": "brokerage",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "When selling, brokerage is subtracted from the price of each share."
+  },
+  {
+   "questionText": "A man sells 680 shares of face value Rs 100 quoted at Rs 100, paying brokerage of 3/4% on face value. How much does he receive?",
+   "options": [
+    {
+     "text": "Rs 67490"
+    },
+    {
+     "text": "Rs 68510"
+    },
+    {
+     "text": "Rs 101235"
+    },
+    {
+     "text": "Rs 68000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Net price per share = 100 - 0.75 = 99.25. Total = 680 x 99.25 = Rs 67490.",
+   "order": 32,
+   "subPattern": "brokerage",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "When selling, brokerage is subtracted from the price of each share."
+  },
+  {
+   "questionText": "A man sells 240 shares of face value Rs 100 quoted at Rs 150, paying brokerage of 2% on face value. How much does he receive?",
+   "options": [
+    {
+     "text": "Rs 36000"
+    },
+    {
+     "text": "Rs 36480"
+    },
+    {
+     "text": "Rs 35520"
+    },
+    {
+     "text": "Rs 44400"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Net price per share = 150 - 2 = 148. Total = 240 x 148 = Rs 35520.",
+   "order": 33,
+   "subPattern": "brokerage",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "When selling, brokerage is subtracted from the price of each share."
+  },
+  {
+   "questionText": "A man sells 160 shares of face value Rs 100 quoted at Rs 80, paying brokerage of 3/4% on face value. How much does he receive?",
+   "options": [
+    {
+     "text": "Rs 12920"
+    },
+    {
+     "text": "Rs 12680"
+    },
+    {
+     "text": "Rs 11412"
+    },
+    {
+     "text": "Rs 12800"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Net price per share = 80 - 0.75 = 79.25. Total = 160 x 79.25 = Rs 12680.",
+   "order": 34,
+   "subPattern": "brokerage",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "When selling, brokerage is subtracted from the price of each share."
+  },
+  {
+   "questionText": "A man sells 400 shares of face value Rs 100 quoted at Rs 150, paying brokerage of 2% on face value. How much does he receive?",
+   "options": [
+    {
+     "text": "Rs 59200"
+    },
+    {
+     "text": "Rs 60800"
+    },
+    {
+     "text": "Rs 60000"
+    },
+    {
+     "text": "Rs 71040"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Net price per share = 150 - 2 = 148. Total = 400 x 148 = Rs 59200.",
+   "order": 35,
+   "subPattern": "brokerage",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "When selling, brokerage is subtracted from the price of each share."
+  },
+  {
+   "questionText": "A man buys an 8% stock (face value Rs 100) at Rs 80, paying brokerage of 3/4% on face value. What is his percentage return on the amount he actually pays?",
+   "options": [
+    {
+     "text": "10.09%"
+    },
+    {
+     "text": "10.00%"
+    },
+    {
+     "text": "9.82%"
+    },
+    {
+     "text": "9.91%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Amount paid per Rs 100 stock = 80 + 0.75 = 80.75. Income = 8. Return = 8/80.75 x 100 = 9.91% (rounded to two decimals).",
+   "order": 36,
+   "subPattern": "brokerage",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Return = dividend / (market price + brokerage) x 100."
+  },
+  {
+   "questionText": "A man buys an 8% stock (face value Rs 100) at Rs 160, paying brokerage of 2% on face value. What is his percentage return on the amount he actually pays?",
+   "options": [
+    {
+     "text": "5.00%"
+    },
+    {
+     "text": "4.94%"
+    },
+    {
+     "text": "5.06%"
+    },
+    {
+     "text": "4.88%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Amount paid per Rs 100 stock = 160 + 2 = 162. Income = 8. Return = 8/162 x 100 = 4.94% (rounded to two decimals).",
+   "order": 37,
+   "subPattern": "brokerage",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Return = dividend / (market price + brokerage) x 100."
+  },
+  {
+   "questionText": "Which investment gives the higher return: a 5% stock at 125 or a 7.5% stock at 150? (Both have face value Rs 100.)",
+   "options": [
+    {
+     "text": "7.5% stock at 150"
+    },
+    {
+     "text": "Both give the same return"
+    },
+    {
+     "text": "Cannot be determined"
+    },
+    {
+     "text": "5% stock at 125"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Yield of 5% stock at 125 = 5/125 x 100 = 4.00%; yield of 7.5% stock at 150 = 7.5/150 x 100 = 5.00%. 7.5% stock at 150 is higher.",
+   "order": 38,
+   "subPattern": "returns-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Compare dividend / market value for each; larger is better."
+  },
+  {
+   "questionText": "Which investment gives the higher return: an 8% stock at 150 or a 10% stock at 160? (Both have face value Rs 100.)",
+   "options": [
+    {
+     "text": "10% stock at 160"
+    },
+    {
+     "text": "Cannot be determined"
+    },
+    {
+     "text": "Both give the same return"
+    },
+    {
+     "text": "8% stock at 150"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Yield of 8% stock at 150 = 8/150 x 100 = 5.33%; yield of 10% stock at 160 = 10/160 x 100 = 6.25%. 10% stock at 160 is higher.",
+   "order": 39,
+   "subPattern": "returns-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Compare dividend / market value for each; larger is better."
+  },
+  {
+   "questionText": "Which investment gives the higher return: a 7.5% stock at 110 or a 6% stock at 140? (Both have face value Rs 100.)",
+   "options": [
+    {
+     "text": "Both give the same return"
+    },
+    {
+     "text": "7.5% stock at 110"
+    },
+    {
+     "text": "Cannot be determined"
+    },
+    {
+     "text": "6% stock at 140"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Yield of 7.5% stock at 110 = 7.5/110 x 100 = 6.82%; yield of 6% stock at 140 = 6/140 x 100 = 4.29%. 7.5% stock at 110 is higher.",
+   "order": 40,
+   "subPattern": "returns-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare dividend / market value for each; larger is better."
+  },
+  {
+   "questionText": "What is the yield on an 8% stock (face value Rs 100) quoted at Rs 100?",
+   "options": [
+    {
+     "text": "12%"
+    },
+    {
+     "text": "13%"
+    },
+    {
+     "text": "4%"
+    },
+    {
+     "text": "8%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Yield = dividend / market value x 100 = 8/100 x 100 = 8%.",
+   "order": 41,
+   "subPattern": "returns-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Yield = (dividend per Rs 100 stock / market price) x 100."
+  },
+  {
+   "questionText": "What is the yield on a 12% stock (face value Rs 100) quoted at Rs 75?",
+   "options": [
+    {
+     "text": "20%"
+    },
+    {
+     "text": "12%"
+    },
+    {
+     "text": "16%"
+    },
+    {
+     "text": "9%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Yield = dividend / market value x 100 = 12/75 x 100 = 16%.",
+   "order": 42,
+   "subPattern": "returns-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Yield = (dividend per Rs 100 stock / market price) x 100."
+  },
+  {
+   "questionText": "Which investment gives the higher return: a 9% stock at 140 or a 7.5% stock at 110? (Both have face value Rs 100.)",
+   "options": [
+    {
+     "text": "Cannot be determined"
+    },
+    {
+     "text": "7.5% stock at 110"
+    },
+    {
+     "text": "9% stock at 140"
+    },
+    {
+     "text": "Both give the same return"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Yield of 9% stock at 140 = 9/140 x 100 = 6.43%; yield of 7.5% stock at 110 = 7.5/110 x 100 = 6.82%. 7.5% stock at 110 is higher.",
+   "order": 43,
+   "subPattern": "returns-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Compare dividend / market value for each; larger is better."
+  },
+  {
+   "questionText": "What is the yield on a 7.5% stock (face value Rs 100) quoted at Rs 100?",
+   "options": [
+    {
+     "text": "7.5%"
+    },
+    {
+     "text": "5%"
+    },
+    {
+     "text": "6.75%"
+    },
+    {
+     "text": "5.5%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Yield = dividend / market value x 100 = 7.5/100 x 100 = 7.5%.",
+   "order": 44,
+   "subPattern": "returns-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Yield = (dividend per Rs 100 stock / market price) x 100."
+  },
+  {
+   "questionText": "A Rs 10 share pays a 9% dividend and is quoted at Rs 15. What is the percentage yield on the investment?",
+   "options": [
+    {
+     "text": "3%"
+    },
+    {
+     "text": "9%"
+    },
+    {
+     "text": "6%"
+    },
+    {
+     "text": "12%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dividend per share = 0.9. Yield = 0.9/15 x 100 = 6%.",
+   "order": 45,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Yield = dividend per share / market price per share x 100."
+  },
+  {
+   "questionText": "A Rs 5 share pays a 10% dividend and is quoted at Rs 6.25. What is the percentage yield on the investment?",
+   "options": [
+    {
+     "text": "4%"
+    },
+    {
+     "text": "8%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "6%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend per share = 0.5. Yield = 0.5/6.25 x 100 = 8%.",
+   "order": 46,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Yield = dividend per share / market price per share x 100."
+  },
+  {
+   "questionText": "A man invests Rs 27000 in a 9% stock at 100. Another invests Rs 27000 in a 5% stock at 120. (Both have face value Rs 100.) What is the difference between their annual incomes?",
+   "options": [
+    {
+     "text": "Rs 1305"
+    },
+    {
+     "text": "Rs 1740"
+    },
+    {
+     "text": "Rs 1080"
+    },
+    {
+     "text": "Rs 2610"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Income from first = 27000 x 9/100 = 2430; income from second = 27000 x 5/120 = 1125. Difference = Rs 1305.",
+   "order": 47,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Income = investment x rate / market value for each, then subtract."
+  },
+  {
+   "questionText": "A man invests Rs 13000 in a 4% stock at 100. Another invests Rs 13000 in a 10% stock at 125. (Both have face value Rs 100.) What is the difference between their annual incomes?",
+   "options": [
+    {
+     "text": "Rs 650"
+    },
+    {
+     "text": "Rs 260"
+    },
+    {
+     "text": "Rs 780"
+    },
+    {
+     "text": "Rs 520"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Income from first = 13000 x 4/100 = 520; income from second = 13000 x 10/125 = 1040. Difference = Rs 520.",
+   "order": 48,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Income = investment x rate / market value for each, then subtract."
+  },
+  {
+   "questionText": "A Rs 20 share pays a 9% dividend and is quoted at Rs 30. What is the percentage yield on the investment?",
+   "options": [
+    {
+     "text": "8%"
+    },
+    {
+     "text": "9%"
+    },
+    {
+     "text": "5%"
+    },
+    {
+     "text": "6%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dividend per share = 1.8. Yield = 1.8/30 x 100 = 6%.",
+   "order": 49,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Yield = dividend per share / market price per share x 100."
+  },
+  {
+   "questionText": "A man invests Rs 33000 in a 12% stock at 150. Another invests Rs 33000 in a 5% stock at 120. (Both have face value Rs 100.) What is the difference between their annual incomes?",
+   "options": [
+    {
+     "text": "Rs 1265"
+    },
+    {
+     "text": "Rs 2310"
+    },
+    {
+     "text": "Rs 1012"
+    },
+    {
+     "text": "Rs 2530"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Income from first = 33000 x 12/150 = 2640; income from second = 33000 x 5/120 = 1375. Difference = Rs 1265.",
+   "order": 50,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Income = investment x rate / market value for each, then subtract."
+  },
+  {
+   "questionText": "A man invests Rs 35000 in a 9% stock at 80. Another invests Rs 35000 in a 5% stock at 125. (Both have face value Rs 100.) What is the difference between their annual incomes?",
+   "options": [
+    {
+     "text": "Rs 2283.75"
+    },
+    {
+     "text": "Rs 2537.5"
+    },
+    {
+     "text": "Rs 1400"
+    },
+    {
+     "text": "Rs 5075"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Income from first = 35000 x 9/80 = 3937.5; income from second = 35000 x 5/125 = 1400. Difference = Rs 2537.5.",
+   "order": 51,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Income = investment x rate / market value for each, then subtract."
+  },
+  {
+   "questionText": "A Rs 10 share pays a 5% dividend and is quoted at Rs 12.5. What is the percentage yield on the investment?",
+   "options": [
+    {
+     "text": "3%"
+    },
+    {
+     "text": "6%"
+    },
+    {
+     "text": "4%"
+    },
+    {
+     "text": "5%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dividend per share = 0.5. Yield = 0.5/12.5 x 100 = 4%.",
+   "order": 52,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Yield = dividend per share / market price per share x 100."
+  },
+  {
+   "questionText": "A Rs 50 share pays a 9% dividend and is quoted at Rs 60. What is the percentage yield on the investment?",
+   "options": [
+    {
+     "text": "5.5%"
+    },
+    {
+     "text": "12.5%"
+    },
+    {
+     "text": "9%"
+    },
+    {
+     "text": "7.5%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dividend per share = 4.5. Yield = 4.5/60 x 100 = 7.5%.",
+   "order": 53,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Yield = dividend per share / market price per share x 100."
+  },
+  {
+   "questionText": "A man invests Rs 23000 in a 4% stock at 160. Another invests Rs 23000 in a 6% stock at 160. (Both have face value Rs 100.) What is the difference between their annual incomes?",
+   "options": [
+    {
+     "text": "Rs 575"
+    },
+    {
+     "text": "Rs 460"
+    },
+    {
+     "text": "Rs 287.5"
+    },
+    {
+     "text": "Rs 345"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Income from first = 23000 x 4/160 = 575; income from second = 23000 x 6/160 = 862.5. Difference = Rs 287.5.",
+   "order": 54,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Income = investment x rate / market value for each, then subtract."
+  },
+  {
+   "questionText": "A Rs 50 share pays a 10% dividend and is quoted at Rs 125. What is the percentage yield on the investment?",
+   "options": [
+    {
+     "text": "6%"
+    },
+    {
+     "text": "4%"
+    },
+    {
+     "text": "2%"
+    },
+    {
+     "text": "10%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend per share = 5. Yield = 5/125 x 100 = 4%.",
+   "order": 55,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Yield = dividend per share / market price per share x 100."
+  },
+  {
+   "questionText": "A Rs 50 share pays a 9% dividend and is quoted at Rs 100. What is the percentage yield on the investment?",
+   "options": [
+    {
+     "text": "4.5%"
+    },
+    {
+     "text": "9%"
+    },
+    {
+     "text": "2.25%"
+    },
+    {
+     "text": "4.05%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend per share = 4.5. Yield = 4.5/100 x 100 = 4.5%.",
+   "order": 56,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Yield = dividend per share / market price per share x 100."
+  },
+  {
+   "questionText": "A man invests Rs 9000 in a 6% stock at 120. Another invests Rs 9000 in a 9% stock at 120. (Both have face value Rs 100.) What is the difference between their annual incomes?",
+   "options": [
+    {
+     "text": "Rs 300"
+    },
+    {
+     "text": "Rs 270"
+    },
+    {
+     "text": "Rs 150"
+    },
+    {
+     "text": "Rs 225"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Income from first = 9000 x 6/120 = 450; income from second = 9000 x 9/120 = 675. Difference = Rs 225.",
+   "order": 57,
+   "subPattern": "returns-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Income = investment x rate / market value for each, then subtract."
+  },
+  {
+   "questionText": "Rs 24000 is invested either in an 8% stock at 100 or in a 7.5% stock at 80 (face value Rs 100). Which gives more annual income, and by how much?",
+   "options": [
+    {
+     "text": "7.5% stock at 80, by Rs 120"
+    },
+    {
+     "text": "8% stock at 100, by Rs 330"
+    },
+    {
+     "text": "7.5% stock at 80, by Rs 330"
+    },
+    {
+     "text": "7.5% stock at 80, by Rs 660"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Income from first = Rs 1920; from second = Rs 2250. 7.5% stock at 80 gives more, by Rs 330.",
+   "order": 58,
+   "subPattern": "returns-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Work out income = investment x rate / price for both and compare."
+  },
+  {
+   "questionText": "Rs 12000 is invested either in a 9% stock at 160 or in an 8% stock at 125 (face value Rs 100). Which gives more annual income, and by how much?",
+   "options": [
+    {
+     "text": "8% stock at 125, by Rs 120"
+    },
+    {
+     "text": "8% stock at 125, by Rs 93"
+    },
+    {
+     "text": "9% stock at 160, by Rs 93"
+    },
+    {
+     "text": "8% stock at 125, by Rs 186"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Income from first = Rs 675; from second = Rs 768. 8% stock at 125 gives more, by Rs 93.",
+   "order": 59,
+   "subPattern": "returns-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Work out income = investment x rate / price for both and compare."
+  },
+  {
+   "questionText": "A man buys shares of face value Rs 50 at a 50% premium. The company pays a 6% dividend. What is his return on investment?",
+   "options": [
+    {
+     "text": "4%"
+    },
+    {
+     "text": "56%"
+    },
+    {
+     "text": "6%"
+    },
+    {
+     "text": "9%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Price = Rs 75; dividend = 3. Return = 3/75 x 100 = 4%.",
+   "order": 60,
+   "subPattern": "returns-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Return = rate x 100 / (100 + premium) = 6 x 100/150."
+  },
+  {
+   "questionText": "A man buys shares of face value Rs 10 at a 25% premium. The company pays a 10% dividend. What is his return on investment?",
+   "options": [
+    {
+     "text": "10%"
+    },
+    {
+     "text": "8%"
+    },
+    {
+     "text": "35%"
+    },
+    {
+     "text": "9%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Price = Rs 12.5; dividend = 1. Return = 1/12.5 x 100 = 8%.",
+   "order": 61,
+   "subPattern": "returns-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Return = rate x 100 / (100 + premium) = 10 x 100/125."
+  },
+  {
+   "questionText": "Rs 27000 is invested either in a 4% stock at 100 or in a 10% stock at 120 (face value Rs 100). Which gives more annual income, and by how much?",
+   "options": [
+    {
+     "text": "10% stock at 120, by Rs 1170"
+    },
+    {
+     "text": "4% stock at 100, by Rs 1170"
+    },
+    {
+     "text": "10% stock at 120, by Rs 1620"
+    },
+    {
+     "text": "10% stock at 120, by Rs 2340"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Income from first = Rs 1080; from second = Rs 2250. 10% stock at 120 gives more, by Rs 1170.",
+   "order": 62,
+   "subPattern": "returns-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Work out income = investment x rate / price for both and compare."
+  },
+  {
+   "questionText": "A man buys shares of face value Rs 50 at a 50% premium. The company pays a 15% dividend. What is his return on investment?",
+   "options": [
+    {
+     "text": "15%"
+    },
+    {
+     "text": "9%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "65%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Price = Rs 75; dividend = 7.5. Return = 7.5/75 x 100 = 10%.",
+   "order": 63,
+   "subPattern": "returns-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Return = rate x 100 / (100 + premium) = 15 x 100/150."
+  },
+  {
+   "questionText": "A man holds 500 shares of face value Rs 10 each. If the company pays a 10% dividend, what is his annual income from dividend?",
+   "options": [
+    {
+     "text": "Rs 625"
+    },
+    {
+     "text": "Rs 450"
+    },
+    {
+     "text": "Rs 5000"
+    },
+    {
+     "text": "Rs 500"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dividend is on face value: 500 x 10 x 10/100 = Rs 500.",
+   "order": 64,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Annual income = number of shares x FV x rate / 100."
+  },
+  {
+   "questionText": "A man holds 700 shares of face value Rs 100 each. If the company pays an 8% dividend, what is his annual income from dividend?",
+   "options": [
+    {
+     "text": "Rs 6160"
+    },
+    {
+     "text": "Rs 2800"
+    },
+    {
+     "text": "Rs 5600"
+    },
+    {
+     "text": "Rs 11200"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dividend is on face value: 700 x 100 x 8/100 = Rs 5600.",
+   "order": 65,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Annual income = number of shares x FV x rate / 100."
+  },
+  {
+   "questionText": "How much must be invested in a 4% stock (face value Rs 100) at 125 to obtain an annual income of Rs 4600?",
+   "options": [
+    {
+     "text": "Rs 143750"
+    },
+    {
+     "text": "Rs 18400"
+    },
+    {
+     "text": "Rs 215625"
+    },
+    {
+     "text": "Rs 115000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Income per Rs 125 invested = 4. Investment = 4600 x 125 / 4 = Rs 143750.",
+   "order": 66,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Investment = income x market value / dividend per Rs 100 stock."
+  },
+  {
+   "questionText": "A man holds Rs 26000 of a 12% stock (face value Rs 100) and sells it at 120. How much does he get?",
+   "options": [
+    {
+     "text": "Rs 26000"
+    },
+    {
+     "text": "Rs 24960"
+    },
+    {
+     "text": "Rs 34320"
+    },
+    {
+     "text": "Rs 31200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Number of shares = 26000/100 = 260. Sale value = 260 x 120 = Rs 31200.",
+   "order": 67,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sale value = number of Rs 100 shares x market price."
+  },
+  {
+   "questionText": "A man holds 350 shares of face value Rs 50 each. If the company pays an 8% dividend, what is his annual income from dividend?",
+   "options": [
+    {
+     "text": "Rs 700"
+    },
+    {
+     "text": "Rs 1400"
+    },
+    {
+     "text": "Rs 2800"
+    },
+    {
+     "text": "Rs 1680"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend is on face value: 350 x 50 x 8/100 = Rs 1400.",
+   "order": 68,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Annual income = number of shares x FV x rate / 100."
+  },
+  {
+   "questionText": "How much must be invested in a 12% stock (face value Rs 100) at 110 to obtain an annual income of Rs 3000?",
+   "options": [
+    {
+     "text": "Rs 27500"
+    },
+    {
+     "text": "Rs 34375"
+    },
+    {
+     "text": "Rs 36000"
+    },
+    {
+     "text": "Rs 25000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Income per Rs 110 invested = 12. Investment = 3000 x 110 / 12 = Rs 27500.",
+   "order": 69,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Investment = income x market value / dividend per Rs 100 stock."
+  },
+  {
+   "questionText": "A man holds Rs 14000 of a 6% stock (face value Rs 100) and sells it at 75. How much does he get?",
+   "options": [
+    {
+     "text": "Rs 14000"
+    },
+    {
+     "text": "Rs 8400"
+    },
+    {
+     "text": "Rs 12600"
+    },
+    {
+     "text": "Rs 10500"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Number of shares = 14000/100 = 140. Sale value = 140 x 75 = Rs 10500.",
+   "order": 70,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sale value = number of Rs 100 shares x market price."
+  },
+  {
+   "questionText": "How much must be invested in an 8% stock (face value Rs 100) at 130 to obtain an annual income of Rs 1000?",
+   "options": [
+    {
+     "text": "Rs 8000"
+    },
+    {
+     "text": "Rs 12500"
+    },
+    {
+     "text": "Rs 16250"
+    },
+    {
+     "text": "Rs 19500"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Income per Rs 130 invested = 8. Investment = 1000 x 130 / 8 = Rs 16250.",
+   "order": 71,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Investment = income x market value / dividend per Rs 100 stock."
+  },
+  {
+   "questionText": "How much must be invested in a 10% stock (face value Rs 100) at 80 to obtain an annual income of Rs 2300?",
+   "options": [
+    {
+     "text": "Rs 27600"
+    },
+    {
+     "text": "Rs 18400"
+    },
+    {
+     "text": "Rs 16560"
+    },
+    {
+     "text": "Rs 23000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Income per Rs 80 invested = 10. Investment = 2300 x 80 / 10 = Rs 18400.",
+   "order": 72,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Investment = income x market value / dividend per Rs 100 stock."
+  },
+  {
+   "questionText": "A man holds Rs 32000 of an 8% stock (face value Rs 100) and sells it at 120. How much does he get?",
+   "options": [
+    {
+     "text": "Rs 32000"
+    },
+    {
+     "text": "Rs 38400"
+    },
+    {
+     "text": "Rs 28800"
+    },
+    {
+     "text": "Rs 42240"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Number of shares = 32000/100 = 320. Sale value = 320 x 120 = Rs 38400.",
+   "order": 73,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Sale value = number of Rs 100 shares x market price."
+  },
+  {
+   "questionText": "A man holds 500 shares of face value Rs 100 each. If the company pays an 18% dividend, what is his annual income from dividend?",
+   "options": [
+    {
+     "text": "Rs 4500"
+    },
+    {
+     "text": "Rs 18000"
+    },
+    {
+     "text": "Rs 9000"
+    },
+    {
+     "text": "Rs 6000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dividend is on face value: 500 x 100 x 18/100 = Rs 9000.",
+   "order": 74,
+   "subPattern": "income-from-investments",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Annual income = number of shares x FV x rate / 100."
+  },
+  {
+   "questionText": "A man sells Rs 16000 of 8% stock at 100 and invests the proceeds in 12% stock at 120. What is his new annual income?",
+   "options": [
+    {
+     "text": "Rs 1280"
+    },
+    {
+     "text": "Rs 1440"
+    },
+    {
+     "text": "Rs 1920"
+    },
+    {
+     "text": "Rs 1600"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Proceeds = 160 x 100 = Rs 16000. New income = 16000 x 12/120 = Rs 1600.",
+   "order": 75,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Proceeds = shares x price; new income = proceeds x new rate / new price."
+  },
+  {
+   "questionText": "A man wants an annual income of Rs 5800 from 4% shares of face value Rs 10 quoted at Rs 10. How much must he invest?",
+   "options": [
+    {
+     "text": "Rs 145000"
+    },
+    {
+     "text": "Rs 159500"
+    },
+    {
+     "text": "Rs 108750"
+    },
+    {
+     "text": "Rs 174000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend per share = 0.4. Shares needed = 5800/0.4 = 14500. Investment = 14500 x 10 = Rs 145000.",
+   "order": 76,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Find dividend per share, shares needed, then multiply by the market price."
+  },
+  {
+   "questionText": "A man sells Rs 4000 of 10% stock at 120 and invests the proceeds in 15% stock at 160. What is his new annual income?",
+   "options": [
+    {
+     "text": "Rs 600"
+    },
+    {
+     "text": "Rs 405"
+    },
+    {
+     "text": "Rs 495"
+    },
+    {
+     "text": "Rs 450"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Proceeds = 40 x 120 = Rs 4800. New income = 4800 x 15/160 = Rs 450.",
+   "order": 77,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Proceeds = shares x price; new income = proceeds x new rate / new price."
+  },
+  {
+   "questionText": "A man wants an annual income of Rs 4600 from 5% shares of face value Rs 50 quoted at Rs 62.5. How much must he invest?",
+   "options": [
+    {
+     "text": "Rs 115000"
+    },
+    {
+     "text": "Rs 143750"
+    },
+    {
+     "text": "Rs 138000"
+    },
+    {
+     "text": "Rs 92000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend per share = 2.5. Shares needed = 4600/2.5 = 1840. Investment = 1840 x 62.5 = Rs 115000.",
+   "order": 78,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find dividend per share, shares needed, then multiply by the market price."
+  },
+  {
+   "questionText": "A man sells Rs 10000 of 12% stock at 120 and invests the proceeds in 12% stock at 90. What is his new annual income?",
+   "options": [
+    {
+     "text": "Rs 1200"
+    },
+    {
+     "text": "Rs 2400"
+    },
+    {
+     "text": "Rs 1600"
+    },
+    {
+     "text": "Rs 1440"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Proceeds = 100 x 120 = Rs 12000. New income = 12000 x 12/90 = Rs 1600.",
+   "order": 79,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Proceeds = shares x price; new income = proceeds x new rate / new price."
+  },
+  {
+   "questionText": "A company pays a dividend of 10% on shares of face value Rs 20. A man owns shares worth Rs 17000 (at face value). What is his yearly dividend?",
+   "options": [
+    {
+     "text": "Rs 17000"
+    },
+    {
+     "text": "Rs 1700"
+    },
+    {
+     "text": "Rs 1275"
+    },
+    {
+     "text": "Rs 1870"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend = 10% of Rs 17000 = Rs 1700.",
+   "order": 80,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take 10% of the total face value."
+  },
+  {
+   "questionText": "A man sells Rs 12000 of 10% stock at 80 and invests the proceeds in 15% stock at 90. What is his new annual income?",
+   "options": [
+    {
+     "text": "Rs 1800"
+    },
+    {
+     "text": "Rs 800"
+    },
+    {
+     "text": "Rs 1600"
+    },
+    {
+     "text": "Rs 2000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Proceeds = 120 x 80 = Rs 9600. New income = 9600 x 15/90 = Rs 1600.",
+   "order": 81,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Proceeds = shares x price; new income = proceeds x new rate / new price."
+  },
+  {
+   "questionText": "A man wants an annual income of Rs 4700 from 10% shares of face value Rs 50 quoted at Rs 45. How much must he invest?",
+   "options": [
+    {
+     "text": "Rs 42300"
+    },
+    {
+     "text": "Rs 46530"
+    },
+    {
+     "text": "Rs 31725"
+    },
+    {
+     "text": "Rs 47000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend per share = 5. Shares needed = 4700/5 = 940. Investment = 940 x 45 = Rs 42300.",
+   "order": 82,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find dividend per share, shares needed, then multiply by the market price."
+  },
+  {
+   "questionText": "A company pays a dividend of 9% on shares of face value Rs 100. A man owns shares worth Rs 190000 (at face value). What is his yearly dividend?",
+   "options": [
+    {
+     "text": "Rs 171000"
+    },
+    {
+     "text": "Rs 17100"
+    },
+    {
+     "text": "Rs 11400"
+    },
+    {
+     "text": "Rs 18810"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend = 9% of Rs 190000 = Rs 17100.",
+   "order": 83,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Take 9% of the total face value."
+  },
+  {
+   "questionText": "A man sells Rs 20000 of 6% stock at 120 and invests the proceeds in 12% stock at 90. What is his new annual income?",
+   "options": [
+    {
+     "text": "Rs 4000"
+    },
+    {
+     "text": "Rs 2400"
+    },
+    {
+     "text": "Rs 2880"
+    },
+    {
+     "text": "Rs 3200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Proceeds = 200 x 120 = Rs 24000. New income = 24000 x 12/90 = Rs 3200.",
+   "order": 84,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Proceeds = shares x price; new income = proceeds x new rate / new price."
+  },
+  {
+   "questionText": "A man wants an annual income of Rs 6000 from 4% shares of face value Rs 10 quoted at Rs 9.6. How much must he invest?",
+   "options": [
+    {
+     "text": "Rs 150000"
+    },
+    {
+     "text": "Rs 144000"
+    },
+    {
+     "text": "Rs 216000"
+    },
+    {
+     "text": "Rs 192000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend per share = 0.4. Shares needed = 6000/0.4 = 15000. Investment = 15000 x 9.6 = Rs 144000.",
+   "order": 85,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find dividend per share, shares needed, then multiply by the market price."
+  },
+  {
+   "questionText": "A man sells Rs 6000 of 10% stock at 75 and invests the proceeds in 12% stock at 100. What is his new annual income?",
+   "options": [
+    {
+     "text": "Rs 405"
+    },
+    {
+     "text": "Rs 360"
+    },
+    {
+     "text": "Rs 720"
+    },
+    {
+     "text": "Rs 540"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Proceeds = 60 x 75 = Rs 4500. New income = 4500 x 12/100 = Rs 540.",
+   "order": 86,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Proceeds = shares x price; new income = proceeds x new rate / new price."
+  },
+  {
+   "questionText": "A man wants an annual income of Rs 1900 from 8% shares of face value Rs 10 quoted at Rs 15. How much must he invest?",
+   "options": [
+    {
+     "text": "Rs 23750"
+    },
+    {
+     "text": "Rs 28500"
+    },
+    {
+     "text": "Rs 35625"
+    },
+    {
+     "text": "Rs 71250"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dividend per share = 0.8. Shares needed = 1900/0.8 = 2375. Investment = 2375 x 15 = Rs 35625.",
+   "order": 87,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find dividend per share, shares needed, then multiply by the market price."
+  },
+  {
+   "questionText": "A company pays a dividend of 5% on shares of face value Rs 10. A man owns shares worth Rs 7500 (at face value). What is his yearly dividend?",
+   "options": [
+    {
+     "text": "Rs 375"
+    },
+    {
+     "text": "Rs 250"
+    },
+    {
+     "text": "Rs 3750"
+    },
+    {
+     "text": "Rs 300"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend = 5% of Rs 7500 = Rs 375.",
+   "order": 88,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take 5% of the total face value."
+  },
+  {
+   "questionText": "A man sells Rs 58000 of 9% stock at 150 and invests the proceeds in 15% stock at 150. What is his new annual income?",
+   "options": [
+    {
+     "text": "Rs 4350"
+    },
+    {
+     "text": "Rs 8700"
+    },
+    {
+     "text": "Rs 11600"
+    },
+    {
+     "text": "Rs 7830"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Proceeds = 580 x 150 = Rs 87000. New income = 87000 x 15/150 = Rs 8700.",
+   "order": 89,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Proceeds = shares x price; new income = proceeds x new rate / new price."
+  },
+  {
+   "questionText": "A man wants an annual income of Rs 4500 from 9% shares of face value Rs 10 quoted at Rs 15. How much must he invest?",
+   "options": [
+    {
+     "text": "Rs 37500"
+    },
+    {
+     "text": "Rs 93750"
+    },
+    {
+     "text": "Rs 50000"
+    },
+    {
+     "text": "Rs 75000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dividend per share = 0.9. Shares needed = 4500/0.9 = 5000. Investment = 5000 x 15 = Rs 75000.",
+   "order": 90,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find dividend per share, shares needed, then multiply by the market price."
+  },
+  {
+   "questionText": "A company pays a dividend of 15% on shares of face value Rs 100. A man owns shares worth Rs 95000 (at face value). What is his yearly dividend?",
+   "options": [
+    {
+     "text": "Rs 12825"
+    },
+    {
+     "text": "Rs 28500"
+    },
+    {
+     "text": "Rs 14250"
+    },
+    {
+     "text": "Rs 142500"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dividend = 15% of Rs 95000 = Rs 14250.",
+   "order": 91,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Take 15% of the total face value."
+  },
+  {
+   "questionText": "A company pays a dividend of 12% on shares of face value Rs 100. A man owns shares worth Rs 200000 (at face value). What is his yearly dividend?",
+   "options": [
+    {
+     "text": "Rs 24000"
+    },
+    {
+     "text": "Rs 18000"
+    },
+    {
+     "text": "Rs 240000"
+    },
+    {
+     "text": "Rs 32000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend = 12% of Rs 200000 = Rs 24000.",
+   "order": 92,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take 12% of the total face value."
+  },
+  {
+   "questionText": "A company pays a dividend of 9% on shares of face value Rs 50. A man owns shares worth Rs 95000 (at face value). What is his yearly dividend?",
+   "options": [
+    {
+     "text": "Rs 85500"
+    },
+    {
+     "text": "Rs 6840"
+    },
+    {
+     "text": "Rs 8550"
+    },
+    {
+     "text": "Rs 17100"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dividend = 9% of Rs 95000 = Rs 8550.",
+   "order": 93,
+   "subPattern": "income-from-investments",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Take 9% of the total face value."
+  },
+  {
+   "questionText": "Rs 40000 is invested in a 10% stock (face value Rs 100) at 125. What is the annual income?",
+   "options": [
+    {
+     "text": "Rs 3840"
+    },
+    {
+     "text": "Rs 4000"
+    },
+    {
+     "text": "Rs 4800"
+    },
+    {
+     "text": "Rs 3200"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Income = investment x rate / market value = 40000 x 10 / 125 = Rs 3200.",
+   "order": 94,
+   "subPattern": "income-from-investments",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Annual income = investment x rate / market value."
+  },
+  {
+   "questionText": "A man sells Rs 32000 of 10% stock at 100 and reinvests the proceeds in 15% stock at 80. By how much does his annual income increase? Choose the correct statement.",
+   "options": [
+    {
+     "text": "Increase of Rs 2800"
+    },
+    {
+     "text": "Increase of Rs 5600"
+    },
+    {
+     "text": "Decrease of Rs 2800"
+    },
+    {
+     "text": "No change"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Old income = 320 x 10 = 3200. Proceeds = Rs 32000; new income = 32000 x 15/80 = 6000. Change = 2800: increase of Rs 2800.",
+   "order": 95,
+   "subPattern": "income-from-investments",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Compute old and new income and subtract."
+  },
+  {
+   "questionText": "A man owns 1750 shares of Rs 100 each, currently quoted at Rs 110 each. The company declares a 15% dividend. What total dividend does he receive?",
+   "options": [
+    {
+     "text": "Rs 28875"
+    },
+    {
+     "text": "Rs 26250"
+    },
+    {
+     "text": "Rs 13125"
+    },
+    {
+     "text": "Rs 31500"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dividend is paid on face value, not market value: 1750 x 100 x 15/100 = Rs 26250.",
+   "order": 96,
+   "subPattern": "income-from-investments",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Market value never enters the dividend: only face value and the rate."
+  },
+  {
+   "questionText": "Rs 30000 is invested in a 5% stock (face value Rs 100) at 75. What is the annual income?",
+   "options": [
+    {
+     "text": "Rs 1600"
+    },
+    {
+     "text": "Rs 1500"
+    },
+    {
+     "text": "Rs 2000"
+    },
+    {
+     "text": "Rs 1000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Income = investment x rate / market value = 30000 x 5 / 75 = Rs 2000.",
+   "order": 97,
+   "subPattern": "income-from-investments",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Annual income = investment x rate / market value."
+  },
+  {
+   "questionText": "A man owns 100 shares of Rs 100 each, currently quoted at Rs 105 each. The company declares a 20% dividend. What total dividend does he receive?",
+   "options": [
+    {
+     "text": "Rs 2000"
+    },
+    {
+     "text": "Rs 2500"
+    },
+    {
+     "text": "Rs 2100"
+    },
+    {
+     "text": "Rs 2400"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dividend is paid on face value, not market value: 100 x 100 x 20/100 = Rs 2000.",
+   "order": 98,
+   "subPattern": "income-from-investments",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Market value never enters the dividend: only face value and the rate."
+  },
+  {
+   "questionText": "A man sells Rs 8000 of 8% stock at 100 and reinvests the proceeds in 12% stock at 125. By how much does his annual income increase? Choose the correct statement.",
+   "options": [
+    {
+     "text": "No change"
+    },
+    {
+     "text": "Decrease of Rs 128"
+    },
+    {
+     "text": "Increase of Rs 256"
+    },
+    {
+     "text": "Increase of Rs 128"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Old income = 80 x 8 = 640. Proceeds = Rs 8000; new income = 8000 x 12/125 = 768. Change = 128: increase of Rs 128.",
+   "order": 99,
+   "subPattern": "income-from-investments",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Compute old and new income and subtract."
+  },
+  {
+   "questionText": "Rs 9000 is invested in a 10% stock (face value Rs 100) at 120. What is the annual income?",
+   "options": [
+    {
+     "text": "Rs 900"
+    },
+    {
+     "text": "Rs 750"
+    },
+    {
+     "text": "Rs 1000"
+    },
+    {
+     "text": "Rs 1125"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Income = investment x rate / market value = 9000 x 10 / 120 = Rs 750.",
+   "order": 100,
+   "subPattern": "income-from-investments",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Annual income = investment x rate / market value."
+  }
+ ]
+}

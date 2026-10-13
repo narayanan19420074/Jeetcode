@@ -1,0 +1,2722 @@
+{
+ "pattern": {
+  "title": "Mixtures and Alligations",
+  "slug": "mixtures-and-alligations",
+  "description": "Alligation, replacement and dilution problems.",
+  "order": 10,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Quantitative Aptitude",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "alligation-rule",
+    "title": "Alligation rule"
+   },
+   {
+    "slug": "replacement-repeated-removal",
+    "title": "Replacement & repeated removal"
+   },
+   {
+    "slug": "mixing-two-varieties",
+    "title": "Mixing two varieties"
+   },
+   {
+    "slug": "price-based-mixtures",
+    "title": "Price-based mixtures"
+   },
+   {
+    "slug": "water-milk-dilution",
+    "title": "Water-milk dilution"
+   },
+   {
+    "slug": "three-ingredient-mixtures",
+    "title": "Three-ingredient mixtures"
+   },
+   {
+    "slug": "profit-through-dilution",
+    "title": "Profit through dilution"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "25 kg of wheat at Rs 50 per kg is mixed with 15 kg of wheat at Rs 42 per kg. What is the average price per kg of the mixture?",
+   "options": [
+    {
+     "text": "Rs 46"
+    },
+    {
+     "text": "Rs 45"
+    },
+    {
+     "text": "Rs 47"
+    },
+    {
+     "text": "Rs 94"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total cost = 25 x 50 + 15 x 42 = 1880. Total weight = 40 kg. Average = Rs 47 per kg.",
+   "order": 1,
+   "subPattern": "alligation-rule",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Mean price = total cost / total quantity (not the simple average of prices)."
+  },
+  {
+   "questionText": "15 kg of rice at Rs 70 per kg is mixed with 25 kg of rice at Rs 30 per kg. What is the average price per kg of the mixture?",
+   "options": [
+    {
+     "text": "Rs 45"
+    },
+    {
+     "text": "Rs 54"
+    },
+    {
+     "text": "Rs 50"
+    },
+    {
+     "text": "Rs 43"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total cost = 15 x 70 + 25 x 30 = 1800. Total weight = 40 kg. Average = Rs 45 per kg.",
+   "order": 2,
+   "subPattern": "alligation-rule",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Mean price = total cost / total quantity (not the simple average of prices)."
+  },
+  {
+   "questionText": "20 kg of tea at Rs 50 per kg is mixed with 30 kg of tea at Rs 45 per kg. What is the average price per kg of the mixture?",
+   "options": [
+    {
+     "text": "Rs 47.5"
+    },
+    {
+     "text": "Rs 45"
+    },
+    {
+     "text": "Rs 42"
+    },
+    {
+     "text": "Rs 47"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total cost = 20 x 50 + 30 x 45 = 2350. Total weight = 50 kg. Average = Rs 47 per kg.",
+   "order": 3,
+   "subPattern": "alligation-rule",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Mean price = total cost / total quantity (not the simple average of prices)."
+  },
+  {
+   "questionText": "15 kg of wheat at Rs 30 per kg is mixed with 25 kg of wheat at Rs 42 per kg. What is the average price per kg of the mixture?",
+   "options": [
+    {
+     "text": "Rs 41.25"
+    },
+    {
+     "text": "Rs 37.5"
+    },
+    {
+     "text": "Rs 33.75"
+    },
+    {
+     "text": "Rs 36"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total cost = 15 x 30 + 25 x 42 = 1500. Total weight = 40 kg. Average = Rs 37.5 per kg.",
+   "order": 4,
+   "subPattern": "alligation-rule",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Mean price = total cost / total quantity (not the simple average of prices)."
+  },
+  {
+   "questionText": "In what ratio must sugar at Rs 24 per kg be mixed with sugar at Rs 42 per kg so that the mixture is worth Rs 31 per kg?",
+   "options": [
+    {
+     "text": "11:7"
+    },
+    {
+     "text": "13:7"
+    },
+    {
+     "text": "7:11"
+    },
+    {
+     "text": "11:5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Alligation: cheaper : dearer = (42 - 31) : (31 - 24) = 11 : 7 = 11:7.",
+   "order": 5,
+   "subPattern": "alligation-rule",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Cross-subtract: (dearer - mean) : (mean - cheaper) gives cheaper : dearer."
+  },
+  {
+   "questionText": "In what ratio must rice at Rs 36 per kg be mixed with rice at Rs 60 per kg so that the mixture is worth Rs 55 per kg?",
+   "options": [
+    {
+     "text": "3:19"
+    },
+    {
+     "text": "19:5"
+    },
+    {
+     "text": "5:19"
+    },
+    {
+     "text": "7:19"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Alligation: cheaper : dearer = (60 - 55) : (55 - 36) = 5 : 19 = 5:19.",
+   "order": 6,
+   "subPattern": "alligation-rule",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cross-subtract: (dearer - mean) : (mean - cheaper) gives cheaper : dearer."
+  },
+  {
+   "questionText": "In what ratio must sugar at Rs 45 per kg be mixed with sugar at Rs 70 per kg so that the mixture is worth Rs 47 per kg?",
+   "options": [
+    {
+     "text": "23:4"
+    },
+    {
+     "text": "23:2"
+    },
+    {
+     "text": "2:23"
+    },
+    {
+     "text": "23:1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Alligation: cheaper : dearer = (70 - 47) : (47 - 45) = 23 : 2 = 23:2.",
+   "order": 7,
+   "subPattern": "alligation-rule",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Cross-subtract: (dearer - mean) : (mean - cheaper) gives cheaper : dearer."
+  },
+  {
+   "questionText": "In what ratio must rice at Rs 24 per kg be mixed with rice at Rs 42 per kg so that the mixture is worth Rs 30 per kg?",
+   "options": [
+    {
+     "text": "3:1"
+    },
+    {
+     "text": "1:2"
+    },
+    {
+     "text": "2:3"
+    },
+    {
+     "text": "2:1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alligation: cheaper : dearer = (42 - 30) : (30 - 24) = 12 : 6 = 2:1.",
+   "order": 8,
+   "subPattern": "alligation-rule",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Cross-subtract: (dearer - mean) : (mean - cheaper) gives cheaper : dearer."
+  },
+  {
+   "questionText": "In what ratio must rice at Rs 30 per kg be mixed with rice at Rs 50 per kg so that the mixture is worth Rs 33 per kg?",
+   "options": [
+    {
+     "text": "17:3"
+    },
+    {
+     "text": "17:4"
+    },
+    {
+     "text": "5:1"
+    },
+    {
+     "text": "3:17"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Alligation: cheaper : dearer = (50 - 33) : (33 - 30) = 17 : 3 = 17:3.",
+   "order": 9,
+   "subPattern": "alligation-rule",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Cross-subtract: (dearer - mean) : (mean - cheaper) gives cheaper : dearer."
+  },
+  {
+   "questionText": "In what ratio must tea at Rs 36 per kg be mixed with tea at Rs 60 per kg so that the mixture is worth Rs 45 per kg?",
+   "options": [
+    {
+     "text": "3:5"
+    },
+    {
+     "text": "4:3"
+    },
+    {
+     "text": "1:1"
+    },
+    {
+     "text": "5:3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alligation: cheaper : dearer = (60 - 45) : (45 - 36) = 15 : 9 = 5:3.",
+   "order": 10,
+   "subPattern": "alligation-rule",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Cross-subtract: (dearer - mean) : (mean - cheaper) gives cheaper : dearer."
+  },
+  {
+   "questionText": "How many kg of rice at Rs 40 per kg must be mixed with 20 kg of rice at Rs 60 per kg so that the mixture is worth Rs 56 per kg?",
+   "options": [
+    {
+     "text": "7 kg"
+    },
+    {
+     "text": "80 kg"
+    },
+    {
+     "text": "5 kg"
+    },
+    {
+     "text": "10 kg"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cheaper : dearer = (60 - 56) : (56 - 40) = 4 : 16. Cheaper = 20 x 4/16 = 5 kg.",
+   "order": 11,
+   "subPattern": "alligation-rule",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Get the ratio by alligation, then scale to the given quantity of the dearer variety."
+  },
+  {
+   "questionText": "How many kg of rice at Rs 36 per kg must be mixed with 15 kg of rice at Rs 60 per kg so that the mixture is worth Rs 46 per kg?",
+   "options": [
+    {
+     "text": "14 kg"
+    },
+    {
+     "text": "21 kg"
+    },
+    {
+     "text": "20 kg"
+    },
+    {
+     "text": "42 kg"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cheaper : dearer = (60 - 46) : (46 - 36) = 14 : 10. Cheaper = 15 x 14/10 = 21 kg.",
+   "order": 12,
+   "subPattern": "alligation-rule",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Get the ratio by alligation, then scale to the given quantity of the dearer variety."
+  },
+  {
+   "questionText": "A vessel contains 60 litres of pure milk. 12 litres are drawn out and replaced by water. What is the ratio of milk to water in the new mixture?",
+   "options": [
+    {
+     "text": "5:1"
+    },
+    {
+     "text": "6:1"
+    },
+    {
+     "text": "4:3"
+    },
+    {
+     "text": "4:1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Milk left = 60 - 12 = 48 litres. Water = 12 litres. Ratio = 48:12 = 4:1.",
+   "order": 13,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "One replacement: pure part left = original - removed; water = removed."
+  },
+  {
+   "questionText": "A vessel contains 40 litres of pure milk. 10 litres are drawn out and replaced by water. What is the ratio of milk to water in the new mixture?",
+   "options": [
+    {
+     "text": "4:1"
+    },
+    {
+     "text": "3:2"
+    },
+    {
+     "text": "3:1"
+    },
+    {
+     "text": "1:1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Milk left = 40 - 10 = 30 litres. Water = 10 litres. Ratio = 30:10 = 3:1.",
+   "order": 14,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "One replacement: pure part left = original - removed; water = removed."
+  },
+  {
+   "questionText": "A vessel contains 100 litres of pure milk. 15 litres are drawn out and replaced by water. What is the ratio of milk to water in the new mixture?",
+   "options": [
+    {
+     "text": "17:3"
+    },
+    {
+     "text": "20:3"
+    },
+    {
+     "text": "19:3"
+    },
+    {
+     "text": "6:1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Milk left = 100 - 15 = 85 litres. Water = 15 litres. Ratio = 85:15 = 17:3.",
+   "order": 15,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "One replacement: pure part left = original - removed; water = removed."
+  },
+  {
+   "questionText": "A vessel contains 80 litres of pure juice. 15 litres are drawn out and replaced by water. What is the ratio of juice to water in the new mixture?",
+   "options": [
+    {
+     "text": "13:2"
+    },
+    {
+     "text": "13:3"
+    },
+    {
+     "text": "16:3"
+    },
+    {
+     "text": "4:1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Juice left = 80 - 15 = 65 litres. Water = 15 litres. Ratio = 65:15 = 13:3.",
+   "order": 16,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "One replacement: pure part left = original - removed; water = removed."
+  },
+  {
+   "questionText": "A container holds 80 litres of milk. 20 litres are removed and replaced with water. The same operation is repeated once more. How much milk is left in the container?",
+   "options": [
+    {
+     "text": "30 litres"
+    },
+    {
+     "text": "36 litres"
+    },
+    {
+     "text": "45 litres"
+    },
+    {
+     "text": "40 litres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Milk after two operations = 80 x (1 - 20/80)^2 = 80 x (60/80)^2 = 45 litres.",
+   "order": 17,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Each operation multiplies the milk by (1 - 20/80)."
+  },
+  {
+   "questionText": "A container holds 30 litres of milk. 15 litres are removed and replaced with water. The same operation is repeated once more. How much milk is left in the container?",
+   "options": [
+    {
+     "text": "7.5 litres"
+    },
+    {
+     "text": "0 litres"
+    },
+    {
+     "text": "15 litres"
+    },
+    {
+     "text": "10 litres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Milk after two operations = 30 x (1 - 15/30)^2 = 30 x (15/30)^2 = 7.5 litres.",
+   "order": 18,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each operation multiplies the milk by (1 - 15/30)."
+  },
+  {
+   "questionText": "A container holds 50 litres of milk. 25 litres are removed and replaced with water. The same operation is repeated once more. How much milk is left in the container?",
+   "options": [
+    {
+     "text": "25 litres"
+    },
+    {
+     "text": "12.5 litres"
+    },
+    {
+     "text": "10 litres"
+    },
+    {
+     "text": "0 litres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Milk after two operations = 50 x (1 - 25/50)^2 = 50 x (25/50)^2 = 12.5 litres.",
+   "order": 19,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Each operation multiplies the milk by (1 - 25/50)."
+  },
+  {
+   "questionText": "A container holds 50 litres of milk. 20 litres are removed and replaced with water. The same operation is repeated once more. How much milk is left in the container?",
+   "options": [
+    {
+     "text": "13 litres"
+    },
+    {
+     "text": "9 litres"
+    },
+    {
+     "text": "10 litres"
+    },
+    {
+     "text": "18 litres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Milk after two operations = 50 x (1 - 20/50)^2 = 50 x (30/50)^2 = 18 litres.",
+   "order": 20,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each operation multiplies the milk by (1 - 20/50)."
+  },
+  {
+   "questionText": "A container holds 50 litres of milk. 5 litres are removed and replaced with water. The same operation is repeated once more. How much milk is left in the container?",
+   "options": [
+    {
+     "text": "60.75 litres"
+    },
+    {
+     "text": "48.6 litres"
+    },
+    {
+     "text": "40.5 litres"
+    },
+    {
+     "text": "40 litres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Milk after two operations = 50 x (1 - 5/50)^2 = 50 x (45/50)^2 = 40.5 litres.",
+   "order": 21,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Each operation multiplies the milk by (1 - 5/50)."
+  },
+  {
+   "questionText": "A container holds 20 litres of milk. 10 litres are removed and replaced with water. The same operation is repeated once more. How much milk is left in the container?",
+   "options": [
+    {
+     "text": "7 litres"
+    },
+    {
+     "text": "0 litres"
+    },
+    {
+     "text": "4 litres"
+    },
+    {
+     "text": "5 litres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Milk after two operations = 20 x (1 - 10/20)^2 = 20 x (10/20)^2 = 5 litres.",
+   "order": 22,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Each operation multiplies the milk by (1 - 10/20)."
+  },
+  {
+   "questionText": "A vessel contains 50 litres of pure milk. A certain quantity is removed and replaced by water; the same operation is repeated once more. The vessel now contains 18 litres of milk. How many litres were removed each time?",
+   "options": [
+    {
+     "text": "20 litres"
+    },
+    {
+     "text": "18 litres"
+    },
+    {
+     "text": "25 litres"
+    },
+    {
+     "text": "16 litres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "x(1 - y/x)^2 = 18, so (1 - y/x)^2 = 18/50 = 9/25, giving 1 - y/x = 3/5. y = 50 x 2/5 = 20 litres.",
+   "order": 23,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Take the square root of (final/original) to get the fraction of milk kept each time."
+  },
+  {
+   "questionText": "A vessel contains 144 litres of pure milk. A certain quantity is removed and replaced by water; the same operation is repeated once more. The vessel now contains 64 litres of milk. How many litres were removed each time?",
+   "options": [
+    {
+     "text": "36 litres"
+    },
+    {
+     "text": "48 litres"
+    },
+    {
+     "text": "40 litres"
+    },
+    {
+     "text": "60 litres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x(1 - y/x)^2 = 64, so (1 - y/x)^2 = 64/144 = 4/9, giving 1 - y/x = 2/3. y = 144 x 1/3 = 48 litres.",
+   "order": 24,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Take the square root of (final/original) to get the fraction of milk kept each time."
+  },
+  {
+   "questionText": "A vessel contains 80 litres of pure milk. A certain quantity is removed and replaced by water; the same operation is repeated once more. The vessel now contains 45 litres of milk. How many litres were removed each time?",
+   "options": [
+    {
+     "text": "22 litres"
+    },
+    {
+     "text": "17.5 litres"
+    },
+    {
+     "text": "20 litres"
+    },
+    {
+     "text": "40 litres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x(1 - y/x)^2 = 45, so (1 - y/x)^2 = 45/80 = 9/16, giving 1 - y/x = 3/4. y = 80 x 1/4 = 20 litres.",
+   "order": 25,
+   "subPattern": "replacement-repeated-removal",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Take the square root of (final/original) to get the fraction of milk kept each time."
+  },
+  {
+   "questionText": "Vessel A has 20 litres of milk and water in the ratio 4:1. Vessel B has 56 litres in the ratio 5:3. Both are poured into one container. What is the ratio of milk to water in the mixture?",
+   "options": [
+    {
+     "text": "51:25"
+    },
+    {
+     "text": "49:25"
+    },
+    {
+     "text": "51:26"
+    },
+    {
+     "text": "9:4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Milk = 16 + 35 = 51. Water = 4 + 21 = 25. Ratio = 51:25.",
+   "order": 26,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Find the actual litres of milk and water in each vessel; add them separately."
+  },
+  {
+   "questionText": "30 litres of a 15% acid solution is mixed with 20 litres of a 35% acid solution. What is the percentage of acid in the mixture?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "23%"
+    },
+    {
+     "text": "22%"
+    },
+    {
+     "text": "28%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Acid = 30 x 15% + 20 x 35% = 4.5 + 7 = 11.5 L in 50 L. Percentage = 23%.",
+   "order": 27,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Add the amounts of pure acid, divide by the total volume."
+  },
+  {
+   "questionText": "Vessel A has 12 litres of milk and water in the ratio 1:1. Vessel B has 25 litres in the ratio 1:4. Both are poured into one container. What is the ratio of milk to water in the mixture?",
+   "options": [
+    {
+     "text": "11:28"
+    },
+    {
+     "text": "2:5"
+    },
+    {
+     "text": "26:11"
+    },
+    {
+     "text": "11:26"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Milk = 6 + 5 = 11. Water = 6 + 20 = 26. Ratio = 11:26.",
+   "order": 28,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the actual litres of milk and water in each vessel; add them separately."
+  },
+  {
+   "questionText": "Vessel A has 40 litres of milk and water in the ratio 5:3. Vessel B has 15 litres in the ratio 3:2. Both are poured into one container. What is the ratio of milk to water in the mixture?",
+   "options": [
+    {
+     "text": "8:5"
+    },
+    {
+     "text": "17:10"
+    },
+    {
+     "text": "34:21"
+    },
+    {
+     "text": "34:23"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Milk = 25 + 9 = 34. Water = 15 + 6 = 21. Ratio = 34:21.",
+   "order": 29,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Find the actual litres of milk and water in each vessel; add them separately."
+  },
+  {
+   "questionText": "40 litres of a 40% acid solution is mixed with 10 litres of a 15% acid solution. What is the percentage of acid in the mixture?",
+   "options": [
+    {
+     "text": "35%"
+    },
+    {
+     "text": "37%"
+    },
+    {
+     "text": "27.5%"
+    },
+    {
+     "text": "28%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Acid = 40 x 40% + 10 x 15% = 16 + 1.5 = 17.5 L in 50 L. Percentage = 35%.",
+   "order": 30,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add the amounts of pure acid, divide by the total volume."
+  },
+  {
+   "questionText": "40 litres of a 10% acid solution is mixed with 10 litres of a 50% acid solution. What is the percentage of acid in the mixture?",
+   "options": [
+    {
+     "text": "23%"
+    },
+    {
+     "text": "9%"
+    },
+    {
+     "text": "30%"
+    },
+    {
+     "text": "18%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Acid = 40 x 10% + 10 x 50% = 4 + 5 = 9 L in 50 L. Percentage = 18%.",
+   "order": 31,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Add the amounts of pure acid, divide by the total volume."
+  },
+  {
+   "questionText": "40 litres of a 25% acid solution is mixed with 10 litres of a 15% acid solution. What is the percentage of acid in the mixture?",
+   "options": [
+    {
+     "text": "20%"
+    },
+    {
+     "text": "23%"
+    },
+    {
+     "text": "21%"
+    },
+    {
+     "text": "28%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Acid = 40 x 25% + 10 x 15% = 10 + 1.5 = 11.5 L in 50 L. Percentage = 23%.",
+   "order": 32,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add the amounts of pure acid, divide by the total volume."
+  },
+  {
+   "questionText": "Vessel A has 30 litres of milk and water in the ratio 3:2. Vessel B has 20 litres in the ratio 2:3. Both are poured into one container. What is the ratio of milk to water in the mixture?",
+   "options": [
+    {
+     "text": "13:12"
+    },
+    {
+     "text": "11:12"
+    },
+    {
+     "text": "7:6"
+    },
+    {
+     "text": "1:1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Milk = 18 + 8 = 26. Water = 12 + 12 = 24. Ratio = 13:12.",
+   "order": 33,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the actual litres of milk and water in each vessel; add them separately."
+  },
+  {
+   "questionText": "In what ratio must a 20% alcohol solution be mixed with a 80% alcohol solution to get a 57% solution?",
+   "options": [
+    {
+     "text": "37:23"
+    },
+    {
+     "text": "21:37"
+    },
+    {
+     "text": "23:37"
+    },
+    {
+     "text": "24:37"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Alligation: weaker : stronger = (80 - 57) : (57 - 20) = 23 : 37 = 23:37.",
+   "order": 34,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "(Stronger - target) : (target - weaker) = weaker : stronger."
+  },
+  {
+   "questionText": "In what ratio must a 25% alcohol solution be mixed with a 55% alcohol solution to get a 51% solution?",
+   "options": [
+    {
+     "text": "13:2"
+    },
+    {
+     "text": "2:13"
+    },
+    {
+     "text": "1:7"
+    },
+    {
+     "text": "1:13"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Alligation: weaker : stronger = (55 - 51) : (51 - 25) = 4 : 26 = 2:13.",
+   "order": 35,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "(Stronger - target) : (target - weaker) = weaker : stronger."
+  },
+  {
+   "questionText": "In what ratio must a 25% alcohol solution be mixed with a 55% alcohol solution to get a 50% solution?",
+   "options": [
+    {
+     "text": "5:1"
+    },
+    {
+     "text": "1:3"
+    },
+    {
+     "text": "3:5"
+    },
+    {
+     "text": "1:5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alligation: weaker : stronger = (55 - 50) : (50 - 25) = 5 : 25 = 1:5.",
+   "order": 36,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "(Stronger - target) : (target - weaker) = weaker : stronger."
+  },
+  {
+   "questionText": "One vessel has 20 litres of a milk-water mixture in the ratio 4:1 and another has 14 litres in the ratio 1:1. If both are mixed, how many litres of milk are there in the mixture?",
+   "options": [
+    {
+     "text": "17 litres"
+    },
+    {
+     "text": "23 litres"
+    },
+    {
+     "text": "25 litres"
+    },
+    {
+     "text": "22 litres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Milk in first = 20 x 4/5 = 16. Milk in second = 14 x 1/2 = 7. Total milk = 23 litres.",
+   "order": 37,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Milk = quantity x (milk part / total parts) in each vessel."
+  },
+  {
+   "questionText": "One vessel has 6 litres of a milk-water mixture in the ratio 1:1 and another has 21 litres in the ratio 2:1. If both are mixed, how many litres of milk are there in the mixture?",
+   "options": [
+    {
+     "text": "17 litres"
+    },
+    {
+     "text": "22 litres"
+    },
+    {
+     "text": "13.5 litres"
+    },
+    {
+     "text": "12 litres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Milk in first = 6 x 1/2 = 3. Milk in second = 21 x 2/3 = 14. Total milk = 17 litres.",
+   "order": 38,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Milk = quantity x (milk part / total parts) in each vessel."
+  },
+  {
+   "questionText": "In what ratio must a 15% alcohol solution be mixed with a 45% alcohol solution to get a 28% solution?",
+   "options": [
+    {
+     "text": "15:13"
+    },
+    {
+     "text": "13:17"
+    },
+    {
+     "text": "17:13"
+    },
+    {
+     "text": "19:13"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Alligation: weaker : stronger = (45 - 28) : (28 - 15) = 17 : 13 = 17:13.",
+   "order": 39,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "(Stronger - target) : (target - weaker) = weaker : stronger."
+  },
+  {
+   "questionText": "In what ratio must a 15% alcohol solution be mixed with a 45% alcohol solution to get a 29% solution?",
+   "options": [
+    {
+     "text": "8:9"
+    },
+    {
+     "text": "7:8"
+    },
+    {
+     "text": "1:1"
+    },
+    {
+     "text": "8:7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alligation: weaker : stronger = (45 - 29) : (29 - 15) = 16 : 14 = 8:7.",
+   "order": 40,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "(Stronger - target) : (target - weaker) = weaker : stronger."
+  },
+  {
+   "questionText": "One vessel has 56 litres of a milk-water mixture in the ratio 5:3 and another has 25 litres in the ratio 1:4. If both are mixed, how many litres of milk are there in the mixture?",
+   "options": [
+    {
+     "text": "30 litres"
+    },
+    {
+     "text": "36 litres"
+    },
+    {
+     "text": "40 litres"
+    },
+    {
+     "text": "40.5 litres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Milk in first = 56 x 5/8 = 35. Milk in second = 25 x 1/5 = 5. Total milk = 40 litres.",
+   "order": 41,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Milk = quantity x (milk part / total parts) in each vessel."
+  },
+  {
+   "questionText": "One vessel has 8 litres of a milk-water mixture in the ratio 3:1 and another has 35 litres in the ratio 1:4. If both are mixed, how many litres of milk are there in the mixture?",
+   "options": [
+    {
+     "text": "26 litres"
+    },
+    {
+     "text": "21.5 litres"
+    },
+    {
+     "text": "12 litres"
+    },
+    {
+     "text": "13 litres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Milk in first = 8 x 3/4 = 6. Milk in second = 35 x 1/5 = 7. Total milk = 13 litres.",
+   "order": 42,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Milk = quantity x (milk part / total parts) in each vessel."
+  },
+  {
+   "questionText": "In what ratio must a 25% alcohol solution be mixed with a 55% alcohol solution to get a 32% solution?",
+   "options": [
+    {
+     "text": "23:7"
+    },
+    {
+     "text": "23:6"
+    },
+    {
+     "text": "7:23"
+    },
+    {
+     "text": "23:9"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Alligation: weaker : stronger = (55 - 32) : (32 - 25) = 23 : 7 = 23:7.",
+   "order": 43,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "(Stronger - target) : (target - weaker) = weaker : stronger."
+  },
+  {
+   "questionText": "One vessel has 10 litres of a milk-water mixture in the ratio 2:3 and another has 6 litres in the ratio 2:1. If both are mixed, how many litres of milk are there in the mixture?",
+   "options": [
+    {
+     "text": "10 litres"
+    },
+    {
+     "text": "8 litres"
+    },
+    {
+     "text": "3 litres"
+    },
+    {
+     "text": "12 litres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Milk in first = 10 x 2/5 = 4. Milk in second = 6 x 2/3 = 4. Total milk = 8 litres.",
+   "order": 44,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Milk = quantity x (milk part / total parts) in each vessel."
+  },
+  {
+   "questionText": "One vessel has 35 litres of a milk-water mixture in the ratio 1:4 and another has 14 litres in the ratio 1:1. If both are mixed, how many litres of milk are there in the mixture?",
+   "options": [
+    {
+     "text": "9 litres"
+    },
+    {
+     "text": "14 litres"
+    },
+    {
+     "text": "16 litres"
+    },
+    {
+     "text": "24.5 litres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Milk in first = 35 x 1/5 = 7. Milk in second = 14 x 1/2 = 7. Total milk = 14 litres.",
+   "order": 45,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Milk = quantity x (milk part / total parts) in each vessel."
+  },
+  {
+   "questionText": "How many litres of water must be added to 40 litres of a 40% acid solution to dilute it to a 25% solution?",
+   "options": [
+    {
+     "text": "24 litres"
+    },
+    {
+     "text": "12 litres"
+    },
+    {
+     "text": "25 litres"
+    },
+    {
+     "text": "6 litres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Acid = 40 x 40% = 16 L stays fixed. New volume = 16/25% = 64 L. Water = 64 - 40 = 24 L.",
+   "order": 46,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "The amount of acid never changes; find the new total volume, then subtract the old."
+  },
+  {
+   "questionText": "Vessel A has milk and water in the ratio 1:2 and vessel B has them in the ratio 1:1. In what ratio should A and B be mixed to get a mixture with milk and water in the ratio 9:11?",
+   "options": [
+    {
+     "text": "1:3"
+    },
+    {
+     "text": "3:8"
+    },
+    {
+     "text": "7:3"
+    },
+    {
+     "text": "3:7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Milk fractions: A = 1/3, B = 1/2, target = 9/20. A : B = (B - target) : (target - A) = (1/2 - 9/20) : (9/20 - 1/3) = 3 : 7 = 3:7.",
+   "order": 47,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Convert each ratio to a milk fraction, then use alligation on those fractions."
+  },
+  {
+   "questionText": "Vessel A has milk and water in the ratio 1:1 and vessel B has them in the ratio 3:1. In what ratio should A and B be mixed to get a mixture with milk and water in the ratio 7:3?",
+   "options": [
+    {
+     "text": "1:2"
+    },
+    {
+     "text": "1:6"
+    },
+    {
+     "text": "1:4"
+    },
+    {
+     "text": "4:1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Milk fractions: A = 1/2, B = 3/4, target = 7/10. A : B = (B - target) : (target - A) = (3/4 - 7/10) : (7/10 - 1/2) = 1 : 4 = 1:4.",
+   "order": 48,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Convert each ratio to a milk fraction, then use alligation on those fractions."
+  },
+  {
+   "questionText": "How many litres of water must be added to 50 litres of a 50% acid solution to dilute it to a 40% solution?",
+   "options": [
+    {
+     "text": "12.5 litres"
+    },
+    {
+     "text": "10.5 litres"
+    },
+    {
+     "text": "17.5 litres"
+    },
+    {
+     "text": "5 litres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Acid = 50 x 50% = 25 L stays fixed. New volume = 25/40% = 62.5 L. Water = 62.5 - 50 = 12.5 L.",
+   "order": 49,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "The amount of acid never changes; find the new total volume, then subtract the old."
+  },
+  {
+   "questionText": "How many litres of water must be added to 100 litres of a 24% acid solution to dilute it to a 20% solution?",
+   "options": [
+    {
+     "text": "22 litres"
+    },
+    {
+     "text": "19 litres"
+    },
+    {
+     "text": "20 litres"
+    },
+    {
+     "text": "4 litres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Acid = 100 x 24% = 24 L stays fixed. New volume = 24/20% = 120 L. Water = 120 - 100 = 20 L.",
+   "order": 50,
+   "subPattern": "mixing-two-varieties",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "The amount of acid never changes; find the new total volume, then subtract the old."
+  },
+  {
+   "questionText": "A trader mixes tea costing Rs 20 per kg and Rs 40 per kg in the ratio 1:3 and sells the mixture at Rs 42 per kg. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "40% profit"
+    },
+    {
+     "text": "24% loss"
+    },
+    {
+     "text": "20% loss"
+    },
+    {
+     "text": "20% profit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cost per kg of mixture = (1 x 20 + 3 x 40)/4 = Rs 35. SP = Rs 42. Result = (42 - 35)/35 x 100 = 20%, a profit.",
+   "order": 51,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Find the mixture's cost price first; profit % is on that cost."
+  },
+  {
+   "questionText": "A trader mixes rice costing Rs 45 per kg and Rs 65 per kg in the ratio 3:1 and sells the mixture at Rs 45 per kg. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "10% loss"
+    },
+    {
+     "text": "10% profit"
+    },
+    {
+     "text": "7.5% loss"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cost per kg of mixture = (3 x 45 + 1 x 65)/4 = Rs 50. SP = Rs 45. Result = (45 - 50)/50 x 100 = 10%, a loss.",
+   "order": 52,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Find the mixture's cost price first; profit % is on that cost."
+  },
+  {
+   "questionText": "A trader mixes tea costing Rs 24 per kg and Rs 44 per kg in the ratio 3:2 and sells the mixture at Rs 40 per kg. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "25% profit"
+    },
+    {
+     "text": "25% loss"
+    },
+    {
+     "text": "20% profit"
+    },
+    {
+     "text": "30% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cost per kg of mixture = (3 x 24 + 2 x 44)/5 = Rs 32. SP = Rs 40. Result = (40 - 32)/32 x 100 = 25%, a profit.",
+   "order": 53,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the mixture's cost price first; profit % is on that cost."
+  },
+  {
+   "questionText": "A trader mixes tea costing Rs 24 per kg and Rs 44 per kg in the ratio 3:2 and sells the mixture at Rs 36 per kg. What is his profit or loss percent?",
+   "options": [
+    {
+     "text": "25% loss"
+    },
+    {
+     "text": "10% profit"
+    },
+    {
+     "text": "12.5% loss"
+    },
+    {
+     "text": "12.5% profit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cost per kg of mixture = (3 x 24 + 2 x 44)/5 = Rs 32. SP = Rs 36. Result = (36 - 32)/32 x 100 = 12.5%, a profit.",
+   "order": 54,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Find the mixture's cost price first; profit % is on that cost."
+  },
+  {
+   "questionText": "A shopkeeper mixes 3 kg of sugar costing Rs 40 per kg with 1 kg of sugar costing Rs 60 per kg. At what price per kg must he sell the mixture to gain 40%?",
+   "options": [
+    {
+     "text": "Rs 70"
+    },
+    {
+     "text": "Rs 84"
+    },
+    {
+     "text": "Rs 63"
+    },
+    {
+     "text": "Rs 126"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cost per kg = (3 x 40 + 1 x 60)/4 = Rs 45. SP = 45 x 140/100 = Rs 63.",
+   "order": 55,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "SP = mean cost price x (100 + gain)/100."
+  },
+  {
+   "questionText": "A shopkeeper mixes 3 kg of sugar costing Rs 50 per kg with 1 kg of sugar costing Rs 70 per kg. At what price per kg must he sell the mixture to gain 30%?",
+   "options": [
+    {
+     "text": "Rs 78"
+    },
+    {
+     "text": "Rs 71.5"
+    },
+    {
+     "text": "Rs 64.35"
+    },
+    {
+     "text": "Rs 35.75"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cost per kg = (3 x 50 + 1 x 70)/4 = Rs 55. SP = 55 x 130/100 = Rs 71.5.",
+   "order": 56,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "SP = mean cost price x (100 + gain)/100."
+  },
+  {
+   "questionText": "A shopkeeper mixes 4 kg of sugar costing Rs 60 per kg with 1 kg of sugar costing Rs 90 per kg. At what price per kg must he sell the mixture to gain 25%?",
+   "options": [
+    {
+     "text": "Rs 110"
+    },
+    {
+     "text": "Rs 41.25"
+    },
+    {
+     "text": "Rs 93.75"
+    },
+    {
+     "text": "Rs 82.5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cost per kg = (4 x 60 + 1 x 90)/5 = Rs 66. SP = 66 x 125/100 = Rs 82.5.",
+   "order": 57,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "SP = mean cost price x (100 + gain)/100."
+  },
+  {
+   "questionText": "A shopkeeper mixes 3 kg of sugar costing Rs 32 per kg with 1 kg of sugar costing Rs 48 per kg. At what price per kg must he sell the mixture to gain 25%?",
+   "options": [
+    {
+     "text": "Rs 45"
+    },
+    {
+     "text": "Rs 90"
+    },
+    {
+     "text": "Rs 30"
+    },
+    {
+     "text": "Rs 50"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cost per kg = (3 x 32 + 1 x 48)/4 = Rs 36. SP = 36 x 125/100 = Rs 45.",
+   "order": 58,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "SP = mean cost price x (100 + gain)/100."
+  },
+  {
+   "questionText": "A shopkeeper mixes 1 kg of sugar costing Rs 36 per kg with 3 kg of sugar costing Rs 60 per kg. At what price per kg must he sell the mixture to gain 50%?",
+   "options": [
+    {
+     "text": "Rs 54"
+    },
+    {
+     "text": "Rs 81"
+    },
+    {
+     "text": "Rs 162"
+    },
+    {
+     "text": "Rs 72"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cost per kg = (1 x 36 + 3 x 60)/4 = Rs 54. SP = 54 x 150/100 = Rs 81.",
+   "order": 59,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "SP = mean cost price x (100 + gain)/100."
+  },
+  {
+   "questionText": "A shopkeeper mixes 3 kg of sugar costing Rs 20 per kg with 1 kg of sugar costing Rs 40 per kg. At what price per kg must he sell the mixture to gain 10%?",
+   "options": [
+    {
+     "text": "Rs 55"
+    },
+    {
+     "text": "Rs 33"
+    },
+    {
+     "text": "Rs 27.5"
+    },
+    {
+     "text": "Rs 29.5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cost per kg = (3 x 20 + 1 x 40)/4 = Rs 25. SP = 25 x 110/100 = Rs 27.5.",
+   "order": 60,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "SP = mean cost price x (100 + gain)/100."
+  },
+  {
+   "questionText": "Two varieties of rice cost Rs 36 and Rs 60 per kg. In what ratio must they be mixed so that selling the mixture at Rs 60 per kg gives a profit of 20%?",
+   "options": [
+    {
+     "text": "5:9"
+    },
+    {
+     "text": "5:7"
+    },
+    {
+     "text": "1:1"
+    },
+    {
+     "text": "7:5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Required cost price = 60 x 100/120 = Rs 50. Cheaper : dearer = (60 - 50) : (50 - 36) = 5:7.",
+   "order": 61,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert the selling price back to the cost price, then use alligation on the cost prices."
+  },
+  {
+   "questionText": "Two varieties of rice cost Rs 40 and Rs 60 per kg. In what ratio must they be mixed so that selling the mixture at Rs 70 per kg gives a profit of 40%?",
+   "options": [
+    {
+     "text": "1:1"
+    },
+    {
+     "text": "1:2"
+    },
+    {
+     "text": "1:3"
+    },
+    {
+     "text": "2:1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Required cost price = 70 x 100/140 = Rs 50. Cheaper : dearer = (60 - 50) : (50 - 40) = 1:1.",
+   "order": 62,
+   "subPattern": "price-based-mixtures",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Convert the selling price back to the cost price, then use alligation on the cost prices."
+  },
+  {
+   "questionText": "A mixture of 45 litres contains milk and water in the ratio 4:1. How many litres of water must be added to make the ratio 3:5?",
+   "options": [
+    {
+     "text": "34 litres"
+    },
+    {
+     "text": "53 litres"
+    },
+    {
+     "text": "22.5 litres"
+    },
+    {
+     "text": "51 litres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Milk = 36 L, water = 9 L. For ratio 3:5, water needed = 36 x 5/3 = 60 L. Add 51 L.",
+   "order": 63,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Milk stays fixed; compute the water it needs for the new ratio and subtract what is there."
+  },
+  {
+   "questionText": "A mixture of 20 litres contains milk and water in the ratio 3:2. How many litres of water must be added to make the ratio 1:1?",
+   "options": [
+    {
+     "text": "9 litres"
+    },
+    {
+     "text": "10 litres"
+    },
+    {
+     "text": "4 litres"
+    },
+    {
+     "text": "5 litres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Milk = 12 L, water = 8 L. For ratio 1:1, water needed = 12 x 1/1 = 12 L. Add 4 L.",
+   "order": 64,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Milk stays fixed; compute the water it needs for the new ratio and subtract what is there."
+  },
+  {
+   "questionText": "A mixture of 85 litres contains milk and water in the ratio 3:2. How many litres of water must be added to make the ratio 3:5?",
+   "options": [
+    {
+     "text": "51 litres"
+    },
+    {
+     "text": "50 litres"
+    },
+    {
+     "text": "46 litres"
+    },
+    {
+     "text": "42.5 litres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Milk = 51 L, water = 34 L. For ratio 3:5, water needed = 51 x 5/3 = 85 L. Add 51 L.",
+   "order": 65,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Milk stays fixed; compute the water it needs for the new ratio and subtract what is there."
+  },
+  {
+   "questionText": "A 12 litre mixture has milk and water in the ratio 2:1. How many litres of pure milk must be added to make the ratio 3:1?",
+   "options": [
+    {
+     "text": "6 litres"
+    },
+    {
+     "text": "2 litres"
+    },
+    {
+     "text": "3 litres"
+    },
+    {
+     "text": "4 litres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Water = 4 L stays fixed. Milk needed = 4 x 3/1 = 12 L. Milk to add = 12 - 8 = 4 L.",
+   "order": 66,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Water stays fixed when milk is added; scale the water by the new ratio."
+  },
+  {
+   "questionText": "A 80 litre mixture has milk and water in the ratio 2:3. How many litres of pure milk must be added to make the ratio 5:2?",
+   "options": [
+    {
+     "text": "110 litres"
+    },
+    {
+     "text": "20 litres"
+    },
+    {
+     "text": "88 litres"
+    },
+    {
+     "text": "176 litres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Water = 48 L stays fixed. Milk needed = 48 x 5/2 = 120 L. Milk to add = 120 - 32 = 88 L.",
+   "order": 67,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "shortcut": "Water stays fixed when milk is added; scale the water by the new ratio."
+  },
+  {
+   "questionText": "A 85 litre mixture has milk and water in the ratio 3:2. How many litres of pure milk must be added to make the ratio 3:1?",
+   "options": [
+    {
+     "text": "102 litres"
+    },
+    {
+     "text": "51 litres"
+    },
+    {
+     "text": "34 litres"
+    },
+    {
+     "text": "21.25 litres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Water = 34 L stays fixed. Milk needed = 34 x 3/1 = 102 L. Milk to add = 102 - 51 = 51 L.",
+   "order": 68,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Water stays fixed when milk is added; scale the water by the new ratio."
+  },
+  {
+   "questionText": "A 91 litre mixture has milk and water in the ratio 4:3. How many litres of pure milk must be added to make the ratio 3:1?",
+   "options": [
+    {
+     "text": "65 litres"
+    },
+    {
+     "text": "52 litres"
+    },
+    {
+     "text": "130 litres"
+    },
+    {
+     "text": "22.75 litres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Water = 39 L stays fixed. Milk needed = 39 x 3/1 = 117 L. Milk to add = 117 - 52 = 65 L.",
+   "order": 69,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Water stays fixed when milk is added; scale the water by the new ratio."
+  },
+  {
+   "questionText": "A 35 litre mixture has milk and water in the ratio 2:3. How many litres of pure milk must be added to make the ratio 4:1?",
+   "options": [
+    {
+     "text": "56 litres"
+    },
+    {
+     "text": "105 litres"
+    },
+    {
+     "text": "8.75 litres"
+    },
+    {
+     "text": "70 litres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Water = 21 L stays fixed. Milk needed = 21 x 4/1 = 84 L. Milk to add = 84 - 14 = 70 L.",
+   "order": 70,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Water stays fixed when milk is added; scale the water by the new ratio."
+  },
+  {
+   "questionText": "A 65 litre mixture has milk and water in the ratio 3:2. How many litres of pure milk must be added to make the ratio 4:1?",
+   "options": [
+    {
+     "text": "130 litres"
+    },
+    {
+     "text": "65 litres"
+    },
+    {
+     "text": "16.25 litres"
+    },
+    {
+     "text": "52 litres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Water = 26 L stays fixed. Milk needed = 26 x 4/1 = 104 L. Milk to add = 104 - 39 = 65 L.",
+   "order": 71,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Water stays fixed when milk is added; scale the water by the new ratio."
+  },
+  {
+   "questionText": "A 35 litre mixture has milk and water in the ratio 4:3. How many litres of pure milk must be added to make the ratio 4:1?",
+   "options": [
+    {
+     "text": "8.75 litres"
+    },
+    {
+     "text": "41 litres"
+    },
+    {
+     "text": "40 litres"
+    },
+    {
+     "text": "38 litres"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Water = 15 L stays fixed. Milk needed = 15 x 4/1 = 60 L. Milk to add = 60 - 20 = 40 L.",
+   "order": 72,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Water stays fixed when milk is added; scale the water by the new ratio."
+  },
+  {
+   "questionText": "A mixture of 80 litres contains 4/5 milk. How many litres of the mixture must be removed and replaced by water so that milk becomes 2/5 of the mixture?",
+   "options": [
+    {
+     "text": "40 litres"
+    },
+    {
+     "text": "20 litres"
+    },
+    {
+     "text": "50 litres"
+    },
+    {
+     "text": "32 litres"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Milk now = 64 L. Needed = 80 x 2/5 = 32 L. Each litre removed takes out 4/5 L of milk, so removed = (64 - 32) / (4/5) = 40 L.",
+   "order": 73,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Milk lost = (amount removed) x (milk fraction); set it equal to the required milk drop."
+  },
+  {
+   "questionText": "A mixture of 40 litres contains 3/4 milk. How many litres of the mixture must be removed and replaced by water so that milk becomes 3/5 of the mixture?",
+   "options": [
+    {
+     "text": "6 litres"
+    },
+    {
+     "text": "8 litres"
+    },
+    {
+     "text": "9 litres"
+    },
+    {
+     "text": "16 litres"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Milk now = 30 L. Needed = 40 x 3/5 = 24 L. Each litre removed takes out 3/4 L of milk, so removed = (30 - 24) / (3/4) = 8 L.",
+   "order": 74,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Milk lost = (amount removed) x (milk fraction); set it equal to the required milk drop."
+  },
+  {
+   "questionText": "A mixture of 40 litres contains 3/5 milk. How many litres of the mixture must be removed and replaced by water so that milk becomes 3/8 of the mixture?",
+   "options": [
+    {
+     "text": "9 litres"
+    },
+    {
+     "text": "20 litres"
+    },
+    {
+     "text": "10 litres"
+    },
+    {
+     "text": "15 litres"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Milk now = 24 L. Needed = 40 x 3/8 = 15 L. Each litre removed takes out 3/5 L of milk, so removed = (24 - 15) / (3/5) = 15 L.",
+   "order": 75,
+   "subPattern": "water-milk-dilution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Milk lost = (amount removed) x (milk fraction); set it equal to the required milk drop."
+  },
+  {
+   "questionText": "Three varieties of rice costing Rs 36, Rs 50 and Rs 20 per kg are mixed in the ratio 1:1:2. What is the price per kg of the mixture?",
+   "options": [
+    {
+     "text": "Rs 29.5"
+    },
+    {
+     "text": "Rs 15.75"
+    },
+    {
+     "text": "Rs 31.5"
+    },
+    {
+     "text": "Rs 28.35"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cost = 1 x 36 + 1 x 50 + 2 x 20 = 126. Quantity = 4 parts. Price = Rs 31.5 per kg.",
+   "order": 76,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Weighted average of the three prices, weights = ratio parts."
+  },
+  {
+   "questionText": "Three varieties of rice costing Rs 72, Rs 45 and Rs 36 per kg are mixed in the ratio 3:2:1. What is the price per kg of the mixture?",
+   "options": [
+    {
+     "text": "Rs 55"
+    },
+    {
+     "text": "Rs 62"
+    },
+    {
+     "text": "Rs 51"
+    },
+    {
+     "text": "Rs 57"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cost = 3 x 72 + 2 x 45 + 1 x 36 = 342. Quantity = 6 parts. Price = Rs 57 per kg.",
+   "order": 77,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Weighted average of the three prices, weights = ratio parts."
+  },
+  {
+   "questionText": "Three varieties of rice costing Rs 72, Rs 60 and Rs 20 per kg are mixed in the ratio 1:2:3. What is the price per kg of the mixture?",
+   "options": [
+    {
+     "text": "Rs 41"
+    },
+    {
+     "text": "Rs 42"
+    },
+    {
+     "text": "Rs 63"
+    },
+    {
+     "text": "Rs 28"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cost = 1 x 72 + 2 x 60 + 3 x 20 = 252. Quantity = 6 parts. Price = Rs 42 per kg.",
+   "order": 78,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Weighted average of the three prices, weights = ratio parts."
+  },
+  {
+   "questionText": "Equal quantities of tea costing Rs 60 and Rs 20 per kg are mixed. This blend is then mixed with tea costing Rs 50 per kg in the ratio 1:3. What is the price per kg of the final mixture?",
+   "options": [
+    {
+     "text": "Rs 71.25"
+    },
+    {
+     "text": "Rs 52.5"
+    },
+    {
+     "text": "Rs 47.5"
+    },
+    {
+     "text": "Rs 38"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First blend = (60 + 20)/2 = Rs 40. Final = (1 x 40 + 3 x 50)/4 = Rs 47.5 per kg.",
+   "order": 79,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat the first blend as one variety with its own average price."
+  },
+  {
+   "questionText": "Equal quantities of tea costing Rs 24 and Rs 30 per kg are mixed. This blend is then mixed with tea costing Rs 72 per kg in the ratio 1:1. What is the price per kg of the final mixture?",
+   "options": [
+    {
+     "text": "Rs 49.5"
+    },
+    {
+     "text": "Rs 42"
+    },
+    {
+     "text": "Rs 54.5"
+    },
+    {
+     "text": "Rs 48.5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First blend = (24 + 30)/2 = Rs 27. Final = (1 x 27 + 1 x 72)/2 = Rs 49.5 per kg.",
+   "order": 80,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Treat the first blend as one variety with its own average price."
+  },
+  {
+   "questionText": "Equal quantities of tea costing Rs 72 and Rs 60 per kg are mixed. This blend is then mixed with tea costing Rs 36 per kg in the ratio 2:1. What is the price per kg of the final mixture?",
+   "options": [
+    {
+     "text": "Rs 70"
+    },
+    {
+     "text": "Rs 56"
+    },
+    {
+     "text": "Rs 112"
+    },
+    {
+     "text": "Rs 57"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First blend = (72 + 60)/2 = Rs 66. Final = (2 x 66 + 1 x 36)/3 = Rs 56 per kg.",
+   "order": 81,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat the first blend as one variety with its own average price."
+  },
+  {
+   "questionText": "Equal quantities of tea costing Rs 80 and Rs 40 per kg are mixed. This blend is then mixed with tea costing Rs 20 per kg in the ratio 1:1. What is the price per kg of the final mixture?",
+   "options": [
+    {
+     "text": "Rs 40"
+    },
+    {
+     "text": "Rs 20"
+    },
+    {
+     "text": "Rs 80"
+    },
+    {
+     "text": "Rs 48"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First blend = (80 + 40)/2 = Rs 60. Final = (1 x 60 + 1 x 20)/2 = Rs 40 per kg.",
+   "order": 82,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat the first blend as one variety with its own average price."
+  },
+  {
+   "questionText": "Equal quantities of tea costing Rs 24 and Rs 36 per kg are mixed. This blend is then mixed with tea costing Rs 30 per kg in the ratio 3:2. What is the price per kg of the final mixture?",
+   "options": [
+    {
+     "text": "Rs 32"
+    },
+    {
+     "text": "Rs 27"
+    },
+    {
+     "text": "Rs 30"
+    },
+    {
+     "text": "Rs 20"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First blend = (24 + 36)/2 = Rs 30. Final = (3 x 30 + 2 x 30)/5 = Rs 30 per kg.",
+   "order": 83,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Treat the first blend as one variety with its own average price."
+  },
+  {
+   "questionText": "Equal quantities of tea costing Rs 40 and Rs 36 per kg are mixed. This blend is then mixed with tea costing Rs 72 per kg in the ratio 3:1. What is the price per kg of the final mixture?",
+   "options": [
+    {
+     "text": "Rs 47.5"
+    },
+    {
+     "text": "Rs 23.25"
+    },
+    {
+     "text": "Rs 31"
+    },
+    {
+     "text": "Rs 46.5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First blend = (40 + 36)/2 = Rs 38. Final = (3 x 38 + 1 x 72)/4 = Rs 46.5 per kg.",
+   "order": 84,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Treat the first blend as one variety with its own average price."
+  },
+  {
+   "questionText": "Equal quantities of tea costing Rs 60 and Rs 36 per kg are mixed. This blend is then mixed with tea costing Rs 20 per kg in the ratio 3:1. What is the price per kg of the final mixture?",
+   "options": [
+    {
+     "text": "Rs 41"
+    },
+    {
+     "text": "Rs 46"
+    },
+    {
+     "text": "Rs 43"
+    },
+    {
+     "text": "Rs 40"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First blend = (60 + 36)/2 = Rs 48. Final = (3 x 48 + 1 x 20)/4 = Rs 41 per kg.",
+   "order": 85,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Treat the first blend as one variety with its own average price."
+  },
+  {
+   "questionText": "Three types of tea are mixed in the ratio 2:2:1. The first two cost Rs 30 and Rs 50 per kg and the mixture is worth Rs 48 per kg. What is the price per kg of the third type?",
+   "options": [
+    {
+     "text": "Rs 88"
+    },
+    {
+     "text": "Rs 96"
+    },
+    {
+     "text": "Rs 48"
+    },
+    {
+     "text": "Rs 80"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(2 x 30 + 2 x 50 + 1 x p)/5 = 48. So 1p = 240 - 160 = 80, giving p = Rs 80.",
+   "order": 86,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Total cost of the mixture - cost of the known parts = cost of the unknown part."
+  },
+  {
+   "questionText": "Three types of tea are mixed in the ratio 2:1:3. The first two cost Rs 60 and Rs 36 per kg and the mixture is worth Rs 56 per kg. What is the price per kg of the third type?",
+   "options": [
+    {
+     "text": "Rs 72"
+    },
+    {
+     "text": "Rs 48"
+    },
+    {
+     "text": "Rs 60"
+    },
+    {
+     "text": "Rs 56"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(2 x 60 + 1 x 36 + 3 x p)/6 = 56. So 3p = 336 - 156 = 180, giving p = Rs 60.",
+   "order": 87,
+   "subPattern": "three-ingredient-mixtures",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Total cost of the mixture - cost of the known parts = cost of the unknown part."
+  },
+  {
+   "questionText": "A dishonest seller adds 10 litres of water to 50 litres of juice and sells the mixture at the cost price of pure juice. What is his profit percent?",
+   "options": [
+    {
+     "text": "24%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "19%"
+    },
+    {
+     "text": "22%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "He sells 60 litres but paid only for 50. Profit = 10/50 x 100 = 20%.",
+   "order": 88,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Profit % = (water added / pure liquid) x 100 when selling at cost price."
+  },
+  {
+   "questionText": "A dishonest seller adds 2 litres of water to 50 litres of milk and sells the mixture at the cost price of pure milk. What is his profit percent?",
+   "options": [
+    {
+     "text": "5%"
+    },
+    {
+     "text": "8%"
+    },
+    {
+     "text": "4%"
+    },
+    {
+     "text": "6%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "He sells 52 litres but paid only for 50. Profit = 2/50 x 100 = 4%.",
+   "order": 89,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Profit % = (water added / pure liquid) x 100 when selling at cost price."
+  },
+  {
+   "questionText": "A dishonest seller adds 2 litres of water to 25 litres of milk and sells the mixture at the cost price of pure milk. What is his profit percent?",
+   "options": [
+    {
+     "text": "12%"
+    },
+    {
+     "text": "8%"
+    },
+    {
+     "text": "16%"
+    },
+    {
+     "text": "10%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "He sells 27 litres but paid only for 25. Profit = 2/25 x 100 = 8%.",
+   "order": 90,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Profit % = (water added / pure liquid) x 100 when selling at cost price."
+  },
+  {
+   "questionText": "A dishonest seller adds 15 litres of water to 100 litres of milk and sells the mixture at the cost price of pure milk. What is his profit percent?",
+   "options": [
+    {
+     "text": "15%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "12%"
+    },
+    {
+     "text": "20%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He sells 115 litres but paid only for 100. Profit = 15/100 x 100 = 15%.",
+   "order": 91,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Profit % = (water added / pure liquid) x 100 when selling at cost price."
+  },
+  {
+   "questionText": "A dishonest milk seller wants to earn a profit of 10% by adding water to milk and selling at the cost price of pure milk. In what ratio of water to milk should he mix?",
+   "options": [
+    {
+     "text": "3:10"
+    },
+    {
+     "text": "10:1"
+    },
+    {
+     "text": "1:5"
+    },
+    {
+     "text": "1:10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Profit % = water/milk x 100, so water : milk = 10 : 100 = 1:10.",
+   "order": 92,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "For selling at cost price: water : liquid = profit% : 100."
+  },
+  {
+   "questionText": "A dishonest milk seller wants to earn a profit of 50% by adding water to milk and selling at the cost price of pure milk. In what ratio of water to milk should he mix?",
+   "options": [
+    {
+     "text": "2:1"
+    },
+    {
+     "text": "3:2"
+    },
+    {
+     "text": "1:1"
+    },
+    {
+     "text": "1:2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Profit % = water/milk x 100, so water : milk = 50 : 100 = 1:2.",
+   "order": 93,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "For selling at cost price: water : liquid = profit% : 100."
+  },
+  {
+   "questionText": "A dishonest milk seller wants to earn a profit of 75% by adding water to milk and selling at the cost price of pure milk. In what ratio of water to milk should he mix?",
+   "options": [
+    {
+     "text": "1:1"
+    },
+    {
+     "text": "1:2"
+    },
+    {
+     "text": "3:4"
+    },
+    {
+     "text": "4:3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Profit % = water/milk x 100, so water : milk = 75 : 100 = 3:4.",
+   "order": 94,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "For selling at cost price: water : liquid = profit% : 100."
+  },
+  {
+   "questionText": "A dishonest milk seller wants to earn a profit of 60% by adding water to milk and selling at the cost price of pure milk. In what ratio of water to milk should he mix?",
+   "options": [
+    {
+     "text": "3:5"
+    },
+    {
+     "text": "1:5"
+    },
+    {
+     "text": "1:2"
+    },
+    {
+     "text": "5:3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Profit % = water/milk x 100, so water : milk = 60 : 100 = 3:5.",
+   "order": 95,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "For selling at cost price: water : liquid = profit% : 100."
+  },
+  {
+   "questionText": "A dishonest juice seller wants to earn a profit of 50% by adding water to juice and selling at the cost price of pure juice. In what ratio of water to juice should he mix?",
+   "options": [
+    {
+     "text": "1:3"
+    },
+    {
+     "text": "1:2"
+    },
+    {
+     "text": "2:1"
+    },
+    {
+     "text": "1:4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Profit % = water/juice x 100, so water : juice = 50 : 100 = 1:2.",
+   "order": 96,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "For selling at cost price: water : liquid = profit% : 100."
+  },
+  {
+   "questionText": "A dishonest milk seller wants to earn a profit of 25% by adding water to milk and selling at the cost price of pure milk. In what ratio of water to milk should he mix?",
+   "options": [
+    {
+     "text": "4:1"
+    },
+    {
+     "text": "1:3"
+    },
+    {
+     "text": "1:4"
+    },
+    {
+     "text": "3:4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Profit % = water/milk x 100, so water : milk = 25 : 100 = 1:4.",
+   "order": 97,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "For selling at cost price: water : liquid = profit% : 100."
+  },
+  {
+   "questionText": "A milkman buys juice at Rs 48 per litre, mixes it with water in the ratio 4:1 (juice:water) and sells the mixture at Rs 48 per litre. What is his profit percent?",
+   "options": [
+    {
+     "text": "25% loss"
+    },
+    {
+     "text": "12.5% profit"
+    },
+    {
+     "text": "50% profit"
+    },
+    {
+     "text": "25% profit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cost of 1 litre of mixture = 48 x 4/5 = Rs 38.4. Profit = (48 - 38.4)/38.4 x 100 = 25%.",
+   "order": 98,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Only 4/5 of each litre is juice, so cost per litre of mixture is that fraction of Rs 48."
+  },
+  {
+   "questionText": "A milkman buys juice at Rs 36 per litre, mixes it with water in the ratio 5:1 (juice:water) and sells the mixture at Rs 45 per litre. What is his profit percent?",
+   "options": [
+    {
+     "text": "50% loss"
+    },
+    {
+     "text": "50% profit"
+    },
+    {
+     "text": "25% profit"
+    },
+    {
+     "text": "60% profit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cost of 1 litre of mixture = 36 x 5/6 = Rs 30. Profit = (45 - 30)/30 x 100 = 50%.",
+   "order": 99,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Only 5/6 of each litre is juice, so cost per litre of mixture is that fraction of Rs 36."
+  },
+  {
+   "questionText": "A milkman buys juice at Rs 30 per litre, mixes it with water in the ratio 2:1 (juice:water) and sells the mixture at Rs 26 per litre. What is his profit percent?",
+   "options": [
+    {
+     "text": "30% profit"
+    },
+    {
+     "text": "35% loss"
+    },
+    {
+     "text": "60% profit"
+    },
+    {
+     "text": "30% loss"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cost of 1 litre of mixture = 30 x 2/3 = Rs 20. Profit = (26 - 20)/20 x 100 = 30%.",
+   "order": 100,
+   "subPattern": "profit-through-dilution",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Only 2/3 of each litre is juice, so cost per litre of mixture is that fraction of Rs 30."
+  }
+ ]
+}

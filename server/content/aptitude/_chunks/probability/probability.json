@@ -48,7 +48,7 @@
       "correctOptionIndex": 0,
       "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 1/2 + 2/5 - 1/5 = 7/10.",
       "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -67,7 +67,7 @@
       "correctOptionIndex": 1,
       "explanation": "Odds in favour = 7:8, so odds against = 8:7 = 8:7.",
       "shortcut": "Odds against = (1 - p) : p.",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -76,7 +76,7 @@
       "setId": null
     },
     {
-      "questionText": "The letters of the word LEADER are arranged at random. What is the probability that the arrangement begins and ends with a consonant?",
+      "questionText": "The letters of the word LEADER are arranged at random. What is the probability that the resulting arrangement begins and ends with a consonant?",
       "options": [
         "1/15",
         "1/2",
@@ -86,7 +86,7 @@
       "correctOptionIndex": 3,
       "explanation": "Total arrangements = 360. Those beginning and ending with a consonant = 72. Probability = 1/5.",
       "shortcut": "Choose the end letters first, then arrange the middle.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -123,7 +123,7 @@
       "correctOptionIndex": 1,
       "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 1/6 + 1/9 - 1/54 = 7/27.",
       "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -141,7 +141,7 @@
       "correctOptionIndex": 0,
       "explanation": "Choose both people from the 3 men among 8 people: 3C2/8C2 = 3/28 = 3/28.",
       "shortcut": "Favourable pairs / total pairs.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "easy",
       "examStyles": [
         "cat-style",
@@ -160,7 +160,7 @@
       "correctOptionIndex": 0,
       "explanation": "Odds in favour = 2:3, so odds against = 3:2 = 3:2.",
       "shortcut": "Odds against = (1 - p) : p.",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -178,7 +178,7 @@
       "correctOptionIndex": 1,
       "explanation": "P(all miss) = (1 - 3/8)(1 - 3/10)(1 - 1/4) = 21/64. P(at least one hit) = 43/64.",
       "shortcut": "1 - product of the miss probabilities.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -197,7 +197,7 @@
       "correctOptionIndex": 2,
       "explanation": "Counting the pairs (a, b) whose product is a multiple of 6: 15 out of 36. Probability = 5/12.",
       "shortcut": "Count favourable pairs among the 36 outcomes.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "dice",
       "difficulty": "hard",
       "examStyles": [
         "ssc",
@@ -216,7 +216,7 @@
       "correctOptionIndex": 3,
       "explanation": "Out of 36 equally likely outcomes, 2 have a sum that equals 3. Probability = 2/36 = 1/18.",
       "shortcut": "List pairs by sum; total outcomes = 36.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "dice",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -235,7 +235,7 @@
       "correctOptionIndex": 1,
       "explanation": "For independent events P(A and B) = P(A) x P(B) = 1/8 x 1/5 = 1/40.",
       "shortcut": "Independent: multiply.",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -253,7 +253,7 @@
       "correctOptionIndex": 3,
       "explanation": "Choose both people from the 5 men among 8 people: 5C2/8C2 = 10/28 = 5/14.",
       "shortcut": "Favourable pairs / total pairs.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -281,7 +281,7 @@
       "setId": null
     },
     {
-      "questionText": "The letters of the word FLOWER are arranged at random. What is the probability that the arrangement starts with a vowel?",
+      "questionText": "The letters of the word FLOWER are arranged at random. What is the probability that the resulting arrangement starts with a vowel?",
       "options": [
         "4/3",
         "1/4",
@@ -291,7 +291,7 @@
       "correctOptionIndex": 3,
       "explanation": "2 of the 6 letters are vowels, so by symmetry P = 2/6 = 1/3 (checked by counting 240 of 720 arrangements).",
       "shortcut": "First-letter probability = (vowels)/(letters).",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -309,7 +309,7 @@
       "correctOptionIndex": 0,
       "explanation": "Total = 9C3 = 84. Favourable = 18. Probability = 3/14.",
       "shortcut": "Count by gender split; divide by total C3.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "hard",
       "examStyles": [
         "banking",
@@ -328,7 +328,7 @@
       "correctOptionIndex": 3,
       "explanation": "P(no even number in a roll) = 1/2. For 2 rolls: (1/2)^2 = 1/4. P(at least one) = 1 - 1/4 = 3/4.",
       "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -347,7 +347,7 @@
       "correctOptionIndex": 3,
       "explanation": "P(no number greater than 4 in a roll) = 2/3. For 3 rolls: (2/3)^3 = 8/27. P(at least one) = 1 - 8/27 = 19/27.",
       "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -365,7 +365,7 @@
       "correctOptionIndex": 0,
       "explanation": "P(all miss) = (1 - 1/7)(1 - 1/9)(1 - 1/10) = 24/35. P(at least one hit) = 11/35.",
       "shortcut": "1 - product of the miss probabilities.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -403,7 +403,7 @@
       "correctOptionIndex": 2,
       "explanation": "P(no number less than 3 in a roll) = 2/3. For 4 rolls: (2/3)^4 = 16/81. P(at least one) = 1 - 16/81 = 65/81.",
       "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -440,7 +440,7 @@
       "correctOptionIndex": 1,
       "explanation": "There are 90 two-digit numbers. Multiples of 8 among them: 11. Probability = 11/90 = 11/90.",
       "shortcut": "Count multiples in the range, divide by 90.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -478,7 +478,7 @@
       "correctOptionIndex": 2,
       "explanation": "Counting the pairs (a, b) whose product is even: 27 out of 36. Probability = 3/4.",
       "shortcut": "Count favourable pairs among the 36 outcomes.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "dice",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -497,7 +497,7 @@
       "correctOptionIndex": 2,
       "explanation": "P(no head) = 1/2^6 = 1/64. P(at least one head) = 1 - 1/64 = 63/64.",
       "shortcut": "At least one = 1 - P(none).",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -516,7 +516,7 @@
       "correctOptionIndex": 1,
       "explanation": "Out of 36 equally likely outcomes, 5 have a sum that equals 6. Probability = 5/36 = 5/36.",
       "shortcut": "List pairs by sum; total outcomes = 36.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "dice",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -525,7 +525,7 @@
       "setId": null
     },
     {
-      "questionText": "The letters of the word ORANGE are arranged at random. What is the probability that the arrangement starts with a vowel?",
+      "questionText": "The letters of the word ORANGE are arranged at random. What is the probability that the resulting arrangement starts with a vowel?",
       "options": [
         "1/3",
         "1/6",
@@ -535,7 +535,7 @@
       "correctOptionIndex": 2,
       "explanation": "3 of the 6 letters are vowels, so by symmetry P = 3/6 = 1/2 (checked by counting 360 of 720 arrangements).",
       "shortcut": "First-letter probability = (vowels)/(letters).",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -553,7 +553,7 @@
       "correctOptionIndex": 1,
       "explanation": "Total arrangements = 720. Arrangements with the vowels together = 240. Probability = 1/3.",
       "shortcut": "Vowel block as one unit, times the internal arrangements.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -572,7 +572,7 @@
       "correctOptionIndex": 3,
       "explanation": "Out of 36 equally likely outcomes, 3 have a sum that is at most 3. Probability = 3/36 = 1/12.",
       "shortcut": "List pairs by sum; total outcomes = 36.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "dice",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -581,7 +581,7 @@
       "setId": null
     },
     {
-      "questionText": "The letters of the word DELHI are arranged at random. What is the probability that the arrangement starts with a vowel?",
+      "questionText": "The letters of the word DELHI are arranged at random. What is the probability that the resulting arrangement starts with a vowel?",
       "options": [
         "2/5",
         "4/5",
@@ -591,7 +591,7 @@
       "correctOptionIndex": 0,
       "explanation": "2 of the 5 letters are vowels, so by symmetry P = 2/5 = 2/5 (checked by counting 48 of 120 arrangements).",
       "shortcut": "First-letter probability = (vowels)/(letters).",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -609,7 +609,7 @@
       "correctOptionIndex": 0,
       "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 3/5 + 2/3 - 2/5 = 13/15.",
       "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -628,7 +628,7 @@
       "correctOptionIndex": 0,
       "explanation": "P(no head) = 1/2^2 = 1/4. P(at least one head) = 1 - 1/4 = 3/4.",
       "shortcut": "At least one = 1 - P(none).",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -646,7 +646,7 @@
       "correctOptionIndex": 1,
       "explanation": "Probability = favourable/(favourable + unfavourable) = 5/(5 + 8) = 5/13.",
       "shortcut": "Odds a:b in favour -> probability a/(a+b).",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "easy",
       "examStyles": [
         "ssc",
@@ -665,7 +665,7 @@
       "correctOptionIndex": 2,
       "explanation": "Probability = favourable/(favourable + unfavourable) = 3/(3 + 5) = 3/8.",
       "shortcut": "Odds a:b in favour -> probability a/(a+b).",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -703,7 +703,7 @@
       "correctOptionIndex": 1,
       "explanation": "P(no number greater than 4 in a roll) = 2/3. For 2 rolls: (2/3)^2 = 4/9. P(at least one) = 1 - 4/9 = 5/9.",
       "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -722,7 +722,7 @@
       "correctOptionIndex": 0,
       "explanation": "Out of 36 equally likely outcomes, 15 have a sum that is at most 6. Probability = 15/36 = 5/12.",
       "shortcut": "List pairs by sum; total outcomes = 36.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "dice",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -740,7 +740,7 @@
       "correctOptionIndex": 1,
       "explanation": "There are 90 two-digit numbers. Multiples of 7 among them: 13. Probability = 13/90 = 13/90.",
       "shortcut": "Count multiples in the range, divide by 90.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -758,7 +758,7 @@
       "correctOptionIndex": 2,
       "explanation": "Odds in favour = 2:1, so odds against = 1:2 = 1:2.",
       "shortcut": "Odds against = (1 - p) : p.",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -776,7 +776,7 @@
       "correctOptionIndex": 0,
       "explanation": "Favourable outcomes = 5C3 = 10. Total = 2^5 = 32. Probability = 5/16.",
       "shortcut": "P = nCk / 2^n.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "coins",
       "difficulty": "easy",
       "examStyles": [
         "cat-style",
@@ -795,7 +795,7 @@
       "correctOptionIndex": 2,
       "explanation": "There are 90 two-digit numbers. Multiples of 9 among them: 10. Probability = 10/90 = 1/9.",
       "shortcut": "Count multiples in the range, divide by 90.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -814,7 +814,7 @@
       "correctOptionIndex": 0,
       "explanation": "There are 90 two-digit numbers. Multiples of 5 among them: 18. Probability = 18/90 = 1/5.",
       "shortcut": "Count multiples in the range, divide by 90.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -833,7 +833,7 @@
       "correctOptionIndex": 3,
       "explanation": "P(no even number in a roll) = 1/2. For 3 rolls: (1/2)^3 = 1/8. P(at least one) = 1 - 1/8 = 7/8.",
       "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -888,7 +888,7 @@
       "correctOptionIndex": 2,
       "explanation": "P(win) = 1/3. Expected gain = 1/3 x 50 - 2/3 x 10 = 10.",
       "shortcut": "Expected value = sum of (outcome x probability).",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -907,7 +907,7 @@
       "correctOptionIndex": 2,
       "explanation": "For independent events P(A and B) = P(A) x P(B) = 1/10 x 3/10 = 3/100.",
       "shortcut": "Independent: multiply.",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "easy",
       "examStyles": [
         "banking",
@@ -926,7 +926,7 @@
       "correctOptionIndex": 3,
       "explanation": "P(no six in a roll) = 5/6. For 2 rolls: (5/6)^2 = 25/36. P(at least one) = 1 - 25/36 = 11/36.",
       "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -944,7 +944,7 @@
       "correctOptionIndex": 0,
       "explanation": "Odds in favour = 3:17, so odds against = 17:3 = 17:3.",
       "shortcut": "Odds against = (1 - p) : p.",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -963,7 +963,7 @@
       "correctOptionIndex": 0,
       "explanation": "Total arrangements = 360. Arrangements with the vowels together = 72. Probability = 1/5.",
       "shortcut": "Vowel block as one unit, times the internal arrangements.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1000,7 +1000,7 @@
       "correctOptionIndex": 0,
       "explanation": "P(A and B) = P(A) + P(B) - P(A or B) = 3/10 + 2/9 - 67/180 = 3/20.",
       "shortcut": "Inclusion-exclusion rearranged.",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -1018,7 +1018,7 @@
       "correctOptionIndex": 1,
       "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 3/8 + 1/5 - 3/40 = 1/2.",
       "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1037,7 +1037,7 @@
       "correctOptionIndex": 2,
       "explanation": "Total arrangements = 720. Arrangements with the vowels together = 240. Probability = 1/3.",
       "shortcut": "Vowel block as one unit, times the internal arrangements.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1056,7 +1056,7 @@
       "correctOptionIndex": 1,
       "explanation": "Favourable outcomes = 5C4 = 5. Total = 2^5 = 32. Probability = 5/32.",
       "shortcut": "P = nCk / 2^n.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "coins",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1074,7 +1074,7 @@
       "correctOptionIndex": 0,
       "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 1/10 + 2/3 - 1/15 = 7/10.",
       "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1101,7 +1101,7 @@
       "setId": null
     },
     {
-      "questionText": "The letters of the word CHANGE are arranged at random. What is the probability that the arrangement begins and ends with a consonant?",
+      "questionText": "The letters of the word CHANGE are arranged at random. What is the probability that the resulting arrangement begins and ends with a consonant?",
       "options": [
         "2/5",
         "1/2",
@@ -1111,7 +1111,7 @@
       "correctOptionIndex": 0,
       "explanation": "Total arrangements = 720. Those beginning and ending with a consonant = 288. Probability = 2/5.",
       "shortcut": "Choose the end letters first, then arrange the middle.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -1149,7 +1149,7 @@
       "correctOptionIndex": 2,
       "explanation": "P(win) = 1/6. Expected gain = 1/6 x 80 - 5/6 x 10 = 5.",
       "shortcut": "Expected value = sum of (outcome x probability).",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "hard",
       "examStyles": [
         "banking",
@@ -1205,7 +1205,7 @@
       "correctOptionIndex": 2,
       "explanation": "P(no even number in a roll) = 1/2. For 4 rolls: (1/2)^4 = 1/16. P(at least one) = 1 - 1/16 = 15/16.",
       "shortcut": "Use the complement: 1 - (probability of failing each time)^n.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1223,7 +1223,7 @@
       "correctOptionIndex": 0,
       "explanation": "Choose both people from the 3 men among 6 people: 3C2/6C2 = 3/15 = 1/5.",
       "shortcut": "Favourable pairs / total pairs.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1241,7 +1241,7 @@
       "correctOptionIndex": 3,
       "explanation": "Odds in favour = 1:3, so odds against = 3:1 = 3:1.",
       "shortcut": "Odds against = (1 - p) : p.",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1259,7 +1259,7 @@
       "correctOptionIndex": 3,
       "explanation": "Total arrangements = 720. Arrangements with the vowels together = 240. Probability = 1/3.",
       "shortcut": "Vowel block as one unit, times the internal arrangements.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1297,7 +1297,7 @@
       "correctOptionIndex": 3,
       "explanation": "Choose both people from the 7 men among 12 people: 7C2/12C2 = 21/66 = 7/22.",
       "shortcut": "Favourable pairs / total pairs.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1315,7 +1315,7 @@
       "correctOptionIndex": 2,
       "explanation": "Total arrangements = 360. Arrangements with the vowels together = 120. Probability = 1/3.",
       "shortcut": "Vowel block as one unit, times the internal arrangements.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1334,7 +1334,7 @@
       "correctOptionIndex": 1,
       "explanation": "Favourable outcomes = 5C2 = 10. Total = 2^5 = 32. Probability = 5/16.",
       "shortcut": "P = nCk / 2^n.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "coins",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1371,7 +1371,7 @@
       "correctOptionIndex": 2,
       "explanation": "Total = 11C3 = 165. Favourable = 145. Probability = 29/33.",
       "shortcut": "Count by gender split; divide by total C3.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -1408,7 +1408,7 @@
       "correctOptionIndex": 1,
       "explanation": "There are 90 two-digit numbers. Multiples of 4 among them: 22. Probability = 22/90 = 11/45.",
       "shortcut": "Count multiples in the range, divide by 90.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1445,7 +1445,7 @@
       "correctOptionIndex": 1,
       "explanation": "P(no head) = 1/2^5 = 1/32. P(at least one head) = 1 - 1/32 = 31/32.",
       "shortcut": "At least one = 1 - P(none).",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1500,7 +1500,7 @@
       "correctOptionIndex": 2,
       "explanation": "For independent events P(A and B) = P(A) x P(B) = 1/5 x 1/5 = 1/25.",
       "shortcut": "Independent: multiply.",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1518,7 +1518,7 @@
       "correctOptionIndex": 1,
       "explanation": "There are 90 two-digit numbers. Multiples of 12 among them: 8. Probability = 8/90 = 4/45.",
       "shortcut": "Count multiples in the range, divide by 90.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1556,7 +1556,7 @@
       "correctOptionIndex": 3,
       "explanation": "For independent events P(A and B) = P(A) x P(B) = 1/6 x 1/3 = 1/18.",
       "shortcut": "Independent: multiply.",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "easy",
       "examStyles": [
         "campus-it"
@@ -1574,7 +1574,7 @@
       "correctOptionIndex": 1,
       "explanation": "P(all miss) = (1 - 1/6)(1 - 1/6)(1 - 1/2) = 25/72. P(at least one hit) = 47/72.",
       "shortcut": "1 - product of the miss probabilities.",
-      "subPattern": "at-least-one-event",
+      "subPattern": "at-least-one-problems",
       "difficulty": "hard",
       "examStyles": [
         "campus-it"
@@ -1592,7 +1592,7 @@
       "correctOptionIndex": 3,
       "explanation": "Favourable outcomes = 3C1 = 3. Total = 2^3 = 8. Probability = 3/8.",
       "shortcut": "P = nCk / 2^n.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "coins",
       "difficulty": "easy",
       "examStyles": [
         "ssc",
@@ -1611,7 +1611,7 @@
       "correctOptionIndex": 3,
       "explanation": "Odds in favour = 1:19, so odds against = 19:1 = 19:1.",
       "shortcut": "Odds against = (1 - p) : p.",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "medium",
       "examStyles": [
         "cat-style",
@@ -1667,7 +1667,7 @@
       "correctOptionIndex": 1,
       "explanation": "Probability = favourable/(favourable + unfavourable) = 2/(2 + 5) = 2/7.",
       "shortcut": "Odds a:b in favour -> probability a/(a+b).",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "easy",
       "examStyles": [
         "campus-it",
@@ -1686,7 +1686,7 @@
       "correctOptionIndex": 2,
       "explanation": "P(A or B) = P(A) + P(B) - P(A)P(B) = 1/8 + 2/5 - 1/20 = 19/40.",
       "shortcut": "P(A or B) = P(A) + P(B) - P(A and B).",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "medium",
       "examStyles": [
         "campus-it"
@@ -1704,7 +1704,7 @@
       "correctOptionIndex": 2,
       "explanation": "Out of 36 equally likely outcomes, 4 have a sum that equals 5. Probability = 4/36 = 1/9.",
       "shortcut": "List pairs by sum; total outcomes = 36.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "dice",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
@@ -1723,7 +1723,7 @@
       "correctOptionIndex": 0,
       "explanation": "Probability = favourable/(favourable + unfavourable) = 1/(1 + 2) = 1/3.",
       "shortcut": "Odds a:b in favour -> probability a/(a+b).",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "easy",
       "examStyles": [
         "ssc",
@@ -1742,7 +1742,7 @@
       "correctOptionIndex": 2,
       "explanation": "Total = 7C3 = 35. Favourable = 12. Probability = 12/35.",
       "shortcut": "Count by gender split; divide by total C3.",
-      "subPattern": "selection-and-number-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -1761,7 +1761,7 @@
       "correctOptionIndex": 3,
       "explanation": "P(win) = 1/6. Expected gain = 1/6 x 60 - 5/6 x 10 = 5/3.",
       "shortcut": "Expected value = sum of (outcome x probability).",
-      "subPattern": "odds-and-expected-value",
+      "subPattern": "expected-value-basics",
       "difficulty": "hard",
       "examStyles": [
         "cat-style",
@@ -1780,7 +1780,7 @@
       "correctOptionIndex": 2,
       "explanation": "P(exactly one) = P(A)(1 - P(B)) + P(B)(1 - P(A)) = 21/80 + 3/16 = 9/20.",
       "shortcut": "Exactly one = A without B + B without A.",
-      "subPattern": "independent-and-mutually-exclusive-events",
+      "subPattern": "independent-mutually-exclusive-events",
       "difficulty": "hard",
       "examStyles": [
         "campus-it",
@@ -1799,7 +1799,7 @@
       "correctOptionIndex": 1,
       "explanation": "Total arrangements = 720. Arrangements with the vowels together = 240. Probability = 1/3.",
       "shortcut": "Vowel block as one unit, times the internal arrangements.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "banking",
@@ -1818,7 +1818,7 @@
       "correctOptionIndex": 1,
       "explanation": "Out of 36 equally likely outcomes, 3 have a sum that equals 10. Probability = 3/36 = 1/12.",
       "shortcut": "List pairs by sum; total outcomes = 36.",
-      "subPattern": "coins-and-dice",
+      "subPattern": "dice",
       "difficulty": "medium",
       "examStyles": [
         "ssc",
@@ -1856,7 +1856,7 @@
       "correctOptionIndex": 0,
       "explanation": "Total arrangements = 720. Arrangements with the vowels together = 144. Probability = 1/5.",
       "shortcut": "Vowel block as one unit, times the internal arrangements.",
-      "subPattern": "word-arrangement-probability",
+      "subPattern": "conditional-probability",
       "difficulty": "medium",
       "examStyles": [
         "campus-it",
