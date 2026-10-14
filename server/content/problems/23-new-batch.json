@@ -1,0 +1,7054 @@
+[
+  {
+    "title": "Goal Parser",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "A command string is built from `G`, `()` and `(al)`. Interpret it: `G` stays `G`, `()` becomes `o`, and `(al)` becomes `al`. Return the interpreted string.",
+    "examples": [
+      {
+        "input": "command = \"G()(al)\"",
+        "output": "\"Goal\"",
+        "explanation": "G + o + al = \"Goal\"."
+      },
+      {
+        "input": "command = \"G()()()()(al)\"",
+        "output": "\"Gooooal\"",
+        "explanation": "Four o's in the middle."
+      }
+    ],
+    "constraints": [
+      "1 <= command.length <= 100",
+      "command consists of 'G', '()' and '(al)' only"
+    ],
+    "functionName": "interpret",
+    "params": [
+      {
+        "name": "command",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "G()(al)"
+        ],
+        "expected": "Goal",
+        "isSample": true
+      },
+      {
+        "args": [
+          "G()()()()(al)"
+        ],
+        "expected": "Gooooal",
+        "isSample": true
+      },
+      {
+        "args": [
+          "(al)G(al)()()G"
+        ],
+        "expected": "alGalooG",
+        "isSample": false
+      },
+      {
+        "args": [
+          "G"
+        ],
+        "expected": "G",
+        "isSample": false
+      },
+      {
+        "args": [
+          "()"
+        ],
+        "expected": "o",
+        "isSample": false
+      },
+      {
+        "args": [
+          "(al)"
+        ],
+        "expected": "al",
+        "isSample": false
+      },
+      {
+        "args": [
+          "GG()G"
+        ],
+        "expected": "GGoG",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Merge Strings Alternately",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Weave two strings together by taking characters alternately, starting with `word1`. If one string is longer, append its remaining letters at the end.",
+    "examples": [
+      {
+        "input": "word1 = \"abc\", word2 = \"pqr\"",
+        "output": "\"apbqcr\"",
+        "explanation": "a p b q c r."
+      },
+      {
+        "input": "word1 = \"ab\", word2 = \"pqrs\"",
+        "output": "\"apbqrs\"",
+        "explanation": "After a p b q, the rest \"rs\" is appended."
+      }
+    ],
+    "constraints": [
+      "1 <= word1.length, word2.length <= 100",
+      "Lowercase English letters only"
+    ],
+    "functionName": "mergeAlternately",
+    "params": [
+      {
+        "name": "word1",
+        "type": "string"
+      },
+      {
+        "name": "word2",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "abc",
+          "pqr"
+        ],
+        "expected": "apbqcr",
+        "isSample": true
+      },
+      {
+        "args": [
+          "ab",
+          "pqrs"
+        ],
+        "expected": "apbqrs",
+        "isSample": true
+      },
+      {
+        "args": [
+          "abcd",
+          "pq"
+        ],
+        "expected": "apbqcd",
+        "isSample": false
+      },
+      {
+        "args": [
+          "a",
+          "b"
+        ],
+        "expected": "ab",
+        "isSample": false
+      },
+      {
+        "args": [
+          "hello",
+          "x"
+        ],
+        "expected": "hxello",
+        "isSample": false
+      },
+      {
+        "args": [
+          "xyz",
+          "abcdef"
+        ],
+        "expected": "xaybzcdef",
+        "isSample": false
+      },
+      {
+        "args": [
+          "same",
+          "same"
+        ],
+        "expected": "ssaammee",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Halves Are Alike",
+    "difficulty": "Easy",
+    "tags": [
+      "String"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Split an even-length string `s` into two equal halves. Return true if both halves contain the same number of vowels (a, e, i, o, u in either case).",
+    "examples": [
+      {
+        "input": "s = \"book\"",
+        "output": "true",
+        "explanation": "\"bo\" and \"ok\" each have one vowel."
+      },
+      {
+        "input": "s = \"textbook\"",
+        "output": "false",
+        "explanation": "\"text\" has 1 vowel, \"book\" has 2."
+      }
+    ],
+    "constraints": [
+      "2 <= s.length <= 1000",
+      "s.length is even",
+      "s has English letters"
+    ],
+    "functionName": "halvesAreAlike",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "book"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "textbook"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "AbCdEfIo"
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          "aA"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "ab"
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          "xyzw"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "MerryChristmas"
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          "aeiouaeiou"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Jewels and Stones",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Apple"
+    ],
+    "description": "`jewels` lists the types of stones that are jewels, and `stones` is what you hold. Each character is one stone, and letters are case-sensitive. Return how many of your stones are jewels.",
+    "examples": [
+      {
+        "input": "jewels = \"aA\", stones = \"aAAbbbb\"",
+        "output": "3",
+        "explanation": "a, A, A are jewels."
+      },
+      {
+        "input": "jewels = \"z\", stones = \"ZZ\"",
+        "output": "0",
+        "explanation": "Case matters: no match."
+      }
+    ],
+    "constraints": [
+      "1 <= jewels.length, stones.length <= 50",
+      "Jewel letters are unique"
+    ],
+    "functionName": "numJewelsInStones",
+    "params": [
+      {
+        "name": "jewels",
+        "type": "string"
+      },
+      {
+        "name": "stones",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "aA",
+          "aAAbbbb"
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          "z",
+          "ZZ"
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          "abc",
+          "aabbccd"
+        ],
+        "expected": 6,
+        "isSample": false
+      },
+      {
+        "args": [
+          "a",
+          "a"
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          "xyz",
+          "xyzxyz"
+        ],
+        "expected": 6,
+        "isSample": false
+      },
+      {
+        "args": [
+          "B",
+          "BBbb"
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          "ab",
+          "cdef"
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Count Odd Numbers in Range",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Return how many odd numbers lie between `low` and `high`, both inclusive.",
+    "examples": [
+      {
+        "input": "low = 3, high = 7",
+        "output": "3",
+        "explanation": "3, 5, 7."
+      },
+      {
+        "input": "low = 8, high = 10",
+        "output": "1",
+        "explanation": "Only 9."
+      }
+    ],
+    "constraints": [
+      "0 <= low <= high <= 10^9"
+    ],
+    "functionName": "countOdds",
+    "params": [
+      {
+        "name": "low",
+        "type": "int"
+      },
+      {
+        "name": "high",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          3,
+          7
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          8,
+          10
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          0,
+          0
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          1,
+          1
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          2,
+          2
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          1,
+          100
+        ],
+        "expected": 50,
+        "isSample": false
+      },
+      {
+        "args": [
+          10,
+          25
+        ],
+        "expected": 8,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Sum of Unique Elements",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Return the sum of the elements that appear exactly once in `nums`.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,2]",
+        "output": "4",
+        "explanation": "1 and 3 are unique: 4."
+      },
+      {
+        "input": "nums = [1,1,1,1,1]",
+        "output": "0",
+        "explanation": "Nothing is unique."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "1 <= nums[i] <= 100"
+    ],
+    "functionName": "sumOfUnique",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            2
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "expected": 15,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            7
+          ]
+        ],
+        "expected": 7,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            4,
+            4,
+            5,
+            5
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            10,
+            20,
+            10,
+            30
+          ]
+        ],
+        "expected": 50,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            2,
+            3,
+            4,
+            4,
+            5
+          ]
+        ],
+        "expected": 8,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Sum of All Odd Length Subarrays",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Return the sum of all subarrays of `arr` that have an odd length.",
+    "examples": [
+      {
+        "input": "arr = [1,4,2,5,3]",
+        "output": "58",
+        "explanation": "All odd-length subarrays sum to 58."
+      },
+      {
+        "input": "arr = [1,2]",
+        "output": "3",
+        "explanation": "Only [1] and [2]: 3."
+      }
+    ],
+    "constraints": [
+      "1 <= arr.length <= 100",
+      "1 <= arr[i] <= 1000"
+    ],
+    "functionName": "sumOddLengthSubarrays",
+    "params": [
+      {
+        "name": "arr",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            4,
+            2,
+            5,
+            3
+          ]
+        ],
+        "expected": 58,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            10,
+            11,
+            12
+          ]
+        ],
+        "expected": 66,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            5
+          ]
+        ],
+        "expected": 5,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 10,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            4,
+            6,
+            8,
+            10
+          ]
+        ],
+        "expected": 114,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            1
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Decompress Run-Length List",
+    "difficulty": "Easy",
+    "tags": [
+      "Array"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "`nums` holds pairs `[freq, val]` flattened (so `nums[2i]` is a frequency and `nums[2i+1]` the value). Expand each pair into `freq` copies of `val` and concatenate everything.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3,4]",
+        "output": "[2,4,4,4]",
+        "explanation": "One 2, then three 4s."
+      },
+      {
+        "input": "nums = [1,1,2,3]",
+        "output": "[1,3,3]",
+        "explanation": "One 1, two 3s."
+      }
+    ],
+    "constraints": [
+      "2 <= nums.length <= 100",
+      "nums.length is even",
+      "1 <= nums[2i] <= 100 (frequencies)",
+      "0 <= nums[2i+1] <= 100 (values)"
+    ],
+    "functionName": "decompressRLElist",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          2,
+          4,
+          4,
+          4
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          3,
+          3
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            1,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            9,
+            1,
+            8,
+            1,
+            7
+          ]
+        ],
+        "expected": [
+          9,
+          8,
+          7
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            4,
+            0
+          ]
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            1,
+            2,
+            2,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Steps to Reduce a Number to Zero",
+    "difficulty": "Easy",
+    "tags": [
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon",
+      "Adobe"
+    ],
+    "description": "Each step: if the number is even divide it by 2, otherwise subtract 1. Return the number of steps to reach 0.",
+    "examples": [
+      {
+        "input": "num = 14",
+        "output": "6",
+        "explanation": "14\u21927\u21926\u21923\u21922\u21921\u21920."
+      },
+      {
+        "input": "num = 8",
+        "output": "4",
+        "explanation": "8\u21924\u21922\u21921\u21920."
+      }
+    ],
+    "constraints": [
+      "0 <= num <= 10^6"
+    ],
+    "functionName": "numberOfSteps",
+    "params": [
+      {
+        "name": "num",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          14
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          8
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          123
+        ],
+        "expected": 12,
+        "isSample": false
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          1000
+        ],
+        "expected": 15,
+        "isSample": false
+      },
+      {
+        "args": [
+          7
+        ],
+        "expected": 5,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Subtract the Product and Sum of Digits",
+    "difficulty": "Easy",
+    "tags": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Return (product of the digits of `n`) minus (sum of the digits of `n`).",
+    "examples": [
+      {
+        "input": "n = 234",
+        "output": "15",
+        "explanation": "24 - 9 = 15."
+      },
+      {
+        "input": "n = 4421",
+        "output": "21",
+        "explanation": "32 - 11 = 21."
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 10^5"
+    ],
+    "functionName": "subtractProductAndSum",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          234
+        ],
+        "expected": 15,
+        "isSample": true
+      },
+      {
+        "args": [
+          4421
+        ],
+        "expected": 21,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          10
+        ],
+        "expected": -1,
+        "isSample": false
+      },
+      {
+        "args": [
+          99
+        ],
+        "expected": 63,
+        "isSample": false
+      },
+      {
+        "args": [
+          505
+        ],
+        "expected": -10,
+        "isSample": false
+      },
+      {
+        "args": [
+          1234
+        ],
+        "expected": 14,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Palindrome Permutation",
+    "difficulty": "Easy",
+    "tags": [
+      "String",
+      "Hash Table"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Return true if some rearrangement of the letters of `s` forms a palindrome.",
+    "examples": [
+      {
+        "input": "s = \"carerac\"",
+        "output": "true",
+        "explanation": "\"racecar\" works."
+      },
+      {
+        "input": "s = \"code\"",
+        "output": "false",
+        "explanation": "Too many letters with odd counts."
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 5000",
+      "Lowercase letters only"
+    ],
+    "functionName": "canPermutePalindrome",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "carerac"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "code"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "aab"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "ab"
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          "aabb"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "abcabc"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "aabbc"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Maximum Number of Words in a Sentence",
+    "difficulty": "Easy",
+    "tags": [
+      "Array",
+      "String"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Each element of `sentences` is a sentence of words separated by single spaces. Return the largest word count among them.",
+    "examples": [
+      {
+        "input": "sentences = [\"alice and bob love leetcode\",\"i think so too\",\"this is great thanks very much\"]",
+        "output": "6",
+        "explanation": "The last sentence has 6 words."
+      },
+      {
+        "input": "sentences = [\"please wait\",\"continue to fight\",\"continue to win\"]",
+        "output": "3",
+        "explanation": "Max is 3."
+      }
+    ],
+    "constraints": [
+      "1 <= sentences.length <= 100",
+      "Lowercase words separated by single spaces"
+    ],
+    "functionName": "mostWordsFound",
+    "params": [
+      {
+        "name": "sentences",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            "alice and bob love leetcode",
+            "i think so too",
+            "this is great thanks very much"
+          ]
+        ],
+        "expected": 6,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "please wait",
+            "continue to fight",
+            "continue to win"
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            "hello"
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            "a b",
+            "c"
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            "one two three",
+            "four"
+          ]
+        ],
+        "expected": 3,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            "x y z w v"
+          ]
+        ],
+        "expected": 5,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            "go",
+            "stop now"
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Check If Array Is Sorted and Rotated",
+    "difficulty": "Easy",
+    "tags": [
+      "Array"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Return true if `nums` was originally sorted in non-decreasing order and then rotated by some number of positions (possibly zero).",
+    "examples": [
+      {
+        "input": "nums = [3,4,5,1,2]",
+        "output": "true",
+        "explanation": "Sorted [1,2,3,4,5] rotated by 3."
+      },
+      {
+        "input": "nums = [2,1,3,4]",
+        "output": "false",
+        "explanation": "No rotation of a sorted array gives this."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "1 <= nums[i] <= 100"
+    ],
+    "functionName": "check",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            3,
+            4,
+            5,
+            1,
+            2
+          ]
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            1,
+            3,
+            4
+          ]
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            1
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            6,
+            10,
+            6
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Contiguous Array",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "Given a binary array `nums`, return the length of the longest contiguous subarray with an equal number of 0s and 1s.",
+    "examples": [
+      {
+        "input": "nums = [0,1]",
+        "output": "2",
+        "explanation": "Both elements balance."
+      },
+      {
+        "input": "nums = [0,1,0]",
+        "output": "2",
+        "explanation": "[0,1] or [1,0] both give 2."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "nums[i] is 0 or 1"
+    ],
+    "functionName": "findMaxLength",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            0,
+            1
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "expected": 6,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        ],
+        "expected": 6,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Rotting Oranges",
+    "difficulty": "Medium",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "Grid cells: 0 empty, 1 fresh orange, 2 rotten orange. Every minute, each fresh orange adjacent (4 directions) to a rotten one becomes rotten. Return the minutes until no fresh orange remains, or -1 if some can never rot.",
+    "examples": [
+      {
+        "input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "explanation": "Takes 4 minutes to spread everywhere."
+      },
+      {
+        "input": "grid = [[2,1,1],[0,1,1],[1,0,1]]",
+        "output": "-1",
+        "explanation": "The bottom-left orange is isolated."
+      }
+    ],
+    "constraints": [
+      "1 <= rows, cols <= 10",
+      "grid[i][j] is 0, 1 or 2"
+    ],
+    "functionName": "orangesRotting",
+    "params": [
+      {
+        "name": "grid",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        ],
+        "expected": -1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              2
+            ]
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0
+            ]
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1
+            ]
+          ]
+        ],
+        "expected": -1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Course Schedule Feasibility",
+    "difficulty": "Medium",
+    "tags": [
+      "Graph",
+      "Topological Sort"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "There are `numCourses` courses numbered 0..n-1. Each pair `[a, b]` in `prerequisites` means you must take `b` before `a`. Return true if it is possible to finish all courses.",
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "explanation": "Take 0 then 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "explanation": "Circular dependency."
+      }
+    ],
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "1 <= prerequisites.length <= 5000",
+      "0 <= a, b < numCourses"
+    ],
+    "functionName": "canFinish",
+    "params": [
+      {
+        "name": "numCourses",
+        "type": "int"
+      },
+      {
+        "name": "prerequisites",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          2,
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          2,
+          [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          4,
+          [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          3,
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          1,
+          [
+            [
+              0,
+              0
+            ]
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          5,
+          [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              3
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          3,
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Valid Sudoku Board",
+    "difficulty": "Medium",
+    "tags": [
+      "Matrix",
+      "Hash Table"
+    ],
+    "companies": [
+      "Amazon",
+      "Apple"
+    ],
+    "description": "A 9\u00d79 board uses 0 for an empty cell and 1\u20139 for filled cells. Return true if the filled cells obey the Sudoku rules: no repeated digit in any row, any column, or any of the nine 3\u00d73 boxes. (The board need not be solvable.)",
+    "examples": [
+      {
+        "input": "board = (a valid partially filled 9\u00d79 board)",
+        "output": "true",
+        "explanation": "No row, column or box repeats a digit."
+      },
+      {
+        "input": "board = (a board with two 5s in the first row)",
+        "output": "false",
+        "explanation": "The first row repeats 5."
+      }
+    ],
+    "constraints": [
+      "board.length == 9 and board[i].length == 9",
+      "0 <= board[i][j] <= 9"
+    ],
+    "functionName": "isValidSudoku",
+    "params": [
+      {
+        "name": "board",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              0,
+              0,
+              9
+            ],
+            [
+              4,
+              5,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              9,
+              0,
+              2,
+              0,
+              4,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              5,
+              6,
+              0,
+              8,
+              0,
+              1
+            ],
+            [
+              0,
+              6,
+              7,
+              8,
+              9,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              5,
+              0,
+              7,
+              0,
+              9,
+              1,
+              0
+            ],
+            [
+              6,
+              0,
+              8,
+              0,
+              0,
+              0,
+              3,
+              0,
+              5
+            ],
+            [
+              9,
+              1,
+              0,
+              0,
+              0,
+              5,
+              0,
+              7,
+              8
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              7,
+              0,
+              9
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              0,
+              6,
+              0,
+              0,
+              9,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              9,
+              0,
+              0,
+              3,
+              4
+            ],
+            [
+              8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              5,
+              0,
+              4,
+              5,
+              6,
+              0,
+              8,
+              9
+            ],
+            [
+              4,
+              0,
+              6,
+              7,
+              8,
+              9,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              9,
+              0,
+              2,
+              3,
+              4,
+              0,
+              6
+            ],
+            [
+              0,
+              3,
+              0,
+              5,
+              6,
+              7,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0,
+              8,
+              9,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              3,
+              4,
+              0
+            ],
+            [
+              9,
+              1,
+              0,
+              0,
+              0,
+              0,
+              6,
+              7,
+              8
+            ]
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              2,
+              0,
+              7,
+              0,
+              6,
+              0,
+              8,
+              9
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              8,
+              0,
+              1,
+              2,
+              0
+            ],
+            [
+              0,
+              8,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              0,
+              6,
+              7,
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              6,
+              0,
+              7,
+              0,
+              1,
+              0,
+              3,
+              0
+            ],
+            [
+              8,
+              9,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              6,
+              0,
+              0,
+              9,
+              0,
+              0,
+              3,
+              4,
+              0
+            ],
+            [
+              9,
+              0,
+              0,
+              3,
+              0,
+              0,
+              6,
+              0,
+              8
+            ]
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              0,
+              0,
+              4,
+              5,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              7,
+              0,
+              0,
+              1,
+              2,
+              0
+            ],
+            [
+              0,
+              8,
+              9,
+              1,
+              2,
+              0,
+              4,
+              0,
+              0
+            ],
+            [
+              2,
+              3,
+              0,
+              0,
+              6,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              4
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              6,
+              0,
+              0
+            ]
+          ]
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              1,
+              2,
+              3
+            ],
+            [
+              7,
+              8,
+              9,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              1
+            ],
+            [
+              5,
+              6,
+              7,
+              8,
+              9,
+              1,
+              2,
+              3,
+              4
+            ],
+            [
+              8,
+              9,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              1,
+              2
+            ],
+            [
+              6,
+              7,
+              8,
+              9,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            [
+              9,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Generate Parentheses",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Backtracking"
+    ],
+    "companies": [
+      "Google",
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "Return every well-formed string of `n` pairs of parentheses, sorted in ascending (lexicographic) order.",
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "Only one arrangement."
+      },
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"]",
+        "explanation": "Five arrangements, sorted."
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "functionName": "generateParenthesis",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "string[]",
+    "testCases": [
+      {
+        "args": [
+          1
+        ],
+        "expected": [
+          "()"
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          3
+        ],
+        "expected": [
+          "((()))",
+          "(()())",
+          "(())()",
+          "()(())",
+          "()()()"
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          2
+        ],
+        "expected": [
+          "(())",
+          "()()"
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          4
+        ],
+        "expected": [
+          "(((())))",
+          "((()()))",
+          "((())())",
+          "((()))()",
+          "(()(()))",
+          "(()()())",
+          "(()())()",
+          "(())(())",
+          "(())()()",
+          "()((()))",
+          "()(()())",
+          "()(())()",
+          "()()(())",
+          "()()()()"
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": [
+          "((((()))))",
+          "(((()())))",
+          "(((())()))",
+          "(((()))())",
+          "(((())))()",
+          "((()(())))",
+          "((()()()))",
+          "((()())())",
+          "((()()))()",
+          "((())(()))",
+          "((())()())",
+          "((())())()",
+          "((()))(())",
+          "((()))()()",
+          "(()((())))",
+          "(()(()()))",
+          "(()(())())",
+          "(()(()))()",
+          "(()()(()))",
+          "(()()()())",
+          "(()()())()",
+          "(()())(())",
+          "(()())()()",
+          "(())((()))",
+          "(())(()())",
+          "(())(())()",
+          "(())()(())",
+          "(())()()()",
+          "()(((())))",
+          "()((()()))",
+          "()((())())",
+          "()((()))()",
+          "()(()(()))",
+          "()(()()())",
+          "()(()())()",
+          "()(())(())",
+          "()(())()()",
+          "()()((()))",
+          "()()(()())",
+          "()()(())()",
+          "()()()(())",
+          "()()()()()"
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          6
+        ],
+        "expected": [
+          "(((((())))))",
+          "((((()()))))",
+          "((((())())))",
+          "((((()))()))",
+          "((((())))())",
+          "((((()))))()",
+          "(((()(()))))",
+          "(((()()())))",
+          "(((()())()))",
+          "(((()()))())",
+          "(((()())))()",
+          "(((())(())))",
+          "(((())()()))",
+          "(((())())())",
+          "(((())()))()",
+          "(((()))(()))",
+          "(((()))()())",
+          "(((()))())()",
+          "(((())))(())",
+          "(((())))()()",
+          "((()((()))))",
+          "((()(()())))",
+          "((()(())()))",
+          "((()(()))())",
+          "((()(())))()",
+          "((()()(())))",
+          "((()()()()))",
+          "((()()())())",
+          "((()()()))()",
+          "((()())(()))",
+          "((()())()())",
+          "((()())())()",
+          "((()()))(())",
+          "((()()))()()",
+          "((())((())))",
+          "((())(()()))",
+          "((())(())())",
+          "((())(()))()",
+          "((())()(()))",
+          "((())()()())",
+          "((())()())()",
+          "((())())(())",
+          "((())())()()",
+          "((()))((()))",
+          "((()))(()())",
+          "((()))(())()",
+          "((()))()(())",
+          "((()))()()()",
+          "(()(((()))))",
+          "(()((()())))",
+          "(()((())()))",
+          "(()((()))())",
+          "(()((())))()",
+          "(()(()(())))",
+          "(()(()()()))",
+          "(()(()())())",
+          "(()(()()))()",
+          "(()(())(()))",
+          "(()(())()())",
+          "(()(())())()",
+          "(()(()))(())",
+          "(()(()))()()",
+          "(()()((())))",
+          "(()()(()()))",
+          "(()()(())())",
+          "(()()(()))()",
+          "(()()()(()))",
+          "(()()()()())",
+          "(()()()())()",
+          "(()()())(())",
+          "(()()())()()",
+          "(()())((()))",
+          "(()())(()())",
+          "(()())(())()",
+          "(()())()(())",
+          "(()())()()()",
+          "(())(((())))",
+          "(())((()()))",
+          "(())((())())",
+          "(())((()))()",
+          "(())(()(()))",
+          "(())(()()())",
+          "(())(()())()",
+          "(())(())(())",
+          "(())(())()()",
+          "(())()((()))",
+          "(())()(()())",
+          "(())()(())()",
+          "(())()()(())",
+          "(())()()()()",
+          "()((((()))))",
+          "()(((()())))",
+          "()(((())()))",
+          "()(((()))())",
+          "()(((())))()",
+          "()((()(())))",
+          "()((()()()))",
+          "()((()())())",
+          "()((()()))()",
+          "()((())(()))",
+          "()((())()())",
+          "()((())())()",
+          "()((()))(())",
+          "()((()))()()",
+          "()(()((())))",
+          "()(()(()()))",
+          "()(()(())())",
+          "()(()(()))()",
+          "()(()()(()))",
+          "()(()()()())",
+          "()(()()())()",
+          "()(()())(())",
+          "()(()())()()",
+          "()(())((()))",
+          "()(())(()())",
+          "()(())(())()",
+          "()(())()(())",
+          "()(())()()()",
+          "()()(((())))",
+          "()()((()()))",
+          "()()((())())",
+          "()()((()))()",
+          "()()(()(()))",
+          "()()(()()())",
+          "()()(()())()",
+          "()()(())(())",
+          "()()(())()()",
+          "()()()((()))",
+          "()()()(()())",
+          "()()()(())()",
+          "()()()()(())",
+          "()()()()()()"
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          7
+        ],
+        "expected": [
+          "((((((()))))))",
+          "(((((()())))))",
+          "(((((())()))))",
+          "(((((()))())))",
+          "(((((())))()))",
+          "(((((()))))())",
+          "(((((())))))()",
+          "((((()(())))))",
+          "((((()()()))))",
+          "((((()())())))",
+          "((((()()))()))",
+          "((((()())))())",
+          "((((()()))))()",
+          "((((())(()))))",
+          "((((())()())))",
+          "((((())())()))",
+          "((((())()))())",
+          "((((())())))()",
+          "((((()))(())))",
+          "((((()))()()))",
+          "((((()))())())",
+          "((((()))()))()",
+          "((((())))(()))",
+          "((((())))()())",
+          "((((())))())()",
+          "((((()))))(())",
+          "((((()))))()()",
+          "(((()((())))))",
+          "(((()(()()))))",
+          "(((()(())())))",
+          "(((()(()))()))",
+          "(((()(())))())",
+          "(((()(()))))()",
+          "(((()()(()))))",
+          "(((()()()())))",
+          "(((()()())()))",
+          "(((()()()))())",
+          "(((()()())))()",
+          "(((()())(())))",
+          "(((()())()()))",
+          "(((()())())())",
+          "(((()())()))()",
+          "(((()()))(()))",
+          "(((()()))()())",
+          "(((()()))())()",
+          "(((()())))(())",
+          "(((()())))()()",
+          "(((())((()))))",
+          "(((())(()())))",
+          "(((())(())()))",
+          "(((())(()))())",
+          "(((())(())))()",
+          "(((())()(())))",
+          "(((())()()()))",
+          "(((())()())())",
+          "(((())()()))()",
+          "(((())())(()))",
+          "(((())())()())",
+          "(((())())())()",
+          "(((())()))(())",
+          "(((())()))()()",
+          "(((()))((())))",
+          "(((()))(()()))",
+          "(((()))(())())",
+          "(((()))(()))()",
+          "(((()))()(()))",
+          "(((()))()()())",
+          "(((()))()())()",
+          "(((()))())(())",
+          "(((()))())()()",
+          "(((())))((()))",
+          "(((())))(()())",
+          "(((())))(())()",
+          "(((())))()(())",
+          "(((())))()()()",
+          "((()(((())))))",
+          "((()((()()))))",
+          "((()((())())))",
+          "((()((()))()))",
+          "((()((())))())",
+          "((()((()))))()",
+          "((()(()(()))))",
+          "((()(()()())))",
+          "((()(()())()))",
+          "((()(()()))())",
+          "((()(()())))()",
+          "((()(())(())))",
+          "((()(())()()))",
+          "((()(())())())",
+          "((()(())()))()",
+          "((()(()))(()))",
+          "((()(()))()())",
+          "((()(()))())()",
+          "((()(())))(())",
+          "((()(())))()()",
+          "((()()((()))))",
+          "((()()(()())))",
+          "((()()(())()))",
+          "((()()(()))())",
+          "((()()(())))()",
+          "((()()()(())))",
+          "((()()()()()))",
+          "((()()()())())",
+          "((()()()()))()",
+          "((()()())(()))",
+          "((()()())()())",
+          "((()()())())()",
+          "((()()()))(())",
+          "((()()()))()()",
+          "((()())((())))",
+          "((()())(()()))",
+          "((()())(())())",
+          "((()())(()))()",
+          "((()())()(()))",
+          "((()())()()())",
+          "((()())()())()",
+          "((()())())(())",
+          "((()())())()()",
+          "((()()))((()))",
+          "((()()))(()())",
+          "((()()))(())()",
+          "((()()))()(())",
+          "((()()))()()()",
+          "((())(((()))))",
+          "((())((()())))",
+          "((())((())()))",
+          "((())((()))())",
+          "((())((())))()",
+          "((())(()(())))",
+          "((())(()()()))",
+          "((())(()())())",
+          "((())(()()))()",
+          "((())(())(()))",
+          "((())(())()())",
+          "((())(())())()",
+          "((())(()))(())",
+          "((())(()))()()",
+          "((())()((())))",
+          "((())()(()()))",
+          "((())()(())())",
+          "((())()(()))()",
+          "((())()()(()))",
+          "((())()()()())",
+          "((())()()())()",
+          "((())()())(())",
+          "((())()())()()",
+          "((())())((()))",
+          "((())())(()())",
+          "((())())(())()",
+          "((())())()(())",
+          "((())())()()()",
+          "((()))(((())))",
+          "((()))((()()))",
+          "((()))((())())",
+          "((()))((()))()",
+          "((()))(()(()))",
+          "((()))(()()())",
+          "((()))(()())()",
+          "((()))(())(())",
+          "((()))(())()()",
+          "((()))()((()))",
+          "((()))()(()())",
+          "((()))()(())()",
+          "((()))()()(())",
+          "((()))()()()()",
+          "(()((((())))))",
+          "(()(((()()))))",
+          "(()(((())())))",
+          "(()(((()))()))",
+          "(()(((())))())",
+          "(()(((()))))()",
+          "(()((()(()))))",
+          "(()((()()())))",
+          "(()((()())()))",
+          "(()((()()))())",
+          "(()((()())))()",
+          "(()((())(())))",
+          "(()((())()()))",
+          "(()((())())())",
+          "(()((())()))()",
+          "(()((()))(()))",
+          "(()((()))()())",
+          "(()((()))())()",
+          "(()((())))(())",
+          "(()((())))()()",
+          "(()(()((()))))",
+          "(()(()(()())))",
+          "(()(()(())()))",
+          "(()(()(()))())",
+          "(()(()(())))()",
+          "(()(()()(())))",
+          "(()(()()()()))",
+          "(()(()()())())",
+          "(()(()()()))()",
+          "(()(()())(()))",
+          "(()(()())()())",
+          "(()(()())())()",
+          "(()(()()))(())",
+          "(()(()()))()()",
+          "(()(())((())))",
+          "(()(())(()()))",
+          "(()(())(())())",
+          "(()(())(()))()",
+          "(()(())()(()))",
+          "(()(())()()())",
+          "(()(())()())()",
+          "(()(())())(())",
+          "(()(())())()()",
+          "(()(()))((()))",
+          "(()(()))(()())",
+          "(()(()))(())()",
+          "(()(()))()(())",
+          "(()(()))()()()",
+          "(()()(((()))))",
+          "(()()((()())))",
+          "(()()((())()))",
+          "(()()((()))())",
+          "(()()((())))()",
+          "(()()(()(())))",
+          "(()()(()()()))",
+          "(()()(()())())",
+          "(()()(()()))()",
+          "(()()(())(()))",
+          "(()()(())()())",
+          "(()()(())())()",
+          "(()()(()))(())",
+          "(()()(()))()()",
+          "(()()()((())))",
+          "(()()()(()()))",
+          "(()()()(())())",
+          "(()()()(()))()",
+          "(()()()()(()))",
+          "(()()()()()())",
+          "(()()()()())()",
+          "(()()()())(())",
+          "(()()()())()()",
+          "(()()())((()))",
+          "(()()())(()())",
+          "(()()())(())()",
+          "(()()())()(())",
+          "(()()())()()()",
+          "(()())(((())))",
+          "(()())((()()))",
+          "(()())((())())",
+          "(()())((()))()",
+          "(()())(()(()))",
+          "(()())(()()())",
+          "(()())(()())()",
+          "(()())(())(())",
+          "(()())(())()()",
+          "(()())()((()))",
+          "(()())()(()())",
+          "(()())()(())()",
+          "(()())()()(())",
+          "(()())()()()()",
+          "(())((((()))))",
+          "(())(((()())))",
+          "(())(((())()))",
+          "(())(((()))())",
+          "(())(((())))()",
+          "(())((()(())))",
+          "(())((()()()))",
+          "(())((()())())",
+          "(())((()()))()",
+          "(())((())(()))",
+          "(())((())()())",
+          "(())((())())()",
+          "(())((()))(())",
+          "(())((()))()()",
+          "(())(()((())))",
+          "(())(()(()()))",
+          "(())(()(())())",
+          "(())(()(()))()",
+          "(())(()()(()))",
+          "(())(()()()())",
+          "(())(()()())()",
+          "(())(()())(())",
+          "(())(()())()()",
+          "(())(())((()))",
+          "(())(())(()())",
+          "(())(())(())()",
+          "(())(())()(())",
+          "(())(())()()()",
+          "(())()(((())))",
+          "(())()((()()))",
+          "(())()((())())",
+          "(())()((()))()",
+          "(())()(()(()))",
+          "(())()(()()())",
+          "(())()(()())()",
+          "(())()(())(())",
+          "(())()(())()()",
+          "(())()()((()))",
+          "(())()()(()())",
+          "(())()()(())()",
+          "(())()()()(())",
+          "(())()()()()()",
+          "()(((((())))))",
+          "()((((()()))))",
+          "()((((())())))",
+          "()((((()))()))",
+          "()((((())))())",
+          "()((((()))))()",
+          "()(((()(()))))",
+          "()(((()()())))",
+          "()(((()())()))",
+          "()(((()()))())",
+          "()(((()())))()",
+          "()(((())(())))",
+          "()(((())()()))",
+          "()(((())())())",
+          "()(((())()))()",
+          "()(((()))(()))",
+          "()(((()))()())",
+          "()(((()))())()",
+          "()(((())))(())",
+          "()(((())))()()",
+          "()((()((()))))",
+          "()((()(()())))",
+          "()((()(())()))",
+          "()((()(()))())",
+          "()((()(())))()",
+          "()((()()(())))",
+          "()((()()()()))",
+          "()((()()())())",
+          "()((()()()))()",
+          "()((()())(()))",
+          "()((()())()())",
+          "()((()())())()",
+          "()((()()))(())",
+          "()((()()))()()",
+          "()((())((())))",
+          "()((())(()()))",
+          "()((())(())())",
+          "()((())(()))()",
+          "()((())()(()))",
+          "()((())()()())",
+          "()((())()())()",
+          "()((())())(())",
+          "()((())())()()",
+          "()((()))((()))",
+          "()((()))(()())",
+          "()((()))(())()",
+          "()((()))()(())",
+          "()((()))()()()",
+          "()(()(((()))))",
+          "()(()((()())))",
+          "()(()((())()))",
+          "()(()((()))())",
+          "()(()((())))()",
+          "()(()(()(())))",
+          "()(()(()()()))",
+          "()(()(()())())",
+          "()(()(()()))()",
+          "()(()(())(()))",
+          "()(()(())()())",
+          "()(()(())())()",
+          "()(()(()))(())",
+          "()(()(()))()()",
+          "()(()()((())))",
+          "()(()()(()()))",
+          "()(()()(())())",
+          "()(()()(()))()",
+          "()(()()()(()))",
+          "()(()()()()())",
+          "()(()()()())()",
+          "()(()()())(())",
+          "()(()()())()()",
+          "()(()())((()))",
+          "()(()())(()())",
+          "()(()())(())()",
+          "()(()())()(())",
+          "()(()())()()()",
+          "()(())(((())))",
+          "()(())((()()))",
+          "()(())((())())",
+          "()(())((()))()",
+          "()(())(()(()))",
+          "()(())(()()())",
+          "()(())(()())()",
+          "()(())(())(())",
+          "()(())(())()()",
+          "()(())()((()))",
+          "()(())()(()())",
+          "()(())()(())()",
+          "()(())()()(())",
+          "()(())()()()()",
+          "()()((((()))))",
+          "()()(((()())))",
+          "()()(((())()))",
+          "()()(((()))())",
+          "()()(((())))()",
+          "()()((()(())))",
+          "()()((()()()))",
+          "()()((()())())",
+          "()()((()()))()",
+          "()()((())(()))",
+          "()()((())()())",
+          "()()((())())()",
+          "()()((()))(())",
+          "()()((()))()()",
+          "()()(()((())))",
+          "()()(()(()()))",
+          "()()(()(())())",
+          "()()(()(()))()",
+          "()()(()()(()))",
+          "()()(()()()())",
+          "()()(()()())()",
+          "()()(()())(())",
+          "()()(()())()()",
+          "()()(())((()))",
+          "()()(())(()())",
+          "()()(())(())()",
+          "()()(())()(())",
+          "()()(())()()()",
+          "()()()(((())))",
+          "()()()((()()))",
+          "()()()((())())",
+          "()()()((()))()",
+          "()()()(()(()))",
+          "()()()(()()())",
+          "()()()(()())()",
+          "()()()(())(())",
+          "()()()(())()()",
+          "()()()()((()))",
+          "()()()()(()())",
+          "()()()()(())()",
+          "()()()()()(())",
+          "()()()()()()()"
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Phone Letter Combinations",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Backtracking"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "On a phone keypad 2=abc, 3=def, 4=ghi, 5=jkl, 6=mno, 7=pqrs, 8=tuv, 9=wxyz. Given a string of digits 2\u20139, return all possible letter strings sorted in ascending order.",
+    "examples": [
+      {
+        "input": "digits = \"23\"",
+        "output": "[\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]",
+        "explanation": "a/b/c combined with d/e/f."
+      },
+      {
+        "input": "digits = \"2\"",
+        "output": "[\"a\",\"b\",\"c\"]",
+        "explanation": "Just a, b, c."
+      }
+    ],
+    "constraints": [
+      "1 <= digits.length <= 4",
+      "digits contain only 2\u20139"
+    ],
+    "functionName": "letterCombinations",
+    "params": [
+      {
+        "name": "digits",
+        "type": "string"
+      }
+    ],
+    "returnType": "string[]",
+    "testCases": [
+      {
+        "args": [
+          "23"
+        ],
+        "expected": [
+          "ad",
+          "ae",
+          "af",
+          "bd",
+          "be",
+          "bf",
+          "cd",
+          "ce",
+          "cf"
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          "2"
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          "7"
+        ],
+        "expected": [
+          "p",
+          "q",
+          "r",
+          "s"
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          "79"
+        ],
+        "expected": [
+          "pw",
+          "px",
+          "py",
+          "pz",
+          "qw",
+          "qx",
+          "qy",
+          "qz",
+          "rw",
+          "rx",
+          "ry",
+          "rz",
+          "sw",
+          "sx",
+          "sy",
+          "sz"
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          "234"
+        ],
+        "expected": [
+          "adg",
+          "adh",
+          "adi",
+          "aeg",
+          "aeh",
+          "aei",
+          "afg",
+          "afh",
+          "afi",
+          "bdg",
+          "bdh",
+          "bdi",
+          "beg",
+          "beh",
+          "bei",
+          "bfg",
+          "bfh",
+          "bfi",
+          "cdg",
+          "cdh",
+          "cdi",
+          "ceg",
+          "ceh",
+          "cei",
+          "cfg",
+          "cfh",
+          "cfi"
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          "58"
+        ],
+        "expected": [
+          "jt",
+          "ju",
+          "jv",
+          "kt",
+          "ku",
+          "kv",
+          "lt",
+          "lu",
+          "lv"
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          "29"
+        ],
+        "expected": [
+          "aw",
+          "ax",
+          "ay",
+          "az",
+          "bw",
+          "bx",
+          "by",
+          "bz",
+          "cw",
+          "cx",
+          "cy",
+          "cz"
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Combination Sum",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Backtracking"
+    ],
+    "companies": [
+      "Amazon",
+      "Airbnb"
+    ],
+    "description": "Given distinct positive integers `candidates` and a `target`, return every unique combination that sums to `target`. Each number may be reused unlimited times. Write each combination in ascending order and sort the list of combinations lexicographically.",
+    "examples": [
+      {
+        "input": "candidates = [2,3,6,7], target = 7",
+        "output": "[[2,2,3],[7]]",
+        "explanation": "2+2+3 and 7."
+      },
+      {
+        "input": "candidates = [2,3,5], target = 8",
+        "output": "[[2,2,2,2],[2,3,3],[3,5]]",
+        "explanation": "2+2+2+2, 2+3+3 and 3+5."
+      }
+    ],
+    "constraints": [
+      "1 <= candidates.length <= 10",
+      "2 <= candidates[i] <= 40",
+      "1 <= target <= 40",
+      "At least one combination exists"
+    ],
+    "functionName": "combinationSum",
+    "params": [
+      {
+        "name": "candidates",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int[][]",
+    "testCases": [
+      {
+        "args": [
+          [
+            2,
+            3,
+            6,
+            7
+          ],
+          7
+        ],
+        "expected": [
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            7
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            3,
+            5
+          ],
+          8
+        ],
+        "expected": [
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            3,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            4
+          ],
+          8
+        ],
+        "expected": [
+          [
+            4,
+            4
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1
+          ],
+          2
+        ],
+        "expected": [
+          [
+            1,
+            1
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            5,
+            8
+          ],
+          11
+        ],
+        "expected": [
+          [
+            3,
+            3,
+            5
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            4
+          ],
+          6
+        ],
+        "expected": [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            7,
+            3,
+            2
+          ],
+          18
+        ],
+        "expected": [
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            3,
+            7
+          ],
+          [
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            7,
+            7
+          ],
+          [
+            2,
+            3,
+            3,
+            3,
+            7
+          ],
+          [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Number of Provinces",
+    "difficulty": "Medium",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "DFS"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "`isConnected[i][j] = 1` means cities `i` and `j` are directly linked (links are symmetric). A province is a group of cities connected directly or indirectly. Return the number of provinces.",
+    "examples": [
+      {
+        "input": "isConnected = [[1,1,0],[1,1,0],[0,0,1]]",
+        "output": "2",
+        "explanation": "Cities 0 and 1 form one province, city 2 another."
+      },
+      {
+        "input": "isConnected = [[1,0,0],[0,1,0],[0,0,1]]",
+        "output": "3",
+        "explanation": "No links: three provinces."
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 200",
+      "isConnected[i][i] == 1",
+      "isConnected[i][j] == isConnected[j][i]"
+    ],
+    "functionName": "findCircleNum",
+    "params": [
+      {
+        "name": "isConnected",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        ],
+        "expected": 3,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Meeting Rooms II",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Heap"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Facebook"
+    ],
+    "description": "Given meeting time intervals `[start, end)`, return the minimum number of rooms required so that no two overlapping meetings share a room. A meeting ending at time t doesn't conflict with one starting at t.",
+    "examples": [
+      {
+        "input": "intervals = [[0,30],[5,10],[15,20]]",
+        "output": "2",
+        "explanation": "The 0\u201330 meeting overlaps both others."
+      },
+      {
+        "input": "intervals = [[7,10],[2,4]]",
+        "output": "1",
+        "explanation": "No overlap."
+      }
+    ],
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "0 <= start < end <= 10^6"
+    ],
+    "functionName": "minMeetingRooms",
+    "params": [
+      {
+        "name": "intervals",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              0,
+              30
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              15,
+              20
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              7,
+              10
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              10
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              10
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              7
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              7
+            ]
+          ]
+        ],
+        "expected": 3,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              9,
+              10
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              4,
+              17
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Sort Characters By Frequency",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Sorting"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Rearrange `s` so characters appear in decreasing order of frequency, with equal letters grouped together. If two characters share a frequency, put the one with the smaller ASCII value first.",
+    "examples": [
+      {
+        "input": "s = \"tree\"",
+        "output": "\"eert\"",
+        "explanation": "e appears twice; r and t once (r before t)."
+      },
+      {
+        "input": "s = \"cccaaa\"",
+        "output": "\"aaaccc\"",
+        "explanation": "Tie broken by 'a' < 'c'."
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 5*10^5",
+      "s has letters and digits"
+    ],
+    "functionName": "frequencySort",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "tree"
+        ],
+        "expected": "eert",
+        "isSample": true
+      },
+      {
+        "args": [
+          "cccaaa"
+        ],
+        "expected": "aaaccc",
+        "isSample": true
+      },
+      {
+        "args": [
+          "Aabb"
+        ],
+        "expected": "bbAa",
+        "isSample": false
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": "a",
+        "isSample": false
+      },
+      {
+        "args": [
+          "abc"
+        ],
+        "expected": "abc",
+        "isSample": false
+      },
+      {
+        "args": [
+          "zzyyx"
+        ],
+        "expected": "yyzzx",
+        "isSample": false
+      },
+      {
+        "args": [
+          "loveleetcode"
+        ],
+        "expected": "eeeelloocdtv",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Valid Parenthesis String",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "description": "`s` contains `(`, `)` and `*`. A `*` may act as `(`, `)` or an empty string. Return true if `s` can become a balanced parentheses string.",
+    "examples": [
+      {
+        "input": "s = \"(*)\"",
+        "output": "true",
+        "explanation": "Treat * as empty."
+      },
+      {
+        "input": "s = \")(\"",
+        "output": "false",
+        "explanation": "Closes before it opens."
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 100"
+    ],
+    "functionName": "checkValidString",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "(*)"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          ")("
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "()"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "(*))"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "*"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "((*"
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          "(((*)"
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          "(*()"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Car Pooling",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "A vehicle with `capacity` seats only drives forward. Each trip `[passengers, from, to]` boards at `from` and gets off at `to` (before anyone boards at that same point). Return true if every trip can be completed without ever exceeding capacity.",
+    "examples": [
+      {
+        "input": "trips = [[2,1,5],[3,3,7]], capacity = 4",
+        "output": "false",
+        "explanation": "Between 3 and 5 there are 5 passengers."
+      },
+      {
+        "input": "trips = [[2,1,5],[3,3,7]], capacity = 5",
+        "output": "true",
+        "explanation": "Peak load is exactly 5."
+      }
+    ],
+    "constraints": [
+      "1 <= trips.length <= 1000",
+      "1 <= passengers <= 100",
+      "0 <= from < to <= 1000",
+      "1 <= capacity <= 10^5"
+    ],
+    "functionName": "carPooling",
+    "params": [
+      {
+        "name": "trips",
+        "type": "int[][]"
+      },
+      {
+        "name": "capacity",
+        "type": "int"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              5
+            ],
+            [
+              3,
+              3,
+              7
+            ]
+          ],
+          4
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              5
+            ],
+            [
+              3,
+              3,
+              7
+            ]
+          ],
+          5
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              5
+            ],
+            [
+              3,
+              5,
+              7
+            ]
+          ],
+          3
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              2,
+              7
+            ],
+            [
+              3,
+              7,
+              9
+            ],
+            [
+              8,
+              3,
+              9
+            ]
+          ],
+          11
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              1,
+              3
+            ]
+          ],
+          4
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              3
+            ],
+            [
+              2,
+              2,
+              4
+            ],
+            [
+              2,
+              3,
+              5
+            ]
+          ],
+          4
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              3
+            ],
+            [
+              2,
+              2,
+              4
+            ],
+            [
+              2,
+              3,
+              5
+            ]
+          ],
+          3
+        ],
+        "expected": false,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Maximum Points From Cards",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Cards lie in a row with values `cardPoints`. In `k` steps you take one card per step from either end. Return the maximum total points.",
+    "examples": [
+      {
+        "input": "cardPoints = [1,2,3,4,5,6,1], k = 3",
+        "output": "12",
+        "explanation": "Take the last three cards: 5 + 6 + 1 = 12."
+      },
+      {
+        "input": "cardPoints = [2,2,2], k = 2",
+        "output": "4",
+        "explanation": "Any two cards: 4."
+      }
+    ],
+    "constraints": [
+      "1 <= cardPoints.length <= 10^5",
+      "1 <= cardPoints[i] <= 10^4",
+      "1 <= k <= cardPoints.length"
+    ],
+    "functionName": "maxScore",
+    "params": [
+      {
+        "name": "cardPoints",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            1
+          ],
+          3
+        ],
+        "expected": 12,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            2,
+            2,
+            2
+          ],
+          2
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            9,
+            7,
+            7,
+            9,
+            7,
+            7,
+            9
+          ],
+          7
+        ],
+        "expected": 55,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1000,
+            1
+          ],
+          1
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            79,
+            80,
+            1,
+            1,
+            1,
+            200,
+            1
+          ],
+          3
+        ],
+        "expected": 202,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            5
+          ],
+          1
+        ],
+        "expected": 5,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            1,
+            2
+          ],
+          2
+        ],
+        "expected": 5,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Next Greater Element in a Circle",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Stack"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "`nums` is circular: after the last element comes the first. For every element, return the first strictly greater value you meet moving forward around the circle, or -1 if none exists.",
+    "examples": [
+      {
+        "input": "nums = [1,2,1]",
+        "output": "[2,-1,2]",
+        "explanation": "The last 1 wraps around to find 2."
+      },
+      {
+        "input": "nums = [1,2,3,4,3]",
+        "output": "[2,3,4,-1,4]",
+        "explanation": "Each finds the next larger; 4 has none."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "functionName": "nextGreaterElements",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "expected": [
+          2,
+          -1,
+          2
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4,
+            3
+          ]
+        ],
+        "expected": [
+          2,
+          3,
+          4,
+          -1,
+          4
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            5
+          ]
+        ],
+        "expected": [
+          -1
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            3
+          ]
+        ],
+        "expected": [
+          -1,
+          -1
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        ],
+        "expected": [
+          -1,
+          5,
+          5,
+          5,
+          5
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          2,
+          2,
+          -1
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            2,
+            7,
+            1,
+            6
+          ]
+        ],
+        "expected": [
+          7,
+          -1,
+          6,
+          7
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Remove K Digits",
+    "difficulty": "Medium",
+    "tags": [
+      "String",
+      "Stack",
+      "Greedy"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Given a number as a string `num`, remove exactly `k` digits so the remaining number is as small as possible. Return it without leading zeros (return \"0\" if nothing remains).",
+    "examples": [
+      {
+        "input": "num = \"1432219\", k = 3",
+        "output": "\"1219\"",
+        "explanation": "Remove 4, 3, 2 \u2192 1219."
+      },
+      {
+        "input": "num = \"10200\", k = 1",
+        "output": "\"200\"",
+        "explanation": "Remove 1 \u2192 0200 \u2192 200."
+      }
+    ],
+    "constraints": [
+      "1 <= k <= num.length <= 10^5",
+      "num has digits only"
+    ],
+    "functionName": "removeKdigits",
+    "params": [
+      {
+        "name": "num",
+        "type": "string"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "string",
+    "testCases": [
+      {
+        "args": [
+          "1432219",
+          3
+        ],
+        "expected": "1219",
+        "isSample": true
+      },
+      {
+        "args": [
+          "10200",
+          1
+        ],
+        "expected": "200",
+        "isSample": true
+      },
+      {
+        "args": [
+          "10",
+          2
+        ],
+        "expected": "0",
+        "isSample": false
+      },
+      {
+        "args": [
+          "112",
+          1
+        ],
+        "expected": "11",
+        "isSample": false
+      },
+      {
+        "args": [
+          "9",
+          1
+        ],
+        "expected": "0",
+        "isSample": false
+      },
+      {
+        "args": [
+          "12345",
+          2
+        ],
+        "expected": "123",
+        "isSample": false
+      },
+      {
+        "args": [
+          "54321",
+          2
+        ],
+        "expected": "321",
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Permutations",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Backtracking"
+    ],
+    "companies": [
+      "Microsoft",
+      "Amazon",
+      "Facebook"
+    ],
+    "description": "Given distinct integers `nums`, return all their permutations, sorted in lexicographic order.",
+    "examples": [
+      {
+        "input": "nums = [1,2,3]",
+        "output": "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+        "explanation": "Six permutations."
+      },
+      {
+        "input": "nums = [0,1]",
+        "output": "[[0,1],[1,0]]",
+        "explanation": "Two permutations."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 5",
+      "All integers are distinct"
+    ],
+    "functionName": "permute",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[][]",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            1
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": [
+          [
+            1
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            6,
+            5
+          ],
+          [
+            5,
+            4,
+            6
+          ],
+          [
+            5,
+            6,
+            4
+          ],
+          [
+            6,
+            4,
+            5
+          ],
+          [
+            6,
+            5,
+            4
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            1,
+            2,
+            4,
+            3
+          ],
+          [
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4,
+            2
+          ],
+          [
+            1,
+            4,
+            2,
+            3
+          ],
+          [
+            1,
+            4,
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            3,
+            4
+          ],
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            2,
+            3,
+            1,
+            4
+          ],
+          [
+            2,
+            3,
+            4,
+            1
+          ],
+          [
+            2,
+            4,
+            1,
+            3
+          ],
+          [
+            2,
+            4,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2,
+            4
+          ],
+          [
+            3,
+            1,
+            4,
+            2
+          ],
+          [
+            3,
+            2,
+            1,
+            4
+          ],
+          [
+            3,
+            2,
+            4,
+            1
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            2,
+            1
+          ],
+          [
+            4,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            1,
+            3,
+            2
+          ],
+          [
+            4,
+            2,
+            1,
+            3
+          ],
+          [
+            4,
+            2,
+            3,
+            1
+          ],
+          [
+            4,
+            3,
+            1,
+            2
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ]
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Binary Subarrays With Sum",
+    "difficulty": "Medium",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Prefix Sum"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Given a binary array `nums` and an integer `goal`, return the number of non-empty contiguous subarrays whose sum equals `goal`.",
+    "examples": [
+      {
+        "input": "nums = [1,0,1,0,1], goal = 2",
+        "output": "4",
+        "explanation": "Four subarrays sum to 2."
+      },
+      {
+        "input": "nums = [0,0,0,0,0], goal = 0",
+        "output": "15",
+        "explanation": "Every subarray: 15."
+      }
+    ],
+    "constraints": [
+      "1 <= nums.length <= 3*10^4",
+      "nums[i] is 0 or 1",
+      "0 <= goal <= nums.length"
+    ],
+    "functionName": "numSubarraysWithSum",
+    "params": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "goal",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          2
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          0
+        ],
+        "expected": 15,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            1
+          ],
+          1
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            0,
+            1,
+            0
+          ],
+          1
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          1
+        ],
+        "expected": 6,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          3
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Shortest Path in Binary Matrix",
+    "difficulty": "Medium",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "In an n\u00d7n grid of 0 (open) and 1 (blocked), travel from the top-left to the bottom-right through open cells, moving in any of 8 directions. Return the number of cells on the shortest path, or -1 if none exists.",
+    "examples": [
+      {
+        "input": "grid = [[0,1],[1,0]]",
+        "output": "2",
+        "explanation": "Diagonal move: 2 cells."
+      },
+      {
+        "input": "grid = [[0,0,0],[1,1,0],[1,1,0]]",
+        "output": "4",
+        "explanation": "Path of 4 cells."
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 100",
+      "grid[i][j] is 0 or 1"
+    ],
+    "functionName": "shortestPathBinaryMatrix",
+    "params": [
+      {
+        "name": "grid",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": -1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Distance to Nearest Zero",
+    "difficulty": "Medium",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "Given a binary matrix that contains at least one 0, return a matrix where each cell holds its Manhattan distance (4-directional steps) to the nearest 0.",
+    "examples": [
+      {
+        "input": "mat = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "[[0,0,0],[0,1,0],[0,0,0]]",
+        "explanation": "Only the centre is away from a zero."
+      },
+      {
+        "input": "mat = [[0,0,0],[0,1,0],[1,1,1]]",
+        "output": "[[0,0,0],[0,1,0],[1,2,1]]",
+        "explanation": "Bottom-middle is 2 away."
+      }
+    ],
+    "constraints": [
+      "1 <= rows, cols <= 100",
+      "matrix[i][j] is 0 or 1",
+      "At least one 0 exists"
+    ],
+    "functionName": "updateMatrix",
+    "params": [
+      {
+        "name": "mat",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int[][]",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              0
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            0
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            1
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            2,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            2
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Network Delay Time",
+    "difficulty": "Medium",
+    "tags": [
+      "Graph",
+      "Dijkstra",
+      "Heap"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "description": "A network has nodes 1..n and directed edges `times[i] = [u, v, w]` meaning a signal travels u\u2192v in `w` time. A signal starts at node `k`. Return the time for all nodes to receive it, or -1 if some node never does.",
+    "examples": [
+      {
+        "input": "times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2",
+        "output": "2",
+        "explanation": "The farthest node (4) is 2 away."
+      },
+      {
+        "input": "times = [[1,2,1]], n = 2, k = 2",
+        "output": "-1",
+        "explanation": "Node 1 is unreachable."
+      }
+    ],
+    "constraints": [
+      "1 <= k <= n <= 100",
+      "1 <= times.length <= 6000",
+      "0 <= w <= 100"
+    ],
+    "functionName": "networkDelayTime",
+    "params": [
+      {
+        "name": "times",
+        "type": "int[][]"
+      },
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              3,
+              4,
+              1
+            ]
+          ],
+          4,
+          2
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          2,
+          2
+        ],
+        "expected": -1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          2,
+          1
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              3,
+              2
+            ],
+            [
+              1,
+              3,
+              4
+            ]
+          ],
+          3,
+          1
+        ],
+        "expected": 3,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          3,
+          1
+        ],
+        "expected": 3,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              3
+            ]
+          ],
+          2,
+          2
+        ],
+        "expected": 3,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          3,
+          3
+        ],
+        "expected": 2,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Cheapest Flights Within K Stops",
+    "difficulty": "Medium",
+    "tags": [
+      "Graph",
+      "Dynamic Programming",
+      "Bellman-Ford"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Airbnb"
+    ],
+    "description": "There are `n` cities and flights `[from, to, price]`. Find the cheapest price from `src` to `dst` using at most `k` stops (intermediate cities), or -1 if impossible.",
+    "examples": [
+      {
+        "input": "n = 4, flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]], src = 0, dst = 3, k = 1",
+        "output": "700",
+        "explanation": "0 \u2192 1 \u2192 3 costs 700."
+      },
+      {
+        "input": "n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 1",
+        "output": "200",
+        "explanation": "0 \u2192 1 \u2192 2 costs 200."
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= k < n",
+      "src != dst"
+    ],
+    "functionName": "findCheapestPrice",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "flights",
+        "type": "int[][]"
+      },
+      {
+        "name": "src",
+        "type": "int"
+      },
+      {
+        "name": "dst",
+        "type": "int"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          4,
+          [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              2,
+              0,
+              100
+            ],
+            [
+              1,
+              3,
+              600
+            ],
+            [
+              2,
+              3,
+              200
+            ]
+          ],
+          0,
+          3,
+          1
+        ],
+        "expected": 700,
+        "isSample": true
+      },
+      {
+        "args": [
+          3,
+          [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              0,
+              2,
+              500
+            ]
+          ],
+          0,
+          2,
+          1
+        ],
+        "expected": 200,
+        "isSample": true
+      },
+      {
+        "args": [
+          3,
+          [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              0,
+              2,
+              500
+            ]
+          ],
+          0,
+          2,
+          0
+        ],
+        "expected": 500,
+        "isSample": false
+      },
+      {
+        "args": [
+          2,
+          [
+            [
+              0,
+              1,
+              50
+            ]
+          ],
+          0,
+          1,
+          0
+        ],
+        "expected": 50,
+        "isSample": false
+      },
+      {
+        "args": [
+          3,
+          [
+            [
+              0,
+              1,
+              100
+            ]
+          ],
+          0,
+          2,
+          2
+        ],
+        "expected": -1,
+        "isSample": false
+      },
+      {
+        "args": [
+          5,
+          [
+            [
+              0,
+              1,
+              10
+            ],
+            [
+              1,
+              2,
+              10
+            ],
+            [
+              2,
+              3,
+              10
+            ],
+            [
+              3,
+              4,
+              10
+            ],
+            [
+              0,
+              4,
+              100
+            ]
+          ],
+          0,
+          4,
+          2
+        ],
+        "expected": 100,
+        "isSample": false
+      },
+      {
+        "args": [
+          5,
+          [
+            [
+              0,
+              1,
+              10
+            ],
+            [
+              1,
+              2,
+              10
+            ],
+            [
+              2,
+              3,
+              10
+            ],
+            [
+              3,
+              4,
+              10
+            ],
+            [
+              0,
+              4,
+              100
+            ]
+          ],
+          0,
+          4,
+          3
+        ],
+        "expected": 40,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Word Ladder Length",
+    "difficulty": "Hard",
+    "tags": [
+      "Graph",
+      "BFS",
+      "String"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Facebook"
+    ],
+    "description": "Transform `beginWord` into `endWord` by changing one letter at a time, where every intermediate word must be in `wordList` (the end word included). Return the number of words in the shortest sequence (counting both ends), or 0 if impossible.",
+    "examples": [
+      {
+        "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]",
+        "output": "5",
+        "explanation": "hit \u2192 hot \u2192 dot \u2192 dog \u2192 cog: 5 words."
+      },
+      {
+        "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]",
+        "output": "0",
+        "explanation": "The end word isn't in the list."
+      }
+    ],
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "All words have the same length",
+      "1 <= wordList.length <= 5000",
+      "Lowercase letters only"
+    ],
+    "functionName": "ladderLength",
+    "params": [
+      {
+        "name": "beginWord",
+        "type": "string"
+      },
+      {
+        "name": "endWord",
+        "type": "string"
+      },
+      {
+        "name": "wordList",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "hit",
+          "cog",
+          [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log",
+            "cog"
+          ]
+        ],
+        "expected": 5,
+        "isSample": true
+      },
+      {
+        "args": [
+          "hit",
+          "cog",
+          [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log"
+          ]
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a",
+          "c",
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          "hot",
+          "dog",
+          [
+            "hot",
+            "dog"
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          "red",
+          "tax",
+          [
+            "ted",
+            "tex",
+            "red",
+            "tax",
+            "tad",
+            "den",
+            "rex",
+            "pee"
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          "lost",
+          "cost",
+          [
+            "most",
+            "fist",
+            "lost",
+            "cost",
+            "fish"
+          ]
+        ],
+        "expected": 2,
+        "isSample": false
+      },
+      {
+        "args": [
+          "game",
+          "thee",
+          [
+            "gave",
+            "gaze",
+            "zame",
+            "game",
+            "thee",
+            "gate",
+            "taze"
+          ]
+        ],
+        "expected": 0,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Total N-Queens",
+    "difficulty": "Hard",
+    "tags": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Place `n` queens on an `n \u00d7 n` chessboard so no two attack each other (same row, column or diagonal). Return the number of distinct solutions.",
+    "examples": [
+      {
+        "input": "n = 4",
+        "output": "2",
+        "explanation": "Two valid arrangements."
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "A single queen."
+      }
+    ],
+    "constraints": [
+      "1 <= n <= 9"
+    ],
+    "functionName": "totalNQueens",
+    "params": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          4
+        ],
+        "expected": 2,
+        "isSample": true
+      },
+      {
+        "args": [
+          1
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          2
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          3
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          5
+        ],
+        "expected": 10,
+        "isSample": false
+      },
+      {
+        "args": [
+          6
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          8
+        ],
+        "expected": 92,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Longest Increasing Path in a Matrix",
+    "difficulty": "Hard",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Dynamic Programming",
+      "Matrix"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "From any cell you may move up, down, left or right (no diagonals, no leaving the grid) to a cell with a strictly larger value. Return the length of the longest such path.",
+    "examples": [
+      {
+        "input": "matrix = [[9,9,4],[6,6,8],[2,1,1]]",
+        "output": "4",
+        "explanation": "Path 1 \u2192 2 \u2192 6 \u2192 9."
+      },
+      {
+        "input": "matrix = [[3,4,5],[3,2,6],[2,2,1]]",
+        "output": "4",
+        "explanation": "Path 3 \u2192 4 \u2192 5 \u2192 6."
+      }
+    ],
+    "constraints": [
+      "1 <= rows, cols <= 200",
+      "0 <= matrix[i][j] <= 2^31 - 1"
+    ],
+    "functionName": "longestIncreasingPath",
+    "params": [
+      {
+        "name": "matrix",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              9,
+              9,
+              4
+            ],
+            [
+              6,
+              6,
+              8
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              3,
+              4,
+              5
+            ],
+            [
+              3,
+              2,
+              6
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              3
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              6,
+              5,
+              4
+            ],
+            [
+              7,
+              8,
+              9
+            ]
+          ]
+        ],
+        "expected": 9,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              5,
+              4,
+              3
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Dungeon Game",
+    "difficulty": "Hard",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "description": "A knight starts at the top-left of a grid and must reach the bottom-right, moving only right or down. Each cell changes his health by `dungeon[i][j]` (negative = damage). His health must stay at least 1 at all times, including after the last cell. Return the minimum starting health required.",
+    "examples": [
+      {
+        "input": "dungeon = [[-2,-3,3],[-5,-10,1],[10,30,-5]]",
+        "output": "7",
+        "explanation": "Going right, right, down, down needs 7 health."
+      },
+      {
+        "input": "dungeon = [[0]]",
+        "output": "1",
+        "explanation": "Health can never drop below 1, so 1."
+      }
+    ],
+    "constraints": [
+      "1 <= rows, cols <= 200",
+      "-1000 <= dungeon[i][j] <= 1000"
+    ],
+    "functionName": "calculateMinimumHP",
+    "params": [
+      {
+        "name": "dungeon",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          [
+            [
+              -2,
+              -3,
+              3
+            ],
+            [
+              -5,
+              -10,
+              1
+            ],
+            [
+              10,
+              30,
+              -5
+            ]
+          ]
+        ],
+        "expected": 7,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              0
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          [
+            [
+              100
+            ]
+          ]
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              -3
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              1,
+              -3,
+              3
+            ],
+            [
+              0,
+              -2,
+              0
+            ],
+            [
+              -3,
+              -3,
+              -3
+            ]
+          ]
+        ],
+        "expected": 3,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              -5,
+              1
+            ],
+            [
+              1,
+              -5
+            ]
+          ]
+        ],
+        "expected": 10,
+        "isSample": false
+      },
+      {
+        "args": [
+          [
+            [
+              0,
+              -3
+            ],
+            [
+              -10,
+              1
+            ]
+          ]
+        ],
+        "expected": 4,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Palindrome Partitioning Minimum Cuts",
+    "difficulty": "Hard",
+    "tags": [
+      "String",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Cut the string `s` into pieces so every piece is a palindrome. Return the minimum number of cuts needed.",
+    "examples": [
+      {
+        "input": "s = \"aab\"",
+        "output": "1",
+        "explanation": "\"aa\" | \"b\" needs one cut."
+      },
+      {
+        "input": "s = \"a\"",
+        "output": "0",
+        "explanation": "Already a palindrome."
+      }
+    ],
+    "constraints": [
+      "1 <= s.length <= 2000",
+      "Lowercase letters only"
+    ],
+    "functionName": "minCut",
+    "params": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "testCases": [
+      {
+        "args": [
+          "aab"
+        ],
+        "expected": 1,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a"
+        ],
+        "expected": 0,
+        "isSample": true
+      },
+      {
+        "args": [
+          "ab"
+        ],
+        "expected": 1,
+        "isSample": false
+      },
+      {
+        "args": [
+          "aaaa"
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          "abcba"
+        ],
+        "expected": 0,
+        "isSample": false
+      },
+      {
+        "args": [
+          "abcde"
+        ],
+        "expected": 4,
+        "isSample": false
+      },
+      {
+        "args": [
+          "banana"
+        ],
+        "expected": 1,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  },
+  {
+    "title": "Interleaving String",
+    "difficulty": "Hard",
+    "tags": [
+      "String",
+      "Dynamic Programming"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "description": "Return true if `s3` can be formed by interleaving all characters of `s1` and `s2` while preserving the relative order of characters within each of them.",
+    "examples": [
+      {
+        "input": "s1 = \"aabcc\", s2 = \"dbbca\", s3 = \"aadbbcbcac\"",
+        "output": "true",
+        "explanation": "One valid interleaving exists."
+      },
+      {
+        "input": "s1 = \"aabcc\", s2 = \"dbbca\", s3 = \"aadbbbaccc\"",
+        "output": "false",
+        "explanation": "No valid interleaving."
+      }
+    ],
+    "constraints": [
+      "0 <= s1.length, s2.length <= 100",
+      "0 <= s3.length <= 200",
+      "Lowercase letters only"
+    ],
+    "functionName": "isInterleave",
+    "params": [
+      {
+        "name": "s1",
+        "type": "string"
+      },
+      {
+        "name": "s2",
+        "type": "string"
+      },
+      {
+        "name": "s3",
+        "type": "string"
+      }
+    ],
+    "returnType": "bool",
+    "testCases": [
+      {
+        "args": [
+          "aabcc",
+          "dbbca",
+          "aadbbcbcac"
+        ],
+        "expected": true,
+        "isSample": true
+      },
+      {
+        "args": [
+          "aabcc",
+          "dbbca",
+          "aadbbbaccc"
+        ],
+        "expected": false,
+        "isSample": true
+      },
+      {
+        "args": [
+          "a",
+          "b",
+          "ab"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "a",
+          "b",
+          "ba"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "ab",
+          "cd",
+          "acbd"
+        ],
+        "expected": true,
+        "isSample": false
+      },
+      {
+        "args": [
+          "ab",
+          "cd",
+          "adbc"
+        ],
+        "expected": false,
+        "isSample": false
+      },
+      {
+        "args": [
+          "abc",
+          "def",
+          "abdecf"
+        ],
+        "expected": true,
+        "isSample": false
+      }
+    ],
+    "isPublished": true
+  }
+]
