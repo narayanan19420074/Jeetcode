@@ -14,6 +14,7 @@ import {
   CircularProgress,
 } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { loginUser, googleSignIn } from './authSlice';
 import AuthShell, { AuthField } from './AuthShell';
@@ -40,6 +41,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const googleBtnRef = useRef(null);
+  const [gsiReady, setGsiReady] = useState(false);
 
   const goToDest = (user) => {
     const dest = location.state?.from?.pathname || (user.role === 'admin' ? '/admin' : '/dashboard');
@@ -54,8 +56,10 @@ export default function LoginPage() {
     }
   };
 
-  // Google Identity Services — renders its own icon-only button into
-  // googleBtnRef once the GSI script (loaded via index.html) is ready.
+  // Google Identity Services — renders its real button into googleBtnRef once
+  // the GSI script (loaded via index.html) is ready. That button is laid over
+  // our own MUI Google icon, invisible, so the icon always shows (Google's
+  // iframe sometimes paints an empty square) while clicks still reach GSI.
   // The GSI script in index.html is `async defer`, so on a fresh page load it
   // may not exist yet when this component mounts. Poll briefly until it does.
   useEffect(() => {
@@ -84,6 +88,7 @@ export default function LoginPage() {
         size: 'large',
         shape: 'rectangular',
       });
+      setGsiReady(true);
     };
     render();
     return () => clearTimeout(timer);
@@ -155,8 +160,31 @@ export default function LoginPage() {
       </Divider>
 
       <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
-        {/* Google renders its own icon button here */}
-        <Box ref={googleBtnRef} sx={{ height: 40, display: 'flex', alignItems: 'center' }} />
+        {/* Our icon underneath; Google's real (invisible) button on top takes the click */}
+        {GOOGLE_CLIENT_ID && (
+          <Box sx={{ position: 'relative', width: 40, height: 40, flexShrink: 0 }}>
+            <Tooltip title="Google">
+              <IconButton
+                aria-label="Continue with Google"
+                onClick={() => window.google?.accounts?.id?.prompt()}
+                sx={iconBtnSx}
+              >
+                <GoogleIcon fontSize="small" />
+              </IconButton>
+            </Tooltip>
+            <Box
+              ref={googleBtnRef}
+              sx={{
+                position: 'absolute',
+                inset: 0,
+                overflow: 'hidden',
+                opacity: 0.01,
+                pointerEvents: gsiReady ? 'auto' : 'none',
+                '& iframe': { width: '40px !important', height: '40px !important' },
+              }}
+            />
+          </Box>
+        )}
 
         <Tooltip title="GitHub">
           <IconButton aria-label="Continue with GitHub" onClick={handleGithubClick} sx={iconBtnSx}>
