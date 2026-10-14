@@ -3,6 +3,8 @@ import {
   getActivityHeatmap,
   toggleBookmark,
   updateProfile,
+  uploadAvatar,
+  getAvatar,
   updatePreferences,
   getAccount,
   changePassword,
@@ -15,6 +17,7 @@ import { requireAuth, loadFullUser } from '../middlewares/auth.middleware.js';
 import { validate } from '../middlewares/validate.js';
 import {
   updateProfileSchema,
+  uploadAvatarSchema,
   preferencesPatchSchema,
   changePasswordSchema,
   changeHandleSchema,
@@ -27,9 +30,13 @@ const router = Router();
 router.get('/me/activity', requireAuth, loadFullUser, getActivityHeatmap);
 router.post('/me/bookmarks/:problemId', requireAuth, loadFullUser, toggleBookmark);
 
+// Public: serves an uploaded profile picture
+router.get('/avatar/:id', getAvatar);
+
 // Settings
 router.get('/me/account', requireAuth, getAccount);
 router.patch('/me/profile', requireAuth, loadFullUser, validate(updateProfileSchema), updateProfile);
+router.post('/me/avatar', requireAuth, loadFullUser, validate(uploadAvatarSchema), uploadAvatar);
 router.patch('/me/preferences', requireAuth, validate(preferencesPatchSchema), updatePreferences);
 router.patch('/me/password', requireAuth, loadFullUser, authLimiter, validate(changePasswordSchema), changePassword);
 router.patch('/me/handle', requireAuth, loadFullUser, validate(changeHandleSchema), changeHandle);

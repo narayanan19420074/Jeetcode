@@ -41,6 +41,9 @@ async function generateUniqueHandle(email) {
  * GitHub or LinkedIn later means writing a verify function, not a second
  * copy of this find-or-create logic.
  */
+// A picture the user uploaded themselves must survive later provider logins.
+const hasUploadedAvatar = (u) => typeof u.avatarUrl === 'string' && u.avatarUrl.startsWith('/api/users/avatar/');
+
 export async function findOrCreateOAuthUser({ providerField, providerId, email, name, avatarUrl }) {
   const normalizedEmail = email.toLowerCase();
 
@@ -52,7 +55,7 @@ export async function findOrCreateOAuthUser({ providerField, providerId, email, 
       user.name = name;
       changed = true;
     }
-    if (avatarUrl && user.avatarUrl !== avatarUrl) {
+    if (avatarUrl && !hasUploadedAvatar(user) && user.avatarUrl !== avatarUrl) {
       user.avatarUrl = avatarUrl;
       changed = true;
     }
@@ -67,7 +70,7 @@ export async function findOrCreateOAuthUser({ providerField, providerId, email, 
   if (user) {
     user[providerField] = providerId;
     if (name && user.name !== name) user.name = name;
-    if (avatarUrl && user.avatarUrl !== avatarUrl) user.avatarUrl = avatarUrl;
+    if (avatarUrl && !hasUploadedAvatar(user) && user.avatarUrl !== avatarUrl) user.avatarUrl = avatarUrl;
     await user.save();
     return user;
   }

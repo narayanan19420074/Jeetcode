@@ -1,4 +1,4 @@
-import { Suspense, lazy, useMemo, useState } from 'react';
+import { Suspense, lazy, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, Navigate, useParams } from 'react-router-dom';
 import { alpha } from '@mui/material/styles';
@@ -150,6 +150,31 @@ export default function SettingsPage() {
   const [query, setQuery] = useState('');
   const isPhone = useMediaQuery((t) => t.breakpoints.down('md'));
 
+  // Desktop: the page itself never scrolls — the sidebar and the content pane
+  // each get their own scrollbar. Height = whatever is left under the navbar
+  // (and the free-access banner, if it is showing).
+  const rootRef = useRef(null);
+  const [fillH, setFillH] = useState(null);
+  useLayoutEffect(() => {
+    const el = rootRef.current;
+    if (isPhone || !el) {
+      setFillH(null);
+      return undefined;
+    }
+    const measure = () => {
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      setFillH(Math.max(420, Math.round(window.innerHeight - top)));
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    ro?.observe(document.body);
+    return () => {
+      window.removeEventListener('resize', measure);
+      ro?.disconnect();
+    };
+  }, [isPhone, section, user]);
+
   const groups = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return SETTINGS_GROUPS;
@@ -167,9 +192,18 @@ export default function SettingsPage() {
   const current = SETTINGS_ITEMS.find((i) => i.key === section);
 
   return (
-    <Box sx={{ maxWidth: 1120, mx: 'auto', px: { xs: 2, md: 3 }, py: { xs: 2.5, md: 4 } }}>
+    <Box
+      ref={rootRef}
+      sx={{
+        maxWidth: 1120,
+        mx: 'auto',
+        px: { xs: 2, md: 3 },
+        py: { xs: 2.5, md: 4 },
+        ...(fillH && { height: fillH, display: 'flex', flexDirection: 'column', overflow: 'hidden', pt: 3, pb: 2 }),
+      }}
+    >
       {/* Header — who these settings belong to */}
-      <Stack direction="row" sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1.75, mb: 3.5 }}>
+      <Stack direction="row" sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1.75, mb: 3.5, flexShrink: 0 }}>
         <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 700 }}>
           {initialsFromName(user.name)}
         </Avatar>
@@ -189,7 +223,15 @@ export default function SettingsPage() {
         </Button>
       </Stack>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: '264px minmax(0, 1fr)' }, gap: { xs: 2, md: 5 }, alignItems: 'start' }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: '264px minmax(0, 1fr)' },
+          gap: { xs: 2, md: 5 },
+          alignItems: 'start',
+          ...(fillH && { flex: 1, minHeight: 0, gridTemplateRows: 'minmax(0, 1fr)', alignItems: 'stretch' }),
+        }}
+      >
         {/* Phones: back arrow + big title instead of the sidebar */}
         <Stack direction="row" sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', gap: 1, mx: -1 }}>
           <IconButton component={RouterLink} to="/settings" aria-label="Back to settings">
@@ -201,7 +243,7 @@ export default function SettingsPage() {
         </Stack>
 
         {/* Desktop sidebar */}
-        <Box component="nav" aria-label="Settings sections" sx={{ display: { xs: 'none', md: 'block' }, position: 'sticky', top: 88 }}>
+        <Box component="nav" aria-label="Settings sections" sx={{ display: { xs: 'none', md: 'block' }, ...(fillH ? { minHeight: 0, overflowY: 'auto', pr: 1, pb: 1 } : { position: 'sticky', top: 88 }) }}>
           <TextField
             size="small"
             fullWidth
@@ -234,7 +276,7 @@ export default function SettingsPage() {
         </Box>
 
         {/* Content */}
-        <Box component="main" sx={{ minWidth: 0, maxWidth: 780 }} aria-label={current?.label}>
+        <Box key={section} component="main" sx={{ minWidth: 0, maxWidth: 780, ...(fillH && { minHeight: 0, overflowY: 'auto', pr: 1.5, pb: 3 }) }} aria-label={current?.label}>
           <Suspense
             fallback={
               <Box sx={{ display: 'flex', justifyContent: 'center', py: 10 }}>

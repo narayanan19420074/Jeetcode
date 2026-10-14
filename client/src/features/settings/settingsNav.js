@@ -16,7 +16,7 @@ export const SETTINGS_GROUPS = [
     label: 'Access',
     items: [
       { key: 'profile', label: 'Public profile', icon: PersonRoundedIcon, keywords: 'name bio avatar photo picture location college company website social github linkedin x leetcode' },
-      { key: 'account', label: 'Account', icon: ManageAccountsRoundedIcon, keywords: 'username handle email sign-in google github linkedin export download data delete danger' },
+      { key: 'account', label: 'Account', icon: ManageAccountsRoundedIcon, keywords: 'username handle email sign-in google github linkedin delete danger' },
       { key: 'billing', label: 'Billing & plans', icon: WorkspacePremiumRoundedIcon, keywords: 'pro license key subscription plan cancel upgrade payment' },
     ],
   },

@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs';
+import mongoose from 'mongoose';
 import { User } from '../models/User.js';
 import { Submission } from '../models/Submission.js';
 import { AptitudeAttempt } from '../models/AptitudeAttempt.js';
@@ -58,7 +59,14 @@ export const updateProfile = asyncHandler(async (req, res) => {
   const user = req.fullUser;
 
   if (name !== undefined) user.name = name;
-  if (avatarUrl !== undefined) user.avatarUrl = avatarUrl || null;
+  if (avatarUrl !== undefined) {
+    user.avatarUrl = avatarUrl || null;
+    // Removed, or switched to an external photo -> drop the stored upload.
+    if (!avatarUrl || !avatarUrl.startsWith(AVATAR_PATH)) {
+      user.avatarData = undefined;
+      user.avatarMime = undefined;
+    }
+  }
   if (bio !== undefined) user.bio = bio;
   if (location !== undefined) user.location = location;
   if (company !== undefined) user.company = company;
@@ -69,6 +77,43 @@ export const updateProfile = asyncHandler(async (req, res) => {
 
   await user.save();
   new ApiResponse(200, user.toPublicJSON(), 'Profile updated').send(res);
+});
+
+const AVATAR_PATH = '/api/users/avatar/';
+const AVATAR_MAX_BYTES = 150 * 1024;
+
+const sniffImage = (b) => {
+  if (b.length > 3 && b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return 'image/jpeg';
+  if (b.length > 4 && b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) return 'image/png';
+  if (b.length > 12 && b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP') return 'image/webp';
+  return null;
+};
+
+// POST /api/users/me/avatar — body: { image: 'data:image/jpeg;base64,...' }.
+// Stores the picture on the user and points avatarUrl at the serving route.
+export const uploadAvatar = asyncHandler(async (req, res) => {
+  const user = req.fullUser;
+  const buf = Buffer.from(req.body.image.split(',')[1], 'base64');
+  if (!buf.length || buf.length > AVATAR_MAX_BYTES) throw ApiError.badRequest('Image is too large');
+  const mime = sniffImage(buf);
+  if (!mime) throw ApiError.badRequest('Upload a JPG, PNG or WebP image');
+
+  user.avatarData = buf;
+  user.avatarMime = mime;
+  user.avatarUrl = `${AVATAR_PATH}${user._id}?v=${Date.now()}`;
+  await user.save();
+  new ApiResponse(200, user.toPublicJSON(), 'Profile picture updated').send(res);
+});
+
+// GET /api/users/avatar/:id — public (it is a profile picture). ?v= busts the cache on change.
+export const getAvatar = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.isValidObjectId(id)) throw ApiError.notFound('No picture');
+  const user = await User.findById(id).select('avatarData avatarMime');
+  if (!user?.avatarData?.length) throw ApiError.notFound('No picture');
+  res.set('Content-Type', user.avatarMime || 'image/jpeg');
+  res.set('Cache-Control', 'public, max-age=31536000, immutable');
+  res.send(Buffer.from(user.avatarData));
 });
 
 // PATCH /api/users/me/preferences — body: { appearance?, accessibility?, editor?, notifications? },

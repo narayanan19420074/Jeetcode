@@ -6,6 +6,7 @@ export const usersApi = {
 
   // Settings
   updateProfile: (payload) => apiClient.patch('/users/me/profile', payload),
+  uploadAvatar: (image) => apiClient.post('/users/me/avatar', { image }),
   updatePreferences: (payload) => apiClient.patch('/users/me/preferences', payload),
   changePassword: (payload) => apiClient.patch('/users/me/password', payload),
   changeHandle: (handle) => apiClient.patch('/users/me/handle', { handle }),

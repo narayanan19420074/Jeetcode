@@ -1,8 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
 import { Alert, Avatar, Box, Button, CircularProgress, InputAdornment, Stack, TextField, Typography } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import PhotoCameraRoundedIcon from '@mui/icons-material/PhotoCameraRounded';
 import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { userUpdated } from '../../auth/authSlice';
@@ -14,6 +15,42 @@ const SOCIALS = [
   { key: 'x', label: 'X (Twitter)', prefix: 'x.com/' },
   { key: 'leetcode', label: 'LeetCode', prefix: 'leetcode.com/u/' },
 ];
+
+const AVATAR_PX = 256;
+
+// Centre-crop to a square, shrink to 256px, return a small JPEG data URL.
+function resizeToAvatar(file) {
+  return new Promise((resolve, reject) => {
+    if (!file.type.startsWith('image/')) {
+      reject(new Error('Please choose an image file'));
+      return;
+    }
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const side = Math.min(img.naturalWidth, img.naturalHeight);
+      if (!side) {
+        reject(new Error('Could not read that image'));
+        return;
+      }
+      const size = Math.min(AVATAR_PX, side);
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, size, size);
+      ctx.drawImage(img, (img.naturalWidth - side) / 2, (img.naturalHeight - side) / 2, side, side, 0, 0, size, size);
+      resolve(canvas.toDataURL('image/jpeg', 0.85));
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error('Could not read that image — try a JPG or PNG'));
+    };
+    img.src = url;
+  });
+}
 
 const fromUser = (u) => ({
   name: u.name || '',
@@ -32,11 +69,32 @@ export default function ProfileSection() {
   const [form, setForm] = useState(() => fromUser(user));
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
+  const [uploading, setUploading] = useState(false);
+  const fileRef = useRef(null);
 
   const saved = useMemo(() => fromUser(user), [user]);
   const dirty = JSON.stringify(form) !== JSON.stringify(saved);
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
   const setSocial = (k) => (e) => setForm((f) => ({ ...f, socials: { ...f.socials, [k]: e.target.value.trim() } }));
+
+  const onPickPhoto = async (e) => {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+    setUploading(true);
+    setError(null);
+    try {
+      const image = await resizeToAvatar(file);
+      const { data } = await usersApi.uploadAvatar(image);
+      dispatch(userUpdated(data.data));
+      setForm((f) => ({ ...f, avatarUrl: data.data.avatarUrl || '' }));
+      enqueueSnackbar('Profile picture updated', { variant: 'success' });
+    } catch (err) {
+      setError(err?.response ? describeError(err) : err.message || 'Could not upload that image');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const submit = async (e) => {
     e.preventDefault();
@@ -103,6 +161,17 @@ export default function ProfileSection() {
               {initialsFromName(form.name)}
             </Avatar>
             <Stack spacing={1} sx={{ flex: 1 }}>
+              <input ref={fileRef} type="file" accept="image/*" hidden onChange={onPickPhoto} />
+              <Button
+                size="small"
+                variant="contained"
+                disableElevation
+                startIcon={uploading ? <CircularProgress size={16} color="inherit" /> : <PhotoCameraRoundedIcon />}
+                disabled={uploading}
+                onClick={() => fileRef.current?.click()}
+              >
+                {uploading ? 'Uploading…' : 'Upload photo'}
+              </Button>
               <Button
                 size="small"
                 variant="outlined"
@@ -118,17 +187,6 @@ export default function ProfileSection() {
               </Button>
             </Stack>
           </Stack>
-          <TextField
-            size="small"
-            label="Image URL"
-            value={form.avatarUrl}
-            onChange={set('avatarUrl')}
-            fullWidth
-            placeholder="https://…"
-            sx={{ mt: 1.5 }}
-            helperText="Paste a link to an image. Blank shows your initials."
-            slotProps={{ htmlInput: { maxLength: 500 } }}
-          />
         </Box>
       </Box>
 

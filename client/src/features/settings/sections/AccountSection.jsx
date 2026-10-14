@@ -6,7 +6,6 @@ import GoogleIcon from '@mui/icons-material/Google';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
-import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { logoutUser, userUpdated } from '../../auth/authSlice';
@@ -42,9 +41,6 @@ export default function AccountSection() {
   const [handleError, setHandleError] = useState(null);
   const [handleDialog, setHandleDialog] = useState(false);
 
-  // export
-  const [exporting, setExporting] = useState(false);
-
   // delete
   const [delOpen, setDelOpen] = useState(false);
   const [delConfirm, setDelConfirm] = useState('');
@@ -73,26 +69,6 @@ export default function AccountSection() {
       setHandleDialog(false);
     } finally {
       setHandleBusy(false);
-    }
-  };
-
-  const exportData = async () => {
-    setExporting(true);
-    try {
-      const res = await usersApi.exportData();
-      const url = URL.createObjectURL(res.data);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `jeetcode-${user.handle}-export.json`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      enqueueSnackbar('Your data export has been downloaded', { variant: 'success' });
-    } catch (err) {
-      enqueueSnackbar(describeError(err), { variant: 'error' });
-    } finally {
-      setExporting(false);
     }
   };
 
@@ -177,14 +153,6 @@ export default function AccountSection() {
         </Box>
       </Card>
 
-      <Card title="Export your data" description="Download a copy of everything we store for your account — profile, preferences, solved problems, submissions (with code), aptitude progress and security log — as a JSON file.">
-        <CardBody>
-          <Button variant="outlined" color="inherit" startIcon={exporting ? <CircularProgress size={16} /> : <DownloadRoundedIcon />} disabled={exporting} onClick={exportData} sx={{ borderColor: 'divider' }}>
-            Export account data
-          </Button>
-        </CardBody>
-      </Card>
-
       <Card tone="danger" title="Danger zone">
         <Row
           title="Delete this account"
@@ -224,7 +192,7 @@ export default function AccountSection() {
         <DialogTitle sx={{ fontWeight: 800, color: 'error.main' }}>Delete your account?</DialogTitle>
         <DialogContent>
           <Alert severity="warning" sx={{ mb: 2 }}>
-            This permanently deletes your data. Consider exporting it first.
+            This permanently deletes your data and cannot be undone.
           </Alert>
           {delError && (
             <Alert severity="error" sx={{ mb: 2 }}>

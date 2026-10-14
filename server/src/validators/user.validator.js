@@ -14,6 +14,9 @@ const httpUrl = (max) =>
       }
     }, 'Must be a valid http(s) URL');
 
+// Our own uploaded-avatar path (see uploadAvatar in user.controller.js).
+const localAvatarPath = z.string().regex(/^\/api\/users\/avatar\/[a-f0-9]{24}(?:\?v=\d+)?$/);
+
 // '' clears the field.
 const optionalUrl = (max) => z.union([z.literal(''), httpUrl(max)]);
 
@@ -30,12 +33,20 @@ const socialSchema = z
 export const updateProfileSchema = z.object({
   name: z.string().trim().min(2).max(80).optional(),
   // Empty string / null clears the avatar back to initials-only.
-  avatarUrl: z.union([z.literal(''), z.null(), httpUrl(500)]).optional(),
+  avatarUrl: z.union([z.literal(''), z.null(), localAvatarPath, httpUrl(500)]).optional(),
   bio: z.string().trim().max(160).optional(),
   location: z.string().trim().max(60).optional(),
   company: z.string().trim().max(60).optional(),
   website: optionalUrl(200).optional(),
   socials: socialSchema.optional(),
+});
+
+// Client resizes to ~256px and sends a data URL; the controller re-checks size + magic bytes.
+export const uploadAvatarSchema = z.object({
+  image: z
+    .string()
+    .max(250_000)
+    .regex(/^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/]+=*$/, 'Upload a JPG, PNG or WebP image'),
 });
 
 // currentPassword is optional at the schema level because OAuth-only

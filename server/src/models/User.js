@@ -44,6 +44,11 @@ const userSchema = new mongoose.Schema(
     githubId: { type: String, unique: true, sparse: true },
     linkedinId: { type: String, unique: true, sparse: true },
     avatarUrl: { type: String, default: null },
+    // Uploaded profile picture (small JPEG/PNG/WebP, resized on the client).
+    // Kept off every normal query; served by GET /api/users/avatar/:id, which
+    // is what avatarUrl points at. Keeps leaderboard/plan payloads tiny.
+    avatarData: { type: Buffer, select: false },
+    avatarMime: { type: String, select: false },
 
     // 'learner' = default signup role. 'contributor' = can propose problems
     // (draft/submitted, cannot publish). 'moderator' = can review/approve
