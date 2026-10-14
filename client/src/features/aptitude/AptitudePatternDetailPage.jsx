@@ -2,16 +2,21 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams, Link as RouterLink } from 'react-router-dom';
 import {
   Alert,
+  Badge,
   Box,
   Breadcrumbs,
   Button,
+  ButtonBase,
   Chip,
+  Collapse,
   Container,
+  IconButton,
   LinearProgress,
   Link,
   Paper,
   Skeleton,
   Stack,
+  Tooltip,
   Typography,
   alpha,
 } from '@mui/material';
@@ -22,101 +27,86 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
+import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { getLessonsForPattern } from './lessons';
 import { getTopicBySlug } from '../learn/content/topics';
 import { motion } from 'framer-motion';
-import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
-import Ring from './components/Ring';
 import Alien3D from './components/Alien3D';
-import HeroPanel from './components/HeroPanel';
-import { CountUp, TiltCard, XpBar, popChild, staggerParent } from './components/MotionBits';
-import { ALIENS, buildBadges, moduleXp, rankForXp } from './components/gamification';
+import { CountUp, XpBar, popChild, staggerParent } from './components/MotionBits';
+import { buildBadges, moduleXp, rankForXp } from './components/gamification';
 import { DIFFICULTY, formatClock, formatDuration } from './components/aptitudeUi';
 
+const MONO = '"JetBrains Mono", monospace';
+
 /* ---------------------------------------------------------------- */
-/* Mode card (Learn / Practice / Test)                              */
+/* Mode row (Learn / Practice / Test) — one compact tappable row     */
 /* ---------------------------------------------------------------- */
-function ModeCard({ icon, accent, eyebrow, title, lines, progress, cta, onClick, disabled, highlight, step }) {
+function ModeCard({ icon, accent, title, line, progress, cta, onClick, disabled, highlight }) {
   return (
-    <TiltCard variants={popChild}>
-    <Paper
-      variant="outlined"
-      sx={{
-        p: 2.5,
-        borderRadius: 3,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1.5,
-        flex: 1,
-        minWidth: 0,
-        position: 'relative',
-        overflow: 'hidden',
-        borderColor: highlight ? accent : 'divider',
-        background: (t) => `linear-gradient(160deg, ${alpha(accent, t.palette.mode === 'dark' ? 0.16 : 0.09)} 0%, transparent 55%)`,
-        boxShadow: highlight ? `0 0 0 3px ${alpha(accent, 0.18)}, 0 12px 34px ${alpha(accent, 0.22)}` : 'none',
-        transition: 'box-shadow .2s ease, border-color .2s ease',
-        '&:hover': disabled ? undefined : { boxShadow: `0 14px 36px ${alpha(accent, 0.28)}`, borderColor: accent },
-      }}
-    >
-      <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${accent}, ${alpha(accent, 0.2)})` }} />
-      <Typography aria-hidden sx={{ position: 'absolute', right: 12, top: -6, fontSize: 92, fontWeight: 900, lineHeight: 1, color: alpha(accent, 0.09), fontFamily: '"JetBrains Mono", monospace', userSelect: 'none' }}>
-        {step}
-      </Typography>
-      <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
-        <Box
-          component={motion.div}
-          whileHover={{ rotate: [0, -12, 12, 0], scale: 1.12 }}
-          transition={{ duration: 0.5 }}
-          sx={{ width: 46, height: 46, borderRadius: 2.5, display: 'grid', placeItems: 'center', bgcolor: accent, color: '#fff', boxShadow: `0 6px 16px ${alpha(accent, 0.45)}`, position: 'relative' }}
-        >
-          {icon}
-        </Box>
-        <Box sx={{ minWidth: 0 }}>
-          <Typography variant="overline" sx={{ lineHeight: 1.2, color: 'text.secondary', letterSpacing: '0.08em', fontWeight: 700 }}>
-            {eyebrow}
-          </Typography>
-          <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.2 }}>
-            {title}
-          </Typography>
-        </Box>
-      </Stack>
-
-      <Stack spacing={0.4} sx={{ flexGrow: 1 }}>
-        {lines.map((l) => (
-          <Typography key={l} variant="body2" color="text.secondary">
-            {l}
-          </Typography>
-        ))}
-      </Stack>
-
-      {progress != null && (
-        <LinearProgress
-          variant="determinate"
-          value={progress}
-          sx={{ height: 6, borderRadius: 3, '& .MuiLinearProgress-bar': { bgcolor: accent }, bgcolor: alpha(accent, 0.12) }}
-        />
-      )}
-
-      <Button
-        variant={highlight ? 'contained' : 'outlined'}
-        disableElevation
+    <Box component={motion.div} variants={popChild} sx={{ flex: 1, minWidth: 0 }}>
+      <Paper
+        component={ButtonBase}
+        variant="outlined"
         disabled={disabled}
         onClick={onClick}
-        endIcon={<ArrowForwardRoundedIcon />}
-        sx={{ alignSelf: 'stretch', ...(highlight && { bgcolor: accent, '&:hover': { bgcolor: accent, filter: 'brightness(0.92)' } }), ...(!highlight && { color: accent, borderColor: alpha(accent, 0.5) }) }}
+        sx={{
+          width: '100%',
+          p: 1.5,
+          borderRadius: 3,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 1.5,
+          textAlign: 'left',
+          borderColor: highlight ? accent : 'divider',
+          background: (t) => `linear-gradient(160deg, ${alpha(accent, t.palette.mode === 'dark' ? 0.16 : 0.08)} 0%, transparent 60%)`,
+          boxShadow: highlight ? `0 0 0 3px ${alpha(accent, 0.16)}` : 'none',
+          opacity: disabled ? 0.6 : 1,
+          transition: 'box-shadow .2s ease, border-color .2s ease',
+          '&:hover': disabled ? undefined : { borderColor: accent },
+        }}
       >
-        {cta}
-      </Button>
-    </Paper>
-    </TiltCard>
+        <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: 2.5, display: 'grid', placeItems: 'center', bgcolor: accent, color: '#fff' }}>{icon}</Box>
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography sx={{ fontWeight: 800, lineHeight: 1.2 }}>{title}</Typography>
+          <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>
+            {line}
+          </Typography>
+          {progress != null && (
+            <LinearProgress
+              variant="determinate"
+              value={progress}
+              sx={{ mt: 0.75, height: 4, borderRadius: 2, bgcolor: alpha(accent, 0.14), '& .MuiLinearProgress-bar': { bgcolor: accent } }}
+            />
+          )}
+        </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 0.5,
+            flexShrink: 0,
+            px: 1.5,
+            py: 0.6,
+            borderRadius: 99,
+            fontSize: 13,
+            fontWeight: 700,
+            color: highlight ? '#fff' : accent,
+            bgcolor: highlight ? accent : alpha(accent, 0.14),
+          }}
+        >
+          {cta}
+          <ArrowForwardRoundedIcon sx={{ fontSize: 16 }} />
+        </Box>
+      </Paper>
+    </Box>
   );
 }
 
@@ -183,29 +173,54 @@ const BADGE_ICONS = {
   rocket: RocketLaunchRoundedIcon,
 };
 
-function BadgeTile({ badge }) {
+function BadgeDot({ badge }) {
   const Icon = BADGE_ICONS[badge.icon] ?? StarRoundedIcon;
   return (
-    <Box
-      component={motion.div}
-      variants={popChild}
-      whileHover={{ y: -4, scale: 1.04 }}
-      title={badge.desc}
-      sx={{ textAlign: 'center', p: 1.5, borderRadius: 3, border: '1px solid', borderColor: badge.earned ? alpha(badge.color, 0.55) : 'divider', bgcolor: badge.earned ? alpha(badge.color, 0.09) : 'transparent', position: 'relative', overflow: 'hidden' }}
+    <Tooltip
+      arrow
+      enterTouchDelay={0}
+      leaveTouchDelay={2500}
+      title={
+        <>
+          <b>{badge.name}</b>
+          <br />
+          {badge.earned ? badge.desc : `${badge.have}/${badge.need} · ${badge.desc}`}
+        </>
+      }
     >
       <Box
-        component={motion.div}
-        animate={badge.earned ? { rotate: [0, -8, 8, 0] } : undefined}
-        transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-        sx={{ width: 52, height: 52, mx: 'auto', mb: 1, borderRadius: '50%', display: 'grid', placeItems: 'center', color: badge.earned ? '#fff' : 'text.disabled', background: badge.earned ? `linear-gradient(145deg, ${badge.color}, ${alpha(badge.color, 0.6)})` : 'transparent', border: badge.earned ? 'none' : '2px dashed', borderColor: 'divider', boxShadow: badge.earned ? `0 8px 20px ${alpha(badge.color, 0.45)}` : 'none' }}
+        tabIndex={0}
+        aria-label={`${badge.name}${badge.earned ? ' (earned)' : ' (locked)'}`}
+        sx={{
+          width: 34,
+          height: 34,
+          flexShrink: 0,
+          borderRadius: '50%',
+          display: 'grid',
+          placeItems: 'center',
+          color: badge.earned ? '#fff' : 'text.disabled',
+          background: badge.earned ? `linear-gradient(145deg, ${badge.color}, ${alpha(badge.color, 0.65)})` : 'transparent',
+          border: badge.earned ? 'none' : '1.5px dashed',
+          borderColor: 'divider',
+        }}
       >
-        {badge.earned ? <Icon /> : <LockRoundedIcon sx={{ fontSize: 20 }} />}
+        {badge.earned ? <Icon sx={{ fontSize: 19 }} /> : <LockRoundedIcon sx={{ fontSize: 15 }} />}
       </Box>
-      <Typography variant="body2" sx={{ fontWeight: 800, lineHeight: 1.2, color: badge.earned ? 'text.primary' : 'text.secondary' }}>
-        {badge.name}
+    </Tooltip>
+  );
+}
+
+function Stat({ value, label, suffix }) {
+  return (
+    <Box sx={{ flex: 1, textAlign: 'center' }}>
+      <Typography sx={{ fontWeight: 800, fontSize: 19, lineHeight: 1.1, fontFamily: MONO }}>
+        {value}
+        <Box component="span" sx={{ fontSize: 12, color: 'text.secondary', fontWeight: 700 }}>
+          {suffix}
+        </Box>
       </Typography>
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', lineHeight: 1.3, mt: 0.25 }}>
-        {badge.earned ? badge.desc : `${badge.have}/${badge.need} · ${badge.desc}`}
+      <Typography variant="caption" color="text.secondary" sx={{ textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 700, fontSize: 10.5 }}>
+        {label}
       </Typography>
     </Box>
   );
@@ -220,6 +235,7 @@ export default function AptitudePatternDetailPage() {
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const [showRecent, setShowRecent] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -269,13 +285,13 @@ export default function AptitudePatternDetailPage() {
 
   if (!data) {
     return (
-      <Container maxWidth="lg" sx={{ py: 4 }}>
-        <Skeleton width={220} height={24} />
-        <Skeleton width={360} height={44} sx={{ mb: 3 }} />
-        <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
-          <Skeleton variant="rounded" height={190} sx={{ flex: 1 }} />
-          <Skeleton variant="rounded" height={190} sx={{ flex: 1 }} />
-          <Skeleton variant="rounded" height={190} sx={{ flex: 1 }} />
+      <Container maxWidth="md" sx={{ py: { xs: 1.5, md: 3 } }}>
+        <Skeleton width={180} height={20} sx={{ mb: 1 }} />
+        <Skeleton variant="rounded" height={230} sx={{ mb: 2, borderRadius: 3 }} />
+        <Stack spacing={1.25}>
+          <Skeleton variant="rounded" height={74} sx={{ borderRadius: 3 }} />
+          <Skeleton variant="rounded" height={74} sx={{ borderRadius: 3 }} />
+          <Skeleton variant="rounded" height={74} sx={{ borderRadius: 3 }} />
         </Stack>
       </Container>
     );
@@ -297,244 +313,114 @@ export default function AptitudePatternDetailPage() {
   const goTest = () =>
     activeTest ? navigate(`/aptitude/${slug}/test/${activeTest.attemptId}`) : navigate(`/aptitude/${slug}/test`);
 
-  const learnLines = lessons
-    ? [`${learnTotal} short lessons, one per question type`, 'Formulas, exam shortcuts, worked examples']
-    : hasLegacyLearn
-      ? ['Concepts and worked examples']
-      : ['Lessons for this topic are coming soon'];
-  const learnCta = !hasLearn ? 'Coming soon' : lessons ? (learnDone === 0 ? 'Start learning' : learnDone >= learnTotal ? 'Review lessons' : 'Continue learning') : 'Open Learn';
+  const learnLine = lessons ? `${learnDone}/${learnTotal} lessons` : hasLegacyLearn ? 'Concepts and worked examples' : 'Coming soon';
+  const learnCta = !hasLearn ? 'Soon' : lessons ? (learnDone === 0 ? 'Start' : learnDone >= learnTotal ? 'Review' : 'Continue') : 'Open';
+  const testLine = activeTest
+    ? `In progress · ${activeTest.answeredCount}/${activeTest.totalCount} · ${formatClock(remainingSec)} left`
+    : progress.attemptsCount > 0
+      ? `Best ${progress.bestScore}%${bestPassed ? ' · passed' : ''} · ${testPlan.questionCount} Qs · ${pattern.timeLimitMinutes} min`
+      : `${testPlan.questionCount} Qs · ${pattern.timeLimitMinutes} min · pass ${pattern.passPercentage}%`;
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
+    <Container maxWidth="md" sx={{ py: { xs: 1.5, md: 3 } }}>
       <Breadcrumbs sx={{ mb: 1, fontSize: 13 }}>
         <Link component={RouterLink} to="/aptitude" underline="hover" color="text.secondary">
           Aptitude
         </Link>
-        {pattern.category && <Typography variant="body2" color="text.secondary">{pattern.category}</Typography>}
         <Typography variant="body2" color="text.primary" sx={{ fontWeight: 600 }}>
           {pattern.title}
         </Typography>
       </Breadcrumbs>
 
-      <HeroPanel glow={rank.alien.glow} sx={{ mb: 3 }}>
-        <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 3, md: 4 }} sx={{ position: 'relative', alignItems: { md: 'center' } }}>
-          <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Chip size="small" variant="outlined" color="primary" icon={<AutoAwesomeRoundedIcon sx={{ fontSize: 15 }} />} label={`The One for All Aptitude · ${pattern.category || 'Quantitative'}`} sx={{ fontWeight: 700, mb: 1.5 }} />
-            <Typography variant="h3" sx={{ fontWeight: 800, letterSpacing: '-0.03em', fontSize: { xs: 32, md: 44 }, lineHeight: 1.08 }}>
+      {/* One small card: alien + XP + progress + badges + recent tests */}
+      <Paper
+        variant="outlined"
+        sx={{
+          p: { xs: 1.75, sm: 2.5 },
+          borderRadius: 3,
+          mb: 2,
+          background: (t) => `linear-gradient(150deg, ${alpha(rank.alien.color, t.palette.mode === 'dark' ? 0.18 : 0.1)} 0%, transparent 60%)`,
+        }}
+      >
+        <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
+          <Box sx={{ flexShrink: 0, width: 68, height: 68 }}>
+            <Alien3D kind={rank.alien.key} size={68} wave />
+          </Box>
+          <Box sx={{ minWidth: 0, flex: 1 }}>
+            <Typography variant="h5" sx={{ fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.15 }}>
               {pattern.title}
             </Typography>
-            <Typography color="text.secondary" sx={{ mt: 1, maxWidth: 560 }}>
-              {pattern.description}
-            </Typography>
-
-            <Stack direction="row" spacing={0} divider={<Box sx={{ width: '1px', bgcolor: 'divider', mx: { xs: 1.5, sm: 3 } }} />} sx={{ mt: 3, flexWrap: 'wrap', rowGap: 2 }}>
-              {[
-                [totals.solved, 'Solved', `/${totals.total}`],
-                [learnDone, 'Lessons', learnTotal ? `/${learnTotal}` : ''],
-                [progress.attemptsCount > 0 ? Math.round(progress.bestScore) : 0, 'Best test', '%'],
-                [earnedCount, 'Badges', `/${badges.length}`],
-              ].map(([v, k, suf]) => (
-                <Box key={k}>
-                  <Typography sx={{ fontWeight: 800, fontSize: 26, lineHeight: 1, fontFamily: '"JetBrains Mono", monospace' }}>
-                    <CountUp value={v} />
-                    <Box component="span" sx={{ fontSize: 14, color: 'text.secondary', fontWeight: 700 }}>
-                      {suf}
-                    </Box>
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
-                    {k}
-                  </Typography>
-                </Box>
-              ))}
-            </Stack>
-
-            <Stack direction="row" useFlexGap spacing={1} sx={{ flexWrap: 'wrap', mt: 2.5 }}>
-              {[`${testPlan.questionCount}-question test`, `${pattern.timeLimitMinutes} min`, `Pass ${pattern.passPercentage}%`, 'No negative marking'].map((c) => (
-                <Chip key={c} size="small" label={c} variant="outlined" />
-              ))}
-            </Stack>
-          </Box>
-
-          <Box sx={{ width: { xs: '100%', md: 300 }, flexShrink: 0, p: 2, borderRadius: '12px', bgcolor: (t) => alpha(t.palette.background.default, t.palette.mode === 'dark' ? 0.55 : 0.7), border: '1px solid', borderColor: 'divider' }}>
-            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-              <Alien3D kind={rank.alien.key} size={104} wave spin />
-              <Box sx={{ minWidth: 0 }}>
-                <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                  Your alien
-                </Typography>
-                <Typography sx={{ fontWeight: 800, fontSize: 22, lineHeight: 1.15 }}>{rank.alien.name}</Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {rank.alien.title}
-                </Typography>
-                <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 0.5 }}>
-                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
-                  <Typography variant="body2" sx={{ fontWeight: 800, fontFamily: '"JetBrains Mono", monospace' }}>
-                    <CountUp value={xp} /> XP
-                  </Typography>
-                </Stack>
-              </Box>
-            </Stack>
-            <Box sx={{ mt: 1.5 }}>
-              <XpBar pct={rank.pct} color={rank.alien.color} height={8} track="rgba(148,163,184,.22)" />
-              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75 }}>
-                {rank.next ? `${rank.toNext} XP to evolve into ${rank.next.name}` : 'Max evolution reached'}
+            <Stack direction="row" useFlexGap spacing={0.75} sx={{ alignItems: 'center', mt: 0.25, flexWrap: 'wrap' }}>
+              <Typography variant="body2" color="text.secondary">
+                {rank.alien.name} · {rank.alien.title}
               </Typography>
-              <Stack direction="row" spacing={0.75} sx={{ mt: 1 }}>
-                {ALIENS.map((a, i) => (
-                  <Box key={a.key} sx={{ flex: 1, height: 4, borderRadius: 2, bgcolor: i <= rank.index ? a.color : 'action.disabledBackground' }} />
-                ))}
-              </Stack>
-            </Box>
-          </Box>
-        </Stack>
-      </HeroPanel>
-
-      {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
-
-      {/* Learn → Practice → Test */}
-      <Stack component={motion.div} variants={staggerParent} initial="hidden" animate="show" direction={{ xs: 'column', md: 'row' }} spacing={2} sx={{ mb: 3 }}>
-        <ModeCard
-          step="1"
-          icon={<MenuBookRoundedIcon />}
-          accent="#3B82F6"
-          eyebrow="Step 1 · Understand"
-          title="Learn"
-          lines={learnLines}
-          progress={lessons ? (learnDone / learnTotal) * 100 : null}
-          cta={lessons && learnDone > 0 && learnDone < learnTotal ? `${learnCta} (${learnDone}/${learnTotal})` : learnCta}
-          disabled={!hasLearn}
-          highlight={hasLearn && learnDone === 0 && totals.solved === 0}
-          onClick={goLearn}
-        />
-        <ModeCard
-          step="2"
-          icon={<CodeRoundedIcon />}
-          accent="#10B981"
-          eyebrow="Step 2 · Build speed"
-          title="Practice"
-          lines={[`${totals.solved} of ${totals.total} solved`, 'Filter by topic, difficulty or status; instant answers + shortcuts']}
-          progress={solvedPct}
-          cta={totals.solved === 0 ? 'Start practising' : 'Continue practising'}
-          highlight={(learnDone > 0 || !hasLearn) && !activeTest && totals.solved < totals.total}
-          onClick={() => goPractice(rec && totals.attempted > 0 ? rec.slug : null)}
-        />
-        <ModeCard
-          step="3"
-          icon={<TimerRoundedIcon />}
-          accent="#F59E0B"
-          eyebrow="Step 3 · Exam simulation"
-          title="Test"
-          lines={
-            activeTest
-              ? [`Test in progress · ${activeTest.answeredCount}/${activeTest.totalCount} answered`, `Time left ${formatClock(remainingSec)}`]
-              : [
-                  `${testPlan.questionCount} questions · ${pattern.timeLimitMinutes} min · exam-style interface`,
-                  progress.attemptsCount > 0 ? `Best score ${progress.bestScore}%${bestPassed ? ' · passed' : ''}` : 'Mixed difficulty, no negative marking',
-                ]
-          }
-          cta={activeTest ? 'Resume test' : progress.attemptsCount > 0 ? 'Retake test' : 'Take the test'}
-          highlight={!!activeTest}
-          onClick={goTest}
-        />
-      </Stack>
-
-      {rec && (
-        <Paper
-          variant="outlined"
-          sx={{ p: 2, mb: 3, borderRadius: 3, display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap', bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}
-        >
-          <BoltRoundedIcon color="primary" />
-          <Box sx={{ flexGrow: 1, minWidth: 220 }}>
-            <Typography variant="body2" sx={{ fontWeight: 700 }}>
-              {totals.attempted === 0 ? 'Where to start' : 'Recommended next'}: {rec.title}
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              {rec.accuracy != null && rec.accuracy < 75
-                ? `Your accuracy here is ${rec.accuracy}% — the quickest place to gain marks.`
-                : `${rec.total - rec.solved} unsolved questions in this topic.`}
-            </Typography>
-          </Box>
-          <Button size="small" variant="contained" disableElevation onClick={() => goPractice(rec.slug)}>
-            Practise this topic
-          </Button>
-        </Paper>
-      )}
-
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3, mb: 3 }}>
-        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
-            Badges
-          </Typography>
-          <Chip size="small" label={`${earnedCount} / ${badges.length} unlocked`} sx={{ fontWeight: 700 }} />
-        </Stack>
-        <Box component={motion.div} variants={staggerParent} initial="hidden" animate="show" sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(4, 1fr)', lg: 'repeat(8, 1fr)' }, gap: 1.25 }}>
-          {badges.map((b) => (
-            <BadgeTile key={b.id} badge={b} />
-          ))}
-        </Box>
-      </Paper>
-
-      <Stack direction={{ xs: 'column', lg: 'row' }} spacing={3} sx={{ alignItems: 'flex-start' }}>
-        {/* Topic map */}
-        <Box sx={{ flex: 1, minWidth: 0, width: '100%' }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1.5 }}>
-            Topic mastery
-          </Typography>
-          <Box component={motion.div} variants={staggerParent} initial="hidden" animate="show" sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', xl: 'repeat(3, 1fr)' }, gap: 1.5 }}>
-            {bySubPattern.map((s) => (
-              <SubPatternTile key={s.slug} sub={s} onClick={() => goPractice(s.slug)} />
-            ))}
-          </Box>
-        </Box>
-
-        {/* Right rail */}
-        <Stack spacing={2} sx={{ width: { xs: '100%', lg: 330 }, flexShrink: 0 }}>
-          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
-            <Typography variant="subtitle2" sx={{ fontWeight: 800, mb: 2 }}>
-              Your progress
-            </Typography>
-            <Stack direction="row" spacing={2.5} sx={{ alignItems: 'center' }}>
-              <Ring value={solvedPct} size={104} label={`${totals.solved}`} sublabel={`/ ${totals.total} solved`} />
-              <Stack spacing={1.1} sx={{ flexGrow: 1 }}>
-                {Object.entries(DIFFICULTY).map(([key, meta]) => {
-                  const d = byDifficulty[key];
-                  return (
-                    <Box key={key}>
-                      <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
-                        <Typography variant="caption" sx={{ fontWeight: 700, color: meta.color }}>
-                          {meta.label}
-                        </Typography>
-                        <Typography variant="caption" color="text.secondary" sx={{ fontFamily: '"JetBrains Mono", monospace' }}>
-                          {d.solved}/{d.total}
-                        </Typography>
-                      </Stack>
-                      <LinearProgress
-                        variant="determinate"
-                        value={d.total ? (d.solved / d.total) * 100 : 0}
-                        sx={{ height: 4, borderRadius: 2, bgcolor: alpha(meta.color, 0.15), '& .MuiLinearProgress-bar': { bgcolor: meta.color } }}
-                      />
-                    </Box>
-                  );
-                })}
-              </Stack>
+              <LocalFireDepartmentRoundedIcon sx={{ fontSize: 15, color: 'warning.main' }} />
+              <Typography variant="body2" sx={{ fontWeight: 800, fontFamily: MONO }}>
+                <CountUp value={xp} /> XP
+              </Typography>
             </Stack>
-            {bookmarkedCount > 0 && (
-              <Button size="small" sx={{ mt: 1.5 }} onClick={() => navigate(`/aptitude/${slug}/practice?status=bookmarked`)}>
-                {bookmarkedCount} bookmarked
-              </Button>
-            )}
-          </Paper>
+          </Box>
+          <Tooltip title="Recent tests">
+            <IconButton aria-label="Recent tests" aria-expanded={showRecent} onClick={() => setShowRecent((v) => !v)} sx={{ alignSelf: 'flex-start', bgcolor: showRecent ? 'action.selected' : 'transparent' }}>
+              <Badge color="primary" badgeContent={recentAttempts.length} invisible={recentAttempts.length === 0}>
+                <HistoryRoundedIcon />
+              </Badge>
+            </IconButton>
+          </Tooltip>
+        </Stack>
 
-          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
-            <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
+        <Box sx={{ mt: 1.5 }}>
+          <XpBar pct={rank.pct} color={rank.alien.color} height={6} track="rgba(148,163,184,.22)" />
+          <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.5 }}>
+            {rank.next ? `${rank.toNext} XP to evolve into ${rank.next.name}` : 'Max evolution reached'}
+          </Typography>
+        </Box>
+
+        <Stack direction="row" divider={<Box sx={{ width: '1px', bgcolor: 'divider' }} />} sx={{ mt: 1.5 }}>
+          <Stat value={totals.solved} suffix={`/${totals.total}`} label="Solved" />
+          <Stat value={learnDone} suffix={learnTotal ? `/${learnTotal}` : ''} label="Lessons" />
+          <Stat value={progress.attemptsCount > 0 ? Math.round(progress.bestScore) : 0} suffix="%" label="Best test" />
+        </Stack>
+
+        <Stack direction="row" useFlexGap spacing={1.5} sx={{ mt: 1.25, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
+          {Object.entries(DIFFICULTY).map(([key, meta]) => {
+            const d = byDifficulty[key];
+            return (
+              <Typography key={key} variant="caption" sx={{ fontWeight: 700, color: meta.color }}>
+                {meta.label}{' '}
+                <Box component="span" sx={{ color: 'text.secondary', fontFamily: MONO }}>
+                  {d.solved}/{d.total}
+                </Box>
+              </Typography>
+            );
+          })}
+          {bookmarkedCount > 0 && (
+            <Button size="small" sx={{ minWidth: 0, py: 0, fontSize: 12 }} onClick={() => navigate(`/aptitude/${slug}/practice?status=bookmarked`)}>
+              {bookmarkedCount} bookmarked
+            </Button>
+          )}
+        </Stack>
+
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.5, mb: 0.75, fontWeight: 700 }}>
+          Badges {earnedCount}/{badges.length}
+        </Typography>
+        <Stack direction="row" sx={{ justifyContent: 'space-between', gap: 0.5 }}>
+          {badges.map((b) => (
+            <BadgeDot key={b.id} badge={b} />
+          ))}
+        </Stack>
+
+        <Collapse in={showRecent} unmountOnExit>
+          <Box sx={{ mt: 1.5, pt: 1, borderTop: '1px solid', borderColor: 'divider' }}>
+            <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', mb: 0.5 }}>
               <Typography variant="subtitle2" sx={{ fontWeight: 800 }}>
                 Recent tests
               </Typography>
-              {bestPassed && <EmojiEventsRoundedIcon sx={{ color: 'warning.main', fontSize: 20 }} />}
+              {bestPassed && <EmojiEventsRoundedIcon sx={{ color: 'warning.main', fontSize: 18 }} />}
             </Stack>
             {recentAttempts.length === 0 ? (
               <Typography variant="body2" color="text.secondary">
-                No tests yet. Warm up with practice, then take the timed test.
+                No tests yet. Take the timed test below.
               </Typography>
             ) : (
               <Stack divider={<Box sx={{ borderTop: '1px solid', borderColor: 'divider' }} />}>
@@ -557,7 +443,7 @@ export default function AptitudePatternDetailPage() {
                       label={`${a.score}%`}
                       sx={{
                         fontWeight: 800,
-                        fontFamily: '"JetBrains Mono", monospace',
+                        fontFamily: MONO,
                         bgcolor: (t) => alpha(a.score >= pattern.passPercentage ? t.palette.success.main : t.palette.error.main, 0.14),
                         color: a.score >= pattern.passPercentage ? 'success.main' : 'error.main',
                       }}
@@ -566,9 +452,77 @@ export default function AptitudePatternDetailPage() {
                 ))}
               </Stack>
             )}
-          </Paper>
-        </Stack>
+          </Box>
+        </Collapse>
+      </Paper>
+
+      {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+
+      {/* Learn → Practice → Test: visible straight away, no scrolling */}
+      <Stack component={motion.div} variants={staggerParent} initial="hidden" animate="show" direction={{ xs: 'column', md: 'row' }} spacing={1.25} sx={{ mb: 2 }}>
+        <ModeCard
+          icon={<MenuBookRoundedIcon />}
+          accent="#3B82F6"
+          title="Learn"
+          line={learnLine}
+          progress={lessons ? (learnDone / learnTotal) * 100 : null}
+          cta={learnCta}
+          disabled={!hasLearn}
+          highlight={hasLearn && learnDone === 0 && totals.solved === 0}
+          onClick={goLearn}
+        />
+        <ModeCard
+          icon={<CodeRoundedIcon />}
+          accent="#10B981"
+          title="Practice"
+          line={`${totals.solved}/${totals.total} solved`}
+          progress={solvedPct}
+          cta={totals.solved === 0 ? 'Start' : 'Continue'}
+          highlight={(learnDone > 0 || !hasLearn) && !activeTest && totals.solved < totals.total}
+          onClick={() => goPractice(rec && totals.attempted > 0 ? rec.slug : null)}
+        />
+        <ModeCard
+          icon={<TimerRoundedIcon />}
+          accent="#F59E0B"
+          title="Test"
+          line={testLine}
+          cta={activeTest ? 'Resume' : progress.attemptsCount > 0 ? 'Retake' : 'Take test'}
+          highlight={!!activeTest}
+          onClick={goTest}
+        />
       </Stack>
+
+      {rec && (
+        <Paper
+          variant="outlined"
+          sx={{ p: 1.5, mb: 2, borderRadius: 3, display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap', bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}
+        >
+          <BoltRoundedIcon color="primary" />
+          <Box sx={{ flexGrow: 1, minWidth: 200 }}>
+            <Typography variant="body2" sx={{ fontWeight: 700 }}>
+              {totals.attempted === 0 ? 'Where to start' : 'Recommended next'}: {rec.title}
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              {rec.accuracy != null && rec.accuracy < 75
+                ? `Your accuracy here is ${rec.accuracy}% — the quickest place to gain marks.`
+                : `${rec.total - rec.solved} unsolved questions in this topic.`}
+            </Typography>
+          </Box>
+          <Button size="small" variant="contained" disableElevation onClick={() => goPractice(rec.slug)}>
+            Practise this topic
+          </Button>
+        </Paper>
+      )}
+
+      {/* Topic map */}
+      <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1.5 }}>
+        Topic mastery
+      </Typography>
+      <Box component={motion.div} variants={staggerParent} initial="hidden" animate="show" sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' }, gap: 1.5 }}>
+        {bySubPattern.map((s) => (
+          <SubPatternTile key={s.slug} sub={s} onClick={() => goPractice(s.slug)} />
+        ))}
+      </Box>
     </Container>
   );
 }
