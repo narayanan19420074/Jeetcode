@@ -33,6 +33,9 @@ export function useRoom({ roomId, displayName }) {
   const [language, setLang] = useState('javascript');
   const [running, setRunning] = useState(false);
   const [runResult, setRunResult] = useState(null);
+  const [quiz, setQuiz] = useState(null); // aptitude rooms: shared question + who answered + score
+  const [myChoice, setMyChoice] = useState(null);
+  const quizSeq = useRef(null);
   const joinedBefore = useRef(false);
 
   useEffect(() => {
@@ -61,6 +64,9 @@ export function useRoom({ roomId, displayName }) {
         setLang(res.room.language);
         setPeers(res.peers);
         setChat(res.chat || []);
+        setQuiz(res.quiz || null);
+        setMyChoice(res.quiz?.mine ?? null);
+        quizSeq.current = res.quiz?.seq ?? null;
         setError(null);
         setStatus('joined');
       });
@@ -72,6 +78,14 @@ export function useRoom({ roomId, displayName }) {
     s.on('peer:joined', (p) => setPeers((prev) => [...prev.filter((x) => x.id !== p.id), p]));
     s.on('peer:left', ({ id }) => setPeers((prev) => prev.filter((x) => x.id !== id)));
     s.on('room:language', setLang);
+    s.on('quiz:state', (v) => {
+      // a new question clears my local pick; updates to the same question keep it
+      if (quizSeq.current !== (v.seq ?? null)) {
+        quizSeq.current = v.seq ?? null;
+        setMyChoice(null);
+      }
+      setQuiz(v);
+    });
     s.on('chat:message', (m) => setChat((prev) => [...prev, m].slice(-100)));
     s.on('run:started', () => {
       setRunning(true);
@@ -93,6 +107,15 @@ export function useRoom({ roomId, displayName }) {
   const changeLanguage = useCallback((l) => socket?.emit('room:language', l), [socket]);
   const sendChat = useCallback((t) => socket?.emit('chat:send', t), [socket]);
   const run = useCallback((stdin) => socket?.emit('code:run', { stdin }), [socket]);
+  const quizPick = useCallback((id) => socket?.emit('quiz:pick', id), [socket]);
+  const quizReveal = useCallback(() => socket?.emit('quiz:reveal'), [socket]);
+  const quizAnswer = useCallback(
+    (i) => {
+      setMyChoice(i);
+      socket?.emit('quiz:answer', i);
+    },
+    [socket]
+  );
 
-  return { doc, socket, status, error, meta, me, peers, chat, language, changeLanguage, sendChat, run, running, runResult };
+  return { doc, socket, status, error, meta, me, peers, chat, language, changeLanguage, sendChat, run, running, runResult, quiz, myChoice, quizPick, quizAnswer, quizReveal };
 }

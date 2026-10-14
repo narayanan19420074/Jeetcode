@@ -17,7 +17,7 @@ export const DEFAULT_STARTERS = {
 
 const rooms = new Map();
 
-export function createRoom({ language, problemSlug, title, starters, initialCode }) {
+export function createRoom({ kind, patternId, patternSlug, language, problemSlug, title, starters, initialCode }) {
   if (rooms.size >= MAX_ROOMS) return null;
   let id = makeId();
   while (rooms.has(id)) id = makeId();
@@ -29,6 +29,11 @@ export function createRoom({ language, problemSlug, title, starters, initialCode
 
   const room = {
     id,
+    kind: kind === 'aptitude' ? 'aptitude' : 'code',
+    patternId: patternId || null, // aptitude rooms: the pattern whose questions can be picked
+    patternSlug: patternSlug || null,
+    quiz: null, // aptitude rooms: current question + answers (see quiz.js)
+    tally: new Map(), // aptitude rooms: peer key -> { name, correct, total }
     language,
     problemSlug: problemSlug || null,
     title: title || null,

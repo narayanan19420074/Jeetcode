@@ -4,6 +4,7 @@ import { env } from '../config/env.js';
 import { verifyAccessToken } from '../utils/tokenUtils.js';
 import { submitBatch, pollBatchResults, LANGUAGE_IDS } from '../services/judge0.service.js';
 import { getRoom, touch, MAX_PEERS } from './roomStore.js';
+import { pickQuestion, setAnswer, revealQuestion, quizView } from './quiz.js';
 
 const clean = (s, max) => String(s ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max);
 const cut = (s, max = 10000) => (s && s.length > max ? s.slice(0, max) + '\n…(truncated)' : s || '');
@@ -66,7 +67,7 @@ export function attachRealtime(httpServer) {
       }
 
       room = r;
-      me = { id: socket.id, name: displayName, clientId: cid };
+      me = { id: socket.id, name: displayName, clientId: cid, key: cid || socket.id };
       const others = [...r.peers.values()].map(({ id, name: n }) => ({ id, name: n }));
       r.peers.set(socket.id, me);
       socket.join(r.id);
@@ -74,11 +75,12 @@ export function attachRealtime(httpServer) {
 
       reply({
         ok: true,
-        you: { id: me.id, name: me.name },
-        room: { id: r.id, language: r.language, problemSlug: r.problemSlug, title: r.title },
+        you: { id: me.id, name: me.name, key: me.key },
+        room: { id: r.id, kind: r.kind, language: r.language, problemSlug: r.problemSlug, patternSlug: r.patternSlug, title: r.title },
         peers: others,
         chat: r.chat,
         state: Y.encodeStateAsUpdate(r.doc),
+        quiz: r.kind === 'aptitude' ? { ...quizView(r), mine: r.quiz?.answers.get(me.key)?.choice ?? null } : null,
       });
       socket.to(r.id).emit('peer:joined', { id: me.id, name: me.name });
     });
@@ -124,6 +126,27 @@ export function attachRealtime(httpServer) {
       if (room.chat.length > 100) room.chat.shift();
       touch(room);
       io.to(room.id).emit('chat:message', msg);
+    });
+
+    // --- Aptitude study room: shared question, private answers, shared reveal ---
+    socket.on('quiz:pick', async (questionId) => {
+      if (!room || room.kind !== 'aptitude') return;
+      const r = room;
+      if (!(await pickQuestion(r, String(questionId || '')))) return;
+      touch(r);
+      io.to(r.id).emit('quiz:state', quizView(r));
+    });
+
+    socket.on('quiz:answer', (choice) => {
+      if (!room || room.kind !== 'aptitude' || !setAnswer(room, me.key, me.name, choice)) return;
+      touch(room);
+      io.to(room.id).emit('quiz:state', quizView(room));
+    });
+
+    socket.on('quiz:reveal', () => {
+      if (!room || room.kind !== 'aptitude' || !revealQuestion(room)) return;
+      touch(room);
+      io.to(room.id).emit('quiz:state', quizView(room));
     });
 
     // WebRTC signalling relay (offer/answer/ICE) between the two peers.

@@ -24,6 +24,7 @@ import { useRoom } from './useRoom';
 import { useCall } from './useCall';
 import FloatingCall from './FloatingCall';
 import ChatPanel from './ChatPanel';
+import AptitudeRoom from './AptitudeRoom';
 
 const LANGUAGES = [
   { id: 'javascript', label: 'JavaScript' },
@@ -142,6 +143,10 @@ export default function RoomPage() {
         <CircularProgress />
       </Stack>
     );
+  }
+
+  if (room.meta.kind === 'aptitude') {
+    return <AptitudeRoom room={room} call={call} roomId={roomId} copyLink={copyLink} leave={leave} />;
   }
 
   const friend = room.peers[0];

@@ -28,7 +28,9 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
+import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
 import { aptitudeApi } from '../../api/aptitudeApi';
+import { roomApi } from '../../api/roomApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { getLessonsForPattern } from './lessons';
 import { getTopicBySlug } from '../learn/content/topics';
@@ -236,6 +238,7 @@ export default function AptitudePatternDetailPage() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [showRecent, setShowRecent] = useState(false);
+  const [inviting, setInviting] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -308,6 +311,18 @@ export default function AptitudePatternDetailPage() {
   const earnedCount = badges.filter((b) => b.earned).length;
   const remainingSec = activeTest ? Math.max(0, (new Date(activeTest.expiresAt).getTime() - now) / 1000) : 0;
 
+  const studyWithFriend = async () => {
+    if (inviting) return;
+    setInviting(true);
+    try {
+      const { data: res } = await roomApi.create({ kind: 'aptitude', patternSlug: slug, title: `${pattern.title} study room` });
+      navigate(`/room/${res.data.roomId}`);
+    } catch (err) {
+      setError(extractErrorMessage(err));
+      setInviting(false);
+    }
+  };
+
   const goLearn = () => (lessons ? navigate(`/aptitude/${slug}/learn`) : navigate(`/learn/${slug}`));
   const goPractice = (sub) => navigate(`/aptitude/${slug}/practice${sub ? `?subPattern=${sub}` : ''}`);
   const goTest = () =>
@@ -360,6 +375,13 @@ export default function AptitudePatternDetailPage() {
               </Typography>
             </Stack>
           </Box>
+          <Tooltip title="Study with a friend">
+            <span>
+              <IconButton aria-label="Study with a friend" onClick={studyWithFriend} disabled={inviting} sx={{ alignSelf: 'flex-start' }}>
+                <GroupAddRoundedIcon />
+              </IconButton>
+            </span>
+          </Tooltip>
           <Tooltip title="Recent tests">
             <IconButton aria-label="Recent tests" aria-expanded={showRecent} onClick={() => setShowRecent((v) => !v)} sx={{ alignSelf: 'flex-start', bgcolor: showRecent ? 'action.selected' : 'transparent' }}>
               <Badge color="primary" badgeContent={recentAttempts.length} invisible={recentAttempts.length === 0}>
