@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Box } from '@mui/material';
+import { getBrandLogo } from './brandLogos';
 
 const COLORS = ['#1A73E8', '#0B8043', '#C5221F', '#B06000', '#8430CE', '#00796B', '#C2185B', '#3949AB', '#E8710A', '#546E7A'];
 
@@ -16,11 +17,14 @@ const initialsOf = (name) => {
   return (words[0][0] + words[1][0]).toUpperCase();
 };
 
-// Company logo when we have one, otherwise a coloured tile with the initials.
+// Company logo when we have one (admin-set logoUrl, else a free brand mark from brandLogos.js),
+// otherwise a coloured tile with the initials.
 // The colour is derived from the name, so a company always looks the same.
 export default function CompanyAvatar({ name, logoUrl, size = 48 }) {
   const [broken, setBroken] = useState(false);
   const showLogo = Boolean(logoUrl) && !broken;
+  const brand = showLogo ? null : getBrandLogo(name);
+  const light = showLogo || Boolean(brand);
 
   return (
     <Box
@@ -36,8 +40,8 @@ export default function CompanyAvatar({ name, logoUrl, size = 48 }) {
         fontWeight: 800,
         fontSize: size * 0.4,
         letterSpacing: '-0.02em',
-        color: showLogo ? 'text.primary' : '#fff',
-        bgcolor: showLogo ? '#fff' : COLORS[hash(String(name || '')) % COLORS.length],
+        color: light ? 'text.primary' : '#fff',
+        bgcolor: light ? '#fff' : COLORS[hash(String(name || '')) % COLORS.length],
         border: '1px solid',
         borderColor: 'divider',
       }}
@@ -51,6 +55,10 @@ export default function CompanyAvatar({ name, logoUrl, size = 48 }) {
           onError={() => setBroken(true)}
           sx={{ width: '100%', height: '100%', objectFit: 'contain', p: `${Math.round(size * 0.14)}px` }}
         />
+      ) : brand ? (
+        <Box component="svg" viewBox="0 0 24 24" aria-hidden="true" sx={{ width: '60%', height: '60%' }}>
+          <path d={brand.path} fill={brand.color} />
+        </Box>
       ) : (
         initialsOf(name)
       )}

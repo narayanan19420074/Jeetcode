@@ -197,6 +197,10 @@ export default function PrepCompaniesPage() {
           )}
         </>
       )}
+
+      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 4, textAlign: 'center' }}>
+        Company names and logos belong to their owners and are shown only to identify each company.
+      </Typography>
     </Container>
   );
 }
