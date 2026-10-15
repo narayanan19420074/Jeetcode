@@ -16,6 +16,7 @@ import { submissionsApi } from '../../api/submissionsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import DashboardSidebar from './components/DashboardSidebar';
 import PromoCarousel from './components/PromoCarousel';
+import NqtExploreCard from './components/NqtExploreCard';
 import ProblemLibrary from './components/ProblemLibrary';
 import RightRail from './components/RightRail';
 import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
@@ -35,6 +36,7 @@ export default function DashboardPage() {
 
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
   const rootRef = useRef(null);
   const [params, setParams] = useSearchParams();
   const listsApi = useProblemLists(user?.id);
@@ -151,7 +153,7 @@ export default function DashboardPage() {
         cta: 'Solve now',
         to: `/workspace/${featured.slug}`,
         icon: EventRoundedIcon,
-        gradient: 'linear-gradient(135deg,#1D4ED8,#4F46E5)',
+        gradient: 'linear-gradient(135deg,#334155,#0F172A)',
       });
     }
     list.push({
@@ -204,14 +206,9 @@ export default function DashboardPage() {
   return (
     <Box
       ref={rootRef}
-      sx={(t) => ({
+      sx={{
         ...(fillH ? { height: fillH, overflow: 'hidden' } : { minHeight: 'calc(100vh - 64px)' }),
-        backgroundImage:
-          t.palette.mode === 'dark'
-            ? 'radial-gradient(900px 380px at 78% -60px, rgba(59,130,246,0.13), transparent 70%), radial-gradient(700px 320px at 6% 0, rgba(139,92,246,0.08), transparent 70%)'
-            : 'radial-gradient(900px 380px at 78% -60px, rgba(59,130,246,0.09), transparent 70%)',
-        backgroundRepeat: 'no-repeat',
-      })}
+      }}
     >
       <Container maxWidth={false} sx={{ maxWidth: 1480, py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 }, height: fillH ? '100%' : 'auto' }}>
         <Box
@@ -274,6 +271,13 @@ export default function DashboardPage() {
                 )}
 
                 <PromoCarousel cards={cards} />
+
+                {/* Phones have no sidebar Explore shortcut in view, so surface the TCS NQT hub here too. */}
+                {!isMdUp && (
+                  <Box sx={{ '& > a': { mb: 0 } }}>
+                    <NqtExploreCard />
+                  </Box>
+                )}
 
                 {resume && (
                   <Box

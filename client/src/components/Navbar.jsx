@@ -31,7 +31,6 @@ import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
-import ApartmentRoundedIcon from '@mui/icons-material/ApartmentRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
@@ -65,7 +64,6 @@ const PRIMARY_LINKS = [
 // Reference links — grouped under "Explore" on desktop, second group on mobile.
 // (Learn topics are reached through Aptitude Practice -> a pattern.)
 const EXPLORE_LINKS = [
-  { to: '/companies', label: 'Companies', icon: ApartmentRoundedIcon },
   { to: '/aptitude', label: 'One for All Aptitude', icon: CalculateRoundedIcon },
   { to: '/visualizer', label: 'Visualizer', icon: BarChartRoundedIcon },
   { to: '/pricing', label: 'Pricing', icon: WorkspacePremiumRoundedIcon },

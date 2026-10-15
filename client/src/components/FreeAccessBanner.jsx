@@ -66,7 +66,7 @@ export default function FreeAccessBanner() {
         pr: { xs: 5, sm: 6 },
         py: 0.75,
         color: '#fff',
-        background: 'linear-gradient(90deg, #1D4ED8 0%, #4F46E5 55%, #7C3AED 100%)',
+        background: 'linear-gradient(90deg, #0F172A 0%, #1E293B 55%, #334155 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.14)',
       }}
     >
@@ -108,7 +108,7 @@ export default function FreeAccessBanner() {
             px: 1.75,
             borderRadius: 999,
             bgcolor: '#fff',
-            color: '#1D4ED8',
+            color: '#0F172A',
             '&:hover': { bgcolor: 'rgba(255,255,255,0.9)' },
           }}
         >

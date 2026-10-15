@@ -30,10 +30,11 @@ const typography = {
 
 const shape = { borderRadius: 16 };
 
-// GPay-style surfaces: soft blue-tinted page, white cards, tonal blue containers.
+// Neutral surfaces: grey page, white cards, grey tonal containers. The accent colour
+// (blue by default) is kept for actions and active states only, not for backgrounds.
 const gpay = {
-  light: { bg: '#F5F8FE', paper: '#FFFFFF', tonal: '#E3ECFC', hero: '#CFE0FB', text: '#1F2328', muted: '#5C6675', line: '#E3E8F0' },
-  dark: { bg: '#111318', paper: '#1B1E25', tonal: '#23304A', hero: '#1A2C4F', text: '#E6E9EF', muted: '#9AA4B2', line: 'rgba(255,255,255,0.09)' },
+  light: { bg: '#F4F5F7', paper: '#FFFFFF', tonal: '#E8EAEE', hero: '#DDE0E6', text: '#1F2328', muted: '#5F6672', line: '#E3E5E9' },
+  dark: { bg: '#121315', paper: '#1B1C1F', tonal: '#26282D', hero: '#2B2E34', text: '#E7E9ED', muted: '#9AA0AA', line: 'rgba(255,255,255,0.09)' },
 };
 export const gpayTokens = gpay;
 
