@@ -6,6 +6,7 @@ import { connectDB } from './config/db.js';
 import { env } from './config/env.js';
 import { logger } from './utils/logger.js';
 import { attachRealtime } from './realtime/socket.js';
+import { autoSeedOnBoot } from './scripts/seedAll.js';
 
 
 async function main() {
@@ -21,6 +22,9 @@ async function main() {
 
   // Pair-coding rooms: Socket.IO shares this HTTP server (same port, same origin).
   attachRealtime(server);
+
+  // Seeds problems, aptitude questions and the TCS NQT track when server/content/ changed (see seedAll.js).
+  autoSeedOnBoot();
 
   // Graceful shutdown — let in-flight requests finish instead of dropping
   // them when the platform (Render/Railway) sends SIGTERM on redeploy.

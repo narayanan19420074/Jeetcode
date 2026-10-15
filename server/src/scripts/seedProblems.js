@@ -172,7 +172,7 @@ int main() {
 async function seed() {
   await connectDB();
 
-  let admin = await User.findOne({ email: 'admin@jeetcode.dev' });
+  let admin = (await User.findOne({ email: 'admin@jeetcode.dev' })) || (await User.findOne({ role: 'admin' }));
   if (!admin) {
     const passwordHash = await bcrypt.hash('ChangeMe123!', 12);
     admin = await User.create({

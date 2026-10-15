@@ -13,6 +13,8 @@
     "worker": "node src/queue/submissionWorker.js",
     "seed": "node src/scripts/seedProblems.js",
     "seed:tcs-nqt": "node src/scripts/seedTcsNqt.js",
+    "seed:aptitude": "node scripts/seedAptitude.js",
+    "seed:all": "node src/scripts/seedAll.js",
     "import:problems": "node src/scripts/importProblems.js"
   },
   "keywords": [

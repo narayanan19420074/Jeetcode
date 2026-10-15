@@ -223,7 +223,25 @@ async function seedOneFile(fileName, adminUserId) {
 // --- Main ------------------------------------------------------------
 
 async function main() {
-  const filterName = process.argv[2]; // optional: node seedAptitude.js percentages
+  const args = process.argv.slice(2);
+  const checkOnly = args.includes('--check'); // validate files only, no database
+  const filterName = args.find((a) => !a.startsWith('--')); // optional: node seedAptitude.js percentages
+
+  if (checkOnly) {
+    const files = loadFiles(filterName);
+    let bad = 0;
+    let total = 0;
+    for (const f of files) {
+      try {
+        total += validateFile(f, JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, f), 'utf-8'))).questions.length;
+      } catch (err) {
+        bad += 1;
+        console.error(`  ✗ ${err.message}`);
+      }
+    }
+    console.log(`Checked ${files.length} file(s), ${total} question(s), ${bad} invalid.`);
+    process.exit(bad ? 1 : 0);
+  }
 
   if (!process.env.MONGODB_URI) {
     throw new Error('MONGODB_URI not set — check your .env (not .env.example)');
