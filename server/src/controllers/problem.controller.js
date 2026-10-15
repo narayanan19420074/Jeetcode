@@ -94,6 +94,9 @@ export const listProblems = asyncHandler(async (req, res) => {
 
   const pipeline = [
     { $match: filter },
+    // Drop heavy fields BEFORE $addFields/$sort so the sort carries ~1KB docs
+    // instead of ~8KB ones (matters with thousands of problems).
+    { $project: { testCases: 0, driverCode: 0, starterCode: 0, __v: 0 } },
     {
       $addFields: {
         difficultyRank: DIFFICULTY_RANK,
@@ -120,11 +123,10 @@ export const listProblems = asyncHandler(async (req, res) => {
   }
 
   pipeline.push(
-    { $project: { testCases: 0, driverCode: 0, __v: 0 } },
     { $facet: { items: [{ $skip: skip }, { $limit: limit }], meta: [{ $count: 'total' }] } }
   );
 
-  const [result] = await Problem.aggregate(pipeline);
+  const [result] = await Problem.aggregate(pipeline).allowDiskUse(true);
   const items = result.items;
   const total = result.meta[0]?.total || 0;
 
