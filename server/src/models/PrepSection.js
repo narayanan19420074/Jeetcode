@@ -34,6 +34,13 @@ const prepSectionSchema = new mongoose.Schema(
     // pattern.
     aptitudePatternSlug: { type: String, default: null },
 
+    // contentType: 'aptitude-pattern' — a GROUP of patterns for one exam section
+    // (e.g. all quant patterns for Numerical Ability). Takes priority over
+    // aptitudePatternSlug. aptitudeDifficulty narrows both the practice link and
+    // the progress count to that difficulty ("advanced" sections use 'hard').
+    aptitudePatternSlugs: [{ type: String }],
+    aptitudeDifficulty: { type: String, enum: ['easy', 'medium', 'hard', null], default: null },
+
     // contentType: 'learn-topic' — deep-links into the existing (static,
     // non-DB) /learn content for the "Learn" step. That feature has no
     // backend progress API yet, so sections of this type never
@@ -48,6 +55,8 @@ const prepSectionSchema = new mongoose.Schema(
       tags: [{ type: String }],
       companies: [{ type: String }],
       difficulty: { type: String, enum: ['Easy', 'Medium', 'Hard', null], default: null },
+      // a named problem sheet, e.g. 'striver-sde' (see scripts/tagProblemSheet.js)
+      sheet: { type: String, default: null },
     },
 
     // Practice-target for trackable section types (aptitude-pattern isn't

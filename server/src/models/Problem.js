@@ -24,6 +24,8 @@ const problemSchema = new mongoose.Schema(
     difficulty: { type: String, enum: ['Easy', 'Medium', 'Hard'], required: true, index: true },
     tags: [{ type: String, index: true }],
     companies: [{ type: String }],
+    // named curated lists this problem belongs to, e.g. 'striver-sde' (set by scripts/tagProblemSheet.js)
+    sheets: [{ type: String, index: true }],
     description: { type: String, required: true },
     examples: [exampleSchema],
     constraints: [{ type: String }],

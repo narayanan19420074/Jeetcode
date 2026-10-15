@@ -5,6 +5,9 @@ import { UserPrepProgress } from '../models/UserPrepProgress.js';
 import { Problem } from '../models/Problem.js';
 import { User } from '../models/User.js';
 import { AptitudePattern } from '../models/AptitudePattern.js';
+import { AptitudeQuestion } from '../models/AptitudeQuestion.js';
+import { AptitudeQuestionProgress } from '../models/AptitudeQuestionProgress.js';
+import { getPatternsWithProgress } from '../services/aptitude.service.js';
 import { AptitudeAttempt } from '../models/AptitudeAttempt.js';
 import { AptitudeProgress } from '../models/AptitudeProgress.js';
 import { ApiError } from '../utils/ApiError.js';
@@ -32,25 +35,106 @@ async function countDistinctAptitudeQuestionsSolved(userId) {
   return result[0]?.count || 0;
 }
 
+const DIFFICULTY_RANK = { Easy: 0, Medium: 1, Hard: 2 };
+
+const problemBaseFilter = (section) => {
+  const f = section.problemFilter || {};
+  return {
+    isPublished: { $ne: false },
+    ...(f.tags?.length ? { tags: { $in: f.tags } } : {}),
+    ...(f.companies?.length ? { companies: { $in: f.companies } } : {}),
+    ...(f.difficulty ? { difficulty: f.difficulty } : {}),
+    ...(f.sheet ? { sheets: f.sheet } : {}),
+  };
+};
+
+// A target can't be higher than what exists, or the bar could never reach 100%.
+const cappedTarget = (recommended, total) => (recommended ? Math.min(recommended, total || recommended) : total || 1);
+
+// A section that is a GROUP of aptitude patterns (all quant patterns, all reasoning
+// patterns, ...). Per pattern: total questions, how many this user solved, and whether
+// the aptitude unlock chain has opened it. `ctx` memoises the pattern list per request.
+async function loadPatternGroup(userId, section, ctx) {
+  ctx.patterns ||= getPatternsWithProgress(userId);
+  const all = await ctx.patterns;
+  const bySlug = new Map(all.map((p) => [p.slug, p]));
+  const picked = section.aptitudePatternSlugs.map((s) => bySlug.get(s)).filter(Boolean);
+  const ids = picked.map((p) => p._id);
+  const diff = section.aptitudeDifficulty ? { difficulty: section.aptitudeDifficulty } : {};
+
+  const [totals, solved] = await Promise.all([
+    AptitudeQuestion.aggregate([
+      { $match: { pattern: { $in: ids }, isPublished: true, ...diff } },
+      { $group: { _id: '$pattern', n: { $sum: 1 } } },
+    ]),
+    userId
+      ? AptitudeQuestionProgress.aggregate([
+          { $match: { user: new mongoose.Types.ObjectId(userId), pattern: { $in: ids }, status: 'solved', ...diff } },
+          { $group: { _id: '$pattern', n: { $sum: 1 } } },
+        ])
+      : [],
+  ]);
+  const totalBy = new Map(totals.map((t) => [String(t._id), t.n]));
+  const solvedBy = new Map(solved.map((t) => [String(t._id), t.n]));
+
+  const patterns = picked
+    .map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      unlocked: Boolean(p.progress?.unlocked),
+      total: totalBy.get(String(p._id)) || 0,
+      solved: solvedBy.get(String(p._id)) || 0,
+    }))
+    .filter((p) => p.total > 0);
+  return {
+    patterns,
+    total: patterns.reduce((n, p) => n + p.total, 0),
+    solved: patterns.reduce((n, p) => n + p.solved, 0),
+  };
+}
+
 // Computes progress for a single section. Never throws — an
 // untrackable/unwired contentType degrades to trackable:false rather
 // than breaking the whole roadmap page over one misconfigured section.
-async function computeSectionProgress(userId, section, solvedProblemIds, selfReported = false) {
+// `detail` (roadmap page only) also returns the pattern rows / problem list to render.
+async function computeSectionProgress(userId, section, solvedProblemIds, selfReported = false, ctx = {}, detail = false) {
   if (section.contentType === 'problem-filter') {
-    const filter = {
-      _id: { $in: solvedProblemIds },
-      ...(section.problemFilter?.tags?.length ? { tags: { $in: section.problemFilter.tags } } : {}),
-      ...(section.problemFilter?.companies?.length ? { companies: { $in: section.problemFilter.companies } } : {}),
-      ...(section.problemFilter?.difficulty ? { difficulty: section.problemFilter.difficulty } : {}),
-    };
-    const practiceCount = await Problem.countDocuments(filter);
-    const target = section.recommendedTarget || 1;
-    return {
+    const base = problemBaseFilter(section);
+    const sheet = Boolean(section.problemFilter?.sheet);
+    const [practiceCount, total] = await Promise.all([
+      Problem.countDocuments({ ...base, _id: { $in: solvedProblemIds } }),
+      sheet ? Problem.countDocuments(base) : Promise.resolve(0),
+    ]);
+    const target = sheet ? cappedTarget(section.recommendedTarget, total) : section.recommendedTarget || 1;
+    const result = {
       trackable: true,
       practiceCount,
       target,
       progressPercent: Math.min(100, Math.round((practiceCount / target) * 100)),
       selfReported: false,
+    };
+    if (detail) {
+      const solvedSet = new Set(solvedProblemIds.map(String));
+      const rows = await Problem.find(base).select('title slug difficulty').lean();
+      result.problemTotal = rows.length;
+      result.problems = rows
+        .map((p) => ({ slug: p.slug, title: p.title, difficulty: p.difficulty, solved: solvedSet.has(String(p._id)) }))
+        .sort((a, b) => DIFFICULTY_RANK[a.difficulty] - DIFFICULTY_RANK[b.difficulty] || a.title.localeCompare(b.title))
+        .slice(0, 300);
+    }
+    return result;
+  }
+
+  if (section.contentType === 'aptitude-pattern' && section.aptitudePatternSlugs?.length) {
+    const g = await loadPatternGroup(userId, section, ctx);
+    const target = cappedTarget(section.recommendedTarget, g.total);
+    return {
+      trackable: Boolean(userId),
+      practiceCount: g.solved,
+      target,
+      progressPercent: Math.min(100, Math.round((g.solved / target) * 100)),
+      selfReported: false,
+      ...(detail ? { patterns: g.patterns } : {}),
     };
   }
 
@@ -134,9 +218,10 @@ function computeReadiness(scoredSections) {
 // for authenticated users (guests see the exam pattern/section count only).
 export const listCompanies = asyncHandler(async (req, res) => {
   const companies = await PrepCompany.find({ isPublished: true })
-    .populate('sections.section', 'name slug contentType recommendedTarget problemFilter')
+    .populate('sections.section', 'name slug contentType recommendedTarget problemFilter aptitudePatternSlug aptitudePatternSlugs aptitudeDifficulty')
     .lean();
 
+  const ctx = {}; // shared per request (pattern list is loaded once)
   let solvedProblemIds = [];
   // Keyed by "companyId_sectionId" — a user could theoretically have
   // progress rows across several companies, so this can't be a flat
@@ -157,7 +242,7 @@ export const listCompanies = asyncHandler(async (req, res) => {
         for (const ref of company.sections) {
           if (!ref.section) continue;
           const saved = progressByKey.get(`${company._id}_${ref.section._id}`);
-          const progress = await computeSectionProgress(req.user.id, ref.section, solvedProblemIds, saved?.selfReported);
+          const progress = await computeSectionProgress(req.user.id, ref.section, solvedProblemIds, saved?.selfReported, ctx);
           if (progress.trackable) scored.push({ weight: ref.weight, percent: progress.progressPercent });
         }
         readiness = computeReadiness(scored);
@@ -167,6 +252,7 @@ export const listCompanies = asyncHandler(async (req, res) => {
         slug: company.slug,
         logoUrl: company.logoUrl,
         examDurationMinutes: company.examDurationMinutes,
+        examDate: company.examDate,
         description: company.description,
         sectionCount: company.sections.length,
         readiness,
@@ -193,6 +279,7 @@ export const getCompanyRoadmap = asyncHandler(async (req, res) => {
   }
   const progressBySection = new Map(progressDocs.map((p) => [p.section.toString(), p]));
 
+  const ctx = {};
   const scored = [];
   const sortedRefs = [...company.sections].filter((ref) => ref.section).sort((a, b) => a.order - b.order);
 
@@ -200,7 +287,7 @@ export const getCompanyRoadmap = asyncHandler(async (req, res) => {
     sortedRefs.map(async (ref) => {
       const section = ref.section;
       const saved = progressBySection.get(section._id.toString());
-      const progress = await computeSectionProgress(req.user?.id, section, solvedProblemIds, saved?.selfReported);
+      const progress = await computeSectionProgress(req.user?.id, section, solvedProblemIds, saved?.selfReported, ctx, true);
       if (progress.trackable) scored.push({ weight: ref.weight, percent: progress.progressPercent });
 
       return {
@@ -210,6 +297,11 @@ export const getCompanyRoadmap = asyncHandler(async (req, res) => {
         description: section.description,
         contentType: section.contentType,
         aptitudePatternSlug: section.aptitudePatternSlug,
+        aptitudeDifficulty: section.aptitudeDifficulty,
+        patterns: progress.patterns ?? null,
+        problems: progress.problems ?? null,
+        problemTotal: progress.problemTotal ?? null,
+        group: ref.group || '',
         learnTopicSlug: section.learnTopicSlug,
         problemFilter: section.problemFilter,
         externalResources: section.externalResources,
@@ -233,7 +325,9 @@ export const getCompanyRoadmap = asyncHandler(async (req, res) => {
   new ApiResponse(200, {
     name: company.name,
     slug: company.slug,
+    logoUrl: company.logoUrl,
     examDurationMinutes: company.examDurationMinutes,
+    examDate: company.examDate,
     description: company.description,
     readiness: req.user ? computeReadiness(scored) : null,
     enrolled: req.user ? progressDocs.length > 0 : false,

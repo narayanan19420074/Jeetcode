@@ -33,6 +33,7 @@ import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import ProgressRing from '../../../components/ProgressRing';
+import NqtExploreCard from './NqtExploreCard';
 import { problemsApi } from '../../../api/problemsApi';
 import { prepApi } from '../../../api/prepApi';
 import { extractErrorMessage } from '../../../api/apiClient';
@@ -250,6 +251,8 @@ export function ExploreView({ onBrowse }) {
   return (
     <Box>
       <ViewHeader title="Explore" subtitle="Everything beyond the problem list: practice tools and shortcuts into the library." />
+
+      <NqtExploreCard />
 
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, minmax(0, 1fr))' }, gap: 1.5, mb: 3.5 }}>
         {TOOLS.map(({ to, title, text, icon: Icon, gradient }) => (

@@ -11,6 +11,7 @@ const sectionRefSchema = new mongoose.Schema(
     minutes: { type: Number, default: null }, // exam-day time allotted — display only
     questionCount: { type: Number, default: null }, // exam-day question count — display only
     weight: { type: Number, required: true, min: 0, max: 100 }, // this section's share of the readiness score
+    group: { type: String, default: '', trim: true, maxlength: 80 }, // exam part heading, e.g. "Part A · Foundation (75 min)"
   },
   { _id: false }
 );
@@ -21,6 +22,7 @@ const prepCompanySchema = new mongoose.Schema(
     slug: { type: String, required: true, unique: true, index: true, lowercase: true },
     logoUrl: { type: String, default: null },
     examDurationMinutes: { type: Number, default: null },
+    examDate: { type: Date, default: null }, // next exam date, shown on the Explore card and the roadmap
     description: { type: String, default: '' },
     sections: {
       type: [sectionRefSchema],
