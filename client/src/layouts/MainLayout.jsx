@@ -14,11 +14,9 @@ export default function MainLayout() {
       sx={(t) => ({
         minHeight: '100vh',
         bgcolor: 'background.default',
-        // Soft accent wash at the top on phones only; desktop stays neutral.
-        [t.breakpoints.down('md')]: {
-          backgroundImage: `linear-gradient(180deg, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.1 : 0.12)} 0, transparent 260px)`,
-          backgroundRepeat: 'no-repeat',
-        },
+        // Same GPay-style soft wash on phone and desktop
+        backgroundImage: `linear-gradient(180deg, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.12 : 0.14)} 0, transparent 300px)`,
+        backgroundRepeat: 'no-repeat',
       })}
     >
       <FreeAccessBanner />

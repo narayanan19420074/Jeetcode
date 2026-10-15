@@ -30,11 +30,10 @@ const typography = {
 
 const shape = { borderRadius: 16 };
 
-// Neutral surfaces: grey page, white cards, grey tonal containers. The accent colour
-// (blue by default) is kept for actions and active states only, not for backgrounds.
+// Google Material 3 / GPay surfaces: pale blue-grey page, white cards, tonal containers.
 const gpay = {
-  light: { bg: '#F4F5F7', paper: '#FFFFFF', tonal: '#E8EAEE', hero: '#DDE0E6', text: '#1F2328', muted: '#5F6672', line: '#E3E5E9' },
-  dark: { bg: '#121315', paper: '#1B1C1F', tonal: '#26282D', hero: '#2B2E34', text: '#E7E9ED', muted: '#9AA0AA', line: 'rgba(255,255,255,0.09)' },
+  light: { bg: '#F8FAFD', paper: '#FFFFFF', tonal: '#E9EEF6', hero: '#D3E3FD', text: '#1F1F1F', muted: '#444746', line: '#E1E5EC' },
+  dark: { bg: '#131314', paper: '#1E1F20', tonal: '#282A2C', hero: '#0842A0', text: '#E3E3E3', muted: '#C4C7C5', line: 'rgba(255,255,255,0.09)' },
 };
 export const gpayTokens = gpay;
 

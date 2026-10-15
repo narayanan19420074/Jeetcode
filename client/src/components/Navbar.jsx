@@ -160,9 +160,12 @@ export default function Navbar() {
   const exploreActive = EXPLORE_LINKS.some((l) => isActivePath(pathname, l.to));
 
   const navButtonSx = (active) => (t) => ({
-    fontWeight: 600,
-    color: active ? t.palette.primary.main : 'inherit',
-    bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.14 : 0.08) : 'transparent',
+    fontWeight: active ? 800 : 600,
+    borderRadius: 99,
+    px: 2,
+    color: active ? t.palette.text.primary : t.palette.text.secondary,
+    bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
+    '&:hover': { bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.2 : 0.1) },
   });
 
   return (
