@@ -69,9 +69,9 @@ export function StatusPill({ status, small }) {
 }
 
 export function DiffTag({ difficulty }) {
-  const c = DIFF_COLOR[difficulty] || '#64748B';
+  const c = DIFF_COLOR[difficulty] || 'var(--jc-pending)';
   return (
-    <Typography component="span" sx={{ fontSize: 12, fontWeight: 700, color: c, bgcolor: `${c}1A`, px: 1, py: 0.1, borderRadius: 999, whiteSpace: 'nowrap' }}>
+    <Typography component="span" sx={{ fontSize: 12, fontWeight: 700, color: c, bgcolor: `color-mix(in srgb, ${c} 12%, transparent)`, px: 1, py: 0.1, borderRadius: 999, whiteSpace: 'nowrap' }}>
       {difficulty}
     </Typography>
   );

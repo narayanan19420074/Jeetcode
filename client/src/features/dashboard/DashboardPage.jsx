@@ -173,7 +173,7 @@ export default function DashboardPage() {
         cta: 'See plans',
         to: '/pricing',
         icon: WorkspacePremiumRoundedIcon,
-        gradient: 'linear-gradient(135deg,#D97706,#92400E)',
+        gradient: 'linear-gradient(135deg,#B45309,#78350F)',
       });
     }
     list.push(
@@ -193,7 +193,7 @@ export default function DashboardPage() {
         cta: 'Explore',
         to: '/visualizer',
         icon: BarChartRoundedIcon,
-        gradient: 'linear-gradient(135deg,#0891B2,#155E75)',
+        gradient: 'linear-gradient(135deg,#0E7490,#164E63)',
       }
     );
     return list;
@@ -303,7 +303,7 @@ export default function DashboardPage() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         bgcolor: 'primary.main',
-                        color: '#fff',
+                        color: 'primary.contrastText',
                       }}
                     >
                       <PlayArrowRoundedIcon fontSize="small" />

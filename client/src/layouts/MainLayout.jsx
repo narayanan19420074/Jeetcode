@@ -15,7 +15,7 @@ export default function MainLayout() {
         minHeight: '100vh',
         bgcolor: 'background.default',
         // Same GPay-style soft wash on phone and desktop
-        backgroundImage: `linear-gradient(180deg, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.12 : 0.14)} 0, transparent 300px)`,
+        backgroundImage: `linear-gradient(180deg, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.08 : 0.07)} 0, transparent 280px)`,
         backgroundRepeat: 'no-repeat',
       })}
     >

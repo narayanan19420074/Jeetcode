@@ -9,7 +9,7 @@ export default function DifficultyChip({ difficulty, size = 'small' }) {
       size={size}
       sx={{
         color,
-        bgcolor: `${color}1A`, // ~10% alpha tint of the difficulty color
+        bgcolor: `color-mix(in srgb, ${color} 12%, transparent)`,
         fontWeight: 700,
         border: 'none',
       }}

@@ -30,10 +30,16 @@ const typography = {
 
 const shape = { borderRadius: 16 };
 
-// Google Material 3 / GPay surfaces: pale blue-grey page, white cards, tonal containers.
+// Google Material 3 / GPay surfaces. Every text/background pair below was checked against WCAG AA
+// (4.5:1 for text). Light page is a touch deeper than the white cards so cards read as cards.
 const gpay = {
-  light: { bg: '#F8FAFD', paper: '#FFFFFF', tonal: '#E9EEF6', hero: '#D3E3FD', text: '#1F1F1F', muted: '#444746', line: '#E1E5EC' },
-  dark: { bg: '#131314', paper: '#1E1F20', tonal: '#282A2C', hero: '#0842A0', text: '#E3E3E3', muted: '#C4C7C5', line: 'rgba(255,255,255,0.09)' },
+  light: { bg: '#F3F6FB', paper: '#FFFFFF', tonal: '#E4EAF4', hero: '#D3E3FD', text: '#1F1F1F', muted: '#444746', line: '#CDD3DE' },
+  dark: { bg: '#131314', paper: '#1E1F20', tonal: '#282A2C', hero: '#0842A0', text: '#E3E3E3', muted: '#C4C7C5', line: 'rgba(255,255,255,0.12)' },
+};
+// Status colours: deep on light backgrounds, bright on dark ones, all >= 4.5:1 on the page and cards.
+const semantic = {
+  light: { success: '#047857', warning: '#B45309', error: '#C62828', pending: '#475569' },
+  dark: { success: '#34D399', warning: '#FBBF24', error: '#F87171', pending: '#94A3B8' },
 };
 export const gpayTokens = gpay;
 
@@ -41,14 +47,14 @@ export const gpayTokens = gpay;
 // brand colour and is identical in both modes; the others use a deeper shade
 // on light backgrounds so links/buttons keep enough contrast.
 export const ACCENTS = {
-  // Google-Pay style blue: deep blue on light, soft periwinkle on dark.
-  blue: { label: 'Blue', dark: ['#8AB4F8', '#669DF6'], light: ['#1A73E8', '#0B57D0'], text: '#FFFFFF', darkText: '#0B2A5B' },
-  violet: { label: 'Violet', dark: ['#8B5CF6', '#7C3AED'], light: ['#7C3AED', '#6D28D9'], text: '#FFFFFF' },
-  emerald: { label: 'Emerald', dark: ['#10B981', '#059669'], light: ['#059669', '#047857'], text: '#FFFFFF' },
-  amber: { label: 'Amber', dark: ['#F59E0B', '#D97706'], light: ['#B45309', '#92400E'], text: '#111827' },
-  rose: { label: 'Rose', dark: ['#F43F5E', '#E11D48'], light: ['#E11D48', '#BE123C'], text: '#FFFFFF' },
-  cyan: { label: 'Cyan', dark: ['#06B6D4', '#0891B2'], light: ['#0E7490', '#155E75'], text: '#0B1220' },
-  orange: { label: 'Orange', dark: ['#F97316', '#EA580C'], light: ['#C2410C', '#9A3412'], text: '#FFFFFF' },
+  // Google-Pay style blue: Material 3 primary (deep blue on light, pale blue on dark).
+  blue: { label: 'Blue', dark: ['#A8C7FA', '#8AB4F8'], light: ['#0B57D0', '#0842A0'], text: '#FFFFFF', darkText: '#0B0F19' },
+  violet: { label: 'Violet', dark: ['#A78BFA', '#8B5CF6'], light: ['#6D28D9', '#5B21B6'], text: '#FFFFFF', darkText: '#0B0F19' },
+  emerald: { label: 'Emerald', dark: ['#34D399', '#10B981'], light: ['#047857', '#065F46'], text: '#FFFFFF', darkText: '#0B0F19' },
+  amber: { label: 'Amber', dark: ['#FBBF24', '#F59E0B'], light: ['#B45309', '#92400E'], text: '#FFFFFF', darkText: '#0B0F19' },
+  rose: { label: 'Rose', dark: ['#FB7185', '#F43F5E'], light: ['#BE123C', '#9F1239'], text: '#FFFFFF', darkText: '#0B0F19' },
+  cyan: { label: 'Cyan', dark: ['#22D3EE', '#06B6D4'], light: ['#0E7490', '#155E75'], text: '#FFFFFF', darkText: '#0B0F19' },
+  orange: { label: 'Orange', dark: ['#FB923C', '#F97316'], light: ['#C2410C', '#9A3412'], text: '#FFFFFF', darkText: '#0B0F19' },
 };
 const FONT_SCALE = { sm: 0.92, md: 1, lg: 1.12 };
 
@@ -66,9 +72,9 @@ export const getTheme = (mode, opts = {}) => {
     palette: {
       mode,
       primary: { main, dark, contrastText: mode === 'dark' && a.darkText ? a.darkText : a.text },
-      success: { main: tokens.emerald },
-      warning: { main: tokens.amber },
-      error: { main: tokens.red },
+      success: { main: semantic[mode === 'dark' ? 'dark' : 'light'].success },
+      warning: { main: semantic[mode === 'dark' ? 'dark' : 'light'].warning },
+      error: { main: semantic[mode === 'dark' ? 'dark' : 'light'].error },
       ...(mode === 'dark'
         ? {
             background: { default: gpay.dark.bg, paper: gpay.dark.paper },
@@ -88,6 +94,7 @@ export const getTheme = (mode, opts = {}) => {
     components: {
       MuiCssBaseline: {
         styleOverrides: `
+          :root { --jc-easy: ${semantic[mode === 'dark' ? 'dark' : 'light'].success}; --jc-medium: ${semantic[mode === 'dark' ? 'dark' : 'light'].warning}; --jc-hard: ${semantic[mode === 'dark' ? 'dark' : 'light'].error}; --jc-pending: ${semantic[mode === 'dark' ? 'dark' : 'light'].pending}; }
           ${underlineLinks ? 'a { text-decoration: underline !important; }' : ''}
           ${reduceMotion ? '*, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }' : ''}
         `,
@@ -110,6 +117,12 @@ export const getTheme = (mode, opts = {}) => {
               },
             },
           }),
+      MuiInputBase: {
+        styleOverrides: {
+          // MUI's default placeholder (42% opacity) is ~3:1; this keeps it readable.
+          input: ({ theme }) => ({ '&::placeholder': { opacity: 1, color: theme.palette.text.secondary } }),
+        },
+      },
       MuiPaper: {
         styleOverrides: {
           root: { backgroundImage: 'none' },
@@ -148,16 +161,17 @@ export const getTheme = (mode, opts = {}) => {
   });
 };
 
+// Mode-aware CSS variables (defined in getTheme's CssBaseline), so these stay readable in light and dark.
 export const difficultyColor = (difficulty) => {
   switch (difficulty) {
     case 'Easy':
-      return tokens.emerald;
+      return 'var(--jc-easy)';
     case 'Medium':
-      return tokens.amber;
+      return 'var(--jc-medium)';
     case 'Hard':
-      return tokens.red;
+      return 'var(--jc-hard)';
     default:
-      return tokens.slate500;
+      return 'var(--jc-pending)';
   }
 };
 

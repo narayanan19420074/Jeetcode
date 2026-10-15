@@ -180,7 +180,7 @@ function QuestionPicker({ added, selectedDate, onToggle }) {
                     size="small" disabled={r.locked} onClick={() => onToggle(r)} aria-label={entry ? 'Remove from plan' : 'Add to plan'}
                     sx={(t) => ({
                       width: 28, height: 28, border: `1.5px solid ${entry ? t.palette.primary.main : t.palette.divider}`,
-                      bgcolor: entry ? t.palette.primary.main : 'transparent', color: entry ? '#fff' : 'text.secondary',
+                      bgcolor: entry ? t.palette.primary.main : 'transparent', color: entry ? t.palette.primary.contrastText : 'text.secondary',
                       '&:hover': { bgcolor: entry ? t.palette.primary.dark : t.palette.action.hover },
                     })}
                   >

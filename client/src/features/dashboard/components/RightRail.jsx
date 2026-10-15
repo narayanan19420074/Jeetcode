@@ -419,7 +419,7 @@ function ProgressCard({ user, progress }) {
                 <LinearProgress
                   variant="determinate"
                   value={pct}
-                  sx={{ height: 5, borderRadius: 3, bgcolor: alpha(DIFF_COLOR[d], 0.14), '& .MuiLinearProgress-bar': { bgcolor: DIFF_COLOR[d], borderRadius: 3 } }}
+                  sx={{ height: 5, borderRadius: 3, bgcolor: `color-mix(in srgb, ${DIFF_COLOR[d]} 16%, transparent)`, '& .MuiLinearProgress-bar': { bgcolor: DIFF_COLOR[d], borderRadius: 3 } }}
                 />
               </Box>
             );

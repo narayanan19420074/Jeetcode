@@ -15,7 +15,7 @@ export default function ControlPanel({ isPlaying, onPlayPause, onNext, onPrev, o
         <IconButton data-teach="prev" onClick={onPrev} disabled={stepIndex === 0}><SkipPreviousRoundedIcon /></IconButton>
       </Tooltip>
       <Tooltip title={isPlaying ? 'Pause' : 'Play'}>
-        <IconButton data-teach="play" onClick={onPlayPause} sx={{ bgcolor: 'primary.main', color: '#fff', '&:hover': { bgcolor: 'primary.dark' } }}>
+        <IconButton data-teach="play" onClick={onPlayPause} sx={{ bgcolor: 'primary.main', color: 'primary.contrastText', '&:hover': { bgcolor: 'primary.dark' } }}>
           {isPlaying ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />}
         </IconButton>
       </Tooltip>

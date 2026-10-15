@@ -204,7 +204,7 @@ const TOOLS = [
     title: 'Algorithm visualizer',
     text: 'Watch sorting, searching and graph algorithms run step by step.',
     icon: BarChartRoundedIcon,
-    gradient: 'linear-gradient(135deg,#0891B2,#155E75)',
+    gradient: 'linear-gradient(135deg,#0E7490,#164E63)',
   },
   {
     to: '/prep',

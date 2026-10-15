@@ -3,16 +3,19 @@
 // activity heatmap endpoint both bucket days by UTC midnight, so the
 // calendar and countdown here have to agree with them.
 
-export const DIFF_COLOR = { Easy: '#10B981', Medium: '#F59E0B', Hard: '#EF4444' };
+// CSS variables from the theme (see getTheme): deep colours on light, bright on dark, always readable.
+export const DIFF_COLOR = { Easy: 'var(--jc-easy)', Medium: 'var(--jc-medium)', Hard: 'var(--jc-hard)' };
+// Soft tint of a colour for chip / track backgrounds.
+export const tint = (color, pct = 12) => `color-mix(in srgb, ${color} ${pct}%, transparent)`;
 
 export const STATUS_COLOR = {
-  Accepted: '#10B981',
-  'Wrong Answer': '#EF4444',
-  'Time Limit Exceeded': '#F59E0B',
-  'Runtime Error': '#EF4444',
-  'Compilation Error': '#EF4444',
-  Pending: '#64748B',
-  Judging: '#64748B',
+  Accepted: 'var(--jc-easy)',
+  'Wrong Answer': 'var(--jc-hard)',
+  'Time Limit Exceeded': 'var(--jc-medium)',
+  'Runtime Error': 'var(--jc-hard)',
+  'Compilation Error': 'var(--jc-hard)',
+  Pending: 'var(--jc-pending)',
+  Judging: 'var(--jc-pending)',
 };
 
 export const SORT_OPTIONS = [
