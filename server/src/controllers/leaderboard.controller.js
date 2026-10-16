@@ -13,6 +13,8 @@ const scoreFor = (r, track) =>
       : r.score;
 const solvedFor = (r, track) => (track === 'coding' ? r.easy + r.medium + r.hard : track === 'aptitude' ? r.aptitude : r.solved);
 const byScore = (a, b) => b.score - a.score || b.solved - a.solved || a.handle.localeCompare(b.handle);
+// The board always shows at least this many players (fewer only if fewer users exist).
+const MIN_BOARD_ROWS = 10;
 const brief = (r) => (r ? { handle: r.handle, name: r.name, score: r.score, rank: r.rank } : null);
 
 // GET /leaderboard?period=all|week|month&scope=global|friends&track=overall|coding|aptitude&q=&page=1&limit=25
@@ -33,6 +35,22 @@ export const getLeaderboard = asyncHandler(async (req, res) => {
     })
     .filter((r) => track === 'overall' || r.score > 0);
   rows.sort(byScore);
+
+  // Global board is never empty/short: when fewer than 10 people have scored (new site, quiet
+  // week, or a track nobody has tried), top it up with 0-point users (A→Z by handle).
+  // `padded` rows are display fillers only — they are not "learners" and never count as "me".
+  let paddedCount = 0;
+  if (scope === 'global' && rows.length < MIN_BOARD_ROWS) {
+    const extra = await User.find({ role: { $ne: 'admin' }, _id: { $nin: rows.map((r) => r.userId) } })
+      .sort({ handle: 1 })
+      .limit(MIN_BOARD_ROWS - rows.length)
+      .select('name handle avatarUrl streakDays lastActivityDate company')
+      .lean();
+    extra.forEach((u) =>
+      rows.push({ ...publicRow(u), easy: 0, medium: 0, hard: 0, aptitude: 0, solved: 0, score: 0, recent: 0, padded: true })
+    );
+    paddedCount = extra.length;
+  }
 
   // Where each learner stood a week ago (all-time board only): score minus what they earned this week.
   let prevRankById = null;
@@ -70,16 +88,17 @@ export const getLeaderboard = asyncHandler(async (req, res) => {
     return { ...r, movement: prevRank ? prevRank - r.rank : null, isNew: prevRankById ? prevRank === undefined && r.score > 0 : false };
   });
 
-  const myIdx = me ? ranked.findIndex((r) => r.userId === me) : -1;
+  const myIdx = me ? ranked.findIndex((r) => r.userId === me && !r.padded) : -1;
   const mine = myIdx >= 0 ? ranked[myIdx] : null;
   // Nearest learner above / below with a different score — "12 pts to pass @x".
   let above = null;
   let below = null;
   if (mine) {
-    for (let i = myIdx - 1; i >= 0; i -= 1) if (ranked[i].score > mine.score) { above = ranked[i]; break; }
-    for (let i = myIdx + 1; i < ranked.length; i += 1) if (ranked[i].score < mine.score) { below = ranked[i]; break; }
+    for (let i = myIdx - 1; i >= 0; i -= 1) if (!ranked[i].padded && ranked[i].score > mine.score) { above = ranked[i]; break; }
+    for (let i = myIdx + 1; i < ranked.length; i += 1) if (!ranked[i].padded && ranked[i].score < mine.score) { below = ranked[i]; break; }
   }
 
+  const learnerCount = ranked.length - paddedCount;
   const needle = q.toLowerCase();
   const visible = needle ? ranked.filter((r) => r.handle.toLowerCase().includes(needle) || r.name.toLowerCase().includes(needle)) : ranked;
   const start = (page - 1) * limit;
@@ -99,10 +118,10 @@ export const getLeaderboard = asyncHandler(async (req, res) => {
     podium: ranked.slice(0, 3),
     rows: visible.slice(start, start + limit),
     stats: {
-      learners: ranked.length,
+      learners: learnerCount,
       solved: ranked.reduce((n, r) => n + r.solved, 0),
       topScore: ranked[0]?.score || 0,
-      topPercent: mine && ranked.length ? Math.max(1, Math.ceil((mine.rank / ranked.length) * 100)) : null,
+      topPercent: mine && learnerCount ? Math.max(1, Math.ceil((mine.rank / learnerCount) * 100)) : null,
     },
     points: POINTS,
   }).send(res);
