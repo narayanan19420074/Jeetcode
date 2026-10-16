@@ -73,3 +73,14 @@ export const communityWriteLimiter = rateLimit({
   keyGenerator: (req) => req.user?.id || ipKeyGenerator(req.ip),
   message: { success: false, message: 'You are posting too fast. Wait a moment and try again.' },
 });
+
+// Friends (search, requests, invites). Per user so shared IPs aren't punished.
+export const friendsLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  limit: 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  store: buildStore(),
+  keyGenerator: (req) => req.user?.id || ipKeyGenerator(req.ip),
+  message: { success: false, message: 'Too many friend actions. Wait a moment and try again.' },
+});

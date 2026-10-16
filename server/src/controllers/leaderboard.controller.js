@@ -1,8 +1,8 @@
-import { StudyPlan } from '../models/StudyPlan.js';
 import { User } from '../models/User.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { getRanking, assignRanks, getTotalUsers, publicRow, POINTS } from '../services/leaderboard.service.js';
+import { getFriendIds } from '../services/friend.service.js';
 
 // Score / solved count for the selected track (overall | coding | aptitude).
 const scoreFor = (r, track) =>
@@ -18,7 +18,7 @@ const MIN_BOARD_ROWS = 10;
 const brief = (r) => (r ? { handle: r.handle, name: r.name, score: r.score, rank: r.rank } : null);
 
 // GET /leaderboard?period=all|week|month&scope=global|friends&track=overall|coding|aptitude&q=&page=1&limit=25
-// "friends" = everyone who shares at least one study plan with me.
+// "friends" = my accepted friends (dashboard Friends tab) plus me.
 export const getLeaderboard = asyncHandler(async (req, res) => {
   const me = req.user?.id || null;
   const { period, scope, track, q, page, limit } = req.query;
@@ -66,9 +66,7 @@ export const getLeaderboard = asyncHandler(async (req, res) => {
     if (!me) {
       return new ApiResponse(200, { period, scope, track, total: 0, page, limit, me: null, neighbors: null, podium: [], rows: [], stats: null, points: POINTS }).send(res);
     }
-    const plans = await StudyPlan.find({ 'members.user': me }).select('members.user').lean();
-    const friendIds = new Set([me]);
-    plans.forEach((p) => p.members.forEach((m) => friendIds.add(String(m.user))));
+    const friendIds = new Set([me, ...(await getFriendIds(me))]);
 
     rows = rows.filter((r) => friendIds.has(r.userId));
     // Friends with no solves yet still belong on the board (at 0).

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useReducedMotion } from 'framer-motion';
 import {
   Alert, Avatar, Badge, Box, ButtonBase, Collapse, IconButton, InputAdornment, Popover, Skeleton, Stack, TextField,
@@ -139,6 +140,12 @@ function SkeletonRows({ count = 14 }) {
 function FriendsCard({ enabled }) {
   const [open, setOpen] = useState(false);
   const [state, setState] = useState({ rows: null, error: '' });
+  const friendsVersion = useSelector((s) => s.friends.version);
+
+  // Friends were added/removed elsewhere (Friends tab) — drop the cached list so it reloads.
+  useEffect(() => {
+    setState({ rows: null, error: '' });
+  }, [friendsVersion]);
 
   useEffect(() => {
     if (!open || !enabled || state.rows) return undefined;
@@ -169,7 +176,7 @@ function FriendsCard({ enabled }) {
           {enabled && !rows && [0, 1, 2].map((i) => <Skeleton key={i} height={40} sx={{ mx: 1.5 }} />)}
           {enabled && rows && state.error && <Typography variant="body2" color="error" sx={{ p: 1.75 }}>{state.error}</Typography>}
           {enabled && rows && !state.error && rows.length === 0 && (
-            <Typography variant="body2" color="text.secondary" sx={{ p: 1.75 }}>Join a friend's study plan and they will show up here.</Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ p: 1.75 }}>Add friends from the Friends tab and they will show up here.</Typography>
           )}
           {rows?.map((f) => {
             const st = activeLabel(f.lastActive);
@@ -196,7 +203,9 @@ function FriendsCard({ enabled }) {
 export default function LeaderboardView({ isAuthenticated }) {
   const reduce = useReducedMotion();
   const [period, setPeriod] = useState('all');
-  const [scope, setScope] = useState('global');
+  // ?scope=friends (from the Friends tab) opens straight on the friends board.
+  const [scope, setScope] = useState(() => (isAuthenticated && new URLSearchParams(window.location.search).get('scope') === 'friends' ? 'friends' : 'global'));
+  const friendsVersion = useSelector((s) => s.friends.version);
   const [track, setTrack] = useState('overall');
   const [search, setSearch] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
@@ -215,7 +224,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   const hasMore = meta ? rows.length < meta.total : false;
   const firstLoad = loading && rows.length === 0;
 
-  useEffect(() => { setPage(1); }, [q]);
+  useEffect(() => { setPage(1); }, [q, friendsVersion]);
 
   useEffect(() => {
     const id = ++reqId.current;
@@ -230,7 +239,7 @@ export default function LeaderboardView({ isAuthenticated }) {
       })
       .catch((err) => { if (id === reqId.current) setError(extractErrorMessage(err)); })
       .finally(() => { if (id === reqId.current) setLoading(false); });
-  }, [period, scope, track, q, page]);
+  }, [period, scope, track, q, page, friendsVersion]);
 
   // Endless list: load the next page when the bottom comes into view.
   useEffect(() => {
@@ -298,7 +307,7 @@ export default function LeaderboardView({ isAuthenticated }) {
           ))}
           {!loading && rows.length === 0 && !error && (
             <Typography color="text.secondary" sx={{ p: 4, textAlign: 'center' }}>
-              {q ? `No player matches "${q}".` : scope === 'friends' ? 'Join a friend’s study plan and they will show up here.' : 'No one has scored in this period yet. Be the first.'}
+              {q ? `No player matches "${q}".` : scope === 'friends' ? 'Add friends from the Friends tab and they will show up here.' : 'No one has scored in this period yet. Be the first.'}
             </Typography>
           )}
           {hasMore && <Box ref={sentinel} sx={{ height: 1 }} />}

@@ -5,6 +5,7 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
+import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
@@ -17,7 +18,18 @@ export const NAV_ITEMS = [
   { view: 'explore', label: 'Explore', icon: ExploreRoundedIcon },
   { view: 'plans', label: 'Study Plan', icon: SchoolRoundedIcon },
   { view: 'leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon },
+  { view: 'friends', label: 'Friends', icon: PeopleAltRoundedIcon },
 ];
+
+// Red pill with the number of friend requests waiting for me.
+function RequestBadge({ n }) {
+  if (!n) return null;
+  return (
+    <Box component="span" aria-label={`${n} friend requests`} sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: 12, fontWeight: 700, display: 'grid', placeItems: 'center' }}>
+      {n}
+    </Box>
+  );
+}
 
 function NavButton({ active, icon: Icon, label, count, accent, onClick, trailing }) {
   return (
@@ -56,7 +68,7 @@ function NavButton({ active, icon: Icon, label, count, accent, onClick, trailing
 
 // Desktop: vertical rail. Below md: the same items as a horizontally
 // scrolling pill row so nothing is hidden on phones.
-export default function DashboardSidebar({ view, activeListId, lists, onView, onSelectList, onCreateList, maxLists }) {
+export default function DashboardSidebar({ view, activeListId, lists, onView, onSelectList, onCreateList, maxLists, friendCounts }) {
   const [creating, setCreating] = useState(false);
 
   return (
@@ -96,7 +108,9 @@ export default function DashboardSidebar({ view, activeListId, lists, onView, on
               <Icon sx={{ fontSize: 18 }} />
               <Typography variant="body2" sx={{ fontWeight: 700 }}>
                 {label}
+                {v === 'friends' && friendCounts?.friends ? ` · ${friendCounts.friends}` : ''}
               </Typography>
+              {v === 'friends' && <RequestBadge n={friendCounts?.incoming} />}
             </ButtonBase>
           );
         })}
@@ -131,7 +145,15 @@ export default function DashboardSidebar({ view, activeListId, lists, onView, on
       {/* Desktop rail */}
       <Box component="nav" aria-label="Dashboard sections" sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: 0.5 }}>
         {NAV_ITEMS.map(({ view: v, label, icon }) => (
-          <NavButton key={v} active={view === v} icon={icon} label={label} onClick={() => onView(v)} />
+          <NavButton
+            key={v}
+            active={view === v}
+            icon={icon}
+            label={label}
+            count={v === 'friends' ? friendCounts?.friends : undefined}
+            trailing={v === 'friends' ? <RequestBadge n={friendCounts?.incoming} /> : null}
+            onClick={() => onView(v)}
+          />
         ))}
 
         <Box sx={{ mt: 2.5, mb: 0.5, px: 1.5, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

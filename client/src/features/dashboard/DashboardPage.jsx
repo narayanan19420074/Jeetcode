@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useSnackbar } from 'notistack';
@@ -22,17 +22,21 @@ import RightRail from './components/RightRail';
 import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
 import StudyPlannerView from '../studyplan/StudyPlannerView';
 import LeaderboardView from '../leaderboard/LeaderboardView';
+import FriendsView from '../friends/FriendsView';
+import { fetchFriends } from '../friends/friendsSlice';
 import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { STATUS_COLOR, featuredPageForToday, surface, utcKey } from './dashboardUtils';
 
-const VIEWS = ['library', 'quests', 'explore', 'plans', 'leaderboard', 'list'];
+const VIEWS = ['library', 'quests', 'explore', 'plans', 'leaderboard', 'friends', 'list'];
 
 export default function DashboardPage() {
   const navigate = useNavigate();
   const reduceMotion = useReducedMotion();
   const { enqueueSnackbar } = useSnackbar();
+  const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
+  const friends = useSelector((s) => s.friends);
 
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
@@ -54,6 +58,25 @@ export default function DashboardPage() {
       }
     }
   }, [isAuthenticated, params, setParams]);
+
+  // Friend invite links (?view=friends&invite=handle): same trick as the study-plan join code —
+  // remember the handle across login/sign-up, then reopen the Friends tab with the accept card.
+  useEffect(() => {
+    const handle = params.get('invite');
+    if (handle && !isAuthenticated) sessionStorage.setItem('jeetcode.pendingInvite', handle);
+    if (isAuthenticated) {
+      const pending = sessionStorage.getItem('jeetcode.pendingInvite');
+      if (pending) {
+        sessionStorage.removeItem('jeetcode.pendingInvite');
+        setParams({ view: 'friends', invite: pending }, { replace: true });
+      }
+    }
+  }, [isAuthenticated, params, setParams]);
+
+  // One shared friends list for the sidebar badge, Friends tab and leaderboard.
+  useEffect(() => {
+    if (isAuthenticated) dispatch(fetchFriends());
+  }, [isAuthenticated, user?.id, dispatch]);
 
   const [progress, setProgress] = useState(null);
   const [featured, setFeatured] = useState(null);
@@ -103,7 +126,7 @@ export default function DashboardPage() {
   // On wide screens the page is exactly one window tall: sidebar and streak rail stay put and
   // only the middle column scrolls (the leaderboard scrolls its own list instead).
   const fillH = useViewportFill(rootRef, isLg);
-  const showRail = currentView !== 'plans' && currentView !== 'leaderboard';
+  const showRail = currentView !== 'plans' && currentView !== 'leaderboard' && currentView !== 'friends';
   const ownScroll = currentView === 'leaderboard';
 
   const goView = useCallback((v) => setParams(v === 'library' ? {} : { view: v }), [setParams]);
@@ -236,6 +259,7 @@ export default function DashboardPage() {
               onView={goView}
               onSelectList={selectList}
               onCreateList={listsApi.createList}
+              friendCounts={isAuthenticated ? { friends: friends.friends.length, incoming: friends.incoming.length } : null}
             />
           </Box>
 
@@ -344,6 +368,15 @@ export default function DashboardPage() {
                   {currentView === 'explore' && <ExploreView onBrowse={browse} />}
                   {currentView === 'plans' && <StudyPlannerView isAuthenticated={isAuthenticated} />}
                   {currentView === 'leaderboard' && <LeaderboardView isAuthenticated={isAuthenticated} />}
+                  {currentView === 'friends' && (
+                    <FriendsView
+                      isAuthenticated={isAuthenticated}
+                      user={user}
+                      inviteHandle={params.get('invite')}
+                      onClearInvite={() => setParams({ view: 'friends' }, { replace: true })}
+                      onOpenLeaderboard={() => setParams({ view: 'leaderboard', scope: 'friends' })}
+                    />
+                  )}
                   {currentView === 'list' && activeList && (
                     <ListView
                       list={activeList}
