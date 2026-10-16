@@ -7,6 +7,7 @@ import { env } from './config/env.js';
 import { logger } from './utils/logger.js';
 import { attachRealtime } from './realtime/socket.js';
 import { autoSeedProblems } from './services/autoSeed.service.js';
+import { cleanupOldSeed } from './services/cleanupOldSeed.service.js';
 
 
 async function main() {
@@ -23,8 +24,11 @@ async function main() {
   // Pair-coding rooms: Socket.IO shares this HTTP server (same port, same origin).
   attachRealtime(server);
 
-  // Background, non-blocking: inserts any missing seed problems after boot.
-  autoSeedProblems().catch((err) => logger.error('Auto-seed failed', err));
+  // Background, non-blocking: optional one-time cleanup, then insert any missing seed problems.
+  (async () => {
+    await cleanupOldSeed();
+    await autoSeedProblems();
+  })().catch((err) => logger.error('Seed/cleanup failed', err));
 
   // Graceful shutdown — let in-flight requests finish instead of dropping
   // them when the platform (Render/Railway) sends SIGTERM on redeploy.
