@@ -61,3 +61,15 @@ export const aiHintLimiter = rateLimit({
   keyGenerator: (req) => req.user?.id || ipKeyGenerator(req.ip),
   message: { success: false, message: 'You have hit the AI hint limit for now. Try again in a few minutes.' },
 });
+
+// Community writes (solutions, threads, comments, votes, reports). Keyed by
+// user id so one noisy account can't spam, without punishing shared IPs.
+export const communityWriteLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  limit: 40,
+  standardHeaders: true,
+  legacyHeaders: false,
+  store: buildStore(),
+  keyGenerator: (req) => req.user?.id || ipKeyGenerator(req.ip),
+  message: { success: false, message: 'You are posting too fast. Wait a moment and try again.' },
+});

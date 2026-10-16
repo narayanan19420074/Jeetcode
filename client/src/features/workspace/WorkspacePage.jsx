@@ -26,6 +26,11 @@ import {
   useTheme,
   ToggleButtonGroup,
   ToggleButton,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useSnackbar } from 'notistack';
@@ -57,6 +62,9 @@ import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import DifficultyChip from '../../components/DifficultyChip';
 import InviteButton from '../room/InviteButton';
+import SolutionsPanel from './community/SolutionsPanel';
+import DiscussionPanel from './community/DiscussionPanel';
+import ShareSolutionDialog from './community/ShareSolutionDialog';
 import { aiApi } from '../../api/aiApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import {
@@ -234,6 +242,12 @@ export default function WorkspacePage() {
   } = useSelector((s) => s.workspace);
 
   const [descTab, setDescTab] = useState(0);
+  // Solutions / Discussion mount on first visit, then stay mounted (hidden) so
+  // switching tabs doesn't lose the open thread or scroll position.
+  const [mountedTabs, setMountedTabs] = useState({ 1: false, 2: false });
+  const [shareOpen, setShareOpen] = useState(false);
+  const [solutionsRefresh, setSolutionsRefresh] = useState(0);
+  const [pendingLoad, setPendingLoad] = useState(null); // solution waiting for overwrite confirmation
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [mobileView, setMobileView] = useState('problem');
@@ -293,6 +307,35 @@ export default function WorkspacePage() {
   const handleSubmit = () => {
     if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
     dispatch(submitCode({ problemSlug: slug, language: activeLanguage, code }));
+  };
+
+  const openTab = (v) => {
+    setDescTab(v);
+    if (v > 0) setMountedTabs((m) => ({ ...m, [v]: true }));
+  };
+
+  // Puts a community solution's code into the editor (and switches language).
+  const applySolution = (sol) => {
+    dispatch(setLanguage(sol.language));
+    dispatch(updateCode({ problemId: problem._id, language: sol.language, code: sol.code }));
+    setMobileView('code');
+    setPendingLoad(null);
+    enqueueSnackbar('Solution loaded in the editor', { variant: 'success' });
+  };
+
+  const handleSendToEditor = (sol) => {
+    const current = codeByProblem[problem._id]?.[sol.language];
+    const starter = problem.starterCode[sol.language];
+    const hasOwnWork = current != null && current.trim() !== '' && current !== starter && current !== sol.code;
+    if (hasOwnWork) setPendingLoad(sol);
+    else applySolution(sol);
+  };
+
+  const handleShared = () => {
+    setSolutionsRefresh((k) => k + 1);
+    openTab(1);
+    setMobileView('problem');
+    enqueueSnackbar('Solution shared', { variant: 'success' });
   };
 
   const handleResetCode = () => {
@@ -441,7 +484,7 @@ export default function WorkspacePage() {
       >
         <Tabs
           value={descTab}
-          onChange={(e, v) => setDescTab(v)}
+          onChange={(e, v) => openTab(v)}
           variant="scrollable"
           scrollButtons={false}
           slotProps={{ indicator: { sx: { display: 'none' } } }}
@@ -527,19 +570,15 @@ export default function WorkspacePage() {
               </Box>
             </>
           )}
-          {descTab === 1 && (
-            <EmptyState
-              icon={<LightbulbOutlinedIcon />}
-              title="No solutions yet"
-              text="Community solutions will appear here once submissions are shared publicly."
-            />
+          {mountedTabs[1] && (
+            <Box sx={{ display: descTab === 1 ? 'block' : 'none' }}>
+              <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
+            </Box>
           )}
-          {descTab === 2 && (
-            <EmptyState
-              icon={<ForumOutlinedIcon />}
-              title="No discussions yet"
-              text="Be the first to ask a question about this problem."
-            />
+          {mountedTabs[2] && (
+            <Box sx={{ display: descTab === 2 ? 'block' : 'none' }}>
+              <DiscussionPanel slug={slug} />
+            </Box>
           )}
         </Box>
       </Box>
@@ -731,6 +770,19 @@ export default function WorkspacePage() {
                 />
               )
             )}
+            {!isRunning && submitResult?.status === 'Accepted' && submitResult._id && (
+              <Button
+                size="small"
+                variant="outlined"
+                onClick={(e) => {
+                  e.stopPropagation(); // don't toggle the console
+                  setShareOpen(true);
+                }}
+                sx={{ flexShrink: 0, py: 0.25 }}
+              >
+                Share solution
+              </Button>
+            )}
             <Box sx={{ flex: 1 }} />
             <ExpandMoreRoundedIcon
               sx={{ color: 'text.secondary', transition: 'transform .2s', transform: consoleOpen ? 'none' : 'rotate(180deg)' }}
@@ -791,6 +843,29 @@ export default function WorkspacePage() {
           )}
         </Box>
       </Box>
+
+      <ShareSolutionDialog
+        open={shareOpen}
+        onClose={() => setShareOpen(false)}
+        slug={slug}
+        defaultSubmissionId={submitResult?._id}
+        onShared={handleShared}
+      />
+
+      <Dialog open={Boolean(pendingLoad)} onClose={() => setPendingLoad(null)} maxWidth="xs" fullWidth>
+        <DialogTitle>Replace your code?</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Your current {LANGUAGES.find((l) => l.id === pendingLoad?.language)?.label} code in the editor will be replaced with this solution.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setPendingLoad(null)}>Cancel</Button>
+          <Button variant="contained" disableElevation onClick={() => applySolution(pendingLoad)}>
+            Replace
+          </Button>
+        </DialogActions>
+      </Dialog>
 
       {/* AI assistant drawer */}
       <Drawer
