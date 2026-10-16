@@ -63,6 +63,11 @@ export function makeExcerpt(md = '') {
     .slice(0, 180);
 }
 
+// First few lines of code, shown as the "image" of a solution card in the feed.
+export function makeCodePreview(code = '') {
+  return code.split('\n').slice(0, 8).join('\n').slice(0, 500);
+}
+
 export function isOwner(doc, user) {
   return Boolean(user) && String(doc.author?._id || doc.author) === String(user.id);
 }

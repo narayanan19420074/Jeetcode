@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Alert, Box, Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem, Stack, TextField, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, MenuItem, Stack, TextField, Typography, useMediaQuery, useTheme } from '@mui/material';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
+import SpeedRoundedIcon from '@mui/icons-material/SpeedRounded';
+import MemoryRoundedIcon from '@mui/icons-material/MemoryRounded';
 import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { CodeBlock, MarkdownEditor } from './Markdown';
-import { LANG_LABEL, timeAgo } from './CommunityBits';
+import { FeedSkeleton, LANG_LABEL, LangChip, MetricChip, timeAgo } from './CommunityBits';
 
 // Share one of the user's Accepted submissions as a community solution.
 // Code / language / runtime come from the submission on the server.
@@ -60,34 +64,46 @@ export default function ShareSolutionDialog({ open, onClose, slug, defaultSubmis
 
   return (
     <Dialog open={open} onClose={saving ? undefined : onClose} fullWidth maxWidth="sm" fullScreen={fullScreen}>
-      <DialogTitle>Share your solution</DialogTitle>
+      <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1.25, fontWeight: 800 }}>
+        <IosShareRoundedIcon color="primary" />
+        <Box component="span" sx={{ flex: 1 }}>
+          Share your solution
+        </Box>
+        <IconButton aria-label="Close" onClick={onClose} disabled={saving}>
+          <CloseRoundedIcon />
+        </IconButton>
+      </DialogTitle>
       <DialogContent dividers>
         {loadError && <Alert severity="error">{loadError}</Alert>}
-        {!subs && !loadError && (
-          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
-            <CircularProgress size={26} />
-          </Box>
-        )}
+        {!subs && !loadError && <FeedSkeleton count={1} withCode />}
         {subs && subs.length === 0 && <Alert severity="info">Get an Accepted submission on this problem first — then you can share it here.</Alert>}
         {allShared && <Alert severity="info">You have already shared all your Accepted submissions for this problem.</Alert>}
 
         {subs && subs.length > 0 && !allShared && (
           <Stack spacing={2}>
             {error && <Alert severity="error">{error}</Alert>}
-            <TextField select label="Accepted submission" value={subId} onChange={(e) => setSubId(e.target.value)} fullWidth size="small">
+            <TextField select label="Accepted submission" value={subId} onChange={(e) => setSubId(e.target.value)} fullWidth>
               {subs.map((s) => (
-                <MenuItem key={s._id} value={s._id} disabled={s.alreadyShared}>
+                <MenuItem key={s._id} value={s._id} disabled={s.alreadyShared} sx={{ minHeight: 48 }}>
                   {LANG_LABEL[s.language] || s.language} · {s.runtimeMs != null ? `${s.runtimeMs} ms` : '—'} · {timeAgo(s.createdAt)}
                   {s.alreadyShared ? ' · shared' : ''}
                 </MenuItem>
               ))}
             </TextField>
-            {selected && <CodeBlock code={selected.code} language={LANG_LABEL[selected.language]} maxHeight={200} />}
+            {selected && (
+              <Box>
+                <Stack direction="row" spacing={0.75} flexWrap="wrap" useFlexGap>
+                  <LangChip language={selected.language} />
+                  {selected.runtimeMs != null && <MetricChip icon={<SpeedRoundedIcon />} label={`${selected.runtimeMs} ms`} />}
+                  {selected.memoryKb != null && <MetricChip icon={<MemoryRoundedIcon />} label={`${(selected.memoryKb / 1024).toFixed(1)} MB`} />}
+                </Stack>
+                <CodeBlock code={selected.code} language={selected.language} maxHeight={200} />
+              </Box>
+            )}
             <TextField
               label="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value.slice(0, 120))}
-              size="small"
               fullWidth
               placeholder="e.g. Hash map, one pass — O(n)"
               helperText={`${title.length}/120`}
@@ -99,11 +115,11 @@ export default function ShareSolutionDialog({ open, onClose, slug, defaultSubmis
           </Stack>
         )}
       </DialogContent>
-      <DialogActions>
+      <DialogActions sx={{ px: 3, py: 2 }}>
         <Button onClick={onClose} disabled={saving}>
           Cancel
         </Button>
-        <Button variant="contained" disableElevation onClick={submit} disabled={saving || !subId || title.trim().length < 3}>
+        <Button variant="contained" disableElevation size="large" startIcon={<IosShareRoundedIcon />} onClick={submit} disabled={saving || !subId || title.trim().length < 3} sx={{ height: 46, px: 3 }}>
           {saving ? 'Sharing…' : 'Share'}
         </Button>
       </DialogActions>

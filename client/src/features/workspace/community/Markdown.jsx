@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Box, IconButton, Stack, Tab, Tabs, TextField, Tooltip, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 
@@ -10,6 +11,42 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 // http(s) links.
 
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+
+export const LANG_LABEL = { javascript: 'JavaScript', python: 'Python', cpp: 'C++' };
+export const LANG_COLOR = { javascript: '#F59E0B', python: '#3B82F6', cpp: '#8B5CF6' };
+
+function LangDot({ language }) {
+  return <Box component="span" sx={{ width: 9, height: 9, borderRadius: '50%', bgcolor: LANG_COLOR[language] || 'text.disabled', flexShrink: 0 }} />;
+}
+
+// Read-only snippet used as the "photo" of a feed card: first lines of the
+// code with a fade-out at the bottom. Tapping is handled by the parent.
+export function CodePreview({ code, language }) {
+  return (
+    <Box sx={{ position: 'relative', mt: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 3, bgcolor: 'background.default', overflow: 'hidden' }}>
+      <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 1.5, py: 0.75, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'action.hover' }}>
+        <LangDot language={language} />
+        <Typography variant="caption" sx={{ fontWeight: 600, ...mono }}>
+          {LANG_LABEL[language] || language}
+        </Typography>
+      </Stack>
+      <Box component="pre" sx={{ m: 0, px: 1.5, py: 1.25, maxHeight: 150, overflow: 'hidden', fontSize: '0.8rem', lineHeight: 1.6, ...mono }}>
+        <code>{code}</code>
+      </Box>
+      <Box
+        sx={(t) => ({
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: 44,
+          pointerEvents: 'none',
+          background: `linear-gradient(to bottom, ${alpha(t.palette.background.default, 0)}, ${t.palette.background.default})`,
+        })}
+      />
+    </Box>
+  );
+}
 
 export function CodeBlock({ code, language, maxHeight = 420 }) {
   const [copied, setCopied] = useState(false);
@@ -25,21 +62,21 @@ export function CodeBlock({ code, language, maxHeight = 420 }) {
   };
 
   return (
-    <Box sx={{ position: 'relative', my: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 2, bgcolor: 'background.default' }}>
-      {language && (
-        <Typography variant="caption" sx={{ position: 'absolute', left: 12, top: 6, color: 'text.secondary', ...mono }}>
-          {language}
-        </Typography>
-      )}
-      <Tooltip title={copied ? 'Copied' : 'Copy'}>
-        <IconButton size="small" aria-label="Copy code" onClick={copy} sx={{ position: 'absolute', right: 4, top: 2 }}>
-          {copied ? <CheckRoundedIcon sx={{ fontSize: 16 }} /> : <ContentCopyRoundedIcon sx={{ fontSize: 16 }} />}
-        </IconButton>
-      </Tooltip>
-      <Box
-        component="pre"
-        sx={{ m: 0, px: 1.5, pb: 1.5, pt: language ? 3.5 : 1.5, overflow: 'auto', maxHeight, fontSize: '0.8rem', lineHeight: 1.6, ...mono }}
-      >
+    <Box sx={{ my: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 3, bgcolor: 'background.default', overflow: 'hidden' }}>
+      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ pl: 1.5, pr: 0.5, minHeight: 40, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'action.hover' }}>
+        <Stack direction="row" alignItems="center" spacing={0.75}>
+          {language && <LangDot language={language} />}
+          <Typography variant="caption" sx={{ fontWeight: 600, ...mono }}>
+            {LANG_LABEL[language] || language || 'code'}
+          </Typography>
+        </Stack>
+        <Tooltip title={copied ? 'Copied' : 'Copy code'}>
+          <IconButton aria-label="Copy code" onClick={copy}>
+            {copied ? <CheckRoundedIcon sx={{ fontSize: 20 }} /> : <ContentCopyRoundedIcon sx={{ fontSize: 20 }} />}
+          </IconButton>
+        </Tooltip>
+      </Stack>
+      <Box component="pre" sx={{ m: 0, p: 1.5, overflow: 'auto', maxHeight, fontSize: '0.85rem', lineHeight: 1.65, ...mono }}>
         <code>{code}</code>
       </Box>
     </Box>
@@ -140,7 +177,7 @@ export default function Markdown({ source }) {
   const blocks = parseBlocks(source);
 
   return (
-    <Box sx={{ fontSize: '0.9rem', lineHeight: 1.7, wordBreak: 'break-word', '& > :first-of-type': { mt: 0 } }}>
+    <Box sx={{ fontSize: '0.95rem', lineHeight: 1.7, wordBreak: 'break-word', '& > :first-of-type': { mt: 0 } }}>
       {blocks.map((b, i) => {
         const k = `b${i}`;
         switch (b.type) {
@@ -186,10 +223,8 @@ export function MarkdownEditor({ value, onChange, maxLength = 10000, minRows = 6
   return (
     <Box>
       <Stack direction="row" alignItems="center" justifyContent="space-between">
-        <Typography variant="caption" sx={{ fontWeight: 600 }}>
-          {label}
-        </Typography>
-        <Tabs value={tab} onChange={(e, v) => setTab(v)} sx={{ minHeight: 32, '& .MuiTab-root': { minHeight: 32, py: 0, fontSize: '0.78rem' } }}>
+        <Typography sx={{ fontWeight: 700, fontSize: '0.95rem' }}>{label}</Typography>
+        <Tabs value={tab} onChange={(e, v) => setTab(v)} sx={{ minHeight: 40, '& .MuiTab-root': { minHeight: 40, py: 0, fontSize: '0.88rem' } }}>
           <Tab value="write" label="Write" />
           <Tab value="preview" label="Preview" />
         </Tabs>
@@ -205,7 +240,7 @@ export function MarkdownEditor({ value, onChange, maxLength = 10000, minRows = 6
           placeholder={placeholder}
           onChange={(e) => onChange(e.target.value.slice(0, maxLength))}
           helperText={`Markdown supported · \`\`\`code\`\`\` blocks · ${value.length}/${maxLength}`}
-          slotProps={{ htmlInput: { style: { fontSize: '0.88rem' } } }}
+          slotProps={{ htmlInput: { style: { fontSize: '0.95rem' } } }}
         />
       ) : (
         <Box sx={{ minHeight: minRows * 24, p: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>

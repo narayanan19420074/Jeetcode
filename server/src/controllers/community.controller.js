@@ -14,6 +14,7 @@ import {
   assertProblemIdAccess,
   loadTarget,
   makeExcerpt,
+  makeCodePreview,
   isOwner,
   decorate,
   applyVote,
@@ -99,6 +100,7 @@ export const createSolution = asyncHandler(async (req, res) => {
       excerpt: makeExcerpt(content),
       language: sub.language,
       code: sub.code,
+      codePreview: makeCodePreview(sub.code),
       runtimeMs: sub.runtimeMs,
       memoryKb: sub.memoryKb,
     });

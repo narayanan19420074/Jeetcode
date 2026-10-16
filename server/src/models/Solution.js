@@ -15,6 +15,7 @@ const solutionSchema = new mongoose.Schema(
 
     language: { type: String, enum: ['javascript', 'python', 'cpp'], required: true },
     code: { type: String, required: true, maxlength: 20000 },
+    codePreview: { type: String, default: '', maxlength: 600 }, // first lines, for feed cards
     runtimeMs: { type: Number, default: null },
     memoryKb: { type: Number, default: null },
 

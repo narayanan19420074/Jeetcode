@@ -1,30 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {
-  Alert,
-  Box,
-  Button,
-  CircularProgress,
-  Divider,
-  InputAdornment,
-  Pagination,
-  Paper,
-  Stack,
-  TextField,
-  ToggleButton,
-  ToggleButtonGroup,
-  Typography,
-} from '@mui/material';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import { Alert, Box, Button, Divider, IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
+import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
+import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
+import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
+import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
+import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
+import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import Markdown, { MarkdownEditor } from './Markdown';
-import { AuthorLine, VoteBar, ItemMenu, ConfirmDialog, ReportDialog } from './CommunityBits';
+import {
+  ActionButton,
+  AuthorHeader,
+  ComposerPrompt,
+  ConfirmDialog,
+  EmptyBlock,
+  FeedSkeleton,
+  ItemMenu,
+  ReportDialog,
+  SegmentedTabs,
+  VoteBar,
+  clamp,
+} from './CommunityBits';
 import CommentSection from './CommentSection';
+
+const SORTS = [
+  { value: 'active', label: 'Active', icon: <BoltRoundedIcon /> },
+  { value: 'top', label: 'Most votes', icon: <TrendingUpRoundedIcon /> },
+  { value: 'new', label: 'Newest', icon: <AccessTimeRoundedIcon /> },
+];
 
 function ThreadForm({ initial, submitLabel, onSubmit, onCancel }) {
   const [title, setTitle] = useState(initial?.title || '');
@@ -44,19 +54,53 @@ function ThreadForm({ initial, submitLabel, onSubmit, onCancel }) {
   };
 
   return (
-    <Stack spacing={2}>
+    <Stack spacing={2.5}>
       {error && <Alert severity="error">{error}</Alert>}
-      <TextField label="Title" size="small" fullWidth value={title} disabled={saving} onChange={(e) => setTitle(e.target.value.slice(0, 150))} helperText={`${title.length}/150`} />
-      <MarkdownEditor label="Details" value={body} onChange={setBody} minRows={6} disabled={saving} placeholder="Ask a question, share an approach, or describe where you're stuck…" />
+      <TextField
+        label="Title"
+        fullWidth
+        value={title}
+        disabled={saving}
+        onChange={(e) => setTitle(e.target.value.slice(0, 150))}
+        placeholder="What do you want to discuss?"
+        helperText={`${title.length}/150`}
+      />
+      <MarkdownEditor label="Details" value={body} onChange={setBody} minRows={7} disabled={saving} placeholder="Ask a question, share an approach, or describe where you're stuck…" />
       <Stack direction="row" spacing={1} justifyContent="flex-end">
-        <Button size="small" onClick={onCancel} disabled={saving}>
+        <Button onClick={onCancel} disabled={saving}>
           Cancel
         </Button>
-        <Button size="small" variant="contained" disableElevation onClick={submit} disabled={saving || title.trim().length < 3 || !body.trim()}>
+        <Button variant="contained" disableElevation endIcon={<SendRoundedIcon />} onClick={submit} disabled={saving || title.trim().length < 3 || !body.trim()} sx={{ height: 44, px: 2.5 }}>
           {submitLabel}
         </Button>
       </Stack>
     </Stack>
+  );
+}
+
+function ThreadPost({ t, onOpen }) {
+  return (
+    <Box component="article" sx={{ py: 2 }}>
+      <AuthorHeader author={t.author} createdAt={t.createdAt} editedAt={t.editedAt} isMine={t.isMine} />
+      <Box
+        role="button"
+        tabIndex={0}
+        onClick={onOpen}
+        onKeyDown={(e) => e.key === 'Enter' && onOpen()}
+        sx={{ mt: 1.5, cursor: 'pointer', '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', borderRadius: 2 } }}
+      >
+        <Typography sx={{ fontWeight: 700, fontSize: '1.08rem', lineHeight: 1.35 }}>{t.title}</Typography>
+        {t.excerpt && (
+          <Typography color="text.secondary" sx={{ mt: 0.5, fontSize: '0.93rem', lineHeight: 1.55, ...clamp(3) }}>
+            {t.excerpt}
+          </Typography>
+        )}
+      </Box>
+      <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mt: 1.5 }}>
+        <VoteBar targetType="thread" targetId={t._id} score={t.score} myVote={t.myVote} isMine={t.isMine} />
+        <ActionButton icon={<ChatBubbleOutlineRoundedIcon />} count={t.commentCount} label="Open comments" onClick={onOpen} />
+      </Stack>
+    </Box>
   );
 }
 
@@ -98,15 +142,11 @@ function ThreadDetail({ id, onBack }) {
 
   return (
     <Box>
-      <Button size="small" startIcon={<ArrowBackRoundedIcon />} onClick={onBack} sx={{ mb: 1.5 }}>
-        All topics
+      <Button startIcon={<ArrowBackRoundedIcon />} onClick={onBack} sx={{ mb: 1, ml: -1, height: 44, fontWeight: 700 }}>
+        Discussion
       </Button>
 
-      {loading && (
-        <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
-          <CircularProgress size={26} />
-        </Box>
-      )}
+      {loading && <FeedSkeleton count={1} />}
       {error && (
         <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError('')}>
           {error}
@@ -115,48 +155,54 @@ function ThreadDetail({ id, onBack }) {
 
       {thread && (
         <>
+          <AuthorHeader
+            author={thread.author}
+            createdAt={thread.createdAt}
+            editedAt={thread.editedAt}
+            isMine={thread.isMine}
+            right={
+              <ItemMenu
+                canEdit={thread.isMine}
+                canDelete={thread.isMine || role === 'admin'}
+                canReport={isAuthenticated && !thread.isMine}
+                onEdit={() => setEditing(true)}
+                onDelete={() => setConfirmDelete(true)}
+                onReport={() => setReportOpen(true)}
+              />
+            }
+          />
+
           {editing ? (
-            <ThreadForm
-              initial={thread}
-              submitLabel="Save"
-              onCancel={() => setEditing(false)}
-              onSubmit={async (values) => {
-                const { data } = await communityApi.updateThread(id, values);
-                setThread((t) => ({ ...t, ...data.data }));
-                setEditing(false);
-              }}
-            />
+            <Box sx={{ mt: 2 }}>
+              <ThreadForm
+                initial={thread}
+                submitLabel="Save"
+                onCancel={() => setEditing(false)}
+                onSubmit={async (values) => {
+                  const { data } = await communityApi.updateThread(id, values);
+                  setThread((t) => ({ ...t, ...data.data }));
+                  setEditing(false);
+                }}
+              />
+            </Box>
           ) : (
             <>
-              <Stack direction="row" alignItems="flex-start" justifyContent="space-between" spacing={1}>
-                <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
-                  {thread.title}
-                </Typography>
-                <ItemMenu
-                  canEdit={thread.isMine}
-                  canDelete={thread.isMine || role === 'admin'}
-                  canReport={isAuthenticated && !thread.isMine}
-                  onEdit={() => setEditing(true)}
-                  onDelete={() => setConfirmDelete(true)}
-                  onReport={() => setReportOpen(true)}
-                />
-              </Stack>
-              <Box sx={{ mt: 0.75 }}>
-                <AuthorLine author={thread.author} createdAt={thread.createdAt} editedAt={thread.editedAt} />
-              </Box>
-              <Box sx={{ mt: 2 }}>
+              <Typography sx={{ mt: 2, fontWeight: 800, fontSize: '1.3rem', lineHeight: 1.3 }}>{thread.title}</Typography>
+              <Box sx={{ mt: 1.5 }}>
                 <Markdown source={thread.body} />
               </Box>
-              <Box sx={{ mt: 1 }}>
+              <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mt: 2 }}>
                 <VoteBar targetType="thread" targetId={thread._id} score={thread.score} myVote={thread.myVote} isMine={thread.isMine} />
-              </Box>
+                <ActionButton icon={<ChatBubbleOutlineRoundedIcon />} count={thread.commentCount} label="Comments" />
+              </Stack>
             </>
           )}
 
-          <Divider sx={{ my: 2 }} />
-          <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1.5 }}>
-            Comments ({thread.commentCount})
-          </Typography>
+          <Divider sx={{ my: 2.5 }} />
+          <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
+            <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 22 }} />
+            <Typography sx={{ fontWeight: 700, fontSize: '1.05rem' }}>Comments · {thread.commentCount}</Typography>
+          </Stack>
           <CommentSection kind="threads" targetId={thread._id} onCountChange={(d) => setThread((t) => ({ ...t, commentCount: Math.max(0, t.commentCount + d) }))} />
 
           <ConfirmDialog open={confirmDelete} title="Delete topic?" text="The topic and all its comments will be removed permanently." loading={deleting} onConfirm={remove} onClose={() => setConfirmDelete(false)} />
@@ -174,34 +220,53 @@ export default function DiscussionPanel({ slug }) {
   const [sort, setSort] = useState('active');
   const [qInput, setQInput] = useState('');
   const [q, setQ] = useState('');
-  const [page, setPage] = useState(1);
-  const [data, setData] = useState({ items: [], pagination: null });
+  const [items, setItems] = useState([]);
+  const [pagination, setPagination] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState('');
 
   // Debounce search so we don't hit the API on every keystroke.
   useEffect(() => {
-    const t = setTimeout(() => {
-      setQ(qInput.trim());
-      setPage(1);
-    }, 300);
+    const t = setTimeout(() => setQ(qInput.trim()), 300);
     return () => clearTimeout(t);
   }, [qInput]);
+
+  const fetchPage = useCallback(
+    (page) => communityApi.listThreads(slug, { sort, page, limit: 10, ...(q ? { q } : {}) }).then(({ data }) => data.data),
+    [slug, sort, q]
+  );
 
   useEffect(() => {
     if (view.name !== 'list') return undefined;
     let cancelled = false;
     setLoading(true);
     setError('');
-    communityApi
-      .listThreads(slug, { sort, page, limit: 10, ...(q ? { q } : {}) })
-      .then(({ data: res }) => !cancelled && setData(res.data))
+    fetchPage(1)
+      .then((d) => {
+        if (cancelled) return;
+        setItems(d.items);
+        setPagination(d.pagination);
+      })
       .catch((err) => !cancelled && setError(extractErrorMessage(err)))
       .finally(() => !cancelled && setLoading(false));
     return () => {
       cancelled = true;
     };
-  }, [slug, sort, q, page, view.name]);
+  }, [fetchPage, view.name]);
+
+  const loadMore = async () => {
+    setLoadingMore(true);
+    try {
+      const d = await fetchPage(pagination.page + 1);
+      setItems((prev) => [...prev, ...d.items]);
+      setPagination(d.pagination);
+    } catch (err) {
+      setError(extractErrorMessage(err));
+    } finally {
+      setLoadingMore(false);
+    }
+  };
 
   const startNew = () => {
     if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
@@ -215,115 +280,84 @@ export default function DiscussionPanel({ slug }) {
   if (view.name === 'new') {
     return (
       <Box>
-        <Button size="small" startIcon={<ArrowBackRoundedIcon />} onClick={() => setView({ name: 'list' })} sx={{ mb: 1.5 }}>
-          All topics
+        <Button startIcon={<ArrowBackRoundedIcon />} onClick={() => setView({ name: 'list' })} sx={{ mb: 1, ml: -1, height: 44, fontWeight: 700 }}>
+          Discussion
         </Button>
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-          New topic
-        </Typography>
+        <Typography sx={{ fontWeight: 800, fontSize: '1.3rem', mb: 2.5 }}>New topic</Typography>
         <ThreadForm
           submitLabel="Post"
           onCancel={() => setView({ name: 'list' })}
           onSubmit={async (values) => {
-            const { data: res } = await communityApi.createThread(slug, values);
-            setView({ name: 'detail', id: res.data._id });
+            const { data } = await communityApi.createThread(slug, values);
+            setView({ name: 'detail', id: data.data._id });
           }}
         />
       </Box>
     );
   }
 
+  const hasMore = pagination && pagination.page < pagination.totalPages;
+
   return (
     <Box>
-      <Stack direction="row" spacing={1} sx={{ mb: 1.5 }}>
+      <ComposerPrompt icon={<AddCommentRoundedIcon />} placeholder="Ask a question or start a topic…" onClick={startNew} />
+
+      <Stack spacing={1.5} sx={{ mt: 2 }}>
         <TextField
-          size="small"
           fullWidth
           placeholder="Search topics"
           value={qInput}
           onChange={(e) => setQInput(e.target.value.slice(0, 60))}
+          sx={{ '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48 } }}
           slotProps={{
             input: {
               startAdornment: (
                 <InputAdornment position="start">
-                  <SearchRoundedIcon fontSize="small" />
+                  <SearchRoundedIcon />
                 </InputAdornment>
               ),
+              endAdornment: qInput ? (
+                <InputAdornment position="end">
+                  <IconButton aria-label="Clear search" onClick={() => setQInput('')}>
+                    <CloseRoundedIcon fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              ) : null,
             },
           }}
         />
-        <Button size="small" variant="contained" disableElevation startIcon={<AddRoundedIcon />} onClick={startNew} sx={{ flexShrink: 0 }}>
-          New
-        </Button>
+        <SegmentedTabs value={sort} onChange={setSort} options={SORTS} />
       </Stack>
 
-      <ToggleButtonGroup
-        exclusive
-        size="small"
-        value={sort}
-        onChange={(e, v) => {
-          if (v) {
-            setSort(v);
-            setPage(1);
-          }
-        }}
-        sx={{ mb: 2 }}
-      >
-        <ToggleButton value="active">Active</ToggleButton>
-        <ToggleButton value="top">Most votes</ToggleButton>
-        <ToggleButton value="new">Newest</ToggleButton>
-      </ToggleButtonGroup>
-
       {error && (
-        <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError('')}>
+        <Alert severity="error" sx={{ mt: 2 }} onClose={() => setError('')}>
           {error}
         </Alert>
       )}
 
-      {loading ? (
-        <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
-          <CircularProgress size={26} />
-        </Box>
-      ) : data.items.length === 0 ? (
-        <Box sx={{ textAlign: 'center', py: 6 }}>
-          <Typography variant="body1" sx={{ fontWeight: 600 }}>
-            {q ? 'No topics match your search' : 'No topics yet'}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-            {q ? 'Try different words.' : 'Be the first to ask a question about this problem.'}
-          </Typography>
-        </Box>
-      ) : (
-        <Stack spacing={1.25}>
-          {data.items.map((t) => (
-            <Paper key={t._id} variant="outlined" sx={{ p: 1.5, borderRadius: 2 }}>
-              <Box onClick={() => setView({ name: 'detail', id: t._id })} sx={{ cursor: 'pointer' }}>
-                <Typography variant="subtitle2" sx={{ fontWeight: 700, lineHeight: 1.35 }}>
-                  {t.title}
-                </Typography>
-                {t.excerpt && (
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                    {t.excerpt}
-                  </Typography>
-                )}
-                <Box sx={{ mt: 0.75 }}>
-                  <AuthorLine author={t.author} createdAt={t.createdAt} editedAt={t.editedAt} size={18} />
-                </Box>
-              </Box>
-              <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 0.5 }}>
-                <VoteBar targetType="thread" targetId={t._id} score={t.score} myVote={t.myVote} isMine={t.isMine} />
-                <Button size="small" color="inherit" startIcon={<ChatBubbleOutlineRoundedIcon sx={{ fontSize: '16px !important' }} />} onClick={() => setView({ name: 'detail', id: t._id })} sx={{ color: 'text.secondary' }}>
-                  {t.commentCount}
-                </Button>
-              </Stack>
-            </Paper>
-          ))}
-        </Stack>
-      )}
+      <Box sx={{ mt: 1 }}>
+        {loading ? (
+          <FeedSkeleton />
+        ) : items.length === 0 ? (
+          <EmptyBlock
+            icon={<ForumOutlinedIcon />}
+            title={q ? 'No topics match your search' : 'No discussions yet'}
+            text={q ? 'Try different words.' : 'Be the first to ask a question about this problem.'}
+          />
+        ) : (
+          <Stack divider={<Divider flexItem />}>
+            {items.map((t) => (
+              <ThreadPost key={t._id} t={t} onOpen={() => setView({ name: 'detail', id: t._id })} />
+            ))}
+          </Stack>
+        )}
+      </Box>
 
-      {data.pagination?.totalPages > 1 && (
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-          <Pagination size="small" count={data.pagination.totalPages} page={page} onChange={(e, p) => setPage(p)} />
+      {hasMore && (
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1 }}>
+          <Button variant="outlined" onClick={loadMore} disabled={loadingMore} sx={{ height: 44, px: 3 }}>
+            {loadingMore ? 'Loading…' : 'Show more'}
+          </Button>
         </Box>
       )}
     </Box>

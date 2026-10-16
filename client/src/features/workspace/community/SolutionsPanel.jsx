@@ -1,33 +1,109 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {
-  Alert,
-  Box,
-  Button,
-  Chip,
-  CircularProgress,
-  Divider,
-  IconButton,
-  MenuItem,
-  Pagination,
-  Paper,
-  Stack,
-  TextField,
-  ToggleButton,
-  ToggleButtonGroup,
-  Tooltip,
-  Typography,
-} from '@mui/material';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import { Alert, Box, Button, CircularProgress, Divider, IconButton, Stack, TextField, Tooltip, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
+import SendRoundedIcon from '@mui/icons-material/SendRounded';
+import SpeedRoundedIcon from '@mui/icons-material/SpeedRounded';
+import MemoryRoundedIcon from '@mui/icons-material/MemoryRounded';
+import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
+import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
+import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
+import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import Markdown, { CodeBlock, MarkdownEditor } from './Markdown';
-import { AuthorLine, VoteBar, ItemMenu, ConfirmDialog, ReportDialog, LANG_LABEL } from './CommunityBits';
+import Markdown, { CodeBlock, CodePreview, MarkdownEditor } from './Markdown';
+import {
+  AcceptedBadge,
+  ActionButton,
+  AuthorHeader,
+  ComposerPrompt,
+  ConfirmDialog,
+  EmptyBlock,
+  FeedSkeleton,
+  FilterChips,
+  ItemMenu,
+  LANG_LABEL,
+  LangChip,
+  MetricChip,
+  ReportDialog,
+  SegmentedTabs,
+  VoteBar,
+  clamp,
+} from './CommunityBits';
 import CommentSection from './CommentSection';
+
+const SORTS = [
+  { value: 'top', label: 'Most votes', icon: <TrendingUpRoundedIcon /> },
+  { value: 'new', label: 'Newest', icon: <AccessTimeRoundedIcon /> },
+];
+const LANG_FILTERS = [{ value: '', label: 'All' }, ...Object.entries(LANG_LABEL).map(([value, label]) => ({ value, label }))];
+
+const fmtMem = (kb) => (kb == null ? null : `${(kb / 1024).toFixed(1)} MB`);
+
+function Metrics({ s }) {
+  return (
+    <Stack direction="row" spacing={0.75} flexWrap="wrap" useFlexGap>
+      <LangChip language={s.language} />
+      {s.runtimeMs != null && <MetricChip icon={<SpeedRoundedIcon />} label={`${s.runtimeMs} ms`} />}
+      {s.memoryKb != null && <MetricChip icon={<MemoryRoundedIcon />} label={fmtMem(s.memoryKb)} />}
+    </Stack>
+  );
+}
+
+function SendButton({ onClick, loading, size = 44 }) {
+  return (
+    <Tooltip title="Send to editor">
+      <span>
+        <IconButton
+          aria-label="Send to editor"
+          onClick={onClick}
+          disabled={loading}
+          sx={(t) => ({ width: size, height: size, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12), '&:hover': { bgcolor: alpha(t.palette.primary.main, 0.2) } })}
+        >
+          {loading ? <CircularProgress size={20} /> : <SendRoundedIcon />}
+        </IconButton>
+      </span>
+    </Tooltip>
+  );
+}
+
+function SolutionPost({ s, onOpen, onSend, sending }) {
+  return (
+    <Box component="article" sx={{ py: 2 }}>
+      <AuthorHeader author={s.author} createdAt={s.createdAt} editedAt={s.editedAt} isMine={s.isMine} right={<AcceptedBadge />} />
+
+      <Box
+        role="button"
+        tabIndex={0}
+        onClick={onOpen}
+        onKeyDown={(e) => e.key === 'Enter' && onOpen()}
+        sx={{ mt: 1.5, cursor: 'pointer', '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', borderRadius: 2 } }}
+      >
+        <Typography sx={{ fontWeight: 700, fontSize: '1.08rem', lineHeight: 1.35 }}>{s.title}</Typography>
+        {s.excerpt && (
+          <Typography color="text.secondary" sx={{ mt: 0.5, fontSize: '0.93rem', lineHeight: 1.55, ...clamp(2) }}>
+            {s.excerpt}
+          </Typography>
+        )}
+        {s.codePreview && <CodePreview code={s.codePreview} language={s.language} />}
+      </Box>
+
+      <Box sx={{ mt: 1.5 }}>
+        <Metrics s={s} />
+      </Box>
+
+      <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mt: 1.5 }}>
+        <VoteBar targetType="solution" targetId={s._id} score={s.score} myVote={s.myVote} allowDown={false} isMine={s.isMine} />
+        <ActionButton icon={<ChatBubbleOutlineRoundedIcon />} count={s.commentCount} label="Open comments" onClick={onOpen} />
+        <Box sx={{ flex: 1 }} />
+        <SendButton onClick={onSend} loading={sending} />
+      </Stack>
+    </Box>
+  );
+}
 
 function SolutionDetail({ id, onBack, onSendToEditor }) {
   const { isAuthenticated, role } = useSelector((s) => s.auth);
@@ -83,15 +159,11 @@ function SolutionDetail({ id, onBack, onSendToEditor }) {
 
   return (
     <Box>
-      <Button size="small" startIcon={<ArrowBackRoundedIcon />} onClick={onBack} sx={{ mb: 1.5 }}>
-        All solutions
+      <Button startIcon={<ArrowBackRoundedIcon />} onClick={onBack} sx={{ mb: 1, ml: -1, height: 44, fontWeight: 700 }}>
+        Solutions
       </Button>
 
-      {loading && (
-        <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
-          <CircularProgress size={26} />
-        </Box>
-      )}
+      {loading && <FeedSkeleton count={1} withCode />}
       {error && (
         <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError('')}>
           {error}
@@ -100,67 +172,71 @@ function SolutionDetail({ id, onBack, onSendToEditor }) {
 
       {sol && (
         <>
+          <AuthorHeader
+            author={sol.author}
+            createdAt={sol.createdAt}
+            editedAt={sol.editedAt}
+            isMine={sol.isMine}
+            right={
+              <ItemMenu
+                canEdit={sol.isMine}
+                canDelete={sol.isMine || role === 'admin'}
+                canReport={isAuthenticated && !sol.isMine}
+                onEdit={() => {
+                  setDraft({ title: sol.title, content: sol.content });
+                  setEditing(true);
+                }}
+                onDelete={() => setConfirmDelete(true)}
+                onReport={() => setReportOpen(true)}
+              />
+            }
+          />
+
           {editing ? (
-            <Stack spacing={2}>
-              <TextField label="Title" size="small" fullWidth value={draft.title} onChange={(e) => setDraft((d) => ({ ...d, title: e.target.value.slice(0, 120) }))} />
+            <Stack spacing={2} sx={{ mt: 2 }}>
+              <TextField label="Title" fullWidth value={draft.title} onChange={(e) => setDraft((d) => ({ ...d, title: e.target.value.slice(0, 120) }))} />
               <MarkdownEditor label="Write-up" value={draft.content} onChange={(v) => setDraft((d) => ({ ...d, content: v }))} minRows={6} />
               <Stack direction="row" spacing={1} justifyContent="flex-end">
-                <Button size="small" onClick={() => setEditing(false)} disabled={saving}>
+                <Button onClick={() => setEditing(false)} disabled={saving}>
                   Cancel
                 </Button>
-                <Button size="small" variant="contained" disableElevation onClick={save} disabled={saving || draft.title.trim().length < 3}>
+                <Button variant="contained" disableElevation onClick={save} disabled={saving || draft.title.trim().length < 3}>
                   Save
                 </Button>
               </Stack>
             </Stack>
           ) : (
             <>
-              <Stack direction="row" alignItems="flex-start" justifyContent="space-between" spacing={1}>
-                <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
-                  {sol.title}
-                </Typography>
-                <ItemMenu
-                  canEdit={sol.isMine}
-                  canDelete={sol.isMine || role === 'admin'}
-                  canReport={isAuthenticated && !sol.isMine}
-                  onEdit={() => {
-                    setDraft({ title: sol.title, content: sol.content });
-                    setEditing(true);
-                  }}
-                  onDelete={() => setConfirmDelete(true)}
-                  onReport={() => setReportOpen(true)}
-                />
-              </Stack>
-              <Box sx={{ mt: 0.75 }}>
-                <AuthorLine author={sol.author} createdAt={sol.createdAt} editedAt={sol.editedAt} />
+              <Typography sx={{ mt: 2, fontWeight: 800, fontSize: '1.3rem', lineHeight: 1.3 }}>{sol.title}</Typography>
+              <Box sx={{ mt: 1.5 }}>
+                <Stack direction="row" spacing={0.75} alignItems="center" flexWrap="wrap" useFlexGap>
+                  <AcceptedBadge />
+                  <LangChip language={sol.language} />
+                  {sol.runtimeMs != null && <MetricChip icon={<SpeedRoundedIcon />} label={`${sol.runtimeMs} ms`} />}
+                  {sol.memoryKb != null && <MetricChip icon={<MemoryRoundedIcon />} label={fmtMem(sol.memoryKb)} />}
+                </Stack>
               </Box>
-
-              <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mt: 1.5 }}>
-                <Chip size="small" label={LANG_LABEL[sol.language] || sol.language} />
-                {sol.runtimeMs != null && <Chip size="small" variant="outlined" label={`${sol.runtimeMs} ms`} />}
-                {sol.memoryKb != null && <Chip size="small" variant="outlined" label={`${(sol.memoryKb / 1024).toFixed(1)} MB`} />}
-              </Stack>
-
-              <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1} sx={{ mt: 1.5 }}>
-                <VoteBar targetType="solution" targetId={sol._id} score={sol.score} myVote={sol.myVote} allowDown={false} isMine={sol.isMine} />
-                <Button size="small" variant="contained" disableElevation startIcon={<CodeRoundedIcon />} onClick={() => onSendToEditor(sol)}>
-                  Load in editor
-                </Button>
-              </Stack>
-
               {sol.content && (
                 <Box sx={{ mt: 2 }}>
                   <Markdown source={sol.content} />
                 </Box>
               )}
-              <CodeBlock code={sol.code} language={LANG_LABEL[sol.language]} maxHeight={480} />
+              <CodeBlock code={sol.code} language={sol.language} maxHeight={480} />
             </>
           )}
 
-          <Divider sx={{ my: 2 }} />
-          <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1.5 }}>
-            Comments ({sol.commentCount})
-          </Typography>
+          <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1} sx={{ mt: 1.5 }}>
+            <VoteBar targetType="solution" targetId={sol._id} score={sol.score} myVote={sol.myVote} allowDown={false} isMine={sol.isMine} />
+            <Button variant="contained" disableElevation size="large" startIcon={<SendRoundedIcon />} onClick={() => onSendToEditor(sol)} sx={{ height: 46, px: 2.5 }}>
+              Send to editor
+            </Button>
+          </Stack>
+
+          <Divider sx={{ my: 2.5 }} />
+          <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
+            <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 22 }} />
+            <Typography sx={{ fontWeight: 700, fontSize: '1.05rem' }}>Comments · {sol.commentCount}</Typography>
+          </Stack>
           <CommentSection kind="solutions" targetId={sol._id} onCountChange={(d) => setSol((s) => ({ ...s, commentCount: Math.max(0, s.commentCount + d) }))} />
 
           <ConfirmDialog open={confirmDelete} title="Delete solution?" text="The solution and its comments will be removed permanently." loading={deleting} onConfirm={remove} onClose={() => setConfirmDelete(false)} />
@@ -177,44 +253,65 @@ export default function SolutionsPanel({ slug, refreshKey, onShare, onSendToEdit
   const [openId, setOpenId] = useState(null);
   const [sort, setSort] = useState('top');
   const [language, setLanguage] = useState('');
-  const [page, setPage] = useState(1);
-  const [data, setData] = useState({ items: [], pagination: null });
+  const [items, setItems] = useState([]);
+  const [pagination, setPagination] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState('');
   const [sendingId, setSendingId] = useState(null);
 
-  // A fresh share (refreshKey bump) returns to the list on page 1.
+  // A fresh share (refreshKey bump) returns to the feed.
   useEffect(() => {
     setOpenId(null);
-    setPage(1);
   }, [refreshKey]);
+
+  const fetchPage = useCallback(
+    (page) => communityApi.listSolutions(slug, { sort, page, limit: 10, ...(language ? { language } : {}) }).then(({ data }) => data.data),
+    [slug, sort, language]
+  );
 
   useEffect(() => {
     if (openId) return undefined;
     let cancelled = false;
     setLoading(true);
     setError('');
-    communityApi
-      .listSolutions(slug, { sort, page, limit: 10, ...(language ? { language } : {}) })
-      .then(({ data: res }) => !cancelled && setData(res.data))
+    fetchPage(1)
+      .then((d) => {
+        if (cancelled) return;
+        setItems(d.items);
+        setPagination(d.pagination);
+      })
       .catch((err) => !cancelled && setError(extractErrorMessage(err)))
       .finally(() => !cancelled && setLoading(false));
     return () => {
       cancelled = true;
     };
-  }, [slug, sort, language, page, refreshKey, openId]);
+  }, [fetchPage, refreshKey, openId]);
+
+  const loadMore = async () => {
+    setLoadingMore(true);
+    try {
+      const d = await fetchPage(pagination.page + 1);
+      setItems((prev) => [...prev, ...d.items]);
+      setPagination(d.pagination);
+    } catch (err) {
+      setError(extractErrorMessage(err));
+    } finally {
+      setLoadingMore(false);
+    }
+  };
 
   const handleShare = () => {
     if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
     onShare();
   };
 
-  // One click from the list: fetch the code, hand it to the workspace.
+  // One tap from the feed: fetch the code, hand it to the workspace.
   const sendFromList = async (item) => {
     setSendingId(item._id);
     try {
-      const { data: res } = await communityApi.getSolution(item._id);
-      onSendToEditor(res.data);
+      const { data } = await communityApi.getSolution(item._id);
+      onSendToEditor(data.data);
     } catch (err) {
       setError(extractErrorMessage(err));
     } finally {
@@ -226,113 +323,46 @@ export default function SolutionsPanel({ slug, refreshKey, onShare, onSendToEdit
     return <SolutionDetail id={openId} onBack={() => setOpenId(null)} onSendToEditor={onSendToEditor} />;
   }
 
+  const hasMore = pagination && pagination.page < pagination.totalPages;
+
   return (
     <Box>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
-        <ToggleButtonGroup
-          exclusive
-          size="small"
-          value={sort}
-          onChange={(e, v) => {
-            if (v) {
-              setSort(v);
-              setPage(1);
-            }
-          }}
-        >
-          <ToggleButton value="top">Most votes</ToggleButton>
-          <ToggleButton value="new">Newest</ToggleButton>
-        </ToggleButtonGroup>
-        <Stack direction="row" spacing={1}>
-          <TextField
-            select
-            size="small"
-            value={language}
-            onChange={(e) => {
-              setLanguage(e.target.value);
-              setPage(1);
-            }}
-            slotProps={{ select: { displayEmpty: true } }}
-            sx={{ minWidth: 130 }}
-          >
-            <MenuItem value="">All languages</MenuItem>
-            {Object.entries(LANG_LABEL).map(([id, label]) => (
-              <MenuItem key={id} value={id}>
-                {label}
-              </MenuItem>
-            ))}
-          </TextField>
-          <Button size="small" variant="contained" disableElevation startIcon={<AddRoundedIcon />} onClick={handleShare}>
-            Share
-          </Button>
-        </Stack>
+      <ComposerPrompt icon={<IosShareRoundedIcon />} placeholder="Share your solution…" onClick={handleShare} />
+
+      <Stack spacing={1.5} sx={{ mt: 2 }}>
+        <SegmentedTabs value={sort} onChange={setSort} options={SORTS} />
+        <FilterChips value={language} onChange={setLanguage} options={LANG_FILTERS} />
       </Stack>
 
       {error && (
-        <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError('')}>
+        <Alert severity="error" sx={{ mt: 2 }} onClose={() => setError('')}>
           {error}
         </Alert>
       )}
 
-      {loading ? (
-        <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
-          <CircularProgress size={26} />
-        </Box>
-      ) : data.items.length === 0 ? (
-        <Box sx={{ textAlign: 'center', py: 6 }}>
-          <Typography variant="body1" sx={{ fontWeight: 600 }}>
-            No solutions yet
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-            {language ? 'Nothing in this language yet — try another filter.' : 'Solve it, then share your approach.'}
-          </Typography>
-        </Box>
-      ) : (
-        <Stack spacing={1.25}>
-          {data.items.map((s) => (
-            <Paper key={s._id} variant="outlined" sx={{ p: 1.5, borderRadius: 2 }}>
-              <Stack direction="row" alignItems="flex-start" spacing={1}>
-                <Box onClick={() => setOpenId(s._id)} sx={{ flex: 1, minWidth: 0, cursor: 'pointer' }}>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 700, lineHeight: 1.35 }}>
-                    {s.title}
-                  </Typography>
-                  {s.excerpt && (
-                    <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                      {s.excerpt}
-                    </Typography>
-                  )}
-                  <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap sx={{ mt: 0.75 }}>
-                    <AuthorLine author={s.author} createdAt={s.createdAt} editedAt={s.editedAt} size={18} />
-                    <Chip size="small" label={LANG_LABEL[s.language] || s.language} sx={{ height: 20, fontSize: '0.7rem' }} />
-                    {s.runtimeMs != null && (
-                      <Typography variant="caption" color="text.secondary">
-                        {s.runtimeMs} ms
-                      </Typography>
-                    )}
-                  </Stack>
-                </Box>
-                <Tooltip title="Load this code in the editor">
-                  <span>
-                    <IconButton size="small" aria-label="Load in editor" onClick={() => sendFromList(s)} disabled={sendingId === s._id} color="primary">
-                      {sendingId === s._id ? <CircularProgress size={18} /> : <CodeRoundedIcon />}
-                    </IconButton>
-                  </span>
-                </Tooltip>
-              </Stack>
-              <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 0.5 }}>
-                <VoteBar targetType="solution" targetId={s._id} score={s.score} myVote={s.myVote} allowDown={false} isMine={s.isMine} />
-                <Button size="small" color="inherit" startIcon={<ChatBubbleOutlineRoundedIcon sx={{ fontSize: '16px !important' }} />} onClick={() => setOpenId(s._id)} sx={{ color: 'text.secondary' }}>
-                  {s.commentCount}
-                </Button>
-              </Stack>
-            </Paper>
-          ))}
-        </Stack>
-      )}
+      <Box sx={{ mt: 1 }}>
+        {loading ? (
+          <FeedSkeleton withCode />
+        ) : items.length === 0 ? (
+          <EmptyBlock
+            icon={<LightbulbOutlinedIcon />}
+            title="No solutions yet"
+            text={language ? 'Nothing in this language yet — try another filter.' : 'Solve it, then share your approach with everyone.'}
+          />
+        ) : (
+          <Stack divider={<Divider flexItem />}>
+            {items.map((s) => (
+              <SolutionPost key={s._id} s={s} onOpen={() => setOpenId(s._id)} onSend={() => sendFromList(s)} sending={sendingId === s._id} />
+            ))}
+          </Stack>
+        )}
+      </Box>
 
-      {data.pagination?.totalPages > 1 && (
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-          <Pagination size="small" count={data.pagination.totalPages} page={page} onChange={(e, p) => setPage(p)} />
+      {hasMore && (
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1 }}>
+          <Button variant="outlined" onClick={loadMore} disabled={loadingMore} sx={{ height: 44, px: 3 }}>
+            {loadingMore ? 'Loading…' : 'Show more'}
+          </Button>
         </Box>
       )}
     </Box>
