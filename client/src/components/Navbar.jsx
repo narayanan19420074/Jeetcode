@@ -41,6 +41,7 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
+import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import { toggleThemeMode } from '../app/uiSlice';
 import { logoutUser } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
@@ -81,6 +82,7 @@ const DASH_SECTIONS = [
   { to: '/dashboard?view=explore', label: 'Explore', icon: ExploreRoundedIcon, view: 'explore' },
   { to: '/dashboard?view=plans', label: 'Study Plan', icon: SchoolRoundedIcon, view: 'plans' },
   { to: '/dashboard?view=leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon, view: 'leaderboard' },
+  { to: '/dashboard?view=friends', label: 'Friends', icon: PeopleAltRoundedIcon, view: 'friends' },
 ];
 
 // GPay-style row used in the phone menu: tonal icon bubble + label, full width.
