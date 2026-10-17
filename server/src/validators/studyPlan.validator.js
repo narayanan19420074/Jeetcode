@@ -17,6 +17,8 @@ export const savePlanSchema = z
     message: 'The same question is in the plan twice',
   });
 
+export const addMemberSchema = z.object({ userId: z.string().regex(/^[a-f\d]{24}$/i, 'Invalid user') });
+
 export const messageSchema = z.object({ text: z.string().trim().min(1).max(500) });
 
 // JS Date#getTimezoneOffset() value from the browser (IST = -330).

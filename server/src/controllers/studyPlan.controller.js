@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 import { StudyPlan, MAX_PLAN_MEMBERS } from '../models/StudyPlan.js';
 import { PlanMessage } from '../models/PlanMessage.js';
+import { PlanNotification } from '../models/PlanNotification.js';
+import { Friendship } from '../models/Friendship.js';
+import { pairKey } from '../services/friend.service.js';
 import { User } from '../models/User.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
@@ -227,7 +230,11 @@ export const removeMember = asyncHandler(async (req, res) => {
 export const deletePlan = asyncHandler(async (req, res) => {
   const plan = await loadMemberPlan(req);
   if (String(plan.owner) !== req.user.id) throw ApiError.forbidden('Only the plan owner can delete it');
-  await Promise.all([StudyPlan.deleteOne({ _id: plan._id }), PlanMessage.deleteMany({ plan: plan._id })]);
+  await Promise.all([
+    StudyPlan.deleteOne({ _id: plan._id }),
+    PlanMessage.deleteMany({ plan: plan._id }),
+    PlanNotification.deleteMany({ plan: plan._id }),
+  ]);
   new ApiResponse(200, null, 'Plan deleted').send(res);
 });
 
@@ -273,4 +280,57 @@ export const joinPlan = asyncHandler(async (req, res) => {
   );
   if (result.modifiedCount === 0) throw ApiError.conflict(`This plan is full (max ${MAX_PLAN_MEMBERS} members)`);
   new ApiResponse(200, { id: String(plan._id) }, 'Joined the plan').send(res);
+});
+
+// POST /study-plans/:id/members — a member adds one of THEIR friends straight into the plan.
+export const addFriendToPlan = asyncHandler(async (req, res) => {
+  const me = req.user.id;
+  const plan = await loadMemberPlan(req);
+  const { userId } = req.body;
+  if (userId === me) throw ApiError.badRequest('You are already in this plan');
+  if (plan.members.some((m) => String(m.user) === userId)) {
+    return new ApiResponse(200, { id: String(plan._id) }, 'Already in this plan').send(res);
+  }
+
+  const isFriend = await Friendship.exists({ pairKey: pairKey(me, userId), status: 'accepted' });
+  if (!isFriend) throw ApiError.forbidden('You can only add your friends');
+  const target = await User.exists({ _id: userId, role: { $ne: 'admin' } });
+  if (!target) throw ApiError.notFound('Friend not found');
+
+  // Atomic: only push if they are not in yet and there is still room.
+  const result = await StudyPlan.updateOne(
+    { _id: plan._id, 'members.user': { $ne: userId }, [`members.${MAX_PLAN_MEMBERS - 1}`]: { $exists: false } },
+    { $push: { members: { user: userId, joinedAt: new Date() } } }
+  );
+  if (result.modifiedCount === 0) throw ApiError.conflict(`This plan is full (max ${MAX_PLAN_MEMBERS} members)`);
+
+  await PlanNotification.create({ user: userId, plan: plan._id, actor: me, kind: 'added' });
+  new ApiResponse(201, { id: String(plan._id) }, 'Friend added').send(res);
+});
+
+// GET /study-plans/notifications
+export const listNotifications = asyncHandler(async (req, res) => {
+  const rows = await PlanNotification.find({ user: req.user.id })
+    .sort({ createdAt: -1 })
+    .limit(30)
+    .populate('actor', 'name handle avatarUrl')
+    .populate('plan', 'title')
+    .lean();
+  const items = rows
+    .filter((n) => n.plan && n.actor) // plan deleted or account gone
+    .map((n) => ({
+      id: String(n._id),
+      kind: n.kind,
+      read: Boolean(n.readAt),
+      createdAt: n.createdAt,
+      plan: { id: String(n.plan._id), title: n.plan.title },
+      actor: publicUser(n.actor),
+    }));
+  new ApiResponse(200, { items, unread: items.filter((n) => !n.read).length }).send(res);
+});
+
+// POST /study-plans/notifications/read
+export const markNotificationsRead = asyncHandler(async (req, res) => {
+  await PlanNotification.updateMany({ user: req.user.id, readAt: null }, { $set: { readAt: new Date() } });
+  new ApiResponse(200, null).send(res);
 });

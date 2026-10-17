@@ -15,6 +15,9 @@ export const studyPlanApi = {
   feed: (id) => apiClient.get(`/study-plans/${id}/feed`),
   postMessage: (id, text) => apiClient.post(`/study-plans/${id}/messages`, { text }),
   nudge: (id, userId) => apiClient.post(`/study-plans/${id}/nudge/${userId}`, null, { params: tz() }),
+  addMember: (id, userId) => apiClient.post(`/study-plans/${id}/members`, { userId }),
+  notifications: () => apiClient.get('/study-plans/notifications'),
+  markNotificationsRead: () => apiClient.post('/study-plans/notifications/read'),
   removeMember: (id, userId) => apiClient.delete(`/study-plans/${id}/members/${userId}`),
 };
 
