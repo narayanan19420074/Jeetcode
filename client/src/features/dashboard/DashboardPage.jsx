@@ -20,6 +20,7 @@ import NqtExploreCard from './components/NqtExploreCard';
 import ProblemLibrary from './components/ProblemLibrary';
 import RightRail from './components/RightRail';
 import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
+import ContestCard from '../contest/ContestCard';
 import StudyPlannerView from '../studyplan/StudyPlannerView';
 import LeaderboardView from '../leaderboard/LeaderboardView';
 import FriendsView from '../friends/FriendsView';
@@ -356,6 +357,8 @@ export default function DashboardPage() {
                   preset={preset}
                   listsApi={listsApi}
                 />
+
+                <ContestCard />
               </Stack>
             </Box>
 
