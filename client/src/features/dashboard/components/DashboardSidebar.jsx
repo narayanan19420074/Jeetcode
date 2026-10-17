@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Box, ButtonBase, IconButton, Tooltip, Typography, alpha } from '@mui/material';
 import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
+import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
@@ -14,6 +15,7 @@ import { NameDialog } from './ListDialogs';
 
 export const NAV_ITEMS = [
   { view: 'library', label: 'Library', icon: LibraryBooksRoundedIcon },
+  { view: 'contest', label: 'Contest', icon: MilitaryTechRoundedIcon },
   { view: 'quests', label: 'Quests', icon: EmojiEventsRoundedIcon },
   { view: 'explore', label: 'Explore', icon: ExploreRoundedIcon },
   { view: 'plans', label: 'Study Plan', icon: SchoolRoundedIcon },

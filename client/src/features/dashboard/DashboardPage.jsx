@@ -130,7 +130,8 @@ export default function DashboardPage() {
   const showRail = currentView !== 'plans' && currentView !== 'leaderboard' && currentView !== 'friends';
   const ownScroll = currentView === 'leaderboard';
 
-  const goView = useCallback((v) => setParams(v === 'library' ? {} : { view: v }), [setParams]);
+  // 'contest' is its own page (/contest); every other item is a view inside the dashboard.
+  const goView = useCallback((v) => (v === 'contest' ? navigate('/contest') : setParams(v === 'library' ? {} : { view: v })), [setParams, navigate]);
   const selectList = useCallback((id) => setParams({ view: 'list', list: id }), [setParams]);
 
   const browse = useCallback(
