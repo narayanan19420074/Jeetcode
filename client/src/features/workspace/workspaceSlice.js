@@ -88,6 +88,16 @@ export const submitCode = createAsyncThunk(
   }
 );
 
+// A run/submit that finishes after the user already opened another problem
+// must not write its result into the new problem's console.
+const isForCurrentProblem = (state, action) => {
+  const arg = action.meta?.arg?.problemSlug;
+  const current = state.currentProblem?.slug;
+  if (!arg) return true;
+  if (!current) return false; // next problem still loading
+  return arg.toLowerCase() === current.toLowerCase();
+};
+
 const workspaceSlice = createSlice({
   name: 'workspace',
   initialState,
@@ -115,6 +125,12 @@ const workspaceSlice = createSlice({
         state.problemStatus = 'loading';
         state.problemError = null;
         state.currentProblem = null;
+        // New problem => forget the previous problem's run/submit results,
+        // otherwise the old "Accepted" console output leaks onto it.
+        state.runStatus = 'idle';
+        state.runResult = null;
+        state.submitStatus = 'idle';
+        state.submitResult = null;
       })
       .addCase(fetchProblem.fulfilled, (state, action) => {
         state.problemStatus = 'idle';
@@ -130,10 +146,13 @@ const workspaceSlice = createSlice({
         state.runResult = null;
       })
       .addCase(runCode.fulfilled, (state, action) => {
+        // Ignore a late response that belongs to a problem we've already left.
+        if (!isForCurrentProblem(state, action)) return;
         state.runStatus = action.payload.status === 'Accepted' ? 'success' : 'error';
         state.runResult = action.payload;
       })
       .addCase(runCode.rejected, (state, action) => {
+        if (!isForCurrentProblem(state, action)) return;
         state.runStatus = 'error';
         state.runResult = null;
         state.problemError = action.payload;
@@ -144,10 +163,12 @@ const workspaceSlice = createSlice({
         state.submitResult = null;
       })
       .addCase(submitCode.fulfilled, (state, action) => {
+        if (!isForCurrentProblem(state, action)) return;
         state.submitStatus = 'idle';
         state.submitResult = action.payload;
       })
       .addCase(submitCode.rejected, (state, action) => {
+        if (!isForCurrentProblem(state, action)) return;
         state.submitStatus = 'error';
         state.submitResult = null;
         state.problemError = action.payload;

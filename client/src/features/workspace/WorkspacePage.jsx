@@ -60,11 +60,14 @@ import RuleRoundedIcon from '@mui/icons-material/RuleRounded';
 import DataObjectRoundedIcon from '@mui/icons-material/DataObjectRounded';
 import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
+import CloseFullscreenRoundedIcon from '@mui/icons-material/CloseFullscreenRounded';
 import DifficultyChip from '../../components/DifficultyChip';
 import InviteButton from '../room/InviteButton';
 import SolutionsPanel from './community/SolutionsPanel';
 import DiscussionPanel from './community/DiscussionPanel';
 import ShareSolutionDialog from './community/ShareSolutionDialog';
+import SplitHandle from './SplitHandle';
 import { aiApi } from '../../api/aiApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import {
@@ -93,6 +96,23 @@ const AI_QUICK_PROMPTS = [
   'What is the time complexity?',
   'Which edge cases should I test?',
 ];
+
+// Resizable layout (desktop). Sizes are remembered between visits.
+const LAYOUT_KEY = 'jeetcode-workspace-layout';
+const DEFAULT_LEFT = 0.42; // problem pane share of the width
+const DEFAULT_CONSOLE = 0.35; // console share of the editor+console column
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+const loadLayout = () => {
+  try {
+    const raw = JSON.parse(localStorage.getItem(LAYOUT_KEY) || '{}');
+    return {
+      left: clamp(Number(raw.left) || DEFAULT_LEFT, 0.2, 0.75),
+      console: clamp(Number(raw.console) || DEFAULT_CONSOLE, 0.12, 0.8),
+    };
+  } catch {
+    return { left: DEFAULT_LEFT, console: DEFAULT_CONSOLE };
+  }
+};
 
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
 
@@ -216,6 +236,24 @@ function ProblemSkeleton() {
   );
 }
 
+function MaxButton({ active, onClick, label }) {
+  return (
+    <Tooltip title={active ? `Restore ${label}` : `Maximize ${label}`}>
+      <IconButton
+        size="small"
+        aria-label={active ? `Restore ${label}` : `Maximize ${label}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick();
+        }}
+        sx={{ width: 32, height: 32, color: 'text.secondary', flexShrink: 0 }}
+      >
+        {active ? <CloseFullscreenRoundedIcon sx={{ fontSize: 17 }} /> : <OpenInFullRoundedIcon sx={{ fontSize: 17 }} />}
+      </IconButton>
+    </Tooltip>
+  );
+}
+
 /* ---------- page ---------- */
 
 export default function WorkspacePage() {
@@ -264,8 +302,57 @@ export default function WorkspacePage() {
   ]);
   const aiEndRef = useRef(null);
 
+  // Resizable split panes + maximize (desktop only)
+  const [layout, setLayout] = useState(loadLayout);
+  const [maximized, setMaximized] = useState(null); // null | 'problem' | 'editor' | 'console'
+  const rootRef = useRef(null);
+  const editorColRef = useRef(null);
+  const toggleMax = (which) => setMaximized((m) => (m === which ? null : which));
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(LAYOUT_KEY, JSON.stringify(layout));
+    } catch {
+      // storage unavailable — layout just won't be remembered
+    }
+  }, [layout]);
+
+  // Esc leaves a maximized pane.
+  useEffect(() => {
+    if (!maximized) return undefined;
+    const onKey = (e) => e.key === 'Escape' && setMaximized(null);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [maximized]);
+
+  const dragLeft = (x) => {
+    const el = rootRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const pad = parseFloat(getComputedStyle(el).paddingLeft) || 0;
+    const handle = 12;
+    const usable = rect.width - pad * 2 - handle;
+    const f = (x - rect.left - pad - handle / 2) / usable;
+    setLayout((l) => ({ ...l, left: clamp(f, 0.2, 0.75) }));
+  };
+
+  const dragConsole = (_x, y) => {
+    const el = editorColRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const f = (rect.bottom - y) / rect.height;
+    setConsoleOpen(true);
+    setLayout((l) => ({ ...l, console: clamp(f, 0.12, 0.8) }));
+  };
+
   useEffect(() => {
     dispatch(fetchProblem(slug));
+    // New problem => start from a clean workspace (tabs, console, case selection).
+    setDescTab(0);
+    setMountedTabs({ 1: false, 2: false });
+    setConsoleOpen(false);
+    setActiveCase(0);
+    setMaximized(null);
   }, [dispatch, slug]);
 
   // Start in the language chosen in Settings -> Editor (once per page visit;
@@ -420,10 +507,11 @@ export default function WorkspacePage() {
 
   return (
     <Box
+      ref={rootRef}
       sx={{
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
-        gap: { xs: 0, md: 1.5 },
+        gap: 0,
         p: { xs: 0, md: 1.5 },
         height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' },
         overflow: 'hidden',
@@ -476,12 +564,16 @@ export default function WorkspacePage() {
       <Box
         sx={{
           ...panelSx,
-          width: { xs: '100%', md: '42%' },
-          minWidth: { xs: 0, md: 340 },
-          flex: { xs: 1, md: 'none' },
-          display: { xs: mobileView === 'problem' ? 'flex' : 'none', md: 'flex' },
+          width: { xs: '100%', md: maximized === 'problem' ? '100%' : `calc((100% - 12px) * ${layout.left})` },
+          minWidth: 0,
+          flex: { xs: 1, md: maximized === 'problem' ? 1 : 'none' },
+          display: {
+            xs: mobileView === 'problem' ? 'flex' : 'none',
+            md: maximized === 'editor' || maximized === 'console' ? 'none' : 'flex',
+          },
         }}
       >
+        <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, borderBottom: '1px solid', borderColor: 'divider', pr: 1 }}>
         <Tabs
           value={descTab}
           onChange={(e, v) => openTab(v)}
@@ -493,8 +585,8 @@ export default function WorkspacePage() {
             flexShrink: 0,
             px: 1.5,
             py: 1,
-            borderBottom: '1px solid',
-            borderColor: 'divider',
+            flex: 1,
+            minWidth: 0,
             '& .MuiTabs-flexContainer': { gap: 0.5 },
           }}
         >
@@ -517,6 +609,8 @@ export default function WorkspacePage() {
             />
           ))}
         </Tabs>
+        {!isMobile && <MaxButton active={maximized === 'problem'} onClick={() => toggleMax('problem')} label="problem" />}
+        </Stack>
 
         <Box sx={{ overflowY: 'auto', p: { xs: 2, md: 2.5 }, flex: 1 }}>
           {descTab === 0 && (
@@ -583,13 +677,18 @@ export default function WorkspacePage() {
         </Box>
       </Box>
 
+      {/* Drag handle between problem and editor (desktop) */}
+      <Box sx={{ display: { xs: 'none', md: maximized ? 'none' : 'flex' }, alignSelf: 'stretch' }}>
+        <SplitHandle orientation="vertical" label="Resize problem and editor panes" onDrag={dragLeft} onReset={() => setLayout((l) => ({ ...l, left: DEFAULT_LEFT }))} />
+      </Box>
+
       {/* Right pane — editor + runner */}
       <Box
         sx={{
           ...panelSx,
           flex: 1,
           minWidth: 0,
-          display: { xs: mobileView === 'code' ? 'flex' : 'none', md: 'flex' },
+          display: { xs: mobileView === 'code' ? 'flex' : 'none', md: maximized === 'problem' ? 'none' : 'flex' },
         }}
       >
         <Stack
@@ -653,6 +752,7 @@ export default function WorkspacePage() {
                 <ListItemText>Reset to starter</ListItemText>
               </MenuItem>
             </Menu>
+            {!isMobile && <MaxButton active={maximized === 'editor'} onClick={() => toggleMax('editor')} label="editor" />}
 
             {/* Phones: compact icon buttons. md+: labelled buttons. */}
             <Tooltip title="Run">
@@ -724,7 +824,8 @@ export default function WorkspacePage() {
           </Stack>
         )}
 
-        <Box sx={{ flex: 1, minHeight: 0 }}>
+        <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
           <Editor
             height="100%"
             language={activeLanguage === 'cpp' ? 'cpp' : activeLanguage}
@@ -748,11 +849,29 @@ export default function WorkspacePage() {
           />
         </Box>
 
+        {/* Drag handle between editor and console (desktop) */}
+        {!isMobile && consoleOpen && maximized !== 'console' && (
+          <SplitHandle orientation="horizontal" label="Resize editor and console" onDrag={dragConsole} onReset={() => setLayout((l) => ({ ...l, console: DEFAULT_CONSOLE }))} />
+        )}
+
         {/* Console — collapsible test case / result panel */}
-        <Box sx={{ borderTop: '1px solid', borderColor: 'divider', flexShrink: 0, display: 'flex', flexDirection: 'column', maxHeight: consoleOpen ? '45%' : 'auto' }}>
+        <Box
+          sx={{
+            borderTop: '1px solid',
+            borderColor: 'divider',
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: 0,
+            ...(isMobile
+              ? { flexShrink: 0, maxHeight: consoleOpen ? '45%' : 'auto' }
+              : maximized === 'console'
+                ? { flex: '1 1 0' }
+                : { flex: consoleOpen ? `0 0 ${layout.console * 100}%` : '0 0 auto' }),
+          }}
+        >
           <Stack
             direction="row"
-            onClick={() => setConsoleOpen((o) => !o)}
+            onClick={() => (maximized === 'console' ? setMaximized(null) : setConsoleOpen((o) => !o))}
             sx={{ alignItems: 'center', gap: 1, px: 1.5, height: 46, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
           >
             <TerminalRoundedIcon sx={{ fontSize: 20, color: 'text.secondary' }} />
@@ -784,13 +903,23 @@ export default function WorkspacePage() {
               </Button>
             )}
             <Box sx={{ flex: 1 }} />
+            {!isMobile && (
+              <MaxButton
+                active={maximized === 'console'}
+                onClick={() => {
+                  setConsoleOpen(true);
+                  toggleMax('console');
+                }}
+                label="console"
+              />
+            )}
             <ExpandMoreRoundedIcon
               sx={{ color: 'text.secondary', transition: 'transform .2s', transform: consoleOpen ? 'none' : 'rotate(180deg)' }}
             />
           </Stack>
 
           {consoleOpen && (
-            <Box sx={{ overflowY: 'auto', px: 1.5, pb: 1.5 }}>
+            <Box sx={{ overflowY: 'auto', px: 1.5, pb: 1.5, flex: 1, minHeight: 0 }}>
               {isRunning ? (
                 <Box sx={{ py: 1 }}>
                   <LinearProgress sx={{ borderRadius: 999, mb: 1.5 }} />
@@ -841,6 +970,7 @@ export default function WorkspacePage() {
               )}
             </Box>
           )}
+        </Box>
         </Box>
       </Box>
 
