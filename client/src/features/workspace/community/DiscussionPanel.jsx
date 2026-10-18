@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { alpha } from '@mui/material/styles';
 import { Alert, Box, Button, Divider, IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -80,7 +81,13 @@ function ThreadForm({ initial, submitLabel, onSubmit, onCancel }) {
 
 function ThreadPost({ t, onOpen }) {
   return (
-    <Box component="article" sx={{ py: 2 }}>
+    <Box component="article" sx={{
+        p: 2,
+        borderRadius: '20px',
+        border: '1px solid',
+        borderColor: 'divider',
+        bgcolor: (t) => alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.04 : 0.02),
+      }}>
       <AuthorHeader author={t.author} createdAt={t.createdAt} editedAt={t.editedAt} isMine={t.isMine} />
       <Box
         role="button"
@@ -96,7 +103,7 @@ function ThreadPost({ t, onOpen }) {
           </Typography>
         )}
       </Box>
-      <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mt: 1.5 }}>
+      <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5, pt: 1.25, borderTop: '1px solid', borderColor: 'divider' }}>
         <VoteBar targetType="thread" targetId={t._id} score={t.score} myVote={t.myVote} isMine={t.isMine} />
         <ActionButton icon={<ChatBubbleOutlineRoundedIcon />} count={t.commentCount} label="Open comments" onClick={onOpen} />
       </Stack>
@@ -345,7 +352,7 @@ export default function DiscussionPanel({ slug }) {
             text={q ? 'Try different words.' : 'Be the first to ask a question about this problem.'}
           />
         ) : (
-          <Stack divider={<Divider flexItem />}>
+          <Stack spacing={1.5}>
             {items.map((t) => (
               <ThreadPost key={t._id} t={t} onOpen={() => setView({ name: 'detail', id: t._id })} />
             ))}

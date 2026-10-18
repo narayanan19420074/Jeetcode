@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { alpha } from '@mui/material/styles';
 import { Alert, Box, Button, CircularProgress, Divider, IconButton, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
@@ -72,7 +73,13 @@ function SendButton({ onClick, loading, size = 44 }) {
 
 function SolutionPost({ s, onOpen, onSend, sending }) {
   return (
-    <Box component="article" sx={{ py: 2 }}>
+    <Box component="article" sx={{
+        p: 2,
+        borderRadius: '20px',
+        border: '1px solid',
+        borderColor: 'divider',
+        bgcolor: (t) => alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.04 : 0.02),
+      }}>
       <AuthorHeader author={s.author} createdAt={s.createdAt} editedAt={s.editedAt} isMine={s.isMine} right={<AcceptedBadge />} />
 
       <Box
@@ -95,7 +102,7 @@ function SolutionPost({ s, onOpen, onSend, sending }) {
         <Metrics s={s} />
       </Box>
 
-      <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mt: 1.5 }}>
+      <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5, pt: 1.25, borderTop: '1px solid', borderColor: 'divider' }}>
         <VoteBar targetType="solution" targetId={s._id} score={s.score} myVote={s.myVote} allowDown={false} isMine={s.isMine} />
         <ActionButton icon={<ChatBubbleOutlineRoundedIcon />} count={s.commentCount} label="Open comments" onClick={onOpen} />
         <Box sx={{ flex: 1 }} />
@@ -350,7 +357,7 @@ export default function SolutionsPanel({ slug, refreshKey, onShare, onSendToEdit
             text={language ? 'Nothing in this language yet — try another filter.' : 'Solve it, then share your approach with everyone.'}
           />
         ) : (
-          <Stack divider={<Divider flexItem />}>
+          <Stack spacing={1.5}>
             {items.map((s) => (
               <SolutionPost key={s._id} s={s} onOpen={() => setOpenId(s._id)} onSend={() => sendFromList(s)} sending={sendingId === s._id} />
             ))}

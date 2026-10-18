@@ -196,7 +196,7 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
 
   const likeBtn = (
     <Tooltip title={tip || (liked ? 'Unlike' : 'Like')}>
-      <span>
+      <span style={{ display: 'inline-flex' }}>
         <IconButton
           aria-label="Like"
           aria-pressed={liked}
@@ -232,7 +232,7 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
 
   const dislikeBtn = allowDown && (
     <Tooltip title={tip || (disliked ? 'Remove dislike' : 'Dislike')}>
-      <span>
+      <span style={{ display: 'inline-flex' }}>
         <IconButton
           aria-label="Dislike"
           aria-pressed={disliked}
@@ -255,9 +255,22 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
           {dislikeBtn}
         </Stack>
       ) : (
-        <Stack direction="row" alignItems="center" sx={{ gap: 0.25 }}>
-          {likeBtn}
-          {count}
+        <Stack direction="row" alignItems="center" sx={{ gap: 0.75 }}>
+          {/* ♥ + count live together in one tonal pill so it reads as the Like button */}
+          <Stack
+            direction="row"
+            alignItems="center"
+            sx={(t) => ({
+              height: 40,
+              pr: 1.5,
+              borderRadius: 999,
+              bgcolor: liked ? alpha(LIKE_RED, 0.12) : alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.1 : 0.06),
+              transition: 'background-color .15s',
+            })}
+          >
+            {likeBtn}
+            {count}
+          </Stack>
           {dislikeBtn}
         </Stack>
       )}
@@ -278,7 +291,17 @@ export function ActionButton({ icon, count, label, onClick }) {
       aria-label={label}
       onClick={onClick}
       startIcon={icon}
-      sx={{ height: 40, px: 1.25, minWidth: 0, color: 'text.primary', fontWeight: 600, fontSize: '0.95rem', '& .MuiButton-startIcon': { mr: 0.75, '& svg': { fontSize: 25 } } }}
+      sx={(t) => ({
+        height: 40,
+        px: 1.5,
+        minWidth: 0,
+        borderRadius: 999,
+        color: 'text.primary',
+        bgcolor: alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.1 : 0.06),
+        fontWeight: 600,
+        fontSize: '0.95rem',
+        '& .MuiButton-startIcon': { mr: 0.75, '& svg': { fontSize: 24 } },
+      })}
     >
       {count}
     </Button>
