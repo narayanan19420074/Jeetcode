@@ -35,6 +35,8 @@ const initialState = {
   runResult: null, // full Submission doc from the backend
   submitStatus: 'idle',
   submitResult: null,
+  lastResultKind: null, // 'run' | 'submit' — which result the console should show
+  consoleError: null, // server/network error from the last run/submit (no result to show)
 
   aiDrawerOpen: false,
 };
@@ -131,6 +133,8 @@ const workspaceSlice = createSlice({
         state.runResult = null;
         state.submitStatus = 'idle';
         state.submitResult = null;
+        state.lastResultKind = null;
+        state.consoleError = null;
       })
       .addCase(fetchProblem.fulfilled, (state, action) => {
         state.problemStatus = 'idle';
@@ -144,6 +148,8 @@ const workspaceSlice = createSlice({
       .addCase(runCode.pending, (state) => {
         state.runStatus = 'running';
         state.runResult = null;
+        state.lastResultKind = 'run';
+        state.consoleError = null;
       })
       .addCase(runCode.fulfilled, (state, action) => {
         // Ignore a late response that belongs to a problem we've already left.
@@ -155,12 +161,14 @@ const workspaceSlice = createSlice({
         if (!isForCurrentProblem(state, action)) return;
         state.runStatus = 'error';
         state.runResult = null;
-        state.problemError = action.payload;
+        state.consoleError = action.payload;
       })
 
       .addCase(submitCode.pending, (state) => {
         state.submitStatus = 'running';
         state.submitResult = null;
+        state.lastResultKind = 'submit';
+        state.consoleError = null;
       })
       .addCase(submitCode.fulfilled, (state, action) => {
         if (!isForCurrentProblem(state, action)) return;
@@ -171,7 +179,7 @@ const workspaceSlice = createSlice({
         if (!isForCurrentProblem(state, action)) return;
         state.submitStatus = 'error';
         state.submitResult = null;
-        state.problemError = action.payload;
+        state.consoleError = action.payload;
       });
   },
 });

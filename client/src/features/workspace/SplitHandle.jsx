@@ -5,11 +5,15 @@ import { alpha } from '@mui/material/styles';
 /**
  * Draggable divider for resizable split panes (like ChatGPT / Claude / LeetCode).
  *
- * orientation="vertical"   -> a vertical bar, drag left/right (panes side by side)
- * orientation="horizontal" -> a horizontal bar, drag up/down (panes stacked)
+ * It takes NO space in the layout: the two panes sit flush against each other
+ * and this is an invisible hit area laid over the seam. A thin accent line
+ * appears only while hovering / dragging.
  *
- * onDrag(clientX, clientY) fires continuously while dragging; the parent turns
- * the pointer position into a size. Double-click calls onReset.
+ * orientation="vertical"   -> seam between side-by-side panes (drag left/right)
+ * orientation="horizontal" -> seam between stacked panes (drag up/down)
+ *
+ * onDrag(clientX, clientY) fires while dragging; the parent turns the pointer
+ * position into a size. Double-click calls onReset.
  */
 export default function SplitHandle({ orientation = 'vertical', onDrag, onReset, label }) {
   const [active, setActive] = useState(false);
@@ -31,43 +35,47 @@ export default function SplitHandle({ orientation = 'vertical', onDrag, onReset,
 
   return (
     <Box
-      role="separator"
-      aria-orientation={orientation}
-      aria-label={label}
-      title="Drag to resize · double-click to reset"
-      onPointerDown={(e) => {
-        dragging.current = true;
-        setActive(true);
-        e.currentTarget.setPointerCapture(e.pointerId);
-        document.body.style.userSelect = 'none';
-        document.body.style.cursor = isVertical ? 'col-resize' : 'row-resize';
-        e.preventDefault();
-      }}
-      onPointerMove={(e) => dragging.current && onDrag(e.clientX, e.clientY)}
-      onPointerUp={stop}
-      onPointerCancel={stop}
-      onDoubleClick={onReset}
-      sx={(t) => ({
+      sx={{
         flexShrink: 0,
         position: 'relative',
-        touchAction: 'none',
-        cursor: isVertical ? 'col-resize' : 'row-resize',
-        width: isVertical ? 12 : '100%',
-        height: isVertical ? 'auto' : 8,
-        zIndex: 2,
-        // visible grip line, centred in the hit area
-        '&::after': {
-          content: '""',
+        zIndex: 3,
+        ...(isVertical ? { width: 0, alignSelf: 'stretch' } : { height: 0, width: '100%' }),
+      }}
+    >
+      <Box
+        role="separator"
+        aria-orientation={orientation}
+        aria-label={label}
+        title="Drag to resize · double-click to reset"
+        onPointerDown={(e) => {
+          dragging.current = true;
+          setActive(true);
+          e.currentTarget.setPointerCapture(e.pointerId);
+          document.body.style.userSelect = 'none';
+          document.body.style.cursor = isVertical ? 'col-resize' : 'row-resize';
+          e.preventDefault();
+        }}
+        onPointerMove={(e) => dragging.current && onDrag(e.clientX, e.clientY)}
+        onPointerUp={stop}
+        onPointerCancel={stop}
+        onDoubleClick={onReset}
+        sx={(t) => ({
           position: 'absolute',
-          borderRadius: 999,
-          transition: 'background-color .15s, width .15s, height .15s',
-          backgroundColor: active ? t.palette.primary.main : 'transparent',
-          ...(isVertical
-            ? { top: '50%', left: '50%', width: 4, height: 48, transform: 'translate(-50%, -50%)' }
-            : { left: '50%', top: '50%', height: 4, width: 48, transform: 'translate(-50%, -50%)' }),
-        },
-        '&:hover::after': { backgroundColor: active ? t.palette.primary.main : alpha(t.palette.text.primary, 0.3) },
-      })}
-    />
+          touchAction: 'none',
+          cursor: isVertical ? 'col-resize' : 'row-resize',
+          ...(isVertical ? { top: 0, bottom: 0, left: -1, width: 7 } : { left: 0, right: 0, top: -2, height: 6 }),
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            backgroundColor: active ? t.palette.primary.main : 'transparent',
+            transition: 'background-color .15s',
+            ...(isVertical
+              ? { top: 0, bottom: 0, left: 0, width: 2 }
+              : { left: 0, right: 0, top: 1, height: 2 }),
+          },
+          '&:hover::after': { backgroundColor: active ? t.palette.primary.main : alpha(t.palette.primary.main, 0.6) },
+        })}
+      />
+    </Box>
   );
 }

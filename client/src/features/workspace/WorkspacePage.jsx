@@ -276,6 +276,8 @@ export default function WorkspacePage() {
     runResult,
     submitStatus,
     submitResult,
+    lastResultKind,
+    consoleError,
     aiDrawerOpen,
   } = useSelector((s) => s.workspace);
 
@@ -330,9 +332,8 @@ export default function WorkspacePage() {
     if (!el) return;
     const rect = el.getBoundingClientRect();
     const pad = parseFloat(getComputedStyle(el).paddingLeft) || 0;
-    const handle = 12;
-    const usable = rect.width - pad * 2 - handle;
-    const f = (x - rect.left - pad - handle / 2) / usable;
+    const usable = rect.width - pad * 2;
+    const f = (x - rect.left - pad) / usable;
     setLayout((l) => ({ ...l, left: clamp(f, 0.2, 0.75) }));
   };
 
@@ -487,7 +488,13 @@ export default function WorkspacePage() {
     );
   }
 
-  const resultToShow = submitResult || runResult;
+  // Show whichever of Run / Submit the user did LAST (a stale submit result must
+  // not hide a fresh run).
+  const resultToShow =
+    lastResultKind === 'run' ? runResult : lastResultKind === 'submit' ? submitResult : submitResult || runResult;
+  const isSubmitView = lastResultKind === 'submit';
+  const fmtMs = (sec) => (sec == null || Number.isNaN(parseFloat(sec)) ? null : `${Math.round(parseFloat(sec) * 1000)} ms`);
+  const fmtMem = (kb) => (kb ? `${(kb / 1024).toFixed(1)} MB` : null);
   const isRunning = runStatus === 'running' || submitStatus === 'running';
   const isAccepted = resultToShow?.status === 'Accepted';
   const passedPct = resultToShow?.totalCount ? (resultToShow.passedCount / resultToShow.totalCount) * 100 : 0;
@@ -505,17 +512,35 @@ export default function WorkspacePage() {
     minHeight: 0,
   };
 
+  const split = !isMobile && !maximized; // two panes side by side, sharing one divider
+  const hoverScrollbars = (t) => {
+    const thumb = alpha(t.palette.text.primary, 0.35);
+    return {
+      // Scrollbars stay invisible until the pointer is over the scrollable area.
+      '& *': { scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' },
+      '& *:hover': { scrollbarColor: `${thumb} transparent` },
+      '& *::-webkit-scrollbar': { width: 8, height: 8 },
+      '& *::-webkit-scrollbar-track': { background: 'transparent' },
+      '& *::-webkit-scrollbar-thumb': { backgroundColor: 'transparent', borderRadius: 8 },
+      '& *:hover::-webkit-scrollbar-thumb': { backgroundColor: thumb },
+      // Monaco draws its own scrollbars
+      '& .monaco-scrollable-element > .scrollbar > .slider': { opacity: 0, transition: 'opacity .2s' },
+      '& .monaco-editor:hover .monaco-scrollable-element > .scrollbar > .slider': { opacity: 1 },
+    };
+  };
+
   return (
     <Box
       ref={rootRef}
-      sx={{
+      sx={(t) => ({
+        ...hoverScrollbars(t),
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
         gap: 0,
         p: { xs: 0, md: 1.5 },
         height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' },
         overflow: 'hidden',
-      }}
+      })}
     >
       {isMobile && (
         <ToggleButtonGroup
@@ -564,7 +589,8 @@ export default function WorkspacePage() {
       <Box
         sx={{
           ...panelSx,
-          width: { xs: '100%', md: maximized === 'problem' ? '100%' : `calc((100% - 12px) * ${layout.left})` },
+          ...(split ? { borderRadius: { xs: 0, md: '20px 0 0 20px' }, borderRight: { md: 'none' } } : {}),
+          width: { xs: '100%', md: maximized === 'problem' ? '100%' : `${layout.left * 100}%` },
           minWidth: 0,
           flex: { xs: 1, md: maximized === 'problem' ? 1 : 'none' },
           display: {
@@ -686,6 +712,7 @@ export default function WorkspacePage() {
       <Box
         sx={{
           ...panelSx,
+          ...(split ? { borderRadius: { xs: 0, md: '0 20px 20px 0' } } : {}),
           flex: 1,
           minWidth: 0,
           display: { xs: mobileView === 'code' ? 'flex' : 'none', md: maximized === 'problem' ? 'none' : 'flex' },
@@ -859,6 +886,7 @@ export default function WorkspacePage() {
           sx={{
             borderTop: '1px solid',
             borderColor: 'divider',
+            bgcolor: (t) => (t.palette.mode === 'dark' ? alpha('#000', 0.28) : alpha(t.palette.primary.main, 0.045)),
             display: 'flex',
             flexDirection: 'column',
             minHeight: 0,
@@ -889,7 +917,7 @@ export default function WorkspacePage() {
                 />
               )
             )}
-            {!isRunning && submitResult?.status === 'Accepted' && submitResult._id && (
+            {!isRunning && isSubmitView && submitResult?.status === 'Accepted' && submitResult._id && (
               <Button
                 size="small"
                 variant="outlined"
@@ -929,6 +957,45 @@ export default function WorkspacePage() {
                 </Box>
               ) : testResults.length > 0 ? (
                 <>
+                  {/* Verdict summary */}
+                  <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.25, mb: 1.25 }}>
+                    <Typography sx={{ fontWeight: 800, fontSize: '1.1rem', color: isAccepted ? 'success.main' : 'error.main' }}>
+                      {resultToShow.status}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {isSubmitView ? 'Submission' : 'Sample run'} · {resultToShow.passedCount}/{resultToShow.totalCount} test cases passed
+                    </Typography>
+                    {resultToShow.runtimeMs != null && (
+                      <Typography variant="caption" color="text.secondary">
+                        Runtime {resultToShow.runtimeMs} ms
+                      </Typography>
+                    )}
+                    {fmtMem(resultToShow.memoryKb) && (
+                      <Typography variant="caption" color="text.secondary">
+                        Memory {fmtMem(resultToShow.memoryKb)}
+                      </Typography>
+                    )}
+                  </Stack>
+
+                  {resultToShow.status === 'Compilation Error' && selectedCase?.stderr && (
+                    <Box
+                      sx={(t) => ({
+                        ...mono,
+                        fontSize: '0.8rem',
+                        lineHeight: 1.6,
+                        p: 1.5,
+                        mb: 1.5,
+                        borderRadius: '12px',
+                        whiteSpace: 'pre-wrap',
+                        wordBreak: 'break-word',
+                        color: 'error.main',
+                        bgcolor: alpha(t.palette.error.main, 0.1),
+                      })}
+                    >
+                      {selectedCase.stderr}
+                    </Box>
+                  )}
+
                   <LinearProgress
                     variant="determinate"
                     value={passedPct}
@@ -952,16 +1019,34 @@ export default function WorkspacePage() {
                   {selectedCase && (
                     <Box sx={{ borderRadius: '14px', border: '1px solid', borderColor: 'divider', p: 1.5 }}>
                       <ExampleRow icon={<LoginRoundedIcon />} label="Input" value={selectedCase.stdin} />
-                      <ExampleRow icon={<CheckCircleRoundedIcon />} label="Expected" value={selectedCase.expectedOutput} />
                       <ExampleRow icon={<LogoutRoundedIcon />} label="Your output" value={selectedCase.actualOutput || '—'} />
-                      {selectedCase.stderr && (
+                      <ExampleRow icon={<CheckCircleRoundedIcon />} label="Expected" value={selectedCase.expectedOutput} />
+                      {selectedCase.stderr && resultToShow.status !== 'Compilation Error' && (
                         <Box sx={{ mt: 1.25 }}>
                           <ExampleRow icon={<CancelRoundedIcon />} label="Error" value={selectedCase.stderr} />
                         </Box>
                       )}
+                      {(fmtMs(selectedCase.time) || selectedCase.memory) && (
+                        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.25 }}>
+                          {[fmtMs(selectedCase.time) && `Time ${fmtMs(selectedCase.time)}`, fmtMem(selectedCase.memory) && `Memory ${fmtMem(selectedCase.memory)}`]
+                            .filter(Boolean)
+                            .join(' · ')}
+                        </Typography>
+                      )}
                     </Box>
                   )}
                 </>
+              ) : consoleError ? (
+                <Box
+                  sx={(t) => ({ p: 1.5, borderRadius: '12px', color: 'error.main', bgcolor: alpha(t.palette.error.main, 0.1) })}
+                >
+                  <Typography variant="body2" sx={{ fontWeight: 700, mb: 0.25 }}>
+                    {isSubmitView ? 'Submit failed' : 'Run failed'}
+                  </Typography>
+                  <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+                    {consoleError}
+                  </Typography>
+                </Box>
               ) : (
                 <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
                   <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />
@@ -1022,7 +1107,16 @@ export default function WorkspacePage() {
             </IconButton>
           </Stack>
 
-          <Box sx={{ flex: 1, overflowY: 'auto', p: 2 }}>
+          <Box
+            sx={(t) => ({
+              flex: 1,
+              overflowY: 'auto',
+              p: 2,
+              scrollbarWidth: 'thin',
+              scrollbarColor: 'transparent transparent',
+              '&:hover': { scrollbarColor: `${alpha(t.palette.text.primary, 0.35)} transparent` },
+            })}
+          >
             <Stack sx={{ gap: 1.5 }}>
               {aiMessages.map((m, i) => (
                 <Box
