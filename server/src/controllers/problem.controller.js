@@ -26,6 +26,14 @@ const ACCEPTANCE_COMPUTED = {
   ],
 };
 
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const searchWords = (search) =>
+  String(search || '')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 6);
+
 // Shared by listProblems and getRandomProblem — builds the base $match
 // filter (difficulty / tags / companies / text search / solved-status),
 // fetching the user's solved list only when a status filter or the
@@ -38,7 +46,13 @@ async function buildProblemFilter({ difficulty, tag, company, search, status, us
   if (difficulty) filter.difficulty = difficulty;
   if (tag) filter.tags = { $in: Array.isArray(tag) ? tag : [tag] };
   if (company) filter.companies = { $in: Array.isArray(company) ? company : [company] };
-  if (search) filter.$text = { $search: search };
+  // Partial, case-insensitive match on title or tags, so results appear while
+  // typing ("so" finds "Solar Grid…", "Two Sum"). MongoDB $text only matched
+  // whole words, which is why short/partial searches returned nothing.
+  const words = searchWords(search);
+  if (words.length > 0) {
+    filter.$and = words.map((w) => ({ $or: [{ title: new RegExp(escapeRegex(w), 'i') }, { tags: new RegExp(escapeRegex(w), 'i') }] }));
+  }
 
   // Two shapes on purpose: Problem.aggregate() does NOT cast strings to
   // ObjectId inside $match, so the status filter must use the real ObjectIds
@@ -101,13 +115,24 @@ export const listProblems = asyncHandler(async (req, res) => {
       $addFields: {
         difficultyRank: DIFFICULTY_RANK,
         acceptanceRateComputed: ACCEPTANCE_COMPUTED,
-        ...(search ? { textScore: { $meta: 'textScore' } } : {}),
+        // Search relevance: title starts with the query (0) > title contains it (1) > tag-only match (2).
+        ...(search
+          ? {
+              searchRank: {
+                $cond: [
+                  { $regexMatch: { input: '$title', regex: `^${escapeRegex(String(search).trim())}`, options: 'i' } },
+                  0,
+                  { $cond: [{ $regexMatch: { input: '$title', regex: escapeRegex(String(search).trim()), options: 'i' } }, 1, 2] },
+                ],
+              },
+            }
+          : {}),
       },
     },
   ];
 
   if (search) {
-    pipeline.push({ $sort: { textScore: -1 } });
+    pipeline.push({ $sort: { searchRank: 1, createdAt: -1 } });
   } else if (sort === 'oldest') {
     pipeline.push({ $sort: { createdAt: 1 } });
   } else if (sort === 'difficulty-asc') {
