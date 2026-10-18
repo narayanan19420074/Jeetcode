@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Box, Stack, Typography, TextField, IconButton } from '@mui/material';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
+import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
+import { alpha } from '@mui/material/styles';
 
 export default function ChatPanel({ messages, myId, onSend, disabled }) {
   const [text, setText] = useState('');
@@ -20,9 +22,15 @@ export default function ChatPanel({ messages, myId, onSend, disabled }) {
     <Box sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
       <Box sx={{ flex: 1, overflow: 'auto', p: 1.5 }}>
         {messages.length === 0 && (
-          <Typography variant="caption" color="text.secondary">
-            Chat inga — doubts, links ellam pesalaam.
-          </Typography>
+          <Stack sx={{ alignItems: 'center', textAlign: 'center', gap: 1, py: 5, px: 2 }}>
+            <Box sx={(t) => ({ width: 52, height: 52, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.12), color: 'primary.main' })}>
+              <ForumOutlinedIcon />
+            </Box>
+            <Typography sx={{ fontWeight: 700 }}>No messages yet</Typography>
+            <Typography variant="body2" color="text.secondary">
+              Share doubts, links or ideas with your partner here.
+            </Typography>
+          </Stack>
         )}
         {messages.map((m) => {
           const mine = m.from === myId;

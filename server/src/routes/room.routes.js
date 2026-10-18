@@ -17,7 +17,7 @@ router.post('/', attachUserIfPresent, asyncHandler(async (req, res) => {
   const body = req.body || {};
 
   if (body.kind === 'aptitude') {
-    if (!req.user) throw ApiError.unauthorized('Login pannunga — aptitude room create panna account venum');
+    if (!req.user) throw ApiError.unauthorized('Please sign in — an account is required to create an aptitude room.');
     const slug = str(body.patternSlug, 100);
     const pattern = slug ? await AptitudePattern.findOne({ slug, isPublished: true }) : null;
     if (!pattern) throw ApiError.notFound('Pattern not found');

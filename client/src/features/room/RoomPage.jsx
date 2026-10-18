@@ -5,7 +5,7 @@ import Editor from '@monaco-editor/react';
 import { useSnackbar } from 'notistack';
 import {
   Avatar, Badge, Box, Stack, Typography, Button, IconButton, Select, MenuItem, Chip, TextField, Tooltip, Collapse, Drawer, Divider,
-  Dialog, DialogTitle, DialogContent, DialogActions, CircularProgress, ListItemIcon, ListItemText, Menu, useMediaQuery, useTheme,
+  Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, CircularProgress, LinearProgress, InputAdornment, alpha, ListItemIcon, ListItemText, Menu, useMediaQuery, useTheme,
 } from '@mui/material';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
@@ -17,6 +17,12 @@ import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
+import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
+import KeyboardRoundedIcon from '@mui/icons-material/KeyboardRounded';
+import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 import { problemsApi } from '../../api/problemsApi';
 import { setLanguage, updateCode } from '../workspace/workspaceSlice';
 import { bindMonaco } from './monacoYjs';
@@ -114,8 +120,9 @@ export default function RoomPage() {
     };
     return (
       <Dialog open fullWidth maxWidth="xs">
-        <DialogTitle>Room la join aaga un peyar?</DialogTitle>
+        <DialogTitle sx={{ fontWeight: 800 }}>Join the room</DialogTitle>
         <DialogContent>
+          <DialogContentText sx={{ mb: 1 }}>Enter a display name so your partner knows who you are.</DialogContentText>
           <TextField autoFocus fullWidth margin="dense" label="Your name" value={nameDraft} onChange={(e) => setNameDraft(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && go()} />
         </DialogContent>
         <DialogActions>
@@ -298,22 +305,133 @@ export default function RoomPage() {
             />
           </Box>
 
-          <Box sx={{ height: { xs: 150, md: 200 }, borderTop: '1px solid', borderColor: 'divider', display: 'flex', flexDirection: 'column', pb: 'env(safe-area-inset-bottom)' }}>
-            <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 1.5, pt: 0.75 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>Output</Typography>
+          <Box
+            sx={(t) => ({
+              height: { xs: 200, md: 240 },
+              borderTop: '1px solid',
+              borderColor: 'divider',
+              display: 'flex',
+              flexDirection: 'column',
+              pb: 'env(safe-area-inset-bottom)',
+              bgcolor: t.palette.mode === 'dark' ? alpha('#000', 0.28) : alpha(t.palette.primary.main, 0.045),
+            })}
+          >
+            <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 1.5, height: 46, flexShrink: 0 }}>
+              <TerminalRoundedIcon sx={{ fontSize: 20, color: 'text.secondary' }} />
+              <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Output</Typography>
+              {room.running ? (
+                <Chip size="small" color="primary" variant="outlined" label="Running…" />
+              ) : (
+                room.runResult && (
+                  <Chip
+                    size="small"
+                    icon={room.runResult.ok ? <CheckCircleRoundedIcon /> : <CancelRoundedIcon />}
+                    label={room.runResult.status}
+                    color={room.runResult.ok ? 'success' : 'error'}
+                    sx={{ fontWeight: 700 }}
+                  />
+                )
+              )}
+              {room.runResult && !room.running && room.runResult.by && (
+                <Typography variant="caption" color="text.secondary" noWrap sx={{ display: { xs: 'none', sm: 'block' } }}>
+                  Run by {room.runResult.by}
+                </Typography>
+              )}
+              <Box sx={{ flex: 1 }} />
               <TextField
                 size="small"
-                placeholder="stdin (optional)"
+                placeholder="Input (stdin)"
                 value={stdin}
                 onChange={(e) => setStdin(e.target.value)}
-                slotProps={{ htmlInput: { 'aria-label': 'stdin' } }}
-                sx={{ flex: 1, '& .MuiOutlinedInput-root': { height: 32, fontSize: '0.8rem' } }}
+                slotProps={{
+                  htmlInput: { 'aria-label': 'stdin' },
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <KeyboardRoundedIcon sx={{ fontSize: 18 }} />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
+                sx={{ width: { xs: 150, sm: 240 }, '& .MuiOutlinedInput-root': { height: 34, fontSize: '0.8rem', borderRadius: 999, bgcolor: 'background.paper' } }}
               />
             </Stack>
-            <Box component="pre" sx={{ m: 0, px: 1.5, py: 1, flex: 1, overflow: 'auto', fontFamily: 'monospace', fontSize: 13, whiteSpace: 'pre-wrap' }}>
-              {room.runResult
-                ? `${room.runResult.stdout}${room.runResult.stderr ? `\n${room.runResult.stderr}` : ''}`.trim() || '(no output)'
-                : 'Run pannina output rendu perukkum theriyum.'}
+
+            <Box sx={{ flex: 1, minHeight: 0, overflow: 'auto', px: 1.5, pb: 1.5 }}>
+              {room.running ? (
+                <Box sx={{ py: 1 }}>
+                  <LinearProgress sx={{ borderRadius: 999, mb: 1.5 }} />
+                  <Typography variant="body2" color="text.secondary">Running the code…</Typography>
+                </Box>
+              ) : !room.runResult ? (
+                <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
+                  <PlayCircleOutlineRoundedIcon sx={{ fontSize: 22 }} />
+                  <Typography variant="body2">Run the code to see the output here. Both of you will see the result.</Typography>
+                </Stack>
+              ) : (
+                <Stack spacing={1.25}>
+                  {(() => {
+                    const out = (room.runResult.stdout || '').trim();
+                    const err = (room.runResult.stderr || '').trim();
+                    return (
+                      <>
+                        {(out || !err) && (
+                          <Box>
+                            <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mb: 0.5, color: 'text.secondary' }}>
+                              <LogoutRoundedIcon sx={{ fontSize: 16 }} />
+                              <Typography variant="caption" sx={{ fontWeight: 700 }}>Output</Typography>
+                            </Stack>
+                            <Box
+                              component="pre"
+                              sx={(t) => ({
+                                m: 0,
+                                px: 1.5,
+                                py: 1,
+                                borderRadius: '10px',
+                                fontFamily: '"JetBrains Mono", "Fira Code", monospace',
+                                fontSize: 13,
+                                lineHeight: 1.6,
+                                whiteSpace: 'pre-wrap',
+                                wordBreak: 'break-word',
+                                bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.1 : 0.07),
+                                color: out ? 'text.primary' : 'text.disabled',
+                              })}
+                            >
+                              {out || '(no output)'}
+                            </Box>
+                          </Box>
+                        )}
+                        {err && (
+                          <Box>
+                            <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mb: 0.5, color: 'error.main' }}>
+                              <ErrorOutlineRoundedIcon sx={{ fontSize: 16 }} />
+                              <Typography variant="caption" sx={{ fontWeight: 700 }}>Error</Typography>
+                            </Stack>
+                            <Box
+                              component="pre"
+                              sx={(t) => ({
+                                m: 0,
+                                px: 1.5,
+                                py: 1,
+                                borderRadius: '10px',
+                                fontFamily: '"JetBrains Mono", "Fira Code", monospace',
+                                fontSize: 13,
+                                lineHeight: 1.6,
+                                whiteSpace: 'pre-wrap',
+                                wordBreak: 'break-word',
+                                color: 'error.main',
+                                bgcolor: alpha(t.palette.error.main, 0.1),
+                              })}
+                            >
+                              {err}
+                            </Box>
+                          </Box>
+                        )}
+                      </>
+                    );
+                  })()}
+                </Stack>
+              )}
             </Box>
           </Box>
         </Box>

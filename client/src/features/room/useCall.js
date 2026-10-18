@@ -117,7 +117,7 @@ export function useCall(socket) {
     const start = async () => {
       setError(null);
       if (!navigator.mediaDevices?.getUserMedia) {
-        setError('Camera/mic ku HTTPS venum (localhost or deployed https link la mattum work aagum).');
+        setError('Camera and microphone need a secure (HTTPS) connection. They work on localhost or a deployed https link.');
         return;
       }
       try {
@@ -133,7 +133,7 @@ export function useCall(socket) {
         setCamOn(stream.getVideoTracks().length > 0);
         addLocalTracks(ensurePC());
       } catch (e) {
-        setError(`Mic/camera access kedaikala: ${e.message}`);
+        setError(`Could not access your microphone or camera: ${e.message}`);
       }
     };
 
