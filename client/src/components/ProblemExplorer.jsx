@@ -290,7 +290,7 @@ function ProgressSummary({ progress }) {
   const solvedAll = DIFFICULTIES.reduce((s, d) => s + (progress.solved?.[d] || 0), 0);
 
   return (
-    <Paper variant="outlined" sx={{ ...sx, borderRadius: 3, px: 2, py: 1.5 }}>
+    <Paper variant="outlined" sx={{ ...sx, borderRadius: { xs: 0, sm: 3 }, border: { xs: 'none', sm: '1px solid' }, borderColor: 'divider', px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1.5 }, bgcolor: { xs: 'transparent', sm: 'background.paper' } }}>
       <Stack direction="row" sx={{ alignItems: 'baseline', gap: 0.75, mb: 1 }}>
         <Typography sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1 }}>{solvedAll}</Typography>
         <Typography variant="body2" color="text.secondary">
@@ -427,6 +427,67 @@ function ProblemRow({ p, index }) {
       <Typography variant="body2" sx={{ fontWeight: 600, color: DIFF_COLOR[p.difficulty] || 'text.secondary', textAlign: { xs: 'right', sm: 'left' } }}>
         {p.difficulty}
       </Typography>
+    </Box>
+  );
+}
+
+// Phone row, LeetCode-app style: "12. Title" on top, coloured difficulty + acceptance
+// underneath, green tick on the right for solved problems. Flat list with hairlines.
+function ProblemRowMobile({ p, index }) {
+  const accept = `${Number(p.acceptanceRate ?? 0).toFixed(1)}%`;
+  return (
+    <Box
+      component={RouterLink}
+      to={`/workspace/${p.slug}`}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1.5,
+        px: 2,
+        py: 1.5,
+        minHeight: 64,
+        color: 'inherit',
+        textDecoration: 'none',
+        borderBottom: '1px solid',
+        borderColor: 'divider',
+        '&:active': { bgcolor: 'action.selected' },
+      }}
+    >
+      <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Typography
+          sx={{
+            fontWeight: 600,
+            fontSize: '0.97rem',
+            lineHeight: 1.35,
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            wordBreak: 'break-word',
+          }}
+        >
+          {index}. {p.title}
+        </Typography>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, mt: 0.5 }}>
+          <Typography sx={{ fontWeight: 700, fontSize: '0.8rem', color: DIFF_COLOR[p.difficulty] || 'text.secondary' }}>{p.difficulty}</Typography>
+          <Typography sx={{ fontSize: '0.8rem', color: 'text.secondary' }}>{accept}</Typography>
+          {p.locked && <LockRoundedIcon sx={{ fontSize: 14, color: 'text.disabled' }} />}
+        </Stack>
+      </Box>
+      {p.solvedByMe && <CheckCircleRoundedIcon sx={{ fontSize: 22, color: 'success.main', flexShrink: 0 }} />}
+    </Box>
+  );
+}
+
+function SkeletonRowsMobile({ count }) {
+  return (
+    <Box>
+      {Array.from({ length: count }).map((_, i) => (
+        <Box key={i} sx={{ px: 2, py: 1.5, minHeight: 64, borderBottom: '1px solid', borderColor: 'divider' }}>
+          <Skeleton variant="text" width={`${50 + ((i * 17) % 40)}%`} />
+          <Skeleton variant="text" width="30%" height={16} />
+        </Box>
+      ))}
     </Box>
   );
 }
@@ -593,15 +654,24 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
       {/* Header: title + progress */}
       <Stack
         direction={{ xs: 'column', md: 'row' }}
-        sx={{ alignItems: { xs: 'stretch', md: 'flex-end' }, justifyContent: 'space-between', gap: 2, mb: 2 }}
+        sx={{ alignItems: { xs: 'stretch', md: 'flex-end' }, justifyContent: 'space-between', gap: { xs: 1.5, md: 2 }, mb: { xs: 1.5, sm: 2 }, px: { xs: 2, sm: 0 } }}
       >
-        <Typography variant="h5" sx={{ fontWeight: 800 }}>
+        <Typography variant="h5" sx={{ fontWeight: 800, fontSize: { xs: '1.35rem', sm: '1.5rem' } }}>
           {title}
         </Typography>
         <ProgressSummary progress={progress} />
       </Stack>
 
-      <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
+      <Paper
+        variant="outlined"
+        sx={{
+          borderRadius: { xs: 0, sm: 3 },
+          overflow: 'hidden',
+          borderLeft: { xs: 'none', sm: '1px solid' },
+          borderRight: { xs: 'none', sm: '1px solid' },
+          borderColor: 'divider',
+        }}
+      >
         {/* Toolbar */}
         <Box sx={{ p: PAD_X, pb: { xs: 1.5, sm: 2 } }}>
           <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
@@ -611,7 +681,15 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
               placeholder="Search problems"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              sx={{ flex: 1, minWidth: 0 }}
+              sx={{
+                flex: 1,
+                minWidth: 0,
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: { xs: 999, sm: 1 },
+                  bgcolor: { xs: (t) => alpha(t.palette.text.primary, 0.06), sm: 'transparent' },
+                },
+                '& .MuiOutlinedInput-notchedOutline': { borderColor: { xs: 'transparent', sm: 'divider' } },
+              }}
               slotProps={{
                 input: {
                   startAdornment: (
@@ -639,7 +717,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
               startIcon={<TuneRoundedIcon fontSize="small" />}
               sx={{ display: { xs: 'inline-flex', sm: 'none' }, flexShrink: 0, height: 40, minWidth: 0, textTransform: 'none', borderColor: 'divider' }}
             >
-              {activeCount > 0 ? activeCount : 'Filters'}
+              {activeCount > 0 ? activeCount : 'Filter'}
             </Button>
 
             {/* Random */}
@@ -665,6 +743,69 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
                 </IconButton>
               </span>
             </Tooltip>
+          </Stack>
+
+          {/* Phones: LeetCode-style quick filter chips */}
+          <Stack
+            direction="row"
+            sx={{
+              display: { xs: 'flex', sm: 'none' },
+              gap: 0.75,
+              mt: 1.25,
+              mx: -2,
+              px: 2,
+              overflowX: 'auto',
+              scrollbarWidth: 'none',
+              '&::-webkit-scrollbar': { display: 'none' },
+            }}
+          >
+            {DIFFICULTIES.map((d) => {
+              const on = filters.difficulty === d;
+              const pal = { Easy: 'success', Medium: 'warning', Hard: 'error' }[d];
+              return (
+                <Chip
+                  key={d}
+                  clickable
+                  label={d}
+                  onClick={() => patch({ difficulty: on ? 'All' : d })}
+                  variant="outlined"
+                  sx={(t) => ({
+                    flexShrink: 0,
+                    fontWeight: 700,
+                    color: t.palette[pal].main,
+                    borderColor: on ? t.palette[pal].main : 'divider',
+                    bgcolor: on ? alpha(t.palette[pal].main, 0.14) : 'transparent',
+                  })}
+                />
+              );
+            })}
+            {[
+              { value: 'solved', label: 'Solved' },
+              { value: 'unsolved', label: 'Todo' },
+            ].map((o) => {
+              const on = filters.status === o.value;
+              return (
+                <Chip
+                  key={o.value}
+                  clickable
+                  label={o.label}
+                  onClick={() => patch({ status: on ? 'All' : o.value })}
+                  variant={on ? 'filled' : 'outlined'}
+                  color={on ? 'primary' : 'default'}
+                  sx={{ flexShrink: 0, fontWeight: 700 }}
+                />
+              );
+            })}
+            <Chip
+              clickable
+              label={filters.tags.length > 0 ? `Topics · ${filters.tags.length}` : 'Topics'}
+              onClick={() => setDrawerOpen(true)}
+              deleteIcon={<KeyboardArrowDownRoundedIcon />}
+              onDelete={() => setDrawerOpen(true)}
+              variant={filters.tags.length > 0 ? 'filled' : 'outlined'}
+              color={filters.tags.length > 0 ? 'primary' : 'default'}
+              sx={{ flexShrink: 0, fontWeight: 700 }}
+            />
           </Stack>
 
           {/* Tablet / desktop: dropdown filters */}
@@ -696,17 +837,6 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
           {/* Active filter chips */}
           {activeCount > 0 && (
             <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, alignItems: 'center', mt: 1.5 }}>
-              {filters.difficulty !== 'All' && (
-                <Chip size="small" label={filters.difficulty} onDelete={() => patch({ difficulty: 'All' })} sx={{ display: { xs: 'inline-flex', sm: 'none' } }} />
-              )}
-              {filters.status !== 'All' && (
-                <Chip
-                  size="small"
-                  label={STATUS_OPTIONS.find((s) => s.value === filters.status)?.label}
-                  onDelete={() => patch({ status: 'All' })}
-                  sx={{ display: { xs: 'inline-flex', sm: 'none' } }}
-                />
-              )}
               {filters.tags.map((t) => (
                 <Chip key={`t-${t}`} size="small" color="primary" variant="outlined" label={t} onDelete={() => toggleTag(t)} />
               ))}
@@ -743,7 +873,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
           {refetching && <LinearProgress sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, zIndex: 1 }} />}
 
           {loading ? (
-            <SkeletonRows count={Math.min(pageSize, 10)} />
+            isSmUp ? <SkeletonRows count={Math.min(pageSize, 10)} /> : <SkeletonRowsMobile count={Math.min(pageSize, 10)} />
           ) : error && problems.length === 0 ? (
             <Box sx={{ py: 6, px: 2, textAlign: 'center' }}>
               <Typography variant="body1" sx={{ fontWeight: 600, mb: 0.5 }}>
@@ -773,9 +903,9 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
             </Box>
           ) : (
             <Box sx={{ opacity: refetching ? 0.55 : 1, transition: 'opacity 0.15s ease' }}>
-              {problems.map((p, i) => (
-                <ProblemRow key={p._id} p={p} index={offset + i + 1} />
-              ))}
+              {problems.map((p, i) =>
+                isSmUp ? <ProblemRow key={p._id} p={p} index={offset + i + 1} /> : <ProblemRowMobile key={p._id} p={p} index={offset + i + 1} />
+              )}
             </Box>
           )}
         </Box>

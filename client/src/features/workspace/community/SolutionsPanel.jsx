@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Alert, Box, Button, CircularProgress, Divider, IconButton, Stack, TextField, Tooltip, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import SpeedRoundedIcon from '@mui/icons-material/SpeedRounded';
 import MemoryRoundedIcon from '@mui/icons-material/MemoryRounded';
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
@@ -61,9 +61,9 @@ function SendButton({ onClick, loading, size = 44 }) {
           aria-label="Send to editor"
           onClick={onClick}
           disabled={loading}
-          sx={(t) => ({ width: size, height: size, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12), '&:hover': { bgcolor: alpha(t.palette.primary.main, 0.2) } })}
+          sx={{ width: size, height: size, color: 'text.primary' }}
         >
-          {loading ? <CircularProgress size={20} /> : <SendRoundedIcon />}
+          {loading ? <CircularProgress size={20} /> : <SendOutlinedIcon sx={{ fontSize: 24, transform: 'rotate(-20deg) translate(2px, -1px)' }} />}
         </IconButton>
       </span>
     </Tooltip>

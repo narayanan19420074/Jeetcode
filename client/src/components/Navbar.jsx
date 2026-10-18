@@ -38,6 +38,7 @@ import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
+import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
@@ -75,9 +76,11 @@ const EXPLORE_LINKS = [
 
 const isActivePath = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
-// Sections of the dashboard, reachable straight from the phone menu.
+// Phone menu = the dashboard sections (same list as the desktop dashboard sidebar).
+// Contest is its own page (/contest); the rest are views inside /dashboard.
 const DASH_SECTIONS = [
   { to: '/dashboard', label: 'Library', icon: LibraryBooksRoundedIcon, view: null },
+  { to: '/contest', label: 'Contest', icon: MilitaryTechRoundedIcon, view: undefined },
   { to: '/dashboard?view=quests', label: 'Quests', icon: EmojiEventsRoundedIcon, view: 'quests' },
   { to: '/dashboard?view=explore', label: 'Explore', icon: ExploreRoundedIcon, view: 'explore' },
   { to: '/dashboard?view=plans', label: 'Study Plan', icon: SchoolRoundedIcon, view: 'plans' },
@@ -113,13 +116,13 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
   );
 }
 
-function MenuHeading({ children }) {
-  return (
-    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, mb: 0.5, fontWeight: 800, letterSpacing: 0.6 }}>
-      {children}
-    </Typography>
-  );
-}
+const footerIconSx = (t) => ({
+  width: 48,
+  height: 48,
+  color: 'text.secondary',
+  bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.14 : 0.08),
+  '&:hover': { bgcolor: alpha(t.palette.primary.main, 0.18), color: 'primary.main' },
+});
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -409,16 +412,6 @@ export default function Navbar() {
             </Box>
           )}
 
-          <MenuHeading>MENU</MenuHeading>
-          <Box sx={{ display: 'grid', gap: 0.25, mb: 1.5 }}>
-            {[...PRIMARY_LINKS, ...EXPLORE_LINKS].map((link) => (
-              <MenuRow key={link.to} {...link} active={isActivePath(pathname, link.to)} onNavigate={() => setMobileOpen(false)} />
-            ))}
-          </Box>
-
-          <Divider sx={{ my: 1.5 }} />
-
-          <MenuHeading>DASHBOARD</MenuHeading>
           <Box sx={{ display: 'grid', gap: 0.25 }}>
             {DASH_SECTIONS.map(({ to, label, icon, view }) => (
               <MenuRow
@@ -426,7 +419,11 @@ export default function Navbar() {
                 to={to}
                 label={label}
                 icon={icon}
-                active={pathname === '/dashboard' && (dashView || null) === view}
+                active={
+                  view === undefined
+                    ? isActivePath(pathname, to)
+                    : pathname === '/dashboard' && (dashView || null) === view
+                }
                 onNavigate={() => setMobileOpen(false)}
               />
             ))}
@@ -436,18 +433,24 @@ export default function Navbar() {
         <Divider />
         <Box sx={{ p: 2, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
           {isAuthenticated ? (
-            <Box sx={{ display: 'grid', gridTemplateColumns: user?.isPro ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', gap: 1 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
               {!user?.isPro && (
-                <Button onClick={handleActivateLicenseClick} color="inherit" variant="outlined" startIcon={<VpnKeyRoundedIcon />} sx={{ fontWeight: 700, borderRadius: '12px', textTransform: 'none', px: 1 }}>
-                  License
-                </Button>
+                <Tooltip title="Activate license">
+                  <IconButton onClick={handleActivateLicenseClick} aria-label="Activate license" sx={footerIconSx}>
+                    <VpnKeyRoundedIcon />
+                  </IconButton>
+                </Tooltip>
               )}
-              <Button onClick={handleSettingsClick} color="inherit" variant="outlined" startIcon={<SettingsRoundedIcon />} sx={{ fontWeight: 700, borderRadius: '12px', textTransform: 'none', px: 1 }}>
-                Settings
-              </Button>
-              <Button onClick={handleLogout} color="inherit" variant="outlined" startIcon={<LogoutRoundedIcon />} sx={{ fontWeight: 700, borderRadius: '12px', textTransform: 'none', px: 1 }}>
-                Log out
-              </Button>
+              <Tooltip title="Settings">
+                <IconButton onClick={handleSettingsClick} aria-label="Settings" sx={footerIconSx}>
+                  <SettingsRoundedIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Log out">
+                <IconButton onClick={handleLogout} aria-label="Log out" sx={footerIconSx}>
+                  <LogoutRoundedIcon />
+                </IconButton>
+              </Tooltip>
             </Box>
           ) : (
             <>

@@ -24,9 +24,11 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import { alpha } from '@mui/material/styles';
-import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
-import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
+import { alpha, keyframes } from '@mui/material/styles';
+import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import HeartBrokenOutlinedIcon from '@mui/icons-material/HeartBrokenOutlined';
+import HeartBrokenRoundedIcon from '@mui/icons-material/HeartBrokenRounded';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
@@ -141,9 +143,18 @@ export function AcceptedBadge() {
 
 // ------------------------------------------------------------------- votes
 
-// Optimistic up/down vote control. Guests are sent to /login; authors can't
-// vote on their own posts. variant 'pill' = feed posts, 'column' = comments.
-// Solutions pass allowDown={false} (upvote only).
+// Instagram-style vote control: ♥ = upvote (red + pop animation when liked),
+// 💔 = downvote. Optimistic; guests are sent to /login; authors can't vote on
+// their own posts. variant 'pill' = flat action row (feed posts), 'column' =
+// compact stack beside a comment. Solutions pass allowDown={false} (like only).
+const LIKE_RED = '#ff3040';
+const pop = keyframes`
+  0% { transform: scale(1); }
+  35% { transform: scale(1.35); }
+  70% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+`;
+
 export function VoteBar({ targetType, targetId, score, myVote, allowDown = true, isMine = false, variant = 'pill', onChange }) {
   const { isAuthenticated } = useSelector((s) => s.auth);
   const navigate = useNavigate();
@@ -178,53 +189,78 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
 
   const tip = isMine ? "You can't vote on your own post" : '';
   const column = variant === 'column';
-  const btn = column ? 30 : 38;
-  const icon = column ? 22 : 26;
+  const btn = column ? 28 : 40;
+  const icon = column ? 19 : 26;
+  const liked = state.myVote === 1;
+  const disliked = state.myVote === -1;
 
-  const arrow = (value, Icon, label, activeColor) => (
-    <Tooltip title={tip || label}>
+  const likeBtn = (
+    <Tooltip title={tip || (liked ? 'Unlike' : 'Like')}>
       <span>
         <IconButton
-          aria-label={label}
-          aria-pressed={state.myVote === value}
-          onClick={() => cast(value)}
+          aria-label="Like"
+          aria-pressed={liked}
+          onClick={() => cast(1)}
           disabled={isMine}
-          sx={{ width: btn, height: btn, color: state.myVote === value ? activeColor : 'text.secondary' }}
+          sx={{ width: btn, height: btn, color: liked ? LIKE_RED : 'text.primary' }}
         >
-          <Icon sx={{ fontSize: icon }} />
+          {liked ? (
+            <FavoriteRoundedIcon key="on" sx={{ fontSize: icon, animation: `${pop} .35s ease-out` }} />
+          ) : (
+            <FavoriteBorderRoundedIcon key="off" sx={{ fontSize: icon }} />
+          )}
         </IconButton>
       </span>
     </Tooltip>
   );
 
-  const body = (
-    <Stack
-      direction={column ? 'column' : 'row'}
-      alignItems="center"
-      sx={(t) =>
-        column
-          ? {}
-          : {
-              height: 42,
-              px: 0.25,
-              borderRadius: 999,
-              border: '1px solid',
-              borderColor: state.myVote === 1 ? 'primary.main' : state.myVote === -1 ? 'error.main' : 'divider',
-              bgcolor: state.myVote === 1 ? alpha(t.palette.primary.main, 0.1) : state.myVote === -1 ? alpha(t.palette.error.main, 0.1) : 'transparent',
-            }
-      }
+  const count = (
+    <Typography
+      aria-live="polite"
+      sx={{
+        minWidth: column ? 0 : 16,
+        textAlign: 'center',
+        fontWeight: 600,
+        fontSize: column ? '0.75rem' : '0.95rem',
+        lineHeight: 1,
+        color: liked ? LIKE_RED : 'text.primary',
+      }}
     >
-      {arrow(1, KeyboardArrowUpRoundedIcon, 'Upvote', 'primary.main')}
-      <Typography aria-live="polite" sx={{ minWidth: column ? 0 : 26, px: column ? 0 : 0.25, textAlign: 'center', fontWeight: 700, fontSize: column ? '0.85rem' : '0.95rem', lineHeight: 1 }}>
-        {state.score}
-      </Typography>
-      {allowDown && arrow(-1, KeyboardArrowDownRoundedIcon, 'Downvote', 'error.main')}
-    </Stack>
+      {state.score}
+    </Typography>
+  );
+
+  const dislikeBtn = allowDown && (
+    <Tooltip title={tip || (disliked ? 'Remove dislike' : 'Dislike')}>
+      <span>
+        <IconButton
+          aria-label="Dislike"
+          aria-pressed={disliked}
+          onClick={() => cast(-1)}
+          disabled={isMine}
+          sx={{ width: btn, height: btn, color: disliked ? 'text.primary' : 'text.secondary' }}
+        >
+          {disliked ? <HeartBrokenRoundedIcon sx={{ fontSize: icon }} /> : <HeartBrokenOutlinedIcon sx={{ fontSize: icon }} />}
+        </IconButton>
+      </span>
+    </Tooltip>
   );
 
   return (
     <Box>
-      {body}
+      {column ? (
+        <Stack alignItems="center" spacing={0.25}>
+          {likeBtn}
+          {count}
+          {dislikeBtn}
+        </Stack>
+      ) : (
+        <Stack direction="row" alignItems="center" sx={{ gap: 0.25 }}>
+          {likeBtn}
+          {count}
+          {dislikeBtn}
+        </Stack>
+      )}
       {error && (
         <Typography color="error" sx={{ fontSize: '0.75rem', mt: 0.5 }}>
           {error}
@@ -242,7 +278,7 @@ export function ActionButton({ icon, count, label, onClick }) {
       aria-label={label}
       onClick={onClick}
       startIcon={icon}
-      sx={{ height: 42, px: 1.5, minWidth: 0, color: 'text.secondary', fontWeight: 700, fontSize: '0.95rem', '& .MuiButton-startIcon': { mr: 0.75, '& svg': { fontSize: 24 } } }}
+      sx={{ height: 40, px: 1.25, minWidth: 0, color: 'text.primary', fontWeight: 600, fontSize: '0.95rem', '& .MuiButton-startIcon': { mr: 0.75, '& svg': { fontSize: 25 } } }}
     >
       {count}
     </Button>
