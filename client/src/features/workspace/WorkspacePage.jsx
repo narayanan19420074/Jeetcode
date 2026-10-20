@@ -69,6 +69,7 @@ import ShareSolutionDialog from './community/ShareSolutionDialog';
 import SplitHandle from './SplitHandle';
 import MobileKeyBar from './MobileKeyBar';
 import EditorScroller from './EditorScroller';
+import { wsSurface, defineMonacoThemes, monacoThemeName } from './workspaceTheme';
 import { formatCode, preloadFormatter } from './formatCode';
 import { aiApi } from '../../api/aiApi';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -176,7 +177,7 @@ function ExampleRow({ icon, label, value, plain }) {
             px: 1.5,
             py: 1,
             borderRadius: '10px',
-            bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.1 : 0.07),
+            bgcolor: wsSurface(t).raised,
             whiteSpace: 'pre-wrap',
             wordBreak: 'break-word',
           })}
@@ -293,6 +294,8 @@ export default function WorkspacePage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
   const location = useLocation();
+  const surf = wsSurface(theme);
+  const monacoRef = useRef(null);
   // Phone: one page. Tabs = Code | Solutions | Discussion. The problem text opens
   // as a panel sliding in from the right (kept in history state so the phone's
   // Back button closes it instead of leaving the page).
@@ -384,6 +387,25 @@ export default function WorkspacePage() {
   useEffect(() => {
     aiEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [aiMessages, aiLoading, aiDrawerOpen]);
+
+  // Editor colours follow the app accent / light-dark mode.
+  const accentMain = theme.palette.primary.main;
+  useEffect(() => {
+    const m = monacoRef.current;
+    if (!m) return;
+    defineMonacoThemes(m, accentMain);
+    m.editor.setTheme(monacoThemeName(editorPrefs.theme, uiMode));
+  }, [accentMain, editorPrefs.theme, uiMode]);
+
+  // Phone status bar matches the app bar instead of the old blue.
+  const chromeColor = theme.palette.background.paper;
+  useEffect(() => {
+    const el = document.querySelector('meta[name="theme-color"]');
+    if (!el) return undefined;
+    const prev = el.getAttribute('content');
+    el.setAttribute('content', chromeColor);
+    return () => el.setAttribute('content', prev);
+  }, [chromeColor]);
 
   const code = problem
     ? codeByProblem[problem._id]?.[activeLanguage] ?? problem.starterCode[activeLanguage]
@@ -721,6 +743,7 @@ export default function WorkspacePage() {
         gap: 0,
         p: { xs: 0, md: 1.5 },
         height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' },
+        bgcolor: { xs: 'background.paper', md: 'transparent' },
         overflow: 'hidden',
       })}
     >
@@ -741,7 +764,7 @@ export default function WorkspacePage() {
               borderLeft: `4px solid ${t.palette.primary.main}`,
               borderBottom: '1px solid',
               borderColor: 'divider',
-              bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.14 : 0.07),
+              bgcolor: surf.raised,
             })}
           >
             <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -769,6 +792,7 @@ export default function WorkspacePage() {
             variant="fullWidth"
             sx={{
               minHeight: 42,
+              bgcolor: 'background.paper',
               borderBottom: '1px solid',
               borderColor: 'divider',
               '& .MuiTabs-indicator': { height: 3, borderRadius: '3px 3px 0 0' },
@@ -976,11 +1000,15 @@ export default function WorkspacePage() {
         )}
 
         <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-        <Box sx={{ position: 'relative', flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
+        <Box sx={{ position: 'relative', bgcolor: surf.canvas, flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
           <Editor
             height="100%"
             language={activeLanguage === 'cpp' ? 'cpp' : activeLanguage}
-            theme={editorPrefs.theme === 'auto' ? (uiMode === 'dark' ? 'vs-dark' : 'vs') : editorPrefs.theme}
+            theme={monacoThemeName(editorPrefs.theme, uiMode)}
+            beforeMount={(monaco) => {
+              monacoRef.current = monaco;
+              defineMonacoThemes(monaco, accentMain);
+            }}
             value={code}
             onChange={handleEditorChange}
             onMount={handleEditorMount}
@@ -1056,7 +1084,7 @@ export default function WorkspacePage() {
           sx={{
             borderTop: '1px solid',
             borderColor: 'divider',
-            bgcolor: (t) => (t.palette.mode === 'dark' ? alpha('#000', 0.28) : alpha(t.palette.primary.main, 0.045)),
+            bgcolor: surf.panel,
             display: 'flex',
             flexDirection: 'column',
             minHeight: 0,

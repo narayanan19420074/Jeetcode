@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Box, ButtonBase, Stack } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { wsSurface } from './workspaceTheme';
 import KeyboardTabRoundedIcon from '@mui/icons-material/KeyboardTabRounded';
 import FormatIndentDecreaseRoundedIcon from '@mui/icons-material/FormatIndentDecreaseRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
@@ -64,7 +65,7 @@ function Key({ children, onPress, label, wide, repeat, danger }) {
           fontSize: '1rem',
           fontWeight: 600,
           color: danger ? 'error.main' : 'text.primary',
-          bgcolor: alpha(c, t.palette.mode === 'dark' ? 0.18 : 0.1),
+          bgcolor: danger ? alpha(c, t.palette.mode === 'dark' ? 0.18 : 0.1) : wsSurface(t).raised,
           userSelect: 'none',
           WebkitTouchCallout: 'none',
           touchAction: 'manipulation',
