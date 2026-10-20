@@ -1,13 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { Box, Typography } from '@mui/material';
-import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
-import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
-import FlagRoundedIcon from '@mui/icons-material/FlagRounded';
-import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
-import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
-import LockRoundedIcon from '@mui/icons-material/LockRounded';
-
-const BADGE_ICONS = { bolt: BoltRoundedIcon, shield: ShieldRoundedIcon, flag: FlagRoundedIcon, medal: MilitaryTechRoundedIcon, trophy: EmojiEventsRoundedIcon };
+import { Box } from '@mui/material';
 
 const GOLD = '#F5B301';
 const BOSS = '#F97316';
@@ -55,35 +47,6 @@ export function QuestCoin({ pct, state, boss, Icon, active, size = 56 }) {
         </Box>
       </motion.div>
     </Box>
-  );
-}
-
-export function BadgeTile({ badge, index }) {
-  const reduce = useReducedMotion();
-  const Icon = BADGE_ICONS[badge.icon] || BoltRoundedIcon;
-  return (
-    <motion.div
-      initial={reduce ? false : { opacity: 0, scale: 0.7, rotate: -8 }}
-      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-      transition={{ type: 'spring', stiffness: 260, damping: 16, delay: 0.1 + index * 0.07 }}
-      style={{ flex: '0 0 auto' }}
-    >
-      <Box
-        sx={{
-          width: 112, p: 1.25, borderRadius: 3, textAlign: 'center',
-          border: '1px solid', borderColor: badge.got ? 'transparent' : 'divider', borderStyle: badge.got ? 'solid' : 'dashed',
-          background: badge.got ? `linear-gradient(160deg, #FFE58A, ${GOLD})` : 'transparent',
-          color: badge.got ? '#4A3300' : 'text.secondary',
-          boxShadow: badge.got ? '0 8px 18px rgba(245,179,1,.35)' : 'none',
-        }}
-      >
-        <Box sx={{ display: 'grid', placeItems: 'center', mb: 0.5 }}>
-          {badge.got ? <Icon sx={{ fontSize: 30 }} /> : <LockRoundedIcon sx={{ fontSize: 26, opacity: 0.55 }} />}
-        </Box>
-        <Typography variant="caption" sx={{ fontWeight: 800, display: 'block', lineHeight: 1.2 }}>{badge.got ? badge.title : '???'}</Typography>
-        <Typography variant="caption" sx={{ display: 'block', lineHeight: 1.25, mt: 0.25, opacity: 0.85, fontSize: '0.68rem' }}>{badge.hint}</Typography>
-      </Box>
-    </motion.div>
   );
 }
 
