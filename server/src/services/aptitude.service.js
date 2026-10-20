@@ -88,10 +88,24 @@ export function resolveSubPatterns(pattern, metaItems = []) {
 // ---------------------------------------------------------------------------
 
 /**
+ * The Aptitude home page has separate tracks (tabs). Each track is its own
+ * unlock chain with its own first level. Keep in sync with trackOf() in
+ * client/src/features/aptitude/AptitudePatternsPage.jsx.
+ */
+export function trackOf(category = '') {
+  const c = String(category || '').toLowerCase();
+  if (/logical|reason/.test(c)) return 'reasoning';
+  if (/verbal/.test(c)) return 'verbal';
+  if (/data/.test(c)) return 'di';
+  return 'aptitude';
+}
+
+/**
  * Builds the home-page pattern list: every published pattern plus this
- * user's progress + unlock state. Pattern with the lowest `order` is
- * always unlocked; every other pattern needs a passed (bestScore >=
- * passPercentage) progress doc on the pattern immediately before it.
+ * user's progress + unlock state. Within each track (aptitude / reasoning /
+ * verbal / data interpretation) the pattern with the lowest `order` is always
+ * unlocked; every other pattern needs a passed (bestScore >= passPercentage)
+ * progress doc on the pattern immediately before it IN THE SAME TRACK.
  */
 export async function getPatternsWithProgress(userId) {
   const patterns = await AptitudePattern.find({ isPublished: true }).sort({ order: 1 }).lean();
@@ -100,12 +114,13 @@ export async function getPatternsWithProgress(userId) {
     : [];
   const progressByPattern = new Map(progressDocs.map((p) => [String(p.pattern), p]));
 
-  let previousPassed = true; // order:1 pattern is always open
-  return patterns.map((pattern, idx) => {
+  const previousPassedByTrack = new Map(); // track -> did the previous level in this track pass?
+  return patterns.map((pattern) => {
     const progress = progressByPattern.get(String(pattern._id));
     const bestScore = progress?.bestScore ?? 0;
-    const unlocked = idx === 0 || previousPassed;
-    previousPassed = bestScore >= pattern.passPercentage;
+    const track = trackOf(pattern.category);
+    const unlocked = !previousPassedByTrack.has(track) || previousPassedByTrack.get(track); // first level of a track is always open
+    previousPassedByTrack.set(track, bestScore >= pattern.passPercentage);
 
     return {
       ...pattern,
@@ -124,10 +139,12 @@ export async function getPatternsWithProgress(userId) {
 export async function assertPatternUnlocked(userId, pattern) {
   if (!pattern) throw ApiError.notFound('Pattern not found');
 
-  const prevPattern = await AptitudePattern.findOne({
-    isPublished: true,
-    order: { $lt: pattern.order },
-  }).sort({ order: -1 });
+  // Previous level in the SAME track (tracks have independent unlock chains).
+  const earlier = await AptitudePattern.find({ isPublished: true, order: { $lt: pattern.order } })
+    .sort({ order: -1 })
+    .select('_id passPercentage category');
+  const track = trackOf(pattern.category);
+  const prevPattern = earlier.find((p) => trackOf(p.category) === track);
 
   if (!prevPattern) return; // first pattern, always open
 

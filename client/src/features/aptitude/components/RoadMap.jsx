@@ -348,7 +348,7 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0 }) {
 /* ---------------------------------------------------------------- */
 /* Map                                                              */
 /* ---------------------------------------------------------------- */
-export default function RoadMap({ patterns, currentIndex, alienKind, onOpen }) {
+export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, autoScroll = true }) {
   const theme = useTheme();
   const reduce = useReducedMotion();
   const wrapRef = useRef(null);
@@ -379,11 +379,11 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen }) {
   // Phone: open the map around the current level (like Candy Crush) instead of at the top.
   const scrolled = useRef(false);
   useEffect(() => {
-    if (!narrow || scrolled.current || !patterns.length || !wrapRef.current) return;
+    if (!autoScroll || !narrow || scrolled.current || !patterns.length || !wrapRef.current) return;
     scrolled.current = true;
     const top = wrapRef.current.getBoundingClientRect().top + window.scrollY + MOBILE.TOP + MOBILE.ROW * currentIndex - window.innerHeight * 0.45;
     window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
-  }, [narrow, patterns.length, currentIndex, reduce]);
+  }, [narrow, patterns.length, currentIndex, reduce, autoScroll]);
 
   return (
     <Box
