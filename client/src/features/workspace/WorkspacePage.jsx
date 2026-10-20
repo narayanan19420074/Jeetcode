@@ -1,9 +1,10 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Editor from '@monaco-editor/react';
 import {
   Box,
+  ButtonBase,
   Stack,
   Typography,
   Chip,
@@ -60,6 +61,7 @@ import RuleRoundedIcon from '@mui/icons-material/RuleRounded';
 import DataObjectRoundedIcon from '@mui/icons-material/DataObjectRounded';
 import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
 import CloseFullscreenRoundedIcon from '@mui/icons-material/CloseFullscreenRounded';
 import DifficultyChip from '../../components/DifficultyChip';
@@ -68,6 +70,7 @@ import SolutionsPanel from './community/SolutionsPanel';
 import DiscussionPanel from './community/DiscussionPanel';
 import ShareSolutionDialog from './community/ShareSolutionDialog';
 import SplitHandle from './SplitHandle';
+import { formatCode, preloadFormatter } from './formatCode';
 import { aiApi } from '../../api/aiApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import {
@@ -289,8 +292,13 @@ export default function WorkspacePage() {
   const [solutionsRefresh, setSolutionsRefresh] = useState(0);
   const [pendingLoad, setPendingLoad] = useState(null); // solution waiting for overwrite confirmation
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [mobileView, setMobileView] = useState('problem');
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
+  const location = useLocation();
+  // Phone: one page. Tabs = Code | Solutions | Discussion. The problem text opens
+  // as a panel sliding in from the right (kept in history state so the phone's
+  // Back button closes it instead of leaving the page).
+  const [mobileView, setMobileView] = useState('code'); // 'code' | 'solutions' | 'discussion'
+  const descOpen = isMobile && Boolean(location.state?.problemDesc);
   const [consoleOpen, setConsoleOpen] = useState(false);
   const [activeCase, setActiveCase] = useState(0);
   const [moreAnchor, setMoreAnchor] = useState(null);
@@ -354,6 +362,7 @@ export default function WorkspacePage() {
     setConsoleOpen(false);
     setActiveCase(0);
     setMaximized(null);
+    setMobileView('code');
   }, [dispatch, slug]);
 
   // Start in the language chosen in Settings -> Editor (once per page visit;
@@ -379,27 +388,126 @@ export default function WorkspacePage() {
     ? codeByProblem[problem._id]?.[activeLanguage] ?? problem.starterCode[activeLanguage]
     : '';
 
+  // ---- auto-format: Prettier (JS) / indentation fixer (Python) ----
+  const editorRef = useRef(null);
+  const fmtTimer = useRef(null);
+  const composingRef = useRef(false);
+  const pasteUntil = useRef(0);
+  const fmtCtx = useRef({ language: activeLanguage, tabSize: editorPrefs.tabSize });
+  useEffect(() => {
+    fmtCtx.current = { language: activeLanguage, tabSize: editorPrefs.tabSize };
+    if (activeLanguage === 'javascript') preloadFormatter();
+  }, [activeLanguage, editorPrefs.tabSize]);
+  useEffect(() => () => clearTimeout(fmtTimer.current), []);
+
+  const runAutoFormat = useCallback(async () => {
+    const ed = editorRef.current;
+    const model = ed?.getModel();
+    if (!ed || !model || composingRef.current) return;
+    const sel = ed.getSelection();
+    if (sel && !sel.isEmpty()) return;
+    const src = model.getValue();
+    const { language, tabSize } = fmtCtx.current;
+    const res = await formatCode(language, src, model.getOffsetAt(ed.getPosition()), { tabSize });
+    // nothing to do, or the user kept typing while we were formatting
+    if (res.code === src || model.getValue() !== src || composingRef.current) return;
+    // replace only the span that changed so the caret / scroll stay put
+    let start = 0;
+    const maxStart = Math.min(src.length, res.code.length);
+    while (start < maxStart && src[start] === res.code[start]) start += 1;
+    let endOld = src.length;
+    let endNew = res.code.length;
+    while (endOld > start && endNew > start && src[endOld - 1] === res.code[endNew - 1]) {
+      endOld -= 1;
+      endNew -= 1;
+    }
+    const a = model.getPositionAt(start);
+    const b = model.getPositionAt(endOld);
+    ed.pushUndoStop();
+    ed.executeEdits('auto-format', [
+      {
+        range: { startLineNumber: a.lineNumber, startColumn: a.column, endLineNumber: b.lineNumber, endColumn: b.column },
+        text: res.code.slice(start, endNew),
+      },
+    ]);
+    ed.pushUndoStop();
+    ed.setPosition(model.getPositionAt(res.cursorOffset));
+  }, []);
+
+  const scheduleAutoFormat = useCallback(
+    (delay = 1200) => {
+      if (Date.now() < pasteUntil.current) return; // a paste already queued a faster format
+      clearTimeout(fmtTimer.current);
+      fmtTimer.current = setTimeout(runAutoFormat, delay);
+    },
+    [runAutoFormat]
+  );
+
+  const handleEditorMount = useCallback(
+    (editor) => {
+      editorRef.current = editor;
+      // Don't touch the text while the phone keyboard is composing a word.
+      editor.onDidCompositionStart(() => {
+        composingRef.current = true;
+      });
+      editor.onDidCompositionEnd(() => {
+        composingRef.current = false;
+        scheduleAutoFormat();
+      });
+      editor.onDidPaste(() => {
+        clearTimeout(fmtTimer.current);
+        pasteUntil.current = Date.now() + 500;
+        fmtTimer.current = setTimeout(runAutoFormat, 250);
+      });
+    },
+    [runAutoFormat, scheduleAutoFormat]
+  );
+
   const handleEditorChange = useCallback(
     (value) => {
       if (!problem) return;
       dispatch(updateCode({ problemId: problem._id, language: activeLanguage, code: value ?? '' }));
+      scheduleAutoFormat();
     },
-    [dispatch, problem, activeLanguage]
+    [dispatch, problem, activeLanguage, scheduleAutoFormat]
   );
 
-  const handleRun = () => {
-    if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
-    dispatch(runCode({ problemSlug: slug, language: activeLanguage, code }));
+  // Safety net: whatever is typed, Run / Submit send correctly indented code.
+  const prepareCode = async () => {
+    clearTimeout(fmtTimer.current);
+    const res = await formatCode(activeLanguage, code, 0, { tabSize: editorPrefs.tabSize });
+    if (res.code !== code) {
+      dispatch(updateCode({ problemId: problem._id, language: activeLanguage, code: res.code }));
+    }
+    return res.code;
   };
 
-  const handleSubmit = () => {
+  const handleRun = async () => {
     if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
-    dispatch(submitCode({ problemSlug: slug, language: activeLanguage, code }));
+    const finalCode = await prepareCode();
+    dispatch(runCode({ problemSlug: slug, language: activeLanguage, code: finalCode }));
+  };
+
+  const handleSubmit = async () => {
+    if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
+    const finalCode = await prepareCode();
+    dispatch(submitCode({ problemSlug: slug, language: activeLanguage, code: finalCode }));
   };
 
   const openTab = (v) => {
     setDescTab(v);
     if (v > 0) setMountedTabs((m) => ({ ...m, [v]: true }));
+  };
+
+  const openMobileView = (v) => {
+    setMobileView(v);
+    if (v === 'solutions') setMountedTabs((m) => ({ ...m, 1: true }));
+    if (v === 'discussion') setMountedTabs((m) => ({ ...m, 2: true }));
+  };
+
+  const openDesc = () => navigate(`${location.pathname}${location.search}`, { state: { problemDesc: true } });
+  const closeDesc = () => {
+    if (location.state?.problemDesc) navigate(-1);
   };
 
   // Puts a community solution's code into the editor (and switches language).
@@ -422,7 +530,7 @@ export default function WorkspacePage() {
   const handleShared = () => {
     setSolutionsRefresh((k) => k + 1);
     openTab(1);
-    setMobileView('problem');
+    setMobileView('solutions');
     enqueueSnackbar('Solution shared', { variant: 'success' });
   };
 
@@ -501,6 +609,59 @@ export default function WorkspacePage() {
   const testResults = resultToShow?.testResults ?? [];
   const selectedCase = testResults[Math.min(activeCase, testResults.length - 1)];
 
+  const descriptionContent = (
+  <>
+      <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 1.25, mb: 1.5 }}>
+        <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.25 }}>
+          {problem.title}
+        </Typography>
+        <DifficultyChip difficulty={problem.difficulty} />
+      </Stack>
+  
+      {problem.tags?.length > 0 && (
+        <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mb: 2.5 }}>
+          {problem.tags.map((t) => (
+            <Chip
+              key={t}
+              icon={<SellOutlinedIcon />}
+              label={t}
+              size="small"
+              sx={(th) => ({
+                bgcolor: alpha(th.palette.primary.main, th.palette.mode === 'dark' ? 0.14 : 0.09),
+                color: 'primary.main',
+                '& .MuiChip-icon': { fontSize: 14, color: 'inherit' },
+              })}
+            />
+          ))}
+        </Stack>
+      )}
+  
+      <Typography variant="body2" sx={{ whiteSpace: 'pre-line', mb: 3, lineHeight: 1.75 }}>
+        {problem.description}
+      </Typography>
+  
+      <SectionTitle icon={<ScienceOutlinedIcon />}>Examples</SectionTitle>
+      {problem.examples.map((ex, i) => (
+        <ExampleCard key={i} index={i} example={ex} />
+      ))}
+  
+      <Box sx={{ mt: 3 }}>
+        <SectionTitle icon={<RuleRoundedIcon />}>Constraints</SectionTitle>
+        <Stack sx={{ gap: 0.75 }}>
+          {problem.constraints.map((c, i) => (
+            <Stack key={i} direction="row" sx={{ alignItems: 'flex-start', gap: 1 }}>
+              <DataObjectRoundedIcon sx={{ fontSize: 16, mt: '4px', color: 'text.disabled', flexShrink: 0 }} />
+              <Typography variant="body2" color="text.secondary" sx={{ ...mono, fontSize: '0.8rem', lineHeight: 1.6, wordBreak: 'break-word' }}>
+                {c}
+              </Typography>
+            </Stack>
+          ))}
+        </Stack>
+      </Box>
+    </>
+
+  );
+
   const panelSx = {
     bgcolor: 'background.paper',
     border: { md: '1px solid' },
@@ -543,165 +704,149 @@ export default function WorkspacePage() {
       })}
     >
       {isMobile && (
-        <ToggleButtonGroup
-          exclusive
-          fullWidth
-          size="small"
-          value={mobileView}
-          onChange={(e, v) => v && setMobileView(v)}
-          sx={(t) => ({
-            m: 1.25,
-            mb: 1,
-            flexShrink: 0,
-            p: 0.5,
-            gap: 0.5,
-            borderRadius: 999,
-            bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.12 : 0.08),
-            '& .MuiToggleButtonGroup-grouped': {
-              border: 0,
-              borderRadius: '999px !important',
-              py: 0.9,
-              gap: 0.75,
-              fontWeight: 700,
-              color: 'text.secondary',
-              '& svg': { fontSize: 19 },
-              '&.Mui-selected': {
-                bgcolor: 'background.paper',
-                color: 'primary.main',
-                boxShadow: `0 1px 4px ${alpha(t.palette.primary.main, 0.25)}`,
+        <Box sx={{ flexShrink: 0 }}>
+          {/* Tap the problem name -> description slides in from the right */}
+          <ButtonBase
+            onClick={openDesc}
+            aria-label="Open problem description"
+            sx={{
+              width: '100%',
+              justifyContent: 'flex-start',
+              gap: 1,
+              px: 1.75,
+              py: 1.1,
+              textAlign: 'left',
+              borderBottom: '1px solid',
+              borderColor: 'divider',
+              bgcolor: 'background.paper',
+            }}
+          >
+            <ArticleRoundedIcon sx={{ fontSize: 20, color: 'primary.main', flexShrink: 0 }} />
+            <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.95rem', flex: 1, minWidth: 0 }}>
+              {problem.title}
+            </Typography>
+            <DifficultyChip difficulty={problem.difficulty} />
+            <ChevronRightRoundedIcon sx={{ color: 'text.secondary', flexShrink: 0 }} />
+          </ButtonBase>
+
+          <ToggleButtonGroup
+            exclusive
+            fullWidth
+            size="small"
+            value={mobileView}
+            onChange={(e, v) => v && openMobileView(v)}
+            sx={(t) => ({
+              m: 1.25,
+              mb: 1,
+              p: 0.5,
+              gap: 0.5,
+              width: 'calc(100% - 20px)',
+              borderRadius: 999,
+              bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.12 : 0.08),
+              '& .MuiToggleButtonGroup-grouped': {
+                border: 0,
+                borderRadius: '999px !important',
+                py: 0.9,
+                px: 0.5,
+                gap: 0.5,
+                fontWeight: 700,
+                fontSize: '0.8rem',
+                color: 'text.secondary',
+                '& svg': { fontSize: 18 },
+                '&.Mui-selected': {
+                  bgcolor: 'background.paper',
+                  color: 'primary.main',
+                  boxShadow: `0 1px 4px ${alpha(t.palette.primary.main, 0.25)}`,
+                },
+                '&.Mui-selected:hover': { bgcolor: 'background.paper' },
               },
-              '&.Mui-selected:hover': { bgcolor: 'background.paper' },
-            },
-          })}
-        >
-          <ToggleButton value="problem">
-            <ArticleRoundedIcon />
-            Problem
-          </ToggleButton>
-          <ToggleButton value="code">
-            <CodeRoundedIcon />
-            Code
-          </ToggleButton>
-        </ToggleButtonGroup>
+            })}
+          >
+            <ToggleButton value="code">
+              <CodeRoundedIcon />
+              Code
+            </ToggleButton>
+            <ToggleButton value="solutions">
+              <LightbulbOutlinedIcon />
+              Solutions
+            </ToggleButton>
+            <ToggleButton value="discussion">
+              <ForumOutlinedIcon />
+              Discussion
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </Box>
       )}
 
-      {/* Left pane — problem description */}
-      <Box
-        sx={{
-          ...panelSx,
-          ...(split ? { borderRadius: { xs: 0, md: '20px 0 0 20px' }, borderRight: { md: 'none' } } : {}),
-          width: { xs: '100%', md: maximized === 'problem' ? '100%' : `${layout.left * 100}%` },
-          minWidth: 0,
-          flex: { xs: 1, md: maximized === 'problem' ? 1 : 'none' },
-          display: {
-            xs: mobileView === 'problem' ? 'flex' : 'none',
-            md: maximized === 'editor' || maximized === 'console' ? 'none' : 'flex',
-          },
-        }}
-      >
-        <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, borderBottom: '1px solid', borderColor: 'divider', pr: 1 }}>
-        <Tabs
-          value={descTab}
-          onChange={(e, v) => openTab(v)}
-          variant="scrollable"
-          scrollButtons={false}
-          slotProps={{ indicator: { sx: { display: 'none' } } }}
+      {/* Left pane — problem description (desktop only) */}
+      {!isMobile && (
+        <Box
           sx={{
-            minHeight: 0,
-            flexShrink: 0,
-            px: 1.5,
-            py: 1,
-            flex: 1,
+            ...panelSx,
+            ...(split ? { borderRadius: { xs: 0, md: '20px 0 0 20px' }, borderRight: { md: 'none' } } : {}),
+            width: { xs: '100%', md: maximized === 'problem' ? '100%' : `${layout.left * 100}%` },
             minWidth: 0,
-            '& .MuiTabs-flexContainer': { gap: 0.5 },
+            flex: { xs: 1, md: maximized === 'problem' ? 1 : 'none' },
+            display: {
+              xs: 'none',
+              md: maximized === 'editor' || maximized === 'console' ? 'none' : 'flex',
+            },
           }}
         >
-          {DESC_TABS.map((tab) => (
-            <Tab
-              key={tab.label}
-              icon={tab.icon}
-              iconPosition="start"
-              label={tab.label}
-              sx={(t) => ({
-                minHeight: 38,
-                px: 1.75,
-                py: 0,
-                gap: 0.5,
-                borderRadius: 999,
-                color: 'text.secondary',
-                '& svg': { fontSize: 19, mr: '0 !important', mb: '0 !important' },
-                '&.Mui-selected': { color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12) },
-              })}
-            />
-          ))}
-        </Tabs>
-        {!isMobile && <MaxButton active={maximized === 'problem'} onClick={() => toggleMax('problem')} label="problem" />}
-        </Stack>
+          <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, borderBottom: '1px solid', borderColor: 'divider', pr: 1 }}>
+          <Tabs
+            value={descTab}
+            onChange={(e, v) => openTab(v)}
+            variant="scrollable"
+            scrollButtons={false}
+            slotProps={{ indicator: { sx: { display: 'none' } } }}
+            sx={{
+              minHeight: 0,
+              flexShrink: 0,
+              px: 1.5,
+              py: 1,
+              flex: 1,
+              minWidth: 0,
+              '& .MuiTabs-flexContainer': { gap: 0.5 },
+            }}
+          >
+            {DESC_TABS.map((tab) => (
+              <Tab
+                key={tab.label}
+                icon={tab.icon}
+                iconPosition="start"
+                label={tab.label}
+                sx={(t) => ({
+                  minHeight: 38,
+                  px: 1.75,
+                  py: 0,
+                  gap: 0.5,
+                  borderRadius: 999,
+                  color: 'text.secondary',
+                  '& svg': { fontSize: 19, mr: '0 !important', mb: '0 !important' },
+                  '&.Mui-selected': { color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12) },
+                })}
+              />
+            ))}
+          </Tabs>
+          {!isMobile && <MaxButton active={maximized === 'problem'} onClick={() => toggleMax('problem')} label="problem" />}
+          </Stack>
 
-        <Box sx={{ overflowY: 'auto', p: { xs: 2, md: 2.5 }, flex: 1 }}>
-          {descTab === 0 && (
-            <>
-              <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 1.25, mb: 1.5 }}>
-                <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.25 }}>
-                  {problem.title}
-                </Typography>
-                <DifficultyChip difficulty={problem.difficulty} />
-              </Stack>
-
-              {problem.tags?.length > 0 && (
-                <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mb: 2.5 }}>
-                  {problem.tags.map((t) => (
-                    <Chip
-                      key={t}
-                      icon={<SellOutlinedIcon />}
-                      label={t}
-                      size="small"
-                      sx={(th) => ({
-                        bgcolor: alpha(th.palette.primary.main, th.palette.mode === 'dark' ? 0.14 : 0.09),
-                        color: 'primary.main',
-                        '& .MuiChip-icon': { fontSize: 14, color: 'inherit' },
-                      })}
-                    />
-                  ))}
-                </Stack>
-              )}
-
-              <Typography variant="body2" sx={{ whiteSpace: 'pre-line', mb: 3, lineHeight: 1.75 }}>
-                {problem.description}
-              </Typography>
-
-              <SectionTitle icon={<ScienceOutlinedIcon />}>Examples</SectionTitle>
-              {problem.examples.map((ex, i) => (
-                <ExampleCard key={i} index={i} example={ex} />
-              ))}
-
-              <Box sx={{ mt: 3 }}>
-                <SectionTitle icon={<RuleRoundedIcon />}>Constraints</SectionTitle>
-                <Stack sx={{ gap: 0.75 }}>
-                  {problem.constraints.map((c, i) => (
-                    <Stack key={i} direction="row" sx={{ alignItems: 'flex-start', gap: 1 }}>
-                      <DataObjectRoundedIcon sx={{ fontSize: 16, mt: '4px', color: 'text.disabled', flexShrink: 0 }} />
-                      <Typography variant="body2" color="text.secondary" sx={{ ...mono, fontSize: '0.8rem', lineHeight: 1.6, wordBreak: 'break-word' }}>
-                        {c}
-                      </Typography>
-                    </Stack>
-                  ))}
-                </Stack>
+          <Box sx={{ overflowY: 'auto', p: { xs: 2, md: 2.5 }, flex: 1 }}>
+            {descTab === 0 && descriptionContent}
+            {mountedTabs[1] && (
+              <Box sx={{ display: descTab === 1 ? 'block' : 'none' }}>
+                <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
               </Box>
-            </>
-          )}
-          {mountedTabs[1] && (
-            <Box sx={{ display: descTab === 1 ? 'block' : 'none' }}>
-              <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
-            </Box>
-          )}
-          {mountedTabs[2] && (
-            <Box sx={{ display: descTab === 2 ? 'block' : 'none' }}>
-              <DiscussionPanel slug={slug} />
-            </Box>
-          )}
+            )}
+            {mountedTabs[2] && (
+              <Box sx={{ display: descTab === 2 ? 'block' : 'none' }}>
+                <DiscussionPanel slug={slug} />
+              </Box>
+            )}
+          </Box>
         </Box>
-      </Box>
+      )}
 
       {/* Drag handle between problem and editor (desktop) */}
       <Box sx={{ display: { xs: 'none', md: maximized ? 'none' : 'flex' }, alignSelf: 'stretch' }}>
@@ -859,6 +1004,7 @@ export default function WorkspacePage() {
             theme={editorPrefs.theme === 'auto' ? (uiMode === 'dark' ? 'vs-dark' : 'vs') : editorPrefs.theme}
             value={code}
             onChange={handleEditorChange}
+            onMount={handleEditorMount}
             loading={<CircularProgress size={26} />}
             options={{
               fontSize: editorPrefs.fontSize,
@@ -871,6 +1017,10 @@ export default function WorkspacePage() {
               scrollBeyondLastLine: false,
               automaticLayout: true,
               tabSize: editorPrefs.tabSize,
+              insertSpaces: true,
+              detectIndentation: false,
+              autoIndent: 'full',
+              trimAutoWhitespace: true,
               padding: { top: 10 },
             }}
           />
@@ -1058,6 +1208,37 @@ export default function WorkspacePage() {
         </Box>
         </Box>
       </Box>
+
+      {/* Phone: Solutions / Discussion sit next to the Code tab */}
+      {isMobile && mountedTabs[1] && (
+        <Box sx={{ display: mobileView === 'solutions' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', p: 2 }}>
+          <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
+        </Box>
+      )}
+      {isMobile && mountedTabs[2] && (
+        <Box sx={{ display: mobileView === 'discussion' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', p: 2 }}>
+          <DiscussionPanel slug={slug} />
+        </Box>
+      )}
+
+      {/* Phone: problem description, slides in right -> left */}
+      <Drawer
+        anchor="right"
+        open={descOpen}
+        onClose={closeDesc}
+        slotProps={{ paper: { sx: { width: '100%', maxWidth: '100%' } } }}
+      >
+        <Stack
+          direction="row"
+          sx={{ alignItems: 'center', gap: 0.5, px: 1, pb: 0.75, pt: 'calc(6px + env(safe-area-inset-top))', borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0 }}
+        >
+          <IconButton aria-label="Back to code" onClick={closeDesc}>
+            <ArrowBackRoundedIcon />
+          </IconButton>
+          <Typography sx={{ fontWeight: 700 }}>Problem</Typography>
+        </Stack>
+        <Box sx={{ overflowY: 'auto', p: 2, flex: 1, minHeight: 0 }}>{descriptionContent}</Box>
+      </Drawer>
 
       <ShareSolutionDialog
         open={shareOpen}
