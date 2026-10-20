@@ -6,7 +6,7 @@ const BOSS = '#F97316';
 const BLUE = '#3B82F6';
 
 // A 3D-feeling coin: progress ring around the edge, presses in with a half flip when tapped.
-export function QuestCoin({ pct, state, boss, Icon, active, size = 56 }) {
+export function QuestCoin({ pct, state, boss, Icon, label, active, size = 56 }) {
   const reduce = useReducedMotion();
   const color = boss ? BOSS : state === 'cleared' ? GOLD : BLUE;
   return (
@@ -42,7 +42,7 @@ export function QuestCoin({ pct, state, boss, Icon, active, size = 56 }) {
               boxShadow: 'inset 0 2px 3px rgba(255,255,255,.55), inset 0 -3px 5px rgba(0,0,0,.14)',
             }}
           >
-            <Icon sx={{ fontSize: size * 0.46 }} />
+            {label !== undefined ? <Box component="span" sx={{ fontWeight: 900, fontSize: size * 0.38, lineHeight: 1 }}>{label}</Box> : <Icon sx={{ fontSize: size * 0.46 }} />}
           </Box>
         </Box>
       </motion.div>
