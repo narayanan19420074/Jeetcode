@@ -40,7 +40,6 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
@@ -69,6 +68,7 @@ import DiscussionPanel from './community/DiscussionPanel';
 import ShareSolutionDialog from './community/ShareSolutionDialog';
 import SplitHandle from './SplitHandle';
 import MobileKeyBar from './MobileKeyBar';
+import EditorScroller from './EditorScroller';
 import { formatCode, preloadFormatter } from './formatCode';
 import { aiApi } from '../../api/aiApi';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -299,6 +299,7 @@ export default function WorkspacePage() {
   const [mobileView, setMobileView] = useState('code'); // 'code' | 'solutions' | 'discussion'
   const descOpen = isMobile && Boolean(location.state?.problemDesc);
   const [editorFocused, setEditorFocused] = useState(false); // phone: shows the symbol bar
+  const [editorInstance, setEditorInstance] = useState(null); // phone: fast-scroller needs the editor
   const [consoleOpen, setConsoleOpen] = useState(false);
   const [activeCase, setActiveCase] = useState(0);
   const [moreAnchor, setMoreAnchor] = useState(null);
@@ -446,6 +447,7 @@ export default function WorkspacePage() {
   const handleEditorMount = useCallback(
     (editor) => {
       editorRef.current = editor;
+      setEditorInstance(editor);
       // Don't touch the text while the phone keyboard is composing a word.
       editor.onDidCompositionStart(() => {
         composingRef.current = true;
@@ -728,25 +730,37 @@ export default function WorkspacePage() {
           <ButtonBase
             onClick={openDesc}
             aria-label="Open problem description"
-            sx={{
+            sx={(t) => ({
               width: '100%',
               justifyContent: 'flex-start',
-              gap: 1,
-              px: 1.75,
-              py: 0.9,
-              minHeight: 46,
+              gap: 1.25,
+              pl: 1.5,
+              pr: 1.5,
+              py: 1.1,
               textAlign: 'left',
+              borderLeft: `4px solid ${t.palette.primary.main}`,
               borderBottom: '1px solid',
               borderColor: 'divider',
-              bgcolor: 'background.paper',
-            }}
+              bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.14 : 0.07),
+            })}
           >
-            <ArticleRoundedIcon sx={{ fontSize: 20, color: 'primary.main', flexShrink: 0 }} />
-            <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.95rem', flex: 1, minWidth: 0 }}>
-              {problem.title}
-            </Typography>
-            <DifficultyChip difficulty={problem.difficulty} />
-            <ChevronRightRoundedIcon sx={{ color: 'text.secondary', flexShrink: 0 }} />
+            <Box sx={{ flex: 1, minWidth: 0 }}>
+              <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.98rem', lineHeight: 1.3 }}>
+                {problem.title}
+              </Typography>
+              <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mt: 0.5, minWidth: 0 }}>
+                <DifficultyChip difficulty={problem.difficulty} />
+                {problem.tags?.length > 0 && (
+                  <Typography noWrap variant="caption" color="text.secondary" sx={{ minWidth: 0 }}>
+                    {problem.tags.slice(0, 2).join(' · ')}
+                  </Typography>
+                )}
+              </Stack>
+            </Box>
+            <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, color: 'primary.main' }}>
+              <Typography sx={{ fontWeight: 700, fontSize: '0.8rem' }}>View</Typography>
+              <ChevronRightRoundedIcon sx={{ fontSize: 22 }} />
+            </Stack>
           </ButtonBase>
 
           <Tabs
@@ -962,7 +976,7 @@ export default function WorkspacePage() {
         )}
 
         <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-        <Box sx={{ flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
+        <Box sx={{ position: 'relative', flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
           <Editor
             height="100%"
             language={activeLanguage === 'cpp' ? 'cpp' : activeLanguage}
@@ -1014,10 +1028,22 @@ export default function WorkspacePage() {
                 : {}),
             }}
           />
+          {isMobile && <EditorScroller editor={editorInstance} />}
         </Box>
 
         {isMobile && editorFocused && (
-          <MobileKeyBar onKey={keyType} onTab={keyCommand('tab')} onOutdent={keyCommand('outdent')} onUndo={keyCommand('undo')} onRedo={keyCommand('redo')} />
+          <MobileKeyBar
+            onKey={keyType}
+            onTab={keyCommand('tab')}
+            onOutdent={keyCommand('outdent')}
+            onDeleteLine={keyCommand('editor.action.deleteLines')}
+            onUp={keyCommand('cursorUp')}
+            onDown={keyCommand('cursorDown')}
+            onLeft={keyCommand('cursorLeft')}
+            onRight={keyCommand('cursorRight')}
+            onUndo={keyCommand('undo')}
+            onRedo={keyCommand('redo')}
+          />
         )}
 
         {/* Drag handle between editor and console (desktop) */}
@@ -1263,9 +1289,15 @@ export default function WorkspacePage() {
           <IconButton aria-label="Back to code" onClick={closeDesc}>
             <ArrowBackRoundedIcon />
           </IconButton>
-          <Typography sx={{ fontWeight: 700 }}>Problem</Typography>
+          <Typography sx={{ fontWeight: 700, flex: 1 }}>Problem</Typography>
+          <DifficultyChip difficulty={problem.difficulty} />
         </Stack>
         <Box sx={{ overflowY: 'auto', p: 2, flex: 1, minHeight: 0 }}>{descriptionContent}</Box>
+        <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
+          <Button fullWidth variant="contained" disableElevation startIcon={<CodeRoundedIcon />} onClick={closeDesc} sx={{ height: 46, fontWeight: 800, borderRadius: 999 }}>
+            Start coding
+          </Button>
+        </Box>
       </Drawer>
 
       <ShareSolutionDialog
