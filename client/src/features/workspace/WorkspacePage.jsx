@@ -25,8 +25,6 @@ import {
   ListItemText,
   useMediaQuery,
   useTheme,
-  ToggleButtonGroup,
-  ToggleButton,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -70,6 +68,7 @@ import SolutionsPanel from './community/SolutionsPanel';
 import DiscussionPanel from './community/DiscussionPanel';
 import ShareSolutionDialog from './community/ShareSolutionDialog';
 import SplitHandle from './SplitHandle';
+import MobileKeyBar from './MobileKeyBar';
 import { formatCode, preloadFormatter } from './formatCode';
 import { aiApi } from '../../api/aiApi';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -299,6 +298,7 @@ export default function WorkspacePage() {
   // Back button closes it instead of leaving the page).
   const [mobileView, setMobileView] = useState('code'); // 'code' | 'solutions' | 'discussion'
   const descOpen = isMobile && Boolean(location.state?.problemDesc);
+  const [editorFocused, setEditorFocused] = useState(false); // phone: shows the symbol bar
   const [consoleOpen, setConsoleOpen] = useState(false);
   const [activeCase, setActiveCase] = useState(0);
   const [moreAnchor, setMoreAnchor] = useState(null);
@@ -454,6 +454,8 @@ export default function WorkspacePage() {
         composingRef.current = false;
         scheduleAutoFormat();
       });
+      editor.onDidFocusEditorText(() => setEditorFocused(true));
+      editor.onDidBlurEditorText(() => setEditorFocused(false));
       editor.onDidPaste(() => {
         clearTimeout(fmtTimer.current);
         pasteUntil.current = Date.now() + 500;
@@ -472,6 +474,21 @@ export default function WorkspacePage() {
     [dispatch, problem, activeLanguage, scheduleAutoFormat]
   );
 
+  // Symbol bar actions (phone)
+  const keyType = (text) => {
+    const ed = editorRef.current;
+    if (!ed) return;
+    ed.focus();
+    ed.trigger('keyboard', 'type', { text });
+  };
+  const keyCommand = (id) => () => {
+    const ed = editorRef.current;
+    if (!ed) return;
+    ed.focus();
+    ed.trigger('keyboard', id, null);
+  };
+  const keepFocus = (e) => e.preventDefault(); // tapping Run must not drop the keyboard mid-tap
+
   // Safety net: whatever is typed, Run / Submit send correctly indented code.
   const prepareCode = async () => {
     clearTimeout(fmtTimer.current);
@@ -484,12 +501,14 @@ export default function WorkspacePage() {
 
   const handleRun = async () => {
     if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
+    if (isMobile) document.activeElement?.blur?.(); // close the keyboard so the result is visible
     const finalCode = await prepareCode();
     dispatch(runCode({ problemSlug: slug, language: activeLanguage, code: finalCode }));
   };
 
   const handleSubmit = async () => {
     if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
+    if (isMobile) document.activeElement?.blur?.();
     const finalCode = await prepareCode();
     dispatch(submitCode({ problemSlug: slug, language: activeLanguage, code: finalCode }));
   };
@@ -714,7 +733,8 @@ export default function WorkspacePage() {
               justifyContent: 'flex-start',
               gap: 1,
               px: 1.75,
-              py: 1.1,
+              py: 0.9,
+              minHeight: 46,
               textAlign: 'left',
               borderBottom: '1px solid',
               borderColor: 'divider',
@@ -729,52 +749,23 @@ export default function WorkspacePage() {
             <ChevronRightRoundedIcon sx={{ color: 'text.secondary', flexShrink: 0 }} />
           </ButtonBase>
 
-          <ToggleButtonGroup
-            exclusive
-            fullWidth
-            size="small"
+          <Tabs
             value={mobileView}
-            onChange={(e, v) => v && openMobileView(v)}
-            sx={(t) => ({
-              m: 1.25,
-              mb: 1,
-              p: 0.5,
-              gap: 0.5,
-              width: 'calc(100% - 20px)',
-              borderRadius: 999,
-              bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.12 : 0.08),
-              '& .MuiToggleButtonGroup-grouped': {
-                border: 0,
-                borderRadius: '999px !important',
-                py: 0.9,
-                px: 0.5,
-                gap: 0.5,
-                fontWeight: 700,
-                fontSize: '0.8rem',
-                color: 'text.secondary',
-                '& svg': { fontSize: 18 },
-                '&.Mui-selected': {
-                  bgcolor: 'background.paper',
-                  color: 'primary.main',
-                  boxShadow: `0 1px 4px ${alpha(t.palette.primary.main, 0.25)}`,
-                },
-                '&.Mui-selected:hover': { bgcolor: 'background.paper' },
-              },
-            })}
+            onChange={(e, v) => openMobileView(v)}
+            variant="fullWidth"
+            sx={{
+              minHeight: 42,
+              borderBottom: '1px solid',
+              borderColor: 'divider',
+              '& .MuiTabs-indicator': { height: 3, borderRadius: '3px 3px 0 0' },
+              '& .MuiTab-root': { minHeight: 42, py: 0, textTransform: 'none', fontWeight: 700, fontSize: '0.88rem', color: 'text.secondary' },
+              '& .Mui-selected': { color: 'primary.main' },
+            }}
           >
-            <ToggleButton value="code">
-              <CodeRoundedIcon />
-              Code
-            </ToggleButton>
-            <ToggleButton value="solutions">
-              <LightbulbOutlinedIcon />
-              Solutions
-            </ToggleButton>
-            <ToggleButton value="discussion">
-              <ForumOutlinedIcon />
-              Discussion
-            </ToggleButton>
-          </ToggleButtonGroup>
+            <Tab value="code" label="Code" />
+            <Tab value="solutions" label="Solutions" />
+            <Tab value="discussion" label="Discussion" />
+          </Tabs>
         </Box>
       )}
 
@@ -926,33 +917,7 @@ export default function WorkspacePage() {
             </Menu>
             {!isMobile && <MaxButton active={maximized === 'editor'} onClick={() => toggleMax('editor')} label="editor" />}
 
-            {/* Phones: compact icon buttons. md+: labelled buttons. */}
-            <Tooltip title="Run">
-              <span>
-                <IconButton
-                  size="small"
-                  aria-label="Run"
-                  onClick={handleRun}
-                  disabled={isRunning}
-                  sx={(t) => ({ display: { xs: 'inline-flex', md: 'none' }, width: 36, height: 36, border: `1px solid ${t.palette.primary.main}`, color: 'primary.main' })}
-                >
-                  {runStatus === 'running' ? <CircularProgress size={18} /> : <PlayArrowRoundedIcon sx={{ fontSize: 22 }} />}
-                </IconButton>
-              </span>
-            </Tooltip>
-            <Tooltip title="Submit">
-              <span>
-                <IconButton
-                  size="small"
-                  aria-label="Submit"
-                  onClick={handleSubmit}
-                  disabled={isRunning}
-                  sx={{ display: { xs: 'inline-flex', md: 'none' }, width: 36, height: 36, bgcolor: 'primary.main', color: 'primary.contrastText', '&:hover': { bgcolor: 'primary.dark' }, '&.Mui-disabled': { bgcolor: 'action.disabledBackground' } }}
-                >
-                  {submitStatus === 'running' ? <CircularProgress size={18} color="inherit" /> : <CloudUploadRoundedIcon sx={{ fontSize: 20 }} />}
-                </IconButton>
-              </span>
-            </Tooltip>
+            {/* Run / Submit: bottom bar on phones (thumb reach), here on md+ */}
             <Button
               size="small"
               variant="outlined"
@@ -1009,7 +974,8 @@ export default function WorkspacePage() {
             options={{
               fontSize: editorPrefs.fontSize,
               minimap: { enabled: editorPrefs.minimap },
-              wordWrap: editorPrefs.wordWrap ? 'on' : 'off',
+              wordWrap: isMobile || editorPrefs.wordWrap ? 'on' : 'off', // phones: never scroll sideways
+              wrappingIndent: 'indent',
               lineNumbers: editorPrefs.lineNumbers ? 'on' : 'off',
               fontLigatures: editorPrefs.ligatures,
               autoClosingBrackets: editorPrefs.autoClose ? 'languageDefined' : 'never',
@@ -1021,10 +987,38 @@ export default function WorkspacePage() {
               detectIndentation: false,
               autoIndent: 'full',
               trimAutoWhitespace: true,
-              padding: { top: 10 },
+              padding: { top: 10, bottom: 10 },
+              ...(isMobile
+                ? {
+                    folding: false,
+                    glyphMargin: false,
+                    lineNumbersMinChars: 2,
+                    lineDecorationsWidth: 6,
+                    renderLineHighlight: 'gutter',
+                    overviewRulerLanes: 0,
+                    hideCursorInOverviewRuler: true,
+                    scrollbar: { verticalScrollbarSize: 6, horizontalScrollbarSize: 6 },
+                    stickyScroll: { enabled: false },
+                    // Popups cover a phone screen and Enter would accept them instead of adding a new line.
+                    quickSuggestions: false,
+                    suggestOnTriggerCharacters: false,
+                    acceptSuggestionOnEnter: 'off',
+                    acceptSuggestionOnCommitCharacter: false,
+                    wordBasedSuggestions: 'off',
+                    parameterHints: { enabled: false },
+                    hover: { enabled: false },
+                    contextmenu: false,
+                    occurrencesHighlight: 'off',
+                    selectionHighlight: false,
+                  }
+                : {}),
             }}
           />
         </Box>
+
+        {isMobile && editorFocused && (
+          <MobileKeyBar onKey={keyType} onTab={keyCommand('tab')} onOutdent={keyCommand('outdent')} onUndo={keyCommand('undo')} onRedo={keyCommand('redo')} />
+        )}
 
         {/* Drag handle between editor and console (desktop) */}
         {!isMobile && consoleOpen && maximized !== 'console' && (
@@ -1050,10 +1044,10 @@ export default function WorkspacePage() {
           <Stack
             direction="row"
             onClick={() => (maximized === 'console' ? setMaximized(null) : setConsoleOpen((o) => !o))}
-            sx={{ alignItems: 'center', gap: 1, px: 1.5, height: 46, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
+            sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 54, md: 46 }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
           >
             <TerminalRoundedIcon sx={{ fontSize: 20, color: 'text.secondary' }} />
-            <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Console</Typography>
+            {!(isMobile && (isRunning || resultToShow)) && <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Console</Typography>}
             {isRunning ? (
               <Chip size="small" label="Running…" color="primary" variant="outlined" />
             ) : (
@@ -1063,11 +1057,11 @@ export default function WorkspacePage() {
                   icon={isAccepted ? <CheckCircleRoundedIcon /> : <CancelRoundedIcon />}
                   label={`${resultToShow.status} · ${resultToShow.passedCount}/${resultToShow.totalCount}`}
                   color={isAccepted ? 'success' : 'error'}
-                  sx={{ fontWeight: 700 }}
+                  sx={{ fontWeight: 700, minWidth: 0, maxWidth: { xs: '44vw', md: 'none' } }}
                 />
               )
             )}
-            {!isRunning && isSubmitView && submitResult?.status === 'Accepted' && submitResult._id && (
+            {!isMobile && !isRunning && isSubmitView && submitResult?.status === 'Accepted' && submitResult._id && (
               <Button
                 size="small"
                 variant="outlined"
@@ -1081,6 +1075,35 @@ export default function WorkspacePage() {
               </Button>
             )}
             <Box sx={{ flex: 1 }} />
+            {isMobile && (
+              <Stack direction="row" sx={{ gap: 0.75, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  onPointerDown={keepFocus}
+                  onMouseDown={keepFocus}
+                  onClick={handleRun}
+                  disabled={isRunning}
+                  startIcon={runStatus === 'running' ? <CircularProgress size={14} /> : <PlayArrowRoundedIcon sx={{ fontSize: '18px !important' }} />}
+                  sx={{ height: 36, px: 1.25, minWidth: 0 }}
+                >
+                  Run
+                </Button>
+                <Button
+                  size="small"
+                  variant="contained"
+                  disableElevation
+                  onPointerDown={keepFocus}
+                  onMouseDown={keepFocus}
+                  onClick={handleSubmit}
+                  disabled={isRunning}
+                  startIcon={submitStatus === 'running' ? <CircularProgress size={14} color="inherit" /> : <CloudUploadRoundedIcon sx={{ fontSize: '18px !important' }} />}
+                  sx={{ height: 36, px: 1.25, minWidth: 0, fontWeight: 700 }}
+                >
+                  Submit
+                </Button>
+              </Stack>
+            )}
             {!isMobile && (
               <MaxButton
                 active={maximized === 'console'}
@@ -1107,6 +1130,11 @@ export default function WorkspacePage() {
                 </Box>
               ) : testResults.length > 0 ? (
                 <>
+                  {isMobile && isSubmitView && submitResult?.status === 'Accepted' && submitResult._id && (
+                    <Button size="small" variant="outlined" onClick={() => setShareOpen(true)} sx={{ mb: 1.25 }}>
+                      Share solution
+                    </Button>
+                  )}
                   {/* Verdict summary */}
                   <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.25, mb: 1.25 }}>
                     <Typography sx={{ fontWeight: 800, fontSize: '1.1rem', color: isAccepted ? 'success.main' : 'error.main' }}>
