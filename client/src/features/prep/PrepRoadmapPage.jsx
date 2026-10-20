@@ -17,11 +17,13 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import DifficultyChip from '../../components/DifficultyChip';
 import Alien3D from '../aptitude/components/Alien3D';
+import TcsBuddy from './TcsBuddy';
+import { getBrandLogo } from '../../components/brandLogos';
 import { Confetti, CountUp, XpBar } from '../aptitude/components/MotionBits';
 import { prepApi } from '../../api/prepApi';
 import { examCountdown, formatExamDate } from './examDate';
 import { Collapse, QuestCoin } from './PrepQuestBits';
-import { RANKS, formFor, levelFor, loadSeen, pickNextQuest, saveSeen, sectionPct, sectionState } from './questLogic';
+import { FORMS, RANKS, formFor, levelFor, loadSeen, pickNextQuest, saveSeen, sectionPct, sectionState } from './questLogic';
 
 const PROBLEMS_SHOWN = 15;
 const SECTION_ICON = { 'aptitude-pattern': CalculateRoundedIcon, 'external-only': MenuBookRoundedIcon, 'problem-filter': CodeRoundedIcon, 'learn-topic': MenuBookRoundedIcon };
@@ -221,6 +223,8 @@ export default function PrepRoadmapPage() {
   const readiness = roadmap.readiness ?? 0;
   const level = levelFor(readiness);
   const form = formFor(readiness);
+  const tier = FORMS.findIndex((f) => f.kind === form.kind);
+  const brand = /^tcs/i.test(companySlug) ? getBrandLogo(roadmap.name) : null; // the TCS mark becomes the character
   const toNext = level >= 10 ? 0 : Math.max(1, Math.round((level * 10 - readiness) * 10));
   const levelPct = level >= 10 ? 100 : ((readiness - (level - 1) * 10) / 10) * 100;
   const countdown = roadmap.examDate ? examCountdown(roadmap.examDate) : null;
@@ -247,8 +251,8 @@ export default function PrepRoadmapPage() {
       <Box sx={{ borderRadius: '20px', p: { xs: 2.25, sm: 3 }, color: '#fff', background: 'linear-gradient(150deg, #0B1230 0%, #1B2A6B 60%, #3B2A8C 100%)', boxShadow: '0 18px 40px rgba(27,42,107,.3)', mb: 4 }}>
         <Typography sx={{ fontWeight: 700, opacity: 0.8, mb: 1 }}>{roadmap.name}</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-          <Box sx={{ flexShrink: 0, width: 104, display: 'grid', placeItems: 'center' }}>
-            <Alien3D kind={form.kind} size={96} wave />
+          <Box sx={{ flexShrink: 0, width: 124, display: 'grid', placeItems: 'center' }}>
+            {brand ? <TcsBuddy path={brand.path} color={brand.color} tier={tier} size={116} /> : <Alien3D kind={form.kind} size={96} wave />}
           </Box>
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography sx={{ fontWeight: 900, fontSize: '2.4rem', lineHeight: 1 }}><CountUp value={Math.round(readiness)} />% <Typography component="span" sx={{ fontWeight: 700, fontSize: '1rem', opacity: 0.85 }}>ready</Typography></Typography>
