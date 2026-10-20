@@ -34,7 +34,7 @@ function PatternRow({ pattern, hard, navigate }) {
       <Box sx={{ flex: '1 1 170px', minWidth: 0 }}>
         <Typography variant="body2" noWrap sx={{ fontWeight: 700 }}>{pattern.title}</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <LinearProgress variant="determinate" value={pct} sx={{ flex: 1, maxWidth: 140, height: 4, borderRadius: 2, bgcolor: 'action.disabledBackground' }} />
+          <LinearProgress variant="determinate" value={pct} sx={{ flex: 1, maxWidth: 140, height: 4, borderRadius: '2px', bgcolor: 'action.disabledBackground' }} />
           <Typography variant="caption" color="text.secondary" sx={{ fontVariantNumeric: 'tabular-nums' }}>{pattern.solved}/{pattern.total}</Typography>
         </Box>
       </Box>
@@ -238,13 +238,13 @@ export default function PrepRoadmapPage() {
       {party && (
         <Box key={`pop-${party.id}`} role="status" sx={{ position: 'fixed', left: 0, right: 0, bottom: { xs: 96, md: 48 }, display: 'flex', justifyContent: 'center', zIndex: 1500, pointerEvents: 'none' }}>
           <motion.div initial={{ opacity: 0, y: 24, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }}>
-            <Box sx={{ px: 2.5, py: 1.25, borderRadius: 99, bgcolor: '#0F172A', color: '#FDE68A', fontWeight: 800, boxShadow: '0 10px 30px rgba(0,0,0,.35)' }}>{party.text}</Box>
+            <Box sx={{ px: 2.5, py: 1.25, borderRadius: '99px', bgcolor: '#0F172A', color: '#FDE68A', fontWeight: 800, boxShadow: '0 10px 30px rgba(0,0,0,.35)' }}>{party.text}</Box>
           </motion.div>
         </Box>
       )}
 
       {/* HERO: how ready am I, what is the next level, what do I do now */}
-      <Box sx={{ borderRadius: 7, p: { xs: 2.25, sm: 3 }, color: '#fff', background: 'linear-gradient(150deg, #0B1230 0%, #1B2A6B 60%, #3B2A8C 100%)', boxShadow: '0 18px 40px rgba(27,42,107,.3)', mb: 4 }}>
+      <Box sx={{ borderRadius: '20px', p: { xs: 2.25, sm: 3 }, color: '#fff', background: 'linear-gradient(150deg, #0B1230 0%, #1B2A6B 60%, #3B2A8C 100%)', boxShadow: '0 18px 40px rgba(27,42,107,.3)', mb: 4 }}>
         <Typography sx={{ fontWeight: 700, opacity: 0.8, mb: 1 }}>{roadmap.name}</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <Box sx={{ flexShrink: 0, width: 104, display: 'grid', placeItems: 'center' }}>
@@ -262,12 +262,12 @@ export default function PrepRoadmapPage() {
 
         {!roadmap.enrolled ? (
           <Button fullWidth size="large" variant="contained" disableElevation disabled={enrolling} onClick={handleEnroll} startIcon={<PlayArrowRoundedIcon />}
-            sx={{ mt: 2.5, fontWeight: 800, borderRadius: 99, color: '#2B1B00', bgcolor: '#FACC15', '&:hover': { bgcolor: '#FDE047' } }}>
+            sx={{ mt: 2.5, fontWeight: 800, borderRadius: '99px', color: '#2B1B00', bgcolor: '#FACC15', '&:hover': { bgcolor: '#FDE047' } }}>
             {enrolling ? 'Starting…' : 'Start'}
           </Button>
         ) : nextQuest ? (
           <Button fullWidth size="large" variant="contained" disableElevation onClick={() => jumpTo(nextQuest)} startIcon={<PlayArrowRoundedIcon />}
-            sx={{ mt: 2.5, fontWeight: 800, borderRadius: 99, color: '#2B1B00', bgcolor: '#FACC15', '&:hover': { bgcolor: '#FDE047' } }}>
+            sx={{ mt: 2.5, fontWeight: 800, borderRadius: '99px', color: '#2B1B00', bgcolor: '#FACC15', '&:hover': { bgcolor: '#FDE047' } }}>
             Next: {nextQuest.name}
           </Button>
         ) : null}
@@ -287,7 +287,7 @@ export default function PrepRoadmapPage() {
               <QuestCoin pct={pct} state={state} Icon={Icon} active={isNext} size={54} />
               <Box sx={{ flex: 1, width: 0, minHeight: 20, my: 0.5, borderLeft: '3px', borderLeftStyle: state === 'cleared' ? 'solid' : 'dotted', borderLeftColor: state === 'cleared' ? '#F5B301' : 'divider' }} />
             </Box>
-            <Box sx={{ flex: 1, minWidth: 0, mb: 1.5, borderRadius: 4, border: '1px solid', borderColor: isNext ? 'primary.main' : 'divider', bgcolor: 'background.paper', px: 1.75, py: 1.25, alignSelf: 'flex-start', width: '100%' }}>
+            <Box sx={{ flex: 1, minWidth: 0, mb: 1.5, borderRadius: '14px', border: '1px solid', borderColor: isNext ? 'primary.main' : 'divider', bgcolor: 'background.paper', px: 1.75, py: 1.25, alignSelf: 'flex-start', width: '100%' }}>
               <ButtonBase onClick={() => setOpenId(isOpen ? null : section.id)} aria-expanded={isOpen} sx={{ width: '100%', display: 'flex', alignItems: 'center', gap: 1, textAlign: 'left', justifyContent: 'flex-start' }}>
                 <Box sx={{ flex: 1, minWidth: 0 }}>
                   <Typography sx={{ fontWeight: 800, lineHeight: 1.25 }}>{section.name}</Typography>
