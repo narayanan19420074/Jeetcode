@@ -188,13 +188,40 @@ export function downloadIcs(plan) {
 export const planTone = (summary) =>
   summary.status === 'completed' ? 'success' : summary.status === 'behind' ? 'error' : summary.status === 'upcoming' ? 'info' : 'primary';
 
-// Circular progress with the percentage in the middle.
-export function ProgressRing({ value, size = 56, tone = 'primary' }) {
+export const PLAN_AMBER = '#FBBF24';
+
+// Every plan gets its own colour story (same family as the TCS NQT card). Stable per plan id.
+export const PLAN_THEMES = [
+  { name: 'indigo', gradient: 'linear-gradient(135deg,#1E1B4B 0%,#3730A3 55%,#6D28D9 100%)' },
+  { name: 'teal', gradient: 'linear-gradient(135deg,#042F2E 0%,#0F766E 55%,#047857 100%)' },
+  { name: 'rose', gradient: 'linear-gradient(135deg,#4C0519 0%,#BE123C 55%,#C2410C 100%)' },
+  { name: 'ocean', gradient: 'linear-gradient(135deg,#0C1E4A 0%,#1D4ED8 55%,#0E7490 100%)' },
+  { name: 'plum', gradient: 'linear-gradient(135deg,#3B0764 0%,#86198F 55%,#BE185D 100%)' },
+  { name: 'ember', gradient: 'linear-gradient(135deg,#431407 0%,#9A3412 55%,#B45309 100%)' },
+];
+export const planTheme = (id = '') => PLAN_THEMES[[...String(id)].reduce((n, c) => n + c.charCodeAt(0), 0) % PLAN_THEMES.length];
+
+// Big number for the countdown tile on a plan card / hero.
+export function daysTile(summary, today = localKey()) {
+  const { status, daysLeft, startDate, endDate, total } = summary;
+  if (!total || !endDate) return { big: '--', label: 'no dates', urgent: false };
+  if (status === 'completed') return { big: 'Done', label: '', urgent: false };
+  if (status === 'upcoming') {
+    const n = Math.max(1, Math.round((keyToDate(startDate) - keyToDate(today)) / 86400000));
+    return { big: String(n), label: n === 1 ? 'day to start' : 'days to start', urgent: false };
+  }
+  if (endDate < today) return { big: 'Ended', label: '', urgent: true };
+  if (daysLeft <= 1) return { big: 'Last', label: 'day', urgent: true };
+  return { big: String(daysLeft), label: 'days left', urgent: daysLeft <= 3 };
+}
+
+// Circular progress with the percentage in the middle. `onDark` is for gradient cards (white text, amber ring).
+export function ProgressRing({ value, size = 56, tone = 'primary', onDark = false }) {
   return (
     <Box sx={{ position: 'relative', width: size, height: size, flexShrink: 0 }} role="img" aria-label={`${value}% done`}>
-      <CircularProgress variant="determinate" value={100} size={size} thickness={4.5} sx={(t) => ({ color: alpha(t.palette.text.primary, 0.1), position: 'absolute', inset: 0 })} />
-      <CircularProgress variant="determinate" value={value} size={size} thickness={4.5} color={tone} sx={{ position: 'absolute', inset: 0, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }} />
-      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: size * 0.26, fontVariantNumeric: 'tabular-nums' }}>{value}%</Typography>
+      <CircularProgress variant="determinate" value={100} size={size} thickness={4.5} sx={(t) => ({ color: onDark ? 'rgba(255,255,255,0.22)' : alpha(t.palette.text.primary, 0.1), position: 'absolute', inset: 0 })} />
+      <CircularProgress variant="determinate" value={value} size={size} thickness={4.5} color={onDark ? 'inherit' : tone} sx={{ position: 'absolute', inset: 0, color: onDark ? PLAN_AMBER : undefined, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }} />
+      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: size * 0.26, fontVariantNumeric: 'tabular-nums', color: onDark ? '#fff' : undefined }}>{value}%</Typography>
     </Box>
   );
 }

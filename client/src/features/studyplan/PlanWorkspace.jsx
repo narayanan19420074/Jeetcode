@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
-  IconButton, LinearProgress, Skeleton, ToggleButton, ToggleButtonGroup, Tooltip, Typography, alpha,
+  IconButton, LinearProgress, Skeleton, ToggleButton, ToggleButtonGroup, Tooltip, Typography,
 } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
@@ -13,14 +13,13 @@ import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import PersonAddRoundedIcon from '@mui/icons-material/PersonAddRounded';
 import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
-import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
 import { studyPlanApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import FriendPicker from './FriendPicker';
-import { PlanTaskRow, ProgressRing, daysLeftInfo, fmtRange, localKey, paceLabel, planTone, relDay, shareUrl } from './planUtils';
+import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtRange, localKey, paceLabel, planTheme, relDay, shareUrl } from './planUtils';
 
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 // Each panel scrolls inside itself, so the page never grows.
@@ -110,8 +109,8 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
   }
 
   const s = plan.summary;
-  const tone = planTone(s);
-  const info = daysLeftInfo(s, today);
+  const theme = planTheme(plan.id);
+  const tile = daysTile(s, today);
   const pace = paceLabel(s.pace);
   const confirmText = confirm === 'delete'
     ? 'This removes the plan for everyone. Questions you solved stay solved.'
@@ -149,33 +148,36 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
         </Tooltip>
       </Box>
 
-      {/* hero: how the plan is going at a glance */}
+      {/* hero: how the plan is going at a glance (same colours as its card) */}
       <Box
-        sx={[surface, (t) => ({
-          mb: 1.25, p: 1.5, display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap', overflow: 'hidden',
-          background: `linear-gradient(120deg, ${alpha(t.palette[tone].main, 0.22)} 0%, ${alpha(t.palette[tone].main, 0.05)} 75%)`,
-        })]}
+        sx={{ position: 'relative', overflow: 'hidden', mb: 1.25, p: { xs: 1.75, sm: 2 }, borderRadius: '16px', color: '#fff', background: theme.gradient, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}
       >
-        <ProgressRing value={s.percent} tone={tone} size={64} />
-        <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Box
-            sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.6, px: 1.1, py: 0.3, borderRadius: 999, fontSize: 13, fontWeight: 800, color: t.palette[info.tone].main, bgcolor: alpha(t.palette.background.paper, 0.85), border: `1px solid ${alpha(t.palette[info.tone].main, 0.4)}` })}
-          >
-            <EventRoundedIcon sx={{ fontSize: 16 }} />{info.text}
-          </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mt: 0.9, flexWrap: 'wrap' }}>
-            <Typography variant="body2" sx={{ fontWeight: 700 }}><span style={{ fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total}</span> solved</Typography>
-            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4 }}>
-              <TodayRoundedIcon sx={{ fontSize: 16, color: 'primary.main' }} />
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Typography>
+        <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.26), transparent 70%)', pointerEvents: 'none' }} />
+        <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.5 }}>
+          <ProgressRing value={s.percent} size={68} onDark />
+          <Box sx={{ minWidth: 0, flex: 1 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, flexWrap: 'wrap' }}>
+              <Typography sx={{ fontSize: '0.95rem', fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
+              {s.streak > 0 && (
+                <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
+                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: 17, color: PLAN_AMBER }} />
+                  <Typography sx={{ fontSize: '0.8rem', fontWeight: 800 }}>{s.streak} day streak</Typography>
+                </Box>
+              )}
             </Box>
-            {s.streak > 0 && (
-              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.2 }}>
-                <LocalFireDepartmentRoundedIcon sx={{ fontSize: 17, color: 'var(--jc-reward)' }} />
-                <Typography variant="body2" sx={{ fontWeight: 700 }}>{s.streak} day streak</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 0.5, flexWrap: 'wrap', color: 'rgba(255,255,255,0.9)' }}>
+              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4 }}>
+                <TodayRoundedIcon sx={{ fontSize: 16 }} />
+                <Typography sx={{ fontSize: '0.8rem', fontWeight: 700 }}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Typography>
               </Box>
-            )}
-            {s.status !== 'completed' && s.status !== 'upcoming' && <Typography variant="body2" sx={{ fontWeight: 700, color: pace.tone }}>{pace.text}</Typography>}
+              {s.status !== 'completed' && s.status !== 'upcoming' && (
+                <Typography sx={{ fontSize: '0.8rem', fontWeight: 800, color: s.pace < 0 ? '#FECACA' : s.pace > 0 ? '#BBF7D0' : 'inherit' }}>{pace.text}</Typography>
+              )}
+            </Box>
+          </Box>
+          <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? 'rgba(251,191,36,0.2)' : 'rgba(255,255,255,0.14)', border: tile.urgent ? '1px solid rgba(251,191,36,0.6)' : '1px solid transparent' }}>
+            <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? '#FDE68A' : '#fff' }}>{tile.big}</Typography>
+            {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: 'rgba(255,255,255,0.85)' }}>{tile.label}</Typography>}
           </Box>
         </Box>
       </Box>
