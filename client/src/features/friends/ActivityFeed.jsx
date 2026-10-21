@@ -8,7 +8,7 @@ import TimelineRoundedIcon from '@mui/icons-material/TimelineRounded';
 import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
-import { APT_COLOR, PersonAvatar, dayLabel, mono, timeAgo } from './friendsUi';
+import { APT_COLOR, PersonAvatar, cardSx, dayLabel, mono, timeAgo } from './friendsUi';
 import { useSelector } from 'react-redux';
 
 const LANG = { javascript: 'JS', python: 'Python', cpp: 'C++' };
@@ -25,8 +25,13 @@ function Item({ e, online, onOpenProblem }) {
   const isApt = e.type === 'aptitude';
   const accent = isApt ? APT_COLOR : DIFF_COLOR[e.problem.difficulty];
   return (
-    <Stack direction="row" spacing={1.25} alignItems="flex-start" sx={{ px: 1.5, py: 1.25 }}>
-      <PersonAvatar person={e.user} size={38} online={online} />
+    <Stack
+      direction="row"
+      spacing={1.25}
+      alignItems="flex-start"
+      sx={(t) => ({ ...cardSx(t, { glowColor: `color-mix(in srgb, ${accent} 30%, transparent)` }), px: { xs: 1.25, sm: 2 }, py: 1.25, '&::before': { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: 4, background: accent } })}
+    >
+      <PersonAvatar person={e.user} size={40} online={online} gradient={[accent, `color-mix(in srgb, ${accent} 40%, #fff)`]} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Typography variant="body2" sx={{ lineHeight: 1.45 }}>
           <b>{e.user.name}</b>{' '}
@@ -98,7 +103,7 @@ export default function ActivityFeed() {
         <Tooltip title="Refresh"><span><IconButton size="small" aria-label="Refresh activity" onClick={() => load()} disabled={busy}><RefreshRoundedIcon fontSize="small" /></IconButton></span></Tooltip>
       </Stack>
       {error && <Alert severity="error" sx={{ mx: 1.25, mb: 1 }} action={<Button color="inherit" onClick={() => load()}>Retry</Button>}>{error}</Alert>}
-      {items === null && [0, 1, 2, 3].map((i) => <Skeleton key={i} variant="rounded" height={58} sx={{ mx: 1.5, my: 1, borderRadius: '12px' }} />)}
+      {items === null && [0, 1, 2, 3].map((i) => <Skeleton key={i} variant="rounded" height={68} sx={{ mx: 1, mb: 0.85, borderRadius: '16px' }} />)}
       {items && items.length === 0 && !error && (
         <Stack alignItems="center" spacing={1} sx={{ py: 5, px: 2, color: 'text.secondary', textAlign: 'center' }}>
           <TimelineRoundedIcon sx={{ fontSize: 36 }} />
@@ -111,7 +116,7 @@ export default function ActivityFeed() {
         lastDay = day;
         return (
           <Box key={e.id}>
-            {head && <Typography variant="caption" sx={{ display: 'block', px: 1.5, pt: 1.25, pb: 0.25, fontWeight: 800, color: 'text.secondary' }}>{day}</Typography>}
+            {head && <Typography variant="caption" sx={{ display: 'block', px: 2, pt: 1.25, pb: 0.75, fontWeight: 800, color: 'text.secondary', letterSpacing: 0.4, textTransform: 'uppercase' }}>{day}</Typography>}
             <Item e={e} online={Boolean(online[e.user.userId])} onOpenProblem={(slug) => navigate(`/workspace/${slug}`)} />
           </Box>
         );

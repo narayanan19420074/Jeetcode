@@ -21,9 +21,15 @@ import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 import LaptopMacRoundedIcon from '@mui/icons-material/LaptopMacRounded';
 import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsActiveRounded';
 import TimelineRoundedIcon from '@mui/icons-material/TimelineRounded';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Collapse } from '@mui/material';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
 import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { surface } from '../dashboard/dashboardUtils';
+import { DIFF_COLOR, surface } from '../dashboard/dashboardUtils';
+import { tierFor } from '../leaderboard/tiers';
 import {
   acceptFriendInvite,
   acceptFriendRequest,
@@ -33,22 +39,10 @@ import {
   removeFriend,
   sendFriendRequest,
 } from './friendsSlice';
-import { PersonAvatar, Streak, mono, practisedToday, statusInfo, tonal } from './friendsUi';
+import { AMBER, APT_COLOR, FLAME, GREEN, HERO_BG, CountUp, PersonAvatar, Streak, TierChip, calm, cardSx, glow, mono, practisedToday, statusInfo, sweep, tonal, twinkle } from './friendsUi';
 import FriendChat from './FriendChat';
 import ActivityFeed from './ActivityFeed';
 import FriendProfileDialog from './FriendProfileDialog';
-
-const rowSx = (t) => ({
-  width: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  gap: 1.25,
-  px: 1.5,
-  py: 1,
-  fontFamily: 'inherit',
-  textAlign: 'left',
-  borderBottom: `1px solid ${t.palette.divider}`,
-});
 
 // Runs a friends thunk, shows the result as a toast, reports success.
 function useFriendAction() {
@@ -75,49 +69,160 @@ function Names({ person }) {
   );
 }
 
-// A friend: tap the row for their profile; quick buttons for chat / code together / nudge.
-function FriendRow({ f, online, unread, onOpen, onChat, onCode, onNudge, busy }) {
+// A friend, Leaderboard style: gradient-ring avatar, tier + flame streak, points. Tap to open details.
+function FriendRow({ f, index = 0, online, unread, expanded, onToggle, onProfile, onChat, onCode, onNudge, busy }) {
+  const reduce = useReducedMotion();
+  const { tier, next, progress, toNext } = tierFor(f.score);
   const st = statusInfo(f, online);
   const canNudge = !practisedToday(f);
+  const tiles = [['Easy', f.easy, DIFF_COLOR.Easy], ['Medium', f.medium, DIFF_COLOR.Medium], ['Hard', f.hard, DIFF_COLOR.Hard], ['Aptitude', f.aptitude, APT_COLOR]];
+
   return (
-    <Box sx={(t) => ({ ...rowSx(t), '&:hover': { bgcolor: t.palette.action.hover }, transition: 'background-color .15s' })}>
-      <ButtonBase onClick={() => onOpen(f.userId)} aria-label={`Open ${f.name}`} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, flex: 1, minWidth: 0, textAlign: 'left', fontFamily: 'inherit', borderRadius: '10px' }}>
-        <PersonAvatar person={f} online={online} />
-        <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Stack direction="row" alignItems="center" spacing={0.75}>
-            <Typography variant="body2" noWrap sx={{ fontWeight: 700 }}>{f.name}</Typography>
-            <Streak value={f.streak} />
-          </Stack>
-          <Typography variant="caption" noWrap sx={{ display: 'block', color: st.live ? 'success.main' : 'text.secondary', fontWeight: st.live ? 700 : 400 }}>
-            {st.text} · <span style={mono}>{f.score.toLocaleString()} pts</span>
-          </Typography>
-        </Box>
-      </ButtonBase>
-      <Stack direction="row" spacing={0.75} sx={{ flexShrink: 0 }}>
-        {canNudge && (
-          <Tooltip title="Nudge — remind about streak">
-            <span><IconButton aria-label={`Nudge ${f.handle}`} disabled={busy === `nudge:${f.userId}`} onClick={() => onNudge(f)} sx={tonal('warning', 36)}><NotificationsActiveRoundedIcon sx={{ fontSize: 19 }} /></IconButton></span>
-          </Tooltip>
-        )}
-        <Tooltip title="Code together">
-          <span><IconButton aria-label={`Code together with ${f.handle}`} disabled={busy === `room:${f.userId}`} onClick={() => onCode(f)} sx={{ ...tonal('success', 36), display: { xs: 'none', sm: 'inline-flex' } }}><LaptopMacRoundedIcon sx={{ fontSize: 19 }} /></IconButton></span>
-        </Tooltip>
-        <Tooltip title="Chat">
-          <IconButton aria-label={`Chat with ${f.handle}`} onClick={() => onChat(f)} sx={tonal('primary', 36)}>
-            <Badge badgeContent={unread} color="error" max={99}><ChatRoundedIcon sx={{ fontSize: 19 }} /></Badge>
-          </IconButton>
-        </Tooltip>
-      </Stack>
+    <motion.div
+      initial={reduce ? false : { opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.32, delay: reduce ? 0 : Math.min(index, 10) * 0.035, ease: 'easeOut' }}
+    >
+      <Box
+        sx={(t) => ({
+          ...cardSx(t, online ? { accent: [GREEN, t.palette.primary.main], glowColor: 'rgba(34,197,94,0.45)' } : {}),
+          '&::after': online ? { content: '""', position: 'absolute', inset: 0, pointerEvents: 'none', background: `linear-gradient(100deg, ${alpha(GREEN, 0.1)}, transparent 70%)`, animation: `${glow} 2.8s ease-in-out infinite`, ...calm } : undefined,
+        })}
+      >
+        <ButtonBase
+          onClick={onToggle}
+          aria-expanded={expanded}
+          aria-label={`${f.name}, ${f.score} points`}
+          sx={(t) => ({ position: 'relative', zIndex: 1, width: '100%', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) auto 20px', gap: { xs: 1, sm: 1.5 }, alignItems: 'center', textAlign: 'left', px: { xs: 1.25, sm: 2 }, py: 1.1, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
+            <PersonAvatar person={f} size={42} online={online} gradient={[tier.color, `color-mix(in srgb, ${tier.color} 40%, #fff)`]} />
+            <Box sx={{ minWidth: 0 }}>
+              <Stack direction="row" alignItems="center" spacing={0.75}>
+                <Typography variant="body2" noWrap sx={{ fontWeight: 800, lineHeight: 1.25 }}>{f.name}</Typography>
+                {unread > 0 && (
+                  <Box component="span" aria-label={`${unread} unread`} sx={{ minWidth: 18, height: 18, px: 0.5, borderRadius: 9, bgcolor: 'error.main', color: 'error.contrastText', fontSize: 11, fontWeight: 800, display: 'grid', placeItems: 'center' }}>{unread}</Box>
+                )}
+              </Stack>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.9, mt: 0.2, minWidth: 0 }}>
+                <Typography variant="caption" noWrap sx={{ fontWeight: st.live ? 800 : 500, color: st.live ? 'success.main' : 'text.secondary', flexShrink: 1 }}>{st.text}</Typography>
+                <Box sx={{ display: { xs: 'none', sm: 'inline-flex' } }}><TierChip tier={tier} /></Box>
+                <Streak value={f.streak} />
+              </Box>
+            </Box>
+          </Box>
+          <Box sx={{ textAlign: 'right' }}>
+            <Typography sx={{ fontWeight: 900, fontSize: 18, lineHeight: 1.1, ...mono }}>{f.score.toLocaleString()}</Typography>
+            <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, fontSize: 10.5, letterSpacing: 0.4 }}>PTS</Typography>
+          </Box>
+          <ExpandMoreRoundedIcon sx={{ fontSize: 20, color: 'text.disabled', transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />
+        </ButtonBase>
+
+        <Collapse in={expanded} timeout={220} unmountOnExit>
+          <Box sx={(t) => ({ px: { xs: 1.25, sm: 2 }, py: 1.5, bgcolor: alpha(t.palette.text.primary, 0.035), display: 'grid', gap: 1.5 })}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 1 }}>
+              {tiles.map(([label, n, color]) => (
+                <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: '12px', border: `1px solid color-mix(in srgb, ${color} 35%, transparent)`, background: `linear-gradient(160deg, color-mix(in srgb, ${color} 20%, transparent), transparent 80%)` }}>
+                  <Typography sx={{ fontWeight: 900, fontSize: 19, lineHeight: 1.2, color, ...mono }}>{n}</Typography>
+                  <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', fontWeight: 700 }}>{label}</Typography>
+                </Box>
+              ))}
+            </Box>
+
+            <Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.6 }}>
+                <TierChip tier={tier} />
+                <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
+                  {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top level reached'}
+                </Typography>
+              </Box>
+              <Box sx={{ height: 9, borderRadius: 99, bgcolor: 'divider', overflow: 'hidden' }}>
+                <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: 99, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, #fff))`, transition: 'width .6s ease', '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent)', animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
+              </Box>
+            </Box>
+
+            <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+              <Button variant="contained" disableElevation startIcon={<Badge badgeContent={unread} color="error" max={99}><ChatRoundedIcon /></Badge>} onClick={() => onChat(f)} sx={{ borderRadius: 999, fontWeight: 800, textTransform: 'none', px: 2 }}>Chat</Button>
+              <Button startIcon={<LaptopMacRoundedIcon />} disabled={busy === `room:${f.userId}`} onClick={() => onCode(f)} sx={{ borderRadius: 999, fontWeight: 800, textTransform: 'none', bgcolor: alpha(GREEN, 0.14), color: 'success.main', '&:hover': { bgcolor: alpha(GREEN, 0.24) } }}>Code together</Button>
+              {canNudge && (
+                <Button startIcon={<LocalFireDepartmentRoundedIcon />} disabled={busy === `nudge:${f.userId}`} onClick={() => onNudge(f)} sx={{ borderRadius: 999, fontWeight: 800, textTransform: 'none', bgcolor: alpha(FLAME, 0.14), color: FLAME, '&:hover': { bgcolor: alpha(FLAME, 0.24) } }}>Nudge</Button>
+              )}
+              <Button startIcon={<BadgeRoundedIcon />} onClick={() => onProfile(f.userId)} sx={{ borderRadius: 999, fontWeight: 800, textTransform: 'none', bgcolor: 'action.hover', color: 'text.primary' }}>Profile &amp; compare</Button>
+            </Stack>
+          </Box>
+        </Collapse>
+      </Box>
+    </motion.div>
+  );
+}
+
+// Requests / sent / search results: same card look, one row.
+function PlainRow({ person, action }) {
+  return (
+    <Box sx={(t) => ({ ...cardSx(t), display: 'flex', alignItems: 'center', gap: 1.25, px: { xs: 1.25, sm: 2 }, py: 1.1 })}>
+      <PersonAvatar person={person} size={42} />
+      <Names person={person} />
+      {action}
     </Box>
   );
 }
 
-function PlainRow({ person, action }) {
+function SkeletonRows({ count = 5 }) {
+  return Array.from({ length: count }, (_, i) => (
+    <Box key={i} sx={(t) => ({ ...cardSx(t), display: 'flex', alignItems: 'center', gap: 1.25, px: 1.25, py: 1.1 })}>
+      <Skeleton variant="circular" width={42} height={42} />
+      <Box sx={{ flex: 1 }}>
+        <Skeleton variant="text" width={`${45 + ((i * 17) % 35)}%`} />
+        <Skeleton variant="text" width={110} />
+      </Box>
+      <Skeleton variant="text" width={40} />
+    </Box>
+  ));
+}
+
+// Dark "stage" header like the Leaderboard podium: who is online, how strong the squad is.
+function Hero({ friends, onlineFriends, unreadTotal, onOpenChat }) {
+  const best = friends.reduce((m, f) => Math.max(m, f.streak || 0), 0);
+  const tiles = [
+    ['Friends', friends.length, '#fff', null],
+    ['Online', onlineFriends.length, '#4ADE80', null],
+    ['Best streak', best, '#FDBA74', <LocalFireDepartmentRoundedIcon key="f" sx={{ fontSize: 15, color: FLAME, filter: 'drop-shadow(0 0 4px rgba(249,115,22,0.8))' }} />],
+  ];
+  const sparks = [[8, 18, 0], [24, 62, 0.6], [44, 12, 1.2], [70, 16, 0.3], [86, 58, 0.9], [94, 22, 1.5]];
   return (
-    <Box sx={(t) => ({ ...rowSx(t), cursor: 'default' })}>
-      <PersonAvatar person={person} />
-      <Names person={person} />
-      {action}
+    <Box sx={{ position: 'relative', overflow: 'hidden', p: { xs: 1.75, sm: 2.25 }, borderRadius: '18px', color: '#fff', background: HERO_BG, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
+      <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -60, width: 240, height: 240, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.3), transparent 68%)', animation: `${glow} 3s ease-in-out infinite`, ...calm }} />
+      {sparks.map(([x, y, d], i) => (
+        <Box key={i} aria-hidden sx={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: 4, height: 4, borderRadius: '50%', bgcolor: '#fff', animation: `${twinkle} 2.4s ease-in-out ${d}s infinite`, ...calm }} />
+      ))}
+      <Box sx={{ position: 'relative' }}>
+        <Stack direction="row" alignItems="center" spacing={1.5}>
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <Typography sx={{ fontWeight: 900, fontSize: '1.4rem', lineHeight: 1.15 }}>Your squad</Typography>
+            <Typography variant="body2" noWrap sx={{ opacity: 0.85, mt: 0.4 }}>
+              {friends.length === 0 ? 'Invite friends and compete together' : onlineFriends.length ? `${onlineFriends.length} online right now` : 'Nobody online right now'}
+              {unreadTotal ? ` · ${unreadTotal} unread` : ''}
+            </Typography>
+          </Box>
+          {onlineFriends.length > 0 && (
+            <AvatarGroup max={5} sx={{ '& .MuiAvatar-root': { width: 36, height: 36, fontSize: 14, fontWeight: 700, borderColor: '#312E81' } }}>
+              {onlineFriends.map((f) => (
+                <Tooltip key={f.userId} title={`@${f.handle}`}>
+                  <Avatar src={f.avatarUrl || undefined} onClick={() => onOpenChat(f.userId)} sx={{ cursor: 'pointer' }}>{f.name?.[0]?.toUpperCase()}</Avatar>
+                </Tooltip>
+              ))}
+            </AvatarGroup>
+          )}
+        </Stack>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 1, mt: 1.75 }}>
+          {tiles.map(([label, n, color, icon]) => (
+            <Box key={label} sx={{ py: 1, px: 1, textAlign: 'center', borderRadius: '12px', bgcolor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.14)', backdropFilter: 'blur(4px)' }}>
+              <Typography sx={{ fontWeight: 900, fontSize: 21, lineHeight: 1.15, color, ...mono }}>{icon}<CountUp value={n} /></Typography>
+              <Typography variant="caption" sx={{ opacity: 0.8, fontWeight: 700, letterSpacing: 0.3 }}>{label}</Typography>
+            </Box>
+          ))}
+        </Box>
+      </Box>
     </Box>
   );
 }
@@ -191,6 +296,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const { busy, run } = useFriendAction();
   const [chatId, setChatId] = useState(null);
   const [acting, setActing] = useState('');
+  const [openRow, setOpenRow] = useState(null);
 
   const [tab, setTab] = useState('friends');
   const [q, setQ] = useState('');
@@ -270,7 +376,19 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     }
   };
 
-  const rowProps = { onOpen: setProfileId, onChat: (f) => setChatId(f.userId), onCode: codeTogether, onNudge: nudge, busy: acting };
+  const friendRow = (f, i) => (
+    <FriendRow
+      key={f.userId}
+      f={f}
+      index={i}
+      unread={unread[f.userId]}
+      online={Boolean(online[f.userId])}
+      expanded={openRow === f.userId}
+      onToggle={() => setOpenRow((cur) => (cur === f.userId ? null : f.userId))}
+      {...rowProps}
+    />
+  );
+  const rowProps = { onProfile: setProfileId, onChat: (f) => setChatId(f.userId), onCode: codeTogether, onNudge: nudge, busy: acting };
 
   const link = `${window.location.origin}/dashboard?view=friends&invite=${user.handle}`;
   const message = `Join me on JeetCode! I'm @${user.handle} — add me as a friend and let's compete on the leaderboard.`;
@@ -326,9 +444,9 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     body = (
       <>
         {mine.length > 0 && <Label>Your friends</Label>}
-        {mine.map((f) => <FriendRow key={f.userId} f={f} unread={unread[f.userId]} online={Boolean(online[f.userId])} {...rowProps} />)}
+        {mine.map((f, i) => friendRow(f, i))}
         {canSearchServer && <Label>Players</Label>}
-        {searching && !players && <Skeleton variant="rounded" height={48} sx={{ mx: 1.5, my: 1, borderRadius: '12px' }} />}
+        {searching && !players && <SkeletonRows count={2} />}
         {others.map((p) => <PlainRow key={p.userId} person={p} action={playerAction(p)} />)}
         {searchError && <Typography variant="body2" color="text.secondary" sx={{ px: 1.5, py: 1.5 }}>{searchError}</Typography>}
         {!searching && !searchError && mine.length === 0 && others.length === 0 && (
@@ -339,11 +457,11 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   } else if (tab === 'friends') {
     body = (
       <>
-        {!loaded && loading && [0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={48} sx={{ mx: 1.5, my: 1, borderRadius: '12px' }} />)}
+        {!loaded && loading && <SkeletonRows />}
         {loaded && friends.length === 0 && (
           <Note icon={<PeopleAltRoundedIcon sx={{ fontSize: 34 }} />}>No friends yet. Tap the share icon to invite, or search a handle.</Note>
         )}
-        {sortedFriends.map((f) => <FriendRow key={f.userId} f={f} unread={unread[f.userId]} online={Boolean(online[f.userId])} {...rowProps} />)}
+        {sortedFriends.map((f, i) => friendRow(f, i))}
       </>
     );
   } else if (tab === 'activity') {
@@ -385,37 +503,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     <Stack spacing={1.5}>
       {inviteHandle && <InviteBanner handle={inviteHandle} onDone={onClearInvite} />}
 
-      {/* hero: who is online right now */}
-      <Box
-        sx={[surface, (t) => ({
-          p: 2,
-          overflow: 'hidden',
-          position: 'relative',
-          background: `radial-gradient(120% 140% at 0% 0%, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.22 : 0.14)} 0%, transparent 60%), ${t.palette.background.paper}`,
-        })]}
-      >
-        <Stack direction="row" alignItems="center" spacing={1.5}>
-          <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Typography sx={{ fontWeight: 900, fontSize: '1.25rem', lineHeight: 1.2 }}>Friends</Typography>
-            <Stack direction="row" alignItems="center" spacing={0.75} sx={{ mt: 0.5 }}>
-              <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: onlineFriends.length ? '#22C55E' : 'text.disabled' }} />
-              <Typography variant="body2" color="text.secondary" noWrap>
-                {onlineFriends.length ? `${onlineFriends.length} online now` : friends.length ? 'Nobody online right now' : 'Invite friends to compete together'}
-                {unreadTotal ? ` · ${unreadTotal} unread` : ''}
-              </Typography>
-            </Stack>
-          </Box>
-          {onlineFriends.length > 0 && (
-            <AvatarGroup max={5} sx={{ '& .MuiAvatar-root': { width: 34, height: 34, fontSize: 14, fontWeight: 700 } }}>
-              {onlineFriends.map((f) => (
-                <Tooltip key={f.userId} title={`@${f.handle}`}>
-                  <Avatar src={f.avatarUrl || undefined} onClick={() => setChatId(f.userId)} sx={{ cursor: 'pointer' }}>{f.name?.[0]?.toUpperCase()}</Avatar>
-                </Tooltip>
-              ))}
-            </AvatarGroup>
-          )}
-        </Stack>
-      </Box>
+      <Hero friends={friends} onlineFriends={onlineFriends} unreadTotal={unreadTotal} onOpenChat={setChatId} />
 
       <Box sx={[surface, { overflow: 'hidden' }]}>
         {/* toolbar: search + invite + leaderboard */}
@@ -486,7 +574,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
           <Alert severity="error" sx={{ mx: 1.25, mb: 1.25 }} action={<Button color="inherit" onClick={() => dispatch(fetchFriends())}>Retry</Button>}>{error}</Alert>
         )}
 
-        <Box sx={(t) => ({ borderTop: `1px solid ${t.palette.divider}`, '& > :last-child': { borderBottom: 'none' } })}>{body}</Box>
+        <Box sx={(t) => ({ borderTop: `1px solid ${t.palette.divider}`, pt: 1, pb: 0.25 })}>{body}</Box>
       </Box>
 
       {/* invite menu */}
