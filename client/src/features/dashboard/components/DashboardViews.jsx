@@ -12,15 +12,12 @@ import {
   DialogContentText,
   DialogTitle,
   IconButton,
-  LinearProgress,
   Skeleton,
   Stack,
   Tooltip,
   Typography,
   alpha,
 } from '@mui/material';
-import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
-import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
@@ -40,8 +37,6 @@ import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, surface } from '../dashboardUtils';
 import { NameDialog } from './ListDialogs';
 
-const GOLD_A = '#FCD34D';
-const GOLD_B = '#D97706';
 
 const ViewHeader = ({ title, subtitle, trailing }) => (
   <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between', gap: 2, mb: 2.5 }}>
@@ -59,135 +54,8 @@ const ViewHeader = ({ title, subtitle, trailing }) => (
   </Stack>
 );
 
-// -------------------------------------------------------------------- quests
-// Quests are computed from numbers the backend already tracks (solved counts,
-// streaks, today's activity). Nothing extra is stored, and progress can never
-// drift from the real stats.
-
-function buildQuests(user, checkedIn) {
-  const easy = user?.easySolved ?? 0;
-  const medium = user?.mediumSolved ?? 0;
-  const hard = user?.hardSolved ?? 0;
-  const total = easy + medium + hard;
-  const bestStreak = Math.max(user?.longestStreak ?? 0, user?.streakDays ?? 0);
-
-  return [
-    {
-      group: 'Today',
-      items: [{ id: 'checkin', title: 'Check in today', desc: 'Submit one solution before the day ends.', value: checkedIn ? 1 : 0, target: 1, difficulty: null }],
-    },
-    {
-      group: 'Streaks',
-      items: [3, 7, 30].map((n) => ({ id: `streak-${n}`, title: `${n}-day streak`, desc: `Be active ${n} days in a row.`, value: bestStreak, target: n, difficulty: null })),
-    },
-    {
-      group: 'Problems solved',
-      items: [5, 25, 100].map((n) => ({ id: `solved-${n}`, title: `Solve ${n} problems`, desc: `Get ${n} problems to Accepted.`, value: total, target: n, difficulty: null })),
-    },
-    {
-      group: 'By difficulty',
-      items: [
-        { id: 'easy-10', title: 'Ten easy wins', desc: 'Solve 10 Easy problems.', value: easy, target: 10, difficulty: 'Easy' },
-        { id: 'medium-10', title: 'Medium rare', desc: 'Solve 10 Medium problems.', value: medium, target: 10, difficulty: 'Medium' },
-        { id: 'hard-3', title: 'Into the deep end', desc: 'Solve 3 Hard problems.', value: hard, target: 3, difficulty: 'Hard' },
-      ],
-    },
-  ];
-}
-
-export function QuestsView({ user, isAuthenticated, checkedIn, onPick }) {
-  const groups = useMemo(() => buildQuests(user, checkedIn), [user, checkedIn]);
-  const all = groups.flatMap((g) => g.items);
-  const doneCount = all.filter((q) => q.value >= q.target).length;
-
-  return (
-    <Box>
-      <ViewHeader
-        title="Quests"
-        subtitle="Goals that track your real activity. Finish them in any order."
-        trailing={
-          <Chip
-            icon={<EmojiEventsRoundedIcon />}
-            label={`${doneCount} of ${all.length} done`}
-            sx={{ fontWeight: 700, '& .MuiChip-icon': { color: GOLD_B } }}
-          />
-        }
-      />
-      {!isAuthenticated && (
-        <Alert severity="info" sx={{ mb: 2, borderRadius: '12px' }}>
-          Log in to track quests. Progress below is empty until you do.
-        </Alert>
-      )}
-      <Stack spacing={3}>
-        {groups.map((g) => (
-          <Box key={g.group}>
-            <Typography variant="body2" sx={{ fontWeight: 800, mb: 1.25 }}>
-              {g.group}
-            </Typography>
-            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, minmax(0, 1fr))' }, gap: 1.5 }}>
-              {g.items.map((q) => {
-                const done = q.value >= q.target;
-                const pct = Math.min((q.value / q.target) * 100, 100);
-                return (
-                  <Box key={q.id} sx={[surface, { p: 2, display: 'flex', flexDirection: 'column', gap: 1.25 }]}>
-                    <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
-                      <Box
-                        sx={{
-                          width: 38,
-                          height: 38,
-                          borderRadius: '50%',
-                          flexShrink: 0,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          background: done ? `linear-gradient(135deg, ${GOLD_A}, ${GOLD_B})` : 'transparent',
-                          border: done ? 'none' : '2px dashed',
-                          borderColor: 'divider',
-                          color: done ? '#3B1D00' : 'text.disabled',
-                        }}
-                      >
-                        {done ? <CheckRoundedIcon fontSize="small" /> : <EmojiEventsRoundedIcon fontSize="small" />}
-                      </Box>
-                      <Box sx={{ minWidth: 0, flex: 1 }}>
-                        <Typography sx={{ fontWeight: 700, fontSize: '0.95rem' }} noWrap>
-                          {q.title}
-                        </Typography>
-                        <Typography variant="caption" color="text.secondary">
-                          {q.desc}
-                        </Typography>
-                      </Box>
-                      <Typography variant="body2" sx={{ fontWeight: 800, fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
-                        {Math.min(q.value, q.target)}
-                        <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500 }}>
-                          /{q.target}
-                        </Box>
-                      </Typography>
-                    </Stack>
-                    <LinearProgress
-                      variant="determinate"
-                      value={pct}
-                      sx={{
-                        height: 6,
-                        borderRadius: 3,
-                        bgcolor: (t) => alpha(t.palette.text.primary, 0.08),
-                        '& .MuiLinearProgress-bar': { borderRadius: 3, background: done ? `linear-gradient(90deg, ${GOLD_A}, ${GOLD_B})` : q.difficulty ? DIFF_COLOR[q.difficulty] : '#3B82F6' },
-                      }}
-                    />
-                    {!done && (
-                      <Button size="small" variant="text" onClick={() => onPick(q.difficulty)} sx={{ alignSelf: 'flex-start', fontWeight: 700, px: 0.5 }}>
-                        {q.difficulty ? `Pick a ${q.difficulty} problem` : 'Pick a problem'}
-                      </Button>
-                    )}
-                  </Box>
-                );
-              })}
-            </Box>
-          </Box>
-        ))}
-      </Stack>
-    </Box>
-  );
-}
+// The Quests page lives in features/quests (server-driven rewards, check-in journey).
+export { default as QuestsView } from '../../quests/QuestsView';
 
 // ------------------------------------------------------------------- explore
 

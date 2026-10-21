@@ -98,7 +98,7 @@ const userSchema = new mongoose.Schema(
     // this field is just the fast-path cache of that state.
     isPro: { type: Boolean, default: false },
     proExpiresAt: { type: Date, default: null }, // null = no expiry (e.g. a lifetime license key)
-    proPlan: { type: String, enum: ['monthly', 'yearly', 'license-key', null], default: null },
+    proPlan: { type: String, enum: ['monthly', 'yearly', 'license-key', 'quest-reward', null], default: null },
 
     // --- Progress / streak counters ---
     // Denormalized on the user doc (rather than aggregated from Submissions
@@ -119,6 +119,19 @@ const userSchema = new mongoose.Schema(
     solvedProblems: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Problem' }],
 
     bookmarks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Problem' }],
+
+    // Quest rewards already claimed (ids from config/quests.js). Progress itself is never stored,
+    // it is recomputed from real activity; this only remembers what was handed out.
+    questClaims: {
+      type: [
+        {
+          _id: false,
+          id: { type: String, required: true },
+          at: { type: Date, default: Date.now },
+        },
+      ],
+      default: [],
+    },
 
     // --- Public profile (Settings -> Public profile) ---
     bio: { type: String, trim: true, maxlength: 160, default: '' },
