@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import {
-  Alert, Avatar, Badge, Box, Button, ButtonBase, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
+  Alert, AvatarGroup, Avatar, Badge, Box, Button, ButtonBase, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
   IconButton, InputAdornment, ListItemIcon, Menu, MenuItem, Skeleton, Stack, TextField, Tooltip, Typography, alpha,
 } from '@mui/material';
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
-import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import HourglassTopRoundedIcon from '@mui/icons-material/HourglassTopRounded';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
@@ -18,17 +16,14 @@ import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import MarkunreadRoundedIcon from '@mui/icons-material/MarkunreadRounded';
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
-import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
-import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
-import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
+import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
+import LaptopMacRoundedIcon from '@mui/icons-material/LaptopMacRounded';
+import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsActiveRounded';
+import TimelineRoundedIcon from '@mui/icons-material/TimelineRounded';
 import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { DIFF_COLOR, surface, tint } from '../dashboard/dashboardUtils';
-import { tierFor } from '../leaderboard/tiers';
+import { surface } from '../dashboard/dashboardUtils';
 import {
   acceptFriendInvite,
   acceptFriendRequest,
@@ -38,20 +33,10 @@ import {
   removeFriend,
   sendFriendRequest,
 } from './friendsSlice';
-
-const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
-const APT_COLOR = '#8B5CF6';
-
-// Round tonal icon button — the one button style used across this tab.
-const tonal = (color = 'primary') => (t) => ({
-  width: 40,
-  height: 40,
-  flexShrink: 0,
-  color: `${color}.main`,
-  bgcolor: alpha(t.palette[color].main, 0.12),
-  '&:hover': { bgcolor: alpha(t.palette[color].main, 0.22) },
-  '&.Mui-disabled': { color: 'text.disabled', bgcolor: 'action.hover' },
-});
+import { PersonAvatar, Streak, mono, practisedToday, statusInfo, tonal } from './friendsUi';
+import FriendChat from './FriendChat';
+import ActivityFeed from './ActivityFeed';
+import FriendProfileDialog from './FriendProfileDialog';
 
 const rowSx = (t) => ({
   width: '100%',
@@ -81,33 +66,6 @@ function useFriendAction() {
   return { busy, run };
 }
 
-// "Active today / yesterday / 3d ago" from the YYYY-MM-DD the server sends.
-function activeInfo(lastActive) {
-  if (!lastActive) return { text: 'Not started', live: false };
-  const today = new Date().toISOString().slice(0, 10);
-  const days = Math.round((Date.parse(today) - Date.parse(lastActive)) / 86400000);
-  if (days <= 0) return { text: 'Active today', live: true };
-  if (days === 1) return { text: 'Active yesterday', live: false };
-  return { text: `Active ${days}d ago`, live: false };
-}
-
-function PersonAvatar({ person, size = 38, live, ring }) {
-  const avatar = (
-    <Avatar
-      src={person.avatarUrl || undefined}
-      sx={{ width: size, height: size, fontSize: size * 0.4, fontWeight: 700, ...(ring && { border: `3px solid ${ring}` }) }}
-    >
-      {person.name?.[0]?.toUpperCase()}
-    </Avatar>
-  );
-  if (live === undefined) return avatar;
-  return (
-    <Badge variant="dot" overlap="circular" invisible={!live} color="success" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-      {avatar}
-    </Badge>
-  );
-}
-
 function Names({ person }) {
   return (
     <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -117,26 +75,40 @@ function Names({ person }) {
   );
 }
 
-function Streak({ value }) {
-  if (!value) return null;
+// A friend: tap the row for their profile; quick buttons for chat / code together / nudge.
+function FriendRow({ f, online, unread, onOpen, onChat, onCode, onNudge, busy }) {
+  const st = statusInfo(f, online);
+  const canNudge = !practisedToday(f);
   return (
-    <Stack direction="row" alignItems="center" spacing={0.25}>
-      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 17, color: 'warning.main' }} />
-      <Typography variant="caption" sx={{ fontWeight: 700, ...mono }}>{value}</Typography>
-    </Stack>
-  );
-}
-
-// A friend: tap the row to see who they are.
-function FriendRow({ f, onOpen }) {
-  return (
-    <ButtonBase onClick={() => onOpen(f.userId)} aria-label={`Open ${f.name}`} sx={(t) => ({ ...rowSx(t), '&:hover': { bgcolor: t.palette.action.hover } })}>
-      <PersonAvatar person={f} live={activeInfo(f.lastActive).live} />
-      <Names person={f} />
-      <Streak value={f.streak} />
-      <Typography sx={{ fontWeight: 800, minWidth: 40, textAlign: 'right', ...mono }}>{f.score.toLocaleString()}</Typography>
-      <ChevronRightRoundedIcon sx={{ fontSize: 20, color: 'text.disabled' }} />
-    </ButtonBase>
+    <Box sx={(t) => ({ ...rowSx(t), '&:hover': { bgcolor: t.palette.action.hover }, transition: 'background-color .15s' })}>
+      <ButtonBase onClick={() => onOpen(f.userId)} aria-label={`Open ${f.name}`} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, flex: 1, minWidth: 0, textAlign: 'left', fontFamily: 'inherit', borderRadius: '10px' }}>
+        <PersonAvatar person={f} online={online} />
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Stack direction="row" alignItems="center" spacing={0.75}>
+            <Typography variant="body2" noWrap sx={{ fontWeight: 700 }}>{f.name}</Typography>
+            <Streak value={f.streak} />
+          </Stack>
+          <Typography variant="caption" noWrap sx={{ display: 'block', color: st.live ? 'success.main' : 'text.secondary', fontWeight: st.live ? 700 : 400 }}>
+            {st.text} · <span style={mono}>{f.score.toLocaleString()} pts</span>
+          </Typography>
+        </Box>
+      </ButtonBase>
+      <Stack direction="row" spacing={0.75} sx={{ flexShrink: 0 }}>
+        {canNudge && (
+          <Tooltip title="Nudge — remind about streak">
+            <span><IconButton aria-label={`Nudge ${f.handle}`} disabled={busy === `nudge:${f.userId}`} onClick={() => onNudge(f)} sx={tonal('warning', 36)}><NotificationsActiveRoundedIcon sx={{ fontSize: 19 }} /></IconButton></span>
+          </Tooltip>
+        )}
+        <Tooltip title="Code together">
+          <span><IconButton aria-label={`Code together with ${f.handle}`} disabled={busy === `room:${f.userId}`} onClick={() => onCode(f)} sx={{ ...tonal('success', 36), display: { xs: 'none', sm: 'inline-flex' } }}><LaptopMacRoundedIcon sx={{ fontSize: 19 }} /></IconButton></span>
+        </Tooltip>
+        <Tooltip title="Chat">
+          <IconButton aria-label={`Chat with ${f.handle}`} onClick={() => onChat(f)} sx={tonal('primary', 36)}>
+            <Badge badgeContent={unread} color="error" max={99}><ChatRoundedIcon sx={{ fontSize: 19 }} /></Badge>
+          </IconButton>
+        </Tooltip>
+      </Stack>
+    </Box>
   );
 }
 
@@ -164,87 +136,6 @@ function Label({ children }) {
     <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.25, pb: 0.5, fontWeight: 700, letterSpacing: 0.4, textTransform: 'uppercase' }}>
       {children}
     </Typography>
-  );
-}
-
-// Friend profile: who they are, how they're doing, remove.
-function FriendProfile({ f, onClose, onRemove }) {
-  const { tier } = tierFor(f.score);
-  const act = activeInfo(f.lastActive);
-  const since = f.since ? new Date(f.since).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) : null;
-
-  const stats = [
-    [<EmojiEventsRoundedIcon key="r" />, f.rank ? `#${f.rank}` : '–', 'Rank', '#F59E0B'],
-    [<BoltRoundedIcon key="s" />, f.score.toLocaleString(), 'Points', tier.color],
-    [<CheckCircleRoundedIcon key="c" />, f.solved, 'Solved', DIFF_COLOR.Easy],
-    [<LocalFireDepartmentRoundedIcon key="f" />, f.streak || 0, 'Streak', '#F97316'],
-  ];
-  const parts = [
-    ['Easy', f.easy, DIFF_COLOR.Easy],
-    ['Med', f.medium, DIFF_COLOR.Medium],
-    ['Hard', f.hard, DIFF_COLOR.Hard],
-    ['Apt', f.aptitude, APT_COLOR],
-  ];
-
-  return (
-    <Dialog open onClose={onClose} maxWidth="xs" fullWidth slotProps={{ paper: { sx: { borderRadius: '18px' } } }}>
-      <Box sx={{ position: 'relative', pt: 3, px: 2.5, pb: 2, textAlign: 'center' }}>
-        <IconButton aria-label="Close" onClick={onClose} sx={{ position: 'absolute', top: 8, right: 8 }}>
-          <CloseRoundedIcon />
-        </IconButton>
-        <Box sx={{ display: 'inline-flex' }}>
-          <PersonAvatar person={f} size={80} ring={tier.color} />
-        </Box>
-        <Typography sx={{ fontWeight: 800, fontSize: '1.2rem', mt: 1.25 }}>{f.name}</Typography>
-        <Typography variant="body2" color="text.secondary">@{f.handle}</Typography>
-
-        <Stack direction="row" spacing={0.75} justifyContent="center" flexWrap="wrap" useFlexGap sx={{ mt: 1.25 }}>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontWeight: 700, fontSize: 13 }}>
-            <WorkspacePremiumRoundedIcon sx={{ fontSize: 16 }} /> {tier.name}
-          </Box>
-          {f.company && (
-            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: 'text.secondary', fontWeight: 600, fontSize: 13 }}>
-              <BusinessRoundedIcon sx={{ fontSize: 16 }} /> {f.company}
-            </Box>
-          )}
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: 'text.secondary', fontWeight: 600, fontSize: 13 }}>
-            <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: act.live ? 'success.main' : 'text.disabled' }} />
-            {act.text}
-          </Box>
-        </Stack>
-
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, mt: 2.25 }}>
-          {stats.map(([icon, value, label, color]) => (
-            <Box key={label} sx={(t) => ({ py: 1.25, borderRadius: '12px', border: `1px solid ${t.palette.divider}` })}>
-              <Box sx={{ color, display: 'grid', placeItems: 'center', '& svg': { fontSize: 20 } }}>{icon}</Box>
-              <Typography sx={{ fontWeight: 800, fontSize: '1rem', lineHeight: 1.3, ...mono }}>{value}</Typography>
-              <Typography variant="caption" color="text.secondary">{label}</Typography>
-            </Box>
-          ))}
-        </Box>
-
-        <Stack direction="row" spacing={0.75} justifyContent="center" sx={{ mt: 1.5 }}>
-          {parts.map(([label, n, color]) => (
-            <Box key={label} sx={{ flex: 1, py: 0.6, borderRadius: '10px', bgcolor: tint(color, 14) }}>
-              <Typography sx={{ fontWeight: 800, color, lineHeight: 1.2, ...mono }}>{n}</Typography>
-              <Typography variant="caption" color="text.secondary">{label}</Typography>
-            </Box>
-          ))}
-        </Stack>
-
-        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 2.25 }}>
-          <Stack direction="row" alignItems="center" spacing={0.75} sx={{ color: 'text.secondary' }}>
-            <PeopleAltRoundedIcon sx={{ fontSize: 18 }} />
-            <Typography variant="caption">{since ? `Friends since ${since}` : 'Friends'}</Typography>
-          </Stack>
-          <Tooltip title="Remove friend">
-            <IconButton aria-label={`Remove ${f.name}`} onClick={onRemove} sx={tonal('error')}>
-              <PersonRemoveRoundedIcon />
-            </IconButton>
-          </Tooltip>
-        </Stack>
-      </Box>
-    </Dialog>
   );
 }
 
@@ -294,8 +185,12 @@ function InviteBanner({ handle, onDone }) {
 function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
-  const { friends, incoming, outgoing, loaded, loading, error } = useSelector((s) => s.friends);
+  const navigate = useNavigate();
+  const [params, setParams] = useSearchParams();
+  const { friends, incoming, outgoing, loaded, loading, error, online, unread } = useSelector((s) => s.friends);
   const { busy, run } = useFriendAction();
+  const [chatId, setChatId] = useState(null);
+  const [acting, setActing] = useState('');
 
   const [tab, setTab] = useState('friends');
   const [q, setQ] = useState('');
@@ -333,6 +228,49 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const sentIds = new Set(outgoing.map((o) => o.user.userId));
   const received = new Map(incoming.map((i) => [i.user.userId, i.requestId]));
   const profile = friends.find((f) => f.userId === profileId) || null;
+  const chatFriend = friends.find((f) => f.userId === chatId) || null;
+  const onlineFriends = friends.filter((f) => online[f.userId]);
+  const unreadTotal = Object.values(unread).reduce((a, n) => a + n, 0);
+  // online first, then by points
+  const sortedFriends = [...friends].sort((a, b) => Number(Boolean(online[b.userId])) - Number(Boolean(online[a.userId])) || b.score - a.score || a.handle.localeCompare(b.handle));
+
+  // /dashboard?view=friends&chat=<id> (from a notification toast) opens that chat
+  const chatParam = params.get('chat');
+  useEffect(() => {
+    if (chatParam && friends.some((f) => f.userId === chatParam)) {
+      setChatId(chatParam);
+      const next = new URLSearchParams(params);
+      next.delete('chat');
+      setParams(next, { replace: true });
+    }
+  }, [chatParam, friends, params, setParams]);
+
+  const codeTogether = async (f) => {
+    setActing(`room:${f.userId}`);
+    try {
+      const { data } = await friendsApi.roomInvite(f.userId);
+      enqueueSnackbar(`Invite sent to @${f.handle}`, { variant: 'success' });
+      navigate(`/room/${data.data.roomId}`);
+    } catch (err) {
+      enqueueSnackbar(extractErrorMessage(err), { variant: 'error' });
+    } finally {
+      setActing('');
+    }
+  };
+
+  const nudge = async (f) => {
+    setActing(`nudge:${f.userId}`);
+    try {
+      await friendsApi.nudge(f.userId);
+      enqueueSnackbar(`Nudge sent to @${f.handle} 🔥`, { variant: 'success' });
+    } catch (err) {
+      enqueueSnackbar(extractErrorMessage(err), { variant: 'info' });
+    } finally {
+      setActing('');
+    }
+  };
+
+  const rowProps = { onOpen: setProfileId, onChat: (f) => setChatId(f.userId), onCode: codeTogether, onNudge: nudge, busy: acting };
 
   const link = `${window.location.origin}/dashboard?view=friends&invite=${user.handle}`;
   const message = `Join me on JeetCode! I'm @${user.handle} — add me as a friend and let's compete on the leaderboard.`;
@@ -375,6 +313,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
 
   const tabs = [
     { key: 'friends', icon: PeopleAltRoundedIcon, label: 'Friends', n: friends.length },
+    { key: 'activity', icon: TimelineRoundedIcon, label: 'Activity' },
     { key: 'requests', icon: MarkunreadRoundedIcon, label: 'Requests', n: incoming.length, alert: true },
     { key: 'sent', icon: HourglassTopRoundedIcon, label: 'Sent', n: outgoing.length },
   ];
@@ -387,7 +326,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     body = (
       <>
         {mine.length > 0 && <Label>Your friends</Label>}
-        {mine.map((f) => <FriendRow key={f.userId} f={f} onOpen={setProfileId} />)}
+        {mine.map((f) => <FriendRow key={f.userId} f={f} unread={unread[f.userId]} online={Boolean(online[f.userId])} {...rowProps} />)}
         {canSearchServer && <Label>Players</Label>}
         {searching && !players && <Skeleton variant="rounded" height={48} sx={{ mx: 1.5, my: 1, borderRadius: '12px' }} />}
         {others.map((p) => <PlainRow key={p.userId} person={p} action={playerAction(p)} />)}
@@ -404,9 +343,11 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         {loaded && friends.length === 0 && (
           <Note icon={<PeopleAltRoundedIcon sx={{ fontSize: 34 }} />}>No friends yet. Tap the share icon to invite, or search a handle.</Note>
         )}
-        {friends.map((f) => <FriendRow key={f.userId} f={f} onOpen={setProfileId} />)}
+        {sortedFriends.map((f) => <FriendRow key={f.userId} f={f} unread={unread[f.userId]} online={Boolean(online[f.userId])} {...rowProps} />)}
       </>
     );
+  } else if (tab === 'activity') {
+    body = <ActivityFeed />;
   } else if (tab === 'requests') {
     body = (
       <>
@@ -444,6 +385,38 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     <Stack spacing={1.5}>
       {inviteHandle && <InviteBanner handle={inviteHandle} onDone={onClearInvite} />}
 
+      {/* hero: who is online right now */}
+      <Box
+        sx={[surface, (t) => ({
+          p: 2,
+          overflow: 'hidden',
+          position: 'relative',
+          background: `radial-gradient(120% 140% at 0% 0%, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.22 : 0.14)} 0%, transparent 60%), ${t.palette.background.paper}`,
+        })]}
+      >
+        <Stack direction="row" alignItems="center" spacing={1.5}>
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <Typography sx={{ fontWeight: 900, fontSize: '1.25rem', lineHeight: 1.2 }}>Friends</Typography>
+            <Stack direction="row" alignItems="center" spacing={0.75} sx={{ mt: 0.5 }}>
+              <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: onlineFriends.length ? '#22C55E' : 'text.disabled' }} />
+              <Typography variant="body2" color="text.secondary" noWrap>
+                {onlineFriends.length ? `${onlineFriends.length} online now` : friends.length ? 'Nobody online right now' : 'Invite friends to compete together'}
+                {unreadTotal ? ` · ${unreadTotal} unread` : ''}
+              </Typography>
+            </Stack>
+          </Box>
+          {onlineFriends.length > 0 && (
+            <AvatarGroup max={5} sx={{ '& .MuiAvatar-root': { width: 34, height: 34, fontSize: 14, fontWeight: 700 } }}>
+              {onlineFriends.map((f) => (
+                <Tooltip key={f.userId} title={`@${f.handle}`}>
+                  <Avatar src={f.avatarUrl || undefined} onClick={() => setChatId(f.userId)} sx={{ cursor: 'pointer' }}>{f.name?.[0]?.toUpperCase()}</Avatar>
+                </Tooltip>
+              ))}
+            </AvatarGroup>
+          )}
+        </Stack>
+      </Box>
+
       <Box sx={[surface, { overflow: 'hidden' }]}>
         {/* toolbar: search + invite + leaderboard */}
         <Stack direction="row" alignItems="center" spacing={1} sx={{ p: 1.25 }}>
@@ -478,32 +451,33 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
           </Tooltip>
         </Stack>
 
-        {/* icon tabs with counts */}
-        <Stack direction="row" spacing={1} sx={{ px: 1.25, pb: 1.25 }}>
+        {/* tabs */}
+        <Stack direction="row" spacing={1} sx={{ px: 1.25, pb: 1.25, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
           {tabs.map(({ key, icon: Icon, label, n, alert }) => {
             const active = !needle && tab === key;
             const hot = alert && n > 0;
             return (
-              <Tooltip key={key} title={label}>
-                <ButtonBase
-                  onClick={() => { setQ(''); setTab(key); }}
-                  aria-label={`${label}: ${n}`}
-                  aria-pressed={active}
-                  sx={(t) => ({
-                    gap: 0.75,
-                    height: 36,
-                    px: 1.75,
-                    borderRadius: 999,
-                    fontFamily: 'inherit',
-                    border: `1px solid ${active ? 'transparent' : hot ? t.palette.error.main : t.palette.divider}`,
-                    bgcolor: active ? t.palette.text.primary : hot ? alpha(t.palette.error.main, 0.08) : 'transparent',
-                    color: active ? t.palette.background.paper : hot ? t.palette.error.main : t.palette.text.primary,
-                  })}
-                >
-                  <Icon sx={{ fontSize: 19 }} />
-                  <Typography variant="body2" sx={{ fontWeight: 800, ...mono }}>{n}</Typography>
-                </ButtonBase>
-              </Tooltip>
+              <ButtonBase
+                key={key}
+                onClick={() => { setQ(''); setTab(key); }}
+                aria-label={n === undefined ? label : `${label}: ${n}`}
+                aria-pressed={active}
+                sx={(t) => ({
+                  flexShrink: 0,
+                  gap: 0.75,
+                  height: 36,
+                  px: 1.75,
+                  borderRadius: 999,
+                  fontFamily: 'inherit',
+                  border: `1px solid ${active ? 'transparent' : hot ? t.palette.error.main : t.palette.divider}`,
+                  bgcolor: active ? t.palette.text.primary : hot ? alpha(t.palette.error.main, 0.08) : 'transparent',
+                  color: active ? t.palette.background.paper : hot ? t.palette.error.main : t.palette.text.primary,
+                })}
+              >
+                <Icon sx={{ fontSize: 19 }} />
+                {(n === undefined || key === 'friends') && <Typography variant="body2" sx={{ fontWeight: 800, display: n === undefined ? 'block' : { xs: 'none', sm: 'block' } }}>{label}</Typography>}
+                {n !== undefined && <Typography variant="body2" sx={{ fontWeight: 800, ...mono }}>{n}</Typography>}
+              </ButtonBase>
             );
           })}
         </Stack>
@@ -524,7 +498,19 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         </MenuItem>
       </Menu>
 
-      {profile && <FriendProfile f={profile} onClose={() => setProfileId(null)} onRemove={() => setConfirm(profile)} />}
+      {profile && (
+        <FriendProfileDialog
+          f={profile}
+          nudging={acting === `nudge:${profile.userId}`}
+          onClose={() => setProfileId(null)}
+          onRemove={() => setConfirm(profile)}
+          onChat={() => { setProfileId(null); setChatId(profile.userId); }}
+          onCodeTogether={() => codeTogether(profile)}
+          onNudge={() => nudge(profile)}
+        />
+      )}
+
+      <FriendChat friend={chatFriend} onClose={() => setChatId(null)} onCodeTogether={codeTogether} />
 
       <Dialog open={Boolean(confirm)} onClose={() => setConfirm(null)} maxWidth="xs" fullWidth>
         <DialogTitle sx={{ fontWeight: 700 }}>Remove friend?</DialogTitle>

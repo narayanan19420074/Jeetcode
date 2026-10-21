@@ -4,6 +4,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import MobileBottomNav, { showMobileBottomNav } from '../components/MobileBottomNav';
 import FreeAccessBanner from '../components/FreeAccessBanner';
+import FriendsRealtime from '../features/friends/friendsRealtime';
 
 export default function MainLayout() {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ export default function MainLayout() {
       })}
     >
       <FreeAccessBanner />
+      <FriendsRealtime />
       <Navbar />
       <Box component="main" sx={{ pb: bottomNav ? { xs: 'calc(76px + env(safe-area-inset-bottom))', md: 0 } : 0 }}>
         <Outlet />

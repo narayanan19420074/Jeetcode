@@ -15,6 +15,9 @@ const initialState = {
   loading: false,
   error: '',
   version: 0, // bumps whenever the set of friends changes — leaderboard views refetch on it
+  online: {}, // { [userId]: true } — friends with a live socket right now (pushed by the server)
+  unread: {}, // { [friendId]: n } — unread chat messages per friend
+  activeChat: null, // friendId whose chat drawer is open (no badge / toast for that one)
 };
 
 export const fetchFriends = createAsyncThunk('friends/fetch', async (_, { rejectWithValue }) => {
@@ -48,7 +51,27 @@ export const acceptFriendInvite = mutation('invite', (handle) => friendsApi.acce
 const friendsSlice = createSlice({
   name: 'friends',
   initialState,
-  reducers: {},
+  reducers: {
+    setOnlineList: (state, { payload }) => {
+      state.online = Object.fromEntries(payload.map((id) => [id, true]));
+    },
+    setPresence: (state, { payload }) => {
+      if (payload.online) state.online[payload.userId] = true;
+      else delete state.online[payload.userId];
+    },
+    setUnread: (state, { payload }) => {
+      state.unread = payload || {};
+    },
+    bumpUnread: (state, { payload }) => {
+      state.unread[payload] = (state.unread[payload] || 0) + 1;
+    },
+    clearUnread: (state, { payload }) => {
+      delete state.unread[payload];
+    },
+    setActiveChat: (state, { payload }) => {
+      state.activeChat = payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchFriends.pending, (state) => {
@@ -73,5 +96,10 @@ const friendsSlice = createSlice({
       .addCase(logoutUser.fulfilled, () => initialState);
   },
 });
+
+export const { setOnlineList, setPresence, setUnread, bumpUnread, clearUnread, setActiveChat } = friendsSlice.actions;
+
+// Total unread chat messages (Friends badge in the sidebar).
+export const selectUnreadTotal = (s) => Object.values(s.friends.unread).reduce((a, n) => a + n, 0);
 
 export default friendsSlice.reducer;

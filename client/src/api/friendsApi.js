@@ -10,4 +10,13 @@ export const friendsApi = {
   remove: (userId) => apiClient.delete(`/friends/${userId}`),
   previewInvite: (handle) => apiClient.get(`/friends/invite/${handle}`),
   acceptInvite: (handle) => apiClient.post(`/friends/invite/${handle}`),
+  // activity feed, chat, nudge, code together, compare
+  activity: (before) => apiClient.get('/friends/activity', { params: { before } }),
+  chatUnread: () => apiClient.get('/friends/chat/unread'),
+  chatHistory: (userId, before) => apiClient.get(`/friends/chat/${userId}`, { params: { before } }),
+  chatSend: (userId, text) => apiClient.post(`/friends/chat/${userId}`, { text }),
+  chatRead: (userId) => apiClient.post(`/friends/chat/${userId}/read`),
+  nudge: (userId) => apiClient.post(`/friends/${userId}/nudge`),
+  roomInvite: (userId, body = {}) => apiClient.post(`/friends/${userId}/room`, body),
+  compare: (userId) => apiClient.get(`/friends/${userId}/compare`),
 };

@@ -5,6 +5,8 @@ import { verifyAccessToken } from '../utils/tokenUtils.js';
 import { submitBatch, pollBatchResults, LANGUAGE_IDS } from '../services/judge0.service.js';
 import { getRoom, touch, MAX_PEERS } from './roomStore.js';
 import { pickQuestion, setAnswer, revealQuestion, quizView } from './quiz.js';
+import { setIo } from './hub.js';
+import { registerSocial } from './social.js';
 
 const clean = (s, max) => String(s ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max);
 const cut = (s, max = 10000) => (s && s.length > max ? s.slice(0, max) + '\n…(truncated)' : s || '');
@@ -23,7 +25,20 @@ export function attachRealtime(httpServer) {
     maxHttpBufferSize: 1e6,
   });
 
+  setIo(io);
+
   io.on('connection', (socket) => {
+    // Logged-in app sockets send their access token in the handshake: presence + friend chat.
+    // (Pair-room sockets connect without one and only use the room:* events below.)
+    const appToken = socket.handshake.auth?.token;
+    if (appToken) {
+      try {
+        registerSocial(socket, verifyAccessToken(appToken));
+      } catch {
+        /* expired token -> behaves like a guest socket; the client reconnects with a fresh one */
+      }
+    }
+
     let room = null;
     let me = null;
 

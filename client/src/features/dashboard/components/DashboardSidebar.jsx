@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Box, ButtonBase, IconButton, Tooltip, Typography, alpha } from '@mui/material';
 import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
@@ -24,10 +25,13 @@ export const NAV_ITEMS = [
 ];
 
 // Red pill with the number of friend requests waiting for me.
-function RequestBadge({ n }) {
+function RequestBadge({ n: requests }) {
+  // friend requests + unread chat messages, both live
+  const unread = useSelector((s) => Object.values(s.friends.unread).reduce((a, c) => a + c, 0));
+  const n = (requests || 0) + unread;
   if (!n) return null;
   return (
-    <Box component="span" aria-label={`${n} friend requests`} sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: 12, fontWeight: 700, display: 'grid', placeItems: 'center' }}>
+    <Box component="span" aria-label={`${n} friend notifications`} sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: 12, fontWeight: 700, display: 'grid', placeItems: 'center' }}>
       {n}
     </Box>
   );

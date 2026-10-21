@@ -5,6 +5,7 @@ import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { getRanking, assignRanks, publicRow } from '../services/leaderboard.service.js';
+import { notifyFriendsChanged } from '../realtime/hub.js';
 import { MAX_FRIENDS, MAX_PENDING_OUT, pairKey, countFriends } from '../services/friend.service.js';
 
 const USER_FIELDS = 'name handle avatarUrl streakDays lastActivityDate company';
@@ -127,6 +128,7 @@ export const sendRequest = asyncHandler(async (req, res) => {
     existing.status = 'accepted';
     existing.respondedAt = new Date();
     await existing.save();
+    notifyFriendsChanged(me, target._id);
     return new ApiResponse(200, { relation: 'friends' }, `You and @${target.handle} are now friends`).send(res);
   }
 
@@ -142,6 +144,7 @@ export const sendRequest = asyncHandler(async (req, res) => {
     if (err?.code === 11000) throw ApiError.conflict('A request already exists');
     throw err;
   }
+  notifyFriendsChanged(target._id);
   new ApiResponse(201, { relation: 'sent', requestId: String(edge._id) }, `Request sent to @${target.handle}`).send(res);
 });
 
@@ -162,6 +165,7 @@ export const acceptRequest = asyncHandler(async (req, res) => {
   edge.status = 'accepted';
   edge.respondedAt = new Date();
   await edge.save();
+  notifyFriendsChanged(me, edge.requester);
   new ApiResponse(200, { relation: 'friends' }, 'Friend added').send(res);
 });
 
@@ -170,6 +174,7 @@ export const declineRequest = asyncHandler(async (req, res) => {
   const edge = await loadEdge(req.params.id);
   if (edge.status !== 'pending' || String(edge.recipient) !== String(req.user.id)) throw ApiError.notFound('Request not found');
   await edge.deleteOne();
+  notifyFriendsChanged(edge.requester);
   new ApiResponse(200, { removed: true }).send(res);
 });
 
@@ -178,6 +183,7 @@ export const cancelRequest = asyncHandler(async (req, res) => {
   const edge = await loadEdge(req.params.id);
   if (edge.status !== 'pending' || String(edge.requester) !== String(req.user.id)) throw ApiError.notFound('Request not found');
   await edge.deleteOne();
+  notifyFriendsChanged(edge.recipient);
   new ApiResponse(200, { removed: true }).send(res);
 });
 
@@ -187,6 +193,7 @@ export const removeFriend = asyncHandler(async (req, res) => {
   if (!mongoose.isValidObjectId(userId)) throw ApiError.notFound('Friend not found');
   const result = await Friendship.deleteOne({ pairKey: pairKey(req.user.id, userId), status: 'accepted' });
   if (!result.deletedCount) throw ApiError.notFound('Friend not found');
+  notifyFriendsChanged(userId);
   new ApiResponse(200, { removed: true }).send(res);
 });
 
@@ -226,5 +233,6 @@ export const acceptInvite = asyncHandler(async (req, res) => {
       if (err?.code !== 11000) throw err; // double tap — already created
     }
   }
+  notifyFriendsChanged(inviter._id);
   new ApiResponse(200, { relation: 'friends' }, `You and @${inviter.handle} are now friends`).send(res);
 });
