@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
   Accordion,
@@ -9,8 +9,10 @@ import {
   Button,
   Container,
   Grid,
+  IconButton,
   Link,
   Stack,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
@@ -18,10 +20,13 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
+import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
+import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { AnimatePresence, MotionConfig, animate, motion, useInView } from 'framer-motion';
 
 import { apiClient } from '../../api/apiClient';
+import { toggleThemeMode } from '../../app/uiSlice';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import { useContest, inr, fmtDuration } from '../contest/contestUtils';
 import ContestBand from './ContestBand';
@@ -154,6 +159,8 @@ function PrimaryCta({ onClick, label, size = 'large', sx, buttonRef, light = fal
 }
 
 function NavBar({ authed, onStart, onLogin }) {
+  const dispatch = useDispatch();
+  const mode = useSelector((s) => s.ui.mode);
   const links = [['Features', '#features'], ['Pair rooms', '#rooms'], ['Contest', '#contest'], ['Pricing', '#pricing']];
   return (
     <Box
@@ -182,7 +189,12 @@ function NavBar({ authed, onStart, onLogin }) {
               ))}
             </Stack>
           </Stack>
-          <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+            <Tooltip title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+              <IconButton onClick={() => dispatch(toggleThemeMode())} color="inherit" aria-label="Toggle color theme">
+                {mode === 'dark' ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
+              </IconButton>
+            </Tooltip>
             {!authed && (
               <Button color="inherit" onClick={onLogin} sx={{ fontWeight: 700 }}>
                 Log in
