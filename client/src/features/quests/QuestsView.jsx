@@ -1,29 +1,19 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Alert, Box, Button, Skeleton, Stack, Typography } from '@mui/material';
+import { Alert, Button, Skeleton, Stack } from '@mui/material';
 import { questApi } from '../../api/questApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from '../auth/authSlice';
-import { QuestCard, QuestHero, PrizeCard, RewardDialog, RewardTrack, StampCard } from './QuestParts';
-import { AMBER, goalMilestone } from './questUtils';
-
-const SectionTitle = ({ title, hint, count }) => (
-  <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 1, mb: 1.25 }}>
-    <Box>
-      <Typography sx={{ fontWeight: 900, fontSize: '1.05rem', letterSpacing: '-0.01em' }}>{title}</Typography>
-      {hint && <Typography variant="caption" color="text.secondary">{hint}</Typography>}
-    </Box>
-    {count && <Typography variant="caption" sx={{ fontWeight: 800, color: AMBER, fontVariantNumeric: 'tabular-nums' }}>{count}</Typography>}
-  </Box>
-);
+import { PrizeCard, QuestHeader, QuestRow, RewardDialog } from './QuestParts';
+import { goalMilestone } from './questUtils';
 
 const LoadingSkeleton = () => (
   <Stack spacing={2.5}>
-    <Skeleton variant="rounded" height={330} sx={{ borderRadius: '22px' }} />
-    <Skeleton variant="rounded" height={190} sx={{ borderRadius: '22px' }} />
-    <Skeleton variant="rounded" height={230} sx={{ borderRadius: '14px' }} />
+    <Skeleton variant="rounded" height={76} sx={{ borderRadius: '18px' }} />
+    <Skeleton variant="rounded" height={300} sx={{ borderRadius: '22px' }} />
+    <Skeleton variant="rounded" height={150} sx={{ borderRadius: '14px' }} />
   </Stack>
 );
 
@@ -72,12 +62,6 @@ export default function QuestsView({ isAuthenticated, onPick }) {
     [isAuthenticated, navigate, dispatch, enqueueSnackbar, load]
   );
 
-  const groups = useMemo(() => {
-    const map = new Map();
-    (state?.quests || []).forEach((q) => map.set(q.group, [...(map.get(q.group) || []), q]));
-    return [...map.entries()];
-  }, [state]);
-
   if (error && !state) {
     return (
       <Alert severity="error" action={<Button color="inherit" size="small" onClick={load}>Retry</Button>} sx={{ borderRadius: '12px' }}>
@@ -88,29 +72,23 @@ export default function QuestsView({ isAuthenticated, onPick }) {
   if (!state) return <LoadingSkeleton />;
 
   const goal = goalMilestone(state.milestones);
+  // Only what matters next: rewards ready to claim first, then the quests closest to done.
+  const nextUp = [...state.milestones, ...state.quests]
+    .filter((q) => q.id !== goal.id && !q.claimed)
+    .sort((a, b) => Number(b.claimable) - Number(a.claimable) || b.value / b.target - a.value / a.target)
+    .slice(0, 3);
 
   return (
-    <Stack spacing={3} sx={{ pb: 3 }}>
-      <QuestHero state={state} isAuthenticated={isAuthenticated} onCheckIn={() => onPick(null)} onLogin={() => navigate('/login')} />
-      <PrizeCard state={state} goal={goal} busy={busy} onClaim={claim} />
-      <StampCard state={state} goal={goal} />
-
-      <Box>
-        <SectionTitle title="Reward track" hint="Check in on different days. Missing a day never resets this." count={`${state.milestones.filter((m) => m.claimed).length}/${state.milestones.length} claimed`} />
-        <RewardTrack milestones={state.milestones} activeDays={state.activeDays} busy={busy} onClaim={claim} />
-      </Box>
-
-      {groups.map(([group, items]) => (
-        <Box key={group}>
-          <SectionTitle title={group} count={`${items.filter((q) => q.claimed).length}/${items.length} claimed`} />
-          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, minmax(0, 1fr))' }, gap: 1.5 }}>
-            {items.map((q) => (
-              <QuestCard key={q.id} quest={q} busy={busy} onClaim={claim} onPick={onPick} />
-            ))}
-          </Box>
-        </Box>
-      ))}
-
+    <Stack spacing={2}>
+      <QuestHeader state={state} />
+      <PrizeCard state={state} goal={goal} busy={busy} onClaim={claim} isAuthenticated={isAuthenticated} onCheckIn={() => onPick(null)} onLogin={() => navigate('/login')} />
+      {nextUp.length > 0 && (
+        <Stack spacing={1}>
+          {nextUp.map((q) => (
+            <QuestRow key={q.id} quest={q} busy={busy} onClaim={claim} onPick={onPick} />
+          ))}
+        </Stack>
+      )}
       <RewardDialog reward={reward} onClose={() => setReward(null)} />
     </Stack>
   );

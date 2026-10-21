@@ -27,5 +27,3 @@ export const resetTimeLabel = () => new Date(Date.now() + msUntilUtcMidnight()).
 
 export const formatDate = (d) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
-export const WEEKDAY = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-export const weekdayOf = (key) => WEEKDAY[new Date(`${key}T00:00:00Z`).getUTCDay()];
