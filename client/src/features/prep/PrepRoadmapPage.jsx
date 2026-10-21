@@ -13,7 +13,7 @@ import Alien3D from '../aptitude/components/Alien3D';
 import { Confetti, CountUp, XpBar } from '../aptitude/components/MotionBits';
 import { getBrandLogo } from '../../components/brandLogos';
 import { prepApi } from '../../api/prepApi';
-import { examCountdown, formatExamDate } from './examDate';
+import { examCountdown, formatExamDate, pickExamDate } from './examDate';
 import { QuestCoin } from './PrepQuestBits';
 import SectionRoadmap from './SectionRoadmap';
 import TcsBuddy from './TcsBuddy';
@@ -102,7 +102,8 @@ export default function PrepRoadmapPage() {
   const brand = /^tcs/i.test(companySlug) ? getBrandLogo(roadmap.name) : null; // the TCS mark becomes the character
   const toNext = level >= 10 ? 0 : Math.max(1, Math.round((level * 10 - readiness) * 10));
   const levelPct = level >= 10 ? 100 : ((readiness - (level - 1) * 10) / 10) * 100;
-  const countdown = roadmap.examDate ? examCountdown(roadmap.examDate) : null;
+  const examDate = /^tcs/i.test(companySlug) ? pickExamDate(roadmap.examDate) : roadmap.examDate;
+  const countdown = examDate ? examCountdown(examDate) : null;
   const sections = roadmap.sections || [];
   const nextQuest = roadmap.enrolled ? pickNextQuest(sections) : null;
   const openedSection = sectionId ? sections.find((s) => String(s.id) === sectionId) : null;
@@ -195,7 +196,7 @@ export default function PrepRoadmapPage() {
               <Box>
                 <Typography sx={{ fontWeight: 800 }}>Exam day</Typography>
                 <Typography variant="caption" color="text.secondary">
-                  {roadmap.examDate && countdown ? (countdown.over ? 'Next date soon' : `${formatExamDate(roadmap.examDate)} · ${countdown.text}`) : 'Date soon'}
+                  {examDate && countdown ? (countdown.over ? 'Next date soon' : `${formatExamDate(examDate)} · ${countdown.text}`) : 'Date soon'}
                 </Typography>
               </Box>
             </Box>

@@ -118,7 +118,7 @@ async function run() {
         slug: 'tcs-nqt',
         examDurationMinutes: 190,
         // Next sitting. Update this line when TCS announces the next cycle, then run the seed again.
-        examDate: new Date('2026-10-19T00:00:00+05:30'),
+        examDate: new Date('2026-11-24T00:00:00+05:30'),
         description: 'TCS National Qualifier Test: Foundation (Numerical, Verbal, Reasoning) and Advanced (Quantitative and Reasoning, Coding).',
         createdBy: ADMIN_USER_ID,
         isPublished: true,
