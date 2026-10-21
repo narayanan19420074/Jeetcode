@@ -6,6 +6,8 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 
 const CARD_W = 288;
 const GAP = 14;
+const AUTO_MS = 4500; // time each banner stays
+const IDLE_MS = 8000; // after the user touches / scrolls, wait this long before auto-moving again
 
 function PromoCard({ card }) {
   const { title, text, cta, to, icon: Icon, gradient } = card;
@@ -84,7 +86,16 @@ function PromoCard({ card }) {
 
 export default function PromoCarousel({ cards }) {
   const trackRef = useRef(null);
+  const rootRef = useRef(null);
   const [edge, setEdge] = useState({ start: true, end: false });
+  const hovering = useRef(false);
+  const inView = useRef(true);
+  const idleUntil = useRef(0);
+
+  const stepSize = () => {
+    const first = trackRef.current?.firstElementChild;
+    return first ? first.getBoundingClientRect().width + GAP : CARD_W + GAP;
+  };
 
   const measure = useCallback(() => {
     const el = trackRef.current;
@@ -101,18 +112,53 @@ export default function PromoCarousel({ cards }) {
     return () => ro.disconnect();
   }, [measure, cards.length]);
 
+  const reduceMotion = () =>
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.motion === 'reduce';
+
   const scrollByCards = (dir) => {
     const el = trackRef.current;
     if (!el) return;
-    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    el.scrollBy({ left: dir * (CARD_W + GAP) * 2, behavior: reduce ? 'auto' : 'smooth' });
+    el.scrollBy({ left: dir * stepSize() * 2, behavior: reduceMotion() ? 'auto' : 'smooth' });
   };
+
+  // Only run while the carousel is on screen.
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return undefined;
+    const io = new IntersectionObserver(([entry]) => {
+      inView.current = entry.isIntersecting;
+    }, { threshold: 0.4 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // Auto-advance: one banner every few seconds, loops back to the first. It pauses on
+  // hover / focus / touch, while the tab is hidden or off screen, and never runs when
+  // the user asked for reduced motion.
+  useEffect(() => {
+    if (cards.length < 2) return undefined;
+    const id = setInterval(() => {
+      const el = trackRef.current;
+      if (!el || document.hidden || !inView.current || hovering.current || Date.now() < idleUntil.current || reduceMotion()) return;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 2;
+      if (atEnd) el.scrollTo({ left: 0, behavior: 'smooth' });
+      else el.scrollBy({ left: stepSize(), behavior: 'smooth' });
+    }, AUTO_MS);
+    return () => clearInterval(id);
+  }, [cards.length]);
 
   if (!cards.length) return null;
 
+  const touched = () => {
+    idleUntil.current = Date.now() + IDLE_MS;
+  };
+
   const arrow = (dir, hidden) => (
     <IconButton
-      onClick={() => scrollByCards(dir)}
+      onClick={() => {
+        touched();
+        scrollByCards(dir);
+      }}
       aria-label={dir < 0 ? 'Previous banners' : 'Next banners'}
       size="small"
       sx={(t) => ({
@@ -133,12 +179,30 @@ export default function PromoCarousel({ cards }) {
   );
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box
+      ref={rootRef}
+      sx={{ position: 'relative' }}
+      onMouseEnter={() => {
+        hovering.current = true;
+      }}
+      onMouseLeave={() => {
+        hovering.current = false;
+      }}
+      onFocus={() => {
+        hovering.current = true;
+      }}
+      onBlur={() => {
+        hovering.current = false;
+      }}
+    >
       {arrow(-1, edge.start)}
       {arrow(1, edge.end)}
       <Box
         ref={trackRef}
         onScroll={measure}
+        onTouchStart={touched}
+        onWheel={touched}
+        onPointerDown={touched}
         sx={{
           display: 'flex',
           gap: `${GAP}px`,
@@ -153,6 +217,7 @@ export default function PromoCarousel({ cards }) {
           <PromoCard key={c.key} card={c} />
         ))}
       </Box>
+
     </Box>
   );
 }
