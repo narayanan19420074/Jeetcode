@@ -66,3 +66,19 @@ export const glyphFloat = keyframes`
 
 export const DISPLAY_FONT = '"Bricolage Grotesque", "Inter", "Helvetica", "Arial", sans-serif';
 export const MONO_FONT = '"JetBrains Mono", "Fira Code", monospace';
+
+export const blink = keyframes`
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+`;
+
+export const pulseDot = keyframes`
+  0% { box-shadow: 0 0 0 0 var(--pulse, rgba(16, 185, 129, 0.55)); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+`;
+
+export const trainRun = keyframes`
+  0% { transform: translateX(-130px); }
+  100% { transform: translateX(260px); }
+`;
