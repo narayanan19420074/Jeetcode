@@ -13,8 +13,8 @@ const SAMPLE = `function twoSum(nums, target) {
 }`;
 
 const THEMES = {
-  'vs-dark': { bg: '#1E1E1E', fg: '#D4D4D4', gutter: '#858585' },
-  vs: { bg: '#FFFFFF', fg: '#1F2937', gutter: '#9CA3AF' },
+  'vs-dark': { bg: '#0E1116', fg: '#E6EDF3', gutter: '#8E99A8' },
+  vs: { bg: '#FFFFFF', fg: '#1F2328', gutter: '#6B7280' },
   'hc-black': { bg: '#000000', fg: '#FFFFFF', gutter: '#FFFFFF' },
 };
 

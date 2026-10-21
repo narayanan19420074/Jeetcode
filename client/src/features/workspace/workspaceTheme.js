@@ -5,6 +5,10 @@
 // accent from Settings), neutral tonal surfaces, and syntax colours taken from
 // the GitHub Primer code palette (AA contrast on both backgrounds).
 //
+// The editor is layered like a pro code editor: the code area sits on `canvas`
+// and the line-number gutter is a slightly lifted strip beside it, so numbers
+// and code never blur together.
+//
 // Surface layers, back to front:
 //   canvas  - the code itself (editor)
 //   chrome  - navbar, tabs, toolbar, key bar
@@ -24,9 +28,10 @@ export const wsSurface = (t) => {
   };
 };
 
+// Soft, desaturated hues (no neon): every pair is >= 7:1 on its canvas.
 const SYNTAX = {
-  light: { text: '1F1F1F', comment: '6E7781', keyword: 'CF222E', string: '0A3069', number: '0550AE', type: '953800', regexp: '116329' },
-  dark: { text: 'E3E3E3', comment: '8B949E', keyword: 'FF7B72', string: 'A5D6FF', number: '79C0FF', type: 'FFA657', regexp: '7EE787' },
+  light: { text: '1F2328', comment: '66707B', keyword: '6F42C1', string: '0A6B3D', number: 'B35900', type: '0550AE', regexp: '0F766E' },
+  dark: { text: 'E6EDF3', comment: '8B96A5', keyword: 'C9A9F5', string: '9ECE9A', number: 'F2B880', type: '7CC4F0', regexp: '7FDBCA' },
 };
 
 export function defineMonacoThemes(monaco, primary) {
@@ -45,7 +50,10 @@ export function defineMonacoThemes(monaco, primary) {
         { token: '', foreground: c.text },
         { token: 'comment', foreground: c.comment, fontStyle: 'italic' },
         { token: 'keyword', foreground: c.keyword },
+        { token: 'keyword.directive', foreground: c.keyword },
+        { token: 'metatag', foreground: c.keyword },
         { token: 'string', foreground: c.string },
+        { token: 'string.include', foreground: c.string },
         { token: 'number', foreground: c.number },
         { token: 'regexp', foreground: c.regexp },
         { token: 'type', foreground: c.type },
@@ -56,8 +64,8 @@ export function defineMonacoThemes(monaco, primary) {
       colors: {
         'editor.background': canvas,
         'editor.foreground': `#${c.text}`,
-        'editorGutter.background': canvas,
-        'editorLineNumber.foreground': dark ? '#6E7681' : '#8C959F',
+        'editorGutter.background': dark ? g.paper : g.bg,
+        'editorLineNumber.foreground': dark ? '#8E99A8' : '#6B7280',
         'editorLineNumber.activeForeground': `#${c.text}`,
         'editor.lineHighlightBackground': dark ? g.paper : g.bg,
         'editor.lineHighlightBorder': '#00000000',

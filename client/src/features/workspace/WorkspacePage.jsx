@@ -894,21 +894,24 @@ export default function WorkspacePage() {
       >
         <Stack
           direction="row"
-          sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.25, md: 1.5 }, py: 1, borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0 }}
+          sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.25, md: 1.5 }, py: 1.25, borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0 }}
         >
           <Select
             size="small"
             value={activeLanguage}
             onChange={(e) => dispatch(setLanguage(e.target.value))}
             startAdornment={<CodeRoundedIcon sx={{ fontSize: 18, mr: 0.75, color: 'primary.main' }} />}
-            sx={{
+            sx={(t) => ({
               minWidth: { xs: 120, md: 150 },
-              height: 36,
-              borderRadius: 999,
-              fontSize: '0.85rem',
+              height: 40,
+              borderRadius: '12px',
+              fontSize: '0.9rem',
               fontWeight: 700,
+              bgcolor: wsSurface(t).raised,
+              '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
+              '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: t.palette.divider },
               '& .MuiSelect-select': { py: 0.5 },
-            }}
+            })}
           >
             {LANGUAGES.map((l) => (
               <MenuItem key={l.id} value={l.id}>
@@ -917,7 +920,7 @@ export default function WorkspacePage() {
             ))}
           </Select>
 
-          <Stack direction="row" sx={{ alignItems: 'center', gap: { xs: 0.25, md: 0.75 } }}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: { xs: 0.5, md: 1 } }}>
             <InviteButton problem={problem} language={activeLanguage} code={code} />
             <Tooltip title="AI assistant">
               <IconButton
@@ -925,18 +928,19 @@ export default function WorkspacePage() {
                 aria-label="AI assistant"
                 onClick={() => dispatch(toggleAiDrawer())}
                 sx={(t) => ({
-                  width: 36,
-                  height: 36,
+                  width: 40,
+                  height: 40,
                   color: aiDrawerOpen ? 'primary.main' : 'text.secondary',
-                  bgcolor: aiDrawerOpen ? alpha(t.palette.primary.main, 0.14) : 'transparent',
+                  bgcolor: aiDrawerOpen ? alpha(t.palette.primary.main, 0.16) : wsSurface(t).raised,
+                  '&:hover': { bgcolor: aiDrawerOpen ? alpha(t.palette.primary.main, 0.24) : alpha(t.palette.text.primary, 0.14) },
                 })}
               >
-                <AutoAwesomeRoundedIcon sx={{ fontSize: 20 }} />
+                <AutoAwesomeRoundedIcon sx={{ fontSize: 22 }} />
               </IconButton>
             </Tooltip>
             <Tooltip title="More">
-              <IconButton size="small" aria-label="More editor actions" onClick={(e) => setMoreAnchor(e.currentTarget)} sx={{ width: 36, height: 36, color: 'text.secondary' }}>
-                <MoreVertRoundedIcon sx={{ fontSize: 20 }} />
+              <IconButton size="small" aria-label="More editor actions" onClick={(e) => setMoreAnchor(e.currentTarget)} sx={(t) => ({ width: 40, height: 40, color: 'text.secondary', bgcolor: wsSurface(t).raised, '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.14) } })}>
+                <MoreVertRoundedIcon sx={{ fontSize: 22 }} />
               </IconButton>
             </Tooltip>
             <Menu anchorEl={moreAnchor} open={Boolean(moreAnchor)} onClose={() => setMoreAnchor(null)}>
@@ -962,7 +966,7 @@ export default function WorkspacePage() {
               startIcon={runStatus === 'running' ? <CircularProgress size={14} /> : <PlayArrowRoundedIcon sx={{ fontSize: '18px !important' }} />}
               onClick={handleRun}
               disabled={isRunning}
-              sx={{ display: { xs: 'none', md: 'inline-flex' }, height: 36 }}
+              sx={{ display: { xs: 'none', md: 'inline-flex' }, height: 40, borderRadius: '12px' }}
             >
               Run
             </Button>
@@ -973,7 +977,7 @@ export default function WorkspacePage() {
               startIcon={submitStatus === 'running' ? <CircularProgress size={14} color="inherit" /> : <CloudUploadRoundedIcon sx={{ fontSize: '18px !important' }} />}
               onClick={handleSubmit}
               disabled={isRunning}
-              sx={{ display: { xs: 'none', md: 'inline-flex' }, height: 36, fontWeight: 700 }}
+              sx={{ display: { xs: 'none', md: 'inline-flex' }, height: 40, borderRadius: '12px', fontWeight: 700 }}
             >
               Submit
             </Button>
