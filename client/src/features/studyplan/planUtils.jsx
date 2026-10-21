@@ -1,4 +1,8 @@
-import { Avatar, AvatarGroup, Box, Typography, alpha } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
+import { Avatar, AvatarGroup, Box, Button, CircularProgress, Typography, alpha } from '@mui/material';
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { DIFF_COLOR } from '../dashboard/dashboardUtils';
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -27,6 +31,20 @@ export const relDay = (key, today) => {
   if (key === addDays(today, -1)) return 'Yesterday';
   return fmtDay(key);
 };
+
+// "12 days left" / "Last day" / "Starts in 3 days" ... plus a palette tone for the chip.
+export function daysLeftInfo(summary, today = localKey()) {
+  const { status, daysLeft, startDate, endDate, total, overdue } = summary;
+  if (!total || !endDate) return { text: 'No dates yet', tone: 'info' };
+  if (status === 'completed') return { text: 'Completed', tone: 'success' };
+  if (status === 'upcoming') {
+    const n = Math.round((keyToDate(startDate) - keyToDate(today)) / 86400000);
+    return { text: n <= 1 ? 'Starts tomorrow' : `Starts in ${n} days`, tone: 'info' };
+  }
+  if (endDate < today) return { text: overdue ? `Ended · ${overdue} left` : 'Ended', tone: 'error' };
+  if (daysLeft <= 1) return { text: 'Last day', tone: 'warning' };
+  return { text: `${daysLeft} days left`, tone: daysLeft <= 3 ? 'warning' : 'primary' };
+}
 
 export const monthLabel = (y, m) => new Date(Date.UTC(y, m, 1)).toLocaleDateString(undefined, { timeZone: 'UTC', month: 'long', year: 'numeric' });
 
@@ -163,4 +181,66 @@ export function downloadIcs(plan) {
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
+}
+
+// ---------- shared visuals for the Study Plan screens ----------
+
+export const planTone = (summary) =>
+  summary.status === 'completed' ? 'success' : summary.status === 'behind' ? 'error' : summary.status === 'upcoming' ? 'info' : 'primary';
+
+// Circular progress with the percentage in the middle.
+export function ProgressRing({ value, size = 56, tone = 'primary' }) {
+  return (
+    <Box sx={{ position: 'relative', width: size, height: size, flexShrink: 0 }} role="img" aria-label={`${value}% done`}>
+      <CircularProgress variant="determinate" value={100} size={size} thickness={4.5} sx={(t) => ({ color: alpha(t.palette.text.primary, 0.1), position: 'absolute', inset: 0 })} />
+      <CircularProgress variant="determinate" value={value} size={size} thickness={4.5} color={tone} sx={{ position: 'absolute', inset: 0, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }} />
+      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: size * 0.26, fontVariantNumeric: 'tabular-nums' }}>{value}%</Typography>
+    </Box>
+  );
+}
+
+// One question in a plan: clear tick when solved, a "Solve now" button when not.
+export function PlanTaskRow({ item, doers = [] }) {
+  const link = itemLink(item);
+  const accent = item.done ? 'success' : item.overdue ? 'error' : null;
+  return (
+    <Box
+      sx={(t) => ({
+        display: 'flex', alignItems: 'center', gap: 1.25, px: 1.25, py: 1, borderRadius: '12px', border: `1px solid ${accent ? alpha(t.palette[accent].main, 0.35) : t.palette.divider}`,
+        bgcolor: accent ? alpha(t.palette[accent].main, item.done ? 0.07 : 0.05) : 'transparent', mb: 0.75,
+      })}
+    >
+      {item.done ? (
+        <Box sx={(t) => ({ width: 26, height: 26, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: t.palette.success.main, color: t.palette.success.contrastText })}>
+          <CheckRoundedIcon sx={{ fontSize: 18 }} />
+        </Box>
+      ) : item.overdue ? (
+        <ErrorOutlineRoundedIcon sx={{ fontSize: 26, color: 'error.main', flexShrink: 0 }} />
+      ) : (
+        <Box sx={(t) => ({ width: 26, height: 26, borderRadius: '50%', flexShrink: 0, border: `2px solid ${t.palette.text.disabled}` })} />
+      )}
+
+      <Box sx={{ minWidth: 0, flex: 1 }}>
+        <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.3, color: item.done ? 'text.secondary' : 'text.primary', overflowWrap: 'anywhere' }}>{item.title}</Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.4, flexWrap: 'wrap' }}>
+          <DiffTag difficulty={item.difficulty} />
+          <Typography variant="caption" color="text.secondary">{item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
+          {item.overdue && <Typography variant="caption" sx={{ color: 'error.main', fontWeight: 700 }}>Overdue</Typography>}
+          {doers.length > 0 && (
+            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 18, height: 18, fontSize: 9, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
+              {doers.map((m) => <Avatar key={m.userId} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
+            </AvatarGroup>
+          )}
+        </Box>
+      </Box>
+
+      {item.done ? (
+        <Typography variant="caption" sx={(t) => ({ color: 'success.main', fontWeight: 800, px: 1, py: 0.3, borderRadius: 999, bgcolor: alpha(t.palette.success.main, 0.14), flexShrink: 0 })}>Solved</Typography>
+      ) : link ? (
+        <Button component={RouterLink} to={link} size="small" variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} sx={{ flexShrink: 0, fontWeight: 700, borderRadius: '10px', whiteSpace: 'nowrap' }}>
+          Solve now
+        </Button>
+      ) : null}
+    </Box>
+  );
 }

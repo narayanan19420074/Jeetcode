@@ -1,51 +1,30 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import {
-  Alert, Avatar, AvatarGroup, Box, Button, ButtonBase, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
-  IconButton, LinearProgress, Skeleton, ToggleButton, ToggleButtonGroup, Tooltip, Typography,
+  Alert, Avatar, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
+  IconButton, LinearProgress, Skeleton, ToggleButton, ToggleButtonGroup, Tooltip, Typography, alpha,
 } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import PersonAddRoundedIcon from '@mui/icons-material/PersonAddRounded';
 import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
-import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUncheckedRounded';
+import EventRoundedIcon from '@mui/icons-material/EventRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
 import { studyPlanApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import FriendPicker from './FriendPicker';
-import { DiffTag, fmtRange, itemLink, localKey, relDay, shareUrl } from './planUtils';
+import { PlanTaskRow, ProgressRing, daysLeftInfo, fmtRange, localKey, paceLabel, planTone, relDay, shareUrl } from './planUtils';
 
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 // Each panel scrolls inside itself, so the page never grows.
-const panelHeight = { xs: 'min(62dvh, 520px)', md: 'calc(100dvh - 210px)' };
-
-function QuestionRow({ item, doers }) {
-  const link = itemLink(item);
-  const Icon = item.done ? CheckCircleRoundedIcon : item.overdue ? ErrorOutlineRoundedIcon : RadioButtonUncheckedRoundedIcon;
-  return (
-    <ButtonBase
-      component={link ? RouterLink : 'div'} to={link || undefined}
-      sx={(t) => ({ width: '100%', justifyContent: 'flex-start', gap: 1, px: 1, py: 0.75, borderRadius: '8px', textAlign: 'left', fontFamily: 'inherit', '&:hover': { bgcolor: t.palette.action.hover } })}
-    >
-      <Icon sx={{ fontSize: 19, color: item.done ? 'success.main' : item.overdue ? 'error.main' : 'text.disabled' }} />
-      <Typography variant="body2" noWrap sx={{ flex: 1, fontWeight: 600, textDecoration: item.done ? 'line-through' : 'none', opacity: item.done ? 0.6 : 1 }}>{item.title}</Typography>
-      {doers.length > 0 && (
-        <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 18, height: 18, fontSize: 9, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
-          {doers.map((m) => <Avatar key={m.userId} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
-        </AvatarGroup>
-      )}
-      <DiffTag difficulty={item.difficulty} />
-    </ButtonBase>
-  );
-}
+const panelHeight = { xs: 'min(62dvh, 520px)', md: 'calc(100dvh - 330px)' };
 
 export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onChanged, onFindFriends, notify }) {
   const today = localKey();
@@ -131,6 +110,9 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
   }
 
   const s = plan.summary;
+  const tone = planTone(s);
+  const info = daysLeftInfo(s, today);
+  const pace = paceLabel(s.pace);
   const confirmText = confirm === 'delete'
     ? 'This removes the plan for everyone. Questions you solved stay solved.'
     : confirm === 'leave' ? 'You will be removed from this plan. You can rejoin with the invite link.'
@@ -167,6 +149,37 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
         </Tooltip>
       </Box>
 
+      {/* hero: how the plan is going at a glance */}
+      <Box
+        sx={[surface, (t) => ({
+          mb: 1.25, p: 1.5, display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap', overflow: 'hidden',
+          background: `linear-gradient(120deg, ${alpha(t.palette[tone].main, 0.22)} 0%, ${alpha(t.palette[tone].main, 0.05)} 75%)`,
+        })]}
+      >
+        <ProgressRing value={s.percent} tone={tone} size={64} />
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Box
+            sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.6, px: 1.1, py: 0.3, borderRadius: 999, fontSize: 13, fontWeight: 800, color: t.palette[info.tone].main, bgcolor: alpha(t.palette.background.paper, 0.85), border: `1px solid ${alpha(t.palette[info.tone].main, 0.4)}` })}
+          >
+            <EventRoundedIcon sx={{ fontSize: 16 }} />{info.text}
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mt: 0.9, flexWrap: 'wrap' }}>
+            <Typography variant="body2" sx={{ fontWeight: 700 }}><span style={{ fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total}</span> solved</Typography>
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4 }}>
+              <TodayRoundedIcon sx={{ fontSize: 16, color: 'primary.main' }} />
+              <Typography variant="body2" sx={{ fontWeight: 700 }}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Typography>
+            </Box>
+            {s.streak > 0 && (
+              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.2 }}>
+                <LocalFireDepartmentRoundedIcon sx={{ fontSize: 17, color: 'var(--jc-reward)' }} />
+                <Typography variant="body2" sx={{ fontWeight: 700 }}>{s.streak} day streak</Typography>
+              </Box>
+            )}
+            {s.status !== 'completed' && s.status !== 'upcoming' && <Typography variant="body2" sx={{ fontWeight: 700, color: pace.tone }}>{pace.text}</Typography>}
+          </Box>
+        </Box>
+      </Box>
+
       {error && <Alert severity="error" sx={{ mb: 1 }} onClose={() => setError('')}>{error}</Alert>}
 
       <ToggleButtonGroup
@@ -180,14 +193,21 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
       <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.6fr) minmax(0,1fr)' } }}>
         <Box sx={[surface, { display: { xs: panel === 'questions' ? 'block' : 'none', md: 'block' }, height: panelHeight, overflowY: 'auto', scrollbarWidth: 'thin', p: 0.75 }]}>
           {days.length === 0 && <Typography variant="body2" color="text.secondary" sx={{ p: 2 }}>No questions in this plan.</Typography>}
-          {days.map((d) => (
-            <Box key={d.date}>
-              <Typography variant="caption" sx={{ display: 'block', px: 1, pt: 0.9, pb: 0.2, fontWeight: 800, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>
-                {relDay(d.date, today).toUpperCase()}
-              </Typography>
-              {d.items.map((it) => <QuestionRow key={it.id} item={it} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />)}
-            </Box>
-          ))}
+          {days.map((d) => {
+            const doneCount = d.items.filter((i) => i.done).length;
+            return (
+              <Box key={d.date} sx={{ px: 0.75 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, pt: 1.1, pb: 0.7 }}>
+                  <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>
+                    {relDay(d.date, today).toUpperCase()}
+                  </Typography>
+                  <Box sx={{ flex: 1, height: '1px', bgcolor: 'divider' }} />
+                  <Typography variant="caption" sx={[{ fontWeight: 700, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
+                </Box>
+                {d.items.map((it) => <PlanTaskRow key={it.id} item={it} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />)}
+              </Box>
+            );
+          })}
         </Box>
 
         <Box sx={[surface, { display: { xs: panel === 'friends' ? 'block' : 'none', md: 'block' }, height: panelHeight, overflowY: 'auto', scrollbarWidth: 'thin', p: 1.25 }]}>

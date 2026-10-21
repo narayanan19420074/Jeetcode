@@ -1,17 +1,23 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
-  Alert, Avatar, AvatarGroup, Badge, Box, Button, ButtonBase, Collapse, IconButton, LinearProgress, Popover, Skeleton, Snackbar,
-  TextField, Tooltip, Typography,
+  Alert, Avatar, AvatarGroup, Badge, Box, Button, ButtonBase, Collapse, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
+  IconButton, Popover, Skeleton, Snackbar, TextField, Tooltip, Typography, alpha,
 } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import AutoStoriesRoundedIcon from '@mui/icons-material/AutoStoriesRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import EventRoundedIcon from '@mui/icons-material/EventRounded';
+import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
+import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import PersonAddRoundedIcon from '@mui/icons-material/PersonAddRounded';
-import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
-import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import EventRoundedIcon from '@mui/icons-material/EventRounded';
+import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
 import { studyPlanApi } from '../../api/studyPlanApi';
 import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -19,7 +25,7 @@ import { surface } from '../dashboard/dashboardUtils';
 import PlanBuilder from './PlanBuilder';
 import PlanWorkspace from './PlanWorkspace';
 import FriendPicker from './FriendPicker';
-import { fmtRange, parseInvite, relTime } from './planUtils';
+import { PlanTaskRow, ProgressRing, daysLeftInfo, fmtRange, localKey, parseInvite, planTone, relDay, relTime } from './planUtils';
 
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 
@@ -84,42 +90,157 @@ function NotificationsPopover({ anchorEl, onClose, items, onOpenPlan }) {
 
 // ---------- plan card ----------
 
-function PlanCard({ plan, onOpen, onAddFriend }) {
-  const s = plan.summary;
-  const behind = s.status === 'behind';
-  const complete = s.status === 'completed';
+// Full question list of one plan, loaded the first time the card is expanded.
+function PlanQuestions({ planId, today }) {
+  const [state, setState] = useState({ loading: true, items: [], members: [], error: '' });
+
+  useEffect(() => {
+    let cancelled = false;
+    setState((p) => ({ ...p, loading: true, error: '' }));
+    studyPlanApi
+      .get(planId)
+      .then(({ data }) => !cancelled && setState({ loading: false, items: data.data.items || [], members: data.data.members || [], error: '' }))
+      .catch((err) => !cancelled && setState({ loading: false, items: [], members: [], error: extractErrorMessage(err) }));
+    return () => { cancelled = true; };
+  }, [planId]);
+
+  const membersById = useMemo(() => new Map(state.members.map((m) => [m.userId, m])), [state.members]);
+  const days = useMemo(() => {
+    const out = [];
+    state.items.forEach((it) => {
+      const last = out[out.length - 1];
+      if (last && last.date === it.date) last.items.push(it);
+      else out.push({ date: it.date, items: [it] });
+    });
+    return out;
+  }, [state.items]);
+
+  if (state.loading) return <Box sx={{ p: 1.5 }}><Skeleton variant="rounded" height={52} sx={{ mb: 0.75, borderRadius: '12px' }} /><Skeleton variant="rounded" height={52} sx={{ borderRadius: '12px' }} /></Box>;
+  if (state.error) return <Typography variant="body2" color="error" sx={{ p: 1.5 }}>{state.error}</Typography>;
+  if (days.length === 0) return <Typography variant="body2" color="text.secondary" sx={{ p: 1.5 }}>No questions in this plan.</Typography>;
+
   return (
-    <Box
-      role="button" tabIndex={0} onClick={onOpen} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), onOpen())}
-      sx={[surface, { p: 1.5, cursor: 'pointer', transition: 'border-color .15s', '&:hover, &:focus-visible': { borderColor: 'primary.main', outline: 'none' } }]}
-    >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
-        <Typography noWrap sx={{ fontWeight: 700, flex: 1, fontSize: 15 }}>{plan.title}</Typography>
-        {complete && <Tooltip title="Completed"><CheckCircleRoundedIcon sx={{ fontSize: 18, color: 'success.main' }} /></Tooltip>}
-        {behind && <Tooltip title={`${s.overdue} overdue`}><ErrorOutlineRoundedIcon sx={{ fontSize: 18, color: 'error.main' }} /></Tooltip>}
+    <Box sx={{ maxHeight: 380, overflowY: 'auto', scrollbarWidth: 'thin', px: 1.25, py: 1 }}>
+      {days.map((d) => {
+        const doneCount = d.items.filter((i) => i.done).length;
+        return (
+          <Box key={d.date}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, pt: 0.5, pb: 0.6 }}>
+              <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>{relDay(d.date, today).toUpperCase()}</Typography>
+              <Box sx={{ flex: 1, height: '1px', bgcolor: 'divider' }} />
+              <Typography variant="caption" sx={[{ fontWeight: 700, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
+            </Box>
+            {d.items.map((it) => <PlanTaskRow key={it.id} item={it} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />)}
+          </Box>
+        );
+      })}
+    </Box>
+  );
+}
+
+function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDelete }) {
+  const s = plan.summary;
+  const tone = planTone(s);
+  const info = daysLeftInfo(s, today);
+  const complete = s.status === 'completed';
+  const todayItems = plan.today || [];
+  const todayLeft = Math.max(0, s.todayTotal - s.todayDone);
+
+  return (
+    <Box sx={[surface, (t) => ({ overflow: 'hidden', transition: 'border-color .15s, transform .15s', '&:hover': { borderColor: alpha(t.palette[tone].main, 0.55) } })]}>
+      {/* banner: days left on the left, quick actions on the right */}
+      <Box
+        sx={(t) => ({
+          position: 'relative', display: 'flex', alignItems: 'center', gap: 0.5, px: 1.5, py: 1, overflow: 'hidden',
+          background: `linear-gradient(120deg, ${alpha(t.palette[tone].main, 0.3)} 0%, ${alpha(t.palette[tone].main, 0.06)} 70%)`,
+          '&::before': { content: '""', position: 'absolute', inset: 0, backgroundImage: `radial-gradient(${alpha(t.palette.text.primary, 0.14)} 1px, transparent 1.2px)`, backgroundSize: '12px 12px', maskImage: 'linear-gradient(90deg, transparent, #000)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000)' },
+        })}
+      >
+        <AutoStoriesRoundedIcon sx={(t) => ({ position: 'absolute', right: 70, top: -6, fontSize: 64, color: alpha(t.palette[tone].main, 0.16), transform: 'rotate(-12deg)' })} />
+        <Box
+          sx={(t) => ({
+            position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 0.6, px: 1.1, py: 0.35, borderRadius: 999, fontSize: 12.5, fontWeight: 800,
+            color: t.palette[info.tone].main, bgcolor: alpha(t.palette.background.paper, 0.85), border: `1px solid ${alpha(t.palette[info.tone].main, 0.4)}`,
+          })}
+        >
+          <EventRoundedIcon sx={{ fontSize: 15 }} />{info.text}
+        </Box>
+        <Box sx={{ flex: 1 }} />
         <Tooltip title="Add friends">
-          <IconButton size="small" aria-label="Add friends to plan" onClick={(e) => { e.stopPropagation(); onAddFriend(e.currentTarget); }} sx={{ mr: -0.5 }}>
-            <PersonAddRoundedIcon sx={{ fontSize: 19 }} />
+          <IconButton size="small" aria-label="Add friends to plan" onClick={(e) => { e.stopPropagation(); onAddFriend(e.currentTarget); }} sx={(t) => ({ position: 'relative', bgcolor: alpha(t.palette.background.paper, 0.7), '&:hover': { bgcolor: t.palette.background.paper } })}>
+            <PersonAddRoundedIcon sx={{ fontSize: 18 }} />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title={plan.isOwner ? 'Delete plan' : 'Leave plan'}>
+          <IconButton size="small" color="error" aria-label={plan.isOwner ? 'Delete plan' : 'Leave plan'} onClick={(e) => { e.stopPropagation(); onDelete(plan); }} sx={(t) => ({ position: 'relative', bgcolor: alpha(t.palette.background.paper, 0.7), '&:hover': { bgcolor: t.palette.background.paper } })}>
+            {plan.isOwner ? <DeleteOutlineRoundedIcon sx={{ fontSize: 19 }} /> : <ExitToAppRoundedIcon sx={{ fontSize: 19 }} />}
           </IconButton>
         </Tooltip>
       </Box>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1 }}>
-        <LinearProgress
-          variant="determinate" value={s.percent} aria-label="Plan progress"
-          color={complete ? 'success' : behind ? 'error' : 'primary'} sx={{ flex: 1, height: 6, borderRadius: 3 }}
-        />
-        <Typography variant="caption" sx={[{ fontWeight: 700 }, mono]}>{s.done}/{s.total}</Typography>
+      {/* title + progress ring (tap to open the plan) */}
+      <ButtonBase
+        onClick={onOpen} aria-label={`Open ${plan.title}`}
+        sx={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, px: 1.5, pt: 1.5, pb: 1, textAlign: 'left', fontFamily: 'inherit' }}
+      >
+        <ProgressRing value={s.percent} tone={tone} size={58} />
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography sx={{ fontWeight: 800, fontSize: 16.5, lineHeight: 1.25, overflowWrap: 'anywhere' }}>{plan.title}</Typography>
+          <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.3 }}>{fmtRange(s.startDate, s.endDate)}</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 0.5, flexWrap: 'wrap' }}>
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4 }}>
+              <CheckCircleRoundedIcon sx={{ fontSize: 15, color: 'success.main' }} />
+              <Typography variant="caption" sx={[{ fontWeight: 800 }, mono]}>{s.done}/{s.total} solved</Typography>
+            </Box>
+            {s.streak > 0 && (
+              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.2 }}>
+                <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'var(--jc-reward)' }} />
+                <Typography variant="caption" sx={[{ fontWeight: 800 }, mono]}>{s.streak}d</Typography>
+              </Box>
+            )}
+            {s.overdue > 0 && <Typography variant="caption" sx={{ fontWeight: 800, color: 'error.main' }}>{s.overdue} overdue</Typography>}
+          </Box>
+        </Box>
+      </ButtonBase>
+
+      {/* today's focus: what are we studying right now */}
+      <Box sx={(t) => ({ mx: 1.5, mb: 1.25, p: 1.1, borderRadius: '12px', bgcolor: alpha(t.palette[complete ? 'success' : 'primary'].main, 0.07), border: `1px dashed ${alpha(t.palette[complete ? 'success' : 'primary'].main, 0.35)}` })}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.6 }}>
+          <TodayRoundedIcon sx={{ fontSize: 16, color: complete ? 'success.main' : 'primary.main' }} />
+          <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: 0.3, flex: 1, color: complete ? 'success.main' : 'primary.main' }}>
+            {complete ? 'ALL DONE' : s.todayTotal > 0 ? (todayLeft === 0 ? "TODAY'S GOAL DONE" : `TODAY · ${todayLeft} TO SOLVE`) : s.status === 'upcoming' ? 'NOT STARTED YET' : 'NOTHING SCHEDULED TODAY'}
+          </Typography>
+          {s.todayTotal > 0 && <Typography variant="caption" sx={[{ fontWeight: 800 }, mono]}>{s.todayDone}/{s.todayTotal}</Typography>}
+        </Box>
+        {!complete && todayItems.slice(0, 3).map((it) => (
+          <Typography key={it.id} variant="body2" noWrap sx={{ mt: 0.4, fontWeight: 600, color: it.done ? 'text.disabled' : 'text.primary', textDecoration: it.done ? 'line-through' : 'none' }}>
+            {it.done ? '✓ ' : it.overdue ? '! ' : '• '}{it.title}
+          </Typography>
+        ))}
+        {!complete && todayItems.length > 3 && <Typography variant="caption" color="text.secondary">+{todayItems.length - 3} more</Typography>}
       </Box>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1 }}>
-        <AvatarGroup max={4} sx={{ '& .MuiAvatar-root': { width: 20, height: 20, fontSize: 10, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 1.5, pb: 1.25 }}>
+        <AvatarGroup max={4} sx={{ '& .MuiAvatar-root': { width: 22, height: 22, fontSize: 10, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
           {plan.members.map((m) => <Avatar key={m.id} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
         </AvatarGroup>
         <Box sx={{ flex: 1 }} />
-        <EventRoundedIcon sx={{ fontSize: 14, color: 'text.disabled' }} />
-        <Typography variant="caption" color="text.secondary" noWrap>{fmtRange(s.startDate, s.endDate)}</Typography>
+        <Button size="small" onClick={onOpen} endIcon={<ArrowForwardRoundedIcon />} sx={{ fontWeight: 700 }}>Open plan</Button>
       </Box>
+
+      {/* arrow: show / hide the questions right here */}
+      <ButtonBase
+        onClick={onToggle} aria-expanded={expanded} aria-label={expanded ? 'Hide questions' : 'Show questions'}
+        sx={(t) => ({ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5, py: 0.9, borderTop: `1px solid ${t.palette.divider}`, fontFamily: 'inherit', fontSize: 13, fontWeight: 700, color: 'text.secondary', '&:hover': { bgcolor: t.palette.action.hover } })}
+      >
+        {expanded ? 'Hide questions' : `Show ${s.total} question${s.total === 1 ? '' : 's'}`}
+        <ExpandMoreRoundedIcon sx={{ fontSize: 20, transition: 'transform .2s', transform: expanded ? 'rotate(180deg)' : 'none' }} />
+      </ButtonBase>
+      <Collapse in={expanded} unmountOnExit>
+        <Box sx={(t) => ({ borderTop: `1px solid ${t.palette.divider}`, bgcolor: alpha(t.palette.text.primary, 0.025) })}>
+          <PlanQuestions planId={plan.id} today={today} />
+        </Box>
+      </Collapse>
     </Box>
   );
 }
@@ -145,6 +266,10 @@ export default function StudyPlannerView({ isAuthenticated }) {
   const [showFriends, setShowFriends] = useState(false);
   const [bellEl, setBellEl] = useState(null);
   const [picker, setPicker] = useState(null); // { el, plan }
+  const [expandedId, setExpandedId] = useState(null); // plan whose questions are showing
+  const [toDelete, setToDelete] = useState(null); // plan waiting for delete / leave confirmation
+  const [deleting, setDeleting] = useState(false);
+  const today = localKey();
 
   const go = useCallback((next = {}) => setParams({ view: 'plans', ...next }), [setParams]);
 
@@ -244,6 +369,26 @@ export default function StudyPlannerView({ isAuthenticated }) {
     } catch { /* keep whatever we had */ }
   };
 
+  const confirmDelete = async () => {
+    if (!toDelete) return;
+    setDeleting(true);
+    try {
+      if (toDelete.isOwner) await studyPlanApi.remove(toDelete.id);
+      else await studyPlanApi.leave(toDelete.id);
+      setToast(toDelete.isOwner ? 'Plan deleted' : 'You left the plan');
+      if (expandedId === toDelete.id) setExpandedId(null);
+      setToDelete(null);
+      await loadPlans();
+    } catch (err) {
+      setToast(extractErrorMessage(err));
+      setToDelete(null);
+    } finally {
+      setDeleting(false);
+    }
+  };
+
+  const dueToday = (plans || []).reduce((n, p) => n + Math.max(0, p.summary.todayTotal - p.summary.todayDone), 0);
+
   const pickerMemberIds = useMemo(() => new Set((picker?.plan?.members || []).map((m) => m.id)), [picker]);
   const findFriends = () => setParams({ view: 'friends' });
 
@@ -288,7 +433,14 @@ export default function StudyPlannerView({ isAuthenticated }) {
   return (
     <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: 'minmax(0, 1fr)' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-        <Typography variant="h6" sx={{ fontWeight: 700, flex: 1 }}>Study Plan</Typography>
+        <Box sx={{ flex: 1, minWidth: 0 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.2 }}>Study Plan</Typography>
+          {plans && plans.length > 0 && (
+            <Typography variant="caption" color="text.secondary">
+              {plans.length} plan{plans.length === 1 ? '' : 's'} · {dueToday > 0 ? `${dueToday} question${dueToday === 1 ? '' : 's'} to solve today` : 'nothing due today'}
+            </Typography>
+          )}
+        </Box>
         <Tooltip title="Friends">
           <IconButton onClick={() => setShowFriends((v) => !v)} aria-label="Friends" aria-expanded={showFriends} color={showFriends ? 'primary' : 'default'}>
             <GroupsRoundedIcon />
@@ -336,7 +488,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
 
       {plans === null ? (
         <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
-          {[0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={96} sx={{ borderRadius: '14px' }} />)}
+          {[0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={260} sx={{ borderRadius: '14px' }} />)}
         </Box>
       ) : plans.length === 0 ? (
         <Box sx={[surface, { p: 3, textAlign: 'center' }]}>
@@ -345,9 +497,13 @@ export default function StudyPlannerView({ isAuthenticated }) {
           <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: 700 }}>Create a plan</Button>
         </Box>
       ) : (
-        <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
+        <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
           {plans.map((p) => (
-            <PlanCard key={p.id} plan={p} onOpen={() => go({ plan: p.id })} onAddFriend={(el) => setPicker({ el, plan: p })} />
+            <PlanCard
+              key={p.id} plan={p} today={today} expanded={expandedId === p.id}
+              onToggle={() => setExpandedId((cur) => (cur === p.id ? null : p.id))}
+              onOpen={() => go({ plan: p.id })} onAddFriend={(el) => setPicker({ el, plan: p })} onDelete={setToDelete}
+            />
           ))}
         </Box>
       )}
@@ -360,6 +516,22 @@ export default function StudyPlannerView({ isAuthenticated }) {
         anchorEl={picker?.el} onClose={() => setPicker(null)} friends={friends} memberIds={pickerMemberIds} onFindFriends={findFriends}
         onAdd={async (f) => { if (await addFriend(picker.plan, f)) setPicker((p) => p && ({ ...p, plan: { ...p.plan, members: [...p.plan.members, { id: f.userId }] } })); }}
       />
+      <Dialog open={Boolean(toDelete)} onClose={() => !deleting && setToDelete(null)} maxWidth="xs" fullWidth>
+        <DialogTitle sx={{ fontWeight: 700 }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {toDelete?.isOwner
+              ? `“${toDelete?.title}” will be removed for everyone. Questions you solved stay solved.`
+              : `You will be removed from “${toDelete?.title}”. You can rejoin with the invite link.`}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setToDelete(null)} disabled={deleting}>Cancel</Button>
+          <Button color="error" variant="contained" disableElevation onClick={confirmDelete} disabled={deleting} sx={{ fontWeight: 700 }}>
+            {deleting ? 'Please wait…' : toDelete?.isOwner ? 'Delete' : 'Leave'}
+          </Button>
+        </DialogActions>
+      </Dialog>
       <Snackbar open={Boolean(toast)} autoHideDuration={2600} onClose={() => setToast('')} message={toast} />
     </Box>
   );
