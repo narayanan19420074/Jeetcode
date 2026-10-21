@@ -190,7 +190,7 @@ export const formatDateTime = (date) =>
 /* ------------------------------------------------------------------ */
 
 const DEFAULTS = {
-  appearance: { theme: 'dark', accent: 'blue', density: 'comfortable', fontScale: 'md', contrast: 'normal' },
+  appearance: { theme: 'dark', accent: 'violet', density: 'comfortable', fontScale: 'md', contrast: 'normal' },
   accessibility: { reduceMotion: 'system', underlineLinks: false },
   editor: { fontSize: 14, tabSize: 2, wordWrap: false, minimap: false, lineNumbers: true, ligatures: false, autoClose: true, theme: 'auto', defaultLanguage: 'javascript' },
   notifications: { streakReminder: true, weeklyDigest: true, achievements: true, productUpdates: false, reminderTime: '20:00', timezone: null },

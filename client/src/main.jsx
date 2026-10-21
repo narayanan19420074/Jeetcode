@@ -51,6 +51,12 @@ function ThemedApp() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, dispatch]);
 
+  // Phone status bar / browser chrome matches the app bar.
+  const chromeColor = theme.palette.background.paper;
+  useEffect(() => {
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', chromeColor);
+  }, [chromeColor]);
+
   useEffect(() => {
     document.documentElement.dataset.motion = reduce ? 'reduce' : 'full';
     document.documentElement.style.colorScheme = mode;

@@ -93,7 +93,7 @@ export default function PairLobbyPage() {
 
   return (
     <Box sx={{ maxWidth: 520, mx: 'auto', mt: { xs: 2, md: 6 }, mb: 4, px: 2 }}>
-      <Paper variant="outlined" sx={{ borderRadius: '28px', p: { xs: 2.5, sm: 3.5 } }}>
+      <Paper variant="outlined" sx={{ borderRadius: '20px', p: { xs: 2.5, sm: 3.5 } }}>
         <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mb: 1.5 }}>
           <Box sx={(t) => ({ width: 48, height: 48, borderRadius: '16px', display: 'grid', placeItems: 'center', bgcolor: wsSurface(t).raised, color: 'primary.main' })}>
             <GroupAddRoundedIcon />

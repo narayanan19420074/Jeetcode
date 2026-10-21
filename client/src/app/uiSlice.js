@@ -7,6 +7,16 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const LS_KEY = 'jeetcode-ui-prefs';
 const LEGACY_MODE_KEY = 'jeetcode-theme-mode';
+// The brand moved from Google blue to indigo (stored under the key 'violet').
+// Until a user picks an accent after this change, a saved 'blue' follows the new brand.
+const PALETTE_V2_KEY = 'jc-palette-v2';
+const paletteV2Chosen = () => {
+  try {
+    return localStorage.getItem(PALETTE_V2_KEY) === '1';
+  } catch {
+    return true;
+  }
+};
 
 export const DEFAULT_EDITOR = {
   fontSize: 14,
@@ -22,7 +32,7 @@ export const DEFAULT_EDITOR = {
 
 const defaults = {
   themePref: 'dark', // 'light' | 'dark' | 'system'
-  accent: 'blue',
+  accent: 'violet',
   density: 'comfortable',
   fontScale: 'md',
   contrast: 'normal',
@@ -52,6 +62,7 @@ function load() {
       // ignore
     }
   }
+  if (!paletteV2Chosen() && (!saved.accent || saved.accent === 'blue')) saved.accent = 'violet';
   return { ...defaults, ...saved, editor: { ...DEFAULT_EDITOR, ...(saved.editor || {}) } };
 }
 
@@ -93,7 +104,16 @@ const uiSlice = createSlice({
     },
     // Local, instant update from Settings. Accepts any subset of:
     // { themePref, accent, density, fontScale, contrast, reduceMotion, underlineLinks, editor }
-    setUiPrefs: (state, action) => merge(state, action.payload),
+    setUiPrefs: (state, action) => {
+      if (action.payload && 'accent' in action.payload) {
+        try {
+          localStorage.setItem(PALETTE_V2_KEY, '1'); // an explicit choice from now on
+        } catch {
+          // ignore
+        }
+      }
+      merge(state, action.payload);
+    },
     setSystemDark: (state, action) => {
       state.systemDark = action.payload;
       state.mode = resolveMode(state.themePref, state.systemDark);
@@ -107,7 +127,7 @@ const uiSlice = createSlice({
       const patch = {};
       if (p.appearance?.syncedAt) {
         const { theme, accent, density, fontScale, contrast } = p.appearance;
-        Object.assign(patch, { themePref: theme, accent, density, fontScale, contrast });
+        Object.assign(patch, { themePref: theme, accent: !paletteV2Chosen() && accent === 'blue' ? 'violet' : accent, density, fontScale, contrast });
       }
       if (p.accessibility) Object.assign(patch, { reduceMotion: p.accessibility.reduceMotion, underlineLinks: p.accessibility.underlineLinks });
       if (p.editor) patch.editor = p.editor;
