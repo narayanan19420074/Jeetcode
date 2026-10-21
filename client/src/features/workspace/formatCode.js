@@ -207,5 +207,29 @@ export async function formatCode(language, code, cursorOffset = 0, { tabSize } =
   return { code, cursorOffset };
 }
 
+// Replaces only the span of text that changed, so the caret, scroll position and
+// (in pair rooms) the shared document see the smallest possible edit.
+export function replaceChangedSpan(editor, src, res) {
+  const model = editor.getModel();
+  if (!model) return;
+  let start = 0;
+  const maxStart = Math.min(src.length, res.code.length);
+  while (start < maxStart && src[start] === res.code[start]) start += 1;
+  let endOld = src.length;
+  let endNew = res.code.length;
+  while (endOld > start && endNew > start && src[endOld - 1] === res.code[endNew - 1]) {
+    endOld -= 1;
+    endNew -= 1;
+  }
+  const a = model.getPositionAt(start);
+  const b = model.getPositionAt(endOld);
+  editor.pushUndoStop();
+  editor.executeEdits('auto-format', [
+    { range: { startLineNumber: a.lineNumber, startColumn: a.column, endLineNumber: b.lineNumber, endColumn: b.column }, text: res.code.slice(start, endNew) },
+  ]);
+  editor.pushUndoStop();
+  editor.setPosition(model.getPositionAt(res.cursorOffset));
+}
+
 // Exposed for quick tests.
 export const __test = { fixPythonIndent, fixCppTabs, mapCursor };

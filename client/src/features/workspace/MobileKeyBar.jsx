@@ -9,6 +9,7 @@ import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRound
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
+import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import UndoRoundedIcon from '@mui/icons-material/UndoRounded';
 import RedoRoundedIcon from '@mui/icons-material/RedoRounded';
 
@@ -79,7 +80,7 @@ function Key({ children, onPress, label, wide, repeat, danger }) {
   );
 }
 
-export default function MobileKeyBar({ onKey, onTab, onOutdent, onDeleteLine, onUp, onDown, onLeft, onRight, onUndo, onRedo }) {
+export default function MobileKeyBar({ onKey, onTab, onOutdent, onDeleteLine, onUp, onDown, onLeft, onRight, onUndo, onRedo, onFormat }) {
   return (
     <Stack
       direction="row"
@@ -95,6 +96,11 @@ export default function MobileKeyBar({ onKey, onTab, onOutdent, onDeleteLine, on
         <Key label="Outdent" onPress={onOutdent}>
           <FormatIndentDecreaseRoundedIcon />
         </Key>
+        {onFormat && (
+          <Key label="Format code" onPress={onFormat}>
+            <AutoFixHighRoundedIcon />
+          </Key>
+        )}
         <Key label="Cursor left" repeat onPress={onLeft}>
           <KeyboardArrowLeftRoundedIcon />
         </Key>

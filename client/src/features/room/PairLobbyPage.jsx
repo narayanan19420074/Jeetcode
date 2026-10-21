@@ -5,6 +5,7 @@ import {
   Alert, Box, Button, Chip, CircularProgress, Divider, InputAdornment, MenuItem, Paper, Select, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography,
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { wsSurface } from '../workspace/workspaceTheme';
 import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
@@ -12,6 +13,8 @@ import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineR
 import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import KeyboardRoundedIcon from '@mui/icons-material/KeyboardRounded';
 import { roomApi } from '../../api/roomApi';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -20,6 +23,8 @@ const FEATURES = [
   { icon: <CodeRoundedIcon />, label: 'Shared editor' },
   { icon: <ChatBubbleOutlineRoundedIcon />, label: 'Live chat' },
   { icon: <VideocamRoundedIcon />, label: 'Video & audio' },
+  { icon: <PlayArrowRoundedIcon />, label: 'Run together' },
+  { icon: <KeyboardRoundedIcon />, label: 'Phone keys & auto-indent' },
 ];
 
 function SectionLabel({ children }) {
@@ -90,7 +95,7 @@ export default function PairLobbyPage() {
     <Box sx={{ maxWidth: 520, mx: 'auto', mt: { xs: 2, md: 6 }, mb: 4, px: 2 }}>
       <Paper variant="outlined" sx={{ borderRadius: '28px', p: { xs: 2.5, sm: 3.5 } }}>
         <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mb: 1.5 }}>
-          <Box sx={(t) => ({ width: 48, height: 48, borderRadius: '16px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
+          <Box sx={(t) => ({ width: 48, height: 48, borderRadius: '16px', display: 'grid', placeItems: 'center', bgcolor: wsSurface(t).raised, color: 'primary.main' })}>
             <GroupAddRoundedIcon />
           </Box>
           <Box>
@@ -110,7 +115,7 @@ export default function PairLobbyPage() {
               icon={f.icon}
               label={f.label}
               size="small"
-              sx={(t) => ({ fontWeight: 600, bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.16 : 0.09), color: 'primary.main', '& .MuiChip-icon': { color: 'inherit', fontSize: 17 } })}
+              sx={(t) => ({ fontWeight: 600, bgcolor: wsSurface(t).raised, color: 'text.primary', '& .MuiChip-icon': { color: t.palette.primary.main, fontSize: 17 } })}
             />
           ))}
         </Stack>
@@ -127,7 +132,7 @@ export default function PairLobbyPage() {
               p: 0.5,
               gap: 0.5,
               borderRadius: 999,
-              bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.12 : 0.08),
+              bgcolor: wsSurface(t).raised,
               '& .MuiToggleButtonGroup-grouped': {
                 border: 0,
                 borderRadius: '999px !important',
@@ -137,7 +142,7 @@ export default function PairLobbyPage() {
                 textTransform: 'none',
                 color: 'text.secondary',
                 '& svg': { fontSize: 19 },
-                '&.Mui-selected': { bgcolor: 'background.paper', color: 'primary.main', boxShadow: `0 1px 4px ${alpha(t.palette.primary.main, 0.25)}` },
+                '&.Mui-selected': { bgcolor: 'background.paper', color: 'primary.main', boxShadow: `0 1px 3px ${alpha(t.palette.common.black, 0.18)}` },
                 '&.Mui-selected:hover': { bgcolor: 'background.paper' },
               },
             })}

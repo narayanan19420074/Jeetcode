@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Box, Stack, Typography, TextField, IconButton } from '@mui/material';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
-import { alpha } from '@mui/material/styles';
+import { wsSurface } from '../workspace/workspaceTheme';
 
-export default function ChatPanel({ messages, myId, onSend, disabled }) {
+export default function ChatPanel({ messages, myId, onSend, disabled, friendName }) {
   const [text, setText] = useState('');
   const endRef = useRef(null);
 
@@ -13,45 +13,47 @@ export default function ChatPanel({ messages, myId, onSend, disabled }) {
   }, [messages]);
 
   const send = () => {
-    if (!text.trim()) return;
+    if (!text.trim() || disabled) return;
     onSend(text);
     setText('');
   };
 
   return (
-    <Box sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', bgcolor: 'background.paper' }}>
       <Box sx={{ flex: 1, overflow: 'auto', p: 1.5 }}>
         {messages.length === 0 && (
           <Stack sx={{ alignItems: 'center', textAlign: 'center', gap: 1, py: 5, px: 2 }}>
-            <Box sx={(t) => ({ width: 52, height: 52, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.12), color: 'primary.main' })}>
+            <Box sx={(t) => ({ width: 52, height: 52, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: wsSurface(t).raised, color: 'primary.main' })}>
               <ForumOutlinedIcon />
             </Box>
             <Typography sx={{ fontWeight: 700 }}>No messages yet</Typography>
             <Typography variant="body2" color="text.secondary">
-              Share doubts, links or ideas with your partner here.
+              {friendName ? `Say hi to ${friendName}. ` : ''}Share doubts, links or ideas with your partner here.
             </Typography>
           </Stack>
         )}
         {messages.map((m) => {
           const mine = m.from === myId;
           return (
-            <Box key={m.id} sx={{ mb: 1, textAlign: mine ? 'right' : 'left' }}>
-              <Typography variant="caption" color="text.secondary" display="block">
+            <Box key={m.id} sx={{ mb: 1.25, textAlign: mine ? 'right' : 'left' }}>
+              <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.25 }}>
                 {mine ? 'You' : m.name}
               </Typography>
               <Box
-                sx={{
+                sx={(t) => ({
                   display: 'inline-block',
-                  maxWidth: '90%',
-                  px: 1.25,
-                  py: 0.75,
-                  borderRadius: 2,
-                  bgcolor: mine ? 'primary.main' : 'action.hover',
+                  maxWidth: '88%',
+                  px: 1.5,
+                  py: 0.9,
+                  borderRadius: mine ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
+                  bgcolor: mine ? 'primary.main' : wsSurface(t).raised,
                   color: mine ? 'primary.contrastText' : 'text.primary',
                   textAlign: 'left',
                   whiteSpace: 'pre-wrap',
                   wordBreak: 'break-word',
-                }}
+                  fontSize: '0.92rem',
+                  lineHeight: 1.5,
+                })}
               >
                 {m.text}
               </Box>
@@ -60,7 +62,7 @@ export default function ChatPanel({ messages, myId, onSend, disabled }) {
         })}
         <div ref={endRef} />
       </Box>
-      <Stack direction="row" spacing={1} sx={{ p: 1, borderTop: '1px solid', borderColor: 'divider' }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 1, p: 1, borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
         <TextField
           size="small"
           fullWidth
@@ -73,9 +75,15 @@ export default function ChatPanel({ messages, myId, onSend, disabled }) {
               send();
             }
           }}
+          sx={(t) => ({ '& .MuiOutlinedInput-root': { borderRadius: 999, bgcolor: wsSurface(t).raised, '& fieldset': { border: 0 } } })}
         />
-        <IconButton color="primary" onClick={send} disabled={disabled || !text.trim()}>
-          <SendRoundedIcon />
+        <IconButton
+          aria-label="Send message"
+          onClick={send}
+          disabled={disabled || !text.trim()}
+          sx={{ width: 42, height: 42, flexShrink: 0, bgcolor: 'primary.main', color: 'primary.contrastText', '&:hover': { bgcolor: 'primary.dark' }, '&.Mui-disabled': { bgcolor: 'action.disabledBackground' } }}
+        >
+          <SendRoundedIcon sx={{ fontSize: 20 }} />
         </IconButton>
       </Stack>
     </Box>
