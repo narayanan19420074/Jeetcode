@@ -6,6 +6,8 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import { studyPlanApi } from '../../../api/studyPlanApi';
+import { daysLeftInfo } from '../../studyplan/planUtils';
 import {
   DIFF_COLOR,
   MONTHLY_BADGE_GOAL,
@@ -91,19 +93,10 @@ function MonthBadge({ label, count, goal }) {
   );
 }
 
-function DayCell({ day, active, today, future, joinLeft, joinRight }) {
-  return (
-    <Box sx={{ position: 'relative', height: 34 }}>
-      {active && (
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: '1px 0',
-            bgcolor: alpha(EMERALD, 0.2),
-            borderRadius: `${joinLeft ? 0 : 17}px ${joinRight ? 0 : 17}px ${joinRight ? 0 : 17}px ${joinLeft ? 0 : 17}px`,
-          }}
-        />
-      )}
+function DayCell({ day, active, today, future, plans }) {
+  const hasPlan = plans && plans.length > 0;
+  const cell = (
+    <Box sx={{ position: 'relative', height: 34, cursor: hasPlan ? 'help' : 'default' }}>
       <Box
         sx={{
           position: 'absolute',
@@ -119,16 +112,55 @@ function DayCell({ day, active, today, future, joinLeft, joinRight }) {
           fontSize: '0.8rem',
           fontVariantNumeric: 'tabular-nums',
           fontWeight: active || today ? 800 : 500,
-          color: today && active ? '#fff' : active ? EMERALD : future ? 'text.disabled' : 'text.primary',
-          bgcolor: today && active ? EMERALD : 'transparent',
-          border: today && !active ? '2px solid' : 'none',
+          color: active ? EMERALD : future ? 'text.disabled' : 'text.primary',
+          border: today ? '2px solid' : 'none',
           borderColor: 'primary.main',
         }}
-        aria-label={`${day}${today ? ', today' : ''}${active ? ', active' : ''}`}
+        aria-label={`${day}${today ? ', today' : ''}${active ? ', active' : ''}${hasPlan ? ', study plan' : ''}`}
       >
         {day}
       </Box>
+      {hasPlan && (
+        <Box
+          component="span"
+          aria-hidden="true"
+          sx={{
+            position: 'absolute',
+            top: -2,
+            right: 'calc(50% - 20px)',
+            width: 13,
+            height: 13,
+            borderRadius: '50%',
+            display: 'grid',
+            placeItems: 'center',
+            fontSize: 8,
+            fontWeight: 800,
+            lineHeight: 1,
+            bgcolor: 'primary.main',
+            color: 'primary.contrastText',
+          }}
+        >
+          P
+        </Box>
+      )}
     </Box>
+  );
+  if (!hasPlan) return cell;
+  return (
+    <Tooltip
+      arrow
+      title={
+        <Box>
+          {plans.map((p) => (
+            <Typography key={p.id} variant="caption" sx={{ display: 'block', fontWeight: 600 }}>
+              {p.title} - {p.left}
+            </Typography>
+          ))}
+        </Box>
+      }
+    >
+      {cell}
+    </Tooltip>
   );
 }
 
@@ -162,6 +194,30 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
       const d = new Date(Date.UTC(s.y, s.m + delta, 1));
       return { y: d.getUTCFullYear(), m: d.getUTCMonth() };
     });
+
+  // Study plans: mark each plan's last day with a small "P" and show "name - days left" on hover.
+  const [plans, setPlans] = useState([]);
+  useEffect(() => {
+    if (!isAuthenticated) return undefined;
+    let alive = true;
+    studyPlanApi
+      .list()
+      .then(({ data }) => alive && setPlans(data.data || []))
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, [isAuthenticated]);
+  const plansByDate = useMemo(() => {
+    const map = new Map();
+    plans.forEach((p) => {
+      const end = p.summary?.endDate;
+      if (!end || p.summary.status === 'completed') return;
+      const left = daysLeftInfo(p.summary).text;
+      map.set(end, [...(map.get(end) || []), { id: p.id, title: p.title, left }]);
+    });
+    return map;
+  }, [plans]);
 
   const isActive = (cell) => Boolean(cell) && (byDate.get(cell.key) || 0) > 0;
   const streak = user?.streakDays ?? 0;
@@ -215,7 +271,6 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
         ))}
         {cells.map((c, i) => {
           if (!c) return <Box key={`b${i}`} />;
-          const col = i % 7;
           return (
             <DayCell
               key={c.key}
@@ -223,8 +278,7 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
               active={isActive(c)}
               today={c.key === todayKey}
               future={c.key > todayKey}
-              joinLeft={col > 0 && isActive(cells[i - 1])}
-              joinRight={col < 6 && isActive(cells[i + 1])}
+              plans={plansByDate.get(c.key)}
             />
           );
         })}
