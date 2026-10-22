@@ -52,6 +52,7 @@ const LearnTopicPage = lazy(() => import('./features/learn/LearnTopicPage'));
 const YouPage = lazy(() => import('./features/profile/YouPage'));
 const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage'));
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
+const ExamsPage = lazy(() => import('./features/exams/ExamsPage'));
 
 const RouteFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -162,6 +163,7 @@ export default function App() {
         <Route path="/companies" element={<Navigate to="/prep" replace />} />
         <Route path="/you" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><YouPage /></Suspense></ProtectedRoute>} />
         <Route path="/prep" element={<Suspense fallback={<RouteFallback />}><PrepCompaniesPage /></Suspense>} />
+        <Route path="/exams" element={<Suspense fallback={<RouteFallback />}><ExamsPage /></Suspense>} />
         <Route path="/prep/:companySlug" element={<Suspense fallback={<RouteFallback />}><PrepRoadmapPage /></Suspense>} />
 
         <Route

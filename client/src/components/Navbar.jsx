@@ -30,6 +30,7 @@ import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
+import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
@@ -62,6 +63,7 @@ const PRIMARY_LINKS = [
   { to: '/dashboard', label: 'Dashboard', icon: DashboardRoundedIcon },
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
   { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
+  { to: '/exams', label: 'Exams', icon: AssignmentRoundedIcon },
 ];
 
 // Reference links — grouped under "Explore" on desktop, second group on mobile.
