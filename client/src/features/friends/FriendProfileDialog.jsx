@@ -140,6 +140,60 @@ function Overview({ f }) {
   );
 }
 
+// Same profile + "You vs them" content, but inline (no dialog): used by the desktop Friends side panel.
+export function FriendProfilePanel({ f, onRemove }) {
+  const online = useSelector((s) => Boolean(s.friends.online[f.userId]));
+  const [tab, setTab] = useState('overview');
+  const { tier } = tierFor(f.score);
+  const act = statusInfo(f, online);
+  const since = f.since ? new Date(f.since).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) : null;
+  const pill = (key, label) => (
+    <ButtonBase
+      key={key}
+      onClick={() => setTab(key)}
+      aria-pressed={tab === key}
+      sx={(t) => ({ flex: 1, height: 36, borderRadius: 999, fontFamily: 'inherit', fontWeight: 800, fontSize: 14, bgcolor: tab === key ? t.palette.text.primary : 'transparent', color: tab === key ? t.palette.background.paper : t.palette.text.secondary })}
+    >
+      {label}
+    </ButtonBase>
+  );
+  return (
+    <Box data-chat-scroll sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', scrollbarWidth: 'thin', pt: 2, px: 2.5, pb: 2, textAlign: 'center' }}>
+      <PersonAvatar person={f} size={72} ring={tier.color} online={online} />
+      <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', mt: 1 }}>{f.name}</Typography>
+      <Typography variant="body2" color="text.secondary">@{f.handle}</Typography>
+      <Stack direction="row" spacing={0.75} justifyContent="center" flexWrap="wrap" useFlexGap sx={{ mt: 1 }}>
+        <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontWeight: 700, fontSize: 13 }}>
+          <WorkspacePremiumRoundedIcon sx={{ fontSize: 16 }} /> {tier.name}
+        </Box>
+        {f.company && (
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: 'text.secondary', fontWeight: 600, fontSize: 13 }}>
+            <BusinessRoundedIcon sx={{ fontSize: 16 }} /> {f.company}
+          </Box>
+        )}
+        <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: act.live ? 'success.main' : 'text.secondary', fontWeight: 700, fontSize: 13 }}>
+          <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: act.live ? '#22C55E' : 'text.disabled' }} />
+          {act.text}
+        </Box>
+      </Stack>
+      <Stack direction="row" sx={(t) => ({ mt: 2, p: 0.5, borderRadius: 999, border: `1px solid ${t.palette.divider}` })}>
+        {pill('overview', 'Overview')}
+        {pill('compare', 'You vs them')}
+      </Stack>
+      {tab === 'overview' ? <Overview f={f} /> : <Compare friend={f} />}
+      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 2.25 }}>
+        <Stack direction="row" alignItems="center" spacing={0.75} sx={{ color: 'text.secondary' }}>
+          <PeopleAltRoundedIcon sx={{ fontSize: 18 }} />
+          <Typography variant="caption">{since ? `Friends since ${since}` : 'Friends'}</Typography>
+        </Stack>
+        <Tooltip title="Remove friend">
+          <IconButton aria-label={`Remove ${f.name}`} onClick={onRemove} sx={tonal('error')}><PersonRemoveRoundedIcon /></IconButton>
+        </Tooltip>
+      </Stack>
+    </Box>
+  );
+}
+
 // Friend profile: overview + "You vs friend" compare, with chat / code together / nudge / remove.
 export default function FriendProfileDialog({ f, onClose, onRemove, onChat, onCodeTogether, onNudge, nudging }) {
   const online = useSelector((s) => Boolean(s.friends.online[f.userId]));

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import {
-  Alert, AvatarGroup, Avatar, Badge, Box, Button, ButtonBase, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
+  Alert, Badge, Box, Button, ButtonBase, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
   IconButton, InputAdornment, ListItemIcon, Menu, MenuItem, Skeleton, Stack, TextField, Tooltip, Typography, alpha, useMediaQuery, useTheme,
 } from '@mui/material';
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
@@ -19,8 +19,7 @@ import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
 import MarkunreadRoundedIcon from '@mui/icons-material/MarkunreadRounded';
 import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 import LaptopMacRoundedIcon from '@mui/icons-material/LaptopMacRounded';
-import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsActiveRounded';
-import TimelineRoundedIcon from '@mui/icons-material/TimelineRounded';
+import WifiTetheringRoundedIcon from '@mui/icons-material/WifiTetheringRounded';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Collapse } from '@mui/material';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
@@ -40,10 +39,9 @@ import {
   removeFriend,
   sendFriendRequest,
 } from './friendsSlice';
-import { AMBER, APT_COLOR, FLAME, GREEN, HERO_BG, CountUp, PersonAvatar, Streak, TierChip, calm, cardSx, glow, mono, practisedToday, statusInfo, sweep, tonal, twinkle } from './friendsUi';
+import { AMBER, APT_COLOR, FLAME, GREEN, HERO_BG, CountUp, PersonAvatar, Streak, TierChip, calm, cardSx, glow, mono, practisedToday, statusInfo, sweep, tonal } from './friendsUi';
 import FriendChat, { ChatPanel } from './FriendChat';
-import ActivityFeed from './ActivityFeed';
-import FriendProfileDialog from './FriendProfileDialog';
+import FriendProfileDialog, { FriendProfilePanel } from './FriendProfileDialog';
 
 // Runs a friends thunk, shows the result as a toast, reports success.
 function useFriendAction() {
@@ -80,7 +78,7 @@ function FriendRow({ f, index = 0, online, unread, expanded, onToggle, onProfile
       <Box
         data-fid={f.userId}
         sx={(t) => ({
-          display: 'flex', alignItems: 'center', gap: 0.5, height: 56, px: 1, mx: 1, mb: 0.5, borderRadius: '12px',
+          display: 'flex', alignItems: 'center', gap: 0.5, height: 52, px: 1, mx: 1, mb: 0.25, borderRadius: '12px',
           bgcolor: selected ? alpha(t.palette.primary.main, 0.12) : 'transparent',
           outline: selected ? `2px solid ${t.palette.primary.main}` : 'none', outlineOffset: -2,
           '&:hover': { bgcolor: selected ? undefined : t.palette.action.hover },
@@ -218,61 +216,35 @@ function SkeletonRows({ count = 5 }) {
   ));
 }
 
-// Dark "stage" header like the Leaderboard podium: who is online, how strong the squad is.
-function Hero({ friends, onlineFriends, unreadTotal, onOpenChat, requests = 0, sent = 0, onOpenRequests, onOpenSent }) {
-  const best = friends.reduce((m, f) => Math.max(m, f.streak || 0), 0);
+// Dark header card: four icon tiles. Click one to switch the list below (friends / invitations / pending).
+function Hero({ friends, onlineFriends, requests = 0, sent = 0, tab, onTab }) {
   const tiles = [
-    ['Friends', friends.length, '#fff', null],
-    ['Online', onlineFriends.length, '#4ADE80', null],
-    ['Best streak', best, '#FDBA74', <LocalFireDepartmentRoundedIcon key="f" sx={{ fontSize: 15, color: FLAME, filter: 'drop-shadow(0 0 4px rgba(249,115,22,0.8))' }} />],
+    ['Friends', friends, '#fff', <PeopleAltRoundedIcon key="a" sx={{ fontSize: 22 }} />, 'friends'],
+    ['Online', onlineFriends, '#4ADE80', <WifiTetheringRoundedIcon key="b" sx={{ fontSize: 22 }} />, null],
+    ['Invitations received', requests, requests > 0 ? '#FCA5A5' : '#fff', <MarkunreadRoundedIcon key="c" sx={{ fontSize: 22 }} />, 'requests'],
+    ['Requests sent, pending', sent, '#FDE68A', <HourglassTopRoundedIcon key="d" sx={{ fontSize: 22 }} />, 'sent'],
   ];
-  // Icon tiles: friend requests I received / requests I sent that are still pending.
-  const iconTiles = [
-    ['Requests received', requests, requests > 0 ? '#FCA5A5' : '#fff', <MarkunreadRoundedIcon key="r" sx={{ fontSize: 20 }} />, onOpenRequests],
-    ['Sent, pending', sent, '#fff', <HourglassTopRoundedIcon key="s" sx={{ fontSize: 20 }} />, onOpenSent],
-  ];
-  const sparks = [[8, 18, 0], [24, 62, 0.6], [44, 12, 1.2], [70, 16, 0.3], [86, 58, 0.9], [94, 22, 1.5]];
   return (
-    <Box sx={{ position: 'relative', overflow: 'hidden', p: { xs: 1.75, sm: 2.25 }, borderRadius: '18px', color: '#fff', background: HERO_BG, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
-      <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -60, width: 240, height: 240, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.3), transparent 68%)', animation: `${glow} 3s ease-in-out infinite`, ...calm }} />
-      {sparks.map(([x, y, d], i) => (
-        <Box key={i} aria-hidden sx={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: 4, height: 4, borderRadius: '50%', bgcolor: '#fff', animation: `${twinkle} 2.4s ease-in-out ${d}s infinite`, ...calm }} />
-      ))}
-      <Box sx={{ position: 'relative' }}>
-        <Stack direction="row" alignItems="center" spacing={1.5}>
-          <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Typography sx={{ fontWeight: 900, fontSize: '1.4rem', lineHeight: 1.15 }}>Your squad</Typography>
-            <Typography variant="body2" noWrap sx={{ opacity: 0.85, mt: 0.4 }}>
-              {friends.length === 0 ? 'Invite friends and compete together' : onlineFriends.length ? `${onlineFriends.length} online right now` : 'Nobody online right now'}
-              {unreadTotal ? ` · ${unreadTotal} unread` : ''}
-            </Typography>
-          </Box>
-          {onlineFriends.length > 0 && (
-            <AvatarGroup max={5} sx={{ '& .MuiAvatar-root': { width: 36, height: 36, fontSize: 14, fontWeight: 700, borderColor: '#312E81' } }}>
-              {onlineFriends.map((f) => (
-                <Tooltip key={f.userId} title={`@${f.handle}`}>
-                  <Avatar src={f.avatarUrl || undefined} onClick={() => onOpenChat(f.userId)} sx={{ cursor: 'pointer' }}>{f.name?.[0]?.toUpperCase()}</Avatar>
-                </Tooltip>
-              ))}
-            </AvatarGroup>
-          )}
-        </Stack>
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(3, minmax(0,1fr))', sm: 'repeat(5, minmax(0,1fr))' }, gap: 1, mt: 1.75 }}>
-          {iconTiles.map(([label, n, color, icon, onClick]) => (
+    <Box sx={{ position: 'relative', overflow: 'hidden', p: 1, borderRadius: '18px', color: '#fff', background: HERO_BG, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
+      <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -60, width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.28), transparent 68%)', pointerEvents: 'none' }} />
+      <Box sx={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 1 }}>
+        {tiles.map(([label, n, color, icon, key]) => {
+          const active = key && tab === key;
+          return (
             <Tooltip key={label} title={label}>
-              <ButtonBase onClick={onClick} aria-label={`${label}: ${n}`} sx={{ py: 1, px: 1, flexDirection: 'column', borderRadius: '12px', color, bgcolor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.14)', backdropFilter: 'blur(4px)', fontFamily: 'inherit', '&:hover': { bgcolor: 'rgba(255,255,255,0.18)' } }}>
+              <ButtonBase
+                onClick={key ? () => onTab(key) : undefined}
+                disabled={!key}
+                aria-label={`${label}: ${n}`}
+                aria-pressed={key ? active : undefined}
+                sx={{ py: 0.9, px: 1, gap: 0.9, borderRadius: '12px', color, bgcolor: active ? 'rgba(255,255,255,0.24)' : 'rgba(255,255,255,0.1)', border: `1px solid ${active ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.14)'}`, fontFamily: 'inherit', cursor: key ? 'pointer' : 'default', '&.Mui-disabled': { color }, '&:hover': key ? { bgcolor: 'rgba(255,255,255,0.18)' } : undefined }}
+              >
                 {icon}
-                <Typography sx={{ fontWeight: 900, fontSize: 21, lineHeight: 1.15, ...mono }}>{n}</Typography>
+                <Typography sx={{ fontWeight: 900, fontSize: 20, lineHeight: 1.15, ...mono }}><CountUp value={n} /></Typography>
               </ButtonBase>
             </Tooltip>
-          ))}
-          {tiles.map(([label, n, color, icon]) => (
-            <Box key={label} sx={{ py: 1, px: 1, textAlign: 'center', borderRadius: '12px', bgcolor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.14)', backdropFilter: 'blur(4px)' }}>
-              <Typography sx={{ fontWeight: 900, fontSize: 21, lineHeight: 1.15, color, ...mono }}>{icon}<CountUp value={n} /></Typography>
-              <Typography variant="caption" sx={{ opacity: 0.8, fontWeight: 700, letterSpacing: 0.3 }}>{label}</Typography>
-            </Box>
-          ))}
-        </Box>
+          );
+        })}
       </Box>
     </Box>
   );
@@ -349,7 +321,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const [acting, setActing] = useState('');
   const [openRow, setOpenRow] = useState(null);
 
-  const [tab, setTab] = useState('friends');
+  const [tab, setTab] = useState('friends'); // 'friends' | 'requests' | 'sent'
   const [q, setQ] = useState('');
   const [players, setPlayers] = useState(null);
   const [searchError, setSearchError] = useState('');
@@ -360,6 +332,9 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
   const listRef = useRef(null);
+  const panelRef = useRef(null);
+  const zoneRef = useRef('list'); // where the last click was: 'chat' card or elsewhere ('list')
+  const [panelMode, setPanelMode] = useState('chat'); // 'chat' | 'profile'
   const sentinelRef = useRef(null);
   const [shown, setShown] = useState(15); // infinite scroll: how many friends are rendered
 
@@ -392,7 +367,6 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const profile = friends.find((f) => f.userId === profileId) || null;
   const chatFriend = friends.find((f) => f.userId === chatId) || null;
   const onlineFriends = friends.filter((f) => online[f.userId]);
-  const unreadTotal = Object.values(unread).reduce((a, n) => a + n, 0);
   // online first, then by points
   const sortedFriends = [...friends].sort((a, b) => Number(Boolean(online[b.userId])) - Number(Boolean(online[a.userId])) || b.score - a.score || a.handle.localeCompare(b.handle));
 
@@ -407,12 +381,13 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     }
   }, [chatParam, friends, params, setParams]);
 
-  const codeTogether = async (f) => {
+  // `stay` (desktop side panel): only send the invite; it shows up as a card inside the chat (with a Join button).
+  const codeTogether = async (f, stay = false) => {
     setActing(`room:${f.userId}`);
     try {
       const { data } = await friendsApi.roomInvite(f.userId);
       enqueueSnackbar(`Invite sent to @${f.handle}`, { variant: 'success' });
-      navigate(`/room/${data.data.roomId}`);
+      if (!stay) navigate(`/room/${data.data.roomId}`);
     } catch (err) {
       enqueueSnackbar(extractErrorMessage(err), { variant: 'error' });
     } finally {
@@ -431,6 +406,8 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       setActing('');
     }
   };
+
+  useEffect(() => { setPanelMode('chat'); }, [chatId]);
 
   // Desktop: keep one friend selected so the chat box on the right is always showing someone.
   useEffect(() => {
@@ -452,7 +429,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       {...rowProps}
     />
   );
-  const rowProps = { onProfile: setProfileId, onChat: (f) => setChatId(f.userId), onCode: codeTogether, onNudge: nudge, onUnfriend: setConfirm, busy: acting };
+  const rowProps = { onProfile: setProfileId, onChat: (f) => setChatId(f.userId), onCode: (f) => codeTogether(f), onNudge: nudge, onUnfriend: setConfirm, busy: acting };
 
   // Infinite scroll: render more friends when the bottom sentinel comes into view.
   useEffect(() => { setShown(15); }, [tab, needle]);
@@ -468,12 +445,26 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const navIds = tab === 'friends' || needle ? (needle ? friends.filter((f) => f.name.toLowerCase().includes(needle) || f.handle.includes(needle)) : sortedFriends).map((f) => f.userId) : [];
   const navKey = navIds.join(',');
   useEffect(() => {
+    const onDown = (e) => { zoneRef.current = panelRef.current?.contains(e.target) ? 'chat' : 'list'; };
+    document.addEventListener('pointerdown', onDown, true);
+    return () => document.removeEventListener('pointerdown', onDown, true);
+  }, []);
+  useEffect(() => {
     if (!desktop || navIds.length === 0) return undefined;
     const onKey = (e) => {
       if ((e.key !== 'ArrowDown' && e.key !== 'ArrowUp') || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || e.defaultPrevented) return;
       const a = document.activeElement;
       if (a && (/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) || a.isContentEditable || a.closest?.('[role="dialog"],[role="menu"],[role="listbox"]'))) return;
       if (document.querySelector('.MuiModal-root')) return;
+      // Last click was inside the chat card: the arrows scroll the chat (or profile). Anywhere else: they move through friends.
+      if (zoneRef.current === 'chat') {
+        const sc = [...(panelRef.current?.querySelectorAll('[data-chat-scroll]') || [])].find((el) => el.offsetParent !== null);
+        if (sc) {
+          e.preventDefault();
+          sc.scrollBy({ top: e.key === 'ArrowDown' ? 90 : -90, behavior: 'smooth' });
+          return;
+        }
+      }
       e.preventDefault();
       const i = navIds.indexOf(chatId);
       const next = navIds[Math.min(navIds.length - 1, Math.max(0, i < 0 ? 0 : i + (e.key === 'ArrowDown' ? 1 : -1)))];
@@ -525,13 +516,6 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     );
   };
 
-  const tabs = [
-    { key: 'friends', icon: PeopleAltRoundedIcon, label: 'Friends', n: friends.length },
-    { key: 'activity', icon: TimelineRoundedIcon, label: 'Activity' },
-    { key: 'requests', icon: MarkunreadRoundedIcon, label: 'Requests', n: incoming.length, alert: true },
-    { key: 'sent', icon: HourglassTopRoundedIcon, label: 'Sent', n: outgoing.length },
-  ];
-
   // ---- what to show under the toolbar
   let body;
   if (needle) {
@@ -561,8 +545,6 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         {shown < sortedFriends.length && <Box ref={sentinelRef} aria-hidden sx={{ height: 1 }} />}
       </>
     );
-  } else if (tab === 'activity') {
-    body = <ActivityFeed />;
   } else if (tab === 'requests') {
     body = (
       <>
@@ -600,11 +582,11 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     <Stack spacing={1.5}>
       {inviteHandle && <InviteBanner handle={inviteHandle} onDone={onClearInvite} />}
 
-      <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: desktop ? 'minmax(0, 1fr) 380px' : 'minmax(0, 1fr)', alignItems: 'start' }}>
-      <Stack spacing={1.5} sx={{ minWidth: 0 }}>
-      <Hero friends={friends} onlineFriends={onlineFriends} unreadTotal={unreadTotal} onOpenChat={setChatId} requests={incoming.length} sent={outgoing.length} onOpenRequests={() => { setQ(''); setTab('requests'); }} onOpenSent={() => { setQ(''); setTab('sent'); }} />
+      <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: desktop ? 'minmax(0, 1fr) 380px' : 'minmax(0, 1fr)', alignItems: desktop ? 'stretch' : 'start', ...(desktop && { height: 'calc(100vh - 120px)', minHeight: 520 }) }}>
+      <Stack spacing={1.5} sx={{ minWidth: 0, minHeight: 0 }}>
+      <Hero friends={friends.length} onlineFriends={onlineFriends.length} requests={incoming.length} sent={outgoing.length} tab={tab} onTab={(k) => { setQ(''); setTab(k); }} />
 
-      <Box sx={[surface, { overflow: 'hidden' }]}>
+      <Box sx={[surface, { overflow: 'hidden' }, desktop && { flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }]}>
         {/* toolbar: search + invite + leaderboard */}
         <Stack direction="row" alignItems="center" spacing={1} sx={{ p: 1.25 }}>
           <TextField
@@ -638,37 +620,6 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
           </Tooltip>
         </Stack>
 
-        {/* tabs */}
-        <Stack direction="row" spacing={1} sx={{ px: 1.25, pb: 1.25, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
-          {tabs.map(({ key, icon: Icon, label, n, alert }) => {
-            const active = !needle && tab === key;
-            const hot = alert && n > 0;
-            return (
-              <ButtonBase
-                key={key}
-                onClick={() => { setQ(''); setTab(key); }}
-                aria-label={n === undefined ? label : `${label}: ${n}`}
-                aria-pressed={active}
-                sx={(t) => ({
-                  flexShrink: 0,
-                  gap: 0.75,
-                  height: 36,
-                  px: 1.75,
-                  borderRadius: 999,
-                  fontFamily: 'inherit',
-                  border: `1px solid ${active ? 'transparent' : hot ? t.palette.error.main : t.palette.divider}`,
-                  bgcolor: active ? t.palette.text.primary : hot ? alpha(t.palette.error.main, 0.08) : 'transparent',
-                  color: active ? t.palette.background.paper : hot ? t.palette.error.main : t.palette.text.primary,
-                })}
-              >
-                <Icon sx={{ fontSize: 19 }} />
-                {(n === undefined || key === 'friends') && <Typography variant="body2" sx={{ fontWeight: 800, display: n === undefined ? 'block' : { xs: 'none', sm: 'block' } }}>{label}</Typography>}
-                {n !== undefined && <Typography variant="body2" sx={{ fontWeight: 800, ...mono }}>{n}</Typography>}
-              </ButtonBase>
-            );
-          })}
-        </Stack>
-
         {error && (
           <Alert severity="error" sx={{ mx: 1.25, mb: 1.25 }} action={<Button color="inherit" onClick={() => dispatch(fetchFriends())}>Retry</Button>}>{error}</Alert>
         )}
@@ -677,7 +628,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
           ref={listRef}
           sx={(t) => ({
             borderTop: `1px solid ${t.palette.divider}`, pt: 1, pb: 0.25,
-            ...(desktop && { height: 'max(580px, calc(100vh - 380px))', overflowY: 'auto', overscrollBehavior: 'contain', scrollBehavior: 'smooth', scrollbarWidth: 'thin' }),
+            ...(desktop && { flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', scrollBehavior: 'smooth', scrollbarWidth: 'thin' }),
           })}
         >
           {body}
@@ -687,25 +638,26 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
 
       {/* Desktop side panel: the chat is always open for the selected friend, with every action as an icon. */}
       {desktop && (
-        <Box sx={[surface, { position: 'sticky', top: 0, height: 'calc(100vh - 132px)', minHeight: 420, overflow: 'hidden', display: 'flex', flexDirection: 'column' }]}>
+        <Box ref={panelRef} sx={[surface, { minHeight: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }]}>
           {chatFriend ? (
             <ChatPanel
               key={chatFriend.userId}
               friend={chatFriend}
-              onCodeTogether={() => codeTogether(chatFriend)}
+              onCodeTogether={() => { setPanelMode('chat'); codeTogether(chatFriend, true); }}
+              overlay={panelMode === 'profile' ? <FriendProfilePanel f={chatFriend} onRemove={() => setConfirm(chatFriend)} /> : null}
               actions={
                 <>
                   {!practisedToday(chatFriend) && (
                     <Tooltip title="Nudge: remind about streak">
                       <span>
-                        <IconButton aria-label="Nudge" disabled={acting === `nudge:${chatFriend.userId}`} onClick={() => nudge(chatFriend)} sx={{ width: 40, height: 40, color: FLAME, bgcolor: alpha(FLAME, 0.14), '&:hover': { bgcolor: alpha(FLAME, 0.24) } }}>
+                        <IconButton aria-label="Nudge" disabled={acting === `nudge:${chatFriend.userId}`} onClick={() => { setPanelMode('chat'); nudge(chatFriend); }} sx={{ width: 40, height: 40, color: FLAME, bgcolor: alpha(FLAME, 0.14), '&:hover': { bgcolor: alpha(FLAME, 0.24) } }}>
                           <LocalFireDepartmentRoundedIcon />
                         </IconButton>
                       </span>
                     </Tooltip>
                   )}
                   <Tooltip title="Profile & compare">
-                    <IconButton aria-label="Profile and compare" onClick={() => setProfileId(chatFriend.userId)} sx={{ width: 40, height: 40, bgcolor: 'action.hover' }}>
+                    <IconButton aria-label="Profile and compare" aria-pressed={panelMode === 'profile'} onClick={() => setPanelMode((m) => (m === 'profile' ? 'chat' : 'profile'))} sx={{ width: 40, height: 40, bgcolor: panelMode === 'profile' ? 'primary.main' : 'action.hover', color: panelMode === 'profile' ? 'primary.contrastText' : 'inherit', '&:hover': { bgcolor: panelMode === 'profile' ? 'primary.dark' : undefined } }}>
                       <BadgeRoundedIcon />
                     </IconButton>
                   </Tooltip>
@@ -730,7 +682,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         </MenuItem>
       </Menu>
 
-      {profile && (
+      {profile && !desktop && (
         <FriendProfileDialog
           f={profile}
           nudging={acting === `nudge:${profile.userId}`}

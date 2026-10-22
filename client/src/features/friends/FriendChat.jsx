@@ -124,7 +124,8 @@ function Bubble({ m, mine, groupedAbove }) {
 }
 
 // `actions`: extra header icons (used by the desktop side panel). No `onClose` = no close button (always-open panel).
-export function ChatPanel({ friend, onClose, onCodeTogether, actions }) {
+// `overlay`: node shown instead of the messages + composer (e.g. the friend's profile) while the chat stays live underneath.
+export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay }) {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const myId = useSelector((s) => s.auth.user?.id);
@@ -302,7 +303,8 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions }) {
       </Stack>
 
       {/* messages */}
-      <Box ref={scroller} onScroll={onScroll} sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: 1.5, py: 1.5, display: 'flex', flexDirection: 'column', gap: 0.75, scrollbarWidth: 'thin' }}>
+      {overlay}
+      <Box ref={scroller} data-chat-scroll onScroll={onScroll} sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: 1.5, py: 1.5, display: overlay ? 'none' : 'flex', flexDirection: 'column', gap: 0.75, scrollbarWidth: 'thin' }}>
         {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={26} /></Box>}
         {!loading && error && <Typography color="error" variant="body2" sx={{ m: 'auto', textAlign: 'center' }}>{error}</Typography>}
         {!loading && hasMore && (
@@ -337,7 +339,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions }) {
       </Box>
 
       {/* composer */}
-      <Stack direction="row" alignItems="flex-end" spacing={1} sx={(t) => ({ p: 1.25, pb: 'calc(10px + env(safe-area-inset-bottom))', borderTop: `1px solid ${t.palette.divider}` })}>
+      <Stack direction="row" alignItems="flex-end" spacing={1} sx={(t) => ({ display: overlay ? 'none' : 'flex', p: 1.25, pb: 'calc(10px + env(safe-area-inset-bottom))', borderTop: `1px solid ${t.palette.divider}` })}>
         <TextField
           fullWidth
           multiline
