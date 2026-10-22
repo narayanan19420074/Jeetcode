@@ -391,7 +391,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
   const [saveProblem, setSaveProblem] = useState(null);
 
   const searchRef = useRef(null);
-  const cardRef = useRef(null); // the whole problem card (scroll target for the first arrow press)
+  const cardRef = useRef(null); // top of the library (topic pills + filters + list): scroll target for the first arrow press
   const listRef = useRef(null); // inner scroller of the card
   const sentinelRef = useRef(null);
   const reqId = useRef(0);
@@ -459,7 +459,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
           const seen = new Set(prev.items.map((x) => x._id));
           return { ...d.data, items: [...prev.items, ...d.data.items.filter((x) => !seen.has(x._id))] };
         });
-        if (d.data.pagination.page <= 1 && listRef.current) listRef.current.scrollTop = 0;
+        if (d.data.pagination.page <= 1) listRef.current?.scrollTo({ top: 0, behavior: 'auto' });
         setError(null);
       })
       .catch((err) => {
@@ -587,7 +587,8 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
   const sortDisabled = q.search !== '';
 
   return (
-    <Stack spacing={1.5}>
+    // On wide screens the whole library fits the window once it is scrolled to the top, so only the problem list scrolls.
+    <Stack ref={cardRef} spacing={1.5} sx={{ height: { lg: 'calc(100vh - 120px)' }, scrollMarginTop: { xs: 72, lg: 0 } }}>
       <CategoryPills
         groups={groups}
         selectedTags={q.tags}
@@ -712,7 +713,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
       </Box>
 
       {/* The list */}
-      <Box ref={cardRef} sx={[surface, { overflow: 'hidden', scrollMarginTop: { xs: 72, lg: 0 } }]}>
+      <Box sx={[surface, { overflow: 'hidden', display: 'flex', flexDirection: 'column', flex: { lg: 1 }, minHeight: { lg: 0 } }]}>
         <Box
           sx={(t) => ({
             display: 'flex',
@@ -738,7 +739,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
           tabIndex={0}
           role="region"
           aria-label="Problems list. Use arrow keys to scroll."
-          sx={{ height: { xs: 'auto', lg: 'calc(100vh - 190px)' }, maxHeight: { xs: '70vh', lg: 'none' }, minHeight: 280, overflowY: 'auto', overscrollBehavior: 'contain', outline: 'none', '&:focus-visible': { boxShadow: (t) => `inset 0 0 0 2px ${t.palette.primary.main}` } }}
+          sx={{ flex: { lg: 1 }, minHeight: { xs: 280, lg: 0 }, maxHeight: { xs: '70vh', lg: 'none' }, overflowY: 'auto', overscrollBehavior: 'contain', scrollBehavior: 'smooth', outline: 'none' }}
         >
         {error && (
           <Alert
