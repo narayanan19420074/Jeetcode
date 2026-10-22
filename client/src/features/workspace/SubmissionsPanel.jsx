@@ -44,7 +44,7 @@ function Row({ s, open, onToggle, onLoad }) {
         <Typography variant="caption" sx={{ ...mono, color: 'text.secondary', minWidth: 54, textAlign: 'right' }}>
           {s.runtimeMs != null ? `${s.runtimeMs} ms` : '—'}
         </Typography>
-        <Typography variant="caption" sx={{ ...mono, color: 'text.secondary', minWidth: 58, textAlign: 'right' }}>
+        <Typography variant="caption" sx={{ ...mono, color: 'text.secondary', minWidth: 58, textAlign: 'right', display: { xs: 'none', sm: 'block' } }}>
           {s.memoryKb ? `${(s.memoryKb / 1024).toFixed(1)} MB` : '—'}
         </Typography>
         <ExpandMoreRoundedIcon sx={{ fontSize: 18, color: 'text.secondary', transition: 'transform .15s', transform: open ? 'rotate(180deg)' : 'none' }} />

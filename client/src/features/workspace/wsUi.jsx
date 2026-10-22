@@ -186,7 +186,7 @@ export function PaneBar({ children, sx, height = WS.bar }) {
 
 /* Text tabs: active tab gets a tonal fill. items = [{ value, label, icon?, dot? }] */
 export function PaneTabs({ value, onChange, items, size = 'md' }) {
-  const h = size === 'sm' ? 28 : WS.ctrl;
+  const h = size === 'sm' ? 28 : size === 'lg' ? 38 : WS.ctrl;
   return (
     <Stack direction="row" role="tablist" sx={{ gap: 0.25, minWidth: 0, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' }, scrollbarWidth: 'none' }}>
       {items.map((it) => {
@@ -199,11 +199,11 @@ export function PaneTabs({ value, onChange, items, size = 'md' }) {
             onClick={() => onChange(it.value)}
             sx={(t) => ({
               height: h,
-              px: size === 'sm' ? 1.25 : 1.5,
+              px: size === 'sm' ? 1.25 : size === 'lg' ? 1.75 : 1.5,
               gap: 0.75,
               flexShrink: 0,
               borderRadius: `${WS.radius}px`,
-              fontSize: size === 'sm' ? '0.78rem' : '0.8125rem',
+              fontSize: size === 'sm' ? '0.78rem' : size === 'lg' ? '0.875rem' : '0.8125rem',
               fontWeight: 600,
               whiteSpace: 'nowrap',
               color: on ? t.palette.text.primary : t.palette.text.secondary,

@@ -7,8 +7,6 @@ import {
   ButtonBase,
   Stack,
   Typography,
-  Tabs,
-  Tab,
   MenuItem,
   Drawer,
   TextField,
@@ -95,6 +93,13 @@ const DESC_TABS = [
   { value: 3, label: 'Submissions', icon: <HistoryRoundedIcon /> },
 ];
 
+const MOBILE_TABS = [
+  { value: 'code', label: 'Code' },
+  { value: 'solutions', label: 'Solutions' },
+  { value: 'discussion', label: 'Discussion' },
+  { value: 'submissions', label: 'Submissions' },
+];
+
 const AI_QUICK_PROMPTS = [
   'Give me a hint',
   'What is the time complexity?',
@@ -145,10 +150,11 @@ function ProblemSkeleton() {
 }
 
 // Practice timer: tap the clock to start, tap the time to pause.
-function TimerControl({ sw }) {
+function TimerControl({ sw, size = 'md' }) {
+  const h = size === 'lg' ? WS.ctrlLg : WS.ctrl;
   if (!sw.running && sw.seconds === 0) {
     return (
-      <WsIconButton title="Start timer" onClick={sw.start}>
+      <WsIconButton title="Start timer" size={size} onClick={sw.start}>
         <TimerOutlinedIcon />
       </WsIconButton>
     );
@@ -159,7 +165,7 @@ function TimerControl({ sw }) {
         onClick={sw.running ? sw.pause : sw.start}
         aria-label={sw.running ? 'Pause timer' : 'Resume timer'}
         sx={(t) => ({
-          height: WS.ctrl,
+          height: h,
           px: 1.1,
           gap: 0.6,
           borderRadius: `${WS.radius}px`,
@@ -171,7 +177,7 @@ function TimerControl({ sw }) {
         {sw.running ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />}
         <Typography sx={{ ...mono, fontSize: '0.8rem', fontWeight: 600, color: 'inherit' }}>{formatClock(sw.seconds)}</Typography>
       </ButtonBase>
-      <WsIconButton title="Reset timer" onClick={sw.reset}>
+      <WsIconButton title="Reset timer" size={size} onClick={sw.reset}>
         <RestartAltRoundedIcon sx={{ fontSize: '17px !important' }} />
       </WsIconButton>
     </Stack>
@@ -220,7 +226,7 @@ export default function WorkspacePage() {
   // Phone: one page. Tabs = Code | Solutions | Discussion. The problem text opens
   // as a panel sliding in from the right (kept in history state so the phone's
   // Back button closes it instead of leaving the page).
-  const [mobileView, setMobileView] = useState('code'); // 'code' | 'solutions' | 'discussion'
+  const [mobileView, setMobileView] = useState('code'); // 'code' | 'solutions' | 'discussion' | 'submissions'
   const descOpen = isMobile && Boolean(location.state?.problemDesc);
   const [editorFocused, setEditorFocused] = useState(false); // phone: shows the symbol bar
   const [editorInstance, setEditorInstance] = useState(null); // fast-scroller + status bar need the editor
@@ -498,6 +504,7 @@ export default function WorkspacePage() {
     setMobileView(v);
     if (v === 'solutions') setMountedTabs((m) => ({ ...m, 1: true }));
     if (v === 'discussion') setMountedTabs((m) => ({ ...m, 2: true }));
+    if (v === 'submissions') setMountedTabs((m) => ({ ...m, 3: true }));
   };
 
   const openDesc = () => navigate(`${location.pathname}${location.search}`, { state: { problemDesc: true } });
@@ -662,27 +669,15 @@ export default function WorkspacePage() {
       })}
     >
       {isMobile && (
-        <Box sx={{ flexShrink: 0 }}>
+        <Box sx={{ flexShrink: 0, bgcolor: surf.chrome }}>
           {/* Tap the problem name -> description slides in from the right */}
           <ButtonBase
             onClick={openDesc}
             aria-label="Open problem description"
-            sx={(t) => ({
-              width: '100%',
-              justifyContent: 'flex-start',
-              gap: 1.25,
-              pl: 1.5,
-              pr: 1.5,
-              py: 1.1,
-              textAlign: 'left',
-              borderLeft: `4px solid ${t.palette.primary.main}`,
-              borderBottom: '1px solid',
-              borderColor: 'divider',
-              bgcolor: surf.raised,
-            })}
+            sx={{ width: '100%', justifyContent: 'flex-start', gap: 1.25, px: 2, pt: 1.25, pb: 0.75, textAlign: 'left' }}
           >
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.98rem', lineHeight: 1.3 }}>
+              <Typography noWrap sx={{ fontWeight: 800, fontSize: '1rem', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
                 {problem.title}
               </Typography>
               <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mt: 0.5, minWidth: 0 }}>
@@ -695,29 +690,15 @@ export default function WorkspacePage() {
               </Stack>
             </Box>
             <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, color: 'primary.main' }}>
-              <Typography sx={{ fontWeight: 700, fontSize: '0.8rem' }}>View</Typography>
-              <ChevronRightRoundedIcon sx={{ fontSize: 22 }} />
+              <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Problem</Typography>
+              <ChevronRightRoundedIcon sx={{ fontSize: 20 }} />
             </Stack>
           </ButtonBase>
 
-          <Tabs
-            value={mobileView}
-            onChange={(e, v) => openMobileView(v)}
-            variant="fullWidth"
-            sx={{
-              minHeight: 42,
-              bgcolor: 'background.paper',
-              borderBottom: '1px solid',
-              borderColor: 'divider',
-              '& .MuiTabs-indicator': { height: 3, borderRadius: '3px 3px 0 0' },
-              '& .MuiTab-root': { minHeight: 42, py: 0, textTransform: 'none', fontWeight: 700, fontSize: '0.88rem', color: 'text.secondary' },
-              '& .Mui-selected': { color: 'primary.main' },
-            }}
-          >
-            <Tab value="code" label="Code" />
-            <Tab value="solutions" label="Solutions" />
-            <Tab value="discussion" label="Discussion" />
-          </Tabs>
+          {/* the one hairline: header block vs. content */}
+          <PaneBar height={48} sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
+            <PaneTabs size="lg" value={mobileView} onChange={openMobileView} items={MOBILE_TABS} />
+          </PaneBar>
         </Box>
       )}
 
@@ -786,7 +767,7 @@ export default function WorkspacePage() {
           display: { xs: mobileView === 'code' ? 'flex' : 'none', md: maximized === 'problem' ? 'none' : 'flex' },
         }}
       >
-        <PaneBar sx={{ px: { xs: 1.25, md: 1.25 }, gap: { xs: 0.5, md: 0.5 }, height: { xs: 56, md: WS.bar }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
+        <PaneBar sx={{ px: { xs: 1.25, md: 1.25 }, gap: { xs: 0.5, md: 0.5 }, height: { xs: 52, md: WS.bar }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
           <WsSelect
             value={activeLanguage}
             onChange={(e) => dispatch(setLanguage(e.target.value))}
@@ -799,7 +780,7 @@ export default function WorkspacePage() {
               </MenuItem>
             ))}
           </WsSelect>
-          {!isMobile && <TimerControl sw={sw} />}
+          <TimerControl sw={sw} size={ctl} />
 
           <Box sx={{ flex: 1, minWidth: 8 }} />
 
@@ -977,7 +958,7 @@ export default function WorkspacePage() {
               flexDirection: 'column',
               minHeight: 0,
               ...(isMobile
-                ? { flexShrink: 0, maxHeight: consoleOpen ? '45%' : 'auto', borderTop: '1px solid', borderColor: 'divider' }
+                ? { flexShrink: 0, maxHeight: consoleOpen ? '45%' : 'auto' }
                 : maximized === 'console'
                   ? { flex: '1 1 0' }
                   : { flex: consoleOpen ? `0 0 ${layout.console * 100}%` : '0 0 auto' }),
@@ -986,7 +967,7 @@ export default function WorkspacePage() {
             <Stack
               direction="row"
               onClick={() => (maximized === 'console' ? setMaximized(null) : setConsoleOpen((o) => !o))}
-              sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 54, md: WS.barSm }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
+              sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 52, md: WS.barSm }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
             >
               <TerminalRoundedIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
               {!(isMobile && (isRunning || resultToShow)) && <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Console</Typography>}
@@ -1064,15 +1045,26 @@ export default function WorkspacePage() {
         </Box>
       </Box>
 
-      {/* Phone: Solutions / Discussion sit next to the Code tab */}
+      {/* Phone: Solutions / Discussion / Submissions sit next to the Code tab */}
       {isMobile && mountedTabs[1] && (
-        <Box sx={{ display: mobileView === 'solutions' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', p: 2 }}>
+        <Box sx={{ display: mobileView === 'solutions' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', px: 2, pt: 1.5, pb: 3, bgcolor: surf.chrome }}>
           <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
         </Box>
       )}
       {isMobile && mountedTabs[2] && (
-        <Box sx={{ display: mobileView === 'discussion' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', p: 2 }}>
+        <Box sx={{ display: mobileView === 'discussion' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', px: 2, pt: 1.5, pb: 3, bgcolor: surf.chrome }}>
           <DiscussionPanel slug={slug} />
+        </Box>
+      )}
+      {isMobile && mountedTabs[3] && (
+        <Box sx={{ display: mobileView === 'submissions' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', px: 2, pt: 1.5, pb: 3, bgcolor: surf.chrome }}>
+          <SubmissionsPanel
+            slug={slug}
+            isAuthenticated={isAuthenticated}
+            refreshKey={submitResult?._id ?? 0}
+            onLoad={handleSendToEditor}
+            onSignIn={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}
+          />
         </Box>
       )}
 
@@ -1085,18 +1077,17 @@ export default function WorkspacePage() {
       >
         <Stack
           direction="row"
-          sx={{ alignItems: 'center', gap: 0.5, px: 1, pb: 0.75, pt: 'calc(6px + env(safe-area-inset-top))', borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0 }}
+          sx={{ alignItems: 'center', gap: 0.5, px: 1, pb: 0.75, pt: 'calc(6px + env(safe-area-inset-top))', flexShrink: 0, bgcolor: surf.chrome }}
         >
           <WsIconButton title="Back to code" size="lg" onClick={closeDesc}>
             <ArrowBackRoundedIcon />
           </WsIconButton>
           <Typography sx={{ fontWeight: 700, flex: 1 }}>Problem</Typography>
-          <DifficultyChip difficulty={problem.difficulty} />
         </Stack>
-        <Box sx={{ overflowY: 'auto', p: 2, flex: 1, minHeight: 0 }}>
+        <Box sx={{ overflowY: 'auto', px: 2, pt: 1, pb: 3, flex: 1, minHeight: 0, bgcolor: surf.chrome }}>
           <ProblemDescription problem={problem} />
         </Box>
-        <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
+        <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: surf.chrome }}>
           <WsButton fullWidth size="lg" variant="primary" startIcon={<CodeRoundedIcon />} onClick={closeDesc}>
             Start coding
           </WsButton>
