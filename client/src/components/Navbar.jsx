@@ -46,6 +46,7 @@ import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import { toggleThemeMode } from '../app/uiSlice';
 import { logoutUser } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
+import NotificationBell from '../features/notifications/NotificationBell';
 import ActivateLicenseModal from '../components/ActivateLicenseModal';
 
 const initialsFromName = (name) =>
@@ -273,6 +274,7 @@ export default function Navbar() {
 
         {isAuthenticated ? (
           <>
+            <NotificationBell />
             <Button
               onClick={(e) => setAnchorEl(e.currentTarget)}
               color="inherit"

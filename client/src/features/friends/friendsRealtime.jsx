@@ -7,6 +7,7 @@ import { io } from 'socket.io-client';
 import { getAccessToken } from '../../api/apiClient';
 import { friendsApi } from '../../api/friendsApi';
 import { bumpUnread, clearUnread, fetchFriends, setOnlineList, setPresence, setUnread } from './friendsSlice';
+import { addNotification } from '../notifications/notificationsSlice';
 
 // One app-wide socket for the logged-in user: live online dots, new-message badges, toasts.
 // (Pair-coding rooms use their own separate socket in features/room/useRoom.js.)
@@ -68,6 +69,16 @@ export default function FriendsRealtime() {
 
     s.on('dm:new', (m) => {
       if (m.to !== user.id) return; // my own message echoing to this tab
+      // Pair-room invites and nudges also go to the navbar bell.
+      if (m.kind === 'room' || m.kind === 'nudge') {
+        const f = store.getState().friends.friends.find((x) => x.userId === m.from);
+        const who = f ? `@${f.handle}` : 'A friend';
+        dispatch(addNotification(
+          m.kind === 'room'
+            ? { id: `dm:${m.id}`, type: 'room', text: `${who} invited you to code together`, link: m.roomId ? `/room/${m.roomId}` : `/dashboard?view=friends&chat=${m.from}` }
+            : { id: `dm:${m.id}`, type: 'nudge', text: `${who} nudged you to keep your streak`, link: `/dashboard?view=friends&chat=${m.from}` }
+        ));
+      }
       if (store.getState().friends.activeChat === m.from) return; // the open chat handles it
       dispatch(bumpUnread(m.from));
       const who = store.getState().friends.friends.find((f) => f.userId === m.from);

@@ -4,6 +4,7 @@ import authReducer from '../features/auth/authSlice';
 import workspaceReducer from '../features/workspace/workspaceSlice';
 import aptitudeReducer from '../features/aptitude/aptitudeSlice';
 import friendsReducer from '../features/friends/friendsSlice';
+import notificationsReducer from '../features/notifications/notificationsSlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     workspace: workspaceReducer,
     aptitude: aptitudeReducer,
     friends: friendsReducer,
+    notifications: notificationsReducer,
   },
 });
 

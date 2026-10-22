@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import MobileBottomNav, { showMobileBottomNav } from '../components/MobileBottomNav';
 import FreeAccessBanner from '../components/FreeAccessBanner';
 import FriendsRealtime from '../features/friends/friendsRealtime';
+import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
 
 export default function MainLayout() {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ export default function MainLayout() {
     >
       <FreeAccessBanner />
       <FriendsRealtime />
+      <NotificationsWatcher />
       <Navbar />
       <Box component="main" sx={{ pb: bottomNav ? { xs: 'calc(76px + env(safe-area-inset-bottom))', md: 0 } : 0 }}>
         <Outlet />
