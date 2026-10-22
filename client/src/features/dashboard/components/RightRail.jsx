@@ -1,51 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, Collapse, IconButton, LinearProgress, Stack, Tooltip, Typography, alpha } from '@mui/material';
+import { Box, Button, IconButton, Stack, Tooltip, Typography, alpha } from '@mui/material';
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
-import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import { studyPlanApi } from '../../../api/studyPlanApi';
 import { daysLeftInfo } from '../../studyplan/planUtils';
-import {
-  DIFF_COLOR,
-  MONTHLY_BADGE_GOAL,
-  formatCountdown,
-  monthCells,
-  msUntilUtcMidnight,
-  surface,
-  utcKey,
-  weekSegments,
-} from '../dashboardUtils';
+import { MONTHLY_BADGE_GOAL, formatCountdown, monthCells, msUntilUtcMidnight, surface, utcKey } from '../dashboardUtils';
+import { PLAN_AMBER, planTheme } from '../../studyplan/planUtils';
 
-const EMERALD = '#10B981';
+const EMERALD = '#34D399'; // light green reads on the dark plan-style card
+const SOFT = 'rgba(255,255,255,0.68)';
+const FAINT = 'rgba(255,255,255,0.35)';
 const GOLD_A = '#FCD34D';
 const GOLD_B = '#D97706';
 const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 const Card = ({ children, sx }) => <Box sx={[surface, { p: 2.25 }, ...[].concat(sx || [])]}>{children}</Box>;
-
-// Small cards fold away behind a chevron so the rail stays short and calm.
-function FoldCard({ title, trailing, defaultOpen = true, children }) {
-  const [open, setOpen] = useState(defaultOpen);
-  return (
-    <Card sx={{ py: 1.5 }}>
-      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-        <Typography sx={{ fontWeight: 800, fontSize: '0.95rem' }}>{title}</Typography>
-        <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
-          {trailing}
-          <IconButton size="small" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-label={open ? `Collapse ${title}` : `Expand ${title}`}>
-            <ExpandMoreRoundedIcon fontSize="small" sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />
-          </IconButton>
-        </Stack>
-      </Stack>
-      <Collapse in={open} timeout={250}>
-        <Box sx={{ pt: 1.25 }}>{children}</Box>
-      </Collapse>
-    </Card>
-  );
-}
 
 // ------------------------------------------------------------------ calendar
 
@@ -57,7 +28,7 @@ function ResetCountdown() {
   }, []);
   return (
     <Tooltip title="Streak days change at 00:00 UTC">
-      <Typography role="timer" variant="caption" color="text.secondary" sx={{ fontVariantNumeric: 'tabular-nums', cursor: 'default' }}>
+      <Typography role="timer" variant="caption" sx={{ color: SOFT, fontVariantNumeric: 'tabular-nums', cursor: 'default' }}>
         Today ends in {formatCountdown(ms)}
       </Typography>
     </Tooltip>
@@ -112,9 +83,9 @@ function DayCell({ day, active, today, future, plans }) {
           fontSize: '0.8rem',
           fontVariantNumeric: 'tabular-nums',
           fontWeight: active || today ? 800 : 500,
-          color: active ? EMERALD : future ? 'text.disabled' : 'text.primary',
+          color: active ? EMERALD : future ? FAINT : '#fff',
           border: today ? '2px solid' : 'none',
-          borderColor: 'primary.main',
+          borderColor: PLAN_AMBER,
         }}
         aria-label={`${day}${today ? ', today' : ''}${active ? ', active' : ''}${hasPlan ? ', study plan' : ''}`}
       >
@@ -136,8 +107,8 @@ function DayCell({ day, active, today, future, plans }) {
             fontSize: 8,
             fontWeight: 800,
             lineHeight: 1,
-            bgcolor: 'primary.main',
-            color: 'primary.contrastText',
+            bgcolor: PLAN_AMBER,
+            color: '#1B1200',
           }}
         >
           P
@@ -223,7 +194,7 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
   const streak = user?.streakDays ?? 0;
 
   return (
-    <Card>
+    <Card sx={{ color: '#fff', background: planTheme(user?.id || 'streak').gradient, border: 'none', boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 2, mb: 1.75 }}>
         <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', minWidth: 0 }}>
           <Box
@@ -235,8 +206,8 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
-              bgcolor: alpha('#F59E0B', streak > 0 ? 0.18 : 0.08),
-              color: streak > 0 ? '#F59E0B' : 'text.disabled',
+              bgcolor: alpha(PLAN_AMBER, streak > 0 ? 0.2 : 0.1),
+              color: streak > 0 ? PLAN_AMBER : FAINT,
             }}
           >
             <LocalFireDepartmentRoundedIcon />
@@ -252,20 +223,20 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
       </Stack>
 
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
-        <IconButton size="small" onClick={() => move(-1)} aria-label="Previous month">
+        <IconButton size="small" sx={{ color: '#fff' }} onClick={() => move(-1)} aria-label="Previous month">
           <ChevronLeftRoundedIcon fontSize="small" />
         </IconButton>
         <Typography variant="body2" sx={{ fontWeight: 700 }}>
           {monthLabel}
         </Typography>
-        <IconButton size="small" onClick={() => move(1)} disabled={isCurrent} aria-label="Next month">
+        <IconButton size="small" sx={{ color: '#fff', '&.Mui-disabled': { color: FAINT } }} onClick={() => move(1)} disabled={isCurrent} aria-label="Next month">
           <ChevronRightRoundedIcon fontSize="small" />
         </IconButton>
       </Stack>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', rowGap: '4px' }}>
         {WEEKDAYS.map((d, i) => (
-          <Typography key={i} variant="caption" color="text.secondary" sx={{ textAlign: 'center', fontWeight: 600, pb: 0.5 }}>
+          <Typography key={i} variant="caption" sx={{ color: SOFT, textAlign: 'center', fontWeight: 600, pb: 0.5 }}>
             {d}
           </Typography>
         ))}
@@ -284,11 +255,11 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
         })}
       </Box>
 
-      <Box sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
+      <Box sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid rgba(255,255,255,0.18)' }}>
         {isAuthenticated ? (
           <>
             <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
-              <Typography variant="caption" color="text.secondary">
+              <Typography variant="caption" sx={{ color: SOFT }}>
                 Longest streak
               </Typography>
               <Typography variant="caption" sx={{ fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
@@ -296,17 +267,17 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
               </Typography>
             </Stack>
             {beforeHistory && (
-              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75 }}>
+              <Typography variant="caption" sx={{ color: SOFT, display: 'block', mt: 0.75 }}>
                 Activity is shown for the last 7 weeks only.
               </Typography>
             )}
           </>
         ) : (
           <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-            <Typography variant="caption" color="text.secondary">
+            <Typography variant="caption" sx={{ color: SOFT }}>
               Log in to start a streak.
             </Typography>
-            <Button size="small" variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: 700 }}>
+            <Button size="small" variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: 700, bgcolor: PLAN_AMBER, color: '#1B1200', '&:hover': { bgcolor: '#F5B50F' } }}>
               Log in
             </Button>
           </Stack>
@@ -316,177 +287,9 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
   );
 }
 
-// -------------------------------------------------------------- weekly goal
-
-function WeeklyGoalCard({ isAuthenticated, byDate }) {
-  const now = new Date();
-  const y = now.getUTCFullYear();
-  const m = now.getUTCMonth();
-  const d = now.getUTCDate();
-  const segments = useMemo(() => weekSegments(y, m), [y, m]);
-  const current = segments.findIndex((s) => d >= s.start && d <= s.end);
-
-  const counts = segments.map((s) => {
-    let n = 0;
-    for (let day = s.start; day <= s.end; day++) {
-      if ((byDate.get(utcKey(new Date(Date.UTC(y, m, day)))) || 0) > 0) n++;
-    }
-    return n;
-  });
-
-  const daysLeft = current >= 0 ? segments[current].end - d : 0;
-
-  return (
-    <FoldCard
-      title="Weekly goal"
-      trailing={
-        <Typography variant="caption" sx={{ fontWeight: 700, color: 'warning.main' }}>
-          {daysLeft === 0 ? 'Last day' : `${daysLeft} days left`}
-        </Typography>
-      }
-    >
-      <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
-        {segments.map((s, i) => {
-          const done = counts[i] >= s.goal;
-          const isCurrent = i === current;
-          const upcoming = i > current;
-          return (
-            <Stack key={s.label} spacing={0.75} sx={{ alignItems: 'center' }}>
-              <Box
-                sx={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '0.78rem',
-                  fontWeight: 800,
-                  fontVariantNumeric: 'tabular-nums',
-                  background: done ? `linear-gradient(135deg, ${GOLD_A}, ${GOLD_B})` : 'transparent',
-                  color: done ? '#3B1D00' : isCurrent ? 'primary.main' : 'text.disabled',
-                  border: done ? 'none' : '2px',
-                  borderStyle: done ? 'none' : upcoming ? 'dashed' : 'solid',
-                  borderColor: isCurrent ? 'primary.main' : 'divider',
-                }}
-                aria-label={`${s.label}: ${counts[i]} of ${s.goal} days${done ? ', complete' : ''}`}
-              >
-                {done ? <CheckRoundedIcon sx={{ fontSize: 20 }} /> : isAuthenticated ? `${counts[i]}/${s.goal}` : `0/${s.goal}`}
-              </Box>
-              <Typography variant="caption" sx={{ fontWeight: isCurrent ? 800 : 500, color: isCurrent ? 'text.primary' : 'text.secondary' }}>
-                {s.label}
-              </Typography>
-            </Stack>
-          );
-        })}
-      </Stack>
-
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.5 }}>
-        Submit a solution on 5 different days in a week to complete it.
-      </Typography>
-    </FoldCard>
-  );
-}
-
-// ----------------------------------------------------------------- progress
-
-function TriRing({ easy, medium, hard, totals, size = 112, stroke = 8 }) {
-  const [drawn, setDrawn] = useState(false);
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setDrawn(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
-
-  const r = (size - stroke) / 2;
-  const C = 2 * Math.PI * r;
-  const gap = 12;
-  const seg = C / 3 - gap;
-  const parts = [
-    { solved: easy, total: totals.Easy, color: DIFF_COLOR.Easy },
-    { solved: medium, total: totals.Medium, color: DIFF_COLOR.Medium },
-    { solved: hard, total: totals.Hard, color: DIFF_COLOR.Hard },
-  ];
-  const solvedAll = easy + medium + hard;
-  const totalAll = totals.Easy + totals.Medium + totals.Hard;
-
-  return (
-    <Box sx={{ position: 'relative', width: size, height: size, flexShrink: 0 }} role="img" aria-label={`${solvedAll} of ${totalAll} problems solved`}>
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-        {parts.map((p, i) => {
-          const frac = p.total > 0 ? Math.min(p.solved / p.total, 1) : 0;
-          const rot = `rotate(${-90 + i * 120 + (gap / 2 / C) * 360} ${size / 2} ${size / 2})`;
-          return (
-            <g key={i} transform={rot}>
-              <Box component="circle" cx={size / 2} cy={size / 2} r={r} fill="none" stroke="currentColor" strokeOpacity="0.12" strokeWidth={stroke} strokeLinecap="round" strokeDasharray={`${seg} ${C}`} />
-              {p.solved > 0 && (
-                <Box
-                  component="circle"
-                  cx={size / 2}
-                  cy={size / 2}
-                  r={r}
-                  fill="none"
-                  stroke={p.color}
-                  strokeWidth={stroke}
-                  strokeLinecap="round"
-                  strokeDasharray={`${drawn ? Math.max(seg * frac, 0.01) : 0.01} ${C}`}
-                  sx={{ transition: 'stroke-dasharray 900ms cubic-bezier(.2,.8,.2,1)', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }}
-                />
-              )}
-            </g>
-          );
-        })}
-      </svg>
-      <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <Typography sx={{ fontSize: '1.7rem', fontWeight: 800, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{solvedAll}</Typography>
-        <Typography variant="caption" color="text.secondary" sx={{ fontVariantNumeric: 'tabular-nums' }}>
-          of {totalAll}
-        </Typography>
-      </Box>
-    </Box>
-  );
-}
-
-function ProgressCard({ user, progress }) {
-  const totals = progress?.total || { Easy: 0, Medium: 0, Hard: 0 };
-  const solved = progress?.solved || { Easy: user?.easySolved ?? 0, Medium: user?.mediumSolved ?? 0, Hard: user?.hardSolved ?? 0 };
-
-  return (
-    <FoldCard title="Your progress">
-      <Stack direction="row" spacing={2.25} sx={{ alignItems: 'center' }}>
-        <TriRing easy={solved.Easy} medium={solved.Medium} hard={solved.Hard} totals={totals} />
-        <Stack spacing={1.25} sx={{ flex: 1, minWidth: 0 }}>
-          {['Easy', 'Medium', 'Hard'].map((d) => {
-            const pct = totals[d] ? (solved[d] / totals[d]) * 100 : 0;
-            return (
-              <Box key={d}>
-                <Stack direction="row" sx={{ justifyContent: 'space-between', mb: 0.4 }}>
-                  <Typography variant="caption" sx={{ fontWeight: 700, color: DIFF_COLOR[d] }}>
-                    {d}
-                  </Typography>
-                  <Typography variant="caption" sx={{ fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
-                    {solved[d]}
-                    <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500 }}>
-                      /{totals[d]}
-                    </Box>
-                  </Typography>
-                </Stack>
-                <LinearProgress
-                  variant="determinate"
-                  value={pct}
-                  sx={{ height: 5, borderRadius: 3, bgcolor: `color-mix(in srgb, ${DIFF_COLOR[d]} 16%, transparent)`, '& .MuiLinearProgress-bar': { bgcolor: DIFF_COLOR[d], borderRadius: 3 } }}
-                />
-              </Box>
-            );
-          })}
-        </Stack>
-      </Stack>
-    </FoldCard>
-  );
-}
-
 // --------------------------------------------------------------------- rail
 
-export default function RightRail({ user, isAuthenticated, progress, activity }) {
+export default function RightRail({ user, isAuthenticated, activity }) {
   const byDate = useMemo(() => new Map((activity || []).map((a) => [a.date, a.submissions])), [activity]);
 
   return (
@@ -500,8 +303,6 @@ export default function RightRail({ user, isAuthenticated, progress, activity })
       }}
     >
       <StreakCalendarCard user={user} isAuthenticated={isAuthenticated} byDate={byDate} />
-      <WeeklyGoalCard isAuthenticated={isAuthenticated} byDate={byDate} />
-      <ProgressCard user={user} progress={progress} />
     </Box>
   );
 }
