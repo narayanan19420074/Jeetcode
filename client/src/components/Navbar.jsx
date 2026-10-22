@@ -61,7 +61,7 @@ const initialsFromName = (name) =>
 const PRIMARY_LINKS = [
   { to: '/dashboard', label: 'Dashboard', icon: DashboardRoundedIcon },
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
-  { to: '/prep', label: 'Prep by Company', icon: BusinessRoundedIcon },
+  { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
 ];
 
 // Reference links — grouped under "Explore" on desktop, second group on mobile.

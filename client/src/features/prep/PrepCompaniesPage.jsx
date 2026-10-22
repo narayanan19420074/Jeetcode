@@ -1,206 +1,171 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Box, Typography, Grid, Paper, CircularProgress, LinearProgress, Chip, InputAdornment, IconButton, TextField } from '@mui/material';
+import { Box, ButtonBase, CircularProgress, Container, IconButton, InputAdornment, TextField, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { prepApi } from '../../api/prepApi';
 import { problemsApi } from '../../api/problemsApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
+import PrepReadinessCard from '../../components/PrepReadinessCard';
+import useViewportFill from '../dashboard/useViewportFill';
 
-const PAGE = 45;
+const PAGE = 24;
 const norm = (s) => String(s || '').trim().toLowerCase();
 
-const readinessColor = (pct) => {
-  if (pct === null) return 'primary.main';
-  if (pct < 40) return 'error.main';
-  if (pct < 70) return 'warning.main';
-  return 'success.main';
-};
+const readinessColor = (pct) => (pct < 40 ? '#EF4444' : pct < 70 ? '#F59E0B' : '#10B981');
 
-const cardSx = {
-  p: 3,
-  borderRadius: 3,
-  cursor: 'pointer',
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: 1.5,
-  transition: 'all 0.15s ease',
-  '&:hover': { borderColor: 'primary.main', transform: 'translateY(-2px)' },
-};
+function CompanyRow({ c, onOpen }) {
+  const ready = c.readiness !== null && c.readiness !== undefined;
+  return (
+    <ButtonBase
+      onClick={onOpen} aria-label={`Open ${c.name}`}
+      sx={(t) => ({
+        display: 'flex', alignItems: 'center', gap: 1.5, width: '100%', p: 1.5, borderRadius: '14px', textAlign: 'left', fontFamily: 'inherit',
+        border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, transition: 'transform .15s, border-color .15s, box-shadow .15s',
+        '&:hover': { transform: 'translateY(-2px)', borderColor: alpha(t.palette.primary.main, 0.6), boxShadow: `0 10px 24px -16px ${alpha(t.palette.primary.main, 0.7)}` },
+      })}
+    >
+      <CompanyAvatar name={c.name} logoUrl={c.logoUrl} size={46} />
+      <Box sx={{ minWidth: 0, flex: 1 }}>
+        <Typography noWrap sx={{ fontWeight: 800, fontSize: 15 }}>{c.name}</Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, color: 'text.secondary' }}>
+          {c.roadmap ? (
+            <>
+              {c.minutes && <AccessTimeRoundedIcon sx={{ fontSize: 13 }} />}
+              <Typography noWrap variant="caption">{[c.minutes && `${c.minutes} min`, `${c.sections} sections`].filter(Boolean).join(' · ')}</Typography>
+            </>
+          ) : (
+            <Typography noWrap variant="caption">{c.count} {c.count === 1 ? 'question' : 'questions'}</Typography>
+          )}
+        </Box>
+        {ready && (
+          <Box sx={(t) => ({ mt: 0.6, height: 4, borderRadius: 99, bgcolor: alpha(t.palette.text.primary, 0.09), overflow: 'hidden' })}>
+            <Box sx={{ width: `${Math.max(c.readiness, 3)}%`, height: '100%', borderRadius: 99, bgcolor: readinessColor(c.readiness) }} />
+          </Box>
+        )}
+      </Box>
+      {ready && c.readiness > 0 ? (
+        <Typography sx={{ fontWeight: 800, fontSize: 13, color: readinessColor(c.readiness), fontVariantNumeric: 'tabular-nums' }}>{c.readiness}%</Typography>
+      ) : c.roadmap ? (
+        <Box sx={{ px: 1, py: 0.2, borderRadius: 99, fontSize: 11, fontWeight: 800, bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main' }}>Roadmap</Box>
+      ) : null}
+      <ChevronRightRoundedIcon sx={{ fontSize: 20, color: 'text.disabled', flexShrink: 0 }} />
+    </ButtonBase>
+  );
+}
 
-// Prep by Company: the companies with a full exam-pattern roadmap come first,
-// then every other company we have questions for — all in one place.
+// Companies: companies with a full exam-pattern roadmap come first, then every other company we have
+// questions for. One list, infinite scroll. On wide screens the page is one window tall (the list scrolls
+// by itself) with the readiness card on the right, like the Quests tab.
 export default function PrepCompaniesPage() {
   const navigate = useNavigate();
-  const [tracks, setTracks] = useState([]);
-  const [others, setOthers] = useState([]); // [{ company, count }]
-  const [loading, setLoading] = useState(true);
+  const theme = useTheme();
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const rootRef = useRef(null);
+  const scrollRef = useRef(null);
+  const sentinel = useRef(null);
+  const fillH = useViewportFill(rootRef, isLg);
+
+  const [tracks, setTracks] = useState(null); // null while loading
+  const [others, setOthers] = useState(null); // [{ company, count }]
   const [query, setQuery] = useState('');
   const [visible, setVisible] = useState(PAGE);
-  const sentinel = useRef(null);
 
   useEffect(() => {
-    const prep = prepApi
-      .listCompanies()
-      .then(({ data }) => setTracks(data.data.items || []))
-      .catch(() => {});
-    const all = problemsApi
-      .getCompanies()
-      .then(({ data }) => setOthers(data.data.items || []))
-      .catch(() => {});
-    Promise.all([prep, all]).finally(() => setLoading(false));
+    prepApi.listCompanies().then(({ data }) => setTracks(data.data.items || [])).catch(() => setTracks([]));
+    problemsApi.getCompanies().then(({ data }) => setOthers(data.data.items || [])).catch(() => setOthers([]));
   }, []);
 
+  const loading = tracks === null || others === null;
   const q = norm(query);
 
-  const shownTracks = useMemo(() => tracks.filter((t) => !q || norm(t.name).includes(q)), [tracks, q]);
-
-  // Companies that already have a prep track are not repeated below it.
-  const shownOthers = useMemo(() => {
-    const trackNames = new Set(tracks.map((t) => norm(t.name)));
-    return others
-      .filter((c) => !trackNames.has(norm(c.company)) && (!q || norm(c.company).includes(q)))
-      .sort((a, b) => b.count - a.count || a.company.localeCompare(b.company));
-  }, [others, tracks, q]);
+  const list = useMemo(() => {
+    const t = tracks || [];
+    const trackNames = new Set(t.map((x) => norm(x.name)));
+    const first = t.map((x) => ({ key: `t-${x.slug}`, name: x.name, logoUrl: x.logoUrl, roadmap: true, minutes: x.examDurationMinutes, sections: x.sectionCount, readiness: x.readiness, go: `/prep/${x.slug}` }));
+    const rest = (others || [])
+      .filter((c) => !trackNames.has(norm(c.company)))
+      .sort((a, b) => b.count - a.count || a.company.localeCompare(b.company))
+      .map((c) => ({ key: `c-${c.company}`, name: c.company, count: c.count, go: `/problems?company=${encodeURIComponent(c.company)}` }));
+    return [...first, ...rest].filter((c) => !q || norm(c.name).includes(q));
+  }, [tracks, others, q]);
 
   useEffect(() => setVisible(PAGE), [q]);
 
-  // Load more companies as the user nears the bottom.
+  // Infinite scroll: load the next page when the end of the list comes into view (of the list's own scroller on wide screens).
   useEffect(() => {
     const el = sentinel.current;
     if (!el || typeof IntersectionObserver === 'undefined') return undefined;
-    const io = new IntersectionObserver(([e]) => e.isIntersecting && setVisible((v) => v + PAGE), { rootMargin: '400px' });
+    const io = new IntersectionObserver(([e]) => e.isIntersecting && setVisible((v) => v + PAGE), { root: fillH ? scrollRef.current : null, rootMargin: '300px' });
     io.observe(el);
     return () => io.disconnect();
-  }, [shownOthers.length, visible, loading]);
+  }, [list.length, visible, loading, fillH]);
 
-  const empty = !loading && shownTracks.length === 0 && shownOthers.length === 0;
+  const shown = list.slice(0, visible);
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Box sx={{ mb: 3 }}>
-        <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
-          Prep by Company
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Pick a company — see the exact exam pattern, and exactly how ready you are for it.
-        </Typography>
-      </Box>
+    <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : undefined}>
+      <Container maxWidth="lg" sx={{ py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 }, height: fillH ? '100%' : 'auto' }}>
+        <Box
+          sx={{
+            display: 'grid', gap: 2.5, alignItems: 'start', height: fillH ? '100%' : 'auto',
+            gridTemplateColumns: { xs: 'minmax(0,1fr)', lg: 'minmax(0,1fr) 340px' },
+            gridTemplateRows: fillH ? 'minmax(0, 1fr)' : undefined,
+          }}
+        >
+          {/* list */}
+          <Box sx={{ order: { xs: 2, lg: 1 }, minWidth: 0, minHeight: 0, height: fillH ? '100%' : 'auto', display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ display: 'flex', alignItems: { sm: 'center' }, justifyContent: 'space-between', gap: 2, flexDirection: { xs: 'column', sm: 'row' }, mb: 2, flexShrink: 0 }}>
+              <Box>
+                <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em' }}>Companies</Typography>
+                <Typography variant="body2" color="text.secondary">Pick a company to see its exam pattern and your readiness.</Typography>
+              </Box>
+              <TextField
+                size="small" placeholder="Search companies" value={query} onChange={(e) => setQuery(e.target.value)}
+                sx={{ width: { xs: '100%', sm: 260 }, flexShrink: 0 }}
+                slotProps={{
+                  input: {
+                    sx: { borderRadius: 99 },
+                    startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment>,
+                    endAdornment: query ? (
+                      <InputAdornment position="end">
+                        <IconButton size="small" aria-label="Clear search" onClick={() => setQuery('')}><ClearRoundedIcon fontSize="small" /></IconButton>
+                      </InputAdornment>
+                    ) : null,
+                  },
+                  htmlInput: { 'aria-label': 'Search companies' },
+                }}
+              />
+            </Box>
 
-      <TextField
-        fullWidth
-        size="small"
-        placeholder="Search companies"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        sx={{ mb: 3, maxWidth: 420 }}
-        slotProps={{
-          input: {
-            sx: { borderRadius: 99 },
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchRoundedIcon fontSize="small" />
-              </InputAdornment>
-            ),
-            endAdornment: query ? (
-              <InputAdornment position="end">
-                <IconButton size="small" aria-label="Clear search" onClick={() => setQuery('')}>
-                  <ClearRoundedIcon fontSize="small" />
-                </IconButton>
-              </InputAdornment>
-            ) : null,
-          },
-          htmlInput: { 'aria-label': 'Search companies' },
-        }}
-      />
+            <Box ref={scrollRef} className="autohide-scroll" sx={fillH ? { flex: 1, minHeight: 0, overflowY: 'auto', pr: 1, scrollbarGutter: 'stable' } : undefined}>
+              {loading ? (
+                <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}><CircularProgress size={28} /></Box>
+              ) : shown.length === 0 ? (
+                <Typography color="text.secondary" sx={{ textAlign: 'center', py: 6 }}>{query ? `No company matches “${query}”.` : 'No companies yet.'}</Typography>
+              ) : (
+                <>
+                  <Box sx={{ display: 'grid', gap: 1.25, gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))' } }}>
+                    {shown.map((c) => <CompanyRow key={c.key} c={c} onOpen={() => navigate(c.go)} />)}
+                  </Box>
+                  <Box ref={sentinel} sx={{ height: 1 }} />
+                  {visible < list.length && <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}><CircularProgress size={22} /></Box>}
+                  <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 2, mb: 1, textAlign: 'center' }}>
+                    Company names and logos belong to their owners and are shown only to identify each company.
+                  </Typography>
+                </>
+              )}
+            </Box>
+          </Box>
 
-      {loading ? (
-        <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
-          <CircularProgress size={28} />
+          {/* readiness */}
+          <Box sx={{ order: { xs: 1, lg: 2 }, minWidth: 0, overflowY: fillH ? 'auto' : 'visible', maxHeight: fillH ? '100%' : 'none' }} className="autohide-scroll">
+            <PrepReadinessCard tracks={tracks} />
+          </Box>
         </Box>
-      ) : (
-        <>
-          {shownTracks.length > 0 && (
-            <Grid container spacing={3}>
-              {shownTracks.map((c) => (
-                <Grid key={c.slug} size={{ xs: 12, sm: 6, md: 4 }}>
-                  <Paper variant="outlined" onClick={() => navigate(`/prep/${c.slug}`)} sx={cardSx}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                      <CompanyAvatar name={c.name} logoUrl={c.logoUrl} size={44} />
-                      <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>{c.name}</Typography>
-                    </Box>
-
-                    <Typography variant="body2" color="text.secondary" sx={{ flexGrow: 1 }}>
-                      {c.description}
-                    </Typography>
-
-                    <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                      {c.examDurationMinutes && (
-                        <Chip icon={<AccessTimeRoundedIcon sx={{ fontSize: '0.9rem !important' }} />} label={`${c.examDurationMinutes} min`} size="small" variant="outlined" />
-                      )}
-                      <Chip label={`${c.sectionCount} sections`} size="small" variant="outlined" />
-                    </Box>
-
-                    {c.readiness !== null && (
-                      <Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                          <Typography variant="caption" color="text.secondary">Readiness</Typography>
-                          <Typography variant="caption" sx={{ fontWeight: 700, color: readinessColor(c.readiness) }}>{c.readiness}%</Typography>
-                        </Box>
-                        <LinearProgress
-                          variant="determinate"
-                          value={c.readiness}
-                          sx={{ height: 6, borderRadius: 3, bgcolor: 'action.disabledBackground', '& .MuiLinearProgress-bar': { bgcolor: readinessColor(c.readiness), borderRadius: 3 } }}
-                        />
-                      </Box>
-                    )}
-                  </Paper>
-                </Grid>
-              ))}
-            </Grid>
-          )}
-
-          {shownOthers.length > 0 && (
-            <>
-              <Typography variant="subtitle2" color="text.secondary" sx={{ fontWeight: 800, letterSpacing: '0.04em', textTransform: 'uppercase', mt: shownTracks.length ? 4 : 0, mb: 1.5 }}>
-                All companies
-              </Typography>
-              <Grid container spacing={2}>
-                {shownOthers.slice(0, visible).map((c) => (
-                  <Grid key={c.company} size={{ xs: 12, sm: 6, md: 4 }}>
-                    <Paper
-                      variant="outlined"
-                      onClick={() => navigate(`/problems?company=${encodeURIComponent(c.company)}`)}
-                      sx={{ ...cardSx, p: 2, flexDirection: 'row', alignItems: 'center', gap: 1.5 }}
-                    >
-                      <CompanyAvatar name={c.company} size={40} />
-                      <Box sx={{ minWidth: 0 }}>
-                        <Typography noWrap sx={{ fontWeight: 700 }}>{c.company}</Typography>
-                        <Typography variant="caption" color="text.secondary">
-                          {c.count} {c.count === 1 ? 'question' : 'questions'}
-                        </Typography>
-                      </Box>
-                    </Paper>
-                  </Grid>
-                ))}
-              </Grid>
-              <Box ref={sentinel} sx={{ height: 1 }} />
-            </>
-          )}
-
-          {empty && (
-            <Typography color="text.secondary" sx={{ textAlign: 'center', py: 6 }}>
-              {query ? `No company matches “${query}”.` : 'No companies yet.'}
-            </Typography>
-          )}
-        </>
-      )}
-
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 4, textAlign: 'center' }}>
-        Company names and logos belong to their owners and are shown only to identify each company.
-      </Typography>
-    </Container>
+      </Container>
+    </Box>
   );
 }
