@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { animate, motion, useReducedMotion } from 'framer-motion';
 import {
-  Alert, Avatar, Badge, Box, Button, ButtonBase, Collapse, IconButton, InputAdornment, Popover, Skeleton, Stack, Tab, Tabs, TextField,
+  Alert, Avatar, Badge, Box, Button, ButtonBase, Collapse, IconButton, InputAdornment, Popover, Skeleton, Stack, TextField,
   ToggleButton, ToggleButtonGroup, Tooltip, Typography,
 } from '@mui/material';
 import { alpha, keyframes } from '@mui/material/styles';
@@ -23,9 +23,17 @@ import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import MyLocationRoundedIcon from '@mui/icons-material/MyLocationRounded';
+import FirstPageRoundedIcon from '@mui/icons-material/FirstPageRounded';
+import LastPageRoundedIcon from '@mui/icons-material/LastPageRounded';
+import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
+import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
+import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import { leaderboardApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, surface } from '../dashboard/dashboardUtils';
+import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
 import { TIERS, tierFor } from './tiers';
 
 const LIMIT = 30;
@@ -46,8 +54,8 @@ const PT = { easy: 10, medium: 20, hard: 40, aptitude: 5 };
 // Desktop layout is chosen from the width this view actually gets (not the window), because the
 // dashboard sidebar eats a different amount at each breakpoint.
 const DESKTOP_MIN = 760; // below this: the compact phone layout
-const PANEL_MIN = 1000; // side panel (spotlight, next target, tiers) fits from here
-const PANEL_W = 300;
+const PANEL_MIN = 900; // side panel (spotlight, next target, tiers) fits from here
+const PANEL_W = 288;
 const GAP = 16;
 const RICH = '72px minmax(0,1fr) 62px 46px 46px 46px 46px 56px 84px';
 const COMPACT = '72px minmax(0,1fr) 62px 56px 56px 84px';
@@ -81,19 +89,23 @@ function useDebounced(value, ms = 350) {
   return v;
 }
 
-function useWidth(ref, initial) {
-  const [w, setW] = useState(initial);
+function useElSize(el, initial = { w: 0, h: 0 }) {
+  const [size, setSize] = useState(initial);
   useLayoutEffect(() => {
-    const el = ref.current;
     if (!el) return undefined;
-    const measure = () => setW(Math.round(el.getBoundingClientRect().width));
+    const measure = () => {
+      const r = el.getBoundingClientRect();
+      const w = Math.round(r.width);
+      const h = Math.round(r.height);
+      setSize((s) => (s.w === w && s.h === h ? s : { w, h }));
+    };
     measure();
     if (typeof ResizeObserver === 'undefined') return undefined;
     const ro = new ResizeObserver(measure);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [ref]);
-  return w;
+  }, [el]);
+  return size;
 }
 
 function timeAgo(iso) {
@@ -128,10 +140,19 @@ function Streak({ value, still = false }) {
   );
 }
 
-function TierChip({ tier }) {
+function TierChip({ tier, iconOnly = false, onDark = false }) {
+  if (iconOnly) {
+    return (
+      <Tooltip title={tier.name}>
+        <Box component="span" aria-label={tier.name} sx={{ display: 'inline-grid', placeItems: 'center', width: 20, height: 20, borderRadius: '50%', flexShrink: 0, bgcolor: `color-mix(in srgb, ${tier.color} 22%, transparent)`, color: tier.color }}>
+          <WorkspacePremiumRoundedIcon sx={{ fontSize: 14 }} />
+        </Box>
+      </Tooltip>
+    );
+  }
   return (
-    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.7, py: 0.05, borderRadius: 99, bgcolor: `color-mix(in srgb, ${tier.color} 16%, transparent)`, color: tier.color, fontSize: 11, fontWeight: 800, lineHeight: 1.6, flexShrink: 0, whiteSpace: 'nowrap' }}>
-      <WorkspacePremiumRoundedIcon sx={{ fontSize: 13 }} />{tier.name}
+    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.7, py: 0.05, borderRadius: 99, bgcolor: onDark ? 'rgba(255,255,255,0.16)' : `color-mix(in srgb, ${tier.color} 16%, transparent)`, color: onDark ? '#fff' : tier.color, fontSize: 11, fontWeight: 800, lineHeight: 1.6, flexShrink: 0, whiteSpace: 'nowrap' }}>
+      <WorkspacePremiumRoundedIcon sx={{ fontSize: 13, color: onDark ? '#FDE68A' : undefined }} />{tier.name}
     </Box>
   );
 }
@@ -396,11 +417,36 @@ function FriendsCard({ enabled, defaultOpen = false }) {
 }
 
 // ======================= Desktop layout =======================
+// Same colour language as the Study Plan card: a gradient per card, amber accent, glass chips.
+// Nothing on this layout scrolls: the list is paged to however many rows fit, the side panel
+// drops detail as the window gets shorter, and labels turn into icons when a row runs out of room.
+
+const GLASS = 'rgba(255,255,255,0.14)';
+const GLASS_HI = 'rgba(255,255,255,0.28)';
+const SOFT = 'rgba(255,255,255,0.86)';
+const SHADOW = '0 14px 28px -16px rgba(2,6,23,0.85)';
+const AMBER_BAR = `linear-gradient(90deg, ${PLAN_AMBER}, #F59E0B)`;
+const themeGrad = (name) => (PLAN_THEMES.find((t) => t.name === name) || PLAN_THEMES[0]).gradient;
+const TOP_GRAD = {
+  1: 'linear-gradient(135deg,#78350F 0%,#B45309 50%,#F59E0B 100%)',
+  2: 'linear-gradient(135deg,#0F172A 0%,#334155 55%,#64748B 100%)',
+  3: 'linear-gradient(135deg,#431407 0%,#9A3412 55%,#EA580C 100%)',
+};
+// The side-panel hero changes colour with the tier of the player it shows.
+const TIER_GRAD = { bronze: TOP_GRAD[3], silver: TOP_GRAD[2], gold: TOP_GRAD[1], platinum: themeGrad('teal'), diamond: themeGrad('indigo'), legend: themeGrad('plum') };
+const glassBtn = { width: 38, height: 38, flexShrink: 0, color: '#fff', bgcolor: GLASS, '&:hover': { bgcolor: GLASS_HI } };
+const blobs = (
+  <>
+    <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.26), transparent 70%)', pointerEvents: 'none' }} />
+    <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: -30, width: 140, height: 140, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%)', pointerEvents: 'none' }} />
+  </>
+);
+const clamp2 = { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' };
 
 // Rank change vs last week (all-time, everyone board only — the server sends null otherwise).
 function Move({ row }) {
   if (row.isNew) {
-    return <Box component="span" sx={(t) => ({ px: 0.7, borderRadius: 99, fontSize: 10.5, fontWeight: 800, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.14) })}>new</Box>;
+    return <Box component="span" sx={{ px: 0.7, borderRadius: 99, fontSize: 10.5, fontWeight: 800, color: '#1B1200', bgcolor: PLAN_AMBER }}>new</Box>;
   }
   const m = row.movement;
   if (m === null || m === undefined) return null;
@@ -415,7 +461,7 @@ function Move({ row }) {
 }
 
 // How a player's points split across Easy / Medium / Hard / Aptitude.
-function Mix({ row, sx }) {
+function Mix({ row, onDark = false, sx }) {
   const parts = [
     [row.easy * PT.easy, DIFF_COLOR.Easy],
     [row.medium * PT.medium, DIFF_COLOR.Medium],
@@ -423,86 +469,127 @@ function Mix({ row, sx }) {
     [row.aptitude * PT.aptitude, APT_COLOR],
   ].filter(([v]) => v > 0);
   return (
-    <Box aria-hidden sx={[{ display: 'flex', gap: '2px', height: 5, borderRadius: 99, overflow: 'hidden', bgcolor: 'divider' }, sx]}>
+    <Box aria-hidden sx={[{ display: 'flex', gap: '2px', height: 6, borderRadius: 99, overflow: 'hidden', bgcolor: onDark ? 'rgba(255,255,255,0.2)' : 'divider' }, sx]}>
       {parts.map(([v, c], i) => <Box key={i} sx={{ flex: v, bgcolor: c }} />)}
     </Box>
   );
 }
 
 function YouChip() {
-  return <Box component="span" sx={(t) => ({ ml: 0.75, px: 0.75, borderRadius: 99, fontSize: 10.5, fontWeight: 800, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.14), verticalAlign: 'middle' })}>You</Box>;
+  return <Box component="span" sx={{ ml: 0.75, px: 0.8, borderRadius: 99, fontSize: 10.5, fontWeight: 800, color: '#1B1200', bgcolor: PLAN_AMBER, verticalAlign: 'middle' }}>You</Box>;
 }
 
-// One of the three leaders at the top of the board.
-function TopCard({ row, isMe, selected, onPick }) {
+// Glass segmented control (period, show). Turns into icons / short labels when space is tight.
+function Seg({ value, options, onChange, iconOnly, label }) {
+  return (
+    <Box role="group" aria-label={label} sx={{ display: 'inline-flex', p: 0.4, gap: 0.25, borderRadius: 99, bgcolor: GLASS, flexShrink: 0 }}>
+      {options.map(({ v, text, short, Icon, disabled }) => {
+        const on = value === v;
+        const showIcon = Icon && (iconOnly || !short);
+        const caption = iconOnly ? (Icon ? null : short || text) : text;
+        return (
+          <Tooltip key={v} title={disabled ? `${text} (log in first)` : text}>
+            <span>
+              <ButtonBase
+                disabled={disabled} onClick={() => onChange(v)} aria-pressed={on} aria-label={text}
+                sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: iconOnly ? 1 : 1.4, height: 30, borderRadius: 99, fontFamily: 'inherit', fontSize: 12.5, fontWeight: 800, color: on ? '#312E81' : '#fff', bgcolor: on ? '#fff' : 'transparent', opacity: disabled ? 0.4 : 1, transition: 'background-color .15s', '&:hover': { bgcolor: on ? '#fff' : GLASS } }}
+              >
+                {(showIcon || (Icon && !iconOnly)) && <Icon sx={{ fontSize: 17 }} />}{caption}
+              </ButtonBase>
+            </span>
+          </Tooltip>
+        );
+      })}
+    </Box>
+  );
+}
+
+// One of the three leaders. Full card when there is room, a single slim row when the window is short.
+function TopCard({ row, isMe, selected, onPick, compact }) {
   const m = MEDAL[row.rank] || MEDAL[3];
   const { tier } = tierFor(row.score);
   return (
     <ButtonBase
-      onClick={() => onPick(row.userId)} aria-label={`${row.name}, rank ${row.rank}, ${row.score} points`}
-      sx={(t) => ({
-        display: 'flex', flexDirection: 'column', alignItems: 'stretch', textAlign: 'left', minWidth: 0, p: 1.75, borderRadius: '14px', fontFamily: 'inherit',
-        border: '1px solid', borderColor: selected ? t.palette.primary.main : `color-mix(in srgb, ${m.b} 45%, ${t.palette.divider})`,
-        background: `linear-gradient(160deg, color-mix(in srgb, ${m.b} 14%, transparent), transparent 72%)`,
-        transition: 'border-color .15s, transform .15s', '&:hover': { borderColor: selected ? t.palette.primary.main : m.b }, '&:active': { transform: 'scale(0.99)' },
-      })}
+      onClick={(e) => onPick(e, row)} aria-label={`${row.name}, rank ${row.rank}, ${row.score} points`}
+      sx={{
+        position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'center', textAlign: 'left', minWidth: 0, color: '#fff', fontFamily: 'inherit',
+        p: compact ? 1.25 : 1.75, borderRadius: '16px', background: TOP_GRAD[row.rank] || TOP_GRAD[3], boxShadow: selected ? `0 0 0 2px ${PLAN_AMBER}, ${SHADOW}` : SHADOW,
+        transition: 'transform .15s', '&:active': { transform: 'scale(0.99)' },
+      }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-        <AvatarRing src={row.avatarUrl} name={row.name} size={46} a={m.a} b={m.b} ring={3} />
+      {blobs}
+      <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: compact ? 1 : 1.5, minWidth: 0 }}>
+        <AvatarRing src={row.avatarUrl} name={row.name} size={compact ? 32 : 44} a={m.a} b={m.b} ring={3} />
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography noWrap sx={{ fontWeight: 800, fontSize: 15, lineHeight: 1.25 }}>{row.name}{isMe && <YouChip />}</Typography>
-          <Typography noWrap variant="caption" color="text.secondary" sx={{ display: 'block' }}>@{row.handle}</Typography>
+          <Typography noWrap sx={{ fontWeight: 800, fontSize: compact ? 14 : 15, lineHeight: 1.25 }}>{row.name}{isMe && <YouChip />}</Typography>
+          {compact
+            ? <Typography noWrap sx={[{ fontWeight: 900, fontSize: 15, color: '#FDE68A' }, mono]}>{row.score.toLocaleString()} pts</Typography>
+            : <Typography noWrap variant="caption" sx={{ display: 'block', color: SOFT }}>@{row.handle}</Typography>}
         </Box>
         <RankBadge rank={row.rank} />
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 1.5 }}>
-        <Typography sx={[{ fontWeight: 900, fontSize: 24, lineHeight: 1.1 }, mono]}>
-          {row.score.toLocaleString()}<Box component="span" sx={{ fontSize: 11, ml: 0.5, color: 'text.secondary', fontWeight: 700 }}>pts</Box>
-        </Typography>
-        <TierChip tier={tier} />
-      </Box>
-      <Mix row={row} sx={{ mt: 1.25 }} />
+      {!compact && (
+        <>
+          <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 1.25, gap: 1 }}>
+            <Typography sx={[{ fontWeight: 900, fontSize: 24, lineHeight: 1.1, color: '#FDE68A' }, mono]}>
+              {row.score.toLocaleString()}<Box component="span" sx={{ fontSize: 11, ml: 0.5, color: SOFT, fontWeight: 700 }}>pts</Box>
+            </Typography>
+            <TierChip tier={tier} onDark />
+          </Box>
+          <Mix row={row} onDark sx={{ position: 'relative', mt: 1.1 }} />
+        </>
+      )}
     </ButtonBase>
   );
 }
 
-function DeskRow({ row, tpl, rich, isMe, selected, onSelect, pinned = false }) {
+function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect, pinned = false }) {
   const { tier } = tierFor(row.score);
   const live = activeLabel(row.lastActive).live;
   const num = (n, color) => (
     <Typography component="div" sx={[{ textAlign: 'right', fontSize: 13, fontWeight: n > 0 ? 700 : 500, color: n > 0 ? color : 'text.disabled' }, mono]}>{n}</Typography>
   );
+  const avatar = (
+    <Badge variant="dot" overlap="circular" invisible={!live} color="success" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+      <Avatar src={row.avatarUrl || undefined} sx={{ width: dense ? 30 : 36, height: dense ? 30 : 36, fontSize: 13, fontWeight: 700 }}>{row.name?.[0]?.toUpperCase()}</Avatar>
+    </Badge>
+  );
+  const name = <Typography noWrap sx={{ fontSize: 14, fontWeight: 700, lineHeight: 1.3, minWidth: 0 }}>{row.name}{isMe && <YouChip />}</Typography>;
   return (
     <Box
       id={isMe && !pinned ? 'lb-me' : undefined}
       sx={(t) => ({
-        position: 'relative',
+        position: 'relative', minHeight: 0, height: pinned ? (dense ? 46 : 58) : '100%',
         borderBottom: pinned ? 'none' : `1px solid ${t.palette.divider}`,
-        bgcolor: selected ? alpha(t.palette.primary.main, 0.1) : isMe ? alpha(t.palette.primary.main, 0.06) : 'transparent',
-        '&::before': selected || isMe ? { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, bgcolor: 'primary.main' } : undefined,
+        background: selected ? alpha(t.palette.primary.main, 0.12) : isMe ? `linear-gradient(90deg, ${alpha(PLAN_AMBER, 0.22)}, ${alpha(PLAN_AMBER, 0.04)})` : 'transparent',
+        '&::before': selected || isMe ? { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, bgcolor: selected ? 'primary.main' : PLAN_AMBER } : undefined,
       })}
     >
       <ButtonBase
         onClick={onSelect} aria-current={selected ? 'true' : undefined}
-        sx={(t) => ({ width: '100%', display: 'grid', gridTemplateColumns: tpl, columnGap: 1, alignItems: 'center', textAlign: 'left', px: 2.5, py: 1, minHeight: 58, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
+        sx={(t) => ({ width: '100%', height: '100%', display: 'grid', gridTemplateColumns: tpl, columnGap: 1, alignItems: 'center', textAlign: 'left', px: 2.5, py: 0, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
       >
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           <RankBadge rank={row.rank} />
           <Move row={row} />
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
-          <Badge variant="dot" overlap="circular" invisible={!live} color="success" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-            <Avatar src={row.avatarUrl || undefined} sx={{ width: 36, height: 36, fontSize: 14, fontWeight: 700 }}>{row.name?.[0]?.toUpperCase()}</Avatar>
-          </Badge>
-          <Box sx={{ minWidth: 0 }}>
-            <Typography noWrap sx={{ fontSize: 14, fontWeight: 700, lineHeight: 1.3 }}>{row.name}{isMe && <YouChip />}</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, minWidth: 0 }}>
-              <TierChip tier={tier} />
-              <Typography variant="caption" color="text.secondary" noWrap>@{row.handle}</Typography>
+        {dense ? (
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 0 }}>
+            {avatar}{name}<TierChip tier={tier} iconOnly={!rich} />
+          </Box>
+        ) : (
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
+            {avatar}
+            <Box sx={{ minWidth: 0 }}>
+              {name}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, minWidth: 0 }}>
+                <TierChip tier={tier} iconOnly={!rich} />
+                <Typography variant="caption" color="text.secondary" noWrap>@{row.handle}</Typography>
+              </Box>
             </Box>
           </Box>
-        </Box>
+        )}
 
         <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}><Streak value={row.streak} still /></Box>
 
@@ -524,208 +611,274 @@ function DeskRow({ row, tpl, rich, isMe, selected, onSelect, pinned = false }) {
   );
 }
 
-function DeskSkeleton({ count = 9 }) {
-  return Array.from({ length: count }, (_, i) => (
-    <Box key={i} sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 2.5, py: 1.25, borderBottom: `1px solid ${t.palette.divider}` })}>
+function SkelRow({ i }) {
+  return (
+    <Box sx={(t) => ({ minHeight: 0, display: 'flex', alignItems: 'center', gap: 1.5, px: 2.5, borderBottom: `1px solid ${t.palette.divider}` })}>
       <Skeleton variant="rounded" width={30} height={30} sx={{ borderRadius: '10px' }} />
-      <Skeleton variant="circular" width={36} height={36} />
-      <Box sx={{ flex: 1 }}>
-        <Skeleton variant="text" width={`${30 + ((i * 13) % 30)}%`} />
-        <Skeleton variant="text" width={110} />
-      </Box>
-      <Skeleton variant="text" width={160} />
-      <Skeleton variant="text" width={56} />
+      <Skeleton variant="circular" width={30} height={30} />
+      <Skeleton variant="text" sx={{ flex: 1, maxWidth: `${30 + ((i * 13) % 30)}%` }} />
+      <Box sx={{ flex: 1 }} />
+      <Skeleton variant="text" width={64} />
     </Box>
-  ));
+  );
 }
 
-const card = [surface, { p: 2.5, flexShrink: 0 }];
-const cardTitle = { fontWeight: 800, fontSize: 15 };
+// ---------- side panel ----------
 
-// Side panel: the selected player (you by default) in detail.
-function Spotlight({ row, isMe, points, learners, topPercent, loading }) {
+function Spotlight({ row, isMe, points, learners, topPercent, loading, mode }) {
+  const small = mode === 'tiny';
   if (!row) {
     return (
-      <Box sx={card}>
-        {loading ? <Skeleton variant="rounded" height={280} /> : <Typography variant="body2" color="text.secondary">Pick a player to see how they are doing.</Typography>}
+      <Box sx={[surface, { p: 2.5, flex: '1 1 auto', minHeight: 0, overflow: 'hidden' }]}>
+        {loading ? <Skeleton variant="rounded" height={160} /> : <Typography variant="body2" color="text.secondary">Pick a player to see how they are doing.</Typography>}
       </Box>
     );
   }
   const { tier, next, progress, toNext } = tierFor(row.score);
   const medal = MEDAL[row.rank];
   const st = activeLabel(row.lastActive);
+  const stColor = st.live ? '#A7F3D0' : st.color === 'warning.main' ? '#FDE68A' : 'rgba(255,255,255,0.65)';
   const lines = [
     ['Easy', row.easy, points.easy, DIFF_COLOR.Easy],
     ['Medium', row.medium, points.medium, DIFF_COLOR.Medium],
     ['Hard', row.hard, points.hard, DIFF_COLOR.Hard],
     ['Aptitude', row.aptitude, points.aptitude, APT_COLOR],
   ];
+  const label = { fontSize: 11, fontWeight: 700, color: SOFT };
   return (
-    <Box sx={card}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.75 }}>
-        <AvatarRing src={row.avatarUrl} name={row.name} size={56} a={medal ? medal.a : tier.color} b={medal ? medal.b : `color-mix(in srgb, ${tier.color} 40%, #fff)`} ring={3} />
-        <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography noWrap sx={{ fontWeight: 800, fontSize: 17, lineHeight: 1.25 }}>{row.name}{isMe && <YouChip />}</Typography>
-          <Typography noWrap variant="body2" color="text.secondary">@{row.handle}</Typography>
-          {row.company && <Typography noWrap variant="caption" color="text.secondary">{row.company}</Typography>}
-        </Box>
-      </Box>
-
-      <Box sx={(t) => ({ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', mt: 2, py: 1.25, borderTop: `1px solid ${t.palette.divider}`, borderBottom: `1px solid ${t.palette.divider}` })}>
-        {[['Rank', `#${row.rank}`], ['Points', row.score.toLocaleString()]].map(([label, value]) => (
-          <Box key={label}>
-            <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>{label}</Typography>
-            <Typography sx={[{ fontWeight: 900, fontSize: 20, lineHeight: 1.2 }, mono]}>{value}</Typography>
+    <Box sx={{ position: 'relative', overflow: 'hidden', flex: '1 1 auto', minHeight: 0, p: small ? 1.75 : 2.25, borderRadius: '16px', color: '#fff', background: TIER_GRAD[tier.key], boxShadow: `inset 0 1px 0 rgba(255,255,255,0.18), ${SHADOW}` }}>
+      {blobs}
+      <Box sx={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 1.25 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+          <AvatarRing src={row.avatarUrl} name={row.name} size={small ? 44 : 52} a={medal ? medal.a : PLAN_AMBER} b={medal ? medal.b : '#F59E0B'} ring={3} />
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <Typography noWrap sx={{ fontWeight: 800, fontSize: 17, lineHeight: 1.25 }}>{row.name}{isMe && <YouChip />}</Typography>
+            <Typography noWrap variant="body2" sx={{ color: SOFT }}>@{row.handle}{row.company && !small ? `, ${row.company}` : ''}</Typography>
           </Box>
-        ))}
+          {isMe && topPercent && learners > 0 && (
+            <Tooltip title={`Top ${topPercent}% of ${learners.toLocaleString()} ranked players`}>
+              <Box sx={{ flexShrink: 0, px: 1, py: 0.35, borderRadius: 99, fontSize: 12, fontWeight: 800, color: '#FDE68A', bgcolor: 'rgba(251,191,36,0.18)', border: '1px solid rgba(251,191,36,0.5)' }}>Top {topPercent}%</Box>
+            </Tooltip>
+          )}
+        </Box>
+
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 1 }}>
+          {[['Rank', `#${row.rank}`], ['Points', row.score.toLocaleString()]].map(([l, val]) => (
+            <Box key={l} sx={{ py: small ? 0.75 : 1, textAlign: 'center', borderRadius: '12px', bgcolor: GLASS, minWidth: 0 }}>
+              <Typography sx={label}>{l}</Typography>
+              <Typography noWrap sx={[{ fontWeight: 900, fontSize: small ? 17 : 20, lineHeight: 1.2 }, mono]}>{val}</Typography>
+            </Box>
+          ))}
+          <Box sx={{ py: small ? 0.75 : 1, textAlign: 'center', borderRadius: '12px', bgcolor: GLASS, minWidth: 0 }}>
+            <Typography sx={label}>Streak</Typography>
+            <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
+              <LocalFireDepartmentRoundedIcon sx={{ fontSize: small ? 18 : 20, color: PLAN_AMBER }} />
+              <Typography sx={[{ fontWeight: 900, fontSize: small ? 17 : 20, lineHeight: 1.2 }, mono]}>{row.streak}</Typography>
+            </Box>
+          </Box>
+        </Box>
+
         <Box>
-          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>Streak</Typography>
-          <Box sx={{ lineHeight: 1.2, mt: 0.2 }}><Streak value={row.streak} still /></Box>
-        </Box>
-      </Box>
-      {isMe && topPercent && learners > 0 && (
-        <Typography variant="body2" sx={{ mt: 1.25, fontWeight: 600 }}>Top {topPercent}% of {learners.toLocaleString()} ranked players</Typography>
-      )}
-
-      <Box sx={{ mt: 2 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.75 }}>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: 800, fontSize: 13 }}>
-            <WorkspacePremiumRoundedIcon sx={{ fontSize: 18 }} />{tier.name}
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.6, gap: 1 }}>
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: '#FDE68A', fontWeight: 800, fontSize: 13 }}>
+              <WorkspacePremiumRoundedIcon sx={{ fontSize: 18 }} />{tier.name}
+            </Box>
+            <Typography noWrap sx={{ fontSize: 12, fontWeight: 700, color: SOFT }}>{next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top tier reached'}</Typography>
           </Box>
-          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
-            {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top tier reached'}
-          </Typography>
-        </Box>
-        <Box sx={{ height: 8, borderRadius: 99, bgcolor: 'divider', overflow: 'hidden' }}>
-          <Box sx={{ height: '100%', width: `${Math.max(progress, 3)}%`, borderRadius: 99, bgcolor: tier.color, transition: 'width .5s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
-        </Box>
-      </Box>
-
-      <Box sx={{ mt: 2, display: 'grid', gap: 1 }}>
-        {lines.map(([label, n, pts, color]) => (
-          <Box key={label} sx={{ display: 'grid', gridTemplateColumns: '10px 1fr auto 62px', alignItems: 'center', columnGap: 1 }}>
-            <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: color }} />
-            <Typography variant="body2" sx={{ fontWeight: 600 }}>{label}</Typography>
-            <Typography sx={[{ fontWeight: 800, fontSize: 14 }, mono]}>{n}</Typography>
-            <Typography variant="caption" color="text.secondary" sx={[{ textAlign: 'right' }, mono]}>{(n * pts).toLocaleString()} pts</Typography>
+          <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Progress to next tier" sx={{ height: 9, borderRadius: 99, bgcolor: 'rgba(255,255,255,0.18)', overflow: 'hidden' }}>
+            <Box sx={{ width: `${Math.max(progress, 4)}%`, height: '100%', borderRadius: 99, background: AMBER_BAR, transition: 'width .6s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
           </Box>
-        ))}
-      </Box>
+        </Box>
 
-      <Box sx={(t) => ({ mt: 2, pt: 1.5, borderTop: `1px solid ${t.palette.divider}`, display: 'flex', justifyContent: 'space-between', gap: 1 })}>
-        <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>{row.recent} solved in the last 7 days</Typography>
-        <Typography variant="caption" sx={{ fontWeight: 700, color: st.color }}>{st.text}</Typography>
+        {mode === 'full' && (
+          <Box sx={{ display: 'grid', gap: 0.9 }}>
+            {lines.map(([l, n, pts, color]) => (
+              <Box key={l} sx={{ display: 'grid', gridTemplateColumns: '10px 1fr auto 64px', alignItems: 'center', columnGap: 1 }}>
+                <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: color }} />
+                <Typography variant="body2" sx={{ fontWeight: 600 }}>{l}</Typography>
+                <Typography sx={[{ fontWeight: 800, fontSize: 14 }, mono]}>{n}</Typography>
+                <Typography variant="caption" sx={[{ textAlign: 'right', color: SOFT }, mono]}>{(n * pts).toLocaleString()} pts</Typography>
+              </Box>
+            ))}
+          </Box>
+        )}
+        {mode === 'medium' && (
+          <Box>
+            <Mix row={row} onDark />
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 0.9 }}>
+              {lines.map(([l, n, , color]) => (
+                <Tooltip key={l} title={l}>
+                  <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}>
+                    <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: color }} />
+                    <Typography sx={[{ fontWeight: 800, fontSize: 13 }, mono]}>{n}</Typography>
+                  </Box>
+                </Tooltip>
+              ))}
+            </Box>
+          </Box>
+        )}
+
+        {mode === 'full' && (
+          <Box sx={{ pt: 1.25, borderTop: '1px solid rgba(255,255,255,0.18)', display: 'flex', justifyContent: 'space-between', gap: 1 }}>
+            <Typography noWrap variant="caption" sx={{ fontWeight: 700, color: SOFT }}>{row.recent} solved in 7 days</Typography>
+            <Typography noWrap variant="caption" sx={{ fontWeight: 800, color: stColor }}>{st.text}</Typography>
+          </Box>
+        )}
       </Box>
     </Box>
   );
 }
 
-// "12 pts to catch Asha" — only for the logged-in player.
-function NextTarget({ me, neighbors, points }) {
+// "12 pts to catch Asha": only for the logged-in player.
+function NextTarget({ me, neighbors, points, mode }) {
   const { above, below } = neighbors;
   const solves = above ? Math.ceil(above.gap / points.medium) : 0;
+  const head = above ? `${above.gap.toLocaleString()} pts to catch ${above.name}` : me.rank === 1 ? 'You lead this board' : 'Keep solving';
+  const sub = above ? `They are #${above.rank}. About ${solves} Medium ${solves === 1 ? 'question' : 'questions'}.` : 'Solve more to stay ahead.';
   return (
-    <Box sx={card}>
-      <Typography sx={cardTitle}>Next target</Typography>
-      {above ? (
-        <Box sx={{ mt: 1 }}>
-          <Typography sx={{ fontWeight: 700 }}>
-            <Box component="span" sx={mono}>{above.gap.toLocaleString()} pts</Box> to catch {above.name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            They are #{above.rank}. That is about {solves} Medium {solves === 1 ? 'question' : 'questions'}.
-          </Typography>
+    <Box sx={{ position: 'relative', overflow: 'hidden', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 1.5, p: mode === 'tiny' ? 1.5 : 2, borderRadius: '16px', color: '#fff', background: themeGrad('ocean'), boxShadow: SHADOW }}>
+      {blobs}
+      <Box sx={{ position: 'relative', width: 40, height: 40, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: GLASS }}>
+        {above ? <TrendingUpRoundedIcon /> : <EmojiEventsRoundedIcon sx={{ color: PLAN_AMBER }} />}
+      </Box>
+      <Box sx={{ position: 'relative', minWidth: 0, flex: 1 }}>
+        <Typography noWrap title={head} sx={{ fontWeight: 800, fontSize: '0.9rem', lineHeight: 1.3 }}>{head}</Typography>
+        {mode !== 'tiny' && <Typography noWrap title={sub} sx={{ fontSize: '0.78rem', color: SOFT }}>{sub}</Typography>}
+        {mode === 'full' && below && (
+          <Typography noWrap sx={{ fontSize: '0.78rem', color: SOFT }}>{below.gap.toLocaleString()} pts ahead of {below.name}</Typography>
+        )}
+      </Box>
+    </Box>
+  );
+}
+
+function NoteCard({ grad, Icon, title, text, action, mode }) {
+  return (
+    <Box sx={{ position: 'relative', overflow: 'hidden', flexShrink: 0, p: mode === 'tiny' ? 1.5 : 2, borderRadius: '16px', color: '#fff', background: grad, boxShadow: SHADOW }}>
+      {blobs}
+      <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.5 }}>
+        <Box sx={{ width: 40, height: 40, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: GLASS }}><Icon /></Box>
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.9rem' }}>{title}</Typography>
+          {mode !== 'tiny' && <Typography sx={[{ fontSize: '0.78rem', color: SOFT }, clamp2]}>{text}</Typography>}
         </Box>
-      ) : me.rank === 1 ? (
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>You lead this board. Keep solving to stay ahead.</Typography>
-      ) : null}
-      {below && (
-        <Typography variant="body2" color="text.secondary" sx={{ mt: above ? 1.25 : 1 }}>
-          You are {below.gap.toLocaleString()} pts ahead of {below.name} (#{below.rank}).
+      </Box>
+      {action && <Box sx={{ position: 'relative', mt: 1.25 }}>{action}</Box>}
+    </Box>
+  );
+}
+
+// Six tier icons in a row, the current one lit. Hover for the points needed.
+function TiersCard({ currentKey, points, mode }) {
+  return (
+    <Box sx={[surface, { p: 1.5, flexShrink: 0 }]}>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        {TIERS.map((t) => {
+          const on = t.key === currentKey;
+          return (
+            <Tooltip key={t.key} title={`${t.name}, ${t.min.toLocaleString()}+ pts`}>
+              <Box
+                role="img" aria-label={`${t.name} tier, ${t.min} points`} tabIndex={0}
+                sx={{ width: 36, height: 36, borderRadius: '50%', display: 'grid', placeItems: 'center', color: on ? '#fff' : t.color, background: on ? `linear-gradient(135deg, ${t.color}, color-mix(in srgb, ${t.color} 55%, #000))` : `color-mix(in srgb, ${t.color} 14%, transparent)`, boxShadow: on ? `0 6px 14px -4px ${t.color}` : 'none' }}
+              >
+                <WorkspacePremiumRoundedIcon sx={{ fontSize: 20 }} />
+              </Box>
+            </Tooltip>
+          );
+        })}
+      </Box>
+      {mode === 'full' && (
+        <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', mt: 1, textAlign: 'center' }}>
+          Easy {points.easy}, Medium {points.medium}, Hard {points.hard}, Aptitude {points.aptitude} pts each
         </Typography>
       )}
     </Box>
   );
 }
 
-function TiersCard({ currentKey, points }) {
-  return (
-    <Box sx={card}>
-      <Typography sx={cardTitle}>Tiers</Typography>
-      <Box sx={{ mt: 1, display: 'grid', gap: 0.25 }}>
-        {[...TIERS].reverse().map((t) => {
-          const on = t.key === currentKey;
-          return (
-            <Box key={t.key} sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 1, py: 0.6, borderRadius: '10px', bgcolor: on ? `color-mix(in srgb, ${t.color} 15%, transparent)` : 'transparent' }}>
-              <WorkspacePremiumRoundedIcon sx={{ fontSize: 18, color: t.color }} />
-              <Typography variant="body2" sx={{ flex: 1, fontWeight: on ? 800 : 600 }}>{t.name}</Typography>
-              <Typography variant="caption" color="text.secondary" sx={mono}>{t.min.toLocaleString()}+ pts</Typography>
-            </Box>
-          );
-        })}
-      </Box>
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.25 }}>
-        Easy {points.easy}, Medium {points.medium}, Hard {points.hard}, Aptitude {points.aptitude} points. Each question counts once.
-      </Typography>
-    </Box>
-  );
-}
-
 function DesktopBoard({ v }) {
   const {
-    showPanel, rich, isAuthenticated, meta, rows, podium, listRows, loading, firstLoad, error, q, search, setSearch,
+    showPanel, rich, tight, iconOnly, panelMode, isAuthenticated, meta, rows, podium, pageRows, loading, firstLoad, error, q, search, setSearch,
     track, period, scope, pick, setTrack, setPeriod, setScope, reload, me, selectedId, selectedRow, select,
-    scroller, sentinel, hasMore, scrollToMe, showEveryone,
+    setRowsEl, curPage, pages, rpp, base, totalRows, setDeskPage, goMine, showEveryone,
   } = v;
+  const [detail, setDetail] = useState(null); // narrow windows: row details open in a popover
+  const [friendsEl, setFriendsEl] = useState(null);
   const points = meta?.points || PT;
   const stats = meta?.stats;
   const tpl = rich ? RICH : COMPACT;
   const head = rich ? ['Rank', 'Player', 'Streak', 'Easy', 'Med', 'Hard', 'Apt', 'Week', 'Score'] : ['Rank', 'Player', 'Streak', 'Solved', 'Week', 'Score'];
   const headColor = { Easy: DIFF_COLOR.Easy, Med: DIFF_COLOR.Medium, Hard: DIFF_COLOR.Hard, Apt: APT_COLOR };
-  const openPodium = !showPanel ? podium.find((r) => r.userId === selectedId) : null;
-  const meVisible = me && listRows.some((r) => r.userId === me.userId);
+  const pickRow = (e, row) => (showPanel ? select(row.userId) : setDetail({ el: e.currentTarget, row }));
   const selectedTier = selectedRow ? tierFor(selectedRow.score).tier.key : null;
+  const from = base + (curPage - 1) * rpp + 1;
+  const to = base + (curPage - 1) * rpp + pageRows.length;
+  const expected = meta ? Math.min(rpp, Math.max(0, totalRows - (curPage - 1) * rpp)) : rpp;
+  const skeletons = loading ? Math.max(0, expected - pageRows.length) : 0;
+  const stripH = tight ? 62 : 118;
 
   return (
     <Box sx={{ height: '100%', minHeight: 0, display: 'grid', gridTemplateRows: 'minmax(0, 1fr)', gridTemplateColumns: showPanel ? `minmax(0,1fr) ${PANEL_W}px` : 'minmax(0,1fr)', columnGap: `${GAP}px` }}>
       <Box sx={[surface, { display: 'flex', flexDirection: 'column', minHeight: 0, minWidth: 0, overflow: 'hidden' }]}>
-        {/* Title, search, filters */}
-        <Box sx={{ flexShrink: 0, px: 2.5, pt: 2.25 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+        {/* Banner: same family as the Study Plan card */}
+        <Box sx={{ position: 'relative', flexShrink: 0, overflow: 'hidden', color: '#fff', background: themeGrad('indigo'), boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18)', px: 2.5, py: tight ? 1.5 : 2 }}>
+          {blobs}
+          <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.5 }}>
+            <Box sx={{ width: tight ? 38 : 46, height: tight ? 38 : 46, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', color: '#451A03', background: grad(MEDAL[1]), boxShadow: `0 6px 16px -4px ${MEDAL[1].glow}` }}>
+              <EmojiEventsRoundedIcon sx={{ fontSize: tight ? 22 : 26 }} />
+            </Box>
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.5rem', lineHeight: 1.2, letterSpacing: '-0.02em' }}>Leaderboard</Typography>
-              {meta ? (
-                <Typography variant="body2" color="text.secondary" noWrap>
-                  {meta.totalUsers.toLocaleString()} players, {(stats?.solved ?? 0).toLocaleString()} questions solved. Updated {timeAgo(meta.updatedAt)}.
+              <Typography component="h2" noWrap sx={{ fontWeight: 900, fontSize: tight ? '1.25rem' : '1.5rem', lineHeight: 1.15, letterSpacing: '-0.02em' }}>Leaderboard</Typography>
+              {!tight && (meta ? (
+                <Typography noWrap sx={{ fontSize: '0.8rem', fontWeight: 600, color: SOFT }}>
+                  {meta.totalUsers.toLocaleString()} players, {(stats?.solved ?? 0).toLocaleString()} solved{iconOnly ? '' : `. Updated ${timeAgo(meta.updatedAt)}`}
                 </Typography>
-              ) : <Skeleton width={280} />}
+              ) : <Skeleton width={200} sx={{ bgcolor: 'rgba(255,255,255,0.2)' }} />)}
             </Box>
             <TextField
-              size="small" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search name or @handle"
-              sx={{ width: 270, '& .MuiOutlinedInput-root': { borderRadius: 999 } }}
+              size="small" value={search} onChange={(e) => setSearch(e.target.value)} placeholder={iconOnly ? 'Search' : 'Search name or @handle'}
+              sx={{
+                width: iconOnly ? 170 : 250, flexShrink: 0,
+                '& .MuiOutlinedInput-root': { borderRadius: 999, color: '#fff', bgcolor: GLASS, height: 38, '& fieldset': { border: 'none' }, '&.Mui-focused': { bgcolor: 'rgba(255,255,255,0.22)' } },
+                '& input::placeholder': { color: 'rgba(255,255,255,0.75)', opacity: 1 },
+              }}
               slotProps={{
                 input: {
-                  startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment>,
-                  endAdornment: search ? <InputAdornment position="end"><IconButton size="small" edge="end" aria-label="Clear search" onClick={() => setSearch('')}><CloseRoundedIcon fontSize="small" /></IconButton></InputAdornment> : null,
+                  startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" sx={{ color: '#fff' }} /></InputAdornment>,
+                  endAdornment: search ? <InputAdornment position="end"><IconButton size="small" edge="end" aria-label="Clear search" onClick={() => setSearch('')} sx={{ color: '#fff' }}><CloseRoundedIcon fontSize="small" /></IconButton></InputAdornment> : null,
                 },
                 htmlInput: { 'aria-label': 'Search players' },
               }}
             />
-            {meVisible && <Tooltip title="Find me in the list"><IconButton onClick={scrollToMe} aria-label="Scroll to my row"><MyLocationRoundedIcon fontSize="small" /></IconButton></Tooltip>}
-            <Tooltip title="Refresh"><IconButton onClick={reload} aria-label="Refresh leaderboard"><RefreshRoundedIcon fontSize="small" /></IconButton></Tooltip>
+            <Tooltip title="Friends"><IconButton onClick={(e) => setFriendsEl(e.currentTarget)} aria-label="Friends" disabled={!isAuthenticated} sx={[glassBtn, { '&.Mui-disabled': { color: 'rgba(255,255,255,0.4)' } }]}><PeopleAltRoundedIcon fontSize="small" /></IconButton></Tooltip>
+            <Tooltip title="Refresh"><IconButton onClick={reload} aria-label="Refresh leaderboard" sx={glassBtn}><RefreshRoundedIcon fontSize="small" /></IconButton></Tooltip>
           </Box>
 
-          <Box sx={(t) => ({ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, mt: 1, borderBottom: `1px solid ${t.palette.divider}` })}>
-            <Tabs value={track} onChange={pick(setTrack)} aria-label="Leaderboard track" sx={{ minHeight: 44, '& .MuiTab-root': { minHeight: 44, minWidth: 0, px: 1.75, textTransform: 'none', fontWeight: 700, fontSize: 14 } }}>
-              {TRACKS.map(([val, label, Icon]) => <Tab key={val} value={val} label={label} icon={<Icon sx={{ fontSize: 18 }} />} iconPosition="start" />)}
-            </Tabs>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, pb: 0.75 }}>
-              {[[period, setPeriod, PERIODS, 'Period'], [scope, setScope, [['global', 'Everyone'], ['friends', 'Friends']], 'Show']].map(([value, setter, opts, label]) => (
-                <ToggleButtonGroup key={label} size="small" exclusive value={value} onChange={pick(setter)} aria-label={label}
-                  sx={{ '& .MuiToggleButton-root': { textTransform: 'none', fontWeight: 700, fontSize: 13, px: 1.5, py: 0.45 } }}>
-                  {opts.map(([val, l]) => <ToggleButton key={val} value={val} disabled={val === 'friends' && !isAuthenticated}>{l}</ToggleButton>)}
-                </ToggleButtonGroup>
-              ))}
+          <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, mt: tight ? 1.1 : 1.5 }}>
+            <Box role="tablist" aria-label="Leaderboard track" sx={{ display: 'flex', gap: 0.9, minWidth: 0 }}>
+              {TRACKS.map(([val, text, Icon]) => {
+                const on = track === val;
+                return (
+                  <Tooltip key={val} title={text}>
+                    <ButtonBase
+                      role="tab" aria-selected={on} aria-label={text} onClick={() => { if (!on) pick(setTrack)(null, val); }}
+                      sx={{ flexShrink: 0, gap: 0.6, px: iconOnly ? 1.25 : 1.6, height: 34, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, transition: 'transform .15s, background-color .2s', color: on ? '#1B1200' : '#fff', bgcolor: on ? undefined : GLASS, background: on ? AMBER_BAR : undefined, boxShadow: on ? '0 6px 16px -6px rgba(251,191,36,0.9)' : 'none', '&:active': { transform: 'scale(0.95)' } }}
+                    >
+                      <Icon sx={{ fontSize: 17 }} />{!iconOnly && text}
+                    </ButtonBase>
+                  </Tooltip>
+                );
+              })}
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexShrink: 0 }}>
+              <Seg
+                label="Period" value={period} iconOnly={iconOnly} onChange={(val) => pick(setPeriod)(null, val)}
+                options={[{ v: 'all', text: 'All time', short: 'All' }, { v: 'week', text: 'This week', short: 'Wk' }, { v: 'month', text: 'This month', short: 'Mo' }]}
+              />
+              <Seg
+                label="Show" value={scope} iconOnly={iconOnly} onChange={(val) => pick(setScope)(null, val)}
+                options={[{ v: 'global', text: 'Everyone', Icon: PublicRoundedIcon }, { v: 'friends', text: 'Friends', Icon: PeopleAltRoundedIcon, disabled: !isAuthenticated }]}
+              />
             </Box>
           </Box>
         </Box>
@@ -734,91 +887,120 @@ function DesktopBoard({ v }) {
           <Alert severity="error" sx={{ mx: 2.5, mt: 1.5, flexShrink: 0 }} action={<Button color="inherit" size="small" onClick={reload}>Retry</Button>}>{error}</Alert>
         )}
 
-        {/* The list: the only thing here that scrolls */}
-        <Box ref={scroller} sx={{ flex: 1, minHeight: 0, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', ...SCROLL }}>
-          {firstLoad && <DeskSkeleton />}
-          {!firstLoad && podium.length > 0 && (
-            <Box sx={{ px: 2.5, pt: 2, pb: 1.5 }}>
-              <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${podium.length}, minmax(0, 1fr))`, gap: 1.5 }}>
-                {podium.map((r) => <TopCard key={r.userId} row={r} isMe={me?.userId === r.userId} selected={selectedId === r.userId} onPick={select} />)}
-              </Box>
-              <Collapse in={Boolean(openPodium)} timeout={200} unmountOnExit>
-                {openPodium && <Box sx={(t) => ({ mt: 1.5, borderRadius: '12px', overflow: 'hidden', border: `1px solid ${t.palette.divider}` })}><RowDetail row={openPodium} /></Box>}
-              </Collapse>
+        {/* Top three */}
+        {(firstLoad || podium.length > 0) && (
+          <Box sx={{ flexShrink: 0, px: 2.5, pt: tight ? 1.5 : 2, pb: tight ? 1 : 1.5 }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${firstLoad ? 3 : podium.length}, minmax(0, 1fr))`, gap: 1.5 }}>
+              {firstLoad
+                ? [0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={stripH} sx={{ borderRadius: '16px' }} />)
+                : podium.map((r) => <TopCard key={r.userId} row={r} compact={tight} isMe={me?.userId === r.userId} selected={selectedId === r.userId} onPick={pickRow} />)}
             </Box>
-          )}
-          {!firstLoad && listRows.length > 0 && (
-            <Box
-              role="row"
-              sx={(t) => ({
-                position: 'sticky', top: 0, zIndex: 2, display: 'grid', gridTemplateColumns: tpl, columnGap: 1, px: 2.5, py: 1,
-                bgcolor: t.palette.background.paper, borderTop: `1px solid ${t.palette.divider}`, borderBottom: `1px solid ${t.palette.divider}`,
-              })}
-            >
-              {head.map((h, i) => (
-                <Typography key={h} component="div" title={h === 'Week' ? 'Questions solved in the last 7 days' : undefined}
-                  sx={{ fontSize: 12, fontWeight: 700, textAlign: i < 2 ? 'left' : 'right', color: headColor[h] || 'text.secondary' }}>{h}</Typography>
-              ))}
-            </Box>
-          )}
-          {listRows.map((r) => (
-            <Box key={r.userId}>
-              <DeskRow row={r} tpl={tpl} rich={rich} isMe={me?.userId === r.userId} selected={selectedId === r.userId} onSelect={() => select(r.userId)} />
-              {!showPanel && (
-                <Collapse in={selectedId === r.userId} timeout={200} unmountOnExit>
-                  <RowDetail row={r} />
-                </Collapse>
-              )}
-            </Box>
+          </Box>
+        )}
+
+        {/* Column titles, then exactly as many rows as fit */}
+        <Box
+          role="row"
+          sx={(t) => ({ flexShrink: 0, display: 'grid', gridTemplateColumns: tpl, columnGap: 1, px: 2.5, py: 0.9, borderTop: `1px solid ${t.palette.divider}`, borderBottom: `1px solid ${t.palette.divider}`, bgcolor: alpha(t.palette.primary.main, 0.05) })}
+        >
+          {head.map((h, i) => (
+            <Typography key={h} component="div" title={h === 'Week' ? 'Questions solved in the last 7 days' : undefined}
+              sx={{ fontSize: 12, fontWeight: 800, textAlign: i < 2 ? 'left' : 'right', color: headColor[h] || 'text.secondary' }}>{h}</Typography>
           ))}
+        </Box>
+
+        <Box ref={setRowsEl} sx={{ flex: 1, minHeight: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gridTemplateRows: `repeat(${rpp}, minmax(0, 1fr))` }}>
+          {pageRows.map((r) => (
+            <DeskRow
+              key={r.userId} row={r} tpl={tpl} rich={rich} dense={tight} isMe={me?.userId === r.userId}
+              selected={selectedId === r.userId} onSelect={(e) => pickRow(e, r)}
+            />
+          ))}
+          {Array.from({ length: skeletons }, (_, i) => <SkelRow key={`s${i}`} i={i} />)}
           {!loading && rows.length === 0 && !error && (
-            <Box sx={{ py: 7, px: 3, textAlign: 'center', color: 'text.secondary' }}>
-              <EmojiEventsRoundedIcon sx={{ fontSize: 44, opacity: 0.35 }} />
-              <Typography color="text.secondary" sx={{ mt: 0.5, fontWeight: 600 }}>
-                {q ? `No player matches "${q}".` : scope === 'friends' ? 'No friends on this board yet. Add friends from the Friends tab.' : 'No one has scored in this period yet. Be the first.'}
-              </Typography>
-              <Box sx={{ mt: 1.5, display: 'flex', justifyContent: 'center', gap: 1 }}>
-                {q && <Button size="small" variant="outlined" onClick={() => setSearch('')}>Clear search</Button>}
-                {!q && scope === 'friends' && <Button size="small" variant="outlined" onClick={showEveryone}>Show everyone</Button>}
-                {!q && period !== 'all' && <Button size="small" variant="outlined" onClick={() => pick(setPeriod)(null, 'all')}>Show all time</Button>}
+            <Box sx={{ gridRow: '1 / -1', display: 'grid', placeItems: 'center', px: 3, textAlign: 'center', color: 'text.secondary' }}>
+              <Box>
+                <EmojiEventsRoundedIcon sx={{ fontSize: 40, opacity: 0.35 }} />
+                <Typography color="text.secondary" sx={{ mt: 0.5, fontWeight: 600 }}>
+                  {q ? `No player matches "${q}".` : scope === 'friends' ? 'No friends on this board yet.' : 'No one has scored in this period yet.'}
+                </Typography>
+                <Box sx={{ mt: 1.25, display: 'flex', justifyContent: 'center', gap: 1 }}>
+                  {q && <Button size="small" variant="outlined" onClick={() => setSearch('')}>Clear search</Button>}
+                  {!q && scope === 'friends' && <Button size="small" variant="outlined" onClick={showEveryone}>Show everyone</Button>}
+                  {!q && period !== 'all' && <Button size="small" variant="outlined" onClick={() => pick(setPeriod)(null, 'all')}>Show all time</Button>}
+                </Box>
               </Box>
             </Box>
           )}
-          {hasMore && <Box ref={sentinel} sx={{ height: 1 }} />}
-          {loading && rows.length > 0 && <DeskSkeleton count={3} />}
         </Box>
 
         {/* My own position stays pinned under the list */}
         {me && (
-          <Box sx={(t) => ({ flexShrink: 0, borderTop: `1px solid ${t.palette.divider}`, bgcolor: alpha(t.palette.primary.main, 0.05) })}>
-            <DeskRow row={me} tpl={tpl} rich={rich} isMe pinned selected={false} onSelect={() => select(me.userId, true)} />
+          <Box sx={(t) => ({ flexShrink: 0, borderTop: `1px solid ${t.palette.divider}`, bgcolor: alpha(PLAN_AMBER, 0.08) })}>
+            <DeskRow row={me} tpl={tpl} rich={rich} dense={tight} isMe pinned selected={false} onSelect={() => select(me.userId, true)} />
           </Box>
         )}
-        {isAuthenticated && meta && !meta.me && !loading && (
-          <Typography variant="body2" color="text.secondary" sx={(t) => ({ flexShrink: 0, px: 2.5, py: 1.25, fontWeight: 600, borderTop: `1px solid ${t.palette.divider}` })}>
-            Solve a question{period === 'all' ? '' : ' in this period'} to enter the leaderboard.
+        {!showPanel && isAuthenticated && meta && !meta.me && !loading && (
+          <Typography variant="body2" color="text.secondary" noWrap sx={(t) => ({ flexShrink: 0, px: 2.5, py: 1, fontWeight: 600, borderTop: `1px solid ${t.palette.divider}` })}>
+            Solve a question to enter the leaderboard.
           </Typography>
         )}
+
+        {/* Pager: icons only */}
+        <Box sx={(t) => ({ flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: 2, height: 42, borderTop: `1px solid ${t.palette.divider}` })}>
+          <Typography variant="caption" color="text.secondary" noWrap sx={[{ width: 110, fontWeight: 600 }, mono]}>
+            {pageRows.length ? `${from}-${to} of ${base + totalRows}` : ''}
+          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
+            <IconButton size="small" disabled={curPage <= 1} onClick={() => setDeskPage(1)} aria-label="First page"><FirstPageRoundedIcon fontSize="small" /></IconButton>
+            <IconButton size="small" disabled={curPage <= 1} onClick={() => setDeskPage(curPage - 1)} aria-label="Previous page"><ChevronLeftRoundedIcon /></IconButton>
+            <Typography sx={[{ minWidth: 64, textAlign: 'center', fontWeight: 800, fontSize: 13 }, mono]}>{curPage} / {pages}</Typography>
+            <IconButton size="small" disabled={curPage >= pages} onClick={() => setDeskPage(curPage + 1)} aria-label="Next page"><ChevronRightRoundedIcon /></IconButton>
+            <IconButton size="small" disabled={curPage >= pages} onClick={() => setDeskPage(pages)} aria-label="Last page"><LastPageRoundedIcon fontSize="small" /></IconButton>
+          </Box>
+          <Box sx={{ width: 110, display: 'flex', justifyContent: 'flex-end' }}>
+            {me && me.rank > podium.length && (
+              <Tooltip title="Go to my rank"><IconButton size="small" onClick={goMine} aria-label="Go to my rank" sx={{ color: 'primary.main' }}><MyLocationRoundedIcon fontSize="small" /></IconButton></Tooltip>
+            )}
+          </Box>
+        </Box>
       </Box>
 
       {showPanel && (
-        <Box className="autohide-scroll" sx={{ minHeight: 0, overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'column', gap: 2, pb: 0.5 }}>
+        <Box sx={{ minHeight: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
           {!isAuthenticated && (
-            <Box sx={card}>
-              <Typography sx={cardTitle}>See where you stand</Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 1.5 }}>Log in to get your rank, follow friends and track your tier.</Typography>
-              <Button component={RouterLink} to="/login" variant="contained" disableElevation sx={{ fontWeight: 700 }}>Log in</Button>
-            </Box>
+            <NoteCard
+              mode={panelMode} grad={themeGrad('ocean')} Icon={EmojiEventsRoundedIcon} title="See where you stand" text="Log in to get your rank and follow friends."
+              action={<Button component={RouterLink} to="/login" fullWidth startIcon={<BoltRoundedIcon />} disableElevation sx={{ height: 40, borderRadius: '14px', bgcolor: PLAN_AMBER, color: '#1B1200', fontWeight: 800, '&:hover': { bgcolor: '#F5B50F' } }}>Log in</Button>}
+            />
           )}
           <Spotlight
-            row={selectedRow} isMe={Boolean(me && selectedRow && selectedRow.userId === me.userId)} points={points}
+            mode={panelMode} row={selectedRow} isMe={Boolean(me && selectedRow && selectedRow.userId === me.userId)} points={points}
             learners={stats?.learners || 0} topPercent={stats?.topPercent} loading={firstLoad}
           />
-          {me && meta?.neighbors && <NextTarget me={me} neighbors={meta.neighbors} points={points} />}
-          <FriendsCard enabled={isAuthenticated} defaultOpen />
-          <TiersCard currentKey={selectedTier} points={points} />
+          {me && meta?.neighbors
+            ? <NextTarget me={me} neighbors={meta.neighbors} points={points} mode={panelMode} />
+            : isAuthenticated && meta && !meta.me && !loading && (
+              <NoteCard mode={panelMode} grad={themeGrad('ember')} Icon={BoltRoundedIcon} title="Not ranked yet" text={`Solve a question${period === 'all' ? '' : ' in this period'} to enter the leaderboard.`} />
+            )}
+          {panelMode !== 'tiny' && <TiersCard currentKey={selectedTier} points={points} mode={panelMode} />}
         </Box>
       )}
+
+      <Popover
+        anchorEl={detail?.el} open={Boolean(detail)} onClose={() => setDetail(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }} transformOrigin={{ vertical: 'top', horizontal: 'center' }}
+        slotProps={{ paper: { sx: { width: 380, maxWidth: 'calc(100vw - 24px)', borderRadius: '14px', overflow: 'hidden', mt: 0.5 } } }}
+      >
+        {detail && <RowDetail row={detail.row} />}
+      </Popover>
+      <Popover
+        anchorEl={friendsEl} open={Boolean(friendsEl)} onClose={() => setFriendsEl(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        slotProps={{ paper: { sx: { width: 340, maxWidth: 'calc(100vw - 24px)', bgcolor: 'transparent', boxShadow: 'none', backgroundImage: 'none', mt: 0.5 } } }}
+      >
+        <FriendsCard enabled={isAuthenticated} defaultOpen />
+      </Popover>
     </Box>
   );
 }
@@ -841,11 +1023,21 @@ export default function LeaderboardView({ isAuthenticated }) {
   const [open, setOpen] = useState(null);
   const [selectedId, setSelectedId] = useState(null); // desktop: which player the side panel shows
   const [reloadKey, setReloadKey] = useState(0);
-  const wrapRef = useRef(null);
-  const width = useWidth(wrapRef, typeof window !== 'undefined' && window.innerWidth >= 1200 ? 1000 : 400);
+  const [wrapEl, setWrapEl] = useState(null);
+  const [rowsEl, setRowsEl] = useState(null);
+  const [deskPage, setDeskPage] = useState(1); // desktop pager (client-side, over the rows loaded so far)
+  const [loadedPage, setLoadedPage] = useState(0);
+  const size = useElSize(wrapEl, { w: typeof window !== 'undefined' && window.innerWidth >= 1200 ? 1000 : 400, h: 700 });
+  const rowsSize = useElSize(rowsEl);
+  const width = size.w;
   const wide = width >= DESKTOP_MIN;
   const showPanel = width >= PANEL_MIN;
   const rich = width - (showPanel ? PANEL_W + GAP : 0) >= 760;
+  const iconOnly = width - (showPanel ? PANEL_W + GAP : 0) < 700; // labels become icons when the board is narrow
+  const tight = size.h < 760; // short window: slimmer banner, top-3 and rows
+  const panelMode = size.h >= 780 ? 'full' : size.h >= 600 ? 'medium' : 'tiny';
+  const rowH = tight ? 46 : 58;
+  const rpp = rowsSize.h > 0 ? Math.min(40, Math.max(3, Math.floor(rowsSize.h / rowH))) : 8; // rows that fit, no scrolling
   const q = useDebounced(search);
   const scroller = useRef(null);
   const sentinel = useRef(null);
@@ -854,7 +1046,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   const hasMore = meta ? rows.length < meta.total : false;
   const firstLoad = loading && rows.length === 0;
 
-  useEffect(() => { setPage(1); }, [q, friendsVersion]);
+  useEffect(() => { setPage(1); setDeskPage(1); }, [q, friendsVersion]);
 
   useEffect(() => {
     const id = ++reqId.current;
@@ -865,6 +1057,7 @@ export default function LeaderboardView({ isAuthenticated }) {
         if (id !== reqId.current) return;
         setRows((prev) => (page === 1 ? res.data.rows : [...prev, ...res.data.rows.filter((r) => !prev.some((p) => p.userId === r.userId))]));
         setMeta(res.data);
+        setLoadedPage(page);
         setError('');
       })
       .catch((err) => { if (id === reqId.current) setError(extractErrorMessage(err)); })
@@ -885,13 +1078,13 @@ export default function LeaderboardView({ isAuthenticated }) {
     setRows([]);
     setMeta((m) => (m ? { ...m, total: 0 } : m));
     setOpen(null);
+    setDeskPage(1);
     scroller.current?.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
   }, [reduce]);
 
   const pick = (setter) => (_, v) => { if (v) { setter(v); reset(); } };
   const reload = () => { setPage(1); setReloadKey((k) => k + 1); };
   const select = useCallback((id, force = false) => setSelectedId((cur) => (!force && cur === id ? null : id)), []);
-  const scrollToMe = () => document.getElementById('lb-me')?.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
   const showEveryone = () => { setScope('global'); reset(); };
   const me = isAuthenticated ? meta?.me : null;
   const filtersOn = period !== 'all' || track !== 'overall' || scope !== 'global';
@@ -900,6 +1093,26 @@ export default function LeaderboardView({ isAuthenticated }) {
   // Top 3 get a podium (only players who scored, and not while searching).
   const podium = q ? [] : rows.slice(0, 3).filter((r) => r.score > 0);
   const listRows = rows.slice(podium.length);
+  const base = podium.length;
+  const total = meta?.total ?? 0;
+  const totalRows = Math.max(0, total - base);
+  const pages = Math.max(1, Math.ceil(totalRows / rpp));
+  const curPage = Math.min(deskPage, pages);
+  const pageRows = listRows.slice((curPage - 1) * rpp, curPage * rpp);
+  const needRows = Math.min(total, base + curPage * rpp);
+
+  // Desktop pager: fetch the next server page whenever the page being shown needs rows we don't have yet.
+  useEffect(() => {
+    if (!wide || loading || !meta) return;
+    if (loadedPage === page && rows.length < needRows && page < Math.ceil(total / LIMIT)) setPage((p) => p + 1);
+  }, [wide, loading, meta, loadedPage, page, rows.length, needRows, total]);
+
+  const goMine = () => {
+    if (!me) return;
+    const idx = rows.findIndex((r) => r.userId === me.userId);
+    const pos = idx >= 0 ? idx : me.rank - 1;
+    setDeskPage(Math.max(1, Math.floor((pos - base) / rpp) + 1));
+  };
   const openPodium = podium.find((r) => r.userId === open);
   const selectedRow = (selectedId && (rows.find((r) => r.userId === selectedId) || (me?.userId === selectedId ? me : null))) || me || podium[0] || rows[0] || null;
   const periodLabel = PERIODS.find(([v]) => v === period)?.[1];
@@ -1019,13 +1232,13 @@ export default function LeaderboardView({ isAuthenticated }) {
   );
 
   const desktopView = {
-    showPanel, rich, isAuthenticated, meta, rows, podium, listRows, loading, firstLoad, error, q, search, setSearch,
+    showPanel, rich, tight, iconOnly, panelMode, isAuthenticated, meta, rows, podium, pageRows, loading, firstLoad, error, q, search, setSearch,
     track, period, scope, pick, setTrack, setPeriod, setScope, reload, me, selectedId, selectedRow, select,
-    scroller, sentinel, hasMore, scrollToMe, showEveryone,
+    setRowsEl, curPage, pages, rpp, base, totalRows, setDeskPage, goMine, showEveryone,
   };
 
   return (
-    <Box ref={wrapRef} sx={{ height: { xs: 'calc(100dvh - 150px)', lg: '100%' }, minHeight: 420 }}>
+    <Box ref={setWrapEl} sx={{ height: { xs: 'calc(100dvh - 150px)', lg: '100%' }, minHeight: { xs: 420, lg: 0 } }}>
       {wide ? <DesktopBoard v={desktopView} /> : mobile}
     </Box>
   );
