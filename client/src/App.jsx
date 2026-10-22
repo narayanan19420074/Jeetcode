@@ -49,7 +49,6 @@ const SettingsPage = lazy(() => import('./features/settings/SettingsPage'));
 const LearnTopicPage = lazy(() => import('./features/learn/LearnTopicPage'));
 // REMOVED: PracticePage (Learn's own leveled practice bank) — Practice
 // now lives on the Aptitude module (AptitudePracticePage) instead.
-const ContestPage = lazy(() => import('./features/contest/ContestPage'));
 const YouPage = lazy(() => import('./features/profile/YouPage'));
 const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage'));
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
@@ -171,7 +170,8 @@ export default function App() {
         />
         {/* Old results URL carried no attempt id (lost on refresh) — send to the hub. */}
         <Route path="/aptitude/:slug/results" element={<Navigate to=".." relative="path" replace />} />
-        <Route path="/contest" element={<Suspense fallback={<RouteFallback />}><ContestPage /></Suspense>} />
+        {/* Contest now lives inside the dashboard so the sidebar stays visible. */}
+        <Route path="/contest" element={<Navigate to="/dashboard?view=contest" replace />} />
         <Route path="/pricing" element={<Suspense fallback={<RouteFallback />}><PricingPage /></Suspense>} />
         <Route path="/settings/*" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><SettingsPage /></Suspense></ProtectedRoute>} />
         {/* REMOVED: <Route path="/learn" .../> (LearnHomePage) */}

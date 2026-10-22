@@ -77,10 +77,10 @@ const EXPLORE_LINKS = [
 const isActivePath = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
 // Phone menu = the dashboard sections (same list as the desktop dashboard sidebar).
-// Contest is its own page (/contest); the rest are views inside /dashboard.
+// Every section is a view inside /dashboard.
 const DASH_SECTIONS = [
   { to: '/dashboard', label: 'Library', icon: LibraryBooksRoundedIcon, view: null },
-  { to: '/contest', label: 'Contest', icon: MilitaryTechRoundedIcon, view: undefined },
+  { to: '/dashboard?view=contest', label: 'Contest', icon: MilitaryTechRoundedIcon, view: 'contest' },
   { to: '/dashboard?view=quests', label: 'Quests', icon: EmojiEventsRoundedIcon, view: 'quests' },
   { to: '/dashboard?view=explore', label: 'Explore', icon: ExploreRoundedIcon, view: 'explore' },
   { to: '/dashboard?view=plans', label: 'Study Plan', icon: SchoolRoundedIcon, view: 'plans' },

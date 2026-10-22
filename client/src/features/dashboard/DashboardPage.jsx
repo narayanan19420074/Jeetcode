@@ -21,6 +21,7 @@ import ProblemLibrary from './components/ProblemLibrary';
 import RightRail from './components/RightRail';
 import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
 import ContestCard from '../contest/ContestCard';
+import ContestPage from '../contest/ContestPage';
 import StudyPlannerView from '../studyplan/StudyPlannerView';
 import LeaderboardView from '../leaderboard/LeaderboardView';
 import FriendsView from '../friends/FriendsView';
@@ -29,7 +30,7 @@ import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { STATUS_COLOR, featuredPageForToday, surface, utcKey } from './dashboardUtils';
 
-const VIEWS = ['library', 'quests', 'explore', 'plans', 'leaderboard', 'friends', 'list'];
+const VIEWS = ['library', 'contest', 'quests', 'explore', 'plans', 'leaderboard', 'friends', 'list'];
 
 export default function DashboardPage() {
   const navigate = useNavigate();
@@ -127,11 +128,10 @@ export default function DashboardPage() {
   // On wide screens the page is exactly one window tall: sidebar and streak rail stay put and
   // only the middle column scrolls (the leaderboard scrolls its own list instead).
   const fillH = useViewportFill(rootRef, isLg);
-  const showRail = !['plans', 'leaderboard', 'friends', 'quests', 'explore'].includes(currentView);
+  const showRail = !['plans', 'leaderboard', 'friends', 'quests', 'explore', 'contest'].includes(currentView);
   const ownScroll = currentView === 'leaderboard';
 
-  // 'contest' is its own page (/contest); every other item is a view inside the dashboard.
-  const goView = useCallback((v) => (v === 'contest' ? navigate('/contest') : setParams(v === 'library' ? {} : { view: v })), [setParams, navigate]);
+  const goView = useCallback((v) => setParams(v === 'library' ? {} : { view: v }), [setParams]);
   const selectList = useCallback((id) => setParams({ view: 'list', list: id }), [setParams]);
 
   const browse = useCallback(
@@ -366,6 +366,7 @@ export default function DashboardPage() {
             {currentView !== 'library' && (
               <AnimatePresence mode="wait">
                 <motion.div key={`${currentView}:${activeList?.id ?? ''}`} {...fade}>
+                  {currentView === 'contest' && <ContestPage embedded />}
                   {currentView === 'quests' && (
                     <QuestsView user={user} isAuthenticated={isAuthenticated} checkedIn={checkedIn} onPick={pickRandom} />
                   )}

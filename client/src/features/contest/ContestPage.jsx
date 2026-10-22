@@ -53,7 +53,8 @@ function RuleSection({ rule, index }) {
   );
 }
 
-export default function ContestPage() {
+// `embedded`: rendered inside the dashboard (sidebar stays visible), so no back button / own page padding.
+export default function ContestPage({ embedded = false }) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const { isAuthenticated } = useSelector((s) => s.auth);
@@ -76,11 +77,11 @@ export default function ContestPage() {
     }
   };
 
-  const back = <IconButton component={RouterLink} to="/dashboard" aria-label="Back to dashboard" edge="start"><ArrowBackRoundedIcon /></IconButton>;
+  const back = embedded ? null : <IconButton component={RouterLink} to="/dashboard" aria-label="Back to dashboard" edge="start"><ArrowBackRoundedIcon /></IconButton>;
 
   if (contest === null) {
     return (
-      <Container maxWidth="md" sx={{ py: 3 }}>
+      <Container maxWidth="md" disableGutters={embedded} sx={{ py: embedded ? 0 : 3 }}>
         {back}
         <Skeleton variant="rounded" height={190} sx={{ borderRadius: '14px', my: 1.5 }} />
         <Skeleton variant="rounded" height={320} sx={{ borderRadius: '14px' }} />
@@ -88,15 +89,15 @@ export default function ContestPage() {
     );
   }
   if (contest === false) {
-    return <Container maxWidth="md" sx={{ py: 3 }}>{back}<Alert severity="error">Could not load the contest. Please try again in a moment.</Alert></Container>;
+    return <Container maxWidth="md" disableGutters={embedded} sx={{ py: embedded ? 0 : 3 }}>{back}<Alert severity="error">Could not load the contest. Please try again in a moment.</Alert></Container>;
   }
 
   const upcoming = contest.status === 'upcoming';
 
   return (
-    <Container maxWidth="md" sx={{ py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
+    <Container maxWidth="md" disableGutters={embedded} sx={embedded ? { py: 0 } : { py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
       <Box sx={{ display: 'grid', gap: 1.5 }}>
-        <Box>{back}</Box>
+        {back && <Box>{back}</Box>}
 
         {/* Hero */}
         <Box
