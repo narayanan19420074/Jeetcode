@@ -336,11 +336,13 @@ function SkeletonRows({ count = 8 }) {
 }
 
 // Small completion ring + "x/y Solved", like LeetCode's list header.
-function SolvedMeter({ solved, total }) {
+function SolvedMeter({ solved, total, solvedBy, totals }) {
   const pct = total ? Math.min(solved / total, 1) : 0;
   const r = 9;
   const C = 2 * Math.PI * r;
+  const detail = ['Easy', 'Medium', 'Hard'].map((d) => `${d} ${solvedBy?.[d] ?? 0}/${totals?.[d] ?? 0}`).join('  ·  ');
   return (
+    <Tooltip title={detail}>
     <Stack direction="row" spacing={1} sx={{ alignItems: 'center', flexShrink: 0 }}>
       <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r={r} fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="3" />
@@ -363,12 +365,14 @@ function SolvedMeter({ solved, total }) {
         </Box>
       </Typography>
     </Stack>
+    </Tooltip>
   );
 }
 
 // --------------------------------------------------------------------- main
 
-export default function ProblemLibrary({ isAuthenticated, progress, dailyId, preset, listsApi }) {
+// `height` (optional, lg+ only) overrides the default dashboard height, so other pages can host the library under a header.
+export default function ProblemLibrary({ isAuthenticated, progress, dailyId, preset, listsApi, height }) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
@@ -409,7 +413,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
   useEffect(() => {
     if (!preset) return;
     setSearchText('');
-    setQ({ ...INITIAL_QUERY, tags: preset.tags || [], companies: preset.companies || [] });
+    setQ({ ...INITIAL_QUERY, difficulty: preset.difficulty || 'All', tags: preset.tags || [], companies: preset.companies || [] });
   }, [preset]);
 
   // Debounce the search box so we don't fire a request per keystroke.
@@ -588,7 +592,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
 
   return (
     // On wide screens the whole library fits the window once it is scrolled to the top, so only the problem list scrolls.
-    <Stack ref={cardRef} spacing={1.5} sx={{ height: { lg: 'calc(100vh - 120px)' }, scrollMarginTop: { xs: 72, lg: 0 } }}>
+    <Stack ref={cardRef} spacing={1.5} sx={{ height: { lg: height ?? 'calc(100vh - 120px)' }, scrollMarginTop: { xs: 72, lg: 0 } }}>
       <CategoryPills
         groups={groups}
         selectedTags={q.tags}
@@ -690,7 +694,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
 
           <Box sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }} />
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <SolvedMeter solved={solvedAll} total={totalAll} />
+            <SolvedMeter solved={solvedAll} total={totalAll} solvedBy={solvedBy} totals={totals} />
           </Box>
         </Stack>
 
