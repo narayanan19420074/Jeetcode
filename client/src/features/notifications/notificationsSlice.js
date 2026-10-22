@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logoutUser } from '../auth/authSlice';
 
-// In-app notification centre (navbar bell). Everything is created on the client from things the app already
-// knows: friend requests, accepted requests, pair-room invites, nudges and friends-leaderboard moves.
+// In-app notification centre (navbar bell, tabs: Social / Updates / Events). Everything is created on the client from
+// things the app already knows: friend requests, room invites, nudges, leaderboard moves, claimable quest rewards,
+// the contest and today's challenge. See notificationMeta.js for which type lands in which tab.
 // Items are kept in localStorage per user so they survive a refresh.
 const MAX_ITEMS = 50;
 const storeKey = (userId) => `jc:notifications:${userId}`;
@@ -42,6 +43,10 @@ const notificationsSlice = createSlice({
     markAllRead: (state) => {
       state.items.forEach((n) => { n.read = true; });
     },
+    markIdsRead: (state, { payload }) => {
+      const ids = new Set(payload);
+      state.items.forEach((n) => { if (ids.has(n.id)) n.read = true; });
+    },
     markRead: (state, { payload }) => {
       const n = state.items.find((x) => x.id === payload);
       if (n) n.read = true;
@@ -55,6 +60,6 @@ const notificationsSlice = createSlice({
   },
 });
 
-export const { hydrate, addNotification, markAllRead, markRead, clearAll } = notificationsSlice.actions;
+export const { hydrate, addNotification, markAllRead, markIdsRead, markRead, clearAll } = notificationsSlice.actions;
 export const selectUnreadNotifications = (s) => s.notifications.items.filter((n) => !n.read).length;
 export default notificationsSlice.reducer;
