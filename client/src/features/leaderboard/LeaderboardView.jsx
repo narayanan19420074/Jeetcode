@@ -1064,6 +1064,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   // Top 3 get a podium (only players who scored, and not while searching).
   const podium = q ? [] : rows.slice(0, 3).filter((r) => r.score > 0);
   const listRows = rows.slice(podium.length);
+  const openPodium = podium.find((r) => r.userId === open);
   const selectedRow = (selectedId && (rows.find((r) => r.userId === selectedId) || (me?.userId === selectedId ? me : null))) || me || podium[0] || rows[0] || null;
   const periodLabel = PERIODS.find(([v]) => v === period)?.[1];
   const glass = { width: 42, height: 42, color: '#fff', bgcolor: 'rgba(255,255,255,0.16)', borderRadius: '13px', '&:hover': { bgcolor: 'rgba(255,255,255,0.28)' } };
