@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { Box, Stack, Typography, TextField, IconButton } from '@mui/material';
+import { Box, Stack, Typography, TextField } from '@mui/material';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import { wsSurface } from '../workspace/workspaceTheme';
+import { EmptyState, WsIconButton } from '../workspace/wsUi';
+import { WS } from '../workspace/wsTokens';
 
+// Pair-room chat, styled with the workspace UI kit (same radius, tones and buttons).
 export default function ChatPanel({ messages, myId, onSend, disabled, friendName }) {
   const [text, setText] = useState('');
   const endRef = useRef(null);
@@ -19,18 +22,14 @@ export default function ChatPanel({ messages, myId, onSend, disabled, friendName
   };
 
   return (
-    <Box sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', bgcolor: 'background.paper' }}>
-      <Box sx={{ flex: 1, overflow: 'auto', p: 1.5 }}>
+    <Box sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', bgcolor: (t) => wsSurface(t).chrome }}>
+      <Box sx={{ flex: 1, overflowY: 'auto', px: 2, py: 1.5 }}>
         {messages.length === 0 && (
-          <Stack sx={{ alignItems: 'center', textAlign: 'center', gap: 1, py: 5, px: 2 }}>
-            <Box sx={(t) => ({ width: 52, height: 52, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: wsSurface(t).raised, color: 'primary.main' })}>
-              <ForumOutlinedIcon />
-            </Box>
-            <Typography sx={{ fontWeight: 700 }}>No messages yet</Typography>
-            <Typography variant="body2" color="text.secondary">
-              {friendName ? `Say hi to ${friendName}. ` : ''}Share doubts, links or ideas with your partner here.
-            </Typography>
-          </Stack>
+          <EmptyState
+            icon={<ForumOutlinedIcon />}
+            title="No messages yet"
+            text={`${friendName ? `Say hi to ${friendName}. ` : ''}Share doubts, links or ideas with your partner here.`}
+          />
         )}
         {messages.map((m) => {
           const mine = m.from === myId;
@@ -44,15 +43,15 @@ export default function ChatPanel({ messages, myId, onSend, disabled, friendName
                   display: 'inline-block',
                   maxWidth: '88%',
                   px: 1.5,
-                  py: 0.9,
-                  borderRadius: mine ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
+                  py: 1,
+                  borderRadius: mine ? '12px 12px 4px 12px' : '12px 12px 12px 4px',
                   bgcolor: mine ? 'primary.main' : wsSurface(t).raised,
                   color: mine ? 'primary.contrastText' : 'text.primary',
                   textAlign: 'left',
                   whiteSpace: 'pre-wrap',
                   wordBreak: 'break-word',
-                  fontSize: '0.92rem',
-                  lineHeight: 1.5,
+                  fontSize: '0.875rem',
+                  lineHeight: 1.6,
                 })}
               >
                 {m.text}
@@ -62,7 +61,7 @@ export default function ChatPanel({ messages, myId, onSend, disabled, friendName
         })}
         <div ref={endRef} />
       </Box>
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 1, p: 1, borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 2, pt: 0.5, pb: 1.5 }}>
         <TextField
           size="small"
           fullWidth
@@ -75,16 +74,22 @@ export default function ChatPanel({ messages, myId, onSend, disabled, friendName
               send();
             }
           }}
-          sx={(t) => ({ '& .MuiOutlinedInput-root': { borderRadius: 999, bgcolor: wsSurface(t).raised, '& fieldset': { border: 0 } } })}
+          slotProps={{ input: { sx: (t) => ({ borderRadius: `${WS.radius}px`, height: WS.ctrlLg, bgcolor: wsSurface(t).raised, '& fieldset': { border: 'none' } }) } }}
         />
-        <IconButton
-          aria-label="Send message"
+        <WsIconButton
+          title="Send"
+          size="lg"
           onClick={send}
           disabled={disabled || !text.trim()}
-          sx={{ width: 42, height: 42, flexShrink: 0, bgcolor: 'primary.main', color: 'primary.contrastText', '&:hover': { bgcolor: 'primary.dark' }, '&.Mui-disabled': { bgcolor: 'action.disabledBackground' } }}
+          sx={(t) => ({
+            color: t.palette.primary.contrastText,
+            bgcolor: t.palette.primary.main,
+            '&:hover': { bgcolor: t.palette.primary.dark, color: t.palette.primary.contrastText },
+            '&.Mui-disabled': { bgcolor: t.palette.action.disabledBackground, color: t.palette.text.disabled },
+          })}
         >
-          <SendRoundedIcon sx={{ fontSize: 20 }} />
-        </IconButton>
+          <SendRoundedIcon />
+        </WsIconButton>
       </Stack>
     </Box>
   );

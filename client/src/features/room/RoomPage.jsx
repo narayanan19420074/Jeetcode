@@ -4,40 +4,54 @@ import { useDispatch, useSelector } from 'react-redux';
 import Editor from '@monaco-editor/react';
 import { useSnackbar } from 'notistack';
 import {
-  Avatar, Badge, Box, ButtonBase, Stack, Typography, Button, IconButton, Select, MenuItem, Chip, TextField, Tabs, Tab, Tooltip, Drawer, Divider,
-  alpha, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, CircularProgress, LinearProgress, InputAdornment, ListItemIcon, ListItemText, Menu, useMediaQuery, useTheme,
+  Box, ButtonBase, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Drawer, ListItemIcon, ListItemText, Menu, MenuItem, Skeleton, Stack, TextField, Typography, useMediaQuery, useTheme,
 } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
-import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
-import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
+import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
+import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
+import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
+import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
-import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
-import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
-import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
-import KeyboardRoundedIcon from '@mui/icons-material/KeyboardRounded';
-import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
+import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
+import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
+import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
+import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
+import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
+import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { problemsApi } from '../../api/problemsApi';
 import { setLanguage, updateCode } from '../workspace/workspaceSlice';
 import { bindMonaco } from './monacoYjs';
 import { useRoom } from './useRoom';
 import { useCall } from './useCall';
+import useRoomSubmit from './useRoomSubmit';
 import FloatingCall from './FloatingCall';
 import ChatPanel from './ChatPanel';
 import AptitudeRoom from './AptitudeRoom';
+import RoomAiDrawer from './RoomAiDrawer';
+import { PresenceStack, RoomConsoleBody, RunChip, TimerControl, hoverScrollbars } from './RoomParts';
 import DifficultyChip from '../../components/DifficultyChip';
+import ProblemDescription from '../workspace/ProblemDescription';
+import SolutionsPanel from '../workspace/community/SolutionsPanel';
+import DiscussionPanel from '../workspace/community/DiscussionPanel';
+import ShareSolutionDialog from '../workspace/community/ShareSolutionDialog';
+import SubmissionsPanel from '../workspace/SubmissionsPanel';
+import { EditorStatus, VerdictChip } from '../workspace/ConsolePanel';
+import SplitHandle from '../workspace/SplitHandle';
 import MobileKeyBar from '../workspace/MobileKeyBar';
 import EditorScroller from '../workspace/EditorScroller';
+import useStopwatch from '../workspace/useStopwatch';
+import { MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton, WsSelect } from '../workspace/wsUi';
+import { WS } from '../workspace/wsTokens';
 import { wsSurface, defineMonacoThemes, monacoThemeName } from '../workspace/workspaceTheme';
 import { formatCode, replaceChangedSpan } from '../workspace/formatCode';
 import { MOBILE_EDITOR_OPTIONS } from '../workspace/editorOptions';
@@ -51,8 +65,39 @@ const LANGUAGES = [
 // Shared documents must indent the same way for everyone, so the room always
 // uses 4 spaces (a personal tab size would make Python blocks disagree).
 const ROOM_TAB = 4;
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
 const keepFocus = (e) => e.preventDefault();
+
+// Resizable layout (desktop). Sizes are remembered between visits.
+const LAYOUT_KEY = 'jeetcode-room-layout';
+const DEFAULT_LEFT = 0.42;
+const DEFAULT_CONSOLE = 0.35;
+const LEFT_MIN = 0.25;
+const LEFT_MAX = 0.65;
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+const loadLayout = () => {
+  try {
+    const raw = JSON.parse(localStorage.getItem(LAYOUT_KEY) || '{}');
+    return {
+      left: clamp(Number(raw.left) || DEFAULT_LEFT, LEFT_MIN, LEFT_MAX),
+      console: clamp(Number(raw.console) || DEFAULT_CONSOLE, 0.12, 0.8),
+    };
+  } catch {
+    return { left: DEFAULT_LEFT, console: DEFAULT_CONSOLE };
+  }
+};
+
+function ProblemSkeleton() {
+  return (
+    <Box sx={{ pt: 0.5 }}>
+      <Skeleton width="55%" height={32} />
+      <Skeleton variant="rounded" width={72} height={24} sx={{ my: 1.5, borderRadius: 999 }} />
+      <Skeleton height={20} />
+      <Skeleton height={20} />
+      <Skeleton width="80%" height={20} />
+      <Skeleton variant="rounded" height={110} sx={{ mt: 3, borderRadius: `${WS.radius + 2}px` }} />
+    </Box>
+  );
+}
 
 export default function RoomPage() {
   const { roomId } = useParams();
@@ -72,20 +117,69 @@ export default function RoomPage() {
 
   const room = useRoom({ roomId, displayName });
   const call = useCall(room.socket);
+  const slug = room.meta?.problemSlug;
+  const sub = useRoomSubmit(slug);
+  const sw = useStopwatch();
 
-  const [stdin, setStdin] = useState('');
   const [problem, setProblem] = useState(null);
-  const [showProblem, setShowProblem] = useState(() => window.innerWidth >= 900); // desktop side panel
-  const [chatOpen, setChatOpen] = useState(false); // desktop chat drawer
-  const [view, setView] = useState('code'); // phone tabs: 'code' | 'chat'
-  const [consoleOpen, setConsoleOpen] = useState(false); // phone output panel
+  const [leftTab, setLeftTab] = useState(null); // desktop left pane; null = default (problem, or chat when the room has none)
+  const [mountedTabs, setMountedTabs] = useState({ solutions: false, discussion: false, submissions: false });
+  const [mobileView, setMobileView] = useState('code'); // phone tabs
+  const [consoleOpen, setConsoleOpen] = useState(false);
+  const [consoleTab, setConsoleTab] = useState('cases'); // 'cases' | 'run' | 'submit'
+  const [lastKind, setLastKind] = useState(null); // 'run' | 'submit' — which verdict the console bar shows
+  const [caseSel, setCaseSel] = useState(0); // sample index | 'custom'
+  const [customStdin, setCustomStdin] = useState('');
+  const [activeCase, setActiveCase] = useState(0);
   const [editorFocused, setEditorFocused] = useState(false);
   const [editorInstance, setEditorInstance] = useState(null);
   const [seen, setSeen] = useState(0);
-  const [menuAnchor, setMenuAnchor] = useState(null);
+  const [moreAnchor, setMoreAnchor] = useState(null);
+  const [aiOpen, setAiOpen] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
+  const [solutionsRefresh, setSolutionsRefresh] = useState(0);
+  const [confirm, setConfirm] = useState(null); // { type: 'solution', sol } | { type: 'reset' }
+
+  // Resizable split panes + maximize (desktop only)
+  const [layout, setLayout] = useState(loadLayout);
+  const [maximized, setMaximized] = useState(null); // null | 'left' | 'editor' | 'console'
+  const rootRef = useRef(null);
+  const editorColRef = useRef(null);
+  const toggleMax = (which) => setMaximized((m) => (m === which ? null : which));
 
   const editorRef = useRef(null);
   const monacoRef = useRef(null);
+  const disposeRef = useRef(null);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(LAYOUT_KEY, JSON.stringify(layout));
+    } catch {
+      // storage unavailable — layout just won't be remembered
+    }
+  }, [layout]);
+
+  // Esc leaves a maximized pane.
+  useEffect(() => {
+    if (!maximized) return undefined;
+    const onKey = (e) => e.key === 'Escape' && setMaximized(null);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [maximized]);
+
+  const dragLeft = (x) => {
+    const el = rootRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    setLayout((l) => ({ ...l, left: clamp((x - rect.left) / rect.width, LEFT_MIN, LEFT_MAX) }));
+  };
+  const dragConsole = (_x, y) => {
+    const el = editorColRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    setConsoleOpen(true);
+    setLayout((l) => ({ ...l, console: clamp((rect.bottom - y) / rect.height, 0.12, 0.8) }));
+  };
 
   // Phone: the problem opens as a panel sliding in from the right; it lives in
   // history state so the phone's Back button closes it instead of leaving the room.
@@ -96,7 +190,7 @@ export default function RoomPage() {
   };
 
   // chat badge: messages from the friend that arrived while the chat was not on screen
-  const chatVisible = isMobile ? view === 'chat' : chatOpen;
+  const chatVisible = isMobile ? mobileView === 'chat' : (leftTab ?? (slug ? 'desc' : 'chat')) === 'chat' && maximized !== 'editor' && maximized !== 'console';
   useEffect(() => {
     if (chatVisible) setSeen(room.chat.length);
   }, [chatVisible, room.chat.length]);
@@ -107,18 +201,20 @@ export default function RoomPage() {
     if (call.error) enqueueSnackbar(call.error, { variant: 'warning' });
   }, [call.error, enqueueSnackbar]);
 
-  // a run started by either of you opens the output panel on a phone
+  // A run started by either of you opens the console on the shared output.
   useEffect(() => {
-    if (room.running) setConsoleOpen(true);
+    if (room.running) {
+      setLastKind('run');
+      setConsoleOpen(true);
+      setConsoleTab('run');
+    }
   }, [room.running]);
 
-  const slug = room.meta?.problemSlug;
   useEffect(() => {
     if (!slug) return;
     problemsApi.getBySlug(slug).then(({ data }) => setProblem(data.data)).catch(() => {});
   }, [slug]);
 
-  const disposeRef = useRef(null);
   const handleMount = useCallback(
     (editor, monaco) => {
       editorRef.current = editor;
@@ -153,6 +249,8 @@ export default function RoomPage() {
     return () => el.setAttribute('content', prev);
   }, [chromeColor]);
 
+  const sharedCode = () => room.doc.getText('code').toString();
+
   // Format on request only. Automatic formatting is off in a shared room: if both
   // of you formatted at the same moment the CRDT would keep both rewrites.
   const formatNow = async (quiet) => {
@@ -169,6 +267,13 @@ export default function RoomPage() {
     return true;
   };
 
+  // Sample case (or custom text) chosen in the Testcase tab is what Run sends as stdin.
+  const examples = problem?.examples ?? [];
+  const stdin = caseSel === 'custom' || examples.length === 0 ? customStdin : examples[Math.min(caseSel, examples.length - 1)]?.input ?? '';
+
+  const goLogin = () => navigate('/login', { state: { from: { pathname: `/room/${roomId}` } } });
+  const busy = room.running || sub.status === 'running';
+
   // Python: fix indentation first so one bad space doesn't fail the run for both of you.
   const handleRun = async () => {
     if (isMobile) document.activeElement?.blur?.();
@@ -176,6 +281,48 @@ export default function RoomPage() {
     room.run(stdin);
   };
 
+  // Submit is personal: it judges the shared code and saves the result to YOUR account.
+  const handleSubmit = async () => {
+    if (!slug) return;
+    if (!isAuthenticated) {
+      enqueueSnackbar('Sign in to submit', { variant: 'info' });
+      goLogin();
+      return;
+    }
+    if (isMobile) document.activeElement?.blur?.();
+    setLastKind('submit');
+    setConsoleOpen(true);
+    setConsoleTab('submit');
+    setActiveCase(0);
+    if (room.language === 'python') await formatNow(true);
+    sub.submit({ language: room.language, code: sharedCode() });
+  };
+
+  // Keyboard shortcuts (desktop): Ctrl/Cmd + ' runs, Ctrl/Cmd + Enter submits.
+  const actionsRef = useRef({});
+  actionsRef.current = { run: handleRun, submit: handleSubmit, busy: busy || room.status !== 'joined' };
+  useEffect(() => {
+    if (isMobile) return undefined;
+    const onKey = (e) => {
+      if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey) return;
+      const isRun = e.key === "'";
+      const isSubmit = e.key === 'Enter';
+      if (!isRun && !isSubmit) return;
+      const t = e.target;
+      const inEditor = t?.closest?.('.monaco-editor');
+      const typing = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+      if (typing && !inEditor) return; // Ctrl+Enter in a chat / comment box must not submit code
+      e.preventDefault();
+      e.stopPropagation();
+      const a = actionsRef.current;
+      if (a.busy) return;
+      (isRun ? a.run : a.submit)();
+    };
+    window.addEventListener('keydown', onKey, true);
+    return () => window.removeEventListener('keydown', onKey, true);
+  }, [isMobile]);
+
+  // Symbol bar actions (phone)
   const keyType = (text) => {
     const ed = editorRef.current;
     if (!ed) return;
@@ -187,6 +334,60 @@ export default function RoomPage() {
     if (!ed) return;
     ed.focus();
     ed.trigger('keyboard', id, null);
+  };
+
+  // Replaces the shared document for both of you (a CRDT edit, so it syncs like typing).
+  const replaceSharedCode = (text, lang) => {
+    const ytext = room.doc.getText('code');
+    room.doc.transact(() => {
+      if (ytext.length > 0) ytext.delete(0, ytext.length);
+      if (text) ytext.insert(0, text);
+    }, 'room-ui');
+    // text first, then language: the server only swaps in a starter when the text is still the old starter
+    if (lang && lang !== room.language) room.changeLanguage(lang);
+  };
+
+  const handleSendToEditor = (sol) => {
+    const current = sharedCode();
+    const starter = problem?.starterCode?.[room.language] ?? '';
+    const hasOwnWork = current.trim() !== '' && current.trim() !== starter.trim() && current !== sol.code;
+    if (hasOwnWork) setConfirm({ type: 'solution', sol });
+    else {
+      replaceSharedCode(sol.code, sol.language);
+      setMobileView('code');
+      enqueueSnackbar('Solution loaded in the shared editor', { variant: 'success' });
+    }
+  };
+
+  const runConfirm = () => {
+    if (!confirm) return;
+    if (confirm.type === 'solution') {
+      replaceSharedCode(confirm.sol.code, confirm.sol.language);
+      setMobileView('code');
+      enqueueSnackbar('Solution loaded in the shared editor', { variant: 'success' });
+    } else {
+      replaceSharedCode(problem?.starterCode?.[room.language] ?? '', null);
+      enqueueSnackbar('Code reset to the starter template', { variant: 'info' });
+    }
+    setConfirm(null);
+  };
+
+  const handleShared = () => {
+    setSolutionsRefresh((k) => k + 1);
+    openLeft('solutions');
+    setMobileView('solutions');
+    setMountedTabs((m) => ({ ...m, solutions: true }));
+    enqueueSnackbar('Solution shared', { variant: 'success' });
+  };
+
+  const handleCopyCode = async () => {
+    setMoreAnchor(null);
+    try {
+      await navigator.clipboard.writeText(sharedCode());
+      enqueueSnackbar('Code copied', { variant: 'success' });
+    } catch {
+      enqueueSnackbar('Could not copy code', { variant: 'error' });
+    }
   };
 
   const inviteLink = `${window.location.origin}/room/${roomId}`;
@@ -204,12 +405,24 @@ export default function RoomPage() {
 
   const testInWorkspace = () => {
     if (!problem) return;
-    dispatch(updateCode({ problemId: problem._id, language: room.language, code: room.doc.getText('code').toString() }));
+    dispatch(updateCode({ problemId: problem._id, language: room.language, code: sharedCode() }));
     dispatch(setLanguage(room.language));
     navigate(`/workspace/${problem.slug}`);
   };
 
   const leave = () => navigate(isAuthenticated ? '/dashboard' : '/');
+
+  const mountTab = (v) => {
+    if (v === 'solutions' || v === 'discussion' || v === 'submissions') setMountedTabs((m) => ({ ...m, [v]: true }));
+  };
+  function openLeft(v) {
+    setLeftTab(v);
+    mountTab(v);
+  }
+  const openMobileView = (v) => {
+    setMobileView(v);
+    mountTab(v);
+  };
 
   // --- name gate (guests) ---
   if (!displayName) {
@@ -226,8 +439,10 @@ export default function RoomPage() {
           <DialogContentText sx={{ mb: 1 }}>Enter a display name so your partner knows who you are.</DialogContentText>
           <TextField autoFocus fullWidth margin="dense" label="Your name" value={nameDraft} onChange={(e) => setNameDraft(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && go()} />
         </DialogContent>
-        <DialogActions>
-          <Button variant="contained" disableElevation onClick={go} disabled={!nameDraft.trim()}>Join</Button>
+        <DialogActions sx={{ px: 3, pb: 2 }}>
+          <WsButton variant="primary" onClick={go} disabled={!nameDraft.trim()}>
+            Join
+          </WsButton>
         </DialogActions>
       </Dialog>
     );
@@ -238,8 +453,12 @@ export default function RoomPage() {
       <Stack alignItems="center" justifyContent="center" spacing={2} sx={{ height: '100dvh', p: 3, textAlign: 'center' }}>
         <Typography variant="h6">{room.error}</Typography>
         <Stack direction="row" spacing={1}>
-          <Button variant="contained" disableElevation onClick={() => navigate('/pair')}>New room</Button>
-          <Button onClick={leave}>Home</Button>
+          <WsButton variant="primary" onClick={() => navigate('/pair')}>
+            New room
+          </WsButton>
+          <WsButton variant="secondary" onClick={leave}>
+            Home
+          </WsButton>
         </Stack>
       </Stack>
     );
@@ -259,478 +478,516 @@ export default function RoomPage() {
 
   const friend = room.peers[0];
   const roomReady = room.status === 'joined';
+  const hasProblem = Boolean(slug);
+  const ctl = isMobile ? 'lg' : 'md';
+  const tab = leftTab ?? (hasProblem ? 'desc' : 'chat');
+  const unreadDot = unread > 0 ? theme.palette.primary.main : undefined;
+  const canShare = lastKind === 'submit' && sub.status !== 'running' && sub.result?.status === 'Accepted' && Boolean(sub.result._id);
 
-  const problemBody = problem && (
-    <Box sx={{ p: 2 }}>
-      <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 1.25, mb: 1.5 }}>
-        <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.25 }}>{problem.title}</Typography>
-        <DifficultyChip difficulty={problem.difficulty} />
-      </Stack>
-      <Typography sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.75 }} variant="body2">{problem.description}</Typography>
-      {(problem.examples || []).map((ex, i) => (
-        <Box key={i} sx={{ mt: 1.75, p: 1.5, borderRadius: '14px', border: '1px solid', borderColor: 'divider' }}>
-          <Typography variant="caption" sx={{ fontWeight: 800 }}>Example {i + 1}</Typography>
-          <Box sx={{ ...mono, mt: 0.75, px: 1.5, py: 1, borderRadius: '10px', bgcolor: surf.raised, fontSize: 12.5, lineHeight: 1.6, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-            {`Input: ${ex.input}\nOutput: ${ex.output}`}
-          </Box>
-        </Box>
-      ))}
-      {(problem.constraints || []).length > 0 && (
-        <Box sx={{ mt: 2 }}>
-          <Typography variant="caption" sx={{ fontWeight: 800 }}>Constraints</Typography>
-          {problem.constraints.map((c, i) => (
-            <Typography key={i} variant="body2" color="text.secondary" sx={{ ...mono, fontSize: '0.8rem', lineHeight: 1.7, wordBreak: 'break-word' }}>
-              {c}
-            </Typography>
-          ))}
-        </Box>
-      )}
-    </Box>
+  const chatItem = { value: 'chat', label: 'Chat', icon: <ChatBubbleOutlineRoundedIcon />, dot: unreadDot };
+  const leftItems = hasProblem
+    ? [
+        { value: 'desc', label: 'Description', icon: <ArticleOutlinedIcon /> },
+        { value: 'solutions', label: 'Solutions', icon: <LightbulbOutlinedIcon /> },
+        { value: 'discussion', label: 'Discussion', icon: <ForumOutlinedIcon /> },
+        { value: 'submissions', label: 'Submissions', icon: <HistoryRoundedIcon /> },
+        chatItem,
+      ]
+    : [chatItem];
+  const mobileItems = [
+    { value: 'code', label: 'Code' },
+    ...(hasProblem
+      ? [
+          { value: 'solutions', label: 'Solutions' },
+          { value: 'discussion', label: 'Discussion' },
+          { value: 'submissions', label: 'Submissions' },
+        ]
+      : []),
+    { value: 'chat', label: 'Chat', dot: unreadDot },
+  ];
+
+  const chatPanel = <ChatPanel messages={room.chat} myId={room.me?.id} onSend={room.sendChat} disabled={!roomReady} friendName={friend?.name} />;
+
+  const solutionsPanel = <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />;
+  const discussionPanel = <DiscussionPanel slug={slug} />;
+  const submissionsPanel = (
+    <SubmissionsPanel slug={slug} isAuthenticated={isAuthenticated} refreshKey={sub.result?._id ?? 0} onLoad={handleSendToEditor} onSignIn={goLogin} />
   );
 
-  const stdinField = (sx) => (
-    <TextField
-      size="small"
-      placeholder="Input (stdin)"
-      value={stdin}
-      onChange={(e) => setStdin(e.target.value)}
-      slotProps={{
-        htmlInput: { 'aria-label': 'stdin' },
-        input: {
-          startAdornment: (
-            <InputAdornment position="start">
-              <KeyboardRoundedIcon sx={{ fontSize: 18 }} />
-            </InputAdornment>
-          ),
-        },
-      }}
-      sx={{ '& .MuiOutlinedInput-root': { height: 36, fontSize: '0.8rem', borderRadius: 999, bgcolor: 'background.paper' }, ...sx }}
+  const consoleBody = (
+    <RoomConsoleBody
+      problem={problem}
+      hasProblem={hasProblem}
+      isAuthenticated={isAuthenticated}
+      tab={consoleTab}
+      onTab={setConsoleTab}
+      caseSel={caseSel}
+      onCaseSel={setCaseSel}
+      customStdin={customStdin}
+      onCustomStdin={setCustomStdin}
+      running={room.running}
+      runResult={room.runResult}
+      sub={sub}
+      activeCase={activeCase}
+      onCase={setActiveCase}
+      onSignIn={goLogin}
     />
   );
 
-  const outputBlock = (label, text, { error, muted } = {}) => (
-    <Box>
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mb: 0.5, color: error ? 'error.main' : 'text.secondary' }}>
-        {error ? <ErrorOutlineRoundedIcon sx={{ fontSize: 16 }} /> : <LogoutRoundedIcon sx={{ fontSize: 16 }} />}
-        <Typography variant="caption" sx={{ fontWeight: 700 }}>{label}</Typography>
-      </Stack>
-      <Box
-        component="pre"
-        sx={(t) => ({
-          m: 0,
-          px: 1.5,
-          py: 1,
-          borderRadius: '10px',
-          ...mono,
-          fontSize: 13,
-          lineHeight: 1.6,
-          whiteSpace: 'pre-wrap',
-          wordBreak: 'break-word',
-          bgcolor: error ? alpha(t.palette.error.main, 0.1) : wsSurface(t).raised,
-          color: error ? 'error.main' : muted ? 'text.disabled' : 'text.primary',
-        })}
+  const runButton = (size) => (
+    <WsButton
+      size={size}
+      variant="secondary"
+      startIcon={<PlayArrowRoundedIcon />}
+      loading={room.running}
+      disabled={busy || !roomReady}
+      onPointerDown={isMobile ? keepFocus : undefined}
+      onMouseDown={isMobile ? keepFocus : undefined}
+      onClick={handleRun}
+      kbd={isMobile ? undefined : "Ctrl '"}
+    >
+      Run
+    </WsButton>
+  );
+  const submitButton = (size) =>
+    hasProblem && (
+      <WsButton
+        size={size}
+        variant="primary"
+        startIcon={<CloudUploadRoundedIcon />}
+        loading={sub.status === 'running'}
+        disabled={busy || !roomReady}
+        onPointerDown={isMobile ? keepFocus : undefined}
+        onMouseDown={isMobile ? keepFocus : undefined}
+        onClick={handleSubmit}
+        kbd={isMobile ? undefined : 'Ctrl ↵'}
       >
-        {text}
-      </Box>
-    </Box>
-  );
-
-  const outputBody = (
-    <Box>
-      {room.running ? (
-        <Box sx={{ py: 1 }}>
-          <LinearProgress sx={{ borderRadius: 999, mb: 1.5 }} />
-          <Typography variant="body2" color="text.secondary">Running the code…</Typography>
-        </Box>
-      ) : !room.runResult ? (
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
-          <PlayCircleOutlineRoundedIcon sx={{ fontSize: 22 }} />
-          <Typography variant="body2">Run the code to see the output here. Both of you will see the result.</Typography>
-        </Stack>
-      ) : (
-        <Stack spacing={1.25}>
-          {(() => {
-            const out = (room.runResult.stdout || '').trim();
-            const err = (room.runResult.stderr || '').trim();
-            return (
-              <>
-                {room.runResult.by && (
-                  <Typography variant="caption" color="text.secondary">Run by {room.runResult.by}</Typography>
-                )}
-                {(out || !err) && outputBlock('Output', out || '(no output)', { muted: !out })}
-                {err && outputBlock('Error', err, { error: true })}
-              </>
-            );
-          })()}
-        </Stack>
-      )}
-    </Box>
-  );
-
-  const resultChip = (maxWidth) =>
-    room.running ? (
-      <Chip size="small" color="primary" variant="outlined" label="Running…" />
-    ) : (
-      room.runResult && (
-        <Chip
-          size="small"
-          icon={room.runResult.ok ? <CheckCircleRoundedIcon /> : <CancelRoundedIcon />}
-          label={room.runResult.status}
-          color={room.runResult.ok ? 'success' : 'error'}
-          sx={{ fontWeight: 700, minWidth: 0, maxWidth }}
-        />
-      )
+        Submit
+      </WsButton>
     );
 
   return (
-    <Box sx={{ height: '100dvh', display: 'flex', flexDirection: 'column', bgcolor: { xs: 'background.paper', md: 'background.default' } }}>
-      {/* top bar: title + a few icons. Everything else lives behind them. */}
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.25, pl: { xs: 2, md: 2.5 }, pr: { xs: 0.75, md: 1.5 }, pt: 'env(safe-area-inset-top)', minHeight: 56, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper', flexShrink: 0 }}>
-        <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: '1.05rem' }}>
-            {room.meta.title || 'Pair room'}
+    <Box sx={(t) => ({ ...hoverScrollbars(t), height: '100dvh', display: 'flex', flexDirection: 'column', bgcolor: surf.chrome, overflow: 'hidden' })}>
+      {/* top bar: where you are, who is here, invite / call / leave */}
+      <PaneBar
+        height="auto"
+        sx={{ minHeight: 48, pt: 'env(safe-area-inset-top)', px: { xs: 0.75, md: 1.5 }, gap: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}
+      >
+        <WsIconButton title="Leave room" size={ctl} onClick={leave}>
+          <ArrowBackRoundedIcon />
+        </WsIconButton>
+        <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1, pl: 0.5 }}>
+          <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.95rem' }}>
+            {room.meta.title || problem?.title || 'Pair room'}
           </Typography>
-          <Chip size="small" label={`#${roomId}`} sx={{ display: { xs: 'none', md: 'inline-flex' } }} />
-          {room.status === 'reconnecting' && <Chip size="small" color="warning" label="Reconnecting…" />}
+          <Typography noWrap sx={{ display: { xs: 'none', md: 'block' }, fontFamily: '"JetBrains Mono", monospace', fontSize: '0.72rem', color: 'text.disabled' }}>
+            #{roomId}
+          </Typography>
+          {room.status === 'reconnecting' && (
+            <Typography noWrap sx={{ fontSize: '0.75rem', fontWeight: 600, color: 'warning.main' }}>
+              Reconnecting…
+            </Typography>
+          )}
         </Box>
 
-        {!isMobile && problem && (
-          <Tooltip title={showProblem ? 'Hide problem' : 'Show problem'}>
-            <IconButton aria-label="Toggle problem" aria-pressed={showProblem} onClick={() => setShowProblem((v) => !v)} color={showProblem ? 'primary' : 'default'}>
-              <DescriptionRoundedIcon />
-            </IconButton>
-          </Tooltip>
+        <PresenceStack meName={room.me?.name || displayName} peers={room.peers} />
+
+        {isMobile ? (
+          <WsIconButton title="Invite link" size={ctl} onClick={copyLink}>
+            <LinkRoundedIcon />
+          </WsIconButton>
+        ) : (
+          <WsButton variant="secondary" startIcon={<LinkRoundedIcon />} onClick={copyLink}>
+            Invite
+          </WsButton>
         )}
-
-        {/* friend: just a small avatar, green dot while they are in the room */}
-        <Tooltip title={friend ? `${friend.name} is here` : 'Waiting for friend'}>
-          <Box sx={{ width: 40, height: 40, display: 'grid', placeItems: 'center' }}>
-            {friend ? (
-              <Badge
-                overlap="circular"
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                variant="dot"
-                color="success"
-                sx={{ '& .MuiBadge-badge': { width: 11, height: 11, borderRadius: '50%', border: '2px solid', borderColor: 'background.paper', boxSizing: 'content-box' } }}
-              >
-                <Avatar sx={{ width: 30, height: 30, fontSize: '0.85rem', fontWeight: 700, bgcolor: 'primary.main', color: 'primary.contrastText' }}>
-                  {friend.name?.[0]?.toUpperCase()}
-                </Avatar>
-              </Badge>
-            ) : (
-              <Avatar sx={{ width: 30, height: 30, bgcolor: 'action.hover', color: 'text.secondary' }}>
-                <PersonOutlineRoundedIcon sx={{ fontSize: 18 }} />
-              </Avatar>
-            )}
-          </Box>
-        </Tooltip>
-
-        {!call.localStream && (
-          <Tooltip title="Start video call">
-            <IconButton aria-label="Start video call" onClick={call.start}>
-              <VideocamRoundedIcon />
-            </IconButton>
-          </Tooltip>
-        )}
-
-        {!isMobile && (
-          <Tooltip title="Chat">
-            <IconButton aria-label="Open chat" onClick={() => setChatOpen(true)}>
-              <Badge badgeContent={unread} color="primary" max={9}>
-                <ChatBubbleOutlineRoundedIcon />
-              </Badge>
-            </IconButton>
-          </Tooltip>
-        )}
-
-        <IconButton aria-label="More options" onClick={(e) => setMenuAnchor(e.currentTarget)}>
-          <MoreVertRoundedIcon />
-        </IconButton>
-        <Menu anchorEl={menuAnchor} open={Boolean(menuAnchor)} onClose={() => setMenuAnchor(null)}>
-          <MenuItem onClick={() => { setMenuAnchor(null); copyLink(); }}>
-            <ListItemIcon><LinkRoundedIcon fontSize="small" /></ListItemIcon>
-            <ListItemText primary="Invite link" />
-          </MenuItem>
-          {problem && (
-            <MenuItem onClick={() => { setMenuAnchor(null); testInWorkspace(); }}>
-              <ListItemIcon><OpenInNewRoundedIcon fontSize="small" /></ListItemIcon>
-              <ListItemText primary="Test in my workspace" />
-            </MenuItem>
-          )}
-          <Divider />
-          <MenuItem onClick={() => { setMenuAnchor(null); leave(); }}>
-            <ListItemIcon><LogoutRoundedIcon fontSize="small" /></ListItemIcon>
-            <ListItemText primary="Leave room" />
-          </MenuItem>
-        </Menu>
-      </Stack>
-
-      {/* phones: problem card (tap -> slides in from the right) + Code | Chat tabs */}
-      {isMobile && problem && (
-        <ButtonBase
-          onClick={openDesc}
-          aria-label="Open problem description"
-          sx={(t) => ({
-            width: '100%',
-            flexShrink: 0,
-            justifyContent: 'flex-start',
-            gap: 1.25,
-            pl: 1.5,
-            pr: 1.5,
-            py: 1.1,
-            textAlign: 'left',
-            borderLeft: `4px solid ${t.palette.primary.main}`,
-            borderBottom: '1px solid',
-            borderColor: 'divider',
-            bgcolor: wsSurface(t).raised,
-          })}
+        <WsIconButton
+          title={call.localStream ? 'End video call' : 'Start video call'}
+          size={ctl}
+          active={Boolean(call.localStream)}
+          onClick={call.localStream ? call.stop : call.start}
         >
-          <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.98rem', lineHeight: 1.3 }}>
-              {problem.title}
-            </Typography>
-            <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mt: 0.5, minWidth: 0 }}>
-              <DifficultyChip difficulty={problem.difficulty} />
-              {problem.tags?.length > 0 && (
-                <Typography noWrap variant="caption" color="text.secondary" sx={{ minWidth: 0 }}>
-                  {problem.tags.slice(0, 2).join(' · ')}
-                </Typography>
-              )}
-            </Stack>
-          </Box>
-          <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, color: 'primary.main' }}>
-            <Typography sx={{ fontWeight: 700, fontSize: '0.8rem' }}>View</Typography>
-            <ChevronRightRoundedIcon sx={{ fontSize: 22 }} />
-          </Stack>
-        </ButtonBase>
-      )}
+          <VideocamRoundedIcon />
+        </WsIconButton>
+      </PaneBar>
 
-      {isMobile && (
-        <Tabs
-          value={view}
-          onChange={(e, v) => setView(v)}
-          variant="fullWidth"
+      <Box
+        ref={rootRef}
+        sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, bgcolor: surf.chrome, overflow: 'hidden' }}
+      >
+        {isMobile && (
+          <Box sx={{ flexShrink: 0, bgcolor: surf.chrome }}>
+            {/* Tap the problem name -> description slides in from the right */}
+            {hasProblem && problem && (
+              <ButtonBase
+                onClick={openDesc}
+                aria-label="Open problem description"
+                sx={{ width: '100%', justifyContent: 'flex-start', gap: 1.25, px: 2, pt: 1.25, pb: 0.75, textAlign: 'left' }}
+              >
+                <Box sx={{ flex: 1, minWidth: 0 }}>
+                  <Typography noWrap sx={{ fontWeight: 800, fontSize: '1rem', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+                    {problem.title}
+                  </Typography>
+                  <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mt: 0.5, minWidth: 0 }}>
+                    <DifficultyChip difficulty={problem.difficulty} />
+                    {problem.tags?.length > 0 && (
+                      <Typography noWrap variant="caption" color="text.secondary" sx={{ minWidth: 0 }}>
+                        {problem.tags.slice(0, 2).join(' · ')}
+                      </Typography>
+                    )}
+                  </Stack>
+                </Box>
+                <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, color: 'primary.main' }}>
+                  <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Problem</Typography>
+                  <ChevronRightRoundedIcon sx={{ fontSize: 20 }} />
+                </Stack>
+              </ButtonBase>
+            )}
+            <PaneBar height={48} sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
+              <PaneTabs size="lg" value={mobileView} onChange={openMobileView} items={mobileItems} />
+            </PaneBar>
+          </Box>
+        )}
+
+        {/* Left pane — problem, community tabs and pair chat (desktop only) */}
+        {!isMobile && (
+          <Box
+            sx={{
+              bgcolor: surf.chrome,
+              width: maximized === 'left' ? '100%' : `${layout.left * 100}%`,
+              minWidth: 0,
+              flex: maximized === 'left' ? 1 : 'none',
+              display: maximized === 'editor' || maximized === 'console' ? 'none' : 'flex',
+              flexDirection: 'column',
+              minHeight: 0,
+            }}
+          >
+            <PaneBar>
+              <PaneTabs value={tab} onChange={openLeft} items={leftItems} />
+              <Box sx={{ flex: 1 }} />
+              <MaxButton active={maximized === 'left'} onClick={() => toggleMax('left')} label="panel" />
+            </PaneBar>
+
+            <Box sx={{ display: tab === 'chat' ? 'none' : 'block', overflowY: 'auto', px: 2.5, pt: 1.5, pb: 3, flex: 1, minHeight: 0 }}>
+              {tab === 'desc' && (problem ? <ProblemDescription problem={problem} /> : <ProblemSkeleton />)}
+              {mountedTabs.solutions && <Box sx={{ display: tab === 'solutions' ? 'block' : 'none' }}>{solutionsPanel}</Box>}
+              {mountedTabs.discussion && <Box sx={{ display: tab === 'discussion' ? 'block' : 'none' }}>{discussionPanel}</Box>}
+              {mountedTabs.submissions && <Box sx={{ display: tab === 'submissions' ? 'block' : 'none' }}>{submissionsPanel}</Box>}
+            </Box>
+            <Box sx={{ display: tab === 'chat' ? 'flex' : 'none', flex: 1, minHeight: 0, flexDirection: 'column' }}>{chatPanel}</Box>
+          </Box>
+        )}
+
+        {/* The single seam between left pane and editor (desktop) */}
+        <Box sx={{ display: { xs: 'none', md: maximized ? 'none' : 'flex' }, alignSelf: 'stretch' }}>
+          <SplitHandle orientation="vertical" label="Resize side panel and editor" onDrag={dragLeft} onReset={() => setLayout((l) => ({ ...l, left: DEFAULT_LEFT }))} />
+        </Box>
+
+        {/* Right pane — shared editor + runner (stays mounted behind the phone tabs so the document keeps syncing) */}
+        <Box
           sx={{
-            flexShrink: 0,
-            minHeight: 42,
-            bgcolor: 'background.paper',
-            borderBottom: '1px solid',
-            borderColor: 'divider',
-            '& .MuiTabs-indicator': { height: 3, borderRadius: '3px 3px 0 0' },
-            '& .MuiTab-root': { minHeight: 42, py: 0, textTransform: 'none', fontWeight: 700, fontSize: '0.88rem', color: 'text.secondary' },
-            '& .Mui-selected': { color: 'primary.main' },
+            bgcolor: surf.chrome,
+            flex: 1,
+            minWidth: 0,
+            minHeight: 0,
+            flexDirection: 'column',
+            display: { xs: mobileView === 'code' ? 'flex' : 'none', md: maximized === 'left' ? 'none' : 'flex' },
           }}
         >
-          <Tab value="code" label="Code" />
-          <Tab
-            value="chat"
-            label={
-              <Badge badgeContent={unread} color="primary" max={9} sx={{ '& .MuiBadge-badge': { right: -14, top: 2 } }}>
-                Chat
-              </Badge>
-            }
-          />
-        </Tabs>
-      )}
-
-      <Box sx={{ flex: 1, minHeight: 0, display: 'flex' }}>
-        {!isMobile && problem && showProblem && (
-          <Box sx={{ width: 340, overflow: 'auto', borderRight: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>{problemBody}</Box>
-        )}
-
-        {/* editor + output (stays mounted behind the Chat tab so the shared document keeps syncing) */}
-        <Box sx={{ flex: 1, minWidth: 0, display: isMobile && view === 'chat' ? 'none' : 'flex', flexDirection: 'column' }}>
-          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.25, md: 2 }, py: 0.75, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper', flexShrink: 0 }}>
-            <Select
-              size="small"
+          <PaneBar sx={{ px: 1.25, gap: 0.5, height: { xs: 52, md: WS.bar }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
+            <WsSelect
               value={room.language}
               onChange={(e) => room.changeLanguage(e.target.value)}
-              startAdornment={<CodeRoundedIcon sx={{ fontSize: 18, mr: 0.75, color: 'primary.main' }} />}
-              sx={{ minWidth: 130, height: 36, borderRadius: 999, fontSize: '0.85rem', fontWeight: 700, '& .MuiSelect-select': { py: 0.5 } }}
+              startAdornment={<CodeRoundedIcon sx={{ fontSize: 17, mr: 0.75, color: 'primary.main' }} />}
+              sx={isMobile ? { height: WS.ctrlLg, minWidth: 124, '& .MuiSelect-select': { height: `${WS.ctrlLg}px` } } : undefined}
             >
               {LANGUAGES.map((l) => (
-                <MenuItem key={l.id} value={l.id}>{l.label}</MenuItem>
+                <MenuItem key={l.id} value={l.id}>
+                  {l.label}
+                </MenuItem>
               ))}
-            </Select>
-            {!isMobile && (
-              <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
-                {room.running && <CircularProgress size={16} />}
-                {room.runResult && !room.running && (
-                  <Chip size="small" color={room.runResult.ok ? 'success' : 'error'} label={`${room.runResult.status} · ${room.runResult.by}`} />
-                )}
-                <Button
-                  size="small"
-                  variant="contained"
-                  disableElevation
-                  startIcon={<PlayArrowRoundedIcon sx={{ fontSize: '18px !important' }} />}
-                  onClick={handleRun}
-                  disabled={room.running || !roomReady}
-                  sx={{ height: 36 }}
-                >
-                  Run
-                </Button>
-              </Stack>
+            </WsSelect>
+            <TimerControl sw={sw} size={ctl} />
+
+            <Box sx={{ flex: 1, minWidth: 8 }} />
+
+            {hasProblem && (
+              <WsIconButton title="AI assistant" size={ctl} active={aiOpen} onClick={() => setAiOpen((o) => !o)}>
+                <AutoAwesomeRoundedIcon />
+              </WsIconButton>
             )}
-          </Stack>
+            <WsIconButton title="More" size={ctl} aria-label="More editor actions" onClick={(e) => setMoreAnchor(e.currentTarget)}>
+              <MoreVertRoundedIcon />
+            </WsIconButton>
+            <Menu anchorEl={moreAnchor} open={Boolean(moreAnchor)} onClose={() => setMoreAnchor(null)}>
+              <MenuItem onClick={handleCopyCode}>
+                <ListItemIcon>
+                  <ContentCopyRoundedIcon fontSize="small" />
+                </ListItemIcon>
+                <ListItemText>Copy code</ListItemText>
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  setMoreAnchor(null);
+                  formatNow(false);
+                }}
+              >
+                <ListItemIcon>
+                  <AutoFixHighRoundedIcon fontSize="small" />
+                </ListItemIcon>
+                <ListItemText>Format code</ListItemText>
+              </MenuItem>
+              {problem && (
+                <MenuItem
+                  onClick={() => {
+                    setMoreAnchor(null);
+                    setConfirm({ type: 'reset' });
+                  }}
+                >
+                  <ListItemIcon>
+                    <RestartAltRoundedIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Reset to starter</ListItemText>
+                </MenuItem>
+              )}
+              {problem && <Divider />}
+              {problem && (
+                <MenuItem
+                  onClick={() => {
+                    setMoreAnchor(null);
+                    testInWorkspace();
+                  }}
+                >
+                  <ListItemIcon>
+                    <OpenInNewRoundedIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Open in my workspace</ListItemText>
+                </MenuItem>
+              )}
+            </Menu>
+            {!isMobile && <MaxButton active={maximized === 'editor'} onClick={() => toggleMax('editor')} label="editor" />}
 
-          <Box sx={{ position: 'relative', flex: 1, minHeight: 0, bgcolor: surf.canvas }}>
-            <Editor
-              height="100%"
-              language={room.language}
-              theme={monacoThemeName(editorPrefs.theme, uiMode)}
-              beforeMount={(monaco) => {
-                monacoRef.current = monaco;
-                defineMonacoThemes(monaco, accentMain);
-              }}
-              onMount={handleMount}
-              loading={<CircularProgress size={26} />}
-              options={{
-                fontSize: editorPrefs.fontSize,
-                minimap: { enabled: editorPrefs.minimap },
-                lineNumbers: editorPrefs.lineNumbers ? 'on' : 'off',
-                fontLigatures: editorPrefs.ligatures,
-                autoClosingBrackets: editorPrefs.autoClose ? 'languageDefined' : 'never',
-                autoClosingQuotes: editorPrefs.autoClose ? 'languageDefined' : 'never',
-                wordWrap: isMobile || editorPrefs.wordWrap ? 'on' : 'off',
-                wrappingIndent: 'indent',
-                automaticLayout: true,
-                scrollBeyondLastLine: false,
-                tabSize: ROOM_TAB,
-                insertSpaces: true,
-                detectIndentation: false,
-                autoIndent: 'full',
-                trimAutoWhitespace: true,
-                padding: { top: 10, bottom: 10 },
-                ...(isMobile ? MOBILE_EDITOR_OPTIONS : {}),
-              }}
-            />
-            {isMobile && <EditorScroller editor={editorInstance} />}
-          </Box>
+            {/* Run / Submit: bottom bar on phones (thumb reach), here on md+ */}
+            {!isMobile && (
+              <>
+                <Box sx={{ width: 4 }} />
+                {runButton('md')}
+                {submitButton('md')}
+              </>
+            )}
+          </PaneBar>
 
-          {isMobile && editorFocused && (
-            <MobileKeyBar
-              onKey={keyType}
-              onTab={keyCommand('tab')}
-              onOutdent={keyCommand('outdent')}
-              onDeleteLine={keyCommand('editor.action.deleteLines')}
-              onUp={keyCommand('cursorUp')}
-              onDown={keyCommand('cursorDown')}
-              onLeft={keyCommand('cursorLeft')}
-              onRight={keyCommand('cursorRight')}
-              onUndo={keyCommand('undo')}
-              onRedo={keyCommand('redo')}
-              onFormat={() => formatNow(false)}
-            />
+          {!isAuthenticated && hasProblem && (
+            <Stack direction="row" sx={(t) => ({ alignItems: 'center', gap: 1, px: 1.5, py: 0.75, flexShrink: 0, bgcolor: alpha(t.palette.primary.main, 0.1), color: 'text.primary' })}>
+              <LockOutlinedIcon sx={{ fontSize: 17, color: 'primary.main', flexShrink: 0 }} />
+              <Typography variant="caption" sx={{ flex: 1, lineHeight: 1.4 }}>
+                You can run code together as a guest. Sign in to submit and save your progress.
+              </Typography>
+              <WsButton variant="ghost" onClick={goLogin} sx={{ color: 'primary.main', height: 28 }}>
+                Sign in
+              </WsButton>
+            </Stack>
           )}
 
-          {isMobile ? (
+          <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ position: 'relative', bgcolor: surf.canvas, flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
+              <Editor
+                height="100%"
+                language={room.language}
+                theme={monacoThemeName(editorPrefs.theme, uiMode)}
+                beforeMount={(monaco) => {
+                  monacoRef.current = monaco;
+                  defineMonacoThemes(monaco, accentMain);
+                }}
+                onMount={handleMount}
+                loading={<CircularProgress size={26} />}
+                options={{
+                  fontSize: editorPrefs.fontSize,
+                  fontFamily: '"JetBrains Mono", "Fira Code", Menlo, Consolas, monospace',
+                  minimap: { enabled: editorPrefs.minimap },
+                  lineNumbers: editorPrefs.lineNumbers ? 'on' : 'off',
+                  fontLigatures: editorPrefs.ligatures,
+                  autoClosingBrackets: editorPrefs.autoClose ? 'languageDefined' : 'never',
+                  autoClosingQuotes: editorPrefs.autoClose ? 'languageDefined' : 'never',
+                  wordWrap: isMobile || editorPrefs.wordWrap ? 'on' : 'off',
+                  wrappingIndent: 'indent',
+                  automaticLayout: true,
+                  scrollBeyondLastLine: false,
+                  smoothScrolling: true,
+                  tabSize: ROOM_TAB,
+                  insertSpaces: true,
+                  detectIndentation: false,
+                  autoIndent: 'full',
+                  trimAutoWhitespace: true,
+                  padding: { top: 12, bottom: 12 },
+                  ...(isMobile ? MOBILE_EDITOR_OPTIONS : { lineNumbersMinChars: 3 }),
+                }}
+              />
+              {isMobile && <EditorScroller editor={editorInstance} />}
+            </Box>
+
+            {isMobile && editorFocused && (
+              <MobileKeyBar
+                onKey={keyType}
+                onTab={keyCommand('tab')}
+                onOutdent={keyCommand('outdent')}
+                onDeleteLine={keyCommand('editor.action.deleteLines')}
+                onUp={keyCommand('cursorUp')}
+                onDown={keyCommand('cursorDown')}
+                onLeft={keyCommand('cursorLeft')}
+                onRight={keyCommand('cursorRight')}
+                onUndo={keyCommand('undo')}
+                onRedo={keyCommand('redo')}
+                onFormat={() => formatNow(false)}
+              />
+            )}
+
+            {/* Seam between editor and console (desktop, only while the console is open) */}
+            {!isMobile && consoleOpen && maximized !== 'console' && (
+              <SplitHandle orientation="horizontal" label="Resize editor and console" onDrag={dragConsole} onReset={() => setLayout((l) => ({ ...l, console: DEFAULT_CONSOLE }))} />
+            )}
+
+            {/* Console — collapsible testcase / output / submission panel */}
             <Box
               sx={{
-                flexShrink: 0,
-                maxHeight: consoleOpen ? '45%' : 'auto',
+                bgcolor: surf.panel,
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: 0,
-                borderTop: '1px solid',
-                borderColor: 'divider',
-                bgcolor: surf.panel,
-                pb: 'env(safe-area-inset-bottom)',
+                pb: { xs: 'env(safe-area-inset-bottom)', md: 0 },
+                ...(isMobile
+                  ? { flexShrink: 0, maxHeight: consoleOpen ? '45%' : 'auto' }
+                  : maximized === 'console'
+                    ? { flex: '1 1 0' }
+                    : { flex: consoleOpen ? `0 0 ${layout.console * 100}%` : '0 0 auto' }),
               }}
             >
               <Stack
                 direction="row"
-                onClick={() => setConsoleOpen((o) => !o)}
-                sx={{ alignItems: 'center', gap: 1, px: 1.5, height: 54, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => (maximized === 'console' ? setMaximized(null) : setConsoleOpen((o) => !o))}
+                sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 52, md: WS.barSm }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
               >
-                <TerminalRoundedIcon sx={{ fontSize: 20, color: 'text.secondary' }} />
-                {!(room.running || room.runResult) && <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Output</Typography>}
-                {resultChip('44vw')}
+                <TerminalRoundedIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
+                {!(isMobile && (busy || room.runResult || sub.result)) && <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Console</Typography>}
+                {lastKind === 'submit' ? (
+                  <VerdictChip isRunning={sub.status === 'running'} result={sub.result} sx={{ maxWidth: { xs: '44vw', md: 'none' } }} />
+                ) : (
+                  <RunChip running={room.running} result={room.runResult} sx={{ maxWidth: { xs: '44vw', md: 'none' } }} />
+                )}
+                {!isMobile && canShare && isAuthenticated && (
+                  <WsButton
+                    variant="ghost"
+                    onClick={(e) => {
+                      e.stopPropagation(); // don't toggle the console
+                      setShareOpen(true);
+                    }}
+                    sx={{ height: 26, color: 'primary.main' }}
+                  >
+                    Share solution
+                  </WsButton>
+                )}
                 <Box sx={{ flex: 1 }} />
-                <Button
-                  size="small"
-                  variant="contained"
-                  disableElevation
-                  onPointerDown={keepFocus}
-                  onMouseDown={keepFocus}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleRun();
-                  }}
-                  disabled={room.running || !roomReady}
-                  startIcon={room.running ? <CircularProgress size={14} color="inherit" /> : <PlayArrowRoundedIcon sx={{ fontSize: '18px !important' }} />}
-                  sx={{ height: 36, px: 1.5, minWidth: 0, fontWeight: 700 }}
-                >
-                  Run
-                </Button>
+                {isMobile && (
+                  <Stack direction="row" sx={{ gap: 0.75, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
+                    {runButton('lg')}
+                    {submitButton('lg')}
+                  </Stack>
+                )}
+                {!isMobile && <EditorStatus editor={editorInstance} tabSize={ROOM_TAB} />}
+                {!isMobile && (
+                  <MaxButton
+                    active={maximized === 'console'}
+                    onClick={() => {
+                      setConsoleOpen(true);
+                      toggleMax('console');
+                    }}
+                    label="console"
+                  />
+                )}
                 <ExpandMoreRoundedIcon sx={{ color: 'text.secondary', transition: 'transform .2s', transform: consoleOpen ? 'none' : 'rotate(180deg)' }} />
               </Stack>
+
               {consoleOpen && (
-                <Box sx={{ overflowY: 'auto', px: 1.5, pb: 1.5, flex: 1, minHeight: 0 }}>
-                  <Box sx={{ mb: 1.25 }}>{stdinField({ width: '100%' })}</Box>
-                  {outputBody}
+                <Box sx={{ pt: 0.25, flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+                  {isMobile && canShare && (
+                    <Box sx={{ px: 1.5, pb: 1 }}>
+                      <WsButton variant="secondary" onClick={() => setShareOpen(true)}>
+                        Share solution
+                      </WsButton>
+                    </Box>
+                  )}
+                  {consoleBody}
                 </Box>
               )}
             </Box>
-          ) : (
-            <Box sx={{ height: 240, borderTop: '1px solid', borderColor: 'divider', display: 'flex', flexDirection: 'column', bgcolor: surf.panel }}>
-              <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 1.5, height: 46, flexShrink: 0 }}>
-                <TerminalRoundedIcon sx={{ fontSize: 20, color: 'text.secondary' }} />
-                <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Output</Typography>
-                {resultChip('none')}
-                {room.runResult && !room.running && room.runResult.by && (
-                  <Typography variant="caption" color="text.secondary" noWrap sx={{ display: { xs: 'none', sm: 'block' } }}>
-                    Run by {room.runResult.by}
-                  </Typography>
-                )}
-                <Box sx={{ flex: 1 }} />
-                {stdinField({ width: 240 })}
-              </Stack>
-              <Box sx={{ flex: 1, minHeight: 0, overflow: 'auto', px: 1.5, pb: 1.5 }}>{outputBody}</Box>
-            </Box>
-          )}
+          </Box>
         </Box>
 
-        {/* phones: chat is a tab, so the keyboard just pushes the input up */}
+        {/* Phone: Solutions / Discussion / Submissions / Chat sit next to the Code tab */}
+        {isMobile && hasProblem && mountedTabs.solutions && (
+          <Box sx={{ display: mobileView === 'solutions' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', px: 2, pt: 1.5, pb: 3, bgcolor: surf.chrome }}>{solutionsPanel}</Box>
+        )}
+        {isMobile && hasProblem && mountedTabs.discussion && (
+          <Box sx={{ display: mobileView === 'discussion' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', px: 2, pt: 1.5, pb: 3, bgcolor: surf.chrome }}>{discussionPanel}</Box>
+        )}
+        {isMobile && hasProblem && mountedTabs.submissions && (
+          <Box sx={{ display: mobileView === 'submissions' ? 'block' : 'none', flex: 1, minHeight: 0, overflowY: 'auto', px: 2, pt: 1.5, pb: 3, bgcolor: surf.chrome }}>{submissionsPanel}</Box>
+        )}
         {isMobile && (
-          <Box sx={{ flex: 1, minWidth: 0, minHeight: 0, display: view === 'chat' ? 'flex' : 'none', flexDirection: 'column', pb: 'env(safe-area-inset-bottom)' }}>
-            <ChatPanel messages={room.chat} myId={room.me?.id} onSend={room.sendChat} disabled={!roomReady} friendName={friend?.name} />
-          </Box>
+          <Box sx={{ display: mobileView === 'chat' ? 'flex' : 'none', flex: 1, minHeight: 0, flexDirection: 'column', pb: 'env(safe-area-inset-bottom)' }}>{chatPanel}</Box>
         )}
       </Box>
 
-      {/* desktop: chat side panel */}
-      {!isMobile && (
-        <Drawer
-          anchor="right"
-          open={chatOpen}
-          onClose={() => setChatOpen(false)}
-          slotProps={{ paper: { sx: { width: 360, height: '100%', display: 'flex', flexDirection: 'column' } } }}
-        >
-          <Stack direction="row" sx={{ alignItems: 'center', px: 2, py: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
-            <Typography sx={{ flex: 1, fontWeight: 700 }}>Chat{friend ? ` · ${friend.name}` : ''}</Typography>
-            <IconButton size="small" aria-label="Close chat" onClick={() => setChatOpen(false)}>
-              <CloseRoundedIcon />
-            </IconButton>
-          </Stack>
-          <ChatPanel messages={room.chat} myId={room.me?.id} onSend={room.sendChat} disabled={!roomReady} friendName={friend?.name} />
-        </Drawer>
-      )}
-
-      {/* phones: problem description, slides in right -> left */}
+      {/* Phone: problem description, slides in right -> left */}
       <Drawer anchor="right" open={descOpen} onClose={closeDesc} slotProps={{ paper: { sx: { width: '100%', maxWidth: '100%' } } }}>
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, px: 1, pb: 0.75, pt: 'calc(6px + env(safe-area-inset-top))', borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0 }}>
-          <IconButton aria-label="Back to code" onClick={closeDesc}>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, px: 1, pb: 0.75, pt: 'calc(6px + env(safe-area-inset-top))', flexShrink: 0, bgcolor: surf.chrome }}>
+          <WsIconButton title="Back to code" size="lg" onClick={closeDesc}>
             <ArrowBackRoundedIcon />
-          </IconButton>
+          </WsIconButton>
           <Typography sx={{ fontWeight: 700, flex: 1 }}>Problem</Typography>
         </Stack>
-        <Box sx={{ overflowY: 'auto', flex: 1, minHeight: 0 }}>{problemBody}</Box>
-        <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
-          <Button fullWidth variant="contained" disableElevation startIcon={<CodeRoundedIcon />} onClick={closeDesc} sx={{ height: 46, fontWeight: 800, borderRadius: 999 }}>
+        <Box sx={{ overflowY: 'auto', px: 2, pt: 1, pb: 3, flex: 1, minHeight: 0, bgcolor: surf.chrome }}>
+          {problem ? <ProblemDescription problem={problem} /> : <ProblemSkeleton />}
+        </Box>
+        <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: surf.chrome }}>
+          <WsButton fullWidth size="lg" variant="primary" startIcon={<CodeRoundedIcon />} onClick={closeDesc}>
             Start coding
-          </Button>
+          </WsButton>
         </Box>
       </Drawer>
+
+      {hasProblem && (
+        <RoomAiDrawer
+          open={aiOpen}
+          onClose={() => setAiOpen(false)}
+          slug={slug}
+          language={room.language}
+          getCode={sharedCode}
+          isAuthenticated={isAuthenticated}
+          onSignIn={goLogin}
+        />
+      )}
+
+      {hasProblem && (
+        <ShareSolutionDialog open={shareOpen} onClose={() => setShareOpen(false)} slug={slug} defaultSubmissionId={sub.result?._id} onShared={handleShared} />
+      )}
+
+      <Dialog open={Boolean(confirm)} onClose={() => setConfirm(null)} maxWidth="xs" fullWidth>
+        <DialogTitle>{confirm?.type === 'reset' ? 'Reset the shared code?' : 'Replace the shared code?'}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {confirm?.type === 'reset' ? 'The editor goes back to the starter template' : 'The editor will be replaced with this solution'} for you and {friend?.name || 'your partner'}.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2, gap: 0.5 }}>
+          <WsButton variant="ghost" onClick={() => setConfirm(null)}>
+            Cancel
+          </WsButton>
+          <WsButton variant="primary" onClick={runConfirm}>
+            {confirm?.type === 'reset' ? 'Reset' : 'Replace'}
+          </WsButton>
+        </DialogActions>
+      </Dialog>
 
       {/* video call: floating circles, appears only while a call is on */}
       <FloatingCall call={call} friendName={friend?.name} myName={room.me?.name} hasFriend={!!friend} />

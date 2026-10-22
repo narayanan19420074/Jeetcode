@@ -52,7 +52,7 @@ export function EditorStatus({ editor, tabSize }) {
   );
 }
 
-function CasePill({ label, dot, active, onClick }) {
+export function CasePill({ label, dot, active, onClick }) {
   return (
     <ButtonBase
       onClick={onClick}
@@ -98,7 +98,7 @@ function Samples({ examples }) {
   );
 }
 
-function Result({ result, isSubmitView, isRunning, consoleError, activeCase, onCase }) {
+export function Result({ result, isSubmitView, isRunning, consoleError, activeCase, onCase }) {
   if (isRunning) {
     return (
       <Box sx={{ py: 1 }}>
