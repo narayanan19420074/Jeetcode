@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { animate, motion, useReducedMotion } from 'framer-motion';
 import {
   Alert, Avatar, Badge, Box, Button, ButtonBase, Collapse, IconButton, InputAdornment, Popover, Skeleton, Stack, TextField,
-  ToggleButton, ToggleButtonGroup, Tooltip, Typography,
+  ToggleButton, ToggleButtonGroup, Tooltip, Typography, useMediaQuery, useTheme,
 } from '@mui/material';
 import { alpha, keyframes } from '@mui/material/styles';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -539,7 +539,7 @@ function TopCard({ row, isMe, selected, onPick, compact }) {
   );
 }
 
-function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect }) {
+function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect, you = false }) {
   const { tier } = tierFor(row.score);
   const live = activeLabel(row.lastActive).live;
   const num = (n, color) => (
@@ -553,8 +553,8 @@ function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect }) {
   const name = <Typography noWrap sx={{ fontSize: 14, fontWeight: 700, lineHeight: 1.3, minWidth: 0 }}>{row.name}{isMe && <YouChip />}</Typography>;
   return (
     <Box
-      id={isMe ? 'lb-me' : undefined}
-      sx={(t) => ({
+      id={isMe && !you ? 'lb-me' : undefined}
+      sx={you ? { position: 'relative', zIndex: 1 } : (t) => ({
         position: 'relative',
         borderBottom: `1px solid ${t.palette.divider}`,
         background: selected ? alpha(t.palette.primary.main, 0.12) : isMe ? `linear-gradient(90deg, ${alpha(PLAN_AMBER, 0.22)}, ${alpha(PLAN_AMBER, 0.04)})` : 'transparent',
@@ -563,7 +563,7 @@ function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect }) {
     >
       <ButtonBase
         onClick={onSelect} aria-current={selected ? 'true' : undefined}
-        sx={(t) => ({ width: '100%', minHeight: dense ? 46 : 58, display: 'grid', gridTemplateColumns: tpl, columnGap: 1, alignItems: 'center', textAlign: 'left', px: 2.5, py: dense ? 0.5 : 1, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
+        sx={(t) => ({ width: '100%', minHeight: dense ? 46 : 58, display: 'grid', gridTemplateColumns: tpl, columnGap: 1, alignItems: 'center', textAlign: 'left', px: you ? 1.5 : 2.5, py: you ? 0.9 : dense ? 0.5 : 1, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
       >
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           <RankBadge rank={row.rank} />
@@ -601,8 +601,30 @@ function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect }) {
         <Typography component="div" sx={[{ textAlign: 'right', fontSize: 13, fontWeight: 700, color: row.recent > 0 ? 'success.main' : 'text.disabled' }, mono]}>
           {row.recent > 0 ? `+${row.recent}` : '–'}
         </Typography>
-        <Typography component="div" sx={[{ textAlign: 'right', fontWeight: 900, fontSize: 16 }, mono]}>{row.score.toLocaleString()}</Typography>
+        <Typography component="div" sx={[{ textAlign: 'right', fontWeight: 900, fontSize: you ? 19 : 16 }, mono]}>{you ? <CountUp value={row.score} /> : row.score.toLocaleString()}</Typography>
       </ButtonBase>
+    </Box>
+  );
+}
+
+// My position, pinned under the list. Same gradient border and glow as the original card, but laid
+// out on the table's own columns so it never stretches across the board.
+function YouCard({ me, tpl, rich, dense, onSelect }) {
+  return (
+    <Box sx={(t) => ({ flexShrink: 0, p: 0.75, background: `linear-gradient(180deg, ${alpha(t.palette.primary.main, 0.16)}, ${alpha(t.palette.primary.main, 0.05)})`, boxShadow: `0 -10px 24px -14px ${alpha(t.palette.primary.main, 0.7)}` })}>
+      <Box
+        sx={(t) => {
+          const paper = t.palette.background.paper;
+          return {
+            position: 'relative', overflow: 'hidden', borderRadius: '16px', border: '1.5px solid transparent',
+            background: `linear-gradient(${paper}, ${paper}) padding-box, linear-gradient(135deg, ${t.palette.primary.main}, ${AMBER}) border-box`,
+            boxShadow: `0 10px 24px -14px ${alpha(t.palette.primary.main, 0.6)}`,
+            '&::after': { content: '""', position: 'absolute', inset: 0, background: `linear-gradient(100deg, ${alpha(t.palette.primary.main, 0.12)}, transparent 70%)`, pointerEvents: 'none', animation: `${glow} 2.8s ease-in-out infinite`, ...calm },
+          };
+        }}
+      >
+        <DeskRow row={me} tpl={tpl} rich={rich} dense={dense} isMe you selected={false} onSelect={onSelect} />
+      </Box>
     </Box>
   );
 }
@@ -796,7 +818,7 @@ function DesktopBoard({ v }) {
   const {
     showPanel, rich, tight, iconOnly, panelMode, isAuthenticated, meta, rows, podium, listRows, loading, firstLoad, error, q, search, setSearch,
     track, period, scope, pick, setTrack, setPeriod, setScope, reload, me, selectedId, selectedRow, select,
-    scroller, sentinel, hasMore, scrollToMe, open, setOpen, showEveryone,
+    scroller, sentinel, hasMore, askMore, scrollToMe, showEveryone,
   } = v;
   const [detail, setDetail] = useState(null); // narrow windows: row details open in a popover
   const [friendsEl, setFriendsEl] = useState(null);
@@ -882,7 +904,11 @@ function DesktopBoard({ v }) {
         )}
 
         {/* The list: the only thing here that scrolls (endless) */}
-        <Box ref={scroller} sx={{ flex: 1, minHeight: 0, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', ...SCROLL, scrollbarGutter: firstLoad ? 'auto' : 'stable' }}>
+        <Box
+          ref={scroller} className="autohide-scroll"
+          onScroll={(e) => { const el = e.currentTarget; if (el.scrollHeight - el.scrollTop - el.clientHeight < 240) askMore(); }}
+          sx={{ flex: 1, minHeight: 0, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', overscrollBehavior: 'contain' }}
+        >
           {(firstLoad || podium.length > 0) && (
             <Box sx={{ px: 2.5, pt: tight ? 1.5 : 2, pb: tight ? 1 : 1.5 }}>
               <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${firstLoad ? 3 : podium.length}, minmax(0, 1fr))`, gap: 1.5 }}>
@@ -931,12 +957,8 @@ function DesktopBoard({ v }) {
           {loading && rows.length > 0 && Array.from({ length: 2 }, (_, i) => <SkelRow key={`m${i}`} i={i} />)}
         </Box>
 
-        {/* My own position stays pinned under the list: the original "You" card */}
-        {me && (
-          <Box sx={(t) => ({ flexShrink: 0, maxHeight: '55%', overflowY: 'auto', p: 0.75, background: `linear-gradient(180deg, ${alpha(t.palette.primary.main, 0.16)}, ${alpha(t.palette.primary.main, 0.05)})`, boxShadow: `0 -10px 24px -14px ${alpha(t.palette.primary.main, 0.7)}` })}>
-            <Row row={me} isMe pinned expanded={open === 'pinned-me'} onToggle={() => setOpen(open === 'pinned-me' ? null : 'pinned-me')} />
-          </Box>
-        )}
+        {/* My own position stays pinned under the list */}
+        {me && <YouCard me={me} tpl={tpl} rich={rich} dense={tight} onSelect={(e) => (showPanel ? select(me.userId, true) : setDetail({ el: e.currentTarget, row: me }))} />}
         {!showPanel && isAuthenticated && meta && !meta.me && !loading && (
           <Typography variant="body2" color="text.secondary" noWrap sx={(t) => ({ flexShrink: 0, px: 2.5, py: 1, fontWeight: 600, borderTop: `1px solid ${t.palette.divider}` })}>
             Solve a question to enter the leaderboard.
@@ -1002,6 +1024,19 @@ export default function LeaderboardView({ isAuthenticated }) {
   const [selectedId, setSelectedId] = useState(null); // desktop: which player the side panel shows
   const [reloadKey, setReloadKey] = useState(0);
   const [wrapEl, setWrapEl] = useState(null);
+  const isLg = useMediaQuery(useTheme().breakpoints.up('lg'));
+  // The dashboard puts this view inside a plain div with no height, so "100%" would collapse to the
+  // content height and the list would never scroll. On wide screens measure the room instead.
+  const [fitH, setFitH] = useState(null);
+  useLayoutEffect(() => {
+    if (!isLg || !wrapEl) { setFitH(null); return undefined; }
+    const measure = () => setFitH(Math.max(420, Math.round(window.innerHeight - wrapEl.getBoundingClientRect().top - 24)));
+    measure();
+    window.addEventListener('resize', measure);
+    const t1 = setTimeout(measure, 450); // after the page's fade-in
+    const t2 = setTimeout(measure, 1500); // after the offer banner (if any) loads
+    return () => { window.removeEventListener('resize', measure); clearTimeout(t1); clearTimeout(t2); };
+  }, [isLg, wrapEl]);
   const size = useElSize(wrapEl, { w: typeof window !== 'undefined' && window.innerWidth >= 1200 ? 1000 : 400, h: 700 });
   const width = size.w;
   const wide = width >= DESKTOP_MIN;
@@ -1014,11 +1049,12 @@ export default function LeaderboardView({ isAuthenticated }) {
   const scroller = useRef(null);
   const sentinel = useRef(null);
   const reqId = useRef(0);
+  const askedFor = useRef(0); // the page we already asked more for, so a burst of scroll events loads it once
 
   const hasMore = meta ? rows.length < meta.total : false;
   const firstLoad = loading && rows.length === 0;
 
-  useEffect(() => { setPage(1); }, [q, friendsVersion]);
+  useEffect(() => { askedFor.current = 0; setPage(1); }, [q, friendsVersion]);
 
   useEffect(() => {
     const id = ++reqId.current;
@@ -1035,25 +1071,38 @@ export default function LeaderboardView({ isAuthenticated }) {
       .finally(() => { if (id === reqId.current) setLoading(false); });
   }, [period, scope, track, q, page, friendsVersion, reloadKey]);
 
-  // Endless list: load the next page when the bottom comes into view.
+  // Endless list: load the next page when the bottom comes into view (or is scrolled near).
+  const askMore = useCallback(() => {
+    if (!hasMore || loading || askedFor.current === page) return;
+    askedFor.current = page;
+    setPage(page + 1);
+  }, [hasMore, loading, page]);
+
   useEffect(() => {
     const el = sentinel.current;
     if (!el || !hasMore || loading) return undefined;
-    const io = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) setPage((p) => p + 1); }, { root: scroller.current, rootMargin: '120px' });
+    const io = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) askMore(); }, { root: scroller.current, rootMargin: '160px' });
     io.observe(el);
     return () => io.disconnect();
-  }, [hasMore, loading, rows.length, wide]);
+  }, [hasMore, loading, rows.length, wide, askMore]);
+
+  // A tall window may show every loaded row without a scrollbar; keep loading until the list can scroll.
+  useEffect(() => {
+    const el = scroller.current;
+    if (el && hasMore && !loading && el.scrollHeight <= el.clientHeight + 8) askMore();
+  }, [hasMore, loading, rows.length, wide, fitH, askMore]);
 
   const reset = useCallback(() => {
     setPage(1);
     setRows([]);
     setMeta((m) => (m ? { ...m, total: 0 } : m));
     setOpen(null);
+    askedFor.current = 0;
     scroller.current?.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
   }, [reduce]);
 
   const pick = (setter) => (_, v) => { if (v) { setter(v); reset(); } };
-  const reload = () => { setPage(1); setReloadKey((k) => k + 1); };
+  const reload = () => { askedFor.current = 0; setPage(1); setReloadKey((k) => k + 1); };
   const scrollToMe = () => document.getElementById('lb-me')?.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
   const select = useCallback((id, force = false) => setSelectedId((cur) => (!force && cur === id ? null : id)), []);
   const showEveryone = () => { setScope('global'); reset(); };
@@ -1185,11 +1234,11 @@ export default function LeaderboardView({ isAuthenticated }) {
   const desktopView = {
     showPanel, rich, tight, iconOnly, panelMode, isAuthenticated, meta, rows, podium, listRows, loading, firstLoad, error, q, search, setSearch,
     track, period, scope, pick, setTrack, setPeriod, setScope, reload, me, selectedId, selectedRow, select,
-    scroller, sentinel, hasMore, scrollToMe, open, setOpen, showEveryone,
+    scroller, sentinel, hasMore, askMore, scrollToMe, showEveryone,
   };
 
   return (
-    <Box ref={setWrapEl} sx={{ height: { xs: 'calc(100dvh - 150px)', lg: '100%' }, minHeight: { xs: 420, lg: 0 } }}>
+    <Box ref={setWrapEl} sx={{ height: isLg ? (fitH ? `${fitH}px` : '100%') : 'calc(100dvh - 150px)', minHeight: isLg ? 0 : 420 }}>
       {wide ? <DesktopBoard v={desktopView} /> : mobile}
     </Box>
   );
