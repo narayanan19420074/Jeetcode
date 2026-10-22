@@ -7,22 +7,18 @@ import {
   ButtonBase,
   Stack,
   Typography,
-  Chip,
   Tabs,
   Tab,
-  Select,
   MenuItem,
-  Button,
-  IconButton,
   Drawer,
   TextField,
   CircularProgress,
-  LinearProgress,
+  Chip,
   Skeleton,
-  Tooltip,
   Menu,
   ListItemIcon,
   ListItemText,
+  Divider,
   useMediaQuery,
   useTheme,
   Dialog,
@@ -34,15 +30,15 @@ import {
 import { alpha } from '@mui/material/styles';
 import { useSnackbar } from 'notistack';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
 import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
-import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
+import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
@@ -51,27 +47,31 @@ import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import TipsAndUpdatesOutlinedIcon from '@mui/icons-material/TipsAndUpdatesOutlined';
-import RuleRoundedIcon from '@mui/icons-material/RuleRounded';
-import DataObjectRoundedIcon from '@mui/icons-material/DataObjectRounded';
-import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
-import CloseFullscreenRoundedIcon from '@mui/icons-material/CloseFullscreenRounded';
+import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
+import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
+import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import DeleteSweepOutlinedIcon from '@mui/icons-material/DeleteSweepOutlined';
 import DifficultyChip from '../../components/DifficultyChip';
 import InviteButton from '../room/InviteButton';
 import SolutionsPanel from './community/SolutionsPanel';
 import DiscussionPanel from './community/DiscussionPanel';
 import ShareSolutionDialog from './community/ShareSolutionDialog';
+import SubmissionsPanel from './SubmissionsPanel';
+import ProblemDescription from './ProblemDescription';
+import { ConsoleBody, EditorStatus, VerdictChip } from './ConsolePanel';
 import SplitHandle from './SplitHandle';
 import MobileKeyBar from './MobileKeyBar';
 import EditorScroller from './EditorScroller';
+import useStopwatch, { formatClock } from './useStopwatch';
+import { EmptyState, MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton, WsSelect } from './wsUi';
+import { WS, mono } from './wsTokens';
 import { wsSurface, defineMonacoThemes, monacoThemeName } from './workspaceTheme';
 import { formatCode, preloadFormatter } from './formatCode';
 import { aiApi } from '../../api/aiApi';
+import { problemsApi } from '../../api/problemsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import {
   fetchProblem,
@@ -89,9 +89,10 @@ const LANGUAGES = [
 ];
 
 const DESC_TABS = [
-  { label: 'Description', icon: <ArticleOutlinedIcon /> },
-  { label: 'Solutions', icon: <LightbulbOutlinedIcon /> },
-  { label: 'Discussion', icon: <ForumOutlinedIcon /> },
+  { value: 0, label: 'Description', icon: <ArticleOutlinedIcon /> },
+  { value: 1, label: 'Solutions', icon: <LightbulbOutlinedIcon /> },
+  { value: 2, label: 'Discussion', icon: <ForumOutlinedIcon /> },
+  { value: 3, label: 'Submissions', icon: <HistoryRoundedIcon /> },
 ];
 
 const AI_QUICK_PROMPTS = [
@@ -100,16 +101,23 @@ const AI_QUICK_PROMPTS = [
   'Which edge cases should I test?',
 ];
 
+const AI_WELCOME = {
+  role: 'assistant',
+  text: "I'm here to help you think through the problem — ask about an approach, an edge case, or a complexity trade-off. I won't hand you the full solution.",
+};
+
 // Resizable layout (desktop). Sizes are remembered between visits.
 const LAYOUT_KEY = 'jeetcode-workspace-layout';
 const DEFAULT_LEFT = 0.42; // problem pane share of the width
 const DEFAULT_CONSOLE = 0.35; // console share of the editor+console column
+const LEFT_MIN = 0.25;
+const LEFT_MAX = 0.65;
 const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 const loadLayout = () => {
   try {
     const raw = JSON.parse(localStorage.getItem(LAYOUT_KEY) || '{}');
     return {
-      left: clamp(Number(raw.left) || DEFAULT_LEFT, 0.2, 0.75),
+      left: clamp(Number(raw.left) || DEFAULT_LEFT, LEFT_MIN, LEFT_MAX),
       console: clamp(Number(raw.console) || DEFAULT_CONSOLE, 0.12, 0.8),
     };
   } catch {
@@ -117,143 +125,56 @@ const loadLayout = () => {
   }
 };
 
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
-
 /* ---------- small building blocks ---------- */
-
-function EmptyState({ icon, title, text }) {
-  return (
-    <Stack sx={{ alignItems: 'center', textAlign: 'center', py: 6, px: 2, gap: 1.5 }}>
-      <Box
-        sx={(t) => ({
-          width: 64,
-          height: 64,
-          borderRadius: '50%',
-          display: 'grid',
-          placeItems: 'center',
-          bgcolor: alpha(t.palette.primary.main, 0.12),
-          color: 'primary.main',
-          '& svg': { fontSize: 30 },
-        })}
-      >
-        {icon}
-      </Box>
-      <Typography sx={{ fontWeight: 700 }}>{title}</Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 320 }}>
-        {text}
-      </Typography>
-    </Stack>
-  );
-}
-
-function SectionTitle({ icon, children }) {
-  return (
-    <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mb: 1.25 }}>
-      <Box sx={{ display: 'grid', placeItems: 'center', color: 'primary.main', '& svg': { fontSize: 20 } }}>{icon}</Box>
-      <Typography sx={{ fontWeight: 700, fontSize: '0.95rem' }}>{children}</Typography>
-    </Stack>
-  );
-}
-
-function ExampleRow({ icon, label, value, plain }) {
-  return (
-    <Box sx={{ mb: 1.25, '&:last-child': { mb: 0 } }}>
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mb: 0.5, color: 'text.secondary', '& svg': { fontSize: 16 } }}>
-        {icon}
-        <Typography variant="caption" sx={{ fontWeight: 700 }}>
-          {label}
-        </Typography>
-      </Stack>
-      {plain ? (
-        <Typography variant="body2" sx={{ lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>
-          {value}
-        </Typography>
-      ) : (
-        <Box
-          sx={(t) => ({
-            ...mono,
-            fontSize: '0.82rem',
-            lineHeight: 1.6,
-            px: 1.5,
-            py: 1,
-            borderRadius: '10px',
-            bgcolor: wsSurface(t).raised,
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-word',
-          })}
-        >
-          {value}
-        </Box>
-      )}
-    </Box>
-  );
-}
-
-function ExampleCard({ index, example }) {
-  return (
-    <Box sx={{ mb: 1.5, p: 1.75, borderRadius: '16px', border: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mb: 1.5 }}>
-        <Box
-          sx={(t) => ({
-            width: 24,
-            height: 24,
-            borderRadius: '8px',
-            display: 'grid',
-            placeItems: 'center',
-            fontSize: '0.75rem',
-            fontWeight: 800,
-            bgcolor: alpha(t.palette.primary.main, 0.14),
-            color: 'primary.main',
-          })}
-        >
-          {index + 1}
-        </Box>
-        <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Example {index + 1}</Typography>
-      </Stack>
-      <ExampleRow icon={<LoginRoundedIcon />} label="Input" value={example.input} />
-      <ExampleRow icon={<LogoutRoundedIcon />} label="Output" value={example.output} />
-      {example.explanation && (
-        <ExampleRow icon={<TipsAndUpdatesOutlinedIcon />} label="Explanation" value={example.explanation} plain />
-      )}
-    </Box>
-  );
-}
 
 function ProblemSkeleton() {
   return (
-    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 1.5, p: { xs: 1.5, md: 1.5 }, height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' } }}>
-      <Box sx={{ width: { xs: '100%', md: '42%' }, flex: { xs: 'none', md: 'none' }, p: 2.5, borderRadius: '20px', bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
-        <Skeleton variant="rounded" height={36} sx={{ mb: 3, borderRadius: 999 }} />
-        <Skeleton width="60%" height={34} />
-        <Stack direction="row" sx={{ gap: 1, my: 1.5 }}>
-          <Skeleton variant="rounded" width={64} height={26} sx={{ borderRadius: 999 }} />
-          <Skeleton variant="rounded" width={80} height={26} sx={{ borderRadius: 999 }} />
-        </Stack>
+    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' }, bgcolor: 'background.paper' }}>
+      <Box sx={{ width: { xs: '100%', md: '42%' }, p: 2.5 }}>
+        <Skeleton variant="rounded" height={32} width="60%" sx={{ mb: 3, borderRadius: `${WS.radius}px` }} />
+        <Skeleton width="55%" height={32} />
+        <Skeleton variant="rounded" width={72} height={24} sx={{ my: 1.5, borderRadius: 999 }} />
         <Skeleton height={20} />
         <Skeleton height={20} />
         <Skeleton width="80%" height={20} />
-        <Skeleton variant="rounded" height={110} sx={{ mt: 3, borderRadius: '16px' }} />
+        <Skeleton variant="rounded" height={110} sx={{ mt: 3, borderRadius: `${WS.radius + 2}px` }} />
       </Box>
-      <Skeleton variant="rounded" sx={{ flex: 1, display: { xs: 'none', md: 'block' }, borderRadius: '20px' }} height="100%" />
+      <Skeleton variant="rectangular" sx={{ flex: 1, display: { xs: 'none', md: 'block' } }} height="100%" />
     </Box>
   );
 }
 
-function MaxButton({ active, onClick, label }) {
+// Practice timer: tap the clock to start, tap the time to pause.
+function TimerControl({ sw }) {
+  if (!sw.running && sw.seconds === 0) {
+    return (
+      <WsIconButton title="Start timer" onClick={sw.start}>
+        <TimerOutlinedIcon />
+      </WsIconButton>
+    );
+  }
   return (
-    <Tooltip title={active ? `Restore ${label}` : `Maximize ${label}`}>
-      <IconButton
-        size="small"
-        aria-label={active ? `Restore ${label}` : `Maximize ${label}`}
-        onClick={(e) => {
-          e.stopPropagation();
-          onClick();
-        }}
-        sx={{ width: 32, height: 32, color: 'text.secondary', flexShrink: 0 }}
+    <Stack direction="row" sx={{ alignItems: 'center', gap: 0.25 }}>
+      <ButtonBase
+        onClick={sw.running ? sw.pause : sw.start}
+        aria-label={sw.running ? 'Pause timer' : 'Resume timer'}
+        sx={(t) => ({
+          height: WS.ctrl,
+          px: 1.1,
+          gap: 0.6,
+          borderRadius: `${WS.radius}px`,
+          color: sw.running ? t.palette.primary.main : t.palette.text.secondary,
+          bgcolor: sw.running ? alpha(t.palette.primary.main, 0.12) : wsSurface(t).raised,
+          '& svg': { fontSize: 17 },
+        })}
       >
-        {active ? <CloseFullscreenRoundedIcon sx={{ fontSize: 17 }} /> : <OpenInFullRoundedIcon sx={{ fontSize: 17 }} />}
-      </IconButton>
-    </Tooltip>
+        {sw.running ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />}
+        <Typography sx={{ ...mono, fontSize: '0.8rem', fontWeight: 600, color: 'inherit' }}>{formatClock(sw.seconds)}</Typography>
+      </ButtonBase>
+      <WsIconButton title="Reset timer" onClick={sw.reset}>
+        <RestartAltRoundedIcon sx={{ fontSize: '17px !important' }} />
+      </WsIconButton>
+    </Stack>
   );
 }
 
@@ -285,9 +206,9 @@ export default function WorkspacePage() {
   } = useSelector((s) => s.workspace);
 
   const [descTab, setDescTab] = useState(0);
-  // Solutions / Discussion mount on first visit, then stay mounted (hidden) so
-  // switching tabs doesn't lose the open thread or scroll position.
-  const [mountedTabs, setMountedTabs] = useState({ 1: false, 2: false });
+  // Solutions / Discussion / Submissions mount on first visit, then stay mounted
+  // (hidden) so switching tabs doesn't lose the open thread or scroll position.
+  const [mountedTabs, setMountedTabs] = useState({ 1: false, 2: false, 3: false });
   const [shareOpen, setShareOpen] = useState(false);
   const [solutionsRefresh, setSolutionsRefresh] = useState(0);
   const [pendingLoad, setPendingLoad] = useState(null); // solution waiting for overwrite confirmation
@@ -302,19 +223,16 @@ export default function WorkspacePage() {
   const [mobileView, setMobileView] = useState('code'); // 'code' | 'solutions' | 'discussion'
   const descOpen = isMobile && Boolean(location.state?.problemDesc);
   const [editorFocused, setEditorFocused] = useState(false); // phone: shows the symbol bar
-  const [editorInstance, setEditorInstance] = useState(null); // phone: fast-scroller needs the editor
+  const [editorInstance, setEditorInstance] = useState(null); // fast-scroller + status bar need the editor
   const [consoleOpen, setConsoleOpen] = useState(false);
+  const [consoleTab, setConsoleTab] = useState('cases'); // 'cases' | 'result'
   const [activeCase, setActiveCase] = useState(0);
   const [moreAnchor, setMoreAnchor] = useState(null);
   const [aiInput, setAiInput] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
-  const [aiMessages, setAiMessages] = useState([
-    {
-      role: 'assistant',
-      text: "I'm here to help you think through the problem — ask about an approach, an edge case, or a complexity trade-off. I won't hand you the full solution.",
-    },
-  ]);
+  const [aiMessages, setAiMessages] = useState([AI_WELCOME]);
   const aiEndRef = useRef(null);
+  const sw = useStopwatch();
 
   // Resizable split panes + maximize (desktop only)
   const [layout, setLayout] = useState(loadLayout);
@@ -343,10 +261,8 @@ export default function WorkspacePage() {
     const el = rootRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    const pad = parseFloat(getComputedStyle(el).paddingLeft) || 0;
-    const usable = rect.width - pad * 2;
-    const f = (x - rect.left - pad) / usable;
-    setLayout((l) => ({ ...l, left: clamp(f, 0.2, 0.75) }));
+    const f = (x - rect.left) / rect.width;
+    setLayout((l) => ({ ...l, left: clamp(f, LEFT_MIN, LEFT_MAX) }));
   };
 
   const dragConsole = (_x, y) => {
@@ -358,16 +274,20 @@ export default function WorkspacePage() {
     setLayout((l) => ({ ...l, console: clamp(f, 0.12, 0.8) }));
   };
 
+  const resetSw = sw.reset;
   useEffect(() => {
     dispatch(fetchProblem(slug));
     // New problem => start from a clean workspace (tabs, console, case selection).
     setDescTab(0);
-    setMountedTabs({ 1: false, 2: false });
+    setMountedTabs({ 1: false, 2: false, 3: false });
     setConsoleOpen(false);
+    setConsoleTab('cases');
     setActiveCase(0);
     setMaximized(null);
     setMobileView('code');
-  }, [dispatch, slug]);
+    setAiMessages([AI_WELCOME]);
+    resetSw();
+  }, [dispatch, slug, resetSw]);
 
   // Start in the language chosen in Settings -> Editor (once per page visit;
   // switching language in the toolbar afterwards still works as before).
@@ -376,13 +296,20 @@ export default function WorkspacePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Open the console whenever a run / submit starts so the result is visible.
+  // Open the console on the Result tab whenever a run / submit starts.
   useEffect(() => {
     if (runStatus === 'running' || submitStatus === 'running') {
       setConsoleOpen(true);
+      setConsoleTab('result');
       setActiveCase(0);
     }
   }, [runStatus, submitStatus]);
+
+  // A solved problem stops the clock.
+  const pauseSw = sw.pause;
+  useEffect(() => {
+    if (submitResult?.status === 'Accepted') pauseSw();
+  }, [submitResult, pauseSw]);
 
   useEffect(() => {
     aiEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
@@ -537,6 +464,31 @@ export default function WorkspacePage() {
     dispatch(submitCode({ problemSlug: slug, language: activeLanguage, code: finalCode }));
   };
 
+  // Keyboard shortcuts (desktop): Ctrl/Cmd + ' runs, Ctrl/Cmd + Enter submits.
+  const isRunning = runStatus === 'running' || submitStatus === 'running';
+  const actionsRef = useRef({});
+  actionsRef.current = { run: handleRun, submit: handleSubmit, busy: isRunning || !problem };
+  useEffect(() => {
+    if (isMobile) return undefined;
+    const onKey = (e) => {
+      if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey) return;
+      const isRun = e.key === "'";
+      const isSubmit = e.key === 'Enter';
+      if (!isRun && !isSubmit) return;
+      const t = e.target;
+      const inEditor = t?.closest?.('.monaco-editor');
+      const typing = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+      if (typing && !inEditor) return; // Ctrl+Enter in a comment box must not submit code
+      e.preventDefault();
+      e.stopPropagation();
+      const a = actionsRef.current;
+      if (a.busy) return;
+      (isRun ? a.run : a.submit)();
+    };
+    window.addEventListener('keydown', onKey, true);
+    return () => window.removeEventListener('keydown', onKey, true);
+  }, [isMobile]);
+
   const openTab = (v) => {
     setDescTab(v);
     if (v > 0) setMountedTabs((m) => ({ ...m, [v]: true }));
@@ -594,6 +546,20 @@ export default function WorkspacePage() {
     }
   };
 
+  const handleFormat = () => {
+    setMoreAnchor(null);
+    runAutoFormat();
+  };
+
+  const handleRandom = async () => {
+    try {
+      const { data } = await problemsApi.getRandom();
+      navigate(`/workspace/${data.data.slug}`);
+    } catch (e) {
+      enqueueSnackbar(extractErrorMessage(e), { variant: 'error' });
+    }
+  };
+
   const handleAiSend = async () => {
     if (!aiInput.trim() || !problem || aiLoading) return;
     if (!isAuthenticated) {
@@ -630,11 +596,17 @@ export default function WorkspacePage() {
 
   if (problemStatus === 'error' || !problem) {
     return (
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 'calc(100vh - 64px)', gap: 2, px: 2, textAlign: 'center' }}>
-        <EmptyState icon={<CancelRoundedIcon />} title="Couldn't open this problem" text={problemError || 'Problem not found'} />
-        <Button variant="outlined" startIcon={<ArrowBackRoundedIcon />} onClick={() => navigate('/dashboard')}>
-          Back to Dashboard
-        </Button>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 'calc(100vh - 64px)', gap: 1, px: 2, textAlign: 'center' }}>
+        <EmptyState
+          icon={<CancelRoundedIcon />}
+          title="Couldn't open this problem"
+          text={problemError || 'Problem not found'}
+          action={
+            <WsButton variant="secondary" startIcon={<ArrowBackRoundedIcon />} onClick={() => navigate('/dashboard')} sx={{ mt: 1 }}>
+              Back to Dashboard
+            </WsButton>
+          }
+        />
       </Box>
     );
   }
@@ -644,79 +616,23 @@ export default function WorkspacePage() {
   const resultToShow =
     lastResultKind === 'run' ? runResult : lastResultKind === 'submit' ? submitResult : submitResult || runResult;
   const isSubmitView = lastResultKind === 'submit';
-  const fmtMs = (sec) => (sec == null || Number.isNaN(parseFloat(sec)) ? null : `${Math.round(parseFloat(sec) * 1000)} ms`);
-  const fmtMem = (kb) => (kb ? `${(kb / 1024).toFixed(1)} MB` : null);
-  const isRunning = runStatus === 'running' || submitStatus === 'running';
-  const isAccepted = resultToShow?.status === 'Accepted';
-  const passedPct = resultToShow?.totalCount ? (resultToShow.passedCount / resultToShow.totalCount) * 100 : 0;
-  const testResults = resultToShow?.testResults ?? [];
-  const selectedCase = testResults[Math.min(activeCase, testResults.length - 1)];
+  const canShare = !isRunning && isSubmitView && submitResult?.status === 'Accepted' && Boolean(submitResult._id);
+  const ctl = isMobile ? 'lg' : 'md';
 
-  const descriptionContent = (
-  <>
-      <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 1.25, mb: 1.5 }}>
-        <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.25 }}>
-          {problem.title}
-        </Typography>
-        <DifficultyChip difficulty={problem.difficulty} />
-      </Stack>
-  
-      {problem.tags?.length > 0 && (
-        <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mb: 2.5 }}>
-          {problem.tags.map((t) => (
-            <Chip
-              key={t}
-              icon={<SellOutlinedIcon />}
-              label={t}
-              size="small"
-              sx={(th) => ({
-                bgcolor: alpha(th.palette.primary.main, th.palette.mode === 'dark' ? 0.14 : 0.09),
-                color: 'primary.main',
-                '& .MuiChip-icon': { fontSize: 14, color: 'inherit' },
-              })}
-            />
-          ))}
-        </Stack>
-      )}
-  
-      <Typography variant="body2" sx={{ whiteSpace: 'pre-line', mb: 3, lineHeight: 1.75 }}>
-        {problem.description}
-      </Typography>
-  
-      <SectionTitle icon={<ScienceOutlinedIcon />}>Examples</SectionTitle>
-      {problem.examples.map((ex, i) => (
-        <ExampleCard key={i} index={i} example={ex} />
-      ))}
-  
-      <Box sx={{ mt: 3 }}>
-        <SectionTitle icon={<RuleRoundedIcon />}>Constraints</SectionTitle>
-        <Stack sx={{ gap: 0.75 }}>
-          {problem.constraints.map((c, i) => (
-            <Stack key={i} direction="row" sx={{ alignItems: 'flex-start', gap: 1 }}>
-              <DataObjectRoundedIcon sx={{ fontSize: 16, mt: '4px', color: 'text.disabled', flexShrink: 0 }} />
-              <Typography variant="body2" color="text.secondary" sx={{ ...mono, fontSize: '0.8rem', lineHeight: 1.6, wordBreak: 'break-word' }}>
-                {c}
-              </Typography>
-            </Stack>
-          ))}
-        </Stack>
-      </Box>
-    </>
-
+  const consoleBody = (
+    <ConsoleBody
+      problem={problem}
+      isRunning={isRunning}
+      result={resultToShow}
+      isSubmitView={isSubmitView}
+      consoleError={consoleError}
+      tab={consoleTab}
+      onTab={setConsoleTab}
+      activeCase={activeCase}
+      onCase={setActiveCase}
+    />
   );
 
-  const panelSx = {
-    bgcolor: 'background.paper',
-    border: { md: '1px solid' },
-    borderColor: 'divider',
-    borderRadius: { xs: 0, md: '20px' },
-    overflow: 'hidden',
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: 0,
-  };
-
-  const split = !isMobile && !maximized; // two panes side by side, sharing one divider
   const hoverScrollbars = (t) => {
     const thumb = alpha(t.palette.text.primary, 0.35);
     return {
@@ -740,10 +656,8 @@ export default function WorkspacePage() {
         ...hoverScrollbars(t),
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
-        gap: 0,
-        p: { xs: 0, md: 1.5 },
         height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' },
-        bgcolor: { xs: 'background.paper', md: 'transparent' },
+        bgcolor: surf.chrome,
         overflow: 'hidden',
       })}
     >
@@ -811,58 +725,26 @@ export default function WorkspacePage() {
       {!isMobile && (
         <Box
           sx={{
-            ...panelSx,
-            ...(split ? { borderRadius: { xs: 0, md: '20px 0 0 20px' }, borderRight: { md: 'none' } } : {}),
-            width: { xs: '100%', md: maximized === 'problem' ? '100%' : `${layout.left * 100}%` },
+            bgcolor: surf.chrome,
+            width: maximized === 'problem' ? '100%' : `${layout.left * 100}%`,
             minWidth: 0,
-            flex: { xs: 1, md: maximized === 'problem' ? 1 : 'none' },
-            display: {
-              xs: 'none',
-              md: maximized === 'editor' || maximized === 'console' ? 'none' : 'flex',
-            },
+            flex: maximized === 'problem' ? 1 : 'none',
+            display: maximized === 'editor' || maximized === 'console' ? 'none' : 'flex',
+            flexDirection: 'column',
+            minHeight: 0,
           }}
         >
-          <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, borderBottom: '1px solid', borderColor: 'divider', pr: 1 }}>
-          <Tabs
-            value={descTab}
-            onChange={(e, v) => openTab(v)}
-            variant="scrollable"
-            scrollButtons={false}
-            slotProps={{ indicator: { sx: { display: 'none' } } }}
-            sx={{
-              minHeight: 0,
-              flexShrink: 0,
-              px: 1.5,
-              py: 1,
-              flex: 1,
-              minWidth: 0,
-              '& .MuiTabs-flexContainer': { gap: 0.5 },
-            }}
-          >
-            {DESC_TABS.map((tab) => (
-              <Tab
-                key={tab.label}
-                icon={tab.icon}
-                iconPosition="start"
-                label={tab.label}
-                sx={(t) => ({
-                  minHeight: 38,
-                  px: 1.75,
-                  py: 0,
-                  gap: 0.5,
-                  borderRadius: 999,
-                  color: 'text.secondary',
-                  '& svg': { fontSize: 19, mr: '0 !important', mb: '0 !important' },
-                  '&.Mui-selected': { color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12) },
-                })}
-              />
-            ))}
-          </Tabs>
-          {!isMobile && <MaxButton active={maximized === 'problem'} onClick={() => toggleMax('problem')} label="problem" />}
-          </Stack>
+          <PaneBar>
+            <PaneTabs value={descTab} onChange={openTab} items={DESC_TABS} />
+            <Box sx={{ flex: 1 }} />
+            <WsIconButton title="Random problem" onClick={handleRandom}>
+              <ShuffleRoundedIcon />
+            </WsIconButton>
+            <MaxButton active={maximized === 'problem'} onClick={() => toggleMax('problem')} label="problem" />
+          </PaneBar>
 
-          <Box sx={{ overflowY: 'auto', p: { xs: 2, md: 2.5 }, flex: 1 }}>
-            {descTab === 0 && descriptionContent}
+          <Box sx={{ overflowY: 'auto', px: 2.5, pt: 1.5, pb: 3, flex: 1, minHeight: 0 }}>
+            {descTab === 0 && <ProblemDescription problem={problem} />}
             {mountedTabs[1] && (
               <Box sx={{ display: descTab === 1 ? 'block' : 'none' }}>
                 <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
@@ -873,11 +755,22 @@ export default function WorkspacePage() {
                 <DiscussionPanel slug={slug} />
               </Box>
             )}
+            {mountedTabs[3] && (
+              <Box sx={{ display: descTab === 3 ? 'block' : 'none' }}>
+                <SubmissionsPanel
+                  slug={slug}
+                  isAuthenticated={isAuthenticated}
+                  refreshKey={submitResult?._id ?? 0}
+                  onLoad={handleSendToEditor}
+                  onSignIn={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}
+                />
+              </Box>
+            )}
           </Box>
         </Box>
       )}
 
-      {/* Drag handle between problem and editor (desktop) */}
+      {/* The single seam between problem and editor (desktop) */}
       <Box sx={{ display: { xs: 'none', md: maximized ? 'none' : 'flex' }, alignSelf: 'stretch' }}>
         <SplitHandle orientation="vertical" label="Resize problem and editor panes" onDrag={dragLeft} onReset={() => setLayout((l) => ({ ...l, left: DEFAULT_LEFT }))} />
       </Box>
@@ -885,413 +778,289 @@ export default function WorkspacePage() {
       {/* Right pane — editor + runner */}
       <Box
         sx={{
-          ...panelSx,
-          ...(split ? { borderRadius: { xs: 0, md: '0 20px 20px 0' } } : {}),
+          bgcolor: surf.chrome,
           flex: 1,
           minWidth: 0,
+          minHeight: 0,
+          flexDirection: 'column',
           display: { xs: mobileView === 'code' ? 'flex' : 'none', md: maximized === 'problem' ? 'none' : 'flex' },
         }}
       >
-        <Stack
-          direction="row"
-          sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.25, md: 1.5 }, py: 1.25, borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0 }}
-        >
-          <Select
-            size="small"
+        <PaneBar sx={{ px: { xs: 1.25, md: 1.25 }, gap: { xs: 0.5, md: 0.5 }, height: { xs: 56, md: WS.bar }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
+          <WsSelect
             value={activeLanguage}
             onChange={(e) => dispatch(setLanguage(e.target.value))}
-            startAdornment={<CodeRoundedIcon sx={{ fontSize: 18, mr: 0.75, color: 'primary.main' }} />}
-            sx={(t) => ({
-              minWidth: { xs: 120, md: 150 },
-              height: 40,
-              borderRadius: '12px',
-              fontSize: '0.9rem',
-              fontWeight: 700,
-              bgcolor: wsSurface(t).raised,
-              '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-              '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: t.palette.divider },
-              '& .MuiSelect-select': { py: 0.5 },
-            })}
+            startAdornment={<CodeRoundedIcon sx={{ fontSize: 17, mr: 0.75, color: 'primary.main' }} />}
+            sx={isMobile ? { height: WS.ctrlLg, minWidth: 124, '& .MuiSelect-select': { height: `${WS.ctrlLg}px` } } : undefined}
           >
             {LANGUAGES.map((l) => (
               <MenuItem key={l.id} value={l.id}>
                 {l.label}
               </MenuItem>
             ))}
-          </Select>
+          </WsSelect>
+          {!isMobile && <TimerControl sw={sw} />}
 
-          <Stack direction="row" sx={{ alignItems: 'center', gap: { xs: 0.5, md: 1 } }}>
-            <InviteButton problem={problem} language={activeLanguage} code={code} />
-            <Tooltip title="AI assistant">
-              <IconButton
-                size="small"
-                aria-label="AI assistant"
-                onClick={() => dispatch(toggleAiDrawer())}
-                sx={(t) => ({
-                  width: 40,
-                  height: 40,
-                  color: aiDrawerOpen ? 'primary.main' : 'text.secondary',
-                  bgcolor: aiDrawerOpen ? alpha(t.palette.primary.main, 0.16) : wsSurface(t).raised,
-                  '&:hover': { bgcolor: aiDrawerOpen ? alpha(t.palette.primary.main, 0.24) : alpha(t.palette.text.primary, 0.14) },
-                })}
+          <Box sx={{ flex: 1, minWidth: 8 }} />
+
+          <InviteButton problem={problem} language={activeLanguage} code={code} size={ctl} />
+          <WsIconButton title="AI assistant" size={ctl} active={aiDrawerOpen} onClick={() => dispatch(toggleAiDrawer())}>
+            <AutoAwesomeRoundedIcon />
+          </WsIconButton>
+          <WsIconButton title="More" size={ctl} aria-label="More editor actions" onClick={(e) => setMoreAnchor(e.currentTarget)}>
+            <MoreVertRoundedIcon />
+          </WsIconButton>
+          <Menu anchorEl={moreAnchor} open={Boolean(moreAnchor)} onClose={() => setMoreAnchor(null)}>
+            <MenuItem onClick={handleCopyCode}>
+              <ListItemIcon>
+                <ContentCopyRoundedIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>Copy code</ListItemText>
+            </MenuItem>
+            <MenuItem onClick={handleFormat}>
+              <ListItemIcon>
+                <AutoFixHighRoundedIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>Format code</ListItemText>
+            </MenuItem>
+            <MenuItem onClick={handleResetCode}>
+              <ListItemIcon>
+                <RestartAltRoundedIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>Reset to starter</ListItemText>
+            </MenuItem>
+            <Divider />
+            <MenuItem
+              onClick={() => {
+                setMoreAnchor(null);
+                navigate('/settings');
+              }}
+            >
+              <ListItemIcon>
+                <SettingsOutlinedIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>Editor settings</ListItemText>
+            </MenuItem>
+          </Menu>
+          {!isMobile && <MaxButton active={maximized === 'editor'} onClick={() => toggleMax('editor')} label="editor" />}
+
+          {/* Run / Submit: bottom bar on phones (thumb reach), here on md+ */}
+          {!isMobile && (
+            <>
+              <Box sx={{ width: 4 }} />
+              <WsButton
+                variant="secondary"
+                startIcon={<PlayArrowRoundedIcon />}
+                loading={runStatus === 'running'}
+                disabled={isRunning}
+                onClick={handleRun}
+                kbd="Ctrl '"
               >
-                <AutoAwesomeRoundedIcon sx={{ fontSize: 22 }} />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="More">
-              <IconButton size="small" aria-label="More editor actions" onClick={(e) => setMoreAnchor(e.currentTarget)} sx={(t) => ({ width: 40, height: 40, color: 'text.secondary', bgcolor: wsSurface(t).raised, '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.14) } })}>
-                <MoreVertRoundedIcon sx={{ fontSize: 22 }} />
-              </IconButton>
-            </Tooltip>
-            <Menu anchorEl={moreAnchor} open={Boolean(moreAnchor)} onClose={() => setMoreAnchor(null)}>
-              <MenuItem onClick={handleCopyCode}>
-                <ListItemIcon>
-                  <ContentCopyRoundedIcon fontSize="small" />
-                </ListItemIcon>
-                <ListItemText>Copy code</ListItemText>
-              </MenuItem>
-              <MenuItem onClick={handleResetCode}>
-                <ListItemIcon>
-                  <RestartAltRoundedIcon fontSize="small" />
-                </ListItemIcon>
-                <ListItemText>Reset to starter</ListItemText>
-              </MenuItem>
-            </Menu>
-            {!isMobile && <MaxButton active={maximized === 'editor'} onClick={() => toggleMax('editor')} label="editor" />}
-
-            {/* Run / Submit: bottom bar on phones (thumb reach), here on md+ */}
-            <Button
-              size="small"
-              variant="outlined"
-              startIcon={runStatus === 'running' ? <CircularProgress size={14} /> : <PlayArrowRoundedIcon sx={{ fontSize: '18px !important' }} />}
-              onClick={handleRun}
-              disabled={isRunning}
-              sx={{ display: { xs: 'none', md: 'inline-flex' }, height: 40, borderRadius: '12px' }}
-            >
-              Run
-            </Button>
-            <Button
-              size="small"
-              variant="contained"
-              disableElevation
-              startIcon={submitStatus === 'running' ? <CircularProgress size={14} color="inherit" /> : <CloudUploadRoundedIcon sx={{ fontSize: '18px !important' }} />}
-              onClick={handleSubmit}
-              disabled={isRunning}
-              sx={{ display: { xs: 'none', md: 'inline-flex' }, height: 40, borderRadius: '12px', fontWeight: 700 }}
-            >
-              Submit
-            </Button>
-          </Stack>
-        </Stack>
+                Run
+              </WsButton>
+              <WsButton
+                variant="primary"
+                startIcon={<CloudUploadRoundedIcon />}
+                loading={submitStatus === 'running'}
+                disabled={isRunning}
+                onClick={handleSubmit}
+                kbd="Ctrl ↵"
+              >
+                Submit
+              </WsButton>
+            </>
+          )}
+        </PaneBar>
 
         {!isAuthenticated && (
           <Stack
             direction="row"
             sx={(t) => ({ alignItems: 'center', gap: 1, px: 1.5, py: 0.75, flexShrink: 0, bgcolor: alpha(t.palette.primary.main, 0.1), color: 'text.primary' })}
           >
-            <LockOutlinedIcon sx={{ fontSize: 18, color: 'primary.main', flexShrink: 0 }} />
+            <LockOutlinedIcon sx={{ fontSize: 17, color: 'primary.main', flexShrink: 0 }} />
             <Typography variant="caption" sx={{ flex: 1, lineHeight: 1.4 }}>
               Sign in to run or submit — your progress and streak are saved.
             </Typography>
-            <Button
-              size="small"
-              onClick={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}
-              sx={{ flexShrink: 0, minWidth: 0, px: 1.5, fontWeight: 700 }}
-            >
+            <WsButton variant="ghost" onClick={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })} sx={{ color: 'primary.main', height: 28 }}>
               Sign in
-            </Button>
+            </WsButton>
           </Stack>
         )}
 
         <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-        <Box sx={{ position: 'relative', bgcolor: surf.canvas, flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
-          <Editor
-            height="100%"
-            language={activeLanguage === 'cpp' ? 'cpp' : activeLanguage}
-            theme={monacoThemeName(editorPrefs.theme, uiMode)}
-            beforeMount={(monaco) => {
-              monacoRef.current = monaco;
-              defineMonacoThemes(monaco, accentMain);
-            }}
-            value={code}
-            onChange={handleEditorChange}
-            onMount={handleEditorMount}
-            loading={<CircularProgress size={26} />}
-            options={{
-              fontSize: editorPrefs.fontSize,
-              minimap: { enabled: editorPrefs.minimap },
-              wordWrap: isMobile || editorPrefs.wordWrap ? 'on' : 'off', // phones: never scroll sideways
-              wrappingIndent: 'indent',
-              lineNumbers: editorPrefs.lineNumbers ? 'on' : 'off',
-              fontLigatures: editorPrefs.ligatures,
-              autoClosingBrackets: editorPrefs.autoClose ? 'languageDefined' : 'never',
-              autoClosingQuotes: editorPrefs.autoClose ? 'languageDefined' : 'never',
-              scrollBeyondLastLine: false,
-              automaticLayout: true,
-              tabSize: editorPrefs.tabSize,
-              insertSpaces: true,
-              detectIndentation: false,
-              autoIndent: 'full',
-              trimAutoWhitespace: true,
-              padding: { top: 10, bottom: 10 },
-              ...(isMobile
-                ? {
-                    folding: false,
-                    glyphMargin: false,
-                    lineNumbersMinChars: 2,
-                    lineDecorationsWidth: 6,
-                    renderLineHighlight: 'gutter',
-                    overviewRulerLanes: 0,
-                    hideCursorInOverviewRuler: true,
-                    scrollbar: { verticalScrollbarSize: 6, horizontalScrollbarSize: 6 },
-                    stickyScroll: { enabled: false },
-                    // Popups cover a phone screen and Enter would accept them instead of adding a new line.
-                    quickSuggestions: false,
-                    suggestOnTriggerCharacters: false,
-                    acceptSuggestionOnEnter: 'off',
-                    acceptSuggestionOnCommitCharacter: false,
-                    wordBasedSuggestions: 'off',
-                    parameterHints: { enabled: false },
-                    hover: { enabled: false },
-                    contextmenu: false,
-                    occurrencesHighlight: 'off',
-                    selectionHighlight: false,
-                  }
-                : {}),
-            }}
-          />
-          {isMobile && <EditorScroller editor={editorInstance} />}
-        </Box>
-
-        {isMobile && editorFocused && (
-          <MobileKeyBar
-            onKey={keyType}
-            onTab={keyCommand('tab')}
-            onOutdent={keyCommand('outdent')}
-            onDeleteLine={keyCommand('editor.action.deleteLines')}
-            onUp={keyCommand('cursorUp')}
-            onDown={keyCommand('cursorDown')}
-            onLeft={keyCommand('cursorLeft')}
-            onRight={keyCommand('cursorRight')}
-            onUndo={keyCommand('undo')}
-            onRedo={keyCommand('redo')}
-          />
-        )}
-
-        {/* Drag handle between editor and console (desktop) */}
-        {!isMobile && consoleOpen && maximized !== 'console' && (
-          <SplitHandle orientation="horizontal" label="Resize editor and console" onDrag={dragConsole} onReset={() => setLayout((l) => ({ ...l, console: DEFAULT_CONSOLE }))} />
-        )}
-
-        {/* Console — collapsible test case / result panel */}
-        <Box
-          sx={{
-            borderTop: '1px solid',
-            borderColor: 'divider',
-            bgcolor: surf.panel,
-            display: 'flex',
-            flexDirection: 'column',
-            minHeight: 0,
-            ...(isMobile
-              ? { flexShrink: 0, maxHeight: consoleOpen ? '45%' : 'auto' }
-              : maximized === 'console'
-                ? { flex: '1 1 0' }
-                : { flex: consoleOpen ? `0 0 ${layout.console * 100}%` : '0 0 auto' }),
-          }}
-        >
-          <Stack
-            direction="row"
-            onClick={() => (maximized === 'console' ? setMaximized(null) : setConsoleOpen((o) => !o))}
-            sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 54, md: 46 }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
-          >
-            <TerminalRoundedIcon sx={{ fontSize: 20, color: 'text.secondary' }} />
-            {!(isMobile && (isRunning || resultToShow)) && <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Console</Typography>}
-            {isRunning ? (
-              <Chip size="small" label="Running…" color="primary" variant="outlined" />
-            ) : (
-              resultToShow && (
-                <Chip
-                  size="small"
-                  icon={isAccepted ? <CheckCircleRoundedIcon /> : <CancelRoundedIcon />}
-                  label={`${resultToShow.status} · ${resultToShow.passedCount}/${resultToShow.totalCount}`}
-                  color={isAccepted ? 'success' : 'error'}
-                  sx={{ fontWeight: 700, minWidth: 0, maxWidth: { xs: '44vw', md: 'none' } }}
-                />
-              )
-            )}
-            {!isMobile && !isRunning && isSubmitView && submitResult?.status === 'Accepted' && submitResult._id && (
-              <Button
-                size="small"
-                variant="outlined"
-                onClick={(e) => {
-                  e.stopPropagation(); // don't toggle the console
-                  setShareOpen(true);
-                }}
-                sx={{ flexShrink: 0, py: 0.25 }}
-              >
-                Share solution
-              </Button>
-            )}
-            <Box sx={{ flex: 1 }} />
-            {isMobile && (
-              <Stack direction="row" sx={{ gap: 0.75, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
-                <Button
-                  size="small"
-                  variant="outlined"
-                  onPointerDown={keepFocus}
-                  onMouseDown={keepFocus}
-                  onClick={handleRun}
-                  disabled={isRunning}
-                  startIcon={runStatus === 'running' ? <CircularProgress size={14} /> : <PlayArrowRoundedIcon sx={{ fontSize: '18px !important' }} />}
-                  sx={{ height: 36, px: 1.25, minWidth: 0 }}
-                >
-                  Run
-                </Button>
-                <Button
-                  size="small"
-                  variant="contained"
-                  disableElevation
-                  onPointerDown={keepFocus}
-                  onMouseDown={keepFocus}
-                  onClick={handleSubmit}
-                  disabled={isRunning}
-                  startIcon={submitStatus === 'running' ? <CircularProgress size={14} color="inherit" /> : <CloudUploadRoundedIcon sx={{ fontSize: '18px !important' }} />}
-                  sx={{ height: 36, px: 1.25, minWidth: 0, fontWeight: 700 }}
-                >
-                  Submit
-                </Button>
-              </Stack>
-            )}
-            {!isMobile && (
-              <MaxButton
-                active={maximized === 'console'}
-                onClick={() => {
-                  setConsoleOpen(true);
-                  toggleMax('console');
-                }}
-                label="console"
-              />
-            )}
-            <ExpandMoreRoundedIcon
-              sx={{ color: 'text.secondary', transition: 'transform .2s', transform: consoleOpen ? 'none' : 'rotate(180deg)' }}
+          <Box sx={{ position: 'relative', bgcolor: surf.canvas, flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
+            <Editor
+              height="100%"
+              language={activeLanguage === 'cpp' ? 'cpp' : activeLanguage}
+              theme={monacoThemeName(editorPrefs.theme, uiMode)}
+              beforeMount={(monaco) => {
+                monacoRef.current = monaco;
+                defineMonacoThemes(monaco, accentMain);
+              }}
+              value={code}
+              onChange={handleEditorChange}
+              onMount={handleEditorMount}
+              loading={<CircularProgress size={26} />}
+              options={{
+                fontSize: editorPrefs.fontSize,
+                fontFamily: '"JetBrains Mono", "Fira Code", Menlo, Consolas, monospace',
+                minimap: { enabled: editorPrefs.minimap },
+                wordWrap: isMobile || editorPrefs.wordWrap ? 'on' : 'off', // phones: never scroll sideways
+                wrappingIndent: 'indent',
+                lineNumbers: editorPrefs.lineNumbers ? 'on' : 'off',
+                fontLigatures: editorPrefs.ligatures,
+                autoClosingBrackets: editorPrefs.autoClose ? 'languageDefined' : 'never',
+                autoClosingQuotes: editorPrefs.autoClose ? 'languageDefined' : 'never',
+                scrollBeyondLastLine: false,
+                automaticLayout: true,
+                tabSize: editorPrefs.tabSize,
+                insertSpaces: true,
+                detectIndentation: false,
+                autoIndent: 'full',
+                trimAutoWhitespace: true,
+                smoothScrolling: true,
+                padding: { top: 12, bottom: 12 },
+                ...(isMobile
+                  ? {
+                      folding: false,
+                      glyphMargin: false,
+                      lineNumbersMinChars: 2,
+                      lineDecorationsWidth: 6,
+                      renderLineHighlight: 'gutter',
+                      overviewRulerLanes: 0,
+                      hideCursorInOverviewRuler: true,
+                      scrollbar: { verticalScrollbarSize: 6, horizontalScrollbarSize: 6 },
+                      stickyScroll: { enabled: false },
+                      // Popups cover a phone screen and Enter would accept them instead of adding a new line.
+                      quickSuggestions: false,
+                      suggestOnTriggerCharacters: false,
+                      acceptSuggestionOnEnter: 'off',
+                      acceptSuggestionOnCommitCharacter: false,
+                      wordBasedSuggestions: 'off',
+                      parameterHints: { enabled: false },
+                      hover: { enabled: false },
+                      contextmenu: false,
+                      occurrencesHighlight: 'off',
+                      selectionHighlight: false,
+                    }
+                  : { lineNumbersMinChars: 3 }),
+              }}
             />
-          </Stack>
+            {isMobile && <EditorScroller editor={editorInstance} />}
+          </Box>
 
-          {consoleOpen && (
-            <Box sx={{ overflowY: 'auto', px: 1.5, pb: 1.5, flex: 1, minHeight: 0 }}>
-              {isRunning ? (
-                <Box sx={{ py: 1 }}>
-                  <LinearProgress sx={{ borderRadius: 999, mb: 1.5 }} />
-                  <Typography variant="body2" color="text.secondary">
-                    Running your code against the test cases…
-                  </Typography>
-                </Box>
-              ) : testResults.length > 0 ? (
-                <>
-                  {isMobile && isSubmitView && submitResult?.status === 'Accepted' && submitResult._id && (
-                    <Button size="small" variant="outlined" onClick={() => setShareOpen(true)} sx={{ mb: 1.25 }}>
-                      Share solution
-                    </Button>
-                  )}
-                  {/* Verdict summary */}
-                  <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.25, mb: 1.25 }}>
-                    <Typography sx={{ fontWeight: 800, fontSize: '1.1rem', color: isAccepted ? 'success.main' : 'error.main' }}>
-                      {resultToShow.status}
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary">
-                      {isSubmitView ? 'Submission' : 'Sample run'} · {resultToShow.passedCount}/{resultToShow.totalCount} test cases passed
-                    </Typography>
-                    {resultToShow.runtimeMs != null && (
-                      <Typography variant="caption" color="text.secondary">
-                        Runtime {resultToShow.runtimeMs} ms
-                      </Typography>
-                    )}
-                    {fmtMem(resultToShow.memoryKb) && (
-                      <Typography variant="caption" color="text.secondary">
-                        Memory {fmtMem(resultToShow.memoryKb)}
-                      </Typography>
-                    )}
-                  </Stack>
+          {isMobile && editorFocused && (
+            <MobileKeyBar
+              onKey={keyType}
+              onTab={keyCommand('tab')}
+              onOutdent={keyCommand('outdent')}
+              onDeleteLine={keyCommand('editor.action.deleteLines')}
+              onUp={keyCommand('cursorUp')}
+              onDown={keyCommand('cursorDown')}
+              onLeft={keyCommand('cursorLeft')}
+              onRight={keyCommand('cursorRight')}
+              onUndo={keyCommand('undo')}
+              onRedo={keyCommand('redo')}
+            />
+          )}
 
-                  {resultToShow.status === 'Compilation Error' && selectedCase?.stderr && (
-                    <Box
-                      sx={(t) => ({
-                        ...mono,
-                        fontSize: '0.8rem',
-                        lineHeight: 1.6,
-                        p: 1.5,
-                        mb: 1.5,
-                        borderRadius: '12px',
-                        whiteSpace: 'pre-wrap',
-                        wordBreak: 'break-word',
-                        color: 'error.main',
-                        bgcolor: alpha(t.palette.error.main, 0.1),
-                      })}
-                    >
-                      {selectedCase.stderr}
-                    </Box>
-                  )}
+          {/* Seam between editor and console (desktop, only while the console is open) */}
+          {!isMobile && consoleOpen && maximized !== 'console' && (
+            <SplitHandle orientation="horizontal" label="Resize editor and console" onDrag={dragConsole} onReset={() => setLayout((l) => ({ ...l, console: DEFAULT_CONSOLE }))} />
+          )}
 
-                  <LinearProgress
-                    variant="determinate"
-                    value={passedPct}
-                    color={isAccepted ? 'success' : 'error'}
-                    sx={{ borderRadius: 999, height: 6, mb: 1.5 }}
-                  />
-                  <Stack direction="row" sx={{ gap: 0.75, mb: 1.5, overflowX: 'auto', pb: 0.5 }}>
-                    {testResults.map((r, i) => (
-                      <Chip
-                        key={i}
-                        clickable
-                        onClick={() => setActiveCase(i)}
-                        icon={r.passed ? <CheckCircleRoundedIcon /> : <CancelRoundedIcon />}
-                        label={`Case ${i + 1}`}
-                        color={r.passed ? 'success' : 'error'}
-                        variant={i === activeCase ? 'filled' : 'outlined'}
-                        sx={{ flexShrink: 0, fontWeight: 700 }}
-                      />
-                    ))}
-                  </Stack>
-                  {selectedCase && (
-                    <Box sx={{ borderRadius: '14px', border: '1px solid', borderColor: 'divider', p: 1.5 }}>
-                      <ExampleRow icon={<LoginRoundedIcon />} label="Input" value={selectedCase.stdin} />
-                      <ExampleRow icon={<LogoutRoundedIcon />} label="Your output" value={selectedCase.actualOutput || '—'} />
-                      <ExampleRow icon={<CheckCircleRoundedIcon />} label="Expected" value={selectedCase.expectedOutput} />
-                      {selectedCase.stderr && resultToShow.status !== 'Compilation Error' && (
-                        <Box sx={{ mt: 1.25 }}>
-                          <ExampleRow icon={<CancelRoundedIcon />} label="Error" value={selectedCase.stderr} />
-                        </Box>
-                      )}
-                      {(fmtMs(selectedCase.time) || selectedCase.memory) && (
-                        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.25 }}>
-                          {[fmtMs(selectedCase.time) && `Time ${fmtMs(selectedCase.time)}`, fmtMem(selectedCase.memory) && `Memory ${fmtMem(selectedCase.memory)}`]
-                            .filter(Boolean)
-                            .join(' · ')}
-                        </Typography>
-                      )}
-                    </Box>
-                  )}
-                </>
-              ) : consoleError ? (
-                <Box
-                  sx={(t) => ({ p: 1.5, borderRadius: '12px', color: 'error.main', bgcolor: alpha(t.palette.error.main, 0.1) })}
+          {/* Console — collapsible testcase / result panel */}
+          <Box
+            sx={{
+              bgcolor: surf.panel,
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: 0,
+              ...(isMobile
+                ? { flexShrink: 0, maxHeight: consoleOpen ? '45%' : 'auto', borderTop: '1px solid', borderColor: 'divider' }
+                : maximized === 'console'
+                  ? { flex: '1 1 0' }
+                  : { flex: consoleOpen ? `0 0 ${layout.console * 100}%` : '0 0 auto' }),
+            }}
+          >
+            <Stack
+              direction="row"
+              onClick={() => (maximized === 'console' ? setMaximized(null) : setConsoleOpen((o) => !o))}
+              sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 54, md: WS.barSm }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
+            >
+              <TerminalRoundedIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
+              {!(isMobile && (isRunning || resultToShow)) && <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Console</Typography>}
+              <VerdictChip isRunning={isRunning} result={resultToShow} sx={{ maxWidth: { xs: '44vw', md: 'none' } }} />
+              {!isMobile && canShare && (
+                <WsButton
+                  variant="ghost"
+                  onClick={(e) => {
+                    e.stopPropagation(); // don't toggle the console
+                    setShareOpen(true);
+                  }}
+                  sx={{ height: 26, color: 'primary.main' }}
                 >
-                  <Typography variant="body2" sx={{ fontWeight: 700, mb: 0.25 }}>
-                    {isSubmitView ? 'Submit failed' : 'Run failed'}
-                  </Typography>
-                  <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-                    {consoleError}
-                  </Typography>
-                </Box>
-              ) : (
-                <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
-                  <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />
-                  <Typography variant="body2">Run your code against the sample test cases to see results here.</Typography>
+                  Share solution
+                </WsButton>
+              )}
+              <Box sx={{ flex: 1 }} />
+              {isMobile && (
+                <Stack direction="row" sx={{ gap: 0.75, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
+                  <WsButton
+                    size="lg"
+                    variant="secondary"
+                    onPointerDown={keepFocus}
+                    onMouseDown={keepFocus}
+                    onClick={handleRun}
+                    disabled={isRunning}
+                    loading={runStatus === 'running'}
+                    startIcon={<PlayArrowRoundedIcon />}
+                  >
+                    Run
+                  </WsButton>
+                  <WsButton
+                    size="lg"
+                    variant="primary"
+                    onPointerDown={keepFocus}
+                    onMouseDown={keepFocus}
+                    onClick={handleSubmit}
+                    disabled={isRunning}
+                    loading={submitStatus === 'running'}
+                    startIcon={<CloudUploadRoundedIcon />}
+                  >
+                    Submit
+                  </WsButton>
                 </Stack>
               )}
-            </Box>
-          )}
-        </Box>
+              {!isMobile && <EditorStatus editor={editorInstance} tabSize={editorPrefs.tabSize} />}
+              {!isMobile && (
+                <MaxButton
+                  active={maximized === 'console'}
+                  onClick={() => {
+                    setConsoleOpen(true);
+                    toggleMax('console');
+                  }}
+                  label="console"
+                />
+              )}
+              <ExpandMoreRoundedIcon
+                sx={{ color: 'text.secondary', transition: 'transform .2s', transform: consoleOpen ? 'none' : 'rotate(180deg)' }}
+              />
+            </Stack>
+
+            {consoleOpen && (
+              <Box sx={{ pt: 0.25, flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+                {isMobile && canShare && (
+                  <Box sx={{ px: 1.5, pb: 1 }}>
+                    <WsButton variant="secondary" onClick={() => setShareOpen(true)}>
+                      Share solution
+                    </WsButton>
+                  </Box>
+                )}
+                {consoleBody}
+              </Box>
+            )}
+          </Box>
         </Box>
       </Box>
 
@@ -1318,17 +1087,19 @@ export default function WorkspacePage() {
           direction="row"
           sx={{ alignItems: 'center', gap: 0.5, px: 1, pb: 0.75, pt: 'calc(6px + env(safe-area-inset-top))', borderBottom: '1px solid', borderColor: 'divider', flexShrink: 0 }}
         >
-          <IconButton aria-label="Back to code" onClick={closeDesc}>
+          <WsIconButton title="Back to code" size="lg" onClick={closeDesc}>
             <ArrowBackRoundedIcon />
-          </IconButton>
+          </WsIconButton>
           <Typography sx={{ fontWeight: 700, flex: 1 }}>Problem</Typography>
           <DifficultyChip difficulty={problem.difficulty} />
         </Stack>
-        <Box sx={{ overflowY: 'auto', p: 2, flex: 1, minHeight: 0 }}>{descriptionContent}</Box>
+        <Box sx={{ overflowY: 'auto', p: 2, flex: 1, minHeight: 0 }}>
+          <ProblemDescription problem={problem} />
+        </Box>
         <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
-          <Button fullWidth variant="contained" disableElevation startIcon={<CodeRoundedIcon />} onClick={closeDesc} sx={{ height: 46, fontWeight: 800, borderRadius: 999 }}>
+          <WsButton fullWidth size="lg" variant="primary" startIcon={<CodeRoundedIcon />} onClick={closeDesc}>
             Start coding
-          </Button>
+          </WsButton>
         </Box>
       </Drawer>
 
@@ -1347,11 +1118,13 @@ export default function WorkspacePage() {
             Your current {LANGUAGES.find((l) => l.id === pendingLoad?.language)?.label} code in the editor will be replaced with this solution.
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setPendingLoad(null)}>Cancel</Button>
-          <Button variant="contained" disableElevation onClick={() => applySolution(pendingLoad)}>
+        <DialogActions sx={{ px: 3, pb: 2, gap: 0.5 }}>
+          <WsButton variant="ghost" onClick={() => setPendingLoad(null)}>
+            Cancel
+          </WsButton>
+          <WsButton variant="primary" onClick={() => applySolution(pendingLoad)}>
             Replace
-          </Button>
+          </WsButton>
         </DialogActions>
       </Dialog>
 
@@ -1360,50 +1133,55 @@ export default function WorkspacePage() {
         anchor="right"
         open={aiDrawerOpen}
         onClose={() => dispatch(toggleAiDrawer())}
-        slotProps={{ paper: { sx: { width: 'min(380px, 100vw)', borderTopLeftRadius: { sm: 24 }, borderBottomLeftRadius: { sm: 24 } } } }}
+        slotProps={{ paper: { sx: { width: 'min(400px, 100vw)', borderRadius: 0 } } }}
       >
         <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', p: 2, borderBottom: '1px solid', borderColor: 'divider' }}>
-            <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25 }}>
-              <Box sx={(t) => ({ width: 34, height: 34, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
-                <AutoAwesomeRoundedIcon sx={{ fontSize: 20 }} />
-              </Box>
-              <Box>
-                <Typography sx={{ fontWeight: 800, lineHeight: 1.2 }}>AI Assistant</Typography>
-                <Typography variant="caption" color="text.secondary">
-                  Hints only, no full solutions
-                </Typography>
-              </Box>
-            </Stack>
-            <IconButton size="small" aria-label="Close" onClick={() => dispatch(toggleAiDrawer())}>
-              <CloseRoundedIcon fontSize="small" />
-            </IconButton>
-          </Stack>
+          <PaneBar height={56} sx={{ px: 2, gap: 1.25 }}>
+            <Box sx={(t) => ({ width: 32, height: 32, borderRadius: `${WS.radius}px`, display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
+              <AutoAwesomeRoundedIcon sx={{ fontSize: 19 }} />
+            </Box>
+            <Box sx={{ flex: 1, minWidth: 0 }}>
+              <Typography sx={{ fontWeight: 700, lineHeight: 1.2, fontSize: '0.95rem' }}>AI Assistant</Typography>
+              <Typography variant="caption" color="text.secondary">
+                Hints only, no full solutions
+              </Typography>
+            </Box>
+            {aiMessages.length > 1 && (
+              <WsIconButton title="Clear chat" onClick={() => setAiMessages([AI_WELCOME])}>
+                <DeleteSweepOutlinedIcon />
+              </WsIconButton>
+            )}
+            <WsIconButton title="Close" onClick={() => dispatch(toggleAiDrawer())}>
+              <CloseRoundedIcon />
+            </WsIconButton>
+          </PaneBar>
 
           <Box
             sx={(t) => ({
               flex: 1,
               overflowY: 'auto',
-              p: 2,
+              px: 2,
+              py: 1.5,
               scrollbarWidth: 'thin',
               scrollbarColor: 'transparent transparent',
               '&:hover': { scrollbarColor: `${alpha(t.palette.text.primary, 0.35)} transparent` },
             })}
           >
-            <Stack sx={{ gap: 1.5 }}>
+            <Stack sx={{ gap: 1.25 }}>
               {aiMessages.map((m, i) => (
                 <Box
                   key={i}
                   sx={(t) => ({
-                    p: 1.5,
-                    borderRadius: m.role === 'user' ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
-                    bgcolor: m.role === 'user' ? 'primary.main' : alpha(t.palette.primary.main, 0.08),
+                    px: 1.5,
+                    py: 1.1,
+                    borderRadius: m.role === 'user' ? '12px 12px 4px 12px' : '12px 12px 12px 4px',
+                    bgcolor: m.role === 'user' ? 'primary.main' : wsSurface(t).raised,
                     color: m.role === 'user' ? 'primary.contrastText' : 'text.primary',
                     ml: m.role === 'user' ? 5 : 0,
                     mr: m.role === 'user' ? 0 : 5,
                   })}
                 >
-                  <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.6 }}>
+                  <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.65 }}>
                     {m.text}
                   </Typography>
                 </Box>
@@ -1418,10 +1196,17 @@ export default function WorkspacePage() {
             </Stack>
           </Box>
 
-          <Box sx={{ borderTop: '1px solid', borderColor: 'divider', p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))' }}>
+          <Box sx={{ px: 2, pt: 1, pb: 'calc(14px + env(safe-area-inset-bottom))' }}>
             <Stack direction="row" sx={{ gap: 0.75, mb: 1.25, overflowX: 'auto', pb: 0.25 }}>
               {AI_QUICK_PROMPTS.map((p) => (
-                <Chip key={p} clickable size="small" variant="outlined" label={p} onClick={() => setAiInput(p)} sx={{ flexShrink: 0 }} />
+                <Chip
+                  key={p}
+                  clickable
+                  size="small"
+                  label={p}
+                  onClick={() => setAiInput(p)}
+                  sx={(t) => ({ flexShrink: 0, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, fontWeight: 600 })}
+                />
               ))}
             </Stack>
             <Stack direction="row" sx={{ gap: 1, alignItems: 'center' }}>
@@ -1433,16 +1218,17 @@ export default function WorkspacePage() {
                 onChange={(e) => setAiInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && !aiLoading && handleAiSend()}
                 disabled={aiLoading}
-                slotProps={{ input: { sx: { borderRadius: 999 } } }}
+                slotProps={{ input: { sx: (t) => ({ borderRadius: `${WS.radius}px`, height: WS.ctrlLg, bgcolor: wsSurface(t).raised, '& fieldset': { border: 'none' } }) } }}
               />
-              <IconButton
-                aria-label="Send"
+              <WsIconButton
+                title="Send"
+                size="lg"
                 onClick={handleAiSend}
                 disabled={aiLoading || !aiInput.trim()}
-                sx={{ width: 40, height: 40, bgcolor: 'primary.main', color: 'primary.contrastText', '&:hover': { bgcolor: 'primary.dark' }, '&.Mui-disabled': { bgcolor: 'action.disabledBackground' } }}
+                sx={(t) => ({ color: t.palette.primary.contrastText, bgcolor: t.palette.primary.main, '&:hover': { bgcolor: t.palette.primary.dark, color: t.palette.primary.contrastText }, '&.Mui-disabled': { bgcolor: t.palette.action.disabledBackground, color: t.palette.text.disabled } })}
               >
-                <SendRoundedIcon sx={{ fontSize: 20 }} />
-              </IconButton>
+                <SendRoundedIcon />
+              </WsIconButton>
             </Stack>
           </Box>
         </Box>

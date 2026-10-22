@@ -3,11 +3,11 @@ import { Box } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 
 /**
- * Draggable divider for resizable split panes (like ChatGPT / Claude / LeetCode).
+ * Draggable divider for resizable split panes.
  *
  * It takes NO space in the layout: the two panes sit flush against each other
- * and this is an invisible hit area laid over the seam. A thin accent line
- * appears only while hovering / dragging.
+ * and this is a thin hit area laid over the seam. It draws the ONE hairline
+ * that separates the panes; the accent bar shows on hover / while dragging.
  *
  * orientation="vertical"   -> seam between side-by-side panes (drag left/right)
  * orientation="horizontal" -> seam between stacked panes (drag up/down)
@@ -63,15 +63,22 @@ export default function SplitHandle({ orientation = 'vertical', onDrag, onReset,
           position: 'absolute',
           touchAction: 'none',
           cursor: isVertical ? 'col-resize' : 'row-resize',
-          ...(isVertical ? { top: 0, bottom: 0, left: -1, width: 7 } : { left: 0, right: 0, top: -2, height: 6 }),
+          ...(isVertical ? { top: 0, bottom: 0, left: -4, width: 9 } : { left: 0, right: 0, top: -4, height: 9 }),
+          // the single hairline between the panes
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            backgroundColor: t.palette.divider,
+            ...(isVertical ? { top: 0, bottom: 0, left: 4, width: 1 } : { left: 0, right: 0, top: 4, height: 1 }),
+          },
+          // accent bar on hover / drag
           '&::after': {
             content: '""',
             position: 'absolute',
+            borderRadius: 2,
             backgroundColor: active ? t.palette.primary.main : 'transparent',
             transition: 'background-color .15s',
-            ...(isVertical
-              ? { top: 0, bottom: 0, left: 0, width: 2 }
-              : { left: 0, right: 0, top: 1, height: 2 }),
+            ...(isVertical ? { top: 0, bottom: 0, left: 3, width: 3 } : { left: 0, right: 0, top: 3, height: 3 }),
           },
           '&:hover::after': { backgroundColor: active ? t.palette.primary.main : alpha(t.palette.primary.main, 0.6) },
         })}

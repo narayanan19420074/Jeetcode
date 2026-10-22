@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IconButton, Tooltip, CircularProgress } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
-import { alpha } from '@mui/material/styles';
 import { useSnackbar } from 'notistack';
 import { roomApi } from '../../api/roomApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { wsSurface } from '../workspace/workspaceTheme';
+import { WsIconButton } from '../workspace/wsUi';
 
 // Drop into the WorkspacePage toolbar: creates a room seeded with the current code.
-export default function InviteButton({ problem, language, code }) {
+export default function InviteButton({ problem, language, code, size = 'md' }) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [busy, setBusy] = useState(false);
@@ -34,18 +33,8 @@ export default function InviteButton({ problem, language, code }) {
   };
 
   return (
-    <Tooltip title="Invite a friend to code together">
-      <span>
-        <IconButton
-          size="small"
-          onClick={invite}
-          disabled={busy || !problem}
-          aria-label="Invite a friend"
-          sx={(t) => ({ width: 40, height: 40, color: 'text.secondary', bgcolor: wsSurface(t).raised, '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.14) } })}
-        >
-          {busy ? <CircularProgress size={18} /> : <GroupAddRoundedIcon sx={{ fontSize: 22 }} />}
-        </IconButton>
-      </span>
-    </Tooltip>
+    <WsIconButton title="Code together with a friend" size={size} onClick={invite} disabled={busy || !problem} aria-label="Invite a friend">
+      {busy ? <CircularProgress size={16} /> : <GroupAddRoundedIcon />}
+    </WsIconButton>
   );
 }
