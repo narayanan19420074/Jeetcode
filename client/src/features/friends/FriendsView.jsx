@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
@@ -26,6 +26,7 @@ import { Collapse } from '@mui/material';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
+import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
 import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, surface } from '../dashboard/dashboardUtils';
@@ -71,8 +72,42 @@ function Names({ person }) {
 
 // A friend, Leaderboard style: gradient-ring avatar, tier + flame streak, points. Tap to open details.
 // `compact` (desktop): no inline details, a click just selects the friend; the side panel holds chat + every action.
-function FriendRow({ f, index = 0, online, unread, expanded, onToggle, onProfile, onChat, onCode, onNudge, busy, compact = false, selected = false }) {
+function FriendRow({ f, index = 0, online, unread, expanded, onToggle, onProfile, onChat, onCode, onNudge, onUnfriend, busy, compact = false, selected = false }) {
   const reduce = useReducedMotion();
+  // Desktop list: just avatar, name, points and an unfriend icon.
+  if (compact) {
+    return (
+      <Box
+        data-fid={f.userId}
+        sx={(t) => ({
+          display: 'flex', alignItems: 'center', gap: 0.5, height: 56, px: 1, mx: 1, mb: 0.5, borderRadius: '12px',
+          bgcolor: selected ? alpha(t.palette.primary.main, 0.12) : 'transparent',
+          outline: selected ? `2px solid ${t.palette.primary.main}` : 'none', outlineOffset: -2,
+          '&:hover': { bgcolor: selected ? undefined : t.palette.action.hover },
+        })}
+      >
+        <ButtonBase
+          onClick={onToggle}
+          aria-pressed={selected}
+          aria-label={`${f.name}, ${f.score} points`}
+          sx={{ flex: 1, minWidth: 0, height: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: 1.25, textAlign: 'left', borderRadius: '10px', fontFamily: 'inherit' }}
+        >
+          <PersonAvatar person={f} size={36} online={online} />
+          <Typography variant="body2" noWrap sx={{ fontWeight: 700, flex: 1, minWidth: 0 }}>{f.name}</Typography>
+          {unread > 0 && (
+            <Box component="span" aria-label={`${unread} unread`} sx={{ minWidth: 18, height: 18, px: 0.5, borderRadius: 9, bgcolor: 'error.main', color: 'error.contrastText', fontSize: 11, fontWeight: 800, display: 'grid', placeItems: 'center' }}>{unread}</Box>
+          )}
+          <Typography sx={{ fontWeight: 900, fontSize: 16, ...mono }}>{f.score.toLocaleString()}</Typography>
+          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, fontSize: 10.5, letterSpacing: 0.4 }}>PTS</Typography>
+        </ButtonBase>
+        <Tooltip title="Unfriend">
+          <IconButton size="small" aria-label={`Unfriend ${f.name}`} onClick={() => onUnfriend(f)} sx={{ color: 'text.secondary', '&:hover': { color: 'error.main' } }}>
+            <PersonRemoveRoundedIcon fontSize="small" />
+          </IconButton>
+        </Tooltip>
+      </Box>
+    );
+  }
   const { tier, next, progress, toNext } = tierFor(f.score);
   const st = statusInfo(f, online);
   const canNudge = !practisedToday(f);
@@ -184,12 +219,17 @@ function SkeletonRows({ count = 5 }) {
 }
 
 // Dark "stage" header like the Leaderboard podium: who is online, how strong the squad is.
-function Hero({ friends, onlineFriends, unreadTotal, onOpenChat }) {
+function Hero({ friends, onlineFriends, unreadTotal, onOpenChat, requests = 0, sent = 0, onOpenRequests, onOpenSent }) {
   const best = friends.reduce((m, f) => Math.max(m, f.streak || 0), 0);
   const tiles = [
     ['Friends', friends.length, '#fff', null],
     ['Online', onlineFriends.length, '#4ADE80', null],
     ['Best streak', best, '#FDBA74', <LocalFireDepartmentRoundedIcon key="f" sx={{ fontSize: 15, color: FLAME, filter: 'drop-shadow(0 0 4px rgba(249,115,22,0.8))' }} />],
+  ];
+  // Icon tiles: friend requests I received / requests I sent that are still pending.
+  const iconTiles = [
+    ['Requests received', requests, requests > 0 ? '#FCA5A5' : '#fff', <MarkunreadRoundedIcon key="r" sx={{ fontSize: 20 }} />, onOpenRequests],
+    ['Sent, pending', sent, '#fff', <HourglassTopRoundedIcon key="s" sx={{ fontSize: 20 }} />, onOpenSent],
   ];
   const sparks = [[8, 18, 0], [24, 62, 0.6], [44, 12, 1.2], [70, 16, 0.3], [86, 58, 0.9], [94, 22, 1.5]];
   return (
@@ -217,7 +257,15 @@ function Hero({ friends, onlineFriends, unreadTotal, onOpenChat }) {
             </AvatarGroup>
           )}
         </Stack>
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 1, mt: 1.75 }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(3, minmax(0,1fr))', sm: 'repeat(5, minmax(0,1fr))' }, gap: 1, mt: 1.75 }}>
+          {iconTiles.map(([label, n, color, icon, onClick]) => (
+            <Tooltip key={label} title={label}>
+              <ButtonBase onClick={onClick} aria-label={`${label}: ${n}`} sx={{ py: 1, px: 1, flexDirection: 'column', borderRadius: '12px', color, bgcolor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.14)', backdropFilter: 'blur(4px)', fontFamily: 'inherit', '&:hover': { bgcolor: 'rgba(255,255,255,0.18)' } }}>
+                {icon}
+                <Typography sx={{ fontWeight: 900, fontSize: 21, lineHeight: 1.15, ...mono }}>{n}</Typography>
+              </ButtonBase>
+            </Tooltip>
+          ))}
           {tiles.map(([label, n, color, icon]) => (
             <Box key={label} sx={{ py: 1, px: 1, textAlign: 'center', borderRadius: '12px', bgcolor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.14)', backdropFilter: 'blur(4px)' }}>
               <Typography sx={{ fontWeight: 900, fontSize: 21, lineHeight: 1.15, color, ...mono }}>{icon}<CountUp value={n} /></Typography>
@@ -311,6 +359,9 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const [inviteAnchor, setInviteAnchor] = useState(null);
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const listRef = useRef(null);
+  const sentinelRef = useRef(null);
+  const [shown, setShown] = useState(15); // infinite scroll: how many friends are rendered
 
   const needle = q.trim().toLowerCase().replace(/^@/, '');
   const canSearchServer = needle.length >= 2 && /^[a-z0-9_]+$/.test(needle);
@@ -401,7 +452,39 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       {...rowProps}
     />
   );
-  const rowProps = { onProfile: setProfileId, onChat: (f) => setChatId(f.userId), onCode: codeTogether, onNudge: nudge, busy: acting };
+  const rowProps = { onProfile: setProfileId, onChat: (f) => setChatId(f.userId), onCode: codeTogether, onNudge: nudge, onUnfriend: setConfirm, busy: acting };
+
+  // Infinite scroll: render more friends when the bottom sentinel comes into view.
+  useEffect(() => { setShown(15); }, [tab, needle]);
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el || shown >= sortedFriends.length) return undefined;
+    const io = new IntersectionObserver((en) => { if (en.some((x) => x.isIntersecting)) setShown((n) => n + 15); }, { root: desktop ? listRef.current : null, rootMargin: '0px 0px 160px 0px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [shown, sortedFriends.length, desktop, tab, needle]);
+
+  // Arrow keys move the selected friend (chat on the right follows).
+  const navIds = tab === 'friends' || needle ? (needle ? friends.filter((f) => f.name.toLowerCase().includes(needle) || f.handle.includes(needle)) : sortedFriends).map((f) => f.userId) : [];
+  const navKey = navIds.join(',');
+  useEffect(() => {
+    if (!desktop || navIds.length === 0) return undefined;
+    const onKey = (e) => {
+      if ((e.key !== 'ArrowDown' && e.key !== 'ArrowUp') || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || e.defaultPrevented) return;
+      const a = document.activeElement;
+      if (a && (/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) || a.isContentEditable || a.closest?.('[role="dialog"],[role="menu"],[role="listbox"]'))) return;
+      if (document.querySelector('.MuiModal-root')) return;
+      e.preventDefault();
+      const i = navIds.indexOf(chatId);
+      const next = navIds[Math.min(navIds.length - 1, Math.max(0, i < 0 ? 0 : i + (e.key === 'ArrowDown' ? 1 : -1)))];
+      if (!next) return;
+      setChatId(next);
+      setShown((n) => Math.max(n, navIds.indexOf(next) + 6));
+      requestAnimationFrame(() => listRef.current?.querySelector(`[data-fid="${next}"]`)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [desktop, navKey, chatId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const link = `${window.location.origin}/dashboard?view=friends&invite=${user.handle}`;
   const message = `Join me on JeetCode! I'm @${user.handle} — add me as a friend and let's compete on the leaderboard.`;
@@ -474,7 +557,8 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         {loaded && friends.length === 0 && (
           <Note icon={<PeopleAltRoundedIcon sx={{ fontSize: 34 }} />}>No friends yet. Tap the share icon to invite, or search a handle.</Note>
         )}
-        {sortedFriends.map((f, i) => friendRow(f, i))}
+        {sortedFriends.slice(0, shown).map((f, i) => friendRow(f, i))}
+        {shown < sortedFriends.length && <Box ref={sentinelRef} aria-hidden sx={{ height: 1 }} />}
       </>
     );
   } else if (tab === 'activity') {
@@ -518,7 +602,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
 
       <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: desktop ? 'minmax(0, 1fr) 380px' : 'minmax(0, 1fr)', alignItems: 'start' }}>
       <Stack spacing={1.5} sx={{ minWidth: 0 }}>
-      <Hero friends={friends} onlineFriends={onlineFriends} unreadTotal={unreadTotal} onOpenChat={setChatId} />
+      <Hero friends={friends} onlineFriends={onlineFriends} unreadTotal={unreadTotal} onOpenChat={setChatId} requests={incoming.length} sent={outgoing.length} onOpenRequests={() => { setQ(''); setTab('requests'); }} onOpenSent={() => { setQ(''); setTab('sent'); }} />
 
       <Box sx={[surface, { overflow: 'hidden' }]}>
         {/* toolbar: search + invite + leaderboard */}
@@ -589,7 +673,15 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
           <Alert severity="error" sx={{ mx: 1.25, mb: 1.25 }} action={<Button color="inherit" onClick={() => dispatch(fetchFriends())}>Retry</Button>}>{error}</Alert>
         )}
 
-        <Box sx={(t) => ({ borderTop: `1px solid ${t.palette.divider}`, pt: 1, pb: 0.25 })}>{body}</Box>
+        <Box
+          ref={listRef}
+          sx={(t) => ({
+            borderTop: `1px solid ${t.palette.divider}`, pt: 1, pb: 0.25,
+            ...(desktop && { height: 'max(580px, calc(100vh - 380px))', overflowY: 'auto', overscrollBehavior: 'contain', scrollBehavior: 'smooth', scrollbarWidth: 'thin' }),
+          })}
+        >
+          {body}
+        </Box>
       </Box>
       </Stack>
 

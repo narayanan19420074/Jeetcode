@@ -302,7 +302,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions }) {
       </Stack>
 
       {/* messages */}
-      <Box ref={scroller} onScroll={onScroll} sx={{ flex: 1, minHeight: 0, overflowY: 'auto', px: 1.5, py: 1.5, display: 'flex', flexDirection: 'column', gap: 0.75, scrollbarWidth: 'thin' }}>
+      <Box ref={scroller} onScroll={onScroll} sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: 1.5, py: 1.5, display: 'flex', flexDirection: 'column', gap: 0.75, scrollbarWidth: 'thin' }}>
         {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={26} /></Box>}
         {!loading && error && <Typography color="error" variant="body2" sx={{ m: 'auto', textAlign: 'center' }}>{error}</Typography>}
         {!loading && hasMore && (
