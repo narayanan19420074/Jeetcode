@@ -2,18 +2,17 @@ import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Alert, Button, Skeleton, Stack } from '@mui/material';
+import { Alert, Box, Button, Skeleton, Stack, Typography } from '@mui/material';
 import { questApi } from '../../api/questApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from '../auth/authSlice';
 import { PrizeCard, QuestHeader, QuestRow, RewardDialog } from './QuestParts';
 import { goalMilestone } from './questUtils';
+import { surface } from '../dashboard/dashboardUtils';
 
 const LoadingSkeleton = () => (
   <Stack spacing={2.5}>
-    <Skeleton variant="rounded" height={76} sx={{ borderRadius: '18px' }} />
-    <Skeleton variant="rounded" height={300} sx={{ borderRadius: '22px' }} />
-    <Skeleton variant="rounded" height={150} sx={{ borderRadius: '14px' }} />
+    <Skeleton variant="rounded" height={420} sx={{ borderRadius: '14px' }} />
   </Stack>
 );
 
@@ -79,17 +78,27 @@ export default function QuestsView({ isAuthenticated, onPick }) {
     .slice(0, 3);
 
   return (
-    <Stack spacing={2}>
+    <Box sx={[surface, { overflow: 'hidden' }]}>
       <QuestHeader state={state} />
-      <PrizeCard state={state} goal={goal} busy={busy} onClaim={claim} isAuthenticated={isAuthenticated} onCheckIn={() => onPick(null)} onLogin={() => navigate('/login')} />
-      {nextUp.length > 0 && (
-        <Stack spacing={1}>
-          {nextUp.map((q) => (
-            <QuestRow key={q.id} quest={q} busy={busy} onClaim={claim} onPick={onPick} />
-          ))}
-        </Stack>
-      )}
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'minmax(0, 1.2fr) minmax(0, 1fr)' } }}>
+        <PrizeCard state={state} goal={goal} busy={busy} onClaim={claim} isAuthenticated={isAuthenticated} onCheckIn={() => onPick(null)} onLogin={() => navigate('/login')} />
+        <Box sx={(t) => ({ px: { xs: 2, sm: 2.5 }, py: { xs: 1.25, md: 2 }, borderTop: { xs: `1px solid ${t.palette.divider}`, md: 'none' }, borderLeft: { md: `1px solid ${t.palette.divider}` } })}>
+          <Typography sx={{ fontSize: '0.64rem', fontWeight: 900, letterSpacing: '0.16em', color: 'text.secondary', mb: 0.5 }}>NEXT UP</Typography>
+          {nextUp.length > 0 ? (
+            nextUp.map((q, i) => (
+              // Phones show two rows so the whole card stays inside one screen.
+              <Box key={q.id} sx={{ display: i > 1 ? { xs: 'none', md: 'block' } : 'block' }}>
+                <QuestRow quest={q} busy={busy} onClaim={claim} onPick={onPick} />
+              </Box>
+            ))
+          ) : (
+            <Typography variant="body2" color="text.secondary" sx={{ py: 3, textAlign: 'center' }}>
+              Every quest is claimed. New ones will show up here.
+            </Typography>
+          )}
+        </Box>
+      </Box>
       <RewardDialog reward={reward} onClose={() => setReward(null)} />
-    </Stack>
+    </Box>
   );
 }

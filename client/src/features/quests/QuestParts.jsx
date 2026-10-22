@@ -10,7 +10,7 @@ import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartm
 import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { Confetti } from '../aptitude/components/MotionBits';
-import { formatCountdown, msUntilUtcMidnight, surface } from '../dashboard/dashboardUtils';
+import { formatCountdown, msUntilUtcMidnight } from '../dashboard/dashboardUtils';
 import { AMBER, GOLD, GOLD_LIGHT, INK, formatDate, levelInfo, resetTimeLabel } from './questUtils';
 
 const shine = keyframes`0% { transform: translateX(-120%) skewX(-18deg); } 60%, 100% { transform: translateX(260%) skewX(-18deg); }`;
@@ -59,32 +59,33 @@ function Countdown() {
 }
 
 // ---------------------------------------------------------------- top strip
+// Level / XP / streak band. Sits at the top edge of the single quests card, so it has no radius or shadow of its own.
 export function QuestHeader({ state }) {
   const info = levelInfo(state.xp);
   return (
     <Box
       sx={{
         color: '#fff',
-        borderRadius: '18px',
         px: { xs: 1.75, sm: 2.5 },
-        py: 1.5,
+        py: { xs: 1.1, md: 1.4 },
         display: 'flex',
         alignItems: 'center',
         gap: 1.75,
-        background: 'radial-gradient(120% 120% at 100% 0%, rgba(245,179,1,.25) 0%, transparent 55%), linear-gradient(140deg, #0A1230 0%, #11224F 60%, #0E3447 100%)',
-        boxShadow: '0 16px 32px -22px rgba(10,18,48,.9)',
+        background: 'radial-gradient(120% 140% at 100% 0%, rgba(245,179,1,.25) 0%, transparent 55%), linear-gradient(140deg, #0A1230 0%, #11224F 60%, #0E3447 100%)',
       }}
     >
-      <Box sx={{ width: 52, height: 52, borderRadius: '16px', flexShrink: 0, display: 'grid', placeItems: 'center', color: INK, background: GOLD_GRADIENT, textAlign: 'center' }}>
+      <Box sx={{ width: 46, height: 46, borderRadius: '14px', flexShrink: 0, display: 'grid', placeItems: 'center', color: INK, background: GOLD_GRADIENT, textAlign: 'center' }}>
         <Box>
-          <Typography component="h1" sx={{ fontSize: '0.5rem', fontWeight: 900, letterSpacing: '0.12em', lineHeight: 1 }}>LEVEL</Typography>
-          <Typography sx={{ fontSize: '1.4rem', fontWeight: 900, lineHeight: 1.05 }}>{info.level}</Typography>
+          <Typography component="h1" sx={{ fontSize: '0.48rem', fontWeight: 900, letterSpacing: '0.12em', lineHeight: 1 }}>LEVEL</Typography>
+          <Typography sx={{ fontSize: '1.25rem', fontWeight: 900, lineHeight: 1.05 }}>{info.level}</Typography>
         </Box>
       </Box>
       <Box sx={{ flex: 1, minWidth: 0 }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
           <Typography noWrap sx={{ fontWeight: 900 }}>{info.rank}</Typography>
-          <Typography noWrap sx={{ fontSize: '0.74rem', fontWeight: 700, color: 'rgba(255,255,255,.7)', fontVariantNumeric: 'tabular-nums' }}>{state.xp} XP</Typography>
+          <Typography noWrap sx={{ fontSize: '0.74rem', fontWeight: 700, color: 'rgba(255,255,255,.7)', fontVariantNumeric: 'tabular-nums' }}>
+            {state.xp} XP{info.max ? '' : ` · ${info.toNext} to level ${info.level + 1}`}
+          </Typography>
         </Box>
         <Box sx={{ mt: 0.75, height: 7, borderRadius: 99, bgcolor: 'rgba(255,255,255,.16)', overflow: 'hidden' }}>
           <motion.div initial={{ width: 0 }} animate={{ width: `${Math.max(info.pct, 3)}%` }} transition={{ duration: 0.9, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 99, background: GOLD_GRADIENT }} />
@@ -98,7 +99,8 @@ export function QuestHeader({ state }) {
   );
 }
 
-// ------------------------------------------------------------------ prize card
+// ------------------------------------------------------------------ prize panel
+// Left half of the quests card: the grand reward, its progress bar with milestone stops, and today's check-in.
 export function PrizeCard({ state, goal, busy, onClaim, isAuthenticated, onCheckIn, onLogin }) {
   const pct = Math.min((goal.value / goal.target) * 100, 100);
   const left = Math.max(goal.target - state.activeDays, 0);
@@ -107,15 +109,25 @@ export function PrizeCard({ state, goal, busy, onClaim, isAuthenticated, onCheck
   const today = state.checkedInToday;
 
   return (
-    <Box sx={{ p: '2px', borderRadius: '22px', background: GOLD_GRADIENT, boxShadow: '0 20px 36px -26px rgba(217,119,6,.85)' }}>
-      <Box sx={(t) => ({ borderRadius: '20px', p: { xs: 2, sm: 2.5 }, bgcolor: t.palette.background.paper, backgroundImage: 'linear-gradient(135deg, rgba(245,179,1,.16), rgba(217,119,6,.04) 60%, transparent)' })}>
-        <Box sx={{ display: 'flex', gap: 1.75, alignItems: 'center' }}>
-          <Box sx={{ width: 58, height: 58, borderRadius: '18px', flexShrink: 0, display: 'grid', placeItems: 'center', color: INK, background: GOLD_GRADIENT, boxShadow: '0 12px 22px -10px rgba(217,119,6,.8), inset 0 2px 0 rgba(255,255,255,.55)' }}>
-            <DiamondRoundedIcon sx={{ fontSize: 34 }} />
+    <Box
+      sx={{
+        height: '100%',
+        p: { xs: 2, sm: 2.5 },
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        gap: 2,
+        backgroundImage: 'linear-gradient(135deg, rgba(245,179,1,.16), rgba(217,119,6,.04) 60%, transparent)',
+      }}
+    >
+      <Box>
+        <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center' }}>
+          <Box sx={{ width: 50, height: 50, borderRadius: '16px', flexShrink: 0, display: 'grid', placeItems: 'center', color: INK, background: GOLD_GRADIENT, boxShadow: '0 12px 22px -10px rgba(217,119,6,.8), inset 0 2px 0 rgba(255,255,255,.55)' }}>
+            <DiamondRoundedIcon sx={{ fontSize: 30 }} />
           </Box>
           <Box sx={{ minWidth: 0, flex: 1 }}>
             <Typography sx={{ fontSize: '0.64rem', fontWeight: 900, letterSpacing: '0.16em', color: AMBER }}>GRAND REWARD</Typography>
-            <Typography sx={{ fontWeight: 900, fontSize: { xs: '1.1rem', sm: '1.35rem' }, lineHeight: 1.2, letterSpacing: '-0.015em' }}>
+            <Typography sx={{ fontWeight: 900, fontSize: { xs: '1.05rem', sm: '1.25rem' }, lineHeight: 1.2, letterSpacing: '-0.015em' }}>
               {goal.target} check-ins = {goal.reward.label} free
             </Typography>
           </Box>
@@ -153,31 +165,41 @@ export function PrizeCard({ state, goal, busy, onClaim, isAuthenticated, onCheck
         ) : goal.claimed && state.proExpiresAt ? (
           <Typography variant="caption" sx={{ display: 'block', mt: 1, textAlign: 'center', fontWeight: 800, color: AMBER }}>Pro active until {formatDate(state.proExpiresAt)}</Typography>
         ) : null}
+      </Box>
 
-        <Box sx={(t) => ({ mt: 2, pt: 1.75, borderTop: `1px solid ${t.palette.divider}`, display: 'flex', alignItems: 'center', gap: 1.5 })}>
-          <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Typography sx={{ fontWeight: 800, fontSize: '0.92rem' }}>{!isAuthenticated ? 'Start your first check-in' : today ? 'Checked in today ✓' : 'Today’s check-in'}</Typography>
-            <Typography variant="caption" color="text.secondary">
-              {!isAuthenticated ? 'Log in and solve 1 problem a day.' : today ? <>Next in <Countdown /> · resets {resetTimeLabel()}</> : <>Get 1 problem Accepted · <Countdown /> left</>}
-            </Typography>
-          </Box>
-          {!isAuthenticated ? (
-            <Button variant="contained" disableElevation onClick={onLogin} sx={{ fontWeight: 800, borderRadius: '99px' }}>Log in</Button>
-          ) : !today ? (
-            <Button variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} onClick={onCheckIn} sx={{ fontWeight: 800, borderRadius: '99px', minHeight: 40 }}>Solve now</Button>
-          ) : null}
+      <Box sx={(t) => ({ pt: 1.75, borderTop: `1px solid ${t.palette.divider}`, display: 'flex', alignItems: 'center', gap: 1.5 })}>
+        <Box sx={{ flex: 1, minWidth: 0 }}>
+          <Typography sx={{ fontWeight: 800, fontSize: '0.92rem' }}>{!isAuthenticated ? 'Start your first check-in' : today ? 'Checked in today ✓' : 'Today’s check-in'}</Typography>
+          <Typography variant="caption" color="text.secondary">
+            {!isAuthenticated ? 'Log in and solve 1 problem a day.' : today ? <>Next in <Countdown /> · resets {resetTimeLabel()}</> : <>Get 1 problem Accepted · <Countdown /> left</>}
+          </Typography>
         </Box>
+        {!isAuthenticated ? (
+          <Button variant="contained" disableElevation onClick={onLogin} sx={{ fontWeight: 800, borderRadius: '99px' }}>Log in</Button>
+        ) : !today ? (
+          <Button variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} onClick={onCheckIn} sx={{ fontWeight: 800, borderRadius: '99px', minHeight: 40 }}>Solve now</Button>
+        ) : null}
       </Box>
     </Box>
   );
 }
 
 // ------------------------------------------------------------------- next up row
+// Flat row (hairline divider, no card of its own): the quests card already frames the list.
 export function QuestRow({ quest, busy, onClaim, onPick }) {
   const pct = Math.min((quest.value / quest.target) * 100, 100);
   const Icon = isPro(quest) ? DiamondRoundedIcon : MilitaryTechRoundedIcon;
   return (
-    <Box sx={[surface, (t) => ({ px: 1.5, py: 1.1, display: 'flex', alignItems: 'center', gap: 1.5, borderColor: quest.claimable ? GOLD : t.palette.divider })]}>
+    <Box
+      sx={(t) => ({
+        py: 1.25,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1.5,
+        borderBottom: `1px solid ${t.palette.divider}`,
+        '&:last-of-type': { borderBottom: 'none' },
+      })}
+    >
       <Box sx={{ width: 38, height: 38, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', color: quest.claimable ? INK : AMBER, background: quest.claimable ? GOLD_GRADIENT : alpha(GOLD, 0.14) }}>
         <Icon sx={{ fontSize: 22 }} />
       </Box>
