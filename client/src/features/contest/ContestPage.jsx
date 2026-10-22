@@ -2,9 +2,8 @@ import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Alert, Box, Button, Checkbox, Container, FormControlLabel, IconButton, Skeleton, Typography, alpha } from '@mui/material';
+import { Alert, Box, Button, Checkbox, Container, FormControlLabel, IconButton, Typography, alpha } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import PaymentsRoundedIcon from '@mui/icons-material/PaymentsRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
@@ -17,7 +16,8 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { contestApi } from '../../api/contestApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
-import Countdown from './Countdown';
+import ContestTabs from './ContestTabs';
+import GlobalTop from './GlobalTop';
 import { fmtDuration, fmtStart, inr, useContest } from './contestUtils';
 
 const RULE_ICON = { 'fair-play': SmartToyRoundedIcon, verification: FactCheckRoundedIcon, format: TimerRoundedIcon, eligibility: HowToRegRoundedIcon, prize: PaymentsRoundedIcon, penalties: GavelRoundedIcon };
@@ -79,51 +79,28 @@ export default function ContestPage({ embedded = false }) {
 
   const back = embedded ? null : <IconButton component={RouterLink} to="/dashboard" aria-label="Back to dashboard" edge="start"><ArrowBackRoundedIcon /></IconButton>;
 
-  if (contest === null) {
-    return (
-      <Container maxWidth="md" disableGutters={embedded} sx={{ py: embedded ? 0 : 3 }}>
-        {back}
-        <Skeleton variant="rounded" height={190} sx={{ borderRadius: '14px', my: 1.5 }} />
-        <Skeleton variant="rounded" height={320} sx={{ borderRadius: '14px' }} />
-      </Container>
-    );
-  }
-  if (contest === false) {
-    return <Container maxWidth="md" disableGutters={embedded} sx={{ py: embedded ? 0 : 3 }}>{back}<Alert severity="error">Could not load the contest. Please try again in a moment.</Alert></Container>;
-  }
-
-  const upcoming = contest.status === 'upcoming';
+  const upcoming = contest?.status === 'upcoming';
+  const goApply = () => applyRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   return (
-    <Container maxWidth="md" disableGutters={embedded} sx={embedded ? { py: 0 } : { py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
-      <Box sx={{ display: 'grid', gap: 1.5 }}>
+    <Container maxWidth="lg" disableGutters={embedded} sx={embedded ? { py: 0 } : { py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
+      <Box sx={{ display: 'grid', gap: 2 }}>
         {back && <Box>{back}</Box>}
 
-        {/* Hero */}
-        <Box
-          sx={[surface, (t) => ({
-            p: { xs: 2.5, sm: 3.5 }, textAlign: 'center',
-            background: `radial-gradient(circle at 50% 0%, ${alpha(t.palette.warning.main, t.palette.mode === 'dark' ? 0.22 : 0.14)}, transparent 65%), ${t.palette.background.paper}`,
-          })]}
-        >
-          <EmojiEventsRoundedIcon sx={{ fontSize: 40, color: 'warning.main' }} />
-          <Typography variant="h4" sx={{ fontWeight: 800, letterSpacing: '-0.02em', mt: 0.5, fontSize: { xs: 26, sm: 34 } }}>{contest.title}</Typography>
-          <Typography sx={{ fontWeight: 800, color: 'warning.main', fontSize: { xs: 22, sm: 28 }, mt: 0.5 }}>{inr(contest.prizePool)} cash prize</Typography>
-          <Typography color="text.secondary" sx={{ mt: 0.5 }}>{fmtStart(contest.startsAt)}</Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-            {upcoming ? <Countdown targetIso={contest.startsAt} serverTime={contest.serverTime} />
-              : <Typography sx={{ fontWeight: 800 }}>{contest.status === 'live' ? 'The contest is live' : 'The contest has ended'}</Typography>}
-          </Box>
-          {upcoming && (
-            <Button
-              variant="contained" disableElevation sx={{ mt: 2.5, fontWeight: 700, px: 4 }}
-              onClick={() => applyRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-              startIcon={contest.applied ? <CheckCircleRoundedIcon /> : null}
-            >
-              {contest.applied ? 'You are in' : 'Apply now'}
-            </Button>
-          )}
+        <Box>
+          <Typography variant="h4" sx={{ fontWeight: 900, letterSpacing: '-0.02em', fontSize: { xs: 26, sm: 32 } }}>Contests</Typography>
+          <Typography color="text.secondary" sx={{ mt: 0.25 }}>Compete, climb the global ranks and win real prizes.</Typography>
         </Box>
+
+        {/* Global top 10 (left) + upcoming / past contests (right). On phones the contests come first. */}
+        <Box sx={{ display: 'grid', gap: 2, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.55fr) minmax(0,1fr)' } }}>
+          <Box sx={{ order: { xs: 2, md: 1 } }}><GlobalTop /></Box>
+          <Box sx={{ order: { xs: 1, md: 2 }, position: { md: 'sticky' }, top: { md: 16 } }}><ContestTabs contest={contest} onOpen={goApply} /></Box>
+        </Box>
+
+        {contest && (
+        <>
+        <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em', mt: 1.5 }}>{contest.title}</Typography>
 
         {/* Key facts */}
         <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'repeat(2, minmax(0,1fr))', sm: 'repeat(4, minmax(0,1fr))' } }}>
@@ -139,7 +116,9 @@ export default function ContestPage({ embedded = false }) {
 
         {/* Rules */}
         <Typography variant="h6" sx={{ fontWeight: 800, mt: 1 }}>Contest rules</Typography>
-        {contest.rules.map((rule, i) => <RuleSection key={rule.id} rule={rule} index={i} />)}
+        <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'repeat(2, minmax(0,1fr))' }, alignItems: 'start' }}>
+          {contest.rules.map((rule, i) => <RuleSection key={rule.id} rule={rule} index={i} />)}
+        </Box>
 
         {/* Apply */}
         <Box ref={applyRef} sx={[surface, { p: { xs: 2, sm: 2.5 }, scrollMarginTop: 90 }]}>
@@ -170,6 +149,8 @@ export default function ContestPage({ embedded = false }) {
             </>
           )}
         </Box>
+        </>
+        )}
       </Box>
     </Container>
   );
