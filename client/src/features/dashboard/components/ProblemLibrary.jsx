@@ -13,9 +13,7 @@ import {
   InputAdornment,
   Menu,
   MenuItem,
-  Pagination,
   Popover,
-  Select,
   Skeleton,
   Stack,
   TextField,
@@ -45,7 +43,6 @@ import { extractErrorMessage } from '../../../api/apiClient';
 import { CATEGORY_GROUPS, DIFF_COLOR, SORT_OPTIONS, surface } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
 
-const PAGE_SIZES = [25, 50, 100];
 const TOPIC_ROW_H = 34;
 const PAD_X = { xs: '12px', sm: '18px' };
 const STAR_W = 44;
@@ -380,6 +377,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
   const [data, setData] = useState({ items: [], pagination: { page: 1, totalPages: 1, total: 0 } });
   const [loading, setLoading] = useState(true);
   const [refetching, setRefetching] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(null);
   const [retryTick, setRetryTick] = useState(0);
 
@@ -393,6 +391,9 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
   const [saveProblem, setSaveProblem] = useState(null);
 
   const searchRef = useRef(null);
+  const cardRef = useRef(null); // the whole problem card (scroll target for the first arrow press)
+  const listRef = useRef(null); // inner scroller of the card
+  const sentinelRef = useRef(null);
   const reqId = useRef(0);
   const hasLoaded = useRef(false);
 
@@ -435,7 +436,8 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
 
   useEffect(() => {
     const id = ++reqId.current;
-    if (hasLoaded.current) setRefetching(true);
+    if (q.page > 1) setLoadingMore(true);
+    else if (hasLoaded.current) setRefetching(true);
     else setLoading(true);
 
     problemsApi
@@ -451,7 +453,13 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
       })
       .then(({ data: d }) => {
         if (id !== reqId.current) return;
-        setData(d.data);
+        // Page 1 replaces the list (new filters); later pages are appended (infinite scroll).
+        setData((prev) => {
+          if (d.data.pagination.page <= 1) return d.data;
+          const seen = new Set(prev.items.map((x) => x._id));
+          return { ...d.data, items: [...prev.items, ...d.data.items.filter((x) => !seen.has(x._id))] };
+        });
+        if (d.data.pagination.page <= 1 && listRef.current) listRef.current.scrollTop = 0;
         setError(null);
       })
       .catch((err) => {
@@ -463,8 +471,70 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
         hasLoaded.current = true;
         setLoading(false);
         setRefetching(false);
+        setLoadingMore(false);
       });
   }, [q, retryTick]);
+
+  // Infinite scroll: load the next page when the sentinel at the bottom of the card scrolls into view.
+  const hasMore = data.pagination.page < data.pagination.totalPages;
+  useEffect(() => {
+    const root = listRef.current;
+    const el = sentinelRef.current;
+    if (!root || !el || !hasMore || loading || refetching || loadingMore || error) return undefined;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((en) => en.isIntersecting)) setQ((prev) => ({ ...prev, page: prev.page + 1 }));
+      },
+      { root, rootMargin: '0px 0px 240px 0px' }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [hasMore, loading, refetching, loadingMore, error, data.items.length]);
+
+  // Arrow keys. 1st ArrowDown jumps straight to the problem card and focuses its scroller;
+  // after that the arrows scroll inside the card. ArrowUp at the top of the card goes back up the page.
+  useEffect(() => {
+    const scrollParentOf = (node) => {
+      for (let n = node.parentElement; n; n = n.parentElement) {
+        const oy = getComputedStyle(n).overflowY;
+        if ((oy === 'auto' || oy === 'scroll') && n.scrollHeight > n.clientHeight) return n;
+      }
+      return null;
+    };
+    const onKey = (e) => {
+      if ((e.key !== 'ArrowDown' && e.key !== 'ArrowUp') || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || e.defaultPrevented) return;
+      const card = cardRef.current;
+      const list = listRef.current;
+      if (!card || !list || card.offsetParent === null) return; // library view is hidden
+      const a = document.activeElement;
+      if (a && a !== list && a !== document.body && (/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) || a.isContentEditable || a.closest?.('[role="menu"],[role="dialog"],[role="listbox"],[role="slider"]'))) return;
+      if (document.querySelector('.MuiModal-root')) return;
+      const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      const behavior = reduce ? 'auto' : 'smooth';
+      const inside = a === list || list.contains(a);
+
+      if (e.key === 'ArrowDown') {
+        if (inside) return; // native scroll inside the card
+        e.preventDefault();
+        card.scrollIntoView({ block: 'start', behavior });
+        list.focus({ preventScroll: true });
+        return;
+      }
+      // ArrowUp
+      if (inside) {
+        if (list.scrollTop > 0) return; // native scroll inside the card
+        e.preventDefault();
+        list.blur();
+        (scrollParentOf(card) || window).scrollTo({ top: 0, behavior });
+        return;
+      }
+      const sp = scrollParentOf(card);
+      e.preventDefault();
+      (sp || window).scrollBy({ top: -120, behavior });
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   const availableTagNames = useMemo(() => new Set(tags.map((t) => t.tag)), [tags]);
   const groups = useMemo(
@@ -480,7 +550,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
 
   const clearAll = () => {
     setSearchText('');
-    setQ({ ...INITIAL_QUERY, pageSize: q.pageSize });
+    setQ({ ...INITIAL_QUERY });
   };
 
   const pickOne = () => {
@@ -510,7 +580,6 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
   };
 
   const { items, pagination } = data;
-  const offset = (q.page - 1) * q.pageSize;
   const totals = progress?.total || { Easy: 0, Medium: 0, Hard: 0 };
   const solvedBy = progress?.solved || { Easy: 0, Medium: 0, Hard: 0 };
   const totalAll = totals.Easy + totals.Medium + totals.Hard;
@@ -643,7 +712,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
       </Box>
 
       {/* The list */}
-      <Box sx={[surface, { overflow: 'hidden' }]}>
+      <Box ref={cardRef} sx={[surface, { overflow: 'hidden', scrollMarginTop: { xs: 72, lg: 0 } }]}>
         <Box
           sx={(t) => ({
             display: 'flex',
@@ -664,6 +733,13 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
           <ColumnHeader label="Difficulty" width={DIFF_W} sortKey="difficulty" sortValue={q.sort} onSort={(s) => patch({ sort: s })} disabled={sortDisabled} />
         </Box>
 
+        <Box
+          ref={listRef}
+          tabIndex={0}
+          role="region"
+          aria-label="Problems list. Use arrow keys to scroll."
+          sx={{ height: { xs: 'auto', lg: 'calc(100vh - 190px)' }, maxHeight: { xs: '70vh', lg: 'none' }, minHeight: 280, overflowY: 'auto', overscrollBehavior: 'contain', outline: 'none', '&:focus-visible': { boxShadow: (t) => `inset 0 0 0 2px ${t.palette.primary.main}` } }}
+        >
         {error && (
           <Alert
             severity="error"
@@ -696,14 +772,18 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
               <ProblemRow
                 key={p._id}
                 p={p}
-                index={offset + i + 1}
+                index={i + 1}
                 isDaily={p._id === dailyId}
                 saved={listsApi.isSaved(p._id)}
                 onStar={handleStar}
               />
             ))}
+            <Box ref={sentinelRef} aria-hidden sx={{ height: 1 }} />
+            {loadingMore && <SkeletonRows count={3} />}
           </Box>
         )}
+
+        </Box>
 
         {pagination.total > 0 && (
           <Box
@@ -718,31 +798,9 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
               borderTop: `1px solid ${t.palette.divider}`,
             })}
           >
-            <Typography variant="caption" color="text.secondary" sx={{ fontVariantNumeric: 'tabular-nums', minWidth: 150 }}>
-              Showing {offset + 1} to {Math.min(offset + q.pageSize, pagination.total)} of {pagination.total}
+            <Typography variant="caption" color="text.secondary" sx={{ fontVariantNumeric: 'tabular-nums' }}>
+              Showing {items.length} of {pagination.total}
             </Typography>
-            <Pagination
-              count={pagination.totalPages}
-              page={q.page}
-              onChange={(_, v) => patch({ page: v }, true)}
-              shape="rounded"
-              size="small"
-              siblingCount={1}
-              color="primary"
-            />
-            <Select
-              size="small"
-              value={q.pageSize}
-              onChange={(e) => patch({ pageSize: e.target.value })}
-              aria-label="Problems per page"
-              sx={{ minWidth: 120, fontSize: '0.85rem' }}
-            >
-              {PAGE_SIZES.map((n) => (
-                <MenuItem key={n} value={n}>
-                  {n} / page
-                </MenuItem>
-              ))}
-            </Select>
           </Box>
         )}
       </Box>
