@@ -96,7 +96,7 @@ function Podium({ rows, reduce }) {
   return (
     <Box
       sx={{
-        position: 'relative', overflow: 'hidden', color: '#fff', px: { xs: 1.5, sm: 4 }, pt: { xs: 8.5, sm: 9 }, pb: 0,
+        position: 'relative', overflow: 'hidden', color: '#fff', px: { xs: 1.5, sm: 4 }, pt: { xs: 8.5, sm: 8.5 }, pb: 0,
         background: 'radial-gradient(120% 90% at 50% 0%, #5B21B6 0%, #312E81 45%, #1E1B4B 100%)',
       }}
     >
@@ -154,7 +154,7 @@ function RankRow({ row, top, index, reduce }) {
 }
 
 // Global top 10 of all JeetCode players (same points as the Leaderboard tab), with a podium for the top 3.
-export default function GlobalTop() {
+export default function GlobalTop({ fill = false }) {
   const reduce = useReducedMotion();
   const [state, setState] = useState({ status: 'loading', rows: [] });
   const [tick, setTick] = useState(0);
@@ -178,9 +178,9 @@ export default function GlobalTop() {
   const rest = rows.slice(3);
 
   return (
-    <Box sx={[surface, { overflow: 'hidden', p: 0 }]}>
+    <Box sx={[surface, { overflow: 'hidden', p: 0 }, fill && { height: '100%', display: 'flex', flexDirection: 'column' }]}>
       {/* header lives on the podium panel */}
-      <Box sx={{ position: 'relative', background: '#1E1B4B' }}>
+      <Box sx={{ position: 'relative', background: '#1E1B4B', flexShrink: 0 }}>
         <Box sx={{ position: 'absolute', zIndex: 2, left: 0, right: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.75, sm: 2.5 }, pt: { xs: 1.75, sm: 2.25 }, color: '#fff' }}>
           <Box sx={{ minWidth: 0 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
@@ -209,7 +209,7 @@ export default function GlobalTop() {
       </Box>
 
       {status === 'ok' && rest.length > 0 && (
-        <Box sx={{ p: { xs: 1.25, sm: 1.75 }, display: 'grid', gap: 0.9 }}>
+        <Box className="autohide-scroll" sx={[{ p: { xs: 1.25, sm: 1.75 }, display: 'grid', gap: 0.9, alignContent: 'start' }, fill && { flex: 1, minHeight: 0, overflowY: 'auto' }]}>
           {rest.map((r, i) => <RankRow key={r.userId} row={r} top={rows[0].score} index={i} reduce={reduce} />)}
         </Box>
       )}

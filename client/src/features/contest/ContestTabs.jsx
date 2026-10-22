@@ -29,11 +29,11 @@ function Chip({ icon: Icon, children }) {
 }
 
 // One contest, styled like a study plan card: gradient, glow, big date tile, prize bubble, amber button.
-function ContestCard({ contest, past, onOpen }) {
+export function ContestTile({ contest, past, onOpen, ctaLabel }) {
   const { d, h, m, s } = useCountdown(contest.startsAt, contest.serverTime);
   const live = contest.status === 'live';
   const tile = past ? { big: 'Ended', label: '' } : live ? { big: 'Live', label: 'now' } : { big: String(Math.max(d, 1)), label: d <= 1 ? 'day to start' : 'days to start' };
-  const cta = past ? 'View results' : contest.applied ? 'You are in' : live ? 'View contest' : 'View & apply';
+  const cta = ctaLabel || (past ? 'View results' : contest.applied ? 'You are in' : live ? 'View contest' : 'View & apply');
 
   return (
     <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: '16px', color: '#fff', background: past ? SLATE : EMBER, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
@@ -113,14 +113,14 @@ function EmptyPast() {
 const TABS = [['upcoming', 'Upcoming'], ['past', 'Past']];
 
 // Two-tab card: Upcoming | Past contests. `contest` is null while loading and false if it failed.
-export default function ContestTabs({ contest, onOpen }) {
+export default function ContestTabs({ contest, onOpen, fill = false }) {
   const [tab, setTab] = useState('upcoming');
   const ready = Boolean(contest);
   const ended = ready && contest.status === 'ended';
   const lists = { upcoming: ready && !ended ? [contest] : [], past: ended ? [contest] : [] };
 
   return (
-    <Box sx={[surface, { p: { xs: 1.25, sm: 1.5 } }]}>
+    <Box sx={[surface, { p: { xs: 1.25, sm: 1.5 } }, fill && { height: '100%', display: 'flex', flexDirection: 'column' }]}>
       <Box role="tablist" aria-label="Contests" sx={(t) => ({ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1fr', p: 0.5, borderRadius: '14px', bgcolor: t.palette.action.hover })}>
         {TABS.map(([key, label]) => {
           const on = tab === key;
@@ -139,12 +139,12 @@ export default function ContestTabs({ contest, onOpen }) {
         })}
       </Box>
 
-      <Box role="tabpanel" sx={{ display: 'grid', gap: 1.5, mt: 1.5 }}>
+      <Box role="tabpanel" className="autohide-scroll" sx={[{ display: 'grid', gap: 1.5, mt: 1.5, alignContent: 'start' }, fill && { flex: 1, minHeight: 0, overflowY: 'auto' }]}>
         {contest === null && <Skeleton variant="rounded" height={340} sx={{ borderRadius: '16px' }} />}
         {contest === false && <Alert severity="error">Could not load contests. Please try again in a moment.</Alert>}
         {ready && lists[tab].map((c) => (
           <motion.div key={`${tab}-${c.id}`} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
-            <ContestCard contest={c} past={tab === 'past'} onOpen={onOpen} />
+            <ContestTile contest={c} past={tab === 'past'} onOpen={() => onOpen(c)} />
           </motion.div>
         ))}
         {ready && lists[tab].length === 0 && (tab === 'past' ? <EmptyPast /> : (
