@@ -23,10 +23,6 @@ import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import MyLocationRoundedIcon from '@mui/icons-material/MyLocationRounded';
-import FirstPageRoundedIcon from '@mui/icons-material/FirstPageRounded';
-import LastPageRoundedIcon from '@mui/icons-material/LastPageRounded';
-import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
@@ -543,7 +539,7 @@ function TopCard({ row, isMe, selected, onPick, compact }) {
   );
 }
 
-function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect, pinned = false }) {
+function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect }) {
   const { tier } = tierFor(row.score);
   const live = activeLabel(row.lastActive).live;
   const num = (n, color) => (
@@ -557,17 +553,17 @@ function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect, pinned = fal
   const name = <Typography noWrap sx={{ fontSize: 14, fontWeight: 700, lineHeight: 1.3, minWidth: 0 }}>{row.name}{isMe && <YouChip />}</Typography>;
   return (
     <Box
-      id={isMe && !pinned ? 'lb-me' : undefined}
+      id={isMe ? 'lb-me' : undefined}
       sx={(t) => ({
-        position: 'relative', minHeight: 0, height: pinned ? (dense ? 46 : 58) : '100%',
-        borderBottom: pinned ? 'none' : `1px solid ${t.palette.divider}`,
+        position: 'relative',
+        borderBottom: `1px solid ${t.palette.divider}`,
         background: selected ? alpha(t.palette.primary.main, 0.12) : isMe ? `linear-gradient(90deg, ${alpha(PLAN_AMBER, 0.22)}, ${alpha(PLAN_AMBER, 0.04)})` : 'transparent',
         '&::before': selected || isMe ? { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, bgcolor: selected ? 'primary.main' : PLAN_AMBER } : undefined,
       })}
     >
       <ButtonBase
         onClick={onSelect} aria-current={selected ? 'true' : undefined}
-        sx={(t) => ({ width: '100%', height: '100%', display: 'grid', gridTemplateColumns: tpl, columnGap: 1, alignItems: 'center', textAlign: 'left', px: 2.5, py: 0, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
+        sx={(t) => ({ width: '100%', minHeight: dense ? 46 : 58, display: 'grid', gridTemplateColumns: tpl, columnGap: 1, alignItems: 'center', textAlign: 'left', px: 2.5, py: dense ? 0.5 : 1, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
       >
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           <RankBadge rank={row.rank} />
@@ -613,7 +609,7 @@ function DeskRow({ row, tpl, rich, dense, isMe, selected, onSelect, pinned = fal
 
 function SkelRow({ i }) {
   return (
-    <Box sx={(t) => ({ minHeight: 0, display: 'flex', alignItems: 'center', gap: 1.5, px: 2.5, borderBottom: `1px solid ${t.palette.divider}` })}>
+    <Box sx={(t) => ({ minHeight: 58, display: 'flex', alignItems: 'center', gap: 1.5, px: 2.5, borderBottom: `1px solid ${t.palette.divider}` })}>
       <Skeleton variant="rounded" width={30} height={30} sx={{ borderRadius: '10px' }} />
       <Skeleton variant="circular" width={30} height={30} />
       <Skeleton variant="text" sx={{ flex: 1, maxWidth: `${30 + ((i * 13) % 30)}%` }} />
@@ -798,9 +794,9 @@ function TiersCard({ currentKey, points, mode }) {
 
 function DesktopBoard({ v }) {
   const {
-    showPanel, rich, tight, iconOnly, panelMode, isAuthenticated, meta, rows, podium, pageRows, loading, firstLoad, error, q, search, setSearch,
+    showPanel, rich, tight, iconOnly, panelMode, isAuthenticated, meta, rows, podium, listRows, loading, firstLoad, error, q, search, setSearch,
     track, period, scope, pick, setTrack, setPeriod, setScope, reload, me, selectedId, selectedRow, select,
-    setRowsEl, curPage, pages, rpp, base, totalRows, setDeskPage, goMine, showEveryone,
+    scroller, sentinel, hasMore, scrollToMe, open, setOpen, showEveryone,
   } = v;
   const [detail, setDetail] = useState(null); // narrow windows: row details open in a popover
   const [friendsEl, setFriendsEl] = useState(null);
@@ -811,10 +807,7 @@ function DesktopBoard({ v }) {
   const headColor = { Easy: DIFF_COLOR.Easy, Med: DIFF_COLOR.Medium, Hard: DIFF_COLOR.Hard, Apt: APT_COLOR };
   const pickRow = (e, row) => (showPanel ? select(row.userId) : setDetail({ el: e.currentTarget, row }));
   const selectedTier = selectedRow ? tierFor(selectedRow.score).tier.key : null;
-  const from = base + (curPage - 1) * rpp + 1;
-  const to = base + (curPage - 1) * rpp + pageRows.length;
-  const expected = meta ? Math.min(rpp, Math.max(0, totalRows - (curPage - 1) * rpp)) : rpp;
-  const skeletons = loading ? Math.max(0, expected - pageRows.length) : 0;
+  const meVisible = me && listRows.some((r) => r.userId === me.userId);
   const stripH = tight ? 62 : 118;
 
   return (
@@ -850,6 +843,7 @@ function DesktopBoard({ v }) {
                 htmlInput: { 'aria-label': 'Search players' },
               }}
             />
+            {meVisible && <Tooltip title="Find me in the list"><IconButton onClick={scrollToMe} aria-label="Scroll to my row" sx={glassBtn}><MyLocationRoundedIcon fontSize="small" /></IconButton></Tooltip>}
             <Tooltip title="Friends"><IconButton onClick={(e) => setFriendsEl(e.currentTarget)} aria-label="Friends" disabled={!isAuthenticated} sx={[glassBtn, { '&.Mui-disabled': { color: 'rgba(255,255,255,0.4)' } }]}><PeopleAltRoundedIcon fontSize="small" /></IconButton></Tooltip>
             <Tooltip title="Refresh"><IconButton onClick={reload} aria-label="Refresh leaderboard" sx={glassBtn}><RefreshRoundedIcon fontSize="small" /></IconButton></Tooltip>
           </Box>
@@ -887,57 +881,60 @@ function DesktopBoard({ v }) {
           <Alert severity="error" sx={{ mx: 2.5, mt: 1.5, flexShrink: 0 }} action={<Button color="inherit" size="small" onClick={reload}>Retry</Button>}>{error}</Alert>
         )}
 
-        {/* Top three */}
-        {(firstLoad || podium.length > 0) && (
-          <Box sx={{ flexShrink: 0, px: 2.5, pt: tight ? 1.5 : 2, pb: tight ? 1 : 1.5 }}>
-            <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${firstLoad ? 3 : podium.length}, minmax(0, 1fr))`, gap: 1.5 }}>
-              {firstLoad
-                ? [0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={stripH} sx={{ borderRadius: '16px' }} />)
-                : podium.map((r) => <TopCard key={r.userId} row={r} compact={tight} isMe={me?.userId === r.userId} selected={selectedId === r.userId} onPick={pickRow} />)}
+        {/* The list: the only thing here that scrolls (endless) */}
+        <Box ref={scroller} sx={{ flex: 1, minHeight: 0, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', ...SCROLL, scrollbarGutter: firstLoad ? 'auto' : 'stable' }}>
+          {(firstLoad || podium.length > 0) && (
+            <Box sx={{ px: 2.5, pt: tight ? 1.5 : 2, pb: tight ? 1 : 1.5 }}>
+              <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${firstLoad ? 3 : podium.length}, minmax(0, 1fr))`, gap: 1.5 }}>
+                {firstLoad
+                  ? [0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={stripH} sx={{ borderRadius: '16px' }} />)
+                  : podium.map((r) => <TopCard key={r.userId} row={r} compact={tight} isMe={me?.userId === r.userId} selected={selectedId === r.userId} onPick={pickRow} />)}
+              </Box>
             </Box>
-          </Box>
-        )}
-
-        {/* Column titles, then exactly as many rows as fit */}
-        <Box
-          role="row"
-          sx={(t) => ({ flexShrink: 0, display: 'grid', gridTemplateColumns: tpl, columnGap: 1, px: 2.5, py: 0.9, borderTop: `1px solid ${t.palette.divider}`, borderBottom: `1px solid ${t.palette.divider}`, bgcolor: alpha(t.palette.primary.main, 0.05) })}
-        >
-          {head.map((h, i) => (
-            <Typography key={h} component="div" title={h === 'Week' ? 'Questions solved in the last 7 days' : undefined}
-              sx={{ fontSize: 12, fontWeight: 800, textAlign: i < 2 ? 'left' : 'right', color: headColor[h] || 'text.secondary' }}>{h}</Typography>
-          ))}
-        </Box>
-
-        <Box ref={setRowsEl} sx={{ flex: 1, minHeight: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gridTemplateRows: `repeat(${rpp}, minmax(0, 1fr))` }}>
-          {pageRows.map((r) => (
+          )}
+          {!firstLoad && listRows.length > 0 && (
+            <Box
+              role="row"
+              sx={(t) => ({
+                position: 'sticky', top: 0, zIndex: 2, display: 'grid', gridTemplateColumns: tpl, columnGap: 1, px: 2.5, py: 0.9,
+                backgroundColor: t.palette.background.paper, backgroundImage: `linear-gradient(${alpha(t.palette.primary.main, 0.05)}, ${alpha(t.palette.primary.main, 0.05)})`,
+                borderTop: `1px solid ${t.palette.divider}`, borderBottom: `1px solid ${t.palette.divider}`,
+              })}
+            >
+              {head.map((h, i) => (
+                <Typography key={h} component="div" title={h === 'Week' ? 'Questions solved in the last 7 days' : undefined}
+                  sx={{ fontSize: 12, fontWeight: 800, textAlign: i < 2 ? 'left' : 'right', color: headColor[h] || 'text.secondary' }}>{h}</Typography>
+              ))}
+            </Box>
+          )}
+          {firstLoad && Array.from({ length: 8 }, (_, i) => <SkelRow key={i} i={i} />)}
+          {listRows.map((r) => (
             <DeskRow
               key={r.userId} row={r} tpl={tpl} rich={rich} dense={tight} isMe={me?.userId === r.userId}
               selected={selectedId === r.userId} onSelect={(e) => pickRow(e, r)}
             />
           ))}
-          {Array.from({ length: skeletons }, (_, i) => <SkelRow key={`s${i}`} i={i} />)}
           {!loading && rows.length === 0 && !error && (
-            <Box sx={{ gridRow: '1 / -1', display: 'grid', placeItems: 'center', px: 3, textAlign: 'center', color: 'text.secondary' }}>
-              <Box>
-                <EmojiEventsRoundedIcon sx={{ fontSize: 40, opacity: 0.35 }} />
-                <Typography color="text.secondary" sx={{ mt: 0.5, fontWeight: 600 }}>
-                  {q ? `No player matches "${q}".` : scope === 'friends' ? 'No friends on this board yet.' : 'No one has scored in this period yet.'}
-                </Typography>
-                <Box sx={{ mt: 1.25, display: 'flex', justifyContent: 'center', gap: 1 }}>
-                  {q && <Button size="small" variant="outlined" onClick={() => setSearch('')}>Clear search</Button>}
-                  {!q && scope === 'friends' && <Button size="small" variant="outlined" onClick={showEveryone}>Show everyone</Button>}
-                  {!q && period !== 'all' && <Button size="small" variant="outlined" onClick={() => pick(setPeriod)(null, 'all')}>Show all time</Button>}
-                </Box>
+            <Box sx={{ py: 7, px: 3, textAlign: 'center', color: 'text.secondary' }}>
+              <EmojiEventsRoundedIcon sx={{ fontSize: 40, opacity: 0.35 }} />
+              <Typography color="text.secondary" sx={{ mt: 0.5, fontWeight: 600 }}>
+                {q ? `No player matches "${q}".` : scope === 'friends' ? 'No friends on this board yet.' : 'No one has scored in this period yet.'}
+              </Typography>
+              <Box sx={{ mt: 1.25, display: 'flex', justifyContent: 'center', gap: 1 }}>
+                {q && <Button size="small" variant="outlined" onClick={() => setSearch('')}>Clear search</Button>}
+                {!q && scope === 'friends' && <Button size="small" variant="outlined" onClick={showEveryone}>Show everyone</Button>}
+                {!q && period !== 'all' && <Button size="small" variant="outlined" onClick={() => pick(setPeriod)(null, 'all')}>Show all time</Button>}
               </Box>
             </Box>
           )}
+          {hasMore && <Box ref={sentinel} sx={{ height: 1 }} />}
+          {loading && rows.length > 0 && Array.from({ length: 2 }, (_, i) => <SkelRow key={`m${i}`} i={i} />)}
         </Box>
 
-        {/* My own position stays pinned under the list */}
+        {/* My own position stays pinned under the list: the original "You" card */}
         {me && (
-          <Box sx={(t) => ({ flexShrink: 0, borderTop: `1px solid ${t.palette.divider}`, bgcolor: alpha(PLAN_AMBER, 0.08) })}>
-            <DeskRow row={me} tpl={tpl} rich={rich} dense={tight} isMe pinned selected={false} onSelect={() => select(me.userId, true)} />
+          <Box sx={(t) => ({ flexShrink: 0, maxHeight: '55%', overflowY: 'auto', p: 0.75, background: `linear-gradient(180deg, ${alpha(t.palette.primary.main, 0.16)}, ${alpha(t.palette.primary.main, 0.05)})`, boxShadow: `0 -10px 24px -14px ${alpha(t.palette.primary.main, 0.7)}` })}>
+            <Row row={me} isMe pinned expanded={open === 'pinned-me'} onToggle={() => setOpen(open === 'pinned-me' ? null : 'pinned-me')} />
           </Box>
         )}
         {!showPanel && isAuthenticated && meta && !meta.me && !loading && (
@@ -945,25 +942,6 @@ function DesktopBoard({ v }) {
             Solve a question to enter the leaderboard.
           </Typography>
         )}
-
-        {/* Pager: icons only */}
-        <Box sx={(t) => ({ flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: 2, height: 42, borderTop: `1px solid ${t.palette.divider}` })}>
-          <Typography variant="caption" color="text.secondary" noWrap sx={[{ width: 110, fontWeight: 600 }, mono]}>
-            {pageRows.length ? `${from}-${to} of ${base + totalRows}` : ''}
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
-            <IconButton size="small" disabled={curPage <= 1} onClick={() => setDeskPage(1)} aria-label="First page"><FirstPageRoundedIcon fontSize="small" /></IconButton>
-            <IconButton size="small" disabled={curPage <= 1} onClick={() => setDeskPage(curPage - 1)} aria-label="Previous page"><ChevronLeftRoundedIcon /></IconButton>
-            <Typography sx={[{ minWidth: 64, textAlign: 'center', fontWeight: 800, fontSize: 13 }, mono]}>{curPage} / {pages}</Typography>
-            <IconButton size="small" disabled={curPage >= pages} onClick={() => setDeskPage(curPage + 1)} aria-label="Next page"><ChevronRightRoundedIcon /></IconButton>
-            <IconButton size="small" disabled={curPage >= pages} onClick={() => setDeskPage(pages)} aria-label="Last page"><LastPageRoundedIcon fontSize="small" /></IconButton>
-          </Box>
-          <Box sx={{ width: 110, display: 'flex', justifyContent: 'flex-end' }}>
-            {me && me.rank > podium.length && (
-              <Tooltip title="Go to my rank"><IconButton size="small" onClick={goMine} aria-label="Go to my rank" sx={{ color: 'primary.main' }}><MyLocationRoundedIcon fontSize="small" /></IconButton></Tooltip>
-            )}
-          </Box>
-        </Box>
       </Box>
 
       {showPanel && (
@@ -1024,11 +1002,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   const [selectedId, setSelectedId] = useState(null); // desktop: which player the side panel shows
   const [reloadKey, setReloadKey] = useState(0);
   const [wrapEl, setWrapEl] = useState(null);
-  const [rowsEl, setRowsEl] = useState(null);
-  const [deskPage, setDeskPage] = useState(1); // desktop pager (client-side, over the rows loaded so far)
-  const [loadedPage, setLoadedPage] = useState(0);
   const size = useElSize(wrapEl, { w: typeof window !== 'undefined' && window.innerWidth >= 1200 ? 1000 : 400, h: 700 });
-  const rowsSize = useElSize(rowsEl);
   const width = size.w;
   const wide = width >= DESKTOP_MIN;
   const showPanel = width >= PANEL_MIN;
@@ -1036,8 +1010,6 @@ export default function LeaderboardView({ isAuthenticated }) {
   const iconOnly = width - (showPanel ? PANEL_W + GAP : 0) < 700; // labels become icons when the board is narrow
   const tight = size.h < 760; // short window: slimmer banner, top-3 and rows
   const panelMode = size.h >= 780 ? 'full' : size.h >= 600 ? 'medium' : 'tiny';
-  const rowH = tight ? 46 : 58;
-  const rpp = rowsSize.h > 0 ? Math.min(40, Math.max(3, Math.floor(rowsSize.h / rowH))) : 8; // rows that fit, no scrolling
   const q = useDebounced(search);
   const scroller = useRef(null);
   const sentinel = useRef(null);
@@ -1046,7 +1018,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   const hasMore = meta ? rows.length < meta.total : false;
   const firstLoad = loading && rows.length === 0;
 
-  useEffect(() => { setPage(1); setDeskPage(1); }, [q, friendsVersion]);
+  useEffect(() => { setPage(1); }, [q, friendsVersion]);
 
   useEffect(() => {
     const id = ++reqId.current;
@@ -1057,7 +1029,6 @@ export default function LeaderboardView({ isAuthenticated }) {
         if (id !== reqId.current) return;
         setRows((prev) => (page === 1 ? res.data.rows : [...prev, ...res.data.rows.filter((r) => !prev.some((p) => p.userId === r.userId))]));
         setMeta(res.data);
-        setLoadedPage(page);
         setError('');
       })
       .catch((err) => { if (id === reqId.current) setError(extractErrorMessage(err)); })
@@ -1078,12 +1049,12 @@ export default function LeaderboardView({ isAuthenticated }) {
     setRows([]);
     setMeta((m) => (m ? { ...m, total: 0 } : m));
     setOpen(null);
-    setDeskPage(1);
     scroller.current?.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
   }, [reduce]);
 
   const pick = (setter) => (_, v) => { if (v) { setter(v); reset(); } };
   const reload = () => { setPage(1); setReloadKey((k) => k + 1); };
+  const scrollToMe = () => document.getElementById('lb-me')?.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
   const select = useCallback((id, force = false) => setSelectedId((cur) => (!force && cur === id ? null : id)), []);
   const showEveryone = () => { setScope('global'); reset(); };
   const me = isAuthenticated ? meta?.me : null;
@@ -1093,27 +1064,6 @@ export default function LeaderboardView({ isAuthenticated }) {
   // Top 3 get a podium (only players who scored, and not while searching).
   const podium = q ? [] : rows.slice(0, 3).filter((r) => r.score > 0);
   const listRows = rows.slice(podium.length);
-  const base = podium.length;
-  const total = meta?.total ?? 0;
-  const totalRows = Math.max(0, total - base);
-  const pages = Math.max(1, Math.ceil(totalRows / rpp));
-  const curPage = Math.min(deskPage, pages);
-  const pageRows = listRows.slice((curPage - 1) * rpp, curPage * rpp);
-  const needRows = Math.min(total, base + curPage * rpp);
-
-  // Desktop pager: fetch the next server page whenever the page being shown needs rows we don't have yet.
-  useEffect(() => {
-    if (!wide || loading || !meta) return;
-    if (loadedPage === page && rows.length < needRows && page < Math.ceil(total / LIMIT)) setPage((p) => p + 1);
-  }, [wide, loading, meta, loadedPage, page, rows.length, needRows, total]);
-
-  const goMine = () => {
-    if (!me) return;
-    const idx = rows.findIndex((r) => r.userId === me.userId);
-    const pos = idx >= 0 ? idx : me.rank - 1;
-    setDeskPage(Math.max(1, Math.floor((pos - base) / rpp) + 1));
-  };
-  const openPodium = podium.find((r) => r.userId === open);
   const selectedRow = (selectedId && (rows.find((r) => r.userId === selectedId) || (me?.userId === selectedId ? me : null))) || me || podium[0] || rows[0] || null;
   const periodLabel = PERIODS.find(([v]) => v === period)?.[1];
   const glass = { width: 42, height: 42, color: '#fff', bgcolor: 'rgba(255,255,255,0.16)', borderRadius: '13px', '&:hover': { bgcolor: 'rgba(255,255,255,0.28)' } };
@@ -1232,9 +1182,9 @@ export default function LeaderboardView({ isAuthenticated }) {
   );
 
   const desktopView = {
-    showPanel, rich, tight, iconOnly, panelMode, isAuthenticated, meta, rows, podium, pageRows, loading, firstLoad, error, q, search, setSearch,
+    showPanel, rich, tight, iconOnly, panelMode, isAuthenticated, meta, rows, podium, listRows, loading, firstLoad, error, q, search, setSearch,
     track, period, scope, pick, setTrack, setPeriod, setScope, reload, me, selectedId, selectedRow, select,
-    setRowsEl, curPage, pages, rpp, base, totalRows, setDeskPage, goMine, showEveryone,
+    scroller, sentinel, hasMore, scrollToMe, open, setOpen, showEveryone,
   };
 
   return (
