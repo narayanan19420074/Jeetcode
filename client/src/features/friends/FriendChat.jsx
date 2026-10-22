@@ -123,7 +123,8 @@ function Bubble({ m, mine, groupedAbove }) {
   );
 }
 
-function ChatPanel({ friend, onClose, onCodeTogether }) {
+// `actions`: extra header icons (used by the desktop side panel). No `onClose` = no close button (always-open panel).
+export function ChatPanel({ friend, onClose, onCodeTogether, actions }) {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const myId = useSelector((s) => s.auth.user?.id);
@@ -296,7 +297,8 @@ function ChatPanel({ friend, onClose, onCodeTogether }) {
             <LaptopMacRoundedIcon />
           </IconButton>
         </Tooltip>
-        <IconButton aria-label="Close chat" onClick={onClose} sx={{ width: 40, height: 40 }}><CloseRoundedIcon /></IconButton>
+        {actions}
+        {onClose && <IconButton aria-label="Close chat" onClick={onClose} sx={{ width: 40, height: 40 }}><CloseRoundedIcon /></IconButton>}
       </Stack>
 
       {/* messages */}

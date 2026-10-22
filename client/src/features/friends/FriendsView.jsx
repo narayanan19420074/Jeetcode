@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import {
   Alert, AvatarGroup, Avatar, Badge, Box, Button, ButtonBase, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
-  IconButton, InputAdornment, ListItemIcon, Menu, MenuItem, Skeleton, Stack, TextField, Tooltip, Typography, alpha,
+  IconButton, InputAdornment, ListItemIcon, Menu, MenuItem, Skeleton, Stack, TextField, Tooltip, Typography, alpha, useMediaQuery, useTheme,
 } from '@mui/material';
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
@@ -40,7 +40,7 @@ import {
   sendFriendRequest,
 } from './friendsSlice';
 import { AMBER, APT_COLOR, FLAME, GREEN, HERO_BG, CountUp, PersonAvatar, Streak, TierChip, calm, cardSx, glow, mono, practisedToday, statusInfo, sweep, tonal, twinkle } from './friendsUi';
-import FriendChat from './FriendChat';
+import FriendChat, { ChatPanel } from './FriendChat';
 import ActivityFeed from './ActivityFeed';
 import FriendProfileDialog from './FriendProfileDialog';
 
@@ -70,7 +70,8 @@ function Names({ person }) {
 }
 
 // A friend, Leaderboard style: gradient-ring avatar, tier + flame streak, points. Tap to open details.
-function FriendRow({ f, index = 0, online, unread, expanded, onToggle, onProfile, onChat, onCode, onNudge, busy }) {
+// `compact` (desktop): no inline details, a click just selects the friend; the side panel holds chat + every action.
+function FriendRow({ f, index = 0, online, unread, expanded, onToggle, onProfile, onChat, onCode, onNudge, busy, compact = false, selected = false }) {
   const reduce = useReducedMotion();
   const { tier, next, progress, toNext } = tierFor(f.score);
   const st = statusInfo(f, online);
@@ -86,14 +87,16 @@ function FriendRow({ f, index = 0, online, unread, expanded, onToggle, onProfile
       <Box
         sx={(t) => ({
           ...cardSx(t, online ? { accent: [GREEN, t.palette.primary.main], glowColor: 'rgba(34,197,94,0.45)' } : {}),
+          ...(selected && { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: -2 }),
           '&::after': online ? { content: '""', position: 'absolute', inset: 0, pointerEvents: 'none', background: `linear-gradient(100deg, ${alpha(GREEN, 0.1)}, transparent 70%)`, animation: `${glow} 2.8s ease-in-out infinite`, ...calm } : undefined,
         })}
       >
         <ButtonBase
           onClick={onToggle}
-          aria-expanded={expanded}
+          aria-expanded={compact ? undefined : expanded}
+          aria-pressed={compact ? selected : undefined}
           aria-label={`${f.name}, ${f.score} points`}
-          sx={(t) => ({ position: 'relative', zIndex: 1, width: '100%', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) auto 20px', gap: { xs: 1, sm: 1.5 }, alignItems: 'center', textAlign: 'left', px: { xs: 1.25, sm: 2 }, py: 1.1, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
+          sx={(t) => ({ position: 'relative', zIndex: 1, width: '100%', display: 'grid', gridTemplateColumns: compact ? 'minmax(0,1fr) auto' : 'minmax(0,1fr) auto 20px', gap: { xs: 1, sm: 1.5 }, alignItems: 'center', textAlign: 'left', px: { xs: 1.25, sm: 2 }, py: 1.1, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover } })}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
             <PersonAvatar person={f} size={42} online={online} gradient={[tier.color, `color-mix(in srgb, ${tier.color} 40%, #fff)`]} />
@@ -115,10 +118,10 @@ function FriendRow({ f, index = 0, online, unread, expanded, onToggle, onProfile
             <Typography sx={{ fontWeight: 900, fontSize: 18, lineHeight: 1.1, ...mono }}>{f.score.toLocaleString()}</Typography>
             <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, fontSize: 10.5, letterSpacing: 0.4 }}>PTS</Typography>
           </Box>
-          <ExpandMoreRoundedIcon sx={{ fontSize: 20, color: 'text.disabled', transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />
+          {!compact && <ExpandMoreRoundedIcon sx={{ fontSize: 20, color: 'text.disabled', transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />}
         </ButtonBase>
 
-        <Collapse in={expanded} timeout={220} unmountOnExit>
+        <Collapse in={expanded && !compact} timeout={220} unmountOnExit>
           <Box sx={(t) => ({ px: { xs: 1.25, sm: 2 }, py: 1.5, bgcolor: alpha(t.palette.text.primary, 0.035), display: 'grid', gap: 1.5 })}>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 1 }}>
               {tiles.map(([label, n, color]) => (
@@ -306,6 +309,8 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const [profileId, setProfileId] = useState(null);
   const [confirm, setConfirm] = useState(null);
   const [inviteAnchor, setInviteAnchor] = useState(null);
+  const theme = useTheme();
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   const needle = q.trim().toLowerCase().replace(/^@/, '');
   const canSearchServer = needle.length >= 2 && /^[a-z0-9_]+$/.test(needle);
@@ -376,6 +381,12 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     }
   };
 
+  // Desktop: keep one friend selected so the chat box on the right is always showing someone.
+  useEffect(() => {
+    if (!desktop || !loaded) return;
+    if (!chatId || !friends.some((f) => f.userId === chatId)) setChatId(sortedFriends[0]?.userId ?? null);
+  }, [desktop, loaded, chatId, friends]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const friendRow = (f, i) => (
     <FriendRow
       key={f.userId}
@@ -384,7 +395,9 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       unread={unread[f.userId]}
       online={Boolean(online[f.userId])}
       expanded={openRow === f.userId}
-      onToggle={() => setOpenRow((cur) => (cur === f.userId ? null : f.userId))}
+      compact={desktop}
+      selected={desktop && chatId === f.userId}
+      onToggle={() => (desktop ? setChatId(f.userId) : setOpenRow((cur) => (cur === f.userId ? null : f.userId)))}
       {...rowProps}
     />
   );
@@ -503,6 +516,8 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     <Stack spacing={1.5}>
       {inviteHandle && <InviteBanner handle={inviteHandle} onDone={onClearInvite} />}
 
+      <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: desktop ? 'minmax(0, 1fr) 380px' : 'minmax(0, 1fr)', alignItems: 'start' }}>
+      <Stack spacing={1.5} sx={{ minWidth: 0 }}>
       <Hero friends={friends} onlineFriends={onlineFriends} unreadTotal={unreadTotal} onOpenChat={setChatId} />
 
       <Box sx={[surface, { overflow: 'hidden' }]}>
@@ -576,6 +591,43 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
 
         <Box sx={(t) => ({ borderTop: `1px solid ${t.palette.divider}`, pt: 1, pb: 0.25 })}>{body}</Box>
       </Box>
+      </Stack>
+
+      {/* Desktop side panel: the chat is always open for the selected friend, with every action as an icon. */}
+      {desktop && (
+        <Box sx={[surface, { position: 'sticky', top: 0, height: 'calc(100vh - 132px)', minHeight: 420, overflow: 'hidden', display: 'flex', flexDirection: 'column' }]}>
+          {chatFriend ? (
+            <ChatPanel
+              key={chatFriend.userId}
+              friend={chatFriend}
+              onCodeTogether={() => codeTogether(chatFriend)}
+              actions={
+                <>
+                  {!practisedToday(chatFriend) && (
+                    <Tooltip title="Nudge: remind about streak">
+                      <span>
+                        <IconButton aria-label="Nudge" disabled={acting === `nudge:${chatFriend.userId}`} onClick={() => nudge(chatFriend)} sx={{ width: 40, height: 40, color: FLAME, bgcolor: alpha(FLAME, 0.14), '&:hover': { bgcolor: alpha(FLAME, 0.24) } }}>
+                          <LocalFireDepartmentRoundedIcon />
+                        </IconButton>
+                      </span>
+                    </Tooltip>
+                  )}
+                  <Tooltip title="Profile & compare">
+                    <IconButton aria-label="Profile and compare" onClick={() => setProfileId(chatFriend.userId)} sx={{ width: 40, height: 40, bgcolor: 'action.hover' }}>
+                      <BadgeRoundedIcon />
+                    </IconButton>
+                  </Tooltip>
+                </>
+              }
+            />
+          ) : (
+            <Box sx={{ m: 'auto' }}>
+              <Note icon={<ChatRoundedIcon sx={{ fontSize: 34 }} />}>{loaded && friends.length === 0 ? 'Add a friend to start chatting.' : 'Pick a friend to chat.'}</Note>
+            </Box>
+          )}
+        </Box>
+      )}
+      </Box>
 
       {/* invite menu */}
       <Menu anchorEl={inviteAnchor} open={Boolean(inviteAnchor)} onClose={closeInvite}>
@@ -598,7 +650,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         />
       )}
 
-      <FriendChat friend={chatFriend} onClose={() => setChatId(null)} onCodeTogether={codeTogether} />
+      {!desktop && <FriendChat friend={chatFriend} onClose={() => setChatId(null)} onCodeTogether={codeTogether} />}
 
       <Dialog open={Boolean(confirm)} onClose={() => setConfirm(null)} maxWidth="xs" fullWidth>
         <DialogTitle sx={{ fontWeight: 700 }}>Remove friend?</DialogTitle>
