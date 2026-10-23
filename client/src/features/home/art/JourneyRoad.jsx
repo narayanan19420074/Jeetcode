@@ -95,7 +95,7 @@ export default function JourneyRoad({ steps }) {
                   fontSize="17"
                   fontWeight="800"
                   fill={on ? '#fff' : t.palette.text.primary}
-                  fontFamily="Inter, sans-serif"
+                  fontFamily="Geist, system-ui, sans-serif"
                 >
                   {i + 1}
                 </text>

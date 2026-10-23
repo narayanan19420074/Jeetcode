@@ -16,13 +16,18 @@ const tokens = {
 };
 
 const typography = {
-  fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
-  h1: { fontWeight: 700, letterSpacing: '-0.02em' },
-  h2: { fontWeight: 700, letterSpacing: '-0.02em' },
-  h3: { fontWeight: 600, letterSpacing: '-0.01em' },
-  h4: { fontWeight: 600 },
-  h5: { fontWeight: 600 },
-  h6: { fontWeight: 600 },
+  fontFamily: '"Geist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+  // Geist (Vercel's developer UI face) for text, JetBrains Mono for code and numbers: the same pairing
+  // developer tools like Vercel / Linear / GitHub use. Headings run a touch tighter than body text.
+  h1: { fontWeight: 700, letterSpacing: '-0.03em' },
+  h2: { fontWeight: 700, letterSpacing: '-0.025em' },
+  h3: { fontWeight: 700, letterSpacing: '-0.02em' },
+  h4: { fontWeight: 650, letterSpacing: '-0.015em' },
+  h5: { fontWeight: 650, letterSpacing: '-0.01em' },
+  h6: { fontWeight: 650, letterSpacing: '-0.01em' },
+  subtitle1: { fontWeight: 500 },
+  subtitle2: { fontWeight: 600 },
+  caption: { letterSpacing: '0.005em' },
   button: { fontWeight: 600, textTransform: 'none' },
   // Monospace face reserved for code, problem IDs, and stats — signals "engineering tool".
   monospace: { fontFamily: '"JetBrains Mono", "Fira Code", monospace' },

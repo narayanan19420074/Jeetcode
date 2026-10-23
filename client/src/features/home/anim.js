@@ -64,7 +64,7 @@ export const glyphFloat = keyframes`
   50% { transform: translateY(-18px) rotate(var(--r, 0deg)); }
 `;
 
-export const DISPLAY_FONT = '"Bricolage Grotesque", "Inter", "Helvetica", "Arial", sans-serif';
+export const DISPLAY_FONT = '"Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif';
 export const MONO_FONT = '"JetBrains Mono", "Fira Code", monospace';
 
 export const blink = keyframes`

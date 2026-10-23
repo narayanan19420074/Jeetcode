@@ -33,7 +33,7 @@ export default function OfferLetter({ stampDelay = 1, width = 160, replayKey = 0
         strokeWidth="1.5"
       />
       <rect x="18" y="18" width="30" height="30" rx="8" fill={t.palette.primary.main} />
-      <text x="33" y="38" textAnchor="middle" fontSize="12" fontWeight="800" fill="#fff" fontFamily="Inter, sans-serif">
+      <text x="33" y="38" textAnchor="middle" fontSize="12" fontWeight="800" fill="#fff" fontFamily="Geist, system-ui, sans-serif">
         JC
       </text>
       <rect x="58" y="22" width="86" height="8" rx="4" fill={ink} opacity="0.85" />
@@ -71,7 +71,7 @@ export default function OfferLetter({ stampDelay = 1, width = 160, replayKey = 0
           fontWeight="800"
           letterSpacing="0.6"
           fill={ok}
-          fontFamily="Inter, sans-serif"
+          fontFamily="Geist, system-ui, sans-serif"
         >
           SELECTED
         </text>

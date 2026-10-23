@@ -61,10 +61,10 @@ function TileBody({ id, w, h, t }) {
   if (id === 'streak') {
     return (
       <g>
-        <text x="14" y="76" fontSize="34" fontWeight="800" fill={t.palette.warning.main} fontFamily="Inter, sans-serif">
+        <text x="14" y="76" fontSize="34" fontWeight="800" fill={t.palette.warning.main} fontFamily="Geist, system-ui, sans-serif">
           7
         </text>
-        <text x="40" y="76" fontSize="11" fill={t.palette.text.secondary} fontFamily="Inter, sans-serif">
+        <text x="40" y="76" fontSize="11" fill={t.palette.text.secondary} fontFamily="Geist, system-ui, sans-serif">
           days
         </text>
         {[0, 1, 2, 3, 4, 5, 6].map((i) => (
@@ -79,7 +79,7 @@ function TileBody({ id, w, h, t }) {
         {['TC', 'IN', 'WI'].map((c, i) => (
           <g key={c}>
             <rect x="14" y={38 + i * 26} width="24" height="20" rx="6" fill="none" stroke={primary} strokeWidth="1.5" />
-            <text x="26" y={52 + i * 26} textAnchor="middle" fontSize="9" fontWeight="800" fill={primary} fontFamily="Inter, sans-serif">
+            <text x="26" y={52 + i * 26} textAnchor="middle" fontSize="9" fontWeight="800" fill={primary} fontFamily="Geist, system-ui, sans-serif">
               {c}
             </text>
             <rect x="46" y={44 + i * 26} width={60 + i * 12} height="8" rx="4" fill={muted} />
@@ -182,7 +182,7 @@ export default function ChaosToOrder() {
                 strokeWidth="1.2"
                 style={{ filter: unified ? 'none' : `drop-shadow(0 6px 8px ${alpha('#0F172A', 0.18)})` }}
               />
-              <text x="14" y="24" fontSize="12" fontWeight="700" fill={t.palette.text.primary} fontFamily="Inter, sans-serif">
+              <text x="14" y="24" fontSize="12" fontWeight="700" fill={t.palette.text.primary} fontFamily="Geist, system-ui, sans-serif">
                 {tile.title}
               </text>
               <TileBody id={tile.id} w={tile.w} h={tile.h} t={t} />
@@ -197,7 +197,7 @@ export default function ChaosToOrder() {
               fontSize={q.s}
               fontWeight="800"
               fill={t.palette.error.main}
-              fontFamily="Inter, sans-serif"
+              fontFamily="Geist, system-ui, sans-serif"
               animate={{ opacity: unified ? 0 : 0.85 }}
               transition={{ duration: reduce ? 0 : 0.35 }}
             >
