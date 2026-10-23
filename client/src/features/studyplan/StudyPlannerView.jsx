@@ -1,19 +1,20 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
-  Alert, Avatar, Badge, Box, Button, ButtonBase, Chip, Collapse, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
-  IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Popover, Skeleton, Snackbar, TextField, Tooltip, Typography,
+  Alert, Avatar, AvatarGroup, Badge, Box, Button, ButtonBase, Collapse, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
+  IconButton, Popover, Skeleton, Snackbar, TextField, Tooltip, Typography,
 } from '@mui/material';
-import { alpha } from '@mui/material/styles';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
+import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
-import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
-import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import PersonAddRoundedIcon from '@mui/icons-material/PersonAddRounded';
 import { studyPlanApi } from '../../api/studyPlanApi';
@@ -23,7 +24,7 @@ import { surface } from '../dashboard/dashboardUtils';
 import PlanBuilder from './PlanBuilder';
 import PlanWorkspace from './PlanWorkspace';
 import FriendPicker from './FriendPicker';
-import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysLeftInfo, fmtDay, fmtRange, localKey, parseInvite, planTheme, planTone, relDay, relTime } from './planUtils';
+import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtDay, fmtRange, localKey, parseInvite, planTheme, relDay, relTime } from './planUtils';
 
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 
@@ -88,7 +89,7 @@ function NotificationsPopover({ anchorEl, onClose, items, onOpenPlan }) {
 
 // ---------- plan card ----------
 
-// Full question list of one plan, loaded the first time the card is previewed.
+// Full question list of one plan, loaded the first time the card is expanded.
 function PlanQuestions({ planId, today }) {
   const [state, setState] = useState({ loading: true, items: [], members: [], error: '' });
 
@@ -113,21 +114,22 @@ function PlanQuestions({ planId, today }) {
     return out;
   }, [state.items]);
 
-  if (state.loading) return <Box sx={{ p: 1.25 }}><Skeleton variant="rounded" height={44} sx={{ mb: 0.75, borderRadius: '10px' }} /><Skeleton variant="rounded" height={44} sx={{ borderRadius: '10px' }} /></Box>;
+  if (state.loading) return <Box sx={{ p: 1.5 }}><Skeleton variant="rounded" height={52} sx={{ mb: 0.75, borderRadius: '12px' }} /><Skeleton variant="rounded" height={52} sx={{ borderRadius: '12px' }} /></Box>;
   if (state.error) return <Typography variant="body2" color="error" sx={{ p: 1.5 }}>{state.error}</Typography>;
   if (days.length === 0) return <Typography variant="body2" color="text.secondary" sx={{ p: 1.5 }}>No questions in this plan.</Typography>;
 
   return (
-    <Box sx={(t) => ({ maxHeight: 340, overflowY: 'auto', scrollbarWidth: 'thin', borderTop: `1px solid ${t.palette.divider}` })}>
+    <Box sx={{ maxHeight: 380, overflowY: 'auto', scrollbarWidth: 'thin', px: 1.25, py: 1 }}>
       {days.map((d) => {
         const doneCount = d.items.filter((i) => i.done).length;
         return (
           <Box key={d.date}>
-            <Box sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 0.75, px: 1.25, py: 0.5, bgcolor: alpha(t.palette.text.primary, 0.04) })}>
-              <Typography sx={{ flex: 1, fontSize: 11.5, fontWeight: 800, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>{relDay(d.date, today).toUpperCase()}</Typography>
-              <Typography sx={[{ fontSize: 11.5, fontWeight: 700, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, pt: 0.5, pb: 0.6 }}>
+              <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>{relDay(d.date, today).toUpperCase()}</Typography>
+              <Box sx={{ flex: 1, height: '1px', bgcolor: 'divider' }} />
+              <Typography variant="caption" sx={[{ fontWeight: 700, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
             </Box>
-            {d.items.map((it, i) => <PlanTaskRow key={it.id} item={it} last={i === d.items.length - 1} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />)}
+            {d.items.map((it) => <PlanTaskRow key={it.id} item={it} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />)}
           </Box>
         );
       })}
@@ -135,104 +137,123 @@ function PlanQuestions({ planId, today }) {
   );
 }
 
-// One plan = one compact row (~76px): ring, title, "3/20 · 12 days left", what is due today. Tap = open.
-// Secondary actions live in the ⋮ menu so the card stays calm (same pattern as Google Tasks / Todoist).
 function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDelete }) {
-  const [menuEl, setMenuEl] = useState(null);
   const s = plan.summary;
   const theme = planTheme(plan.id);
-  const info = daysLeftInfo(s, today);
+  const tile = daysTile(s, today);
   const complete = s.status === 'completed';
+  const behind = s.status === 'behind';
+  const todayItems = plan.today || [];
   const todayLeft = Math.max(0, s.todayTotal - s.todayDone);
 
-  let status;
-  if (complete) status = { text: 'All questions solved', tone: 'success.main' };
-  else if (s.status === 'upcoming') status = { text: `Starts ${fmtDay(s.startDate)}`, tone: 'text.secondary' };
-  else if (todayLeft > 0) status = { text: `${todayLeft} to solve today${s.overdue ? ` · ${s.overdue} overdue` : ''}`, tone: s.overdue ? 'error.main' : 'primary.main' };
-  else if (s.overdue > 0) status = { text: `${s.overdue} overdue · catch up`, tone: 'error.main' };
-  else status = { text: s.todayTotal > 0 ? "Today's goal done" : 'Nothing due today', tone: 'success.main' };
+  let message;
+  if (complete) message = 'Plan complete! Every question is solved.';
+  else if (s.status === 'upcoming') message = `Starts ${fmtDay(s.startDate)}. Get ready!`;
+  else if (s.todayTotal === 0) message = behind ? `${s.overdue} overdue. Catch up today!` : 'Nothing scheduled today. Get ahead!';
+  else if (todayLeft === 0) message = "Today's goal done. Great work!";
+  else message = `${todayLeft} to solve today${s.overdue ? ` · ${s.overdue} overdue` : ''}`;
 
-  const closeMenu = () => setMenuEl(null);
+  const cta = complete ? 'Review plan' : s.done > 0 ? 'Continue plan' : 'Start plan';
+  const glassBtn = { width: 44, height: 44, flexShrink: 0, color: '#fff', bgcolor: 'rgba(255,255,255,0.16)', '&:hover': { bgcolor: 'rgba(255,255,255,0.28)' } };
 
   return (
-    <Box sx={[surface, { position: 'relative', overflow: 'hidden' }]}>
-      <Box aria-hidden sx={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 4, background: theme.gradient }} />
-      <Box sx={{ display: 'flex', alignItems: 'center', pl: 0.5 }}>
-        <ButtonBase
-          onClick={onOpen} aria-label={`Open ${plan.title}`}
-          sx={(t) => ({ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 1.25, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', pl: 1.25, pr: 0.5, py: 1.1, '&:active': { bgcolor: t.palette.action.selected } })}
-        >
-          <ProgressRing value={s.percent} size={44} tone={planTone(s)} />
-          <Box sx={{ minWidth: 0, flex: 1 }}>
-            <Typography noWrap sx={{ fontWeight: 700, fontSize: 15, lineHeight: 1.3 }}>{plan.title}</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, minWidth: 0, color: 'text.secondary' }}>
-              <Typography noWrap sx={[{ fontSize: 12, fontWeight: 600 }, mono]}>{s.done}/{s.total}</Typography>
-              <Typography noWrap sx={{ fontSize: 12, fontWeight: 600, color: info.tone === 'primary' || info.tone === 'info' ? 'text.secondary' : `${info.tone}.main` }}>· {info.text}</Typography>
-              {s.streak > 0 && (
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
-                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: 14, color: '#F97316' }} />
-                  <Typography sx={{ fontSize: 12, fontWeight: 800 }}>{s.streak}</Typography>
-                </Box>
-              )}
-              {plan.members.length > 1 && (
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.2, flexShrink: 0 }}>
-                  <GroupsRoundedIcon sx={{ fontSize: 14 }} />
-                  <Typography sx={{ fontSize: 12, fontWeight: 700 }}>{plan.members.length}</Typography>
+    <Box sx={(t) => ({ borderRadius: '16px', overflow: 'hidden', bgcolor: t.palette.background.paper, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85)' })}>
+      <Box sx={{ position: 'relative', color: '#fff', background: theme.gradient, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18)', overflow: 'hidden' }}>
+        <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.26), transparent 70%)', pointerEvents: 'none' }} />
+        <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: 20, width: 140, height: 140, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%)', pointerEvents: 'none' }} />
+
+        <Box sx={{ position: 'relative', p: { xs: 2, sm: 2.25 } }}>
+          {/* title + countdown tile (tap to open) */}
+          <ButtonBase
+            onClick={onOpen} aria-label={`Open ${plan.title}`}
+            sx={{ display: 'flex', width: '100%', alignItems: 'flex-start', justifyContent: 'space-between', gap: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderRadius: '8px' }}
+          >
+            <Box sx={{ minWidth: 0 }}>
+              <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.2, overflowWrap: 'anywhere' }}>{plan.title}</Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.5, color: 'rgba(255,255,255,0.88)' }}>
+                <CalendarMonthRoundedIcon sx={{ fontSize: 16 }} />
+                <Typography sx={{ fontSize: '0.8rem', fontWeight: 600 }}>{fmtRange(s.startDate, s.endDate)}</Typography>
+              </Box>
+              {behind && (
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, mt: 0.75, px: 1, py: 0.25, borderRadius: 99, bgcolor: 'rgba(251,191,36,0.18)', color: '#FDE68A' }}>
+                  <ErrorOutlineRoundedIcon sx={{ fontSize: 14 }} />
+                  <Typography sx={{ fontSize: '0.7rem', fontWeight: 700 }}>{s.overdue} overdue</Typography>
                 </Box>
               )}
             </Box>
-            <Typography noWrap sx={{ fontSize: 12.5, fontWeight: 700, color: status.tone }}>{status.text}</Typography>
+            <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? 'rgba(251,191,36,0.2)' : 'rgba(255,255,255,0.14)', border: tile.urgent ? '1px solid rgba(251,191,36,0.6)' : '1px solid transparent' }}>
+              <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? '#FDE68A' : '#fff' }}>{tile.big}</Typography>
+              {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: 'rgba(255,255,255,0.85)' }}>{tile.label}</Typography>}
+            </Box>
+          </ButtonBase>
+
+          {/* what are we studying today: ring + speech bubble */}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 1.5 }}>
+            <ProgressRing value={s.percent} size={64} onDark />
+            <Box sx={{ minWidth: 0, flex: 1, px: 1.5, py: 1.1, borderRadius: '16px 16px 16px 4px', bgcolor: 'rgba(255,255,255,0.14)' }}>
+              <Typography sx={{ fontSize: '0.84rem', lineHeight: 1.4, fontWeight: 700 }}>{message}</Typography>
+              {!complete && todayItems.slice(0, 3).map((it) => (
+                <Typography key={it.id} noWrap sx={{ fontSize: '0.78rem', mt: 0.3, fontWeight: 600, opacity: it.done ? 0.6 : 0.95, textDecoration: it.done ? 'line-through' : 'none' }}>
+                  {it.done ? '✓ ' : it.overdue ? '! ' : '• '}{it.title}
+                </Typography>
+              ))}
+              {!complete && todayItems.length > 3 && <Typography sx={{ fontSize: '0.72rem', opacity: 0.8 }}>+{todayItems.length - 3} more</Typography>}
+            </Box>
           </Box>
+
+          {/* solved bar */}
+          <Box sx={{ mt: 1.5 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.5, gap: 1 }}>
+              <Typography sx={{ fontSize: '0.78rem', fontWeight: 800, color: '#FDE68A', fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                {s.streak > 0 && (
+                  <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
+                    <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: PLAN_AMBER }} />
+                    <Typography sx={{ fontSize: '0.74rem', fontWeight: 800 }}>{s.streak}d</Typography>
+                  </Box>
+                )}
+                <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 22, height: 22, fontSize: 10, fontWeight: 700, border: '2px solid rgba(255,255,255,0.9)' } }}>
+                  {plan.members.map((m) => <Avatar key={m.id} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
+                </AvatarGroup>
+              </Box>
+            </Box>
+            <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} aria-label="Plan progress" sx={{ height: 10, borderRadius: 99, bgcolor: 'rgba(255,255,255,0.18)', overflow: 'hidden' }}>
+              <Box sx={{ width: `${Math.max(s.percent, 4)}%`, height: '100%', borderRadius: 99, background: `linear-gradient(90deg, ${PLAN_AMBER}, #F59E0B)`, transition: 'width .6s ease' }} />
+            </Box>
+          </Box>
+
+          {/* open + quick actions */}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1.75 }}>
+            <Button
+              onClick={onOpen} startIcon={<BoltRoundedIcon />} endIcon={<ArrowForwardRoundedIcon />} disableElevation
+              sx={{ flex: 1, height: 44, borderRadius: '14px', bgcolor: PLAN_AMBER, color: '#1B1200', fontWeight: 800, fontSize: '0.92rem', '&:hover': { bgcolor: '#F5B50F' } }}
+            >
+              {cta}
+            </Button>
+            <Tooltip title="Add friends">
+              <IconButton aria-label="Add friends to plan" onClick={(e) => onAddFriend(e.currentTarget)} sx={glassBtn}><PersonAddRoundedIcon sx={{ fontSize: 20 }} /></IconButton>
+            </Tooltip>
+            <Tooltip title={plan.isOwner ? 'Delete plan' : 'Leave plan'}>
+              <IconButton aria-label={plan.isOwner ? 'Delete plan' : 'Leave plan'} onClick={() => onDelete(plan)} sx={[glassBtn, { color: '#FECACA' }]}>
+                {plan.isOwner ? <DeleteOutlineRoundedIcon sx={{ fontSize: 21 }} /> : <ExitToAppRoundedIcon sx={{ fontSize: 21 }} />}
+              </IconButton>
+            </Tooltip>
+          </Box>
+        </Box>
+
+        {/* arrow: show / hide the questions right here */}
+        <ButtonBase
+          onClick={onToggle} aria-expanded={expanded} aria-label={expanded ? 'Hide questions' : 'Show questions'}
+          sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5, py: 1, bgcolor: 'rgba(0,0,0,0.24)', fontFamily: 'inherit', fontSize: 13, fontWeight: 700, color: '#fff', '&:hover': { bgcolor: 'rgba(0,0,0,0.34)' } }}
+        >
+          {expanded ? 'Hide questions' : `Show ${s.total} question${s.total === 1 ? '' : 's'}`}
+          <ExpandMoreRoundedIcon sx={{ fontSize: 20, transition: 'transform .2s', transform: expanded ? 'rotate(180deg)' : 'none' }} />
         </ButtonBase>
-        <IconButton onClick={(e) => setMenuEl(e.currentTarget)} aria-label={`More actions for ${plan.title}`} aria-haspopup="menu" sx={{ width: 44, height: 44, mr: 0.25 }}>
-          <MoreVertRoundedIcon />
-        </IconButton>
       </Box>
 
       <Collapse in={expanded} unmountOnExit>
         <PlanQuestions planId={plan.id} today={today} />
       </Collapse>
-
-      <Menu
-        anchorEl={menuEl} open={Boolean(menuEl)} onClose={closeMenu}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        slotProps={{ paper: { sx: { minWidth: 200, borderRadius: '12px' } } }}
-      >
-        <MenuItem onClick={() => { closeMenu(); onOpen(); }}><ListItemIcon><ChevronRightRoundedIcon fontSize="small" /></ListItemIcon><ListItemText>Open plan</ListItemText></MenuItem>
-        <MenuItem onClick={() => { closeMenu(); onToggle(); }}>
-          <ListItemIcon><FormatListBulletedRoundedIcon fontSize="small" /></ListItemIcon>
-          <ListItemText>{expanded ? 'Hide questions' : `Preview ${s.total} question${s.total === 1 ? '' : 's'}`}</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={() => { onAddFriend(menuEl); setMenuEl(null); }}><ListItemIcon><PersonAddRoundedIcon fontSize="small" /></ListItemIcon><ListItemText>Add friends</ListItemText></MenuItem>
-        <MenuItem onClick={() => { closeMenu(); onDelete(plan); }} sx={{ color: 'error.main' }}>
-          <ListItemIcon sx={{ color: 'inherit' }}>{plan.isOwner ? <DeleteOutlineRoundedIcon fontSize="small" /> : <ExitToAppRoundedIcon fontSize="small" />}</ListItemIcon>
-          <ListItemText>{plan.isOwner ? 'Delete plan' : 'Leave plan'}</ListItemText>
-        </MenuItem>
-      </Menu>
-    </Box>
-  );
-}
-
-// "Today": the next few unsolved questions across every plan, solvable in one tap (Todoist "Today" idea).
-function TodayCard({ plans, onOpenPlan }) {
-  const items = useMemo(
-    () => plans.flatMap((p) => (p.today || []).filter((it) => !it.done).map((it) => ({ ...it, planId: p.id, planTitle: p.title }))),
-    [plans]
-  );
-  if (items.length === 0) return null;
-  const shown = items.slice(0, 3);
-  return (
-    <Box sx={[surface, { overflow: 'hidden' }]}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 1.25, pt: 1, pb: 0.5 }}>
-        <Typography sx={{ flex: 1, fontSize: 12, fontWeight: 800, letterSpacing: 0.5, color: 'text.secondary' }}>DO TODAY</Typography>
-        <Chip size="small" label={`${items.length} left`} sx={{ height: 22, fontWeight: 800, fontSize: 11.5, color: '#1B1200', bgcolor: PLAN_AMBER }} />
-      </Box>
-      {shown.map((it, i) => <PlanTaskRow key={`${it.planId}-${it.id}`} item={it} note={it.planTitle} last={i === shown.length - 1 && items.length <= 3} />)}
-      {items.length > 3 && (
-        <ButtonBase onClick={() => onOpenPlan(items[3].planId)} sx={{ width: '100%', py: 0.9, fontFamily: 'inherit', fontSize: 13, fontWeight: 700, color: 'primary.main' }}>
-          +{items.length - 3} more · open plan
-        </ButtonBase>
-      )}
     </Box>
   );
 }
@@ -261,7 +282,6 @@ export default function StudyPlannerView({ isAuthenticated }) {
   const [expandedId, setExpandedId] = useState(null); // plan whose questions are showing
   const [toDelete, setToDelete] = useState(null); // plan waiting for delete / leave confirmation
   const [deleting, setDeleting] = useState(false);
-  const [filter, setFilter] = useState('active'); // 'active' | 'done'
   const today = localKey();
 
   const go = useCallback((next = {}) => setParams({ view: 'plans', ...next }), [setParams]);
@@ -382,14 +402,6 @@ export default function StudyPlannerView({ isAuthenticated }) {
 
   const dueToday = (plans || []).reduce((n, p) => n + Math.max(0, p.summary.todayTotal - p.summary.todayDone), 0);
 
-  // Plans that need you (overdue, then due today) float to the top; finished plans get their own tab.
-  const doneCount = (plans || []).filter((p) => p.summary.status === 'completed').length;
-  const visiblePlans = useMemo(() => {
-    const list = (plans || []).filter((p) => (p.summary.status === 'completed') === (filter === 'done' && doneCount > 0));
-    const rank = (p) => (p.summary.overdue > 0 ? 0 : p.summary.todayTotal - p.summary.todayDone > 0 ? 1 : 2);
-    return [...list].sort((a, b) => rank(a) - rank(b));
-  }, [plans, filter, doneCount]);
-
   const pickerMemberIds = useMemo(() => new Set((picker?.plan?.members || []).map((m) => m.id)), [picker]);
   const findFriends = () => setParams({ view: 'friends' });
 
@@ -432,27 +444,27 @@ export default function StudyPlannerView({ isAuthenticated }) {
   }
 
   return (
-    <Box sx={{ display: 'grid', gap: 1, gridTemplateColumns: 'minmax(0, 1fr)' }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
+    <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: 'minmax(0, 1fr)' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.2, fontSize: 19 }}>Study Plan</Typography>
+          <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.2 }}>Study Plan</Typography>
           {plans && plans.length > 0 && (
-            <Typography variant="caption" sx={{ display: 'block', fontWeight: 600, color: dueToday > 0 ? 'text.secondary' : 'success.main' }}>
-              {dueToday > 0 ? `${dueToday} question${dueToday === 1 ? '' : 's'} left today` : 'All caught up for today'}
+            <Typography variant="caption" color="text.secondary">
+              {plans.length} plan{plans.length === 1 ? '' : 's'} · {dueToday > 0 ? `${dueToday} question${dueToday === 1 ? '' : 's'} to solve today` : 'nothing due today'}
             </Typography>
           )}
         </Box>
         <Tooltip title="Friends">
-          <IconButton onClick={() => setShowFriends((v) => !v)} aria-label="Friends" aria-expanded={showFriends} color={showFriends ? 'primary' : 'default'} sx={{ width: 44, height: 44 }}>
+          <IconButton onClick={() => setShowFriends((v) => !v)} aria-label="Friends" aria-expanded={showFriends} color={showFriends ? 'primary' : 'default'}>
             <GroupsRoundedIcon />
           </IconButton>
         </Tooltip>
         <Tooltip title="Notifications">
-          <IconButton onClick={openBell} aria-label="Notifications" sx={{ width: 44, height: 44 }}>
+          <IconButton onClick={openBell} aria-label="Notifications">
             <Badge color="error" badgeContent={notes.unread} max={9}><NotificationsRoundedIcon /></Badge>
           </IconButton>
         </Tooltip>
-        <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: 800, ml: 0.5, height: 36, borderRadius: 99, px: 1.75 }}>New</Button>
+        <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: 700, ml: 0.5 }}>New plan</Button>
       </Box>
 
       <Collapse in={showFriends} unmountOnExit>
@@ -487,19 +499,9 @@ export default function StudyPlannerView({ isAuthenticated }) {
         </Box>
       )}
 
-      {plans && plans.length > 0 && filter === 'active' && <TodayCard plans={plans} onOpenPlan={(id) => go({ plan: id })} />}
-
-      {doneCount > 0 && (
-        <Box role="tablist" aria-label="Plan filter" sx={{ display: 'flex', gap: 0.75 }}>
-          {[['active', `Active · ${(plans?.length || 0) - doneCount}`], ['done', `Completed · ${doneCount}`]].map(([v, label]) => (
-            <Chip key={v} role="tab" aria-selected={filter === v} clickable label={label} onClick={() => setFilter(v)} color={filter === v ? 'primary' : 'default'} variant={filter === v ? 'filled' : 'outlined'} sx={{ fontWeight: 700, height: 32 }} />
-          ))}
-        </Box>
-      )}
-
       {plans === null ? (
-        <Box sx={{ display: 'grid', gap: 1, gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
-          {[0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={76} sx={{ borderRadius: '14px' }} />)}
+        <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
+          {[0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={260} sx={{ borderRadius: '14px' }} />)}
         </Box>
       ) : plans.length === 0 ? (
         <Box sx={[surface, { p: 3, textAlign: 'center' }]}>
@@ -508,11 +510,8 @@ export default function StudyPlannerView({ isAuthenticated }) {
           <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: 700 }}>Create a plan</Button>
         </Box>
       ) : (
-        <Box sx={{ display: 'grid', gap: 1, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
-          {visiblePlans.length === 0 && (
-            <Typography variant="body2" color="text.secondary" sx={{ py: 2, textAlign: 'center', gridColumn: '1 / -1' }}>No active plans. Tap New to start one.</Typography>
-          )}
-          {visiblePlans.map((p) => (
+        <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
+          {plans.map((p) => (
             <PlanCard
               key={p.id} plan={p} today={today} expanded={expandedId === p.id}
               onToggle={() => setExpandedId((cur) => (cur === p.id ? null : p.id))}

@@ -3,12 +3,13 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { animate, motion, useReducedMotion } from 'framer-motion';
 import {
-  Alert, Avatar, Badge, Box, Button, ButtonBase, Chip, Collapse, IconButton, InputAdornment, Popover, Skeleton, TextField,
-  Tooltip, Typography, useMediaQuery, useTheme,
+  Alert, Avatar, Badge, Box, Button, ButtonBase, Collapse, IconButton, InputAdornment, Popover, Skeleton, Stack, TextField,
+  ToggleButton, ToggleButtonGroup, Tooltip, Typography, useMediaQuery, useTheme,
 } from '@mui/material';
 import { alpha, keyframes } from '@mui/material/styles';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import TuneRoundedIcon from '@mui/icons-material/TuneRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
@@ -56,7 +57,13 @@ const RICH = '72px minmax(0,1fr) 62px 46px 46px 46px 46px 56px 84px';
 const COMPACT = '72px minmax(0,1fr) 62px 56px 56px 84px';
 
 // ---- motion (all CSS, switched off for people who asked for less motion) ----
+const floatA = keyframes`0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(22px,12px) scale(1.14)}`;
+const floatB = keyframes`0%,100%{transform:translate(0,0)}50%{transform:translate(-18px,14px)}`;
+const sweep = keyframes`0%{transform:translateX(-160%) skewX(-20deg)}60%,100%{transform:translateX(380%) skewX(-20deg)}`;
 const flicker = keyframes`0%,100%{transform:scale(1) rotate(-3deg)}50%{transform:scale(1.2) rotate(4deg)}`;
+const bob = keyframes`0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}`;
+const pulse = keyframes`0%{box-shadow:0 0 0 0 rgba(251,191,36,0.55)}100%{box-shadow:0 0 0 12px rgba(251,191,36,0)}`;
+const twinkle = keyframes`0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}`;
 const glow = keyframes`0%,100%{opacity:.45}50%{opacity:1}`;
 const calm = { '@media (prefers-reduced-motion: reduce)': { animation: 'none' } };
 
@@ -158,14 +165,14 @@ function AvatarRing({ src, name, size = 34, a, b, ring = 2.5, inner = 'backgroun
 function RankBadge({ rank }) {
   const m = MEDAL[rank];
   if (!m) {
-    return <Typography sx={(t) => ({ width: 30, height: 30, borderRadius: '10px', display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: rank >= 1000 ? 10 : rank >= 100 ? 12 : 13, color: 'text.secondary', bgcolor: alpha(t.palette.text.primary, 0.06), ...mono })}>{rank}</Typography>;
+    return <Typography sx={(t) => ({ width: 30, height: 30, borderRadius: '10px', display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: 13, color: 'text.secondary', bgcolor: alpha(t.palette.text.primary, 0.06), ...mono })}>{rank}</Typography>;
   }
   return (
     <Box sx={{ width: 32, height: 32, borderRadius: '11px', display: 'grid', placeItems: 'center', fontWeight: 900, fontSize: 15, color: m.text, background: grad(m), boxShadow: `0 4px 14px -2px ${m.glow}`, ...mono }}>{rank}</Box>
   );
 }
 
-// What this player has solved, and how far the next level is. Kept short: 4 numbers + one bar.
+// What this player has solved, and how far the next level is.
 function RowDetail({ row }) {
   const { tier, next, progress, toNext } = tierFor(row.score);
   const tiles = [
@@ -175,147 +182,147 @@ function RowDetail({ row }) {
     ['Aptitude', row.aptitude, 5, APT_COLOR],
   ];
   return (
-    <Box sx={(t) => ({ px: { xs: 1.25, sm: 2 }, py: 1.1, bgcolor: alpha(t.palette.text.primary, 0.035), display: 'grid', gap: 1 })}>
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 0.75 }}>
+    <Box sx={(t) => ({ px: { xs: 1.25, sm: 2 }, py: 1.5, bgcolor: alpha(t.palette.text.primary, 0.035), display: 'grid', gap: 1.5 })}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 1 }}>
         {tiles.map(([label, n, pts, color]) => (
-          <Box key={label} sx={{ py: 0.6, px: 0.5, textAlign: 'center', minWidth: 0, borderRadius: '10px', border: `1px solid color-mix(in srgb, ${color} 35%, transparent)`, background: `linear-gradient(160deg, color-mix(in srgb, ${color} 18%, transparent), transparent 80%)` }}>
-            <Typography sx={[{ fontWeight: 900, fontSize: 16, lineHeight: 1.2, color }, mono]}>{n}</Typography>
-            <Typography noWrap sx={{ display: 'block', fontWeight: 700, fontSize: 10.5, color: 'text.secondary' }}>{label}</Typography>
-            <Typography sx={[{ fontSize: 10, color: 'text.disabled' }, mono]}>{n * pts} pts</Typography>
+          <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: '12px', border: `1px solid color-mix(in srgb, ${color} 35%, transparent)`, background: `linear-gradient(160deg, color-mix(in srgb, ${color} 20%, transparent), transparent 80%)` }}>
+            <Typography sx={[{ fontWeight: 900, fontSize: 19, lineHeight: 1.2, color }, mono]}>{n}</Typography>
+            <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', fontWeight: 700 }}>{label}</Typography>
+            <Typography variant="caption" color="text.disabled" sx={[{ fontSize: 10.5 }, mono]}>{n * pts} pts</Typography>
           </Box>
         ))}
       </Box>
 
       <Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5, gap: 1 }}>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4, color: tier.color, fontWeight: 800, fontSize: 12.5 }}>
-            <WorkspacePremiumRoundedIcon sx={{ fontSize: 16 }} />{tier.name}
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.6 }}>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: 800, fontSize: 13 }}>
+            <WorkspacePremiumRoundedIcon sx={{ fontSize: 18 }} />{tier.name}
           </Box>
-          <Typography noWrap sx={{ fontSize: 12, fontWeight: 700, color: 'text.secondary' }}>
-            {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top level reached'} · {row.recent} this week
+          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
+            {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top level reached'}
           </Typography>
         </Box>
-        <Box sx={{ height: 6, borderRadius: 99, bgcolor: 'divider', overflow: 'hidden' }}>
-          <Box sx={{ height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: 99, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, #fff))`, transition: 'width .6s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
+        <Box sx={{ height: 9, borderRadius: 99, bgcolor: 'divider', overflow: 'hidden' }}>
+          <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: 99, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, #fff))`, transition: 'width .6s ease', '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent)', animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
         </Box>
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75, fontWeight: 600 }}>
+          {row.recent} solved in the last 7 days
+        </Typography>
       </Box>
     </Box>
   );
 }
 
-// One player = one 56px row (rank, avatar, name + tier/streak, score). Flat list with hairlines,
-// like Duolingo / Strava leaderboards. Tap to open the breakdown.
-function Row({ row, isMe, expanded, onToggle, last = false }) {
+function Row({ row, index = 0, isMe, expanded, onToggle, pinned }) {
+  const reduce = useReducedMotion();
   const medal = MEDAL[row.rank];
   const { tier } = tierFor(row.score);
   const live = activeLabel(row.lastActive).live;
+  const ringA = medal ? medal.a : tier.color;
+  const ringB = medal ? medal.b : `color-mix(in srgb, ${tier.color} 40%, #fff)`;
 
   return (
-    <Box
-      id={isMe ? 'lb-me' : undefined}
-      sx={(t) => ({
-        position: 'relative',
-        borderBottom: last ? 'none' : `1px solid ${alpha(t.palette.divider, 0.7)}`,
-        background: isMe ? `linear-gradient(90deg, ${alpha(PLAN_AMBER, 0.2)}, ${alpha(PLAN_AMBER, 0.03)})` : 'transparent',
-        '&::before': isMe || medal ? { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, background: isMe ? PLAN_AMBER : grad(medal) } : undefined,
-      })}
+    <motion.div
+      id={isMe && !pinned ? 'lb-me' : undefined}
+      initial={reduce ? false : { opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.32, delay: reduce ? 0 : Math.min(index, 10) * 0.035, ease: 'easeOut' }}
     >
-      <ButtonBase
-        onClick={onToggle}
-        aria-expanded={expanded}
-        sx={(t) => ({ width: '100%', minHeight: 56, display: 'grid', gridTemplateColumns: '32px 34px minmax(0,1fr) auto', columnGap: 1.1, alignItems: 'center', textAlign: 'left', px: 1.25, py: 0.6, fontFamily: 'inherit', '&:active': { bgcolor: t.palette.action.selected } })}
+      <Box
+        sx={(t) => {
+          const paper = t.palette.background.paper;
+          return {
+            mx: pinned ? 0 : 1, mb: pinned ? 0 : 0.85, borderRadius: '16px', overflow: 'hidden', position: 'relative',
+            border: '1.5px solid transparent',
+            background: isMe
+              ? `linear-gradient(${paper}, ${paper}) padding-box, linear-gradient(135deg, ${t.palette.primary.main}, ${AMBER}) border-box`
+              : `linear-gradient(${paper}, ${paper}) padding-box, linear-gradient(${t.palette.divider}, ${t.palette.divider}) border-box`,
+            boxShadow: medal ? `0 10px 24px -14px ${medal.glow}` : isMe ? `0 10px 24px -14px ${alpha(t.palette.primary.main, 0.6)}` : 'none',
+            '&::before': medal ? { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: 4, background: grad(medal) } : undefined,
+            '&::after': isMe ? { content: '""', position: 'absolute', inset: 0, background: `linear-gradient(100deg, ${alpha(t.palette.primary.main, 0.12)}, transparent 70%)`, pointerEvents: 'none', animation: `${glow} 2.8s ease-in-out infinite`, ...calm } : undefined,
+          };
+        }}
       >
-        <RankBadge rank={row.rank} />
-        <Badge variant="dot" overlap="circular" invisible={!live} color="success" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-          <Avatar src={row.avatarUrl || undefined} sx={{ width: 34, height: 34, fontSize: 14, fontWeight: 700 }}>{row.name?.[0]?.toUpperCase()}</Avatar>
-        </Badge>
-        <Box sx={{ minWidth: 0 }}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: 14, lineHeight: 1.3 }}>{row.name}{isMe && <YouChip />}</Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.9, minWidth: 0 }}>
-            <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.2, color: tier.color, fontSize: 11.5, fontWeight: 800 }}>
-              <WorkspacePremiumRoundedIcon sx={{ fontSize: 14 }} />{tier.name}
-            </Box>
-            {row.streak > 0 && (
-              <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center' }}>
-                <LocalFireDepartmentRoundedIcon sx={{ fontSize: 13, color: '#F97316' }} />
-                <Typography component="span" sx={[{ fontSize: 11.5, fontWeight: 800, color: 'text.secondary' }, mono]}>{row.streak}</Typography>
+        <ButtonBase
+          onClick={onToggle}
+          aria-expanded={expanded}
+          sx={(t) => ({
+            position: 'relative', zIndex: 1, width: '100%', display: 'grid', gridTemplateColumns: '34px minmax(0,1fr) auto 20px', gap: { xs: 1, sm: 1.5 }, alignItems: 'center', textAlign: 'left',
+            px: { xs: 1.25, sm: 2 }, py: 1.1, fontFamily: 'inherit', transition: 'background-color .15s', '&:hover': { bgcolor: t.palette.action.hover },
+          })}
+        >
+          <RankBadge rank={row.rank} />
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
+            <Badge variant="dot" overlap="circular" invisible={!live} color="success" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+              <AvatarRing src={row.avatarUrl} name={row.name} size={38} a={ringA} b={ringB} />
+            </Badge>
+            <Box sx={{ minWidth: 0 }}>
+              <Typography variant="body2" noWrap sx={{ fontWeight: 800, lineHeight: 1.25 }}>{row.name}{isMe ? ' (you)' : ''}</Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.9, mt: 0.2 }}>
+                <TierChip tier={tier} />
+                <Streak value={row.streak} />
               </Box>
-            )}
+            </Box>
           </Box>
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.25 }}>
-          <Move row={row} />
-          <Typography sx={[{ fontWeight: 900, fontSize: 16, minWidth: 44, textAlign: 'right' }, mono]}>{row.score.toLocaleString()}</Typography>
-        </Box>
-      </ButtonBase>
-      <Collapse in={expanded} timeout={180} unmountOnExit><RowDetail row={row} /></Collapse>
-    </Box>
-  );
-}
-
-// My position, pinned under the list: rank, points and the next person to catch, one tap for the breakdown.
-function PinnedMe({ me, neighbors, expanded, onToggle, onFind, canFind, points }) {
-  const { tier } = tierFor(me.score);
-  const above = neighbors?.above;
-  const solves = above ? Math.ceil(above.gap / (points?.medium || 20)) : 0;
-  const hint = above ? `${above.gap.toLocaleString()} pts to catch ${above.name} (#${above.rank}) · ~${solves} Medium` : me.rank === 1 ? 'You lead this board' : 'Keep solving to climb';
-  return (
-    <Box sx={(t) => ({ flexShrink: 0, maxHeight: '50%', overflowY: 'auto', background: `linear-gradient(180deg, ${alpha(t.palette.primary.main, 0.14)}, ${alpha(t.palette.primary.main, 0.05)})`, borderTop: `1px solid ${alpha(t.palette.primary.main, 0.4)}`, boxShadow: `0 -10px 22px -16px ${alpha(t.palette.primary.main, 0.8)}` })}>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <ButtonBase onClick={onToggle} aria-expanded={expanded} aria-label="My rank details" sx={{ flex: 1, minWidth: 0, display: 'grid', gridTemplateColumns: '34px minmax(0,1fr) auto', columnGap: 1.1, alignItems: 'center', textAlign: 'left', px: 1.25, py: 0.8, fontFamily: 'inherit' }}>
-          <Avatar src={me.avatarUrl || undefined} sx={{ width: 34, height: 34, fontSize: 14, fontWeight: 700 }}>{me.name?.[0]?.toUpperCase()}</Avatar>
-          <Box sx={{ minWidth: 0 }}>
-            <Typography noWrap sx={{ fontWeight: 800, fontSize: 14, lineHeight: 1.3 }}>
-              You · #{me.rank}
-              <Box component="span" sx={{ ml: 0.75, color: tier.color, fontSize: 11.5, fontWeight: 800 }}>{tier.name}</Box>
+          <Box sx={{ textAlign: 'right' }}>
+            <Typography sx={[{ fontWeight: 900, fontSize: 18, lineHeight: 1.1, ...(medal && { background: grad(medal), WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }) }, mono]}>
+              {pinned ? <CountUp value={row.score} /> : row.score.toLocaleString()}
             </Typography>
-            <Typography noWrap sx={{ fontSize: 11.5, fontWeight: 600, color: 'text.secondary' }}>{hint}</Typography>
+            <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, fontSize: 10.5, letterSpacing: 0.4 }}>PTS</Typography>
           </Box>
-          <Typography sx={[{ fontWeight: 900, fontSize: 17 }, mono]}>{me.score.toLocaleString()}</Typography>
+          <ExpandMoreRoundedIcon sx={{ fontSize: 20, color: 'text.disabled', transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }} />
         </ButtonBase>
-        {canFind && <Tooltip title="Find me in the list"><IconButton onClick={onFind} aria-label="Scroll to my row" sx={{ width: 44, height: 44 }}><MyLocationRoundedIcon fontSize="small" /></IconButton></Tooltip>}
+        <Collapse in={expanded} timeout={220} unmountOnExit><RowDetail row={row} /></Collapse>
       </Box>
-      <Collapse in={expanded} timeout={180} unmountOnExit><RowDetail row={me} /></Collapse>
-    </Box>
+    </motion.div>
   );
 }
 
-// Top 3 on a small stage (kept short: ~170px). Tapping a player opens the same detail as a list row.
+// Top 3 on a stage. Tapping a player opens the same detail as a list row.
+const SPARKS = [[8, 18, 0], [20, 60, 0.6], [34, 12, 1.2], [66, 16, 0.3], [80, 55, 0.9], [92, 22, 1.5], [50, 8, 0.45]];
 const POD = [
-  { ...MEDAL[1], h: 52, av: 50 },
-  { ...MEDAL[2], h: 38, av: 42 },
-  { ...MEDAL[3], h: 30, av: 42 },
+  { ...MEDAL[1], h: 96, av: 66 },
+  { ...MEDAL[2], h: 70, av: 54 },
+  { ...MEDAL[3], h: 54, av: 54 },
 ];
 
-function Podium({ rows, openId, onPick }) {
+function Podium({ rows, meId, openId, onPick }) {
   const reduce = useReducedMotion();
   const order = [1, 0, 2].filter((i) => rows[i]); // 2nd | 1st | 3rd
   return (
-    <Box sx={{ position: 'relative', overflow: 'hidden', mx: 0.75, mt: 0.75, mb: 0.5, px: 1.25, pt: 1, borderRadius: '16px', color: '#fff', background: 'linear-gradient(160deg,#1E1B4B 0%,#312E81 55%,#5B21B6 100%)', boxShadow: '0 10px 22px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
-      <Box aria-hidden sx={{ position: 'absolute', left: '50%', top: 0, width: 180, height: 180, ml: '-90px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.3), transparent 68%)', pointerEvents: 'none' }} />
-      <Box sx={{ position: 'relative', display: 'grid', gridTemplateColumns: `repeat(${order.length}, minmax(0, 1fr))`, gap: 0.75, alignItems: 'end', maxWidth: 420, mx: 'auto' }}>
+    <Box sx={{ position: 'relative', overflow: 'hidden', mx: 1, mt: 1, mb: 1, px: { xs: 1.25, sm: 3 }, pt: 2, borderRadius: '18px', color: '#fff', background: 'linear-gradient(160deg,#1E1B4B 0%,#312E81 55%,#5B21B6 100%)', boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
+      <Box aria-hidden sx={{ position: 'absolute', left: '50%', top: 10, width: 220, height: 220, ml: '-110px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.34), transparent 68%)', animation: `${glow} 3s ease-in-out infinite`, ...calm }} />
+      {SPARKS.map(([x, y, d], i) => (
+        <Box key={i} aria-hidden sx={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: 4, height: 4, borderRadius: '50%', bgcolor: '#fff', animation: `${twinkle} 2.4s ease-in-out ${d}s infinite`, ...calm }} />
+      ))}
+      <Box sx={{ position: 'relative', display: 'grid', gridTemplateColumns: `repeat(${order.length}, minmax(0, 1fr))`, gap: 1, alignItems: 'end', maxWidth: 460, mx: 'auto' }}>
         {order.map((i) => {
           const r = rows[i];
           const p = POD[i];
           return (
             <motion.div
               key={r.userId}
-              initial={reduce ? false : { opacity: 0, y: 24 }}
+              initial={reduce ? false : { opacity: 0, y: 56 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ type: 'spring', stiffness: 150, damping: 17, delay: reduce ? 0 : (2 - i) * 0.08 }}
+              transition={{ type: 'spring', stiffness: 130, damping: 15, delay: reduce ? 0 : (2 - i) * 0.12 }}
               style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}
             >
               <ButtonBase
                 onClick={() => onPick(r.userId)} aria-expanded={openId === r.userId} aria-label={`${r.name}, rank ${r.rank}, ${r.score} points`}
-                sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', pb: 0.6, fontFamily: 'inherit', color: 'inherit', borderRadius: '12px' }}
+                sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', pb: 0.9, fontFamily: 'inherit', color: 'inherit', borderRadius: '12px' }}
               >
-                {i === 0 && <EmojiEventsRoundedIcon sx={{ fontSize: 22, color: '#FDE68A', mb: -0.25 }} />}
-                <AvatarRing src={r.avatarUrl} name={r.name} size={p.av} a={p.a} b={p.b} ring={3} inner="#1E1B4B" />
-                <Typography noWrap sx={{ maxWidth: '100%', fontWeight: 800, fontSize: 12.5, mt: 0.5 }}>{r.name}</Typography>
-                <Typography sx={[{ fontWeight: 900, fontSize: 13.5, color: '#FDE68A' }, mono]}>{r.score.toLocaleString()}<Box component="span" sx={{ fontSize: 9.5, ml: 0.3, opacity: 0.85 }}>pts</Box></Typography>
+                {i === 0 ? (
+                  <EmojiEventsRoundedIcon sx={{ fontSize: 32, color: '#FDE68A', filter: 'drop-shadow(0 0 10px rgba(251,191,36,0.85))', animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
+                ) : <Box sx={{ height: 8 }} />}
+                <Box sx={{ borderRadius: '50%', animation: i === 0 ? `${pulse} 2s ease-out infinite` : 'none', ...calm }}>
+                  <AvatarRing src={r.avatarUrl} name={r.name} size={p.av} a={p.a} b={p.b} ring={3.5} inner="#1E1B4B" />
+                </Box>
+                <Typography noWrap sx={{ maxWidth: '100%', fontWeight: 800, fontSize: 13, mt: 0.8 }}>{r.name}</Typography>
+                <Typography sx={[{ fontWeight: 900, fontSize: 15, color: '#FDE68A' }, mono]}><CountUp value={r.score} /><Box component="span" sx={{ fontSize: 10, ml: 0.3, opacity: 0.85 }}>pts</Box></Typography>
+                {r.userId === meId && <Box sx={{ mt: 0.3, px: 0.9, py: 0.05, borderRadius: 99, bgcolor: AMBER, color: '#1B1200', fontSize: 10, fontWeight: 900 }}>YOU</Box>}
               </ButtonBase>
-              <Box sx={{ height: p.h, display: 'grid', placeItems: 'center', borderRadius: '10px 10px 0 0', background: grad(p) }}>
-                <Typography sx={[{ fontWeight: 900, fontSize: p.h * 0.5, lineHeight: 1, color: p.text, opacity: 0.85 }, mono]}>{r.rank}</Typography>
+              <Box sx={{ position: 'relative', overflow: 'hidden', height: p.h, display: 'grid', placeItems: 'center', borderRadius: '12px 12px 0 0', background: grad(p), boxShadow: `0 -6px 26px -8px ${p.glow}`, '&::after': i === 0 ? { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent)', animation: `${sweep} 3.4s ease-in-out infinite`, ...calm } : undefined }}>
+                <Typography sx={[{ fontWeight: 900, fontSize: p.h * 0.45, lineHeight: 1, color: p.text, opacity: 0.85 }, mono]}>{r.rank}</Typography>
               </Box>
             </motion.div>
           );
@@ -327,12 +334,12 @@ function Podium({ rows, openId, onPick }) {
 
 function SkeletonRows({ count = 8 }) {
   return Array.from({ length: count }, (_, i) => (
-    <Box key={i} sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1.1, px: 1.25, minHeight: 56, borderBottom: `1px solid ${alpha(t.palette.divider, 0.7)}` })}>
-      <Skeleton variant="rounded" width={28} height={28} sx={{ borderRadius: '9px' }} />
-      <Skeleton variant="circular" width={34} height={34} />
+    <Box key={i} sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1.25, mx: 1, mb: 0.85, px: 1.25, py: 1.1, borderRadius: '16px', border: `1px solid ${t.palette.divider}` })}>
+      <Skeleton variant="rounded" width={30} height={30} sx={{ borderRadius: '10px' }} />
+      <Skeleton variant="circular" width={38} height={38} />
       <Box sx={{ flex: 1 }}>
-        <Skeleton variant="text" width={`${45 + ((i * 17) % 35)}%`} />
-        <Skeleton variant="text" width={64} />
+        <Skeleton variant="text" width={`${50 + ((i * 17) % 35)}%`} />
+        <Skeleton variant="text" width={70} />
       </Box>
       <Skeleton variant="text" width={40} />
     </Box>
@@ -1007,6 +1014,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   const [track, setTrack] = useState('overall');
   const [search, setSearch] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
+  const [filterAnchor, setFilterAnchor] = useState(null);
   const [page, setPage] = useState(1);
   const [rows, setRows] = useState([]);
   const [meta, setMeta] = useState(null); // latest response: { me, total, totalUsers, points, ... }
@@ -1099,6 +1107,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   const select = useCallback((id, force = false) => setSelectedId((cur) => (!force && cur === id ? null : id)), []);
   const showEveryone = () => { setScope('global'); reset(); };
   const me = isAuthenticated ? meta?.me : null;
+  const filtersOn = period !== 'all' || track !== 'overall' || scope !== 'global';
   const players = meta?.totalUsers ?? null;
 
   // Top 3 get a podium (only players who scored, and not while searching).
@@ -1107,125 +1116,118 @@ export default function LeaderboardView({ isAuthenticated }) {
   const openPodium = podium.find((r) => r.userId === open);
   const selectedRow = (selectedId && (rows.find((r) => r.userId === selectedId) || (me?.userId === selectedId ? me : null))) || me || podium[0] || rows[0] || null;
   const periodLabel = PERIODS.find(([v]) => v === period)?.[1];
-  const glass = { width: 40, height: 40, color: '#fff', bgcolor: 'rgba(255,255,255,0.16)', borderRadius: '12px', '&:hover': { bgcolor: 'rgba(255,255,255,0.28)' } };
-  const meInList = Boolean(me && listRows.some((r) => r.userId === me.userId));
+  const glass = { width: 42, height: 42, color: '#fff', bgcolor: 'rgba(255,255,255,0.16)', borderRadius: '13px', '&:hover': { bgcolor: 'rgba(255,255,255,0.28)' } };
 
-  // Phone layout, built from proven patterns: one slim header with the track as a segmented control
-  // (Duolingo / Strava), filters as always-visible chips (no hidden popover), a flat 56px row list,
-  // and my own rank pinned at the bottom with the next person to beat.
-  const chip = (on) => ({ flexShrink: 0, height: 32, fontWeight: 700, fontSize: 13, ...(on ? {} : { bgcolor: 'transparent' }) });
   const mobile = (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, height: '100%', minHeight: 420 }}>
-      <Box sx={{ position: 'relative', overflow: 'hidden', flexShrink: 0, p: 1.25, borderRadius: '16px', color: '#fff', background: 'linear-gradient(135deg,#1E1B4B 0%,#3730A3 55%,#6D28D9 100%)', boxShadow: '0 10px 22px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
-        <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -50, width: 170, height: 170, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.3), transparent 70%)', pointerEvents: 'none' }} />
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25, height: '100%', minHeight: 420 }}>
+      {/* Banner: title, player count, quick actions and track tabs */}
+      <Box sx={{ position: 'relative', overflow: 'hidden', flexShrink: 0, p: { xs: 1.75, sm: 2.25 }, borderRadius: '18px', color: '#fff', background: 'linear-gradient(135deg,#1E1B4B 0%,#3730A3 55%,#6D28D9 100%)', boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
+        <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -60, width: 210, height: 210, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.34), transparent 70%)', animation: `${floatA} 9s ease-in-out infinite`, ...calm }} />
+        <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: -70, width: 190, height: 190, borderRadius: '50%', background: 'radial-gradient(circle, rgba(236,72,153,0.28), transparent 70%)', animation: `${floatB} 11s ease-in-out infinite`, ...calm }} />
 
-        <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.1 }}>
-          <Box sx={{ width: 38, height: 38, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', color: '#451A03', background: grad(MEDAL[1]) }}>
-            <EmojiEventsRoundedIcon sx={{ fontSize: 22 }} />
+        <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.25 }}>
+          <Box sx={{ width: 48, height: 48, flexShrink: 0, borderRadius: '15px', display: 'grid', placeItems: 'center', color: '#451A03', background: grad(MEDAL[1]), animation: `${pulse} 2.2s ease-out infinite`, ...calm }}>
+            <EmojiEventsRoundedIcon sx={{ fontSize: 28 }} />
           </Box>
           <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Typography component="h2" sx={{ fontWeight: 900, fontSize: '1.2rem', lineHeight: 1.15, letterSpacing: '-0.02em' }}>Leaderboard</Typography>
-            {players === null
-              ? <Skeleton width={90} sx={{ bgcolor: 'rgba(255,255,255,0.2)' }} />
-              : <Typography noWrap sx={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>{players.toLocaleString()} players · {periodLabel}</Typography>}
+            <Typography sx={{ fontWeight: 900, fontSize: '1.5rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Leaderboard</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.4, color: 'rgba(255,255,255,0.88)', flexWrap: 'wrap' }}>
+              <PeopleAltRoundedIcon sx={{ fontSize: 15 }} />
+              {players === null ? <Skeleton width={80} sx={{ bgcolor: 'rgba(255,255,255,0.2)' }} /> : <Typography variant="caption" sx={{ fontWeight: 700 }}>{players.toLocaleString()} players</Typography>}
+              <Box sx={{ px: 0.9, py: 0.05, borderRadius: 99, bgcolor: 'rgba(251,191,36,0.2)', color: '#FDE68A', fontSize: 11, fontWeight: 800 }}>{periodLabel}</Box>
+            </Box>
           </Box>
           <Tooltip title="Search"><IconButton onClick={() => { setSearchOpen((o) => !o); if (searchOpen) setSearch(''); }} aria-label="Search players" sx={glass}>{searchOpen ? <CloseRoundedIcon fontSize="small" /> : <SearchRoundedIcon fontSize="small" />}</IconButton></Tooltip>
-          <Tooltip title="Refresh"><IconButton onClick={reload} aria-label="Refresh leaderboard" sx={glass}><RefreshRoundedIcon fontSize="small" /></IconButton></Tooltip>
+          <Tooltip title="Filters"><IconButton onClick={(e) => setFilterAnchor(e.currentTarget)} aria-label="Leaderboard filters" sx={glass}><Badge variant="dot" color="warning" invisible={!filtersOn} overlap="circular"><TuneRoundedIcon fontSize="small" /></Badge></IconButton></Tooltip>
         </Box>
 
-        <Box role="tablist" aria-label="Leaderboard track" sx={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 0.25, mt: 1, p: 0.4, borderRadius: 99, bgcolor: 'rgba(255,255,255,0.14)' }}>
+        <Box role="tablist" aria-label="Leaderboard track" sx={{ position: 'relative', display: 'flex', gap: 0.9, mt: 1.5, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
           {TRACKS.map(([v, label, Icon]) => {
             const on = track === v;
             return (
               <ButtonBase
                 key={v} role="tab" aria-selected={on} onClick={() => { if (!on) { setTrack(v); reset(); } }}
-                sx={{ height: 34, gap: 0.5, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, transition: 'background-color .2s', color: on ? '#312E81' : '#fff', bgcolor: on ? '#fff' : 'transparent' }}
+                sx={{ flexShrink: 0, gap: 0.6, px: 1.6, py: 0.7, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, transition: 'transform .15s, background-color .2s, box-shadow .2s', color: on ? '#1B1200' : '#fff', bgcolor: on ? undefined : 'rgba(255,255,255,0.14)', background: on ? `linear-gradient(135deg, ${AMBER}, #F59E0B)` : undefined, boxShadow: on ? '0 6px 16px -6px rgba(251,191,36,0.9)' : 'none', '&:active': { transform: 'scale(0.95)' } }}
               >
-                <Icon sx={{ fontSize: 16 }} />{label}
+                <Icon sx={{ fontSize: 17 }} />{label}
               </ButtonBase>
             );
           })}
         </Box>
       </Box>
 
-      <Collapse in={searchOpen} timeout={160} sx={{ flexShrink: 0 }}>
+      <Collapse in={searchOpen} timeout={200} sx={{ flexShrink: 0 }}>
         <TextField
-          size="small" fullWidth autoFocus={searchOpen} placeholder="Search name or @handle" value={search} onChange={(e) => setSearch(e.target.value)}
+          size="small" fullWidth placeholder="Search name or @handle" value={search} onChange={(e) => setSearch(e.target.value)}
           sx={{ '& .MuiOutlinedInput-root': { borderRadius: 999 } }}
           slotProps={{ input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> }, htmlInput: { 'aria-label': 'Search players' } }}
         />
       </Collapse>
 
-      {/* Filters: always visible, one swipeable row */}
-      <Box role="group" aria-label="Filters" sx={{ display: 'flex', alignItems: 'center', gap: 0.75, flexShrink: 0, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
-        {PERIODS.map(([v, label]) => (
-          <Chip key={v} clickable label={label} aria-pressed={period === v} onClick={() => { if (period !== v) { setPeriod(v); reset(); } }} color={period === v ? 'primary' : 'default'} variant={period === v ? 'filled' : 'outlined'} sx={chip(period === v)} />
-        ))}
-        <Box aria-hidden sx={{ width: '1px', height: 18, bgcolor: 'divider', flexShrink: 0, mx: 0.25 }} />
-        {[['global', 'Everyone', PublicRoundedIcon], ['friends', 'Friends', PeopleAltRoundedIcon]].map(([v, label, Icon]) => (
-          <Chip
-            key={v} clickable icon={<Icon />} label={label} disabled={v === 'friends' && !isAuthenticated} aria-pressed={scope === v}
-            onClick={() => { if (scope !== v) { setScope(v); reset(); } }} color={scope === v ? 'primary' : 'default'} variant={scope === v ? 'filled' : 'outlined'} sx={chip(scope === v)}
-          />
-        ))}
-      </Box>
+      <FriendsCard enabled={isAuthenticated} />
 
-      {error && <Alert severity="error" sx={{ flexShrink: 0 }} action={<Button color="inherit" size="small" onClick={reload}>Retry</Button>}>{error}</Alert>}
+      {error && <Alert severity="error" sx={{ flexShrink: 0 }}>{error}</Alert>}
 
       {/* The list: the only thing on this page that scrolls */}
-      <Box sx={[surface, { flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderRadius: '16px' }]}>
-        <Box ref={scroller} sx={{ flex: 1, minHeight: 0, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', overscrollBehavior: 'contain', ...SCROLL, scrollbarGutter: 'auto' }}>
-          {firstLoad && <SkeletonRows />}
+      <Box sx={[surface, (t) => ({ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderRadius: '18px', backgroundImage: `linear-gradient(180deg, ${alpha(t.palette.primary.main, 0.07)}, transparent 260px)` })]}>
+        <Box ref={scroller} sx={{ flex: 1, minHeight: 0, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', pb: 0.5, ...SCROLL, scrollbarGutter: firstLoad ? 'auto' : 'stable' }}>
+          {firstLoad && <Box sx={{ pt: 1 }}><SkeletonRows /></Box>}
           {!firstLoad && podium.length > 0 && (
             <>
-              <Podium rows={podium} openId={open} onPick={(id) => setOpen(open === id ? null : id)} />
-              <Collapse in={Boolean(openPodium)} timeout={180} unmountOnExit>
-                {openPodium && <Box sx={(t) => ({ mx: 0.75, mb: 0.5, borderRadius: '12px', overflow: 'hidden', border: `1px solid ${t.palette.divider}` })}><RowDetail row={openPodium} /></Box>}
+              <Podium rows={podium} meId={me?.userId} openId={open} onPick={(id) => setOpen(open === id ? null : id)} />
+              <Collapse in={Boolean(openPodium)} timeout={220} unmountOnExit>
+                {openPodium && <Box sx={(t) => ({ mx: 1, mb: 1, borderRadius: '14px', overflow: 'hidden', border: `1px solid ${t.palette.divider}` })}><RowDetail row={openPodium} /></Box>}
               </Collapse>
             </>
           )}
+          {!firstLoad && <Box sx={{ pt: podium.length ? 0 : 1 }} />}
           {listRows.map((r, i) => (
-            <Row key={r.userId} row={r} isMe={me?.userId === r.userId} last={i === listRows.length - 1 && !hasMore} expanded={open === r.userId} onToggle={() => setOpen(open === r.userId ? null : r.userId)} />
+            <Row key={r.userId} row={r} index={i} isMe={me?.userId === r.userId} expanded={open === r.userId} onToggle={() => setOpen(open === r.userId ? null : r.userId)} />
           ))}
           {!loading && rows.length === 0 && !error && (
             <Box sx={{ p: 4, textAlign: 'center', color: 'text.secondary' }}>
-              <EmojiEventsRoundedIcon sx={{ fontSize: 40, opacity: 0.35 }} />
+              <EmojiEventsRoundedIcon sx={{ fontSize: 44, opacity: 0.35, animation: `${bob} 2.4s ease-in-out infinite`, ...calm }} />
               <Typography color="text.secondary" sx={{ mt: 0.5, fontWeight: 600 }}>
-                {q ? `No player matches "${q}".` : scope === 'friends' ? 'No friends on this board yet.' : 'No one has scored in this period yet. Be the first.'}
+                {q ? `No player matches "${q}".` : scope === 'friends' ? 'Add friends from the Friends tab and they will show up here.' : 'No one has scored in this period yet. Be the first.'}
               </Typography>
-              <Box sx={{ mt: 1.25, display: 'flex', justifyContent: 'center', gap: 1 }}>
-                {q && <Button size="small" variant="outlined" onClick={() => setSearch('')}>Clear search</Button>}
-                {!q && scope === 'friends' && <Button size="small" variant="outlined" onClick={showEveryone}>Show everyone</Button>}
-              </Box>
             </Box>
           )}
           {hasMore && <Box ref={sentinel} sx={{ height: 1 }} />}
           {loading && rows.length > 0 && <SkeletonRows count={3} />}
-          {!firstLoad && rows.length > 0 && !hasMore && (
-            <Typography variant="caption" color="text.disabled" sx={{ display: 'block', textAlign: 'center', py: 1.25 }}>
-              Easy {meta?.points?.easy ?? 10} · Medium {meta?.points?.medium ?? 20} · Hard {meta?.points?.hard ?? 40} · Aptitude {meta?.points?.aptitude ?? 5} pts. Each question counts once.
-            </Typography>
-          )}
         </Box>
 
+        {/* My own position stays pinned under the list */}
         {me && (
-          <PinnedMe
-            me={me} neighbors={meta?.neighbors} points={meta?.points} expanded={open === 'pinned-me'}
-            onToggle={() => setOpen(open === 'pinned-me' ? null : 'pinned-me')} onFind={scrollToMe} canFind={meInList}
-          />
+          <Box sx={(t) => ({ flexShrink: 0, maxHeight: '55%', overflowY: 'auto', p: 0.75, background: `linear-gradient(180deg, ${alpha(t.palette.primary.main, 0.16)}, ${alpha(t.palette.primary.main, 0.05)})`, boxShadow: `0 -10px 24px -14px ${alpha(t.palette.primary.main, 0.7)}` })}>
+            <Row row={me} isMe pinned expanded={open === 'pinned-me'} onToggle={() => setOpen(open === 'pinned-me' ? null : 'pinned-me')} />
+          </Box>
         )}
         {isAuthenticated && meta && !meta.me && !loading && (
-          <Typography variant="caption" color="text.secondary" sx={(t) => ({ flexShrink: 0, px: 1.5, py: 1, fontWeight: 600, borderTop: `1px solid ${t.palette.divider}` })}>
+          <Typography variant="caption" color="text.secondary" sx={(t) => ({ flexShrink: 0, px: 2, py: 1, fontWeight: 600, borderTop: `1px solid ${t.palette.divider}` })}>
             Solve a question{period === 'all' ? '' : ' in this period'} to enter the leaderboard.
           </Typography>
         )}
-        {!isAuthenticated && (
-          <Box sx={(t) => ({ flexShrink: 0, display: 'flex', alignItems: 'center', gap: 1, px: 1.25, py: 0.9, borderTop: `1px solid ${t.palette.divider}` })}>
-            <Typography variant="body2" sx={{ flex: 1, fontWeight: 600 }}>Log in to see your rank</Typography>
-            <Button component={RouterLink} to="/login" size="small" variant="contained" disableElevation sx={{ fontWeight: 800, borderRadius: 99 }}>Log in</Button>
-          </Box>
-        )}
       </Box>
+
+      <Popover
+        anchorEl={filterAnchor} open={Boolean(filterAnchor)} onClose={() => setFilterAnchor(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        slotProps={{ paper: { sx: { borderRadius: '14px', p: 2, width: 320, maxWidth: 'calc(100vw - 24px)', mt: 0.5 } } }}
+      >
+        <Stack spacing={1.75}>
+          {[['Period', period, setPeriod, PERIODS], ['Track', track, setTrack, TRACKS], ['Show', scope, setScope, [['global', 'Everyone'], ['friends', 'Friends']]]].map(([title, value, setter, opts]) => (
+            <Box key={title}>
+              <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 800, letterSpacing: 0.4 }}>{title.toUpperCase()}</Typography>
+              <ToggleButtonGroup size="small" exclusive fullWidth value={value} onChange={pick(setter)} sx={{ mt: 0.5 }}>
+                {opts.map(([v, l]) => <ToggleButton key={v} value={v} disabled={v === 'friends' && !isAuthenticated} sx={{ fontWeight: 700, textTransform: 'none', px: 1 }}>{l}</ToggleButton>)}
+              </ToggleButtonGroup>
+            </Box>
+          ))}
+          <Typography variant="caption" color="text.secondary">
+            Easy {meta?.points?.easy ?? 10} · Medium {meta?.points?.medium ?? 20} · Hard {meta?.points?.hard ?? 40} · Aptitude {meta?.points?.aptitude ?? 5} points. Each question counts once.
+          </Typography>
+        </Stack>
+      </Popover>
     </Box>
   );
 
