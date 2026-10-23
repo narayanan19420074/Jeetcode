@@ -20,6 +20,12 @@ const envSchema = z.object({
 
   // Judge0 — public cloud API by default; swap JUDGE0_API_URL to a
   // self-hosted instance later without touching any calling code.
+  // JUDGE_MODE: 'local' = our own judge on this server (default),
+  // 'judge0' = external Judge0 API below.
+  JUDGE_MODE: z.enum(['local', 'judge0']).default('local'),
+  JUDGE_TIME_LIMIT_MS: z.coerce.number().default(8000), // per test case, wall clock
+  JUDGE_MEMORY_MB: z.coerce.number().default(256), // per test case
+  JUDGE_CONCURRENCY: z.coerce.number().default(2), // parallel test-case runs
   JUDGE0_API_URL: z.string().default('https://ce.judge0.com'),
   JUDGE0_API_KEY: z.string().optional(),
   JUDGE0_API_HOST: z.string().optional(),

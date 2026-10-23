@@ -2,6 +2,12 @@ import axios from 'axios';
 import { env } from '../config/env.js';
 import { ApiError } from '../utils/ApiError.js';
 import { logger } from '../utils/logger.js';
+import * as localJudge from './localJudge.service.js';
+
+// JUDGE_MODE=local (default) -> our own judge (localJudge.service.js).
+// JUDGE_MODE=judge0         -> external Judge0 API (code below).
+// Every caller imports from this file, so switching is just an env var.
+const useLocal = () => env.JUDGE_MODE !== 'judge0';
 
 // Judge0 CE's standard language IDs (stable across CE public + self-hosted
 // instances using the default language list). Centralizing this map means
@@ -45,6 +51,7 @@ const unb64 = (str) => (str ? Buffer.from(str, 'base64').toString('utf-8') : '')
  * from taking 20 sequential round-trips.
  */
 export async function submitBatch(items) {
+  if (useLocal()) return localJudge.submitBatch(items);
   const payload = {
     submissions: items.map((it) => ({
       source_code: b64(it.sourceCode),
@@ -71,6 +78,7 @@ export async function submitBatch(items) {
  * interval — Judge0 batch judging is typically sub-second per case.
  */
 export async function pollBatchResults(tokens, { maxAttempts = 15, intervalMs = 1000 } = {}) {
+  if (useLocal()) return localJudge.pollBatchResults(tokens);
   const fields = 'token,status,stdout,stderr,compile_output,time,memory';
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     const { data } = await client().get('/submissions/batch', {
