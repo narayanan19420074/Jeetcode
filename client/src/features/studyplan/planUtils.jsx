@@ -1,7 +1,6 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Avatar, AvatarGroup, Box, Button, CircularProgress, Typography, alpha } from '@mui/material';
+import { Avatar, AvatarGroup, Box, ButtonBase, CircularProgress, Typography, alpha } from '@mui/material';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { DIFF_COLOR } from '../dashboard/dashboardUtils';
 
@@ -226,48 +225,60 @@ export function ProgressRing({ value, size = 56, tone = 'primary', onDark = fals
   );
 }
 
-// One question in a plan: clear tick when solved, a "Solve now" button when not.
-export function PlanTaskRow({ item, doers = [] }) {
+// One question in a plan. Flat, one tap target: the whole row opens the question (like a Todoist task).
+// Solved rows go quiet, overdue rows get a red tick-circle. ~52px tall so a phone shows 10+ at once.
+const DIFF_TEXT = { Easy: 'var(--jc-easy)', Medium: 'var(--jc-medium)', Hard: 'var(--jc-hard)' };
+
+export function PlanTaskRow({ item, doers = [], last = false, note = '' }) {
   const link = itemLink(item);
-  const accent = item.done ? 'success' : item.overdue ? 'error' : null;
+  const interactive = !item.done && Boolean(link);
+  const rowProps = interactive ? { component: RouterLink, to: link } : {};
   return (
-    <Box
+    <ButtonBase
+      {...rowProps}
+      disabled={!interactive}
+      aria-label={interactive ? `Solve ${item.title}` : undefined}
       sx={(t) => ({
-        display: 'flex', alignItems: 'center', gap: 1.25, px: 1.25, py: 1, borderRadius: '12px', border: `1px solid ${accent ? alpha(t.palette[accent].main, 0.35) : t.palette.divider}`,
-        bgcolor: accent ? alpha(t.palette[accent].main, item.done ? 0.07 : 0.05) : 'transparent', mb: 0.75,
+        display: 'flex', width: '100%', alignItems: 'center', gap: 1.25, px: 1.25, py: 0.9, minHeight: 52, textAlign: 'left', fontFamily: 'inherit', color: 'inherit',
+        borderBottom: last ? 'none' : `1px solid ${alpha(t.palette.divider, 0.6)}`,
+        '&.Mui-disabled': { opacity: 1 },
+        '&:active': interactive ? { bgcolor: t.palette.action.selected } : undefined,
       })}
     >
       {item.done ? (
-        <Box sx={(t) => ({ width: 26, height: 26, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: t.palette.success.main, color: t.palette.success.contrastText })}>
-          <CheckRoundedIcon sx={{ fontSize: 18 }} />
+        <Box sx={(t) => ({ width: 22, height: 22, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: t.palette.success.main, color: t.palette.success.contrastText })}>
+          <CheckRoundedIcon sx={{ fontSize: 15 }} />
         </Box>
       ) : item.overdue ? (
-        <ErrorOutlineRoundedIcon sx={{ fontSize: 26, color: 'error.main', flexShrink: 0 }} />
+        <Box sx={(t) => ({ width: 22, height: 22, borderRadius: '50%', flexShrink: 0, border: `2px solid ${t.palette.error.main}` })} />
       ) : (
-        <Box sx={(t) => ({ width: 26, height: 26, borderRadius: '50%', flexShrink: 0, border: `2px solid ${t.palette.text.disabled}` })} />
+        <Box sx={(t) => ({ width: 22, height: 22, borderRadius: '50%', flexShrink: 0, border: `2px solid ${t.palette.text.disabled}` })} />
       )}
 
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.3, color: item.done ? 'text.secondary' : 'text.primary', overflowWrap: 'anywhere' }}>{item.title}</Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.4, flexWrap: 'wrap' }}>
-          <DiffTag difficulty={item.difficulty} />
-          <Typography variant="caption" color="text.secondary">{item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
-          {item.overdue && <Typography variant="caption" sx={{ color: 'error.main', fontWeight: 700 }}>Overdue</Typography>}
-          {doers.length > 0 && (
-            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 18, height: 18, fontSize: 9, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
-              {doers.map((m) => <Avatar key={m.userId} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
-            </AvatarGroup>
-          )}
+        <Typography
+          sx={{ fontWeight: 600, fontSize: 14, lineHeight: 1.3, color: item.done ? 'text.secondary' : 'text.primary', textDecoration: item.done ? 'line-through' : 'none', textDecorationColor: 'currentColor', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', overflowWrap: 'anywhere' }}
+        >
+          {item.title}
+        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.15, minWidth: 0 }}>
+          <Typography component="span" sx={{ fontSize: 11.5, fontWeight: 800, color: DIFF_TEXT[item.difficulty] || 'text.secondary' }}>{item.difficulty}</Typography>
+          <Typography component="span" sx={{ fontSize: 11.5, color: 'text.secondary' }}>· {item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
+          {item.overdue && <Typography component="span" sx={{ fontSize: 11.5, fontWeight: 800, color: 'error.main' }}>· Overdue</Typography>}
+          {note && <Typography component="span" noWrap sx={{ fontSize: 11.5, color: 'text.disabled', minWidth: 0 }}>· {note}</Typography>}
         </Box>
       </Box>
 
-      {item.done ? (
-        <Typography variant="caption" sx={(t) => ({ color: 'success.main', fontWeight: 800, px: 1, py: 0.3, borderRadius: 999, bgcolor: alpha(t.palette.success.main, 0.14), flexShrink: 0 })}>Solved</Typography>
-      ) : link ? (
-        <Button component={RouterLink} to={link} size="small" variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} sx={{ flexShrink: 0, fontWeight: 700, borderRadius: '10px', whiteSpace: 'nowrap' }}>
-          Solve now
-        </Button>
-      ) : null}
-    </Box>
+      {doers.length > 0 && (
+        <AvatarGroup max={3} sx={{ flexShrink: 0, '& .MuiAvatar-root': { width: 18, height: 18, fontSize: 9, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
+          {doers.map((m) => <Avatar key={m.userId} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
+        </AvatarGroup>
+      )}
+      {interactive && (
+        <Box sx={(t) => ({ width: 30, height: 30, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, color: t.palette.primary.main, bgcolor: alpha(t.palette.primary.main, 0.12) })}>
+          <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />
+        </Box>
+      )}
+    </ButtonBase>
   );
 }
