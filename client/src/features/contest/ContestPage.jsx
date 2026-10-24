@@ -1,8 +1,8 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
+import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Typography, alpha } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import PaymentsRoundedIcon from '@mui/icons-material/PaymentsRounded';
 import TimerRoundedIcon from '@mui/icons-material/TimerRounded';
@@ -14,9 +14,9 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { contestApi } from '../../api/contestApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
-import useViewportFill from '../dashboard/useViewportFill';
-import ContestTabs, { ContestTile } from './ContestTabs';
+import ContestTabs, { ContestTile, LiveNow } from './ContestTabs';
 import GlobalTop from './GlobalTop';
+import WinnersPanel from './WinnersPanel';
 import { fmtStart, useContest } from './contestUtils';
 
 const RULE_ICON = { 'fair-play': SmartToyRoundedIcon, verification: FactCheckRoundedIcon, format: TimerRoundedIcon, eligibility: HowToRegRoundedIcon, prize: PaymentsRoundedIcon, penalties: GavelRoundedIcon };
@@ -40,12 +40,17 @@ function RuleSection({ rule, index }) {
   );
 }
 
-// List view = one window tall on wide screens (Global top 10 + Upcoming/Past contests), like the Quests tab.
+// Preview only: open the contest page with &demo=winners to see a finished contest with sample winners.
+const DEMO_WINNERS = [
+  { rank: 1, name: 'Demo Champion', handle: 'demo_one', solved: 10, prize: 50000 },
+  { rank: 2, name: 'Demo Runner', handle: 'demo_two', solved: 9, prize: 30000 },
+  { rank: 3, name: 'Demo Third', handle: 'demo_three', solved: 8, prize: 20000 },
+];
+
+// List view: winners podium (only once a contest has ended) + Global top 10 on the left, live-now card + Upcoming/Past small cards on the right.
 // Tapping a contest opens its explain page (rules + apply) with ?c=<id>, so Back and refresh work.
 export default function ContestPage({ embedded = false }) {
   const navigate = useNavigate();
-  const theme = useTheme();
-  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
   const [params, setParams] = useSearchParams();
   const { enqueueSnackbar } = useSnackbar();
   const { isAuthenticated } = useSelector((s) => s.auth);
@@ -53,13 +58,33 @@ export default function ContestPage({ embedded = false }) {
   const [accepted, setAccepted] = useState(false);
   const [busy, setBusy] = useState(false);
   const applyRef = useRef(null);
-  const listRef = useRef(null);
+  const winnersRef = useRef(null);
+  const timerRef = useRef(null);
+  const [revealed, setRevealed] = useState(false);
+  const [runKey, setRunKey] = useState(0);
 
   const detail = Boolean(contest && params.get('c') === contest.id);
-  const fillH = useViewportFill(listRef, embedded && isLg && !detail);
+  // list view data: the real contest, or a finished one with sample winners when ?demo=winners
+  const shown = params.get('demo') === 'winners' && contest ? { ...contest, status: 'ended', winners: DEMO_WINNERS } : contest;
+  const hasPast = shown?.status === 'ended';
 
-  const openContest = (c) => setParams({ view: 'contest', c: c.id });
-  const closeContest = () => setParams({ view: 'contest' });
+  useEffect(() => () => clearTimeout(timerRef.current), []);
+
+  // keep the other query params (view=contest, demo) and only touch ?c=
+  const openContest = (c) => setParams((p) => { const n = new URLSearchParams(p); n.set('view', 'contest'); n.set('c', c.id); return n; });
+  const closeContest = () => setParams((p) => { const n = new URLSearchParams(p); n.set('view', 'contest'); n.delete('c'); return n; });
+
+  // tapping a past contest: scroll to the podium, then fire the reveal
+  const openPast = () => {
+    winnersRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (!revealed) { clearTimeout(timerRef.current); timerRef.current = setTimeout(() => setRevealed(true), 450); }
+  };
+  const replay = () => {
+    clearTimeout(timerRef.current);
+    setRevealed(false);
+    setRunKey((k) => k + 1);
+    timerRef.current = setTimeout(() => setRevealed(true), 700);
+  };
 
   const run = async (call, okMsg) => {
     setBusy(true);
@@ -81,16 +106,19 @@ export default function ContestPage({ embedded = false }) {
   if (!detail) {
     return (
       <Container maxWidth="lg" disableGutters={embedded} sx={embedded ? { py: 0 } : { py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
-        <Box
-          ref={listRef}
-          sx={{
-            display: 'grid', gap: 2, alignItems: 'stretch',
-            gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.55fr) minmax(0,1fr)' },
-            ...(fillH && { height: fillH - 24, gridTemplateRows: 'minmax(0, 1fr)' }),
-          }}
-        >
-          <Box sx={{ order: { xs: 2, md: 1 }, minHeight: 0 }}><GlobalTop fill={Boolean(fillH)} /></Box>
-          <Box sx={{ order: { xs: 1, md: 2 }, minHeight: 0 }}><ContestTabs contest={contest} onOpen={openContest} fill={Boolean(fillH)} /></Box>
+        <Box sx={{ display: 'grid', gap: 2, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.55fr) minmax(0,1fr)' } }}>
+          <Box sx={{ order: { xs: 2, md: 1 }, display: 'grid', gap: 2, minWidth: 0 }}>
+            {hasPast && (
+              <Box ref={winnersRef}>
+                <WinnersPanel contest={shown} revealed={revealed} runKey={runKey} onReveal={() => setRevealed(true)} onReplay={replay} />
+              </Box>
+            )}
+            <GlobalTop />
+          </Box>
+          <Box sx={{ order: { xs: 1, md: 2 }, display: 'grid', gap: 2, minWidth: 0 }}>
+            <LiveNow contest={shown} onOpen={openContest} />
+            <ContestTabs contest={shown} onOpen={openContest} onOpenPast={openPast} pastSelected={revealed} />
+          </Box>
         </Box>
       </Container>
     );

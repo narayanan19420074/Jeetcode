@@ -11,6 +11,10 @@ export const CONTEST = {
   problemCount: 10,
   difficulty: 'Hard',
   rulesVersion: 1,
+  // Fill this in AFTER the contest ends and the top ranks are verified. The contest page then shows the
+  // winners on the 3D podium (only once the contest has ended). Rank 1-3, newest edit = one-file change:
+  // { rank: 1, name: 'Asha K', handle: 'asha_k', solved: 10, prize: 50000 }
+  winners: [],
   rules: [
     {
       id: 'fair-play',

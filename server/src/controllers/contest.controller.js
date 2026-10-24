@@ -33,6 +33,7 @@ async function contestInfo(userId) {
     rules: CONTEST.rules,
     applicants,
     applied: Boolean(mine),
+    winners: statusNow() === 'ended' ? CONTEST.winners || [] : [], // only exposed after the contest is over
   };
 }
 

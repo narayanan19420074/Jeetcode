@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { keyframes } from '@mui/material/styles';
 import { Alert, Box, ButtonBase, Button, Skeleton, Typography } from '@mui/material';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
@@ -10,8 +11,10 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import TimerRoundedIcon from '@mui/icons-material/TimerRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import EventBusyRoundedIcon from '@mui/icons-material/EventBusyRounded';
 import { surface } from '../dashboard/dashboardUtils';
-import { fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
+import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
 
 const AMBER = '#FBBF24';
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
@@ -98,11 +101,86 @@ export function ContestTile({ contest, past, onOpen, ctaLabel }) {
   );
 }
 
+const pulse = keyframes`0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.65); } 100% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }`;
+const STATUS = { live: ['Live', '#22C55E'], upcoming: ['Upcoming', AMBER], ended: ['Ended', '#94A3B8'] };
+const istPart = (iso, opt) => new Date(iso).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata', ...opt });
+
+function StatusPill({ status }) {
+  const [label, c] = STATUS[status] || STATUS.ended;
+  return (
+    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.6, px: 1, py: 0.25, borderRadius: 99, fontSize: 11, fontWeight: 800, letterSpacing: 0.4, color: c, bgcolor: `color-mix(in srgb, ${c} 14%, transparent)`, border: `1px solid color-mix(in srgb, ${c} 35%, transparent)` }}>
+      <Box component="span" sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: c, ...(status === 'live' && { animation: `${pulse} 1.4s ease-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }) }} />
+      {label}
+    </Box>
+  );
+}
+
+// Small contest card: date block, title, quick facts, status. Past cards open the winners podium.
+export function ContestMini({ contest, past, selected, onOpen }) {
+  const { d, h, m } = useCountdown(contest.startsAt, contest.serverTime);
+  const status = past ? 'ended' : contest.status;
+  const left = status === 'upcoming' ? (d > 0 ? `${d}d ${pad(h)}h left` : `${pad(h)}h ${pad(m)}m left`) : status === 'live' ? 'Join now' : 'View winners';
+  return (
+    <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.985 }} transition={{ type: 'spring', stiffness: 420, damping: 30 }}>
+      <ButtonBase
+        onClick={onOpen}
+        sx={(t) => ({
+          width: '100%', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 1.5, p: 1.25, borderRadius: '16px', fontFamily: 'inherit',
+          border: `1px solid ${selected ? AMBER : t.palette.divider}`, bgcolor: t.palette.background.paper,
+          boxShadow: selected ? '0 0 0 3px rgba(251,191,36,0.2)' : t.palette.mode === 'dark' ? 'inset 0 1px 0 rgba(255,255,255,0.045)' : '0 1px 2px rgba(15,23,42,0.05)',
+          transition: 'border-color .2s, box-shadow .2s', '&:hover': { borderColor: AMBER },
+        })}
+      >
+        <Box sx={{ width: 52, height: 56, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', alignContent: 'center', color: '#fff', background: past ? SLATE : EMBER, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18)' }}>
+          <Typography sx={[{ fontWeight: 900, fontSize: 21, lineHeight: 1 }, mono]}>{istPart(contest.startsAt, { day: '2-digit' })}</Typography>
+          <Typography sx={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 0.8, textTransform: 'uppercase', opacity: 0.85, mt: 0.2 }}>{istPart(contest.startsAt, { month: 'short' })}</Typography>
+        </Box>
+
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography noWrap sx={{ fontWeight: 800, fontSize: 14.5, lineHeight: 1.25 }}>{contest.title}</Typography>
+          <Typography noWrap variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.2 }}>
+            {contest.problemCount} {contest.difficulty} · {fmtDuration(contest.durationMinutes)} · {inr(contest.prizePool)}
+          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.6 }}>
+            <StatusPill status={status} />
+            <Typography variant="caption" sx={[{ fontWeight: 700, color: status === 'ended' ? 'primary.main' : 'text.secondary' }, status === 'upcoming' && mono]}>{left}</Typography>
+          </Box>
+        </Box>
+
+        {status === 'ended' ? <EmojiEventsRoundedIcon sx={{ color: AMBER, flexShrink: 0 }} /> : <ChevronRightRoundedIcon sx={{ color: 'text.secondary', flexShrink: 0 }} />}
+      </ButtonBase>
+    </motion.div>
+  );
+}
+
+// Side card: the contest that is running right now, or a calm "no contest" note.
+export function LiveNow({ contest, onOpen }) {
+  const live = contest && contest.status === 'live';
+  const next = contest && contest.status === 'upcoming';
+  return (
+    <Box sx={[surface, { p: { xs: 1.25, sm: 1.5 } }]}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 0.5, mb: 1.1 }}>
+        <BoltRoundedIcon sx={{ fontSize: 19, color: live ? '#22C55E' : 'text.secondary' }} />
+        <Typography sx={{ fontWeight: 800, fontSize: 14.5 }}>Happening now</Typography>
+      </Box>
+      {contest === null && <Skeleton variant="rounded" height={84} sx={{ borderRadius: '16px' }} />}
+      {live && <ContestMini contest={contest} onOpen={() => onOpen(contest)} />}
+      {contest !== null && !live && (
+        <Box sx={(t) => ({ textAlign: 'center', px: 2, py: 3, borderRadius: '16px', border: `1.5px dashed ${t.palette.divider}` })}>
+          <EventBusyRoundedIcon sx={{ fontSize: 30, color: 'text.secondary', opacity: 0.8 }} />
+          <Typography sx={{ fontWeight: 800, mt: 0.5 }}>No contest right now</Typography>
+          {next && <Typography variant="body2" color="text.secondary" sx={{ mt: 0.4 }}>Next: {contest.title} on {fmtDate(contest.startsAt)}</Typography>}
+        </Box>
+      )}
+    </Box>
+  );
+}
+
 function EmptyPast() {
   return (
-    <Box sx={(t) => ({ textAlign: 'center', px: 2.5, py: 4.5, borderRadius: '16px', border: `1.5px dashed ${t.palette.divider}` })}>
-      <Box sx={{ width: 56, height: 56, mx: 'auto', mb: 1.25, borderRadius: '18px', display: 'grid', placeItems: 'center', background: SLATE, color: '#FDE68A', boxShadow: '0 10px 22px -12px rgba(2,6,23,0.8)' }}>
-        <HistoryRoundedIcon sx={{ fontSize: 30 }} />
+    <Box sx={(t) => ({ textAlign: 'center', px: 2.5, py: 4, borderRadius: '16px', border: `1.5px dashed ${t.palette.divider}` })}>
+      <Box sx={{ width: 52, height: 52, mx: 'auto', mb: 1.25, borderRadius: '16px', display: 'grid', placeItems: 'center', background: SLATE, color: '#FDE68A', boxShadow: '0 10px 22px -12px rgba(2,6,23,0.8)' }}>
+        <HistoryRoundedIcon sx={{ fontSize: 28 }} />
       </Box>
       <Typography sx={{ fontWeight: 800 }}>No past contests yet</Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>Finished contests and their winners will show up here.</Typography>
@@ -112,15 +190,16 @@ function EmptyPast() {
 
 const TABS = [['upcoming', 'Upcoming'], ['past', 'Past']];
 
-// Two-tab card: Upcoming | Past contests. `contest` is null while loading and false if it failed.
-export default function ContestTabs({ contest, onOpen, fill = false }) {
+// Two-tab list of small cards. `contest` is null while loading and false if it failed.
+// Upcoming/live cards open the rules page (onOpen); past cards reveal the winners (onOpenPast).
+export default function ContestTabs({ contest, onOpen, onOpenPast, pastSelected = false }) {
   const [tab, setTab] = useState('upcoming');
   const ready = Boolean(contest);
   const ended = ready && contest.status === 'ended';
   const lists = { upcoming: ready && !ended ? [contest] : [], past: ended ? [contest] : [] };
 
   return (
-    <Box sx={[surface, { p: { xs: 1.25, sm: 1.5 } }, fill && { height: '100%', display: 'flex', flexDirection: 'column' }]}>
+    <Box sx={[surface, { p: { xs: 1.25, sm: 1.5 } }]}>
       <Box role="tablist" aria-label="Contests" sx={(t) => ({ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1fr', p: 0.5, borderRadius: '14px', bgcolor: t.palette.action.hover })}>
         {TABS.map(([key, label]) => {
           const on = tab === key;
@@ -139,16 +218,16 @@ export default function ContestTabs({ contest, onOpen, fill = false }) {
         })}
       </Box>
 
-      <Box role="tabpanel" className="autohide-scroll" sx={[{ display: 'grid', gap: 1.5, mt: 1.5, alignContent: 'start' }, fill && { flex: 1, minHeight: 0, overflowY: 'auto' }]}>
-        {contest === null && <Skeleton variant="rounded" height={340} sx={{ borderRadius: '16px' }} />}
+      <Box role="tabpanel" sx={{ display: 'grid', gap: 1.1, mt: 1.25, alignContent: 'start' }}>
+        {contest === null && <Skeleton variant="rounded" height={84} sx={{ borderRadius: '16px' }} />}
         {contest === false && <Alert severity="error">Could not load contests. Please try again in a moment.</Alert>}
         {ready && lists[tab].map((c) => (
           <motion.div key={`${tab}-${c.id}`} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
-            <ContestTile contest={c} past={tab === 'past'} onOpen={() => onOpen(c)} />
+            <ContestMini contest={c} past={tab === 'past'} selected={tab === 'past' && pastSelected} onOpen={() => (tab === 'past' ? onOpenPast(c) : onOpen(c))} />
           </motion.div>
         ))}
         {ready && lists[tab].length === 0 && (tab === 'past' ? <EmptyPast /> : (
-          <Box sx={(t) => ({ textAlign: 'center', px: 2.5, py: 4.5, borderRadius: '16px', border: `1.5px dashed ${t.palette.divider}` })}>
+          <Box sx={(t) => ({ textAlign: 'center', px: 2.5, py: 4, borderRadius: '16px', border: `1.5px dashed ${t.palette.divider}` })}>
             <Typography sx={{ fontWeight: 800 }}>No upcoming contests</Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>The next one will be announced here.</Typography>
           </Box>
