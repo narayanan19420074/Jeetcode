@@ -2,9 +2,6 @@ import { Box, Typography, alpha } from '@mui/material';
 import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-import LocalCafeRoundedIcon from '@mui/icons-material/LocalCafeRounded';
-import StickyNote2RoundedIcon from '@mui/icons-material/StickyNote2Rounded';
-import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 
 export const fmt = (n) => Number(n || 0).toLocaleString('en-IN');
 export const fmtDate = (d) => (d ? new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '—');
@@ -34,69 +31,168 @@ export function Coins({ value, size = 18, bold = true, color = 'warning.main', s
   );
 }
 
-function Tee({ c, hoodie }) {
+// ---- Product mock-ups: white goods with the JeetCode mark printed on, drawn as shaded SVG ----
+const STUDIO = '#EEF0F4'; // light "photo studio" backdrop, same in light and dark mode
+const INK = '#334155';
+
+function Defs() {
   return (
-    <svg viewBox="0 0 120 120" width="100%" height="100%" aria-hidden="true">
-      <path
-        d={hoodie
-          ? 'M40 18 L26 26 L8 62 L24 70 L32 56 L32 104 L88 104 L88 56 L96 70 L112 62 L94 26 L80 18 Q60 34 40 18Z'
-          : 'M42 16 L22 24 L6 52 L24 62 L32 52 L32 104 L88 104 L88 52 L96 62 L114 52 L98 24 L78 16 Q60 30 42 16Z'}
-        fill={c}
-      />
-      <path d="M42 16 Q60 30 78 16" fill="none" stroke="rgba(255,255,255,.55)" strokeWidth="3" />
-      <text x="60" y="66" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="13" fill="rgba(255,255,255,.95)">{'</>'}</text>
-      {hoodie && <path d="M46 84 H74 V102 H46Z" fill="rgba(0,0,0,.18)" />}
+    <defs>
+      <linearGradient id="jcWhite" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#FFFFFF" />
+        <stop offset="1" stopColor="#DCE1E9" />
+      </linearGradient>
+      <linearGradient id="jcCyl" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stopColor="#D5DAE3" />
+        <stop offset="0.35" stopColor="#FFFFFF" />
+        <stop offset="0.75" stopColor="#F1F3F7" />
+        <stop offset="1" stopColor="#CBD1DB" />
+      </linearGradient>
+      <filter id="jcShadow" x="-20%" y="-20%" width="140%" height="150%">
+        <feDropShadow dx="0" dy="5" stdDeviation="5" floodColor="#0F172A" floodOpacity="0.2" />
+      </filter>
+    </defs>
+  );
+}
+
+function Print({ x, y, c, size = 16, label = true }) {
+  return (
+    <g textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight="700">
+      <text x={x} y={y} fontSize={size} fill={c}>{'</>'}</text>
+      {label && <text x={x} y={y + size * 0.78} fontSize={size * 0.5} fill={INK} letterSpacing="0.8">JeetCode</text>}
+    </g>
+  );
+}
+
+function Tee({ c }) {
+  return (
+    <svg viewBox="0 0 200 200" width="100%" height="100%" aria-hidden="true">
+      <Defs />
+      <g filter="url(#jcShadow)">
+        <path d="M72 26 L38 40 L10 80 L38 98 L52 82 L52 178 L148 178 L148 82 L162 98 L190 80 L162 40 L128 26 Q100 46 72 26Z" fill="url(#jcWhite)" stroke="#CDD3DC" strokeWidth="1.2" />
+      </g>
+      <path d="M72 26 Q100 46 128 26 L124 24 Q100 40 76 24Z" fill="#E4E8EE" />
+      <path d="M76 25 Q100 52 124 25" fill="none" stroke="#C3CAD5" strokeWidth="3" strokeLinecap="round" />
+      <path d="M52 82 Q60 100 56 120" fill="none" stroke="#000" strokeOpacity="0.06" strokeWidth="6" />
+      <path d="M148 82 Q140 100 144 120" fill="none" stroke="#000" strokeOpacity="0.06" strokeWidth="6" />
+      <path d="M52 170 H148" stroke="#C9CFD9" strokeWidth="1.5" />
+      <Print x={100} y={92} c={c} size={22} />
+    </svg>
+  );
+}
+
+function Hoodie({ c }) {
+  return (
+    <svg viewBox="0 0 200 200" width="100%" height="100%" aria-hidden="true">
+      <Defs />
+      <g filter="url(#jcShadow)">
+        <path d="M70 30 L36 44 L10 96 L34 108 L50 88 L50 178 L150 178 L150 88 L166 108 L190 96 L164 44 L130 30 Q100 22 70 30Z" fill="url(#jcWhite)" stroke="#CDD3DC" strokeWidth="1.2" />
+      </g>
+      <path d="M70 30 Q100 12 130 30 Q124 62 100 66 Q76 62 70 30Z" fill="#E3E7EE" stroke="#C9CFD9" strokeWidth="1.2" />
+      <path d="M82 34 Q100 24 118 34 Q114 54 100 57 Q86 54 82 34Z" fill="#CBD1DB" />
+      <path d="M92 66 V92 M108 66 V92" stroke="#B7BFCC" strokeWidth="2.2" strokeLinecap="round" />
+      <path d="M68 140 H132 L138 172 H62Z" fill="#000" fillOpacity="0.04" stroke="#CDD3DC" strokeWidth="1.2" />
+      <Print x={100} y={116} c={c} size={18} label={false} />
     </svg>
   );
 }
 
 function Mug({ c }) {
   return (
-    <svg viewBox="0 0 120 120" width="100%" height="100%" aria-hidden="true">
-      <rect x="26" y="34" width="56" height="62" rx="8" fill="#fff" stroke={c} strokeWidth="4" />
-      <path d="M82 46 H94 Q104 46 104 58 Q104 72 92 72 H82" fill="none" stroke={c} strokeWidth="6" strokeLinecap="round" />
-      <text x="54" y="70" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="11" fill={c}>Accepted.</text>
-      <path d="M40 24 Q44 14 40 8 M56 24 Q60 14 56 8 M72 24 Q76 14 72 8" stroke="rgba(255,255,255,.7)" strokeWidth="3" fill="none" strokeLinecap="round" />
+    <svg viewBox="0 0 200 200" width="100%" height="100%" aria-hidden="true">
+      <Defs />
+      <ellipse cx="98" cy="170" rx="62" ry="10" fill="#FFFFFF" stroke="#D3D8E0" />
+      <ellipse cx="98" cy="168" rx="48" ry="6" fill="#E6E9EF" />
+      <path d="M136 90 Q168 90 168 118 Q168 146 132 146" fill="none" stroke="#D3D8E0" strokeWidth="11" strokeLinecap="round" />
+      <path d="M136 90 Q164 90 164 118 Q164 142 132 142" fill="none" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
+      <g filter="url(#jcShadow)">
+        <path d="M56 66 H140 V132 Q140 164 98 164 Q56 164 56 132Z" fill="url(#jcCyl)" stroke="#CDD3DC" strokeWidth="1.2" />
+      </g>
+      <ellipse cx="98" cy="66" rx="42" ry="10" fill="#F6F7FA" stroke="#CDD3DC" strokeWidth="1.2" />
+      <ellipse cx="98" cy="67" rx="36" ry="7" fill="#B7824A" />
+      <ellipse cx="94" cy="65" rx="14" ry="2.5" fill="#fff" fillOpacity="0.28" />
+      <path d="M84 50 Q90 40 84 30 M102 50 Q108 40 102 30" stroke="#B8BFCB" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.8" />
+      <Print x={98} y={112} c={c} size={20} />
+    </svg>
+  );
+}
+
+function Notebook({ c }) {
+  return (
+    <svg viewBox="0 0 200 200" width="100%" height="100%" aria-hidden="true">
+      <Defs />
+      <rect x="62" y="30" width="98" height="144" rx="5" fill="#D9DEE6" />
+      <rect x="58" y="26" width="98" height="144" rx="5" fill="#E9ECF1" />
+      <g filter="url(#jcShadow)">
+        <rect x="52" y="22" width="98" height="144" rx="6" fill="url(#jcWhite)" stroke="#CDD3DC" strokeWidth="1.2" />
+      </g>
+      <rect x="52" y="22" width="12" height="144" rx="4" fill="#DDE2EA" />
+      <path d="M64 22 V166" stroke="#C3CAD5" strokeWidth="1.2" />
+      <rect x="132" y="22" width="7" height="144" fill={c} opacity="0.92" />
+      <Print x={97} y={84} c={c} size={26} />
+      <g stroke="#CBD1DB" strokeWidth="1.6" strokeLinecap="round">
+        <path d="M78 120 H118" /><path d="M78 128 H112" />
+      </g>
     </svg>
   );
 }
 
 function Cap({ c }) {
   return (
-    <svg viewBox="0 0 120 120" width="100%" height="100%" aria-hidden="true">
-      <path d="M24 70 Q24 28 60 28 Q96 28 96 70Z" fill={c} />
-      <path d="M20 72 H110 Q108 84 90 84 H24Z" fill="rgba(0,0,0,.28)" />
-      <text x="60" y="58" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="14" fill="rgba(255,255,255,.95)">{'</>'}</text>
+    <svg viewBox="0 0 200 200" width="100%" height="100%" aria-hidden="true">
+      <Defs />
+      <g filter="url(#jcShadow)">
+        <path d="M42 128 Q40 56 100 54 Q160 56 158 128Z" fill="url(#jcWhite)" stroke="#CDD3DC" strokeWidth="1.2" />
+        <path d="M34 128 Q100 112 166 128 Q176 150 100 154 Q24 150 34 128Z" fill="#E1E5EC" stroke="#C9CFD9" strokeWidth="1.2" />
+      </g>
+      <path d="M100 54 V124 M72 62 Q64 96 66 124 M128 62 Q136 96 134 124" stroke="#D0D5DE" strokeWidth="1.2" fill="none" />
+      <circle cx="100" cy="53" r="4" fill="#DDE2EA" stroke="#C9CFD9" />
+      <Print x={100} y={104} c={c} size={20} label={false} />
     </svg>
   );
 }
 
-const ICONS = { pro: WorkspacePremiumRoundedIcon, course: SchoolRoundedIcon, stickers: StickyNote2RoundedIcon, notebook: MenuBookRoundedIcon, mug: LocalCafeRoundedIcon };
-
-// Illustrated tile for an item. No photos needed: drawn from the item's art key + accent colour.
-export function ItemArt({ art, accent = '#6366F1', height = 150, radius = '12px' }) {
-  const Icon = ICONS[art];
-  let inner;
-  if (art === 'tee') inner = <Tee c={accent} />;
-  else if (art === 'hoodie') inner = <Tee c={accent} hoodie />;
-  else if (art === 'mug') inner = <Mug c={accent} />;
-  else if (art === 'cap') inner = <Cap c={accent} />;
-  else if (Icon) inner = <Icon sx={{ fontSize: height * 0.5, color: '#fff' }} />;
-  else inner = null;
-  const svg = ['tee', 'hoodie', 'mug', 'cap'].includes(art);
+function Stickers() {
   return (
-    <Box
-      sx={{
-        height,
-        borderRadius: radius,
-        display: 'grid',
-        placeItems: 'center',
-        background: `linear-gradient(135deg, ${alpha(accent, 0.28)}, ${alpha(accent, 0.08)})`,
-        ...(!svg && { background: `linear-gradient(135deg, ${accent}, ${alpha(accent, 0.65)})` }),
-        '& svg': svg ? { width: height * 0.72, height: height * 0.72 } : undefined,
-      }}
-    >
-      {inner}
+    <svg viewBox="0 0 200 200" width="100%" height="100%" aria-hidden="true">
+      <Defs />
+      <g filter="url(#jcShadow)">
+        <rect x="30" y="30" width="140" height="140" rx="10" fill="url(#jcWhite)" stroke="#CDD3DC" strokeWidth="1.2" />
+      </g>
+      <circle cx="68" cy="68" r="22" fill="#4F46E5" />
+      <text x="68" y="74" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="16" fill="#fff">{'</>'}</text>
+      <rect x="98" y="48" width="58" height="24" rx="12" fill="#10B981" />
+      <text x="127" y="64" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="10" fill="#fff">Accepted.</text>
+      <rect x="44" y="104" width="46" height="22" rx="11" fill="#F43F5E" />
+      <text x="67" y="119" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="11" fill="#fff">TLE</text>
+      <path d="M130 100 l8 17 18 2 -13 12 4 18 -17 -9 -16 9 4 -18 -13 -12 18 -2z" fill="#F59E0B" />
+      <rect x="44" y="136" width="56" height="20" rx="10" fill="#0EA5E9" />
+      <text x="72" y="150" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="9" fill="#fff">O(log n)</text>
+    </svg>
+  );
+}
+
+const ICONS = { pro: WorkspacePremiumRoundedIcon, course: SchoolRoundedIcon };
+const SVG_ART = { tee: Tee, hoodie: Hoodie, mug: Mug, notebook: Notebook, cap: Cap, stickers: Stickers };
+
+// Product picture on a light studio backdrop. If the catalog item has `image` (a real photo),
+// that is shown instead of the drawn mock-up.
+export function ItemArt({ art, accent = '#6366F1', height = 150, radius = '12px', image = null }) {
+  const Svg = SVG_ART[art];
+  const Icon = ICONS[art];
+  return (
+    <Box sx={{ height, borderRadius: radius, bgcolor: STUDIO, display: 'grid', placeItems: 'center', overflow: 'hidden' }}>
+      {image ? (
+        <Box component="img" src={image} alt="" loading="lazy" sx={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+      ) : Svg ? (
+        <Box sx={{ width: height * 0.92, height: height * 0.92 }}>
+          <Svg c={accent} />
+        </Box>
+      ) : Icon ? (
+        <Box sx={{ width: height * 0.52, height: height * 0.52, borderRadius: '50%', display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${accent}, ${alpha(accent, 0.65)})`, boxShadow: `0 6px 16px ${alpha(accent, 0.35)}` }}>
+          <Icon sx={{ fontSize: height * 0.3, color: '#fff' }} />
+        </Box>
+      ) : null}
     </Box>
   );
 }

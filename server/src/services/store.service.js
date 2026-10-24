@@ -87,6 +87,7 @@ export function publicItem(item, ctx = {}) {
     blurb: item.blurb,
     desc: item.desc,
     art: item.art,
+    image: item.image || null, // optional real photo URL, set in config/store.js
     accent: item.accent,
     popular: Boolean(item.popular),
     active: item.active,

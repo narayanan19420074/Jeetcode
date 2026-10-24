@@ -61,7 +61,7 @@ export default function CoursePanel({ slug, signedIn, onClose, onBuy, onProgress
         {course && (
           <>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2.5} sx={{ mb: 3 }}>
-              <Box sx={{ width: { xs: '100%', sm: 180 }, flexShrink: 0 }}><ItemArt art={course.art} accent={course.accent} height={130} /></Box>
+              <Box sx={{ width: { xs: '100%', sm: 180 }, flexShrink: 0 }}><ItemArt art={course.art} accent={course.accent} height={130} image={course.image} /></Box>
               <Box sx={{ flex: 1 }}>
                 <Stack direction="row" spacing={1} sx={{ mb: 1 }} flexWrap="wrap" useFlexGap>
                   <Chip size="small" label={course.level} />

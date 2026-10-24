@@ -29,48 +29,42 @@ function ItemCard({ item, balance, signedIn, onBuy, onCourse }) {
   const note = priceNote(item);
   const owned = item.owned;
   const afford = signedIn && balance >= item.price;
-  const pct = signedIn ? Math.min(100, Math.round((balance / item.price) * 100)) : 0;
   const disabled = item.soldOut && !owned;
   const isCourse = item.kind === 'course';
-  const meta = isCourse ? `${item.lessonCount} lessons · ${Math.round(item.minutes / 60)}h` : item.kind === 'physical' ? 'Ships within India' : item.kind === 'pro' ? `+${item.days} days` : '';
+  const need = item.price - balance;
 
   return (
-    <Card variant="outlined" sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: '12px', overflow: 'hidden', opacity: disabled ? 0.65 : 1 }}>
-      {/* Media: full-bleed, the card's own radius clips it */}
+    <Card variant="outlined" sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: '12px', overflow: 'hidden', opacity: disabled ? 0.6 : 1, transition: 'box-shadow .15s, border-color .15s', '&:hover': { boxShadow: 2, borderColor: 'primary.main' } }}>
       <Box sx={{ position: 'relative', cursor: isCourse ? 'pointer' : 'default' }} onClick={isCourse ? () => onCourse(item.slug) : undefined}>
-        <ItemArt art={item.art} accent={item.accent} height={152} radius={0} />
+        <ItemArt art={item.art} accent={item.accent} height={124} radius={0} image={item.image} />
         {(item.popular || note) && (
-          <Stack direction="row" spacing={0.5} sx={{ position: 'absolute', top: 12, left: 12 }}>
-            {item.popular && <Chip size="small" color="warning" label="Popular" sx={{ fontWeight: 700 }} />}
-            {note && <Chip size="small" color={item.soldOut ? 'default' : 'error'} label={note} sx={{ fontWeight: 700 }} />}
+          <Stack direction="row" spacing={0.5} sx={{ position: 'absolute', top: 8, left: 8 }}>
+            {item.popular && <Chip size="small" color="warning" label="Popular" sx={{ height: 20, fontSize: '0.68rem', fontWeight: 700 }} />}
+            {note && <Chip size="small" color={item.soldOut ? 'default' : 'error'} label={note} sx={{ height: 20, fontSize: '0.68rem', fontWeight: 700 }} />}
           </Stack>
         )}
       </Box>
 
-      {/* Content: 16dp padding, title / supporting text / meta */}
-      <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 0.5, p: 2, pb: 1, '&:last-child': { pb: 1 } }}>
-        <Typography variant="subtitle1" component="h3" sx={{ fontWeight: 700, lineHeight: 1.3 }}>{item.name}</Typography>
-        <Typography variant="body2" color="text.secondary">{item.blurb}</Typography>
-        {meta && <Typography variant="caption" color="text.secondary">{meta}</Typography>}
-        {!owned && signedIn && !afford && (
-          <Box sx={{ mt: 'auto', pt: 1 }}>
-            <LinearProgress variant="determinate" value={pct} color="warning" sx={{ height: 4, borderRadius: '2px' }} />
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.5 }}>{fmt(item.price - balance)} more coins to go</Typography>
-          </Box>
-        )}
-      </CardContent>
+      <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', p: 1.5, gap: 0.25, minWidth: 0 }}>
+        <Typography variant="subtitle2" component="h3" noWrap title={item.name} sx={{ fontWeight: 700 }}>{item.name}</Typography>
+        <Typography variant="caption" color="text.secondary" noWrap title={item.blurb}>{item.blurb}</Typography>
 
-      {/* Actions: price left, button right, always on the same baseline */}
-      <CardActions sx={{ px: 2, pb: 2, pt: 1, justifyContent: 'space-between', gap: 1 }}>
-        <Coins value={item.price} size={20} />
-        {owned ? (
-          <Button variant="outlined" startIcon={<CheckCircleRoundedIcon />} onClick={() => onCourse(item.slug)} sx={{ fontWeight: 700, minWidth: 96 }}>Open</Button>
-        ) : (
-          <Button variant={afford ? 'contained' : 'outlined'} disableElevation disabled={disabled} onClick={() => onBuy(item)} sx={{ fontWeight: 700, minWidth: 96 }}>
-            {disabled ? 'Sold out' : afford ? 'Redeem' : 'View'}
-          </Button>
-        )}
-      </CardActions>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1} sx={{ mt: 'auto', pt: 1 }}>
+          <Box sx={{ minWidth: 0 }}>
+            <Coins value={item.price} size={17} />
+            {!owned && signedIn && !afford && !disabled && (
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', fontSize: '0.68rem', lineHeight: 1.3 }}>Need {fmt(need)} more</Typography>
+            )}
+          </Box>
+          {owned ? (
+            <Button size="small" variant="outlined" onClick={() => onCourse(item.slug)} sx={{ fontWeight: 700, minWidth: 64, borderRadius: '8px' }}>Open</Button>
+          ) : (
+            <Button size="small" variant={afford ? 'contained' : 'outlined'} disableElevation disabled={disabled} onClick={() => onBuy(item)} sx={{ fontWeight: 700, minWidth: 64, borderRadius: '8px' }}>
+              {disabled ? 'Sold out' : afford ? 'Redeem' : 'View'}
+            </Button>
+          )}
+        </Stack>
+      </Box>
     </Card>
   );
 }
@@ -173,24 +167,24 @@ export default function StorePage() {
   const d = wallet?.daily;
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 1.5, md: 3 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 1.5, md: 2 } }}>
       {/* Header: balance + the one daily action */}
       <Paper
         variant="outlined"
         sx={(t) => ({
-          p: { xs: 2, md: 2.5 }, mb: 1.5, borderRadius: '16px', display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center',
+          p: { xs: 1.5, md: 2 }, mb: 1.5, borderRadius: '16px', display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center',
           background: `linear-gradient(135deg, ${alpha(t.palette.warning.main, 0.16)}, ${alpha(t.palette.primary.main, 0.08)})`,
         })}
       >
         <Box sx={{ flex: '1 1 200px', minWidth: 0 }}>
-          <Typography variant="h5" sx={{ fontWeight: 800 }}>JeetCode Store</Typography>
-          <Typography variant="body2" color="text.secondary">Spend coins you earn by solving.</Typography>
+          <Typography variant="h6" component="h1" sx={{ fontWeight: 800 }}>JeetCode Store</Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ display: { xs: 'none', sm: 'block' } }}>Spend coins you earn by solving.</Typography>
         </Box>
         {isAuthenticated ? (
           <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" useFlexGap>
             <Box sx={{ cursor: 'pointer' }} onClick={() => setTab('coins')}>
               <Typography variant="caption" color="text.secondary">Your coins</Typography>
-              <Coins value={balance} size={28} />
+              <Coins value={balance} size={24} />
             </Box>
             {d?.eligible ? (
               <Button variant="contained" disableElevation startIcon={<CardGiftcardRoundedIcon />} onClick={claim} disabled={claiming} sx={{ fontWeight: 800 }}>
@@ -263,8 +257,8 @@ export default function StorePage() {
           </Stack>
 
           {loading && !data ? (
-            <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: '1fr 1fr', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' } }}>
-              {Array.from({ length: 8 }).map((_, i) => <Skeleton key={i} variant="rounded" height={290} sx={{ borderRadius: '12px' }} />)}
+            <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)', lg: 'repeat(5, 1fr)' } }}>
+              {Array.from({ length: 10 }).map((_, i) => <Skeleton key={i} variant="rounded" height={206} sx={{ borderRadius: '12px' }} />)}
             </Box>
           ) : items.length === 0 ? (
             <Box sx={{ textAlign: 'center', py: 8 }}>
@@ -272,7 +266,7 @@ export default function StorePage() {
               <Typography color="text.secondary">Try another search or category.</Typography>
             </Box>
           ) : (
-            <Box sx={{ display: 'grid', gap: { xs: 1.5, md: 2 }, gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' } }}>
+            <Box sx={{ display: 'grid', gap: { xs: 1.5, md: 2 }, gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)', lg: 'repeat(5, 1fr)' } }}>
               {items.map((it) => <ItemCard key={it.slug} item={it} balance={balance} signedIn={isAuthenticated} onBuy={buy} onCourse={setCourseSlug} />)}
             </Box>
           )}

@@ -101,7 +101,7 @@ export default function CheckoutDialog({ item, balance, states = [], open, onClo
       </DialogTitle>
       <DialogContent dividers>
         <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
-          <Box sx={{ width: 96, flexShrink: 0 }}><ItemArt art={item.art} accent={item.accent} height={96} radius="8px" /></Box>
+          <Box sx={{ width: 96, flexShrink: 0 }}><ItemArt art={item.art} accent={item.accent} height={96} radius="8px" image={item.image} /></Box>
           <Box sx={{ minWidth: 0 }}>
             <Typography sx={{ fontWeight: 800 }}>{item.name}</Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 0.75 }}>{item.blurb}</Typography>
