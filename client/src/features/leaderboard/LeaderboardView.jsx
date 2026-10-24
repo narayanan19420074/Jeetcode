@@ -1,50 +1,24 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useReducedMotion } from 'framer-motion';
-import { Box, Button, Popover, Skeleton, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Popover, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
-import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
-import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
-import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import { leaderboardApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR } from '../dashboard/dashboardUtils';
-import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
-import { TIERS, tierFor } from './tiers';
-import { APT_COLOR, AvatarRing, MEDAL, Mix, PT, YouChip, activeLabel, calm, mono, sweep } from './lbShared';
-import { lbTokens } from './lbTheme';
+import { tierFor } from './tiers';
+import { APT_COLOR, AvatarRing, PT, calm, mono, sweep } from './lbShared';
 import EmpireCard from './EmpireCard';
+import LeaderboardPanel from './lbPanel';
 
 const LIMIT = 30;
 
 // The layout is chosen from the width this view actually gets (not the window), because the
 // dashboard sidebar eats a different amount at each breakpoint.
-const PANEL_MIN = 900; // side panel (spotlight, next target, tiers) fits from here
-const PANEL_W = 288;
+const PANEL_MIN = 900; // side panel (player card) fits from here
+const PANEL_W = 316;
 const GAP = 16;
-
-const GLASS = 'rgba(255,255,255,0.14)';
-const SOFT = 'rgba(255,255,255,0.86)';
-const SHADOW = '0 14px 28px -16px rgba(2,6,23,0.85)';
-const AMBER_BAR = `linear-gradient(90deg, ${PLAN_AMBER}, #F59E0B)`;
-const themeGrad = (name) => (PLAN_THEMES.find((t) => t.name === name) || PLAN_THEMES[0]).gradient;
-const TOP_GRAD = {
-  1: 'linear-gradient(135deg,#78350F 0%,#B45309 50%,#F59E0B 100%)',
-  2: 'linear-gradient(135deg,#0F172A 0%,#334155 55%,#64748B 100%)',
-  3: 'linear-gradient(135deg,#431407 0%,#9A3412 55%,#EA580C 100%)',
-};
-// The side-panel hero changes colour with the tier of the player it shows.
-const TIER_GRAD = { bronze: TOP_GRAD[3], silver: TOP_GRAD[2], gold: TOP_GRAD[1], platinum: themeGrad('teal'), diamond: themeGrad('indigo'), legend: themeGrad('plum') };
-const blobs = (
-  <>
-    <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.26), transparent 70%)', pointerEvents: 'none' }} />
-    <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: -30, width: 140, height: 140, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%)', pointerEvents: 'none' }} />
-  </>
-);
-const clamp2 = { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' };
 
 function useDebounced(value, ms = 350) {
   const [v, setV] = useState(value);
@@ -119,180 +93,6 @@ function RowDetail({ row }) {
   );
 }
 
-// ---------- side panel ----------
-
-function Spotlight({ row, isMe, points, learners, topPercent, loading, mode }) {
-  const T = lbTokens(useTheme().palette.mode);
-  const small = mode === 'tiny';
-  if (!row) {
-    return (
-      <Box sx={{ p: 2.5, flex: '1 1 auto', minHeight: 0, overflow: 'hidden', borderRadius: '20px', bgcolor: T.soft, boxShadow: T.pressed }}>
-        {loading ? <Skeleton variant="rounded" height={160} /> : <Typography variant="body2" sx={{ color: T.muted }}>Pick a player to see how they are doing.</Typography>}
-      </Box>
-    );
-  }
-  const { tier, next, progress, toNext } = tierFor(row.score);
-  const medal = MEDAL[row.rank];
-  const st = activeLabel(row.lastActive);
-  const stColor = st.live ? '#A7F3D0' : st.color === 'warning.main' ? '#FDE68A' : 'rgba(255,255,255,0.65)';
-  const lines = [
-    ['Easy', row.easy, points.easy, DIFF_COLOR.Easy],
-    ['Medium', row.medium, points.medium, DIFF_COLOR.Medium],
-    ['Hard', row.hard, points.hard, DIFF_COLOR.Hard],
-    ['Aptitude', row.aptitude, points.aptitude, APT_COLOR],
-  ];
-  const label = { fontSize: 11, fontWeight: 700, color: SOFT };
-  return (
-    <Box sx={{ position: 'relative', overflow: 'hidden', flex: '1 1 auto', minHeight: 0, p: small ? 1.75 : 2.25, borderRadius: '20px', color: '#fff', background: TIER_GRAD[tier.key], boxShadow: `inset 0 1px 0 rgba(255,255,255,0.18), ${SHADOW}` }}>
-      {blobs}
-      <Box sx={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 1.25 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-          <AvatarRing src={row.avatarUrl} name={row.name} size={small ? 44 : 52} a={medal ? medal.a : PLAN_AMBER} b={medal ? medal.b : '#F59E0B'} ring={3} />
-          <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Typography noWrap sx={{ fontWeight: 800, fontSize: 17, lineHeight: 1.25 }}>{row.name}{isMe && <YouChip />}</Typography>
-            <Typography noWrap variant="body2" sx={{ color: SOFT }}>@{row.handle}{row.company && !small ? `, ${row.company}` : ''}</Typography>
-          </Box>
-          {isMe && topPercent && learners > 0 && (
-            <Tooltip title={`Top ${topPercent}% of ${learners.toLocaleString()} ranked players`}>
-              <Box sx={{ flexShrink: 0, px: 1, py: 0.35, borderRadius: 99, fontSize: 12, fontWeight: 800, color: '#FDE68A', bgcolor: 'rgba(251,191,36,0.18)', border: '1px solid rgba(251,191,36,0.5)' }}>Top {topPercent}%</Box>
-            </Tooltip>
-          )}
-        </Box>
-
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 1 }}>
-          {[['Rank', `#${row.rank}`], ['Points', row.score.toLocaleString()]].map(([l, val]) => (
-            <Box key={l} sx={{ py: small ? 0.75 : 1, textAlign: 'center', borderRadius: '12px', bgcolor: GLASS, minWidth: 0 }}>
-              <Typography sx={label}>{l}</Typography>
-              <Typography noWrap sx={[{ fontWeight: 900, fontSize: small ? 17 : 20, lineHeight: 1.2 }, mono]}>{val}</Typography>
-            </Box>
-          ))}
-          <Box sx={{ py: small ? 0.75 : 1, textAlign: 'center', borderRadius: '12px', bgcolor: GLASS, minWidth: 0 }}>
-            <Typography sx={label}>Streak</Typography>
-            <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
-              <LocalFireDepartmentRoundedIcon sx={{ fontSize: small ? 18 : 20, color: PLAN_AMBER }} />
-              <Typography sx={[{ fontWeight: 900, fontSize: small ? 17 : 20, lineHeight: 1.2 }, mono]}>{row.streak}</Typography>
-            </Box>
-          </Box>
-        </Box>
-
-        <Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.6, gap: 1 }}>
-            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: '#FDE68A', fontWeight: 800, fontSize: 13 }}>
-              <WorkspacePremiumRoundedIcon sx={{ fontSize: 18 }} />{tier.name}
-            </Box>
-            <Typography noWrap sx={{ fontSize: 12, fontWeight: 700, color: SOFT }}>{next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top tier reached'}</Typography>
-          </Box>
-          <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Progress to next tier" sx={{ height: 9, borderRadius: 99, bgcolor: 'rgba(255,255,255,0.18)', overflow: 'hidden' }}>
-            <Box sx={{ width: `${Math.max(progress, 4)}%`, height: '100%', borderRadius: 99, background: AMBER_BAR, transition: 'width .6s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
-          </Box>
-        </Box>
-
-        {mode === 'full' && (
-          <Box sx={{ display: 'grid', gap: 0.9 }}>
-            {lines.map(([l, n, pts, color]) => (
-              <Box key={l} sx={{ display: 'grid', gridTemplateColumns: '10px 1fr auto 64px', alignItems: 'center', columnGap: 1 }}>
-                <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: color }} />
-                <Typography variant="body2" sx={{ fontWeight: 600 }}>{l}</Typography>
-                <Typography sx={[{ fontWeight: 800, fontSize: 14 }, mono]}>{n}</Typography>
-                <Typography variant="caption" sx={[{ textAlign: 'right', color: SOFT }, mono]}>{(n * pts).toLocaleString()} pts</Typography>
-              </Box>
-            ))}
-          </Box>
-        )}
-        {mode === 'medium' && (
-          <Box>
-            <Mix row={row} onDark />
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 0.9 }}>
-              {lines.map(([l, n, , color]) => (
-                <Tooltip key={l} title={l}>
-                  <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}>
-                    <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: color }} />
-                    <Typography sx={[{ fontWeight: 800, fontSize: 13 }, mono]}>{n}</Typography>
-                  </Box>
-                </Tooltip>
-              ))}
-            </Box>
-          </Box>
-        )}
-        {mode === 'full' && (
-          <Box sx={{ pt: 1.25, borderTop: '1px solid rgba(255,255,255,0.18)', display: 'flex', justifyContent: 'space-between', gap: 1 }}>
-            <Typography noWrap variant="caption" sx={{ fontWeight: 700, color: SOFT }}>{row.recent} solved in 7 days</Typography>
-            <Typography noWrap variant="caption" sx={{ fontWeight: 800, color: stColor }}>{st.text}</Typography>
-          </Box>
-        )}
-      </Box>
-    </Box>
-  );
-}
-
-// "12 pts to catch Asha": only for the logged-in player.
-function NextTarget({ me, neighbors, points, mode }) {
-  const { above, below } = neighbors;
-  const solves = above ? Math.ceil(above.gap / points.medium) : 0;
-  const head = above ? `${above.gap.toLocaleString()} pts to catch ${above.name}` : me.rank === 1 ? 'You lead this board' : 'Keep solving';
-  const sub = above ? `They are #${above.rank}. About ${solves} Medium ${solves === 1 ? 'question' : 'questions'}.` : 'Solve more to stay ahead.';
-  return (
-    <Box sx={{ position: 'relative', overflow: 'hidden', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 1.5, p: mode === 'tiny' ? 1.5 : 2, borderRadius: '20px', color: '#fff', background: themeGrad('ocean'), boxShadow: SHADOW }}>
-      {blobs}
-      <Box sx={{ position: 'relative', width: 40, height: 40, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: GLASS }}>
-        {above ? <TrendingUpRoundedIcon /> : <EmojiEventsRoundedIcon sx={{ color: PLAN_AMBER }} />}
-      </Box>
-      <Box sx={{ position: 'relative', minWidth: 0, flex: 1 }}>
-        <Typography noWrap title={head} sx={{ fontWeight: 800, fontSize: '0.9rem', lineHeight: 1.3 }}>{head}</Typography>
-        {mode !== 'tiny' && <Typography noWrap title={sub} sx={{ fontSize: '0.78rem', color: SOFT }}>{sub}</Typography>}
-        {mode === 'full' && below && (
-          <Typography noWrap sx={{ fontSize: '0.78rem', color: SOFT }}>{below.gap.toLocaleString()} pts ahead of {below.name}</Typography>
-        )}
-      </Box>
-    </Box>
-  );
-}
-
-function NoteCard({ grad, Icon, title, text, action, mode }) {
-  return (
-    <Box sx={{ position: 'relative', overflow: 'hidden', flexShrink: 0, p: mode === 'tiny' ? 1.5 : 2, borderRadius: '20px', color: '#fff', background: grad, boxShadow: SHADOW }}>
-      {blobs}
-      <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.5 }}>
-        <Box sx={{ width: 40, height: 40, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: GLASS }}><Icon /></Box>
-        <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.9rem' }}>{title}</Typography>
-          {mode !== 'tiny' && <Typography sx={[{ fontSize: '0.78rem', color: SOFT }, clamp2]}>{text}</Typography>}
-        </Box>
-      </Box>
-      {action && <Box sx={{ position: 'relative', mt: 1.25 }}>{action}</Box>}
-    </Box>
-  );
-}
-
-// Six tier icons in a row, the current one lit. Hover for the points needed.
-function TiersCard({ currentKey, points, mode }) {
-  const T = lbTokens(useTheme().palette.mode);
-  return (
-    <Box sx={{ p: 1.5, flexShrink: 0, borderRadius: '20px', bgcolor: T.soft, boxShadow: T.raised }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {TIERS.map((t) => {
-          const on = t.key === currentKey;
-          return (
-            <Tooltip key={t.key} title={`${t.name}, ${t.min.toLocaleString()}+ pts`}>
-              <Box
-                role="img" aria-label={`${t.name} tier, ${t.min} points`} tabIndex={0}
-                sx={{ width: 36, height: 36, borderRadius: '50%', display: 'grid', placeItems: 'center', color: on ? '#fff' : t.color, background: on ? `linear-gradient(135deg, ${t.color}, color-mix(in srgb, ${t.color} 55%, #000))` : `color-mix(in srgb, ${t.color} 14%, transparent)`, boxShadow: on ? `0 6px 14px -4px ${t.color}` : 'none' }}
-              >
-                <WorkspacePremiumRoundedIcon sx={{ fontSize: 20 }} />
-              </Box>
-            </Tooltip>
-          );
-        })}
-      </Box>
-      {mode === 'full' && (
-        <Typography variant="caption" noWrap sx={{ display: 'block', mt: 1, textAlign: 'center', color: T.muted }}>
-          Easy {points.easy}, Medium {points.medium}, Hard {points.hard}, Aptitude {points.aptitude} pts each
-        </Typography>
-      )}
-    </Box>
-  );
-}
-
 // ---------- the page ----------
 
 export default function LeaderboardView({ isAuthenticated }) {
@@ -329,7 +129,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   const size = useElSize(wrapEl, { w: typeof window !== 'undefined' && window.innerWidth >= 1200 ? 1000 : 400, h: 700 });
   const board = useElSize(boardEl, { w: 400, h: 700 });
   const showPanel = size.w >= PANEL_MIN;
-  const panelMode = size.h >= 780 ? 'full' : size.h >= 600 ? 'medium' : 'tiny';
+  const shortPanel = size.h < 760; // short window: drop the tier strip
   const q = useDebounced(search);
   const scroller = useRef(null);
   const sentinel = useRef(null);
@@ -399,7 +199,6 @@ export default function LeaderboardView({ isAuthenticated }) {
   const listRows = rows.slice(champion ? 1 : 0);
   const meInList = Boolean(me && listRows.some((r) => r.userId === me.userId));
   const selectedRow = (selectedId && (rows.find((r) => r.userId === selectedId) || (me?.userId === selectedId ? me : null))) || me || champion || rows[0] || null;
-  const selectedTier = selectedRow ? tierFor(selectedRow.score).tier.key : null;
   const points = meta?.points || PT;
   const stats = meta?.stats;
 
@@ -424,24 +223,10 @@ export default function LeaderboardView({ isAuthenticated }) {
         </Box>
 
         {showPanel && (
-          <Box sx={{ minHeight: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-            {!isAuthenticated && (
-              <NoteCard
-                mode={panelMode} grad={themeGrad('ocean')} Icon={EmojiEventsRoundedIcon} title="See where you stand" text="Log in to get your rank and follow friends."
-                action={<Button component={RouterLink} to="/login" fullWidth startIcon={<BoltRoundedIcon />} disableElevation sx={{ height: 40, borderRadius: '14px', bgcolor: PLAN_AMBER, color: '#1B1200', fontWeight: 800, '&:hover': { bgcolor: '#F5B50F' } }}>Log in</Button>}
-              />
-            )}
-            <Spotlight
-              mode={panelMode} row={selectedRow} isMe={Boolean(me && selectedRow && selectedRow.userId === me.userId)} points={points}
-              learners={stats?.learners || 0} topPercent={stats?.topPercent} loading={firstLoad}
-            />
-            {me && meta?.neighbors
-              ? <NextTarget me={me} neighbors={meta.neighbors} points={points} mode={panelMode} />
-              : isAuthenticated && meta && !meta.me && !loading && (
-                <NoteCard mode={panelMode} grad={themeGrad('ember')} Icon={BoltRoundedIcon} title="Not ranked yet" text={`Solve a question${period === 'all' ? '' : ' in this period'} to enter the leaderboard.`} />
-              )}
-            {panelMode !== 'tiny' && <TiersCard currentKey={selectedTier} points={points} mode={panelMode} />}
-          </Box>
+          <LeaderboardPanel
+            row={selectedRow} me={me} isAuthenticated={isAuthenticated} meta={meta} period={period} points={points}
+            learners={stats?.learners || 0} topPercent={stats?.topPercent} loading={firstLoad} short={shortPanel}
+          />
         )}
       </Box>
 
