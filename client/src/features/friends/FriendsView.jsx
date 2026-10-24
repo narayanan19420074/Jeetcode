@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
+import { motion, useReducedMotion } from 'framer-motion';
 import {
   Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, InputAdornment, ListItemIcon, Menu, MenuItem,
   Skeleton, Stack, TextField, Tooltip, Typography, alpha, useMediaQuery, useTheme,
@@ -11,7 +12,7 @@ import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
 import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import HourglassTopRoundedIcon from '@mui/icons-material/HourglassTopRounded';
+import ScheduleSendRoundedIcon from '@mui/icons-material/ScheduleSendRounded';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -35,15 +36,31 @@ import { WsIconButton } from '../workspace/wsUi';
 import {
   acceptFriendInvite, acceptFriendRequest, cancelFriendRequest, declineFriendRequest, fetchChatOverview, fetchFriends, removeFriend, sendFriendRequest,
 } from './friendsSlice';
-import { FLAME, GREEN, PersonAvatar, mono, practisedToday, timeAgo } from './friendsUi';
-import { EmptyNote, FilterChip, FriendRow, PersonRow, ScopeSwitch, SectionLabel, SkeletonRows, StatCard, useFavourites } from './friendsKit';
+import { FLAME, PersonAvatar, practisedToday, timeAgo } from './friendsUi';
+import { EmptyNote, FilterChip, FriendRow, LiveLine, OnlineRail, PersonRow, Reveal, SectionLabel, SkeletonRows, TabBar, useFavourites } from './friendsKit';
 import useGlobalPlayers from './useGlobalPlayers';
 import ActivityFeed from './ActivityFeed';
 import FriendChat, { ChatPanel } from './FriendChat';
 import { FriendProfilePanel } from './FriendProfileDialog';
 
 const SORTS = [['recent', 'Recent chats'], ['online', 'Online first'], ['points', 'Most points'], ['name', 'Name A to Z']];
-const hideScroll = { overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } };
+const REQUEST_TABS = ['friends', 'requests', 'sent'];
+
+// Soft tonal pill button used for "Add friend", "Accept" and friends' small actions.
+const pillBtn = (color) => (t) => ({
+  height: 32, px: 1.5, flexShrink: 0, borderRadius: `${WS.radius + 2}px`, fontSize: 12.5, fontWeight: 700, textTransform: 'none', whiteSpace: 'nowrap',
+  color: t.palette[color].main, bgcolor: alpha(t.palette[color].main, 0.12), transition: 'background-color .18s, transform .12s',
+  '&:hover': { bgcolor: alpha(t.palette[color].main, 0.22) },
+  '&:active': { transform: 'scale(0.96)' },
+});
+
+// Round icon-only action (accept / decline / cancel) with a tinted background.
+const tint = (color) => (t) => ({
+  width: 36, height: 36,
+  color: color ? t.palette[color].main : t.palette.text.secondary,
+  bgcolor: alpha(color ? t.palette[color].main : t.palette.text.primary, color ? 0.12 : 0.06),
+  '&:hover': { bgcolor: alpha(color ? t.palette[color].main : t.palette.text.primary, color ? 0.22 : 0.12), color: color ? t.palette[color].main : t.palette.text.primary },
+});
 
 // Runs a friends thunk, shows the result as a toast, reports success.
 function useFriendAction() {
@@ -76,7 +93,7 @@ function InviteBanner({ handle, onDone }) {
     return () => { cancelled = true; };
   }, [handle]);
 
-  if (state.loading) return <Skeleton variant="rounded" height={52} sx={{ borderRadius: '12px' }} />;
+  if (state.loading) return <Skeleton variant="rounded" height={60} sx={{ borderRadius: '14px' }} />;
   if (state.error) return <Alert severity="warning" onClose={onDone}>{state.error}</Alert>;
   if (state.isSelf) return <Alert severity="info" onClose={onDone}>This is your own invite link.</Alert>;
   if (state.relation === 'friends') return <Alert severity="success" onClose={onDone}>You and @{state.user.handle} are already friends.</Alert>;
@@ -86,15 +103,17 @@ function InviteBanner({ handle, onDone }) {
   };
 
   return (
-    <Box sx={[surface, (t) => ({ display: 'flex', alignItems: 'center', gap: 1.25, px: 1.5, py: 0.9, borderColor: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.06) })]}>
-      <PersonAvatar person={state.user} size={34} />
-      <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 700, fontSize: 13.5 }}>{state.user.name}</Typography>
-        <Typography noWrap sx={{ fontSize: 12, color: 'text.secondary' }}>invited you to be friends</Typography>
+    <Reveal>
+      <Box sx={[surface, (t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.25, borderColor: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.06) })]}>
+        <PersonAvatar person={state.user} size={38} />
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography noWrap sx={{ fontWeight: 700, fontSize: 14, lineHeight: 1.35 }}>{state.user.name}</Typography>
+          <Typography noWrap sx={{ fontSize: 12.5, color: 'text.secondary' }}>invited you to be friends</Typography>
+        </Box>
+        <WsIconButton title="Accept" disabled={busy === 'invite'} onClick={accept} sx={tint('success')}><CheckRoundedIcon /></WsIconButton>
+        <WsIconButton title="Not now" onClick={onDone} sx={tint()}><CloseRoundedIcon /></WsIconButton>
       </Box>
-      <WsIconButton title="Accept" disabled={busy === 'invite'} onClick={accept} sx={{ color: 'success.main' }}><CheckRoundedIcon /></WsIconButton>
-      <WsIconButton title="Not now" onClick={onDone}><CloseRoundedIcon /></WsIconButton>
-    </Box>
+    </Reveal>
   );
 }
 
@@ -102,6 +121,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
+  const reduce = useReducedMotion();
   const [params, setParams] = useSearchParams();
   const { friends, incoming, outgoing, loaded, loading, error, online, unread, last } = useSelector((s) => s.friends);
   const { busy, run } = useFriendAction();
@@ -109,9 +129,8 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
   const { favs, toggle: toggleFav } = useFavourites(user.id);
 
-  const [scope, setScope] = useState('friends'); // 'friends' | 'global'
-  const [tab, setTab] = useState('friends'); // 'friends' | 'requests' | 'sent' | 'activity'
-  const [filter, setFilter] = useState('all'); // 'all' | 'online' | 'unread' | 'risk' | 'fav'
+  const [view, setView] = useState('friends'); // 'friends' | 'requests' | 'sent' | 'activity' | 'find'
+  const [filter, setFilter] = useState('all'); // 'all' | 'online'
   const [sortBy, setSortBy] = useState('recent');
   const [q, setQ] = useState('');
   const [chatId, setChatId] = useState(null);
@@ -129,7 +148,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
 
   const needle = q.trim().toLowerCase().replace(/^@/, '');
   const noFriends = loaded && friends.length === 0;
-  const globalOn = scope === 'global' || (tab === 'friends' && (noFriends || needle.length >= 2));
+  const globalOn = view === 'find' || (view === 'friends' && (noFriends || needle.length >= 2));
   const global = useGlobalPlayers({ enabled: globalOn, q: needle });
 
   const friendIds = useMemo(() => new Set(friends.map((f) => f.userId)), [friends]);
@@ -141,23 +160,13 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   useEffect(() => { dispatch(fetchChatOverview()); }, [dispatch, friends.length]);
 
   const isOnline = (f) => Boolean(online[f.userId]);
-  const atRisk = (f) => f.streak > 0 && !practisedToday(f);
-  const onlineCount = friends.filter(isOnline).length;
-  const unreadChats = friends.filter((f) => unread[f.userId] > 0).length;
-  const riskCount = friends.filter(atRisk).length;
-  const favCount = friends.filter((f) => favs.has(f.userId)).length;
+  const onlineFriends = friends.filter(isOnline);
+  const onlineCount = onlineFriends.length;
 
   const nameMatch = (p) => !needle || p.name.toLowerCase().includes(needle) || p.handle.toLowerCase().includes(needle);
 
   const shownFriends = useMemo(() => {
     const lastAt = (f) => (last[f.userId]?.at ? Date.parse(last[f.userId].at) : 0);
-    const keep = {
-      all: () => true,
-      online: (f) => Boolean(online[f.userId]),
-      unread: (f) => unread[f.userId] > 0,
-      risk: (f) => f.streak > 0 && !practisedToday(f),
-      fav: (f) => favs.has(f.userId),
-    }[filter];
     const on = (f) => Number(Boolean(online[f.userId]));
     const cmp = {
       recent: (a, b) => lastAt(b) - lastAt(a) || on(b) - on(a) || b.score - a.score,
@@ -166,16 +175,15 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       name: (a, b) => a.name.localeCompare(b.name),
     }[sortBy];
     return friends
-      .filter((f) => keep(f) && (!needle || f.name.toLowerCase().includes(needle) || f.handle.toLowerCase().includes(needle)))
+      .filter((f) => (filter === 'online' ? on(f) : true) && (!needle || f.name.toLowerCase().includes(needle) || f.handle.toLowerCase().includes(needle)))
       .sort((a, b) => Number(favs.has(b.userId)) - Number(favs.has(a.userId)) || cmp(a, b) || a.handle.localeCompare(b.handle));
-  }, [friends, filter, sortBy, needle, online, unread, last, favs]);
+  }, [friends, filter, sortBy, needle, online, last, favs]);
 
   // /dashboard?view=friends&chat=<id> (from a notification toast) opens that chat
   const chatParam = params.get('chat');
   useEffect(() => {
     if (chatParam && friends.some((f) => f.userId === chatParam)) {
-      setScope('friends');
-      setTab('friends');
+      setView('friends');
       setChatId(chatParam);
       const next = new URLSearchParams(params);
       next.delete('chat');
@@ -217,8 +225,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   };
 
   const openChat = (id) => {
-    setScope('friends');
-    setTab('friends');
+    setView('friends');
     setChatId(id);
   };
 
@@ -256,60 +263,60 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     return undefined;
   };
 
-  const goTab = (nextTab, nextFilter = 'all') => {
-    setScope('friends');
-    setTab(nextTab);
+  const goView = (next, nextFilter = 'all') => {
+    setView(next);
     setFilter(nextFilter);
     setQ('');
   };
+  const toggleView = (next) => goView(view === next ? 'friends' : next);
 
-  // ---- action cell for a player who is not a friend (or is, in the global list)
+  // ---- action cell for a player who is not a friend (or is, in the find list)
   const playerAction = (p) => {
-    if (friendIds.has(p.userId)) return <WsIconButton title="Chat" onClick={() => openChat(p.userId)}><ChatRoundedIcon /></WsIconButton>;
+    if (friendIds.has(p.userId)) {
+      return <WsIconButton title="Chat" onClick={() => openChat(p.userId)} sx={tint('primary')}><ChatRoundedIcon /></WsIconButton>;
+    }
     if (sentIds.has(p.userId)) {
       return (
-        <Tooltip title="Request sent, waiting for them">
-          <Box component="span" sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.5, height: 28, px: 1, borderRadius: `${WS.radius}px`, fontSize: 12, fontWeight: 600, color: 'text.secondary', bgcolor: wsSurface(t).raised })}>
-            <HourglassTopRoundedIcon sx={{ fontSize: 14 }} />Sent
+        <Tooltip title="Waiting for them to accept">
+          <Box component="span" sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.6, height: 32, px: 1.25, borderRadius: `${WS.radius + 2}px`, fontSize: 12.5, fontWeight: 700, whiteSpace: 'nowrap', color: 'text.secondary', bgcolor: wsSurface(t).raised, '& svg': { fontSize: 16 } })}>
+            <ScheduleSendRoundedIcon />Request sent
           </Box>
         </Tooltip>
       );
     }
     if (received.has(p.userId)) {
       return (
-        <WsIconButton title="Accept request" disabled={busy === p.userId} onClick={() => run(p.userId, acceptFriendRequest(received.get(p.userId)), 'Friend added')} sx={{ color: 'success.main' }}>
-          <CheckRoundedIcon />
-        </WsIconButton>
+        <Button size="small" disableElevation disabled={busy === p.userId} onClick={() => run(p.userId, acceptFriendRequest(received.get(p.userId)), 'Friend added')} startIcon={<CheckRoundedIcon sx={{ fontSize: '17px !important' }} />} sx={pillBtn('success')}>
+          Accept
+        </Button>
       );
     }
     return (
-      <Tooltip title="Send friend request">
-        <span>
-          <Button
-            size="small"
-            disableElevation
-            disabled={busy === p.userId}
-            onClick={() => run(p.userId, sendFriendRequest(p.handle), 'Request sent')}
-            startIcon={<PersonAddAlt1RoundedIcon sx={{ fontSize: '16px !important' }} />}
-            sx={(t) => ({ height: 28, px: 1.1, borderRadius: `${WS.radius}px`, fontSize: 12.5, fontWeight: 700, textTransform: 'none', color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12), '&:hover': { bgcolor: alpha(t.palette.primary.main, 0.22) } })}
-          >
-            Invite
-          </Button>
-        </span>
-      </Tooltip>
+      <Button
+        size="small"
+        disableElevation
+        disabled={busy === p.userId}
+        onClick={() => run(p.userId, sendFriendRequest(p.handle), 'Friend request sent')}
+        startIcon={<PersonAddAlt1RoundedIcon sx={{ fontSize: '17px !important' }} />}
+        sx={pillBtn('primary')}
+      >
+        Add friend
+      </Button>
     );
   };
 
-  const players = (global.rows || []).filter((p) => p.userId !== user.id && (scope === 'global' || !friendIds.has(p.userId)));
-  const playerRows = (withRank) => players.map((p) => (
-    <PersonRow key={p.userId} person={p} rank={withRank ? p.rank : null} sub={`@${p.handle} · ${p.score.toLocaleString()} pts`} action={playerAction(p)} />
+  const players = (global.rows || []).filter((p) => p.userId !== user.id && (view === 'find' || !friendIds.has(p.userId)));
+  const playerRows = (withRank) => players.map((p, i) => (
+    <Reveal key={p.userId} index={i}>
+      <PersonRow person={p} rank={withRank ? p.rank : null} sub={`@${p.handle} · ${p.score.toLocaleString()} pts`} action={playerAction(p)} />
+    </Reveal>
   ));
   const playerFooter = (
     <>
       {global.rows === null && global.loading && <SkeletonRows count={5} />}
-      {global.error && <Typography sx={{ px: 2, py: 1, fontSize: 12.5, color: 'text.secondary' }}>{global.error}</Typography>}
+      {global.error && <Typography sx={{ px: 2, py: 1.25, fontSize: 13, color: 'text.secondary' }}>{global.error}</Typography>}
       {global.hasMore && (
-        <Box sx={{ textAlign: 'center', py: 1 }}>
+        <Box sx={{ textAlign: 'center', py: 1.5 }}>
           <Button size="small" onClick={global.loadMore} disabled={global.loading} sx={{ textTransform: 'none', fontWeight: 600 }}>{global.loading ? 'Loading…' : 'Show more players'}</Button>
         </Box>
       )}
@@ -318,88 +325,104 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
 
   // ---- what to show under the toolbar
   let body;
-  if (scope === 'global') {
+  if (view === 'find') {
     body = (
       <>
         <SectionLabel>{needle ? 'Search results' : 'Top players'}</SectionLabel>
         {playerRows(true)}
-        {global.rows && players.length === 0 && !global.loading && !global.error && <EmptyNote icon={<SearchRoundedIcon />}>No player found{needle ? ` for “${needle}”` : ''}.</EmptyNote>}
+        {global.rows && players.length === 0 && !global.loading && !global.error && <EmptyNote icon={<SearchRoundedIcon />} title="No player found">{needle ? `Nobody matches “${needle}”. Check the spelling or try their @handle.` : 'No players to show yet.'}</EmptyNote>}
         {playerFooter}
       </>
     );
-  } else if (tab === 'activity') {
+  } else if (view === 'activity') {
     body = <ActivityFeed />;
-  } else if (tab === 'requests') {
+  } else if (view === 'requests') {
     const rows = incoming.filter((r) => nameMatch(r.user));
     body = (
       <>
-        {rows.length === 0 && <EmptyNote icon={<MarkunreadRoundedIcon />} title="No invitations">When someone invites you, it shows up here.</EmptyNote>}
-        {rows.map((r) => (
-          <PersonRow
-            key={r.requestId}
-            person={r.user}
-            sub={`@${r.user.handle} · ${timeAgo(r.createdAt)}`}
-            action={(
-              <Stack direction="row" spacing={0.5}>
-                <WsIconButton title="Accept" disabled={busy === r.requestId} onClick={() => run(r.requestId, acceptFriendRequest(r.requestId), 'Friend added')} sx={{ color: 'success.main' }}><CheckRoundedIcon /></WsIconButton>
-                <WsIconButton title="Decline" disabled={busy === r.requestId} onClick={() => run(r.requestId, declineFriendRequest(r.requestId), 'Request declined')}><CloseRoundedIcon /></WsIconButton>
-              </Stack>
-            )}
-          />
+        <SectionLabel right={rows.length > 0 ? <Typography sx={{ fontSize: 12, color: 'text.disabled', fontWeight: 600 }}>{rows.length}</Typography> : null}>Friend requests</SectionLabel>
+        {rows.length === 0 && <EmptyNote icon={<MarkunreadRoundedIcon />} title="No friend requests">When someone sends you a request, it shows up here.</EmptyNote>}
+        {rows.map((r, i) => (
+          <Reveal key={r.requestId} index={i}>
+            <PersonRow
+              person={r.user}
+              sub={`@${r.user.handle} · ${timeAgo(r.createdAt)}`}
+              action={(
+                <Stack direction="row" spacing={0.75}>
+                  <WsIconButton title="Accept request" disabled={busy === r.requestId} onClick={() => run(r.requestId, acceptFriendRequest(r.requestId), 'Friend added')} sx={tint('success')}><CheckRoundedIcon /></WsIconButton>
+                  <WsIconButton title="Decline request" disabled={busy === r.requestId} onClick={() => run(r.requestId, declineFriendRequest(r.requestId), 'Request declined')} sx={tint()}><CloseRoundedIcon /></WsIconButton>
+                </Stack>
+              )}
+            />
+          </Reveal>
         ))}
       </>
     );
-  } else if (tab === 'sent') {
+  } else if (view === 'sent') {
     const rows = outgoing.filter((r) => nameMatch(r.user));
     body = (
       <>
-        {rows.length === 0 && <EmptyNote icon={<HourglassTopRoundedIcon />} title="Nothing pending">Requests you send wait here until they answer.</EmptyNote>}
-        {rows.map((r) => (
-          <PersonRow
-            key={r.requestId}
-            person={r.user}
-            sub={`@${r.user.handle} · sent ${timeAgo(r.createdAt)}`}
-            action={<WsIconButton title="Cancel request" disabled={busy === r.requestId} onClick={() => run(r.requestId, cancelFriendRequest(r.requestId), 'Request cancelled')}><CloseRoundedIcon /></WsIconButton>}
-          />
+        <SectionLabel right={rows.length > 0 ? <Typography sx={{ fontSize: 12, color: 'text.disabled', fontWeight: 600 }}>{rows.length}</Typography> : null}>Sent requests</SectionLabel>
+        {rows.length === 0 && <EmptyNote icon={<ScheduleSendRoundedIcon />} title="No sent requests">Requests you send wait here until the other person accepts.</EmptyNote>}
+        {rows.map((r, i) => (
+          <Reveal key={r.requestId} index={i}>
+            <PersonRow
+              person={r.user}
+              sub={`@${r.user.handle} · request sent ${timeAgo(r.createdAt)}`}
+              action={<WsIconButton title="Cancel request" disabled={busy === r.requestId} onClick={() => run(r.requestId, cancelFriendRequest(r.requestId), 'Request cancelled')} sx={tint()}><CloseRoundedIcon /></WsIconButton>}
+            />
+          </Reveal>
         ))}
       </>
     );
   } else {
+    const showRail = filter === 'all' && !needle && onlineCount > 0;
     body = (
       <>
-        {error && <Alert severity="error" sx={{ mx: 1.5, my: 1 }} action={<Button color="inherit" onClick={() => dispatch(fetchFriends())}>Retry</Button>}>{error}</Alert>}
+        {error && <Alert severity="error" sx={{ mx: 2, my: 1.5 }} action={<Button color="inherit" onClick={() => dispatch(fetchFriends())}>Retry</Button>}>{error}</Alert>}
         {!loaded && loading && <SkeletonRows />}
-        {shownFriends.map((f) => (
-          <FriendRow
-            key={f.userId}
-            f={f}
-            last={last[f.userId]}
-            myId={user.id}
-            online={isOnline(f)}
-            unread={unread[f.userId]}
-            selected={desktop && chatId === f.userId}
-            fav={favs.has(f.userId)}
-            canNudge={!practisedToday(f)}
-            nudging={acting === `nudge:${f.userId}`}
-            coding={acting === `room:${f.userId}`}
-            onOpen={() => setChatId(f.userId)}
-            onFav={() => toggleFav(f.userId)}
-            onNudge={() => nudge(f)}
-            onCode={() => codeTogether(f, desktop)}
-            onRemove={() => setConfirm(f)}
-          />
-        ))}
-        {loaded && friends.length > 0 && shownFriends.length === 0 && !needle && <EmptyNote icon={<PeopleAltRoundedIcon />}>No friends in this filter.</EmptyNote>}
-        {noFriends && !needle && (
+        {showRail && (
           <>
-            <EmptyNote icon={<PeopleAltRoundedIcon />} title="No friends yet">Invite someone below, or share your link with the share icon above.</EmptyNote>
-            <SectionLabel>Players you can invite</SectionLabel>
+            <SectionLabel>Online now</SectionLabel>
+            <OnlineRail people={onlineFriends} onOpen={setChatId} />
+            <SectionLabel>All friends</SectionLabel>
           </>
         )}
-        {needle.length >= 2 && friends.length > 0 && <SectionLabel>Players</SectionLabel>}
+        {!showRail && shownFriends.length > 0 && <Box sx={{ height: 8 }} />}
+        {shownFriends.map((f, i) => (
+          <Reveal key={f.userId} index={i}>
+            <FriendRow
+              f={f}
+              last={last[f.userId]}
+              myId={user.id}
+              online={isOnline(f)}
+              unread={unread[f.userId]}
+              selected={desktop && chatId === f.userId}
+              fav={favs.has(f.userId)}
+              canNudge={!practisedToday(f)}
+              nudging={acting === `nudge:${f.userId}`}
+              coding={acting === `room:${f.userId}`}
+              onOpen={() => setChatId(f.userId)}
+              onFav={() => toggleFav(f.userId)}
+              onNudge={() => nudge(f)}
+              onCode={() => codeTogether(f, desktop)}
+              onRemove={() => setConfirm(f)}
+            />
+          </Reveal>
+        ))}
+        {loaded && friends.length > 0 && shownFriends.length === 0 && !needle && (
+          <EmptyNote icon={<WifiTetheringRoundedIcon />} title="Nobody is online">Friends show up here as soon as they are active on JeetCode.</EmptyNote>
+        )}
+        {noFriends && !needle && (
+          <>
+            <EmptyNote icon={<PeopleAltRoundedIcon />} title="No friends yet">Add someone from the list below, or share your invite link with the share icon above.</EmptyNote>
+            <SectionLabel>Players you can add</SectionLabel>
+          </>
+        )}
+        {needle.length >= 2 && friends.length > 0 && <SectionLabel>Other players</SectionLabel>}
         {globalOn && playerRows(noFriends && !needle)}
         {globalOn && playerFooter}
-        {needle && shownFriends.length === 0 && global.rows && players.length === 0 && !global.loading && <EmptyNote icon={<SearchRoundedIcon />}>{needle.length < 2 ? 'Type at least 2 letters' : `No one found for “${needle}”`}</EmptyNote>}
+        {needle && shownFriends.length === 0 && global.rows && players.length === 0 && !global.loading && <EmptyNote icon={<SearchRoundedIcon />} title="No one found">{needle.length < 2 ? 'Type at least 2 letters.' : `Nobody matches “${needle}”.`}</EmptyNote>}
       </>
     );
   }
@@ -418,55 +441,73 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   );
   const chatOverlay = (f) => (panelMode === 'profile' ? <FriendProfilePanel f={f} onRemove={() => setConfirm(f)} /> : null);
 
-  const showChips = scope === 'friends' && tab === 'friends' && friends.length > 0;
-  const showSearch = !(scope === 'friends' && tab === 'activity');
+  const showChips = view === 'friends' && friends.length > 0;
+  const showSearch = view !== 'activity';
+  const iconSize = desktop ? 'md' : 'lg';
+
+  const title = view === 'find' ? 'Find players' : view === 'activity' ? 'Friend activity' : 'Friends';
+  const subtitle = view === 'find'
+    ? 'Search every player on JeetCode'
+    : view === 'activity'
+      ? 'What your friends solved lately'
+      : `${friends.length} ${friends.length === 1 ? 'friend' : 'friends'}${onlineCount ? ` · ${onlineCount} online` : ''}`;
+
+  const tabs = [
+    { key: 'friends', label: 'Friends', title: 'Friends', icon: <PeopleAltRoundedIcon />, count: friends.length },
+    { key: 'requests', label: 'Requests', title: 'Friend requests', icon: <MarkunreadRoundedIcon />, count: incoming.length, badge: '#EF4444' },
+    { key: 'sent', label: 'Sent', title: 'Sent requests', icon: <ScheduleSendRoundedIcon />, count: outgoing.length, badge: '#F59E0B' },
+  ];
 
   return (
     <Stack
       ref={rootRef}
-      spacing={1.5}
+      spacing={2}
       sx={fillH ? { height: { xs: `calc(${fillH}px - 92px - env(safe-area-inset-bottom))`, md: `calc(${fillH}px - 24px)` } } : { minHeight: 480 }}
     >
       {inviteHandle && <InviteBanner handle={inviteHandle} onDone={onClearInvite} />}
 
-      <Box sx={[surface, { flex: 1, minHeight: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: desktop ? '360px minmax(0, 1fr)' : 'minmax(0, 1fr)', gridTemplateRows: 'minmax(0, 1fr)' }]}>
-        {/* ---------------- left: friends / players */}
+      <Box sx={[surface, { flex: 1, minHeight: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: desktop ? '380px minmax(0, 1fr)' : 'minmax(0, 1fr)', gridTemplateRows: 'minmax(0, 1fr)' }]}>
+        {/* ---------------- left: friends / requests / find */}
         <Box sx={(t) => ({ minWidth: 0, minHeight: 0, display: 'flex', flexDirection: 'column', borderRight: desktop ? `1px solid ${t.palette.divider}` : 'none' })}>
-          {/* header: title, friends / global switch, icons */}
-          <Stack direction="row" alignItems="center" spacing={1} sx={{ height: WS.bar + 8, px: 1.5, flexShrink: 0 }}>
-            <Typography sx={{ fontWeight: 800, fontSize: 17, letterSpacing: -0.2 }}>Friends</Typography>
-            <ScopeSwitch value={scope} onChange={(v) => { setScope(v); if (v === 'friends' && tab === 'activity') setTab('friends'); }} />
-            <Box sx={{ flex: 1 }} />
-            <WsIconButton title="Add friend" onClick={() => { setScope('global'); setTimeout(() => searchRef.current?.focus(), 0); }}><PersonAddAlt1RoundedIcon /></WsIconButton>
-            <WsIconButton title="Invite with link" onClick={(e) => setInviteAnchor(e.currentTarget)}><IosShareRoundedIcon /></WsIconButton>
-            <WsIconButton title="Friend activity" active={scope === 'friends' && tab === 'activity'} onClick={() => (scope === 'friends' && tab === 'activity' ? goTab('friends') : goTab('activity'))}><TimelineRoundedIcon /></WsIconButton>
-            <WsIconButton title="Friends leaderboard" onClick={onOpenLeaderboard}><LeaderboardRoundedIcon /></WsIconButton>
+          {/* header: title + live count, quick icons */}
+          <Stack direction="row" alignItems="center" spacing={0.5} sx={{ minHeight: 68, px: 2, pt: 1.5, pb: 1, flexShrink: 0 }}>
+            <Box sx={{ minWidth: 0, flex: 1, pr: 1 }}>
+              <motion.div key={title} initial={reduce ? false : { opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}>
+                <Typography noWrap sx={{ fontWeight: 800, fontSize: 19, lineHeight: 1.25, letterSpacing: -0.3 }}>{title}</Typography>
+              </motion.div>
+              <LiveLine text={subtitle} online={view === 'find' || view === 'activity' ? 0 : onlineCount} />
+            </Box>
+            <WsIconButton title="Find players" size={iconSize} active={view === 'find'} onClick={() => { toggleView('find'); setTimeout(() => searchRef.current?.focus(), 0); }}><PersonAddAlt1RoundedIcon /></WsIconButton>
+            <WsIconButton title="Invite with link" size={iconSize} onClick={(e) => setInviteAnchor(e.currentTarget)}><IosShareRoundedIcon /></WsIconButton>
+            <WsIconButton title="Friend activity" size={iconSize} active={view === 'activity'} onClick={() => toggleView('activity')}><TimelineRoundedIcon /></WsIconButton>
+            <WsIconButton title="Friends leaderboard" size={iconSize} onClick={onOpenLeaderboard}><LeaderboardRoundedIcon /></WsIconButton>
           </Stack>
 
-          {/* counts, each one also opens its list */}
-          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 0.75, px: 1.5, pb: 1, flexShrink: 0 }}>
-            <StatCard icon={<PeopleAltRoundedIcon />} label="Friends" hint="All friends" value={friends.length} color={theme.palette.primary.main} active={scope === 'friends' && tab === 'friends' && filter !== 'online'} onClick={() => goTab('friends')} />
-            <StatCard icon={<WifiTetheringRoundedIcon />} label="Online" hint="Friends online now" value={onlineCount} color={GREEN} active={scope === 'friends' && tab === 'friends' && filter === 'online'} onClick={() => goTab('friends', 'online')} />
-            <StatCard icon={<MarkunreadRoundedIcon />} label="Invites" hint="Invitations received" value={incoming.length} color="#EF4444" active={scope === 'friends' && tab === 'requests'} onClick={() => goTab('requests')} />
-            <StatCard icon={<HourglassTopRoundedIcon />} label="Pending" hint="Requests you sent, waiting" value={outgoing.length} color="#F59E0B" active={scope === 'friends' && tab === 'sent'} onClick={() => goTab('sent')} />
+          {/* Friends / Friend requests / Sent requests, each with its own icon and count */}
+          <Box sx={{ px: 2, pb: 1.5, flexShrink: 0 }}>
+            <TabBar items={tabs} value={REQUEST_TABS.includes(view) ? view : ''} onChange={(key) => goView(key)} />
           </Box>
 
           {showSearch && (
-            <Box sx={{ px: 1.5, pb: 1, flexShrink: 0 }}>
+            <Box sx={{ px: 2, pb: 1.5, flexShrink: 0 }}>
               <TextField
                 fullWidth
                 size="small"
                 inputRef={searchRef}
-                placeholder={scope === 'global' ? 'Search all players by name or @handle' : 'Search by name or @handle'}
+                placeholder={view === 'find' ? 'Search all players by name or @handle' : 'Search by name or @handle'}
                 value={q}
                 onChange={(e) => setQ(e.target.value.slice(0, 40))}
-                sx={(t) => ({ '& .MuiOutlinedInput-root': { height: WS.ctrl + 2, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, fontSize: 13.5 }, '& fieldset': { border: 'none' } })}
+                sx={(t) => ({
+                  '& .MuiOutlinedInput-root': { height: 42, borderRadius: '12px', bgcolor: wsSurface(t).raised, fontSize: 14, transition: 'box-shadow .18s' },
+                  '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${alpha(t.palette.primary.main, 0.45)}` },
+                  '& fieldset': { border: 'none' },
+                })}
                 slotProps={{
                   input: {
-                    startAdornment: <InputAdornment position="start"><SearchRoundedIcon sx={{ fontSize: 18 }} /></InputAdornment>,
+                    startAdornment: <InputAdornment position="start"><SearchRoundedIcon sx={{ fontSize: 20 }} /></InputAdornment>,
                     endAdornment: q ? (
                       <InputAdornment position="end">
-                        <WsIconButton title="Clear search" onClick={() => setQ('')} sx={{ width: 24, height: 24 }}><CloseRoundedIcon sx={{ fontSize: '16px !important' }} /></WsIconButton>
+                        <WsIconButton title="Clear search" onClick={() => setQ('')} sx={{ width: 26, height: 26 }}><CloseRoundedIcon sx={{ fontSize: '16px !important' }} /></WsIconButton>
                       </InputAdornment>
                     ) : null,
                   },
@@ -477,14 +518,10 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
           )}
 
           {showChips && (
-            <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 1.5, pb: 1, flexShrink: 0 }}>
-              <Stack direction="row" spacing={0.75} sx={{ flex: 1, minWidth: 0, ...hideScroll }}>
-                <FilterChip label="All" count={friends.length} active={filter === 'all'} onClick={() => setFilter('all')} />
-                <FilterChip label="Online" count={onlineCount} active={filter === 'online'} onClick={() => setFilter('online')} />
-                <FilterChip label="Unread" count={unreadChats} active={filter === 'unread'} onClick={() => setFilter('unread')} />
-                <FilterChip label="Streak at risk" count={riskCount} active={filter === 'risk'} onClick={() => setFilter('risk')} />
-                <FilterChip label="Favourites" count={favCount} active={filter === 'fav'} onClick={() => setFilter('fav')} />
-              </Stack>
+            <Stack direction="row" alignItems="center" spacing={1} sx={{ px: 2, pb: 1.5, flexShrink: 0 }}>
+              <FilterChip label="All" count={friends.length} active={filter === 'all'} onClick={() => setFilter('all')} />
+              <FilterChip label="Online" dot count={onlineCount} active={filter === 'online'} onClick={() => setFilter('online')} />
+              <Box sx={{ flex: 1 }} />
               <WsIconButton title="Sort" onClick={(e) => setSortAnchor(e.currentTarget)}><SortRoundedIcon /></WsIconButton>
             </Stack>
           )}
@@ -493,9 +530,11 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
             ref={listRef}
             className="autohide-scroll"
             onKeyDown={onListKey}
-            sx={(t) => ({ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', borderTop: `1px solid ${t.palette.divider}`, pb: 1 })}
+            sx={(t) => ({ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', borderTop: `1px solid ${t.palette.divider}`, pb: 2 })}
           >
-            {body}
+            <motion.div key={`${view}:${filter}`} initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.18 }}>
+              {body}
+            </motion.div>
           </Box>
         </Box>
 
@@ -513,7 +552,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
             ) : (
               <Box sx={{ m: 'auto' }}>
                 <EmptyNote icon={<ChatRoundedIcon />} title={noFriends ? 'No chats yet' : 'Your messages'}>
-                  {noFriends ? 'Invite a player from the list and your chat will open here.' : 'Pick a friend on the left to start chatting.'}
+                  {noFriends ? 'Add a player from the list and your chat will open here.' : 'Pick a friend on the left to start chatting.'}
                 </EmptyNote>
               </Box>
             )}
@@ -533,7 +572,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       {/* sort menu */}
       <Menu anchorEl={sortAnchor} open={Boolean(sortAnchor)} onClose={() => setSortAnchor(null)}>
         {SORTS.map(([key, label]) => (
-          <MenuItem key={key} selected={sortBy === key} onClick={() => { setSortBy(key); setSortAnchor(null); }} sx={{ minHeight: 40, fontSize: 14 }}>
+          <MenuItem key={key} selected={sortBy === key} onClick={() => { setSortBy(key); setSortAnchor(null); }} sx={{ minHeight: 42, fontSize: 14 }}>
             <ListItemIcon>{sortBy === key ? <CheckCircleRoundedIcon fontSize="small" color="primary" /> : null}</ListItemIcon>{label}
           </MenuItem>
         ))}
@@ -584,10 +623,10 @@ export default function FriendsView({ isAuthenticated, user, inviteHandle, onCle
 
   if (!isAuthenticated) {
     return (
-      <Box sx={[surface, { p: 3, textAlign: 'center' }]}>
-        <PeopleAltRoundedIcon sx={{ fontSize: 34, color: 'primary.main' }} />
-        <Typography sx={{ fontWeight: 800, mt: 0.5 }}>Compete with friends</Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 2 }}>
+      <Box sx={[surface, { p: 4, textAlign: 'center' }]}>
+        <PeopleAltRoundedIcon sx={{ fontSize: 36, color: 'primary.main' }} />
+        <Typography sx={{ fontWeight: 800, mt: 1 }}>Compete with friends</Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.75, mb: 2.5 }}>
           {inviteHandle ? `@${inviteHandle} invited you. Log in or sign up to accept.` : 'Log in to add friends and see them on the leaderboard.'}
         </Typography>
         <Button variant="contained" disableElevation onClick={() => navigate('/login', { state: { from: { pathname: '/dashboard' } } })} sx={{ height: 40, px: 3 }}>

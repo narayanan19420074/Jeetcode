@@ -9,7 +9,7 @@ import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { APT_COLOR, PersonAvatar, dayLabel, mono, timeAgo } from './friendsUi';
-import { EmptyNote, SectionLabel } from './friendsKit';
+import { EmptyNote, Reveal, SectionLabel } from './friendsKit';
 
 const LANG = { javascript: 'JS', python: 'Python', cpp: 'C++', java: 'Java' };
 
@@ -25,10 +25,10 @@ function Item({ e, online, onOpenProblem }) {
   const isApt = e.type === 'aptitude';
   const accent = isApt ? APT_COLOR : DIFF_COLOR[e.problem.difficulty];
   return (
-    <Stack direction="row" spacing={1.1} alignItems="flex-start" sx={{ px: 2, py: 0.9 }}>
-      <PersonAvatar person={e.user} size={34} online={online} />
+    <Stack direction="row" spacing={1.5} alignItems="flex-start" sx={{ mx: 1, px: 1.25, py: 1.1 }}>
+      <PersonAvatar person={e.user} size={40} online={online} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography sx={{ fontSize: 13, lineHeight: 1.4 }}>
+        <Typography sx={{ fontSize: 13.5, lineHeight: 1.45 }}>
           <b>{e.user.name}</b>{' '}
           {isApt ? (
             <>answered <b style={{ color: APT_COLOR }}>{e.count}</b> aptitude question{e.count === 1 ? '' : 's'} correctly</>
@@ -40,7 +40,7 @@ function Item({ e, online, onOpenProblem }) {
             </>
           )}
         </Typography>
-        <Stack direction="row" spacing={0.75} alignItems="center" flexWrap="wrap" useFlexGap sx={{ mt: 0.4 }}>
+        <Stack direction="row" spacing={0.75} alignItems="center" flexWrap="wrap" useFlexGap sx={{ mt: 0.6 }}>
           {isApt ? <Chip color={APT_COLOR}>Aptitude</Chip> : <Chip color={accent}>{e.problem.difficulty}</Chip>}
           {!isApt && e.language && <Chip color="#64748B">{LANG[e.language] || e.language}</Chip>}
           {!isApt && e.runtimeMs != null && <Typography sx={{ fontSize: 11.5, color: 'text.secondary', ...mono }}>{e.runtimeMs} ms</Typography>}
@@ -85,21 +85,21 @@ export default function ActivityFeed() {
   return (
     <Box>
       {error && <Alert severity="error" sx={{ mx: 1.5, my: 1 }} action={<Button color="inherit" onClick={() => load()}>Retry</Button>}>{error}</Alert>}
-      {items === null && [0, 1, 2, 3].map((i) => <Skeleton key={i} variant="rounded" height={52} sx={{ mx: 2, my: 1, borderRadius: '8px' }} />)}
+      {items === null && [0, 1, 2, 3].map((i) => <Skeleton key={i} variant="rounded" height={60} sx={{ mx: 2, my: 1.25, borderRadius: '12px' }} />)}
       {items && items.length === 0 && !error && <EmptyNote icon={<TimelineRoundedIcon />} title="Quiet for now">Nobody has solved anything in the last 30 days. Be the first.</EmptyNote>}
-      {items?.map((e) => {
+      {items?.map((e, i) => {
         const day = dayLabel(e.at);
         const head = day !== lastDay;
         lastDay = day;
         return (
-          <Box key={e.id}>
+          <Reveal key={e.id} index={i}>
             {head && <SectionLabel>{day}</SectionLabel>}
             <Item e={e} online={Boolean(online[e.user.userId])} onOpenProblem={(slug) => navigate(`/workspace/${slug}`)} />
-          </Box>
+          </Reveal>
         );
       })}
       {hasMore && (
-        <Box sx={{ textAlign: 'center', py: 1.25 }}>
+        <Box sx={{ textAlign: 'center', py: 1.5 }}>
           <Button onClick={() => load(items[items.length - 1].at)} disabled={busy} size="small" sx={{ textTransform: 'none', fontWeight: 600 }}>{busy ? 'Loading…' : 'Show more'}</Button>
         </Box>
       )}

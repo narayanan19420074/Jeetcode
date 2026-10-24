@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import { Box, Button, CircularProgress, Drawer, IconButton, Popover, Stack, TextField, Typography, alpha } from '@mui/material';
+import { motion, useReducedMotion } from 'framer-motion';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
@@ -21,6 +22,7 @@ import { WsIconButton } from '../workspace/wsUi';
 import { clearUnread, setActiveChat, setLast } from './friendsSlice';
 import { getFriendsSocket } from './friendsRealtime';
 import { FLAME, PersonAvatar, dayLabel, statusInfo } from './friendsUi';
+import { PulseArt } from './friendsKit';
 
 const clock = (iso) => new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
 const addUnique = (list, m) => (list.some((x) => x.id === m.id) ? list : [...list, m]);
@@ -44,16 +46,19 @@ function TypingDots() {
   );
 }
 
-// Centered system line (day separators, nudges), like WhatsApp's pills.
-const pill = (t) => ({ alignSelf: 'center', px: 1.25, py: 0.35, borderRadius: '8px', bgcolor: t.palette.background.paper, boxShadow: '0 1px 1px rgba(0,0,0,0.12)', color: t.palette.text.secondary, fontSize: 12, fontWeight: 600 });
+// Centered system line (day separators, nudges). Flat: a quiet tonal chip, no shadow.
+const pill = (t) => ({ alignSelf: 'center', px: 1.5, py: 0.4, borderRadius: '999px', bgcolor: wsSurface(t).raised, color: t.palette.text.secondary, fontSize: 12, fontWeight: 600 });
+
+// Flat card look shared by room invites and nudges.
+const flatCard = (t) => ({ bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}` });
 
 function NudgeLine({ m, mine, friend }) {
   return (
-    <Box sx={(t) => ({ ...pill(t), display: 'flex', alignItems: 'center', gap: 0.75, maxWidth: '88%', textAlign: 'left' })}>
-      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 18, color: FLAME, flexShrink: 0 }} />
+    <Box sx={(t) => ({ ...flatCard(t), alignSelf: 'center', display: 'flex', alignItems: 'center', gap: 1.25, maxWidth: '88%', px: 1.75, py: 1, borderRadius: '14px', textAlign: 'left', color: t.palette.text.secondary })}>
+      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 20, color: FLAME, flexShrink: 0 }} />
       <Box sx={{ minWidth: 0 }}>
-        <Typography sx={{ fontSize: 12.5, fontWeight: 700, color: 'text.primary', lineHeight: 1.3 }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
-        <Typography sx={{ fontSize: 12, fontWeight: 400, lineHeight: 1.35 }}>{m.text}</Typography>
+        <Typography sx={{ fontSize: 13, fontWeight: 700, color: 'text.primary', lineHeight: 1.35 }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
+        <Typography sx={{ fontSize: 12.5, fontWeight: 400, lineHeight: 1.4 }}>{m.text}</Typography>
       </Box>
       <Typography sx={{ fontSize: 11, fontWeight: 400, alignSelf: 'flex-end', flexShrink: 0 }}>{clock(m.createdAt)}</Typography>
     </Box>
@@ -76,9 +81,9 @@ function RoomCard({ m, mine, friend }) {
     }
   };
   return (
-    <Box sx={(t) => ({ alignSelf: mine ? 'flex-end' : 'flex-start', width: '100%', maxWidth: 300, p: 1.25, borderRadius: '10px', bgcolor: t.palette.background.paper, boxShadow: '0 1px 1px rgba(0,0,0,0.12)', borderLeft: `3px solid ${t.palette.primary.main}` })}>
-      <Stack direction="row" spacing={1.25} alignItems="center">
-        <Box sx={(t) => ({ width: 36, height: 36, borderRadius: '8px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: t.palette.primary.main })}>
+    <Box sx={(t) => ({ ...flatCard(t), alignSelf: mine ? 'flex-end' : 'flex-start', width: '100%', maxWidth: 320, p: 1.5, my: 0.5, borderRadius: '14px', borderLeft: `3px solid ${t.palette.primary.main}` })}>
+      <Stack direction="row" spacing={1.5} alignItems="center">
+        <Box sx={(t) => ({ width: 40, height: 40, flexShrink: 0, borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: t.palette.primary.main })}>
           <LaptopMacRoundedIcon sx={{ fontSize: 20 }} />
         </Box>
         <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -88,9 +93,9 @@ function RoomCard({ m, mine, friend }) {
           </Typography>
         </Box>
       </Stack>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 1 }}>
+      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 1.25 }}>
         <Typography sx={{ fontSize: 11, color: 'text.disabled' }}>{clock(m.createdAt)}</Typography>
-        <Button size="small" variant="contained" disableElevation disabled={busy} onClick={join} sx={{ height: 28, borderRadius: `${WS.radius}px`, fontWeight: 600, fontSize: 12.5, textTransform: 'none', px: 1.5 }}>
+        <Button size="small" variant="contained" disableElevation disabled={busy} onClick={join} sx={{ height: 30, borderRadius: `${WS.radius + 2}px`, fontWeight: 600, fontSize: 12.5, textTransform: 'none', px: 1.75 }}>
           {busy ? 'Checking…' : mine ? 'Rejoin room' : 'Join room'}
         </Button>
       </Stack>
@@ -98,30 +103,39 @@ function RoomCard({ m, mine, friend }) {
   );
 }
 
-// Text bubble with a tail on the first one of a run, time + ticks inside the bubble.
-function Bubble({ m, mine, first }) {
+// Clean text bubble: flat colour, no tail, corners tighten inside a run of messages from the same person.
+// `isNew` = arrived while the chat was open, so it pops in (history just appears).
+function Bubble({ m, mine, first, endsRun, isNew }) {
+  const reduce = useReducedMotion();
+  const tight = 6;
+  const round = 18;
+  const top = first ? round : tight;
+  const bottom = endsRun ? round : tight;
   return (
-    <Box sx={{ alignSelf: mine ? 'flex-end' : 'flex-start', maxWidth: { xs: '86%', sm: '78%' }, mt: first ? 0.75 : 0 }}>
-      <Box
-        sx={(t) => ({
-          position: 'relative', px: 1.1, py: 0.55, wordBreak: 'break-word', whiteSpace: 'pre-wrap', color: t.palette.text.primary,
-          borderRadius: mine ? (first ? '10px 0 10px 10px' : '10px') : (first ? '0 10px 10px 10px' : '10px'),
-          bgcolor: mine ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.34 : 0.17) : t.palette.background.paper,
-          boxShadow: '0 1px 1px rgba(0,0,0,0.12)',
-          '&::before': first ? {
-            content: '""', position: 'absolute', top: 0, width: 8, height: 10, backgroundColor: 'inherit',
-            ...(mine ? { right: -7, clipPath: 'polygon(0 0, 100% 0, 0 100%)' } : { left: -7, clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }),
-          } : undefined,
-        })}
+    <Box sx={{ alignSelf: mine ? 'flex-end' : 'flex-start', maxWidth: { xs: '86%', sm: '76%' }, mt: first ? 1.25 : 0 }}>
+      <motion.div
+        initial={isNew && !reduce ? { opacity: 0, y: 8, scale: 0.96 } : false}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: 'spring', stiffness: 520, damping: 32 }}
+        style={{ transformOrigin: mine ? '100% 100%' : '0% 100%' }}
       >
-        <Box sx={{ display: 'flow-root' }}>
-          <Typography component="span" sx={{ fontSize: 13.75, lineHeight: 1.45 }}>{m.text}</Typography>
-          <Box component="span" sx={{ float: 'right', ml: 1.25, mt: 0.9, display: 'inline-flex', alignItems: 'center', gap: 0.3, color: 'text.secondary', fontSize: 10.5, lineHeight: 1 }}>
-            {clock(m.createdAt)}
-            {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 15, color: 'primary.main' }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 15 }} aria-label="Sent" />)}
+        <Box
+          sx={(t) => ({
+            px: 1.75, py: 0.9, wordBreak: 'break-word', whiteSpace: 'pre-wrap', color: t.palette.text.primary,
+            borderRadius: mine ? `${round}px ${top}px ${bottom}px ${round}px` : `${top}px ${round}px ${round}px ${bottom}px`,
+            bgcolor: mine ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.32 : 0.15) : t.palette.background.paper,
+            border: mine ? '1px solid transparent' : `1px solid ${t.palette.divider}`,
+          })}
+        >
+          <Box sx={{ display: 'flow-root' }}>
+            <Typography component="span" sx={{ fontSize: 14, lineHeight: 1.5 }}>{m.text}</Typography>
+            <Box component="span" sx={{ float: 'right', ml: 1.5, mt: 1, display: 'inline-flex', alignItems: 'center', gap: 0.4, color: 'text.secondary', fontSize: 10.5, lineHeight: 1 }}>
+              {clock(m.createdAt)}
+              {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 15, color: 'primary.main' }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 15 }} aria-label="Sent" />)}
+            </Box>
           </Box>
         </Box>
-      </Box>
+      </motion.div>
     </Box>
   );
 }
@@ -147,6 +161,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
   const stick = useRef(true); // keep the view pinned to the newest message unless the user scrolled up
   const typingTimer = useRef(null);
   const lastTypingSent = useRef(0);
+  const openedAt = useRef(Date.now()); // messages newer than this arrived while the chat was open (they animate in)
 
   const markRead = useCallback(() => {
     dispatch(clearUnread(friend.userId));
@@ -295,13 +310,13 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
       <Stack
         direction="row"
         alignItems="center"
-        spacing={1.25}
-        sx={(t) => ({ height: 56, px: 1.5, flexShrink: 0, bgcolor: wsSurface(t).chrome, borderBottom: `1px solid ${t.palette.divider}` })}
+        spacing={1.5}
+        sx={(t) => ({ height: 68, px: 2, flexShrink: 0, bgcolor: wsSurface(t).chrome, borderBottom: `1px solid ${t.palette.divider}` })}
       >
-        <PersonAvatar person={friend} size={36} online={online} />
+        <PersonAvatar person={friend} size={42} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: 14, lineHeight: 1.25 }}>{friend.name}</Typography>
-          <Typography noWrap sx={{ fontSize: 12, color: typing || status.live ? 'success.main' : 'text.secondary', fontWeight: typing || status.live ? 600 : 400 }}>
+          <Typography noWrap sx={{ fontWeight: 700, fontSize: 15, lineHeight: 1.3 }}>{friend.name}</Typography>
+          <Typography noWrap sx={{ fontSize: 12.5, mt: 0.1, color: typing || status.live ? 'success.main' : 'text.secondary', fontWeight: typing || status.live ? 600 : 400 }}>
             {typing ? <>typing<TypingDots /></> : status.text}
           </Typography>
         </Box>
@@ -312,17 +327,15 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
 
       {overlay}
 
-      {/* messages on a quiet dotted wallpaper */}
+      {/* messages on a plain, flat background */}
       <Box sx={{ position: 'relative', flex: 1, minHeight: 0, display: overlay ? 'none' : 'flex', flexDirection: 'column' }}>
         <Box
           ref={scroller}
           data-chat-scroll
           onScroll={onScroll}
           sx={(t) => ({
-            flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: { xs: 1.25, sm: 2.5 }, py: 1.5, display: 'flex', flexDirection: 'column', gap: '3px', scrollbarWidth: 'thin',
+            flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: { xs: 2, sm: 3 }, py: 2, display: 'flex', flexDirection: 'column', gap: '3px', scrollbarWidth: 'thin',
             bgcolor: wsSurface(t).panel,
-            backgroundImage: `radial-gradient(${alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.07 : 0.08)} 1px, transparent 1px)`,
-            backgroundSize: '20px 20px',
           })}
         >
           {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={24} /></Box>}
@@ -333,9 +346,10 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
             </Button>
           )}
           {!loading && !error && messages.length === 0 && (
-            <Stack alignItems="center" spacing={0.75} sx={{ m: 'auto', textAlign: 'center', color: 'text.secondary', px: 3 }}>
-              <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 36, opacity: 0.6 }} />
-              <Typography sx={{ fontSize: 13 }}>No messages yet. Say hi to {friend.name.split(' ')[0]}, or start a coding room together.</Typography>
+            <Stack alignItems="center" spacing={0.5} sx={{ m: 'auto', textAlign: 'center', color: 'text.secondary', px: 3 }}>
+              <PulseArt icon={<ChatBubbleOutlineRoundedIcon />} />
+              <Typography sx={{ fontSize: 14.5, fontWeight: 700, color: 'text.primary', pt: 0.5 }}>Say hi to {friend.name.split(' ')[0]}</Typography>
+              <Typography sx={{ fontSize: 13, maxWidth: 260, lineHeight: 1.5 }}>No messages yet. Send a message, or start a coding room together.</Typography>
             </Stack>
           )}
           {messages.map((m, i) => {
@@ -344,14 +358,26 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
             const showDay = day !== lastDay;
             lastDay = day;
             const prev = messages[i - 1];
+            const next = messages[i + 1];
             const first = showDay || !prev || prev.from !== m.from || prev.kind !== 'text' || m.kind !== 'text';
+            const endsRun = !next || next.from !== m.from || next.kind !== 'text' || dayLabel(next.createdAt) !== day;
+            const isNew = Date.parse(m.createdAt) > openedAt.current;
             return (
               <Box key={m.id} sx={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                {showDay && <Box sx={(t) => ({ ...pill(t), my: 0.75 })}>{day}</Box>}
-                {m.kind === 'nudge' ? <NudgeLine m={m} mine={mine} friend={friend} /> : m.kind === 'room' ? <RoomCard m={m} mine={mine} friend={friend} /> : <Bubble m={m} mine={mine} first={first} />}
+                {showDay && <Box sx={(t) => ({ ...pill(t), my: 1.25 })}>{day}</Box>}
+                {m.kind === 'nudge' ? <NudgeLine m={m} mine={mine} friend={friend} /> : m.kind === 'room' ? <RoomCard m={m} mine={mine} friend={friend} /> : <Bubble m={m} mine={mine} first={first} endsRun={endsRun} isNew={isNew} />}
               </Box>
             );
           })}
+          {typing && (
+            <Box
+              role="status"
+              aria-label={`${friend.name} is typing`}
+              sx={(t) => ({ alignSelf: 'flex-start', mt: 1, px: 1.75, py: 1.1, borderRadius: '18px 18px 18px 6px', bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}`, color: 'text.secondary', '& > div': { ml: 0 } })}
+            >
+              <TypingDots />
+            </Box>
+          )}
         </Box>
         {away && (
           <IconButton
@@ -368,8 +394,8 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
       <Stack
         direction="row"
         alignItems="flex-end"
-        spacing={0.75}
-        sx={(t) => ({ display: overlay ? 'none' : 'flex', flexShrink: 0, px: 1, py: 0.9, pb: 'calc(7px + env(safe-area-inset-bottom))', bgcolor: wsSurface(t).chrome, borderTop: `1px solid ${t.palette.divider}` })}
+        spacing={1}
+        sx={(t) => ({ display: overlay ? 'none' : 'flex', flexShrink: 0, px: 1.5, pt: 1.25, pb: 'calc(10px + env(safe-area-inset-bottom))', bgcolor: wsSurface(t).chrome, borderTop: `1px solid ${t.palette.divider}` })}
       >
         <WsIconButton title="Emoji" size="lg" onClick={(e) => setEmojiAnchor(e.currentTarget)}><EmojiEmotionsOutlinedIcon /></WsIconButton>
         <TextField
@@ -386,14 +412,22 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
               send();
             }
           }}
-          sx={(t) => ({ '& .MuiOutlinedInput-root': { borderRadius: '20px', py: 0.75, px: 1.75, bgcolor: wsSurface(t).raised, fontSize: 14 }, '& fieldset': { border: 'none' } })}
+          sx={(t) => ({
+            '& .MuiOutlinedInput-root': { borderRadius: '22px', py: 1, px: 2, bgcolor: wsSurface(t).raised, fontSize: 14.5, transition: 'box-shadow .18s' },
+            '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${alpha(t.palette.primary.main, 0.45)}` },
+            '& fieldset': { border: 'none' },
+          })}
           slotProps={{ htmlInput: { 'aria-label': `Message ${friend.name}`, maxLength: 1000 } }}
         />
         <IconButton
           aria-label="Send message"
           onClick={send}
           disabled={!text.trim() || sending}
-          sx={(t) => ({ width: 40, height: 40, flexShrink: 0, color: t.palette.primary.contrastText, bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.dark' }, '&.Mui-disabled': { color: 'text.disabled', bgcolor: t.palette.action.hover } })}
+          sx={(t) => ({
+            width: 42, height: 42, flexShrink: 0, color: t.palette.primary.contrastText, bgcolor: 'primary.main', transition: 'transform .15s, background-color .15s',
+            '&:hover': { bgcolor: 'primary.dark' }, '&:active': { transform: 'scale(0.9)' },
+            '&.Mui-disabled': { color: 'text.disabled', bgcolor: t.palette.action.hover },
+          })}
         >
           {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: 19 }} />}
         </IconButton>
