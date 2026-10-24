@@ -10,6 +10,7 @@ const repeatedKeys = { indexes: null };
 export const problemsApi = {
   list: (params) => apiClient.get('/problems', { params, paramsSerializer: repeatedKeys }),
   getBySlug: (slug) => apiClient.get(`/problems/${slug}`),
+  getAdjacent: (slug) => apiClient.get(`/problems/${slug}/adjacent`),
   getTags: () => apiClient.get('/problems/tags'),
   getCompanies: () => apiClient.get('/problems/companies'),
   getProgress: () => apiClient.get('/problems/progress'),

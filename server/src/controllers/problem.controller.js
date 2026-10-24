@@ -248,6 +248,32 @@ export const getRandomProblem = asyncHandler(async (req, res) => {
   new ApiResponse(200, { slug: problem.slug }).send(res);
 });
 
+// GET /api/problems/:slug/adjacent — slugs of the previous / next problem for
+// the workspace arrows. Same order as the explorer default (newest first), so
+// "next" = the next one down that list. Premium problems are skipped for
+// non-Pro users, otherwise the arrow would just land on a paywall.
+export const getAdjacentProblems = asyncHandler(async (req, res) => {
+  const base = { isPublished: true, isDeleted: { $ne: true } };
+  const current = await Problem.findOne({ ...base, slug: String(req.params.slug).toLowerCase() })
+    .select('_id createdAt')
+    .lean();
+  if (!current) throw ApiError.notFound('Problem not found');
+
+  const scope = req.hasProAccess ? base : { ...base, 'companies.0': { $exists: false } };
+  const [next, prev] = await Promise.all([
+    Problem.findOne({ ...scope, $or: [{ createdAt: { $lt: current.createdAt } }, { createdAt: current.createdAt, _id: { $lt: current._id } }] })
+      .sort({ createdAt: -1, _id: -1 })
+      .select('slug')
+      .lean(),
+    Problem.findOne({ ...scope, $or: [{ createdAt: { $gt: current.createdAt } }, { createdAt: current.createdAt, _id: { $gt: current._id } }] })
+      .sort({ createdAt: 1, _id: 1 })
+      .select('slug')
+      .lean(),
+  ]);
+
+  new ApiResponse(200, { prev: prev?.slug ?? null, next: next?.slug ?? null }).send(res);
+});
+
 // GET /api/problems/:slug — Workspace left pane. Never returns testCases
 // or driverCode (see Problem.publicProjection). Premium problems reject
 // outright for non-Pro users — unlike the list view, there's no partial

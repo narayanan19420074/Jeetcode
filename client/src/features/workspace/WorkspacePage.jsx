@@ -13,6 +13,7 @@ import {
   CircularProgress,
   Chip,
   Skeleton,
+  Tooltip,
   Menu,
   ListItemIcon,
   ListItemText,
@@ -48,6 +49,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
+import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
@@ -64,7 +66,7 @@ import SplitHandle from './SplitHandle';
 import MobileKeyBar from './MobileKeyBar';
 import EditorScroller from './EditorScroller';
 import useStopwatch, { formatClock } from './useStopwatch';
-import { EmptyState, MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton, WsSelect } from './wsUi';
+import { EmptyState, MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton, WsSelect, useElementWidth } from './wsUi';
 import { WS, mono } from './wsTokens';
 import { wsSurface, defineMonacoThemes, monacoThemeName } from './workspaceTheme';
 import { formatCode, preloadFormatter } from './formatCode';
@@ -85,6 +87,7 @@ const LANGUAGES = [
   { id: 'python', label: 'Python' },
   { id: 'cpp', label: 'C++' },
 ];
+const LANG_SHORT = { javascript: 'JS', python: 'Py', cpp: 'C++' };
 
 const DESC_TABS = [
   { value: 0, label: 'Description', icon: <ArticleOutlinedIcon /> },
@@ -115,7 +118,7 @@ const AI_WELCOME = {
 const LAYOUT_KEY = 'jeetcode-workspace-layout';
 const DEFAULT_LEFT = 0.42; // problem pane share of the width
 const DEFAULT_CONSOLE = 0.35; // console share of the editor+console column
-const LEFT_MIN = 0.25;
+const LEFT_MIN = 0.2;
 const LEFT_MAX = 0.65;
 const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 const loadLayout = () => {
@@ -245,6 +248,12 @@ export default function WorkspacePage() {
   const [maximized, setMaximized] = useState(null); // null | 'problem' | 'editor' | 'console'
   const rootRef = useRef(null);
   const editorColRef = useRef(null);
+  // Pane widths (px). When a splitter is dragged narrow, labels collapse to icons.
+  const [leftEl, setLeftEl] = useState(null);
+  const [rightEl, setRightEl] = useState(null);
+  const leftW = useElementWidth(leftEl);
+  const rightW = useElementWidth(rightEl);
+  const [adjacent, setAdjacent] = useState({ prev: null, next: null }); // slugs for the prev / next arrows
   const toggleMax = (which) => setMaximized((m) => (m === which ? null : which));
 
   useEffect(() => {
@@ -294,6 +303,21 @@ export default function WorkspacePage() {
     setAiMessages([AI_WELCOME]);
     resetSw();
   }, [dispatch, slug, resetSw]);
+
+  // Previous / next problem slugs (arrows beside the title).
+  useEffect(() => {
+    let cancelled = false;
+    setAdjacent({ prev: null, next: null });
+    problemsApi
+      .getAdjacent(slug)
+      .then(({ data }) => {
+        if (!cancelled) setAdjacent({ prev: data.data.prev, next: data.data.next });
+      })
+      .catch(() => {}); // arrows just stay disabled
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
 
   // Start in the language chosen in Settings -> Editor (once per page visit;
   // switching language in the toolbar afterwards still works as before).
@@ -355,6 +379,10 @@ export default function WorkspacePage() {
     if (activeLanguage === 'javascript') preloadFormatter();
   }, [activeLanguage, editorPrefs.tabSize]);
   useEffect(() => () => clearTimeout(fmtTimer.current), []);
+  // A pending auto-format must not fire into the next problem's editor.
+  useEffect(() => {
+    clearTimeout(fmtTimer.current);
+  }, [slug]);
 
   const runAutoFormat = useCallback(async () => {
     const ed = editorRef.current;
@@ -567,6 +595,13 @@ export default function WorkspacePage() {
     }
   };
 
+  // Prev / next arrow. Phone: replace (not push) so Back doesn't walk through every problem
+  // and the description drawer closes onto the new problem's editor.
+  const goToProblem = (target) => {
+    if (!target) return;
+    navigate(`/workspace/${target}`, isMobile ? { replace: true } : undefined);
+  };
+
   const handleAiSend = async () => {
     if (!aiInput.trim() || !problem || aiLoading) return;
     if (!isAuthenticated) {
@@ -625,6 +660,22 @@ export default function WorkspacePage() {
   const isSubmitView = lastResultKind === 'submit';
   const canShare = !isRunning && isSubmitView && submitResult?.status === 'Accepted' && Boolean(submitResult._id);
   const ctl = isMobile ? 'lg' : 'md';
+  const nav = {
+    hasPrev: Boolean(adjacent.prev),
+    hasNext: Boolean(adjacent.next),
+    onPrev: () => goToProblem(adjacent.prev),
+    onNext: () => goToProblem(adjacent.next),
+    size: ctl,
+  };
+
+  // Responsive-by-pane (desktop): what to drop as a pane gets narrower.
+  const tabLabels = !leftW || leftW >= 560 ? 'all' : leftW >= 340 ? 'active' : 'none';
+  const langMode = isMobile || !rightW || rightW >= 520 ? 'full' : rightW >= 420 ? 'short' : 'icon';
+  const iconActions = !isMobile && rightW > 0 && rightW < 700; // Run / Submit lose their words
+  const showKbd = rightW >= 950;
+  const narrowConsole = !isMobile && rightW > 0 && rightW < 640; // hide cursor status, share -> icon
+  const hideConsoleLabel = !isMobile && rightW > 0 && rightW < 460;
+  const langLabel = LANGUAGES.find((l) => l.id === activeLanguage)?.label;
 
   const consoleBody = (
     <ConsoleBody
@@ -705,6 +756,7 @@ export default function WorkspacePage() {
       {/* Left pane — problem description (desktop only) */}
       {!isMobile && (
         <Box
+          ref={setLeftEl}
           sx={{
             bgcolor: surf.chrome,
             width: maximized === 'problem' ? '100%' : `${layout.left * 100}%`,
@@ -716,7 +768,7 @@ export default function WorkspacePage() {
           }}
         >
           <PaneBar>
-            <PaneTabs value={descTab} onChange={openTab} items={DESC_TABS} />
+            <PaneTabs value={descTab} onChange={openTab} items={DESC_TABS} labels={tabLabels} />
             <Box sx={{ flex: 1 }} />
             <WsIconButton title="Random problem" onClick={handleRandom}>
               <ShuffleRoundedIcon />
@@ -725,7 +777,7 @@ export default function WorkspacePage() {
           </PaneBar>
 
           <Box sx={{ overflowY: 'auto', px: 2.5, pt: 1.5, pb: 3, flex: 1, minHeight: 0 }}>
-            {descTab === 0 && <ProblemDescription problem={problem} />}
+            {descTab === 0 && <ProblemDescription problem={problem} nav={nav} />}
             {mountedTabs[1] && (
               <Box sx={{ display: descTab === 1 ? 'block' : 'none' }}>
                 <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
@@ -758,6 +810,7 @@ export default function WorkspacePage() {
 
       {/* Right pane — editor + runner */}
       <Box
+        ref={setRightEl}
         sx={{
           bgcolor: surf.chrome,
           flex: 1,
@@ -768,18 +821,38 @@ export default function WorkspacePage() {
         }}
       >
         <PaneBar sx={{ px: { xs: 1.25, md: 1.25 }, gap: { xs: 0.5, md: 0.5 }, height: { xs: 52, md: WS.bar }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
-          <WsSelect
-            value={activeLanguage}
-            onChange={(e) => dispatch(setLanguage(e.target.value))}
-            startAdornment={<CodeRoundedIcon sx={{ fontSize: 17, mr: 0.75, color: 'primary.main' }} />}
-            sx={isMobile ? { height: WS.ctrlLg, minWidth: 124, '& .MuiSelect-select': { height: `${WS.ctrlLg}px` } } : undefined}
-          >
-            {LANGUAGES.map((l) => (
-              <MenuItem key={l.id} value={l.id}>
-                {l.label}
-              </MenuItem>
-            ))}
-          </WsSelect>
+          {(() => {
+            const select = (
+              <WsSelect
+                value={activeLanguage}
+                onChange={(e) => dispatch(setLanguage(e.target.value))}
+                renderValue={(v) => (langMode === 'icon' ? '' : langMode === 'short' ? LANG_SHORT[v] : LANGUAGES.find((l) => l.id === v)?.label)}
+                startAdornment={<CodeRoundedIcon sx={{ fontSize: 17, mr: langMode === 'icon' ? 0 : 0.75, color: 'primary.main' }} />}
+                sx={
+                  isMobile
+                    ? { height: WS.ctrlLg, minWidth: 124, '& .MuiSelect-select': { height: `${WS.ctrlLg}px` } }
+                    : langMode === 'short'
+                      ? { minWidth: 0, '& .MuiSelect-select': { pr: '26px !important' } }
+                      : langMode === 'icon'
+                        ? { minWidth: 0, '& .MuiSelect-select': { pl: 1, pr: '22px !important' }, '& .MuiSelect-icon': { right: 2 } }
+                        : undefined
+                }
+              >
+                {LANGUAGES.map((l) => (
+                  <MenuItem key={l.id} value={l.id}>
+                    {l.label}
+                  </MenuItem>
+                ))}
+              </WsSelect>
+            );
+            return langMode === 'icon' ? (
+              <Tooltip title={langLabel}>
+                <span style={{ display: 'inline-flex' }}>{select}</span>
+              </Tooltip>
+            ) : (
+              select
+            );
+          })()}
           <TimerControl sw={sw} size={ctl} />
 
           <Box sx={{ flex: 1, minWidth: 8 }} />
@@ -835,7 +908,9 @@ export default function WorkspacePage() {
                 loading={runStatus === 'running'}
                 disabled={isRunning}
                 onClick={handleRun}
-                kbd="Ctrl '"
+                iconOnly={iconActions}
+                title="Run (Ctrl + ')"
+                kbd={showKbd ? "Ctrl '" : undefined}
               >
                 Run
               </WsButton>
@@ -845,7 +920,9 @@ export default function WorkspacePage() {
                 loading={submitStatus === 'running'}
                 disabled={isRunning}
                 onClick={handleSubmit}
-                kbd="Ctrl ↵"
+                iconOnly={iconActions}
+                title="Submit (Ctrl + Enter)"
+                kbd={showKbd ? 'Ctrl ↵' : undefined}
               >
                 Submit
               </WsButton>
@@ -872,6 +949,7 @@ export default function WorkspacePage() {
           <Box sx={{ position: 'relative', bgcolor: surf.canvas, flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
             <Editor
               height="100%"
+              path={`${problem._id}-${activeLanguage}`}
               language={activeLanguage === 'cpp' ? 'cpp' : activeLanguage}
               theme={monacoThemeName(editorPrefs.theme, uiMode)}
               beforeMount={(monaco) => {
@@ -970,7 +1048,7 @@ export default function WorkspacePage() {
               sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 52, md: WS.barSm }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
             >
               <TerminalRoundedIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
-              {!(isMobile && (isRunning || resultToShow)) && <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Console</Typography>}
+              {!(isMobile && (isRunning || resultToShow)) && !hideConsoleLabel && <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Console</Typography>}
               <VerdictChip isRunning={isRunning} result={resultToShow} sx={{ maxWidth: { xs: '44vw', md: 'none' } }} />
               {!isMobile && canShare && (
                 <WsButton
@@ -979,7 +1057,10 @@ export default function WorkspacePage() {
                     e.stopPropagation(); // don't toggle the console
                     setShareOpen(true);
                   }}
-                  sx={{ height: 26, color: 'primary.main' }}
+                  startIcon={<IosShareRoundedIcon />}
+                  iconOnly={narrowConsole}
+                  title="Share solution"
+                  sx={{ height: 26, color: 'primary.main', ...(narrowConsole && { width: 26 }) }}
                 >
                   Share solution
                 </WsButton>
@@ -1013,7 +1094,7 @@ export default function WorkspacePage() {
                   </WsButton>
                 </Stack>
               )}
-              {!isMobile && <EditorStatus editor={editorInstance} tabSize={editorPrefs.tabSize} />}
+              {!isMobile && !narrowConsole && <EditorStatus editor={editorInstance} tabSize={editorPrefs.tabSize} />}
               {!isMobile && (
                 <MaxButton
                   active={maximized === 'console'}
@@ -1085,7 +1166,7 @@ export default function WorkspacePage() {
           <Typography sx={{ fontWeight: 700, flex: 1 }}>Problem</Typography>
         </Stack>
         <Box sx={{ overflowY: 'auto', px: 2, pt: 1, pb: 3, flex: 1, minHeight: 0, bgcolor: surf.chrome }}>
-          <ProblemDescription problem={problem} />
+          <ProblemDescription problem={problem} nav={nav} />
         </Box>
         <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: surf.chrome }}>
           <WsButton fullWidth size="lg" variant="primary" startIcon={<CodeRoundedIcon />} onClick={closeDesc}>

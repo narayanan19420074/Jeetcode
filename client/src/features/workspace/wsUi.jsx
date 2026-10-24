@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { Box, ButtonBase, Button, CircularProgress, IconButton, Select, Stack, Tooltip, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
@@ -16,6 +16,23 @@ import { WS, mono } from './wsTokens';
    Sizes: md (32px, desktop) | lg (40px, touch) */
 
 const ctrlHeight = (size) => (size === 'lg' ? WS.ctrlLg : WS.ctrl);
+
+/* Width of an element in px (0 until measured). Pass the element itself (kept
+   in state via a callback ref), so panes that mount late are still measured.
+   Panes use this to drop labels when the user drags a splitter narrow —
+   media queries only know the window, not the pane. */
+export function useElementWidth(el) {
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    if (!el) return undefined;
+    setWidth(Math.round(el.getBoundingClientRect().width));
+    if (typeof ResizeObserver === 'undefined') return undefined;
+    const ro = new ResizeObserver(([entry]) => setWidth(Math.round(entry.contentRect.width)));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [el]);
+  return width;
+}
 
 export function Kbd({ children }) {
   return (
@@ -40,16 +57,17 @@ export function Kbd({ children }) {
 }
 
 export const WsButton = forwardRef(function WsButton(
-  { variant = 'secondary', size = 'md', startIcon, loading = false, kbd, disabled, children, sx, ...rest },
+  { variant = 'secondary', size = 'md', startIcon, loading = false, kbd, iconOnly = false, title, disabled, children, sx, ...rest },
   ref
 ) {
   const h = ctrlHeight(size);
-  return (
+  const btn = (
     <Button
       ref={ref}
       disableElevation
       disableRipple
       disabled={disabled || loading}
+      aria-label={iconOnly && typeof children === 'string' ? children : rest['aria-label']}
       startIcon={loading ? <CircularProgress size={14} color="inherit" /> : startIcon}
       sx={[
         (t) => {
@@ -95,17 +113,28 @@ export const WsButton = forwardRef(function WsButton(
             '&.Mui-disabled': { color: t.palette.text.disabled, bgcolor: alpha(t.palette.text.primary, 0.05) },
           };
         },
+        iconOnly && {
+          width: h,
+          px: 0,
+          '& .MuiButton-startIcon': { m: 0 },
+        },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
       {...rest}
     >
-      {children}
-      {kbd && (
+      {!iconOnly && children}
+      {!iconOnly && kbd && (
         <Box component="span" sx={{ ml: 1, display: { xs: 'none', xl: 'inline-flex' } }}>
           <Kbd>{kbd}</Kbd>
         </Box>
       )}
     </Button>
+  );
+  if (!iconOnly) return btn;
+  return (
+    <Tooltip title={title || (typeof children === 'string' ? children : '')}>
+      <span style={{ display: 'inline-flex' }}>{btn}</span>
+    </Tooltip>
   );
 });
 
@@ -185,21 +214,24 @@ export function PaneBar({ children, sx, height = WS.bar }) {
 }
 
 /* Text tabs: active tab gets a tonal fill. items = [{ value, label, icon?, dot? }] */
-export function PaneTabs({ value, onChange, items, size = 'md' }) {
+export function PaneTabs({ value, onChange, items, size = 'md', labels = 'all' }) {
   const h = size === 'sm' ? 28 : size === 'lg' ? 38 : WS.ctrl;
   return (
     <Stack direction="row" role="tablist" sx={{ gap: 0.25, minWidth: 0, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' }, scrollbarWidth: 'none' }}>
       {items.map((it) => {
         const on = it.value === value;
-        return (
+        // labels: 'all' | 'active' (only the open tab keeps its name) | 'none' (icons only)
+        const showLabel = labels === 'all' || !it.icon || (labels === 'active' && on);
+        const tab = (
           <ButtonBase
             key={it.value}
+            aria-label={showLabel ? undefined : it.label}
             role="tab"
             aria-selected={on}
             onClick={() => onChange(it.value)}
             sx={(t) => ({
               height: h,
-              px: size === 'sm' ? 1.25 : size === 'lg' ? 1.75 : 1.5,
+              px: showLabel ? (size === 'sm' ? 1.25 : size === 'lg' ? 1.75 : 1.5) : 1,
               gap: 0.75,
               flexShrink: 0,
               borderRadius: `${WS.radius}px`,
@@ -214,9 +246,16 @@ export function PaneTabs({ value, onChange, items, size = 'md' }) {
             })}
           >
             {it.icon}
-            {it.label}
+            {showLabel && it.label}
             {it.dot && <Box sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: it.dot }} />}
           </ButtonBase>
+        );
+        return showLabel ? (
+          tab
+        ) : (
+          <Tooltip key={it.value} title={it.label}>
+            {tab}
+          </Tooltip>
         );
       })}
     </Stack>

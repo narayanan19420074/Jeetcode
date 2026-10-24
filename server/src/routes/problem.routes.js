@@ -5,6 +5,7 @@ import {
   listProblemCompanies,
   getProblemsProgress,
   getRandomProblem,
+  getAdjacentProblems,
   getProblemBySlug,
 } from '../controllers/problem.controller.js';
 import { validate } from '../middlewares/validate.js';
@@ -27,6 +28,7 @@ router.get('/companies', listProblemCompanies);
 router.get('/progress', attachUserIfPresent, getProblemsProgress);
 router.get('/random', attachUserIfPresent, getRandomProblem);
 
+router.get('/:slug/adjacent', attachUserIfPresent, checkProAccess, getAdjacentProblems);
 router.get('/:slug', attachUserIfPresent, checkProAccess, getProblemBySlug);
 
 export default router;

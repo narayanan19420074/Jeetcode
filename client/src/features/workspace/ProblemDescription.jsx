@@ -1,8 +1,11 @@
 import { Box, Chip, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import DifficultyChip from '../../components/DifficultyChip';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
+import { WsIconButton } from './wsUi';
 
 const compact = (n) => {
   if (n == null) return null;
@@ -93,12 +96,25 @@ function ExampleBlock({ index, example }) {
 
 // Problem statement: title, meta, tags, description, examples, constraints.
 // Shared by the desktop left pane and the phone drawer.
-export default function ProblemDescription({ problem }) {
+// nav (optional): { hasPrev, hasNext, onPrev, onNext, size } -> arrows beside the title.
+export default function ProblemDescription({ problem, nav }) {
   const acceptance = problem.totalSubmissions > 0 ? ((problem.acceptedSubmissions / problem.totalSubmissions) * 100).toFixed(1) : null;
 
   return (
     <>
-      <Typography sx={{ fontWeight: 800, fontSize: '1.3rem', lineHeight: 1.3, letterSpacing: '-0.01em', mb: 1.25 }}>{problem.title}</Typography>
+      <Stack direction="row" sx={{ alignItems: 'flex-start', gap: 1, mb: 1.25 }}>
+        <Typography sx={{ flex: 1, minWidth: 0, fontWeight: 800, fontSize: '1.3rem', lineHeight: 1.3, letterSpacing: '-0.01em', wordBreak: 'break-word' }}>{problem.title}</Typography>
+        {nav && (
+          <Stack direction="row" sx={{ flexShrink: 0, gap: 0.25, mt: -0.25 }}>
+            <WsIconButton title="Previous problem" size={nav.size} disabled={!nav.hasPrev} onClick={nav.onPrev}>
+              <ChevronLeftRoundedIcon />
+            </WsIconButton>
+            <WsIconButton title="Next problem" size={nav.size} disabled={!nav.hasNext} onClick={nav.onNext}>
+              <ChevronRightRoundedIcon />
+            </WsIconButton>
+          </Stack>
+        )}
+      </Stack>
 
       <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', columnGap: 2, rowGap: 0.75, mb: 2.25 }}>
         <DifficultyChip difficulty={problem.difficulty} />
