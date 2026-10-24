@@ -50,6 +50,18 @@ const userSchema = new mongoose.Schema(
     avatarData: { type: Buffer, select: false },
     avatarMime: { type: String, select: false },
 
+    // --- Email verification + password reset ---
+    // Tokens are random, emailed once, and only their SHA-256 hash is stored.
+    // Accounts created before this feature (and OAuth accounts) have no flag
+    // set; toPublicJSON() treats an OAuth-linked account as verified.
+    emailVerified: { type: Boolean, default: false },
+    emailVerifyTokenHash: { type: String, select: false, default: null },
+    emailVerifyExpiresAt: { type: Date, select: false, default: null },
+    emailVerifySentAt: { type: Date, select: false, default: null },
+    passwordResetTokenHash: { type: String, select: false, default: null },
+    passwordResetExpiresAt: { type: Date, select: false, default: null },
+    passwordResetSentAt: { type: Date, select: false, default: null },
+
     // 'learner' = default signup role. 'contributor' = can propose problems
     // (draft/submitted, cannot publish). 'moderator' = can review/approve
     // contributor submissions. 'admin' = full access, including
@@ -210,12 +222,17 @@ userSchema.methods.comparePassword = function (plain) {
   return bcrypt.compare(plain, this.passwordHash);
 };
 
+userSchema.methods.isEmailVerified = function () {
+  return !!this.emailVerified || !!(this.googleId || this.githubId || this.linkedinId);
+};
+
 userSchema.methods.toPublicJSON = function () {
   return {
     id: this._id,
     name: this.name,
     handle: this.handle,
     email: this.email,
+    emailVerified: this.isEmailVerified(),
     role: this.role,
     avatarUrl: this.avatarUrl,
     bio: this.bio || '',

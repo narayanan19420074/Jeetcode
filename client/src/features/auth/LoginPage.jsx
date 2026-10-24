@@ -140,6 +140,11 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <Typography variant="body2" sx={{ textAlign: 'right', mt: -1 }}>
+            <Link component={RouterLink} to="/forgot-password" underline="hover">
+              Forgot password?
+            </Link>
+          </Typography>
           <Button
             type="submit"
             variant="contained"

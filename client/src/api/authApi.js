@@ -13,5 +13,9 @@ export const authApi = {
   googleSignIn: (idToken) => apiClient.post('/auth/google', { idToken }),
   githubSignIn: (code) => apiClient.post('/auth/github', { code }),
   linkedinSignIn: (code, redirectUri) => apiClient.post('/auth/linkedin', { code, redirectUri }),
-   adminLogin: (payload) => apiClient.post('/auth/admin-login', payload),
+  forgotPassword: (email) => apiClient.post('/auth/forgot-password', { email }),
+  resetPassword: (token, password) => apiClient.post('/auth/reset-password', { token, password }),
+  verifyEmail: (token) => apiClient.post('/auth/verify-email', { token }),
+  resendVerification: () => apiClient.post('/auth/resend-verification'),
+  adminLogin: (payload) => apiClient.post('/auth/admin-login', payload),
 };

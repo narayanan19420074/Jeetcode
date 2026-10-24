@@ -4,6 +4,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import MobileBottomNav, { showMobileBottomNav } from '../components/MobileBottomNav';
 import FreeAccessBanner from '../components/FreeAccessBanner';
+import EmailVerifyBanner from '../components/EmailVerifyBanner';
 import FriendsRealtime from '../features/friends/friendsRealtime';
 import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
 
@@ -22,6 +23,7 @@ export default function MainLayout() {
       })}
     >
       <FreeAccessBanner />
+      <EmailVerifyBanner />
       <FriendsRealtime />
       <NotificationsWatcher />
       <Navbar />

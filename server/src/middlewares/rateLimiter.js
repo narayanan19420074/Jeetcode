@@ -84,3 +84,15 @@ export const friendsLimiter = rateLimit({
   keyGenerator: (req) => req.user?.id || ipKeyGenerator(req.ip),
   message: { success: false, message: 'Too many friend actions. Wait a moment and try again.' },
 });
+
+// Endpoints that send an email (forgot password, resend verification). Counts every
+// request, success or not, so nobody can use us to spam an inbox. A per-account
+// 60 second cooldown in the controller is the second line of defence.
+export const emailLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 6,
+  standardHeaders: true,
+  legacyHeaders: false,
+  store: buildStore(),
+  message: { success: false, message: 'Too many email requests. Try again in a few minutes.' },
+});

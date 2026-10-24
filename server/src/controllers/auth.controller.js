@@ -5,6 +5,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { verifyRefreshToken } from '../utils/tokenUtils.js';
 import { issueTokens, hashToken, REFRESH_COOKIE } from '../services/authToken.service.js';
+import { issueVerificationEmail } from './accountEmail.controller.js';
 
 export const register = asyncHandler(async (req, res) => {
   const { name, handle, email, password } = req.body;
@@ -16,6 +17,9 @@ export const register = asyncHandler(async (req, res) => {
 
   const passwordHash = await bcrypt.hash(password, 12);
   const user = await User.create({ name, handle, email, passwordHash });
+
+  // Fire and forget: a mail problem must never block signup.
+  issueVerificationEmail(user).catch(() => {});
 
   const accessToken = await issueTokens(res, user, req.cookies?.[REFRESH_COOKIE]);
   new ApiResponse(201, { accessToken, user: user.toPublicJSON() }, 'Account created').send(res);

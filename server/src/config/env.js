@@ -58,6 +58,16 @@ const envSchema = z.object({
   RAZORPAY_PLAN_ID_MONTHLY: z.string().optional(),
   RAZORPAY_PLAN_ID_YEARLY: z.string().optional(),
   FREE_ACCESS_UNTIL: z.string().optional(),
+
+  // Transactional email (forgot password, email verification) via Brevo's HTTP API.
+  // Optional: with no key the links are only printed to the server log.
+  // MAIL_FROM_EMAIL must be a sender you verified in Brevo.
+  BREVO_API_KEY: z.string().optional(),
+  MAIL_FROM_EMAIL: z.string().optional(),
+  MAIL_FROM_NAME: z.string().default('JeetCode'),
+  // Public site URL used in email links. Falls back to RENDER_EXTERNAL_URL (set by Render), then CLIENT_ORIGIN.
+  APP_URL: z.string().optional(),
+  RENDER_EXTERNAL_URL: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);

@@ -11,6 +11,9 @@ import HomePage from './features/home/HomePage';
 import GithubCallbackPage from './features/auth/GithubCallbackPage';
 import LinkedinCallbackPage from './features/auth/LinkedinCallbackPage';
 import AdminLoginPage from './features/auth/AdminLoginPage';
+import ForgotPasswordPage from './features/auth/ForgotPasswordPage';
+import ResetPasswordPage from './features/auth/ResetPasswordPage';
+import VerifyEmailPage from './features/auth/VerifyEmailPage';
 
 // Monaco editor and the admin console are heavy — code-split so the
 // dashboard (the page most of ~10L users land on) loads fast.
@@ -66,6 +69,9 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      <Route path="/reset-password" element={<ResetPasswordPage />} />
+      <Route path="/verify-email" element={<VerifyEmailPage />} />
 
       {/* Admin's own login page — no navbar, not linked anywhere in the
           client UI. Reached only by direct URL. */}
