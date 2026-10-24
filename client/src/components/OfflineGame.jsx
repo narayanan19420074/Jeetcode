@@ -27,7 +27,7 @@ export default function OfflineGame() {
   // Grab the game page while we still have network.
   useEffect(() => {
     let alive = true;
-    fetch('/offline.html')
+    fetch('/offline.html', { cache: 'no-cache' })
       .then((r) => (r.ok ? r.text() : null))
       .then((txt) => {
         if (alive && txt && txt.includes('<canvas')) setHtml(txt);
