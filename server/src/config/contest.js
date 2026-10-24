@@ -12,7 +12,7 @@ export const CONTEST = {
   difficulty: 'Hard',
   rulesVersion: 1,
   // Fill this in AFTER the contest ends and the top ranks are verified. The contest page then shows the
-  // winners on the 3D podium (only once the contest has ended). Rank 1-3, newest edit = one-file change:
+  // contest top 10 (3D podium for rank 1-3, list for 4-10), only once the contest has ended. Up to 10 entries:
   // { rank: 1, name: 'Asha K', handle: 'asha_k', solved: 10, prize: 50000 }
   winners: [],
   rules: [

@@ -8,13 +8,13 @@ import { inr } from './contestUtils';
 // winner plates pop in, trophy spins. Drag sideways to turn it. Plain three.js (no extra packages).
 
 const MEDAL = {
-  1: { css: '#FBBF24', css2: '#F59E0B', hex: 0xfbbf24, dark: '#451A03' },
-  2: { css: '#E2E8F0', css2: '#94A3B8', hex: 0xcbd5e1, dark: '#0F172A' },
-  3: { css: '#FDBA74', css2: '#C2410C', hex: 0xfb923c, dark: '#431407' },
+  1: { css: '#F59E0B', css2: '#EA580C', hex: 0xfbbf24, dark: '#FFFFFF', ring: ['#FF9A3C', '#FF3D81', '#7C4DFF'] },
+  2: { css: '#6366F1', css2: '#4338CA', hex: 0xa5b4fc, dark: '#FFFFFF', ring: ['#22D3EE', '#6366F1', '#A855F7'] },
+  3: { css: '#F97316', css2: '#C2410C', hex: 0xfb923c, dark: '#FFFFFF', ring: ['#34D399', '#22D3EE', '#3B82F6'] },
 };
 const SLOTS = { 1: { x: 0, h: 2.5, delay: 1.5 }, 2: { x: -1.95, h: 1.85, delay: 0.9 }, 3: { x: 1.95, h: 1.35, delay: 0.3 } };
 const LOCKED = 0.3;
-const SPARK_COLORS = [0xfbbf24, 0xa78bfa, 0x22d3ee, 0xf472b6, 0x34d399, 0xfb923c];
+const SPARK_COLORS = [0xf59e0b, 0x8b5cf6, 0x06b6d4, 0xec4899, 0x10b981, 0xf97316];
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const easeOutBack = (x) => {
@@ -65,16 +65,16 @@ function glowTexture() {
 function questionTexture(color) {
   return canvasTex(256, 256, (c) => {
     const g = c.createRadialGradient(128, 128, 10, 128, 128, 120);
-    g.addColorStop(0, 'rgba(255,255,255,0.35)');
+    g.addColorStop(0, 'rgba(255,255,255,0.8)');
     g.addColorStop(1, 'rgba(255,255,255,0)');
     c.fillStyle = g;
     c.fillRect(0, 0, 256, 256);
-    c.fillStyle = '#fff';
+    c.fillStyle = color;
     c.font = '900 150px system-ui, sans-serif';
     c.textAlign = 'center';
     c.textBaseline = 'middle';
-    c.shadowColor = color;
-    c.shadowBlur = 26;
+    c.shadowColor = 'rgba(255,255,255,0.95)';
+    c.shadowBlur = 18;
     c.fillText('?', 128, 138);
   });
 }
@@ -82,53 +82,68 @@ function questionTexture(color) {
 function winnerTexture(w) {
   const m = MEDAL[w.rank];
   return canvasTex(512, 330, (c, W, H) => {
-    roundRect(c, 6, 6, W - 12, H - 12, 36);
-    c.fillStyle = 'rgba(12,10,46,0.66)';
+    roundRect(c, 8, 8, W - 16, H - 16, 38);
+    c.shadowColor = 'rgba(99,102,241,0.35)';
+    c.shadowBlur = 22;
+    c.shadowOffsetY = 8;
+    c.fillStyle = 'rgba(255,255,255,0.86)';
     c.fill();
-    c.lineWidth = 4;
-    c.strokeStyle = m.css;
-    c.globalAlpha = 0.75;
+    c.shadowColor = 'transparent';
+    c.lineWidth = 3;
+    c.strokeStyle = 'rgba(255,255,255,1)';
     c.stroke();
-    c.globalAlpha = 1;
 
-    const g = c.createLinearGradient(36, 42, 136, 142);
-    g.addColorStop(0, m.css);
-    g.addColorStop(1, m.css2);
+    // vibrant avatar frame
+    const g = c.createLinearGradient(30, 36, 142, 148);
+    g.addColorStop(0, m.ring[0]);
+    g.addColorStop(0.5, m.ring[1]);
+    g.addColorStop(1, m.ring[2]);
     c.beginPath();
-    c.arc(86, 92, 50, 0, Math.PI * 2);
+    c.arc(88, 94, 56, 0, Math.PI * 2);
     c.fillStyle = g;
     c.fill();
-    c.fillStyle = m.dark;
-    c.font = '800 52px system-ui, sans-serif';
+    c.beginPath();
+    c.arc(88, 94, 46, 0, Math.PI * 2);
+    c.fillStyle = '#F8FAFF';
+    c.fill();
+    c.fillStyle = m.css2;
+    c.font = '800 48px system-ui, sans-serif';
     c.textAlign = 'center';
     c.textBaseline = 'middle';
-    c.fillText((w.name || '?')[0].toUpperCase(), 86, 95);
+    c.fillText((w.name || '?')[0].toUpperCase(), 88, 97);
 
     c.textAlign = 'left';
     c.textBaseline = 'alphabetic';
-    c.fillStyle = '#fff';
+    c.fillStyle = '#1E1B4B';
     c.font = '800 40px system-ui, sans-serif';
-    c.fillText(fitText(c, w.name, 340), 156, 86);
-    c.fillStyle = 'rgba(255,255,255,0.7)';
+    c.fillText(fitText(c, w.name, 330), 164, 88);
+    c.fillStyle = '#64748B';
     c.font = '500 26px system-ui, sans-serif';
-    c.fillText(fitText(c, `@${w.handle || ''}`, 340), 156, 124);
+    c.fillText(fitText(c, `@${w.handle || ''}`, 330), 164, 126);
 
-    c.fillStyle = 'rgba(255,255,255,0.18)';
-    c.fillRect(36, 168, W - 72, 2);
+    // colourful badges: prize / solved, and the rank
+    const chip = (x, y, text, bg, fg) => {
+      c.font = '800 28px system-ui, sans-serif';
+      const tw = c.measureText(text).width + 36;
+      roundRect(c, x, y, tw, 48, 24);
+      c.fillStyle = bg;
+      c.fill();
+      c.fillStyle = fg;
+      c.textBaseline = 'middle';
+      c.fillText(text, x + 18, y + 25);
+      c.textBaseline = 'alphabetic';
+      return tw;
+    };
+    let x = 36;
+    if (w.prize) x += chip(x, 184, inr(w.prize), '#FEF3C7', '#B45309') + 12;
+    chip(x, 184, `${w.solved ?? 0} solved`, '#D1FAE5', '#047857');
 
-    c.fillStyle = m.css;
-    c.font = '800 62px ui-monospace, "JetBrains Mono", monospace';
-    c.fillText(w.prize ? inr(w.prize) : `${w.solved ?? 0} solved`, 36, 240);
-    if (w.prize) {
-      c.fillStyle = 'rgba(255,255,255,0.78)';
-      c.font = '600 28px system-ui, sans-serif';
-      c.fillText(`${w.solved ?? 0} solved`, 36, 288);
-    }
-    c.textAlign = 'right';
-    c.fillStyle = m.css;
-    c.globalAlpha = 0.9;
-    c.font = '900 84px system-ui, sans-serif';
-    c.fillText(`#${w.rank}`, W - 36, 290);
+    const rg = c.createLinearGradient(36, 250, 300, 300);
+    rg.addColorStop(0, m.ring[0]);
+    rg.addColorStop(1, m.ring[2]);
+    c.fillStyle = rg;
+    c.font = '900 64px system-ui, sans-serif';
+    c.fillText(`#${w.rank}`, 36, 298);
   });
 }
 
@@ -139,7 +154,7 @@ function createFireworks(scene, glow) {
   const bursts = [];
 
   const spawnRocket = (o) => {
-    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: o.color, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: o.color, transparent: true, depthWrite: false, blending: THREE.NormalBlending }));
     s.scale.setScalar(0.38);
     s.position.set(o.x, -0.2, -0.6);
     scene.add(s);
@@ -164,7 +179,7 @@ function createFireworks(scene, glow) {
     }
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    const mat = new THREE.PointsMaterial({ map: glow, color, size: big ? 0.32 : 0.25, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 1 });
+    const mat = new THREE.PointsMaterial({ map: glow, color, size: big ? 0.4 : 0.3, transparent: true, depthWrite: false, blending: THREE.NormalBlending, opacity: 1 });
     const pts = new THREE.Points(geo, mat);
     pts.frustumCulled = false;
     scene.add(pts);
@@ -237,15 +252,24 @@ function buildTrophy() {
 }
 
 function buildScene(host, winners, { reveal: startRevealed, reduce }) {
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+  const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+  renderer.toneMapping = THREE.NeutralToneMapping;
+  renderer.toneMappingExposure = 1;
   const el = renderer.domElement;
   el.style.cssText = 'display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab';
   host.appendChild(el);
 
   const scene = new THREE.Scene();
+  // soft pastel backdrop. (An opaque background also keeps the glass visible: transmission needs something behind it.)
+  scene.background = canvasTex(4, 256, (c, W, H) => {
+    const g = c.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#F5F3FF');
+    g.addColorStop(0.55, '#E8EDFF');
+    g.addColorStop(1, '#FCE7F3');
+    c.fillStyle = g;
+    c.fillRect(0, 0, W, H);
+  });
   const pmrem = new THREE.PMREMGenerator(renderer);
   const room = new RoomEnvironment();
   const envRT = pmrem.fromScene(room, 0.04);
@@ -258,7 +282,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   scene.add(stage);
 
   scene.add(new THREE.AmbientLight(0xffffff, 0.35));
-  const key = new THREE.DirectionalLight(0xffffff, 1.4);
+  const key = new THREE.DirectionalLight(0xffffff, 1.1);
   key.position.set(2, 6, 5);
   scene.add(key);
   const violet = new THREE.PointLight(0xa78bfa, 60, 0, 2);
@@ -271,10 +295,10 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   const glow = glowTexture();
 
   // floor: dark disc, two neon rings, soft glow
-  const floor = new THREE.Mesh(new THREE.CylinderGeometry(4.3, 4.5, 0.12, 72), new THREE.MeshStandardMaterial({ color: 0x14123a, metalness: 0.6, roughness: 0.25 }));
+  const floor = new THREE.Mesh(new THREE.CylinderGeometry(4.3, 4.5, 0.12, 72), new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.1, roughness: 0.3 }));
   floor.position.y = -0.06;
   stage.add(floor);
-  const ringA = new THREE.Mesh(new THREE.TorusGeometry(4.3, 0.03, 12, 120), new THREE.MeshBasicMaterial({ color: 0xfbbf24, toneMapped: false }));
+  const ringA = new THREE.Mesh(new THREE.TorusGeometry(4.3, 0.03, 12, 120), new THREE.MeshBasicMaterial({ color: 0xf472b6, toneMapped: false }));
   ringA.rotation.x = Math.PI / 2;
   ringA.position.y = 0.01;
   stage.add(ringA);
@@ -282,7 +306,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   ringB.rotation.x = Math.PI / 2;
   ringB.position.y = 0.01;
   stage.add(ringB);
-  const floorGlow = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshBasicMaterial({ map: glow, color: 0x8b5cf6, transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending }));
+  const floorGlow = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshBasicMaterial({ map: glow, color: 0xa78bfa, transparent: true, opacity: 0.35, depthWrite: false, blending: THREE.NormalBlending }));
   floorGlow.rotation.x = -Math.PI / 2;
   floorGlow.position.y = 0.02;
   stage.add(floorGlow);
@@ -297,7 +321,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   }
   const dustGeo = new THREE.BufferGeometry();
   dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
-  const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ map: glow, color: 0xc4b5fd, size: 0.1, transparent: true, opacity: 0.6, depthWrite: false, blending: THREE.AdditiveBlending }));
+  const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ map: glow, color: 0x8b5cf6, size: 0.1, transparent: true, opacity: 0.45, depthWrite: false, blending: THREE.NormalBlending }));
   dust.frustumCulled = false;
   scene.add(dust);
 
@@ -355,12 +379,12 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
     first.group.add(trophy);
     orbit = new THREE.Group();
     orbit.visible = false;
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0xfde68a, transparent: true, opacity: 0.7, toneMapped: false });
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.85, toneMapped: false });
     const r1 = new THREE.Mesh(new THREE.TorusGeometry(1.15, 0.012, 8, 90), ringMat);
     const r2 = new THREE.Mesh(new THREE.TorusGeometry(0.95, 0.012, 8, 90), ringMat);
     orbit.add(r1, r2);
     const orbs = [0, 1, 2].map(() => {
-      const o = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: 0xfde68a, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+      const o = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: 0xf59e0b, transparent: true, depthWrite: false, blending: THREE.NormalBlending }));
       o.scale.setScalar(0.4);
       orbit.add(o);
       return o;
@@ -392,7 +416,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
       fw.schedule(i * 0.16, { x: (Math.random() - 0.5) * 8, y: 3.2 + Math.random() * 1.4, color: SPARK_COLORS[i % SPARK_COLORS.length] });
     }
     for (let i = 0; i < 5; i += 1) {
-      fw.schedule(1.9 + i * 0.1, { x: -2.6 + i * 1.3, y: 3.6 + (i % 2) * 0.7, color: 0xfbbf24, big: true });
+      fw.schedule(1.9 + i * 0.1, { x: -2.6 + i * 1.3, y: 3.6 + (i % 2) * 0.7, color: 0xf59e0b, big: true });
     }
   };
   if (startRevealed) reveal(true);

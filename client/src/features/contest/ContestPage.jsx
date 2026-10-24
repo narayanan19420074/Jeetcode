@@ -15,7 +15,6 @@ import { contestApi } from '../../api/contestApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import ContestTabs, { ContestTile, LiveNow } from './ContestTabs';
-import GlobalTop from './GlobalTop';
 import WinnersPanel from './WinnersPanel';
 import { fmtStart, useContest } from './contestUtils';
 
@@ -41,13 +40,11 @@ function RuleSection({ rule, index }) {
 }
 
 // Preview only: open the contest page with &demo=winners to see a finished contest with sample winners.
-const DEMO_WINNERS = [
-  { rank: 1, name: 'Demo Champion', handle: 'demo_one', solved: 10, prize: 50000 },
-  { rank: 2, name: 'Demo Runner', handle: 'demo_two', solved: 9, prize: 30000 },
-  { rank: 3, name: 'Demo Third', handle: 'demo_three', solved: 8, prize: 20000 },
-];
+const DEMO_NAMES = ['Aarav Menon', 'Diya Raman', 'Kabir Shah', 'Meera Iyer', 'Rohan Das', 'Sana Khan', 'Vikram Rao', 'Ananya Nair', 'Ishaan Roy', 'Tara Pillai'];
+const DEMO_PRIZE = [50000, 30000, 20000];
+const DEMO_WINNERS = DEMO_NAMES.map((name, i) => ({ rank: i + 1, name, handle: name.split(' ')[0].toLowerCase() + (i + 1), solved: 10 - Math.floor(i / 2), prize: DEMO_PRIZE[i] || null }));
 
-// List view: winners podium (only once a contest has ended) + Global top 10 on the left, live-now card + Upcoming/Past small cards on the right.
+// List view: contest top 10 with the 3D podium (only once a contest has ended) on the left, live-now card + Upcoming/Past small cards on the right.
 // Tapping a contest opens its explain page (rules + apply) with ?c=<id>, so Back and refresh work.
 export default function ContestPage({ embedded = false }) {
   const navigate = useNavigate();
@@ -106,15 +103,12 @@ export default function ContestPage({ embedded = false }) {
   if (!detail) {
     return (
       <Container maxWidth="lg" disableGutters={embedded} sx={embedded ? { py: 0 } : { py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
-        <Box sx={{ display: 'grid', gap: 2, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.55fr) minmax(0,1fr)' } }}>
-          <Box sx={{ order: { xs: 2, md: 1 }, display: 'grid', gap: 2, minWidth: 0 }}>
-            {hasPast && (
-              <Box ref={winnersRef}>
-                <WinnersPanel contest={shown} revealed={revealed} runKey={runKey} onReveal={() => setRevealed(true)} onReplay={replay} />
-              </Box>
-            )}
-            <GlobalTop />
-          </Box>
+        <Box sx={{ display: 'grid', gap: 2.5, alignItems: 'start', mx: 'auto', maxWidth: hasPast ? 'none' : 640, gridTemplateColumns: { xs: 'minmax(0,1fr)', md: hasPast ? 'minmax(0,1.55fr) minmax(0,1fr)' : 'minmax(0,1fr)' } }}>
+          {hasPast && (
+            <Box ref={winnersRef} sx={{ order: { xs: 2, md: 1 }, minWidth: 0 }}>
+              <WinnersPanel contest={shown} revealed={revealed} runKey={runKey} onReveal={() => setRevealed(true)} onReplay={replay} />
+            </Box>
+          )}
           <Box sx={{ order: { xs: 1, md: 2 }, display: 'grid', gap: 2, minWidth: 0 }}>
             <LiveNow contest={shown} onOpen={openContest} />
             <ContestTabs contest={shown} onOpen={openContest} onOpenPast={openPast} pastSelected={revealed} />
