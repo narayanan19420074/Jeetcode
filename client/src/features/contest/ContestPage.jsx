@@ -44,7 +44,7 @@ const DEMO_NAMES = ['Aarav Menon', 'Diya Raman', 'Kabir Shah', 'Meera Iyer', 'Ro
 const DEMO_PRIZE = [50000, 30000, 20000];
 const DEMO_WINNERS = DEMO_NAMES.map((name, i) => ({ rank: i + 1, name, handle: name.split(' ')[0].toLowerCase() + (i + 1), solved: 10 - Math.floor(i / 2), prize: DEMO_PRIZE[i] || null }));
 
-// List view: contest top 10 with the 3D podium (only once a contest has ended) on the left, live-now card + Upcoming/Past small cards on the right.
+// List view: 3D podium + contest top 10 on the left (empty until a contest ends), live-now card + Upcoming/Past small cards on the right.
 // Tapping a contest opens its explain page (rules + apply) with ?c=<id>, so Back and refresh work.
 export default function ContestPage({ embedded = false }) {
   const navigate = useNavigate();
@@ -103,12 +103,10 @@ export default function ContestPage({ embedded = false }) {
   if (!detail) {
     return (
       <Container maxWidth="lg" disableGutters={embedded} sx={embedded ? { py: 0 } : { py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
-        <Box sx={{ display: 'grid', gap: 2.5, alignItems: 'start', mx: 'auto', maxWidth: hasPast ? 'none' : 640, gridTemplateColumns: { xs: 'minmax(0,1fr)', md: hasPast ? 'minmax(0,1.55fr) minmax(0,1fr)' : 'minmax(0,1fr)' } }}>
-          {hasPast && (
-            <Box ref={winnersRef} sx={{ order: { xs: 2, md: 1 }, minWidth: 0 }}>
-              <WinnersPanel contest={shown} revealed={revealed} runKey={runKey} onReveal={() => setRevealed(true)} onReplay={replay} />
-            </Box>
-          )}
+        <Box sx={{ display: 'grid', gap: 2.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.55fr) minmax(0,1fr)' } }}>
+          <Box ref={winnersRef} sx={{ order: { xs: 2, md: 1 }, minWidth: 0 }}>
+            <WinnersPanel contest={hasPast ? shown : null} revealed={revealed} runKey={runKey} onReveal={() => setRevealed(true)} onReplay={replay} />
+          </Box>
           <Box sx={{ order: { xs: 1, md: 2 }, display: 'grid', gap: 2, minWidth: 0 }}>
             <LiveNow contest={shown} onOpen={openContest} />
             <ContestTabs contest={shown} onOpen={openContest} onOpenPast={openPast} pastSelected={revealed} />

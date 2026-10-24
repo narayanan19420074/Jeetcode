@@ -67,13 +67,14 @@ function WinnerRow({ row, index, delay, reduce }) {
   );
 }
 
-// Contest top 10: 3D glass podium for ranks 1-3 and a list for 4-10. `revealed` flips when the person taps a past
-// contest card (or the Reveal button), which starts the fireworks + rise animation.
+// Contest top 10: 3D glass podium for ranks 1-3 and a list for 4-10. The podium is always on screen; with no finished
+// contest (`contest` null) it stands empty. `revealed` flips when the person taps a past contest card (or the Reveal
+// button), which starts the fireworks + rise animation.
 export default function WinnersPanel({ contest, revealed, runKey, onReveal, onReplay }) {
   const reduce = useReducedMotion();
   const [failed, setFailed] = useState(false);
   const onFail = useCallback(() => setFailed(true), []);
-  const winners = contest.winners || EMPTY;
+  const winners = contest?.winners || EMPTY;
   const has = winners.length > 0;
   const rows = failed ? winners : winners.slice(3);
 
@@ -96,7 +97,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
             </Box>
             <Box sx={{ minWidth: 0 }}>
               <Typography sx={{ fontWeight: 900, fontSize: { xs: 20, sm: 23 }, color: INK, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Contest top 10</Typography>
-              <Typography noWrap sx={{ fontSize: 13, color: '#64748B', mt: 0.3 }}>{contest.title}</Typography>
+              <Typography noWrap sx={{ fontSize: 13, color: '#64748B', mt: 0.3 }}>{contest ? contest.title : 'Winners will stand here'}</Typography>
             </Box>
           </Box>
           {has && revealed && !failed && (
@@ -108,15 +109,14 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
           )}
         </Box>
 
-        {!has && (
+        {failed && !has && (
           <Box sx={{ mt: 3, py: 6, px: 3, textAlign: 'center', borderRadius: '24px', bgcolor: SOFT, boxShadow: PRESSED }}>
             <EmojiEventsRoundedIcon sx={{ fontSize: 46, color: '#F59E0B' }} />
-            <Typography sx={{ fontWeight: 800, mt: 0.5, color: INK }}>Results coming soon</Typography>
-            <Typography sx={{ fontSize: 13.5, color: '#64748B', mt: 0.5 }}>Winners appear here once the organizers verify the rankings.</Typography>
+            <Typography sx={{ fontWeight: 800, mt: 0.5, color: INK }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
           </Box>
         )}
 
-        {has && !failed && (
+        {!failed && (
           <Box
             sx={{
               position: 'relative', mt: 3, overflow: 'hidden', borderRadius: '24px', height: { xs: 380, sm: 460 },
@@ -125,9 +125,17 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
             }}
           >
             <Suspense fallback={<Skeleton variant="rounded" sx={{ position: 'absolute', inset: 16, height: 'auto', borderRadius: '18px' }} />}>
-              <PodiumScene key={`${contest.id}-${runKey}`} winners={winners} revealed={revealed} reduce={Boolean(reduce)} onFail={onFail} />
+              <PodiumScene key={`${contest?.id || 'none'}-${runKey}`} winners={winners} revealed={revealed} reduce={Boolean(reduce)} onFail={onFail} />
             </Suspense>
-            {!revealed && (
+            {!has && (
+              <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: { xs: 20, sm: 28 }, display: 'grid', placeItems: 'center', pointerEvents: 'none' }}>
+                <Box sx={{ px: 2.5, py: 1.1, borderRadius: 99, bgcolor: 'rgba(255,255,255,0.75)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', boxShadow: RAISED_SM, textAlign: 'center' }}>
+                  <Typography sx={{ fontWeight: 800, fontSize: 14, color: INK }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
+                  <Typography sx={{ fontSize: 12, color: '#64748B' }}>{contest ? 'Winners appear once rankings are verified' : 'Winners will stand on this podium'}</Typography>
+                </Box>
+              </Box>
+            )}
+            {has && !revealed && (
               <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: { xs: 20, sm: 28 }, display: 'grid', placeItems: 'center', gap: 1, pointerEvents: 'none' }}>
                 <Button
                   onClick={onReveal} disableElevation startIcon={<BoltRoundedIcon />}

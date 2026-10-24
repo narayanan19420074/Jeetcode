@@ -327,8 +327,9 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
 
   // podium blocks
   const slots = [];
-  winners.slice(0, 3).forEach((w, idx) => {
-    const rank = w.rank || idx + 1;
+  const empty = winners.length === 0; // no finished contest yet: an empty glass podium
+  [1, 2, 3].forEach((rank) => {
+    const w = winners.find((x) => x.rank === rank) || null;
     const cfg = SLOTS[rank];
     const m = MEDAL[rank];
     if (!cfg) return;
@@ -353,26 +354,30 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
     const cap = new THREE.Mesh(new RoundedBoxGeometry(1.55, 0.07, 1.55, 2, 0.03), new THREE.MeshBasicMaterial({ color: m.hex, toneMapped: false }));
     group.add(cap);
 
-    const label = new THREE.Mesh(
-      new THREE.PlaneGeometry(1.5, (1.5 * 330) / 512),
-      new THREE.MeshBasicMaterial({ map: winnerTexture({ ...w, rank }), transparent: true, depthWrite: false, toneMapped: false }),
-    );
-    label.position.set(0, h * 0.5, 0.88);
-    label.visible = false;
-    group.add(label);
+    let label = null;
+    if (w) {
+      label = new THREE.Mesh(
+        new THREE.PlaneGeometry(1.5, (1.5 * 330) / 512),
+        new THREE.MeshBasicMaterial({ map: winnerTexture({ ...w, rank }), transparent: true, depthWrite: false, toneMapped: false }),
+      );
+      label.position.set(0, h * 0.5, 0.88);
+      label.visible = false;
+      group.add(label);
+    }
 
     const q = new THREE.Sprite(new THREE.SpriteMaterial({ map: questionTexture(m.css), transparent: true, depthWrite: false, toneMapped: false }));
     q.scale.setScalar(1.1);
     group.add(q);
 
-    slots.push({ rank, cfg, h, block, cap, label, q, phase: rank * 1.7 });
+    q.visible = !empty;
+    slots.push({ rank, cfg, h, block, cap, label, q, phase: rank * 1.7, winner: w });
   });
 
   // trophy + orbiting parts for the champion
   const first = slots.find((s) => s.rank === 1);
   let trophy = null;
   let orbit = null;
-  if (first) {
+  if (first && first.winner) {
     trophy = buildTrophy();
     trophy.visible = false;
     first.group = first.block.parent;
@@ -419,7 +424,10 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
       fw.schedule(1.9 + i * 0.1, { x: -2.6 + i * 1.3, y: 3.6 + (i % 2) * 0.7, color: 0xf59e0b, big: true });
     }
   };
-  if (startRevealed) reveal(true);
+  if (empty) {
+    revealed = true;
+    revealAt = 0; // blocks rise on their own, no fireworks, no plates
+  } else if (startRevealed) reveal(true);
 
   const resize = () => {
     const w = host.clientWidth || 1;
@@ -489,11 +497,13 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
       s.cap.position.y = s.h * sy + 0.12 + Math.sin(t * 1.6 + s.phase) * 0.04;
       s.cap.rotation.y = t * 0.4;
 
-      const pop = rt < 0 ? 0 : clamp01((rt - s.cfg.delay - 0.8) / 0.5);
-      s.label.visible = pop > 0;
-      s.label.scale.setScalar(Math.max(0.001, easeOutBack(pop)));
+      if (s.label) {
+        const pop = rt < 0 ? 0 : clamp01((rt - s.cfg.delay - 0.8) / 0.5);
+        s.label.visible = pop > 0;
+        s.label.scale.setScalar(Math.max(0.001, easeOutBack(pop)));
+      }
 
-      const qs = rt < 0 ? 1 : Math.max(0, 1 - rt * 3);
+      const qs = empty ? 0 : rt < 0 ? 1 : Math.max(0, 1 - rt * 3);
       s.q.visible = qs > 0.01;
       s.q.scale.setScalar(1.1 * qs);
       s.q.position.y = s.h * sy + 0.85 + Math.sin(t * 2 + s.phase) * 0.08;
