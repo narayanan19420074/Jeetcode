@@ -1,7 +1,7 @@
 // Minimal service worker: makes JeetCode installable and shows a friendly page
 // when the phone is offline. It deliberately does NOT cache the app itself, so a
 // new deploy is always picked up straight away (no stale-bundle bugs).
-const OFFLINE_CACHE = 'jeetcode-offline-v2';
+const OFFLINE_CACHE = 'jeetcode-offline-v4';
 const OFFLINE_URL = '/offline.html';
 
 self.addEventListener('install', (event) => {

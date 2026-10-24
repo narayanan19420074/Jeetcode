@@ -55,7 +55,7 @@ export default function OfflineGame() {
       title="Offline game"
       onLoad={() => frameRef.current?.contentWindow?.focus()}
       {...(html ? { srcDoc: html } : { src: '/offline.html' })}
-      style={{ position: 'fixed', inset: 0, width: '100%', height: '100%', border: 0, zIndex: 2000, background: '#0E1116' }}
+      style={{ position: 'fixed', inset: 0, width: '100%', height: '100%', border: 0, zIndex: 2000, background: '#FFFFFF' }}
     />
   );
 }
