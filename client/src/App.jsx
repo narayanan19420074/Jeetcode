@@ -57,9 +57,6 @@ const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage')
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
 const ExamsPage = lazy(() => import('./features/exams/ExamsPage'));
 const StorePage = lazy(() => import('./features/store/StorePage'));
-const WalletPage = lazy(() => import('./features/store/WalletPage'));
-const OrdersPage = lazy(() => import('./features/store/OrdersPage'));
-const CoursePage = lazy(() => import('./features/store/CoursePage'));
 const AdminStorePage = lazy(() => import('./features/admin/pages/AdminStorePage'));
 
 const RouteFallback = () => (
@@ -176,9 +173,10 @@ export default function App() {
         <Route path="/you" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><YouPage /></Suspense></ProtectedRoute>} />
         <Route path="/prep" element={<Suspense fallback={<RouteFallback />}><PrepCompaniesPage /></Suspense>} />
         <Route path="/store" element={<Suspense fallback={<RouteFallback />}><StorePage /></Suspense>} />
-        <Route path="/store/course/:slug" element={<Suspense fallback={<RouteFallback />}><CoursePage /></Suspense>} />
-        <Route path="/store/wallet" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><WalletPage /></Suspense></ProtectedRoute>} />
-        <Route path="/store/orders" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><OrdersPage /></Suspense></ProtectedRoute>} />
+        {/* Store is ONE page (Shop / Orders / Coins tabs); old deep links just redirect into it. */}
+        <Route path="/store/wallet" element={<Navigate to="/store?tab=coins" replace />} />
+        <Route path="/store/orders" element={<Navigate to="/store?tab=orders" replace />} />
+        <Route path="/store/course/:slug" element={<Navigate to="/store" replace />} />
         <Route path="/exams" element={<Suspense fallback={<RouteFallback />}><ExamsPage /></Suspense>} />
         <Route path="/prep/:companySlug" element={<Suspense fallback={<RouteFallback />}><PrepRoadmapPage /></Suspense>} />
 

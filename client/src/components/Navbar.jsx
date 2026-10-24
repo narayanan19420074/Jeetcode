@@ -306,14 +306,14 @@ export default function Navbar() {
           <Tooltip title="Your coins. Open wallet">
             <Chip
               component={RouterLink}
-              to="/store/wallet"
+              to="/store?tab=coins"
               clickable
               icon={<MonetizationOnRoundedIcon sx={{ color: 'warning.main !important' }} />}
               label={coins.toLocaleString('en-IN')}
               size="small"
               variant="outlined"
               aria-label={`${coins} coins, open wallet`}
-              sx={{ fontWeight: 700 }}
+              sx={{ fontWeight: 700, display: { xs: 'none', sm: 'inline-flex' } }}
             />
           </Tooltip>
         )}
@@ -466,13 +466,42 @@ export default function Navbar() {
                   <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
                     {user?.streakDays ?? 0}-day streak
                   </Typography>
-                  <MonetizationOnRoundedIcon sx={{ fontSize: 16, color: 'warning.main', ml: 0.5 }} />
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
-                    {coins.toLocaleString('en-IN')}
-                  </Typography>
                   {user?.isPro && <ProBadge />}
                 </Box>
               </Box>
+            </Box>
+          )}
+
+          {isAuthenticated && (
+            <Box
+              component={RouterLink}
+              to="/store?tab=coins"
+              onClick={() => setMobileOpen(false)}
+              aria-label={`${coins} coins, open wallet`}
+              sx={(t) => ({
+                mb: 2.5,
+                p: 1.75,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1.5,
+                borderRadius: '24px',
+                textDecoration: 'none',
+                color: 'inherit',
+                bgcolor: alpha(t.palette.warning.main, t.palette.mode === 'dark' ? 0.18 : 0.14),
+              })}
+            >
+              <MonetizationOnRoundedIcon sx={{ fontSize: 38, color: 'warning.main' }} />
+              <Box sx={{ flex: 1, minWidth: 0 }}>
+                <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
+                  Your coins
+                </Typography>
+                <Typography sx={{ fontWeight: 800, fontSize: '1.5rem', lineHeight: 1.1, fontVariantNumeric: 'tabular-nums' }}>
+                  {coins.toLocaleString('en-IN')}
+                </Typography>
+              </Box>
+              <Typography variant="body2" sx={{ fontWeight: 700, color: 'primary.main' }}>
+                Wallet
+              </Typography>
             </Box>
           )}
 
