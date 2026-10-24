@@ -153,25 +153,31 @@ export function ContestMini({ contest, past, selected, onOpen }) {
   );
 }
 
-// Side card: the contest that is running right now, or a calm "no contest" note.
+// Side card: the contest that is running right now, or one compact "no contest" row.
 export function LiveNow({ contest, onOpen }) {
   const live = contest && contest.status === 'live';
   const next = contest && contest.status === 'upcoming';
-  return (
-    <Box sx={[surface, { p: { xs: 1.25, sm: 1.5 } }]}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 0.5, mb: 1.1 }}>
-        <BoltRoundedIcon sx={{ fontSize: 19, color: live ? '#22C55E' : 'text.secondary' }} />
-        <Typography sx={{ fontWeight: 800, fontSize: 14.5 }}>Happening now</Typography>
-      </Box>
-      {contest === null && <Skeleton variant="rounded" height={84} sx={{ borderRadius: '16px' }} />}
-      {live && <ContestMini contest={contest} onOpen={() => onOpen(contest)} />}
-      {contest !== null && !live && (
-        <Box sx={(t) => ({ textAlign: 'center', px: 2, py: 3, borderRadius: '16px', border: `1.5px dashed ${t.palette.divider}` })}>
-          <EventBusyRoundedIcon sx={{ fontSize: 30, color: 'text.secondary', opacity: 0.8 }} />
-          <Typography sx={{ fontWeight: 800, mt: 0.5 }}>No contest right now</Typography>
-          {next && <Typography variant="body2" color="text.secondary" sx={{ mt: 0.4 }}>Next: {contest.title} on {fmtDate(contest.startsAt)}</Typography>}
+  if (contest === null) return <Skeleton variant="rounded" height={64} sx={{ borderRadius: '16px' }} />;
+  if (live) {
+    return (
+      <Box sx={[surface, { p: { xs: 1.25, sm: 1.5 } }]}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 0.5, mb: 1 }}>
+          <BoltRoundedIcon sx={{ fontSize: 19, color: '#22C55E' }} />
+          <Typography sx={{ fontWeight: 800, fontSize: 14.5 }}>Happening now</Typography>
         </Box>
-      )}
+        <ContestMini contest={contest} onOpen={() => onOpen(contest)} />
+      </Box>
+    );
+  }
+  return (
+    <Box sx={[surface, { px: 1.75, py: 1.25, display: 'flex', alignItems: 'center', gap: 1.5 }]}>
+      <Box sx={(t) => ({ width: 38, height: 38, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', color: 'text.secondary', bgcolor: t.palette.action.hover })}>
+        <EventBusyRoundedIcon sx={{ fontSize: 21 }} />
+      </Box>
+      <Box sx={{ minWidth: 0 }}>
+        <Typography sx={{ fontWeight: 800, fontSize: 14.5, lineHeight: 1.25 }}>No contest right now</Typography>
+        {next && <Typography noWrap variant="caption" color="text.secondary">Next: {contest.title} on {fmtDate(contest.startsAt)}</Typography>}
+      </Box>
     </Box>
   );
 }

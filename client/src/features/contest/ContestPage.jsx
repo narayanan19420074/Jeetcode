@@ -14,6 +14,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { contestApi } from '../../api/contestApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
+import useViewportFill from '../dashboard/useViewportFill';
 import ContestTabs, { ContestTile, LiveNow } from './ContestTabs';
 import WinnersPanel from './WinnersPanel';
 import { fmtStart, useContest } from './contestUtils';
@@ -56,6 +57,7 @@ export default function ContestPage({ embedded = false }) {
   const [busy, setBusy] = useState(false);
   const applyRef = useRef(null);
   const winnersRef = useRef(null);
+  const listRef = useRef(null);
   const timerRef = useRef(null);
   const [revealed, setRevealed] = useState(false);
   const [runKey, setRunKey] = useState(0);
@@ -64,6 +66,8 @@ export default function ContestPage({ embedded = false }) {
   // list view data: the real contest, or a finished one with sample winners when ?demo=winners
   const shown = params.get('demo') === 'winners' && contest ? { ...contest, status: 'ended', winners: DEMO_WINNERS } : contest;
   const hasPast = shown?.status === 'ended';
+  // the list view is exactly one window tall: podium + top 10 + contest cards, no page scrolling
+  const fillH = useViewportFill(listRef, embedded && !detail, 420);
 
   useEffect(() => () => clearTimeout(timerRef.current), []);
 
@@ -103,11 +107,18 @@ export default function ContestPage({ embedded = false }) {
   if (!detail) {
     return (
       <Container maxWidth="lg" disableGutters={embedded} sx={embedded ? { py: 0 } : { py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 } }}>
-        <Box sx={{ display: 'grid', gap: 2.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.55fr) minmax(0,1fr)' } }}>
-          <Box ref={winnersRef} sx={{ order: { xs: 2, md: 1 }, minWidth: 0 }}>
-            <WinnersPanel contest={hasPast ? shown : null} revealed={revealed} runKey={runKey} onReveal={() => setRevealed(true)} onReplay={replay} />
+        <Box
+          ref={listRef}
+          sx={{
+            display: 'grid', gap: 2, alignItems: 'stretch',
+            gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.55fr) minmax(0,1fr)' },
+            ...(fillH && { height: fillH - 24, overflow: 'hidden', gridTemplateRows: { xs: 'auto minmax(0,1fr)', md: 'minmax(0,1fr)' } }),
+          }}
+        >
+          <Box ref={winnersRef} sx={{ order: { xs: 2, md: 1 }, minWidth: 0, minHeight: 0 }}>
+            <WinnersPanel fill={Boolean(fillH)} contest={hasPast ? shown : null} revealed={revealed} runKey={runKey} onReveal={() => setRevealed(true)} onReplay={replay} />
           </Box>
-          <Box sx={{ order: { xs: 1, md: 2 }, display: 'grid', gap: 2, minWidth: 0 }}>
+          <Box sx={{ order: { xs: 1, md: 2 }, display: 'grid', gap: 1.5, minWidth: 0, minHeight: 0, alignContent: 'start' }}>
             <LiveNow contest={shown} onOpen={openContest} />
             <ContestTabs contest={shown} onOpen={openContest} onOpenPast={openPast} pastSelected={revealed} />
           </Box>
