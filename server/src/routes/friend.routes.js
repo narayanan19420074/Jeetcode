@@ -16,6 +16,7 @@ import {
 } from '../controllers/friend.controller.js';
 import {
   getUnread,
+  chatOverview,
   getHistory,
   postMessage,
   readChat,
@@ -39,6 +40,7 @@ router.delete('/requests/:id', cancelRequest);
 // Activity feed + chat. Declared before the /:userId routes so 'activity' / 'chat' are never read as ids.
 router.get('/activity', activityFeed);
 router.get('/chat/unread', getUnread);
+router.get('/chat/overview', chatOverview);
 router.get('/chat/:userId', getHistory);
 router.post('/chat/:userId', validate(sendMessageSchema), postMessage);
 router.post('/chat/:userId/read', readChat);

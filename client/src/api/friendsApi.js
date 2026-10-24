@@ -13,6 +13,7 @@ export const friendsApi = {
   // activity feed, chat, nudge, code together, compare
   activity: (before) => apiClient.get('/friends/activity', { params: { before } }),
   chatUnread: () => apiClient.get('/friends/chat/unread'),
+  chatOverview: () => apiClient.get('/friends/chat/overview'),
   chatHistory: (userId, before) => apiClient.get(`/friends/chat/${userId}`, { params: { before } }),
   chatSend: (userId, text) => apiClient.post(`/friends/chat/${userId}`, { text }),
   chatRead: (userId) => apiClient.post(`/friends/chat/${userId}/read`),

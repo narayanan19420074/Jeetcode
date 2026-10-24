@@ -3,7 +3,7 @@ import { DirectMessage } from '../models/DirectMessage.js';
 import { Friendship } from '../models/Friendship.js';
 import { ApiError } from '../utils/ApiError.js';
 import { emitToUser } from '../realtime/hub.js';
-import { pairKey } from './friend.service.js';
+import { pairKey, getFriendIds } from './friend.service.js';
 
 export const MAX_TEXT = 1000;
 export const PAGE = 40;
@@ -68,6 +68,26 @@ export async function unreadSummary(me) {
     total += r.count;
   }
   return { byUser, total };
+}
+
+// Last message of every conversation with a friend — the preview line + time in the chat list.
+// -> { byUser: { friendId: { from, kind, text, at, read } } }
+export async function conversationSummaries(me) {
+  const friendIds = await getFriendIds(me);
+  if (!friendIds.length) return { byUser: {} };
+  const keys = friendIds.map((id) => pairKey(me, id));
+  const rows = await DirectMessage.aggregate([
+    { $match: { pairKey: { $in: keys } } },
+    { $sort: { pairKey: 1, createdAt: -1 } },
+    { $group: { _id: '$pairKey', m: { $first: '$$ROOT' } } },
+  ]);
+  const byUser = {};
+  for (const r of rows) {
+    const m = r.m;
+    const other = String(m.from) === String(me) ? String(m.to) : String(m.from);
+    byUser[other] = { from: String(m.from), kind: m.kind, text: m.text, at: new Date(m.createdAt).toISOString(), read: Boolean(m.readAt) };
+  }
+  return { byUser };
 }
 
 export async function markRead(me, other) {

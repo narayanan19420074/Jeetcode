@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 import { io } from 'socket.io-client';
 import { getAccessToken } from '../../api/apiClient';
 import { friendsApi } from '../../api/friendsApi';
-import { bumpUnread, clearUnread, fetchFriends, setOnlineList, setPresence, setUnread } from './friendsSlice';
+import { bumpUnread, clearUnread, fetchChatOverview, fetchFriends, setLast, setOnlineList, setPresence, setUnread } from './friendsSlice';
 import { addNotification } from '../notifications/notificationsSlice';
 
 // One app-wide socket for the logged-in user: live online dots, new-message badges, toasts.
@@ -58,6 +58,7 @@ export default function FriendsRealtime() {
       ready = false;
       arm();
       loadUnread();
+      dispatch(fetchChatOverview());
     });
     s.on('presence:init', ({ online }) => {
       ready = true;
@@ -68,6 +69,8 @@ export default function FriendsRealtime() {
     s.on('dm:cleared', ({ with: id }) => dispatch(clearUnread(id)));
 
     s.on('dm:new', (m) => {
+      // newest message of this conversation -> chat-list preview (also for my own messages)
+      dispatch(setLast({ id: m.from === user.id ? m.to : m.from, m: { from: m.from, kind: m.kind, text: m.text, at: m.createdAt } }));
       if (m.to !== user.id) return; // my own message echoing to this tab
       // Pair-room invites and nudges also go to the navbar bell.
       if (m.kind === 'room' || m.kind === 'nudge') {

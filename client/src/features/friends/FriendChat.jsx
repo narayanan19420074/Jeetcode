@@ -2,7 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Box, Button, CircularProgress, Drawer, IconButton, Stack, TextField, Tooltip, Typography, alpha } from '@mui/material';
+import { Box, Button, CircularProgress, Drawer, IconButton, Popover, Stack, TextField, Typography, alpha } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
@@ -10,17 +10,22 @@ import DoneAllRoundedIcon from '@mui/icons-material/DoneAllRounded';
 import LaptopMacRoundedIcon from '@mui/icons-material/LaptopMacRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
+import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
+import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import { friendsApi } from '../../api/friendsApi';
 import { roomApi } from '../../api/roomApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { clearUnread, setActiveChat } from './friendsSlice';
+import { WS } from '../workspace/wsTokens';
+import { wsSurface } from '../workspace/workspaceTheme';
+import { WsIconButton } from '../workspace/wsUi';
+import { clearUnread, setActiveChat, setLast } from './friendsSlice';
 import { getFriendsSocket } from './friendsRealtime';
 import { FLAME, PersonAvatar, dayLabel, statusInfo } from './friendsUi';
 
 const clock = (iso) => new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
 const addUnique = (list, m) => (list.some((x) => x.id === m.id) ? list : [...list, m]);
+const EMOJIS = ['👍', '🔥', '😂', '🙌', '👏', '💪', '🎯', '✅', '🤝', '😅', '🤔', '😎', '🙏', '🚀', '💡', '🎉'];
 
-// Tiny "typing" dots
 function TypingDots() {
   return (
     <Box sx={{ display: 'inline-flex', gap: '3px', ml: 0.5, verticalAlign: 'middle' }} aria-hidden>
@@ -39,25 +44,23 @@ function TypingDots() {
   );
 }
 
-// "@friend nudged you" — warm flame card
-function NudgeCard({ m, mine, friend }) {
+// Centered system line (day separators, nudges), like WhatsApp's pills.
+const pill = (t) => ({ alignSelf: 'center', px: 1.25, py: 0.35, borderRadius: '8px', bgcolor: t.palette.background.paper, boxShadow: '0 1px 1px rgba(0,0,0,0.12)', color: t.palette.text.secondary, fontSize: 12, fontWeight: 600 });
+
+function NudgeLine({ m, mine, friend }) {
   return (
-    <Box
-      sx={{
-        alignSelf: 'center', width: '100%', maxWidth: 330, p: 1.5, borderRadius: '16px', textAlign: 'center',
-        color: '#fff', background: `linear-gradient(135deg, ${FLAME}, #EF4444)`,
-        boxShadow: `0 10px 24px -12px ${alpha(FLAME, 0.8)}`,
-      }}
-    >
-      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 30 }} />
-      <Typography sx={{ fontWeight: 800, lineHeight: 1.25 }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
-      <Typography variant="body2" sx={{ opacity: 0.95, mt: 0.25 }}>{m.text}</Typography>
-      <Typography variant="caption" sx={{ opacity: 0.8 }}>{clock(m.createdAt)}</Typography>
+    <Box sx={(t) => ({ ...pill(t), display: 'flex', alignItems: 'center', gap: 0.75, maxWidth: '88%', textAlign: 'left' })}>
+      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 18, color: FLAME, flexShrink: 0 }} />
+      <Box sx={{ minWidth: 0 }}>
+        <Typography sx={{ fontSize: 12.5, fontWeight: 700, color: 'text.primary', lineHeight: 1.3 }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
+        <Typography sx={{ fontSize: 12, fontWeight: 400, lineHeight: 1.35 }}>{m.text}</Typography>
+      </Box>
+      <Typography sx={{ fontSize: 11, fontWeight: 400, alignSelf: 'flex-end', flexShrink: 0 }}>{clock(m.createdAt)}</Typography>
     </Box>
   );
 }
 
-// "Let's code together" invite with a Join button (rooms are temporary — we check before joining).
+// "Code together" invite with a Join button (rooms are temporary, so we check before joining).
 function RoomCard({ m, mine, friend }) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -73,27 +76,21 @@ function RoomCard({ m, mine, friend }) {
     }
   };
   return (
-    <Box
-      sx={(t) => ({
-        alignSelf: mine ? 'flex-end' : 'flex-start', width: '100%', maxWidth: 330, p: 1.5, borderRadius: '16px',
-        border: `1px solid ${alpha(t.palette.primary.main, 0.4)}`,
-        background: `linear-gradient(135deg, ${alpha(t.palette.primary.main, 0.14)}, ${alpha(t.palette.secondary?.main || t.palette.primary.main, 0.08)})`,
-      })}
-    >
+    <Box sx={(t) => ({ alignSelf: mine ? 'flex-end' : 'flex-start', width: '100%', maxWidth: 300, p: 1.25, borderRadius: '10px', bgcolor: t.palette.background.paper, boxShadow: '0 1px 1px rgba(0,0,0,0.12)', borderLeft: `3px solid ${t.palette.primary.main}` })}>
       <Stack direction="row" spacing={1.25} alignItems="center">
-        <Box sx={(t) => ({ width: 42, height: 42, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: t.palette.primary.main, color: t.palette.primary.contrastText })}>
-          <LaptopMacRoundedIcon />
+        <Box sx={(t) => ({ width: 36, height: 36, borderRadius: '8px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: t.palette.primary.main })}>
+          <LaptopMacRoundedIcon sx={{ fontSize: 20 }} />
         </Box>
-        <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 800, lineHeight: 1.2 }}>Code together</Typography>
-          <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography sx={{ fontWeight: 700, fontSize: 13.5, lineHeight: 1.25 }}>Code together</Typography>
+          <Typography noWrap sx={{ fontSize: 12, color: 'text.secondary' }}>
             {mine ? `You invited @${friend.handle}` : `@${friend.handle} invited you`}{m.roomTitle ? ` · ${m.roomTitle}` : ''}
           </Typography>
         </Box>
       </Stack>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 1.25 }}>
-        <Typography variant="caption" color="text.secondary">{clock(m.createdAt)}</Typography>
-        <Button size="small" variant="contained" disableElevation disabled={busy} onClick={join} sx={{ borderRadius: 999, fontWeight: 700, px: 2 }}>
+      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 1 }}>
+        <Typography sx={{ fontSize: 11, color: 'text.disabled' }}>{clock(m.createdAt)}</Typography>
+        <Button size="small" variant="contained" disableElevation disabled={busy} onClick={join} sx={{ height: 28, borderRadius: `${WS.radius}px`, fontWeight: 600, fontSize: 12.5, textTransform: 'none', px: 1.5 }}>
           {busy ? 'Checking…' : mine ? 'Rejoin room' : 'Join room'}
         </Button>
       </Stack>
@@ -101,29 +98,35 @@ function RoomCard({ m, mine, friend }) {
   );
 }
 
-function Bubble({ m, mine, groupedAbove }) {
+// Text bubble with a tail on the first one of a run, time + ticks inside the bubble.
+function Bubble({ m, mine, first }) {
   return (
-    <Box sx={{ alignSelf: mine ? 'flex-end' : 'flex-start', maxWidth: '82%', mt: groupedAbove ? -0.25 : 0 }}>
+    <Box sx={{ alignSelf: mine ? 'flex-end' : 'flex-start', maxWidth: { xs: '86%', sm: '78%' }, mt: first ? 0.75 : 0 }}>
       <Box
         sx={(t) => ({
-          px: 1.5, py: 0.9, borderRadius: mine ? '18px 18px 6px 18px' : '18px 18px 18px 6px',
-          ...(mine
-            ? { color: t.palette.primary.contrastText, background: `linear-gradient(135deg, ${t.palette.primary.main}, ${alpha(t.palette.primary.main, 0.82)})` }
-            : { bgcolor: t.palette.action.hover, color: t.palette.text.primary }),
-          wordBreak: 'break-word', whiteSpace: 'pre-wrap',
+          position: 'relative', px: 1.1, py: 0.55, wordBreak: 'break-word', whiteSpace: 'pre-wrap', color: t.palette.text.primary,
+          borderRadius: mine ? (first ? '10px 0 10px 10px' : '10px') : (first ? '0 10px 10px 10px' : '10px'),
+          bgcolor: mine ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.34 : 0.17) : t.palette.background.paper,
+          boxShadow: '0 1px 1px rgba(0,0,0,0.12)',
+          '&::before': first ? {
+            content: '""', position: 'absolute', top: 0, width: 8, height: 10, backgroundColor: 'inherit',
+            ...(mine ? { right: -7, clipPath: 'polygon(0 0, 100% 0, 0 100%)' } : { left: -7, clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }),
+          } : undefined,
         })}
       >
-        <Typography variant="body2" sx={{ lineHeight: 1.45 }}>{m.text}</Typography>
+        <Box sx={{ display: 'flow-root' }}>
+          <Typography component="span" sx={{ fontSize: 13.75, lineHeight: 1.45 }}>{m.text}</Typography>
+          <Box component="span" sx={{ float: 'right', ml: 1.25, mt: 0.9, display: 'inline-flex', alignItems: 'center', gap: 0.3, color: 'text.secondary', fontSize: 10.5, lineHeight: 1 }}>
+            {clock(m.createdAt)}
+            {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 15, color: 'primary.main' }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 15 }} aria-label="Sent" />)}
+          </Box>
+        </Box>
       </Box>
-      <Stack direction="row" spacing={0.4} alignItems="center" justifyContent={mine ? 'flex-end' : 'flex-start'} sx={{ mt: 0.25, px: 0.5, color: 'text.disabled' }}>
-        <Typography variant="caption" sx={{ fontSize: 11 }}>{clock(m.createdAt)}</Typography>
-        {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 14, color: 'primary.main' }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 14 }} aria-label="Sent" />)}
-      </Stack>
     </Box>
   );
 }
 
-// `actions`: extra header icons (used by the desktop side panel). No `onClose` = no close button (always-open panel).
+// `actions`: extra header icons. No `onClose` = no close button (always-open desktop panel).
 // `overlay`: node shown instead of the messages + composer (e.g. the friend's profile) while the chat stays live underneath.
 export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay }) {
   const dispatch = useDispatch();
@@ -138,6 +141,8 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
   const [typing, setTyping] = useState(false);
+  const [away, setAway] = useState(false); // scrolled up: show the "jump to latest" button
+  const [emojiAnchor, setEmojiAnchor] = useState(null);
   const scroller = useRef(null);
   const stick = useRef(true); // keep the view pinned to the newest message unless the user scrolled up
   const typingTimer = useRef(null);
@@ -202,7 +207,6 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
     };
   }, [friend.userId, myId, markRead]);
 
-  // keep pinned to the bottom on new messages
   useLayoutEffect(() => {
     const el = scroller.current;
     if (el && stick.current) el.scrollTop = el.scrollHeight;
@@ -210,7 +214,14 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
 
   const onScroll = () => {
     const el = scroller.current;
-    if (el) stick.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
+    if (!el) return;
+    stick.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
+    setAway((cur) => (cur === !stick.current ? cur : !stick.current));
+  };
+
+  const jump = () => {
+    const el = scroller.current;
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
   };
 
   const loadOlder = async () => {
@@ -240,6 +251,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
     stick.current = true;
     const finish = (message) => {
       setMessages((prev) => addUnique(prev, message));
+      dispatch(setLast({ id: friend.userId, m: { from: message.from, kind: message.kind, text: message.text, at: message.createdAt } }));
       setText('');
     };
     try {
@@ -284,68 +296,88 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
         direction="row"
         alignItems="center"
         spacing={1.25}
-        sx={(t) => ({ px: 1.5, py: 1.25, borderBottom: `1px solid ${t.palette.divider}`, background: `linear-gradient(180deg, ${alpha(t.palette.primary.main, 0.08)}, transparent)` })}
+        sx={(t) => ({ height: 56, px: 1.5, flexShrink: 0, bgcolor: wsSurface(t).chrome, borderBottom: `1px solid ${t.palette.divider}` })}
       >
-        <PersonAvatar person={friend} size={42} online={online} />
+        <PersonAvatar person={friend} size={36} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 800, lineHeight: 1.2 }}>{friend.name}</Typography>
-          <Typography variant="caption" noWrap sx={{ display: 'block', color: typing || status.live ? 'success.main' : 'text.secondary', fontWeight: typing || status.live ? 700 : 400 }}>
+          <Typography noWrap sx={{ fontWeight: 700, fontSize: 14, lineHeight: 1.25 }}>{friend.name}</Typography>
+          <Typography noWrap sx={{ fontSize: 12, color: typing || status.live ? 'success.main' : 'text.secondary', fontWeight: typing || status.live ? 600 : 400 }}>
             {typing ? <>typing<TypingDots /></> : status.text}
           </Typography>
         </Box>
-        <Tooltip title="Code together">
-          <IconButton aria-label="Code together" onClick={onCodeTogether} sx={(t) => ({ width: 40, height: 40, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12) })}>
-            <LaptopMacRoundedIcon />
-          </IconButton>
-        </Tooltip>
+        <WsIconButton title="Code together" onClick={onCodeTogether}><LaptopMacRoundedIcon /></WsIconButton>
         {actions}
-        {onClose && <IconButton aria-label="Close chat" onClick={onClose} sx={{ width: 40, height: 40 }}><CloseRoundedIcon /></IconButton>}
+        {onClose && <WsIconButton title="Close chat" onClick={onClose}><CloseRoundedIcon /></WsIconButton>}
       </Stack>
 
-      {/* messages */}
       {overlay}
-      <Box ref={scroller} data-chat-scroll onScroll={onScroll} sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: 1.5, py: 1.5, display: overlay ? 'none' : 'flex', flexDirection: 'column', gap: 0.75, scrollbarWidth: 'thin' }}>
-        {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={26} /></Box>}
-        {!loading && error && <Typography color="error" variant="body2" sx={{ m: 'auto', textAlign: 'center' }}>{error}</Typography>}
-        {!loading && hasMore && (
-          <Button size="small" onClick={loadOlder} disabled={loadingMore} sx={{ alignSelf: 'center', borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
-            {loadingMore ? 'Loading…' : 'Load earlier messages'}
-          </Button>
+
+      {/* messages on a quiet dotted wallpaper */}
+      <Box sx={{ position: 'relative', flex: 1, minHeight: 0, display: overlay ? 'none' : 'flex', flexDirection: 'column' }}>
+        <Box
+          ref={scroller}
+          data-chat-scroll
+          onScroll={onScroll}
+          sx={(t) => ({
+            flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: { xs: 1.25, sm: 2.5 }, py: 1.5, display: 'flex', flexDirection: 'column', gap: '3px', scrollbarWidth: 'thin',
+            bgcolor: wsSurface(t).panel,
+            backgroundImage: `radial-gradient(${alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.07 : 0.08)} 1px, transparent 1px)`,
+            backgroundSize: '20px 20px',
+          })}
+        >
+          {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={24} /></Box>}
+          {!loading && error && <Typography color="error" variant="body2" sx={{ m: 'auto', textAlign: 'center' }}>{error}</Typography>}
+          {!loading && hasMore && (
+            <Button size="small" onClick={loadOlder} disabled={loadingMore} sx={(t) => ({ ...pill(t), textTransform: 'none', mb: 0.5 })}>
+              {loadingMore ? 'Loading…' : 'Load earlier messages'}
+            </Button>
+          )}
+          {!loading && !error && messages.length === 0 && (
+            <Stack alignItems="center" spacing={0.75} sx={{ m: 'auto', textAlign: 'center', color: 'text.secondary', px: 3 }}>
+              <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 36, opacity: 0.6 }} />
+              <Typography sx={{ fontSize: 13 }}>No messages yet. Say hi to {friend.name.split(' ')[0]}, or start a coding room together.</Typography>
+            </Stack>
+          )}
+          {messages.map((m, i) => {
+            const mine = m.from === myId;
+            const day = dayLabel(m.createdAt);
+            const showDay = day !== lastDay;
+            lastDay = day;
+            const prev = messages[i - 1];
+            const first = showDay || !prev || prev.from !== m.from || prev.kind !== 'text' || m.kind !== 'text';
+            return (
+              <Box key={m.id} sx={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                {showDay && <Box sx={(t) => ({ ...pill(t), my: 0.75 })}>{day}</Box>}
+                {m.kind === 'nudge' ? <NudgeLine m={m} mine={mine} friend={friend} /> : m.kind === 'room' ? <RoomCard m={m} mine={mine} friend={friend} /> : <Bubble m={m} mine={mine} first={first} />}
+              </Box>
+            );
+          })}
+        </Box>
+        {away && (
+          <IconButton
+            aria-label="Jump to latest message"
+            onClick={jump}
+            sx={(t) => ({ position: 'absolute', right: 14, bottom: 12, width: 36, height: 36, bgcolor: t.palette.background.paper, boxShadow: '0 2px 6px rgba(0,0,0,0.25)', '&:hover': { bgcolor: t.palette.background.paper } })}
+          >
+            <KeyboardArrowDownRoundedIcon />
+          </IconButton>
         )}
-        {!loading && !error && messages.length === 0 && (
-          <Stack alignItems="center" spacing={1} sx={{ m: 'auto', textAlign: 'center', color: 'text.secondary', px: 3 }}>
-            <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 40, opacity: 0.6 }} />
-            <Typography variant="body2">Say hi to {friend.name.split(' ')[0]} 👋<br />Or start a coding room together.</Typography>
-          </Stack>
-        )}
-        {messages.map((m, i) => {
-          const mine = m.from === myId;
-          const day = dayLabel(m.createdAt);
-          const showDay = day !== lastDay;
-          lastDay = day;
-          const prev = messages[i - 1];
-          const groupedAbove = !showDay && prev && prev.from === m.from && prev.kind === 'text' && m.kind === 'text';
-          return (
-            <Box key={m.id} sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
-              {showDay && (
-                <Typography variant="caption" sx={(t) => ({ alignSelf: 'center', px: 1.25, py: 0.2, borderRadius: 999, bgcolor: t.palette.action.hover, color: 'text.secondary', fontWeight: 700, my: 0.5 })}>
-                  {day}
-                </Typography>
-              )}
-              {m.kind === 'nudge' ? <NudgeCard m={m} mine={mine} friend={friend} /> : m.kind === 'room' ? <RoomCard m={m} mine={mine} friend={friend} /> : <Bubble m={m} mine={mine} groupedAbove={groupedAbove} />}
-            </Box>
-          );
-        })}
       </Box>
 
       {/* composer */}
-      <Stack direction="row" alignItems="flex-end" spacing={1} sx={(t) => ({ display: overlay ? 'none' : 'flex', p: 1.25, pb: 'calc(10px + env(safe-area-inset-bottom))', borderTop: `1px solid ${t.palette.divider}` })}>
+      <Stack
+        direction="row"
+        alignItems="flex-end"
+        spacing={0.75}
+        sx={(t) => ({ display: overlay ? 'none' : 'flex', flexShrink: 0, px: 1, py: 0.9, pb: 'calc(7px + env(safe-area-inset-bottom))', bgcolor: wsSurface(t).chrome, borderTop: `1px solid ${t.palette.divider}` })}
+      >
+        <WsIconButton title="Emoji" size="lg" onClick={(e) => setEmojiAnchor(e.currentTarget)}><EmojiEmotionsOutlinedIcon /></WsIconButton>
         <TextField
           fullWidth
           multiline
           maxRows={4}
           size="small"
-          placeholder={`Message @${friend.handle}`}
+          placeholder="Type a message"
           value={text}
           onChange={onType}
           onKeyDown={(e) => {
@@ -354,32 +386,47 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
               send();
             }
           }}
-          sx={{ '& .MuiOutlinedInput-root': { borderRadius: '22px', py: 0.9, px: 1.75 } }}
+          sx={(t) => ({ '& .MuiOutlinedInput-root': { borderRadius: '20px', py: 0.75, px: 1.75, bgcolor: wsSurface(t).raised, fontSize: 14 }, '& fieldset': { border: 'none' } })}
           slotProps={{ htmlInput: { 'aria-label': `Message ${friend.name}`, maxLength: 1000 } }}
         />
         <IconButton
           aria-label="Send message"
           onClick={send}
           disabled={!text.trim() || sending}
-          sx={(t) => ({ width: 44, height: 44, flexShrink: 0, color: t.palette.primary.contrastText, bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.dark' }, '&.Mui-disabled': { color: 'text.disabled', bgcolor: 'action.hover' } })}
+          sx={(t) => ({ width: 40, height: 40, flexShrink: 0, color: t.palette.primary.contrastText, bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.dark' }, '&.Mui-disabled': { color: 'text.disabled', bgcolor: t.palette.action.hover } })}
         >
-          {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: 20 }} />}
+          {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: 19 }} />}
         </IconButton>
       </Stack>
+
+      <Popover
+        open={Boolean(emojiAnchor)}
+        anchorEl={emojiAnchor}
+        onClose={() => setEmojiAnchor(null)}
+        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+        transformOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        slotProps={{ paper: { sx: { p: 0.75, borderRadius: '12px' } } }}
+      >
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(8, 34px)', gap: 0.25 }}>
+          {EMOJIS.map((e) => (
+            <IconButton key={e} aria-label={`Insert ${e}`} onClick={() => setText((v) => (v + e).slice(0, 1000))} sx={{ width: 34, height: 34, fontSize: 19, borderRadius: '8px' }}>{e}</IconButton>
+          ))}
+        </Box>
+      </Popover>
     </Box>
   );
 }
 
 // Right-side drawer (full screen on phones) that hosts one friend's chat.
-export default function FriendChat({ friend, onClose, onCodeTogether }) {
+export default function FriendChat({ friend, onClose, onCodeTogether, actions, overlay }) {
   return (
     <Drawer
       anchor="right"
       open={Boolean(friend)}
       onClose={onClose}
-      slotProps={{ paper: { sx: { width: { xs: '100%', sm: 440 }, maxWidth: '100%', backgroundImage: 'none', borderRadius: { sm: '20px 0 0 20px' } } } }}
+      slotProps={{ paper: { sx: { width: { xs: '100%', sm: 440 }, maxWidth: '100%', backgroundImage: 'none' } } }}
     >
-      {friend && <ChatPanel key={friend.userId} friend={friend} onClose={onClose} onCodeTogether={() => onCodeTogether(friend)} />}
+      {friend && <ChatPanel key={friend.userId} friend={friend} onClose={onClose} onCodeTogether={() => onCodeTogether(friend)} actions={actions} overlay={overlay} />}
     </Drawer>
   );
 }

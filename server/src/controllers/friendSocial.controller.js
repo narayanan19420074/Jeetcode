@@ -8,7 +8,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { getRanking, assignRanks, publicRow } from '../services/leaderboard.service.js';
 import { getFriendIds } from '../services/friend.service.js';
-import { assertFriends, assertObjectId, history, markRead, sendMessage, unreadSummary } from '../services/chat.service.js';
+import { assertFriends, assertObjectId, conversationSummaries, history, markRead, sendMessage, unreadSummary } from '../services/chat.service.js';
 import { LANGUAGE_IDS } from '../services/judge0.service.js';
 import { createRoom } from '../realtime/roomStore.js';
 import { DirectMessage } from '../models/DirectMessage.js';
@@ -26,6 +26,11 @@ const utcMidnight = (d = new Date()) => Date.UTC(d.getUTCFullYear(), d.getUTCMon
 // GET /friends/chat/unread -> { byUser: { friendId: n }, total }
 export const getUnread = asyncHandler(async (req, res) => {
   new ApiResponse(200, await unreadSummary(req.user.id)).send(res);
+});
+
+// GET /friends/chat/overview -> { byUser: { friendId: lastMessage } } (chat list previews)
+export const chatOverview = asyncHandler(async (req, res) => {
+  new ApiResponse(200, await conversationSummaries(req.user.id)).send(res);
 });
 
 // GET /friends/chat/:userId?before=ISO -> { messages (old -> new), hasMore }

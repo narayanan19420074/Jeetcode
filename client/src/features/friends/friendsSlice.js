@@ -18,6 +18,7 @@ const initialState = {
   online: {}, // { [userId]: true } — friends with a live socket right now (pushed by the server)
   unread: {}, // { [friendId]: n } — unread chat messages per friend
   activeChat: null, // friendId whose chat drawer is open (no badge / toast for that one)
+  last: {}, // { [friendId]: { from, kind, text, at } } — newest chat message per friend (list preview)
 };
 
 export const fetchFriends = createAsyncThunk('friends/fetch', async (_, { rejectWithValue }) => {
@@ -71,6 +72,13 @@ const friendsSlice = createSlice({
     setActiveChat: (state, { payload }) => {
       state.activeChat = payload;
     },
+    setLastMap: (state, { payload }) => {
+      state.last = payload || {};
+    },
+    setLast: (state, { payload }) => {
+      const cur = state.last[payload.id];
+      if (!cur || Date.parse(payload.m.at) >= Date.parse(cur.at)) state.last[payload.id] = payload.m;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -97,7 +105,15 @@ const friendsSlice = createSlice({
   },
 });
 
-export const { setOnlineList, setPresence, setUnread, bumpUnread, clearUnread, setActiveChat } = friendsSlice.actions;
+export const { setOnlineList, setPresence, setUnread, bumpUnread, clearUnread, setActiveChat, setLastMap, setLast } = friendsSlice.actions;
+
+// Last message per friend, for the chat-list preview. Best effort: a failure just leaves the previews empty.
+export const fetchChatOverview = () => async (dispatch) => {
+  try {
+    const { data } = await friendsApi.chatOverview();
+    dispatch(setLastMap(data.data.byUser));
+  } catch { /* preview only */ }
+};
 
 // Total unread chat messages (Friends badge in the sidebar).
 export const selectUnreadTotal = (s) => Object.values(s.friends.unread).reduce((a, n) => a + n, 0);
