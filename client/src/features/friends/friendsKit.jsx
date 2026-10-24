@@ -101,7 +101,7 @@ export function useFavourites(userId) {
 // "12 friends · 3 online" with a live dot.
 export function LiveLine({ text, online }) {
   return (
-    <Stack direction="row" alignItems="center" spacing={0.75} sx={{ mt: 0.25, minHeight: 18 }}>
+    <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', mt: 0.25, minHeight: 18 }}>
       {online > 0 && <Box component="span" aria-hidden sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: GREEN, flexShrink: 0, animation: `${livePulse} 2s ease-out infinite`, ...still }} />}
       <Typography noWrap sx={{ fontSize: 12.5, color: 'text.secondary', lineHeight: 1.3 }}>{text}</Typography>
     </Stack>
@@ -177,7 +177,7 @@ export function FilterChip({ label, count, active, onClick, dot }) {
 
 export function SectionLabel({ children, right }) {
   return (
-    <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ px: 2, pt: 2, pb: 0.75 }}>
+    <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', px: 2, pt: 2, pb: 0.75 }}>
       <Typography sx={{ fontSize: 11.5, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase', color: 'text.secondary' }}>{children}</Typography>
       {right}
     </Stack>
@@ -187,7 +187,7 @@ export function SectionLabel({ children, right }) {
 export function EmptyNote({ icon, title, children }) {
   return (
     <Reveal>
-      <Stack alignItems="center" spacing={0.5} sx={{ py: 4, px: 3, textAlign: 'center', color: 'text.secondary' }}>
+      <Stack spacing={0.5} sx={{ alignItems: 'center', py: 4, px: 3, textAlign: 'center', color: 'text.secondary' }}>
         <PulseArt icon={icon} />
         {title && <Typography sx={{ fontSize: 14.5, fontWeight: 700, color: 'text.primary', pt: 0.5 }}>{title}</Typography>}
         <Typography variant="body2" sx={{ fontSize: 13, maxWidth: 260, lineHeight: 1.5 }}>{children}</Typography>
@@ -198,7 +198,7 @@ export function EmptyNote({ icon, title, children }) {
 
 export function SkeletonRows({ count = 6 }) {
   return Array.from({ length: count }, (_, i) => (
-    <Stack key={i} direction="row" spacing={1.5} alignItems="center" sx={{ px: 2, py: 1.1 }}>
+    <Stack key={i} direction="row" spacing={1.5} sx={{ alignItems: 'center', px: 2, py: 1.1 }}>
       <Skeleton variant="circular" width={44} height={44} />
       <Box sx={{ flex: 1 }}>
         <Skeleton variant="text" width={`${40 + ((i * 17) % 35)}%`} />
@@ -259,12 +259,12 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
       >
         <PersonAvatar person={f} size={44} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Stack direction="row" alignItems="center" spacing={0.5}>
+          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
             <Typography noWrap sx={{ fontWeight: unread ? 700 : 600, fontSize: 14, lineHeight: 1.35, flex: 1, minWidth: 0 }}>{f.name}</Typography>
             {fav && <StarRoundedIcon sx={{ fontSize: 14, color: '#F59E0B', flexShrink: 0 }} />}
             {last && <Typography sx={{ fontSize: 11.5, flexShrink: 0, fontWeight: unread ? 700 : 400, color: unread ? 'primary.main' : 'text.disabled' }}>{shortTime(last.at)}</Typography>}
           </Stack>
-          <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mt: 0.25 }}>
+          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 0.25 }}>
             {mine && last.kind === 'text' && (last.read ? <DoneAllRoundedIcon sx={{ fontSize: 15, color: 'primary.main', flexShrink: 0 }} /> : <DoneRoundedIcon sx={{ fontSize: 15, color: 'text.disabled', flexShrink: 0 }} />)}
             <Typography noWrap sx={{ fontSize: 13, flex: 1, minWidth: 0, color: !last && st.live ? 'success.main' : unread ? 'text.primary' : 'text.secondary', fontWeight: unread ? 600 : 400 }}>{preview}</Typography>
             {unread > 0 && (
@@ -311,9 +311,8 @@ export function PersonRow({ person, rank, sub, action }) {
   return (
     <Stack
       direction="row"
-      alignItems="center"
       spacing={1.5}
-      sx={(t) => ({ mx: 1, mb: 0.25, px: 1.25, py: 1, minHeight: 64, borderRadius: '12px', transition: 'background-color .18s', '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.04) } })}
+      sx={(t) => ({ alignItems: 'center', mx: 1, mb: 0.25, px: 1.25, py: 1, minHeight: 64, borderRadius: '12px', transition: 'background-color .18s', '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.04) } })}
     >
       {rank != null && (
         <Typography sx={{ width: 24, flexShrink: 0, textAlign: 'center', fontSize: 12.5, fontWeight: 700, color: rank <= 3 ? '#F59E0B' : 'text.disabled', ...mono }}>{rank}</Typography>

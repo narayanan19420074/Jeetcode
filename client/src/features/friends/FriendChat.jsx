@@ -82,7 +82,7 @@ function RoomCard({ m, mine, friend }) {
   };
   return (
     <Box sx={(t) => ({ ...flatCard(t), alignSelf: mine ? 'flex-end' : 'flex-start', width: '100%', maxWidth: 320, p: 1.5, my: 0.5, borderRadius: '14px', borderLeft: `3px solid ${t.palette.primary.main}` })}>
-      <Stack direction="row" spacing={1.5} alignItems="center">
+      <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
         <Box sx={(t) => ({ width: 40, height: 40, flexShrink: 0, borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: t.palette.primary.main })}>
           <LaptopMacRoundedIcon sx={{ fontSize: 20 }} />
         </Box>
@@ -93,7 +93,7 @@ function RoomCard({ m, mine, friend }) {
           </Typography>
         </Box>
       </Stack>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 1.25 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 1.25 }}>
         <Typography sx={{ fontSize: 11, color: 'text.disabled' }}>{clock(m.createdAt)}</Typography>
         <Button size="small" variant="contained" disableElevation disabled={busy} onClick={join} sx={{ height: 30, borderRadius: `${WS.radius + 2}px`, fontWeight: 600, fontSize: 12.5, textTransform: 'none', px: 1.75 }}>
           {busy ? 'Checking…' : mine ? 'Rejoin room' : 'Join room'}
@@ -112,7 +112,7 @@ function Bubble({ m, mine, first, endsRun, isNew }) {
   const top = first ? round : tight;
   const bottom = endsRun ? round : tight;
   return (
-    <Box sx={{ alignSelf: mine ? 'flex-end' : 'flex-start', maxWidth: { xs: '86%', sm: '76%' }, mt: first ? 1.25 : 0 }}>
+    <Box sx={{ alignSelf: mine ? 'flex-end' : 'flex-start', maxWidth: { xs: '86%', sm: '76%' }, mt: first ? 2 : 0.5 }}>
       <motion.div
         initial={isNew && !reduce ? { opacity: 0, y: 8, scale: 0.96 } : false}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -309,9 +309,8 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
       {/* header */}
       <Stack
         direction="row"
-        alignItems="center"
         spacing={1.5}
-        sx={(t) => ({ height: 68, px: 2, flexShrink: 0, bgcolor: wsSurface(t).chrome, borderBottom: `1px solid ${t.palette.divider}` })}
+        sx={(t) => ({ alignItems: 'center', height: 68, px: 2, flexShrink: 0, bgcolor: wsSurface(t).chrome, borderBottom: `1px solid ${t.palette.divider}` })}
       >
         <PersonAvatar person={friend} size={42} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -334,7 +333,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
           data-chat-scroll
           onScroll={onScroll}
           sx={(t) => ({
-            flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: { xs: 2, sm: 3 }, py: 2, display: 'flex', flexDirection: 'column', gap: '3px', scrollbarWidth: 'thin',
+            flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: { xs: 2, sm: 3 }, py: 2, display: 'flex', flexDirection: 'column', gap: '2px', scrollbarWidth: 'thin',
             bgcolor: wsSurface(t).panel,
           })}
         >
@@ -346,7 +345,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
             </Button>
           )}
           {!loading && !error && messages.length === 0 && (
-            <Stack alignItems="center" spacing={0.5} sx={{ m: 'auto', textAlign: 'center', color: 'text.secondary', px: 3 }}>
+            <Stack spacing={0.5} sx={{ alignItems: 'center', m: 'auto', textAlign: 'center', color: 'text.secondary', px: 3 }}>
               <PulseArt icon={<ChatBubbleOutlineRoundedIcon />} />
               <Typography sx={{ fontSize: 14.5, fontWeight: 700, color: 'text.primary', pt: 0.5 }}>Say hi to {friend.name.split(' ')[0]}</Typography>
               <Typography sx={{ fontSize: 13, maxWidth: 260, lineHeight: 1.5 }}>No messages yet. Send a message, or start a coding room together.</Typography>
@@ -363,7 +362,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
             const endsRun = !next || next.from !== m.from || next.kind !== 'text' || dayLabel(next.createdAt) !== day;
             const isNew = Date.parse(m.createdAt) > openedAt.current;
             return (
-              <Box key={m.id} sx={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+              <Box key={m.id} sx={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                 {showDay && <Box sx={(t) => ({ ...pill(t), my: 1.25 })}>{day}</Box>}
                 {m.kind === 'nudge' ? <NudgeLine m={m} mine={mine} friend={friend} /> : m.kind === 'room' ? <RoomCard m={m} mine={mine} friend={friend} /> : <Bubble m={m} mine={mine} first={first} endsRun={endsRun} isNew={isNew} />}
               </Box>
@@ -393,9 +392,8 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
       {/* composer */}
       <Stack
         direction="row"
-        alignItems="flex-end"
         spacing={1}
-        sx={(t) => ({ display: overlay ? 'none' : 'flex', flexShrink: 0, px: 1.5, pt: 1.25, pb: 'calc(10px + env(safe-area-inset-bottom))', bgcolor: wsSurface(t).chrome, borderTop: `1px solid ${t.palette.divider}` })}
+        sx={(t) => ({ alignItems: 'flex-end', display: overlay ? 'none' : 'flex', flexShrink: 0, px: 1.5, pt: 1.25, pb: 'calc(10px + env(safe-area-inset-bottom))', bgcolor: wsSurface(t).chrome, borderTop: `1px solid ${t.palette.divider}` })}
       >
         <WsIconButton title="Emoji" size="lg" onClick={(e) => setEmojiAnchor(e.currentTarget)}><EmojiEmotionsOutlinedIcon /></WsIconButton>
         <TextField

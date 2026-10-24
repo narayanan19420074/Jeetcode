@@ -25,7 +25,7 @@ function Item({ e, online, onOpenProblem }) {
   const isApt = e.type === 'aptitude';
   const accent = isApt ? APT_COLOR : DIFF_COLOR[e.problem.difficulty];
   return (
-    <Stack direction="row" spacing={1.5} alignItems="flex-start" sx={{ mx: 1, px: 1.25, py: 1.1 }}>
+    <Stack direction="row" spacing={1.5} sx={{ alignItems: 'flex-start', mx: 1, px: 1.25, py: 1.1 }}>
       <PersonAvatar person={e.user} size={40} online={online} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Typography sx={{ fontSize: 13.5, lineHeight: 1.45 }}>
@@ -40,7 +40,7 @@ function Item({ e, online, onOpenProblem }) {
             </>
           )}
         </Typography>
-        <Stack direction="row" spacing={0.75} alignItems="center" flexWrap="wrap" useFlexGap sx={{ mt: 0.6 }}>
+        <Stack direction="row" spacing={0.75} useFlexGap sx={{ alignItems: 'center', flexWrap: 'wrap', mt: 0.6 }}>
           {isApt ? <Chip color={APT_COLOR}>Aptitude</Chip> : <Chip color={accent}>{e.problem.difficulty}</Chip>}
           {!isApt && e.language && <Chip color="#64748B">{LANG[e.language] || e.language}</Chip>}
           {!isApt && e.runtimeMs != null && <Typography sx={{ fontSize: 11.5, color: 'text.secondary', ...mono }}>{e.runtimeMs} ms</Typography>}

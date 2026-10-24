@@ -30,7 +30,7 @@ function VsRow({ label, a, b, lower }) {
   const fmt = (v) => (v == null ? '–' : lower ? `#${v}` : Number(v).toLocaleString());
   return (
     <Box sx={{ py: 0.9 }}>
-      <Stack direction="row" alignItems="center" justifyContent="space-between">
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
         <Typography sx={{ fontWeight: aWins ? 900 : 600, color: aWins ? 'success.main' : 'text.primary', minWidth: 56, textAlign: 'left', ...mono }}>{fmt(a)}</Typography>
         <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, letterSpacing: 0.3, textTransform: 'uppercase' }}>{label}</Typography>
         <Typography sx={{ fontWeight: bWins ? 900 : 600, color: bWins ? 'error.main' : 'text.primary', minWidth: 56, textAlign: 'right', ...mono }}>{fmt(b)}</Typography>
@@ -87,8 +87,8 @@ function Compare({ friend }) {
 
   return (
     <Box sx={{ mt: 2, textAlign: 'left' }}>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1 }}>
-        <Stack alignItems="center" sx={{ width: 76 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
+        <Stack sx={{ alignItems: 'center', width: 76 }}>
           <PersonAvatar person={{ ...a, name: me?.name || a.name }} size={46} />
           <Typography variant="caption" sx={{ fontWeight: 800 }}>You</Typography>
         </Stack>
@@ -98,7 +98,7 @@ function Compare({ friend }) {
           </Typography>
           <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>{verdict}</Typography>
         </Box>
-        <Stack alignItems="center" sx={{ width: 76 }}>
+        <Stack sx={{ alignItems: 'center', width: 76 }}>
           <PersonAvatar person={b} size={46} />
           <Typography variant="caption" noWrap sx={{ fontWeight: 800, maxWidth: 76 }}>@{b.handle}</Typography>
         </Stack>
@@ -162,7 +162,7 @@ export function FriendProfilePanel({ f, onRemove }) {
       <PersonAvatar person={f} size={72} ring={tier.color} online={online} />
       <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', mt: 1 }}>{f.name}</Typography>
       <Typography variant="body2" color="text.secondary">@{f.handle}</Typography>
-      <Stack direction="row" spacing={0.75} justifyContent="center" flexWrap="wrap" useFlexGap sx={{ mt: 1 }}>
+      <Stack direction="row" spacing={0.75} useFlexGap sx={{ justifyContent: 'center', flexWrap: 'wrap', mt: 1 }}>
         <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontWeight: 700, fontSize: 13 }}>
           <WorkspacePremiumRoundedIcon sx={{ fontSize: 16 }} /> {tier.name}
         </Box>
@@ -181,8 +181,8 @@ export function FriendProfilePanel({ f, onRemove }) {
         {pill('compare', 'You vs them')}
       </Stack>
       {tab === 'overview' ? <Overview f={f} /> : <Compare friend={f} />}
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 2.25 }}>
-        <Stack direction="row" alignItems="center" spacing={0.75} sx={{ color: 'text.secondary' }}>
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 2.25 }}>
+        <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', color: 'text.secondary' }}>
           <PeopleAltRoundedIcon sx={{ fontSize: 18 }} />
           <Typography variant="caption">{since ? `Friends since ${since}` : 'Friends'}</Typography>
         </Stack>
@@ -232,7 +232,7 @@ export default function FriendProfileDialog({ f, onClose, onRemove, onChat, onCo
         <Typography sx={{ fontWeight: 800, fontSize: '1.2rem', mt: 1.25 }}>{f.name}</Typography>
         <Typography variant="body2" color="text.secondary">@{f.handle}</Typography>
 
-        <Stack direction="row" spacing={0.75} justifyContent="center" flexWrap="wrap" useFlexGap sx={{ mt: 1.25 }}>
+        <Stack direction="row" spacing={0.75} useFlexGap sx={{ justifyContent: 'center', flexWrap: 'wrap', mt: 1.25 }}>
           <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontWeight: 700, fontSize: 13 }}>
             <WorkspacePremiumRoundedIcon sx={{ fontSize: 16 }} /> {tier.name}
           </Box>
@@ -248,7 +248,7 @@ export default function FriendProfileDialog({ f, onClose, onRemove, onChat, onCo
         </Stack>
 
         {/* quick actions */}
-        <Stack direction="row" spacing={1.25} justifyContent="center" sx={{ mt: 2 }}>
+        <Stack direction="row" spacing={1.25} sx={{ justifyContent: 'center', mt: 2 }}>
           {action(<ChatRoundedIcon />, 'Chat', onChat)}
           {action(<LaptopMacRoundedIcon />, 'Code together', onCodeTogether, 'success')}
           {action(<NotificationsActiveRoundedIcon />, canNudge ? 'Nudge — remind about streak' : 'Already practised today', onNudge, 'warning', !canNudge || nudging)}
@@ -261,8 +261,8 @@ export default function FriendProfileDialog({ f, onClose, onRemove, onChat, onCo
 
         {tab === 'overview' ? <Overview f={f} /> : <Compare friend={f} />}
 
-        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 2.25 }}>
-          <Stack direction="row" alignItems="center" spacing={0.75} sx={{ color: 'text.secondary' }}>
+        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 2.25 }}>
+          <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', color: 'text.secondary' }}>
             <PeopleAltRoundedIcon sx={{ fontSize: 18 }} />
             <Typography variant="caption">{since ? `Friends since ${since}` : 'Friends'}</Typography>
           </Stack>

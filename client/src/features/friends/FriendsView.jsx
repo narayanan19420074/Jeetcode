@@ -470,7 +470,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         {/* ---------------- left: friends / requests / find */}
         <Box sx={(t) => ({ minWidth: 0, minHeight: 0, display: 'flex', flexDirection: 'column', borderRight: desktop ? `1px solid ${t.palette.divider}` : 'none' })}>
           {/* header: title + live count, quick icons */}
-          <Stack direction="row" alignItems="center" spacing={0.5} sx={{ minHeight: 68, px: 2, pt: 1.5, pb: 1, flexShrink: 0 }}>
+          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', minHeight: 68, px: 2, pt: 1.5, pb: 1, flexShrink: 0 }}>
             <Box sx={{ minWidth: 0, flex: 1, pr: 1 }}>
               <motion.div key={title} initial={reduce ? false : { opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}>
                 <Typography noWrap sx={{ fontWeight: 800, fontSize: 19, lineHeight: 1.25, letterSpacing: -0.3 }}>{title}</Typography>
@@ -518,7 +518,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
           )}
 
           {showChips && (
-            <Stack direction="row" alignItems="center" spacing={1} sx={{ px: 2, pb: 1.5, flexShrink: 0 }}>
+            <Stack direction="row" spacing={1} sx={{ alignItems: 'center', px: 2, pb: 1.5, flexShrink: 0 }}>
               <FilterChip label="All" count={friends.length} active={filter === 'all'} onClick={() => setFilter('all')} />
               <FilterChip label="Online" dot count={onlineCount} active={filter === 'online'} onClick={() => setFilter('online')} />
               <Box sx={{ flex: 1 }} />
