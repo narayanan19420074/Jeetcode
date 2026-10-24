@@ -1,4 +1,5 @@
 import { Suspense, lazy } from 'react';
+import { useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 import MainLayout from './layouts/MainLayout';
@@ -65,10 +66,19 @@ const RouteFallback = () => (
   </Box>
 );
 
+// "/" is the marketing home page for visitors only. A signed-in user goes straight
+// to the dashboard (we wait for the silent session restore first, so there is no flash).
+function HomeGate() {
+  const { isAuthenticated, bootstrapped } = useSelector((s) => s.auth);
+  if (!bootstrapped) return <RouteFallback />;
+  if (isAuthenticated) return <Navigate to="/dashboard" replace />;
+  return <HomePage />;
+}
+
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<HomeGate />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
