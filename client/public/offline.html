@@ -2,25 +2,331 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#CFE0FB" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0E1116" />
     <title>JeetCode — offline</title>
     <style>
-      body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; box-sizing: border-box;
-        font-family: Inter, system-ui, sans-serif; background: #F5F8FE; color: #1F2328; text-align: center; }
-      .card { max-width: 340px; }
-      img { width: 72px; height: 72px; border-radius: 18px; }
-      h1 { font-size: 1.3rem; margin: 16px 0 6px; }
-      p { margin: 0 0 20px; color: #5C6675; line-height: 1.5; }
-      button { border: 0; border-radius: 999px; padding: 12px 28px; font-weight: 700; font-size: 1rem; color: #fff; background: #1A73E8; }
+      html, body { margin: 0; height: 100%; background: #0E1116; overflow: hidden; overscroll-behavior: none;
+        touch-action: none; -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+      .bar { position: fixed; left: 0; right: 0; top: 0; display: flex; justify-content: space-between; align-items: center;
+        gap: 8px; padding: calc(10px + env(safe-area-inset-top)) 12px 10px; pointer-events: none; }
+      .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+        font-size: 13px; font-weight: 600; color: #C9D6E8; background: rgba(22, 27, 34, 0.85); border: 1px solid #2A3340; }
+      .dot { width: 8px; height: 8px; border-radius: 50%; background: #FF5C6C; }
+      .pill.on .dot { background: #3FB950; }
+      button { pointer-events: auto; border: 1px solid #38A9FF; border-radius: 999px; padding: 8px 18px; font-size: 13px;
+        font-weight: 700; color: #38A9FF; background: rgba(22, 27, 34, 0.85); font-family: inherit; }
+      button.on { color: #0E1116; background: #38A9FF; }
     </style>
   </head>
   <body>
-    <div class="card">
-      <img src="/icon-192.png" alt="" />
-      <h1>You're offline</h1>
-      <p>JeetCode needs internet to load problems and run code. Check your connection and try again.</p>
-      <button onclick="location.reload()">Retry</button>
+    <canvas id="c"></canvas>
+    <div class="bar">
+      <span class="pill" id="pill"><span class="dot"></span><span id="ptxt">Offline</span></span>
+      <button id="act">Retry</button>
     </div>
+    <script>
+      (function () {
+        var embed = window.parent !== window;
+        var cv = document.getElementById('c');
+        var ctx = cv.getContext('2d');
+        var pill = document.getElementById('pill');
+        var ptxt = document.getElementById('ptxt');
+        var act = document.getElementById('act');
+
+        var W = 0, H = 0, DPR = 1, U = 1;
+        var state = 'ready'; // ready | play | over
+        var jet = { x: 0, y: 0, tilt: 0 };
+        var target = 0, keyDir = 0, down = false, grab = 0;
+        var obs = [], parts = [], stars = [];
+        var speed = 0, t = 0, dist = 0, score = 0, best = 0, newBest = false;
+        var spawnT = 0.8, laneOff = 0, overAt = 0;
+
+        try { best = parseInt(localStorage.getItem('jc-offline-best') || '0', 10) || 0; } catch (e) {}
+
+        function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+        function resize() {
+          DPR = Math.min(window.devicePixelRatio || 1, 2);
+          W = window.innerWidth;
+          H = window.innerHeight;
+          cv.width = Math.round(W * DPR);
+          cv.height = Math.round(H * DPR);
+          ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+          U = Math.max(0.75, Math.min(W / 360, H / 640, 1.6));
+          jet.y = H * 0.78;
+          jet.x = clamp(jet.x || W / 2, 26 * U, W - 26 * U);
+          target = jet.x;
+          if (!stars.length) {
+            for (var i = 0; i < 46; i++) stars.push({ x: Math.random() * W, y: Math.random() * H, l: 8 + Math.random() * 28 });
+          }
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        function reset() {
+          obs = []; parts = []; t = 0; dist = 0; score = 0; newBest = false; spawnT = 0.7;
+          speed = U * 240;
+          jet.x = W / 2; jet.tilt = 0; target = W / 2;
+          state = 'play';
+        }
+
+        function spawn() {
+          var r = Math.random();
+          var nearWall = obs.some(function (o) { return o.k === 'wall' && o.y < H * 0.4; });
+          if (r < 0.68 || nearWall) {
+            var rad = (14 + Math.random() * 22) * U;
+            var n = 7 + ((Math.random() * 3) | 0);
+            var radii = [];
+            for (var i = 0; i < n; i++) radii.push(0.75 + Math.random() * 0.35);
+            obs.push({ k: 'rock', x: rad + Math.random() * (W - 2 * rad), y: -rad * 1.6, r: rad,
+              rot: Math.random() * 6.28, vr: (Math.random() - 0.5) * 2, radii: radii,
+              vy: 0.9 + Math.random() * 0.3, vx: (Math.random() - 0.5) * 40 * U });
+          } else {
+            var gap = Math.max(112, 150 - t * 0.7) * U;
+            var gx = gap / 2 + 14 * U + Math.random() * (W - gap - 28 * U);
+            obs.push({ k: 'wall', y: -24 * U, h: 18 * U, gx: gx, gap: gap });
+          }
+        }
+
+        function circleRect(cx, cy, cr, rx, ry, rw, rh) {
+          var nx = clamp(cx, rx, rx + rw), ny = clamp(cy, ry, ry + rh);
+          var dx = cx - nx, dy = cy - ny;
+          return dx * dx + dy * dy < cr * cr;
+        }
+
+        var HIT = [[0, -14, 7], [0, 2, 10], [-14, 12, 6], [14, 12, 6]];
+        function hit() {
+          for (var i = 0; i < obs.length; i++) {
+            var o = obs[i];
+            for (var j = 0; j < HIT.length; j++) {
+              var cx = jet.x + HIT[j][0] * U, cy = jet.y + HIT[j][1] * U, cr = HIT[j][2] * U;
+              if (o.k === 'rock') {
+                var dx = cx - o.x, dy = cy - o.y, rr = o.r * 0.82 + cr;
+                if (dx * dx + dy * dy < rr * rr) return true;
+              } else {
+                if (circleRect(cx, cy, cr, 0, o.y, o.gx - o.gap / 2, o.h)) return true;
+                if (circleRect(cx, cy, cr, o.gx + o.gap / 2, o.y, W - (o.gx + o.gap / 2), o.h)) return true;
+              }
+            }
+          }
+          return false;
+        }
+
+        function crash() {
+          state = 'over';
+          overAt = performance.now();
+          for (var i = 0; i < 22; i++) {
+            var a = Math.random() * 6.283, s = (60 + Math.random() * 220) * U;
+            parts.push({ x: jet.x, y: jet.y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: 0.7 + Math.random() * 0.5, c: i % 2 ? '#38A9FF' : '#FFB020' });
+          }
+          if (score > best) {
+            best = score; newBest = true;
+            try { localStorage.setItem('jc-offline-best', String(best)); } catch (e) {}
+          }
+        }
+
+        function update(dt) {
+          var sp = state === 'play' ? speed : 160 * U;
+          laneOff += sp * dt;
+          for (var i = 0; i < stars.length; i++) {
+            var s = stars[i];
+            s.y += sp * (0.4 + s.l / 40) * dt;
+            if (s.y > H + 30) { s.y = -30; s.x = Math.random() * W; }
+          }
+          if (state === 'play') {
+            t += dt;
+            speed = U * (240 + Math.min(t * 9, 380));
+            dist += speed * dt;
+            score = Math.floor(dist / (18 * U));
+            if (keyDir) target += keyDir * 620 * U * dt;
+            target = clamp(target, 26 * U, W - 26 * U);
+            jet.x += (target - jet.x) * Math.min(1, 14 * dt);
+            jet.tilt = clamp((target - jet.x) * 0.006, -0.4, 0.4);
+            spawnT -= dt;
+            if (spawnT <= 0) { spawn(); spawnT = Math.max(0.36, 0.85 - t * 0.012) * (0.8 + Math.random() * 0.5); }
+            for (var k = obs.length - 1; k >= 0; k--) {
+              var o = obs[k];
+              if (o.k === 'rock') { o.y += speed * o.vy * dt; o.x += o.vx * dt; o.rot += o.vr * dt; if (o.y > H + o.r * 2) obs.splice(k, 1); }
+              else { o.y += speed * dt; if (o.y > H + 40) obs.splice(k, 1); }
+            }
+            if (hit()) crash();
+          }
+          for (var p = parts.length - 1; p >= 0; p--) {
+            var q = parts[p];
+            q.x += q.vx * dt; q.y += q.vy * dt; q.life -= dt;
+            if (q.life <= 0) parts.splice(p, 1);
+          }
+        }
+
+        function drawBg() {
+          ctx.fillStyle = '#0E1116';
+          ctx.fillRect(0, 0, W, H);
+          // stars / speed streaks
+          ctx.lineCap = 'round';
+          for (var i = 0; i < stars.length; i++) {
+            var s = stars[i];
+            ctx.strokeStyle = 'rgba(150,190,255,' + (0.12 + s.l / 120) + ')';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(s.x, s.y + s.l * (state === 'play' ? 1 : 0.5)); ctx.stroke();
+          }
+          // road lane markers (racing feel)
+          ctx.strokeStyle = 'rgba(90,130,190,0.22)';
+          ctx.lineWidth = 2;
+          ctx.setLineDash([28 * U, 30 * U]);
+          ctx.lineDashOffset = -laneOff;
+          [0.25, 0.5, 0.75].forEach(function (f) { ctx.beginPath(); ctx.moveTo(W * f, -60); ctx.lineTo(W * f, H + 60); ctx.stroke(); });
+          ctx.setLineDash([]);
+          ctx.strokeStyle = 'rgba(90,130,190,0.35)';
+          ctx.beginPath(); ctx.moveTo(6, 0); ctx.lineTo(6, H); ctx.moveTo(W - 6, 0); ctx.lineTo(W - 6, H); ctx.stroke();
+        }
+
+        function drawJet() {
+          ctx.save();
+          ctx.translate(jet.x, jet.y);
+          ctx.rotate(jet.tilt);
+          ctx.scale(U, U);
+          ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+          var f = 8 + Math.random() * 9;
+          ctx.beginPath(); ctx.moveTo(-4, 21); ctx.lineTo(0, 21 + f); ctx.lineTo(4, 21);
+          ctx.strokeStyle = '#FFB020'; ctx.lineWidth = 2; ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(0, -24); ctx.lineTo(6, -8); ctx.lineTo(26, 12); ctx.lineTo(26, 18); ctx.lineTo(8, 12);
+          ctx.lineTo(6, 22); ctx.lineTo(0, 19); ctx.lineTo(-6, 22); ctx.lineTo(-8, 12); ctx.lineTo(-26, 18);
+          ctx.lineTo(-26, 12); ctx.lineTo(-6, -8); ctx.closePath();
+          ctx.fillStyle = 'rgba(56,169,255,0.10)'; ctx.fill();
+          ctx.lineWidth = 2.2; ctx.strokeStyle = '#38A9FF'; ctx.shadowColor = '#38A9FF'; ctx.shadowBlur = 12; ctx.stroke();
+          ctx.restore();
+        }
+
+        function drawObs() {
+          for (var i = 0; i < obs.length; i++) {
+            var o = obs[i];
+            ctx.lineJoin = 'round';
+            if (o.k === 'rock') {
+              ctx.save();
+              ctx.translate(o.x, o.y); ctx.rotate(o.rot);
+              ctx.beginPath();
+              for (var j = 0; j < o.radii.length; j++) {
+                var a = (j / o.radii.length) * 6.283, r = o.r * o.radii[j];
+                if (j) ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r); else ctx.moveTo(Math.cos(a) * r, Math.sin(a) * r);
+              }
+              ctx.closePath();
+              ctx.fillStyle = 'rgba(255,92,108,0.08)'; ctx.fill();
+              ctx.lineWidth = 2.2; ctx.strokeStyle = '#FF5C6C'; ctx.shadowColor = '#FF5C6C'; ctx.shadowBlur = 8; ctx.stroke();
+              ctx.restore();
+            } else {
+              var lw = o.gx - o.gap / 2, rx = o.gx + o.gap / 2;
+              ctx.save();
+              ctx.lineWidth = 2.2; ctx.strokeStyle = '#FFB020'; ctx.shadowColor = '#FFB020'; ctx.shadowBlur = 8;
+              ctx.fillStyle = 'rgba(255,176,32,0.08)';
+              ctx.beginPath(); ctx.rect(-4, o.y, lw + 4, o.h); ctx.fill(); ctx.stroke();
+              ctx.beginPath(); ctx.rect(rx, o.y, W - rx + 4, o.h); ctx.fill(); ctx.stroke();
+              ctx.restore();
+            }
+          }
+        }
+
+        var fine = !!(window.matchMedia && window.matchMedia('(pointer: fine)').matches);
+
+        function text(str, x, y, size, color, weight) {
+          ctx.font = (weight || 700) + ' ' + size * U + 'px system-ui, -apple-system, Roboto, sans-serif';
+          ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          ctx.fillText(str, x, y);
+        }
+
+        function draw() {
+          drawBg();
+          drawObs();
+          if (state !== 'over') drawJet();
+          for (var i = 0; i < parts.length; i++) {
+            var q = parts[i];
+            ctx.strokeStyle = q.c; ctx.globalAlpha = clamp(q.life * 1.6, 0, 1); ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.moveTo(q.x, q.y); ctx.lineTo(q.x - q.vx * 0.05, q.y - q.vy * 0.05); ctx.stroke();
+          }
+          ctx.globalAlpha = 1;
+          var cx = W / 2;
+          if (state === 'play') {
+            text(String(score), cx, 78, 26, '#E6EDF6');
+            text('BEST ' + best, cx, 78 + 24 * U, 11, '#7E8DA3', 600);
+          } else if (state === 'ready') {
+            text("You're offline", cx, H * 0.30, 26, '#E6EDF6');
+            text('Network vandhudhu varaikkum fly pannunga', cx, H * 0.30 + 30 * U, 13, '#7E8DA3', 500);
+            text(fine ? 'Space / tap to start  •  ← → or drag to steer' : 'Tap to start  •  drag to steer', cx, H * 0.46, 15, '#38A9FF');
+            if (best) text('BEST ' + best, cx, H * 0.46 + 28 * U, 12, '#7E8DA3', 600);
+          } else {
+            text('Crashed!', cx, H * 0.34, 30, '#FF5C6C');
+            text('Score ' + score, cx, H * 0.34 + 38 * U, 22, '#E6EDF6');
+            text((newBest ? 'New best! ' : 'Best ') + best, cx, H * 0.34 + 66 * U, 13, newBest ? '#3FB950' : '#7E8DA3', 600);
+            text(fine ? 'Space / tap to fly again' : 'Tap to fly again', cx, H * 0.34 + 104 * U, 15, '#38A9FF');
+          }
+        }
+
+        var last = 0;
+        function frame(ts) {
+          var dt = Math.min(0.05, (ts - last) / 1000 || 0);
+          last = ts;
+          update(dt);
+          draw();
+          requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+
+        // ---- input ----
+        function begin() {
+          if (state === 'ready') { reset(); return true; }
+          if (state === 'over') { if (performance.now() - overAt < 450) return false; reset(); return true; }
+          return true;
+        }
+        cv.addEventListener('pointerdown', function (e) {
+          e.preventDefault();
+          if (!begin()) return;
+          down = true;
+          grab = jet.x - e.clientX;
+          try { cv.setPointerCapture(e.pointerId); } catch (err) {}
+        });
+        cv.addEventListener('pointermove', function (e) { if (down && state === 'play') target = e.clientX + grab; });
+        ['pointerup', 'pointercancel'].forEach(function (n) { cv.addEventListener(n, function () { down = false; }); });
+        cv.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+        var kl = false, kr = false;
+        function setKey(e, v) {
+          var k = (e.key || '').toLowerCase();
+          if (k === 'arrowleft' || k === 'a') kl = v;
+          else if (k === 'arrowright' || k === 'd') kr = v;
+          else return false;
+          keyDir = (kr ? 1 : 0) - (kl ? 1 : 0);
+          return true;
+        }
+        window.addEventListener('keydown', function (e) {
+          if (setKey(e, true)) {
+            e.preventDefault();
+            if (!e.repeat && state !== 'play') begin();
+          } else if (e.key === ' ' || e.key === 'Enter') {
+            e.preventDefault();
+            if (!e.repeat) begin();
+          }
+        });
+        window.addEventListener('keyup', function (e) { if (setKey(e, false)) e.preventDefault(); });
+        window.addEventListener('blur', function () { kl = kr = false; keyDir = 0; });
+        window.focus();
+
+        // ---- top bar: status + retry/close ----
+        act.textContent = embed ? 'Close' : 'Retry';
+        act.addEventListener('click', function () {
+          if (embed) window.parent.postMessage({ type: 'jc-offline-close' }, '*');
+          else location.reload();
+        });
+        window.addEventListener('online', function () {
+          pill.classList.add('on'); ptxt.textContent = 'Back online';
+          act.classList.add('on'); act.textContent = embed ? 'Close' : 'Reload';
+        });
+        window.addEventListener('offline', function () {
+          pill.classList.remove('on'); ptxt.textContent = 'Offline';
+          act.classList.remove('on'); act.textContent = embed ? 'Close' : 'Retry';
+        });
+      })();
+    </script>
   </body>
 </html>
