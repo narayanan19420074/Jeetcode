@@ -62,35 +62,35 @@ function glowTexture() {
   });
 }
 
-function questionTexture(color) {
+function questionTexture(color, dark) {
   return canvasTex(256, 256, (c) => {
     const g = c.createRadialGradient(128, 128, 10, 128, 128, 120);
-    g.addColorStop(0, 'rgba(255,255,255,0.8)');
+    g.addColorStop(0, dark ? 'rgba(165,180,252,0.28)' : 'rgba(255,255,255,0.8)');
     g.addColorStop(1, 'rgba(255,255,255,0)');
     c.fillStyle = g;
     c.fillRect(0, 0, 256, 256);
-    c.fillStyle = color;
+    c.fillStyle = dark ? '#FFFFFF' : color;
     c.font = '900 150px system-ui, sans-serif';
     c.textAlign = 'center';
     c.textBaseline = 'middle';
-    c.shadowColor = 'rgba(255,255,255,0.95)';
-    c.shadowBlur = 18;
+    c.shadowColor = dark ? color : 'rgba(255,255,255,0.95)';
+    c.shadowBlur = dark ? 30 : 18;
     c.fillText('?', 128, 138);
   });
 }
 
-function winnerTexture(w) {
+function winnerTexture(w, dark) {
   const m = MEDAL[w.rank];
   return canvasTex(512, 330, (c, W, H) => {
     roundRect(c, 8, 8, W - 16, H - 16, 38);
-    c.shadowColor = 'rgba(99,102,241,0.35)';
+    c.shadowColor = dark ? 'rgba(0,0,0,0.5)' : 'rgba(99,102,241,0.35)';
     c.shadowBlur = 22;
     c.shadowOffsetY = 8;
-    c.fillStyle = 'rgba(255,255,255,0.86)';
+    c.fillStyle = dark ? 'rgba(28,26,72,0.9)' : 'rgba(255,255,255,0.86)';
     c.fill();
     c.shadowColor = 'transparent';
     c.lineWidth = 3;
-    c.strokeStyle = 'rgba(255,255,255,1)';
+    c.strokeStyle = dark ? 'rgba(165,180,252,0.35)' : 'rgba(255,255,255,1)';
     c.stroke();
 
     // vibrant avatar frame
@@ -104,9 +104,9 @@ function winnerTexture(w) {
     c.fill();
     c.beginPath();
     c.arc(88, 94, 46, 0, Math.PI * 2);
-    c.fillStyle = '#F8FAFF';
+    c.fillStyle = dark ? '#1B1A4A' : '#F8FAFF';
     c.fill();
-    c.fillStyle = m.css2;
+    c.fillStyle = dark ? m.ring[0] : m.css2;
     c.font = '800 48px system-ui, sans-serif';
     c.textAlign = 'center';
     c.textBaseline = 'middle';
@@ -114,10 +114,10 @@ function winnerTexture(w) {
 
     c.textAlign = 'left';
     c.textBaseline = 'alphabetic';
-    c.fillStyle = '#1E1B4B';
+    c.fillStyle = dark ? '#F8FAFF' : '#1E1B4B';
     c.font = '800 40px system-ui, sans-serif';
     c.fillText(fitText(c, w.name, 330), 164, 88);
-    c.fillStyle = '#64748B';
+    c.fillStyle = dark ? '#A5B4FC' : '#64748B';
     c.font = '500 26px system-ui, sans-serif';
     c.fillText(fitText(c, `@${w.handle || ''}`, 330), 164, 126);
 
@@ -135,8 +135,8 @@ function winnerTexture(w) {
       return tw;
     };
     let x = 36;
-    if (w.prize) x += chip(x, 184, inr(w.prize), '#FEF3C7', '#B45309') + 12;
-    chip(x, 184, `${w.solved ?? 0} solved`, '#D1FAE5', '#047857');
+    if (w.prize) x += chip(x, 184, inr(w.prize), dark ? 'rgba(251,191,36,0.18)' : '#FEF3C7', dark ? '#FCD34D' : '#B45309') + 12;
+    chip(x, 184, `${w.solved ?? 0} solved`, dark ? 'rgba(52,211,153,0.18)' : '#D1FAE5', dark ? '#6EE7B7' : '#047857');
 
     const rg = c.createLinearGradient(36, 250, 300, 300);
     rg.addColorStop(0, m.ring[0]);
@@ -147,14 +147,14 @@ function winnerTexture(w) {
   });
 }
 
-function createFireworks(scene, glow) {
+function createFireworks(scene, glow, blend) {
   let time = 0;
   const queue = [];
   const rockets = [];
   const bursts = [];
 
   const spawnRocket = (o) => {
-    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: o.color, transparent: true, depthWrite: false, blending: THREE.NormalBlending }));
+    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: o.color, transparent: true, depthWrite: false, blending: blend }));
     s.scale.setScalar(0.38);
     s.position.set(o.x, -0.2, -0.6);
     scene.add(s);
@@ -179,7 +179,7 @@ function createFireworks(scene, glow) {
     }
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    const mat = new THREE.PointsMaterial({ map: glow, color, size: big ? 0.4 : 0.3, transparent: true, depthWrite: false, blending: THREE.NormalBlending, opacity: 1 });
+    const mat = new THREE.PointsMaterial({ map: glow, color, size: big ? 0.4 : 0.3, transparent: true, depthWrite: false, blending: blend, opacity: 1 });
     const pts = new THREE.Points(geo, mat);
     pts.frustumCulled = false;
     scene.add(pts);
@@ -251,11 +251,12 @@ function buildTrophy() {
   return g;
 }
 
-function buildScene(host, winners, { reveal: startRevealed, reduce }) {
+function buildScene(host, winners, { reveal: startRevealed, reduce, dark }) {
+  const BLEND = dark ? THREE.AdditiveBlending : THREE.NormalBlending; // glow adds up on dark, tints on light
   const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.toneMapping = THREE.NeutralToneMapping;
-  renderer.toneMappingExposure = 1;
+  renderer.toneMappingExposure = dark ? 1.05 : 1;
   const el = renderer.domElement;
   el.style.cssText = 'display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab';
   host.appendChild(el);
@@ -264,9 +265,9 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   // soft pastel backdrop. (An opaque background also keeps the glass visible: transmission needs something behind it.)
   scene.background = canvasTex(4, 256, (c, W, H) => {
     const g = c.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, '#F5F3FF');
-    g.addColorStop(0.55, '#E8EDFF');
-    g.addColorStop(1, '#FCE7F3');
+    g.addColorStop(0, dark ? '#14123A' : '#F5F3FF');
+    g.addColorStop(0.55, dark ? '#1E1B4B' : '#E8EDFF');
+    g.addColorStop(1, dark ? '#2E1065' : '#FCE7F3');
     c.fillStyle = g;
     c.fillRect(0, 0, W, H);
   });
@@ -274,6 +275,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   const room = new RoomEnvironment();
   const envRT = pmrem.fromScene(room, 0.04);
   scene.environment = envRT.texture;
+  scene.environmentIntensity = dark ? 0.9 : 1;
   room.dispose?.();
   pmrem.dispose();
 
@@ -282,23 +284,23 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   scene.add(stage);
 
   scene.add(new THREE.AmbientLight(0xffffff, 0.35));
-  const key = new THREE.DirectionalLight(0xffffff, 1.1);
+  const key = new THREE.DirectionalLight(0xffffff, dark ? 1.4 : 1.1);
   key.position.set(2, 6, 5);
   scene.add(key);
-  const violet = new THREE.PointLight(0xa78bfa, 60, 0, 2);
+  const violet = new THREE.PointLight(0xa78bfa, dark ? 110 : 60, 0, 2);
   violet.position.set(-3.5, 3, 3);
   scene.add(violet);
-  const amber = new THREE.PointLight(0xfbbf24, 70, 0, 2);
+  const amber = new THREE.PointLight(0xfbbf24, dark ? 120 : 70, 0, 2);
   amber.position.set(3.5, 4, 3);
   scene.add(amber);
 
   const glow = glowTexture();
 
   // floor: dark disc, two neon rings, soft glow
-  const floor = new THREE.Mesh(new THREE.CylinderGeometry(4.3, 4.5, 0.12, 72), new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.1, roughness: 0.3 }));
+  const floor = new THREE.Mesh(new THREE.CylinderGeometry(4.3, 4.5, 0.12, 72), new THREE.MeshStandardMaterial({ color: dark ? 0x211f58 : 0xffffff, metalness: dark ? 0.5 : 0.1, roughness: 0.3 }));
   floor.position.y = -0.06;
   stage.add(floor);
-  const ringA = new THREE.Mesh(new THREE.TorusGeometry(4.3, 0.03, 12, 120), new THREE.MeshBasicMaterial({ color: 0xf472b6, toneMapped: false }));
+  const ringA = new THREE.Mesh(new THREE.TorusGeometry(4.3, 0.03, 12, 120), new THREE.MeshBasicMaterial({ color: dark ? 0xff5fa8 : 0xf472b6, toneMapped: false }));
   ringA.rotation.x = Math.PI / 2;
   ringA.position.y = 0.01;
   stage.add(ringA);
@@ -306,7 +308,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   ringB.rotation.x = Math.PI / 2;
   ringB.position.y = 0.01;
   stage.add(ringB);
-  const floorGlow = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshBasicMaterial({ map: glow, color: 0xa78bfa, transparent: true, opacity: 0.35, depthWrite: false, blending: THREE.NormalBlending }));
+  const floorGlow = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshBasicMaterial({ map: glow, color: dark ? 0x7c4dff : 0xa78bfa, transparent: true, opacity: dark ? 0.55 : 0.35, depthWrite: false, blending: BLEND }));
   floorGlow.rotation.x = -Math.PI / 2;
   floorGlow.position.y = 0.02;
   stage.add(floorGlow);
@@ -321,7 +323,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   }
   const dustGeo = new THREE.BufferGeometry();
   dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
-  const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ map: glow, color: 0x8b5cf6, size: 0.1, transparent: true, opacity: 0.45, depthWrite: false, blending: THREE.NormalBlending }));
+  const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ map: glow, color: dark ? 0xc4b5fd : 0x8b5cf6, size: 0.1, transparent: true, opacity: dark ? 0.7 : 0.45, depthWrite: false, blending: BLEND }));
   dust.frustumCulled = false;
   scene.add(dust);
 
@@ -339,14 +341,14 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
     stage.add(group);
 
     const glass = new THREE.MeshPhysicalMaterial({
-      color: 0xffffff, metalness: 0, roughness: 0.06, transmission: 1, thickness: 1.6, ior: 1.45,
-      attenuationColor: new THREE.Color(m.hex), attenuationDistance: 1.8, clearcoat: 1, clearcoatRoughness: 0.05, envMapIntensity: 1.4,
+      color: dark ? new THREE.Color(m.hex).lerp(new THREE.Color(0xffffff), 0.45) : 0xffffff, metalness: 0, roughness: 0.06, transmission: 1, thickness: 1.6, ior: 1.45,
+      attenuationColor: new THREE.Color(m.hex), attenuationDistance: dark ? 1.3 : 1.8, clearcoat: 1, clearcoatRoughness: 0.05, envMapIntensity: dark ? 2.2 : 1.4,
     });
     const block = new THREE.Mesh(new RoundedBoxGeometry(1.7, h, 1.7, 5, 0.09).translate(0, h / 2, 0), glass);
     // glowing light column inside the glass
     const core = new THREE.Mesh(
       new RoundedBoxGeometry(0.5, h * 0.86, 0.5, 3, 0.05).translate(0, h * 0.5, 0),
-      new THREE.MeshStandardMaterial({ color: m.hex, emissive: m.hex, emissiveIntensity: 0.55, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: m.hex, emissive: m.hex, emissiveIntensity: dark ? 1.1 : 0.55, roughness: 0.5 }),
     );
     block.add(core);
     group.add(block);
@@ -358,14 +360,14 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
     if (w) {
       label = new THREE.Mesh(
         new THREE.PlaneGeometry(1.5, (1.5 * 330) / 512),
-        new THREE.MeshBasicMaterial({ map: winnerTexture({ ...w, rank }), transparent: true, depthWrite: false, toneMapped: false }),
+        new THREE.MeshBasicMaterial({ map: winnerTexture({ ...w, rank }, dark), transparent: true, depthWrite: false, toneMapped: false }),
       );
       label.position.set(0, h * 0.5, 0.88);
       label.visible = false;
       group.add(label);
     }
 
-    const q = new THREE.Sprite(new THREE.SpriteMaterial({ map: questionTexture(m.css), transparent: true, depthWrite: false, toneMapped: false }));
+    const q = new THREE.Sprite(new THREE.SpriteMaterial({ map: questionTexture(m.css, dark), transparent: true, depthWrite: false, toneMapped: false }));
     q.scale.setScalar(1.1);
     group.add(q);
 
@@ -384,12 +386,12 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
     first.group.add(trophy);
     orbit = new THREE.Group();
     orbit.visible = false;
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.85, toneMapped: false });
+    const ringMat = new THREE.MeshBasicMaterial({ color: dark ? 0xfde68a : 0xf59e0b, transparent: true, opacity: 0.85, toneMapped: false });
     const r1 = new THREE.Mesh(new THREE.TorusGeometry(1.15, 0.012, 8, 90), ringMat);
     const r2 = new THREE.Mesh(new THREE.TorusGeometry(0.95, 0.012, 8, 90), ringMat);
     orbit.add(r1, r2);
     const orbs = [0, 1, 2].map(() => {
-      const o = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: 0xf59e0b, transparent: true, depthWrite: false, blending: THREE.NormalBlending }));
+      const o = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: dark ? 0xfde68a : 0xf59e0b, transparent: true, depthWrite: false, blending: BLEND }));
       o.scale.setScalar(0.4);
       orbit.add(o);
       return o;
@@ -400,7 +402,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
     first.orbs = orbs;
   }
 
-  const fw = createFireworks(scene, glow);
+  const fw = createFireworks(scene, glow, BLEND);
 
   // state
   let elapsed = 0;
@@ -558,7 +560,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce }) {
   };
 }
 
-export default function PodiumScene({ winners, revealed, reduce = false, onFail }) {
+export default function PodiumScene({ winners, revealed, reduce = false, dark = false, onFail }) {
   const hostRef = useRef(null);
   const apiRef = useRef(null);
   const revealedRef = useRef(revealed);
@@ -566,7 +568,7 @@ export default function PodiumScene({ winners, revealed, reduce = false, onFail 
   useEffect(() => {
     let api = null;
     try {
-      api = buildScene(hostRef.current, winners, { reveal: revealedRef.current, reduce });
+      api = buildScene(hostRef.current, winners, { reveal: revealedRef.current, reduce, dark });
     } catch {
       onFail?.();
       return undefined;
@@ -576,7 +578,7 @@ export default function PodiumScene({ winners, revealed, reduce = false, onFail 
       api.dispose();
       apiRef.current = null;
     };
-  }, [winners, reduce, onFail]);
+  }, [winners, reduce, dark, onFail]);
 
   useEffect(() => {
     revealedRef.current = revealed;
