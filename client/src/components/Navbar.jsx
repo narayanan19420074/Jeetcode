@@ -439,69 +439,60 @@ export default function Navbar() {
         <Box sx={{ flex: 1, overflowY: 'auto', px: 2, py: 2 }} component="nav" aria-label="Main navigation">
           {isAuthenticated && (
             <Box
-              component={RouterLink}
-              to="/you"
-              onClick={() => setMobileOpen(false)}
               sx={(t) => ({
                 mb: 2.5,
-                p: 1.75,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1.5,
                 borderRadius: '24px',
-                textDecoration: 'none',
-                color: 'inherit',
+                overflow: 'hidden',
                 bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.18 : 0.12),
               })}
             >
-              <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: 'primary.main', width: 48, height: 48, fontSize: '1rem', fontWeight: 700 }}>
-                {initialsFromName(user?.name)}
-              </Avatar>
-              <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Typography noWrap sx={{ fontWeight: 800 }}>
-                  {user?.name}
-                </Typography>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.25 }}>
-                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
-                    {user?.streakDays ?? 0}-day streak
+              <Box
+                component={RouterLink}
+                to="/you"
+                onClick={() => setMobileOpen(false)}
+                sx={{ p: 1.75, display: 'flex', alignItems: 'center', gap: 1.5, textDecoration: 'none', color: 'inherit' }}
+              >
+                <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: 'primary.main', width: 48, height: 48, fontSize: '1rem', fontWeight: 700 }}>
+                  {initialsFromName(user?.name)}
+                </Avatar>
+                <Box sx={{ minWidth: 0, flex: 1 }}>
+                  <Typography noWrap sx={{ fontWeight: 800 }}>
+                    {user?.name}
                   </Typography>
-                  {user?.isPro && <ProBadge />}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.25 }}>
+                    <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
+                    <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
+                      {user?.streakDays ?? 0}-day streak
+                    </Typography>
+                    {user?.isPro && <ProBadge />}
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          )}
-
-          {isAuthenticated && (
-            <Box
-              component={RouterLink}
-              to="/store?tab=coins"
-              onClick={() => setMobileOpen(false)}
-              aria-label={`${coins} coins, open wallet`}
-              sx={(t) => ({
-                mb: 2.5,
-                p: 1.75,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1.5,
-                borderRadius: '24px',
-                textDecoration: 'none',
-                color: 'inherit',
-                bgcolor: alpha(t.palette.warning.main, t.palette.mode === 'dark' ? 0.18 : 0.14),
-              })}
-            >
-              <MonetizationOnRoundedIcon sx={{ fontSize: 38, color: 'warning.main' }} />
-              <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
-                  Your coins
+              <Box
+                component={RouterLink}
+                to="/store?tab=coins"
+                onClick={() => setMobileOpen(false)}
+                aria-label={`${coins} coins, open wallet`}
+                sx={(t) => ({
+                  px: 1.75,
+                  py: 1.25,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  borderTop: `1px solid ${alpha(t.palette.primary.main, 0.2)}`,
+                  '&:active': { bgcolor: alpha(t.palette.primary.main, 0.12) },
+                })}
+              >
+                <MonetizationOnRoundedIcon sx={{ fontSize: 24, color: 'warning.main' }} />
+                <Typography sx={{ fontWeight: 800, fontVariantNumeric: 'tabular-nums', flex: 1 }}>
+                  {coins.toLocaleString('en-IN')} coins
                 </Typography>
-                <Typography sx={{ fontWeight: 800, fontSize: '1.5rem', lineHeight: 1.1, fontVariantNumeric: 'tabular-nums' }}>
-                  {coins.toLocaleString('en-IN')}
+                <Typography variant="body2" sx={{ fontWeight: 700, color: 'primary.main' }}>
+                  Wallet
                 </Typography>
               </Box>
-              <Typography variant="body2" sx={{ fontWeight: 700, color: 'primary.main' }}>
-                Wallet
-              </Typography>
             </Box>
           )}
 

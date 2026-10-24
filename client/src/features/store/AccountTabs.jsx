@@ -16,7 +16,7 @@ import { Coins, SHIP_STEPS, STATUS_META, fmt, fmtDate, fmtDateTime } from './sto
 function OrderCard({ order, onOpen }) {
   const meta = STATUS_META[order.status] || STATUS_META.placed;
   return (
-    <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, cursor: 'pointer', '&:hover': { borderColor: 'primary.main' } }} onClick={() => onOpen(order)}>
+    <Paper variant="outlined" sx={{ p: 2, borderRadius: '12px', cursor: 'pointer', '&:hover': { borderColor: 'primary.main' } }} onClick={() => onOpen(order)}>
       <Stack direction="row" spacing={2} alignItems="center">
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Typography sx={{ fontWeight: 800 }} noWrap>{order.itemName}{order.qty > 1 ? ` ×${order.qty}` : ''}</Typography>
@@ -75,7 +75,7 @@ function OrderDialog({ order, onClose, onChanged, onOpenCourse }) {
           <Button variant="contained" disableElevation sx={{ mb: 2, fontWeight: 800 }} onClick={() => onOpenCourse(order.itemSlug)}>Open course</Button>
         )}
         {order.tracking?.number && (
-          <Paper variant="outlined" sx={{ p: 1.5, borderRadius: 2, mb: 2 }}>
+          <Paper variant="outlined" sx={{ p: 1.5, borderRadius: '8px', mb: 2 }}>
             <Typography variant="caption" color="text.secondary">Tracking</Typography>
             <Typography sx={{ fontWeight: 700 }}>{order.tracking.carrier || 'Courier'} · {order.tracking.number}</Typography>
             {order.tracking.url && <Button size="small" href={order.tracking.url} target="_blank" rel="noopener noreferrer">Track package</Button>}
@@ -143,7 +143,7 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
   return (
     <Stack spacing={2}>
       {error && <Alert severity="error">{error}</Alert>}
-      <Paper variant="outlined" sx={(t) => ({ p: 3, borderRadius: 4, background: `linear-gradient(135deg, ${alpha(t.palette.warning.main, 0.18)}, transparent)` })}>
+      <Paper variant="outlined" sx={(t) => ({ p: 3, borderRadius: '16px', background: `linear-gradient(135deg, ${alpha(t.palette.warning.main, 0.18)}, transparent)` })}>
         <Typography variant="body2" color="text.secondary">Balance</Typography>
         <Coins value={wallet.coins} size={44} />
         <Stack direction="row" spacing={1} sx={{ mt: 1.5 }} flexWrap="wrap" useFlexGap>
@@ -153,7 +153,7 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
         </Stack>
       </Paper>
 
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: '12px' }}>
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems={{ sm: 'center' }}>
           <Box sx={{ flex: 1 }}>
             <Typography sx={{ fontWeight: 800 }}>Daily check-in</Typography>
@@ -169,7 +169,7 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
         </Stack>
       </Paper>
 
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: '12px' }}>
         <Typography sx={{ fontWeight: 800, mb: 1 }}>Ways to earn</Typography>
         {wallet.earnWays.map((w, i) => (
           <Stack key={w.id} direction="row" spacing={2} alignItems="center" sx={{ py: 1, borderTop: i ? 1 : 0, borderColor: 'divider' }}>
@@ -182,7 +182,7 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
         ))}
       </Paper>
 
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: '12px' }}>
         <Typography sx={{ fontWeight: 800, mb: 1 }}>Coin history</Typography>
         {!tx ? <CircularProgress size={22} /> : tx.items.length === 0 ? (
           <Typography color="text.secondary">No coins yet. Solve your first problem to start earning.</Typography>

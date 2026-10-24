@@ -72,7 +72,7 @@ export default function CoursePanel({ slug, signedIn, onClose, onBuy, onProgress
                 {owned ? (
                   <Box sx={{ mt: 2 }}>
                     <Typography variant="body2" sx={{ fontWeight: 700 }}>{progress.doneCount}/{progress.lessonCount} done · {progress.percent}%</Typography>
-                    <LinearProgress variant="determinate" value={progress.percent} sx={{ height: 8, borderRadius: 4, mt: 0.5 }} />
+                    <LinearProgress variant="determinate" value={progress.percent} sx={{ height: 8, borderRadius: '16px', mt: 0.5 }} />
                     {progress.percent === 100 && <Alert severity="success" sx={{ mt: 1.5 }}>Course complete. Nice work!</Alert>}
                   </Box>
                 ) : (
@@ -87,7 +87,7 @@ export default function CoursePanel({ slug, signedIn, onClose, onBuy, onProgress
             </Stack>
 
             {course.modules.map((m, mi) => (
-              <Box key={m.id} sx={{ border: 1, borderColor: 'divider', borderRadius: 3, mb: 1.5, overflow: 'hidden' }}>
+              <Box key={m.id} sx={{ border: 1, borderColor: 'divider', borderRadius: '12px', mb: 1.5, overflow: 'hidden' }}>
                 <Box sx={{ px: 2, py: 1.25, bgcolor: 'action.hover' }}>
                   <Typography sx={{ fontWeight: 800 }}>Module {mi + 1} · {m.title}</Typography>
                 </Box>

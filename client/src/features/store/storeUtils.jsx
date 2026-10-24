@@ -74,7 +74,7 @@ function Cap({ c }) {
 const ICONS = { pro: WorkspacePremiumRoundedIcon, course: SchoolRoundedIcon, stickers: StickyNote2RoundedIcon, notebook: MenuBookRoundedIcon, mug: LocalCafeRoundedIcon };
 
 // Illustrated tile for an item. No photos needed: drawn from the item's art key + accent colour.
-export function ItemArt({ art, accent = '#6366F1', height = 150, radius = 3 }) {
+export function ItemArt({ art, accent = '#6366F1', height = 150, radius = '12px' }) {
   const Icon = ICONS[art];
   let inner;
   if (art === 'tee') inner = <Tee c={accent} />;

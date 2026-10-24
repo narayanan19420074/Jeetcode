@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
 import {
-  Alert, Badge, Box, Button, Chip, CircularProgress, Container, InputAdornment, LinearProgress, MenuItem, Paper, Skeleton,
+  Alert, Badge, Box, Button, Card, CardActions, CardContent, Chip, CircularProgress, Container, InputAdornment, LinearProgress, MenuItem, Paper, Skeleton,
   Stack, Tab, Tabs, TextField, Typography, alpha,
 } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -32,46 +32,46 @@ function ItemCard({ item, balance, signedIn, onBuy, onCourse }) {
   const pct = signedIn ? Math.min(100, Math.round((balance / item.price) * 100)) : 0;
   const disabled = item.soldOut && !owned;
   const isCourse = item.kind === 'course';
+  const meta = isCourse ? `${item.lessonCount} lessons · ${Math.round(item.minutes / 60)}h` : item.kind === 'physical' ? 'Ships within India' : item.kind === 'pro' ? `+${item.days} days` : '';
 
   return (
-    <Paper variant="outlined" sx={{ borderRadius: 3, p: 1.5, display: 'flex', flexDirection: 'column', gap: 1.25, height: '100%', opacity: disabled ? 0.65 : 1 }}>
-      <Box
-        sx={{ position: 'relative', cursor: isCourse ? 'pointer' : 'default' }}
-        onClick={isCourse ? () => onCourse(item.slug) : undefined}
-      >
-        <ItemArt art={item.art} accent={item.accent} height={140} />
-        <Stack direction="row" spacing={0.5} sx={{ position: 'absolute', top: 8, left: 8 }}>
-          {item.popular && <Chip size="small" color="warning" label="Popular" sx={{ fontWeight: 800 }} />}
-          {note && <Chip size="small" color={item.soldOut ? 'default' : 'error'} label={note} sx={{ fontWeight: 800 }} />}
-        </Stack>
-      </Box>
-      <Box sx={{ flex: 1 }}>
-        <Typography sx={{ fontWeight: 800, lineHeight: 1.25 }}>{item.name}</Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>{item.blurb}</Typography>
-        {isCourse && (
-          <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.5 }}>
-            {item.lessonCount} lessons · {Math.round(item.minutes / 60)}h
-          </Typography>
+    <Card variant="outlined" sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: '12px', overflow: 'hidden', opacity: disabled ? 0.65 : 1 }}>
+      {/* Media: full-bleed, the card's own radius clips it */}
+      <Box sx={{ position: 'relative', cursor: isCourse ? 'pointer' : 'default' }} onClick={isCourse ? () => onCourse(item.slug) : undefined}>
+        <ItemArt art={item.art} accent={item.accent} height={152} radius={0} />
+        {(item.popular || note) && (
+          <Stack direction="row" spacing={0.5} sx={{ position: 'absolute', top: 12, left: 12 }}>
+            {item.popular && <Chip size="small" color="warning" label="Popular" sx={{ fontWeight: 700 }} />}
+            {note && <Chip size="small" color={item.soldOut ? 'default' : 'error'} label={note} sx={{ fontWeight: 700 }} />}
+          </Stack>
         )}
-        {item.kind === 'physical' && <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.5 }}>Ships within India</Typography>}
       </Box>
-      {!owned && signedIn && !afford && (
-        <Box>
-          <LinearProgress variant="determinate" value={pct} color="warning" sx={{ height: 5, borderRadius: 3 }} />
-          <Typography variant="caption" color="text.secondary">{fmt(item.price - balance)} more coins to go</Typography>
-        </Box>
-      )}
-      <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
+
+      {/* Content: 16dp padding, title / supporting text / meta */}
+      <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 0.5, p: 2, pb: 1, '&:last-child': { pb: 1 } }}>
+        <Typography variant="subtitle1" component="h3" sx={{ fontWeight: 700, lineHeight: 1.3 }}>{item.name}</Typography>
+        <Typography variant="body2" color="text.secondary">{item.blurb}</Typography>
+        {meta && <Typography variant="caption" color="text.secondary">{meta}</Typography>}
+        {!owned && signedIn && !afford && (
+          <Box sx={{ mt: 'auto', pt: 1 }}>
+            <LinearProgress variant="determinate" value={pct} color="warning" sx={{ height: 4, borderRadius: '2px' }} />
+            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.5 }}>{fmt(item.price - balance)} more coins to go</Typography>
+          </Box>
+        )}
+      </CardContent>
+
+      {/* Actions: price left, button right, always on the same baseline */}
+      <CardActions sx={{ px: 2, pb: 2, pt: 1, justifyContent: 'space-between', gap: 1 }}>
         <Coins value={item.price} size={20} />
         {owned ? (
-          <Button size="small" variant="outlined" startIcon={<CheckCircleRoundedIcon />} onClick={() => onCourse(item.slug)} sx={{ fontWeight: 800 }}>Open</Button>
+          <Button variant="outlined" startIcon={<CheckCircleRoundedIcon />} onClick={() => onCourse(item.slug)} sx={{ fontWeight: 700, minWidth: 96 }}>Open</Button>
         ) : (
-          <Button size="small" variant={afford ? 'contained' : 'outlined'} disableElevation disabled={disabled} onClick={() => onBuy(item)} sx={{ fontWeight: 800 }}>
+          <Button variant={afford ? 'contained' : 'outlined'} disableElevation disabled={disabled} onClick={() => onBuy(item)} sx={{ fontWeight: 700, minWidth: 96 }}>
             {disabled ? 'Sold out' : afford ? 'Redeem' : 'View'}
           </Button>
         )}
-      </Stack>
-    </Paper>
+      </CardActions>
+    </Card>
   );
 }
 
@@ -178,7 +178,7 @@ export default function StorePage() {
       <Paper
         variant="outlined"
         sx={(t) => ({
-          p: { xs: 2, md: 2.5 }, mb: 1.5, borderRadius: 4, display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center',
+          p: { xs: 2, md: 2.5 }, mb: 1.5, borderRadius: '16px', display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center',
           background: `linear-gradient(135deg, ${alpha(t.palette.warning.main, 0.16)}, ${alpha(t.palette.primary.main, 0.08)})`,
         })}
       >
@@ -229,10 +229,10 @@ export default function StorePage() {
               <Typography sx={{ fontWeight: 800, mb: 1 }}>Continue learning</Typography>
               <Box sx={{ display: 'flex', gap: 1.5, overflowX: 'auto', pb: 0.5, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
                 {courses.map((c) => (
-                  <Paper key={c.slug} variant="outlined" onClick={() => setCourseSlug(c.slug)} sx={{ p: 1.5, borderRadius: 3, minWidth: 230, cursor: 'pointer', flexShrink: 0, '&:hover': { borderColor: 'primary.main' } }}>
+                  <Paper key={c.slug} variant="outlined" onClick={() => setCourseSlug(c.slug)} sx={{ p: 1.5, borderRadius: '12px', minWidth: 230, cursor: 'pointer', flexShrink: 0, '&:hover': { borderColor: 'primary.main' } }}>
                     <Typography sx={{ fontWeight: 800 }} noWrap>{c.name}</Typography>
                     <Typography variant="caption" color="text.secondary">{c.progress.doneCount}/{c.progress.lessonCount} lessons</Typography>
-                    <LinearProgress variant="determinate" value={c.progress.percent} sx={{ mt: 0.75, height: 6, borderRadius: 3 }} />
+                    <LinearProgress variant="determinate" value={c.progress.percent} sx={{ mt: 0.75, height: 6, borderRadius: '12px' }} />
                   </Paper>
                 ))}
               </Box>
@@ -264,7 +264,7 @@ export default function StorePage() {
 
           {loading && !data ? (
             <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: '1fr 1fr', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' } }}>
-              {Array.from({ length: 8 }).map((_, i) => <Skeleton key={i} variant="rounded" height={290} sx={{ borderRadius: 3 }} />)}
+              {Array.from({ length: 8 }).map((_, i) => <Skeleton key={i} variant="rounded" height={290} sx={{ borderRadius: '12px' }} />)}
             </Box>
           ) : items.length === 0 ? (
             <Box sx={{ textAlign: 'center', py: 8 }}>
@@ -272,7 +272,7 @@ export default function StorePage() {
               <Typography color="text.secondary">Try another search or category.</Typography>
             </Box>
           ) : (
-            <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' } }}>
+            <Box sx={{ display: 'grid', gap: { xs: 1.5, md: 2 }, gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' } }}>
               {items.map((it) => <ItemCard key={it.slug} item={it} balance={balance} signedIn={isAuthenticated} onBuy={buy} onCourse={setCourseSlug} />)}
             </Box>
           )}
