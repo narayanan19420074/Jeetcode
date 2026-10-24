@@ -128,7 +128,7 @@ export default function DashboardPage() {
   // On wide screens the page is exactly one window tall: sidebar and streak rail stay put and
   // only the middle column scrolls (the leaderboard scrolls its own list instead).
   const fillH = useViewportFill(rootRef, isLg);
-  const showRail = !['plans', 'leaderboard', 'friends', 'explore', 'contest'].includes(currentView);
+  const showRail = !['plans', 'leaderboard', 'friends', 'explore', 'contest', 'quests'].includes(currentView);
   const ownScroll = currentView === 'leaderboard';
 
   const goView = useCallback((v) => setParams(v === 'library' ? {} : { view: v }), [setParams]);

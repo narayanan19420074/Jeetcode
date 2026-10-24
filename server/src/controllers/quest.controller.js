@@ -2,12 +2,14 @@ import { User } from '../models/User.js';
 import { Submission } from '../models/Submission.js';
 import { ALL_QUESTS, CHECKIN_MILESTONES, QUESTS, QUEST_BY_ID, QUEST_PRO_PLAN } from '../config/quests.js';
 import { COIN_RULES } from '../config/store.js';
-import { grantCoinsSafe } from '../services/coin.service.js';
+import { BUTTERFLIES, BUTTERFLY_BY_ID, DEFAULT_BUTTERFLY } from '../config/butterflies.js';
+import { debitCoins, grantCoinsSafe } from '../services/coin.service.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
+const QUEST_USER_FIELDS = 'easySolved mediumSolved hardSolved streakDays longestStreak questClaims isPro proExpiresAt proPlan coins butterflies activeButterfly';
 const utcKey = (d) => d.toISOString().slice(0, 10);
 
 // Distinct UTC days on which the user had an Accepted submission. Same UTC
@@ -43,6 +45,17 @@ function proBlock(user, now = new Date()) {
   if (!user.proExpiresAt) return 'lifetime';
   if (user.proPlan === 'monthly' || user.proPlan === 'yearly') return 'paid';
   return null;
+}
+
+// Butterfly collection: the starter is owned by everyone, the rest are bought with coins.
+function butterflyState(user) {
+  const owned = new Set([DEFAULT_BUTTERFLY, ...(user?.butterflies || []).map((b) => b.id)]);
+  const wanted = user?.activeButterfly || DEFAULT_BUTTERFLY;
+  const active = owned.has(wanted) ? wanted : DEFAULT_BUTTERFLY;
+  return {
+    active,
+    items: BUTTERFLIES.map((b) => ({ id: b.id, name: b.name, rarity: b.rarity, cost: b.cost, blurb: b.blurb, owned: owned.has(b.id) })),
+  };
 }
 
 function buildState(user, days, now = new Date()) {
@@ -84,6 +97,8 @@ function buildState(user, days, now = new Date()) {
     quests: QUESTS.map(shape),
     proBlock: proBlock(user, now),
     proExpiresAt: user?.isPro ? user.proExpiresAt : null,
+    coins: user?.coins ?? 0,
+    butterflies: butterflyState(user),
   };
 }
 
@@ -92,7 +107,7 @@ function buildState(user, days, now = new Date()) {
 export const getQuests = asyncHandler(async (req, res) => {
   if (!req.user) return new ApiResponse(200, buildState(null, new Set())).send(res);
   const user = await User.findById(req.user.id).select(
-    'easySolved mediumSolved hardSolved streakDays longestStreak questClaims isPro proExpiresAt proPlan'
+    QUEST_USER_FIELDS
   );
   if (!user) throw ApiError.unauthorized('User no longer exists');
   const days = await getCheckInDays(user._id);
@@ -106,7 +121,7 @@ export const claimQuest = asyncHandler(async (req, res) => {
   if (!quest) throw ApiError.notFound('Unknown quest');
 
   const user = await User.findById(req.user.id).select(
-    'easySolved mediumSolved hardSolved streakDays longestStreak questClaims isPro proExpiresAt proPlan'
+    QUEST_USER_FIELDS
   );
   if (!user) throw ApiError.unauthorized('User no longer exists');
   if (user.questClaims.some((c) => c.id === quest.id)) throw ApiError.conflict('Reward already claimed');
@@ -147,7 +162,59 @@ export const claimQuest = asyncHandler(async (req, res) => {
 
   new ApiResponse(
     200,
-    { user: userOut.toPublicJSON(), claimed: quest.id, reward: quest.reward, xp: quest.xp, coins: coinRes.granted ? coinsAwarded : 0, proUntil, state: buildState(updated, days, now) },
+    { user: userOut.toPublicJSON(), claimed: quest.id, reward: quest.reward, xp: quest.xp, coins: coinRes.granted ? coinsAwarded : 0, proUntil, state: buildState(userOut, days, now) },
     'Reward claimed'
   ).send(res);
+});
+
+// POST /api/quests/butterflies/:id/unlock — spends coins (atomic, never goes negative) and adds the butterfly.
+export const unlockButterfly = asyncHandler(async (req, res) => {
+  const butterfly = BUTTERFLY_BY_ID.get(req.params.id);
+  if (!butterfly) throw ApiError.notFound('Unknown butterfly');
+
+  const user = await User.findById(req.user.id).select(QUEST_USER_FIELDS);
+  if (!user) throw ApiError.unauthorized('User no longer exists');
+  if (butterfly.id === DEFAULT_BUTTERFLY || user.butterflies.some((b) => b.id === butterfly.id)) throw ApiError.conflict('You already own this butterfly');
+
+  if (butterfly.cost > 0) {
+    const debit = await debitCoins(user._id, butterfly.cost, {
+      reason: 'purchase',
+      title: `Unlocked butterfly: ${butterfly.name}`,
+      refId: butterfly.id,
+      key: `butterfly:${butterfly.id}`,
+    });
+    if (!debit) throw ApiError.badRequest(`You need ${butterfly.cost} coins for ${butterfly.name}. You have ${user.coins ?? 0}.`);
+  }
+
+  const updated = await User.findOneAndUpdate(
+    { _id: user._id, 'butterflies.id': { $ne: butterfly.id } },
+    { $push: { butterflies: { id: butterfly.id, at: new Date() } }, $set: { activeButterfly: butterfly.id } },
+    { new: true }
+  );
+  if (!updated) {
+    // Two taps raced and the other one won: give the coins back.
+    if (butterfly.cost > 0) {
+      await grantCoinsSafe(user._id, butterfly.cost, { type: 'refund', reason: 'refund', title: `Refund: ${butterfly.name} (already owned)`, refId: butterfly.id, key: `butterfly-refund:${butterfly.id}:${Date.now()}` });
+    }
+    throw ApiError.conflict('You already own this butterfly');
+  }
+
+  const days = await getCheckInDays(updated._id);
+  new ApiResponse(200, { user: updated.toPublicJSON(), unlocked: butterfly.id, state: buildState(updated, days) }, `${butterfly.name} unlocked`).send(res);
+});
+
+// POST /api/quests/butterflies/:id/equip — pick which owned butterfly lives on the stage.
+export const equipButterfly = asyncHandler(async (req, res) => {
+  const butterfly = BUTTERFLY_BY_ID.get(req.params.id);
+  if (!butterfly) throw ApiError.notFound('Unknown butterfly');
+
+  const user = await User.findById(req.user.id).select(QUEST_USER_FIELDS);
+  if (!user) throw ApiError.unauthorized('User no longer exists');
+  const owns = butterfly.id === DEFAULT_BUTTERFLY || user.butterflies.some((b) => b.id === butterfly.id);
+  if (!owns) throw ApiError.badRequest('Unlock this butterfly first');
+
+  user.activeButterfly = butterfly.id;
+  await user.save();
+  const days = await getCheckInDays(user._id);
+  new ApiResponse(200, { state: buildState(user, days) }, `${butterfly.name} is now on your stage`).send(res);
 });

@@ -145,6 +145,20 @@ const userSchema = new mongoose.Schema(
       default: [],
     },
 
+    // Butterflies unlocked on the Quests page (ids from config/butterflies.js). The starter butterfly is
+    // implied for everyone and not stored; `activeButterfly` is the one shown on the stage ('' = starter).
+    butterflies: {
+      type: [
+        {
+          _id: false,
+          id: { type: String, required: true },
+          at: { type: Date, default: Date.now },
+        },
+      ],
+      default: [],
+    },
+    activeButterfly: { type: String, default: '' },
+
     // --- JeetCode Store ---
     // `coins` is the spendable balance (cache of the CoinTransaction ledger).
     // Only ever changed with atomic $inc by coin.service.js — never assign it
