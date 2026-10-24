@@ -224,7 +224,7 @@ export default function LeaderboardView({ isAuthenticated }) {
 
         {showPanel && (
           <LeaderboardPanel
-            row={selectedRow} me={me} isAuthenticated={isAuthenticated} meta={meta} period={period} points={points}
+            row={selectedRow} me={me} isAuthenticated={isAuthenticated} meta={meta} period={period} track={track} onTrack={onTrack} points={points}
             learners={stats?.learners || 0} topPercent={stats?.topPercent} loading={firstLoad} short={shortPanel}
           />
         )}
