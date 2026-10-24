@@ -31,6 +31,15 @@ export const adminApi = {
   updateUserRole: (id, role) => apiClient.patch(`/admin/users/${id}/role`, { role }),
   setUserPro: (id, payload) => apiClient.patch(`/admin/users/${id}/pro`, payload),
 
+  // --- Store ---
+  storeSummary: () => apiClient.get('/admin/store/summary'),
+  storeOrders: (params) => apiClient.get('/admin/store/orders', { params }),
+  updateStoreOrder: (id, payload) => apiClient.patch(`/admin/store/orders/${id}`, payload),
+  storeItems: () => apiClient.get('/admin/store/items'),
+  updateStoreItem: (slug, payload) => apiClient.patch(`/admin/store/items/${slug}`, payload),
+  adjustCoins: (payload) => apiClient.post('/admin/store/coins', payload),
+  storeLedger: (params) => apiClient.get('/admin/store/ledger', { params }),
+
   // --- Licenses ---
   listLicenses: () => apiClient.get('/admin/licenses'),
   generateLicense: (payload) => apiClient.post('/admin/licenses/generate', payload),

@@ -1,6 +1,8 @@
 import { User } from '../models/User.js';
 import { Submission } from '../models/Submission.js';
 import { ALL_QUESTS, CHECKIN_MILESTONES, QUESTS, QUEST_BY_ID, QUEST_PRO_PLAN } from '../config/quests.js';
+import { COIN_RULES } from '../config/store.js';
+import { grantCoinsSafe } from '../services/coin.service.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
@@ -133,9 +135,19 @@ export const claimQuest = asyncHandler(async (req, res) => {
   const updated = await User.findOneAndUpdate(filter, update, { new: true });
   if (!updated) throw ApiError.conflict('Could not apply the reward, please try again');
 
+  // Every claimed quest also pays its XP as spendable coins (once, via the ledger key).
+  const coinsAwarded = Math.floor(quest.xp * COIN_RULES.questXpToCoins);
+  const coinRes = await grantCoinsSafe(updated._id, coinsAwarded, {
+    reason: 'quest',
+    title: `Quest reward: ${quest.title}`,
+    refId: quest.id,
+    key: `quest:${quest.id}`,
+  });
+  const userOut = coinRes.granted ? await User.findById(updated._id) : updated;
+
   new ApiResponse(
     200,
-    { user: updated.toPublicJSON(), claimed: quest.id, reward: quest.reward, xp: quest.xp, proUntil, state: buildState(updated, days, now) },
+    { user: userOut.toPublicJSON(), claimed: quest.id, reward: quest.reward, xp: quest.xp, coins: coinRes.granted ? coinsAwarded : 0, proUntil, state: buildState(updated, days, now) },
     'Reward claimed'
   ).send(res);
 });

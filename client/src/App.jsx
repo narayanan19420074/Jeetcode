@@ -56,6 +56,11 @@ const YouPage = lazy(() => import('./features/profile/YouPage'));
 const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage'));
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
 const ExamsPage = lazy(() => import('./features/exams/ExamsPage'));
+const StorePage = lazy(() => import('./features/store/StorePage'));
+const WalletPage = lazy(() => import('./features/store/WalletPage'));
+const OrdersPage = lazy(() => import('./features/store/OrdersPage'));
+const CoursePage = lazy(() => import('./features/store/CoursePage'));
+const AdminStorePage = lazy(() => import('./features/admin/pages/AdminStorePage'));
 
 const RouteFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -106,6 +111,7 @@ export default function App() {
         <Route path="licenses" element={<Suspense fallback={<RouteFallback />}><AdminLicensesPage /></Suspense>} />
         <Route path="problems" element={<Suspense fallback={<RouteFallback />}><AdminProblemsPage /></Suspense>} />
         <Route path="aptitude" element={<Suspense fallback={<RouteFallback />}><AdminAptitudePage /></Suspense>} />
+        <Route path="store" element={<Suspense fallback={<RouteFallback />}><AdminStorePage /></Suspense>} />
         <Route path="audit-log" element={<Suspense fallback={<RouteFallback />}><AdminAuditLogPage /></Suspense>} />
       </Route>
 
@@ -169,6 +175,10 @@ export default function App() {
         <Route path="/companies" element={<Navigate to="/prep" replace />} />
         <Route path="/you" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><YouPage /></Suspense></ProtectedRoute>} />
         <Route path="/prep" element={<Suspense fallback={<RouteFallback />}><PrepCompaniesPage /></Suspense>} />
+        <Route path="/store" element={<Suspense fallback={<RouteFallback />}><StorePage /></Suspense>} />
+        <Route path="/store/course/:slug" element={<Suspense fallback={<RouteFallback />}><CoursePage /></Suspense>} />
+        <Route path="/store/wallet" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><WalletPage /></Suspense></ProtectedRoute>} />
+        <Route path="/store/orders" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><OrdersPage /></Suspense></ProtectedRoute>} />
         <Route path="/exams" element={<Suspense fallback={<RouteFallback />}><ExamsPage /></Suspense>} />
         <Route path="/prep/:companySlug" element={<Suspense fallback={<RouteFallback />}><PrepRoadmapPage /></Suspense>} />
 

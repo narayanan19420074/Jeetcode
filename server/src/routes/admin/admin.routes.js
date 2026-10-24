@@ -30,6 +30,7 @@ import {
 } from '../../controllers/aptitude.controller.js';
 import adminUsersRouter from './adminUsers.routes.js';
 import adminLicensesRouter from './adminLicenses.routes.js';
+import adminStoreRouter from './adminStore.routes.js';
 
 const router = Router();
 
@@ -75,5 +76,8 @@ router.delete('/aptitude/questions/:id', deleteQuestion);
 // and ./adminLicenses.routes.js) ---
 router.use('/users', adminUsersRouter);
 router.use('/licenses', adminLicensesRouter);
+
+// --- JeetCode Store: orders, stock/prices, coin adjustments (see ./adminStore.routes.js) ---
+router.use('/store', adminStoreRouter);
 
 export default router;

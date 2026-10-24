@@ -6,6 +6,7 @@ import { logger } from '../utils/logger.js';
 import { LANGUAGE_IDS, submitBatch, pollBatchResults } from './judge0.service.js';
 import { buildSourceCode } from './codeHarness.service.js';
 import { applyStreakUpdate } from './streak.service.js';
+import { grantCoinsSafe, solveReward } from './coin.service.js';
 
 // Priority order when several test cases fail in different ways — the
 // most "diagnostic" failure wins so the learner sees the real blocker
@@ -129,4 +130,15 @@ async function settleSubmitSideEffects(submission, problem) {
   }
 
   await user.save();
+
+  // First Accepted solve of a problem pays coins. The ledger key is per
+  // (user, problem), so a re-judge or a re-solve can never pay twice.
+  if (submission.status === 'Accepted') {
+    await grantCoinsSafe(user._id, solveReward(problem.difficulty), {
+      reason: 'solve',
+      title: `Solved ${problem.title || 'a problem'} (${problem.difficulty})`,
+      refId: String(problem._id),
+      key: `solve:${problem._id}`,
+    });
+  }
 }

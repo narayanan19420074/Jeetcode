@@ -21,11 +21,15 @@ const adminActionLogSchema = new mongoose.Schema(
         'user_role_update',
         'user_pro_toggle',
         'license_generate',
+        // --- JeetCode Store ---
+        'store_order_update',
+        'store_item_update',
+        'coins_adjust',
       ],
       required: true,
       index: true,
     },
-    targetType: { type: String, enum: ['Problem', 'User', 'License'], required: true },
+    targetType: { type: String, enum: ['Problem', 'User', 'License', 'StoreOrder', 'StoreItem'], required: true },
     // Single-target actions set targetId; bulk actions (bulk-delete,
     // license generate) leave it null and put affected ids/keys in
     // metadata instead.

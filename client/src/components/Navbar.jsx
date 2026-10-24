@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import {
@@ -44,8 +44,12 @@ import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
+import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
+import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded';
+import { useSnackbar } from 'notistack';
+import { storeApi } from '../api/storeApi';
 import { toggleThemeMode } from '../app/uiSlice';
-import { logoutUser } from '../features/auth/authSlice';
+import { logoutUser, userUpdated } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
 import NotificationBell from '../features/notifications/NotificationBell';
 import ActivateLicenseModal from '../components/ActivateLicenseModal';
@@ -64,6 +68,7 @@ const PRIMARY_LINKS = [
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
   { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
   { to: '/exams', label: 'Exams', icon: AssignmentRoundedIcon },
+  { to: '/store', label: 'Store', icon: StorefrontRoundedIcon },
 ];
 
 // Reference links — grouped under "Explore" on desktop, second group on mobile.
@@ -138,6 +143,41 @@ export default function Navbar() {
   const [exploreAnchorEl, setExploreAnchorEl] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [licenseModalOpen, setLicenseModalOpen] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
+  const coins = user?.coins ?? 0;
+  const coinsRef = useRef(coins);
+  useEffect(() => {
+    coinsRef.current = coins;
+  }, [coins]);
+
+  // Keep the coin chip fresh: coins are earned on the server (solves, quests),
+  // so check on every page change, every 45s, and when the tab comes back.
+  useEffect(() => {
+    if (!isAuthenticated) return undefined;
+    let stopped = false;
+    const poll = () => {
+      if (document.visibilityState === 'hidden') return;
+      storeApi
+        .balance()
+        .then(({ data }) => {
+          if (stopped) return;
+          const next = data.data.coins;
+          const prev = coinsRef.current;
+          if (next === prev) return;
+          if (next > prev) enqueueSnackbar(`+${next - prev} coins earned`, { variant: 'success' });
+          dispatch(userUpdated({ coins: next }));
+        })
+        .catch(() => {});
+    };
+    poll();
+    const id = setInterval(poll, 45000);
+    document.addEventListener('visibilitychange', poll);
+    return () => {
+      stopped = true;
+      clearInterval(id);
+      document.removeEventListener('visibilitychange', poll);
+    };
+  }, [isAuthenticated, pathname, dispatch, enqueueSnackbar]);
 
   const closeAll = () => {
     setAnchorEl(null);
@@ -258,6 +298,22 @@ export default function Navbar() {
               size="small"
               variant="outlined"
               sx={{ fontWeight: 700, display: { xs: 'none', sm: 'flex' } }}
+            />
+          </Tooltip>
+        )}
+
+        {isAuthenticated && (
+          <Tooltip title="Your coins. Open wallet">
+            <Chip
+              component={RouterLink}
+              to="/store/wallet"
+              clickable
+              icon={<MonetizationOnRoundedIcon sx={{ color: 'warning.main !important' }} />}
+              label={coins.toLocaleString('en-IN')}
+              size="small"
+              variant="outlined"
+              aria-label={`${coins} coins, open wallet`}
+              sx={{ fontWeight: 700 }}
             />
           </Tooltip>
         )}
@@ -410,6 +466,10 @@ export default function Navbar() {
                   <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
                     {user?.streakDays ?? 0}-day streak
                   </Typography>
+                  <MonetizationOnRoundedIcon sx={{ fontSize: 16, color: 'warning.main', ml: 0.5 }} />
+                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
+                    {coins.toLocaleString('en-IN')}
+                  </Typography>
                   {user?.isPro && <ProBadge />}
                 </Box>
               </Box>
@@ -417,6 +477,7 @@ export default function Navbar() {
           )}
 
           <Box sx={{ display: 'grid', gap: 0.25 }}>
+            <MenuRow to="/store" label="Store" icon={StorefrontRoundedIcon} active={isActivePath(pathname, '/store')} onNavigate={() => setMobileOpen(false)} />
             {DASH_SECTIONS.map(({ to, label, icon, view }) => (
               <MenuRow
                 key={label}

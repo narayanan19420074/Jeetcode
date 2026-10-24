@@ -145,6 +145,26 @@ const userSchema = new mongoose.Schema(
       default: [],
     },
 
+    // --- JeetCode Store ---
+    // `coins` is the spendable balance (cache of the CoinTransaction ledger).
+    // Only ever changed with atomic $inc by coin.service.js — never assign it
+    // on a loaded document.
+    coins: { type: Number, default: 0, min: 0 },
+    coinsEarned: { type: Number, default: 0 }, // lifetime earned, for the wallet header
+    coinsSpent: { type: Number, default: 0 },
+    // Courses bought with coins. `done` holds finished lesson keys ("m1.l2").
+    ownedCourses: {
+      type: [
+        {
+          _id: false,
+          slug: { type: String, required: true },
+          at: { type: Date, default: Date.now },
+          done: { type: [String], default: [] },
+        },
+      ],
+      default: [],
+    },
+
     // --- Public profile (Settings -> Public profile) ---
     bio: { type: String, trim: true, maxlength: 160, default: '' },
     location: { type: String, trim: true, maxlength: 60, default: '' },
@@ -250,6 +270,7 @@ userSchema.methods.toPublicJSON = function () {
     isPro: this.isPro,
     proExpiresAt: this.proExpiresAt,
     proPlan: this.proPlan,
+    coins: this.coins ?? 0,
     streakDays: this.streakDays,
     longestStreak: this.longestStreak,
     easySolved: this.easySolved,

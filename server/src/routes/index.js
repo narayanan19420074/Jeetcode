@@ -17,6 +17,7 @@ import leaderboardRoutes from './leaderboard.routes.js';
 import communityRoutes from './community.routes.js';
 import friendRoutes from './friend.routes.js';
 import contestRoutes from './contest.routes.js';
+import storeRoutes from './store.routes.js';
 import '../models/AdminActionLog.js';
 
 const router = Router();
@@ -46,6 +47,7 @@ router.use('/leaderboard', leaderboardRoutes);
 router.use('/community', communityRoutes);
 router.use('/friends', friendRoutes);
 router.use('/contests', contestRoutes);
+router.use('/store', storeRoutes);
 
 
 export default router;
