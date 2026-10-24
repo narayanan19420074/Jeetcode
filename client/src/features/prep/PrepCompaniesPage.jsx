@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Box, ButtonBase, CircularProgress, Container, IconButton, InputAdornment, TextField, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
@@ -8,7 +9,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { prepApi } from '../../api/prepApi';
 import { problemsApi } from '../../api/problemsApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
-import PrepReadinessCard from '../../components/PrepReadinessCard';
+import CompanyQuestRoadmap from './CompanyQuestRoadmap';
 import useViewportFill from '../dashboard/useViewportFill';
 
 const PAGE = 24;
@@ -58,9 +59,11 @@ function CompanyRow({ c, onOpen }) {
 
 // Companies: companies with a full exam-pattern roadmap come first, then every other company we have
 // questions for. One list, infinite scroll. On wide screens the page is one window tall (the list scrolls
-// by itself) with the readiness card on the right, like the Quests tab.
+// by itself). Tapping a company opens its question roadmap right here, no page change.
 export default function PrepCompaniesPage() {
   const navigate = useNavigate();
+  const reduce = useReducedMotion();
+  const [sp, setSp] = useSearchParams();
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
   const rootRef = useRef(null);
@@ -79,16 +82,17 @@ export default function PrepCompaniesPage() {
   }, []);
 
   const loading = tracks === null || others === null;
+  const selectedName = sp.get('company'); // the open company lives in the URL so the phone's back button closes its roadmap
   const q = norm(query);
 
   const list = useMemo(() => {
     const t = tracks || [];
     const trackNames = new Set(t.map((x) => norm(x.name)));
-    const first = t.map((x) => ({ key: `t-${x.slug}`, name: x.name, logoUrl: x.logoUrl, roadmap: true, minutes: x.examDurationMinutes, sections: x.sectionCount, readiness: x.readiness, go: `/prep/${x.slug}` }));
+    const first = t.map((x) => ({ key: `t-${x.slug}`, name: x.name, logoUrl: x.logoUrl, roadmap: true, minutes: x.examDurationMinutes, sections: x.sectionCount, readiness: x.readiness, examSlug: x.slug }));
     const rest = (others || [])
       .filter((c) => !trackNames.has(norm(c.company)))
       .sort((a, b) => b.count - a.count || a.company.localeCompare(b.company))
-      .map((c) => ({ key: `c-${c.company}`, name: c.company, count: c.count, go: `/problems?company=${encodeURIComponent(c.company)}` }));
+      .map((c) => ({ key: `c-${c.company}`, name: c.company, count: c.count }));
     return [...first, ...rest].filter((c) => !q || norm(c.name).includes(q));
   }, [tracks, others, q]);
 
@@ -101,9 +105,24 @@ export default function PrepCompaniesPage() {
     const io = new IntersectionObserver(([e]) => e.isIntersecting && setVisible((v) => v + PAGE), { root: fillH ? scrollRef.current : null, rootMargin: '300px' });
     io.observe(el);
     return () => io.disconnect();
-  }, [list.length, visible, loading, fillH]);
+  }, [list.length, visible, loading, fillH, selectedName]);
 
   const shown = list.slice(0, visible);
+
+  const selected = useMemo(() => {
+    if (!selectedName) return null;
+    const hit = list.find((c) => norm(c.name) === norm(selectedName)) || (tracks || []).map((x) => ({ name: x.name, logoUrl: x.logoUrl, examSlug: x.slug })).find((c) => norm(c.name) === norm(selectedName));
+    return hit || { name: selectedName };
+  }, [selectedName, list, tracks]);
+  const openCompany = (c) => setSp({ company: c.name });
+  const closeCompany = () => {
+    if (window.history.state?.idx > 0) navigate(-1);
+    else setSp({}, { replace: true });
+  };
+  useEffect(() => {
+    if (selected) window.scrollTo?.(0, 0);
+    if (selected && scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [selected?.name]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : undefined}>
@@ -111,16 +130,16 @@ export default function PrepCompaniesPage() {
         <Box
           sx={{
             display: 'grid', gap: 2.5, alignItems: 'start', height: fillH ? '100%' : 'auto',
-            gridTemplateColumns: { xs: 'minmax(0,1fr)', lg: 'minmax(0,1fr) 340px' },
+            gridTemplateColumns: 'minmax(0,1fr)',
             gridTemplateRows: fillH ? 'minmax(0, 1fr)' : undefined,
           }}
         >
-          {/* list */}
-          <Box sx={{ order: { xs: 2, lg: 1 }, minWidth: 0, minHeight: 0, height: fillH ? '100%' : 'auto', display: 'flex', flexDirection: 'column' }}>
+          {/* list (stays mounted so search and scroll survive opening a company) */}
+          <Box sx={{ minWidth: 0, minHeight: 0, height: fillH ? '100%' : 'auto', display: selected ? 'none' : 'flex', flexDirection: 'column' }}>
             <Box sx={{ display: 'flex', alignItems: { sm: 'center' }, justifyContent: 'space-between', gap: 2, flexDirection: { xs: 'column', sm: 'row' }, mb: 2, flexShrink: 0 }}>
               <Box>
                 <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em' }}>Companies</Typography>
-                <Typography variant="body2" color="text.secondary">Pick a company to see its exam pattern and your readiness.</Typography>
+                <Typography variant="body2" color="text.secondary">Pick a company to play through its questions, level by level.</Typography>
               </Box>
               <TextField
                 size="small" placeholder="Search companies" value={query} onChange={(e) => setQuery(e.target.value)}
@@ -148,7 +167,7 @@ export default function PrepCompaniesPage() {
               ) : (
                 <>
                   <Box sx={{ display: 'grid', gap: 1.25, gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))' } }}>
-                    {shown.map((c) => <CompanyRow key={c.key} c={c} onOpen={() => navigate(c.go)} />)}
+                    {shown.map((c) => <CompanyRow key={c.key} c={c} onOpen={() => openCompany(c)} />)}
                   </Box>
                   <Box ref={sentinel} sx={{ height: 1 }} />
                   {visible < list.length && <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}><CircularProgress size={22} /></Box>}
@@ -160,10 +179,21 @@ export default function PrepCompaniesPage() {
             </Box>
           </Box>
 
-          {/* readiness */}
-          <Box sx={{ order: { xs: 1, lg: 2 }, minWidth: 0, overflowY: fillH ? 'auto' : 'visible', maxHeight: fillH ? '100%' : 'none' }} className="autohide-scroll">
-            <PrepReadinessCard tracks={tracks} />
-          </Box>
+          <AnimatePresence>
+            {selected && (
+              <motion.div
+                key={selected.name}
+                initial={reduce ? { opacity: 0 } : { opacity: 0, y: 40, scale: 0.94 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.08 } }}
+                transition={{ type: 'spring', stiffness: 260, damping: 26 }}
+                className="autohide-scroll"
+                style={fillH ? { height: '100%', overflowY: 'auto', overflowX: 'hidden', minHeight: 0 } : undefined}
+              >
+                <CompanyQuestRoadmap company={selected} onBack={closeCompany} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </Box>
       </Container>
     </Box>
