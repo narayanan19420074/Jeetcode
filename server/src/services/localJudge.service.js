@@ -18,6 +18,8 @@ import { logger } from '../utils/logger.js';
 //             reads only its own temp dir, when the Node version supports it)
 //   Python -> python3 -I
 //   C++    -> g++ (compiled ONCE per batch, reused for every test case)
+//   Java   -> javac + java (needs a JDK on the server; compiled ONCE per batch).
+//             judge0.service.js sends Java to the Judge0 API instead when no JDK is installed.
 //
 // Each run: fresh temp dir, minimal env (no secrets), wall-clock timeout,
 // output cap, memory watch (/proc VmHWM), global concurrency limit.
@@ -35,8 +37,9 @@ const MAX_STORED_STDERR = 8 * 1024;
 const RESULT_TTL_MS = 10 * 60 * 1000;
 
 // Judge0-compatible language ids -> our language keys.
-const ID_TO_LANG = { 63: 'javascript', 71: 'python', 54: 'cpp' };
-const EXT = { javascript: 'js', python: 'py', cpp: 'cpp' };
+const ID_TO_LANG = { 63: 'javascript', 71: 'python', 54: 'cpp', 62: 'java' };
+const EXT = { javascript: 'js', python: 'py', cpp: 'cpp', java: 'java' };
+const FILE_NAME = { java: 'Main.java' }; // Java insists the file is named after the public class
 
 // Judge0-compatible status ids.
 const ST = {
@@ -78,7 +81,7 @@ class Semaphore {
 }
 
 const runSem = new Semaphore(Math.max(1, env.JUDGE_CONCURRENCY));
-const compileSem = new Semaphore(1); // g++ is memory hungry — one at a time
+const compileSem = new Semaphore(1); // g++ / javac are memory hungry — one at a time
 
 const jobs = new Map(); // token -> Promise<result>
 
@@ -249,9 +252,10 @@ const FORBIDDEN = /\/(proc|sys|etc|home|opt|mnt|root|var|srv|app)\/|\.\.\/\.\./;
 function makeWorkspace(lang, source) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'jc-judge-'));
   const ws = { lang, dir, pending: 0, ready: Promise.resolve(), compileError: null, fatal: null, rejected: null };
-  fs.writeFileSync(path.join(dir, `main.${EXT[lang]}`), source);
+  fs.writeFileSync(path.join(dir, FILE_NAME[lang] || `main.${EXT[lang]}`), source);
   if (FORBIDDEN.test(source)) ws.rejected = 'Your code contains a disallowed pattern (file system access).';
   if (!ws.rejected && lang === 'cpp') ws.ready = compileCpp(ws);
+  if (!ws.rejected && lang === 'java') ws.ready = compileJava(ws);
   return ws;
 }
 
@@ -277,6 +281,32 @@ async function compileCpp(ws) {
   } finally {
     compileSem.release();
   }
+}
+
+async function compileJava(ws) {
+  const javac = findTool('javac', ['javac']);
+  if (!javac) {
+    ws.fatal = 'Java (JDK) is not installed on the judge server.';
+    return;
+  }
+  await compileSem.acquire();
+  try {
+    const r = await exec(javac, ['-encoding', 'UTF-8', '-J-Xmx256m', '-J-XX:+UseSerialGC', '-J-XX:TieredStopAtLevel=1', 'Main.java'], {
+      cwd: ws.dir,
+      timeoutMs: COMPILE_TIMEOUT_MS,
+    });
+    if (r.spawnError) ws.fatal = `Java compile failed to start: ${r.spawnError}`;
+    else if (r.timedOut) ws.compileError = 'Compilation timed out.';
+    else if (r.code !== 0) ws.compileError = (r.stderr || r.stdout || 'Compilation failed.').trim();
+  } finally {
+    compileSem.release();
+  }
+}
+
+// True when this server can run the language itself (Java needs a JDK; the rest are always bundled).
+export function canRun(languageId) {
+  if (ID_TO_LANG[languageId] !== 'java') return Boolean(ID_TO_LANG[languageId]);
+  return Boolean(findTool('javac', ['javac']) && findTool('java', ['java']));
 }
 
 // --- output comparison (same leniency as Judge0: trailing whitespace) --------
@@ -317,6 +347,13 @@ function buildCommand(ws) {
     if (!py) return { error: 'Python is not installed on the judge server.' };
     return { cmd: 'sh', args: ['-c', memScript, py, '-I', 'main.py'] };
   }
+  if (ws.lang === 'java') {
+    const java = findTool('java', ['java']);
+    if (!java) return { error: 'Java (JDK) is not installed on the judge server.' };
+    // No `ulimit -v`: the JVM reserves far more address space than it uses. The heap is capped instead.
+    const heap = Math.max(64, Math.floor(env.JUDGE_MEMORY_MB * 0.75));
+    return { cmd: java, args: ['-Xmx' + heap + 'm', '-Xss64m', '-XX:+UseSerialGC', '-XX:TieredStopAtLevel=1', '-Xshare:auto', '-cp', '.', 'Main'] };
+  }
   return { cmd: 'sh', args: ['-c', memScript, './main'] };
 }
 
@@ -337,7 +374,8 @@ async function runCase(token, ws, item) {
         cwd: ws.dir,
         input: item.stdin ?? '',
         timeoutMs: TIME_LIMIT_MS,
-        memLimitKb: MEMORY_LIMIT_KB,
+        // The JVM itself takes ~60MB of resident memory on top of the heap, so give it headroom.
+        memLimitKb: ws.lang === 'java' ? MEMORY_LIMIT_KB + 128 * 1024 : MEMORY_LIMIT_KB,
       });
     } finally {
       runSem.release();

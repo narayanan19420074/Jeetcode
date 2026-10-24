@@ -60,6 +60,7 @@ const problemSchema = new mongoose.Schema(
       javascript: { type: String },
       python: { type: String },
       cpp: { type: String },
+      java: { type: String }, // optional: older problems get it generated from the spec at read time
     },
 
     // The harness: full compilable program per language with a
@@ -74,6 +75,7 @@ const problemSchema = new mongoose.Schema(
       javascript: { type: String },
       python: { type: String },
       cpp: { type: String },
+      java: { type: String },
     },
 
     testCases: {

@@ -281,7 +281,7 @@ export default function AddProblemDialog({ open, onClose, onCreated }) {
               Function Signature
             </Typography>
             <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1.5 }}>
-              Starter code and the hidden test-case driver are auto-generated for JavaScript, Python, and C++ from
+              Starter code and the hidden test-case driver are auto-generated for JavaScript, Python, C++, and Java from
               this signature.
             </Typography>
             <Stack spacing={1.5}>

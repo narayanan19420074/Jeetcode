@@ -197,7 +197,7 @@ export async function formatCode(language, code, cursorOffset = 0, { tabSize } =
       const next = fixPythonIndent(code, unit);
       return { code: next, cursorOffset: mapCursor(code, next, cursorOffset) };
     }
-    if (language === 'cpp') {
+    if (language === 'cpp' || language === 'java') {
       const next = fixCppTabs(code, unit);
       return { code: next, cursorOffset: mapCursor(code, next, cursorOffset) };
     }

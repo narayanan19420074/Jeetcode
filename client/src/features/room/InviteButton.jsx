@@ -22,7 +22,7 @@ export default function InviteButton({ problem, language, code, size = 'md' }) {
         language,
         problemSlug: problem.slug,
         title: problem.title,
-        starters: { javascript: starters.javascript, python: starters.python, cpp: starters.cpp },
+        starters: { javascript: starters.javascript, python: starters.python, cpp: starters.cpp, java: starters.java },
         initialCode: code,
       });
       navigate(`/room/${data.data.roomId}`);

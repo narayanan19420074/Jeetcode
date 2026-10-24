@@ -86,8 +86,9 @@ const LANGUAGES = [
   { id: 'javascript', label: 'JavaScript' },
   { id: 'python', label: 'Python' },
   { id: 'cpp', label: 'C++' },
+  { id: 'java', label: 'Java' },
 ];
-const LANG_SHORT = { javascript: 'JS', python: 'Py', cpp: 'C++' };
+const LANG_SHORT = { javascript: 'JS', python: 'Py', cpp: 'C++', java: 'Java' };
 
 const DESC_TABS = [
   { value: 0, label: 'Description', icon: <ArticleOutlinedIcon /> },
@@ -839,7 +840,7 @@ export default function WorkspacePage() {
                 }
               >
                 {LANGUAGES.map((l) => (
-                  <MenuItem key={l.id} value={l.id}>
+                  <MenuItem key={l.id} value={l.id} disabled={l.id === 'java' && !problem?.starterCode?.java}>
                     {l.label}
                   </MenuItem>
                 ))}

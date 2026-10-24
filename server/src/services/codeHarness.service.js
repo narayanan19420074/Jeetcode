@@ -22,9 +22,11 @@ export function buildSourceCode(driverTemplate, userCode, language) {
   // Defense in depth: reject obviously dangerous patterns even though the
   // Judge0 sandbox (network-isolated, resource-capped container) is the
   // real security boundary — this just fails fast with a clear message.
-  const banned = [/require\(['"]child_process['"]\)/, /os\.system\(/, /subprocess\./, /import\s+os\b.*system/];
+  const banned = [/require\(['"]child_process['"]\)/, /os\.system\(/, /subprocess\./, /import\s+os\b.*system/, /ProcessBuilder|Runtime\s*\.\s*getRuntime/];
   if (banned.some((re) => re.test(userCode))) {
     throw ApiError.badRequest('Your code contains a disallowed pattern (process/system access).');
   }
-  return driverTemplate.replace(PLACEHOLDER, userCode);
+  // Java compiles as Main.java, so only Main may be public: `public class Solution` would not compile.
+  const code = language === 'java' ? userCode.replace(/\bpublic\s+(class|interface|enum|record)\b/g, '$1') : userCode;
+  return driverTemplate.replace(PLACEHOLDER, () => code);
 }

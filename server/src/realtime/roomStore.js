@@ -12,6 +12,7 @@ const IDLE_MS = 6 * 60 * 60 * 1000;
 export const DEFAULT_STARTERS = {
   javascript: '// Pair room — type together, press Run to execute\nconsole.log("Hello, JeetCode!");\n',
   python: '# Pair room — type together, press Run to execute\nprint("Hello, JeetCode!")\n',
+  java: 'public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, JeetCode!");\n    }\n}\n',
   cpp: '#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    cout << "Hello, JeetCode!" << endl;\n    return 0;\n}\n',
 };
 

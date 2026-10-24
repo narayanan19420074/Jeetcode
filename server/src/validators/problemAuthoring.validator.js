@@ -30,6 +30,7 @@ const codeMapSchema = z.object({
   javascript: z.string().min(1),
   python: z.string().min(1),
   cpp: z.string().min(1),
+  java: z.string().min(1).optional(),
 });
 
 export const authoredProblemSchema = z

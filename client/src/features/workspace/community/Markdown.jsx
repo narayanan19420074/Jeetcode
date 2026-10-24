@@ -12,8 +12,8 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
 
-export const LANG_LABEL = { javascript: 'JavaScript', python: 'Python', cpp: 'C++' };
-export const LANG_COLOR = { javascript: '#F59E0B', python: '#3B82F6', cpp: '#8B5CF6' };
+export const LANG_LABEL = { javascript: 'JavaScript', python: 'Python', cpp: 'C++', java: 'Java' };
+export const LANG_COLOR = { javascript: '#F59E0B', python: '#3B82F6', cpp: '#8B5CF6', java: '#EF4444' };
 
 function LangDot({ language }) {
   return <Box component="span" sx={{ width: 9, height: 9, borderRadius: '50%', bgcolor: LANG_COLOR[language] || 'text.disabled', flexShrink: 0 }} />;

@@ -13,7 +13,7 @@ const solutionSchema = new mongoose.Schema(
     content: { type: String, default: '', maxlength: 10000 }, // markdown
     excerpt: { type: String, default: '', maxlength: 200 }, // plain-text preview for list cards
 
-    language: { type: String, enum: ['javascript', 'python', 'cpp'], required: true },
+    language: { type: String, enum: ['javascript', 'python', 'cpp', 'java'], required: true },
     code: { type: String, required: true, maxlength: 20000 },
     codePreview: { type: String, default: '', maxlength: 600 }, // first lines, for feed cards
     runtimeMs: { type: Number, default: null },

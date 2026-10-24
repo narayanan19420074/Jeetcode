@@ -11,7 +11,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { APT_COLOR, PersonAvatar, dayLabel, mono, timeAgo } from './friendsUi';
 import { EmptyNote, SectionLabel } from './friendsKit';
 
-const LANG = { javascript: 'JS', python: 'Python', cpp: 'C++' };
+const LANG = { javascript: 'JS', python: 'Python', cpp: 'C++', java: 'Java' };
 
 function Chip({ color, children }) {
   return (

@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const hintRequestSchema = z.object({
   problemSlug: z.string().min(1),
-  language: z.enum(['javascript', 'python', 'cpp']),
+  language: z.enum(['javascript', 'python', 'cpp', 'java']),
   code: z.string().max(20000).default(''),
   question: z.string().trim().min(1).max(1000),
   history: z

@@ -5,6 +5,7 @@ import { ApiError } from '../utils/ApiError.js';
 import { logger } from '../utils/logger.js';
 import { LANGUAGE_IDS, submitBatch, pollBatchResults } from './judge0.service.js';
 import { buildSourceCode } from './codeHarness.service.js';
+import { javaDriverFor } from './harnessGenerator.service.js';
 import { applyStreakUpdate } from './streak.service.js';
 import { grantCoinsSafe, solveReward } from './coin.service.js';
 
@@ -53,7 +54,8 @@ export async function processSubmission(submissionId) {
       throw ApiError.badRequest('No sample test cases are configured for this problem yet.');
     }
 
-    const driverTemplate = problem.driverCode[submission.language];
+    const driverTemplate = submission.language === 'java' ? javaDriverFor(problem) : problem.driverCode[submission.language];
+    if (!driverTemplate) throw ApiError.badRequest(`${submission.language === 'java' ? 'Java' : 'This language'} is not available for this problem yet.`);
     const sourceCode = buildSourceCode(driverTemplate, submission.code, submission.language);
     const languageId = LANGUAGE_IDS[submission.language];
 

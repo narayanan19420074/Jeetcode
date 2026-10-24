@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const objectId = z.string().regex(/^[a-f\d]{24}$/i, 'Invalid id');
-const LANGS = ['javascript', 'python', 'cpp'];
+const LANGS = ['javascript', 'python', 'cpp', 'java'];
 
 const page = z.coerce.number().int().min(1).default(1);
 const limit = z.coerce.number().int().min(1).max(30).default(10);

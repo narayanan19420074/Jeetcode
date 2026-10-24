@@ -120,6 +120,7 @@ export default function EditorSection() {
               <MenuItem value="javascript">JavaScript</MenuItem>
               <MenuItem value="python">Python</MenuItem>
               <MenuItem value="cpp">C++</MenuItem>
+              <MenuItem value="java">Java</MenuItem>
             </Select>
           }
         />

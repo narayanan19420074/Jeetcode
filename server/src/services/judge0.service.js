@@ -16,6 +16,7 @@ export const LANGUAGE_IDS = {
   javascript: 63, // Node.js
   python: 71, // Python 3
   cpp: 54, // C++ (GCC)
+  java: 62, // Java (OpenJDK) — the program must be a public class named Main
 };
 
 // Judge0 status IDs -> our Submission.status enum.
@@ -51,7 +52,8 @@ const unb64 = (str) => (str ? Buffer.from(str, 'base64').toString('utf-8') : '')
  * from taking 20 sequential round-trips.
  */
 export async function submitBatch(items) {
-  if (useLocal()) return localJudge.submitBatch(items);
+  // Java needs a JDK; Render's Node image has none, so Java goes to the Judge0 API unless a JDK is present.
+  if (useLocal() && localJudge.canRun(items[0]?.languageId)) return localJudge.submitBatch(items);
   const payload = {
     submissions: items.map((it) => ({
       source_code: b64(it.sourceCode),
@@ -78,7 +80,7 @@ export async function submitBatch(items) {
  * interval — Judge0 batch judging is typically sub-second per case.
  */
 export async function pollBatchResults(tokens, { maxAttempts = 15, intervalMs = 1000 } = {}) {
-  if (useLocal()) return localJudge.pollBatchResults(tokens);
+  if (tokens.length && String(tokens[0]).startsWith('local-')) return localJudge.pollBatchResults(tokens);
   const fields = 'token,status,stdout,stderr,compile_output,time,memory';
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     const { data } = await client().get('/submissions/batch', {

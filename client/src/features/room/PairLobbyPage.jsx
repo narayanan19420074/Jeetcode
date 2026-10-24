@@ -163,6 +163,7 @@ export default function PairLobbyPage() {
                 <MenuItem value="javascript">JavaScript</MenuItem>
                 <MenuItem value="python">Python</MenuItem>
                 <MenuItem value="cpp">C++</MenuItem>
+                <MenuItem value="java">Java</MenuItem>
               </Select>
               {createButton(false)}
             </>

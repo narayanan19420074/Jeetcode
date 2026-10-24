@@ -16,6 +16,7 @@ const codeMapSchema = z.object({
   javascript: z.string().min(1),
   python: z.string().min(1),
   cpp: z.string().min(1),
+  java: z.string().min(1).optional(),
 });
 
 const TYPE_ENUM = z.enum(['int', 'float', 'string', 'bool', 'int[]', 'float[]', 'string[]', 'bool[]', 'int[][]']);

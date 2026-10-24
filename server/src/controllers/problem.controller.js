@@ -4,7 +4,7 @@ import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { slugify } from '../utils/slugify.js';
-import { applyHarnessGeneration } from '../services/harnessGenerator.service.js';
+import { applyHarnessGeneration, javaStarterFor } from '../services/harnessGenerator.service.js';
 import { logAdminAction } from '../utils/adminAudit.js';
 
 const DIFFICULTY_RANK = {
@@ -290,7 +290,11 @@ export const getProblemBySlug = asyncHandler(async (req, res) => {
     throw ApiError.paymentRequired('This problem requires a Pro subscription');
   }
 
-  new ApiResponse(200, { ...problem, isPremium }).send(res);
+  // Problems saved before Java support get their Java starter built from the signature.
+  const javaStarter = javaStarterFor(problem);
+  const starterCode = javaStarter ? { ...problem.starterCode, java: javaStarter } : problem.starterCode;
+
+  new ApiResponse(200, { ...problem, starterCode, isPremium }).send(res);
 });
 
 // --- Admin ---

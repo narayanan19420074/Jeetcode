@@ -60,6 +60,7 @@ const LANGUAGES = [
   { id: 'javascript', label: 'JavaScript' },
   { id: 'python', label: 'Python' },
   { id: 'cpp', label: 'C++' },
+  { id: 'java', label: 'Java' },
 ];
 
 // Shared documents must indent the same way for everyone, so the room always

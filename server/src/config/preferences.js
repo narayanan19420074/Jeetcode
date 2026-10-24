@@ -12,7 +12,7 @@ export const FONT_SCALES = ['sm', 'md', 'lg'];
 export const CONTRASTS = ['normal', 'high'];
 export const MOTION = ['system', 'on', 'off'];
 export const EDITOR_THEMES = ['auto', 'vs-dark', 'vs', 'hc-black'];
-export const LANGUAGES = ['javascript', 'python', 'cpp'];
+export const LANGUAGES = ['javascript', 'python', 'cpp', 'java'];
 
 export const DEFAULT_PREFERENCES = {
   appearance: { theme: 'dark', accent: 'blue', density: 'comfortable', fontScale: 'md', contrast: 'normal', syncedAt: null },
