@@ -15,6 +15,9 @@ import useViewportFill from '../dashboard/useViewportFill';
 const PAGE = 24;
 const norm = (s) => String(s || '').trim().toLowerCase();
 
+// A prep track is named after its exam ("TCS NQT"); the Companies list shows the company ("TCS").
+const companyOfTrack = (name) => String(name || '').replace(/\s+NQT$/i, '').trim();
+
 const readinessColor = (pct) => (pct < 40 ? '#EF4444' : pct < 70 ? '#F59E0B' : '#10B981');
 
 function CompanyRow({ c, onOpen }) {
@@ -35,7 +38,9 @@ function CompanyRow({ c, onOpen }) {
           {c.roadmap ? (
             <>
               {c.minutes && <AccessTimeRoundedIcon sx={{ fontSize: 13 }} />}
-              <Typography noWrap variant="caption">{[c.minutes && `${c.minutes} min`, `${c.sections} sections`].filter(Boolean).join(' · ')}</Typography>
+              <Typography noWrap variant="caption">
+                {[c.count && `${c.count} ${c.count === 1 ? 'question' : 'questions'}`, c.minutes && `${c.minutes} min`, `${c.sections} sections`].filter(Boolean).join(' · ')}
+              </Typography>
             </>
           ) : (
             <Typography noWrap variant="caption">{c.count} {c.count === 1 ? 'question' : 'questions'}</Typography>
@@ -87,10 +92,16 @@ export default function PrepCompaniesPage() {
 
   const list = useMemo(() => {
     const t = tracks || [];
-    const trackNames = new Set(t.map((x) => norm(x.name)));
-    const first = t.map((x) => ({ key: `t-${x.slug}`, name: x.name, logoUrl: x.logoUrl, roadmap: true, minutes: x.examDurationMinutes, sections: x.sectionCount, readiness: x.readiness, examSlug: x.slug }));
+    const coding = new Map((others || []).map((c) => [norm(c.company), c])); // companies that have coding questions
+    // A track shows up under its company name ("TCS", not "TCS NQT") and only once that company has coding
+    // questions. Its exam roadmap stays reachable from inside.
+    const first = t
+      .map((x) => ({ x, hit: coding.get(norm(companyOfTrack(x.name))) }))
+      .filter(({ hit }) => hit && hit.count > 0)
+      .map(({ x, hit }) => ({ key: `t-${x.slug}`, name: hit.company, logoUrl: x.logoUrl, roadmap: true, count: hit.count, minutes: x.examDurationMinutes, sections: x.sectionCount, readiness: x.readiness, examSlug: x.slug }));
+    const taken = new Set(first.map((c) => norm(c.name)));
     const rest = (others || [])
-      .filter((c) => !trackNames.has(norm(c.company)))
+      .filter((c) => !taken.has(norm(c.company)))
       .sort((a, b) => b.count - a.count || a.company.localeCompare(b.company))
       .map((c) => ({ key: `c-${c.company}`, name: c.company, count: c.count }));
     return [...first, ...rest].filter((c) => !q || norm(c.name).includes(q));
@@ -111,7 +122,7 @@ export default function PrepCompaniesPage() {
 
   const selected = useMemo(() => {
     if (!selectedName) return null;
-    const hit = list.find((c) => norm(c.name) === norm(selectedName)) || (tracks || []).map((x) => ({ name: x.name, logoUrl: x.logoUrl, examSlug: x.slug })).find((c) => norm(c.name) === norm(selectedName));
+    const hit = list.find((c) => norm(c.name) === norm(selectedName)) || (tracks || []).map((x) => ({ name: companyOfTrack(x.name), logoUrl: x.logoUrl, examSlug: x.slug })).find((c) => norm(c.name) === norm(companyOfTrack(selectedName)));
     return hit || { name: selectedName };
   }, [selectedName, list, tracks]);
   const openCompany = (c) => setSp({ company: c.name });
