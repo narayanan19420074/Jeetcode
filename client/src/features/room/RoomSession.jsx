@@ -42,7 +42,7 @@ export function RoomSessionProvider({ children }) {
   const pipRef = useRef(null);
   const autoOpened = useRef(false);
   const live = useRef({});
-  live.current = { remoteStream: call.remoteStream, micOn: call.micOn, name: friendName, actions: { toggleMic: call.toggleMic, maximize, cut: close } };
+  live.current = { remoteStream: call.remoteStream, micOn: call.micOn, camOn: call.camOn, name: friendName, actions: { toggleMic: call.toggleMic, toggleCam: call.toggleCam, maximize, cut: close } };
 
   const getPip = useCallback(() => {
     if (!pipRef.current) pipRef.current = createCirclePip(() => live.current, () => (autoOpened.current = false));
@@ -91,7 +91,7 @@ export function RoomSessionProvider({ children }) {
 
   useEffect(() => {
     pipRef.current?.update();
-  }, [call.remoteStream, call.micOn, friendName]);
+  }, [call.remoteStream, call.micOn, call.camOn, friendName]);
 
   const value = useMemo(() => ({ session, room, call, join, close, popOut, pipOk }), [session, room, call, join, close, popOut, pipOk]);
   const showBubble = Boolean(session) && !onRoomRoute && room.status !== 'error';
