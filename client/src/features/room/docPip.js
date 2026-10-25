@@ -13,25 +13,34 @@ export const pipSupported = () => typeof window !== 'undefined' && 'documentPict
 
 const svg = (Icon) => renderToStaticMarkup(createElement(Icon));
 
+const S = 176;
+const c = (deg, r = 65) => ({ x: S / 2 + r * Math.cos((deg * Math.PI) / 180), y: S / 2 + r * Math.sin((deg * Math.PI) / 180) });
+const pMax = c(-90);
+const pMute = c(30);
+const pCut = c(150);
+
 const CSS = `
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:#232834;overflow:hidden;font-family:system-ui,sans-serif;user-select:none}
-  .stage{position:relative;width:220px;height:200px;margin:0 auto}
-  .face{position:absolute;left:54px;top:62px;width:112px;height:112px;border-radius:50%;padding:4px;
+  .watch{position:absolute;left:0;top:0;width:${S}px;height:${S}px;border-radius:50%;
+    background:linear-gradient(145deg,#2f3647,#232834 55%,#151820)}
+  .channel{position:absolute;left:8px;top:8px;width:160px;height:160px;border-radius:50%;background:#232834;
+    box-shadow:inset 4px 4px 8px #151820,inset -4px -4px 8px #2f3647}
+  .glass{position:absolute;left:38px;top:38px;width:100px;height:100px;padding:3px;border-radius:50%;
     background:conic-gradient(from 200deg,#8B5CF6,#06B6D4,#22C55E,#F59E0B,#EC4899,#8B5CF6);
-    box-shadow:6px 6px 12px #171a22,-6px -6px 12px #2d3444}
-  .face-in{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:#1b1f2a;
-    display:grid;place-items:center;color:#fff;font-weight:700;font-size:40px}
+    box-shadow:3px 3px 6px #151820,-3px -3px 6px #2f3647}
+  .glass-in{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:#1b1f2a;
+    display:grid;place-items:center;color:#fff;font-weight:700;font-size:36px}
   video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
-  .btn{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border:0;border-radius:50%;cursor:pointer;
+  .btn{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border:0;border-radius:50%;cursor:pointer;
     display:grid;place-items:center;background:#232834;padding:0;
-    box-shadow:4px 4px 8px #171a22,-4px -4px 8px #2d3444;transition:box-shadow .12s}
-  .btn:active{box-shadow:inset 3px 3px 6px #171a22,inset -3px -3px 6px #2d3444}
-  .btn svg{width:22px;height:22px;fill:currentColor}
-  #mute{left:46px;top:81px;color:#22C55E}
+    box-shadow:2px 2px 4px #151820,-2px -2px 4px #2f3647}
+  .btn:active{box-shadow:inset 2px 2px 4px #151820,inset -2px -2px 4px #2f3647}
+  .btn svg{width:16px;height:16px;fill:currentColor}
+  #max{left:${pMax.x}px;top:${pMax.y}px;color:#3B82F6}
+  #mute{left:${pMute.x}px;top:${pMute.y}px;color:#22C55E}
   #mute.off{color:#EF4444}
-  #max{left:110px;top:44px;color:#3B82F6}
-  #cut{left:174px;top:81px;color:#F43F5E}
+  #cut{left:${pCut.x}px;top:${pCut.y}px;color:#F43F5E}
 `;
 
 export function createCirclePip(getState, onClosed) {
@@ -52,7 +61,7 @@ export function createCirclePip(getState, onClosed) {
 
   const open = async () => {
     if (win || !pipSupported()) return;
-    const w = await window.documentPictureInPicture.requestWindow({ width: 220, height: 200 });
+    const w = await window.documentPictureInPicture.requestWindow({ width: S, height: S });
     win = w;
     const doc = w.document;
     const style = doc.createElement('style');
@@ -60,11 +69,12 @@ export function createCirclePip(getState, onClosed) {
     doc.head.appendChild(style);
 
     const stage = doc.createElement('div');
-    stage.className = 'stage';
+    stage.className = 'watch';
     stage.innerHTML = `
-      <div class="face"><div class="face-in"><video autoplay playsinline muted></video><span id="initial"></span></div></div>
-      <button class="btn" id="mute" aria-label="Mute"></button>
+      <div class="channel"></div>
+      <div class="glass"><div class="glass-in"><video autoplay playsinline muted></video><span id="initial"></span></div></div>
       <button class="btn" id="max" aria-label="Maximize" title="Maximize"></button>
+      <button class="btn" id="mute" aria-label="Mute"></button>
       <button class="btn" id="cut" aria-label="End call" title="End call"></button>`;
     doc.body.appendChild(stage);
 

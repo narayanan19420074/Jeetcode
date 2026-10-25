@@ -132,6 +132,33 @@ export function attachRealtime(httpServer) {
       io.to(room.id).emit('room:language', lang);
     });
 
+    // Either partner can switch the shared problem (prev / next / random). The starter code of
+    // the new problem replaces the shared editor for both, then everyone is told the new problem.
+    socket.on('room:problem', (p) => {
+      if (!room || room.kind === 'aptitude') return;
+      const slug = clean(p?.slug, 160);
+      if (!slug) return;
+      room.problemSlug = slug;
+      room.title = clean(p?.title, 160) || null;
+      const next = {};
+      for (const lang of Object.keys(LANGUAGE_IDS)) {
+        const code = p?.starters?.[lang];
+        next[lang] = typeof code === 'string' ? code.slice(0, 20000) : room.starters[lang];
+      }
+      room.starters = next;
+      const text = next[room.language];
+      if (text != null) {
+        const before = Y.encodeStateVector(room.doc);
+        room.doc.transact(() => {
+          room.ytext.delete(0, room.ytext.length);
+          room.ytext.insert(0, text);
+        }, 'server');
+        io.to(room.id).emit('yjs:update', Y.encodeStateAsUpdate(room.doc, before));
+      }
+      touch(room);
+      io.to(room.id).emit('room:problem', { problemSlug: room.problemSlug, title: room.title });
+    });
+
     socket.on('chat:send', (text) => {
       if (!room) return;
       const t = clean(text, 1000);

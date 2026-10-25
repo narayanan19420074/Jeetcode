@@ -78,6 +78,7 @@ export function useRoom({ roomId, displayName }) {
     s.on('peer:joined', (p) => setPeers((prev) => [...prev.filter((x) => x.id !== p.id), p]));
     s.on('peer:left', ({ id }) => setPeers((prev) => prev.filter((x) => x.id !== id)));
     s.on('room:language', setLang);
+    s.on('room:problem', (p) => setMeta((m) => (m ? { ...m, ...p } : m)));
     s.on('quiz:state', (v) => {
       // a new question clears my local pick; updates to the same question keep it
       if (quizSeq.current !== (v.seq ?? null)) {
@@ -105,6 +106,7 @@ export function useRoom({ roomId, displayName }) {
   }, [roomId, displayName, doc]);
 
   const changeLanguage = useCallback((l) => socket?.emit('room:language', l), [socket]);
+  const changeProblem = useCallback((p) => socket?.emit('room:problem', p), [socket]);
   const sendChat = useCallback((t) => socket?.emit('chat:send', t), [socket]);
   const run = useCallback((stdin) => socket?.emit('code:run', { stdin }), [socket]);
   const quizPick = useCallback((id) => socket?.emit('quiz:pick', id), [socket]);
@@ -117,5 +119,5 @@ export function useRoom({ roomId, displayName }) {
     [socket]
   );
 
-  return { doc, socket, status, error, meta, me, peers, chat, language, changeLanguage, sendChat, run, running, runResult, quiz, myChoice, quizPick, quizAnswer, quizReveal };
+  return { doc, socket, status, error, meta, me, peers, chat, language, changeLanguage, changeProblem, sendChat, run, running, runResult, quiz, myChoice, quizPick, quizAnswer, quizReveal };
 }

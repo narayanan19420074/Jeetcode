@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Editor from '@monaco-editor/react';
 import { useSnackbar } from 'notistack';
 import {
-  Box, ButtonBase, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Drawer, ListItemIcon, ListItemText, Menu, MenuItem, Skeleton, Stack, TextField, Typography, useMediaQuery, useTheme,
+  Box, ButtonBase, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Drawer, ListItemIcon, ListItemText, Menu, MenuItem, Skeleton, Stack, TextField, Tooltip, Typography, useMediaQuery, useTheme,
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
@@ -29,8 +29,11 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
+import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { problemsApi } from '../../api/problemsApi';
+import { extractErrorMessage } from '../../api/apiClient';
 import { setLanguage, updateCode } from '../workspace/workspaceSlice';
 import { bindMonaco } from './monacoYjs';
 import { useRoomSession } from './RoomSession';
@@ -51,7 +54,7 @@ import SplitHandle from '../workspace/SplitHandle';
 import MobileKeyBar from '../workspace/MobileKeyBar';
 import EditorScroller from '../workspace/EditorScroller';
 import useStopwatch from '../workspace/useStopwatch';
-import { MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton, WsSelect } from '../workspace/wsUi';
+import { MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton, WsSelect, useElementWidth } from '../workspace/wsUi';
 import { WS } from '../workspace/wsTokens';
 import { wsSurface, defineMonacoThemes, monacoThemeName } from '../workspace/workspaceTheme';
 import { formatCode, replaceChangedSpan } from '../workspace/formatCode';
@@ -67,6 +70,7 @@ const LANGUAGES = [
 // Shared documents must indent the same way for everyone, so the room always
 // uses 4 spaces (a personal tab size would make Python blocks disagree).
 const ROOM_TAB = 4;
+const LANG_SHORT = { javascript: 'JS', python: 'Py', cpp: 'C++', java: 'Java' };
 const keepFocus = (e) => e.preventDefault();
 
 // Resizable layout (desktop). Sizes are remembered between visits.
@@ -141,6 +145,13 @@ export default function RoomPage() {
   const [shareOpen, setShareOpen] = useState(false);
   const [solutionsRefresh, setSolutionsRefresh] = useState(0);
   const [confirm, setConfirm] = useState(null); // { type: 'solution', sol } | { type: 'reset' }
+  const [adjacent, setAdjacent] = useState({ prev: null, next: null }); // slugs for the prev / next arrows
+  const [switching, setSwitching] = useState(false);
+  // Pane widths (desktop): labels shrink to icons as a pane gets narrower, same as the workspace.
+  const [leftEl, setLeftEl] = useState(null);
+  const [rightEl, setRightEl] = useState(null);
+  const leftW = useElementWidth(leftEl);
+  const rightW = useElementWidth(rightEl);
 
   // Resizable split panes + maximize (desktop only)
   const [layout, setLayout] = useState(loadLayout);
@@ -212,9 +223,41 @@ export default function RoomPage() {
     }
   }, [room.running]);
 
+  // New problem (either of you switched) => clean tabs, console and case selection.
   useEffect(() => {
-    if (!slug) return;
-    problemsApi.getBySlug(slug).then(({ data }) => setProblem(data.data)).catch(() => {});
+    setProblem(null);
+    setMountedTabs({ solutions: false, discussion: false, submissions: false });
+    setLeftTab(null);
+    setConsoleOpen(false);
+    setConsoleTab('cases');
+    setCaseSel(0);
+    setActiveCase(0);
+    setLastKind(null);
+    setMaximized(null);
+    setMobileView('code');
+  }, [slug]);
+
+  useEffect(() => {
+    if (!slug) return undefined;
+    let cancelled = false;
+    problemsApi.getBySlug(slug).then(({ data }) => !cancelled && setProblem(data.data)).catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
+
+  // Previous / next problem slugs (arrows beside the title).
+  useEffect(() => {
+    if (!slug) return undefined;
+    let cancelled = false;
+    setAdjacent({ prev: null, next: null });
+    problemsApi
+      .getAdjacent(slug)
+      .then(({ data }) => !cancelled && setAdjacent({ prev: data.data.prev, next: data.data.next }))
+      .catch(() => {}); // arrows just stay disabled
+    return () => {
+      cancelled = true;
+    };
   }, [slug]);
 
   const handleMount = useCallback(
@@ -412,6 +455,30 @@ export default function RoomPage() {
     navigate(`/workspace/${problem.slug}`);
   };
 
+  // Switching problem changes it for BOTH of you (the server swaps the shared editor to the new starter code).
+  const switchProblem = async (target) => {
+    if (!target || switching) return;
+    setSwitching(true);
+    try {
+      const { data } = await problemsApi.getBySlug(target);
+      const p = data.data;
+      const st = p.starterCode || {};
+      room.changeProblem({ slug: p.slug, title: p.title, starters: { javascript: st.javascript, python: st.python, cpp: st.cpp, java: st.java } });
+    } catch (e) {
+      enqueueSnackbar(extractErrorMessage(e), { variant: 'error' });
+    } finally {
+      setSwitching(false);
+    }
+  };
+  const handleRandom = async () => {
+    try {
+      const { data } = await problemsApi.getRandom();
+      await switchProblem(data.data.slug);
+    } catch (e) {
+      enqueueSnackbar(extractErrorMessage(e), { variant: 'error' });
+    }
+  };
+
   const home = isAuthenticated ? '/dashboard' : '/';
   // Close (X): end the call, leave the room for good.
   const leave = () => {
@@ -489,6 +556,15 @@ export default function RoomPage() {
   const roomReady = room.status === 'joined';
   const hasProblem = Boolean(slug);
   const ctl = isMobile ? 'lg' : 'md';
+  const nav = { hasPrev: Boolean(adjacent.prev), hasNext: Boolean(adjacent.next), onPrev: () => switchProblem(adjacent.prev), onNext: () => switchProblem(adjacent.next), size: ctl };
+  // Responsive-by-pane (desktop): what to drop as a pane gets narrower.
+  const tabLabels = !leftW || leftW >= 560 ? 'all' : leftW >= 340 ? 'active' : 'none';
+  const langMode = isMobile || !rightW || rightW >= 520 ? 'full' : rightW >= 420 ? 'short' : 'icon';
+  const iconActions = !isMobile && rightW > 0 && rightW < 700; // Run / Submit lose their words
+  const showKbd = rightW >= 950;
+  const narrowConsole = !isMobile && rightW > 0 && rightW < 640; // hide cursor status, share -> icon
+  const hideConsoleLabel = !isMobile && rightW > 0 && rightW < 460;
+  const langLabel = LANGUAGES.find((l) => l.id === room.language)?.label;
   const tab = leftTab ?? (hasProblem ? 'desc' : 'chat');
   const unreadDot = unread > 0 ? theme.palette.primary.main : undefined;
   const canShare = lastKind === 'submit' && sub.status !== 'running' && sub.result?.status === 'Accepted' && Boolean(sub.result._id);
@@ -553,7 +629,9 @@ export default function RoomPage() {
       onPointerDown={isMobile ? keepFocus : undefined}
       onMouseDown={isMobile ? keepFocus : undefined}
       onClick={handleRun}
-      kbd={isMobile ? undefined : "Ctrl '"}
+      iconOnly={iconActions}
+      title="Run (Ctrl + ')"
+      kbd={isMobile || !showKbd ? undefined : "Ctrl '"}
     >
       Run
     </WsButton>
@@ -569,7 +647,9 @@ export default function RoomPage() {
         onPointerDown={isMobile ? keepFocus : undefined}
         onMouseDown={isMobile ? keepFocus : undefined}
         onClick={handleSubmit}
-        kbd={isMobile ? undefined : 'Ctrl ↵'}
+        iconOnly={iconActions}
+        title="Submit (Ctrl + Enter)"
+        kbd={isMobile || !showKbd ? undefined : 'Ctrl ↵'}
       >
         Submit
       </WsButton>
@@ -615,10 +695,10 @@ export default function RoomPage() {
         >
           <VideocamRoundedIcon />
         </WsIconButton>
-        <WsIconButton title="Minimize (keep the call in a small circle)" size={ctl} onClick={minimize} sx={{ color: '#F59E0B', '&:hover': { color: '#F59E0B', bgcolor: alpha('#F59E0B', 0.14) } }}>
+        <WsIconButton title="Minimize (keep the call in a small circle)" size={ctl} onClick={minimize}>
           <MinimizeRoundedIcon />
         </WsIconButton>
-        <WsIconButton title="Close room" size={ctl} onClick={leave} sx={{ color: '#EF4444', '&:hover': { color: '#EF4444', bgcolor: alpha('#EF4444', 0.14) } }}>
+        <WsIconButton title="Close room" size={ctl} onClick={leave}>
           <CloseRoundedIcon />
         </WsIconButton>
       </PaneBar>
@@ -664,6 +744,7 @@ export default function RoomPage() {
         {/* Left pane — problem, community tabs and pair chat (desktop only) */}
         {!isMobile && (
           <Box
+            ref={setLeftEl}
             sx={{
               bgcolor: surf.chrome,
               width: maximized === 'left' ? '100%' : `${layout.left * 100}%`,
@@ -675,13 +756,18 @@ export default function RoomPage() {
             }}
           >
             <PaneBar>
-              <PaneTabs value={tab} onChange={openLeft} items={leftItems} />
+              <PaneTabs value={tab} onChange={openLeft} items={leftItems} labels={tabLabels} />
               <Box sx={{ flex: 1 }} />
+              {hasProblem && (
+                <WsIconButton title="Random problem" onClick={handleRandom} disabled={switching}>
+                  <ShuffleRoundedIcon />
+                </WsIconButton>
+              )}
               <MaxButton active={maximized === 'left'} onClick={() => toggleMax('left')} label="panel" />
             </PaneBar>
 
             <Box sx={{ display: tab === 'chat' ? 'none' : 'block', overflowY: 'auto', px: 2.5, pt: 1.5, pb: 3, flex: 1, minHeight: 0 }}>
-              {tab === 'desc' && (problem ? <ProblemDescription problem={problem} /> : <ProblemSkeleton />)}
+              {tab === 'desc' && (problem ? <ProblemDescription problem={problem} nav={nav} /> : <ProblemSkeleton />)}
               {mountedTabs.solutions && <Box sx={{ display: tab === 'solutions' ? 'block' : 'none' }}>{solutionsPanel}</Box>}
               {mountedTabs.discussion && <Box sx={{ display: tab === 'discussion' ? 'block' : 'none' }}>{discussionPanel}</Box>}
               {mountedTabs.submissions && <Box sx={{ display: tab === 'submissions' ? 'block' : 'none' }}>{submissionsPanel}</Box>}
@@ -697,6 +783,7 @@ export default function RoomPage() {
 
         {/* Right pane — shared editor + runner (stays mounted behind the phone tabs so the document keeps syncing) */}
         <Box
+          ref={setRightEl}
           sx={{
             bgcolor: surf.chrome,
             flex: 1,
@@ -707,18 +794,38 @@ export default function RoomPage() {
           }}
         >
           <PaneBar sx={{ px: 1.25, gap: 0.5, height: { xs: 52, md: WS.bar }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
-            <WsSelect
-              value={room.language}
-              onChange={(e) => room.changeLanguage(e.target.value)}
-              startAdornment={<CodeRoundedIcon sx={{ fontSize: 17, mr: 0.75, color: 'primary.main' }} />}
-              sx={isMobile ? { height: WS.ctrlLg, minWidth: 124, '& .MuiSelect-select': { height: `${WS.ctrlLg}px` } } : undefined}
-            >
-              {LANGUAGES.map((l) => (
-                <MenuItem key={l.id} value={l.id}>
-                  {l.label}
-                </MenuItem>
-              ))}
-            </WsSelect>
+            {(() => {
+              const select = (
+                <WsSelect
+                  value={room.language}
+                  onChange={(e) => room.changeLanguage(e.target.value)}
+                  renderValue={(v) => (langMode === 'icon' ? '' : langMode === 'short' ? LANG_SHORT[v] : LANGUAGES.find((l) => l.id === v)?.label)}
+                  startAdornment={<CodeRoundedIcon sx={{ fontSize: 17, mr: langMode === 'icon' ? 0 : 0.75, color: 'primary.main' }} />}
+                  sx={
+                    isMobile
+                      ? { height: WS.ctrlLg, minWidth: 124, '& .MuiSelect-select': { height: `${WS.ctrlLg}px` } }
+                      : langMode === 'short'
+                        ? { minWidth: 0, '& .MuiSelect-select': { pr: '26px !important' } }
+                        : langMode === 'icon'
+                          ? { minWidth: 0, '& .MuiSelect-select': { pl: 1, pr: '22px !important' }, '& .MuiSelect-icon': { right: 2 } }
+                          : undefined
+                  }
+                >
+                  {LANGUAGES.map((l) => (
+                    <MenuItem key={l.id} value={l.id} disabled={l.id === 'java' && Boolean(problem) && !problem?.starterCode?.java}>
+                      {l.label}
+                    </MenuItem>
+                  ))}
+                </WsSelect>
+              );
+              return langMode === 'icon' ? (
+                <Tooltip title={langLabel}>
+                  <span style={{ display: 'inline-flex' }}>{select}</span>
+                </Tooltip>
+              ) : (
+                select
+              );
+            })()}
             <TimerControl sw={sw} size={ctl} />
 
             <Box sx={{ flex: 1, minWidth: 8 }} />
@@ -880,7 +987,7 @@ export default function RoomPage() {
                 sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 52, md: WS.barSm }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
               >
                 <TerminalRoundedIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
-                {!(isMobile && (busy || room.runResult || sub.result)) && <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Console</Typography>}
+                {!(isMobile && (busy || room.runResult || sub.result)) && !hideConsoleLabel && <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Console</Typography>}
                 {lastKind === 'submit' ? (
                   <VerdictChip isRunning={sub.status === 'running'} result={sub.result} sx={{ maxWidth: { xs: '44vw', md: 'none' } }} />
                 ) : (
@@ -893,7 +1000,10 @@ export default function RoomPage() {
                       e.stopPropagation(); // don't toggle the console
                       setShareOpen(true);
                     }}
-                    sx={{ height: 26, color: 'primary.main' }}
+                    startIcon={<IosShareRoundedIcon />}
+                    iconOnly={narrowConsole}
+                    title="Share solution"
+                    sx={{ height: 26, color: 'primary.main', ...(narrowConsole && { width: 26 }) }}
                   >
                     Share solution
                   </WsButton>
@@ -905,7 +1015,7 @@ export default function RoomPage() {
                     {submitButton('lg')}
                   </Stack>
                 )}
-                {!isMobile && <EditorStatus editor={editorInstance} tabSize={ROOM_TAB} />}
+                {!isMobile && !narrowConsole && <EditorStatus editor={editorInstance} tabSize={ROOM_TAB} />}
                 {!isMobile && (
                   <MaxButton
                     active={maximized === 'console'}
@@ -959,7 +1069,7 @@ export default function RoomPage() {
           <Typography sx={{ fontWeight: 700, flex: 1 }}>Problem</Typography>
         </Stack>
         <Box sx={{ overflowY: 'auto', px: 2, pt: 1, pb: 3, flex: 1, minHeight: 0, bgcolor: surf.chrome }}>
-          {problem ? <ProblemDescription problem={problem} /> : <ProblemSkeleton />}
+          {problem ? <ProblemDescription problem={problem} nav={nav} /> : <ProblemSkeleton />}
         </Box>
         <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: surf.chrome }}>
           <WsButton fullWidth size="lg" variant="primary" startIcon={<CodeRoundedIcon />} onClick={closeDesc}>
