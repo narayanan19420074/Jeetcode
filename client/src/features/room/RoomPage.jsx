@@ -23,6 +23,8 @@ import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import MinimizeRoundedIcon from '@mui/icons-material/MinimizeRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
@@ -31,8 +33,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { problemsApi } from '../../api/problemsApi';
 import { setLanguage, updateCode } from '../workspace/workspaceSlice';
 import { bindMonaco } from './monacoYjs';
-import { useRoom } from './useRoom';
-import { useCall } from './useCall';
+import { useRoomSession } from './RoomSession';
 import useRoomSubmit from './useRoomSubmit';
 import FloatingCall from './FloatingCall';
 import ChatPanel from './ChatPanel';
@@ -116,8 +117,8 @@ export default function RoomPage() {
   const [nameDraft, setNameDraft] = useState('');
   const displayName = isAuthenticated ? user?.handle || user?.name || user?.username || 'Member' : guestName;
 
-  const room = useRoom({ roomId, displayName });
-  const call = useCall(room.socket);
+  // The connection lives above the routes, so minimizing keeps the call and the room alive.
+  const { room, call, close: closeSession, ready } = useRoomSession(roomId, displayName);
   const slug = room.meta?.problemSlug;
   const sub = useRoomSubmit(slug);
   const sw = useStopwatch();
@@ -411,7 +412,14 @@ export default function RoomPage() {
     navigate(`/workspace/${problem.slug}`);
   };
 
-  const leave = () => navigate(isAuthenticated ? '/dashboard' : '/');
+  const home = isAuthenticated ? '/dashboard' : '/';
+  // Close (X): end the call, leave the room for good.
+  const leave = () => {
+    closeSession();
+    navigate(home);
+  };
+  // Minimize: go back to the problem; a small floating call circle follows you around.
+  const minimize = () => navigate(slug ? `/workspace/${slug}` : home);
 
   const mountTab = (v) => {
     if (v === 'solutions' || v === 'discussion' || v === 'submissions') setMountedTabs((m) => ({ ...m, [v]: true }));
@@ -449,7 +457,7 @@ export default function RoomPage() {
     );
   }
 
-  if (room.status === 'error') {
+  if (ready && room.status === 'error') {
     return (
       <Stack alignItems="center" justifyContent="center" spacing={2} sx={{ height: '100dvh', p: 3, textAlign: 'center' }}>
         <Typography variant="h6">{room.error}</Typography>
@@ -465,7 +473,7 @@ export default function RoomPage() {
     );
   }
 
-  if (!room.meta) {
+  if (!ready || !room.meta) {
     return (
       <Stack alignItems="center" justifyContent="center" sx={{ height: '100dvh' }}>
         <CircularProgress />
@@ -574,10 +582,7 @@ export default function RoomPage() {
         height="auto"
         sx={{ minHeight: 48, pt: 'env(safe-area-inset-top)', px: { xs: 0.75, md: 1.5 }, gap: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}
       >
-        <WsIconButton title="Leave room" size={ctl} onClick={leave}>
-          <ArrowBackRoundedIcon />
-        </WsIconButton>
-        <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1, pl: 0.5 }}>
+        <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1, pl: { xs: 1, md: 0.5 } }}>
           <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.95rem' }}>
             {room.meta.title || problem?.title || 'Pair room'}
           </Typography>
@@ -609,6 +614,12 @@ export default function RoomPage() {
           onClick={call.localStream ? call.stop : call.start}
         >
           <VideocamRoundedIcon />
+        </WsIconButton>
+        <WsIconButton title="Minimize (keep the call in a small circle)" size={ctl} onClick={minimize} sx={{ color: '#F59E0B', '&:hover': { color: '#F59E0B', bgcolor: alpha('#F59E0B', 0.14) } }}>
+          <MinimizeRoundedIcon />
+        </WsIconButton>
+        <WsIconButton title="Close room" size={ctl} onClick={leave} sx={{ color: '#EF4444', '&:hover': { color: '#EF4444', bgcolor: alpha('#EF4444', 0.14) } }}>
+          <CloseRoundedIcon />
         </WsIconButton>
       </PaneBar>
 

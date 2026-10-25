@@ -10,6 +10,7 @@ import { getTheme } from './theme/theme';
 import { setSystemDark, hydrateFromAccount } from './app/uiSlice';
 import { bootstrapSession } from './features/auth/authSlice';
 import App from './App.jsx';
+import { RoomSessionProvider } from './features/room/RoomSession';
 import OfflineGame from './components/OfflineGame';
 import './index.css';
 
@@ -77,7 +78,9 @@ function ThemedApp() {
       <SnackbarProvider maxSnack={3} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
         <OfflineGame />
         {bootstrapped ? (
-          <App />
+          <RoomSessionProvider>
+            <App />
+          </RoomSessionProvider>
         ) : (
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <CircularProgress />
