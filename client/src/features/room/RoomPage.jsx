@@ -24,6 +24,7 @@ import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import PictureInPictureAltRoundedIcon from '@mui/icons-material/PictureInPictureAltRounded';
 import MinimizeRoundedIcon from '@mui/icons-material/MinimizeRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
@@ -122,7 +123,7 @@ export default function RoomPage() {
   const displayName = isAuthenticated ? user?.handle || user?.name || user?.username || 'Member' : guestName;
 
   // The connection lives above the routes, so minimizing keeps the call and the room alive.
-  const { room, call, close: closeSession, ready } = useRoomSession(roomId, displayName);
+  const { room, call, close: closeSession, popOut, pipOk, ready } = useRoomSession(roomId, displayName);
   const slug = room.meta?.problemSlug;
   const sub = useRoomSubmit(slug);
   const sw = useStopwatch();
@@ -695,6 +696,11 @@ export default function RoomPage() {
         >
           <VideocamRoundedIcon />
         </WsIconButton>
+        {pipOk && call.localStream && (
+          <WsIconButton title="Float the call circle over other tabs and apps" size={ctl} onClick={popOut}>
+            <PictureInPictureAltRoundedIcon />
+          </WsIconButton>
+        )}
         <WsIconButton title="Minimize (keep the call in a small circle)" size={ctl} onClick={minimize}>
           <MinimizeRoundedIcon />
         </WsIconButton>

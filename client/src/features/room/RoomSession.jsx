@@ -35,23 +35,48 @@ export function RoomSessionProvider({ children }) {
     if (session) navigate(`/room/${session.roomId}`);
   }, [navigate, session]);
 
-  // ---- picture-in-picture over other tabs (Chrome desktop) ----
+  // ---- floating circle over other tabs AND other apps (Chrome desktop, Document Picture-in-Picture) ----
+  // Auto: Chrome fires "enterpictureinpicture" when you leave the tab while the camera/mic is on.
+  // Manual: the pop-out button in the room's top bar (a click is always allowed to open it) and it then
+  // stays on screen over any app until you maximize or end the call.
   const pipRef = useRef(null);
+  const autoOpened = useRef(false);
   const live = useRef({});
   live.current = { remoteStream: call.remoteStream, micOn: call.micOn, name: friendName, actions: { toggleMic: call.toggleMic, maximize, cut: close } };
+
+  const getPip = useCallback(() => {
+    if (!pipRef.current) pipRef.current = createCirclePip(() => live.current, () => (autoOpened.current = false));
+    return pipRef.current;
+  }, []);
+
+  const pipOk = pipSupported();
+  const popOut = useCallback(() => {
+    autoOpened.current = false; // user chose it: keep it until they close it
+    return getPip().open().catch(() => {});
+  }, [getPip]);
 
   const hasLocal = Boolean(call.localStream);
   useEffect(() => {
     if (!hasLocal || !pipSupported()) return undefined;
-    if (!pipRef.current) pipRef.current = createCirclePip(() => live.current);
-    const pip = pipRef.current;
-    const open = () => pip.open().catch(() => {}); // browsers only allow it right after a tab switch / gesture
+    const pip = getPip();
+    const autoOpen = () => {
+      autoOpened.current = true;
+      return pip.open().catch(() => {
+        autoOpened.current = false; // browser wanted a click first
+      });
+    };
     try {
-      navigator.mediaSession?.setActionHandler('enterpictureinpicture', open);
+      navigator.mediaSession?.setActionHandler('enterpictureinpicture', autoOpen);
     } catch {
       // action not supported in this browser
     }
-    const onVis = () => (document.visibilityState === 'hidden' ? open() : pip.close());
+    const onVis = () => {
+      if (document.visibilityState === 'hidden') autoOpen();
+      else if (autoOpened.current) {
+        autoOpened.current = false;
+        pip.close(); // back on the tab -> the in-app view takes over
+      }
+    };
     document.addEventListener('visibilitychange', onVis);
     return () => {
       document.removeEventListener('visibilitychange', onVis);
@@ -62,13 +87,13 @@ export function RoomSessionProvider({ children }) {
       }
       pip.close();
     };
-  }, [hasLocal]);
+  }, [hasLocal, getPip]);
 
   useEffect(() => {
     pipRef.current?.update();
   }, [call.remoteStream, call.micOn, friendName]);
 
-  const value = useMemo(() => ({ session, room, call, join, close }), [session, room, call, join, close]);
+  const value = useMemo(() => ({ session, room, call, join, close, popOut, pipOk }), [session, room, call, join, close, popOut, pipOk]);
   const showBubble = Boolean(session) && !onRoomRoute && room.status !== 'error';
 
   return (
@@ -100,6 +125,8 @@ export function useRoomSession(roomId, displayName) {
     room: ctx.room,
     call: ctx.call,
     close: ctx.close,
+    popOut: ctx.popOut,
+    pipOk: ctx.pipOk,
     ready: ctx.session?.roomId === roomId && ctx.session?.displayName === displayName,
   };
 }
