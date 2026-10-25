@@ -1,29 +1,26 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
-import {
-  Alert, Badge, Box, Button, Card, CardActions, CardContent, Chip, CircularProgress, Container, InputAdornment, LinearProgress, MenuItem, Paper, Skeleton,
-  Stack, Tab, Tabs, TextField, Typography, alpha,
-} from '@mui/material';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import { Box, ButtonBase, Container, Skeleton, Typography } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import CardGiftcardRoundedIcon from '@mui/icons-material/CardGiftcardRounded';
+import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
+import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import { useSnackbar } from 'notistack';
 import { storeApi } from '../../api/storeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from '../auth/authSlice';
+import { Bar, Choice, Coin, Eyebrow, FFButton, FFDialog, Notice, Panel, Stat, Tag } from '../quests/QuestParts';
+import { FF, cut } from '../quests/questUtils';
 import CheckoutDialog from './CheckoutDialog';
 import CoursePanel from './CoursePanel';
 import { CoinsTab, OrdersTab } from './AccountTabs';
 import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
 
-const SORTS = [
-  { v: 'popular', l: 'Featured' },
-  { v: 'low', l: 'Price: low to high' },
-  { v: 'high', l: 'Price: high to low' },
-];
+// The Store is one screen in the same game look as Quests: a wallet bar, category buttons and a grid of item tiles.
+// Orders and the coin wallet open as dialogs from the top bar, so nobody has to leave the page.
 const TABS = ['shop', 'orders', 'coins'];
+const GRID = { xs: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))', lg: 'repeat(4, minmax(0, 1fr))' };
 
 function ItemCard({ item, balance, signedIn, onBuy, onCourse }) {
   const note = priceNote(item);
@@ -32,40 +29,43 @@ function ItemCard({ item, balance, signedIn, onBuy, onCourse }) {
   const disabled = item.soldOut && !owned;
   const isCourse = item.kind === 'course';
   const need = item.price - balance;
+  const open = () => (owned || isCourse ? onCourse(item.slug) : onBuy(item));
 
   return (
-    <Card variant="outlined" sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: '12px', overflow: 'hidden', opacity: disabled ? 0.6 : 1, transition: 'box-shadow .15s, border-color .15s', '&:hover': { boxShadow: 2, borderColor: 'primary.main' } }}>
-      <Box sx={{ position: 'relative', cursor: isCourse ? 'pointer' : 'default' }} onClick={isCourse ? () => onCourse(item.slug) : undefined}>
-        <ItemArt art={item.art} accent={item.accent} height={124} radius={0} image={item.image} />
+    <Panel n={14} sx={{ display: 'flex', flexDirection: 'column', height: '100%', opacity: disabled ? 0.6 : 1, transition: 'background-color .15s', '&:hover': { bgcolor: disabled ? FF.line : FF.orange } }}>
+      <Box sx={{ position: 'relative', m: '1px', mb: 0 }}>
+        <ButtonBase onClick={isCourse ? () => onCourse(item.slug) : undefined} disabled={!isCourse} aria-label={isCourse ? `Open ${item.name}` : undefined} sx={{ display: 'block', width: '100%', cursor: isCourse ? 'pointer' : 'default', '&.Mui-disabled': { pointerEvents: 'none' } }}>
+          <ItemArt art={item.art} accent={item.accent} height={150} image={item.image} />
+        </ButtonBase>
         {(item.popular || note) && (
-          <Stack direction="row" spacing={0.5} sx={{ position: 'absolute', top: 8, left: 8 }}>
-            {item.popular && <Chip size="small" color="warning" label="Popular" sx={{ height: 20, fontSize: '0.68rem', fontWeight: 700 }} />}
-            {note && <Chip size="small" color={item.soldOut ? 'default' : 'error'} label={note} sx={{ height: 20, fontSize: '0.68rem', fontWeight: 700 }} />}
-          </Stack>
+          <Box sx={{ position: 'absolute', top: 10, left: 10, display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+            {item.popular && <Tag tone="orange">Popular</Tag>}
+            {note && <Tag tone={item.soldOut ? 'dark' : 'red'}>{note}</Tag>}
+          </Box>
         )}
       </Box>
 
-      <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', p: 1.5, gap: 0.25, minWidth: 0 }}>
-        <Typography variant="subtitle2" component="h3" noWrap title={item.name} sx={{ fontWeight: 700 }}>{item.name}</Typography>
-        <Typography variant="caption" color="text.secondary" noWrap title={item.blurb}>{item.blurb}</Typography>
+      <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', p: 2.5, gap: 0.5, minWidth: 0 }}>
+        <Typography component="h3" noWrap title={item.name} sx={{ fontWeight: 900, fontSize: 15.5, letterSpacing: '0.01em', color: FF.text }}>{item.name}</Typography>
+        <Typography noWrap title={item.blurb} sx={{ fontSize: 13, color: FF.muted }}>{item.blurb}</Typography>
 
-        <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1} sx={{ mt: 'auto', pt: 1 }}>
+        <Box sx={{ mt: 'auto', pt: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, flexWrap: 'wrap' }}>
           <Box sx={{ minWidth: 0 }}>
-            <Coins value={item.price} size={17} />
+            <Coins value={item.price} size={19} />
             {!owned && signedIn && !afford && !disabled && (
-              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', fontSize: '0.68rem', lineHeight: 1.3 }}>Need {fmt(need)} more</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: 12, color: FF.muted }}>Need {fmt(need)} more</Typography>
             )}
           </Box>
           {owned ? (
-            <Button size="small" variant="outlined" onClick={() => onCourse(item.slug)} sx={{ fontWeight: 700, minWidth: 64, borderRadius: '8px' }}>Open</Button>
+            <FFButton tone="dark" onClick={open} sx={{ minHeight: 38, px: 2 }}>Open</FFButton>
           ) : (
-            <Button size="small" variant={afford ? 'contained' : 'outlined'} disableElevation disabled={disabled} onClick={() => onBuy(item)} sx={{ fontWeight: 700, minWidth: 64, borderRadius: '8px' }}>
+            <FFButton tone={afford ? 'orange' : 'dark'} disabled={disabled} onClick={open} sx={{ minHeight: 38, px: 2 }}>
               {disabled ? 'Sold out' : afford ? 'Redeem' : 'View'}
-            </Button>
+            </FFButton>
           )}
-        </Stack>
+        </Box>
       </Box>
-    </Card>
+    </Panel>
   );
 }
 
@@ -85,12 +85,11 @@ export default function StorePage() {
   const [refreshKey, setRefreshKey] = useState(0);
   const [claiming, setClaiming] = useState(false);
 
-  const [q, setQ] = useState('');
   const [cat, setCat] = useState('all');
-  const [sort, setSort] = useState('popular');
   const [selected, setSelected] = useState(null);
   const [courseSlug, setCourseSlug] = useState(null);
 
+  // ?tab=orders and ?tab=coins (old links) open the matching dialog on top of the shop.
   const tabParam = params.get('tab');
   const tab = isAuthenticated && TABS.includes(tabParam) ? tabParam : 'shop';
   const setTab = (v) => setParams(v === 'shop' ? {} : { tab: v }, { replace: true });
@@ -132,17 +131,12 @@ export default function StorePage() {
     }
   };
 
+  // Featured first: popular items, then the catalog order.
   const items = useMemo(() => {
     let list = data?.items || [];
     if (cat !== 'all') list = list.filter((i) => i.category === cat);
-    const s = q.trim().toLowerCase();
-    if (s) list = list.filter((i) => `${i.name} ${i.blurb}`.toLowerCase().includes(s));
-    const sorted = [...list];
-    if (sort === 'low') sorted.sort((a, b) => a.price - b.price);
-    else if (sort === 'high') sorted.sort((a, b) => b.price - a.price);
-    else sorted.sort((a, b) => Number(b.popular) - Number(a.popular));
-    return sorted;
-  }, [data, cat, q, sort]);
+    return [...list].sort((a, b) => Number(b.popular) - Number(a.popular));
+  }, [data, cat]);
 
   const needLogin = () => navigate('/login', { state: { from: '/store' } });
   const buy = (item) => (isAuthenticated ? setSelected(item) : needLogin());
@@ -165,113 +159,91 @@ export default function StorePage() {
   const merchLocked = isAuthenticated && data && (user?.totalSolved ?? 0) < data.minSolvedForMerch;
   const inTransit = (orders || []).filter((o) => o.kind === 'physical' && ['placed', 'processing', 'shipped'].includes(o.status)).length;
   const d = wallet?.daily;
+  const categories = [{ id: 'all', label: 'All' }, ...(data?.categories || [])];
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 1.5, md: 2 } }}>
-      {/* Header: balance + the one daily action */}
-      <Paper
-        variant="outlined"
-        sx={(t) => ({
-          p: { xs: 1.5, md: 2 }, mb: 1.5, borderRadius: '16px', display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center',
-          background: `linear-gradient(135deg, ${alpha(t.palette.warning.main, 0.16)}, ${alpha(t.palette.primary.main, 0.08)})`,
-        })}
-      >
-        <Box sx={{ flex: '1 1 200px', minWidth: 0 }}>
-          <Typography variant="h6" component="h1" sx={{ fontWeight: 800 }}>JeetCode Store</Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ display: { xs: 'none', sm: 'block' } }}>Spend coins you earn by solving.</Typography>
-        </Box>
-        {isAuthenticated ? (
-          <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" useFlexGap>
-            <Box sx={{ cursor: 'pointer' }} onClick={() => setTab('coins')}>
-              <Typography variant="caption" color="text.secondary">Your coins</Typography>
-              <Coins value={balance} size={24} />
-            </Box>
-            {d?.eligible ? (
-              <Button variant="contained" disableElevation startIcon={<CardGiftcardRoundedIcon />} onClick={claim} disabled={claiming} sx={{ fontWeight: 800 }}>
-                {claiming ? <CircularProgress size={20} color="inherit" /> : `Claim +${d.reward}`}
-              </Button>
-            ) : d && !d.claimed ? (
-              <Button component={RouterLink} to="/problems" size="small" variant="outlined" sx={{ fontWeight: 700 }}>Solve 1 for daily coins</Button>
-            ) : d?.claimed ? (
-              <Chip icon={<CheckCircleRoundedIcon />} label="Checked in today" color="success" variant="outlined" />
-            ) : null}
-          </Stack>
-        ) : (
-          <Button variant="contained" disableElevation onClick={needLogin} sx={{ fontWeight: 800 }}>Sign in to redeem</Button>
-        )}
-      </Paper>
+    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
+      {/* Top bar: title, wallet, the one daily action, orders */}
+      <Panel n={18} sx={{ mb: 4 }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 3, p: { xs: 2.5, md: 3.5 }, background: 'linear-gradient(90deg, rgba(255,122,0,0.16), transparent 55%)' }}>
+          <Box sx={{ flex: '1 1 220px', minWidth: 0 }}>
+            <Eyebrow sx={{ color: FF.orangeInk }}>JeetCode</Eyebrow>
+            <Typography component="h1" sx={{ fontWeight: 900, fontSize: { xs: 30, md: 36 }, lineHeight: 1.1, letterSpacing: '0.04em', textTransform: 'uppercase', color: FF.text }}>Store</Typography>
+            <Typography sx={{ mt: 0.75, fontSize: 14, color: FF.muted }}>Spend the coins you earn by solving.</Typography>
+          </Box>
 
-      {isAuthenticated && (
-        <Box sx={{ position: 'sticky', top: { xs: 56, sm: 64 }, zIndex: 2, bgcolor: 'background.default', mb: 2, borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={tab} onChange={(_, v) => setTab(v)} variant="fullWidth">
-            <Tab value="shop" label="Shop" />
-            <Tab value="orders" label={<Badge color="primary" badgeContent={inTransit} sx={{ '& .MuiBadge-badge': { right: -12 } }}>Orders</Badge>} />
-            <Tab value="coins" label="Coins" />
-          </Tabs>
-        </Box>
-      )}
-
-      {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
-
-      {tab === 'orders' && <OrdersTab orders={orders} onChanged={refresh} onOpenCourse={setCourseSlug} onGoShop={() => setTab('shop')} />}
-      {tab === 'coins' && <CoinsTab wallet={wallet} refreshKey={refreshKey} onClaim={claim} claiming={claiming} />}
-
-      {tab === 'shop' && (
-        <>
-          {courses.length > 0 && (
-            <Box sx={{ mb: 2.5 }}>
-              <Typography sx={{ fontWeight: 800, mb: 1 }}>Continue learning</Typography>
-              <Box sx={{ display: 'flex', gap: 1.5, overflowX: 'auto', pb: 0.5, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
-                {courses.map((c) => (
-                  <Paper key={c.slug} variant="outlined" onClick={() => setCourseSlug(c.slug)} sx={{ p: 1.5, borderRadius: '12px', minWidth: 230, cursor: 'pointer', flexShrink: 0, '&:hover': { borderColor: 'primary.main' } }}>
-                    <Typography sx={{ fontWeight: 800 }} noWrap>{c.name}</Typography>
-                    <Typography variant="caption" color="text.secondary">{c.progress.doneCount}/{c.progress.lessonCount} lessons</Typography>
-                    <LinearProgress variant="determinate" value={c.progress.percent} sx={{ mt: 0.75, height: 6, borderRadius: '12px' }} />
-                  </Paper>
-                ))}
-              </Box>
-            </Box>
-          )}
-
-          {merchLocked && (
-            <Alert severity="info" icon={<LockRoundedIcon />} sx={{ mb: 2 }}>
-              Merch unlocks after you solve {data.minSolvedForMerch} problems. You have solved {user?.totalSolved ?? 0}.
-            </Alert>
-          )}
-
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={1.5} sx={{ mb: 2 }} alignItems={{ md: 'center' }}>
-            <Box sx={{ display: 'flex', gap: 1, overflowX: 'auto', flex: 1, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
-              {[{ id: 'all', label: 'All' }, ...(data?.categories || [])].map((c) => (
-                <Chip key={c.id} label={c.label} clickable onClick={() => setCat(c.id)} color={cat === c.id ? 'primary' : 'default'} variant={cat === c.id ? 'filled' : 'outlined'} sx={{ fontWeight: 700, flexShrink: 0 }} />
-              ))}
-            </Box>
-            <Stack direction="row" spacing={1}>
-              <TextField
-                size="small" placeholder="Search" value={q} onChange={(e) => setQ(e.target.value)} sx={{ flex: 1, minWidth: 0 }}
-                slotProps={{ input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> } }}
-              />
-              <TextField size="small" select value={sort} onChange={(e) => setSort(e.target.value)} sx={{ minWidth: 150 }} aria-label="Sort">
-                {SORTS.map((s) => <MenuItem key={s.v} value={s.v}>{s.l}</MenuItem>)}
-              </TextField>
-            </Stack>
-          </Stack>
-
-          {loading && !data ? (
-            <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)', lg: 'repeat(5, 1fr)' } }}>
-              {Array.from({ length: 10 }).map((_, i) => <Skeleton key={i} variant="rounded" height={206} sx={{ borderRadius: '12px' }} />)}
-            </Box>
-          ) : items.length === 0 ? (
-            <Box sx={{ textAlign: 'center', py: 8 }}>
-              <Typography variant="h6" sx={{ fontWeight: 800 }}>Nothing found</Typography>
-              <Typography color="text.secondary">Try another search or category.</Typography>
+          {isAuthenticated ? (
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1.5 }}>
+              <Stat icon={<Coin size={22} />} value={fmt(balance)} label="Your coins · open wallet" onClick={() => setTab('coins')} />
+              {d?.eligible ? (
+                <FFButton tone="green" disabled={claiming} onClick={claim} sx={{ minHeight: 44 }}>
+                  <CardGiftcardRoundedIcon sx={{ fontSize: 20 }} /> {claiming ? 'Claiming…' : `Claim +${d.reward}`}
+                </FFButton>
+              ) : d && !d.claimed ? (
+                <FFButton component={RouterLink} to="/problems" tone="dark" sx={{ minHeight: 44 }}>Solve 1 for daily coins</FFButton>
+              ) : d?.claimed ? (
+                <Tag tone="green" sx={{ height: 44, px: 2, fontSize: 12, clipPath: cut(8) }}><CheckCircleRoundedIcon sx={{ fontSize: 18 }} /> Checked in today</Tag>
+              ) : null}
+              <FFButton tone="dark" onClick={() => setTab('orders')} aria-label="My orders" sx={{ position: 'relative', minHeight: 44 }}>
+                <LocalMallRoundedIcon sx={{ fontSize: 20 }} /> Orders
+                {inTransit > 0 && <Box component="span" sx={{ position: 'absolute', top: 2, right: 2, minWidth: 20, height: 20, px: 0.5, display: 'grid', placeItems: 'center', fontSize: 12, color: '#fff', bgcolor: FF.red, borderRadius: 10 }}>{inTransit}</Box>}
+              </FFButton>
             </Box>
           ) : (
-            <Box sx={{ display: 'grid', gap: { xs: 1.5, md: 2 }, gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)', lg: 'repeat(5, 1fr)' } }}>
-              {items.map((it) => <ItemCard key={it.slug} item={it} balance={balance} signedIn={isAuthenticated} onBuy={buy} onCourse={setCourseSlug} />)}
-            </Box>
+            <FFButton onClick={needLogin}>Sign in to redeem</FFButton>
           )}
-        </>
+        </Box>
+      </Panel>
+
+      {error && <Notice tone="error" sx={{ mb: 3 }}>{error}</Notice>}
+
+      {courses.length > 0 && (
+        <Box sx={{ mb: 4 }}>
+          <Eyebrow sx={{ mb: 1.5 }}>Continue learning</Eyebrow>
+          <Box sx={{ display: 'flex', gap: 2, overflowX: 'auto', pb: 1, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
+            {courses.map((c) => (
+              <ButtonBase key={c.slug} onClick={() => setCourseSlug(c.slug)} sx={{ display: 'block', minWidth: 250, flexShrink: 0, p: 2.5, textAlign: 'left', bgcolor: FF.panel, border: `1px solid ${FF.line}`, clipPath: cut(10), '&:hover': { borderColor: FF.orange }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } }}>
+                <Typography noWrap sx={{ fontWeight: 900, color: FF.text }}>{c.name}</Typography>
+                <Typography sx={{ mt: 0.25, mb: 1.25, fontSize: 12.5, color: FF.muted }}>{c.progress.doneCount}/{c.progress.lessonCount} lessons</Typography>
+                <Bar pct={c.progress.percent} height={7} />
+              </ButtonBase>
+            ))}
+          </Box>
+        </Box>
       )}
+
+      {merchLocked && (
+        <Notice tone="info" sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 1.5 }}>
+          <LockRoundedIcon sx={{ fontSize: 20, color: FF.blueInk }} />
+          Merch unlocks after you solve {data.minSolvedForMerch} problems. You have solved {user?.totalSolved ?? 0}.
+        </Notice>
+      )}
+
+      <Box sx={{ mb: 4 }}>
+        <Choice label="Category" options={categories} value={cat} onChange={setCat} />
+      </Box>
+
+      {loading && !data ? (
+        <Box sx={{ display: 'grid', gap: 3, gridTemplateColumns: GRID }}>
+          {Array.from({ length: 8 }).map((_, i) => <Skeleton key={i} variant="rectangular" height={290} sx={{ bgcolor: FF.panel, clipPath: cut(14) }} />)}
+        </Box>
+      ) : items.length === 0 ? (
+        <Box sx={{ textAlign: 'center', py: 8 }}>
+          <Typography sx={{ fontWeight: 900, fontSize: 20, color: FF.text }}>Nothing here yet</Typography>
+          <Typography sx={{ mt: 0.75, color: FF.muted }}>Try another category.</Typography>
+        </Box>
+      ) : (
+        <Box sx={{ display: 'grid', gap: { xs: 2, md: 3 }, gridTemplateColumns: GRID }}>
+          {items.map((it) => <ItemCard key={it.slug} item={it} balance={balance} signedIn={isAuthenticated} onBuy={buy} onCourse={setCourseSlug} />)}
+        </Box>
+      )}
+
+      <FFDialog open={tab === 'orders'} onClose={() => setTab('shop')} title="My orders" wide>
+        <OrdersTab orders={orders} onChanged={refresh} onOpenCourse={setCourseSlug} onGoShop={() => setTab('shop')} />
+      </FFDialog>
+      <FFDialog open={tab === 'coins'} onClose={() => setTab('shop')} title="Coin wallet" wide>
+        <CoinsTab wallet={wallet} refreshKey={refreshKey} onClaim={claim} claiming={claiming} />
+      </FFDialog>
 
       <CheckoutDialog item={selected} balance={balance} states={data?.states} open={Boolean(selected)} onClose={() => setSelected(null)} onDone={done} />
       <CoursePanel

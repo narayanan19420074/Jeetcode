@@ -1,36 +1,52 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  Alert, Box, Button, Chip, CircularProgress, Dialog, DialogActions, DialogContent, DialogTitle, Pagination, Paper, Stack,
-  Step, StepLabel, Stepper, Typography, alpha,
-} from '@mui/material';
+import { Box, ButtonBase, CircularProgress, Typography } from '@mui/material';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import { useSnackbar } from 'notistack';
 import { storeApi } from '../../api/storeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from '../auth/authSlice';
+import { Eyebrow, FFButton, FFDialog, Notice, Tag } from '../quests/QuestParts';
+import { FF, cut } from '../quests/questUtils';
 import { Coins, SHIP_STEPS, STATUS_META, fmt, fmtDate, fmtDateTime } from './storeUtils';
+
+// Orders and the coin wallet. Both open from the Store header in a dialog, so the shop stays the only page.
+
+const rowSx = { display: 'flex', alignItems: 'center', gap: 2, width: '100%', p: 2.5, textAlign: 'left', bgcolor: FF.panelHi, border: `1px solid ${FF.line}`, clipPath: cut(9), '&:hover': { borderColor: FF.orange }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } };
 
 // ------------------------------------------------------------------ Orders
 
 function OrderCard({ order, onOpen }) {
   const meta = STATUS_META[order.status] || STATUS_META.placed;
   return (
-    <Paper variant="outlined" sx={{ p: 2, borderRadius: '12px', cursor: 'pointer', '&:hover': { borderColor: 'primary.main' } }} onClick={() => onOpen(order)}>
-      <Stack direction="row" spacing={2} alignItems="center">
-        <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 800 }} noWrap>{order.itemName}{order.qty > 1 ? ` ×${order.qty}` : ''}</Typography>
-          <Typography variant="caption" color="text.secondary">
-            {order.orderNo} · {fmtDate(order.createdAt)}
-            {order.variant?.size ? ` · ${order.variant.size}` : ''}{order.variant?.color ? ` · ${order.variant.color}` : ''}
-          </Typography>
+    <ButtonBase onClick={() => onOpen(order)} sx={rowSx}>
+      <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Typography noWrap sx={{ fontWeight: 800, color: FF.text }}>{order.itemName}{order.qty > 1 ? ` ×${order.qty}` : ''}</Typography>
+        <Typography noWrap sx={{ mt: 0.5, fontSize: 12.5, color: FF.muted }}>
+          {order.orderNo} · {fmtDate(order.createdAt)}
+          {order.variant?.size ? ` · ${order.variant.size}` : ''}{order.variant?.color ? ` · ${order.variant.color}` : ''}
+        </Typography>
+      </Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
+        <Coins value={order.total} />
+        <Tag tone={meta.tone}>{meta.label}</Tag>
+      </Box>
+    </ButtonBase>
+  );
+}
+
+// Four-step progress for physical orders: placed, packing, shipped, delivered.
+function ShipProgress({ status }) {
+  const at = SHIP_STEPS.indexOf(status);
+  return (
+    <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${SHIP_STEPS.length}, 1fr)`, gap: 0.75, mb: 3 }}>
+      {SHIP_STEPS.map((s, i) => (
+        <Box key={s}>
+          <Box sx={{ height: 7, bgcolor: i <= at ? FF.orange : FF.well, border: `1px solid ${i <= at ? FF.orange : FF.line}` }} />
+          <Typography sx={{ mt: 0.75, fontSize: 11.5, fontWeight: i === at ? 900 : 600, color: i <= at ? FF.text : FF.muted, textAlign: 'center' }}>{STATUS_META[s].label}</Typography>
         </Box>
-        <Stack alignItems="flex-end" spacing={0.5}>
-          <Coins value={order.total} />
-          <Chip size="small" color={meta.color} label={meta.label} sx={{ fontWeight: 700 }} />
-        </Stack>
-      </Stack>
-    </Paper>
+      ))}
+    </Box>
   );
 }
 
@@ -57,64 +73,63 @@ function OrderDialog({ order, onClose, onChanged, onOpenCourse }) {
     }
   };
 
+  const showCancel = physical && order.status === 'placed';
   return (
-    <Dialog open onClose={onClose} fullWidth maxWidth="sm">
-      <DialogTitle sx={{ fontWeight: 800 }}>{order.itemName}</DialogTitle>
-      <DialogContent dividers>
-        <Typography variant="body2" color="text.secondary" component="div" sx={{ mb: 2 }}>
-          Order {order.orderNo} · {fmtDateTime(order.createdAt)} · <Coins value={order.total} size={16} />
-        </Typography>
-        {physical && !cancelled && (
-          <Stepper activeStep={SHIP_STEPS.indexOf(order.status)} alternativeLabel sx={{ mb: 3 }}>
-            {SHIP_STEPS.map((s) => <Step key={s}><StepLabel>{STATUS_META[s].label}</StepLabel></Step>)}
-          </Stepper>
-        )}
-        {cancelled && <Alert severity="info" sx={{ mb: 2 }}>Cancelled{order.cancelReason ? `: ${order.cancelReason}` : ''}. Coins were returned to your wallet.</Alert>}
-        {order.kind === 'pro' && order.proUntil && <Alert severity="success" sx={{ mb: 2 }}>Pro active until {fmtDate(order.proUntil)}.</Alert>}
-        {order.kind === 'course' && !cancelled && (
-          <Button variant="contained" disableElevation sx={{ mb: 2, fontWeight: 800 }} onClick={() => onOpenCourse(order.itemSlug)}>Open course</Button>
-        )}
-        {order.tracking?.number && (
-          <Paper variant="outlined" sx={{ p: 1.5, borderRadius: '8px', mb: 2 }}>
-            <Typography variant="caption" color="text.secondary">Tracking</Typography>
-            <Typography sx={{ fontWeight: 700 }}>{order.tracking.carrier || 'Courier'} · {order.tracking.number}</Typography>
-            {order.tracking.url && <Button size="small" href={order.tracking.url} target="_blank" rel="noopener noreferrer">Track package</Button>}
-          </Paper>
-        )}
-        {a && (
-          <Box sx={{ mb: 2 }}>
-            <Typography variant="subtitle2">Delivering to</Typography>
-            <Typography variant="body2" color="text.secondary">{a.fullName}, {a.phone}<br />{a.line1}{a.line2 ? `, ${a.line2}` : ''}<br />{a.city}, {a.state} {a.pincode}</Typography>
-          </Box>
-        )}
-        <Typography variant="subtitle2" sx={{ mb: 0.5 }}>Timeline</Typography>
-        {[...order.history].reverse().map((h, i) => (
-          <Typography key={i} variant="body2" color="text.secondary">{fmtDateTime(h.at)} · {STATUS_META[h.status]?.label || h.status}{h.note ? ` · ${h.note}` : ''}</Typography>
-        ))}
-      </DialogContent>
-      <DialogActions>
-        {physical && order.status === 'placed' && <Button color="error" onClick={cancel} disabled={busy}>{busy ? 'Cancelling…' : 'Cancel & refund'}</Button>}
-        <Button onClick={onClose}>Close</Button>
-      </DialogActions>
-    </Dialog>
+    <FFDialog
+      open
+      onClose={onClose}
+      title={order.itemName}
+      busy={busy}
+      footer={showCancel && <FFButton tone="dark" onClick={cancel} disabled={busy} sx={{ width: '100%' }}>{busy ? 'Cancelling…' : 'Cancel & refund'}</FFButton>}
+    >
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1.5, mb: 3, color: FF.muted, fontSize: 13.5 }}>
+        <span>{order.orderNo} · {fmtDateTime(order.createdAt)}</span>
+        <Coins value={order.total} size={16} />
+      </Box>
+      {physical && !cancelled && <ShipProgress status={order.status} />}
+      {cancelled && <Notice tone="info" sx={{ mb: 3 }}>Cancelled{order.cancelReason ? `: ${order.cancelReason}` : ''}. Coins were returned to your wallet.</Notice>}
+      {order.kind === 'pro' && order.proUntil && <Notice tone="success" sx={{ mb: 3 }}>Pro active until {fmtDate(order.proUntil)}.</Notice>}
+      {order.kind === 'course' && !cancelled && (
+        <FFButton onClick={() => onOpenCourse(order.itemSlug)} sx={{ mb: 3, width: '100%' }}>Open course</FFButton>
+      )}
+      {order.tracking?.number && (
+        <Box sx={{ p: 2, mb: 3, bgcolor: FF.well, border: `1px solid ${FF.line}` }}>
+          <Eyebrow>Tracking</Eyebrow>
+          <Typography sx={{ mt: 0.5, fontWeight: 800, color: FF.text }}>{order.tracking.carrier || 'Courier'} · {order.tracking.number}</Typography>
+          {order.tracking.url && (
+            <FFButton component="a" href={order.tracking.url} target="_blank" rel="noopener noreferrer" tone="dark" sx={{ mt: 1.5, minHeight: 38 }}>Track package</FFButton>
+          )}
+        </Box>
+      )}
+      {a && (
+        <Box sx={{ mb: 3 }}>
+          <Eyebrow sx={{ mb: 0.75 }}>Delivering to</Eyebrow>
+          <Typography sx={{ fontSize: 14, lineHeight: 1.7, color: FF.text }}>{a.fullName}, {a.phone}<br />{a.line1}{a.line2 ? `, ${a.line2}` : ''}<br />{a.city}, {a.state} {a.pincode}</Typography>
+        </Box>
+      )}
+      <Eyebrow sx={{ mb: 0.75 }}>Timeline</Eyebrow>
+      {[...order.history].reverse().map((h, i) => (
+        <Typography key={i} sx={{ py: 0.5, fontSize: 13.5, color: FF.muted }}>{fmtDateTime(h.at)} · <Box component="span" sx={{ color: FF.text, fontWeight: 700 }}>{STATUS_META[h.status]?.label || h.status}</Box>{h.note ? ` · ${h.note}` : ''}</Typography>
+      ))}
+    </FFDialog>
   );
 }
 
 export function OrdersTab({ orders, onChanged, onOpenCourse, onGoShop }) {
   const [open, setOpen] = useState(null);
-  if (!orders) return <CircularProgress size={22} />;
+  if (!orders) return <Box sx={{ display: 'grid', placeItems: 'center', py: 6 }}><CircularProgress size={24} /></Box>;
   if (orders.length === 0) {
     return (
-      <Box sx={{ textAlign: 'center', py: 6 }}>
-        <Typography sx={{ fontWeight: 800 }}>No orders yet</Typography>
-        <Typography color="text.secondary" sx={{ mb: 2 }}>Redeem your coins for Pro, courses or merch.</Typography>
-        <Button variant="contained" disableElevation onClick={onGoShop}>Browse the shop</Button>
+      <Box sx={{ textAlign: 'center', py: 5 }}>
+        <Typography sx={{ fontWeight: 900, fontSize: 18, color: FF.text }}>No orders yet</Typography>
+        <Typography sx={{ mt: 0.75, mb: 3, color: FF.muted }}>Redeem your coins for Pro, courses or merch.</Typography>
+        <FFButton onClick={onGoShop}>Browse the shop</FFButton>
       </Box>
     );
   }
   return (
     <>
-      <Stack spacing={1.5}>{orders.map((o) => <OrderCard key={o.id} order={o} onOpen={setOpen} />)}</Stack>
+      <Box sx={{ display: 'grid', gap: 2 }}>{orders.map((o) => <OrderCard key={o.id} order={o} onOpen={setOpen} />)}</Box>
       <OrderDialog
         order={open && orders.find((o) => o.id === open.id) ? orders.find((o) => o.id === open.id) : null}
         onClose={() => setOpen(null)}
@@ -133,76 +148,77 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
   const [error, setError] = useState(null);
 
   const loadTx = useCallback((p) => {
-    storeApi.transactions({ page: p, limit: 15 }).then(({ data }) => setTx(data.data)).catch((err) => setError(extractErrorMessage(err)));
+    storeApi.transactions({ page: p, limit: 10 }).then(({ data }) => setTx(data.data)).catch((err) => setError(extractErrorMessage(err)));
   }, []);
   useEffect(() => { loadTx(page); }, [loadTx, page, refreshKey]);
 
-  if (!wallet) return <CircularProgress size={22} />;
+  if (!wallet) return <Box sx={{ display: 'grid', placeItems: 'center', py: 6 }}><CircularProgress size={24} /></Box>;
   const d = wallet.daily;
 
   return (
-    <Stack spacing={2}>
-      {error && <Alert severity="error">{error}</Alert>}
-      <Paper variant="outlined" sx={(t) => ({ p: 3, borderRadius: '16px', background: `linear-gradient(135deg, ${alpha(t.palette.warning.main, 0.18)}, transparent)` })}>
-        <Typography variant="body2" color="text.secondary">Balance</Typography>
-        <Coins value={wallet.coins} size={44} />
-        <Stack direction="row" spacing={1} sx={{ mt: 1.5 }} flexWrap="wrap" useFlexGap>
-          <Chip label={`Earned ${fmt(wallet.earned)}`} variant="outlined" />
-          <Chip label={`Spent ${fmt(wallet.spent)}`} variant="outlined" />
-          <Chip icon={<LocalFireDepartmentRoundedIcon />} label={`${wallet.streakDays}-day streak`} variant="outlined" />
-        </Stack>
-      </Paper>
+    <Box sx={{ display: 'grid', gap: 4 }}>
+      {error && <Notice tone="error">{error}</Notice>}
 
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: '12px' }}>
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems={{ sm: 'center' }}>
-          <Box sx={{ flex: 1 }}>
-            <Typography sx={{ fontWeight: 800 }}>Daily check-in</Typography>
-            <Typography variant="body2" color="text.secondary">
-              {d.claimed ? 'Claimed for today. Come back tomorrow.' : d.eligible ? `Ready! Today's reward is ${d.reward} coins.` : 'Solve 1 problem today to unlock it.'}
-            </Typography>
-          </Box>
-          {d.eligible && (
-            <Button variant="contained" disableElevation onClick={onClaim} disabled={claiming} sx={{ fontWeight: 800 }}>
-              {claiming ? <CircularProgress size={20} color="inherit" /> : `Claim ${d.reward}`}
-            </Button>
-          )}
-        </Stack>
-      </Paper>
+      <Box sx={{ textAlign: 'center', py: 3, bgcolor: FF.well, border: `1px solid ${FF.line}` }}>
+        <Eyebrow>Balance</Eyebrow>
+        <Box sx={{ mt: 1 }}><Coins value={wallet.coins} size={44} /></Box>
+        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
+          <Tag>Earned {fmt(wallet.earned)}</Tag>
+          <Tag>Spent {fmt(wallet.spent)}</Tag>
+          <Tag tone="orange"><LocalFireDepartmentRoundedIcon sx={{ fontSize: 14 }} /> {wallet.streakDays}-day streak</Tag>
+        </Box>
+      </Box>
 
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: '12px' }}>
-        <Typography sx={{ fontWeight: 800, mb: 1 }}>Ways to earn</Typography>
-        {wallet.earnWays.map((w, i) => (
-          <Stack key={w.id} direction="row" spacing={2} alignItems="center" sx={{ py: 1, borderTop: i ? 1 : 0, borderColor: 'divider' }}>
-            <Box sx={{ flex: 1 }}>
-              <Typography sx={{ fontWeight: 700 }}>{w.title}</Typography>
-              <Typography variant="caption" color="text.secondary">{w.note}</Typography>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { sm: 'center' }, gap: 2 }}>
+        <Box sx={{ flex: 1 }}>
+          <Typography sx={{ fontWeight: 900, color: FF.text }}>Daily check-in</Typography>
+          <Typography sx={{ mt: 0.5, fontSize: 14, color: FF.muted }}>
+            {d.claimed ? 'Claimed for today. Come back tomorrow.' : d.eligible ? `Ready! Today's reward is ${d.reward} coins.` : 'Solve 1 problem today to unlock it.'}
+          </Typography>
+        </Box>
+        {d.eligible && <FFButton tone="green" onClick={onClaim} disabled={claiming}>{claiming ? 'Claiming…' : `Claim ${d.reward}`}</FFButton>}
+      </Box>
+
+      <Box>
+        <Eyebrow sx={{ mb: 1 }}>Ways to earn</Eyebrow>
+        {wallet.earnWays.map((w) => (
+          <Box key={w.id} sx={{ display: 'flex', alignItems: 'center', gap: 2, py: 1.5, borderTop: `1px solid ${FF.line}` }}>
+            <Box sx={{ flex: 1, minWidth: 0 }}>
+              <Typography sx={{ fontWeight: 800, color: FF.text }}>{w.title}</Typography>
+              <Typography sx={{ fontSize: 13, color: FF.muted }}>{w.note}</Typography>
             </Box>
-            {typeof w.coins === 'number' ? <Coins value={w.coins} /> : <Typography sx={{ fontWeight: 800, color: 'warning.main' }}>{w.coins}</Typography>}
-          </Stack>
+            {typeof w.coins === 'number' ? <Coins value={w.coins} /> : <Typography sx={{ fontWeight: 900, color: FF.coinInk }}>{w.coins}</Typography>}
+          </Box>
         ))}
-      </Paper>
+      </Box>
 
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: '12px' }}>
-        <Typography sx={{ fontWeight: 800, mb: 1 }}>Coin history</Typography>
+      <Box>
+        <Eyebrow sx={{ mb: 1 }}>Coin history</Eyebrow>
         {!tx ? <CircularProgress size={22} /> : tx.items.length === 0 ? (
-          <Typography color="text.secondary">No coins yet. Solve your first problem to start earning.</Typography>
+          <Typography sx={{ py: 1, color: FF.muted }}>No coins yet. Solve your first problem to start earning.</Typography>
         ) : (
           <>
-            {tx.items.map((t, i) => (
-              <Stack key={t.id} direction="row" spacing={2} alignItems="center" sx={{ py: 1.1, borderTop: i ? 1 : 0, borderColor: 'divider' }}>
+            {tx.items.map((t) => (
+              <Box key={t.id} sx={{ display: 'flex', alignItems: 'center', gap: 2, py: 1.5, borderTop: `1px solid ${FF.line}` }}>
                 <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Typography sx={{ fontWeight: 600 }} noWrap>{t.title}</Typography>
-                  <Typography variant="caption" color="text.secondary">{fmtDateTime(t.at)}</Typography>
+                  <Typography noWrap sx={{ fontWeight: 700, color: FF.text }}>{t.title}</Typography>
+                  <Typography sx={{ fontSize: 12.5, color: FF.muted }}>{fmtDateTime(t.at)}</Typography>
                 </Box>
-                <Typography sx={{ fontWeight: 800, color: t.amount > 0 ? 'success.main' : 'text.primary', fontVariantNumeric: 'tabular-nums' }}>
+                <Typography sx={{ fontWeight: 900, color: t.amount > 0 ? FF.greenInk : FF.text, fontVariantNumeric: 'tabular-nums' }}>
                   {t.amount > 0 ? '+' : '−'}{fmt(Math.abs(t.amount))}
                 </Typography>
-              </Stack>
+              </Box>
             ))}
-            {tx.pages > 1 && <Pagination sx={{ mt: 2, display: 'flex', justifyContent: 'center' }} count={tx.pages} page={page} onChange={(_, p) => setPage(p)} />}
+            {tx.pages > 1 && (
+              <Box sx={{ mt: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                <FFButton tone="dark" disabled={page <= 1} onClick={() => setPage((p) => p - 1)} sx={{ minHeight: 38 }}>Prev</FFButton>
+                <Typography sx={{ fontWeight: 800, fontSize: 13, color: FF.muted, fontVariantNumeric: 'tabular-nums' }}>{page} / {tx.pages}</Typography>
+                <FFButton tone="dark" disabled={page >= tx.pages} onClick={() => setPage((p) => p + 1)} sx={{ minHeight: 38 }}>Next</FFButton>
+              </Box>
+            )}
           </>
         )}
-      </Paper>
-    </Stack>
+      </Box>
+    </Box>
   );
 }

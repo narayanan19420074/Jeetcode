@@ -1,18 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  Alert, Box, Button, Chip, CircularProgress, Dialog, DialogActions, DialogContent, DialogTitle, Divider, IconButton,
-  MenuItem, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography, useMediaQuery,
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { Box, IconButton, MenuItem, TextField, Typography } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
 import { storeApi } from '../../api/storeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from '../auth/authSlice';
+import { Choice, Eyebrow, FFButton, FFDialog, Notice, Tag } from '../quests/QuestParts';
+import { FF } from '../quests/questUtils';
 import { Coins, ItemArt, fmt } from './storeUtils';
+
+// Text fields in the game look: square corners, sunken fill. Colours follow the app theme, so light and dark both work.
+const fieldSx = { '& .MuiOutlinedInput-root': { borderRadius: 0, bgcolor: FF.well }, '& .MuiInputLabel-root': { fontWeight: 600 } };
+const stepBtn = { color: FF.text, border: `1px solid ${FF.line}`, borderRadius: 0 };
 
 const EMPTY = { fullName: '', phone: '', line1: '', line2: '', city: '', state: '', pincode: '' };
 
@@ -29,8 +30,6 @@ function validate(a) {
 
 export default function CheckoutDialog({ item, balance, states = [], open, onClose, onDone }) {
   const dispatch = useDispatch();
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const physical = item?.kind === 'physical';
 
   const [size, setSize] = useState('');
@@ -93,92 +92,85 @@ export default function CheckoutDialog({ item, balance, states = [], open, onClo
     }
   };
 
+  const footer = (
+    <Box sx={{ display: 'grid', gap: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 2 }}>
+        <Typography sx={{ fontSize: 13.5, color: FF.muted }}>Your balance: <Box component="span" sx={{ color: FF.text, fontWeight: 800 }}>{fmt(balance)}</Box></Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Typography sx={{ fontSize: 13.5, color: FF.muted }}>Total</Typography>
+          <Coins value={total} size={22} />
+        </Box>
+      </Box>
+      {short > 0 ? (
+        <Notice tone="warning">You need {fmt(short)} more coins. Solve problems to earn them.</Notice>
+      ) : (
+        <FFButton onClick={submit} disabled={busy} sx={{ width: '100%', minHeight: 54, fontSize: 16 }}>
+          {busy ? 'Redeeming…' : `Redeem for ${fmt(total)} coins`}
+        </FFButton>
+      )}
+    </Box>
+  );
+
   return (
-    <Dialog open={open} onClose={busy ? undefined : onClose} fullScreen={fullScreen} fullWidth maxWidth="sm" scroll="paper">
-      <DialogTitle sx={{ display: 'flex', alignItems: 'center', fontWeight: 800 }}>
-        <Box sx={{ flex: 1 }}>Redeem with coins</Box>
-        <IconButton onClick={onClose} disabled={busy} aria-label="Close"><CloseRoundedIcon /></IconButton>
-      </DialogTitle>
-      <DialogContent dividers>
-        <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
-          <Box sx={{ width: 96, flexShrink: 0 }}><ItemArt art={item.art} accent={item.accent} height={96} radius="8px" image={item.image} /></Box>
-          <Box sx={{ minWidth: 0 }}>
-            <Typography sx={{ fontWeight: 800 }}>{item.name}</Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 0.75 }}>{item.blurb}</Typography>
-            <Coins value={item.price} />
-          </Box>
-        </Stack>
+    <FFDialog open={open} onClose={onClose} title="Redeem with coins" busy={busy} footer={footer}>
+      <Box sx={{ display: 'flex', gap: 2.5, mb: 3 }}>
+        <Box sx={{ width: 104, flexShrink: 0, border: `1px solid ${FF.line}` }}><ItemArt art={item.art} accent={item.accent} height={104} image={item.image} /></Box>
+        <Box sx={{ minWidth: 0 }}>
+          <Typography sx={{ fontWeight: 900, fontSize: 18, color: FF.text }}>{item.name}</Typography>
+          <Typography sx={{ mt: 0.5, mb: 1.25, fontSize: 14, color: FF.muted }}>{item.blurb}</Typography>
+          <Coins value={item.price} />
+        </Box>
+      </Box>
 
-        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+      {error && <Notice tone="error" sx={{ mb: 3 }}>{error}</Notice>}
 
-        {item.kind === 'pro' && (
-          <Alert severity="info" sx={{ mb: 2 }}>+{item.days} days of Pro, added instantly on top of any Pro time you already have.</Alert>
-        )}
-        {item.kind === 'course' && (
-          <Alert severity="info" sx={{ mb: 2 }}>{item.lessonCount} lessons unlock instantly and stay on your account for good.</Alert>
-        )}
+      {item.kind === 'pro' && <Notice tone="info">+{item.days} days of Pro, added instantly on top of any Pro time you already have.</Notice>}
+      {item.kind === 'course' && <Notice tone="info">{item.lessonCount} lessons unlock instantly and stay on your account for good.</Notice>}
 
-        {physical && (
-          <>
-            {item.sizes?.length > 0 && (
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="subtitle2" sx={{ mb: 0.75 }}>Size</Typography>
-                <ToggleButtonGroup exclusive size="small" value={size} onChange={(_, v) => v && setSize(v)} sx={{ flexWrap: 'wrap' }}>
-                  {item.sizes.map((s) => <ToggleButton key={s} value={s} sx={{ minWidth: 48, fontWeight: 700 }}>{s}</ToggleButton>)}
-                </ToggleButtonGroup>
-              </Box>
-            )}
-            {item.colors?.length > 0 && (
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="subtitle2" sx={{ mb: 0.75 }}>Colour</Typography>
-                <ToggleButtonGroup exclusive size="small" value={color} onChange={(_, v) => v && setColor(v)} sx={{ flexWrap: 'wrap' }}>
-                  {item.colors.map((c) => <ToggleButton key={c} value={c} sx={{ px: 2, fontWeight: 700 }}>{c}</ToggleButton>)}
-                </ToggleButtonGroup>
-              </Box>
-            )}
-            <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
-              <Typography variant="subtitle2" sx={{ flex: 1 }}>Quantity</Typography>
-              <IconButton size="small" onClick={() => setQty((q) => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Less"><RemoveRoundedIcon /></IconButton>
-              <Typography sx={{ minWidth: 24, textAlign: 'center', fontWeight: 800 }}>{qty}</Typography>
-              <IconButton size="small" onClick={() => setQty((q) => Math.min(maxQty, q + 1))} disabled={qty >= maxQty} aria-label="More"><AddRoundedIcon /></IconButton>
-            </Stack>
-
-            <Divider sx={{ my: 2 }} />
-            <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }}>
-              <LocalShippingRoundedIcon color="primary" />
-              <Typography sx={{ fontWeight: 800 }}>Delivery address</Typography>
-              <Chip size="small" label={`Ships within ${item.shipsTo || 'India'}`} />
-            </Stack>
-            <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' } }}>
-              <TextField size="small" label="Full name" value={addr.fullName} onChange={set('fullName')} error={!!errors.fullName} helperText={errors.fullName} autoComplete="name" />
-              <TextField size="small" label="Mobile number" value={addr.phone} onChange={set('phone')} error={!!errors.phone} helperText={errors.phone} inputProps={{ inputMode: 'numeric', maxLength: 10 }} autoComplete="tel" />
-              <TextField size="small" label="House / street" value={addr.line1} onChange={set('line1')} error={!!errors.line1} helperText={errors.line1} sx={{ gridColumn: { sm: '1 / -1' } }} autoComplete="address-line1" />
-              <TextField size="small" label="Area / landmark (optional)" value={addr.line2} onChange={set('line2')} sx={{ gridColumn: { sm: '1 / -1' } }} autoComplete="address-line2" />
-              <TextField size="small" label="City" value={addr.city} onChange={set('city')} error={!!errors.city} helperText={errors.city} autoComplete="address-level2" />
-              <TextField size="small" select label="State" value={addr.state} onChange={set('state')} error={!!errors.state} helperText={errors.state}>
-                {states.map((s) => <MenuItem key={s} value={s}>{s}</MenuItem>)}
-              </TextField>
-              <TextField size="small" label="Pincode" value={addr.pincode} onChange={set('pincode')} error={!!errors.pincode} helperText={errors.pincode} inputProps={{ inputMode: 'numeric', maxLength: 6 }} autoComplete="postal-code" />
+      {physical && (
+        <Box sx={{ display: 'grid', gap: 3 }}>
+          {item.sizes?.length > 0 && (
+            <Box>
+              <Eyebrow sx={{ mb: 1 }}>Size</Eyebrow>
+              <Choice label="Size" options={item.sizes.map((x) => ({ id: x, label: x }))} value={size} onChange={setSize} />
             </Box>
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.5 }}>
+          )}
+          {item.colors?.length > 0 && (
+            <Box>
+              <Eyebrow sx={{ mb: 1 }}>Colour</Eyebrow>
+              <Choice label="Colour" options={item.colors.map((x) => ({ id: x, label: x }))} value={color} onChange={setColor} />
+            </Box>
+          )}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+            <Eyebrow sx={{ flex: 1 }}>Quantity</Eyebrow>
+            <IconButton onClick={() => setQty((q) => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Less" sx={stepBtn}><RemoveRoundedIcon /></IconButton>
+            <Typography sx={{ minWidth: 32, textAlign: 'center', fontWeight: 900, fontSize: 18, color: FF.text }}>{qty}</Typography>
+            <IconButton onClick={() => setQty((q) => Math.min(maxQty, q + 1))} disabled={qty >= maxQty} aria-label="More" sx={stepBtn}><AddRoundedIcon /></IconButton>
+          </Box>
+
+          <Box sx={{ borderTop: `1px solid ${FF.line}`, pt: 3 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 1.25, mb: 2.5 }}>
+              <LocalShippingRoundedIcon sx={{ color: FF.orangeInk }} />
+              <Typography sx={{ fontWeight: 900, color: FF.text }}>Delivery address</Typography>
+              <Tag>Ships within {item.shipsTo || 'India'}</Tag>
+            </Box>
+            <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' } }}>
+              <TextField sx={fieldSx} size="small" label="Full name" value={addr.fullName} onChange={set('fullName')} error={!!errors.fullName} helperText={errors.fullName} autoComplete="name" />
+              <TextField sx={fieldSx} size="small" label="Mobile number" value={addr.phone} onChange={set('phone')} error={!!errors.phone} helperText={errors.phone} inputProps={{ inputMode: 'numeric', maxLength: 10 }} autoComplete="tel" />
+              <TextField sx={{ ...fieldSx, gridColumn: { sm: '1 / -1' } }} size="small" label="House / street" value={addr.line1} onChange={set('line1')} error={!!errors.line1} helperText={errors.line1} autoComplete="address-line1" />
+              <TextField sx={{ ...fieldSx, gridColumn: { sm: '1 / -1' } }} size="small" label="Area / landmark (optional)" value={addr.line2} onChange={set('line2')} autoComplete="address-line2" />
+              <TextField sx={fieldSx} size="small" label="City" value={addr.city} onChange={set('city')} error={!!errors.city} helperText={errors.city} autoComplete="address-level2" />
+              <TextField sx={fieldSx} size="small" select label="State" value={addr.state} onChange={set('state')} error={!!errors.state} helperText={errors.state}>
+                {states.map((st) => <MenuItem key={st} value={st}>{st}</MenuItem>)}
+              </TextField>
+              <TextField sx={fieldSx} size="small" label="Pincode" value={addr.pincode} onChange={set('pincode')} error={!!errors.pincode} helperText={errors.pincode} inputProps={{ inputMode: 'numeric', maxLength: 6 }} autoComplete="postal-code" />
+            </Box>
+            <Typography sx={{ mt: 2, fontSize: 12.5, color: FF.muted }}>
               You can cancel for a full coin refund until we start packing. Merch is not exchangeable.
             </Typography>
-          </>
-        )}
-      </DialogContent>
-      <DialogActions sx={{ flexDirection: 'column', alignItems: 'stretch', gap: 1, p: 2 }}>
-        <Stack direction="row" justifyContent="space-between" alignItems="center">
-          <Typography variant="body2" color="text.secondary">Your balance: {fmt(balance)}</Typography>
-          <Stack direction="row" spacing={1} alignItems="center"><Typography variant="body2" color="text.secondary">Total</Typography><Coins value={total} size={20} /></Stack>
-        </Stack>
-        {short > 0 ? (
-          <Alert severity="warning" sx={{ py: 0 }}>You need {fmt(short)} more coins. Solve problems to earn them.</Alert>
-        ) : (
-          <Button variant="contained" size="large" disableElevation onClick={submit} disabled={busy} sx={{ fontWeight: 800 }}>
-            {busy ? <CircularProgress size={22} color="inherit" /> : `Redeem for ${fmt(total)} coins`}
-          </Button>
-        )}
-      </DialogActions>
-    </Dialog>
+          </Box>
+        </Box>
+      )}
+    </FFDialog>
   );
 }

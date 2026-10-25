@@ -1,30 +1,32 @@
-import { Box, Typography, alpha } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import { FF } from '../quests/questUtils';
 
 export const fmt = (n) => Number(n || 0).toLocaleString('en-IN');
 export const fmtDate = (d) => (d ? new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '—');
 export const fmtDateTime = (d) =>
   d ? new Date(d).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) : '—';
 
+// `tone` is a Tag tone from QuestParts (orange / green / red / coin / dark).
 export const STATUS_META = {
-  placed: { label: 'Placed', color: 'info' },
-  processing: { label: 'Packing', color: 'warning' },
-  shipped: { label: 'Shipped', color: 'primary' },
-  delivered: { label: 'Delivered', color: 'success' },
-  fulfilled: { label: 'Delivered instantly', color: 'success' },
-  cancelled: { label: 'Cancelled', color: 'default' },
+  placed: { label: 'Placed', tone: 'dark' },
+  processing: { label: 'Packing', tone: 'coin' },
+  shipped: { label: 'Shipped', tone: 'orange' },
+  delivered: { label: 'Delivered', tone: 'green' },
+  fulfilled: { label: 'Delivered instantly', tone: 'green' },
+  cancelled: { label: 'Cancelled', tone: 'dark' },
 };
 
 export const SHIP_STEPS = ['placed', 'processing', 'shipped', 'delivered'];
 
-// Coin amount with the gold coin icon. Gold is the reward colour (see theme.js).
-export function Coins({ value, size = 18, bold = true, color = 'warning.main', sx }) {
+// Coin amount with the gold coin icon, in the game gold that stays readable in light and dark mode.
+export function Coins({ value, size = 18, bold = true, color = FF.coin, sx }) {
   return (
     <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, fontVariantNumeric: 'tabular-nums', ...sx }}>
-      <MonetizationOnRoundedIcon sx={{ fontSize: size, color }} />
-      <Typography component="span" sx={{ fontWeight: bold ? 800 : 600, fontSize: size * 0.85, lineHeight: 1 }}>
+      <MonetizationOnRoundedIcon sx={{ fontSize: size, color, filter: 'drop-shadow(0 1px 2px rgba(143,98,0,0.45))' }} />
+      <Typography component="span" sx={{ fontWeight: bold ? 900 : 600, fontSize: size * 0.85, lineHeight: 1, color: FF.text }}>
         {fmt(value)}
       </Typography>
     </Box>
@@ -32,7 +34,6 @@ export function Coins({ value, size = 18, bold = true, color = 'warning.main', s
 }
 
 // ---- Product mock-ups: white goods with the JeetCode mark printed on, drawn as shaded SVG ----
-const STUDIO = '#EEF0F4'; // light "photo studio" backdrop, same in light and dark mode
 const INK = '#334155';
 
 function Defs() {
@@ -175,13 +176,13 @@ function Stickers() {
 const ICONS = { pro: WorkspacePremiumRoundedIcon, course: SchoolRoundedIcon };
 const SVG_ART = { tee: Tee, hoodie: Hoodie, mug: Mug, notebook: Notebook, cap: Cap, stickers: Stickers };
 
-// Product picture on a light studio backdrop. If the catalog item has `image` (a real photo),
-// that is shown instead of the drawn mock-up.
-export function ItemArt({ art, accent = '#6366F1', height = 150, radius = '12px', image = null }) {
+// Product picture in an item slot: the accent colour glows behind it, like a game inventory tile.
+// If the catalog item has `image` (a real photo), that is shown instead of the drawn mock-up.
+export function ItemArt({ art, accent = '#6366F1', height = 150, image = null }) {
   const Svg = SVG_ART[art];
   const Icon = ICONS[art];
   return (
-    <Box sx={{ height, borderRadius: radius, bgcolor: STUDIO, display: 'grid', placeItems: 'center', overflow: 'hidden' }}>
+    <Box sx={{ height, background: `radial-gradient(circle at 50% 58%, ${accent}40, transparent 68%), ${FF.well}`, display: 'grid', placeItems: 'center', overflow: 'hidden' }}>
       {image ? (
         <Box component="img" src={image} alt="" loading="lazy" sx={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       ) : Svg ? (
@@ -189,7 +190,7 @@ export function ItemArt({ art, accent = '#6366F1', height = 150, radius = '12px'
           <Svg c={accent} />
         </Box>
       ) : Icon ? (
-        <Box sx={{ width: height * 0.52, height: height * 0.52, borderRadius: '50%', display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${accent}, ${alpha(accent, 0.65)})`, boxShadow: `0 6px 16px ${alpha(accent, 0.35)}` }}>
+        <Box sx={{ width: height * 0.52, height: height * 0.52, display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${accent}, ${accent}B3)`, boxShadow: `0 6px 18px ${accent}59`, clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)' }}>
           <Icon sx={{ fontSize: height * 0.3, color: '#fff' }} />
         </Box>
       ) : null}

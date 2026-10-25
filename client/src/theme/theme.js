@@ -104,7 +104,7 @@ export const getTheme = (mode, opts = {}) => {
     components: {
       MuiCssBaseline: {
         styleOverrides: `
-          :root { --jc-easy: ${semantic[mode === 'dark' ? 'dark' : 'light'].success}; --jc-medium: ${semantic[mode === 'dark' ? 'dark' : 'light'].warning}; --jc-hard: ${semantic[mode === 'dark' ? 'dark' : 'light'].error}; --jc-pending: ${semantic[mode === 'dark' ? 'dark' : 'light'].pending}; --jc-reward: ${reward[mode === 'dark' ? 'dark' : 'light']}; }
+          :root { --jc-easy: ${semantic[mode === 'dark' ? 'dark' : 'light'].success}; --jc-medium: ${semantic[mode === 'dark' ? 'dark' : 'light'].warning}; --jc-hard: ${semantic[mode === 'dark' ? 'dark' : 'light'].error}; --jc-pending: ${semantic[mode === 'dark' ? 'dark' : 'light'].pending}; --jc-reward: ${reward[mode === 'dark' ? 'dark' : 'light']}; ${gameCss(mode)} }
           ${underlineLinks ? 'a { text-decoration: underline !important; }' : ''}
           ${reduceMotion ? '*, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }' : ''}
         `,
@@ -171,6 +171,14 @@ export const getTheme = (mode, opts = {}) => {
     },
   });
 };
+
+// Game-style surfaces for the Quests and Store pages (Free-Fire-like lobby look). Defined globally as CSS variables
+// because dialogs render in a portal, outside the page. "Ink" colours are the text-safe shade of each accent.
+const gameVars = {
+  dark: { bg: '#0B0E14', panel: '#151A24', panelHi: '#1D2431', line: '#2B3345', well: '#0B0E14', hud: 'rgba(11,14,20,0.82)', text: '#FFFFFF', muted: '#8E99AD', orangeInk: '#FFB020', greenInk: '#2ED573', blueInk: '#27B6FF', coinInk: '#FFC933', redInk: '#FF6B79' },
+  light: { bg: '#EAEFF8', panel: '#FFFFFF', panelHi: '#EEF2F9', line: '#C5CFE2', well: '#E6EBF5', hud: 'rgba(255,255,255,0.92)', text: '#10151F', muted: '#4F5B74', orangeInk: '#B14500', greenInk: '#087A3E', blueInk: '#0A6AAD', coinInk: '#8F6200', redInk: '#C21F33' },
+};
+const gameCss = (mode) => Object.entries(gameVars[mode === 'dark' ? 'dark' : 'light']).map(([k, v]) => `--ff-${k.replace(/[A-Z]/g, (c) => `-${c.toLowerCase()}`)}: ${v};`).join(' ');
 
 // Mode-aware CSS variables (defined in getTheme's CssBaseline), so these stay readable in light and dark.
 // Streak / XP / badge colour (use sparingly): var(--jc-reward)

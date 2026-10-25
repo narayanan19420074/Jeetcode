@@ -28,15 +28,25 @@ export const resetTimeLabel = () => new Date(Date.now() + msUntilUtcMidnight()).
 export const formatDate = (d) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
 // ---------------------------------------------------------------- look
-// Battle-royale lobby look (Free Fire style): near-black panels, hard cut corners, orange as the main action colour,
-// green for "claim", blue for diamonds, yellow for coins. Same in light and dark mode on purpose.
+// Battle-royale lobby look (Free Fire style): hard cut corners, heavy uppercase labels, orange as the main action
+// colour, green for "claim", blue for diamonds, gold for coins. Used by the Quests page and the Store.
+// Surfaces and text come from CSS variables (--ff-*, set per mode in theme.js) so light and dark both look right;
+// the "Ink" colours are the accent shades that stay readable as text on those surfaces.
 export const FF = {
-  bg: '#0B0E14',
-  panel: '#151A24',
-  panelHi: '#1D2431',
-  line: '#2B3345',
-  text: '#FFFFFF',
-  muted: '#8E99AD',
+  bg: 'var(--ff-bg)',
+  panel: 'var(--ff-panel)',
+  panelHi: 'var(--ff-panel-hi)',
+  line: 'var(--ff-line)',
+  well: 'var(--ff-well)',
+  hud: 'var(--ff-hud)',
+  text: 'var(--ff-text)',
+  muted: 'var(--ff-muted)',
+  orangeInk: 'var(--ff-orange-ink)',
+  greenInk: 'var(--ff-green-ink)',
+  blueInk: 'var(--ff-blue-ink)',
+  coinInk: 'var(--ff-coin-ink)',
+  redInk: 'var(--ff-red-ink)',
+  // fills: bright in both modes, so they carry dark text (#10131A) or sit as icons
   orange: '#FF7A00',
   orangeHi: '#FFB020',
   yellow: '#FFC933',
@@ -49,7 +59,16 @@ export const FF = {
 // Cut-corner shape used by every panel and button.
 export const cut = (n = 10) => `polygon(${n}px 0, 100% 0, 100% calc(100% - ${n}px), calc(100% - ${n}px) 100%, 0 100%, 0 ${n}px)`;
 
-export const panelSx = { bgcolor: FF.panel, border: `1px solid ${FF.line}`, clipPath: cut(12), color: FF.text };
+// Panel with a real 1px border that follows the cut corners (a plain border would break at the diagonals):
+// the element is the border colour, ::before is the fill, inset by 1px. Change the fill with '--ff-fill'.
+export const panelSx = (n = 14) => ({
+  position: 'relative',
+  isolation: 'isolate',
+  bgcolor: FF.line,
+  color: FF.text,
+  clipPath: cut(n),
+  '&::before': { content: '""', position: 'absolute', inset: '1px', zIndex: -1, bgcolor: 'var(--ff-fill, var(--ff-panel))', clipPath: cut(n - 1) },
+});
 
 export const buttonSx = (tone = 'orange') => {
   const g = {
@@ -62,12 +81,11 @@ export const buttonSx = (tone = 'orange') => {
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 0.75, minHeight: 44, px: 2.5, border: 0, cursor: 'pointer', fontFamily: 'inherit',
     fontWeight: 900, fontSize: 14, letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap',
     color: tone === 'dark' ? FF.text : '#10131A', background: `linear-gradient(180deg, ${g[0]}, ${g[1]})`, clipPath: cut(9),
-    transition: 'filter .15s ease, transform .1s ease', '&:hover': { filter: 'brightness(1.1)' }, '&:active': { transform: 'translateY(1px)' },
-    '&:focus-visible': { outline: `2px solid ${FF.yellow}`, outlineOffset: 2 },
+    transition: 'filter .15s ease, transform .1s ease', '&:hover': { filter: 'brightness(1.08)' }, '&:active': { transform: 'translateY(1px)' },
+    '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 },
     '&.Mui-disabled, &:disabled': { background: FF.panelHi, color: FF.muted, cursor: 'not-allowed', filter: 'none' },
   };
 };
 
-// Rarity colours players already know: grey, green, blue, purple, orange, red.
+// Rarity colours players already know: grey, green, blue, purple, orange, red. Shown as a tag with dark text.
 export const RARITY_COLOR = { Common: '#B8C0CF', Uncommon: '#2ED573', Rare: '#27B6FF', Epic: '#B66DFF', Legendary: '#FF9F1A', Mythic: '#FF4757' };
-
