@@ -145,8 +145,10 @@ const userSchema = new mongoose.Schema(
       default: [],
     },
 
-    // Butterflies unlocked on the Quests page (ids from config/butterflies.js). The starter butterfly is
-    // implied for everyone and not stored; `activeButterfly` is the one shown on the stage ('' = starter).
+    // Diamonds: bought with coins on the Quests page (100 coins = 1) and spent on butterfly upgrades.
+    diamonds: { type: Number, default: 0, min: 0 },
+    // Butterfly tiers bought so far (ids from config/butterflies.js, in order). Tier 1 is implied and not stored,
+    // so the butterfly level is 1 + butterflies.length.
     butterflies: {
       type: [
         {
@@ -157,7 +159,6 @@ const userSchema = new mongoose.Schema(
       ],
       default: [],
     },
-    activeButterfly: { type: String, default: '' },
 
     // --- JeetCode Store ---
     // `coins` is the spendable balance (cache of the CoinTransaction ledger).
@@ -285,6 +286,7 @@ userSchema.methods.toPublicJSON = function () {
     proExpiresAt: this.proExpiresAt,
     proPlan: this.proPlan,
     coins: this.coins ?? 0,
+    diamonds: this.diamonds ?? 0,
     streakDays: this.streakDays,
     longestStreak: this.longestStreak,
     easySolved: this.easySolved,

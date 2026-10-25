@@ -1,19 +1,18 @@
-// Butterfly collection on the Quests page. Prices are in coins (the same balance
-// the Store uses), so tune them here and the API + page follow. The 3D look of
-// each butterfly (wing colours) lives in the client: client/src/features/quests/butterflyCatalog.js
+// The butterfly on the Quests page levels up with diamonds. Tier n is bought after tier n-1, in this order.
+// Diamonds come from converting coins (COINS_PER_DIAMOND coins = 1 diamond) on the Quests page.
+// The 3D look of each tier (wing colours) lives in the client: client/src/features/quests/butterflyCatalog.js
 // and is matched by `id`, so keep the ids in sync when adding one.
 //
-// cost 0 = starter butterfly every account owns from day one.
+// cost = diamonds. Tier 1 is free and every account starts on it.
 
-export const DEFAULT_BUTTERFLY = 'amethyst';
+export const COINS_PER_DIAMOND = 100;
+export const MAX_CONVERT = 500; // diamonds per request
 
 export const BUTTERFLIES = [
-  { id: 'amethyst', name: 'Amethyst Monarch', rarity: 'Starter', cost: 0, blurb: 'Your first wings. Purple crystal glow.' },
-  { id: 'sapphire', name: 'Sapphire Glider', rarity: 'Common', cost: 150, blurb: 'Deep ocean blue with icy sparkle.' },
-  { id: 'emerald', name: 'Emerald Drift', rarity: 'Rare', cost: 350, blurb: 'Forest green wings that catch the light.' },
-  { id: 'rose', name: 'Rose Quartz', rarity: 'Rare', cost: 600, blurb: 'Hot pink crystal with a soft shimmer.' },
-  { id: 'topaz', name: 'Golden Topaz', rarity: 'Epic', cost: 1000, blurb: 'Molten gold and amber fire.' },
-  { id: 'opal', name: 'Aurora Opal', rarity: 'Legendary', cost: 1800, blurb: 'Rainbow wings that change colour as they fly.' },
+  { id: 'amethyst', name: 'Amethyst', rarity: 'Common', cost: 0 },
+  { id: 'sapphire', name: 'Sapphire', rarity: 'Uncommon', cost: 2 },
+  { id: 'emerald', name: 'Emerald', rarity: 'Rare', cost: 5 },
+  { id: 'rose', name: 'Rose Quartz', rarity: 'Epic', cost: 10 },
+  { id: 'topaz', name: 'Golden Topaz', rarity: 'Legendary', cost: 20 },
+  { id: 'opal', name: 'Aurora Opal', rarity: 'Mythic', cost: 40 },
 ];
-
-export const BUTTERFLY_BY_ID = new Map(BUTTERFLIES.map((b) => [b.id, b]));

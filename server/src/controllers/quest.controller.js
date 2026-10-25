@@ -2,14 +2,14 @@ import { User } from '../models/User.js';
 import { Submission } from '../models/Submission.js';
 import { ALL_QUESTS, CHECKIN_MILESTONES, QUESTS, QUEST_BY_ID, QUEST_PRO_PLAN } from '../config/quests.js';
 import { COIN_RULES } from '../config/store.js';
-import { BUTTERFLIES, BUTTERFLY_BY_ID, DEFAULT_BUTTERFLY } from '../config/butterflies.js';
+import { BUTTERFLIES, COINS_PER_DIAMOND, MAX_CONVERT } from '../config/butterflies.js';
 import { debitCoins, grantCoinsSafe } from '../services/coin.service.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
-const QUEST_USER_FIELDS = 'easySolved mediumSolved hardSolved streakDays longestStreak questClaims isPro proExpiresAt proPlan coins butterflies activeButterfly';
+const QUEST_USER_FIELDS = 'easySolved mediumSolved hardSolved streakDays longestStreak questClaims isPro proExpiresAt proPlan coins diamonds butterflies';
 const utcKey = (d) => d.toISOString().slice(0, 10);
 
 // Distinct UTC days on which the user had an Accepted submission. Same UTC
@@ -47,15 +47,11 @@ function proBlock(user, now = new Date()) {
   return null;
 }
 
-// Butterfly collection: the starter is owned by everyone, the rest are bought with coins.
+// The butterfly levels up one tier at a time, so its level is just how many tiers the user has bought.
 function butterflyState(user) {
-  const owned = new Set([DEFAULT_BUTTERFLY, ...(user?.butterflies || []).map((b) => b.id)]);
-  const wanted = user?.activeButterfly || DEFAULT_BUTTERFLY;
-  const active = owned.has(wanted) ? wanted : DEFAULT_BUTTERFLY;
-  return {
-    active,
-    items: BUTTERFLIES.map((b) => ({ id: b.id, name: b.name, rarity: b.rarity, cost: b.cost, blurb: b.blurb, owned: owned.has(b.id) })),
-  };
+  const level = Math.min(BUTTERFLIES.length, 1 + (user?.butterflies?.length ?? 0));
+  const tier = (b) => (b ? { id: b.id, name: b.name, rarity: b.rarity, cost: b.cost } : null);
+  return { level, max: BUTTERFLIES.length, current: tier(BUTTERFLIES[level - 1]), next: tier(BUTTERFLIES[level]), tiers: BUTTERFLIES.map((b) => b.id) };
 }
 
 function buildState(user, days, now = new Date()) {
@@ -98,7 +94,9 @@ function buildState(user, days, now = new Date()) {
     proBlock: proBlock(user, now),
     proExpiresAt: user?.isPro ? user.proExpiresAt : null,
     coins: user?.coins ?? 0,
-    butterflies: butterflyState(user),
+    diamonds: user?.diamonds ?? 0,
+    coinsPerDiamond: COINS_PER_DIAMOND,
+    butterfly: butterflyState(user),
   };
 }
 
@@ -167,54 +165,35 @@ export const claimQuest = asyncHandler(async (req, res) => {
   ).send(res);
 });
 
-// POST /api/quests/butterflies/:id/unlock — spends coins (atomic, never goes negative) and adds the butterfly.
-export const unlockButterfly = asyncHandler(async (req, res) => {
-  const butterfly = BUTTERFLY_BY_ID.get(req.params.id);
-  if (!butterfly) throw ApiError.notFound('Unknown butterfly');
+// POST /api/quests/convert { diamonds } — turns coins into diamonds at COINS_PER_DIAMOND coins each.
+export const convertCoins = asyncHandler(async (req, res) => {
+  const n = Number(req.body?.diamonds);
+  if (!Number.isInteger(n) || n < 1 || n > MAX_CONVERT) throw ApiError.badRequest(`Pick between 1 and ${MAX_CONVERT} diamonds`);
+  const cost = n * COINS_PER_DIAMOND;
 
-  const user = await User.findById(req.user.id).select(QUEST_USER_FIELDS);
-  if (!user) throw ApiError.unauthorized('User no longer exists');
-  if (butterfly.id === DEFAULT_BUTTERFLY || user.butterflies.some((b) => b.id === butterfly.id)) throw ApiError.conflict('You already own this butterfly');
+  const debit = await debitCoins(req.user.id, cost, { reason: 'convert', title: `Converted ${cost} coins to ${n} diamond${n > 1 ? 's' : ''}` });
+  if (!debit) throw ApiError.badRequest(`You need ${cost} coins for ${n} diamond${n > 1 ? 's' : ''}`);
 
-  if (butterfly.cost > 0) {
-    const debit = await debitCoins(user._id, butterfly.cost, {
-      reason: 'purchase',
-      title: `Unlocked butterfly: ${butterfly.name}`,
-      refId: butterfly.id,
-      key: `butterfly:${butterfly.id}`,
-    });
-    if (!debit) throw ApiError.badRequest(`You need ${butterfly.cost} coins for ${butterfly.name}. You have ${user.coins ?? 0}.`);
-  }
-
-  const updated = await User.findOneAndUpdate(
-    { _id: user._id, 'butterflies.id': { $ne: butterfly.id } },
-    { $push: { butterflies: { id: butterfly.id, at: new Date() } }, $set: { activeButterfly: butterfly.id } },
-    { new: true }
-  );
-  if (!updated) {
-    // Two taps raced and the other one won: give the coins back.
-    if (butterfly.cost > 0) {
-      await grantCoinsSafe(user._id, butterfly.cost, { type: 'refund', reason: 'refund', title: `Refund: ${butterfly.name} (already owned)`, refId: butterfly.id, key: `butterfly-refund:${butterfly.id}:${Date.now()}` });
-    }
-    throw ApiError.conflict('You already own this butterfly');
-  }
-
-  const days = await getCheckInDays(updated._id);
-  new ApiResponse(200, { user: updated.toPublicJSON(), unlocked: butterfly.id, state: buildState(updated, days) }, `${butterfly.name} unlocked`).send(res);
+  const user = await User.findByIdAndUpdate(req.user.id, { $inc: { diamonds: n } }, { new: true });
+  const days = await getCheckInDays(user._id);
+  new ApiResponse(200, { user: user.toPublicJSON(), state: buildState(user, days) }, `+${n} diamond${n > 1 ? 's' : ''}`).send(res);
 });
 
-// POST /api/quests/butterflies/:id/equip — pick which owned butterfly lives on the stage.
-export const equipButterfly = asyncHandler(async (req, res) => {
-  const butterfly = BUTTERFLY_BY_ID.get(req.params.id);
-  if (!butterfly) throw ApiError.notFound('Unknown butterfly');
-
+// POST /api/quests/butterfly/upgrade — buys the next tier with diamonds. One atomic update: the diamond guard
+// and the "not owned yet" guard sit in the filter, so two taps can never charge twice.
+export const upgradeButterfly = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user.id).select(QUEST_USER_FIELDS);
   if (!user) throw ApiError.unauthorized('User no longer exists');
-  const owns = butterfly.id === DEFAULT_BUTTERFLY || user.butterflies.some((b) => b.id === butterfly.id);
-  if (!owns) throw ApiError.badRequest('Unlock this butterfly first');
+  const next = BUTTERFLIES[1 + user.butterflies.length];
+  if (!next) throw ApiError.conflict('Your butterfly is already at max level');
 
-  user.activeButterfly = butterfly.id;
-  await user.save();
-  const days = await getCheckInDays(user._id);
-  new ApiResponse(200, { state: buildState(user, days) }, `${butterfly.name} is now on your stage`).send(res);
+  const updated = await User.findOneAndUpdate(
+    { _id: user._id, diamonds: { $gte: next.cost }, 'butterflies.id': { $ne: next.id } },
+    { $inc: { diamonds: -next.cost }, $push: { butterflies: { id: next.id, at: new Date() } } },
+    { new: true }
+  );
+  if (!updated) throw ApiError.badRequest(`You need ${next.cost} diamonds for ${next.name}. You have ${user.diamonds ?? 0}.`);
+
+  const days = await getCheckInDays(updated._id);
+  new ApiResponse(200, { user: updated.toPublicJSON(), state: buildState(updated, days) }, `${next.name} butterfly unlocked`).send(res);
 });

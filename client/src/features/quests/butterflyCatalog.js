@@ -14,14 +14,3 @@ export const PALETTES = {
 };
 
 export const paletteFor = (id) => PALETTES[id] || PALETTES.amethyst;
-
-// Rarity badges: loud on purpose. Same gradient colours in light and dark mode.
-export const RARITY = {
-  Starter: { stops: ['#06B6D4', '#3B82F6'], glow: '#22D3EE' },
-  Common: { stops: ['#3B82F6', '#6366F1'], glow: '#60A5FA' },
-  Rare: { stops: ['#10B981', '#84CC16'], glow: '#34D399' },
-  Epic: { stops: ['#F97316', '#EC4899'], glow: '#FB923C' },
-  Legendary: { stops: ['#EC4899', '#8B5CF6', '#06B6D4'], glow: '#E879F9' },
-};
-
-export const rarityGradient = (name) => `linear-gradient(120deg, ${(RARITY[name] || RARITY.Starter).stops.join(', ')})`;

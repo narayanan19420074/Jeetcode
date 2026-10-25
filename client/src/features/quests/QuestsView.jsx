@@ -3,57 +3,48 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useReducedMotion } from 'framer-motion';
 import { useSnackbar } from 'notistack';
-import { Alert, Box, Button, IconButton, Skeleton, Tooltip, Typography, useTheme } from '@mui/material';
-import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
+import { Alert, Box, Button, Skeleton, Typography } from '@mui/material';
+import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { questApi } from '../../api/questApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from '../auth/authSlice';
-import { Confetti } from '../aptitude/components/MotionBits';
-import { cardSx, GrandReward, QuestHeader, QuestRow, RewardDialog } from './QuestParts';
-import ButterflyPanel from './ButterflyPanel';
-import { PALETTES, RARITY, rarityGradient } from './butterflyCatalog';
-import { goalMilestone, useQuestTheme } from './questUtils';
+import { Bar, Coin, Diamond, FFButton, MissionsDialog, RewardDialog, Stat, TopUpDialog } from './QuestParts';
+import { FF, RARITY_COLOR, cut, goalMilestone, levelInfo, panelSx } from './questUtils';
 
-// three.js is heavy, so the stage only downloads when this page opens.
-const ButterflyStage = lazy(() => import('./ButterflyScene'));
+// three.js is heavy, so the 3D parts only download when this page opens.
+const QuestRoadScene = lazy(() => import('./QuestRoadScene'));
+const ButterflyShowcase = lazy(() => import('./ButterflyShowcase'));
 
-const PHASES = [
-  ['larva', 'Larva'],
-  ['feeding', 'Feeding'],
-  ['cocoon', 'Cocoon'],
-  ['butterfly', 'Butterfly'],
-];
-const THUMB_IDS = Object.keys(PALETTES);
-
-const LoadingSkeleton = () => (
-  <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', lg: 'minmax(0, 1fr) 340px' }, height: { lg: '100%' } }}>
-    <Skeleton variant="rounded" sx={{ borderRadius: '28px', height: { xs: 420, lg: '100%' } }} />
-    <Skeleton variant="rounded" sx={{ borderRadius: '28px', height: { xs: 360, lg: '100%' } }} />
+const Loading = () => (
+  <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', lg: 'minmax(0, 1fr) 300px' }, height: { lg: '100%' } }}>
+    <Skeleton variant="rectangular" sx={{ height: { xs: 420, lg: '100%' }, bgcolor: FF.panel }} />
+    <Skeleton variant="rectangular" sx={{ height: { xs: 360, lg: '100%' }, bgcolor: FF.panel }} />
   </Box>
 );
 
-// Quests are computed on the server from real activity (Accepted submissions, streaks, solved counts); claiming and
-// butterfly unlocks are verified there too, so this page only renders what the API says.
+// One screen: the road map (check-in progress, rewards) on the left, your butterfly and its upgrade on the right.
+// The server decides everything (progress, claims, diamonds, upgrades); this page only shows what it returns.
 export default function QuestsView({ isAuthenticated, onPick }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const reduce = useReducedMotion();
-  const dark = useTheme().palette.mode === 'dark';
-  const T = useQuestTheme();
+  const reduce = Boolean(useReducedMotion());
   const { enqueueSnackbar } = useSnackbar();
-  const walletCoins = useSelector((s) => s.auth.user?.coins);
+  const wallet = useSelector((s) => s.auth.user);
   const [state, setState] = useState(null);
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(null);
-  const [busyB, setBusyB] = useState(null);
   const [reward, setReward] = useState(null);
-  const [selected, setSelected] = useState(null);
-  const [phase, setPhase] = useState('larva');
-  const [thumbs, setThumbs] = useState(null);
-  const [stageFailed, setStageFailed] = useState(false);
-  const [party, setParty] = useState(0);
-  const stageApi = useRef(null);
-  const onFail = useCallback(() => setStageFailed(true), []);
+  const [missions, setMissions] = useState(false);
+  const [topUp, setTopUp] = useState({ open: false, want: 1 });
+  const [converting, setConverting] = useState(false);
+  const [failed, setFailed] = useState({ road: false, fly: false });
+  const flyApi = useRef(null);
+  const roadFail = useCallback(() => setFailed((f) => ({ ...f, road: true })), []);
+  const flyFail = useCallback(() => setFailed((f) => ({ ...f, fly: true })), []);
 
   const load = useCallback(() => {
     setError(null);
@@ -65,186 +56,206 @@ export default function QuestsView({ isAuthenticated, onPick }) {
 
   useEffect(() => {
     setState(null);
-    setSelected(null);
     load();
   }, [load, isAuthenticated]);
 
-  // Real 3D wings for the list, drawn once per colour mode.
-  useEffect(() => {
-    let live = true;
-    import('./butterflyThumbs')
-      .then((m) => {
-        if (live) setThumbs(m.renderButterflyThumbs(THUMB_IDS, { dark }));
-      })
-      .catch(() => {});
-    return () => {
-      live = false;
-    };
-  }, [dark]);
-
-  const claim = useCallback(
-    async (quest) => {
-      if (!isAuthenticated) return navigate('/login');
-      setBusy(quest.id);
-      try {
-        const { data } = await questApi.claim(quest.id);
-        const res = data.data;
-        setState(res.state);
-        dispatch(userUpdated(res.user));
-        setReward(res);
-      } catch (err) {
-        enqueueSnackbar(extractErrorMessage(err), { variant: 'warning' });
-        load();
-      } finally {
-        setBusy(null);
-      }
-    },
-    [isAuthenticated, navigate, dispatch, enqueueSnackbar, load]
-  );
-
-  const unlock = useCallback(
-    async (b) => {
-      if (!isAuthenticated) return navigate('/login');
-      setBusyB(b.id);
-      try {
-        const { data } = await questApi.unlockButterfly(b.id);
-        const res = data.data;
-        setState(res.state);
-        dispatch(userUpdated(res.user));
-        setSelected(b.id);
-        setParty((n) => n + 1);
-        setTimeout(() => stageApi.current?.celebrate(), 900);
-        enqueueSnackbar(`${b.name} unlocked`, { variant: 'success' });
-      } catch (err) {
-        enqueueSnackbar(extractErrorMessage(err), { variant: 'warning' });
-        load();
-      } finally {
-        setBusyB(null);
-      }
-    },
-    [isAuthenticated, navigate, dispatch, enqueueSnackbar, load]
-  );
-
-  const equip = useCallback(
-    async (b) => {
-      setBusyB(b.id);
-      try {
-        const { data } = await questApi.equipButterfly(b.id);
-        setState(data.data.state);
-        setSelected(b.id);
-        stageApi.current?.celebrate();
-      } catch (err) {
-        enqueueSnackbar(extractErrorMessage(err), { variant: 'warning' });
-        load();
-      } finally {
-        setBusyB(null);
-      }
+  const login = useCallback(() => navigate('/login'), [navigate]);
+  const fail = useCallback(
+    (err) => {
+      enqueueSnackbar(extractErrorMessage(err), { variant: 'warning' });
+      load();
     },
     [enqueueSnackbar, load]
   );
 
+  const claim = useCallback(
+    async (quest) => {
+      if (!isAuthenticated) return login();
+      setBusy(quest.id);
+      try {
+        const { data } = await questApi.claim(quest.id);
+        setState(data.data.state);
+        dispatch(userUpdated(data.data.user));
+        setReward(data.data);
+      } catch (err) {
+        fail(err);
+      } finally {
+        setBusy(null);
+      }
+    },
+    [isAuthenticated, login, dispatch, fail]
+  );
+
+  const convert = useCallback(
+    async (n) => {
+      setConverting(true);
+      try {
+        const { data } = await questApi.convert(n);
+        setState(data.data.state);
+        dispatch(userUpdated(data.data.user));
+        setTopUp({ open: false, want: 1 });
+        enqueueSnackbar(`+${n} diamond${n > 1 ? 's' : ''}`, { variant: 'success' });
+      } catch (err) {
+        fail(err);
+      } finally {
+        setConverting(false);
+      }
+    },
+    [dispatch, enqueueSnackbar, fail]
+  );
+
+  const upgrade = useCallback(async () => {
+    if (!isAuthenticated) return login();
+    const next = state.butterfly.next;
+    const have = wallet?.diamonds ?? state.diamonds ?? 0;
+    if (have < next.cost) {
+      setTopUp({ open: true, want: next.cost - have });
+      return undefined;
+    }
+    setBusy('upgrade');
+    try {
+      const { data } = await questApi.upgradeButterfly();
+      setState(data.data.state);
+      dispatch(userUpdated(data.data.user));
+      setTimeout(() => flyApi.current?.celebrate(), 150);
+      enqueueSnackbar(`${next.name} butterfly unlocked`, { variant: 'success' });
+    } catch (err) {
+      fail(err);
+    } finally {
+      setBusy(null);
+    }
+    return undefined;
+  }, [isAuthenticated, login, state, wallet, dispatch, enqueueSnackbar, fail]);
+
   if (error && !state) {
     return (
-      <Alert severity="error" action={<Button color="inherit" size="small" onClick={load}>Retry</Button>} sx={{ borderRadius: '16px' }}>
+      <Alert severity="error" action={<Button color="inherit" size="small" onClick={load}>Retry</Button>}>
         {error}
       </Alert>
     );
   }
-  if (!state) return <LoadingSkeleton />;
+  if (!state) return <Loading />;
 
   const goal = goalMilestone(state.milestones);
-  // Only what matters next: rewards ready to claim first, then the quests closest to done.
-  const nextUp = [...state.milestones, ...state.quests]
-    .filter((q) => q.id !== goal.id && !q.claimed)
-    .sort((a, b) => Number(b.claimable) - Number(a.claimable) || b.value / b.target - a.value / a.target)
-    .slice(0, 3);
-
-  const shownId = selected || state.butterflies.active;
-  const shown = state.butterflies.items.find((b) => b.id === shownId) || state.butterflies.items[0];
-  const coins = isAuthenticated ? walletCoins ?? state.coins ?? 0 : 0;
-  const solidFallback = { '@media (prefers-reduced-transparency: reduce)': { backdropFilter: 'none', bgcolor: T.soft } };
+  const info = levelInfo(state.xp);
+  const coins = isAuthenticated ? wallet?.coins ?? state.coins ?? 0 : 0;
+  const diamonds = isAuthenticated ? wallet?.diamonds ?? state.diamonds ?? 0 : 0;
+  const { butterfly } = state;
+  const ready = [...state.quests].filter((q) => q.claimable).length;
+  const rarity = RARITY_COLOR[butterfly.current.rarity] || FF.muted;
+  const short = butterfly.next ? Math.max(0, butterfly.next.cost - diamonds) : 0;
+  const hud = { position: 'absolute', zIndex: 2 };
 
   return (
-    <Box sx={{ height: { lg: '100%' }, minHeight: { lg: 600 }, display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', lg: 'minmax(0, 1fr) 340px' }, gridTemplateRows: { lg: 'minmax(0, 1fr)' } }}>
-      {party > 0 && <Confetti key={party} pieces={80} />}
-
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0, minHeight: 0 }}>
-        <QuestHeader state={state} T={T} />
-
-        {/* 3D stage */}
-        <Box sx={{ position: 'relative', flex: { lg: 1 }, minHeight: { xs: 380, lg: 0 }, overflow: 'hidden', borderRadius: '28px', background: T.panel, border: T.border, boxShadow: T.panelShadow }}>
-          {stageFailed ? (
-            <Box sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', textAlign: 'center', p: 3 }}>
-              <Typography sx={{ fontWeight: 800, color: T.ink }}>The 3D stage needs WebGL, which this browser has turned off.</Typography>
-            </Box>
-          ) : (
-            <Suspense fallback={<Skeleton variant="rectangular" sx={{ position: 'absolute', inset: 0 }} />}>
-              <Box sx={{ position: 'absolute', inset: 0 }}>
-                <ButterflyStage styleId={shownId} dark={dark} reduce={Boolean(reduce)} onPhase={setPhase} onFail={onFail} apiRef={stageApi} />
-              </Box>
-            </Suspense>
-          )}
-
-          {/* what is on stage */}
-          <Box sx={[{ position: 'absolute', top: 14, left: 14, display: 'flex', alignItems: 'center', gap: 1, pl: 1.5, pr: 1, py: 0.75, borderRadius: 99, bgcolor: T.pill, border: T.border, backdropFilter: 'blur(14px)' }, solidFallback]}>
-            <Typography noWrap sx={{ fontWeight: 800, fontSize: 13.5, color: T.ink }}>{shown.name}</Typography>
-            <Box component="span" sx={{ px: 0.9, py: 0.15, borderRadius: 99, color: '#fff', fontSize: 10, fontWeight: 900, letterSpacing: '0.07em', textTransform: 'uppercase', background: rarityGradient(shown.rarity), boxShadow: `0 6px 12px -6px ${(RARITY[shown.rarity] || RARITY.Starter).glow}` }}>{shown.rarity}</Box>
-            {!shown.owned && <Typography sx={{ fontSize: 11.5, fontWeight: 700, color: T.muted, pr: 0.5 }}>Preview</Typography>}
+    <Box sx={{ height: { lg: '100%' }, minHeight: { lg: 560 }, display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', lg: 'minmax(0, 1fr) 300px' }, gridTemplateRows: { lg: 'minmax(0, 1fr)' }, bgcolor: 'transparent' }}>
+      {/* ------------------------------------------------ road map */}
+      <Box sx={{ ...panelSx, clipPath: cut(16), position: 'relative', overflow: 'hidden', minHeight: { xs: 460, lg: 0 }, background: FF.bg }}>
+        {failed.road ? (
+          <Box sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', textAlign: 'center', p: 3 }}>
+            <Typography sx={{ fontWeight: 800 }}>The 3D map needs WebGL, which this browser has turned off.</Typography>
           </Box>
-
-          {!reduce && !stageFailed && (
-            <Tooltip title="Watch it grow again">
-              <IconButton aria-label="Replay the larva to butterfly story" onClick={() => stageApi.current?.replay()} size="small" sx={{ position: 'absolute', top: 14, right: 14, bgcolor: T.soft, boxShadow: T.raised, color: T.icon, '&:hover': { bgcolor: T.soft, boxShadow: T.pressed } }}>
-                <ReplayRoundedIcon />
-              </IconButton>
-            </Tooltip>
-          )}
-
-          {/* where the story is */}
-          {!stageFailed && (
-            <Box role="status" aria-label="Life cycle stage" sx={[{ position: 'absolute', left: '50%', bottom: 14, transform: 'translateX(-50%)', display: 'flex', gap: 0.6, p: 0.6, borderRadius: 99, bgcolor: T.pill, border: T.border, backdropFilter: 'blur(14px)', maxWidth: 'calc(100% - 24px)' }, solidFallback]}>
-              {PHASES.map(([id, label], i) => {
-                const on = phase === id;
-                const done = PHASES.findIndex(([p]) => p === phase) > i;
-                return (
-                  <Box key={id} sx={{ px: 1.4, py: 0.5, borderRadius: 99, fontSize: 12.5, fontWeight: 800, whiteSpace: 'nowrap', transition: 'all .3s ease', ...(on ? { color: '#fff', background: 'linear-gradient(120deg,#7C4DFF,#E040FB)', boxShadow: '0 8px 16px -8px #A855F7' } : { color: done ? T.icon : T.muted, bgcolor: 'transparent' }) }}>
-                    {label}
-                  </Box>
-                );
-              })}
+        ) : (
+          <Suspense fallback={<Skeleton variant="rectangular" sx={{ position: 'absolute', inset: 0, bgcolor: FF.panel }} />}>
+            <Box sx={{ position: 'absolute', inset: 0 }}>
+              <QuestRoadScene milestones={state.milestones} goalTarget={goal.target} days={state.activeDays} reduce={reduce} onClaim={claim} onFail={roadFail} />
             </Box>
-          )}
+          </Suspense>
+        )}
+
+        {/* top left: level + streak */}
+        <Box sx={{ ...hud, top: 14, left: 14, display: 'flex', alignItems: 'center', gap: 1.25 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, pl: 0.5, pr: 1.75, height: 48, bgcolor: 'rgba(11,14,20,0.82)', border: `1px solid ${FF.line}`, clipPath: cut(9) }}>
+            <Box sx={{ width: 40, height: 40, display: 'grid', placeItems: 'center', fontWeight: 900, fontSize: 20, color: '#10131A', background: `linear-gradient(180deg, ${FF.orangeHi}, ${FF.orange})`, clipPath: cut(7) }}>{info.level}</Box>
+            <Box sx={{ width: 120 }}>
+              <Typography noWrap sx={{ fontSize: 12, fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1.2 }}>{info.rank}</Typography>
+              <Bar pct={info.pct} height={6} />
+            </Box>
+          </Box>
+          <Stat icon={<LocalFireDepartmentRoundedIcon sx={{ fontSize: 20, color: FF.orange }} />} value={state.streakDays} label="Day streak" />
         </Box>
 
-        {/* grand reward + next quests */}
-        <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', xl: 'minmax(0, 1fr) minmax(0, 1fr)' }, flexShrink: 0 }}>
-          <GrandReward state={state} goal={goal} busy={busy} onClaim={claim} isAuthenticated={isAuthenticated} onCheckIn={() => onPick(null)} onLogin={() => navigate('/login')} T={T} />
-          <Box sx={[cardSx(T), { px: 2, py: 1.25 }]}>
-            <Typography sx={{ fontSize: '0.64rem', fontWeight: 900, letterSpacing: '0.16em', color: T.muted }}>NEXT UP</Typography>
-            {nextUp.length > 0 ? (
-              nextUp.map((q) => <QuestRow key={q.id} quest={q} busy={busy} onClaim={claim} onPick={onPick} T={T} />)
-            ) : (
-              <Typography variant="body2" sx={{ py: 3, textAlign: 'center', color: T.muted }}>Every quest is claimed. New ones will show up here.</Typography>
-            )}
-          </Box>
+        {/* top right: wallet */}
+        <Box sx={{ ...hud, top: 14, right: 14, display: 'flex', alignItems: 'center', gap: 1 }}>
+          {isAuthenticated && <Stat icon={<Coin />} value={coins.toLocaleString('en-IN')} label="Coins" />}
+          {isAuthenticated && <Stat icon={<Diamond />} value={diamonds.toLocaleString('en-IN')} label="Diamonds" />}
+          <FFButton tone="blue" onClick={() => (isAuthenticated ? setTopUp({ open: true, want: 1 }) : login())} sx={{ minHeight: 40, px: 2 }}>Top up</FFButton>
+        </Box>
+
+        {/* bottom: missions + today's check-in */}
+        <Box sx={{ ...hud, left: 14, bottom: 14 }}>
+          <FFButton tone="dark" onClick={() => setMissions(true)} sx={{ position: 'relative', border: `1px solid ${FF.line}` }}>
+            <AssignmentRoundedIcon sx={{ fontSize: 20 }} /> Missions
+            {ready > 0 && <Box component="span" sx={{ position: 'absolute', top: -6, right: -6, minWidth: 20, height: 20, px: 0.5, display: 'grid', placeItems: 'center', fontSize: 12, color: '#fff', bgcolor: FF.red, borderRadius: 10 }}>{ready}</Box>}
+          </FFButton>
+        </Box>
+        <Box sx={{ ...hud, left: '50%', bottom: 14, transform: 'translateX(-50%)', textAlign: 'center' }}>
+          {!isAuthenticated ? (
+            <FFButton onClick={login}>Log in to start</FFButton>
+          ) : state.checkedInToday ? (
+            <Box sx={{ ...buttonLike, color: FF.green, border: `1px solid ${FF.green}` }}><CheckRoundedIcon sx={{ fontSize: 20 }} /> Checked in today</Box>
+          ) : (
+            <FFButton onClick={() => onPick(null)}><PlayArrowRoundedIcon /> Solve today&apos;s problem</FFButton>
+          )}
+        </Box>
+        <Box sx={{ ...hud, right: 14, bottom: 14, textAlign: 'right' }}>
+          <Typography sx={{ fontWeight: 900, fontSize: 22, lineHeight: 1, fontVariantNumeric: 'tabular-nums', textShadow: '0 2px 8px #000' }}>
+            {state.activeDays}<Box component="span" sx={{ color: FF.muted }}> / {goal.target}</Box>
+          </Typography>
+          <Typography sx={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.12em', color: FF.muted, textShadow: '0 2px 8px #000' }}>CHECK-INS</Typography>
         </Box>
       </Box>
 
-      <ButterflyPanel
-        butterflies={state.butterflies}
-        selected={shownId}
-        coins={coins}
-        isAuthenticated={isAuthenticated}
-        busyId={busyB}
-        thumbs={thumbs}
-        onSelect={setSelected}
-        onUnlock={unlock}
-        onEquip={equip}
-        onLogin={() => navigate('/login')}
-        T={T}
-      />
+      {/* ------------------------------------------------ butterfly */}
+      <Box component="aside" aria-label="Your butterfly" sx={{ ...panelSx, clipPath: cut(16), display: 'flex', flexDirection: 'column', minHeight: { xs: 460, lg: 0 } }}>
+        <Box sx={{ px: 2, pt: 1.75 }}>
+          <Typography sx={{ fontSize: 11, fontWeight: 900, letterSpacing: '0.16em', color: FF.muted }}>MY BUTTERFLY</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 1 }}>
+            <Typography noWrap sx={{ fontWeight: 900, fontSize: 22, textTransform: 'uppercase', letterSpacing: '0.02em' }}>{butterfly.current.name}</Typography>
+            <Typography sx={{ fontWeight: 900, fontSize: 13, letterSpacing: '0.06em', textTransform: 'uppercase', color: rarity }}>{butterfly.current.rarity}</Typography>
+          </Box>
+        </Box>
 
-      <RewardDialog reward={reward} onClose={() => setReward(null)} T={T} />
+        <Box sx={{ position: 'relative', flex: 1, minHeight: 200, background: `radial-gradient(ellipse at 50% 55%, ${rarity}33, transparent 68%)` }}>
+          {failed.fly ? null : (
+            <Suspense fallback={null}>
+              <ButterflyShowcase styleId={butterfly.current.id} reduce={reduce} onFail={flyFail} apiRef={flyApi} />
+            </Suspense>
+          )}
+        </Box>
+
+        <Box sx={{ px: 2, pb: 2 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.75 }}>
+            <Typography sx={{ fontWeight: 900, fontSize: 13, letterSpacing: '0.08em' }}>LEVEL {butterfly.level} / {butterfly.max}</Typography>
+            {butterfly.next && <Typography sx={{ fontSize: 12, color: FF.muted }}>Next: {butterfly.next.name}</Typography>}
+          </Box>
+          <Box sx={{ display: 'flex', gap: 0.5, mb: 1.5 }} aria-hidden>
+            {butterfly.tiers.map((id, i) => (
+              <Box key={id} sx={{ flex: 1, height: 6, bgcolor: i < butterfly.level ? FF.orange : '#0B0E14', border: `1px solid ${i < butterfly.level ? FF.orange : FF.line}` }} />
+            ))}
+          </Box>
+          {butterfly.next ? (
+            <>
+              <FFButton tone={short > 0 ? 'blue' : 'orange'} disabled={busy === 'upgrade'} onClick={upgrade} sx={{ width: '100%', minHeight: 52, fontSize: 16 }}>
+                <ArrowUpwardRoundedIcon /> {busy === 'upgrade' ? 'Upgrading…' : 'Upgrade'}
+                <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4, ml: 0.5, px: 1, py: 0.2, bgcolor: 'rgba(11,14,20,0.85)', color: FF.text, clipPath: cut(5) }}>
+                  <Diamond size={16} /> {butterfly.next.cost}
+                </Box>
+              </FFButton>
+              <Typography sx={{ mt: 0.75, textAlign: 'center', fontSize: 12.5, color: short > 0 ? FF.orangeHi : FF.muted }}>
+                {isAuthenticated ? (short > 0 ? `Need ${short} more diamond${short > 1 ? 's' : ''}. Tap to top up.` : `You have ${diamonds} diamonds`) : 'Log in to upgrade'}
+              </Typography>
+            </>
+          ) : (
+            <Box sx={{ ...buttonLike, justifyContent: 'center', width: '100%', color: FF.yellow, border: `1px solid ${FF.yellow}` }}>Max level</Box>
+          )}
+        </Box>
+      </Box>
+
+      <TopUpDialog open={topUp.open} want={topUp.want} onClose={() => setTopUp({ open: false, want: 1 })} coins={coins} diamonds={diamonds} rate={state.coinsPerDiamond} busy={converting} onConvert={convert} />
+      <MissionsDialog open={missions} onClose={() => setMissions(false)} quests={state.quests} busy={busy} onClaim={claim} onSolve={(d) => { setMissions(false); onPick(d); }} />
+      <RewardDialog reward={reward} onClose={() => setReward(null)} />
     </Box>
   );
 }
+
+const buttonLike = { display: 'inline-flex', alignItems: 'center', gap: 0.75, minHeight: 44, px: 2.5, fontWeight: 900, fontSize: 14, letterSpacing: '0.06em', textTransform: 'uppercase', bgcolor: 'rgba(11,14,20,0.85)', clipPath: cut(9) };

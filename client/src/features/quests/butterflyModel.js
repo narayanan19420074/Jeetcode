@@ -314,45 +314,6 @@ export function buildLarva() {
   };
 }
 
-// ------------------------------------------------------------------ chrysalis
-// Hangs from its origin (top) and grows downwards. Jade green with gold studs, like a real monarch's.
-export function buildChrysalis(pal) {
-  const group = new THREE.Group();
-  const profile = [[0, 0], [0.05, 0], [0.09, -0.05], [0.16, -0.12], [0.22, -0.28], [0.3, -0.48], [0.33, -0.66], [0.28, -0.86], [0.18, -1.0], [0.08, -1.08], [0, -1.1]].map(([r, y]) => new THREE.Vector2(r, y));
-  const geo = new THREE.LatheGeometry(profile, 32);
-  const shellMat = new THREE.MeshPhysicalMaterial({ color: '#5BE3A4', roughness: 0.18, clearcoat: 1, clearcoatRoughness: 0.08, emissive: '#1FBF7A', emissiveIntensity: 0.25, transparent: true, opacity: 1, iridescence: 0.6 });
-  const innerMat = new THREE.MeshBasicMaterial({ color: pal.mid, toneMapped: false });
-  const inner = new THREE.Mesh(geo, innerMat);
-  inner.scale.setScalar(0.9);
-  const shell = new THREE.Mesh(geo, shellMat);
-  group.add(inner, shell);
-
-  const gold = new THREE.MeshStandardMaterial({ color: '#FFC940', metalness: 1, roughness: 0.2, emissive: '#7A4A00', emissiveIntensity: 0.4 });
-  const stud = new THREE.SphereGeometry(0.028, 10, 8);
-  [[-0.24, 0.2], [-0.72, 0.3]].forEach(([y, r]) => {
-    for (let i = 0; i < 9; i += 1) {
-      const a = (i / 9) * Math.PI * 2;
-      const m = new THREE.Mesh(stud, gold);
-      m.position.set(Math.cos(a) * (r + 0.01), y, Math.sin(a) * (r + 0.01));
-      group.add(m);
-    }
-  });
-  const band = new THREE.Mesh(new THREE.TorusGeometry(0.19, 0.016, 8, 36), gold);
-  band.rotation.x = Math.PI / 2;
-  band.position.y = -0.17;
-  group.add(band);
-
-  return {
-    group,
-    shellMat,
-    innerMat,
-    dispose() {
-      disposeTree(group);
-      stud.dispose();
-    },
-  };
-}
-
 // ------------------------------------------------------------------ diamond
 export function buildDiamond({ dark = false, sparkle, glow }) {
   const blend = dark ? THREE.AdditiveBlending : THREE.NormalBlending;

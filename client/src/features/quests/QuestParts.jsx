@@ -1,269 +1,163 @@
 import { useEffect, useState } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { Box, Button, ButtonBase, Dialog, Typography, alpha } from '@mui/material';
-import { keyframes } from '@mui/material/styles';
-import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
-import CardGiftcardRoundedIcon from '@mui/icons-material/CardGiftcardRounded';
+import { Box, ButtonBase, Dialog, IconButton, Typography } from '@mui/material';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DiamondRoundedIcon from '@mui/icons-material/DiamondRounded';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
-import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
-import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded';
+import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import { Confetti } from '../aptitude/components/MotionBits';
-import { formatCountdown, msUntilUtcMidnight } from '../dashboard/dashboardUtils';
-import { AMBER, GOLD, GOLD_LIGHT, INK, VIBRANT, formatDate, levelInfo, questBadge, resetTimeLabel } from './questUtils';
+import { FF, buttonSx, cut, formatDate, panelSx } from './questUtils';
 
-const shine = keyframes`0% { transform: translateX(-120%) skewX(-18deg); } 60%, 100% { transform: translateX(260%) skewX(-18deg); }`;
-const glow = keyframes`0%, 100% { box-shadow: 0 0 0 0 rgba(245,179,1,.55); } 50% { box-shadow: 0 0 0 9px rgba(245,179,1,0); }`;
+// Small Free-Fire-style building blocks for the Quests page: cut-corner panels, orange/green buttons, plain labels.
 
-const GOLD_GRADIENT = `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD} 55%, ${AMBER} 100%)`;
-const XP_GRADIENT = 'linear-gradient(90deg,#7C4DFF,#E040FB 55%,#FF9A00)';
-const isPro = (q) => q.reward.type === 'pro';
+export const Diamond = ({ size = 18 }) => <DiamondRoundedIcon sx={{ fontSize: size, color: FF.diamond, filter: `drop-shadow(0 0 6px ${FF.diamond})` }} />;
+export const Coin = ({ size = 18 }) => <MonetizationOnRoundedIcon sx={{ fontSize: size, color: FF.coin }} />;
 
-// Raised card used by the bottom row.
-export const cardSx = (T) => ({ borderRadius: '24px', bgcolor: T.soft, boxShadow: T.raised, border: T.border, minWidth: 0 });
-
-// A vibrant square badge with a coloured glow underneath and a lit top edge.
-export function BadgeTile({ colors, size = 40, radius = 13, children }) {
+export function FFButton({ tone = 'orange', sx, children, ...props }) {
   return (
-    <Box
-      sx={{
-        width: size, height: size, borderRadius: `${radius}px`, flexShrink: 0, display: 'grid', placeItems: 'center', color: '#fff',
-        background: colors.bg, boxShadow: `0 10px 18px -8px ${colors.glow}, inset 0 2px 0 rgba(255,255,255,0.55), inset 0 -3px 0 rgba(0,0,0,0.12)`,
-      }}
-    >
+    <ButtonBase {...props} sx={[buttonSx(tone), ...(Array.isArray(sx) ? sx : [sx])]}>
       {children}
+    </ButtonBase>
+  );
+}
+
+// A number with its icon, e.g. diamonds or coins in the top bar.
+export function Stat({ icon, value, color = FF.text, label }) {
+  return (
+    <Box aria-label={label} title={label} sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1.5, height: 40, bgcolor: 'rgba(11,14,20,0.82)', border: `1px solid ${FF.line}`, clipPath: cut(8), fontWeight: 900, fontSize: 16, color, fontVariantNumeric: 'tabular-nums' }}>
+      {icon}
+      {value}
     </Box>
   );
 }
 
-export const GemTile = ({ size = 40 }) => (
-  <BadgeTile colors={VIBRANT.diamond} size={size} radius={Math.round(size * 0.32)}>
-    <DiamondRoundedIcon sx={{ fontSize: size * 0.58 }} />
-  </BadgeTile>
-);
-
-export function ClaimButton({ children = 'Claim', busy, onClick, size = 'medium', fullWidth }) {
-  const reduce = useReducedMotion();
+export function Bar({ pct, color = FF.orange, height = 8 }) {
   return (
-    <Button
-      onClick={onClick}
-      disabled={busy}
-      fullWidth={fullWidth}
-      size={size}
-      startIcon={<CardGiftcardRoundedIcon />}
-      sx={{
-        position: 'relative',
-        overflow: 'hidden',
-        fontWeight: 900,
-        color: INK,
-        background: GOLD_GRADIENT,
-        borderRadius: '99px',
-        px: 2.5,
-        whiteSpace: 'nowrap',
-        minHeight: size === 'large' ? 48 : 36,
-        boxShadow: '0 8px 20px -8px rgba(217,119,6,.7)',
-        animation: reduce ? 'none' : `${glow} 2s infinite`,
-        '&:hover': { filter: 'brightness(1.06)' },
-        '&:active': { transform: 'scale(0.98)' },
-        '&.Mui-disabled': { color: alpha(INK, 0.6), background: GOLD_GRADIENT, opacity: 0.7 },
-        '&::after': reduce ? undefined : { content: '""', position: 'absolute', top: 0, bottom: 0, width: '40%', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,.65), transparent)', animation: `${shine} 2.8s infinite` },
-      }}
-    >
-      {busy ? 'Claiming…' : children}
-    </Button>
+    <Box sx={{ height, bgcolor: '#0B0E14', border: `1px solid ${FF.line}`, overflow: 'hidden' }}>
+      <Box sx={{ width: `${Math.min(100, Math.max(0, pct))}%`, height: '100%', bgcolor: color, transition: 'width .6s ease' }} />
+    </Box>
   );
 }
 
-function Countdown() {
-  const [ms, setMs] = useState(msUntilUtcMidnight());
+const dialogPaper = { sx: { ...panelSx, backgroundImage: 'none', borderRadius: 0, m: 2, width: '100%', maxWidth: 420 } };
+
+function DialogHead({ title, onClose }) {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', px: 2, py: 1.25, borderBottom: `1px solid ${FF.line}`, background: `linear-gradient(90deg, ${FF.orange}33, transparent)` }}>
+      <Typography sx={{ flex: 1, fontWeight: 900, fontSize: 16, letterSpacing: '0.08em', textTransform: 'uppercase', color: FF.text }}>{title}</Typography>
+      <IconButton aria-label="Close" onClick={onClose} size="small" sx={{ color: FF.muted }}>
+        <CloseRoundedIcon />
+      </IconButton>
+    </Box>
+  );
+}
+
+// ------------------------------------------------------------------ top up
+// Coins -> diamonds. The rate comes from the server (100 coins = 1 diamond).
+export function TopUpDialog({ open, onClose, coins, diamonds, rate, want, busy, onConvert }) {
+  const max = Math.max(0, Math.floor(coins / rate));
+  const [n, setN] = useState(1);
   useEffect(() => {
-    const t = setInterval(() => setMs(msUntilUtcMidnight()), 1000);
-    return () => clearInterval(t);
-  }, []);
-  return <span style={{ fontVariantNumeric: 'tabular-nums' }}>{formatCountdown(ms)}</span>;
-}
-
-// ---------------------------------------------------------------- top strip
-// Title, level, XP and streak in one glass strip.
-export function QuestHeader({ state, T }) {
-  const info = levelInfo(state.xp);
-  return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, md: 2.25 }, px: { xs: 1.75, sm: 2.5 }, py: 1.25, borderRadius: '24px', background: T.panel, border: T.border, boxShadow: T.panelShadow }}>
-      <Typography component="h1" sx={{ fontWeight: 900, fontSize: { xs: 18, md: 22 }, letterSpacing: '-0.02em', color: T.ink, flexShrink: 0 }}>Quests</Typography>
-
-      <BadgeTile colors={VIBRANT.violet} size={46} radius={15}>
-        <Box sx={{ textAlign: 'center' }}>
-          <Typography sx={{ fontSize: '0.46rem', fontWeight: 900, letterSpacing: '0.12em', lineHeight: 1, color: 'inherit' }}>LEVEL</Typography>
-          <Typography sx={{ fontSize: '1.3rem', fontWeight: 900, lineHeight: 1.05, color: 'inherit' }}>{info.level}</Typography>
-        </Box>
-      </BadgeTile>
-
-      <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 900, color: T.ink }}>{info.rank}</Typography>
-          <Typography noWrap sx={{ fontSize: '0.76rem', fontWeight: 700, color: T.muted, fontVariantNumeric: 'tabular-nums' }}>
-            {state.xp} XP{info.max ? '' : ` · ${info.toNext} to level ${info.level + 1}`}
-          </Typography>
-        </Box>
-        <Box sx={{ mt: 0.7, height: 10, borderRadius: 99, bgcolor: T.soft, boxShadow: T.pressed, overflow: 'hidden' }}>
-          <motion.div initial={{ width: 0 }} animate={{ width: `${Math.max(info.pct, 4)}%` }} transition={{ duration: 0.9, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 99, background: XP_GRADIENT }} />
-        </Box>
-      </Box>
-
-      <Box title="Day streak" sx={{ display: 'flex', alignItems: 'center', gap: 0.75, flexShrink: 0, pl: 0.6, pr: 1.5, py: 0.6, borderRadius: 99, bgcolor: T.soft, boxShadow: T.raised }}>
-        <BadgeTile colors={VIBRANT.fire} size={30} radius={15}>
-          <LocalFireDepartmentRoundedIcon sx={{ fontSize: 19 }} />
-        </BadgeTile>
-        <Typography sx={{ fontWeight: 900, fontVariantNumeric: 'tabular-nums', color: T.ink }}>{state.streakDays}</Typography>
-      </Box>
-    </Box>
-  );
-}
-
-// ------------------------------------------------------------------ grand reward
-// The big prize, its progress bar with milestone stops, and today's check-in.
-export function GrandReward({ state, goal, busy, onClaim, isAuthenticated, onCheckIn, onLogin, T }) {
-  const pct = Math.min((goal.value / goal.target) * 100, 100);
-  const left = Math.max(goal.target - state.activeDays, 0);
-  const marks = state.milestones.filter((m) => m.target <= goal.target);
-  const blockText = state.proBlock === 'lifetime' ? 'You already have lifetime Pro, so there is nothing to add.' : 'Your paid Pro plan is active. Claim after it ends so no days are wasted.';
-  const today = state.checkedInToday;
+    if (open) setN(Math.min(Math.max(want || 1, 1), Math.max(max, 1)));
+  }, [open, want, max]);
+  const cost = n * rate;
+  const can = n >= 1 && n <= max;
 
   return (
-    <Box sx={[cardSx(T), { p: { xs: 1.75, sm: 2 }, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 1.25 }]}>
-      <Box sx={{ display: 'flex', gap: 1.25, alignItems: 'center' }}>
-        <GemTile size={42} />
-        <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography sx={{ fontSize: '0.64rem', fontWeight: 900, letterSpacing: '0.16em', color: AMBER }}>GRAND REWARD</Typography>
-          <Typography noWrap sx={{ fontWeight: 900, fontSize: '1.05rem', lineHeight: 1.2, letterSpacing: '-0.015em', color: T.ink }}>
-            {goal.target} check-ins = {goal.reward.label} free
-          </Typography>
+    <Dialog open={open} onClose={onClose} slotProps={{ paper: dialogPaper }}>
+      <DialogHead title="Top up diamonds" onClose={onClose} />
+      <Box sx={{ p: 2.5 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2, color: FF.muted, fontWeight: 700, fontSize: 14 }}>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}><Coin /> {coins.toLocaleString('en-IN')} coins</Box>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}><Diamond /> {diamonds.toLocaleString('en-IN')} diamonds</Box>
         </Box>
-      </Box>
 
-      {/* progress bar with the milestone stops on it */}
-      <Box sx={{ px: '14px', pb: 2.25 }}>
-        <Box sx={{ position: 'relative', height: 12 }}>
-          <Box sx={{ position: 'absolute', inset: 0, borderRadius: 99, bgcolor: T.soft, boxShadow: T.pressed, overflow: 'hidden' }}>
-            <motion.div initial={{ width: 0 }} animate={{ width: `${Math.max(pct, goal.value > 0 ? 3 : 0)}%` }} transition={{ duration: 1, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 99, background: XP_GRADIENT }} />
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2, py: 2, bgcolor: '#0B0E14', border: `1px solid ${FF.line}` }}>
+          <IconButton aria-label="Fewer diamonds" onClick={() => setN((v) => Math.max(1, v - 1))} disabled={n <= 1} sx={{ color: FF.text, border: `1px solid ${FF.line}`, borderRadius: 0 }}><RemoveRoundedIcon /></IconButton>
+          <Box sx={{ minWidth: 96, textAlign: 'center' }}>
+            <Typography sx={{ fontWeight: 900, fontSize: 40, lineHeight: 1, color: FF.diamond, fontVariantNumeric: 'tabular-nums' }}>{n}</Typography>
+            <Typography sx={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', color: FF.muted }}>DIAMONDS</Typography>
           </Box>
-          {marks.map((m) => {
-            const reached = state.activeDays >= m.target;
-            const colors = questBadge(m);
-            return (
-              <Box key={m.id} title={`Day ${m.target}: ${m.reward.label}`} sx={{ position: 'absolute', top: '50%', left: `${(m.target / goal.target) * 100}%`, transform: 'translate(-50%, -50%)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                {reached ? (
-                  <BadgeTile colors={colors} size={26} radius={13}>
-                    <CheckRoundedIcon sx={{ fontSize: 16 }} />
-                  </BadgeTile>
-                ) : (
-                  <Box sx={{ width: 26, height: 26, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: T.muted }}>
-                    {isPro(m) ? <DiamondRoundedIcon sx={{ fontSize: 14 }} /> : <MilitaryTechRoundedIcon sx={{ fontSize: 15 }} />}
-                  </Box>
-                )}
-                <Typography sx={{ position: 'absolute', top: 30, fontSize: '0.68rem', fontWeight: 800, color: reached ? AMBER : T.muted, fontVariantNumeric: 'tabular-nums' }}>{m.target}</Typography>
-              </Box>
-            );
-          })}
+          <IconButton aria-label="More diamonds" onClick={() => setN((v) => Math.min(Math.max(max, 1), v + 1))} disabled={n >= max} sx={{ color: FF.text, border: `1px solid ${FF.line}`, borderRadius: 0 }}><AddRoundedIcon /></IconButton>
         </Box>
-      </Box>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
-        <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography noWrap sx={{ fontSize: '0.84rem', fontWeight: 800, color: T.ink }}>
-            {goal.value} / {goal.target} days{goal.claimed ? ' · claimed' : goal.claimable ? '' : ` · ${left} to go`}
-          </Typography>
-          <Typography noWrap variant="caption" sx={{ display: 'block', color: T.muted }}>
-            {goal.claimable && state.proBlock
-              ? blockText
-              : goal.claimed && state.proExpiresAt
-                ? `Pro active until ${formatDate(state.proExpiresAt)}`
-                : !isAuthenticated
-                  ? 'Log in and solve 1 problem a day.'
-                  : today
-                    ? <>Checked in today · next in <Countdown /> (resets {resetTimeLabel()})</>
-                    : <>Get 1 problem Accepted · <Countdown /> left today</>}
-          </Typography>
+        <Box sx={{ display: 'flex', gap: 1, mt: 1.5 }}>
+          {[1, 5, 10].map((v) => (
+            <ButtonBase key={v} disabled={v > max} onClick={() => setN(v)} sx={{ ...buttonSx('dark'), flex: 1, minHeight: 36, px: 1 }}>{v}</ButtonBase>
+          ))}
+          <ButtonBase disabled={max < 1} onClick={() => setN(Math.max(max, 1))} sx={{ ...buttonSx('dark'), flex: 1, minHeight: 36, px: 1 }}>MAX</ButtonBase>
         </Box>
-        {goal.claimable ? (
-          <ClaimButton busy={busy === goal.id} onClick={() => onClaim(goal)}>{`Claim ${goal.reward.label}`}</ClaimButton>
-        ) : !isAuthenticated ? (
-          <Button variant="contained" disableElevation onClick={onLogin} sx={{ fontWeight: 800, borderRadius: '99px', whiteSpace: 'nowrap' }}>Log in</Button>
-        ) : !today ? (
-          <Button variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} onClick={onCheckIn} sx={{ fontWeight: 800, borderRadius: '99px', minHeight: 40, whiteSpace: 'nowrap' }}>Solve now</Button>
-        ) : (
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1.25, py: 0.5, borderRadius: 99, color: '#fff', fontWeight: 800, fontSize: 13, background: VIBRANT.lime.bg, boxShadow: `0 8px 16px -8px ${VIBRANT.lime.glow}`, whiteSpace: 'nowrap' }}>
-            <CheckRoundedIcon sx={{ fontSize: 16 }} /> Done today
-          </Box>
-        )}
+
+        <Typography sx={{ mt: 2, textAlign: 'center', fontWeight: 800, color: can ? FF.text : FF.red }}>
+          {can ? <>{cost.toLocaleString('en-IN')} coins = {n} diamond{n > 1 ? 's' : ''}</> : `You need ${rate} coins for 1 diamond`}
+        </Typography>
+        <Typography sx={{ textAlign: 'center', fontSize: 12.5, color: FF.muted }}>{rate} coins = 1 diamond</Typography>
+
+        <Box sx={{ mt: 2.5 }}>
+          <FFButton tone="blue" disabled={!can || busy} onClick={() => onConvert(n)} sx={{ width: '100%' }}>
+            {busy ? 'Converting…' : 'Convert'}
+          </FFButton>
+        </Box>
       </Box>
-    </Box>
+    </Dialog>
   );
 }
 
-// ------------------------------------------------------------------- next up row
-export function QuestRow({ quest, busy, onClaim, onPick, T }) {
-  const pct = Math.min((quest.value / quest.target) * 100, 100);
-  const Icon = isPro(quest) ? DiamondRoundedIcon : MilitaryTechRoundedIcon;
-  const colors = questBadge(quest);
+// ------------------------------------------------------------------ missions
+// Everything that is not on the road: streaks, problems solved, difficulty goals.
+export function MissionsDialog({ open, onClose, quests, busy, onClaim, onSolve }) {
+  const sorted = [...quests].sort((a, b) => Number(b.claimable) - Number(a.claimable) || Number(a.claimed) - Number(b.claimed) || b.value / b.target - a.value / a.target);
   return (
-    <Box sx={{ py: 0.7, display: 'flex', alignItems: 'center', gap: 1.25 }}>
-      <BadgeTile colors={colors} size={40}>
-        <Icon sx={{ fontSize: 22 }} />
-      </BadgeTile>
-      <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.88rem', color: T.ink }}>{quest.title}</Typography>
-          <Typography sx={{ fontWeight: 800, fontSize: '0.78rem', fontVariantNumeric: 'tabular-nums', flexShrink: 0, color: T.ink }}>{quest.value}/{quest.target}</Typography>
-        </Box>
-        <Box sx={{ mt: 0.5, height: 7, borderRadius: 99, bgcolor: T.soft, boxShadow: T.pressed, overflow: 'hidden' }}>
-          <Box sx={{ width: `${pct}%`, height: '100%', borderRadius: 99, background: colors.bg, transition: 'width .6s ease' }} />
-        </Box>
-        <Typography noWrap variant="caption" sx={{ color: T.muted }}>+{quest.xp} XP · {quest.reward.label}</Typography>
+    <Dialog open={open} onClose={onClose} scroll="paper" slotProps={{ paper: dialogPaper }}>
+      <DialogHead title="Missions" onClose={onClose} />
+      <Box sx={{ overflowY: 'auto' }}>
+        {sorted.map((q) => (
+          <Box key={q.id} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.25, borderBottom: `1px solid ${FF.line}`, opacity: q.claimed ? 0.5 : 1 }}>
+            <Box sx={{ flex: 1, minWidth: 0 }}>
+              <Typography noWrap sx={{ fontWeight: 800, fontSize: 14.5, color: FF.text }}>{q.title}</Typography>
+              <Box sx={{ my: 0.6 }}><Bar pct={(q.value / q.target) * 100} color={q.claimable ? FF.green : FF.orange} height={6} /></Box>
+              <Typography noWrap sx={{ fontSize: 12, color: FF.muted }}>{q.value}/{q.target} · +{q.xp} XP · {q.reward.label}</Typography>
+            </Box>
+            {q.claimed ? (
+              <CheckRoundedIcon sx={{ color: FF.green }} />
+            ) : q.claimable ? (
+              <FFButton tone="green" disabled={busy === q.id} onClick={() => onClaim(q)} sx={{ minHeight: 36, px: 2 }}>Claim</FFButton>
+            ) : (
+              <FFButton tone="dark" onClick={() => onSolve(q.difficulty)} sx={{ minHeight: 36, px: 2 }}>Go</FFButton>
+            )}
+          </Box>
+        ))}
       </Box>
-      {quest.claimable ? (
-        <ClaimButton size="small" busy={busy === quest.id} onClick={() => onClaim(quest)}>Claim</ClaimButton>
-      ) : (
-        <ButtonBase onClick={() => onPick(quest.difficulty)} sx={{ borderRadius: 99, px: 1.4, py: 0.6, fontWeight: 800, fontSize: '0.78rem', color: T.icon, bgcolor: T.soft, boxShadow: T.raised, fontFamily: 'inherit', flexShrink: 0, '&:active': { boxShadow: T.pressed } }}>
-          Solve
-        </ButtonBase>
-      )}
-    </Box>
+    </Dialog>
   );
 }
 
-// -------------------------------------------------------------- reward dialog
-export function RewardDialog({ reward, onClose, T }) {
+// ------------------------------------------------------------------ reward
+export function RewardDialog({ reward, onClose }) {
   const open = Boolean(reward);
   const pro = reward?.reward?.type === 'pro';
-  const colors = pro ? VIBRANT.diamond : VIBRANT.gold;
-  const chip = (bg, fg, children) => (
-    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1.5, py: 0.5, borderRadius: 99, bgcolor: bg, color: fg, fontWeight: 900 }}>{children}</Box>
-  );
   return (
     <>
       {open && <Confetti key={reward.claimed} pieces={90} />}
-      <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth slotProps={{ paper: { sx: { borderRadius: '28px', overflow: 'hidden', textAlign: 'center', backgroundImage: T.panel, border: T.border } } }}>
+      <Dialog open={open} onClose={onClose} slotProps={{ paper: dialogPaper }}>
         {reward && (
-          <Box sx={{ px: 3, pt: 4, pb: 3 }}>
-            <motion.div initial={{ scale: 0.3, rotate: -20, opacity: 0 }} animate={{ scale: 1, rotate: 0, opacity: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 14 }}>
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <BadgeTile colors={colors} size={96} radius={30}>
-                  {pro ? <DiamondRoundedIcon sx={{ fontSize: 54 }} /> : <MilitaryTechRoundedIcon sx={{ fontSize: 54 }} />}
-                </BadgeTile>
+          <Box sx={{ textAlign: 'center', pb: 2.5 }}>
+            <DialogHead title="Reward" onClose={onClose} />
+            <Box sx={{ pt: 3, px: 2.5 }}>
+              <Box sx={{ display: 'inline-grid', placeItems: 'center', width: 96, height: 96, bgcolor: '#0B0E14', border: `2px solid ${pro ? FF.yellow : FF.diamond}`, clipPath: cut(16) }}>
+                <DiamondRoundedIcon sx={{ fontSize: 56, color: pro ? FF.yellow : FF.diamond, filter: `drop-shadow(0 0 12px ${pro ? FF.yellow : FF.diamond})` }} />
               </Box>
-            </motion.div>
-            <Typography sx={{ mt: 2.5, fontSize: '0.72rem', fontWeight: 900, letterSpacing: '0.2em', color: AMBER }}>REWARD UNLOCKED</Typography>
-            <Typography sx={{ mt: 0.5, fontWeight: 900, fontSize: '1.6rem', lineHeight: 1.2, letterSpacing: '-0.02em', color: T.ink }}>{reward.reward.label}</Typography>
-            <Typography sx={{ mt: 1, color: T.muted }}>
-              {pro && reward.proUntil ? `Pro is active until ${formatDate(reward.proUntil)}.` : 'Added to your collection.'}
-            </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mt: 1.75 }}>
-              {chip(alpha(GOLD, 0.18), AMBER, <><BoltRoundedIcon sx={{ fontSize: 18 }} /> +{reward.xp} XP</>)}
-              {reward.coins > 0 && chip(alpha('#22D3EE', 0.18), T.dark ? '#67E8F9' : '#0E7490', <><DiamondRoundedIcon sx={{ fontSize: 17 }} /> +{reward.coins}</>)}
+              <Typography sx={{ mt: 2, fontWeight: 900, fontSize: 26, textTransform: 'uppercase', letterSpacing: '0.03em', color: pro ? FF.yellow : FF.text }}>{reward.reward.label}</Typography>
+              <Typography sx={{ mt: 0.5, color: FF.muted }}>{pro && reward.proUntil ? `Pro active until ${formatDate(reward.proUntil)}` : 'Added to your profile'}</Typography>
+              <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', gap: 1.5, fontWeight: 900 }}>
+                <Box sx={{ color: FF.orangeHi }}>+{reward.xp} XP</Box>
+                {reward.coins > 0 && <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4, color: FF.coin }}><Coin size={18} />+{reward.coins}</Box>}
+              </Box>
+              <Box sx={{ mt: 3 }}>
+                <FFButton tone="green" onClick={onClose} sx={{ width: '100%' }}>OK</FFButton>
+              </Box>
             </Box>
-            <Button fullWidth size="large" onClick={onClose} sx={{ mt: 3, fontWeight: 900, color: INK, background: GOLD_GRADIENT, borderRadius: '99px', minHeight: 48 }}>Awesome</Button>
           </Box>
         )}
       </Dialog>
