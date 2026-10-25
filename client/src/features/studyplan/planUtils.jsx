@@ -191,14 +191,13 @@ export const planTone = (summary) =>
 export const PLAN_AMBER = '#FBBF24';
 
 // Every plan gets its own colour story (same family as the TCS NQT card). Stable per plan id.
-export const PLAN_RED = '#E50914';
 export const PLAN_THEMES = [
-  { name: 'red', gradient: 'linear-gradient(145deg,#0F0F0F 0%,#3D0B0F 48%,#E50914 135%)' },
-  { name: 'wine', gradient: 'linear-gradient(145deg,#0F0F0F 0%,#3A0A1C 48%,#C2124A 135%)' },
-  { name: 'ember', gradient: 'linear-gradient(145deg,#0F0F0F 0%,#3B1206 48%,#EA580C 135%)' },
-  { name: 'plum', gradient: 'linear-gradient(145deg,#0F0F0F 0%,#2A0F3D 48%,#9333EA 135%)' },
-  { name: 'ocean', gradient: 'linear-gradient(145deg,#0F0F0F 0%,#0B1E3F 48%,#2563EB 135%)' },
-  { name: 'jade', gradient: 'linear-gradient(145deg,#0F0F0F 0%,#06302A 48%,#0D9488 135%)' },
+  { name: 'indigo', gradient: 'linear-gradient(135deg,#1E1B4B 0%,#3730A3 55%,#6D28D9 100%)' },
+  { name: 'teal', gradient: 'linear-gradient(135deg,#042F2E 0%,#0F766E 55%,#047857 100%)' },
+  { name: 'rose', gradient: 'linear-gradient(135deg,#4C0519 0%,#BE123C 55%,#C2410C 100%)' },
+  { name: 'ocean', gradient: 'linear-gradient(135deg,#0C1E4A 0%,#1D4ED8 55%,#0E7490 100%)' },
+  { name: 'plum', gradient: 'linear-gradient(135deg,#3B0764 0%,#86198F 55%,#BE185D 100%)' },
+  { name: 'ember', gradient: 'linear-gradient(135deg,#431407 0%,#9A3412 55%,#B45309 100%)' },
 ];
 export const planTheme = (id = '') => PLAN_THEMES[[...String(id)].reduce((n, c) => n + c.charCodeAt(0), 0) % PLAN_THEMES.length];
 
@@ -221,8 +220,8 @@ export function ProgressRing({ value, size = 56, tone = 'primary', onDark = fals
   return (
     <Box sx={{ position: 'relative', width: size, height: size, flexShrink: 0 }} role="img" aria-label={`${value}% done`}>
       <CircularProgress variant="determinate" value={100} size={size} thickness={4.5} sx={(t) => ({ color: onDark ? 'rgba(255,255,255,0.22)' : alpha(t.palette.text.primary, 0.1), position: 'absolute', inset: 0 })} />
-      <CircularProgress variant="determinate" value={value} size={size} thickness={4.5} color={onDark ? 'inherit' : tone} sx={{ position: 'absolute', inset: 0, color: onDark ? '#FFFFFF' : undefined, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }} />
-      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: size * (value >= 100 ? 0.21 : 0.26), fontVariantNumeric: 'tabular-nums', color: onDark ? '#fff' : undefined }}>{value}%</Typography>
+      <CircularProgress variant="determinate" value={value} size={size} thickness={4.5} color={onDark ? 'inherit' : tone} sx={{ position: 'absolute', inset: 0, color: onDark ? PLAN_AMBER : undefined, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }} />
+      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: size * 0.26, fontVariantNumeric: 'tabular-nums', color: onDark ? '#fff' : undefined }}>{value}%</Typography>
     </Box>
   );
 }

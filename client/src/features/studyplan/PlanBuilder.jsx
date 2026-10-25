@@ -1,15 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Alert, Badge, Box, Button, ButtonBase, Chip, CircularProgress, IconButton, InputAdornment, MenuItem, Skeleton, TextField,
-  ToggleButton, ToggleButtonGroup, Tooltip, Typography, alpha,
+  Alert, Badge, Box, Button, Chip, CircularProgress, IconButton, InputAdornment, MenuItem, Skeleton, TextField,
+  ToggleButton, ToggleButtonGroup, Tooltip, Typography,
 } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
-import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
@@ -22,24 +20,15 @@ import { studyPlanApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import MonthCalendar from './MonthCalendar';
-import { DiffTag, PLAN_RED, PLAN_THEMES, addDays, fmtDay, keyToDate, localKey } from './planUtils';
+import { DiffTag, addDays, fmtDay, keyToDate, localKey } from './planUtils';
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 const itemKey = (type, id) => `${type}:${id}`;
 const PAGE = 20;
 const DAY_MS = 86400000;
-// The question list scrolls inside its own box, so the page itself never grows.
-const panelHeight = { xs: 'min(62dvh, 540px)', md: 'calc(100dvh - 400px)' };
-const compactField = { '& .MuiInputBase-root': { height: 38, fontSize: 13.5 } };
-const NAME_IDEAS = ['Interview prep', 'Aptitude sprint', 'DSA basics', 'Placement drive'];
-const PRESETS = [['1 week', 7], ['2 weeks', 14], ['1 month', 30]];
-
-// One colour per step: the same colour marks the step in the tracker, the heading and the controls inside it.
-const STEPS = [
-  { key: 'name', label: 'Name', color: PLAN_RED, Icon: EditRoundedIcon },
-  { key: 'questions', label: 'Questions', color: PLAN_RED, Icon: ListAltRoundedIcon },
-  { key: 'deadline', label: 'Deadline', color: PLAN_RED, Icon: EventRoundedIcon },
-];
+// Both panels scroll inside themselves, so the page itself never grows.
+const panelHeight = { xs: 'min(60dvh, 500px)', md: 'calc(100dvh - 250px)' };
+const compactField = { '& .MuiInputBase-root': { height: 34, fontSize: 13 } };
 
 function useDebounced(value, ms = 300) {
   const [v, setV] = useState(value);
@@ -57,71 +46,8 @@ function schedule(items, today, end) {
   return items.map((it, i) => ({ ...it, date: addDays(today, n === 1 ? days - 1 : Math.round((i * (days - 1)) / (n - 1))) }));
 }
 
-// ---------- step tracker ----------
-
-function Stepper({ step, onGo, canGo }) {
-  return (
-    <Box role="tablist" aria-label="Plan steps" sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' }}>
-      {STEPS.map((st, i) => {
-        const active = i === step;
-        const done = i < step;
-        const { Icon } = st;
-        return (
-          <Box
-            key={st.key}
-            sx={(t) => ({
-              position: 'relative', display: 'flex', justifyContent: 'center',
-              '&::before': i === 0 ? undefined : {
-                content: '""', position: 'absolute', top: 19, left: 'calc(-50% + 26px)', right: 'calc(50% + 26px)', height: 3, borderRadius: 2,
-                bgcolor: i <= step ? STEPS[i - 1].color : t.palette.divider, transition: 'background-color .3s',
-              },
-            })}
-          >
-            <ButtonBase
-              role="tab" aria-selected={active} aria-label={`Step ${i + 1}: ${st.label}`} disabled={!canGo(i)} onClick={() => onGo(i)}
-              sx={{ flexDirection: 'column', gap: 0.6, px: 1, py: 0.25, borderRadius: '12px', fontFamily: 'inherit', '&.Mui-disabled': { opacity: 0.7 } }}
-            >
-              <Box
-                sx={(t) => ({
-                  width: 40, height: 40, borderRadius: '50%', display: 'grid', placeItems: 'center', transition: 'all .25s',
-                  bgcolor: active || done ? st.color : t.palette.action.hover,
-                  color: active || done ? '#fff' : t.palette.text.secondary,
-                  border: `2px solid ${active || done ? st.color : t.palette.divider}`,
-                  boxShadow: active ? `0 0 0 5px ${alpha(st.color, 0.22)}` : 'none',
-                  '& svg': { fontSize: 21 },
-                })}
-              >
-                {done ? <CheckRoundedIcon /> : <Icon />}
-              </Box>
-              <Typography sx={{ fontSize: 12.5, fontWeight: 800, color: active ? 'text.primary' : 'text.secondary' }}>{st.label}</Typography>
-            </ButtonBase>
-          </Box>
-        );
-      })}
-    </Box>
-  );
-}
-
-// Heading shared by every step: small coloured "STEP n OF 3", the question, and one line of help.
-function StepHead({ index, title, help, right }) {
-  const st = STEPS[index];
-  return (
-    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mb: 2 }}>
-      <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Typography sx={{ fontSize: 12, fontWeight: 800, letterSpacing: 0.8, color: st.color }}>STEP {index + 1} OF {STEPS.length}</Typography>
-        <Typography component="h2" sx={{ fontSize: { xs: '1.3rem', sm: '1.5rem' }, fontWeight: 800, lineHeight: 1.2, letterSpacing: -0.3, mt: 0.25 }}>{title}</Typography>
-        {help && <Typography color="text.secondary" sx={{ fontSize: 14, mt: 0.5 }}>{help}</Typography>}
-      </Box>
-      {right}
-    </Box>
-  );
-}
-
-// ---------- step 2: question picker ----------
-
 // Search, difficulty, topic, hide-solved. Scrolls inside its own box and loads more as you reach the bottom.
 function QuestionPicker({ items, added, onToggle }) {
-  const accent = STEPS[1].color;
   const [source, setSource] = useState('problem');
   const [search, setSearch] = useState('');
   const [difficulty, setDifficulty] = useState('');
@@ -226,28 +152,26 @@ function QuestionPicker({ items, added, onToggle }) {
   const shown = selectedOnly ? items : rows;
 
   return (
-    <Box sx={(t) => ({ display: 'flex', flexDirection: 'column', gap: 1, height: panelHeight, minHeight: 380, border: `1px solid ${t.palette.divider}`, borderRadius: '14px', p: 1.25, bgcolor: alpha(t.palette.text.primary, 0.02) })}>
+    <Box sx={[surface, { p: 1.25, display: 'flex', flexDirection: 'column', gap: 1, height: panelHeight, minHeight: 0 }]}>
       <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center' }}>
         <ToggleButtonGroup size="small" exclusive value={source} onChange={(_, v) => v && (setSource(v), setRows([]), setSelectedOnly(false))}>
-          <ToggleButton value="problem" aria-label="Coding questions" sx={{ px: 1.25, height: 38, gap: 0.5, fontWeight: 700, fontSize: 13 }}><CodeRoundedIcon fontSize="small" />Coding</ToggleButton>
-          <ToggleButton value="aptitude" aria-label="Aptitude questions" sx={{ px: 1.25, height: 38, gap: 0.5, fontWeight: 700, fontSize: 13 }}><CalculateRoundedIcon fontSize="small" />Aptitude</ToggleButton>
+          <ToggleButton value="problem" aria-label="Coding questions" sx={{ px: 1, height: 34 }}><Tooltip title="Coding"><CodeRoundedIcon fontSize="small" /></Tooltip></ToggleButton>
+          <ToggleButton value="aptitude" aria-label="Aptitude questions" sx={{ px: 1, height: 34 }}><Tooltip title="Aptitude"><CalculateRoundedIcon fontSize="small" /></Tooltip></ToggleButton>
         </ToggleButtonGroup>
-        <Box sx={{ flex: 1 }} />
-        <Tooltip title={selectedOnly ? 'Show all questions' : 'Show only my picks'}>
-          <ToggleButton size="small" value="sel" selected={selectedOnly} onChange={() => setSelectedOnly((v) => !v)} aria-label="Show selected only" sx={{ px: 1.25, height: 38, gap: 0.75, fontWeight: 700, fontSize: 13 }}>
+        <TextField
+          size="small" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} fullWidth sx={compactField}
+          slotProps={{ input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> } }}
+        />
+        <Tooltip title={selectedOnly ? 'Show all' : 'Show selected only'}>
+          <ToggleButton size="small" value="sel" selected={selectedOnly} onChange={() => setSelectedOnly((v) => !v)} aria-label="Show selected only" sx={{ px: 1, height: 34 }}>
             <Badge color="primary" badgeContent={items.length} max={99}><PlaylistAddCheckRoundedIcon fontSize="small" /></Badge>
-            <Box component="span" sx={{ pl: items.length ? 0.75 : 0 }}>Picks</Box>
           </ToggleButton>
         </Tooltip>
       </Box>
 
       {!selectedOnly && (
-        <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center', flexWrap: 'wrap' }}>
-          <TextField
-            size="small" placeholder="Search questions" value={search} onChange={(e) => setSearch(e.target.value)} sx={[compactField, { flex: '1 1 100%' }]}
-            slotProps={{ input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> } }}
-          />
-          <TextField select size="small" value={difficulty} onChange={(e) => setDifficulty(e.target.value)} sx={[compactField, { minWidth: 112 }]} slotProps={{ select: { displayEmpty: true } }}>
+        <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center' }}>
+          <TextField select size="small" value={difficulty} onChange={(e) => setDifficulty(e.target.value)} sx={[compactField, { minWidth: 104 }]} slotProps={{ select: { displayEmpty: true } }}>
             <MenuItem value="">Any level</MenuItem>
             {['Easy', 'Medium', 'Hard'].map((d) => <MenuItem key={d} value={d}>{d}</MenuItem>)}
           </TextField>
@@ -261,8 +185,8 @@ function QuestionPicker({ items, added, onToggle }) {
               {patterns.map((p) => <MenuItem key={p.slug} value={p.slug}>{p.title}</MenuItem>)}
             </TextField>
           )}
-          <Tooltip title="Hide questions I already solved">
-            <ToggleButton size="small" value="hide" selected={hideSolved} onChange={() => setHideSolved((v) => !v)} aria-label="Hide solved" sx={{ px: 1.25, height: 38 }}>
+          <Tooltip title="Hide solved">
+            <ToggleButton size="small" value="hide" selected={hideSolved} onChange={() => setHideSolved((v) => !v)} aria-label="Hide solved" sx={{ px: 1, height: 34 }}>
               <VisibilityOffRoundedIcon fontSize="small" />
             </ToggleButton>
           </Tooltip>
@@ -274,40 +198,38 @@ function QuestionPicker({ items, added, onToggle }) {
       <Box role="list" onScroll={onScroll} sx={{ flex: 1, minHeight: 0, overflowY: 'auto', scrollbarWidth: 'thin', mx: -0.5, px: 0.5 }}>
         {shown.map((r) => {
           const entry = added.get(itemKey(r.type, r.id));
-          const on = Boolean(entry);
           return (
-            <ButtonBase
-              key={itemKey(r.type, r.id)} role="listitem" disabled={r.locked} onClick={() => onToggle(r)} aria-pressed={on}
-              aria-label={`${on ? 'Remove' : 'Add'} ${r.title}`}
+            <Box
+              key={itemKey(r.type, r.id)} role="listitem"
               sx={(t) => ({
-                width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.25, px: 1, py: 0.9, mb: 0.5, minHeight: 54, textAlign: 'left',
-                fontFamily: 'inherit', borderRadius: '12px', border: `1.5px solid ${on ? alpha(accent, 0.7) : 'transparent'}`,
-                bgcolor: on ? alpha(accent, 0.12) : 'transparent', transition: 'background-color .15s, border-color .15s',
-                '&:hover': { bgcolor: on ? alpha(accent, 0.16) : t.palette.action.hover },
+                display: 'flex', alignItems: 'center', gap: 1, px: 0.75, py: 0.55, borderRadius: '8px',
+                bgcolor: entry ? `${t.palette.primary.main}14` : 'transparent', '&:hover': { bgcolor: entry ? undefined : t.palette.action.hover },
               })}
             >
-              <Box
+              <IconButton
+                size="small" disabled={r.locked} onClick={() => onToggle(r)} aria-label={entry ? 'Remove from plan' : 'Add to plan'}
                 sx={(t) => ({
-                  width: 30, height: 30, flexShrink: 0, borderRadius: '50%', display: 'grid', placeItems: 'center', transition: 'all .15s',
-                  border: `2px solid ${on ? accent : t.palette.divider}`, bgcolor: on ? accent : 'transparent', color: on ? '#fff' : t.palette.text.secondary,
+                  width: 26, height: 26, border: `1.5px solid ${entry ? t.palette.primary.main : t.palette.divider}`,
+                  bgcolor: entry ? t.palette.primary.main : 'transparent', color: entry ? t.palette.primary.contrastText : 'text.secondary',
+                  '&:hover': { bgcolor: entry ? t.palette.primary.dark : t.palette.action.hover },
                 })}
               >
-                {r.locked ? <LockRoundedIcon sx={{ fontSize: 14 }} /> : on ? <CheckRoundedIcon sx={{ fontSize: 18 }} /> : <AddRoundedIcon sx={{ fontSize: 18 }} />}
-              </Box>
+                {r.locked ? <LockRoundedIcon sx={{ fontSize: 13 }} /> : entry ? <CheckRoundedIcon sx={{ fontSize: 15 }} /> : <AddRoundedIcon sx={{ fontSize: 15 }} />}
+              </IconButton>
               <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Typography variant="body2" noWrap sx={{ fontWeight: 700, lineHeight: 1.3 }}>{r.title}</Typography>
-                {r.meta && <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', lineHeight: 1.25 }}>{r.meta}</Typography>}
+                <Typography variant="body2" noWrap sx={{ fontWeight: 600, lineHeight: 1.3 }}>{r.title}</Typography>
+                {r.meta && <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', lineHeight: 1.2 }}>{r.meta}</Typography>}
               </Box>
-              {r.solved && <Tooltip title="You solved this"><CheckRoundedIcon sx={{ fontSize: 17, color: 'success.main' }} /></Tooltip>}
+              {r.solved && <Tooltip title="You solved this"><CheckRoundedIcon sx={{ fontSize: 16, color: 'success.main' }} /></Tooltip>}
               <DiffTag difficulty={r.difficulty} />
-            </ButtonBase>
+            </Box>
           );
         })}
         {loading && !selectedOnly && (rows.length === 0
-          ? [0, 1, 2, 3, 4, 5].map((i) => <Skeleton key={i} height={54} sx={{ borderRadius: '12px', transform: 'none' }} />)
-          : <Box sx={{ textAlign: 'center', py: 1 }}><CircularProgress size={18} /></Box>)}
+          ? [0, 1, 2, 3, 4, 5].map((i) => <Skeleton key={i} height={38} sx={{ borderRadius: '8px' }} />)
+          : <Box sx={{ textAlign: 'center', py: 1 }}><CircularProgress size={16} /></Box>)}
         {!loading && shown.length === 0 && !error && (
-          <Typography color="text.secondary" variant="body2" sx={{ py: 4, textAlign: 'center' }}>{selectedOnly ? 'You have not picked anything yet.' : 'No questions match. Try another search.'}</Typography>
+          <Typography color="text.secondary" variant="body2" sx={{ py: 3, textAlign: 'center' }}>{selectedOnly ? 'Nothing selected yet.' : 'No questions match.'}</Typography>
         )}
       </Box>
     </Box>
@@ -317,8 +239,6 @@ function QuestionPicker({ items, added, onToggle }) {
 // items: [{ type, id, date, title, difficulty }] — the plan being built.
 export default function PlanBuilder({ plan, onSaved, onCancel }) {
   const today = localKey();
-  const topRef = useRef(null);
-  const [step, setStep] = useState(0);
   const [title, setTitle] = useState(plan?.title || '');
   const [items, setItems] = useState(() =>
     (plan?.items || []).map((i) => ({
@@ -333,26 +253,11 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
     const d = keyToDate(endDate);
     return { y: d.getUTCFullYear(), m: d.getUTCMonth() };
   });
+  const [panel, setPanel] = useState('questions'); // phones show one panel at a time
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
 
   const added = useMemo(() => new Map(items.map((i) => [itemKey(i.type, i.id), i])), [items]);
-  const valid = [title.trim().length > 0, items.length > 0, true];
-  const canGo = (i) => i <= step || valid.slice(0, i).every(Boolean);
-  const last = step === STEPS.length - 1;
-
-  const goStep = (i) => {
-    if (!canGo(i)) return;
-    setError('');
-    setStep(i);
-  };
-
-  // Each new step starts at the top, so the heading is always the first thing you see.
-  const firstRender = useRef(true);
-  useEffect(() => {
-    if (firstRender.current) { firstRender.current = false; return; }
-    topRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  }, [step]);
 
   const toggle = (row) => {
     const k = itemKey(row.type, row.id);
@@ -390,159 +295,62 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
     }
   };
 
-  const next = () => (last ? save() : goStep(step + 1));
-  const hint = !valid[step] ? (step === 0 ? 'Give your plan a name to continue' : 'Pick at least one question to continue') : '';
-
-  // ---- step bodies
-  const nameStep = (
-    <Box sx={{ maxWidth: 620 }}>
-      <StepHead index={0} title="What should we call this plan?" help="A short name you will recognise later." />
-      <TextField
-        fullWidth autoFocus={!plan} value={title} onChange={(e) => setTitle(e.target.value)} placeholder="e.g. TCS NQT in 2 weeks"
-        onKeyDown={(e) => { if (e.key === 'Enter' && valid[0]) next(); }}
-        slotProps={{
-          htmlInput: { maxLength: 100, 'aria-label': 'Plan name' },
-          input: {
-            startAdornment: <InputAdornment position="start"><EditRoundedIcon sx={{ color: STEPS[0].color }} /></InputAdornment>,
-            sx: { height: 62, fontSize: { xs: 18, sm: 20 }, fontWeight: 700, borderRadius: '14px' },
-          },
-        }}
-        sx={{ '& .MuiOutlinedInput-root.Mui-focused fieldset': { borderColor: STEPS[0].color, borderWidth: 2 } }}
-      />
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75, textAlign: 'right' }}>{title.length}/100</Typography>
-      <Typography sx={{ fontSize: 13, fontWeight: 700, color: 'text.secondary', mt: 1.5, mb: 1 }}>Need an idea? Tap one</Typography>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-        {NAME_IDEAS.map((n) => (
-          <Chip
-            key={n} label={n} clickable onClick={() => setTitle(n)} variant={title === n ? 'filled' : 'outlined'}
-            sx={{ height: 36, fontWeight: 700, fontSize: 13.5, borderRadius: '18px', ...(title === n ? { bgcolor: STEPS[0].color, color: '#fff', '&:hover': { bgcolor: STEPS[0].color } } : { borderColor: alpha(STEPS[0].color, 0.5) }) }}
-          />
+  const datePanel = (
+    <Box sx={[surface, { p: 1.5, display: { xs: panel === 'date' ? 'block' : 'none', md: 'block' } }]}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mb: 1 }}>
+        <EventRoundedIcon sx={{ fontSize: 18, color: 'primary.main' }} />
+        <Typography variant="body2" sx={{ fontWeight: 700, flex: 1 }}>Finish by <Box component="span" sx={{ color: 'primary.main' }}>{fmtDay(endDate)}</Box></Typography>
+      </Box>
+      <MonthCalendar cursor={cursor} onCursor={setCursor} selected={endDate} onSelect={pickDate} today={today} min={today} />
+      <Box sx={{ display: 'flex', gap: 0.75, mt: 1.25 }}>
+        {[['1 week', 7], ['2 weeks', 14], ['1 month', 30]].map(([label, n]) => (
+          <Chip key={label} size="small" label={label} clickable onClick={() => pickDate(addDays(today, n))} variant={endDate === addDays(today, n) ? 'filled' : 'outlined'} color={endDate === addDays(today, n) ? 'primary' : 'default'} sx={{ fontWeight: 600 }} />
         ))}
       </Box>
     </Box>
   );
 
-  const questionsStep = (
-    <Box>
-      <StepHead
-        index={1} title="Pick your questions" help="Tap a question to add it. Tap again to remove."
-        right={(
-          <Box sx={{ flexShrink: 0, textAlign: 'center', px: 1.5, py: 0.75, borderRadius: '14px', bgcolor: alpha(STEPS[1].color, 0.14), border: `1.5px solid ${alpha(STEPS[1].color, 0.5)}` }}>
-            <Typography sx={{ fontSize: '1.4rem', fontWeight: 900, lineHeight: 1, color: STEPS[1].color, fontVariantNumeric: 'tabular-nums' }}>{items.length}</Typography>
-            <Typography sx={{ fontSize: 11, fontWeight: 700, color: 'text.secondary' }}>picked</Typography>
-          </Box>
-        )}
-      />
-      <QuestionPicker items={items} added={added} onToggle={toggle} />
-    </Box>
-  );
-
-  const brand = PLAN_THEMES[0].gradient;
-  const deadlineStep = (
-    <Box>
-      <StepHead index={2} title="When do you want to finish?" help="We spread your questions evenly until that day." />
-      <Box sx={{ display: 'grid', gap: 2.5, gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.15fr) minmax(0,1fr)' }, alignItems: 'start' }}>
-        <Box>
-          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 1, mb: 2 }}>
-            {PRESETS.map(([label, n]) => {
-              const key = addDays(today, n);
-              const on = endDate === key;
-              return (
-                <ButtonBase
-                  key={label} onClick={() => pickDate(key)} aria-pressed={on}
-                  sx={(t) => ({
-                    flexDirection: 'column', gap: 0.25, py: 1.25, px: 0.5, borderRadius: '14px', fontFamily: 'inherit', transition: 'all .15s',
-                    bgcolor: on ? STEPS[2].color : t.palette.action.hover, color: on ? '#FFFFFF' : t.palette.text.primary,
-                    border: `1.5px solid ${on ? STEPS[2].color : 'transparent'}`, '&:active': { transform: 'scale(0.97)' },
-                  })}
-                >
-                  <Typography sx={{ fontWeight: 800, fontSize: 15 }}>{label}</Typography>
-                  <Typography sx={{ fontWeight: 600, fontSize: 12, opacity: on ? 0.85 : 0.7 }}>{fmtDay(key, { weekday: undefined })}</Typography>
-                </ButtonBase>
-              );
-            })}
-          </Box>
-          <Typography sx={{ fontSize: 13, fontWeight: 700, color: 'text.secondary', mb: 1 }}>Or pick any date</Typography>
-          <MonthCalendar cursor={cursor} onCursor={setCursor} selected={endDate} onSelect={pickDate} today={today} min={today} accent={STEPS[2].color} />
-        </Box>
-
-        {/* what you are about to save, in numbers */}
-        <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: '18px', p: 2.25, color: '#fff', background: brand, boxShadow: '0 18px 32px -18px rgba(229,9,20,0.6)' }}>
-          <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -50, width: 180, height: 180, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%)' }} />
-          <Box sx={{ position: 'relative' }}>
-            <Typography sx={{ fontSize: 11.5, fontWeight: 800, letterSpacing: 0.8, opacity: 0.85 }}>YOUR PLAN</Typography>
-            <ButtonBase onClick={() => goStep(0)} aria-label="Edit plan name" sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.25, maxWidth: '100%', textAlign: 'left', color: 'inherit', fontFamily: 'inherit', borderRadius: '8px' }}>
-              <Typography sx={{ fontSize: '1.2rem', fontWeight: 800, lineHeight: 1.25, overflowWrap: 'anywhere' }}>{title.trim() || 'Untitled plan'}</Typography>
-              <EditRoundedIcon sx={{ fontSize: 17, opacity: 0.8, flexShrink: 0 }} />
-            </ButtonBase>
-            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 1, mt: 2 }}>
-              {[[items.length, items.length === 1 ? 'question' : 'questions'], [days, days === 1 ? 'day' : 'days'], [perDay, 'per day']].map(([big, label]) => (
-                <Box key={label} sx={{ textAlign: 'center', py: 1, borderRadius: '12px', bgcolor: 'rgba(0,0,0,0.22)' }}>
-                  <Typography sx={{ fontSize: '1.6rem', fontWeight: 900, lineHeight: 1.1, fontVariantNumeric: 'tabular-nums' }}>{big}</Typography>
-                  <Typography sx={{ fontSize: 11.5, fontWeight: 700, opacity: 0.9 }}>{label}</Typography>
-                </Box>
-              ))}
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 2, px: 1.25, py: 1, borderRadius: '12px', bgcolor: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.35)' }}>
-              <EventRoundedIcon sx={{ fontSize: 19, color: '#fff' }} />
-              <Typography sx={{ fontSize: 14, fontWeight: 800, color: '#fff' }}>Finish by {fmtDay(endDate)}</Typography>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-    </Box>
-  );
-
-  const bodies = [nameStep, questionsStep, deadlineStep];
-  const accent = STEPS[step].color;
-
   return (
-    <Box ref={topRef} sx={{ maxWidth: 1000, mx: 'auto', scrollMarginTop: 8 }}>
-      {/* top: what this screen is + a way out */}
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-        <Typography component="h1" sx={{ flex: 1, fontSize: { xs: '1.25rem', sm: '1.4rem' }, fontWeight: 800, letterSpacing: -0.3 }}>{plan ? 'Edit plan' : 'New study plan'}</Typography>
-        <Tooltip title="Close without saving"><IconButton onClick={onCancel} disabled={saving} aria-label="Close without saving"><CloseRoundedIcon /></IconButton></Tooltip>
+    <Box>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 1 }}>
+        <IconButton onClick={onCancel} aria-label="Back" edge="start"><ArrowBackRoundedIcon /></IconButton>
+        <TextField
+          variant="standard" placeholder="Plan name" value={title} onChange={(e) => setTitle(e.target.value)} autoFocus={!plan}
+          slotProps={{ htmlInput: { maxLength: 100, 'aria-label': 'Plan name' } }} fullWidth
+          sx={{ '& input': { fontSize: 18, fontWeight: 700 } }}
+        />
       </Box>
 
-      <Box sx={[surface, { px: { xs: 1, sm: 3 }, py: 1.5, mb: 1.5 }]}>
-        <Stepper step={step} onGo={goStep} canGo={canGo} />
+      <ToggleButtonGroup
+        size="small" exclusive value={panel} onChange={(_, v) => v && setPanel(v)} fullWidth
+        sx={{ display: { xs: 'flex', md: 'none' }, mb: 1 }}
+      >
+        <ToggleButton value="questions" sx={{ gap: 0.75, textTransform: 'none', fontWeight: 700 }}><ListAltRoundedIcon fontSize="small" />Questions · {items.length}</ToggleButton>
+        <ToggleButton value="date" sx={{ gap: 0.75, textTransform: 'none', fontWeight: 700 }}><EventRoundedIcon fontSize="small" />{fmtDay(endDate, { weekday: undefined })}</ToggleButton>
+      </ToggleButtonGroup>
+
+      <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.5fr) minmax(280px,1fr)' } }}>
+        <Box sx={{ display: { xs: panel === 'questions' ? 'block' : 'none', md: 'block' }, minWidth: 0 }}>
+          <QuestionPicker items={items} added={added} onToggle={toggle} />
+        </Box>
+        {datePanel}
       </Box>
 
-      {/* the plan name stays in view once it is set, with one tap to change it */}
-      {step > 0 && title.trim() && (
-        <ButtonBase onClick={() => goStep(0)} aria-label="Edit plan name" sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 0.75, mb: 1.5, px: 1.5, py: 0.6, maxWidth: '100%', borderRadius: 99, fontFamily: 'inherit', bgcolor: alpha(STEPS[0].color, 0.14), border: `1px solid ${alpha(STEPS[0].color, 0.4)}`, color: t.palette.text.primary })}>
-          <Typography noWrap sx={{ fontSize: 13.5, fontWeight: 800 }}>{title.trim()}</Typography>
-          <EditRoundedIcon sx={{ fontSize: 15, color: STEPS[0].color, flexShrink: 0 }} />
-        </ButtonBase>
-      )}
-
-      <Box sx={[surface, { position: 'relative', overflow: 'hidden', p: { xs: 2, sm: 3 }, pt: { xs: 2.5, sm: 3.25 } }]}>
-        <Box aria-hidden sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 5, bgcolor: accent, transition: 'background-color .3s' }} />
-        {bodies[step]}
-      </Box>
-
-      {/* always-visible action bar: where you are, and the one next thing to do */}
       <Box
         sx={(t) => ({
-          position: 'sticky', bottom: 8, mt: 1.5, px: { xs: 1.25, sm: 2 }, py: 1.1, display: 'flex', alignItems: 'center', gap: 1.5,
-          borderRadius: '16px', border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, boxShadow: '0 12px 28px -14px rgba(2,6,23,0.45)', zIndex: 2,
+          position: 'sticky', bottom: 8, mt: 1.5, px: 1.5, py: 1, display: 'flex', alignItems: 'center', gap: 1.5,
+          borderRadius: '12px', border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, boxShadow: '0 10px 26px -14px rgba(2,6,23,0.4)', zIndex: 2,
         })}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography variant="body2" noWrap sx={{ fontWeight: 800 }}>
-            {step === 0 ? 'Step 1 of 3' : step === 1 ? `${items.length} question${items.length === 1 ? '' : 's'} picked` : `${items.length} question${items.length === 1 ? '' : 's'} · by ${fmtDay(endDate, { weekday: undefined })}`}
-          </Typography>
-          <Typography variant="caption" sx={{ display: 'block', lineHeight: 1.3, color: error ? 'error.main' : hint ? 'warning.main' : 'text.secondary', fontWeight: error || hint ? 700 : 400 }}>
-            {error || hint || (step === 0 ? 'Name it, pick questions, set a deadline' : step === 1 ? 'Add as many as you like' : `${days} day${days === 1 ? '' : 's'} · about ${perDay}/day`)}
+          <Typography variant="body2" noWrap sx={{ fontWeight: 700 }}>{items.length} question{items.length === 1 ? '' : 's'} · by {fmtDay(endDate, { weekday: undefined })}</Typography>
+          <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>
+            {error ? <Box component="span" sx={{ color: 'error.main' }}>{error}</Box> : items.length ? `${days} day${days === 1 ? '' : 's'} · about ${perDay}/day` : 'Pick questions to begin'}
           </Typography>
         </Box>
-        {step > 0 && <Button onClick={() => goStep(step - 1)} disabled={saving} sx={{ fontWeight: 700, color: 'text.secondary' }}>Back</Button>}
-        <Button
-          variant="contained" disableElevation onClick={next} disabled={saving || !valid[step]}
-          endIcon={last ? <CheckRoundedIcon /> : <ArrowForwardRoundedIcon />}
-          sx={{ fontWeight: 800, px: 3, height: 46, borderRadius: '14px', fontSize: 15, ...(valid[step] && !saving ? { background: `linear-gradient(135deg, ${accent}, #B20710)`, color: '#fff', '&:hover': { background: '#B20710' } } : {}) }}
-        >
-          {saving ? 'Saving…' : last ? (plan ? 'Save changes' : 'Save plan') : 'Next'}
+        <Button onClick={onCancel} disabled={saving}>Cancel</Button>
+        <Button variant="contained" disableElevation onClick={save} disabled={saving || !title.trim() || items.length === 0} sx={{ fontWeight: 700, px: 3 }}>
+          {saving ? 'Saving…' : 'Save'}
         </Button>
       </Box>
     </Box>
