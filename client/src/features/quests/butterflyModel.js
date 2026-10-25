@@ -15,14 +15,6 @@ export const easeOutBack = (x) => {
   return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
 };
 
-const rng = (seed) => {
-  let s = seed >>> 0;
-  return () => {
-    s = (s * 1664525 + 1013904223) >>> 0;
-    return s / 4294967296;
-  };
-};
-
 function canvasTex(size, draw) {
   const canvas = document.createElement('canvas');
   canvas.width = size;
@@ -73,67 +65,53 @@ const disposeTree = (obj) => {
 };
 
 // ------------------------------------------------------------------ wings
+// Game-character look, not a gem: flat colour bands, a thick dark outline, big eye spots and cel (3-step) shading.
 // Outlines of the right wings (x outward, y towards the head). The root sits at the origin, on the body.
 const FORE = [[0, 0.02], [0.28, 0.42], [0.8, 0.98], [1.45, 1.5], [1.98, 1.42], [2.12, 0.95], [1.86, 0.4], [1.25, -0.04], [0.55, -0.14]];
 const HIND = [[0, -0.02], [0.62, -0.06], [1.28, -0.3], [1.62, -0.85], [1.45, -1.45], [1.0, -1.95], [0.62, -1.55], [0.28, -0.95]];
-const SPOT = { fore: [1.55, 1.0, 0.28], hind: [0.95, -1.05, 0.3] };
-const RING = [1, 0.74, 0.46, 0.2]; // concentric facet rings, outer to inner
-const DOME = 0.26; // how high the centre of a wing is lifted, so it reads as a cut stone and not a flat sticker
+const SPOT = { fore: [1.55, 1.0], hind: [0.95, -1.05] };
+const RING = [1, 0.74, 0.46, 0.2]; // concentric colour bands, outer to inner
+const DOME = 0.05;
+const INK = '#10131A';
 
-function facetColor(pal, t, cx, cy, kind, rand) {
-  const col = new THREE.Color();
-  if (pal.rainbow) {
-    col.setHSL((0.55 + t * 0.45 + Math.atan2(cy, cx) * 0.08 + rand() * 0.05 + 2) % 1, 0.9, 0.58);
-  } else {
-    const a = new THREE.Color(pal.inner);
-    const b = new THREE.Color(pal.mid);
-    const c = new THREE.Color(pal.outer);
-    col.copy(t < 0.55 ? a.lerp(b, t / 0.55) : b.lerp(c, (t - 0.55) / 0.45));
-  }
-  if (t > 0.8) col.lerp(new THREE.Color(pal.rim), 0.55);
-  const [sx, sy, sr] = SPOT[kind];
-  if (Math.hypot(cx - sx, cy - sy) < sr) col.set(pal.spot);
-  return col.multiplyScalar(0.86 + rand() * 0.3); // every facet catches the light a little differently
-}
+// Three flat light steps: shadow, mid, lit. This is what makes it read as a cartoon instead of plastic.
+const toonSteps = new THREE.DataTexture(new Uint8Array([95, 175, 255]), 3, 1, THREE.RedFormat);
+toonSteps.minFilter = THREE.NearestFilter;
+toonSteps.magFilter = THREE.NearestFilter;
+toonSteps.needsUpdate = true;
 
-function wingGeometry(kind, pal, mirror, seed) {
+function wingGeometry(kind, pal, mirror, { grow = 1, outline = false } = {}) {
   const curve = new THREE.CatmullRomCurve3((kind === 'fore' ? FORE : HIND).map(([x, y]) => new THREE.Vector3(x, y, 0)), true, 'centripetal');
-  const N = 30;
-  const outline = curve.getPoints(N).slice(0, N);
-  const mid = outline.reduce((a, p) => a.add(p), new THREE.Vector3()).divideScalar(N);
-  const rand = rng(seed);
+  const N = 36;
+  const edge = curve.getPoints(N).slice(0, N);
+  const mid = edge.reduce((a, p) => a.add(p), new THREE.Vector3()).divideScalar(N);
+  const rings = RING.map((k) => edge.map((p) => new THREE.Vector3(mid.x + (p.x - mid.x) * k * grow, mid.y + (p.y - mid.y) * k * grow, outline ? 0 : DOME * Math.pow(1 - k, 1.1))));
+  const centre = new THREE.Vector3(mid.x, mid.y, outline ? 0 : DOME * 1.1);
 
-  const rings = RING.map((k, ri) =>
-    outline.map((p, j) => {
-      const zig = ri === 0 ? 1 : j % 2 ? 0.93 : 1.04; // zig-zag the inner rings: star facets like a brilliant cut
-      return new THREE.Vector3(mid.x + (p.x - mid.x) * k * zig, mid.y + (p.y - mid.y) * k * zig, DOME * Math.pow(1 - k, 1.1) + (ri > 0 && j % 2 ? 0.014 : 0));
-    })
-  );
-  const centre = new THREE.Vector3(mid.x, mid.y, DOME * 1.08);
-
-  const tris = []; // [a, b, c, t]
+  const deep = new THREE.Color(pal.deep);
+  const main = new THREE.Color(pal.main);
+  const light = new THREE.Color(pal.light);
+  const ink = new THREE.Color(INK);
+  const tris = []; // [a, b, c, colour]
   for (let r = 0; r < RING.length - 1; r += 1) {
-    const t = (RING[r] + RING[r + 1]) / 2;
     for (let j = 0; j < N; j += 1) {
       const j1 = (j + 1) % N;
       const a = rings[r][j];
       const b = rings[r][j1];
       const c = rings[r + 1][j];
       const d = rings[r + 1][j1];
-      tris.push([a, c, d, t], [a, d, b, t]);
+      // outer band dark, middle bands main, with every other facet lit in the inner band so it has a burst pattern
+      const col = outline ? ink : r === 0 ? deep : r === 2 && j % 2 ? light : main;
+      tris.push([a, c, d, col], [a, d, b, col]);
     }
   }
   const last = rings[RING.length - 1];
-  for (let j = 0; j < N; j += 1) tris.push([centre, last[(j + 1) % N], last[j], RING[RING.length - 1] / 2]);
+  for (let j = 0; j < N; j += 1) tris.push([centre, last[(j + 1) % N], last[j], outline ? ink : light]);
 
   const pos = new Float32Array(tris.length * 9);
   const col = new Float32Array(tris.length * 9);
-  tris.forEach(([a, b, c, t], i) => {
-    const cx = (a.x + b.x + c.x) / 3;
-    const cy = (a.y + b.y + c.y) / 3;
-    const color = facetColor(pal, t, cx, cy, kind, rand);
-    const order = mirror ? [a, c, b] : [a, b, c]; // mirrored wing: flip x and the winding together
-    order.forEach((v, k) => {
+  tris.forEach(([a, b, c, color], i) => {
+    (mirror ? [a, c, b] : [a, b, c]).forEach((v, k) => {
       const o = i * 9 + k * 3;
       pos[o] = mirror ? -v.x : v.x;
       pos[o + 1] = v.y;
@@ -146,85 +124,100 @@ function wingGeometry(kind, pal, mirror, seed) {
   const geo = new THREE.BufferGeometry();
   geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
   geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
-  geo.computeVertexNormals(); // not indexed => one normal per facet => flat, gem-like shading
+  geo.computeVertexNormals();
   return geo;
 }
 
-const GLINTS = [[2.0, 1.36, 0.03, 1], [1.55, 1.0, 0.1, 0.8], [0.95, 0.7, 0.16, 0.7], [1.45, -1.4, 0.04, 0.8], [0.96, -1.05, 0.1, 0.75], [1.0, -1.9, 0.03, 0.9]];
-
 // One butterfly. `root` is moved/scaled by the scene, `pivot` is tilted and banked, `setFlap(a)` opens/closes the wings.
-export function buildButterfly(pal, { dark = false, sparkle, glow } = {}) {
-  const blend = dark ? THREE.AdditiveBlending : THREE.NormalBlending;
+// pal: main/light/deep wing colours, accent (eye spots, antenna tips), body. pal.gear (0-3) adds a crest and an aura ring.
+export function buildButterfly(pal) {
   const root = new THREE.Group();
   const pivot = new THREE.Group();
   root.add(pivot);
 
-  const wingMat = new THREE.MeshPhysicalMaterial({
-    vertexColors: true,
-    metalness: 0.3,
-    roughness: 0.14,
-    clearcoat: 1,
-    clearcoatRoughness: 0.04,
-    iridescence: 1,
-    iridescenceIOR: 1.8,
-    iridescenceThicknessRange: [180, 720],
-    flatShading: true,
-    side: THREE.DoubleSide,
-    emissive: new THREE.Color(pal.glow),
-    emissiveIntensity: dark ? 0.2 : 0.1,
-    envMapIntensity: dark ? 2 : 1.7,
-    polygonOffset: true,
-    polygonOffsetFactor: 1,
-    polygonOffsetUnits: 1,
-  });
-  const edgeMat = new THREE.LineBasicMaterial({ color: pal.spot, transparent: true, opacity: dark ? 0.5 : 0.4, depthWrite: false, blending: blend });
-  const glintMat = new THREE.SpriteMaterial({ map: sparkle, color: dark ? 0xffffff : new THREE.Color(pal.glow), transparent: true, depthWrite: false, blending: blend });
+  const toon = (color, extra = {}) => new THREE.MeshToonMaterial({ color, gradientMap: toonSteps, ...extra });
+  const wingMat = toon(0xffffff, { vertexColors: true, side: THREE.DoubleSide });
+  const inkMat = new THREE.MeshBasicMaterial({ color: INK, side: THREE.DoubleSide });
+  const inkBack = new THREE.MeshBasicMaterial({ color: INK, side: THREE.BackSide });
+  const accentMat = toon(pal.accent, { side: THREE.DoubleSide });
+  const lightMat = toon(pal.light, { side: THREE.DoubleSide });
 
   const wings = { right: new THREE.Group(), left: new THREE.Group() };
-  const glints = [];
   [false, true].forEach((mirror) => {
     const side = mirror ? wings.left : wings.right;
     pivot.add(side);
     ['fore', 'hind'].forEach((kind) => {
-      const geo = wingGeometry(kind, pal, mirror, kind === 'fore' ? 11 : 29);
-      const mesh = new THREE.Mesh(geo, wingMat);
-      if (kind === 'hind') mesh.position.z = -0.02;
-      side.add(mesh);
-      const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 6), edgeMat);
-      if (kind === 'hind') edges.position.z = -0.02;
-      side.add(edges);
-    });
-    GLINTS.forEach(([x, y, z, size], i) => {
-      const s = new THREE.Sprite(glintMat.clone());
-      s.position.set(mirror ? -x : x, y, z);
-      s.userData = { size, phase: i * 1.7 + (mirror ? 0.9 : 0) };
-      side.add(s);
-      glints.push(s);
+      const z = kind === 'hind' ? -0.03 : 0;
+      const hull = new THREE.Mesh(wingGeometry(kind, pal, mirror, { grow: 1.07, outline: true }), inkMat);
+      hull.position.z = z - 0.025;
+      const mesh = new THREE.Mesh(wingGeometry(kind, pal, mirror), wingMat);
+      mesh.position.z = z;
+      side.add(hull, mesh);
+      // eye spot: ink ring, accent disc, light pupil
+      const [sx, sy] = SPOT[kind];
+      [[0.34, inkMat, 0.06], [0.27, accentMat, 0.075], [0.12, lightMat, 0.09]].forEach(([r, m, h]) => {
+        const disc = new THREE.Mesh(new THREE.CircleGeometry(r, 28), m);
+        disc.position.set(mirror ? -sx : sx, sy, z + h);
+        side.add(disc);
+      });
     });
   });
 
-  // body: thorax + tapered abdomen, head, eyes, antennae
-  const bodyMat = new THREE.MeshPhysicalMaterial({ color: pal.body, metalness: 0.55, roughness: 0.28, iridescence: 0.8, clearcoat: 1, emissive: new THREE.Color(pal.glow), emissiveIntensity: 0.12 });
-  const profile = [[0, -1.2], [0.04, -1.1], [0.08, -0.85], [0.1, -0.5], [0.12, -0.2], [0.15, 0.04], [0.16, 0.18], [0.13, 0.34], [0, 0.42]].map(([r, y]) => new THREE.Vector2(r, y));
-  pivot.add(new THREE.Mesh(new THREE.LatheGeometry(profile, 20), bodyMat));
-  const head = new THREE.Mesh(new THREE.SphereGeometry(0.13, 16, 12), bodyMat);
-  head.position.y = 0.5;
-  pivot.add(head);
-  const eyeMat = new THREE.MeshBasicMaterial({ color: pal.spot, toneMapped: false });
+  // body with a thick outline, accent stripes, big cartoon eyes
+  const bodyMat = toon(pal.body);
+  const profile = [[0, -1.2], [0.05, -1.1], [0.09, -0.85], [0.11, -0.5], [0.13, -0.2], [0.16, 0.04], [0.17, 0.18], [0.14, 0.34], [0, 0.42]].map(([r, y]) => new THREE.Vector2(r, y));
+  const bodyGeo = new THREE.LatheGeometry(profile, 20);
+  const body = new THREE.Mesh(bodyGeo, bodyMat);
+  const bodyHull = new THREE.Mesh(bodyGeo, inkBack);
+  bodyHull.scale.set(1.45, 1.03, 1.45);
+  pivot.add(bodyHull, body);
+  [-0.35, -0.6, -0.85].forEach((y, i) => {
+    const r = [0.115, 0.1, 0.082][i];
+    const band = new THREE.Mesh(new THREE.TorusGeometry(r, 0.022, 8, 20), accentMat);
+    band.rotation.x = Math.PI / 2;
+    band.position.y = y;
+    pivot.add(band);
+  });
+  const headGeo = new THREE.SphereGeometry(0.17, 20, 16);
+  const head = new THREE.Mesh(headGeo, bodyMat);
+  head.position.y = 0.52;
+  const headHull = new THREE.Mesh(headGeo, inkBack);
+  headHull.position.copy(head.position);
+  headHull.scale.setScalar(1.28);
+  pivot.add(headHull, head);
+  const white = new THREE.MeshBasicMaterial({ color: '#FFFFFF' });
+  const eyeGeo = new THREE.SphereGeometry(0.075, 14, 10);
+  const pupilGeo = new THREE.SphereGeometry(0.04, 12, 8);
   [-1, 1].forEach((s) => {
-    const eye = new THREE.Mesh(new THREE.SphereGeometry(0.045, 10, 8), eyeMat);
-    eye.position.set(s * 0.08, 0.53, 0.09);
-    pivot.add(eye);
-    const curveA = new THREE.CatmullRomCurve3([new THREE.Vector3(s * 0.03, 0.58, 0), new THREE.Vector3(s * 0.14, 0.95, 0.04), new THREE.Vector3(s * 0.34, 1.28, 0.08)]);
-    pivot.add(new THREE.Mesh(new THREE.TubeGeometry(curveA, 12, 0.011, 6), bodyMat));
-    const tip = new THREE.Mesh(new THREE.SphereGeometry(0.035, 10, 8), eyeMat);
+    const eye = new THREE.Mesh(eyeGeo, white);
+    eye.position.set(s * 0.085, 0.56, 0.12);
+    const pupil = new THREE.Mesh(pupilGeo, inkMat);
+    pupil.position.set(s * 0.09, 0.56, 0.18);
+    const feeler = new THREE.CatmullRomCurve3([new THREE.Vector3(s * 0.04, 0.64, 0), new THREE.Vector3(s * 0.16, 1.0, 0.04), new THREE.Vector3(s * 0.34, 1.28, 0.08)]);
+    const tube = new THREE.Mesh(new THREE.TubeGeometry(feeler, 12, 0.02, 6), inkMat);
+    const tip = new THREE.Mesh(new THREE.SphereGeometry(0.06, 12, 8), accentMat);
     tip.position.set(s * 0.34, 1.28, 0.08);
-    pivot.add(tip);
+    pivot.add(eye, pupil, tube, tip);
   });
 
-  const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: pal.glow, transparent: true, opacity: dark ? 0.5 : 0.34, depthWrite: false, blending: blend }));
-  halo.scale.setScalar(5.2);
-  halo.position.z = -0.2;
+  // gear grows with the tier: a crest from level 3, a spinning aura ring from level 4
+  const gear = pal.gear || 0;
+  if (gear >= 2) {
+    [-0.1, 0, 0.1].forEach((x, i) => {
+      const spike = new THREE.Mesh(new THREE.ConeGeometry(0.05, i === 1 ? 0.3 : 0.2, 6), accentMat);
+      spike.position.set(x, 0.78 + (i === 1 ? 0.05 : 0), 0.02);
+      spike.rotation.z = -x * 2.2;
+      pivot.add(spike);
+    });
+  }
+  let aura = null;
+  if (gear >= 3) {
+    aura = new THREE.Mesh(new THREE.TorusGeometry(2.55, 0.05, 8, 80), new THREE.MeshBasicMaterial({ color: pal.accent }));
+    aura.position.z = -0.4;
+    pivot.add(aura);
+  }
+  const halo = new THREE.Mesh(new THREE.CircleGeometry(2.4, 48), new THREE.MeshBasicMaterial({ color: pal.main, transparent: true, opacity: 0.14, depthWrite: false }));
+  halo.position.z = -0.5;
   pivot.add(halo);
 
   const setFlap = (a) => {
@@ -237,18 +230,15 @@ export function buildButterfly(pal, { dark = false, sparkle, glow } = {}) {
     root,
     pivot,
     halo,
-    glints,
     setFlap,
-    twinkle(t, amount = 1) {
-      glints.forEach((g) => {
-        const k = Math.pow(0.5 + 0.5 * Math.sin(t * 3.2 + g.userData.phase), 3);
-        g.scale.setScalar((0.1 + 0.55 * k) * g.userData.size * amount + 0.001);
-        g.material.opacity = 0.35 + 0.65 * k;
-      });
+    twinkle(t) {
+      if (aura) aura.rotation.z = t * 0.8;
     },
     dispose() {
       disposeTree(root);
-      glintMat.dispose();
+      white.dispose();
+      eyeGeo.dispose();
+      pupilGeo.dispose();
     },
   };
 }
