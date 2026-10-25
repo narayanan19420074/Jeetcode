@@ -11,17 +11,16 @@ import { buildDiamond, buildLarva, clamp01, createSparkles, glowTexture, sparkle
 const ROAD = [[-7.2, 2.0], [-4.6, -1.3], [-1.6, 1.9], [1.7, -1.5], [4.7, 1.7], [7.3, -0.6]].map(([x, z]) => new THREE.Vector3(x, 0, z));
 const SPACING = 0.78;
 const CAM_DIR = new THREE.Vector3(0, 0.74, 0.67).normalize();
-const COLORS_DARK = { orange: '#FF7A00', yellow: '#FFC933', green: '#2ED573', blue: '#27B6FF', grey: '#8E99AD', white: '#FFFFFF', outline: '#0B0E14' };
-const COLORS_LIGHT = { orange: '#E65F00', yellow: '#C98A00', green: '#14A85A', blue: '#0A8FE0', grey: '#5E6A82', white: '#141824', outline: '#FFFFFF' };
+const COLORS = { orange: '#FF7A00', yellow: '#FFC933', green: '#2ED573', blue: '#27B6FF', grey: '#8E99AD', white: '#FFFFFF' };
 
-function backdrop(dark) {
+function backdrop() {
   const canvas = document.createElement('canvas');
   canvas.width = 4;
   canvas.height = 256;
   const c = canvas.getContext('2d');
   const g = c.createLinearGradient(0, 0, 0, 256);
-  g.addColorStop(0, dark ? '#0B0E14' : '#F6F8FC');
-  g.addColorStop(1, dark ? '#16203A' : '#DCE5F5');
+  g.addColorStop(0, '#0B0E14');
+  g.addColorStop(1, '#16203A');
   c.fillStyle = g;
   c.fillRect(0, 0, 4, 256);
   const tex = new THREE.CanvasTexture(canvas);
@@ -30,7 +29,7 @@ function backdrop(dark) {
 }
 
 // Sign above every diamond: small line on top, reward below. Outlined so it stays readable on any background.
-function labelTexture(top, bottom, topColor, bottomColor, outline) {
+function labelTexture(top, bottom, topColor, bottomColor) {
   const canvas = document.createElement('canvas');
   canvas.width = 512;
   canvas.height = 192;
@@ -45,7 +44,7 @@ function labelTexture(top, bottom, topColor, bottomColor, outline) {
       px -= 2;
     } while (c.measureText(text).width > 470 && px > 20);
     c.lineWidth = 12;
-    c.strokeStyle = outline;
+    c.strokeStyle = '#0B0E14';
     c.strokeText(text, 256, y);
     c.fillStyle = color;
     c.fillText(text, 256, y);
@@ -88,9 +87,7 @@ function ribbonGeometry(curve, width, offset, y, from = 0, to = 1, steps = 160) 
   return geo;
 }
 
-function buildStage(host, { dark, reduce, onClaim }) {
-  const COLORS = dark ? COLORS_DARK : COLORS_LIGHT;
-  const add = dark ? THREE.AdditiveBlending : THREE.NormalBlending;
+function buildStage(host, { reduce, onClaim }) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.toneMapping = THREE.NeutralToneMapping;
@@ -99,12 +96,12 @@ function buildStage(host, { dark, reduce, onClaim }) {
   host.appendChild(el);
 
   const scene = new THREE.Scene();
-  scene.background = backdrop(dark);
+  scene.background = backdrop();
   const pmrem = new THREE.PMREMGenerator(renderer);
   const room = new RoomEnvironment();
   const envRT = pmrem.fromScene(room, 0.04);
   scene.environment = envRT.texture;
-  scene.environmentIntensity = dark ? 0.9 : 1.1;
+  scene.environmentIntensity = 0.9;
   room.dispose?.();
   pmrem.dispose();
 
@@ -122,14 +119,14 @@ function buildStage(host, { dark, reduce, onClaim }) {
 
   const glow = glowTexture();
   const sparkle = sparkleTexture();
-  const sparkles = createSparkles(sparkle, dark);
+  const sparkles = createSparkles(sparkle, true);
   scene.add(sparkles.points);
 
   // ground, grid and road
-  const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), new THREE.MeshStandardMaterial({ color: dark ? 0x0e121b : 0xe8edf6, roughness: 0.9, metalness: 0.1 }));
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), new THREE.MeshStandardMaterial({ color: 0x0e121b, roughness: 0.9, metalness: 0.1 }));
   floor.rotation.x = -Math.PI / 2;
   scene.add(floor);
-  const grid = new THREE.GridHelper(60, 60, dark ? 0x232c40 : 0xc9d2e3, dark ? 0x171d2c : 0xd9e0ee);
+  const grid = new THREE.GridHelper(60, 60, 0x232c40, 0x171d2c);
   grid.position.y = 0.004;
   scene.add(grid);
 
@@ -138,8 +135,8 @@ function buildStage(host, { dark, reduce, onClaim }) {
   const L = curve.getLength();
   const basic = (color, opacity = 1, blending = THREE.NormalBlending) => new THREE.MeshBasicMaterial({ color, transparent: opacity < 1, opacity, side: THREE.DoubleSide, toneMapped: false, depthWrite: false, blending });
   const roadParts = [
-    new THREE.Mesh(ribbonGeometry(curve, 3.4, 0, 0.006), basic(0xff7a00, dark ? 0.1 : 0.16, add)),
-    new THREE.Mesh(ribbonGeometry(curve, 1.9, 0, 0.012), new THREE.MeshStandardMaterial({ color: dark ? 0x1b2130 : 0x333b50, roughness: 0.65, metalness: 0.2, side: THREE.DoubleSide })),
+    new THREE.Mesh(ribbonGeometry(curve, 3.4, 0, 0.006), basic(0xff7a00, 0.1, THREE.AdditiveBlending)),
+    new THREE.Mesh(ribbonGeometry(curve, 1.9, 0, 0.012), new THREE.MeshStandardMaterial({ color: 0x1b2130, roughness: 0.65, metalness: 0.2, side: THREE.DoubleSide })),
     new THREE.Mesh(ribbonGeometry(curve, 0.1, 0.95, 0.02), basic(0xff7a00)),
     new THREE.Mesh(ribbonGeometry(curve, 0.1, -0.95, 0.02), basic(0xff7a00)),
   ];
@@ -163,7 +160,7 @@ function buildStage(host, { dark, reduce, onClaim }) {
   const arrowGeo = new THREE.CircleGeometry(0.22, 3);
   arrowGeo.rotateX(-Math.PI / 2);
   const arrows = Array.from({ length: 7 }, () => {
-    const m = new THREE.Mesh(arrowGeo, basic(dark ? 0xffc933 : 0xff9a1f, 0.9));
+    const m = new THREE.Mesh(arrowGeo, basic(0xffc933, 0.9));
     m.visible = false;
     scene.add(m);
     return m;
@@ -184,10 +181,10 @@ function buildStage(host, { dark, reduce, onClaim }) {
     return curve.getPointAt(Math.min(1, s / L), out);
   };
   const headPos = new THREE.Vector3();
-  const startPad = new THREE.Mesh(new THREE.CylinderGeometry(0.75, 0.75, 0.06, 40), new THREE.MeshStandardMaterial({ color: dark ? 0x232c40 : 0xdfe5f1, roughness: 0.5, metalness: 0.4 }));
+  const startPad = new THREE.Mesh(new THREE.CylinderGeometry(0.75, 0.75, 0.06, 40), new THREE.MeshStandardMaterial({ color: 0x232c40, roughness: 0.5, metalness: 0.4 }));
   startPad.position.copy(ROAD[0]);
   scene.add(startPad);
-  const startLabel = new THREE.Sprite(new THREE.SpriteMaterial({ map: labelTexture('START', '', COLORS.grey, COLORS.grey, COLORS.outline), transparent: true, depthWrite: false }));
+  const startLabel = new THREE.Sprite(new THREE.SpriteMaterial({ map: labelTexture('START', '', COLORS.grey, COLORS.grey), transparent: true, depthWrite: false }));
   startLabel.scale.set(2, 0.75, 1);
   startLabel.position.set(ROAD[0].x, 0.9, ROAD[0].z);
   scene.add(startLabel);
@@ -235,11 +232,11 @@ function buildStage(host, { dark, reduce, onClaim }) {
       bottom = 'TAP TO CLAIM';
     } else if (n.state === 'locked' && !goal) topColor = COLORS.grey;
     n.label.material.map?.dispose();
-    n.label.material.map = labelTexture(top, bottom, topColor, bottomColor, COLORS.outline);
+    n.label.material.map = labelTexture(top, bottom, topColor, bottomColor);
     n.label.material.needsUpdate = true;
   };
 
-  const ringColor = { locked: dark ? 0x2b3345 : 0xb7c1d6, ready: 0xff7a00, claimed: dark ? 0x2ed573 : 0x14a85a };
+  const ringColor = { locked: 0x2b3345, ready: 0xff7a00, claimed: 0x2ed573 };
 
   const buildNodes = () => {
     clearNodes();
@@ -252,12 +249,12 @@ function buildStage(host, { dark, reduce, onClaim }) {
       group.position.copy(pos);
       scene.add(group);
 
-      const pad = new THREE.Mesh(new THREE.CylinderGeometry(goal ? 0.95 : 0.75, goal ? 0.95 : 0.75, 0.08, 40), new THREE.MeshStandardMaterial({ color: dark ? 0x232c40 : 0xdfe5f1, roughness: 0.5, metalness: 0.4 }));
+      const pad = new THREE.Mesh(new THREE.CylinderGeometry(goal ? 0.95 : 0.75, goal ? 0.95 : 0.75, 0.08, 40), new THREE.MeshStandardMaterial({ color: 0x232c40, roughness: 0.5, metalness: 0.4 }));
       pad.position.y = 0.04;
       const ring = new THREE.Mesh(new THREE.TorusGeometry(goal ? 0.95 : 0.75, 0.05, 10, 60), new THREE.MeshBasicMaterial({ color: ringColor.locked, toneMapped: false }));
       ring.rotation.x = Math.PI / 2;
       ring.position.y = 0.09;
-      const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 4, 24, 1, true), new THREE.MeshBasicMaterial({ color: 0xffa21a, transparent: true, opacity: 0.22, depthWrite: false, side: THREE.DoubleSide, blending: add, toneMapped: false }));
+      const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 4, 24, 1, true), new THREE.MeshBasicMaterial({ color: 0xffa21a, transparent: true, opacity: 0.22, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, toneMapped: false }));
       beam.position.y = 2;
       beam.visible = false;
       const label = new THREE.Sprite(new THREE.SpriteMaterial({ transparent: true, depthWrite: false }));
@@ -267,7 +264,7 @@ function buildStage(host, { dark, reduce, onClaim }) {
       hit.position.y = 1;
       group.add(pad, ring, beam, label, hit);
 
-      const diamond = buildDiamond({ dark, sparkle, glow });
+      const diamond = buildDiamond({ dark: true, sparkle, glow });
       scene.add(diamond.gem, diamond.holder);
       let crown = null;
       if (goal) {
@@ -397,7 +394,7 @@ function buildStage(host, { dark, reduce, onClaim }) {
         while (eatCarry >= 1) {
           eatCarry -= 1;
           const a = Math.random() * Math.PI * 2;
-          sparkles.emit({ x: n.pos.x + Math.cos(a) * 0.4, y: 1 + rnd(0.7), z: n.pos.z + Math.sin(a) * 0.4 }, { x: rnd(1.5), y: Math.random() * 1.5, z: rnd(1.5) }, { color: Math.random() > 0.5 ? '#27B6FF' : dark ? '#FFFFFF' : '#FFB020', size: 0.3, ttl: 1.6, to: headPos, strength: 8 });
+          sparkles.emit({ x: n.pos.x + Math.cos(a) * 0.4, y: 1 + rnd(0.7), z: n.pos.z + Math.sin(a) * 0.4 }, { x: rnd(1.5), y: Math.random() * 1.5, z: rnd(1.5) }, { color: Math.random() > 0.5 ? '#7FDBFF' : '#FFFFFF', size: 0.3, ttl: 1.6, to: headPos, strength: 8 });
         }
         if (k >= 1) {
           n.state = 'claimed';
@@ -523,7 +520,7 @@ function buildStage(host, { dark, reduce, onClaim }) {
   };
 }
 
-export default function QuestRoadScene({ milestones, goalTarget, days, dark = true, reduce = false, onClaim, onFail }) {
+export default function QuestRoadScene({ milestones, goalTarget, days, reduce = false, onClaim, onFail }) {
   const hostRef = useRef(null);
   const apiRef = useRef(null);
   const dataRef = useRef({ milestones, goalTarget, days });
@@ -534,7 +531,7 @@ export default function QuestRoadScene({ milestones, goalTarget, days, dark = tr
   useEffect(() => {
     let api = null;
     try {
-      api = buildStage(hostRef.current, { dark, reduce, onClaim: (m) => claimRef.current?.(m) });
+      api = buildStage(hostRef.current, { reduce, onClaim: (m) => claimRef.current?.(m) });
     } catch {
       onFail?.();
       return undefined;
@@ -545,7 +542,7 @@ export default function QuestRoadScene({ milestones, goalTarget, days, dark = tr
       api.dispose();
       apiRef.current = null;
     };
-  }, [dark, reduce, onFail]);
+  }, [reduce, onFail]);
 
   useEffect(() => {
     apiRef.current?.setData({ milestones, goalTarget, days });

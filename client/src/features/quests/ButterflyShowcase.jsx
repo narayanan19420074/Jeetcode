@@ -6,7 +6,7 @@ import { buildButterfly, createSparkles, glowTexture, sparkleTexture } from './b
 
 // The sidebar butterfly: one crystal butterfly that keeps flying in a loop. Upgrading swaps its wings and sets off a burst.
 
-function buildShowcase(host, { dark, styleId, reduce }) {
+function buildShowcase(host, { styleId, reduce }) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.setClearColor(0x000000, 0);
@@ -33,7 +33,7 @@ function buildShowcase(host, { dark, styleId, reduce }) {
   const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
   const glow = glowTexture();
   const sparkle = sparkleTexture();
-  const sparkles = createSparkles(sparkle, dark, 260);
+  const sparkles = createSparkles(sparkle, true, 260);
   scene.add(sparkles.points);
 
   let id = styleId;
@@ -43,7 +43,7 @@ function buildShowcase(host, { dark, styleId, reduce }) {
       scene.remove(b.root);
       b.dispose();
     }
-    b = buildButterfly(paletteFor(id), { dark, sparkle, glow });
+    b = buildButterfly(paletteFor(id), { dark: true, sparkle, glow });
     b.root.scale.setScalar(0.62);
     scene.add(b.root);
     glint.color.set(paletteFor(id).spot);
@@ -103,7 +103,7 @@ function buildShowcase(host, { dark, styleId, reduce }) {
       if (Math.random() < dt * 32) {
         const side = Math.random() > 0.5 ? 1 : -1;
         const q = b.root.position;
-        sparkles.emit({ x: q.x + side * (0.4 + Math.random()) , y: q.y + (Math.random() - 0.5) * 1.1, z: q.z }, { x: 0, y: -0.25 - Math.random() * 0.3, z: 0 }, { color: Math.random() > 0.4 || !dark ? paletteFor(id).glow : '#FFFFFF', size: 0.22, ttl: 1.1 });
+        sparkles.emit({ x: q.x + side * (0.4 + Math.random()) , y: q.y + (Math.random() - 0.5) * 1.1, z: q.z }, { x: 0, y: -0.25 - Math.random() * 0.3, z: 0 }, { color: Math.random() > 0.4 ? paletteFor(id).glow : '#FFFFFF', size: 0.22, ttl: 1.1 });
       }
     }
     b.twinkle(T, reduce ? 0.6 : 1);
@@ -122,7 +122,7 @@ function buildShowcase(host, { dark, styleId, reduce }) {
     },
     celebrate() {
       sparkles.burst(b.root.position, 90, { color: paletteFor(id).glow, speed: 3.2, size: 0.4, ttl: 1.7 });
-      sparkles.burst(b.root.position, 40, { color: dark ? '#FFFFFF' : '#FFB020', speed: 2.2, size: 0.28, ttl: 1.3 });
+      sparkles.burst(b.root.position, 40, { color: '#FFFFFF', speed: 2.2, size: 0.28, ttl: 1.3 });
     },
     dispose() {
       cancelAnimationFrame(raf);
@@ -145,7 +145,7 @@ function buildShowcase(host, { dark, styleId, reduce }) {
   };
 }
 
-export default function ButterflyShowcase({ styleId, dark = true, reduce = false, onFail, apiRef }) {
+export default function ButterflyShowcase({ styleId, reduce = false, onFail, apiRef }) {
   const hostRef = useRef(null);
   const styleRef = useRef(styleId);
   styleRef.current = styleId;
@@ -153,7 +153,7 @@ export default function ButterflyShowcase({ styleId, dark = true, reduce = false
   useEffect(() => {
     let api = null;
     try {
-      api = buildShowcase(hostRef.current, { dark, styleId: styleRef.current, reduce });
+      api = buildShowcase(hostRef.current, { styleId: styleRef.current, reduce });
     } catch {
       onFail?.();
       return undefined;
@@ -163,7 +163,7 @@ export default function ButterflyShowcase({ styleId, dark = true, reduce = false
       api.dispose();
       apiRef.current = null;
     };
-  }, [dark, reduce, onFail, apiRef]);
+  }, [reduce, onFail, apiRef]);
 
   useEffect(() => {
     apiRef.current?.setStyle(styleId);
