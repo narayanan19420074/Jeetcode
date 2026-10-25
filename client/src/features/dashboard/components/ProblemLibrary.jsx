@@ -38,6 +38,8 @@ import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
 import KeyboardDoubleArrowDownRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowDownRounded';
 import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowUpRounded';
+import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { problemsApi } from '../../../api/problemsApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { CATEGORY_GROUPS, DIFF_COLOR, SORT_OPTIONS, surface } from '../dashboardUtils';
@@ -66,6 +68,10 @@ const sameSet = (a, b) => a.length === b.length && a.every((x) => b.includes(x))
 
 function CategoryPills({ groups, selectedTags, onSelect, onClear }) {
   const noTags = selectedTags.length === 0;
+  const scrollRef = useRef(null);
+  const drag = useRef({ down: false, moved: false, startX: 0, startLeft: 0 });
+  const [edges, setEdges] = useState({ left: false, right: false });
+
   const pill = (active) => (t) => ({
     flexShrink: 0,
     gap: 0.9,
@@ -81,28 +87,143 @@ function CategoryPills({ groups, selectedTags, onSelect, onClear }) {
     '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: 2 },
   });
 
-  return (
-    <Box
-      role="group"
-      aria-label="Topic groups"
-      sx={{ display: 'flex', gap: 1, overflowX: 'auto', py: 0.5, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}
-    >
-      <ButtonBase onClick={onClear} aria-pressed={noTags} sx={pill(noTags)}>
-        <Typography variant="body2" sx={{ fontWeight: 700 }}>
-          All Topics
-        </Typography>
-      </ButtonBase>
-      {groups.map((g) => {
-        const active = sameSet(selectedTags, g.tags);
-        return (
-          <ButtonBase key={g.key} onClick={() => onSelect(g)} aria-pressed={active} sx={pill(active)}>
-            <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: g.color }} />
-            <Typography variant="body2" sx={{ fontWeight: 700, whiteSpace: 'nowrap' }}>
-              {g.label}
-            </Typography>
-          </ButtonBase>
-        );
+  const updateEdges = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const left = el.scrollLeft > 4;
+    const right = el.scrollLeft + el.clientWidth < el.scrollWidth - 4;
+    setEdges((e) => (e.left === left && e.right === right ? e : { left, right }));
+  }, []);
+
+  useLayoutEffect(() => {
+    updateEdges();
+    const el = scrollRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return undefined;
+    const ro = new ResizeObserver(updateEdges);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [groups, updateEdges]);
+
+  // Mouse wheel scrolls the row sideways (desktop). Native listener so we can preventDefault.
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return undefined;
+    const onWheel = (e) => {
+      if (el.scrollWidth <= el.clientWidth || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
+
+  // Auto-move: the selected pill glides into the middle of the row.
+  const activeKey = noTags ? 'all' : groups.find((g) => sameSet(selectedTags, g.tags))?.key ?? '';
+  useEffect(() => {
+    const el = scrollRef.current;
+    const node = el?.querySelector('[aria-pressed="true"]');
+    if (!el || !node) return;
+    const target = node.offsetLeft - (el.clientWidth - node.offsetWidth) / 2;
+    el.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+  }, [activeKey]);
+
+  const nudge = (dir) => {
+    const el = scrollRef.current;
+    if (el) el.scrollBy({ left: dir * Math.max(160, el.clientWidth * 0.6), behavior: 'smooth' });
+  };
+
+  // Click-and-drag with a mouse (touch already pans natively).
+  const onPointerDown = (e) => {
+    if (e.pointerType !== 'mouse') return;
+    const el = scrollRef.current;
+    drag.current = { down: true, moved: false, startX: e.clientX, startLeft: el.scrollLeft };
+  };
+  const onPointerMove = (e) => {
+    const d = drag.current;
+    if (!d.down) return;
+    const dx = e.clientX - d.startX;
+    if (Math.abs(dx) > 5) d.moved = true;
+    if (d.moved) scrollRef.current.scrollLeft = d.startLeft - dx;
+  };
+  const endDrag = () => {
+    drag.current.down = false;
+  };
+  const swallowClickAfterDrag = (e) => {
+    if (drag.current.moved) {
+      e.stopPropagation();
+      e.preventDefault();
+      drag.current.moved = false;
+    }
+  };
+
+  const arrow = (dir) => (
+    <IconButton
+      size="small"
+      aria-label={dir < 0 ? 'Scroll topics left' : 'Scroll topics right'}
+      onClick={() => nudge(dir)}
+      sx={(t) => ({
+        display: { xs: 'none', sm: 'inline-flex' },
+        position: 'absolute',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        [dir < 0 ? 'left' : 'right']: 0,
+        zIndex: 2,
+        bgcolor: t.palette.background.paper,
+        border: `1px solid ${t.palette.divider}`,
+        '&:hover': { bgcolor: t.palette.background.paper },
       })}
+    >
+      {dir < 0 ? <ChevronLeftRoundedIcon fontSize="small" /> : <ChevronRightRoundedIcon fontSize="small" />}
+    </IconButton>
+  );
+
+  return (
+    <Box sx={{ position: 'relative', width: '100%', minWidth: 0, maxWidth: '100%' }}>
+      {edges.left && arrow(-1)}
+      <Box
+        ref={scrollRef}
+        role="group"
+        aria-label="Topic groups"
+        onScroll={updateEdges}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={endDrag}
+        onPointerLeave={endDrag}
+        onClickCapture={swallowClickAfterDrag}
+        sx={{
+          display: 'flex',
+          gap: 1,
+          width: '100%',
+          minWidth: 0,
+          py: 0.5,
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          touchAction: 'pan-x pan-y',
+          overscrollBehaviorX: 'contain',
+          WebkitOverflowScrolling: 'touch',
+          scrollbarWidth: 'none',
+          '&::-webkit-scrollbar': { display: 'none' },
+          userSelect: 'none',
+        }}
+      >
+        <ButtonBase onClick={onClear} aria-pressed={noTags} sx={pill(noTags)}>
+          <Typography variant="body2" sx={{ fontWeight: 700, whiteSpace: 'nowrap' }}>
+            All Topics
+          </Typography>
+        </ButtonBase>
+        {groups.map((g) => {
+          const active = sameSet(selectedTags, g.tags);
+          return (
+            <ButtonBase key={g.key} onClick={() => onSelect(g)} aria-pressed={active} sx={pill(active)}>
+              <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: g.color }} />
+              <Typography variant="body2" sx={{ fontWeight: 700, whiteSpace: 'nowrap' }}>
+                {g.label}
+              </Typography>
+            </ButtonBase>
+          );
+        })}
+      </Box>
+      {edges.right && arrow(1)}
     </Box>
   );
 }
@@ -592,7 +713,7 @@ export default function ProblemLibrary({ isAuthenticated, progress, dailyId, pre
 
   return (
     // On wide screens the whole library fits the window once it is scrolled to the top, so only the problem list scrolls.
-    <Stack ref={cardRef} spacing={1.5} sx={{ height: { lg: height ?? 'calc(100vh - 120px)' }, scrollMarginTop: { xs: 72, lg: 0 } }}>
+    <Stack ref={cardRef} spacing={1.5} sx={{ height: { lg: height ?? 'calc(100vh - 120px)' }, scrollMarginTop: { xs: 72, lg: 0 }, minWidth: 0, maxWidth: '100%' }}>
       <CategoryPills
         groups={groups}
         selectedTags={q.tags}
