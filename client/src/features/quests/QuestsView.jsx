@@ -1,9 +1,9 @@
-import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useReducedMotion } from 'framer-motion';
 import { useSnackbar } from 'notistack';
-import { Alert, Box, Button, Skeleton, Typography } from '@mui/material';
+import { Alert, Box, Button, Skeleton, Typography, useMediaQuery, useTheme } from '@mui/material';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
@@ -19,8 +19,8 @@ import { FF, RARITY_COLOR, cut, goalMilestone, levelInfo, panelSx } from './ques
 const QuestRoadScene = lazy(() => import('./QuestRoadScene'));
 const ButterflyShowcase = lazy(() => import('./ButterflyShowcase'));
 
-const Loading = () => (
-  <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', lg: 'minmax(0, 1fr) 300px' }, height: { lg: '100%' } }}>
+const Loading = ({ height }) => (
+  <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', lg: 'minmax(0, 1fr) 300px' }, height }}>
     <Skeleton variant="rectangular" sx={{ height: { xs: 420, lg: '100%' }, bgcolor: FF.panel }} />
     <Skeleton variant="rectangular" sx={{ height: { xs: 360, lg: '100%' }, bgcolor: FF.panel }} />
   </Box>
@@ -43,6 +43,29 @@ export default function QuestsView({ isAuthenticated, onPick }) {
   const [converting, setConverting] = useState(false);
   const [failed, setFailed] = useState({ road: false, fly: false });
   const flyApi = useRef(null);
+
+  // Same trick as the leaderboard: the dashboard gives this view no height, so on wide screens measure the room left
+  // under it and fill exactly that. The page never scrolls; the sidebar and rail stay put.
+  const isLg = useMediaQuery(useTheme().breakpoints.up('lg'));
+  const [wrapEl, setWrapEl] = useState(null);
+  const [fitH, setFitH] = useState(null);
+  useLayoutEffect(() => {
+    if (!isLg || !wrapEl) {
+      setFitH(null);
+      return undefined;
+    }
+    const measure = () => setFitH(Math.max(420, Math.round(window.innerHeight - wrapEl.getBoundingClientRect().top - 24)));
+    measure();
+    window.addEventListener('resize', measure);
+    const t1 = setTimeout(measure, 450); // after the page's fade-in
+    const t2 = setTimeout(measure, 1500); // after the offer banner (if any) loads
+    return () => {
+      window.removeEventListener('resize', measure);
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [isLg, wrapEl]);
+  const wrapH = isLg ? (fitH ? `${fitH}px` : 'calc(100dvh - 150px)') : 'auto';
   const roadFail = useCallback(() => setFailed((f) => ({ ...f, road: true })), []);
   const flyFail = useCallback(() => setFailed((f) => ({ ...f, fly: true })), []);
 
@@ -134,7 +157,7 @@ export default function QuestsView({ isAuthenticated, onPick }) {
       </Alert>
     );
   }
-  if (!state) return <Loading />;
+  if (!state) return <Box ref={setWrapEl} sx={{ height: wrapH }}><Loading height="100%" /></Box>;
 
   const goal = goalMilestone(state.milestones);
   const info = levelInfo(state.xp);
@@ -147,7 +170,7 @@ export default function QuestsView({ isAuthenticated, onPick }) {
   const hud = { position: 'absolute', zIndex: 2 };
 
   return (
-    <Box sx={{ height: { lg: '100%' }, minHeight: { lg: 560 }, display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', lg: 'minmax(0, 1fr) 300px' }, gridTemplateRows: { lg: 'minmax(0, 1fr)' }, bgcolor: 'transparent' }}>
+    <Box ref={setWrapEl} sx={{ height: wrapH, display: 'grid', gap: 2, gridTemplateColumns: { xs: 'minmax(0, 1fr)', lg: 'minmax(0, 1fr) 300px' }, gridTemplateRows: { lg: 'minmax(0, 1fr)' } }}>
       {/* ------------------------------------------------ road map */}
       <Box sx={{ ...panelSx, clipPath: cut(16), position: 'relative', overflow: 'hidden', minHeight: { xs: 460, lg: 0 }, background: FF.bg }}>
         {failed.road ? (

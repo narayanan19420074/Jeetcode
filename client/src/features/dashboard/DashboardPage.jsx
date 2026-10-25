@@ -129,7 +129,7 @@ export default function DashboardPage() {
   // only the middle column scrolls (the leaderboard scrolls its own list instead).
   const fillH = useViewportFill(rootRef, isLg);
   const showRail = !['plans', 'leaderboard', 'friends', 'explore', 'contest', 'quests'].includes(currentView);
-  const ownScroll = currentView === 'leaderboard';
+  const ownScroll = currentView === 'leaderboard' || currentView === 'quests';
 
   const goView = useCallback((v) => setParams(v === 'library' ? {} : { view: v }), [setParams]);
   const selectList = useCallback((id) => setParams({ view: 'list', list: id }), [setParams]);

@@ -37,7 +37,12 @@ function labelTexture(top, bottom, topColor, bottomColor) {
   c.textAlign = 'center';
   c.lineJoin = 'round';
   const line = (text, y, size, color) => {
-    c.font = `900 ${size}px "Arial Black", "Segoe UI", system-ui, sans-serif`;
+    // shrink until the text fits inside the sign, so long names never run off the edge
+    let px = size;
+    do {
+      c.font = `900 ${px}px "Arial Black", "Segoe UI", system-ui, sans-serif`;
+      px -= 2;
+    } while (c.measureText(text).width > 470 && px > 20);
     c.lineWidth = 12;
     c.strokeStyle = '#0B0E14';
     c.strokeText(text, 256, y);
@@ -213,7 +218,7 @@ function buildStage(host, { reduce, onClaim }) {
     const pro = m.reward.type === 'pro';
     const goal = m.id === n.goalId;
     let top = goal ? `${m.target} CHECK-INS` : `DAY ${m.target}`;
-    let bottom = goal ? `= ${m.reward.label.toUpperCase()}` : m.reward.label.toUpperCase();
+    let bottom = pro ? `${goal ? '= ' : ''}${m.reward.label.toUpperCase()}` : 'BADGE';
     let topColor = COLORS.white;
     let bottomColor = pro ? COLORS.yellow : COLORS.blue;
     if (n.state === 'claimed') {
