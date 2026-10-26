@@ -57,10 +57,6 @@ const envSchema = z.object({
   RAZORPAY_WEBHOOK_SECRET: z.string().optional(),
   RAZORPAY_PLAN_ID_MONTHLY: z.string().optional(),
   RAZORPAY_PLAN_ID_YEARLY: z.string().optional(),
-  // Self-hosted YouPI PG (UPI, 0% fee) — see docs/MERCHANT_INTEGRATION.md in youpi-pg/YouPI-PG
-  YOUPI_API_URL: z.string().optional(),
-  YOUPI_MERCHANT_ID: z.string().optional(),
-  YOUPI_WEBHOOK_SECRET: z.string().optional(),
   FREE_ACCESS_UNTIL: z.string().optional(),
 
   // Transactional email (forgot password, email verification) via Brevo's HTTP API.

@@ -1,23 +1,45 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Button, Chip, Stack, Typography } from '@mui/material';
+import { Alert, Box, Button, Chip, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Stack, Typography } from '@mui/material';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
+import { useSnackbar } from 'notistack';
+import { billingApi } from '../../../api/billingApi';
 import ActivateLicenseModal from '../../../components/ActivateLicenseModal';
-import { Card, CardBody, PageTitle } from '../components/SettingsUi';
+import { Card, CardBody, PageTitle, Row, describeError } from '../components/SettingsUi';
 
-const PLAN_LABEL = { monthly: 'Monthly pass', yearly: 'Yearly pass', 'license-key': 'License key' };
+const PLAN_LABEL = { monthly: 'Monthly subscription', yearly: 'Yearly subscription', 'license-key': 'License key' };
 
 export default function BillingSection() {
+  const { enqueueSnackbar } = useSnackbar();
+  useDispatch();
   const user = useSelector((s) => s.auth.user);
   const [licenseOpen, setLicenseOpen] = useState(false);
+  const [cancelOpen, setCancelOpen] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(null);
 
+  const subscription = user.proPlan === 'monthly' || user.proPlan === 'yearly';
   const expires = user.proExpiresAt ? new Date(user.proExpiresAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : null;
+
+  const cancel = async () => {
+    setBusy(true);
+    setError(null);
+    try {
+      const { data } = await billingApi.cancel();
+      enqueueSnackbar(data.message || 'Subscription cancelled', { variant: 'success' });
+      setCancelOpen(false);
+    } catch (err) {
+      setError(describeError(err));
+    } finally {
+      setBusy(false);
+    }
+  };
 
   return (
     <Box>
-      <PageTitle title="Billing & plans" description="Your plan and license." />
+      <PageTitle title="Billing & plans" description="Your plan, license and subscription." />
 
       <Card title="Current plan">
         <CardBody>
@@ -33,7 +55,7 @@ export default function BillingSection() {
                 </Stack>
                 <Typography variant="body2" color="text.secondary">
                   {user.isPro
-                    ? `${PLAN_LABEL[user.proPlan] || 'Pro'}${expires ? ` · valid until ${expires}` : user.proPlan === 'license-key' ? ' · no expiry' : ''}`
+                    ? `${PLAN_LABEL[user.proPlan] || 'Pro'}${expires ? ` · ${subscription ? 'renews / ends' : 'valid until'} ${expires}` : user.proPlan === 'license-key' ? ' · no expiry' : ''}`
                     : 'Upgrade to unlock Pro problems and company tracks.'}
                 </Typography>
               </Box>
@@ -45,6 +67,9 @@ export default function BillingSection() {
             )}
           </Stack>
         </CardBody>
+        {user.isPro && subscription && (
+          <Row title="Cancel subscription" description="You keep Pro until the end of the period you've already paid for." control={<Button color="error" variant="outlined" onClick={() => setCancelOpen(true)}>Cancel subscription</Button>} />
+        )}
       </Card>
 
       {!user.isPro && (
@@ -68,6 +93,25 @@ export default function BillingSection() {
 
       <ActivateLicenseModal open={licenseOpen} onClose={() => setLicenseOpen(false)} />
 
+      <Dialog open={cancelOpen} onClose={() => !busy && setCancelOpen(false)} maxWidth="xs" fullWidth>
+        <DialogTitle sx={{ fontWeight: 800 }}>Cancel your subscription?</DialogTitle>
+        <DialogContent>
+          {error && (
+            <Alert severity="error" sx={{ mb: 2 }}>
+              {error}
+            </Alert>
+          )}
+          <DialogContentText>Pro stays active until the end of your current billing period{expires ? ` (${expires})` : ''}. It won't renew after that.</DialogContentText>
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2 }}>
+          <Button onClick={() => setCancelOpen(false)} disabled={busy} color="inherit">
+            Keep Pro
+          </Button>
+          <Button variant="contained" color="error" disableElevation onClick={cancel} disabled={busy}>
+            {busy ? <CircularProgress size={20} color="inherit" /> : 'Cancel subscription'}
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }

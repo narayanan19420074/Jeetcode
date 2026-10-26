@@ -2,6 +2,7 @@ import { apiClient } from './apiClient';
 
 export const billingApi = {
   checkout: (plan) => apiClient.post('/billing/checkout', { plan }),
-  orderStatus: (orderId) => apiClient.get(`/billing/order/${encodeURIComponent(orderId)}`),
+  verify: (payload) => apiClient.post('/billing/verify', payload),
   status: () => apiClient.get('/billing/status'),
+  cancel: () => apiClient.post('/billing/cancel'),
 };
