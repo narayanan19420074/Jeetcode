@@ -60,6 +60,11 @@ const ExamsPage = lazy(() => import('./features/exams/ExamsPage'));
 const StorePage = lazy(() => import('./features/store/StorePage'));
 const AdminStorePage = lazy(() => import('./features/admin/pages/AdminStorePage'));
 
+// Public legal pages (standalone, no navbar, reachable logged-in or out)
+const PrivacyPolicyPage = lazy(() => import('./features/legal/PrivacyPolicyPage'));
+const TermsPage = lazy(() => import('./features/legal/TermsPage'));
+const RefundPolicyPage = lazy(() => import('./features/legal/RefundPolicyPage'));
+
 const RouteFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
     <CircularProgress />
@@ -84,6 +89,9 @@ export default function App() {
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
       <Route path="/verify-email" element={<VerifyEmailPage />} />
+      <Route path="/privacy" element={<Suspense fallback={<RouteFallback />}><PrivacyPolicyPage /></Suspense>} />
+      <Route path="/terms" element={<Suspense fallback={<RouteFallback />}><TermsPage /></Suspense>} />
+      <Route path="/refund" element={<Suspense fallback={<RouteFallback />}><RefundPolicyPage /></Suspense>} />
 
       {/* Admin's own login page — no navbar, not linked anywhere in the
           client UI. Reached only by direct URL. */}

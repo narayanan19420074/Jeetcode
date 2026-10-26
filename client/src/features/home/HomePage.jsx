@@ -735,6 +735,13 @@ export default function HomePage() {
             <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
               © {new Date().getFullYear()} JeetCode
             </Typography>
+            <Stack direction="row" spacing={2} useFlexGap sx={{ mt: 1, flexWrap: 'wrap' }}>
+              {[['Privacy Policy', '/privacy'], ['Terms of Service', '/terms'], ['Refund & Cancellation', '/refund']].map(([label, path]) => (
+                <Link key={path} component="button" type="button" onClick={go(path)} underline="hover" color="text.secondary" sx={{ font: 'inherit', fontSize: '0.8rem' }}>
+                  {label}
+                </Link>
+              ))}
+            </Stack>
           </Container>
         </Box>
 

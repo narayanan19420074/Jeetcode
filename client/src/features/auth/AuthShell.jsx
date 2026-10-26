@@ -1,5 +1,5 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Paper, Typography, TextField } from '@mui/material';
+import { Box, Link, Paper, Typography, TextField } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 
 // Shared GitHub-style shell for Login / Signup: logo + title on top,
@@ -35,6 +35,13 @@ export default function AuthShell({ title, children, footer }) {
       <Paper elevation={0} variant="outlined" sx={{ p: 2.5, width: '100%', maxWidth: 340, borderRadius: 2 }}>
         {children}
       </Paper>
+
+      <Typography variant="caption" color="text.secondary" sx={{ mt: 2, maxWidth: 340, textAlign: 'center', lineHeight: 1.6 }}>
+        By continuing you agree to our{' '}
+        <Link component={RouterLink} to="/terms" underline="hover">Terms</Link>
+        {' '}and{' '}
+        <Link component={RouterLink} to="/privacy" underline="hover">Privacy Policy</Link>.
+      </Typography>
 
       {footer && (
         <Paper

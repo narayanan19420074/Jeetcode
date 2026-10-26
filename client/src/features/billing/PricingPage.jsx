@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Container, Box, Typography, Paper, Grid, Button, Chip, Stack, Alert, CircularProgress } from '@mui/material';
+import { Container, Box, Typography, Paper, Grid, Button, Chip, Stack, Alert, CircularProgress, Link } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { billingApi } from '../../api/billingApi';
@@ -192,6 +192,13 @@ export default function PricingPage() {
           </Paper>
         </Grid>
       </Grid>
+
+      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 3, textAlign: 'center', lineHeight: 1.7 }}>
+        Plans renew automatically until cancelled; cancel any time. See our{' '}
+        <Link component="button" type="button" onClick={() => navigate('/refund')} underline="hover" sx={{ font: 'inherit', verticalAlign: 'baseline' }}>Refund &amp; Cancellation Policy</Link>,{' '}
+        <Link component="button" type="button" onClick={() => navigate('/terms')} underline="hover" sx={{ font: 'inherit', verticalAlign: 'baseline' }}>Terms</Link> and{' '}
+        <Link component="button" type="button" onClick={() => navigate('/privacy')} underline="hover" sx={{ font: 'inherit', verticalAlign: 'baseline' }}>Privacy Policy</Link>.
+      </Typography>
     </Container>
   );
 }
