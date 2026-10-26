@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { Container, Box, Typography, Paper, Grid, Button, Chip, Stack, Alert, CircularProgress, Link } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Container, Box, Typography, Paper, Grid, Button, Chip, Stack, Alert, CircularProgress } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { billingApi } from '../../api/billingApi';
-import { loadRazorpayScript } from '../../api/loadRazorpayScript';
 import { extractErrorMessage } from '../../api/apiClient';
+import { userUpdated } from '../auth/authSlice';
 
 const FEATURES = [
   'Every company-tagged problem (LeetCode Premium style)',
@@ -20,19 +20,62 @@ const YEARLY_PRICE = 1199; // ~33% cheaper than 12x monthly
 
 export default function PricingPage() {
   const navigate = useNavigate();
-  const { isAuthenticated, user } = useSelector((s) => s.auth);
+  const dispatch = useDispatch();
+  const [searchParams] = useSearchParams();
+  const returnedOrder = searchParams.get('order');
+  const { isAuthenticated } = useSelector((s) => s.auth);
 
   const [status, setStatus] = useState(null);
   const [loadingPlan, setLoadingPlan] = useState(null); // 'monthly' | 'yearly' | null
   const [error, setError] = useState(null);
-  const [cancelling, setCancelling] = useState(false);
+  const [confirming, setConfirming] = useState(Boolean(returnedOrder));
+  const pollRef = useRef(null);
 
   useEffect(() => {
     if (!isAuthenticated) return;
     billingApi.status().then(({ data }) => setStatus(data.data)).catch(() => {});
   }, [isAuthenticated]);
 
-  const handleSubscribe = async (plan) => {
+  // Back from the YouPI checkout page: the signed webhook activates Pro on the
+  // server, so poll the order until it flips to paid (or give up after ~2 min).
+  useEffect(() => {
+    if (!returnedOrder || !isAuthenticated) return undefined;
+    let tries = 0;
+    const tick = async () => {
+      tries += 1;
+      try {
+        const { data } = await billingApi.orderStatus(returnedOrder);
+        const orderStatus = data.data.status;
+        if (orderStatus === 'paid') {
+          const res = await billingApi.status();
+          dispatch(userUpdated(res.data.data));
+          setStatus(res.data.data);
+          setConfirming(false);
+          navigate('/dashboard');
+          return;
+        }
+        if (orderStatus !== 'created') {
+          setConfirming(false);
+          setError(`Payment ${orderStatus}. No money is taken unless it is confirmed — you can try again.`);
+          return;
+        }
+      } catch (err) {
+        setError(extractErrorMessage(err));
+        setConfirming(false);
+        return;
+      }
+      if (tries >= 40) {
+        setConfirming(false);
+        setError('Still waiting for the bank confirmation. If you paid, Pro will switch on automatically within a few minutes — refresh later.');
+        return;
+      }
+      pollRef.current = setTimeout(tick, 3000);
+    };
+    tick();
+    return () => clearTimeout(pollRef.current);
+  }, [returnedOrder, isAuthenticated, dispatch, navigate]);
+
+  const handleBuy = async (plan) => {
     if (!isAuthenticated) {
       navigate('/login', { state: { from: '/pricing' } });
       return;
@@ -40,52 +83,11 @@ export default function PricingPage() {
     setError(null);
     setLoadingPlan(plan);
     try {
-      const scriptReady = await loadRazorpayScript();
-      if (!scriptReady) throw new Error('Could not load Razorpay checkout — check your connection and try again.');
-
       const { data } = await billingApi.checkout(plan);
-      const { subscriptionId, keyId } = data.data;
-
-      const razorpayCheckout = new window.Razorpay({
-        key: keyId,
-        subscription_id: subscriptionId,
-        name: 'JeetCode Pro',
-        description: `${plan === 'monthly' ? 'Monthly' : 'Yearly'} subscription`,
-        theme: { color: '#3B82F6' },
-        prefill: { name: user?.name, email: user?.email },
-        handler: async (response) => {
-          try {
-            await billingApi.verify({
-              razorpay_payment_id: response.razorpay_payment_id,
-              razorpay_subscription_id: response.razorpay_subscription_id,
-              razorpay_signature: response.razorpay_signature,
-            });
-            navigate('/dashboard');
-          } catch (err) {
-            setError(extractErrorMessage(err));
-          }
-        },
-        modal: { ondismiss: () => setLoadingPlan(null) },
-      });
-
-      razorpayCheckout.open();
-    } catch (err) {
-      setError(err.message || extractErrorMessage(err));
-    } finally {
-      setLoadingPlan(null);
-    }
-  };
-
-  const handleCancel = async () => {
-    setCancelling(true);
-    try {
-      await billingApi.cancel();
-      const { data } = await billingApi.status();
-      setStatus(data.data);
+      window.location.href = data.data.checkoutUrl; // YouPI hosted UPI checkout
     } catch (err) {
       setError(extractErrorMessage(err));
-    } finally {
-      setCancelling(false);
+      setLoadingPlan(null);
     }
   };
 
@@ -100,6 +102,11 @@ export default function PricingPage() {
         </Typography>
       </Box>
 
+      {confirming && (
+        <Alert severity="info" icon={<CircularProgress size={18} />} sx={{ mb: 3 }}>
+          Confirming your payment with the bank… this can take up to a minute.
+        </Alert>
+      )}
       {error && <Alert severity="error" sx={{ mb: 3 }}>{error}</Alert>}
 
       {status?.isPro && (
@@ -108,18 +115,15 @@ export default function PricingPage() {
             <WorkspacePremiumRoundedIcon sx={{ color: 'warning.main' }} />
             <Box>
               <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-                You're on the {status.proPlan === 'yearly' ? 'Yearly' : 'Monthly'} plan
+                You have Pro ({status.proPlan === 'yearly' ? 'Yearly' : status.proPlan === 'monthly' ? 'Monthly' : 'Active'} pass)
               </Typography>
               {status.proExpiresAt && (
                 <Typography variant="caption" color="text.secondary">
-                  Renews / expires {new Date(status.proExpiresAt).toLocaleDateString()}
+                  Valid until {new Date(status.proExpiresAt).toLocaleDateString()}
                 </Typography>
               )}
             </Box>
           </Box>
-          <Button variant="outlined" color="error" size="small" disabled={cancelling} onClick={handleCancel} sx={{ fontWeight: 600 }}>
-            {cancelling ? 'Cancelling…' : 'Cancel subscription'}
-          </Button>
         </Paper>
       )}
 
@@ -128,7 +132,7 @@ export default function PricingPage() {
           <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%', display: 'flex', flexDirection: 'column' }}>
             <Typography variant="overline" color="text.secondary" sx={{ fontWeight: 700 }}>Monthly</Typography>
             <Typography variant="h4" sx={{ fontWeight: 800, my: 1 }}>
-              ₹{MONTHLY_PRICE}<Typography component="span" variant="body2" color="text.secondary">/month</Typography>
+              ₹{MONTHLY_PRICE}<Typography component="span" variant="body2" color="text.secondary">for 30 days</Typography>
             </Typography>
             <Stack spacing={1} sx={{ my: 2, flexGrow: 1 }}>
               {FEATURES.map((f) => (
@@ -140,11 +144,11 @@ export default function PricingPage() {
             </Stack>
             <Button
               variant="outlined"
-              disabled={loadingPlan === 'monthly' || status?.isPro}
-              onClick={() => handleSubscribe('monthly')}
+              disabled={Boolean(loadingPlan) || confirming || status?.isPro}
+              onClick={() => handleBuy('monthly')}
               sx={{ fontWeight: 700 }}
             >
-              {loadingPlan === 'monthly' ? <CircularProgress size={20} /> : status?.isPro ? 'Current plan' : 'Subscribe monthly'}
+              {loadingPlan === 'monthly' ? <CircularProgress size={20} /> : status?.isPro ? 'Current plan' : 'Pay ₹' + MONTHLY_PRICE + ' via UPI'}
             </Button>
           </Paper>
         </Grid>
@@ -167,10 +171,10 @@ export default function PricingPage() {
             <Chip label="Best value" color="primary" size="small" sx={{ position: 'absolute', top: -12, left: 16, fontWeight: 700 }} />
             <Typography variant="overline" color="primary.main" sx={{ fontWeight: 700 }}>Yearly</Typography>
             <Typography variant="h4" sx={{ fontWeight: 800, my: 1 }}>
-              ₹{YEARLY_PRICE}<Typography component="span" variant="body2" color="text.secondary">/year</Typography>
+              ₹{YEARLY_PRICE}<Typography component="span" variant="body2" color="text.secondary">for 1 year</Typography>
             </Typography>
             <Typography variant="caption" color="success.main" sx={{ fontWeight: 700, mb: 1 }}>
-              Save {Math.round((1 - YEARLY_PRICE / (MONTHLY_PRICE * 12)) * 100)}% vs monthly
+              One-time payment, no auto-renew · Save {Math.round((1 - YEARLY_PRICE / (MONTHLY_PRICE * 12)) * 100)}% vs monthly
             </Typography>
             <Stack spacing={1} sx={{ my: 2, flexGrow: 1 }}>
               {FEATURES.map((f) => (
@@ -183,22 +187,15 @@ export default function PricingPage() {
             <Button
               variant="contained"
               disableElevation
-              disabled={loadingPlan === 'yearly' || status?.isPro}
-              onClick={() => handleSubscribe('yearly')}
+              disabled={Boolean(loadingPlan) || confirming || status?.isPro}
+              onClick={() => handleBuy('yearly')}
               sx={{ fontWeight: 700 }}
             >
-              {loadingPlan === 'yearly' ? <CircularProgress size={20} sx={{ color: '#fff' }} /> : status?.isPro ? 'Current plan' : 'Subscribe yearly'}
+              {loadingPlan === 'yearly' ? <CircularProgress size={20} sx={{ color: '#fff' }} /> : status?.isPro ? 'Current plan' : 'Pay ₹' + YEARLY_PRICE + ' via UPI'}
             </Button>
           </Paper>
         </Grid>
       </Grid>
-
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 3, textAlign: 'center', lineHeight: 1.7 }}>
-        Plans renew automatically until cancelled; cancel any time. See our{' '}
-        <Link component="button" type="button" onClick={() => navigate('/refund')} underline="hover" sx={{ font: 'inherit', verticalAlign: 'baseline' }}>Refund &amp; Cancellation Policy</Link>,{' '}
-        <Link component="button" type="button" onClick={() => navigate('/terms')} underline="hover" sx={{ font: 'inherit', verticalAlign: 'baseline' }}>Terms</Link> and{' '}
-        <Link component="button" type="button" onClick={() => navigate('/privacy')} underline="hover" sx={{ font: 'inherit', verticalAlign: 'baseline' }}>Privacy Policy</Link>.
-      </Typography>
     </Container>
   );
 }

@@ -1,151 +1,110 @@
-import crypto from 'crypto';
+import mongoose from 'mongoose';
 import { User } from '../models/User.js';
-import { razorpay } from '../services/razorpay.service.js';
+import { PaymentOrder } from '../models/PaymentOrder.js';
+import { createYoupiPayment, verifyYoupiSignature } from '../services/youpi.service.js';
 import { env } from '../config/env.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 
+// One-time passes (no auto-renew). Prices live HERE, server-side only.
+const DAY_MS = 24 * 60 * 60 * 1000;
 const PLAN_CONFIG = {
-  monthly: { planId: () => env.RAZORPAY_PLAN_ID_MONTHLY, totalCount: 120, durationMs: 30 * 24 * 60 * 60 * 1000 },
-  yearly: { planId: () => env.RAZORPAY_PLAN_ID_YEARLY, totalCount: 10, durationMs: 365 * 24 * 60 * 60 * 1000 },
+  monthly: { amountPaise: 14900, durationMs: 30 * DAY_MS },
+  yearly: { amountPaise: 119900, durationMs: 365 * DAY_MS },
 };
 
-// POST /api/billing/checkout — creates (or reuses) a Razorpay customer for
-// this user, then a Subscription in "created" state. Nothing is charged
-// yet; the frontend opens Razorpay's Checkout.js with the returned
-// subscriptionId, and the user completes payment there.
+const publicBase = () => (env.APP_URL || env.RENDER_EXTERNAL_URL || env.CLIENT_ORIGIN || 'http://localhost:5173').replace(/\/+$/, '');
+
+// Activates Pro for a paid order. Safe to call many times: only the call that
+// flips any-unpaid -> paid proceeds; every repeat returns early. A late SUCCESS
+// (bank alert arriving after the gateway already sent FAILED/EXPIRED) still
+// counts, because the money really arrived.
+async function activateOrder(order, { paymentId, utr }) {
+  const claimed = await PaymentOrder.findOneAndUpdate(
+    { _id: order._id, status: { $in: ['created', 'failed', 'expired', 'cancelled'] } },
+    { $set: { status: 'paid', gatewayPaymentId: paymentId || null, utr: utr || null, paidAt: new Date() } },
+    { new: true }
+  );
+  if (!claimed) return false;
+
+  const config = PLAN_CONFIG[claimed.plan];
+  const user = await User.findById(claimed.userId).select('isPro proPlan proExpiresAt');
+  if (!user) return true;
+
+  // Lifetime (isPro with no expiry) is never downgraded to a timed pass.
+  if (user.isPro && !user.proExpiresAt) return true;
+
+  const now = new Date();
+  const base = user.isPro && user.proExpiresAt && user.proExpiresAt > now ? user.proExpiresAt : now;
+  await User.updateOne(
+    { _id: user._id },
+    { $set: { isPro: true, proPlan: claimed.plan, proExpiresAt: new Date(base.getTime() + config.durationMs) } }
+  );
+  return true;
+}
+
+// POST /api/billing/checkout — creates the order + YouPI payment, returns the
+// hosted checkoutUrl. Nothing is granted until the signed webhook arrives.
 export const createCheckout = asyncHandler(async (req, res) => {
   const { plan } = req.body;
   const config = PLAN_CONFIG[plan];
-  const planId = config.planId();
-  if (!planId) throw ApiError.internal(`RAZORPAY_PLAN_ID_${plan.toUpperCase()} is not configured`);
 
-  const user = await User.findById(req.user.id).select('+razorpayCustomerId name email');
-  if (!user) throw ApiError.unauthorized('User no longer exists');
+  const _id = new mongoose.Types.ObjectId();
+  const orderId = `JC-${_id.toString()}`;
 
-  let customerId = user.razorpayCustomerId;
-  if (!customerId) {
-    const customer = await razorpay.customers.create({
-      name: user.name,
-      email: user.email,
-      notes: { userId: user._id.toString() },
-    });
-    customerId = customer.id;
-    user.razorpayCustomerId = customerId;
-  }
-
-  const subscription = await razorpay.subscriptions.create({
-    plan_id: planId,
-    customer_notify: 1,
-    total_count: config.totalCount,
-    notes: { userId: user._id.toString(), plan },
+  const payment = await createYoupiPayment({
+    orderId,
+    amountPaise: config.amountPaise,
+    returnUrl: `${publicBase()}/pricing?order=${orderId}`,
   });
 
-  // Stored now (before payment completes) so a webhook that arrives before
-  // the verify call still has something to match against. Doesn't grant
-  // access — isPro stays false until activation.
-  user.razorpaySubscriptionId = subscription.id;
-  await user.save();
-
-  new ApiResponse(200, {
-    subscriptionId: subscription.id,
-    keyId: env.RAZORPAY_KEY_ID,
+  await PaymentOrder.create({
+    _id,
+    orderId,
+    userId: req.user.id,
     plan,
-  }).send(res);
+    amountPaise: config.amountPaise,
+    checkoutUrl: payment.checkoutUrl,
+    gatewayPaymentId: payment.paymentId,
+  });
+
+  new ApiResponse(200, { orderId, checkoutUrl: payment.checkoutUrl, plan }).send(res);
 });
 
-// POST /api/billing/verify — called by the frontend right after Razorpay
-// Checkout's success callback. This is a UX optimization only (flips
-// isPro immediately instead of the user waiting for the webhook), NOT the
-// security boundary — the signature check here proves the payment
-// belongs to this subscription, but the webhook below is the actual
-// source of truth for the DB, since only Razorpay's server can call it
-// and it can't be spoofed by a compromised client.
-export const verifyPayment = asyncHandler(async (req, res) => {
-  const { razorpay_payment_id, razorpay_subscription_id, razorpay_signature } = req.body;
-
-  const expected = crypto
-    .createHmac('sha256', env.RAZORPAY_KEY_SECRET)
-    .update(`${razorpay_payment_id}|${razorpay_subscription_id}`)
-    .digest('hex');
-
-  if (expected !== razorpay_signature) {
-    throw ApiError.badRequest('Payment signature verification failed');
-  }
-
-  const user = await User.findOne({ _id: req.user.id, razorpaySubscriptionId: razorpay_subscription_id });
-  if (!user) throw ApiError.badRequest('Subscription does not match this user');
-
-  // Optimistic — the webhook will overwrite proPlan/proExpiresAt with the
-  // exact values Razorpay's subscription entity carries, usually within
-  // seconds. This just flips the flag so the UI doesn't wait.
-  user.isPro = true;
-  await user.save();
-
-  new ApiResponse(200, { isPro: true }, 'Payment verified').send(res);
-});
-
-// POST /api/billing/webhook — Razorpay server-to-server event, NOT
-// authenticated via requireAuth (Razorpay isn't a logged-in user). Trust
-// comes entirely from the signature check below, computed over the RAW
-// request body.
-//
-// IMPORTANT WIRING NOTE: this route needs the raw request body, not the
-// parsed JSON your global `express.json()` middleware produces. Mount it
-// with `express.raw({ type: 'application/json' })` as route-level
-// middleware, and mount that BEFORE the global json() middleware applies
-// to this path — see WIRING_INSTRUCTIONS.md.
+// POST /api/billing/webhook — YouPI server-to-server. NOT behind requireAuth;
+// trust = HMAC over the RAW body (mounted with express.raw in app.js).
 export const handleWebhook = asyncHandler(async (req, res) => {
-  const signature = req.headers['x-razorpay-signature'];
-  const expected = crypto
-    .createHmac('sha256', env.RAZORPAY_WEBHOOK_SECRET)
-    .update(req.body) // raw Buffer — see routing note above
-    .digest('hex');
-
-  if (signature !== expected) {
+  const raw = req.body; // Buffer
+  if (!verifyYoupiSignature(raw, req.headers['x-gateway-signature'])) {
     throw ApiError.badRequest('Invalid webhook signature');
   }
 
-  const event = JSON.parse(req.body.toString('utf8'));
-  const sub = event.payload?.subscription?.entity;
+  const event = JSON.parse(raw.toString('utf8'));
+  const order = event.orderId ? await PaymentOrder.findOne({ orderId: String(event.orderId) }) : null;
 
-  switch (event.event) {
-    case 'subscription.activated':
-    case 'subscription.charged': {
-      if (!sub) break;
-      const plan = sub.notes?.plan === 'yearly' ? 'yearly' : 'monthly';
-      await User.updateOne(
-        { razorpaySubscriptionId: sub.id },
-        {
-          isPro: true,
-          proPlan: plan,
-          // Razorpay gives current_end in epoch seconds.
-          proExpiresAt: sub.current_end ? new Date(sub.current_end * 1000) : null,
-        }
-      );
-      break;
+  // Unknown order: ack with 200 so the gateway stops retrying.
+  if (!order) return res.status(200).json({ received: true });
+
+  if (event.event === 'SUCCESS') {
+    // Amount must match what WE priced. Never trust the gateway payload alone.
+    if (Number(event.amountPaise) !== order.amountPaise) {
+      console.error('YouPI webhook amount mismatch', { orderId: order.orderId, got: event.amountPaise, want: order.amountPaise });
+      return res.status(200).json({ received: true });
     }
-    case 'subscription.cancelled': {
-      // Intentionally NOT flipping isPro to false here. Cancellation is
-      // set to take effect at the end of the current billing cycle (see
-      // cancelSubscription below), and checkProAccess.middleware.js
-      // already re-checks proExpiresAt on every gated request — so access
-      // naturally lapses at the right time without extra state to track.
-      break;
-    }
-    case 'payment.failed': {
-      // Razorpay retries failed subscription charges on its own schedule
-      // before eventually cancelling. Logging only for now — surfacing
-      // this to the user (email/banner) is a follow-up, not blocking v1.
-      console.warn('Razorpay payment.failed webhook', { subscriptionId: sub?.id });
-      break;
-    }
-    default:
-      break;
+    await activateOrder(order, { paymentId: event.paymentId, utr: event.utr });
+  } else if (['FAILED', 'EXPIRED', 'CANCELLED'].includes(event.event)) {
+    await PaymentOrder.updateOne({ _id: order._id, status: 'created' }, { $set: { status: event.event.toLowerCase() } });
   }
 
   res.status(200).json({ received: true });
+});
+
+// GET /api/billing/order/:orderId — the /pricing return page polls this.
+export const getOrderStatus = asyncHandler(async (req, res) => {
+  const order = await PaymentOrder.findOne({ orderId: req.params.orderId, userId: req.user.id }).select('orderId status plan');
+  if (!order) throw ApiError.notFound('Order not found');
+  new ApiResponse(200, { orderId: order.orderId, status: order.status, plan: order.plan }).send(res);
 });
 
 // GET /api/billing/status
@@ -157,20 +116,4 @@ export const getStatus = asyncHandler(async (req, res) => {
     proPlan: user.proPlan,
     proExpiresAt: user.proExpiresAt,
   }).send(res);
-});
-
-// POST /api/billing/cancel — cancels at the end of the current billing
-// cycle rather than immediately, so the user keeps access they already
-// paid for instead of losing it mid-cycle. Standard SaaS practice.
-export const cancelSubscription = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user.id).select('+razorpaySubscriptionId');
-  if (!user?.razorpaySubscriptionId) throw ApiError.badRequest('No active subscription found');
-
-  await razorpay.subscriptions.cancel(user.razorpaySubscriptionId, { cancel_at_cycle_end: 1 });
-
-  new ApiResponse(
-    200,
-    { proExpiresAt: user.proExpiresAt },
-    'Subscription cancelled — you keep Pro access until your current billing period ends'
-  ).send(res);
 });
