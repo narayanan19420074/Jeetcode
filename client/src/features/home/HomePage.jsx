@@ -47,6 +47,9 @@ import { DISPLAY_FONT, drift, marqueeLeft, marqueeRight } from './anim';
 // pricing page, contest config). Update them when the product grows, never
 // round up. No invented testimonials, no invented refund guarantee, no
 // invented time-saved numbers. One label per intent: START = create an account.
+// Style: short punchy headlines, one line per card, real app screenshots.
+// Screenshots live in client/public/screens/*.png. If one is missing the page
+// falls back to the in-code illustration, so nothing ever shows a broken image.
 const START = 'Start free';
 
 const STATS = [
@@ -66,59 +69,61 @@ const PERSONAS = [
   {
     key: 'final',
     label: 'Final years',
-    title: 'Placement season is close. Cover everything in one place.',
-    body: 'Coding rounds, aptitude papers and company exams, with a dashboard that shows exactly what is left.',
-    points: ['290+ problems from Easy to Hard', 'Company tags from Amazon, Google, Meta and more', 'Streaks and a leaderboard to keep you honest'],
+    title: 'Placement season is close.',
+    body: 'Coding, aptitude and company prep. One place.',
+    points: ['290+ problems, Easy to Hard', 'Company tags from Amazon, Google, Meta', 'Streaks and a leaderboard'],
     cta: 'Open the problem list',
     path: '/problems',
     visual: 'arena',
+    shot: '/screens/problems.png',
   },
   {
     key: 'nqt',
     label: 'TCS NQT',
-    title: 'Prepare for the exam you will actually sit.',
-    body: 'The TCS NQT track follows the real sections, timings and weights, and a readiness score moves as you practice.',
-    points: ['Roadmap built from the real exam pattern', 'Exam-style tests with a palette and a timer', 'A readiness score for every section'],
+    title: 'Prep for the exam you will sit.',
+    body: 'Real sections. Real timings. A live readiness score.',
+    points: ['Roadmap from the real exam pattern', 'Exam-style tests with a timer', 'Readiness score for every section'],
     cta: 'Browse company prep',
     path: '/prep',
     visual: 'company',
+    shot: '/screens/prep.png',
   },
   {
     key: 'aptitude',
     label: 'Aptitude',
-    title: 'Weak at aptitude? Learn the concept, then beat the clock.',
-    body: '32 patterns, from Number System to Probability. Animated lessons first, graded practice next, a timed test last.',
-    points: ['3,200 questions across 32 patterns', 'Lessons that play the problem before the formula', 'Clear the pass mark and the next pattern opens'],
+    title: 'Weak at aptitude? Learn it, then beat the clock.',
+    body: '32 patterns. Animated lessons first, graded practice next.',
+    points: ['3,200 questions', 'Lessons that play the problem first', 'Pass the test, unlock the next pattern'],
     cta: 'Explore aptitude patterns',
     path: '/aptitude',
     visual: 'lab',
+    shot: '/screens/aptitude.png',
   },
   {
     key: 'pair',
     label: 'With a friend',
-    title: 'Practice is easier when someone is waiting for you.',
-    body: 'Create a room, share the link and code together. Your friend can join as a guest, no signup needed.',
-    points: ['One shared editor, typed in at the same time', 'Chat, voice and video inside the room', 'Works for coding and aptitude questions'],
+    title: 'Practice is easier with a friend.',
+    body: 'Share a link. Code together. No signup for your friend.',
+    points: ['One shared editor', 'Chat, voice and video', 'Coding and aptitude questions'],
     cta: 'Start a pair room',
     path: '/pair',
     visual: 'room',
+    shot: '/screens/pair.png',
   },
 ];
 
 const VISUALS = { arena: ArenaVisual, company: CompanyVisual, lab: LabVisual, room: RoomVisual };
 
 const STEPS = [
-  { title: 'Sign up in one tap', body: 'Use Google or your email. No card, no waitlist.' },
-  { title: 'Pick your target', body: 'A company track like TCS NQT, or pattern 1 and an Easy problem.' },
-  { title: 'Learn it, then test it', body: 'Animated lessons first, timed practice after, and hints when you are stuck.' },
-  { title: 'Track it, then bring a friend', body: 'Readiness and streaks show your gaps. A pair room closes them faster.' },
+  { title: 'Pick your target', body: 'A company track or an Easy problem.', shot: '/screens/dashboard.png', alt: 'JeetCode dashboard' },
+  { title: 'Learn it. Then test it.', body: 'Animated lessons. Timed practice.', shot: '/screens/aptitude.png', alt: 'JeetCode aptitude lesson' },
+  { title: 'Track it. Share it.', body: 'Streaks, scores and pair rooms.', shot: '/screens/pair.png', alt: 'JeetCode pair room' },
 ];
 
 const BEFORE_TOOLS = [
-  'Problem site · tab 1', 'Aptitude PDF · 200 pages', 'YouTube lessons · tab 7', 'WhatsApp group · "who did what?"',
-  'Notes app · what is covered?', 'Spreadsheet · streaks',
+  'Problem site · tab 1', 'Aptitude PDF · 200 pages', 'WhatsApp group · "who did what?"', 'Spreadsheet · streaks',
 ];
-const AFTER_ITEMS = ['Coding problems', 'Aptitude patterns', 'Company roadmap', 'Pair rooms', 'Readiness score', 'Streaks'];
+const AFTER_ITEMS = ['Coding problems', 'Aptitude patterns', 'Company roadmap', 'Streaks and pair rooms'];
 
 const PRO_FEATURES = [
   'Every company-tagged coding problem',
@@ -218,6 +223,45 @@ function PrimaryCta({ onClick, label, size = 'large', sx, buttonRef, light = fal
   );
 }
 
+// Real app screenshot in a phone frame. Missing file -> fallback (or nothing).
+function Shot({ src, alt, fallback = null, maxWidth = 280, crop, priority = false, sx }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return fallback;
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        mx: 'auto',
+        width: '100%',
+        maxWidth,
+        p: '6px',
+        borderRadius: '30px',
+        bgcolor: '#0F172A',
+        boxShadow: (t) => `0 32px 60px -30px ${alpha(t.palette.primary.main, 0.6)}, 0 0 0 1px ${alpha('#fff', 0.1)} inset`,
+        ...(crop && { height: crop, overflow: 'hidden' }),
+        ...sx,
+      }}
+    >
+      <Box
+        component="img"
+        src={src}
+        alt={alt}
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
+        onError={() => setFailed(true)}
+        sx={{
+          display: 'block',
+          width: '100%',
+          borderRadius: '24px',
+          objectFit: 'cover',
+          objectPosition: 'top',
+          ...(crop ? { height: '100%' } : { aspectRatio: '9 / 19.5' }),
+        }}
+      />
+    </Box>
+  );
+}
+
 function NavBar({ authed, onStart, onLogin }) {
   const dispatch = useDispatch();
   const mode = useSelector((s) => s.ui.mode);
@@ -311,7 +355,7 @@ function ProofBand() {
     <Box sx={{ borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
       <Container maxWidth="lg" sx={{ pt: { xs: 5, md: 6 }, pb: { xs: 4, md: 5 } }}>
         <Typography sx={{ textAlign: 'center', fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.4rem', md: '1.8rem' }, letterSpacing: '-0.02em', mb: { xs: 3.5, md: 4.5 } }}>
-          What is inside, in real numbers
+          Real numbers. Zero fluff.
         </Typography>
         <Grid container spacing={{ xs: 3.5, md: 3 }}>
           {STATS.map((s) => (
@@ -367,7 +411,7 @@ function PersonaTabs({ onGo }) {
           <Tab key={x.key} value={x.key} label={x.label} disableRipple />
         ))}
       </Tabs>
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1.1fr' }, gap: { xs: 4, md: 8 }, alignItems: 'center' }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1.1fr 1fr' }, gap: { xs: 4, md: 8 }, alignItems: 'center' }}>
         <Box>
           <Typography variant="h3" sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.7rem', md: '2.2rem' }, lineHeight: 1.1, letterSpacing: '-0.025em', textWrap: 'balance', mb: 1.75 }}>
             {p.title}
@@ -386,32 +430,32 @@ function PersonaTabs({ onGo }) {
           </Button>
         </Box>
         <Box sx={{ minWidth: 0 }}>
-          <Visual />
+          <Shot key={p.key} src={p.shot} alt={`${p.label} screen in JeetCode`} maxWidth={260} fallback={<Visual />} />
         </Box>
       </Box>
     </Box>
   );
 }
 
-// 01-04 numbered timeline with a solid connector (no dotted road).
-function StepTimeline({ steps }) {
+// 01-03 cards, each with a real screenshot underneath.
+function StepCards({ steps }) {
   return (
-    <Stack sx={{ maxWidth: 640, mx: 'auto' }}>
-      {steps.map((s, i) => (
-        <Stack key={s.title} direction="row" spacing={2.5} sx={{ position: 'relative', pb: i === steps.length - 1 ? 0 : 4 }}>
-          {i < steps.length - 1 && (
-            <Box aria-hidden="true" sx={{ position: 'absolute', left: 21, top: 46, bottom: 4, width: 2, bgcolor: (t) => alpha(t.palette.primary.main, 0.22) }} />
-          )}
-          <Box sx={{ flexShrink: 0, width: 44, height: 44, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main', fontFamily: DISPLAY_FONT, fontWeight: 800 }}>
-            {String(i + 1).padStart(2, '0')}
+    <Grid container spacing={{ xs: 3, md: 3 }}>
+      {steps.map((st, i) => (
+        <Grid key={st.title} size={{ xs: 12, md: 4 }}>
+          <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '20px', border: '1px solid', borderColor: 'divider', bgcolor: 'background.default', p: { xs: 2.5, md: 3 }, overflow: 'hidden' }}>
+            <Box sx={{ width: 40, height: 40, mb: 2, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main', fontFamily: DISPLAY_FONT, fontWeight: 800 }}>
+              {String(i + 1).padStart(2, '0')}
+            </Box>
+            <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '1.35rem', letterSpacing: '-0.02em' }}>{st.title}</Typography>
+            <Typography color="text.secondary" sx={{ mt: 0.5, mb: 3, lineHeight: 1.5 }}>{st.body}</Typography>
+            <Box sx={{ mt: 'auto', mx: { xs: 2, md: 1 }, mb: { xs: -9, md: -10 } }}>
+              <Shot src={st.shot} alt={st.alt} crop={300} maxWidth={230} />
+            </Box>
           </Box>
-          <Box sx={{ pt: 0.4 }}>
-            <Typography sx={{ fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.01em' }}>{s.title}</Typography>
-            <Typography color="text.secondary" sx={{ mt: 0.4, lineHeight: 1.55 }}>{s.body}</Typography>
-          </Box>
-        </Stack>
+        </Grid>
       ))}
-    </Stack>
+    </Grid>
   );
 }
 
@@ -434,7 +478,7 @@ function BeforeAfter() {
             ))}
           </Stack>
           <Typography sx={{ mt: 3, fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.6rem', md: '2rem' }, letterSpacing: '-0.02em', color: 'error.main' }}>
-            6 places. No clear next step.
+            4 places. No clear next step.
           </Typography>
         </Box>
       </Grid>
@@ -453,7 +497,7 @@ function BeforeAfter() {
             ))}
           </Stack>
           <Typography sx={{ mt: 3, fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.6rem', md: '2rem' }, letterSpacing: '-0.02em', color: 'primary.main' }}>
-            1 dashboard. Next move obvious.
+            1 dashboard. Clear next step.
           </Typography>
         </Box>
       </Grid>
@@ -625,10 +669,10 @@ export default function HomePage() {
                     mb: 2.5,
                   }}
                 >
-                  Your next offer letter is already in reach.
+                  Your next offer letter starts here.
                 </Typography>
-                <Typography color="text.secondary" sx={{ fontSize: { xs: '1.08rem', md: '1.18rem' }, maxWidth: '46ch', mb: 4, lineHeight: 1.6 }}>
-                  290+ coding problems, 3,200 aptitude questions and company-wise tracks, with a dashboard that shows exactly what is left. No complicated setup. Start with your first problem today.
+                <Typography color="text.secondary" sx={{ fontSize: { xs: '1.15rem', md: '1.3rem' }, maxWidth: '30ch', mb: 4, lineHeight: 1.45, fontWeight: 500 }}>
+                  Coding. Aptitude. Company prep. All in one place, and free to start.
                 </Typography>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
                   <PrimaryCta buttonRef={heroCtaRef} label={startLabel} onClick={goStart} />
@@ -637,7 +681,7 @@ export default function HomePage() {
                   </Button>
                 </Stack>
                 <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', gap: { xs: 1.25, sm: 2.5 }, mt: 3 }}>
-                  {['No card needed', 'Sign in with Google', 'Works on your phone'].map((t) => (
+                  {['Free to start', 'No card', 'Instant Google sign-in'].map((t) => (
                     <Stack key={t} direction="row" spacing={0.6} sx={{ alignItems: 'center', color: 'text.secondary' }}>
                       <CheckRoundedIcon sx={{ fontSize: 17, color: 'success.main' }} />
                       <Typography sx={{ fontWeight: 600, fontSize: '0.88rem' }}>{t}</Typography>
@@ -646,7 +690,12 @@ export default function HomePage() {
                 </Stack>
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
-                <HeroDemo />
+                <Box sx={{ position: 'relative', pb: { xs: 0, sm: 5 } }}>
+                  <HeroDemo />
+                  <Box sx={{ display: { xs: 'none', sm: 'block' }, position: 'absolute', right: { sm: 0, md: -16 }, bottom: 0, width: { sm: 150, md: 168 }, zIndex: 2, transform: 'rotate(3deg)' }}>
+                    <Shot src="/screens/dashboard.png" alt="JeetCode dashboard on a phone" priority />
+                  </Box>
+                </Box>
               </Grid>
             </Grid>
           </Container>
@@ -658,7 +707,7 @@ export default function HomePage() {
         {/* 3. Is it for me? */}
         <Container id="for-me" maxWidth="lg" sx={{ py: { xs: 8, md: 12 }, scrollMarginTop: 64 }}>
           <SectionHeading align="center" eyebrow="Is it for me?" maxWidth={820}>
-            However you prepare, JeetCode fits your routine.
+            Built for you. Pick your path.
           </SectionHeading>
           <PersonaTabs onGo={go} />
         </Container>
@@ -667,9 +716,9 @@ export default function HomePage() {
         <Box id="how-it-works" sx={{ bgcolor: 'background.paper', borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', scrollMarginTop: 64 }}>
           <Container maxWidth="lg" sx={{ py: { xs: 8, md: 11 } }}>
             <SectionHeading align="center" eyebrow="How it works" maxWidth={820}>
-              Start in two minutes. Stay on track for months.
+              Three simple steps. Two minutes.
             </SectionHeading>
-            <StepTimeline steps={STEPS} />
+            <StepCards steps={STEPS} />
             <Box sx={{ textAlign: 'center', mt: { xs: 5, md: 7 } }}>
               <PrimaryCta label={startLabel} onClick={goStart} />
             </Box>
@@ -678,8 +727,8 @@ export default function HomePage() {
 
         {/* 5. Before / after */}
         <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-          <SectionHeading align="center" eyebrow="Why one place?" maxWidth={820} sub="Hopping between apps feels busy, not productive. Put your prep in one place and every session starts with an obvious next move.">
-            Placement prep before JeetCode was kind of a mess.
+          <SectionHeading align="center" eyebrow="Why one place?" maxWidth={820}>
+            Stop juggling. Start solving.
           </SectionHeading>
           <BeforeAfter />
         </Container>
@@ -687,41 +736,47 @@ export default function HomePage() {
         {/* 6. What JeetCode does */}
         <Box id="features" sx={{ bgcolor: 'background.paper', borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', scrollMarginTop: 64 }}>
           <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-            <SectionHeading eyebrow="What JeetCode does" maxWidth={720} sub="Small things that make you open the app again tomorrow.">
-              Everything your prep needs. In one board.
+            <SectionHeading align="center" eyebrow="What you get" maxWidth={720}>
+              Everything you need. Nothing you don't.
             </SectionHeading>
             <Grid container spacing={{ xs: 2.5, md: 3 }}>
               <Grid size={{ xs: 12, md: 7 }}>
                 <MiniCard
                   title="See algorithms think"
-                  body="15 algorithms across sorting, searching, graphs, trees and dynamic programming, stepped through one move at a time."
+                  body="15 algorithms, one move at a time."
                   action={<Button onClick={go('/visualizer')} sx={{ alignSelf: 'flex-start', fontWeight: 700, px: 0 }}>Open the visualizer</Button>}
                 >
                   <SortVisual />
                 </MiniCard>
               </Grid>
               <Grid size={{ xs: 12, md: 5 }}>
-                <MiniCard title="Build a streak you can see" body="Every day you practice fills a square. Miss one and you will want to fix it.">
+                <MiniCard title="Build a streak you can see" body="Practice daily. Fill the squares.">
                   <HeatVisual />
                 </MiniCard>
               </Grid>
               <Grid size={{ xs: 12, md: 4 }}>
-                <MiniCard title="Climb from Bronze to Legend" body="Points for every solve, a leaderboard to chase.">
+                <MiniCard title="Climb from Bronze to Legend" body="Earn points. Chase the leaderboard.">
                   <TierVisual />
                 </MiniCard>
               </Grid>
               <Grid size={{ xs: 12, md: 4 }}>
-                <MiniCard title="Plan the week together" body="Shared study plans with a calendar, so nobody drifts alone.">
+                <MiniCard title="Plan the week together" body="Shared plans. Nobody drifts alone.">
                   <PlanVisual />
                 </MiniCard>
               </Grid>
               <Grid size={{ xs: 12, md: 4 }}>
                 <MiniCard
                   title="Practice on the bus"
-                  body="Add JeetCode to your home screen and it opens like an app, with navigation built for one thumb."
+                  body="Add to your home screen. Opens like an app."
                   sx={{ bgcolor: (t) => alpha(t.palette.primary.main, 0.07), borderColor: (t) => alpha(t.palette.primary.main, 0.35) }}
                 >
-                  <PhoneIphoneRoundedIcon sx={{ fontSize: 72, color: 'primary.main', opacity: 0.9 }} />
+                  <Shot
+                    src="/screens/problems.png"
+                    alt="JeetCode problem on a phone"
+                    crop={170}
+                    maxWidth={150}
+                    fallback={<PhoneIphoneRoundedIcon sx={{ fontSize: 72, color: 'primary.main', opacity: 0.9 }} />}
+                  />
                 </MiniCard>
               </Grid>
             </Grid>
@@ -733,8 +788,8 @@ export default function HomePage() {
 
         {/* 8. Pricing: free first, risk reversal, no card */}
         <Container id="pricing" maxWidth="md" sx={{ py: { xs: 8, md: 12 }, scrollMarginTop: 64 }}>
-          <SectionHeading align="center" eyebrow="Pricing" maxWidth={680} sub="Everything you need to start is free. Pro adds the company-tagged problems and the full test suite.">
-            Try it free. Upgrade only when you want more.
+          <SectionHeading align="center" eyebrow="Pricing" maxWidth={680} sub="Free has everything to begin. Pro adds the extras.">
+            Start free. Upgrade when you want.
           </SectionHeading>
           <Grid container spacing={{ xs: 4, md: 3 }}>
             <Grid size={{ xs: 12, md: 6 }}>
@@ -762,7 +817,7 @@ export default function HomePage() {
             <Box sx={{ pl: { xs: 3, md: 5 }, borderLeft: '4px solid', borderColor: 'primary.main' }}>
               <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 700, color: 'text.secondary', mb: 1.5 }}>Why I built this</Typography>
               <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 600, fontSize: { xs: '1.35rem', md: '1.8rem' }, lineHeight: 1.42, letterSpacing: '-0.01em', maxWidth: '38ch', textWrap: 'pretty' }}>
-                I went through the same scattered prep everyone does: one tab for problems, another for aptitude, a mental spreadsheet for what was covered, and nobody to practice with. JeetCode is the tool I wish I had.
+                I lived the scattered prep: tabs everywhere, no clear next step, nobody to practice with. JeetCode is the tool I wish I had.
               </Typography>
             </Box>
           </Container>
@@ -802,10 +857,10 @@ export default function HomePage() {
             <Grid container spacing={4} sx={{ alignItems: 'center', position: 'relative' }}>
               <Grid size={{ xs: 12, md: 7 }}>
                 <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '2.1rem', md: '3rem' }, lineHeight: 1.06, letterSpacing: '-0.03em', textWrap: 'balance', mb: 1.75 }}>
-                  Your next offer letter is already out there.
+                  Your next offer letter is waiting.
                 </Typography>
                 <Typography sx={{ color: alpha('#fff', 0.85), fontSize: '1.1rem', mb: 3.5, maxWidth: '46ch', lineHeight: 1.6 }}>
-                  No complicated setup. Create a free account, solve your first problem in two minutes, then send a friend the link to your first pair room.
+                  Free account. First problem in two minutes. Bring a friend.
                 </Typography>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
                   <PrimaryCta light buttonRef={finalCtaRef} label={startLabel} onClick={goStart} />
