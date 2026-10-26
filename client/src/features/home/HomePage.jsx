@@ -12,12 +12,15 @@ import {
   IconButton,
   Link,
   Stack,
+  Tab,
+  Tabs,
   Tooltip,
   Typography,
 } from '@mui/material';
-import { alpha, useTheme } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
@@ -31,18 +34,19 @@ import CompanyAvatar from '../../components/CompanyAvatar';
 import { useContest, inr, fmtDuration } from '../contest/contestUtils';
 import ContestBand from './ContestBand';
 import HeroDemo from './art/HeroDemo';
-import ChaosToOrder from './art/ChaosToOrder';
-import JourneyRoad from './art/JourneyRoad';
 import OfferLetter from './art/OfferLetter';
 import { ArenaVisual, CompanyVisual, HeatVisual, LabVisual, PlanVisual, RoomVisual, SortVisual, TierVisual } from './art/FeatureVisuals';
 import { DISPLAY_FONT, drift, marqueeLeft, marqueeRight } from './anim';
 
 // --- Copy rules for this page -------------------------------------------
+// Page structure follows the proven landing-page flow: outcome hero -> one
+// CTA -> proof -> "is it for me?" -> how it works -> before/after -> features
+// -> pricing with risk reversal -> FAQ -> final CTA + sticky CTA.
 // Hooks may be strong; claims may not be false. Every number below comes
 // from the content in this repo (problem bank, aptitude bank, tier table,
 // pricing page, contest config). Update them when the product grows, never
-// round up. No invented testimonials. Sample UI is labelled "sample".
-// One label per intent: START = create an account, used everywhere.
+// round up. No invented testimonials, no invented refund guarantee, no
+// invented time-saved numbers. One label per intent: START = create an account.
 const START = 'Start free';
 
 const STATS = [
@@ -52,11 +56,56 @@ const STATS = [
   { target: 15, suffix: '', label: 'algorithm visualizations' },
 ];
 
-// Companies that have tagged coding problems in the bank (real tags).
 const TAGGED_COMPANIES = [
   'Amazon', 'Google', 'Meta', 'Microsoft', 'Apple', 'Bloomberg', 'LinkedIn', 'Uber', 'Adobe', 'Airbnb',
   'Dropbox', 'Pinterest', 'PayPal', 'Oracle', 'Goldman Sachs',
 ];
+
+// "Is it for me?" - one tab per kind of visitor.
+const PERSONAS = [
+  {
+    key: 'final',
+    label: 'Final years',
+    title: 'Placement season is close. Cover everything in one place.',
+    body: 'Coding rounds, aptitude papers and company exams, with a dashboard that shows exactly what is left.',
+    points: ['290+ problems from Easy to Hard', 'Company tags from Amazon, Google, Meta and more', 'Streaks and a leaderboard to keep you honest'],
+    cta: 'Open the problem list',
+    path: '/problems',
+    visual: 'arena',
+  },
+  {
+    key: 'nqt',
+    label: 'TCS NQT',
+    title: 'Prepare for the exam you will actually sit.',
+    body: 'The TCS NQT track follows the real sections, timings and weights, and a readiness score moves as you practice.',
+    points: ['Roadmap built from the real exam pattern', 'Exam-style tests with a palette and a timer', 'A readiness score for every section'],
+    cta: 'Browse company prep',
+    path: '/prep',
+    visual: 'company',
+  },
+  {
+    key: 'aptitude',
+    label: 'Aptitude',
+    title: 'Weak at aptitude? Learn the concept, then beat the clock.',
+    body: '32 patterns, from Number System to Probability. Animated lessons first, graded practice next, a timed test last.',
+    points: ['3,200 questions across 32 patterns', 'Lessons that play the problem before the formula', 'Clear the pass mark and the next pattern opens'],
+    cta: 'Explore aptitude patterns',
+    path: '/aptitude',
+    visual: 'lab',
+  },
+  {
+    key: 'pair',
+    label: 'With a friend',
+    title: 'Practice is easier when someone is waiting for you.',
+    body: 'Create a room, share the link and code together. Your friend can join as a guest, no signup needed.',
+    points: ['One shared editor, typed in at the same time', 'Chat, voice and video inside the room', 'Works for coding and aptitude questions'],
+    cta: 'Start a pair room',
+    path: '/pair',
+    visual: 'room',
+  },
+];
+
+const VISUALS = { arena: ArenaVisual, company: CompanyVisual, lab: LabVisual, room: RoomVisual };
 
 const STEPS = [
   { title: 'Sign up in one tap', body: 'Use Google or your email. No card, no waitlist.' },
@@ -65,11 +114,11 @@ const STEPS = [
   { title: 'Track it, then bring a friend', body: 'Readiness and streaks show your gaps. A pair room closes them faster.' },
 ];
 
-const WHY_ONE_PLACE = [
-  'Coding, aptitude and company prep on one dashboard',
-  'Readiness scores that show what is left, pattern by pattern',
-  'Pair rooms for company, streaks for discipline',
+const BEFORE_TOOLS = [
+  'Problem site · tab 1', 'Aptitude PDF · 200 pages', 'YouTube lessons · tab 7', 'WhatsApp group · "who did what?"',
+  'Notes app · what is covered?', 'Spreadsheet · streaks',
 ];
+const AFTER_ITEMS = ['Coding problems', 'Aptitude patterns', 'Company roadmap', 'Pair rooms', 'Readiness score', 'Streaks'];
 
 const PRO_FEATURES = [
   'Every company-tagged coding problem',
@@ -88,7 +137,6 @@ const PRICE_MONTH = 149;
 const PRICE_YEAR = 1199;
 
 // ---------------------------------------------------------------------------
-// Launch offer: the same flag the in-app banner reads. Shown only while real.
 function useLaunchOffer() {
   const [until, setUntil] = useState(null);
   useEffect(() => {
@@ -107,9 +155,21 @@ function useLaunchOffer() {
 
 // ---------------------------------------------------------------------------
 
-function SectionHeading({ children, sub, align = 'left', maxWidth = 640, light = false, sx }) {
+function Eyebrow({ children, align = 'left' }) {
+  return (
+    <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', justifyContent: align === 'center' ? 'center' : 'flex-start', mb: 2 }}>
+      {align !== 'center' && <Box sx={{ width: 28, height: 2, bgcolor: 'primary.main', borderRadius: 1 }} />}
+      <Typography sx={{ fontWeight: 800, fontSize: '0.78rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'primary.main' }}>
+        {children}
+      </Typography>
+    </Stack>
+  );
+}
+
+function SectionHeading({ children, eyebrow, sub, align = 'left', maxWidth = 640, light = false, sx }) {
   return (
     <Box sx={{ textAlign: align, maxWidth, mx: align === 'center' ? 'auto' : 0, mb: { xs: 4, md: 6 }, ...sx }}>
+      {eyebrow && <Eyebrow align={align}>{eyebrow}</Eyebrow>}
       <Typography
         variant="h2"
         sx={{
@@ -161,7 +221,7 @@ function PrimaryCta({ onClick, label, size = 'large', sx, buttonRef, light = fal
 function NavBar({ authed, onStart, onLogin }) {
   const dispatch = useDispatch();
   const mode = useSelector((s) => s.ui.mode);
-  const links = [['Features', '#features'], ['Pair rooms', '#rooms'], ['Contest', '#contest'], ['Pricing', '#pricing']];
+  const links = [['Is it for me?', '#for-me'], ['How it works', '#how-it-works'], ['Features', '#features'], ['Pricing', '#pricing']];
   return (
     <Box
       component="header"
@@ -250,6 +310,9 @@ function ProofBand() {
   return (
     <Box sx={{ borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
       <Container maxWidth="lg" sx={{ pt: { xs: 5, md: 6 }, pb: { xs: 4, md: 5 } }}>
+        <Typography sx={{ textAlign: 'center', fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.4rem', md: '1.8rem' }, letterSpacing: '-0.02em', mb: { xs: 3.5, md: 4.5 } }}>
+          What is inside, in real numbers
+        </Typography>
         <Grid container spacing={{ xs: 3.5, md: 3 }}>
           {STATS.map((s) => (
             <Grid key={s.label} size={{ xs: 6, md: 3 }}>
@@ -272,31 +335,129 @@ function ProofBand() {
   );
 }
 
-// One flagship feature: copy on one side, a working mini-product on the other.
-function FeatureRow({ id, title, body, points, cta, onCta, visual, reverse = false }) {
+// "Is it for me?" - tabs by visitor type, each with copy + a working mini-product.
+function PersonaTabs({ onGo }) {
+  const [key, setKey] = useState(PERSONAS[0].key);
+  const p = PERSONAS.find((x) => x.key === key) || PERSONAS[0];
+  const Visual = VISUALS[p.visual];
   return (
-    <Box id={id} sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: reverse ? '1.1fr 1fr' : '1fr 1.1fr' }, gap: { xs: 4, md: 8 }, alignItems: 'center', scrollMarginTop: 80 }}>
-      <Box sx={{ order: { xs: 1, md: reverse ? 2 : 1 } }}>
-        <Typography variant="h3" sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.7rem', md: '2.2rem' }, lineHeight: 1.1, letterSpacing: '-0.025em', textWrap: 'balance', mb: 1.75 }}>
-          {title}
-        </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1.06rem', lineHeight: 1.62, mb: 2.5, maxWidth: '52ch' }}>
-          {body}
-        </Typography>
-        <Stack spacing={1.1} sx={{ mb: 3.5 }}>
-          {points.map((p) => (
-            <Stack key={p} direction="row" spacing={1.25} sx={{ alignItems: 'flex-start' }}>
-              <CheckRoundedIcon sx={{ fontSize: 20, color: 'success.main', mt: '2px' }} />
-              <Typography sx={{ fontWeight: 600, lineHeight: 1.5 }}>{p}</Typography>
-            </Stack>
-          ))}
-        </Stack>
-        <Button variant="outlined" size="large" onClick={onCta} sx={{ fontWeight: 700, px: 3, py: 1.1, borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }}>
-          {cta}
-        </Button>
+    <Box>
+      <Tabs
+        value={key}
+        onChange={(_, v) => setKey(v)}
+        variant="scrollable"
+        scrollButtons={false}
+        sx={{
+          mb: { xs: 3, md: 4 },
+          p: 0.75,
+          minHeight: 0,
+          width: 'fit-content',
+          maxWidth: '100%',
+          mx: 'auto',
+          borderRadius: 99,
+          border: '1px solid',
+          borderColor: 'divider',
+          bgcolor: 'background.paper',
+          '& .MuiTabs-indicator': { display: 'none' },
+          '& .MuiTab-root': { minHeight: 0, py: 1.1, px: 2.5, borderRadius: 99, textTransform: 'none', fontWeight: 700, fontSize: '0.95rem', color: 'text.secondary' },
+          '& .Mui-selected': { bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main' },
+        }}
+      >
+        {PERSONAS.map((x) => (
+          <Tab key={x.key} value={x.key} label={x.label} disableRipple />
+        ))}
+      </Tabs>
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1.1fr' }, gap: { xs: 4, md: 8 }, alignItems: 'center' }}>
+        <Box>
+          <Typography variant="h3" sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.7rem', md: '2.2rem' }, lineHeight: 1.1, letterSpacing: '-0.025em', textWrap: 'balance', mb: 1.75 }}>
+            {p.title}
+          </Typography>
+          <Typography color="text.secondary" sx={{ fontSize: '1.06rem', lineHeight: 1.62, mb: 2.5, maxWidth: '52ch' }}>{p.body}</Typography>
+          <Stack spacing={1.1} sx={{ mb: 3.5 }}>
+            {p.points.map((pt) => (
+              <Stack key={pt} direction="row" spacing={1.25} sx={{ alignItems: 'flex-start' }}>
+                <CheckRoundedIcon sx={{ fontSize: 20, color: 'success.main', mt: '2px' }} />
+                <Typography sx={{ fontWeight: 600, lineHeight: 1.5 }}>{pt}</Typography>
+              </Stack>
+            ))}
+          </Stack>
+          <Button variant="outlined" size="large" onClick={onGo(p.path)} sx={{ fontWeight: 700, px: 3, py: 1.1, borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }}>
+            {p.cta}
+          </Button>
+        </Box>
+        <Box sx={{ minWidth: 0 }}>
+          <Visual />
+        </Box>
       </Box>
-      <Box sx={{ order: { xs: 2, md: reverse ? 1 : 2 }, minWidth: 0 }}>{visual}</Box>
     </Box>
+  );
+}
+
+// 01-04 numbered timeline with a solid connector (no dotted road).
+function StepTimeline({ steps }) {
+  return (
+    <Stack sx={{ maxWidth: 640, mx: 'auto' }}>
+      {steps.map((s, i) => (
+        <Stack key={s.title} direction="row" spacing={2.5} sx={{ position: 'relative', pb: i === steps.length - 1 ? 0 : 4 }}>
+          {i < steps.length - 1 && (
+            <Box aria-hidden="true" sx={{ position: 'absolute', left: 21, top: 46, bottom: 4, width: 2, bgcolor: (t) => alpha(t.palette.primary.main, 0.22) }} />
+          )}
+          <Box sx={{ flexShrink: 0, width: 44, height: 44, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main', fontFamily: DISPLAY_FONT, fontWeight: 800 }}>
+            {String(i + 1).padStart(2, '0')}
+          </Box>
+          <Box sx={{ pt: 0.4 }}>
+            <Typography sx={{ fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.01em' }}>{s.title}</Typography>
+            <Typography color="text.secondary" sx={{ mt: 0.4, lineHeight: 1.55 }}>{s.body}</Typography>
+          </Box>
+        </Stack>
+      ))}
+    </Stack>
+  );
+}
+
+// Before / after: scattered prep vs one place. No invented hour counts.
+function BeforeAfter() {
+  return (
+    <Grid container spacing={{ xs: 3, md: 4 }}>
+      <Grid size={{ xs: 12, md: 6 }}>
+        <Box sx={{ height: '100%', borderRadius: '20px', border: '1px solid', borderColor: 'divider', bgcolor: 'background.paper', p: { xs: 2.5, md: 3.5 } }}>
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 2.5 }}>
+            <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: 'error.main' }} />
+            <Typography sx={{ fontWeight: 800, letterSpacing: '0.14em', fontSize: '0.8rem', color: 'text.secondary' }}>BEFORE</Typography>
+          </Stack>
+          <Stack spacing={1.25}>
+            {BEFORE_TOOLS.map((t, i) => (
+              <Stack key={t} direction="row" spacing={1.25} sx={{ alignItems: 'center', px: 1.75, py: 1.1, borderRadius: '12px', bgcolor: 'background.default', border: '1px solid', borderColor: 'divider', transform: `rotate(${i % 2 === 0 ? -0.8 : 0.8}deg)` }}>
+                <CloseRoundedIcon sx={{ fontSize: 18, color: 'error.main' }} />
+                <Typography sx={{ fontWeight: 600, fontSize: '0.95rem' }}>{t}</Typography>
+              </Stack>
+            ))}
+          </Stack>
+          <Typography sx={{ mt: 3, fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.6rem', md: '2rem' }, letterSpacing: '-0.02em', color: 'error.main' }}>
+            6 places. No clear next step.
+          </Typography>
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12, md: 6 }}>
+        <Box sx={{ height: '100%', borderRadius: '20px', border: '1.5px solid', borderColor: 'primary.main', bgcolor: (t) => alpha(t.palette.primary.main, 0.06), p: { xs: 2.5, md: 3.5 } }}>
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 2.5 }}>
+            <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: 'primary.main' }} />
+            <Typography sx={{ fontWeight: 800, letterSpacing: '0.14em', fontSize: '0.8rem', color: 'primary.main' }}>WITH JEETCODE</Typography>
+          </Stack>
+          <Stack spacing={1.25}>
+            {AFTER_ITEMS.map((t) => (
+              <Stack key={t} direction="row" spacing={1.25} sx={{ alignItems: 'center', px: 1.75, py: 1.1, borderRadius: '12px', bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
+                <CheckCircleRoundedIcon sx={{ fontSize: 18, color: 'success.main' }} />
+                <Typography sx={{ fontWeight: 600, fontSize: '0.95rem' }}>{t}</Typography>
+              </Stack>
+            ))}
+          </Stack>
+          <Typography sx={{ mt: 3, fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.6rem', md: '2rem' }, letterSpacing: '-0.02em', color: 'primary.main' }}>
+            1 dashboard. Next move obvious.
+          </Typography>
+        </Box>
+      </Grid>
+    </Grid>
   );
 }
 
@@ -313,7 +474,7 @@ function MiniCard({ title, body, children, sx, action }) {
   );
 }
 
-function PlanCard({ name, price, note, points, cta, onCta, primary = false, badge }) {
+function PlanCard({ name, price, note, points, cta, onCta, primary = false, badge, footnote }) {
   return (
     <Box
       sx={{
@@ -348,6 +509,9 @@ function PlanCard({ name, price, note, points, cta, onCta, primary = false, badg
         <Button fullWidth size="large" variant={primary ? 'contained' : 'outlined'} disableElevation onClick={onCta} sx={{ fontWeight: 800, py: 1.25, ...(!primary && { borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }) }}>
           {cta}
         </Button>
+        {footnote && (
+          <Typography color="text.secondary" sx={{ mt: 1.5, textAlign: 'center', fontSize: '0.85rem' }}>{footnote}</Typography>
+        )}
       </Box>
     </Box>
   );
@@ -368,7 +532,6 @@ const FooterCol = ({ title, links }) => (
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const theme = useTheme();
   const authed = useSelector((s) => s.auth.isAuthenticated);
   const offerEnds = useLaunchOffer();
   const { contest } = useContest();
@@ -388,6 +551,10 @@ export default function HomePage() {
     {
       q: 'Is JeetCode really free?',
       a: 'Yes. Create an account without a card and start practicing straight away. A few things, like company-tagged problems and unlimited AI hints, are part of JeetCode Pro, which you can add whenever you want.',
+    },
+    {
+      q: 'How is it different from just using a coding site and a PDF?',
+      a: 'Coding, aptitude and company prep sit on one dashboard, so you always see what is covered and what is left. Add readiness scores, streaks and pair rooms, and you stop guessing what to do next.',
     },
     {
       q: 'Which languages can I code in?',
@@ -415,6 +582,10 @@ export default function HomePage() {
       q: "I'm just starting. Where do I begin?",
       a: 'Open aptitude pattern 1 or pick an Easy coding problem. The animated lessons explain each concept before you practice it, and the dashboard shows your next step.',
     },
+    {
+      q: 'Can I cancel Pro?',
+      a: 'Yes, anytime from your account. Cancelling stops future renewals and you keep Pro until the end of the period you paid for. Details are on the Refund & Cancellation page.',
+    },
   ];
 
   return (
@@ -430,15 +601,9 @@ export default function HomePage() {
       >
         <NavBar authed={authed} onStart={goStart} onLogin={go('/login')} />
 
-        {/* 1. Hero: outcome promise + a working product window */}
-        <Box
-          sx={{
-            position: 'relative',
-            backgroundImage: `radial-gradient(${alpha(theme.palette.text.secondary, 0.2)} 1px, transparent 1px)`,
-            backgroundSize: '22px 22px',
-          }}
-        >
-          <Box aria-hidden="true" sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: `radial-gradient(55% 60% at 80% 20%, ${alpha(theme.palette.primary.main, 0.14)}, transparent 70%), linear-gradient(180deg, transparent 70%, ${theme.palette.background.default})` }} />
+        {/* 1. Hero: one outcome promise, one CTA, a working product window. Plain background, no dot grid. */}
+        <Box sx={{ position: 'relative' }}>
+          <Box aria-hidden="true" sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: (t) => `radial-gradient(55% 60% at 80% 20%, ${alpha(t.palette.primary.main, 0.14)}, transparent 70%)` }} />
           <Container maxWidth="lg" sx={{ position: 'relative', pt: { xs: 5, md: 9 }, pb: { xs: 7, md: 10 } }}>
             <Grid container spacing={{ xs: 5, md: 6 }} sx={{ alignItems: 'center' }}>
               <Grid size={{ xs: 12, md: 6 }}>
@@ -460,15 +625,15 @@ export default function HomePage() {
                     mb: 2.5,
                   }}
                 >
-                  Get placement‑ready, not just busy.
+                  Your next offer letter is already in reach.
                 </Typography>
                 <Typography color="text.secondary" sx={{ fontSize: { xs: '1.08rem', md: '1.18rem' }, maxWidth: '46ch', mb: 4, lineHeight: 1.6 }}>
-                  290+ coding problems, 3,200 aptitude questions and company-wise tracks, with a dashboard that shows exactly what is left. Practice alone, or in a live room with a friend.
+                  290+ coding problems, 3,200 aptitude questions and company-wise tracks, with a dashboard that shows exactly what is left. No complicated setup. Start with your first problem today.
                 </Typography>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
                   <PrimaryCta buttonRef={heroCtaRef} label={startLabel} onClick={goStart} />
-                  <Button size="large" variant="outlined" href="#features" sx={{ fontWeight: 700, px: 3.5, py: 1.3, whiteSpace: 'nowrap', borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }}>
-                    See what is inside
+                  <Button size="large" variant="outlined" href="#how-it-works" sx={{ fontWeight: 700, px: 3.5, py: 1.3, whiteSpace: 'nowrap', borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }}>
+                    See how it works
                   </Button>
                 </Stack>
                 <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', gap: { xs: 1.25, sm: 2.5 }, mt: 3 }}>
@@ -490,136 +655,86 @@ export default function HomePage() {
         {/* 2. Proof: real numbers + the companies behind the tags */}
         <ProofBand />
 
-        {/* 3. Problem: scattered prep, played out visually */}
-        <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-          <Grid container spacing={{ xs: 5, md: 8 }} sx={{ alignItems: 'center' }}>
-            <Grid size={{ xs: 12, md: 6 }} sx={{ order: { xs: 2, md: 1 } }}>
-              <ChaosToOrder />
-            </Grid>
-            <Grid size={{ xs: 12, md: 6 }} sx={{ order: { xs: 1, md: 2 } }}>
-              <SectionHeading sub="Hopping between apps feels busy, not productive. Put your prep in one place and every session starts with an obvious next move.">
-                Five tabs open. No idea what you have covered.
-              </SectionHeading>
-              <Stack spacing={1.5} sx={{ mt: -2 }}>
-                {WHY_ONE_PLACE.map((line) => (
-                  <Stack key={line} direction="row" spacing={1.25} sx={{ alignItems: 'flex-start' }}>
-                    <CheckCircleRoundedIcon sx={{ fontSize: 22, color: 'success.main', mt: '1px' }} />
-                    <Typography sx={{ fontWeight: 600 }}>{line}</Typography>
-                  </Stack>
-                ))}
-              </Stack>
-            </Grid>
-          </Grid>
-        </Container>
-
-        {/* 4. Flagship features */}
-        <Box id="features" sx={{ bgcolor: 'background.paper', borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', scrollMarginTop: 64 }}>
-          <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-            <SectionHeading maxWidth={720} sub="Coding rounds, aptitude papers, company exams and a friend to practice with. Each one works on its own, and they add up together.">
-              Everything the drive throws at you
-            </SectionHeading>
-            <Stack spacing={{ xs: 9, md: 14 }}>
-              <FeatureRow
-                title="Solve it, run it, get a real verdict"
-                body="Write in JavaScript, Python or C++ and submit against real test cases. Filter by difficulty, topic or company, and work through the Striver SDE sheet in order."
-                points={['290+ problems from Easy to Hard', 'Company tags from Amazon, Google, Meta, Microsoft and more', 'AI hints that nudge you without giving the answer away']}
-                cta="Open the problem list"
-                onCta={go('/problems')}
-                visual={<ArenaVisual />}
-              />
-              <FeatureRow
-                reverse
-                title="Learn the concept. Then beat the clock."
-                body="32 aptitude patterns, from Number System to Probability. Each one has animated lessons, graded practice and a timed test. Clear the pass mark and the next pattern opens."
-                points={['3,200 questions across 32 patterns', 'Lessons that play the problem before the formula', 'Exam-style tests with a question palette and a timer']}
-                cta="Explore aptitude patterns"
-                onCta={go('/aptitude')}
-                visual={<LabVisual />}
-              />
-              <FeatureRow
-                title="Prep for the company, not just the topic"
-                body="Pick a company and follow its exam. Sections, timings and weights are laid out as a roadmap, and a readiness score moves as you practice. TCS NQT is live now."
-                points={['Roadmaps built from the real exam pattern', 'A readiness score for every section', 'Every other company: browse its tagged coding problems']}
-                cta="Browse company prep"
-                onCta={go('/prep')}
-                visual={<CompanyVisual />}
-              />
-              <FeatureRow
-                id="rooms"
-                reverse
-                title="Practice with a friend, live"
-                body="Create a room, share the link and code together. One shared editor, live chat, voice and video, and one Run button for both of you. Works for coding and for aptitude, and your friend can join as a guest."
-                points={['Both of you type in the same editor at once', 'Chat, voice and video inside the room', 'Run the code together and see the same output', 'Phone-friendly keys and auto-indent']}
-                cta="Start a pair room"
-                onCta={go('/pair')}
-                visual={<RoomVisual />}
-              />
-            </Stack>
-          </Container>
-        </Box>
-
-        {/* 5. The details that keep you going */}
-        <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-          <SectionHeading maxWidth={700} sub="Small things that make you open the app again tomorrow.">
-            Built to keep you coming back
+        {/* 3. Is it for me? */}
+        <Container id="for-me" maxWidth="lg" sx={{ py: { xs: 8, md: 12 }, scrollMarginTop: 64 }}>
+          <SectionHeading align="center" eyebrow="Is it for me?" maxWidth={820}>
+            However you prepare, JeetCode fits your routine.
           </SectionHeading>
-          <Grid container spacing={{ xs: 2.5, md: 3 }}>
-            <Grid size={{ xs: 12, md: 7 }}>
-              <MiniCard
-                title="See algorithms think"
-                body="15 algorithms across sorting, searching, graphs, trees and dynamic programming, stepped through one move at a time."
-                action={<Button onClick={go('/visualizer')} sx={{ alignSelf: 'flex-start', fontWeight: 700, px: 0 }}>Open the visualizer</Button>}
-              >
-                <SortVisual />
-              </MiniCard>
-            </Grid>
-            <Grid size={{ xs: 12, md: 5 }}>
-              <MiniCard title="Build a streak you can see" body="Every day you practice fills a square. Miss one and you will want to fix it.">
-                <HeatVisual />
-              </MiniCard>
-            </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
-              <MiniCard title="Climb from Bronze to Legend" body="Points for every solve, a leaderboard to chase.">
-                <TierVisual />
-              </MiniCard>
-            </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
-              <MiniCard title="Plan the week together" body="Shared study plans with a calendar, so nobody drifts alone.">
-                <PlanVisual />
-              </MiniCard>
-            </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
-              <MiniCard
-                title="Practice on the bus"
-                body="Add JeetCode to your home screen and it opens like an app, with navigation built for one thumb."
-                sx={{ bgcolor: (t) => alpha(t.palette.primary.main, 0.07), borderColor: (t) => alpha(t.palette.primary.main, 0.35) }}
-              >
-                <PhoneIphoneRoundedIcon sx={{ fontSize: 72, color: 'primary.main', opacity: 0.9 }} />
-              </MiniCard>
-            </Grid>
-          </Grid>
+          <PersonaTabs onGo={go} />
         </Container>
 
-        {/* 6. Contest: the one loud moment (renders only while a contest is open) */}
-        <ContestBand contest={contest} />
-
-        {/* 7. Journey: a road that draws itself on scroll */}
+        {/* 4. How it works */}
         <Box id="how-it-works" sx={{ bgcolor: 'background.paper', borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', scrollMarginTop: 64 }}>
           <Container maxWidth="lg" sx={{ py: { xs: 8, md: 11 } }}>
-            <SectionHeading align="center" maxWidth={820}>
+            <SectionHeading align="center" eyebrow="How it works" maxWidth={820}>
               Start in two minutes. Stay on track for months.
             </SectionHeading>
-            <JourneyRoad steps={STEPS} />
+            <StepTimeline steps={STEPS} />
             <Box sx={{ textAlign: 'center', mt: { xs: 5, md: 7 } }}>
               <PrimaryCta label={startLabel} onClick={goStart} />
             </Box>
           </Container>
         </Box>
 
-        {/* 8. Pricing: free first, Pro when you want more */}
+        {/* 5. Before / after */}
+        <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
+          <SectionHeading align="center" eyebrow="Why one place?" maxWidth={820} sub="Hopping between apps feels busy, not productive. Put your prep in one place and every session starts with an obvious next move.">
+            Placement prep before JeetCode was kind of a mess.
+          </SectionHeading>
+          <BeforeAfter />
+        </Container>
+
+        {/* 6. What JeetCode does */}
+        <Box id="features" sx={{ bgcolor: 'background.paper', borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', scrollMarginTop: 64 }}>
+          <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
+            <SectionHeading eyebrow="What JeetCode does" maxWidth={720} sub="Small things that make you open the app again tomorrow.">
+              Everything your prep needs. In one board.
+            </SectionHeading>
+            <Grid container spacing={{ xs: 2.5, md: 3 }}>
+              <Grid size={{ xs: 12, md: 7 }}>
+                <MiniCard
+                  title="See algorithms think"
+                  body="15 algorithms across sorting, searching, graphs, trees and dynamic programming, stepped through one move at a time."
+                  action={<Button onClick={go('/visualizer')} sx={{ alignSelf: 'flex-start', fontWeight: 700, px: 0 }}>Open the visualizer</Button>}
+                >
+                  <SortVisual />
+                </MiniCard>
+              </Grid>
+              <Grid size={{ xs: 12, md: 5 }}>
+                <MiniCard title="Build a streak you can see" body="Every day you practice fills a square. Miss one and you will want to fix it.">
+                  <HeatVisual />
+                </MiniCard>
+              </Grid>
+              <Grid size={{ xs: 12, md: 4 }}>
+                <MiniCard title="Climb from Bronze to Legend" body="Points for every solve, a leaderboard to chase.">
+                  <TierVisual />
+                </MiniCard>
+              </Grid>
+              <Grid size={{ xs: 12, md: 4 }}>
+                <MiniCard title="Plan the week together" body="Shared study plans with a calendar, so nobody drifts alone.">
+                  <PlanVisual />
+                </MiniCard>
+              </Grid>
+              <Grid size={{ xs: 12, md: 4 }}>
+                <MiniCard
+                  title="Practice on the bus"
+                  body="Add JeetCode to your home screen and it opens like an app, with navigation built for one thumb."
+                  sx={{ bgcolor: (t) => alpha(t.palette.primary.main, 0.07), borderColor: (t) => alpha(t.palette.primary.main, 0.35) }}
+                >
+                  <PhoneIphoneRoundedIcon sx={{ fontSize: 72, color: 'primary.main', opacity: 0.9 }} />
+                </MiniCard>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+
+        {/* 7. Contest: renders only while a contest is open */}
+        <ContestBand contest={contest} />
+
+        {/* 8. Pricing: free first, risk reversal, no card */}
         <Container id="pricing" maxWidth="md" sx={{ py: { xs: 8, md: 12 }, scrollMarginTop: 64 }}>
-          <SectionHeading align="center" maxWidth={680} sub="Everything you need to start is free. Pro adds the company-tagged problems and the full test suite.">
-            Start free. Upgrade when you want more.
+          <SectionHeading align="center" eyebrow="Pricing" maxWidth={680} sub="Everything you need to start is free. Pro adds the company-tagged problems and the full test suite.">
+            Try it free. Upgrade only when you want more.
           </SectionHeading>
           <Grid container spacing={{ xs: 4, md: 3 }}>
             <Grid size={{ xs: 12, md: 6 }}>
@@ -635,6 +750,7 @@ export default function HomePage() {
                 points={PRO_FEATURES}
                 cta={offerEnds ? 'Claim free Pro' : 'See Pro plans'}
                 onCta={offerEnds ? goStart : go('/pricing')}
+                footnote="Cancel anytime. You keep Pro until your paid period ends."
               />
             </Grid>
           </Grid>
@@ -654,7 +770,7 @@ export default function HomePage() {
 
         {/* 10. Objections answered */}
         <Container maxWidth="md" sx={{ py: { xs: 8, md: 11 } }}>
-          <SectionHeading maxWidth={560}>Questions before you start</SectionHeading>
+          <SectionHeading eyebrow="Still wondering?" maxWidth={560}>Good questions.</SectionHeading>
           <Box>
             {faq.map((f) => (
               <Accordion key={f.q} disableGutters elevation={0} square sx={{ bgcolor: 'transparent', borderBottom: '1px solid', borderColor: 'divider', '&:before': { display: 'none' } }}>
@@ -669,7 +785,7 @@ export default function HomePage() {
           </Box>
         </Container>
 
-        {/* 11. Final CTA: the outcome, stamped */}
+        {/* 11. Final CTA */}
         <Container maxWidth="lg" sx={{ pb: { xs: 7, md: 10 } }}>
           <Box
             sx={{
@@ -686,10 +802,10 @@ export default function HomePage() {
             <Grid container spacing={4} sx={{ alignItems: 'center', position: 'relative' }}>
               <Grid size={{ xs: 12, md: 7 }}>
                 <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '2.1rem', md: '3rem' }, lineHeight: 1.06, letterSpacing: '-0.03em', textWrap: 'balance', mb: 1.75 }}>
-                  Your offer letter will not prep itself.
+                  Your next offer letter is already out there.
                 </Typography>
                 <Typography sx={{ color: alpha('#fff', 0.85), fontSize: '1.1rem', mb: 3.5, maxWidth: '46ch', lineHeight: 1.6 }}>
-                  Create a free account, solve your first problem in two minutes, then send a friend the link to your first pair room.
+                  No complicated setup. Create a free account, solve your first problem in two minutes, then send a friend the link to your first pair room.
                 </Typography>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
                   <PrimaryCta light buttonRef={finalCtaRef} label={startLabel} onClick={goStart} />
@@ -745,7 +861,7 @@ export default function HomePage() {
           </Container>
         </Box>
 
-        {/* Mobile-only sticky CTA */}
+        {/* Sticky CTA bar (mobile): visible while neither the hero nor the final CTA is on screen */}
         <AnimatePresence>
           {showSticky && (
             <motion.div
