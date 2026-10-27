@@ -192,11 +192,11 @@ export const PLAN_AMBER = '#FBBF24';
 
 // Every plan gets its own colour story (same family as the TCS NQT card). Stable per plan id.
 export const PLAN_THEMES = [
-  { name: 'indigo', gradient: 'linear-gradient(135deg,#1E1B4B 0%,#3730A3 55%,#6D28D9 100%)' },
+  { name: 'graphite', gradient: 'linear-gradient(135deg,#1A1A1A 0%,#2E2E2E 55%,#444444 100%)' },
   { name: 'teal', gradient: 'linear-gradient(135deg,#042F2E 0%,#0F766E 55%,#047857 100%)' },
   { name: 'rose', gradient: 'linear-gradient(135deg,#4C0519 0%,#BE123C 55%,#C2410C 100%)' },
   { name: 'ocean', gradient: 'linear-gradient(135deg,#0C1E4A 0%,#1D4ED8 55%,#0E7490 100%)' },
-  { name: 'plum', gradient: 'linear-gradient(135deg,#3B0764 0%,#86198F 55%,#BE185D 100%)' },
+  { name: 'forest', gradient: 'linear-gradient(135deg,#052E16 0%,#166534 55%,#15803D 100%)' },
   { name: 'ember', gradient: 'linear-gradient(135deg,#431407 0%,#9A3412 55%,#B45309 100%)' },
 ];
 export const planTheme = (id = '') => PLAN_THEMES[[...String(id)].reduce((n, c) => n + c.charCodeAt(0), 0) % PLAN_THEMES.length];

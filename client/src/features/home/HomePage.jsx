@@ -128,7 +128,7 @@ function PrimaryCta({ onClick, label, size = 'large', sx, buttonRef, light = fal
         px: 3.5,
         py: 1.3,
         whiteSpace: 'nowrap',
-        ...(light && { bgcolor: '#fff', color: '#1E1B4B', '&:hover': { bgcolor: alpha('#fff', 0.9) } }),
+        ...(light && { bgcolor: '#FFA116', color: '#1A1A1A', '&:hover': { bgcolor: '#FFB340' } }),
         ...sx,
       }}
     >
@@ -142,7 +142,7 @@ function Shot({ src, alt, priority = false, sx }) {
   const [failed, setFailed] = useState(false);
   if (failed) return null;
   return (
-    <Box sx={{ width: '100%', overflow: 'hidden', borderRadius: '12px', border: '1px solid', borderColor: 'divider', bgcolor: '#0F172A', ...sx }}>
+    <Box sx={{ width: '100%', overflow: 'hidden', borderRadius: '12px', border: '1px solid', borderColor: 'divider', bgcolor: '#1A1A1A', ...sx }}>
       <Stack direction="row" spacing={0.6} sx={{ alignItems: 'center', px: 1.25, height: 22, bgcolor: alpha('#fff', 0.06) }} aria-hidden>
         {[0, 1, 2].map((i) => (
           <Box key={i} sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: alpha('#fff', 0.28) }} />
@@ -538,7 +538,8 @@ export default function HomePage() {
             py: { xs: 5, md: 7 },
             textAlign: 'center',
             color: '#fff',
-            background: (t) => `linear-gradient(135deg, ${t.palette.primary.dark} 0%, #0F172A 90%)`,
+            bgcolor: '#262626',
+            border: '1px solid #3E3E3E',
           }}
         >
           <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '2rem', md: '2.8rem' }, lineHeight: 1.08, letterSpacing: '-0.03em', textWrap: 'balance', mb: 1.5 }}>

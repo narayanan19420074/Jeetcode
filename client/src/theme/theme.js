@@ -36,19 +36,19 @@ const typography = {
 // Tighter radii read as "developer tool"; the old 16-28px bubbles read as a fintech app.
 const shape = { borderRadius: 12 };
 
-// JeetCode surfaces: calm, cool-neutral "night desk" (dark first) with one indigo brand.
+// JeetCode surfaces: LeetCode-style neutral greys (dark first) with one orange brand.
 // Layers, back to front: bg (page) < paper (cards, bars) < tonal (raised chips, inputs) < hero (selected).
 // Every text/background pair was checked against WCAG AA (4.5:1 for text).
 const surfaces = {
-  light: { bg: '#F6F8FA', paper: '#FFFFFF', tonal: '#EEF1F6', hero: '#E0E2FF', text: '#1B1F24', muted: '#4B5563', line: '#D0D7DE', lineSolid: '#D0D7DE' },
-  dark: { bg: '#0E1116', paper: '#161B22', tonal: '#1F2630', hero: '#2A2F6B', text: '#E6EDF3', muted: '#9DA7B3', line: 'rgba(255,255,255,0.10)', lineSolid: '#2A313C' },
+  light: { bg: '#F7F8FA', paper: '#FFFFFF', tonal: '#EFF1F6', hero: '#FFE9C7', text: '#262626', muted: '#595959', line: '#E1E4E8', lineSolid: '#D6D9DE' },
+  dark: { bg: '#1A1A1A', paper: '#282828', tonal: '#333333', hero: '#3D2E12', text: '#EFF1F6', muted: '#A8A8A8', line: 'rgba(255,255,255,0.10)', lineSolid: '#3E3E3E' },
 };
 // Reward colour: streaks, XP, badges only. Kept rare on purpose so it stands out.
-const reward = { light: '#D97706', dark: '#FBBF24' };
-// Status colours: deep on light backgrounds, bright on dark ones, all >= 4.5:1 on the page and cards.
+const reward = { light: '#B45309', dark: '#FFC01E' };
+// Status colours (LeetCode-style: green / yellow / red). Deep on light backgrounds, bright on dark ones, all >= 4.5:1.
 const semantic = {
-  light: { success: '#047857', warning: '#B45309', error: '#C62828', pending: '#475569' },
-  dark: { success: '#34D399', warning: '#FBBF24', error: '#F87171', pending: '#94A3B8' },
+  light: { success: '#0B7A3B', warning: '#A16207', error: '#C62828', pending: '#5F6368' },
+  dark: { success: '#2CBB5D', warning: '#FFC01E', error: '#F2625E', pending: '#9A9A9A' },
 };
 export const jcTokens = surfaces;
 export const gpayTokens = surfaces; // old name, kept so existing imports keep working
@@ -57,14 +57,14 @@ export const gpayTokens = surfaces; // old name, kept so existing imports keep w
 // brand colour and is identical in both modes; the others use a deeper shade
 // on light backgrounds so links/buttons keep enough contrast.
 export const ACCENTS = {
-  // Brand. Stored under the existing key 'violet' (the server validates accent keys), shown as "Indigo".
-  violet: { label: 'Indigo', dark: ['#818CF8', '#6366F1'], light: ['#4F46E5', '#4338CA'], text: '#FFFFFF', darkText: '#0B0F19' },
+  // Brand. Stored under the existing key 'violet' (the server validates accent keys), shown as "Orange" (LeetCode-style).
+  violet: { label: 'Orange', dark: ['#FFA116', '#F59300'], light: ['#B34A06', '#8F3B05'], text: '#FFFFFF', darkText: '#1A1A1A' },
   blue: { label: 'Blue', dark: ['#A8C7FA', '#8AB4F8'], light: ['#0B57D0', '#0842A0'], text: '#FFFFFF', darkText: '#0B0F19' },
   emerald: { label: 'Emerald', dark: ['#34D399', '#10B981'], light: ['#047857', '#065F46'], text: '#FFFFFF', darkText: '#0B0F19' },
   amber: { label: 'Amber', dark: ['#FBBF24', '#F59E0B'], light: ['#B45309', '#92400E'], text: '#FFFFFF', darkText: '#0B0F19' },
   rose: { label: 'Rose', dark: ['#FB7185', '#F43F5E'], light: ['#BE123C', '#9F1239'], text: '#FFFFFF', darkText: '#0B0F19' },
   cyan: { label: 'Cyan', dark: ['#22D3EE', '#06B6D4'], light: ['#0E7490', '#155E75'], text: '#FFFFFF', darkText: '#0B0F19' },
-  orange: { label: 'Orange', dark: ['#FB923C', '#F97316'], light: ['#C2410C', '#9A3412'], text: '#FFFFFF', darkText: '#0B0F19' },
+  orange: { label: 'Tangerine', dark: ['#FB923C', '#F97316'], light: ['#C2410C', '#9A3412'], text: '#FFFFFF', darkText: '#0B0F19' },
 };
 const FONT_SCALE = { sm: 0.92, md: 1, lg: 1.12 };
 
@@ -175,8 +175,8 @@ export const getTheme = (mode, opts = {}) => {
 // Game-style surfaces for the Quests and Store pages (Free-Fire-like lobby look). Defined globally as CSS variables
 // because dialogs render in a portal, outside the page. "Ink" colours are the text-safe shade of each accent.
 const gameVars = {
-  dark: { bg: '#0B0E14', panel: '#151A24', panelHi: '#1D2431', line: '#2B3345', well: '#0B0E14', hud: 'rgba(11,14,20,0.82)', text: '#FFFFFF', muted: '#8E99AD', orangeInk: '#FFB020', greenInk: '#2ED573', blueInk: '#27B6FF', coinInk: '#FFC933', redInk: '#FF6B79' },
-  light: { bg: '#EAEFF8', panel: '#FFFFFF', panelHi: '#EEF2F9', line: '#C5CFE2', well: '#E6EBF5', hud: 'rgba(255,255,255,0.92)', text: '#10151F', muted: '#4F5B74', orangeInk: '#B14500', greenInk: '#087A3E', blueInk: '#0A6AAD', coinInk: '#8F6200', redInk: '#C21F33' },
+  dark: { bg: '#121212', panel: '#1E1E1E', panelHi: '#2A2A2A', line: '#3A3A3A', well: '#121212', hud: 'rgba(18,18,18,0.82)', text: '#FFFFFF', muted: '#A3A3A3', orangeInk: '#FFB020', greenInk: '#2ED573', blueInk: '#27B6FF', coinInk: '#FFC933', redInk: '#FF6B79' },
+  light: { bg: '#F0F1F3', panel: '#FFFFFF', panelHi: '#F5F6F8', line: '#D6D8DC', well: '#ECEDF0', hud: 'rgba(255,255,255,0.92)', text: '#1A1A1A', muted: '#5A5F69', orangeInk: '#B14500', greenInk: '#087A3E', blueInk: '#0A6AAD', coinInk: '#8F6200', redInk: '#C21F33' },
 };
 const gameCss = (mode) => Object.entries(gameVars[mode === 'dark' ? 'dark' : 'light']).map(([k, v]) => `--ff-${k.replace(/[A-Z]/g, (c) => `-${c.toLowerCase()}`)}: ${v};`).join(' ');
 
