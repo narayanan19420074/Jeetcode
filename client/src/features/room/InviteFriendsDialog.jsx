@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Box, Button, ButtonBase, CircularProgress, Dialog, DialogContent, Stack, Typography } from '@mui/material';
+import { Box, ButtonBase, CircularProgress, Dialog, DialogContent, Stack, Tooltip, Typography, alpha } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useSnackbar } from 'notistack';
 import { friendsApi } from '../../api/friendsApi';
@@ -12,9 +13,10 @@ import { PersonAvatar } from '../friends/friendsUi';
 import { WsIconButton } from '../workspace/wsUi';
 
 // "Call a friend" for a live pair room.
-//  - friend online  -> they get an Accept / Decline popup right now, Accept drops them into this room
-//  - friend offline -> WhatsApp opens with the invite link ready to send (the in-app invite is saved too,
-//                      so they also see it in their chat when they next open JeetCode)
+// Every friend (online or offline) has two buttons:
+//  - Send icon     -> in-app invite. Online friends get an Accept / Decline popup right now;
+//                     offline friends find it in their JeetCode chat when they are back.
+//  - WhatsApp icon -> opens WhatsApp with the room link ready to send.
 export default function InviteFriendsDialog({ open, onClose, roomId, roomTitle }) {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
@@ -36,12 +38,12 @@ export default function InviteFriendsDialog({ open, onClose, roomId, roomTitle }
 
   const send = (f) => friendsApi.roomInvite(f.userId, { roomId, title: roomTitle || undefined });
 
-  const inviteOnline = async (f) => {
+  const inviteInApp = async (f) => {
     setBusy(f.userId);
     try {
       await send(f);
       setSent((s) => ({ ...s, [f.userId]: 'live' }));
-      enqueueSnackbar(`Invite sent to @${f.handle}`, { variant: 'success' });
+      enqueueSnackbar(online[f.userId] ? `Invite sent to @${f.handle}` : `@${f.handle} is offline. They will see the invite when they are back`, { variant: 'success' });
     } catch (e) {
       enqueueSnackbar(extractErrorMessage(e), { variant: 'error' });
     } finally {
@@ -53,8 +55,6 @@ export default function InviteFriendsDialog({ open, onClose, roomId, roomTitle }
     // Open WhatsApp first, straight from the tap, so the browser does not block it as a popup.
     const text = `Hey ${f.name || f.handle}! Come code with me on JeetCode${roomTitle ? ` — ${roomTitle}` : ''}. Join here: ${link}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-    setSent((s) => ({ ...s, [f.userId]: 'whatsapp' }));
-    send(f).catch(() => {}); // best effort: also leaves the invite in their JeetCode chat
   };
 
   return (
@@ -89,39 +89,37 @@ export default function InviteFriendsDialog({ open, onClose, roomId, roomTitle }
                     {isOn ? 'Online now' : `@${f.handle} · offline`}
                   </Typography>
                 </Box>
-                {isOn ? (
-                  <Button
-                    size="small"
-                    variant={done ? 'outlined' : 'contained'}
-                    disableElevation
-                    disabled={busy === f.userId}
-                    onClick={() => inviteOnline(f)}
-                    startIcon={busy === f.userId ? <CircularProgress size={14} /> : done ? <CheckRoundedIcon /> : null}
-                    sx={{ textTransform: 'none', fontWeight: 700, flexShrink: 0 }}
-                  >
-                    {done ? 'Invited' : 'Invite'}
-                  </Button>
-                ) : (
-                  <ButtonBase
-                    onClick={() => inviteWhatsApp(f)}
-                    aria-label={`Invite ${f.name} on WhatsApp`}
-                    sx={{
-                      gap: 0.75,
-                      px: 1.25,
-                      height: 32,
-                      borderRadius: '8px',
-                      flexShrink: 0,
-                      fontWeight: 700,
-                      fontSize: '0.8125rem',
-                      color: '#fff',
-                      bgcolor: '#25D366',
-                      '&:hover': { bgcolor: '#1EBE5A' },
-                    }}
-                  >
-                    <WhatsAppIcon sx={{ fontSize: 18 }} />
-                    {done ? 'Sent' : 'WhatsApp'}
-                  </ButtonBase>
-                )}
+                <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, flexShrink: 0 }}>
+                  <Tooltip title={isOn ? 'Send invite (popup on their screen)' : 'Send invite (they see it when they are back)'}>
+                    <span>
+                      <ButtonBase
+                        onClick={() => inviteInApp(f)}
+                        disabled={busy === f.userId}
+                        aria-label={`Send ${f.name} an invite`}
+                        sx={(t) => ({
+                          width: 36,
+                          height: 36,
+                          borderRadius: '8px',
+                          color: done === 'live' ? t.palette.success.main : t.palette.primary.contrastText,
+                          bgcolor: done === 'live' ? alpha(t.palette.success.main, 0.14) : t.palette.primary.main,
+                          '&:hover': { bgcolor: done === 'live' ? alpha(t.palette.success.main, 0.2) : t.palette.primary.dark },
+                          '&.Mui-disabled': { opacity: 0.6 },
+                        })}
+                      >
+                        {busy === f.userId ? <CircularProgress size={16} color="inherit" /> : done === 'live' ? <CheckRoundedIcon sx={{ fontSize: 20 }} /> : <SendRoundedIcon sx={{ fontSize: 18 }} />}
+                      </ButtonBase>
+                    </span>
+                  </Tooltip>
+                  <Tooltip title="Invite on WhatsApp">
+                    <ButtonBase
+                      onClick={() => inviteWhatsApp(f)}
+                      aria-label={`Invite ${f.name} on WhatsApp`}
+                      sx={{ width: 36, height: 36, borderRadius: '8px', color: '#fff', bgcolor: '#25D366', '&:hover': { bgcolor: '#1EBE5A' } }}
+                    >
+                      <WhatsAppIcon sx={{ fontSize: 20 }} />
+                    </ButtonBase>
+                  </Tooltip>
+                </Stack>
               </Stack>
             );
           })
