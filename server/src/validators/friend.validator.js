@@ -23,6 +23,7 @@ export const sendMessageSchema = z.object({
 });
 
 export const roomInviteSchema = z.object({
+  roomId: z.string().trim().max(64).optional(), // invite to a room that already exists (instead of making a new one)
   title: z.string().trim().max(80).optional(),
   language: z.enum(['javascript', 'python', 'cpp', 'java']).optional(),
 });

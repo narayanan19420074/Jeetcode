@@ -10,7 +10,8 @@ import { getRanking, assignRanks, publicRow } from '../services/leaderboard.serv
 import { getFriendIds } from '../services/friend.service.js';
 import { assertFriends, assertObjectId, conversationSummaries, history, markRead, sendMessage, unreadSummary } from '../services/chat.service.js';
 import { LANGUAGE_IDS } from '../services/judge0.service.js';
-import { createRoom } from '../realtime/roomStore.js';
+import { createRoom, getRoom } from '../realtime/roomStore.js';
+import { isOnline } from '../realtime/hub.js';
 import { DirectMessage } from '../models/DirectMessage.js';
 
 const DAY = 86400000;
@@ -84,20 +85,30 @@ export const nudgeFriend = asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------- code together
 
-// POST /friends/:userId/room { title?, language? } — create a pair-coding room and DM the invite.
+// POST /friends/:userId/room { roomId?, title?, language? } — DM a pair-coding invite.
+// With `roomId` the friend is invited to THAT live room; without it a new room is created.
+// Response has `online` so the client knows whether the friend got the live popup.
 export const inviteToRoom = asyncHandler(async (req, res) => {
   const me = req.user.id;
   const { userId } = req.params;
   assertObjectId(userId);
   await assertFriends(me, userId);
 
-  const language = LANGUAGE_IDS[req.body.language] ? req.body.language : 'javascript';
-  const title = req.body.title || `${req.user.handle}'s pair room`;
-  const room = createRoom({ language, title });
-  if (!room) throw new ApiError(503, 'Too many active rooms right now. Try again in a bit.');
+  let room;
+  let title;
+  if (req.body.roomId) {
+    room = getRoom(req.body.roomId);
+    if (!room) throw ApiError.notFound('Room not found or expired');
+    title = req.body.title || room.title || `${req.user.handle}'s pair room`;
+  } else {
+    const language = LANGUAGE_IDS[req.body.language] ? req.body.language : 'javascript';
+    title = req.body.title || `${req.user.handle}'s pair room`;
+    room = createRoom({ language, title });
+    if (!room) throw new ApiError(503, 'Too many active rooms right now. Try again in a bit.');
+  }
 
   const message = await sendMessage({ from: me, to: userId, kind: 'room', text: 'Let’s code together!', roomId: room.id, roomTitle: title });
-  new ApiResponse(201, { roomId: room.id, message }, 'Room ready — invite sent').send(res);
+  new ApiResponse(201, { roomId: room.id, message, online: isOnline(userId) }, 'Room ready — invite sent').send(res);
 });
 
 // ---------------------------------------------------------------- you vs friend

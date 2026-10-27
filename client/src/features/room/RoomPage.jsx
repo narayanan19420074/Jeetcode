@@ -32,6 +32,7 @@ import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
+import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { problemsApi } from '../../api/problemsApi';
@@ -52,6 +53,7 @@ import DiscussionPanel from '../workspace/community/DiscussionPanel';
 import ShareSolutionDialog from '../workspace/community/ShareSolutionDialog';
 import SubmissionsPanel from '../workspace/SubmissionsPanel';
 import ProblemListDrawer from '../workspace/ProblemListDrawer';
+import InviteFriendsDialog from './InviteFriendsDialog';
 import { EditorStatus, VerdictChip } from '../workspace/ConsolePanel';
 import SplitHandle from '../workspace/SplitHandle';
 import MobileKeyBar from '../workspace/MobileKeyBar';
@@ -151,6 +153,7 @@ export default function RoomPage() {
   const [adjacent, setAdjacent] = useState({ prev: null, next: null }); // slugs for the prev / next arrows
   const [switching, setSwitching] = useState(false);
   const [listOpen, setListOpen] = useState(false); // problem list overlay (left)
+  const [friendsOpen, setFriendsOpen] = useState(false); // "call a friend" dialog
   // Pane widths (desktop): labels shrink to icons as a pane gets narrower, same as the workspace.
   const [leftEl, setLeftEl] = useState(null);
   const [rightEl, setRightEl] = useState(null);
@@ -685,6 +688,11 @@ export default function RoomPage() {
 
         <PresenceStack meName={room.me?.name || displayName} peers={room.peers} />
 
+        {isAuthenticated && (
+          <WsIconButton title="Call a friend" size={ctl} onClick={() => setFriendsOpen(true)}>
+            <PersonAddAlt1RoundedIcon />
+          </WsIconButton>
+        )}
         {isMobile ? (
           <WsIconButton title="Invite link" size={ctl} onClick={copyLink}>
             <LinkRoundedIcon />
@@ -1071,6 +1079,8 @@ export default function RoomPage() {
           <Box sx={{ display: mobileView === 'chat' ? 'flex' : 'none', flex: 1, minHeight: 0, flexDirection: 'column', pb: 'env(safe-area-inset-bottom)' }}>{chatPanel}</Box>
         )}
       </Box>
+
+      {isAuthenticated && <InviteFriendsDialog open={friendsOpen} onClose={() => setFriendsOpen(false)} roomId={roomId} roomTitle={room.meta.title || problem?.title} />}
 
       {/* Problem list overlay: picking one switches the problem for BOTH of you */}
       <ProblemListDrawer open={listOpen} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={switchProblem} disabled={switching} />

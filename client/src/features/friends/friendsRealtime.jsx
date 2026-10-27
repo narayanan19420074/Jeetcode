@@ -1,13 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Button } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Stack, Typography } from '@mui/material';
 import { io } from 'socket.io-client';
 import { getAccessToken } from '../../api/apiClient';
 import { friendsApi } from '../../api/friendsApi';
 import { bumpUnread, clearUnread, fetchChatOverview, fetchFriends, setLast, setOnlineList, setPresence, setUnread } from './friendsSlice';
 import { addNotification } from '../notifications/notificationsSlice';
+import { PersonAvatar } from './friendsUi';
 
 // One app-wide socket for the logged-in user: live online dots, new-message badges, toasts.
 // (Pair-coding rooms use their own separate socket in features/room/useRoom.js.)
@@ -27,6 +28,8 @@ export default function FriendsRealtime() {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
   const version = useSelector((s) => s.friends.version);
+  const friendList = useSelector((s) => s.friends.friends);
+  const [invite, setInvite] = useState(null); // live pair-room invite popup: { from, roomId, title }
 
   useEffect(() => {
     if (!isAuthenticated || !user?.id) return undefined;
@@ -82,10 +85,15 @@ export default function FriendsRealtime() {
             : { id: `dm:${m.id}`, type: 'nudge', text: `${who} nudged you to keep your streak`, link: `/dashboard?view=friends&chat=${m.from}` }
         ));
       }
+      // Live room invite -> accept / decline popup (not for the room I'm already sitting in).
+      if (m.kind === 'room' && m.roomId && !window.location.pathname.endsWith(`/room/${m.roomId}`)) {
+        setInvite({ from: m.from, roomId: m.roomId, title: m.roomTitle });
+      }
       if (store.getState().friends.activeChat === m.from) return; // the open chat handles it
       dispatch(bumpUnread(m.from));
       const who = store.getState().friends.friends.find((f) => f.userId === m.from);
       const name = who ? `@${who.handle}` : 'A friend';
+      if (m.kind === 'room') return; // the popup above is the toast for invites
       enqueueSnackbar(m.kind === 'text' ? `${name}: ${preview(m)}` : `${name} ${preview(m)}`, {
         variant: m.kind === 'nudge' ? 'warning' : 'info',
         autoHideDuration: 6000,
@@ -119,5 +127,33 @@ export default function FriendsRealtime() {
     if (version > 0) socket?.emit('presence:sync');
   }, [version]);
 
-  return null;
+  const inviter = invite ? friendList.find((f) => f.userId === invite.from) : null;
+  const closeInvite = () => setInvite(null);
+  const acceptInvite = () => {
+    const id = invite.roomId;
+    closeInvite();
+    navigate(`/room/${id}`);
+  };
+
+  return (
+    <Dialog open={Boolean(invite)} onClose={closeInvite} maxWidth="xs" fullWidth>
+      <DialogTitle sx={{ fontWeight: 800 }}>Code together?</DialogTitle>
+      <DialogContent>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
+          {inviter && <PersonAvatar person={inviter} size={44} online />}
+          <Typography variant="body2">
+            <b>{inviter ? `@${inviter.handle}` : 'A friend'}</b> is inviting you to a pair room{invite?.title ? ` — “${invite.title}”` : ''}.
+          </Typography>
+        </Stack>
+      </DialogContent>
+      <DialogActions sx={{ px: 3, pb: 2 }}>
+        <Button color="inherit" onClick={closeInvite} sx={{ textTransform: 'none' }}>
+          Decline
+        </Button>
+        <Button variant="contained" disableElevation onClick={acceptInvite} sx={{ textTransform: 'none', fontWeight: 700 }}>
+          Accept
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
 }
