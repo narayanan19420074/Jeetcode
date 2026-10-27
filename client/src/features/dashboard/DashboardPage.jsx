@@ -178,7 +178,7 @@ export default function DashboardPage() {
         cta: 'Solve now',
         to: `/workspace/${featured.slug}`,
         icon: EventRoundedIcon,
-        gradient: 'linear-gradient(135deg,#3A3A3A,#1A1A1A)',
+        gradient: 'linear-gradient(135deg,#334155,#0F172A)',
       });
     }
     list.push({
@@ -209,7 +209,7 @@ export default function DashboardPage() {
         cta: 'Start practicing',
         to: '/aptitude',
         icon: CalculateRoundedIcon,
-        gradient: 'linear-gradient(135deg,#2563EB,#1E3A8A)',
+        gradient: 'linear-gradient(135deg,#7C3AED,#4C1D95)',
       },
       {
         key: 'visualizer',
@@ -293,25 +293,6 @@ export default function DashboardPage() {
                     <Button variant="contained" disableElevation size="small" onClick={() => navigate('/login')} sx={{ fontWeight: 700 }}>
                       Sign up free
                     </Button>
-                  </Box>
-                )}
-
-                {isAuthenticated && progress && progress.solved.Easy + progress.solved.Medium + progress.solved.Hard === 0 && (
-                  <Box sx={[surface, { p: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1.5 }]}>
-                    <Box sx={{ minWidth: 0 }}>
-                      <Typography sx={{ fontWeight: 700 }}>Start here: your first win takes 5 minutes</Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Take a short aptitude lesson or solve one Easy problem. Your streak starts today.
-                      </Typography>
-                    </Box>
-                    <Stack direction="row" spacing={1}>
-                      <Button variant="contained" disableElevation size="small" onClick={() => navigate('/aptitude')} sx={{ fontWeight: 700 }}>
-                        Try aptitude
-                      </Button>
-                      <Button variant="outlined" size="small" onClick={() => navigate('/problems')} sx={{ fontWeight: 700 }}>
-                        Solve an Easy
-                      </Button>
-                    </Stack>
                   </Box>
                 )}
 

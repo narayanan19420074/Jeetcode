@@ -65,7 +65,7 @@ const TOOLS = [
     title: 'Aptitude practice',
     text: 'Learn a pattern, practice it, then take a timed test.',
     icon: CalculateRoundedIcon,
-    gradient: 'linear-gradient(135deg,#2563EB,#1E3A8A)',
+    gradient: 'linear-gradient(135deg,#7C3AED,#4C1D95)',
   },
   {
     to: '/visualizer',
