@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
-  Alert, Box, Button, Chip, CircularProgress, Divider, InputAdornment, MenuItem, Paper, Select, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography,
+  Alert, Button, Chip, CircularProgress, Divider, InputAdornment, MenuItem, Paper, Select, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography,
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { wsSurface } from '../workspace/workspaceTheme';
@@ -18,7 +18,7 @@ import KeyboardRoundedIcon from '@mui/icons-material/KeyboardRounded';
 import { roomApi } from '../../api/roomApi';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import BackToDashboard from '../../components/BackToDashboard';
+import PageShell from '../../components/PageShell';
 
 const FEATURES = [
   { icon: <CodeRoundedIcon />, label: 'Shared editor' },
@@ -93,19 +93,8 @@ export default function PairLobbyPage() {
   );
 
   return (
-    <Box sx={{ maxWidth: 520, mx: 'auto', mt: { xs: 2, md: 6 }, mb: 4, px: 2 }}>
-      <BackToDashboard sx={{ mb: 1.5 }} />
+    <PageShell title="Pair Room" subtitle="Solve problems together, in real time." contentMax={560}>
       <Paper variant="outlined" sx={{ borderRadius: '20px', p: { xs: 2.5, sm: 3.5 } }}>
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mb: 1.5 }}>
-          <Box sx={(t) => ({ width: 48, height: 48, borderRadius: '16px', display: 'grid', placeItems: 'center', bgcolor: wsSurface(t).raised, color: 'primary.main' })}>
-            <GroupAddRoundedIcon />
-          </Box>
-          <Box>
-            <Typography variant="h5" sx={{ fontWeight: 800, lineHeight: 1.2 }}>Pair Room</Typography>
-            <Typography variant="body2" color="text.secondary">Solve problems together, in real time.</Typography>
-          </Box>
-        </Stack>
-
         <Typography color="text.secondary" sx={{ mb: 2, lineHeight: 1.6 }}>
           Invite a friend to work in the same editor or aptitude question, with built-in chat and video or audio calling.
         </Typography>
@@ -223,6 +212,6 @@ export default function PairLobbyPage() {
           </Button>
         </Stack>
       </Paper>
-    </Box>
+    </PageShell>
   );
 }

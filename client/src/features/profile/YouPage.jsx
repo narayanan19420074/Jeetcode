@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Avatar, Box, Button, Chip, CircularProgress, Container, IconButton, Link, Paper, Stack, Tooltip, Typography, alpha } from '@mui/material';
+import { Avatar, Box, Button, Chip, CircularProgress, IconButton, Link, Paper, Stack, Tooltip, Typography, alpha } from '@mui/material';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
 import ApartmentRoundedIcon from '@mui/icons-material/ApartmentRounded';
@@ -21,7 +21,7 @@ import ProBadge from '../../components/ProBadge';
 import useProblemLists from '../dashboard/useProblemLists';
 import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, utcKey } from '../dashboard/dashboardUtils';
 import AchievementBadge from './AchievementBadge';
-import BackToDashboard from '../../components/BackToDashboard';
+import PageShell from '../../components/PageShell';
 
 const initialsFromName = (name) =>
   (name || 'U').trim().split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase()).join('');
@@ -177,16 +177,18 @@ export default function YouPage() {
   ].filter((s) => user.socials?.[s.key]);
 
   return (
-    <Container maxWidth="sm" sx={{ pt: { xs: 1, sm: 3 }, pb: 4 }}>
-      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
-        <BackToDashboard />
+    <PageShell
+      title="Profile"
+      subtitle={`@${user.handle}`}
+      contentMax={720}
+      actions={
         <Tooltip title="Settings">
-          <IconButton component={RouterLink} to="/settings" aria-label="Settings">
+          <IconButton component={RouterLink} to="/settings" aria-label="Settings" sx={{ border: '1px solid', borderColor: 'divider' }}>
             <SettingsRoundedIcon />
           </IconButton>
         </Tooltip>
-      </Stack>
-
+      }
+    >
       {/* identity */}
       <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 2 }}>
         <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 84, height: 84, fontSize: '1.8rem', fontWeight: 700, bgcolor: 'primary.main', color: 'primary.contrastText' }}>
@@ -363,6 +365,6 @@ export default function YouPage() {
           )}
         </Box>
       )}
-    </Container>
+    </PageShell>
   );
 }

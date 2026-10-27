@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
-import { Box, ButtonBase, Container, Skeleton, Typography } from '@mui/material';
+import { Box, ButtonBase, Skeleton, Typography } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CardGiftcardRoundedIcon from '@mui/icons-material/CardGiftcardRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
@@ -16,12 +16,12 @@ import CheckoutDialog from './CheckoutDialog';
 import CoursePanel from './CoursePanel';
 import { CoinsTab, OrdersTab } from './AccountTabs';
 import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
-import BackToDashboard from '../../components/BackToDashboard';
+import PageShell from '../../components/PageShell';
 
 // The Store is one screen in the same game look as Quests: a wallet bar, category buttons and a grid of item tiles.
 // Orders and the coin wallet open as dialogs from the top bar, so nobody has to leave the page.
 const TABS = ['shop', 'orders', 'coins'];
-const GRID = { xs: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))', lg: 'repeat(4, minmax(0, 1fr))' };
+const GRID = { xs: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))', xl: 'repeat(4, minmax(0, 1fr))' };
 
 function ItemCard({ item, balance, signedIn, onBuy, onCourse }) {
   const note = priceNote(item);
@@ -162,42 +162,29 @@ export default function StorePage() {
   const d = wallet?.daily;
   const categories = [{ id: 'all', label: 'All' }, ...(data?.categories || [])];
 
+  const headerActions = isAuthenticated ? (
+    <>
+      <Stat icon={<Coin size={22} />} value={fmt(balance)} label="Your coins · open wallet" onClick={() => setTab('coins')} />
+      {d?.eligible ? (
+        <FFButton tone="green" disabled={claiming} onClick={claim} sx={{ minHeight: 44 }}>
+          <CardGiftcardRoundedIcon sx={{ fontSize: 20 }} /> {claiming ? 'Claiming…' : `Claim +${d.reward}`}
+        </FFButton>
+      ) : d && !d.claimed ? (
+        <FFButton component={RouterLink} to="/problems" tone="dark" sx={{ minHeight: 44 }}>Solve 1 for daily coins</FFButton>
+      ) : d?.claimed ? (
+        <Tag tone="green" sx={{ height: 44, px: 2, fontSize: 12, clipPath: cut(8) }}><CheckCircleRoundedIcon sx={{ fontSize: 18 }} /> Checked in today</Tag>
+      ) : null}
+      <FFButton tone="dark" onClick={() => setTab('orders')} aria-label="My orders" sx={{ position: 'relative', minHeight: 44 }}>
+        <LocalMallRoundedIcon sx={{ fontSize: 20 }} /> Orders
+        {inTransit > 0 && <Box component="span" sx={{ position: 'absolute', top: 2, right: 2, minWidth: 20, height: 20, px: 0.5, display: 'grid', placeItems: 'center', fontSize: 12, color: '#fff', bgcolor: FF.red, borderRadius: 10 }}>{inTransit}</Box>}
+      </FFButton>
+    </>
+  ) : (
+    <FFButton onClick={needLogin}>Sign in to redeem</FFButton>
+  );
+
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
-      <BackToDashboard sx={{ mb: 1.5 }} />
-
-      {/* Top bar: title, wallet, the one daily action, orders */}
-      <Panel n={18} sx={{ mb: 4 }}>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 3, p: { xs: 2.5, md: 3.5 }, background: 'linear-gradient(90deg, rgba(255,122,0,0.16), transparent 55%)' }}>
-          <Box sx={{ flex: '1 1 220px', minWidth: 0 }}>
-            <Eyebrow sx={{ color: FF.orangeInk }}>JeetCode</Eyebrow>
-            <Typography component="h1" sx={{ fontWeight: 900, fontSize: { xs: 30, md: 36 }, lineHeight: 1.1, letterSpacing: '0.04em', textTransform: 'uppercase', color: FF.text }}>Store</Typography>
-            <Typography sx={{ mt: 0.75, fontSize: 14, color: FF.muted }}>Spend the coins you earn by solving.</Typography>
-          </Box>
-
-          {isAuthenticated ? (
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1.5 }}>
-              <Stat icon={<Coin size={22} />} value={fmt(balance)} label="Your coins · open wallet" onClick={() => setTab('coins')} />
-              {d?.eligible ? (
-                <FFButton tone="green" disabled={claiming} onClick={claim} sx={{ minHeight: 44 }}>
-                  <CardGiftcardRoundedIcon sx={{ fontSize: 20 }} /> {claiming ? 'Claiming…' : `Claim +${d.reward}`}
-                </FFButton>
-              ) : d && !d.claimed ? (
-                <FFButton component={RouterLink} to="/problems" tone="dark" sx={{ minHeight: 44 }}>Solve 1 for daily coins</FFButton>
-              ) : d?.claimed ? (
-                <Tag tone="green" sx={{ height: 44, px: 2, fontSize: 12, clipPath: cut(8) }}><CheckCircleRoundedIcon sx={{ fontSize: 18 }} /> Checked in today</Tag>
-              ) : null}
-              <FFButton tone="dark" onClick={() => setTab('orders')} aria-label="My orders" sx={{ position: 'relative', minHeight: 44 }}>
-                <LocalMallRoundedIcon sx={{ fontSize: 20 }} /> Orders
-                {inTransit > 0 && <Box component="span" sx={{ position: 'absolute', top: 2, right: 2, minWidth: 20, height: 20, px: 0.5, display: 'grid', placeItems: 'center', fontSize: 12, color: '#fff', bgcolor: FF.red, borderRadius: 10 }}>{inTransit}</Box>}
-              </FFButton>
-            </Box>
-          ) : (
-            <FFButton onClick={needLogin}>Sign in to redeem</FFButton>
-          )}
-        </Box>
-      </Panel>
-
+    <PageShell title="Store" subtitle="Spend the coins you earn by solving." actions={headerActions}>
       {error && <Notice tone="error" sx={{ mb: 3 }}>{error}</Notice>}
 
       {courses.length > 0 && (
@@ -222,7 +209,7 @@ export default function StorePage() {
         </Notice>
       )}
 
-      <Box sx={{ mb: 4 }}>
+      <Box sx={{ mb: 3 }}>
         <Choice label="Category" options={categories} value={cat} onChange={setCat} />
       </Box>
 
@@ -256,6 +243,6 @@ export default function StorePage() {
         onProgress={loadAccount}
         onBuy={(course) => { setCourseSlug(null); buy(course); }}
       />
-    </Container>
+    </PageShell>
   );
 }

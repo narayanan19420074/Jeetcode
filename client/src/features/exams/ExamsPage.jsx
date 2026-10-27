@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, ButtonBase, CircularProgress, Dialog, DialogContent, IconButton, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, ButtonBase, CircularProgress, Dialog, DialogContent, IconButton, Typography } from '@mui/material';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -10,11 +10,10 @@ import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded';
 import { prepApi } from '../../api/prepApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import PrepReadinessCard from '../../components/PrepReadinessCard';
-import useViewportFill from '../dashboard/useViewportFill';
 import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
 import { daysUntil, formatExamDate, pickExamDate } from '../prep/examDate';
 import { CATEGORIES, EXAMS } from './examsData';
-import BackToDashboard from '../../components/BackToDashboard';
+import PageShell from '../../components/PageShell';
 
 const norm = (s) => String(s || '').trim().toLowerCase();
 const readinessOf = (pct) => Math.max(0, Math.min(100, Math.round(pct ?? 0)));
@@ -233,10 +232,6 @@ function NextUpBanner() {
 // with the learner's readiness on the right. On wide screens the page is one window tall: the header and banner
 // stay put, and the cards and the readiness card each scroll on their own, both starting on the same line.
 export default function ExamsPage() {
-  const theme = useTheme();
-  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-  const rootRef = useRef(null);
-  const fillH = useViewportFill(rootRef, isLg);
   const [tracks, setTracks] = useState(null);
   const [cat, setCat] = useState('all');
   const [openId, setOpenId] = useState(null);
@@ -249,51 +244,48 @@ export default function ExamsPage() {
   const shown = useMemo(() => EXAMS.map((e, i) => ({ e, i })).filter(({ e }) => cat === 'all' || e.category === cat), [cat]);
   const opened = openId ? EXAMS.find((e) => e.id === openId) : null;
 
+  const tabs = (
+    <Box role="tablist" aria-label="Exam type" sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap' }}>
+      {CATEGORIES.map((c) => {
+        const on = cat === c.key;
+        return (
+          <ButtonBase
+            key={c.key} role="tab" aria-selected={on} onClick={() => setCat(c.key)}
+            sx={(t) => ({ px: 1.5, height: 32, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? '#1B1200' : 'text.primary', transition: 'background-color .15s' })}
+          >
+            {c.label}
+          </ButtonBase>
+        );
+      })}
+    </Box>
+  );
+
   return (
-    <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : undefined}>
-      <Container maxWidth="lg" sx={{ py: { xs: 2, md: 2.5 }, px: { xs: 1.5, sm: 3 }, height: fillH ? '100%' : 'auto', display: 'flex', flexDirection: 'column' }}>
-        <Box sx={{ display: 'flex', alignItems: { xs: 'flex-start', md: 'center' }, justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' }, gap: 1.25, mb: 1.5, flexShrink: 0 }}>
-          <Box sx={{ minWidth: 0, display: 'flex', alignItems: 'flex-start', gap: 1.25 }}>
-            <BackToDashboard sx={{ mt: 0.25 }} />
-            <Box sx={{ minWidth: 0 }}>
-              <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Exams</Typography>
-              <Typography variant="body2" color="text.secondary">{shown.length} top coding and aptitude exams. Apply on the official site, track how ready you are.</Typography>
+    <>
+      <PageShell
+        title="Exams"
+        subtitle={`${shown.length} top coding and aptitude exams. Apply on the official site, track how ready you are.`}
+        actions={tabs}
+        aside={<PrepReadinessCard tracks={tracks} />}
+        asideMobile="top"
+        fill
+      >
+        {({ fill }) => (
+          <Box sx={{ display: 'flex', flexDirection: 'column', height: fill ? '100%' : 'auto', minHeight: 0 }}>
+            <NextUpBanner />
+            <Box className="autohide-scroll" sx={{ flex: fill ? 1 : 'none', minHeight: 0, ...(fill && { overflowY: 'auto', p: '2px 8px 16px 2px', scrollbarGutter: 'stable' }) }}>
+              <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'stretch', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))' } }}>
+                {shown.map(({ e, i }) => <ExamCard key={e.id} exam={e} index={i} track={trackFor(e)} onOpen={() => setOpenId(e.id)} />)}
+              </Box>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 2, textAlign: 'center' }}>
+                Always confirm dates, fees and eligibility on the official site. Names and logos belong to their owners and are shown only to identify each exam.
+              </Typography>
             </Box>
           </Box>
-          <Box role="tablist" aria-label="Exam type" sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', flexShrink: 0 }}>
-            {CATEGORIES.map((c) => {
-              const on = cat === c.key;
-              return (
-                <ButtonBase
-                  key={c.key} role="tab" aria-selected={on} onClick={() => setCat(c.key)}
-                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? '#1B1200' : 'text.primary', transition: 'background-color .15s' })}
-                >
-                  {c.label}
-                </ButtonBase>
-              );
-            })}
-          </Box>
-        </Box>
-
-        <NextUpBanner />
-
-        <Box sx={{ display: 'grid', gap: 2, alignItems: 'start', flex: fillH ? 1 : 'none', minHeight: 0, gridTemplateColumns: { xs: 'minmax(0,1fr)', lg: 'minmax(0,1fr) 330px' }, gridTemplateRows: fillH ? 'minmax(0, 1fr)' : undefined }}>
-          <Box className="autohide-scroll" sx={{ order: { xs: 2, lg: 1 }, minWidth: 0, ...(fillH && { alignSelf: 'stretch', height: '100%', overflowY: 'auto', p: '2px 8px 16px 2px', scrollbarGutter: 'stable' }) }}>
-            <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'stretch', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))' } }}>
-              {shown.map(({ e, i }) => <ExamCard key={e.id} exam={e} index={i} track={trackFor(e)} onOpen={() => setOpenId(e.id)} />)}
-            </Box>
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 2, textAlign: 'center' }}>
-              Always confirm dates, fees and eligibility on the official site. Names and logos belong to their owners and are shown only to identify each exam.
-            </Typography>
-          </Box>
-
-          <Box className="autohide-scroll" sx={{ order: { xs: 1, lg: 2 }, minWidth: 0, ...(fillH && { alignSelf: 'start', maxHeight: '100%', overflowY: 'auto' }) }}>
-            <PrepReadinessCard tracks={tracks} />
-          </Box>
-        </Box>
-      </Container>
+        )}
+      </PageShell>
 
       {opened && <ExamDetails exam={opened} track={trackFor(opened)} onClose={() => setOpenId(null)} />}
-    </Box>
+    </>
   );
 }
