@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Box, Typography, Paper, Grid, Button, Chip, Stack, Alert, CircularProgress, Link } from '@mui/material';
+import { Container, Box, Typography, Paper, Grid, Button, Chip, Stack, Alert, CircularProgress, Link } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { billingApi } from '../../api/billingApi';
 import { loadRazorpayScript } from '../../api/loadRazorpayScript';
 import { extractErrorMessage } from '../../api/apiClient';
-import PageShell from '../../components/PageShell';
+import BackToDashboard from '../../components/BackToDashboard';
 
 const FEATURES = [
   'Every company-tagged problem (LeetCode Premium style)',
@@ -91,7 +91,17 @@ export default function PricingPage() {
   };
 
   return (
-    <PageShell title="Pricing" subtitle="Company-tagged problems, unlimited AI hints, and the full aptitude suite." contentMax={880}>
+    <Container maxWidth="md" sx={{ py: 6 }}>
+      <BackToDashboard sx={{ mb: 2 }} />
+      <Box sx={{ textAlign: 'center', mb: 5 }}>
+        <Typography variant="h4" sx={{ fontWeight: 800, mb: 1 }}>
+          Unlock JeetCode Pro
+        </Typography>
+        <Typography variant="body1" color="text.secondary">
+          Company-tagged problems, unlimited AI hints, and the full aptitude suite.
+        </Typography>
+      </Box>
+
       {error && <Alert severity="error" sx={{ mb: 3 }}>{error}</Alert>}
 
       {status?.isPro && (
@@ -191,6 +201,6 @@ export default function PricingPage() {
         <Link component="button" type="button" onClick={() => navigate('/terms')} underline="hover" sx={{ font: 'inherit', verticalAlign: 'baseline' }}>Terms</Link> and{' '}
         <Link component="button" type="button" onClick={() => navigate('/privacy')} underline="hover" sx={{ font: 'inherit', verticalAlign: 'baseline' }}>Privacy Policy</Link>.
       </Typography>
-    </PageShell>
+    </Container>
   );
 }

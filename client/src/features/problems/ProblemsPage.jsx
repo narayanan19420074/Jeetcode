@@ -1,14 +1,15 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, useSearchParams } from 'react-router-dom';
-import { Box, Button, Skeleton, Stack, Typography } from '@mui/material';
+import { Box, Button, Container, Skeleton, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { problemsApi } from '../../api/problemsApi';
 import ProblemLibrary from '../dashboard/components/ProblemLibrary';
 import useProblemLists from '../dashboard/useProblemLists';
+import useViewportFill from '../dashboard/useViewportFill';
 import { DIFF_COLOR, featuredPageForToday, surface, tint } from '../dashboard/dashboardUtils';
-import PageShell from '../../components/PageShell';
+import BackToDashboard from '../../components/BackToDashboard';
 
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 
@@ -40,49 +41,69 @@ function DifficultyStat({ label, solved, total }) {
   );
 }
 
-function DifficultyBar({ progress }) {
+function ProgressHeader({ progress, featured, savedCount }) {
   const totals = progress?.total;
   const solvedBy = progress?.solved;
-  return (
-    <Box sx={[surface, { px: 2, py: 1.25, display: 'flex', gap: 2.5, flexShrink: 0 }]}>
-      {progress
-        ? DIFFICULTIES.map((d) => <DifficultyStat key={d} label={d} solved={solvedBy?.[d] || 0} total={totals?.[d] || 0} />)
-        : DIFFICULTIES.map((d) => <Skeleton key={d} variant="rounded" height={30} sx={{ flex: 1 }} />)}
-    </Box>
-  );
-}
+  const totalAll = totals ? DIFFICULTIES.reduce((s, d) => s + (totals[d] || 0), 0) : 0;
+  const solvedAll = solvedBy ? DIFFICULTIES.reduce((s, d) => s + (solvedBy[d] || 0), 0) : 0;
 
-function HeaderActions({ featured, savedCount }) {
   return (
-    <>
-      {featured && (
-        <Button
-          component={RouterLink}
-          to={`/workspace/${featured.slug}`}
-          variant="contained"
-          disableElevation
-          startIcon={<EventRoundedIcon />}
-          sx={{ fontWeight: 700, whiteSpace: 'nowrap' }}
-        >
-          Today&apos;s challenge
-        </Button>
-      )}
-      <Button
-        component={RouterLink}
-        to="/dashboard?view=list&list=favorite"
-        variant="outlined"
-        color="inherit"
-        startIcon={<StarRoundedIcon sx={{ color: 'warning.main' }} />}
-        sx={(t) => ({ fontWeight: 700, whiteSpace: 'nowrap', borderColor: t.palette.divider })}
-      >
-        My lists{savedCount > 0 ? ` · ${savedCount}` : ''}
-      </Button>
-    </>
+    <Stack
+      direction={{ xs: 'column', md: 'row' }}
+      spacing={{ xs: 1.5, md: 3 }}
+      sx={{ alignItems: { xs: 'stretch', md: 'center' }, justifyContent: 'space-between' }}
+    >
+      <Box sx={{ minWidth: 0 }}>
+        <Typography component="h1" variant="h5" sx={{ fontWeight: 800, letterSpacing: '-0.01em' }}>
+          Problems
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ fontVariantNumeric: 'tabular-nums' }}>
+          {progress ? `${solvedAll} of ${totalAll} solved` : 'Loading your progress…'}
+        </Typography>
+      </Box>
+
+      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ alignItems: { xs: 'stretch', sm: 'center' } }}>
+        <Box sx={[surface, { px: 2, py: 1.25, display: 'flex', gap: 2.5, width: { xs: '100%', sm: 340 }, flexShrink: 0 }]}>
+          {progress
+            ? DIFFICULTIES.map((d) => <DifficultyStat key={d} label={d} solved={solvedBy?.[d] || 0} total={totals?.[d] || 0} />)
+            : DIFFICULTIES.map((d) => <Skeleton key={d} variant="rounded" height={30} sx={{ flex: 1 }} />)}
+        </Box>
+
+        <Stack direction="row" spacing={1} sx={{ flexShrink: 0 }}>
+          {featured && (
+            <Button
+              component={RouterLink}
+              to={`/workspace/${featured.slug}`}
+              variant="contained"
+              disableElevation
+              startIcon={<EventRoundedIcon />}
+              sx={{ fontWeight: 700, whiteSpace: 'nowrap', flex: { xs: 1, sm: 'none' } }}
+            >
+              Today&apos;s challenge
+            </Button>
+          )}
+          <Button
+            component={RouterLink}
+            to="/dashboard?view=list&list=favorite"
+            variant="outlined"
+            color="inherit"
+            startIcon={<StarRoundedIcon sx={{ color: 'warning.main' }} />}
+            sx={(t) => ({ fontWeight: 700, whiteSpace: 'nowrap', borderColor: t.palette.divider, flex: { xs: 1, sm: 'none' } })}
+          >
+            My lists{savedCount > 0 ? ` · ${savedCount}` : ''}
+          </Button>
+        </Stack>
+      </Stack>
+    </Stack>
   );
 }
 
 export default function ProblemsPage() {
   const { isAuthenticated, user } = useSelector((s) => s.auth);
+  const theme = useTheme();
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const rootRef = useRef(null);
+  const fillH = useViewportFill(rootRef, isLg);
   const listsApi = useProblemLists(user?.id);
 
   const [progress, setProgress] = useState(null);
@@ -128,33 +149,34 @@ export default function ProblemsPage() {
     return ids.size;
   }, [listsApi.lists]);
 
-  const totals = progress?.total;
-  const solvedBy = progress?.solved;
-  const totalAll = totals ? DIFFICULTIES.reduce((n, d) => n + (totals[d] || 0), 0) : 0;
-  const solvedAll = solvedBy ? DIFFICULTIES.reduce((n, d) => n + (solvedBy[d] || 0), 0) : 0;
-
   return (
-    <PageShell
-      title="Problems"
-      subtitle={progress ? `${solvedAll} of ${totalAll} solved` : 'Loading your progress…'}
-      actions={<HeaderActions featured={featured} savedCount={savedCount} />}
-      fill
-    >
-      {({ fill }) => (
-        <Stack spacing={2} sx={{ height: fill ? '100%' : 'auto' }}>
-          <DifficultyBar progress={progress} />
-          <Box sx={{ flex: { lg: 1 }, minHeight: 0 }}>
-            <ProblemLibrary
-              isAuthenticated={isAuthenticated}
-              progress={progress}
-              dailyId={featured?._id}
-              preset={preset}
-              listsApi={listsApi}
-              height="100%"
-            />
-          </Box>
-        </Stack>
-      )}
-    </PageShell>
+    <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : { minHeight: 'calc(100vh - 64px)' }}>
+      <Container
+        maxWidth={false}
+        sx={{
+          maxWidth: 1180,
+          py: { xs: 2, md: 3 },
+          px: { xs: 1.5, sm: 3 },
+          height: fillH ? '100%' : 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: { xs: 2, md: 2.5 },
+        }}
+      >
+        <BackToDashboard sx={{ alignSelf: 'flex-start', mb: -1 }} />
+        <ProgressHeader progress={progress} featured={featured} savedCount={savedCount} />
+
+        <Box sx={{ flex: { lg: 1 }, minHeight: 0 }}>
+          <ProblemLibrary
+            isAuthenticated={isAuthenticated}
+            progress={progress}
+            dailyId={featured?._id}
+            preset={preset}
+            listsApi={listsApi}
+            height="100%"
+          />
+        </Box>
+      </Container>
+    </Box>
   );
 }

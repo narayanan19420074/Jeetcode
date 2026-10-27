@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { Box, ButtonBase, CircularProgress, IconButton, InputAdornment, TextField, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
+import { Box, ButtonBase, CircularProgress, Container, IconButton, InputAdornment, TextField, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
@@ -10,7 +10,8 @@ import { prepApi } from '../../api/prepApi';
 import { problemsApi } from '../../api/problemsApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import CompanyQuestRoadmap from './CompanyQuestRoadmap';
-import PageShell from '../../components/PageShell';
+import useViewportFill from '../dashboard/useViewportFill';
+import BackToDashboard from '../../components/BackToDashboard';
 
 const PAGE = 24;
 const norm = (s) => String(s || '').trim().toLowerCase();
@@ -71,9 +72,10 @@ export default function PrepCompaniesPage() {
   const [sp, setSp] = useSearchParams();
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const rootRef = useRef(null);
   const scrollRef = useRef(null);
   const sentinel = useRef(null);
-  const fillH = isLg; // PageShell fills the window on wide screens
+  const fillH = useViewportFill(rootRef, isLg);
 
   const [tracks, setTracks] = useState(null); // null while loading
   const [others, setOthers] = useState(null); // [{ company, count }]
@@ -134,32 +136,45 @@ export default function PrepCompaniesPage() {
     if (selected && scrollRef.current) scrollRef.current.scrollTop = 0;
   }, [selected?.name]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const searchBox = selected ? null : (
-    <TextField
-      size="small" placeholder="Search companies" value={query} onChange={(e) => setQuery(e.target.value)}
-      sx={{ width: { xs: '100%', sm: 260 } }}
-      slotProps={{
-        input: {
-          sx: { borderRadius: 99 },
-          startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment>,
-          endAdornment: query ? (
-            <InputAdornment position="end">
-              <IconButton size="small" aria-label="Clear search" onClick={() => setQuery('')}><ClearRoundedIcon fontSize="small" /></IconButton>
-            </InputAdornment>
-          ) : null,
-        },
-        htmlInput: { 'aria-label': 'Search companies' },
-      }}
-    />
-  );
-
   return (
-    <PageShell title="Companies" subtitle="Pick a company to play through its questions, level by level." actions={searchBox} fill>
-      {({ fill }) => (
-        <Box sx={{ height: fill ? '100%' : 'auto', minHeight: 0 }}>
+    <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : undefined}>
+      <Container maxWidth="lg" sx={{ py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 }, height: fillH ? '100%' : 'auto' }}>
+        <Box
+          sx={{
+            display: 'grid', gap: 2.5, alignItems: 'start', height: fillH ? '100%' : 'auto',
+            gridTemplateColumns: 'minmax(0,1fr)',
+            gridTemplateRows: fillH ? 'minmax(0, 1fr)' : undefined,
+          }}
+        >
           {/* list (stays mounted so search and scroll survive opening a company) */}
-          <Box sx={{ minWidth: 0, minHeight: 0, height: fill ? '100%' : 'auto', display: selected ? 'none' : 'flex', flexDirection: 'column' }}>
-            <Box ref={scrollRef} className="autohide-scroll" sx={fill ? { flex: 1, minHeight: 0, overflowY: 'auto', pr: 1, scrollbarGutter: 'stable' } : undefined}>
+          <Box sx={{ minWidth: 0, minHeight: 0, height: fillH ? '100%' : 'auto', display: selected ? 'none' : 'flex', flexDirection: 'column' }}>
+            <Box sx={{ display: 'flex', alignItems: { sm: 'center' }, justifyContent: 'space-between', gap: 2, flexDirection: { xs: 'column', sm: 'row' }, mb: 2, flexShrink: 0 }}>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.25, minWidth: 0 }}>
+                <BackToDashboard sx={{ mt: 0.25 }} />
+                <Box>
+                  <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em' }}>Companies</Typography>
+                  <Typography variant="body2" color="text.secondary">Pick a company to play through its questions, level by level.</Typography>
+                </Box>
+              </Box>
+              <TextField
+                size="small" placeholder="Search companies" value={query} onChange={(e) => setQuery(e.target.value)}
+                sx={{ width: { xs: '100%', sm: 260 }, flexShrink: 0 }}
+                slotProps={{
+                  input: {
+                    sx: { borderRadius: 99 },
+                    startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment>,
+                    endAdornment: query ? (
+                      <InputAdornment position="end">
+                        <IconButton size="small" aria-label="Clear search" onClick={() => setQuery('')}><ClearRoundedIcon fontSize="small" /></IconButton>
+                      </InputAdornment>
+                    ) : null,
+                  },
+                  htmlInput: { 'aria-label': 'Search companies' },
+                }}
+              />
+            </Box>
+
+            <Box ref={scrollRef} className="autohide-scroll" sx={fillH ? { flex: 1, minHeight: 0, overflowY: 'auto', pr: 1, scrollbarGutter: 'stable' } : undefined}>
               {loading ? (
                 <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}><CircularProgress size={28} /></Box>
               ) : shown.length === 0 ? (
@@ -188,14 +203,14 @@ export default function PrepCompaniesPage() {
                 exit={{ opacity: 0, transition: { duration: 0.08 } }}
                 transition={{ type: 'spring', stiffness: 260, damping: 26 }}
                 className="autohide-scroll"
-                style={fill ? { height: '100%', overflowY: 'auto', overflowX: 'hidden', minHeight: 0 } : undefined}
+                style={fillH ? { height: '100%', overflowY: 'auto', overflowX: 'hidden', minHeight: 0 } : undefined}
               >
                 <CompanyQuestRoadmap company={selected} onBack={closeCompany} />
               </motion.div>
             )}
           </AnimatePresence>
         </Box>
-      )}
-    </PageShell>
+      </Container>
+    </Box>
   );
 }

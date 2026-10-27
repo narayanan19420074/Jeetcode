@@ -1,14 +1,13 @@
-import { Suspense, lazy, useMemo, useState } from 'react';
+import { Suspense, lazy, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, Navigate, useParams } from 'react-router-dom';
 import { alpha } from '@mui/material/styles';
-import { Avatar, Box, CircularProgress, Divider, IconButton, InputAdornment, List, ListItemButton, ListItemIcon, ListItemText, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
+import { Avatar, Box, Button, CircularProgress, Divider, IconButton, InputAdornment, List, ListItemButton, ListItemIcon, ListItemText, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { SETTINGS_GROUPS, SETTINGS_ITEMS, DEFAULT_SECTION } from './settingsNav';
 import { initialsFromName } from './components/SettingsUi';
-import PageShell from '../../components/PageShell';
 
 // Each section is its own chunk — opening Settings stays light.
 const SECTIONS = {
@@ -151,6 +150,31 @@ export default function SettingsPage() {
   const [query, setQuery] = useState('');
   const isPhone = useMediaQuery((t) => t.breakpoints.down('md'));
 
+  // Desktop: the page itself never scrolls — the sidebar and the content pane
+  // each get their own scrollbar. Height = whatever is left under the navbar
+  // (and the free-access banner, if it is showing).
+  const rootRef = useRef(null);
+  const [fillH, setFillH] = useState(null);
+  useLayoutEffect(() => {
+    const el = rootRef.current;
+    if (isPhone || !el) {
+      setFillH(null);
+      return undefined;
+    }
+    const measure = () => {
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      setFillH(Math.max(420, Math.round(window.innerHeight - top)));
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    ro?.observe(document.body);
+    return () => {
+      window.removeEventListener('resize', measure);
+      ro?.disconnect();
+    };
+  }, [isPhone, section, user]);
+
   const groups = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return SETTINGS_GROUPS;
@@ -167,14 +191,45 @@ export default function SettingsPage() {
   const Section = SECTIONS[section];
   const current = SETTINGS_ITEMS.find((i) => i.key === section);
 
-  const body = (fill) => (
+  return (
+    <Box
+      ref={rootRef}
+      sx={{
+        maxWidth: 1120,
+        mx: 'auto',
+        px: { xs: 2, md: 3 },
+        py: { xs: 2.5, md: 4 },
+        ...(fillH && { height: fillH, display: 'flex', flexDirection: 'column', overflow: 'hidden', pt: 3, pb: 2 }),
+      }}
+    >
+      {/* Header — who these settings belong to */}
+      <Stack direction="row" sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1.75, mb: 3.5, flexShrink: 0 }}>
+        <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 700 }}>
+          {initialsFromName(user.name)}
+        </Avatar>
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography sx={{ fontWeight: 800, lineHeight: 1.25 }} noWrap>
+            {user.name}{' '}
+            <Typography component="span" color="text.secondary" sx={{ fontWeight: 500 }}>
+              @{user.handle}
+            </Typography>
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Your personal account
+          </Typography>
+        </Box>
+        <Button component={RouterLink} to="/dashboard" size="small" variant="outlined" startIcon={<ArrowBackRoundedIcon />} sx={{ display: { xs: 'none', sm: 'inline-flex' }, color: 'text.primary', borderColor: 'divider' }}>
+          Back to dashboard
+        </Button>
+      </Stack>
+
       <Box
         sx={{
           display: 'grid',
           gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: '264px minmax(0, 1fr)' },
           gap: { xs: 2, md: 5 },
           alignItems: 'start',
-          ...(fill && { height: '100%', minHeight: 0, gridTemplateRows: 'minmax(0, 1fr)', alignItems: 'stretch' }),
+          ...(fillH && { flex: 1, minHeight: 0, gridTemplateRows: 'minmax(0, 1fr)', alignItems: 'stretch' }),
         }}
       >
         {/* Phones: back arrow + big title instead of the sidebar */}
@@ -188,7 +243,7 @@ export default function SettingsPage() {
         </Stack>
 
         {/* Desktop sidebar */}
-        <Box component="nav" aria-label="Settings sections" sx={{ display: { xs: 'none', md: 'block' }, ...(fill ? { minHeight: 0, overflowY: 'auto', pr: 1, pb: 1 } : { position: 'sticky', top: 88 }) }}>
+        <Box component="nav" aria-label="Settings sections" sx={{ display: { xs: 'none', md: 'block' }, ...(fillH ? { minHeight: 0, overflowY: 'auto', pr: 1, pb: 1 } : { position: 'sticky', top: 88 }) }}>
           <TextField
             size="small"
             fullWidth
@@ -221,7 +276,7 @@ export default function SettingsPage() {
         </Box>
 
         {/* Content */}
-        <Box key={section} component="main" sx={{ minWidth: 0, maxWidth: 780, ...(fill && { minHeight: 0, overflowY: 'auto', pr: 1.5, pb: 3 }) }} aria-label={current?.label}>
+        <Box key={section} component="main" sx={{ minWidth: 0, maxWidth: 780, ...(fillH && { minHeight: 0, overflowY: 'auto', pr: 1.5, pb: 3 }) }} aria-label={current?.label}>
           <Suspense
             fallback={
               <Box sx={{ display: 'flex', justifyContent: 'center', py: 10 }}>
@@ -233,14 +288,6 @@ export default function SettingsPage() {
           </Suspense>
         </Box>
       </Box>
-  );
-
-  // Phones keep their own back-arrow header; desktop gets the shared page layout.
-  if (isPhone) return <Box sx={{ px: 1.5, py: 2 }}>{body(false)}</Box>;
-
-  return (
-    <PageShell title="Settings" subtitle={`${user.name} · @${user.handle}`} fill>
-      {({ fill }) => body(fill)}
-    </PageShell>
+    </Box>
   );
 }

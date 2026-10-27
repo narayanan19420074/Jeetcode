@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Box, Typography, CircularProgress, Alert, Stack, Tabs, Tab, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Container, Typography, CircularProgress, Alert, Chip, Stack, Tabs, Tab, useMediaQuery, useTheme } from '@mui/material';
 import { ThemeProvider, createTheme, alpha, lighten, darken } from '@mui/material/styles';
+import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import PsychologyRoundedIcon from '@mui/icons-material/PsychologyRounded';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
@@ -13,7 +14,7 @@ import HeroPanel from './components/HeroPanel';
 import RoadMap from './components/RoadMap';
 import { ALIENS, rankForPath, starsFor } from './components/gamification';
 import { fetchPatterns } from './aptitudeSlice';
-import PageShell from '../../components/PageShell';
+import BackToDashboard from '../../components/BackToDashboard';
 
 // Tracks (tabs). Each one is its own level road with its own START and accent
 // colour. `color: null` = the app's primary colour. Keep trackOf() in sync with
@@ -87,11 +88,20 @@ export default function AptitudePatternsPage() {
   const pathPct = patterns.length ? (cleared / patterns.length) * 100 : 0;
 
   return (
-    <PageShell title="Aptitude" subtitle="Learn it. Drill it. Beat the clock. Clear each level in Test mode to unlock the next." contentMax={860}>
-      <HeroPanel glow={rank.alien.glow ? `#${rank.alien.glow.replace('#', '')}` : '#3B82F6'} sx={{ mb: { xs: 1.5, sm: 3 }, p: { xs: 1.5, md: 3 } }}>
+    <Container maxWidth="md" disableGutters sx={{ px: { xs: 0, sm: 3 }, py: { xs: 1.5, sm: 4 } }}>
+      <BackToDashboard sx={{ mb: 1, ml: { xs: 1.5, sm: 0 } }} />
+      <HeroPanel glow={rank.alien.glow ? `#${rank.alien.glow.replace('#', '')}` : '#3B82F6'} sx={{ mb: { xs: 1.5, sm: 3 }, mx: { xs: 1.5, sm: 0 }, p: { xs: 1.5, md: 4 } }}>
         <Stack direction="row" spacing={{ xs: 1, sm: 2 }} sx={{ position: 'relative', alignItems: 'center' }}>
           <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Stack direction="row" spacing={0} sx={{ flexWrap: 'wrap', rowGap: { xs: 1, sm: 2 } }} divider={<Box sx={{ width: '1px', bgcolor: 'divider', mx: { xs: 2, sm: 3 } }} />}>
+            <Chip size="small" variant="outlined" color="primary" icon={<AutoAwesomeRoundedIcon sx={{ fontSize: 15 }} />} label="Placement path" sx={{ fontWeight: 700, mb: 1.5, display: { xs: 'none', sm: 'inline-flex' } }} />
+            <Typography component="h1" sx={{ fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.05, fontSize: { xs: 22, md: 48 } }}>
+              The One for <Box component="span" sx={{ color: 'primary.main' }}>All</Box> Aptitude
+            </Typography>
+            <Typography color="text.secondary" sx={{ mt: 1.25, maxWidth: 460, display: { xs: 'none', sm: 'block' } }}>
+              Learn it. Drill it. Beat the clock. Clear each level in Test mode to unlock the next and evolve your alien.
+            </Typography>
+
+            <Stack direction="row" spacing={0} sx={{ mt: { xs: 1.25, sm: 3 }, flexWrap: 'wrap', rowGap: { xs: 1, sm: 2 } }} divider={<Box sx={{ width: '1px', bgcolor: 'divider', mx: { xs: 2, sm: 3 } }} />}>
               {[
                 [cleared, 'Levels cleared', `/${patterns.length}`],
                 [totalStars, 'Stars', `/${patterns.length * 3}`],
@@ -131,7 +141,7 @@ export default function AptitudePatternsPage() {
       </HeroPanel>
 
       {error && (
-        <Alert severity="error" sx={{ mb: 2 }}>
+        <Alert severity="error" sx={{ mb: 2, mx: { xs: 1.5, sm: 0 } }}>
           {error}
         </Alert>
       )}
@@ -149,7 +159,7 @@ export default function AptitudePatternsPage() {
             variant="scrollable"
             scrollButtons={false}
             slotProps={{ indicator: { sx: { display: 'none' } } }}
-            sx={{ minHeight: 0, mb: 1.5, '& .MuiTabs-flexContainer': { gap: 0.75 } }}
+            sx={{ minHeight: 0, mx: { xs: 1.5, sm: 0 }, mb: 1.5, '& .MuiTabs-flexContainer': { gap: 0.75 } }}
           >
             {visibleTracks.map((t) => {
               const list = byTrack[t.key];
@@ -206,6 +216,6 @@ export default function AptitudePatternsPage() {
           </ThemeProvider>
         </>
       )}
-    </PageShell>
+    </Container>
   );
 }
