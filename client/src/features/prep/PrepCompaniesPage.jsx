@@ -154,7 +154,7 @@ export default function PrepCompaniesPage() {
   );
 
   return (
-    <PageShell title="Companies" actions={searchBox} fill>
+    <PageShell title="Companies" subtitle="Pick a company to play through its questions, level by level." actions={searchBox} fill>
       {({ fill }) => (
         <Box sx={{ height: fill ? '100%' : 'auto', minHeight: 0 }}>
           {/* list (stays mounted so search and scroll survive opening a company) */}

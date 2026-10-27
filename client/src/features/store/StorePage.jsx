@@ -184,7 +184,7 @@ export default function StorePage() {
   );
 
   return (
-    <PageShell title="Store" actions={headerActions}>
+    <PageShell title="Store" subtitle="Spend the coins you earn by solving." actions={headerActions}>
       {error && <Notice tone="error" sx={{ mb: 3 }}>{error}</Notice>}
 
       {courses.length > 0 && (

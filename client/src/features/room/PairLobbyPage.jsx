@@ -93,8 +93,12 @@ export default function PairLobbyPage() {
   );
 
   return (
-    <PageShell title="Pair Room" contentMax={560}>
+    <PageShell title="Pair Room" subtitle="Solve problems together, in real time." contentMax={560}>
       <Paper variant="outlined" sx={{ borderRadius: '20px', p: { xs: 2.5, sm: 3.5 } }}>
+        <Typography color="text.secondary" sx={{ mb: 2, lineHeight: 1.6 }}>
+          Invite a friend to work in the same editor or aptitude question, with built-in chat and video or audio calling.
+        </Typography>
+
         <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mb: 3 }}>
           {FEATURES.map((f) => (
             <Chip

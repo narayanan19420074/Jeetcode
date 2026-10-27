@@ -91,7 +91,7 @@ export default function PricingPage() {
   };
 
   return (
-    <PageShell title="Pricing" contentMax={880}>
+    <PageShell title="Pricing" subtitle="Company-tagged problems, unlimited AI hints, and the full aptitude suite." contentMax={880}>
       {error && <Alert severity="error" sx={{ mb: 3 }}>{error}</Alert>}
 
       {status?.isPro && (

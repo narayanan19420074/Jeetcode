@@ -87,7 +87,7 @@ export default function AptitudePatternsPage() {
   const pathPct = patterns.length ? (cleared / patterns.length) * 100 : 0;
 
   return (
-    <PageShell title="Aptitude" contentMax={860}>
+    <PageShell title="Aptitude" subtitle="Learn it. Drill it. Beat the clock. Clear each level in Test mode to unlock the next." contentMax={860}>
       <HeroPanel glow={rank.alien.glow ? `#${rank.alien.glow.replace('#', '')}` : '#3B82F6'} sx={{ mb: { xs: 1.5, sm: 3 }, p: { xs: 1.5, md: 3 } }}>
         <Stack direction="row" spacing={{ xs: 1, sm: 2 }} sx={{ position: 'relative', alignItems: 'center' }}>
           <Box sx={{ flex: 1, minWidth: 0 }}>

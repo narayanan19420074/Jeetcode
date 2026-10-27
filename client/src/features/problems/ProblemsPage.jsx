@@ -128,9 +128,15 @@ export default function ProblemsPage() {
     return ids.size;
   }, [listsApi.lists]);
 
+  const totals = progress?.total;
+  const solvedBy = progress?.solved;
+  const totalAll = totals ? DIFFICULTIES.reduce((n, d) => n + (totals[d] || 0), 0) : 0;
+  const solvedAll = solvedBy ? DIFFICULTIES.reduce((n, d) => n + (solvedBy[d] || 0), 0) : 0;
+
   return (
     <PageShell
       title="Problems"
+      subtitle={progress ? `${solvedAll} of ${totalAll} solved` : 'Loading your progress…'}
       actions={<HeaderActions featured={featured} savedCount={savedCount} />}
       fill
     >
