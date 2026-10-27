@@ -35,16 +35,16 @@ import { DISPLAY_FONT } from './anim';
 // explain something, no libraries beyond MUI. Hooks may be strong; claims may
 // not be false: every number comes from the content in this repo, no invented
 // testimonials, no "guaranteed selection". Keep prices in sync with /pricing.
-const START = 'Start free';
+const START = 'Start practicing';
 
 const STATS = [
   { value: '290+', label: 'coding problems' },
   { value: '3,200', label: 'aptitude questions' },
-  { value: '32', label: 'aptitude patterns' },
+  { value: '32', label: 'patterns' },
 ];
 
 const STEPS = [
-  { title: 'Sign up free', body: 'Google or email. Takes 30 seconds. No card.' },
+  { title: 'Create your account', body: 'It takes about 30 seconds.' },
   { title: 'Pick where to begin', body: 'Aptitude pattern 1, or an Easy coding problem.' },
   { title: 'Practice a little every day', body: 'Streaks and scores show what is done and what is left.' },
 ];
@@ -201,11 +201,11 @@ function NavBar({ authed, onStart, onLogin }) {
               </IconButton>
             </Tooltip>
             {!authed && (
-              <Button color="inherit" onClick={onLogin} sx={{ fontWeight: 700 }}>
+              <Button color="inherit" onClick={onLogin} sx={{ fontWeight: 700, whiteSpace: 'nowrap' }}>
                 Log in
               </Button>
             )}
-            <PrimaryCta size="medium" label={authed ? 'Open dashboard' : START} onClick={onStart} sx={{ px: 2.5, py: 0.7 }} />
+            <PrimaryCta size="medium" label={authed ? 'Dashboard' : 'Sign up'} onClick={onStart} sx={{ px: 2.5, py: 0.7 }} />
           </Stack>
         </Stack>
       </Container>
@@ -326,7 +326,7 @@ export default function HomePage() {
   const faq = [
     {
       q: 'Is JeetCode really free?',
-      a: 'Yes. Sign up without a card and start practicing right away. A few extras, like company-tagged problems and unlimited AI hints, are in JeetCode Pro. Add it only if you want it.',
+      a: 'Yes. Sign up and start practicing right away. A few extras, like company-tagged problems and unlimited AI hints, are in JeetCode Pro. Add it only if you want it.',
     },
     {
       q: 'Why one place for coding and aptitude?',
@@ -371,7 +371,7 @@ export default function HomePage() {
       {/* 1. Hero: one promise, one button, one real screenshot. */}
       <Container maxWidth="lg" sx={{ pt: { xs: 5, md: 9 }, pb: { xs: 6, md: 9 } }}>
         <Grid container spacing={{ xs: 5, md: 6 }} sx={{ alignItems: 'center' }}>
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             {offerEnds && (
               <Stack direction="row" spacing={1} sx={{ mb: 2.5, px: 1.5, py: 0.6, width: 'fit-content', borderRadius: 99, alignItems: 'center', border: '1px solid', borderColor: (t) => alpha(t.palette.warning.main, 0.5), bgcolor: (t) => alpha(t.palette.warning.main, 0.1) }}>
                 <WorkspacePremiumRoundedIcon sx={{ fontSize: 18, color: 'warning.main' }} />
@@ -382,10 +382,10 @@ export default function HomePage() {
               variant="h1"
               sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '2.4rem', sm: '3.1rem', md: '2.9rem', lg: '3.3rem' }, lineHeight: 1.05, letterSpacing: '-0.035em', textWrap: 'balance', mb: 2.25 }}
             >
-              Coding and aptitude prep. One place.
+              Placement prep for coding and aptitude.
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: { xs: '1.1rem', md: '1.2rem' }, maxWidth: '38ch', mb: 3.5, lineHeight: 1.5 }}>
-              Get ready for campus placements. Learn a topic, practice it, then take a timed test. Free to start.
+              Practice aptitude and coding problems, take timed tests, and see your progress. All in one place.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
               <PrimaryCta buttonRef={heroCtaRef} label={startLabel} onClick={goStart} />
@@ -393,38 +393,19 @@ export default function HomePage() {
                 See what's inside
               </Button>
             </Stack>
-            <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', gap: { xs: 1.25, sm: 2.5 }, mt: 3 }}>
-              {['Free to start', 'No card', 'Google sign-in'].map((t) => (
-                <Stack key={t} direction="row" spacing={0.6} sx={{ alignItems: 'center', color: 'text.secondary' }}>
-                  <CheckRoundedIcon sx={{ fontSize: 17, color: 'success.main' }} />
-                  <Typography sx={{ fontWeight: 600, fontSize: '0.88rem' }}>{t}</Typography>
-                </Stack>
+            <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', columnGap: 2.5, rowGap: 0.5, mt: 3.5 }}>
+              {STATS.map((x) => (
+                <Typography key={x.label} color="text.secondary" sx={{ fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
+                  <Box component="span" sx={{ fontWeight: 800, color: 'text.primary' }}>{x.value}</Box> {x.label}
+                </Typography>
               ))}
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Shot src="/screens/dashboard.png" alt="JeetCode dashboard with coding problems and a streak calendar" priority sx={{ boxShadow: (t) => `0 30px 60px -34px ${alpha(t.palette.primary.main, 0.5)}` }} />
           </Grid>
         </Grid>
       </Container>
-
-      {/* 2. Proof: three real numbers from the content in this repo. */}
-      <Box sx={{ borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
-        <Container maxWidth="md" sx={{ py: { xs: 4, md: 5 } }}>
-          <Grid container spacing={2}>
-            {STATS.map((s) => (
-              <Grid key={s.label} size={{ xs: 4 }}>
-                <Typography sx={{ textAlign: 'center', fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.6rem', md: '2.4rem' }, letterSpacing: '-0.03em', lineHeight: 1.1 }}>
-                  {s.value}
-                </Typography>
-                <Typography color="text.secondary" sx={{ textAlign: 'center', fontWeight: 600, fontSize: { xs: '0.82rem', md: '0.98rem' }, mt: 0.5 }}>
-                  {s.label}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
 
       {/* 3. What you get: aptitude + coding side by side, then the extras. */}
       <Container id="features" maxWidth="lg" sx={{ py: { xs: 8, md: 11 }, scrollMarginTop: 64 }}>
@@ -501,7 +482,7 @@ export default function HomePage() {
         </SectionHeading>
         <Grid container spacing={{ xs: 4, md: 3 }}>
           <Grid size={{ xs: 12, md: 6 }}>
-            <PlanCard name="Free" price="₹0" note="No card. No time limit." points={FREE_FEATURES} cta={startLabel} onCta={goStart} />
+            <PlanCard name="Free" price="₹0" note="Everything you need to begin." points={FREE_FEATURES} cta={startLabel} onCta={goStart} />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <PlanCard
@@ -564,7 +545,7 @@ export default function HomePage() {
             Your first question is two minutes away.
           </Typography>
           <Typography sx={{ color: alpha('#fff', 0.85), fontSize: '1.1rem', mb: 3.5, lineHeight: 1.6 }}>
-            Free account. No card. Bring a friend if you like.
+            Create your free account and solve your first question.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ justifyContent: 'center' }}>
             <PrimaryCta light buttonRef={finalCtaRef} label={startLabel} onClick={goStart} />
