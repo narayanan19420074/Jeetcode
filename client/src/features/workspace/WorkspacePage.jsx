@@ -49,6 +49,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
+import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
@@ -60,6 +61,7 @@ import SolutionsPanel from './community/SolutionsPanel';
 import DiscussionPanel from './community/DiscussionPanel';
 import ShareSolutionDialog from './community/ShareSolutionDialog';
 import SubmissionsPanel from './SubmissionsPanel';
+import ProblemListDrawer from './ProblemListDrawer';
 import ProblemDescription from './ProblemDescription';
 import { ConsoleBody, EditorStatus, VerdictChip } from './ConsolePanel';
 import SplitHandle from './SplitHandle';
@@ -238,6 +240,7 @@ export default function WorkspacePage() {
   const [consoleTab, setConsoleTab] = useState('cases'); // 'cases' | 'result'
   const [activeCase, setActiveCase] = useState(0);
   const [moreAnchor, setMoreAnchor] = useState(null);
+  const [listOpen, setListOpen] = useState(false); // problem list overlay (left)
   const [aiInput, setAiInput] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiMessages, setAiMessages] = useState([AI_WELCOME]);
@@ -723,10 +726,14 @@ export default function WorkspacePage() {
       {isMobile && (
         <Box sx={{ flexShrink: 0, bgcolor: surf.chrome }}>
           {/* Tap the problem name -> description slides in from the right */}
+          <Stack direction="row" sx={{ alignItems: 'center', pl: 0.75 }}>
+          <WsIconButton title="Problem list" size="lg" onClick={() => setListOpen(true)}>
+            <FormatListBulletedRoundedIcon />
+          </WsIconButton>
           <ButtonBase
             onClick={openDesc}
             aria-label="Open problem description"
-            sx={{ width: '100%', justifyContent: 'flex-start', gap: 1.25, px: 2, pt: 1.25, pb: 0.75, textAlign: 'left' }}
+            sx={{ flex: 1, minWidth: 0, justifyContent: 'flex-start', gap: 1.25, pl: 1, pr: 2, pt: 1.25, pb: 0.75, textAlign: 'left' }}
           >
             <Box sx={{ flex: 1, minWidth: 0 }}>
               <Typography noWrap sx={{ fontWeight: 800, fontSize: '1rem', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
@@ -746,6 +753,7 @@ export default function WorkspacePage() {
               <ChevronRightRoundedIcon sx={{ fontSize: 20 }} />
             </Stack>
           </ButtonBase>
+          </Stack>
 
           {/* the one hairline: header block vs. content */}
           <PaneBar height={48} sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
@@ -769,6 +777,9 @@ export default function WorkspacePage() {
           }}
         >
           <PaneBar>
+            <WsIconButton title="Problem list" onClick={() => setListOpen(true)}>
+              <FormatListBulletedRoundedIcon />
+            </WsIconButton>
             <PaneTabs value={descTab} onChange={openTab} items={DESC_TABS} labels={tabLabels} />
             <Box sx={{ flex: 1 }} />
             <WsIconButton title="Random problem" onClick={handleRandom}>
@@ -1175,6 +1186,8 @@ export default function WorkspacePage() {
           </WsButton>
         </Box>
       </Drawer>
+
+      <ProblemListDrawer open={listOpen} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={goToProblem} />
 
       <ShareSolutionDialog
         open={shareOpen}

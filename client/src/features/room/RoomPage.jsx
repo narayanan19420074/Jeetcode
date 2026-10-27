@@ -31,6 +31,7 @@ import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
+import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { problemsApi } from '../../api/problemsApi';
@@ -50,6 +51,7 @@ import SolutionsPanel from '../workspace/community/SolutionsPanel';
 import DiscussionPanel from '../workspace/community/DiscussionPanel';
 import ShareSolutionDialog from '../workspace/community/ShareSolutionDialog';
 import SubmissionsPanel from '../workspace/SubmissionsPanel';
+import ProblemListDrawer from '../workspace/ProblemListDrawer';
 import { EditorStatus, VerdictChip } from '../workspace/ConsolePanel';
 import SplitHandle from '../workspace/SplitHandle';
 import MobileKeyBar from '../workspace/MobileKeyBar';
@@ -148,6 +150,7 @@ export default function RoomPage() {
   const [confirm, setConfirm] = useState(null); // { type: 'solution', sol } | { type: 'reset' }
   const [adjacent, setAdjacent] = useState({ prev: null, next: null }); // slugs for the prev / next arrows
   const [switching, setSwitching] = useState(false);
+  const [listOpen, setListOpen] = useState(false); // problem list overlay (left)
   // Pane widths (desktop): labels shrink to icons as a pane gets narrower, same as the workspace.
   const [leftEl, setLeftEl] = useState(null);
   const [rightEl, setRightEl] = useState(null);
@@ -663,7 +666,10 @@ export default function RoomPage() {
         height="auto"
         sx={{ minHeight: 48, pt: 'env(safe-area-inset-top)', px: { xs: 0.75, md: 1.5 }, gap: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}
       >
-        <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1, pl: { xs: 1, md: 0.5 } }}>
+        <WsIconButton title="Problem list" size={ctl} onClick={() => setListOpen(true)}>
+          <FormatListBulletedRoundedIcon />
+        </WsIconButton>
+        <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1, pl: { xs: 0.5, md: 0.5 } }}>
           <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.95rem' }}>
             {room.meta.title || problem?.title || 'Pair room'}
           </Typography>
@@ -1065,6 +1071,9 @@ export default function RoomPage() {
           <Box sx={{ display: mobileView === 'chat' ? 'flex' : 'none', flex: 1, minHeight: 0, flexDirection: 'column', pb: 'env(safe-area-inset-bottom)' }}>{chatPanel}</Box>
         )}
       </Box>
+
+      {/* Problem list overlay: picking one switches the problem for BOTH of you */}
+      <ProblemListDrawer open={listOpen} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={switchProblem} disabled={switching} />
 
       {/* Phone: problem description, slides in right -> left */}
       <Drawer anchor="right" open={descOpen} onClose={closeDesc} slotProps={{ paper: { sx: { width: '100%', maxWidth: '100%' } } }}>
