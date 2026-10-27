@@ -16,6 +16,7 @@ import CheckoutDialog from './CheckoutDialog';
 import CoursePanel from './CoursePanel';
 import { CoinsTab, OrdersTab } from './AccountTabs';
 import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
+import BackToDashboard from '../../components/BackToDashboard';
 
 // The Store is one screen in the same game look as Quests: a wallet bar, category buttons and a grid of item tiles.
 // Orders and the coin wallet open as dialogs from the top bar, so nobody has to leave the page.
@@ -163,6 +164,8 @@ export default function StorePage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
+      <BackToDashboard sx={{ mb: 1.5 }} />
+
       {/* Top bar: title, wallet, the one daily action, orders */}
       <Panel n={18} sx={{ mb: 4 }}>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 3, p: { xs: 2.5, md: 3.5 }, background: 'linear-gradient(90deg, rgba(255,122,0,0.16), transparent 55%)' }}>

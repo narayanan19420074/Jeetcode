@@ -21,6 +21,7 @@ import ProBadge from '../../components/ProBadge';
 import useProblemLists from '../dashboard/useProblemLists';
 import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, utcKey } from '../dashboard/dashboardUtils';
 import AchievementBadge from './AchievementBadge';
+import BackToDashboard from '../../components/BackToDashboard';
 
 const initialsFromName = (name) =>
   (name || 'U').trim().split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase()).join('');
@@ -177,7 +178,8 @@ export default function YouPage() {
 
   return (
     <Container maxWidth="sm" sx={{ pt: { xs: 1, sm: 3 }, pb: 4 }}>
-      <Stack direction="row" sx={{ justifyContent: 'flex-end', mb: 0.5 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
+        <BackToDashboard />
         <Tooltip title="Settings">
           <IconButton component={RouterLink} to="/settings" aria-label="Settings">
             <SettingsRoundedIcon />

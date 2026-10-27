@@ -11,6 +11,7 @@ import { problemsApi } from '../../api/problemsApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import CompanyQuestRoadmap from './CompanyQuestRoadmap';
 import useViewportFill from '../dashboard/useViewportFill';
+import BackToDashboard from '../../components/BackToDashboard';
 
 const PAGE = 24;
 const norm = (s) => String(s || '').trim().toLowerCase();
@@ -148,9 +149,12 @@ export default function PrepCompaniesPage() {
           {/* list (stays mounted so search and scroll survive opening a company) */}
           <Box sx={{ minWidth: 0, minHeight: 0, height: fillH ? '100%' : 'auto', display: selected ? 'none' : 'flex', flexDirection: 'column' }}>
             <Box sx={{ display: 'flex', alignItems: { sm: 'center' }, justifyContent: 'space-between', gap: 2, flexDirection: { xs: 'column', sm: 'row' }, mb: 2, flexShrink: 0 }}>
-              <Box>
-                <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em' }}>Companies</Typography>
-                <Typography variant="body2" color="text.secondary">Pick a company to play through its questions, level by level.</Typography>
+              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.25, minWidth: 0 }}>
+                <BackToDashboard sx={{ mt: 0.25 }} />
+                <Box>
+                  <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em' }}>Companies</Typography>
+                  <Typography variant="body2" color="text.secondary">Pick a company to play through its questions, level by level.</Typography>
+                </Box>
               </Box>
               <TextField
                 size="small" placeholder="Search companies" value={query} onChange={(e) => setQuery(e.target.value)}

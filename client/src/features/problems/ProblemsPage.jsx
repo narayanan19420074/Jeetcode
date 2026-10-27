@@ -9,6 +9,7 @@ import ProblemLibrary from '../dashboard/components/ProblemLibrary';
 import useProblemLists from '../dashboard/useProblemLists';
 import useViewportFill from '../dashboard/useViewportFill';
 import { DIFF_COLOR, featuredPageForToday, surface, tint } from '../dashboard/dashboardUtils';
+import BackToDashboard from '../../components/BackToDashboard';
 
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 
@@ -162,6 +163,7 @@ export default function ProblemsPage() {
           gap: { xs: 2, md: 2.5 },
         }}
       >
+        <BackToDashboard sx={{ alignSelf: 'flex-start', mb: -1 }} />
         <ProgressHeader progress={progress} featured={featured} savedCount={savedCount} />
 
         <Box sx={{ flex: { lg: 1 }, minHeight: 0 }}>

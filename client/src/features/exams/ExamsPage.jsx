@@ -14,6 +14,7 @@ import useViewportFill from '../dashboard/useViewportFill';
 import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
 import { daysUntil, formatExamDate, pickExamDate } from '../prep/examDate';
 import { CATEGORIES, EXAMS } from './examsData';
+import BackToDashboard from '../../components/BackToDashboard';
 
 const norm = (s) => String(s || '').trim().toLowerCase();
 const readinessOf = (pct) => Math.max(0, Math.min(100, Math.round(pct ?? 0)));
@@ -252,9 +253,12 @@ export default function ExamsPage() {
     <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : undefined}>
       <Container maxWidth="lg" sx={{ py: { xs: 2, md: 2.5 }, px: { xs: 1.5, sm: 3 }, height: fillH ? '100%' : 'auto', display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ display: 'flex', alignItems: { xs: 'flex-start', md: 'center' }, justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' }, gap: 1.25, mb: 1.5, flexShrink: 0 }}>
-          <Box sx={{ minWidth: 0 }}>
-            <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Exams</Typography>
-            <Typography variant="body2" color="text.secondary">{shown.length} top coding and aptitude exams. Apply on the official site, track how ready you are.</Typography>
+          <Box sx={{ minWidth: 0, display: 'flex', alignItems: 'flex-start', gap: 1.25 }}>
+            <BackToDashboard sx={{ mt: 0.25 }} />
+            <Box sx={{ minWidth: 0 }}>
+              <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Exams</Typography>
+              <Typography variant="body2" color="text.secondary">{shown.length} top coding and aptitude exams. Apply on the official site, track how ready you are.</Typography>
+            </Box>
           </Box>
           <Box role="tablist" aria-label="Exam type" sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', flexShrink: 0 }}>
             {CATEGORIES.map((c) => {

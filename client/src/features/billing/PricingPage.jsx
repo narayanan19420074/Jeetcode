@@ -7,6 +7,7 @@ import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRou
 import { billingApi } from '../../api/billingApi';
 import { loadRazorpayScript } from '../../api/loadRazorpayScript';
 import { extractErrorMessage } from '../../api/apiClient';
+import BackToDashboard from '../../components/BackToDashboard';
 
 const FEATURES = [
   'Every company-tagged problem (LeetCode Premium style)',
@@ -91,6 +92,7 @@ export default function PricingPage() {
 
   return (
     <Container maxWidth="md" sx={{ py: 6 }}>
+      <BackToDashboard sx={{ mb: 2 }} />
       <Box sx={{ textAlign: 'center', mb: 5 }}>
         <Typography variant="h4" sx={{ fontWeight: 800, mb: 1 }}>
           Unlock JeetCode Pro

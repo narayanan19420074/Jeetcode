@@ -14,6 +14,7 @@ import HeroPanel from './components/HeroPanel';
 import RoadMap from './components/RoadMap';
 import { ALIENS, rankForPath, starsFor } from './components/gamification';
 import { fetchPatterns } from './aptitudeSlice';
+import BackToDashboard from '../../components/BackToDashboard';
 
 // Tracks (tabs). Each one is its own level road with its own START and accent
 // colour. `color: null` = the app's primary colour. Keep trackOf() in sync with
@@ -88,6 +89,7 @@ export default function AptitudePatternsPage() {
 
   return (
     <Container maxWidth="md" disableGutters sx={{ px: { xs: 0, sm: 3 }, py: { xs: 1.5, sm: 4 } }}>
+      <BackToDashboard sx={{ mb: 1, ml: { xs: 1.5, sm: 0 } }} />
       <HeroPanel glow={rank.alien.glow ? `#${rank.alien.glow.replace('#', '')}` : '#3B82F6'} sx={{ mb: { xs: 1.5, sm: 3 }, mx: { xs: 1.5, sm: 0 }, p: { xs: 1.5, md: 4 } }}>
         <Stack direction="row" spacing={{ xs: 1, sm: 2 }} sx={{ position: 'relative', alignItems: 'center' }}>
           <Box sx={{ flex: 1, minWidth: 0 }}>
