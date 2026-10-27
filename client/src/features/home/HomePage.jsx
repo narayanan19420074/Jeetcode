@@ -224,9 +224,10 @@ function PrimaryCta({ onClick, label, size = 'large', sx, buttonRef, light = fal
 }
 
 // Real app screenshot in a phone frame. Missing file -> fallback (or nothing).
-function Shot({ src, alt, fallback = null, maxWidth = 280, crop, priority = false, sx }) {
+function Shot({ src, alt, fallback = null, maxWidth = 560, crop, priority = false, sx }) {
   const [failed, setFailed] = useState(false);
   if (failed) return fallback;
+  // Desktop screenshot in a small browser window frame (16:10 image).
   return (
     <Box
       sx={{
@@ -234,30 +235,37 @@ function Shot({ src, alt, fallback = null, maxWidth = 280, crop, priority = fals
         mx: 'auto',
         width: '100%',
         maxWidth,
-        p: '6px',
-        borderRadius: '30px',
+        overflow: 'hidden',
+        borderRadius: '12px',
+        border: '1px solid',
+        borderColor: 'divider',
         bgcolor: '#0F172A',
-        boxShadow: (t) => `0 32px 60px -30px ${alpha(t.palette.primary.main, 0.6)}, 0 0 0 1px ${alpha('#fff', 0.1)} inset`,
-        ...(crop && { height: crop, overflow: 'hidden' }),
+        boxShadow: (t) => `0 28px 60px -30px ${alpha(t.palette.primary.main, 0.55)}`,
         ...sx,
       }}
     >
-      <Box
-        component="img"
-        src={src}
-        alt={alt}
-        loading={priority ? 'eager' : 'lazy'}
-        decoding="async"
-        onError={() => setFailed(true)}
-        sx={{
-          display: 'block',
-          width: '100%',
-          borderRadius: '24px',
-          objectFit: 'cover',
-          objectPosition: 'top',
-          ...(crop ? { height: '100%' } : { aspectRatio: '9 / 19.5' }),
-        }}
-      />
+      <Stack direction="row" spacing={0.6} sx={{ alignItems: 'center', px: 1.25, height: 22, bgcolor: alpha('#fff', 0.06) }} aria-hidden>
+        {[0, 1, 2].map((i) => (
+          <Box key={i} sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: alpha('#fff', 0.28) }} />
+        ))}
+      </Stack>
+      <Box sx={crop ? { height: crop, overflow: 'hidden' } : undefined}>
+        <Box
+          component="img"
+          src={src}
+          alt={alt}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          onError={() => setFailed(true)}
+          sx={{
+            display: 'block',
+            width: '100%',
+            objectFit: 'cover',
+            objectPosition: 'top',
+            ...(crop ? { height: '100%' } : { aspectRatio: '16 / 10' }),
+          }}
+        />
+      </Box>
     </Box>
   );
 }
@@ -430,7 +438,7 @@ function PersonaTabs({ onGo }) {
           </Button>
         </Box>
         <Box sx={{ minWidth: 0 }}>
-          <Shot key={p.key} src={p.shot} alt={`${p.label} screen in JeetCode`} maxWidth={260} fallback={<Visual />} />
+          <Shot key={p.key} src={p.shot} alt={`${p.label} screen in JeetCode`} maxWidth={600} fallback={<Visual />} />
         </Box>
       </Box>
     </Box>
@@ -449,8 +457,8 @@ function StepCards({ steps }) {
             </Box>
             <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '1.35rem', letterSpacing: '-0.02em' }}>{st.title}</Typography>
             <Typography color="text.secondary" sx={{ mt: 0.5, mb: 3, lineHeight: 1.5 }}>{st.body}</Typography>
-            <Box sx={{ mt: 'auto', mx: { xs: 2, md: 1 }, mb: { xs: -9, md: -10 } }}>
-              <Shot src={st.shot} alt={st.alt} crop={300} maxWidth={230} />
+            <Box sx={{ mt: 'auto', mx: { xs: 2, md: 1 }, mb: { xs: -6, md: -7 } }}>
+              <Shot src={st.shot} alt={st.alt} crop={190} maxWidth={420} />
             </Box>
           </Box>
         </Grid>
@@ -692,8 +700,8 @@ export default function HomePage() {
               <Grid size={{ xs: 12, md: 6 }}>
                 <Box sx={{ position: 'relative', pb: { xs: 0, sm: 5 } }}>
                   <HeroDemo />
-                  <Box sx={{ display: { xs: 'none', sm: 'block' }, position: 'absolute', right: { sm: 0, md: -16 }, bottom: 0, width: { sm: 150, md: 168 }, zIndex: 2, transform: 'rotate(3deg)' }}>
-                    <Shot src="/screens/dashboard.png" alt="JeetCode dashboard on a phone" priority />
+                  <Box sx={{ display: { xs: 'none', sm: 'block' }, position: 'absolute', right: { sm: 0, md: -16 }, bottom: 0, width: { sm: 220, md: 260 }, zIndex: 2, transform: 'rotate(3deg)' }}>
+                    <Shot src="/screens/dashboard.png" alt="JeetCode dashboard" priority />
                   </Box>
                 </Box>
               </Grid>
@@ -770,13 +778,7 @@ export default function HomePage() {
                   body="Add to your home screen. Opens like an app."
                   sx={{ bgcolor: (t) => alpha(t.palette.primary.main, 0.07), borderColor: (t) => alpha(t.palette.primary.main, 0.35) }}
                 >
-                  <Shot
-                    src="/screens/problems.png"
-                    alt="JeetCode problem on a phone"
-                    crop={170}
-                    maxWidth={150}
-                    fallback={<PhoneIphoneRoundedIcon sx={{ fontSize: 72, color: 'primary.main', opacity: 0.9 }} />}
-                  />
+                  <PhoneIphoneRoundedIcon sx={{ fontSize: 72, color: 'primary.main', opacity: 0.9 }} />
                 </MiniCard>
               </Grid>
             </Grid>
