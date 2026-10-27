@@ -153,7 +153,7 @@ export default function RoomPage() {
   const [adjacent, setAdjacent] = useState({ prev: null, next: null }); // slugs for the prev / next arrows
   const [switching, setSwitching] = useState(false);
   const [listOpen, setListOpen] = useState(false); // problem list overlay (left)
-  const [friendsOpen, setFriendsOpen] = useState(false); // "call a friend" dialog
+  const [friendsAnchor, setFriendsAnchor] = useState(null); // "call a friend" dropdown
   // Pane widths (desktop): labels shrink to icons as a pane gets narrower, same as the workspace.
   const [leftEl, setLeftEl] = useState(null);
   const [rightEl, setRightEl] = useState(null);
@@ -689,7 +689,7 @@ export default function RoomPage() {
         <PresenceStack meName={room.me?.name || displayName} peers={room.peers} />
 
         {isAuthenticated && (
-          <WsIconButton title="Call a friend" size={ctl} onClick={() => setFriendsOpen(true)}>
+          <WsIconButton title="Call a friend" size={ctl} active={Boolean(friendsAnchor)} onClick={(e) => setFriendsAnchor(e.currentTarget)}>
             <PersonAddAlt1RoundedIcon />
           </WsIconButton>
         )}
@@ -1080,7 +1080,7 @@ export default function RoomPage() {
         )}
       </Box>
 
-      {isAuthenticated && <InviteFriendsDialog open={friendsOpen} onClose={() => setFriendsOpen(false)} roomId={roomId} roomTitle={room.meta.title || problem?.title} />}
+      {isAuthenticated && <InviteFriendsDialog anchorEl={friendsAnchor} onClose={() => setFriendsAnchor(null)} roomId={roomId} roomTitle={room.meta.title || problem?.title} />}
 
       {/* Problem list overlay: picking one switches the problem for BOTH of you */}
       <ProblemListDrawer open={listOpen} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={switchProblem} disabled={switching} />
