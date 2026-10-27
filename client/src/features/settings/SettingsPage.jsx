@@ -239,7 +239,7 @@ export default function SettingsPage() {
   if (isPhone) return <Box sx={{ px: 1.5, py: 2 }}>{body(false)}</Box>;
 
   return (
-    <PageShell title="Settings" subtitle={`${user.name} · @${user.handle}`} fill>
+    <PageShell title="Settings" fill>
       {({ fill }) => body(fill)}
     </PageShell>
   );

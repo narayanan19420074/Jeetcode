@@ -179,7 +179,6 @@ export default function YouPage() {
   return (
     <PageShell
       title="Profile"
-      subtitle={`@${user.handle}`}
       contentMax={720}
       actions={
         <Tooltip title="Settings">

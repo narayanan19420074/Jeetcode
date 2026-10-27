@@ -264,7 +264,6 @@ export default function ExamsPage() {
     <>
       <PageShell
         title="Exams"
-        subtitle={`${shown.length} top coding and aptitude exams. Apply on the official site, track how ready you are.`}
         actions={tabs}
         aside={<PrepReadinessCard tracks={tracks} />}
         asideMobile="top"
