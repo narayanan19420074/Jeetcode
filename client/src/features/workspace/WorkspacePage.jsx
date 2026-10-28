@@ -1,7 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import Editor from '@monaco-editor/react';
 import {
   Box,
   ButtonBase,
@@ -65,13 +64,12 @@ import ProblemListDrawer from './ProblemListDrawer';
 import ProblemDescription from './ProblemDescription';
 import { ConsoleBody, EditorStatus, VerdictChip } from './ConsolePanel';
 import SplitHandle from './SplitHandle';
-import MobileKeyBar from './MobileKeyBar';
-import EditorScroller from './EditorScroller';
+import CodeEditor from './CodeEditor';
 import useStopwatch, { formatClock } from './useStopwatch';
 import { EmptyState, MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton, WsSelect, useElementWidth } from './wsUi';
 import { WS, mono } from './wsTokens';
-import { wsSurface, defineMonacoThemes, monacoThemeName } from './workspaceTheme';
-import { formatCode, preloadFormatter } from './formatCode';
+import { wsSurface } from './workspaceTheme';
+import { formatCode } from './formatCode';
 import { aiApi } from '../../api/aiApi';
 import { problemsApi } from '../../api/problemsApi';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -200,7 +198,6 @@ export default function WorkspacePage() {
   const { isAuthenticated } = useSelector((s) => s.auth);
   // Settings -> Editor / Appearance
   const editorPrefs = useSelector((s) => s.ui.editor);
-  const uiMode = useSelector((s) => s.ui.mode);
 
   const {
     currentProblem: problem,
@@ -228,14 +225,13 @@ export default function WorkspacePage() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
   const location = useLocation();
   const surf = wsSurface(theme);
-  const monacoRef = useRef(null);
   // Phone: one page. Tabs = Code | Solutions | Discussion. The problem text opens
   // as a panel sliding in from the right (kept in history state so the phone's
   // Back button closes it instead of leaving the page).
   const [mobileView, setMobileView] = useState('code'); // 'code' | 'solutions' | 'discussion' | 'submissions'
   const descOpen = isMobile && Boolean(location.state?.problemDesc);
-  const [editorFocused, setEditorFocused] = useState(false); // phone: shows the symbol bar
-  const [editorInstance, setEditorInstance] = useState(null); // fast-scroller + status bar need the editor
+  const [editorInstance, setEditorInstance] = useState(null); // the status bar needs the editor
+  const editorApi = useRef(null); // CodeEditor: format() / cancelPendingFormat()
   const [consoleOpen, setConsoleOpen] = useState(false);
   const [consoleTab, setConsoleTab] = useState('cases'); // 'cases' | 'result'
   const [activeCase, setActiveCase] = useState(0);
@@ -349,15 +345,6 @@ export default function WorkspacePage() {
     aiEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [aiMessages, aiLoading, aiDrawerOpen]);
 
-  // Editor colours follow the app accent / light-dark mode.
-  const accentMain = theme.palette.primary.main;
-  useEffect(() => {
-    const m = monacoRef.current;
-    if (!m) return;
-    defineMonacoThemes(m, accentMain);
-    m.editor.setTheme(monacoThemeName(editorPrefs.theme, uiMode));
-  }, [accentMain, editorPrefs.theme, uiMode]);
-
   // Phone status bar matches the app bar instead of the old blue.
   const chromeColor = theme.palette.background.paper;
   useEffect(() => {
@@ -372,115 +359,19 @@ export default function WorkspacePage() {
     ? codeByProblem[problem._id]?.[activeLanguage] ?? problem.starterCode[activeLanguage]
     : '';
 
-  // ---- auto-format: Prettier (JS) / indentation fixer (Python) ----
-  const editorRef = useRef(null);
-  const fmtTimer = useRef(null);
-  const composingRef = useRef(false);
-  const pasteUntil = useRef(0);
-  const fmtCtx = useRef({ language: activeLanguage, tabSize: editorPrefs.tabSize });
-  useEffect(() => {
-    fmtCtx.current = { language: activeLanguage, tabSize: editorPrefs.tabSize };
-    if (activeLanguage === 'javascript') preloadFormatter();
-  }, [activeLanguage, editorPrefs.tabSize]);
-  useEffect(() => () => clearTimeout(fmtTimer.current), []);
-  // A pending auto-format must not fire into the next problem's editor.
-  useEffect(() => {
-    clearTimeout(fmtTimer.current);
-  }, [slug]);
-
-  const runAutoFormat = useCallback(async () => {
-    const ed = editorRef.current;
-    const model = ed?.getModel();
-    if (!ed || !model || composingRef.current) return;
-    const sel = ed.getSelection();
-    if (sel && !sel.isEmpty()) return;
-    const src = model.getValue();
-    const { language, tabSize } = fmtCtx.current;
-    const res = await formatCode(language, src, model.getOffsetAt(ed.getPosition()), { tabSize });
-    // nothing to do, or the user kept typing while we were formatting
-    if (res.code === src || model.getValue() !== src || composingRef.current) return;
-    // replace only the span that changed so the caret / scroll stay put
-    let start = 0;
-    const maxStart = Math.min(src.length, res.code.length);
-    while (start < maxStart && src[start] === res.code[start]) start += 1;
-    let endOld = src.length;
-    let endNew = res.code.length;
-    while (endOld > start && endNew > start && src[endOld - 1] === res.code[endNew - 1]) {
-      endOld -= 1;
-      endNew -= 1;
-    }
-    const a = model.getPositionAt(start);
-    const b = model.getPositionAt(endOld);
-    ed.pushUndoStop();
-    ed.executeEdits('auto-format', [
-      {
-        range: { startLineNumber: a.lineNumber, startColumn: a.column, endLineNumber: b.lineNumber, endColumn: b.column },
-        text: res.code.slice(start, endNew),
-      },
-    ]);
-    ed.pushUndoStop();
-    ed.setPosition(model.getPositionAt(res.cursorOffset));
-  }, []);
-
-  const scheduleAutoFormat = useCallback(
-    (delay = 1200) => {
-      if (Date.now() < pasteUntil.current) return; // a paste already queued a faster format
-      clearTimeout(fmtTimer.current);
-      fmtTimer.current = setTimeout(runAutoFormat, delay);
-    },
-    [runAutoFormat]
-  );
-
-  const handleEditorMount = useCallback(
-    (editor) => {
-      editorRef.current = editor;
-      setEditorInstance(editor);
-      // Don't touch the text while the phone keyboard is composing a word.
-      editor.onDidCompositionStart(() => {
-        composingRef.current = true;
-      });
-      editor.onDidCompositionEnd(() => {
-        composingRef.current = false;
-        scheduleAutoFormat();
-      });
-      editor.onDidFocusEditorText(() => setEditorFocused(true));
-      editor.onDidBlurEditorText(() => setEditorFocused(false));
-      editor.onDidPaste(() => {
-        clearTimeout(fmtTimer.current);
-        pasteUntil.current = Date.now() + 500;
-        fmtTimer.current = setTimeout(runAutoFormat, 250);
-      });
-    },
-    [runAutoFormat, scheduleAutoFormat]
-  );
-
   const handleEditorChange = useCallback(
     (value) => {
       if (!problem) return;
       dispatch(updateCode({ problemId: problem._id, language: activeLanguage, code: value ?? '' }));
-      scheduleAutoFormat();
     },
-    [dispatch, problem, activeLanguage, scheduleAutoFormat]
+    [dispatch, problem, activeLanguage]
   );
 
-  // Symbol bar actions (phone)
-  const keyType = (text) => {
-    const ed = editorRef.current;
-    if (!ed) return;
-    ed.focus();
-    ed.trigger('keyboard', 'type', { text });
-  };
-  const keyCommand = (id) => () => {
-    const ed = editorRef.current;
-    if (!ed) return;
-    ed.focus();
-    ed.trigger('keyboard', id, null);
-  };
   const keepFocus = (e) => e.preventDefault(); // tapping Run must not drop the keyboard mid-tap
 
   // Safety net: whatever is typed, Run / Submit send correctly indented code.
   const prepareCode = async () => {
-    clearTimeout(fmtTimer.current);
+    editorApi.current?.cancelPendingFormat();
     const res = await formatCode(activeLanguage, code, 0, { tabSize: editorPrefs.tabSize });
     if (res.code !== code) {
       dispatch(updateCode({ problemId: problem._id, language: activeLanguage, code: res.code }));
@@ -958,82 +849,19 @@ export default function WorkspacePage() {
         )}
 
         <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-          <Box sx={{ position: 'relative', bgcolor: surf.canvas, flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
-            <Editor
-              height="100%"
-              path={`${problem._id}-${activeLanguage}`}
-              language={activeLanguage === 'cpp' ? 'cpp' : activeLanguage}
-              theme={monacoThemeName(editorPrefs.theme, uiMode)}
-              beforeMount={(monaco) => {
-                monacoRef.current = monaco;
-                defineMonacoThemes(monaco, accentMain);
-              }}
-              value={code}
-              onChange={handleEditorChange}
-              onMount={handleEditorMount}
-              loading={<CircularProgress size={26} />}
-              options={{
-                fontSize: editorPrefs.fontSize,
-                fontFamily: '"JetBrains Mono", "Fira Code", Menlo, Consolas, monospace',
-                minimap: { enabled: editorPrefs.minimap },
-                wordWrap: isMobile || editorPrefs.wordWrap ? 'on' : 'off', // phones: never scroll sideways
-                wrappingIndent: 'indent',
-                lineNumbers: editorPrefs.lineNumbers ? 'on' : 'off',
-                fontLigatures: editorPrefs.ligatures,
-                autoClosingBrackets: editorPrefs.autoClose ? 'languageDefined' : 'never',
-                autoClosingQuotes: editorPrefs.autoClose ? 'languageDefined' : 'never',
-                scrollBeyondLastLine: false,
-                automaticLayout: true,
-                tabSize: editorPrefs.tabSize,
-                insertSpaces: true,
-                detectIndentation: false,
-                autoIndent: 'full',
-                trimAutoWhitespace: true,
-                smoothScrolling: true,
-                padding: { top: 12, bottom: 12 },
-                ...(isMobile
-                  ? {
-                      folding: false,
-                      glyphMargin: false,
-                      lineNumbersMinChars: 2,
-                      lineDecorationsWidth: 6,
-                      renderLineHighlight: 'gutter',
-                      overviewRulerLanes: 0,
-                      hideCursorInOverviewRuler: true,
-                      scrollbar: { verticalScrollbarSize: 6, horizontalScrollbarSize: 6 },
-                      stickyScroll: { enabled: false },
-                      // Popups cover a phone screen and Enter would accept them instead of adding a new line.
-                      quickSuggestions: false,
-                      suggestOnTriggerCharacters: false,
-                      acceptSuggestionOnEnter: 'off',
-                      acceptSuggestionOnCommitCharacter: false,
-                      wordBasedSuggestions: 'off',
-                      parameterHints: { enabled: false },
-                      hover: { enabled: false },
-                      contextmenu: false,
-                      occurrencesHighlight: 'off',
-                      selectionHighlight: false,
-                    }
-                  : { lineNumbersMinChars: 3 }),
-              }}
-            />
-            {isMobile && <EditorScroller editor={editorInstance} />}
-          </Box>
-
-          {isMobile && editorFocused && (
-            <MobileKeyBar
-              onKey={keyType}
-              onTab={keyCommand('tab')}
-              onOutdent={keyCommand('outdent')}
-              onDeleteLine={keyCommand('editor.action.deleteLines')}
-              onUp={keyCommand('cursorUp')}
-              onDown={keyCommand('cursorDown')}
-              onLeft={keyCommand('cursorLeft')}
-              onRight={keyCommand('cursorRight')}
-              onUndo={keyCommand('undo')}
-              onRedo={keyCommand('redo')}
-            />
-          )}
+          <CodeEditor
+            ref={editorApi}
+            path={`${problem._id}-${activeLanguage}`}
+            language={activeLanguage}
+            value={code}
+            onChange={handleEditorChange}
+            tabSize={editorPrefs.tabSize}
+            isMobile={isMobile}
+            hidden={!isMobile && maximized === 'console'}
+            autoFormat
+            resetKey={slug}
+            onReady={setEditorInstance}
+          />
 
           {/* Seam between editor and console (desktop, only while the console is open) */}
           {!isMobile && consoleOpen && maximized !== 'console' && (

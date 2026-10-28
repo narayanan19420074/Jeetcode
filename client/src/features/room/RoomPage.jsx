@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Editor from '@monaco-editor/react';
 import { useSnackbar } from 'notistack';
 import {
   Box, ButtonBase, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Drawer, ListItemIcon, ListItemText, Menu, MenuItem, Skeleton, Stack, TextField, Tooltip, Typography, useMediaQuery, useTheme,
@@ -56,14 +55,11 @@ import ProblemListDrawer from '../workspace/ProblemListDrawer';
 import InviteFriendsDialog from './InviteFriendsDialog';
 import { EditorStatus, VerdictChip } from '../workspace/ConsolePanel';
 import SplitHandle from '../workspace/SplitHandle';
-import MobileKeyBar from '../workspace/MobileKeyBar';
-import EditorScroller from '../workspace/EditorScroller';
+import CodeEditor from '../workspace/CodeEditor';
 import useStopwatch from '../workspace/useStopwatch';
 import { MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton, WsSelect, useElementWidth } from '../workspace/wsUi';
 import { WS } from '../workspace/wsTokens';
-import { wsSurface, defineMonacoThemes, monacoThemeName } from '../workspace/workspaceTheme';
-import { formatCode, replaceChangedSpan } from '../workspace/formatCode';
-import { MOBILE_EDITOR_OPTIONS } from '../workspace/editorOptions';
+import { wsSurface } from '../workspace/workspaceTheme';
 
 const LANGUAGES = [
   { id: 'javascript', label: 'JavaScript' },
@@ -119,7 +115,6 @@ export default function RoomPage() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
   const { enqueueSnackbar } = useSnackbar();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
-  const editorPrefs = useSelector((s) => s.ui.editor);
   const surf = wsSurface(theme);
 
   const [guestName, setGuestName] = useState(() => localStorage.getItem('jc-guest-name') || '');
@@ -142,7 +137,6 @@ export default function RoomPage() {
   const [caseSel, setCaseSel] = useState(0); // sample index | 'custom'
   const [customStdin, setCustomStdin] = useState('');
   const [activeCase, setActiveCase] = useState(0);
-  const [editorFocused, setEditorFocused] = useState(false);
   const [editorInstance, setEditorInstance] = useState(null);
   const [seen, setSeen] = useState(0);
   const [moreAnchor, setMoreAnchor] = useState(null);
@@ -167,9 +161,7 @@ export default function RoomPage() {
   const editorColRef = useRef(null);
   const toggleMax = (which) => setMaximized((m) => (m === which ? null : which));
 
-  const editorRef = useRef(null);
-  const monacoRef = useRef(null);
-  const disposeRef = useRef(null);
+  const editorApi = useRef(null); // CodeEditor: format()
 
   useEffect(() => {
     try {
@@ -267,29 +259,11 @@ export default function RoomPage() {
     };
   }, [slug]);
 
-  const handleMount = useCallback(
-    (editor, monaco) => {
-      editorRef.current = editor;
-      monacoRef.current = monaco;
-      setEditorInstance(editor);
-      editor.onDidFocusEditorText(() => setEditorFocused(true));
-      editor.onDidBlurEditorText(() => setEditorFocused(false));
-      disposeRef.current?.();
-      disposeRef.current = bindMonaco(editor, monaco, room.doc.getText('code'));
-    },
-    [room.doc]
-  );
-  useEffect(() => () => disposeRef.current?.(), []);
-
-  // Editor colours follow the app accent / light-dark mode (same palette as the workspace).
-  const accentMain = theme.palette.primary.main;
-  const uiMode = theme.palette.mode;
-  useEffect(() => {
-    const m = monacoRef.current;
-    if (!m) return;
-    defineMonacoThemes(m, accentMain);
-    m.editor.setTheme(monacoThemeName(editorPrefs.theme, uiMode));
-  }, [accentMain, editorPrefs.theme, uiMode]);
+  // Called once when the editor mounts: bind it to the shared Yjs text, unbind on unmount.
+  const handleEditorReady = (editor, monaco) => {
+    setEditorInstance(editor);
+    return bindMonaco(editor, monaco, room.doc.getText('code'));
+  };
 
   // Phone status bar matches the room's top bar.
   const chromeColor = theme.palette.background.paper;
@@ -306,17 +280,9 @@ export default function RoomPage() {
   // Format on request only. Automatic formatting is off in a shared room: if both
   // of you formatted at the same moment the CRDT would keep both rewrites.
   const formatNow = async (quiet) => {
-    const ed = editorRef.current;
-    const model = ed?.getModel();
-    if (!ed || !model) return false;
-    const src = model.getValue();
-    const res = await formatCode(room.language, src, model.getOffsetAt(ed.getPosition()), { tabSize: ROOM_TAB });
-    if (res.code === src || model.getValue() !== src) {
-      if (!quiet) enqueueSnackbar('Already formatted', { variant: 'info' });
-      return false;
-    }
-    replaceChangedSpan(ed, src, res);
-    return true;
+    const changed = await editorApi.current?.format();
+    if (!changed && !quiet) enqueueSnackbar('Already formatted', { variant: 'info' });
+    return Boolean(changed);
   };
 
   // Sample case (or custom text) chosen in the Testcase tab is what Run sends as stdin.
@@ -373,20 +339,6 @@ export default function RoomPage() {
     window.addEventListener('keydown', onKey, true);
     return () => window.removeEventListener('keydown', onKey, true);
   }, [isMobile]);
-
-  // Symbol bar actions (phone)
-  const keyType = (text) => {
-    const ed = editorRef.current;
-    if (!ed) return;
-    ed.focus();
-    ed.trigger('keyboard', 'type', { text });
-  };
-  const keyCommand = (id) => () => {
-    const ed = editorRef.current;
-    if (!ed) return;
-    ed.focus();
-    ed.trigger('keyboard', id, null);
-  };
 
   // Replaces the shared document for both of you (a CRDT edit, so it syncs like typing).
   const replaceSharedCode = (text, lang) => {
@@ -929,57 +881,15 @@ export default function RoomPage() {
           )}
 
           <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-            <Box sx={{ position: 'relative', bgcolor: surf.canvas, flex: 1, minHeight: 0, display: !isMobile && maximized === 'console' ? 'none' : 'block' }}>
-              <Editor
-                height="100%"
-                language={room.language}
-                theme={monacoThemeName(editorPrefs.theme, uiMode)}
-                beforeMount={(monaco) => {
-                  monacoRef.current = monaco;
-                  defineMonacoThemes(monaco, accentMain);
-                }}
-                onMount={handleMount}
-                loading={<CircularProgress size={26} />}
-                options={{
-                  fontSize: editorPrefs.fontSize,
-                  fontFamily: '"JetBrains Mono", "Fira Code", Menlo, Consolas, monospace',
-                  minimap: { enabled: editorPrefs.minimap },
-                  lineNumbers: editorPrefs.lineNumbers ? 'on' : 'off',
-                  fontLigatures: editorPrefs.ligatures,
-                  autoClosingBrackets: editorPrefs.autoClose ? 'languageDefined' : 'never',
-                  autoClosingQuotes: editorPrefs.autoClose ? 'languageDefined' : 'never',
-                  wordWrap: isMobile || editorPrefs.wordWrap ? 'on' : 'off',
-                  wrappingIndent: 'indent',
-                  automaticLayout: true,
-                  scrollBeyondLastLine: false,
-                  smoothScrolling: true,
-                  tabSize: ROOM_TAB,
-                  insertSpaces: true,
-                  detectIndentation: false,
-                  autoIndent: 'full',
-                  trimAutoWhitespace: true,
-                  padding: { top: 12, bottom: 12 },
-                  ...(isMobile ? MOBILE_EDITOR_OPTIONS : { lineNumbersMinChars: 3 }),
-                }}
-              />
-              {isMobile && <EditorScroller editor={editorInstance} />}
-            </Box>
-
-            {isMobile && editorFocused && (
-              <MobileKeyBar
-                onKey={keyType}
-                onTab={keyCommand('tab')}
-                onOutdent={keyCommand('outdent')}
-                onDeleteLine={keyCommand('editor.action.deleteLines')}
-                onUp={keyCommand('cursorUp')}
-                onDown={keyCommand('cursorDown')}
-                onLeft={keyCommand('cursorLeft')}
-                onRight={keyCommand('cursorRight')}
-                onUndo={keyCommand('undo')}
-                onRedo={keyCommand('redo')}
-                onFormat={() => formatNow(false)}
-              />
-            )}
+            <CodeEditor
+              ref={editorApi}
+              language={room.language}
+              tabSize={ROOM_TAB}
+              isMobile={isMobile}
+              hidden={!isMobile && maximized === 'console'}
+              onReady={handleEditorReady}
+              onFormatKey={() => formatNow(false)}
+            />
 
             {/* Seam between editor and console (desktop, only while the console is open) */}
             {!isMobile && consoleOpen && maximized !== 'console' && (
