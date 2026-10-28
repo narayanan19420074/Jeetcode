@@ -72,82 +72,12 @@ function NavButton({ active, icon: Icon, label, count, accent, onClick, trailing
   );
 }
 
-// Desktop: vertical rail. Below md: the same items as a horizontally
-// scrolling pill row so nothing is hidden on phones.
+// Desktop: vertical rail. Phones reach the same sections from the navigation menu.
 export default function DashboardSidebar({ view, activeListId, lists, onView, onSelectList, onCreateList, maxLists, friendCounts }) {
   const [creating, setCreating] = useState(false);
 
   return (
     <>
-      {/* Mobile / tablet-portrait pills */}
-      <Box
-        sx={{
-          display: { xs: 'flex', md: 'none' },
-          gap: 1,
-          overflowX: 'auto',
-          pb: 0.5,
-          mx: -0.5,
-          px: 0.5,
-          scrollbarWidth: 'none',
-          '&::-webkit-scrollbar': { display: 'none' },
-        }}
-      >
-        {NAV_ITEMS.map(({ view: v, label, icon: Icon }) => {
-          const active = view === v;
-          return (
-            <ButtonBase
-              key={v}
-              onClick={() => onView(v)}
-              aria-current={active ? 'page' : undefined}
-              sx={(t) => ({
-                flexShrink: 0,
-                gap: 0.75,
-                px: 1.75,
-                py: 0.9,
-                borderRadius: 999,
-                fontFamily: 'inherit',
-                border: `1px solid ${active ? 'transparent' : t.palette.divider}`,
-                bgcolor: active ? t.palette.text.primary : 'transparent',
-                color: active ? t.palette.background.paper : t.palette.text.primary,
-              })}
-            >
-              <Icon sx={{ fontSize: 18 }} />
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                {label}
-                {v === 'friends' && friendCounts?.friends ? ` · ${friendCounts.friends}` : ''}
-              </Typography>
-              {v === 'friends' && <RequestBadge n={friendCounts?.incoming} />}
-            </ButtonBase>
-          );
-        })}
-        {lists.map((l) => {
-          const active = view === 'list' && activeListId === l.id;
-          return (
-            <ButtonBase
-              key={l.id}
-              onClick={() => onSelectList(l.id)}
-              aria-current={active ? 'page' : undefined}
-              sx={(t) => ({
-                flexShrink: 0,
-                gap: 0.75,
-                px: 1.75,
-                py: 0.9,
-                borderRadius: 999,
-                fontFamily: 'inherit',
-                border: `1px solid ${active ? 'transparent' : t.palette.divider}`,
-                bgcolor: active ? t.palette.text.primary : 'transparent',
-                color: active ? t.palette.background.paper : t.palette.text.primary,
-              })}
-            >
-              {l.id === 'favorite' ? <StarRoundedIcon sx={{ fontSize: 18, color: 'warning.main' }} /> : <ListAltRoundedIcon sx={{ fontSize: 18 }} />}
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                {l.name}
-              </Typography>
-            </ButtonBase>
-          );
-        })}
-      </Box>
-
       {/* Desktop rail */}
       <Box component="nav" aria-label="Dashboard sections" sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: 0.5 }}>
         {NAV_ITEMS.map(({ view: v, label, icon }) => (

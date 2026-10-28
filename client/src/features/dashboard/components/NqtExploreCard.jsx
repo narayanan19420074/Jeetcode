@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { motion, useReducedMotion } from 'framer-motion';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
@@ -17,7 +18,8 @@ const AMBER = '#FBBF24';
 
 // Featured card: the TCS NQT hub. Built to be tapped: the TCS buddy talks to you, there is a level
 // + XP bar to fill, a live countdown, and one warm (amber) button on a cool (indigo) card.
-export default function NqtExploreCard() {
+// When `onDismiss` is passed, a close button is shown so the card can be hidden.
+export default function NqtExploreCard({ onDismiss }) {
   const reduce = useReducedMotion();
   const [track, setTrack] = useState(null);
 
@@ -56,7 +58,7 @@ export default function NqtExploreCard() {
 
   const glow = reduce ? undefined : { boxShadow: ['0 0 0 0 rgba(251,191,36,0.55)', '0 0 0 12px rgba(251,191,36,0)'] };
 
-  return (
+  const card = (
     <Box
       component={RouterLink}
       to="/prep/tcs-nqt"
@@ -96,7 +98,7 @@ export default function NqtExploreCard() {
           )}
         </Box>
 
-        <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: urgent ? 'rgba(251,191,36,0.2)' : 'rgba(255,255,255,0.14)', border: urgent ? '1px solid rgba(251,191,36,0.6)' : '1px solid transparent' }}>
+        <Box sx={{ flexShrink: 0, minWidth: 84, mt: onDismiss ? 2.5 : 0, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: urgent ? 'rgba(251,191,36,0.2)' : 'rgba(255,255,255,0.14)', border: urgent ? '1px solid rgba(251,191,36,0.6)' : '1px solid transparent' }}>
           <Typography sx={{ fontWeight: 900, fontSize: countdown.over || days === 0 ? '1.25rem' : '1.9rem', lineHeight: 1, fontVariantNumeric: 'tabular-nums', color: urgent ? '#FDE68A' : '#fff' }}>{bigNumber}</Typography>
           {bigLabel && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: 'rgba(255,255,255,0.85)' }}>{bigLabel}</Typography>}
         </Box>
@@ -138,6 +140,22 @@ export default function NqtExploreCard() {
           </Box>
         </motion.div>
       </Box>
+    </Box>
+  );
+
+  if (!onDismiss) return card;
+
+  return (
+    <Box sx={{ position: 'relative', mb: 1.5, '& > a': { mb: 0 } }}>
+      {card}
+      <IconButton
+        size="small"
+        onClick={onDismiss}
+        aria-label="Dismiss TCS NQT card"
+        sx={{ position: 'absolute', top: 6, right: 6, color: 'rgba(255,255,255,0.85)', bgcolor: 'rgba(255,255,255,0.12)', '&:hover': { bgcolor: 'rgba(255,255,255,0.22)' } }}
+      >
+        <CloseRoundedIcon sx={{ fontSize: 18 }} />
+      </IconButton>
     </Box>
   );
 }

@@ -3,13 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useSnackbar } from 'notistack';
-import { Box, Button, Collapse, Container, Stack, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, Collapse, Container, Drawer, IconButton, Stack, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import { problemsApi } from '../../api/problemsApi';
 import { usersApi } from '../../api/usersApi';
 import { submissionsApi } from '../../api/submissionsApi';
@@ -20,6 +24,7 @@ import NqtExploreCard from './components/NqtExploreCard';
 import ProblemLibrary from './components/ProblemLibrary';
 import RightRail from './components/RightRail';
 import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
+import DifficultyChip from '../../components/DifficultyChip';
 import ContestCard from '../contest/ContestCard';
 import ContestPage from '../contest/ContestPage';
 import StudyPlannerView from '../studyplan/StudyPlannerView';
@@ -29,6 +34,24 @@ import { fetchFriends } from '../friends/friendsSlice';
 import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { STATUS_COLOR, featuredPageForToday, surface, utcKey } from './dashboardUtils';
+
+// Phone-only dismissals, remembered on this device.
+const NQT_DISMISS_KEY = 'jeetcode.dismissed.nqtCard';
+const RESUME_DISMISS_KEY = 'jeetcode.dismissed.resume';
+const readFlag = (key) => {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+};
+const writeFlag = (key, value) => {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Storage unavailable (private mode): the card simply stays hidden until reload.
+  }
+};
 
 const VIEWS = ['library', 'contest', 'quests', 'explore', 'plans', 'leaderboard', 'friends', 'list'];
 
@@ -85,6 +108,9 @@ export default function DashboardPage() {
   const [activity, setActivity] = useState([]);
   const [submissions, setSubmissions] = useState([]);
   const [preset, setPreset] = useState(null);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [nqtDismissed, setNqtDismissed] = useState(() => readFlag(NQT_DISMISS_KEY) === '1');
+  const [dismissedResumeId, setDismissedResumeId] = useState(() => readFlag(RESUME_DISMISS_KEY));
 
   // Totals + solved counts per difficulty (one call), then today's featured
   // problem. Same deterministic "problem of the day" the old dashboard used.
@@ -252,7 +278,7 @@ export default function DashboardPage() {
             transition: 'grid-template-columns .4s cubic-bezier(.4,0,.2,1)',
           }}
         >
-          <Box className="autohide-scroll" sx={{ position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0 }}>
+          <Box className="autohide-scroll" sx={{ display: { xs: 'none', md: 'block' }, position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0 }}>
             <DashboardSidebar
               view={currentView}
               activeListId={activeList?.id}
@@ -285,6 +311,25 @@ export default function DashboardPage() {
                 filters, page and search survive a trip to Quests or Explore. */}
             <Box sx={{ display: currentView === 'library' ? 'block' : 'none' }}>
               <Stack spacing={2.5}>
+                {/* Phone header: streak on the left, plan calendar on the right. */}
+                {!isMdUp && (
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: 40 }}>
+                    {isAuthenticated ? (
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+                        <LocalFireDepartmentRoundedIcon sx={{ fontSize: 22, color: 'warning.main' }} />
+                        <Typography variant="body2" sx={{ fontWeight: 800 }}>
+                          {user?.streakDays ?? 0}-day streak
+                        </Typography>
+                      </Box>
+                    ) : (
+                      <span />
+                    )}
+                    <IconButton onClick={() => setCalendarOpen(true)} aria-label="Open calendar" edge="end">
+                      <CalendarMonthRoundedIcon />
+                    </IconButton>
+                  </Box>
+                )}
+
                 {!isAuthenticated && (
                   <Box sx={[surface, { p: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1.5 }]}>
                     <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 560 }}>
@@ -296,16 +341,45 @@ export default function DashboardPage() {
                   </Box>
                 )}
 
-                <PromoCarousel cards={cards} />
+                {/* Wide screens keep the promo carousel; phones get one compact "today" card instead. */}
+                {isMdUp && <PromoCarousel cards={cards} />}
 
-                {/* Phones have no sidebar Explore shortcut in view, so surface the TCS NQT hub here too. */}
-                {!isMdUp && (
-                  <Box sx={{ '& > a': { mb: 0 } }}>
-                    <NqtExploreCard />
+                {!isMdUp && featured && (
+                  <Box sx={[surface, { px: 2, py: 1.5, display: 'flex', alignItems: 'center', gap: 1.5 }]}>
+                    <Box sx={(t) => ({ width: 40, height: 40, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
+                      <EventRoundedIcon />
+                    </Box>
+                    <Box sx={{ minWidth: 0, flex: 1 }}>
+                      <Typography variant="caption" color="text.secondary">
+                        Today’s challenge
+                        {isAuthenticated && progress ? ` · ${progress.solved.Easy + progress.solved.Medium + progress.solved.Hard} solved` : ''}
+                      </Typography>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, minWidth: 0 }}>
+                        <Typography variant="body2" noWrap sx={{ fontWeight: 700, minWidth: 0 }}>
+                          {featured.title}
+                        </Typography>
+                        <DifficultyChip difficulty={featured.difficulty} />
+                      </Box>
+                    </Box>
+                    <Button component={RouterLink} to={`/workspace/${featured.slug}`} size="small" variant="contained" disableElevation sx={{ fontWeight: 700, flexShrink: 0 }}>
+                      Solve
+                    </Button>
                   </Box>
                 )}
 
-                {resume && (
+                {/* Phones have no sidebar Explore shortcut in view, so surface the TCS NQT hub here too. */}
+                {!isMdUp && !nqtDismissed && (
+                  <Box sx={{ '& a': { mb: 0 } }}>
+                    <NqtExploreCard
+                      onDismiss={() => {
+                        writeFlag(NQT_DISMISS_KEY, '1');
+                        setNqtDismissed(true);
+                      }}
+                    />
+                  </Box>
+                )}
+
+                {resume && !(!isMdUp && dismissedResumeId === String(resume._id)) && (
                   <Box
                     sx={[
                       surface,
@@ -348,6 +422,17 @@ export default function DashboardPage() {
                     <Button component={RouterLink} to={`/workspace/${resume.problem.slug}`} size="small" variant="contained" disableElevation sx={{ fontWeight: 700, flexShrink: 0 }}>
                       Resume
                     </Button>
+                    <IconButton
+                      size="small"
+                      aria-label="Dismiss resume card"
+                      onClick={() => {
+                        writeFlag(RESUME_DISMISS_KEY, String(resume._id));
+                        setDismissedResumeId(String(resume._id));
+                      }}
+                      sx={{ display: { xs: 'inline-flex', md: 'none' }, flexShrink: 0, mr: -0.5 }}
+                    >
+                      <CloseRoundedIcon fontSize="small" />
+                    </IconButton>
                   </Box>
                 )}
 
@@ -359,7 +444,8 @@ export default function DashboardPage() {
                   listsApi={listsApi}
                 />
 
-                <ContestCard />
+                {/* Phones open the contest from the navigation menu. */}
+                {isMdUp && <ContestCard />}
               </Stack>
             </Box>
 
@@ -421,15 +507,49 @@ export default function DashboardPage() {
                 <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
               </Box>
             </Box>
-          ) : (
-            <Box sx={{ gridColumn: { xs: 'auto', md: '1 / -1' } }}>
+          ) : isMdUp ? (
+            <Box sx={{ gridColumn: '1 / -1' }}>
               <Collapse in={showRail} timeout={350} unmountOnExit>
                 <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
               </Collapse>
             </Box>
-          )}
+          ) : null}
         </Box>
       </Container>
+
+      {/* Phone calendar sheet: streak calendar with study-plan deadlines. */}
+      <Drawer
+        anchor="bottom"
+        open={calendarOpen && !isMdUp}
+        onClose={() => setCalendarOpen(false)}
+        slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)' } } }}
+      >
+        <Box sx={{ p: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
+            <Typography variant="h6" sx={{ fontWeight: 800 }}>
+              Calendar
+            </Typography>
+            <IconButton onClick={() => setCalendarOpen(false)} aria-label="Close calendar" edge="end">
+              <CloseRoundedIcon />
+            </IconButton>
+          </Box>
+          <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
+          {isAuthenticated && (
+            <Button
+              fullWidth
+              variant="outlined"
+              startIcon={<SchoolRoundedIcon />}
+              onClick={() => {
+                setCalendarOpen(false);
+                goView('plans');
+              }}
+              sx={{ mt: 2, fontWeight: 700 }}
+            >
+              Open Study Plans
+            </Button>
+          )}
+        </Box>
+      </Drawer>
     </Box>
   );
 }
