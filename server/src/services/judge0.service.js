@@ -1,13 +1,24 @@
 import axios from 'axios';
-import { env } from '../config/env.js';
+import { env, isProd } from '../config/env.js';
 import { ApiError } from '../utils/ApiError.js';
 import { logger } from '../utils/logger.js';
 import * as localJudge from './localJudge.service.js';
+import * as remoteJudge from './remoteJudge.service.js';
 
-// JUDGE_MODE=local (default) -> our own judge (localJudge.service.js).
-// JUDGE_MODE=judge0         -> external Judge0 API (code below).
+// JUDGE_MODE=remote -> our isolated judge service (remoteJudge.service.js). Use this in production.
+// JUDGE_MODE=local  -> judge on this machine (localJudge.service.js). Development only.
+// JUDGE_MODE=judge0 -> external Judge0 API (code below).
 // Every caller imports from this file, so switching is just an env var.
-const useLocal = () => env.JUDGE_MODE !== 'judge0';
+const useRemote = () => env.JUDGE_MODE === 'remote';
+const useLocal = () => env.JUDGE_MODE === 'local';
+
+// Untrusted code must never run on the machine that holds our database and auth secrets.
+function assertLocalAllowed() {
+  if (isProd && env.ALLOW_UNSAFE_LOCAL_JUDGE !== 'true') {
+    logger.error('Refusing to run submitted code inside the API server in production. Set JUDGE_MODE=remote (recommended) or JUDGE_MODE=judge0.');
+    throw ApiError.internal('Code execution is not available right now. Please try again later.');
+  }
+}
 
 // Judge0 CE's standard language IDs (stable across CE public + self-hosted
 // instances using the default language list). Centralizing this map means
@@ -52,8 +63,12 @@ const unb64 = (str) => (str ? Buffer.from(str, 'base64').toString('utf-8') : '')
  * from taking 20 sequential round-trips.
  */
 export async function submitBatch(items) {
+  if (useRemote()) return remoteJudge.submitBatch(items);
   // Java needs a JDK; Render's Node image has none, so Java goes to the Judge0 API unless a JDK is present.
-  if (useLocal() && localJudge.canRun(items[0]?.languageId)) return localJudge.submitBatch(items);
+  if (useLocal() && localJudge.canRun(items[0]?.languageId)) {
+    assertLocalAllowed();
+    return localJudge.submitBatch(items);
+  }
   const payload = {
     submissions: items.map((it) => ({
       source_code: b64(it.sourceCode),
@@ -80,6 +95,7 @@ export async function submitBatch(items) {
  * interval — Judge0 batch judging is typically sub-second per case.
  */
 export async function pollBatchResults(tokens, { maxAttempts = 15, intervalMs = 1000 } = {}) {
+  if (tokens.length && String(tokens[0]).startsWith('remote-')) return remoteJudge.pollBatchResults(tokens);
   if (tokens.length && String(tokens[0]).startsWith('local-')) return localJudge.pollBatchResults(tokens);
   const fields = 'token,status,stdout,stderr,compile_output,time,memory';
   for (let attempt = 0; attempt < maxAttempts; attempt++) {

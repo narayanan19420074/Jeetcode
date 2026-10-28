@@ -24,8 +24,11 @@ import { logger } from '../utils/logger.js';
 // Each run: fresh temp dir, minimal env (no secrets), wall-clock timeout,
 // output cap, memory watch (/proc VmHWM), global concurrency limit.
 //
-// NOTE: this is process-level isolation, not a container. Fine for a
-// practice platform; for hostile public traffic use a real sandbox.
+// SECURITY: this is process-level isolation only. In production it must run inside the
+// dedicated judge service (judgeServer.js, own container, no database or auth secrets), and
+// that service starts as root and runs every submission as an unprivileged user (JUDGE_RUN_AS_UID),
+// so submitted code cannot read the service's environment or files. judge0.service.js refuses to use
+// this module inside the main API in production.
 // ============================================================================
 
 const TIME_LIMIT_MS = env.JUDGE_TIME_LIMIT_MS;
@@ -35,6 +38,15 @@ const MAX_STDOUT_BYTES = 1024 * 1024;
 const MAX_STORED_OUTPUT = 64 * 1024;
 const MAX_STORED_STDERR = 8 * 1024;
 const RESULT_TTL_MS = 10 * 60 * 1000;
+
+// Drop privileges for submitted code. Only possible when this process is root (the judge container).
+const RUN_AS = (() => {
+  const uid = Number(env.JUDGE_RUN_AS_UID);
+  const gid = env.JUDGE_RUN_AS_GID !== undefined ? Number(env.JUDGE_RUN_AS_GID) : uid;
+  if (!Number.isInteger(uid) || uid <= 0 || typeof process.getuid !== 'function' || process.getuid() !== 0) return null;
+  return { uid, gid: Number.isInteger(gid) && gid > 0 ? gid : uid };
+})();
+logger.info(RUN_AS ? `Local judge: submissions run as uid ${RUN_AS.uid}` : 'Local judge: submissions run as the server user (no privilege drop)');
 
 // Judge0-compatible language ids -> our language keys.
 const ID_TO_LANG = { 63: 'javascript', 71: 'python', 54: 'cpp', 62: 'java' };
@@ -185,6 +197,7 @@ function exec(cmd, args, { cwd, input = '', timeoutMs, memLimitKb = 0 }) {
         cwd,
         env: { PATH: process.env.PATH || '', HOME: cwd, TMPDIR: cwd, LANG: 'C.UTF-8', PYTHONIOENCODING: 'utf-8' },
         stdio: ['pipe', 'pipe', 'pipe'],
+        ...(RUN_AS ? { uid: RUN_AS.uid, gid: RUN_AS.gid } : {}),
       });
     } catch (err) {
       finish({ spawnError: err.message, code: null, signal: null });
@@ -252,7 +265,14 @@ const FORBIDDEN = /\/(proc|sys|etc|home|opt|mnt|root|var|srv|app)\/|\.\.\/\.\./;
 function makeWorkspace(lang, source) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'jc-judge-'));
   const ws = { lang, dir, pending: 0, ready: Promise.resolve(), compileError: null, fatal: null, rejected: null };
-  fs.writeFileSync(path.join(dir, FILE_NAME[lang] || `main.${EXT[lang]}`), source);
+  const file = path.join(dir, FILE_NAME[lang] || `main.${EXT[lang]}`);
+  fs.writeFileSync(file, source);
+  if (RUN_AS) {
+    // Only the unprivileged run-as user can read or write this workspace.
+    fs.chmodSync(dir, 0o700);
+    fs.chownSync(dir, RUN_AS.uid, RUN_AS.gid);
+    fs.chownSync(file, RUN_AS.uid, RUN_AS.gid);
+  }
   if (FORBIDDEN.test(source)) ws.rejected = 'Your code contains a disallowed pattern (file system access).';
   if (!ws.rejected && lang === 'cpp') ws.ready = compileCpp(ws);
   if (!ws.rejected && lang === 'java') ws.ready = compileJava(ws);
@@ -335,7 +355,8 @@ function result(token, statusId, { stdout = '', stderr = '', ms = 0, memory = 0 
 }
 
 function buildCommand(ws) {
-  const memScript = 'ulimit -v 1048576 2>/dev/null; exec "$0" "$@"';
+  // Memory, process-count (fork bombs) and file-size (disk filling) limits. Failures are ignored on shells without a flag.
+  const memScript = 'ulimit -v 1048576 2>/dev/null; ulimit -u 512 2>/dev/null; ulimit -f 32768 2>/dev/null; exec "$0" "$@"';
   if (ws.lang === 'javascript') {
     return {
       cmd: process.execPath,

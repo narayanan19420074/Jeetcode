@@ -3,16 +3,22 @@ import { z } from 'zod';
 
 dotenv.config();
 
+// The isolated code-execution service (see judgeServer.js) runs this same code base but must NOT
+// hold database or auth secrets, so those become unused placeholders when JUDGE_SERVICE=true.
+const judgeService = process.env.JUDGE_SERVICE === 'true';
+const mongoUri = judgeService ? z.string().default('unused') : z.string().min(1, 'MONGODB_URI is required (MongoDB Atlas connection string)');
+const jwtSecret = (name) => (judgeService ? z.string().default('unused') : z.string().min(16, `${name} must be at least 16 chars`));
+
 // Fail fast on boot if config is wrong, rather than failing mysteriously
 // mid-request once 10L users are hitting the API.
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   PORT: z.coerce.number().default(5000),
 
-  MONGODB_URI: z.string().min(1, 'MONGODB_URI is required (MongoDB Atlas connection string)'),
+  MONGODB_URI: mongoUri,
 
-  JWT_ACCESS_SECRET: z.string().min(16, 'JWT_ACCESS_SECRET must be at least 16 chars'),
-  JWT_REFRESH_SECRET: z.string().min(16, 'JWT_REFRESH_SECRET must be at least 16 chars'),
+  JWT_ACCESS_SECRET: jwtSecret('JWT_ACCESS_SECRET'),
+  JWT_REFRESH_SECRET: jwtSecret('JWT_REFRESH_SECRET'),
   JWT_ACCESS_EXPIRY: z.string().default('15m'),
   JWT_REFRESH_EXPIRY: z.string().default('30d'),
 
@@ -20,9 +26,19 @@ const envSchema = z.object({
 
   // Judge0 — public cloud API by default; swap JUDGE0_API_URL to a
   // self-hosted instance later without touching any calling code.
-  // JUDGE_MODE: 'local' = our own judge on this server (default),
-  // 'judge0' = external Judge0 API below.
-  JUDGE_MODE: z.enum(['local', 'judge0']).default('local'),
+  // JUDGE_MODE:
+  //   'remote' = our own isolated judge service (production; see judgeServer.js + server/judge/Dockerfile)
+  //   'local'  = run submissions inside this process's machine (development only)
+  //   'judge0' = external Judge0 API below.
+  JUDGE_MODE: z.enum(['local', 'remote', 'judge0']).default('local'),
+  // Production refuses 'local' unless explicitly allowed, because user code would run next to our secrets.
+  ALLOW_UNSAFE_LOCAL_JUDGE: z.enum(['true', 'false']).default('false'),
+  // remote mode: where the judge service lives and the shared secret both sides use.
+  JUDGE_SERVICE_URL: z.string().optional(),
+  JUDGE_SERVICE_TOKEN: z.string().optional(),
+  // judge service only: run submitted code as this unprivileged user (needs the service to start as root).
+  JUDGE_RUN_AS_UID: z.string().optional(),
+  JUDGE_RUN_AS_GID: z.string().optional(),
   JUDGE_TIME_LIMIT_MS: z.coerce.number().default(8000), // per test case, wall clock
   JUDGE_MEMORY_MB: z.coerce.number().default(256), // per test case
   JUDGE_CONCURRENCY: z.coerce.number().default(2), // parallel test-case runs
@@ -79,4 +95,12 @@ if (!parsed.success) {
 }
 
 export const env = parsed.data;
+
+if (judgeService && (!env.JUDGE_SERVICE_TOKEN || env.JUDGE_SERVICE_TOKEN.length < 32)) {
+  console.error('❌ JUDGE_SERVICE_TOKEN (at least 32 characters) is required when JUDGE_SERVICE=true');
+  process.exit(1);
+}
+if (env.JUDGE_MODE === 'remote' && !judgeService && (!env.JUDGE_SERVICE_URL || !env.JUDGE_SERVICE_TOKEN)) {
+  console.warn('⚠️  JUDGE_MODE=remote but JUDGE_SERVICE_URL / JUDGE_SERVICE_TOKEN are not set: code execution will fail until they are.');
+}
 export const isProd = env.NODE_ENV === 'production';

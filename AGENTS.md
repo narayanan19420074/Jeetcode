@@ -131,6 +131,10 @@ These apply to every file you deliver.
   must go inside `sx`.
 - For aptitude/problem content work, read `server/content/aptitude/_AGENT_BRIEF.md`
   and `server/content/problem-authoring-guide.md` first.
+- **Code execution** never runs inside the main API in production. Submissions go to the
+  isolated `jeetcode-judge` service (`server/src/judgeServer.js`, `server/judge/Dockerfile`)
+  via `JUDGE_MODE=remote`. Never give that service database or auth secrets, and never
+  add a `USER` line to its Dockerfile (it must start as root to drop privileges per run).
 - Client talks to the API via `client/src/api/apiClient.js`; add new endpoints in
   the matching `*Api.js` file.
 - Server layering: `routes → controllers → services → models`, with validators

@@ -35,7 +35,35 @@ services:
         value: 15m
       - key: JWT_REFRESH_EXPIRY
         value: 30d
+      # Code execution runs in the separate, isolated "jeetcode-judge" service below.
+      # Set JUDGE_SERVICE_URL (https://<judge-service-name>.onrender.com) and
+      # JUDGE_SERVICE_TOKEN (same value as on the judge service) in the Render dashboard.
+      - key: JUDGE_MODE
+        value: remote
+      - key: JUDGE_SERVICE_URL
+        sync: false
+      - key: JUDGE_SERVICE_TOKEN
+        sync: false
       - key: JUDGE0_API_URL
         value: https://ce.judge0.com
       - key: MONGODB_URI      # Render will ask you for this when you apply the Blueprint
         sync: false
+
+  # Isolated code-execution service. No database or auth secrets live here.
+  - type: web
+    name: jeetcode-judge
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: feature/aptitude  # keep in sync with the web service above
+    autoDeploy: true
+    dockerfilePath: ./server/judge/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: JUDGE_SERVICE_TOKEN   # a long random string, identical to the web service's value
+        sync: false
+      - key: JUDGE_CONCURRENCY     # free instances have 512 MB of RAM
+        value: "1"
+      - key: JUDGE_MEMORY_MB
+        value: "256"
