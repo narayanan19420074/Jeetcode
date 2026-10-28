@@ -11,7 +11,7 @@ import { applyHarnessGeneration, argsToStdin, valueToExpectedOutput } from './ha
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Every *.json in this folder (array or single object) is auto-seeded on boot.
-const SEED_DIR = path.join(__dirname, '../../content/problems-4000');
+const SEED_DIR = path.join(__dirname, '../../content/problems');
 const BATCH = 200;
 
 const tick = () => new Promise((resolve) => setImmediate(resolve));

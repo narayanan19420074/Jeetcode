@@ -101,8 +101,6 @@ Because it stages everything, the status check in 3.3 matters.
 - MUI (v6–v7): `Grid` uses the new `size` prop (e.g. `size={{ xs: 12, md: 6 }}`),
   not `item xs=...`. `Stack` alignment props (`alignItems`, `justifyContent`)
   must go inside `sx`.
-- For UI/design work, follow `.agents/skills/design-taste-frontend/SKILL.md`
-  if present.
 - For aptitude/problem content work, read `server/content/aptitude/_AGENT_BRIEF.md`
   and `server/content/problem-authoring-guide.md` first.
 - Client talks to the API via `client/src/api/apiClient.js`; add new endpoints in
