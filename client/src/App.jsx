@@ -70,6 +70,7 @@ const TermsPage = lazy(() => import('./features/legal/TermsPage'));
 const RefundPolicyPage = lazy(() => import('./features/legal/RefundPolicyPage'));
 // Help & Support (public, standalone) — FAQ + contact/feedback form
 const HelpPage = lazy(() => import('./features/help/HelpPage'));
+const NotFoundPage = lazy(() => import('./features/errors/NotFoundPage'));
 
 const RouteFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -237,7 +238,7 @@ export default function App() {
         {/* REMOVED: <Route path="/learn/:topicSlug/practice" .../> (PracticePage) */}
       </Route>
 
-      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      <Route path="*" element={<Suspense fallback={<RouteFallback />}><NotFoundPage /></Suspense>} />
     </Routes>
   );
 }
