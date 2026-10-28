@@ -6,6 +6,8 @@ import { AptitudeAttempt } from '../models/AptitudeAttempt.js';
 import { AptitudeProgress } from '../models/AptitudeProgress.js';
 import { AptitudeQuestionProgress } from '../models/AptitudeQuestionProgress.js';
 import { UserPrepProgress } from '../models/UserPrepProgress.js';
+import { SupportChat } from '../models/SupportChat.js';
+import { SupportMessage } from '../models/SupportMessage.js';
 import { REFRESH_COOKIE } from '../services/authToken.service.js';
 import { logSecurityEvent } from '../services/securityLog.service.js';
 import { describeUserAgent } from '../utils/userAgent.js';
@@ -278,6 +280,8 @@ export const deleteAccount = asyncHandler(async (req, res) => {
     AptitudeProgress.deleteMany({ user: user._id }),
     AptitudeQuestionProgress.deleteMany({ user: user._id }),
     UserPrepProgress.deleteMany({ user: user._id }),
+    SupportChat.deleteMany({ user: user._id }),
+    SupportMessage.deleteMany({ user: user._id }),
   ]);
   await User.deleteOne({ _id: user._id });
 

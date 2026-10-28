@@ -19,6 +19,8 @@ import {
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
+import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
+import SupportChat from './SupportChat';
 import { feedbackApi } from '../../api/feedbackApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { CONTACT_EMAIL, LEGAL_LINKS, SITE_NAME } from '../legal/legalConfig';
@@ -92,6 +94,7 @@ export default function HelpPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [sent, setSent] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
 
   const showEmail = CONTACT_EMAIL && !CONTACT_EMAIL.includes('YOUR_EMAIL');
   const pageUrl = useMemo(() => fromPath || document.referrer || '', [fromPath]);
@@ -161,6 +164,22 @@ export default function HelpPage() {
             </Accordion>
           ))}
         </Box>
+
+        <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3, mb: 4 }}>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ alignItems: { sm: 'center' }, justifyContent: 'space-between' }}>
+            <Box>
+              <Typography component="h2" sx={{ fontSize: '1.15rem', fontWeight: 700 }}>
+                Chat with support
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Talk to our team about payments, your account or technical issues. Available to signed-in users.
+              </Typography>
+            </Box>
+            <Button variant="contained" disableElevation startIcon={<ChatRoundedIcon />} onClick={() => setChatOpen(true)} sx={{ fontWeight: 700, flexShrink: 0 }}>
+              Start chat
+            </Button>
+          </Stack>
+        </Paper>
 
         <Typography component="h2" sx={{ fontSize: '1.15rem', fontWeight: 700, mb: 1 }}>
           Contact us / send feedback
@@ -254,6 +273,7 @@ export default function HelpPage() {
           </Stack>
         </Box>
       </Container>
+      <SupportChat open={chatOpen} onOpenChange={setChatOpen} />
     </Box>
   );
 }

@@ -33,6 +33,7 @@ const AdminProblemsPage = lazy(() => import('./features/admin/pages/AdminProblem
 const AdminAptitudePage = lazy(() => import('./features/admin/pages/AdminAptitudePage'));
 const AdminAuditLogPage = lazy(() => import('./features/admin/pages/AdminAuditLogPage'));
 const AdminFeedbackPage = lazy(() => import('./features/admin/pages/AdminFeedbackPage'));
+const AdminSupportChatPage = lazy(() => import('./features/admin/pages/AdminSupportChatPage'));
 
 const AptitudePatternsPage = lazy(() => import('./features/aptitude/AptitudePatternsPage'));
 const AptitudePatternDetailPage = lazy(() => import('./features/aptitude/AptitudePatternDetailPage'));
@@ -137,6 +138,7 @@ export default function App() {
         <Route path="problems" element={<Suspense fallback={<RouteFallback />}><AdminProblemsPage /></Suspense>} />
         <Route path="aptitude" element={<Suspense fallback={<RouteFallback />}><AdminAptitudePage /></Suspense>} />
         <Route path="store" element={<Suspense fallback={<RouteFallback />}><AdminStorePage /></Suspense>} />
+        <Route path="support-chat" element={<Suspense fallback={<RouteFallback />}><AdminSupportChatPage /></Suspense>} />
         <Route path="feedback" element={<Suspense fallback={<RouteFallback />}><AdminFeedbackPage /></Suspense>} />
         <Route path="audit-log" element={<Suspense fallback={<RouteFallback />}><AdminAuditLogPage /></Suspense>} />
       </Route>

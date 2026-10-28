@@ -20,6 +20,7 @@ import contestRoutes from './contest.routes.js';
 import storeRoutes from './store.routes.js';
 import mockTestRoutes from './mockTest.routes.js';
 import feedbackRoutes from './feedback.routes.js';
+import supportChatRoutes from './supportChat.routes.js';
 import '../models/AdminActionLog.js';
 
 const router = Router();
@@ -52,6 +53,7 @@ router.use('/contests', contestRoutes);
 router.use('/store', storeRoutes);
 router.use('/mocks', mockTestRoutes);
 router.use('/feedback', feedbackRoutes);
+router.use('/support', supportChatRoutes);
 
 
 export default router;

@@ -44,6 +44,12 @@ export const adminApi = {
   listFeedback: (params) => apiClient.get('/admin/feedback', { params }),
   updateFeedback: (id, payload) => apiClient.patch(`/admin/feedback/${id}`, payload),
 
+  // --- Live chat ---
+  listChats: (params) => apiClient.get('/admin/support/chats', { params }),
+  getChat: (id, after) => apiClient.get(`/admin/support/chats/${id}`, { params: after ? { after } : {} }),
+  sendChatMessage: (id, text) => apiClient.post(`/admin/support/chats/${id}/messages`, { text }),
+  closeChat: (id) => apiClient.post(`/admin/support/chats/${id}/close`),
+
   // --- Licenses ---
   listLicenses: () => apiClient.get('/admin/licenses'),
   generateLicense: (payload) => apiClient.post('/admin/licenses/generate', payload),

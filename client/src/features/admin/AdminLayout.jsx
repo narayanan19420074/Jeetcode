@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { Box, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Typography, Toolbar } from '@mui/material';
+import { adminApi } from '../../api/adminApi';
+import { Badge, Box, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Typography, Toolbar } from '@mui/material';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import GroupRoundedIcon from '@mui/icons-material/GroupRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
@@ -8,6 +10,7 @@ import PsychologyRoundedIcon from '@mui/icons-material/PsychologyRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
 import FeedbackRoundedIcon from '@mui/icons-material/FeedbackRounded';
+import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 import AdminNavbar from './AdminNavbar';
 
 const SIDEBAR_WIDTH = 240;
@@ -21,6 +24,7 @@ const NAV_ITEMS = [
   { to: '/admin/store', label: 'Store', icon: <StorefrontRoundedIcon fontSize="small" /> },
   { to: '/admin/problems', label: 'Problems', icon: <DescriptionRoundedIcon fontSize="small" /> },
   { to: '/admin/aptitude', label: 'Aptitude', icon: <PsychologyRoundedIcon fontSize="small" /> },
+  { to: '/admin/support-chat', label: 'Live Chat', icon: <ChatRoundedIcon fontSize="small" />, badgeKey: 'chat' },
   { to: '/admin/feedback', label: 'Support Inbox', icon: <FeedbackRoundedIcon fontSize="small" /> },
   { to: '/admin/audit-log', label: 'Audit Log', icon: <HistoryRoundedIcon fontSize="small" /> },
 ];
@@ -31,6 +35,18 @@ const NAV_ITEMS = [
 // Dashboard/Problems/Prep/Explore links, nothing that routes outside
 // /admin/*. The sidebar below is the only in-panel navigation.
 export default function AdminLayout() {
+  // Unread live-chat count for the sidebar badge (refreshed every 30 seconds).
+  const [unreadChats, setUnreadChats] = useState(0);
+  useEffect(() => {
+    const load = () => {
+      if (document.hidden) return;
+      adminApi.listChats({ status: 'open', limit: 1 }).then(({ data }) => setUnreadChats(data.data.unreadChats)).catch(() => {});
+    };
+    load();
+    const t = setInterval(load, 30000);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <AdminNavbar />
@@ -65,7 +81,15 @@ export default function AdminLayout() {
                   },
                 }}
               >
-                <ListItemIcon sx={{ minWidth: 36 }}>{item.icon}</ListItemIcon>
+                <ListItemIcon sx={{ minWidth: 36 }}>
+                  {item.badgeKey === 'chat' ? (
+                    <Badge color="error" badgeContent={unreadChats} invisible={!unreadChats}>
+                      {item.icon}
+                    </Badge>
+                  ) : (
+                    item.icon
+                  )}
+                </ListItemIcon>
                 <ListItemText primary={item.label} primaryTypographyProps={{ fontWeight: 600, fontSize: '0.9rem' }} />
               </ListItemButton>
             ))}

@@ -30,6 +30,17 @@ import {
 } from '../../controllers/aptitude.controller.js';
 import { adminListFeedback, adminUpdateFeedback } from '../../controllers/feedback.controller.js';
 import { listFeedbackQuerySchema, updateFeedbackSchema } from '../../validators/feedback.validator.js';
+import {
+  adminListChats,
+  adminGetChat,
+  adminSendMessage,
+  adminCloseChat,
+} from '../../controllers/supportChat.controller.js';
+import {
+  adminListChatsQuerySchema,
+  adminSendChatMessageSchema,
+  chatPollQuerySchema,
+} from '../../validators/supportChat.validator.js';
 import adminUsersRouter from './adminUsers.routes.js';
 import adminLicensesRouter from './adminLicenses.routes.js';
 import adminStoreRouter from './adminStore.routes.js';
@@ -48,6 +59,12 @@ router.get('/audit-log', getAdminAuditLog);
 // --- Help & Support inbox ---
 router.get('/feedback', validate(listFeedbackQuerySchema, 'query'), adminListFeedback);
 router.patch('/feedback/:id', validate(updateFeedbackSchema), adminUpdateFeedback);
+
+// --- Live chat inbox ---
+router.get('/support/chats', validate(adminListChatsQuerySchema, 'query'), adminListChats);
+router.get('/support/chats/:id', validate(chatPollQuerySchema, 'query'), adminGetChat);
+router.post('/support/chats/:id/messages', validate(adminSendChatMessageSchema), adminSendMessage);
+router.post('/support/chats/:id/close', adminCloseChat);
 
 // --- Problems ---
 router.get('/problems', validate(listProblemsQuerySchema, 'query'), adminListProblems);

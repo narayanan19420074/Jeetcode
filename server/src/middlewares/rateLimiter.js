@@ -108,3 +108,14 @@ export const feedbackLimiter = rateLimit({
   keyGenerator: (req) => req.user?.id || ipKeyGenerator(req.ip),
   message: { success: false, message: 'You have sent a few messages already. Please wait a bit before sending another.' },
 });
+
+// Support chat messages. Per user so shared IPs are not punished.
+export const supportChatLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  limit: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  store: buildStore(),
+  keyGenerator: (req) => req.user?.id || ipKeyGenerator(req.ip),
+  message: { success: false, message: 'You are sending messages too quickly. Please wait a moment.' },
+});
