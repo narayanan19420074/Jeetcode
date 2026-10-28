@@ -11,6 +11,8 @@ import NotificationsWatcher from '../features/notifications/NotificationsWatcher
 export default function MainLayout() {
   const { pathname } = useLocation();
   const bottomNav = showMobileBottomNav(pathname);
+  // Pages with their own phone header (Problems) hide the top bar on phones. It stays mounted so the coin polling keeps running.
+  const hideNavbarOnPhone = pathname === '/problems' || pathname.startsWith('/problems/');
 
   return (
     <Box
@@ -26,7 +28,13 @@ export default function MainLayout() {
       <EmailVerifyBanner />
       <FriendsRealtime />
       <NotificationsWatcher />
-      <Navbar />
+      {hideNavbarOnPhone ? (
+        <Box sx={{ display: { xs: 'none', md: 'contents' } }}>
+          <Navbar />
+        </Box>
+      ) : (
+        <Navbar />
+      )}
       <Box component="main" sx={{ pb: bottomNav ? { xs: 'calc(76px + env(safe-area-inset-bottom))', md: 0 } : 0 }}>
         <Outlet />
       </Box>

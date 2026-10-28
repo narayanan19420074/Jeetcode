@@ -10,8 +10,8 @@ import {
   CircularProgress,
   Divider,
   IconButton,
+  ListItemIcon,
   InputAdornment,
-  ListSubheader,
   Menu,
   MenuItem,
   Skeleton,
@@ -30,9 +30,14 @@ import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import FilterAltOffRoundedIcon from '@mui/icons-material/FilterAltOffRounded';
+import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUncheckedRounded';
+import SignalCellularAlt1BarRoundedIcon from '@mui/icons-material/SignalCellularAlt1BarRounded';
+import SignalCellularAlt2BarRoundedIcon from '@mui/icons-material/SignalCellularAlt2BarRounded';
+import SignalCellularAltRoundedIcon from '@mui/icons-material/SignalCellularAltRounded';
+import BackToDashboard from '../../../components/BackToDashboard';
 import { problemsApi } from '../../../api/problemsApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import { CATEGORY_GROUPS, DIFF_COLOR, SORT_OPTIONS, tint } from '../dashboardUtils';
+import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
 
 // Phone layout of the Problems page. It uses the same accent colour, rounded panels and tinted
@@ -42,11 +47,10 @@ const ACCENT = '#6366F1';
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 const SHORT_DIFF = { Easy: 'Easy', Medium: 'Med.', Hard: 'Hard' };
 const PAGE_SIZE = 30;
-const TAG_COLOR = Object.fromEntries(CATEGORY_GROUPS.flatMap((g) => g.tags.map((t) => [t, g.color])));
 
 const INITIAL_QUERY = { search: '', difficulty: 'All', status: 'All', sort: 'newest', tags: [], companies: [], page: 1 };
 
-const hideScrollbar = { scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } };
+const DIFF_ICON = { Easy: SignalCellularAlt1BarRoundedIcon, Medium: SignalCellularAlt2BarRoundedIcon, Hard: SignalCellularAltRoundedIcon };
 
 function DifficultyTag({ difficulty }) {
   const color = DIFF_COLOR[difficulty] || 'var(--jc-pending)';
@@ -127,40 +131,6 @@ function SkeletonRows({ count = 8 }) {
   );
 }
 
-function DifficultyCard({ label, solved, total, active, onClick }) {
-  const color = DIFF_COLOR[label];
-  const pct = total ? Math.min((solved / total) * 100, 100) : 0;
-  return (
-    <ButtonBase
-      onClick={onClick}
-      aria-pressed={active}
-      sx={(t) => ({
-        flex: 1,
-        minWidth: 0,
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        p: 1.25,
-        borderRadius: '18px',
-        fontFamily: 'inherit',
-        color: t.palette.text.primary,
-        bgcolor: active ? tint(color, 20) : t.palette.background.paper,
-        border: `1px solid ${tint(color, active ? 60 : 30)}`,
-      })}
-    >
-      <Typography sx={{ fontWeight: 800, fontSize: '0.8rem', color }}>{label}</Typography>
-      <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', fontVariantNumeric: 'tabular-nums', lineHeight: 1.3 }}>
-        {solved}
-        <Box component="span" sx={{ color: 'text.secondary', fontWeight: 600, fontSize: '0.8rem' }}>
-          /{total}
-        </Box>
-      </Typography>
-      <Box sx={{ mt: 0.75, width: '100%', height: 5, borderRadius: 99, bgcolor: tint(color, 20), overflow: 'hidden' }}>
-        <Box sx={{ width: `${pct}%`, height: '100%', borderRadius: 99, bgcolor: color }} />
-      </Box>
-    </ButtonBase>
-  );
-}
-
 export default function MobileProblems({ isAuthenticated, progress, featured, preset, listsApi }) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -173,7 +143,6 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
   const [refetching, setRefetching] = useState(false);
   const [error, setError] = useState(null);
   const [retryTick, setRetryTick] = useState(0);
-  const [tags, setTags] = useState([]);
   const [picking, setPicking] = useState(false);
   const [menuAnchor, setMenuAnchor] = useState(null);
   const [saveAnchor, setSaveAnchor] = useState(null);
@@ -184,10 +153,6 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
   const hasLoaded = useRef(false);
 
   const patch = useCallback((p, keepPage = false) => setQ((prev) => ({ ...prev, ...p, ...(keepPage ? {} : { page: 1 }) })), []);
-
-  useEffect(() => {
-    problemsApi.getTags().then(({ data: d }) => setTags(d.data.items)).catch(() => setTags([]));
-  }, []);
 
   // Deep links (topic / company / difficulty) arrive pre-filtered.
   useEffect(() => {
@@ -258,12 +223,11 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
     return () => io.disconnect();
   }, [hasMore, loading, refetching, loadingMore, error, data.items.length]);
 
-  const toggleTag = (tag) => patch({ tags: q.tags.includes(tag) ? q.tags.filter((t) => t !== tag) : [...q.tags, tag] });
+  const removeTag = (tag) => patch({ tags: q.tags.filter((t) => t !== tag) });
   const toggleCompany = (c) => patch({ companies: q.companies.filter((x) => x !== c) });
 
   const filterCount = (q.difficulty !== 'All' ? 1 : 0) + (q.status !== 'All' ? 1 : 0) + q.companies.length + q.tags.length;
   const anyActive = filterCount > 0 || q.search !== '';
-  const sortDisabled = q.search !== '';
 
   const clearAll = () => {
     setSearchText('');
@@ -308,35 +272,15 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
   const heading = q.tags.length === 1 ? q.tags[0] : q.companies.length === 1 && !q.tags.length ? q.companies[0] : 'All Problems';
 
   return (
-    <Box sx={{ px: 1.75, pt: 1.5, pb: 2, maxWidth: 640, mx: 'auto' }}>
-      {/* Search + menu */}
-      <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center' }}>
-        <TextField
-          fullWidth
-          size="small"
-          placeholder="Search problems"
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          slotProps={{
-            htmlInput: { 'aria-label': 'Search problems' },
-            input: {
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchRoundedIcon fontSize="small" />
-                </InputAdornment>
-              ),
-            },
-          }}
-          sx={(t) => ({
-            '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
-            '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-          })}
-        />
+    <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
+      {/* Back + menu */}
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
         <IconButton
           onClick={(e) => setMenuAnchor(e.currentTarget)}
-          aria-label="Filter and sort problems"
+          aria-label="Filter problems"
           aria-haspopup="menu"
-          sx={(t) => ({ width: 48, height: 48, flexShrink: 0, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), color: ACCENT })}
+          sx={(t) => ({ width: 44, height: 44, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), color: ACCENT })}
         >
           <Box sx={{ position: 'relative', display: 'grid', placeItems: 'center' }}>
             <MoreHorizRoundedIcon />
@@ -344,6 +288,30 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           </Box>
         </IconButton>
       </Stack>
+
+      {/* Search */}
+      <TextField
+        fullWidth
+        size="small"
+        placeholder="Search problems"
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+        slotProps={{
+          htmlInput: { 'aria-label': 'Search problems' },
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchRoundedIcon fontSize="small" />
+              </InputAdornment>
+            ),
+          },
+        }}
+        sx={(t) => ({
+          mt: 1,
+          '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
+          '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
+        })}
+      />
 
       {/* Header */}
       <Box sx={{ textAlign: 'center', mt: 2.5 }}>
@@ -414,56 +382,14 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         </Stack>
       </Box>
 
-      {/* Difficulty cards (tap to filter) */}
-      <Stack direction="row" spacing={1.25} sx={{ mt: 2.5 }}>
-        {DIFFICULTIES.map((d) => (
-          <DifficultyCard
-            key={d}
-            label={d}
-            solved={solvedBy[d] || 0}
-            total={totals[d] || 0}
-            active={q.difficulty === d}
-            onClick={() => patch({ difficulty: q.difficulty === d ? 'All' : d })}
-          />
-        ))}
-      </Stack>
-
-      {/* Topics */}
-      {tags.length > 0 && (
-        <Box sx={{ display: 'flex', gap: 1, overflowX: 'auto', mx: -1.75, px: 1.75, mt: 2, pb: 0.5, ...hideScrollbar }}>
-          {tags.map(({ tag }) => {
-            const on = q.tags.includes(tag);
-            const c = TAG_COLOR[tag] || ACCENT;
-            return (
-              <ButtonBase
-                key={tag}
-                onClick={() => toggleTag(tag)}
-                aria-pressed={on}
-                sx={(t) => ({
-                  flexShrink: 0,
-                  gap: 0.9,
-                  px: 1.75,
-                  py: 1,
-                  borderRadius: 999,
-                  fontFamily: 'inherit',
-                  whiteSpace: 'nowrap',
-                  color: t.palette.text.primary,
-                  bgcolor: on ? tint(c, 22) : t.palette.background.paper,
-                  border: `1px solid ${tint(c, on ? 70 : 34)}`,
-                })}
-              >
-                <Box aria-hidden sx={{ width: 9, height: 9, borderRadius: '50%', bgcolor: c }} />
-                <Typography sx={{ fontWeight: on ? 800 : 700, fontSize: '0.95rem' }}>{tag}</Typography>
-              </ButtonBase>
-            );
-          })}
-        </Box>
-      )}
-
       {/* Active filters */}
       {anyActive && (
         <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, alignItems: 'center', mt: 1.5 }}>
           {q.search && <Chip size="small" label={`Search: ${q.search}`} onDelete={() => setSearchText('')} />}
+          {q.difficulty !== 'All' && <Chip size="small" label={q.difficulty} onDelete={() => patch({ difficulty: 'All' })} sx={{ color: DIFF_COLOR[q.difficulty] }} />}
+          {q.tags.map((tag) => (
+            <Chip key={tag} size="small" label={tag} onDelete={() => removeTag(tag)} />
+          ))}
           {q.status !== 'All' && <Chip size="small" label={q.status === 'solved' ? 'Solved' : 'Unsolved'} onDelete={() => patch({ status: 'All' })} />}
           {q.companies.map((c) => (
             <Chip key={c} size="small" label={c} onDelete={() => toggleCompany(c)} />
@@ -519,48 +445,54 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         </Typography>
       )}
 
-      {/* Filter + sort menu */}
+      {/* Filter menu: choosing an item swaps the list below in place */}
       <Menu
         anchorEl={menuAnchor}
         open={Boolean(menuAnchor)}
         onClose={() => setMenuAnchor(null)}
-        slotProps={{ paper: { sx: { borderRadius: '20px', minWidth: 230, maxHeight: '70vh' } } }}
+        slotProps={{ paper: { sx: { borderRadius: '20px', minWidth: 230, py: 0.5 } } }}
       >
-        <ListSubheader sx={{ bgcolor: 'transparent', lineHeight: '32px', fontWeight: 800 }}>Difficulty</ListSubheader>
-        {DIFFICULTIES.map((d) => (
-          <MenuItem key={d} selected={q.difficulty === d} onClick={closeMenuAnd(() => patch({ difficulty: q.difficulty === d ? 'All' : d }))} sx={{ justifyContent: 'space-between', gap: 2, fontWeight: 700 }}>
-            <Box component="span" sx={{ color: DIFF_COLOR[d] }}>
+        {DIFFICULTIES.map((d) => {
+          const Icon = DIFF_ICON[d];
+          return (
+            <MenuItem key={d} selected={q.difficulty === d} onClick={closeMenuAnd(() => patch({ difficulty: q.difficulty === d ? 'All' : d }))} sx={{ py: 1.25, fontWeight: 700 }}>
+              <ListItemIcon sx={{ color: DIFF_COLOR[d] }}>
+                <Icon fontSize="small" />
+              </ListItemIcon>
               {d}
-            </Box>
-            {q.difficulty === d && <CheckRoundedIcon fontSize="small" color="primary" />}
-          </MenuItem>
-        ))}
-        <ListSubheader sx={{ bgcolor: 'transparent', lineHeight: '32px', fontWeight: 800 }}>Status</ListSubheader>
-        {[
-          { value: 'unsolved', label: 'Unsolved' },
-          { value: 'solved', label: 'Solved' },
-        ].map((s) => (
-          <MenuItem
-            key={s.value}
-            disabled={!isAuthenticated}
-            selected={q.status === s.value}
-            onClick={closeMenuAnd(() => patch({ status: q.status === s.value ? 'All' : s.value }))}
-            sx={{ justifyContent: 'space-between', gap: 2, fontWeight: 700 }}
-          >
-            {s.label}
-            {q.status === s.value && <CheckRoundedIcon fontSize="small" color="primary" />}
-          </MenuItem>
-        ))}
-        <ListSubheader sx={{ bgcolor: 'transparent', lineHeight: '32px', fontWeight: 800 }}>Sort by</ListSubheader>
-        {SORT_OPTIONS.map((o) => (
-          <MenuItem key={o.value} disabled={sortDisabled} selected={q.sort === o.value} onClick={closeMenuAnd(() => patch({ sort: o.value }))} sx={{ justifyContent: 'space-between', gap: 2 }}>
-            {o.label}
-            {q.sort === o.value && <CheckRoundedIcon fontSize="small" color="primary" />}
-          </MenuItem>
-        ))}
+              {q.difficulty === d && <CheckRoundedIcon fontSize="small" color="primary" sx={{ ml: 'auto' }} />}
+            </MenuItem>
+          );
+        })}
+        <MenuItem
+          disabled={!isAuthenticated}
+          selected={q.status === 'unsolved'}
+          onClick={closeMenuAnd(() => patch({ status: q.status === 'unsolved' ? 'All' : 'unsolved' }))}
+          sx={{ py: 1.25, fontWeight: 700 }}
+        >
+          <ListItemIcon>
+            <RadioButtonUncheckedRoundedIcon fontSize="small" />
+          </ListItemIcon>
+          Unsolved
+          {q.status === 'unsolved' && <CheckRoundedIcon fontSize="small" color="primary" sx={{ ml: 'auto' }} />}
+        </MenuItem>
+        <MenuItem
+          disabled={!isAuthenticated}
+          selected={q.status === 'solved'}
+          onClick={closeMenuAnd(() => patch({ status: q.status === 'solved' ? 'All' : 'solved' }))}
+          sx={{ py: 1.25, fontWeight: 700 }}
+        >
+          <ListItemIcon sx={{ color: 'var(--jc-easy)' }}>
+            <CheckCircleRoundedIcon fontSize="small" />
+          </ListItemIcon>
+          Solved
+          {q.status === 'solved' && <CheckRoundedIcon fontSize="small" color="primary" sx={{ ml: 'auto' }} />}
+        </MenuItem>
         <Divider />
-        <MenuItem disabled={!anyActive} onClick={closeMenuAnd(clearAll)} sx={{ gap: 1.5, fontWeight: 700 }}>
-          <FilterAltOffRoundedIcon fontSize="small" />
+        <MenuItem disabled={!anyActive} onClick={closeMenuAnd(clearAll)} sx={{ py: 1.25, fontWeight: 700 }}>
+          <ListItemIcon>
+            <FilterAltOffRoundedIcon fontSize="small" />
+          </ListItemIcon>
           Remove filters
         </MenuItem>
       </Menu>
