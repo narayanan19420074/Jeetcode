@@ -24,7 +24,7 @@ import {
   useMediaQuery,
   ThemeProvider,
 } from '@mui/material';
-import { getTheme } from '../../theme/theme';
+import { getTheme } from '../../app/theme';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import FullscreenRoundedIcon from '@mui/icons-material/FullscreenRounded';
 import FullscreenExitRoundedIcon from '@mui/icons-material/FullscreenExitRounded';

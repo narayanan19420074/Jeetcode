@@ -1,5 +1,5 @@
 import { Chip } from '@mui/material';
-import { difficultyColor } from '../theme/theme';
+import { difficultyColor } from '../app/theme';
 
 export default function DifficultyChip({ difficulty, size = 'small' }) {
   const color = difficultyColor(difficulty);

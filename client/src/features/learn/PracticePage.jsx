@@ -15,7 +15,7 @@ import {
   Divider,
   Chip,
 } from '@mui/material';
-import { getTopicBySlug } from './content/topics';
+import { getTopicBySlug } from './content';
 
 const LEVELS = [
   { key: 'level1', label: 'Level 1', sub: 'Basics' },

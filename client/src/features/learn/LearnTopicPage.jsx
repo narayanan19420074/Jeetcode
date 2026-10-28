@@ -24,7 +24,7 @@ import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRou
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { getTopicBySlug } from './content/topics';
+import { getTopicBySlug } from './content';
 import { AVERAGES_VISUAL_REGISTRY } from './animations/AveragesVisuals';
 import MissingValueVisual from './visuals/MissingValueVisual';
 import { aptitudeApi } from '../../api/aptitudeApi';

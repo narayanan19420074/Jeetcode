@@ -1,10 +1,10 @@
 import { Box } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Outlet, useLocation } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import MobileBottomNav, { showMobileBottomNav } from '../components/MobileBottomNav';
-import FreeAccessBanner from '../components/FreeAccessBanner';
-import EmailVerifyBanner from '../components/EmailVerifyBanner';
+import Navbar from './Navbar';
+import MobileBottomNav, { showMobileBottomNav } from './MobileBottomNav';
+import FreeAccessBanner from './FreeAccessBanner';
+import EmailVerifyBanner from './EmailVerifyBanner';
 import FriendsRealtime from '../features/friends/friendsRealtime';
 import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
 

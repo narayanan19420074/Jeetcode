@@ -2,7 +2,7 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Button, Stack, ToggleButton, ToggleButtonGroup, Tooltip, Typography, Chip } from '@mui/material';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
-import tokens, { ACCENTS } from '../../../theme/theme';
+import tokens, { ACCENTS } from '../../../app/theme';
 import { Card, CardBody, ChoiceCard, PageTitle, Row, SwitchRow, usePreferences } from '../components/SettingsUi';
 
 // A tiny app window drawn in the real palette so the theme options are

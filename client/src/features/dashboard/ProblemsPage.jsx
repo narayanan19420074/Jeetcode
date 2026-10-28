@@ -5,10 +5,10 @@ import { Box, Button, Container, Skeleton, Stack, Typography, useMediaQuery, use
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { problemsApi } from '../../api/problemsApi';
-import ProblemLibrary from '../dashboard/components/ProblemLibrary';
-import useProblemLists from '../dashboard/useProblemLists';
-import useViewportFill from '../dashboard/useViewportFill';
-import { DIFF_COLOR, featuredPageForToday, surface, tint } from '../dashboard/dashboardUtils';
+import ProblemLibrary from './components/ProblemLibrary';
+import useProblemLists from './useProblemLists';
+import useViewportFill from './useViewportFill';
+import { DIFF_COLOR, featuredPageForToday, surface, tint } from './dashboardUtils';
 import BackToDashboard from '../../components/BackToDashboard';
 
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];

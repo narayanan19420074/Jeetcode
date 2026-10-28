@@ -1,7 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Grid, Paper, Typography, Chip } from '@mui/material';
 import AutoAwesomeMotionRoundedIcon from '@mui/icons-material/AutoAwesomeMotionRounded';
-import { learnTopics } from './content/topics';
+import { learnTopics } from './content';
 
 export default function LearnHomePage() {
   return (

@@ -6,7 +6,7 @@ import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material
 import { MotionConfig } from 'framer-motion';
 import { SnackbarProvider } from 'notistack';
 import store from './app/store';
-import { getTheme } from './theme/theme';
+import { getTheme } from './app/theme';
 import { setSystemDark, hydrateFromAccount } from './app/uiSlice';
 import { bootstrapSession } from './features/auth/authSlice';
 import App from './App.jsx';

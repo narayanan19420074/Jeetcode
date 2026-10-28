@@ -2,12 +2,12 @@ import { Suspense, lazy } from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
-import MainLayout from './layouts/MainLayout';
+import MainLayout from './components/MainLayout';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoginPage from './features/auth/LoginPage';
 import SignupPage from './features/auth/SignupPage';
 import DashboardPage from './features/dashboard/DashboardPage';
-import ProblemsPage from './features/problems/ProblemsPage';
+import ProblemsPage from './features/dashboard/ProblemsPage';
 import HomePage from './features/home/HomePage';
 import GithubCallbackPage from './features/auth/GithubCallbackPage';
 import LinkedinCallbackPage from './features/auth/LinkedinCallbackPage';
@@ -49,7 +49,7 @@ const MockResultPage = lazy(() => import('./features/mock/MockResultPage'));
 const VisualizerPage = lazy(() => import('./features/visualizer/VisualizerPage'));
 const PairLobbyPage = lazy(() => import('./features/room/PairLobbyPage'));
 const RoomPage = lazy(() => import('./features/room/RoomPage'));
-const PricingPage = lazy(() => import('./features/billing/PricingPage'));
+const PricingPage = lazy(() => import('./features/store/PricingPage'));
 const SettingsPage = lazy(() => import('./features/settings/SettingsPage'));
 // REMOVED: LearnHomePage — the standalone "/learn" topic list is gone.
 // Topics are now reached via a pattern's Learn card on AptitudePatternDetailPage.

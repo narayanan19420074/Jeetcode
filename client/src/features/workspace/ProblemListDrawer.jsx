@@ -9,7 +9,7 @@ import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUnch
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import { problemsApi } from '../../api/problemsApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { difficultyColor } from '../../theme/theme';
+import { difficultyColor } from '../../app/theme';
 import { WsButton, WsIconButton } from './wsUi';
 import { wsSurface } from './workspaceTheme';
 

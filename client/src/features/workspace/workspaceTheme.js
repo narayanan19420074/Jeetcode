@@ -1,6 +1,6 @@
 // Colour system for the workspace (editor, console, mobile chrome).
 //
-// Built on the app's own Material 3 / Google-style tokens (theme/theme.js) so
+// Built on the app's own Material 3 / Google-style tokens (app/theme.js) so
 // the workspace is not a separate "blue-tinted" look: one accent (the user's
 // accent from Settings), neutral tonal surfaces, and syntax colours taken from
 // the GitHub Primer code palette (AA contrast on both backgrounds).
@@ -14,7 +14,7 @@
 //   chrome  - navbar, tabs, toolbar, key bar
 //   panel   - console / results
 //   raised  - problem card, key caps, inline code chips
-import { gpayTokens } from '../../theme/theme';
+import { gpayTokens } from '../../app/theme';
 
 export const wsSurface = (t) => {
   const dark = t.palette.mode === 'dark';

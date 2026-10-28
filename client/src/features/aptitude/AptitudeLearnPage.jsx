@@ -30,7 +30,7 @@ import { motion } from 'framer-motion';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import MicroCheck from '../learn/components/MicroCheck';
-import { getLessonsForPattern } from './lessons';
+import { getLessonsForPattern } from '../learn/content';
 import { LESSON_WIDGETS } from './components/LessonWidgets';
 
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
