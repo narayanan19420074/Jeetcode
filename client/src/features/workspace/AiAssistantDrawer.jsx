@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Box, Chip, CircularProgress, Drawer, Stack, TextField, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
@@ -7,21 +7,25 @@ import DeleteSweepOutlinedIcon from '@mui/icons-material/DeleteSweepOutlined';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { aiApi } from '../../api/aiApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { PaneBar, WsIconButton } from '../workspace/wsUi';
-import { WS } from '../workspace/wsTokens';
-import { wsSurface } from '../workspace/workspaceTheme';
+import { PaneBar, WsIconButton } from './wsUi';
+import { WS } from './wsTokens';
+import { wsSurface } from './workspaceTheme';
 
 const QUICK_PROMPTS = ['Give me a hint', 'What is the time complexity?', 'Which edge cases should I test?'];
 
-const WELCOME = {
+const welcomeMessage = (note) => ({
   role: 'assistant',
-  text: "I'm here to help you think through the problem — ask about an approach, an edge case, or a complexity trade-off. I won't hand you the full solution. This chat is private to you.",
-};
+  text: `I'm here to help you think through the problem — ask about an approach, an edge case, or a complexity trade-off. I won't hand you the full solution.${note ? ` ${note}` : ''}`,
+});
 
-// Same AI assistant as the workspace. It reads the shared code, but the chat is yours alone.
-export default function RoomAiDrawer({ open, onClose, slug, language, getCode, isAuthenticated, onSignIn }) {
+// The AI hint assistant (workspace and pair room). Give it key={slug} so the chat
+// starts fresh on every problem.
+//   getCode      () => current code (the room passes the shared document)
+//   welcomeNote  optional extra sentence in the first message
+export default function AiAssistantDrawer({ open, onClose, slug, language, getCode, isAuthenticated, onSignIn, welcomeNote }) {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const WELCOME = useMemo(() => welcomeMessage(welcomeNote), [welcomeNote]);
   const [messages, setMessages] = useState([WELCOME]);
   const endRef = useRef(null);
 

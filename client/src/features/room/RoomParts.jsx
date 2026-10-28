@@ -1,68 +1,12 @@
-import { Avatar, Badge, Box, ButtonBase, Chip, LinearProgress, Stack, TextField, Tooltip, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { Avatar, Badge, Box, Chip, LinearProgress, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
-import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
-import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
-import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
-import { formatClock } from '../workspace/useStopwatch';
 import { CasePill, Result } from '../workspace/ConsolePanel';
-import { CodeField, PaneTabs, WsButton, WsIconButton } from '../workspace/wsUi';
+import { CodeField, PaneTabs, WsButton } from '../workspace/wsUi';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WS, mono } from '../workspace/wsTokens';
-
-// Scrollbars stay invisible until the pointer is over the scrollable area
-// (same behaviour as the workspace page).
-export const hoverScrollbars = (t) => {
-  const thumb = alpha(t.palette.text.primary, 0.35);
-  return {
-    '& *': { scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' },
-    '& *:hover': { scrollbarColor: `${thumb} transparent` },
-    '& *::-webkit-scrollbar': { width: 8, height: 8 },
-    '& *::-webkit-scrollbar-track': { background: 'transparent' },
-    '& *::-webkit-scrollbar-thumb': { backgroundColor: 'transparent', borderRadius: 8 },
-    '& *:hover::-webkit-scrollbar-thumb': { backgroundColor: thumb },
-    '& .monaco-scrollable-element > .scrollbar > .slider': { opacity: 0, transition: 'opacity .2s' },
-    '& .monaco-editor:hover .monaco-scrollable-element > .scrollbar > .slider': { opacity: 1 },
-  };
-};
-
-// Practice timer (personal, not shared): tap the clock to start, tap the time to pause.
-export function TimerControl({ sw, size = 'md' }) {
-  const h = size === 'lg' ? WS.ctrlLg : WS.ctrl;
-  if (!sw.running && sw.seconds === 0) {
-    return (
-      <WsIconButton title="Start timer" size={size} onClick={sw.start}>
-        <TimerOutlinedIcon />
-      </WsIconButton>
-    );
-  }
-  return (
-    <Stack direction="row" sx={{ alignItems: 'center', gap: 0.25 }}>
-      <ButtonBase
-        onClick={sw.running ? sw.pause : sw.start}
-        aria-label={sw.running ? 'Pause timer' : 'Resume timer'}
-        sx={(t) => ({
-          height: h,
-          px: 1.1,
-          gap: 0.6,
-          borderRadius: `${WS.radius}px`,
-          color: sw.running ? t.palette.primary.main : t.palette.text.secondary,
-          bgcolor: sw.running ? alpha(t.palette.primary.main, 0.12) : wsSurface(t).raised,
-          '& svg': { fontSize: 17 },
-        })}
-      >
-        {sw.running ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />}
-        <Typography sx={{ ...mono, fontSize: '0.8rem', fontWeight: 600, color: 'inherit' }}>{formatClock(sw.seconds)}</Typography>
-      </ButtonBase>
-      <WsIconButton title="Reset timer" size={size} onClick={sw.reset}>
-        <RestartAltRoundedIcon sx={{ fontSize: '17px !important' }} />
-      </WsIconButton>
-    </Stack>
-  );
-}
 
 const initialOf = (name) => (name || '').trim()[0]?.toUpperCase() || '?';
 
