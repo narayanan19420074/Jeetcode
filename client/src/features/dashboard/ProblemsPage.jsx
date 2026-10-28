@@ -6,6 +6,7 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { problemsApi } from '../../api/problemsApi';
 import ProblemLibrary from './components/ProblemLibrary';
+import MobileProblems from './components/MobileProblems';
 import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { DIFF_COLOR, featuredPageForToday, surface, tint } from './dashboardUtils';
@@ -102,6 +103,7 @@ export default function ProblemsPage() {
   const { isAuthenticated, user } = useSelector((s) => s.auth);
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const rootRef = useRef(null);
   const fillH = useViewportFill(rootRef, isLg);
   const listsApi = useProblemLists(user?.id);
@@ -148,6 +150,11 @@ export default function ProblemsPage() {
     listsApi.lists.forEach((l) => l.items.forEach((i) => ids.add(i._id)));
     return ids.size;
   }, [listsApi.lists]);
+
+  // Phones get their own layout; wide screens keep the existing page below.
+  if (isMobile) {
+    return <MobileProblems isAuthenticated={isAuthenticated} progress={progress} featured={featured} preset={preset} listsApi={listsApi} />;
+  }
 
   return (
     <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : { minHeight: 'calc(100vh - 64px)' }}>
