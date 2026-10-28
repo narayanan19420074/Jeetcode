@@ -585,7 +585,7 @@ export default function HomePage() {
             © {new Date().getFullYear()} JeetCode
           </Typography>
           <Stack direction="row" spacing={2} useFlexGap sx={{ mt: 1, flexWrap: 'wrap' }}>
-            {[['Privacy Policy', '/privacy'], ['Terms of Service', '/terms'], ['Refund & Cancellation', '/refund']].map(([label, path]) => (
+            {[['Privacy Policy', '/privacy'], ['Terms of Service', '/terms'], ['Refund & Cancellation', '/refund'], ['Help & Support', '/help']].map(([label, path]) => (
               <Link key={path} component="button" type="button" onClick={go(path)} underline="hover" color="text.secondary" sx={{ font: 'inherit', fontSize: '0.8rem' }}>
                 {label}
               </Link>

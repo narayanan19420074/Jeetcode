@@ -32,6 +32,7 @@ const AdminLicensesPage = lazy(() => import('./features/admin/pages/AdminLicense
 const AdminProblemsPage = lazy(() => import('./features/admin/pages/AdminProblemsPage'));
 const AdminAptitudePage = lazy(() => import('./features/admin/pages/AdminAptitudePage'));
 const AdminAuditLogPage = lazy(() => import('./features/admin/pages/AdminAuditLogPage'));
+const AdminFeedbackPage = lazy(() => import('./features/admin/pages/AdminFeedbackPage'));
 
 const AptitudePatternsPage = lazy(() => import('./features/aptitude/AptitudePatternsPage'));
 const AptitudePatternDetailPage = lazy(() => import('./features/aptitude/AptitudePatternDetailPage'));
@@ -67,6 +68,8 @@ const AdminStorePage = lazy(() => import('./features/admin/pages/AdminStorePage'
 const PrivacyPolicyPage = lazy(() => import('./features/legal/PrivacyPolicyPage'));
 const TermsPage = lazy(() => import('./features/legal/TermsPage'));
 const RefundPolicyPage = lazy(() => import('./features/legal/RefundPolicyPage'));
+// Help & Support (public, standalone) — FAQ + contact/feedback form
+const HelpPage = lazy(() => import('./features/help/HelpPage'));
 
 const RouteFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -95,6 +98,9 @@ export default function App() {
       <Route path="/privacy" element={<Suspense fallback={<RouteFallback />}><PrivacyPolicyPage /></Suspense>} />
       <Route path="/terms" element={<Suspense fallback={<RouteFallback />}><TermsPage /></Suspense>} />
       <Route path="/refund" element={<Suspense fallback={<RouteFallback />}><RefundPolicyPage /></Suspense>} />
+      <Route path="/help" element={<Suspense fallback={<RouteFallback />}><HelpPage /></Suspense>} />
+      <Route path="/support" element={<Navigate to="/help" replace />} />
+      <Route path="/feedback" element={<Navigate to="/help" replace />} />
 
       {/* Admin's own login page — no navbar, not linked anywhere in the
           client UI. Reached only by direct URL. */}
@@ -130,6 +136,7 @@ export default function App() {
         <Route path="problems" element={<Suspense fallback={<RouteFallback />}><AdminProblemsPage /></Suspense>} />
         <Route path="aptitude" element={<Suspense fallback={<RouteFallback />}><AdminAptitudePage /></Suspense>} />
         <Route path="store" element={<Suspense fallback={<RouteFallback />}><AdminStorePage /></Suspense>} />
+        <Route path="feedback" element={<Suspense fallback={<RouteFallback />}><AdminFeedbackPage /></Suspense>} />
         <Route path="audit-log" element={<Suspense fallback={<RouteFallback />}><AdminAuditLogPage /></Suspense>} />
       </Route>
 

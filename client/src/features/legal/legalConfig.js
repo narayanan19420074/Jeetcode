@@ -12,4 +12,5 @@ export const LEGAL_LINKS = [
   { label: 'Privacy Policy', to: '/privacy' },
   { label: 'Terms of Service', to: '/terms' },
   { label: 'Refund & Cancellation', to: '/refund' },
+  { label: 'Help & Support', to: '/help' },
 ];

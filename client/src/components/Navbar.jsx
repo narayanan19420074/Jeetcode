@@ -36,6 +36,7 @@ import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
@@ -198,6 +199,11 @@ export default function Navbar() {
   const handleSettingsClick = () => {
     closeAll();
     navigate('/settings');
+  };
+
+  const handleHelpClick = () => {
+    closeAll();
+    navigate('/help');
   };
 
   const handleActivateLicenseClick = () => {
@@ -377,6 +383,12 @@ export default function Navbar() {
                 </ListItemIcon>
                 <ListItemText primary="Settings" />
               </MenuItem>
+              <MenuItem onClick={handleHelpClick}>
+                <ListItemIcon>
+                  <HelpOutlineRoundedIcon fontSize="small" />
+                </ListItemIcon>
+                <ListItemText primary="Help & support" />
+              </MenuItem>
               {!user?.isPro && (
                 <MenuItem onClick={handleActivateLicenseClick}>
                   <ListItemIcon>
@@ -529,6 +541,11 @@ export default function Navbar() {
               <Tooltip title="Settings">
                 <IconButton onClick={handleSettingsClick} aria-label="Settings" sx={footerIconSx}>
                   <SettingsRoundedIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Help & support">
+                <IconButton onClick={handleHelpClick} aria-label="Help and support" sx={footerIconSx}>
+                  <HelpOutlineRoundedIcon />
                 </IconButton>
               </Tooltip>
               <Tooltip title="Log out">

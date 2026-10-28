@@ -96,3 +96,15 @@ export const emailLimiter = rateLimit({
   store: buildStore(),
   message: { success: false, message: 'Too many email requests. Try again in a few minutes.' },
 });
+
+// Help & Support form. Counts every request so nobody can flood the inbox.
+// Keyed by user id when logged in, else by IP.
+export const feedbackLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  store: buildStore(),
+  keyGenerator: (req) => req.user?.id || ipKeyGenerator(req.ip),
+  message: { success: false, message: 'You have sent a few messages already. Please wait a bit before sending another.' },
+});

@@ -28,6 +28,8 @@ import {
   updateQuestion,
   deleteQuestion,
 } from '../../controllers/aptitude.controller.js';
+import { adminListFeedback, adminUpdateFeedback } from '../../controllers/feedback.controller.js';
+import { listFeedbackQuerySchema, updateFeedbackSchema } from '../../validators/feedback.validator.js';
 import adminUsersRouter from './adminUsers.routes.js';
 import adminLicensesRouter from './adminLicenses.routes.js';
 import adminStoreRouter from './adminStore.routes.js';
@@ -42,6 +44,10 @@ router.use(requireAuth, requireRole('admin'));
 router.get('/stats', getAdminStats);
 router.get('/signups', getRecentSignups);
 router.get('/audit-log', getAdminAuditLog);
+
+// --- Help & Support inbox ---
+router.get('/feedback', validate(listFeedbackQuerySchema, 'query'), adminListFeedback);
+router.patch('/feedback/:id', validate(updateFeedbackSchema), adminUpdateFeedback);
 
 // --- Problems ---
 router.get('/problems', validate(listProblemsQuerySchema, 'query'), adminListProblems);

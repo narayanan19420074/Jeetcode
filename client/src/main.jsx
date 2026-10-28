@@ -1,7 +1,7 @@
 import { StrictMode, useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider, useSelector, useDispatch } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
 import { MotionConfig } from 'framer-motion';
 import { SnackbarProvider } from 'notistack';
@@ -12,10 +12,12 @@ import { bootstrapSession } from './features/auth/authSlice';
 import App from './App.jsx';
 import { RoomSessionProvider } from './features/room/RoomSession';
 import OfflineGame from './components/OfflineGame';
+import ErrorBoundary from './components/ErrorBoundary';
 import './index.css';
 
 function ThemedApp() {
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
   const { mode, accent, density, fontScale, contrast, reduceMotion, underlineLinks } = useSelector((s) => s.ui);
   const bootstrapped = useSelector((s) => s.auth.bootstrapped);
   const userId = useSelector((s) => s.auth.user?.id);
@@ -76,16 +78,18 @@ function ThemedApp() {
       <CssBaseline />
       <MotionConfig reducedMotion={reduce ? 'always' : 'user'}>
       <SnackbarProvider maxSnack={3} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-        <OfflineGame />
-        {bootstrapped ? (
-          <RoomSessionProvider>
-            <App />
-          </RoomSessionProvider>
-        ) : (
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <CircularProgress />
-          </Box>
-        )}
+        <ErrorBoundary resetKey={pathname}>
+          <OfflineGame />
+          {bootstrapped ? (
+            <RoomSessionProvider>
+              <App />
+            </RoomSessionProvider>
+          ) : (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+              <CircularProgress />
+            </Box>
+          )}
+        </ErrorBoundary>
       </SnackbarProvider>
       </MotionConfig>
     </ThemeProvider>

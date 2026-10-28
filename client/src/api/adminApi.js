@@ -40,6 +40,10 @@ export const adminApi = {
   adjustCoins: (payload) => apiClient.post('/admin/store/coins', payload),
   storeLedger: (params) => apiClient.get('/admin/store/ledger', { params }),
 
+  // --- Help & Support inbox ---
+  listFeedback: (params) => apiClient.get('/admin/feedback', { params }),
+  updateFeedback: (id, payload) => apiClient.patch(`/admin/feedback/${id}`, payload),
+
   // --- Licenses ---
   listLicenses: () => apiClient.get('/admin/licenses'),
   generateLicense: (payload) => apiClient.post('/admin/licenses/generate', payload),
