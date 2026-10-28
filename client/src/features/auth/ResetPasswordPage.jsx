@@ -16,7 +16,7 @@ export default function ResetPasswordPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirm) {
-      setError('Passwords match aagala');
+      setError('Passwords do not match.');
       return;
     }
     setStatus('loading');
@@ -40,8 +40,8 @@ export default function ResetPasswordPage() {
     return (
       <AuthShell title="Reset your password" footer={footer}>
         <Alert severity="error">
-          Reset link sariyilla.{' '}
-          <Link component={RouterLink} to="/forgot-password">Pudhu link request pannunga</Link>.
+          This reset link is invalid.{' '}
+          <Link component={RouterLink} to="/forgot-password">Request a new link</Link>.
         </Alert>
       </AuthShell>
     );
@@ -51,7 +51,7 @@ export default function ResetPasswordPage() {
     <AuthShell title="Choose a new password" footer={footer}>
       {status === 'done' ? (
         <Alert severity="success">
-          Password update aachu. Ella devices-layum sign out aagiduchu.{' '}
+          Your password has been updated and you have been signed out on all devices.{' '}
           <Link component={RouterLink} to="/login" sx={{ fontWeight: 600 }}>Sign in</Link>
         </Alert>
       ) : (
@@ -60,7 +60,7 @@ export default function ResetPasswordPage() {
             {error && (
               <Alert severity="error">
                 {error}{' '}
-                <Link component={RouterLink} to="/forgot-password">Pudhu link</Link>
+                <Link component={RouterLink} to="/forgot-password">Request a new link</Link>
               </Alert>
             )}
             <AuthField

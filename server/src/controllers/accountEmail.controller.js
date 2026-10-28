@@ -59,7 +59,7 @@ export const forgotPassword = asyncHandler(async (req, res) => {
     }
   }
 
-  new ApiResponse(200, null, 'Account irundha, reset link anuppiyirukkom. Inbox (and spam) check pannunga.').send(res);
+  new ApiResponse(200, null, 'If an account exists for this email, a password reset link has been sent. Please check your inbox and spam folder.').send(res);
 });
 
 // POST /api/auth/reset-password — body: { token, password }.
@@ -88,7 +88,7 @@ export const resetPassword = asyncHandler(async (req, res) => {
   );
   await logSecurityEvent(user._id, req, 'password_reset', 'Password reset by email link; all sessions signed out');
 
-  new ApiResponse(200, null, 'Password updated. Ippo sign in pannunga.').send(res);
+  new ApiResponse(200, null, 'Password updated. You can now sign in.').send(res);
 });
 
 // POST /api/auth/verify-email — body: { token }.
@@ -123,5 +123,5 @@ export const resendVerification = asyncHandler(async (req, res) => {
   const sent = await issueVerificationEmail(user);
   if (!sent) throw new ApiError(502, 'Could not send the email right now. Please try again in a minute.');
 
-  new ApiResponse(200, null, 'Verification email sent. Inbox (and spam) check pannunga.').send(res);
+  new ApiResponse(200, null, 'Verification email sent. Please check your inbox and spam folder.').send(res);
 });

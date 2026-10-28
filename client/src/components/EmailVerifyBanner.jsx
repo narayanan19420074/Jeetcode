@@ -39,7 +39,7 @@ export default function EmailVerifyBanner() {
         ) : undefined
       }
     >
-      {note ? note.text : `Unga email (${user.email}) verify pannala. Inbox-la verification link paarunga.`}
+      {note ? note.text : `Your email address (${user.email}) is not verified yet. Check your inbox for the verification link.`}
     </Alert>
   );
 }

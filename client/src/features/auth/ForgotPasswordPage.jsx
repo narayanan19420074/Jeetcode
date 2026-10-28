@@ -34,13 +34,13 @@ export default function ForgotPasswordPage() {
     >
       {status === 'sent' ? (
         <Alert severity="success">
-          <b>{email}</b> registered-a irundha, reset link anuppiyirukkom (30 minutes valid). Inbox and spam check pannunga.
+          If an account exists for <b>{email}</b>, we have sent a password reset link. It is valid for 30 minutes. Please check your inbox and spam folder.
         </Alert>
       ) : (
         <Box component="form" onSubmit={handleSubmit}>
           <Stack spacing={2}>
             <Typography variant="body2" color="text.secondary">
-              Unga account email kudunga. Password reset link anuppuvom.
+              Enter the email address for your account and we will send you a password reset link.
             </Typography>
             {error && <Alert severity="error">{error}</Alert>}
             <AuthField

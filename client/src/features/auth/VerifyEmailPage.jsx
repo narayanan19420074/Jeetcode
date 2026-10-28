@@ -38,10 +38,10 @@ export default function VerifyEmailPage() {
       {state.status === 'loading' && (
         <Stack alignItems="center" spacing={1.5} sx={{ py: 2 }}>
           <CircularProgress size={28} />
-          <Typography variant="body2">Verify pannikitte irukkom...</Typography>
+          <Typography variant="body2">Verifying your email...</Typography>
         </Stack>
       )}
-      {state.status === 'ok' && <Alert severity="success">Email verify aachu. Nandri!</Alert>}
+      {state.status === 'ok' && <Alert severity="success">Your email has been verified.</Alert>}
       {state.status === 'error' && <Alert severity="error">{state.message}</Alert>}
     </AuthShell>
   );

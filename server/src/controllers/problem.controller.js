@@ -315,7 +315,7 @@ export const adminListProblems = asyncHandler(async (req, res) => {
   new ApiResponse(200, { items, pagination: { page, limit, total, totalPages: Math.ceil(total / limit) } }).send(res);
 });
 
-// POST /api/admin/problems — this IS "namma pudhu questions add pannuradhu".
+// POST /api/admin/problems — creates a new problem.
 export const createProblem = asyncHandler(async (req, res) => {
   const slug = slugify(req.body.title);
   const exists = await Problem.findOne({ slug });

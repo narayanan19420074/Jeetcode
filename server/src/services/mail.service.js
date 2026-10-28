@@ -16,7 +16,7 @@ function layout(title, bodyHtml, buttonText, url) {
 <h2 style="margin:0 0 16px;font-size:20px">${esc(title)}</h2>
 ${bodyHtml}
 <p style="margin:24px 0"><a href="${esc(url)}" style="background:#1a73e8;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:600;display:inline-block">${esc(buttonText)}</a></p>
-<p style="font-size:12px;color:#6b7280;word-break:break-all">Button work aagala? Indha link-a browser-la paste pannunga:<br>${esc(url)}</p>
+<p style="font-size:12px;color:#6b7280;word-break:break-all">If the button does not work, copy and paste this link into your browser:<br>${esc(url)}</p>
 </div></body></html>`;
 }
 
@@ -54,7 +54,7 @@ export function sendVerificationEmail(user, token) {
   return sendMail({
     to: user.email,
     subject: 'Verify your JeetCode email',
-    html: layout('Verify your email', `<p>Hi ${esc(user.name)}, JeetCode account-ku unga email-a confirm pannunga. Indha link 24 hours valid.</p>`, 'Verify email', url),
+    html: layout('Verify your email', `<p>Hi ${esc(user.name)}, please confirm the email address for your JeetCode account. This link is valid for 24 hours.</p>`, 'Verify email', url),
     text: `Hi ${user.name}, verify your JeetCode email (valid 24 hours): ${url}`,
     devLink: url,
   });
@@ -67,7 +67,7 @@ export function sendPasswordResetEmail(user, token) {
     subject: 'Reset your JeetCode password',
     html: layout(
       'Reset your password',
-      `<p>Hi ${esc(user.name)}, password reset-ku request vandhirukku. Indha link 30 minutes valid.</p><p>Neenga request pannala-na, indha mail-a ignore pannunga. Unga password maaradhu.</p>`,
+      `<p>Hi ${esc(user.name)}, we received a request to reset your JeetCode password. This link is valid for 30 minutes.</p><p>If you did not request this, you can ignore this email. Your password will not change.</p>`,
       'Reset password',
       url
     ),
