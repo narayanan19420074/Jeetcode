@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Avatar, Box, Button, Chip, CircularProgress, Container, IconButton, Link, Paper, Stack, Tooltip, Typography, alpha } from '@mui/material';
+import { Avatar, Box, Button, Chip, CircularProgress, Container, IconButton, Link, Paper, Stack, Tooltip, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
 import ApartmentRoundedIcon from '@mui/icons-material/ApartmentRounded';
@@ -22,6 +22,7 @@ import useProblemLists from '../dashboard/useProblemLists';
 import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, utcKey } from '../dashboard/dashboardUtils';
 import AchievementBadge from './AchievementBadge';
 import BackToDashboard from '../../components/BackToDashboard';
+import MobileYou from './MobileYou';
 
 const initialsFromName = (name) =>
   (name || 'U').trim().split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase()).join('');
@@ -101,6 +102,8 @@ function Row({ leading, title, subtitle, trailing, onClick }) {
 
 export default function YouPage() {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const user = useSelector((s) => s.auth.user);
   const listsApi = useProblemLists(user?.id);
 
@@ -175,6 +178,18 @@ export default function YouPage() {
     { key: 'linkedin', icon: LinkedInIcon, base: 'https://www.linkedin.com/in/', label: 'LinkedIn' },
     { key: 'x', icon: XIcon, base: 'https://x.com/', label: 'X' },
   ].filter((s) => user.socials?.[s.key]);
+
+  // Phones: a separate layout (the wide-screen layout below is unchanged).
+  if (isMobile) {
+    return (
+      <MobileYou
+        user={user} initials={initialsFromName(user.name)} socials={socials} socialUrl={socialUrl}
+        totals={totals} activity={activity} subs={subs} onLoadSubs={loadSubs} listsApi={listsApi}
+        badges={badges} earnedCount={earnedCount} activeThisMonth={activeThisMonth}
+        tab={tab} onTab={setTab} timeAgo={timeAgo}
+      />
+    );
+  }
 
   return (
     <Container maxWidth="sm" sx={{ pt: { xs: 1, sm: 3 }, pb: 4 }}>
