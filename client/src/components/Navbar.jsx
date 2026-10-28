@@ -223,7 +223,19 @@ export default function Navbar() {
   });
 
   return (
-    <AppBar position="sticky" elevation={0}>
+    <AppBar
+      position="sticky"
+      elevation={0}
+      sx={(t) => ({
+        // Phones: blend with the page background instead of a separate white bar.
+        [t.breakpoints.down('md')]: {
+          backgroundColor: alpha(t.palette.background.default, 0.88),
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: `1px solid ${alpha(t.palette.divider, 0.4)}`,
+        },
+      })}
+    >
       <Toolbar sx={{ gap: { xs: 1, sm: 2 } }}>
         {/* Hamburger — below md only */}
         <IconButton

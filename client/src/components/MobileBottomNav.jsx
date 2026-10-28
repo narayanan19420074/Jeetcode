@@ -42,8 +42,11 @@ export default function MobileBottomNav() {
         px: 0.5,
         pt: 1,
         pb: 'calc(8px + env(safe-area-inset-bottom))',
-        bgcolor: 'background.paper',
-        borderTop: `1px solid ${t.palette.divider}`,
+        // Same surface as the page behind it (frosted), so the bar never looks like a separate colour block.
+        bgcolor: alpha(t.palette.background.default, 0.88),
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderTop: `1px solid ${alpha(t.palette.divider, 0.5)}`,
       })}
     >
       {ITEMS.map(({ to, label, icon: Icon }) => {

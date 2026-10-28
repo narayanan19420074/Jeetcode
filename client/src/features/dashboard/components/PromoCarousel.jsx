@@ -18,12 +18,12 @@ function PromoCard({ card }) {
       sx={{
         position: 'relative',
         flex: '0 0 auto',
-        width: { xs: '82%', sm: CARD_W },
-        height: 150,
+        width: { xs: '88%', sm: CARD_W },
+        height: { xs: 184, sm: 150 },
         scrollSnapAlign: 'start',
         overflow: 'hidden',
-        borderRadius: '14px',
-        p: 2.25,
+        borderRadius: { xs: '24px', sm: '14px' },
+        p: { xs: 2.5, sm: 2.25 },
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -49,11 +49,11 @@ function PromoCard({ card }) {
     >
       <Icon sx={{ position: 'absolute', right: -14, bottom: -18, fontSize: 118, opacity: 0.16, transform: 'rotate(-12deg)' }} />
       <Box sx={{ position: 'relative', maxWidth: '88%' }}>
-        <Typography sx={{ fontWeight: 800, fontSize: '1.12rem', lineHeight: 1.2, letterSpacing: '-0.01em' }}>{title}</Typography>
+        <Typography sx={{ fontWeight: 800, fontSize: { xs: '1.35rem', sm: '1.12rem' }, lineHeight: 1.2, letterSpacing: '-0.01em' }}>{title}</Typography>
         <Typography
           sx={{
             mt: 0.75,
-            fontSize: '0.8rem',
+            fontSize: { xs: '0.9rem', sm: '0.8rem' },
             lineHeight: 1.4,
             color: 'rgba(255,255,255,0.86)',
             display: '-webkit-box',
@@ -69,12 +69,12 @@ function PromoCard({ card }) {
         sx={{
           position: 'relative',
           alignSelf: 'flex-start',
-          px: 1.5,
-          py: 0.5,
+          px: { xs: 2, sm: 1.5 },
+          py: { xs: 0.75, sm: 0.5 },
           borderRadius: 999,
           bgcolor: 'rgba(255,255,255,0.2)',
           backdropFilter: 'blur(6px)',
-          fontSize: '0.78rem',
+          fontSize: { xs: '0.86rem', sm: '0.78rem' },
           fontWeight: 700,
         }}
       >
