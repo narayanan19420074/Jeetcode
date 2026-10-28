@@ -8,19 +8,20 @@ import { validate } from '../middlewares/validate.js';
 import { registerSchema, loginSchema, forgotPasswordSchema, resetPasswordSchema, verifyEmailSchema } from '../validators/auth.validator.js';
 import { requireAuth, loadFullUser } from '../middlewares/auth.middleware.js';
 import { authLimiter, emailLimiter } from '../middlewares/rateLimiter.js';
+import { verifyTurnstile } from '../middlewares/verifyTurnstile.js';
 
 const router = Router();
 
-router.post('/register', authLimiter, validate(registerSchema), register);
-router.post('/login', authLimiter, validate(loginSchema), login);
+router.post('/register', authLimiter, validate(registerSchema), verifyTurnstile, register);
+router.post('/login', authLimiter, validate(loginSchema), verifyTurnstile, login);
 // Separate admin-only entry point — same request shape/validator as the
 // general login, but adminLogin() rejects any non-admin account. Kept in
 // this same router (not a new top-level mount) so it inherits authLimiter
 // and lives next to the endpoint it parallels.
-router.post('/admin-login', authLimiter, validate(loginSchema), adminLogin);
+router.post('/admin-login', authLimiter, validate(loginSchema), verifyTurnstile, adminLogin);
 // Forgot password / email verification. The token endpoints use authLimiter (failed
 // guesses count); the ones that send mail use emailLimiter.
-router.post('/forgot-password', emailLimiter, validate(forgotPasswordSchema), forgotPassword);
+router.post('/forgot-password', emailLimiter, validate(forgotPasswordSchema), verifyTurnstile, forgotPassword);
 router.post('/reset-password', authLimiter, validate(resetPasswordSchema), resetPassword);
 router.post('/verify-email', authLimiter, validate(verifyEmailSchema), verifyEmail);
 router.post('/resend-verification', emailLimiter, requireAuth, loadFullUser, resendVerification);

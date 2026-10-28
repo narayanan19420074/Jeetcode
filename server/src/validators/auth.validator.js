@@ -5,15 +5,18 @@ export const registerSchema = z.object({
   handle: z.string().trim().toLowerCase().min(3).max(30).regex(/^[a-z0-9_]+$/, 'Handle can only contain lowercase letters, numbers, and underscores'),
   email: z.string().trim().toLowerCase().email(),
   password: z.string().min(8, 'Password must be at least 8 characters').max(128),
+  turnstileToken: z.string().max(2048).optional(),
 });
 
 export const loginSchema = z.object({
   email: z.string().trim().toLowerCase().email(),
   password: z.string().min(1, 'Password is required'),
+  turnstileToken: z.string().max(2048).optional(),
 });
 
 export const forgotPasswordSchema = z.object({
   email: z.string().trim().toLowerCase().email(),
+  turnstileToken: z.string().max(2048).optional(),
 });
 
 export const resetPasswordSchema = z.object({

@@ -38,6 +38,12 @@ services:
       # Code execution runs in the separate, isolated "jeetcode-judge" service below.
       # Set JUDGE_SERVICE_URL (https://<judge-service-name>.onrender.com) and
       # JUDGE_SERVICE_TOKEN (same value as on the judge service) in the Render dashboard.
+      # Cloudflare Turnstile (bot check on sign in / sign up / password reset). Create a widget in the
+      # Cloudflare dashboard (Turnstile), then set both keys. The site key is baked into the client at build time.
+      - key: TURNSTILE_SECRET_KEY
+        sync: false
+      - key: VITE_TURNSTILE_SITE_KEY
+        sync: false
       - key: JUDGE_MODE
         value: remote
       - key: JUDGE_SERVICE_URL

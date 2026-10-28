@@ -18,6 +18,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { loginUser, googleSignIn } from './authSlice';
 import AuthShell, { AuthField } from './AuthShell';
+import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
 
 // These env vars must exist in client/.env. GITHUB redirect URI must EXACTLY
 // match what's registered on GitHub's app settings (trailing slashes matter).
@@ -40,6 +41,8 @@ export default function LoginPage() {
   const { status, error } = useSelector((s) => s.auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [captcha, setCaptcha] = useState(null);
+  const captchaRef = useRef(null);
   const googleBtnRef = useRef(null);
   const [gsiReady, setGsiReady] = useState(false);
 
@@ -50,9 +53,11 @@ export default function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await dispatch(loginUser({ email, password }));
+    const result = await dispatch(loginUser({ email, password, turnstileToken: captcha }));
     if (loginUser.fulfilled.match(result)) {
       goToDest(result.payload.user);
+    } else {
+      captchaRef.current?.reset(); // a verification token works only once
     }
   };
 
@@ -145,12 +150,13 @@ export default function LoginPage() {
               Forgot password?
             </Link>
           </Typography>
+          <TurnstileWidget ref={captchaRef} onToken={setCaptcha} action="login" />
           <Button
             type="submit"
             variant="contained"
             disableElevation
             fullWidth
-            disabled={status === 'loading'}
+            disabled={status === 'loading' || (Boolean(TURNSTILE_SITE_KEY) && !captcha)}
             sx={{ fontWeight: 600 }}
           >
             {status === 'loading' ? <CircularProgress size={20} color="inherit" /> : 'Sign in'}

@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Box, Paper, TextField, Button, Typography, Alert, Stack, CircularProgress } from '@mui/material';
 import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
 import { adminLoginUser } from './authSlice';
+import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
 
 // Deliberately separate from the general LoginPage — no OAuth buttons, no
 // "Continue as Guest", no signup link, distinct dark visual treatment so
@@ -17,12 +18,16 @@ export default function AdminLoginPage() {
   const { status, error } = useSelector((s) => s.auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [captcha, setCaptcha] = useState(null);
+  const captchaRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await dispatch(adminLoginUser({ email, password }));
+    const result = await dispatch(adminLoginUser({ email, password, turnstileToken: captcha }));
     if (adminLoginUser.fulfilled.match(result)) {
       navigate('/admin', { replace: true });
+    } else {
+      captchaRef.current?.reset(); // a verification token works only once
     }
   };
 
@@ -77,12 +82,13 @@ export default function AdminLoginPage() {
               fullWidth
               required
             />
+            <TurnstileWidget ref={captchaRef} onToken={setCaptcha} action="admin-login" />
             <Button
               type="submit"
               variant="contained"
               disableElevation
               size="large"
-              disabled={status === 'loading'}
+              disabled={status === 'loading' || (Boolean(TURNSTILE_SITE_KEY) && !captcha)}
               sx={{ fontWeight: 700, py: 1.2 }}
             >
               {status === 'loading' ? <CircularProgress size={22} color="inherit" /> : 'Sign in'}

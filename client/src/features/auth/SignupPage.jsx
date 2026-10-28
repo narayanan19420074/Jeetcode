@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Box, Button, Alert, Link, Stack, CircularProgress } from '@mui/material';
 import { registerUser } from './authSlice';
 import AuthShell, { AuthField } from './AuthShell';
+import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
 
 export default function SignupPage() {
   const dispatch = useDispatch();
@@ -13,12 +14,16 @@ export default function SignupPage() {
   const [handle, setHandle] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [captcha, setCaptcha] = useState(null);
+  const captchaRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await dispatch(registerUser({ name, handle, email, password }));
+    const result = await dispatch(registerUser({ name, handle, email, password, turnstileToken: captcha }));
     if (registerUser.fulfilled.match(result)) {
       navigate('/dashboard', { replace: true });
+    } else {
+      captchaRef.current?.reset(); // a verification token works only once
     }
   };
 
@@ -74,12 +79,13 @@ export default function SignupPage() {
             onChange={(e) => setPassword(e.target.value)}
             helperText="At least 8 characters"
           />
+          <TurnstileWidget ref={captchaRef} onToken={setCaptcha} action="signup" />
           <Button
             type="submit"
             variant="contained"
             disableElevation
             fullWidth
-            disabled={status === 'loading'}
+            disabled={status === 'loading' || (Boolean(TURNSTILE_SITE_KEY) && !captcha)}
             sx={{ fontWeight: 600 }}
           >
             {status === 'loading' ? <CircularProgress size={20} color="inherit" /> : 'Create account'}

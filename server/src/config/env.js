@@ -75,6 +75,10 @@ const envSchema = z.object({
   RAZORPAY_PLAN_ID_YEARLY: z.string().optional(),
   FREE_ACCESS_UNTIL: z.string().optional(),
 
+  // Cloudflare Turnstile (bot protection on sign in / sign up / password reset). Optional: when unset, the check is skipped.
+  // The matching public site key is VITE_TURNSTILE_SITE_KEY in the client build.
+  TURNSTILE_SECRET_KEY: z.string().optional(),
+
   // Transactional email (forgot password, email verification) via Brevo's HTTP API.
   // Optional: with no key the links are only printed to the server log.
   // MAIL_FROM_EMAIL must be a sender you verified in Brevo.
