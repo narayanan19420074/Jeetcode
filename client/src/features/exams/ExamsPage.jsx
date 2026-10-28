@@ -7,6 +7,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import EventAvailableRoundedIcon from '@mui/icons-material/EventAvailableRounded';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded';
+import QuizRoundedIcon from '@mui/icons-material/QuizRounded';
 import { prepApi } from '../../api/prepApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import PrepReadinessCard from '../../components/PrepReadinessCard';
@@ -15,6 +16,9 @@ import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
 import { daysUntil, formatExamDate, pickExamDate } from '../prep/examDate';
 import { CATEGORIES, EXAMS } from './examsData';
 import BackToDashboard from '../../components/BackToDashboard';
+
+// Exams that have a full mock paper on /mocks (paper ids live in server/src/config/mockTests.js).
+const HAS_MOCK = new Set(['tcs-nqt', 'infosys', 'cognizant']);
 
 const norm = (s) => String(s || '').trim().toLowerCase();
 const readinessOf = (pct) => Math.max(0, Math.min(100, Math.round(pct ?? 0)));
@@ -118,6 +122,11 @@ function ExamCard({ exam, index, track, onOpen }) {
         >
           {hasTrack ? (readiness ? 'Continue' : 'Start prep') : 'Prepare'}
         </Button>
+        {HAS_MOCK.has(exam.id) && (
+          <IconButton onClick={() => navigate('/mocks')} aria-label={`${exam.name} mock test`} size="small" sx={{ width: 34, height: 34, borderRadius: '10px', color: PLAN_AMBER }}>
+            <QuizRoundedIcon sx={{ fontSize: 20 }} />
+          </IconButton>
+        )}
         <IconButton onClick={onOpen} aria-label={`${exam.name} pattern and eligibility`} size="small" sx={{ width: 34, height: 34, borderRadius: '10px', color: 'text.secondary' }}>
           <InfoOutlinedIcon sx={{ fontSize: 20 }} />
         </IconButton>
@@ -184,6 +193,9 @@ function ExamDetails({ exam, track, onClose }) {
           >
             {closed ? 'Official site' : 'Apply'}
           </Button>
+          {HAS_MOCK.has(exam.id) && (
+            <Button variant="outlined" startIcon={<QuizRoundedIcon />} onClick={() => go('/mocks')} sx={{ height: 40, borderRadius: '12px', fontWeight: 800 }}>Take mock test</Button>
+          )}
           {hasTrack ? (
             <Button onClick={() => go(`/prep/${track.slug}`)} variant="outlined" endIcon={<ArrowForwardRoundedIcon />} sx={{ height: 40, borderRadius: '12px', fontWeight: 800 }}>Open prep track</Button>
           ) : (
@@ -233,6 +245,7 @@ function NextUpBanner() {
 // with the learner's readiness on the right. On wide screens the page is one window tall: the header and banner
 // stay put, and the cards and the readiness card each scroll on their own, both starting on the same line.
 export default function ExamsPage() {
+  const navigate = useNavigate();
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
   const rootRef = useRef(null);
@@ -260,6 +273,8 @@ export default function ExamsPage() {
               <Typography variant="body2" color="text.secondary">{shown.length} top coding and aptitude exams. Apply on the official site, track how ready you are.</Typography>
             </Box>
           </Box>
+          <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', alignItems: 'center', flexShrink: 0 }}>
+          <Button onClick={() => navigate('/mocks')} disableElevation startIcon={<QuizRoundedIcon sx={{ fontSize: 17 }} />} sx={{ height: 32, px: 1.5, borderRadius: 99, fontSize: 13, fontWeight: 800, bgcolor: PLAN_AMBER, color: '#1B1200', '&:hover': { bgcolor: '#F5B50F' } }}>Mock tests</Button>
           <Box role="tablist" aria-label="Exam type" sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', flexShrink: 0 }}>
             {CATEGORIES.map((c) => {
               const on = cat === c.key;
@@ -272,6 +287,7 @@ export default function ExamsPage() {
                 </ButtonBase>
               );
             })}
+          </Box>
           </Box>
         </Box>
 

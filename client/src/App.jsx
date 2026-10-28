@@ -43,6 +43,9 @@ const AptitudeLearnPage = lazy(() => import('./features/aptitude/AptitudeLearnPa
 const AptitudePracticePage = lazy(() => import('./features/aptitude/AptitudePracticePage'));
 const AptitudePracticeQuestionPage = lazy(() => import('./features/aptitude/AptitudePracticeQuestionPage'));
 const AptitudeResultsPage = lazy(() => import('./features/aptitude/AptitudeResultsPage'));
+const MockHubPage = lazy(() => import('./features/mock/MockHubPage'));
+const MockExamPage = lazy(() => import('./features/mock/MockExamPage'));
+const MockResultPage = lazy(() => import('./features/mock/MockResultPage'));
 const VisualizerPage = lazy(() => import('./features/visualizer/VisualizerPage'));
 const PairLobbyPage = lazy(() => import('./features/room/PairLobbyPage'));
 const RoomPage = lazy(() => import('./features/room/RoomPage'));
@@ -144,6 +147,18 @@ export default function App() {
         }
       />
 
+      {/* Full mock paper — standalone full-screen shell (no site navbar), like the aptitude test. */}
+      <Route
+        path="/mocks/attempt/:attemptId"
+        element={
+          <ProtectedRoute>
+            <Suspense fallback={<RouteFallback />}>
+              <MockExamPage />
+            </Suspense>
+          </ProtectedRoute>
+        }
+      />
+
       {/* Pair-coding room — public (guests allowed via invite link), full-screen, no site navbar. */}
       <Route path="/room/:roomId" element={<Suspense fallback={<RouteFallback />}><RoomPage /></Suspense>} />
 
@@ -196,6 +211,8 @@ export default function App() {
         <Route path="/store/orders" element={<Navigate to="/store?tab=orders" replace />} />
         <Route path="/store/course/:slug" element={<Navigate to="/store" replace />} />
         <Route path="/exams" element={<Suspense fallback={<RouteFallback />}><ExamsPage /></Suspense>} />
+        <Route path="/mocks" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><MockHubPage /></Suspense></ProtectedRoute>} />
+        <Route path="/mocks/result/:attemptId" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><MockResultPage /></Suspense></ProtectedRoute>} />
         <Route path="/prep/:companySlug" element={<Suspense fallback={<RouteFallback />}><PrepRoadmapPage /></Suspense>} />
 
         <Route
