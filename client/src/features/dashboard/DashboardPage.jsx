@@ -21,11 +21,10 @@ import { submissionsApi } from '../../api/submissionsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import DashboardSidebar from './components/DashboardSidebar';
 import PromoCarousel from './components/PromoCarousel';
-import NqtExploreCard from './components/NqtExploreCard';
+import MobileHome from './components/MobileHome';
 import ProblemLibrary from './components/ProblemLibrary';
 import RightRail from './components/RightRail';
 import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
-import DifficultyChip from '../../components/DifficultyChip';
 import ContestCard from '../contest/ContestCard';
 import ContestPage from '../contest/ContestPage';
 import StudyPlannerView from '../studyplan/StudyPlannerView';
@@ -204,6 +203,8 @@ export default function DashboardPage() {
     [submissions]
   );
 
+  const showResumeBar = Boolean(resume) && dismissedResumeId !== String(resume?._id);
+
   const cards = useMemo(() => {
     const list = [];
     if (featured) {
@@ -377,45 +378,23 @@ export default function DashboardPage() {
                   </Box>
                 )}
 
-                {/* Wide screens keep the promo carousel; phones get one compact "today" card instead. */}
-                {isMdUp && <PromoCarousel cards={cards} />}
-
-                {!isMdUp && featured && (
-                  <Box sx={[surface, { px: 2, py: 1.5, display: 'flex', alignItems: 'center', gap: 1.5 }]}>
-                    <Box sx={(t) => ({ width: 40, height: 40, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
-                      <EventRoundedIcon />
-                    </Box>
-                    <Box sx={{ minWidth: 0, flex: 1 }}>
-                      <Typography variant="caption" color="text.secondary">
-                        Today’s challenge
-                        {isAuthenticated && progress ? ` · ${progress.solved.Easy + progress.solved.Medium + progress.solved.Hard} solved` : ''}
-                      </Typography>
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, minWidth: 0 }}>
-                        <Typography variant="body2" noWrap sx={{ fontWeight: 700, minWidth: 0 }}>
-                          {featured.title}
-                        </Typography>
-                        <DifficultyChip difficulty={featured.difficulty} />
-                      </Box>
-                    </Box>
-                    <Button component={RouterLink} to={`/workspace/${featured.slug}`} size="small" variant="contained" disableElevation sx={{ fontWeight: 700, flexShrink: 0 }}>
-                      Solve
-                    </Button>
-                  </Box>
+                {/* Wide screens keep the promo carousel; phones get the swipeable home sections. */}
+                {isMdUp ? (
+                  <PromoCarousel cards={cards} />
+                ) : (
+                  <MobileHome
+                    cards={cards}
+                    progress={progress}
+                    isAuthenticated={isAuthenticated}
+                    nqtDismissed={nqtDismissed}
+                    onDismissNqt={() => {
+                      writeFlag(NQT_DISMISS_KEY, '1');
+                      setNqtDismissed(true);
+                    }}
+                  />
                 )}
 
-                {/* Phones have no sidebar Explore shortcut in view, so surface the TCS NQT hub here too. */}
-                {!isMdUp && !nqtDismissed && (
-                  <Box sx={{ '& a': { mb: 0 } }}>
-                    <NqtExploreCard
-                      onDismiss={() => {
-                        writeFlag(NQT_DISMISS_KEY, '1');
-                        setNqtDismissed(true);
-                      }}
-                    />
-                  </Box>
-                )}
-
-                {resume && !(!isMdUp && dismissedResumeId === String(resume._id)) && (
+                {isMdUp && resume && (
                   <Box
                     sx={[
                       surface,
@@ -458,21 +437,10 @@ export default function DashboardPage() {
                     <Button component={RouterLink} to={`/workspace/${resume.problem.slug}`} size="small" variant="contained" disableElevation sx={{ fontWeight: 700, flexShrink: 0 }}>
                       Resume
                     </Button>
-                    <IconButton
-                      size="small"
-                      aria-label="Dismiss resume card"
-                      onClick={() => {
-                        writeFlag(RESUME_DISMISS_KEY, String(resume._id));
-                        setDismissedResumeId(String(resume._id));
-                      }}
-                      sx={{ display: { xs: 'inline-flex', md: 'none' }, flexShrink: 0, mr: -0.5 }}
-                    >
-                      <CloseRoundedIcon fontSize="small" />
-                    </IconButton>
                   </Box>
                 )}
 
-                {/* Phones browse problems from the Problems tab, so the library is wide-screen only. */}
+                {/* Phones browse problems from the home sections and the Problems tab, so the library is wide-screen only. */}
                 {isMdUp && (
                   <ProblemLibrary
                     isAuthenticated={isAuthenticated}
@@ -483,8 +451,8 @@ export default function DashboardPage() {
                   />
                 )}
 
-                {/* Phones open the contest from the navigation menu. */}
                 {isMdUp && <ContestCard />}
+                {!isMdUp && showResumeBar && <Box aria-hidden sx={{ height: 76 }} />}
               </Stack>
             </Box>
 
@@ -555,6 +523,57 @@ export default function DashboardPage() {
           ) : null}
         </Box>
       </Container>
+
+      {/* Phone: continue bar above the bottom navigation. */}
+      {!isMdUp && currentView === 'library' && showResumeBar && (
+        <Box
+          sx={(t) => ({
+            position: 'fixed',
+            left: 12,
+            right: 12,
+            bottom: 'calc(84px + env(safe-area-inset-bottom))',
+            zIndex: t.zIndex.appBar - 1,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1.25,
+            pl: 1.25,
+            pr: 0.5,
+            py: 0.75,
+            borderRadius: '20px',
+            bgcolor: t.palette.mode === 'dark' ? alpha(t.palette.primary.main, 0.22) : alpha(t.palette.primary.main, 0.14),
+            backdropFilter: 'blur(12px)',
+            border: `1px solid ${alpha(t.palette.primary.main, 0.25)}`,
+          })}
+        >
+          <Box sx={{ width: 40, height: 40, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: alpha(theme.palette.primary.main, 0.2), color: 'primary.main' }}>
+            <PlayArrowRoundedIcon />
+          </Box>
+          <Box sx={{ minWidth: 0, flex: 1 }}>
+            <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.95rem', lineHeight: 1.25 }}>
+              {resume.problem.title}
+            </Typography>
+            <Typography noWrap variant="caption" color="text.secondary">
+              Pick up where you left off ·{' '}
+              <Box component="span" sx={{ color: STATUS_COLOR[resume.status] || 'text.secondary', fontWeight: 600 }}>
+                {resume.status}
+              </Box>
+            </Typography>
+          </Box>
+          <IconButton component={RouterLink} to={`/workspace/${resume.problem.slug}`} aria-label={`Resume ${resume.problem.title}`} sx={{ color: 'primary.main' }}>
+            <PlayArrowRoundedIcon />
+          </IconButton>
+          <IconButton
+            size="small"
+            aria-label="Dismiss resume bar"
+            onClick={() => {
+              writeFlag(RESUME_DISMISS_KEY, String(resume._id));
+              setDismissedResumeId(String(resume._id));
+            }}
+          >
+            <CloseRoundedIcon fontSize="small" />
+          </IconButton>
+        </Box>
+      )}
 
       {/* Phone calendar sheet: streak calendar with study-plan deadlines. */}
       <Drawer

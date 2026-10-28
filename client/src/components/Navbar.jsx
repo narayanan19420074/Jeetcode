@@ -85,10 +85,10 @@ const EXPLORE_LINKS = [
 
 const isActivePath = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
-// Phone menu = the dashboard sections (same list as the desktop dashboard sidebar).
-// Every section is a view inside /dashboard.
+// Phone menu = Problems plus the dashboard sections (same list as the desktop dashboard sidebar).
+// The phone dashboard has no problem library, so the first row opens the Problems page.
 const DASH_SECTIONS = [
-  { to: '/dashboard', label: 'Library', icon: LibraryBooksRoundedIcon, view: null },
+  { to: '/problems', label: 'Problems', icon: LibraryBooksRoundedIcon },
   { to: '/dashboard?view=contest', label: 'Contest', icon: MilitaryTechRoundedIcon, view: 'contest' },
   { to: '/dashboard?view=quests', label: 'Quests', icon: EmojiEventsRoundedIcon, view: 'quests' },
   { to: '/dashboard?view=explore', label: 'Explore', icon: ExploreRoundedIcon, view: 'explore' },
