@@ -25,18 +25,18 @@ const NODE = 72;
 // Candy-Crush style map: small nodes, a road that swings almost edge to edge,
 // and a short row height so many levels fit on one screen.
 const DESKTOP = { ROW, TOP, BOTTOM, AMP, NODE, TURN: Math.PI / 2 };
-const MOBILE = { ROW: 96, TOP: 64, BOTTOM: 80, AMP: 0.34, NODE: 52, TURN: Math.PI / 3 };
+const MOBILE = { ROW: 112, TOP: 80, BOTTOM: 80, AMP: 0.34, NODE: 56, TURN: Math.PI / 3 };
 
-function roadPath(pts, W, g) {
+// `dir` is 1 when the road runs downwards from START and -1 when it climbs from the bottom (compact map).
+function roadPath(pts, W, g, sy, dir = 1) {
   if (!pts.length) return '';
   const sx = W * 0.14;
-  const sy = g.TOP / 2;
   const f = pts[0];
-  let d = `M ${sx} ${sy} L ${f.x - W * 0.1} ${sy} C ${f.x} ${sy}, ${f.x} ${f.y - g.ROW / 2}, ${f.x} ${f.y}`;
+  let d = `M ${sx} ${sy} L ${f.x - W * 0.1} ${sy} C ${f.x} ${sy}, ${f.x} ${f.y - (dir * g.ROW) / 2}, ${f.x} ${f.y}`;
   for (let i = 1; i < pts.length; i += 1) {
     const a = pts[i - 1];
     const b = pts[i];
-    d += ` C ${a.x} ${a.y + g.ROW / 2}, ${b.x} ${b.y - g.ROW / 2}, ${b.x} ${b.y}`;
+    d += ` C ${a.x} ${a.y + (dir * g.ROW) / 2}, ${b.x} ${b.y - (dir * g.ROW) / 2}, ${b.x} ${b.y}`;
   }
   return d;
 }
@@ -116,6 +116,13 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
       <Box
         onClick={onClick}
         role="button"
+        tabIndex={status === 'locked' ? -1 : 0}
+        onKeyDown={(e) => {
+          if (status !== 'locked' && (e.key === 'Enter' || e.key === ' ')) {
+            e.preventDefault();
+            onClick();
+          }
+        }}
         aria-label={`Level ${index + 1}: ${pattern.title}${status === 'locked' ? ' (locked)' : ''}`}
         aria-disabled={status === 'locked'}
         sx={{
@@ -155,10 +162,10 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
             top: size + 12,
             left: '50%',
             transform: 'translateX(-50%)',
-            width: 104,
+            width: 124,
             textAlign: 'center',
             fontWeight: 700,
-            fontSize: 11,
+            fontSize: '0.82rem',
             lineHeight: 1.2,
             px: 0.5,
             py: 0.15,
@@ -348,7 +355,8 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0 }) {
 /* ---------------------------------------------------------------- */
 /* Map                                                              */
 /* ---------------------------------------------------------------- */
-export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, autoScroll = true }) {
+// `compact` = phone layout: small nodes, and the road climbs from START at the bottom to the last level at the top.
+export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, autoScroll = true, compact = false }) {
   const theme = useTheme();
   const reduce = useReducedMotion();
   const wrapRef = useRef(null);
@@ -365,14 +373,24 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
     return () => ro.disconnect();
   }, []);
 
-  const narrow = W > 0 && W < 620;
+  const narrow = compact || (W > 0 && W < 620);
   const below = W > 0 && W < 480;
   const g = narrow ? MOBILE : DESKTOP;
   const H = g.TOP + g.ROW * patterns.length + g.BOTTOM;
 
-  const pts = useMemo(() => patterns.map((_, i) => ({ x: W * (0.5 + g.AMP * Math.sin(i * g.TURN)), y: g.TOP + g.ROW * i + g.ROW / 2 })), [patterns, W, g]);
-  const fullD = useMemo(() => (W ? roadPath(pts, W, g) : ''), [pts, W, g]);
-  const walkD = useMemo(() => (W ? roadPath(pts.slice(0, currentIndex + 1), W, g) : ''), [pts, W, g, currentIndex]);
+  const dir = compact ? -1 : 1;
+  const startY = compact ? H - g.TOP / 2 : g.TOP / 2;
+
+  const pts = useMemo(
+    () =>
+      patterns.map((_, i) => ({
+        x: W * (0.5 + g.AMP * Math.sin(i * g.TURN)),
+        y: compact ? H - g.TOP - g.ROW * i - g.ROW / 2 : g.TOP + g.ROW * i + g.ROW / 2,
+      })),
+    [patterns, W, g, H, compact]
+  );
+  const fullD = useMemo(() => (W ? roadPath(pts, W, g, startY, dir) : ''), [pts, W, g, startY, dir]);
+  const walkD = useMemo(() => (W ? roadPath(pts.slice(0, currentIndex + 1), W, g, startY, dir) : ''), [pts, W, g, startY, dir, currentIndex]);
   const cleared = patterns.filter((p) => p.progress.bestScore >= p.passPercentage).length;
   const trackW = narrow ? 10 : 14;
 
@@ -381,9 +399,10 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
   useEffect(() => {
     if (!autoScroll || !narrow || scrolled.current || !patterns.length || !wrapRef.current) return;
     scrolled.current = true;
-    const top = wrapRef.current.getBoundingClientRect().top + window.scrollY + MOBILE.TOP + MOBILE.ROW * currentIndex - window.innerHeight * 0.45;
+    const y = compact ? pts[currentIndex]?.y ?? 0 : MOBILE.TOP + MOBILE.ROW * currentIndex;
+    const top = wrapRef.current.getBoundingClientRect().top + window.scrollY + y - window.innerHeight * 0.45;
     window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
-  }, [narrow, patterns.length, currentIndex, reduce, autoScroll]);
+  }, [narrow, compact, pts, patterns.length, currentIndex, reduce, autoScroll]);
 
   return (
     <Box
@@ -391,12 +410,12 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
       sx={{
         position: 'relative',
         height: H,
-        borderRadius: narrow ? 0 : '14px',
+        borderRadius: compact ? '26px' : narrow ? 0 : '14px',
         overflow: 'hidden',
         bgcolor: 'background.paper',
         border: '1px solid',
         borderColor: 'divider',
-        ...(narrow ? { borderLeft: 0, borderRight: 0 } : {}),
+        ...(narrow && !compact ? { borderLeft: 0, borderRight: 0 } : {}),
         backgroundImage: `radial-gradient(${alpha(text.secondary, dark ? 0.22 : 0.28)} 1px, transparent 1px), radial-gradient(640px 320px at 50% 0%, ${alpha(primary.main, dark ? 0.16 : 0.08)}, transparent 70%)`,
         backgroundSize: '22px 22px, 100% 100%',
       }}
@@ -405,7 +424,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
         <>
           <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: 'absolute', inset: 0 }}>
             <defs>
-              <linearGradient id="roadLit" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="roadLit" x1="0" y1={compact ? 1 : 0} x2="0" y2={compact ? 0 : 1}>
                 <stop offset="0%" stopColor={success.main} />
                 <stop offset="100%" stopColor={primary.main} />
               </linearGradient>
@@ -425,7 +444,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
           </svg>
 
           {/* START */}
-          <Box sx={{ position: 'absolute', left: W * 0.14, top: g.TOP / 2, transform: 'translate(-50%, -50%)', zIndex: 3 }}>
+          <Box sx={{ position: 'absolute', left: W * 0.14, top: startY, transform: 'translate(-50%, -50%)', zIndex: 3 }}>
             <Box
               component={motion.div}
               initial={{ opacity: 0, x: -16 }}

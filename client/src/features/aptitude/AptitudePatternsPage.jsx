@@ -12,6 +12,7 @@ import Alien3D from './components/Alien3D';
 import { CountUp, XpBar } from './components/MotionBits';
 import HeroPanel from './components/HeroPanel';
 import RoadMap from './components/RoadMap';
+import MobileAptitude from './components/MobileAptitude';
 import { ALIENS, rankForPath, starsFor } from './components/gamification';
 import { fetchPatterns } from './aptitudeSlice';
 import BackToDashboard from '../../components/BackToDashboard';
@@ -20,10 +21,10 @@ import BackToDashboard from '../../components/BackToDashboard';
 // colour. `color: null` = the app's primary colour. Keep trackOf() in sync with
 // trackOf() in server/src/services/aptitude.service.js.
 const TRACKS = [
-  { key: 'aptitude', label: 'Aptitude', icon: <CalculateRoundedIcon />, color: null },
-  { key: 'reasoning', label: 'Reasoning', icon: <PsychologyRoundedIcon />, color: '#8B5CF6' },
-  { key: 'verbal', label: 'Verbal', icon: <MenuBookRoundedIcon />, color: '#EC4899' },
-  { key: 'di', label: 'Data Interpretation', icon: <BarChartRoundedIcon />, color: '#F97316' },
+  { key: 'aptitude', label: 'Aptitude', short: 'Aptitude', icon: <CalculateRoundedIcon />, color: null },
+  { key: 'reasoning', label: 'Reasoning', short: 'Reasoning', icon: <PsychologyRoundedIcon />, color: '#8B5CF6' },
+  { key: 'verbal', label: 'Verbal', short: 'Verbal', icon: <MenuBookRoundedIcon />, color: '#EC4899' },
+  { key: 'di', label: 'Data Interpretation', short: 'Data', icon: <BarChartRoundedIcon />, color: '#F97316' },
 ];
 
 export function trackOf(category = '') {
@@ -43,6 +44,8 @@ export default function AptitudePatternsPage() {
   const [params, setParams] = useSearchParams();
   const { patterns, patternsStatus, error } = useSelector((s) => s.aptitude);
   const phone = useMediaQuery((t) => t.breakpoints.down('sm'));
+  // Phones and small tablets get their own layout (the site navbar is hidden there, see MainLayout).
+  const mobile = useMediaQuery((t) => t.breakpoints.down('md'), { noSsr: true });
 
   useEffect(() => {
     dispatch(fetchPatterns());
@@ -86,6 +89,24 @@ export default function AptitudePatternsPage() {
   const rank = rankForPath(cleared, patterns.length);
   const totalStars = patterns.reduce((n, p) => n + starsFor(p.progress.bestScore, p.passPercentage), 0);
   const pathPct = patterns.length ? (cleared / patterns.length) * 100 : 0;
+
+  if (mobile) {
+    const accent = outerTheme.palette.primary.main;
+    return (
+      <MobileAptitude
+        tracks={visibleTracks.map((t) => ({ ...t, color: t.color || accent }))}
+        track={{ ...track, color: track.color || accent }}
+        trackPatterns={trackPatterns}
+        cleared={trackPatterns.filter(isCleared).length}
+        currentIndex={currentIndex}
+        alienKind={rank.alien.key}
+        trackTheme={trackTheme}
+        loading={patternsStatus === 'loading'}
+        error={error}
+        onPickTrack={pickTrack}
+      />
+    );
+  }
 
   return (
     <Container maxWidth="md" disableGutters sx={{ px: { xs: 0, sm: 3 }, py: { xs: 1.5, sm: 4 } }}>
