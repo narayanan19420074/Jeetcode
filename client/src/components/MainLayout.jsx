@@ -11,8 +11,8 @@ import NotificationsWatcher from '../features/notifications/NotificationsWatcher
 export default function MainLayout() {
   const { pathname } = useLocation();
   const bottomNav = showMobileBottomNav(pathname);
-  // Pages with their own phone header (Problems, Aptitude levels) hide the top bar on phones. It stays mounted so the coin polling keeps running.
-  const hideNavbarOnPhone = pathname === '/problems' || pathname.startsWith('/problems/') || pathname.replace(/\/+$/, '') === '/aptitude';
+  // Pages with their own phone header (Problems, Aptitude levels, Companies) hide the top bar on phones. It stays mounted so the coin polling keeps running.
+  const hideNavbarOnPhone = pathname === '/problems' || pathname.startsWith('/problems/') || ['/aptitude', '/prep'].includes(pathname.replace(/\/+$/, ''));
 
   return (
     <Box

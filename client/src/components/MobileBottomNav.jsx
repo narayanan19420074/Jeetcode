@@ -12,7 +12,7 @@ const ITEMS = [
   { to: '/dashboard', label: 'Home', icon: HomeRoundedIcon },
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
   { to: '/aptitude', label: 'Aptitude', icon: CalculateRoundedIcon },
-  { to: '/prep', label: 'Prep', icon: BusinessRoundedIcon },
+  { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
   { to: '/you', label: 'You', icon: PersonRoundedIcon },
 ];
 
@@ -21,7 +21,7 @@ export const showMobileBottomNav = (pathname) => !pathname.startsWith('/workspac
 
 const isActive = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
-// Phone-only tab bar (Home / Problems / Aptitude / Prep / You), like Google Pay.
+// Phone-only tab bar (Home / Problems / Aptitude / Companies / You), like Google Pay.
 export default function MobileBottomNav() {
   const { pathname } = useLocation();
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);

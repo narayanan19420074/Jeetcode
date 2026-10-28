@@ -12,6 +12,7 @@ import CompanyAvatar from '../../components/CompanyAvatar';
 import CompanyQuestRoadmap from './CompanyQuestRoadmap';
 import useViewportFill from '../dashboard/useViewportFill';
 import BackToDashboard from '../../components/BackToDashboard';
+import MobilePrepCompanies from './MobilePrepCompanies';
 
 const PAGE = 24;
 const norm = (s) => String(s || '').trim().toLowerCase();
@@ -72,6 +73,7 @@ export default function PrepCompaniesPage() {
   const [sp, setSp] = useSearchParams();
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const rootRef = useRef(null);
   const scrollRef = useRef(null);
   const sentinel = useRef(null);
@@ -135,6 +137,35 @@ export default function PrepCompaniesPage() {
     if (selected) window.scrollTo?.(0, 0);
     if (selected && scrollRef.current) scrollRef.current.scrollTop = 0;
   }, [selected?.name]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Phones: a separate layout (the wide-screen layout below is unchanged). The list stays mounted while a
+  // company roadmap is open, so search text survives going back.
+  if (isMobile) {
+    return (
+      <Box sx={{ px: 1.75, pb: 2, maxWidth: 640, mx: 'auto' }}>
+        <Box sx={{ display: selected ? 'none' : 'block' }}>
+          <MobilePrepCompanies
+            loading={loading} list={list} shown={shown} hasMore={visible < list.length}
+            query={query} onQuery={setQuery} onOpen={openCompany} sentinelRef={sentinel}
+          />
+        </Box>
+        <AnimatePresence>
+          {selected && (
+            <motion.div
+              key={selected.name}
+              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 40, scale: 0.94 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.08 } }}
+              transition={{ type: 'spring', stiffness: 260, damping: 26 }}
+              style={{ paddingTop: 'calc(8px + env(safe-area-inset-top))' }}
+            >
+              <CompanyQuestRoadmap company={selected} onBack={closeCompany} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </Box>
+    );
+  }
 
   return (
     <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : undefined}>
