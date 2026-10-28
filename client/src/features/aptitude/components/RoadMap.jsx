@@ -416,8 +416,11 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
         border: '1px solid',
         borderColor: 'divider',
         ...(narrow && !compact ? { borderLeft: 0, borderRight: 0 } : {}),
-        backgroundImage: `radial-gradient(${alpha(text.secondary, dark ? 0.22 : 0.28)} 1px, transparent 1px), radial-gradient(640px 320px at 50% 0%, ${alpha(primary.main, dark ? 0.16 : 0.08)}, transparent 70%)`,
-        backgroundSize: '22px 22px, 100% 100%',
+        // Phone map has no dot grid, only the soft glow.
+        backgroundImage: compact
+          ? `radial-gradient(640px 320px at 50% 0%, ${alpha(primary.main, dark ? 0.16 : 0.08)}, transparent 70%)`
+          : `radial-gradient(${alpha(text.secondary, dark ? 0.22 : 0.28)} 1px, transparent 1px), radial-gradient(640px 320px at 50% 0%, ${alpha(primary.main, dark ? 0.16 : 0.08)}, transparent 70%)`,
+        backgroundSize: compact ? '100% 100%' : '22px 22px, 100% 100%',
       }}
     >
       {W > 0 && (
