@@ -14,6 +14,7 @@ import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import { problemsApi } from '../../api/problemsApi';
 import { usersApi } from '../../api/usersApi';
 import { submissionsApi } from '../../api/submissionsApi';
@@ -162,10 +163,19 @@ export default function DashboardPage() {
 
   const browse = useCallback(
     (p = {}) => {
+      // Phones have no library on the dashboard, so open the Problems page with the same filters.
+      if (!isMdUp) {
+        const sp = new URLSearchParams();
+        (p.tags || []).forEach((t) => sp.append('tag', t));
+        (p.companies || []).forEach((c) => sp.append('company', c));
+        const qs = sp.toString();
+        navigate(qs ? `/problems?${qs}` : '/problems');
+        return;
+      }
       if (p.tags || p.companies) setPreset({ tags: p.tags || [], companies: p.companies || [] });
       goView('library');
     },
-    [goView]
+    [goView, isMdUp, navigate]
   );
 
   const pickRandom = useCallback(
@@ -310,7 +320,33 @@ export default function DashboardPage() {
             {/* The library stays mounted while other views are open, so
                 filters, page and search survive a trip to Quests or Explore. */}
             <Box sx={{ display: currentView === 'library' ? 'block' : 'none' }}>
-              <Stack spacing={2.5}>
+              {/* Phone-only brand watermark behind the home content. */}
+              {!isMdUp && (
+                <Box
+                  aria-hidden
+                  sx={{
+                    position: 'fixed',
+                    top: '55%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 1,
+                    opacity: { xs: 0.07 },
+                    color: 'text.primary',
+                    pointerEvents: 'none',
+                    userSelect: 'none',
+                    zIndex: 0,
+                  }}
+                >
+                  <CodeRoundedIcon sx={{ fontSize: 150, color: 'primary.main' }} />
+                  <Typography sx={{ fontWeight: 800, fontSize: '3rem', letterSpacing: '-0.02em', lineHeight: 1 }}>
+                    Jeet<Box component="span" sx={{ color: 'primary.main' }}>Code</Box>
+                  </Typography>
+                </Box>
+              )}
+              <Stack spacing={2.5} sx={{ position: 'relative', zIndex: 1 }}>
                 {/* Phone header: streak on the left, plan calendar on the right. */}
                 {!isMdUp && (
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: 40 }}>
@@ -436,13 +472,16 @@ export default function DashboardPage() {
                   </Box>
                 )}
 
-                <ProblemLibrary
-                  isAuthenticated={isAuthenticated}
-                  progress={progress}
-                  dailyId={featured?._id}
-                  preset={preset}
-                  listsApi={listsApi}
-                />
+                {/* Phones browse problems from the Problems tab, so the library is wide-screen only. */}
+                {isMdUp && (
+                  <ProblemLibrary
+                    isAuthenticated={isAuthenticated}
+                    progress={progress}
+                    dailyId={featured?._id}
+                    preset={preset}
+                    listsApi={listsApi}
+                  />
+                )}
 
                 {/* Phones open the contest from the navigation menu. */}
                 {isMdUp && <ContestCard />}
