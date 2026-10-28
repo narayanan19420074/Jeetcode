@@ -5,8 +5,10 @@ to a developer who works **only from an Android phone**.
 
 ## 1. Context
 
-- Developer: Naru. Writes Tamil-English (Tanglish). Reply in the same style:
-  short, direct, actionable. No long explanations unless asked.
+- Developer: Naru. Writes Tamil-English (Tanglish). **Chat replies to him** use the
+  same style: short, direct, actionable. No long explanations unless asked.
+  This applies to the chat only. Everything that ships in the product is
+  professional English (see section 4.1).
 - Environment: Android phone, **Termux**, GitHub CLI (`gh`). No PC, no IDE.
 - Repo location on phone: `~/Jeetcode`
 - Stack: React (Vite) + MUI + Redux Toolkit (`client/`), Node + Express + MongoDB (`server/`).
@@ -96,6 +98,32 @@ Because it stages everything, the status check in 3.3 matters.
    say exactly which script to run and where (Render shell or local).
 8. **Don't commit** `node_modules`, `dist`, `build`, `.env`, or zip files.
 
+## 4.1 Product standards (JeetCode is a professional product)
+
+These apply to every file you deliver.
+
+1. **Professional English only.** All user-facing text (UI labels, buttons, errors,
+   empty states, emails, legal and help pages, notifications) is clear, neutral
+   English. No Tanglish, slang or mixed-language phrases anywhere in the product.
+   Code comments, commit messages and docs are English too.
+2. **Proven names only.** Use established, industry-standard terms that users already
+   know from other products: "Settings", "Help & Support", "Sign in", "Sign up",
+   "Forgot password", "Profile", "Notifications", "Billing", "Dashboard". Do not
+   invent new feature names, playful labels or in-jokes. If a term is new, use the
+   plain descriptive name for what it does.
+3. **Proven principles only.** Follow established, widely adopted standards rather
+   than experiments:
+   - Security: OWASP guidance (input validation, rate limiting, least privilege,
+     no secrets in code or logs, server-side authorization checks).
+   - Accessibility: WCAG 2.1 AA (labels on inputs, keyboard access, sufficient
+     contrast, meaningful `aria-label`s on icon-only buttons).
+   - UX: standard conventions (Nielsen's usability heuristics, clear error messages
+     that say what happened and what to do next, confirm destructive actions).
+   - API: REST conventions and the existing `{ success, message, data }` envelope.
+   - Privacy and legal: data export and deletion, accurate policies, no dark patterns.
+4. **Existing wording.** If you touch a file that already contains Tanglish or
+   invented names, fix it in the same delivery, and list those changes in the summary.
+
 ## 5. Project-specific gotchas
 
 - MUI (v6–v7): `Grid` uses the new `size` prop (e.g. `size={{ xs: 12, md: 6 }}`),
@@ -116,7 +144,9 @@ Because it stages everything, the status check in 3.3 matters.
 - [ ] A separate `ship "message"` line
 - [ ] Render env vars / npm installs / seeds called out if needed
 - [ ] No secrets touched
-- [ ] Reply is short and in Tanglish
+- [ ] Chat reply is short and in Tanglish
+- [ ] Product text, comments and commit message are professional English (4.1)
+- [ ] Only standard, proven names and principles used (4.1)
 
 ## 7. Shortcuts defined in the developer's `~/.bashrc`
 

@@ -34,44 +34,44 @@ const TYPES = [
 
 const FAQ = [
   {
-    q: 'Password marandhuten / reset mail varala',
+    q: 'I forgot my password or did not receive the reset email',
     a: (
       <>
-        Login page-la <Link component={RouterLink} to="/forgot-password">Forgot password</Link> click pannunga. Mail 1–2 minutes-la varum; Spam / Promotions folder-um check pannunga. 6 times-ku mela try panna konjam neram wait pannanum.
+        Select <Link component={RouterLink} to="/forgot-password">Forgot password</Link> on the login page. The email usually arrives within a few minutes; please also check your Spam or Promotions folder. If you request it several times in a row, you will need to wait a few minutes before trying again.
       </>
     ),
   },
   {
-    q: 'Verification mail varala',
-    a: 'Settings → Account-la "Resend verification" irukku. Google / GitHub / LinkedIn-la login panna email auto-verified aagidum.',
+    q: 'I did not receive the verification email',
+    a: 'Go to Settings → Account and choose "Resend verification". Accounts created with Google, GitHub or LinkedIn are verified automatically.',
   },
   {
-    q: 'Code Run / Submit fail aagudhu',
-    a: 'Page-a refresh pannitu thirumba try pannunga. Java, C++ compile aaga konjam neram edukkalaam. Class name "Main" nu irukkanum (Java). Continue-a fail aana, problem link + language-oda inge report pannunga.',
+    q: 'Run or Submit is failing',
+    a: 'Refresh the page and try again. Compiled languages such as Java and C++ can take a few seconds. In Java, the public class must be named "Main". If it keeps failing, report it below and include the problem link and the language you used.',
   },
   {
-    q: 'Pro payment panniten, but Pro activate aagala',
+    q: 'I paid for Pro but it is not active',
     a: (
       <>
-        Konjam seconds wait pannitu page refresh pannunga. Innum aagala na, "Payment / Pro" type select pannitu payment ID-oda inge message anuppunga. Refund rules: <Link component={RouterLink} to="/refund">Refund & Cancellation</Link>.
+        Wait a few seconds and refresh the page. If Pro is still not active, send a message below with the type "Payment / Pro / Store order" and include your payment ID. Refund rules: <Link component={RouterLink} to="/refund">Refund & Cancellation</Link>.
       </>
     ),
   },
   {
-    q: 'Pro cancel panna / license key activate panna',
-    a: 'Cancel: Settings → Billing. License key: profile menu → "Activate license". Cancel panna current billing period mudiyura varaikum Pro irukkum.',
+    q: 'How do I cancel Pro or activate a license key?',
+    a: 'To cancel, go to Settings → Billing. To redeem a license key, open the profile menu and choose "Activate license". After cancelling, Pro stays active until the end of the current billing period.',
   },
   {
-    q: 'Store order / coins issue',
+    q: 'I have a problem with a store order or coins',
     a: (
       <>
-        <Link component={RouterLink} to="/store?tab=orders">Store → Orders</Link>-la unga order status paarunga. Problem na "Payment / Pro / Store order" select pannitu order number kudunga.
+        <Link component={RouterLink} to="/store?tab=orders">Store → Orders</Link> shows the status of your orders. If something is wrong, send a message below with the type "Payment / Pro / Store order" and your order number.
       </>
     ),
   },
   {
-    q: 'En data download / account delete panna mudiyuma?',
-    a: 'Mudiyum. Settings → Account-la "Export my data" matrum "Delete account" irukku. Active Pro subscription irundha mudhalla cancel pannanum.',
+    q: 'Can I download my data or delete my account?',
+    a: 'Yes. Settings → Account has "Export my data" and "Delete account". If you have an active Pro subscription, cancel it first.',
   },
 ];
 
@@ -85,7 +85,7 @@ export default function HelpPage() {
 
   const [type, setType] = useState(initialType);
   const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState(errRef ? `Page crashed with: "${errRef}"\n\nWhat I was doing: ` : '');
+  const [message, setMessage] = useState(errRef ? `Page error: "${errRef}"\n\nWhat I was doing: ` : '');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [website, setWebsite] = useState(''); // honeypot
@@ -141,7 +141,7 @@ export default function HelpPage() {
           Help & Support
         </Typography>
         <Typography color="text.secondary" sx={{ mb: 3 }}>
-          Mudhalla FAQ paarunga. Answer kedaikala na keezha irukkura form-la ezhudhunga — usually 2 working days-la reply panrom.
+          Check the answers below first. If you cannot find what you need, send us a message using the form. We usually reply within 2 working days.
         </Typography>
 
         <Typography component="h2" sx={{ fontSize: '1.15rem', fontWeight: 700, mb: 1 }}>
@@ -169,7 +169,7 @@ export default function HelpPage() {
           {sent ? (
             <Stack spacing={2} sx={{ alignItems: 'flex-start' }}>
               <Alert severity="success" sx={{ width: '100%' }}>
-                Thanks! Unga message vandhuduchu. {isAuthenticated ? 'Unga account email-ku' : 'Neenga kudutha email-ku'} reply panrom.
+                Thank you. Your message has been received. We will reply to {isAuthenticated ? 'your account email' : 'the email address you provided'}.
               </Alert>
               <Button
                 onClick={() => {
@@ -215,7 +215,7 @@ export default function HelpPage() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   slotProps={{ htmlInput: { maxLength: 3000 } }}
-                  helperText={`${message.length}/3000 — bug na problem link, language, enna nadandhuchu nu ezhudhunga`}
+                  helperText={`${message.length}/3000. For bugs, include the problem link, language and what happened.`}
                   fullWidth
                 />
 

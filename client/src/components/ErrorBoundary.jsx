@@ -58,7 +58,7 @@ export default class ErrorBoundary extends Component {
             Something went wrong
           </Typography>
           <Typography color="text.secondary">
-            Indha page load aagala. Reload pannunga — adhuvum work aagala na, namakku report pannunga, seekiram fix panrom.
+            An unexpected error occurred while loading this page. Try reloading. If the problem continues, please report it and we will look into it.
           </Typography>
           {import.meta.env.DEV && (
             <Typography variant="caption" sx={{ fontFamily: 'monospace', wordBreak: 'break-word', color: 'error.main' }}>
