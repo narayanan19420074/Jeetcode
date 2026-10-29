@@ -11,6 +11,7 @@ import { tierFor } from './tiers';
 import { APT_COLOR, AvatarRing, PT, calm, mono, sweep } from './lbShared';
 import EmpireCard from './EmpireCard';
 import LeaderboardPanel from './lbPanel';
+import MobileLeaderboard from './MobileLeaderboard';
 
 const LIMIT = 30;
 
@@ -113,7 +114,10 @@ export default function LeaderboardView({ isAuthenticated }) {
   const [reloadKey, setReloadKey] = useState(0);
   const [wrapEl, setWrapEl] = useState(null);
   const [boardEl, setBoardEl] = useState(null);
-  const isLg = useMediaQuery(useTheme().breakpoints.up('lg'));
+  const theme = useTheme();
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  // Phones get their own full-screen layout (MobileLeaderboard); the page scrolls instead of an inner list.
+  const isPhone = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
   // The dashboard puts this view inside a plain div with no height, so "100%" would collapse to the
   // content height and the list would never scroll. On wide screens measure the room instead.
   const [fitH, setFitH] = useState(null);
@@ -166,10 +170,10 @@ export default function LeaderboardView({ isAuthenticated }) {
   useEffect(() => {
     const el = sentinel.current;
     if (!el || !hasMore || loading) return undefined;
-    const io = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) askMore(); }, { root: scroller.current, rootMargin: '160px' });
+    const io = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) askMore(); }, { root: isPhone ? null : scroller.current, rootMargin: isPhone ? '0px 0px 400px 0px' : '160px' });
     io.observe(el);
     return () => io.disconnect();
-  }, [hasMore, loading, rows.length, askMore]);
+  }, [hasMore, loading, rows.length, askMore, isPhone]);
 
   // A tall window may show every loaded row without a scrollbar; keep loading until the list can scroll.
   useEffect(() => {
@@ -207,6 +211,16 @@ export default function LeaderboardView({ isAuthenticated }) {
     if (showPanel) setSelectedId((cur) => (cur === row.userId ? null : row.userId));
     else setDetail({ el: e.currentTarget, row });
   };
+
+  if (isPhone) {
+    return (
+      <MobileLeaderboard
+        isAuthenticated={isAuthenticated} track={track} period={period} scope={scope} onTrack={onTrack} onPeriod={onPeriod} onScope={onScope}
+        search={search} setSearch={setSearch} q={q} rows={rows} meta={meta} me={me} loading={loading} firstLoad={firstLoad} error={error}
+        reload={reload} hasMore={hasMore} sentinel={sentinel} scrollToMe={scrollToMe} showEveryone={showEveryone}
+      />
+    );
+  }
 
   return (
     <Box ref={setWrapEl} sx={{ height: isLg ? (fitH ? `${fitH}px` : '100%') : 'calc(100dvh - 150px)', minHeight: isLg ? 0 : 420 }}>
