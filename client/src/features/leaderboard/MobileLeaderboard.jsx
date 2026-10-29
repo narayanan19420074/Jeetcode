@@ -20,7 +20,6 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import MyLocationRoundedIcon from '@mui/icons-material/MyLocationRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import { Link as RouterLink } from 'react-router-dom';
@@ -41,7 +40,7 @@ import {
 } from '../dashboard/components/libraryStyle';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
-import { APT_COLOR, MEDAL, PT, grad } from './lbShared';
+import { APT_COLOR, PT } from './lbShared';
 
 // Phone layout of the Leaderboard in the Library look (same as the phone Problems, Home and You pages):
 // Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section
@@ -150,21 +149,31 @@ function FilterSheet({ open, onClose, isAuthenticated, track, period, scope, onT
 
 // ---------- row pieces ----------
 
-function RankTile({ rank, size = 40 }) {
-  const m = MEDAL[rank];
+// Rank number: plain muted digits; the top three sit in a soft gold, silver and bronze circle
+// (same pastel-card colours as the dashboard, tinted in dark mode).
+const PODIUM = {
+  1: { color: '#F09A2E', bg: '#FFF2E3' },
+  2: { color: '#64748B', bg: '#EEF1F5' },
+  3: { color: '#B4693A', bg: '#F8E9DE' },
+};
+
+function RankMark({ rank }) {
+  const podium = PODIUM[rank];
   return (
     <Box
-      sx={() => ({
-        width: size,
-        height: size,
+      aria-label={`Rank ${rank}`}
+      sx={(t) => ({
+        width: 32,
+        height: 32,
         flexShrink: 0,
-        borderRadius: '12px',
+        borderRadius: '50%',
         display: 'grid',
         placeItems: 'center',
-        fontWeight: 700,
-        fontSize: rank > 999 ? '0.75rem' : '0.95rem',
+        fontSize: rank > 999 ? 12 : 15,
+        fontWeight: podium ? 700 : 500,
         fontVariantNumeric: 'tabular-nums',
-        ...(m ? { color: m.text, background: grad(m) } : { color: 'var(--lib-chip-text)', bgcolor: 'var(--lib-chip)' }),
+        color: podium ? podium.color : 'var(--lib-muted)',
+        bgcolor: podium ? (t.palette.mode === 'dark' ? tint(podium.color, 16) : podium.bg) : 'transparent',
       })}
     >
       {rank}
@@ -174,7 +183,7 @@ function RankTile({ rank, size = 40 }) {
 
 function YouTag() {
   return (
-    <Typography component="span" sx={{ flexShrink: 0, px: 1, py: 0.3, borderRadius: 99, fontSize: '0.7rem', fontWeight: 700, lineHeight: 1.2, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
+    <Typography component="span" sx={{ flexShrink: 0, px: '8px', py: '1px', borderRadius: 99, fontSize: 12, lineHeight: '18px', fontWeight: 500, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
       You
     </Typography>
   );
@@ -184,7 +193,7 @@ function YouTag() {
 function Move({ row }) {
   if (row.isNew) {
     return (
-      <Typography component="span" sx={{ px: 0.8, py: 0.1, borderRadius: 99, fontSize: '0.68rem', fontWeight: 800, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
+      <Typography component="span" sx={{ fontSize: 14, lineHeight: '20px', fontWeight: 500, color: ACCENT }}>
         New
       </Typography>
     );
@@ -197,16 +206,17 @@ function Move({ row }) {
     <Box
       component="span"
       aria-label={`${up ? 'Up' : 'Down'} ${Math.abs(m)} since last week`}
-      sx={{ display: 'inline-flex', alignItems: 'center', color: up ? 'var(--jc-easy)' : 'var(--jc-hard)', fontSize: '0.75rem', fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}
+      sx={{ display: 'inline-flex', alignItems: 'center', color: up ? 'var(--jc-easy)' : 'var(--jc-hard)', fontSize: 14, lineHeight: '20px', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}
     >
-      <Icon sx={{ fontSize: 20, mx: -0.5 }} />
+      <Icon aria-hidden sx={{ fontSize: 22, ml: -0.5 }} />
       {Math.abs(m)}
     </Box>
   );
 }
 
+// Same row as the dashboard lists: 48px avatar, 16/24 name, 14/20 muted line, divider underneath.
+// Rank on the left, points on the right. Streak and tier details open in the player sheet.
 function PlayerRow({ row, isMe, onPick }) {
-  const { tier } = tierFor(row.score);
   return (
     <Box
       id={isMe ? 'lb-me' : undefined}
@@ -214,50 +224,39 @@ function PlayerRow({ row, isMe, onPick }) {
         borderBottom: '1px solid',
         borderColor: 'var(--lib-divider)',
         '&:last-of-type': { borderBottom: 'none' },
-        ...(isMe && { bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), borderRadius: '16px', borderColor: 'transparent' }),
+        ...(isMe && { mx: -1, px: 1, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), borderRadius: '16px', borderColor: 'transparent' }),
       })}
     >
       <ButtonBase
         onClick={() => onPick(row)}
-        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: 1.25, px: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        aria-label={`${row.name}, rank ${row.rank}, ${num(row.score)} points. Open details`}
+        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: '10px', textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
-        <RankTile rank={row.rank} />
-        <Avatar
-          src={row.avatarUrl || undefined}
-          alt={row.name}
-          sx={{ width: 44, height: 44, flexShrink: 0, fontSize: '1rem', fontWeight: 800, border: `2px solid ${tint(tier.color, 70)}` }}
-        >
+        <RankMark rank={row.rank} />
+        <Avatar src={row.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, flexShrink: 0, fontSize: 18, fontWeight: 500 }}>
           {row.name?.[0]?.toUpperCase()}
         </Avatar>
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', minWidth: 0 }}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, minWidth: 0 }}>
             <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, minWidth: 0 }}>
               {row.name}
             </Typography>
             {isMe && <YouTag />}
           </Stack>
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', color: 'var(--lib-muted)', minWidth: 0 }}>
-            <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, minWidth: 0 }}>
-              @{row.handle}
-            </Typography>
-            {row.streak > 0 && (
-              <Box component="span" aria-label={`${row.streak}-day streak`} sx={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
-                <LocalFireDepartmentRoundedIcon sx={{ fontSize: 15, color: 'warning.main' }} />
-                <Typography component="span" sx={{ fontSize: '0.8rem', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
-                  {row.streak}d
-                </Typography>
-              </Box>
-            )}
-          </Stack>
+          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+            @{row.handle}
+          </Typography>
         </Box>
         <Box sx={{ flexShrink: 0, textAlign: 'right' }}>
-          <Typography sx={{ fontWeight: 700, fontSize: 16, lineHeight: '24px', fontVariantNumeric: 'tabular-nums' }}>{num(row.score)}</Typography>
-          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'flex-end', gap: 0.5, color: 'var(--lib-muted)' }}>
-            <Move row={row} />
-            <Typography component="span" sx={{ fontSize: '0.72rem', fontWeight: 700 }}>
+          <Typography component="div" sx={{ fontWeight: 700, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
+            {num(row.score)}
+            <Typography component="span" sx={{ ml: 0.5, fontWeight: 400, fontSize: 14, color: 'var(--lib-muted)' }}>
               pts
             </Typography>
-          </Stack>
+          </Typography>
+          <Box sx={{ minHeight: 20 }}>
+            <Move row={row} />
+          </Box>
         </Box>
       </ButtonBase>
     </Box>
@@ -268,14 +267,14 @@ function SkeletonRows({ count = 8 }) {
   return (
     <>
       {Array.from({ length: count }).map((_, i) => (
-        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: '12px', py: 1.5, px: 0.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)' }}>
-          <Skeleton variant="rounded" width={40} height={40} sx={{ borderRadius: '12px' }} />
-          <Skeleton variant="circular" width={44} height={44} />
+        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: '12px', py: '10px', borderBottom: '1px solid', borderColor: 'var(--lib-divider)' }}>
+          <Skeleton variant="circular" width={32} height={32} />
+          <Skeleton variant="circular" width={48} height={48} />
           <Box sx={{ flex: 1 }}>
             <Skeleton variant="text" width={`${45 + ((i * 17) % 35)}%`} />
             <Skeleton variant="text" width="30%" />
           </Box>
-          <Skeleton variant="text" width={44} />
+          <Skeleton variant="text" width={52} />
         </Box>
       ))}
     </>
