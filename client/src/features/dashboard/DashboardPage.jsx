@@ -273,6 +273,9 @@ export default function DashboardPage() {
   // Phone: the leaderboard is also a full screen of its own, with its own header.
   if (!isMdUp && currentView === 'leaderboard') return <LeaderboardView isAuthenticated={isAuthenticated} />;
 
+  // Phone: the Study Plan is a full screen of its own as well (its screens have their own headers).
+  if (!isMdUp && currentView === 'plans') return <StudyPlannerView isAuthenticated={isAuthenticated} />;
+
   return (
     <Box
       ref={rootRef}

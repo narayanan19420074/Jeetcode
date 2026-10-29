@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Alert, Avatar, AvatarGroup, Badge, Box, Button, ButtonBase, Collapse, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
-  IconButton, Popover, Skeleton, Snackbar, TextField, Tooltip, Typography,
+  IconButton, Popover, Skeleton, Snackbar, TextField, Tooltip, Typography, useMediaQuery, useTheme,
 } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
@@ -24,6 +24,8 @@ import { surface } from '../dashboard/dashboardUtils';
 import PlanBuilder from './PlanBuilder';
 import PlanWorkspace from './PlanWorkspace';
 import FriendPicker from './FriendPicker';
+import BackToDashboard from '../../components/BackToDashboard';
+import { MobilePlanWorkspace, MobilePlans, MobileShell } from './MobileStudyPlan';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtDay, fmtRange, localKey, parseInvite, planTheme, relDay, relTime } from './planUtils';
 
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
@@ -265,6 +267,8 @@ export default function StudyPlannerView({ isAuthenticated }) {
   const [params, setParams] = useSearchParams();
   const planId = params.get('plan');
   const joinCode = params.get('join');
+  // Phones get their own full-screen layouts (MobileStudyPlan); wide screens are unchanged.
+  const isPhone = useMediaQuery(useTheme().breakpoints.down('md'), { noSsr: true });
 
   const [plans, setPlans] = useState(null);
   const [friends, setFriends] = useState(null);
@@ -382,6 +386,18 @@ export default function StudyPlannerView({ isAuthenticated }) {
     } catch { /* keep whatever we had */ }
   };
 
+  // Phone: the notifications sheet. Same refresh and mark-as-read as the bell popover.
+  const openNotes = async () => {
+    try {
+      const { data } = await studyPlanApi.notifications();
+      setNotes(data.data);
+      if (data.data.unread > 0) {
+        await studyPlanApi.markNotificationsRead();
+        setNotes((n) => ({ ...n, unread: 0 }));
+      }
+    } catch { /* keep whatever we had */ }
+  };
+
   const confirmDelete = async () => {
     if (!toDelete) return;
     setDeleting(true);
@@ -406,27 +422,50 @@ export default function StudyPlannerView({ isAuthenticated }) {
   const findFriends = () => setParams({ view: 'friends' });
 
   if (!isAuthenticated) {
-    return (
+    const loginPrompt = (
       <Box sx={[surface, { p: 4, textAlign: 'center' }]}>
         <Typography variant="h6" sx={{ fontWeight: 700 }}>Log in to plan your study days</Typography>
         <Typography color="text.secondary" sx={{ mb: 2 }}>Create a schedule, add friends and track progress together.</Typography>
         <Button variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: 700 }}>Log in</Button>
       </Box>
     );
+    return isPhone ? (
+      <MobileShell>
+        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent', mb: 1 }} />
+        {loginPrompt}
+      </MobileShell>
+    ) : loginPrompt;
   }
 
   if (builder) {
-    return (
+    const builderView = (
       <PlanBuilder
         plan={builder.plan}
         onCancel={() => setBuilder(null)}
         onSaved={(id) => { setBuilder(null); loadPlans(); go({ plan: id }); }}
       />
     );
+    return isPhone ? <MobileShell>{builderView}</MobileShell> : builderView;
   }
 
   // Open plan: just its questions and everyone's progress.
   if (planId) {
+    if (isPhone) {
+      return (
+        <MobileShell>
+          <MobilePlanWorkspace
+            key={planId} id={planId} friends={friends}
+            onBack={() => go()}
+            onEdit={(plan) => setBuilder({ plan })}
+            onChanged={loadPlans}
+            onGone={() => { loadPlans(); go(); }}
+            onFindFriends={findFriends}
+            notify={setToast}
+          />
+          <Snackbar open={Boolean(toast)} autoHideDuration={2600} onClose={() => setToast('')} message={toast} />
+        </MobileShell>
+      );
+    }
     return (
       <>
         <PlanWorkspace
@@ -440,6 +479,42 @@ export default function StudyPlannerView({ isAuthenticated }) {
         />
         <Snackbar open={Boolean(toast)} autoHideDuration={2600} onClose={() => setToast('')} message={toast} />
       </>
+    );
+  }
+
+  if (isPhone) {
+    return (
+      <MobileShell>
+        <MobilePlans
+          plans={plans} friends={friends} notes={notes} error={error} onDismissError={() => setError('')}
+          invite={invite} joining={joining} onAccept={accept} onDismissInvite={() => go()}
+          dueToday={dueToday} today={today} onNew={() => setBuilder({})} onOpenPlan={(id) => go({ plan: id })}
+          onAddFriend={(el, p) => setPicker({ el, plan: p })} onDelete={setToDelete} onFindFriends={findFriends}
+          codeInput={codeInput} setCodeInput={(v) => { setCodeInput(v); setCodeError(''); }} codeError={codeError}
+          onJoinCode={joinFromInput} onOpenNotes={openNotes}
+        />
+        <FriendPicker
+          anchorEl={picker?.el} onClose={() => setPicker(null)} friends={friends} memberIds={pickerMemberIds} onFindFriends={findFriends}
+          onAdd={async (f) => { if (await addFriend(picker.plan, f)) setPicker((p) => p && ({ ...p, plan: { ...p.plan, members: [...p.plan.members, { id: f.userId }] } })); }}
+        />
+        <Dialog open={Boolean(toDelete)} onClose={() => !deleting && setToDelete(null)} maxWidth="xs" fullWidth>
+          <DialogTitle sx={{ fontWeight: 700 }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              {toDelete?.isOwner
+                ? `“${toDelete?.title}” will be removed for everyone. Questions you solved stay solved.`
+                : `You will be removed from “${toDelete?.title}”. You can rejoin with the invite link.`}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => setToDelete(null)} disabled={deleting}>Cancel</Button>
+            <Button color="error" variant="contained" disableElevation onClick={confirmDelete} disabled={deleting} sx={{ fontWeight: 700 }}>
+              {deleting ? 'Please wait…' : toDelete?.isOwner ? 'Delete' : 'Leave'}
+            </Button>
+          </DialogActions>
+        </Dialog>
+        <Snackbar open={Boolean(toast)} autoHideDuration={2600} onClose={() => setToast('')} message={toast} />
+      </MobileShell>
     );
   }
 
