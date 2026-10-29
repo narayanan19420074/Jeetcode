@@ -18,9 +18,10 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from '../leaderboard/tiers';
 import { APT_COLOR, FLAME, PersonAvatar, mono, practisedToday, statusInfo, tonal } from './friendsUi';
+import { LIB_ACCENT, LIB_TRACKING, libChipSx, libPanelSx, libSectionTitleSx, libTintBtnSx } from '../dashboard/components/libraryStyle';
 
 // One head-to-head row: my number | label | their number, with a split bar. `lower` = smaller wins (rank).
-function VsRow({ label, a, b, lower }) {
+function VsRow({ label, a, b, lower, lib = false }) {
   const na = a ?? 0;
   const nb = b ?? 0;
   const aWins = lower ? (a != null && (b == null || na < nb)) : na > nb;
@@ -28,6 +29,21 @@ function VsRow({ label, a, b, lower }) {
   const total = na + nb;
   const share = total > 0 ? (lower ? nb / total : na / total) : 0.5;
   const fmt = (v) => (v == null ? '–' : lower ? `#${v}` : Number(v).toLocaleString());
+  if (lib) {
+    return (
+      <Box sx={{ py: 1.25, borderBottom: '1px solid var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
+        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+          <Typography sx={{ fontWeight: aWins ? 700 : 400, fontSize: 16, lineHeight: '24px', fontVariantNumeric: 'tabular-nums', minWidth: 56, color: aWins ? 'var(--jc-easy)' : 'var(--lib-text)' }}>{fmt(a)}</Typography>
+          <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{label}</Typography>
+          <Typography sx={{ fontWeight: bWins ? 700 : 400, fontSize: 16, lineHeight: '24px', fontVariantNumeric: 'tabular-nums', minWidth: 56, textAlign: 'right', color: bWins ? 'var(--jc-hard)' : 'var(--lib-text)' }}>{fmt(b)}</Typography>
+        </Stack>
+        <Box sx={{ display: 'flex', height: 6, borderRadius: 3, overflow: 'hidden', mt: 0.75, bgcolor: 'var(--lib-chip)', gap: '2px' }}>
+          <Box sx={{ width: `${Math.max(4, Math.min(96, share * 100))}%`, bgcolor: aWins ? 'var(--jc-easy)' : LIB_ACCENT, opacity: aWins ? 1 : 0.45 }} />
+          <Box sx={{ flex: 1, bgcolor: bWins ? 'var(--jc-hard)' : 'var(--lib-muted)', opacity: bWins ? 1 : 0.35 }} />
+        </Box>
+      </Box>
+    );
+  }
   return (
     <Box sx={{ py: 0.9 }}>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
@@ -44,7 +60,7 @@ function VsRow({ label, a, b, lower }) {
 }
 
 // "You vs @friend" — loads both players' numbers from the server.
-function Compare({ friend }) {
+function Compare({ friend, lib = false }) {
   const me = useSelector((s) => s.auth.user);
   const [data, setData] = useState(null);
   const [error, setError] = useState('');
@@ -83,7 +99,33 @@ function Compare({ friend }) {
     if (lower ? xv < yv : xv > yv) mine += 1;
     else theirs += 1;
   });
-  const verdict = mine === theirs ? 'All square — dead heat!' : mine > theirs ? `You lead ${mine}–${theirs}. Keep going!` : `@${b.handle} leads ${theirs}–${mine}. Catch up!`;
+  const verdict = mine === theirs ? 'All square' : mine > theirs ? `You lead ${mine}–${theirs}` : `@${b.handle} leads ${theirs}–${mine}`;
+
+  if (lib) {
+    return (
+      <Box sx={{ mt: 3 }}>
+        <Box sx={{ ...libPanelSx, p: 2, textAlign: 'center' }}>
+          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+            <Stack sx={{ alignItems: 'center', width: 76, gap: 0.5 }}>
+              <PersonAvatar person={{ ...a, name: me?.name || a.name }} size={48} />
+              <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING }}>You</Typography>
+            </Stack>
+            <Box sx={{ flex: 1, px: 1 }}>
+              <Typography sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px', fontVariantNumeric: 'tabular-nums' }}>{mine} : {theirs}</Typography>
+              <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{verdict}</Typography>
+            </Box>
+            <Stack sx={{ alignItems: 'center', width: 76, gap: 0.5 }}>
+              <PersonAvatar person={b} size={48} />
+              <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, maxWidth: 76 }}>@{b.handle}</Typography>
+            </Stack>
+          </Stack>
+        </Box>
+        <Box sx={{ mt: 1, borderTop: '1px solid var(--lib-divider)' }}>
+          {rows.map(([label, x, y, lower]) => <VsRow key={label} label={label} a={x} b={y} lower={lower} lib />)}
+        </Box>
+      </Box>
+    );
+  }
 
   return (
     <Box sx={{ mt: 2, textAlign: 'left' }}>
@@ -141,7 +183,7 @@ function Overview({ f }) {
 }
 
 // Same profile + "You vs them" content, but inline (no dialog): used by the desktop Friends side panel.
-export function FriendProfilePanel({ f, onRemove }) {
+function ClassicProfilePanel({ f, onRemove }) {
   const online = useSelector((s) => Boolean(s.friends.online[f.userId]));
   const [tab, setTab] = useState('overview');
   const { tier } = tierFor(f.score);
@@ -192,6 +234,103 @@ export function FriendProfilePanel({ f, onRemove }) {
       </Stack>
     </Box>
   );
+}
+
+// ---- Phone Library look: same cards, rows and pills as the phone dashboard ----
+const scrollRow = { display: 'flex', gap: '11px', overflowX: 'auto', mx: -2, px: 2, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } };
+
+// 115x80 card like the dashboard categories: icon on top, value on the right, label at the bottom.
+function StatCard({ icon: Icon, value, label, color, bg }) {
+  return (
+    <Box
+      sx={(t) => ({
+        flex: 'none', width: 115, height: 80, p: '12px', borderRadius: '16px', border: '1.5px solid var(--lib-border)',
+        display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: 'var(--lib-text)',
+        bgcolor: t.palette.mode === 'dark' ? tint(color, 16) : bg,
+      })}
+    >
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+        {Icon ? <Icon aria-hidden sx={{ fontSize: 28, color }} /> : <Box />}
+        <Typography sx={{ fontWeight: 700, fontSize: 20, lineHeight: '24px', fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
+      </Stack>
+      <Typography noWrap sx={{ fontSize: 15, lineHeight: '19px', letterSpacing: LIB_TRACKING }}>{label}</Typography>
+    </Box>
+  );
+}
+
+function LibOverview({ f }) {
+  const { tier } = tierFor(f.score);
+  const stats = [
+    { icon: EmojiEventsRoundedIcon, value: f.rank ? `#${f.rank}` : '–', label: 'Rank', color: '#3F8CE8', bg: '#EDF2F9' },
+    { icon: BoltRoundedIcon, value: f.score.toLocaleString(), label: 'Points', color: tier.color, bg: tint(tier.color, 14) },
+    { icon: CheckCircleRoundedIcon, value: f.solved, label: 'Solved', color: '#22A06B', bg: '#EAF6EE' },
+    { icon: LocalFireDepartmentRoundedIcon, value: f.streak || 0, label: 'Streak', color: '#F09A2E', bg: '#FFF2E3' },
+  ];
+  const levels = [
+    { value: f.easy, label: 'Easy', color: '#22A06B', bg: '#EAF6EE' },
+    { value: f.medium, label: 'Medium', color: '#F09A2E', bg: '#FFF2E3' },
+    { value: f.hard, label: 'Hard', color: '#EF5B5B', bg: '#FDECEB' },
+    { value: f.aptitude, label: 'Aptitude', color: APT_COLOR, bg: '#F1EBFD' },
+  ];
+  return (
+    <>
+      <Box sx={{ ...scrollRow, mt: 3 }}>
+        {stats.map((c) => <StatCard key={c.label} {...c} />)}
+      </Box>
+      <Typography component="h2" sx={{ ...libSectionTitleSx, mt: 4, mb: 1.5 }}>Solved by level</Typography>
+      <Box sx={scrollRow}>
+        {levels.map((c) => <StatCard key={c.label} {...c} />)}
+      </Box>
+    </>
+  );
+}
+
+function LibProfilePanel({ f, onRemove }) {
+  const online = useSelector((s) => Boolean(s.friends.online[f.userId]));
+  const [tab, setTab] = useState('overview');
+  const { tier } = tierFor(f.score);
+  const since = f.since ? new Date(f.since).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) : null;
+  const tabs = [['overview', 'Overview'], ['compare', 'You vs them']];
+  return (
+    <Box data-chat-scroll sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: 2, pt: 3, pb: 3, bgcolor: 'var(--lib-bg)' }}>
+      <Box sx={{ textAlign: 'center' }}>
+        <PersonAvatar person={f} size={81} online={online} />
+        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>{f.name}</Typography>
+        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+          @{f.handle}{since ? ` · Friends since ${since}` : ''}
+        </Typography>
+        <Stack direction="row" useFlexGap sx={{ justifyContent: 'center', flexWrap: 'wrap', gap: 1, mt: 1.5 }}>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, height: 34, px: '14px', borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontSize: 15, letterSpacing: LIB_TRACKING }}>
+            <WorkspacePremiumRoundedIcon aria-hidden sx={{ fontSize: 18 }} /> {tier.name}
+          </Box>
+          {f.company && (
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', height: 34, px: '14px', borderRadius: 999, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: 15, letterSpacing: LIB_TRACKING }}>
+              {f.company}
+            </Box>
+          )}
+        </Stack>
+      </Box>
+
+      <Box role="tablist" aria-label="Profile sections" sx={{ display: 'flex', gap: 1, mt: 3 }}>
+        {tabs.map(([key, label]) => (
+          <ButtonBase key={key} role="tab" aria-selected={tab === key} onClick={() => setTab(key)} sx={libChipSx(tab === key)}>
+            {label}
+          </ButtonBase>
+        ))}
+      </Box>
+
+      {tab === 'overview' ? <LibOverview f={f} /> : <Compare friend={f} lib />}
+
+      <Button fullWidth onClick={onRemove} sx={{ ...libTintBtnSx, mt: 4, bgcolor: tint('#EF5B5B', 12), color: 'error.main', '&:hover': { bgcolor: tint('#EF5B5B', 20) } }}>
+        Remove friend
+      </Button>
+    </Box>
+  );
+}
+
+// Inline profile + "You vs them" for the Friends side panel (desktop) and the phone chat. `lib` = phone Library look.
+export function FriendProfilePanel({ f, onRemove, lib = false }) {
+  return lib ? <LibProfilePanel f={f} onRemove={onRemove} /> : <ClassicProfilePanel f={f} onRemove={onRemove} />;
 }
 
 // Friend profile: overview + "You vs friend" compare, with chat / code together / nudge / remove.

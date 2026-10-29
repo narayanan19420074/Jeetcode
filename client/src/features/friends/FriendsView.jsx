@@ -442,7 +442,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       <WsIconButton title="Remove friend" onClick={() => setConfirm(f)} sx={{ '&:hover': { color: 'error.main' } }}><PersonRemoveRoundedIcon /></WsIconButton>
     </>
   );
-  const chatOverlay = (f) => (panelMode === 'profile' ? <FriendProfilePanel f={f} onRemove={() => setConfirm(f)} /> : null);
+  const chatOverlay = (f) => (panelMode === 'profile' ? <FriendProfilePanel f={f} onRemove={() => setConfirm(f)} lib={phone} /> : null);
 
   const showChips = view === 'friends' && friends.length > 0;
   const showSearch = view !== 'activity';
@@ -485,10 +485,16 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       {!desktop && (
         <FriendChat
           friend={chatFriend}
+          lib={phone}
           onClose={() => setChatId(null)}
           onCodeTogether={(f) => codeTogether(f)}
-          actions={chatFriend ? chatActions(chatFriend) : null}
+          actions={chatFriend && !phone ? chatActions(chatFriend) : null}
           overlay={chatFriend ? chatOverlay(chatFriend) : null}
+          profileOpen={panelMode === 'profile'}
+          onToggleProfile={() => setPanelMode((m) => (m === 'profile' ? 'chat' : 'profile'))}
+          onNudge={chatFriend && !practisedToday(chatFriend) ? () => { setPanelMode('chat'); nudge(chatFriend); } : undefined}
+          nudging={Boolean(chatFriend) && acting === `nudge:${chatFriend.userId}`}
+          onRemove={() => setConfirm(chatFriend)}
         />
       )}
 

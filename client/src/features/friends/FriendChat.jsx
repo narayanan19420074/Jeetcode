@@ -2,7 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Box, Button, CircularProgress, Drawer, IconButton, Popover, Stack, TextField, Typography, alpha } from '@mui/material';
+import { Box, Button, ButtonBase, CircularProgress, Drawer, IconButton, Menu, MenuItem, Popover, Stack, TextField, Typography, alpha } from '@mui/material';
 import { motion, useReducedMotion } from 'framer-motion';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
@@ -13,6 +13,8 @@ import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartm
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 import { friendsApi } from '../../api/friendsApi';
 import { roomApi } from '../../api/roomApi';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -23,6 +25,18 @@ import { clearUnread, setActiveChat, setLast } from './friendsSlice';
 import { getFriendsSocket } from './friendsRealtime';
 import { FLAME, PersonAvatar, dayLabel, statusInfo } from './friendsUi';
 import { PulseArt } from './friendsKit';
+import { tint } from '../dashboard/dashboardUtils';
+import {
+  LIB_ACCENT,
+  LIB_FONT,
+  LIB_TRACKING,
+  LibraryFont,
+  libBackBtnSx,
+  libChipSx,
+  libIconBtnSx,
+  libSmallBtnSx,
+  useLibraryPalette,
+} from '../dashboard/components/libraryStyle';
 
 const clock = (iso) => new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
 const addUnique = (list, m) => (list.some((x) => x.id === m.id) ? list : [...list, m]);
@@ -103,6 +117,141 @@ function RoomCard({ m, mine, friend }) {
   );
 }
 
+
+// ---- Library look (phones) ----------------------------------------------------------------
+// Same tokens as the phone dashboard: Roboto 16/24 text, cream surfaces, 16px gutter, 20px/16px radii,
+// tinted category-card colours for system cards, solid accent for the person's own messages.
+
+const LIB_SUCCESS = 'var(--jc-easy)';
+const NUDGE_TONE = { color: '#F09A2E', bg: '#FFF2E3' };
+const ROOM_TONE = { color: '#3F8CE8', bg: '#EDF2F9' };
+
+// Category-card background: light pastel in light mode, soft tint in dark mode.
+const toneBg = (t, tone) => (t.palette.mode === 'dark' ? tint(tone.color, 16) : tone.bg);
+
+const libDayPill = { alignSelf: 'center', px: '14px', py: '4px', borderRadius: 999, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: 13, lineHeight: '20px', letterSpacing: LIB_TRACKING };
+
+function LibNudgeLine({ m, mine, friend }) {
+  return (
+    <Box sx={(t) => ({ alignSelf: 'center', display: 'flex', alignItems: 'center', gap: '12px', width: '100%', maxWidth: 320, p: '12px', my: 0.5, borderRadius: '16px', border: '1.5px solid var(--lib-border)', bgcolor: toneBg(t, NUDGE_TONE), color: 'var(--lib-text)' })}>
+      <LocalFireDepartmentRoundedIcon aria-hidden sx={{ fontSize: 28, color: NUDGE_TONE.color, flexShrink: 0 }} />
+      <Box sx={{ minWidth: 0, flex: 1 }}>
+        <Typography sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontWeight: 500 }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
+        <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{m.text}</Typography>
+      </Box>
+      <Typography sx={{ fontSize: 12, alignSelf: 'flex-end', flexShrink: 0, color: 'var(--lib-muted)' }}>{clock(m.createdAt)}</Typography>
+    </Box>
+  );
+}
+
+function LibRoomCard({ m, mine, friend }) {
+  const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
+  const [busy, setBusy] = useState(false);
+  const join = async () => {
+    setBusy(true);
+    try {
+      await roomApi.get(m.roomId);
+      navigate(`/room/${m.roomId}`);
+    } catch {
+      enqueueSnackbar('That room has expired. Ask for a fresh invite.', { variant: 'info' });
+      setBusy(false);
+    }
+  };
+  return (
+    <Box sx={(t) => ({ alignSelf: mine ? 'flex-end' : 'flex-start', width: '100%', maxWidth: 320, p: '12px', my: 0.5, borderRadius: '16px', border: '1.5px solid var(--lib-border)', bgcolor: toneBg(t, ROOM_TONE), color: 'var(--lib-text)' })}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: '12px' }}>
+        <LaptopMacRoundedIcon aria-hidden sx={{ fontSize: 28, color: ROOM_TONE.color, flexShrink: 0 }} />
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontWeight: 500 }}>Code together</Typography>
+          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+            {mine ? `You invited @${friend.handle}` : `@${friend.handle} invited you`}
+            {m.roomTitle ? ` · ${m.roomTitle}` : ''}
+          </Typography>
+        </Box>
+      </Stack>
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 1.5 }}>
+        <Typography sx={{ fontSize: 12, color: 'var(--lib-muted)' }}>{clock(m.createdAt)}</Typography>
+        <Button disableElevation variant="contained" disabled={busy} onClick={join} sx={{ ...libSmallBtnSx, bgcolor: LIB_ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)` } }}>
+          {busy ? 'Checking…' : mine ? 'Rejoin room' : 'Join room'}
+        </Button>
+      </Stack>
+    </Box>
+  );
+}
+
+// Own messages: solid accent (like a selected pill). Friend's messages: cream (like the cards and chips).
+function LibBubble({ m, mine, first, endsRun, isNew }) {
+  const reduce = useReducedMotion();
+  const tight = 6;
+  const round = 20;
+  const top = first ? round : tight;
+  const bottom = endsRun ? round : tight;
+  return (
+    <Box sx={{ alignSelf: mine ? 'flex-end' : 'flex-start', maxWidth: '84%', mt: first ? 1.5 : 0.25 }}>
+      <motion.div
+        initial={isNew && !reduce ? { opacity: 0, y: 8, scale: 0.96 } : false}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: 'spring', stiffness: 520, damping: 32 }}
+        style={{ transformOrigin: mine ? '100% 100%' : '0% 100%' }}
+      >
+        <Box
+          sx={{
+            px: '14px', py: '8px', wordBreak: 'break-word', whiteSpace: 'pre-wrap',
+            borderRadius: mine ? `${round}px ${top}px ${bottom}px ${round}px` : `${top}px ${round}px ${round}px ${bottom}px`,
+            bgcolor: mine ? LIB_ACCENT : 'var(--lib-player)',
+            color: mine ? '#fff' : 'var(--lib-text)',
+          }}
+        >
+          <Box sx={{ display: 'flow-root' }}>
+            <Typography component="span" sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{m.text}</Typography>
+            <Box component="span" sx={{ float: 'right', ml: 1.5, mt: '10px', display: 'inline-flex', alignItems: 'center', gap: 0.4, color: mine ? 'rgba(255,255,255,0.8)' : 'var(--lib-muted)', fontSize: 12, lineHeight: 1 }}>
+              {clock(m.createdAt)}
+              {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 16, color: '#fff' }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 16 }} aria-label="Sent" />)}
+            </Box>
+          </Box>
+        </Box>
+      </motion.div>
+    </Box>
+  );
+}
+
+// Header: back, friend (tap = profile), Code together, and a menu for the rest.
+function LibHeader({ friend, online, typing, status, profileOpen, onBack, onToggleProfile, onCodeTogether, onNudge, nudging, onRemove }) {
+  const [anchor, setAnchor] = useState(null);
+  const close = () => setAnchor(null);
+  const itemSx = { minHeight: 48, fontSize: 16, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING };
+  return (
+    <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 1, flexShrink: 0, borderBottom: '1px solid var(--lib-divider)' }}>
+      <IconButton onClick={onBack} aria-label={profileOpen ? 'Back to chat' : 'Back to friends'} sx={libBackBtnSx}>
+        <ArrowBackRoundedIcon />
+      </IconButton>
+      <ButtonBase onClick={onToggleProfile} aria-label={`${profileOpen ? 'Hide' : 'View'} profile of ${friend.name}`} aria-pressed={profileOpen} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', flex: 1, minWidth: 0, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', ml: -0.5 }}>
+        <PersonAvatar person={friend} size={40} online={online} />
+        <Box sx={{ minWidth: 0, flex: 1 }}>
+          <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{friend.name}</Typography>
+          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: typing || status.live ? LIB_SUCCESS : 'var(--lib-muted)' }}>
+            {typing ? <>typing<TypingDots /></> : status.text}
+          </Typography>
+        </Box>
+      </ButtonBase>
+      <IconButton onClick={onCodeTogether} aria-label="Code together" sx={libIconBtnSx}>
+        <LaptopMacRoundedIcon />
+      </IconButton>
+      <IconButton onClick={(e) => setAnchor(e.currentTarget)} aria-label="More options" aria-haspopup="menu" sx={libIconBtnSx}>
+        <MoreVertRoundedIcon />
+      </IconButton>
+      <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={close} slotProps={{ paper: { sx: { borderRadius: '16px', minWidth: 220 } } }}>
+        <MenuItem onClick={() => { close(); onToggleProfile(); }} sx={itemSx}>{profileOpen ? 'Back to chat' : 'View profile'}</MenuItem>
+        {onNudge && (
+          <MenuItem disabled={nudging} onClick={() => { close(); onNudge(); }} sx={itemSx}>Nudge about streak</MenuItem>
+        )}
+        <MenuItem onClick={() => { close(); onRemove(); }} sx={{ ...itemSx, color: 'error.main' }}>Remove friend</MenuItem>
+      </Menu>
+    </Stack>
+  );
+}
+
 // Clean text bubble: flat colour, no tail, corners tighten inside a run of messages from the same person.
 // `isNew` = arrived while the chat was open, so it pops in (history just appears).
 function Bubble({ m, mine, first, endsRun, isNew }) {
@@ -142,7 +291,9 @@ function Bubble({ m, mine, first, endsRun, isNew }) {
 
 // `actions`: extra header icons. No `onClose` = no close button (always-open desktop panel).
 // `overlay`: node shown instead of the messages + composer (e.g. the friend's profile) while the chat stays live underneath.
-export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay }) {
+// `lib` = phone Library look (must render inside LibraryFont). Then the header shows back / profile / code together / menu,
+// driven by `profileOpen`, `onToggleProfile`, `onNudge` (omit when a nudge makes no sense), `nudging` and `onRemove`.
+export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, lib = false, profileOpen = false, onToggleProfile, onNudge, nudging = false, onRemove }) {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const myId = useSelector((s) => s.auth.user?.id);
@@ -307,6 +458,21 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
       {/* header */}
+      {lib ? (
+        <LibHeader
+          friend={friend}
+          online={online}
+          typing={typing}
+          status={status}
+          profileOpen={profileOpen}
+          onBack={profileOpen ? onToggleProfile : onClose}
+          onToggleProfile={onToggleProfile}
+          onCodeTogether={onCodeTogether}
+          onNudge={onNudge}
+          nudging={nudging}
+          onRemove={onRemove}
+        />
+      ) : (
       <Stack
         direction="row"
         spacing={1.5}
@@ -323,6 +489,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
         {actions}
         {onClose && <WsIconButton title="Close chat" onClick={onClose}><CloseRoundedIcon /></WsIconButton>}
       </Stack>
+      )}
 
       {overlay}
 
@@ -334,17 +501,29 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
           onScroll={onScroll}
           sx={(t) => ({
             flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: { xs: 2, sm: 3 }, py: 2, display: 'flex', flexDirection: 'column', gap: '2px', scrollbarWidth: 'thin',
-            bgcolor: wsSurface(t).panel,
+            bgcolor: lib ? 'var(--lib-bg)' : wsSurface(t).panel,
           })}
         >
-          {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={24} /></Box>}
+          {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={24} sx={lib ? { color: LIB_ACCENT } : undefined} /></Box>}
           {!loading && error && <Typography color="error" variant="body2" sx={{ m: 'auto', textAlign: 'center' }}>{error}</Typography>}
           {!loading && hasMore && (
-            <Button size="small" onClick={loadOlder} disabled={loadingMore} sx={(t) => ({ ...pill(t), textTransform: 'none', mb: 0.5 })}>
-              {loadingMore ? 'Loading…' : 'Load earlier messages'}
-            </Button>
+            lib ? (
+              <ButtonBase onClick={loadOlder} disabled={loadingMore} sx={{ ...libChipSx(false), alignSelf: 'center', mb: 0.5 }}>
+                {loadingMore ? 'Loading…' : 'Load earlier messages'}
+              </ButtonBase>
+            ) : (
+              <Button size="small" onClick={loadOlder} disabled={loadingMore} sx={(t) => ({ ...pill(t), textTransform: 'none', mb: 0.5 })}>
+                {loadingMore ? 'Loading…' : 'Load earlier messages'}
+              </Button>
+            )
           )}
-          {!loading && !error && messages.length === 0 && (
+          {!loading && !error && messages.length === 0 && lib && (
+            <Box sx={{ m: 'auto', textAlign: 'center', px: 2 }}>
+              <Typography sx={{ fontWeight: 700, fontSize: 18, lineHeight: '24px' }}>Say hi to {friend.name.split(' ')[0]}</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>No messages yet. Send a message, or start a coding room together.</Typography>
+            </Box>
+          )}
+          {!loading && !error && messages.length === 0 && !lib && (
             <Stack spacing={0.5} sx={{ alignItems: 'center', m: 'auto', textAlign: 'center', color: 'text.secondary', px: 3 }}>
               <PulseArt icon={<ChatBubbleOutlineRoundedIcon />} />
               <Typography sx={{ fontSize: 14.5, fontWeight: 700, color: 'text.primary', pt: 0.5 }}>Say hi to {friend.name.split(' ')[0]}</Typography>
@@ -363,8 +542,10 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
             const isNew = Date.parse(m.createdAt) > openedAt.current;
             return (
               <Box key={m.id} sx={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                {showDay && <Box sx={(t) => ({ ...pill(t), my: 1.25 })}>{day}</Box>}
-                {m.kind === 'nudge' ? <NudgeLine m={m} mine={mine} friend={friend} /> : m.kind === 'room' ? <RoomCard m={m} mine={mine} friend={friend} /> : <Bubble m={m} mine={mine} first={first} endsRun={endsRun} isNew={isNew} />}
+                {showDay && (lib ? <Box sx={{ ...libDayPill, my: 1.25 }}>{day}</Box> : <Box sx={(t) => ({ ...pill(t), my: 1.25 })}>{day}</Box>)}
+                {lib ? (
+                  m.kind === 'nudge' ? <LibNudgeLine m={m} mine={mine} friend={friend} /> : m.kind === 'room' ? <LibRoomCard m={m} mine={mine} friend={friend} /> : <LibBubble m={m} mine={mine} first={first} endsRun={endsRun} isNew={isNew} />
+                ) : m.kind === 'nudge' ? <NudgeLine m={m} mine={mine} friend={friend} /> : m.kind === 'room' ? <RoomCard m={m} mine={mine} friend={friend} /> : <Bubble m={m} mine={mine} first={first} endsRun={endsRun} isNew={isNew} />}
               </Box>
             );
           })}
@@ -372,7 +553,9 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
             <Box
               role="status"
               aria-label={`${friend.name} is typing`}
-              sx={(t) => ({ alignSelf: 'flex-start', mt: 1, px: 1.75, py: 1.1, borderRadius: '18px 18px 18px 6px', bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}`, color: 'text.secondary', '& > div': { ml: 0 } })}
+              sx={(t) => (lib
+                ? { alignSelf: 'flex-start', mt: 1, px: '14px', py: '12px', borderRadius: '20px 20px 20px 6px', bgcolor: 'var(--lib-player)', color: 'var(--lib-muted)' }
+                : { alignSelf: 'flex-start', mt: 1, px: 1.75, py: 1.1, borderRadius: '18px 18px 18px 6px', bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}`, color: 'text.secondary', '& > div': { ml: 0 } })}
             >
               <TypingDots />
             </Box>
@@ -382,7 +565,9 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
           <IconButton
             aria-label="Jump to latest message"
             onClick={jump}
-            sx={(t) => ({ position: 'absolute', right: 14, bottom: 12, width: 36, height: 36, bgcolor: t.palette.background.paper, boxShadow: '0 2px 6px rgba(0,0,0,0.25)', '&:hover': { bgcolor: t.palette.background.paper } })}
+            sx={(t) => (lib
+              ? { position: 'absolute', right: 16, bottom: 12, width: 40, height: 40, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', border: '1px solid var(--lib-border)', '&:hover': { bgcolor: 'var(--lib-player)' } }
+              : { position: 'absolute', right: 14, bottom: 12, width: 36, height: 36, bgcolor: t.palette.background.paper, boxShadow: '0 2px 6px rgba(0,0,0,0.25)', '&:hover': { bgcolor: t.palette.background.paper } })}
           >
             <KeyboardArrowDownRoundedIcon />
           </IconButton>
@@ -390,6 +575,40 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
       </Box>
 
       {/* composer */}
+      {lib ? (
+        <Stack direction="row" sx={{ alignItems: 'flex-end', gap: 1, display: overlay ? 'none' : 'flex', flexShrink: 0, px: 2, pt: 1, pb: 'calc(8px + env(safe-area-inset-bottom))', bgcolor: 'var(--lib-bg)' }}>
+          <TextField
+            fullWidth
+            multiline
+            maxRows={4}
+            size="small"
+            placeholder="Message"
+            value={text}
+            onChange={onType}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
+                e.preventDefault();
+                send();
+              }
+            }}
+            sx={{
+              '& .MuiOutlinedInput-root': { borderRadius: '22px', minHeight: 44, py: '9px', px: '16px', bgcolor: 'var(--lib-player)', fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-text)' },
+              '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${LIB_ACCENT}` },
+              '& .MuiInputBase-input': { p: 0 },
+              '& fieldset': { border: 'none' },
+            }}
+            slotProps={{ htmlInput: { 'aria-label': `Message ${friend.name}`, maxLength: 1000 } }}
+          />
+          <IconButton
+            aria-label="Send message"
+            onClick={send}
+            disabled={!text.trim() || sending}
+            sx={{ width: 44, height: 44, flexShrink: 0, color: '#fff', bgcolor: LIB_ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)` }, '&.Mui-disabled': { color: 'var(--lib-muted)', bgcolor: 'var(--lib-chip)' } }}
+          >
+            {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: 20 }} />}
+          </IconButton>
+        </Stack>
+      ) : (
       <Stack
         direction="row"
         spacing={1}
@@ -430,7 +649,9 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
           {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: 19 }} />}
         </IconButton>
       </Stack>
+      )}
 
+      {!lib && (
       <Popover
         open={Boolean(emojiAnchor)}
         anchorEl={emojiAnchor}
@@ -445,20 +666,26 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay })
           ))}
         </Box>
       </Popover>
+      )}
     </Box>
   );
 }
 
 // Right-side drawer (full screen on phones) that hosts one friend's chat.
-export default function FriendChat({ friend, onClose, onCodeTogether, actions, overlay }) {
+// `lib` = phone Library look: cream surface, Roboto, and the Library header and composer.
+export default function FriendChat({ friend, onClose, onCodeTogether, actions, overlay, lib = false, ...libProps }) {
+  const pal = useLibraryPalette();
+  const panel = friend && (
+    <ChatPanel key={friend.userId} friend={friend} onClose={onClose} onCodeTogether={() => onCodeTogether(friend)} actions={actions} overlay={overlay} lib={lib} {...libProps} />
+  );
   return (
     <Drawer
       anchor="right"
       open={Boolean(friend)}
       onClose={onClose}
-      slotProps={{ paper: { sx: { width: { xs: '100%', sm: 440 }, maxWidth: '100%', backgroundImage: 'none' } } }}
+      slotProps={{ paper: { sx: { width: { xs: '100%', sm: 440 }, maxWidth: '100%', backgroundImage: 'none', ...(lib && { bgcolor: pal.bg }) } } }}
     >
-      {friend && <ChatPanel key={friend.userId} friend={friend} onClose={onClose} onCodeTogether={() => onCodeTogether(friend)} actions={actions} overlay={overlay} />}
+      {lib && panel ? <LibraryFont sx={{ height: '100%', minHeight: 0 }}>{panel}</LibraryFont> : panel}
     </Drawer>
   );
 }
