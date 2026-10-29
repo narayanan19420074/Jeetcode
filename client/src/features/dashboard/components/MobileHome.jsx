@@ -1,160 +1,43 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Box, ButtonBase, Stack, Typography } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, ButtonBase, Skeleton, Stack, Typography } from '@mui/material';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
-import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
-import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
-import SellRoundedIcon from '@mui/icons-material/SellRounded';
+import SignalCellularAlt1BarRoundedIcon from '@mui/icons-material/SignalCellularAlt1BarRounded';
+import SignalCellularAlt2BarRoundedIcon from '@mui/icons-material/SignalCellularAlt2BarRounded';
+import SignalCellularAltRoundedIcon from '@mui/icons-material/SignalCellularAltRounded';
 import { problemsApi } from '../../../api/problemsApi';
 import CompanyAvatar from '../../../components/CompanyAvatar';
 import { fetchPatterns } from '../../aptitude/aptitudeSlice';
 import { fmtDate, useContest } from '../../contest/contestUtils';
-import { CATEGORY_GROUPS, DIFF_COLOR, tint } from '../dashboardUtils';
-import PromoCarousel from './PromoCarousel';
+import { tint } from '../dashboardUtils';
 import NqtExploreCard from './NqtExploreCard';
+import { LibraryFont, useLibraryPalette } from './libraryStyle';
 
-// Phone home screen: every section is a swipeable row; the page itself only scrolls vertically.
+// Phone home screen in the Library layout: swipeable banners, category cards, topic chips and company rows.
+// Sizes: 16px page gutter, 2:1 banners, 115x80 category cards, 34px chips, 48px company logos, 58px company rows.
 
+const GUTTER = 2; // 16px
 const MAX_TAGS = 30;
 const MAX_COMPANIES = 18;
 const MAX_LEVELS = 12;
+const TRACKING = '0.03em';
 
-const scrollRow = {
-  display: 'flex',
-  gap: 1.25,
-  overflowX: 'auto',
-  mx: -1.75,
-  px: 1.75,
-  pb: 0.5,
-  scrollSnapType: 'x proximity',
-  scrollPaddingLeft: '14px',
-  scrollbarWidth: 'none',
-  '&::-webkit-scrollbar': { display: 'none' },
-};
+const hideScrollbar = { scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } };
+// Rows bleed to the screen edges: the page already has its own side padding, so cancel it here.
+const bleed = { mx: { xs: -1.75, sm: -3 }, overflowX: 'auto', ...hideScrollbar };
+const bleedPad = { xs: 1.75, sm: 3 };
 
-// Each home section has its own accent colour and icon, so Practice, Aptitude, Topics and
-// Companies are easy to tell apart at a glance.
-const ACCENT = { practice: '#6366F1', aptitude: '#F97316', topics: '#A855F7', companies: '#14B8A6' };
-
-const TAG_COLOR = Object.fromEntries(CATEGORY_GROUPS.flatMap((g) => g.tags.map((t) => [t, g.color])));
-
-function SectionPanel({ accent, icon: Icon, title, sub, to, children }) {
-  return (
-    <Box
-      component="section"
-      aria-label={title}
-      sx={(t) => ({
-        borderRadius: '26px',
-        p: 1.75,
-        background: `linear-gradient(160deg, ${tint(accent, t.palette.mode === 'dark' ? 20 : 15)} 0%, ${tint(accent, 4)} 62%, transparent 100%)`,
-        border: `1px solid ${tint(accent, 24)}`,
-      })}
-    >
-      <Box
-        component={RouterLink}
-        to={to}
-        aria-label={`Open ${title}`}
-        sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1.75, color: 'inherit', textDecoration: 'none' }}
-      >
-        <Box
-          sx={{
-            width: 44,
-            height: 44,
-            borderRadius: '15px',
-            display: 'grid',
-            placeItems: 'center',
-            flexShrink: 0,
-            color: '#fff',
-            background: `linear-gradient(135deg, ${accent}, color-mix(in srgb, ${accent} 60%, #000))`,
-            boxShadow: `0 8px 18px -8px ${accent}`,
-          }}
-        >
-          <Icon sx={{ fontSize: 24 }} />
-        </Box>
-        <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-            {title}
-          </Typography>
-          <Typography noWrap variant="caption" color="text.secondary">
-            {sub}
-          </Typography>
-        </Box>
-        <ChevronRightRoundedIcon sx={{ color: 'text.secondary' }} />
-      </Box>
-      {children}
-    </Box>
-  );
-}
-
-// Large tile used by the Practice and Aptitude rows. `progress` (0 to 1) draws a thin bar.
-function Tile({ to, color, icon: Icon, label, sub, progress, badge, width = 'min(44vw, 188px)', dim = false }) {
-  return (
-    <ButtonBase
-      component={RouterLink}
-      to={to}
-      sx={(t) => ({
-        flex: '0 0 auto',
-        width,
-        minHeight: 138,
-        p: 1.75,
-        borderRadius: '20px',
-        scrollSnapAlign: 'start',
-        position: 'relative',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        justifyContent: 'space-between',
-        textAlign: 'left',
-        fontFamily: 'inherit',
-        color: t.palette.text.primary,
-        opacity: dim ? 0.78 : 1,
-        bgcolor: t.palette.background.paper,
-        backgroundImage: `linear-gradient(150deg, ${tint(color, t.palette.mode === 'dark' ? 22 : 14)}, transparent 70%)`,
-        border: `1px solid ${tint(color, 30)}`,
-        boxShadow: t.palette.mode === 'dark' ? 'none' : '0 10px 22px -16px rgba(15,23,42,0.35)',
-      })}
-    >
-      <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Box sx={{ width: 42, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: tint(color, 20), color }}>
-          <Icon sx={{ fontSize: 24 }} />
-        </Box>
-        {badge && (
-          <Typography sx={{ px: 1, py: 0.25, borderRadius: 99, fontSize: '0.7rem', fontWeight: 800, color, bgcolor: tint(color, 16) }}>{badge}</Typography>
-        )}
-      </Box>
-      <Box sx={{ minWidth: 0, width: '100%', mt: 1.5 }}>
-        <Typography
-          sx={{ fontWeight: 800, fontSize: '1.05rem', lineHeight: 1.2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
-        >
-          {label}
-        </Typography>
-        {sub && (
-          <Typography noWrap variant="body2" color="text.secondary" sx={{ mt: 0.4, fontSize: '0.82rem', fontVariantNumeric: 'tabular-nums' }}>
-            {sub}
-          </Typography>
-        )}
-        {progress != null && (
-          <Box sx={{ mt: 1, height: 5, borderRadius: 99, bgcolor: tint(color, 20), overflow: 'hidden' }}>
-            <Box sx={{ width: `${Math.round(Math.max(0, Math.min(1, progress)) * 100)}%`, height: '100%', borderRadius: 99, bgcolor: color }} />
-          </Box>
-        )}
-      </Box>
-    </ButtonBase>
-  );
-}
-
-// Phone-only banner colours: deeper, richer gradients (the wide-screen cards keep their own).
+// Phone-only banner colours.
 const BANNER_GRADIENT = {
-  contest: 'linear-gradient(135deg,#F97316,#9A3412)',
-  daily: 'linear-gradient(135deg,#7C3AED,#2E1065)',
+  contest: 'linear-gradient(135deg,#F7A33B,#E8590C)',
+  daily: 'linear-gradient(135deg,#7E3FA8,#4A1F8C)',
   prep: 'linear-gradient(135deg,#0D9488,#134E4A)',
   pro: 'linear-gradient(135deg,#F59E0B,#78350F)',
   aptitude: 'linear-gradient(135deg,#DB2777,#4C1D95)',
@@ -163,17 +46,223 @@ const BANNER_GRADIENT = {
 
 const problemsUrl = (key, value) => `/problems?${new URLSearchParams({ [key]: value }).toString()}`;
 
-export default function MobileHome({ cards, progress, isAuthenticated, nqtDismissed, onDismissNqt }) {
+const CATEGORIES = [
+  { key: 'all', label: 'All Topics', to: '/problems' },
+  { key: 'Easy', label: 'Easy', to: problemsUrl('difficulty', 'Easy'), color: '#22A06B', bg: '#EAF6EE', Icon: SignalCellularAlt1BarRoundedIcon },
+  { key: 'Medium', label: 'Medium', to: problemsUrl('difficulty', 'Medium'), color: '#F09A2E', bg: '#FFF2E3', Icon: SignalCellularAlt2BarRoundedIcon },
+  { key: 'Hard', label: 'Hard', to: problemsUrl('difficulty', 'Hard'), color: '#EF5B5B', bg: '#FDECEB', Icon: SignalCellularAltRoundedIcon },
+  { key: 'lists', label: 'Favorites', to: '/dashboard?view=list&list=favorite', color: '#3F8CE8', bg: '#EDF2F9', Icon: StarRoundedIcon },
+];
+
+function SectionHeading({ to, children }) {
+  const pal = useLibraryPalette();
+  return (
+    <Box component={RouterLink} to={to} sx={{ display: 'flex', alignSelf: 'flex-start', alignItems: 'center', gap: 0.5, color: pal.text, textDecoration: 'none' }}>
+      <Typography component="h2" sx={{ fontSize: 18, lineHeight: '24px', fontWeight: 700 }}>
+        {children}
+      </Typography>
+      <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: 22, color: pal.muted }} />
+    </Box>
+  );
+}
+
+function Banners({ cards }) {
+  const [index, setIndex] = useState(0);
+  return (
+    <Box sx={{ position: 'relative' }}>
+      <Box
+        onScroll={(e) => setIndex(Math.round(e.currentTarget.scrollLeft / (e.currentTarget.clientWidth + 12)))}
+        sx={{ display: 'flex', gap: '12px', overflowX: 'auto', scrollSnapType: 'x mandatory', ...hideScrollbar }}
+      >
+        {cards.map(({ key, title, to, icon: Icon, gradient }) => (
+          <ButtonBase
+            key={key}
+            component={RouterLink}
+            to={to}
+            aria-label={title}
+            sx={{
+              flex: '0 0 100%',
+              scrollSnapAlign: 'start',
+              position: 'relative',
+              overflow: 'hidden',
+              aspectRatio: '2 / 1',
+              borderRadius: '20px',
+              textAlign: 'left',
+              display: 'block',
+              color: '#fff',
+              background: gradient,
+            }}
+          >
+            <Box
+              aria-hidden
+              sx={{
+                position: 'absolute',
+                right: '7%',
+                top: '14%',
+                width: '30%',
+                aspectRatio: '1',
+                borderRadius: '50%',
+                display: 'grid',
+                placeItems: 'center',
+                border: '6px solid rgba(255,255,255,0.55)',
+                background: 'linear-gradient(160deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+              }}
+            >
+              <Icon sx={{ fontSize: 'clamp(36px, 12vw, 56px)', color: '#fff' }} />
+            </Box>
+            <Typography
+              component="span"
+              sx={{ position: 'absolute', left: 16, right: '38%', bottom: 14, fontSize: 28, lineHeight: '33px', fontWeight: 700, letterSpacing: '-0.01em', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+            >
+              {title}
+            </Typography>
+          </ButtonBase>
+        ))}
+      </Box>
+      {cards.length > 1 && (
+        <Box aria-hidden sx={{ position: 'absolute', right: 14, bottom: 10, display: 'flex', gap: '5px', pointerEvents: 'none' }}>
+          {cards.map((b, i) => (
+            <Box key={b.key} sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#fff', opacity: i === index ? 0.95 : 0.4 }} />
+          ))}
+        </Box>
+      )}
+    </Box>
+  );
+}
+
+// Square card: icon on top, label at the bottom.
+function CategoryCard({ to, label, color, bg, icon: Icon, all = false, dim = false }) {
+  const pal = useLibraryPalette();
+  return (
+    <ButtonBase
+      component={RouterLink}
+      to={to}
+      sx={(t) => ({
+        flex: 'none',
+        width: 115,
+        height: 80,
+        p: '12px',
+        borderRadius: '16px',
+        border: `1.5px solid ${pal.border}`,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'space-between',
+        textAlign: 'left',
+        color: pal.text,
+        opacity: dim ? 0.7 : 1,
+        background: all
+          ? t.palette.mode === 'dark'
+            ? 'linear-gradient(135deg, rgba(181,138,242,0.22), rgba(242,140,122,0.16))'
+            : 'linear-gradient(125deg, #F6DCE3 0%, #EEE3F6 50%, #F8DDEB 100%)'
+          : t.palette.mode === 'dark'
+            ? tint(color, 16)
+            : bg,
+      })}
+    >
+      {all ? (
+        <Box aria-hidden sx={{ width: 30, height: 28, borderRadius: '9px', display: 'grid', placeItems: 'center', background: 'linear-gradient(160deg, #B58AF2, #F28C7A)' }}>
+          <CodeRoundedIcon sx={{ fontSize: 20, color: '#fff' }} />
+        </Box>
+      ) : (
+        <Icon aria-hidden sx={{ fontSize: 28, color }} />
+      )}
+      <Typography component="span" sx={{ maxWidth: '100%', fontSize: 15, lineHeight: '19px', letterSpacing: TRACKING, display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        {label}
+      </Typography>
+    </ButtonBase>
+  );
+}
+
+// Topic chips flow into three rows that scroll sideways together.
+function Knowledge({ tags }) {
+  const pal = useLibraryPalette();
+  const rows = useMemo(() => {
+    const out = [[], [], []];
+    tags.forEach((t, i) => out[i % 3].push(t));
+    return out;
+  }, [tags]);
+  return (
+    <Box sx={bleed}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, px: bleedPad, width: 'max-content' }}>
+        {rows.map((row, r) => (
+          <Box key={r} sx={{ display: 'flex', gap: 1 }}>
+            {row.map(({ tag }) => (
+              <ButtonBase
+                key={tag}
+                component={RouterLink}
+                to={problemsUrl('tag', tag)}
+                sx={{ height: 34, px: '14px', borderRadius: 999, bgcolor: pal.chip, color: pal.chipText, fontSize: 15, letterSpacing: TRACKING, whiteSpace: 'nowrap' }}
+              >
+                {tag}
+              </ButtonBase>
+            ))}
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
+}
+
+// Company rows flow into columns of three, 236px wide, so the next column peeks in from the right.
+function Companies({ companies }) {
+  const pal = useLibraryPalette();
+  return (
+    <Box sx={bleed}>
+      <Box sx={{ display: 'grid', gridAutoFlow: 'column', gridTemplateRows: 'repeat(3, auto)', gridAutoColumns: 236, columnGap: '16px', px: bleedPad, width: 'max-content' }}>
+        {companies.map(({ company, count }) => (
+          <ButtonBase
+            key={company}
+            component={RouterLink}
+            to={problemsUrl('company', company)}
+            sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '12px', mb: '5px', textAlign: 'left', color: pal.text }}
+          >
+            <CompanyAvatar name={company} size={48} />
+            <Box sx={{ flex: 1, minWidth: 0, pb: '4px', borderBottom: `1px solid ${pal.divider}` }}>
+              <Typography noWrap sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING }}>
+                {company}
+              </Typography>
+              <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted }}>
+                {count.toLocaleString('en-IN')} {count === 1 ? 'Question' : 'Questions'}
+              </Typography>
+            </Box>
+          </ButtonBase>
+        ))}
+      </Box>
+    </Box>
+  );
+}
+
+function ChipSkeleton() {
+  return (
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+      {[0, 1, 2].map((r) => (
+        <Box key={r} sx={{ display: 'flex', gap: 1 }}>
+          {[70, 110, 84, 130].map((w) => (
+            <Skeleton key={w} variant="rounded" width={w} height={34} sx={{ borderRadius: 999 }} />
+          ))}
+        </Box>
+      ))}
+    </Box>
+  );
+}
+
+export default function MobileHome({ cards, nqtDismissed, onDismissNqt }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { contest } = useContest();
   const { patterns, patternsStatus } = useSelector((s) => s.aptitude);
-  const [tags, setTags] = useState([]);
-  const [companies, setCompanies] = useState([]);
+  const [tags, setTags] = useState(null);
+  const [companies, setCompanies] = useState(null);
 
   useEffect(() => {
-    problemsApi.getTags().then(({ data }) => setTags(data.data.items.slice(0, MAX_TAGS))).catch(() => {});
-    problemsApi.getCompanies().then(({ data }) => setCompanies(data.data.items.slice(0, MAX_COMPANIES))).catch(() => {});
+    problemsApi
+      .getTags()
+      .then(({ data }) => setTags(data.data.items.slice(0, MAX_TAGS)))
+      .catch(() => setTags([]));
+    problemsApi
+      .getCompanies()
+      .then(({ data }) => setCompanies(data.data.items.slice(0, MAX_COMPANIES)))
+      .catch(() => setCompanies([]));
   }, []);
 
   useEffect(() => {
@@ -189,7 +278,6 @@ export default function MobileHome({ cards, progress, isAuthenticated, nqtDismis
         key: 'contest',
         title: contest.title,
         text: upcoming ? `Starts ${fmtDate(contest.startsAt)}` : 'View the contest details and standings.',
-        cta: 'View contest',
         to: '/dashboard?view=contest',
         icon: EmojiEventsRoundedIcon,
         gradient: BANNER_GRADIENT.contest,
@@ -198,139 +286,70 @@ export default function MobileHome({ cards, progress, isAuthenticated, nqtDismis
     ];
   }, [contest, cards]);
 
-  const total = progress?.total || { Easy: 0, Medium: 0, Hard: 0 };
-  const solved = progress?.solved || { Easy: 0, Medium: 0, Hard: 0 };
-  const totalAll = total.Easy + total.Medium + total.Hard;
-  const solvedAll = solved.Easy + solved.Medium + solved.Hard;
-
   const levels = patterns.slice(0, MAX_LEVELS);
 
   return (
-    <Stack spacing={3}>
-      <PromoCarousel cards={banners} />
+    <LibraryFont>
+      <Stack spacing={4}>
+        <Banners cards={banners} />
 
-      {!nqtDismissed && (
-        <Box sx={{ '& a': { mb: 0 } }}>
-          <NqtExploreCard onDismiss={onDismissNqt} />
-        </Box>
-      )}
-
-      <SectionPanel accent={ACCENT.practice} icon={CodeRoundedIcon} title="Practice" sub="Coding problems by difficulty" to="/problems">
-        <Box sx={scrollRow}>
-          <Tile to="/problems" color="#6366F1" icon={LibraryBooksRoundedIcon} label="All problems" sub={progress ? `${solvedAll}/${totalAll} solved` : undefined} progress={progress && totalAll ? solvedAll / totalAll : undefined} />
-          {['Easy', 'Medium', 'Hard'].map((d) => (
-            <Tile
-              key={d}
-              to={problemsUrl('difficulty', d)}
-              color={DIFF_COLOR[d]}
-              icon={CheckCircleOutlineRoundedIcon}
-              label={d}
-              sub={progress ? `${solved[d]}/${total[d]} solved` : undefined}
-              progress={progress && total[d] ? solved[d] / total[d] : undefined}
-            />
-          ))}
-          <Tile to="/dashboard?view=list&list=favorite" color="#F59E0B" icon={StarRoundedIcon} label="Favorites" sub="Saved problems" />
-        </Box>
-      </SectionPanel>
-
-      {levels.length > 0 && (
-        <SectionPanel accent={ACCENT.aptitude} icon={CalculateRoundedIcon} title="Aptitude" sub="Learn, practice and take timed tests" to="/aptitude">
-          <Box sx={scrollRow}>
-            {levels.map((p, i) => {
-              const best = Math.round(p.progress?.bestScore ?? 0);
-              const cleared = best >= p.passPercentage;
-              const unlocked = Boolean(p.progress?.unlocked);
-              const sub = cleared ? 'Cleared' : unlocked ? (best ? `Best ${best}%` : 'Ready to start') : 'Locked';
-              return (
-                <Tile
-                  key={p.slug}
-                  to={`/aptitude/${p.slug}`}
-                  color={cleared ? '#10B981' : ACCENT.aptitude}
-                  icon={unlocked || cleared ? CalculateRoundedIcon : LockRoundedIcon}
-                  label={p.title}
-                  sub={sub}
-                  badge={`Level ${i + 1}`}
-                  progress={unlocked || cleared ? best / 100 : undefined}
-                  dim={!unlocked && !cleared}
-                  width="min(58vw, 232px)"
-                />
-              );
-            })}
+        {!nqtDismissed && (
+          <Box sx={{ '& a': { mb: 0 } }}>
+            <NqtExploreCard onDismiss={onDismissNqt} />
           </Box>
-        </SectionPanel>
-      )}
+        )}
 
-      {tags.length > 0 && (
-        <SectionPanel accent={ACCENT.topics} icon={SellRoundedIcon} title="Topics" sub="Browse problems by topic" to="/problems">
-          <Box sx={scrollRow}>
-            <Box sx={{ display: 'grid', gridTemplateRows: 'repeat(3, auto)', gridAutoFlow: 'column', gridAutoColumns: 'max-content', gap: 1.1, justifyItems: 'start' }}>
-              {tags.map(({ tag }) => {
-                const c = TAG_COLOR[tag] || ACCENT.topics;
-                return (
-                  <ButtonBase
-                    key={tag}
-                    onClick={() => navigate(problemsUrl('tag', tag))}
-                    sx={(t) => ({
-                      px: 2,
-                      py: 1.25,
-                      gap: 1,
-                      borderRadius: 999,
-                      fontFamily: 'inherit',
-                      whiteSpace: 'nowrap',
-                      color: t.palette.text.primary,
-                      bgcolor: t.palette.background.paper,
-                      border: `1px solid ${tint(c, 34)}`,
-                    })}
-                  >
-                    <Box aria-hidden sx={{ width: 9, height: 9, borderRadius: '50%', bgcolor: c }} />
-                    <Typography sx={{ fontWeight: 700, fontSize: '1rem' }}>{tag}</Typography>
-                  </ButtonBase>
-                );
-              })}
-            </Box>
-          </Box>
-        </SectionPanel>
-      )}
-
-      {companies.length > 0 && (
-        <SectionPanel accent={ACCENT.companies} icon={BusinessRoundedIcon} title="Companies" sub="Questions asked by each company" to="/prep">
-          <Box sx={scrollRow}>
-            <Box sx={{ display: 'grid', gridTemplateRows: 'repeat(2, auto)', gridAutoFlow: 'column', gridAutoColumns: 'min(68vw, 260px)', gap: 1.25 }}>
-              {companies.map(({ company, count }) => (
-                <ButtonBase
-                  key={company}
-                  onClick={() => navigate(problemsUrl('company', company))}
-                  sx={(t) => ({
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1.5,
-                    p: 1.5,
-                    justifyContent: 'flex-start',
-                    textAlign: 'left',
-                    fontFamily: 'inherit',
-                    color: 'text.primary',
-                    minWidth: 0,
-                    borderRadius: '20px',
-                    scrollSnapAlign: 'start',
-                    bgcolor: t.palette.background.paper,
-                    border: `1px solid ${tint(ACCENT.companies, 28)}`,
-                  })}
-                >
-                  <CompanyAvatar name={company} size={54} />
-                  <Box sx={{ flex: 1, minWidth: 0 }}>
-                    <Typography noWrap sx={{ fontWeight: 800, fontSize: '1.05rem' }}>
-                      {company}
-                    </Typography>
-                    <Typography noWrap variant="body2" color="text.secondary" sx={{ fontSize: '0.84rem', fontVariantNumeric: 'tabular-nums' }}>
-                      {count.toLocaleString('en-IN')} {count === 1 ? 'Question' : 'Questions'}
-                    </Typography>
-                  </Box>
-                </ButtonBase>
+        <Stack spacing={1.5}>
+          <SectionHeading to="/problems">Category</SectionHeading>
+          <Box sx={bleed}>
+            <Box sx={{ display: 'flex', gap: '11px', px: bleedPad, width: 'max-content' }}>
+              {CATEGORIES.map(({ key, icon, Icon, ...c }) => (
+                <CategoryCard key={key} {...c} icon={Icon} all={key === 'all'} />
               ))}
             </Box>
           </Box>
-        </SectionPanel>
-      )}
-    </Stack>
+        </Stack>
+
+        {levels.length > 0 && (
+          <Stack spacing={1.5}>
+            <SectionHeading to="/aptitude">Aptitude</SectionHeading>
+            <Box sx={bleed}>
+              <Box sx={{ display: 'flex', gap: '11px', px: bleedPad, width: 'max-content' }}>
+                {levels.map((p) => {
+                  const best = Math.round(p.progress?.bestScore ?? 0);
+                  const cleared = best >= p.passPercentage;
+                  const unlocked = Boolean(p.progress?.unlocked);
+                  return (
+                    <CategoryCard
+                      key={p.slug}
+                      to={`/aptitude/${p.slug}`}
+                      label={p.title}
+                      color={cleared ? '#22A06B' : '#F09A2E'}
+                      bg={cleared ? '#EAF6EE' : '#FFF2E3'}
+                      icon={cleared ? CheckRoundedIcon : unlocked ? CalculateRoundedIcon : LockRoundedIcon}
+                      dim={!unlocked && !cleared}
+                    />
+                  );
+                })}
+              </Box>
+            </Box>
+          </Stack>
+        )}
+
+        {tags === null || tags.length > 0 ? (
+          <Stack spacing={1.5}>
+            <SectionHeading to="/problems">Knowledge</SectionHeading>
+            {tags === null ? <ChipSkeleton /> : <Knowledge tags={tags} />}
+          </Stack>
+        ) : null}
+
+        {companies === null || companies.length > 0 ? (
+          <Stack spacing={1.5}>
+            <SectionHeading to="/prep">Companies</SectionHeading>
+            {companies === null ? <Skeleton variant="rounded" height={168} sx={{ borderRadius: '12px' }} /> : <Companies companies={companies} />}
+          </Stack>
+        ) : null}
+      </Stack>
+    </LibraryFont>
   );
 }
