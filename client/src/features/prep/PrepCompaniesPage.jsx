@@ -142,7 +142,7 @@ export default function PrepCompaniesPage() {
   // company roadmap is open, so search text survives going back.
   if (isMobile) {
     return (
-      <Box sx={{ px: 1.75, pb: 2, maxWidth: 640, mx: 'auto' }}>
+      <Box sx={{ px: 2, pb: 2, maxWidth: 640, mx: 'auto' }}>
         <Box sx={{ display: selected ? 'none' : 'block' }}>
           <MobilePrepCompanies
             loading={loading} list={list} shown={shown} hasMore={visible < list.length}

@@ -1,10 +1,12 @@
 import { cloneElement } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Alert, Box, Button, ButtonBase, CircularProgress, Stack, Typography } from '@mui/material';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Alert, Box, Button, ButtonBase, CircularProgress, IconButton, Stack, Typography } from '@mui/material';
 import { ThemeProvider, alpha } from '@mui/material/styles';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
-import BackToDashboard from '../../../components/BackToDashboard';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { tint } from '../../dashboard/dashboardUtils';
+import { HeaderTile, LibraryFont, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import RoadMap from './RoadMap';
 
 // Phone layout of the Aptitude page. It follows the phone Problems page: same page padding, back button,
@@ -12,67 +14,56 @@ import RoadMap from './RoadMap';
 
 export default function MobileAptitude({ tracks, track, trackPatterns, cleared, currentIndex, alienKind, trackTheme, loading, error, onPickTrack }) {
   const navigate = useNavigate();
+  const pal = useLibraryPalette();
+  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
   const accent = track.color;
   const total = trackPatterns.length;
   const current = trackPatterns[currentIndex];
   const actionLabel = cleared === 0 ? 'Start' : cleared >= total ? 'Review' : 'Continue';
 
   return (
-    <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
-      <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
+    <LibraryFont>
+    <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
+      <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={{ width: 44, height: 44, ml: -1, color: pal.text }}>
+        <ArrowBackRoundedIcon />
+      </IconButton>
 
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mt: 1 }}>
-        <Box
-          sx={{
-            width: 84,
-            height: 84,
-            mx: 'auto',
-            borderRadius: '26px',
-            display: 'grid',
-            placeItems: 'center',
-            color: '#fff',
-            background: `linear-gradient(135deg, ${accent}, color-mix(in srgb, ${accent} 60%, #000))`,
-            boxShadow: `0 14px 26px -12px ${accent}`,
-          }}
-        >
-          {cloneElement(track.icon, { sx: { fontSize: 44 } })}
-        </Box>
-        <Typography component="h1" noWrap sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
+      <Box sx={{ textAlign: 'center', mt: 1.5 }}>
+        <HeaderTile>{cloneElement(track.icon, { sx: { fontSize: 28 } })}</HeaderTile>
+        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
           {track.label}
         </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          Placement preparation
-        </Typography>
+        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: '0.03em', color: pal.muted }}>Placement preparation</Typography>
 
         {!loading && total > 0 && (
           <>
-            <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2 }}>
+            <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2.5 }}>
               <Box
                 role="progressbar"
                 aria-label="Levels cleared"
                 aria-valuemin={0}
                 aria-valuemax={total}
                 aria-valuenow={cleared}
-                sx={{ flex: 1, maxWidth: 260, height: 8, borderRadius: 99, bgcolor: tint(accent, 20), overflow: 'hidden' }}
+                sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint('#F2B63C', 28), overflow: 'hidden' }}
               >
-                <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: 99, bgcolor: accent, transition: 'width .5s' }} />
+                <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: 99, bgcolor: '#F2B63C', transition: 'width .5s' }} />
               </Box>
-              <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+              <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
                 {cleared}
-                <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+                <Box component="span" sx={{ color: pal.muted, fontWeight: 400 }}>
                   /{total}
                 </Box>
               </Typography>
             </Stack>
 
-            <Stack direction="row" sx={{ justifyContent: 'center', mt: 2 }}>
+            <Stack direction="row" sx={{ justifyContent: 'center', mt: 2.5 }}>
               <Button
                 onClick={() => current && navigate(`/aptitude/${current.slug}`)}
                 disableElevation
                 variant="contained"
                 startIcon={<PlayArrowRoundedIcon />}
-                sx={{ height: 48, px: 3.5, borderRadius: 999, fontWeight: 800, fontSize: '1rem', textTransform: 'none', bgcolor: tint(accent, 20), color: accent, '&:hover': { bgcolor: tint(accent, 30) } }}
+                sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: '0.03em', textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : '#6B4A1E', '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
               >
                 {actionLabel}
               </Button>
@@ -88,12 +79,12 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
             position: 'sticky',
             top: 0,
             zIndex: 10,
-            mx: -1.75,
-            px: 1.75,
+            mx: -2,
+            px: 2,
             pt: 'calc(8px + env(safe-area-inset-top))',
             pb: 1,
             mt: 1.5,
-            bgcolor: alpha(t.palette.background.default, 0.94),
+            bgcolor: alpha(pal.bg, 0.94),
             backdropFilter: 'blur(8px)',
           })}
         >
@@ -122,7 +113,7 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                   <Box sx={{ width: 44, height: 44, borderRadius: '15px', display: 'grid', placeItems: 'center', bgcolor: tint(t.color, selected ? 24 : 12), color: t.color }}>
                     {cloneElement(t.icon, { sx: { fontSize: 26 } })}
                   </Box>
-                  <Typography noWrap sx={{ maxWidth: '100%', fontWeight: 700, fontSize: '0.82rem', lineHeight: 1.2 }}>
+                  <Typography noWrap sx={{ maxWidth: '100%', fontWeight: 500, fontSize: 13, lineHeight: 1.2, letterSpacing: '0.03em' }}>
                     {t.short}
                   </Typography>
                 </ButtonBase>
@@ -150,17 +141,20 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
           </Typography>
         ) : (
           <ThemeProvider theme={trackTheme}>
-            <RoadMap
-              key={track.key}
-              compact
-              patterns={trackPatterns}
-              currentIndex={currentIndex}
-              alienKind={alienKind}
-              onOpen={(pattern) => navigate(`/aptitude/${pattern.slug}`)}
-            />
+            <LibraryFont>
+              <RoadMap
+                key={track.key}
+                compact
+                patterns={trackPatterns}
+                currentIndex={currentIndex}
+                alienKind={alienKind}
+                onOpen={(pattern) => navigate(`/aptitude/${pattern.slug}`)}
+              />
+            </LibraryFont>
           </ThemeProvider>
         )}
       </Box>
     </Box>
+    </LibraryFont>
   );
 }

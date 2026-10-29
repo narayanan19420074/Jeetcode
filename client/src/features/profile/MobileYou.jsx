@@ -1,4 +1,5 @@
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Avatar, Box, Button, ButtonBase, Chip, CircularProgress, IconButton, Link, Stack, Typography, alpha } from '@mui/material';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
@@ -7,17 +8,19 @@ import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import BackToDashboard from '../../components/BackToDashboard';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ActivityHeatmap from '../../components/ActivityHeatmap';
 import ProBadge from '../../components/ProBadge';
 import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, tint } from '../dashboard/dashboardUtils';
 import AchievementBadge from './AchievementBadge';
+import { LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
 
 // Phone layout of the You page. It follows the phone Problems and Dashboard pages (MobileProblems,
 // MobileHome): same page padding, 44px icon buttons, centred header, 1.25rem section titles,
 // divider-separated rows and the same type sizes. There is no top navigation bar on phones.
 
 const ACCENT = '#6366F1';
+const TRACKING = '0.03em';
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 const EMPTY_HEATMAP = Array.from({ length: 49 }, (_, i) => ({ day: i, submissions: 0 }));
 
@@ -25,8 +28,8 @@ const scrollRow = {
   display: 'flex',
   gap: 1,
   overflowX: 'auto',
-  mx: -1.75,
-  px: 1.75,
+  mx: -2,
+  px: 2,
   pb: 0.5,
   scrollbarWidth: 'none',
   '&::-webkit-scrollbar': { display: 'none' },
@@ -35,7 +38,7 @@ const scrollRow = {
 function SectionTitle({ children, aside }) {
   return (
     <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 1.5 }}>
-      <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
+      <Typography component="h2" sx={{ fontWeight: 700, fontSize: 18, lineHeight: '24px' }}>
         {children}
       </Typography>
       {aside && (
@@ -49,6 +52,7 @@ function SectionTitle({ children, aside }) {
 
 // One tappable row. Lists and submissions share it (same look as the Problems rows).
 function Row({ leading, title, subtitle, trailing, onClick }) {
+  const pal = useLibraryPalette();
   return (
     <ButtonBase
       onClick={onClick}
@@ -57,23 +61,21 @@ function Row({ leading, title, subtitle, trailing, onClick }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        gap: 1.5,
-        py: 1.5,
-        pl: 0.5,
+        gap: '12px',
+        py: 1.25,
         textAlign: 'left',
         fontFamily: 'inherit',
         color: 'inherit',
-        borderBottom: '1px solid',
-        borderColor: 'divider',
+        borderBottom: `1px solid ${pal.divider}`,
         '&:last-of-type': { borderBottom: 'none' },
       }}
     >
       {leading}
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35 }}>
+        <Typography noWrap sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING }}>
           {title}
         </Typography>
-        <Typography noWrap variant="body2" color="text.secondary" sx={{ mt: 0.4, fontSize: '0.82rem', fontVariantNumeric: 'tabular-nums' }}>
+        <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
           {subtitle}
         </Typography>
       </Box>
@@ -84,6 +86,8 @@ function Row({ leading, title, subtitle, trailing, onClick }) {
 
 export default function MobileYou({ user, initials, socials, socialUrl, totals, activity, subs, onLoadSubs, listsApi, badges, earnedCount, activeThisMonth, tab, onTab, timeAgo }) {
   const navigate = useNavigate();
+  const pal = useLibraryPalette();
+  const isAuthenticated = useSelector((st) => st.auth.isAuthenticated);
 
   const solvedBy = { Easy: user.easySolved ?? 0, Medium: user.mediumSolved ?? 0, Hard: user.hardSolved ?? 0 };
   const totalAll = totals.Easy + totals.Medium + totals.Hard;
@@ -91,36 +95,39 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
   const hasMeta = user.location || user.company || user.website || socials.length > 0;
 
   return (
-    <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
+    <LibraryFont>
+    <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
       {/* Back + settings */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
+        <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={{ width: 44, height: 44, ml: -1, color: pal.text }}>
+          <ArrowBackRoundedIcon />
+        </IconButton>
         <IconButton
           component={RouterLink}
           to="/settings"
           aria-label="Settings"
-          sx={(t) => ({ width: 44, height: 44, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), color: ACCENT })}
+          sx={{ width: 40, height: 40, bgcolor: pal.player, color: pal.text, '&:hover': { bgcolor: pal.player } }}
         >
           <SettingsRoundedIcon />
         </IconButton>
       </Stack>
 
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mt: 1 }}>
+      <Box sx={{ textAlign: 'center', mt: 1.5 }}>
         <Avatar
           src={user.avatarUrl || undefined}
           alt=""
-          sx={{ width: 84, height: 84, mx: 'auto', fontSize: '1.8rem', fontWeight: 800, bgcolor: 'primary.main', color: 'primary.contrastText', boxShadow: `0 14px 26px -12px ${ACCENT}` }}
+          sx={{ width: 81, height: 81, mx: 'auto', fontSize: '1.8rem', fontWeight: 700, bgcolor: 'primary.main', color: 'primary.contrastText', boxShadow: `0 14px 26px -12px ${ACCENT}` }}
         >
           {initials}
         </Avatar>
-        <Stack direction="row" spacing={1} sx={{ alignItems: 'center', justifyContent: 'center', mt: 1.75 }}>
-          <Typography component="h1" noWrap sx={{ fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em', minWidth: 0 }}>
+        <Stack direction="row" spacing={1} sx={{ alignItems: 'center', justifyContent: 'center', mt: 1.5 }}>
+          <Typography component="h1" noWrap sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px', minWidth: 0 }}>
             {user.name}
           </Typography>
           {user.isPro && <ProBadge />}
         </Stack>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
+        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: TRACKING, color: pal.muted }}>
           @{user.handle}
         </Typography>
         {user.bio && (
@@ -145,20 +152,20 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
       </Box>
 
       {/* Progress */}
-      <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2.5 }}>
+      <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2.5 }}>
         <Box
           role="progressbar"
           aria-label="Problems solved"
           aria-valuemin={0}
           aria-valuemax={totalAll}
           aria-valuenow={solvedAll}
-          sx={{ flex: 1, maxWidth: 260, height: 8, borderRadius: 99, bgcolor: tint(ACCENT, 20), overflow: 'hidden' }}
+          sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint('#F2B63C', 28), overflow: 'hidden' }}
         >
-          <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: ACCENT, transition: 'width .5s' }} />
+          <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: '#F2B63C', transition: 'width .5s' }} />
         </Box>
-        <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+        <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
           {solvedAll}
-          <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+          <Box component="span" sx={{ color: pal.muted, fontWeight: 400 }}>
             /{totalAll ? totalAll.toLocaleString('en-IN') : '–'}
           </Box>
         </Typography>
@@ -166,7 +173,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 1, mt: 2 }}>
         {DIFFICULTIES.map((d) => (
-          <Box key={d} sx={{ p: 1.5, borderRadius: '20px', textAlign: 'center', bgcolor: tint(DIFF_COLOR[d], 14) }}>
+          <Box key={d} sx={{ p: 1.5, borderRadius: '16px', textAlign: 'center', bgcolor: tint(DIFF_COLOR[d], 14) }}>
             <Typography sx={{ fontWeight: 800, fontSize: '0.78rem', color: DIFF_COLOR[d] }}>{d}</Typography>
             <Typography sx={{ mt: 0.25, fontWeight: 800, fontSize: '1.05rem', fontVariantNumeric: 'tabular-nums' }}>
               {solvedBy[d]}
@@ -210,14 +217,15 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
             onClick={() => onTab(t.key)}
             aria-pressed={tab === t.key}
             sx={{
-              height: 40,
-              px: 2.25,
+              height: 34,
+              px: '14px',
               borderRadius: 999,
               fontFamily: 'inherit',
-              fontWeight: 700,
-              fontSize: '0.95rem',
-              color: tab === t.key ? '#fff' : 'text.primary',
-              bgcolor: tab === t.key ? ACCENT : tint(ACCENT, 12),
+              fontWeight: 500,
+              fontSize: 15,
+              letterSpacing: TRACKING,
+              color: tab === t.key ? '#fff' : pal.chipText,
+              bgcolor: tab === t.key ? ACCENT : pal.chip,
             }}
           >
             {t.label}
@@ -225,7 +233,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
         ))}
       </Stack>
 
-      <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+      <Box sx={{ borderTop: `1px solid ${pal.divider}` }}>
         {tab === 'lists' && (
           <>
             {listsApi.lists.map((l) => (
@@ -323,5 +331,6 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
         )}
       </Box>
     </Box>
+    </LibraryFont>
   );
 }

@@ -40,9 +40,12 @@ export const useLibraryPalette = () => LIBRARY_PALETTE[useTheme().palette.mode =
 const VARIANTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'button', 'caption', 'overline'];
 const TYPOGRAPHY = { fontFamily: LIB_FONT, ...Object.fromEntries(VARIANTS.map((v) => [v, { fontFamily: LIB_FONT }])) };
 
-// Pages that use the Library look on phones: the dashboard home (no ?view= open) and the problem list.
-export const isLibraryRoute = (pathname, search) =>
-  (pathname.replace(/\/+$/, '') === '/dashboard' && !new URLSearchParams(search).get('view')) || pathname === '/problems' || pathname.startsWith('/problems/');
+// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude, Companies and You.
+export const isLibraryRoute = (pathname, search) => {
+  const path = pathname.replace(/\/+$/, '');
+  if (path === '/dashboard') return !new URLSearchParams(search).get('view');
+  return path === '/problems' || path.startsWith('/problems/') || ['/aptitude', '/prep', '/you'].includes(path);
+};
 
 // Roboto for everything inside (menus and dialogs opened from it included).
 export function LibraryFont({ children }) {
@@ -95,6 +98,17 @@ export function MiniPlayer({ featured, aboveNav }) {
         </Typography>
       </Box>
       <PlayArrowRoundedIcon aria-hidden sx={{ fontSize: 32, flex: 'none' }} />
+    </Box>
+  );
+}
+
+// 81px page-header tile: soft gradient square with the page icon on a coloured blob.
+export function HeaderTile({ children }) {
+  return (
+    <Box sx={{ width: 81, height: 81, mx: 'auto', borderRadius: '22px', display: 'grid', placeItems: 'center', background: 'linear-gradient(135deg, #F6DCE3 0%, #EEE3F6 55%, #F8DDEB 100%)' }}>
+      <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', color: '#fff', background: 'linear-gradient(160deg, #B58AF2, #F28C7A)' }}>
+        {children}
+      </Box>
     </Box>
   );
 }
