@@ -13,9 +13,9 @@ import { WS, mono } from './wsTokens';
      primary   - the one main action (Submit)
      secondary - normal action on a tonal fill (Run)
      ghost     - quiet action, no fill until hover
-   Sizes: md (32px, desktop) | lg (40px, touch) */
+   Sizes: md (32px, desktop) | lg (40px, touch) | xl (44px, phone icon buttons) */
 
-const ctrlHeight = (size) => (size === 'lg' ? WS.ctrlLg : WS.ctrl);
+const ctrlHeight = (size) => (size === 'xl' ? 44 : size === 'lg' ? WS.ctrlLg : WS.ctrl);
 
 /* Width of an element in px (0 until measured). Pass the element itself (kept
    in state via a callback ref), so panes that mount late are still measured.
@@ -154,11 +154,11 @@ export const WsIconButton = forwardRef(function WsIconButton(
           width: h,
           height: h,
           flexShrink: 0,
-          borderRadius: `${WS.radius}px`,
+          borderRadius: size === 'xl' ? '50%' : `${WS.radius}px`,
           color: active ? t.palette.primary.main : t.palette.text.secondary,
           bgcolor: active ? alpha(t.palette.primary.main, 0.14) : 'transparent',
           '&:hover': { bgcolor: active ? alpha(t.palette.primary.main, 0.2) : alpha(t.palette.text.primary, 0.08), color: active ? t.palette.primary.main : t.palette.text.primary },
-          '& svg': { fontSize: size === 'lg' ? 22 : 19 },
+          '& svg': { fontSize: size === 'xl' ? 24 : size === 'lg' ? 22 : 19 },
           '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: 2 },
         }),
         ...(Array.isArray(sx) ? sx : [sx]),

@@ -7,8 +7,9 @@ import { roomApi } from '../../api/roomApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { WsIconButton } from '../workspace/wsUi';
 
-// Drop into the WorkspacePage toolbar: creates a room seeded with the current code.
-export default function InviteButton({ problem, language, code, size = 'md' }) {
+// Creates a room seeded with the current code and opens it. Shared by the toolbar button (desktop)
+// and the phone "More" menu.
+export function useInviteToRoom({ problem, language, code }) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [busy, setBusy] = useState(false);
@@ -31,6 +32,13 @@ export default function InviteButton({ problem, language, code, size = 'md' }) {
       setBusy(false);
     }
   };
+
+  return { invite, busy };
+}
+
+// Drop into the WorkspacePage toolbar: creates a room seeded with the current code.
+export default function InviteButton({ problem, language, code, size = 'md' }) {
+  const { invite, busy } = useInviteToRoom({ problem, language, code });
 
   return (
     <WsIconButton title="Code together with a friend" size={size} onClick={invite} disabled={busy || !problem} aria-label="Invite a friend">

@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
-import { Box, Stack, useMediaQuery, useTheme } from '@mui/material';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
@@ -14,10 +14,11 @@ import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
+import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import InviteButton from '../room/InviteButton';
+import InviteButton, { useInviteToRoom } from '../room/InviteButton';
 import SolutionsPanel from './community/SolutionsPanel';
 import DiscussionPanel from './community/DiscussionPanel';
 import ShareSolutionDialog from './community/ShareSolutionDialog';
@@ -29,10 +30,11 @@ import SplitHandle from './SplitHandle';
 import AiAssistantDrawer from './AiAssistantDrawer';
 import ConfirmDialog from './ConfirmDialog';
 import ConsoleBar from './ConsoleBar';
-import DescriptionDrawer from './DescriptionDrawer';
 import GuestBanner from './GuestBanner';
 import LanguageSelect from './LanguageSelect';
-import MobileProblemHeader from './MobileProblemHeader';
+import PhoneHeader from './PhoneHeader';
+import ProblemSheet from './ProblemSheet';
+import { PhoneRunButton, PhoneSubmitButton } from './PhoneRunButtons';
 import MoreMenu from './MoreMenu';
 import PhonePanel from './PhonePanel';
 import TimerControl from './TimerControl';
@@ -74,6 +76,7 @@ const MOBILE_TABS = [
 export default function WorkspacePage() {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const { isAuthenticated } = useSelector((s) => s.auth);
@@ -105,8 +108,8 @@ export default function WorkspacePage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
   const surf = wsSurface(theme);
-  // Phone: one page. Tabs = Code | Solutions | Discussion. The problem text opens
-  // as a panel sliding in from the right (kept in history state so the phone's
+  // Phone: one page. Tabs = Code | Solutions | Discussion | Submissions. The problem text opens
+  // as a sheet sliding up from the bottom (kept in history state so the phone's
   // Back button closes it instead of leaving the page).
   const [mobileView, setMobileView] = useState('code'); // 'code' | 'solutions' | 'discussion' | 'submissions'
   const [editorInstance, setEditorInstance] = useState(null); // the status bar needs the editor
@@ -163,7 +166,7 @@ export default function WorkspacePage() {
   }, [submitResult, pauseSw]);
 
   // Phone status bar matches the app bar instead of the old blue.
-  useThemeColorMeta(theme.palette.background.paper);
+  useThemeColorMeta(isMobile ? theme.palette.background.default : theme.palette.background.paper);
 
   const code = problem
     ? codeByProblem[problem._id]?.[activeLanguage] ?? problem.starterCode[activeLanguage]
@@ -248,6 +251,7 @@ export default function WorkspacePage() {
   };
 
   const handleCopyCode = () => copyCode(code, enqueueSnackbar);
+  const { invite: inviteFriend } = useInviteToRoom({ problem, language: activeLanguage, code });
 
   const handleFormat = () => {
     setMoreAnchor(null);
@@ -263,6 +267,9 @@ export default function WorkspacePage() {
     }
   };
 
+  // Phone back arrow: return to wherever the user came from (Problems, Dashboard...); a direct link goes to Problems.
+  const handleBack = () => (location.key !== 'default' ? navigate(-1) : navigate('/problems'));
+
   // Prev / next arrow. Phone: replace (not push) so Back doesn't walk through every problem
   // and the description drawer closes onto the new problem's editor.
   const goToProblem = (target) => {
@@ -276,7 +283,7 @@ export default function WorkspacePage() {
 
   if (problemStatus === 'error' || !problem) {
     return (
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 'calc(100vh - 64px)', gap: 1, px: 2, textAlign: 'center' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: { xs: '100dvh', md: 'calc(100vh - 64px)' }, gap: 1, px: 2, textAlign: 'center' }}>
         <EmptyState
           icon={<CancelRoundedIcon />}
           title="Couldn't open this problem"
@@ -297,7 +304,7 @@ export default function WorkspacePage() {
     lastResultKind === 'run' ? runResult : lastResultKind === 'submit' ? submitResult : submitResult || runResult;
   const isSubmitView = lastResultKind === 'submit';
   const canShare = !isRunning && isSubmitView && submitResult?.status === 'Accepted' && Boolean(submitResult._id);
-  const ctl = isMobile ? 'lg' : 'md';
+  const ctl = isMobile ? 'xl' : 'md';
   const nav = {
     hasPrev: Boolean(adjacent.prev),
     hasNext: Boolean(adjacent.next),
@@ -327,26 +334,21 @@ export default function WorkspacePage() {
         ...hoverScrollbars(t),
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
-        height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' },
-        bgcolor: surf.chrome,
+        height: { xs: '100dvh', md: 'calc(100vh - 64px)' },
+        bgcolor: { xs: t.palette.background.default, md: surf.chrome },
         overflow: 'hidden',
       })}
     >
       {isMobile && (
-        <Box sx={{ flexShrink: 0, bgcolor: surf.chrome }}>
-          {/* Tap the problem name -> description slides in from the right */}
-          <Stack direction="row" sx={{ alignItems: 'center', pl: 0.75 }}>
-          <WsIconButton title="Problem list" size="lg" onClick={() => setListOpen(true)}>
-            <FormatListBulletedRoundedIcon />
-          </WsIconButton>
-          <MobileProblemHeader problem={problem} onOpen={openDesc} sx={{ flex: 1, minWidth: 0, pl: 1, pr: 2 }} />
-          </Stack>
-
-          {/* the one hairline: header block vs. content */}
-          <PaneBar height={48} sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
-            <PaneTabs size="lg" value={mobileView} onChange={openMobileView} items={MOBILE_TABS} />
-          </PaneBar>
-        </Box>
+        <PhoneHeader
+          problem={problem}
+          tabs={MOBILE_TABS}
+          view={mobileView}
+          onView={openMobileView}
+          onBack={handleBack}
+          onOpenProblem={openDesc}
+          onOpenList={() => setListOpen(true)}
+        />
       )}
 
       {/* Left pane — problem description (desktop only) */}
@@ -411,7 +413,7 @@ export default function WorkspacePage() {
       <Box
         ref={setRightEl}
         sx={{
-          bgcolor: surf.chrome,
+          bgcolor: { xs: 'transparent', md: surf.chrome },
           flex: 1,
           minWidth: 0,
           minHeight: 0,
@@ -419,13 +421,13 @@ export default function WorkspacePage() {
           display: { xs: mobileView === 'code' ? 'flex' : 'none', md: maximized === 'problem' ? 'none' : 'flex' },
         }}
       >
-        <PaneBar sx={{ px: { xs: 1.25, md: 1.25 }, gap: { xs: 0.5, md: 0.5 }, height: { xs: 52, md: WS.bar }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
-          <LanguageSelect value={activeLanguage} onChange={(v) => dispatch(setLanguage(v))} problem={problem} langMode={langMode} isMobile={isMobile} />
+        <PaneBar sx={{ px: { xs: 1.75, md: 1.25 }, gap: { xs: 0.75, md: 0.5 }, height: { xs: 60, md: WS.bar }, bgcolor: { xs: 'transparent', md: surf.chrome }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
+          <LanguageSelect value={activeLanguage} onChange={(v) => dispatch(setLanguage(v))} problem={problem} langMode={langMode} isMobile={isMobile} pill={isMobile} />
           <TimerControl sw={sw} size={ctl} />
 
           <Box sx={{ flex: 1, minWidth: 8 }} />
 
-          <InviteButton problem={problem} language={activeLanguage} code={code} size={ctl} />
+          {!isMobile && <InviteButton problem={problem} language={activeLanguage} code={code} size={ctl} />}
           <WsIconButton title="AI assistant" size={ctl} active={aiDrawerOpen} onClick={() => dispatch(toggleAiDrawer())}>
             <AutoAwesomeRoundedIcon />
           </WsIconButton>
@@ -436,6 +438,7 @@ export default function WorkspacePage() {
             anchorEl={moreAnchor}
             onClose={() => setMoreAnchor(null)}
             items={[
+              isMobile && { key: 'invite', label: 'Invite a friend', icon: <GroupAddRoundedIcon fontSize="small" />, onClick: inviteFriend },
               { key: 'copy', label: 'Copy code', icon: <ContentCopyRoundedIcon fontSize="small" />, onClick: handleCopyCode },
               { key: 'format', label: 'Format code', icon: <AutoFixHighRoundedIcon fontSize="small" />, onClick: handleFormat },
               { key: 'reset', label: 'Reset to starter', icon: <RestartAltRoundedIcon fontSize="small" />, onClick: handleResetCode },
@@ -499,8 +502,8 @@ export default function WorkspacePage() {
             tabSize={editorPrefs.tabSize}
             mobileActions={
               <>
-                <RunButton size="lg" isMobile iconActions={false} loading={runStatus === 'running'} disabled={isRunning} onClick={handleRun} />
-                <SubmitButton size="lg" isMobile iconActions={false} loading={submitStatus === 'running'} disabled={isRunning} onClick={handleSubmit} />
+                <PhoneRunButton loading={runStatus === 'running'} disabled={isRunning} onClick={handleRun} />
+                <PhoneSubmitButton loading={submitStatus === 'running'} disabled={isRunning} onClick={handleSubmit} />
               </>
             }
           >
@@ -511,17 +514,17 @@ export default function WorkspacePage() {
 
       {/* Phone: Solutions / Discussion / Submissions sit next to the Code tab */}
       {isMobile && mountedTabs[1] && (
-        <PhonePanel show={mobileView === 'solutions'}>
+        <PhonePanel bg="transparent" show={mobileView === 'solutions'}>
           <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
         </PhonePanel>
       )}
       {isMobile && mountedTabs[2] && (
-        <PhonePanel show={mobileView === 'discussion'}>
+        <PhonePanel bg="transparent" show={mobileView === 'discussion'}>
           <DiscussionPanel slug={slug} />
         </PhonePanel>
       )}
       {isMobile && mountedTabs[3] && (
-        <PhonePanel show={mobileView === 'submissions'}>
+        <PhonePanel bg="transparent" show={mobileView === 'submissions'}>
           <SubmissionsPanel
             slug={slug}
             isAuthenticated={isAuthenticated}
@@ -532,10 +535,10 @@ export default function WorkspacePage() {
         </PhonePanel>
       )}
 
-      {/* Phone: problem description, slides in right -> left */}
-      <DescriptionDrawer open={descOpen} onClose={closeDesc}>
-        <ProblemDescription problem={problem} nav={nav} />
-      </DescriptionDrawer>
+      {/* Phone: the problem statement slides up as a sheet */}
+      <ProblemSheet open={descOpen} onClose={closeDesc}>
+        <ProblemDescription problem={problem} />
+      </ProblemSheet>
 
       <ProblemListDrawer open={listOpen} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={goToProblem} />
 

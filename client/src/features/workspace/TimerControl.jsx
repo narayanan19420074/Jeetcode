@@ -11,7 +11,7 @@ import { WS, mono } from './wsTokens';
 
 // Practice timer (personal, not shared): tap the clock to start, tap the time to pause.
 export default function TimerControl({ sw, size = 'md' }) {
-  const h = size === 'lg' ? WS.ctrlLg : WS.ctrl;
+  const h = size === 'xl' ? 44 : size === 'lg' ? WS.ctrlLg : WS.ctrl;
   if (!sw.running && sw.seconds === 0) {
     return (
       <WsIconButton title="Start timer" size={size} onClick={sw.start}>

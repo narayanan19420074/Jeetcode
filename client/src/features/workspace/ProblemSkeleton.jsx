@@ -18,7 +18,7 @@ export function ProblemSkeletonBody() {
 // Whole workspace page while the problem loads.
 export function ProblemPageSkeleton() {
   return (
-    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, height: { xs: 'calc(100dvh - 56px)', md: 'calc(100vh - 64px)' }, bgcolor: 'background.paper' }}>
+    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, height: { xs: '100dvh', md: 'calc(100vh - 64px)' }, bgcolor: 'background.paper' }}>
       <Box sx={{ width: { xs: '100%', md: '42%' }, p: 2.5 }}>
         <Skeleton variant="rounded" height={32} width="60%" sx={{ mb: 3, borderRadius: `${WS.radius}px` }} />
         <Box sx={{ pt: 0 }}>
