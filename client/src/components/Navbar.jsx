@@ -38,7 +38,6 @@ import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRou
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
@@ -124,10 +123,9 @@ const EXPLORE_LINKS = [
 
 const isActivePath = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
-// Phone menu = Problems plus the dashboard sections (same list as the desktop dashboard sidebar).
-// The phone dashboard has no problem library, so the first row opens the Problems page.
+// Phone menu = the dashboard sections (same list as the desktop dashboard sidebar).
+// Problems is not listed here: it is one tap away in the bottom tab bar.
 const DASH_SECTIONS = [
-  { to: '/problems', label: 'Problems', icon: LibraryBooksRoundedIcon },
   { to: '/dashboard?view=contest', label: 'Contest', icon: MilitaryTechRoundedIcon, view: 'contest' },
   { to: '/dashboard?view=quests', label: 'Quests', icon: EmojiEventsRoundedIcon, view: 'quests' },
   { to: '/dashboard?view=explore', label: 'Explore', icon: ExploreRoundedIcon, view: 'explore' },

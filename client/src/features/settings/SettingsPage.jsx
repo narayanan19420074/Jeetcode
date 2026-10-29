@@ -7,12 +7,12 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
-import BackToDashboard from '../../components/BackToDashboard';
 import { SETTINGS_GROUPS, SETTINGS_ITEMS, DEFAULT_SECTION } from './settingsNav';
 import { initialsFromName } from './components/SettingsUi';
 import { tint } from '../dashboard/dashboardUtils';
+import { HeaderTile, LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
 
-const ACCENT = '#6366F1';
+const TRACKING = '0.03em';
 // Each settings group has its own accent colour, like the sections on the phone home screen.
 const GROUP_ACCENT = { Access: '#6366F1', Preferences: '#F97316', Security: '#14B8A6' };
 
@@ -56,9 +56,10 @@ function NavItem({ item, active }) {
   );
 }
 
-// Phone layout of Settings. It follows the phone Problems, Dashboard and You pages: same page padding,
-// 44px icon buttons, tinted search pill, centred header, 1.25rem section titles and divider-separated rows.
+// Phone layout of Settings in the Library look (same as the phone Problems, Home and You pages):
+// Roboto type, warm surface, pill search, centred header tile and divider-separated rows.
 function PhoneRow({ to, title, subtitle, leading }) {
+  const pal = useLibraryPalette();
   return (
     <ButtonBase
       component={RouterLink}
@@ -68,139 +69,118 @@ function PhoneRow({ to, title, subtitle, leading }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        gap: 1.5,
-        py: 1.5,
-        pl: 0.5,
+        gap: '12px',
+        py: 1.25,
         textAlign: 'left',
         fontFamily: 'inherit',
-        color: 'inherit',
-        borderBottom: '1px solid',
-        borderColor: 'divider',
+        color: pal.text,
+        borderBottom: `1px solid ${pal.divider}`,
         '&:last-of-type': { borderBottom: 'none' },
       }}
     >
       {leading}
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35 }}>
+        <Typography noWrap sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING }}>
           {title}
         </Typography>
         {subtitle && (
-          <Typography noWrap variant="body2" color="text.secondary" sx={{ mt: 0.4, fontSize: '0.82rem' }}>
+          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted }}>
             {subtitle}
           </Typography>
         )}
       </Box>
-      <ChevronRightRoundedIcon sx={{ color: 'text.disabled', flexShrink: 0 }} />
+      <ChevronRightRoundedIcon aria-hidden sx={{ color: pal.muted, flexShrink: 0 }} />
     </ButtonBase>
   );
 }
 
 function PhoneMenu({ user, groups, query, setQuery }) {
+  const pal = useLibraryPalette();
   return (
-    <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
-      {/* Back */}
-      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
-      </Stack>
+    <LibraryFont>
+      <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
+        {/* Back */}
+        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+          <IconButton component={RouterLink} to="/dashboard" aria-label="Back to dashboard" sx={{ width: 44, height: 44, ml: -1, color: pal.text }}>
+            <ArrowBackRoundedIcon />
+          </IconButton>
+        </Stack>
 
-      {/* Search */}
-      <TextField
-        fullWidth
-        size="small"
-        placeholder="Find a setting"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        slotProps={{
-          htmlInput: { 'aria-label': 'Find a setting' },
-          input: {
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchRoundedIcon fontSize="small" />
-              </InputAdornment>
-            ),
-          },
-        }}
-        sx={(t) => ({
-          mt: 1,
-          '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
-          '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-        })}
-      />
-
-      {/* Header */}
-      <Box sx={{ textAlign: 'center', mt: 2.5 }}>
-        <Box
+        {/* Search */}
+        <TextField
+          fullWidth
+          size="small"
+          placeholder="Find a setting"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          slotProps={{ htmlInput: { 'aria-label': 'Find a setting' } }}
           sx={{
-            width: 84,
-            height: 84,
-            mx: 'auto',
-            borderRadius: '26px',
-            display: 'grid',
-            placeItems: 'center',
-            color: '#fff',
-            background: `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`,
-            boxShadow: `0 14px 26px -12px ${ACCENT}`,
+            mt: 1,
+            px: '4px',
+            '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: 18, letterSpacing: TRACKING, px: '16px' },
+            '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
           }}
-        >
-          <SettingsRoundedIcon sx={{ fontSize: 44 }} />
-        </Box>
-        <Typography component="h1" noWrap sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-          Settings
-        </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          Account and preferences
-        </Typography>
-      </Box>
+        />
 
-      {/* Profile */}
-      {!query.trim() && (
-        <Box sx={{ mt: 3.5, borderTop: '1px solid', borderColor: 'divider' }}>
-          <PhoneRow
-            to="/settings/profile"
-            title={user.name}
-            subtitle={`@${user.handle}`}
-            leading={
-              <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, flexShrink: 0, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 800 }}>
-                {initialsFromName(user.name)}
-              </Avatar>
-            }
-          />
+        {/* Header */}
+        <Box sx={{ textAlign: 'center', mt: 3 }}>
+          <HeaderTile>
+            <SettingsRoundedIcon sx={{ fontSize: 28, color: '#fff' }} />
+          </HeaderTile>
+          <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
+            Settings
+          </Typography>
+          <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: TRACKING, color: pal.muted }}>Account and preferences</Typography>
         </Box>
-      )}
 
-      {groups.length === 0 && (
-        <Typography variant="body2" color="text.secondary" sx={{ py: 3, textAlign: 'center' }}>
-          No settings match “{query}”.
-        </Typography>
-      )}
-      {groups.map((g) => {
-        const color = GROUP_ACCENT[g.label] || ACCENT;
-        return (
-          <Box key={g.label} component="section" aria-label={g.label} sx={{ mt: 3.5 }}>
-            <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em', mb: 1.5 }}>
-              {g.label}
-            </Typography>
-            <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
-              {g.items.map((i) => {
-                const Icon = i.icon;
-                return (
-                  <PhoneRow
-                    key={i.key}
-                    to={`/settings/${i.key}`}
-                    title={i.label}
-                    leading={
-                      <Box sx={(t) => ({ width: 48, height: 48, borderRadius: '14px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: tint(color, t.palette.mode === 'dark' ? 20 : 14), color })}>
-                        <Icon />
-                      </Box>
-                    }
-                  />
-                );
-              })}
-            </Box>
+        {/* Profile */}
+        {!query.trim() && (
+          <Box sx={{ mt: 3, borderTop: `1px solid ${pal.divider}` }}>
+            <PhoneRow
+              to="/settings/profile"
+              title={user.name}
+              subtitle={`@${user.handle}`}
+              leading={
+                <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, flexShrink: 0, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 700 }}>
+                  {initialsFromName(user.name)}
+                </Avatar>
+              }
+            />
           </Box>
-        );
-      })}
-    </Box>
+        )}
+
+        {groups.length === 0 && (
+          <Typography sx={{ py: 3, textAlign: 'center', fontSize: 16, color: pal.muted }}>No settings match “{query}”.</Typography>
+        )}
+        {groups.map((g) => {
+          const color = GROUP_ACCENT[g.label] || GROUP_ACCENT.Access;
+          return (
+            <Box key={g.label} component="section" aria-label={g.label} sx={{ mt: 4 }}>
+              <Typography component="h2" sx={{ fontSize: 18, lineHeight: '24px', fontWeight: 700, mb: 1.5 }}>
+                {g.label}
+              </Typography>
+              <Box sx={{ borderTop: `1px solid ${pal.divider}` }}>
+                {g.items.map((i) => {
+                  const Icon = i.icon;
+                  return (
+                    <PhoneRow
+                      key={i.key}
+                      to={`/settings/${i.key}`}
+                      title={i.label}
+                      leading={
+                        <Box aria-hidden sx={(t) => ({ width: 48, height: 48, borderRadius: '14px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: tint(color, t.palette.mode === 'dark' ? 20 : 14), color })}>
+                          <Icon />
+                        </Box>
+                      }
+                    />
+                  );
+                })}
+              </Box>
+            </Box>
+          );
+        })}
+      </Box>
+    </LibraryFont>
   );
 }
 
@@ -210,6 +190,7 @@ export default function SettingsPage() {
   const section = params['*']?.split('/')[0] || '';
   const [query, setQuery] = useState('');
   const isPhone = useMediaQuery((t) => t.breakpoints.down('md'));
+  const pal = useLibraryPalette();
 
   // Desktop: the page itself never scrolls — the sidebar and the content pane
   // each get their own scrollbar. Height = whatever is left under the navbar
@@ -252,13 +233,13 @@ export default function SettingsPage() {
   const Section = SECTIONS[section];
   const current = SETTINGS_ITEMS.find((i) => i.key === section);
 
-  return (
+  const page = (
     <Box
       ref={rootRef}
       sx={{
         maxWidth: { xs: 640, md: 1120 },
         mx: 'auto',
-        px: { xs: 1.75, md: 3 },
+        px: { xs: 2, md: 3 },
         pt: { xs: 'calc(8px + env(safe-area-inset-top))', md: 4 },
         pb: { xs: 2, md: 4 },
         ...(fillH && { height: fillH, display: 'flex', flexDirection: 'column', overflow: 'hidden', pt: 3, pb: 2 }),
@@ -296,7 +277,7 @@ export default function SettingsPage() {
       >
         {/* Phones: back arrow only. The section shows its own title below. */}
         <Stack direction="row" sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
-          <IconButton component={RouterLink} to="/settings" aria-label="Back to settings" sx={{ width: 44, height: 44 }}>
+          <IconButton component={RouterLink} to="/settings" aria-label="Back to settings" sx={{ width: 44, height: 44, ml: -1, color: pal.text }}>
             <ArrowBackRoundedIcon />
           </IconButton>
         </Stack>
@@ -349,4 +330,6 @@ export default function SettingsPage() {
       </Box>
     </Box>
   );
+  // Phones get the Library type (Roboto) on section pages too; desktop keeps the app font.
+  return isPhone ? <LibraryFont>{page}</LibraryFont> : page;
 }

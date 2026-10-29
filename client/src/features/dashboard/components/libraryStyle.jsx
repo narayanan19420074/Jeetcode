@@ -40,11 +40,11 @@ export const useLibraryPalette = () => LIBRARY_PALETTE[useTheme().palette.mode =
 const VARIANTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'button', 'caption', 'overline'];
 const TYPOGRAPHY = { fontFamily: LIB_FONT, ...Object.fromEntries(VARIANTS.map((v) => [v, { fontFamily: LIB_FONT }])) };
 
-// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude, Companies and You.
+// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude, Companies, You and Settings.
 export const isLibraryRoute = (pathname, search) => {
   const path = pathname.replace(/\/+$/, '');
   if (path === '/dashboard') return !new URLSearchParams(search).get('view');
-  return path === '/problems' || path.startsWith('/problems/') || ['/aptitude', '/prep', '/you'].includes(path);
+  return path === '/problems' || path.startsWith('/problems/') || path.startsWith('/settings/') || ['/aptitude', '/prep', '/you', '/settings'].includes(path);
 };
 
 // Roboto for everything inside (menus and dialogs opened from it included).
