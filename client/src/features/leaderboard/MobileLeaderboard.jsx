@@ -14,12 +14,11 @@ import {
   Typography,
 } from '@mui/material';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
-import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
+import TuneRoundedIcon from '@mui/icons-material/TuneRounded';
+import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import MyLocationRoundedIcon from '@mui/icons-material/MyLocationRounded';
-import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
-import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
@@ -48,20 +47,9 @@ const PERIODS = [
   ['month', 'Monthly'],
 ];
 const SCOPES = [
-  ['global', 'Everyone', PublicRoundedIcon],
-  ['friends', 'Friends', PeopleAltRoundedIcon],
+  ['global', 'Everyone'],
+  ['friends', 'Friends'],
 ];
-
-const scrollRow = {
-  display: 'flex',
-  gap: 0.75,
-  overflowX: 'auto',
-  mx: -1.75,
-  px: 1.75,
-  pb: 0.5,
-  scrollbarWidth: 'none',
-  '&::-webkit-scrollbar': { display: 'none' },
-};
 
 const pillBtn = { height: 44, px: 2.5, borderRadius: 999, fontWeight: 800, fontSize: '0.95rem', textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
 const tintBtn = { ...pillBtn, bgcolor: tint(ACCENT, 20), color: ACCENT, '&:hover': { bgcolor: tint(ACCENT, 30) } };
@@ -78,79 +66,80 @@ function SectionTitle({ children }) {
 
 // ---------- controls ----------
 
-function ScopeSwitch({ value, onChange, friendsOk }) {
+// A group of options as wrapping pills (used inside the filter sheet).
+function FilterGroup({ label, options, value, onChange, disabled = () => false }) {
   return (
-    <Box
-      role="group"
-      aria-label="Leaderboard scope"
-      sx={(t) => ({
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: 0.5,
-        p: 0.5,
-        borderRadius: 999,
-        bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9),
-      })}
-    >
-      {SCOPES.map(([v, label, Icon]) => {
-        const on = value === v;
-        const disabled = v === 'friends' && !friendsOk;
-        return (
-          <ButtonBase
-            key={v}
-            disabled={disabled}
-            aria-pressed={on}
-            onClick={() => onChange(v)}
-            sx={(t) => ({
-              height: 40,
-              gap: 0.75,
-              borderRadius: 999,
-              fontFamily: 'inherit',
-              fontSize: '0.95rem',
-              fontWeight: 800,
-              color: on ? '#fff' : t.palette.text.secondary,
-              bgcolor: on ? ACCENT : 'transparent',
-              opacity: disabled ? 0.5 : 1,
-            })}
-          >
-            <Icon sx={{ fontSize: 20 }} />
-            {label}
-          </ButtonBase>
-        );
-      })}
+    <Box component="section" aria-label={label} sx={{ mt: 2.5 }}>
+      <Typography component="h3" sx={{ fontWeight: 800, fontSize: '1rem', mb: 1 }}>
+        {label}
+      </Typography>
+      <Box role="radiogroup" aria-label={label} sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+        {options.map(([v, text]) => {
+          const on = v === value;
+          return (
+            <ButtonBase
+              key={v}
+              role="radio"
+              aria-checked={on}
+              disabled={disabled(v)}
+              onClick={() => onChange(v)}
+              sx={(t) => ({
+                height: 40,
+                px: 2,
+                borderRadius: 999,
+                fontFamily: 'inherit',
+                fontSize: '0.9rem',
+                fontWeight: on ? 800 : 700,
+                color: on ? ACCENT : t.palette.text.secondary,
+                bgcolor: on ? tint(ACCENT, 20) : tint('#64748B', 10),
+                opacity: disabled(v) ? 0.5 : 1,
+              })}
+            >
+              {text}
+            </ButtonBase>
+          );
+        })}
+      </Box>
     </Box>
   );
 }
 
-function PillRow({ label, options, value, onChange, sx }) {
+// Everyone / Friends, Overall / Coding / Aptitude and All-time / Weekly / Monthly live in one sheet.
+function FilterSheet({ open, onClose, isAuthenticated, track, period, scope, onTrack, onPeriod, onScope, onReset, isDefault }) {
   return (
-    <Box sx={{ ...scrollRow, ...sx }} role="tablist" aria-label={label}>
-      {options.map(([v, text]) => {
-        const on = v === value;
-        return (
-          <ButtonBase
-            key={v}
-            role="tab"
-            aria-selected={on}
-            onClick={() => onChange(v)}
-            sx={(t) => ({
-              flexShrink: 0,
-              height: 40,
-              px: 2,
-              borderRadius: 999,
-              fontFamily: 'inherit',
-              fontSize: '0.9rem',
-              fontWeight: on ? 800 : 700,
-              whiteSpace: 'nowrap',
-              color: on ? ACCENT : t.palette.text.secondary,
-              bgcolor: on ? tint(ACCENT, 20) : 'transparent',
-            })}
-          >
-            {text}
-          </ButtonBase>
-        );
-      })}
-    </Box>
+    <Drawer
+      anchor="bottom"
+      open={open}
+      onClose={onClose}
+      slotProps={{ paper: { sx: { borderRadius: '26px 26px 0 0', maxHeight: '90dvh', backgroundImage: 'none' } } }}
+    >
+      <Box sx={{ px: 1.75, pt: 1, pb: 'calc(16px + env(safe-area-inset-bottom))' }}>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5 }}>
+          <IconButton onClick={onClose} aria-label="Close filters" sx={{ width: 44, height: 44 }}>
+            <KeyboardArrowDownRoundedIcon />
+          </IconButton>
+          <Typography component="h2" sx={{ flex: 1, fontWeight: 800, fontSize: '1.05rem' }}>
+            Filters
+          </Typography>
+          <Button onClick={onReset} disabled={isDefault} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+            Reset
+          </Button>
+        </Stack>
+
+        <FilterGroup label="Leaderboard" options={SCOPES} value={scope} onChange={onScope} disabled={(v) => v === 'friends' && !isAuthenticated} />
+        {!isAuthenticated && (
+          <Typography color="text.secondary" sx={{ fontSize: '0.82rem', mt: 0.75 }}>
+            Sign in to compare with friends.
+          </Typography>
+        )}
+        <FilterGroup label="Track" options={TRACKS} value={track} onChange={onTrack} />
+        <FilterGroup label="Period" options={PERIODS} value={period} onChange={onPeriod} />
+
+        <Button onClick={onClose} fullWidth disableElevation variant="contained" sx={{ ...pillBtn, mt: 3, height: 48, bgcolor: ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } }}>
+          Done
+        </Button>
+      </Box>
+    </Drawer>
   );
 }
 
@@ -472,20 +461,28 @@ export default function MobileLeaderboard({
   showEveryone,
 }) {
   const [sheetRow, setSheetRow] = useState(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const label = (list, v) => list.find(([k]) => k === v)?.[1];
+  const isDefault = track === 'overall' && period === 'all' && scope === 'global';
+  const summary = [label(TRACKS, track), label(PERIODS, period), label(SCOPES, scope)].join(' · ');
   const meInList = Boolean(me && rows.some((r) => r.userId === me.userId));
   const total = meta?.total ?? rows.length;
 
   return (
     <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
-      {/* Back + refresh */}
+      {/* Back + filters */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
         <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
         <IconButton
-          onClick={reload}
-          aria-label="Refresh leaderboard"
+          onClick={() => setFiltersOpen(true)}
+          aria-label={isDefault ? 'Filters' : `Filters: ${summary}`}
+          aria-haspopup="dialog"
           sx={(t) => ({ width: 44, height: 44, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), color: ACCENT })}
         >
-          <RefreshRoundedIcon />
+          <Box sx={{ position: 'relative', display: 'grid', placeItems: 'center' }}>
+            <TuneRoundedIcon />
+            {!isDefault && <Box aria-hidden sx={{ position: 'absolute', top: -6, right: -8, width: 9, height: 9, borderRadius: '50%', bgcolor: 'error.main' }} />}
+          </Box>
         </IconButton>
       </Stack>
 
@@ -541,21 +538,9 @@ export default function MobileLeaderboard({
           Leaderboard
         </Typography>
         <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          Ranked by points from solved questions
+          {summary}
         </Typography>
       </Box>
-
-      {/* Filters */}
-      <Box sx={{ mt: 2.5 }}>
-        <ScopeSwitch value={scope} onChange={onScope} friendsOk={isAuthenticated} />
-        {!isAuthenticated && (
-          <Typography color="text.secondary" sx={{ fontSize: '0.82rem', textAlign: 'center', mt: 0.75 }}>
-            Sign in to compare with friends.
-          </Typography>
-        )}
-      </Box>
-      <PillRow label="Leaderboard track" options={TRACKS} value={track} onChange={onTrack} sx={{ mt: 2 }} />
-      <PillRow label="Leaderboard period" options={PERIODS} value={period} onChange={onPeriod} sx={{ mt: 0.5 }} />
 
       {/* Your position */}
       {me && <MyRank me={me} canFind={meInList} onOpen={() => setSheetRow(me)} onFind={scrollToMe} />}
@@ -632,6 +617,23 @@ export default function MobileLeaderboard({
         )}
       </Box>
 
+      <FilterSheet
+        open={filtersOpen}
+        onClose={() => setFiltersOpen(false)}
+        isAuthenticated={isAuthenticated}
+        track={track}
+        period={period}
+        scope={scope}
+        onTrack={onTrack}
+        onPeriod={onPeriod}
+        onScope={onScope}
+        isDefault={isDefault}
+        onReset={() => {
+          onTrack('overall');
+          onPeriod('all');
+          onScope('global');
+        }}
+      />
       <PlayerSheet row={sheetRow} onClose={() => setSheetRow(null)} />
     </Box>
   );

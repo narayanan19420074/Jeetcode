@@ -269,6 +269,9 @@ export default function DashboardPage() {
 
   // Phone: the contest page is a full screen of its own (no dashboard header around it).
   if (!isMdUp && currentView === 'contest') return <ContestPage embedded />;
+  // Phone: Leaderboard and Study Plan are full screens too (they bring their own header and padding).
+  if (!isMdUp && currentView === 'leaderboard') return <LeaderboardView isAuthenticated={isAuthenticated} />;
+  if (!isMdUp && currentView === 'plans') return <StudyPlannerView isAuthenticated={isAuthenticated} />;
   // Phone: same for Friends.
   if (!isMdUp && currentView === 'friends') {
     return (
