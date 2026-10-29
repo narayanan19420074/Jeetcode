@@ -41,9 +41,9 @@ const VARIANTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 
 const TYPOGRAPHY = { fontFamily: LIB_FONT, ...Object.fromEntries(VARIANTS.map((v) => [v, { fontFamily: LIB_FONT }])) };
 
 // Dashboard views that are full phone screens in the Library look.
-const LIBRARY_VIEWS = ['contest', 'friends', 'leaderboard', 'quests'];
+const LIBRARY_VIEWS = ['contest', 'friends', 'leaderboard', 'plans', 'quests'];
 
-// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude, Companies, You, Settings, Store and the Contest, Friends, Leaderboard and Quests views.
+// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude, Companies, You, Settings, Store and the Contest, Friends, Leaderboard, Study Plan and Quests views.
 export const isLibraryRoute = (pathname, search) => {
   const path = pathname.replace(/\/+$/, '');
   if (path === '/dashboard') {

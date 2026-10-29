@@ -23,7 +23,6 @@ import {
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
@@ -34,21 +33,23 @@ import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
-import PersonAddRoundedIcon from '@mui/icons-material/PersonAddRounded';
+import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
 import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-import BackToDashboard from '../../components/BackToDashboard';
 import { studyPlanApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
+import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import FriendPicker from './FriendPicker';
 import { daysLeftInfo, daysTile, fmtDay, fmtRange, itemLink, localKey, paceLabel, planTheme, relDay, relTime, shareUrl } from './planUtils';
 
-// Phone layout of the Study Plan screens (plans list and open plan). It follows the phone Store,
-// Problems and Leaderboard pages: same page padding, 44px icon buttons, centred header, 1.25rem
-// section titles, tinted pills and rounded panels. The page itself scrolls and there is no top
-// navigation bar on phones. The plan builder keeps its own layout inside the same page padding.
+// Phone layout of the Study Plan screens (plans list and open plan) in the Library look
+// (same as the phone Home, Problems, Store and Friends pages): Roboto type, warm surface,
+// 16px page gutter, centred header tile, cream panels and divider-separated rows.
+// Plan card sizes: 20px corner radius, 16px padding, 72px progress disc, 44px action buttons.
+// The page itself scrolls and there is no top navigation bar on phones.
+// The plan builder keeps its own layout inside the same page padding.
 
 const ACCENT = '#6366F1';
 
@@ -59,95 +60,117 @@ const TONE = { info: '#3B82F6', success: 'var(--jc-easy)', warning: 'var(--jc-me
 
 const SHORT_DIFF = { Easy: 'Easy', Medium: 'Med.', Hard: 'Hard' };
 
-const scrollRow = {
-  display: 'flex',
-  gap: 0.75,
-  overflowX: 'auto',
-  mx: -1.75,
-  px: 1.75,
-  pb: 0.5,
-  scrollbarWidth: 'none',
-  '&::-webkit-scrollbar': { display: 'none' },
-};
+const MUTED = 'var(--lib-muted)';
+const DIVIDER = 'var(--lib-divider)';
 
-const pillBtn = { height: 44, px: 2.5, borderRadius: 999, fontWeight: 800, fontSize: '0.95rem', textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
-const solidBtn = (c) => ({ ...pillBtn, bgcolor: c, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${c} 85%, #000)` } });
-const tintBtn = (c) => ({ ...pillBtn, bgcolor: tint(c, 20), color: c, '&:hover': { bgcolor: tint(c, 30) } });
-const tintIcon = (c) => (t) => ({ width: 44, height: 44, flexShrink: 0, bgcolor: tint(c, t.palette.mode === 'dark' ? 16 : 9), color: c });
-const panelSx = (c) => (t) => ({
-  p: 1.75,
-  borderRadius: '26px',
-  background: `linear-gradient(160deg, ${tint(c, t.palette.mode === 'dark' ? 20 : 15)} 0%, ${tint(c, 4)} 62%, transparent 100%)`,
-  border: `1px solid ${tint(c, 24)}`,
+const solidBtn = (c) => ({ ...libSolidBtnSx, bgcolor: c, '&:hover': { bgcolor: `color-mix(in srgb, ${c} 85%, #000)` } });
+
+// 44px round action button. Inside a cream card it sits on the page colour so it stays visible in both modes.
+const cardIconSx = { ...libIconBtnSx, width: 44, height: 44, bgcolor: 'var(--lib-bg)', '&:hover': { bgcolor: 'var(--lib-bg)', filter: 'brightness(0.97)' } };
+const dangerIconSx = (t) => ({
+  ...cardIconSx,
+  color: t.palette.error.main,
+  bgcolor: tint(t.palette.error.main, 12),
+  '&:hover': { bgcolor: tint(t.palette.error.main, 20) },
 });
 
 // Page padding shared by every phone Study Plan screen.
 export function MobileShell({ children }) {
-  return <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>{children}</Box>;
+  return (
+    <LibraryFont>
+      <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>{children}</Box>
+    </LibraryFont>
+  );
 }
 
 function SectionTitle({ children }) {
   return (
-    <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em', mb: 1.5 }}>
+    <Typography component="h2" sx={{ ...libSectionTitleSx, mb: 1.5 }}>
       {children}
     </Typography>
   );
 }
 
-function Pill({ color, children }) {
+// Small label chip. A colour tints it; without one it is neutral.
+function Chip({ color, children }) {
   return (
-    <Typography component="span" sx={{ px: 1.1, py: 0.35, borderRadius: 99, fontSize: '0.75rem', fontWeight: 800, lineHeight: 1.2, color, bgcolor: tint(color, 16), whiteSpace: 'nowrap' }}>
+    <Typography
+      component="span"
+      sx={{
+        px: '12px',
+        height: 28,
+        display: 'inline-flex',
+        alignItems: 'center',
+        borderRadius: 999,
+        fontSize: 13,
+        fontWeight: 500,
+        letterSpacing: LIB_TRACKING,
+        whiteSpace: 'nowrap',
+        fontVariantNumeric: 'tabular-nums',
+        color: color || 'var(--lib-chip-text)',
+        bgcolor: color ? tint(color, 16) : 'var(--lib-bg)',
+      }}
+    >
       {children}
     </Typography>
   );
 }
 
-function IconTile({ accent, size = 44, children }) {
+// Filled progress disc: the coloured sector grows clockwise with the percentage solved.
+function PlanDisc({ percent, accent, size = 72 }) {
+  const pct = Math.max(0, Math.min(100, Math.round(percent || 0)));
   return (
     <Box
+      role="img"
+      aria-label={`${pct}% solved`}
       sx={{
         width: size,
         height: size,
         flexShrink: 0,
-        borderRadius: size > 60 ? '26px' : '15px',
+        borderRadius: '50%',
         display: 'grid',
         placeItems: 'center',
-        color: '#fff',
-        background: `linear-gradient(135deg, ${accent}, color-mix(in srgb, ${accent} 60%, #000))`,
-        boxShadow: size > 60 ? `0 14px 26px -12px ${accent}` : `0 8px 18px -8px ${accent}`,
+        background: `conic-gradient(${accent} ${pct}%, ${tint(accent, 18)} 0)`,
       }}
     >
-      {children}
+      <Box sx={{ width: size * 0.6, height: size * 0.6, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: 'var(--lib-bg)' }}>
+        <Typography component="span" sx={{ fontSize: size * 0.2, lineHeight: 1, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: 'var(--lib-text)' }}>
+          {pct}%
+        </Typography>
+      </Box>
     </Box>
   );
 }
 
 function Sheet({ open, onClose, title, children }) {
+  const pal = useLibraryPalette();
   return (
     <Drawer
       anchor="bottom"
       open={open}
       onClose={onClose}
-      slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)' } } }}
+      slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', bgcolor: pal.bg, backgroundImage: 'none' } } }}
     >
-      <Box sx={{ px: 1.75, pt: 1.25, pb: 2 }}>
-        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
-          <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-            {title}
-          </Typography>
-          <IconButton onClick={onClose} aria-label={`Close ${title.toLowerCase()}`} sx={{ width: 44, height: 44 }}>
-            <CloseRoundedIcon />
-          </IconButton>
-        </Stack>
-        {children}
-      </Box>
+      <LibraryFont>
+        <Box sx={{ px: 2, pt: 1.25, pb: 2 }}>
+          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
+            <Typography component="h2" sx={{ ...libSectionTitleSx, color: 'var(--lib-text)' }}>
+              {title}
+            </Typography>
+            <IconButton onClick={onClose} aria-label={`Close ${title.toLowerCase()}`} sx={libIconBtnSx}>
+              <CloseRoundedIcon />
+            </IconButton>
+          </Stack>
+          {children}
+        </Box>
+      </LibraryFont>
     </Drawer>
   );
 }
 
 function PillTabs({ label, options, value, onChange, accent = ACCENT }) {
   return (
-    <Box sx={{ ...scrollRow }} role="tablist" aria-label={label}>
+    <Box sx={{ display: 'flex', gap: 1, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }} role="tablist" aria-label={label}>
       {options.map(([v, text]) => {
         const on = v === value;
         return (
@@ -156,18 +179,18 @@ function PillTabs({ label, options, value, onChange, accent = ACCENT }) {
             role="tab"
             aria-selected={on}
             onClick={() => onChange(v)}
-            sx={(t) => ({
+            sx={{
               flexShrink: 0,
-              height: 40,
-              px: 2,
+              height: 34,
+              px: '14px',
               borderRadius: 999,
               fontFamily: 'inherit',
-              fontSize: '0.9rem',
-              fontWeight: on ? 800 : 700,
+              fontSize: 15,
+              letterSpacing: LIB_TRACKING,
               whiteSpace: 'nowrap',
-              color: on ? accent : t.palette.text.secondary,
-              bgcolor: on ? tint(accent, 20) : 'transparent',
-            })}
+              bgcolor: on ? accent : 'var(--lib-chip)',
+              color: on ? '#fff' : 'var(--lib-chip-text)',
+            }}
           >
             {text}
           </ButtonBase>
@@ -179,14 +202,14 @@ function PillTabs({ label, options, value, onChange, accent = ACCENT }) {
 
 // ---------- plans list ----------
 
-function PlanTile({ plan, today, onOpen, onAddFriend, onDelete }) {
+function PlanCard({ plan, today, onOpen, onAddFriend, onDelete }) {
   const s = plan.summary;
   const accent = accentFor(plan.id);
   const complete = s.status === 'completed';
   const behind = s.status === 'behind';
   const left = daysLeftInfo(s, today);
-  const todayItems = plan.today || [];
   const todayLeft = Math.max(0, s.todayTotal - s.todayDone);
+  const leftColor = left.tone === 'primary' ? accent : TONE[left.tone] || accent;
 
   let message;
   if (complete) message = 'Plan complete. Every question is solved.';
@@ -195,41 +218,45 @@ function PlanTile({ plan, today, onOpen, onAddFriend, onDelete }) {
   else if (todayLeft === 0) message = "Today's goal is done.";
   else message = `${todayLeft} to solve today${s.overdue ? `, ${s.overdue} overdue` : ''}`;
 
-  const cta = complete ? 'Review plan' : s.done > 0 ? 'Continue plan' : 'Start plan';
+  const cta = complete ? 'Review' : s.done > 0 ? 'Continue' : 'Start';
 
   return (
-    <Box component="article" sx={panelSx(accent)}>
+    <Box component="article" sx={{ ...libPanelSx, p: 2 }}>
       <ButtonBase
         onClick={onOpen}
         aria-label={`Open ${plan.title}`}
-        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 2, textAlign: 'left', fontFamily: 'inherit', color: 'var(--lib-text)' }}
       >
-        <IconTile accent={accent}>
-          <SchoolRoundedIcon sx={{ fontSize: 24 }} />
-        </IconTile>
+        <PlanDisc percent={s.percent} accent={accent} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography component="h3" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', overflowWrap: 'anywhere' }}>
+          <Typography component="h3" sx={{ fontSize: 18, lineHeight: '24px', fontWeight: 700, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', overflowWrap: 'anywhere' }}>
             {plan.title}
           </Typography>
-          <Typography noWrap variant="caption" color="text.secondary">
+          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: MUTED }}>
             {fmtRange(s.startDate, s.endDate)}
           </Typography>
         </Box>
-        <ChevronRightRoundedIcon sx={{ color: 'text.secondary', flexShrink: 0 }} />
       </ButtonBase>
 
       <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 0.75, mt: 1.5 }}>
-        <Pill color={left.tone === 'primary' ? accent : TONE[left.tone] || accent}>{left.text}</Pill>
-        {behind && s.overdue > 0 && <Pill color={TONE.error}>{s.overdue} overdue</Pill>}
+        <Chip color={leftColor}>{left.text}</Chip>
+        <Chip>
+          {s.total} {s.total === 1 ? 'Question' : 'Questions'}
+        </Chip>
+        <Chip>{s.done} Solved</Chip>
         {s.streak > 0 && (
           <Stack direction="row" sx={{ alignItems: 'center' }} aria-label={`${s.streak}-day streak`}>
-            <LocalFireDepartmentRoundedIcon sx={{ fontSize: 17, color: 'warning.main' }} />
-            <Typography component="span" sx={{ fontSize: '0.8rem', fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}>
+            <LocalFireDepartmentRoundedIcon sx={{ fontSize: 18, color: 'warning.main' }} />
+            <Typography component="span" sx={{ fontSize: 13, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>
               {s.streak}d
             </Typography>
           </Stack>
         )}
-        <AvatarGroup max={3} sx={{ ml: 'auto', '& .MuiAvatar-root': { width: 24, height: 24, fontSize: 11, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
+      </Stack>
+
+      <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1, mt: 1.5 }}>
+        <Typography sx={{ minWidth: 0, flex: 1, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: behind && !complete ? 'var(--jc-hard)' : MUTED }}>{message}</Typography>
+        <AvatarGroup max={3} sx={{ flexShrink: 0, '& .MuiAvatar-root': { width: 24, height: 24, fontSize: 11, fontWeight: 700, border: '2px solid', borderColor: 'var(--lib-chip)' } }}>
           {plan.members.map((m) => (
             <Avatar key={m.id} src={m.avatarUrl || undefined} alt={m.name}>
               {m.name?.[0]?.toUpperCase()}
@@ -238,43 +265,14 @@ function PlanTile({ plan, today, onOpen, onAddFriend, onDelete }) {
         </AvatarGroup>
       </Stack>
 
-      <Box sx={{ mt: 1.5 }}>
-        <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 0.75 }}>
-          <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', fontVariantNumeric: 'tabular-nums' }}>
-            {s.done}
-            <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500 }}>
-              /{s.total} solved
-            </Box>
-          </Typography>
-          <Typography sx={{ fontWeight: 800, fontSize: '0.95rem', color: accent, fontVariantNumeric: 'tabular-nums' }}>{s.percent}%</Typography>
-        </Stack>
-        <Box role="progressbar" aria-label="Plan progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} sx={{ height: 8, borderRadius: 99, bgcolor: tint(accent, 20), overflow: 'hidden' }}>
-          <Box sx={{ width: `${Math.max(s.percent, 3)}%`, height: '100%', borderRadius: 99, bgcolor: accent, transition: 'width .5s' }} />
-        </Box>
-      </Box>
-
-      <Typography sx={{ mt: 1.5, fontSize: '0.9rem', fontWeight: 700 }}>{message}</Typography>
-      {!complete &&
-        todayItems.slice(0, 3).map((it) => (
-          <Typography key={it.id} noWrap color="text.secondary" sx={{ fontSize: '0.85rem', mt: 0.3, textDecoration: it.done ? 'line-through' : 'none' }}>
-            {it.done ? 'Done: ' : it.overdue ? 'Overdue: ' : ''}
-            {it.title}
-          </Typography>
-        ))}
-      {!complete && todayItems.length > 3 && (
-        <Typography color="text.secondary" sx={{ fontSize: '0.8rem', mt: 0.3 }}>
-          +{todayItems.length - 3} more
-        </Typography>
-      )}
-
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mt: 1.75 }}>
-        <Button onClick={onOpen} fullWidth disableElevation variant="contained" startIcon={<PlayArrowRoundedIcon />} sx={{ ...solidBtn(accent), flex: 1, height: 48 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mt: 2 }}>
+        <Button onClick={onOpen} disableElevation variant="contained" startIcon={<PlayArrowRoundedIcon />} sx={{ ...solidBtn(accent), flex: 1, minWidth: 0, height: 44, fontSize: 16 }}>
           {cta}
         </Button>
-        <IconButton aria-label={`Add friends to ${plan.title}`} onClick={(e) => onAddFriend(e.currentTarget, plan)} sx={tintIcon(accent)}>
-          <PersonAddRoundedIcon />
+        <IconButton aria-label={`Add friends to ${plan.title}`} onClick={(e) => onAddFriend(e.currentTarget, plan)} sx={cardIconSx}>
+          <PersonAddAlt1RoundedIcon />
         </IconButton>
-        <IconButton aria-label={plan.isOwner ? `Delete ${plan.title}` : `Leave ${plan.title}`} onClick={() => onDelete(plan)} sx={tintIcon('#E11D48')}>
+        <IconButton aria-label={plan.isOwner ? `Delete ${plan.title}` : `Leave ${plan.title}`} onClick={() => onDelete(plan)} sx={dangerIconSx}>
           {plan.isOwner ? <DeleteOutlineRoundedIcon /> : <ExitToAppRoundedIcon />}
         </IconButton>
       </Stack>
@@ -317,9 +315,11 @@ export function MobilePlans({
     <>
       {/* Back + friends + notifications */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
-        <Stack direction="row" sx={{ gap: 0.75 }}>
-          <IconButton onClick={() => setFriendsOpen(true)} aria-label="Friends" aria-haspopup="dialog" sx={tintIcon(ACCENT)}>
+        <IconButton component={RouterLink} to="/dashboard" aria-label="Back to dashboard" sx={libBackBtnSx}>
+          <ArrowBackRoundedIcon />
+        </IconButton>
+        <Stack direction="row" sx={{ gap: 1 }}>
+          <IconButton onClick={() => setFriendsOpen(true)} aria-label="Friends" aria-haspopup="dialog" sx={libIconBtnSx}>
             <GroupsRoundedIcon />
           </IconButton>
           <IconButton
@@ -329,7 +329,7 @@ export function MobilePlans({
             }}
             aria-label={notes.unread > 0 ? `Notifications, ${notes.unread} new` : 'Notifications'}
             aria-haspopup="dialog"
-            sx={tintIcon(ACCENT)}
+            sx={libIconBtnSx}
           >
             <Badge color="error" badgeContent={notes.unread} max={9}>
               <NotificationsRoundedIcon />
@@ -339,19 +339,9 @@ export function MobilePlans({
       </Stack>
 
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mt: 1 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <IconTile accent={ACCENT} size={84}>
-            <SchoolRoundedIcon sx={{ fontSize: 44 }} />
-          </IconTile>
-        </Box>
-        <Typography component="h1" noWrap sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-          Study Plan
-        </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          {sub}
-        </Typography>
-        <Button onClick={onNew} disableElevation variant="contained" startIcon={<AddRoundedIcon />} sx={{ ...solidBtn(ACCENT), height: 48, px: 3.5, mt: 2 }}>
+      <PageHeader icon={SchoolRoundedIcon} title="Study Plan" subtitle={sub} />
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+        <Button onClick={onNew} disableElevation variant="contained" startIcon={<AddRoundedIcon />} sx={libSolidBtnSx}>
           New plan
         </Button>
       </Box>
@@ -364,33 +354,31 @@ export function MobilePlans({
 
       {/* Invite link */}
       {invite && (
-        <Box sx={(t) => ({ ...panelSx(invite.error ? '#E11D48' : ACCENT)(t), mt: 2.5 })}>
+        <Box sx={{ ...libPanelSx, p: 2, mt: 3 }}>
           {invite.error ? (
             <>
-              <Typography color="error" sx={{ fontSize: '0.95rem' }}>
+              <Typography color="error" sx={{ fontSize: 16 }}>
                 {invite.error}
               </Typography>
-              <Button onClick={onDismissInvite} fullWidth disableElevation variant="contained" sx={{ ...tintBtn('#E11D48'), mt: 1.5, height: 48 }}>
+              <Button onClick={onDismissInvite} fullWidth disableElevation variant="contained" sx={{ ...libTintBtnSx, bgcolor: 'var(--lib-bg)', mt: 1.5 }}>
                 Dismiss
               </Button>
             </>
           ) : (
             <>
-              <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
-                {invite.owner ? `@${invite.owner.handle} invited you to` : 'You are invited to'}
-              </Typography>
-              <Typography sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.2, letterSpacing: '-0.01em', overflowWrap: 'anywhere' }}>{invite.title}</Typography>
-              <Typography color="text.secondary" sx={{ fontSize: '0.85rem', mt: 0.4 }}>
+              <Typography sx={{ fontSize: 14, color: MUTED, letterSpacing: LIB_TRACKING }}>{invite.owner ? `@${invite.owner.handle} invited you to` : 'You are invited to'}</Typography>
+              <Typography sx={{ fontWeight: 700, fontSize: 18, lineHeight: '24px', overflowWrap: 'anywhere' }}>{invite.title}</Typography>
+              <Typography sx={{ fontSize: 14, color: MUTED, letterSpacing: LIB_TRACKING, mt: 0.5 }}>
                 {invite.taskCount} questions, {fmtRange(invite.startDate, invite.endDate)}, {invite.memberCount} member{invite.memberCount === 1 ? '' : 's'}
               </Typography>
               {invite.isFull ? (
-                <Typography sx={{ mt: 1.5, fontWeight: 800, color: 'warning.main' }}>This plan is full</Typography>
+                <Typography sx={{ mt: 1.5, fontWeight: 700, color: 'warning.main' }}>This plan is full</Typography>
               ) : (
-                <Button onClick={onAccept} disabled={joining} fullWidth disableElevation variant="contained" sx={{ ...solidBtn(ACCENT), mt: 1.5, height: 48 }}>
+                <Button onClick={onAccept} disabled={joining} fullWidth disableElevation variant="contained" sx={{ ...libSolidBtnSx, mt: 1.5 }}>
                   {joining ? 'Joining…' : 'Join plan'}
                 </Button>
               )}
-              <Button onClick={onDismissInvite} disabled={joining} fullWidth sx={{ ...tintBtn(ACCENT), mt: 1, height: 44, bgcolor: 'transparent' }}>
+              <Button onClick={onDismissInvite} disabled={joining} fullWidth sx={{ ...libTintBtnSx, bgcolor: 'transparent', mt: 1 }}>
                 Not now
               </Button>
             </>
@@ -399,28 +387,26 @@ export function MobilePlans({
       )}
 
       {/* Plans */}
-      <Box component="section" aria-label="Your plans" sx={{ mt: 3.5 }}>
+      <Box component="section" aria-label="Your plans" sx={{ mt: 4 }}>
         {plans && plans.length > 0 && <SectionTitle>Your plans</SectionTitle>}
         {plans === null ? (
           <Stack spacing={1.5}>
             {[0, 1, 2].map((i) => (
-              <Skeleton key={i} variant="rounded" height={250} sx={{ borderRadius: '26px' }} />
+              <Skeleton key={i} variant="rounded" height={214} sx={{ borderRadius: '20px' }} />
             ))}
           </Stack>
         ) : plans.length === 0 ? (
           <Box sx={{ py: 5, px: 2, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 800 }}>No plans yet</Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 2 }}>
-              Pick questions, set a finish date and add friends.
-            </Typography>
-            <Button variant="outlined" onClick={onNew} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+            <Typography sx={{ fontWeight: 700, fontSize: 18 }}>No plans yet</Typography>
+            <Typography sx={{ fontSize: 16, color: MUTED, mt: 0.5, mb: 2 }}>Pick questions, set a finish date and add friends.</Typography>
+            <Button onClick={onNew} disableElevation variant="contained" sx={libTintBtnSx}>
               Create a plan
             </Button>
           </Box>
         ) : (
           <Stack spacing={1.5}>
             {plans.map((p) => (
-              <PlanTile key={p.id} plan={p} today={today} onOpen={() => onOpenPlan(p.id)} onAddFriend={onAddFriend} onDelete={onDelete} />
+              <PlanCard key={p.id} plan={p} today={today} onOpen={() => onOpenPlan(p.id)} onAddFriend={onAddFriend} onDelete={onDelete} />
             ))}
           </Stack>
         )}
@@ -431,9 +417,7 @@ export function MobilePlans({
         {friends === null && <Skeleton variant="rounded" height={56} sx={{ borderRadius: '16px' }} />}
         {friends?.length === 0 && (
           <Box sx={{ pb: 1 }}>
-            <Typography color="text.secondary" sx={{ fontSize: '0.95rem' }}>
-              No friends yet.
-            </Typography>
+            <Typography sx={{ fontSize: 16, color: MUTED }}>No friends yet.</Typography>
             <Button
               onClick={() => {
                 setFriendsOpen(false);
@@ -441,23 +425,23 @@ export function MobilePlans({
               }}
               disableElevation
               variant="contained"
-              sx={{ ...tintBtn(ACCENT), mt: 1.25, height: 44 }}
+              sx={{ ...libTintBtnSx, mt: 1.5 }}
             >
               Find friends
             </Button>
           </Box>
         )}
         {friends?.map((f) => (
-          <Stack key={f.userId} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1, borderBottom: '1px solid', borderColor: 'divider', '&:last-of-type': { borderBottom: 'none' } }}>
-            <Avatar src={f.avatarUrl || undefined} alt={f.name} sx={{ width: 40, height: 40, fontWeight: 800 }}>
+          <Stack key={f.userId} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1, borderBottom: `1px solid ${DIVIDER}`, '&:last-of-type': { borderBottom: 'none' } }}>
+            <Avatar src={f.avatarUrl || undefined} alt={f.name} sx={{ width: 40, height: 40, fontWeight: 700 }}>
               {f.name?.[0]?.toUpperCase()}
             </Avatar>
             <Box sx={{ minWidth: 0 }}>
-              <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.3 }}>
+              <Typography noWrap sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
                 {f.name}
               </Typography>
               {f.handle && (
-                <Typography noWrap color="text.secondary" sx={{ fontSize: '0.82rem' }}>
+                <Typography noWrap sx={{ fontSize: 14, lineHeight: '18px', color: MUTED }}>
                   @{f.handle}
                 </Typography>
               )}
@@ -465,7 +449,7 @@ export function MobilePlans({
           </Stack>
         ))}
 
-        <Typography component="h3" sx={{ fontWeight: 800, fontSize: '1rem', mt: 2.5, mb: 1 }}>
+        <Typography component="h3" sx={{ ...libSectionTitleSx, mt: 3, mb: 1 }}>
           Join a plan
         </Typography>
         <Stack direction="row" sx={{ alignItems: 'flex-start', gap: 1 }}>
@@ -479,10 +463,10 @@ export function MobilePlans({
             error={Boolean(codeError)}
             helperText={codeError || undefined}
             slotProps={{ htmlInput: { 'aria-label': 'Invite link or code' } }}
-            sx={(t) => ({
-              '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
+            sx={{
+              '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: 'var(--lib-player)', fontSize: 16, letterSpacing: LIB_TRACKING },
               '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-            })}
+            }}
           />
           <IconButton
             onClick={() => {
@@ -490,7 +474,7 @@ export function MobilePlans({
               setFriendsOpen(false);
             }}
             aria-label="Find plan"
-            sx={{ ...tintIcon(ACCENT), width: 48, height: 48 }}
+            sx={{ ...libIconBtnSx, width: 48, height: 48 }}
           >
             <GroupAddRoundedIcon />
           </IconButton>
@@ -500,9 +484,7 @@ export function MobilePlans({
       {/* Notifications */}
       <Sheet open={notesOpen} onClose={() => setNotesOpen(false)} title="Notifications">
         {notes.items.length === 0 ? (
-          <Typography color="text.secondary" sx={{ fontSize: '0.95rem', pb: 1 }}>
-            Nothing new.
-          </Typography>
+          <Typography sx={{ fontSize: 16, color: MUTED, pb: 1 }}>Nothing new.</Typography>
         ) : (
           notes.items.map((n) => (
             <ButtonBase
@@ -511,7 +493,7 @@ export function MobilePlans({
                 setNotesOpen(false);
                 onOpenPlan(n.plan.id);
               }}
-              sx={(t) => ({
+              sx={{
                 width: '100%',
                 justifyContent: 'flex-start',
                 alignItems: 'flex-start',
@@ -522,20 +504,18 @@ export function MobilePlans({
                 borderRadius: '16px',
                 textAlign: 'left',
                 fontFamily: 'inherit',
-                color: 'inherit',
-                bgcolor: n.read ? 'transparent' : tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9),
-              })}
+                color: 'var(--lib-text)',
+                bgcolor: n.read ? 'transparent' : 'var(--lib-chip)',
+              }}
             >
-              <Avatar src={n.actor.avatarUrl || undefined} alt={n.actor.name} sx={{ width: 40, height: 40, fontWeight: 800 }}>
+              <Avatar src={n.actor.avatarUrl || undefined} alt={n.actor.name} sx={{ width: 40, height: 40, fontWeight: 700 }}>
                 {n.actor.name?.[0]?.toUpperCase()}
               </Avatar>
               <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Typography sx={{ fontSize: '0.95rem', lineHeight: 1.35 }}>
+                <Typography sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
                   <b>{n.actor.name}</b> added you to <b>{n.plan.title}</b>
                 </Typography>
-                <Typography color="text.secondary" sx={{ fontSize: '0.8rem', mt: 0.25 }}>
-                  {relTime(n.createdAt)}
-                </Typography>
+                <Typography sx={{ fontSize: 14, color: MUTED, mt: 0.25 }}>{relTime(n.createdAt)}</Typography>
               </Box>
             </ButtonBase>
           ))
@@ -561,18 +541,22 @@ function TaskRow({ item, doers, accent }) {
       ) : item.overdue ? (
         <ErrorOutlineRoundedIcon aria-label="Overdue" sx={{ fontSize: 28, color: 'var(--jc-hard)', flexShrink: 0 }} />
       ) : (
-        <Box aria-hidden sx={(t) => ({ width: 28, height: 28, borderRadius: '50%', flexShrink: 0, border: `2px solid ${t.palette.text.disabled}` })} />
+        <Box aria-hidden sx={{ width: 28, height: 28, borderRadius: '50%', flexShrink: 0, border: `2px solid ${MUTED}`, opacity: 0.6 }} />
       )}
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35, overflowWrap: 'anywhere', color: item.done ? 'text.secondary' : 'text.primary' }}>{item.title}</Typography>
+        <Typography sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING, overflowWrap: 'anywhere', color: item.done ? MUTED : 'var(--lib-text)' }}>{item.title}</Typography>
         <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 0.75, mt: 0.5 }}>
-          <Pill color={diffColor}>{SHORT_DIFF[item.difficulty] || item.difficulty}</Pill>
-          <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
+          <Chip color={diffColor}>{SHORT_DIFF[item.difficulty] || item.difficulty}</Chip>
+          <Typography component="span" sx={{ fontSize: 14, color: MUTED, letterSpacing: LIB_TRACKING }}>
             {item.type === 'problem' ? 'Coding' : 'Aptitude'}
           </Typography>
-          {item.overdue && !item.done && <Typography sx={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--jc-hard)' }}>Overdue</Typography>}
+          {item.overdue && !item.done && (
+            <Typography component="span" sx={{ fontSize: 14, fontWeight: 500, color: 'var(--jc-hard)' }}>
+              Overdue
+            </Typography>
+          )}
           {doers.length > 0 && (
-            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 20, height: 20, fontSize: 10, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
+            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 20, height: 20, fontSize: 10, fontWeight: 700, border: '2px solid', borderColor: 'var(--lib-bg)' } }}>
               {doers.map((m) => (
                 <Avatar key={m.userId} src={m.avatarUrl || undefined} alt={m.name}>
                   {m.name?.[0]?.toUpperCase()}
@@ -583,16 +567,16 @@ function TaskRow({ item, doers, accent }) {
         </Stack>
       </Box>
       {item.done ? (
-        <Pill color="var(--jc-easy)">Solved</Pill>
+        <Chip color="var(--jc-easy)">Solved</Chip>
       ) : interactive ? (
-        <Typography component="span" sx={{ flexShrink: 0, px: 1.75, py: 0.8, borderRadius: 999, fontSize: '0.85rem', fontWeight: 800, color: accent, bgcolor: tint(accent, 20) }}>
+        <Typography component="span" sx={{ flexShrink: 0, px: '14px', height: 34, display: 'inline-flex', alignItems: 'center', borderRadius: 999, fontSize: 15, fontWeight: 500, letterSpacing: LIB_TRACKING, color: '#fff', bgcolor: accent }}>
           Solve
         </Typography>
       ) : null}
     </>
   );
 
-  const rowSx = (t) => ({
+  const rowSx = {
     width: '100%',
     display: 'flex',
     alignItems: 'center',
@@ -603,8 +587,8 @@ function TaskRow({ item, doers, accent }) {
     textAlign: 'left',
     fontFamily: 'inherit',
     color: 'inherit',
-    borderBottom: `1px solid ${t.palette.divider}`,
-  });
+    borderBottom: `1px solid ${DIVIDER}`,
+  };
 
   return interactive ? (
     <ButtonBase component={RouterLink} to={link} sx={rowSx}>
@@ -700,7 +684,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
   };
 
   const backBtn = (
-    <IconButton onClick={onBack} aria-label="Back to plans" sx={{ width: 44, height: 44 }}>
+    <IconButton onClick={onBack} aria-label="Back to plans" sx={libBackBtnSx}>
       <ArrowBackRoundedIcon />
     </IconButton>
   );
@@ -716,8 +700,8 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
     ) : (
       <Box>
         {backBtn}
-        <Skeleton variant="rounded" height={170} sx={{ mt: 1, borderRadius: '26px' }} />
-        <Skeleton variant="rounded" height={260} sx={{ mt: 1.5, borderRadius: '26px' }} />
+        <Skeleton variant="rounded" height={150} sx={{ mt: 1, borderRadius: '20px' }} />
+        <Skeleton variant="rounded" height={240} sx={{ mt: 1.5, borderRadius: '20px' }} />
       </Box>
     );
   }
@@ -750,38 +734,30 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
       {/* Back + actions */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
         {backBtn}
-        <Stack direction="row" sx={{ gap: 0.75 }}>
-          <IconButton onClick={(e) => setPickerEl(e.currentTarget)} aria-label="Add friends" sx={tintIcon(accent)}>
-            <PersonAddRoundedIcon />
+        <Stack direction="row" sx={{ gap: 1 }}>
+          <IconButton onClick={(e) => setPickerEl(e.currentTarget)} aria-label="Add friends" sx={libIconBtnSx}>
+            <PersonAddAlt1RoundedIcon />
           </IconButton>
-          <IconButton onClick={copy} aria-label="Copy invite link" sx={tintIcon(copied ? '#16A34A' : accent)}>
-            {copied ? <CheckRoundedIcon /> : <LinkRoundedIcon />}
+          <IconButton onClick={copy} aria-label="Copy invite link" sx={libIconBtnSx}>
+            {copied ? <CheckRoundedIcon sx={{ color: 'var(--jc-easy)' }} /> : <LinkRoundedIcon />}
           </IconButton>
           {plan.isOwner && (
-            <IconButton onClick={() => onEdit(plan)} aria-label="Edit plan" sx={tintIcon(accent)}>
+            <IconButton onClick={() => onEdit(plan)} aria-label="Edit plan" sx={libIconBtnSx}>
               <EditRoundedIcon />
             </IconButton>
           )}
-          <IconButton onClick={() => setConfirm(plan.isOwner ? 'delete' : 'leave')} aria-label={plan.isOwner ? 'Delete plan' : 'Leave plan'} sx={tintIcon('#E11D48')}>
+          <IconButton
+            onClick={() => setConfirm(plan.isOwner ? 'delete' : 'leave')}
+            aria-label={plan.isOwner ? 'Delete plan' : 'Leave plan'}
+            sx={(t) => ({ ...libIconBtnSx, color: t.palette.error.main, bgcolor: tint(t.palette.error.main, 12), '&:hover': { bgcolor: tint(t.palette.error.main, 20) } })}
+          >
             {plan.isOwner ? <DeleteOutlineRoundedIcon /> : <ExitToAppRoundedIcon />}
           </IconButton>
         </Stack>
       </Stack>
 
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mt: 1 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <IconTile accent={accent} size={84}>
-            <SchoolRoundedIcon sx={{ fontSize: 44 }} />
-          </IconTile>
-        </Box>
-        <Typography component="h1" sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', overflowWrap: 'anywhere' }}>
-          {plan.title}
-        </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          {fmtRange(s.startDate, s.endDate)}
-        </Typography>
-      </Box>
+      <PageHeader icon={SchoolRoundedIcon} title={plan.title} subtitle={fmtRange(s.startDate, s.endDate)} />
 
       {error && (
         <Alert severity="error" sx={{ mt: 2 }} onClose={() => setError('')}>
@@ -790,39 +766,32 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
       )}
 
       {/* Progress */}
-      <Box sx={(t) => ({ ...panelSx(accent)(t), mt: 2.5 })}>
-        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1.5 }}>
-          <Box sx={{ minWidth: 0 }}>
-            <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
-              Solved
-            </Typography>
-            <Typography sx={{ fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em', fontVariantNumeric: 'tabular-nums' }}>
+      <Box sx={{ ...libPanelSx, p: 2, mt: 3 }}>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 2 }}>
+          <PlanDisc percent={s.percent} accent={accent} />
+          <Box sx={{ minWidth: 0, flex: 1 }}>
+            <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: MUTED }}>Solved</Typography>
+            <Typography sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px', fontVariantNumeric: 'tabular-nums' }}>
               {s.done}
-              <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500, fontSize: '1.25rem' }}>
+              <Box component="span" sx={{ color: MUTED, fontWeight: 400, fontSize: 18 }}>
                 /{s.total}
               </Box>
             </Typography>
           </Box>
           <Box sx={{ textAlign: 'right', minWidth: 0 }}>
-            <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
-              {tile.label || 'Status'}
-            </Typography>
-            <Typography sx={{ fontWeight: 800, fontSize: tile.big.length > 3 ? '1.5rem' : '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em', fontVariantNumeric: 'tabular-nums', color: tile.urgent ? 'var(--jc-medium)' : 'text.primary' }}>{tile.big}</Typography>
+            <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: MUTED }}>{tile.label || 'Status'}</Typography>
+            <Typography sx={{ fontWeight: 700, fontSize: tile.big.length > 3 ? 20 : 26, lineHeight: '32px', fontVariantNumeric: 'tabular-nums', color: tile.urgent ? 'var(--jc-medium)' : 'var(--lib-text)' }}>{tile.big}</Typography>
           </Box>
         </Stack>
-        <Box role="progressbar" aria-label="Plan progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} sx={{ mt: 1.5, height: 8, borderRadius: 99, bgcolor: tint(accent, 20), overflow: 'hidden' }}>
-          <Box sx={{ width: `${Math.max(s.percent, 3)}%`, height: '100%', borderRadius: 99, bgcolor: accent, transition: 'width .5s' }} />
-        </Box>
         <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 0.75, mt: 1.5 }}>
-          <Pill color={accent}>{s.percent}%</Pill>
-          <Pill color={accent}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Pill>
-          {s.streak > 0 && <Pill color="#F59E0B">{s.streak}-day streak</Pill>}
-          {s.status !== 'completed' && s.status !== 'upcoming' && <Pill color={paceColor}>{pace.text}</Pill>}
+          <Chip color={accent}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Chip>
+          {s.streak > 0 && <Chip color="#F59E0B">{s.streak}-day streak</Chip>}
+          {s.status !== 'completed' && s.status !== 'upcoming' && <Chip color={paceColor}>{pace.text}</Chip>}
         </Stack>
       </Box>
 
       {/* Questions / friends */}
-      <Box sx={{ mt: 2.5 }}>
+      <Box sx={{ mt: 3 }}>
         <PillTabs
           label="Plan sections"
           accent={accent}
@@ -837,25 +806,21 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
 
       {panel === 'questions' ? (
         <Box sx={{ mt: 1 }}>
-          {days.length === 0 && (
-            <Typography color="text.secondary" sx={{ py: 4, textAlign: 'center' }}>
-              No questions in this plan.
-            </Typography>
-          )}
+          {days.length === 0 && <Typography sx={{ py: 4, textAlign: 'center', fontSize: 16, color: MUTED }}>No questions in this plan.</Typography>}
           {days.map((d) => {
             const doneCount = d.items.filter((i) => i.done).length;
             const all = doneCount === d.items.length;
             return (
               <Box key={d.date} component="section" aria-label={relDay(d.date, today)} sx={{ mt: 2 }}>
                 <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 0.5 }}>
-                  <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.05rem', color: d.date === today ? accent : 'text.primary' }}>
+                  <Typography component="h2" sx={{ ...libSectionTitleSx, fontSize: 16, color: d.date === today ? accent : 'var(--lib-text)' }}>
                     {relDay(d.date, today)}
                   </Typography>
-                  <Typography sx={{ fontWeight: 700, fontSize: '0.85rem', fontVariantNumeric: 'tabular-nums', color: all ? 'var(--jc-easy)' : 'text.secondary' }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: 14, fontVariantNumeric: 'tabular-nums', color: all ? 'var(--jc-easy)' : MUTED }}>
                     {doneCount}/{d.items.length}
                   </Typography>
                 </Stack>
-                <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+                <Box sx={{ borderTop: `1px solid ${DIVIDER}` }}>
                   {d.items.map((it) => (
                     <TaskRow key={it.id} item={it} accent={accent} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />
                   ))}
@@ -865,20 +830,20 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
           })}
         </Box>
       ) : (
-        <Box sx={{ mt: 1, borderTop: '1px solid', borderColor: 'divider' }}>
+        <Box sx={{ mt: 1, borderTop: `1px solid ${DIVIDER}` }}>
           {plan.members.map((m) => {
             const barColor = m.status === 'completed' ? 'var(--jc-easy)' : m.status === 'behind' ? 'var(--jc-hard)' : accent;
             return (
-              <Stack key={m.userId} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.25, px: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-                <Avatar src={m.avatarUrl || undefined} alt={m.name} sx={{ width: 44, height: 44, fontWeight: 800 }}>
+              <Stack key={m.userId} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.25, px: 0.5, borderBottom: `1px solid ${DIVIDER}` }}>
+                <Avatar src={m.avatarUrl || undefined} alt={m.name} sx={{ width: 44, height: 44, fontWeight: 700 }}>
                   {m.name?.[0]?.toUpperCase()}
                 </Avatar>
                 <Box sx={{ minWidth: 0, flex: 1 }}>
                   <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', gap: 1 }}>
-                    <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem' }}>
+                    <Typography noWrap sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
                       {m.isMe ? 'You' : m.name}
                     </Typography>
-                    <Typography sx={{ fontWeight: 700, fontSize: '0.85rem', fontVariantNumeric: 'tabular-nums' }}>
+                    <Typography sx={{ fontWeight: 500, fontSize: 14, fontVariantNumeric: 'tabular-nums', color: MUTED }}>
                       {m.done}/{m.total}
                     </Typography>
                   </Stack>
@@ -887,7 +852,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
                   </Box>
                 </Box>
                 {plan.isOwner && !m.isOwner && (
-                  <IconButton onClick={() => setConfirm({ remove: m })} aria-label={`Remove ${m.name}`} sx={{ width: 44, height: 44 }}>
+                  <IconButton onClick={() => setConfirm({ remove: m })} aria-label={`Remove ${m.name}`} sx={{ width: 44, height: 44, color: MUTED }}>
                     <PersonRemoveRoundedIcon />
                   </IconButton>
                 )}
