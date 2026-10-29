@@ -1,5 +1,8 @@
 import { useMemo } from 'react';
-import { Box } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Typography } from '@mui/material';
+import EventRoundedIcon from '@mui/icons-material/EventRounded';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 
 // Shared look of the phone Library (Problems) pages: Roboto type and a warm cream surface in light mode.
@@ -37,8 +40,9 @@ export const useLibraryPalette = () => LIBRARY_PALETTE[useTheme().palette.mode =
 const VARIANTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'button', 'caption', 'overline'];
 const TYPOGRAPHY = { fontFamily: LIB_FONT, ...Object.fromEntries(VARIANTS.map((v) => [v, { fontFamily: LIB_FONT }])) };
 
-// The phone dashboard (Home) uses the Library look: only on /dashboard without another ?view= open.
-export const isLibraryRoute = (pathname, search) => pathname.replace(/\/+$/, '') === '/dashboard' && !new URLSearchParams(search).get('view');
+// Pages that use the Library look on phones: the dashboard home (no ?view= open) and the problem list.
+export const isLibraryRoute = (pathname, search) =>
+  (pathname.replace(/\/+$/, '') === '/dashboard' && !new URLSearchParams(search).get('view')) || pathname === '/problems' || pathname.startsWith('/problems/');
 
 // Roboto for everything inside (menus and dialogs opened from it included).
 export function LibraryFont({ children }) {
@@ -47,5 +51,50 @@ export function LibraryFont({ children }) {
     <ThemeProvider theme={theme}>
       <Box sx={{ fontFamily: LIB_FONT }}>{children}</Box>
     </ThemeProvider>
+  );
+}
+
+// Strip above the tab bar: today's challenge, one tap to open.
+export function MiniPlayer({ featured, aboveNav }) {
+  const pal = useLibraryPalette();
+  if (!featured) return null;
+  return (
+    <Box
+      component={RouterLink}
+      to={`/workspace/${featured.slug}`}
+      aria-label={`Open today's challenge: ${featured.title}`}
+      sx={(t) => ({
+        position: 'fixed',
+        left: 16,
+        right: 16,
+        bottom: aboveNav ? 'calc(72px + env(safe-area-inset-bottom))' : 'calc(12px + env(safe-area-inset-bottom))',
+        zIndex: t.zIndex.appBar - 10,
+        maxWidth: 608,
+        mx: 'auto',
+        height: 57,
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px',
+        pl: 2,
+        pr: 2.5,
+        borderRadius: 999,
+        bgcolor: pal.player,
+        color: pal.text,
+        textDecoration: 'none',
+      })}
+    >
+      <Box aria-hidden sx={{ width: 40, height: 40, flex: 'none', borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: 'rgba(239,108,77,0.2)', color: '#EF6C4D' }}>
+        <EventRoundedIcon sx={{ fontSize: 22 }} />
+      </Box>
+      <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Typography noWrap sx={{ fontSize: 16, lineHeight: '22px', fontWeight: 500, letterSpacing: '0.03em' }}>
+          {featured.title}
+        </Typography>
+        <Typography noWrap sx={{ fontSize: 14, lineHeight: '18px', letterSpacing: '0.03em', color: pal.muted }}>
+          Today&apos;s challenge · {featured.difficulty}
+        </Typography>
+      </Box>
+      <PlayArrowRoundedIcon aria-hidden sx={{ fontSize: 32, flex: 'none' }} />
+    </Box>
   );
 }

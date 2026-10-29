@@ -11,7 +11,6 @@ import {
   Divider,
   IconButton,
   ListItemIcon,
-  InputAdornment,
   Menu,
   MenuItem,
   Skeleton,
@@ -19,7 +18,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
@@ -34,17 +32,20 @@ import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUnch
 import SignalCellularAlt1BarRoundedIcon from '@mui/icons-material/SignalCellularAlt1BarRounded';
 import SignalCellularAlt2BarRoundedIcon from '@mui/icons-material/SignalCellularAlt2BarRounded';
 import SignalCellularAltRoundedIcon from '@mui/icons-material/SignalCellularAltRounded';
-import BackToDashboard from '../../../components/BackToDashboard';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import { problemsApi } from '../../../api/problemsApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
+import { LibraryFont, MiniPlayer, useLibraryPalette } from './libraryStyle';
 
 // Phone layout of the Problems page. It uses the same accent colour, rounded panels and tinted
 // chips as the phone dashboard (MobileHome), and the page itself scrolls (infinite scroll).
 
 const ACCENT = '#6366F1';
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
+const TRACKING = '0.03em';
 const SHORT_DIFF = { Easy: 'Easy', Medium: 'Med.', Hard: 'Hard' };
 const PAGE_SIZE = 30;
 
@@ -59,16 +60,17 @@ function DifficultyTag({ difficulty }) {
       component="span"
       sx={{
         flexShrink: 0,
-        minWidth: 48,
+        minWidth: 43,
         textAlign: 'center',
-        px: 1,
-        py: 0.4,
-        borderRadius: '10px',
-        fontSize: '0.78rem',
-        fontWeight: 800,
-        lineHeight: 1.2,
+        px: '5px',
+        py: '2px',
+        borderRadius: '8px',
+        fontSize: 15,
+        fontWeight: 400,
+        letterSpacing: TRACKING,
+        lineHeight: '20px',
         color,
-        bgcolor: tint(color, 16),
+        bgcolor: tint(color, 14),
       }}
     >
       {SHORT_DIFF[difficulty] || difficulty}
@@ -76,30 +78,32 @@ function DifficultyTag({ difficulty }) {
   );
 }
 
-function ProblemRow({ p, index, isDaily, saved, onStar }) {
+function ProblemRow({ p, index, isDaily, saved, onStar, pal }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: '1px solid', borderColor: 'divider', '&:last-of-type': { borderBottom: 'none' } }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: `1px solid ${pal.divider}`, '&:last-of-type': { borderBottom: 'none' } }}>
       <ButtonBase
         component={RouterLink}
         to={`/workspace/${p.slug}`}
-        sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: 1.5, py: 1.5, pl: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '10px', py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
-        <Box sx={{ pt: 0.15 }}>
+        <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.25, pt: '2px' }}>
           <DifficultyTag difficulty={p.difficulty} />
-        </Box>
+          {p.solvedByMe ? (
+            <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: 20, color: 'var(--jc-easy)' }} />
+          ) : (
+            <RemoveRoundedIcon aria-label="Not solved" sx={{ fontSize: 20, color: pal.muted, opacity: 0.6 }} />
+          )}
+        </Stack>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', minWidth: 0 }}>
-            <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35, minWidth: 0 }}>
+            <Typography noWrap sx={{ fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: TRACKING, minWidth: 0 }}>
               {index}. {p.title}
             </Typography>
             {isDaily && <EventRoundedIcon aria-label="Today's challenge" sx={{ fontSize: 17, color: ACCENT, flexShrink: 0 }} />}
           </Stack>
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 0.4, color: 'text.secondary' }}>
-            {p.solvedByMe && <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: 16, color: 'var(--jc-easy)' }} />}
-            <Typography variant="body2" sx={{ fontSize: '0.82rem', fontVariantNumeric: 'tabular-nums' }}>
-              Acceptance {(p.acceptanceRate ?? 0).toFixed(1)}%
-            </Typography>
-            {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: 14, color: 'warning.main' }} />}
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 1.5, color: pal.muted }}>
+            <Typography sx={{ fontSize: 15, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums' }}>Acceptance {(p.acceptanceRate ?? 0).toFixed(1)}%</Typography>
+            {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: 16, color: 'warning.main' }} />}
           </Stack>
         </Box>
       </ButtonBase>
@@ -119,8 +123,8 @@ function SkeletonRows({ count = 8 }) {
   return (
     <>
       {Array.from({ length: count }).map((_, i) => (
-        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 1.75, pl: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-          <Skeleton variant="rounded" width={48} height={24} sx={{ borderRadius: '10px' }} />
+        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, py: 2.5, borderBottom: '1px solid', borderColor: 'divider' }}>
+          <Skeleton variant="rounded" width={43} height={24} sx={{ borderRadius: '8px' }} />
           <Box sx={{ flex: 1 }}>
             <Skeleton variant="text" width="70%" />
             <Skeleton variant="text" width="40%" />
@@ -133,6 +137,7 @@ function SkeletonRows({ count = 8 }) {
 
 export default function MobileProblems({ isAuthenticated, progress, featured, preset, listsApi }) {
   const navigate = useNavigate();
+  const pal = useLibraryPalette();
   const { enqueueSnackbar } = useSnackbar();
 
   const [q, setQ] = useState(INITIAL_QUERY);
@@ -272,15 +277,18 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
   const heading = q.tags.length === 1 ? q.tags[0] : q.companies.length === 1 && !q.tags.length ? q.companies[0] : 'All Problems';
 
   return (
-    <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
+    <LibraryFont>
+    <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: featured ? '84px' : 2, maxWidth: 640, mx: 'auto' }}>
       {/* Back + menu */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
+        <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={{ width: 44, height: 44, ml: -1, color: pal.text }}>
+          <ArrowBackRoundedIcon />
+        </IconButton>
         <IconButton
           onClick={(e) => setMenuAnchor(e.currentTarget)}
           aria-label="Filter problems"
           aria-haspopup="menu"
-          sx={(t) => ({ width: 44, height: 44, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), color: ACCENT })}
+          sx={{ width: 40, height: 40, bgcolor: pal.player, color: pal.text, '&:hover': { bgcolor: pal.player } }}
         >
           <Box sx={{ position: 'relative', display: 'grid', placeItems: 'center' }}>
             <MoreHorizRoundedIcon />
@@ -293,77 +301,67 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
       <TextField
         fullWidth
         size="small"
-        placeholder="Search problems"
+        placeholder="Search"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        slotProps={{
-          htmlInput: { 'aria-label': 'Search problems' },
-          input: {
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchRoundedIcon fontSize="small" />
-              </InputAdornment>
-            ),
-          },
-        }}
-        sx={(t) => ({
+        slotProps={{ htmlInput: { 'aria-label': 'Search problems' } }}
+        sx={{
           mt: 1,
-          '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
+          px: '4px',
+          '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: 18, letterSpacing: TRACKING, px: '16px' },
           '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-        })}
+        }}
       />
 
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mt: 2.5 }}>
+      <Box sx={{ textAlign: 'center', mt: 3 }}>
         <Box
           sx={{
-            width: 84,
-            height: 84,
+            width: 81,
+            height: 81,
             mx: 'auto',
-            borderRadius: '26px',
+            borderRadius: '22px',
             display: 'grid',
             placeItems: 'center',
-            color: '#fff',
-            background: `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`,
-            boxShadow: `0 14px 26px -12px ${ACCENT}`,
+            background: 'linear-gradient(135deg, #F6DCE3 0%, #EEE3F6 55%, #F8DDEB 100%)',
           }}
         >
-          <CodeRoundedIcon sx={{ fontSize: 44 }} />
+          <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', background: 'linear-gradient(160deg, #B58AF2, #F28C7A)' }}>
+            <CodeRoundedIcon sx={{ fontSize: 28, color: '#fff' }} />
+          </Box>
         </Box>
-        <Typography component="h1" noWrap sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
+        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
           {heading}
         </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          Coding practice
-        </Typography>
+        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: TRACKING, color: pal.muted }}>Coding practice</Typography>
 
-        <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2 }}>
+        <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2.5 }}>
           <Box
             role="progressbar"
             aria-label="Problems solved"
             aria-valuemin={0}
             aria-valuemax={totalAll}
             aria-valuenow={solvedAll}
-            sx={{ flex: 1, maxWidth: 260, height: 8, borderRadius: 99, bgcolor: tint(ACCENT, 20), overflow: 'hidden' }}
+            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint('#F2B63C', 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: ACCENT, transition: 'width .5s' }} />
+            <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: '#F2B63C', transition: 'width .5s' }} />
           </Box>
-          <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+          <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {progress ? solvedAll : '–'}
-            <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+            <Box component="span" sx={{ color: pal.muted, fontWeight: 400 }}>
               /{progress ? totalAll.toLocaleString('en-IN') : '–'}
             </Box>
           </Typography>
         </Stack>
 
-        <Stack direction="row" spacing={1.25} sx={{ justifyContent: 'center', mt: 2 }}>
+        <Stack direction="row" spacing={1.25} sx={{ justifyContent: 'center', mt: 2.5 }}>
           <Button
             onClick={pickOne}
             disabled={picking}
             disableElevation
             variant="contained"
             startIcon={picking ? <CircularProgress size={18} color="inherit" /> : <PlayArrowRoundedIcon />}
-            sx={{ height: 48, px: 3.5, borderRadius: 999, fontWeight: 800, fontSize: '1rem', textTransform: 'none', bgcolor: tint(ACCENT, 20), color: ACCENT, '&:hover': { bgcolor: tint(ACCENT, 30) } }}
+            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : '#6B4A1E', '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
           >
             Practice
           </Button>
@@ -374,7 +372,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
               disableElevation
               variant="contained"
               startIcon={<EventRoundedIcon />}
-              sx={{ height: 48, px: 2.5, borderRadius: 999, fontWeight: 800, fontSize: '0.95rem', textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } }}
+              sx={{ height: 40, px: 2.5, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: TRACKING, textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } }}
             >
               Daily
             </Button>
@@ -401,7 +399,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
       )}
 
       {/* List */}
-      <Box sx={{ mt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
+      <Box sx={{ mt: 3, borderTop: `1px solid ${pal.divider}` }}>
         {error && (
           <Alert
             severity="error"
@@ -431,7 +429,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         ) : (
           <Box sx={{ opacity: refetching ? 0.55 : 1, transition: 'opacity 120ms' }} aria-busy={refetching}>
             {items.map((p, i) => (
-              <ProblemRow key={p._id} p={p} index={i + 1} isDaily={p._id === featured?._id} saved={listsApi.isSaved(p._id)} onStar={handleStar} />
+              <ProblemRow key={p._id} pal={pal} p={p} index={i + 1} isDaily={p._id === featured?._id} saved={listsApi.isSaved(p._id)} onStar={handleStar} />
             ))}
             <Box ref={sentinelRef} aria-hidden sx={{ height: 1 }} />
             {loadingMore && <SkeletonRows count={3} />}
@@ -450,7 +448,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         anchorEl={menuAnchor}
         open={Boolean(menuAnchor)}
         onClose={() => setMenuAnchor(null)}
-        slotProps={{ paper: { sx: { borderRadius: '20px', minWidth: 230, py: 0.5 } } }}
+        slotProps={{ paper: { sx: { borderRadius: '20px', minWidth: 230, py: 0.5, bgcolor: pal.bg } } }}
       >
         {DIFFICULTIES.map((d) => {
           const Icon = DIFF_ICON[d];
@@ -509,5 +507,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         }}
       />
     </Box>
+    <MiniPlayer featured={featured} aboveNav={isAuthenticated} />
+    </LibraryFont>
   );
 }
