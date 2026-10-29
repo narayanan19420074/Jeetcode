@@ -1,32 +1,39 @@
 import { MenuItem, Tooltip } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import { WsSelect } from './wsUi';
-import { WS, PHONE_ACCENT } from './wsTokens';
-import { tint } from '../dashboard/dashboardUtils';
+import { WS } from './wsTokens';
+import { LIB_TRACKING, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { LANGUAGES, LANG_SHORT, languageLabel } from './languages';
 
 // Language picker. langMode comes from usePaneModes: 'full' | 'short' | 'icon'
 // (the narrower the pane, the less text it shows).
+// pill: the phone workspace look (Library style: 40px cream pill, no icon).
 export default function LanguageSelect({ value, onChange, problem, langMode, isMobile, pill = false }) {
+  const pal = useLibraryPalette();
   const select = (
     <WsSelect
       value={value}
       onChange={(e) => onChange(e.target.value)}
       renderValue={(v) => (langMode === 'icon' ? '' : langMode === 'short' ? LANG_SHORT[v] : languageLabel(v))}
-      startAdornment={<CodeRoundedIcon sx={{ fontSize: 17, mr: langMode === 'icon' ? 0 : 0.75, color: 'primary.main' }} />}
+      startAdornment={pill ? undefined : <CodeRoundedIcon sx={{ fontSize: 17, mr: langMode === 'icon' ? 0 : 0.75, color: 'primary.main' }} />}
+      {...(pill && {
+        MenuProps: { slotProps: { paper: { sx: { mt: 0.5, borderRadius: '20px', bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } } },
+      })}
       sx={
         pill
-          ? (t) => ({
-              height: 44,
-              minWidth: 128,
+          ? {
+              height: 40,
+              minWidth: 112,
               borderRadius: 999,
-              fontSize: '0.9rem',
-              fontWeight: 700,
-              bgcolor: tint(PHONE_ACCENT, t.palette.mode === 'dark' ? 16 : 9),
-              '&:hover': { bgcolor: tint(PHONE_ACCENT, t.palette.mode === 'dark' ? 22 : 14) },
-              '& .MuiSelect-select': { height: '44px', pl: 0.5 },
-              '& .MuiSelect-icon': { right: 10 },
-            })
+              fontSize: 16,
+              fontWeight: 500,
+              letterSpacing: LIB_TRACKING,
+              color: pal.text,
+              bgcolor: pal.chip,
+              '&:hover': { bgcolor: pal.chip, filter: 'brightness(0.97)' },
+              '& .MuiSelect-select': { height: '40px', pl: 2 },
+              '& .MuiSelect-icon': { right: 12 },
+            }
           : isMobile
             ? { height: WS.ctrlLg, minWidth: 124, '& .MuiSelect-select': { height: `${WS.ctrlLg}px` } }
           : langMode === 'short'
