@@ -22,6 +22,7 @@ import {
 } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
@@ -36,13 +37,14 @@ import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
 import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import { studyPlanApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
-import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
+import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSmallBtnSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import FriendPicker from './FriendPicker';
-import { daysLeftInfo, daysTile, fmtDay, fmtRange, itemLink, localKey, paceLabel, planTheme, relDay, relTime, shareUrl } from './planUtils';
+import { daysLeftInfo, fmtDay, fmtRange, itemLink, localKey, planTheme, relDay, relTime, shareUrl } from './planUtils';
 
 // Phone layout of the Study Plan screens (plans list and open plan) in the Library look
 // (same as the phone Home, Problems, Store and Friends pages): Roboto type, warm surface,
@@ -165,38 +167,6 @@ function Sheet({ open, onClose, title, children }) {
         </Box>
       </LibraryFont>
     </Drawer>
-  );
-}
-
-function PillTabs({ label, options, value, onChange, accent = ACCENT }) {
-  return (
-    <Box sx={{ display: 'flex', gap: 1, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }} role="tablist" aria-label={label}>
-      {options.map(([v, text]) => {
-        const on = v === value;
-        return (
-          <ButtonBase
-            key={v}
-            role="tab"
-            aria-selected={on}
-            onClick={() => onChange(v)}
-            sx={{
-              flexShrink: 0,
-              height: 34,
-              px: '14px',
-              borderRadius: 999,
-              fontFamily: 'inherit',
-              fontSize: 15,
-              letterSpacing: LIB_TRACKING,
-              whiteSpace: 'nowrap',
-              bgcolor: on ? accent : 'var(--lib-chip)',
-              color: on ? '#fff' : 'var(--lib-chip-text)',
-            }}
-          >
-            {text}
-          </ButtonBase>
-        );
-      })}
-    </Box>
   );
 }
 
@@ -527,34 +497,36 @@ export function MobilePlans({
 
 // ---------- open plan ----------
 
-function TaskRow({ item, doers, accent }) {
+// One question, laid out like a row on the phone Problems page:
+// difficulty tag and solved mark on the left, numbered title and details on the right.
+function QuestionRow({ item, index, doers }) {
   const link = itemLink(item);
-  const interactive = !item.done && Boolean(link);
   const diffColor = DIFF_COLOR[item.difficulty] || 'var(--jc-pending)';
 
   const body = (
     <>
-      {item.done ? (
-        <Box sx={{ width: 28, height: 28, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: 'var(--jc-easy)', color: '#fff' }}>
-          <CheckRoundedIcon sx={{ fontSize: 18 }} />
-        </Box>
-      ) : item.overdue ? (
-        <ErrorOutlineRoundedIcon aria-label="Overdue" sx={{ fontSize: 28, color: 'var(--jc-hard)', flexShrink: 0 }} />
-      ) : (
-        <Box aria-hidden sx={{ width: 28, height: 28, borderRadius: '50%', flexShrink: 0, border: `2px solid ${MUTED}`, opacity: 0.6 }} />
-      )}
+      <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.25, pt: '2px' }}>
+        <Typography
+          component="span"
+          sx={{ flexShrink: 0, minWidth: 43, textAlign: 'center', px: '5px', py: '2px', borderRadius: '8px', fontSize: 15, letterSpacing: LIB_TRACKING, lineHeight: '20px', color: diffColor, bgcolor: tint(diffColor, 14) }}
+        >
+          {SHORT_DIFF[item.difficulty] || item.difficulty}
+        </Typography>
+        {item.done ? (
+          <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: 20, color: 'var(--jc-easy)' }} />
+        ) : item.overdue ? (
+          <ErrorOutlineRoundedIcon aria-label="Overdue" sx={{ fontSize: 20, color: 'var(--jc-hard)' }} />
+        ) : (
+          <RemoveRoundedIcon aria-label="Not solved" sx={{ fontSize: 20, color: MUTED, opacity: 0.6 }} />
+        )}
+      </Stack>
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING, overflowWrap: 'anywhere', color: item.done ? MUTED : 'var(--lib-text)' }}>{item.title}</Typography>
-        <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 0.75, mt: 0.5 }}>
-          <Chip color={diffColor}>{SHORT_DIFF[item.difficulty] || item.difficulty}</Chip>
-          <Typography component="span" sx={{ fontSize: 14, color: MUTED, letterSpacing: LIB_TRACKING }}>
-            {item.type === 'problem' ? 'Coding' : 'Aptitude'}
-          </Typography>
-          {item.overdue && !item.done && (
-            <Typography component="span" sx={{ fontSize: 14, fontWeight: 500, color: 'var(--jc-hard)' }}>
-              Overdue
-            </Typography>
-          )}
+        <Typography noWrap sx={{ fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: LIB_TRACKING }}>
+          {index}. {item.title}
+        </Typography>
+        <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 1.5, color: MUTED }}>
+          <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING }}>{item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
+          {item.overdue && !item.done && <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING, color: 'var(--jc-hard)' }}>Overdue</Typography>}
           {doers.length > 0 && (
             <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 20, height: 20, fontSize: 10, fontWeight: 700, border: '2px solid', borderColor: 'var(--lib-bg)' } }}>
               {doers.map((m) => (
@@ -566,31 +538,24 @@ function TaskRow({ item, doers, accent }) {
           )}
         </Stack>
       </Box>
-      {item.done ? (
-        <Chip color="var(--jc-easy)">Solved</Chip>
-      ) : interactive ? (
-        <Typography component="span" sx={{ flexShrink: 0, px: '14px', height: 34, display: 'inline-flex', alignItems: 'center', borderRadius: 999, fontSize: 15, fontWeight: 500, letterSpacing: LIB_TRACKING, color: '#fff', bgcolor: accent }}>
-          Solve
-        </Typography>
-      ) : null}
     </>
   );
 
   const rowSx = {
     width: '100%',
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    gap: 1.5,
-    py: 1.5,
-    px: 0.5,
+    gap: '10px',
+    py: 2,
     textAlign: 'left',
     fontFamily: 'inherit',
     color: 'inherit',
     borderBottom: `1px solid ${DIVIDER}`,
+    '&:last-of-type': { borderBottom: 'none' },
   };
 
-  return interactive ? (
+  return link ? (
     <ButtonBase component={RouterLink} to={link} sx={rowSx}>
       {body}
     </ButtonBase>
@@ -604,7 +569,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
   const [plan, setPlan] = useState(null);
   const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
-  const [panel, setPanel] = useState('questions');
+  const [friendsOpen, setFriendsOpen] = useState(false);
   const [pickerEl, setPickerEl] = useState(null);
   const [confirm, setConfirm] = useState(null); // 'delete' | 'leave' | { remove: member }
   const [busy, setBusy] = useState(false);
@@ -708,9 +673,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
 
   const s = plan.summary;
   const accent = accentFor(plan.id);
-  const tile = daysTile(s, today);
-  const pace = paceLabel(s.pace);
-  const paceColor = s.pace > 0 ? 'var(--jc-easy)' : s.pace < 0 ? 'var(--jc-hard)' : '#64748B';
+  const position = new Map(plan.items.map((it, i) => [it.id, i + 1]));
   const confirmText =
     confirm === 'delete'
       ? 'This removes the plan for everyone. Questions you solved stay solved.'
@@ -735,6 +698,9 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
         {backBtn}
         <Stack direction="row" sx={{ gap: 1 }}>
+          <IconButton onClick={() => setFriendsOpen(true)} aria-label="Friends progress" aria-haspopup="dialog" sx={libIconBtnSx}>
+            <GroupsRoundedIcon />
+          </IconButton>
           <IconButton onClick={(e) => setPickerEl(e.currentTarget)} aria-label="Add friends" sx={libIconBtnSx}>
             <PersonAddAlt1RoundedIcon />
           </IconButton>
@@ -765,102 +731,64 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
         </Alert>
       )}
 
-      {/* Progress */}
-      <Box sx={{ ...libPanelSx, p: 2, mt: 3 }}>
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 2 }}>
-          <PlanDisc percent={s.percent} accent={accent} />
-          <Box sx={{ minWidth: 0, flex: 1 }}>
-            <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: MUTED }}>Solved</Typography>
-            <Typography sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px', fontVariantNumeric: 'tabular-nums' }}>
-              {s.done}
-              <Box component="span" sx={{ color: MUTED, fontWeight: 400, fontSize: 18 }}>
-                /{s.total}
-              </Box>
-            </Typography>
-          </Box>
-          <Box sx={{ textAlign: 'right', minWidth: 0 }}>
-            <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: MUTED }}>{tile.label || 'Status'}</Typography>
-            <Typography sx={{ fontWeight: 700, fontSize: tile.big.length > 3 ? 20 : 26, lineHeight: '32px', fontVariantNumeric: 'tabular-nums', color: tile.urgent ? 'var(--jc-medium)' : 'var(--lib-text)' }}>{tile.big}</Typography>
-          </Box>
-        </Stack>
-        <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 0.75, mt: 1.5 }}>
-          <Chip color={accent}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Chip>
-          {s.streak > 0 && <Chip color="#F59E0B">{s.streak}-day streak</Chip>}
-          {s.status !== 'completed' && s.status !== 'upcoming' && <Chip color={paceColor}>{pace.text}</Chip>}
-        </Stack>
-      </Box>
-
-      {/* Questions / friends */}
-      <Box sx={{ mt: 3 }}>
-        <PillTabs
-          label="Plan sections"
-          accent={accent}
-          value={panel}
-          onChange={setPanel}
-          options={[
-            ['questions', `Questions · ${s.total}`],
-            ['friends', `Friends · ${plan.members.length}`],
-          ]}
-        />
-      </Box>
-
-      {panel === 'questions' ? (
-        <Box sx={{ mt: 1 }}>
-          {days.length === 0 && <Typography sx={{ py: 4, textAlign: 'center', fontSize: 16, color: MUTED }}>No questions in this plan.</Typography>}
-          {days.map((d) => {
-            const doneCount = d.items.filter((i) => i.done).length;
-            const all = doneCount === d.items.length;
-            return (
-              <Box key={d.date} component="section" aria-label={relDay(d.date, today)} sx={{ mt: 2 }}>
-                <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 0.5 }}>
-                  <Typography component="h2" sx={{ ...libSectionTitleSx, fontSize: 16, color: d.date === today ? accent : 'var(--lib-text)' }}>
-                    {relDay(d.date, today)}
-                  </Typography>
-                  <Typography sx={{ fontWeight: 500, fontSize: 14, fontVariantNumeric: 'tabular-nums', color: all ? 'var(--jc-easy)' : MUTED }}>
-                    {doneCount}/{d.items.length}
-                  </Typography>
-                </Stack>
-                <Box sx={{ borderTop: `1px solid ${DIVIDER}` }}>
-                  {d.items.map((it) => (
-                    <TaskRow key={it.id} item={it} accent={accent} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />
-                  ))}
-                </Box>
-              </Box>
-            );
-          })}
-        </Box>
-      ) : (
-        <Box sx={{ mt: 1, borderTop: `1px solid ${DIVIDER}` }}>
-          {plan.members.map((m) => {
-            const barColor = m.status === 'completed' ? 'var(--jc-easy)' : m.status === 'behind' ? 'var(--jc-hard)' : accent;
-            return (
-              <Stack key={m.userId} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.25, px: 0.5, borderBottom: `1px solid ${DIVIDER}` }}>
-                <Avatar src={m.avatarUrl || undefined} alt={m.name} sx={{ width: 44, height: 44, fontWeight: 700 }}>
-                  {m.name?.[0]?.toUpperCase()}
-                </Avatar>
-                <Box sx={{ minWidth: 0, flex: 1 }}>
-                  <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', gap: 1 }}>
-                    <Typography noWrap sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
-                      {m.isMe ? 'You' : m.name}
-                    </Typography>
-                    <Typography sx={{ fontWeight: 500, fontSize: 14, fontVariantNumeric: 'tabular-nums', color: MUTED }}>
-                      {m.done}/{m.total}
-                    </Typography>
-                  </Stack>
-                  <Box role="progressbar" aria-label={`${m.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={m.percent} sx={{ mt: 0.75, height: 6, borderRadius: 99, bgcolor: tint(barColor, 20), overflow: 'hidden' }}>
-                    <Box sx={{ width: `${m.percent}%`, height: '100%', borderRadius: 99, bgcolor: barColor }} />
-                  </Box>
-                </Box>
-                {plan.isOwner && !m.isOwner && (
-                  <IconButton onClick={() => setConfirm({ remove: m })} aria-label={`Remove ${m.name}`} sx={{ width: 44, height: 44, color: MUTED }}>
-                    <PersonRemoveRoundedIcon />
-                  </IconButton>
-                )}
+      {/* Questions, grouped by day, in the Problems page style */}
+      <Box sx={{ mt: 2 }}>
+        {days.length === 0 && <Typography sx={{ py: 4, textAlign: 'center', fontSize: 16, color: MUTED }}>No questions in this plan.</Typography>}
+        {days.map((d) => {
+          const doneCount = d.items.filter((i) => i.done).length;
+          const all = doneCount === d.items.length;
+          return (
+            <Box key={d.date} component="section" aria-label={relDay(d.date, today)} sx={{ mt: 3 }}>
+              <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
+                <Typography component="h2" sx={{ ...libSectionTitleSx, color: d.date === today ? accent : 'var(--lib-text)' }}>
+                  {relDay(d.date, today)}
+                </Typography>
+                <Typography sx={{ fontWeight: 500, fontSize: 14, fontVariantNumeric: 'tabular-nums', color: all ? 'var(--jc-easy)' : MUTED }}>
+                  {doneCount}/{d.items.length} Solved
+                </Typography>
               </Stack>
+              <Box sx={{ borderTop: `1px solid ${DIVIDER}`, mt: 0.5 }}>
+                {d.items.map((it) => (
+                  <QuestionRow key={it.id} item={it} index={position.get(it.id)} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />
+                ))}
+              </Box>
+            </Box>
+          );
+        })}
+      </Box>
+
+      {/* Your progress and every member's progress, as filled discs */}
+      <Sheet open={friendsOpen} onClose={() => setFriendsOpen(false)} title="Progress">
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 1.5 }}>
+          {[...plan.members].sort((a, b) => Number(b.isMe) - Number(a.isMe)).map((m) => {
+            const discColor = m.status === 'completed' ? 'var(--jc-easy)' : m.status === 'behind' ? 'var(--jc-hard)' : accent;
+            return (
+              <Box key={m.userId} sx={{ ...libPanelSx, p: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <PlanDisc percent={m.percent} accent={discColor} size={96} />
+                <Typography noWrap sx={{ mt: 1.5, maxWidth: '100%', fontSize: 16, lineHeight: '22px', fontWeight: 500, letterSpacing: LIB_TRACKING }}>
+                  {m.isMe ? 'You' : m.name}
+                </Typography>
+                <Typography sx={{ fontSize: 14, lineHeight: '20px', color: MUTED, fontVariantNumeric: 'tabular-nums' }}>
+                  {m.done}/{m.total} Solved
+                </Typography>
+                {plan.isOwner && !m.isOwner && (
+                  <Button
+                    onClick={() => {
+                      setFriendsOpen(false);
+                      setConfirm({ remove: m });
+                    }}
+                    aria-label={`Remove ${m.name}`}
+                    startIcon={<PersonRemoveRoundedIcon />}
+                    sx={{ ...libSmallBtnSx, mt: 1, bgcolor: 'var(--lib-bg)', color: 'var(--lib-text)' }}
+                  >
+                    Remove
+                  </Button>
+                )}
+              </Box>
             );
           })}
         </Box>
-      )}
+      </Sheet>
 
       <FriendPicker anchorEl={pickerEl} onClose={() => setPickerEl(null)} friends={friends} memberIds={memberIds} onAdd={addFriend} onFindFriends={onFindFriends} />
 
