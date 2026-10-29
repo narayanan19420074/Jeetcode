@@ -269,12 +269,18 @@ export default function DashboardPage() {
 
   // Phone: the contest page is a full screen of its own (no dashboard header around it).
   if (!isMdUp && currentView === 'contest') return <ContestPage embedded />;
-
-  // Phone: the leaderboard is also a full screen of its own, with its own header.
-  if (!isMdUp && currentView === 'leaderboard') return <LeaderboardView isAuthenticated={isAuthenticated} />;
-
-  // Phone: the Study Plan is a full screen of its own as well (its screens have their own headers).
-  if (!isMdUp && currentView === 'plans') return <StudyPlannerView isAuthenticated={isAuthenticated} />;
+  // Phone: same for Friends.
+  if (!isMdUp && currentView === 'friends') {
+    return (
+      <FriendsView
+        isAuthenticated={isAuthenticated}
+        user={user}
+        inviteHandle={params.get('invite')}
+        onClearInvite={() => setParams({ view: 'friends' }, { replace: true })}
+        onOpenLeaderboard={() => setParams({ view: 'leaderboard', scope: 'friends' })}
+      />
+    );
+  }
 
   return (
     <Box

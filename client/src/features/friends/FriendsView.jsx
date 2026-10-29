@@ -30,6 +30,7 @@ import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import useViewportFill from '../dashboard/useViewportFill';
+import BackToDashboard from '../../components/BackToDashboard';
 import { WS } from '../workspace/wsTokens';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WsIconButton } from '../workspace/wsUi';
@@ -41,6 +42,7 @@ import { EmptyNote, FilterChip, FriendRow, LiveLine, OnlineRail, PersonRow, Reve
 import useGlobalPlayers from './useGlobalPlayers';
 import ActivityFeed from './ActivityFeed';
 import FriendChat, { ChatPanel } from './FriendChat';
+import MobileFriends, { MobileShell } from './MobileFriends';
 import { FriendProfilePanel } from './FriendProfileDialog';
 
 const SORTS = [['recent', 'Recent chats'], ['online', 'Online first'], ['points', 'Most points'], ['name', 'Name A to Z']];
@@ -127,6 +129,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const { busy, run } = useFriendAction();
   const theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const phone = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
   const { favs, toggle: toggleFav } = useFavourites(user.id);
 
   const [view, setView] = useState('friends'); // 'friends' | 'requests' | 'sent' | 'activity' | 'find'
@@ -458,6 +461,122 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     { key: 'sent', label: 'Sent', title: 'Sent requests', icon: <ScheduleSendRoundedIcon />, count: outgoing.length, badge: '#F59E0B' },
   ];
 
+  const overlays = (
+    <>
+      {/* invite menu */}
+      <Menu anchorEl={inviteAnchor} open={Boolean(inviteAnchor)} onClose={closeInvite}>
+        <MenuItem onClick={copy} sx={{ minHeight: 44 }}><ListItemIcon><ContentCopyRoundedIcon fontSize="small" /></ListItemIcon>Copy link</MenuItem>
+        <MenuItem onClick={share} sx={{ minHeight: 44 }}><ListItemIcon><IosShareRoundedIcon fontSize="small" /></ListItemIcon>Share…</MenuItem>
+        <MenuItem component="a" href={`https://wa.me/?text=${encodeURIComponent(`${message} ${link}`)}`} target="_blank" rel="noopener noreferrer" onClick={closeInvite} sx={{ minHeight: 44 }}>
+          <ListItemIcon><WhatsAppIcon fontSize="small" /></ListItemIcon>WhatsApp
+        </MenuItem>
+      </Menu>
+
+      {/* sort menu */}
+      <Menu anchorEl={sortAnchor} open={Boolean(sortAnchor)} onClose={() => setSortAnchor(null)}>
+        {SORTS.map(([key, label]) => (
+          <MenuItem key={key} selected={sortBy === key} onClick={() => { setSortBy(key); setSortAnchor(null); }} sx={{ minHeight: 42, fontSize: 14 }}>
+            <ListItemIcon>{sortBy === key ? <CheckCircleRoundedIcon fontSize="small" color="primary" /> : null}</ListItemIcon>{label}
+          </MenuItem>
+        ))}
+      </Menu>
+
+      {/* phone / tablet: chat opens as a full-height drawer */}
+      {!desktop && (
+        <FriendChat
+          friend={chatFriend}
+          onClose={() => setChatId(null)}
+          onCodeTogether={(f) => codeTogether(f)}
+          actions={chatFriend ? chatActions(chatFriend) : null}
+          overlay={chatFriend ? chatOverlay(chatFriend) : null}
+        />
+      )}
+
+      <Dialog open={Boolean(confirm)} onClose={() => setConfirm(null)} maxWidth="xs" fullWidth>
+        <DialogTitle sx={{ fontWeight: 700 }}>Remove friend?</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {confirm?.name} (@{confirm?.handle}) will leave your friends list and friends leaderboard. You can add them again later.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2 }}>
+          <Button onClick={() => setConfirm(null)}>Cancel</Button>
+          <Button
+            color="error"
+            variant="contained"
+            disableElevation
+            disabled={busy === 'remove'}
+            onClick={async () => {
+              if (await run('remove', removeFriend(confirm.userId), 'Friend removed')) {
+                if (chatId === confirm.userId) setChatId(null);
+                setConfirm(null);
+              }
+            }}
+          >
+            Remove
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+
+  // Phone: its own layout (same look as the phone Problems, Store and Contest pages). The chat still opens in its drawer.
+  if (phone) {
+    return (
+      <MobileShell>
+        <MobileFriends
+          inviteHandle={inviteHandle}
+          onClearInvite={onClearInvite}
+          run={run}
+          busy={busy}
+          onOpenLeaderboard={onOpenLeaderboard}
+          view={view}
+          goView={goView}
+          filter={filter}
+          setFilter={setFilter}
+          q={q}
+          setQ={setQ}
+          title={title}
+          subtitle={subtitle}
+          friends={friends}
+          incoming={incoming}
+          outgoing={outgoing}
+          loaded={loaded}
+          loading={loading}
+          error={error}
+          onRetry={() => dispatch(fetchFriends())}
+          online={online}
+          unread={unread}
+          last={last}
+          favs={favs}
+          myId={user.id}
+          shownFriends={shownFriends}
+          onlineFriends={onlineFriends}
+          onlineCount={onlineCount}
+          needle={needle}
+          noFriends={noFriends}
+          globalOn={globalOn}
+          global={global}
+          players={players}
+          friendIds={friendIds}
+          sentIds={sentIds}
+          received={received}
+          nameMatch={nameMatch}
+          onOpenChat={openChat}
+          onFind={() => toggleView('find')}
+          onAdd={(p) => run(p.userId, sendFriendRequest(p.handle), 'Friend request sent')}
+          onAccept={(requestId, key) => run(key, acceptFriendRequest(requestId), 'Friend added')}
+          onDecline={(id) => run(id, declineFriendRequest(id), 'Request declined')}
+          onCancel={(id) => run(id, cancelFriendRequest(id), 'Request cancelled')}
+          onInvite={setInviteAnchor}
+          onSort={setSortAnchor}
+          onActivity={() => toggleView('activity')}
+        />
+        {overlays}
+      </MobileShell>
+    );
+  }
+
   return (
     <Stack
       ref={rootRef}
@@ -560,69 +679,17 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         )}
       </Box>
 
-      {/* invite menu */}
-      <Menu anchorEl={inviteAnchor} open={Boolean(inviteAnchor)} onClose={closeInvite}>
-        <MenuItem onClick={copy} sx={{ minHeight: 44 }}><ListItemIcon><ContentCopyRoundedIcon fontSize="small" /></ListItemIcon>Copy link</MenuItem>
-        <MenuItem onClick={share} sx={{ minHeight: 44 }}><ListItemIcon><IosShareRoundedIcon fontSize="small" /></ListItemIcon>Share…</MenuItem>
-        <MenuItem component="a" href={`https://wa.me/?text=${encodeURIComponent(`${message} ${link}`)}`} target="_blank" rel="noopener noreferrer" onClick={closeInvite} sx={{ minHeight: 44 }}>
-          <ListItemIcon><WhatsAppIcon fontSize="small" /></ListItemIcon>WhatsApp
-        </MenuItem>
-      </Menu>
-
-      {/* sort menu */}
-      <Menu anchorEl={sortAnchor} open={Boolean(sortAnchor)} onClose={() => setSortAnchor(null)}>
-        {SORTS.map(([key, label]) => (
-          <MenuItem key={key} selected={sortBy === key} onClick={() => { setSortBy(key); setSortAnchor(null); }} sx={{ minHeight: 42, fontSize: 14 }}>
-            <ListItemIcon>{sortBy === key ? <CheckCircleRoundedIcon fontSize="small" color="primary" /> : null}</ListItemIcon>{label}
-          </MenuItem>
-        ))}
-      </Menu>
-
-      {/* phone / tablet: chat opens as a full-height drawer */}
-      {!desktop && (
-        <FriendChat
-          friend={chatFriend}
-          onClose={() => setChatId(null)}
-          onCodeTogether={(f) => codeTogether(f)}
-          actions={chatFriend ? chatActions(chatFriend) : null}
-          overlay={chatFriend ? chatOverlay(chatFriend) : null}
-        />
-      )}
-
-      <Dialog open={Boolean(confirm)} onClose={() => setConfirm(null)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 700 }}>Remove friend?</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            {confirm?.name} (@{confirm?.handle}) will leave your friends list and friends leaderboard. You can add them again later.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions sx={{ px: 3, pb: 2 }}>
-          <Button onClick={() => setConfirm(null)}>Cancel</Button>
-          <Button
-            color="error"
-            variant="contained"
-            disableElevation
-            disabled={busy === 'remove'}
-            onClick={async () => {
-              if (await run('remove', removeFriend(confirm.userId), 'Friend removed')) {
-                if (chatId === confirm.userId) setChatId(null);
-                setConfirm(null);
-              }
-            }}
-          >
-            Remove
-          </Button>
-        </DialogActions>
-      </Dialog>
+      {overlays}
     </Stack>
   );
 }
 
 export default function FriendsView({ isAuthenticated, user, inviteHandle, onClearInvite, onOpenLeaderboard }) {
   const navigate = useNavigate();
+  const phone = useMediaQuery(useTheme().breakpoints.down('md'), { noSsr: true });
 
   if (!isAuthenticated) {
-    return (
+    const card = (
       <Box sx={[surface, { p: 4, textAlign: 'center' }]}>
         <PeopleAltRoundedIcon sx={{ fontSize: 36, color: 'primary.main' }} />
         <Typography sx={{ fontWeight: 800, mt: 1 }}>Compete with friends</Typography>
@@ -634,6 +701,12 @@ export default function FriendsView({ isAuthenticated, user, inviteHandle, onCle
         </Button>
       </Box>
     );
+    return phone ? (
+      <MobileShell>
+        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent', mb: 1 }} />
+        {card}
+      </MobileShell>
+    ) : card;
   }
   return <FriendsPanel user={user} inviteHandle={inviteHandle} onClearInvite={onClearInvite} onOpenLeaderboard={onOpenLeaderboard} />;
 }
