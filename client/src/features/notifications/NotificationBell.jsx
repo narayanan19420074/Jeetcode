@@ -8,6 +8,9 @@ import { clearAll, markAllRead, markIdsRead, markRead, selectUnreadNotifications
 import { TABS, categoryOf, metaOf } from './notificationMeta';
 import { relTime } from '../studyplan/planUtils';
 
+// Same accent as the phone pages.
+const ACCENT = '#6366F1';
+
 function TabButton({ tab, active, unread, onClick }) {
   const Icon = tab.icon;
   return (
@@ -119,7 +122,12 @@ export default function NotificationBell() {
   return (
     <>
       <Tooltip title="Notifications">
-        <IconButton color="inherit" onClick={open} aria-label={unread ? `Notifications, ${unread} unread` : 'Notifications'}>
+        <IconButton
+          color="inherit"
+          onClick={open}
+          aria-label={unread ? `Notifications, ${unread} unread` : 'Notifications'}
+          sx={(t) => ({ [t.breakpoints.down('md')]: { width: 44, height: 44, color: ACCENT, bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.16 : 0.09) } })}
+        >
           <Badge badgeContent={unread} color="error" max={99}>
             <NotificationsRoundedIcon />
           </Badge>

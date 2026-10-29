@@ -55,6 +55,40 @@ import ProBadge from '../components/ProBadge';
 import NotificationBell from '../features/notifications/NotificationBell';
 import ActivateLicenseModal from '../components/ActivateLicenseModal';
 
+// Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
+const ACCENT = '#6366F1';
+const ACCENT_GRADIENT = `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`;
+
+// Logo icon: a gradient tile on phones, the plain icon on desktop.
+function LogoMark() {
+  return (
+    <Box
+      sx={(t) => ({
+        width: 24,
+        height: 24,
+        display: 'grid',
+        placeItems: 'center',
+        flexShrink: 0,
+        color: 'primary.main',
+        [t.breakpoints.down('md')]: { width: 36, height: 36, borderRadius: '12px', color: '#fff', background: ACCENT_GRADIENT, boxShadow: `0 8px 16px -8px ${ACCENT}` },
+      })}
+    >
+      <CodeRoundedIcon sx={(t) => ({ fontSize: 24, [t.breakpoints.down('md')]: { fontSize: 22 } })} />
+    </Box>
+  );
+}
+
+function LogoName() {
+  return (
+    <Typography variant="h6" sx={(t) => ({ fontWeight: 800, letterSpacing: '-0.02em', [t.breakpoints.down('md')]: { letterSpacing: '-0.01em', lineHeight: 1.15 } })}>
+      Jeet
+      <Box component="span" sx={(t) => ({ color: 'primary.main', [t.breakpoints.down('md')]: { color: ACCENT } })}>
+        Code
+      </Box>
+    </Typography>
+  );
+}
+
 const initialsFromName = (name) =>
   (name || 'U')
     .trim()
@@ -213,6 +247,11 @@ export default function Navbar() {
 
   const exploreActive = EXPLORE_LINKS.some((l) => isActivePath(pathname, l.to));
 
+  // Phone action buttons: 44px, tinted with the shared accent (same as the buttons on the phone pages).
+  const phoneBtnSx = (t) => ({
+    [t.breakpoints.down('md')]: { width: 44, height: 44, color: ACCENT, bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.16 : 0.09) },
+  });
+
   const navButtonSx = (active) => (t) => ({
     fontWeight: active ? 800 : 600,
     borderRadius: 99,
@@ -236,13 +275,12 @@ export default function Navbar() {
         },
       })}
     >
-      <Toolbar sx={{ gap: { xs: 1, sm: 2 } }}>
+      <Toolbar sx={(t) => ({ gap: { xs: 1, sm: 2 }, [t.breakpoints.down('md')]: { gap: 0.5, px: 1.75, minHeight: 60 } })}>
         {/* Hamburger — below md only */}
         <IconButton
           onClick={() => setMobileOpen(true)}
           color="inherit"
-          edge="start"
-          sx={{ display: { xs: 'inline-flex', md: 'none' } }}
+          sx={{ display: { xs: 'inline-flex', md: 'none' }, width: 44, height: 44 }}
           aria-label="Open navigation menu"
         >
           <MenuRoundedIcon />
@@ -253,10 +291,8 @@ export default function Navbar() {
           to={isAuthenticated ? '/dashboard' : '/'}
           sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', color: 'inherit', mr: { xs: 0, md: 2 } }}
         >
-          <CodeRoundedIcon sx={{ color: 'primary.main' }} />
-          <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: '-0.02em' }}>
-            Jeet<Box component="span" sx={{ color: 'primary.main' }}>Code</Box>
-          </Typography>
+          <LogoMark />
+          <LogoName />
         </Box>
 
         {/* Desktop links */}
@@ -343,7 +379,7 @@ export default function Navbar() {
         )}
 
         <Tooltip title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
-          <IconButton onClick={() => dispatch(toggleThemeMode())} color="inherit" aria-label="Toggle color theme">
+          <IconButton onClick={() => dispatch(toggleThemeMode())} color="inherit" aria-label="Toggle color theme" sx={phoneBtnSx}>
             {mode === 'dark' ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
           </IconButton>
         </Tooltip>
@@ -356,15 +392,15 @@ export default function Navbar() {
               color="inherit"
               aria-haspopup="menu"
               aria-label="Account menu"
-              sx={{ textTransform: 'none', gap: 1, pl: 1, pr: { xs: 1, sm: 1.5 }, ml: 0.5 }}
+              sx={(t) => ({ textTransform: 'none', gap: 1, pl: 1, pr: { xs: 1, sm: 1.5 }, ml: 0.5, [t.breakpoints.down('md')]: { minWidth: 44, width: 44, height: 44, p: 0, ml: 0, borderRadius: '50%' } })}
             >
               <Avatar
                 src={user?.avatarUrl || undefined}
-                sx={{ bgcolor: 'primary.main', width: 34, height: 34, fontSize: '0.85rem', fontWeight: 700 }}
+                sx={(t) => ({ bgcolor: 'primary.main', width: 34, height: 34, fontSize: '0.85rem', fontWeight: 700, [t.breakpoints.down('md')]: { bgcolor: ACCENT, color: '#fff', width: 40, height: 40, fontSize: '1rem' } })}
               >
                 {initialsFromName(user?.name)}
               </Avatar>
-              <Typography variant="body2" sx={{ fontWeight: 600, display: { xs: 'none', sm: 'block' } }}>
+              <Typography variant="body2" sx={{ fontWeight: 600, display: { xs: 'none', md: 'block' } }}>
                 {user?.name}
               </Typography>
             </Button>
@@ -439,22 +475,22 @@ export default function Navbar() {
               display: 'flex',
               flexDirection: 'column',
               borderRadius: '0 28px 28px 0',
-              backgroundImage: (t) => `linear-gradient(180deg, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.14 : 0.2)} 0, transparent 220px)`,
+              backgroundImage: (t) => `linear-gradient(180deg, ${alpha(ACCENT, t.palette.mode === 'dark' ? 0.14 : 0.2)} 0, transparent 220px)`,
               pt: 'env(safe-area-inset-top)',
               pb: 'env(safe-area-inset-bottom)',
             },
           },
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, height: 60, flexShrink: 0 }}>
-          <CodeRoundedIcon sx={{ color: 'primary.main' }} />
-          <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: '-0.02em', flex: 1 }}>
-            Jeet<Box component="span" sx={{ color: 'primary.main' }}>Code</Box>
-          </Typography>
-          <IconButton onClick={() => dispatch(toggleThemeMode())} aria-label="Toggle color theme">
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 1.75, height: 60, flexShrink: 0 }}>
+          <LogoMark />
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <LogoName />
+          </Box>
+          <IconButton onClick={() => dispatch(toggleThemeMode())} aria-label="Toggle color theme" sx={phoneBtnSx}>
             {mode === 'dark' ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
           </IconButton>
-          <IconButton onClick={() => setMobileOpen(false)} aria-label="Close navigation menu" edge="end">
+          <IconButton onClick={() => setMobileOpen(false)} aria-label="Close navigation menu" sx={{ width: 44, height: 44 }}>
             <CloseRoundedIcon />
           </IconButton>
         </Box>
@@ -467,7 +503,7 @@ export default function Navbar() {
                 mb: 2.5,
                 borderRadius: '24px',
                 overflow: 'hidden',
-                bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.18 : 0.12),
+                bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.18 : 0.12),
               })}
             >
               <Box
@@ -476,7 +512,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 sx={{ p: 1.75, display: 'flex', alignItems: 'center', gap: 1.5, textDecoration: 'none', color: 'inherit' }}
               >
-                <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: 'primary.main', width: 48, height: 48, fontSize: '1rem', fontWeight: 700 }}>
+                <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: ACCENT, width: 48, height: 48, fontSize: '1rem', fontWeight: 700 }}>
                   {initialsFromName(user?.name)}
                 </Avatar>
                 <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -505,15 +541,15 @@ export default function Navbar() {
                   gap: 1,
                   textDecoration: 'none',
                   color: 'inherit',
-                  borderTop: `1px solid ${alpha(t.palette.primary.main, 0.2)}`,
-                  '&:active': { bgcolor: alpha(t.palette.primary.main, 0.12) },
+                  borderTop: `1px solid ${alpha(ACCENT, 0.2)}`,
+                  '&:active': { bgcolor: alpha(ACCENT, 0.12) },
                 })}
               >
                 <MonetizationOnRoundedIcon sx={{ fontSize: 24, color: 'warning.main' }} />
                 <Typography sx={{ fontWeight: 800, fontVariantNumeric: 'tabular-nums', flex: 1 }}>
                   {coins.toLocaleString('en-IN')} coins
                 </Typography>
-                <Typography variant="body2" sx={{ fontWeight: 700, color: 'primary.main' }}>
+                <Typography variant="body2" sx={{ fontWeight: 700, color: ACCENT }}>
                   Wallet
                 </Typography>
               </Box>

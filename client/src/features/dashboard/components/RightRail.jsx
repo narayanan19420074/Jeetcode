@@ -9,6 +9,8 @@ import { daysLeftInfo } from '../../studyplan/planUtils';
 import { MONTHLY_BADGE_GOAL, formatCountdown, monthCells, msUntilUtcMidnight, surface, utcKey } from '../dashboardUtils';
 import { PLAN_AMBER, planTheme } from '../../studyplan/planUtils';
 
+// Phone calendar: same indigo gradient as the hero tiles on the phone pages.
+const PHONE_GRADIENT = 'linear-gradient(135deg, #6366F1, color-mix(in srgb, #6366F1 60%, #000))';
 const EMERALD = '#34D399'; // light green reads on the dark plan-style card
 const SOFT = 'rgba(255,255,255,0.68)';
 const FAINT = 'rgba(255,255,255,0.35)';
@@ -135,7 +137,7 @@ function DayCell({ day, active, today, future, plans }) {
   );
 }
 
-function StreakCalendarCard({ user, isAuthenticated, byDate }) {
+function StreakCalendarCard({ user, isAuthenticated, byDate, phone }) {
   const navigate = useNavigate();
   const now = new Date();
   const cy = now.getUTCFullYear();
@@ -194,7 +196,7 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
   const streak = user?.streakDays ?? 0;
 
   return (
-    <Card sx={{ color: '#fff', background: planTheme(user?.id || 'streak').gradient, border: 'none', boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
+    <Card sx={{ color: '#fff', background: phone ? PHONE_GRADIENT : planTheme(user?.id || 'streak').gradient, border: 'none', boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 2, mb: 1.75 }}>
         <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', minWidth: 0 }}>
           <Box
@@ -289,7 +291,7 @@ function StreakCalendarCard({ user, isAuthenticated, byDate }) {
 
 // --------------------------------------------------------------------- rail
 
-export default function RightRail({ user, isAuthenticated, activity }) {
+export default function RightRail({ user, isAuthenticated, activity, phone = false }) {
   const byDate = useMemo(() => new Map((activity || []).map((a) => [a.date, a.submissions])), [activity]);
 
   return (
@@ -302,7 +304,7 @@ export default function RightRail({ user, isAuthenticated, activity }) {
         alignItems: 'start',
       }}
     >
-      <StreakCalendarCard user={user} isAuthenticated={isAuthenticated} byDate={byDate} />
+      <StreakCalendarCard user={user} isAuthenticated={isAuthenticated} byDate={byDate} phone={phone} />
     </Box>
   );
 }

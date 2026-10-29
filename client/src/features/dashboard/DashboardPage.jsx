@@ -34,6 +34,9 @@ import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { STATUS_COLOR, featuredPageForToday, surface, utcKey } from './dashboardUtils';
 
+// Same accent the other phone pages use.
+const PHONE_ACCENT = '#6366F1';
+
 // Phone-only dismissals, remembered on this device.
 const NQT_DISMISS_KEY = 'jeetcode.dismissed.nqtCard';
 const RESUME_DISMISS_KEY = 'jeetcode.dismissed.resume';
@@ -271,7 +274,7 @@ export default function DashboardPage() {
         ...(fillH ? { height: fillH, overflow: 'hidden' } : { minHeight: 'calc(100vh - 64px)' }),
       }}
     >
-      <Container maxWidth={false} sx={{ maxWidth: 1480, py: { xs: 2, md: 3 }, px: { xs: 1.5, sm: 3 }, height: fillH ? '100%' : 'auto' }}>
+      <Container maxWidth={false} sx={{ maxWidth: 1480, py: { xs: 2, md: 3 }, px: { xs: 1.75, sm: 3 }, height: fillH ? '100%' : 'auto' }}>
         <Box
           sx={{
             display: 'grid',
@@ -323,18 +326,22 @@ export default function DashboardPage() {
               <Stack spacing={2.5} sx={{ position: 'relative', zIndex: 1 }}>
                 {/* Phone header: streak on the left, plan calendar on the right. */}
                 {!isMdUp && (
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: 40 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: 44 }}>
                     {isAuthenticated ? (
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
-                        <LocalFireDepartmentRoundedIcon sx={{ fontSize: 22, color: 'warning.main' }} />
-                        <Typography variant="body2" sx={{ fontWeight: 800 }}>
+                        <LocalFireDepartmentRoundedIcon sx={{ fontSize: 24, color: 'warning.main' }} />
+                        <Typography sx={{ fontWeight: 800, fontSize: '1rem' }}>
                           {user?.streakDays ?? 0}-day streak
                         </Typography>
                       </Box>
                     ) : (
                       <span />
                     )}
-                    <IconButton onClick={() => setCalendarOpen(true)} aria-label="Open calendar" edge="end">
+                    <IconButton
+                      onClick={() => setCalendarOpen(true)}
+                      aria-label="Open calendar"
+                      sx={(t) => ({ width: 44, height: 44, color: PHONE_ACCENT, bgcolor: alpha(PHONE_ACCENT, t.palette.mode === 'dark' ? 0.16 : 0.09) })}
+                    >
                       <CalendarMonthRoundedIcon />
                     </IconButton>
                   </Box>
@@ -513,12 +520,12 @@ export default function DashboardPage() {
             pr: 0.5,
             py: 0.75,
             borderRadius: '20px',
-            bgcolor: t.palette.mode === 'dark' ? alpha(t.palette.primary.main, 0.22) : alpha(t.palette.primary.main, 0.14),
+            bgcolor: t.palette.mode === 'dark' ? alpha(PHONE_ACCENT, 0.22) : alpha(PHONE_ACCENT, 0.14),
             backdropFilter: 'blur(12px)',
-            border: `1px solid ${alpha(t.palette.primary.main, 0.25)}`,
+            border: `1px solid ${alpha(PHONE_ACCENT, 0.25)}`,
           })}
         >
-          <Box sx={{ width: 40, height: 40, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: alpha(theme.palette.primary.main, 0.2), color: 'primary.main' }}>
+          <Box sx={{ width: 40, height: 40, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: alpha(PHONE_ACCENT, 0.2), color: PHONE_ACCENT }}>
             <PlayArrowRoundedIcon />
           </Box>
           <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -532,7 +539,7 @@ export default function DashboardPage() {
               </Box>
             </Typography>
           </Box>
-          <IconButton component={RouterLink} to={`/workspace/${resume.problem.slug}`} aria-label={`Resume ${resume.problem.title}`} sx={{ color: 'primary.main' }}>
+          <IconButton component={RouterLink} to={`/workspace/${resume.problem.slug}`} aria-label={`Resume ${resume.problem.title}`} sx={{ color: PHONE_ACCENT }}>
             <PlayArrowRoundedIcon />
           </IconButton>
           <IconButton
@@ -555,16 +562,16 @@ export default function DashboardPage() {
         onClose={() => setCalendarOpen(false)}
         slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)' } } }}
       >
-        <Box sx={{ p: 2 }}>
+        <Box sx={{ px: 1.75, pt: 1.25, pb: 2 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
-            <Typography variant="h6" sx={{ fontWeight: 800 }}>
+            <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
               Calendar
             </Typography>
-            <IconButton onClick={() => setCalendarOpen(false)} aria-label="Close calendar" edge="end">
+            <IconButton onClick={() => setCalendarOpen(false)} aria-label="Close calendar" sx={{ width: 44, height: 44 }}>
               <CloseRoundedIcon />
             </IconButton>
           </Box>
-          <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
+          <RightRail phone user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
           {isAuthenticated && (
             <Button
               fullWidth
@@ -574,7 +581,7 @@ export default function DashboardPage() {
                 setCalendarOpen(false);
                 goView('plans');
               }}
-              sx={{ mt: 2, fontWeight: 700 }}
+              sx={{ mt: 2, fontWeight: 700, height: 48, borderRadius: 99, color: PHONE_ACCENT, borderColor: alpha(PHONE_ACCENT, 0.5) }}
             >
               Open Study Plans
             </Button>

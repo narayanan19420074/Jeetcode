@@ -8,6 +8,9 @@ import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 
+// Same accent the phone pages use.
+const ACCENT = '#6366F1';
+
 const ITEMS = [
   { to: '/dashboard', label: 'Home', icon: HomeRoundedIcon },
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
@@ -66,8 +69,8 @@ export default function MobileBottomNav() {
                 borderRadius: 99,
                 display: 'grid',
                 placeItems: 'center',
-                color: active ? 'primary.main' : 'inherit',
-                bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
+                color: active ? ACCENT : 'inherit',
+                bgcolor: active ? alpha(ACCENT, t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
                 transition: 'background-color .2s',
               })}
             >
