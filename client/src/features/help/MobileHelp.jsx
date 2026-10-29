@@ -20,6 +20,8 @@ import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import { tint } from '../dashboard/dashboardUtils';
 import {
   LIB_ACCENT,
   LIB_FONT,
@@ -27,7 +29,6 @@ import {
   LibraryFont,
   PageHeader,
   libBackBtnSx,
-  libPanelSx,
   libSearchSx,
   libSectionTitleSx,
   libSolidBtnSx,
@@ -40,6 +41,16 @@ import {
 // 18px section titles with 32px between sections, divider-separated rows and 48px pill buttons.
 // Order follows how people look for help: search the answers first, then send a message. Chat stays in the
 // floating launcher at the bottom right (it carries the unread badge). There is no top navigation bar on phones.
+
+// Rich purple gradient from the phone home banners, used for the main actions on this page.
+const HELP_GRADIENT = 'linear-gradient(135deg,#7E3FA8,#4A1F8C)';
+const gradientBtnSx = {
+  ...libSolidBtnSx,
+  color: '#fff',
+  background: HELP_GRADIENT,
+  '&:hover': { background: HELP_GRADIENT, filter: 'brightness(1.1)' },
+  '&.Mui-disabled': { color: '#fff', opacity: 0.6 },
+};
 
 function SectionTitle({ id, children }) {
   return (
@@ -112,12 +123,22 @@ export default function MobileHelp({
         </IconButton>
 
         {/* Header */}
-        <PageHeader icon={HelpOutlineRoundedIcon} title="Help & Support" subtitle="We usually reply within 2 working days" />
-        <Box sx={{ textAlign: 'center', mt: 2 }}>
-          <Button onClick={goToForm} disableElevation variant="contained" startIcon={<MailOutlineRoundedIcon />} sx={libSolidBtnSx}>
-            Send a message
-          </Button>
-        </Box>
+        <PageHeader icon={HelpOutlineRoundedIcon} title="Help & Support" subtitle="Find answers or contact us" />
+
+        {/* Contact card: same look as the home banners (gradient, white text, icon ring) */}
+        <ButtonBase
+          onClick={goToForm}
+          aria-label="Send a message"
+          sx={{ mt: 3, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, p: 2, borderRadius: '20px', textAlign: 'left', color: '#fff', fontFamily: 'inherit', background: HELP_GRADIENT }}
+        >
+          <Box sx={{ minWidth: 0 }}>
+            <Typography sx={{ fontSize: 22, lineHeight: '28px', fontWeight: 700, letterSpacing: '-0.01em' }}>Send us a message</Typography>
+            <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'rgba(255,255,255,0.85)' }}>We usually reply within 2 working days</Typography>
+          </Box>
+          <Box aria-hidden sx={{ flex: 'none', width: 60, height: 60, borderRadius: '50%', display: 'grid', placeItems: 'center', border: '5px solid rgba(255,255,255,0.55)', background: 'linear-gradient(160deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))' }}>
+            <MailOutlineRoundedIcon sx={{ fontSize: 28, color: '#fff' }} />
+          </Box>
+        </ButtonBase>
 
         {/* Search */}
         <TextField
@@ -166,12 +187,17 @@ export default function MobileHelp({
         <Box component="section" aria-labelledby="help-contact" ref={formRef} sx={{ mt: 4, scrollMarginTop: 16 }}>
           <SectionTitle id="help-contact">Send a message</SectionTitle>
           {form.sent ? (
-            <Box role="status" sx={{ ...libPanelSx, p: 2 }}>
-              <Typography sx={{ fontWeight: 700, fontSize: 16, lineHeight: '24px' }}>Message sent</Typography>
-              <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
-                We will reply to {isAuthenticated ? 'your account email' : 'the email address you provided'}.
-              </Typography>
-              <Button onClick={onSendAnother} fullWidth disableElevation sx={{ ...libTintBtnSx, mt: 1.5 }}>
+            <Box role="status" sx={(t) => ({ p: '12px', borderRadius: '16px', border: '1.5px solid var(--lib-border)', bgcolor: t.palette.mode === 'dark' ? tint('#22A06B', 16) : '#EAF6EE' })}>
+              <Stack direction="row" sx={{ alignItems: 'center', gap: '12px' }}>
+                <CheckCircleRoundedIcon aria-hidden sx={{ fontSize: 28, color: '#22A06B', flex: 'none' }} />
+                <Box sx={{ minWidth: 0 }}>
+                  <Typography sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>Message sent</Typography>
+                  <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+                    We will reply to {isAuthenticated ? 'your account email' : 'the email address you provided'}.
+                  </Typography>
+                </Box>
+              </Stack>
+              <Button onClick={onSendAnother} fullWidth disableElevation sx={{ ...libTintBtnSx, mt: 1.5, bgcolor: 'var(--lib-bg)' }}>
                 Send another
               </Button>
             </Box>
@@ -235,7 +261,7 @@ export default function MobileHelp({
                   </label>
                 </Box>
 
-                <Button type="submit" disabled={form.busy} disableElevation variant="contained" fullWidth sx={libSolidBtnSx}>
+                <Button type="submit" disabled={form.busy} disableElevation variant="contained" fullWidth sx={gradientBtnSx}>
                   {form.busy ? 'Sending…' : 'Send message'}
                 </Button>
               </Stack>
