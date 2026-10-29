@@ -64,6 +64,7 @@ export function LibraryFont({ children, sx }) {
       <Box
         sx={{
           fontFamily: LIB_FONT,
+          color: pal.text,
           '--lib-bg': pal.bg,
           '--lib-chip': pal.chip,
           '--lib-chip-text': pal.chipText,

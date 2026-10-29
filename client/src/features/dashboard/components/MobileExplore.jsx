@@ -10,6 +10,7 @@ import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import { problemsApi } from '../../../api/problemsApi';
 import CompanyAvatar from '../../../components/CompanyAvatar';
 import NqtExploreCard from './NqtExploreCard';
+import { tint } from '../dashboardUtils';
 import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libSectionTitleSx } from './libraryStyle';
 
 // Phone Explore screen in the Library look (same tokens as the phone home): 16px gutter, 18px section titles,
@@ -22,11 +23,11 @@ const MAX_COMPANIES = 18;
 const hideScrollbar = { scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } };
 const bleed = { mx: -2, overflowX: 'auto', ...hideScrollbar };
 
-// Tile colours match the phone home banners.
+// Card colours are the dashboard category-card colours: pastel card, same-hue icon (tinted in dark mode).
 const TOOLS = [
-  { to: '/aptitude', title: 'Aptitude practice', text: 'Learn a pattern, practice it, then take a timed test.', icon: CalculateRoundedIcon, gradient: 'linear-gradient(135deg,#DB2777,#4C1D95)' },
-  { to: '/visualizer', title: 'Algorithm visualizer', text: 'Watch sorting, searching and graph algorithms step by step.', icon: BarChartRoundedIcon, gradient: 'linear-gradient(135deg,#2563EB,#1E1B4B)' },
-  { to: '/prep', title: 'Prep by company', text: 'See the exam pattern and track your readiness.', icon: BusinessRoundedIcon, gradient: 'linear-gradient(135deg,#0D9488,#134E4A)' },
+  { to: '/aptitude', title: 'Aptitude practice', text: 'Learn a pattern, practice it, then take a timed test.', icon: CalculateRoundedIcon, color: '#F09A2E', bg: '#FFF2E3' },
+  { to: '/visualizer', title: 'Algorithm visualizer', text: 'Watch sorting, searching and graph algorithms step by step.', icon: BarChartRoundedIcon, color: '#3F8CE8', bg: '#EDF2F9' },
+  { to: '/prep', title: 'Prep by company', text: 'See the exam pattern and track your readiness.', icon: BusinessRoundedIcon, color: '#22A06B', bg: '#EAF6EE' },
 ];
 
 function Section({ title, children }) {
@@ -40,16 +41,27 @@ function Section({ title, children }) {
   );
 }
 
-function ToolRow({ to, title, text, icon: Icon, gradient }) {
+function ToolRow({ to, title, text, icon: Icon, color, bg }) {
   return (
     <ButtonBase
       component={RouterLink}
       to={to}
-      sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', width: '100%', py: '10px', textAlign: 'left', color: 'var(--lib-text)', borderBottom: '1px solid var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}
+      sx={(t) => ({
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        gap: '12px',
+        width: '100%',
+        p: '12px',
+        borderRadius: '16px',
+        border: '1.5px solid var(--lib-border)',
+        textAlign: 'left',
+        fontFamily: 'inherit',
+        color: 'var(--lib-text)',
+        bgcolor: t.palette.mode === 'dark' ? tint(color, 16) : bg,
+      })}
     >
-      <Box aria-hidden sx={{ width: 48, height: 48, flex: 'none', borderRadius: '14px', display: 'grid', placeItems: 'center', color: '#fff', background: gradient }}>
-        <Icon sx={{ fontSize: 26 }} />
-      </Box>
+      <Icon aria-hidden sx={{ fontSize: 28, flex: 'none', color }} />
       <Box sx={{ flex: 1, minWidth: 0 }}>
         <Typography sx={{ fontSize: 16, lineHeight: '24px', fontWeight: 500, letterSpacing: LIB_TRACKING }}>{title}</Typography>
         <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{text}</Typography>
@@ -69,7 +81,7 @@ function Companies({ companies, onBrowse }) {
             key={company}
             onClick={() => onBrowse({ companies: [company] })}
             aria-label={`Browse ${company} questions`}
-            sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '12px', mb: '5px', textAlign: 'left', color: 'var(--lib-text)' }}
+            sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '12px', mb: '5px', textAlign: 'left', fontFamily: 'inherit', color: 'var(--lib-text)' }}
           >
             <CompanyAvatar name={company} size={48} />
             <Box sx={{ flex: 1, minWidth: 0, pb: '4px', borderBottom: '1px solid var(--lib-divider)' }}>
@@ -99,7 +111,7 @@ function Topics({ tags, onBrowse }) {
                 key={tag}
                 onClick={() => onBrowse({ tags: [tag] })}
                 aria-label={`Browse ${tag} questions`}
-                sx={{ height: 34, px: '14px', gap: 0.75, borderRadius: 999, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: 15, letterSpacing: LIB_TRACKING, whiteSpace: 'nowrap' }}
+                sx={{ height: 34, px: '14px', gap: 0.75, borderRadius: 999, fontFamily: 'inherit', bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: 15, letterSpacing: LIB_TRACKING, whiteSpace: 'nowrap' }}
               >
                 {tag}
                 <Box component="span" sx={{ fontSize: 13, opacity: 0.7, fontVariantNumeric: 'tabular-nums' }}>{count}</Box>
@@ -150,7 +162,7 @@ export default function MobileExplore({ onBrowse }) {
           </Box>
 
           <Section title="Practice tools">
-            <Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '11px' }}>
               {TOOLS.map((tool) => (
                 <ToolRow key={tool.to} {...tool} />
               ))}
