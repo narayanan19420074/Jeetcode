@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Typography, alpha } from '@mui/material';
+import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import PaymentsRoundedIcon from '@mui/icons-material/PaymentsRounded';
 import TimerRoundedIcon from '@mui/icons-material/TimerRounded';
@@ -16,6 +16,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import useViewportFill from '../dashboard/useViewportFill';
 import ContestTabs, { ContestTile, LiveNow } from './ContestTabs';
+import MobileContest from './MobileContest';
 import WinnersPanel from './WinnersPanel';
 import { fmtStart, useContest } from './contestUtils';
 
@@ -52,6 +53,8 @@ export default function ContestPage({ embedded = false }) {
   const [params, setParams] = useSearchParams();
   const { enqueueSnackbar } = useSnackbar();
   const { isAuthenticated } = useSelector((s) => s.auth);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
   const { contest, setContest } = useContest();
   const [accepted, setAccepted] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -103,6 +106,26 @@ export default function ContestPage({ embedded = false }) {
 
   const upcoming = contest?.status === 'upcoming';
   const goApply = () => applyRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  // Phone: its own layout (same look as the phone Problems and Store pages).
+  if (isMobile) {
+    return (
+      <MobileContest
+        contest={contest}
+        shown={shown}
+        detail={detail}
+        isAuthenticated={isAuthenticated}
+        accepted={accepted}
+        setAccepted={setAccepted}
+        busy={busy}
+        onOpen={openContest}
+        onClose={closeContest}
+        onApply={() => run(contestApi.apply, 'You are in!')}
+        onWithdraw={() => run(contestApi.withdraw, 'Application withdrawn')}
+        onLogin={() => navigate('/login')}
+      />
+    );
+  }
 
   if (!detail) {
     return (

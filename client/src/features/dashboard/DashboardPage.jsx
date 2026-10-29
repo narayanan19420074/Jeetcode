@@ -267,6 +267,9 @@ export default function DashboardPage() {
     ? {}
     : { initial: { opacity: 0, y: 8 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0 }, transition: { duration: 0.18 } };
 
+  // Phone: the contest page is a full screen of its own (no dashboard header around it).
+  if (!isMdUp && currentView === 'contest') return <ContestPage embedded />;
+
   return (
     <Box
       ref={rootRef}

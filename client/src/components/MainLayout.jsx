@@ -9,10 +9,10 @@ import FriendsRealtime from '../features/friends/friendsRealtime';
 import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
 
 export default function MainLayout() {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   const bottomNav = showMobileBottomNav(pathname);
-  // Pages with their own phone header (Problems, Aptitude levels, Companies, You, Settings, Workspace, Store) hide the top bar on phones. It stays mounted so the coin polling keeps running.
-  const hideNavbarOnPhone = pathname === '/problems' || pathname.startsWith('/problems/') || ['/aptitude', '/prep', '/you', '/settings'].includes(pathname.replace(/\/+$/, '')) || pathname.startsWith('/settings/') || pathname.startsWith('/workspace/') || pathname === '/store';
+  // Pages with their own phone header (Problems, Aptitude levels, Companies, You, Settings, Workspace, Store, Contest) hide the top bar on phones. It stays mounted so the coin polling keeps running.
+  const hideNavbarOnPhone = pathname === '/problems' || pathname.startsWith('/problems/') || ['/aptitude', '/prep', '/you', '/settings'].includes(pathname.replace(/\/+$/, '')) || pathname.startsWith('/settings/') || pathname.startsWith('/workspace/') || pathname === '/store' || (pathname.replace(/\/+$/, '') === '/dashboard' && new URLSearchParams(search).get('view') === 'contest');
 
   return (
     <Box
