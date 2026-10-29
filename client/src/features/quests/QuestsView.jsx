@@ -14,6 +14,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from '../auth/authSlice';
 import { Bar, Coin, Diamond, Eyebrow, FFButton, MissionsDialog, Panel, RewardDialog, Stat, Tag, TopUpDialog } from './QuestParts';
 import { FF, RARITY_COLOR, cut, goalMilestone, levelInfo } from './questUtils';
+import MobileQuests from './MobileQuests';
 
 // three.js is heavy, so the 3D parts only download when this page opens.
 const QuestRoadScene = lazy(() => import('./QuestRoadScene'));
@@ -49,6 +50,7 @@ export default function QuestsView({ isAuthenticated, onPick }) {
   const theme = useTheme();
   const dark = theme.palette.mode === 'dark';
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const isPhone = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
   const [wrapEl, setWrapEl] = useState(null);
   const [fitH, setFitH] = useState(null);
   useLayoutEffect(() => {
@@ -151,6 +153,41 @@ export default function QuestsView({ isAuthenticated, onPick }) {
     }
     return undefined;
   }, [isAuthenticated, login, state, wallet, dispatch, enqueueSnackbar, fail]);
+
+  // Phones get their own layout (no 3D road, missions and top-up in sheets); desktop below is unchanged.
+  if (isPhone) {
+    if (error && !state) {
+      return (
+        <Alert severity="error" sx={{ m: 1.75 }} action={<Button color="inherit" size="small" onClick={load}>Retry</Button>}>
+          {error}
+        </Alert>
+      );
+    }
+    if (!state) return <Skeleton variant="rounded" sx={{ m: 1.75, height: 360, borderRadius: '26px' }} />;
+    return (
+      <MobileQuests
+        state={state}
+        isAuthenticated={isAuthenticated}
+        coins={isAuthenticated ? wallet?.coins ?? state.coins ?? 0 : 0}
+        diamonds={isAuthenticated ? wallet?.diamonds ?? state.diamonds ?? 0 : 0}
+        busy={busy}
+        converting={converting}
+        reward={reward}
+        topUp={topUp}
+        dark={dark}
+        reduce={reduce}
+        flyApi={flyApi}
+        onClaim={claim}
+        onUpgrade={upgrade}
+        onSolve={onPick}
+        onLogin={login}
+        onConvert={convert}
+        onTopUp={(want) => setTopUp({ open: true, want })}
+        onCloseTopUp={() => setTopUp({ open: false, want: 1 })}
+        onCloseReward={() => setReward(null)}
+      />
+    );
+  }
 
   if (error && !state) {
     return (

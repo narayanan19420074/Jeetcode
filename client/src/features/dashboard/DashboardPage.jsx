@@ -272,6 +272,8 @@ export default function DashboardPage() {
   // Phone: Leaderboard and Study Plan are full screens too (they bring their own header and padding).
   if (!isMdUp && currentView === 'leaderboard') return <LeaderboardView isAuthenticated={isAuthenticated} />;
   if (!isMdUp && currentView === 'plans') return <StudyPlannerView isAuthenticated={isAuthenticated} />;
+  // Phone: Quests is a full screen too.
+  if (!isMdUp && currentView === 'quests') return <QuestsView user={user} isAuthenticated={isAuthenticated} checkedIn={checkedIn} onPick={pickRandom} />;
   // Phone: same for Friends.
   if (!isMdUp && currentView === 'friends') {
     return (
