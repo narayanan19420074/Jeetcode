@@ -13,8 +13,8 @@ export default function MainLayout() {
   const { pathname, search } = useLocation();
   const bottomNav = showMobileBottomNav(pathname);
   const libraryLook = isLibraryRoute(pathname, search);
-  // Pages with their own phone header (Problems, Aptitude levels, Companies, You, Settings, Workspace, Store, Contest, Friends, Leaderboard, Study Plan) hide the top bar on phones. It stays mounted so the coin polling keeps running.
-  const hideNavbarOnPhone = pathname === '/problems' || pathname.startsWith('/problems/') || ['/aptitude', '/prep', '/you', '/settings'].includes(pathname.replace(/\/+$/, '')) || pathname.startsWith('/settings/') || pathname.startsWith('/workspace/') || pathname === '/store' || (pathname.replace(/\/+$/, '') === '/dashboard' && ['contest', 'friends', 'leaderboard', 'plans', 'quests'].includes(new URLSearchParams(search).get('view')));
+  // Pages with their own phone header (Problems, Aptitude levels, Companies, You, Settings, Workspace, Store, Contest, Explore, Friends, Leaderboard, Study Plan) hide the top bar on phones. It stays mounted so the coin polling keeps running.
+  const hideNavbarOnPhone = pathname === '/problems' || pathname.startsWith('/problems/') || ['/aptitude', '/prep', '/you', '/settings'].includes(pathname.replace(/\/+$/, '')) || pathname.startsWith('/settings/') || pathname.startsWith('/workspace/') || pathname === '/store' || (pathname.replace(/\/+$/, '') === '/dashboard' && ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests'].includes(new URLSearchParams(search).get('view')));
 
   return (
     <Box

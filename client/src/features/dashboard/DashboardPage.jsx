@@ -276,6 +276,8 @@ export default function DashboardPage() {
   if (!isMdUp && currentView === 'plans') return <StudyPlannerView isAuthenticated={isAuthenticated} />;
   // Phone: Quests is a full screen too.
   if (!isMdUp && currentView === 'quests') return <QuestsView user={user} isAuthenticated={isAuthenticated} checkedIn={checkedIn} onPick={pickRandom} />;
+  // Phone: Explore is a full screen too.
+  if (!isMdUp && currentView === 'explore') return <ExploreView onBrowse={browse} />;
   // Phone: same for Friends.
   if (!isMdUp && currentView === 'friends') {
     return (

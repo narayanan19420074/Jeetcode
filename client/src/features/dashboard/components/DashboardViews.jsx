@@ -17,6 +17,8 @@ import {
   Tooltip,
   Typography,
   alpha,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
@@ -31,6 +33,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import ProgressRing from '../../../components/ProgressRing';
 import NqtExploreCard from './NqtExploreCard';
+import MobileExplore from './MobileExplore';
 import { problemsApi } from '../../../api/problemsApi';
 import { prepApi } from '../../../api/prepApi';
 import { extractErrorMessage } from '../../../api/apiClient';
@@ -83,7 +86,13 @@ const TOOLS = [
   },
 ];
 
+// Phones get their own full-screen layout (MobileExplore); wide screens keep the dashboard view.
 export function ExploreView({ onBrowse }) {
+  const phone = useMediaQuery(useTheme().breakpoints.down('md'), { noSsr: true });
+  return phone ? <MobileExplore onBrowse={onBrowse} /> : <DesktopExplore onBrowse={onBrowse} />;
+}
+
+function DesktopExplore({ onBrowse }) {
   const [tags, setTags] = useState([]);
   const [companies, setCompanies] = useState([]);
 
