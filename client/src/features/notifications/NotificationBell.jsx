@@ -8,6 +8,7 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 import { clearAll, markAllRead, markIdsRead, markRead, selectUnreadNotifications } from './notificationsSlice';
 import { TABS, categoryOf, metaOf } from './notificationMeta';
 import { relTime } from '../studyplan/planUtils';
+import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 
 // Same accent as the phone pages.
 const ACCENT = '#6366F1';
@@ -160,7 +161,10 @@ export default function NotificationBell() {
           color="inherit"
           onClick={open}
           aria-label={unread ? `Notifications, ${unread} unread` : 'Notifications'}
-          sx={(t) => ({ [t.breakpoints.down('md')]: { width: 44, height: 44, color: ACCENT, bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.16 : 0.09) } })}
+          sx={(t) => {
+            const pal = LIBRARY_PALETTE[t.palette.mode === 'dark' ? 'dark' : 'light'];
+            return { [t.breakpoints.down('md')]: { width: 40, height: 40, color: pal.text, bgcolor: pal.player, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } } };
+          }}
         >
           <Badge badgeContent={unread} color="error" max={99}>
             <NotificationsRoundedIcon />

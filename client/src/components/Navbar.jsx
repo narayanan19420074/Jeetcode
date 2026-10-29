@@ -74,7 +74,7 @@ function LogoMark() {
         placeItems: 'center',
         flexShrink: 0,
         color: 'primary.main',
-        [t.breakpoints.down('md')]: { width: 36, height: 36, borderRadius: '12px', color: '#fff', background: ACCENT_GRADIENT, boxShadow: `0 8px 16px -8px ${ACCENT}` },
+        [t.breakpoints.down('md')]: { width: 40, height: 40, borderRadius: '12px', color: '#fff', background: ACCENT_GRADIENT, boxShadow: `0 8px 16px -8px ${ACCENT}` },
       })}
     >
       <CodeRoundedIcon sx={(t) => ({ fontSize: 24, [t.breakpoints.down('md')]: { fontSize: 22 } })} />
@@ -294,12 +294,12 @@ export default function Navbar() {
         },
       })}
     >
-      <Toolbar sx={(t) => ({ gap: { xs: 1, sm: 2 }, [t.breakpoints.down('md')]: { gap: 0.5, px: 1.75, minHeight: 60 } })}>
+      <Toolbar sx={(t) => ({ gap: { xs: 1, sm: 2 }, [t.breakpoints.down('md')]: { gap: 1, px: 2, minHeight: 60 } })}>
         {/* Hamburger — below md only */}
         <IconButton
           onClick={() => setMobileOpen(true)}
           color="inherit"
-          sx={(t) => ({ display: { xs: 'inline-flex', md: 'none' }, width: 40, height: 40, ml: 0.5, mr: 0.5, color: libPal(t).text, bgcolor: libPal(t).player, '&:hover': { bgcolor: libPal(t).player, filter: 'brightness(0.97)' } })}
+          sx={(t) => ({ display: { xs: 'inline-flex', md: 'none' }, width: 40, height: 40, color: libPal(t).text, bgcolor: libPal(t).player, '&:hover': { bgcolor: libPal(t).player, filter: 'brightness(0.97)' } })}
           aria-label="Open navigation menu"
         >
           <MenuRoundedIcon />
@@ -411,7 +411,7 @@ export default function Navbar() {
               color="inherit"
               aria-haspopup="menu"
               aria-label="Account menu"
-              sx={(t) => ({ textTransform: 'none', gap: 1, pl: 1, pr: { xs: 1, sm: 1.5 }, ml: 0.5, [t.breakpoints.down('md')]: { minWidth: 44, width: 44, height: 44, p: 0, ml: 0, borderRadius: '50%' } })}
+              sx={(t) => ({ textTransform: 'none', gap: 1, pl: 1, pr: { xs: 1, sm: 1.5 }, ml: 0.5, [t.breakpoints.down('md')]: { minWidth: 40, width: 40, height: 40, p: 0, ml: 0, borderRadius: '50%' } })}
             >
               <Avatar
                 src={user?.avatarUrl || undefined}
