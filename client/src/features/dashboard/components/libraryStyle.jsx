@@ -40,19 +40,43 @@ export const useLibraryPalette = () => LIBRARY_PALETTE[useTheme().palette.mode =
 const VARIANTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'button', 'caption', 'overline'];
 const TYPOGRAPHY = { fontFamily: LIB_FONT, ...Object.fromEntries(VARIANTS.map((v) => [v, { fontFamily: LIB_FONT }])) };
 
-// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude, Companies, You and Settings.
+// Dashboard views that are full phone screens in the Library look.
+const LIBRARY_VIEWS = ['contest', 'friends', 'leaderboard', 'quests'];
+
+// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude, Companies, You, Settings, Store and the Contest, Friends, Leaderboard and Quests views.
 export const isLibraryRoute = (pathname, search) => {
   const path = pathname.replace(/\/+$/, '');
-  if (path === '/dashboard') return !new URLSearchParams(search).get('view');
-  return path === '/problems' || path.startsWith('/problems/') || path.startsWith('/settings/') || ['/aptitude', '/prep', '/you', '/settings'].includes(path);
+  if (path === '/dashboard') {
+    const view = new URLSearchParams(search).get('view');
+    return !view || LIBRARY_VIEWS.includes(view);
+  }
+  return path === '/store' || path === '/problems' || path.startsWith('/problems/') || path.startsWith('/settings/') || ['/aptitude', '/prep', '/you', '/settings'].includes(path);
 };
 
 // Roboto for everything inside (menus and dialogs opened from it included).
+// It also publishes the palette as CSS variables (--lib-*) so nested components can use it without a hook.
+// Portals (drawers, menus) do not inherit them: wrap their content in LibraryFont again.
 export function LibraryFont({ children, sx }) {
+  const pal = useLibraryPalette();
   const theme = useMemo(() => (outer) => createTheme(outer, { typography: TYPOGRAPHY }), []);
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ fontFamily: LIB_FONT, ...sx }}>{children}</Box>
+      <Box
+        sx={{
+          fontFamily: LIB_FONT,
+          '--lib-bg': pal.bg,
+          '--lib-chip': pal.chip,
+          '--lib-chip-text': pal.chipText,
+          '--lib-player': pal.player,
+          '--lib-border': pal.border,
+          '--lib-divider': pal.divider,
+          '--lib-text': pal.text,
+          '--lib-muted': pal.muted,
+          ...sx,
+        }}
+      >
+        {children}
+      </Box>
     </ThemeProvider>
   );
 }
@@ -109,6 +133,67 @@ export function HeaderTile({ children }) {
       <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', color: '#fff', background: 'linear-gradient(160deg, #B58AF2, #F28C7A)' }}>
         {children}
       </Box>
+    </Box>
+  );
+}
+
+// ---- Shared pieces for the phone pages in the Library look ----
+
+export const LIB_ACCENT = '#6366F1';
+export const LIB_TRACKING = '0.03em';
+
+// 44px back arrow, flush with the page gutter.
+export const libBackBtnSx = { width: 44, height: 44, ml: -1, color: 'var(--lib-text)' };
+
+// 40px round action button on a cream pill.
+export const libIconBtnSx = { width: 40, height: 40, flexShrink: 0, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', '&:hover': { bgcolor: 'var(--lib-player)', filter: 'brightness(0.97)' } };
+
+// 44px pill search field.
+export const libSearchSx = {
+  mt: 1,
+  px: '4px',
+  '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: 'var(--lib-player)', fontSize: 18, letterSpacing: LIB_TRACKING, px: '16px' },
+  '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
+};
+
+export const libSectionTitleSx = { fontSize: 18, lineHeight: '24px', fontWeight: 700 };
+
+const libBtnBase = { height: 48, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: LIB_TRACKING, textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
+export const libSolidBtnSx = { ...libBtnBase, bgcolor: LIB_ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)` } };
+export const libTintBtnSx = { ...libBtnBase, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', '&:hover': { bgcolor: 'var(--lib-player)', filter: 'brightness(0.97)' } };
+export const libSmallBtnSx = { ...libBtnBase, height: 36, px: 2, fontSize: 15 };
+
+// Chip / tab pill: cream when idle, accent when selected.
+export const libChipSx = (on) => ({
+  flexShrink: 0,
+  height: 34,
+  px: '14px',
+  gap: 0.75,
+  borderRadius: 999,
+  fontFamily: 'inherit',
+  fontSize: 15,
+  letterSpacing: LIB_TRACKING,
+  whiteSpace: 'nowrap',
+  bgcolor: on ? LIB_ACCENT : 'var(--lib-chip)',
+  color: on ? '#fff' : 'var(--lib-chip-text)',
+  '&.Mui-disabled': { opacity: 0.5 },
+});
+
+// Rounded cream panel for summary blocks.
+export const libPanelSx = { borderRadius: '20px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' };
+
+// Centred page header: tile, title and subtitle.
+export function PageHeader({ icon: Icon, title, subtitle }) {
+  const pal = useLibraryPalette();
+  return (
+    <Box sx={{ textAlign: 'center', mt: 3 }}>
+      <HeaderTile>
+        <Icon sx={{ fontSize: 28, color: '#fff' }} />
+      </HeaderTile>
+      <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
+        {title}
+      </Typography>
+      {subtitle && <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{subtitle}</Typography>}
     </Box>
   );
 }

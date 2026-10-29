@@ -16,7 +16,6 @@ import {
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import TuneRoundedIcon from '@mui/icons-material/TuneRounded';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import MyLocationRoundedIcon from '@mui/icons-material/MyLocationRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
@@ -24,17 +23,32 @@ import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRou
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import BackToDashboard from '../../components/BackToDashboard';
+import { Link as RouterLink } from 'react-router-dom';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import {
+  LIB_ACCENT,
+  LIB_TRACKING,
+  LibraryFont,
+  PageHeader,
+  libBackBtnSx,
+  libChipSx,
+  libIconBtnSx,
+  libSearchSx,
+  libSectionTitleSx,
+  libSolidBtnSx,
+  libTintBtnSx,
+  useLibraryPalette,
+} from '../dashboard/components/libraryStyle';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
 import { APT_COLOR, MEDAL, PT, grad } from './lbShared';
 
-// Phone layout of the Leaderboard. It follows the phone Store, Problems and You pages: same page
-// padding, 44px icon buttons, centred header, 1.25rem section titles, tinted pills, rounded panels
-// and divider-separated rows. The page itself scrolls (infinite scroll); there is no top
+// Phone layout of the Leaderboard in the Library look (same as the phone Problems, Home and You pages):
+// Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section
+// titles, cream pills and panels, and divider-separated rows. The page itself scrolls (infinite scroll); there is no top
 // navigation bar on phones. A tapped player opens in a bottom sheet.
 
-const ACCENT = '#6366F1';
+const ACCENT = LIB_ACCENT;
 
 const TRACKS = [
   ['overall', 'Overall'],
@@ -51,14 +65,12 @@ const SCOPES = [
   ['friends', 'Friends'],
 ];
 
-const pillBtn = { height: 44, px: 2.5, borderRadius: 999, fontWeight: 800, fontSize: '0.95rem', textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
-const tintBtn = { ...pillBtn, bgcolor: tint(ACCENT, 20), color: ACCENT, '&:hover': { bgcolor: tint(ACCENT, 30) } };
 
 const num = (n) => (n ?? 0).toLocaleString('en-IN');
 
 function SectionTitle({ children }) {
   return (
-    <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em', mb: 1.5 }}>
+    <Typography component="h2" sx={{ ...libSectionTitleSx, mb: 1.5 }}>
       {children}
     </Typography>
   );
@@ -70,7 +82,7 @@ function SectionTitle({ children }) {
 function FilterGroup({ label, options, value, onChange, disabled = () => false }) {
   return (
     <Box component="section" aria-label={label} sx={{ mt: 2.5 }}>
-      <Typography component="h3" sx={{ fontWeight: 800, fontSize: '1rem', mb: 1 }}>
+      <Typography component="h3" sx={{ fontWeight: 700, fontSize: 16, lineHeight: '24px', mb: 1 }}>
         {label}
       </Typography>
       <Box role="radiogroup" aria-label={label} sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
@@ -83,17 +95,7 @@ function FilterGroup({ label, options, value, onChange, disabled = () => false }
               aria-checked={on}
               disabled={disabled(v)}
               onClick={() => onChange(v)}
-              sx={(t) => ({
-                height: 40,
-                px: 2,
-                borderRadius: 999,
-                fontFamily: 'inherit',
-                fontSize: '0.9rem',
-                fontWeight: on ? 800 : 700,
-                color: on ? ACCENT : t.palette.text.secondary,
-                bgcolor: on ? tint(ACCENT, 20) : tint('#64748B', 10),
-                opacity: disabled(v) ? 0.5 : 1,
-              })}
+              sx={libChipSx(on)}
             >
               {text}
             </ButtonBase>
@@ -106,39 +108,42 @@ function FilterGroup({ label, options, value, onChange, disabled = () => false }
 
 // Everyone / Friends, Overall / Coding / Aptitude and All-time / Weekly / Monthly live in one sheet.
 function FilterSheet({ open, onClose, isAuthenticated, track, period, scope, onTrack, onPeriod, onScope, onReset, isDefault }) {
+  const pal = useLibraryPalette();
   return (
     <Drawer
       anchor="bottom"
       open={open}
       onClose={onClose}
-      slotProps={{ paper: { sx: { borderRadius: '26px 26px 0 0', maxHeight: '90dvh', backgroundImage: 'none' } } }}
+      slotProps={{ paper: { sx: { borderRadius: '26px 26px 0 0', maxHeight: '90dvh', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text } } }}
     >
-      <Box sx={{ px: 1.75, pt: 1, pb: 'calc(16px + env(safe-area-inset-bottom))' }}>
+      <LibraryFont>
+      <Box sx={{ px: 2, pt: 1, pb: 'calc(16px + env(safe-area-inset-bottom))' }}>
         <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5 }}>
-          <IconButton onClick={onClose} aria-label="Close filters" sx={{ width: 44, height: 44 }}>
+          <IconButton onClick={onClose} aria-label="Close filters" sx={{ width: 44, height: 44, ml: -1, color: pal.text }}>
             <KeyboardArrowDownRoundedIcon />
           </IconButton>
-          <Typography component="h2" sx={{ flex: 1, fontWeight: 800, fontSize: '1.05rem' }}>
+          <Typography component="h2" sx={{ flex: 1, ...libSectionTitleSx }}>
             Filters
           </Typography>
-          <Button onClick={onReset} disabled={isDefault} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+          <Button onClick={onReset} disabled={isDefault} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 500, fontSize: 16, color: ACCENT }}>
             Reset
           </Button>
         </Stack>
 
         <FilterGroup label="Leaderboard" options={SCOPES} value={scope} onChange={onScope} disabled={(v) => v === 'friends' && !isAuthenticated} />
         {!isAuthenticated && (
-          <Typography color="text.secondary" sx={{ fontSize: '0.82rem', mt: 0.75 }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, mt: 0.75 }}>
             Sign in to compare with friends.
           </Typography>
         )}
         <FilterGroup label="Track" options={TRACKS} value={track} onChange={onTrack} />
         <FilterGroup label="Period" options={PERIODS} value={period} onChange={onPeriod} />
 
-        <Button onClick={onClose} fullWidth disableElevation variant="contained" sx={{ ...pillBtn, mt: 3, height: 48, bgcolor: ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } }}>
+        <Button onClick={onClose} fullWidth disableElevation variant="contained" sx={{ ...libSolidBtnSx, mt: 3 }}>
           Done
         </Button>
       </Box>
+      </LibraryFont>
     </Drawer>
   );
 }
@@ -149,17 +154,17 @@ function RankTile({ rank, size = 40 }) {
   const m = MEDAL[rank];
   return (
     <Box
-      sx={(t) => ({
+      sx={() => ({
         width: size,
         height: size,
         flexShrink: 0,
         borderRadius: '12px',
         display: 'grid',
         placeItems: 'center',
-        fontWeight: 800,
+        fontWeight: 700,
         fontSize: rank > 999 ? '0.75rem' : '0.95rem',
         fontVariantNumeric: 'tabular-nums',
-        ...(m ? { color: m.text, background: grad(m) } : { color: t.palette.text.secondary, bgcolor: tint('#64748B', 16) }),
+        ...(m ? { color: m.text, background: grad(m) } : { color: 'var(--lib-chip-text)', bgcolor: 'var(--lib-chip)' }),
       })}
     >
       {rank}
@@ -169,7 +174,7 @@ function RankTile({ rank, size = 40 }) {
 
 function YouTag() {
   return (
-    <Typography component="span" sx={{ flexShrink: 0, px: 1, py: 0.3, borderRadius: 99, fontSize: '0.7rem', fontWeight: 800, lineHeight: 1.2, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
+    <Typography component="span" sx={{ flexShrink: 0, px: 1, py: 0.3, borderRadius: 99, fontSize: '0.7rem', fontWeight: 700, lineHeight: 1.2, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
       You
     </Typography>
   );
@@ -207,14 +212,14 @@ function PlayerRow({ row, isMe, onPick }) {
       id={isMe ? 'lb-me' : undefined}
       sx={(t) => ({
         borderBottom: '1px solid',
-        borderColor: t.palette.divider,
+        borderColor: 'var(--lib-divider)',
         '&:last-of-type': { borderBottom: 'none' },
         ...(isMe && { bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), borderRadius: '16px', borderColor: 'transparent' }),
       })}
     >
       <ButtonBase
         onClick={() => onPick(row)}
-        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, py: 1.25, px: 1, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: 1.25, px: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
         <RankTile rank={row.rank} />
         <Avatar
@@ -226,13 +231,13 @@ function PlayerRow({ row, isMe, onPick }) {
         </Avatar>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', minWidth: 0 }}>
-            <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35, minWidth: 0 }}>
+            <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, minWidth: 0 }}>
               {row.name}
             </Typography>
             {isMe && <YouTag />}
           </Stack>
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 0.2, color: 'text.secondary', minWidth: 0 }}>
-            <Typography noWrap variant="body2" sx={{ fontSize: '0.82rem', minWidth: 0 }}>
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', color: 'var(--lib-muted)', minWidth: 0 }}>
+            <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, minWidth: 0 }}>
               @{row.handle}
             </Typography>
             {row.streak > 0 && (
@@ -246,8 +251,8 @@ function PlayerRow({ row, isMe, onPick }) {
           </Stack>
         </Box>
         <Box sx={{ flexShrink: 0, textAlign: 'right' }}>
-          <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', lineHeight: 1.2, fontVariantNumeric: 'tabular-nums' }}>{num(row.score)}</Typography>
-          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'flex-end', gap: 0.5, color: 'text.secondary' }}>
+          <Typography sx={{ fontWeight: 700, fontSize: 16, lineHeight: '24px', fontVariantNumeric: 'tabular-nums' }}>{num(row.score)}</Typography>
+          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'flex-end', gap: 0.5, color: 'var(--lib-muted)' }}>
             <Move row={row} />
             <Typography component="span" sx={{ fontSize: '0.72rem', fontWeight: 700 }}>
               pts
@@ -263,7 +268,7 @@ function SkeletonRows({ count = 8 }) {
   return (
     <>
       {Array.from({ length: count }).map((_, i) => (
-        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 1.5, px: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
+        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: '12px', py: 1.5, px: 0.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)' }}>
           <Skeleton variant="rounded" width={40} height={40} sx={{ borderRadius: '12px' }} />
           <Skeleton variant="circular" width={44} height={44} />
           <Box sx={{ flex: 1 }}>
@@ -283,13 +288,7 @@ function MyRank({ me, canFind, onOpen, onFind }) {
   const { tier, next, progress, toNext } = tierFor(me.score);
   return (
     <Box
-      sx={(t) => ({
-        mt: 2.5,
-        p: 1.75,
-        borderRadius: '26px',
-        background: `linear-gradient(160deg, ${tint(ACCENT, t.palette.mode === 'dark' ? 20 : 15)} 0%, ${tint(ACCENT, 4)} 62%, transparent 100%)`,
-        border: `1px solid ${tint(ACCENT, 24)}`,
-      })}
+      sx={{ mt: 3, p: 2, borderRadius: '20px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
     >
       <ButtonBase
         onClick={onOpen}
@@ -297,27 +296,27 @@ function MyRank({ me, canFind, onOpen, onFind }) {
         sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, fontFamily: 'inherit', color: 'inherit', textAlign: 'left' }}
       >
         <Box sx={{ minWidth: 0 }}>
-          <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
             Your rank
           </Typography>
-          <Typography sx={{ fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em', fontVariantNumeric: 'tabular-nums' }}>#{num(me.rank)}</Typography>
+          <Typography sx={{ fontWeight: 700, fontSize: 28, lineHeight: '34px', fontVariantNumeric: 'tabular-nums' }}>#{num(me.rank)}</Typography>
         </Box>
         <Box sx={{ textAlign: 'right', minWidth: 0 }}>
-          <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
             Points
           </Typography>
-          <Typography sx={{ fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em', fontVariantNumeric: 'tabular-nums' }}>{num(me.score)}</Typography>
+          <Typography sx={{ fontWeight: 700, fontSize: 28, lineHeight: '34px', fontVariantNumeric: 'tabular-nums' }}>{num(me.score)}</Typography>
         </Box>
-        <ChevronRightRoundedIcon sx={{ color: 'text.secondary', flexShrink: 0 }} />
+        <ChevronRightRoundedIcon sx={{ color: 'var(--lib-muted)', flexShrink: 0 }} />
       </ButtonBase>
 
       <Box sx={{ mt: 1.5 }}>
         <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: 800, fontSize: '0.9rem' }}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: 700, fontSize: 15 }}>
             <WorkspacePremiumRoundedIcon sx={{ fontSize: 18 }} />
             {tier.name}
           </Stack>
-          <Typography color="text.secondary" sx={{ fontSize: '0.82rem', fontVariantNumeric: 'tabular-nums' }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, fontVariantNumeric: 'tabular-nums' }}>
             {next ? `${num(toNext)} points to ${next.name}` : 'Top level reached'}
           </Typography>
         </Stack>
@@ -334,7 +333,7 @@ function MyRank({ me, canFind, onOpen, onFind }) {
       </Box>
 
       {canFind && (
-        <Button onClick={onFind} fullWidth disableElevation variant="contained" startIcon={<MyLocationRoundedIcon />} sx={{ ...tintBtn, mt: 1.5, height: 48 }}>
+        <Button onClick={onFind} fullWidth disableElevation variant="contained" startIcon={<MyLocationRoundedIcon />} sx={{ ...libTintBtnSx, mt: 1.5, bgcolor: 'var(--lib-player)' }}>
           Find me in the list
         </Button>
       )}
@@ -345,6 +344,7 @@ function MyRank({ me, canFind, onOpen, onFind }) {
 // ---------- player details sheet ----------
 
 function PlayerSheet({ row, onClose }) {
+  const pal = useLibraryPalette();
   const open = Boolean(row);
   const info = row ? tierFor(row.score) : null;
   const tiles = row
@@ -361,31 +361,32 @@ function PlayerSheet({ row, onClose }) {
       anchor="bottom"
       open={open}
       onClose={onClose}
-      slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)' } } }}
+      slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text } } }}
     >
       {row && info && (
-        <Box sx={{ px: 1.75, pt: 1.25, pb: 2 }}>
+        <LibraryFont>
+        <Box sx={{ px: 2, pt: 1.25, pb: 2 }}>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
             <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: 52, height: 52, fontSize: '1.2rem', fontWeight: 800, border: `2px solid ${tint(info.tier.color, 70)}` }}>
               {row.name?.[0]?.toUpperCase()}
             </Avatar>
             <Box sx={{ minWidth: 0, flex: 1 }}>
-              <Typography component="h2" noWrap sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
+              <Typography component="h2" noWrap sx={{ ...libSectionTitleSx }}>
                 {row.name}
               </Typography>
-              <Typography noWrap variant="body2" color="text.secondary" sx={{ fontSize: '0.85rem', mt: 0.25 }}>
+              <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
                 @{row.handle}
                 {row.company ? `, ${row.company}` : ''}
               </Typography>
             </Box>
-            <IconButton onClick={onClose} aria-label="Close player details" sx={{ width: 44, height: 44 }}>
+            <IconButton onClick={onClose} aria-label="Close player details" sx={{ ...libIconBtnSx, bgcolor: pal.player, color: pal.text }}>
               <CloseRoundedIcon />
             </IconButton>
           </Stack>
 
           <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mt: 1.5 }}>
             {[`Rank #${num(row.rank)}`, `${num(row.score)} points`, ...(row.streak > 0 ? [`${row.streak}-day streak`] : [])].map((text) => (
-              <Typography key={text} component="span" sx={{ px: 1.25, py: 0.4, borderRadius: 99, fontSize: '0.8rem', fontWeight: 800, color: ACCENT, bgcolor: tint(ACCENT, 16), fontVariantNumeric: 'tabular-nums' }}>
+              <Typography key={text} component="span" sx={{ px: 1.25, py: 0.4, borderRadius: 99, fontSize: 14, fontWeight: 500, color: ACCENT, bgcolor: tint(ACCENT, 16), fontVariantNumeric: 'tabular-nums' }}>
                 {text}
               </Typography>
             ))}
@@ -398,7 +399,7 @@ function PlayerSheet({ row, onClose }) {
                 <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.78rem' }}>
                   {label}
                 </Typography>
-                <Typography noWrap color="text.secondary" sx={{ fontSize: '0.72rem', fontVariantNumeric: 'tabular-nums' }}>
+                <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: '0.72rem', fontVariantNumeric: 'tabular-nums' }}>
                   {n * pts} pts
                 </Typography>
               </Box>
@@ -407,11 +408,11 @@ function PlayerSheet({ row, onClose }) {
 
           <Box sx={{ mt: 2 }}>
             <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-              <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: info.tier.color, fontWeight: 800, fontSize: '0.95rem' }}>
+              <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: info.tier.color, fontWeight: 700, fontSize: 15 }}>
                 <WorkspacePremiumRoundedIcon sx={{ fontSize: 20 }} />
                 {info.tier.name}
               </Stack>
-              <Typography color="text.secondary" sx={{ fontSize: '0.82rem', fontVariantNumeric: 'tabular-nums' }}>
+              <Typography color="var(--lib-muted)" sx={{ fontSize: 14, fontVariantNumeric: 'tabular-nums' }}>
                 {info.next ? `${num(info.toNext)} points to ${info.next.name}` : 'Top level reached'}
               </Typography>
             </Stack>
@@ -425,11 +426,12 @@ function PlayerSheet({ row, onClose }) {
             >
               <Box sx={{ width: `${Math.max(info.progress, 4)}%`, height: '100%', borderRadius: 99, bgcolor: info.tier.color }} />
             </Box>
-            <Typography color="text.secondary" sx={{ fontSize: '0.85rem', mt: 1 }}>
+            <Typography color="var(--lib-muted)" sx={{ fontSize: 14, mt: 1 }}>
               {row.recent} solved in the last 7 days
             </Typography>
           </Box>
         </Box>
+        </LibraryFont>
       )}
     </Drawer>
   );
@@ -469,15 +471,18 @@ export default function MobileLeaderboard({
   const total = meta?.total ?? rows.length;
 
   return (
-    <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
+    <LibraryFont>
+    <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>
       {/* Back + filters */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
+        <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={libBackBtnSx}>
+          <ArrowBackRoundedIcon />
+        </IconButton>
         <IconButton
           onClick={() => setFiltersOpen(true)}
           aria-label={isDefault ? 'Filters' : `Filters: ${summary}`}
           aria-haspopup="dialog"
-          sx={(t) => ({ width: 44, height: 44, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), color: ACCENT })}
+          sx={libIconBtnSx}
         >
           <Box sx={{ position: 'relative', display: 'grid', placeItems: 'center' }}>
             <TuneRoundedIcon />
@@ -496,11 +501,6 @@ export default function MobileLeaderboard({
         slotProps={{
           htmlInput: { 'aria-label': 'Search players' },
           input: {
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchRoundedIcon fontSize="small" />
-              </InputAdornment>
-            ),
             endAdornment: search ? (
               <InputAdornment position="end">
                 <IconButton size="small" onClick={() => setSearch('')} aria-label="Clear search">
@@ -510,48 +510,22 @@ export default function MobileLeaderboard({
             ) : undefined,
           },
         }}
-        sx={(t) => ({
-          mt: 1,
-          '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
-          '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-        })}
+        sx={libSearchSx}
       />
 
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mt: 2.5 }}>
-        <Box
-          sx={{
-            width: 84,
-            height: 84,
-            mx: 'auto',
-            borderRadius: '26px',
-            display: 'grid',
-            placeItems: 'center',
-            color: '#fff',
-            background: `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`,
-            boxShadow: `0 14px 26px -12px ${ACCENT}`,
-          }}
-        >
-          <EmojiEventsRoundedIcon sx={{ fontSize: 44 }} />
-        </Box>
-        <Typography component="h1" noWrap sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-          Leaderboard
-        </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          {summary}
-        </Typography>
-      </Box>
+      <PageHeader icon={EmojiEventsRoundedIcon} title="Leaderboard" subtitle={summary} />
 
       {/* Your position */}
       {me && <MyRank me={me} canFind={meInList} onOpen={() => setSheetRow(me)} onFind={scrollToMe} />}
       {isAuthenticated && meta && !meta.me && !loading && (
-        <Typography color="text.secondary" sx={{ mt: 2, fontSize: '0.9rem', textAlign: 'center' }}>
+        <Typography color="var(--lib-muted)" sx={{ mt: 2, fontSize: 15, textAlign: 'center' }}>
           Solve a question{period === 'all' ? '' : ' in this period'} to enter the leaderboard.
         </Typography>
       )}
 
       {/* Rankings */}
-      <Box component="section" aria-label="Rankings" sx={{ mt: 3.5 }}>
+      <Box component="section" aria-label="Rankings" sx={{ mt: 4 }}>
         <SectionTitle>Rankings</SectionTitle>
 
         {error && (
@@ -568,15 +542,15 @@ export default function MobileLeaderboard({
           </Alert>
         )}
 
-        <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+        <Box sx={{ borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
           {firstLoad ? (
             <SkeletonRows />
           ) : rows.length === 0 && !error ? (
             <Box sx={{ py: 7, px: 2, textAlign: 'center' }}>
-              <Typography sx={{ fontWeight: 800 }}>
+              <Typography sx={{ fontWeight: 700 }}>
                 {q ? `No player matches "${q}"` : scope === 'friends' ? 'No friends on this board yet' : 'No one has scored in this period yet'}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 2 }}>
+              <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5, mb: 2 }}>
                 {q ? 'Check the spelling or search by @handle.' : 'Solve a question to take the first spot.'}
               </Typography>
               <Stack direction="row" sx={{ justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
@@ -611,7 +585,7 @@ export default function MobileLeaderboard({
         </Box>
 
         {rows.length > 0 && !firstLoad && (
-          <Typography variant="caption" color="text.secondary" sx={{ display: 'block', textAlign: 'center', mt: 1.5, fontVariantNumeric: 'tabular-nums' }}>
+          <Typography variant="caption" color="var(--lib-muted)" sx={{ display: 'block', textAlign: 'center', mt: 1.5, fontVariantNumeric: 'tabular-nums' }}>
             Showing {rows.length} of {total}
           </Typography>
         )}
@@ -636,5 +610,6 @@ export default function MobileLeaderboard({
       />
       <PlayerSheet row={sheetRow} onClose={() => setSheetRow(null)} />
     </Box>
+    </LibraryFont>
   );
 }

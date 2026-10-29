@@ -3,27 +3,39 @@ import { Alert, Box, Button, ButtonBase, Checkbox, FormControlLabel, IconButton,
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import BackToDashboard from '../../components/BackToDashboard';
+import { Link as RouterLink } from 'react-router-dom';
 import { tint } from '../dashboard/dashboardUtils';
+import {
+  LIB_ACCENT,
+  LIB_TRACKING,
+  LibraryFont,
+  PageHeader,
+  libBackBtnSx,
+  libChipSx,
+  libSectionTitleSx,
+  libSolidBtnSx,
+  libTintBtnSx,
+} from '../dashboard/components/libraryStyle';
 import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
 
-// Phone layout of the Contest page. It follows the phone Problems, Store and You pages: same page padding,
-// 44px back button, centred header, pill tabs and buttons, 1.25rem section titles and divider-separated rows.
+// Phone layout of the Contest page in the Library look (same as the phone Problems, Home and You pages): Roboto type,
+// warm surface, 16px page padding, 44px back button, centred header tile, pill tabs and buttons, 18px section titles
+// and divider-separated rows.
 // Two screens: the list (upcoming / past with winners) and the contest details (rules and apply).
 // There is no top navigation bar on phones, and the 3D podium is replaced by a plain top 10 list.
 
-const ACCENT = '#6366F1';
+const ACCENT = LIB_ACCENT;
 const ORANGE = '#F97316';
 const STATUS = { live: ['Live', '#16A34A'], upcoming: ['Upcoming', ORANGE], ended: ['Ended', '#64748B'] };
 const pad = (n) => String(n).padStart(2, '0');
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 
-const solidBtn = { height: 48, borderRadius: 999, fontWeight: 800, fontSize: '1rem', textTransform: 'none', bgcolor: ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } };
-const tintBtn = { ...solidBtn, bgcolor: tint(ACCENT, 20), color: ACCENT, '&:hover': { bgcolor: tint(ACCENT, 30) } };
+const solidBtn = libSolidBtnSx;
+const tintBtn = libTintBtnSx;
 
 function SectionTitle({ children, id }) {
   return (
-    <Typography id={id} component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em', mb: 1.5 }}>
+    <Typography id={id} component="h2" sx={{ ...libSectionTitleSx, mb: 1.5 }}>
       {children}
     </Typography>
   );
@@ -32,7 +44,7 @@ function SectionTitle({ children, id }) {
 function StatusTag({ status }) {
   const [label, color] = STATUS[status] || STATUS.ended;
   return (
-    <Typography component="span" sx={{ px: 1, py: 0.4, borderRadius: '10px', fontSize: '0.78rem', fontWeight: 800, lineHeight: 1.2, color, bgcolor: tint(color, 16) }}>
+    <Typography component="span" sx={{ px: 1, py: 0.4, borderRadius: '10px', fontSize: 13, fontWeight: 500, lineHeight: 1.2, color, bgcolor: tint(color, 16) }}>
       {label}
     </Typography>
   );
@@ -44,8 +56,8 @@ function Countdown({ contest }) {
     <Box role="timer" aria-label={`Starts in ${d} days ${h} hours ${m} minutes`} sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 0.75, mt: 1.75 }}>
       {[[d, 'days'], [h, 'hrs'], [m, 'min'], [s, 'sec']].map(([v, label]) => (
         <Box key={label} sx={(t) => ({ py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) })}>
-          <Typography sx={{ ...mono, fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.1 }}>{pad(v)}</Typography>
-          <Typography color="text.secondary" sx={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+          <Typography sx={{ ...mono, fontWeight: 700, fontSize: 20, lineHeight: 1.1 }}>{pad(v)}</Typography>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: '0.72rem', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>
             {label}
           </Typography>
         </Box>
@@ -61,20 +73,15 @@ function ContestPanel({ contest, past, action }) {
     <Box
       component="section"
       aria-label={contest.title}
-      sx={(t) => ({
-        borderRadius: '26px',
-        p: 1.75,
-        background: `linear-gradient(160deg, ${tint(ORANGE, t.palette.mode === 'dark' ? 20 : 15)} 0%, ${tint(ORANGE, 4)} 62%, transparent 100%)`,
-        border: `1px solid ${tint(ORANGE, 24)}`,
-      })}
+      sx={{ borderRadius: '20px', p: 2, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
     >
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
         <StatusTag status={status} />
-        <Typography color="text.secondary" noWrap sx={{ fontSize: '0.82rem', minWidth: 0 }}>
+        <Typography color="var(--lib-muted)" noWrap sx={{ fontSize: 14, letterSpacing: LIB_TRACKING, minWidth: 0 }}>
           {fmtStart(contest.startsAt)}
         </Typography>
       </Stack>
-      <Typography component="h3" sx={{ mt: 1, fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.2, letterSpacing: '-0.01em', overflowWrap: 'anywhere' }}>
+      <Typography component="h3" sx={{ mt: 1, fontWeight: 700, fontSize: 20, lineHeight: '28px', overflowWrap: 'anywhere' }}>
         {contest.title}
       </Typography>
 
@@ -83,14 +90,14 @@ function ContestPanel({ contest, past, action }) {
           <EmojiEventsRoundedIcon sx={{ fontSize: 24 }} />
         </Box>
         <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ ...mono, fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15 }}>{inr(contest.prizePool)}</Typography>
-          <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
+          <Typography sx={{ ...mono, fontWeight: 700, fontSize: 20, lineHeight: '28px' }}>{inr(contest.prizePool)}</Typography>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
             {contest.tagline || 'Cash prize pool'}
           </Typography>
         </Box>
       </Stack>
 
-      <Typography color="text.secondary" sx={{ mt: 1.5, fontSize: '0.82rem', fontVariantNumeric: 'tabular-nums' }}>
+      <Typography color="var(--lib-muted)" sx={{ mt: 1.5, fontSize: 14, letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
         {contest.problemCount} {contest.difficulty} problems · {fmtDuration(contest.durationMinutes)} · {contest.applicants.toLocaleString('en-IN')} applied
       </Typography>
 
@@ -102,32 +109,32 @@ function ContestPanel({ contest, past, action }) {
 
 function WinnerRow({ w }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 1.5, pl: 0.5, borderBottom: '1px solid', borderColor: 'divider', '&:last-of-type': { borderBottom: 'none' } }}>
-      <Typography sx={{ ...mono, width: 40, height: 40, flexShrink: 0, display: 'grid', placeItems: 'center', borderRadius: '14px', fontWeight: 800, fontSize: '1rem', color: w.rank <= 3 ? ORANGE : 'text.secondary', bgcolor: tint(w.rank <= 3 ? ORANGE : ACCENT, 16) }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px', py: 1.25, pl: 0.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
+      <Typography sx={{ ...mono, width: 48, height: 48, flexShrink: 0, display: 'grid', placeItems: 'center', borderRadius: '14px', fontWeight: 700, fontSize: '1rem', color: w.rank <= 3 ? ORANGE : 'var(--lib-chip-text)', bgcolor: w.rank <= 3 ? tint(ORANGE, 16) : 'var(--lib-chip)' }}>
         {w.rank}
       </Typography>
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35 }}>
+        <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
           {w.name}
         </Typography>
-        <Typography noWrap color="text.secondary" sx={{ fontSize: '0.82rem', mt: 0.2, fontVariantNumeric: 'tabular-nums' }}>
+        <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
           {w.solved ?? 0} solved
         </Typography>
       </Box>
-      {w.prize ? <Typography sx={{ ...mono, fontWeight: 800, fontSize: '0.95rem', flexShrink: 0 }}>{inr(w.prize)}</Typography> : null}
+      {w.prize ? <Typography sx={{ ...mono, fontWeight: 700, fontSize: '0.95rem', flexShrink: 0 }}>{inr(w.prize)}</Typography> : null}
     </Box>
   );
 }
 
 function Rule({ rule, index }) {
   return (
-    <Box sx={(t) => ({ py: 1.75, px: rule.highlight ? 1.5 : 0.5, borderBottom: rule.highlight ? 'none' : '1px solid', borderColor: 'divider', ...(rule.highlight && { my: 1, borderRadius: '20px', bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) }) })}>
-      <Typography component="h3" sx={{ fontWeight: 800, fontSize: '1rem', lineHeight: 1.3, mb: 1 }}>
+    <Box sx={(t) => ({ py: 1.75, px: rule.highlight ? 1.5 : 0.5, borderBottom: rule.highlight ? 'none' : '1px solid', borderColor: 'var(--lib-divider)', ...(rule.highlight && { my: 1, borderRadius: '16px', bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) }) })}>
+      <Typography component="h3" sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, mb: 1 }}>
         {index + 1}. {rule.title}
       </Typography>
       <Box component="ol" sx={{ m: 0, pl: 2.5, display: 'grid', gap: 0.9 }}>
         {rule.items.map((text) => (
-          <Typography key={text} component="li" sx={{ fontSize: '0.92rem', lineHeight: 1.65, '&::marker': { fontWeight: 700, color: 'text.secondary' } }}>
+          <Typography key={text} component="li" sx={{ fontSize: '0.92rem', lineHeight: 1.65, '&::marker': { fontWeight: 500, color: 'var(--lib-muted)' } }}>
             {text}
           </Typography>
         ))}
@@ -143,7 +150,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
   const ended = ready && shown.status === 'ended';
   const counts = { upcoming: ready && !ended ? 1 : 0, past: ended ? 1 : 0 };
 
-  const page = { px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' };
+  const page = { px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' };
 
   // ---------------------------------------------------------------- Details
   if (detail && contest) {
@@ -152,12 +159,13 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
     const goApply = () => applyRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     const cta = upcoming ? (contest.applied ? 'You are in' : 'Apply now') : 'Rules & details';
     return (
+      <LibraryFont>
       <Box sx={page}>
-        <IconButton onClick={onClose} aria-label="All contests" sx={{ width: 44, height: 44 }}>
+        <IconButton onClick={onClose} aria-label="All contests" sx={libBackBtnSx}>
           <ArrowBackRoundedIcon />
         </IconButton>
 
-        <Box sx={{ mt: 1 }}>
+        <Box sx={{ mt: 2 }}>
           <ContestPanel
             contest={contest}
             past={past}
@@ -173,34 +181,34 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
           No AI, no outside help. Every solution must be your own work. Cheaters are disqualified and lose any prize.
         </Alert>
 
-        <Box component="section" aria-labelledby="contest-rules" sx={{ mt: 3 }}>
+        <Box component="section" aria-labelledby="contest-rules" sx={{ mt: 4 }}>
           <SectionTitle id="contest-rules">Contest rules</SectionTitle>
-          <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+          <Box sx={{ borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
             {contest.rules.map((rule, i) => (
               <Rule key={rule.id} rule={rule} index={i} />
             ))}
           </Box>
         </Box>
 
-        <Box component="section" ref={applyRef} aria-labelledby="contest-apply" sx={{ mt: 3, scrollMarginTop: 16 }}>
+        <Box component="section" ref={applyRef} aria-labelledby="contest-apply" sx={{ mt: 4, scrollMarginTop: 16 }}>
           <SectionTitle id="contest-apply">Apply</SectionTitle>
           {contest.applied ? (
             <Stack spacing={1.5}>
               <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
                 <CheckCircleRoundedIcon sx={{ color: 'var(--jc-easy)' }} />
-                <Typography sx={{ fontWeight: 700 }}>You are in. See you on {fmtStart(contest.startsAt)}.</Typography>
+                <Typography sx={{ fontWeight: 500, letterSpacing: LIB_TRACKING }}>You are in. See you on {fmtStart(contest.startsAt)}.</Typography>
               </Stack>
               {upcoming && (
-                <Button onClick={onWithdraw} disabled={busy} color="inherit" sx={{ alignSelf: 'flex-start', borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+                <Button onClick={onWithdraw} disabled={busy} color="inherit" sx={{ alignSelf: 'flex-start', borderRadius: 999, textTransform: 'none', fontWeight: 500, fontSize: 16 }}>
                   Withdraw application
                 </Button>
               )}
             </Stack>
           ) : !upcoming ? (
-            <Typography color="text.secondary">Applications are closed.</Typography>
+            <Typography color="var(--lib-muted)">Applications are closed.</Typography>
           ) : !isAuthenticated ? (
             <Stack spacing={1.5}>
-              <Typography color="text.secondary">Sign in to apply. It is free.</Typography>
+              <Typography color="var(--lib-muted)">Sign in to apply. It is free.</Typography>
               <Button onClick={onLogin} fullWidth disableElevation variant="contained" sx={solidBtn}>
                 Sign in to apply
               </Button>
@@ -219,39 +227,21 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
           )}
         </Box>
       </Box>
+      </LibraryFont>
     );
   }
 
   // ---------------------------------------------------------------- List
   return (
+    <LibraryFont>
     <Box sx={page}>
-      <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
+      <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={libBackBtnSx}>
+        <ArrowBackRoundedIcon />
+      </IconButton>
 
-      <Box sx={{ textAlign: 'center', mt: 1 }}>
-        <Box
-          sx={{
-            width: 84,
-            height: 84,
-            mx: 'auto',
-            borderRadius: '26px',
-            display: 'grid',
-            placeItems: 'center',
-            color: '#fff',
-            background: `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`,
-            boxShadow: `0 14px 26px -12px ${ACCENT}`,
-          }}
-        >
-          <EmojiEventsRoundedIcon sx={{ fontSize: 44 }} />
-        </Box>
-        <Typography component="h1" sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-          Contests
-        </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          Compete, rank and win prizes
-        </Typography>
-      </Box>
+      <PageHeader icon={EmojiEventsRoundedIcon} title="Contests" subtitle="Compete, rank and win prizes" />
 
-      <Box role="tablist" aria-label="Contests" sx={{ display: 'flex', justifyContent: 'center', gap: 0.75, mt: 2.5 }}>
+      <Box role="tablist" aria-label="Contests" sx={{ display: 'flex', justifyContent: 'center', gap: 1, mt: 3 }}>
         {[['upcoming', 'Upcoming'], ['past', 'Past']].map(([key, label]) => {
           const on = tab === key;
           return (
@@ -260,7 +250,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
               role="tab"
               aria-selected={on}
               onClick={() => setTab(key)}
-              sx={(t) => ({ height: 40, px: 2, gap: 0.75, borderRadius: 999, fontFamily: 'inherit', fontSize: '0.9rem', fontWeight: on ? 800 : 700, color: on ? ACCENT : t.palette.text.secondary, bgcolor: on ? tint(ACCENT, 20) : 'transparent' })}
+              sx={libChipSx(on)}
             >
               {label}
               <Box component="span" sx={{ fontVariantNumeric: 'tabular-nums', opacity: 0.8 }}>{counts[key]}</Box>
@@ -270,7 +260,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
       </Box>
 
       <Box role="tabpanel" sx={{ mt: 2 }}>
-        {shown === null && <Skeleton variant="rounded" height={260} sx={{ borderRadius: '26px' }} />}
+        {shown === null && <Skeleton variant="rounded" height={260} sx={{ borderRadius: '20px' }} />}
         {shown === false && <Alert severity="error">Could not load contests. Please try again in a moment.</Alert>}
 
         {ready && tab === 'upcoming' && (counts.upcoming ? (
@@ -284,8 +274,8 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
           />
         ) : (
           <Box sx={{ py: 7, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 800 }}>No upcoming contests</Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>The next one will be announced here.</Typography>
+            <Typography sx={{ fontWeight: 700 }}>No upcoming contests</Typography>
+            <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5 }}>The next one will be announced here.</Typography>
           </Box>
         ))}
 
@@ -295,31 +285,32 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
               contest={shown}
               past
               action={
-                <Typography color="text.secondary" sx={{ mt: 1.5, fontSize: '0.82rem' }}>
+                <Typography color="var(--lib-muted)" sx={{ mt: 1.5, fontSize: 14 }}>
                   Ended {fmtDate(shown.startsAt)}
                 </Typography>
               }
             />
-            <Box component="section" aria-labelledby="contest-top" sx={{ mt: 3 }}>
+            <Box component="section" aria-labelledby="contest-top" sx={{ mt: 4 }}>
               <SectionTitle id="contest-top">Top 10</SectionTitle>
               {shown.winners?.length ? (
-                <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+                <Box sx={{ borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
                   {shown.winners.slice(0, 10).map((w) => (
                     <WinnerRow key={w.rank} w={w} />
                   ))}
                 </Box>
               ) : (
-                <Typography color="text.secondary">Results appear once rankings are verified.</Typography>
+                <Typography color="var(--lib-muted)">Results appear once rankings are verified.</Typography>
               )}
             </Box>
           </>
         ) : (
           <Box sx={{ py: 7, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 800 }}>No past contests yet</Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>Finished contests and their winners will show up here.</Typography>
+            <Typography sx={{ fontWeight: 700 }}>No past contests yet</Typography>
+            <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5 }}>Finished contests and their winners will show up here.</Typography>
           </Box>
         ))}
       </Box>
     </Box>
+    </LibraryFont>
   );
 }

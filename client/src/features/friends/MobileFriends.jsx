@@ -5,7 +5,6 @@ import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import TimelineRoundedIcon from '@mui/icons-material/TimelineRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import ScheduleSendRoundedIcon from '@mui/icons-material/ScheduleSendRounded';
@@ -14,55 +13,72 @@ import SortRoundedIcon from '@mui/icons-material/SortRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import DoneAllRoundedIcon from '@mui/icons-material/DoneAllRounded';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
-import BackToDashboard from '../../components/BackToDashboard';
+import { Link as RouterLink } from 'react-router-dom';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { tint } from '../dashboard/dashboardUtils';
+import {
+  LIB_ACCENT,
+  LIB_TRACKING,
+  LibraryFont,
+  PageHeader,
+  libBackBtnSx,
+  libChipSx,
+  libIconBtnSx,
+  libSearchSx,
+  libSectionTitleSx,
+  libSmallBtnSx,
+  libSolidBtnSx,
+  libTintBtnSx,
+} from '../dashboard/components/libraryStyle';
 import { acceptFriendInvite } from './friendsSlice';
 import { PersonAvatar, statusInfo, timeAgo } from './friendsUi';
 import { previewOf, shortTime } from './friendsKit';
 import ActivityFeed from './ActivityFeed';
 
-// Phone layout of the Friends page. It follows the phone Store, Problems, Leaderboard and Study Plan
-// pages: same page padding, 44px icon buttons, centred header, 1.25rem section titles, tinted pills
-// and divider-separated rows. The page itself scrolls and there is no top navigation bar on phones.
+// Phone layout of the Friends page in the Library look (same as the phone Problems, Home and You pages):
+// Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section titles,
+// cream pills and divider-separated rows. The page itself scrolls and there is no top navigation bar on phones.
 // The chat still opens in its own full-height drawer (FriendChat).
 
-const ACCENT = '#6366F1';
+const ACCENT = LIB_ACCENT;
 const SUCCESS = 'var(--jc-easy)';
 const REQUEST_TABS = ['friends', 'requests', 'sent'];
 
 const scrollRow = {
   display: 'flex',
-  gap: 0.75,
+  gap: 1,
   overflowX: 'auto',
-  mx: -1.75,
-  px: 1.75,
+  mx: -2,
+  px: 2,
   pb: 0.5,
   scrollbarWidth: 'none',
   '&::-webkit-scrollbar': { display: 'none' },
 };
 
-const pillBtn = { height: 44, px: 2.5, borderRadius: 999, fontWeight: 800, fontSize: '0.95rem', textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
-const solidBtn = { ...pillBtn, bgcolor: ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } };
-const smallBtn = (c) => ({ height: 40, px: 1.75, borderRadius: 999, fontWeight: 800, fontSize: '0.85rem', textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0, bgcolor: tint(c, 20), color: c, '&:hover': { bgcolor: tint(c, 30) } });
-const tintIcon = (c, on = false) => (t) => ({
-  width: 44,
-  height: 44,
-  flexShrink: 0,
-  bgcolor: on ? c : tint(c, t.palette.mode === 'dark' ? 16 : 9),
-  color: on ? '#fff' : c,
-  '&:hover': { bgcolor: on ? c : tint(c, 22) },
-});
+const solidBtn = libSolidBtnSx;
+const smallBtn = (c) => ({ ...libSmallBtnSx, bgcolor: tint(c, 20), color: c, '&:hover': { bgcolor: tint(c, 30) } });
+// Accent buttons are neutral cream pills (solid accent when switched on); other colours stay tinted.
+const tintIcon = (c, on = false) => (t) =>
+  c === ACCENT
+    ? on
+      ? { ...libIconBtnSx, bgcolor: ACCENT, color: '#fff', '&:hover': { bgcolor: ACCENT } }
+      : libIconBtnSx
+    : { width: 40, height: 40, flexShrink: 0, bgcolor: tint(c, t.palette.mode === 'dark' ? 16 : 12), color: c, '&:hover': { bgcolor: tint(c, 22) } };
 
 // Page padding shared by the phone Friends screens.
 export function MobileShell({ children }) {
-  return <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>{children}</Box>;
+  return (
+    <LibraryFont>
+      <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: 640, mx: 'auto' }}>{children}</Box>
+    </LibraryFont>
+  );
 }
 
 function SectionTitle({ children, first = false }) {
   return (
-    <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em', mb: 1.5, mt: first ? 0 : 3 }}>
+    <Typography component="h2" sx={{ ...libSectionTitleSx, mb: 1.5, mt: first ? 0 : 4 }}>
       {children}
     </Typography>
   );
@@ -71,8 +87,8 @@ function SectionTitle({ children, first = false }) {
 function Empty({ title, children, action }) {
   return (
     <Box sx={{ py: 6, px: 2, textAlign: 'center' }}>
-      <Typography sx={{ fontWeight: 800 }}>{title}</Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: action ? 2 : 0 }}>
+      <Typography sx={{ fontWeight: 700 }}>{title}</Typography>
+      <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5, mb: action ? 2 : 0 }}>
         {children}
       </Typography>
       {action}
@@ -82,7 +98,7 @@ function Empty({ title, children, action }) {
 
 function SkeletonRows({ count = 6 }) {
   return Array.from({ length: count }, (_, i) => (
-    <Stack key={i} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.5, px: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}>
+    <Stack key={i} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.5, px: 0.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)' }}>
       <Skeleton variant="circular" width={48} height={48} />
       <Box sx={{ flex: 1 }}>
         <Skeleton variant="text" width={`${40 + ((i * 17) % 35)}%`} />
@@ -104,19 +120,7 @@ function Pills({ label, options, value, onChange, role = 'tab' }) {
             aria-selected={role === 'tab' ? on : undefined}
             aria-pressed={role === 'tab' ? undefined : on}
             onClick={() => onChange(v)}
-            sx={(t) => ({
-              flexShrink: 0,
-              height: 40,
-              px: 2,
-              gap: 0.75,
-              borderRadius: 999,
-              fontFamily: 'inherit',
-              fontSize: '0.9rem',
-              fontWeight: on ? 800 : 700,
-              whiteSpace: 'nowrap',
-              color: on ? ACCENT : t.palette.text.secondary,
-              bgcolor: on ? tint(ACCENT, 20) : 'transparent',
-            })}
+            sx={libChipSx(on)}
           >
             {dot && <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#22C55E' }} />}
             {text}
@@ -134,30 +138,30 @@ function FriendRow({ f, last, myId, online, unread, fav, onOpen }) {
   const mine = last && last.from === myId;
   const preview = last ? previewOf(last, myId) : st.text;
   return (
-    <Box data-fid={f.userId} sx={{ borderBottom: '1px solid', borderColor: 'divider', '&:last-of-type': { borderBottom: 'none' } }}>
+    <Box data-fid={f.userId} sx={{ borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
       <ButtonBase
         onClick={onOpen}
         aria-label={`Chat with ${f.name}${unread ? `, ${unread} unread` : ''}`}
-        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, py: 1.25, px: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: 1.25, px: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
         <PersonAvatar person={f} size={48} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
-            <Typography noWrap sx={{ fontWeight: unread ? 800 : 700, fontSize: '1rem', lineHeight: 1.35, flex: 1, minWidth: 0 }}>
+            <Typography noWrap sx={{ fontWeight: unread ? 700 : 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, flex: 1, minWidth: 0 }}>
               {f.name}
             </Typography>
             {fav && <StarRoundedIcon aria-label="Favourite" sx={{ fontSize: 16, color: 'warning.main', flexShrink: 0 }} />}
             {last && (
-              <Typography sx={{ flexShrink: 0, fontSize: '0.75rem', fontWeight: unread ? 800 : 500, color: unread ? ACCENT : 'text.secondary' }}>{shortTime(last.at)}</Typography>
+              <Typography sx={{ flexShrink: 0, fontSize: 12, fontWeight: unread ? 700 : 400, color: unread ? ACCENT : 'var(--lib-muted)' }}>{shortTime(last.at)}</Typography>
             )}
           </Stack>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, mt: 0.2 }}>
-            {mine && last.kind === 'text' && (last.read ? <DoneAllRoundedIcon sx={{ fontSize: 16, color: ACCENT, flexShrink: 0 }} /> : <DoneRoundedIcon sx={{ fontSize: 16, color: 'text.disabled', flexShrink: 0 }} />)}
-            <Typography noWrap sx={{ flex: 1, minWidth: 0, fontSize: '0.85rem', fontWeight: unread ? 600 : 400, color: !last && st.live ? SUCCESS : unread ? 'text.primary' : 'text.secondary' }}>
+            {mine && last.kind === 'text' && (last.read ? <DoneAllRoundedIcon sx={{ fontSize: 16, color: ACCENT, flexShrink: 0 }} /> : <DoneRoundedIcon sx={{ fontSize: 16, color: 'var(--lib-muted)', flexShrink: 0 }} />)}
+            <Typography noWrap sx={{ flex: 1, minWidth: 0, fontSize: 14, letterSpacing: LIB_TRACKING, fontWeight: unread ? 500 : 400, color: !last && st.live ? SUCCESS : unread ? 'var(--lib-text)' : 'var(--lib-muted)' }}>
               {preview}
             </Typography>
             {unread > 0 && (
-              <Typography component="span" aria-hidden sx={{ flexShrink: 0, minWidth: 22, height: 22, px: 0.75, borderRadius: 11, display: 'grid', placeItems: 'center', bgcolor: ACCENT, color: '#fff', fontSize: '0.75rem', fontWeight: 800 }}>
+              <Typography component="span" aria-hidden sx={{ flexShrink: 0, minWidth: 22, height: 22, px: 0.75, borderRadius: 11, display: 'grid', placeItems: 'center', bgcolor: ACCENT, color: '#fff', fontSize: 12, fontWeight: 700 }}>
                 {unread > 99 ? '99+' : unread}
               </Typography>
             )}
@@ -170,16 +174,16 @@ function FriendRow({ f, last, myId, online, unread, fav, onOpen }) {
 
 function PersonRow({ person, rank, sub, action }) {
   return (
-    <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.25, px: 0.5, minHeight: 68, borderBottom: '1px solid', borderColor: 'divider', '&:last-of-type': { borderBottom: 'none' } }}>
+    <Stack direction="row" sx={{ alignItems: 'center', gap: '12px', py: 1.25, px: 0.5, minHeight: 68, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
       {rank != null && (
-        <Typography sx={{ width: 28, flexShrink: 0, textAlign: 'center', fontSize: '0.9rem', fontWeight: 800, fontVariantNumeric: 'tabular-nums', color: rank <= 3 ? '#F59E0B' : 'text.secondary' }}>{rank}</Typography>
+        <Typography sx={{ width: 28, flexShrink: 0, textAlign: 'center', fontSize: 15, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: rank <= 3 ? '#F59E0B' : 'var(--lib-muted)' }}>{rank}</Typography>
       )}
       <PersonAvatar person={person} size={44} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35 }}>
+        <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
           {person.name}
         </Typography>
-        <Typography noWrap color="text.secondary" sx={{ fontSize: '0.82rem' }}>
+        <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING }}>
           {sub || `@${person.handle}`}
         </Typography>
       </Box>
@@ -205,7 +209,7 @@ function InviteBanner({ handle, onDone, run, busy }) {
     };
   }, [handle]);
 
-  if (state.loading) return <Skeleton variant="rounded" height={120} sx={{ mt: 1.5, borderRadius: '26px' }} />;
+  if (state.loading) return <Skeleton variant="rounded" height={120} sx={{ mt: 1.5, borderRadius: '20px' }} />;
   if (state.error) return <Alert severity="warning" onClose={onDone} sx={{ mt: 1.5 }}>{state.error}</Alert>;
   if (state.isSelf) return <Alert severity="info" onClose={onDone} sx={{ mt: 1.5 }}>This is your own invite link.</Alert>;
   if (state.relation === 'friends') return <Alert severity="success" onClose={onDone} sx={{ mt: 1.5 }}>You and @{state.user.handle} are already friends.</Alert>;
@@ -216,29 +220,23 @@ function InviteBanner({ handle, onDone, run, busy }) {
 
   return (
     <Box
-      sx={(t) => ({
-        mt: 1.5,
-        p: 1.75,
-        borderRadius: '26px',
-        background: `linear-gradient(160deg, ${tint(ACCENT, t.palette.mode === 'dark' ? 20 : 15)} 0%, ${tint(ACCENT, 4)} 62%, transparent 100%)`,
-        border: `1px solid ${tint(ACCENT, 24)}`,
-      })}
+      sx={{ mt: 1.5, p: 2, borderRadius: '20px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
     >
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
         <PersonAvatar person={state.user} size={48} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 800, fontSize: '1.05rem', lineHeight: 1.3 }}>
+          <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
             {state.user.name}
           </Typography>
-          <Typography noWrap color="text.secondary" sx={{ fontSize: '0.85rem' }}>
+          <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
             Invited you to be friends
           </Typography>
         </Box>
       </Stack>
-      <Button onClick={accept} disabled={busy === 'invite'} fullWidth disableElevation variant="contained" sx={{ ...solidBtn, mt: 1.5, height: 48 }}>
+      <Button onClick={accept} disabled={busy === 'invite'} fullWidth disableElevation variant="contained" sx={{ ...solidBtn, mt: 1.5 }}>
         Accept invite
       </Button>
-      <Button onClick={onDone} fullWidth sx={{ ...pillBtn, mt: 0.5, color: ACCENT }}>
+      <Button onClick={onDone} fullWidth sx={{ ...libTintBtnSx, mt: 0.5, bgcolor: 'transparent', color: ACCENT, '&:hover': { bgcolor: 'transparent' } }}>
         Not now
       </Button>
     </Box>
@@ -315,9 +313,9 @@ export default function MobileFriends({
     }
     if (sentIds.has(p.userId)) {
       return (
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, flexShrink: 0, color: 'text.secondary' }}>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, flexShrink: 0, color: 'var(--lib-muted)' }}>
           <ScheduleSendRoundedIcon sx={{ fontSize: 18 }} />
-          <Typography sx={{ fontSize: '0.8rem', fontWeight: 700, whiteSpace: 'nowrap' }}>Request sent</Typography>
+          <Typography sx={{ fontSize: 14, whiteSpace: 'nowrap' }}>Request sent</Typography>
         </Stack>
       );
     }
@@ -342,13 +340,13 @@ export default function MobileFriends({
     <>
       {global.rows === null && global.loading && <SkeletonRows count={5} />}
       {global.error && (
-        <Typography color="text.secondary" sx={{ py: 1.5, fontSize: '0.9rem' }}>
+        <Typography color="var(--lib-muted)" sx={{ py: 1.5, fontSize: 15 }}>
           {global.error}
         </Typography>
       )}
       {global.hasMore && (
         <Box sx={{ textAlign: 'center', pt: 1.5 }}>
-          <Button variant="outlined" onClick={global.loadMore} disabled={global.loading} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+          <Button variant="outlined" onClick={global.loadMore} disabled={global.loading} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 500, fontSize: 16, color: 'var(--lib-text)', borderColor: 'var(--lib-divider)' }}>
             {global.loading ? 'Loading…' : 'Show more players'}
           </Button>
         </Box>
@@ -361,7 +359,7 @@ export default function MobileFriends({
     body = (
       <>
         <SectionTitle first>{needle ? 'Search results' : 'Top players'}</SectionTitle>
-        <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>{playerRows(true)}</Box>
+        <Box sx={{ borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>{playerRows(true)}</Box>
         {global.rows && players.length === 0 && !global.loading && !global.error && (
           <Empty title="No player found">{needle ? `Nobody matches “${needle}”. Check the spelling or try their @handle.` : 'No players to show yet.'}</Empty>
         )}
@@ -382,7 +380,7 @@ export default function MobileFriends({
         {rows.length === 0 ? (
           <Empty title="No friend requests">When someone sends you a request, it shows up here.</Empty>
         ) : (
-          <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+          <Box sx={{ borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
             {rows.map((r) => (
               <PersonRow
                 key={r.requestId}
@@ -412,7 +410,7 @@ export default function MobileFriends({
         {rows.length === 0 ? (
           <Empty title="No sent requests">Requests you send wait here until the other person accepts.</Empty>
         ) : (
-          <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+          <Box sx={{ borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
             {rows.map((r) => (
               <PersonRow
                 key={r.requestId}
@@ -454,7 +452,7 @@ export default function MobileFriends({
               {onlineFriends.map((p) => (
                 <ButtonBase key={p.userId} onClick={() => onOpenChat(p.userId)} aria-label={`Chat with ${p.name}, online`} sx={{ flexDirection: 'column', gap: 0.6, width: 64, flexShrink: 0, fontFamily: 'inherit' }}>
                   <PersonAvatar person={p} size={52} online />
-                  <Typography noWrap color="text.secondary" sx={{ fontSize: '0.78rem', fontWeight: 600, width: '100%', textAlign: 'center' }}>
+                  <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 13, letterSpacing: LIB_TRACKING, width: '100%', textAlign: 'center' }}>
                     {p.name.split(' ')[0]}
                   </Typography>
                 </ButtonBase>
@@ -464,7 +462,7 @@ export default function MobileFriends({
           </>
         )}
         {shownFriends.length > 0 && (
-          <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+          <Box sx={{ borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
             {shownFriends.map((f) => (
               <FriendRow key={f.userId} f={f} last={last[f.userId]} myId={myId} online={Boolean(online[f.userId])} unread={unread[f.userId]} fav={favs.has(f.userId)} onOpen={() => onOpenChat(f.userId)} />
             ))}
@@ -478,7 +476,7 @@ export default function MobileFriends({
           </>
         )}
         {needle.length >= 2 && friends.length > 0 && <SectionTitle>Other players</SectionTitle>}
-        {globalOn && <Box sx={{ borderTop: players.length > 0 ? '1px solid' : 'none', borderColor: 'divider' }}>{playerRows(noFriends && !needle)}</Box>}
+        {globalOn && <Box sx={{ borderTop: players.length > 0 ? '1px solid' : 'none', borderColor: 'var(--lib-divider)' }}>{playerRows(noFriends && !needle)}</Box>}
         {globalOn && playerFooter}
         {needle && shownFriends.length === 0 && global.rows && players.length === 0 && !global.loading && (
           <Empty title="No one found">{needle.length < 2 ? 'Type at least 2 letters.' : `Nobody matches “${needle}”.`}</Empty>
@@ -491,8 +489,10 @@ export default function MobileFriends({
     <>
       {/* Back + quick actions */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
-        <Stack direction="row" sx={{ gap: 0.5 }}>
+        <IconButton component={RouterLink} to="/dashboard" aria-label="Back to dashboard" sx={libBackBtnSx}>
+          <ArrowBackRoundedIcon />
+        </IconButton>
+        <Stack direction="row" sx={{ gap: 1 }}>
           <IconButton onClick={onFind} aria-label="Find players" aria-pressed={view === 'find'} sx={tintIcon(ACCENT, view === 'find')}>
             <PersonAddAlt1RoundedIcon />
           </IconButton>
@@ -521,11 +521,6 @@ export default function MobileFriends({
           slotProps={{
             htmlInput: { 'aria-label': 'Search friends or players', autoCapitalize: 'none', autoCorrect: 'off' },
             input: {
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchRoundedIcon fontSize="small" />
-                </InputAdornment>
-              ),
               endAdornment: q ? (
                 <InputAdornment position="end">
                   <IconButton size="small" onClick={() => setQ('')} aria-label="Clear search">
@@ -535,45 +530,19 @@ export default function MobileFriends({
               ) : undefined,
             },
           }}
-          sx={(t) => ({
-            mt: 1,
-            '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
-            '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-          })}
+          sx={libSearchSx}
         />
       )}
 
       {/* Header */}
-      <Box sx={{ textAlign: 'center', mt: 2.5 }}>
-        <Box
-          sx={{
-            width: 84,
-            height: 84,
-            mx: 'auto',
-            borderRadius: '26px',
-            display: 'grid',
-            placeItems: 'center',
-            color: '#fff',
-            background: `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`,
-            boxShadow: `0 14px 26px -12px ${ACCENT}`,
-          }}
-        >
-          <HeaderIcon sx={{ fontSize: 44 }} />
-        </Box>
-        <Typography component="h1" noWrap sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-          {title}
-        </Typography>
-        <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-          {subtitle}
-        </Typography>
-      </Box>
+      <PageHeader icon={HeaderIcon} title={title} subtitle={subtitle} />
 
       {/* Tabs + filters */}
-      <Box sx={{ mt: 2.5 }}>
+      <Box sx={{ mt: 3 }}>
         <Pills label="Friends, requests and sent requests" options={tabs} value={REQUEST_TABS.includes(view) ? view : ''} onChange={(key) => goView(key)} />
       </Box>
       {showChips && (
-        <Stack direction="row" sx={{ alignItems: 'center', mt: 0.5 }}>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mt: 0.5 }}>
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Pills
               role="group"
@@ -593,7 +562,7 @@ export default function MobileFriends({
       )}
 
       {/* List */}
-      <Box sx={{ mt: 2 }}>{body}</Box>
+      <Box sx={{ mt: 3 }}>{body}</Box>
     </>
   );
 }
