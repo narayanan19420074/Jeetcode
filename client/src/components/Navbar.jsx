@@ -132,6 +132,7 @@ const DASH_SECTIONS = [
 ];
 
 // GPay-style row used in the phone menu: tonal icon bubble + label, full width.
+// Drawer row: same shape as the rows on the phone pages (48px tile, 1rem 700 title, divider between rows).
 function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
   return (
     <Box
@@ -139,22 +140,37 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
       to={to}
       onClick={onNavigate}
       aria-current={active ? 'page' : undefined}
-      sx={(t) => ({
+      sx={{
         display: 'flex',
         alignItems: 'center',
-        gap: 2,
-        minHeight: 56,
-        px: 1.5,
-        borderRadius: '16px',
+        gap: 1.5,
+        py: 1.5,
+        pl: 0.5,
         textDecoration: 'none',
-        color: active ? t.palette.primary.main : 'inherit',
-        bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.2 : 0.12) : 'transparent',
-        transition: 'background-color .15s',
-        '&:active': { bgcolor: alpha(t.palette.primary.main, 0.16) },
-      })}
+        color: 'inherit',
+        borderBottom: '1px solid',
+        borderColor: 'divider',
+        '&:last-of-type': { borderBottom: 'none' },
+      }}
     >
-      <Icon sx={{ fontSize: 24, color: 'primary.main' }} />
-      <Typography sx={{ fontWeight: active ? 800 : 500, fontSize: '1rem' }}>{label}</Typography>
+      <Box
+        sx={(t) => ({
+          width: 48,
+          height: 48,
+          borderRadius: '14px',
+          flexShrink: 0,
+          display: 'grid',
+          placeItems: 'center',
+          ...(active
+            ? { background: ACCENT_GRADIENT, color: '#fff' }
+            : { bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.2 : 0.14), color: ACCENT }),
+        })}
+      >
+        <Icon />
+      </Box>
+      <Typography noWrap sx={{ flex: 1, minWidth: 0, fontWeight: active ? 800 : 700, fontSize: '1rem', lineHeight: 1.35, color: active ? ACCENT : 'inherit' }}>
+        {label}
+      </Typography>
     </Box>
   );
 }
@@ -162,9 +178,10 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
 const footerIconSx = (t) => ({
   width: 48,
   height: 48,
-  color: 'text.secondary',
-  bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.14 : 0.08),
-  '&:hover': { bgcolor: alpha(t.palette.primary.main, 0.18), color: 'primary.main' },
+  borderRadius: '14px',
+  color: ACCENT,
+  bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.2 : 0.14),
+  '&:hover': { bgcolor: alpha(ACCENT, 0.24) },
 });
 
 export default function Navbar() {
@@ -496,12 +513,12 @@ export default function Navbar() {
         </Box>
         <Divider />
 
-        <Box sx={{ flex: 1, overflowY: 'auto', px: 2, py: 2 }} component="nav" aria-label="Main navigation">
+        <Box sx={{ flex: 1, overflowY: 'auto', px: 1.75, pt: 2, pb: 2 }} component="nav" aria-label="Main navigation">
           {isAuthenticated && (
             <Box
               sx={(t) => ({
-                mb: 2.5,
-                borderRadius: '24px',
+                mb: 3,
+                borderRadius: '20px',
                 overflow: 'hidden',
                 bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.18 : 0.12),
               })}
@@ -510,18 +527,18 @@ export default function Navbar() {
                 component={RouterLink}
                 to="/you"
                 onClick={() => setMobileOpen(false)}
-                sx={{ p: 1.75, display: 'flex', alignItems: 'center', gap: 1.5, textDecoration: 'none', color: 'inherit' }}
+                sx={{ p: 1.5, display: 'flex', alignItems: 'center', gap: 1.5, textDecoration: 'none', color: 'inherit' }}
               >
-                <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: ACCENT, width: 48, height: 48, fontSize: '1rem', fontWeight: 700 }}>
+                <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: ACCENT, width: 48, height: 48, fontSize: '1rem', fontWeight: 800, flexShrink: 0 }}>
                   {initialsFromName(user?.name)}
                 </Avatar>
                 <Box sx={{ minWidth: 0, flex: 1 }}>
-                  <Typography noWrap sx={{ fontWeight: 800 }}>
+                  <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35 }}>
                     {user?.name}
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.25 }}>
                     <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
-                    <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
+                    <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
                       {user?.streakDays ?? 0}-day streak
                     </Typography>
                     {user?.isPro && <ProBadge />}
@@ -534,7 +551,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 aria-label={`${coins} coins, open wallet`}
                 sx={(t) => ({
-                  px: 1.75,
+                  px: 1.5,
                   py: 1.25,
                   display: 'flex',
                   alignItems: 'center',
@@ -546,17 +563,17 @@ export default function Navbar() {
                 })}
               >
                 <MonetizationOnRoundedIcon sx={{ fontSize: 24, color: 'warning.main' }} />
-                <Typography sx={{ fontWeight: 800, fontVariantNumeric: 'tabular-nums', flex: 1 }}>
+                <Typography sx={{ fontWeight: 700, fontSize: '1rem', fontVariantNumeric: 'tabular-nums', flex: 1 }}>
                   {coins.toLocaleString('en-IN')} coins
                 </Typography>
-                <Typography variant="body2" sx={{ fontWeight: 700, color: ACCENT }}>
+                <Typography sx={{ fontWeight: 700, fontSize: '0.82rem', color: ACCENT }}>
                   Wallet
                 </Typography>
               </Box>
             </Box>
           )}
 
-          <Box sx={{ display: 'grid', gap: 0.25 }}>
+          <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
             <MenuRow to="/store" label="Store" icon={StorefrontRoundedIcon} active={isActivePath(pathname, '/store')} onNavigate={() => setMobileOpen(false)} />
             {DASH_SECTIONS.map(({ to, label, icon, view }) => (
               <MenuRow
@@ -576,9 +593,9 @@ export default function Navbar() {
         </Box>
 
         <Divider />
-        <Box sx={{ p: 2, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <Box sx={{ px: 1.75, py: 2, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
           {isAuthenticated ? (
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1.5 }}>
               {!user?.isPro && (
                 <Tooltip title="Activate license">
                   <IconButton onClick={handleActivateLicenseClick} aria-label="Activate license" sx={footerIconSx}>
@@ -604,10 +621,10 @@ export default function Navbar() {
             </Box>
           ) : (
             <>
-              <Button component={RouterLink} to="/login" onClick={() => setMobileOpen(false)} variant="contained" disableElevation fullWidth sx={{ fontWeight: 700, py: 1.1, borderRadius: '12px' }}>
+              <Button component={RouterLink} to="/login" onClick={() => setMobileOpen(false)} variant="contained" disableElevation fullWidth sx={{ fontWeight: 700, height: 48, borderRadius: 99 }}>
                 Sign in
               </Button>
-              <Button component={RouterLink} to="/signup" onClick={() => setMobileOpen(false)} variant="outlined" color="inherit" fullWidth sx={{ fontWeight: 700, py: 1.1, borderRadius: '12px' }}>
+              <Button component={RouterLink} to="/signup" onClick={() => setMobileOpen(false)} variant="outlined" color="inherit" fullWidth sx={{ fontWeight: 700, height: 48, borderRadius: 99 }}>
                 Create account
               </Button>
             </>
