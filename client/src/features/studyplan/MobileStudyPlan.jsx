@@ -44,7 +44,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSmallBtnSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import FriendPicker from './FriendPicker';
-import { daysLeftInfo, fmtDay, fmtRange, itemLink, localKey, planTheme, relDay, relTime, shareUrl } from './planUtils';
+import { daysLeftInfo, fmtDay, fmtRange, itemLink, planTheme, relTime, shareUrl } from './planUtils';
 
 // Phone layout of the Study Plan screens (plans list and open plan) in the Library look
 // (same as the phone Home, Problems, Store and Friends pages): Roboto type, warm surface,
@@ -167,6 +167,38 @@ function Sheet({ open, onClose, title, children }) {
         </Box>
       </LibraryFont>
     </Drawer>
+  );
+}
+
+function PillTabs({ label, options, value, onChange, accent = ACCENT }) {
+  return (
+    <Box sx={{ display: 'flex', gap: 1, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }} role="tablist" aria-label={label}>
+      {options.map(([v, text]) => {
+        const on = v === value;
+        return (
+          <ButtonBase
+            key={v}
+            role="tab"
+            aria-selected={on}
+            onClick={() => onChange(v)}
+            sx={{
+              flexShrink: 0,
+              height: 34,
+              px: '14px',
+              borderRadius: 999,
+              fontFamily: 'inherit',
+              fontSize: 15,
+              letterSpacing: LIB_TRACKING,
+              whiteSpace: 'nowrap',
+              bgcolor: on ? accent : 'var(--lib-chip)',
+              color: on ? '#fff' : 'var(--lib-chip-text)',
+            }}
+          >
+            {text}
+          </ButtonBase>
+        );
+      })}
+    </Box>
   );
 }
 
@@ -565,11 +597,10 @@ function QuestionRow({ item, index, doers }) {
 }
 
 export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onChanged, onFindFriends, notify }) {
-  const today = localKey();
   const [plan, setPlan] = useState(null);
   const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
-  const [friendsOpen, setFriendsOpen] = useState(false);
+  const [panel, setPanel] = useState('questions');
   const [pickerEl, setPickerEl] = useState(null);
   const [confirm, setConfirm] = useState(null); // 'delete' | 'leave' | { remove: member }
   const [busy, setBusy] = useState(false);
@@ -684,23 +715,12 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
           : '';
   const confirmTitle = confirm === 'delete' ? 'Delete plan?' : confirm === 'leave' ? 'Leave plan?' : 'Remove member?';
 
-  // Questions grouped by day, in schedule order.
-  const days = [];
-  plan.items.forEach((it) => {
-    const last = days[days.length - 1];
-    if (last && last.date === it.date) last.items.push(it);
-    else days.push({ date: it.date, items: [it] });
-  });
-
   return (
     <Box>
       {/* Back + actions */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
         {backBtn}
         <Stack direction="row" sx={{ gap: 1 }}>
-          <IconButton onClick={() => setFriendsOpen(true)} aria-label="Friends progress" aria-haspopup="dialog" sx={libIconBtnSx}>
-            <GroupsRoundedIcon />
-          </IconButton>
           <IconButton onClick={(e) => setPickerEl(e.currentTarget)} aria-label="Add friends" sx={libIconBtnSx}>
             <PersonAddAlt1RoundedIcon />
           </IconButton>
@@ -723,7 +743,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
       </Stack>
 
       {/* Header */}
-      <PageHeader icon={SchoolRoundedIcon} title={plan.title} subtitle={fmtRange(s.startDate, s.endDate)} />
+      <PageHeader icon={SchoolRoundedIcon} title={plan.title} />
 
       {error && (
         <Alert severity="error" sx={{ mt: 2 }} onClose={() => setError('')}>
@@ -731,35 +751,29 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
         </Alert>
       )}
 
-      {/* Questions, grouped by day, in the Problems page style */}
-      <Box sx={{ mt: 2 }}>
-        {days.length === 0 && <Typography sx={{ py: 4, textAlign: 'center', fontSize: 16, color: MUTED }}>No questions in this plan.</Typography>}
-        {days.map((d) => {
-          const doneCount = d.items.filter((i) => i.done).length;
-          const all = doneCount === d.items.length;
-          return (
-            <Box key={d.date} component="section" aria-label={relDay(d.date, today)} sx={{ mt: 3 }}>
-              <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
-                <Typography component="h2" sx={{ ...libSectionTitleSx, color: d.date === today ? accent : 'var(--lib-text)' }}>
-                  {relDay(d.date, today)}
-                </Typography>
-                <Typography sx={{ fontWeight: 500, fontSize: 14, fontVariantNumeric: 'tabular-nums', color: all ? 'var(--jc-easy)' : MUTED }}>
-                  {doneCount}/{d.items.length} Solved
-                </Typography>
-              </Stack>
-              <Box sx={{ borderTop: `1px solid ${DIVIDER}`, mt: 0.5 }}>
-                {d.items.map((it) => (
-                  <QuestionRow key={it.id} item={it} index={position.get(it.id)} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />
-                ))}
-              </Box>
-            </Box>
-          );
-        })}
+      {/* Questions / friends */}
+      <Box sx={{ mt: 3 }}>
+        <PillTabs
+          label="Plan sections"
+          accent={accent}
+          value={panel}
+          onChange={setPanel}
+          options={[
+            ['questions', `Questions · ${s.total}`],
+            ['friends', `Friends · ${plan.members.length}`],
+          ]}
+        />
       </Box>
 
-      {/* Your progress and every member's progress, as filled discs */}
-      <Sheet open={friendsOpen} onClose={() => setFriendsOpen(false)} title="Progress">
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 1.5 }}>
+      {panel === 'questions' ? (
+        <Box sx={{ mt: 1 }} role="tabpanel" aria-label="Questions">
+          {plan.items.length === 0 && <Typography sx={{ py: 4, textAlign: 'center', fontSize: 16, color: MUTED }}>No questions in this plan.</Typography>}
+          {plan.items.map((it, i) => (
+            <QuestionRow key={it.id} item={it} index={i + 1} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />
+          ))}
+        </Box>
+      ) : (
+        <Box role="tabpanel" aria-label="Friends" sx={{ mt: 1.5, display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 1.5 }}>
           {[...plan.members].sort((a, b) => Number(b.isMe) - Number(a.isMe)).map((m) => {
             const discColor = m.status === 'completed' ? 'var(--jc-easy)' : m.status === 'behind' ? 'var(--jc-hard)' : accent;
             return (
@@ -772,15 +786,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
                   {m.done}/{m.total} Solved
                 </Typography>
                 {plan.isOwner && !m.isOwner && (
-                  <Button
-                    onClick={() => {
-                      setFriendsOpen(false);
-                      setConfirm({ remove: m });
-                    }}
-                    aria-label={`Remove ${m.name}`}
-                    startIcon={<PersonRemoveRoundedIcon />}
-                    sx={{ ...libSmallBtnSx, mt: 1, bgcolor: 'var(--lib-bg)', color: 'var(--lib-text)' }}
-                  >
+                  <Button onClick={() => setConfirm({ remove: m })} aria-label={`Remove ${m.name}`} startIcon={<PersonRemoveRoundedIcon />} sx={{ ...libSmallBtnSx, mt: 1, bgcolor: 'var(--lib-bg)', color: 'var(--lib-text)' }}>
                     Remove
                   </Button>
                 )}
@@ -788,7 +794,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
             );
           })}
         </Box>
-      </Sheet>
+      )}
 
       <FriendPicker anchorEl={pickerEl} onClose={() => setPickerEl(null)} friends={friends} memberIds={memberIds} onAdd={addFriend} onFindFriends={onFindFriends} />
 
