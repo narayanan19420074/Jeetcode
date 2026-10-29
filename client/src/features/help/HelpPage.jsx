@@ -15,11 +15,14 @@ import {
   Stack,
   TextField,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
 import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
+import MobileHelp from './MobileHelp';
 import SupportChat from './SupportChat';
 import { feedbackApi } from '../../api/feedbackApi';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -80,6 +83,8 @@ const FAQ = [
 export default function HelpPage() {
   const [params] = useSearchParams();
   const { user, isAuthenticated } = useSelector((s) => s.auth);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
 
   const initialType = TYPES.some((t) => t.value === params.get('type')) ? params.get('type') : 'question';
   const errRef = params.get('err') || '';
@@ -122,6 +127,30 @@ export default function HelpPage() {
       setBusy(false);
     }
   };
+
+  // Phone: its own layout (same look as the phone Problems and You pages).
+  if (isMobile) {
+    return (
+      <>
+        <MobileHelp
+          faq={FAQ}
+          types={TYPES}
+          isAuthenticated={isAuthenticated}
+          user={user}
+          form={{ type, setType, email, setEmail, message, setMessage, website, setWebsite, busy, error, sent }}
+          onSubmit={submit}
+          onSendAnother={() => {
+            setSent(false);
+            setSubject('');
+            setMessage('');
+          }}
+          contactEmail={showEmail ? CONTACT_EMAIL : ''}
+          legalLinks={LEGAL_LINKS.filter((l) => l.to !== '/help')}
+        />
+        <SupportChat open={chatOpen} onOpenChange={setChatOpen} />
+      </>
+    );
+  }
 
   return (
     <Box sx={{ minHeight: '100dvh', bgcolor: 'background.default', color: 'text.primary' }}>
