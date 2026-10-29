@@ -6,6 +6,7 @@ import {
   Button,
   ButtonBase,
   Collapse,
+  IconButton,
   InputAdornment,
   Link,
   MenuItem,
@@ -14,46 +15,65 @@ import {
   Typography,
 } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
-import BackToDashboard from '../../components/BackToDashboard';
-import { tint } from '../dashboard/dashboardUtils';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import {
+  LIB_ACCENT,
+  LIB_FONT,
+  LIB_TRACKING,
+  LibraryFont,
+  PageHeader,
+  libBackBtnSx,
+  libPanelSx,
+  libSearchSx,
+  libSectionTitleSx,
+  libSolidBtnSx,
+  libTintBtnSx,
+  useLibraryPalette,
+} from '../dashboard/components/libraryStyle';
 
-// Phone layout of Help & Support. It follows the phone Problems and You pages: same page padding,
-// 44px back button, centred header, pill search and buttons, 1.25rem section titles and
-// divider-separated rows. Order follows how people look for help: search the answers first, then
-// send a message. Chat stays in the floating launcher at the bottom right (it carries the unread badge). There is no top navigation bar on phones.
-
-const ACCENT = '#6366F1';
+// Phone layout of Help & Support in the Library look (same as the phone Home, Problems, Friends and Explore pages):
+// Roboto type, warm surface, 16px page padding, 44px back arrow, centred header tile, 44px pill search,
+// 18px section titles with 32px between sections, divider-separated rows and 48px pill buttons.
+// Order follows how people look for help: search the answers first, then send a message. Chat stays in the
+// floating launcher at the bottom right (it carries the unread badge). There is no top navigation bar on phones.
 
 function SectionTitle({ id, children }) {
   return (
-    <Typography id={id} component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em', mb: 1.5 }}>
+    <Typography id={id} component="h2" sx={{ ...libSectionTitleSx, mb: 1.5 }}>
       {children}
     </Typography>
   );
 }
 
-// Filled, rounded field in the same tint as the Problems search box.
-const fieldSx = (t) => ({
-  '& .MuiOutlinedInput-root': { borderRadius: '16px', bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
+// Filled, rounded field in the same cream as the search box and cards.
+const fieldSx = {
+  '& .MuiOutlinedInput-root': { borderRadius: '16px', bgcolor: 'var(--lib-player)', fontSize: 16, letterSpacing: LIB_TRACKING, color: 'var(--lib-text)' },
   '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-});
+  '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${LIB_ACCENT}` },
+  '& .MuiInputLabel-root': { color: 'var(--lib-muted)', fontSize: 16 },
+  '& .MuiInputLabel-root.Mui-focused': { color: LIB_ACCENT },
+  '& .MuiFormHelperText-root': { mx: 0.5, fontSize: 14, lineHeight: '20px', color: 'var(--lib-muted)' },
+};
+
+const answerLinkSx = { '& a': { color: LIB_ACCENT } };
 
 function FaqRow({ item, open, onToggle }) {
   return (
-    <Box sx={{ borderBottom: '1px solid', borderColor: 'divider', '&:last-of-type': { borderBottom: 'none' } }}>
+    <Box sx={{ borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
       <ButtonBase
         onClick={onToggle}
         aria-expanded={open}
-        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, py: 1.5, pl: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: '12px', textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
-        <Typography sx={{ flex: 1, minWidth: 0, fontWeight: 700, fontSize: '1rem', lineHeight: 1.35 }}>{item.q}</Typography>
-        <ExpandMoreRoundedIcon sx={{ flexShrink: 0, color: 'text.secondary', transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none' }} />
+        <Typography sx={{ flex: 1, minWidth: 0, fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{item.q}</Typography>
+        <ExpandMoreRoundedIcon aria-hidden sx={{ flexShrink: 0, color: 'var(--lib-muted)', transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
-        <Typography color="text.secondary" sx={{ pl: 0.5, pr: 1, pb: 1.75, fontSize: '0.92rem', lineHeight: 1.7 }}>
+        <Typography component="div" sx={{ pb: 2, fontSize: 15, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', ...answerLinkSx }}>
           {item.a}
         </Typography>
       </Collapse>
@@ -72,6 +92,7 @@ export default function MobileHelp({
   contactEmail,
   legalLinks,
 }) {
+  const pal = useLibraryPalette();
   const [search, setSearch] = useState('');
   const [openIdx, setOpenIdx] = useState(null);
   const formRef = useRef(null);
@@ -84,41 +105,16 @@ export default function MobileHelp({
   const goToForm = () => formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   return (
-    <Box sx={{ minHeight: '100dvh', bgcolor: 'background.default', color: 'text.primary' }}>
-      <Box sx={{ px: 1.75, pt: 'calc(8px + env(safe-area-inset-top))', pb: 12, maxWidth: 640, mx: 'auto' }}>
-        <BackToDashboard sx={{ width: 44, height: 44, border: 'none', bgcolor: 'transparent' }} />
+    <LibraryFont sx={{ minHeight: '100dvh', bgcolor: pal.bg }}>
+      <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 12, maxWidth: 640, mx: 'auto' }}>
+        <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={libBackBtnSx}>
+          <ArrowBackRoundedIcon />
+        </IconButton>
 
         {/* Header */}
-        <Box sx={{ textAlign: 'center', mt: 1 }}>
-          <Box
-            sx={{
-              width: 84,
-              height: 84,
-              mx: 'auto',
-              borderRadius: '26px',
-              display: 'grid',
-              placeItems: 'center',
-              color: '#fff',
-              background: `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`,
-              boxShadow: `0 14px 26px -12px ${ACCENT}`,
-            }}
-          >
-            <HelpOutlineRoundedIcon sx={{ fontSize: 44 }} />
-          </Box>
-          <Typography component="h1" sx={{ mt: 1.75, fontWeight: 800, fontSize: '1.9rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-            Help & Support
-          </Typography>
-          <Typography color="text.secondary" sx={{ fontSize: '1rem', mt: 0.25 }}>
-            We usually reply within 2 working days
-          </Typography>
-
-          <Button
-            onClick={goToForm}
-            disableElevation
-            variant="contained"
-            startIcon={<MailOutlineRoundedIcon />}
-            sx={{ mt: 2, height: 48, px: 3.5, borderRadius: 999, fontWeight: 800, fontSize: '1rem', textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } }}
-          >
+        <PageHeader icon={HelpOutlineRoundedIcon} title="Help & Support" subtitle="We usually reply within 2 working days" />
+        <Box sx={{ textAlign: 'center', mt: 2 }}>
+          <Button onClick={goToForm} disableElevation variant="contained" startIcon={<MailOutlineRoundedIcon />} sx={libSolidBtnSx}>
             Send a message
           </Button>
         </Box>
@@ -135,31 +131,32 @@ export default function MobileHelp({
             input: {
               startAdornment: (
                 <InputAdornment position="start">
-                  <SearchRoundedIcon fontSize="small" />
+                  <SearchRoundedIcon aria-hidden sx={{ color: 'var(--lib-muted)' }} />
                 </InputAdornment>
               ),
+              endAdornment: search ? (
+                <InputAdornment position="end">
+                  <IconButton size="small" onClick={() => setSearch('')} aria-label="Clear search">
+                    <CloseRoundedIcon fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              ) : undefined,
             },
           }}
-          sx={(t) => ({
-            mt: 3,
-            '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9) },
-            '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-          })}
+          sx={{ ...libSearchSx, mt: 3 }}
         />
 
         {/* Quick answers */}
-        <Box component="section" aria-labelledby="help-faq" sx={{ mt: 3 }}>
+        <Box component="section" aria-labelledby="help-faq" sx={{ mt: 4 }}>
           <SectionTitle id="help-faq">Quick answers</SectionTitle>
-          <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+          <Box sx={{ borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
             {list.map((f) => (
               <FaqRow key={f.q} item={f} open={openIdx === f.q} onToggle={() => setOpenIdx((cur) => (cur === f.q ? null : f.q))} />
             ))}
             {list.length === 0 && (
-              <Box sx={{ py: 5, textAlign: 'center' }}>
-                <Typography sx={{ fontWeight: 800 }}>No answers match your search</Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                  Send us a message and we will help.
-                </Typography>
+              <Box sx={{ py: 6, px: 2, textAlign: 'center' }}>
+                <Typography sx={{ fontWeight: 700 }}>No answers match your search</Typography>
+                <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', color: 'var(--lib-muted)' }}>Send us a message and we will help.</Typography>
               </Box>
             )}
           </Box>
@@ -169,30 +166,39 @@ export default function MobileHelp({
         <Box component="section" aria-labelledby="help-contact" ref={formRef} sx={{ mt: 4, scrollMarginTop: 16 }}>
           <SectionTitle id="help-contact">Send a message</SectionTitle>
           {form.sent ? (
-            <Stack spacing={1.5} sx={{ alignItems: 'flex-start' }}>
-              <Alert severity="success" sx={{ width: '100%' }}>
-                Thank you. Your message has been received. We will reply to {isAuthenticated ? 'your account email' : 'the email address you provided'}.
-              </Alert>
-              <Button onClick={onSendAnother} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+            <Box role="status" sx={{ ...libPanelSx, p: 2 }}>
+              <Typography sx={{ fontWeight: 700, fontSize: 16, lineHeight: '24px' }}>Message sent</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+                We will reply to {isAuthenticated ? 'your account email' : 'the email address you provided'}.
+              </Typography>
+              <Button onClick={onSendAnother} fullWidth disableElevation sx={{ ...libTintBtnSx, mt: 1.5 }}>
                 Send another
               </Button>
-            </Stack>
+            </Box>
           ) : (
             <Box component="form" onSubmit={onSubmit} noValidate>
               <Stack spacing={1.75}>
                 {form.error && <Alert severity="error">{form.error}</Alert>}
 
-                <TextField select label="What is this about?" value={form.type} onChange={(e) => form.setType(e.target.value)} fullWidth sx={fieldSx}>
+                <TextField
+                  select
+                  label="What is this about?"
+                  value={form.type}
+                  onChange={(e) => form.setType(e.target.value)}
+                  fullWidth
+                  sx={fieldSx}
+                  slotProps={{ select: { MenuProps: { slotProps: { paper: { sx: { borderRadius: '16px' } } } } } }}
+                >
                   {types.map((t) => (
-                    <MenuItem key={t.value} value={t.value}>
+                    <MenuItem key={t.value} value={t.value} sx={{ minHeight: 48, fontSize: 16, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING }}>
                       {t.label}
                     </MenuItem>
                   ))}
                 </TextField>
 
                 {isAuthenticated ? (
-                  <Typography variant="body2" color="text.secondary" sx={{ wordBreak: 'break-word' }}>
-                    Replying to: <b>{user?.email}</b>
+                  <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', wordBreak: 'break-word' }}>
+                    Replying to <Box component="span" sx={{ fontWeight: 500, color: 'var(--lib-text)' }}>{user?.email}</Box>
                   </Typography>
                 ) : (
                   <TextField
@@ -229,14 +235,7 @@ export default function MobileHelp({
                   </label>
                 </Box>
 
-                <Button
-                  type="submit"
-                  disabled={form.busy}
-                  disableElevation
-                  variant="contained"
-                  fullWidth
-                  sx={{ height: 48, borderRadius: 999, fontWeight: 800, fontSize: '1rem', textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } }}
-                >
+                <Button type="submit" disabled={form.busy} disableElevation variant="contained" fullWidth sx={libSolidBtnSx}>
                   {form.busy ? 'Sending…' : 'Send message'}
                 </Button>
               </Stack>
@@ -244,21 +243,24 @@ export default function MobileHelp({
           )}
 
           {contactEmail && (
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 2, textAlign: 'center' }}>
-              Or email us: <Link href={`mailto:${contactEmail}`}>{contactEmail}</Link>
+            <Typography sx={{ mt: 2, textAlign: 'center', fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+              Or email us at{' '}
+              <Link href={`mailto:${contactEmail}`} sx={{ color: LIB_ACCENT }}>
+                {contactEmail}
+              </Link>
             </Typography>
           )}
         </Box>
 
         {/* Legal links */}
-        <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', gap: 2, mt: 4, pt: 2, borderTop: '1px solid', borderColor: 'divider', justifyContent: 'center' }}>
+        <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', justifyContent: 'center', gap: 2, mt: 4, pt: 2, borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
           {legalLinks.map((l) => (
-            <Link key={l.to} component={RouterLink} to={l.to} underline="hover" color="text.secondary" variant="body2">
+            <Link key={l.to} component={RouterLink} to={l.to} underline="hover" sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
               {l.label}
             </Link>
           ))}
         </Stack>
       </Box>
-    </Box>
+    </LibraryFont>
   );
 }
