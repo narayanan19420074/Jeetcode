@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
-import { Box, ButtonBase, Container, Skeleton, Typography } from '@mui/material';
+import { Box, ButtonBase, Container, Skeleton, Typography, useMediaQuery, useTheme } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CardGiftcardRoundedIcon from '@mui/icons-material/CardGiftcardRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
@@ -14,6 +14,7 @@ import { Bar, Choice, Coin, Eyebrow, FFButton, FFDialog, Notice, Panel, Stat, Ta
 import { FF, cut } from '../quests/questUtils';
 import CheckoutDialog from './CheckoutDialog';
 import CoursePanel from './CoursePanel';
+import MobileStore from './MobileStore';
 import { CoinsTab, OrdersTab } from './AccountTabs';
 import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
 import BackToDashboard from '../../components/BackToDashboard';
@@ -76,6 +77,8 @@ export default function StorePage() {
   const { enqueueSnackbar } = useSnackbar();
   const [params, setParams] = useSearchParams();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
 
   const [data, setData] = useState(null);
   const [wallet, setWallet] = useState(null);
@@ -162,6 +165,58 @@ export default function StorePage() {
   const d = wallet?.daily;
   const categories = [{ id: 'all', label: 'All' }, ...(data?.categories || [])];
 
+  const dialogs = (
+    <>
+      <FFDialog open={tab === 'orders'} onClose={() => setTab('shop')} title="My orders" wide>
+        <OrdersTab orders={orders} onChanged={refresh} onOpenCourse={setCourseSlug} onGoShop={() => setTab('shop')} />
+      </FFDialog>
+      <FFDialog open={tab === 'coins'} onClose={() => setTab('shop')} title="Coin wallet" wide>
+        <CoinsTab wallet={wallet} refreshKey={refreshKey} onClaim={claim} claiming={claiming} />
+      </FFDialog>
+
+      <CheckoutDialog item={selected} balance={balance} states={data?.states} open={Boolean(selected)} onClose={() => setSelected(null)} onDone={done} />
+      <CoursePanel
+        slug={courseSlug}
+        signedIn={isAuthenticated}
+        onClose={() => setCourseSlug(null)}
+        onProgress={loadAccount}
+        onBuy={(course) => { setCourseSlug(null); buy(course); }}
+      />
+    </>
+  );
+
+  // Phone: its own layout (same look as the phone Problems and You pages). Orders, wallet, checkout and courses stay in their dialogs.
+  if (isMobile) {
+    return (
+      <>
+        <MobileStore
+          isAuthenticated={isAuthenticated}
+          balance={balance}
+          daily={d}
+          claiming={claiming}
+          onClaim={claim}
+          inTransit={inTransit}
+          onOrders={() => setTab('orders')}
+          onWallet={() => setTab('coins')}
+          onSignIn={needLogin}
+          courses={courses}
+          onCourse={setCourseSlug}
+          merchLocked={Boolean(merchLocked)}
+          minSolved={data?.minSolvedForMerch}
+          solved={user?.totalSolved ?? 0}
+          categories={categories}
+          cat={cat}
+          onCat={setCat}
+          items={items}
+          loading={loading && !data}
+          error={error}
+          onBuy={buy}
+        />
+        {dialogs}
+      </>
+    );
+  }
+
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
       <BackToDashboard sx={{ mb: 1.5 }} />
@@ -241,21 +296,7 @@ export default function StorePage() {
         </Box>
       )}
 
-      <FFDialog open={tab === 'orders'} onClose={() => setTab('shop')} title="My orders" wide>
-        <OrdersTab orders={orders} onChanged={refresh} onOpenCourse={setCourseSlug} onGoShop={() => setTab('shop')} />
-      </FFDialog>
-      <FFDialog open={tab === 'coins'} onClose={() => setTab('shop')} title="Coin wallet" wide>
-        <CoinsTab wallet={wallet} refreshKey={refreshKey} onClaim={claim} claiming={claiming} />
-      </FFDialog>
-
-      <CheckoutDialog item={selected} balance={balance} states={data?.states} open={Boolean(selected)} onClose={() => setSelected(null)} onDone={done} />
-      <CoursePanel
-        slug={courseSlug}
-        signedIn={isAuthenticated}
-        onClose={() => setCourseSlug(null)}
-        onProgress={loadAccount}
-        onBuy={(course) => { setCourseSlug(null); buy(course); }}
-      />
+      {dialogs}
     </Container>
   );
 }
