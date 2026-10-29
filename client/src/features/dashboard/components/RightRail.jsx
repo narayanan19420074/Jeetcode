@@ -225,13 +225,13 @@ function StreakCalendarCard({ user, isAuthenticated, byDate, phone }) {
       </Stack>
 
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
-        <IconButton size="small" sx={{ color: '#fff' }} onClick={() => move(-1)} aria-label="Previous month">
+        <IconButton size="small" sx={{ color: '#fff', ...(phone && { width: 40, height: 40, ml: -1 }) }} onClick={() => move(-1)} aria-label="Previous month">
           <ChevronLeftRoundedIcon fontSize="small" />
         </IconButton>
-        <Typography variant="body2" sx={{ fontWeight: 700 }}>
+        <Typography variant="body2" sx={{ fontWeight: 700, ...(phone && { fontSize: 16, letterSpacing: '0.03em' }) }}>
           {monthLabel}
         </Typography>
-        <IconButton size="small" sx={{ color: '#fff', '&.Mui-disabled': { color: FAINT } }} onClick={() => move(1)} disabled={isCurrent} aria-label="Next month">
+        <IconButton size="small" sx={{ color: '#fff', '&.Mui-disabled': { color: FAINT }, ...(phone && { width: 40, height: 40, mr: -1 }) }} onClick={() => move(1)} disabled={isCurrent} aria-label="Next month">
           <ChevronRightRoundedIcon fontSize="small" />
         </IconButton>
       </Stack>

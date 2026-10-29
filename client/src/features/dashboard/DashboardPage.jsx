@@ -32,6 +32,7 @@ import FriendsView from '../friends/FriendsView';
 import { fetchFriends } from '../friends/friendsSlice';
 import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
+import { LibraryFont, useLibraryPalette } from './components/libraryStyle';
 import { STATUS_COLOR, featuredPageForToday, surface, utcKey } from './dashboardUtils';
 
 // Same accent the other phone pages use.
@@ -66,6 +67,7 @@ export default function DashboardPage() {
   const friends = useSelector((s) => s.friends);
 
   const theme = useTheme();
+  const pal = useLibraryPalette();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
   const rootRef = useRef(null);
@@ -294,7 +296,7 @@ export default function DashboardPage() {
         ...(fillH ? { height: fillH, overflow: 'hidden' } : { minHeight: 'calc(100vh - 64px)' }),
       }}
     >
-      <Container maxWidth={false} sx={{ maxWidth: 1480, py: { xs: 2, md: 3 }, px: { xs: 1.75, sm: 3 }, height: fillH ? '100%' : 'auto' }}>
+      <Container maxWidth={false} sx={{ maxWidth: 1480, py: { xs: 2, md: 3 }, px: { xs: 2, sm: 3 }, height: fillH ? '100%' : 'auto' }}>
         <Box
           sx={{
             display: 'grid',
@@ -346,11 +348,11 @@ export default function DashboardPage() {
               <Stack spacing={2.5} sx={{ position: 'relative', zIndex: 1 }}>
                 {/* Phone header: streak on the left, plan calendar on the right. */}
                 {!isMdUp && (
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: 44 }}>
+                  <LibraryFont sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: 40 }}>
                     {isAuthenticated ? (
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                         <LocalFireDepartmentRoundedIcon sx={{ fontSize: 24, color: 'warning.main' }} />
-                        <Typography sx={{ fontWeight: 800, fontSize: '1rem' }}>
+                        <Typography sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: '0.03em' }}>
                           {user?.streakDays ?? 0}-day streak
                         </Typography>
                       </Box>
@@ -360,11 +362,11 @@ export default function DashboardPage() {
                     <IconButton
                       onClick={() => setCalendarOpen(true)}
                       aria-label="Open calendar"
-                      sx={(t) => ({ width: 44, height: 44, color: PHONE_ACCENT, bgcolor: alpha(PHONE_ACCENT, t.palette.mode === 'dark' ? 0.16 : 0.09) })}
+                      sx={{ width: 40, height: 40, color: pal.text, bgcolor: pal.player, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } }}
                     >
                       <CalendarMonthRoundedIcon />
                     </IconButton>
-                  </Box>
+                  </LibraryFont>
                 )}
 
                 {!isAuthenticated && (
@@ -529,8 +531,8 @@ export default function DashboardPage() {
         <Box
           sx={(t) => ({
             position: 'fixed',
-            left: 12,
-            right: 12,
+            left: 16,
+            right: 16,
             bottom: 'calc(84px + env(safe-area-inset-bottom))',
             zIndex: t.zIndex.appBar - 1,
             display: 'flex',
@@ -580,14 +582,15 @@ export default function DashboardPage() {
         anchor="bottom"
         open={calendarOpen && !isMdUp}
         onClose={() => setCalendarOpen(false)}
-        slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)' } } }}
+        slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
       >
-        <Box sx={{ px: 1.75, pt: 1.25, pb: 2 }}>
+        <LibraryFont>
+        <Box sx={{ px: 2, pt: 1.25, pb: 2 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
-            <Typography component="h2" sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
+            <Typography component="h2" sx={{ fontSize: 18, lineHeight: '24px', fontWeight: 700 }}>
               Calendar
             </Typography>
-            <IconButton onClick={() => setCalendarOpen(false)} aria-label="Close calendar" sx={{ width: 44, height: 44 }}>
+            <IconButton onClick={() => setCalendarOpen(false)} aria-label="Close calendar" sx={{ width: 40, height: 40, mr: -0.5, color: pal.text, bgcolor: pal.player, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } }}>
               <CloseRoundedIcon />
             </IconButton>
           </Box>
@@ -607,6 +610,7 @@ export default function DashboardPage() {
             </Button>
           )}
         </Box>
+        </LibraryFont>
       </Drawer>
     </Box>
   );

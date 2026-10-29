@@ -31,8 +31,8 @@ const TRACKING = '0.03em';
 
 const hideScrollbar = { scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } };
 // Rows bleed to the screen edges: the page already has its own side padding, so cancel it here.
-const bleed = { mx: { xs: -1.75, sm: -3 }, overflowX: 'auto', ...hideScrollbar };
-const bleedPad = { xs: 1.75, sm: 3 };
+const bleed = { mx: { xs: -2, sm: -3 }, overflowX: 'auto', ...hideScrollbar };
+const bleedPad = { xs: 2, sm: 3 };
 
 // Phone-only banner colours.
 const BANNER_GRADIENT = {
