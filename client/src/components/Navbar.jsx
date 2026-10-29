@@ -56,7 +56,12 @@ import NotificationBell from '../features/notifications/NotificationBell';
 import ActivateLicenseModal from '../components/ActivateLicenseModal';
 
 // Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
+import { LIBRARY_PALETTE, LIB_FONT, LibraryFont, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
+
 const ACCENT = '#6366F1';
+// Warm Library palette for the phone menu (light and dark variants).
+const libPal = (t) => LIBRARY_PALETTE[t.palette.mode === 'dark' ? 'dark' : 'light'];
+const TRACKING = '0.03em';
 const ACCENT_GRADIENT = `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`;
 
 // Logo icon: a gradient tile on phones, the plain icon on desktop.
@@ -143,13 +148,11 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
       sx={{
         display: 'flex',
         alignItems: 'center',
-        gap: 1.5,
-        py: 1.5,
-        pl: 0.5,
+        gap: '12px',
+        py: 1.25,
         textDecoration: 'none',
         color: 'inherit',
-        borderBottom: '1px solid',
-        borderColor: 'divider',
+        borderBottom: (t) => `1px solid ${libPal(t).divider}`,
         '&:last-of-type': { borderBottom: 'none' },
       }}
     >
@@ -157,18 +160,18 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
         sx={(t) => ({
           width: 48,
           height: 48,
-          borderRadius: '14px',
+          borderRadius: '12px',
           flexShrink: 0,
           display: 'grid',
           placeItems: 'center',
           ...(active
             ? { background: ACCENT_GRADIENT, color: '#fff' }
-            : { bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.2 : 0.14), color: ACCENT }),
+            : { bgcolor: libPal(t).chip, color: libPal(t).chipText }),
         })}
       >
         <Icon />
       </Box>
-      <Typography noWrap sx={{ flex: 1, minWidth: 0, fontWeight: active ? 800 : 700, fontSize: '1rem', lineHeight: 1.35, color: active ? ACCENT : 'inherit' }}>
+      <Typography noWrap sx={{ flex: 1, minWidth: 0, fontWeight: active ? 700 : 400, fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING, color: active ? ACCENT : 'inherit' }}>
         {label}
       </Typography>
     </Box>
@@ -176,12 +179,11 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
 }
 
 const footerIconSx = (t) => ({
-  width: 48,
-  height: 48,
-  borderRadius: '14px',
-  color: ACCENT,
-  bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.2 : 0.14),
-  '&:hover': { bgcolor: alpha(ACCENT, 0.24) },
+  width: 44,
+  height: 44,
+  color: libPal(t).text,
+  bgcolor: libPal(t).player,
+  '&:hover': { bgcolor: libPal(t).player, filter: 'brightness(0.97)' },
 });
 
 export default function Navbar() {
@@ -266,8 +268,10 @@ export default function Navbar() {
 
   // Phone action buttons: 44px, tinted with the shared accent (same as the buttons on the phone pages).
   const phoneBtnSx = (t) => ({
-    [t.breakpoints.down('md')]: { width: 44, height: 44, color: ACCENT, bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.16 : 0.09) },
+    [t.breakpoints.down('md')]: { width: 40, height: 40, color: libPal(t).text, bgcolor: libPal(t).player, '&:hover': { bgcolor: libPal(t).player, filter: 'brightness(0.97)' } },
   });
+  // Phone pages in the Library look (dashboard home) get the matching warm top bar.
+  const libraryBar = isLibraryRoute(pathname, search);
 
   const navButtonSx = (active) => (t) => ({
     fontWeight: active ? 800 : 600,
@@ -285,10 +289,10 @@ export default function Navbar() {
       sx={(t) => ({
         // Phones: blend with the page background instead of a separate white bar.
         [t.breakpoints.down('md')]: {
-          backgroundColor: alpha(t.palette.background.default, 0.88),
+          backgroundColor: libraryBar && t.palette.mode === 'light' ? LIBRARY_PALETTE.light.bg : alpha(t.palette.background.default, 0.88),
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: `1px solid ${alpha(t.palette.divider, 0.4)}`,
+          borderBottom: libraryBar && t.palette.mode === 'light' ? 'none' : `1px solid ${alpha(t.palette.divider, 0.4)}`,
         },
       })}
     >
@@ -297,7 +301,7 @@ export default function Navbar() {
         <IconButton
           onClick={() => setMobileOpen(true)}
           color="inherit"
-          sx={{ display: { xs: 'inline-flex', md: 'none' }, width: 44, height: 44 }}
+          sx={(t) => ({ display: { xs: 'inline-flex', md: 'none' }, width: 40, height: 40, ml: 0.5, mr: 0.5, color: libPal(t).text, bgcolor: libPal(t).player, '&:hover': { bgcolor: libPal(t).player, filter: 'brightness(0.97)' } })}
           aria-label="Open navigation menu"
         >
           <MenuRoundedIcon />
@@ -492,13 +496,16 @@ export default function Navbar() {
               display: 'flex',
               flexDirection: 'column',
               borderRadius: '0 28px 28px 0',
-              backgroundImage: (t) => `linear-gradient(180deg, ${alpha(ACCENT, t.palette.mode === 'dark' ? 0.14 : 0.2)} 0, transparent 220px)`,
+              bgcolor: (t) => libPal(t).bg,
+              color: (t) => libPal(t).text,
+              fontFamily: LIB_FONT,
               pt: 'env(safe-area-inset-top)',
               pb: 'env(safe-area-inset-bottom)',
             },
           },
         }}
       >
+        <LibraryFont sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 1.75, height: 60, flexShrink: 0 }}>
           <LogoMark />
           <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -511,16 +518,16 @@ export default function Navbar() {
             <CloseRoundedIcon />
           </IconButton>
         </Box>
-        <Divider />
+        <Divider sx={(t) => ({ borderColor: libPal(t).divider })} />
 
         <Box sx={{ flex: 1, overflowY: 'auto', px: 1.75, pt: 2, pb: 2 }} component="nav" aria-label="Main navigation">
           {isAuthenticated && (
             <Box
               sx={(t) => ({
                 mb: 3,
-                borderRadius: '20px',
+                borderRadius: '16px',
                 overflow: 'hidden',
-                bgcolor: alpha(ACCENT, t.palette.mode === 'dark' ? 0.18 : 0.12),
+                bgcolor: libPal(t).chip,
               })}
             >
               <Box
@@ -533,12 +540,12 @@ export default function Navbar() {
                   {initialsFromName(user?.name)}
                 </Avatar>
                 <Box sx={{ minWidth: 0, flex: 1 }}>
-                  <Typography noWrap sx={{ fontWeight: 700, fontSize: '1rem', lineHeight: 1.35 }}>
+                  <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING }}>
                     {user?.name}
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.25 }}>
                     <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
-                    <Typography color="text.secondary" sx={{ fontSize: '0.82rem' }}>
+                    <Typography sx={{ fontSize: 14, letterSpacing: TRACKING, color: (t) => libPal(t).muted }}>
                       {user?.streakDays ?? 0}-day streak
                     </Typography>
                     {user?.isPro && <ProBadge />}
@@ -558,22 +565,22 @@ export default function Navbar() {
                   gap: 1,
                   textDecoration: 'none',
                   color: 'inherit',
-                  borderTop: `1px solid ${alpha(ACCENT, 0.2)}`,
+                  borderTop: `1px solid ${libPal(t).divider}`,
                   '&:active': { bgcolor: alpha(ACCENT, 0.12) },
                 })}
               >
                 <MonetizationOnRoundedIcon sx={{ fontSize: 24, color: 'warning.main' }} />
-                <Typography sx={{ fontWeight: 700, fontSize: '1rem', fontVariantNumeric: 'tabular-nums', flex: 1 }}>
+                <Typography sx={{ fontWeight: 500, fontSize: 16, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums', flex: 1 }}>
                   {coins.toLocaleString('en-IN')} coins
                 </Typography>
-                <Typography sx={{ fontWeight: 700, fontSize: '0.82rem', color: ACCENT }}>
+                <Typography sx={{ fontWeight: 500, fontSize: 14, letterSpacing: TRACKING, color: ACCENT }}>
                   Wallet
                 </Typography>
               </Box>
             </Box>
           )}
 
-          <Box sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
+          <Box sx={(t) => ({ borderTop: `1px solid ${libPal(t).divider}` })}>
             <MenuRow to="/store" label="Store" icon={StorefrontRoundedIcon} active={isActivePath(pathname, '/store')} onNavigate={() => setMobileOpen(false)} />
             {DASH_SECTIONS.map(({ to, label, icon, view }) => (
               <MenuRow
@@ -592,7 +599,7 @@ export default function Navbar() {
           </Box>
         </Box>
 
-        <Divider />
+        <Divider sx={(t) => ({ borderColor: libPal(t).divider })} />
         <Box sx={{ px: 1.75, py: 2, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
           {isAuthenticated ? (
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1.5 }}>
@@ -630,6 +637,7 @@ export default function Navbar() {
             </>
           )}
         </Box>
+        </LibraryFont>
       </Drawer>
 
       <ActivateLicenseModal open={licenseModalOpen} onClose={() => setLicenseModalOpen(false)} />

@@ -48,11 +48,11 @@ export const isLibraryRoute = (pathname, search) => {
 };
 
 // Roboto for everything inside (menus and dialogs opened from it included).
-export function LibraryFont({ children }) {
+export function LibraryFont({ children, sx }) {
   const theme = useMemo(() => (outer) => createTheme(outer, { typography: TYPOGRAPHY }), []);
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ fontFamily: LIB_FONT }}>{children}</Box>
+      <Box sx={{ fontFamily: LIB_FONT, ...sx }}>{children}</Box>
     </ThemeProvider>
   );
 }
