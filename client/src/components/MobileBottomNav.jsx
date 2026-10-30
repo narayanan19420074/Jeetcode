@@ -8,9 +8,10 @@ import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import { LIB_FONT, LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
+import { BRAND_ORANGE, BRAND_TEXT_LIGHT } from './BrandMark';
 
-// Same accent the phone pages use.
-const ACCENT = '#6366F1';
+// Active tab uses the logo orange (pill tint on the Contest-banner orange, deeper orange icon for contrast on cream).
+const PILL = '#E8590C';
 
 const ITEMS = [
   { to: '/dashboard', label: 'Home', icon: HomeRoundedIcon },
@@ -73,8 +74,8 @@ export default function MobileBottomNav() {
                 borderRadius: 99,
                 display: 'grid',
                 placeItems: 'center',
-                color: active ? ACCENT : 'inherit',
-                bgcolor: active ? alpha(ACCENT, t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
+                color: active ? (t.palette.mode === 'dark' ? BRAND_ORANGE : BRAND_TEXT_LIGHT) : 'inherit',
+                bgcolor: active ? alpha(PILL, t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
                 transition: 'background-color .2s',
               })}
             >
