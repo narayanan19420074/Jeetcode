@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Alert, Box, Button, ButtonBase, CircularProgress, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Stack, Typography } from '@mui/material';
+import { Alert, Box, Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Stack, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
@@ -16,14 +16,13 @@ import {
   LibraryFont,
   PageHeader,
   libBackBtnSx,
-  libChipSx,
   libPanelSx,
   libSolidBtnSx,
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
 
-// Plans page: Free and Pro in the Library look (cream panels, 16px gutter, Roboto, pill buttons).
+// Plans page: Free, Pro Monthly and Pro Yearly in the Library look (cream panels, 16px gutter, Roboto, pill buttons).
 // Prices are the same as on the home page. Keep them in sync.
 const PRICE = { monthly: 149, yearly: 1199 };
 const PERIOD = { monthly: 'month', yearly: 'year' };
@@ -81,7 +80,6 @@ export default function PlansPage() {
   const pal = useLibraryPalette();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
 
-  const [period, setPeriod] = useState('yearly'); // 'monthly' | 'yearly'
   const [status, setStatus] = useState(null);
   const [loadingPlan, setLoadingPlan] = useState(null);
   const [error, setError] = useState(null);
@@ -167,7 +165,7 @@ export default function PlansPage() {
 
   return (
     <LibraryFont>
-      <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 3, maxWidth: { xs: 640, md: 880 }, mx: 'auto' }}>
+      <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 3, maxWidth: { xs: 640, md: 1040 }, mx: 'auto' }}>
         <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={{ ...libBackBtnSx, display: { md: 'none' } }}>
           <ArrowBackRoundedIcon />
         </IconButton>
@@ -199,7 +197,7 @@ export default function PlansPage() {
           </Box>
         )}
 
-        <Box sx={{ mt: 3, display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 1.5, alignItems: 'stretch' }}>
+        <Box sx={{ mt: 3, display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, gap: 1.5, alignItems: 'stretch' }}>
           {/* Free */}
           <PlanPanel>
             <Box>
@@ -223,44 +221,46 @@ export default function PlansPage() {
             ) : null}
           </PlanPanel>
 
-          {/* Pro */}
-          <PlanPanel highlighted>
-            <Box>
-              <Typography component="h2" sx={{ fontSize: 20, lineHeight: '28px', fontWeight: 700 }}>Pro</Typography>
-
-              <Box role="group" aria-label="Billing period" sx={{ display: 'flex', gap: 1, mt: 1.5, flexWrap: 'wrap' }}>
-                {['monthly', 'yearly'].map((p) => (
-                  <ButtonBase key={p} onClick={() => setPeriod(p)} aria-pressed={period === p} sx={{ ...libChipSx(period === p), fontWeight: 500 }}>
-                    {PLAN_LABEL[p]}
-                    {p === 'yearly' && <Box component="span" sx={{ fontSize: 13 }}>Save {SAVING_PERCENT}%</Box>}
-                  </ButtonBase>
-                ))}
+          {/* Pro: one card per billing period, so both plans are always visible */}
+          {['monthly', 'yearly'].map((plan) => (
+            <PlanPanel key={plan} highlighted={plan === 'yearly'}>
+              <Box>
+                <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
+                  <Typography component="h2" sx={{ fontSize: 20, lineHeight: '28px', fontWeight: 700 }}>Pro {PLAN_LABEL[plan]}</Typography>
+                  {plan === 'yearly' && (
+                    <Box component="span" sx={{ height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 13, fontWeight: 500, letterSpacing: LIB_TRACKING, color: '#fff', bgcolor: LIB_ACCENT }}>
+                      Best value
+                    </Box>
+                  )}
+                </Stack>
+                <Typography sx={{ mt: 0.5, fontSize: 32, lineHeight: '40px', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
+                  ₹{PRICE[plan].toLocaleString('en-IN')}
+                  <Box component="span" sx={{ ml: 0.75, fontSize: 16, fontWeight: 400, letterSpacing: LIB_TRACKING, color: pal.muted }}>
+                    per {PERIOD[plan]}
+                  </Box>
+                </Typography>
+                <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
+                  {plan === 'yearly' ? `Billed yearly. Save ${SAVING_PERCENT}% compared with monthly.` : 'Billed monthly. Cancel anytime.'}
+                </Typography>
               </Box>
-
-              <Typography sx={{ mt: 1.5, fontSize: 32, lineHeight: '40px', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
-                ₹{PRICE[period].toLocaleString('en-IN')}
-                <Box component="span" sx={{ ml: 0.75, fontSize: 16, fontWeight: 400, letterSpacing: LIB_TRACKING, color: pal.muted }}>
-                  per {PERIOD[period]}
-                </Box>
-              </Typography>
-              <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
-                {period === 'yearly' ? `Billed yearly. Save ${SAVING_PERCENT}% compared with monthly.` : 'Billed monthly. Cancel anytime.'}
-              </Typography>
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              <Typography sx={{ mb: 1.25, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything in Free, plus:</Typography>
-              <FeatureList items={PRO_FEATURES} />
-            </Box>
-            <Button
-              disableElevation
-              fullWidth
-              disabled={Boolean(loadingPlan) || isPro}
-              onClick={() => handleSubscribe(period)}
-              sx={{ ...libSolidBtnSx, '&.Mui-disabled': { bgcolor: LIB_ACCENT, color: '#fff', opacity: 0.5 } }}
-            >
-              {loadingPlan ? <CircularProgress size={22} sx={{ color: '#fff' }} aria-label="Starting checkout" /> : isPro ? 'Current plan' : 'Subscribe'}
-            </Button>
-          </PlanPanel>
+              <Box sx={{ flex: 1 }}>
+                <Typography sx={{ mb: 1.25, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything in Free, plus:</Typography>
+                <FeatureList items={PRO_FEATURES} />
+              </Box>
+              <Button
+                disableElevation
+                fullWidth
+                disabled={Boolean(loadingPlan) || isPro}
+                onClick={() => handleSubscribe(plan)}
+                sx={{
+                  ...(plan === 'yearly' ? libSolidBtnSx : libTintBtnSx),
+                  '&.Mui-disabled': plan === 'yearly' ? { bgcolor: LIB_ACCENT, color: '#fff', opacity: 0.5 } : { color: pal.text, opacity: 0.6 },
+                }}
+              >
+                {loadingPlan === plan ? <CircularProgress size={22} sx={{ color: plan === 'yearly' ? '#fff' : pal.text }} aria-label="Starting checkout" /> : isPro ? (status?.proPlan === plan ? 'Current plan' : 'Subscribe') : 'Subscribe'}
+              </Button>
+            </PlanPanel>
+          ))}
         </Box>
 
         {isAuthenticated && !isPro && (
