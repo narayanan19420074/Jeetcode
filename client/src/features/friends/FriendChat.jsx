@@ -504,7 +504,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             bgcolor: lib ? 'var(--lib-bg)' : wsSurface(t).panel,
           })}
         >
-          {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={24} sx={lib ? { color: LIB_ACCENT } : undefined} /></Box>}
+          {loading && <Box sx={{ m: 'auto' }}><CircularProgress size={24} /></Box>}
           {!loading && error && <Typography color="error" variant="body2" sx={{ m: 'auto', textAlign: 'center' }}>{error}</Typography>}
           {!loading && hasMore && (
             lib ? (

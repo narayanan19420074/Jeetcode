@@ -70,14 +70,15 @@ const FONT_SCALE = { sm: 0.92, md: 1, lg: 1.12 };
 
 // Loading spinner: a small eight-ray burst that turns and softly pulses. It replaces the default MUI ring for every
 // indeterminate CircularProgress, so all existing spinners pick it up. It is drawn as a mask, so it takes the text
-// colour of its parent (buttons use color="inherit"). Library pages publish --lib-accent, so spinners there match
-// the buttons and chips; elsewhere the theme's primary colour is used.
+// colour of its parent (buttons use color="inherit"); on its own it uses the warm SPINNER_COLOR below.
 const SPINNER_RAYS = [0, 45, 90, 135, 180, 225, 270, 315]
   .map((deg, i) => `<path d="M12 ${i % 2 ? 4 : 2.5}V8" transform="rotate(${deg} 12 12)"/>`)
   .join('');
 const SPINNER_MASK = `url("data:image/svg+xml,${encodeURIComponent(
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round">${SPINNER_RAYS}</svg>`,
 )}")`;
+// Warm clay tone (soft coral) so spinners read well on the cream Library surfaces and on dark surfaces alike.
+const SPINNER_COLOR = { light: '#D97757', dark: '#E8946F' };
 const spinnerCss = `
   @keyframes jc-spinner-turn { to { transform: rotate(360deg); } }
   @keyframes jc-spinner-pulse { 0%, 100% { transform: scale(0.82); opacity: 0.75; } 50% { transform: scale(1); opacity: 1; } }
@@ -146,7 +147,7 @@ export const getTheme = (mode, opts = {}) => {
           }),
       MuiCircularProgress: {
         styleOverrides: {
-          colorPrimary: { color: `var(--lib-accent, ${main})` },
+          colorPrimary: { color: SPINNER_COLOR[mode === 'dark' ? 'dark' : 'light'] },
           root: ({ ownerState }) =>
             ownerState.variant === 'indeterminate'
               ? {
