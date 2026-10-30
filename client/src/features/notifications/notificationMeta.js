@@ -12,6 +12,7 @@ import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRou
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 
+// Each type has its own icon colour (all dark enough to read on the light cream cards).
 // The bell has three tabs. Each notification `type` belongs to exactly one of them.
 export const TABS = [
   { key: 'social', label: 'Social', icon: PeopleAltRoundedIcon, empty: 'No friend activity yet. Requests, invites and nudges show up here.' },
@@ -22,17 +23,17 @@ export const TABS = [
 export const META = {
   // social
   request: { cat: 'social', icon: PersonAddAlt1RoundedIcon, color: '#6366F1', cta: 'Review' },
-  accepted: { cat: 'social', icon: HowToRegRoundedIcon, color: '#22C55E', cta: 'Open' },
-  room: { cat: 'social', icon: LaptopMacRoundedIcon, color: '#0EA5E9', cta: 'Join' },
-  nudge: { cat: 'social', icon: LocalFireDepartmentRoundedIcon, color: '#F97316', cta: 'Solve' },
-  plan: { cat: 'social', icon: GroupAddRoundedIcon, color: '#8B5CF6', cta: 'Open plan' },
+  accepted: { cat: 'social', icon: HowToRegRoundedIcon, color: '#16A34A', cta: 'Open' },
+  room: { cat: 'social', icon: LaptopMacRoundedIcon, color: '#0284C7', cta: 'Join' },
+  nudge: { cat: 'social', icon: LocalFireDepartmentRoundedIcon, color: '#EA580C', cta: 'Solve' },
+  plan: { cat: 'social', icon: GroupAddRoundedIcon, color: '#7C3AED', cta: 'Open plan' },
   // updates
-  leaderboard: { cat: 'updates', icon: LeaderboardRoundedIcon, color: '#F59E0B', cta: 'See rank' },
-  quest: { cat: 'updates', icon: CardGiftcardRoundedIcon, color: '#D97706', cta: 'Claim' },
-  offer: { cat: 'updates', icon: WorkspacePremiumRoundedIcon, color: '#14B8A6', cta: 'See plans' },
+  leaderboard: { cat: 'updates', icon: LeaderboardRoundedIcon, color: '#D97706', cta: 'See rank' },
+  quest: { cat: 'updates', icon: CardGiftcardRoundedIcon, color: '#DB2777', cta: 'Claim' },
+  offer: { cat: 'updates', icon: WorkspacePremiumRoundedIcon, color: '#0D9488', cta: 'See plans' },
   // events
-  contest: { cat: 'events', icon: EmojiEventsRoundedIcon, color: '#EAB308', cta: 'View' },
-  daily: { cat: 'events', icon: BoltRoundedIcon, color: '#EC4899', cta: 'Solve now' },
+  contest: { cat: 'events', icon: EmojiEventsRoundedIcon, color: '#CA8A04', cta: 'View' },
+  daily: { cat: 'events', icon: BoltRoundedIcon, color: '#EF6C4D', cta: 'Solve now' },
 };
 
 export const metaOf = (n) => META[n.type] || META.request;

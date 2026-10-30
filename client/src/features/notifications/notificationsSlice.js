@@ -6,7 +6,11 @@ import { logoutUser } from '../auth/authSlice';
 // the contest and today's challenge. See notificationMeta.js for which type lands in which tab.
 // Items are kept in localStorage per user so they survive a refresh.
 const MAX_ITEMS = 50;
+// Ids of every notification already shown. Many notifications are re-created by the watcher on each poll
+// (today's challenge, the contest, quest rewards), so a cleared or trimmed one must not come back.
+const MAX_SEEN = 500;
 const storeKey = (userId) => `jc:notifications:${userId}`;
+const seenKey = (userId) => `jc:notifications:seen:${userId}`;
 
 export const loadStored = (userId) => {
   try {
@@ -24,19 +28,40 @@ export const saveStored = (userId, items) => {
   }
 };
 
-const initialState = { items: [], ready: false };
+export const loadSeen = (userId) => {
+  try {
+    const raw = JSON.parse(localStorage.getItem(seenKey(userId)) || '[]');
+    return Array.isArray(raw) ? raw.slice(-MAX_SEEN) : [];
+  } catch {
+    return [];
+  }
+};
+export const saveSeen = (userId, seen) => {
+  try {
+    localStorage.setItem(seenKey(userId), JSON.stringify(seen));
+  } catch {
+    /* storage unavailable: the list just lives in memory */
+  }
+};
+
+const initialState = { items: [], seen: [], ready: false };
 
 const notificationsSlice = createSlice({
   name: 'notifications',
   initialState,
   reducers: {
+    // payload: { items, seen }
     hydrate: (state, { payload }) => {
-      state.items = payload;
+      state.items = payload.items;
+      state.seen = [...new Set([...payload.seen, ...payload.items.map((n) => n.id)])].slice(-MAX_SEEN);
       state.ready = true;
     },
-    // payload: { id, type, text, link?, createdAt? }. Same id twice = ignored (so reloads don't repeat it).
+    // payload: { id, type, text, link?, createdAt? }. An id that was already shown (even if cleared since) is ignored,
+    // so reloads and polls never repeat it.
     addNotification: (state, { payload }) => {
-      if (state.items.some((n) => n.id === payload.id)) return;
+      if (state.seen.includes(payload.id) || state.items.some((n) => n.id === payload.id)) return;
+      state.seen.push(payload.id);
+      state.seen = state.seen.slice(-MAX_SEEN);
       state.items.unshift({ read: false, createdAt: new Date().toISOString(), ...payload });
       state.items = state.items.slice(0, MAX_ITEMS);
     },

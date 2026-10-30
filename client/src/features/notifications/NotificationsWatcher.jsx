@@ -6,7 +6,7 @@ import { contestApi } from '../../api/contestApi';
 import { problemsApi } from '../../api/problemsApi';
 import { questApi } from '../../api/questApi';
 import { featuredPageForToday, utcKey } from '../dashboard/dashboardUtils';
-import { addNotification, hydrate, loadStored, saveStored } from './notificationsSlice';
+import { addNotification, hydrate, loadSeen, loadStored, saveSeen, saveStored } from './notificationsSlice';
 
 const LB_POLL_MS = 5 * 60 * 1000;
 const HOUR_MS = 3600000;
@@ -19,19 +19,22 @@ export default function NotificationsWatcher() {
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
   const { friends, incoming, outgoing, loaded } = useSelector((s) => s.friends);
-  const { items, ready } = useSelector((s) => s.notifications);
+  const { items, seen, ready } = useSelector((s) => s.notifications);
   const userId = user?.id;
   const prevOutgoing = useRef(null);
 
   // load saved items for this user
   useEffect(() => {
-    if (isAuthenticated && userId) dispatch(hydrate(loadStored(userId)));
+    if (isAuthenticated && userId) dispatch(hydrate({ items: loadStored(userId), seen: loadSeen(userId) }));
   }, [isAuthenticated, userId, dispatch]);
 
   // save on every change
   useEffect(() => {
-    if (ready && userId) saveStored(userId, items);
-  }, [items, ready, userId]);
+    if (ready && userId) {
+      saveStored(userId, items);
+      saveSeen(userId, seen);
+    }
+  }, [items, seen, ready, userId]);
 
   // someone sent me a friend request
   useEffect(() => {
