@@ -65,6 +65,7 @@ export function LibraryFont({ children, sx }) {
         sx={{
           fontFamily: LIB_FONT,
           color: pal.text,
+          '--lib-accent': LIB_ACCENT,
           '--lib-bg': pal.bg,
           '--lib-chip': pal.chip,
           '--lib-chip-text': pal.chipText,

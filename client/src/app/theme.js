@@ -68,6 +68,21 @@ export const ACCENTS = {
 };
 const FONT_SCALE = { sm: 0.92, md: 1, lg: 1.12 };
 
+// Loading spinner: a small eight-ray burst that turns and softly pulses. It replaces the default MUI ring for every
+// indeterminate CircularProgress, so all existing spinners pick it up. It is drawn as a mask, so it takes the text
+// colour of its parent (buttons use color="inherit"). Library pages publish --lib-accent, so spinners there match
+// the buttons and chips; elsewhere the theme's primary colour is used.
+const SPINNER_RAYS = [0, 45, 90, 135, 180, 225, 270, 315]
+  .map((deg, i) => `<path d="M12 ${i % 2 ? 4 : 2.5}V8" transform="rotate(${deg} 12 12)"/>`)
+  .join('');
+const SPINNER_MASK = `url("data:image/svg+xml,${encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round">${SPINNER_RAYS}</svg>`,
+)}")`;
+const spinnerCss = `
+  @keyframes jc-spinner-turn { to { transform: rotate(360deg); } }
+  @keyframes jc-spinner-pulse { 0%, 100% { transform: scale(0.82); opacity: 0.75; } 50% { transform: scale(1); opacity: 1; } }
+`;
+
 // getTheme(mode) keeps working exactly as before. `opts` carries the user's
 // appearance preferences: { accent, density, fontScale, contrast, reduceMotion }.
 export const getTheme = (mode, opts = {}) => {
@@ -104,6 +119,7 @@ export const getTheme = (mode, opts = {}) => {
     components: {
       MuiCssBaseline: {
         styleOverrides: `
+          ${spinnerCss}
           :root { --jc-easy: ${semantic[mode === 'dark' ? 'dark' : 'light'].success}; --jc-medium: ${semantic[mode === 'dark' ? 'dark' : 'light'].warning}; --jc-hard: ${semantic[mode === 'dark' ? 'dark' : 'light'].error}; --jc-pending: ${semantic[mode === 'dark' ? 'dark' : 'light'].pending}; --jc-reward: ${reward[mode === 'dark' ? 'dark' : 'light']}; ${gameCss(mode)} }
           ${underlineLinks ? 'a { text-decoration: underline !important; }' : ''}
           ${reduceMotion ? '*, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }' : ''}
@@ -128,6 +144,35 @@ export const getTheme = (mode, opts = {}) => {
               },
             },
           }),
+      MuiCircularProgress: {
+        styleOverrides: {
+          colorPrimary: { color: `var(--lib-accent, ${main})` },
+          root: ({ ownerState }) =>
+            ownerState.variant === 'indeterminate'
+              ? {
+                  animation: 'jc-spinner-turn 2.4s linear infinite',
+                  '& .MuiCircularProgress-svg': { display: 'none' },
+                  '&::before': {
+                    content: '""',
+                    display: 'block',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'currentColor',
+                    WebkitMaskImage: SPINNER_MASK,
+                    maskImage: SPINNER_MASK,
+                    WebkitMaskSize: 'contain',
+                    maskSize: 'contain',
+                    WebkitMaskRepeat: 'no-repeat',
+                    maskRepeat: 'no-repeat',
+                    WebkitMaskPosition: 'center',
+                    maskPosition: 'center',
+                    animation: 'jc-spinner-pulse 1.2s ease-in-out infinite',
+                  },
+                  '@media (prefers-reduced-motion: reduce)': { animation: 'none' },
+                }
+              : {},
+        },
+      },
       MuiInputBase: {
         styleOverrides: {
           // MUI's default placeholder (42% opacity) is ~3:1; this keeps it readable.
