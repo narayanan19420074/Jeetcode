@@ -64,7 +64,7 @@ import { problemsApi } from '../../api/problemsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { LIB_ACCENT, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { tint } from '../dashboard/dashboardUtils';
-import { fetchProblem, setLanguage, updateCode, runCode, submitCode, toggleAiDrawer } from './workspaceSlice';
+import { fetchProblem, setLanguage, updateCode, runCode, submitCode, toggleAiDrawer, loadSavedLanguage, applyDefaultLanguage } from './workspaceSlice';
 
 const DESC_TABS = [
   { value: 0, label: 'Description', icon: <ArticleOutlinedIcon /> },
@@ -153,10 +153,10 @@ export default function WorkspacePage() {
     resetSw();
   }, [dispatch, slug, resetSw]);
 
-  // Start in the language chosen in Settings -> Editor (once per page visit;
-  // switching language in the toolbar afterwards still works as before).
+  // Start in the language last used here. Before one has been picked, fall back to the
+  // language chosen in Settings -> Editor (once per page visit).
   useEffect(() => {
-    if (editorPrefs?.defaultLanguage) dispatch(setLanguage(editorPrefs.defaultLanguage));
+    if (!loadSavedLanguage() && editorPrefs?.defaultLanguage) dispatch(applyDefaultLanguage(editorPrefs.defaultLanguage));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

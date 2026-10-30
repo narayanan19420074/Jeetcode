@@ -23,8 +23,29 @@ const persistDrafts = (drafts) => {
   }
 };
 
+// The language last picked in the workspace is remembered on this device, so a refresh or the
+// next problem opens in the same language. Settings -> Editor -> Default language is only used
+// until a language has been picked.
+const LANGUAGE_KEY = 'jeetcode-active-language';
+const SUPPORTED_LANGUAGES = ['javascript', 'python', 'cpp', 'java'];
+export const loadSavedLanguage = () => {
+  try {
+    const v = typeof window !== 'undefined' ? localStorage.getItem(LANGUAGE_KEY) : null;
+    return SUPPORTED_LANGUAGES.includes(v) ? v : null;
+  } catch {
+    return null;
+  }
+};
+const persistLanguage = (language) => {
+  try {
+    localStorage.setItem(LANGUAGE_KEY, language);
+  } catch {
+    // Local storage may be unavailable (private browsing, quota) — fail silently.
+  }
+};
+
 const initialState = {
-  activeLanguage: 'javascript',
+  activeLanguage: loadSavedLanguage() || 'javascript',
   codeByProblem: loadDrafts(),
 
   currentProblem: null,
@@ -106,6 +127,11 @@ const workspaceSlice = createSlice({
   reducers: {
     setLanguage: (state, action) => {
       state.activeLanguage = action.payload;
+      persistLanguage(action.payload);
+    },
+    // Settings default: applies to this visit only, so it is not remembered as the last used language.
+    applyDefaultLanguage: (state, action) => {
+      state.activeLanguage = action.payload;
     },
     updateCode: (state, action) => {
       const { problemId, language, code } = action.payload;
@@ -184,5 +210,5 @@ const workspaceSlice = createSlice({
   },
 });
 
-export const { setLanguage, updateCode, toggleAiDrawer, resetSubmitResult } = workspaceSlice.actions;
+export const { setLanguage, applyDefaultLanguage, updateCode, toggleAiDrawer, resetSubmitResult } = workspaceSlice.actions;
 export default workspaceSlice.reducer;
