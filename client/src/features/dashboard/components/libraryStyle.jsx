@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
+import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 
@@ -83,14 +84,15 @@ export function LibraryFont({ children, sx }) {
 }
 
 // Strip above the tab bar: today's challenge, one tap to open.
-export function MiniPlayer({ featured, aboveNav }) {
+export function MiniPlayer({ featured, resume, aboveNav }) {
   const pal = useLibraryPalette();
-  if (!featured) return null;
+  const item = resume || featured;
+  if (!item) return null;
   return (
     <Box
       component={RouterLink}
-      to={`/workspace/${featured.slug}`}
-      aria-label={`Open today's challenge: ${featured.title}`}
+      to={`/workspace/${item.slug}`}
+      aria-label={`${resume ? 'Resume' : "Open today's challenge"}: ${item.title}`}
       sx={(t) => ({
         position: 'fixed',
         left: 16,
@@ -112,14 +114,14 @@ export function MiniPlayer({ featured, aboveNav }) {
       })}
     >
       <Box aria-hidden sx={{ width: 40, height: 40, flex: 'none', borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: 'rgba(239,108,77,0.2)', color: '#EF6C4D' }}>
-        <EventRoundedIcon sx={{ fontSize: 22 }} />
+        {resume ? <HistoryRoundedIcon sx={{ fontSize: 22 }} /> : <EventRoundedIcon sx={{ fontSize: 22 }} />}
       </Box>
       <Box sx={{ flex: 1, minWidth: 0 }}>
         <Typography noWrap sx={{ fontSize: 16, lineHeight: '22px', fontWeight: 500, letterSpacing: '0.03em' }}>
-          {featured.title}
+          {item.title}
         </Typography>
         <Typography noWrap sx={{ fontSize: 14, lineHeight: '18px', letterSpacing: '0.03em', color: pal.muted }}>
-          Today&apos;s challenge · {featured.difficulty}
+          {resume ? 'Resume' : 'Today\u2019s challenge'} · {item.difficulty}
         </Typography>
       </Box>
       <PlayArrowRoundedIcon aria-hidden sx={{ fontSize: 32, flex: 'none' }} />

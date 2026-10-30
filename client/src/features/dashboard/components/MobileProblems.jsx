@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import {
@@ -40,6 +41,7 @@ import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
 import { LibraryFont, MiniPlayer, useLibraryPalette } from './libraryStyle';
+import { readLastProblem } from '../../workspace/lastProblem';
 
 // Phone layout of the Problems page. It uses the same accent colour, rounded panels and tinted
 // chips as the phone dashboard (MobileHome), and the page itself scrolls (infinite scroll).
@@ -194,6 +196,8 @@ function SkeletonRows({ count = 8 }) {
 
 export default function MobileProblems({ isAuthenticated, progress, featured, preset, listsApi }) {
   const navigate = useNavigate();
+  const userId = useSelector((st) => st.auth.user?.id);
+  const resume = useMemo(() => readLastProblem(userId), [userId]); // last problem worked on, newest wins on each visit
   const pal = useLibraryPalette();
   const { enqueueSnackbar } = useSnackbar();
 
@@ -335,7 +339,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
 
   return (
     <LibraryFont>
-    <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: featured ? '84px' : 2, maxWidth: 640, mx: 'auto' }}>
+    <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: featured || resume ? '84px' : 2, maxWidth: 640, mx: 'auto' }}>
       {/* Back + menu */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
         <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={{ width: 44, height: 44, ml: -1, color: pal.text }}>
@@ -564,10 +568,10 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         }}
       />
     </Box>
-    <MiniPlayer featured={featured} aboveNav={isAuthenticated} />
+    <MiniPlayer featured={featured} resume={resume} aboveNav={isAuthenticated} />
     <BackToTopButton
       pal={pal}
-      bottom={`calc(${isAuthenticated ? 72 : 12}px + ${featured ? 69 : 12}px + env(safe-area-inset-bottom))`}
+      bottom={`calc(${isAuthenticated ? 72 : 12}px + ${featured || resume ? 69 : 12}px + env(safe-area-inset-bottom))`}
     />
     </LibraryFont>
   );

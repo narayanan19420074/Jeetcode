@@ -29,6 +29,7 @@ import { ConsoleBody, VerdictChip } from './ConsolePanel';
 import SplitHandle from './SplitHandle';
 import AiAssistantDrawer from './AiAssistantDrawer';
 import AiLauncher from './AiLauncher';
+import { saveLastProblem } from './lastProblem';
 import AiLiveOverlay from './AiLiveOverlay';
 import ConfirmDialog from './ConfirmDialog';
 import ConsoleBar from './ConsoleBar';
@@ -88,7 +89,7 @@ export default function WorkspacePage() {
   const location = useLocation();
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
-  const { isAuthenticated } = useSelector((s) => s.auth);
+  const { isAuthenticated, user: authUser } = useSelector((s) => s.auth);
   // Settings -> Editor / Appearance
   const editorPrefs = useSelector((s) => s.ui.editor);
 
@@ -144,6 +145,11 @@ export default function WorkspacePage() {
   });
   const { setLeftEl, setRightEl, tabLabels, langMode, iconActions, showKbd, narrowConsole, hideConsoleLabel } = usePaneModes(isMobile);
   const adjacent = useAdjacentProblems(slug);
+
+  // Remember this problem so the Problems page can offer Resume.
+  useEffect(() => {
+    if (problem && problem.slug === slug) saveLastProblem(authUser?.id, problem);
+  }, [problem, slug, authUser?.id]);
   const resetSw = sw.reset;
   useEffect(() => {
     dispatch(fetchProblem(slug));
