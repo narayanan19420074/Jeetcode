@@ -2,7 +2,7 @@ import { StrictMode, useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider, useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter, useLocation } from 'react-router-dom';
-import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
+import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { MotionConfig } from 'framer-motion';
 import { SnackbarProvider } from 'notistack';
 import store from './app/store';
@@ -13,6 +13,7 @@ import App from './App.jsx';
 import { RoomSessionProvider } from './features/room/RoomSession';
 import OfflineGame from './components/OfflineGame';
 import ErrorBoundary from './components/ErrorBoundary';
+import BrandMark from './components/BrandMark';
 import './index.css';
 
 function ThemedApp() {
@@ -85,8 +86,10 @@ function ThemedApp() {
               <App />
             </RoomSessionProvider>
           ) : (
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-              <CircularProgress />
+            <Box className="jc-splash" role="status" aria-label="Loading JeetCode">
+              <Box className="jc-splash-logo">
+                <BrandMark size={112} />
+              </Box>
             </Box>
           )}
         </ErrorBoundary>

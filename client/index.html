@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
-    <meta name="theme-color" content="#161B22" />
+    <meta name="theme-color" content="#FDF8F4" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -14,10 +14,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" />
+    <style>
+      /* Launch splash: cream page, logo pops in with a soft glow and a ring pulse. Shown until the app renders. */
+      html, body { background: #FDF8F4; }
+      .jc-splash { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #FDF8F4; }
+      .jc-splash-logo { position: relative; width: 112px; height: 112px; }
+      .jc-splash-logo svg { position: relative; display: block; width: 100%; height: 100%; border-radius: 26px; box-shadow: 0 14px 34px rgba(232, 89, 12, 0.32); animation: jc-pop 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2) both, jc-float 2.4s ease-in-out 0.7s infinite; }
+      .jc-splash-logo::before, .jc-splash-logo::after { content: ''; position: absolute; inset: 0; border-radius: 26px; border: 3px solid #F7A33B; opacity: 0; animation: jc-ring 2s ease-out 0.5s infinite; }
+      .jc-splash-logo::after { animation-delay: 1.2s; }
+      @keyframes jc-pop { from { transform: scale(0.4) rotate(-12deg); opacity: 0; } to { transform: scale(1) rotate(0); opacity: 1; } }
+      @keyframes jc-float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-6px) scale(1.04); } }
+      @keyframes jc-ring { 0% { transform: scale(1); opacity: 0.55; } 100% { transform: scale(1.9); opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .jc-splash-logo svg, .jc-splash-logo::before, .jc-splash-logo::after { animation: none; } .jc-splash-logo::before, .jc-splash-logo::after { display: none; } }
+    </style>
     <title>JeetCode — Free FAANG Interview Prep</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="jc-splash" role="status" aria-label="Loading JeetCode"><div class="jc-splash-logo"><svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="jcg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7A33B"/><stop offset="0.32" stop-color="#E8590C"/><stop offset="1" stop-color="#D9480F"/></linearGradient></defs><rect width="512" height="512" rx="112" fill="url(#jcg)"/><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="40"><path d="M176 176 96 256l80 80" stroke="#FFF8EE"/><path d="M336 176l80 80-80 80" stroke="#FFF8EE"/><path d="M278 140 234 372" stroke="#FFEFCF"/></g></svg></div></div></div>
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </body>
