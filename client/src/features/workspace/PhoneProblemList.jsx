@@ -16,7 +16,8 @@ const SWIPE_AREA = 28; // px along the left edge where a swipe to the right pull
 // Phone problem list: pull it from the left edge of the screen (or open it from the header menu).
 // Same rows as the phone Problems page. The list is fetched when it opens and cleared once it has closed.
 //   onSelect(slug)  called when a problem is tapped; the list closes itself after
-export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, onSelect }) {
+//   disabled        taps are ignored (the pair room is still switching problem)
+export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, onSelect, disabled = false }) {
   const pal = useLibraryPalette();
   const [searchInput, setSearchInput] = useState('');
   const [search, setSearch] = useState('');
@@ -101,6 +102,7 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
   };
 
   const choose = (p) => {
+    if (disabled) return;
     onClose();
     if (p.slug !== currentSlug) onSelect(p.slug);
   };
@@ -163,7 +165,7 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
           </Stack>
         </Box>
 
-        <Box sx={{ flex: 1, minHeight: 0, overflowY: 'auto', px: 2, borderTop: `1px solid ${pal.divider}`, pb: 'calc(16px + env(safe-area-inset-bottom))' }}>
+        <Box sx={{ flex: 1, minHeight: 0, overflowY: 'auto', px: 2, borderTop: `1px solid ${pal.divider}`, opacity: disabled ? 0.6 : 1, pb: 'calc(16px + env(safe-area-inset-bottom))' }}>
           {firstLoad &&
             Array.from({ length: 8 }).map((_, i) => (
               <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, py: 2 }}>

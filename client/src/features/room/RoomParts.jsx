@@ -1,9 +1,12 @@
-import { Avatar, Badge, Box, Chip, LinearProgress, Stack, TextField, Tooltip, Typography } from '@mui/material';
+import { useContext } from 'react';
+import { Avatar, Badge, Box, ButtonBase, Button, Chip, LinearProgress, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
-import { CasePill, Result } from '../workspace/ConsolePanel';
+import { CasePill, ConsoleField, LibContext, Result } from '../workspace/ConsolePanel';
+import { LIB_ACCENT, LIB_TRACKING, libChipSx, libTintBtnSx } from '../dashboard/components/libraryStyle';
+import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { CodeField, PaneTabs, WsButton } from '../workspace/wsUi';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WS, mono } from '../workspace/wsTokens';
@@ -52,7 +55,24 @@ export function PresenceStack({ meName, peers }) {
 }
 
 // Verdict chip for a shared run (the submit verdict uses VerdictChip from the workspace).
-export function RunChip({ running, result, sx }) {
+// lib: plain tinted pill without an icon (phone pair room).
+export function RunChip({ running, result, sx, lib = false }) {
+  if (lib) {
+    if (!running && !result) return null;
+    const color = running ? LIB_ACCENT : result.ok ? DIFF_COLOR.Easy : DIFF_COLOR.Hard;
+    return (
+      <Typography
+        noWrap
+        component="span"
+        sx={[
+          { minWidth: 0, maxWidth: '44vw', px: '10px', py: '3px', borderRadius: 999, fontSize: 14, lineHeight: '20px', fontWeight: 500, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
+          ...(Array.isArray(sx) ? sx : [sx]),
+        ]}
+      >
+        {running ? 'Running…' : result.status}
+      </Typography>
+    );
+  }
   if (running) return <Chip size="small" label="Running…" color="primary" variant="outlined" sx={sx} />;
   if (!result) return null;
   return (
@@ -67,6 +87,7 @@ export function RunChip({ running, result, sx }) {
 }
 
 function RunOutput({ running, result }) {
+  const lib = useContext(LibContext);
   if (running) {
     return (
       <Box sx={{ py: 1 }}>
@@ -80,7 +101,7 @@ function RunOutput({ running, result }) {
   if (!result) {
     return (
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
-        <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />
+        {!lib && <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />}
         <Typography variant="body2">Run the code to see the output here. Both of you see the result.</Typography>
       </Stack>
     );
@@ -91,15 +112,15 @@ function RunOutput({ running, result }) {
   return (
     <>
       <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.25, mb: 1.5 }}>
-        <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', color: result.ok ? 'success.main' : 'error.main' }}>{result.status}</Typography>
+        <Typography sx={{ fontWeight: lib ? 700 : 800, fontSize: lib ? 20 : '1.15rem', color: result.ok ? 'success.main' : 'error.main' }}>{result.status}</Typography>
         {meta.map((m) => (
           <Typography key={m} variant="caption" color="text.secondary">
             {m}
           </Typography>
         ))}
       </Stack>
-      {(out || !err) && <CodeField label="Output" value={out || '(no output)'} />}
-      {err && <CodeField label="Error" value={err} tone="error" />}
+      {(out || !err) && <ConsoleField label="Output" value={out || '(no output)'} />}
+      {err && <ConsoleField label="Error" value={err} tone="error" />}
     </>
   );
 }
@@ -121,6 +142,7 @@ export function RoomConsoleBody({
   activeCase,
   onCase,
   onSignIn,
+  lib = false, // phone pair room: pill tabs, rounded blocks on cream
 }) {
   const examples = problem?.examples ?? [];
   const custom = caseSel === 'custom' || examples.length === 0;
@@ -136,14 +158,26 @@ export function RoomConsoleBody({
   ];
 
   return (
+    <LibContext.Provider value={lib}>
     <Stack sx={{ flex: 1, minHeight: 0 }}>
-      <Box sx={{ px: 1.25, pb: 0.75, flexShrink: 0 }}>
-        <PaneTabs size="sm" value={tab} onChange={onTab} items={items} />
+      <Box sx={{ px: lib ? 2 : 1.25, pb: lib ? 1.5 : 0.75, flexShrink: 0 }}>
+        {lib ? (
+          <Stack direction="row" role="tablist" sx={{ gap: 1, overflowX: 'auto' }}>
+            {items.map((it) => (
+              <ButtonBase key={it.value} role="tab" aria-selected={it.value === tab} onClick={() => onTab(it.value)} sx={libChipSx(it.value === tab)}>
+                {it.label}
+                {it.dot && <Box sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: it.dot }} />}
+              </ButtonBase>
+            ))}
+          </Stack>
+        ) : (
+          <PaneTabs size="sm" value={tab} onChange={onTab} items={items} />
+        )}
       </Box>
-      <Box sx={{ overflowY: 'auto', px: 1.75, pb: 1.75, flex: 1, minHeight: 0 }}>
+      <Box sx={{ overflowY: 'auto', px: lib ? 2 : 1.75, pb: lib ? 2 : 1.75, flex: 1, minHeight: 0 }}>
         {tab === 'cases' && (
           <>
-            <Stack direction="row" sx={{ gap: 0.5, mb: 1.5, overflowX: 'auto' }}>
+            <Stack direction="row" sx={{ gap: lib ? 1 : 0.5, mb: 1.5, overflowX: 'auto' }}>
               {examples.map((_, i) => (
                 <CasePill key={i} label={`Case ${i + 1}`} active={!custom && caseSel === i} onClick={() => onCaseSel(i)} />
               ))}
@@ -160,13 +194,18 @@ export function RoomConsoleBody({
                 onChange={(e) => onCustomStdin(e.target.value)}
                 slotProps={{
                   htmlInput: { 'aria-label': 'stdin' },
-                  input: { sx: (t) => ({ ...mono, fontSize: '0.8rem', lineHeight: 1.65, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, '& fieldset': { border: 'none' } }) },
+                  input: {
+                    sx: (t) =>
+                      lib
+                        ? { ...mono, fontSize: 14, lineHeight: 1.65, borderRadius: '16px', bgcolor: 'var(--lib-bg)', '& fieldset': { border: 'none' } }
+                        : { ...mono, fontSize: '0.8rem', lineHeight: 1.65, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, '& fieldset': { border: 'none' } },
+                  },
                 }}
               />
             ) : (
               <>
-                <CodeField label="Input" value={ex.input} />
-                <CodeField label="Expected output" value={ex.output} />
+                <ConsoleField label="Input" value={ex.input} />
+                <ConsoleField label="Expected output" value={ex.output} />
               </>
             )}
             <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.25 }}>
@@ -183,13 +222,19 @@ export function RoomConsoleBody({
               <Typography variant="body2" color="text.secondary">
                 Sign in to submit. Submissions are saved to your own account and streak.
               </Typography>
-              <WsButton variant="secondary" onClick={onSignIn}>
-                Sign in
-              </WsButton>
+              {lib ? (
+                <Button disableElevation onClick={onSignIn} sx={{ ...libTintBtnSx, bgcolor: 'var(--lib-bg)', height: 36, px: 2, fontSize: 15 }}>
+                  Sign in
+                </Button>
+              ) : (
+                <WsButton variant="secondary" onClick={onSignIn}>
+                  Sign in
+                </WsButton>
+              )}
             </Stack>
           ) : !sub.result && sub.status === 'idle' && !sub.error ? (
             <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
-              <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />
+              {!lib && <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />}
               <Typography variant="body2">Submit to see your verdict here. It counts for your account only.</Typography>
             </Stack>
           ) : (
@@ -197,5 +242,6 @@ export function RoomConsoleBody({
           ))}
       </Box>
     </Stack>
+    </LibContext.Provider>
   );
 }

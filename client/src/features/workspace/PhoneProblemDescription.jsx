@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Box, ButtonBase, Collapse, Stack, Typography } from '@mui/material';
+import { Box, ButtonBase, Collapse, IconButton, Stack, Typography } from '@mui/material';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
-import { LIB_TRACKING, useLibraryPalette } from '../dashboard/components/libraryStyle';
+import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import { LIB_TRACKING, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { PhoneDifficultyTag } from './phoneStyle';
 import { mono } from './wsTokens';
 
@@ -106,7 +108,8 @@ function ExampleBlock({ index, example }) {
 }
 
 // showTags: difficulty, topic and company tags (the switch in the header menu).
-export default function PhoneProblemDescription({ problem, showTags = true }) {
+// nav (optional): { hasPrev, hasNext, onPrev, onNext } -> previous / next arrows beside the name (pair room).
+export default function PhoneProblemDescription({ problem, showTags = true, nav }) {
   const pal = useLibraryPalette();
   const key = problem.slug || problem._id || problem.title;
   const constraints = problem.constraints || [];
@@ -117,9 +120,21 @@ export default function PhoneProblemDescription({ problem, showTags = true }) {
 
   return (
     <>
-      <Typography component="h1" sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px', wordBreak: 'break-word' }}>
-        {problem.title}
-      </Typography>
+      <Stack direction="row" sx={{ alignItems: 'flex-start', gap: 1 }}>
+        <Typography component="h1" sx={{ flex: 1, minWidth: 0, fontWeight: 700, fontSize: 26, lineHeight: '32px', wordBreak: 'break-word' }}>
+          {problem.title}
+        </Typography>
+        {nav && (
+          <Stack direction="row" sx={{ flexShrink: 0, gap: 1 }}>
+            <IconButton aria-label="Previous problem" disabled={!nav.hasPrev} onClick={nav.onPrev} sx={libIconBtnSx}>
+              <ChevronLeftRoundedIcon />
+            </IconButton>
+            <IconButton aria-label="Next problem" disabled={!nav.hasNext} onClick={nav.onNext} sx={libIconBtnSx}>
+              <ChevronRightRoundedIcon />
+            </IconButton>
+          </Stack>
+        )}
+      </Stack>
 
       {showTags && (
         <Stack spacing={1.5} sx={{ mt: 1.5 }}>

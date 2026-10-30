@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
-import { Box, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Stack, TextField, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Stack, TextField, Typography, useMediaQuery, useTheme } from '@mui/material';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
@@ -44,10 +44,18 @@ import SplitHandle from '../workspace/SplitHandle';
 import AiAssistantDrawer from '../workspace/AiAssistantDrawer';
 import ConfirmDialog from '../workspace/ConfirmDialog';
 import ConsoleBar from '../workspace/ConsoleBar';
-import DescriptionDrawer from '../workspace/DescriptionDrawer';
 import GuestBanner from '../workspace/GuestBanner';
+import PhoneConsoleBar from '../workspace/PhoneConsoleBar';
+import PhoneHeader from '../workspace/PhoneHeader';
+import PhoneProblemDescription from '../workspace/PhoneProblemDescription';
+import PhoneProblemList from '../workspace/PhoneProblemList';
+import ProblemSheet from '../workspace/ProblemSheet';
+import { PhoneRunButton, PhoneSubmitButton } from '../workspace/PhoneRunButtons';
+import { PhoneScope } from '../workspace/phoneStyle';
+import useChipsPref from '../workspace/useChipsPref';
+import { LIB_ACCENT, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
+import { tint } from '../dashboard/dashboardUtils';
 import LanguageSelect from '../workspace/LanguageSelect';
-import MobileProblemHeader from '../workspace/MobileProblemHeader';
 import MoreMenu from '../workspace/MoreMenu';
 import PhonePanel from '../workspace/PhonePanel';
 import TimerControl from '../workspace/TimerControl';
@@ -80,6 +88,9 @@ export default function RoomPage() {
   const { enqueueSnackbar } = useSnackbar();
   const { isAuthenticated, user } = useSelector((s) => s.auth);
   const surf = wsSurface(theme);
+  const pal = useLibraryPalette();
+  // Phone: show or hide the tags (difficulty, topics, companies); chosen from the header menu.
+  const [showTags, toggleTags] = useChipsPref();
 
   const [guestName, setGuestName] = useState(() => localStorage.getItem('jc-guest-name') || '');
   const [nameDraft, setNameDraft] = useState('');
@@ -173,7 +184,7 @@ export default function RoomPage() {
   };
 
   // Phone status bar matches the room's top bar.
-  useThemeColorMeta(theme.palette.background.paper);
+  useThemeColorMeta(isMobile ? pal.bg : theme.palette.background.paper);
 
   const sharedCode = () => room.doc.getText('code').toString();
 
@@ -437,6 +448,7 @@ export default function RoomPage() {
       activeCase={activeCase}
       onCase={setActiveCase}
       onSignIn={goLogin}
+      lib={isMobile}
     />
   );
 
@@ -448,9 +460,53 @@ export default function RoomPage() {
       <SubmitButton size={size} isMobile={isMobile} iconActions={iconActions} showKbd={showKbd} loading={sub.status === 'running'} disabled={busy || !roomReady} onClick={handleSubmit} />
     );
 
-  return (
-    <Box sx={(t) => ({ ...hoverScrollbars(t), height: '100dvh', display: 'flex', flexDirection: 'column', bgcolor: surf.chrome, overflow: 'hidden' })}>
-      {/* top bar: where you are, who is here, invite / call / leave */}
+  // Phone header menu: room actions, then the editor actions (only on the Code tab).
+  const onCodeTab = mobileView === 'code';
+  const phoneMenu = [
+    { key: 'list', label: 'Problem list', onClick: () => setListOpen(true) },
+    isAuthenticated && { key: 'friend', label: 'Call a friend', onClick: (el) => setFriendsAnchor(el) },
+    { key: 'invite', label: 'Invite link', onClick: copyLink },
+    pipOk && call.localStream && { key: 'pip', label: 'Float the call circle', onClick: popOut },
+    onCodeTab && { key: 'div-editor', divider: true },
+    onCodeTab && { key: 'copy', label: 'Copy code', onClick: handleCopyCode },
+    onCodeTab && { key: 'format', label: 'Format code', onClick: () => formatNow(false) },
+    onCodeTab && problem && { key: 'reset', label: 'Reset to starter', onClick: () => setConfirm({ type: 'reset' }) },
+    onCodeTab && problem && { key: 'workspace', label: 'Open in my workspace', onClick: testInWorkspace },
+    { key: 'div-leave', divider: true },
+    { key: 'leave', label: 'Close room', onClick: leave },
+  ];
+
+  const page = (
+    <Box sx={(t) => ({ ...hoverScrollbars(t), height: '100dvh', display: 'flex', flexDirection: 'column', bgcolor: isMobile ? pal.bg : surf.chrome, overflow: 'hidden' })}>
+      {/* phone: header in the Library look; desktop: top bar with where you are, who is here, invite / call / leave */}
+      {isMobile ? (
+        <PhoneHeader
+          problem={hasProblem ? problem : null}
+          title={`${room.meta.title || problem?.title || 'Pair room'}${room.status === 'reconnecting' ? ' · Reconnecting…' : ''}`}
+          tabs={mobileItems}
+          view={mobileView}
+          onView={openMobileView}
+          onBack={minimize}
+          backLabel="Minimize room"
+          onOpenProblem={hasProblem && problem ? openDesc : undefined}
+          chipsOn={showTags}
+          onToggleChips={hasProblem ? toggleTags : undefined}
+          menuItems={phoneMenu}
+          trailing={
+            <>
+              <PresenceStack meName={room.me?.name || displayName} peers={room.peers} />
+              <IconButton
+                onClick={call.localStream ? call.stop : call.start}
+                aria-label={call.localStream ? 'End video call' : 'Start video call'}
+                aria-pressed={Boolean(call.localStream)}
+                sx={[libIconBtnSx, Boolean(call.localStream) && { bgcolor: tint(LIB_ACCENT, 16), color: LIB_ACCENT, '&:hover': { bgcolor: tint(LIB_ACCENT, 16) } }]}
+              >
+                <VideocamRoundedIcon />
+              </IconButton>
+            </>
+          }
+        />
+      ) : (
       <PaneBar
         height="auto"
         sx={{ minHeight: 48, pt: 'env(safe-area-inset-top)', px: { xs: 0.75, md: 1.5 }, gap: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}
@@ -508,22 +564,12 @@ export default function RoomPage() {
           <CloseRoundedIcon />
         </WsIconButton>
       </PaneBar>
+      )}
 
       <Box
         ref={rootRef}
-        sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, bgcolor: surf.chrome, overflow: 'hidden' }}
+        sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, bgcolor: isMobile ? 'transparent' : surf.chrome, overflow: 'hidden' }}
       >
-        {isMobile && (
-          <Box sx={{ flexShrink: 0, bgcolor: surf.chrome }}>
-            {/* Tap the problem name -> description slides in from the right */}
-            {hasProblem && problem && (
-              <MobileProblemHeader problem={problem} onOpen={openDesc} sx={{ width: '100%', px: 2 }} />
-            )}
-            <PaneBar height={48} sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
-              <PaneTabs size="lg" value={mobileView} onChange={openMobileView} items={mobileItems} />
-            </PaneBar>
-          </Box>
-        )}
 
         {/* Left pane — problem, community tabs and pair chat (desktop only) */}
         {!isMobile && (
@@ -569,7 +615,7 @@ export default function RoomPage() {
         <Box
           ref={setRightEl}
           sx={{
-            bgcolor: surf.chrome,
+            bgcolor: isMobile ? 'transparent' : surf.chrome,
             flex: 1,
             minWidth: 0,
             minHeight: 0,
@@ -577,7 +623,25 @@ export default function RoomPage() {
             display: { xs: mobileView === 'code' ? 'flex' : 'none', md: maximized === 'left' ? 'none' : 'flex' },
           }}
         >
-          <PaneBar sx={{ px: 1.25, gap: 0.5, height: { xs: 52, md: WS.bar }, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
+          {isMobile ? (
+            // Phone toolbar: language, timer, AI assistant. The editor actions live in the header menu.
+            <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 2, height: 56, flexShrink: 0, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
+              <LanguageSelect value={room.language} onChange={room.changeLanguage} problem={problem} langMode={langMode} isMobile={isMobile} pill />
+              <TimerControl sw={sw} size={ctl} lib />
+              <Box sx={{ flex: 1, minWidth: 8 }} />
+              {hasProblem && (
+                <IconButton
+                  onClick={() => setAiOpen((o) => !o)}
+                  aria-label="AI assistant"
+                  aria-pressed={aiOpen}
+                  sx={[libIconBtnSx, aiOpen && { bgcolor: tint(LIB_ACCENT, 16), color: LIB_ACCENT, '&:hover': { bgcolor: tint(LIB_ACCENT, 16) } }]}
+                >
+                  <AutoAwesomeRoundedIcon />
+                </IconButton>
+              )}
+            </Stack>
+          ) : (
+          <PaneBar sx={{ px: 1.25, gap: 0.5, height: WS.bar, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
             <LanguageSelect value={room.language} onChange={room.changeLanguage} problem={problem} langMode={langMode} isMobile={isMobile} />
             <TimerControl sw={sw} size={ctl} />
 
@@ -613,12 +677,13 @@ export default function RoomPage() {
               </>
             )}
           </PaneBar>
-
-          {!isAuthenticated && hasProblem && (
-            <GuestBanner onSignIn={goLogin}>You can run code together as a guest. Sign in to submit and save your progress.</GuestBanner>
           )}
 
-          <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+          {!isAuthenticated && hasProblem && (
+            <GuestBanner lib={isMobile} onSignIn={goLogin}>You can run code together as a guest. Sign in to submit and save your progress.</GuestBanner>
+          )}
+
+          <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', ...(isMobile && { borderRadius: '20px 20px 0 0', overflow: 'hidden' }) }}>
             <CodeEditor
               ref={editorApi}
               language={room.language}
@@ -635,6 +700,30 @@ export default function RoomPage() {
             )}
 
             {/* Console — collapsible testcase / output / submission panel */}
+            {isMobile ? (
+              <PhoneConsoleBar
+                open={consoleOpen}
+                setOpen={setConsoleOpen}
+                showLabel={!(busy || room.runResult || sub.result)}
+                chip={
+                  lastKind === 'submit' ? (
+                    <VerdictChip lib isRunning={sub.status === 'running'} result={sub.result} />
+                  ) : (
+                    <RunChip lib running={room.running} result={room.runResult} />
+                  )
+                }
+                canShare={canShare && isAuthenticated}
+                onShare={() => setShareOpen(true)}
+                actions={
+                  <>
+                    <PhoneRunButton loading={room.running} disabled={busy || !roomReady} onClick={handleRun} />
+                    {hasProblem && <PhoneSubmitButton loading={sub.status === 'running'} disabled={busy || !roomReady} onClick={handleSubmit} />}
+                  </>
+                }
+              >
+                {consoleBody}
+              </PhoneConsoleBar>
+            ) : (
             <ConsoleBar
               isMobile={isMobile}
               open={consoleOpen}
@@ -666,13 +755,14 @@ export default function RoomPage() {
             >
               {consoleBody}
             </ConsoleBar>
+            )}
           </Box>
         </Box>
 
         {/* Phone: Solutions / Discussion / Submissions / Chat sit next to the Code tab */}
-        {isMobile && hasProblem && mountedTabs.solutions && <PhonePanel show={mobileView === 'solutions'}>{solutionsPanel}</PhonePanel>}
-        {isMobile && hasProblem && mountedTabs.discussion && <PhonePanel show={mobileView === 'discussion'}>{discussionPanel}</PhonePanel>}
-        {isMobile && hasProblem && mountedTabs.submissions && <PhonePanel show={mobileView === 'submissions'}>{submissionsPanel}</PhonePanel>}
+        {isMobile && hasProblem && mountedTabs.solutions && <PhonePanel bg="transparent" show={mobileView === 'solutions'}>{solutionsPanel}</PhonePanel>}
+        {isMobile && hasProblem && mountedTabs.discussion && <PhonePanel bg="transparent" show={mobileView === 'discussion'}>{discussionPanel}</PhonePanel>}
+        {isMobile && hasProblem && mountedTabs.submissions && <PhonePanel bg="transparent" show={mobileView === 'submissions'}>{submissionsPanel}</PhonePanel>}
         {isMobile && (
           <Box sx={{ display: mobileView === 'chat' ? 'flex' : 'none', flex: 1, minHeight: 0, flexDirection: 'column', pb: 'env(safe-area-inset-bottom)' }}>{chatPanel}</Box>
         )}
@@ -681,12 +771,16 @@ export default function RoomPage() {
       {isAuthenticated && <InviteFriendsDialog anchorEl={friendsAnchor} onClose={() => setFriendsAnchor(null)} roomId={roomId} roomTitle={room.meta.title || problem?.title} />}
 
       {/* Problem list overlay: picking one switches the problem for BOTH of you */}
-      <ProblemListDrawer open={listOpen} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={switchProblem} disabled={switching} />
+      {isMobile ? (
+        <PhoneProblemList open={listOpen} onOpen={() => setListOpen(true)} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={switchProblem} disabled={switching} />
+      ) : (
+        <ProblemListDrawer open={listOpen} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={switchProblem} disabled={switching} />
+      )}
 
-      {/* Phone: problem description, slides in right -> left */}
-      <DescriptionDrawer open={descOpen} onClose={closeDesc}>
-        {problem ? <ProblemDescription problem={problem} nav={nav} /> : <ProblemSkeletonBody />}
-      </DescriptionDrawer>
+      {/* Phone: the problem statement as a sheet sliding up (see useDescPanel) */}
+      <ProblemSheet open={descOpen} onClose={closeDesc}>
+        {problem ? <PhoneProblemDescription problem={problem} showTags={showTags} nav={nav} /> : <ProblemSkeletonBody />}
+      </ProblemSheet>
 
       {hasProblem && (
         <AiAssistantDrawer
@@ -719,4 +813,6 @@ export default function RoomPage() {
       <FloatingCall call={call} friendName={friend?.name} myName={room.me?.name} hasFriend={!!friend} />
     </Box>
   );
+
+  return isMobile ? <PhoneScope>{page}</PhoneScope> : page;
 }

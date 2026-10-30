@@ -16,7 +16,7 @@ const fmtMem = (kb) => (kb ? `${(kb / 1024).toFixed(1)} MB` : null);
 // The phone workspace shows the console in the Library look (ConsoleBody lib): pill chips and tabs,
 // 16px rounded blocks on cream. The flag reaches the pieces below through this context, so the pair room
 // (which uses the same pieces) keeps its own look.
-const LibContext = createContext(false);
+export const LibContext = createContext(false);
 
 function LibCodeField({ label, value, tone }) {
   return (
@@ -46,6 +46,8 @@ function Field(props) {
   const lib = useContext(LibContext);
   return lib ? <LibCodeField {...props} /> : <CodeField {...props} />;
 }
+// The pair room's console uses the same switchable block.
+export { Field as ConsoleField };
 
 // Verdict chip shown in the console header. lib: plain tinted pill without an icon (phone workspace).
 export function VerdictChip({ isRunning, result, sx, lib = false }) {
