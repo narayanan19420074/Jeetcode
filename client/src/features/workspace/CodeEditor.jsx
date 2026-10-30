@@ -143,8 +143,27 @@ const CodeEditor = forwardRef(function CodeEditor(
   const keyType = (text) => {
     const ed = editorRef.current;
     if (!ed) return;
+    // A word still being composed by the phone keyboard (predictive text) swallows programmatic input,
+    // so commit it first: re-focusing the text area ends the composition and the keyboard stays open.
+    if (composingRef.current) {
+      const area = ed.getContainerDomNode?.().querySelector('textarea');
+      area?.blur();
+      area?.focus();
+      composingRef.current = false;
+    }
     ed.focus();
+    const model = ed.getModel();
+    const before = model?.getVersionId();
     ed.trigger('keyboard', 'type', { text });
+    // Fallback: if the editor ignored the typed text, insert it directly at the cursor(s).
+    if (model && model.getVersionId() === before) {
+      const sels = ed.getSelections() ?? [];
+      ed.executeEdits(
+        'key-bar',
+        sels.map((range) => ({ range, text, forceMoveMarkers: true })),
+        sels.map((r) => ({ ...r, selectionStartLineNumber: r.startLineNumber, selectionStartColumn: r.startColumn + text.length, positionLineNumber: r.startLineNumber, positionColumn: r.startColumn + text.length }))
+      );
+    }
   };
   const keyCommand = (id) => () => {
     const ed = editorRef.current;
