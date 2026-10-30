@@ -447,7 +447,7 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.05;
+    renderer.toneMappingExposure = 0.92;
     mount.appendChild(renderer.domElement);
     renderer.domElement.style.display = 'block';
 
@@ -456,15 +456,15 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
     const envScene = new RoomEnvironment();
     const envRT = pmrem.fromScene(envScene, 0.04);
     scene.environment = envRT.texture;
-    scene.environmentIntensity = 0.85;
+    scene.environmentIntensity = 0.62;
     envScene.dispose?.();
 
     const camera = new THREE.PerspectiveCamera(30, W / H, 0.1, 60);
     camera.position.set(0, 3.0, 11.2);
     camera.lookAt(0, 2.15, 0);
 
-    scene.add(new THREE.HemisphereLight(0xdbeafe, 0x1e293b, 0.6));
-    const key = new THREE.DirectionalLight(0xffffff, 2.4);
+    scene.add(new THREE.HemisphereLight(0xdbeafe, 0x1e293b, 0.45));
+    const key = new THREE.DirectionalLight(0xffffff, 1.9);
     key.position.set(-3.5, 6, 6);
     scene.add(key);
 
@@ -473,7 +473,7 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
     const rim = new THREE.PointLight(rig.accent, 55, 16);
     rim.position.set(3.2, 3.5, -3.2);
     scene.add(rim);
-    const fill = new THREE.PointLight(0xbcd2ff, 14, 16);
+    const fill = new THREE.PointLight(0xbcd2ff, 10, 16);
     fill.position.set(2.6, 2.2, 5.5);
     scene.add(fill);
     if (kind === 'ember') {

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { animate, motion, useReducedMotion } from 'framer-motion';
 import { Box, Typography, alpha, useTheme } from '@mui/material';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import FlagRoundedIcon from '@mui/icons-material/FlagRounded';
@@ -9,6 +10,8 @@ import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import TimerRoundedIcon from '@mui/icons-material/TimerRounded';
 import Alien3D from './Alien3D';
 import { starsFor, testXp } from './gamification';
+import { tint } from '../../dashboard/dashboardUtils';
+import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 
 // Level map. Follows the app theme (dark / light) and the product palette:
 // slate surfaces, blue = current, green = cleared. A slim road winds through
@@ -25,7 +28,17 @@ const NODE = 72;
 // Candy-Crush style map: small nodes, a road that swings almost edge to edge,
 // and a short row height so many levels fit on one screen.
 const DESKTOP = { ROW, TOP, BOTTOM, AMP, NODE, TURN: Math.PI / 2 };
-const MOBILE = { ROW: 112, TOP: 80, BOTTOM: 80, AMP: 0.34, NODE: 56, TURN: Math.PI / 3 };
+const MOBILE = { ROW: 128, TOP: 96, BOTTOM: 96, AMP: 0.3, NODE: 64, TURN: Math.PI / 3 };
+
+// Phone map colours are the same solid colours as the level cards on the dashboard:
+// green = cleared, orange = open (locked levels are the same orange, faded, with a lock).
+const PHONE_STATE = {
+  completed: { fg: '#22A06B', bg: '#EAF6EE' },
+  current: { fg: '#F09A2E', bg: '#FFF2E3' },
+  locked: { fg: '#F09A2E', bg: '#FFF2E3' },
+};
+const PHONE_STAR = '#F2B63C';
+const PHONE_ALIEN = 96; // px, the alien beside the current level
 
 // `dir` is 1 when the road runs downwards from START and -1 when it climbs from the bottom (compact map).
 function roadPath(pts, W, g, sy, dir = 1) {
@@ -255,9 +268,135 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
 }
 
 /* ---------------------------------------------------------------- */
+/* Phone level node: flat solid colours, same as the dashboard cards */
+/* ---------------------------------------------------------------- */
+function PhoneLevelNode({ pattern, index, status, x, y, onClick }) {
+  const pal = useLibraryPalette();
+  const reduce = useReducedMotion();
+  const dark = useTheme().palette.mode === 'dark';
+  const c = PHONE_STATE[status];
+  const locked = status === 'locked';
+  const best = Math.round(pattern.progress.bestScore || 0);
+  const stars = starsFor(pattern.progress.bestScore, pattern.passPercentage);
+  const size = MOBILE.NODE;
+  const box = size + 20;
+  const ringR = size / 2 + 6;
+  const circ = 2 * Math.PI * ringR;
+  // Opaque fills, so the road never shows through a node.
+  const fill = dark ? `color-mix(in srgb, ${c.fg} ${locked ? 10 : 16}%, ${pal.bg})` : locked ? `color-mix(in srgb, ${c.bg} 55%, ${pal.bg})` : c.bg;
+
+  return (
+    <Box
+      component={motion.div}
+      initial={{ opacity: 0, scale: 0.6 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.1 + index * 0.06, type: 'spring', stiffness: 240, damping: 20 }}
+      sx={{ position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, height: size, zIndex: 2 }}
+    >
+      <Box component="svg" width={box} height={box} viewBox={`0 0 ${box} ${box}`} sx={{ position: 'absolute', left: -10, top: -10, transform: 'rotate(-90deg)', overflow: 'visible', pointerEvents: 'none' }}>
+        {!locked && <circle cx={box / 2} cy={box / 2} r={ringR} fill="none" stroke={tint(c.fg, 22)} strokeWidth="4" />}
+        {!locked && best > 0 && (
+          <motion.circle
+            cx={box / 2}
+            cy={box / 2}
+            r={ringR}
+            fill="none"
+            stroke={c.fg}
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeDasharray={circ}
+            initial={{ strokeDashoffset: reduce ? circ * (1 - Math.min(100, best) / 100) : circ }}
+            animate={{ strokeDashoffset: circ * (1 - Math.min(100, best) / 100) }}
+            transition={{ duration: 0.9, delay: 0.4 + index * 0.08, ease: 'easeOut' }}
+          />
+        )}
+      </Box>
+
+      {status === 'current' && (
+        <Box
+          component={motion.div}
+          animate={reduce ? undefined : { scale: [1, 1.45], opacity: [0.45, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
+          sx={{ position: 'absolute', inset: -6, borderRadius: '50%', border: `2px solid ${c.fg}`, pointerEvents: 'none' }}
+        />
+      )}
+
+      <Box
+        onClick={onClick}
+        role="button"
+        tabIndex={locked ? -1 : 0}
+        onKeyDown={(e) => {
+          if (!locked && (e.key === 'Enter' || e.key === ' ')) {
+            e.preventDefault();
+            onClick();
+          }
+        }}
+        aria-label={`Level ${index + 1}: ${pattern.title}${locked ? ' (locked)' : status === 'completed' ? ' (cleared)' : ''}`}
+        aria-disabled={locked}
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          bgcolor: fill,
+          border: `1.5px solid ${pal.border}`,
+          display: 'grid',
+          placeItems: 'center',
+          color: c.fg,
+          cursor: locked ? 'not-allowed' : 'pointer',
+          transition: 'transform .18s ease',
+          '&:active': locked ? undefined : { transform: 'scale(0.96)' },
+          '&:focus-visible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 4 },
+        }}
+      >
+        {locked && <LockRoundedIcon aria-hidden sx={{ fontSize: 28, opacity: 0.8 }} />}
+        {status === 'completed' && <CheckRoundedIcon aria-hidden sx={{ fontSize: 34 }} />}
+        {status === 'current' && <Typography component="span" sx={{ fontWeight: 700, fontSize: 26, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{index + 1}</Typography>}
+      </Box>
+
+      {status === 'completed' && (
+        <Box aria-hidden sx={{ position: 'absolute', left: '50%', bottom: -12, transform: 'translateX(-50%)', display: 'flex', zIndex: 3, pointerEvents: 'none' }}>
+          {[0, 1, 2].map((n) => (
+            <StarRoundedIcon key={n} sx={{ fontSize: 16, mx: '-1px', color: n < stars ? PHONE_STAR : pal.divider, filter: `drop-shadow(0 0 2px ${pal.bg})` }} />
+          ))}
+        </Box>
+      )}
+
+      <Typography
+        component="span"
+        sx={{
+          position: 'absolute',
+          top: size + 16,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: 116,
+          textAlign: 'center',
+          fontSize: 14,
+          lineHeight: '17px',
+          fontWeight: 500,
+          letterSpacing: LIB_TRACKING,
+          px: '4px',
+          py: '1px',
+          borderRadius: '8px',
+          bgcolor: alpha(pal.bg, 0.88),
+          color: locked ? pal.muted : pal.text,
+          display: '-webkit-box',
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
+          pointerEvents: 'none',
+        }}
+      >
+        {index + 1}. {pattern.title}
+      </Typography>
+    </Box>
+  );
+}
+
+/* ---------------------------------------------------------------- */
 /* Walker: follows the road from START to the current level         */
 /* ---------------------------------------------------------------- */
-function Walker({ d, kind, size, onGo, node = NODE, perch = 0 }) {
+function Walker({ d, kind, size, onGo, node = NODE, perch = 0, phone = false }) {
   const reduce = useReducedMotion();
   const pathRef = useRef(null);
   const [pos, setPos] = useState(null);
@@ -277,7 +416,7 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0 }) {
     if (perch) {
       // Phone: no long walk. The alien stands beside the current level.
       const end = path.getPointAtLength(total);
-      setPos({ x: end.x + perch * (node / 2 + 30), y: end.y + 22, lean: 0 });
+      setPos({ x: end.x + perch * (node / 2 + (phone ? 60 : 30)), y: end.y + (phone ? 40 : 22), lean: 0 });
       setWalking(false);
       return undefined;
     }
@@ -326,20 +465,17 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0 }) {
                 position: 'absolute',
                 bottom: '100%',
                 left: '50%',
-                ml: '-48px',
-                width: 96,
+                ml: '-52px',
+                width: 104,
                 mb: 0.5,
-                py: 0.6,
+                ...(phone
+                  ? { height: 32, borderRadius: 999, bgcolor: LIB_ACCENT, fontSize: 14, fontWeight: 500, letterSpacing: LIB_TRACKING, boxShadow: 'none' }
+                  : { py: 0.6, borderRadius: '8px', bgcolor: 'primary.main', fontSize: 12.5, fontWeight: 700, boxShadow: (t) => `0 8px 20px ${alpha(t.palette.primary.main, 0.45)}` }),
                 border: 0,
-                borderRadius: '8px',
-                bgcolor: 'primary.main',
-                color: 'primary.contrastText',
-                fontSize: 12.5,
-                fontWeight: 700,
+                color: '#fff',
                 fontFamily: 'inherit',
                 cursor: 'pointer',
-                boxShadow: (t) => `0 8px 20px ${alpha(t.palette.primary.main, 0.45)}`,
-                '&:after': { content: '""', position: 'absolute', left: '50%', bottom: -5, ml: '-5px', borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: (t) => `6px solid ${t.palette.primary.main}` },
+                '&:after': { content: '""', position: 'absolute', left: '50%', bottom: -5, ml: '-5px', borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: (t) => `6px solid ${phone ? LIB_ACCENT : t.palette.primary.main}` },
               }}
             >
               Start level
@@ -363,6 +499,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
   const [W, setW] = useState(0);
   const dark = theme.palette.mode === 'dark';
   const { primary, success, text } = theme.palette;
+  const pal = useLibraryPalette();
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -392,7 +529,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
   const fullD = useMemo(() => (W ? roadPath(pts, W, g, startY, dir) : ''), [pts, W, g, startY, dir]);
   const walkD = useMemo(() => (W ? roadPath(pts.slice(0, currentIndex + 1), W, g, startY, dir) : ''), [pts, W, g, startY, dir, currentIndex]);
   const cleared = patterns.filter((p) => p.progress.bestScore >= p.passPercentage).length;
-  const trackW = narrow ? 10 : 14;
+  const trackW = compact ? 14 : narrow ? 10 : 14;
 
   // Phone: open the map around the current level (like Candy Crush) instead of at the top.
   const scrolled = useRef(false);
@@ -410,15 +547,14 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
       sx={{
         position: 'relative',
         height: H,
-        borderRadius: compact ? '26px' : narrow ? 0 : '14px',
+        borderRadius: compact ? 0 : narrow ? 0 : '14px',
         overflow: 'hidden',
-        bgcolor: 'background.paper',
-        border: '1px solid',
-        borderColor: 'divider',
+        // Phone map sits directly on the page background (no white card, no glow).
+        bgcolor: compact ? 'transparent' : 'background.paper',
+        ...(compact ? {} : { border: '1px solid', borderColor: 'divider' }),
         ...(narrow && !compact ? { borderLeft: 0, borderRight: 0 } : {}),
-        // Phone map has no dot grid, only the soft glow.
         backgroundImage: compact
-          ? `radial-gradient(640px 320px at 50% 0%, ${alpha(primary.main, dark ? 0.16 : 0.08)}, transparent 70%)`
+          ? 'none'
           : `radial-gradient(${alpha(text.secondary, dark ? 0.22 : 0.28)} 1px, transparent 1px), radial-gradient(640px 320px at 50% 0%, ${alpha(primary.main, dark ? 0.16 : 0.08)}, transparent 70%)`,
         backgroundSize: compact ? '100% 100%' : '22px 22px, 100% 100%',
       }}
@@ -435,14 +571,26 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
                 <feGaussianBlur stdDeviation="7" />
               </filter>
             </defs>
-            {/* track */}
-            <path d={fullD} fill="none" stroke={alpha(text.secondary, dark ? 0.2 : 0.22)} strokeWidth={trackW + 8} strokeLinecap="round" />
-            <path d={fullD} fill="none" stroke={dark ? '#0F172A' : '#F1F5F9'} strokeWidth={trackW} strokeLinecap="round" />
-            {/* travelled stretch */}
-            <motion.path d={walkD} fill="none" stroke="url(#roadLit)" strokeOpacity="0.35" strokeWidth={trackW + 10} strokeLinecap="round" filter="url(#roadGlow)" initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2.6, delay: 0.9, ease: 'easeInOut' }} />
-            <motion.path d={walkD} fill="none" stroke="url(#roadLit)" strokeWidth={trackW - 6} strokeLinecap="round" initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2.6, delay: 0.9, ease: 'easeInOut' }} />
-            {/* lane marker */}
-            <path d={fullD} fill="none" stroke={alpha(text.secondary, 0.55)} strokeWidth="1.5" strokeDasharray="2 10" strokeLinecap="round" style={{ animation: reduce ? 'none' : 'roadFlow 1.2s linear infinite' }} />
+            {compact ? (
+              <>
+                {/* phone road: flat, in the page's cream tones; the travelled part is solid green */}
+                <path d={fullD} fill="none" stroke={pal.divider} strokeWidth={trackW + 4} strokeLinecap="round" />
+                <path d={fullD} fill="none" stroke={pal.chip} strokeWidth={trackW} strokeLinecap="round" />
+                <motion.path d={walkD} fill="none" stroke={PHONE_STATE.completed.fg} strokeWidth={trackW - 4} strokeLinecap="round" initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 0.5, ease: 'easeInOut' }} />
+                <path d={fullD} fill="none" stroke={alpha(pal.muted, 0.5)} strokeWidth="1.5" strokeDasharray="2 10" strokeLinecap="round" style={{ animation: reduce ? 'none' : 'roadFlow 1.2s linear infinite' }} />
+              </>
+            ) : (
+              <>
+                {/* track */}
+                <path d={fullD} fill="none" stroke={alpha(text.secondary, dark ? 0.2 : 0.22)} strokeWidth={trackW + 8} strokeLinecap="round" />
+                <path d={fullD} fill="none" stroke={dark ? '#0F172A' : '#F1F5F9'} strokeWidth={trackW} strokeLinecap="round" />
+                {/* travelled stretch */}
+                <motion.path d={walkD} fill="none" stroke="url(#roadLit)" strokeOpacity="0.35" strokeWidth={trackW + 10} strokeLinecap="round" filter="url(#roadGlow)" initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2.6, delay: 0.9, ease: 'easeInOut' }} />
+                <motion.path d={walkD} fill="none" stroke="url(#roadLit)" strokeWidth={trackW - 6} strokeLinecap="round" initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2.6, delay: 0.9, ease: 'easeInOut' }} />
+                {/* lane marker */}
+                <path d={fullD} fill="none" stroke={alpha(text.secondary, 0.55)} strokeWidth="1.5" strokeDasharray="2 10" strokeLinecap="round" style={{ animation: reduce ? 'none' : 'roadFlow 1.2s linear infinite' }} />
+              </>
+            )}
             <style>{`@keyframes roadFlow { to { stroke-dashoffset: -24; } }`}</style>
           </svg>
 
@@ -452,15 +600,22 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
               component={motion.div}
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
-              sx={{ display: 'flex', alignItems: 'center', gap: 0.5, px: 1.25, py: 0.5, borderRadius: '8px', bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 800, fontSize: 11.5, letterSpacing: '0.1em', boxShadow: (t) => `0 6px 16px ${alpha(t.palette.primary.main, 0.4)}` }}
+              sx={
+                compact
+                  ? { display: 'flex', alignItems: 'center', gap: 0.5, height: 30, px: '12px', borderRadius: 999, bgcolor: pal.player, color: pal.text, fontWeight: 500, fontSize: 14, letterSpacing: LIB_TRACKING }
+                  : { display: 'flex', alignItems: 'center', gap: 0.5, px: 1.25, py: 0.5, borderRadius: '8px', bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 800, fontSize: 11.5, letterSpacing: '0.1em', boxShadow: (t) => `0 6px 16px ${alpha(t.palette.primary.main, 0.4)}` }
+              }
             >
-              <FlagRoundedIcon sx={{ fontSize: 14 }} /> START
+              <FlagRoundedIcon sx={{ fontSize: compact ? 16 : 14 }} /> {compact ? 'Start' : 'START'}
             </Box>
           </Box>
 
           {patterns.map((pattern, i) => {
             const passed = pattern.progress.bestScore >= pattern.passPercentage;
             const status = !pattern.progress.unlocked ? 'locked' : passed ? 'completed' : 'current';
+            if (compact) {
+              return <PhoneLevelNode key={pattern._id} pattern={pattern} index={i} status={status} x={pts[i].x} y={pts[i].y} onClick={() => status !== 'locked' && onOpen(pattern)} />;
+            }
             return (
               <LevelNode
                 key={pattern._id}
@@ -478,7 +633,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
             );
           })}
 
-          {patterns.length > 0 && <Walker key={`${W}-${currentIndex}-${cleared}`} d={walkD} kind={alienKind} size={narrow ? 56 : 136} node={g.NODE} perch={narrow ? (pts[currentIndex].x < W / 2 ? 1 : -1) : 0} onGo={() => onOpen(patterns[currentIndex])} />}
+          {patterns.length > 0 && <Walker key={`${W}-${currentIndex}-${cleared}`} d={walkD} kind={alienKind} size={compact ? PHONE_ALIEN : narrow ? 56 : 136} phone={compact} node={g.NODE} perch={narrow ? (pts[currentIndex].x < W / 2 ? 1 : -1) : 0} onGo={() => onOpen(patterns[currentIndex])} />}
         </>
       )}
     </Box>
