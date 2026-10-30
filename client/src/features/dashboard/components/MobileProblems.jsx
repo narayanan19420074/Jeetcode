@@ -34,6 +34,7 @@ import SignalCellularAlt2BarRoundedIcon from '@mui/icons-material/SignalCellular
 import SignalCellularAltRoundedIcon from '@mui/icons-material/SignalCellularAltRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
+import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
 import { problemsApi } from '../../../api/problemsApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboardUtils';
@@ -116,6 +117,62 @@ function ProblemRow({ p, index, isDaily, saved, onStar, pal }) {
         {saved ? <StarRoundedIcon sx={{ color: 'warning.main' }} /> : <StarBorderRoundedIcon />}
       </IconButton>
     </Box>
+  );
+}
+
+const BACK_TO_TOP_AFTER = 600; // px scrolled before the button appears
+
+// Floating "back to top" button. It stays hidden until the reader has scrolled down the list.
+function BackToTopButton({ pal, bottom }) {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      setVisible(window.scrollY > BACK_TO_TOP_AFTER);
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  const goTop = () => {
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  };
+
+  return (
+    <IconButton
+      onClick={goTop}
+      aria-label="Back to top"
+      tabIndex={visible ? 0 : -1}
+      aria-hidden={!visible}
+      sx={(t) => ({
+        position: 'fixed',
+        right: 16,
+        bottom,
+        zIndex: t.zIndex.appBar - 10,
+        width: 44,
+        height: 44,
+        bgcolor: pal.player,
+        color: pal.text,
+        boxShadow: '0 2px 10px rgba(0,0,0,0.18)',
+        '&:hover': { bgcolor: pal.player },
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'none' : 'translateY(8px)',
+        pointerEvents: visible ? 'auto' : 'none',
+        transition: 'opacity 160ms, transform 160ms',
+      })}
+    >
+      <KeyboardArrowUpRoundedIcon />
+    </IconButton>
   );
 }
 
@@ -508,6 +565,10 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
       />
     </Box>
     <MiniPlayer featured={featured} aboveNav={isAuthenticated} />
+    <BackToTopButton
+      pal={pal}
+      bottom={`calc(${isAuthenticated ? 72 : 12}px + ${featured ? 69 : 12}px + env(safe-area-inset-bottom))`}
+    />
     </LibraryFont>
   );
 }

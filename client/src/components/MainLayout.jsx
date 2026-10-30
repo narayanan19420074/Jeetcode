@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import { Box } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Outlet, useLocation } from 'react-router-dom';
@@ -10,7 +11,17 @@ import NotificationsWatcher from '../features/notifications/NotificationsWatcher
 import { LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
 
 export default function MainLayout() {
-  const { pathname, search } = useLocation();
+  const { pathname, search, hash } = useLocation();
+
+  // Every page change starts at the top. The instant jump also cancels any smooth scroll that is
+  // still running (for example the Aptitude map centring on the current level), so it cannot
+  // carry over to the next page. A layout effect runs before the new page's own effects, so pages
+  // that scroll on mount (like the Aptitude map) still work.
+  useLayoutEffect(() => {
+    if (hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const bottomNav = showMobileBottomNav(pathname);
   const libraryLook = isLibraryRoute(pathname, search);
   // Pages with their own phone header (Problems, Aptitude levels, Companies, You, Settings, Workspace, Store, Contest, Explore, Friends, Leaderboard, Study Plan) hide the top bar on phones. It stays mounted so the coin polling keeps running.
