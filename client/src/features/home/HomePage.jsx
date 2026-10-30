@@ -14,8 +14,9 @@ import {
   Stack,
   Tooltip,
   Typography,
+  useMediaQuery,
 } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { alpha, useTheme } from '@mui/material/styles';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
@@ -27,6 +28,7 @@ import { apiClient } from '../../api/apiClient';
 import { toggleThemeMode } from '../../app/uiSlice';
 import { useContest, inr, fmtDuration } from '../contest/contestUtils';
 import ContestBand from './ContestBand';
+import MobileLanding from './MobileLanding';
 import { DISPLAY_FONT } from './anim';
 
 // --- Copy rules for this page -------------------------------------------
@@ -311,6 +313,8 @@ export default function HomePage() {
   const authed = useSelector((s) => s.auth.isAuthenticated);
   const offerEnds = useLaunchOffer();
   const { contest } = useContest();
+  const theme = useTheme();
+  const isPhone = useMediaQuery(theme.breakpoints.down('md'), { noSsr: true });
 
   const go = (path) => () => navigate(path);
   const goStart = () => navigate(authed ? '/dashboard' : '/signup');
@@ -363,6 +367,25 @@ export default function HomePage() {
       a: 'Yes, anytime from your account. You keep Pro until the end of the period you paid for. Details are on the Refund & Cancellation page.',
     },
   ];
+
+  // Phones get the Library look (same surface and rules as the dashboard home).
+  if (isPhone) {
+    return (
+      <MobileLanding
+        authed={authed}
+        offerEnds={offerEnds}
+        contest={contest}
+        faq={faq}
+        startLabel={startLabel}
+        goStart={goStart}
+        go={go}
+        heroCtaRef={heroCtaRef}
+        finalCtaRef={finalCtaRef}
+        showSticky={showSticky}
+        data={{ STATS, STEPS, FREE_FEATURES, PRO_FEATURES, PRICE_MONTH, PRICE_YEAR }}
+      />
+    );
+  }
 
   return (
     <Box id="top" sx={{ minHeight: '100dvh', bgcolor: 'background.default', overflowX: 'hidden' }}>

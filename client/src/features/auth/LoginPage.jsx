@@ -17,7 +17,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { loginUser, googleSignIn } from './authSlice';
-import AuthShell, { AuthField } from './AuthShell';
+import AuthShell, { AuthField, useAuthPhone } from './AuthShell';
+import { LIB_TRACKING, libIconBtnSx, libTintBtnSx } from '../dashboard/components/libraryStyle';
 import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
 
 // These env vars must exist in client/.env. GITHUB redirect URI must EXACTLY
@@ -34,10 +35,15 @@ const iconBtnSx = {
   borderRadius: 1,
 };
 
+// Phone: 40px round cream buttons, same as the other Library pages.
+const phoneIconBtnSx = { ...libIconBtnSx, '&.Mui-disabled': { color: 'var(--lib-muted)', opacity: 0.6 } };
+
 export default function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+  const phone = useAuthPhone();
+  const socialSx = phone ? phoneIconBtnSx : iconBtnSx;
   const { status, error } = useSelector((s) => s.auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -112,6 +118,7 @@ export default function LoginPage() {
   return (
     <AuthShell
       title="Sign in to JeetCode"
+      subtitle="Welcome back. Pick up where you left off."
       footer={
         <>
           New to JeetCode?{' '}
@@ -145,7 +152,7 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Typography variant="body2" sx={{ textAlign: 'right', mt: -1 }}>
+          <Typography variant="body2" sx={{ textAlign: 'right', mt: -1, ...(phone && { fontSize: 15, letterSpacing: LIB_TRACKING }) }}>
             <Link component={RouterLink} to="/forgot-password" underline="hover">
               Forgot password?
             </Link>
@@ -164,8 +171,8 @@ export default function LoginPage() {
         </Stack>
       </Box>
 
-      <Divider sx={{ my: 2.5 }}>
-        <Typography variant="caption" color="text.secondary">
+      <Divider sx={{ my: phone ? 3 : 2.5, '&::before, &::after': { borderColor: phone ? 'var(--lib-divider)' : undefined } }}>
+        <Typography variant="caption" sx={phone ? { fontSize: 14, letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' } : { color: 'text.secondary' }}>
           or continue with
         </Typography>
       </Divider>
@@ -178,7 +185,7 @@ export default function LoginPage() {
               <IconButton
                 aria-label="Continue with Google"
                 onClick={() => window.google?.accounts?.id?.prompt()}
-                sx={iconBtnSx}
+                sx={socialSx}
               >
                 <GoogleIcon fontSize="small" />
               </IconButton>
@@ -198,7 +205,7 @@ export default function LoginPage() {
         )}
 
         <Tooltip title="GitHub">
-          <IconButton aria-label="Continue with GitHub" onClick={handleGithubClick} sx={iconBtnSx}>
+          <IconButton aria-label="Continue with GitHub" onClick={handleGithubClick} sx={socialSx}>
             <GitHubIcon fontSize="small" />
           </IconButton>
         </Tooltip>
@@ -206,18 +213,24 @@ export default function LoginPage() {
         {/* LinkedIn: pending product approval on LinkedIn's side */}
         <Tooltip title="LinkedIn (coming soon)">
           <span>
-            <IconButton aria-label="LinkedIn (coming soon)" disabled sx={iconBtnSx}>
+            <IconButton aria-label="LinkedIn (coming soon)" disabled sx={socialSx}>
               <LinkedInIcon fontSize="small" />
             </IconButton>
           </span>
         </Tooltip>
       </Stack>
 
-      <Typography variant="body2" sx={{ textAlign: 'center', mt: 2.5 }}>
-        <Link component={RouterLink} to="/dashboard" underline="hover" color="text.secondary">
+      {phone ? (
+        <Button component={RouterLink} to="/dashboard" fullWidth sx={{ ...libTintBtnSx, mt: 3 }}>
           Continue as guest
-        </Link>
-      </Typography>
+        </Button>
+      ) : (
+        <Typography variant="body2" sx={{ textAlign: 'center', mt: 2.5 }}>
+          <Link component={RouterLink} to="/dashboard" underline="hover" color="text.secondary">
+            Continue as guest
+          </Link>
+        </Typography>
+      )}
     </AuthShell>
   );
 }
