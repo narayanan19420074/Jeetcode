@@ -15,7 +15,7 @@ const PAL = {
   nova: { l: '#F3E8FF', m: '#A855F7', d: '#4C1D95', x: '#2E1065' },
 };
 
-const BRAND_BLIP = { l: '#FDE1B8', m: '#F7A33B', d: '#E8590C', x: '#7C2D12' };
+const BRAND_BLIP = { l: '#FBC27A', m: '#F07C24', d: '#D9480F', x: '#7C2D12' };
 
 const pivot = (x, y) => ({ transformBox: 'view-box', transformOrigin: `${x}px ${y}px` });
 const STEP = 0.6; // seconds per full stride

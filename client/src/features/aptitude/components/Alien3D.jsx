@@ -24,7 +24,7 @@ const FORMS = {
 };
 
 // Brand tone (phone aptitude map): the green Blip wears the logo's bright orange instead.
-const BRAND_BLIP = { skin: 0xf7a33b, belly: 0xffedd5, glove: 0xffffff, shoe: 0xe8590c, accent: 0xffc27a, iris: 0x7c2d12, glow: 0xf7a33b };
+const BRAND_BLIP = { skin: 0xf07c24, belly: 0xffe4c7, glove: 0xffffff, shoe: 0xd9480f, accent: 0xf7a33b, iris: 0x7c2d12, glow: 0xf7a33b };
 
 /* ------------------------------ textures ------------------------------ */
 const cvs = (w, h = w) => {
