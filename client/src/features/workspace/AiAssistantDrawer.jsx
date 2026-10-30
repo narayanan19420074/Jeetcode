@@ -22,7 +22,8 @@ const welcomeMessage = (note) => ({
 // starts fresh on every problem.
 //   getCode      () => current code (the room passes the shared document)
 //   welcomeNote  optional extra sentence in the first message
-export default function AiAssistantDrawer({ open, onClose, slug, language, getCode, isAuthenticated, onSignIn, welcomeNote }) {
+//   autoPrompt   optional { id, text }: sends that question once when the drawer opens (Fix / Hint from the AI menu)
+export default function AiAssistantDrawer({ open, onClose, slug, language, getCode, isAuthenticated, onSignIn, welcomeNote, autoPrompt }) {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const WELCOME = useMemo(() => welcomeMessage(welcomeNote), [welcomeNote]);
@@ -33,8 +34,8 @@ export default function AiAssistantDrawer({ open, onClose, slug, language, getCo
     endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [messages, loading, open]);
 
-  const send = async () => {
-    const question = input.trim();
+  const send = async (override) => {
+    const question = (typeof override === 'string' ? override : input).trim();
     if (!question || loading || !slug) return;
     if (!isAuthenticated) {
       onSignIn();
@@ -53,6 +54,14 @@ export default function AiAssistantDrawer({ open, onClose, slug, language, getCo
       setLoading(false);
     }
   };
+
+  const lastAuto = useRef(null);
+  useEffect(() => {
+    if (!open || !autoPrompt || lastAuto.current === autoPrompt.id) return;
+    lastAuto.current = autoPrompt.id;
+    send(autoPrompt.text);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, autoPrompt]);
 
   return (
     <Drawer anchor="right" open={open} onClose={onClose} slotProps={{ paper: { sx: { width: 'min(400px, 100vw)', borderRadius: 0 } } }}>
@@ -134,7 +143,7 @@ export default function AiAssistantDrawer({ open, onClose, slug, language, getCo
             <WsIconButton
               title="Send"
               size="lg"
-              onClick={send}
+              onClick={() => send()}
               disabled={loading || !input.trim()}
               sx={(t) => ({
                 color: t.palette.primary.contrastText,
