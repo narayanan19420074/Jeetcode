@@ -399,8 +399,9 @@ export default function Navbar() {
           </Box>
         )}
 
+        {/* On phones the theme switch lives in the menu drawer only */}
         <Tooltip title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
-          <IconButton onClick={() => dispatch(toggleThemeMode())} color="inherit" aria-label="Toggle color theme" sx={phoneBtnSx}>
+          <IconButton onClick={() => dispatch(toggleThemeMode())} color="inherit" aria-label="Toggle color theme" sx={[phoneBtnSx, { display: { xs: 'none', md: 'inline-flex' } }]}>
             {mode === 'dark' ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
           </IconButton>
         </Tooltip>
