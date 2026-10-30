@@ -51,7 +51,7 @@ const MockResultPage = lazy(() => import('./features/mock/MockResultPage'));
 const VisualizerPage = lazy(() => import('./features/visualizer/VisualizerPage'));
 const PairLobbyPage = lazy(() => import('./features/room/PairLobbyPage'));
 const RoomPage = lazy(() => import('./features/room/RoomPage'));
-const PricingPage = lazy(() => import('./features/store/PricingPage'));
+const PlansPage = lazy(() => import('./features/store/PlansPage'));
 const SettingsPage = lazy(() => import('./features/settings/SettingsPage'));
 // REMOVED: LearnHomePage — the standalone "/learn" topic list is gone.
 // Topics are now reached via a pattern's Learn card on AptitudePatternDetailPage.
@@ -233,7 +233,9 @@ export default function App() {
         <Route path="/aptitude/:slug/results" element={<Navigate to=".." relative="path" replace />} />
         {/* Contest now lives inside the dashboard so the sidebar stays visible. */}
         <Route path="/contest" element={<Navigate to="/dashboard?view=contest" replace />} />
-        <Route path="/pricing" element={<Suspense fallback={<RouteFallback />}><PricingPage /></Suspense>} />
+        <Route path="/plans" element={<Suspense fallback={<RouteFallback />}><PlansPage /></Suspense>} />
+        {/* Old pricing URL: still linked from several places, so keep it working. */}
+        <Route path="/pricing" element={<Navigate to="/plans" replace />} />
         <Route path="/settings/*" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><SettingsPage /></Suspense></ProtectedRoute>} />
         {/* REMOVED: <Route path="/learn" .../> (LearnHomePage) */}
         <Route path="/learn/:topicSlug" element={<Suspense fallback={<RouteFallback />}><LearnTopicPage /></Suspense>} />

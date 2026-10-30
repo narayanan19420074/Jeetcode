@@ -115,7 +115,7 @@ const PRIMARY_LINKS = [
 const EXPLORE_LINKS = [
   { to: '/aptitude', label: 'One for All Aptitude', icon: CalculateRoundedIcon },
   { to: '/visualizer', label: 'Visualizer', icon: BarChartRoundedIcon },
-  { to: '/pricing', label: 'Pricing', icon: WorkspacePremiumRoundedIcon },
+  { to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon },
 ];
 
 // NOTE: Admin deliberately has no Navbar link. Admins reach /admin/login
@@ -580,6 +580,7 @@ export default function Navbar() {
 
           <Box sx={(t) => ({ borderTop: `1px solid ${libPal(t).divider}` })}>
             <MenuRow to="/store" label="Store" icon={StorefrontRoundedIcon} active={isActivePath(pathname, '/store')} onNavigate={() => setMobileOpen(false)} />
+            <MenuRow to="/plans" label="Plans" icon={WorkspacePremiumRoundedIcon} active={isActivePath(pathname, '/plans')} onNavigate={() => setMobileOpen(false)} />
             {DASH_SECTIONS.map(({ to, label, icon, view }) => (
               <MenuRow
                 key={label}
