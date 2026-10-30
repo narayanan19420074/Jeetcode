@@ -28,7 +28,7 @@ const STATUS_LABEL = Object.fromEntries(STATUS_OPTIONS.map((s) => [s.value, s.la
 
 const scrollRow = { display: 'flex', gap: 1, overflowX: 'auto', mx: -2, px: 2, pb: 0.5, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } };
 
-function DifficultyTag({ difficulty }) {
+export function DifficultyTag({ difficulty }) {
   const meta = difficultyMeta(difficulty);
   const color = DIFF_COLOR[meta.label] || 'var(--jc-pending)';
   return (

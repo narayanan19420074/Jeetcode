@@ -16,6 +16,7 @@ import {
   Tooltip,
   Typography,
   alpha,
+  useMediaQuery,
 } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
@@ -30,6 +31,7 @@ import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { motion } from 'framer-motion';
 import QuestionStimulus from './components/QuestionStimulus';
+import MobilePracticeQuestion, { MobileQuestionState } from './components/MobilePracticeQuestion';
 import { Confetti, XpPop } from './components/MotionBits';
 import { XP_PER_SOLVE } from './components/gamification';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './components/aptitudeUi';
@@ -104,6 +106,8 @@ export default function AptitudePracticeQuestionPage() {
   const [checking, setChecking] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [bookmarked, setBookmarked] = useState(false);
+  // Phones and small tablets get their own layout (the site navbar is hidden there, see MainLayout).
+  const mobile = useMediaQuery((t) => t.breakpoints.down('md'), { noSsr: true });
 
   const startRef = useRef(Date.now());
   const stoppedRef = useRef(false);
@@ -195,6 +199,7 @@ export default function AptitudePracticeQuestionPage() {
     return () => window.removeEventListener('keydown', onKey);
   }, [result, check, go, data]);
 
+  if (mobile && !data) return <MobileQuestionState slug={slug} error={error} />;
   if (error && !data) {
     return (
       <Container maxWidth="sm" sx={{ py: 6 }}>
@@ -225,6 +230,27 @@ export default function AptitudePracticeQuestionPage() {
     if (i === selected) return 'wrong';
     return 'dim';
   };
+
+  if (mobile) {
+    return (
+      <MobilePracticeQuestion
+        slug={slug}
+        data={data}
+        result={result}
+        selected={selected}
+        checking={checking}
+        elapsed={elapsed}
+        bookmarked={bookmarked}
+        error={error}
+        onDismissError={() => setError(null)}
+        onSelect={setSelected}
+        onCheck={check}
+        onRetry={retry}
+        onGo={(id) => (id ? go(id) : navigate(`/aptitude/${slug}`))}
+        onBookmark={toggleBookmark}
+      />
+    );
+  }
 
   return (
     <Container maxWidth="md" sx={{ py: { xs: 2.5, md: 4 } }}>
