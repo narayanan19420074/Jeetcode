@@ -1,6 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Link, Paper, Typography, TextField } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
+import BrandMark from '../../components/BrandMark';
 
 // Shared GitHub-style shell for Login / Signup: logo + title on top,
 // a small outlined card for the form, and a second small card below it
@@ -25,7 +26,8 @@ export default function AuthShell({ title, children, footer }) {
         aria-label="JeetCode home"
         sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', color: 'inherit', mb: 2 }}
       >
-        <CodeRoundedIcon sx={{ fontSize: 40, color: 'primary.main' }} />
+        <CodeRoundedIcon sx={{ fontSize: 40, color: 'primary.main', display: { xs: 'none', md: 'block' } }} />
+        <BrandMark size={56} sx={{ display: { xs: 'block', md: 'none' } }} />
       </Box>
 
       <Typography component="h1" sx={{ fontSize: '1.5rem', fontWeight: 300, mb: 2.5, textAlign: 'center' }}>

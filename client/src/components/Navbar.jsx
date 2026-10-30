@@ -53,6 +53,7 @@ import { logoutUser, userUpdated } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
 import NotificationBell from '../features/notifications/NotificationBell';
 import ActivateLicenseModal from '../components/ActivateLicenseModal';
+import BrandMark, { BRAND_AMBER, BRAND_TEXT_LIGHT } from './BrandMark';
 
 // Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
 import { LIBRARY_PALETTE, LIB_FONT, LibraryFont, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
@@ -63,30 +64,31 @@ const libPal = (t) => LIBRARY_PALETTE[t.palette.mode === 'dark' ? 'dark' : 'ligh
 const TRACKING = '0.03em';
 const ACCENT_GRADIENT = `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`;
 
-// Logo icon: a gradient tile on phones, the plain icon on desktop.
+// Logo: the plain icon on desktop, the amber app-logo tile on phones (same drawing as the installed app icon).
 function LogoMark() {
   return (
-    <Box
-      sx={(t) => ({
-        width: 24,
-        height: 24,
-        display: 'grid',
-        placeItems: 'center',
-        flexShrink: 0,
-        color: 'primary.main',
-        [t.breakpoints.down('md')]: { width: 40, height: 40, borderRadius: '12px', color: '#fff', background: ACCENT_GRADIENT, boxShadow: `0 8px 16px -8px ${ACCENT}` },
-      })}
-    >
-      <CodeRoundedIcon sx={(t) => ({ fontSize: 24, [t.breakpoints.down('md')]: { fontSize: 22 } })} />
-    </Box>
+    <>
+      <Box sx={{ display: { xs: 'none', md: 'grid' }, width: 24, height: 24, placeItems: 'center', flexShrink: 0, color: 'primary.main' }}>
+        <CodeRoundedIcon sx={{ fontSize: 24 }} />
+      </Box>
+      <BrandMark size={40} sx={{ display: { xs: 'block', md: 'none' } }} />
+    </>
   );
 }
 
+// Phone wordmark follows the Library headings: 20/24, bold, no extra tracking; "Code" in the brand amber.
 function LogoName() {
   return (
-    <Typography variant="h6" sx={(t) => ({ fontWeight: 800, letterSpacing: '-0.02em', [t.breakpoints.down('md')]: { letterSpacing: '-0.01em', lineHeight: 1.15 } })}>
+    <Typography
+      variant="h6"
+      sx={(t) => ({
+        fontWeight: 800,
+        letterSpacing: '-0.02em',
+        [t.breakpoints.down('md')]: { fontSize: 20, lineHeight: '24px', fontWeight: 700, letterSpacing: 0 },
+      })}
+    >
       Jeet
-      <Box component="span" sx={(t) => ({ color: 'primary.main', [t.breakpoints.down('md')]: { color: ACCENT } })}>
+      <Box component="span" sx={(t) => ({ color: 'primary.main', [t.breakpoints.down('md')]: { color: t.palette.mode === 'dark' ? BRAND_AMBER : BRAND_TEXT_LIGHT } })}>
         Code
       </Box>
     </Typography>
@@ -308,7 +310,7 @@ export default function Navbar() {
         <Box
           component={RouterLink}
           to={isAuthenticated ? '/dashboard' : '/'}
-          sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', color: 'inherit', mr: { xs: 0, md: 2 } }}
+          sx={{ display: 'flex', alignItems: 'center', gap: { xs: '12px', md: 1 }, textDecoration: 'none', color: 'inherit', mr: { xs: 0, md: 2 } }}
         >
           <LogoMark />
           <LogoName />
@@ -504,7 +506,7 @@ export default function Navbar() {
         }}
       >
         <LibraryFont sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 1.75, height: 60, flexShrink: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px', px: 1.75, height: 60, flexShrink: 0 }}>
           <LogoMark />
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <LogoName />
