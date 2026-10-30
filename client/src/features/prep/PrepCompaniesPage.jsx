@@ -13,6 +13,7 @@ import CompanyQuestRoadmap from './CompanyQuestRoadmap';
 import useViewportFill from '../dashboard/useViewportFill';
 import BackToDashboard from '../../components/BackToDashboard';
 import MobilePrepCompanies from './MobilePrepCompanies';
+import MobileCompanyRoadmap from './MobileCompanyRoadmap';
 
 const PAGE = 24;
 const norm = (s) => String(s || '').trim().toLowerCase();
@@ -159,7 +160,7 @@ export default function PrepCompaniesPage() {
               transition={{ type: 'spring', stiffness: 260, damping: 26 }}
               style={{ paddingTop: 'calc(8px + env(safe-area-inset-top))' }}
             >
-              <CompanyQuestRoadmap company={selected} onBack={closeCompany} />
+              <MobileCompanyRoadmap company={selected} onBack={closeCompany} />
             </motion.div>
           )}
         </AnimatePresence>
