@@ -481,7 +481,7 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0, phone = false }) 
               Start level
             </Box>
           )}
-          <Alien3D kind={kind} size={size} walking={walking} heading={pos.lean / 12} />
+          <Alien3D kind={kind} size={size} walking={walking} heading={pos.lean / 12} brand={phone} />
         </Box>
       )}
     </>

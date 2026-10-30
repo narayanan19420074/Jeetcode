@@ -23,6 +23,9 @@ const FORMS = {
   nova: { skin: 0x1a1550, belly: 0x2e2a8a, glove: 0xfde68a, shoe: 0x6d28d9, accent: 0xa78bfa, iris: 0x22d3ee, glow: 0xa78bfa },
 };
 
+// Brand tone (phone aptitude map): the green Blip wears the logo's bright orange instead.
+const BRAND_BLIP = { skin: 0xf7a33b, belly: 0xffedd5, glove: 0xffffff, shoe: 0xe8590c, accent: 0xffc27a, iris: 0x7c2d12, glow: 0xf7a33b };
+
 /* ------------------------------ textures ------------------------------ */
 const cvs = (w, h = w) => {
   const c = document.createElement('canvas');
@@ -105,8 +108,8 @@ function magmaSkin() {
 }
 
 /* -------------------------------- build -------------------------------- */
-function buildMascot(kind) {
-  const f = FORMS[kind] ?? FORMS.blip;
+function buildMascot(kind, brand = false) {
+  const f = brand && kind === 'blip' ? BRAND_BLIP : FORMS[kind] ?? FORMS.blip;
   const disposables = [];
   const track = (o) => {
     disposables.push(o);
@@ -420,7 +423,7 @@ function webglOk() {
  *   spin    — gentle showcase sway (hero use)
  *   talking — moves the mouth like speech (Blip's Teach guide uses it)
  */
-export default function Alien3D({ kind = 'blip', size = 140, walking = false, heading = 0, wave = true, spin = false, talking = false, sx }) {
+export default function Alien3D({ kind = 'blip', size = 140, walking = false, heading = 0, wave = true, spin = false, talking = false, brand = false, sx }) {
   const mountRef = useRef(null);
   const live = useRef({ walking, heading, wave, spin, talking });
   const [fallback, setFallback] = useState(false);
@@ -468,7 +471,7 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
     key.position.set(-3.5, 6, 6);
     scene.add(key);
 
-    const rig = buildMascot(kind);
+    const rig = buildMascot(kind, brand);
     scene.add(rig.root);
     const rim = new THREE.PointLight(rig.accent, 55, 16);
     rim.position.set(3.2, 3.5, -3.2);
@@ -584,8 +587,8 @@ export default function Alien3D({ kind = 'blip', size = 140, walking = false, he
       renderer.dispose();
       renderer.domElement.remove();
     };
-  }, [kind, size]);
+  }, [kind, size, brand]);
 
-  if (fallback) return <AlienWalker kind={kind} size={size * 0.8} walking={walking} lean={heading * 8} wave={wave} sx={sx} />;
+  if (fallback) return <AlienWalker kind={kind} brand={brand} size={size * 0.8} walking={walking} lean={heading * 8} wave={wave} sx={sx} />;
   return <Box ref={mountRef} sx={{ width: size, height: Math.round(size * 1.3), flexShrink: 0, ...sx }} />;
 }
