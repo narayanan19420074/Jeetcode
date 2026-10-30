@@ -53,7 +53,7 @@ import { logoutUser, userUpdated } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
 import NotificationBell from '../features/notifications/NotificationBell';
 import ActivateLicenseModal from '../components/ActivateLicenseModal';
-import BrandMark, { BRAND_AMBER, BRAND_TEXT_LIGHT } from './BrandMark';
+import BrandMark, { BRAND_ORANGE, BRAND_TEXT_LIGHT } from './BrandMark';
 
 // Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
 import { LIBRARY_PALETTE, LIB_FONT, LibraryFont, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
@@ -76,7 +76,7 @@ function LogoMark() {
   );
 }
 
-// Phone wordmark follows the Library headings: 20/24, bold, no extra tracking; "Code" in the brand amber.
+// Phone wordmark follows the Library headings: 20/24, bold, no extra tracking; "Code" in the brand orange.
 function LogoName() {
   return (
     <Typography
@@ -88,7 +88,7 @@ function LogoName() {
       })}
     >
       Jeet
-      <Box component="span" sx={(t) => ({ color: 'primary.main', [t.breakpoints.down('md')]: { color: t.palette.mode === 'dark' ? BRAND_AMBER : BRAND_TEXT_LIGHT } })}>
+      <Box component="span" sx={(t) => ({ color: 'primary.main', [t.breakpoints.down('md')]: { color: t.palette.mode === 'dark' ? BRAND_ORANGE : BRAND_TEXT_LIGHT } })}>
         Code
       </Box>
     </Typography>
