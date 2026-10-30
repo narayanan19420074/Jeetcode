@@ -16,6 +16,7 @@ import CheckoutDialog from './CheckoutDialog';
 import CoursePanel from './CoursePanel';
 import MobileStore from './MobileStore';
 import { CoinsTab, OrdersTab } from './AccountTabs';
+import { MobileOrders, MobileWallet } from './MobileAccount';
 import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
 import BackToDashboard from '../../components/BackToDashboard';
 
@@ -167,10 +168,10 @@ export default function StorePage() {
 
   const dialogs = (
     <>
-      <FFDialog open={tab === 'orders'} onClose={() => setTab('shop')} title="My orders" wide>
+      <FFDialog open={!isMobile && tab === 'orders'} onClose={() => setTab('shop')} title="My orders" wide>
         <OrdersTab orders={orders} onChanged={refresh} onOpenCourse={setCourseSlug} onGoShop={() => setTab('shop')} />
       </FFDialog>
-      <FFDialog open={tab === 'coins'} onClose={() => setTab('shop')} title="Coin wallet" wide>
+      <FFDialog open={!isMobile && tab === 'coins'} onClose={() => setTab('shop')} title="Coin wallet" wide>
         <CoinsTab wallet={wallet} refreshKey={refreshKey} onClaim={claim} claiming={claiming} />
       </FFDialog>
 
@@ -185,10 +186,16 @@ export default function StorePage() {
     </>
   );
 
-  // Phone: its own layout (same look as the phone Problems and You pages). Orders, wallet, checkout and courses stay in their dialogs.
+  // Phone: its own layouts (same look as the phone Problems and You pages). The store, My orders and the wallet are
+  // full screens; checkout and courses stay in their dialogs.
   if (isMobile) {
     return (
       <>
+        {tab === 'orders' ? (
+          <MobileOrders orders={orders} onBack={() => setTab('shop')} onChanged={refresh} onOpenCourse={setCourseSlug} onGoShop={() => setTab('shop')} />
+        ) : tab === 'coins' ? (
+          <MobileWallet wallet={wallet} refreshKey={refreshKey} onClaim={claim} claiming={claiming} onBack={() => setTab('shop')} />
+        ) : (
         <MobileStore
           isAuthenticated={isAuthenticated}
           balance={balance}
@@ -212,6 +219,7 @@ export default function StorePage() {
           error={error}
           onBuy={buy}
         />
+        )}
         {dialogs}
       </>
     );

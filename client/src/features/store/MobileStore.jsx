@@ -24,7 +24,7 @@ import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
 // Phone layout of the Store in the Library look (same as the phone Problems, Home and You pages): Roboto type,
 // warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section titles, cream tiles. The order
 // is what a shopper needs first: coins and the daily reward, then categories, then items.
-// Orders and the wallet still open in their dialogs (see StorePage). No top navigation bar on phones.
+// Orders and the wallet open as full phone screens (see MobileAccount). No top navigation bar on phones.
 
 const ACCENT = LIB_ACCENT;
 
