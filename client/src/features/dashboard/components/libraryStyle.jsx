@@ -43,14 +43,14 @@ const TYPOGRAPHY = { fontFamily: LIB_FONT, ...Object.fromEntries(VARIANTS.map((v
 // Dashboard views that are full phone screens in the Library look.
 const LIBRARY_VIEWS = ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests'];
 
-// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude, Companies, You, Settings, Store, Plans and the Contest, Explore, Friends, Leaderboard, Study Plan and Quests views.
+// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude (list and topic pages), Companies, You, Settings, Store, Plans and the Contest, Explore, Friends, Leaderboard, Study Plan and Quests views.
 export const isLibraryRoute = (pathname, search) => {
   const path = pathname.replace(/\/+$/, '');
   if (path === '/dashboard') {
     const view = new URLSearchParams(search).get('view');
     return !view || LIBRARY_VIEWS.includes(view);
   }
-  return path === '/store' || path === '/problems' || path.startsWith('/problems/') || path.startsWith('/settings/') || ['/aptitude', '/prep', '/you', '/settings', '/plans'].includes(path);
+  return path === '/store' || /^\/aptitude\/[^/]+$/.test(path) || path === '/problems' || path.startsWith('/problems/') || path.startsWith('/settings/') || ['/aptitude', '/prep', '/you', '/settings', '/plans'].includes(path);
 };
 
 // Roboto for everything inside (menus and dialogs opened from it included).

@@ -20,6 +20,7 @@ import {
   Tooltip,
   Typography,
   alpha,
+  useMediaQuery,
 } from '@mui/material';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
@@ -45,6 +46,7 @@ import Alien3D from './components/Alien3D';
 import { CountUp, XpBar, popChild, staggerParent } from './components/MotionBits';
 import { moduleXp, rankForXp } from './components/gamification';
 import { DIFFICULTY, formatClock, formatDuration } from './components/aptitudeUi';
+import MobilePatternDetail, { MobilePatternError, MobilePatternSkeleton } from './components/MobilePatternDetail';
 
 const MONO = '"JetBrains Mono", monospace';
 
@@ -174,6 +176,8 @@ export default function AptitudePatternDetailPage() {
   const [error, setError] = useState(null);
   const [showRecent, setShowRecent] = useState(false);
   const [inviting, setInviting] = useState(false);
+  // Phones and small tablets get their own layout (the site navbar is hidden there, see MainLayout).
+  const mobile = useMediaQuery((t) => t.breakpoints.down('md'), { noSsr: true });
 
   useEffect(() => {
     let cancelled = false;
@@ -212,6 +216,7 @@ export default function AptitudePatternDetailPage() {
   }, [data, lessons]);
 
   if (error && !data) {
+    if (mobile) return <MobilePatternError message={error} />;
     return (
       <Container maxWidth="sm" sx={{ py: 6 }}>
         <Alert severity="error" action={<Button color="inherit" size="small" onClick={() => navigate('/aptitude')}>Back</Button>}>
@@ -222,6 +227,7 @@ export default function AptitudePatternDetailPage() {
   }
 
   if (!data) {
+    if (mobile) return <MobilePatternSkeleton />;
     return (
       <Container maxWidth="md" sx={{ py: { xs: 1.5, md: 3 } }}>
         <Skeleton width={180} height={20} sx={{ mb: 1 }} />
@@ -268,6 +274,27 @@ export default function AptitudePatternDetailPage() {
       ? `Best ${progress.bestScore}%${bestPassed ? ' · passed' : ''} · ${testPlan.questionCount} Qs · ${pattern.timeLimitMinutes} min`
       : `${testPlan.questionCount} Qs · ${pattern.timeLimitMinutes} min · pass ${pattern.passPercentage}%`;
   const practiceLine = `${totals.solved}/${totals.total} solved`;
+
+  if (mobile) {
+    return (
+      <MobilePatternDetail
+        slug={slug}
+        data={data}
+        error={error}
+        hasLearn={hasLearn}
+        learnLine={learnLine}
+        learnDone={learnDone}
+        learnTotal={learnTotal}
+        testLine={testLine}
+        practiceLine={practiceLine}
+        onLearn={goLearn}
+        onPractice={(sub) => goPractice(typeof sub === 'string' ? sub : rec && totals.attempted > 0 ? rec.slug : null)}
+        onTest={goTest}
+        onOpenAttempt={(id) => navigate(`/aptitude/${slug}/results/${id}`)}
+        onOpenBookmarks={() => navigate(`/aptitude/${slug}/practice?status=bookmarked`)}
+      />
+    );
+  }
 
   return (
     <Container
