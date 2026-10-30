@@ -21,6 +21,7 @@ import {
   ToggleButtonGroup,
   Typography,
   alpha,
+  useMediaQuery,
 } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUncheckedRounded';
@@ -31,6 +32,7 @@ import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFFICULTY, difficultyMeta } from './components/aptitudeUi';
+import MobilePractice from './components/MobilePractice';
 
 const PAGE_SIZE = 25;
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
@@ -57,6 +59,8 @@ export default function AptitudePracticePage() {
   const [error, setError] = useState(null);
   const [searchDraft, setSearchDraft] = useState(search);
   const [picking, setPicking] = useState(false);
+  // Phones and small tablets get their own layout (the site navbar is hidden there, see MainLayout).
+  const mobile = useMediaQuery((t) => t.breakpoints.down('md'), { noSsr: true });
 
   const update = useCallback(
     (patch) => {
@@ -128,6 +132,36 @@ export default function AptitudePracticePage() {
   };
 
   const pageCount = list ? Math.max(1, Math.ceil(list.total / PAGE_SIZE)) : 1;
+
+  const clearFilters = () => {
+    setSearchDraft('');
+    setParams({}, { replace: true });
+  };
+
+  if (mobile) {
+    return (
+      <MobilePractice
+        slug={slug}
+        hub={hub}
+        list={list}
+        error={error}
+        onDismissError={() => setError(null)}
+        subPattern={subPattern}
+        difficulty={difficulty}
+        status={status}
+        search={search}
+        searchDraft={searchDraft}
+        onSearchDraft={setSearchDraft}
+        onUpdate={update}
+        onClear={clearFilters}
+        filtersActive={filtersActive}
+        page={page}
+        pageCount={pageCount}
+        picking={picking}
+        onPick={pickRandom}
+      />
+    );
+  }
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
