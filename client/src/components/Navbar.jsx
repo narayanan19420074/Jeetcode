@@ -186,6 +186,44 @@ const footerIconSx = (t) => ({
   '&:hover': { bgcolor: libPal(t).player, filter: 'brightness(0.97)' },
 });
 
+// Phone account dropdown in the Library look: warm panel, 48px rows, 24px icons, 16px text with the shared tracking.
+const accountPaperSx = (t) => ({
+  borderRadius: '12px',
+  minWidth: 220,
+  mt: 0.5,
+  [t.breakpoints.down('md')]: {
+    minWidth: 288,
+    mt: 1,
+    borderRadius: '20px',
+    bgcolor: libPal(t).chip,
+    color: libPal(t).text,
+    backgroundImage: 'none',
+    boxShadow: 'none',
+    border: `1px solid ${libPal(t).border}`,
+    fontFamily: LIB_FONT,
+    '& .MuiTypography-root': { fontFamily: LIB_FONT },
+  },
+});
+
+const accountItemSx = (t) => ({
+  [t.breakpoints.down('md')]: {
+    minHeight: 48,
+    mx: 1,
+    px: 1.5,
+    gap: '12px',
+    borderRadius: '12px',
+    '& .MuiListItemIcon-root': { minWidth: 0, color: libPal(t).chipText },
+    '& .MuiSvgIcon-root': { fontSize: 24 },
+    '& .MuiListItemText-primary': { fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING },
+    '&:hover, &.Mui-focusVisible': { bgcolor: libPal(t).player },
+    '&:active': { bgcolor: alpha(ACCENT, 0.12) },
+  },
+});
+
+const accountDividerSx = (t) => ({
+  [t.breakpoints.down('md')]: { my: 0.5, mx: 2, borderColor: libPal(t).divider },
+});
+
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -430,45 +468,61 @@ export default function Navbar() {
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
               onClose={() => setAnchorEl(null)}
-              slotProps={{ paper: { sx: { borderRadius: '12px', minWidth: 220, mt: 0.5 } } }}
+              slotProps={{ paper: { sx: accountPaperSx } }}
             >
-              <Box sx={{ px: 2, py: 1.25 }}>
-                <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                  {user?.name}
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  @{user?.handle}
-                </Typography>
+              <Box sx={(t) => ({ px: 2, py: 1.25, display: 'flex', alignItems: 'center', gap: '12px', [t.breakpoints.down('md')]: { py: 1.5 } })}>
+                <Avatar
+                  src={user?.avatarUrl || undefined}
+                  sx={{ display: { xs: 'flex', md: 'none' }, bgcolor: ACCENT, color: '#fff', width: 48, height: 48, fontSize: '1rem', fontWeight: 800, flexShrink: 0 }}
+                >
+                  {initialsFromName(user?.name)}
+                </Avatar>
+                <Box sx={{ minWidth: 0 }}>
+                  <Typography
+                    variant="subtitle2"
+                    noWrap
+                    sx={(t) => ({ fontWeight: 700, [t.breakpoints.down('md')]: { fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING } })}
+                  >
+                    {user?.name}
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    noWrap
+                    sx={(t) => ({ display: 'block', color: 'text.secondary', [t.breakpoints.down('md')]: { fontSize: 14, lineHeight: '18px', letterSpacing: TRACKING, color: libPal(t).muted } })}
+                  >
+                    @{user?.handle}
+                  </Typography>
+                </Box>
               </Box>
-              <Divider />
-              <MenuItem onClick={handleProfileClick}>
+              <Divider sx={accountDividerSx} />
+              <MenuItem onClick={handleProfileClick} sx={accountItemSx}>
                 <ListItemIcon>
                   <PersonRoundedIcon fontSize="small" />
                 </ListItemIcon>
                 <ListItemText primary="My profile" />
               </MenuItem>
-              <MenuItem onClick={handleSettingsClick}>
+              <MenuItem onClick={handleSettingsClick} sx={accountItemSx}>
                 <ListItemIcon>
                   <SettingsRoundedIcon fontSize="small" />
                 </ListItemIcon>
                 <ListItemText primary="Settings" />
               </MenuItem>
-              <MenuItem onClick={handleHelpClick}>
+              <MenuItem onClick={handleHelpClick} sx={accountItemSx}>
                 <ListItemIcon>
                   <HelpOutlineRoundedIcon fontSize="small" />
                 </ListItemIcon>
                 <ListItemText primary="Help & support" />
               </MenuItem>
               {!user?.isPro && (
-                <MenuItem onClick={handleActivateLicenseClick}>
+                <MenuItem onClick={handleActivateLicenseClick} sx={accountItemSx}>
                   <ListItemIcon>
                     <VpnKeyRoundedIcon fontSize="small" />
                   </ListItemIcon>
                   <ListItemText primary="Activate license" />
                 </MenuItem>
               )}
-              <Divider />
-              <MenuItem onClick={handleLogout}>
+              <Divider sx={accountDividerSx} />
+              <MenuItem onClick={handleLogout} sx={accountItemSx}>
                 <ListItemIcon>
                   <LogoutRoundedIcon fontSize="small" />
                 </ListItemIcon>
