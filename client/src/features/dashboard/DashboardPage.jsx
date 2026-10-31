@@ -596,7 +596,7 @@ export default function DashboardPage() {
               <CloseRoundedIcon />
             </IconButton>
           </Box>
-          <RightRail phone user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
+          <RightRail phone user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} onNavigate={() => setCalendarOpen(false)} />
           {isAuthenticated && (
             <Button
               fullWidth

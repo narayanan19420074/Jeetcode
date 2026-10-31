@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, IconButton, Stack, Tooltip, Typography, alpha } from '@mui/material';
+import { Box, Button, ButtonBase, IconButton, Menu, MenuItem, Stack, Tooltip, Typography, alpha } from '@mui/material';
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
@@ -66,10 +66,13 @@ function MonthBadge({ label, count, goal }) {
   );
 }
 
-function DayCell({ day, active, today, future, plans }) {
+function DayCell({ day, active, today, future, plans, onOpenPlans }) {
   const hasPlan = plans && plans.length > 0;
   const cell = (
-    <Box sx={{ position: 'relative', height: 34, cursor: hasPlan ? 'help' : 'default' }}>
+    <Box
+      {...(hasPlan && { component: ButtonBase, onClick: (e) => onOpenPlans(plans, e.currentTarget) })}
+      sx={{ position: 'relative', display: 'block', width: '100%', height: 34, cursor: hasPlan ? 'pointer' : 'default' }}
+    >
       <Box
         sx={{
           position: 'absolute',
@@ -89,7 +92,7 @@ function DayCell({ day, active, today, future, plans }) {
           border: today ? '2px solid' : 'none',
           borderColor: PLAN_AMBER,
         }}
-        aria-label={`${day}${today ? ', today' : ''}${active ? ', active' : ''}${hasPlan ? ', study plan' : ''}`}
+        aria-label={`${day}${today ? ', today' : ''}${active ? ', active' : ''}${hasPlan ? ', study plan: open' : ''}`}
       >
         {day}
       </Box>
@@ -137,7 +140,7 @@ function DayCell({ day, active, today, future, plans }) {
   );
 }
 
-function StreakCalendarCard({ user, isAuthenticated, byDate, phone }) {
+function StreakCalendarCard({ user, isAuthenticated, byDate, phone, onNavigate }) {
   const navigate = useNavigate();
   const now = istShift(); // India date: the getUTC*() calls below read IST
   const cy = now.getUTCFullYear();
@@ -191,6 +194,18 @@ function StreakCalendarCard({ user, isAuthenticated, byDate, phone }) {
     });
     return map;
   }, [plans]);
+
+  // Tapping a day with a plan opens that plan; when several plans end the same day, pick one first.
+  const [planMenu, setPlanMenu] = useState(null); // { anchor, plans }
+  const openPlan = (id) => {
+    setPlanMenu(null);
+    onNavigate?.();
+    navigate(`/dashboard?view=plans&plan=${encodeURIComponent(id)}`);
+  };
+  const onOpenPlans = (list, anchor) => {
+    if (list.length === 1) openPlan(list[0].id);
+    else setPlanMenu({ anchor, plans: list });
+  };
 
   const isActive = (cell) => Boolean(cell) && (byDate.get(cell.key) || 0) > 0;
   const streak = user?.streakDays ?? 0;
@@ -252,6 +267,7 @@ function StreakCalendarCard({ user, isAuthenticated, byDate, phone }) {
               today={c.key === todayKey}
               future={c.key > todayKey}
               plans={plansByDate.get(c.key)}
+              onOpenPlans={onOpenPlans}
             />
           );
         })}
@@ -285,13 +301,21 @@ function StreakCalendarCard({ user, isAuthenticated, byDate, phone }) {
           </Stack>
         )}
       </Box>
+
+      <Menu anchorEl={planMenu?.anchor} open={Boolean(planMenu)} onClose={() => setPlanMenu(null)}>
+        {(planMenu?.plans || []).map((p) => (
+          <MenuItem key={p.id} onClick={() => openPlan(p.id)}>
+            {p.title} - {p.left}
+          </MenuItem>
+        ))}
+      </Menu>
     </Card>
   );
 }
 
 // --------------------------------------------------------------------- rail
 
-export default function RightRail({ user, isAuthenticated, activity, phone = false }) {
+export default function RightRail({ user, isAuthenticated, activity, phone = false, onNavigate }) {
   const byDate = useMemo(() => new Map((activity || []).map((a) => [a.date, a.submissions])), [activity]);
 
   return (
@@ -304,7 +328,7 @@ export default function RightRail({ user, isAuthenticated, activity, phone = fal
         alignItems: 'start',
       }}
     >
-      <StreakCalendarCard user={user} isAuthenticated={isAuthenticated} byDate={byDate} phone={phone} />
+      <StreakCalendarCard user={user} isAuthenticated={isAuthenticated} byDate={byDate} phone={phone} onNavigate={onNavigate} />
     </Box>
   );
 }
