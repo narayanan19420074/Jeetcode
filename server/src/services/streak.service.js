@@ -1,5 +1,7 @@
-// Normalizes a Date to UTC midnight so "same day" comparisons are exact
-// regardless of what time the submission happened.
+import { istDateOnly } from '../utils/istDay.js';
+
+// Normalizes a stored day value to UTC midnight so "same day" comparisons are exact.
+// "Today" is the India (IST) date, see utils/istDay.js.
 function toUtcDateOnly(d) {
   return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
 }
@@ -11,12 +13,12 @@ const ONE_DAY_MS = 24 * 60 * 60 * 1000;
  * activity event happening "now". O(1): reads only `lastActivityDate`
  * and `streakDays` off the user doc, never scans submission history.
  *
- * Rule: consecutive UTC calendar days extend the streak; a gap of more
+ * Rule: consecutive IST calendar days extend the streak; a gap of more
  * than one day resets it to 1; multiple submissions on the same day are
  * a no-op (streak already counted for today).
  */
 export function applyStreakUpdate(user, now = new Date()) {
-  const today = toUtcDateOnly(now);
+  const today = istDateOnly(now);
 
   if (!user.lastActivityDate) {
     user.streakDays = 1;

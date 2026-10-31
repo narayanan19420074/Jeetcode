@@ -6,7 +6,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import { studyPlanApi } from '../../../api/studyPlanApi';
 import { daysLeftInfo } from '../../studyplan/planUtils';
-import { MONTHLY_BADGE_GOAL, formatCountdown, monthCells, msUntilUtcMidnight, surface, utcKey } from '../dashboardUtils';
+import { MONTHLY_BADGE_GOAL, formatCountdown, istShift, monthCells, msUntilDayEnd, surface, utcKey } from '../dashboardUtils';
 import { PLAN_AMBER, planTheme } from '../../studyplan/planUtils';
 
 // Phone calendar: same indigo gradient as the hero tiles on the phone pages.
@@ -23,13 +23,13 @@ const Card = ({ children, sx }) => <Box sx={[surface, { p: 2.25 }, ...[].concat(
 // ------------------------------------------------------------------ calendar
 
 function ResetCountdown() {
-  const [ms, setMs] = useState(() => msUntilUtcMidnight());
+  const [ms, setMs] = useState(() => msUntilDayEnd());
   useEffect(() => {
-    const id = setInterval(() => setMs(msUntilUtcMidnight()), 1000);
+    const id = setInterval(() => setMs(msUntilDayEnd()), 1000);
     return () => clearInterval(id);
   }, []);
   return (
-    <Tooltip title="Streak days change at 00:00 UTC">
+    <Tooltip title="Streak days change at midnight IST">
       <Typography role="timer" variant="caption" sx={{ color: SOFT, fontVariantNumeric: 'tabular-nums', cursor: 'default' }}>
         Today ends in {formatCountdown(ms)}
       </Typography>
@@ -139,7 +139,7 @@ function DayCell({ day, active, today, future, plans }) {
 
 function StreakCalendarCard({ user, isAuthenticated, byDate, phone }) {
   const navigate = useNavigate();
-  const now = new Date();
+  const now = istShift(); // India date: the getUTC*() calls below read IST
   const cy = now.getUTCFullYear();
   const cm = now.getUTCMonth();
   const todayKey = utcKey(now);

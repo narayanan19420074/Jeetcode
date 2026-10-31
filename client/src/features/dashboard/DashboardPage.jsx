@@ -33,7 +33,7 @@ import { fetchFriends } from '../friends/friendsSlice';
 import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { LibraryFont, useLibraryPalette } from './components/libraryStyle';
-import { STATUS_COLOR, featuredPageForToday, surface, utcKey } from './dashboardUtils';
+import { STATUS_COLOR, featuredPageForToday, surface, todayKey } from './dashboardUtils';
 
 // Same accent the other phone pages use.
 const PHONE_ACCENT = '#6366F1';
@@ -191,7 +191,7 @@ export default function DashboardPage() {
   );
 
   const checkedIn = useMemo(() => {
-    const today = utcKey(new Date());
+    const today = todayKey();
     return activity.some((a) => a.date === today && a.submissions > 0);
   }, [activity]);
 

@@ -17,10 +17,9 @@ import {
 } from '../config/store.js';
 import { ApiError } from '../utils/ApiError.js';
 import { debitCoins, grantCoins } from './coin.service.js';
+import { istDayKey, istDayStart } from '../utils/istDay.js';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
-const utcDayKey = (d = new Date()) => d.toISOString().slice(0, 10);
-const utcMidnight = (d = new Date()) => new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
 
 // ---------------------------------------------------------------- catalog
 
@@ -399,8 +398,8 @@ export async function getWallet(userId) {
   if (!user) throw ApiError.unauthorized('User no longer exists');
 
   const [solvedToday, claimedToday] = await Promise.all([
-    Submission.exists({ user: user._id, mode: 'submit', status: 'Accepted', createdAt: { $gte: utcMidnight(now) } }),
-    CoinTransaction.exists({ key: `${userId}:daily:${utcDayKey(now)}` }),
+    Submission.exists({ user: user._id, mode: 'submit', status: 'Accepted', createdAt: { $gte: istDayStart(now) } }),
+    CoinTransaction.exists({ key: `${userId}:daily:${istDayKey(now)}` }),
   ]);
 
   const streak = user.streakDays ?? 0;
@@ -431,7 +430,7 @@ export async function claimDaily(userId) {
   const user = await User.findById(userId).select('streakDays');
   if (!user) throw ApiError.unauthorized('User no longer exists');
 
-  const solvedToday = await Submission.exists({ user: user._id, mode: 'submit', status: 'Accepted', createdAt: { $gte: utcMidnight(now) } });
+  const solvedToday = await Submission.exists({ user: user._id, mode: 'submit', status: 'Accepted', createdAt: { $gte: istDayStart(now) } });
   if (!solvedToday) throw ApiError.badRequest('Solve at least one problem today to claim your check-in');
 
   const streak = user.streakDays ?? 0;
@@ -439,7 +438,7 @@ export async function claimDaily(userId) {
   const res = await grantCoins(userId, amount, {
     reason: 'daily',
     title: `Daily check-in${streak > 0 ? ` · ${streak}-day streak` : ''}`,
-    key: `daily:${utcDayKey(now)}`,
+    key: `daily:${istDayKey(now)}`,
   });
   if (res.duplicate) throw ApiError.conflict('You already claimed today. Come back tomorrow!');
   if (!res.granted) throw ApiError.internal('Could not add your coins, please try again');

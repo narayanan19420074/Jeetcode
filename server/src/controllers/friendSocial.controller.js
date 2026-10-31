@@ -13,6 +13,7 @@ import { LANGUAGE_IDS } from '../services/judge0.service.js';
 import { createRoom, getRoom } from '../realtime/roomStore.js';
 import { isOnline } from '../realtime/hub.js';
 import { DirectMessage } from '../models/DirectMessage.js';
+import { istDateOnly } from '../utils/istDay.js';
 
 const DAY = 86400000;
 const NUDGE_COOLDOWN_MS = 6 * 60 * 60 * 1000;
@@ -20,7 +21,7 @@ const FEED_DAYS = 30;
 const FEED_LIMIT = 30;
 const USER_FIELDS = 'name handle avatarUrl streakDays longestStreak lastActivityDate company';
 
-const utcMidnight = (d = new Date()) => Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+const todayMs = () => istDateOnly().getTime(); // today's India (IST) date as a date-only value
 
 // ---------------------------------------------------------------- chat (REST side)
 
@@ -67,7 +68,7 @@ export const nudgeFriend = asyncHandler(async (req, res) => {
   if (!friend) throw ApiError.notFound('Friend not found');
 
   const last = friend.lastActivityDate ? new Date(friend.lastActivityDate).getTime() : 0;
-  if (last >= utcMidnight()) throw ApiError.badRequest(`@${friend.handle} already practised today — no nudge needed`);
+  if (last >= todayMs()) throw ApiError.badRequest(`@${friend.handle} already practised today — no nudge needed`);
 
   // One nudge per friend every 6 hours, so it stays a reminder and not spam.
   const recent = await DirectMessage.findOne({ from: me, to: userId, kind: 'nudge', createdAt: { $gte: new Date(Date.now() - NUDGE_COOLDOWN_MS) } })

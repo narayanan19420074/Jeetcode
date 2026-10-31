@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import { User } from '../models/User.js';
 import { Submission } from '../models/Submission.js';
 import { AptitudeQuestionProgress } from '../models/AptitudeQuestionProgress.js';
+import { istDateOnly } from '../utils/istDay.js';
 
 // HackerRank-style points: harder problems are worth more. Each question counts once.
 export const POINTS = { easy: 10, medium: 20, hard: 40, aptitude: 5 };
@@ -15,10 +16,7 @@ const cache = new Map(); // period -> { at, rows }
 
 // Streak counters only change when someone solves something, so a lapsed streak still reads
 // as its old value on the user document. Show 0 once a full day has been missed.
-const todayUtc = () => {
-  const n = new Date();
-  return Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
-};
+const todayUtc = () => istDateOnly().getTime(); // today's India (IST) date as a date-only value
 const liveStreak = (u) => {
   if (!u.streakDays || !u.lastActivityDate) return 0;
   const last = new Date(u.lastActivityDate);

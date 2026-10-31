@@ -5,15 +5,16 @@ import { AdminActionLog } from '../../models/AdminActionLog.js';
 import { ApiResponse } from '../../utils/ApiResponse.js';
 import { asyncHandler } from '../../utils/asyncHandler.js';
 import { submissionQueue } from '../../queue/submissionQueue.js';
+import { istDateOnly, istDayStart } from '../../utils/istDay.js';
 
 // GET /api/admin/stats — Overview section's top stat cards.
 export const getAdminStats = asyncHandler(async (req, res) => {
-  const startOfToday = new Date();
-  startOfToday.setUTCHours(0, 0, 0, 0);
+  const today = istDateOnly(); // India (IST) date, for lastActivityDate
+  const startOfToday = istDayStart(); // when today began (midnight IST), for timestamps
 
   const [totalUsers, dailyActiveUsers, totalProblems, pendingReviews, submissionsToday, proUsers] = await Promise.all([
     User.estimatedDocumentCount(),
-    User.countDocuments({ lastActivityDate: { $gte: startOfToday } }),
+    User.countDocuments({ lastActivityDate: { $gte: today } }),
     Problem.countDocuments({ isPublished: true }),
     Problem.countDocuments({ isPublished: false }),
     Submission.countDocuments({ createdAt: { $gte: startOfToday } }),

@@ -5,7 +5,7 @@ import { apiClient } from '../../api/apiClient';
 import { contestApi } from '../../api/contestApi';
 import { problemsApi } from '../../api/problemsApi';
 import { questApi } from '../../api/questApi';
-import { featuredPageForToday, utcKey } from '../dashboard/dashboardUtils';
+import { featuredPageForToday, todayKey } from '../dashboard/dashboardUtils';
 import { addNotification, hydrate, loadSeen, loadStored, saveSeen, saveStored } from './notificationsSlice';
 
 const LB_POLL_MS = 5 * 60 * 1000;
@@ -126,7 +126,7 @@ export default function NotificationsWatcher() {
         .then((res) => {
           const p = res?.data?.data?.items?.[0];
           if (cancelled || !p || p.solvedByMe) return;
-          add({ id: `ev:daily:${utcKey(new Date())}`, type: 'daily', text: `Today’s challenge: ${p.title} (${p.difficulty})`, link: `/workspace/${p.slug}` });
+          add({ id: `ev:daily:${todayKey()}`, type: 'daily', text: `Today’s challenge: ${p.title} (${p.difficulty})`, link: `/workspace/${p.slug}` });
         })
         .catch(() => {});
 

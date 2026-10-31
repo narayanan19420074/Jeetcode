@@ -1,7 +1,7 @@
-// Shared constants + helpers for the dashboard. Everything date-related is
-// UTC on purpose: the backend's streak logic (streak.service.js) and the
-// activity heatmap endpoint both bucket days by UTC midnight, so the
-// calendar and countdown here have to agree with them.
+// Shared constants + helpers for the dashboard. Days are India (IST) days on
+// purpose: the backend's streak logic (streak.service.js) and the activity
+// heatmap endpoint both bucket days by IST midnight, so the calendar and
+// countdown here have to agree with them.
 
 // CSS variables from the theme (see getTheme): deep colours on light, bright on dark, always readable.
 export const DIFF_COLOR = { Easy: 'var(--jc-easy)', Medium: 'var(--jc-medium)', Hard: 'var(--jc-hard)' };
@@ -64,8 +64,18 @@ const DAY_MS = 86400000;
 
 export const utcKey = (d) => d.toISOString().slice(0, 10);
 
-export const msUntilUtcMidnight = (now = new Date()) =>
-  Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1) - now.getTime();
+// IST is UTC+5:30 with no daylight saving. istShift() moves a moment so the getUTC*() methods read India time.
+const IST_OFFSET_MS = 330 * 60000;
+export const istShift = (d = new Date()) => new Date(d.getTime() + IST_OFFSET_MS);
+
+// 'YYYY-MM-DD' of today in India.
+export const todayKey = (d = new Date()) => utcKey(istShift(d));
+
+// Milliseconds until midnight IST, when the streak day ends.
+export const msUntilDayEnd = (now = new Date()) => {
+  const s = istShift(now);
+  return Date.UTC(s.getUTCFullYear(), s.getUTCMonth(), s.getUTCDate() + 1) - s.getTime();
+};
 
 export const formatCountdown = (ms) => {
   const s = Math.max(0, Math.floor(ms / 1000));
@@ -74,7 +84,7 @@ export const formatCountdown = (ms) => {
 };
 
 // Same problem all day for everyone, no backend field needed.
-export const featuredPageForToday = (total) => (Math.floor(Date.now() / DAY_MS) % total) + 1;
+export const featuredPageForToday = (total) => (Math.floor(istShift().getTime() / DAY_MS) % total) + 1;
 
 export const daysInUtcMonth = (year, month) => new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
 

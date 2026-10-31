@@ -1,4 +1,4 @@
-import { msUntilUtcMidnight } from '../dashboard/dashboardUtils';
+import { msUntilDayEnd } from '../dashboard/dashboardUtils';
 
 export const GOLD = '#F5B301';
 export const GOLD_LIGHT = '#FDE68A';
@@ -22,8 +22,8 @@ export function levelInfo(xp) {
 // The big prize the student is working towards: the first Pro reward not claimed yet.
 export const goalMilestone = (milestones) => milestones.find((m) => m.reward.type === 'pro' && !m.claimed) || milestones[milestones.length - 1];
 
-// Local clock time when the UTC day rolls over (5:30 AM in India).
-export const resetTimeLabel = () => new Date(Date.now() + msUntilUtcMidnight()).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+// Local clock time when the day rolls over (midnight in India).
+export const resetTimeLabel = () => new Date(Date.now() + msUntilDayEnd()).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
 export const formatDate = (d) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 

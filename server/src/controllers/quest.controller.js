@@ -7,17 +7,17 @@ import { debitCoins, grantCoinsSafe } from '../services/coin.service.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
+import { istDayKey } from '../utils/istDay.js';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const QUEST_USER_FIELDS = 'easySolved mediumSolved hardSolved streakDays longestStreak questClaims isPro proExpiresAt proPlan coins diamonds butterflies';
-const utcKey = (d) => d.toISOString().slice(0, 10);
 
-// Distinct UTC days on which the user had an Accepted submission. Same UTC
+// Distinct IST days on which the user had an Accepted submission. Same IST
 // day boundary as the streak service and the activity heatmap.
 async function getCheckInDays(userId) {
   const rows = await Submission.aggregate([
     { $match: { user: userId, mode: 'submit', status: 'Accepted' } },
-    { $group: { _id: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt', timezone: 'UTC' } } } },
+    { $group: { _id: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt', timezone: 'Asia/Kolkata' } } } },
   ]);
   return new Set(rows.map((r) => r._id));
 }
@@ -77,14 +77,14 @@ function buildState(user, days, now = new Date()) {
 
   const recent = [];
   for (let i = 13; i >= 0; i--) {
-    const key = utcKey(new Date(now.getTime() - i * DAY_MS));
+    const key = istDayKey(new Date(now.getTime() - i * DAY_MS));
     recent.push({ date: key, done: days.has(key) });
   }
 
   return {
     guest: !user,
     activeDays: metrics.checkin,
-    checkedInToday: days.has(utcKey(now)),
+    checkedInToday: days.has(istDayKey(now)),
     streakDays: user?.streakDays ?? 0,
     longestStreak: user?.longestStreak ?? 0,
     xp: ALL_QUESTS.filter((q) => claimed.has(q.id)).reduce((sum, q) => sum + q.xp, 0),

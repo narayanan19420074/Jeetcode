@@ -14,19 +14,21 @@ import { describeUserAgent } from '../utils/userAgent.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
+import { IST_OFFSET_MS, istDateOnly } from '../utils/istDay.js';
 
 // GET /api/users/me/activity — last 49 days of submission counts, for the
 // Dashboard's GitHub-style heatmap. One aggregation query, not 49.
 export const getActivityHeatmap = asyncHandler(async (req, res) => {
-  const since = new Date();
-  since.setUTCDate(since.getUTCDate() - 48);
-  since.setUTCHours(0, 0, 0, 0);
+  // 49 India (IST) days ending today. `first` is that date as a date-only value; `since` is the moment it began.
+  const first = istDateOnly();
+  first.setUTCDate(first.getUTCDate() - 48);
+  const since = new Date(first.getTime() - IST_OFFSET_MS);
 
   const rows = await Submission.aggregate([
     { $match: { user: req.fullUser._id, mode: 'submit', createdAt: { $gte: since } } },
     {
       $group: {
-        _id: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt', timezone: 'UTC' } },
+        _id: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt', timezone: 'Asia/Kolkata' } },
         submissions: { $sum: 1 },
       },
     },
@@ -35,7 +37,7 @@ export const getActivityHeatmap = asyncHandler(async (req, res) => {
 
   const days = [];
   for (let i = 0; i < 49; i++) {
-    const d = new Date(since);
+    const d = new Date(first);
     d.setUTCDate(d.getUTCDate() + i);
     const key = d.toISOString().slice(0, 10);
     days.push({ day: i, date: key, submissions: byDate.get(key) || 0 });

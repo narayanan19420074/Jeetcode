@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { animate, useReducedMotion } from 'framer-motion';
 import { Avatar, Box } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
-import { DIFF_COLOR } from '../dashboard/dashboardUtils';
+import { DIFF_COLOR, todayKey } from '../dashboard/dashboardUtils';
 import { PLAN_AMBER } from '../studyplan/planUtils';
 
 // Bits shared by the leaderboard card (EmpireCard) and the side panel (LeaderboardView).
@@ -37,10 +37,10 @@ export function CountUp({ value }) {
   return n.toLocaleString();
 }
 
-const utcDay = (d = new Date()) => d.toISOString().slice(0, 10);
+const indiaDay = (d = new Date()) => todayKey(d);
 export function activeLabel(lastActive) {
   if (!lastActive) return { text: 'Not started', color: 'text.disabled', live: false };
-  const days = Math.round((Date.parse(utcDay()) - Date.parse(lastActive)) / 86400000);
+  const days = Math.round((Date.parse(indiaDay()) - Date.parse(lastActive)) / 86400000);
   if (days <= 0) return { text: 'Active today', color: 'success.main', live: true };
   if (days === 1) return { text: 'Active yesterday', color: 'warning.main', live: false };
   return { text: `${days}d ago`, color: 'text.disabled', live: false };

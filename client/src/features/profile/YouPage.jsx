@@ -19,7 +19,7 @@ import SolvedCard from '../../components/SolvedCard';
 import ActivityHeatmap from '../../components/ActivityHeatmap';
 import ProBadge from '../../components/ProBadge';
 import useProblemLists from '../dashboard/useProblemLists';
-import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, utcKey } from '../dashboard/dashboardUtils';
+import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, istShift, utcKey } from '../dashboard/dashboardUtils';
 import AchievementBadge from './AchievementBadge';
 import BackToDashboard from '../../components/BackToDashboard';
 import MobileYou from './MobileYou';
@@ -142,7 +142,7 @@ export default function YouPage() {
   const solved = user?.totalSolved ?? easy + medium + hard;
   const longest = user?.longestStreak ?? 0;
 
-  const now = new Date();
+  const now = istShift(); // India date: the getUTC*() calls below read IST
   const monthPrefix = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, '0')}`;
   const activeThisMonth = useMemo(() => activity.filter((a) => a.submissions > 0 && a.date.startsWith(monthPrefix)).length, [activity, monthPrefix]);
   const monthLabel = now.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }).toUpperCase();

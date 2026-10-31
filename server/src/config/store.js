@@ -10,7 +10,7 @@
 // ---------- Earning rules ----------
 export const COIN_RULES = {
   solve: { Easy: 10, Medium: 25, Hard: 50 }, // first Accepted solve of a problem
-  dailyBase: 5, // daily check-in (needs >= 1 Accepted submission today, UTC)
+  dailyBase: 5, // daily check-in (needs >= 1 Accepted submission today, India time)
   dailyStreakBonusCap: 10, // + 1 coin per streak day, up to this many
   weeklyStreakBonus: 25, // extra on every 7th streak day
   questXpToCoins: 1, // quest claim: xp * this

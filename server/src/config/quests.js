@@ -8,7 +8,7 @@
 
 export const QUEST_PRO_PLAN = 'quest-reward';
 
-// Check-in journey: one "check-in day" = a UTC day with at least one Accepted
+// Check-in journey: one "check-in day" = an IST day with at least one Accepted
 // submission. Days do NOT have to be consecutive, so a missed day never wipes
 // out progress.
 export const CHECKIN_MILESTONES = [

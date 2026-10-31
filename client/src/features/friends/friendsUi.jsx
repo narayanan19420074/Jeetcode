@@ -4,6 +4,7 @@ import { keyframes } from '@emotion/react';
 import { animate, useReducedMotion } from 'framer-motion';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
+import { todayKey as indiaToday } from '../dashboard/dashboardUtils';
 
 // Small pieces shared by the Friends page, chat, activity feed and profile dialog.
 export const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
@@ -133,9 +134,9 @@ export function Streak({ value }) {
   );
 }
 
-const todayKey = () => new Date().toISOString().slice(0, 10);
+const todayKey = () => indiaToday();
 
-// Days since the YYYY-MM-DD the server sends (UTC, like the streak logic).
+// Days since the YYYY-MM-DD the server sends (India date, like the streak logic).
 export const daysSince = (lastActive) => (lastActive ? Math.round((Date.parse(todayKey()) - Date.parse(lastActive)) / 86400000) : null);
 
 // Status line under a friend's name. Live presence wins over the daily "active" date.
