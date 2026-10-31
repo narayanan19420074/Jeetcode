@@ -153,9 +153,38 @@ export function useCall(socket) {
       set(next);
     };
 
+    // Coming back from the background: phones stop the camera / microphone while the app is hidden.
+    // Re-acquire any ended track, swap it into the live connection, and nudge a stalled connection.
+    const recover = async () => {
+      if (!local) return;
+      const ended = local.getTracks().filter((t) => t.readyState === 'ended');
+      if (ended.length === 0) {
+        if (pc && ['disconnected', 'failed'].includes(pc.iceConnectionState)) pc.restartIce();
+        return;
+      }
+      const wantAudio = ended.some((t) => t.kind === 'audio');
+      const wantVideo = ended.some((t) => t.kind === 'video');
+      try {
+        const fresh = await navigator.mediaDevices.getUserMedia({ audio: wantAudio, video: wantVideo });
+        fresh.getTracks().forEach((nt) => {
+          const old = ended.find((t) => t.kind === nt.kind);
+          nt.enabled = old ? old.enabled : true; // keep the user's mute / camera-off choice
+          const sender = pc?.getSenders().find((s) => s.track === old);
+          if (old) local.removeTrack(old);
+          local.addTrack(nt);
+          if (sender) sender.replaceTrack(nt).catch(() => {});
+          else if (pc) pc.addTrack(nt, local);
+        });
+        if (pc && ['disconnected', 'failed'].includes(pc.iceConnectionState)) pc.restartIce();
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
     api.current = {
       start,
       stop,
+      recover,
       toggleMic: () => toggle('audio', setMicOn),
       toggleCam: () => toggle('video', setCamOn),
     };
@@ -185,6 +214,7 @@ export function useCall(socket) {
     error,
     start: useCallback(() => api.current?.start(), []),
     stop: useCallback(() => api.current?.stop(), []),
+    recover: useCallback(() => api.current?.recover(), []),
     toggleMic: useCallback(() => api.current?.toggleMic(), []),
     toggleCam: useCallback(() => api.current?.toggleCam(), []),
   };
