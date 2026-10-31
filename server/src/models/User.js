@@ -61,6 +61,10 @@ const userSchema = new mongoose.Schema(
     passwordResetTokenHash: { type: String, select: false, default: null },
     passwordResetExpiresAt: { type: Date, select: false, default: null },
     passwordResetSentAt: { type: Date, select: false, default: null },
+    // 6-digit code emailed together with the reset link. Only its hash is stored, and a few wrong tries burn it.
+    passwordResetOtpHash: { type: String, select: false, default: null },
+    passwordResetOtpExpiresAt: { type: Date, select: false, default: null },
+    passwordResetOtpAttempts: { type: Number, select: false, default: 0 },
 
     // 'learner' = default signup role. 'contributor' = can propose problems
     // (draft/submitted, cannot publish). 'moderator' = can review/approve

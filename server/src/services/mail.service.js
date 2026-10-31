@@ -60,18 +60,21 @@ export function sendVerificationEmail(user, token) {
   });
 }
 
-export function sendPasswordResetEmail(user, token) {
+export function sendPasswordResetEmail(user, token, code) {
   const url = `${appUrl()}/reset-password?token=${token}`;
+  const codeHtml = code
+    ? `<p>Enter this code on the reset page:</p><p style="margin:12px 0;font-size:32px;font-weight:700;letter-spacing:8px">${esc(code)}</p><p>Or use the button below.</p>`
+    : '';
   return sendMail({
     to: user.email,
     subject: 'Reset your JeetCode password',
     html: layout(
       'Reset your password',
-      `<p>Hi ${esc(user.name)}, we received a request to reset your JeetCode password. This link is valid for 30 minutes.</p><p>If you did not request this, you can ignore this email. Your password will not change.</p>`,
+      `<p>Hi ${esc(user.name)}, we received a request to reset your JeetCode password. The code and the link are valid for 30 minutes.</p>${codeHtml}<p>If you did not request this, you can ignore this email. Your password will not change.</p>`,
       'Reset password',
       url
     ),
-    text: `Hi ${user.name}, reset your JeetCode password (valid 30 minutes): ${url}\nIf you did not ask for this, ignore this email.`,
-    devLink: url,
+    text: `Hi ${user.name}, reset your JeetCode password (valid 30 minutes).${code ? `\nYour code: ${code}` : ''}\nLink: ${url}\nIf you did not ask for this, ignore this email.`,
+    devLink: code ? `${url} | code ${code}` : url,
   });
 }

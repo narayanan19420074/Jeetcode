@@ -11,6 +11,10 @@ import { sendVerificationEmail, sendPasswordResetEmail, mailConfigured } from '.
 const VERIFY_TTL_MS = 24 * 60 * 60 * 1000;
 const RESET_TTL_MS = 30 * 60 * 1000;
 const COOLDOWN_MS = 60 * 1000; // minimum gap between two emails to the same account
+const OTP_MAX_ATTEMPTS = 5; // wrong guesses before a reset code is burned
+
+const newCode = () => String(crypto.randomInt(100000, 1000000));
+const codeHash = (userId, code) => hashToken(`${userId}:${code}`);
 
 const newToken = () => crypto.randomBytes(32).toString('hex');
 
@@ -42,6 +46,7 @@ export const forgotPassword = asyncHandler(async (req, res) => {
     const last = user.passwordResetSentAt?.getTime() || 0;
     if (Date.now() - last > COOLDOWN_MS) {
       const token = newToken();
+      const code = newCode();
       const now = Date.now();
       await User.updateOne(
         { _id: user._id },
@@ -50,12 +55,15 @@ export const forgotPassword = asyncHandler(async (req, res) => {
             passwordResetTokenHash: hashToken(token),
             passwordResetExpiresAt: new Date(now + RESET_TTL_MS),
             passwordResetSentAt: new Date(now),
+            passwordResetOtpHash: codeHash(user._id, code),
+            passwordResetOtpExpiresAt: new Date(now + RESET_TTL_MS),
+            passwordResetOtpAttempts: 0,
           },
         }
       );
       await logSecurityEvent(user._id, req, 'password_reset_requested');
       // Not awaited: response time must not reveal whether the account exists.
-      sendPasswordResetEmail(user, token).catch(() => {});
+      sendPasswordResetEmail(user, token, code).catch(() => {});
     }
   }
 
@@ -83,10 +91,53 @@ export const resetPassword = asyncHandler(async (req, res) => {
         refreshTokenHash: null,
         passwordResetTokenHash: null,
         passwordResetExpiresAt: null,
+        passwordResetOtpHash: null,
+        passwordResetOtpExpiresAt: null,
+        passwordResetOtpAttempts: 0,
       },
     }
   );
   await logSecurityEvent(user._id, req, 'password_reset', 'Password reset by email link; all sessions signed out');
+
+  new ApiResponse(200, null, 'Password updated. You can now sign in.').send(res);
+});
+
+// POST /api/auth/reset-password-code — body: { email, code, password }.
+// Same result as the link, using the 6-digit code from the same email.
+export const resetPasswordWithCode = asyncHandler(async (req, res) => {
+  const { email, code, password } = req.body;
+  const invalid = () => ApiError.badRequest('That code is incorrect or has expired. Check the code or request a new one.');
+
+  // Count this try first, in one atomic step, so parallel guesses cannot go past the limit.
+  const user = await User.findOneAndUpdate(
+    { email, passwordResetOtpExpiresAt: { $gt: new Date() }, passwordResetOtpAttempts: { $lt: OTP_MAX_ATTEMPTS } },
+    { $inc: { passwordResetOtpAttempts: 1 } },
+    { returnDocument: 'after' }
+  ).select('+passwordResetOtpHash');
+  if (!user?.passwordResetOtpHash) throw invalid();
+
+  const stored = Buffer.from(user.passwordResetOtpHash, 'hex');
+  const given = Buffer.from(codeHash(user._id, code), 'hex');
+  if (stored.length !== given.length || !crypto.timingSafeEqual(stored, given)) throw invalid();
+
+  const passwordHash = await bcrypt.hash(password, 12);
+  await User.updateOne(
+    { _id: user._id },
+    {
+      $set: {
+        passwordHash,
+        emailVerified: true, // they just proved they own this inbox
+        refreshSessions: [], // sign out every device
+        refreshTokenHash: null,
+        passwordResetTokenHash: null,
+        passwordResetExpiresAt: null,
+        passwordResetOtpHash: null,
+        passwordResetOtpExpiresAt: null,
+        passwordResetOtpAttempts: 0,
+      },
+    }
+  );
+  await logSecurityEvent(user._id, req, 'password_reset', 'Password reset by email code; all sessions signed out');
 
   new ApiResponse(200, null, 'Password updated. You can now sign in.').send(res);
 });

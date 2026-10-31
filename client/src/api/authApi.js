@@ -15,6 +15,7 @@ export const authApi = {
   linkedinSignIn: (code, redirectUri) => apiClient.post('/auth/linkedin', { code, redirectUri }),
   forgotPassword: (email, turnstileToken) => apiClient.post('/auth/forgot-password', { email, turnstileToken }),
   resetPassword: (token, password) => apiClient.post('/auth/reset-password', { token, password }),
+  resetPasswordWithCode: (email, code, password) => apiClient.post('/auth/reset-password-code', { email, code, password }),
   verifyEmail: (token) => apiClient.post('/auth/verify-email', { token }),
   resendVerification: () => apiClient.post('/auth/resend-verification'),
   adminLogin: (payload) => apiClient.post('/auth/admin-login', payload),
