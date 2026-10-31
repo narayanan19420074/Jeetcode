@@ -59,7 +59,7 @@ export const toggleBookmark = asyncHandler(async (req, res) => {
 // PATCH /api/users/me/profile — every field optional, so each Settings form can
 // save just its own part. '' clears a text field.
 export const updateProfile = asyncHandler(async (req, res) => {
-  const { name, avatarUrl, bio, location, company, website, socials } = req.body;
+  const { name, avatarUrl, bio, location, country, company, website, socials } = req.body;
   const user = req.fullUser;
 
   if (name !== undefined) user.name = name;
@@ -73,6 +73,7 @@ export const updateProfile = asyncHandler(async (req, res) => {
   }
   if (bio !== undefined) user.bio = bio;
   if (location !== undefined) user.location = location;
+  if (country !== undefined) user.country = country;
   if (company !== undefined) user.company = company;
   if (website !== undefined) user.website = website;
   if (socials) {

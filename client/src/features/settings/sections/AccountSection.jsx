@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Alert, Box, Button, Chip, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Skeleton, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Autocomplete, Box, Button, Chip, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Skeleton, Stack, TextField, Typography } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -10,6 +10,7 @@ import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { logoutUser, userUpdated } from '../../auth/authSlice';
 import { Card, CardBody, PageTitle, Row, describeError } from '../components/SettingsUi';
+import { COUNTRIES, flagEmoji } from '../countries';
 
 function Stat({ label, value }) {
   return (
@@ -41,6 +42,11 @@ export default function AccountSection() {
   const [handleError, setHandleError] = useState(null);
   const [handleDialog, setHandleDialog] = useState(false);
 
+  // country
+  const [country, setCountry] = useState(user.country || '');
+  const [countryBusy, setCountryBusy] = useState(false);
+  const [countryError, setCountryError] = useState(null);
+
   // delete
   const [delOpen, setDelOpen] = useState(false);
   const [delConfirm, setDelConfirm] = useState('');
@@ -69,6 +75,20 @@ export default function AccountSection() {
       setHandleDialog(false);
     } finally {
       setHandleBusy(false);
+    }
+  };
+
+  const saveCountry = async () => {
+    setCountryBusy(true);
+    setCountryError(null);
+    try {
+      const { data } = await usersApi.updateProfile({ country });
+      dispatch(userUpdated(data.data));
+      enqueueSnackbar('Country saved', { variant: 'success' });
+    } catch (err) {
+      setCountryError(describeError(err));
+    } finally {
+      setCountryBusy(false);
     }
   };
 
@@ -127,6 +147,36 @@ export default function AccountSection() {
             />
             <Button variant="outlined" color="inherit" disabled={handleNorm === user.handle || !handleValid} onClick={() => setHandleDialog(true)} sx={{ height: 56, flexShrink: 0, borderColor: 'divider' }}>
               Change username
+            </Button>
+          </Stack>
+        </CardBody>
+      </Card>
+
+      <Card title="Country" description="The country you are in. It is saved to your account.">
+        <CardBody>
+          {countryError && (
+            <Alert severity="error" sx={{ mb: 2 }} onClose={() => setCountryError(null)}>
+              {countryError}
+            </Alert>
+          )}
+          <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ gap: 1.5, alignItems: { sm: 'flex-start' } }}>
+            <Autocomplete
+              fullWidth
+              options={COUNTRIES}
+              value={COUNTRIES.find((c) => c.code === country) || null}
+              onChange={(_, option) => setCountry(option ? option.code : '')}
+              getOptionLabel={(o) => `${flagEmoji(o.code)} ${o.name}`}
+              isOptionEqualToValue={(o, v) => o.code === v.code}
+              renderOption={({ key, ...props }, o) => (
+                <Box component="li" key={key} {...props} sx={{ gap: 1.25 }}>
+                  <span aria-hidden style={{ fontSize: '1.3rem', lineHeight: 1 }}>{flagEmoji(o.code)}</span>
+                  {o.name}
+                </Box>
+              )}
+              renderInput={(params) => <TextField {...params} label="Country" />}
+            />
+            <Button variant="outlined" color="inherit" disabled={countryBusy || country === (user.country || '')} onClick={saveCountry} sx={{ height: 56, flexShrink: 0, borderColor: 'divider' }}>
+              {countryBusy ? <CircularProgress size={20} color="inherit" /> : 'Save country'}
             </Button>
           </Stack>
         </CardBody>

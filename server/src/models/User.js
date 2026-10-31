@@ -187,6 +187,7 @@ const userSchema = new mongoose.Schema(
     // --- Public profile (Settings -> Public profile) ---
     bio: { type: String, trim: true, maxlength: 160, default: '' },
     location: { type: String, trim: true, maxlength: 60, default: '' },
+    country: { type: String, trim: true, uppercase: true, match: /^[A-Z]{2}$/, default: '' }, // ISO 3166-1 alpha-2
     company: { type: String, trim: true, maxlength: 60, default: '' }, // college or company
     website: { type: String, trim: true, maxlength: 200, default: '' },
     socials: {
@@ -276,6 +277,7 @@ userSchema.methods.toPublicJSON = function () {
     avatarUrl: this.avatarUrl,
     bio: this.bio || '',
     location: this.location || '',
+    country: this.country || '',
     company: this.company || '',
     website: this.website || '',
     socials: {

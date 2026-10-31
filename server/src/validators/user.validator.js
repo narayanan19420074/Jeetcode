@@ -36,6 +36,8 @@ export const updateProfileSchema = z.object({
   avatarUrl: z.union([z.literal(''), z.null(), localAvatarPath, httpUrl(500)]).optional(),
   bio: z.string().trim().max(160).optional(),
   location: z.string().trim().max(60).optional(),
+  // ISO 3166-1 alpha-2 code, e.g. "IN". '' clears it.
+  country: z.union([z.literal(''), z.string().trim().toUpperCase().regex(/^[A-Z]{2}$/, 'Choose a country from the list')]).optional(),
   company: z.string().trim().max(60).optional(),
   website: optionalUrl(200).optional(),
   socials: socialSchema.optional(),
