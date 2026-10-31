@@ -190,7 +190,7 @@ export const formatDateTime = (date) =>
 /* ------------------------------------------------------------------ */
 
 const DEFAULTS = {
-  appearance: { theme: 'dark', accent: 'violet', density: 'comfortable', fontScale: 'md', contrast: 'normal' },
+  appearance: { theme: 'dark', accent: 'violet', surface: 'default', density: 'comfortable', fontScale: 'md', contrast: 'normal' },
   accessibility: { reduceMotion: 'system', underlineLinks: false },
   editor: { fontSize: 14, tabSize: 2, wordWrap: false, minimap: false, lineNumbers: true, ligatures: false, autoClose: true, theme: 'auto', defaultLanguage: 'javascript' },
   notifications: { streakReminder: true, weeklyDigest: true, achievements: true, productUpdates: false, reminderTime: '20:00', timezone: null },
@@ -201,9 +201,9 @@ const DEFAULTS = {
 function toUiPatch(patch) {
   const ui = {};
   if (patch.appearance) {
-    const { theme, accent, density, fontScale, contrast } = patch.appearance;
+    const { theme, accent, surface, density, fontScale, contrast } = patch.appearance;
     if (theme) ui.themePref = theme;
-    Object.assign(ui, Object.fromEntries(Object.entries({ accent, density, fontScale, contrast }).filter(([, v]) => v !== undefined)));
+    Object.assign(ui, Object.fromEntries(Object.entries({ accent, surface, density, fontScale, contrast }).filter(([, v]) => v !== undefined)));
   }
   if (patch.accessibility) Object.assign(ui, patch.accessibility);
   if (patch.editor) ui.editor = patch.editor;

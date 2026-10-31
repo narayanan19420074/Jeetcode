@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
-import { ACCENTS, THEMES, DENSITIES, FONT_SCALES, CONTRASTS, MOTION, EDITOR_THEMES, LANGUAGES, DEFAULT_PREFERENCES as D } from '../config/preferences.js';
+import { ACCENTS, SURFACES, THEMES, DENSITIES, FONT_SCALES, CONTRASTS, MOTION, EDITOR_THEMES, LANGUAGES, DEFAULT_PREFERENCES as D } from '../config/preferences.js';
 
 const userSchema = new mongoose.Schema(
   {
@@ -203,6 +203,7 @@ const userSchema = new mongoose.Schema(
       appearance: {
         theme: { type: String, enum: THEMES, default: D.appearance.theme },
         accent: { type: String, enum: ACCENTS, default: D.appearance.accent },
+        surface: { type: String, enum: SURFACES, default: D.appearance.surface },
         density: { type: String, enum: DENSITIES, default: D.appearance.density },
         fontScale: { type: String, enum: FONT_SCALES, default: D.appearance.fontScale },
         contrast: { type: String, enum: CONTRASTS, default: D.appearance.contrast },

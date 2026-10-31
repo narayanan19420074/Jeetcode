@@ -6,6 +6,7 @@ import { z } from 'zod';
 // object is strict, so an unknown key is rejected instead of silently stored.
 
 export const ACCENTS = ['blue', 'violet', 'emerald', 'amber', 'rose', 'cyan', 'orange', 'coral', 'terracotta', 'honey', 'clay', 'rosewood'];
+export const SURFACES = ['default', 'warm'];
 export const THEMES = ['light', 'dark', 'system'];
 export const DENSITIES = ['comfortable', 'compact'];
 export const FONT_SCALES = ['sm', 'md', 'lg'];
@@ -15,7 +16,7 @@ export const EDITOR_THEMES = ['auto', 'vs-dark', 'vs', 'hc-black'];
 export const LANGUAGES = ['javascript', 'python', 'cpp', 'java'];
 
 export const DEFAULT_PREFERENCES = {
-  appearance: { theme: 'dark', accent: 'blue', density: 'comfortable', fontScale: 'md', contrast: 'normal', syncedAt: null },
+  appearance: { theme: 'dark', accent: 'blue', surface: 'default', density: 'comfortable', fontScale: 'md', contrast: 'normal', syncedAt: null },
   accessibility: { reduceMotion: 'system', underlineLinks: false },
   editor: {
     fontSize: 14,
@@ -46,6 +47,7 @@ export const preferencesPatchSchema = z
       .object({
         theme: z.enum(THEMES),
         accent: z.enum(ACCENTS),
+        surface: z.enum(SURFACES),
         density: z.enum(DENSITIES),
         fontScale: z.enum(FONT_SCALES),
         contrast: z.enum(CONTRASTS),

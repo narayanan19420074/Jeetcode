@@ -19,7 +19,7 @@ import './index.css';
 function ThemedApp() {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
-  const { mode, accent, density, fontScale, contrast, reduceMotion, underlineLinks } = useSelector((s) => s.ui);
+  const { mode, accent, surface, density, fontScale, contrast, reduceMotion, underlineLinks } = useSelector((s) => s.ui);
   const bootstrapped = useSelector((s) => s.auth.bootstrapped);
   const userId = useSelector((s) => s.auth.user?.id);
   const accountPrefs = useSelector((s) => s.auth.user?.preferences);
@@ -36,8 +36,8 @@ function ThemedApp() {
   const reduce = reduceMotion === 'on' || (reduceMotion === 'system' && osReduce);
 
   const theme = useMemo(
-    () => getTheme(mode, { accent, density, fontScale, contrast, reduceMotion: reduce, underlineLinks }),
-    [mode, accent, density, fontScale, contrast, reduce, underlineLinks]
+    () => getTheme(mode, { accent, surface, density, fontScale, contrast, reduceMotion: reduce, underlineLinks }),
+    [mode, accent, surface, density, fontScale, contrast, reduce, underlineLinks]
   );
 
   // Follow the OS light/dark setting while the theme preference is 'system'.

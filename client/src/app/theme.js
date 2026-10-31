@@ -43,6 +43,12 @@ const surfaces = {
   light: { bg: '#F6F8FA', paper: '#FFFFFF', tonal: '#EEF1F6', hero: '#E0E2FF', text: '#1B1F24', muted: '#4B5563', line: '#D0D7DE', lineSolid: '#D0D7DE' },
   dark: { bg: '#0E1116', paper: '#161B22', tonal: '#1F2630', hero: '#2A2F6B', text: '#E6EDF3', muted: '#9DA7B3', line: 'rgba(255,255,255,0.10)', lineSolid: '#2A313C' },
 };
+// Warm surfaces (Settings -> Appearance -> Surface): the cream Library palette in light mode and a warm
+// charcoal in dark mode. Text/background pairs keep AA contrast (4.5:1).
+const warmSurfaces = {
+  light: { bg: '#FDF8F4', paper: '#FFFFFF', tonal: '#F6ECE2', hero: '#FBE3D3', text: '#1A1613', muted: '#6F655B', line: '#E9DFD5', lineSolid: '#E9DFD5' },
+  dark: { bg: '#17120F', paper: '#201A16', tonal: '#2B231D', hero: '#4A2E22', text: '#F3EBE3', muted: '#B3A79B', line: 'rgba(255,235,220,0.10)', lineSolid: '#3A3029' },
+};
 // Reward colour: streaks, XP, badges only. Kept rare on purpose so it stands out.
 const reward = { light: '#D97706', dark: '#FBBF24' };
 // Status colours: deep on light backgrounds, bright on dark ones, all >= 4.5:1 on the page and cards.
@@ -93,7 +99,8 @@ const spinnerCss = `
 // getTheme(mode) keeps working exactly as before. `opts` carries the user's
 // appearance preferences: { accent, density, fontScale, contrast, reduceMotion }.
 export const getTheme = (mode, opts = {}) => {
-  const { accent = 'violet', density = 'comfortable', fontScale = 'md', contrast = 'normal', reduceMotion = false, underlineLinks = false } = opts;
+  const { accent = 'violet', surface = 'default', density = 'comfortable', fontScale = 'md', contrast = 'normal', reduceMotion = false, underlineLinks = false } = opts;
+  const S = (surface === 'warm' ? warmSurfaces : surfaces)[mode === 'dark' ? 'dark' : 'light'];
   const a = ACCENTS[accent] ?? ACCENTS.violet;
   const [main, dark] = a[mode === 'dark' ? 'dark' : 'light'];
   const compact = density === 'compact';
@@ -109,14 +116,14 @@ export const getTheme = (mode, opts = {}) => {
       error: { main: semantic[mode === 'dark' ? 'dark' : 'light'].error },
       ...(mode === 'dark'
         ? {
-            background: { default: surfaces.dark.bg, paper: surfaces.dark.paper },
-            text: { primary: highContrast ? '#FFFFFF' : surfaces.dark.text, secondary: highContrast ? '#CBD5E1' : surfaces.dark.muted },
-            divider: highContrast ? 'rgba(226, 232, 240, 0.4)' : surfaces.dark.line,
+            background: { default: S.bg, paper: S.paper },
+            text: { primary: highContrast ? '#FFFFFF' : S.text, secondary: highContrast ? '#CBD5E1' : S.muted },
+            divider: highContrast ? 'rgba(226, 232, 240, 0.4)' : S.line,
           }
         : {
-            background: { default: surfaces.light.bg, paper: surfaces.light.paper },
-            text: { primary: highContrast ? '#000000' : surfaces.light.text, secondary: highContrast ? '#334155' : surfaces.light.muted },
-            divider: highContrast ? '#64748B' : surfaces.light.line,
+            background: { default: S.bg, paper: S.paper },
+            text: { primary: highContrast ? '#000000' : S.text, secondary: highContrast ? '#334155' : S.muted },
+            divider: highContrast ? '#64748B' : S.line,
           }),
     },
     typography: { ...typography, fontSize: 14 * (FONT_SCALE[fontScale] ?? 1) },

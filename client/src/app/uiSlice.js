@@ -33,6 +33,7 @@ export const DEFAULT_EDITOR = {
 const defaults = {
   themePref: 'dark', // 'light' | 'dark' | 'system'
   accent: 'violet',
+  surface: 'default', // 'default' | 'warm'
   density: 'comfortable',
   fontScale: 'md',
   contrast: 'normal',
@@ -68,8 +69,8 @@ function load() {
 
 const persist = (state) => {
   try {
-    const { themePref, accent, density, fontScale, contrast, reduceMotion, underlineLinks, editor } = state;
-    localStorage.setItem(LS_KEY, JSON.stringify({ themePref, accent, density, fontScale, contrast, reduceMotion, underlineLinks, editor }));
+    const { themePref, accent, surface, density, fontScale, contrast, reduceMotion, underlineLinks, editor } = state;
+    localStorage.setItem(LS_KEY, JSON.stringify({ themePref, accent, surface, density, fontScale, contrast, reduceMotion, underlineLinks, editor }));
     localStorage.setItem(LEGACY_MODE_KEY, state.mode);
   } catch {
     // storage unavailable (private mode / quota) — preferences still apply for this session
@@ -103,7 +104,7 @@ const uiSlice = createSlice({
       merge(state, { themePref: state.mode === 'dark' ? 'light' : 'dark' });
     },
     // Local, instant update from Settings. Accepts any subset of:
-    // { themePref, accent, density, fontScale, contrast, reduceMotion, underlineLinks, editor }
+    // { themePref, accent, surface, density, fontScale, contrast, reduceMotion, underlineLinks, editor }
     setUiPrefs: (state, action) => {
       if (action.payload && 'accent' in action.payload) {
         try {
@@ -126,8 +127,8 @@ const uiSlice = createSlice({
       const p = action.payload || {};
       const patch = {};
       if (p.appearance?.syncedAt) {
-        const { theme, accent, density, fontScale, contrast } = p.appearance;
-        Object.assign(patch, { themePref: theme, accent: !paletteV2Chosen() && accent === 'blue' ? 'violet' : accent, density, fontScale, contrast });
+        const { theme, accent, surface, density, fontScale, contrast } = p.appearance;
+        Object.assign(patch, { themePref: theme, accent: !paletteV2Chosen() && accent === 'blue' ? 'violet' : accent, surface: surface || 'default', density, fontScale, contrast });
       }
       if (p.accessibility) Object.assign(patch, { reduceMotion: p.accessibility.reduceMotion, underlineLinks: p.accessibility.underlineLinks });
       if (p.editor) patch.editor = p.editor;
