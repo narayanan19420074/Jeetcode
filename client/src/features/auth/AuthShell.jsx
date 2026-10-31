@@ -2,6 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Link, Paper, Typography, TextField } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import BrandMark from '../../components/BrandMark';
+import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 
 // Shared GitHub-style shell for Login / Signup: logo + title on top,
 // a small outlined card for the form, and a second small card below it
@@ -14,7 +15,8 @@ export default function AuthShell({ title, children, footer }) {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        bgcolor: 'background.default',
+        // Phones in light mode get the cream surface used on the Library pages.
+        bgcolor: (t) => (t.palette.mode === 'light' ? { xs: LIBRARY_PALETTE.light.bg, md: 'background.default' } : 'background.default'),
         px: 2,
         pt: { xs: 4, sm: 8 },
         pb: 4,

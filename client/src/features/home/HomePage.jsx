@@ -27,6 +27,10 @@ import { apiClient } from '../../api/apiClient';
 import { toggleThemeMode } from '../../app/uiSlice';
 import { useContest, inr, fmtDuration } from '../contest/contestUtils';
 import ContestBand from './ContestBand';
+import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
+
+// Phones in light mode get the warm cream surface of the Library pages; other screens and dark mode are unchanged.
+const cream = (t, phone, fallback) => (t.palette.mode === 'light' ? { xs: phone, md: fallback } : fallback);
 import { DISPLAY_FONT } from './anim';
 
 // --- Copy rules for this page -------------------------------------------
@@ -177,7 +181,7 @@ function NavBar({ authed, onStart, onLogin }) {
         zIndex: 20,
         borderBottom: '1px solid',
         borderColor: 'divider',
-        bgcolor: (t) => alpha(t.palette.background.default, 0.92),
+        bgcolor: (t) => cream(t, alpha(LIBRARY_PALETTE.light.bg, 0.92), alpha(t.palette.background.default, 0.92)),
       }}
     >
       <Container maxWidth="lg">
@@ -196,7 +200,7 @@ function NavBar({ authed, onStart, onLogin }) {
           </Stack>
           <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
             <Tooltip title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
-              <IconButton onClick={() => dispatch(toggleThemeMode())} color="inherit" aria-label="Toggle color theme">
+              <IconButton onClick={() => dispatch(toggleThemeMode())} color="inherit" aria-label="Toggle color theme" sx={(t) => (t.palette.mode === 'light' ? { bgcolor: { xs: LIBRARY_PALETTE.light.player, md: 'transparent' } } : {})}>
                 {mode === 'dark' ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
               </IconButton>
             </Tooltip>
@@ -365,7 +369,7 @@ export default function HomePage() {
   ];
 
   return (
-    <Box id="top" sx={{ minHeight: '100dvh', bgcolor: 'background.default', overflowX: 'hidden' }}>
+    <Box id="top" sx={{ minHeight: '100dvh', bgcolor: (t) => cream(t, LIBRARY_PALETTE.light.bg, 'background.default'), overflowX: 'hidden' }}>
       <NavBar authed={authed} onStart={goStart} onLogin={go('/login')} />
 
       {/* 1. Hero: one promise, one button, one real screenshot. */}
@@ -448,7 +452,7 @@ export default function HomePage() {
       </Container>
 
       {/* 4. How it works: three plain steps, no images. */}
-      <Box id="how-it-works" sx={{ bgcolor: 'background.paper', borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', scrollMarginTop: 64 }}>
+      <Box id="how-it-works" sx={{ bgcolor: (t) => cream(t, LIBRARY_PALETTE.light.chip, 'background.paper'), borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider', scrollMarginTop: 64 }}>
         <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
           <SectionHeading>Start in two minutes</SectionHeading>
           <Grid container spacing={{ xs: 3, md: 4 }}>
@@ -501,7 +505,7 @@ export default function HomePage() {
       </Container>
 
       {/* 7. Why it exists */}
-      <Box sx={{ bgcolor: 'background.paper', borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider' }}>
+      <Box sx={{ bgcolor: (t) => cream(t, LIBRARY_PALETTE.light.chip, 'background.paper'), borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider' }}>
         <Container maxWidth="md" sx={{ py: { xs: 7, md: 9 } }}>
           <Box sx={{ pl: { xs: 3, md: 5 }, borderLeft: '4px solid', borderColor: 'primary.main' }}>
             <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 700, color: 'text.secondary', mb: 1.5 }}>Why I built this</Typography>
@@ -596,7 +600,7 @@ export default function HomePage() {
 
       {/* Sticky CTA bar (mobile): visible while neither the hero nor the final CTA is on screen */}
       {showSticky && (
-        <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 30, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', bgcolor: 'background.paper', borderTop: '1px solid', borderColor: 'divider' }}>
+        <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 30, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', bgcolor: (t) => cream(t, LIBRARY_PALETTE.light.bg, 'background.paper'), borderTop: '1px solid', borderColor: 'divider' }}>
           <PrimaryCta label={startLabel} onClick={goStart} sx={{ width: '100%' }} />
         </Box>
       )}

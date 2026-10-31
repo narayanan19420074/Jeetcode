@@ -18,6 +18,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { loginUser, googleSignIn } from './authSlice';
 import AuthShell, { AuthField } from './AuthShell';
+import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
 
 // These env vars must exist in client/.env. GITHUB redirect URI must EXACTLY
@@ -26,13 +27,19 @@ const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 const GITHUB_CLIENT_ID = import.meta.env.VITE_GITHUB_CLIENT_ID;
 const GITHUB_REDIRECT_URI = `${window.location.origin}/auth/github/callback`;
 
-const iconBtnSx = {
+// Phones in light mode: round cream buttons like the Library icon buttons.
+const iconBtnSx = (t) => ({
   width: 40,
   height: 40,
   border: '1px solid',
   borderColor: 'divider',
   borderRadius: 1,
-};
+  ...(t.palette.mode === 'light' && {
+    bgcolor: { xs: LIBRARY_PALETTE.light.player, md: 'transparent' },
+    borderColor: { xs: 'transparent', md: 'divider' },
+    borderRadius: { xs: '50%', md: 1 },
+  }),
+});
 
 export default function LoginPage() {
   const dispatch = useDispatch();
