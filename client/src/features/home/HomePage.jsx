@@ -14,6 +14,7 @@ import {
   Stack,
   Tooltip,
   Typography,
+  useMediaQuery,
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
@@ -313,7 +314,10 @@ const FooterCol = ({ title, links }) => (
 export default function HomePage() {
   const navigate = useNavigate();
   const authed = useSelector((s) => s.auth.isAuthenticated);
-  const offerEnds = useLaunchOffer();
+  const launchOfferEnds = useLaunchOffer();
+  // The launch offer is not shown on phones.
+  const isPhone = useMediaQuery((t) => t.breakpoints.down('md'));
+  const offerEnds = isPhone ? null : launchOfferEnds;
   const { contest } = useContest();
 
   const go = (path) => () => navigate(path);

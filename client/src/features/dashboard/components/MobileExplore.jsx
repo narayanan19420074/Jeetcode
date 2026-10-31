@@ -157,8 +157,8 @@ export default function MobileExplore({ onBrowse }) {
         <PageHeader icon={ExploreRoundedIcon} title="Explore" subtitle="Practice tools and shortcuts" />
 
         <Stack spacing={4} sx={{ mt: 4 }}>
-          <Box sx={{ '& a': { mb: 0 } }}>
-            <NqtExploreCard />
+          <Box sx={{ '& a': { mb: 0 }, '&:empty': { display: 'none' } }}>
+            <NqtExploreCard hideForNewUser />
           </Box>
 
           <Section title="Practice tools">

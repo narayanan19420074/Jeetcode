@@ -57,7 +57,8 @@ export default function FreeAccessBanner() {
       aria-label="Launch offer"
       sx={{
         position: 'relative',
-        display: 'flex',
+        // Hidden on phones; shown from the md breakpoint up.
+        display: { xs: 'none', md: 'flex' },
         alignItems: 'center',
         justifyContent: 'center',
         gap: { xs: 1, sm: 1.75 },

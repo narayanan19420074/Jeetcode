@@ -294,8 +294,8 @@ export default function MobileHome({ cards, nqtDismissed, onDismissNqt }) {
         <Banners cards={banners} />
 
         {!nqtDismissed && (
-          <Box sx={{ '& a': { mb: 0 } }}>
-            <NqtExploreCard onDismiss={onDismissNqt} />
+          <Box sx={{ '& a': { mb: 0 }, '&:empty': { display: 'none' } }}>
+            <NqtExploreCard onDismiss={onDismissNqt} hideForNewUser />
           </Box>
         )}
 

@@ -19,15 +19,18 @@ const AMBER = '#FBBF24';
 // Featured card: the TCS NQT hub. Built to be tapped: the TCS buddy talks to you, there is a level
 // + XP bar to fill, a live countdown, and one warm (amber) button on a cool (indigo) card.
 // When `onDismiss` is passed, a close button is shown so the card can be hidden.
-export default function NqtExploreCard({ onDismiss }) {
+// When `hideForNewUser` is set, the card renders nothing until the user has started the track.
+export default function NqtExploreCard({ onDismiss, hideForNewUser = false }) {
   const reduce = useReducedMotion();
   const [track, setTrack] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     prepApi
       .listCompanies()
       .then(({ data }) => setTrack((data.data.items || []).find((c) => c.slug === 'tcs-nqt') || null))
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setLoaded(true));
   }, []);
 
   const examDate = pickExamDate(track?.examDate);
@@ -38,6 +41,7 @@ export default function NqtExploreCard({ onDismiss }) {
 
   const readiness = Math.max(0, Math.min(100, Math.round(track?.readiness ?? 0)));
   const started = readiness > 0;
+  if (hideForNewUser && (!loaded || !started)) return null;
   const level = levelFor(readiness);
   const tier = FORMS.findIndex((f) => f.kind === formFor(readiness).kind);
   const levelPct = level >= 10 ? 100 : Math.round(((readiness - (level - 1) * 10) / 10) * 100);
