@@ -89,42 +89,52 @@ export default function AppearanceSection() {
 
       <Card title="Accent colour" description="Used for buttons, links and highlights across the app.">
         <CardBody>
-          <Box role="radiogroup" aria-label="Accent colour" sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
-            {Object.entries(ACCENTS).map(([key, def]) => {
-              const sel = a.accent === key;
-              const swatch = def[theme.palette.mode === 'dark' ? 'dark' : 'light'][0];
-              return (
-                <Tooltip key={key} title={def.label}>
-                  <Box
-                    component="button"
-                    type="button"
-                    role="radio"
-                    aria-checked={sel}
-                    aria-label={def.label}
-                    onClick={() => set('appearance', { accent: key })}
-                    sx={{
-                      all: 'unset',
-                      cursor: 'pointer',
-                      width: 44,
-                      height: 44,
-                      borderRadius: '50%',
-                      bgcolor: swatch,
-                      display: 'grid',
-                      placeItems: 'center',
-                      color: def.text,
-                      outline: sel ? `3px solid ${swatch}` : '3px solid transparent',
-                      outlineOffset: 3,
-                      transition: 'outline-color .15s, transform .15s',
-                      '&:hover': { transform: 'scale(1.06)' },
-                      '&:focus-visible': { outline: `3px solid ${theme.palette.text.primary}` },
-                    }}
-                  >
-                    {sel && <CheckRoundedIcon />}
-                  </Box>
-                </Tooltip>
-              );
-            })}
-          </Box>
+          {[
+            { label: 'Warm tones', entries: Object.entries(ACCENTS).filter(([, d]) => d.warm) },
+            { label: 'Classic', entries: Object.entries(ACCENTS).filter(([, d]) => !d.warm) },
+          ].map((group) => (
+            <Box key={group.label} role="radiogroup" aria-label={`${group.label} accent colours`} sx={{ '& + &': { mt: 2.5 } }}>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1, fontWeight: 700 }}>
+                {group.label}
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
+                {group.entries.map(([key, def]) => {
+                  const sel = a.accent === key;
+                  const swatch = def[theme.palette.mode === 'dark' ? 'dark' : 'light'][0];
+                  return (
+                    <Tooltip key={key} title={def.label}>
+                      <Box
+                        component="button"
+                        type="button"
+                        role="radio"
+                        aria-checked={sel}
+                        aria-label={def.label}
+                        onClick={() => set('appearance', { accent: key })}
+                        sx={{
+                          all: 'unset',
+                          cursor: 'pointer',
+                          width: 44,
+                          height: 44,
+                          borderRadius: '50%',
+                          bgcolor: swatch,
+                          display: 'grid',
+                          placeItems: 'center',
+                          color: def.text,
+                          outline: sel ? `3px solid ${swatch}` : '3px solid transparent',
+                          outlineOffset: 3,
+                          transition: 'outline-color .15s, transform .15s',
+                          '&:hover': { transform: 'scale(1.06)' },
+                          '&:focus-visible': { outline: `3px solid ${theme.palette.text.primary}` },
+                        }}
+                      >
+                        {sel && <CheckRoundedIcon />}
+                      </Box>
+                    </Tooltip>
+                  );
+                })}
+              </Box>
+            </Box>
+          ))}
         </CardBody>
       </Card>
 

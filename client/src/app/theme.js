@@ -65,6 +65,12 @@ export const ACCENTS = {
   rose: { label: 'Rose', dark: ['#FB7185', '#F43F5E'], light: ['#BE123C', '#9F1239'], text: '#FFFFFF', darkText: '#0B0F19' },
   cyan: { label: 'Cyan', dark: ['#22D3EE', '#06B6D4'], light: ['#0E7490', '#155E75'], text: '#FFFFFF', darkText: '#0B0F19' },
   orange: { label: 'Orange', dark: ['#FB923C', '#F97316'], light: ['#C2410C', '#9A3412'], text: '#FFFFFF', darkText: '#0B0F19' },
+  // Warm tones: same family as the cream Library surfaces. All light shades keep AA contrast with white text.
+  coral: { label: 'Coral', warm: true, dark: ['#F28B6E', '#EF6C4D'], light: ['#C8472D', '#A93A23'], text: '#FFFFFF', darkText: '#0B0F19' },
+  terracotta: { label: 'Terracotta', warm: true, dark: ['#E08A63', '#D97757'], light: ['#B4532A', '#933F1D'], text: '#FFFFFF', darkText: '#0B0F19' },
+  honey: { label: 'Honey', warm: true, dark: ['#F5C26B', '#E8A93C'], light: ['#A16207', '#854D0E'], text: '#FFFFFF', darkText: '#0B0F19' },
+  clay: { label: 'Clay', warm: true, dark: ['#D4A27F', '#C08A66'], light: ['#8C5A3C', '#6F4529'], text: '#FFFFFF', darkText: '#0B0F19' },
+  rosewood: { label: 'Rosewood', warm: true, dark: ['#E58B84', '#D4726B'], light: ['#A8433F', '#8A3430'], text: '#FFFFFF', darkText: '#0B0F19' },
 };
 const FONT_SCALE = { sm: 0.92, md: 1, lg: 1.12 };
 

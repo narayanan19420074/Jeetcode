@@ -5,7 +5,7 @@ import { z } from 'zod';
 // PATCH /users/me/preferences body. Every field is optional on update, and the
 // object is strict, so an unknown key is rejected instead of silently stored.
 
-export const ACCENTS = ['blue', 'violet', 'emerald', 'amber', 'rose', 'cyan', 'orange'];
+export const ACCENTS = ['blue', 'violet', 'emerald', 'amber', 'rose', 'cyan', 'orange', 'coral', 'terracotta', 'honey', 'clay', 'rosewood'];
 export const THEMES = ['light', 'dark', 'system'];
 export const DENSITIES = ['comfortable', 'compact'];
 export const FONT_SCALES = ['sm', 'md', 'lg'];
