@@ -5,6 +5,7 @@ import {
   AppBar,
   Toolbar,
   Box,
+  ButtonBase,
   Typography,
   IconButton,
   Button,
@@ -470,7 +471,11 @@ export default function Navbar() {
               onClose={() => setAnchorEl(null)}
               slotProps={{ paper: { sx: accountPaperSx } }}
             >
-              <Box sx={(t) => ({ px: 2, py: 1.25, display: 'flex', alignItems: 'center', gap: '12px', [t.breakpoints.down('md')]: { py: 1.5 } })}>
+              <ButtonBase
+                onClick={handleProfileClick}
+                aria-label="Open my profile"
+                sx={(t) => ({ px: 2, py: 1.25, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', textAlign: 'left', [t.breakpoints.down('md')]: { py: 1.5 } })}
+              >
                 <Avatar
                   src={user?.avatarUrl || undefined}
                   sx={{ display: { xs: 'flex', md: 'none' }, bgcolor: ACCENT, color: '#fff', width: 48, height: 48, fontSize: '1rem', fontWeight: 800, flexShrink: 0 }}
@@ -493,7 +498,7 @@ export default function Navbar() {
                     @{user?.handle}
                   </Typography>
                 </Box>
-              </Box>
+              </ButtonBase>
               <Divider sx={accountDividerSx} />
               <MenuItem onClick={handleProfileClick} sx={accountItemSx}>
                 <ListItemIcon>

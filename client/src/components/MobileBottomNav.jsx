@@ -6,7 +6,6 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import { LIB_FONT, LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
 import { BRAND_ORANGE, BRAND_TEXT_LIGHT } from './BrandMark';
 
@@ -18,7 +17,6 @@ const ITEMS = [
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
   { to: '/aptitude', label: 'Aptitude', icon: CalculateRoundedIcon },
   { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
-  { to: '/you', label: 'You', icon: PersonRoundedIcon },
 ];
 
 // The code workspace needs the full phone height, so no bottom bar there.
@@ -26,7 +24,7 @@ export const showMobileBottomNav = (pathname) => !pathname.startsWith('/workspac
 
 const isActive = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
-// Phone-only tab bar (Home / Problems / Aptitude / Companies / You), like Google Pay.
+// Phone-only tab bar (Home / Problems / Aptitude / Companies), like Google Pay.
 export default function MobileBottomNav() {
   const { pathname, search } = useLocation();
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
