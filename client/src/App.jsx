@@ -15,6 +15,7 @@ import AdminLoginPage from './features/auth/AdminLoginPage';
 import ForgotPasswordPage from './features/auth/ForgotPasswordPage';
 import ResetPasswordPage from './features/auth/ResetPasswordPage';
 import VerifyEmailPage from './features/auth/VerifyEmailPage';
+import { hasCompletedOnboarding } from './features/onboarding/onboardingProfileStorage';
 
 // Monaco editor and the admin console are heavy — code-split so the
 // dashboard (the page most of ~10L users land on) loads fast.
@@ -72,6 +73,8 @@ const RefundPolicyPage = lazy(() => import('./features/legal/RefundPolicyPage'))
 // Help & Support (public, standalone) — FAQ + contact/feedback form
 const HelpPage = lazy(() => import('./features/help/HelpPage'));
 const NotFoundPage = lazy(() => import('./features/errors/NotFoundPage'));
+// Prototype: conversational onboarding with generated cards.
+const OnboardingPage = lazy(() => import('./features/onboarding/OnboardingPage'));
 
 const RouteFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -84,7 +87,8 @@ const RouteFallback = () => (
 function HomeGate() {
   const { isAuthenticated, bootstrapped } = useSelector((s) => s.auth);
   if (!bootstrapped) return <RouteFallback />;
-  if (isAuthenticated) return <Navigate to="/dashboard" replace />;
+  // First visit after sign-in goes through onboarding once; /onboarding can always be opened directly.
+  if (isAuthenticated) return <Navigate to={hasCompletedOnboarding() ? '/dashboard' : '/onboarding'} replace />;
   return <HomePage />;
 }
 
@@ -152,6 +156,18 @@ export default function App() {
           <ProtectedRoute>
             <Suspense fallback={<RouteFallback />}>
               <AptitudeTestPage />
+            </Suspense>
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Onboarding prototype — full-screen assistant, outside <MainLayout>. */}
+      <Route
+        path="/onboarding"
+        element={
+          <ProtectedRoute>
+            <Suspense fallback={<RouteFallback />}>
+              <OnboardingPage />
             </Suspense>
           </ProtectedRoute>
         }
