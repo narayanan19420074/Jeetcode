@@ -1,0 +1,66 @@
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Typography } from '@mui/material';
+import { BANNER_GRADIENT } from '../bannerGradients';
+import { PROMO_CARD_W } from './promoCarouselConfig';
+
+const TRACKING = '0.03em';
+
+const cardSx = (gradient) => ({
+  position: 'relative',
+  flex: '0 0 auto',
+  width: PROMO_CARD_W,
+  height: 150,
+  scrollSnapAlign: 'start',
+  overflow: 'hidden',
+  borderRadius: '20px',
+  p: 2,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  color: '#fff',
+  textDecoration: 'none',
+  background: gradient,
+  '&:hover': { filter: 'brightness(1.06)' },
+  '&:focus-visible': { outline: '3px solid #fff', outlineOffset: -4 },
+});
+
+// Same ring icon as the phone banners.
+function RingIcon({ icon: Icon }) {
+  return (
+    <Box
+      aria-hidden
+      sx={{
+        position: 'absolute',
+        right: 20,
+        top: 20,
+        width: 64,
+        height: 64,
+        borderRadius: '50%',
+        display: 'grid',
+        placeItems: 'center',
+        border: '5px solid rgba(255,255,255,0.55)',
+        background: 'linear-gradient(160deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+      }}
+    >
+      <Icon sx={{ fontSize: 30, color: '#fff' }} />
+    </Box>
+  );
+}
+
+const clampLines = (lines) => ({ display: '-webkit-box', WebkitLineClamp: lines, WebkitBoxOrient: 'vertical', overflow: 'hidden' });
+
+export default function PromoCard({ card }) {
+  const { key, title, text, cta, to, icon } = card;
+  return (
+    <Box component={RouterLink} to={to} sx={cardSx(BANNER_GRADIENT[key] || card.gradient)}>
+      <RingIcon icon={icon} />
+      <Box sx={{ position: 'relative', maxWidth: '62%' }}>
+        <Typography sx={[{ fontWeight: 700, fontSize: 20, lineHeight: '24px', letterSpacing: '-0.01em' }, clampLines(2)]}>{title}</Typography>
+        <Typography sx={[{ mt: 0.5, fontSize: 13, lineHeight: '18px', letterSpacing: TRACKING, color: 'rgba(255,255,255,0.86)' }, clampLines(2)]}>{text}</Typography>
+      </Box>
+      <Box sx={{ position: 'relative', alignSelf: 'flex-start', px: 1.75, height: 28, display: 'inline-flex', alignItems: 'center', borderRadius: 999, bgcolor: 'rgba(255,255,255,0.2)', fontSize: 14, letterSpacing: TRACKING }}>
+        {cta}
+      </Box>
+    </Box>
+  );
+}

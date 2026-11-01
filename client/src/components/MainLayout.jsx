@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
@@ -9,51 +9,81 @@ import EmailVerifyBanner from './EmailVerifyBanner';
 import FriendsRealtime from '../features/friends/friendsRealtime';
 import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
 import { LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
+import { DesktopLookProvider, isDashboardPath } from '../features/dashboard/desktop/desktopLook';
 
-export default function MainLayout() {
-  const { pathname, search, hash } = useLocation();
+// Pages with their own phone header hide the top bar on phones. The bar stays mounted so the coin polling keeps running.
+const PHONE_HEADER_PATHS = ['/aptitude', '/prep', '/you', '/settings', '/plans'];
+const PHONE_HEADER_DASHBOARD_VIEWS = ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests'];
+const APTITUDE_LEVEL_PATH = /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?\/?$/;
 
-  // Every page change starts at the top. The instant jump also cancels any smooth scroll that is
-  // still running (for example the Aptitude map centring on the current level), so it cannot
-  // carry over to the next page. A layout effect runs before the new page's own effects, so pages
-  // that scroll on mount (like the Aptitude map) still work.
+const hasPhoneHeaderOnDashboard = (pathname, search) =>
+  isDashboardPath(pathname) && PHONE_HEADER_DASHBOARD_VIEWS.includes(new URLSearchParams(search).get('view'));
+
+const hidesNavbarOnPhone = (pathname, search) =>
+  pathname === '/problems' ||
+  pathname.startsWith('/problems/') ||
+  PHONE_HEADER_PATHS.includes(pathname.replace(/\/+$/, '')) ||
+  APTITUDE_LEVEL_PATH.test(pathname) ||
+  pathname.startsWith('/settings/') ||
+  pathname.startsWith('/workspace/') ||
+  pathname === '/store' ||
+  hasPhoneHeaderOnDashboard(pathname, search);
+
+// Every page change starts at the top. The instant jump also cancels any smooth scroll that is
+// still running (for example the Aptitude map centring on the current level), so it cannot
+// carry over to the next page. A layout effect runs before the new page's own effects, so pages
+// that scroll on mount (like the Aptitude map) still work.
+function useScrollToTopOnNavigate(pathname, hash) {
   useLayoutEffect(() => {
     if (hash) return;
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+}
+
+// Phone home (light mode) is a flat warm page. The desktop dashboard uses the same cream page.
+// Every other page keeps the soft wash.
+function pageBackgroundSx(t, { libraryLook, dashboard }) {
+  const isLight = t.palette.mode === 'light';
+  const wash = `linear-gradient(180deg, ${alpha(t.palette.primary.main, isLight ? 0.07 : 0.08)} 0, transparent 280px)`;
+  const cream = LIBRARY_PALETTE.light.bg;
+  if (!isLight) return { bgcolor: 'background.default', backgroundImage: wash, backgroundRepeat: 'no-repeat' };
+  return {
+    bgcolor: { xs: libraryLook ? cream : 'background.default', md: dashboard ? cream : 'background.default' },
+    backgroundImage: { xs: libraryLook ? 'none' : wash, md: dashboard ? 'none' : wash },
+    backgroundRepeat: 'no-repeat',
+  };
+}
+
+function TopBar({ hiddenOnPhone }) {
+  if (!hiddenOnPhone) return <Navbar />;
+  return (
+    <Box sx={{ display: { xs: 'none', md: 'contents' } }}>
+      <Navbar />
+    </Box>
+  );
+}
+
+export default function MainLayout() {
+  const { pathname, search, hash } = useLocation();
+  const isDesktop = useMediaQuery(useTheme().breakpoints.up('md'));
+  useScrollToTopOnNavigate(pathname, hash);
 
   const bottomNav = showMobileBottomNav(pathname);
-  const libraryLook = isLibraryRoute(pathname, search);
-  // Pages with their own phone header (Plans, Problems, Aptitude levels, Companies, You, Settings, Workspace, Store, Contest, Explore, Friends, Leaderboard, Study Plan) hide the top bar on phones. It stays mounted so the coin polling keeps running.
-  const hideNavbarOnPhone = pathname === '/problems' || pathname.startsWith('/problems/') || ['/aptitude', '/prep', '/you', '/settings', '/plans'].includes(pathname.replace(/\/+$/, '')) || /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?\/?$/.test(pathname) || pathname.startsWith('/settings/') || pathname.startsWith('/workspace/') || pathname === '/store' || (pathname.replace(/\/+$/, '') === '/dashboard' && ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests'].includes(new URLSearchParams(search).get('view')));
+  const pageLook = { libraryLook: isLibraryRoute(pathname, search), dashboard: isDashboardPath(pathname) };
 
   return (
-    <Box
-      sx={(t) => ({
-        minHeight: '100vh',
-        // Phone home (light mode) is a flat warm page; everything else keeps the soft wash on phone and desktop.
-        bgcolor: libraryLook && t.palette.mode === 'light' ? { xs: LIBRARY_PALETTE.light.bg, md: 'background.default' } : 'background.default',
-        backgroundImage: libraryLook && t.palette.mode === 'light'
-          ? { xs: 'none', md: `linear-gradient(180deg, ${alpha(t.palette.primary.main, 0.07)} 0, transparent 280px)` }
-          : `linear-gradient(180deg, ${alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.08 : 0.07)} 0, transparent 280px)`,
-        backgroundRepeat: 'no-repeat',
-      })}
-    >
-      <FreeAccessBanner />
-      <EmailVerifyBanner />
-      <FriendsRealtime />
-      <NotificationsWatcher />
-      {hideNavbarOnPhone ? (
-        <Box sx={{ display: { xs: 'none', md: 'contents' } }}>
-          <Navbar />
+    <Box sx={(t) => ({ minHeight: '100vh', ...pageBackgroundSx(t, pageLook) })}>
+      <DesktopLookProvider enabled={pageLook.dashboard && isDesktop}>
+        <FreeAccessBanner />
+        <EmailVerifyBanner />
+        <FriendsRealtime />
+        <NotificationsWatcher />
+        <TopBar hiddenOnPhone={hidesNavbarOnPhone(pathname, search)} />
+        <Box component="main" sx={{ pb: bottomNav ? { xs: 'calc(76px + env(safe-area-inset-bottom))', md: 0 } : 0 }}>
+          <Outlet />
         </Box>
-      ) : (
-        <Navbar />
-      )}
-      <Box component="main" sx={{ pb: bottomNav ? { xs: 'calc(76px + env(safe-area-inset-bottom))', md: 0 } : 0 }}>
-        <Outlet />
-      </Box>
-      {bottomNav && <MobileBottomNav />}
+        {bottomNav && <MobileBottomNav />}
+      </DesktopLookProvider>
     </Box>
   );
 }
