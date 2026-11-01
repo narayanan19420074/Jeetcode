@@ -82,7 +82,8 @@ Because it stages everything, the status check in 3.3 matters.
    `node --check` on changed server files. Fix errors before delivering. If you
    cannot run code, say so in one line.
 4. **Keep changes minimal.** Match existing code style, folder structure and
-   naming. No unrelated refactors.
+   naming. No unrelated refactors. Exception: the clean-code limits in 4.2 always apply
+   to every file you touch.
 5. **Secrets.** Never read, print, request or commit `.env` values. If a new env
    var is needed, add its name to `.env.example` and tell him to set it in the
    Render dashboard (Environment). If an uploaded zip contains a `.env`, do not
@@ -124,6 +125,65 @@ These apply to every file you deliver.
 4. **Existing wording.** If you touch a file that already contains Tanglish or
    invented names, fix it in the same delivery, and list those changes in the summary.
 
+## 4.2 Code architecture standards (clean code)
+
+These apply to every file you write or touch, client and server. They override the
+"keep changes minimal" rule (4.4) whenever a touched file breaks a limit below.
+
+1. **File size: 500 lines maximum.** Every file, of any kind (page, component, hook,
+   controller, service, model, slice), stays under 500 lines. Approaching the limit
+   means splitting by responsibility, not compressing code.
+2. **Function size: 30 lines maximum.** No function or component body exceeds 30
+   lines. Extract helpers, hooks or sub-components until it fits.
+3. **Single responsibility (SOLID).** One function does one job. One component renders
+   one thing. One module owns one concern. Mixing data fetching, validation,
+   business rules and rendering in one function is not allowed. Apply the remaining
+   SOLID principles as well: depend on abstractions (services, hooks) rather than
+   concrete details, and extend behavior by composition rather than by editing
+   working code.
+4. **DRY: never repeat code.** If the same logic, markup, style, constant, validation
+   rule or API call appears twice, extract it once and reuse it. Check for an
+   existing helper, hook or component before writing a new one.
+5. **Meaningful names only.** Names say exactly what a thing is or does:
+   `validateLoginForm`, `isSubmissionPending`, `LoginFormFields`. No `data2`, `temp`,
+   `handleStuff`, single-letter names (except short loop indexes) or unexplained
+   abbreviations.
+6. **Comments explain business logic.** Do not write comments that restate what the
+   code or function name already says. Write comments that explain the business
+   reason: why this code exists, which rule it enforces, and why it behaves this
+   way (for example, why a submission is rejected after the contest ends).
+   Comments are English (see 4.1).
+7. **Shared first, platform-specific second (mobile and desktop).** When a page has
+   different mobile and desktop views, split it into three parts:
+   - **Common** (shared by both): logic, hooks, validation, constants, state, and
+     every UI piece that is identical on both views.
+   - **Mobile**: only the parts that truly differ on mobile.
+   - **Desktop**: only the parts that truly differ on desktop.
+
+   The page file stays thin. It calls the shared logic and chooses the mobile or
+   desktop view. Never copy a whole view into two files and edit both.
+
+   Example for the login page:
+   ```
+   client/src/features/auth/login/
+     LoginPage.jsx            # thin entry: picks the view by breakpoint
+     common/
+       useLoginForm.js        # state, validation and submit logic
+       loginValidation.js     # validation rules
+       LoginFormFields.jsx    # inputs and submit button, identical on both views
+     mobile/
+       LoginMobileView.jsx    # mobile layout only (stacked, full width)
+     desktop/
+       LoginDesktopView.jsx   # desktop layout only (split panel, side artwork)
+   ```
+8. **Server follows the same rules.** Keep the layering from section 5
+   (`routes → controllers → services → models`). A controller only parses the request
+   and returns the response. Business rules live in services. Shared logic is
+   extracted once and reused.
+9. **Fixing a violation.** If a file you touch is already over 500 lines, has a function
+   over 30 lines, or contains duplicated code, split or clean it in the same delivery
+   and list the new or moved files in the summary.
+
 ## 5. Project-specific gotchas
 
 - MUI (v6–v7): `Grid` uses the new `size` prop (e.g. `size={{ xs: 12, md: 6 }}`),
@@ -151,6 +211,10 @@ These apply to every file you deliver.
 - [ ] Chat reply is short and in Tanglish
 - [ ] Product text, comments and commit message are professional English (4.1)
 - [ ] Only standard, proven names and principles used (4.1)
+- [ ] Every file under 500 lines, every function under 30 lines (4.2)
+- [ ] One job per function, no repeated code (SOLID and DRY, 4.2)
+- [ ] Meaningful names; comments explain business logic and why the code exists (4.2)
+- [ ] Mobile/desktop pages split into common, mobile and desktop parts (4.2)
 
 ## 7. Shortcuts defined in the developer's `~/.bashrc`
 
