@@ -27,10 +27,8 @@ import ProblemListDrawer from './ProblemListDrawer';
 import ProblemDescription from './ProblemDescription';
 import { ConsoleBody, VerdictChip } from './ConsolePanel';
 import SplitHandle from './SplitHandle';
-import AiAssistantDrawer from './AiAssistantDrawer';
-import AiLauncher from './AiLauncher';
+import AiAssistantLayer from './AiAssistantLayer';
 import { saveLastProblem } from './lastProblem';
-import AiLiveOverlay from './AiLiveOverlay';
 import ConfirmDialog from './ConfirmDialog';
 import ConsoleBar from './ConsoleBar';
 import GuestBanner from './GuestBanner';
@@ -132,9 +130,7 @@ export default function WorkspacePage() {
   const [activeCase, setActiveCase] = useState(0);
   const [moreAnchor, setMoreAnchor] = useState(null);
   const [listOpen, setListOpen] = useState(false); // problem list overlay (left)
-  const [aiMenuOpen, setAiMenuOpen] = useState(false); // AI icon menu: Go live / Fix / Hint
-  const [aiLive, setAiLive] = useState(false); // voice session
-  const [aiAuto, setAiAuto] = useState(null); // { id, text }: question the AI drawer sends on open
+  const [aiMenuOpen, setAiMenuOpen] = useState(false); // AI icon menu: Go live / Fix / Hint (see AiAssistantLayer)
   const sw = useStopwatch();
 
   const { descOpen, openDesc, closeDesc } = useDescPanel(isMobile);
@@ -642,42 +638,14 @@ export default function WorkspacePage() {
         onConfirm={() => applySolution(pendingLoad)}
       />
 
-      {isMobile && (
-      <AiLauncher
-        open={aiMenuOpen}
-        onClose={() => setAiMenuOpen(false)}
-        onPick={(choice) => {
-          setAiMenuOpen(false);
-          if (choice === 'live') {
-            setAiLive(true);
-            return;
-          }
-          if (choice === 'fix') setAiAuto({ id: Date.now(), text: 'Find the bug in my current code. Point to the lines that are wrong and explain how to fix them. Show only the corrected lines, not a full solution.' });
-          else setAiAuto({ id: Date.now(), text: 'Give me a hint for this problem.' });
-          if (!aiDrawerOpen) dispatch(toggleAiDrawer());
-        }}
-      />
-      )}
-      {isMobile && (
-      <AiLiveOverlay
-        key={`live-${slug}`}
-        open={aiLive}
-        onClose={() => setAiLive(false)}
+      <AiAssistantLayer
+        isMobile={isMobile}
+        menuOpen={aiMenuOpen}
+        onCloseMenu={() => setAiMenuOpen(false)}
+        problemId={problem?._id}
         slug={slug}
         language={activeLanguage}
-        getCode={() => code}
-        isAuthenticated={isAuthenticated}
-        onSignIn={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}
-      />
-      )}
-      <AiAssistantDrawer
-        key={slug}
-        autoPrompt={aiAuto}
-        open={aiDrawerOpen}
-        onClose={() => dispatch(toggleAiDrawer())}
-        slug={slug}
-        language={activeLanguage}
-        getCode={() => code}
+        code={code}
         isAuthenticated={isAuthenticated}
         onSignIn={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}
       />

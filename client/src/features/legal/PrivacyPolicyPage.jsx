@@ -45,7 +45,7 @@ const SECTIONS = [
         'Email delivery: Brevo.',
         'Sign-in: Google, GitHub and LinkedIn, if you choose to use them.',
         'Code execution: your submitted code is executed by our judge, which may be a third-party code-execution service such as Judge0.',
-        'AI hints: when you use the AI assistant, your prompt and the code or problem you are working on are sent to an AI provider (Google Gemini or Anthropic) to generate a reply. Do not put sensitive personal information in AI prompts.',
+        'AI assistant: when you use hints or Fix, your prompt and the code or problem you are working on are sent to an AI provider (Google Gemini or Anthropic) to generate a reply. When you use Go live, your voice audio and your code are streamed to Google Gemini while the session is open. Do not put sensitive personal information in AI prompts or say it aloud.',
       ] },
       'Some of these providers are located outside India, so your data may be processed in other countries. We may also disclose data if required by law or to protect the rights and safety of users and the service.',
       'Your handle, avatar, solved counts, leaderboard rank and community posts are visible to other users. Your email, address and phone number are not.',

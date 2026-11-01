@@ -60,6 +60,10 @@ const envSchema = z.object({
   // ANTHROPIC_API_KEY if Gemini isn't configured but Anthropic is.
   GEMINI_API_KEY: z.string().optional(),
   GEMINI_MODEL: z.string().default('gemini-2.0-flash'),
+  // Gemini Live (voice): model and API version used for the ephemeral token and the browser session.
+  // If voice fails to connect, try GEMINI_LIVE_API_VERSION=v1alpha (older SDK/token combinations).
+  GEMINI_LIVE_MODEL: z.string().default('gemini-3.8-live'),
+  GEMINI_LIVE_API_VERSION: z.string().default('v1beta'),
 
   ANTHROPIC_API_KEY: z.string().optional(),
   ANTHROPIC_MODEL: z.string().default('claude-haiku-4-5-20251001'),
