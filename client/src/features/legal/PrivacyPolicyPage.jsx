@@ -43,6 +43,7 @@ const SECTIONS = [
         'Hosting and database: Render (application hosting) and MongoDB Atlas (database).',
         'Payments: Razorpay.',
         'Email delivery: Brevo.',
+        'Error monitoring: Sentry receives crash reports with technical details such as the error message, your browser type and the page address without its query string. We do not send your name or email address to it.',
         'Sign-in: Google, GitHub and LinkedIn, if you choose to use them.',
         'Code execution: your submitted code is executed by our judge, which may be a third-party code-execution service such as Judge0.',
         'AI assistant: when you use hints or Fix, your prompt and the code or problem you are working on are sent to an AI provider (Google Gemini or Anthropic) to generate a reply. When you use Go live, your voice audio and your code are streamed to Google Gemini while the session is open. Do not put sensitive personal information in AI prompts or say it aloud.',

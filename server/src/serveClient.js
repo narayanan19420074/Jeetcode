@@ -12,6 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
+import { injectSiteUrl } from './seo.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CLIENT_DIST = path.resolve(__dirname, '../../client/dist');
@@ -27,6 +28,10 @@ export function mountClient(app) {
     return;
   }
 
+  // index.html holds absolute share-preview URLs (Open Graph), which need this site's public address.
+  // It is filled in once at startup instead of on every request.
+  const indexHtml = injectSiteUrl(fs.readFileSync(INDEX_HTML, 'utf8'));
+
   // Vite fingerprints everything in /assets, so it is safe to cache forever.
   app.use('/assets', express.static(path.join(CLIENT_DIST, 'assets'), { maxAge: '1y', immutable: true }));
   app.use(express.static(CLIENT_DIST, { maxAge: '1h', index: false }));
@@ -36,6 +41,6 @@ export function mountClient(app) {
   app.use((req, res, next) => {
     if ((req.method !== 'GET' && req.method !== 'HEAD') || req.path.startsWith('/api')) return next();
     res.set('Cache-Control', 'no-cache');
-    res.sendFile(INDEX_HTML);
+    res.type('html').send(indexHtml);
   });
 }

@@ -92,6 +92,9 @@ const envSchema = z.object({
   // Public site URL used in email links. Falls back to RENDER_EXTERNAL_URL (set by Render), then CLIENT_ORIGIN.
   APP_URL: z.string().optional(),
   RENDER_EXTERNAL_URL: z.string().optional(),
+
+  // Crash reporting (Sentry). Optional: with no DSN nothing is loaded or sent.
+  SENTRY_DSN: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
