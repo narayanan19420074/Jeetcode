@@ -5,50 +5,39 @@ import { keyframes } from '@mui/material/styles';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
+import { ACCENT, AVATAR_FRAMES, LB_DARK, LB_LIGHT } from '../leaderboard/lbTheme';
 import { inr } from './contestUtils';
 
 // three.js is heavy, so it only downloads once the panel is on screen.
 const PodiumScene = lazy(() => import('./PodiumScene'));
 
 const EMPTY = [];
-// Neumorphic: raised = light edge on one side + soft shadow on the other. Light and dark each get their own set.
+// Same Library palette as the leaderboard (lbTheme), plus the stage and chip colours only this panel uses.
+// Glass needs a bright edge to read as glass: a white border on cream in light mode, a faint white one on dark surfaces.
 const LIGHT = {
-  dark: false, ink: '#1E1B4B', muted: '#64748B', soft: '#EEF1FB',
-  raised: '5px 5px 12px rgba(148,163,184,0.4), -5px -5px 12px rgba(255,255,255,0.95)',
-  pressed: 'inset 4px 4px 9px rgba(148,163,184,0.4), inset -4px -4px 9px rgba(255,255,255,0.95)',
-  panel: 'linear-gradient(160deg,#F5F3FF 0%,#EEF2FF 50%,#FDF2F8 100%)', border: '1px solid rgba(255,255,255,0.9)', panelShadow: '0 24px 50px -30px rgba(76,29,149,0.4)',
-  stage: 'rgba(255,255,255,0.5)', stageBorder: '1px solid rgba(255,255,255,0.95)', stageGlow: '0 18px 40px -28px rgba(99,102,241,0.5)',
-  frameInner: '#F8FAFF', avatarBg: '#E0E7FF', avatarFg: '#4338CA', locked: '#A5B4FC', pill: 'rgba(255,255,255,0.78)', icon: '#6366F1',
+  ...LB_LIGHT,
+  stage: 'rgba(255,255,255,0.45)', stageBorder: '1px solid rgba(255,255,255,0.9)', stageGlow: '0 18px 40px -28px rgba(239,108,77,0.4)',
+  locked: '#A89888', pill: 'rgba(253,248,244,0.85)',
   prize: ['#FEF3C7', '#B45309'], solved: ['#D1FAE5', '#047857'],
 };
 const DARK = {
-  dark: true, ink: '#EEF2FF', muted: '#A5B4FC', soft: '#232152',
-  raised: '5px 5px 12px rgba(4,3,24,0.6), -4px -4px 10px rgba(129,140,248,0.10)',
-  pressed: 'inset 4px 4px 9px rgba(4,3,24,0.65), inset -3px -3px 8px rgba(129,140,248,0.10)',
-  panel: 'linear-gradient(160deg,#17153B 0%,#1B1A4A 50%,#2A1650 100%)', border: '1px solid rgba(165,180,252,0.16)', panelShadow: '0 24px 50px -30px rgba(0,0,0,0.8)',
-  stage: 'rgba(255,255,255,0.04)', stageBorder: '1px solid rgba(165,180,252,0.18)', stageGlow: '0 18px 40px -26px rgba(124,77,255,0.6)',
-  frameInner: '#1B1A4A', avatarBg: '#312E81', avatarFg: '#C7D2FE', locked: '#4F46E5', pill: 'rgba(35,33,82,0.82)', icon: '#A5B4FC',
+  ...LB_DARK,
+  stage: 'rgba(255,255,255,0.04)', stageBorder: '1px solid rgba(255,255,255,0.10)', stageGlow: '0 18px 40px -26px rgba(99,102,241,0.5)',
+  locked: '#3A4452', pill: 'rgba(31,38,48,0.85)',
   prize: ['rgba(251,191,36,0.16)', '#FCD34D'], solved: ['rgba(52,211,153,0.16)', '#6EE7B7'],
 };
 
-const FRAMES = [
-  'linear-gradient(135deg,#FF9A3C,#FF3D81,#7C4DFF)',
-  'linear-gradient(135deg,#22D3EE,#6366F1,#A855F7)',
-  'linear-gradient(135deg,#34D399,#22D3EE,#3B82F6)',
-  'linear-gradient(135deg,#F472B6,#FB923C,#FACC15)',
-  'linear-gradient(135deg,#60A5FA,#34D399,#A3E635)',
-];
-const BADGES = ['#F59E0B', '#6366F1', '#F97316', '#EC4899', '#14B8A6', '#3B82F6', '#8B5CF6'];
+const BADGES = ['#F59E0B', '#6366F1', '#EF6C4D', '#14B8A6', '#3B82F6', '#8B5CF6', '#F97316'];
 const badgeBg = (rank) => {
   const c = BADGES[(rank - 1) % BADGES.length];
-  return `linear-gradient(135deg, ${c}, color-mix(in srgb, ${c} 60%, #7C4DFF))`;
+  return `linear-gradient(135deg, ${c}, color-mix(in srgb, ${c} 60%, #4338CA))`;
 };
 
 const nudge = keyframes`0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); }`;
 
 function AvatarFrame({ row, size = 34, index, T }) {
   return (
-    <Box sx={{ p: '3px', borderRadius: '50%', flexShrink: 0, background: FRAMES[index % FRAMES.length], boxShadow: '0 6px 14px -6px rgba(99,102,241,0.55)' }}>
+    <Box sx={{ p: '3px', borderRadius: '50%', flexShrink: 0, background: AVATAR_FRAMES[index % AVATAR_FRAMES.length], boxShadow: '0 6px 14px -6px rgba(99,102,241,0.55)' }}>
       <Box sx={{ p: '2px', borderRadius: '50%', bgcolor: T.frameInner }}>
         <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: size, height: size, fontWeight: 800, fontSize: size * 0.4, color: T.avatarFg, bgcolor: T.avatarBg }}>
           {row.name?.[0]?.toUpperCase()}
@@ -110,8 +99,8 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
         fill && { height: '100%', display: 'flex', flexDirection: 'column' },
       ]}
     >
-      <Box aria-hidden sx={{ position: 'absolute', top: -70, right: -50, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(244,114,182,0.35), transparent 70%)', pointerEvents: 'none' }} />
-      <Box aria-hidden sx={{ position: 'absolute', bottom: -80, left: -60, width: 260, height: 260, borderRadius: '50%', background: 'radial-gradient(circle, rgba(99,102,241,0.28), transparent 70%)', pointerEvents: 'none' }} />
+      <Box aria-hidden sx={{ position: 'absolute', top: -70, right: -50, width: 220, height: 220, borderRadius: '50%', background: `radial-gradient(circle, ${T.blobWarm}, transparent 70%)`, pointerEvents: 'none' }} />
+      <Box aria-hidden sx={{ position: 'absolute', bottom: -80, left: -60, width: 260, height: 260, borderRadius: '50%', background: `radial-gradient(circle, ${T.blobAccent}, transparent 70%)`, pointerEvents: 'none' }} />
 
       <Box sx={[{ position: 'relative' }, fill && { flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }]}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, justifyContent: 'space-between', flexShrink: 0 }}>
@@ -166,7 +155,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
               <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, display: 'grid', placeItems: 'center', gap: 0.75, pointerEvents: 'none' }}>
                 <Button
                   onClick={onReveal} disableElevation startIcon={<BoltRoundedIcon />}
-                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: '16px', color: '#fff', fontWeight: 800, background: 'linear-gradient(135deg,#FF9A3C,#FF3D81,#7C4DFF)', boxShadow: '0 14px 28px -12px rgba(124,77,255,0.8)', animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
+                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: '16px', color: '#fff', fontWeight: 800, background: ACCENT, boxShadow: '0 14px 28px -12px rgba(99,102,241,0.7)', animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
                 >
                   Reveal winners
                 </Button>

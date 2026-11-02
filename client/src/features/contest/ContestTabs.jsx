@@ -14,14 +14,15 @@ import TimerRoundedIcon from '@mui/icons-material/TimerRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import EventBusyRoundedIcon from '@mui/icons-material/EventBusyRounded';
 import { surface } from '../dashboard/dashboardUtils';
+import { LIB_ACCENT } from '../dashboard/components/libraryStyle';
 import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
 
 const AMBER = '#FBBF24';
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 const pad = (n) => String(n).padStart(2, '0');
 // Same colour-story family as the study plan cards.
-const EMBER = 'linear-gradient(135deg,#431407 0%,#9A3412 55%,#B45309 100%)';
-const SLATE = 'linear-gradient(135deg,#0F172A 0%,#1E293B 55%,#334155 100%)';
+const EMBER = 'linear-gradient(135deg,#7C2D12 0%,#C2410C 100%)';
+const SLATE = 'linear-gradient(135deg,#292524 0%,#44403C 100%)';
 
 function Chip({ icon: Icon, children }) {
   return (
@@ -39,7 +40,7 @@ export function ContestTile({ contest, past, onOpen, ctaLabel }) {
   const cta = ctaLabel || (past ? 'View results' : contest.applied ? 'You are in' : live ? 'View contest' : 'View & apply');
 
   return (
-    <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: '16px', color: '#fff', background: past ? SLATE : EMBER, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
+    <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: '16px', color: '#fff', background: past ? SLATE : EMBER, boxShadow: '0 14px 28px -16px rgba(41,37,36,0.6), inset 0 1px 0 rgba(255,255,255,0.18)' }}>
       <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.3), transparent 70%)', pointerEvents: 'none' }} />
       <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: 10, width: 150, height: 150, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%)', pointerEvents: 'none' }} />
 
@@ -212,12 +213,12 @@ export default function ContestTabs({ contest, onOpen, onOpenPast, pastSelected 
           return (
             <ButtonBase
               key={key} role="tab" aria-selected={on} onClick={() => setTab(key)}
-              sx={{ position: 'relative', height: 40, borderRadius: '11px', fontFamily: 'inherit', fontWeight: 800, fontSize: 14, gap: 0.75, color: on ? '#1B1200' : 'text.secondary', transition: 'color .2s' }}
+              sx={{ position: 'relative', height: 40, borderRadius: '11px', fontFamily: 'inherit', fontWeight: 800, fontSize: 14, gap: 0.75, color: on ? '#fff' : 'text.secondary', transition: 'color .2s' }}
             >
-              {on && <motion.span layoutId="contest-tab-pill" transition={{ type: 'spring', stiffness: 400, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: 11, background: AMBER, boxShadow: '0 6px 16px -8px rgba(245,158,11,0.9)' }} />}
+              {on && <motion.span layoutId="contest-tab-pill" transition={{ type: 'spring', stiffness: 400, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: 11, background: LIB_ACCENT, boxShadow: '0 6px 16px -8px rgba(99,102,241,0.7)' }} />}
               <Box component="span" sx={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 0.75 }}>
                 {label}
-                <Box component="span" sx={{ minWidth: 20, px: 0.6, borderRadius: 99, fontSize: 11.5, lineHeight: '20px', textAlign: 'center', bgcolor: on ? 'rgba(27,18,0,0.16)' : 'action.selected' }}>{lists[key].length}</Box>
+                <Box component="span" sx={{ minWidth: 20, px: 0.6, borderRadius: 99, fontSize: 11.5, lineHeight: '20px', textAlign: 'center', bgcolor: on ? 'rgba(255,255,255,0.25)' : 'action.selected' }}>{lists[key].length}</Box>
               </Box>
             </ButtonBase>
           );

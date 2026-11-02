@@ -8,13 +8,13 @@ import { inr } from './contestUtils';
 // winner plates pop in, trophy spins. Drag sideways to turn it. Plain three.js (no extra packages).
 
 const MEDAL = {
-  1: { css: '#F59E0B', css2: '#EA580C', hex: 0xfbbf24, dark: '#FFFFFF', ring: ['#FF9A3C', '#FF3D81', '#7C4DFF'] },
-  2: { css: '#6366F1', css2: '#4338CA', hex: 0xa5b4fc, dark: '#FFFFFF', ring: ['#22D3EE', '#6366F1', '#A855F7'] },
-  3: { css: '#F97316', css2: '#C2410C', hex: 0xfb923c, dark: '#FFFFFF', ring: ['#34D399', '#22D3EE', '#3B82F6'] },
+  1: { css: '#F59E0B', css2: '#B45309', hex: 0xfbbf24, dark: '#FFFFFF', ring: ['#FDE68A', '#F59E0B', '#EA580C'] },
+  2: { css: '#64748B', css2: '#475569', hex: 0xcbd5e1, dark: '#FFFFFF', ring: ['#F1F5F9', '#94A3B8', '#64748B'] },
+  3: { css: '#F97316', css2: '#C2410C', hex: 0xfb923c, dark: '#FFFFFF', ring: ['#FDBA74', '#F97316', '#C2410C'] },
 };
 const SLOTS = { 1: { x: 0, h: 2.5, delay: 1.5 }, 2: { x: -1.95, h: 1.85, delay: 0.9 }, 3: { x: 1.95, h: 1.35, delay: 0.3 } };
 const LOCKED = 0.3;
-const SPARK_COLORS = [0xf59e0b, 0x8b5cf6, 0x06b6d4, 0xec4899, 0x10b981, 0xf97316];
+const SPARK_COLORS = [0xf59e0b, 0x6366f1, 0xef6c4d, 0xfbbf24, 0x10b981, 0xf97316];
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const easeOutBack = (x) => {
@@ -65,7 +65,7 @@ function glowTexture() {
 function questionTexture(color, dark) {
   return canvasTex(256, 256, (c) => {
     const g = c.createRadialGradient(128, 128, 10, 128, 128, 120);
-    g.addColorStop(0, dark ? 'rgba(165,180,252,0.28)' : 'rgba(255,255,255,0.8)');
+    g.addColorStop(0, dark ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.8)');
     g.addColorStop(1, 'rgba(255,255,255,0)');
     c.fillStyle = g;
     c.fillRect(0, 0, 256, 256);
@@ -83,14 +83,14 @@ function winnerTexture(w, dark) {
   const m = MEDAL[w.rank];
   return canvasTex(512, 330, (c, W, H) => {
     roundRect(c, 8, 8, W - 16, H - 16, 38);
-    c.shadowColor = dark ? 'rgba(0,0,0,0.5)' : 'rgba(99,102,241,0.35)';
+    c.shadowColor = dark ? 'rgba(0,0,0,0.5)' : 'rgba(111,101,91,0.28)';
     c.shadowBlur = 22;
     c.shadowOffsetY = 8;
-    c.fillStyle = dark ? 'rgba(28,26,72,0.9)' : 'rgba(255,255,255,0.86)';
+    c.fillStyle = dark ? 'rgba(22,27,34,0.92)' : 'rgba(253,248,244,0.9)';
     c.fill();
     c.shadowColor = 'transparent';
     c.lineWidth = 3;
-    c.strokeStyle = dark ? 'rgba(165,180,252,0.35)' : 'rgba(255,255,255,1)';
+    c.strokeStyle = dark ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,1)';
     c.stroke();
 
     // vibrant avatar frame
@@ -104,7 +104,7 @@ function winnerTexture(w, dark) {
     c.fill();
     c.beginPath();
     c.arc(88, 94, 46, 0, Math.PI * 2);
-    c.fillStyle = dark ? '#1B1A4A' : '#F8FAFF';
+    c.fillStyle = dark ? '#1F2630' : '#FDF8F4';
     c.fill();
     c.fillStyle = dark ? m.ring[0] : m.css2;
     c.font = '800 48px system-ui, sans-serif';
@@ -114,10 +114,10 @@ function winnerTexture(w, dark) {
 
     c.textAlign = 'left';
     c.textBaseline = 'alphabetic';
-    c.fillStyle = dark ? '#F8FAFF' : '#1E1B4B';
+    c.fillStyle = dark ? '#E6EDF3' : '#1A1613';
     c.font = '800 40px system-ui, sans-serif';
     c.fillText(fitText(c, w.name, 330), 164, 88);
-    c.fillStyle = dark ? '#A5B4FC' : '#64748B';
+    c.fillStyle = dark ? '#9DA7B3' : '#6F655B';
     c.font = '500 26px system-ui, sans-serif';
     c.fillText(fitText(c, `@${w.handle || ''}`, 330), 164, 126);
 
@@ -265,9 +265,9 @@ function buildScene(host, winners, { reveal: startRevealed, reduce, dark }) {
   // soft pastel backdrop. (An opaque background also keeps the glass visible: transmission needs something behind it.)
   scene.background = canvasTex(4, 256, (c, W, H) => {
     const g = c.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, dark ? '#14123A' : '#F5F3FF');
-    g.addColorStop(0.55, dark ? '#1E1B4B' : '#E8EDFF');
-    g.addColorStop(1, dark ? '#2E1065' : '#FCE7F3');
+    g.addColorStop(0, dark ? '#0E1116' : '#FDF8F4');
+    g.addColorStop(0.55, dark ? '#161B22' : '#F6ECE2');
+    g.addColorStop(1, dark ? '#1F2630' : '#F1E7DD');
     c.fillStyle = g;
     c.fillRect(0, 0, W, H);
   });
@@ -287,7 +287,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce, dark }) {
   const key = new THREE.DirectionalLight(0xffffff, dark ? 1.4 : 1.1);
   key.position.set(2, 6, 5);
   scene.add(key);
-  const violet = new THREE.PointLight(0xa78bfa, dark ? 110 : 60, 0, 2);
+  const violet = new THREE.PointLight(0x818cf8, dark ? 110 : 60, 0, 2);
   violet.position.set(-3.5, 3, 3);
   scene.add(violet);
   const amber = new THREE.PointLight(0xfbbf24, dark ? 120 : 70, 0, 2);
@@ -297,18 +297,18 @@ function buildScene(host, winners, { reveal: startRevealed, reduce, dark }) {
   const glow = glowTexture();
 
   // floor: dark disc, two neon rings, soft glow
-  const floor = new THREE.Mesh(new THREE.CylinderGeometry(4.3, 4.5, 0.12, 72), new THREE.MeshStandardMaterial({ color: dark ? 0x211f58 : 0xffffff, metalness: dark ? 0.5 : 0.1, roughness: 0.3 }));
+  const floor = new THREE.Mesh(new THREE.CylinderGeometry(4.3, 4.5, 0.12, 72), new THREE.MeshStandardMaterial({ color: dark ? 0x1f2630 : 0xfffbf7, metalness: dark ? 0.5 : 0.1, roughness: 0.3 }));
   floor.position.y = -0.06;
   stage.add(floor);
-  const ringA = new THREE.Mesh(new THREE.TorusGeometry(4.3, 0.03, 12, 120), new THREE.MeshBasicMaterial({ color: dark ? 0xff5fa8 : 0xf472b6, toneMapped: false }));
+  const ringA = new THREE.Mesh(new THREE.TorusGeometry(4.3, 0.03, 12, 120), new THREE.MeshBasicMaterial({ color: dark ? 0xf58a6e : 0xef6c4d, toneMapped: false }));
   ringA.rotation.x = Math.PI / 2;
   ringA.position.y = 0.01;
   stage.add(ringA);
-  const ringB = new THREE.Mesh(new THREE.TorusGeometry(3.6, 0.02, 12, 120), new THREE.MeshBasicMaterial({ color: 0x8b5cf6, toneMapped: false }));
+  const ringB = new THREE.Mesh(new THREE.TorusGeometry(3.6, 0.02, 12, 120), new THREE.MeshBasicMaterial({ color: 0x6366f1, toneMapped: false }));
   ringB.rotation.x = Math.PI / 2;
   ringB.position.y = 0.01;
   stage.add(ringB);
-  const floorGlow = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshBasicMaterial({ map: glow, color: dark ? 0x7c4dff : 0xa78bfa, transparent: true, opacity: dark ? 0.55 : 0.35, depthWrite: false, blending: BLEND }));
+  const floorGlow = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshBasicMaterial({ map: glow, color: dark ? 0x6366f1 : 0x818cf8, transparent: true, opacity: dark ? 0.55 : 0.35, depthWrite: false, blending: BLEND }));
   floorGlow.rotation.x = -Math.PI / 2;
   floorGlow.position.y = 0.02;
   stage.add(floorGlow);
@@ -323,7 +323,7 @@ function buildScene(host, winners, { reveal: startRevealed, reduce, dark }) {
   }
   const dustGeo = new THREE.BufferGeometry();
   dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
-  const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ map: glow, color: dark ? 0xc4b5fd : 0x8b5cf6, size: 0.1, transparent: true, opacity: dark ? 0.7 : 0.45, depthWrite: false, blending: BLEND }));
+  const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ map: glow, color: dark ? 0xa5b4fc : 0x6366f1, size: 0.1, transparent: true, opacity: dark ? 0.7 : 0.45, depthWrite: false, blending: BLEND }));
   dust.frustumCulled = false;
   scene.add(dust);
 
