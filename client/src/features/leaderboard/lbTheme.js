@@ -1,35 +1,43 @@
-// Neumorphic + glass tokens for the leaderboard. Same family as the contest page (WinnersPanel):
-// raised = light edge on one side + soft shadow on the other, pressed = the same, inset.
+import { LIBRARY_PALETTE, LIB_ACCENT } from '../dashboard/components/libraryStyle';
+
+// Colour tokens for the desktop leaderboard. They reuse the Library palette (cream in light mode, the app's
+// dark surfaces in dark mode) so the leaderboard matches the Problems and Dashboard pages. Shadows keep the
+// raised / pressed depth of the controls, only tinted to the warm Library surfaces.
+const LIGHT = LIBRARY_PALETTE.light;
+const DARK = LIBRARY_PALETTE.dark;
+
 export const LB_LIGHT = {
-  dark: false, ink: '#1E1B4B', muted: '#64748B', soft: '#EEF1FB', icon: '#6366F1',
-  raised: '5px 5px 12px rgba(148,163,184,0.4), -5px -5px 12px rgba(255,255,255,0.95)',
-  pressed: 'inset 4px 4px 9px rgba(148,163,184,0.4), inset -4px -4px 9px rgba(255,255,255,0.95)',
-  panel: 'linear-gradient(160deg,#F5F3FF 0%,#EEF2FF 50%,#FDF2F8 100%)',
-  border: '1px solid rgba(255,255,255,0.9)',
-  panelShadow: '0 24px 50px -30px rgba(76,29,149,0.4)',
-  frameInner: '#F8FAFF', avatarBg: '#E0E7FF', avatarFg: '#4338CA',
+  dark: false, ink: LIGHT.text, muted: LIGHT.muted, soft: LIGHT.player, icon: LIB_ACCENT,
+  raised: '3px 3px 8px rgba(111,101,91,0.16), -3px -3px 8px rgba(255,255,255,0.9)',
+  pressed: 'inset 2px 2px 6px rgba(111,101,91,0.16), inset -2px -2px 6px rgba(255,255,255,0.9)',
+  panel: LIGHT.chip,
+  border: `1px solid ${LIGHT.border}`,
+  panelShadow: 'none',
+  frameInner: LIGHT.bg, avatarBg: '#E0E7FF', avatarFg: '#4338CA',
+  blobWarm: 'rgba(239,108,77,0.16)', blobAccent: 'rgba(99,102,241,0.12)',
 };
 
 export const LB_DARK = {
-  dark: true, ink: '#EEF2FF', muted: '#A5B4FC', soft: '#232152', icon: '#A5B4FC',
-  raised: '5px 5px 12px rgba(4,3,24,0.6), -4px -4px 10px rgba(129,140,248,0.10)',
-  pressed: 'inset 4px 4px 9px rgba(4,3,24,0.65), inset -3px -3px 8px rgba(129,140,248,0.10)',
-  panel: 'linear-gradient(160deg,#17153B 0%,#1B1A4A 50%,#2A1650 100%)',
-  border: '1px solid rgba(165,180,252,0.16)',
-  panelShadow: '0 24px 50px -30px rgba(0,0,0,0.8)',
-  frameInner: '#1B1A4A', avatarBg: '#312E81', avatarFg: '#C7D2FE',
+  dark: true, ink: DARK.text, muted: DARK.muted, soft: DARK.chip, icon: '#A5B4FC',
+  raised: '4px 4px 10px rgba(0,0,0,0.45), -3px -3px 8px rgba(255,255,255,0.03)',
+  pressed: 'inset 3px 3px 7px rgba(0,0,0,0.5), inset -2px -2px 6px rgba(255,255,255,0.03)',
+  panel: DARK.nav,
+  border: `1px solid ${DARK.border}`,
+  panelShadow: 'none',
+  frameInner: DARK.chip, avatarBg: '#2B3050', avatarFg: '#C7D2FE',
+  blobWarm: 'rgba(239,108,77,0.10)', blobAccent: 'rgba(99,102,241,0.14)',
 };
 
 export const lbTokens = (mode) => (mode === 'dark' ? LB_DARK : LB_LIGHT);
 
-// Active toggle / selected track colour.
-export const ACCENT = 'linear-gradient(135deg,#8B5CF6,#6366F1)';
+// Active toggle / selected track colour: the same solid accent as the Library pills.
+export const ACCENT = LIB_ACCENT;
 
 // Avatar ring colours for ranks without a medal.
 export const AVATAR_FRAMES = [
-  'linear-gradient(135deg,#FF9A3C,#FF3D81,#7C4DFF)',
-  'linear-gradient(135deg,#22D3EE,#6366F1,#A855F7)',
-  'linear-gradient(135deg,#34D399,#22D3EE,#3B82F6)',
-  'linear-gradient(135deg,#F472B6,#FB923C,#FACC15)',
-  'linear-gradient(135deg,#60A5FA,#34D399,#A3E635)',
+  'linear-gradient(135deg,#EF6C4D,#F59E0B)',
+  'linear-gradient(135deg,#6366F1,#818CF8)',
+  'linear-gradient(135deg,#34D399,#22D3EE)',
+  'linear-gradient(135deg,#F59E0B,#FACC15)',
+  'linear-gradient(135deg,#818CF8,#EF6C4D)',
 ];

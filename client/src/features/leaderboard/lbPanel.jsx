@@ -30,7 +30,7 @@ const TIER_GRAD = {
   diamond: 'linear-gradient(145deg,#818CF8 0%,#A855F7 55%,#EC4899 100%)',
   legend: 'linear-gradient(145deg,#F43F5E 0%,#D946EF 55%,#7C3AED 100%)',
 };
-const IDLE_GRAD = 'linear-gradient(145deg,#8B5CF6 0%,#6366F1 55%,#22D3EE 100%)';
+const IDLE_GRAD = 'linear-gradient(145deg,#818CF8 0%,#6366F1 55%,#4338CA 100%)';
 const DIFF = { easy: '#4ADE80', medium: '#FDE047', hard: '#FB7185' };
 const TRACKS = [['overall', 'Overall', StarsRoundedIcon], ['coding', 'Coding', CodeRoundedIcon], ['aptitude', 'Aptitude', PsychologyRoundedIcon]];
 
@@ -259,8 +259,8 @@ export default function LeaderboardPanel({ row, me, isAuthenticated, meta, perio
   const tierKey = row ? tierFor(row.score).tier.key : null;
   return (
     <Box sx={{ position: 'relative', overflow: 'hidden', minWidth: 0, minHeight: 0, height: '100%', display: 'flex', flexDirection: 'column', gap: 1.25, borderRadius: '28px', p: 2, background: T.panel, border: T.border, boxShadow: T.panelShadow }}>
-      <Box aria-hidden sx={{ position: 'absolute', top: -70, right: -50, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(244,114,182,0.35), transparent 70%)', pointerEvents: 'none' }} />
-      <Box aria-hidden sx={{ position: 'absolute', bottom: -80, left: -60, width: 260, height: 260, borderRadius: '50%', background: 'radial-gradient(circle, rgba(99,102,241,0.28), transparent 70%)', pointerEvents: 'none' }} />
+      <Box aria-hidden sx={{ position: 'absolute', top: -70, right: -50, width: 220, height: 220, borderRadius: '50%', background: `radial-gradient(circle, ${T.blobWarm}, transparent 70%)`, pointerEvents: 'none' }} />
+      <Box aria-hidden sx={{ position: 'absolute', bottom: -80, left: -60, width: 260, height: 260, borderRadius: '50%', background: `radial-gradient(circle, ${T.blobAccent}, transparent 70%)`, pointerEvents: 'none' }} />
 
       <Box sx={{ position: 'relative', flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', gap: 1.25 }}>
         {!isAuthenticated && <LoginCard T={T} />}

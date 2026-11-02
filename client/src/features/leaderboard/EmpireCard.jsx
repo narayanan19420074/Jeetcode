@@ -297,7 +297,7 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
     <motion.div initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <ButtonBase
         onClick={(e) => onPick(e, row)} aria-label={`${row.name}, top player, ${row.score} points`}
-        sx={{ position: 'relative', overflow: 'hidden', display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit', color: '#fff', borderRadius: '24px', p: { xs: 1, sm: 1.25 }, background: 'radial-gradient(120% 140% at 0% 0%, #6D28D9 0%, #3730A3 45%, #1E1B4B 100%)', boxShadow: selected ? `0 0 0 2px ${GOLD}, ${shadow}` : shadow }}
+        sx={{ position: 'relative', overflow: 'hidden', display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit', color: '#fff', borderRadius: '24px', p: { xs: 1, sm: 1.25 }, background: 'radial-gradient(120% 140% at 0% 0%, #6366F1 0%, #4F46E5 45%, #312E81 100%)', boxShadow: selected ? `0 0 0 2px ${GOLD}, ${shadow}` : shadow }}
       >
         <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -60, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.34), transparent 68%)', animation: `${glow} 3.2s ease-in-out infinite`, ...calm }} />
         <Box aria-hidden sx={{ position: 'absolute', left: -50, bottom: -80, width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(236,72,153,0.26), transparent 70%)' }} />
@@ -311,7 +311,7 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
             <Box sx={{ position: 'relative', flexShrink: 0, display: 'grid', placeItems: 'center', mx: 0.75 }}>
               <Box aria-hidden sx={{ position: 'absolute', width: av + 22, height: av + 22, borderRadius: '50%', background: `conic-gradient(from 0deg, ${m.a}, transparent 30%, ${m.b} 55%, transparent 80%, ${m.a})`, filter: 'blur(6px)', opacity: 0.85, animation: `${spin} 6s linear infinite`, ...calm }} />
               <Box sx={{ position: 'relative', p: '3.5px', borderRadius: '50%', background: grad(m), boxShadow: `0 8px 26px -6px ${m.glow}` }}>
-                <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: av, height: av, fontSize: av * 0.38, fontWeight: 800, border: '3px solid #1E1B4B', bgcolor: '#312E81', color: '#fff' }}>{row.name?.[0]?.toUpperCase()}</Avatar>
+                <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: av, height: av, fontSize: av * 0.38, fontWeight: 800, border: '3px solid #312E81', bgcolor: '#4338CA', color: '#fff' }}>{row.name?.[0]?.toUpperCase()}</Avatar>
               </Box>
               <EmojiEventsRoundedIcon aria-hidden sx={{ position: 'absolute', top: -14, right: -14, fontSize: tight ? 24 : 28, color: '#FDE68A', filter: 'drop-shadow(0 0 10px rgba(251,191,36,0.9))', animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
             </Box>
@@ -383,8 +383,8 @@ export default function EmpireCard({
 
   return (
     <Box sx={{ position: 'relative', overflow: 'hidden', minWidth: 0, minHeight: 0, height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '28px', p: { xs: 1.5, sm: 2.25 }, background: T.panel, border: T.border, boxShadow: T.panelShadow }}>
-      <Box aria-hidden sx={{ position: 'absolute', top: -70, right: -50, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(244,114,182,0.35), transparent 70%)', pointerEvents: 'none' }} />
-      <Box aria-hidden sx={{ position: 'absolute', bottom: -80, left: -60, width: 260, height: 260, borderRadius: '50%', background: 'radial-gradient(circle, rgba(99,102,241,0.28), transparent 70%)', pointerEvents: 'none' }} />
+      <Box aria-hidden sx={{ position: 'absolute', top: -70, right: -50, width: 220, height: 220, borderRadius: '50%', background: `radial-gradient(circle, ${T.blobWarm}, transparent 70%)`, pointerEvents: 'none' }} />
+      <Box aria-hidden sx={{ position: 'absolute', bottom: -80, left: -60, width: 260, height: 260, borderRadius: '50%', background: `radial-gradient(circle, ${T.blobAccent}, transparent 70%)`, pointerEvents: 'none' }} />
 
       <Box sx={{ position: 'relative', flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
         {/* title row */}
@@ -465,7 +465,7 @@ export default function EmpireCard({
 
         {/* my own position stays pinned under the list */}
         {me && (
-          <Box sx={{ flexShrink: 0, mt: 1, p: '2px', borderRadius: '22px', background: `linear-gradient(135deg, ${GOLD}, #8B5CF6)`, boxShadow: '0 14px 28px -16px rgba(99,102,241,0.8)' }}>
+          <Box sx={{ flexShrink: 0, mt: 1, p: '2px', borderRadius: '22px', background: `linear-gradient(135deg, ${GOLD}, ${ACCENT})`, boxShadow: '0 14px 28px -16px rgba(99,102,241,0.8)' }}>
             <Box sx={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', bgcolor: T.soft, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ flex: 1, minWidth: 0 }}>
                 <PlayerRow row={me} T={T} isMe you selected={false} onPick={onPick} wide={wide} track={track} reduce={reduce} />
