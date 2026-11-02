@@ -10,8 +10,8 @@ const FONT_VARIANTS_TO_KEEP = ['monospace']; // code and numbers stay in the mon
 
 export const isDashboardPath = (pathname) => pathname.replace(/\/+$/, '') === '/dashboard';
 
-// Pages that wear the Library look on desktop: the dashboard and the Problems page.
-const DESKTOP_LOOK_PATHS = ['/dashboard', '/problems'];
+// Pages that wear the Library look on desktop: the dashboard, the Problems page and the Store.
+const DESKTOP_LOOK_PATHS = ['/dashboard', '/problems', '/store'];
 export const usesDesktopLook = (pathname) => DESKTOP_LOOK_PATHS.includes(pathname.replace(/\/+$/, ''));
 
 // Components that need the marker (for example the problem library) read it with this hook.

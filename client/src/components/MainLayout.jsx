@@ -40,7 +40,7 @@ function useScrollToTopOnNavigate(pathname, hash) {
   }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
-// Phone home (light mode) is a flat warm page. The desktop dashboard and Problems page use the same cream page.
+// Phone home (light mode) is a flat warm page. The desktop dashboard, Problems page and Store use the same cream page.
 // Every other page keeps the soft wash.
 function pageBackgroundSx(t, { libraryLook, desktopLook }) {
   const isLight = t.palette.mode === 'light';
