@@ -195,6 +195,15 @@ sizing, elevation, motion and breakpoints. The MUI theme (`app/design/buildTheme
 2. To restyle the product, edit `designTokens.js` only. A new token goes there first, then into the theme builder.
 3. Mobile and desktop differ only through responsive tokens (`TYPE_SCALE`, `SIZES`, `LAYOUT_SPACING`).
 4. If a touched file still has hard-coded colours or sizes, move them to tokens in the same delivery.
+5. Colours that must follow light/dark mode come from `theme.palette` (`text.primary`, `background.paper`,
+   `primary.main`, `success.main`, `divider`...). Illustration, chart and game colours that are the same in both
+   modes come from `PALETTE.<hue>[<stop>]`; use `withAlpha(PALETTE.white, 0.18)` for transparency.
+   `PALETTE.custom.*` holds legacy one-off colours; never add to it.
+6. Guard: `node client/scripts/check-design-tokens.mjs` fails when any file has more raw colours than
+   `client/scripts/design-token-baseline.json`. After removing colours run it with `--update`.
+7. Colour migration (hex to tokens) is done with a mechanical codemod and delivered as a git patch
+   (`git apply`), because it touches many files. These mechanical patches are exempt from 4.2 rule 9 (no
+   splitting or cleanup of the touched files). Later normal edits of those files still follow 4.2.
 
 ## 5. Project-specific gotchas
 
