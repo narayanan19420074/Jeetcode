@@ -25,7 +25,6 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
-import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
@@ -54,7 +53,8 @@ import { logoutUser, userUpdated } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
 import NotificationBell from '../features/notifications/NotificationBell';
 import ActivateLicenseModal from '../components/ActivateLicenseModal';
-import BrandMark, { BRAND_TEXT_DARK, BRAND_TEXT_LIGHT } from './BrandMark';
+import { LogoMark, LogoName } from './NavbarBrand';
+import { navButtonSx } from './navLinkStyles';
 
 // Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
 import { LIBRARY_PALETTE, LIB_FONT, LibraryFont, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
@@ -65,37 +65,6 @@ const ACCENT = COLOR_PALETTE.indigo[500];
 const libPal = (t) => LIBRARY_PALETTE[t.palette.mode === 'dark' ? 'dark' : 'light'];
 const TRACKING = '0.03em';
 const ACCENT_GRADIENT = `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, ${COLOR_PALETTE.black}))`;
-
-// Logo: the plain icon on desktop, the amber app-logo tile on phones (same drawing as the installed app icon).
-function LogoMark() {
-  return (
-    <>
-      <Box sx={{ display: { xs: 'none', md: 'grid' }, width: 24, height: 24, placeItems: 'center', flexShrink: 0, color: 'primary.main' }}>
-        <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
-      </Box>
-      <BrandMark size={40} sx={{ display: { xs: 'block', md: 'none' } }} />
-    </>
-  );
-}
-
-// Phone wordmark follows the Library headings: 20/24, bold, no extra tracking; "Code" in the brand orange.
-function LogoName() {
-  return (
-    <Typography
-      variant="h6"
-      sx={(t) => ({
-        fontWeight: FONT_WEIGHTS.bold,
-        letterSpacing: '-0.02em',
-        [t.breakpoints.down('md')]: { fontSize: FONT_SIZES.heading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0 },
-      })}
-    >
-      Jeet
-      <Box component="span" sx={(t) => ({ color: 'primary.main', [t.breakpoints.down('md')]: { color: t.palette.mode === 'dark' ? BRAND_TEXT_DARK : BRAND_TEXT_LIGHT } })}>
-        Code
-      </Box>
-    </Typography>
-  );
-}
 
 const initialsFromName = (name) =>
   (name || 'U')
@@ -313,25 +282,14 @@ export default function Navbar() {
   // Phone pages in the Library look (dashboard home) get the matching warm top bar.
   const libraryBar = isLibraryRoute(pathname, search);
 
-  const navButtonSx = (active) => (t) => ({
-    fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold,
-    borderRadius: RADII_PX.pill,
-    px: 2,
-    color: active ? t.palette.text.primary : t.palette.text.secondary,
-    bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
-    '&:hover': { bgcolor: alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.2 : 0.1) },
-  });
-
   return (
     <AppBar
       position="sticky"
       elevation={0}
       sx={(t) => ({
-        // Phones: blend with the page background instead of a separate white bar.
+        // Phones: solid page background (pure white in light mode), no translucency.
         [t.breakpoints.down('md')]: {
-          backgroundColor: libraryBar && t.palette.mode === 'light' ? LIBRARY_PALETTE.light.bg : alpha(t.palette.background.default, 0.88),
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
+          backgroundColor: t.palette.background.default,
           borderBottom: libraryBar && t.palette.mode === 'light' ? 'none' : `1px solid ${alpha(t.palette.divider, 0.4)}`,
         },
       })}
@@ -357,7 +315,7 @@ export default function Navbar() {
         </Box>
 
         {/* Desktop links */}
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5 }}>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'stretch', alignSelf: 'stretch', gap: 0.5 }}>
           {PRIMARY_LINKS.map((link) => (
             <Button
               key={link.to}

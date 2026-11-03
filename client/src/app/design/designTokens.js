@@ -52,6 +52,8 @@ export const SIZES = {
   listRowHeight: 44,
   listRowHeightDense: 36,
   navItemHeight: 40,
+  // Thickness of the bottom border that marks the active navigation link.
+  navActiveIndicator: 2,
   filterPillHeight: 40,
   chipHeight: 28,
   chipHeightSmall: 24,
