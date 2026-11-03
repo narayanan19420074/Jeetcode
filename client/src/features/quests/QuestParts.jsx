@@ -8,12 +8,13 @@ import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import { Confetti } from '../aptitude/components/MotionBits';
 import { FF, buttonSx, cut, formatDate, panelSx } from './questUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Free-Fire-style building blocks shared by the Quests page and the Store: cut-corner panels, orange/green buttons,
 // tags, notices and dialogs. Colours come from FF (CSS variables), so everything follows light / dark mode.
 
-export const Diamond = ({ size = 18 }) => <DiamondRoundedIcon sx={{ fontSize: size, color: FF.diamond, filter: 'drop-shadow(0 0 5px rgba(39,182,255,0.55))' }} />;
-export const Coin = ({ size = 18 }) => <MonetizationOnRoundedIcon sx={{ fontSize: size, color: FF.coin, filter: 'drop-shadow(0 1px 2px rgba(143,98,0,0.45))' }} />;
+export const Diamond = ({ size = 18 }) => <DiamondRoundedIcon sx={{ fontSize: size, color: FF.diamond, filter: `drop-shadow(0 0 5px ${withAlpha(COLOR_PALETTE.custom.sky27B6FF, 0.55)})` }} />;
+export const Coin = ({ size = 18 }) => <MonetizationOnRoundedIcon sx={{ fontSize: size, color: FF.coin, filter: `drop-shadow(0 1px 2px ${withAlpha(COLOR_PALETTE.custom.yellow8F6200, 0.45)})` }} />;
 
 export function FFButton({ tone = 'orange', sx, children, ...props }) {
   return (
@@ -57,7 +58,7 @@ export function Bar({ pct, color = FF.orange, height = 8 }) {
 }
 
 // Small label tag: 'orange' | 'green' | 'red' | 'coin' | 'dark' (or any colour through `bg`).
-const TAGS = { orange: [FF.orange, '#10131A'], green: [FF.green, '#10131A'], red: [FF.red, '#FFFFFF'], coin: [FF.coin, '#10131A'], dark: [FF.panelHi, FF.text] };
+const TAGS = { orange: [FF.orange, COLOR_PALETTE.gray[950]], green: [FF.green, COLOR_PALETTE.gray[950]], red: [FF.red, COLOR_PALETTE.white], coin: [FF.coin, COLOR_PALETTE.gray[950]], dark: [FF.panelHi, FF.text] };
 export function Tag({ tone = 'dark', bg, color, children, sx }) {
   const [b, c] = TAGS[tone] || TAGS.dark;
   return (
@@ -94,7 +95,7 @@ export function Choice({ options, value, onChange, label }) {
             role="radio"
             aria-checked={on}
             onClick={() => onChange(o.id)}
-            sx={{ minHeight: 40, px: 2, fontWeight: 900, fontSize: 13, letterSpacing: '0.06em', textTransform: 'uppercase', clipPath: cut(7), color: on ? '#10131A' : FF.text, background: on ? `linear-gradient(180deg, ${FF.orangeHi}, ${FF.orange})` : FF.panelHi, '&:hover': { filter: 'brightness(1.06)' }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } }}
+            sx={{ minHeight: 40, px: 2, fontWeight: 900, fontSize: 13, letterSpacing: '0.06em', textTransform: 'uppercase', clipPath: cut(7), color: on ? COLOR_PALETTE.gray[950] : FF.text, background: on ? `linear-gradient(180deg, ${FF.orangeHi}, ${FF.orange})` : FF.panelHi, '&:hover': { filter: 'brightness(1.06)' }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } }}
           >
             {o.label}
           </ButtonBase>
@@ -110,7 +111,7 @@ export const dialogPaperWide = { sx: { ...dialogPaper.sx, maxWidth: 640 } };
 
 export function DialogHead({ title, onClose }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, pl: 3, pr: 1.5, py: 1.5, borderBottom: `1px solid ${FF.line}`, background: `linear-gradient(90deg, rgba(255,122,0,0.22), transparent)`, flexShrink: 0 }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, pl: 3, pr: 1.5, py: 1.5, borderBottom: `1px solid ${FF.line}`, background: `linear-gradient(90deg, ${withAlpha(COLOR_PALETTE.custom.orangeFF7A00, 0.22)}, transparent)`, flexShrink: 0 }}>
       <Typography component="h2" noWrap sx={{ flex: 1, fontWeight: 900, fontSize: 17, letterSpacing: '0.08em', textTransform: 'uppercase', color: FF.text }}>{title}</Typography>
       <IconButton aria-label="Close" onClick={onClose} sx={{ color: FF.muted, borderRadius: 0 }}>
         <CloseRoundedIcon />

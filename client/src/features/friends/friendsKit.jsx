@@ -13,6 +13,7 @@ import { WS } from '../workspace/wsTokens';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WsIconButton } from '../workspace/wsUi';
 import { FLAME, GREEN, PersonAvatar, mono, statusInfo } from './friendsUi';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // ---- motion --------------------------------------------------------------------------------
 // Everything here is switched off for people who prefer reduced motion.
@@ -21,7 +22,7 @@ const spin = keyframes`to { transform: rotate(360deg); }`;
 const ripple = keyframes`0% { transform: scale(0.72); opacity: 0.55; } 100% { transform: scale(1.5); opacity: 0; }`;
 const bob = keyframes`0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); }`;
 const pop = keyframes`0% { transform: scale(0.5); } 60% { transform: scale(1.18); } 100% { transform: scale(1); }`;
-const livePulse = keyframes`0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); } 70% { box-shadow: 0 0 0 6px rgba(34,197,94,0); } 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }`;
+const livePulse = keyframes`0% { box-shadow: 0 0 0 0 ${withAlpha(COLOR_PALETTE.green[500], 0.5)}; } 70% { box-shadow: 0 0 0 6px ${withAlpha(COLOR_PALETTE.green[500], 0)}; } 100% { box-shadow: 0 0 0 0 ${withAlpha(COLOR_PALETTE.green[500], 0)}; }`;
 const still = { '@media (prefers-reduced-motion: reduce)': { animation: 'none' } };
 
 // Fade + rise. `index` staggers a list (capped, so long lists never feel slow).
@@ -127,7 +128,7 @@ export function TabBar({ items, value, onChange }) {
                 position: 'relative', flex: 1, minWidth: 0, height: 36, px: 0.5, borderRadius: '9px', fontFamily: 'inherit', fontSize: 13, fontWeight: 700,
                 color: on ? t.palette.text.primary : t.palette.text.secondary, transition: 'color .2s',
                 '&:hover': { color: t.palette.text.primary },
-                '& .tab-pill': { backgroundColor: t.palette.background.paper, boxShadow: t.palette.mode === 'dark' ? '0 1px 3px rgba(0,0,0,0.5)' : '0 1px 3px rgba(15,23,42,0.14)' },
+                '& .tab-pill': { backgroundColor: t.palette.background.paper, boxShadow: t.palette.mode === 'dark' ? `0 1px 3px ${withAlpha(COLOR_PALETTE.black, 0.5)}` : `0 1px 3px ${withAlpha(COLOR_PALETTE.slate[900], 0.14)}` },
               })}
             >
               {on && <motion.span className="tab-pill" layoutId="friends-tab-pill" transition={{ type: 'spring', stiffness: 520, damping: 40 }} style={{ position: 'absolute', inset: 0, borderRadius: 9 }} />}
@@ -140,7 +141,7 @@ export function TabBar({ items, value, onChange }) {
                     initial={{ scale: 0.4, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ type: 'spring', stiffness: 620, damping: 16 }}
-                    style={badge ? { minWidth: 18, height: 18, padding: '0 5px', borderRadius: 9, background: badge, color: '#fff', fontSize: 11, fontWeight: 800, display: 'inline-grid', placeItems: 'center', lineHeight: 1 } : { fontSize: 11.5, fontWeight: 700, opacity: 0.75, fontVariantNumeric: 'tabular-nums' }}
+                    style={badge ? { minWidth: 18, height: 18, padding: '0 5px', borderRadius: 9, background: badge, color: COLOR_PALETTE.white, fontSize: 11, fontWeight: 800, display: 'inline-grid', placeItems: 'center', lineHeight: 1 } : { fontSize: 11.5, fontWeight: 700, opacity: 0.75, fontVariantNumeric: 'tabular-nums' }}
                   >
                     {count > 99 ? '99+' : count}
                   </motion.span>
@@ -220,7 +221,7 @@ export function OnlineRail({ people, onOpen }) {
         <Reveal key={p.userId} index={i}>
           <ButtonBase onClick={() => onOpen(p.userId)} aria-label={`Chat with ${p.name}, online`} sx={{ flexDirection: 'column', gap: 0.6, width: 56, borderRadius: '10px', fontFamily: 'inherit', transition: 'transform .12s', '&:active': { transform: 'scale(0.95)' } }}>
             <Box sx={{ position: 'relative', width: 52, height: 52 }}>
-              <Box aria-hidden sx={{ position: 'absolute', inset: 0, borderRadius: '50%', background: `conic-gradient(${GREEN}, #38BDF8, ${GREEN})`, animation: `${spin} 4s linear infinite`, ...still }} />
+              <Box aria-hidden sx={{ position: 'absolute', inset: 0, borderRadius: '50%', background: `conic-gradient(${GREEN}, ${COLOR_PALETTE.sky[400]}, ${GREEN})`, animation: `${spin} 4s linear infinite`, ...still }} />
               <Box sx={(t) => ({ position: 'absolute', inset: '3px', borderRadius: '50%', bgcolor: t.palette.background.paper, display: 'grid', placeItems: 'center' })}>
                 <PersonAvatar person={p} size={40} />
               </Box>
@@ -261,7 +262,7 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
             <Typography noWrap sx={{ fontWeight: unread ? 700 : 600, fontSize: 14, lineHeight: 1.35, flex: 1, minWidth: 0 }}>{f.name}</Typography>
-            {fav && <StarRoundedIcon sx={{ fontSize: 14, color: '#F59E0B', flexShrink: 0 }} />}
+            {fav && <StarRoundedIcon sx={{ fontSize: 14, color: COLOR_PALETTE.amber[500], flexShrink: 0 }} />}
             {last && <Typography sx={{ fontSize: 11.5, flexShrink: 0, fontWeight: unread ? 700 : 400, color: unread ? 'primary.main' : 'text.disabled' }}>{shortTime(last.at)}</Typography>}
           </Stack>
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 0.25 }}>
@@ -292,7 +293,7 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
         })}
       >
         <WsIconButton title={fav ? 'Remove from favourites' : 'Add to favourites'} onClick={onFav} sx={miniBtn}>
-          {fav ? <StarRoundedIcon sx={{ color: '#F59E0B' }} /> : <StarBorderRoundedIcon />}
+          {fav ? <StarRoundedIcon sx={{ color: COLOR_PALETTE.amber[500] }} /> : <StarBorderRoundedIcon />}
         </WsIconButton>
         {canNudge && (
           <WsIconButton title="Nudge: remind about streak" disabled={nudging} onClick={onNudge} sx={{ ...miniBtn, color: FLAME }}>
@@ -315,7 +316,7 @@ export function PersonRow({ person, rank, sub, action }) {
       sx={(t) => ({ alignItems: 'center', mx: 1, mb: 0.25, px: 1.25, py: 1, minHeight: 64, borderRadius: '12px', transition: 'background-color .18s', '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.04) } })}
     >
       {rank != null && (
-        <Typography sx={{ width: 24, flexShrink: 0, textAlign: 'center', fontSize: 12.5, fontWeight: 700, color: rank <= 3 ? '#F59E0B' : 'text.disabled', ...mono }}>{rank}</Typography>
+        <Typography sx={{ width: 24, flexShrink: 0, textAlign: 'center', fontSize: 12.5, fontWeight: 700, color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'text.disabled', ...mono }}>{rank}</Typography>
       )}
       <PersonAvatar person={person} size={42} />
       <Box sx={{ minWidth: 0, flex: 1 }}>

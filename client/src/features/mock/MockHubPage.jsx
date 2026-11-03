@@ -11,6 +11,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import BackToDashboard from '../../components/BackToDashboard';
 import { PLAN_AMBER } from '../studyplan/planUtils';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 const when = (d) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
 
@@ -48,13 +49,13 @@ function PaperCard({ paper, busy, onStart }) {
       <Box sx={{ display: 'flex', gap: 0.75, mt: 'auto', pt: 0.5 }}>
         {paper.locked ? (
           <Button fullWidth disableElevation startIcon={<LockRoundedIcon />} onClick={() => navigate('/pricing')}
-            sx={{ height: 38, borderRadius: '10px', fontWeight: 800, bgcolor: PLAN_AMBER, color: '#1B1200', '&:hover': { bgcolor: '#F5B50F' } }}>
+            sx={{ height: 38, borderRadius: '10px', fontWeight: 800, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
             Go Pro for more attempts
           </Button>
         ) : (
           <Button fullWidth disableElevation disabled={!paper.available || busy} startIcon={busy ? <CircularProgress size={16} /> : <PlayArrowRoundedIcon />}
             onClick={() => onStart(paper)}
-            sx={{ height: 38, borderRadius: '10px', fontWeight: 800, bgcolor: PLAN_AMBER, color: '#1B1200', '&:hover': { bgcolor: '#F5B50F' } }}>
+            sx={{ height: 38, borderRadius: '10px', fontWeight: 800, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
             {!paper.available ? 'Questions being added' : resume ? 'Resume paper' : paper.attemptsCount ? 'Take again' : 'Start mock'}
           </Button>
         )}

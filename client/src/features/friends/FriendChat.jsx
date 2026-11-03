@@ -37,6 +37,7 @@ import {
   libSmallBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const clock = (iso) => new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
 const addUnique = (list, m) => (list.some((x) => x.id === m.id) ? list : [...list, m]);
@@ -123,8 +124,8 @@ function RoomCard({ m, mine, friend }) {
 // tinted category-card colours for system cards, solid accent for the person's own messages.
 
 const LIB_SUCCESS = 'var(--jc-easy)';
-const NUDGE_TONE = { color: '#F09A2E', bg: '#FFF2E3' };
-const ROOM_TONE = { color: '#3F8CE8', bg: '#EDF2F9' };
+const NUDGE_TONE = { color: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] };
+const ROOM_TONE = { color: COLOR_PALETTE.custom.blue3F8CE8, bg: COLOR_PALETTE.blue[50] };
 
 // Category-card background: light pastel in light mode, soft tint in dark mode.
 const toneBg = (t, tone) => (t.palette.mode === 'dark' ? tint(tone.color, 16) : tone.bg);
@@ -172,7 +173,7 @@ function LibRoomCard({ m, mine, friend }) {
       </Stack>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 1.5 }}>
         <Typography sx={{ fontSize: 12, color: 'var(--lib-muted)' }}>{clock(m.createdAt)}</Typography>
-        <Button disableElevation variant="contained" disabled={busy} onClick={join} sx={{ ...libSmallBtnSx, bgcolor: LIB_ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)` } }}>
+        <Button disableElevation variant="contained" disabled={busy} onClick={join} sx={{ ...libSmallBtnSx, bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` } }}>
           {busy ? 'Checking…' : mine ? 'Rejoin room' : 'Join room'}
         </Button>
       </Stack>
@@ -200,14 +201,14 @@ function LibBubble({ m, mine, first, endsRun, isNew }) {
             px: '14px', py: '8px', wordBreak: 'break-word', whiteSpace: 'pre-wrap',
             borderRadius: mine ? `${round}px ${top}px ${bottom}px ${round}px` : `${top}px ${round}px ${round}px ${bottom}px`,
             bgcolor: mine ? LIB_ACCENT : 'var(--lib-player)',
-            color: mine ? '#fff' : 'var(--lib-text)',
+            color: mine ? COLOR_PALETTE.white : 'var(--lib-text)',
           }}
         >
           <Box sx={{ display: 'flow-root' }}>
             <Typography component="span" sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{m.text}</Typography>
-            <Box component="span" sx={{ float: 'right', ml: 1.5, mt: '10px', display: 'inline-flex', alignItems: 'center', gap: 0.4, color: mine ? 'rgba(255,255,255,0.8)' : 'var(--lib-muted)', fontSize: 12, lineHeight: 1 }}>
+            <Box component="span" sx={{ float: 'right', ml: 1.5, mt: '10px', display: 'inline-flex', alignItems: 'center', gap: 0.4, color: mine ? withAlpha(COLOR_PALETTE.white, 0.8) : 'var(--lib-muted)', fontSize: 12, lineHeight: 1 }}>
               {clock(m.createdAt)}
-              {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 16, color: '#fff' }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 16 }} aria-label="Sent" />)}
+              {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 16, color: COLOR_PALETTE.white }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 16 }} aria-label="Sent" />)}
             </Box>
           </Box>
         </Box>
@@ -567,7 +568,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             onClick={jump}
             sx={(t) => (lib
               ? { position: 'absolute', right: 16, bottom: 12, width: 40, height: 40, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', border: '1px solid var(--lib-border)', '&:hover': { bgcolor: 'var(--lib-player)' } }
-              : { position: 'absolute', right: 14, bottom: 12, width: 36, height: 36, bgcolor: t.palette.background.paper, boxShadow: '0 2px 6px rgba(0,0,0,0.25)', '&:hover': { bgcolor: t.palette.background.paper } })}
+              : { position: 'absolute', right: 14, bottom: 12, width: 36, height: 36, bgcolor: t.palette.background.paper, boxShadow: `0 2px 6px ${withAlpha(COLOR_PALETTE.black, 0.25)}`, '&:hover': { bgcolor: t.palette.background.paper } })}
           >
             <KeyboardArrowDownRoundedIcon />
           </IconButton>
@@ -603,7 +604,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             aria-label="Send message"
             onClick={send}
             disabled={!text.trim() || sending}
-            sx={{ width: 44, height: 44, flexShrink: 0, color: '#fff', bgcolor: LIB_ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)` }, '&.Mui-disabled': { color: 'var(--lib-muted)', bgcolor: 'var(--lib-chip)' } }}
+            sx={{ width: 44, height: 44, flexShrink: 0, color: COLOR_PALETTE.white, bgcolor: LIB_ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` }, '&.Mui-disabled': { color: 'var(--lib-muted)', bgcolor: 'var(--lib-chip)' } }}
           >
             {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: 20 }} />}
           </IconButton>

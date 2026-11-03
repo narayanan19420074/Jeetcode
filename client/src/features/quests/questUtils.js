@@ -1,9 +1,10 @@
 import { msUntilDayEnd } from '../dashboard/dashboardUtils';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
-export const GOLD = '#F5B301';
-export const GOLD_LIGHT = '#FDE68A';
-export const AMBER = '#D97706';
-export const INK = '#0A1230';
+export const GOLD = COLOR_PALETTE.custom.yellowF5B301;
+export const GOLD_LIGHT = COLOR_PALETTE.amber[200];
+export const AMBER = COLOR_PALETTE.amber[600];
+export const INK = COLOR_PALETTE.custom.slate0A1230;
 
 export const LEVEL_XP = [0, 100, 250, 450, 700, 1000, 1400, 1900, 2500, 3200];
 export const RANKS = ['Rookie', 'Learner', 'Challenger', 'Grinder', 'Contender', 'Specialist', 'Veteran', 'Elite', 'Master', 'Legend'];
@@ -47,13 +48,13 @@ export const FF = {
   coinInk: 'var(--ff-coin-ink)',
   redInk: 'var(--ff-red-ink)',
   // fills: bright in both modes, so they carry dark text (#10131A) or sit as icons
-  orange: '#FF7A00',
-  orangeHi: '#FFB020',
-  yellow: '#FFC933',
-  green: '#2ED573',
-  red: '#FF4757',
-  diamond: '#27B6FF',
-  coin: '#FFC933',
+  orange: COLOR_PALETTE.custom.orangeFF7A00,
+  orangeHi: COLOR_PALETTE.custom.amberFFB020,
+  yellow: COLOR_PALETTE.amber[400],
+  green: COLOR_PALETTE.custom.green2ED573,
+  red: COLOR_PALETTE.custom.redFF4757,
+  diamond: COLOR_PALETTE.custom.sky27B6FF,
+  coin: COLOR_PALETTE.amber[400],
 };
 
 // Cut-corner shape used by every panel and button.
@@ -72,15 +73,15 @@ export const panelSx = (n = 14) => ({
 
 export const buttonSx = (tone = 'orange') => {
   const g = {
-    orange: ['#FFB020', '#FF6A00'],
-    green: ['#4BE38A', '#12B35A'],
-    blue: ['#4CCBFF', '#1E8BFF'],
+    orange: [COLOR_PALETTE.custom.amberFFB020, COLOR_PALETTE.custom.orangeFF6A00],
+    green: [COLOR_PALETTE.green[400], COLOR_PALETTE.custom.green12B35A],
+    blue: [COLOR_PALETTE.custom.sky4CCBFF, COLOR_PALETTE.custom.blue1E8BFF],
     dark: [FF.panelHi, FF.panelHi],
   }[tone];
   return {
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 0.75, minHeight: 44, px: 2.5, border: 0, cursor: 'pointer', fontFamily: 'inherit',
     fontWeight: 900, fontSize: 14, letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap',
-    color: tone === 'dark' ? FF.text : '#10131A', background: `linear-gradient(180deg, ${g[0]}, ${g[1]})`, clipPath: cut(9),
+    color: tone === 'dark' ? FF.text : COLOR_PALETTE.gray[950], background: `linear-gradient(180deg, ${g[0]}, ${g[1]})`, clipPath: cut(9),
     transition: 'filter .15s ease, transform .1s ease', '&:hover': { filter: 'brightness(1.08)' }, '&:active': { transform: 'translateY(1px)' },
     '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 },
     '&.Mui-disabled, &:disabled': { background: FF.panelHi, color: FF.muted, cursor: 'not-allowed', filter: 'none' },
@@ -88,4 +89,4 @@ export const buttonSx = (tone = 'orange') => {
 };
 
 // Rarity colours players already know: grey, green, blue, purple, orange, red. Shown as a tag with dark text.
-export const RARITY_COLOR = { Common: '#B8C0CF', Uncommon: '#2ED573', Rare: '#27B6FF', Epic: '#B66DFF', Legendary: '#FF9F1A', Mythic: '#FF4757' };
+export const RARITY_COLOR = { Common: COLOR_PALETTE.custom.slateB8C0CF, Uncommon: COLOR_PALETTE.custom.green2ED573, Rare: COLOR_PALETTE.custom.sky27B6FF, Epic: COLOR_PALETTE.custom.purpleB66DFF, Legendary: COLOR_PALETTE.amber[500], Mythic: COLOR_PALETTE.custom.redFF4757 };

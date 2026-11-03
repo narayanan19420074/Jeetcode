@@ -27,6 +27,7 @@ import FriendPicker from './FriendPicker';
 import BackToDashboard from '../../components/BackToDashboard';
 import { MobilePlanWorkspace, MobilePlans, MobileShell } from './MobileStudyPlan';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtDay, fmtRange, localKey, parseInvite, planTheme, relDay, relTime } from './planUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 
@@ -156,13 +157,13 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
   else message = `${todayLeft} to solve today${s.overdue ? ` · ${s.overdue} overdue` : ''}`;
 
   const cta = complete ? 'Review plan' : s.done > 0 ? 'Continue plan' : 'Start plan';
-  const glassBtn = { width: 44, height: 44, flexShrink: 0, color: '#fff', bgcolor: 'rgba(255,255,255,0.16)', '&:hover': { bgcolor: 'rgba(255,255,255,0.28)' } };
+  const glassBtn = { width: 44, height: 44, flexShrink: 0, color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.16), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.28) } };
 
   return (
-    <Box sx={(t) => ({ borderRadius: '16px', overflow: 'hidden', bgcolor: t.palette.background.paper, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85)' })}>
-      <Box sx={{ position: 'relative', color: '#fff', background: theme.gradient, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18)', overflow: 'hidden' }}>
-        <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.26), transparent 70%)', pointerEvents: 'none' }} />
-        <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: 20, width: 140, height: 140, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%)', pointerEvents: 'none' }} />
+    <Box sx={(t) => ({ borderRadius: '16px', overflow: 'hidden', bgcolor: t.palette.background.paper, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}` })}>
+      <Box sx={{ position: 'relative', color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}`, overflow: 'hidden' }}>
+        <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.26)}, transparent 70%)`, pointerEvents: 'none' }} />
+        <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: 20, width: 140, height: 140, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.white, 0.10)}, transparent 70%)`, pointerEvents: 'none' }} />
 
         <Box sx={{ position: 'relative', p: { xs: 2, sm: 2.25 } }}>
           {/* title + countdown tile (tap to open) */}
@@ -172,27 +173,27 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
           >
             <Box sx={{ minWidth: 0 }}>
               <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.2, overflowWrap: 'anywhere' }}>{plan.title}</Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.5, color: 'rgba(255,255,255,0.88)' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.5, color: withAlpha(COLOR_PALETTE.white, 0.88) }}>
                 <CalendarMonthRoundedIcon sx={{ fontSize: 16 }} />
                 <Typography sx={{ fontSize: '0.8rem', fontWeight: 600 }}>{fmtRange(s.startDate, s.endDate)}</Typography>
               </Box>
               {behind && (
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, mt: 0.75, px: 1, py: 0.25, borderRadius: 99, bgcolor: 'rgba(251,191,36,0.18)', color: '#FDE68A' }}>
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, mt: 0.75, px: 1, py: 0.25, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.amber[400], 0.18), color: COLOR_PALETTE.amber[200] }}>
                   <ErrorOutlineRoundedIcon sx={{ fontSize: 14 }} />
                   <Typography sx={{ fontSize: '0.7rem', fontWeight: 700 }}>{s.overdue} overdue</Typography>
                 </Box>
               )}
             </Box>
-            <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? 'rgba(251,191,36,0.2)' : 'rgba(255,255,255,0.14)', border: tile.urgent ? '1px solid rgba(251,191,36,0.6)' : '1px solid transparent' }}>
-              <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? '#FDE68A' : '#fff' }}>{tile.big}</Typography>
-              {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: 'rgba(255,255,255,0.85)' }}>{tile.label}</Typography>}
+            <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: tile.urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
+              <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
+              {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
             </Box>
           </ButtonBase>
 
           {/* what are we studying today: ring + speech bubble */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 1.5 }}>
             <ProgressRing value={s.percent} size={64} onDark />
-            <Box sx={{ minWidth: 0, flex: 1, px: 1.5, py: 1.1, borderRadius: '16px 16px 16px 4px', bgcolor: 'rgba(255,255,255,0.14)' }}>
+            <Box sx={{ minWidth: 0, flex: 1, px: 1.5, py: 1.1, borderRadius: '16px 16px 16px 4px', bgcolor: withAlpha(COLOR_PALETTE.white, 0.14) }}>
               <Typography sx={{ fontSize: '0.84rem', lineHeight: 1.4, fontWeight: 700 }}>{message}</Typography>
               {!complete && todayItems.slice(0, 3).map((it) => (
                 <Typography key={it.id} noWrap sx={{ fontSize: '0.78rem', mt: 0.3, fontWeight: 600, opacity: it.done ? 0.6 : 0.95, textDecoration: it.done ? 'line-through' : 'none' }}>
@@ -206,7 +207,7 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
           {/* solved bar */}
           <Box sx={{ mt: 1.5 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.5, gap: 1 }}>
-              <Typography sx={{ fontSize: '0.78rem', fontWeight: 800, color: '#FDE68A', fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
+              <Typography sx={{ fontSize: '0.78rem', fontWeight: 800, color: COLOR_PALETTE.amber[200], fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 {s.streak > 0 && (
                   <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
@@ -214,13 +215,13 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
                     <Typography sx={{ fontSize: '0.74rem', fontWeight: 800 }}>{s.streak}d</Typography>
                   </Box>
                 )}
-                <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 22, height: 22, fontSize: 10, fontWeight: 700, border: '2px solid rgba(255,255,255,0.9)' } }}>
+                <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 22, height: 22, fontSize: 10, fontWeight: 700, border: `2px solid ${withAlpha(COLOR_PALETTE.white, 0.9)}` } }}>
                   {plan.members.map((m) => <Avatar key={m.id} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
                 </AvatarGroup>
               </Box>
             </Box>
-            <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} aria-label="Plan progress" sx={{ height: 10, borderRadius: 99, bgcolor: 'rgba(255,255,255,0.18)', overflow: 'hidden' }}>
-              <Box sx={{ width: `${Math.max(s.percent, 4)}%`, height: '100%', borderRadius: 99, background: `linear-gradient(90deg, ${PLAN_AMBER}, #F59E0B)`, transition: 'width .6s ease' }} />
+            <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} aria-label="Plan progress" sx={{ height: 10, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.18), overflow: 'hidden' }}>
+              <Box sx={{ width: `${Math.max(s.percent, 4)}%`, height: '100%', borderRadius: 99, background: `linear-gradient(90deg, ${PLAN_AMBER}, ${COLOR_PALETTE.amber[500]})`, transition: 'width .6s ease' }} />
             </Box>
           </Box>
 
@@ -228,7 +229,7 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1.75 }}>
             <Button
               onClick={onOpen} startIcon={<BoltRoundedIcon />} endIcon={<ArrowForwardRoundedIcon />} disableElevation
-              sx={{ flex: 1, height: 44, borderRadius: '14px', bgcolor: PLAN_AMBER, color: '#1B1200', fontWeight: 800, fontSize: '0.92rem', '&:hover': { bgcolor: '#F5B50F' } }}
+              sx={{ flex: 1, height: 44, borderRadius: '14px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, fontSize: '0.92rem', '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
             >
               {cta}
             </Button>
@@ -236,7 +237,7 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
               <IconButton aria-label="Add friends to plan" onClick={(e) => onAddFriend(e.currentTarget)} sx={glassBtn}><PersonAddRoundedIcon sx={{ fontSize: 20 }} /></IconButton>
             </Tooltip>
             <Tooltip title={plan.isOwner ? 'Delete plan' : 'Leave plan'}>
-              <IconButton aria-label={plan.isOwner ? 'Delete plan' : 'Leave plan'} onClick={() => onDelete(plan)} sx={[glassBtn, { color: '#FECACA' }]}>
+              <IconButton aria-label={plan.isOwner ? 'Delete plan' : 'Leave plan'} onClick={() => onDelete(plan)} sx={[glassBtn, { color: COLOR_PALETTE.red[200] }]}>
                 {plan.isOwner ? <DeleteOutlineRoundedIcon sx={{ fontSize: 21 }} /> : <ExitToAppRoundedIcon sx={{ fontSize: 21 }} />}
               </IconButton>
             </Tooltip>
@@ -246,7 +247,7 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
         {/* arrow: show / hide the questions right here */}
         <ButtonBase
           onClick={onToggle} aria-expanded={expanded} aria-label={expanded ? 'Hide questions' : 'Show questions'}
-          sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5, py: 1, bgcolor: 'rgba(0,0,0,0.24)', fontFamily: 'inherit', fontSize: 13, fontWeight: 700, color: '#fff', '&:hover': { bgcolor: 'rgba(0,0,0,0.34)' } }}
+          sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5, py: 1, bgcolor: withAlpha(COLOR_PALETTE.black, 0.24), fontFamily: 'inherit', fontSize: 13, fontWeight: 700, color: COLOR_PALETTE.white, '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.black, 0.34) } }}
         >
           {expanded ? 'Hide questions' : `Show ${s.total} question${s.total === 1 ? '' : 's'}`}
           <ExpandMoreRoundedIcon sx={{ fontSize: 20, transition: 'transform .2s', transform: expanded ? 'rotate(180deg)' : 'none' }} />

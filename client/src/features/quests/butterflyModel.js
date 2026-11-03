@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Everything the Quests stage is made of, built from plain three.js primitives (no model files, no extra packages):
 // crystal-cut butterfly wings, the larva, the jade chrysalis, the spinning diamond and a small sparkle system.
@@ -28,9 +29,9 @@ function canvasTex(size, draw) {
 export const glowTexture = () =>
   canvasTex(128, (c, S) => {
     const g = c.createRadialGradient(S / 2, S / 2, 0, S / 2, S / 2, S / 2);
-    g.addColorStop(0, 'rgba(255,255,255,1)');
-    g.addColorStop(0.25, 'rgba(255,255,255,0.5)');
-    g.addColorStop(1, 'rgba(255,255,255,0)');
+    g.addColorStop(0, COLOR_PALETTE.white);
+    g.addColorStop(0.25, withAlpha(COLOR_PALETTE.white, 0.5));
+    g.addColorStop(1, withAlpha(COLOR_PALETTE.white, 0));
     c.fillStyle = g;
     c.fillRect(0, 0, S, S);
   });
@@ -40,11 +41,11 @@ export const sparkleTexture = () =>
   canvasTex(128, (c, S) => {
     const m = S / 2;
     const g = c.createRadialGradient(m, m, 0, m, m, m * 0.5);
-    g.addColorStop(0, 'rgba(255,255,255,1)');
-    g.addColorStop(1, 'rgba(255,255,255,0)');
+    g.addColorStop(0, COLOR_PALETTE.white);
+    g.addColorStop(1, withAlpha(COLOR_PALETTE.white, 0));
     c.fillStyle = g;
     c.fillRect(0, 0, S, S);
-    c.fillStyle = 'rgba(255,255,255,0.95)';
+    c.fillStyle = withAlpha(COLOR_PALETTE.white, 0.95);
     [[1, 0], [0, 1]].forEach(([ax, ay]) => {
       c.beginPath();
       c.moveTo(m - ax * m, m - ay * m);
@@ -72,7 +73,7 @@ const HIND = [[0, -0.02], [0.62, -0.06], [1.28, -0.3], [1.62, -0.85], [1.45, -1.
 const SPOT = { fore: [1.55, 1.0], hind: [0.95, -1.05] };
 const RING = [1, 0.74, 0.46, 0.2]; // concentric colour bands, outer to inner
 const DOME = 0.05;
-const INK = '#10131A';
+const INK = COLOR_PALETTE.gray[950];
 
 // Three flat light steps: shadow, mid, lit. This is what makes it read as a cartoon instead of plastic.
 const toonSteps = new THREE.DataTexture(new Uint8Array([95, 175, 255]), 3, 1, THREE.RedFormat);
@@ -185,7 +186,7 @@ export function buildButterfly(pal) {
   headHull.position.copy(head.position);
   headHull.scale.setScalar(1.28);
   pivot.add(headHull, head);
-  const white = new THREE.MeshBasicMaterial({ color: '#FFFFFF' });
+  const white = new THREE.MeshBasicMaterial({ color: COLOR_PALETTE.white });
   const eyeGeo = new THREE.SphereGeometry(0.075, 14, 10);
   const pupilGeo = new THREE.SphereGeometry(0.04, 12, 8);
   [-1, 1].forEach((s) => {
@@ -250,10 +251,10 @@ export function buildLarva() {
   const group = new THREE.Group();
   const sphere = new THREE.SphereGeometry(1, 28, 20);
   const mk = (color, emissive) => new THREE.MeshPhysicalMaterial({ color, roughness: 0.35, clearcoat: 1, clearcoatRoughness: 0.2, emissive, emissiveIntensity: 0.28 });
-  const lime = mk('#A3FF3F', '#2F8F00');
-  const mint = mk('#2EE6A6', '#00875E');
-  const headMat = mk('#B15CFF', '#5B1FBF');
-  const dotMat = new THREE.MeshPhysicalMaterial({ color: '#FF4D8D', roughness: 0.3, clearcoat: 1, emissive: '#FF1E6E', emissiveIntensity: 0.35 });
+  const lime = mk(COLOR_PALETTE.custom.greenA3FF3F, COLOR_PALETTE.custom.green2F8F00);
+  const mint = mk(COLOR_PALETTE.custom.emerald2EE6A6, COLOR_PALETTE.custom.emerald00875E);
+  const headMat = mk(COLOR_PALETTE.purple[500], COLOR_PALETTE.custom.violet5B1FBF);
+  const dotMat = new THREE.MeshPhysicalMaterial({ color: COLOR_PALETTE.custom.pinkFF4D8D, roughness: 0.3, clearcoat: 1, emissive: COLOR_PALETTE.custom.roseFF1E6E, emissiveIntensity: 0.35 });
 
   const segs = LARVA_RADII.map((r, i) => {
     const g = new THREE.Group();
@@ -272,8 +273,8 @@ export function buildLarva() {
 
   // face (local +x is "forward")
   const head = segs[0];
-  const white = new THREE.MeshBasicMaterial({ color: '#FFFFFF' });
-  const black = new THREE.MeshBasicMaterial({ color: '#1B1030' });
+  const white = new THREE.MeshBasicMaterial({ color: COLOR_PALETTE.white });
+  const black = new THREE.MeshBasicMaterial({ color: COLOR_PALETTE.custom.indigo1B1030 });
   [-1, 1].forEach((s) => {
     const eye = new THREE.Mesh(sphere, white);
     eye.scale.setScalar(0.1);
@@ -318,7 +319,7 @@ export function buildDiamond({ dark = false, sparkle, glow }) {
     iridescenceIOR: 1.9,
     iridescenceThicknessRange: [150, 620],
     clearcoat: 1,
-    attenuationColor: new THREE.Color('#7DD3FC'),
+    attenuationColor: new THREE.Color(COLOR_PALETTE.sky[300]),
     attenuationDistance: 1.6,
     envMapIntensity: dark ? 3 : 2.4,
     flatShading: true,
@@ -328,7 +329,7 @@ export function buildDiamond({ dark = false, sparkle, glow }) {
   const pavilion = new THREE.Mesh(new THREE.ConeGeometry(0.8, 0.9, 8, 1), mat);
   pavilion.rotation.x = Math.PI;
   pavilion.position.y = -0.45;
-  const core = new THREE.Mesh(new THREE.OctahedronGeometry(0.28), new THREE.MeshBasicMaterial({ color: '#A5F3FC', toneMapped: false }));
+  const core = new THREE.Mesh(new THREE.OctahedronGeometry(0.28), new THREE.MeshBasicMaterial({ color: COLOR_PALETTE.cyan[200], toneMapped: false }));
   core.position.y = -0.05;
   const lineMat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.4, depthWrite: false });
   const lines = [crown, pavilion].map((m) => {
@@ -424,7 +425,7 @@ export function createSparkles(texture, dark, max = 420) {
     setScale: (v) => {
       mat.uniforms.uScale.value = v;
     },
-    emit(p, v, { color = '#ffffff', size = 0.3, ttl = 1, to = null, strength = 0 } = {}) {
+    emit(p, v, { color = COLOR_PALETTE.white, size = 0.3, ttl = 1, to = null, strength = 0 } = {}) {
       const i = cursor;
       cursor = (cursor + 1) % max;
       pos.set([p.x, p.y, p.z], i * 3);
@@ -437,7 +438,7 @@ export function createSparkles(texture, dark, max = 420) {
       target[i] = to;
       pull[i] = strength;
     },
-    burst(p, n, { color = '#ffffff', speed = 2.4, size = 0.36, ttl = 1.3, spread = 1 } = {}) {
+    burst(p, n, { color = COLOR_PALETTE.white, speed = 2.4, size = 0.36, ttl = 1.3, spread = 1 } = {}) {
       for (let k = 0; k < n; k += 1) {
         const a = Math.random() * Math.PI * 2;
         const u = (Math.random() * 2 - 1) * spread;

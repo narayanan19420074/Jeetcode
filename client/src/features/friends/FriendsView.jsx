@@ -44,6 +44,7 @@ import ActivityFeed from './ActivityFeed';
 import FriendChat, { ChatPanel } from './FriendChat';
 import MobileFriends, { MobileShell } from './MobileFriends';
 import { FriendProfilePanel } from './FriendProfileDialog';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 const SORTS = [['recent', 'Recent chats'], ['online', 'Online first'], ['points', 'Most points'], ['name', 'Name A to Z']];
 const REQUEST_TABS = ['friends', 'requests', 'sent'];
@@ -457,8 +458,8 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
 
   const tabs = [
     { key: 'friends', label: 'Friends', title: 'Friends', icon: <PeopleAltRoundedIcon />, count: friends.length },
-    { key: 'requests', label: 'Requests', title: 'Friend requests', icon: <MarkunreadRoundedIcon />, count: incoming.length, badge: '#EF4444' },
-    { key: 'sent', label: 'Sent', title: 'Sent requests', icon: <ScheduleSendRoundedIcon />, count: outgoing.length, badge: '#F59E0B' },
+    { key: 'requests', label: 'Requests', title: 'Friend requests', icon: <MarkunreadRoundedIcon />, count: incoming.length, badge: COLOR_PALETTE.red[500] },
+    { key: 'sent', label: 'Sent', title: 'Sent requests', icon: <ScheduleSendRoundedIcon />, count: outgoing.length, badge: COLOR_PALETTE.amber[500] },
   ];
 
   const overlays = (

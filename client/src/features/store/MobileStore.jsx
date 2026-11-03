@@ -20,6 +20,7 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Phone layout of the Store in the Library look (same as the phone Problems, Home and You pages): Roboto type,
 // warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section titles, cream tiles. The order
@@ -85,7 +86,7 @@ function ItemTile({ item, balance, signedIn, onBuy, onCourse }) {
         {(item.popular || note) && (
           <Stack direction="row" sx={{ position: 'absolute', top: 8, left: 8, gap: 0.5, flexWrap: 'wrap' }}>
             {item.popular && <Badge color={ACCENT}>Popular</Badge>}
-            {note && <Badge color="#E11D48">{note}</Badge>}
+            {note && <Badge color={COLOR_PALETTE.rose[600]}>{note}</Badge>}
           </Stack>
         )}
       </ButtonBase>

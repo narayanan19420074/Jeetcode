@@ -6,9 +6,10 @@ import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from '../aptitude/components/aptitudeUi';
 import { PLAN_AMBER } from '../studyplan/planUtils';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 const verdict = (s) => (s >= 75 ? 'Strong. Keep the pace.' : s >= 60 ? 'Solid. A few topics are holding you back.' : s >= 40 ? 'Getting there. Fix the weak topics below.' : 'Needs work. Start with the weakest topics.');
-const barColor = (v) => (v >= 70 ? '#10B981' : v >= 50 ? '#F59E0B' : '#EF4444');
+const barColor = (v) => (v >= 70 ? COLOR_PALETTE.emerald[500] : v >= 50 ? COLOR_PALETTE.amber[500] : COLOR_PALETTE.red[500]);
 
 function Card({ children, sx }) {
   return <Box sx={(t) => ({ p: 1.75, borderRadius: '14px', bgcolor: 'background.paper', border: `1px solid ${t.palette.divider}`, ...sx })}>{children}</Box>;
@@ -26,11 +27,11 @@ function Stat({ label, value }) {
 function ReviewItem({ r }) {
   const [open, setOpen] = useState(false);
   const skipped = r.selectedOption === null;
-  const tone = skipped ? '#94A3B8' : r.isCorrect ? '#10B981' : '#EF4444';
+  const tone = skipped ? COLOR_PALETTE.slate[400] : r.isCorrect ? COLOR_PALETTE.emerald[500] : COLOR_PALETTE.red[500];
   return (
     <Box sx={(t) => ({ borderRadius: '12px', border: `1px solid ${t.palette.divider}`, overflow: 'hidden' })}>
       <ButtonBase onClick={() => setOpen((o) => !o)} sx={{ width: '100%', display: 'flex', alignItems: 'center', gap: 1.25, p: 1.25, textAlign: 'left', fontFamily: 'inherit' }}>
-        <Box sx={{ width: 26, height: 26, borderRadius: '8px', display: 'grid', placeItems: 'center', bgcolor: tone, color: '#fff', fontWeight: 800, fontSize: 12, flexShrink: 0 }}>{r.n}</Box>
+        <Box sx={{ width: 26, height: 26, borderRadius: '8px', display: 'grid', placeItems: 'center', bgcolor: tone, color: COLOR_PALETTE.white, fontWeight: 800, fontSize: 12, flexShrink: 0 }}>{r.n}</Box>
         <Typography noWrap sx={{ flex: 1, fontSize: '0.88rem' }}>{r.questionText}</Typography>
         <ExpandMoreRoundedIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s', color: 'text.secondary' }} />
       </ButtonBase>
@@ -41,7 +42,7 @@ function ReviewItem({ r }) {
             const right = i === r.correctOptionIndex;
             const mine = i === r.selectedOption;
             return (
-              <Typography key={i} variant="body2" sx={{ py: 0.4, fontWeight: right || mine ? 800 : 400, color: right ? '#10B981' : mine ? '#EF4444' : 'text.secondary' }}>
+              <Typography key={i} variant="body2" sx={{ py: 0.4, fontWeight: right || mine ? 800 : 400, color: right ? COLOR_PALETTE.emerald[500] : mine ? COLOR_PALETTE.red[500] : 'text.secondary' }}>
                 {OPTION_LABELS[i]}. {o}{right ? '  ✓' : mine ? '  (your answer)' : ''}
               </Typography>
             );
@@ -138,7 +139,7 @@ export default function MockResultPage() {
         <Box sx={{ display: 'flex', gap: 0.75, mb: 1, alignItems: 'center' }}>
           <Typography sx={{ fontWeight: 800, flex: 1 }}>Review answers</Typography>
           {['all', 'wrong', 'skipped'].map((k) => (
-            <ButtonBase key={k} onClick={() => setFilter(k)} sx={(t) => ({ px: 1.25, height: 28, borderRadius: 99, fontSize: 12, fontWeight: 800, fontFamily: 'inherit', border: `1px solid ${filter === k ? PLAN_AMBER : t.palette.divider}`, bgcolor: filter === k ? PLAN_AMBER : 'transparent', color: filter === k ? '#1B1200' : 'text.primary' })}>
+            <ButtonBase key={k} onClick={() => setFilter(k)} sx={(t) => ({ px: 1.25, height: 28, borderRadius: 99, fontSize: 12, fontWeight: 800, fontFamily: 'inherit', border: `1px solid ${filter === k ? PLAN_AMBER : t.palette.divider}`, bgcolor: filter === k ? PLAN_AMBER : 'transparent', color: filter === k ? COLOR_PALETTE.custom.black1B1200 : 'text.primary' })}>
               {k === 'all' ? 'All' : k === 'wrong' ? 'Wrong' : 'Skipped'}
             </ButtonBase>
           ))}
@@ -149,7 +150,7 @@ export default function MockResultPage() {
         </Box>
       </Box>
 
-      <Button variant="contained" disableElevation onClick={() => navigate('/mocks')} sx={{ fontWeight: 800, bgcolor: PLAN_AMBER, color: '#1B1200', '&:hover': { bgcolor: '#F5B50F' } }}>Back to mock tests</Button>
+      <Button variant="contained" disableElevation onClick={() => navigate('/mocks')} sx={{ fontWeight: 800, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Back to mock tests</Button>
     </Container>
   );
 }

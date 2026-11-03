@@ -3,6 +3,7 @@ import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 import BackToDashboard from '../../../components/BackToDashboard';
 import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { pillButtonSx } from '../../dashboard/components/libraryDesktopStyles';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function OrdersButton({ inTransit, onOrders, palette }) {
   const label = inTransit > 0 ? `My orders, ${inTransit} in transit` : 'My orders';
@@ -10,7 +11,7 @@ function OrdersButton({ inTransit, onOrders, palette }) {
     <Button onClick={onOrders} aria-label={label} disableElevation startIcon={<LocalMallRoundedIcon />} sx={pillButtonSx(false, palette)}>
       Orders
       {inTransit > 0 && (
-        <Box component="span" aria-hidden sx={{ ml: 1, minWidth: 20, height: 20, px: 0.5, display: 'grid', placeItems: 'center', borderRadius: 10, fontSize: 12, color: '#fff', bgcolor: 'error.main' }}>{inTransit}</Box>
+        <Box component="span" aria-hidden sx={{ ml: 1, minWidth: 20, height: 20, px: 0.5, display: 'grid', placeItems: 'center', borderRadius: 10, fontSize: 12, color: COLOR_PALETTE.white, bgcolor: 'error.main' }}>{inTransit}</Box>
       )}
     </Button>
   );

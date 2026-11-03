@@ -5,6 +5,7 @@ import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
 import CallEndRoundedIcon from '@mui/icons-material/CallEndRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Mini floating call, drawn like a TV remote: the friend's video is the centre, and a ring
 // of three big segment buttons (maximize / mute / end call) wraps all the way around it,
@@ -34,16 +35,16 @@ const sector = (mid) => {
 };
 
 const KEYS = [
-  { id: 'max', mid: -90, color: '#3B82F6', label: 'Maximize' },
-  { id: 'mute', mid: 30, color: '#22C55E', label: 'Mute' },
-  { id: 'cut', mid: 150, color: '#F43F5E', label: 'End call' },
+  { id: 'max', mid: -90, color: COLOR_PALETTE.blue[500], label: 'Maximize' },
+  { id: 'mute', mid: 30, color: COLOR_PALETTE.green[500], label: 'Mute' },
+  { id: 'cut', mid: 150, color: COLOR_PALETTE.rose[500], label: 'End call' },
 ];
 
 // Neumorphic tones that follow light / dark mode.
 const tones = (t) =>
   t.palette.mode === 'dark'
-    ? { base: '#232834', key: '#2a3040', keyHover: '#323a4d', hi: '#2f3647', lo: '#151820', inner: '#1b1f2a' }
-    : { base: '#e6eaf2', key: '#eef1f7', keyHover: '#ffffff', hi: '#ffffff', lo: '#b4bbcb', inner: '#d3d8e4' };
+    ? { base: COLOR_PALETTE.gray[800], key: COLOR_PALETTE.gray[800], keyHover: COLOR_PALETTE.slate[700], hi: COLOR_PALETTE.gray[700], lo: COLOR_PALETTE.custom.gray151820, inner: COLOR_PALETTE.gray[900] }
+    : { base: COLOR_PALETTE.slate[200], key: COLOR_PALETTE.slate[100], keyHover: COLOR_PALETTE.white, hi: COLOR_PALETTE.white, lo: COLOR_PALETTE.custom.grayB4BBCB, inner: COLOR_PALETTE.slate[300] };
 
 const raised = (t, d) => {
   const c = tones(t);
@@ -133,7 +134,7 @@ export default function MiniCallBubble({ remoteStream, friendName, micOn, hasCal
     mute: { fn: onToggleMic, on: !micOn, disabled: !hasCall, Icon: micOn ? MicRoundedIcon : MicOffRoundedIcon, label: micOn ? 'Mute' : 'Unmute' },
     cut: { fn: onCut, on: false, disabled: false, Icon: CallEndRoundedIcon, label: 'End call' },
   };
-  const MUTED_RED = '#EF4444';
+  const MUTED_RED = COLOR_PALETTE.red[500];
 
   return (
     <Box
@@ -246,7 +247,7 @@ export default function MiniCallBubble({ remoteStream, friendName, micOn, hasCal
       {KEYS.map((k) => {
         const p = keyProps[k.id];
         const [x, y] = pt(R_ICON, k.mid);
-        const accent = k.id === 'mute' && p.on ? '#EF4444' : k.color;
+        const accent = k.id === 'mute' && p.on ? COLOR_PALETTE.red[500] : k.color;
         return (
           <Box
             key={k.id}
@@ -259,7 +260,7 @@ export default function MiniCallBubble({ remoteStream, friendName, micOn, hasCal
               display: 'grid',
               placeItems: 'center',
               pointerEvents: 'none',
-              color: p.on ? '#fff' : accent,
+              color: p.on ? COLOR_PALETTE.white : accent,
               opacity: p.disabled ? 0.5 : 1,
               '& svg': { fontSize: 21 },
             }}

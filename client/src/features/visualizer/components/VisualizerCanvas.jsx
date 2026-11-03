@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 export default function VisualizerCanvas({ category, step, graph }) {
   if (!step) return null;
@@ -81,8 +82,8 @@ function GraphCanvas({ step, graph }) {
             const active = visitedEdgeSet.has(key(from, to));
             return (
               <g key={`${from}-${to}`}>
-                <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={active ? '#10B981' : '#94A3B8'} strokeWidth={active ? 3 : 1.5} />
-                <text x={(a.x + b.x) / 2} y={(a.y + b.y) / 2 - 4} fontSize="11" fill="#64748B" textAnchor="middle">{weight}</text>
+                <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={active ? COLOR_PALETTE.emerald[500] : COLOR_PALETTE.slate[400]} strokeWidth={active ? 3 : 1.5} />
+                <text x={(a.x + b.x) / 2} y={(a.y + b.y) / 2 - 4} fontSize="11" fill={COLOR_PALETTE.slate[500]} textAnchor="middle">{weight}</text>
               </g>
             );
           })}
@@ -91,10 +92,10 @@ function GraphCanvas({ step, graph }) {
             const isCurrent = currentNode === n.id;
             return (
               <g key={n.id}>
-                <circle cx={n.x} cy={n.y} r={18} fill={isCurrent ? '#F59E0B' : isVisited ? '#10B981' : '#3B82F6'} stroke="#fff" strokeWidth={2} />
-                <text x={n.x} y={n.y + 4} fontSize="13" fontWeight="700" fill="#fff" textAnchor="middle">{n.id}</text>
+                <circle cx={n.x} cy={n.y} r={18} fill={isCurrent ? COLOR_PALETTE.amber[500] : isVisited ? COLOR_PALETTE.emerald[500] : COLOR_PALETTE.blue[500]} stroke={COLOR_PALETTE.white} strokeWidth={2} />
+                <text x={n.x} y={n.y + 4} fontSize="13" fontWeight="700" fill={COLOR_PALETTE.white} textAnchor="middle">{n.id}</text>
                 {distances && distances[n.id] !== undefined && (
-                  <text x={n.x} y={n.y + 32} fontSize="11" fill="#64748B" textAnchor="middle">
+                  <text x={n.x} y={n.y + 32} fontSize="11" fill={COLOR_PALETTE.slate[500]} textAnchor="middle">
                     {distances[n.id] === Infinity ? '∞' : distances[n.id]}
                   </text>
                 )}
@@ -127,10 +128,10 @@ function TreeCanvas({ step }) {
   const height = maxY;
 
   const nodeColor = (value) => {
-    if (highlightId === value || currentId === value) return '#F59E0B';
-    if (comparingId === value) return '#F59E0B';
-    if (visitedIds.includes(value)) return '#10B981';
-    return '#3B82F6';
+    if (highlightId === value || currentId === value) return COLOR_PALETTE.amber[500];
+    if (comparingId === value) return COLOR_PALETTE.amber[500];
+    if (visitedIds.includes(value)) return COLOR_PALETTE.emerald[500];
+    return COLOR_PALETTE.blue[500];
   };
 
   return (
@@ -141,12 +142,12 @@ function TreeCanvas({ step }) {
             const a = nodes.find((n) => n.value === from);
             const b = nodes.find((n) => n.value === to);
             if (!a || !b) return null;
-            return <line key={`${from}-${to}`} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="#94A3B8" strokeWidth={1.5} />;
+            return <line key={`${from}-${to}`} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={COLOR_PALETTE.slate[400]} strokeWidth={1.5} />;
           })}
           {nodes.map((n) => (
             <g key={n.value}>
-              <circle cx={n.x} cy={n.y} r={16} fill={nodeColor(n.value)} stroke="#fff" strokeWidth={2} />
-              <text x={n.x} y={n.y + 4} fontSize="12" fontWeight="700" fill="#fff" textAnchor="middle">{n.value}</text>
+              <circle cx={n.x} cy={n.y} r={16} fill={nodeColor(n.value)} stroke={COLOR_PALETTE.white} strokeWidth={2} />
+              <text x={n.x} y={n.y + 4} fontSize="12" fontWeight="700" fill={COLOR_PALETTE.white} textAnchor="middle">{n.value}</text>
             </g>
           ))}
         </svg>
@@ -170,7 +171,7 @@ function FibonacciCanvas({ step }) {
               alignItems: 'center',
               justifyContent: 'center',
               bgcolor: idx === highlightIdx ? 'warning.main' : val !== null ? 'success.main' : 'action.disabledBackground',
-              color: '#fff',
+              color: COLOR_PALETTE.white,
               fontWeight: 700,
               fontFamily: (t) => t.typography.monospace.fontFamily,
               transition: 'all 0.2s ease',
@@ -215,7 +216,7 @@ function KnapsackCanvas({ step }) {
                     height: 34,
                     textAlign: 'center',
                     bgcolor: r === curRow && c === curCol ? 'warning.main' : 'transparent',
-                    color: r === curRow && c === curCol ? '#fff' : 'text.primary',
+                    color: r === curRow && c === curCol ? COLOR_PALETTE.white : 'text.primary',
                     fontWeight: r === curRow && c === curCol ? 700 : 400,
                     transition: 'all 0.15s ease',
                   }}

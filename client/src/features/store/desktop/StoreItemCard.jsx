@@ -4,8 +4,9 @@ import { pillButtonSx } from '../../dashboard/components/libraryDesktopStyles';
 import StoreBadge from '../common/StoreBadge';
 import { itemAction } from '../common/storeSelectors';
 import { Coins, ItemArt, fmt, priceNote } from '../storeUtils';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
-const ROSE = '#E11D48';
+const ROSE = COLOR_PALETTE.rose[600];
 const TWO_LINES = { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' };
 
 function ItemPicture({ item, label, onOpen, disabled }) {

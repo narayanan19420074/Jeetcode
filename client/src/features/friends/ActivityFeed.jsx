@@ -10,6 +10,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { APT_COLOR, PersonAvatar, dayLabel, mono, timeAgo } from './friendsUi';
 import { EmptyNote, Reveal, SectionLabel } from './friendsKit';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 const LANG = { javascript: 'JS', python: 'Python', cpp: 'C++', java: 'Java' };
 
@@ -42,7 +43,7 @@ function Item({ e, online, onOpenProblem }) {
         </Typography>
         <Stack direction="row" spacing={0.75} useFlexGap sx={{ alignItems: 'center', flexWrap: 'wrap', mt: 0.6 }}>
           {isApt ? <Chip color={APT_COLOR}>Aptitude</Chip> : <Chip color={accent}>{e.problem.difficulty}</Chip>}
-          {!isApt && e.language && <Chip color="#64748B">{LANG[e.language] || e.language}</Chip>}
+          {!isApt && e.language && <Chip color={COLOR_PALETTE.slate[500]}>{LANG[e.language] || e.language}</Chip>}
           {!isApt && e.runtimeMs != null && <Typography sx={{ fontSize: 11.5, color: 'text.secondary', ...mono }}>{e.runtimeMs} ms</Typography>}
           <Typography sx={{ fontSize: 11.5, color: 'text.disabled' }}>{timeAgo(e.at)}</Typography>
         </Stack>

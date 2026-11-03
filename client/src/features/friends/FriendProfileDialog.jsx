@@ -19,6 +19,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from '../leaderboard/tiers';
 import { APT_COLOR, FLAME, PersonAvatar, mono, practisedToday, statusInfo, tonal } from './friendsUi';
 import { LIB_ACCENT, LIB_TRACKING, libChipSx, libPanelSx, libSectionTitleSx, libTintBtnSx } from '../dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // One head-to-head row: my number | label | their number, with a split bar. `lower` = smaller wins (rank).
 function VsRow({ label, a, b, lower, lib = false }) {
@@ -153,7 +154,7 @@ function Compare({ friend, lib = false }) {
 function Overview({ f }) {
   const { tier } = tierFor(f.score);
   const stats = [
-    [<EmojiEventsRoundedIcon key="r" />, f.rank ? `#${f.rank}` : '–', 'Rank', '#F59E0B'],
+    [<EmojiEventsRoundedIcon key="r" />, f.rank ? `#${f.rank}` : '–', 'Rank', COLOR_PALETTE.amber[500]],
     [<BoltRoundedIcon key="s" />, f.score.toLocaleString(), 'Points', tier.color],
     [<CheckCircleRoundedIcon key="c" />, f.solved, 'Solved', DIFF_COLOR.Easy],
     [<LocalFireDepartmentRoundedIcon key="f" />, f.streak || 0, 'Streak', FLAME],
@@ -214,7 +215,7 @@ function ClassicProfilePanel({ f, onRemove }) {
           </Box>
         )}
         <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: act.live ? 'success.main' : 'text.secondary', fontWeight: 700, fontSize: 13 }}>
-          <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: act.live ? '#22C55E' : 'text.disabled' }} />
+          <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: act.live ? COLOR_PALETTE.green[500] : 'text.disabled' }} />
           {act.text}
         </Box>
       </Stack>
@@ -261,16 +262,16 @@ function StatCard({ icon: Icon, value, label, color, bg }) {
 function LibOverview({ f }) {
   const { tier } = tierFor(f.score);
   const stats = [
-    { icon: EmojiEventsRoundedIcon, value: f.rank ? `#${f.rank}` : '–', label: 'Rank', color: '#3F8CE8', bg: '#EDF2F9' },
+    { icon: EmojiEventsRoundedIcon, value: f.rank ? `#${f.rank}` : '–', label: 'Rank', color: COLOR_PALETTE.custom.blue3F8CE8, bg: COLOR_PALETTE.blue[50] },
     { icon: BoltRoundedIcon, value: f.score.toLocaleString(), label: 'Points', color: tier.color, bg: tint(tier.color, 14) },
-    { icon: CheckCircleRoundedIcon, value: f.solved, label: 'Solved', color: '#22A06B', bg: '#EAF6EE' },
-    { icon: LocalFireDepartmentRoundedIcon, value: f.streak || 0, label: 'Streak', color: '#F09A2E', bg: '#FFF2E3' },
+    { icon: CheckCircleRoundedIcon, value: f.solved, label: 'Solved', color: COLOR_PALETTE.custom.emerald22A06B, bg: COLOR_PALETTE.green[50] },
+    { icon: LocalFireDepartmentRoundedIcon, value: f.streak || 0, label: 'Streak', color: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
   ];
   const levels = [
-    { value: f.easy, label: 'Easy', color: '#22A06B', bg: '#EAF6EE' },
-    { value: f.medium, label: 'Medium', color: '#F09A2E', bg: '#FFF2E3' },
-    { value: f.hard, label: 'Hard', color: '#EF5B5B', bg: '#FDECEB' },
-    { value: f.aptitude, label: 'Aptitude', color: APT_COLOR, bg: '#F1EBFD' },
+    { value: f.easy, label: 'Easy', color: COLOR_PALETTE.custom.emerald22A06B, bg: COLOR_PALETTE.green[50] },
+    { value: f.medium, label: 'Medium', color: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
+    { value: f.hard, label: 'Hard', color: COLOR_PALETTE.custom.redEF5B5B, bg: COLOR_PALETTE.rose[50] },
+    { value: f.aptitude, label: 'Aptitude', color: APT_COLOR, bg: COLOR_PALETTE.violet[100] },
   ];
   return (
     <>
@@ -321,7 +322,7 @@ function LibProfilePanel({ f, onRemove }) {
 
       {tab === 'overview' ? <LibOverview f={f} /> : <Compare friend={f} lib />}
 
-      <Button fullWidth onClick={onRemove} sx={{ ...libTintBtnSx, mt: 4, bgcolor: tint('#EF5B5B', 12), color: 'error.main', '&:hover': { bgcolor: tint('#EF5B5B', 20) } }}>
+      <Button fullWidth onClick={onRemove} sx={{ ...libTintBtnSx, mt: 4, bgcolor: tint(COLOR_PALETTE.custom.redEF5B5B, 12), color: 'error.main', '&:hover': { bgcolor: tint(COLOR_PALETTE.custom.redEF5B5B, 20) } }}>
         Remove friend
       </Button>
     </Box>
@@ -381,7 +382,7 @@ export default function FriendProfileDialog({ f, onClose, onRemove, onChat, onCo
             </Box>
           )}
           <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: act.live ? 'success.main' : 'text.secondary', fontWeight: 700, fontSize: 13 }}>
-            <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: act.live ? '#22C55E' : 'text.disabled' }} />
+            <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: act.live ? COLOR_PALETTE.green[500] : 'text.disabled' }} />
             {act.text}
           </Box>
         </Stack>

@@ -16,6 +16,7 @@ import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
 import { daysUntil, formatExamDate, pickExamDate } from '../prep/examDate';
 import { CATEGORIES, EXAMS } from './examsData';
 import BackToDashboard from '../../components/BackToDashboard';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Exams that have a full mock paper on /mocks (paper ids live in server/src/config/mockTests.js).
 const HAS_MOCK = new Set(['tcs-nqt', 'infosys', 'cognizant']);
@@ -48,11 +49,11 @@ function examInfo(exam, track) {
 }
 
 const TONES = {
-  urgent: { fg: ['#B91C1C', '#FCA5A5'], bg: 'rgba(239,68,68,0.14)' },
-  open: { fg: ['#92400E', '#FDE68A'], bg: 'rgba(251,191,36,0.18)' },
-  info: { fg: ['#1D4ED8', '#93C5FD'], bg: 'rgba(59,130,246,0.14)' },
-  closed: { fg: ['#475569', '#94A3B8'], bg: 'rgba(148,163,184,0.16)' },
-  muted: { fg: ['#475569', '#94A3B8'], bg: 'rgba(148,163,184,0.12)' },
+  urgent: { fg: [COLOR_PALETTE.red[700], COLOR_PALETTE.red[300]], bg: withAlpha(COLOR_PALETTE.red[500], 0.14) },
+  open: { fg: [COLOR_PALETTE.amber[800], COLOR_PALETTE.amber[200]], bg: withAlpha(COLOR_PALETTE.amber[400], 0.18) },
+  info: { fg: [COLOR_PALETTE.blue[700], COLOR_PALETTE.blue[300]], bg: withAlpha(COLOR_PALETTE.blue[500], 0.14) },
+  closed: { fg: [COLOR_PALETTE.slate[600], COLOR_PALETTE.slate[400]], bg: withAlpha(COLOR_PALETTE.slate[400], 0.16) },
+  muted: { fg: [COLOR_PALETTE.slate[600], COLOR_PALETTE.slate[400]], bg: withAlpha(COLOR_PALETTE.slate[400], 0.12) },
 };
 
 function StatusPill({ status }) {
@@ -112,7 +113,7 @@ function ExamCard({ exam, index, track, onOpen }) {
       <Box sx={{ display: 'flex', gap: 0.75, mt: 'auto' }}>
         <Button
           component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation endIcon={<LaunchRoundedIcon sx={{ fontSize: 16 }} />}
-          sx={{ flex: 1, height: 34, borderRadius: '10px', bgcolor: PLAN_AMBER, color: '#1B1200', fontWeight: 800, fontSize: '0.82rem', '&:hover': { bgcolor: '#F5B50F' } }}
+          sx={{ flex: 1, height: 34, borderRadius: '10px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, fontSize: '0.82rem', '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
         >
           {closed ? 'Official site' : 'Apply'}
         </Button>
@@ -189,7 +190,7 @@ function ExamDetails({ exam, track, onClose }) {
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mt: 2.5 }}>
           <Button
             component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation endIcon={<LaunchRoundedIcon />}
-            sx={{ height: 40, px: 2.5, borderRadius: '12px', bgcolor: PLAN_AMBER, color: '#1B1200', fontWeight: 800, '&:hover': { bgcolor: '#F5B50F' } }}
+            sx={{ height: 40, px: 2.5, borderRadius: '12px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
           >
             {closed ? 'Official site' : 'Apply'}
           </Button>
@@ -233,7 +234,7 @@ function NextUpBanner() {
       <Button
         {...(pick.href ? { component: 'a', href: pick.href, target: '_blank', rel: 'noopener noreferrer' } : { onClick: () => navigate(pick.to) })}
         disableElevation size="small"
-        sx={{ flexShrink: 0, height: 30, px: 1.75, borderRadius: '9px', bgcolor: PLAN_AMBER, color: '#1B1200', fontWeight: 800, fontSize: '0.8rem', '&:hover': { bgcolor: '#F5B50F' } }}
+        sx={{ flexShrink: 0, height: 30, px: 1.75, borderRadius: '9px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, fontSize: '0.8rem', '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
       >
         {pick.cta}
       </Button>
@@ -274,14 +275,14 @@ export default function ExamsPage() {
             </Box>
           </Box>
           <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', alignItems: 'center', flexShrink: 0 }}>
-          <Button onClick={() => navigate('/mocks')} disableElevation startIcon={<QuizRoundedIcon sx={{ fontSize: 17 }} />} sx={{ height: 32, px: 1.5, borderRadius: 99, fontSize: 13, fontWeight: 800, bgcolor: PLAN_AMBER, color: '#1B1200', '&:hover': { bgcolor: '#F5B50F' } }}>Mock tests</Button>
+          <Button onClick={() => navigate('/mocks')} disableElevation startIcon={<QuizRoundedIcon sx={{ fontSize: 17 }} />} sx={{ height: 32, px: 1.5, borderRadius: 99, fontSize: 13, fontWeight: 800, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Mock tests</Button>
           <Box role="tablist" aria-label="Exam type" sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', flexShrink: 0 }}>
             {CATEGORIES.map((c) => {
               const on = cat === c.key;
               return (
                 <ButtonBase
                   key={c.key} role="tab" aria-selected={on} onClick={() => setCat(c.key)}
-                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? '#1B1200' : 'text.primary', transition: 'background-color .15s' })}
+                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? COLOR_PALETTE.custom.black1B1200 : 'text.primary', transition: 'background-color .15s' })}
                 >
                   {c.label}
                 </ButtonBase>

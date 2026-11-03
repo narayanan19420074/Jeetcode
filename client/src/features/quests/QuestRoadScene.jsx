@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { buildDiamond, buildLarva, clamp01, createSparkles, glowTexture, sparkleTexture, smooth } from './butterflyModel';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // The Quests page is one 3D road map. The larva sits on the road at your check-in progress and looks for the next
 // diamond. Every milestone is a glowing diamond on the road; the one with the Pro reward is the big prize at the end.
@@ -11,12 +12,12 @@ import { buildDiamond, buildLarva, clamp01, createSparkles, glowTexture, sparkle
 const ROAD = [[-7.2, 2.0], [-4.6, -1.3], [-1.6, 1.9], [1.7, -1.5], [4.7, 1.7], [7.3, -0.6]].map(([x, z]) => new THREE.Vector3(x, 0, z));
 const SPACING = 0.78;
 const CAM_DIR = new THREE.Vector3(0, 0.74, 0.67).normalize();
-const COLORS = { orange: '#FF7A00', yellow: '#FFC933', green: '#2ED573', blue: '#27B6FF', grey: '#8E99AD', white: '#FFFFFF' };
+const COLORS = { orange: COLOR_PALETTE.custom.orangeFF7A00, yellow: COLOR_PALETTE.amber[400], green: COLOR_PALETTE.custom.green2ED573, blue: COLOR_PALETTE.custom.sky27B6FF, grey: COLOR_PALETTE.slate[400], white: COLOR_PALETTE.white };
 
 // Night: the original dark lobby. Day: a pale sky, light floor and a darker road, so the same scene reads well in light mode.
 const LOOK = {
-  dark: { sky: ['#0B0E14', '#16203A'], floor: 0x0e121b, grid: [0x232c40, 0x171d2c], road: 0x1b2130, pad: 0x232c40, glow: 0.1, additive: true, ambient: 0.4 },
-  light: { sky: ['#EAF1FD', '#CFDDF5'], floor: 0xdfe7f4, grid: [0xb9c6df, 0xcfd9ec], road: 0x2c3447, pad: 0x2c3447, glow: 0.22, additive: false, ambient: 0.75 },
+  dark: { sky: [COLOR_PALETTE.gray[950], COLOR_PALETTE.custom.slate16203A], floor: 0x0e121b, grid: [0x232c40, 0x171d2c], road: 0x1b2130, pad: 0x232c40, glow: 0.1, additive: true, ambient: 0.4 },
+  light: { sky: [COLOR_PALETTE.indigo[50], COLOR_PALETTE.indigo[100]], floor: 0xdfe7f4, grid: [0xb9c6df, 0xcfd9ec], road: 0x2c3447, pad: 0x2c3447, glow: 0.22, additive: false, ambient: 0.75 },
 };
 
 function backdrop(look) {
@@ -50,7 +51,7 @@ function labelTexture(top, bottom, topColor, bottomColor) {
       px -= 2;
     } while (c.measureText(text).width > 470 && px > 20);
     c.lineWidth = 12;
-    c.strokeStyle = '#0B0E14';
+    c.strokeStyle = COLOR_PALETTE.gray[950];
     c.strokeText(text, 256, y);
     c.fillStyle = color;
     c.fillText(text, 256, y);
@@ -401,7 +402,7 @@ function buildStage(host, { reduce, onClaim, dark = true }) {
         while (eatCarry >= 1) {
           eatCarry -= 1;
           const a = Math.random() * Math.PI * 2;
-          sparkles.emit({ x: n.pos.x + Math.cos(a) * 0.4, y: 1 + rnd(0.7), z: n.pos.z + Math.sin(a) * 0.4 }, { x: rnd(1.5), y: Math.random() * 1.5, z: rnd(1.5) }, { color: Math.random() > 0.5 ? '#7FDBFF' : '#FFFFFF', size: 0.3, ttl: 1.6, to: headPos, strength: 8 });
+          sparkles.emit({ x: n.pos.x + Math.cos(a) * 0.4, y: 1 + rnd(0.7), z: n.pos.z + Math.sin(a) * 0.4 }, { x: rnd(1.5), y: Math.random() * 1.5, z: rnd(1.5) }, { color: Math.random() > 0.5 ? COLOR_PALETTE.sky[300] : COLOR_PALETTE.white, size: 0.3, ttl: 1.6, to: headPos, strength: 8 });
         }
         if (k >= 1) {
           n.state = 'claimed';
@@ -409,7 +410,7 @@ function buildStage(host, { reduce, onClaim, dark = true }) {
           n.beam.visible = false;
           paintLabel(n);
           popT = 0;
-          sparkles.burst(headPos, 40, { color: '#FFC933', speed: 2.4, size: 0.34 });
+          sparkles.burst(headPos, 40, { color: COLOR_PALETTE.amber[400], speed: 2.4, size: 0.34 });
         }
       }
       const bob = reduce ? 0 : Math.sin(T * 1.6 + i) * 0.07;
@@ -479,7 +480,7 @@ function buildStage(host, { reduce, onClaim, dark = true }) {
       ambient += dt;
       if (ambient > 0.25) {
         ambient = 0;
-        sparkles.emit({ x: rnd(16), y: Math.random() * 0.5, z: rnd(8) }, { x: 0, y: 0.5, z: 0 }, { color: Math.random() > 0.5 ? '#27B6FF' : '#FF7A00', size: 0.18, ttl: 3.2 });
+        sparkles.emit({ x: rnd(16), y: Math.random() * 0.5, z: rnd(8) }, { x: 0, y: 0.5, z: 0 }, { color: Math.random() > 0.5 ? COLOR_PALETTE.custom.sky27B6FF : COLOR_PALETTE.custom.orangeFF7A00, size: 0.18, ttl: 3.2 });
       }
     }
     pose(dt);

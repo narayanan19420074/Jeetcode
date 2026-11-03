@@ -26,6 +26,7 @@ import {
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
 import { RARITY_COLOR, formatDate, goalMilestone, levelInfo } from './questUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Phone layout of Quests in the Library look (same as the phone Problems, Home and You pages): Roboto type, warm
 // surface, 16px page padding, 40px icon buttons, 18px section titles, cream panels, pill buttons and bottom sheets.
@@ -34,10 +35,10 @@ import { RARITY_COLOR, formatDate, goalMilestone, levelInfo } from './questUtils
 // The server decides every result (progress, claims, upgrades); this screen only shows what it returns.
 
 const ACCENT = LIB_ACCENT;
-const GREEN = '#16A34A';
-const ORANGE = '#F97316';
-const DIAMOND = '#0EA5E9';
-const COIN = '#D97706';
+const GREEN = COLOR_PALETTE.green[600];
+const ORANGE = COLOR_PALETTE.orange[500];
+const DIAMOND = COLOR_PALETTE.sky[500];
+const COIN = COLOR_PALETTE.amber[600];
 
 const ButterflyShowcase = lazy(() => import('./ButterflyShowcase'));
 
@@ -102,7 +103,7 @@ function MissionsSheet({ open, onClose, quests, busy, onClaim, onSolve }) {
               {q.claimed ? (
                 <CheckRoundedIcon aria-label="Claimed" sx={{ color: GREEN }} />
               ) : q.claimable ? (
-                <Button disableElevation variant="contained" disabled={busy === q.id} onClick={() => onClaim(q)} sx={{ ...smallBtn, bgcolor: GREEN, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${GREEN} 85%, #000)` } }}>Claim</Button>
+                <Button disableElevation variant="contained" disabled={busy === q.id} onClick={() => onClaim(q)} sx={{ ...smallBtn, bgcolor: GREEN, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${GREEN} 85%, ${COLOR_PALETTE.black})` } }}>Claim</Button>
               ) : (
                 <Button disableElevation variant="contained" onClick={() => onSolve(q.difficulty)} sx={{ ...smallBtn, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', '&:hover': { bgcolor: 'var(--lib-player)', filter: 'brightness(0.97)' } }}>Go</Button>
               )}
@@ -153,7 +154,7 @@ function WalletSheet({ topUp, onClose, coins, diamonds, rate, busy, onConvert })
 
         <Stack direction="row" sx={{ gap: 1, justifyContent: 'center' }}>
           {[1, 5, 10].map((v) => (
-            <ButtonBase key={v} disabled={v > max} onClick={() => setN(v)} sx={{ height: 36, px: 2, borderRadius: 999, fontWeight: 700, bgcolor: n === v ? ACCENT : 'var(--lib-chip)', color: n === v ? '#fff' : 'var(--lib-chip-text)', '&.Mui-disabled': { opacity: 0.45 } }}>{v}</ButtonBase>
+            <ButtonBase key={v} disabled={v > max} onClick={() => setN(v)} sx={{ height: 36, px: 2, borderRadius: 999, fontWeight: 700, bgcolor: n === v ? ACCENT : 'var(--lib-chip)', color: n === v ? COLOR_PALETTE.white : 'var(--lib-chip-text)', '&.Mui-disabled': { opacity: 0.45 } }}>{v}</ButtonBase>
           ))}
           <ButtonBase disabled={max < 1} onClick={() => setN(Math.max(max, 1))} sx={{ height: 36, px: 2, borderRadius: 999, fontWeight: 700, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', '&.Mui-disabled': { opacity: 0.45 } }}>Max</ButtonBase>
         </Stack>
@@ -210,7 +211,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
   const info = levelInfo(state.xp);
   const { butterfly } = state;
   const ready = state.quests.filter((q) => q.claimable).length;
-  const rarity = RARITY_COLOR[butterfly.current.rarity] || '#8E99AD';
+  const rarity = RARITY_COLOR[butterfly.current.rarity] || COLOR_PALETTE.slate[400];
   const short = butterfly.next ? Math.max(0, butterfly.next.cost - diamonds) : 0;
   const rewards = [...state.milestones].sort((a, b) => a.target - b.target);
 
@@ -226,7 +227,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
         <IconButton onClick={() => setMissions(true)} aria-label={ready ? `Missions, ${ready} ready to claim` : 'Missions'} sx={{ ...libIconBtnSx, position: 'relative' }}>
           <AssignmentRoundedIcon />
           {ready > 0 && (
-            <Box component="span" sx={{ position: 'absolute', top: -2, right: -2, minWidth: 18, height: 18, px: 0.5, display: 'grid', placeItems: 'center', fontSize: '0.7rem', fontWeight: 800, color: '#fff', bgcolor: ORANGE, borderRadius: 9 }}>{ready}</Box>
+            <Box component="span" sx={{ position: 'absolute', top: -2, right: -2, minWidth: 18, height: 18, px: 0.5, display: 'grid', placeItems: 'center', fontSize: '0.7rem', fontWeight: 800, color: COLOR_PALETTE.white, bgcolor: ORANGE, borderRadius: 9 }}>{ready}</Box>
           )}
         </IconButton>
         <IconButton onClick={() => (isAuthenticated ? onTopUp(1) : onLogin())} aria-label="Diamonds and top up" sx={libIconBtnSx}>
@@ -241,7 +242,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
         sx={{ mt: 2, borderRadius: '20px', p: 2, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
       >
         <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
-          <Box sx={{ width: 48, height: 48, borderRadius: '16px', display: 'grid', placeItems: 'center', flexShrink: 0, fontWeight: 700, fontSize: 20, color: '#fff', bgcolor: ACCENT }}>{info.level}</Box>
+          <Box sx={{ width: 48, height: 48, borderRadius: '16px', display: 'grid', placeItems: 'center', flexShrink: 0, fontWeight: 700, fontSize: 20, color: COLOR_PALETTE.white, bgcolor: ACCENT }}>{info.level}</Box>
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{info.rank}</Typography>
             <Typography color="var(--lib-muted)" noWrap sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>{info.max ? 'Top level' : `${info.toNext} XP to level ${info.level + 1}`}</Typography>
@@ -284,7 +285,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
                 {m.claimed ? (
                   <CheckRoundedIcon aria-label="Claimed" sx={{ color: GREEN }} />
                 ) : m.claimable ? (
-                  <Button disableElevation variant="contained" disabled={busy === m.id} onClick={() => onClaim(m)} sx={{ ...smallBtn, bgcolor: GREEN, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${GREEN} 85%, #000)` } }}>Claim</Button>
+                  <Button disableElevation variant="contained" disabled={busy === m.id} onClick={() => onClaim(m)} sx={{ ...smallBtn, bgcolor: GREEN, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${GREEN} 85%, ${COLOR_PALETTE.black})` } }}>Claim</Button>
                 ) : (
                   <LockRoundedIcon aria-label="Locked" sx={{ fontSize: 20, color: 'text.disabled' }} />
                 )}
@@ -302,7 +303,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
         <Box sx={{ borderRadius: '20px', p: 2, border: `1px solid ${tint(rarity, 30)}`, background: `linear-gradient(160deg, ${tint(rarity, dark ? 18 : 12)} 0%, transparent 70%)` }}>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
             <Typography component="h3" noWrap sx={{ flex: 1, fontWeight: 700, fontSize: 20, lineHeight: '28px' }}>{butterfly.current.name}</Typography>
-            <Typography component="span" sx={{ px: 1, py: 0.4, borderRadius: '10px', fontSize: 13, fontWeight: 500, lineHeight: 1.2, color: dark ? rarity : `color-mix(in srgb, ${rarity} 70%, #000)`, bgcolor: tint(rarity, 18) }}>{butterfly.current.rarity}</Typography>
+            <Typography component="span" sx={{ px: 1, py: 0.4, borderRadius: '10px', fontSize: 13, fontWeight: 500, lineHeight: 1.2, color: dark ? rarity : `color-mix(in srgb, ${rarity} 70%, ${COLOR_PALETTE.black})`, bgcolor: tint(rarity, 18) }}>{butterfly.current.rarity}</Typography>
           </Stack>
           <Box sx={{ position: 'relative', height: 220, my: 0.5 }}>
             {flyFailed ? null : (
@@ -325,7 +326,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
                 disabled={busy === 'upgrade'}
                 onClick={onUpgrade}
                 startIcon={<ArrowUpwardRoundedIcon />}
-                endIcon={<Stack direction="row" component="span" sx={{ alignItems: 'center', gap: 0.25, px: 1, py: 0.25, borderRadius: 999, bgcolor: 'rgba(0,0,0,0.25)' }}><DiamondRoundedIcon sx={{ fontSize: 16 }} />{butterfly.next.cost}</Stack>}
+                endIcon={<Stack direction="row" component="span" sx={{ alignItems: 'center', gap: 0.25, px: 1, py: 0.25, borderRadius: 999, bgcolor: withAlpha(COLOR_PALETTE.black, 0.25) }}><DiamondRoundedIcon sx={{ fontSize: 16 }} />{butterfly.next.cost}</Stack>}
                 sx={short > 0 ? { ...tintBtn } : solidBtn}
               >
                 {busy === 'upgrade' ? 'Upgrading…' : `Upgrade to ${butterfly.next.name}`}

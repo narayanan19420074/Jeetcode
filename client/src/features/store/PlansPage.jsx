@@ -21,6 +21,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Plans page: Free, Pro Monthly and Pro Yearly in the Library look (cream panels, 16px gutter, Roboto, pill buttons).
 // Prices are the same as on the home page. Keep them in sync.
@@ -28,7 +29,7 @@ const PRICE = { monthly: 149, yearly: 1199 };
 const PERIOD = { monthly: 'month', yearly: 'year' };
 const SAVING_PERCENT = Math.round((1 - PRICE.yearly / (PRICE.monthly * 12)) * 100);
 const PLAN_LABEL = { monthly: 'Monthly', yearly: 'Yearly', 'license-key': 'License key', 'quest-reward': 'Reward' };
-const CHECK_GREEN = '#22A06B'; // same green as the cleared level cards on the dashboard
+const CHECK_GREEN = COLOR_PALETTE.custom.emerald22A06B; // same green as the cleared level cards on the dashboard
 
 const FREE_FEATURES = [
   'Coding problems without company tags',
@@ -182,7 +183,7 @@ export default function PlansPage() {
 
         {isPro && status && (
           <Box sx={{ ...libPanelSx, mt: 3, p: 2, display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
-            <Box aria-hidden sx={{ width: 44, height: 44, borderRadius: '14px', display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: tint('#F09A2E', 16), color: '#F09A2E' }}>
+            <Box aria-hidden sx={{ width: 44, height: 44, borderRadius: '14px', display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: tint(COLOR_PALETTE.custom.amberF09A2E, 16), color: COLOR_PALETTE.custom.amberF09A2E }}>
               <WorkspacePremiumRoundedIcon />
             </Box>
             <Box sx={{ flex: 1, minWidth: 200 }}>
@@ -228,7 +229,7 @@ export default function PlansPage() {
                 <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
                   <Typography component="h2" sx={{ fontSize: 20, lineHeight: '28px', fontWeight: 700 }}>Pro {PLAN_LABEL[plan]}</Typography>
                   {plan === 'yearly' && (
-                    <Box component="span" sx={{ height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 13, fontWeight: 500, letterSpacing: LIB_TRACKING, color: '#fff', bgcolor: LIB_ACCENT }}>
+                    <Box component="span" sx={{ height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 13, fontWeight: 500, letterSpacing: LIB_TRACKING, color: COLOR_PALETTE.white, bgcolor: LIB_ACCENT }}>
                       Best value
                     </Box>
                   )}
@@ -254,10 +255,10 @@ export default function PlansPage() {
                 onClick={() => handleSubscribe(plan)}
                 sx={{
                   ...(plan === 'yearly' ? libSolidBtnSx : libTintBtnSx),
-                  '&.Mui-disabled': plan === 'yearly' ? { bgcolor: LIB_ACCENT, color: '#fff', opacity: 0.5 } : { color: pal.text, opacity: 0.6 },
+                  '&.Mui-disabled': plan === 'yearly' ? { bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, opacity: 0.5 } : { color: pal.text, opacity: 0.6 },
                 }}
               >
-                {loadingPlan === plan ? <CircularProgress size={22} sx={{ color: plan === 'yearly' ? '#fff' : pal.text }} aria-label="Starting checkout" /> : isPro ? (status?.proPlan === plan ? 'Current plan' : 'Subscribe') : 'Subscribe'}
+                {loadingPlan === plan ? <CircularProgress size={22} sx={{ color: plan === 'yearly' ? COLOR_PALETTE.white : pal.text }} aria-label="Starting checkout" /> : isPro ? (status?.proPlan === plan ? 'Current plan' : 'Subscribe') : 'Subscribe'}
               </Button>
             </PlanPanel>
           ))}

@@ -9,6 +9,7 @@ import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { fetchFriends } from '../friends/friendsSlice';
 import { PersonAvatar } from '../friends/friendsUi';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // "Call a friend" dropdown for a live pair room (opens under the icon, list scrolls inside).
 // Every friend (online or offline) has two small buttons:
@@ -114,7 +115,7 @@ export default function InviteFriendsDialog({ anchorEl, onClose, roomId, roomTit
                   <ButtonBase
                     onClick={() => inviteWhatsApp(f)}
                     aria-label={`Invite ${f.name} on WhatsApp`}
-                    sx={{ ...small, color: '#fff', bgcolor: '#25D366', '&:hover': { bgcolor: '#1EBE5A' } }}
+                    sx={{ ...small, color: COLOR_PALETTE.white, bgcolor: COLOR_PALETTE.custom.green25D366, '&:hover': { bgcolor: COLOR_PALETTE.green[500] } }}
                   >
                     <WhatsAppIcon sx={{ fontSize: 17 }} />
                   </ButtonBase>

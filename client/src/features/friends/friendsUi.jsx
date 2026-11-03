@@ -5,14 +5,15 @@ import { animate, useReducedMotion } from 'framer-motion';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import { todayKey as indiaToday } from '../dashboard/dashboardUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Small pieces shared by the Friends page, chat, activity feed and profile dialog.
 export const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
-export const APT_COLOR = '#8B5CF6';
-export const FLAME = '#F97316';
-export const AMBER = '#FBBF24';
-export const GREEN = '#22C55E';
-export const HERO_BG = 'linear-gradient(160deg,#1E1B4B 0%,#312E81 55%,#5B21B6 100%)';
+export const APT_COLOR = COLOR_PALETTE.violet[500];
+export const FLAME = COLOR_PALETTE.orange[500];
+export const AMBER = COLOR_PALETTE.amber[400];
+export const GREEN = COLOR_PALETTE.green[500];
+export const HERO_BG = `linear-gradient(160deg,${COLOR_PALETTE.indigo[950]} 0%,${COLOR_PALETTE.indigo[900]} 55%,${COLOR_PALETTE.violet[800]} 100%)`;
 
 // Same motion vocabulary as the Leaderboard page (all CSS, off for "reduce motion").
 export const flicker = keyframes`0%,100%{transform:scale(1) rotate(-3deg)}50%{transform:scale(1.2) rotate(4deg)}`;
@@ -71,9 +72,9 @@ export const tonal = (color = 'primary', size = 40) => (t) => ({
 });
 
 const pulse = keyframes`
-  0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
-  70% { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
-  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+  0% { box-shadow: 0 0 0 0 ${withAlpha(COLOR_PALETTE.green[500], 0.55)}; }
+  70% { box-shadow: 0 0 0 7px ${withAlpha(COLOR_PALETTE.green[500], 0)}; }
+  100% { box-shadow: 0 0 0 0 ${withAlpha(COLOR_PALETTE.green[500], 0)}; }
 `;
 
 // Green "online now" dot that gently pulses (still for people who prefer reduced motion).
@@ -87,7 +88,7 @@ export function OnlineDot({ size = 11, sx }) {
           width: size,
           height: size,
           borderRadius: '50%',
-          bgcolor: '#22C55E',
+          bgcolor: COLOR_PALETTE.green[500],
           border: `2px solid ${t.palette.background.paper}`,
           boxSizing: 'content-box',
           animation: `${pulse} 2.2s ease-out infinite`,
@@ -127,7 +128,7 @@ export function Streak({ value }) {
   return (
     <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.15 }}>
       <LocalFireDepartmentRoundedIcon
-        sx={{ fontSize: 16, color: on ? FLAME : 'text.disabled', ...(on && { animation: `${flicker} 1.4s ease-in-out infinite`, filter: 'drop-shadow(0 0 4px rgba(249,115,22,0.7))', ...calm }) }}
+        sx={{ fontSize: 16, color: on ? FLAME : 'text.disabled', ...(on && { animation: `${flicker} 1.4s ease-in-out infinite`, filter: `drop-shadow(0 0 4px ${withAlpha(COLOR_PALETTE.orange[500], 0.7)})`, ...calm }) }}
       />
       <Typography variant="caption" sx={[{ fontWeight: 800, color: on ? 'text.primary' : 'text.disabled' }, mono]}>{value || 0}d</Typography>
     </Box>
@@ -141,7 +142,7 @@ export const daysSince = (lastActive) => (lastActive ? Math.round((Date.parse(to
 
 // Status line under a friend's name. Live presence wins over the daily "active" date.
 export function statusInfo(person, online) {
-  if (online) return { text: 'Online now', live: true, color: '#22C55E' };
+  if (online) return { text: 'Online now', live: true, color: COLOR_PALETTE.green[500] };
   const d = daysSince(person.lastActive);
   if (d === null) return { text: 'Not started yet', live: false };
   if (d <= 0) return { text: 'Active today', live: false };

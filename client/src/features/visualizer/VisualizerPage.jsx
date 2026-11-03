@@ -15,6 +15,7 @@ import { linearSearchSteps, binarySearchSteps } from './algorithms/searching';
 import { bfsSteps, dfsSteps, dijkstraSteps, defaultGraph } from './algorithms/graph';
 import { bstInsertSteps, bstTraversalSteps } from './algorithms/trees';
 import { fibonacciSteps, knapsackSteps, defaultKnapsack } from './algorithms/dp';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Blip's guided lesson (3D mascot + speech) is only downloaded when someone
 // clicks Teach.
@@ -229,10 +230,10 @@ export default function VisualizerPage() {
               fontWeight: 800,
               borderRadius: 99,
               px: 2,
-              color: '#04281c',
-              background: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)',
-              boxShadow: '0 4px 14px rgba(16,185,129,0.4)',
-              '&:hover': { background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)' },
+              color: COLOR_PALETTE.emerald[950],
+              background: `linear-gradient(135deg, ${COLOR_PALETTE.emerald[500]} 0%, ${COLOR_PALETTE.emerald[400]} 100%)`,
+              boxShadow: `0 4px 14px ${withAlpha(COLOR_PALETTE.emerald[500], 0.4)}`,
+              '&:hover': { background: `linear-gradient(135deg, ${COLOR_PALETTE.emerald[600]} 0%, ${COLOR_PALETTE.emerald[500]} 100%)` },
             }}
           >
             Teach

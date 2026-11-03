@@ -21,6 +21,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import MonthCalendar from './MonthCalendar';
 import { DiffTag, addDays, fmtDay, keyToDate, localKey } from './planUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 const itemKey = (type, id) => `${type}:${id}`;
@@ -339,7 +340,7 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
       <Box
         sx={(t) => ({
           position: 'sticky', bottom: 8, mt: 1.5, px: 1.5, py: 1, display: 'flex', alignItems: 'center', gap: 1.5,
-          borderRadius: '12px', border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, boxShadow: '0 10px 26px -14px rgba(2,6,23,0.4)', zIndex: 2,
+          borderRadius: '12px', border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, boxShadow: `0 10px 26px -14px ${withAlpha(COLOR_PALETTE.slate[950], 0.4)}`, zIndex: 2,
         })}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>

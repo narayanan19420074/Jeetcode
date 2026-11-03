@@ -4,6 +4,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { DIFF_COLOR } from '../dashboard/dashboardUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -188,16 +189,16 @@ export function downloadIcs(plan) {
 export const planTone = (summary) =>
   summary.status === 'completed' ? 'success' : summary.status === 'behind' ? 'error' : summary.status === 'upcoming' ? 'info' : 'primary';
 
-export const PLAN_AMBER = '#FBBF24';
+export const PLAN_AMBER = COLOR_PALETTE.amber[400];
 
 // Every plan gets its own colour story (same family as the TCS NQT card). Stable per plan id.
 export const PLAN_THEMES = [
-  { name: 'indigo', gradient: 'linear-gradient(135deg,#1E1B4B 0%,#3730A3 55%,#6D28D9 100%)' },
-  { name: 'teal', gradient: 'linear-gradient(135deg,#042F2E 0%,#0F766E 55%,#047857 100%)' },
-  { name: 'rose', gradient: 'linear-gradient(135deg,#4C0519 0%,#BE123C 55%,#C2410C 100%)' },
-  { name: 'ocean', gradient: 'linear-gradient(135deg,#0C1E4A 0%,#1D4ED8 55%,#0E7490 100%)' },
-  { name: 'plum', gradient: 'linear-gradient(135deg,#3B0764 0%,#86198F 55%,#BE185D 100%)' },
-  { name: 'ember', gradient: 'linear-gradient(135deg,#431407 0%,#9A3412 55%,#B45309 100%)' },
+  { name: 'indigo', gradient: `linear-gradient(135deg,${COLOR_PALETTE.indigo[950]} 0%,${COLOR_PALETTE.indigo[800]} 55%,${COLOR_PALETTE.violet[700]} 100%)` },
+  { name: 'teal', gradient: `linear-gradient(135deg,${COLOR_PALETTE.teal[950]} 0%,${COLOR_PALETTE.teal[700]} 55%,${COLOR_PALETTE.emerald[700]} 100%)` },
+  { name: 'rose', gradient: `linear-gradient(135deg,${COLOR_PALETTE.rose[950]} 0%,${COLOR_PALETTE.rose[700]} 55%,${COLOR_PALETTE.orange[700]} 100%)` },
+  { name: 'ocean', gradient: `linear-gradient(135deg,${COLOR_PALETTE.blue[950]} 0%,${COLOR_PALETTE.blue[700]} 55%,${COLOR_PALETTE.cyan[700]} 100%)` },
+  { name: 'plum', gradient: `linear-gradient(135deg,${COLOR_PALETTE.purple[950]} 0%,${COLOR_PALETTE.custom.purple86198F} 55%,${COLOR_PALETTE.pink[700]} 100%)` },
+  { name: 'ember', gradient: `linear-gradient(135deg,${COLOR_PALETTE.orange[950]} 0%,${COLOR_PALETTE.orange[800]} 55%,${COLOR_PALETTE.amber[700]} 100%)` },
 ];
 export const planTheme = (id = '') => PLAN_THEMES[[...String(id)].reduce((n, c) => n + c.charCodeAt(0), 0) % PLAN_THEMES.length];
 
@@ -219,9 +220,9 @@ export function daysTile(summary, today = localKey()) {
 export function ProgressRing({ value, size = 56, tone = 'primary', onDark = false }) {
   return (
     <Box sx={{ position: 'relative', width: size, height: size, flexShrink: 0 }} role="img" aria-label={`${value}% done`}>
-      <CircularProgress variant="determinate" value={100} size={size} thickness={4.5} sx={(t) => ({ color: onDark ? 'rgba(255,255,255,0.22)' : alpha(t.palette.text.primary, 0.1), position: 'absolute', inset: 0 })} />
+      <CircularProgress variant="determinate" value={100} size={size} thickness={4.5} sx={(t) => ({ color: onDark ? withAlpha(COLOR_PALETTE.white, 0.22) : alpha(t.palette.text.primary, 0.1), position: 'absolute', inset: 0 })} />
       <CircularProgress variant="determinate" value={value} size={size} thickness={4.5} color={onDark ? 'inherit' : tone} sx={{ position: 'absolute', inset: 0, color: onDark ? PLAN_AMBER : undefined, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }} />
-      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: size * 0.26, fontVariantNumeric: 'tabular-nums', color: onDark ? '#fff' : undefined }}>{value}%</Typography>
+      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: size * 0.26, fontVariantNumeric: 'tabular-nums', color: onDark ? COLOR_PALETTE.white : undefined }}>{value}%</Typography>
     </Box>
   );
 }

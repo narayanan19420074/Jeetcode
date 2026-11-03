@@ -20,6 +20,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import FriendPicker from './FriendPicker';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtRange, localKey, paceLabel, planTheme, relDay, shareUrl } from './planUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 // Each panel scrolls inside itself, so the page never grows.
@@ -150,9 +151,9 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
 
       {/* hero: how the plan is going at a glance (same colours as its card) */}
       <Box
-        sx={{ position: 'relative', overflow: 'hidden', mb: 1.25, p: { xs: 1.75, sm: 2 }, borderRadius: '16px', color: '#fff', background: theme.gradient, boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' }}
+        sx={{ position: 'relative', overflow: 'hidden', mb: 1.25, p: { xs: 1.75, sm: 2 }, borderRadius: '16px', color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` }}
       >
-        <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.26), transparent 70%)', pointerEvents: 'none' }} />
+        <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.26)}, transparent 70%)`, pointerEvents: 'none' }} />
         <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <ProgressRing value={s.percent} size={68} onDark />
           <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -165,19 +166,19 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
                 </Box>
               )}
             </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 0.5, flexWrap: 'wrap', color: 'rgba(255,255,255,0.9)' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 0.5, flexWrap: 'wrap', color: withAlpha(COLOR_PALETTE.white, 0.9) }}>
               <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4 }}>
                 <TodayRoundedIcon sx={{ fontSize: 16 }} />
                 <Typography sx={{ fontSize: '0.8rem', fontWeight: 700 }}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Typography>
               </Box>
               {s.status !== 'completed' && s.status !== 'upcoming' && (
-                <Typography sx={{ fontSize: '0.8rem', fontWeight: 800, color: s.pace < 0 ? '#FECACA' : s.pace > 0 ? '#BBF7D0' : 'inherit' }}>{pace.text}</Typography>
+                <Typography sx={{ fontSize: '0.8rem', fontWeight: 800, color: s.pace < 0 ? COLOR_PALETTE.red[200] : s.pace > 0 ? COLOR_PALETTE.green[200] : 'inherit' }}>{pace.text}</Typography>
               )}
             </Box>
           </Box>
-          <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? 'rgba(251,191,36,0.2)' : 'rgba(255,255,255,0.14)', border: tile.urgent ? '1px solid rgba(251,191,36,0.6)' : '1px solid transparent' }}>
-            <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? '#FDE68A' : '#fff' }}>{tile.big}</Typography>
-            {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: 'rgba(255,255,255,0.85)' }}>{tile.label}</Typography>}
+          <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: tile.urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
+            <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
+            {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
           </Box>
         </Box>
       </Box>

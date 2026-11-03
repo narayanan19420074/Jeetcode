@@ -45,6 +45,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSmallBtnSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import FriendPicker from './FriendPicker';
 import { daysLeftInfo, fmtDay, fmtRange, itemLink, planTheme, relTime, shareUrl } from './planUtils';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Phone layout of the Study Plan screens (plans list and open plan) in the Library look
 // (same as the phone Home, Problems, Store and Friends pages): Roboto type, warm surface,
@@ -53,19 +54,19 @@ import { daysLeftInfo, fmtDay, fmtRange, itemLink, planTheme, relTime, shareUrl 
 // The page itself scrolls and there is no top navigation bar on phones.
 // The plan builder keeps its own layout inside the same page padding.
 
-const ACCENT = '#6366F1';
+const ACCENT = COLOR_PALETTE.indigo[500];
 
 // Each plan keeps its own colour (same stable pick as the wide-screen cards, see planTheme).
-const PLAN_ACCENT = { indigo: '#6366F1', teal: '#14B8A6', rose: '#F43F5E', ocean: '#3B82F6', plum: '#A855F7', ember: '#F97316' };
+const PLAN_ACCENT = { indigo: COLOR_PALETTE.indigo[500], teal: COLOR_PALETTE.teal[500], rose: COLOR_PALETTE.rose[500], ocean: COLOR_PALETTE.blue[500], plum: COLOR_PALETTE.purple[500], ember: COLOR_PALETTE.orange[500] };
 const accentFor = (id) => PLAN_ACCENT[planTheme(id).name] || ACCENT;
-const TONE = { info: '#3B82F6', success: 'var(--jc-easy)', warning: 'var(--jc-medium)', error: 'var(--jc-hard)' };
+const TONE = { info: COLOR_PALETTE.blue[500], success: 'var(--jc-easy)', warning: 'var(--jc-medium)', error: 'var(--jc-hard)' };
 
 const SHORT_DIFF = { Easy: 'Easy', Medium: 'Med.', Hard: 'Hard' };
 
 const MUTED = 'var(--lib-muted)';
 const DIVIDER = 'var(--lib-divider)';
 
-const solidBtn = (c) => ({ ...libSolidBtnSx, bgcolor: c, '&:hover': { bgcolor: `color-mix(in srgb, ${c} 85%, #000)` } });
+const solidBtn = (c) => ({ ...libSolidBtnSx, bgcolor: c, '&:hover': { bgcolor: `color-mix(in srgb, ${c} 85%, ${COLOR_PALETTE.black})` } });
 
 // 44px round action button. Inside a cream card it sits on the page colour so it stays visible in both modes.
 const cardIconSx = { ...libIconBtnSx, width: 44, height: 44, bgcolor: 'var(--lib-bg)', '&:hover': { bgcolor: 'var(--lib-bg)', filter: 'brightness(0.97)' } };
@@ -191,7 +192,7 @@ function PillTabs({ label, options, value, onChange, accent = ACCENT }) {
               letterSpacing: LIB_TRACKING,
               whiteSpace: 'nowrap',
               bgcolor: on ? accent : 'var(--lib-chip)',
-              color: on ? '#fff' : 'var(--lib-chip-text)',
+              color: on ? COLOR_PALETTE.white : 'var(--lib-chip-text)',
             }}
           >
             {text}

@@ -36,6 +36,7 @@ import { acceptFriendInvite } from './friendsSlice';
 import { PersonAvatar, statusInfo, timeAgo } from './friendsUi';
 import { previewOf, shortTime } from './friendsKit';
 import ActivityFeed from './ActivityFeed';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Phone layout of the Friends page in the Library look (same as the phone Problems, Home and You pages):
 // Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section titles,
@@ -63,7 +64,7 @@ const smallBtn = (c) => ({ ...libSmallBtnSx, bgcolor: tint(c, 20), color: c, '&:
 const tintIcon = (c, on = false) => (t) =>
   c === ACCENT
     ? on
-      ? { ...libIconBtnSx, bgcolor: ACCENT, color: '#fff', '&:hover': { bgcolor: ACCENT } }
+      ? { ...libIconBtnSx, bgcolor: ACCENT, color: COLOR_PALETTE.white, '&:hover': { bgcolor: ACCENT } }
       : libIconBtnSx
     : { width: 40, height: 40, flexShrink: 0, bgcolor: tint(c, t.palette.mode === 'dark' ? 16 : 12), color: c, '&:hover': { bgcolor: tint(c, 22) } };
 
@@ -122,7 +123,7 @@ function Pills({ label, options, value, onChange, role = 'tab' }) {
             onClick={() => onChange(v)}
             sx={libChipSx(on)}
           >
-            {dot && <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#22C55E' }} />}
+            {dot && <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: COLOR_PALETTE.green[500] }} />}
             {text}
           </ButtonBase>
         );
@@ -161,7 +162,7 @@ function FriendRow({ f, last, myId, online, unread, fav, onOpen }) {
               {preview}
             </Typography>
             {unread > 0 && (
-              <Typography component="span" aria-hidden sx={{ flexShrink: 0, minWidth: 22, height: 22, px: 0.75, borderRadius: 11, display: 'grid', placeItems: 'center', bgcolor: ACCENT, color: '#fff', fontSize: 12, fontWeight: 700 }}>
+              <Typography component="span" aria-hidden sx={{ flexShrink: 0, minWidth: 22, height: 22, px: 0.75, borderRadius: 11, display: 'grid', placeItems: 'center', bgcolor: ACCENT, color: COLOR_PALETTE.white, fontSize: 12, fontWeight: 700 }}>
                 {unread > 99 ? '99+' : unread}
               </Typography>
             )}
@@ -176,7 +177,7 @@ function PersonRow({ person, rank, sub, action }) {
   return (
     <Stack direction="row" sx={{ alignItems: 'center', gap: '12px', py: 1.25, px: 0.5, minHeight: 68, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
       {rank != null && (
-        <Typography sx={{ width: 28, flexShrink: 0, textAlign: 'center', fontSize: 15, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: rank <= 3 ? '#F59E0B' : 'var(--lib-muted)' }}>{rank}</Typography>
+        <Typography sx={{ width: 28, flexShrink: 0, textAlign: 'center', fontSize: 15, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'var(--lib-muted)' }}>{rank}</Typography>
       )}
       <PersonAvatar person={person} size={44} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -391,7 +392,7 @@ export default function MobileFriends({
                     <IconButton disabled={busy === r.requestId} onClick={() => onAccept(r.requestId, r.requestId)} aria-label={`Accept request from ${r.user.name}`} sx={tintIcon(SUCCESS)}>
                       <CheckRoundedIcon />
                     </IconButton>
-                    <IconButton disabled={busy === r.requestId} onClick={() => onDecline(r.requestId)} aria-label={`Decline request from ${r.user.name}`} sx={tintIcon('#64748B')}>
+                    <IconButton disabled={busy === r.requestId} onClick={() => onDecline(r.requestId)} aria-label={`Decline request from ${r.user.name}`} sx={tintIcon(COLOR_PALETTE.slate[500])}>
                       <CloseRoundedIcon />
                     </IconButton>
                   </Stack>
@@ -417,7 +418,7 @@ export default function MobileFriends({
                 person={r.user}
                 sub={`@${r.user.handle} · sent ${timeAgo(r.createdAt)}`}
                 action={
-                  <IconButton disabled={busy === r.requestId} onClick={() => onCancel(r.requestId)} aria-label={`Cancel request to ${r.user.name}`} sx={tintIcon('#64748B')}>
+                  <IconButton disabled={busy === r.requestId} onClick={() => onCancel(r.requestId)} aria-label={`Cancel request to ${r.user.name}`} sx={tintIcon(COLOR_PALETTE.slate[500])}>
                     <CloseRoundedIcon />
                   </IconButton>
                 }

@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { paletteFor } from './butterflyCatalog';
 import { buildButterfly, createSparkles, glowTexture, sparkleTexture } from './butterflyModel';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // The sidebar butterfly: one crystal butterfly that keeps flying in a loop. Upgrading swaps its wings and sets off a burst.
 
@@ -101,7 +102,7 @@ function buildShowcase(host, { dark, styleId, reduce }) {
       if (Math.random() < dt * 32) {
         const side = Math.random() > 0.5 ? 1 : -1;
         const q = b.root.position;
-        sparkles.emit({ x: q.x + side * (0.4 + Math.random()) , y: q.y + (Math.random() - 0.5) * 1.1, z: q.z }, { x: 0, y: -0.25 - Math.random() * 0.3, z: 0 }, { color: Math.random() > 0.4 || !dark ? paletteFor(id).main : '#FFFFFF', size: 0.22, ttl: 1.1 });
+        sparkles.emit({ x: q.x + side * (0.4 + Math.random()) , y: q.y + (Math.random() - 0.5) * 1.1, z: q.z }, { x: 0, y: -0.25 - Math.random() * 0.3, z: 0 }, { color: Math.random() > 0.4 || !dark ? paletteFor(id).main : COLOR_PALETTE.white, size: 0.22, ttl: 1.1 });
       }
     }
     b.twinkle(T, reduce ? 0.6 : 1);
@@ -119,7 +120,7 @@ function buildShowcase(host, { dark, styleId, reduce }) {
     },
     celebrate() {
       sparkles.burst(b.root.position, 90, { color: paletteFor(id).main, speed: 3.2, size: 0.4, ttl: 1.7 });
-      sparkles.burst(b.root.position, 40, { color: dark ? '#FFFFFF' : '#FFB020', speed: 2.2, size: 0.28, ttl: 1.3 });
+      sparkles.burst(b.root.position, 40, { color: dark ? COLOR_PALETTE.white : COLOR_PALETTE.custom.amberFFB020, speed: 2.2, size: 0.28, ttl: 1.3 });
     },
     dispose() {
       cancelAnimationFrame(raf);

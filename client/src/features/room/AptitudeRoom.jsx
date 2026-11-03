@@ -22,6 +22,7 @@ import QuestionStimulus from '../aptitude/components/QuestionStimulus';
 import { DIFFICULTY } from '../aptitude/components/aptitudeUi';
 import FloatingCall from './FloatingCall';
 import ChatPanel from './ChatPanel';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 const MONO = '"JetBrains Mono", monospace';
 const LETTERS = ['A', 'B', 'C', 'D'];
@@ -59,7 +60,7 @@ function OptionRow({ index, text, state, who, disabled, onClick }) {
           fontSize: 13,
           fontWeight: 800,
           fontFamily: MONO,
-          color: key ? '#fff' : 'text.secondary',
+          color: key ? COLOR_PALETTE.white : 'text.secondary',
           bgcolor: key ? `${key}.main` : 'action.hover',
         }}
       >

@@ -10,6 +10,7 @@ import VolumeOffRoundedIcon from '@mui/icons-material/VolumeOffRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { runTour } from './teachScript';
 import { speak, splitSentences, toSpoken, warmUpVoices, cancelSpeech, speechSupported } from './speech';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Blip's guided tour of the Algorithm Visualizer.
 //
@@ -38,8 +39,8 @@ const writeMuted = (v) => {
 };
 
 const pulse = keyframes`
-  0%, 100% { box-shadow: 0 0 0 100vmax rgba(8, 12, 24, 0.5), 0 0 0 0 rgba(52, 211, 153, 0.55); }
-  50% { box-shadow: 0 0 0 100vmax rgba(8, 12, 24, 0.5), 0 0 0 9px rgba(52, 211, 153, 0); }
+  0%, 100% { box-shadow: 0 0 0 100vmax ${withAlpha(COLOR_PALETTE.slate[950], 0.5)}, 0 0 0 0 ${withAlpha(COLOR_PALETTE.emerald[400], 0.55)}; }
+  50% { box-shadow: 0 0 0 100vmax ${withAlpha(COLOR_PALETTE.slate[950], 0.5)}, 0 0 0 9px ${withAlpha(COLOR_PALETTE.emerald[400], 0)}; }
 `;
 const rise = keyframes`
   from { opacity: 0; transform: translateY(6px) scale(0.98); }
@@ -353,7 +354,7 @@ export default function TeachGuide({ page, onClose }) {
   }, [place.x, place.y, reduce]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fly = reduce ? 'none' : 'transform 0.85s cubic-bezier(0.34, 1.25, 0.5, 1)';
-  const accent = '#34d399';
+  const accent = COLOR_PALETTE.emerald[400];
   const hasText = caption.sentences.length > 0;
 
   const agent = (
@@ -375,7 +376,7 @@ export default function TeachGuide({ page, onClose }) {
         pointerEvents: 'none',
       }}
     >
-      <Box sx={{ width: BLIP, height: BLIP, flexShrink: 0, filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.35))' }}>
+      <Box sx={{ width: BLIP, height: BLIP, flexShrink: 0, filter: `drop-shadow(0 10px 18px ${withAlpha(COLOR_PALETTE.black, 0.35)})` }}>
         <Suspense fallback={<Box sx={{ width: BLIP, height: BLIP }} />}>
           <Alien3D kind="blip" size={BLIP} walking={travelling} heading={heading} wave={false} talking={talking} />
         </Suspense>
@@ -394,10 +395,10 @@ export default function TeachGuide({ page, onClose }) {
             px: 1.75,
             py: 1.25,
             borderRadius: 3,
-            bgcolor: dark ? '#0f1b2d' : '#ffffff',
+            bgcolor: dark ? COLOR_PALETTE.slate[900] : COLOR_PALETTE.white,
             color: 'text.primary',
             border: `1.5px solid ${accent}`,
-            boxShadow: dark ? '0 14px 40px rgba(0,0,0,0.55)' : '0 14px 40px rgba(15,23,42,0.22)',
+            boxShadow: dark ? `0 14px 40px ${withAlpha(COLOR_PALETTE.black, 0.55)}` : `0 14px 40px ${withAlpha(COLOR_PALETTE.slate[900], 0.22)}`,
             animation: reduce ? 'none' : `${rise} 0.28s ease-out`,
             '&::after': {
               content: '""',
@@ -406,7 +407,7 @@ export default function TeachGuide({ page, onClose }) {
               [flip ? 'right' : 'left']: -7,
               width: 12,
               height: 12,
-              bgcolor: dark ? '#0f1b2d' : '#ffffff',
+              bgcolor: dark ? COLOR_PALETTE.slate[900] : COLOR_PALETTE.white,
               borderLeft: flip ? 'none' : `1.5px solid ${accent}`,
               borderBottom: flip ? 'none' : `1.5px solid ${accent}`,
               borderRight: flip ? `1.5px solid ${accent}` : 'none',
@@ -415,7 +416,7 @@ export default function TeachGuide({ page, onClose }) {
             },
           }}
         >
-          <Typography variant="caption" sx={{ display: 'block', fontWeight: 800, letterSpacing: '0.08em', color: dark ? accent : '#047857', mb: 0.25 }}>
+          <Typography variant="caption" sx={{ display: 'block', fontWeight: 800, letterSpacing: '0.08em', color: dark ? accent : COLOR_PALETTE.emerald[700], mb: 0.25 }}>
             BLIP
           </Typography>
           <Typography variant="body2" sx={{ lineHeight: 1.5, fontSize: 14.5 }}>
@@ -452,7 +453,7 @@ export default function TeachGuide({ page, onClose }) {
         transition: reduce ? 'none' : 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), width 0.5s cubic-bezier(0.22, 1, 0.36, 1), height 0.5s cubic-bezier(0.22, 1, 0.36, 1)',
         borderRadius: '14px',
         border: `2px solid ${accent}`,
-        boxShadow: '0 0 0 100vmax rgba(8, 12, 24, 0.5)',
+        boxShadow: `0 0 0 100vmax ${withAlpha(COLOR_PALETTE.slate[950], 0.5)}`,
         animation: reduce ? 'none' : `${pulse} 1.8s ease-in-out infinite`,
         pointerEvents: 'none',
       }}
@@ -474,14 +475,14 @@ export default function TeachGuide({ page, onClose }) {
         px: 0.75,
         py: 0.5,
         borderRadius: 99,
-        bgcolor: dark ? 'rgba(15,27,45,0.96)' : 'rgba(255,255,255,0.97)',
+        bgcolor: dark ? withAlpha(COLOR_PALETTE.slate[900], 0.96) : withAlpha(COLOR_PALETTE.white, 0.97),
         border: '1px solid',
         borderColor: 'divider',
-        boxShadow: dark ? '0 10px 30px rgba(0,0,0,0.5)' : '0 10px 30px rgba(15,23,42,0.2)',
+        boxShadow: dark ? `0 10px 30px ${withAlpha(COLOR_PALETTE.black, 0.5)}` : `0 10px 30px ${withAlpha(COLOR_PALETTE.slate[900], 0.2)}`,
         backdropFilter: 'blur(8px)',
       }}
     >
-      <Typography variant="caption" sx={{ fontWeight: 800, color: dark ? accent : '#047857', px: 1.25, letterSpacing: '0.06em' }}>
+      <Typography variant="caption" sx={{ fontWeight: 800, color: dark ? accent : COLOR_PALETTE.emerald[700], px: 1.25, letterSpacing: '0.06em' }}>
         {finished ? 'DONE' : paused ? 'PAUSED' : 'TEACHING'}
       </Typography>
       <Tooltip title={paused ? 'Resume' : 'Pause'}>
@@ -516,7 +517,7 @@ export default function TeachGuide({ page, onClose }) {
       <Box
         aria-hidden
         onClick={(e) => e.stopPropagation()}
-        sx={{ position: 'fixed', inset: 0, zIndex: 1400, bgcolor: rect ? 'transparent' : 'rgba(8,12,24,0.38)', transition: 'background-color 0.4s' }}
+        sx={{ position: 'fixed', inset: 0, zIndex: 1400, bgcolor: rect ? 'transparent' : withAlpha(COLOR_PALETTE.slate[950], 0.38), transition: 'background-color 0.4s' }}
       />
       {spotlight}
       {tap && (
@@ -532,7 +533,7 @@ export default function TeachGuide({ page, onClose }) {
             height: 56,
             borderRadius: '50%',
             border: `3px solid ${accent}`,
-            bgcolor: 'rgba(52,211,153,0.28)',
+            bgcolor: withAlpha(COLOR_PALETTE.emerald[400], 0.28),
             animation: `${ripple} 0.7s ease-out forwards`,
             pointerEvents: 'none',
           }}

@@ -6,6 +6,7 @@ import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import VideocamOffRoundedIcon from '@mui/icons-material/VideocamOffRounded';
 import CallEndRoundedIcon from '@mui/icons-material/CallEndRounded';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Call window that floats over OTHER tabs and other desktop apps (Chrome desktop:
 // Document Picture-in-Picture). Just the friend's video with a slim control bar underneath:
@@ -22,24 +23,24 @@ const svg = (Icon) => renderToStaticMarkup(createElement(Icon));
 
 const CSS = `
   *{box-sizing:border-box}
-  html,body{margin:0;height:100%;background:#232834;overflow:hidden;font-family:system-ui,sans-serif;user-select:none}
-  .video{position:relative;width:${W}px;height:${VIDEO_H}px;background:#12151c;overflow:hidden;display:grid;place-items:center;
-    color:#fff;font-weight:700;font-size:56px}
+  html,body{margin:0;height:100%;background:${COLOR_PALETTE.gray[800]};overflow:hidden;font-family:system-ui,sans-serif;user-select:none}
+  .video{position:relative;width:${W}px;height:${VIDEO_H}px;background:${COLOR_PALETTE.gray[950]};overflow:hidden;display:grid;place-items:center;
+    color:${COLOR_PALETTE.white};font-weight:700;font-size:56px}
   video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
-  .bar{display:flex;align-items:center;justify-content:center;gap:14px;height:${BAR_H}px;background:#232834;
-    box-shadow:inset 0 2px 4px #151820}
+  .bar{display:flex;align-items:center;justify-content:center;gap:14px;height:${BAR_H}px;background:${COLOR_PALETTE.gray[800]};
+    box-shadow:inset 0 2px 4px ${COLOR_PALETTE.custom.gray151820}}
   .btn{width:34px;height:34px;border:0;border-radius:50%;cursor:pointer;display:grid;place-items:center;padding:0;
-    background:#232834;box-shadow:3px 3px 6px #151820,-3px -3px 6px #2f3647;transition:box-shadow .12s,background .12s}
-  .btn:hover{background:#2b3142}
-  .btn:active{box-shadow:inset 2px 2px 4px #151820,inset -2px -2px 4px #2f3647}
+    background:${COLOR_PALETTE.gray[800]};box-shadow:3px 3px 6px ${COLOR_PALETTE.custom.gray151820},-3px -3px 6px ${COLOR_PALETTE.gray[700]};transition:box-shadow .12s,background .12s}
+  .btn:hover{background:${COLOR_PALETTE.slate[800]}}
+  .btn:active{box-shadow:inset 2px 2px 4px ${COLOR_PALETTE.custom.gray151820},inset -2px -2px 4px ${COLOR_PALETTE.gray[700]}}
   .btn svg{width:19px;height:19px;fill:currentColor}
   /* normal = raised key + coloured icon; ON (muted / camera off) = sunken key tinted red */
-  #mute{color:#22C55E}
-  #cam{color:#06B6D4}
-  .btn.off{color:#EF4444;background:#2a1f26;box-shadow:inset 2px 2px 4px #151820,inset -2px -2px 4px #2f3647}
-  #cut{color:#fff;background:#F43F5E;box-shadow:3px 3px 6px #151820,-3px -3px 6px #2f3647}
-  #cut:hover{background:#FB7185}
-  #back{color:#3B82F6}
+  #mute{color:${COLOR_PALETTE.green[500]}}
+  #cam{color:${COLOR_PALETTE.cyan[500]}}
+  .btn.off{color:${COLOR_PALETTE.red[500]};background:${COLOR_PALETTE.custom.gray2A1F26};box-shadow:inset 2px 2px 4px ${COLOR_PALETTE.custom.gray151820},inset -2px -2px 4px ${COLOR_PALETTE.gray[700]}}
+  #cut{color:${COLOR_PALETTE.white};background:${COLOR_PALETTE.rose[500]};box-shadow:3px 3px 6px ${COLOR_PALETTE.custom.gray151820},-3px -3px 6px ${COLOR_PALETTE.gray[700]}}
+  #cut:hover{background:${COLOR_PALETTE.rose[400]}}
+  #back{color:${COLOR_PALETTE.blue[500]}}
 `;
 
 export function createCirclePip(getState, onClosed) {

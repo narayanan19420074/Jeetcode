@@ -5,11 +5,12 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, PALETTE, formatClock } from '../aptitude/components/aptitudeUi';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Full mock paper. Sections run on their own SERVER clocks (sectionEndsAt),
 // answers autosave, a refresh resumes, and a locked section never reopens.
 
-const NAVY = '#1F3A5F';
+const NAVY = COLOR_PALETTE.custom.sky1F3A5F;
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
 const blank = () => ({ selected: null, marked: false, visited: false, time: 0 });
 
@@ -217,23 +218,23 @@ export default function MockExamPage() {
   return (
     <Box sx={{ height: '100dvh', display: 'flex', flexDirection: 'column', bgcolor: 'background.default' }}>
       {/* top bar */}
-      <Box sx={{ bgcolor: NAVY, color: '#fff', px: { xs: 1.5, md: 3 }, py: 1, display: 'flex', alignItems: 'center', gap: 1.5 }}>
+      <Box sx={{ bgcolor: NAVY, color: COLOR_PALETTE.white, px: { xs: 1.5, md: 3 }, py: 1, display: 'flex', alignItems: 'center', gap: 1.5 }}>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Typography noWrap sx={{ fontWeight: 800, fontSize: { xs: 13, md: 15 } }}>{paper.paperTitle}</Typography>
           <Box sx={{ display: 'flex', gap: 0.75, mt: 0.25, overflowX: 'auto' }}>
             {paper.sections.map((s, i) => (
-              <Box key={s.key} sx={{ px: 1, py: 0.1, borderRadius: 99, fontSize: 11, fontWeight: 800, whiteSpace: 'nowrap', bgcolor: i === paper.currentSection ? '#fff' : 'rgba(255,255,255,0.15)', color: i === paper.currentSection ? NAVY : 'rgba(255,255,255,0.75)' }}>
+              <Box key={s.key} sx={{ px: 1, py: 0.1, borderRadius: 99, fontSize: 11, fontWeight: 800, whiteSpace: 'nowrap', bgcolor: i === paper.currentSection ? COLOR_PALETTE.white : withAlpha(COLOR_PALETTE.white, 0.15), color: i === paper.currentSection ? NAVY : withAlpha(COLOR_PALETTE.white, 0.75) }}>
                 {i < paper.currentSection ? '✓ ' : ''}{s.title}
               </Box>
             ))}
           </Box>
         </Box>
         <Box sx={{ textAlign: 'right' }}>
-          <Typography sx={{ ...mono, fontWeight: 800, fontSize: { xs: 18, md: 22 }, lineHeight: 1, color: low ? '#FCA5A5' : '#fff' }}>{formatClock(remaining ?? 0)}</Typography>
+          <Typography sx={{ ...mono, fontWeight: 800, fontSize: { xs: 18, md: 22 }, lineHeight: 1, color: low ? COLOR_PALETTE.red[300] : COLOR_PALETTE.white }}>{formatClock(remaining ?? 0)}</Typography>
           <Typography sx={{ fontSize: 10, opacity: 0.8 }}>section time left</Typography>
         </Box>
         {isMobile && (
-          <IconButton onClick={() => setPaletteOpen(true)} aria-label="Question palette" sx={{ color: '#fff' }}><GridViewRoundedIcon /></IconButton>
+          <IconButton onClick={() => setPaletteOpen(true)} aria-label="Question palette" sx={{ color: COLOR_PALETTE.white }}><GridViewRoundedIcon /></IconButton>
         )}
       </Box>
 
@@ -253,7 +254,7 @@ export default function MockExamPage() {
                 <Box key={i} role="radio" aria-checked={on} tabIndex={0}
                   onClick={() => patch(current._id, (s) => ({ ...s, selected: i, visited: true }))}
                   onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && patch(current._id, (s) => ({ ...s, selected: i, visited: true }))}
-                  sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1, px: 1.25, py: 1, borderRadius: '10px', cursor: 'pointer', border: `1.5px solid ${on ? NAVY : t.palette.divider}`, bgcolor: on ? 'rgba(31,58,95,0.08)' : 'background.paper' })}>
+                  sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1, px: 1.25, py: 1, borderRadius: '10px', cursor: 'pointer', border: `1.5px solid ${on ? NAVY : t.palette.divider}`, bgcolor: on ? withAlpha(COLOR_PALETTE.custom.sky1F3A5F, 0.08) : 'background.paper' })}>
                   <Radio checked={on} size="small" tabIndex={-1} sx={{ p: 0.5 }} />
                   <Typography sx={{ fontWeight: 700, color: 'text.secondary', width: 22 }}>{OPTION_LABELS[i]}.</Typography>
                   <Typography sx={{ flex: 1 }}>{o.text}</Typography>
