@@ -142,9 +142,9 @@ export const SURFACES = {
   dark: { bg: '#0E1116', paper: '#161B22', tonal: '#1F2630', hero: '#2A2F6B', text: '#E6EDF3', muted: '#9DA7B3', line: 'rgba(255,255,255,0.10)', lineSolid: '#2A313C' },
 };
 
-// Warm surfaces (Settings -> Appearance -> Surface): cream in light mode, warm charcoal in dark mode.
+// Warm surfaces (Settings -> Appearance -> Surface): light mode matches the default cream, dark mode is warm charcoal.
 export const WARM_SURFACES = {
-  light: { bg: '#FDF8F4', paper: '#FFFFFF', tonal: '#F6ECE2', hero: '#FBE3D3', text: '#1A1613', muted: '#6F655B', line: '#E9DFD5', lineSolid: '#E9DFD5' },
+  light: SURFACES.light, // same creamy white as the default, so an account that saved "Warm" earlier sees the same light colours
   dark: { bg: '#17120F', paper: '#201A16', tonal: '#2B231D', hero: '#4A2E22', text: '#F3EBE3', muted: '#B3A79B', line: 'rgba(255,235,220,0.10)', lineSolid: '#3A3029' },
 };
 
