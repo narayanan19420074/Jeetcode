@@ -134,10 +134,11 @@ export const TYPE_SCALE = {
 export const FONT_SCALE = { sm: 0.92, md: 1, lg: 1.12 };
 
 // ---------------------------------------------------------------- colours: surfaces
+// Light mode is creamy white with warm near-black text, so every light page and card shares one family.
 // Layers, back to front: bg (page) < paper (cards, bars) < tonal (raised chips, inputs) < hero (selected).
 // Every text/background pair meets WCAG AA (4.5:1 for text).
 export const SURFACES = {
-  light: { bg: '#F6F8FA', paper: '#FFFFFF', tonal: '#EEF1F6', hero: '#E0E2FF', text: '#1B1F24', muted: '#4B5563', line: '#D0D7DE', lineSolid: '#D0D7DE' },
+  light: { bg: '#FBF7EF', paper: '#FFFDF8', tonal: '#F3EDE0', hero: '#E0E2FF', text: '#1F1B16', muted: '#5E5547', line: '#E5DDCB', lineSolid: '#E5DDCB' },
   dark: { bg: '#0E1116', paper: '#161B22', tonal: '#1F2630', hero: '#2A2F6B', text: '#E6EDF3', muted: '#9DA7B3', line: 'rgba(255,255,255,0.10)', lineSolid: '#2A313C' },
 };
 
@@ -150,15 +151,15 @@ export const WARM_SURFACES = {
 // Library look (cream pages on phones and on the desktop dashboard). Dark mode keeps the app's own surfaces.
 export const LIBRARY_PALETTE = {
   light: {
-    bg: WARM_SURFACES.light.bg,
-    chip: WARM_SURFACES.light.tonal,
-    chipText: WARM_SURFACES.light.muted,
-    player: '#F1E7DD',
-    nav: WARM_SURFACES.light.tonal,
-    border: '#F3E4D4',
-    divider: WARM_SURFACES.light.line,
-    text: WARM_SURFACES.light.text,
-    muted: WARM_SURFACES.light.muted,
+    bg: SURFACES.light.bg,
+    chip: SURFACES.light.tonal,
+    chipText: SURFACES.light.muted,
+    player: '#EFE8D8',
+    nav: SURFACES.light.tonal,
+    border: '#EDE4D2',
+    divider: SURFACES.light.line,
+    text: SURFACES.light.text,
+    muted: SURFACES.light.muted,
   },
   dark: {
     bg: SURFACES.dark.bg,
@@ -235,7 +236,7 @@ export const HIGH_CONTRAST = {
 // "Ink" colours are the text-safe shade of each accent.
 export const GAME_SURFACES = {
   dark: { bg: '#0B0E14', panel: '#151A24', panelHi: '#1D2431', line: '#2B3345', well: '#0B0E14', hud: 'rgba(11,14,20,0.82)', text: '#FFFFFF', muted: '#8E99AD', orangeInk: '#FFB020', greenInk: '#2ED573', blueInk: '#27B6FF', coinInk: '#FFC933', redInk: '#FF6B79' },
-  light: { bg: '#EAEFF8', panel: '#FFFFFF', panelHi: '#EEF2F9', line: '#C5CFE2', well: '#E6EBF5', hud: 'rgba(255,255,255,0.92)', text: '#10151F', muted: '#4F5B74', orangeInk: '#B14500', greenInk: '#087A3E', blueInk: '#0A6AAD', coinInk: '#8F6200', redInk: '#C21F33' },
+  light: { bg: '#F6F1E6', panel: '#FFFDF8', panelHi: '#F6F1E6', line: '#DDD3BD', well: '#F3EDE0', hud: 'rgba(255,253,248,0.92)', text: '#1A160F', muted: '#5A5143', orangeInk: '#B14500', greenInk: '#087A3E', blueInk: '#0A6AAD', coinInk: '#8F6200', redInk: '#C21F33' },
 };
 
 // ---------------------------------------------------------------- colours: code editor
@@ -496,7 +497,7 @@ export const STATES = {
 // keeps their colours, radii and fonts in this file too.
 const BRAND_ORANGE = '#E8590C';
 export const SPLASH = {
-  background: WARM_SURFACES.light.bg,
+  background: SURFACES.light.bg,
   ring: COLOR_PALETTE.custom.orangeF7A33B,
   gradient: [COLOR_PALETTE.custom.orangeF7A33B, BRAND_ORANGE, COLOR_PALETTE.custom.orangeD9480F],
   glyphLight: '#FFF8EE',
