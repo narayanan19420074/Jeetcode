@@ -5,13 +5,13 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, PALETTE, formatClock } from '../aptitude/components/aptitudeUi';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Full mock paper. Sections run on their own SERVER clocks (sectionEndsAt),
 // answers autosave, a refresh resumes, and a locked section never reopens.
 
 const NAVY = COLOR_PALETTE.custom.sky1F3A5F;
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+const mono = { fontFamily: FONTS.mono };
 const blank = () => ({ selected: null, marked: false, visited: false, time: 0 });
 
 function statusOf(st) {
@@ -31,7 +31,7 @@ function Palette({ questions, state, cur, onJump }) {
           const p = PALETTE[statusOf(state[q._id] || blank())];
           return (
             <Box key={q._id} component="button" type="button" onClick={() => onJump(i)} aria-label={`Question ${i + 1}: ${p.label}`}
-              sx={{ height: 38, borderRadius: '8px', border: i === cur ? `2px solid ${NAVY}` : '2px solid transparent', bgcolor: p.bg, color: p.fg, fontWeight: 800, fontSize: 13, cursor: 'pointer', fontFamily: 'inherit' }}>
+              sx={{ height: 38, borderRadius: '8px', border: i === cur ? `2px solid ${NAVY}` : '2px solid transparent', bgcolor: p.bg, color: p.fg, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, cursor: 'pointer', fontFamily: 'inherit' }}>
               {i + 1}
             </Box>
           );
@@ -220,18 +220,18 @@ export default function MockExamPage() {
       {/* top bar */}
       <Box sx={{ bgcolor: NAVY, color: COLOR_PALETTE.white, px: { xs: 1.5, md: 3 }, py: 1, display: 'flex', alignItems: 'center', gap: 1.5 }}>
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 800, fontSize: { xs: 13, md: 15 } }}>{paper.paperTitle}</Typography>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.body, md: FONT_SIZES.bodyLg } }}>{paper.paperTitle}</Typography>
           <Box sx={{ display: 'flex', gap: 0.75, mt: 0.25, overflowX: 'auto' }}>
             {paper.sections.map((s, i) => (
-              <Box key={s.key} sx={{ px: 1, py: 0.1, borderRadius: 99, fontSize: 11, fontWeight: 800, whiteSpace: 'nowrap', bgcolor: i === paper.currentSection ? COLOR_PALETTE.white : withAlpha(COLOR_PALETTE.white, 0.15), color: i === paper.currentSection ? NAVY : withAlpha(COLOR_PALETTE.white, 0.75) }}>
+              <Box key={s.key} sx={{ px: 1, py: 0.1, borderRadius: 99, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', bgcolor: i === paper.currentSection ? COLOR_PALETTE.white : withAlpha(COLOR_PALETTE.white, 0.15), color: i === paper.currentSection ? NAVY : withAlpha(COLOR_PALETTE.white, 0.75) }}>
                 {i < paper.currentSection ? '✓ ' : ''}{s.title}
               </Box>
             ))}
           </Box>
         </Box>
         <Box sx={{ textAlign: 'right' }}>
-          <Typography sx={{ ...mono, fontWeight: 800, fontSize: { xs: 18, md: 22 }, lineHeight: 1, color: low ? COLOR_PALETTE.red[300] : COLOR_PALETTE.white }}>{formatClock(remaining ?? 0)}</Typography>
-          <Typography sx={{ fontSize: 10, opacity: 0.8 }}>section time left</Typography>
+          <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.subheading, md: FONT_SIZES.display }, lineHeight: 1, color: low ? COLOR_PALETTE.red[300] : COLOR_PALETTE.white }}>{formatClock(remaining ?? 0)}</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.micro, opacity: 0.8 }}>section time left</Typography>
         </Box>
         {isMobile && (
           <IconButton onClick={() => setPaletteOpen(true)} aria-label="Question palette" sx={{ color: COLOR_PALETTE.white }}><GridViewRoundedIcon /></IconButton>
@@ -243,10 +243,10 @@ export default function MockExamPage() {
       <Box sx={{ flex: 1, minHeight: 0, display: 'flex' }}>
         {/* question */}
         <Box sx={{ flex: 1, minWidth: 0, overflowY: 'auto', p: { xs: 2, md: 3 } }}>
-          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 800 }}>
+          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Question {cur + 1} of {questions.length}
           </Typography>
-          <Typography sx={{ fontSize: { xs: 16, md: 18 }, lineHeight: 1.7, fontWeight: 500, my: 1.5, whiteSpace: 'pre-line' }}>{current.questionText}</Typography>
+          <Typography sx={{ fontSize: { xs: FONT_SIZES.title, md: FONT_SIZES.subheading }, lineHeight: 1.7, fontWeight: FONT_WEIGHTS.medium, my: 1.5, whiteSpace: 'pre-line' }}>{current.questionText}</Typography>
           <Box sx={{ display: 'grid', gap: 1 }}>
             {current.options.map((o, i) => {
               const on = st.selected === i;
@@ -256,7 +256,7 @@ export default function MockExamPage() {
                   onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && patch(current._id, (s) => ({ ...s, selected: i, visited: true }))}
                   sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1, px: 1.25, py: 1, borderRadius: '10px', cursor: 'pointer', border: `1.5px solid ${on ? NAVY : t.palette.divider}`, bgcolor: on ? withAlpha(COLOR_PALETTE.custom.sky1F3A5F, 0.08) : 'background.paper' })}>
                   <Radio checked={on} size="small" tabIndex={-1} sx={{ p: 0.5 }} />
-                  <Typography sx={{ fontWeight: 700, color: 'text.secondary', width: 22 }}>{OPTION_LABELS[i]}.</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', width: 22 }}>{OPTION_LABELS[i]}.</Typography>
                   <Typography sx={{ flex: 1 }}>{o.text}</Typography>
                 </Box>
               );
@@ -267,7 +267,7 @@ export default function MockExamPage() {
         {/* desktop palette */}
         {!isMobile && (
           <Box sx={(t) => ({ width: 260, flexShrink: 0, borderLeft: `1px solid ${t.palette.divider}`, p: 2, overflowY: 'auto' })}>
-            <Typography sx={{ fontWeight: 800, mb: 1 }}>Palette</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>Palette</Typography>
             <Palette questions={questions} state={state} cur={cur} onJump={goTo} />
           </Box>
         )}
@@ -275,25 +275,25 @@ export default function MockExamPage() {
 
       {/* actions */}
       <Box sx={(t) => ({ display: 'flex', flexWrap: 'wrap', gap: 1, p: 1.25, borderTop: `1px solid ${t.palette.divider}`, bgcolor: 'background.paper', pb: 'calc(10px + env(safe-area-inset-bottom))' })}>
-        <Button size="small" variant="outlined" onClick={() => { patch(current._id, (s) => ({ ...s, marked: !s.marked })); }} sx={{ fontWeight: 700 }}>
+        <Button size="small" variant="outlined" onClick={() => { patch(current._id, (s) => ({ ...s, marked: !s.marked })); }} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
           {st.marked ? 'Unmark' : 'Mark for review'}
         </Button>
-        <Button size="small" variant="outlined" disabled={st.selected === null} onClick={() => patch(current._id, (s) => ({ ...s, selected: null }))} sx={{ fontWeight: 700 }}>Clear</Button>
+        <Button size="small" variant="outlined" disabled={st.selected === null} onClick={() => patch(current._id, (s) => ({ ...s, selected: null }))} sx={{ fontWeight: FONT_WEIGHTS.bold }}>Clear</Button>
         <Box sx={{ flex: 1 }} />
-        <Button size="small" variant="outlined" disabled={cur === 0} onClick={() => goTo(cur - 1)} sx={{ fontWeight: 700 }}>Prev</Button>
-        <Button size="small" variant="contained" disableElevation disabled={cur >= questions.length - 1} onClick={() => goTo(cur + 1)} sx={{ fontWeight: 800, bgcolor: NAVY }}>Save &amp; next</Button>
-        <Button size="small" color={isLast ? 'error' : 'primary'} variant="contained" disableElevation onClick={() => { commitTime(); setConfirm(true); }} sx={{ fontWeight: 800 }}>
+        <Button size="small" variant="outlined" disabled={cur === 0} onClick={() => goTo(cur - 1)} sx={{ fontWeight: FONT_WEIGHTS.bold }}>Prev</Button>
+        <Button size="small" variant="contained" disableElevation disabled={cur >= questions.length - 1} onClick={() => goTo(cur + 1)} sx={{ fontWeight: FONT_WEIGHTS.bold, bgcolor: NAVY }}>Save &amp; next</Button>
+        <Button size="small" color={isLast ? 'error' : 'primary'} variant="contained" disableElevation onClick={() => { commitTime(); setConfirm(true); }} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
           {isLast ? 'Submit paper' : 'Submit section'}
         </Button>
       </Box>
 
       <Drawer anchor="bottom" open={paletteOpen} onClose={() => setPaletteOpen(false)} slotProps={{ paper: { sx: { borderRadius: '16px 16px 0 0', p: 2, maxHeight: '70dvh' } } }}>
-        <Typography sx={{ fontWeight: 800, mb: 1 }}>Palette</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>Palette</Typography>
         <Palette questions={questions} state={state} cur={cur} onJump={goTo} />
       </Drawer>
 
       <Dialog open={confirm} onClose={() => !busy && setConfirm(false)} fullWidth maxWidth="xs">
-        <DialogTitle sx={{ fontWeight: 900 }}>{isLast ? 'Submit the whole paper?' : `Submit ${paper.sections[paper.currentSection].title}?`}</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{isLast ? 'Submit the whole paper?' : `Submit ${paper.sections[paper.currentSection].title}?`}</DialogTitle>
         <DialogContent>
           <Typography variant="body2">Answered: <b>{counts.answered}</b> · Not answered: <b>{counts.notAnswered + counts.notVisited}</b> · Marked: <b>{counts.marked}</b></Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
@@ -302,7 +302,7 @@ export default function MockExamPage() {
         </DialogContent>
         <DialogActions sx={{ px: 3, pb: 2 }}>
           <Button onClick={() => setConfirm(false)} disabled={busy}>Keep working</Button>
-          <Button variant="contained" disableElevation color={isLast ? 'error' : 'primary'} onClick={finishSection} disabled={busy} sx={{ fontWeight: 800 }}>
+          <Button variant="contained" disableElevation color={isLast ? 'error' : 'primary'} onClick={finishSection} disabled={busy} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             {busy ? 'Submitting…' : 'Yes, submit'}
           </Button>
         </DialogActions>

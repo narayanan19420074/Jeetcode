@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Badge, Box, Button, Chip, IconButton, Popover, Stack, ToggleButton, ToggleButtonGroup, Tooltip, Typography } from '@mui/material';
 import FilterListRoundedIcon from '@mui/icons-material/FilterListRounded';
 import useLibraryStyles from './libraryStyles';
+import { FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
-const toggleSx = { fontWeight: 700, textTransform: 'none' };
+const toggleSx = { fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' };
 
 function FilterHeading({ children }) {
   return (
-    <Typography variant="body2" sx={{ fontWeight: 800, mb: 1 }}>
+    <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
       {children}
     </Typography>
   );

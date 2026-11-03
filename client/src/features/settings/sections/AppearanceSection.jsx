@@ -4,7 +4,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import tokens, { ACCENTS } from '../../../app/theme';
 import { Card, CardBody, ChoiceCard, PageTitle, Row, SwitchRow, usePreferences } from '../components/SettingsUi';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // A tiny app window drawn in the real palette so the theme options are
 // recognisable at a glance. `half` renders the diagonal "match my device" split.
@@ -112,7 +112,7 @@ export default function AppearanceSection() {
             { label: 'Classic', entries: Object.entries(ACCENTS).filter(([, d]) => !d.warm) },
           ].map((group) => (
             <Box key={group.label} role="radiogroup" aria-label={`${group.label} accent colours`} sx={{ '& + &': { mt: 2.5 } }}>
-              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1, fontWeight: 700 }}>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1, fontWeight: FONT_WEIGHTS.bold }}>
                 {group.label}
               </Typography>
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
@@ -174,8 +174,8 @@ export default function AppearanceSection() {
             <ToggleButtonGroup exclusive size="small" value={a.fontScale} onChange={(_, v) => v && set('appearance', { fontScale: v })} aria-label="Text size">
               {SIZES.map((s) => (
                 <ToggleButton key={s.key} value={s.key} sx={{ px: 2, gap: 0.75, alignItems: 'baseline' }}>
-                  <span style={{ fontSize: s.px, fontWeight: 700 }}>Aa</span>
-                  <span style={{ fontSize: 12 }}>{s.label}</span>
+                  <span style={{ fontSize: s.px, fontWeight: FONT_WEIGHTS.bold }}>Aa</span>
+                  <span style={{ fontSize: FONT_SIZES.caption }}>{s.label}</span>
                 </ToggleButton>
               ))}
             </ToggleButtonGroup>
@@ -192,7 +192,7 @@ export default function AppearanceSection() {
               <Button variant="outlined">Secondary</Button>
               <Chip label="Medium" size="small" color="warning" />
               <Chip label="Solved" size="small" color="success" />
-              <Typography component="a" href="#preview" onClick={(e) => e.preventDefault()} sx={{ color: 'primary.main', fontWeight: 600, fontSize: '0.9rem' }}>
+              <Typography component="a" href="#preview" onClick={(e) => e.preventDefault()} sx={{ color: 'primary.main', fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body }}>
                 A sample link
               </Typography>
             </Stack>

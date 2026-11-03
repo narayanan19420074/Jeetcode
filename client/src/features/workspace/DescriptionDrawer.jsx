@@ -4,6 +4,7 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import { WsButton, WsIconButton } from './wsUi';
 import { wsSurface } from './workspaceTheme';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone: the problem description, sliding in from the right (see useDescPanel).
 export default function DescriptionDrawer({ open, onClose, children }) {
@@ -14,7 +15,7 @@ export default function DescriptionDrawer({ open, onClose, children }) {
         <WsIconButton title="Back to code" size="lg" onClick={onClose}>
           <ArrowBackRoundedIcon />
         </WsIconButton>
-        <Typography sx={{ fontWeight: 700, flex: 1 }}>Problem</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, flex: 1 }}>Problem</Typography>
       </Stack>
       <Box sx={{ overflowY: 'auto', px: 2, pt: 1, pb: 3, flex: 1, minHeight: 0, bgcolor: surf.chrome }}>{children}</Box>
       <Box sx={{ flexShrink: 0, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: surf.chrome }}>

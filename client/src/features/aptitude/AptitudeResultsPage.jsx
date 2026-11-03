@@ -33,15 +33,15 @@ import { Confetti, CountUp } from './components/MotionBits';
 import { ALIENS, testXp } from './components/gamification';
 import QuestionStimulus from './components/QuestionStimulus';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from './components/aptitudeUi';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+const mono = { fontFamily: FONTS.mono };
 const TARGET = { easy: 45, medium: 90, hard: 150 };
 
 function Stat({ label, value, color, hint }) {
   return (
     <Box sx={{ minWidth: 92 }}>
-      <Typography sx={{ ...mono, fontWeight: 800, fontSize: 24, color, lineHeight: 1.1 }}>{value}</Typography>
+      <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, color, lineHeight: 1.1 }}>{value}</Typography>
       <Typography variant="caption" color="text.secondary">
         {label}
       </Typography>
@@ -60,7 +60,7 @@ function BreakdownRow({ row, color, action }) {
   return (
     <Box>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
-        <Typography variant="body2" sx={{ fontWeight: 700, color }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, color }}>
           {row.label}
         </Typography>
         <Typography variant="caption" sx={{ ...mono, color: 'text.secondary' }}>
@@ -101,15 +101,15 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
     <Paper ref={forwardedRef} variant="outlined" sx={{ borderRadius: 2.5, mb: 1.25, overflow: 'hidden', borderColor: open ? color : 'divider' }}>
       <Stack direction="row" spacing={1.5} onClick={onToggle} sx={{ alignItems: 'center', p: 1.75, cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}>
         <Icon sx={{ color, flexShrink: 0 }} />
-        <Typography sx={{ ...mono, fontWeight: 800, width: 28, color: 'text.secondary' }}>{index + 1}</Typography>
-        <Typography variant="body2" sx={{ flexGrow: 1, fontWeight: 600, display: '-webkit-box', WebkitLineClamp: open ? 'unset' : 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, width: 28, color: 'text.secondary' }}>{index + 1}</Typography>
+        <Typography variant="body2" sx={{ flexGrow: 1, fontWeight: FONT_WEIGHTS.semibold, display: '-webkit-box', WebkitLineClamp: open ? 'unset' : 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
           {q.questionText}
         </Typography>
-        {answer.markedForReview && <FlagRoundedIcon sx={{ fontSize: 16, color: COLOR_PALETTE.custom.indigo6A3FB5 }} titleAccess="Marked for review" />}
+        {answer.markedForReview && <FlagRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: COLOR_PALETTE.custom.indigo6A3FB5 }} titleAccess="Marked for review" />}
         <Typography variant="caption" sx={{ ...mono, color: slow ? 'warning.main' : 'text.secondary', flexShrink: 0 }}>
           {formatDuration(answer.timeSpentSec)}
         </Typography>
-        <Typography variant="caption" sx={{ fontWeight: 800, color: dm.color, width: 54, textAlign: 'right', flexShrink: 0, display: { xs: 'none', sm: 'block' } }}>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: dm.color, width: 54, textAlign: 'right', flexShrink: 0, display: { xs: 'none', sm: 'block' } }}>
           {dm.label}
         </Typography>
         <ExpandMoreRoundedIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s', color: 'text.secondary' }} />
@@ -131,12 +131,12 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
                  
                   sx={{ alignItems: 'center', px: 1.5, py: 1, borderRadius: 2, border: '1.5px solid', borderColor: tone, bgcolor: (t) => (isCorrect ? alpha(t.palette.success.main, 0.1) : isPick ? alpha(t.palette.error.main, 0.1) : 'transparent') }}
                 >
-                  <Typography sx={{ fontWeight: 800, width: 20, color: 'text.secondary' }}>{OPTION_LABELS[i]}</Typography>
-                  <Typography variant="body2" sx={{ flexGrow: 1, fontWeight: isCorrect || isPick ? 700 : 400 }}>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, width: 20, color: 'text.secondary' }}>{OPTION_LABELS[i]}</Typography>
+                  <Typography variant="body2" sx={{ flexGrow: 1, fontWeight: isCorrect || isPick ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular }}>
                     {o.text}
                   </Typography>
-                  {isPick && <Typography variant="caption" sx={{ fontWeight: 800, color: isCorrect ? 'success.main' : 'error.main' }}>Your answer</Typography>}
-                  {!isPick && isCorrect && <Typography variant="caption" sx={{ fontWeight: 800, color: 'success.main' }}>Correct answer</Typography>}
+                  {isPick && <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: isCorrect ? 'success.main' : 'error.main' }}>Your answer</Typography>}
+                  {!isPick && isCorrect && <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'success.main' }}>Correct answer</Typography>}
                 </Stack>
               );
             })}
@@ -145,7 +145,7 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
 
           {q.explanation && (
             <Box sx={{ p: 1.75, borderRadius: 2, bgcolor: 'action.hover', mb: 1.25 }}>
-              <Typography variant="caption" sx={{ fontWeight: 800, color: 'primary.main', letterSpacing: '0.08em' }}>
+              <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.08em' }}>
                 SOLUTION
               </Typography>
               <Typography variant="body2" sx={{ mt: 0.5, lineHeight: 1.7, whiteSpace: 'pre-line' }}>
@@ -156,8 +156,8 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
           {q.shortcut && (
             <Box sx={{ p: 1.75, borderRadius: 2, bgcolor: (t) => alpha(t.palette.warning.main, 0.08), border: '1px solid', borderColor: (t) => alpha(t.palette.warning.main, 0.4), mb: 1.25 }}>
               <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
-                <BoltRoundedIcon sx={{ fontSize: 15, color: 'warning.main' }} />
-                <Typography variant="caption" sx={{ fontWeight: 800, color: 'warning.main', letterSpacing: '0.08em' }}>
+                <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'warning.main' }} />
+                <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'warning.main', letterSpacing: '0.08em' }}>
                   EXAM SHORTCUT
                 </Typography>
               </Stack>
@@ -262,10 +262,10 @@ export default function AptitudeResultsPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
-      <Breadcrumbs sx={{ mb: 1.5, fontSize: 13 }}>
+      <Breadcrumbs sx={{ mb: 1.5, fontSize: FONT_SIZES.body }}>
         <Link component={RouterLink} to="/aptitude" underline="hover" color="text.secondary">Aptitude</Link>
         <Link component={RouterLink} to={`/aptitude/${slug}`} underline="hover" color="text.secondary">{pattern.title}</Link>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>Test result</Typography>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>Test result</Typography>
       </Breadcrumbs>
 
       {passed && <Confetti />}
@@ -286,10 +286,10 @@ export default function AptitudeResultsPage() {
           </Stack>
           <Box sx={{ flexGrow: 1, width: '100%' }}>
             <Stack direction="row" spacing={1} useFlexGap sx={{ alignItems: 'center', flexWrap: 'wrap', mb: 0.5 }}>
-              <Typography variant="h5" sx={{ fontWeight: 800 }}>
+              <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 {passed ? 'Mission cleared!' : 'Not passed yet'}
               </Typography>
-              <Chip size="small" label={`+${testXp(result.score, passed)} XP`} sx={{ fontWeight: 900, bgcolor: COLOR_PALETTE.yellow[400], color: COLOR_PALETTE.slate[900] }} />
+              <Chip size="small" label={`+${testXp(result.score, passed)} XP`} sx={{ fontWeight: FONT_WEIGHTS.bold, bgcolor: COLOR_PALETTE.yellow[400], color: COLOR_PALETTE.slate[900] }} />
               <Chip size="small" color={passed ? 'success' : 'error'} label={`Pass mark ${pattern.passPercentage}%`} />
               {result.percentile != null && <Chip size="small" variant="outlined" label={`Better than ${result.percentile}% of test takers`} />}
               {timedOut && <Chip size="small" color="warning" label="Auto-submitted" />}
@@ -328,7 +328,7 @@ export default function AptitudeResultsPage() {
       {/* Breakdown */}
       <Stack direction={{ xs: 'column', md: 'row' }} spacing={3} sx={{ alignItems: 'stretch', mb: 3 }}>
         <Paper variant="outlined" sx={{ flex: 1.4, p: 2.5, borderRadius: 3 }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 2 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
             By topic <Typography component="span" variant="caption" color="text.secondary">(weakest first)</Typography>
           </Typography>
           <Stack spacing={2}>
@@ -338,7 +338,7 @@ export default function AptitudeResultsPage() {
                 row={r}
                 action={
                   r.key !== 'other' && r.correct < r.total ? (
-                    <Link component={RouterLink} to={`/aptitude/${slug}/practice?subPattern=${r.key}`} underline="hover" variant="caption" sx={{ fontWeight: 700 }}>
+                    <Link component={RouterLink} to={`/aptitude/${slug}/practice?subPattern=${r.key}`} underline="hover" variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                       Practise
                     </Link>
                   ) : null
@@ -350,7 +350,7 @@ export default function AptitudeResultsPage() {
 
         <Stack spacing={3} sx={{ flex: 1 }}>
           <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 2 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
               By difficulty
             </Typography>
             <Stack spacing={2}>
@@ -360,7 +360,7 @@ export default function AptitudeResultsPage() {
             </Stack>
           </Paper>
           <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3, bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
               What to do next
             </Typography>
             <Stack spacing={1}>
@@ -377,7 +377,7 @@ export default function AptitudeResultsPage() {
       {/* Question map */}
       <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3, mb: 3 }}>
         <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', mb: 1.5 }} useFlexGap>
-          <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Question map
           </Typography>
           <Stack direction="row" spacing={2}>
@@ -398,7 +398,7 @@ export default function AptitudeResultsPage() {
                 onClick={() => jumpTo(a._i)}
                 role="button"
                 title={`Q${a._i + 1} · ${formatDuration(a.timeSpentSec)}`}
-                sx={{ width: 34, height: 34, borderRadius: 1.5, display: 'grid', placeItems: 'center', bgcolor: c, color: COLOR_PALETTE.white, fontWeight: 800, fontSize: 13, cursor: 'pointer', '&:hover': { filter: 'brightness(0.9)' } }}
+                sx={{ width: 34, height: 34, borderRadius: 1.5, display: 'grid', placeItems: 'center', bgcolor: c, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, cursor: 'pointer', '&:hover': { filter: 'brightness(0.9)' } }}
               >
                 {a._i + 1}
               </Box>
@@ -409,12 +409,12 @@ export default function AptitudeResultsPage() {
 
       {/* Review */}
       <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ alignItems: { sm: 'center' }, justifyContent: 'space-between', mb: 1.5 }}>
-        <Typography variant="h6" sx={{ fontWeight: 800 }}>
+        <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
           Review answers
         </Typography>
         <ToggleButtonGroup size="small" exclusive value={filter} onChange={(_, v) => v && setFilter(v)}>
           {[['all', 'All'], ['wrong', 'Incorrect'], ['skipped', 'Skipped'], ['correct', 'Correct'], ['marked', 'Marked']].map(([v, l]) => (
-            <ToggleButton key={v} value={v} sx={{ textTransform: 'none', px: 1.5, fontWeight: 700 }}>
+            <ToggleButton key={v} value={v} sx={{ textTransform: 'none', px: 1.5, fontWeight: FONT_WEIGHTS.bold }}>
               {l}
             </ToggleButton>
           ))}

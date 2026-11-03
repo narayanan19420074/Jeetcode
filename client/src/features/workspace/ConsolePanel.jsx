@@ -9,6 +9,7 @@ import { WS, mono } from './wsTokens';
 import { CodeField, PaneTabs } from './wsUi';
 import { LIB_ACCENT, LIB_TRACKING, libChipSx } from '../dashboard/components/libraryStyle';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const fmtMs = (sec) => (sec == null || Number.isNaN(parseFloat(sec)) ? null : `${Math.round(parseFloat(sec) * 1000)} ms`);
 const fmtMem = (kb) => (kb ? `${(kb / 1024).toFixed(1)} MB` : null);
@@ -21,11 +22,11 @@ export const LibContext = createContext(false);
 function LibCodeField({ label, value, tone }) {
   return (
     <Box sx={{ mb: 1.5, '&:last-child': { mb: 0 } }}>
-      <Typography sx={{ display: 'block', mb: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{label}</Typography>
+      <Typography sx={{ display: 'block', mb: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{label}</Typography>
       <Box
         sx={{
           ...mono,
-          fontSize: 14,
+          fontSize: FONT_SIZES.body,
           lineHeight: 1.65,
           px: 1.5,
           py: 1,
@@ -60,7 +61,7 @@ export function VerdictChip({ isRunning, result, sx, lib = false }) {
         noWrap
         component="span"
         sx={[
-          { minWidth: 0, maxWidth: '44vw', px: '10px', py: '3px', borderRadius: 999, fontSize: 14, lineHeight: '20px', fontWeight: 500, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
+          { minWidth: 0, maxWidth: '44vw', px: '10px', py: '3px', borderRadius: 999, fontSize: FONT_SIZES.body, lineHeight: '20px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}
       >
@@ -77,7 +78,7 @@ export function VerdictChip({ isRunning, result, sx, lib = false }) {
       icon={ok ? <CheckCircleRoundedIcon /> : <CancelRoundedIcon />}
       label={`${result.status} · ${result.passedCount}/${result.totalCount}`}
       color={ok ? 'success' : 'error'}
-      sx={[{ fontWeight: 700, minWidth: 0 }, ...(Array.isArray(sx) ? sx : [sx])]}
+      sx={[{ fontWeight: FONT_WEIGHTS.bold, minWidth: 0 }, ...(Array.isArray(sx) ? sx : [sx])]}
     />
   );
 }
@@ -97,7 +98,7 @@ export function EditorStatus({ editor, tabSize }) {
     return () => d.dispose();
   }, [editor]);
   return (
-    <Typography noWrap sx={{ ...mono, fontSize: '0.72rem', color: 'text.secondary', flexShrink: 0 }}>
+    <Typography noWrap sx={{ ...mono, fontSize: FONT_SIZES.caption, color: 'text.secondary', flexShrink: 0 }}>
       Ln {pos.line}, Col {pos.col}
       <Box component="span" sx={{ mx: 1, opacity: 0.4 }}>
         |
@@ -121,8 +122,8 @@ export function CasePill({ label, dot, active, onClick }) {
         gap: 0.75,
         flexShrink: 0,
         borderRadius: `${WS.radius}px`,
-        fontSize: '0.78rem',
-        fontWeight: 600,
+        fontSize: FONT_SIZES.caption,
+        fontWeight: FONT_WEIGHTS.semibold,
         color: active ? t.palette.text.primary : t.palette.text.secondary,
         bgcolor: active ? wsSurface(t).raised : 'transparent',
         '&:hover': { bgcolor: active ? wsSurface(t).raised : alpha(t.palette.text.primary, 0.06) },
@@ -178,7 +179,7 @@ export function Result({ result, isSubmitView, isRunning, consoleError, activeCa
     return (
       <>
         <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.25, mb: 1.5 }}>
-          <Typography sx={{ fontWeight: lib ? 700 : 800, fontSize: lib ? 20 : '1.15rem', color: ok ? 'success.main' : 'error.main' }}>{result.status}</Typography>
+          <Typography sx={{ fontWeight: lib ? FONT_WEIGHTS.bold : FONT_WEIGHTS.bold, fontSize: lib ? FONT_SIZES.heading : FONT_SIZES.subheading, color: ok ? 'success.main' : 'error.main' }}>{result.status}</Typography>
           <Typography variant="caption" color="text.secondary">
             {isSubmitView ? 'Submission' : 'Sample run'} · {result.passedCount}/{result.totalCount} test cases passed
           </Typography>
@@ -216,7 +217,7 @@ export function Result({ result, isSubmitView, isRunning, consoleError, activeCa
   if (consoleError) {
     return (
       <Box sx={(t) => ({ p: 1.5, borderRadius: `${WS.radius}px`, color: 'error.main', bgcolor: alpha(t.palette.error.main, 0.1) })}>
-        <Typography variant="body2" sx={{ fontWeight: 700, mb: 0.25 }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.25 }}>
           {isSubmitView ? 'Submit failed' : 'Run failed'}
         </Typography>
         <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
@@ -227,7 +228,7 @@ export function Result({ result, isSubmitView, isRunning, consoleError, activeCa
   }
   return (
     <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
-      {!lib && <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />}
+      {!lib && <PlayArrowRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
       <Typography variant="body2">Run your code to see the results here.</Typography>
     </Stack>
   );

@@ -35,7 +35,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone layout of Help & Support in the Library look (same as the phone Home, Problems, Friends and Explore pages):
 // Roboto type, warm surface, 16px page padding, 44px back arrow, centred header tile, 44px pill search,
@@ -63,12 +63,12 @@ function SectionTitle({ id, children }) {
 
 // Filled, rounded field in the same cream as the search box and cards.
 const fieldSx = {
-  '& .MuiOutlinedInput-root': { borderRadius: '16px', bgcolor: 'var(--lib-player)', fontSize: 16, letterSpacing: LIB_TRACKING, color: 'var(--lib-text)' },
+  '& .MuiOutlinedInput-root': { borderRadius: '16px', bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, color: 'var(--lib-text)' },
   '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
   '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${LIB_ACCENT}` },
-  '& .MuiInputLabel-root': { color: 'var(--lib-muted)', fontSize: 16 },
+  '& .MuiInputLabel-root': { color: 'var(--lib-muted)', fontSize: FONT_SIZES.title },
   '& .MuiInputLabel-root.Mui-focused': { color: LIB_ACCENT },
-  '& .MuiFormHelperText-root': { mx: 0.5, fontSize: 14, lineHeight: '20px', color: 'var(--lib-muted)' },
+  '& .MuiFormHelperText-root': { mx: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', color: 'var(--lib-muted)' },
 };
 
 const answerLinkSx = { '& a': { color: LIB_ACCENT } };
@@ -81,11 +81,11 @@ function FaqRow({ item, open, onToggle }) {
         aria-expanded={open}
         sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: '12px', textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
-        <Typography sx={{ flex: 1, minWidth: 0, fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{item.q}</Typography>
+        <Typography sx={{ flex: 1, minWidth: 0, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{item.q}</Typography>
         <ExpandMoreRoundedIcon aria-hidden sx={{ flexShrink: 0, color: 'var(--lib-muted)', transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
-        <Typography component="div" sx={{ pb: 2, fontSize: 15, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', ...answerLinkSx }}>
+        <Typography component="div" sx={{ pb: 2, fontSize: FONT_SIZES.bodyLg, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', ...answerLinkSx }}>
           {item.a}
         </Typography>
       </Collapse>
@@ -133,11 +133,11 @@ export default function MobileHelp({
           sx={{ mt: 3, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, p: 2, borderRadius: '20px', textAlign: 'left', color: COLOR_PALETTE.white, fontFamily: 'inherit', background: HELP_GRADIENT }}
         >
           <Box sx={{ minWidth: 0 }}>
-            <Typography sx={{ fontSize: 22, lineHeight: '28px', fontWeight: 700, letterSpacing: '-0.01em' }}>Send us a message</Typography>
-            <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>We usually reply within 2 working days</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.display, lineHeight: '28px', fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em' }}>Send us a message</Typography>
+            <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>We usually reply within 2 working days</Typography>
           </Box>
           <Box aria-hidden sx={{ flex: 'none', width: 60, height: 60, borderRadius: '50%', display: 'grid', placeItems: 'center', border: `5px solid ${withAlpha(COLOR_PALETTE.white, 0.55)}`, background: `linear-gradient(160deg, ${withAlpha(COLOR_PALETTE.white, 0.25)}, ${withAlpha(COLOR_PALETTE.white, 0.05)})` }}>
-            <MailOutlineRoundedIcon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
+            <MailOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg, color: COLOR_PALETTE.white }} />
           </Box>
         </ButtonBase>
 
@@ -177,8 +177,8 @@ export default function MobileHelp({
             ))}
             {list.length === 0 && (
               <Box sx={{ py: 6, px: 2, textAlign: 'center' }}>
-                <Typography sx={{ fontWeight: 700 }}>No answers match your search</Typography>
-                <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', color: 'var(--lib-muted)' }}>Send us a message and we will help.</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No answers match your search</Typography>
+                <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', color: 'var(--lib-muted)' }}>Send us a message and we will help.</Typography>
               </Box>
             )}
           </Box>
@@ -190,10 +190,10 @@ export default function MobileHelp({
           {form.sent ? (
             <Box role="status" sx={(t) => ({ p: '12px', borderRadius: '16px', border: '1.5px solid var(--lib-border)', bgcolor: t.palette.mode === 'dark' ? tint(COLOR_PALETTE.custom.emerald22A06B, 16) : COLOR_PALETTE.green[50] })}>
               <Stack direction="row" sx={{ alignItems: 'center', gap: '12px' }}>
-                <CheckCircleRoundedIcon aria-hidden sx={{ fontSize: 28, color: COLOR_PALETTE.custom.emerald22A06B, flex: 'none' }} />
+                <CheckCircleRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.displayLg, color: COLOR_PALETTE.custom.emerald22A06B, flex: 'none' }} />
                 <Box sx={{ minWidth: 0 }}>
-                  <Typography sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>Message sent</Typography>
-                  <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>Message sent</Typography>
+                  <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
                     We will reply to {isAuthenticated ? 'your account email' : 'the email address you provided'}.
                   </Typography>
                 </Box>
@@ -217,15 +217,15 @@ export default function MobileHelp({
                   slotProps={{ select: { MenuProps: { slotProps: { paper: { sx: { borderRadius: '16px' } } } } } }}
                 >
                   {types.map((t) => (
-                    <MenuItem key={t.value} value={t.value} sx={{ minHeight: 48, fontSize: 16, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING }}>
+                    <MenuItem key={t.value} value={t.value} sx={{ minHeight: 48, fontSize: FONT_SIZES.title, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING }}>
                       {t.label}
                     </MenuItem>
                   ))}
                 </TextField>
 
                 {isAuthenticated ? (
-                  <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', wordBreak: 'break-word' }}>
-                    Replying to <Box component="span" sx={{ fontWeight: 500, color: 'var(--lib-text)' }}>{user?.email}</Box>
+                  <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', wordBreak: 'break-word' }}>
+                    Replying to <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.medium, color: 'var(--lib-text)' }}>{user?.email}</Box>
                   </Typography>
                 ) : (
                   <TextField
@@ -270,7 +270,7 @@ export default function MobileHelp({
           )}
 
           {contactEmail && (
-            <Typography sx={{ mt: 2, textAlign: 'center', fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+            <Typography sx={{ mt: 2, textAlign: 'center', fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
               Or email us at{' '}
               <Link href={`mailto:${contactEmail}`} sx={{ color: LIB_ACCENT }}>
                 {contactEmail}
@@ -282,7 +282,7 @@ export default function MobileHelp({
         {/* Legal links */}
         <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', justifyContent: 'center', gap: 2, mt: 4, pt: 2, borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
           {legalLinks.map((l) => (
-            <Link key={l.to} component={RouterLink} to={l.to} underline="hover" sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+            <Link key={l.to} component={RouterLink} to={l.to} underline="hover" sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
               {l.label}
             </Link>
           ))}

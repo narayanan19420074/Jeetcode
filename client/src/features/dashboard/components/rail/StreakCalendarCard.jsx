@@ -11,7 +11,7 @@ import ResetCountdown from './ResetCountdown';
 import useStreakMonth from './useStreakMonth';
 import useStudyPlanMarks from './useStudyPlanMarks';
 import { CALENDAR_GRADIENT, FAINT, SOFT, WEEKDAYS } from './railTokens';
-import { COLOR_PALETTE, withAlpha } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../../../app/design/designTokens';
 
 const cardSx = (phone) => [
   surface,
@@ -27,7 +27,7 @@ function StreakHeader({ streak, isAuthenticated, badge }) {
           <LocalFireDepartmentRoundedIcon />
         </Box>
         <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.2, fontVariantNumeric: 'tabular-nums' }}>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.2, fontVariantNumeric: 'tabular-nums' }}>
             {isAuthenticated ? `${streak}-day streak` : 'Daily streak'}
           </Typography>
           <ResetCountdown />
@@ -45,7 +45,7 @@ function MonthNav({ month, phone }) {
       <IconButton size="small" sx={{ color: COLOR_PALETTE.white, ...size, ...(phone && { ml: -1 }) }} onClick={() => month.move(-1)} aria-label="Previous month">
         <ChevronLeftRoundedIcon fontSize="small" />
       </IconButton>
-      <Typography variant="body2" sx={{ fontWeight: 700, ...(phone && { fontSize: 16, letterSpacing: '0.03em' }) }}>
+      <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, ...(phone && { fontSize: FONT_SIZES.title, letterSpacing: '0.03em' }) }}>
         {month.monthLabel}
       </Typography>
       <IconButton size="small" sx={{ color: COLOR_PALETTE.white, '&.Mui-disabled': { color: FAINT }, ...size, ...(phone && { mr: -1 }) }} onClick={() => month.move(1)} disabled={month.isCurrent} aria-label="Next month">
@@ -57,7 +57,7 @@ function MonthNav({ month, phone }) {
 
 function WeekdayHeaders() {
   return WEEKDAYS.map((d, i) => (
-    <Typography key={i} variant="caption" sx={{ color: SOFT, textAlign: 'center', fontWeight: 600, pb: 0.5 }}>
+    <Typography key={i} variant="caption" sx={{ color: SOFT, textAlign: 'center', fontWeight: FONT_WEIGHTS.semibold, pb: 0.5 }}>
       {d}
     </Typography>
   ));
@@ -93,7 +93,7 @@ function GuestFooter() {
       <Typography variant="caption" sx={{ color: SOFT }}>
         Log in to start a streak.
       </Typography>
-      <Button size="small" variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: 700, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
+      <Button size="small" variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
         Log in
       </Button>
     </Stack>
@@ -108,7 +108,7 @@ function StreakFooter({ user, isAuthenticated, beforeHistory }) {
         <Typography variant="caption" sx={{ color: SOFT }}>
           Longest streak
         </Typography>
-        <Typography variant="caption" sx={{ fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>
           {user?.longestStreak ?? 0} days
         </Typography>
       </Stack>

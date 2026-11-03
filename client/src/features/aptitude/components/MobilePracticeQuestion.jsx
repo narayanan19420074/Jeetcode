@@ -9,13 +9,13 @@ import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, LibraryFont, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './aptitudeUi';
 import { DifficultyTag } from './MobilePractice';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Phone layout of a single Aptitude practice question. Same page padding, back button, type scale (18px question,
 // 16px body, 15px muted details), cream panels and pill buttons as the phone Problems and Aptitude pages.
 // It shows the question, the four options and, after checking, the verdict, the solution and the exam shortcut.
 
-const BODY = { fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, whiteSpace: 'pre-line' };
+const BODY = { fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, whiteSpace: 'pre-line' };
 
 function Shell({ slug, children, right }) {
   return (
@@ -61,10 +61,10 @@ function chartToTable(set) {
 function Stimulus({ set }) {
   if (!set) return null;
   const table = set.type === 'table' ? set.table : set.type === 'text' ? null : chartToTable(set);
-  const cell = { fontSize: 15, lineHeight: '20px', py: 1, px: 1.25, color: 'var(--lib-text)', borderBottom: '1px solid var(--lib-divider)', whiteSpace: 'nowrap' };
+  const cell = { fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', py: 1, px: 1.25, color: 'var(--lib-text)', borderBottom: '1px solid var(--lib-divider)', whiteSpace: 'nowrap' };
   return (
     <Box sx={{ ...libPanelSx, p: 2, mt: 3 }}>
-      {set.title && <Typography sx={{ fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: LIB_TRACKING, mb: 0.5 }}>{set.title}</Typography>}
+      {set.title && <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING, mb: 0.5 }}>{set.title}</Typography>}
       {set.type === 'text' && <Typography sx={BODY}>{set.text}</Typography>}
       {table && (
         <Box sx={{ overflowX: 'auto', mx: -1 }}>
@@ -72,7 +72,7 @@ function Stimulus({ set }) {
             <TableHead>
               <TableRow>
                 {table.columns.map((c, i) => (
-                  <TableCell key={i} sx={{ ...cell, fontWeight: 700 }}>
+                  <TableCell key={i} sx={{ ...cell, fontWeight: FONT_WEIGHTS.bold }}>
                     {c}
                   </TableCell>
                 ))}
@@ -126,13 +126,13 @@ function Option({ index, text, state, disabled, onClick }) {
     >
       <Box
         aria-hidden
-        sx={{ width: 28, height: 28, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, fontSize: 15, fontWeight: 500, border: '1.5px solid', borderColor: accent || 'var(--lib-muted)', bgcolor: accent || 'transparent', color: accent ? COLOR_PALETTE.white : 'var(--lib-muted)' }}
+        sx={{ width: 28, height: 28, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.medium, border: '1.5px solid', borderColor: accent || 'var(--lib-muted)', bgcolor: accent || 'transparent', color: accent ? COLOR_PALETTE.white : 'var(--lib-muted)' }}
       >
         {OPTION_LABELS[index]}
       </Box>
-      <Typography sx={{ ...BODY, flex: 1, fontWeight: 500, minWidth: 0 }}>{text}</Typography>
-      {state === 'correct' && <CheckCircleRoundedIcon aria-label="Correct answer" sx={{ fontSize: 22, color: DIFF_COLOR.Easy, flexShrink: 0 }} />}
-      {state === 'wrong' && <CancelRoundedIcon aria-label="Your answer, wrong" sx={{ fontSize: 22, color: DIFF_COLOR.Hard, flexShrink: 0 }} />}
+      <Typography sx={{ ...BODY, flex: 1, fontWeight: FONT_WEIGHTS.medium, minWidth: 0 }}>{text}</Typography>
+      {state === 'correct' && <CheckCircleRoundedIcon aria-label="Correct answer" sx={{ fontSize: FONT_SIZES.display, color: DIFF_COLOR.Easy, flexShrink: 0 }} />}
+      {state === 'wrong' && <CancelRoundedIcon aria-label="Your answer, wrong" sx={{ fontSize: FONT_SIZES.display, color: DIFF_COLOR.Hard, flexShrink: 0 }} />}
     </ButtonBase>
   );
 }
@@ -173,12 +173,12 @@ export default function MobilePracticeQuestion({ slug, data, result, selected, c
       {/* Meta: level, position, timer */}
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, mt: 1 }}>
         <DifficultyTag difficulty={question.difficulty} />
-        <Typography sx={{ fontSize: 15, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>
+        <Typography sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>
           {position} / {totalInPattern}
         </Typography>
         <Typography
           aria-label={`Time ${formatClock(elapsed)}, target ${formatDuration(target)}`}
-          sx={{ ml: 'auto', fontSize: 15, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: slow && !result ? 'var(--jc-medium)' : pal.muted }}
+          sx={{ ml: 'auto', fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: slow && !result ? 'var(--jc-medium)' : pal.muted }}
         >
           {formatClock(elapsed)}
         </Typography>
@@ -192,7 +192,7 @@ export default function MobilePracticeQuestion({ slug, data, result, selected, c
 
       <Stimulus set={set} />
 
-      <Typography sx={{ mt: 3, fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: LIB_TRACKING, whiteSpace: 'pre-line' }}>{question.questionText}</Typography>
+      <Typography sx={{ mt: 3, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING, whiteSpace: 'pre-line' }}>{question.questionText}</Typography>
 
       <Stack role="group" aria-label="Answer options" sx={{ mt: 2.5, gap: 1.25 }}>
         {question.options.map((o, i) => (
@@ -221,8 +221,8 @@ export default function MobilePracticeQuestion({ slug, data, result, selected, c
       {result && (
         <>
           <Box role="status" sx={{ ...libPanelSx, mt: 3, p: 2, borderColor: result.isCorrect ? DIFF_COLOR.Easy : DIFF_COLOR.Hard, bgcolor: tint(result.isCorrect ? DIFF_COLOR.Easy : DIFF_COLOR.Hard, 10) }}>
-            <Typography sx={{ fontWeight: 700, fontSize: 18, lineHeight: '28px', color: result.isCorrect ? DIFF_COLOR.Easy : DIFF_COLOR.Hard }}>{result.isCorrect ? 'Correct' : 'Not quite'}</Typography>
-            <Typography sx={{ fontSize: 15, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: '28px', color: result.isCorrect ? DIFF_COLOR.Easy : DIFF_COLOR.Hard }}>{result.isCorrect ? 'Correct' : 'Not quite'}</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>
               {formatDuration(result.timeSpentSec)} · target {formatDuration(result.targetTimeSec)}
               {result.isCorrect && (onPace ? ' · on pace' : ' · slower than exam pace')}
             </Typography>

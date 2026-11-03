@@ -19,6 +19,7 @@ import { roomApi } from '../../api/roomApi';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import BackToDashboard from '../../components/BackToDashboard';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const FEATURES = [
   { icon: <CodeRoundedIcon />, label: 'Shared editor' },
@@ -30,7 +31,7 @@ const FEATURES = [
 
 function SectionLabel({ children }) {
   return (
-    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1, fontWeight: 800, letterSpacing: 0.6, textTransform: 'uppercase' }}>
+    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.6, textTransform: 'uppercase' }}>
       {children}
     </Typography>
   );
@@ -86,7 +87,7 @@ export default function PairLobbyPage() {
       onClick={create}
       disabled={busy || disabled}
       startIcon={busy ? <CircularProgress size={18} color="inherit" /> : <GroupAddRoundedIcon />}
-      sx={{ height: 48, borderRadius: '14px', fontWeight: 700, textTransform: 'none' }}
+      sx={{ height: 48, borderRadius: '14px', fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' }}
     >
       Create room
     </Button>
@@ -101,7 +102,7 @@ export default function PairLobbyPage() {
             <GroupAddRoundedIcon />
           </Box>
           <Box>
-            <Typography variant="h5" sx={{ fontWeight: 800, lineHeight: 1.2 }}>Pair Room</Typography>
+            <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.2 }}>Pair Room</Typography>
             <Typography variant="body2" color="text.secondary">Solve problems together, in real time.</Typography>
           </Box>
         </Stack>
@@ -117,7 +118,7 @@ export default function PairLobbyPage() {
               icon={f.icon}
               label={f.label}
               size="small"
-              sx={(t) => ({ fontWeight: 600, bgcolor: wsSurface(t).raised, color: 'text.primary', '& .MuiChip-icon': { color: t.palette.primary.main, fontSize: 17 } })}
+              sx={(t) => ({ fontWeight: FONT_WEIGHTS.semibold, bgcolor: wsSurface(t).raised, color: 'text.primary', '& .MuiChip-icon': { color: t.palette.primary.main, fontSize: FONT_SIZES.subheading } })}
             />
           ))}
         </Stack>
@@ -140,10 +141,10 @@ export default function PairLobbyPage() {
                 borderRadius: '999px !important',
                 py: 0.9,
                 gap: 0.75,
-                fontWeight: 700,
+                fontWeight: FONT_WEIGHTS.bold,
                 textTransform: 'none',
                 color: 'text.secondary',
-                '& svg': { fontSize: 19 },
+                '& svg': { fontSize: FONT_SIZES.heading },
                 '&.Mui-selected': { bgcolor: 'background.paper', color: 'primary.main', boxShadow: `0 1px 3px ${alpha(t.palette.common.black, 0.18)}` },
                 '&.Mui-selected:hover': { bgcolor: 'background.paper' },
               },
@@ -159,8 +160,8 @@ export default function PairLobbyPage() {
                 fullWidth
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
-                startAdornment={<CodeRoundedIcon sx={{ fontSize: 20, mr: 1, color: 'primary.main' }} />}
-                sx={{ height: 48, borderRadius: '14px', fontWeight: 600 }}
+                startAdornment={<CodeRoundedIcon sx={{ fontSize: FONT_SIZES.heading, mr: 1, color: 'primary.main' }} />}
+                sx={{ height: 48, borderRadius: '14px', fontWeight: FONT_WEIGHTS.semibold }}
               >
                 <MenuItem value="javascript">JavaScript</MenuItem>
                 <MenuItem value="python">Python</MenuItem>
@@ -179,8 +180,8 @@ export default function PairLobbyPage() {
                   displayEmpty
                   value={patternSlug}
                   onChange={(e) => setPatternSlug(e.target.value)}
-                  startAdornment={<CalculateRoundedIcon sx={{ fontSize: 20, mr: 1, color: 'primary.main' }} />}
-                  sx={{ height: 48, borderRadius: '14px', fontWeight: 600 }}
+                  startAdornment={<CalculateRoundedIcon sx={{ fontSize: FONT_SIZES.heading, mr: 1, color: 'primary.main' }} />}
+                  sx={{ height: 48, borderRadius: '14px', fontWeight: FONT_WEIGHTS.semibold }}
                 >
                   {patterns.length === 0 && <MenuItem value="">Loading topics…</MenuItem>}
                   {patterns.map((p) => (
@@ -198,7 +199,7 @@ export default function PairLobbyPage() {
           {error && <Alert severity="error" sx={{ borderRadius: '14px' }}>{error}</Alert>}
         </Stack>
 
-        <Divider sx={{ my: 3, color: 'text.secondary', fontSize: '0.8rem', fontWeight: 700 }}>OR JOIN A ROOM</Divider>
+        <Divider sx={{ my: 3, color: 'text.secondary', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>OR JOIN A ROOM</Divider>
 
         <Stack direction="row" spacing={1}>
           <TextField
@@ -218,7 +219,7 @@ export default function PairLobbyPage() {
               },
             }}
           />
-          <Button variant="outlined" onClick={join} disabled={!code.trim()} startIcon={<LoginRoundedIcon />} sx={{ height: 48, px: 2.5, borderRadius: '14px', fontWeight: 700, textTransform: 'none', flexShrink: 0 }}>
+          <Button variant="outlined" onClick={join} disabled={!code.trim()} startIcon={<LoginRoundedIcon />} sx={{ height: 48, px: 2.5, borderRadius: '14px', fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', flexShrink: 0 }}>
             Join
           </Button>
         </Stack>

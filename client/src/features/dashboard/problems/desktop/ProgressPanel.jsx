@@ -4,6 +4,7 @@ import { LIB_ACCENT, LIB_TRACKING, libSectionTitleSx, useLibraryPalette } from '
 import { sumDifficulties } from '../common/problemsConstants';
 import DifficultyBars from './DifficultyBars';
 import { panelSx } from './problemsStyles';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 const RING_SIZE = 112;
 
@@ -11,8 +12,8 @@ function SolvedSummary({ solved, total, palette }) {
   const percent = total ? Math.round((solved / total) * 100) : 0;
   return (
     <Box sx={{ minWidth: 0 }}>
-      <Typography sx={{ fontSize: 30, lineHeight: '36px', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{percent}%</Typography>
-      <Typography sx={{ fontSize: 14, letterSpacing: LIB_TRACKING, color: palette.muted }}>of the library solved</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.hero, lineHeight: '36px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>{percent}%</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, color: palette.muted }}>of the library solved</Typography>
     </Box>
   );
 }

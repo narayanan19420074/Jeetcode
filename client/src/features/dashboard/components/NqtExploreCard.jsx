@@ -13,7 +13,7 @@ import { getBrandLogo } from '../../../components/brandLogos';
 import TcsBuddy from '../../prep/TcsBuddy';
 import { FORMS, RANKS, levelFor, formFor } from '../../prep/questLogic';
 import { TCS_NQT_APPLY_BY, daysUntil, examCountdown, formatExamDate, pickExamDate } from '../../prep/examDate';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 const AMBER = COLOR_PALETTE.amber[400];
 
@@ -90,22 +90,22 @@ export default function NqtExploreCard({ onDismiss, hideForNewUser = false }) {
       {/* title + countdown */}
       <Box sx={{ position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 1.5 }}>
         <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 800, fontSize: '1.2rem', lineHeight: 1.2 }}>TCS NQT</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.2 }}>TCS NQT</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.5, color: withAlpha(COLOR_PALETTE.white, 0.88) }}>
-            <CalendarMonthRoundedIcon sx={{ fontSize: 16 }} />
-            <Typography sx={{ fontSize: '0.8rem', fontWeight: 600 }}>{formatExamDate(examDate)}</Typography>
+            <CalendarMonthRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />
+            <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold }}>{formatExamDate(examDate)}</Typography>
           </Box>
           {showApplyBy && (
             <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, mt: 0.75, px: 1, py: 0.25, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.amber[400], 0.18), color: COLOR_PALETTE.amber[200] }}>
-              <AccessTimeRoundedIcon sx={{ fontSize: 14 }} />
-              <Typography sx={{ fontSize: '0.7rem', fontWeight: 700 }}>Apply by {formatExamDate(TCS_NQT_APPLY_BY).replace(/ \d{4}$/, '')}</Typography>
+              <AccessTimeRoundedIcon sx={{ fontSize: FONT_SIZES.body }} />
+              <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold }}>Apply by {formatExamDate(TCS_NQT_APPLY_BY).replace(/ \d{4}$/, '')}</Typography>
             </Box>
           )}
         </Box>
 
         <Box sx={{ flexShrink: 0, minWidth: 84, mt: onDismiss ? 2.5 : 0, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
-          <Typography sx={{ fontWeight: 900, fontSize: countdown.over || days === 0 ? '1.25rem' : '1.9rem', lineHeight: 1, fontVariantNumeric: 'tabular-nums', color: urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{bigNumber}</Typography>
-          {bigLabel && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{bigLabel}</Typography>}
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: countdown.over || days === 0 ? FONT_SIZES.heading : FONT_SIZES.hero, lineHeight: 1, fontVariantNumeric: 'tabular-nums', color: urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{bigNumber}</Typography>
+          {bigLabel && <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{bigLabel}</Typography>}
         </Box>
       </Box>
 
@@ -114,7 +114,7 @@ export default function NqtExploreCard({ onDismiss, hideForNewUser = false }) {
         <Box sx={{ flexShrink: 0, width: 100, display: 'grid', placeItems: 'center' }}>
           {brand ? <TcsBuddy path={brand.path} color={brand.color} tier={Math.max(0, tier)} size={96} /> : <CompanyAvatar name="TCS NQT" logoUrl={track?.logoUrl} size={56} />}
         </Box>
-        <Box sx={{ position: 'relative', px: 1.5, py: 1.1, borderRadius: '16px 16px 16px 4px', bgcolor: withAlpha(COLOR_PALETTE.white, 0.14), fontSize: '0.84rem', lineHeight: 1.45, fontWeight: 600 }}>
+        <Box sx={{ position: 'relative', px: 1.5, py: 1.1, borderRadius: '16px 16px 16px 4px', bgcolor: withAlpha(COLOR_PALETTE.white, 0.14), fontSize: FONT_SIZES.body, lineHeight: 1.45, fontWeight: FONT_WEIGHTS.semibold }}>
           {message}
         </Box>
       </Box>
@@ -122,10 +122,10 @@ export default function NqtExploreCard({ onDismiss, hideForNewUser = false }) {
       {/* level + XP */}
       <Box sx={{ position: 'relative', mt: 1.25 }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}>
-          <Typography sx={{ fontSize: '0.78rem', fontWeight: 800, color: COLOR_PALETTE.amber[200] }}>
+          <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.amber[200] }}>
             Level {level} · {RANKS[level - 1]}
           </Typography>
-          <Typography sx={{ fontSize: '0.72rem', fontWeight: 700, color: withAlpha(COLOR_PALETTE.white, 0.8), fontVariantNumeric: 'tabular-nums' }}>{readiness}% ready</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: withAlpha(COLOR_PALETTE.white, 0.8), fontVariantNumeric: 'tabular-nums' }}>{readiness}% ready</Typography>
         </Box>
         <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={levelPct} aria-label="Progress to next level" sx={{ height: 10, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.18), overflow: 'hidden' }}>
           <motion.div initial={{ width: reduce ? `${Math.max(levelPct, 4)}%` : 0 }} animate={{ width: `${Math.max(levelPct, 4)}%` }} transition={{ duration: 0.9, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 99, background: `linear-gradient(90deg, ${AMBER}, ${COLOR_PALETTE.amber[500]})` }} />
@@ -135,12 +135,12 @@ export default function NqtExploreCard({ onDismiss, hideForNewUser = false }) {
       {/* the one warm button */}
       <Box sx={{ position: 'relative', mt: 1.75 }}>
         <motion.div animate={glow} transition={{ duration: 1.8, repeat: Infinity, ease: 'easeOut' }} style={{ borderRadius: 14 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, height: 48, borderRadius: '14px', bgcolor: AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, fontSize: '0.95rem' }}>
-            <BoltRoundedIcon sx={{ fontSize: 20 }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, height: 48, borderRadius: '14px', bgcolor: AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg }}>
+            <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
             {started ? 'Continue your quest' : 'Start your first quest'}
-            <Box component="span" sx={{ px: 0.9, py: 0.15, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.custom.black1B1200, 0.14), fontSize: '0.72rem', fontWeight: 800 }}>+XP</Box>
+            <Box component="span" sx={{ px: 0.9, py: 0.15, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.custom.black1B1200, 0.14), fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>+XP</Box>
             <motion.span animate={reduce ? undefined : { x: [0, 4, 0] }} transition={{ duration: 1.2, repeat: Infinity }} style={{ display: 'inline-flex' }}>
-              <ArrowForwardRoundedIcon sx={{ fontSize: 20 }} />
+              <ArrowForwardRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
             </motion.span>
           </Box>
         </motion.div>
@@ -159,7 +159,7 @@ export default function NqtExploreCard({ onDismiss, hideForNewUser = false }) {
         aria-label="Dismiss TCS NQT card"
         sx={{ position: 'absolute', top: 6, right: 6, color: withAlpha(COLOR_PALETTE.white, 0.85), bgcolor: withAlpha(COLOR_PALETTE.white, 0.12), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.22) } }}
       >
-        <CloseRoundedIcon sx={{ fontSize: 18 }} />
+        <CloseRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
       </IconButton>
     </Box>
   );

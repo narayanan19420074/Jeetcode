@@ -8,6 +8,7 @@ import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
 import { supportChatApi } from '../../api/supportChatApi';
 import { extractErrorMessage } from '../../api/apiClient';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const TOPICS = [
   { value: 'payment', label: 'Payments & Pro' },
@@ -38,7 +39,7 @@ function Bubble({ m }) {
         }}
       >
         {!mine && (
-          <Typography variant="caption" sx={{ fontWeight: 700, display: 'block', opacity: 0.8 }}>
+          <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, display: 'block', opacity: 0.8 }}>
             {m.agentName || 'JeetCode Support'}
           </Typography>
         )}
@@ -178,7 +179,7 @@ export default function SupportChat({ open, onOpenChange }) {
           variant="extended"
           onClick={() => onOpenChange(true)}
           aria-label="Chat with support"
-          sx={{ position: 'fixed', right: 16, bottom: 'calc(16px + env(safe-area-inset-bottom))', zIndex: 1200, fontWeight: 700, textTransform: 'none' }}
+          sx={{ position: 'fixed', right: 16, bottom: 'calc(16px + env(safe-area-inset-bottom))', zIndex: 1200, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' }}
         >
           <Badge color="error" badgeContent={unread} invisible={!unread} sx={{ mr: 1 }}>
             <ChatRoundedIcon />
@@ -209,13 +210,13 @@ export default function SupportChat({ open, onOpenChange }) {
           <Stack direction="row" spacing={1.5} sx={{ p: 1.5, bgcolor: 'primary.main', color: 'primary.contrastText', alignItems: 'center' }}>
             <SupportAgentRoundedIcon />
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Typography sx={{ fontWeight: 700, lineHeight: 1.2 }}>JeetCode Support</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.2 }}>JeetCode Support</Typography>
               <Typography variant="caption" sx={{ opacity: 0.85 }}>
                 We usually reply within one working day
               </Typography>
             </Box>
             {chat && (
-              <Button size="small" color="inherit" onClick={endChat} sx={{ textTransform: 'none', fontWeight: 600 }}>
+              <Button size="small" color="inherit" onClick={endChat} sx={{ textTransform: 'none', fontWeight: FONT_WEIGHTS.semibold }}>
                 End chat
               </Button>
             )}
@@ -226,11 +227,11 @@ export default function SupportChat({ open, onOpenChange }) {
 
           {!isAuthenticated ? (
             <Stack spacing={2} sx={{ p: 3, flex: 1, justifyContent: 'center', textAlign: 'center', alignItems: 'center' }}>
-              <Typography sx={{ fontWeight: 700 }}>Sign in to chat with our team</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>Sign in to chat with our team</Typography>
               <Typography variant="body2" color="text.secondary">
                 Chat is available to signed-in users so we can look up your account. You can also send us a message using the contact form on this page.
               </Typography>
-              <Button component={RouterLink} to="/login" variant="contained" disableElevation sx={{ fontWeight: 700 }}>
+              <Button component={RouterLink} to="/login" variant="contained" disableElevation sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 Sign in
               </Button>
             </Stack>

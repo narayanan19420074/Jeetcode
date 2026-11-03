@@ -10,6 +10,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { PaneBar, WsIconButton } from './wsUi';
 import { WS } from './wsTokens';
 import { wsSurface } from './workspaceTheme';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const QUICK_PROMPTS = ['Give me a hint', 'What is the time complexity?', 'Which edge cases should I test?'];
 
@@ -68,10 +69,10 @@ export default function AiAssistantDrawer({ open, onClose, slug, language, getCo
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         <PaneBar height={56} sx={{ px: 2, gap: 1.25, pt: 'env(safe-area-inset-top)', boxSizing: 'content-box' }}>
           <Box sx={(t) => ({ width: 32, height: 32, borderRadius: `${WS.radius}px`, display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
-            <AutoAwesomeRoundedIcon sx={{ fontSize: 19 }} />
+            <AutoAwesomeRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
           </Box>
           <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Typography sx={{ fontWeight: 700, lineHeight: 1.2, fontSize: '0.95rem' }}>AI Assistant</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.2, fontSize: FONT_SIZES.bodyLg }}>AI Assistant</Typography>
             <Typography variant="caption" color="text.secondary">
               Hints only, no full solutions
             </Typography>
@@ -125,7 +126,7 @@ export default function AiAssistantDrawer({ open, onClose, slug, language, getCo
                 size="small"
                 label={p}
                 onClick={() => setInput(p)}
-                sx={(t) => ({ flexShrink: 0, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, fontWeight: 600 })}
+                sx={(t) => ({ flexShrink: 0, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, fontWeight: FONT_WEIGHTS.semibold })}
               />
             ))}
           </Stack>

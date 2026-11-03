@@ -3,6 +3,7 @@ import { Button, Stack, Typography } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { pillButtonSx } from '../../dashboard/components/libraryDesktopStyles';
+import { FONT_SIZES } from '../../../app/design/designTokens';
 
 // The one daily action: claim today's coins, solve a problem to unlock the claim, or a confirmation that it is done.
 export default function DailyReward({ daily, claiming, onClaim }) {
@@ -20,8 +21,8 @@ export default function DailyReward({ daily, claiming, onClaim }) {
   if (!daily?.claimed) return null;
   return (
     <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 0.75, color: palette.muted }}>
-      <CheckCircleRoundedIcon sx={{ fontSize: 18, color: 'var(--jc-easy)' }} />
-      <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING }}>Checked in today</Typography>
+      <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'var(--jc-easy)' }} />
+      <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>Checked in today</Typography>
     </Stack>
   );
 }

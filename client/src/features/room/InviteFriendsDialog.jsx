@@ -9,7 +9,7 @@ import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { fetchFriends } from '../friends/friendsSlice';
 import { PersonAvatar } from '../friends/friendsUi';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // "Call a friend" dropdown for a live pair room (opens under the icon, list scrolls inside).
 // Every friend (online or offline) has two small buttons:
@@ -65,7 +65,7 @@ export default function InviteFriendsDialog({ anchorEl, onClose, roomId, roomTit
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       slotProps={{ paper: { sx: { mt: 0.5, width: 'min(300px, calc(100vw - 16px))', maxHeight: 340, display: 'flex', flexDirection: 'column', borderRadius: '12px' } } }}
     >
-      <Typography variant="caption" color="text.secondary" sx={{ px: 1.5, pt: 1, pb: 0.5, fontWeight: 800, letterSpacing: 0.4, flexShrink: 0 }}>
+      <Typography variant="caption" color="text.secondary" sx={{ px: 1.5, pt: 1, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4, flexShrink: 0 }}>
         CALL A FRIEND
       </Typography>
 
@@ -86,10 +86,10 @@ export default function InviteFriendsDialog({ anchorEl, onClose, roomId, roomTit
               <Stack key={f.userId} direction="row" sx={{ alignItems: 'center', gap: 1, px: 1.5, py: 0.6, '&:hover': { bgcolor: 'action.hover' } }}>
                 <PersonAvatar person={f} size={28} online={isOn} />
                 <Box sx={{ minWidth: 0, flex: 1 }}>
-                  <Typography noWrap sx={{ fontWeight: 600, fontSize: '0.84rem', lineHeight: 1.2 }}>
+                  <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, lineHeight: 1.2 }}>
                     {f.name}
                   </Typography>
-                  <Typography noWrap sx={{ fontSize: '0.7rem', lineHeight: 1.2, color: isOn ? 'success.main' : 'text.secondary', fontWeight: isOn ? 700 : 400 }}>
+                  <Typography noWrap sx={{ fontSize: FONT_SIZES.micro, lineHeight: 1.2, color: isOn ? 'success.main' : 'text.secondary', fontWeight: isOn ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular }}>
                     {isOn ? 'Online' : 'Offline'}
                   </Typography>
                 </Box>
@@ -107,7 +107,7 @@ export default function InviteFriendsDialog({ anchorEl, onClose, roomId, roomTit
                         '&.Mui-disabled': { opacity: 0.6 },
                       })}
                     >
-                      {busy === f.userId ? <CircularProgress size={13} color="inherit" /> : done ? <CheckRoundedIcon sx={{ fontSize: 16 }} /> : <SendRoundedIcon sx={{ fontSize: 15 }} />}
+                      {busy === f.userId ? <CircularProgress size={13} color="inherit" /> : done ? <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /> : <SendRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg }} />}
                     </ButtonBase>
                   </span>
                 </Tooltip>
@@ -117,7 +117,7 @@ export default function InviteFriendsDialog({ anchorEl, onClose, roomId, roomTit
                     aria-label={`Invite ${f.name} on WhatsApp`}
                     sx={{ ...small, color: COLOR_PALETTE.white, bgcolor: COLOR_PALETTE.custom.green25D366, '&:hover': { bgcolor: COLOR_PALETTE.green[500] } }}
                   >
-                    <WhatsAppIcon sx={{ fontSize: 17 }} />
+                    <WhatsAppIcon sx={{ fontSize: FONT_SIZES.subheading }} />
                   </ButtonBase>
                 </Tooltip>
               </Stack>

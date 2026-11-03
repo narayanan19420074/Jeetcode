@@ -6,6 +6,7 @@ import { authApi } from '../../api/authApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { userUpdated } from './authSlice';
 import AuthShell from './AuthShell';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 export default function VerifyEmailPage() {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export default function VerifyEmailPage() {
     <AuthShell
       title="Email verification"
       footer={
-        <Link component={RouterLink} to="/dashboard" underline="hover" sx={{ fontWeight: 600 }}>
+        <Link component={RouterLink} to="/dashboard" underline="hover" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
           Go to dashboard
         </Link>
       }

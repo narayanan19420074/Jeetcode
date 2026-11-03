@@ -36,7 +36,7 @@ export function buildTheme(mode, opts = {}) {
   return createTheme({
     spacing: compact ? SPACING.compactUnit : SPACING.unit,
     palette: buildPalette({ ...appearance, mode, highContrast: appearance.contrast === 'high' }),
-    typography: buildTypography(appearance.fontScale),
+    typography: buildTypography(),
     shape: { borderRadius: RADII.control },
     tokens: BRAND_PALETTE,
     jc: buildJcTokens(mode),

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Five separate "tabs" start scattered and tilted, then snap into one
 // dashboard when the section scrolls into view. The toggle lets the
@@ -216,10 +216,10 @@ export default function ChaosToOrder() {
           onChange={(_, v) => v && setUnified(v === 'one')}
           aria-label="Compare scattered prep with JeetCode"
         >
-          <ToggleButton value="many" sx={{ px: 2, textTransform: 'none', fontWeight: 700 }}>
+          <ToggleButton value="many" sx={{ px: 2, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
             Scattered
           </ToggleButton>
-          <ToggleButton value="one" sx={{ px: 2, textTransform: 'none', fontWeight: 700 }}>
+          <ToggleButton value="one" sx={{ px: 2, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
             In JeetCode
           </ToggleButton>
         </ToggleButtonGroup>

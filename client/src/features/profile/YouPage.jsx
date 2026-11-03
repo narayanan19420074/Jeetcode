@@ -23,7 +23,7 @@ import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, istShift, utcKey } from '
 import AchievementBadge from './AchievementBadge';
 import BackToDashboard from '../../components/BackToDashboard';
 import MobileYou from './MobileYou';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const initialsFromName = (name) =>
   (name || 'U').trim().split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase()).join('');
@@ -44,7 +44,7 @@ const cardSx = { p: 2, borderRadius: '20px' };
 
 function SectionTitle({ children }) {
   return (
-    <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', mb: 1.5 }}>{children}</Typography>
+    <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, mb: 1.5 }}>{children}</Typography>
   );
 }
 
@@ -54,7 +54,7 @@ function StatTile({ label, value, sub }) {
       <Typography variant="body2" color="text.secondary">
         {label}
       </Typography>
-      <Typography sx={{ fontWeight: 800, fontSize: '1.7rem', lineHeight: 1.2, fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: 1.2, fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
       {sub && (
         <Typography variant="caption" color="text.secondary">
           {sub}
@@ -89,7 +89,7 @@ function Row({ leading, title, subtitle, trailing, onClick }) {
     >
       {leading}
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 600 }}>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
           {title}
         </Typography>
         <Typography variant="body2" color="text.secondary" noWrap>
@@ -205,12 +205,12 @@ export default function YouPage() {
 
       {/* identity */}
       <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 2 }}>
-        <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 84, height: 84, fontSize: '1.8rem', fontWeight: 700, bgcolor: 'primary.main', color: 'primary.contrastText' }}>
+        <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 84, height: 84, fontSize: FONT_SIZES.displayLg, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'primary.main', color: 'primary.contrastText' }}>
           {initialsFromName(user.name)}
         </Avatar>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-            <Typography sx={{ fontWeight: 800, fontSize: '1.4rem', lineHeight: 1.2, wordBreak: 'break-word' }}>{user.name}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, lineHeight: 1.2, wordBreak: 'break-word' }}>{user.name}</Typography>
             {user.isPro && <ProBadge />}
           </Stack>
           <Typography color="text.secondary">@{user.handle}</Typography>
@@ -285,7 +285,7 @@ export default function YouPage() {
             onClick={() => setTab(t.key)}
             color={tab === t.key ? 'primary' : 'default'}
             variant={tab === t.key ? 'filled' : 'outlined'}
-            sx={{ fontWeight: 700, px: 0.5, height: 36, borderRadius: 99 }}
+            sx={{ fontWeight: FONT_WEIGHTS.bold, px: 0.5, height: 36, borderRadius: 99 }}
           />
         ))}
       </Stack>
@@ -331,14 +331,14 @@ export default function YouPage() {
               title={s.problem.title}
               subtitle={
                 <>
-                  <Box component="span" sx={{ color: DIFF_COLOR[s.problem.difficulty], fontWeight: 700 }}>
+                  <Box component="span" sx={{ color: DIFF_COLOR[s.problem.difficulty], fontWeight: FONT_WEIGHTS.bold }}>
                     {s.problem.difficulty}
                   </Box>
                   {` · ${timeAgo(s.createdAt)}`}
                 </>
               }
               trailing={
-                <Typography variant="caption" sx={{ fontWeight: 800, color: STATUS_COLOR[s.status] || 'text.secondary', textAlign: 'right', maxWidth: 96 }}>
+                <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: STATUS_COLOR[s.status] || 'text.secondary', textAlign: 'right', maxWidth: 96 }}>
                   {s.status}
                 </Typography>
               }
@@ -362,7 +362,7 @@ export default function YouPage() {
 
           {!subs.loading && !subs.error && subs.items.length === 0 && (
             <Box sx={{ textAlign: 'center', py: 4 }}>
-              <Typography sx={{ fontWeight: 700 }}>No submissions yet</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No submissions yet</Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                 Solve your first problem and it shows up here.
               </Typography>

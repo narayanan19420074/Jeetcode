@@ -1,4 +1,5 @@
 import { Box, Paper, Stack, Typography } from '@mui/material';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 export default function StatCard({ icon, label, value, hint, color = 'primary.main' }) {
   return (
@@ -9,7 +10,7 @@ export default function StatCard({ icon, label, value, hint, color = 'primary.ma
           {label}
         </Typography>
       </Stack>
-      <Typography variant="h4" sx={{ fontWeight: 800 }}>
+      <Typography variant="h4" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
         {value}
       </Typography>
       {hint && (

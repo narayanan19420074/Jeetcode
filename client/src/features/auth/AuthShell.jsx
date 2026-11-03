@@ -3,6 +3,7 @@ import { Box, Link, Paper, Typography, TextField } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import BrandMark from '../../components/BrandMark';
 import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Shared GitHub-style shell for Login / Signup: logo + title on top,
 // a small outlined card for the form, and a second small card below it
@@ -28,11 +29,11 @@ export default function AuthShell({ title, children, footer }) {
         aria-label="JeetCode home"
         sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', color: 'inherit', mb: 2 }}
       >
-        <CodeRoundedIcon sx={{ fontSize: 40, color: 'primary.main', display: { xs: 'none', md: 'block' } }} />
+        <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: 'primary.main', display: { xs: 'none', md: 'block' } }} />
         <BrandMark size={56} sx={{ display: { xs: 'block', md: 'none' } }} />
       </Box>
 
-      <Typography component="h1" sx={{ fontSize: '1.5rem', fontWeight: 300, mb: 2.5, textAlign: 'center' }}>
+      <Typography component="h1" sx={{ fontSize: FONT_SIZES.display, fontWeight: FONT_WEIGHTS.regular, mb: 2.5, textAlign: 'center' }}>
         {title}
       </Typography>
 
@@ -64,7 +65,7 @@ export default function AuthShell({ title, children, footer }) {
 export function AuthField({ label, id, helperText, ...props }) {
   return (
     <Box>
-      <Typography component="label" htmlFor={id} variant="body2" sx={{ fontWeight: 600, display: 'block', mb: 0.5 }}>
+      <Typography component="label" htmlFor={id} variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold, display: 'block', mb: 0.5 }}>
         {label}
       </Typography>
       <TextField id={id} size="small" fullWidth required helperText={helperText} {...props} />

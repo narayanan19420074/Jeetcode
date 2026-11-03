@@ -16,7 +16,7 @@ import {
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { PALETTE, formatClock } from './components/aptitudeUi';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // "General instructions" screen shown before the timed paper, modelled on the
 // exam candidate instructions page: the learner reads the rules, sees the
@@ -42,7 +42,7 @@ export function PaletteSymbol({ kind, size = 30, children }) {
         placeItems: 'center',
         bgcolor: p.bg,
         color: p.fg,
-        fontWeight: 800,
+        fontWeight: FONT_WEIGHTS.bold,
         fontSize: size * 0.42,
         ...shape,
       }}
@@ -120,10 +120,10 @@ export default function AptitudeTestInstructionsPage() {
         <Container maxWidth="lg" sx={{ py: 2 }}>
           <Stack direction="row" useFlexGap spacing={1} sx={{ alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <Box>
-              <Typography variant="overline" sx={{ opacity: 0.75, letterSpacing: '0.12em', fontWeight: 700 }}>
+              <Typography variant="overline" sx={{ opacity: 0.75, letterSpacing: '0.12em', fontWeight: FONT_WEIGHTS.bold }}>
                 Aptitude Test · {pattern.category || 'Quantitative Aptitude'}
               </Typography>
-              <Typography variant="h5" sx={{ fontWeight: 800 }}>
+              <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 {pattern.title}
               </Typography>
             </Box>
@@ -134,7 +134,7 @@ export default function AptitudeTestInstructionsPage() {
                 ['Pass mark', `${pattern.passPercentage}%`],
               ].map(([k, v]) => (
                 <Box key={k} sx={{ textAlign: 'center' }}>
-                  <Typography sx={{ fontWeight: 800, fontFamily: '"JetBrains Mono", monospace', fontSize: 20 }}>{v}</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: FONTS.mono, fontSize: FONT_SIZES.heading }}>{v}</Typography>
                   <Typography variant="caption" sx={{ opacity: 0.75 }}>
                     {k}
                   </Typography>
@@ -155,7 +155,7 @@ export default function AptitudeTestInstructionsPage() {
 
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={3} sx={{ alignItems: 'flex-start' }}>
           <Paper variant="outlined" sx={{ flex: 1, p: { xs: 2.5, sm: 3.5 }, borderRadius: 2 }}>
-            <Typography variant="h6" sx={{ fontWeight: 800, mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
               General instructions
             </Typography>
             <Stack component="ol" spacing={1.4} sx={{ pl: 2.5, m: 0 }}>
@@ -166,7 +166,7 @@ export default function AptitudeTestInstructionsPage() {
               ))}
             </Stack>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 800, mt: 3.5, mb: 1.5 }}>
+            <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 3.5, mb: 1.5 }}>
               Question palette — what the colours mean
             </Typography>
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 1.5 }}>
@@ -186,10 +186,10 @@ export default function AptitudeTestInstructionsPage() {
           </Paper>
 
           <Paper variant="outlined" sx={{ width: { xs: '100%', md: 340 }, p: 3, borderRadius: 2, flexShrink: 0 }}>
-            <Typography variant="overline" color="text.secondary" sx={{ fontWeight: 800, letterSpacing: '0.1em' }}>
+            <Typography variant="overline" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.1em' }}>
               Candidate
             </Typography>
-            <Typography sx={{ fontWeight: 800, fontSize: 18 }}>{user?.name || 'Candidate'}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading }}>{user?.name || 'Candidate'}</Typography>
             {user?.handle && (
               <Typography variant="body2" color="text.secondary">
                 @{user.handle}
@@ -197,7 +197,7 @@ export default function AptitudeTestInstructionsPage() {
             )}
 
             <FormControlLabel
-              sx={{ mt: 3, alignItems: 'flex-start', '& .MuiFormControlLabel-label': { fontSize: 14, lineHeight: 1.6, mt: 0.6 } }}
+              sx={{ mt: 3, alignItems: 'flex-start', '& .MuiFormControlLabel-label': { fontSize: FONT_SIZES.body, lineHeight: 1.6, mt: 0.6 } }}
               control={<Checkbox checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />}
               label="I have read and understood the instructions, and I am ready to begin the test."
             />

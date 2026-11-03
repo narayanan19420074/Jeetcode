@@ -4,6 +4,7 @@ import { Box, Button, Alert, Link, Stack, CircularProgress } from '@mui/material
 import { authApi } from '../../api/authApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import AuthShell, { AuthField } from './AuthShell';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 export default function ResetPasswordPage() {
   const [params] = useSearchParams();
@@ -31,7 +32,7 @@ export default function ResetPasswordPage() {
   };
 
   const footer = (
-    <Link component={RouterLink} to="/login" underline="hover" sx={{ fontWeight: 600 }}>
+    <Link component={RouterLink} to="/login" underline="hover" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
       Back to sign in
     </Link>
   );
@@ -52,7 +53,7 @@ export default function ResetPasswordPage() {
       {status === 'done' ? (
         <Alert severity="success">
           Your password has been updated and you have been signed out on all devices.{' '}
-          <Link component={RouterLink} to="/login" sx={{ fontWeight: 600 }}>Sign in</Link>
+          <Link component={RouterLink} to="/login" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>Sign in</Link>
         </Alert>
       ) : (
         <Box component="form" onSubmit={handleSubmit}>
@@ -80,7 +81,7 @@ export default function ResetPasswordPage() {
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
             />
-            <Button type="submit" variant="contained" disableElevation fullWidth disabled={status === 'loading'} sx={{ fontWeight: 600 }}>
+            <Button type="submit" variant="contained" disableElevation fullWidth disabled={status === 'loading'} sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
               {status === 'loading' ? <CircularProgress size={20} color="inherit" /> : 'Update password'}
             </Button>
           </Stack>

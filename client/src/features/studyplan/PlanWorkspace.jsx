@@ -20,9 +20,9 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import FriendPicker from './FriendPicker';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtRange, localKey, paceLabel, planTheme, relDay, shareUrl } from './planUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
-const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
+const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 // Each panel scrolls inside itself, so the page never grows.
 const panelHeight = { xs: 'min(62dvh, 520px)', md: 'calc(100dvh - 330px)' };
 
@@ -132,7 +132,7 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 1 }}>
         {back}
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: 18, lineHeight: 1.25 }}>{plan.title}</Typography>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.25 }}>{plan.title}</Typography>
           <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>
             {s.done}/{s.total} done · {fmtRange(s.startDate, s.endDate)}
           </Typography>
@@ -158,27 +158,27 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
           <ProgressRing value={s.percent} size={68} onDark />
           <Box sx={{ minWidth: 0, flex: 1 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, flexWrap: 'wrap' }}>
-              <Typography sx={{ fontSize: '0.95rem', fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
               {s.streak > 0 && (
                 <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
-                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: 17, color: PLAN_AMBER }} />
-                  <Typography sx={{ fontSize: '0.8rem', fontWeight: 800 }}>{s.streak} day streak</Typography>
+                  <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: PLAN_AMBER }} />
+                  <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>{s.streak} day streak</Typography>
                 </Box>
               )}
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 0.5, flexWrap: 'wrap', color: withAlpha(COLOR_PALETTE.white, 0.9) }}>
               <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4 }}>
-                <TodayRoundedIcon sx={{ fontSize: 16 }} />
-                <Typography sx={{ fontSize: '0.8rem', fontWeight: 700 }}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Typography>
+                <TodayRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />
+                <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Typography>
               </Box>
               {s.status !== 'completed' && s.status !== 'upcoming' && (
-                <Typography sx={{ fontSize: '0.8rem', fontWeight: 800, color: s.pace < 0 ? COLOR_PALETTE.red[200] : s.pace > 0 ? COLOR_PALETTE.green[200] : 'inherit' }}>{pace.text}</Typography>
+                <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: s.pace < 0 ? COLOR_PALETTE.red[200] : s.pace > 0 ? COLOR_PALETTE.green[200] : 'inherit' }}>{pace.text}</Typography>
               )}
             </Box>
           </Box>
           <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: tile.urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
-            <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
-            {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: tile.big.length > 3 ? FONT_SIZES.heading : FONT_SIZES.hero, lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
+            {tile.label && <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
           </Box>
         </Box>
       </Box>
@@ -189,8 +189,8 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
         size="small" exclusive value={panel} onChange={(_, v) => v && setPanel(v)} fullWidth
         sx={{ display: { xs: 'flex', md: 'none' }, mb: 1 }}
       >
-        <ToggleButton value="questions" sx={{ gap: 0.75, textTransform: 'none', fontWeight: 700 }}><ListAltRoundedIcon fontSize="small" />Questions · {s.total}</ToggleButton>
-        <ToggleButton value="friends" sx={{ gap: 0.75, textTransform: 'none', fontWeight: 700 }}><GroupsRoundedIcon fontSize="small" />Friends · {plan.members.length}</ToggleButton>
+        <ToggleButton value="questions" sx={{ gap: 0.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><ListAltRoundedIcon fontSize="small" />Questions · {s.total}</ToggleButton>
+        <ToggleButton value="friends" sx={{ gap: 0.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><GroupsRoundedIcon fontSize="small" />Friends · {plan.members.length}</ToggleButton>
       </ToggleButtonGroup>
 
       <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.6fr) minmax(0,1fr)' } }}>
@@ -201,11 +201,11 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
             return (
               <Box key={d.date} sx={{ px: 0.75 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, pt: 1.1, pb: 0.7 }}>
-                  <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>
+                  <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>
                     {relDay(d.date, today).toUpperCase()}
                   </Typography>
                   <Box sx={{ flex: 1, height: '1px', bgcolor: 'divider' }} />
-                  <Typography variant="caption" sx={[{ fontWeight: 700, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
+                  <Typography variant="caption" sx={[{ fontWeight: FONT_WEIGHTS.bold, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
                 </Box>
                 {d.items.map((it) => <PlanTaskRow key={it.id} item={it} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />)}
               </Box>
@@ -216,11 +216,11 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
         <Box sx={[surface, { display: { xs: panel === 'friends' ? 'block' : 'none', md: 'block' }, height: panelHeight, overflowY: 'auto', scrollbarWidth: 'thin', p: 1.25 }]}>
           {plan.members.map((m) => (
             <Box key={m.userId} sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 0.8 }}>
-              <Avatar src={m.avatarUrl || undefined} sx={{ width: 28, height: 28, fontSize: 12, fontWeight: 700 }}>{m.name?.[0]?.toUpperCase()}</Avatar>
+              <Avatar src={m.avatarUrl || undefined} sx={{ width: 28, height: 28, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>{m.name?.[0]?.toUpperCase()}</Avatar>
               <Box sx={{ minWidth: 0, flex: 1 }}>
                 <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 0.75 }}>
-                  <Typography variant="body2" noWrap sx={{ fontWeight: 700, flex: 1 }}>{m.isMe ? 'You' : m.name}</Typography>
-                  <Typography variant="caption" sx={[{ fontWeight: 700 }, mono]}>{m.done}/{m.total}</Typography>
+                  <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, flex: 1 }}>{m.isMe ? 'You' : m.name}</Typography>
+                  <Typography variant="caption" sx={[{ fontWeight: FONT_WEIGHTS.bold }, mono]}>{m.done}/{m.total}</Typography>
                 </Box>
                 <LinearProgress
                   variant="determinate" value={m.percent} aria-label={`${m.name} progress`}
@@ -228,7 +228,7 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
                 />
               </Box>
               {plan.isOwner && !m.isOwner && (
-                <Tooltip title="Remove"><IconButton size="small" onClick={() => setConfirm({ remove: m })} aria-label={`Remove ${m.name}`}><PersonRemoveRoundedIcon sx={{ fontSize: 18 }} /></IconButton></Tooltip>
+                <Tooltip title="Remove"><IconButton size="small" onClick={() => setConfirm({ remove: m })} aria-label={`Remove ${m.name}`}><PersonRemoveRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} /></IconButton></Tooltip>
               )}
             </Box>
           ))}
@@ -238,11 +238,11 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
       <FriendPicker anchorEl={pickerEl} onClose={() => setPickerEl(null)} friends={friends} memberIds={memberIds} onAdd={addFriend} onFindFriends={onFindFriends} />
 
       <Dialog open={Boolean(confirm)} onClose={() => !busy && setConfirm(null)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 700 }}>{confirmTitle}</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{confirmTitle}</DialogTitle>
         <DialogContent><DialogContentText>{confirmText}</DialogContentText></DialogContent>
         <DialogActions>
           <Button onClick={() => setConfirm(null)} disabled={busy}>Cancel</Button>
-          <Button color="error" variant="contained" disableElevation onClick={runConfirm} disabled={busy} sx={{ fontWeight: 700 }}>
+          <Button color="error" variant="contained" disableElevation onClick={runConfirm} disabled={busy} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             {confirm === 'delete' ? 'Delete' : confirm === 'leave' ? 'Leave' : 'Remove'}
           </Button>
         </DialogActions>

@@ -39,14 +39,14 @@ import ScratchPad from './ScratchPad';
 import QuestionStimulus from './components/QuestionStimulus';
 import { PaletteSymbol } from './AptitudeTestInstructionsPage';
 import { OPTION_LABELS, PALETTE, formatClock } from './components/aptitudeUi';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Exam-style interface. Everything the learner does is autosaved to
 // the server (answers, review flags, per-question time), the countdown is
 // derived from the SERVER clock + expiresAt, and a refresh resumes the paper.
 
 const NAVY = COLOR_PALETTE.custom.sky1F3A5F;
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+const mono = { fontFamily: FONTS.mono };
 
 const emptyState = () => ({ selected: null, marked: false, visited: false, time: 0 });
 
@@ -66,11 +66,11 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', bgcolor: 'background.paper' }}>
       <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', p: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-        <Box sx={{ width: 44, height: 44, borderRadius: 1, bgcolor: 'action.hover', display: 'grid', placeItems: 'center', fontWeight: 800, color: NAVY, fontSize: 18 }}>
+        <Box sx={{ width: 44, height: 44, borderRadius: 1, bgcolor: 'action.hover', display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, color: NAVY, fontSize: FONT_SIZES.subheading }}>
           {(user?.name || 'C').charAt(0).toUpperCase()}
         </Box>
         <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 800, lineHeight: 1.2 }} noWrap>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.2 }} noWrap>
             {user?.name || 'Candidate'}
           </Typography>
           <Typography variant="caption" color="text.secondary">
@@ -93,7 +93,7 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
       </Box>
 
       <Box sx={{ px: 1.5, py: 1, bgcolor: NAVY, color: COLOR_PALETTE.white }}>
-        <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: '0.06em' }}>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.06em' }}>
           QUESTION PALETTE
         </Typography>
       </Box>
@@ -450,13 +450,13 @@ function ExamInterface() {
     <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', bgcolor: COLOR_PALETTE.slate[100], color: 'text.primary' }}>
       {/* Header */}
       <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', bgcolor: NAVY, color: COLOR_PALETTE.white, px: { xs: 1.5, sm: 2.5 }, height: 56, flexShrink: 0 }}>
-        <Typography sx={{ fontWeight: 900, letterSpacing: '-0.01em', fontSize: 18 }}>JeetCode</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em', fontSize: FONT_SIZES.subheading }}>JeetCode</Typography>
         <Typography variant="body2" sx={{ opacity: 0.8, display: { xs: 'none', sm: 'block' } }}>
           Aptitude Test
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', opacity: 0.85, display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-          {saveState === 'error' ? <CloudOffRoundedIcon sx={{ fontSize: 18, color: COLOR_PALETTE.red[300] }} /> : <CloudDoneRoundedIcon sx={{ fontSize: 18 }} />}
+          {saveState === 'error' ? <CloudOffRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: COLOR_PALETTE.red[300] }} /> : <CloudDoneRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />}
           <Typography variant="caption">{saveState === 'saving' ? 'Saving…' : saveState === 'error' ? 'Offline — retrying' : 'All changes saved'}</Typography>
         </Stack>
         <Tooltip title="Calculator">
@@ -475,10 +475,10 @@ function ExamInterface() {
           </IconButton>
         )}
         <Box sx={{ px: 1.5, py: 0.6, borderRadius: 1, bgcolor: low ? COLOR_PALETTE.red[700] : withAlpha(COLOR_PALETTE.white, 0.14), transition: 'background-color .3s' }}>
-          <Typography variant="caption" sx={{ opacity: 0.8, display: 'block', lineHeight: 1, fontSize: 10 }}>
+          <Typography variant="caption" sx={{ opacity: 0.8, display: 'block', lineHeight: 1, fontSize: FONT_SIZES.micro }}>
             TIME LEFT
           </Typography>
-          <Typography sx={{ ...mono, fontWeight: 800, fontSize: 19, lineHeight: 1.15 }} aria-live="off">
+          <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.15 }} aria-live="off">
             {formatClock(remaining ?? 0)}
           </Typography>
         </Box>
@@ -486,7 +486,7 @@ function ExamInterface() {
 
       {/* Section strip */}
       <Stack direction="row" sx={{ alignItems: 'center', bgcolor: COLOR_PALETTE.white, borderBottom: '1px solid', borderColor: 'divider', px: { xs: 1.5, sm: 2.5 }, height: 40, flexShrink: 0 }}>
-        <Box sx={{ px: 1.5, py: 0.4, bgcolor: COLOR_PALETTE.blue[600], color: COLOR_PALETTE.white, borderRadius: 0.75, fontWeight: 700, fontSize: 13 }}>Quantitative Aptitude</Box>
+        <Box sx={{ px: 1.5, py: 0.4, bgcolor: COLOR_PALETTE.blue[600], color: COLOR_PALETTE.white, borderRadius: 0.75, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Quantitative Aptitude</Box>
         <Typography variant="caption" color="text.secondary" sx={{ ml: 2 }}>
           {questions.length} questions · +1 for correct · no negative marking
         </Typography>
@@ -503,7 +503,7 @@ function ExamInterface() {
         {/* Question column */}
         <Box sx={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
           <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', bgcolor: COLOR_PALETTE.white, px: { xs: 1.5, sm: 2.5 }, py: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
-            <Typography sx={{ fontWeight: 800, fontSize: 17 }}>Question No. {idx + 1}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading }}>Question No. {idx + 1}</Typography>
             <Typography variant="caption" color="text.secondary">
               Marks: <b style={{ color: COLOR_PALETTE.custom.green2E9E4F }}>+1</b> / <b style={{ color: COLOR_PALETTE.custom.redE53935 }}>−0</b>
             </Typography>
@@ -512,7 +512,7 @@ function ExamInterface() {
           <Box sx={{ flex: 1, overflowY: 'auto', bgcolor: COLOR_PALETTE.white, px: { xs: 1.5, sm: 2.5 }, py: 2.5 }}>
             <Box sx={{ maxWidth: 820 }}>
               <QuestionStimulus set={current.setId ? setsById[current.setId] : null} />
-              <Typography sx={{ fontSize: 18, lineHeight: 1.7, fontWeight: 500, mb: 3, whiteSpace: 'pre-line' }}>{current.questionText}</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: 1.7, fontWeight: FONT_WEIGHTS.medium, mb: 3, whiteSpace: 'pre-line' }}>{current.questionText}</Typography>
 
               <Stack spacing={1}>
                 {current.options.map((o, i) => {
@@ -538,8 +538,8 @@ function ExamInterface() {
                       }}
                     >
                       <Radio checked={on} tabIndex={-1} size="small" sx={{ p: 0.75 }} />
-                      <Typography sx={{ fontWeight: 700, color: 'text.secondary', width: 22 }}>{OPTION_LABELS[i]}.</Typography>
-                      <Typography sx={{ fontSize: 16.5 }}>{o.text}</Typography>
+                      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', width: 22 }}>{OPTION_LABELS[i]}.</Typography>
+                      <Typography sx={{ fontSize: FONT_SIZES.title }}>{o.text}</Typography>
                     </Box>
                   );
                 })}
@@ -575,7 +575,7 @@ function ExamInterface() {
             <Button size="small" color="inherit" disabled={idx === questions.length - 1} onClick={() => goTo(idx + 1)}>
               Next ›
             </Button>
-            <Button variant="contained" disableElevation onClick={saveNext} sx={{ bgcolor: COLOR_PALETTE.blue[600], px: 3, fontWeight: 800 }}>
+            <Button variant="contained" disableElevation onClick={saveNext} sx={{ bgcolor: COLOR_PALETTE.blue[600], px: 3, fontWeight: FONT_WEIGHTS.bold }}>
               {idx === questions.length - 1 ? 'Save' : 'Save & Next'}
             </Button>
           </Stack>
@@ -594,7 +594,7 @@ function ExamInterface() {
       {calcOpen && (
         <Paper elevation={8} sx={{ position: 'fixed', top: 104, right: compact ? 12 : 336, width: 300, zIndex: (t) => t.zIndex.modal - 1, borderRadius: 1 }}>
           <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', bgcolor: NAVY, color: COLOR_PALETTE.white, px: 1.5, py: 0.5, borderRadius: '4px 4px 0 0' }}>
-            <Typography variant="caption" sx={{ fontWeight: 800 }}>
+            <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
               Calculator
             </Typography>
             <IconButton size="small" onClick={() => setCalcOpen(false)} sx={{ color: COLOR_PALETTE.white }}>
@@ -607,7 +607,7 @@ function ExamInterface() {
 
       {/* Submit summary */}
       <Dialog open={confirmOpen} onClose={() => setConfirmOpen(false)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800 }}>Test summary</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Test summary</DialogTitle>
         <DialogContent>
           <Table size="small">
             <TableBody>
@@ -625,7 +625,7 @@ function ExamInterface() {
                       <span>{label}</span>
                     </Stack>
                   </TableCell>
-                  <TableCell align="right" sx={{ border: 0, py: 0.75, ...mono, fontWeight: 800 }}>
+                  <TableCell align="right" sx={{ border: 0, py: 0.75, ...mono, fontWeight: FONT_WEIGHTS.bold }}>
                     {value}
                   </TableCell>
                 </TableRow>

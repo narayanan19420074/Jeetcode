@@ -22,7 +22,7 @@ import QuestionStimulus from '../aptitude/components/QuestionStimulus';
 import { DIFFICULTY } from '../aptitude/components/aptitudeUi';
 import FloatingCall from './FloatingCall';
 import ChatPanel from './ChatPanel';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const MONO = '"JetBrains Mono", monospace';
 const LETTERS = ['A', 'B', 'C', 'D'];
@@ -57,8 +57,8 @@ function OptionRow({ index, text, state, who, disabled, onClick }) {
           borderRadius: '50%',
           display: 'grid',
           placeItems: 'center',
-          fontSize: 13,
-          fontWeight: 800,
+          fontSize: FONT_SIZES.body,
+          fontWeight: FONT_WEIGHTS.bold,
           fontFamily: MONO,
           color: key ? COLOR_PALETTE.white : 'text.secondary',
           bgcolor: key ? `${key}.main` : 'action.hover',
@@ -70,7 +70,7 @@ function OptionRow({ index, text, state, who, disabled, onClick }) {
       {who.length > 0 && (
         <Stack direction="row" useFlexGap spacing={0.5} sx={{ flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
           {who.map((n) => (
-            <Chip key={n} size="small" label={n} sx={{ height: 20, fontSize: 11, fontWeight: 700, maxWidth: 90 }} />
+            <Chip key={n} size="small" label={n} sx={{ height: 20, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, maxWidth: 90 }} />
           ))}
         </Stack>
       )}
@@ -193,7 +193,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
       {/* top bar */}
       <Stack direction="row" sx={{ alignItems: 'center', gap: 0.25, pl: { xs: 2, md: 2.5 }, pr: { xs: 0.75, md: 1.5 }, pt: 'env(safe-area-inset-top)', minHeight: 56, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
         <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: '1.05rem' }}>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }}>
             {room.meta.title || 'Aptitude study room'}
           </Typography>
           <Chip size="small" label={`#${roomId}`} sx={{ display: { xs: 'none', md: 'inline-flex' } }} />
@@ -210,13 +210,13 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
                 color="success"
                 sx={{ '& .MuiBadge-badge': { width: 11, height: 11, borderRadius: '50%', border: '2px solid', borderColor: 'background.paper', boxSizing: 'content-box' } }}
               >
-                <Avatar sx={{ width: 30, height: 30, fontSize: '0.85rem', fontWeight: 700, bgcolor: 'primary.main', color: 'primary.contrastText' }}>
+                <Avatar sx={{ width: 30, height: 30, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'primary.main', color: 'primary.contrastText' }}>
                   {friend.name?.[0]?.toUpperCase()}
                 </Avatar>
               </Badge>
             ) : (
               <Avatar sx={{ width: 30, height: 30, bgcolor: 'action.hover', color: 'text.secondary' }}>
-                <PersonOutlineRoundedIcon sx={{ fontSize: 18 }} />
+                <PersonOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
               </Avatar>
             )}
           </Box>
@@ -258,7 +258,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
       {sorted.length > 0 && (
         <Stack direction="row" useFlexGap spacing={1} sx={{ px: 2, py: 0.75, flexWrap: 'wrap', borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
           {sorted.map((t) => (
-            <Chip key={t.key} size="small" variant="outlined" label={`${t.key === me?.key ? 'You' : t.name} ${t.correct}/${t.total}`} sx={{ fontWeight: 700, fontFamily: MONO }} />
+            <Chip key={t.key} size="small" variant="outlined" label={`${t.key === me?.key ? 'You' : t.name} ${t.correct}/${t.total}`} sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: MONO }} />
           ))}
         </Stack>
       )}
@@ -269,9 +269,9 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
           {!q ? (
             <Stack spacing={1.5} sx={{ alignItems: 'center', textAlign: 'center', py: { xs: 6, md: 10 } }}>
               <Box sx={{ width: 64, height: 64, borderRadius: 4, display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main' }}>
-                <QuizRoundedIcon sx={{ fontSize: 34 }} />
+                <QuizRoundedIcon sx={{ fontSize: FONT_SIZES.hero }} />
               </Box>
-              <Typography variant="h6" sx={{ fontWeight: 800 }}>
+              <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 Pick a question to start
               </Typography>
               <Typography color="text.secondary" sx={{ maxWidth: 360 }}>
@@ -285,14 +285,14 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
           ) : (
             <>
               <Stack direction="row" useFlexGap spacing={1} sx={{ alignItems: 'center', flexWrap: 'wrap', mb: 1.5 }}>
-                {current && <Chip size="small" label={`Q${current.n}`} sx={{ fontWeight: 800, fontFamily: MONO }} />}
-                {diffMeta && <Chip size="small" label={diffMeta.label} sx={{ fontWeight: 700, color: diffMeta.color, bgcolor: alpha(diffMeta.color, 0.14) }} />}
+                {current && <Chip size="small" label={`Q${current.n}`} sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: MONO }} />}
+                {diffMeta && <Chip size="small" label={diffMeta.label} sx={{ fontWeight: FONT_WEIGHTS.bold, color: diffMeta.color, bgcolor: alpha(diffMeta.color, 0.14) }} />}
                 {topicTitle && <Chip size="small" variant="outlined" label={topicTitle} />}
               </Stack>
 
               <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
                 <QuestionStimulus set={quiz.set} />
-                <Typography sx={{ fontWeight: 600, fontSize: 18, lineHeight: 1.65, mb: 2.5, whiteSpace: 'pre-line' }}>{q.questionText}</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.subheading, lineHeight: 1.65, mb: 2.5, whiteSpace: 'pre-line' }}>{q.questionText}</Typography>
                 <Stack spacing={1.25}>
                   {q.options.map((o, i) => (
                     <OptionRow key={i} index={i} text={o.text} state={optionState(i)} who={whoPicked(i)} disabled={revealed || !joined} onClick={() => room.quizAnswer(i)} />
@@ -319,7 +319,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
                   >
                     <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center' }}>
                       {myResult && (myResult.choice === quiz.correct ? <CheckCircleRoundedIcon color="success" /> : <CancelRoundedIcon color="error" />)}
-                      <Typography sx={{ fontWeight: 800 }}>
+                      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                         {myResult ? (myResult.choice === quiz.correct ? 'You got it' : 'Not this time') : 'You skipped this one'} · Answer {LETTERS[quiz.correct]}
                       </Typography>
                     </Stack>
@@ -327,7 +327,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
 
                   {quiz.explanation && (
                     <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
-                      <Typography variant="caption" sx={{ fontWeight: 800, color: 'primary.main', letterSpacing: '0.1em' }}>
+                      <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em' }}>
                         SOLUTION
                       </Typography>
                       <Typography sx={{ mt: 0.75, lineHeight: 1.75, whiteSpace: 'pre-line' }}>{quiz.explanation}</Typography>
@@ -337,8 +337,8 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
                   {quiz.shortcut && (
                     <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}>
                       <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center' }}>
-                        <BoltRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
-                        <Typography variant="caption" sx={{ fontWeight: 800, color: 'warning.main', letterSpacing: '0.1em' }}>
+                        <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />
+                        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'warning.main', letterSpacing: '0.1em' }}>
                           EXAM SHORTCUT
                         </Typography>
                       </Stack>
@@ -391,7 +391,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
         }}
       >
         <Stack direction="row" sx={{ alignItems: 'center', px: 2, py: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
-          <Typography sx={{ flex: 1, fontWeight: 700 }}>Pick a question{list.total ? ` · ${list.total}` : ''}</Typography>
+          <Typography sx={{ flex: 1, fontWeight: FONT_WEIGHTS.bold }}>Pick a question{list.total ? ` · ${list.total}` : ''}</Typography>
           <IconButton size="small" aria-label="Close" onClick={() => setPickerOpen(false)}>
             <CloseRoundedIcon />
           </IconButton>
@@ -400,11 +400,11 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
         <Stack spacing={1} sx={{ px: 2, py: 1.25, borderBottom: '1px solid', borderColor: 'divider' }}>
           <Stack direction="row" useFlexGap spacing={0.75} sx={{ flexWrap: 'wrap' }}>
             {[['', 'All'], ['easy', 'Easy'], ['medium', 'Medium'], ['hard', 'Hard']].map(([v, label]) => (
-              <Chip key={label} size="small" label={label} color={difficulty === v ? 'primary' : 'default'} variant={difficulty === v ? 'filled' : 'outlined'} onClick={() => setDifficulty(v)} sx={{ fontWeight: 700 }} />
+              <Chip key={label} size="small" label={label} color={difficulty === v ? 'primary' : 'default'} variant={difficulty === v ? 'filled' : 'outlined'} onClick={() => setDifficulty(v)} sx={{ fontWeight: FONT_WEIGHTS.bold }} />
             ))}
           </Stack>
           {list.subPatterns.length > 0 && (
-            <Select size="small" displayEmpty fullWidth value={subPattern} onChange={(e) => setSubPattern(e.target.value)} sx={{ fontSize: 14 }}>
+            <Select size="small" displayEmpty fullWidth value={subPattern} onChange={(e) => setSubPattern(e.target.value)} sx={{ fontSize: FONT_SIZES.body }}>
               <MenuItem value="">All topics</MenuItem>
               {list.subPatterns.map((s) => (
                 <MenuItem key={s.slug} value={s.slug}>{s.title}</MenuItem>
@@ -427,9 +427,9 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
                 onClick={() => pick(it.id)}
                 sx={{ width: '100%', display: 'flex', alignItems: 'flex-start', gap: 1.25, textAlign: 'left', px: 2, py: 1.25, borderBottom: '1px solid', borderColor: 'divider', bgcolor: active ? (t) => alpha(t.palette.primary.main, 0.1) : 'transparent', '&:hover': { bgcolor: 'action.hover' } }}
               >
-                <Typography variant="body2" sx={{ fontWeight: 800, fontFamily: MONO, color: 'text.secondary', minWidth: 28 }}>{it.n}</Typography>
+                <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: MONO, color: 'text.secondary', minWidth: 28 }}>{it.n}</Typography>
                 <Typography variant="body2" sx={{ flex: 1, minWidth: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{it.text}</Typography>
-                {dm && <Chip size="small" label={dm.label} sx={{ height: 20, fontSize: 11, fontWeight: 700, color: dm.color, bgcolor: alpha(dm.color, 0.14) }} />}
+                {dm && <Chip size="small" label={dm.label} sx={{ height: 20, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: dm.color, bgcolor: alpha(dm.color, 0.14) }} />}
               </ButtonBase>
             );
           })}
@@ -466,7 +466,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
         }}
       >
         <Stack direction="row" sx={{ alignItems: 'center', px: 2, py: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
-          <Typography sx={{ flex: 1, fontWeight: 700 }}>Chat{friend ? ` · ${friend.name}` : ''}</Typography>
+          <Typography sx={{ flex: 1, fontWeight: FONT_WEIGHTS.bold }}>Chat{friend ? ` · ${friend.name}` : ''}</Typography>
           <IconButton size="small" aria-label="Close chat" onClick={() => setChatOpen(false)}>
             <CloseRoundedIcon />
           </IconButton>

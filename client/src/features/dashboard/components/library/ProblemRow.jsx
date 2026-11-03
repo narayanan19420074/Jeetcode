@@ -10,6 +10,7 @@ import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import { DIFF_COLOR } from '../../dashboardUtils';
 import { ACC_W, PAD_X, STAR_W } from './libraryConstants';
 import useLibraryStyles from './libraryStyles';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 const LINK_SX = {
   flex: 1,
@@ -25,9 +26,9 @@ const LINK_SX = {
 
 // The phone Library look shows an empty dash for problems that are not solved yet.
 function StatusIcon({ solved, cream }) {
-  if (solved) return <CheckCircleRoundedIcon sx={{ fontSize: 20, color: 'success.main' }} titleAccess="Solved" />;
-  if (cream) return <RemoveRoundedIcon sx={{ fontSize: 20, color: 'text.secondary', opacity: 0.6 }} titleAccess="Not solved yet" />;
-  return <RadioButtonUncheckedRoundedIcon sx={{ fontSize: 20, color: 'action.disabled' }} titleAccess="Not solved yet" />;
+  if (solved) return <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'success.main' }} titleAccess="Solved" />;
+  if (cream) return <RemoveRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'text.secondary', opacity: 0.6 }} titleAccess="Not solved yet" />;
+  return <RadioButtonUncheckedRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'action.disabled' }} titleAccess="Not solved yet" />;
 }
 
 function ProblemBadges({ isDaily, locked }) {
@@ -35,12 +36,12 @@ function ProblemBadges({ isDaily, locked }) {
     <>
       {isDaily && (
         <Tooltip title="Today's challenge">
-          <EventRoundedIcon sx={{ fontSize: 17, color: 'primary.main', flexShrink: 0 }} />
+          <EventRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'primary.main', flexShrink: 0 }} />
         </Tooltip>
       )}
       {locked && (
         <Tooltip title="Pro problem">
-          <LockRoundedIcon sx={{ fontSize: 15, color: 'warning.main', flexShrink: 0 }} />
+          <LockRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'warning.main', flexShrink: 0 }} />
         </Tooltip>
       )}
     </>
@@ -50,7 +51,7 @@ function ProblemBadges({ isDaily, locked }) {
 function ProblemTitle({ problem, index, styles }) {
   return (
     <Typography variant="body2" noWrap sx={styles.title}>
-      <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>
+      <Box component="span" sx={{ color: 'text.secondary', fontWeight: FONT_WEIGHTS.medium, fontVariantNumeric: 'tabular-nums' }}>
         {index}.
       </Box>{' '}
       {problem.title}

@@ -47,7 +47,7 @@ import { CountUp, XpBar, popChild, staggerParent } from './components/MotionBits
 import { moduleXp, rankForXp } from './components/gamification';
 import { DIFFICULTY, formatClock, formatDuration } from './components/aptitudeUi';
 import MobilePatternDetail, { MobilePatternError, MobilePatternSkeleton } from './components/MobilePatternDetail';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const MONO = '"JetBrains Mono", monospace';
 
@@ -75,14 +75,14 @@ function ActionIcon({ icon, accent, name, onClick, disabled, highlight, dot, lab
               color: COLOR_PALETTE.white,
               boxShadow: highlight ? `0 0 0 3px ${alpha(accent, 0.28)}` : 'none',
               transition: 'box-shadow .2s ease, transform .15s ease',
-              '& svg': { fontSize: 30 },
+              '& svg': { fontSize: FONT_SIZES.hero },
               'button:active > span > &': { transform: 'scale(0.96)' },
             }}
           >
             {icon}
           </Box>
         </Badge>
-        <Typography sx={{ fontWeight: 700, fontSize: 13, lineHeight: 1 }}>{name}</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, lineHeight: 1 }}>{name}</Typography>
       </ButtonBase>
     </Box>
   );
@@ -121,27 +121,27 @@ function SubPatternRow({ sub, onClick }) {
         <CircularProgress variant="determinate" value={100} size={34} thickness={4} sx={{ position: 'absolute', color: 'action.hover' }} />
         <CircularProgress variant="determinate" value={pct} size={34} thickness={4} sx={{ position: 'absolute', color: mastered ? 'success.main' : 'primary.main' }} />
         {mastered ? (
-          <CheckCircleRoundedIcon sx={{ fontSize: 18, color: 'success.main' }} />
+          <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'success.main' }} />
         ) : empty ? (
-          <HourglassEmptyRoundedIcon sx={{ fontSize: 15, color: 'text.disabled' }} />
+          <HourglassEmptyRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'text.disabled' }} />
         ) : (
-          <Typography sx={{ fontSize: 10, fontWeight: 800, fontFamily: MONO }}>{Math.round(pct)}</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, fontFamily: MONO }}>{Math.round(pct)}</Typography>
         )}
       </Box>
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.25 }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.25 }}>
           {sub.title}
         </Typography>
-        <Typography variant="caption" color="text.secondary" sx={{ fontFamily: MONO, fontSize: 11 }}>
+        <Typography variant="caption" color="text.secondary" sx={{ fontFamily: MONO, fontSize: FONT_SIZES.micro }}>
           {empty ? 'Coming soon' : `${sub.solved}/${sub.total} solved`}
         </Typography>
       </Box>
       {!empty && (
-        <Typography sx={{ fontSize: 12, fontWeight: 800, color: accColor, flexShrink: 0, display: 'flex', alignItems: 'center', gap: 0.25 }}>
+        <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: accColor, flexShrink: 0, display: 'flex', alignItems: 'center', gap: 0.25 }}>
           {sub.accuracy == null ? '—' : `${sub.accuracy}%`}
         </Typography>
       )}
-      {!empty && <ChevronRightRoundedIcon sx={{ fontSize: 20, color: 'text.disabled', flexShrink: 0 }} />}
+      {!empty && <ChevronRightRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'text.disabled', flexShrink: 0 }} />}
     </ButtonBase>
   );
 }
@@ -150,15 +150,15 @@ function SubPatternRow({ sub, onClick }) {
 function Stat({ icon, color, value, label, suffix }) {
   return (
     <Box sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 0.9 }}>
-      <Box sx={{ width: 30, height: 30, flexShrink: 0, borderRadius: 2, display: 'grid', placeItems: 'center', color, bgcolor: alpha(color, 0.14), '& svg': { fontSize: 18 } }}>{icon}</Box>
+      <Box sx={{ width: 30, height: 30, flexShrink: 0, borderRadius: 2, display: 'grid', placeItems: 'center', color, bgcolor: alpha(color, 0.14), '& svg': { fontSize: FONT_SIZES.subheading } }}>{icon}</Box>
       <Box sx={{ minWidth: 0 }}>
-        <Typography sx={{ fontWeight: 800, fontSize: 15, lineHeight: 1.1, fontFamily: MONO }} noWrap>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.1, fontFamily: MONO }} noWrap>
           {value}
-          <Box component="span" sx={{ fontSize: 11, color: 'text.secondary', fontWeight: 700 }}>
+          <Box component="span" sx={{ fontSize: FONT_SIZES.micro, color: 'text.secondary', fontWeight: FONT_WEIGHTS.bold }}>
             {suffix}
           </Box>
         </Typography>
-        <Typography color="text.secondary" sx={{ fontWeight: 700, fontSize: 10, lineHeight: 1.2, textTransform: 'uppercase', letterSpacing: '0.05em' }} noWrap>
+        <Typography color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.micro, lineHeight: 1.2, textTransform: 'uppercase', letterSpacing: '0.05em' }} noWrap>
           {label}
         </Typography>
       </Box>
@@ -312,11 +312,11 @@ export default function AptitudePatternDetailPage() {
         height: { xs: 'calc(100dvh - 56px - 76px - env(safe-area-inset-bottom))', md: 'calc(100vh - 64px)' },
       }}
     >
-      <Breadcrumbs sx={{ fontSize: 13, display: { xs: 'none', sm: 'flex' } }}>
+      <Breadcrumbs sx={{ fontSize: FONT_SIZES.body, display: { xs: 'none', sm: 'flex' } }}>
         <Link component={RouterLink} to="/aptitude" underline="hover" color="text.secondary">
           Aptitude
         </Link>
-        <Typography variant="body2" color="text.primary" sx={{ fontWeight: 600 }}>
+        <Typography variant="body2" color="text.primary" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
           {pattern.title}
         </Typography>
       </Breadcrumbs>
@@ -339,15 +339,15 @@ export default function AptitudePatternDetailPage() {
             <Alien3D kind={rank.alien.key} size={52} wave />
           </Box>
           <Box sx={{ minWidth: 0, flex: 1 }}>
-            <Typography sx={{ fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.15, fontSize: { xs: '1.1rem', sm: '1.4rem' }, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.02em', lineHeight: 1.15, fontSize: { xs: FONT_SIZES.subheading, sm: FONT_SIZES.display }, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
               {pattern.title}
             </Typography>
             <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 0.25 }}>
               <Typography variant="caption" color="text.secondary" noWrap>
                 {rank.alien.name} · {rank.alien.title}
               </Typography>
-              <LocalFireDepartmentRoundedIcon sx={{ fontSize: 14, color: 'warning.main' }} />
-              <Typography variant="caption" sx={{ fontWeight: 800, fontFamily: MONO }}>
+              <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: 'warning.main' }} />
+              <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: MONO }}>
                 <CountUp value={xp} /> XP
               </Typography>
             </Stack>
@@ -372,7 +372,7 @@ export default function AptitudePatternDetailPage() {
           <Box sx={{ flex: 1 }}>
             <XpBar pct={rank.pct} color={rank.alien.color} height={4} track={withAlpha(COLOR_PALETTE.slate[400], .22)} />
           </Box>
-          <Typography variant="caption" color="text.secondary" noWrap sx={{ flexShrink: 0, fontSize: 11 }}>
+          <Typography variant="caption" color="text.secondary" noWrap sx={{ flexShrink: 0, fontSize: FONT_SIZES.micro }}>
             {rank.next ? `${rank.toNext} XP → ${rank.next.name}` : 'Max evolution'}
           </Typography>
         </Stack>
@@ -389,10 +389,10 @@ export default function AptitudePatternDetailPage() {
             return (
               <Stack key={key} direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
                 <Box sx={{ width: 8, height: 8, bgcolor: meta.color }} />
-                <Typography variant="caption" sx={{ fontWeight: 700, color: meta.color }}>
+                <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: meta.color }}>
                   {meta.label}
                 </Typography>
-                <Typography variant="caption" color="text.secondary" sx={{ fontFamily: MONO, fontSize: 11 }}>
+                <Typography variant="caption" color="text.secondary" sx={{ fontFamily: MONO, fontSize: FONT_SIZES.micro }}>
                   {d.solved}/{d.total}
                 </Typography>
               </Stack>
@@ -405,7 +405,7 @@ export default function AptitudePatternDetailPage() {
               icon={<BookmarkRoundedIcon />}
               label={bookmarkedCount}
               onClick={() => navigate(`/aptitude/${slug}/practice?status=bookmarked`)}
-              sx={{ height: 22, borderRadius: 0, fontWeight: 800, '& .MuiChip-icon': { fontSize: 14 } }}
+              sx={{ height: 22, borderRadius: 0, fontWeight: FONT_WEIGHTS.bold, '& .MuiChip-icon': { fontSize: FONT_SIZES.body } }}
             />
           )}
         </Stack>
@@ -413,11 +413,11 @@ export default function AptitudePatternDetailPage() {
         <Collapse in={showRecent} unmountOnExit>
           <Box sx={{ mt: 1.25, pt: 1, borderTop: '1px solid', borderColor: 'divider', maxHeight: 180, overflowY: 'auto' }}>
             <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', mb: 0.5 }}>
-              <HistoryRoundedIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
-              <Typography variant="subtitle2" sx={{ fontWeight: 800 }}>
+              <HistoryRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'text.secondary' }} />
+              <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 Recent tests
               </Typography>
-              {bestPassed && <EmojiEventsRoundedIcon sx={{ color: 'warning.main', fontSize: 18 }} />}
+              {bestPassed && <EmojiEventsRoundedIcon sx={{ color: 'warning.main', fontSize: FONT_SIZES.subheading }} />}
             </Stack>
             {recentAttempts.length === 0 ? (
               <Typography variant="body2" color="text.secondary">
@@ -432,7 +432,7 @@ export default function AptitudePatternDetailPage() {
                     sx={{ py: 0.9, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' }, mx: -1, px: 1 }}
                   >
                     <Box>
-                      <Typography variant="body2" sx={{ fontWeight: 700 }}>
+                      <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                         {a.correctCount}/{a.totalCount} correct
                       </Typography>
                       <Typography variant="caption" color="text.secondary">
@@ -444,7 +444,7 @@ export default function AptitudePatternDetailPage() {
                       label={`${a.score}%`}
                       sx={{
                         borderRadius: 0,
-                        fontWeight: 800,
+                        fontWeight: FONT_WEIGHTS.bold,
                         fontFamily: MONO,
                         bgcolor: (t) => alpha(a.score >= pattern.passPercentage ? t.palette.success.main : t.palette.error.main, 0.14),
                         color: a.score >= pattern.passPercentage ? 'success.main' : 'error.main',
@@ -493,9 +493,9 @@ export default function AptitudePatternDetailPage() {
       {/* Topic mastery — a card that scrolls on its own */}
       <Paper variant="outlined" square sx={{ flex: '1 1 0', minHeight: 170, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', px: 1.5, height: 42, flexShrink: 0, borderBottom: '1px solid', borderColor: 'divider' }}>
-          <InsightsRoundedIcon sx={{ fontSize: 19, color: 'primary.main' }} />
-          <Typography sx={{ fontWeight: 800, fontSize: '0.95rem', flex: 1 }}>Topic mastery</Typography>
-          <Typography variant="caption" color="text.secondary" sx={{ fontFamily: MONO, fontWeight: 700 }}>
+          <InsightsRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'primary.main' }} />
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, flex: 1 }}>Topic mastery</Typography>
+          <Typography variant="caption" color="text.secondary" sx={{ fontFamily: MONO, fontWeight: FONT_WEIGHTS.bold }}>
             {bySubPattern.filter((x) => x.total > 0 && x.solved === x.total).length}/{bySubPattern.length}
           </Typography>
         </Stack>

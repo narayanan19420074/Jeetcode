@@ -1,6 +1,7 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import { LIB_TRACKING, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone console under the editor, in the Library look: a cream bar with the word "Console", the verdict,
 // Run / Submit and a chevron. Tap the bar to open or close the testcase / result panel.
@@ -23,7 +24,7 @@ export default function PhoneConsoleBar({ open, setOpen, showLabel = true, chip,
       }}
     >
       <Stack direction="row" onClick={() => setOpen((o) => !o)} sx={{ alignItems: 'center', gap: 1, px: 2, height: 60, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}>
-        {showLabel && <Typography sx={{ fontSize: 16, fontWeight: 500, letterSpacing: LIB_TRACKING }}>Console</Typography>}
+        {showLabel && <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>Console</Typography>}
         {chip}
         <Box sx={{ flex: 1 }} />
         <Stack direction="row" sx={{ gap: 1, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
@@ -36,7 +37,7 @@ export default function PhoneConsoleBar({ open, setOpen, showLabel = true, chip,
         <Box sx={{ pt: 0.25, flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
           {canShare && (
             <Box sx={{ px: 2, pb: 1.5 }}>
-              <Button disableElevation onClick={onShare} sx={{ ...libTintBtnSx, bgcolor: pal.bg, height: 36, px: 2, fontSize: 15 }}>
+              <Button disableElevation onClick={onShare} sx={{ ...libTintBtnSx, bgcolor: pal.bg, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
                 Share solution
               </Button>
             </Box>

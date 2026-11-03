@@ -58,7 +58,7 @@ import BrandMark, { BRAND_ORANGE, BRAND_TEXT_LIGHT } from './BrandMark';
 
 // Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
 import { LIBRARY_PALETTE, LIB_FONT, LibraryFont, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
-import { COLOR_PALETTE } from '../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../app/design/designTokens';
 
 const ACCENT = COLOR_PALETTE.indigo[500];
 // Warm Library palette for the phone menu (light and dark variants).
@@ -71,7 +71,7 @@ function LogoMark() {
   return (
     <>
       <Box sx={{ display: { xs: 'none', md: 'grid' }, width: 24, height: 24, placeItems: 'center', flexShrink: 0, color: 'primary.main' }}>
-        <CodeRoundedIcon sx={{ fontSize: 24 }} />
+        <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
       </Box>
       <BrandMark size={40} sx={{ display: { xs: 'block', md: 'none' } }} />
     </>
@@ -84,9 +84,9 @@ function LogoName() {
     <Typography
       variant="h6"
       sx={(t) => ({
-        fontWeight: 800,
+        fontWeight: FONT_WEIGHTS.bold,
         letterSpacing: '-0.02em',
-        [t.breakpoints.down('md')]: { fontSize: 20, lineHeight: '24px', fontWeight: 700, letterSpacing: 0 },
+        [t.breakpoints.down('md')]: { fontSize: FONT_SIZES.heading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0 },
       })}
     >
       Jeet
@@ -173,7 +173,7 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
       >
         <Icon />
       </Box>
-      <Typography noWrap sx={{ flex: 1, minWidth: 0, fontWeight: active ? 700 : 400, fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING, color: active ? ACCENT : 'inherit' }}>
+      <Typography noWrap sx={{ flex: 1, minWidth: 0, fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING, color: active ? ACCENT : 'inherit' }}>
         {label}
       </Typography>
     </Box>
@@ -215,8 +215,8 @@ const accountItemSx = (t) => ({
     gap: '12px',
     borderRadius: '12px',
     '& .MuiListItemIcon-root': { minWidth: 0, color: libPal(t).chipText },
-    '& .MuiSvgIcon-root': { fontSize: 24 },
-    '& .MuiListItemText-primary': { fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING },
+    '& .MuiSvgIcon-root': { fontSize: FONT_SIZES.display },
+    '& .MuiListItemText-primary': { fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING },
     '&:hover, &.Mui-focusVisible': { bgcolor: libPal(t).player },
     '&:active': { bgcolor: alpha(ACCENT, 0.12) },
   },
@@ -314,7 +314,7 @@ export default function Navbar() {
   const libraryBar = isLibraryRoute(pathname, search);
 
   const navButtonSx = (active) => (t) => ({
-    fontWeight: active ? 800 : 600,
+    fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold,
     borderRadius: 99,
     px: 2,
     color: active ? t.palette.text.primary : t.palette.text.secondary,
@@ -396,7 +396,7 @@ export default function Navbar() {
                 <ListItemIcon>
                   <Icon fontSize="small" />
                 </ListItemIcon>
-                <ListItemText primary={label} slotProps={{ primary: { fontWeight: 600, fontSize: '0.9rem' } }} />
+                <ListItemText primary={label} slotProps={{ primary: { fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body } }} />
               </MenuItem>
             ))}
           </Menu>
@@ -412,7 +412,7 @@ export default function Navbar() {
               label={`${user?.streakDays ?? 0} days`}
               size="small"
               variant="outlined"
-              sx={{ fontWeight: 700, display: { xs: 'none', sm: 'flex' } }}
+              sx={{ fontWeight: FONT_WEIGHTS.bold, display: { xs: 'none', sm: 'flex' } }}
             />
           </Tooltip>
         )}
@@ -428,7 +428,7 @@ export default function Navbar() {
               size="small"
               variant="outlined"
               aria-label={`${coins} coins, open wallet`}
-              sx={{ fontWeight: 700, display: { xs: 'none', sm: 'inline-flex' } }}
+              sx={{ fontWeight: FONT_WEIGHTS.bold, display: { xs: 'none', sm: 'inline-flex' } }}
             />
           </Tooltip>
         )}
@@ -458,11 +458,11 @@ export default function Navbar() {
             >
               <Avatar
                 src={user?.avatarUrl || undefined}
-                sx={(t) => ({ bgcolor: 'primary.main', width: 34, height: 34, fontSize: '0.85rem', fontWeight: 700, [t.breakpoints.down('md')]: { bgcolor: ACCENT, color: COLOR_PALETTE.white, width: 40, height: 40, fontSize: '1rem' } })}
+                sx={(t) => ({ bgcolor: 'primary.main', width: 34, height: 34, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, [t.breakpoints.down('md')]: { bgcolor: ACCENT, color: COLOR_PALETTE.white, width: 40, height: 40, fontSize: FONT_SIZES.title } })}
               >
                 {initialsFromName(user?.name)}
               </Avatar>
-              <Typography variant="body2" sx={{ fontWeight: 600, display: { xs: 'none', md: 'block' } }}>
+              <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold, display: { xs: 'none', md: 'block' } }}>
                 {user?.name}
               </Typography>
             </Button>
@@ -479,7 +479,7 @@ export default function Navbar() {
               >
                 <Avatar
                   src={user?.avatarUrl || undefined}
-                  sx={{ display: { xs: 'flex', md: 'none' }, bgcolor: ACCENT, color: COLOR_PALETTE.white, width: 48, height: 48, fontSize: '1rem', fontWeight: 800, flexShrink: 0 }}
+                  sx={{ display: { xs: 'flex', md: 'none' }, bgcolor: ACCENT, color: COLOR_PALETTE.white, width: 48, height: 48, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold, flexShrink: 0 }}
                 >
                   {initialsFromName(user?.name)}
                 </Avatar>
@@ -487,14 +487,14 @@ export default function Navbar() {
                   <Typography
                     variant="subtitle2"
                     noWrap
-                    sx={(t) => ({ fontWeight: 700, [t.breakpoints.down('md')]: { fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING } })}
+                    sx={(t) => ({ fontWeight: FONT_WEIGHTS.bold, [t.breakpoints.down('md')]: { fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING } })}
                   >
                     {user?.name}
                   </Typography>
                   <Typography
                     variant="caption"
                     noWrap
-                    sx={(t) => ({ display: 'block', color: 'text.secondary', [t.breakpoints.down('md')]: { fontSize: 14, lineHeight: '18px', letterSpacing: TRACKING, color: libPal(t).muted } })}
+                    sx={(t) => ({ display: 'block', color: 'text.secondary', [t.breakpoints.down('md')]: { fontSize: FONT_SIZES.body, lineHeight: '18px', letterSpacing: TRACKING, color: libPal(t).muted } })}
                   >
                     @{user?.handle}
                   </Typography>
@@ -537,7 +537,7 @@ export default function Navbar() {
             </Menu>
           </>
         ) : (
-          <Button component={RouterLink} to="/login" variant="contained" disableElevation sx={{ fontWeight: 700 }}>
+          <Button component={RouterLink} to="/login" variant="contained" disableElevation sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Sign in
           </Button>
         )}
@@ -597,16 +597,16 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 sx={{ p: 1.5, display: 'flex', alignItems: 'center', gap: 1.5, textDecoration: 'none', color: 'inherit' }}
               >
-                <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: ACCENT, width: 48, height: 48, fontSize: '1rem', fontWeight: 800, flexShrink: 0 }}>
+                <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: ACCENT, width: 48, height: 48, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold, flexShrink: 0 }}>
                   {initialsFromName(user?.name)}
                 </Avatar>
                 <Box sx={{ minWidth: 0, flex: 1 }}>
-                  <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING }}>
+                  <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING }}>
                     {user?.name}
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.25 }}>
-                    <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
-                    <Typography sx={{ fontSize: 14, letterSpacing: TRACKING, color: (t) => libPal(t).muted }}>
+                    <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />
+                    <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: TRACKING, color: (t) => libPal(t).muted }}>
                       {user?.streakDays ?? 0}-day streak
                     </Typography>
                     {user?.isPro && <ProBadge />}
@@ -630,11 +630,11 @@ export default function Navbar() {
                   '&:active': { bgcolor: alpha(ACCENT, 0.12) },
                 })}
               >
-                <MonetizationOnRoundedIcon sx={{ fontSize: 24, color: 'warning.main' }} />
-                <Typography sx={{ fontWeight: 500, fontSize: 16, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums', flex: 1 }}>
+                <MonetizationOnRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'warning.main' }} />
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums', flex: 1 }}>
                   {coins.toLocaleString('en-IN')} coins
                 </Typography>
-                <Typography sx={{ fontWeight: 500, fontSize: 14, letterSpacing: TRACKING, color: ACCENT }}>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: TRACKING, color: ACCENT }}>
                   Wallet
                 </Typography>
               </Box>
@@ -690,10 +690,10 @@ export default function Navbar() {
             </Box>
           ) : (
             <>
-              <Button component={RouterLink} to="/login" onClick={() => setMobileOpen(false)} variant="contained" disableElevation fullWidth sx={{ fontWeight: 700, height: 48, borderRadius: 99 }}>
+              <Button component={RouterLink} to="/login" onClick={() => setMobileOpen(false)} variant="contained" disableElevation fullWidth sx={{ fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: 99 }}>
                 Sign in
               </Button>
-              <Button component={RouterLink} to="/signup" onClick={() => setMobileOpen(false)} variant="outlined" color="inherit" fullWidth sx={{ fontWeight: 700, height: 48, borderRadius: 99 }}>
+              <Button component={RouterLink} to="/signup" onClick={() => setMobileOpen(false)} variant="outlined" color="inherit" fullWidth sx={{ fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: 99 }}>
                 Create account
               </Button>
             </>

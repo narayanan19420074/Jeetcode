@@ -7,6 +7,7 @@ import { EditorStatus } from './ConsolePanel';
 import { MaxButton, WsButton } from './wsUi';
 import { WS } from './wsTokens';
 import { wsSurface } from './workspaceTheme';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // The collapsible console under the editor: header bar (title, verdict chip,
 // share, cursor status, maximize) and, when open, the page's console body.
@@ -57,8 +58,8 @@ export default function ConsoleBar({
         onClick={() => (maximized === 'console' ? setMaximized(null) : setOpen((o) => !o))}
         sx={{ alignItems: 'center', gap: 1, px: 1.5, height: { xs: 52, md: WS.barSm }, flexShrink: 0, cursor: 'pointer', userSelect: 'none' }}
       >
-        <TerminalRoundedIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
-        {showLabel && <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Console</Typography>}
+        <TerminalRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'text.secondary' }} />
+        {showLabel && <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body }}>Console</Typography>}
         {chip}
         {!isMobile && canShare && (
           <WsButton

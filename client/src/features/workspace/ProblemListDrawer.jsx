@@ -12,6 +12,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { difficultyColor } from '../../app/theme';
 import { WsButton, WsIconButton } from './wsUi';
 import { wsSurface } from './workspaceTheme';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const PAGE_SIZE = 30;
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
@@ -118,7 +119,7 @@ export default function ProblemListDrawer({ open, onClose, currentSlug, onSelect
       }}
     >
       <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, pl: 2, pr: 1, pb: 0.75, pt: 'calc(8px + env(safe-area-inset-top))', flexShrink: 0 }}>
-        <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', flex: 1 }}>Problems</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, flex: 1 }}>Problems</Typography>
         {total > 0 && (
           <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
             {total}
@@ -164,7 +165,7 @@ export default function ProblemListDrawer({ open, onClose, currentSlug, onSelect
                 onClick={() => pickDifficulty(d)}
                 variant="outlined"
                 sx={{
-                  fontWeight: 700,
+                  fontWeight: FONT_WEIGHTS.bold,
                   color,
                   borderColor: on ? color : 'divider',
                   bgcolor: on ? `color-mix(in srgb, ${color} 14%, transparent)` : 'transparent',
@@ -229,15 +230,15 @@ export default function ProblemListDrawer({ open, onClose, currentSlug, onSelect
               })}
             >
               {p.solvedByMe ? (
-                <CheckCircleRoundedIcon sx={{ fontSize: 20, color: 'success.main', flexShrink: 0 }} />
+                <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'success.main', flexShrink: 0 }} />
               ) : (
-                <RadioButtonUncheckedRoundedIcon sx={{ fontSize: 20, color: 'action.disabled', flexShrink: 0 }} />
+                <RadioButtonUncheckedRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'action.disabled', flexShrink: 0 }} />
               )}
               <Box sx={{ flex: 1, minWidth: 0 }}>
                 <Typography
                   sx={{
-                    fontWeight: current ? 700 : 500,
-                    fontSize: '0.92rem',
+                    fontWeight: current ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
+                    fontSize: FONT_SIZES.bodyLg,
                     lineHeight: 1.35,
                     display: '-webkit-box',
                     WebkitLineClamp: 2,
@@ -250,8 +251,8 @@ export default function ProblemListDrawer({ open, onClose, currentSlug, onSelect
                   {i + 1}. {p.title}
                 </Typography>
                 <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mt: 0.25 }}>
-                  <Typography sx={{ fontWeight: 700, fontSize: '0.75rem', color: difficultyColor(p.difficulty) }}>{p.difficulty}</Typography>
-                  {p.locked && <LockRoundedIcon sx={{ fontSize: 13, color: 'text.disabled' }} />}
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, color: difficultyColor(p.difficulty) }}>{p.difficulty}</Typography>
+                  {p.locked && <LockRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: 'text.disabled' }} />}
                 </Stack>
               </Box>
             </ButtonBase>

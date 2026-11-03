@@ -2,6 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Container, Link, Stack, Typography } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import { LAST_UPDATED, LEGAL_LINKS, SITE_NAME } from './legalConfig';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Public, standalone shell for legal pages (works logged-in or logged-out).
 // `sections` = [{ title, body: [string | { list: string[] }] }]
@@ -17,13 +18,13 @@ export default function LegalLayout({ title, intro, sections }) {
             sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', color: 'inherit' }}
           >
             <CodeRoundedIcon sx={{ color: 'primary.main' }} />
-            <Typography sx={{ fontWeight: 800 }}>{SITE_NAME}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{SITE_NAME}</Typography>
           </Box>
         </Container>
       </Box>
 
       <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 } }}>
-        <Typography component="h1" sx={{ fontSize: { xs: '1.7rem', md: '2.1rem' }, fontWeight: 800, mb: 0.5 }}>
+        <Typography component="h1" sx={{ fontSize: { xs: FONT_SIZES.displayLg, md: FONT_SIZES.hero }, fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
           {title}
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -35,7 +36,7 @@ export default function LegalLayout({ title, intro, sections }) {
 
         {sections.map((s, i) => (
           <Box key={s.title} component="section" sx={{ mb: 3.5 }}>
-            <Typography component="h2" sx={{ fontSize: '1.15rem', fontWeight: 700, mb: 1 }}>
+            <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
               {i + 1}. {s.title}
             </Typography>
             {s.body.map((b, j) =>

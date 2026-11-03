@@ -1,6 +1,7 @@
 import { Box, Paper, Typography, List, ListItemButton, Stack, alpha } from '@mui/material';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CircleIcon from '@mui/icons-material/Circle';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // Left navigation rail for LearnTopicPage.
 // Per-subsection status: check icon (done), filled blue dot (current),
@@ -25,13 +26,13 @@ export default function LearnSidebar({ sections, activeId, completedIds, onSelec
             variant="overline"
             sx={{
               display: 'block',
-              fontWeight: 700,
+              fontWeight: FONT_WEIGHTS.bold,
               px: 2,
               pt: secIdx === 0 ? 2 : 2.5,
               pb: 0.5,
               color: 'text.secondary',
               letterSpacing: '0.08em',
-              fontSize: 10.5,
+              fontSize: FONT_SIZES.micro,
               lineHeight: 1.2,
             }}
           >
@@ -59,7 +60,7 @@ export default function LearnSidebar({ sections, activeId, completedIds, onSelec
                 >
                   <Stack direction="row" spacing={1.25} alignItems="center" sx={{ minWidth: 0, width: '100%' }}>
                     {isDone ? (
-                      <CheckRoundedIcon sx={{ fontSize: 15, color: 'success.main', flexShrink: 0 }} />
+                      <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'success.main', flexShrink: 0 }} />
                     ) : (
                       <CircleIcon
                         sx={{
@@ -74,8 +75,8 @@ export default function LearnSidebar({ sections, activeId, completedIds, onSelec
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: 13,
-                        fontWeight: isActive ? 700 : 500,
+                        fontSize: FONT_SIZES.body,
+                        fontWeight: isActive ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
                         color: isActive ? 'text.primary' : 'text.secondary',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',

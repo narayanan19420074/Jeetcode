@@ -9,6 +9,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { Bar, Eyebrow, FFButton, FFDialog, Notice, Tag } from '../quests/QuestParts';
 import { FF } from '../quests/questUtils';
 import { Coins, ItemArt } from './storeUtils';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const KIND_LABEL = { practice: 'Practice', read: 'Read', visual: 'Visual' };
 
@@ -61,7 +62,7 @@ export default function CoursePanel({ slug, signedIn, onClose, onBuy, onProgress
               <Typography sx={{ color: FF.muted, lineHeight: 1.6 }}>{course.desc}</Typography>
               {owned ? (
                 <Box sx={{ mt: 2.5 }}>
-                  <Typography sx={{ mb: 0.75, fontSize: 14, fontWeight: 800, color: FF.text }}>{progress.doneCount}/{progress.lessonCount} done · {progress.percent}%</Typography>
+                  <Typography sx={{ mb: 0.75, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{progress.doneCount}/{progress.lessonCount} done · {progress.percent}%</Typography>
                   <Bar pct={progress.percent} height={9} color={progress.percent === 100 ? FF.green : FF.orange} />
                   {progress.percent === 100 && <Notice tone="success" sx={{ mt: 2 }}>Course complete. Nice work!</Notice>}
                 </Box>
@@ -79,7 +80,7 @@ export default function CoursePanel({ slug, signedIn, onClose, onBuy, onProgress
               <Box key={m.id} sx={{ border: `1px solid ${FF.line}` }}>
                 <Box sx={{ px: 2.5, py: 1.75, bgcolor: FF.panelHi }}>
                   <Eyebrow sx={{ color: FF.orangeInk }}>Module {mi + 1}</Eyebrow>
-                  <Typography sx={{ fontWeight: 800, color: FF.text }}>{m.title}</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{m.title}</Typography>
                 </Box>
                 {m.lessons.map((l) => {
                   const done = owned && doneSet.has(l.key);
@@ -87,13 +88,13 @@ export default function CoursePanel({ slug, signedIn, onClose, onBuy, onProgress
                     <Box key={l.key} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: 1.5, py: 1, borderTop: `1px solid ${FF.line}` }}>
                       {owned ? (
                         <Checkbox checked={doneSet.has(l.key)} onChange={(e) => toggle(l.key, e.target.checked)} inputProps={{ 'aria-label': `Mark ${l.title} done` }} sx={{ color: FF.muted, '&.Mui-checked': { color: FF.green } }} />
-                      ) : <LockRoundedIcon sx={{ mx: 1.5, fontSize: 20, color: FF.muted }} />}
+                      ) : <LockRoundedIcon sx={{ mx: 1.5, fontSize: FONT_SIZES.heading, color: FF.muted }} />}
                       <Box sx={{ flex: 1, minWidth: 0 }}>
-                        <Typography sx={{ fontWeight: 700, textDecoration: done ? 'line-through' : 'none', color: done ? FF.muted : FF.text }}>{l.title}</Typography>
-                        <Typography sx={{ fontSize: 12.5, color: FF.muted }}>{KIND_LABEL[l.kind] || 'Lesson'} · {l.minutes} min</Typography>
+                        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, textDecoration: done ? 'line-through' : 'none', color: done ? FF.muted : FF.text }}>{l.title}</Typography>
+                        <Typography sx={{ fontSize: FONT_SIZES.caption, color: FF.muted }}>{KIND_LABEL[l.kind] || 'Lesson'} · {l.minutes} min</Typography>
                       </Box>
                       {owned && l.href && (
-                        <FFButton component={RouterLink} to={l.href} tone="dark" sx={{ minHeight: 36, px: 2 }}>Open <OpenInNewRoundedIcon sx={{ fontSize: 16 }} /></FFButton>
+                        <FFButton component={RouterLink} to={l.href} tone="dark" sx={{ minHeight: 36, px: 2 }}>Open <OpenInNewRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /></FFButton>
                       )}
                     </Box>
                   );

@@ -8,7 +8,7 @@ import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { userUpdated } from '../../auth/authSlice';
 import { Card, CardBody, PageTitle, describeError, initialsFromName } from '../components/SettingsUi';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 const SOCIALS = [
   { key: 'github', label: 'GitHub', prefix: 'github.com/' },
@@ -154,11 +154,11 @@ export default function ProfileSection() {
 
         {/* Avatar */}
         <Box sx={{ order: { xs: 1, sm: 2 } }}>
-          <Typography variant="body2" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
             Profile picture
           </Typography>
           <Stack direction={{ xs: 'row', sm: 'column' }} sx={{ alignItems: { xs: 'center', sm: 'stretch' }, gap: 1.5 }}>
-            <Avatar src={form.avatarUrl || undefined} alt="Profile picture preview" sx={{ width: { xs: 88, sm: 168 }, height: { xs: 88, sm: 168 }, fontSize: { xs: 30, sm: 56 }, fontWeight: 700, bgcolor: 'primary.main', color: 'primary.contrastText', border: '1px solid', borderColor: 'divider' }}>
+            <Avatar src={form.avatarUrl || undefined} alt="Profile picture preview" sx={{ width: { xs: 88, sm: 168 }, height: { xs: 88, sm: 168 }, fontSize: { xs: FONT_SIZES.hero, sm: FONT_SIZES.jumboLg }, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'primary.main', color: 'primary.contrastText', border: '1px solid', borderColor: 'divider' }}>
               {initialsFromName(form.name)}
             </Avatar>
             <Stack spacing={1} sx={{ flex: 1 }}>
@@ -209,7 +209,7 @@ export default function ProfileSection() {
       </Card>
 
       <Stack direction="row" sx={{ alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
-        <Button type="submit" variant="contained" disableElevation disabled={!dirty || saving || form.name.trim().length < 2} sx={{ fontWeight: 700, px: 3 }}>
+        <Button type="submit" variant="contained" disableElevation disabled={!dirty || saving || form.name.trim().length < 2} sx={{ fontWeight: FONT_WEIGHTS.bold, px: 3 }}>
           {saving ? <CircularProgress size={22} color="inherit" /> : 'Update profile'}
         </Button>
         {dirty && !saving && (
@@ -218,7 +218,7 @@ export default function ProfileSection() {
           </Button>
         )}
         <Typography variant="body2" color="text.secondary" sx={{ ml: { sm: 'auto' } }}>
-          Want a different username? <RouterLink to="/settings/account" style={{ color: 'inherit', fontWeight: 600 }}>Change it in Account</RouterLink>
+          Want a different username? <RouterLink to="/settings/account" style={{ color: 'inherit', fontWeight: FONT_WEIGHTS.semibold }}>Change it in Account</RouterLink>
         </Typography>
       </Stack>
     </Box>

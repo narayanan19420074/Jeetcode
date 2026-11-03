@@ -1,4 +1,4 @@
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS } from '../../app/design/designTokens';
 // Workspace design tokens. One set of sizes, so every bar, button and tab in
 // the workspace lines up (this is the "design system" for the page).
 //
@@ -11,7 +11,7 @@ import { COLOR_PALETTE } from '../../app/design/designTokens';
 // Everything else is separated by tone (chrome / canvas / panel / raised).
 export const WS = { bar: 44, ctrl: 32, ctrlLg: 40, radius: 8, barSm: 36 };
 
-export const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+export const mono = { fontFamily: FONTS.mono };
 
 // Phone accent: the same indigo the phone Dashboard and Problems pages use for tinted buttons and chips.
 export const PHONE_ACCENT = COLOR_PALETTE.indigo[500];

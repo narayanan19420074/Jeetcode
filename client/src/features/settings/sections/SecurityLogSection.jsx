@@ -8,6 +8,7 @@ import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import { usersApi } from '../../../api/usersApi';
 import { Card, PageTitle, describeError, formatDateTime, relativeTime } from '../components/SettingsUi';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const EVENTS = {
   login: { label: 'Signed in', icon: LoginRoundedIcon },
@@ -63,10 +64,10 @@ export default function SecurityLogSection() {
                 <Icon fontSize="small" />
               </Box>
               <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Typography variant="body2" sx={{ fontWeight: 700 }}>
+                <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                   {def.label}
                   {e.detail && (
-                    <Typography component="span" variant="body2" color="text.secondary" sx={{ fontWeight: 400 }}>
+                    <Typography component="span" variant="body2" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.regular }}>
                       {' '}
                       · {e.detail}
                     </Typography>

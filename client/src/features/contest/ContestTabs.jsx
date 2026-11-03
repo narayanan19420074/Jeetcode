@@ -16,10 +16,10 @@ import EventBusyRoundedIcon from '@mui/icons-material/EventBusyRounded';
 import { surface } from '../dashboard/dashboardUtils';
 import { LIB_ACCENT } from '../dashboard/components/libraryStyle';
 import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const AMBER = COLOR_PALETTE.amber[400];
-const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
+const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 const pad = (n) => String(n).padStart(2, '0');
 // Same colour-story family as the study plan cards.
 const EMBER = `linear-gradient(135deg,${COLOR_PALETTE.orange[900]} 0%,${COLOR_PALETTE.orange[700]} 100%)`;
@@ -27,8 +27,8 @@ const SLATE = `linear-gradient(135deg,${COLOR_PALETTE.custom.gray292524} 0%,${CO
 
 function Chip({ icon: Icon, children }) {
   return (
-    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1.1, py: 0.4, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14), fontSize: 12.5, fontWeight: 700 }}>
-      <Icon sx={{ fontSize: 15 }} />{children}
+    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1.1, py: 0.4, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14), fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
+      <Icon sx={{ fontSize: FONT_SIZES.bodyLg }} />{children}
     </Box>
   );
 }
@@ -49,26 +49,26 @@ export function ContestTile({ contest, past, onOpen, ctaLabel }) {
         {/* title + date tile */}
         <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 1.5 }}>
           <Box sx={{ minWidth: 0 }}>
-            <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.2, overflowWrap: 'anywhere' }}>{contest.title}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.2, overflowWrap: 'anywhere' }}>{contest.title}</Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.6, color: withAlpha(COLOR_PALETTE.white, 0.88) }}>
-              <CalendarMonthRoundedIcon sx={{ fontSize: 16 }} />
-              <Typography sx={{ fontSize: '0.8rem', fontWeight: 600 }}>{fmtStart(contest.startsAt)}</Typography>
+              <CalendarMonthRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />
+              <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold }}>{fmtStart(contest.startsAt)}</Typography>
             </Box>
           </Box>
           <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: live ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: live ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
-            <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: live ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
-            {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: tile.big.length > 3 ? FONT_SIZES.heading : FONT_SIZES.hero, lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: live ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
+            {tile.label && <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
           </Box>
         </Box>
 
         {/* prize bubble */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 1.75 }}>
           <Box sx={{ width: 56, height: 56, flexShrink: 0, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: withAlpha(COLOR_PALETTE.white, 0.16), boxShadow: `0 0 0 3px ${withAlpha(COLOR_PALETTE.amber[400], 0.55)}` }}>
-            <EmojiEventsRoundedIcon sx={{ fontSize: 30, color: COLOR_PALETTE.amber[200] }} />
+            <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.hero, color: COLOR_PALETTE.amber[200] }} />
           </Box>
           <Box sx={{ minWidth: 0, flex: 1, px: 1.5, py: 1.1, borderRadius: '16px 16px 16px 4px', bgcolor: withAlpha(COLOR_PALETTE.white, 0.14) }}>
-            <Typography sx={[{ fontWeight: 900, fontSize: '1.35rem', lineHeight: 1.1, color: COLOR_PALETTE.amber[200] }, mono]}>{inr(contest.prizePool)}</Typography>
-            <Typography sx={{ fontSize: '0.8rem', fontWeight: 600, mt: 0.3, opacity: 0.92 }}>{contest.tagline}</Typography>
+            <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.1, color: COLOR_PALETTE.amber[200] }, mono]}>{inr(contest.prizePool)}</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold, mt: 0.3, opacity: 0.92 }}>{contest.tagline}</Typography>
           </Box>
         </Box>
 
@@ -84,8 +84,8 @@ export function ContestTile({ contest, past, onOpen, ctaLabel }) {
           <Box role="timer" aria-label={`Starts in ${d} days ${h} hours ${m} minutes`} sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 0.75, mt: 1.5 }}>
             {[[d, 'days'], [h, 'hrs'], [m, 'min'], [s, 'sec']].map(([v, label]) => (
               <Box key={label} sx={{ py: 0.7, borderRadius: '12px', textAlign: 'center', bgcolor: withAlpha(COLOR_PALETTE.black, 0.24) }}>
-                <Typography sx={[{ fontWeight: 900, fontSize: 20, lineHeight: 1.1 }, mono]}>{pad(v)}</Typography>
-                <Typography sx={{ fontSize: 10, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase', opacity: 0.8 }}>{label}</Typography>
+                <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.1 }, mono]}>{pad(v)}</Typography>
+                <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.6, textTransform: 'uppercase', opacity: 0.8 }}>{label}</Typography>
               </Box>
             ))}
           </Box>
@@ -94,7 +94,7 @@ export function ContestTile({ contest, past, onOpen, ctaLabel }) {
         <Button
           onClick={onOpen} disableElevation fullWidth
           startIcon={contest.applied && !past ? <CheckCircleRoundedIcon /> : <BoltRoundedIcon />} endIcon={<ArrowForwardRoundedIcon />}
-          sx={{ mt: 1.75, height: 44, borderRadius: '14px', bgcolor: AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, fontSize: '0.92rem', '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+          sx={{ mt: 1.75, height: 44, borderRadius: '14px', bgcolor: AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
         >
           {cta}
         </Button>
@@ -110,7 +110,7 @@ const istPart = (iso, opt) => new Date(iso).toLocaleDateString('en-IN', { timeZo
 function StatusPill({ status }) {
   const [label, c] = STATUS[status] || STATUS.ended;
   return (
-    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.6, px: 1, py: 0.25, borderRadius: 99, fontSize: 11, fontWeight: 800, letterSpacing: 0.4, color: c, bgcolor: `color-mix(in srgb, ${c} 14%, transparent)`, border: `1px solid color-mix(in srgb, ${c} 35%, transparent)` }}>
+    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.6, px: 1, py: 0.25, borderRadius: 99, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4, color: c, bgcolor: `color-mix(in srgb, ${c} 14%, transparent)`, border: `1px solid color-mix(in srgb, ${c} 35%, transparent)` }}>
       <Box component="span" sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: c, ...(status === 'live' && { animation: `${pulse} 1.4s ease-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }) }} />
       {label}
     </Box>
@@ -134,18 +134,18 @@ export function ContestMini({ contest, past, selected, onOpen }) {
         })}
       >
         <Box sx={{ width: 52, height: 56, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', alignContent: 'center', color: COLOR_PALETTE.white, background: past ? SLATE : EMBER, boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` }}>
-          <Typography sx={[{ fontWeight: 900, fontSize: 21, lineHeight: 1 }, mono]}>{istPart(contest.startsAt, { day: '2-digit' })}</Typography>
-          <Typography sx={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 0.8, textTransform: 'uppercase', opacity: 0.85, mt: 0.2 }}>{istPart(contest.startsAt, { month: 'short' })}</Typography>
+          <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1 }, mono]}>{istPart(contest.startsAt, { day: '2-digit' })}</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.8, textTransform: 'uppercase', opacity: 0.85, mt: 0.2 }}>{istPart(contest.startsAt, { month: 'short' })}</Typography>
         </Box>
 
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 800, fontSize: 14.5, lineHeight: 1.25 }}>{contest.title}</Typography>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.25 }}>{contest.title}</Typography>
           <Typography noWrap variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.2 }}>
             {contest.problemCount} {contest.difficulty} · {fmtDuration(contest.durationMinutes)} · {inr(contest.prizePool)}
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.6 }}>
             <StatusPill status={status} />
-            <Typography variant="caption" sx={[{ fontWeight: 700, color: status === 'ended' ? 'primary.main' : 'text.secondary' }, status === 'upcoming' && mono]}>{left}</Typography>
+            <Typography variant="caption" sx={[{ fontWeight: FONT_WEIGHTS.bold, color: status === 'ended' ? 'primary.main' : 'text.secondary' }, status === 'upcoming' && mono]}>{left}</Typography>
           </Box>
         </Box>
 
@@ -164,8 +164,8 @@ export function LiveNow({ contest, onOpen }) {
     return (
       <Box sx={[surface, { p: { xs: 1.25, sm: 1.5 } }]}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 0.5, mb: 1 }}>
-          <BoltRoundedIcon sx={{ fontSize: 19, color: COLOR_PALETTE.green[500] }} />
-          <Typography sx={{ fontWeight: 800, fontSize: 14.5 }}>Happening now</Typography>
+          <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.green[500] }} />
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg }}>Happening now</Typography>
         </Box>
         <ContestMini contest={contest} onOpen={() => onOpen(contest)} />
       </Box>
@@ -174,10 +174,10 @@ export function LiveNow({ contest, onOpen }) {
   return (
     <Box sx={[surface, { px: 1.75, py: 1.25, display: 'flex', alignItems: 'center', gap: 1.5 }]}>
       <Box sx={(t) => ({ width: 38, height: 38, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', color: 'text.secondary', bgcolor: t.palette.action.hover })}>
-        <EventBusyRoundedIcon sx={{ fontSize: 21 }} />
+        <EventBusyRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
       </Box>
       <Box sx={{ minWidth: 0 }}>
-        <Typography sx={{ fontWeight: 800, fontSize: 14.5, lineHeight: 1.25 }}>No contest right now</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.25 }}>No contest right now</Typography>
         {next && <Typography noWrap variant="caption" color="text.secondary">Next: {contest.title} on {fmtDate(contest.startsAt)}</Typography>}
       </Box>
     </Box>
@@ -188,9 +188,9 @@ function EmptyPast() {
   return (
     <Box sx={(t) => ({ textAlign: 'center', px: 2.5, py: 4, borderRadius: '16px', border: `1.5px dashed ${t.palette.divider}` })}>
       <Box sx={{ width: 52, height: 52, mx: 'auto', mb: 1.25, borderRadius: '16px', display: 'grid', placeItems: 'center', background: SLATE, color: COLOR_PALETTE.amber[200], boxShadow: `0 10px 22px -12px ${withAlpha(COLOR_PALETTE.slate[950], 0.8)}` }}>
-        <HistoryRoundedIcon sx={{ fontSize: 28 }} />
+        <HistoryRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg }} />
       </Box>
-      <Typography sx={{ fontWeight: 800 }}>No past contests yet</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No past contests yet</Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>Finished contests and their winners will show up here.</Typography>
     </Box>
   );
@@ -214,12 +214,12 @@ export default function ContestTabs({ contest, onOpen, onOpenPast, pastSelected 
           return (
             <ButtonBase
               key={key} role="tab" aria-selected={on} onClick={() => setTab(key)}
-              sx={{ position: 'relative', height: 40, borderRadius: '11px', fontFamily: 'inherit', fontWeight: 800, fontSize: 14, gap: 0.75, color: on ? COLOR_PALETTE.white : 'text.secondary', transition: 'color .2s' }}
+              sx={{ position: 'relative', height: 40, borderRadius: '11px', fontFamily: 'inherit', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, gap: 0.75, color: on ? COLOR_PALETTE.white : 'text.secondary', transition: 'color .2s' }}
             >
               {on && <motion.span layoutId="contest-tab-pill" transition={{ type: 'spring', stiffness: 400, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: 11, background: LIB_ACCENT, boxShadow: `0 6px 16px -8px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}` }} />}
               <Box component="span" sx={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 0.75 }}>
                 {label}
-                <Box component="span" sx={{ minWidth: 20, px: 0.6, borderRadius: 99, fontSize: 11.5, lineHeight: '20px', textAlign: 'center', bgcolor: on ? withAlpha(COLOR_PALETTE.white, 0.25) : 'action.selected' }}>{lists[key].length}</Box>
+                <Box component="span" sx={{ minWidth: 20, px: 0.6, borderRadius: 99, fontSize: FONT_SIZES.caption, lineHeight: '20px', textAlign: 'center', bgcolor: on ? withAlpha(COLOR_PALETTE.white, 0.25) : 'action.selected' }}>{lists[key].length}</Box>
               </Box>
             </ButtonBase>
           );
@@ -236,7 +236,7 @@ export default function ContestTabs({ contest, onOpen, onOpenPast, pastSelected 
         ))}
         {ready && lists[tab].length === 0 && (tab === 'past' ? <EmptyPast /> : (
           <Box sx={(t) => ({ textAlign: 'center', px: 2.5, py: 4, borderRadius: '16px', border: `1.5px dashed ${t.palette.divider}` })}>
-            <Typography sx={{ fontWeight: 800 }}>No upcoming contests</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No upcoming contests</Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>The next one will be announced here.</Typography>
           </Box>
         ))}

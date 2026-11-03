@@ -9,6 +9,7 @@ import { friendsApi } from '../../api/friendsApi';
 import { bumpUnread, clearUnread, fetchChatOverview, fetchFriends, setLast, setOnlineList, setPresence, setUnread } from './friendsSlice';
 import { addNotification } from '../notifications/notificationsSlice';
 import { PersonAvatar } from './friendsUi';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // One app-wide socket for the logged-in user: live online dots, new-message badges, toasts.
 // (Pair-coding rooms use their own separate socket in features/room/useRoom.js.)
@@ -101,7 +102,7 @@ export default function FriendsRealtime() {
           <Button
             color="inherit"
             size="small"
-            sx={{ fontWeight: 700 }}
+            sx={{ fontWeight: FONT_WEIGHTS.bold }}
             onClick={() => {
               closeSnackbar(key);
               if (m.kind === 'room' && m.roomId) navigate(`/room/${m.roomId}`);
@@ -137,7 +138,7 @@ export default function FriendsRealtime() {
 
   return (
     <Dialog open={Boolean(invite)} onClose={closeInvite} maxWidth="xs" fullWidth>
-      <DialogTitle sx={{ fontWeight: 800 }}>Code together?</DialogTitle>
+      <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Code together?</DialogTitle>
       <DialogContent>
         <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
           {inviter && <PersonAvatar person={inviter} size={44} online />}
@@ -150,7 +151,7 @@ export default function FriendsRealtime() {
         <Button color="inherit" onClick={closeInvite} sx={{ textTransform: 'none' }}>
           Decline
         </Button>
-        <Button variant="contained" disableElevation onClick={acceptInvite} sx={{ textTransform: 'none', fontWeight: 700 }}>
+        <Button variant="contained" disableElevation onClick={acceptInvite} sx={{ textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
           Accept
         </Button>
       </DialogActions>

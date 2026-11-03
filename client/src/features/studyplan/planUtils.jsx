@@ -4,7 +4,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { DIFF_COLOR } from '../dashboard/dashboardUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -77,7 +77,7 @@ export function StatusPill({ status, small }) {
       component="span"
       sx={(t) => ({
         display: 'inline-flex', alignItems: 'center', gap: 0.6, px: small ? 0.9 : 1.2, py: small ? 0.1 : 0.3, borderRadius: 999,
-        fontSize: small ? 11 : 12, fontWeight: 700, lineHeight: 1.6, whiteSpace: 'nowrap',
+        fontSize: small ? FONT_SIZES.micro : FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.6, whiteSpace: 'nowrap',
         color: t.palette[m.tone].main, bgcolor: alpha(t.palette[m.tone].main, 0.12),
       })}
     >
@@ -90,7 +90,7 @@ export function StatusPill({ status, small }) {
 export function DiffTag({ difficulty }) {
   const c = DIFF_COLOR[difficulty] || 'var(--jc-pending)';
   return (
-    <Typography component="span" sx={{ fontSize: 12, fontWeight: 700, color: c, bgcolor: `color-mix(in srgb, ${c} 12%, transparent)`, px: 1, py: 0.1, borderRadius: 999, whiteSpace: 'nowrap' }}>
+    <Typography component="span" sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: c, bgcolor: `color-mix(in srgb, ${c} 12%, transparent)`, px: 1, py: 0.1, borderRadius: 999, whiteSpace: 'nowrap' }}>
       {difficulty}
     </Typography>
   );
@@ -109,7 +109,7 @@ export function AvatarStack({ users, max = 4, size = 22 }) {
   return (
     <AvatarGroup
       max={max}
-      sx={{ '& .MuiAvatar-root': { width: size, height: size, fontSize: size * 0.5, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}
+      sx={{ '& .MuiAvatar-root': { width: size, height: size, fontSize: size * 0.5, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: 'background.paper' } }}
     >
       {users.map((u) => (
         <Avatar key={u.userId} src={u.avatarUrl || undefined} alt={u.name}>{u.name?.[0]?.toUpperCase()}</Avatar>
@@ -222,7 +222,7 @@ export function ProgressRing({ value, size = 56, tone = 'primary', onDark = fals
     <Box sx={{ position: 'relative', width: size, height: size, flexShrink: 0 }} role="img" aria-label={`${value}% done`}>
       <CircularProgress variant="determinate" value={100} size={size} thickness={4.5} sx={(t) => ({ color: onDark ? withAlpha(COLOR_PALETTE.white, 0.22) : alpha(t.palette.text.primary, 0.1), position: 'absolute', inset: 0 })} />
       <CircularProgress variant="determinate" value={value} size={size} thickness={4.5} color={onDark ? 'inherit' : tone} sx={{ position: 'absolute', inset: 0, color: onDark ? PLAN_AMBER : undefined, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }} />
-      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: size * 0.26, fontVariantNumeric: 'tabular-nums', color: onDark ? COLOR_PALETTE.white : undefined }}>{value}%</Typography>
+      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: size * 0.26, fontVariantNumeric: 'tabular-nums', color: onDark ? COLOR_PALETTE.white : undefined }}>{value}%</Typography>
     </Box>
   );
 }
@@ -240,22 +240,22 @@ export function PlanTaskRow({ item, doers = [] }) {
     >
       {item.done ? (
         <Box sx={(t) => ({ width: 26, height: 26, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: t.palette.success.main, color: t.palette.success.contrastText })}>
-          <CheckRoundedIcon sx={{ fontSize: 18 }} />
+          <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
         </Box>
       ) : item.overdue ? (
-        <ErrorOutlineRoundedIcon sx={{ fontSize: 26, color: 'error.main', flexShrink: 0 }} />
+        <ErrorOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg, color: 'error.main', flexShrink: 0 }} />
       ) : (
         <Box sx={(t) => ({ width: 26, height: 26, borderRadius: '50%', flexShrink: 0, border: `2px solid ${t.palette.text.disabled}` })} />
       )}
 
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.3, color: item.done ? 'text.secondary' : 'text.primary', overflowWrap: 'anywhere' }}>{item.title}</Typography>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.3, color: item.done ? 'text.secondary' : 'text.primary', overflowWrap: 'anywhere' }}>{item.title}</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.4, flexWrap: 'wrap' }}>
           <DiffTag difficulty={item.difficulty} />
           <Typography variant="caption" color="text.secondary">{item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
-          {item.overdue && <Typography variant="caption" sx={{ color: 'error.main', fontWeight: 700 }}>Overdue</Typography>}
+          {item.overdue && <Typography variant="caption" sx={{ color: 'error.main', fontWeight: FONT_WEIGHTS.bold }}>Overdue</Typography>}
           {doers.length > 0 && (
-            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 18, height: 18, fontSize: 9, fontWeight: 700, border: '2px solid', borderColor: 'background.paper' } }}>
+            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 18, height: 18, fontSize: 9, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: 'background.paper' } }}>
               {doers.map((m) => <Avatar key={m.userId} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
             </AvatarGroup>
           )}
@@ -263,9 +263,9 @@ export function PlanTaskRow({ item, doers = [] }) {
       </Box>
 
       {item.done ? (
-        <Typography variant="caption" sx={(t) => ({ color: 'success.main', fontWeight: 800, px: 1, py: 0.3, borderRadius: 999, bgcolor: alpha(t.palette.success.main, 0.14), flexShrink: 0 })}>Solved</Typography>
+        <Typography variant="caption" sx={(t) => ({ color: 'success.main', fontWeight: FONT_WEIGHTS.bold, px: 1, py: 0.3, borderRadius: 999, bgcolor: alpha(t.palette.success.main, 0.14), flexShrink: 0 })}>Solved</Typography>
       ) : link ? (
-        <Button component={RouterLink} to={link} size="small" variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} sx={{ flexShrink: 0, fontWeight: 700, borderRadius: '10px', whiteSpace: 'nowrap' }}>
+        <Button component={RouterLink} to={link} size="small" variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} sx={{ flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, borderRadius: '10px', whiteSpace: 'nowrap' }}>
           Solve now
         </Button>
       ) : null}

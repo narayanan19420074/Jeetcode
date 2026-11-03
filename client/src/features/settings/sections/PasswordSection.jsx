@@ -5,6 +5,7 @@ import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { Card, CardBody, PageTitle, describeError } from '../components/SettingsUi';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 function strength(pw) {
   let s = 0;
@@ -104,7 +105,7 @@ export default function PasswordSection() {
                 </Box>
                 <TextField label="Confirm new password" type={show ? 'text' : 'password'} value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="new-password" fullWidth error={mismatch} helperText={mismatch ? "Passwords don't match" : ' '} />
                 <Box>
-                  <Button type="submit" variant="contained" disableElevation disabled={!valid || busy} sx={{ fontWeight: 700, px: 3 }}>
+                  <Button type="submit" variant="contained" disableElevation disabled={!valid || busy} sx={{ fontWeight: FONT_WEIGHTS.bold, px: 3 }}>
                     {busy ? <CircularProgress size={22} color="inherit" /> : hasPassword ? 'Update password' : 'Set password'}
                   </Button>
                 </Box>

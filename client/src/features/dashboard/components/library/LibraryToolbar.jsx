@@ -6,6 +6,7 @@ import FilterControl from './FilterControl';
 import SolvedMeter from './SolvedMeter';
 import SortControl from './SortControl';
 import useLibraryStyles from './libraryStyles';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 const ZERO_COUNTS = { Easy: 0, Medium: 0, Hard: 0 };
 const sumCounts = (counts) => counts.Easy + counts.Medium + counts.Hard;
@@ -16,7 +17,7 @@ function SlashHint() {
     <InputAdornment position="end">
       <Box
         component="kbd"
-        sx={(t) => ({ display: { xs: 'none', md: 'block' }, px: 0.75, borderRadius: '6px', border: `1px solid ${t.palette.divider}`, fontFamily: 'inherit', fontSize: '0.7rem', color: 'text.secondary' })}
+        sx={(t) => ({ display: { xs: 'none', md: 'block' }, px: 0.75, borderRadius: '6px', border: `1px solid ${t.palette.divider}`, fontFamily: 'inherit', fontSize: FONT_SIZES.micro, color: 'text.secondary' })}
       >
         /
       </Box>
@@ -83,7 +84,7 @@ function ActiveFilters({ lib }) {
       {query.companies.map((company) => (
         <Chip key={company} size="small" label={company} onDelete={() => toggleCompany(company)} />
       ))}
-      <Button size="small" onClick={clearAll} sx={{ minWidth: 0, fontWeight: 700 }}>
+      <Button size="small" onClick={clearAll} sx={{ minWidth: 0, fontWeight: FONT_WEIGHTS.bold }}>
         Clear all
       </Button>
     </Stack>

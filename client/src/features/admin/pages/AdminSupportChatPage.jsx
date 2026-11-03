@@ -22,6 +22,7 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const LIST_POLL_MS = 5000;
 const CHAT_POLL_MS = 4000;
@@ -143,7 +144,7 @@ export default function AdminSupportChatPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
         Live Chat
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
@@ -192,7 +193,7 @@ export default function AdminSupportChatPage() {
                   <ListItemText
                     primary={
                       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                        <Typography sx={{ fontWeight: c.unreadForAgent ? 800 : 600 }} noWrap>
+                        <Typography sx={{ fontWeight: c.unreadForAgent ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold }} noWrap>
                           {c.user?.name || 'Deleted user'}
                         </Typography>
                         <Chip size="small" variant="outlined" label={c.topic} />
@@ -235,7 +236,7 @@ export default function AdminSupportChatPage() {
                   <ArrowBackRoundedIcon />
                 </IconButton>
                 <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Typography sx={{ fontWeight: 700 }} noWrap>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }} noWrap>
                     {active.user ? `${active.user.name} (@${active.user.handle})` : 'Deleted user'}
                   </Typography>
                   <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>

@@ -5,6 +5,7 @@ import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { EmptyState, WsIconButton } from '../workspace/wsUi';
 import { WS } from '../workspace/wsTokens';
+import { FONT_SIZES } from '../../app/design/designTokens';
 
 // Pair-room chat, styled with the workspace UI kit (same radius, tones and buttons).
 export default function ChatPanel({ messages, myId, onSend, disabled, friendName }) {
@@ -50,7 +51,7 @@ export default function ChatPanel({ messages, myId, onSend, disabled, friendName
                   textAlign: 'left',
                   whiteSpace: 'pre-wrap',
                   wordBreak: 'break-word',
-                  fontSize: '0.875rem',
+                  fontSize: FONT_SIZES.body,
                   lineHeight: 1.6,
                 })}
               >

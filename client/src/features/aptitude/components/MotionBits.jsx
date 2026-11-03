@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
 import { Box, Typography } from '@mui/material';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // Small reusable motion-graphics pieces for the Aptitude module.
 
@@ -41,7 +41,7 @@ export function FloatingSymbols({ count = 16, color = COLOR_PALETTE.white, opaci
         return (
           <motion.span
             key={i}
-            style={{ position: 'absolute', left: `${rnd(i, 1) * 100}%`, top: `${rnd(i, 3) * 100}%`, fontSize: size, fontWeight: 800, color, opacity, fontFamily: '"JetBrains Mono", monospace', userSelect: 'none' }}
+            style={{ position: 'absolute', left: `${rnd(i, 1) * 100}%`, top: `${rnd(i, 3) * 100}%`, fontSize: size, fontWeight: FONT_WEIGHTS.bold, color, opacity, fontFamily: FONTS.mono, userSelect: 'none' }}
             animate={reduce ? undefined : { y: [0, -22 - rnd(i, 4) * 26, 0], x: [0, rnd(i, 5) * 16 - 8, 0], rotate: [0, rnd(i, 6) * 40 - 20, 0] }}
             transition={{ duration: 6 + rnd(i, 7) * 6, repeat: Infinity, ease: 'easeInOut', delay: rnd(i, 8) * 3 }}
           >
@@ -81,7 +81,7 @@ export function XpPop({ amount, color = COLOR_PALETTE.yellow[400] }) {
       transition={{ duration: 1.7, times: [0, 0.2, 0.7, 1] }}
       style={{ display: 'inline-block', pointerEvents: 'none' }}
     >
-      <Typography sx={{ fontWeight: 900, fontSize: 22, color, textShadow: `0 2px 10px ${withAlpha(COLOR_PALETTE.black, .35)}`, fontFamily: '"JetBrains Mono", monospace' }}>+{amount} XP</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, color, textShadow: `0 2px 10px ${withAlpha(COLOR_PALETTE.black, .35)}`, fontFamily: FONTS.mono }}>+{amount} XP</Typography>
     </motion.div>
   );
 }

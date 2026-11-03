@@ -69,6 +69,26 @@ export const FONTS = {
 export const FONT_WEIGHTS = { regular: 400, medium: 500, semibold: 600, bold: 700 };
 const W = FONT_WEIGHTS;
 
+// Font sizes for text that is not a Typography variant (icons, badges, inline labels). Values are rem, so the
+// Settings -> Text size preference (html font-size, see buildComponents) scales them with the type scale.
+// Pick the nearest step; do not invent new numbers.
+const remOf = (px) => `${px / 16}rem`;
+export const FONT_SIZES = {
+  micro: remOf(11),
+  caption: remOf(12),
+  body: remOf(14),
+  bodyLg: remOf(15),
+  title: remOf(16),
+  subheading: remOf(18),
+  heading: remOf(20),
+  display: remOf(24),
+  displayLg: remOf(28),
+  hero: remOf(32),
+  heroLg: remOf(40),
+  jumbo: remOf(48),
+  jumboLg: remOf(60),
+};
+
 // Type scale in px: [mobile, desktop], line height (unitless) and weight. Dense, LeetCode-like hierarchy: page title
 // (h1) down to micro labels. Headings tighten letter spacing slightly; body text keeps the default.
 // `micro` is a custom variant for the smallest labels (counts, badges, table meta).

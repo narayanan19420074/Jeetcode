@@ -4,16 +4,17 @@ import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libr
 import { panelSx, pillButtonSx } from '../../dashboard/components/libraryDesktopStyles';
 import { Coins } from '../storeUtils';
 import DailyReward from './DailyReward';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 function CoinsButton({ balance, onWallet, palette }) {
   return (
     <ButtonBase onClick={onWallet} aria-label="Open coin wallet" sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, fontFamily: 'inherit', color: 'inherit', textAlign: 'left' }}>
       <Box>
-        <Typography sx={{ fontSize: 14, letterSpacing: LIB_TRACKING, color: palette.muted }}>Your coins</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, color: palette.muted }}>Your coins</Typography>
         <Coins value={balance} size={32} />
       </Box>
       <Stack direction="row" sx={{ alignItems: 'center', color: palette.muted }}>
-        <Typography sx={{ fontWeight: 500, fontSize: 15, letterSpacing: LIB_TRACKING }}>Wallet</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>Wallet</Typography>
         <ChevronRightRoundedIcon />
       </Stack>
     </ButtonBase>
@@ -23,7 +24,7 @@ function CoinsButton({ balance, onWallet, palette }) {
 function GuestPrompt({ onSignIn, palette }) {
   return (
     <Stack sx={{ alignItems: 'flex-start', gap: 1.5 }}>
-      <Typography sx={{ fontSize: 16, color: palette.muted }}>Sign in to see your coins and redeem items.</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.title, color: palette.muted }}>Sign in to see your coins and redeem items.</Typography>
       <Button onClick={onSignIn} disableElevation sx={pillButtonSx(true, palette)}>Sign in</Button>
     </Stack>
   );

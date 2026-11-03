@@ -5,7 +5,7 @@ import { Box, Paper, TextField, Button, Typography, Alert, Stack, CircularProgre
 import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
 import { adminLoginUser } from './authSlice';
 import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Deliberately separate from the general LoginPage — no OAuth buttons, no
 // "Continue as Guest", no signup link, distinct dark visual treatment so
@@ -49,8 +49,8 @@ export default function AdminLoginPage() {
         sx={{ p: { xs: 3, sm: 5 }, width: '100%', maxWidth: 400, borderRadius: 3, bgcolor: 'background.paper' }}
       >
         <Stack alignItems="center" spacing={1} sx={{ mb: 3 }}>
-          <ShieldRoundedIcon sx={{ fontSize: 36, color: 'primary.main' }} />
-          <Typography variant="h5" sx={{ fontWeight: 800 }}>
+          <ShieldRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: 'primary.main' }} />
+          <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Admin Access
           </Typography>
           <Typography variant="body2" color="text.secondary" textAlign="center">
@@ -90,7 +90,7 @@ export default function AdminLoginPage() {
               disableElevation
               size="large"
               disabled={status === 'loading' || (Boolean(TURNSTILE_SITE_KEY) && !captcha)}
-              sx={{ fontWeight: 700, py: 1.2 }}
+              sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.2 }}
             >
               {status === 'loading' ? <CircularProgress size={22} color="inherit" /> : 'Sign in'}
             </Button>

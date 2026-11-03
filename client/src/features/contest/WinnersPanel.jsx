@@ -7,7 +7,7 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
 import { ACCENT, AVATAR_FRAMES, LB_DARK, LB_LIGHT } from '../leaderboard/lbTheme';
 import { inr } from './contestUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // three.js is heavy, so it only downloads once the panel is on screen.
 const PodiumScene = lazy(() => import('./PodiumScene'));
@@ -40,7 +40,7 @@ function AvatarFrame({ row, size = 34, index, T }) {
   return (
     <Box sx={{ p: '3px', borderRadius: '50%', flexShrink: 0, background: AVATAR_FRAMES[index % AVATAR_FRAMES.length], boxShadow: `0 6px 14px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.55)}` }}>
       <Box sx={{ p: '2px', borderRadius: '50%', bgcolor: T.frameInner }}>
-        <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: size, height: size, fontWeight: 800, fontSize: size * 0.4, color: T.avatarFg, bgcolor: T.avatarBg }}>
+        <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: size, height: size, fontWeight: FONT_WEIGHTS.bold, fontSize: size * 0.4, color: T.avatarFg, bgcolor: T.avatarBg }}>
           {row.name?.[0]?.toUpperCase()}
         </Avatar>
       </Box>
@@ -49,7 +49,7 @@ function AvatarFrame({ row, size = 34, index, T }) {
 }
 
 function Chip({ bg, fg, children }) {
-  return <Box sx={{ px: 1, py: 0.25, borderRadius: 99, fontSize: 11.5, fontWeight: 800, whiteSpace: 'nowrap', bgcolor: bg, color: fg }}>{children}</Box>;
+  return <Box sx={{ px: 1, py: 0.25, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', bgcolor: bg, color: fg }}>{children}</Box>;
 }
 
 // Rank 4-10 as small cards so the whole top 10 fits one screen.
@@ -58,10 +58,10 @@ function RankCard({ row, index, delay, reduce, T }) {
     <motion.div initial={reduce ? false : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: reduce ? 0 : delay }} style={{ minWidth: 0 }}>
       <Box sx={{ height: '100%', p: 1.4, borderRadius: '18px', bgcolor: T.soft, boxShadow: T.raised, display: 'grid', gap: 0.9, alignContent: 'start' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ width: 28, height: 28, borderRadius: '10px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: 900, fontSize: 13, background: badgeBg(row.rank), boxShadow: `0 6px 12px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}` }}>{row.rank}</Box>
+          <Box sx={{ width: 28, height: 28, borderRadius: '10px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, background: badgeBg(row.rank), boxShadow: `0 6px 12px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}` }}>{row.rank}</Box>
           <AvatarFrame row={row} index={index} T={T} />
         </Box>
-        <Typography noWrap sx={{ fontWeight: 800, fontSize: 13.5, color: T.ink }}>{row.name}</Typography>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.ink }}>{row.name}</Typography>
         <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
           {row.prize ? <Chip bg={T.prize[0]} fg={T.prize[1]}>{inr(row.prize)}</Chip> : null}
           <Chip bg={T.solved[0]} fg={T.solved[1]}>{row.solved ?? 0} solved</Chip>
@@ -73,7 +73,7 @@ function RankCard({ row, index, delay, reduce, T }) {
 
 function LockedCard({ rank, T }) {
   return (
-    <Box sx={{ height: '100%', minHeight: 96, borderRadius: '18px', bgcolor: T.soft, boxShadow: T.pressed, display: 'grid', placeItems: 'center', color: T.locked, fontWeight: 900, fontSize: 20 }}>#{rank}</Box>
+    <Box sx={{ height: '100%', minHeight: 96, borderRadius: '18px', bgcolor: T.soft, boxShadow: T.pressed, display: 'grid', placeItems: 'center', color: T.locked, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading }}>#{rank}</Box>
   );
 }
 
@@ -110,8 +110,8 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
               <EmojiEventsRoundedIcon />
             </Box>
             <Box sx={{ minWidth: 0 }}>
-              <Typography sx={{ fontWeight: 900, fontSize: { xs: 18, sm: 21 }, color: T.ink, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Contest top 10</Typography>
-              <Typography noWrap sx={{ fontSize: 12.5, color: T.muted, mt: 0.2 }}>{contest ? contest.title : 'Winners will stand here'}</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.subheading, sm: FONT_SIZES.heading }, color: T.ink, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Contest top 10</Typography>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: T.muted, mt: 0.2 }}>{contest ? contest.title : 'Winners will stand here'}</Typography>
             </Box>
           </Box>
           {has && revealed && !failed && (
@@ -125,8 +125,8 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
 
         {failed && !has && (
           <Box sx={{ mt: 2, py: 5, px: 3, textAlign: 'center', borderRadius: '24px', bgcolor: T.soft, boxShadow: T.pressed }}>
-            <EmojiEventsRoundedIcon sx={{ fontSize: 42, color: COLOR_PALETTE.amber[500] }} />
-            <Typography sx={{ fontWeight: 800, mt: 0.5, color: T.ink }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
+            <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: COLOR_PALETTE.amber[500] }} />
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 0.5, color: T.ink }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
           </Box>
         )}
 
@@ -147,8 +147,8 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
             {!has && (
               <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, display: 'grid', placeItems: 'center', pointerEvents: 'none' }}>
                 <Box sx={{ px: 2.5, py: 1, borderRadius: 99, bgcolor: T.pill, backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', boxShadow: T.raised, textAlign: 'center' }}>
-                  <Typography sx={{ fontWeight: 800, fontSize: 13.5, color: T.ink }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
-                  <Typography sx={{ fontSize: 11.5, color: T.muted }}>{contest ? 'Winners appear once rankings are verified' : 'Winners will stand on this podium'}</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.ink }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
+                  <Typography sx={{ fontSize: FONT_SIZES.caption, color: T.muted }}>{contest ? 'Winners appear once rankings are verified' : 'Winners will stand on this podium'}</Typography>
                 </Box>
               </Box>
             )}
@@ -156,11 +156,11 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
               <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, display: 'grid', placeItems: 'center', gap: 0.75, pointerEvents: 'none' }}>
                 <Button
                   onClick={onReveal} disableElevation startIcon={<BoltRoundedIcon />}
-                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: '16px', color: COLOR_PALETTE.white, fontWeight: 800, background: ACCENT, boxShadow: `0 14px 28px -12px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}`, animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
+                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: '16px', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, background: ACCENT, boxShadow: `0 14px 28px -12px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}`, animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
                 >
                   Reveal winners
                 </Button>
-                <Typography sx={{ fontSize: 12, color: T.muted }}>Or tap the contest in the Past tab</Typography>
+                <Typography sx={{ fontSize: FONT_SIZES.caption, color: T.muted }}>Or tap the contest in the Past tab</Typography>
               </Box>
             )}
           </Box>

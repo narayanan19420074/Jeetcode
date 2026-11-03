@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Fixed brand colors — visible on both light and dark backgrounds.
 const COLORS = {
@@ -52,8 +52,8 @@ function VisualFrame({ steps, children, title }) {
           <Box
             component="span"
             sx={{
-              fontSize: 10.5,
-              fontWeight: 700,
+              fontSize: FONT_SIZES.micro,
+              fontWeight: FONT_WEIGHTS.bold,
               letterSpacing: '0.08em',
               color: 'primary.main',
               textTransform: 'uppercase',

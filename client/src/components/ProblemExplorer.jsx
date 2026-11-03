@@ -44,6 +44,7 @@ import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import { problemsApi } from '../api/problemsApi';
 import { extractErrorMessage } from '../api/apiClient';
+import { FONT_WEIGHTS, FONT_SIZES } from '../app/design/designTokens';
 
 /* ------------------------------------------------------------------ */
 /* Constants                                                           */
@@ -89,7 +90,7 @@ function FilterButton({ label, active, onClick, disabled }) {
         px: 1.5,
         borderRadius: 2,
         textTransform: 'none',
-        fontWeight: 600,
+        fontWeight: FONT_WEIGHTS.semibold,
         whiteSpace: 'nowrap',
         flexShrink: 0,
         color: active ? 'primary.main' : 'text.primary',
@@ -239,7 +240,7 @@ function ChipPicker({ title, items, nameKey, selected, onToggle }) {
   return (
     <Box sx={{ mb: 2.5 }}>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
-        <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+        <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
           {title}
         </Typography>
         {items.length > LIMIT && !query && (
@@ -292,7 +293,7 @@ function ProgressSummary({ progress }) {
   return (
     <Paper variant="outlined" sx={{ ...sx, borderRadius: { xs: 0, sm: 3 }, border: { xs: 'none', sm: '1px solid' }, borderColor: 'divider', px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1.5 }, bgcolor: { xs: 'transparent', sm: 'background.paper' } }}>
       <Stack direction="row" sx={{ alignItems: 'baseline', gap: 0.75, mb: 1 }}>
-        <Typography sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1 }}>{solvedAll}</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1 }}>{solvedAll}</Typography>
         <Typography variant="body2" color="text.secondary">
           / {totalAll} solved
         </Typography>
@@ -340,7 +341,7 @@ function ProgressSummary({ progress }) {
 /* ------------------------------------------------------------------ */
 
 function TableHeader() {
-  const cell = { fontSize: '0.72rem', fontWeight: 700, color: 'text.secondary', textTransform: 'uppercase', letterSpacing: 0.4 };
+  const cell = { fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', textTransform: 'uppercase', letterSpacing: 0.4 };
   return (
     <Box
       sx={{
@@ -387,9 +388,9 @@ function ProblemRow({ p, index }) {
     >
       <Box sx={{ display: 'flex' }}>
         {p.solvedByMe ? (
-          <CheckCircleRoundedIcon sx={{ fontSize: 20, color: 'success.main' }} />
+          <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'success.main' }} />
         ) : (
-          <RadioButtonUncheckedRoundedIcon sx={{ fontSize: 20, color: 'action.disabled' }} />
+          <RadioButtonUncheckedRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'action.disabled' }} />
         )}
       </Box>
 
@@ -398,7 +399,7 @@ function ProblemRow({ p, index }) {
           <Typography
             variant="body2"
             sx={{
-              fontWeight: 500,
+              fontWeight: FONT_WEIGHTS.medium,
               minWidth: 0,
               display: '-webkit-box',
               WebkitLineClamp: 2,
@@ -411,7 +412,7 @@ function ProblemRow({ p, index }) {
           </Typography>
           {p.locked && (
             <Tooltip title="Premium problem">
-              <LockRoundedIcon sx={{ fontSize: 15, color: 'text.disabled', flexShrink: 0 }} />
+              <LockRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'text.disabled', flexShrink: 0 }} />
             </Tooltip>
           )}
         </Stack>
@@ -424,7 +425,7 @@ function ProblemRow({ p, index }) {
         {accept}
       </Typography>
 
-      <Typography variant="body2" sx={{ fontWeight: 600, color: DIFF_COLOR[p.difficulty] || 'text.secondary', textAlign: { xs: 'right', sm: 'left' } }}>
+      <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold, color: DIFF_COLOR[p.difficulty] || 'text.secondary', textAlign: { xs: 'right', sm: 'left' } }}>
         {p.difficulty}
       </Typography>
     </Box>
@@ -456,8 +457,8 @@ function ProblemRowMobile({ p, index }) {
       <Box sx={{ flex: 1, minWidth: 0 }}>
         <Typography
           sx={{
-            fontWeight: 600,
-            fontSize: '0.97rem',
+            fontWeight: FONT_WEIGHTS.semibold,
+            fontSize: FONT_SIZES.title,
             lineHeight: 1.35,
             display: '-webkit-box',
             WebkitLineClamp: 2,
@@ -469,12 +470,12 @@ function ProblemRowMobile({ p, index }) {
           {index}. {p.title}
         </Typography>
         <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, mt: 0.5 }}>
-          <Typography sx={{ fontWeight: 700, fontSize: '0.8rem', color: DIFF_COLOR[p.difficulty] || 'text.secondary' }}>{p.difficulty}</Typography>
-          <Typography sx={{ fontSize: '0.8rem', color: 'text.secondary' }}>{accept}</Typography>
-          {p.locked && <LockRoundedIcon sx={{ fontSize: 14, color: 'text.disabled' }} />}
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, color: DIFF_COLOR[p.difficulty] || 'text.secondary' }}>{p.difficulty}</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary' }}>{accept}</Typography>
+          {p.locked && <LockRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: 'text.disabled' }} />}
         </Stack>
       </Box>
-      {p.solvedByMe && <CheckCircleRoundedIcon sx={{ fontSize: 22, color: 'success.main', flexShrink: 0 }} />}
+      {p.solvedByMe && <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'success.main', flexShrink: 0 }} />}
     </Box>
   );
 }
@@ -656,7 +657,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
         direction={{ xs: 'column', md: 'row' }}
         sx={{ alignItems: { xs: 'stretch', md: 'flex-end' }, justifyContent: 'space-between', gap: { xs: 1.5, md: 2 }, mb: { xs: 1.5, sm: 2 }, px: { xs: 2, sm: 0 } }}
       >
-        <Typography variant="h5" sx={{ fontWeight: 800, fontSize: { xs: '1.35rem', sm: '1.5rem' } }}>
+        <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.heading, sm: FONT_SIZES.display } }}>
           {title}
         </Typography>
         <ProgressSummary progress={progress} />
@@ -727,7 +728,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
               onClick={handlePickOne}
               disabled={pickingRandom}
               startIcon={pickingRandom ? <CircularProgress size={14} /> : <ShuffleRoundedIcon fontSize="small" />}
-              sx={{ display: { xs: 'none', sm: 'inline-flex' }, flexShrink: 0, height: 40, textTransform: 'none', fontWeight: 600, borderColor: 'divider' }}
+              sx={{ display: { xs: 'none', sm: 'inline-flex' }, flexShrink: 0, height: 40, textTransform: 'none', fontWeight: FONT_WEIGHTS.semibold, borderColor: 'divider' }}
             >
               Pick One
             </Button>
@@ -771,7 +772,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
                   variant="outlined"
                   sx={(t) => ({
                     flexShrink: 0,
-                    fontWeight: 700,
+                    fontWeight: FONT_WEIGHTS.bold,
                     color: t.palette[pal].main,
                     borderColor: on ? t.palette[pal].main : 'divider',
                     bgcolor: on ? alpha(t.palette[pal].main, 0.14) : 'transparent',
@@ -792,7 +793,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
                   onClick={() => patch({ status: on ? 'All' : o.value })}
                   variant={on ? 'filled' : 'outlined'}
                   color={on ? 'primary' : 'default'}
-                  sx={{ flexShrink: 0, fontWeight: 700 }}
+                  sx={{ flexShrink: 0, fontWeight: FONT_WEIGHTS.bold }}
                 />
               );
             })}
@@ -804,7 +805,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
               onDelete={() => setDrawerOpen(true)}
               variant={filters.tags.length > 0 ? 'filled' : 'outlined'}
               color={filters.tags.length > 0 ? 'primary' : 'default'}
-              sx={{ flexShrink: 0, fontWeight: 700 }}
+              sx={{ flexShrink: 0, fontWeight: FONT_WEIGHTS.bold }}
             />
           </Stack>
 
@@ -876,7 +877,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
             isSmUp ? <SkeletonRows count={Math.min(pageSize, 10)} /> : <SkeletonRowsMobile count={Math.min(pageSize, 10)} />
           ) : error && problems.length === 0 ? (
             <Box sx={{ py: 6, px: 2, textAlign: 'center' }}>
-              <Typography variant="body1" sx={{ fontWeight: 600, mb: 0.5 }}>
+              <Typography variant="body1" sx={{ fontWeight: FONT_WEIGHTS.semibold, mb: 0.5 }}>
                 Couldn&apos;t load problems
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
@@ -888,8 +889,8 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
             </Box>
           ) : problems.length === 0 ? (
             <Box sx={{ py: 7, px: 2, textAlign: 'center' }}>
-              <SearchOffRoundedIcon sx={{ fontSize: 40, color: 'text.disabled', mb: 1 }} />
-              <Typography variant="body1" sx={{ fontWeight: 600, mb: 0.5 }}>
+              <SearchOffRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: 'text.disabled', mb: 1 }} />
+              <Typography variant="body1" sx={{ fontWeight: FONT_WEIGHTS.semibold, mb: 0.5 }}>
                 No problems match your filters
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
@@ -934,7 +935,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
         slotProps={{ paper: { sx: { maxHeight: '88vh', borderTopLeftRadius: 16, borderTopRightRadius: 16 } } }}
       >
         <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', px: 2, pt: 1.5, pb: 1 }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Filters
           </Typography>
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
@@ -949,7 +950,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
         <Divider />
 
         <Box sx={{ px: 2, py: 2, overflowY: 'auto', flex: 1 }}>
-          <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
             Difficulty
           </Typography>
           <ToggleButtonGroup fullWidth size="small" exclusive value={filters.difficulty} onChange={(_e, v) => v && patch({ difficulty: v })} sx={{ mb: 2.5 }}>
@@ -960,7 +961,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
             ))}
           </ToggleButtonGroup>
 
-          <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
             Status
           </Typography>
           <ToggleButtonGroup fullWidth size="small" exclusive value={filters.status} onChange={(_e, v) => v && patch({ status: v })} sx={{ mb: 2.5 }}>
@@ -971,7 +972,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
             ))}
           </ToggleButtonGroup>
 
-          <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
             Sort by
           </Typography>
           <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mb: 2.5, opacity: filters.search ? 0.5 : 1 }}>
@@ -995,7 +996,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
 
         <Divider />
         <Box sx={{ p: 1.5 }}>
-          <Button fullWidth variant="contained" disableElevation onClick={() => setDrawerOpen(false)} sx={{ textTransform: 'none', py: 1, fontWeight: 700 }}>
+          <Button fullWidth variant="contained" disableElevation onClick={() => setDrawerOpen(false)} sx={{ textTransform: 'none', py: 1, fontWeight: FONT_WEIGHTS.bold }}>
             {loading || refetching ? 'Updating…' : `Show ${pagination.total} problems`}
           </Button>
         </Box>

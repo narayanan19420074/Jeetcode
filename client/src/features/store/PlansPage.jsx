@@ -21,7 +21,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Plans page: Free, Pro Monthly and Pro Yearly in the Library look (cream panels, 16px gutter, Roboto, pill buttons).
 // Prices are the same as on the home page. Keep them in sync.
@@ -51,8 +51,8 @@ function FeatureList({ items }) {
     <Stack component="ul" spacing={1.25} sx={{ listStyle: 'none', m: 0, p: 0 }}>
       {items.map((text) => (
         <Stack component="li" key={text} direction="row" spacing={1.25} sx={{ alignItems: 'flex-start' }}>
-          <CheckRoundedIcon aria-hidden sx={{ fontSize: 22, mt: '1px', color: CHECK_GREEN, flexShrink: 0 }} />
-          <Typography sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{text}</Typography>
+          <CheckRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, mt: '1px', color: CHECK_GREEN, flexShrink: 0 }} />
+          <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{text}</Typography>
         </Stack>
       ))}
     </Stack>
@@ -162,7 +162,7 @@ export default function PlansPage() {
     return `${name} · ${subscription ? 'Current period ends' : 'Active until'} ${formatDate(status.proExpiresAt)}`;
   };
 
-  const linkSx = { color: LIB_ACCENT, fontWeight: 500, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } };
+  const linkSx = { color: LIB_ACCENT, fontWeight: FONT_WEIGHTS.medium, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } };
 
   return (
     <LibraryFont>
@@ -187,11 +187,11 @@ export default function PlansPage() {
               <WorkspacePremiumRoundedIcon />
             </Box>
             <Box sx={{ flex: 1, minWidth: 200 }}>
-              <Typography sx={{ fontSize: 16, lineHeight: '24px', fontWeight: 500, letterSpacing: LIB_TRACKING }}>Your plan: Pro</Typography>
-              <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{planSummary()}</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>Your plan: Pro</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{planSummary()}</Typography>
             </Box>
             {subscription && (
-              <Button disableElevation onClick={() => setCancelOpen(true)} sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: 15 }}>
+              <Button disableElevation onClick={() => setCancelOpen(true)} sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
                 Cancel subscription
               </Button>
             )}
@@ -202,11 +202,11 @@ export default function PlansPage() {
           {/* Free */}
           <PlanPanel>
             <Box>
-              <Typography component="h2" sx={{ fontSize: 20, lineHeight: '28px', fontWeight: 700 }}>Free</Typography>
-              <Typography sx={{ mt: 0.5, fontSize: 32, lineHeight: '40px', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
+              <Typography component="h2" sx={{ fontSize: FONT_SIZES.heading, lineHeight: '28px', fontWeight: FONT_WEIGHTS.bold }}>Free</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.hero, lineHeight: '40px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>
                 ₹0
               </Typography>
-              <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything you need to begin</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything you need to begin</Typography>
             </Box>
             <Box sx={{ flex: 1 }}>
               <FeatureList items={FREE_FEATURES} />
@@ -227,25 +227,25 @@ export default function PlansPage() {
             <PlanPanel key={plan} highlighted={plan === 'yearly'}>
               <Box>
                 <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-                  <Typography component="h2" sx={{ fontSize: 20, lineHeight: '28px', fontWeight: 700 }}>Pro {PLAN_LABEL[plan]}</Typography>
+                  <Typography component="h2" sx={{ fontSize: FONT_SIZES.heading, lineHeight: '28px', fontWeight: FONT_WEIGHTS.bold }}>Pro {PLAN_LABEL[plan]}</Typography>
                   {plan === 'yearly' && (
-                    <Box component="span" sx={{ height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 13, fontWeight: 500, letterSpacing: LIB_TRACKING, color: COLOR_PALETTE.white, bgcolor: LIB_ACCENT }}>
+                    <Box component="span" sx={{ height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: COLOR_PALETTE.white, bgcolor: LIB_ACCENT }}>
                       Best value
                     </Box>
                   )}
                 </Stack>
-                <Typography sx={{ mt: 0.5, fontSize: 32, lineHeight: '40px', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
+                <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.hero, lineHeight: '40px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>
                   ₹{PRICE[plan].toLocaleString('en-IN')}
-                  <Box component="span" sx={{ ml: 0.75, fontSize: 16, fontWeight: 400, letterSpacing: LIB_TRACKING, color: pal.muted }}>
+                  <Box component="span" sx={{ ml: 0.75, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.regular, letterSpacing: LIB_TRACKING, color: pal.muted }}>
                     per {PERIOD[plan]}
                   </Box>
                 </Typography>
-                <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
+                <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
                   {plan === 'yearly' ? `Billed yearly. Save ${SAVING_PERCENT}% compared with monthly.` : 'Billed monthly. Cancel anytime.'}
                 </Typography>
               </Box>
               <Box sx={{ flex: 1 }}>
-                <Typography sx={{ mb: 1.25, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything in Free, plus:</Typography>
+                <Typography sx={{ mb: 1.25, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything in Free, plus:</Typography>
                 <FeatureList items={PRO_FEATURES} />
               </Box>
               <Button
@@ -265,7 +265,7 @@ export default function PlansPage() {
         </Box>
 
         {isAuthenticated && !isPro && (
-          <Typography sx={{ mt: 2.5, textAlign: 'center', fontSize: 15, lineHeight: '22px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
+          <Typography sx={{ mt: 2.5, textAlign: 'center', fontSize: FONT_SIZES.bodyLg, lineHeight: '22px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
             Have a license key?{' '}
             <Box component="button" type="button" onClick={() => setLicenseOpen(true)} sx={{ ...linkSx, p: 0, border: 0, bgcolor: 'transparent', font: 'inherit', cursor: 'pointer' }}>
               Activate license
@@ -273,7 +273,7 @@ export default function PlansPage() {
           </Typography>
         )}
 
-        <Typography sx={{ mt: 2.5, textAlign: 'center', fontSize: 14, lineHeight: '22px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
+        <Typography sx={{ mt: 2.5, textAlign: 'center', fontSize: FONT_SIZES.body, lineHeight: '22px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
           Subscriptions renew automatically until cancelled. See the{' '}
           <Box component={RouterLink} to="/refund" sx={linkSx}>Refund &amp; Cancellation Policy</Box>,{' '}
           <Box component={RouterLink} to="/terms" sx={linkSx}>Terms</Box> and{' '}
@@ -288,17 +288,17 @@ export default function PlansPage() {
         maxWidth="xs"
         slotProps={{ paper: { sx: { borderRadius: '24px', bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
       >
-        <DialogTitle sx={{ fontSize: 20, fontWeight: 700 }}>Cancel subscription?</DialogTitle>
+        <DialogTitle sx={{ fontSize: FONT_SIZES.heading, fontWeight: FONT_WEIGHTS.bold }}>Cancel subscription?</DialogTitle>
         <DialogContent>
-          <Typography sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
+          <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
             You keep Pro until the end of the period you have already paid for. After that your account moves to the Free plan.
           </Typography>
         </DialogContent>
         <DialogActions sx={{ px: 3, pb: 2.5, gap: 1 }}>
-          <Button disableElevation disabled={cancelling} onClick={() => setCancelOpen(false)} sx={{ ...libTintBtnSx, height: 40, px: 2.5, fontSize: 16 }}>
+          <Button disableElevation disabled={cancelling} onClick={() => setCancelOpen(false)} sx={{ ...libTintBtnSx, height: 40, px: 2.5, fontSize: FONT_SIZES.title }}>
             Keep plan
           </Button>
-          <Button disableElevation disabled={cancelling} onClick={handleCancel} color="error" variant="contained" sx={{ height: 40, px: 2.5, borderRadius: 999, fontSize: 16, fontWeight: 500, textTransform: 'none' }}>
+          <Button disableElevation disabled={cancelling} onClick={handleCancel} color="error" variant="contained" sx={{ height: 40, px: 2.5, borderRadius: 999, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, textTransform: 'none' }}>
             {cancelling ? 'Cancelling…' : 'Cancel subscription'}
           </Button>
         </DialogActions>

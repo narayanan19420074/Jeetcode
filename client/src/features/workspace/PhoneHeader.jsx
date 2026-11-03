@@ -6,6 +6,7 @@ import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import { LIB_ACCENT, LIB_TRACKING, libBackBtnSx, libChipSx, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { PhoneDifficultyTag } from './phoneStyle';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone header of the workspace and the pair room, in the Library look of the phone Problems page.
 //   Row 1: back, name (tap to open the problem), optional extras, menu
@@ -38,20 +39,20 @@ export default function PhoneHeader({
   const [anchor, setAnchor] = useState(null);
   const close = () => setAnchor(null);
 
-  const itemSx = { py: 1.25, fontSize: 16, fontWeight: 500, letterSpacing: LIB_TRACKING, color: pal.text };
+  const itemSx = { py: 1.25, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: pal.text };
   const name = title ?? problem?.title ?? '';
   const showTags = chipsOn && Boolean(problem);
 
   const heading = (
     <>
-      <Typography noWrap sx={{ maxWidth: '100%', fontWeight: 700, fontSize: 18, lineHeight: '24px' }}>
+      <Typography noWrap sx={{ maxWidth: '100%', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: '24px' }}>
         {name}
       </Typography>
       {showTags && (
         <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: '4px', maxWidth: '100%', minWidth: 0 }}>
           <PhoneDifficultyTag difficulty={problem.difficulty} />
           {problem.tags?.length > 0 && (
-            <Typography noWrap sx={{ minWidth: 0, fontSize: 15, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
+            <Typography noWrap sx={{ minWidth: 0, fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
               {problem.tags.slice(0, 2).join(' · ')}
             </Typography>
           )}
@@ -112,11 +113,11 @@ export default function PhoneHeader({
       >
         {onToggleChips && (
           <MenuItem role="menuitemcheckbox" aria-checked={chipsOn} onClick={onToggleChips} sx={itemSx}>
-            <ListItemText slotProps={{ primary: { sx: { fontSize: 16, fontWeight: 500, letterSpacing: LIB_TRACKING } } }}>Tags</ListItemText>
+            <ListItemText slotProps={{ primary: { sx: { fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING } } }}>Tags</ListItemText>
             {chipsOn ? (
-              <VisibilityRoundedIcon aria-label="Tags shown" sx={{ ml: 2, fontSize: 22, color: LIB_ACCENT }} />
+              <VisibilityRoundedIcon aria-label="Tags shown" sx={{ ml: 2, fontSize: FONT_SIZES.display, color: LIB_ACCENT }} />
             ) : (
-              <VisibilityOffRoundedIcon aria-label="Tags hidden" sx={{ ml: 2, fontSize: 22, color: pal.muted }} />
+              <VisibilityOffRoundedIcon aria-label="Tags hidden" sx={{ ml: 2, fontSize: FONT_SIZES.display, color: pal.muted }} />
             )}
           </MenuItem>
         )}

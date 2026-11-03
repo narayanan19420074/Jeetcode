@@ -1,4 +1,5 @@
 import { Box, CircularProgress, Typography } from '@mui/material';
+import { FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
 
 // Determinate progress ring with a centred label (hub progress, results score).
 export default function Ring({ value, size = 120, thickness = 4.5, color = 'primary.main', label, sublabel }) {
@@ -14,7 +15,7 @@ export default function Ring({ value, size = 120, thickness = 4.5, color = 'prim
         sx={{ color, position: 'absolute', left: 0, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }}
       />
       <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <Typography sx={{ fontWeight: 800, fontFamily: '"JetBrains Mono", monospace', lineHeight: 1, fontSize: size * 0.24 }}>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: FONTS.mono, lineHeight: 1, fontSize: size * 0.24 }}>
           {label}
         </Typography>
         {sublabel && (

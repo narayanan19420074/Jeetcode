@@ -5,6 +5,7 @@ import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { Card, PageTitle, describeError, formatDateTime, relativeTime } from '../components/SettingsUi';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 export default function SessionsSection() {
   const { enqueueSnackbar } = useSnackbar();
@@ -97,7 +98,7 @@ export default function SessionsSection() {
               </Box>
               <Box sx={{ minWidth: 0, flex: 1 }}>
                 <Stack direction="row" sx={{ alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
-                  <Typography sx={{ fontWeight: 700 }}>{s.device.label}</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{s.device.label}</Typography>
                   {s.current && <Chip size="small" color="success" label="This device" />}
                 </Stack>
                 <Typography variant="body2" color="text.secondary">
@@ -118,7 +119,7 @@ export default function SessionsSection() {
       </Card>
 
       <Dialog open={allOpen} onClose={() => !allBusy && setAllOpen(false)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800 }}>Sign out other devices?</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Sign out other devices?</DialogTitle>
         <DialogContent>
           <DialogContentText>
             {others.length} other session{others.length === 1 ? '' : 's'} will be signed out. This device stays signed in.

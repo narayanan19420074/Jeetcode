@@ -9,6 +9,7 @@ import { userUpdated } from '../auth/authSlice';
 import { Eyebrow, FFButton, FFDialog, Notice, Tag } from '../quests/QuestParts';
 import { FF, cut } from '../quests/questUtils';
 import { Coins, SHIP_STEPS, STATUS_META, fmt, fmtDate, fmtDateTime } from './storeUtils';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Orders and the coin wallet. Both open from the Store header in a dialog, so the shop stays the only page.
 
@@ -21,8 +22,8 @@ function OrderCard({ order, onOpen }) {
   return (
     <ButtonBase onClick={() => onOpen(order)} sx={rowSx}>
       <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Typography noWrap sx={{ fontWeight: 800, color: FF.text }}>{order.itemName}{order.qty > 1 ? ` ×${order.qty}` : ''}</Typography>
-        <Typography noWrap sx={{ mt: 0.5, fontSize: 12.5, color: FF.muted }}>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{order.itemName}{order.qty > 1 ? ` ×${order.qty}` : ''}</Typography>
+        <Typography noWrap sx={{ mt: 0.5, fontSize: FONT_SIZES.caption, color: FF.muted }}>
           {order.orderNo} · {fmtDate(order.createdAt)}
           {order.variant?.size ? ` · ${order.variant.size}` : ''}{order.variant?.color ? ` · ${order.variant.color}` : ''}
         </Typography>
@@ -43,7 +44,7 @@ function ShipProgress({ status }) {
       {SHIP_STEPS.map((s, i) => (
         <Box key={s}>
           <Box sx={{ height: 7, bgcolor: i <= at ? FF.orange : FF.well, border: `1px solid ${i <= at ? FF.orange : FF.line}` }} />
-          <Typography sx={{ mt: 0.75, fontSize: 11.5, fontWeight: i === at ? 900 : 600, color: i <= at ? FF.text : FF.muted, textAlign: 'center' }}>{STATUS_META[s].label}</Typography>
+          <Typography sx={{ mt: 0.75, fontSize: FONT_SIZES.caption, fontWeight: i === at ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, color: i <= at ? FF.text : FF.muted, textAlign: 'center' }}>{STATUS_META[s].label}</Typography>
         </Box>
       ))}
     </Box>
@@ -82,7 +83,7 @@ function OrderDialog({ order, onClose, onChanged, onOpenCourse }) {
       busy={busy}
       footer={showCancel && <FFButton tone="dark" onClick={cancel} disabled={busy} sx={{ width: '100%' }}>{busy ? 'Cancelling…' : 'Cancel & refund'}</FFButton>}
     >
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1.5, mb: 3, color: FF.muted, fontSize: 13.5 }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1.5, mb: 3, color: FF.muted, fontSize: FONT_SIZES.body }}>
         <span>{order.orderNo} · {fmtDateTime(order.createdAt)}</span>
         <Coins value={order.total} size={16} />
       </Box>
@@ -95,7 +96,7 @@ function OrderDialog({ order, onClose, onChanged, onOpenCourse }) {
       {order.tracking?.number && (
         <Box sx={{ p: 2, mb: 3, bgcolor: FF.well, border: `1px solid ${FF.line}` }}>
           <Eyebrow>Tracking</Eyebrow>
-          <Typography sx={{ mt: 0.5, fontWeight: 800, color: FF.text }}>{order.tracking.carrier || 'Courier'} · {order.tracking.number}</Typography>
+          <Typography sx={{ mt: 0.5, fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{order.tracking.carrier || 'Courier'} · {order.tracking.number}</Typography>
           {order.tracking.url && (
             <FFButton component="a" href={order.tracking.url} target="_blank" rel="noopener noreferrer" tone="dark" sx={{ mt: 1.5, minHeight: 38 }}>Track package</FFButton>
           )}
@@ -104,12 +105,12 @@ function OrderDialog({ order, onClose, onChanged, onOpenCourse }) {
       {a && (
         <Box sx={{ mb: 3 }}>
           <Eyebrow sx={{ mb: 0.75 }}>Delivering to</Eyebrow>
-          <Typography sx={{ fontSize: 14, lineHeight: 1.7, color: FF.text }}>{a.fullName}, {a.phone}<br />{a.line1}{a.line2 ? `, ${a.line2}` : ''}<br />{a.city}, {a.state} {a.pincode}</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: 1.7, color: FF.text }}>{a.fullName}, {a.phone}<br />{a.line1}{a.line2 ? `, ${a.line2}` : ''}<br />{a.city}, {a.state} {a.pincode}</Typography>
         </Box>
       )}
       <Eyebrow sx={{ mb: 0.75 }}>Timeline</Eyebrow>
       {[...order.history].reverse().map((h, i) => (
-        <Typography key={i} sx={{ py: 0.5, fontSize: 13.5, color: FF.muted }}>{fmtDateTime(h.at)} · <Box component="span" sx={{ color: FF.text, fontWeight: 700 }}>{STATUS_META[h.status]?.label || h.status}</Box>{h.note ? ` · ${h.note}` : ''}</Typography>
+        <Typography key={i} sx={{ py: 0.5, fontSize: FONT_SIZES.body, color: FF.muted }}>{fmtDateTime(h.at)} · <Box component="span" sx={{ color: FF.text, fontWeight: FONT_WEIGHTS.bold }}>{STATUS_META[h.status]?.label || h.status}</Box>{h.note ? ` · ${h.note}` : ''}</Typography>
       ))}
     </FFDialog>
   );
@@ -121,7 +122,7 @@ export function OrdersTab({ orders, onChanged, onOpenCourse, onGoShop }) {
   if (orders.length === 0) {
     return (
       <Box sx={{ textAlign: 'center', py: 5 }}>
-        <Typography sx={{ fontWeight: 900, fontSize: 18, color: FF.text }}>No orders yet</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, color: FF.text }}>No orders yet</Typography>
         <Typography sx={{ mt: 0.75, mb: 3, color: FF.muted }}>Redeem your coins for Pro, courses or merch.</Typography>
         <FFButton onClick={onGoShop}>Browse the shop</FFButton>
       </Box>
@@ -165,14 +166,14 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
           <Tag>Earned {fmt(wallet.earned)}</Tag>
           <Tag>Spent {fmt(wallet.spent)}</Tag>
-          <Tag tone="orange"><LocalFireDepartmentRoundedIcon sx={{ fontSize: 14 }} /> {wallet.streakDays}-day streak</Tag>
+          <Tag tone="orange"><LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.body }} /> {wallet.streakDays}-day streak</Tag>
         </Box>
       </Box>
 
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { sm: 'center' }, gap: 2 }}>
         <Box sx={{ flex: 1 }}>
-          <Typography sx={{ fontWeight: 900, color: FF.text }}>Daily check-in</Typography>
-          <Typography sx={{ mt: 0.5, fontSize: 14, color: FF.muted }}>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>Daily check-in</Typography>
+          <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.body, color: FF.muted }}>
             {d.claimed ? 'Claimed for today. Come back tomorrow.' : d.eligible ? `Ready! Today's reward is ${d.reward} coins.` : 'Solve 1 problem today to unlock it.'}
           </Typography>
         </Box>
@@ -184,10 +185,10 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
         {wallet.earnWays.map((w) => (
           <Box key={w.id} sx={{ display: 'flex', alignItems: 'center', gap: 2, py: 1.5, borderTop: `1px solid ${FF.line}` }}>
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Typography sx={{ fontWeight: 800, color: FF.text }}>{w.title}</Typography>
-              <Typography sx={{ fontSize: 13, color: FF.muted }}>{w.note}</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{w.title}</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, color: FF.muted }}>{w.note}</Typography>
             </Box>
-            {typeof w.coins === 'number' ? <Coins value={w.coins} /> : <Typography sx={{ fontWeight: 900, color: FF.coinInk }}>{w.coins}</Typography>}
+            {typeof w.coins === 'number' ? <Coins value={w.coins} /> : <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.coinInk }}>{w.coins}</Typography>}
           </Box>
         ))}
       </Box>
@@ -201,10 +202,10 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
             {tx.items.map((t) => (
               <Box key={t.id} sx={{ display: 'flex', alignItems: 'center', gap: 2, py: 1.5, borderTop: `1px solid ${FF.line}` }}>
                 <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Typography noWrap sx={{ fontWeight: 700, color: FF.text }}>{t.title}</Typography>
-                  <Typography sx={{ fontSize: 12.5, color: FF.muted }}>{fmtDateTime(t.at)}</Typography>
+                  <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{t.title}</Typography>
+                  <Typography sx={{ fontSize: FONT_SIZES.caption, color: FF.muted }}>{fmtDateTime(t.at)}</Typography>
                 </Box>
-                <Typography sx={{ fontWeight: 900, color: t.amount > 0 ? FF.greenInk : FF.text, fontVariantNumeric: 'tabular-nums' }}>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: t.amount > 0 ? FF.greenInk : FF.text, fontVariantNumeric: 'tabular-nums' }}>
                   {t.amount > 0 ? '+' : '−'}{fmt(Math.abs(t.amount))}
                 </Typography>
               </Box>
@@ -212,7 +213,7 @@ export function CoinsTab({ wallet, refreshKey, onClaim, claiming }) {
             {tx.pages > 1 && (
               <Box sx={{ mt: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
                 <FFButton tone="dark" disabled={page <= 1} onClick={() => setPage((p) => p - 1)} sx={{ minHeight: 38 }}>Prev</FFButton>
-                <Typography sx={{ fontWeight: 800, fontSize: 13, color: FF.muted, fontVariantNumeric: 'tabular-nums' }}>{page} / {tx.pages}</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: FF.muted, fontVariantNumeric: 'tabular-nums' }}>{page} / {tx.pages}</Typography>
                 <FFButton tone="dark" disabled={page >= tx.pages} onClick={() => setPage((p) => p + 1)} sx={{ minHeight: 38 }}>Next</FFButton>
               </Box>
             )}

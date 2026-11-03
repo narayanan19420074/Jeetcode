@@ -1,6 +1,7 @@
 import { Box, ButtonBase, Skeleton, Typography } from '@mui/material';
 import CompanyAvatar from '../../../../components/CompanyAvatar';
 import { LIB_TRACKING, useLibraryPalette } from '../../components/libraryStyle';
+import { FONT_SIZES } from '../../../../app/design/designTokens';
 
 const COLUMNS = 'repeat(auto-fill, minmax(240px, 1fr))';
 const AVATAR_SIZE = 48;
@@ -14,8 +15,8 @@ function CompanyButton({ company, count, onBrowse, palette }) {
     >
       <CompanyAvatar name={company} size={AVATAR_SIZE} />
       <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Typography noWrap sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{company}</Typography>
-        <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: palette.muted }}>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{company}</Typography>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: palette.muted }}>
           {count.toLocaleString('en-IN')} {count === 1 ? 'Question' : 'Questions'}
         </Typography>
       </Box>

@@ -2,11 +2,12 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Grid, Paper, Typography, Chip } from '@mui/material';
 import AutoAwesomeMotionRoundedIcon from '@mui/icons-material/AutoAwesomeMotionRounded';
 import { learnTopics } from './content';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 export default function LearnHomePage() {
   return (
     <Box sx={{ maxWidth: 1000, mx: 'auto', px: 2, py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
         Learn
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -32,7 +33,7 @@ export default function LearnHomePage() {
               }}
             >
               <AutoAwesomeMotionRoundedIcon sx={{ color: 'primary.main', mb: 1 }} />
-              <Typography variant="h6" sx={{ fontWeight: 700 }}>
+              <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 {topic.title}
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>

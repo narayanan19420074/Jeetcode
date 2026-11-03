@@ -13,7 +13,7 @@ import { WS } from '../workspace/wsTokens';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WsIconButton } from '../workspace/wsUi';
 import { FLAME, GREEN, PersonAvatar, mono, statusInfo } from './friendsUi';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // ---- motion --------------------------------------------------------------------------------
 // Everything here is switched off for people who prefer reduced motion.
@@ -104,7 +104,7 @@ export function LiveLine({ text, online }) {
   return (
     <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', mt: 0.25, minHeight: 18 }}>
       {online > 0 && <Box component="span" aria-hidden sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: GREEN, flexShrink: 0, animation: `${livePulse} 2s ease-out infinite`, ...still }} />}
-      <Typography noWrap sx={{ fontSize: 12.5, color: 'text.secondary', lineHeight: 1.3 }}>{text}</Typography>
+      <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary', lineHeight: 1.3 }}>{text}</Typography>
     </Stack>
   );
 }
@@ -125,14 +125,14 @@ export function TabBar({ items, value, onChange }) {
               aria-label={count ? `${title}: ${count}` : title}
               onClick={() => onChange(key)}
               sx={(t) => ({
-                position: 'relative', flex: 1, minWidth: 0, height: 36, px: 0.5, borderRadius: '9px', fontFamily: 'inherit', fontSize: 13, fontWeight: 700,
+                position: 'relative', flex: 1, minWidth: 0, height: 36, px: 0.5, borderRadius: '9px', fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold,
                 color: on ? t.palette.text.primary : t.palette.text.secondary, transition: 'color .2s',
                 '&:hover': { color: t.palette.text.primary },
                 '& .tab-pill': { backgroundColor: t.palette.background.paper, boxShadow: t.palette.mode === 'dark' ? `0 1px 3px ${withAlpha(COLOR_PALETTE.black, 0.5)}` : `0 1px 3px ${withAlpha(COLOR_PALETTE.slate[900], 0.14)}` },
               })}
             >
               {on && <motion.span className="tab-pill" layoutId="friends-tab-pill" transition={{ type: 'spring', stiffness: 520, damping: 40 }} style={{ position: 'absolute', inset: 0, borderRadius: 9 }} />}
-              <Box component="span" sx={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 0.6, minWidth: 0, '& svg': { fontSize: 17, color: on ? 'primary.main' : 'inherit', transition: 'color .2s' } }}>
+              <Box component="span" sx={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 0.6, minWidth: 0, '& svg': { fontSize: FONT_SIZES.subheading, color: on ? 'primary.main' : 'inherit', transition: 'color .2s' } }}>
                 {icon}
                 <Box component="span" sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{label}</Box>
                 {count > 0 && (
@@ -141,7 +141,7 @@ export function TabBar({ items, value, onChange }) {
                     initial={{ scale: 0.4, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ type: 'spring', stiffness: 620, damping: 16 }}
-                    style={badge ? { minWidth: 18, height: 18, padding: '0 5px', borderRadius: 9, background: badge, color: COLOR_PALETTE.white, fontSize: 11, fontWeight: 800, display: 'inline-grid', placeItems: 'center', lineHeight: 1 } : { fontSize: 11.5, fontWeight: 700, opacity: 0.75, fontVariantNumeric: 'tabular-nums' }}
+                    style={badge ? { minWidth: 18, height: 18, padding: '0 5px', borderRadius: 9, background: badge, color: COLOR_PALETTE.white, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, display: 'inline-grid', placeItems: 'center', lineHeight: 1 } : { fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, opacity: 0.75, fontVariantNumeric: 'tabular-nums' }}
                   >
                     {count > 99 ? '99+' : count}
                   </motion.span>
@@ -161,7 +161,7 @@ export function FilterChip({ label, count, active, onClick, dot }) {
       onClick={onClick}
       aria-pressed={active}
       sx={(t) => ({
-        flexShrink: 0, height: 30, px: 1.5, gap: 0.75, borderRadius: 15, fontFamily: 'inherit', fontSize: 12.5, fontWeight: 700,
+        flexShrink: 0, height: 30, px: 1.5, gap: 0.75, borderRadius: 15, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold,
         color: active ? t.palette.primary.main : t.palette.text.secondary,
         bgcolor: active ? alpha(t.palette.primary.main, 0.14) : wsSurface(t).raised,
         transition: 'background-color .2s, color .2s, transform .12s',
@@ -171,7 +171,7 @@ export function FilterChip({ label, count, active, onClick, dot }) {
     >
       {dot && <Box component="span" aria-hidden sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: GREEN }} />}
       {label}
-      {count > 0 && <Box component="span" sx={{ ...mono, fontSize: 11.5, opacity: 0.8 }}>{count}</Box>}
+      {count > 0 && <Box component="span" sx={{ ...mono, fontSize: FONT_SIZES.caption, opacity: 0.8 }}>{count}</Box>}
     </ButtonBase>
   );
 }
@@ -179,7 +179,7 @@ export function FilterChip({ label, count, active, onClick, dot }) {
 export function SectionLabel({ children, right }) {
   return (
     <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', px: 2, pt: 2, pb: 0.75 }}>
-      <Typography sx={{ fontSize: 11.5, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase', color: 'text.secondary' }}>{children}</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.6, textTransform: 'uppercase', color: 'text.secondary' }}>{children}</Typography>
       {right}
     </Stack>
   );
@@ -190,8 +190,8 @@ export function EmptyNote({ icon, title, children }) {
     <Reveal>
       <Stack spacing={0.5} sx={{ alignItems: 'center', py: 4, px: 3, textAlign: 'center', color: 'text.secondary' }}>
         <PulseArt icon={icon} />
-        {title && <Typography sx={{ fontSize: 14.5, fontWeight: 700, color: 'text.primary', pt: 0.5 }}>{title}</Typography>}
-        <Typography variant="body2" sx={{ fontSize: 13, maxWidth: 260, lineHeight: 1.5 }}>{children}</Typography>
+        {title && <Typography sx={{ fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold, color: 'text.primary', pt: 0.5 }}>{title}</Typography>}
+        <Typography variant="body2" sx={{ fontSize: FONT_SIZES.body, maxWidth: 260, lineHeight: 1.5 }}>{children}</Typography>
       </Stack>
     </Reveal>
   );
@@ -226,7 +226,7 @@ export function OnlineRail({ people, onOpen }) {
                 <PersonAvatar person={p} size={40} />
               </Box>
             </Box>
-            <Typography noWrap sx={{ fontSize: 11.5, fontWeight: 600, color: 'text.secondary', width: '100%', textAlign: 'center' }}>{p.name.split(' ')[0]}</Typography>
+            <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold, color: 'text.secondary', width: '100%', textAlign: 'center' }}>{p.name.split(' ')[0]}</Typography>
           </ButtonBase>
         </Reveal>
       ))}
@@ -261,19 +261,19 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
         <PersonAvatar person={f} size={44} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
-            <Typography noWrap sx={{ fontWeight: unread ? 700 : 600, fontSize: 14, lineHeight: 1.35, flex: 1, minWidth: 0 }}>{f.name}</Typography>
-            {fav && <StarRoundedIcon sx={{ fontSize: 14, color: COLOR_PALETTE.amber[500], flexShrink: 0 }} />}
-            {last && <Typography sx={{ fontSize: 11.5, flexShrink: 0, fontWeight: unread ? 700 : 400, color: unread ? 'primary.main' : 'text.disabled' }}>{shortTime(last.at)}</Typography>}
+            <Typography noWrap sx={{ fontWeight: unread ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, lineHeight: 1.35, flex: 1, minWidth: 0 }}>{f.name}</Typography>
+            {fav && <StarRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: COLOR_PALETTE.amber[500], flexShrink: 0 }} />}
+            {last && <Typography sx={{ fontSize: FONT_SIZES.caption, flexShrink: 0, fontWeight: unread ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, color: unread ? 'primary.main' : 'text.disabled' }}>{shortTime(last.at)}</Typography>}
           </Stack>
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 0.25 }}>
-            {mine && last.kind === 'text' && (last.read ? <DoneAllRoundedIcon sx={{ fontSize: 15, color: 'primary.main', flexShrink: 0 }} /> : <DoneRoundedIcon sx={{ fontSize: 15, color: 'text.disabled', flexShrink: 0 }} />)}
-            <Typography noWrap sx={{ fontSize: 13, flex: 1, minWidth: 0, color: !last && st.live ? 'success.main' : unread ? 'text.primary' : 'text.secondary', fontWeight: unread ? 600 : 400 }}>{preview}</Typography>
+            {mine && last.kind === 'text' && (last.read ? <DoneAllRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'primary.main', flexShrink: 0 }} /> : <DoneRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'text.disabled', flexShrink: 0 }} />)}
+            <Typography noWrap sx={{ fontSize: FONT_SIZES.body, flex: 1, minWidth: 0, color: !last && st.live ? 'success.main' : unread ? 'text.primary' : 'text.secondary', fontWeight: unread ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.regular }}>{preview}</Typography>
             {unread > 0 && (
               <Box
                 key={unread}
                 component="span"
                 aria-hidden
-                sx={{ minWidth: 20, height: 20, px: 0.75, borderRadius: '10px', bgcolor: 'primary.main', color: 'primary.contrastText', fontSize: 11.5, fontWeight: 700, display: 'grid', placeItems: 'center', flexShrink: 0, animation: `${pop} .35s ease-out`, ...still }}
+                sx={{ minWidth: 20, height: 20, px: 0.75, borderRadius: '10px', bgcolor: 'primary.main', color: 'primary.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center', flexShrink: 0, animation: `${pop} .35s ease-out`, ...still }}
               >
                 {unread > 99 ? '99+' : unread}
               </Box>
@@ -316,12 +316,12 @@ export function PersonRow({ person, rank, sub, action }) {
       sx={(t) => ({ alignItems: 'center', mx: 1, mb: 0.25, px: 1.25, py: 1, minHeight: 64, borderRadius: '12px', transition: 'background-color .18s', '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.04) } })}
     >
       {rank != null && (
-        <Typography sx={{ width: 24, flexShrink: 0, textAlign: 'center', fontSize: 12.5, fontWeight: 700, color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'text.disabled', ...mono }}>{rank}</Typography>
+        <Typography sx={{ width: 24, flexShrink: 0, textAlign: 'center', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'text.disabled', ...mono }}>{rank}</Typography>
       )}
       <PersonAvatar person={person} size={42} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 600, fontSize: 14, lineHeight: 1.35 }}>{person.name}</Typography>
-        <Typography noWrap sx={{ fontSize: 12.5, color: 'text.secondary', mt: 0.1 }}>{sub || `@${person.handle}`}</Typography>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, lineHeight: 1.35 }}>{person.name}</Typography>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary', mt: 0.1 }}>{sub || `@${person.handle}`}</Typography>
       </Box>
       {action}
     </Stack>

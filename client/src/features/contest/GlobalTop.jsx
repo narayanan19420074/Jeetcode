@@ -8,9 +8,9 @@ import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartm
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import { leaderboardApi } from '../../api/studyPlanApi';
 import { surface } from '../dashboard/dashboardUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
-const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
+const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 const AMBER = COLOR_PALETTE.amber[400];
 
 const MEDAL = {
@@ -42,12 +42,12 @@ function PodiumAvatar({ row, rank }) {
       <Box sx={{ position: 'relative', p: '3.5px', borderRadius: '50%', background: grad(m), boxShadow: `0 8px 26px -6px ${m.glow}` }}>
         <Avatar
           src={row.avatarUrl || undefined} alt={row.name}
-          sx={{ width: { xs: av - 14, sm: av }, height: { xs: av - 14, sm: av }, fontSize: av * 0.38, fontWeight: 800, border: `3px solid ${COLOR_PALETTE.indigo[950]}`, bgcolor: COLOR_PALETTE.indigo[900], color: COLOR_PALETTE.white }}
+          sx={{ width: { xs: av - 14, sm: av }, height: { xs: av - 14, sm: av }, fontSize: av * 0.38, fontWeight: FONT_WEIGHTS.bold, border: `3px solid ${COLOR_PALETTE.indigo[950]}`, bgcolor: COLOR_PALETTE.indigo[900], color: COLOR_PALETTE.white }}
         >
           {row.name?.[0]?.toUpperCase()}
         </Avatar>
       </Box>
-      <Box sx={{ position: 'absolute', bottom: -8, width: 24, height: 24, borderRadius: '50%', display: 'grid', placeItems: 'center', fontWeight: 900, fontSize: 12, color: m.text, background: grad(m), border: `2px solid ${COLOR_PALETTE.indigo[950]}`, ...mono }}>{rank}</Box>
+      <Box sx={{ position: 'absolute', bottom: -8, width: 24, height: 24, borderRadius: '50%', display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, color: m.text, background: grad(m), border: `2px solid ${COLOR_PALETTE.indigo[950]}`, ...mono }}>{rank}</Box>
     </Box>
   );
 }
@@ -64,15 +64,15 @@ function PodiumColumn({ row, rank, delay, reduce }) {
       style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 0 }}
     >
       {first ? (
-        <EmojiEventsRoundedIcon sx={{ fontSize: { xs: 30, sm: 38 }, color: COLOR_PALETTE.amber[200], mb: 0.4, filter: `drop-shadow(0 0 12px ${withAlpha(COLOR_PALETTE.amber[400], 0.9)})`, animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
+        <EmojiEventsRoundedIcon sx={{ fontSize: { xs: FONT_SIZES.hero, sm: FONT_SIZES.heroLg }, color: COLOR_PALETTE.amber[200], mb: 0.4, filter: `drop-shadow(0 0 12px ${withAlpha(COLOR_PALETTE.amber[400], 0.9)})`, animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
       ) : <Box sx={{ height: { xs: 12, sm: 14 } }} />}
 
       <PodiumAvatar row={row} rank={rank} />
 
-      <Typography noWrap sx={{ maxWidth: '100%', fontWeight: 800, fontSize: { xs: 12.5, sm: 14 }, mt: 1.5, px: 0.5 }}>{row.name}</Typography>
-      <Typography noWrap sx={{ maxWidth: '100%', fontSize: 11, opacity: 0.7, mt: -0.1 }}>@{row.handle}</Typography>
-      <Typography sx={[{ fontWeight: 900, fontSize: { xs: 15, sm: first ? 20 : 17 }, color: m.a, mt: 0.4, mb: 0.9 }, mono]}>
-        {pts(row.score)}<Box component="span" sx={{ fontSize: 10, ml: 0.4, opacity: 0.85 }}>pts</Box>
+      <Typography noWrap sx={{ maxWidth: '100%', fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.caption, sm: FONT_SIZES.body }, mt: 1.5, px: 0.5 }}>{row.name}</Typography>
+      <Typography noWrap sx={{ maxWidth: '100%', fontSize: FONT_SIZES.micro, opacity: 0.7, mt: -0.1 }}>@{row.handle}</Typography>
+      <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.bodyLg, sm: first ? FONT_SIZES.heading : FONT_SIZES.subheading }, color: m.a, mt: 0.4, mb: 0.9 }, mono]}>
+        {pts(row.score)}<Box component="span" sx={{ fontSize: FONT_SIZES.micro, ml: 0.4, opacity: 0.85 }}>pts</Box>
       </Typography>
 
       {/* pedestal */}
@@ -85,7 +85,7 @@ function PodiumColumn({ row, rank, delay, reduce }) {
           '&::after': first ? { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(100deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 3.6s ease-in-out infinite`, ...calm } : undefined,
         }}
       >
-        <Typography sx={[{ fontWeight: 900, fontSize: { xs: h * 0.36, sm: h * 0.42 }, lineHeight: 1, color: m.text, opacity: 0.8 }, mono]}>{rank}</Typography>
+        <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: h * 0.36, sm: h * 0.42 }, lineHeight: 1, color: m.text, opacity: 0.8 }, mono]}>{rank}</Typography>
       </Box>
     </motion.div>
   );
@@ -127,21 +127,21 @@ function RankRow({ row, top, index, reduce }) {
           transition: 'transform .18s, border-color .18s', '&:hover': { transform: 'translateY(-1px)', borderColor: alpha(t.palette.primary.main, 0.5) },
         })}
       >
-        <Typography sx={(t) => ({ width: 30, height: 30, borderRadius: '10px', display: 'grid', placeItems: 'center', flexShrink: 0, fontWeight: 800, fontSize: 13, color: 'text.secondary', bgcolor: alpha(t.palette.text.primary, 0.07), ...mono })}>{row.rank}</Typography>
-        <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: 38, height: 38, fontSize: 15, fontWeight: 700 }}>{row.name?.[0]?.toUpperCase()}</Avatar>
+        <Typography sx={(t) => ({ width: 30, height: 30, borderRadius: '10px', display: 'grid', placeItems: 'center', flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: 'text.secondary', bgcolor: alpha(t.palette.text.primary, 0.07), ...mono })}>{row.rank}</Typography>
+        <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: 38, height: 38, fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold }}>{row.name?.[0]?.toUpperCase()}</Avatar>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1, justifyContent: 'space-between' }}>
-            <Typography noWrap sx={{ fontWeight: 800, fontSize: 14.5 }}>{row.name}</Typography>
-            <Typography sx={[{ fontWeight: 900, fontSize: 14.5, flexShrink: 0 }, mono]}>{pts(row.score)}<Box component="span" sx={{ fontSize: 10, ml: 0.4, color: 'text.secondary' }}>pts</Box></Typography>
+            <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg }}>{row.name}</Typography>
+            <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, flexShrink: 0 }, mono]}>{pts(row.score)}<Box component="span" sx={{ fontSize: FONT_SIZES.micro, ml: 0.4, color: 'text.secondary' }}>pts</Box></Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 0.15 }}>
             <Typography noWrap variant="caption" color="text.secondary" sx={{ minWidth: 0 }}>@{row.handle}</Typography>
             <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, color: 'text.secondary', flexShrink: 0 }}>
-              <CodeRoundedIcon sx={{ fontSize: 13 }} /><Typography variant="caption" sx={{ fontWeight: 700 }}>{row.solved}</Typography>
+              <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.body }} /><Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{row.solved}</Typography>
             </Box>
             {row.streak > 0 && (
               <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.1, flexShrink: 0 }}>
-                <LocalFireDepartmentRoundedIcon sx={{ fontSize: 14, color: AMBER }} /><Typography variant="caption" sx={{ fontWeight: 700 }}>{row.streak}d</Typography>
+                <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: AMBER }} /><Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{row.streak}d</Typography>
               </Box>
             )}
           </Box>
@@ -185,12 +185,12 @@ export default function GlobalTop({ fill = false }) {
         <Box sx={{ position: 'absolute', zIndex: 2, left: 0, right: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.75, sm: 2.5 }, pt: { xs: 1.75, sm: 2.25 }, color: COLOR_PALETTE.white }}>
           <Box sx={{ minWidth: 0 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
-              <PublicRoundedIcon sx={{ fontSize: 20, color: AMBER }} />
-              <Typography sx={{ fontWeight: 900, fontSize: { xs: 18, sm: 21 }, letterSpacing: '-0.01em' }}>Global top 10</Typography>
+              <PublicRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: AMBER }} />
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.subheading, sm: FONT_SIZES.heading }, letterSpacing: '-0.01em' }}>Global top 10</Typography>
             </Box>
-            <Typography sx={{ fontSize: 12.5, opacity: 0.75, mt: 0.2 }}>Best players worldwide, all-time points</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.caption, opacity: 0.75, mt: 0.2 }}>Best players worldwide, all-time points</Typography>
           </Box>
-          <Box sx={{ px: 1.1, py: 0.35, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14), fontSize: 11, fontWeight: 800, letterSpacing: 0.5, flexShrink: 0 }}>LIVE</Box>
+          <Box sx={{ px: 1.1, py: 0.35, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14), fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.5, flexShrink: 0 }}>LIVE</Box>
         </Box>
 
         {status === 'loading' && (
@@ -201,10 +201,10 @@ export default function GlobalTop({ fill = false }) {
         {status === 'ok' && podium.length > 0 && <Podium rows={podium} reduce={reduce} />}
         {(status === 'error' || (status === 'ok' && podium.length === 0)) && (
           <Box sx={{ pt: 11, pb: 4, px: 3, textAlign: 'center', color: COLOR_PALETTE.white }}>
-            <EmojiEventsRoundedIcon sx={{ fontSize: 44, color: AMBER, opacity: 0.9 }} />
-            <Typography sx={{ fontWeight: 800, mt: 0.5 }}>{status === 'error' ? 'Could not load the rankings' : 'The podium is waiting for its first champion'}</Typography>
-            <Typography sx={{ fontSize: 13, opacity: 0.75, mt: 0.25 }}>{status === 'error' ? 'Please try again in a moment.' : 'Solve questions to earn points and take the #1 spot.'}</Typography>
-            {status === 'error' && <Button onClick={() => setTick((n) => n + 1)} sx={{ mt: 1.5, color: COLOR_PALETTE.custom.black1B1200, bgcolor: AMBER, fontWeight: 800, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Retry</Button>}
+            <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.jumbo, color: AMBER, opacity: 0.9 }} />
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 0.5 }}>{status === 'error' ? 'Could not load the rankings' : 'The podium is waiting for its first champion'}</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.body, opacity: 0.75, mt: 0.25 }}>{status === 'error' ? 'Please try again in a moment.' : 'Solve questions to earn points and take the #1 spot.'}</Typography>
+            {status === 'error' && <Button onClick={() => setTick((n) => n + 1)} sx={{ mt: 1.5, color: COLOR_PALETTE.custom.black1B1200, bgcolor: AMBER, fontWeight: FONT_WEIGHTS.bold, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Retry</Button>}
           </Box>
         )}
       </Box>

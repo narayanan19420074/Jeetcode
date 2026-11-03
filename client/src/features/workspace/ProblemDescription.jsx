@@ -8,6 +8,7 @@ import DifficultyChip from '../../components/DifficultyChip';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
 import { WsIconButton } from './wsUi';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Pattern names (the problem's topics) under the title: the first thing a learner needs to know.
 function PatternChips({ items }) {
@@ -19,7 +20,7 @@ function PatternChips({ items }) {
           key={t}
           label={t}
           size="small"
-          sx={(th) => ({ height: 26, borderRadius: '6px', fontWeight: 700, fontSize: '0.76rem', color: th.palette.primary.main, bgcolor: alpha(th.palette.primary.main, th.palette.mode === 'dark' ? 0.16 : 0.1) })}
+          sx={(th) => ({ height: 26, borderRadius: '6px', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, color: th.palette.primary.main, bgcolor: alpha(th.palette.primary.main, th.palette.mode === 'dark' ? 0.16 : 0.1) })}
         />
       ))}
     </Stack>
@@ -37,7 +38,7 @@ function CompanyChips({ items }) {
           label={t}
           size="small"
           variant="outlined"
-          sx={{ height: 20, borderRadius: '5px', fontWeight: 600, fontSize: '0.66rem', color: 'text.secondary', '& .MuiChip-label': { px: 0.9 } }}
+          sx={{ height: 20, borderRadius: '5px', fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.micro, color: 'text.secondary', '& .MuiChip-label': { px: 0.9 } }}
         />
       ))}
     </Stack>
@@ -54,11 +55,11 @@ function Fold({ title, count, children }) {
         aria-expanded={open}
         sx={{ display: 'flex', width: '100%', justifyContent: 'flex-start', gap: 1, px: 1.5, py: 1, textAlign: 'left', borderRadius: 'inherit' }}
       >
-        <Typography sx={{ flex: 1, fontWeight: 700, fontSize: '0.86rem' }}>
+        <Typography sx={{ flex: 1, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
           {title}
-          {count > 0 && <Box component="span" sx={{ ml: 0.75, color: 'text.secondary', fontWeight: 600 }}>{count}</Box>}
+          {count > 0 && <Box component="span" sx={{ ml: 0.75, color: 'text.secondary', fontWeight: FONT_WEIGHTS.semibold }}>{count}</Box>}
         </Typography>
-        <ExpandMoreRoundedIcon sx={{ fontSize: 22, color: 'text.secondary', transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none' }} />
+        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'text.secondary', transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none' }} />
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
         <Box sx={{ px: 1.5, pb: 1.5 }}>{children}</Box>
@@ -74,7 +75,7 @@ function ConstraintList({ items }) {
         <Typography key={i} component="li" variant="body2" sx={{ lineHeight: 1.6, '&::marker': { color: 'text.disabled' } }}>
           <Box
             component="code"
-            sx={(t) => ({ ...mono, fontSize: '0.78rem', px: 0.75, py: 0.25, borderRadius: '6px', wordBreak: 'break-word', bgcolor: wsSurface(t).raised })}
+            sx={(t) => ({ ...mono, fontSize: FONT_SIZES.caption, px: 0.75, py: 0.25, borderRadius: '6px', wordBreak: 'break-word', bgcolor: wsSurface(t).raised })}
           >
             {c}
           </Box>
@@ -91,11 +92,11 @@ function ExampleBlock({ index, example }) {
   ];
   return (
     <Box sx={{ mb: 2 }}>
-      <Typography sx={{ fontWeight: 600, fontSize: '0.82rem', mb: 0.75 }}>Example {index + 1}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, mb: 0.75 }}>Example {index + 1}</Typography>
       <Box sx={(t) => ({ p: 1.5, borderRadius: `${WS.radius + 2}px`, bgcolor: wsSurface(t).raised })}>
         {rows.map(([label, value]) => (
-          <Typography key={label} sx={{ ...mono, fontSize: '0.8rem', lineHeight: 1.7, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-            <Box component="span" sx={{ fontWeight: 700, color: 'text.secondary' }}>
+          <Typography key={label} sx={{ ...mono, fontSize: FONT_SIZES.caption, lineHeight: 1.7, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+            <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary' }}>
               {label}:{' '}
             </Box>
             {value}
@@ -103,7 +104,7 @@ function ExampleBlock({ index, example }) {
         ))}
         {example.explanation && (
           <Typography variant="body2" sx={{ mt: 1, lineHeight: 1.65, whiteSpace: 'pre-wrap' }}>
-            <Box component="span" sx={{ fontWeight: 700, color: 'text.secondary' }}>
+            <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary' }}>
               Explanation:{' '}
             </Box>
             {example.explanation}
@@ -126,7 +127,7 @@ export default function ProblemDescription({ problem, nav }) {
   return (
     <>
       <Stack direction="row" sx={{ alignItems: 'flex-start', gap: 1, mb: 1.25 }}>
-        <Typography sx={{ flex: 1, minWidth: 0, fontWeight: 800, fontSize: '1.3rem', lineHeight: 1.3, letterSpacing: '-0.01em', wordBreak: 'break-word' }}>{problem.title}</Typography>
+        <Typography sx={{ flex: 1, minWidth: 0, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.3, letterSpacing: '-0.01em', wordBreak: 'break-word' }}>{problem.title}</Typography>
         {nav && (
           <Stack direction="row" sx={{ flexShrink: 0, gap: 0.25, mt: -0.25 }}>
             <WsIconButton title="Previous problem" size={nav.size} disabled={!nav.hasPrev} onClick={nav.onPrev}>
@@ -164,7 +165,7 @@ export default function ProblemDescription({ problem, nav }) {
           </Fold>
         ) : (
           <Box sx={{ mt: 1.5, mb: 2 }}>
-            <Typography sx={{ fontWeight: 700, fontSize: '0.86rem', mb: 1 }}>Constraints</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, mb: 1 }}>Constraints</Typography>
             <ConstraintList items={constraints} />
           </Box>
         ))}

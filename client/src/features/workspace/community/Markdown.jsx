@@ -3,7 +3,7 @@ import { Box, IconButton, Stack, Tab, Tabs, TextField, Tooltip, Typography } fro
 import { alpha } from '@mui/material/styles';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // Small, dependency-free markdown renderer. It never uses
 // dangerouslySetInnerHTML — everything becomes React text nodes, so user
@@ -11,7 +11,7 @@ import { COLOR_PALETTE } from '../../../app/design/designTokens';
 // bullet/numbered lists, blockquotes, **bold**, *italic*, `code`, and
 // http(s) links.
 
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+const mono = { fontFamily: FONTS.mono };
 
 export const LANG_LABEL = { javascript: 'JavaScript', python: 'Python', cpp: 'C++', java: 'Java' };
 export const LANG_COLOR = { javascript: COLOR_PALETTE.amber[500], python: COLOR_PALETTE.blue[500], cpp: COLOR_PALETTE.violet[500], java: COLOR_PALETTE.red[500] };
@@ -27,11 +27,11 @@ export function CodePreview({ code, language }) {
     <Box sx={{ position: 'relative', mt: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 3, bgcolor: 'background.default', overflow: 'hidden' }}>
       <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 1.5, py: 0.75, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'action.hover' }}>
         <LangDot language={language} />
-        <Typography variant="caption" sx={{ fontWeight: 600, ...mono }}>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.semibold, ...mono }}>
           {LANG_LABEL[language] || language}
         </Typography>
       </Stack>
-      <Box component="pre" sx={{ m: 0, px: 1.5, py: 1.25, maxHeight: 150, overflow: 'hidden', fontSize: '0.8rem', lineHeight: 1.6, ...mono }}>
+      <Box component="pre" sx={{ m: 0, px: 1.5, py: 1.25, maxHeight: 150, overflow: 'hidden', fontSize: FONT_SIZES.caption, lineHeight: 1.6, ...mono }}>
         <code>{code}</code>
       </Box>
       <Box
@@ -67,17 +67,17 @@ export function CodeBlock({ code, language, maxHeight = 420 }) {
       <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ pl: 1.5, pr: 0.5, minHeight: 40, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'action.hover' }}>
         <Stack direction="row" alignItems="center" spacing={0.75}>
           {language && <LangDot language={language} />}
-          <Typography variant="caption" sx={{ fontWeight: 600, ...mono }}>
+          <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.semibold, ...mono }}>
             {LANG_LABEL[language] || language || 'code'}
           </Typography>
         </Stack>
         <Tooltip title={copied ? 'Copied' : 'Copy code'}>
           <IconButton aria-label="Copy code" onClick={copy}>
-            {copied ? <CheckRoundedIcon sx={{ fontSize: 20 }} /> : <ContentCopyRoundedIcon sx={{ fontSize: 20 }} />}
+            {copied ? <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} /> : <ContentCopyRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
           </IconButton>
         </Tooltip>
       </Stack>
-      <Box component="pre" sx={{ m: 0, p: 1.5, overflow: 'auto', maxHeight, fontSize: '0.85rem', lineHeight: 1.65, ...mono }}>
+      <Box component="pre" sx={{ m: 0, p: 1.5, overflow: 'auto', maxHeight, fontSize: FONT_SIZES.body, lineHeight: 1.65, ...mono }}>
         <code>{code}</code>
       </Box>
     </Box>
@@ -178,7 +178,7 @@ export default function Markdown({ source }) {
   const blocks = parseBlocks(source);
 
   return (
-    <Box sx={{ fontSize: '0.95rem', lineHeight: 1.7, wordBreak: 'break-word', '& > :first-of-type': { mt: 0 } }}>
+    <Box sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: 1.7, wordBreak: 'break-word', '& > :first-of-type': { mt: 0 } }}>
       {blocks.map((b, i) => {
         const k = `b${i}`;
         switch (b.type) {
@@ -186,7 +186,7 @@ export default function Markdown({ source }) {
             return <CodeBlock key={k} code={b.text} language={b.lang} />;
           case 'h':
             return (
-              <Typography key={k} variant={b.level === 1 ? 'h6' : 'subtitle1'} sx={{ fontWeight: 700, mt: 2, mb: 0.5 }}>
+              <Typography key={k} variant={b.level === 1 ? 'h6' : 'subtitle1'} sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 2, mb: 0.5 }}>
                 {renderInline(b.text, k)}
               </Typography>
             );
@@ -224,8 +224,8 @@ export function MarkdownEditor({ value, onChange, maxLength = 10000, minRows = 6
   return (
     <Box>
       <Stack direction="row" alignItems="center" justifyContent="space-between">
-        <Typography sx={{ fontWeight: 700, fontSize: '0.95rem' }}>{label}</Typography>
-        <Tabs value={tab} onChange={(e, v) => setTab(v)} sx={{ minHeight: 40, '& .MuiTab-root': { minHeight: 40, py: 0, fontSize: '0.88rem' } }}>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg }}>{label}</Typography>
+        <Tabs value={tab} onChange={(e, v) => setTab(v)} sx={{ minHeight: 40, '& .MuiTab-root': { minHeight: 40, py: 0, fontSize: FONT_SIZES.body } }}>
           <Tab value="write" label="Write" />
           <Tab value="preview" label="Preview" />
         </Tabs>
@@ -241,7 +241,7 @@ export function MarkdownEditor({ value, onChange, maxLength = 10000, minRows = 6
           placeholder={placeholder}
           onChange={(e) => onChange(e.target.value.slice(0, maxLength))}
           helperText={`Markdown supported · \`\`\`code\`\`\` blocks · ${value.length}/${maxLength}`}
-          slotProps={{ htmlInput: { style: { fontSize: '0.95rem' } } }}
+          slotProps={{ htmlInput: { style: { fontSize: FONT_SIZES.bodyLg } } }}
         />
       ) : (
         <Box sx={{ minHeight: minRows * 24, p: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>

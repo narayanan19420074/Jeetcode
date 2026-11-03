@@ -45,7 +45,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSmallBtnSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import FriendPicker from './FriendPicker';
 import { daysLeftInfo, fmtDay, fmtRange, itemLink, planTheme, relTime, shareUrl } from './planUtils';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone layout of the Study Plan screens (plans list and open plan) in the Library look
 // (same as the phone Home, Problems, Store and Friends pages): Roboto type, warm surface,
@@ -105,8 +105,8 @@ function Chip({ color, children }) {
         display: 'inline-flex',
         alignItems: 'center',
         borderRadius: 999,
-        fontSize: 13,
-        fontWeight: 500,
+        fontSize: FONT_SIZES.body,
+        fontWeight: FONT_WEIGHTS.medium,
         letterSpacing: LIB_TRACKING,
         whiteSpace: 'nowrap',
         fontVariantNumeric: 'tabular-nums',
@@ -137,7 +137,7 @@ function PlanDisc({ percent, accent, size = 72 }) {
       }}
     >
       <Box sx={{ width: size * 0.6, height: size * 0.6, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: 'var(--lib-bg)' }}>
-        <Typography component="span" sx={{ fontSize: size * 0.2, lineHeight: 1, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: 'var(--lib-text)' }}>
+        <Typography component="span" sx={{ fontSize: size * 0.2, lineHeight: 1, fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums', color: 'var(--lib-text)' }}>
           {pct}%
         </Typography>
       </Box>
@@ -188,7 +188,7 @@ function PillTabs({ label, options, value, onChange, accent = ACCENT }) {
               px: '14px',
               borderRadius: 999,
               fontFamily: 'inherit',
-              fontSize: 15,
+              fontSize: FONT_SIZES.bodyLg,
               letterSpacing: LIB_TRACKING,
               whiteSpace: 'nowrap',
               bgcolor: on ? accent : 'var(--lib-chip)',
@@ -232,10 +232,10 @@ function PlanCard({ plan, today, onOpen, onAddFriend, onDelete }) {
       >
         <PlanDisc percent={s.percent} accent={accent} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography component="h3" sx={{ fontSize: 18, lineHeight: '24px', fontWeight: 700, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', overflowWrap: 'anywhere' }}>
+          <Typography component="h3" sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', overflowWrap: 'anywhere' }}>
             {plan.title}
           </Typography>
-          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: MUTED }}>
+          <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: MUTED }}>
             {fmtRange(s.startDate, s.endDate)}
           </Typography>
         </Box>
@@ -249,8 +249,8 @@ function PlanCard({ plan, today, onOpen, onAddFriend, onDelete }) {
         <Chip>{s.done} Solved</Chip>
         {s.streak > 0 && (
           <Stack direction="row" sx={{ alignItems: 'center' }} aria-label={`${s.streak}-day streak`}>
-            <LocalFireDepartmentRoundedIcon sx={{ fontSize: 18, color: 'warning.main' }} />
-            <Typography component="span" sx={{ fontSize: 13, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>
+            <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'warning.main' }} />
+            <Typography component="span" sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, fontVariantNumeric: 'tabular-nums' }}>
               {s.streak}d
             </Typography>
           </Stack>
@@ -258,8 +258,8 @@ function PlanCard({ plan, today, onOpen, onAddFriend, onDelete }) {
       </Stack>
 
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1, mt: 1.5 }}>
-        <Typography sx={{ minWidth: 0, flex: 1, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: behind && !complete ? 'var(--jc-hard)' : MUTED }}>{message}</Typography>
-        <AvatarGroup max={3} sx={{ flexShrink: 0, '& .MuiAvatar-root': { width: 24, height: 24, fontSize: 11, fontWeight: 700, border: '2px solid', borderColor: 'var(--lib-chip)' } }}>
+        <Typography sx={{ minWidth: 0, flex: 1, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: behind && !complete ? 'var(--jc-hard)' : MUTED }}>{message}</Typography>
+        <AvatarGroup max={3} sx={{ flexShrink: 0, '& .MuiAvatar-root': { width: 24, height: 24, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: 'var(--lib-chip)' } }}>
           {plan.members.map((m) => (
             <Avatar key={m.id} src={m.avatarUrl || undefined} alt={m.name}>
               {m.name?.[0]?.toUpperCase()}
@@ -269,7 +269,7 @@ function PlanCard({ plan, today, onOpen, onAddFriend, onDelete }) {
       </Stack>
 
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mt: 2 }}>
-        <Button onClick={onOpen} disableElevation variant="contained" startIcon={<PlayArrowRoundedIcon />} sx={{ ...solidBtn(accent), flex: 1, minWidth: 0, height: 44, fontSize: 16 }}>
+        <Button onClick={onOpen} disableElevation variant="contained" startIcon={<PlayArrowRoundedIcon />} sx={{ ...solidBtn(accent), flex: 1, minWidth: 0, height: 44, fontSize: FONT_SIZES.title }}>
           {cta}
         </Button>
         <IconButton aria-label={`Add friends to ${plan.title}`} onClick={(e) => onAddFriend(e.currentTarget, plan)} sx={cardIconSx}>
@@ -360,7 +360,7 @@ export function MobilePlans({
         <Box sx={{ ...libPanelSx, p: 2, mt: 3 }}>
           {invite.error ? (
             <>
-              <Typography color="error" sx={{ fontSize: 16 }}>
+              <Typography color="error" sx={{ fontSize: FONT_SIZES.title }}>
                 {invite.error}
               </Typography>
               <Button onClick={onDismissInvite} fullWidth disableElevation variant="contained" sx={{ ...libTintBtnSx, bgcolor: 'var(--lib-bg)', mt: 1.5 }}>
@@ -369,13 +369,13 @@ export function MobilePlans({
             </>
           ) : (
             <>
-              <Typography sx={{ fontSize: 14, color: MUTED, letterSpacing: LIB_TRACKING }}>{invite.owner ? `@${invite.owner.handle} invited you to` : 'You are invited to'}</Typography>
-              <Typography sx={{ fontWeight: 700, fontSize: 18, lineHeight: '24px', overflowWrap: 'anywhere' }}>{invite.title}</Typography>
-              <Typography sx={{ fontSize: 14, color: MUTED, letterSpacing: LIB_TRACKING, mt: 0.5 }}>
+              <Typography sx={{ fontSize: FONT_SIZES.body, color: MUTED, letterSpacing: LIB_TRACKING }}>{invite.owner ? `@${invite.owner.handle} invited you to` : 'You are invited to'}</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: '24px', overflowWrap: 'anywhere' }}>{invite.title}</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, color: MUTED, letterSpacing: LIB_TRACKING, mt: 0.5 }}>
                 {invite.taskCount} questions, {fmtRange(invite.startDate, invite.endDate)}, {invite.memberCount} member{invite.memberCount === 1 ? '' : 's'}
               </Typography>
               {invite.isFull ? (
-                <Typography sx={{ mt: 1.5, fontWeight: 700, color: 'warning.main' }}>This plan is full</Typography>
+                <Typography sx={{ mt: 1.5, fontWeight: FONT_WEIGHTS.bold, color: 'warning.main' }}>This plan is full</Typography>
               ) : (
                 <Button onClick={onAccept} disabled={joining} fullWidth disableElevation variant="contained" sx={{ ...libSolidBtnSx, mt: 1.5 }}>
                   {joining ? 'Joining…' : 'Join plan'}
@@ -400,8 +400,8 @@ export function MobilePlans({
           </Stack>
         ) : plans.length === 0 ? (
           <Box sx={{ py: 5, px: 2, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 700, fontSize: 18 }}>No plans yet</Typography>
-            <Typography sx={{ fontSize: 16, color: MUTED, mt: 0.5, mb: 2 }}>Pick questions, set a finish date and add friends.</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading }}>No plans yet</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.title, color: MUTED, mt: 0.5, mb: 2 }}>Pick questions, set a finish date and add friends.</Typography>
             <Button onClick={onNew} disableElevation variant="contained" sx={libTintBtnSx}>
               Create a plan
             </Button>
@@ -420,7 +420,7 @@ export function MobilePlans({
         {friends === null && <Skeleton variant="rounded" height={56} sx={{ borderRadius: '16px' }} />}
         {friends?.length === 0 && (
           <Box sx={{ pb: 1 }}>
-            <Typography sx={{ fontSize: 16, color: MUTED }}>No friends yet.</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.title, color: MUTED }}>No friends yet.</Typography>
             <Button
               onClick={() => {
                 setFriendsOpen(false);
@@ -436,15 +436,15 @@ export function MobilePlans({
         )}
         {friends?.map((f) => (
           <Stack key={f.userId} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1, borderBottom: `1px solid ${DIVIDER}`, '&:last-of-type': { borderBottom: 'none' } }}>
-            <Avatar src={f.avatarUrl || undefined} alt={f.name} sx={{ width: 40, height: 40, fontWeight: 700 }}>
+            <Avatar src={f.avatarUrl || undefined} alt={f.name} sx={{ width: 40, height: 40, fontWeight: FONT_WEIGHTS.bold }}>
               {f.name?.[0]?.toUpperCase()}
             </Avatar>
             <Box sx={{ minWidth: 0 }}>
-              <Typography noWrap sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
                 {f.name}
               </Typography>
               {f.handle && (
-                <Typography noWrap sx={{ fontSize: 14, lineHeight: '18px', color: MUTED }}>
+                <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '18px', color: MUTED }}>
                   @{f.handle}
                 </Typography>
               )}
@@ -467,7 +467,7 @@ export function MobilePlans({
             helperText={codeError || undefined}
             slotProps={{ htmlInput: { 'aria-label': 'Invite link or code' } }}
             sx={{
-              '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: 'var(--lib-player)', fontSize: 16, letterSpacing: LIB_TRACKING },
+              '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING },
               '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
             }}
           />
@@ -487,7 +487,7 @@ export function MobilePlans({
       {/* Notifications */}
       <Sheet open={notesOpen} onClose={() => setNotesOpen(false)} title="Notifications">
         {notes.items.length === 0 ? (
-          <Typography sx={{ fontSize: 16, color: MUTED, pb: 1 }}>Nothing new.</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.title, color: MUTED, pb: 1 }}>Nothing new.</Typography>
         ) : (
           notes.items.map((n) => (
             <ButtonBase
@@ -511,14 +511,14 @@ export function MobilePlans({
                 bgcolor: n.read ? 'transparent' : 'var(--lib-chip)',
               }}
             >
-              <Avatar src={n.actor.avatarUrl || undefined} alt={n.actor.name} sx={{ width: 40, height: 40, fontWeight: 700 }}>
+              <Avatar src={n.actor.avatarUrl || undefined} alt={n.actor.name} sx={{ width: 40, height: 40, fontWeight: FONT_WEIGHTS.bold }}>
                 {n.actor.name?.[0]?.toUpperCase()}
               </Avatar>
               <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Typography sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
+                <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
                   <b>{n.actor.name}</b> added you to <b>{n.plan.title}</b>
                 </Typography>
-                <Typography sx={{ fontSize: 14, color: MUTED, mt: 0.25 }}>{relTime(n.createdAt)}</Typography>
+                <Typography sx={{ fontSize: FONT_SIZES.body, color: MUTED, mt: 0.25 }}>{relTime(n.createdAt)}</Typography>
               </Box>
             </ButtonBase>
           ))
@@ -541,27 +541,27 @@ function QuestionRow({ item, index, doers }) {
       <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.25, pt: '2px' }}>
         <Typography
           component="span"
-          sx={{ flexShrink: 0, minWidth: 43, textAlign: 'center', px: '5px', py: '2px', borderRadius: '8px', fontSize: 15, letterSpacing: LIB_TRACKING, lineHeight: '20px', color: diffColor, bgcolor: tint(diffColor, 14) }}
+          sx={{ flexShrink: 0, minWidth: 43, textAlign: 'center', px: '5px', py: '2px', borderRadius: '8px', fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, lineHeight: '20px', color: diffColor, bgcolor: tint(diffColor, 14) }}
         >
           {SHORT_DIFF[item.difficulty] || item.difficulty}
         </Typography>
         {item.done ? (
-          <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: 20, color: 'var(--jc-easy)' }} />
+          <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-easy)' }} />
         ) : item.overdue ? (
-          <ErrorOutlineRoundedIcon aria-label="Overdue" sx={{ fontSize: 20, color: 'var(--jc-hard)' }} />
+          <ErrorOutlineRoundedIcon aria-label="Overdue" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-hard)' }} />
         ) : (
-          <RemoveRoundedIcon aria-label="Not solved" sx={{ fontSize: 20, color: MUTED, opacity: 0.6 }} />
+          <RemoveRoundedIcon aria-label="Not solved" sx={{ fontSize: FONT_SIZES.heading, color: MUTED, opacity: 0.6 }} />
         )}
       </Stack>
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: LIB_TRACKING }}>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING }}>
           {index}. {item.title}
         </Typography>
         <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 1.5, color: MUTED }}>
-          <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING }}>{item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
-          {item.overdue && !item.done && <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING, color: 'var(--jc-hard)' }}>Overdue</Typography>}
+          <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>{item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
+          {item.overdue && !item.done && <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, color: 'var(--jc-hard)' }}>Overdue</Typography>}
           {doers.length > 0 && (
-            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 20, height: 20, fontSize: 10, fontWeight: 700, border: '2px solid', borderColor: 'var(--lib-bg)' } }}>
+            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 20, height: 20, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: 'var(--lib-bg)' } }}>
               {doers.map((m) => (
                 <Avatar key={m.userId} src={m.avatarUrl || undefined} alt={m.name}>
                   {m.name?.[0]?.toUpperCase()}
@@ -768,7 +768,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
 
       {panel === 'questions' ? (
         <Box sx={{ mt: 1 }} role="tabpanel" aria-label="Questions">
-          {plan.items.length === 0 && <Typography sx={{ py: 4, textAlign: 'center', fontSize: 16, color: MUTED }}>No questions in this plan.</Typography>}
+          {plan.items.length === 0 && <Typography sx={{ py: 4, textAlign: 'center', fontSize: FONT_SIZES.title, color: MUTED }}>No questions in this plan.</Typography>}
           {plan.items.map((it, i) => (
             <QuestionRow key={it.id} item={it} index={i + 1} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />
           ))}
@@ -780,10 +780,10 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
             return (
               <Box key={m.userId} sx={{ ...libPanelSx, p: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                 <PlanDisc percent={m.percent} accent={discColor} size={96} />
-                <Typography noWrap sx={{ mt: 1.5, maxWidth: '100%', fontSize: 16, lineHeight: '22px', fontWeight: 500, letterSpacing: LIB_TRACKING }}>
+                <Typography noWrap sx={{ mt: 1.5, maxWidth: '100%', fontSize: FONT_SIZES.title, lineHeight: '22px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>
                   {m.isMe ? 'You' : m.name}
                 </Typography>
-                <Typography sx={{ fontSize: 14, lineHeight: '20px', color: MUTED, fontVariantNumeric: 'tabular-nums' }}>
+                <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', color: MUTED, fontVariantNumeric: 'tabular-nums' }}>
                   {m.done}/{m.total} Solved
                 </Typography>
                 {plan.isOwner && !m.isOwner && (
@@ -800,7 +800,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
       <FriendPicker anchorEl={pickerEl} onClose={() => setPickerEl(null)} friends={friends} memberIds={memberIds} onAdd={addFriend} onFindFriends={onFindFriends} />
 
       <Dialog open={Boolean(confirm)} onClose={() => !busy && setConfirm(null)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 700 }}>{confirmTitle}</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{confirmTitle}</DialogTitle>
         <DialogContent>
           <DialogContentText>{confirmText}</DialogContentText>
         </DialogContent>
@@ -808,7 +808,7 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
           <Button onClick={() => setConfirm(null)} disabled={busy}>
             Cancel
           </Button>
-          <Button color="error" variant="contained" disableElevation onClick={runConfirm} disabled={busy} sx={{ fontWeight: 700 }}>
+          <Button color="error" variant="contained" disableElevation onClick={runConfirm} disabled={busy} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             {confirm === 'delete' ? 'Delete' : confirm === 'leave' ? 'Leave' : 'Remove'}
           </Button>
         </DialogActions>

@@ -1,7 +1,7 @@
 import { Box, ButtonBase, Tooltip, Typography } from '@mui/material';
 import { PLAN_AMBER } from '../../../studyplan/planUtils';
 import { EMERALD, FAINT } from './railTokens';
-import { COLOR_PALETTE } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 function DayNumber({ day, active, today, future, label }) {
   return (
@@ -18,9 +18,9 @@ function DayNumber({ day, active, today, future, label }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: '0.8rem',
+        fontSize: FONT_SIZES.caption,
         fontVariantNumeric: 'tabular-nums',
-        fontWeight: active || today ? 800 : 500,
+        fontWeight: active || today ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
         color: active ? EMERALD : future ? FAINT : COLOR_PALETTE.white,
         border: today ? '2px solid' : 'none',
         borderColor: PLAN_AMBER,
@@ -37,7 +37,7 @@ function PlanMarker() {
     <Box
       component="span"
       aria-hidden="true"
-      sx={{ position: 'absolute', top: -2, right: 'calc(50% - 20px)', width: 13, height: 13, borderRadius: '50%', display: 'grid', placeItems: 'center', fontSize: 8, fontWeight: 800, lineHeight: 1, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200 }}
+      sx={{ position: 'absolute', top: -2, right: 'calc(50% - 20px)', width: 13, height: 13, borderRadius: '50%', display: 'grid', placeItems: 'center', fontSize: 8, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200 }}
     >
       P
     </Box>
@@ -48,7 +48,7 @@ function PlanList({ plans }) {
   return (
     <Box>
       {plans.map((p) => (
-        <Typography key={p.id} variant="caption" sx={{ display: 'block', fontWeight: 600 }}>
+        <Typography key={p.id} variant="caption" sx={{ display: 'block', fontWeight: FONT_WEIGHTS.semibold }}>
           {p.title} - {p.left}
         </Typography>
       ))}

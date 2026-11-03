@@ -37,7 +37,7 @@ import {
   libSmallBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const clock = (iso) => new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
 const addUnique = (list, m) => (list.some((x) => x.id === m.id) ? list : [...list, m]);
@@ -62,7 +62,7 @@ function TypingDots() {
 }
 
 // Centered system line (day separators, nudges). Flat: a quiet tonal chip, no shadow.
-const pill = (t) => ({ alignSelf: 'center', px: 1.5, py: 0.4, borderRadius: '999px', bgcolor: wsSurface(t).raised, color: t.palette.text.secondary, fontSize: 12, fontWeight: 600 });
+const pill = (t) => ({ alignSelf: 'center', px: 1.5, py: 0.4, borderRadius: '999px', bgcolor: wsSurface(t).raised, color: t.palette.text.secondary, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold });
 
 // Flat card look shared by room invites and nudges.
 const flatCard = (t) => ({ bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}` });
@@ -70,12 +70,12 @@ const flatCard = (t) => ({ bgcolor: t.palette.background.paper, border: `1px sol
 function NudgeLine({ m, mine, friend }) {
   return (
     <Box sx={(t) => ({ ...flatCard(t), alignSelf: 'center', display: 'flex', alignItems: 'center', gap: 1.25, maxWidth: '88%', px: 1.75, py: 1, borderRadius: '14px', textAlign: 'left', color: t.palette.text.secondary })}>
-      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 20, color: FLAME, flexShrink: 0 }} />
+      <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: FLAME, flexShrink: 0 }} />
       <Box sx={{ minWidth: 0 }}>
-        <Typography sx={{ fontSize: 13, fontWeight: 700, color: 'text.primary', lineHeight: 1.35 }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
-        <Typography sx={{ fontSize: 12.5, fontWeight: 400, lineHeight: 1.4 }}>{m.text}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: 'text.primary', lineHeight: 1.35 }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.regular, lineHeight: 1.4 }}>{m.text}</Typography>
       </Box>
-      <Typography sx={{ fontSize: 11, fontWeight: 400, alignSelf: 'flex-end', flexShrink: 0 }}>{clock(m.createdAt)}</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.regular, alignSelf: 'flex-end', flexShrink: 0 }}>{clock(m.createdAt)}</Typography>
     </Box>
   );
 }
@@ -99,18 +99,18 @@ function RoomCard({ m, mine, friend }) {
     <Box sx={(t) => ({ ...flatCard(t), alignSelf: mine ? 'flex-end' : 'flex-start', width: '100%', maxWidth: 320, p: 1.5, my: 0.5, borderRadius: '14px', borderLeft: `3px solid ${t.palette.primary.main}` })}>
       <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
         <Box sx={(t) => ({ width: 40, height: 40, flexShrink: 0, borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: t.palette.primary.main })}>
-          <LaptopMacRoundedIcon sx={{ fontSize: 20 }} />
+          <LaptopMacRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
         </Box>
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography sx={{ fontWeight: 700, fontSize: 13.5, lineHeight: 1.25 }}>Code together</Typography>
-          <Typography noWrap sx={{ fontSize: 12, color: 'text.secondary' }}>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, lineHeight: 1.25 }}>Code together</Typography>
+          <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary' }}>
             {mine ? `You invited @${friend.handle}` : `@${friend.handle} invited you`}{m.roomTitle ? ` · ${m.roomTitle}` : ''}
           </Typography>
         </Box>
       </Stack>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 1.25 }}>
-        <Typography sx={{ fontSize: 11, color: 'text.disabled' }}>{clock(m.createdAt)}</Typography>
-        <Button size="small" variant="contained" disableElevation disabled={busy} onClick={join} sx={{ height: 30, borderRadius: `${WS.radius + 2}px`, fontWeight: 600, fontSize: 12.5, textTransform: 'none', px: 1.75 }}>
+        <Typography sx={{ fontSize: FONT_SIZES.micro, color: 'text.disabled' }}>{clock(m.createdAt)}</Typography>
+        <Button size="small" variant="contained" disableElevation disabled={busy} onClick={join} sx={{ height: 30, borderRadius: `${WS.radius + 2}px`, fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.caption, textTransform: 'none', px: 1.75 }}>
           {busy ? 'Checking…' : mine ? 'Rejoin room' : 'Join room'}
         </Button>
       </Stack>
@@ -130,17 +130,17 @@ const ROOM_TONE = { color: COLOR_PALETTE.custom.blue3F8CE8, bg: COLOR_PALETTE.bl
 // Category-card background: light pastel in light mode, soft tint in dark mode.
 const toneBg = (t, tone) => (t.palette.mode === 'dark' ? tint(tone.color, 16) : tone.bg);
 
-const libDayPill = { alignSelf: 'center', px: '14px', py: '4px', borderRadius: 999, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: 13, lineHeight: '20px', letterSpacing: LIB_TRACKING };
+const libDayPill = { alignSelf: 'center', px: '14px', py: '4px', borderRadius: 999, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING };
 
 function LibNudgeLine({ m, mine, friend }) {
   return (
     <Box sx={(t) => ({ alignSelf: 'center', display: 'flex', alignItems: 'center', gap: '12px', width: '100%', maxWidth: 320, p: '12px', my: 0.5, borderRadius: '16px', border: '1.5px solid var(--lib-border)', bgcolor: toneBg(t, NUDGE_TONE), color: 'var(--lib-text)' })}>
-      <LocalFireDepartmentRoundedIcon aria-hidden sx={{ fontSize: 28, color: NUDGE_TONE.color, flexShrink: 0 }} />
+      <LocalFireDepartmentRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.displayLg, color: NUDGE_TONE.color, flexShrink: 0 }} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontWeight: 500 }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
-        <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{m.text}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontWeight: FONT_WEIGHTS.medium }}>{mine ? `You nudged @${friend.handle}` : `@${friend.handle} nudged you`}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{m.text}</Typography>
       </Box>
-      <Typography sx={{ fontSize: 12, alignSelf: 'flex-end', flexShrink: 0, color: 'var(--lib-muted)' }}>{clock(m.createdAt)}</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.caption, alignSelf: 'flex-end', flexShrink: 0, color: 'var(--lib-muted)' }}>{clock(m.createdAt)}</Typography>
     </Box>
   );
 }
@@ -162,17 +162,17 @@ function LibRoomCard({ m, mine, friend }) {
   return (
     <Box sx={(t) => ({ alignSelf: mine ? 'flex-end' : 'flex-start', width: '100%', maxWidth: 320, p: '12px', my: 0.5, borderRadius: '16px', border: '1.5px solid var(--lib-border)', bgcolor: toneBg(t, ROOM_TONE), color: 'var(--lib-text)' })}>
       <Stack direction="row" sx={{ alignItems: 'center', gap: '12px' }}>
-        <LaptopMacRoundedIcon aria-hidden sx={{ fontSize: 28, color: ROOM_TONE.color, flexShrink: 0 }} />
+        <LaptopMacRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.displayLg, color: ROOM_TONE.color, flexShrink: 0 }} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontWeight: 500 }}>Code together</Typography>
-          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+          <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontWeight: FONT_WEIGHTS.medium }}>Code together</Typography>
+          <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
             {mine ? `You invited @${friend.handle}` : `@${friend.handle} invited you`}
             {m.roomTitle ? ` · ${m.roomTitle}` : ''}
           </Typography>
         </Box>
       </Stack>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 1.5 }}>
-        <Typography sx={{ fontSize: 12, color: 'var(--lib-muted)' }}>{clock(m.createdAt)}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'var(--lib-muted)' }}>{clock(m.createdAt)}</Typography>
         <Button disableElevation variant="contained" disabled={busy} onClick={join} sx={{ ...libSmallBtnSx, bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` } }}>
           {busy ? 'Checking…' : mine ? 'Rejoin room' : 'Join room'}
         </Button>
@@ -205,10 +205,10 @@ function LibBubble({ m, mine, first, endsRun, isNew }) {
           }}
         >
           <Box sx={{ display: 'flow-root' }}>
-            <Typography component="span" sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{m.text}</Typography>
-            <Box component="span" sx={{ float: 'right', ml: 1.5, mt: '10px', display: 'inline-flex', alignItems: 'center', gap: 0.4, color: mine ? withAlpha(COLOR_PALETTE.white, 0.8) : 'var(--lib-muted)', fontSize: 12, lineHeight: 1 }}>
+            <Typography component="span" sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{m.text}</Typography>
+            <Box component="span" sx={{ float: 'right', ml: 1.5, mt: '10px', display: 'inline-flex', alignItems: 'center', gap: 0.4, color: mine ? withAlpha(COLOR_PALETTE.white, 0.8) : 'var(--lib-muted)', fontSize: FONT_SIZES.caption, lineHeight: 1 }}>
               {clock(m.createdAt)}
-              {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 16, color: COLOR_PALETTE.white }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 16 }} aria-label="Sent" />)}
+              {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: COLOR_PALETTE.white }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: FONT_SIZES.title }} aria-label="Sent" />)}
             </Box>
           </Box>
         </Box>
@@ -221,7 +221,7 @@ function LibBubble({ m, mine, first, endsRun, isNew }) {
 function LibHeader({ friend, online, typing, status, profileOpen, onBack, onToggleProfile, onCodeTogether, onNudge, nudging, onRemove }) {
   const [anchor, setAnchor] = useState(null);
   const close = () => setAnchor(null);
-  const itemSx = { minHeight: 48, fontSize: 16, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING };
+  const itemSx = { minHeight: 48, fontSize: FONT_SIZES.title, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING };
   return (
     <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 1, flexShrink: 0, borderBottom: '1px solid var(--lib-divider)' }}>
       <IconButton onClick={onBack} aria-label={profileOpen ? 'Back to chat' : 'Back to friends'} sx={libBackBtnSx}>
@@ -230,8 +230,8 @@ function LibHeader({ friend, online, typing, status, profileOpen, onBack, onTogg
       <ButtonBase onClick={onToggleProfile} aria-label={`${profileOpen ? 'Hide' : 'View'} profile of ${friend.name}`} aria-pressed={profileOpen} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', flex: 1, minWidth: 0, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', ml: -0.5 }}>
         <PersonAvatar person={friend} size={40} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{friend.name}</Typography>
-          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: typing || status.live ? LIB_SUCCESS : 'var(--lib-muted)' }}>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{friend.name}</Typography>
+          <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: typing || status.live ? LIB_SUCCESS : 'var(--lib-muted)' }}>
             {typing ? <>typing<TypingDots /></> : status.text}
           </Typography>
         </Box>
@@ -278,10 +278,10 @@ function Bubble({ m, mine, first, endsRun, isNew }) {
           })}
         >
           <Box sx={{ display: 'flow-root' }}>
-            <Typography component="span" sx={{ fontSize: 14, lineHeight: 1.5 }}>{m.text}</Typography>
-            <Box component="span" sx={{ float: 'right', ml: 1.5, mt: 1, display: 'inline-flex', alignItems: 'center', gap: 0.4, color: 'text.secondary', fontSize: 10.5, lineHeight: 1 }}>
+            <Typography component="span" sx={{ fontSize: FONT_SIZES.body, lineHeight: 1.5 }}>{m.text}</Typography>
+            <Box component="span" sx={{ float: 'right', ml: 1.5, mt: 1, display: 'inline-flex', alignItems: 'center', gap: 0.4, color: 'text.secondary', fontSize: FONT_SIZES.micro, lineHeight: 1 }}>
               {clock(m.createdAt)}
-              {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: 15, color: 'primary.main' }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: 15 }} aria-label="Sent" />)}
+              {mine && (m.readAt ? <DoneAllRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'primary.main' }} aria-label="Seen" /> : <DoneRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg }} aria-label="Sent" />)}
             </Box>
           </Box>
         </Box>
@@ -481,8 +481,8 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
       >
         <PersonAvatar person={friend} size={42} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: 15, lineHeight: 1.3 }}>{friend.name}</Typography>
-          <Typography noWrap sx={{ fontSize: 12.5, mt: 0.1, color: typing || status.live ? 'success.main' : 'text.secondary', fontWeight: typing || status.live ? 600 : 400 }}>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.3 }}>{friend.name}</Typography>
+          <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, mt: 0.1, color: typing || status.live ? 'success.main' : 'text.secondary', fontWeight: typing || status.live ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.regular }}>
             {typing ? <>typing<TypingDots /></> : status.text}
           </Typography>
         </Box>
@@ -520,15 +520,15 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
           )}
           {!loading && !error && messages.length === 0 && lib && (
             <Box sx={{ m: 'auto', textAlign: 'center', px: 2 }}>
-              <Typography sx={{ fontWeight: 700, fontSize: 18, lineHeight: '24px' }}>Say hi to {friend.name.split(' ')[0]}</Typography>
-              <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>No messages yet. Send a message, or start a coding room together.</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: '24px' }}>Say hi to {friend.name.split(' ')[0]}</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>No messages yet. Send a message, or start a coding room together.</Typography>
             </Box>
           )}
           {!loading && !error && messages.length === 0 && !lib && (
             <Stack spacing={0.5} sx={{ alignItems: 'center', m: 'auto', textAlign: 'center', color: 'text.secondary', px: 3 }}>
               <PulseArt icon={<ChatBubbleOutlineRoundedIcon />} />
-              <Typography sx={{ fontSize: 14.5, fontWeight: 700, color: 'text.primary', pt: 0.5 }}>Say hi to {friend.name.split(' ')[0]}</Typography>
-              <Typography sx={{ fontSize: 13, maxWidth: 260, lineHeight: 1.5 }}>No messages yet. Send a message, or start a coding room together.</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold, color: 'text.primary', pt: 0.5 }}>Say hi to {friend.name.split(' ')[0]}</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, maxWidth: 260, lineHeight: 1.5 }}>No messages yet. Send a message, or start a coding room together.</Typography>
             </Stack>
           )}
           {messages.map((m, i) => {
@@ -593,7 +593,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
               }
             }}
             sx={{
-              '& .MuiOutlinedInput-root': { borderRadius: '22px', minHeight: 44, py: '9px', px: '16px', bgcolor: 'var(--lib-player)', fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-text)' },
+              '& .MuiOutlinedInput-root': { borderRadius: '22px', minHeight: 44, py: '9px', px: '16px', bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-text)' },
               '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${LIB_ACCENT}` },
               '& .MuiInputBase-input': { p: 0 },
               '& fieldset': { border: 'none' },
@@ -606,7 +606,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             disabled={!text.trim() || sending}
             sx={{ width: 44, height: 44, flexShrink: 0, color: COLOR_PALETTE.white, bgcolor: LIB_ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` }, '&.Mui-disabled': { color: 'var(--lib-muted)', bgcolor: 'var(--lib-chip)' } }}
           >
-            {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: 20 }} />}
+            {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
           </IconButton>
         </Stack>
       ) : (
@@ -631,7 +631,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             }
           }}
           sx={(t) => ({
-            '& .MuiOutlinedInput-root': { borderRadius: '22px', py: 1, px: 2, bgcolor: wsSurface(t).raised, fontSize: 14.5, transition: 'box-shadow .18s' },
+            '& .MuiOutlinedInput-root': { borderRadius: '22px', py: 1, px: 2, bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.bodyLg, transition: 'box-shadow .18s' },
             '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${alpha(t.palette.primary.main, 0.45)}` },
             '& fieldset': { border: 'none' },
           })}
@@ -647,7 +647,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             '&.Mui-disabled': { color: 'text.disabled', bgcolor: t.palette.action.hover },
           })}
         >
-          {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: 19 }} />}
+          {sending ? <CircularProgress size={18} color="inherit" /> : <SendRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
         </IconButton>
       </Stack>
       )}
@@ -663,7 +663,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
       >
         <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(8, 34px)', gap: 0.25 }}>
           {EMOJIS.map((e) => (
-            <IconButton key={e} aria-label={`Insert ${e}`} onClick={() => setText((v) => (v + e).slice(0, 1000))} sx={{ width: 34, height: 34, fontSize: 19, borderRadius: '8px' }}>{e}</IconButton>
+            <IconButton key={e} aria-label={`Insert ${e}`} onClick={() => setText((v) => (v + e).slice(0, 1000))} sx={{ width: 34, height: 34, fontSize: FONT_SIZES.heading, borderRadius: '8px' }}>{e}</IconButton>
           ))}
         </Box>
       </Popover>

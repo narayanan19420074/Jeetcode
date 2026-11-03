@@ -3,6 +3,7 @@ import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
 import { PAD_X } from './libraryConstants';
 import useLibraryStyles from './libraryStyles';
+import { FONT_SIZES } from '../../../../app/design/designTokens';
 
 // Clickable column title that toggles between ascending and descending order.
 export function ColumnHeader({ label, width, sortKey, sortValue, onSort, disabled }) {
@@ -20,7 +21,7 @@ export function ColumnHeader({ label, width, sortKey, sortValue, onSort, disable
       <Typography variant="caption" sx={[styles.headLabel, active && { color: 'text.primary' }]}>
         {label}
       </Typography>
-      {active && <ArrowIcon sx={{ fontSize: 13 }} />}
+      {active && <ArrowIcon sx={{ fontSize: FONT_SIZES.body }} />}
     </ButtonBase>
   );
 }

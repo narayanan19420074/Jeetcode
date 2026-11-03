@@ -16,6 +16,7 @@ import {
 } from '@mui/material';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const ACTION_COLOR = {
   problem_delete: 'error',
@@ -80,7 +81,7 @@ export default function AdminAuditLogPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
         Audit Log
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -116,7 +117,7 @@ export default function AdminAuditLogPage() {
               <TableBody>
                 {entries.map((e) => (
                   <TableRow key={e._id} hover>
-                    <TableCell sx={{ fontWeight: 600 }}>{e.admin ? `${e.admin.name} (@${e.admin.handle})` : 'Unknown'}</TableCell>
+                    <TableCell sx={{ fontWeight: FONT_WEIGHTS.semibold }}>{e.admin ? `${e.admin.name} (@${e.admin.handle})` : 'Unknown'}</TableCell>
                     <TableCell>
                       <Chip label={e.action.replaceAll('_', ' ')} size="small" color={ACTION_COLOR[e.action] || 'default'} variant="outlined" />
                     </TableCell>

@@ -32,15 +32,16 @@ import { extractErrorMessage } from '../../api/apiClient';
 import MicroCheck from '../learn/components/MicroCheck';
 import { getLessonsForPattern } from '../learn/content';
 import { LESSON_WIDGETS } from './components/LessonWidgets';
+import { FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+const mono = { fontFamily: FONTS.mono };
 const CONTENT_MAX = 760;
 
 function Eyebrow({ children, color = 'primary.main', icon }) {
   return (
     <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', mb: 1 }}>
       {icon}
-      <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: '0.1em', color, fontSize: 11 }}>
+      <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.1em', color, fontSize: FONT_SIZES.micro }}>
         {children}
       </Typography>
     </Stack>
@@ -56,20 +57,20 @@ function WorkedExample({ example, index }) {
   return (
     <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 3 }}>
       <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', mb: 1.5 }}>
-        <Box sx={{ width: 24, height: 24, borderRadius: '50%', bgcolor: 'primary.main', color: 'primary.contrastText', display: 'grid', placeItems: 'center', fontSize: 12, fontWeight: 800 }}>
+        <Box sx={{ width: 24, height: 24, borderRadius: '50%', bgcolor: 'primary.main', color: 'primary.contrastText', display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
           {index + 1}
         </Box>
-        <Typography variant="caption" sx={{ fontWeight: 800, color: 'text.secondary', letterSpacing: '0.08em' }}>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', letterSpacing: '0.08em' }}>
           WORKED EXAMPLE
         </Typography>
       </Stack>
-      <Typography sx={{ fontWeight: 600, lineHeight: 1.6, mb: 2 }}>{example.question}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.6, mb: 2 }}>{example.question}</Typography>
 
       <Stack spacing={1}>
         {example.steps.slice(0, shown).map((s, i) => (
           <motion.div key={i} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
             <Stack direction="row" spacing={1.25}>
-              <Typography variant="caption" sx={{ ...mono, fontWeight: 800, color: 'primary.main', mt: 0.35, minWidth: 44 }}>
+              <Typography variant="caption" sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', mt: 0.35, minWidth: 44 }}>
                 Step {i + 1}
               </Typography>
               <Typography variant="body2" sx={{ lineHeight: 1.7 }}>
@@ -83,7 +84,7 @@ function WorkedExample({ example, index }) {
       {done ? (
         <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }}>
           <Box sx={{ mt: 2, p: 1.5, borderRadius: 2, bgcolor: (t) => alpha(t.palette.success.main, 0.1), border: '1px solid', borderColor: 'success.main' }}>
-            <Typography variant="body2" sx={{ fontWeight: 800, color: 'success.main' }}>
+            <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'success.main' }}>
               Answer: {example.answer}
             </Typography>
           </Box>
@@ -105,7 +106,7 @@ function WorkedExample({ example, index }) {
 function LessonSidebar({ lessons, activeId, completed, onSelect }) {
   return (
     <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden', position: 'sticky', top: 88 }}>
-      <Typography variant="overline" sx={{ display: 'block', px: 2, pt: 2, pb: 0.5, fontWeight: 800, color: 'text.secondary', letterSpacing: '0.08em', fontSize: 10.5 }}>
+      <Typography variant="overline" sx={{ display: 'block', px: 2, pt: 2, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', letterSpacing: '0.08em', fontSize: FONT_SIZES.micro }}>
         Lessons
       </Typography>
       <Stack sx={{ pb: 1 }}>
@@ -128,12 +129,12 @@ function LessonSidebar({ lessons, activeId, completed, onSelect }) {
               {active && <Box sx={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, bgcolor: 'primary.main' }} />}
               <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center' }}>
                 {done ? (
-                  <CheckRoundedIcon sx={{ fontSize: 16, color: 'success.main' }} />
+                  <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'success.main' }} />
                 ) : (
                   <CircleIcon sx={{ fontSize: 8, mx: '4px', color: active ? 'primary.main' : 'text.disabled' }} />
                 )}
                 <Box sx={{ minWidth: 0 }}>
-                  <Typography variant="body2" sx={{ fontSize: 13, fontWeight: active ? 800 : 500, lineHeight: 1.3, color: active ? 'text.primary' : 'text.secondary' }}>
+                  <Typography variant="body2" sx={{ fontSize: FONT_SIZES.body, fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, lineHeight: 1.3, color: active ? 'text.primary' : 'text.secondary' }}>
                     {i + 1}. {l.title}
                   </Typography>
                   <Typography variant="caption" color="text.disabled">
@@ -245,7 +246,7 @@ export default function AptitudeLearnPage() {
             <ArrowBackRoundedIcon fontSize="small" />
           </IconButton>
           <Box sx={{ minWidth: 0 }}>
-            <Typography variant="subtitle2" sx={{ fontWeight: 800 }} noWrap>
+            <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold }} noWrap>
               {patternTitle || 'Learn'}
             </Typography>
             <Typography variant="caption" color="text.secondary" noWrap>
@@ -255,7 +256,7 @@ export default function AptitudeLearnPage() {
           <Box sx={{ flexGrow: 1 }} />
           <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', minWidth: { xs: 110, sm: 220 } }}>
             <LinearProgress variant="determinate" value={progressPct} sx={{ flexGrow: 1, height: 6, borderRadius: 3 }} />
-            <Typography variant="caption" sx={{ ...mono, fontWeight: 700, color: 'text.secondary' }}>
+            <Typography variant="caption" sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary' }}>
               {completed.size}/{lessons.length}
             </Typography>
           </Stack>
@@ -281,10 +282,10 @@ export default function AptitudeLearnPage() {
             ))}
           </Stack>
 
-          <Typography variant="overline" sx={{ fontWeight: 800, color: 'primary.main', letterSpacing: '0.1em' }}>
+          <Typography variant="overline" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em' }}>
             Lesson {activeIndex + 1} · {lesson.minutes} min read
           </Typography>
-          <Typography variant="h4" sx={{ fontWeight: 800, letterSpacing: '-0.02em', mb: 0.5 }}>
+          <Typography variant="h4" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.02em', mb: 0.5 }}>
             {lesson.title}
           </Typography>
           <Typography color="text.secondary" sx={{ mb: 3 }}>
@@ -293,7 +294,7 @@ export default function AptitudeLearnPage() {
 
           <Stack spacing={3}>
             <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 3, borderLeft: '4px solid', borderLeftColor: 'primary.main' }}>
-              <Eyebrow icon={<LightbulbRoundedIcon sx={{ fontSize: 16, color: 'primary.main' }} />}>THE KEY IDEA</Eyebrow>
+              <Eyebrow icon={<LightbulbRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'primary.main' }} />}>THE KEY IDEA</Eyebrow>
               <Stack spacing={1.25}>
                 {lesson.keyIdea.map((p) => (
                   <Typography key={p} sx={{ lineHeight: 1.75 }}>
@@ -304,14 +305,14 @@ export default function AptitudeLearnPage() {
             </Paper>
 
             <Box>
-              <Eyebrow icon={<BoltRoundedIcon sx={{ fontSize: 16, color: 'primary.main' }} />}>FORMULAS TO REMEMBER</Eyebrow>
+              <Eyebrow icon={<BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'primary.main' }} />}>FORMULAS TO REMEMBER</Eyebrow>
               <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' }, gap: 1.5 }}>
                 {lesson.formulas.map((f) => (
                   <Paper key={f.label} variant="outlined" sx={{ p: 1.75, borderRadius: 2.5, bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}>
-                    <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                       {f.label}
                     </Typography>
-                    <Typography sx={{ ...mono, fontWeight: 700, fontSize: 14, mt: 0.5, lineHeight: 1.6 }}>{f.expr}</Typography>
+                    <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, mt: 0.5, lineHeight: 1.6 }}>{f.expr}</Typography>
                   </Paper>
                 ))}
               </Box>
@@ -323,7 +324,7 @@ export default function AptitudeLearnPage() {
                   <TableHead>
                     <TableRow>
                       {lesson.table.columns.map((c, i) => (
-                        <TableCell key={i} sx={{ fontWeight: 800 }}>
+                        <TableCell key={i} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                           {c}
                         </TableCell>
                       ))}
@@ -333,7 +334,7 @@ export default function AptitudeLearnPage() {
                     {lesson.table.rows.map((r, ri) => (
                       <TableRow key={ri}>
                         {r.map((cell, ci) => (
-                          <TableCell key={ci} sx={{ ...(ci % 2 === 1 ? { ...mono, fontWeight: 700 } : {}) }}>
+                          <TableCell key={ci} sx={{ ...(ci % 2 === 1 ? { ...mono, fontWeight: FONT_WEIGHTS.bold } : {}) }}>
                             {cell}
                           </TableCell>
                         ))}
@@ -347,7 +348,7 @@ export default function AptitudeLearnPage() {
             {Widget && <Widget />}
 
             <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 3, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}>
-              <Eyebrow color="warning.main" icon={<BoltRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />}>
+              <Eyebrow color="warning.main" icon={<BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />}>
                 EXAM SHORTCUTS
               </Eyebrow>
               <Stack spacing={1}>
@@ -366,13 +367,13 @@ export default function AptitudeLearnPage() {
             </Stack>
 
             <Box>
-              <Eyebrow color="error.main" icon={<WarningAmberRoundedIcon sx={{ fontSize: 16, color: 'error.main' }} />}>
+              <Eyebrow color="error.main" icon={<WarningAmberRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'error.main' }} />}>
                 COMMON TRAPS
               </Eyebrow>
               <Stack spacing={1.25}>
                 {lesson.traps.map((t) => (
                   <Paper key={t.trap} variant="outlined" sx={{ p: 2, borderRadius: 2.5, borderColor: (th) => alpha(th.palette.error.main, 0.4) }}>
-                    <Typography variant="body2" sx={{ fontWeight: 700, color: 'error.main' }}>
+                    <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'error.main' }}>
                       ✗ {t.trap}
                     </Typography>
                     <Typography variant="body2" sx={{ mt: 0.5, lineHeight: 1.65 }}>

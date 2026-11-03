@@ -8,7 +8,7 @@ import AiGlow from './AiGlow';
 import { isMicCaptureSupported } from './live/micCapture';
 import { LIVE_PHASE } from './live/liveVoiceSession';
 import useGeminiLive from './live/useGeminiLive';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const pulse = keyframes`0%, 100% { transform: scale(1); } 50% { transform: scale(1.14); }`;
 
@@ -46,8 +46,8 @@ const END_BUTTON_SX = {
   px: 3,
   borderRadius: 999,
   textTransform: 'none',
-  fontWeight: 500,
-  fontSize: 16,
+  fontWeight: FONT_WEIGHTS.medium,
+  fontSize: FONT_SIZES.title,
   fontFamily: LIB_FONT,
   letterSpacing: LIB_TRACKING,
   bgcolor: `var(--lib-player, ${COLOR_PALETTE.custom.orangeF1E7DD})`,
@@ -97,7 +97,7 @@ function LiveOrb({ phase, muted, onRestart, onToggleMute }) {
       onClick={isError ? onRestart : onToggleMute}
       sx={orbSx({ canPress, muted, pulseSeconds: pulseSecondsFor(phase, muted) })}
     >
-      <Icon sx={{ fontSize: 36 }} />
+      <Icon sx={{ fontSize: FONT_SIZES.heroLg }} />
     </Box>
   );
 }
@@ -147,7 +147,7 @@ export default function AiLiveOverlay({ open, onClose, slug, language, code }) {
       {open && (
         <Box role="dialog" aria-label="Live AI assistant" sx={SHEET_SX}>
           <LiveOrb phase={live.phase} muted={live.muted} onRestart={live.restart} onToggleMute={live.toggleMute} />
-          <Typography sx={{ fontWeight: 500, fontSize: 18, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING }}>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING }}>
             {statusLabel({ supported, phase: live.phase, muted: live.muted })}
           </Typography>
           <LiveHint supported={supported} showTip={!hasCaptions} />

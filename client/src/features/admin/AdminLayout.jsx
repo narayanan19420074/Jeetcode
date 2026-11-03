@@ -12,6 +12,7 @@ import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
 import FeedbackRoundedIcon from '@mui/icons-material/FeedbackRounded';
 import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 import AdminNavbar from './AdminNavbar';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const SIDEBAR_WIDTH = 240;
 
@@ -61,7 +62,7 @@ export default function AdminLayout() {
           }}
         >
           <Toolbar sx={{ px: 2.5, py: 2 }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
               Admin Console
             </Typography>
           </Toolbar>
@@ -77,7 +78,7 @@ export default function AdminLayout() {
                   mb: 0.5,
                   '&.active': {
                     bgcolor: 'action.selected',
-                    fontWeight: 700,
+                    fontWeight: FONT_WEIGHTS.bold,
                   },
                 }}
               >
@@ -90,7 +91,7 @@ export default function AdminLayout() {
                     item.icon
                   )}
                 </ListItemIcon>
-                <ListItemText primary={item.label} primaryTypographyProps={{ fontWeight: 600, fontSize: '0.9rem' }} />
+                <ListItemText primary={item.label} primaryTypographyProps={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body }} />
               </ListItemButton>
             ))}
           </List>

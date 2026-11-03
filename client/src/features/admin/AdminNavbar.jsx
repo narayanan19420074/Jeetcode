@@ -20,6 +20,7 @@ import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
 import { toggleThemeMode } from '../../app/uiSlice';
 import { logoutUser } from '../auth/authSlice';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const initialsFromName = (name) =>
   (name || 'A')
@@ -52,7 +53,7 @@ export default function AdminNavbar() {
       <Toolbar sx={{ gap: 2 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <CodeRoundedIcon sx={{ color: 'primary.main' }} />
-          <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: '-0.02em' }}>
+          <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.02em' }}>
             Jeet <Box component="span" sx={{ color: 'primary.main' }}>Code</Box>
           </Typography>
         </Box>
@@ -84,14 +85,14 @@ export default function AdminNavbar() {
                     borderColor: 'background.paper',
                   }}
                 >
-                  <ShieldRoundedIcon sx={{ fontSize: 11, color: 'primary.contrastText' }} />
+                  <ShieldRoundedIcon sx={{ fontSize: FONT_SIZES.micro, color: 'primary.contrastText' }} />
                 </Box>
               </Tooltip>
             }
           >
             <Avatar
               src={user?.avatarUrl || undefined}
-              sx={{ bgcolor: 'primary.main', width: 36, height: 36, fontSize: '0.85rem', fontWeight: 700 }}
+              sx={{ bgcolor: 'primary.main', width: 36, height: 36, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold }}
             >
               {initialsFromName(user?.name)}
             </Avatar>
@@ -100,7 +101,7 @@ export default function AdminNavbar() {
 
         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(null)}>
           <Box sx={{ px: 2, py: 1 }}>
-            <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+            <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
               {user?.name}
             </Typography>
             <Typography variant="caption" color="text.secondary">

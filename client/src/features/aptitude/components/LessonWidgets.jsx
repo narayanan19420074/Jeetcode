@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { Box, Button, Paper, Slider, Stack, Typography, alpha } from '@mui/material';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // Small interactive visuals used inside Learn lessons. Each one lets the
 // learner move a slider and SEE the rule, instead of reading it.
 
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+const mono = { fontFamily: FONTS.mono };
 
 function WidgetShell({ title, hint, children }) {
   return (
     <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 3, bgcolor: (t) => alpha(t.palette.primary.main, 0.03) }}>
-      <Typography variant="caption" sx={{ fontWeight: 800, color: 'primary.main', letterSpacing: '0.1em' }}>
+      <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em' }}>
         TRY IT · {title.toUpperCase()}
       </Typography>
       {hint && (
@@ -27,10 +27,10 @@ function SliderRow({ label, value, min, max, step = 1, onChange, suffix = '%', s
   return (
     <Box>
       <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
           {label}
         </Typography>
-        <Typography variant="body2" sx={{ ...mono, fontWeight: 800 }}>
+        <Typography variant="body2" sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold }}>
           {sign && value > 0 ? '+' : ''}
           {value}
           {suffix}
@@ -66,7 +66,7 @@ export function PercentGridWidget() {
           <SliderRow label="Percent" value={pct} min={0} max={100} onChange={setPct} />
           <SliderRow label="Of the number" value={n} min={20} max={1000} step={20} onChange={setN} suffix="" />
           <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
-            <Typography sx={{ ...mono, fontSize: 14 }}>
+            <Typography sx={{ ...mono, fontSize: FONT_SIZES.body }}>
               {pct}% of {n} = ({pct} × {n}) / 100 = <b>{Number.isInteger(result) ? result : result.toFixed(2)}</b>
             </Typography>
           </Box>
@@ -86,7 +86,7 @@ export function SuccessiveChangeWidget() {
   const bar = (value, label, color) => (
     <Box>
       <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
-        <Typography variant="caption" sx={{ fontWeight: 700 }}>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
           {label}
         </Typography>
         <Typography variant="caption" sx={mono}>
@@ -109,7 +109,7 @@ export function SuccessiveChangeWidget() {
           {bar(v2, `After ${b >= 0 ? '+' : ''}${b}%`, net >= 0 ? COLOR_PALETTE.emerald[500] : COLOR_PALETTE.red[500])}
         </Stack>
         <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
-          <Typography sx={{ ...mono, fontSize: 14 }}>
+          <Typography sx={{ ...mono, fontSize: FONT_SIZES.body }}>
             Net = {a} + ({b}) + ({a} × {b})/100 = <b>{net > 0 ? '+' : ''}{net.toFixed(2)}%</b>
           </Typography>
           <Typography variant="caption" color="text.secondary">
@@ -148,7 +148,7 @@ export function PriceConsumptionWidget() {
           </svg>
         </Box>
         <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
-          <Typography sx={{ ...mono, fontSize: 14 }}>
+          <Typography sx={{ ...mono, fontSize: FONT_SIZES.body }}>
             Cut = {x} / (100 + {x}) × 100 = <b>{cut.toFixed(2)}%</b>
           </Typography>
         </Box>

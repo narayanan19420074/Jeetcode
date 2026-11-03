@@ -2,6 +2,7 @@ import { Box, CircularProgress, Skeleton, Typography } from '@mui/material';
 import { useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { panelSx } from '../../dashboard/components/libraryDesktopStyles';
 import CompanyRow from './CompanyRow';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const COLUMNS = { xs: 'minmax(0,1fr)', md: 'repeat(2, minmax(0,1fr))' };
 const SKELETON_ROWS = 8;
@@ -18,7 +19,7 @@ function SkeletonRows({ palette }) {
 function EmptyState({ query }) {
   return (
     <Box sx={{ py: 7, textAlign: 'center' }}>
-      <Typography sx={{ fontWeight: 700 }}>{query ? 'No companies match your search' : 'No companies yet'}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{query ? 'No companies match your search' : 'No companies yet'}</Typography>
       {query && <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>Try a different name.</Typography>}
     </Box>
   );

@@ -6,7 +6,7 @@ import BuildRoundedIcon from '@mui/icons-material/BuildRounded';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import { LIB_ACCENT, LIB_FONT, LIB_TRACKING } from '../dashboard/components/libraryStyle';
 import AiGlow from './AiGlow';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const rise = keyframes`from { opacity: 0; transform: translateY(18px) scale(.96); } to { opacity: 1; transform: none; }`;
 
@@ -61,8 +61,8 @@ function LauncherOption({ label, hint, Icon, onPick }) {
         <Icon />
       </Box>
       <Box>
-        <Typography sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontFamily: LIB_FONT }}>{label}</Typography>
-        <Typography sx={{ fontSize: 14, lineHeight: '20px', color: `var(--lib-muted, ${COLOR_PALETTE.custom.gray6F655B})`, letterSpacing: LIB_TRACKING, fontFamily: LIB_FONT }}>{hint}</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontFamily: LIB_FONT }}>{label}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', color: `var(--lib-muted, ${COLOR_PALETTE.custom.gray6F655B})`, letterSpacing: LIB_TRACKING, fontFamily: LIB_FONT }}>{hint}</Typography>
       </Box>
     </ButtonBase>
   );

@@ -35,9 +35,9 @@ import MobilePracticeQuestion, { MobileQuestionState } from './components/Mobile
 import { Confetti, XpPop } from './components/MotionBits';
 import { XP_PER_SOLVE } from './components/gamification';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './components/aptitudeUi';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+const mono = { fontFamily: FONTS.mono };
 
 function OptionRow({ index, text, state, disabled, onClick }) {
   // state: idle | selected | correct | wrong | dim
@@ -77,8 +77,8 @@ function OptionRow({ index, text, state, disabled, onClick }) {
             borderRadius: '50%',
             display: 'grid',
             placeItems: 'center',
-            fontSize: 13,
-            fontWeight: 800,
+            fontSize: FONT_SIZES.body,
+            fontWeight: FONT_WEIGHTS.bold,
             flexShrink: 0,
             border: '1.5px solid',
             borderColor: palette.border,
@@ -88,7 +88,7 @@ function OptionRow({ index, text, state, disabled, onClick }) {
         >
           {OPTION_LABELS[index]}
         </Box>
-        <Typography sx={{ flexGrow: 1, fontWeight: 600 }}>{text}</Typography>
+        <Typography sx={{ flexGrow: 1, fontWeight: FONT_WEIGHTS.semibold }}>{text}</Typography>
         {state === 'correct' && <CheckCircleRoundedIcon color="success" />}
         {state === 'wrong' && <CancelRoundedIcon color="error" />}
       </Stack>
@@ -255,21 +255,21 @@ export default function AptitudePracticeQuestionPage() {
 
   return (
     <Container maxWidth="md" sx={{ py: { xs: 2.5, md: 4 } }}>
-      <Breadcrumbs sx={{ mb: 1.5, fontSize: 13 }}>
+      <Breadcrumbs sx={{ mb: 1.5, fontSize: FONT_SIZES.body }}>
         <Link component={RouterLink} to={`/aptitude/${slug}`} underline="hover" color="text.secondary">
           Hub
         </Link>
         <Link component={RouterLink} to={`/aptitude/${slug}/practice`} underline="hover" color="text.secondary">
           Practice
         </Link>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
           Question {position}
         </Typography>
       </Breadcrumbs>
 
       {/* Header strip */}
       <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', flexWrap: 'wrap', mb: 2 }} useFlexGap>
-        <Chip size="small" label={dm.label} sx={{ fontWeight: 800, color: dm.color, bgcolor: alpha(dm.color, 0.12) }} />
+        <Chip size="small" label={dm.label} sx={{ fontWeight: FONT_WEIGHTS.bold, color: dm.color, bgcolor: alpha(dm.color, 0.12) }} />
         {progress.status === 'solved' && <Chip size="small" color="success" variant="outlined" icon={<CheckCircleRoundedIcon />} label="Solved" />}
         <Typography variant="caption" color="text.secondary" sx={mono}>
           {position} / {totalInPattern}
@@ -280,7 +280,7 @@ export default function AptitudePracticeQuestionPage() {
             size="small"
             icon={<TimerOutlinedIcon />}
             label={formatClock(elapsed)}
-            sx={{ ...mono, fontWeight: 800, bgcolor: slow && !result ? (t) => alpha(t.palette.warning.main, 0.16) : undefined, color: slow && !result ? 'warning.main' : undefined }}
+            sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, bgcolor: slow && !result ? (t) => alpha(t.palette.warning.main, 0.16) : undefined, color: slow && !result ? 'warning.main' : undefined }}
           />
         </Tooltip>
         <Tooltip title={bookmarked ? 'Remove bookmark' : 'Bookmark'}>
@@ -294,7 +294,7 @@ export default function AptitudePracticeQuestionPage() {
 
       <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
         <QuestionStimulus set={set} />
-        <Typography sx={{ fontWeight: 600, fontSize: 18, lineHeight: 1.65, mb: 2.5, whiteSpace: 'pre-line' }}>{question.questionText}</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.subheading, lineHeight: 1.65, mb: 2.5, whiteSpace: 'pre-line' }}>{question.questionText}</Typography>
 
         <Stack spacing={1.25}>
           {question.options.map((o, i) => (
@@ -334,7 +334,7 @@ export default function AptitudePracticeQuestionPage() {
             <Stack direction="row" spacing={1.5} useFlexGap sx={{ alignItems: 'center', flexWrap: 'wrap' }}>
               {result.isCorrect ? <CheckCircleRoundedIcon color="success" /> : <CancelRoundedIcon color="error" />}
               {result.isCorrect && result.progress?.correctAttempts === 1 && <XpPop key={questionId} amount={XP_PER_SOLVE[question.difficulty] ?? 10} />}
-              <Typography sx={{ fontWeight: 800, fontSize: 17, color: result.isCorrect ? 'success.main' : 'error.main' }}>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, color: result.isCorrect ? 'success.main' : 'error.main' }}>
                 {result.isCorrect ? 'Correct' : 'Not quite'}
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -351,7 +351,7 @@ export default function AptitudePracticeQuestionPage() {
 
           {result.explanation && (
             <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
-              <Typography variant="caption" sx={{ fontWeight: 800, color: 'primary.main', letterSpacing: '0.1em' }}>
+              <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em' }}>
                 SOLUTION
               </Typography>
               <Typography sx={{ mt: 0.75, lineHeight: 1.75, whiteSpace: 'pre-line' }}>{result.explanation}</Typography>
@@ -364,8 +364,8 @@ export default function AptitudePracticeQuestionPage() {
               sx={{ p: 2.5, borderRadius: 3, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}
             >
               <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center' }}>
-                <BoltRoundedIcon sx={{ fontSize: 16, color: 'warning.main' }} />
-                <Typography variant="caption" sx={{ fontWeight: 800, color: 'warning.main', letterSpacing: '0.1em' }}>
+                <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />
+                <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'warning.main', letterSpacing: '0.1em' }}>
                   EXAM SHORTCUT
                 </Typography>
               </Stack>

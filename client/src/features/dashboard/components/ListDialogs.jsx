@@ -18,6 +18,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // One dialog for both "New list" and "Rename list". onConfirm(name) returns
 // true when accepted, false when the name is empty or already taken.
@@ -41,7 +42,7 @@ export function NameDialog({ open, title, initial = '', confirmLabel, onClose, o
   return (
     <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
       <form onSubmit={submit}>
-        <DialogTitle sx={{ fontWeight: 800 }}>{title}</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{title}</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -90,7 +91,7 @@ export function SaveToListMenu({ anchorEl, problem, lists, onToggle, onCreate, o
         onClose={close}
         slotProps={{ paper: { sx: { minWidth: 220, borderRadius: '12px', mt: 0.5 } } }}
       >
-        <Typography variant="caption" color="text.secondary" sx={{ px: 2, py: 0.5, display: 'block', fontWeight: 600 }}>
+        <Typography variant="caption" color="text.secondary" sx={{ px: 2, py: 0.5, display: 'block', fontWeight: FONT_WEIGHTS.semibold }}>
           Save to list
         </Typography>
         {lists.map((l) => {
@@ -104,7 +105,7 @@ export function SaveToListMenu({ anchorEl, problem, lists, onToggle, onCreate, o
                   <ListAltRoundedIcon fontSize="small" />
                 )}
               </ListItemIcon>
-              <ListItemText primary={l.name} slotProps={{ primary: { noWrap: true, fontSize: '0.9rem' } }} />
+              <ListItemText primary={l.name} slotProps={{ primary: { noWrap: true, fontSize: FONT_SIZES.body } }} />
               <Box sx={{ width: 20, display: 'flex', justifyContent: 'flex-end' }}>
                 {saved && <CheckRoundedIcon fontSize="small" color="primary" />}
               </Box>
@@ -121,7 +122,7 @@ export function SaveToListMenu({ anchorEl, problem, lists, onToggle, onCreate, o
           <ListItemIcon sx={{ minWidth: 30 }}>
             <AddRoundedIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary="New list" slotProps={{ primary: { fontSize: '0.9rem' } }} />
+          <ListItemText primary="New list" slotProps={{ primary: { fontSize: FONT_SIZES.body } }} />
         </MenuItem>
       </Menu>
 

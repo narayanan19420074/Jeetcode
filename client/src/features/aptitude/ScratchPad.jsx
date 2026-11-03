@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Box, Paper, Typography, Button, IconButton, Tooltip } from '@mui/material';
 import BackspaceRoundedIcon from '@mui/icons-material/BackspaceRounded';
 import DeleteSweepRoundedIcon from '@mui/icons-material/DeleteSweepRounded';
+import { FONT_WEIGHTS, FONTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // --- Basic calculator -------------------------------------------------
 // A button-press state machine (running value + pending operator), same
@@ -180,7 +181,7 @@ function Calculator() {
   const baseBtnSx = {
     minWidth: 0,
     height: 36,
-    fontWeight: 600,
+    fontWeight: FONT_WEIGHTS.semibold,
     borderRadius: 1,
     transition: 'transform 0.08s ease, background-color 0.12s ease',
     '&:active': { transform: 'scale(0.94)' },
@@ -212,7 +213,7 @@ function Calculator() {
 
   return (
     <Box>
-      <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
+      <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.semibold, mb: 1 }}>
         Calculator
       </Typography>
 
@@ -223,9 +224,9 @@ function Calculator() {
           mb: 1,
           borderRadius: 1,
           textAlign: 'right',
-          fontFamily: 'monospace',
-          fontSize: '1.1rem',
-          fontWeight: 600,
+          fontFamily: FONTS.mono,
+          fontSize: FONT_SIZES.subheading,
+          fontWeight: FONT_WEIGHTS.semibold,
           overflow: 'hidden',
           textOverflow: 'ellipsis',
           whiteSpace: 'nowrap',
@@ -294,7 +295,7 @@ function Calculator() {
       {/* --- History --- */}
       <Box sx={{ mt: 2 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
-          <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.secondary' }}>
+          <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary' }}>
             History
           </Typography>
           {history.length > 0 && (
@@ -332,11 +333,11 @@ function Calculator() {
               >
                 <Typography
                   variant="caption"
-                  sx={{ display: 'block', fontFamily: 'monospace', color: 'text.secondary' }}
+                  sx={{ display: 'block', fontFamily: FONTS.mono, color: 'text.secondary' }}
                 >
                   {entry.expression} =
                 </Typography>
-                <Typography variant="body2" sx={{ fontFamily: 'monospace', fontWeight: 700 }}>
+                <Typography variant="body2" sx={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.bold }}>
                   {entry.result}
                 </Typography>
               </Box>

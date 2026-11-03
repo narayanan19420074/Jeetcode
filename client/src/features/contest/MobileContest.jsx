@@ -17,7 +17,7 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone layout of the Contest page in the Library look (same as the phone Problems, Home and You pages): Roboto type,
 // warm surface, 16px page padding, 44px back button, centred header tile, pill tabs and buttons, 18px section titles
@@ -29,7 +29,7 @@ const ACCENT = LIB_ACCENT;
 const ORANGE = COLOR_PALETTE.orange[500];
 const STATUS = { live: ['Live', COLOR_PALETTE.green[600]], upcoming: ['Upcoming', ORANGE], ended: ['Ended', COLOR_PALETTE.slate[500]] };
 const pad = (n) => String(n).padStart(2, '0');
-const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
+const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 
 const solidBtn = libSolidBtnSx;
 const tintBtn = libTintBtnSx;
@@ -45,7 +45,7 @@ function SectionTitle({ children, id }) {
 function StatusTag({ status }) {
   const [label, color] = STATUS[status] || STATUS.ended;
   return (
-    <Typography component="span" sx={{ px: 1, py: 0.4, borderRadius: '10px', fontSize: 13, fontWeight: 500, lineHeight: 1.2, color, bgcolor: tint(color, 16) }}>
+    <Typography component="span" sx={{ px: 1, py: 0.4, borderRadius: '10px', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.2, color, bgcolor: tint(color, 16) }}>
       {label}
     </Typography>
   );
@@ -57,8 +57,8 @@ function Countdown({ contest }) {
     <Box role="timer" aria-label={`Starts in ${d} days ${h} hours ${m} minutes`} sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 0.75, mt: 1.75 }}>
       {[[d, 'days'], [h, 'hrs'], [m, 'min'], [s, 'sec']].map(([v, label]) => (
         <Box key={label} sx={(t) => ({ py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) })}>
-          <Typography sx={{ ...mono, fontWeight: 700, fontSize: 20, lineHeight: 1.1 }}>{pad(v)}</Typography>
-          <Typography color="var(--lib-muted)" sx={{ fontSize: '0.72rem', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+          <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.1 }}>{pad(v)}</Typography>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.medium, textTransform: 'uppercase', letterSpacing: 0.5 }}>
             {label}
           </Typography>
         </Box>
@@ -78,27 +78,27 @@ function ContestPanel({ contest, past, action }) {
     >
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
         <StatusTag status={status} />
-        <Typography color="var(--lib-muted)" noWrap sx={{ fontSize: 14, letterSpacing: LIB_TRACKING, minWidth: 0 }}>
+        <Typography color="var(--lib-muted)" noWrap sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, minWidth: 0 }}>
           {fmtStart(contest.startsAt)}
         </Typography>
       </Stack>
-      <Typography component="h3" sx={{ mt: 1, fontWeight: 700, fontSize: 20, lineHeight: '28px', overflowWrap: 'anywhere' }}>
+      <Typography component="h3" sx={{ mt: 1, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: '28px', overflowWrap: 'anywhere' }}>
         {contest.title}
       </Typography>
 
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mt: 1.5 }}>
         <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '15px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(135deg, ${ORANGE}, color-mix(in srgb, ${ORANGE} 60%, ${COLOR_PALETTE.black}))`, boxShadow: `0 8px 18px -8px ${ORANGE}` }}>
-          <EmojiEventsRoundedIcon sx={{ fontSize: 24 }} />
+          <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
         </Box>
         <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ ...mono, fontWeight: 700, fontSize: 20, lineHeight: '28px' }}>{inr(contest.prizePool)}</Typography>
-          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
+          <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: '28px' }}>{inr(contest.prizePool)}</Typography>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }}>
             {contest.tagline || 'Cash prize pool'}
           </Typography>
         </Box>
       </Stack>
 
-      <Typography color="var(--lib-muted)" sx={{ mt: 1.5, fontSize: 14, letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
+      <Typography color="var(--lib-muted)" sx={{ mt: 1.5, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
         {contest.problemCount} {contest.difficulty} problems · {fmtDuration(contest.durationMinutes)} · {contest.applicants.toLocaleString('en-IN')} applied
       </Typography>
 
@@ -111,18 +111,18 @@ function ContestPanel({ contest, past, action }) {
 function WinnerRow({ w }) {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px', py: 1.25, pl: 0.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
-      <Typography sx={{ ...mono, width: 48, height: 48, flexShrink: 0, display: 'grid', placeItems: 'center', borderRadius: '14px', fontWeight: 700, fontSize: '1rem', color: w.rank <= 3 ? ORANGE : 'var(--lib-chip-text)', bgcolor: w.rank <= 3 ? tint(ORANGE, 16) : 'var(--lib-chip)' }}>
+      <Typography sx={{ ...mono, width: 48, height: 48, flexShrink: 0, display: 'grid', placeItems: 'center', borderRadius: '14px', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, color: w.rank <= 3 ? ORANGE : 'var(--lib-chip-text)', bgcolor: w.rank <= 3 ? tint(ORANGE, 16) : 'var(--lib-chip)' }}>
         {w.rank}
       </Typography>
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
           {w.name}
         </Typography>
-        <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
+        <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
           {w.solved ?? 0} solved
         </Typography>
       </Box>
-      {w.prize ? <Typography sx={{ ...mono, fontWeight: 700, fontSize: '0.95rem', flexShrink: 0 }}>{inr(w.prize)}</Typography> : null}
+      {w.prize ? <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, flexShrink: 0 }}>{inr(w.prize)}</Typography> : null}
     </Box>
   );
 }
@@ -130,12 +130,12 @@ function WinnerRow({ w }) {
 function Rule({ rule, index }) {
   return (
     <Box sx={(t) => ({ py: 1.75, px: rule.highlight ? 1.5 : 0.5, borderBottom: rule.highlight ? 'none' : '1px solid', borderColor: 'var(--lib-divider)', ...(rule.highlight && { my: 1, borderRadius: '16px', bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) }) })}>
-      <Typography component="h3" sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, mb: 1 }}>
+      <Typography component="h3" sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, mb: 1 }}>
         {index + 1}. {rule.title}
       </Typography>
       <Box component="ol" sx={{ m: 0, pl: 2.5, display: 'grid', gap: 0.9 }}>
         {rule.items.map((text) => (
-          <Typography key={text} component="li" sx={{ fontSize: '0.92rem', lineHeight: 1.65, '&::marker': { fontWeight: 500, color: 'var(--lib-muted)' } }}>
+          <Typography key={text} component="li" sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: 1.65, '&::marker': { fontWeight: FONT_WEIGHTS.medium, color: 'var(--lib-muted)' } }}>
             {text}
           </Typography>
         ))}
@@ -178,7 +178,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
           />
         </Box>
 
-        <Alert severity="warning" icon={false} sx={{ mt: 2, borderRadius: '20px', fontWeight: 600 }}>
+        <Alert severity="warning" icon={false} sx={{ mt: 2, borderRadius: '20px', fontWeight: FONT_WEIGHTS.semibold }}>
           No AI, no outside help. Every solution must be your own work. Cheaters are disqualified and lose any prize.
         </Alert>
 
@@ -197,10 +197,10 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
             <Stack spacing={1.5}>
               <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
                 <CheckCircleRoundedIcon sx={{ color: 'var(--jc-easy)' }} />
-                <Typography sx={{ fontWeight: 500, letterSpacing: LIB_TRACKING }}>You are in. See you on {fmtStart(contest.startsAt)}.</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>You are in. See you on {fmtStart(contest.startsAt)}.</Typography>
               </Stack>
               {upcoming && (
-                <Button onClick={onWithdraw} disabled={busy} color="inherit" sx={{ alignSelf: 'flex-start', borderRadius: 999, textTransform: 'none', fontWeight: 500, fontSize: 16 }}>
+                <Button onClick={onWithdraw} disabled={busy} color="inherit" sx={{ alignSelf: 'flex-start', borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title }}>
                   Withdraw application
                 </Button>
               )}
@@ -218,7 +218,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
             <>
               <FormControlLabel
                 control={<Checkbox checked={accepted} onChange={(e) => setAccepted(e.target.checked)} />}
-                label={<Typography sx={{ fontSize: '0.92rem', lineHeight: 1.6 }}>I have read the rules above. I will not use AI or any outside help, and I accept that cheating means disqualification and loss of any prize.</Typography>}
+                label={<Typography sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: 1.6 }}>I have read the rules above. I will not use AI or any outside help, and I accept that cheating means disqualification and loss of any prize.</Typography>}
                 sx={{ alignItems: 'flex-start', m: 0, mb: 1.5, '& .MuiCheckbox-root': { pt: 0.25, ml: -0.75 } }}
               />
               <Button onClick={onApply} disabled={!accepted || busy} fullWidth disableElevation variant="contained" sx={solidBtn}>
@@ -275,7 +275,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
           />
         ) : (
           <Box sx={{ py: 7, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 700 }}>No upcoming contests</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No upcoming contests</Typography>
             <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5 }}>The next one will be announced here.</Typography>
           </Box>
         ))}
@@ -286,7 +286,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
               contest={shown}
               past
               action={
-                <Typography color="var(--lib-muted)" sx={{ mt: 1.5, fontSize: 14 }}>
+                <Typography color="var(--lib-muted)" sx={{ mt: 1.5, fontSize: FONT_SIZES.body }}>
                   Ended {fmtDate(shown.startsAt)}
                 </Typography>
               }
@@ -306,7 +306,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
           </>
         ) : (
           <Box sx={{ py: 7, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 700 }}>No past contests yet</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No past contests yet</Typography>
             <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5 }}>Finished contests and their winners will show up here.</Typography>
           </Box>
         ))}

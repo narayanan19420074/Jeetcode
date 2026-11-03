@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Box, ButtonBase, IconButton, Tooltip, Typography } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from './libraryStyle';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Red pill with the number of friend requests and unread chat messages waiting for me (both live).
 export function RequestBadge({ requests }) {
@@ -10,7 +10,7 @@ export function RequestBadge({ requests }) {
   const n = (requests || 0) + unread;
   if (!n) return null;
   return (
-    <Box component="span" aria-label={`${n} friend notifications`} sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: 12, fontWeight: 700, display: 'grid', placeItems: 'center' }}>
+    <Box component="span" aria-label={`${n} friend notifications`} sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
       {n}
     </Box>
   );
@@ -37,8 +37,8 @@ export function NavButton({ active, icon: Icon, label, count, accent, onClick, t
   const pal = useLibraryPalette();
   return (
     <ButtonBase onClick={onClick} aria-current={active ? 'page' : undefined} sx={navButtonSx(pal, active)}>
-      <Icon sx={{ fontSize: 22, color: active ? COLOR_PALETTE.white : accent || pal.muted }} />
-      <Typography noWrap sx={{ flex: 1, fontSize: 15, fontWeight: active ? 700 : 500, letterSpacing: LIB_TRACKING }}>
+      <Icon sx={{ fontSize: FONT_SIZES.display, color: active ? COLOR_PALETTE.white : accent || pal.muted }} />
+      <Typography noWrap sx={{ flex: 1, fontSize: FONT_SIZES.bodyLg, fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>
         {label}
       </Typography>
       {count !== undefined && (
@@ -55,7 +55,7 @@ export function ListsHeader({ atLimit, onCreate }) {
   const pal = useLibraryPalette();
   return (
     <Box sx={{ mt: 2.5, mb: 0.5, px: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Typography sx={{ fontSize: 16, fontWeight: 700 }}>My Lists</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold }}>My Lists</Typography>
       <Tooltip title={atLimit ? 'List limit reached' : 'New list'}>
         <span>
           <IconButton

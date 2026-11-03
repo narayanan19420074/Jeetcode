@@ -27,9 +27,9 @@ import FriendPicker from './FriendPicker';
 import BackToDashboard from '../../components/BackToDashboard';
 import { MobilePlanWorkspace, MobilePlans, MobileShell } from './MobileStudyPlan';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtDay, fmtRange, localKey, parseInvite, planTheme, relDay, relTime } from './planUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
-const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
+const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 
 // ---------- friends strip (opens from the friends icon) ----------
 
@@ -40,13 +40,13 @@ function FriendsPanel({ friends, onFindFriends, onJoinCode, codeInput, setCodeIn
         {friends === null && <Skeleton width={160} height={28} />}
         {friends?.length === 0 && (
           <Typography variant="body2" color="text.secondary" sx={{ px: 0.5 }}>
-            No friends yet. <ButtonBase onClick={onFindFriends} sx={{ color: 'primary.main', fontWeight: 700, fontSize: 14, verticalAlign: 'baseline' }}>Find friends</ButtonBase>
+            No friends yet. <ButtonBase onClick={onFindFriends} sx={{ color: 'primary.main', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, verticalAlign: 'baseline' }}>Find friends</ButtonBase>
           </Typography>
         )}
         {friends?.map((f) => (
           <Box key={f.userId} sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 0.75, pl: 0.4, pr: 1.1, py: 0.3, borderRadius: 999, border: `1px solid ${t.palette.divider}` })}>
-            <Avatar src={f.avatarUrl || undefined} sx={{ width: 22, height: 22, fontSize: 11, fontWeight: 700 }}>{f.name?.[0]?.toUpperCase()}</Avatar>
-            <Typography variant="body2" noWrap sx={{ fontWeight: 600, maxWidth: 120 }}>{f.name}</Typography>
+            <Avatar src={f.avatarUrl || undefined} sx={{ width: 22, height: 22, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold }}>{f.name?.[0]?.toUpperCase()}</Avatar>
+            <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, maxWidth: 120 }}>{f.name}</Typography>
           </Box>
         ))}
       </Box>
@@ -54,7 +54,7 @@ function FriendsPanel({ friends, onFindFriends, onJoinCode, codeInput, setCodeIn
         <TextField
           size="small" placeholder="Have an invite link? Paste it" value={codeInput} onChange={(e) => setCodeInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && onJoinCode()} error={Boolean(codeError)} helperText={codeError || undefined}
-          slotProps={{ htmlInput: { 'aria-label': 'Invite link or code', style: { padding: '6px 10px', fontSize: 13 } } }} fullWidth
+          slotProps={{ htmlInput: { 'aria-label': 'Invite link or code', style: { padding: '6px 10px', fontSize: FONT_SIZES.body } } }} fullWidth
         />
         <Tooltip title="Find plan"><IconButton onClick={onJoinCode} aria-label="Find plan" size="small"><GroupAddRoundedIcon fontSize="small" /></IconButton></Tooltip>
       </Box>
@@ -71,7 +71,7 @@ function NotificationsPopover({ anchorEl, onClose, items, onOpenPlan }) {
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       slotProps={{ paper: { sx: { width: 300, maxHeight: 340, mt: 0.5, borderRadius: '12px' } } }}
     >
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.25, pb: 0.5, fontWeight: 800, letterSpacing: 0.4 }}>NOTIFICATIONS</Typography>
+      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.25, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4 }}>NOTIFICATIONS</Typography>
       {items.length === 0 ? (
         <Typography variant="body2" color="text.secondary" sx={{ px: 1.5, pb: 1.5 }}>Nothing new.</Typography>
       ) : items.map((n) => (
@@ -79,7 +79,7 @@ function NotificationsPopover({ anchorEl, onClose, items, onOpenPlan }) {
           key={n.id} onClick={() => onOpenPlan(n.plan.id)}
           sx={(t) => ({ width: '100%', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, px: 1.5, py: 0.9, textAlign: 'left', fontFamily: 'inherit', bgcolor: n.read ? 'transparent' : `${t.palette.primary.main}12`, '&:hover': { bgcolor: t.palette.action.hover } })}
         >
-          <Avatar src={n.actor.avatarUrl || undefined} sx={{ width: 26, height: 26, fontSize: 12, fontWeight: 700, mt: 0.2 }}>{n.actor.name?.[0]?.toUpperCase()}</Avatar>
+          <Avatar src={n.actor.avatarUrl || undefined} sx={{ width: 26, height: 26, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, mt: 0.2 }}>{n.actor.name?.[0]?.toUpperCase()}</Avatar>
           <Box sx={{ minWidth: 0, flex: 1 }}>
             <Typography variant="body2" sx={{ lineHeight: 1.3 }}><b>{n.actor.name}</b> added you to <b>{n.plan.title}</b></Typography>
             <Typography variant="caption" color="text.secondary">{relTime(n.createdAt)}</Typography>
@@ -128,9 +128,9 @@ function PlanQuestions({ planId, today }) {
         return (
           <Box key={d.date}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, pt: 0.5, pb: 0.6 }}>
-              <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>{relDay(d.date, today).toUpperCase()}</Typography>
+              <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>{relDay(d.date, today).toUpperCase()}</Typography>
               <Box sx={{ flex: 1, height: '1px', bgcolor: 'divider' }} />
-              <Typography variant="caption" sx={[{ fontWeight: 700, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
+              <Typography variant="caption" sx={[{ fontWeight: FONT_WEIGHTS.bold, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
             </Box>
             {d.items.map((it) => <PlanTaskRow key={it.id} item={it} doers={it.doneBy.map((u) => membersById.get(u)).filter((m) => m && !m.isMe)} />)}
           </Box>
@@ -172,21 +172,21 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
             sx={{ display: 'flex', width: '100%', alignItems: 'flex-start', justifyContent: 'space-between', gap: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderRadius: '8px' }}
           >
             <Box sx={{ minWidth: 0 }}>
-              <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.2, overflowWrap: 'anywhere' }}>{plan.title}</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.2, overflowWrap: 'anywhere' }}>{plan.title}</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.5, color: withAlpha(COLOR_PALETTE.white, 0.88) }}>
-                <CalendarMonthRoundedIcon sx={{ fontSize: 16 }} />
-                <Typography sx={{ fontSize: '0.8rem', fontWeight: 600 }}>{fmtRange(s.startDate, s.endDate)}</Typography>
+                <CalendarMonthRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />
+                <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold }}>{fmtRange(s.startDate, s.endDate)}</Typography>
               </Box>
               {behind && (
                 <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, mt: 0.75, px: 1, py: 0.25, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.amber[400], 0.18), color: COLOR_PALETTE.amber[200] }}>
-                  <ErrorOutlineRoundedIcon sx={{ fontSize: 14 }} />
-                  <Typography sx={{ fontSize: '0.7rem', fontWeight: 700 }}>{s.overdue} overdue</Typography>
+                  <ErrorOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.body }} />
+                  <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold }}>{s.overdue} overdue</Typography>
                 </Box>
               )}
             </Box>
             <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: tile.urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
-              <Typography sx={{ fontWeight: 900, fontSize: tile.big.length > 3 ? '1.25rem' : '1.9rem', lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
-              {tile.label && <Typography sx={{ fontSize: '0.68rem', fontWeight: 700, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: tile.big.length > 3 ? FONT_SIZES.heading : FONT_SIZES.hero, lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
+              {tile.label && <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
             </Box>
           </ButtonBase>
 
@@ -194,28 +194,28 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 1.5 }}>
             <ProgressRing value={s.percent} size={64} onDark />
             <Box sx={{ minWidth: 0, flex: 1, px: 1.5, py: 1.1, borderRadius: '16px 16px 16px 4px', bgcolor: withAlpha(COLOR_PALETTE.white, 0.14) }}>
-              <Typography sx={{ fontSize: '0.84rem', lineHeight: 1.4, fontWeight: 700 }}>{message}</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: 1.4, fontWeight: FONT_WEIGHTS.bold }}>{message}</Typography>
               {!complete && todayItems.slice(0, 3).map((it) => (
-                <Typography key={it.id} noWrap sx={{ fontSize: '0.78rem', mt: 0.3, fontWeight: 600, opacity: it.done ? 0.6 : 0.95, textDecoration: it.done ? 'line-through' : 'none' }}>
+                <Typography key={it.id} noWrap sx={{ fontSize: FONT_SIZES.caption, mt: 0.3, fontWeight: FONT_WEIGHTS.semibold, opacity: it.done ? 0.6 : 0.95, textDecoration: it.done ? 'line-through' : 'none' }}>
                   {it.done ? '✓ ' : it.overdue ? '! ' : '• '}{it.title}
                 </Typography>
               ))}
-              {!complete && todayItems.length > 3 && <Typography sx={{ fontSize: '0.72rem', opacity: 0.8 }}>+{todayItems.length - 3} more</Typography>}
+              {!complete && todayItems.length > 3 && <Typography sx={{ fontSize: FONT_SIZES.caption, opacity: 0.8 }}>+{todayItems.length - 3} more</Typography>}
             </Box>
           </Box>
 
           {/* solved bar */}
           <Box sx={{ mt: 1.5 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.5, gap: 1 }}>
-              <Typography sx={{ fontSize: '0.78rem', fontWeight: 800, color: COLOR_PALETTE.amber[200], fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.amber[200], fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 {s.streak > 0 && (
                   <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
-                    <LocalFireDepartmentRoundedIcon sx={{ fontSize: 16, color: PLAN_AMBER }} />
-                    <Typography sx={{ fontSize: '0.74rem', fontWeight: 800 }}>{s.streak}d</Typography>
+                    <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: PLAN_AMBER }} />
+                    <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>{s.streak}d</Typography>
                   </Box>
                 )}
-                <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 22, height: 22, fontSize: 10, fontWeight: 700, border: `2px solid ${withAlpha(COLOR_PALETTE.white, 0.9)}` } }}>
+                <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 22, height: 22, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, border: `2px solid ${withAlpha(COLOR_PALETTE.white, 0.9)}` } }}>
                   {plan.members.map((m) => <Avatar key={m.id} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
                 </AvatarGroup>
               </Box>
@@ -229,16 +229,16 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1.75 }}>
             <Button
               onClick={onOpen} startIcon={<BoltRoundedIcon />} endIcon={<ArrowForwardRoundedIcon />} disableElevation
-              sx={{ flex: 1, height: 44, borderRadius: '14px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, fontSize: '0.92rem', '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+              sx={{ flex: 1, height: 44, borderRadius: '14px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
             >
               {cta}
             </Button>
             <Tooltip title="Add friends">
-              <IconButton aria-label="Add friends to plan" onClick={(e) => onAddFriend(e.currentTarget)} sx={glassBtn}><PersonAddRoundedIcon sx={{ fontSize: 20 }} /></IconButton>
+              <IconButton aria-label="Add friends to plan" onClick={(e) => onAddFriend(e.currentTarget)} sx={glassBtn}><PersonAddRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} /></IconButton>
             </Tooltip>
             <Tooltip title={plan.isOwner ? 'Delete plan' : 'Leave plan'}>
               <IconButton aria-label={plan.isOwner ? 'Delete plan' : 'Leave plan'} onClick={() => onDelete(plan)} sx={[glassBtn, { color: COLOR_PALETTE.red[200] }]}>
-                {plan.isOwner ? <DeleteOutlineRoundedIcon sx={{ fontSize: 21 }} /> : <ExitToAppRoundedIcon sx={{ fontSize: 21 }} />}
+                {plan.isOwner ? <DeleteOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} /> : <ExitToAppRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
               </IconButton>
             </Tooltip>
           </Box>
@@ -247,10 +247,10 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
         {/* arrow: show / hide the questions right here */}
         <ButtonBase
           onClick={onToggle} aria-expanded={expanded} aria-label={expanded ? 'Hide questions' : 'Show questions'}
-          sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5, py: 1, bgcolor: withAlpha(COLOR_PALETTE.black, 0.24), fontFamily: 'inherit', fontSize: 13, fontWeight: 700, color: COLOR_PALETTE.white, '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.black, 0.34) } }}
+          sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5, py: 1, bgcolor: withAlpha(COLOR_PALETTE.black, 0.24), fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.white, '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.black, 0.34) } }}
         >
           {expanded ? 'Hide questions' : `Show ${s.total} question${s.total === 1 ? '' : 's'}`}
-          <ExpandMoreRoundedIcon sx={{ fontSize: 20, transition: 'transform .2s', transform: expanded ? 'rotate(180deg)' : 'none' }} />
+          <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.heading, transition: 'transform .2s', transform: expanded ? 'rotate(180deg)' : 'none' }} />
         </ButtonBase>
       </Box>
 
@@ -425,9 +425,9 @@ export default function StudyPlannerView({ isAuthenticated }) {
   if (!isAuthenticated) {
     const loginPrompt = (
       <Box sx={[surface, { p: 4, textAlign: 'center' }]}>
-        <Typography variant="h6" sx={{ fontWeight: 700 }}>Log in to plan your study days</Typography>
+        <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>Log in to plan your study days</Typography>
         <Typography color="text.secondary" sx={{ mb: 2 }}>Create a schedule, add friends and track progress together.</Typography>
-        <Button variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: 700 }}>Log in</Button>
+        <Button variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: FONT_WEIGHTS.bold }}>Log in</Button>
       </Box>
     );
     return isPhone ? (
@@ -499,7 +499,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
           onAdd={async (f) => { if (await addFriend(picker.plan, f)) setPicker((p) => p && ({ ...p, plan: { ...p.plan, members: [...p.plan.members, { id: f.userId }] } })); }}
         />
         <Dialog open={Boolean(toDelete)} onClose={() => !deleting && setToDelete(null)} maxWidth="xs" fullWidth>
-          <DialogTitle sx={{ fontWeight: 700 }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
+          <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
           <DialogContent>
             <DialogContentText>
               {toDelete?.isOwner
@@ -509,7 +509,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
           </DialogContent>
           <DialogActions>
             <Button onClick={() => setToDelete(null)} disabled={deleting}>Cancel</Button>
-            <Button color="error" variant="contained" disableElevation onClick={confirmDelete} disabled={deleting} sx={{ fontWeight: 700 }}>
+            <Button color="error" variant="contained" disableElevation onClick={confirmDelete} disabled={deleting} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
               {deleting ? 'Please wait…' : toDelete?.isOwner ? 'Delete' : 'Leave'}
             </Button>
           </DialogActions>
@@ -523,7 +523,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
     <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: 'minmax(0, 1fr)' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.2 }}>Study Plan</Typography>
+          <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.2 }}>Study Plan</Typography>
           {plans && plans.length > 0 && (
             <Typography variant="caption" color="text.secondary">
               {plans.length} plan{plans.length === 1 ? '' : 's'} · {dueToday > 0 ? `${dueToday} question${dueToday === 1 ? '' : 's'} to solve today` : 'nothing due today'}
@@ -540,7 +540,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
             <Badge color="error" badgeContent={notes.unread} max={9}><NotificationsRoundedIcon /></Badge>
           </IconButton>
         </Tooltip>
-        <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: 700, ml: 0.5 }}>New plan</Button>
+        <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: FONT_WEIGHTS.bold, ml: 0.5 }}>New plan</Button>
       </Box>
 
       <Collapse in={showFriends} unmountOnExit>
@@ -563,11 +563,11 @@ export default function StudyPlannerView({ isAuthenticated }) {
             <>
               <Box sx={{ flex: 1, minWidth: 180 }}>
                 <Typography variant="caption" color="text.secondary">{invite.owner ? `@${invite.owner.handle} invited you to` : 'You are invited to'}</Typography>
-                <Typography sx={{ fontWeight: 700 }}>{invite.title}</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{invite.title}</Typography>
                 <Typography variant="caption" color="text.secondary">{invite.taskCount} questions · {fmtRange(invite.startDate, invite.endDate)} · {invite.memberCount} member{invite.memberCount === 1 ? '' : 's'}</Typography>
               </Box>
-              {invite.isFull ? <Typography color="warning.main" sx={{ fontWeight: 700 }}>This plan is full</Typography> : (
-                <Button size="small" variant="contained" disableElevation disabled={joining} onClick={accept} sx={{ fontWeight: 700 }}>{joining ? 'Joining…' : 'Join'}</Button>
+              {invite.isFull ? <Typography color="warning.main" sx={{ fontWeight: FONT_WEIGHTS.bold }}>This plan is full</Typography> : (
+                <Button size="small" variant="contained" disableElevation disabled={joining} onClick={accept} sx={{ fontWeight: FONT_WEIGHTS.bold }}>{joining ? 'Joining…' : 'Join'}</Button>
               )}
               <Button size="small" onClick={() => go()} disabled={joining}>Not now</Button>
             </>
@@ -581,9 +581,9 @@ export default function StudyPlannerView({ isAuthenticated }) {
         </Box>
       ) : plans.length === 0 ? (
         <Box sx={[surface, { p: 3, textAlign: 'center' }]}>
-          <Typography sx={{ fontWeight: 700 }}>No plans yet</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No plans yet</Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 1.5 }}>Pick questions, set a finish date and add friends.</Typography>
-          <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: 700 }}>Create a plan</Button>
+          <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: FONT_WEIGHTS.bold }}>Create a plan</Button>
         </Box>
       ) : (
         <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
@@ -606,7 +606,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
         onAdd={async (f) => { if (await addFriend(picker.plan, f)) setPicker((p) => p && ({ ...p, plan: { ...p.plan, members: [...p.plan.members, { id: f.userId }] } })); }}
       />
       <Dialog open={Boolean(toDelete)} onClose={() => !deleting && setToDelete(null)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 700 }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
         <DialogContent>
           <DialogContentText>
             {toDelete?.isOwner
@@ -616,7 +616,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setToDelete(null)} disabled={deleting}>Cancel</Button>
-          <Button color="error" variant="contained" disableElevation onClick={confirmDelete} disabled={deleting} sx={{ fontWeight: 700 }}>
+          <Button color="error" variant="contained" disableElevation onClick={confirmDelete} disabled={deleting} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             {deleting ? 'Please wait…' : toDelete?.isOwner ? 'Delete' : 'Leave'}
           </Button>
         </DialogActions>

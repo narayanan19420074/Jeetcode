@@ -3,6 +3,7 @@ import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { monthCells } from '../dashboard/dashboardUtils';
 import { monthLabel } from './planUtils';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const DOW = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
@@ -18,14 +19,14 @@ export default function MonthCalendar({ cursor, onCursor, selected, onSelect, to
   return (
     <Box>
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.5 }}>
-        <Typography variant="body2" sx={{ fontWeight: 700, flex: 1 }}>{monthLabel(y, m)}</Typography>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, flex: 1 }}>{monthLabel(y, m)}</Typography>
         <IconButton size="small" aria-label="Previous month" onClick={() => move(-1)}><ChevronLeftRoundedIcon fontSize="small" /></IconButton>
         <IconButton size="small" aria-label="Next month" onClick={() => move(1)}><ChevronRightRoundedIcon fontSize="small" /></IconButton>
       </Box>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '3px' }}>
         {DOW.map((d, i) => (
-          <Typography key={i} variant="caption" color="text.secondary" sx={{ textAlign: 'center', fontWeight: 700, lineHeight: 1.6 }}>{d}</Typography>
+          <Typography key={i} variant="caption" color="text.secondary" sx={{ textAlign: 'center', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.6 }}>{d}</Typography>
         ))}
         {monthCells(y, m).map((cell, i) => {
           if (!cell) return <Box key={`b${i}`} />;
@@ -37,7 +38,7 @@ export default function MonthCalendar({ cursor, onCursor, selected, onSelect, to
             <ButtonBase
               key={cell.key} disabled={disabled} onClick={() => onSelect?.(cell.key)} aria-label={cell.key} aria-pressed={isSel}
               sx={(t) => ({
-                height: 32, borderRadius: '8px', fontFamily: 'inherit', fontSize: 13, fontWeight: isSel || isToday ? 800 : 500,
+                height: 32, borderRadius: '8px', fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: isSel || isToday ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
                 color: isSel ? t.palette.primary.contrastText : disabled ? t.palette.text.disabled : t.palette.text.primary,
                 bgcolor: isSel ? t.palette.primary.main : inSpan ? alpha(t.palette.primary.main, 0.12) : 'transparent',
                 border: `1px solid ${isToday && !isSel ? t.palette.primary.main : 'transparent'}`,

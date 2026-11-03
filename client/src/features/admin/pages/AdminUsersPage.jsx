@@ -26,6 +26,7 @@ import {
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const ROLES = ['learner', 'contributor', 'moderator', 'admin'];
 
@@ -87,7 +88,7 @@ export default function AdminUsersPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
         Users
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -110,9 +111,9 @@ export default function AdminUsersPage() {
             }}
             sx={{ minHeight: 36 }}
           >
-            <Tab value="all" label="All" sx={{ minHeight: 36, py: 0.5, fontWeight: 600 }} />
-            <Tab value="pro" label="Pro" sx={{ minHeight: 36, py: 0.5, fontWeight: 600 }} />
-            <Tab value="normal" label="Normal" sx={{ minHeight: 36, py: 0.5, fontWeight: 600 }} />
+            <Tab value="all" label="All" sx={{ minHeight: 36, py: 0.5, fontWeight: FONT_WEIGHTS.semibold }} />
+            <Tab value="pro" label="Pro" sx={{ minHeight: 36, py: 0.5, fontWeight: FONT_WEIGHTS.semibold }} />
+            <Tab value="normal" label="Normal" sx={{ minHeight: 36, py: 0.5, fontWeight: FONT_WEIGHTS.semibold }} />
           </Tabs>
           <TextField
             size="small"
@@ -150,7 +151,7 @@ export default function AdminUsersPage() {
               <TableBody>
                 {users.map((u) => (
                   <TableRow key={u._id} hover>
-                    <TableCell sx={{ fontWeight: 600 }}>
+                    <TableCell sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
                       {u.name}{' '}
                       <Typography component="span" variant="caption" color="text.secondary">
                         @{u.handle}

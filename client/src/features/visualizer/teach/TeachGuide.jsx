@@ -10,7 +10,7 @@ import VolumeOffRoundedIcon from '@mui/icons-material/VolumeOffRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { runTour } from './teachScript';
 import { speak, splitSentences, toSpoken, warmUpVoices, cancelSpeech, speechSupported } from './speech';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // Blip's guided tour of the Algorithm Visualizer.
 //
@@ -416,17 +416,17 @@ export default function TeachGuide({ page, onClose }) {
             },
           }}
         >
-          <Typography variant="caption" sx={{ display: 'block', fontWeight: 800, letterSpacing: '0.08em', color: dark ? accent : COLOR_PALETTE.emerald[700], mb: 0.25 }}>
+          <Typography variant="caption" sx={{ display: 'block', fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.08em', color: dark ? accent : COLOR_PALETTE.emerald[700], mb: 0.25 }}>
             BLIP
           </Typography>
-          <Typography variant="body2" sx={{ lineHeight: 1.5, fontSize: 14.5 }}>
+          <Typography variant="body2" sx={{ lineHeight: 1.5, fontSize: FONT_SIZES.bodyLg }}>
             {caption.sentences.map((s, i) => (
               <Box
                 key={`${i}-${s}`}
                 component="span"
                 sx={{
                   opacity: i === caption.idx ? 1 : i < caption.idx ? 0.62 : 0.58,
-                  fontWeight: i === caption.idx ? 600 : 400,
+                  fontWeight: i === caption.idx ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.regular,
                   transition: 'opacity 0.25s',
                 }}
               >
@@ -482,7 +482,7 @@ export default function TeachGuide({ page, onClose }) {
         backdropFilter: 'blur(8px)',
       }}
     >
-      <Typography variant="caption" sx={{ fontWeight: 800, color: dark ? accent : COLOR_PALETTE.emerald[700], px: 1.25, letterSpacing: '0.06em' }}>
+      <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: dark ? accent : COLOR_PALETTE.emerald[700], px: 1.25, letterSpacing: '0.06em' }}>
         {finished ? 'DONE' : paused ? 'PAUSED' : 'TEACHING'}
       </Typography>
       <Tooltip title={paused ? 'Resume' : 'Pause'}>

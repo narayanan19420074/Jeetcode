@@ -19,7 +19,7 @@ import { fmtDate, useContest } from '../../contest/contestUtils';
 import { tint } from '../dashboardUtils';
 import NqtExploreCard from './NqtExploreCard';
 import { LibraryFont, useLibraryPalette } from './libraryStyle';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Phone home screen in the Library layout: swipeable banners, category cards, topic chips and company rows.
 // Sizes: 16px page gutter, 2:1 banners, 115x80 category cards, 34px chips, 48px company logos, 58px company rows.
@@ -59,10 +59,10 @@ function SectionHeading({ to, children }) {
   const pal = useLibraryPalette();
   return (
     <Box component={RouterLink} to={to} sx={{ display: 'flex', alignSelf: 'flex-start', alignItems: 'center', gap: 0.5, color: pal.text, textDecoration: 'none' }}>
-      <Typography component="h2" sx={{ fontSize: 18, lineHeight: '24px', fontWeight: 700 }}>
+      <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold }}>
         {children}
       </Typography>
-      <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: 22, color: pal.muted }} />
+      <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, color: pal.muted }} />
     </Box>
   );
 }
@@ -113,7 +113,7 @@ function Banners({ cards }) {
             </Box>
             <Typography
               component="span"
-              sx={{ position: 'absolute', left: 16, right: '38%', bottom: 14, fontSize: 28, lineHeight: '33px', fontWeight: 700, letterSpacing: '-0.01em', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+              sx={{ position: 'absolute', left: 16, right: '38%', bottom: 14, fontSize: FONT_SIZES.displayLg, lineHeight: '33px', fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
             >
               {title}
             </Typography>
@@ -163,12 +163,12 @@ function CategoryCard({ to, label, color, bg, icon: Icon, all = false, dim = fal
     >
       {all ? (
         <Box aria-hidden sx={{ width: 30, height: 28, borderRadius: '9px', display: 'grid', placeItems: 'center', background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
-          <CodeRoundedIcon sx={{ fontSize: 20, color: COLOR_PALETTE.white }} />
+          <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.white }} />
         </Box>
       ) : (
-        <Icon aria-hidden sx={{ fontSize: 28, color }} />
+        <Icon aria-hidden sx={{ fontSize: FONT_SIZES.displayLg, color }} />
       )}
-      <Typography component="span" sx={{ maxWidth: '100%', fontSize: 15, lineHeight: '19px', letterSpacing: TRACKING, display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+      <Typography component="span" sx={{ maxWidth: '100%', fontSize: FONT_SIZES.bodyLg, lineHeight: '19px', letterSpacing: TRACKING, display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
         {label}
       </Typography>
     </ButtonBase>
@@ -193,7 +193,7 @@ function Knowledge({ tags }) {
                 key={tag}
                 component={RouterLink}
                 to={problemsUrl('tag', tag)}
-                sx={{ height: 34, px: '14px', borderRadius: 999, bgcolor: pal.chip, color: pal.chipText, fontSize: 15, letterSpacing: TRACKING, whiteSpace: 'nowrap' }}
+                sx={{ height: 34, px: '14px', borderRadius: 999, bgcolor: pal.chip, color: pal.chipText, fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, whiteSpace: 'nowrap' }}
               >
                 {tag}
               </ButtonBase>
@@ -220,10 +220,10 @@ function Companies({ companies }) {
           >
             <CompanyAvatar name={company} size={48} />
             <Box sx={{ flex: 1, minWidth: 0, pb: '4px', borderBottom: `1px solid ${pal.divider}` }}>
-              <Typography noWrap sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING }}>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING }}>
                 {company}
               </Typography>
-              <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted }}>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted }}>
                 {count.toLocaleString('en-IN')} {count === 1 ? 'Question' : 'Questions'}
               </Typography>
             </Box>

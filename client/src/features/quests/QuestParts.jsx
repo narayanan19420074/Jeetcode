@@ -8,7 +8,7 @@ import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import { Confetti } from '../aptitude/components/MotionBits';
 import { FF, buttonSx, cut, formatDate, panelSx } from './questUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Free-Fire-style building blocks shared by the Quests page and the Store: cut-corner panels, orange/green buttons,
 // tags, notices and dialogs. Colours come from FF (CSS variables), so everything follows light / dark mode.
@@ -41,7 +41,7 @@ export function Stat({ icon, value, color = FF.text, label, onClick }) {
       onClick={onClick}
       aria-label={label}
       title={label}
-      sx={{ display: 'inline-flex', alignItems: 'center', gap: 1, px: 1.75, height: 44, bgcolor: FF.hud, border: `1px solid ${FF.line}`, clipPath: cut(8), fontWeight: 900, fontSize: 16, color, fontVariantNumeric: 'tabular-nums', backdropFilter: 'blur(6px)', ...(onClick ? { cursor: 'pointer', '&:hover': { borderColor: FF.orange }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } } : null) }}
+      sx={{ display: 'inline-flex', alignItems: 'center', gap: 1, px: 1.75, height: 44, bgcolor: FF.hud, border: `1px solid ${FF.line}`, clipPath: cut(8), fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, color, fontVariantNumeric: 'tabular-nums', backdropFilter: 'blur(6px)', ...(onClick ? { cursor: 'pointer', '&:hover': { borderColor: FF.orange }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } } : null) }}
     >
       {icon}
       {value}
@@ -62,7 +62,7 @@ const TAGS = { orange: [FF.orange, COLOR_PALETTE.gray[950]], green: [FF.green, C
 export function Tag({ tone = 'dark', bg, color, children, sx }) {
   const [b, c] = TAGS[tone] || TAGS.dark;
   return (
-    <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, height: 22, px: 1, fontSize: 11, fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase', whiteSpace: 'nowrap', bgcolor: bg || b, color: color || c, clipPath: cut(5), ...sx }}>
+    <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, height: 22, px: 1, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.08em', textTransform: 'uppercase', whiteSpace: 'nowrap', bgcolor: bg || b, color: color || c, clipPath: cut(5), ...sx }}>
       {children}
     </Box>
   );
@@ -72,7 +72,7 @@ export function Tag({ tone = 'dark', bg, color, children, sx }) {
 const NOTICE = { info: FF.diamond, success: FF.green, warning: FF.orange, error: FF.red };
 export function Notice({ tone = 'info', children, sx }) {
   return (
-    <Box role={tone === 'error' ? 'alert' : undefined} sx={{ px: 2, py: 1.5, bgcolor: FF.well, borderLeft: `4px solid ${NOTICE[tone] || NOTICE.info}`, fontSize: 14, fontWeight: 600, lineHeight: 1.5, color: FF.text, ...sx }}>
+    <Box role={tone === 'error' ? 'alert' : undefined} sx={{ px: 2, py: 1.5, bgcolor: FF.well, borderLeft: `4px solid ${NOTICE[tone] || NOTICE.info}`, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.5, color: FF.text, ...sx }}>
       {children}
     </Box>
   );
@@ -80,7 +80,7 @@ export function Notice({ tone = 'info', children, sx }) {
 
 // Section label: small, spaced capitals.
 export const Eyebrow = ({ children, sx }) => (
-  <Typography sx={{ fontSize: 12, fontWeight: 900, letterSpacing: '0.16em', textTransform: 'uppercase', color: FF.muted, ...sx }}>{children}</Typography>
+  <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.16em', textTransform: 'uppercase', color: FF.muted, ...sx }}>{children}</Typography>
 );
 
 // A row of pill-like options (filters, sizes, colours). Pass `options` as [{ id, label }].
@@ -95,7 +95,7 @@ export function Choice({ options, value, onChange, label }) {
             role="radio"
             aria-checked={on}
             onClick={() => onChange(o.id)}
-            sx={{ minHeight: 40, px: 2, fontWeight: 900, fontSize: 13, letterSpacing: '0.06em', textTransform: 'uppercase', clipPath: cut(7), color: on ? COLOR_PALETTE.gray[950] : FF.text, background: on ? `linear-gradient(180deg, ${FF.orangeHi}, ${FF.orange})` : FF.panelHi, '&:hover': { filter: 'brightness(1.06)' }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } }}
+            sx={{ minHeight: 40, px: 2, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, letterSpacing: '0.06em', textTransform: 'uppercase', clipPath: cut(7), color: on ? COLOR_PALETTE.gray[950] : FF.text, background: on ? `linear-gradient(180deg, ${FF.orangeHi}, ${FF.orange})` : FF.panelHi, '&:hover': { filter: 'brightness(1.06)' }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } }}
           >
             {o.label}
           </ButtonBase>
@@ -112,7 +112,7 @@ export const dialogPaperWide = { sx: { ...dialogPaper.sx, maxWidth: 640 } };
 export function DialogHead({ title, onClose }) {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, pl: 3, pr: 1.5, py: 1.5, borderBottom: `1px solid ${FF.line}`, background: `linear-gradient(90deg, ${withAlpha(COLOR_PALETTE.custom.orangeFF7A00, 0.22)}, transparent)`, flexShrink: 0 }}>
-      <Typography component="h2" noWrap sx={{ flex: 1, fontWeight: 900, fontSize: 17, letterSpacing: '0.08em', textTransform: 'uppercase', color: FF.text }}>{title}</Typography>
+      <Typography component="h2" noWrap sx={{ flex: 1, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, letterSpacing: '0.08em', textTransform: 'uppercase', color: FF.text }}>{title}</Typography>
       <IconButton aria-label="Close" onClick={onClose} sx={{ color: FF.muted, borderRadius: 0 }}>
         <CloseRoundedIcon />
       </IconButton>
@@ -146,7 +146,7 @@ export function TopUpDialog({ open, onClose, coins, diamonds, rate, want, busy, 
     <Dialog open={open} onClose={onClose} slotProps={{ paper: dialogPaper }}>
       <DialogHead title="Top up diamonds" onClose={onClose} />
       <Box sx={{ p: 3 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3, color: FF.muted, fontWeight: 700, fontSize: 14 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3, color: FF.muted, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
           <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75 }}><Coin /> {coins.toLocaleString('en-IN')} coins</Box>
           <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75 }}><Diamond /> {diamonds.toLocaleString('en-IN')} diamonds</Box>
         </Box>
@@ -154,8 +154,8 @@ export function TopUpDialog({ open, onClose, coins, diamonds, rate, want, busy, 
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3, py: 3, bgcolor: FF.well, border: `1px solid ${FF.line}` }}>
           <IconButton aria-label="Fewer diamonds" onClick={() => setN((v) => Math.max(1, v - 1))} disabled={n <= 1} sx={{ color: FF.text, border: `1px solid ${FF.line}`, borderRadius: 0 }}><RemoveRoundedIcon /></IconButton>
           <Box sx={{ minWidth: 96, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 900, fontSize: 44, lineHeight: 1, color: FF.blueInk, fontVariantNumeric: 'tabular-nums' }}>{n}</Typography>
-            <Typography sx={{ mt: 0.5, fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', color: FF.muted }}>DIAMONDS</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.jumbo, lineHeight: 1, color: FF.blueInk, fontVariantNumeric: 'tabular-nums' }}>{n}</Typography>
+            <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.1em', color: FF.muted }}>DIAMONDS</Typography>
           </Box>
           <IconButton aria-label="More diamonds" onClick={() => setN((v) => Math.min(Math.max(max, 1), v + 1))} disabled={n >= max} sx={{ color: FF.text, border: `1px solid ${FF.line}`, borderRadius: 0 }}><AddRoundedIcon /></IconButton>
         </Box>
@@ -167,10 +167,10 @@ export function TopUpDialog({ open, onClose, coins, diamonds, rate, want, busy, 
           <ButtonBase disabled={max < 1} onClick={() => setN(Math.max(max, 1))} sx={{ ...buttonSx('dark'), flex: 1, minHeight: 40, px: 1 }}>MAX</ButtonBase>
         </Box>
 
-        <Typography sx={{ mt: 3, textAlign: 'center', fontWeight: 800, color: can ? FF.text : FF.redInk }}>
+        <Typography sx={{ mt: 3, textAlign: 'center', fontWeight: FONT_WEIGHTS.bold, color: can ? FF.text : FF.redInk }}>
           {can ? <>{cost.toLocaleString('en-IN')} coins = {n} diamond{n > 1 ? 's' : ''}</> : `You need ${rate} coins for 1 diamond`}
         </Typography>
-        <Typography sx={{ mt: 0.5, textAlign: 'center', fontSize: 13, color: FF.muted }}>{rate} coins = 1 diamond</Typography>
+        <Typography sx={{ mt: 0.5, textAlign: 'center', fontSize: FONT_SIZES.body, color: FF.muted }}>{rate} coins = 1 diamond</Typography>
 
         <Box sx={{ mt: 3 }}>
           <FFButton tone="blue" disabled={!can || busy} onClick={() => onConvert(n)} sx={{ width: '100%', minHeight: 50 }}>
@@ -193,9 +193,9 @@ export function MissionsDialog({ open, onClose, quests, busy, onClaim, onSolve }
         {sorted.map((q) => (
           <Box key={q.id} sx={{ display: 'flex', alignItems: 'center', gap: 2, px: 3, py: 2, borderBottom: `1px solid ${FF.line}`, opacity: q.claimed ? 0.55 : 1 }}>
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Typography noWrap sx={{ fontWeight: 800, fontSize: 15, color: FF.text }}>{q.title}</Typography>
+              <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, color: FF.text }}>{q.title}</Typography>
               <Box sx={{ my: 0.9 }}><Bar pct={(q.value / q.target) * 100} color={q.claimable ? FF.green : FF.orange} height={7} /></Box>
-              <Typography noWrap sx={{ fontSize: 12.5, color: FF.muted }}>{q.value}/{q.target} · +{q.xp} XP · {q.reward.label}</Typography>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: FF.muted }}>{q.value}/{q.target} · +{q.xp} XP · {q.reward.label}</Typography>
             </Box>
             {q.claimed ? (
               <CheckRoundedIcon sx={{ color: FF.greenInk }} />
@@ -224,11 +224,11 @@ export function RewardDialog({ reward, onClose }) {
             <DialogHead title="Reward" onClose={onClose} />
             <Box sx={{ pt: 4, px: 3 }}>
               <Box sx={{ display: 'inline-grid', placeItems: 'center', width: 104, height: 104, bgcolor: FF.well, border: `2px solid ${pro ? FF.yellow : FF.diamond}`, clipPath: cut(18) }}>
-                <DiamondRoundedIcon sx={{ fontSize: 60, color: pro ? FF.yellow : FF.diamond, filter: `drop-shadow(0 0 12px ${pro ? FF.yellow : FF.diamond})` }} />
+                <DiamondRoundedIcon sx={{ fontSize: FONT_SIZES.jumboLg, color: pro ? FF.yellow : FF.diamond, filter: `drop-shadow(0 0 12px ${pro ? FF.yellow : FF.diamond})` }} />
               </Box>
-              <Typography sx={{ mt: 3, fontWeight: 900, fontSize: 26, textTransform: 'uppercase', letterSpacing: '0.03em', color: pro ? FF.coinInk : FF.text }}>{reward.reward.label}</Typography>
+              <Typography sx={{ mt: 3, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, textTransform: 'uppercase', letterSpacing: '0.03em', color: pro ? FF.coinInk : FF.text }}>{reward.reward.label}</Typography>
               <Typography sx={{ mt: 0.75, color: FF.muted }}>{pro && reward.proUntil ? `Pro active until ${formatDate(reward.proUntil)}` : 'Added to your profile'}</Typography>
-              <Box sx={{ mt: 2.5, display: 'flex', justifyContent: 'center', gap: 2, fontWeight: 900 }}>
+              <Box sx={{ mt: 2.5, display: 'flex', justifyContent: 'center', gap: 2, fontWeight: FONT_WEIGHTS.bold }}>
                 <Box sx={{ color: FF.orangeInk }}>+{reward.xp} XP</Box>
                 {reward.coins > 0 && <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: FF.coinInk }}><Coin size={18} />+{reward.coins}</Box>}
               </Box>

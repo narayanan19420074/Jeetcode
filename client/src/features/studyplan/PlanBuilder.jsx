@@ -21,7 +21,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import MonthCalendar from './MonthCalendar';
 import { DiffTag, addDays, fmtDay, keyToDate, localKey } from './planUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 const itemKey = (type, id) => `${type}:${id}`;
@@ -29,7 +29,7 @@ const PAGE = 20;
 const DAY_MS = 86400000;
 // Both panels scroll inside themselves, so the page itself never grows.
 const panelHeight = { xs: 'min(60dvh, 500px)', md: 'calc(100dvh - 250px)' };
-const compactField = { '& .MuiInputBase-root': { height: 34, fontSize: 13 } };
+const compactField = { '& .MuiInputBase-root': { height: 34, fontSize: FONT_SIZES.body } };
 
 function useDebounced(value, ms = 300) {
   const [v, setV] = useState(value);
@@ -215,13 +215,13 @@ function QuestionPicker({ items, added, onToggle }) {
                   '&:hover': { bgcolor: entry ? t.palette.primary.dark : t.palette.action.hover },
                 })}
               >
-                {r.locked ? <LockRoundedIcon sx={{ fontSize: 13 }} /> : entry ? <CheckRoundedIcon sx={{ fontSize: 15 }} /> : <AddRoundedIcon sx={{ fontSize: 15 }} />}
+                {r.locked ? <LockRoundedIcon sx={{ fontSize: FONT_SIZES.body }} /> : entry ? <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg }} /> : <AddRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg }} />}
               </IconButton>
               <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Typography variant="body2" noWrap sx={{ fontWeight: 600, lineHeight: 1.3 }}>{r.title}</Typography>
+                <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.3 }}>{r.title}</Typography>
                 {r.meta && <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', lineHeight: 1.2 }}>{r.meta}</Typography>}
               </Box>
-              {r.solved && <Tooltip title="You solved this"><CheckRoundedIcon sx={{ fontSize: 16, color: 'success.main' }} /></Tooltip>}
+              {r.solved && <Tooltip title="You solved this"><CheckRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'success.main' }} /></Tooltip>}
               <DiffTag difficulty={r.difficulty} />
             </Box>
           );
@@ -299,13 +299,13 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
   const datePanel = (
     <Box sx={[surface, { p: 1.5, display: { xs: panel === 'date' ? 'block' : 'none', md: 'block' } }]}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mb: 1 }}>
-        <EventRoundedIcon sx={{ fontSize: 18, color: 'primary.main' }} />
-        <Typography variant="body2" sx={{ fontWeight: 700, flex: 1 }}>Finish by <Box component="span" sx={{ color: 'primary.main' }}>{fmtDay(endDate)}</Box></Typography>
+        <EventRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'primary.main' }} />
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, flex: 1 }}>Finish by <Box component="span" sx={{ color: 'primary.main' }}>{fmtDay(endDate)}</Box></Typography>
       </Box>
       <MonthCalendar cursor={cursor} onCursor={setCursor} selected={endDate} onSelect={pickDate} today={today} min={today} />
       <Box sx={{ display: 'flex', gap: 0.75, mt: 1.25 }}>
         {[['1 week', 7], ['2 weeks', 14], ['1 month', 30]].map(([label, n]) => (
-          <Chip key={label} size="small" label={label} clickable onClick={() => pickDate(addDays(today, n))} variant={endDate === addDays(today, n) ? 'filled' : 'outlined'} color={endDate === addDays(today, n) ? 'primary' : 'default'} sx={{ fontWeight: 600 }} />
+          <Chip key={label} size="small" label={label} clickable onClick={() => pickDate(addDays(today, n))} variant={endDate === addDays(today, n) ? 'filled' : 'outlined'} color={endDate === addDays(today, n) ? 'primary' : 'default'} sx={{ fontWeight: FONT_WEIGHTS.semibold }} />
         ))}
       </Box>
     </Box>
@@ -318,7 +318,7 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
         <TextField
           variant="standard" placeholder="Plan name" value={title} onChange={(e) => setTitle(e.target.value)} autoFocus={!plan}
           slotProps={{ htmlInput: { maxLength: 100, 'aria-label': 'Plan name' } }} fullWidth
-          sx={{ '& input': { fontSize: 18, fontWeight: 700 } }}
+          sx={{ '& input': { fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.bold } }}
         />
       </Box>
 
@@ -326,8 +326,8 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
         size="small" exclusive value={panel} onChange={(_, v) => v && setPanel(v)} fullWidth
         sx={{ display: { xs: 'flex', md: 'none' }, mb: 1 }}
       >
-        <ToggleButton value="questions" sx={{ gap: 0.75, textTransform: 'none', fontWeight: 700 }}><ListAltRoundedIcon fontSize="small" />Questions · {items.length}</ToggleButton>
-        <ToggleButton value="date" sx={{ gap: 0.75, textTransform: 'none', fontWeight: 700 }}><EventRoundedIcon fontSize="small" />{fmtDay(endDate, { weekday: undefined })}</ToggleButton>
+        <ToggleButton value="questions" sx={{ gap: 0.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><ListAltRoundedIcon fontSize="small" />Questions · {items.length}</ToggleButton>
+        <ToggleButton value="date" sx={{ gap: 0.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><EventRoundedIcon fontSize="small" />{fmtDay(endDate, { weekday: undefined })}</ToggleButton>
       </ToggleButtonGroup>
 
       <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.5fr) minmax(280px,1fr)' } }}>
@@ -344,13 +344,13 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
         })}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography variant="body2" noWrap sx={{ fontWeight: 700 }}>{items.length} question{items.length === 1 ? '' : 's'} · by {fmtDay(endDate, { weekday: undefined })}</Typography>
+          <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.bold }}>{items.length} question{items.length === 1 ? '' : 's'} · by {fmtDay(endDate, { weekday: undefined })}</Typography>
           <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>
             {error ? <Box component="span" sx={{ color: 'error.main' }}>{error}</Box> : items.length ? `${days} day${days === 1 ? '' : 's'} · about ${perDay}/day` : 'Pick questions to begin'}
           </Typography>
         </Box>
         <Button onClick={onCancel} disabled={saving}>Cancel</Button>
-        <Button variant="contained" disableElevation onClick={save} disabled={saving || !title.trim() || items.length === 0} sx={{ fontWeight: 700, px: 3 }}>
+        <Button variant="contained" disableElevation onClick={save} disabled={saving || !title.trim() || items.length === 0} sx={{ fontWeight: FONT_WEIGHTS.bold, px: 3 }}>
           {saving ? 'Saving…' : 'Save'}
         </Button>
       </Box>

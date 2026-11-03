@@ -16,6 +16,7 @@ import {
   Chip,
 } from '@mui/material';
 import { getTopicBySlug } from './content';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const LEVELS = [
   { key: 'level1', label: 'Level 1', sub: 'Basics' },
@@ -37,14 +38,14 @@ export default function PracticePage() {
   if (!topic.practiceBank) {
     return (
       <Box sx={{ maxWidth: 560, mx: 'auto', px: 2, py: 8, textAlign: 'center' }}>
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+        <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
           Full practice bank coming soon
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
           {topic.title} doesn't have leveled practice questions yet — check back soon, or try the quick concept-check
           on the topic page for now.
         </Typography>
-        <Button variant="outlined" onClick={() => navigate(`/learn/${topicSlug}`)} sx={{ fontWeight: 600 }}>
+        <Button variant="outlined" onClick={() => navigate(`/learn/${topicSlug}`)} sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
           Back to {topic.title}
         </Button>
       </Box>
@@ -66,7 +67,7 @@ export default function PracticePage() {
 
   return (
     <Box sx={{ maxWidth: 760, mx: 'auto', px: 2, py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800 }}>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
         {topic.title} — Practice
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -85,7 +86,7 @@ export default function PracticePage() {
           const isCorrect = selected === q.correctIndex;
           return (
             <Paper key={q.id} elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
-              <Typography variant="body2" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold, mb: 1 }}>
                 {qi + 1}. {q.question}
               </Typography>
               <RadioGroup
@@ -122,7 +123,7 @@ export default function PracticePage() {
           <Chip
             label={`Score: ${score} / ${questions.length}`}
             color={questions.length && score / questions.length >= 0.6 ? 'success' : 'default'}
-            sx={{ fontWeight: 700 }}
+            sx={{ fontWeight: FONT_WEIGHTS.bold }}
           />
           <Button
             onClick={() => {
@@ -139,7 +140,7 @@ export default function PracticePage() {
           disableElevation
           disabled={Object.keys(answers).length < questions.length}
           onClick={() => setSubmitted(true)}
-          sx={{ fontWeight: 700 }}
+          sx={{ fontWeight: FONT_WEIGHTS.bold }}
         >
           Submit {level.label}
         </Button>

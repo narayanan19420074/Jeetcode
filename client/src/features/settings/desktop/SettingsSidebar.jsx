@@ -3,6 +3,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { accentFor } from '../common/settingsAccent';
 import SidebarItem from './SidebarItem';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 function SidebarSearch({ query, setQuery, palette }) {
   return (
@@ -16,7 +17,7 @@ function SidebarSearch({ query, setQuery, palette }) {
         input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> },
         htmlInput: { 'aria-label': 'Find a setting' },
       }}
-      sx={{ mb: 2.5, '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: palette.player, fontSize: 16, letterSpacing: LIB_TRACKING, px: 2 }, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' } }}
+      sx={{ mb: 2.5, '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: palette.player, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, px: 2 }, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' } }}
     />
   );
 }
@@ -27,10 +28,10 @@ export default function SettingsSidebar({ groups, section, query, setQuery, fill
   return (
     <Box component="nav" aria-label="Settings sections" sx={fill ? { minHeight: 0, overflowY: 'auto', pr: 1, pb: 1 } : { position: 'sticky', top: 88 }}>
       <SidebarSearch query={query} setQuery={setQuery} palette={palette} />
-      {groups.length === 0 && <Typography sx={{ px: 1, fontSize: 15, color: palette.muted }}>No settings match “{query}”.</Typography>}
+      {groups.length === 0 && <Typography sx={{ px: 1, fontSize: FONT_SIZES.bodyLg, color: palette.muted }}>No settings match “{query}”.</Typography>}
       {groups.map((group) => (
         <Box key={group.label} sx={{ mb: 2.5 }}>
-          <Typography component="h2" sx={{ px: 1, mb: 0.75, fontSize: 16, lineHeight: '24px', fontWeight: 700 }}>{group.label}</Typography>
+          <Typography component="h2" sx={{ px: 1, mb: 0.75, fontSize: FONT_SIZES.title, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold }}>{group.label}</Typography>
           <Box sx={{ display: 'grid', gap: 0.25 }}>
             {group.items.map((item) => <SidebarItem key={item.key} item={item} accent={accentFor(group.label)} active={item.key === section} />)}
           </Box>

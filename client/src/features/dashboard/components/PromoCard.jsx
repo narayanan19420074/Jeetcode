@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import { BANNER_GRADIENT } from '../bannerGradients';
 import { PROMO_CARD_W } from './promoCarouselConfig';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const TRACKING = '0.03em';
 
@@ -43,7 +43,7 @@ function RingIcon({ icon: Icon }) {
         background: `linear-gradient(160deg, ${withAlpha(COLOR_PALETTE.white, 0.25)}, ${withAlpha(COLOR_PALETTE.white, 0.05)})`,
       }}
     >
-      <Icon sx={{ fontSize: 30, color: COLOR_PALETTE.white }} />
+      <Icon sx={{ fontSize: FONT_SIZES.hero, color: COLOR_PALETTE.white }} />
     </Box>
   );
 }
@@ -56,10 +56,10 @@ export default function PromoCard({ card }) {
     <Box component={RouterLink} to={to} sx={cardSx(BANNER_GRADIENT[key] || card.gradient)}>
       <RingIcon icon={icon} />
       <Box sx={{ position: 'relative', maxWidth: '62%' }}>
-        <Typography sx={[{ fontWeight: 700, fontSize: 20, lineHeight: '24px', letterSpacing: '-0.01em' }, clampLines(2)]}>{title}</Typography>
-        <Typography sx={[{ mt: 0.5, fontSize: 13, lineHeight: '18px', letterSpacing: TRACKING, color: withAlpha(COLOR_PALETTE.white, 0.86) }, clampLines(2)]}>{text}</Typography>
+        <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: '24px', letterSpacing: '-0.01em' }, clampLines(2)]}>{title}</Typography>
+        <Typography sx={[{ mt: 0.5, fontSize: FONT_SIZES.body, lineHeight: '18px', letterSpacing: TRACKING, color: withAlpha(COLOR_PALETTE.white, 0.86) }, clampLines(2)]}>{text}</Typography>
       </Box>
-      <Box sx={{ position: 'relative', alignSelf: 'flex-start', px: 1.75, height: 28, display: 'inline-flex', alignItems: 'center', borderRadius: 999, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), fontSize: 14, letterSpacing: TRACKING }}>
+      <Box sx={{ position: 'relative', alignSelf: 'flex-start', px: 1.75, height: 28, display: 'inline-flex', alignItems: 'center', borderRadius: 999, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), fontSize: FONT_SIZES.body, letterSpacing: TRACKING }}>
         {cta}
       </Box>
     </Box>

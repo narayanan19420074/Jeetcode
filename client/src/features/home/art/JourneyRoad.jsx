@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { motion, useMotionValue, useMotionValueEvent, useScroll } from 'framer-motion';
 import { DISPLAY_FONT } from '../anim';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // The road draws itself as the visitor scrolls, and a marker runs along it.
 // Nodes light up as the marker passes them. Desktop only: on phones the
@@ -128,11 +128,11 @@ export default function JourneyRoad({ steps }) {
             }}
           >
             <Typography
-              sx={{ display: { xs: 'block', md: 'none' }, fontWeight: 800, color: 'primary.main', fontSize: '0.8rem' }}
+              sx={{ display: { xs: 'block', md: 'none' }, fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', fontSize: FONT_SIZES.caption }}
             >
               Step {i + 1}
             </Typography>
-            <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 700, fontSize: '1.15rem', mb: 0.5 }}>
+            <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, mb: 0.5 }}>
               {s.title}
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ maxWidth: '34ch', mx: { md: 'auto' } }}>

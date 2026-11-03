@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import { Box, Tooltip, Typography } from '@mui/material';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const GOLD = [COLOR_PALETTE.amber[300], COLOR_PALETTE.amber[600]];
 
@@ -22,11 +22,11 @@ export default function AchievementBadge({ top, value, caption, hint, earned }) 
             <polygon points="28,7 47,18 47,46 28,57 9,46 9,18" fill="none" stroke={withAlpha(COLOR_PALETTE.white, 0.55)} strokeWidth="1.5" />
           </svg>
           <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: COLOR_PALETTE.yellow[950] }}>
-            <Typography sx={{ fontSize: '0.6rem', fontWeight: 800, lineHeight: 1 }}>{top}</Typography>
-            <Typography sx={{ fontSize: '1rem', fontWeight: 800, lineHeight: 1.15, fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
+            <Typography sx={{ fontSize: '0.6rem', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1 }}>{top}</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.15, fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
           </Box>
         </Box>
-        <Typography variant="caption" sx={{ display: 'block', mt: 0.5, fontWeight: 700, lineHeight: 1.2, color: earned ? 'text.primary' : 'text.secondary' }}>
+        <Typography variant="caption" sx={{ display: 'block', mt: 0.5, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.2, color: earned ? 'text.primary' : 'text.secondary' }}>
           {caption}
         </Typography>
       </Box>

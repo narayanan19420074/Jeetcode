@@ -1,4 +1,5 @@
 import { Box, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Shared stimulus for DI / reasoning / comprehension questions
 // ("Refer to the table below…"). Renders text and tables; bar/line/pie sets
@@ -20,7 +21,7 @@ export default function QuestionStimulus({ set }) {
   return (
     <Paper variant="outlined" sx={{ p: 2, mb: 2, borderRadius: 2, bgcolor: 'action.hover' }}>
       {set.title && (
-        <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+        <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
           {set.title}
         </Typography>
       )}
@@ -35,7 +36,7 @@ export default function QuestionStimulus({ set }) {
             <TableHead>
               <TableRow>
                 {table.columns.map((c, i) => (
-                  <TableCell key={i} sx={{ fontWeight: 700 }}>
+                  <TableCell key={i} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                     {c}
                   </TableCell>
                 ))}

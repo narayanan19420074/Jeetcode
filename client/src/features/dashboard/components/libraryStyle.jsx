@@ -5,7 +5,7 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
-import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Shared look of the phone Library (Problems) pages: the product font and a warm cream surface in light mode.
 // Dark mode keeps the app's normal dark surfaces.
@@ -93,17 +93,17 @@ export function MiniPlayer({ featured, resume, aboveNav }) {
       })}
     >
       <Box aria-hidden sx={{ width: 40, height: 40, flex: 'none', borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: withAlpha(COLOR_PALETTE.custom.redEF6C4D, 0.2), color: COLOR_PALETTE.custom.redEF6C4D }}>
-        {resume ? <HistoryRoundedIcon sx={{ fontSize: 22 }} /> : <EventRoundedIcon sx={{ fontSize: 22 }} />}
+        {resume ? <HistoryRoundedIcon sx={{ fontSize: FONT_SIZES.display }} /> : <EventRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />}
       </Box>
       <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Typography noWrap sx={{ fontSize: 16, lineHeight: '22px', fontWeight: 500, letterSpacing: '0.03em' }}>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '22px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: '0.03em' }}>
           {item.title}
         </Typography>
-        <Typography noWrap sx={{ fontSize: 14, lineHeight: '18px', letterSpacing: '0.03em', color: pal.muted }}>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '18px', letterSpacing: '0.03em', color: pal.muted }}>
           {resume ? 'Resume' : 'Today\u2019s challenge'} · {item.difficulty}
         </Typography>
       </Box>
-      <PlayArrowRoundedIcon aria-hidden sx={{ fontSize: 32, flex: 'none' }} />
+      <PlayArrowRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.hero, flex: 'none' }} />
     </Box>
   );
 }
@@ -134,16 +134,16 @@ export const libIconBtnSx = { width: 40, height: 40, flexShrink: 0, bgcolor: 'va
 export const libSearchSx = {
   mt: 1,
   px: '4px',
-  '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: 'var(--lib-player)', fontSize: 18, letterSpacing: LIB_TRACKING, px: '16px' },
+  '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, px: '16px' },
   '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
 };
 
-export const libSectionTitleSx = { fontSize: 18, lineHeight: '24px', fontWeight: 700 };
+export const libSectionTitleSx = { fontSize: FONT_SIZES.subheading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold };
 
-const libBtnBase = { height: 48, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: LIB_TRACKING, textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
+const libBtnBase = { height: 48, px: 3, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
 export const libSolidBtnSx = { ...libBtnBase, bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` } };
 export const libTintBtnSx = { ...libBtnBase, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', '&:hover': { bgcolor: 'var(--lib-player)', filter: 'brightness(0.97)' } };
-export const libSmallBtnSx = { ...libBtnBase, height: 36, px: 2, fontSize: 15 };
+export const libSmallBtnSx = { ...libBtnBase, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg };
 
 // Chip / tab pill: cream when idle, accent when selected.
 export const libChipSx = (on) => ({
@@ -153,7 +153,7 @@ export const libChipSx = (on) => ({
   gap: 0.75,
   borderRadius: 999,
   fontFamily: 'inherit',
-  fontSize: 15,
+  fontSize: FONT_SIZES.bodyLg,
   letterSpacing: LIB_TRACKING,
   whiteSpace: 'nowrap',
   bgcolor: on ? LIB_ACCENT : 'var(--lib-chip)',
@@ -170,12 +170,12 @@ export function PageHeader({ icon: Icon, title, subtitle }) {
   return (
     <Box sx={{ textAlign: 'center', mt: 3 }}>
       <HeaderTile>
-        <Icon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
+        <Icon sx={{ fontSize: FONT_SIZES.displayLg, color: COLOR_PALETTE.white }} />
       </HeaderTile>
-      <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
+      <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px' }}>
         {title}
       </Typography>
-      {subtitle && <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{subtitle}</Typography>}
+      {subtitle && <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{subtitle}</Typography>}
     </Box>
   );
 }

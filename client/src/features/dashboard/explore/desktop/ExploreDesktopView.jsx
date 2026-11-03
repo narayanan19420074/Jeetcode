@@ -6,6 +6,7 @@ import CompanyGrid from './CompanyGrid';
 import ExploreSection from './ExploreSection';
 import ToolCards from './ToolCards';
 import TopicChips from './TopicChips';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../../../app/design/designTokens';
 
 // Desktop Explore (inside the dashboard) in the Library look, with the same sections as the phone screen:
 // practice tools, companies, topics. A section is hidden when the server has nothing for it.
@@ -15,8 +16,8 @@ export default function ExploreDesktopView({ onBrowse }) {
   return (
     <Stack spacing={4}>
       <Box>
-        <Typography component="h1" sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>Explore</Typography>
-        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: palette.muted }}>Practice tools and shortcuts</Typography>
+        <Typography component="h1" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px' }}>Explore</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: palette.muted }}>Practice tools and shortcuts</Typography>
       </Box>
       <Box sx={{ '& a': { mb: 0 }, '&:empty': { display: 'none' } }}><NqtExploreCard hideForNewUser /></Box>
       <ExploreSection title="Practice tools"><ToolCards /></ExploreSection>

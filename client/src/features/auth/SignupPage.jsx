@@ -5,6 +5,7 @@ import { Box, Button, Alert, Link, Stack, CircularProgress } from '@mui/material
 import { registerUser } from './authSlice';
 import AuthShell, { AuthField } from './AuthShell';
 import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 export default function SignupPage() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export default function SignupPage() {
       footer={
         <>
           Already have an account?{' '}
-          <Link component={RouterLink} to="/login" underline="hover" sx={{ fontWeight: 600 }}>
+          <Link component={RouterLink} to="/login" underline="hover" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
             Sign in
           </Link>
         </>
@@ -86,7 +87,7 @@ export default function SignupPage() {
             disableElevation
             fullWidth
             disabled={status === 'loading' || (Boolean(TURNSTILE_SITE_KEY) && !captcha)}
-            sx={{ fontWeight: 600 }}
+            sx={{ fontWeight: FONT_WEIGHTS.semibold }}
           >
             {status === 'loading' ? <CircularProgress size={20} color="inherit" /> : 'Create account'}
           </Button>

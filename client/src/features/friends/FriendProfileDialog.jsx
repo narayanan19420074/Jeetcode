@@ -19,7 +19,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from '../leaderboard/tiers';
 import { APT_COLOR, FLAME, PersonAvatar, mono, practisedToday, statusInfo, tonal } from './friendsUi';
 import { LIB_ACCENT, LIB_TRACKING, libChipSx, libPanelSx, libSectionTitleSx, libTintBtnSx } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // One head-to-head row: my number | label | their number, with a split bar. `lower` = smaller wins (rank).
 function VsRow({ label, a, b, lower, lib = false }) {
@@ -34,9 +34,9 @@ function VsRow({ label, a, b, lower, lib = false }) {
     return (
       <Box sx={{ py: 1.25, borderBottom: '1px solid var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
         <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-          <Typography sx={{ fontWeight: aWins ? 700 : 400, fontSize: 16, lineHeight: '24px', fontVariantNumeric: 'tabular-nums', minWidth: 56, color: aWins ? 'var(--jc-easy)' : 'var(--lib-text)' }}>{fmt(a)}</Typography>
-          <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{label}</Typography>
-          <Typography sx={{ fontWeight: bWins ? 700 : 400, fontSize: 16, lineHeight: '24px', fontVariantNumeric: 'tabular-nums', minWidth: 56, textAlign: 'right', color: bWins ? 'var(--jc-hard)' : 'var(--lib-text)' }}>{fmt(b)}</Typography>
+          <Typography sx={{ fontWeight: aWins ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, fontSize: FONT_SIZES.title, lineHeight: '24px', fontVariantNumeric: 'tabular-nums', minWidth: 56, color: aWins ? 'var(--jc-easy)' : 'var(--lib-text)' }}>{fmt(a)}</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{label}</Typography>
+          <Typography sx={{ fontWeight: bWins ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, fontSize: FONT_SIZES.title, lineHeight: '24px', fontVariantNumeric: 'tabular-nums', minWidth: 56, textAlign: 'right', color: bWins ? 'var(--jc-hard)' : 'var(--lib-text)' }}>{fmt(b)}</Typography>
         </Stack>
         <Box sx={{ display: 'flex', height: 6, borderRadius: 3, overflow: 'hidden', mt: 0.75, bgcolor: 'var(--lib-chip)', gap: '2px' }}>
           <Box sx={{ width: `${Math.max(4, Math.min(96, share * 100))}%`, bgcolor: aWins ? 'var(--jc-easy)' : LIB_ACCENT, opacity: aWins ? 1 : 0.45 }} />
@@ -48,9 +48,9 @@ function VsRow({ label, a, b, lower, lib = false }) {
   return (
     <Box sx={{ py: 0.9 }}>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        <Typography sx={{ fontWeight: aWins ? 900 : 600, color: aWins ? 'success.main' : 'text.primary', minWidth: 56, textAlign: 'left', ...mono }}>{fmt(a)}</Typography>
-        <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700, letterSpacing: 0.3, textTransform: 'uppercase' }}>{label}</Typography>
-        <Typography sx={{ fontWeight: bWins ? 900 : 600, color: bWins ? 'error.main' : 'text.primary', minWidth: 56, textAlign: 'right', ...mono }}>{fmt(b)}</Typography>
+        <Typography sx={{ fontWeight: aWins ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, color: aWins ? 'success.main' : 'text.primary', minWidth: 56, textAlign: 'left', ...mono }}>{fmt(a)}</Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.3, textTransform: 'uppercase' }}>{label}</Typography>
+        <Typography sx={{ fontWeight: bWins ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, color: bWins ? 'error.main' : 'text.primary', minWidth: 56, textAlign: 'right', ...mono }}>{fmt(b)}</Typography>
       </Stack>
       <Box sx={{ display: 'flex', height: 6, borderRadius: 3, overflow: 'hidden', mt: 0.5, bgcolor: 'action.hover', gap: '2px' }}>
         <Box sx={{ width: `${Math.max(4, Math.min(96, share * 100))}%`, bgcolor: aWins ? 'success.main' : 'primary.main', opacity: aWins ? 1 : 0.45, transition: 'width .5s' }} />
@@ -109,15 +109,15 @@ function Compare({ friend, lib = false }) {
           <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
             <Stack sx={{ alignItems: 'center', width: 76, gap: 0.5 }}>
               <PersonAvatar person={{ ...a, name: me?.name || a.name }} size={48} />
-              <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING }}>You</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING }}>You</Typography>
             </Stack>
             <Box sx={{ flex: 1, px: 1 }}>
-              <Typography sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px', fontVariantNumeric: 'tabular-nums' }}>{mine} : {theirs}</Typography>
-              <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{verdict}</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px', fontVariantNumeric: 'tabular-nums' }}>{mine} : {theirs}</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{verdict}</Typography>
             </Box>
             <Stack sx={{ alignItems: 'center', width: 76, gap: 0.5 }}>
               <PersonAvatar person={b} size={48} />
-              <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, maxWidth: 76 }}>@{b.handle}</Typography>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, maxWidth: 76 }}>@{b.handle}</Typography>
             </Stack>
           </Stack>
         </Box>
@@ -133,17 +133,17 @@ function Compare({ friend, lib = false }) {
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
         <Stack sx={{ alignItems: 'center', width: 76 }}>
           <PersonAvatar person={{ ...a, name: me?.name || a.name }} size={46} />
-          <Typography variant="caption" sx={{ fontWeight: 800 }}>You</Typography>
+          <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>You</Typography>
         </Stack>
         <Box sx={{ textAlign: 'center', flex: 1, px: 1 }}>
-          <Typography sx={(t) => ({ fontWeight: 900, fontSize: '1.5rem', ...mono, background: `linear-gradient(90deg, ${t.palette.success.main}, ${t.palette.error.main})`, WebkitBackgroundClip: 'text', color: 'transparent' })}>
+          <Typography sx={(t) => ({ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, ...mono, background: `linear-gradient(90deg, ${t.palette.success.main}, ${t.palette.error.main})`, WebkitBackgroundClip: 'text', color: 'transparent' })}>
             {mine} : {theirs}
           </Typography>
-          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>{verdict}</Typography>
+          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>{verdict}</Typography>
         </Box>
         <Stack sx={{ alignItems: 'center', width: 76 }}>
           <PersonAvatar person={b} size={46} />
-          <Typography variant="caption" noWrap sx={{ fontWeight: 800, maxWidth: 76 }}>@{b.handle}</Typography>
+          <Typography variant="caption" noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, maxWidth: 76 }}>@{b.handle}</Typography>
         </Stack>
       </Stack>
       {rows.map(([label, x, y, lower]) => <VsRow key={label} label={label} a={x} b={y} lower={lower} />)}
@@ -165,8 +165,8 @@ function Overview({ f }) {
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, mt: 2.25 }}>
         {stats.map(([icon, value, label, color]) => (
           <Box key={label} sx={(t) => ({ py: 1.25, borderRadius: '12px', border: `1px solid ${t.palette.divider}` })}>
-            <Box sx={{ color, display: 'grid', placeItems: 'center', '& svg': { fontSize: 20 } }}>{icon}</Box>
-            <Typography sx={{ fontWeight: 800, fontSize: '1rem', lineHeight: 1.3, ...mono }}>{value}</Typography>
+            <Box sx={{ color, display: 'grid', placeItems: 'center', '& svg': { fontSize: FONT_SIZES.heading } }}>{icon}</Box>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, lineHeight: 1.3, ...mono }}>{value}</Typography>
             <Typography variant="caption" color="text.secondary">{label}</Typography>
           </Box>
         ))}
@@ -174,7 +174,7 @@ function Overview({ f }) {
       <Stack direction="row" spacing={0.75} sx={{ mt: 1.5 }}>
         {parts.map(([label, n, color]) => (
           <Box key={label} sx={{ flex: 1, py: 0.6, borderRadius: '10px', bgcolor: tint(color, 14) }}>
-            <Typography sx={{ fontWeight: 800, color, lineHeight: 1.2, ...mono }}>{n}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color, lineHeight: 1.2, ...mono }}>{n}</Typography>
             <Typography variant="caption" color="text.secondary">{label}</Typography>
           </Box>
         ))}
@@ -195,7 +195,7 @@ function ClassicProfilePanel({ f, onRemove }) {
       key={key}
       onClick={() => setTab(key)}
       aria-pressed={tab === key}
-      sx={(t) => ({ flex: 1, height: 36, borderRadius: 999, fontFamily: 'inherit', fontWeight: 800, fontSize: 14, bgcolor: tab === key ? t.palette.text.primary : 'transparent', color: tab === key ? t.palette.background.paper : t.palette.text.secondary })}
+      sx={(t) => ({ flex: 1, height: 36, borderRadius: 999, fontFamily: 'inherit', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, bgcolor: tab === key ? t.palette.text.primary : 'transparent', color: tab === key ? t.palette.background.paper : t.palette.text.secondary })}
     >
       {label}
     </ButtonBase>
@@ -203,18 +203,18 @@ function ClassicProfilePanel({ f, onRemove }) {
   return (
     <Box data-chat-scroll sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', scrollbarWidth: 'thin', pt: 2, px: 2.5, pb: 2, textAlign: 'center' }}>
       <PersonAvatar person={f} size={72} ring={tier.color} online={online} />
-      <Typography sx={{ fontWeight: 800, fontSize: '1.15rem', mt: 1 }}>{f.name}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, mt: 1 }}>{f.name}</Typography>
       <Typography variant="body2" color="text.secondary">@{f.handle}</Typography>
       <Stack direction="row" spacing={0.75} useFlexGap sx={{ justifyContent: 'center', flexWrap: 'wrap', mt: 1 }}>
-        <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontWeight: 700, fontSize: 13 }}>
-          <WorkspacePremiumRoundedIcon sx={{ fontSize: 16 }} /> {tier.name}
+        <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
+          <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /> {tier.name}
         </Box>
         {f.company && (
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: 'text.secondary', fontWeight: 600, fontSize: 13 }}>
-            <BusinessRoundedIcon sx={{ fontSize: 16 }} /> {f.company}
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: 'text.secondary', fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body }}>
+            <BusinessRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /> {f.company}
           </Box>
         )}
-        <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: act.live ? 'success.main' : 'text.secondary', fontWeight: 700, fontSize: 13 }}>
+        <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: act.live ? 'success.main' : 'text.secondary', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
           <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: act.live ? COLOR_PALETTE.green[500] : 'text.disabled' }} />
           {act.text}
         </Box>
@@ -226,7 +226,7 @@ function ClassicProfilePanel({ f, onRemove }) {
       {tab === 'overview' ? <Overview f={f} /> : <Compare friend={f} />}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 2.25 }}>
         <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', color: 'text.secondary' }}>
-          <PeopleAltRoundedIcon sx={{ fontSize: 18 }} />
+          <PeopleAltRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
           <Typography variant="caption">{since ? `Friends since ${since}` : 'Friends'}</Typography>
         </Stack>
         <Tooltip title="Remove friend">
@@ -251,10 +251,10 @@ function StatCard({ icon: Icon, value, label, color, bg }) {
       })}
     >
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        {Icon ? <Icon aria-hidden sx={{ fontSize: 28, color }} /> : <Box />}
-        <Typography sx={{ fontWeight: 700, fontSize: 20, lineHeight: '24px', fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
+        {Icon ? <Icon aria-hidden sx={{ fontSize: FONT_SIZES.displayLg, color }} /> : <Box />}
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: '24px', fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
       </Stack>
-      <Typography noWrap sx={{ fontSize: 15, lineHeight: '19px', letterSpacing: LIB_TRACKING }}>{label}</Typography>
+      <Typography noWrap sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: '19px', letterSpacing: LIB_TRACKING }}>{label}</Typography>
     </Box>
   );
 }
@@ -296,16 +296,16 @@ function LibProfilePanel({ f, onRemove }) {
     <Box data-chat-scroll sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: 2, pt: 3, pb: 3, bgcolor: 'var(--lib-bg)' }}>
       <Box sx={{ textAlign: 'center' }}>
         <PersonAvatar person={f} size={81} online={online} />
-        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>{f.name}</Typography>
-        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px' }}>{f.name}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
           @{f.handle}{since ? ` · Friends since ${since}` : ''}
         </Typography>
         <Stack direction="row" useFlexGap sx={{ justifyContent: 'center', flexWrap: 'wrap', gap: 1, mt: 1.5 }}>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, height: 34, px: '14px', borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontSize: 15, letterSpacing: LIB_TRACKING }}>
-            <WorkspacePremiumRoundedIcon aria-hidden sx={{ fontSize: 18 }} /> {tier.name}
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, height: 34, px: '14px', borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>
+            <WorkspacePremiumRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.subheading }} /> {tier.name}
           </Box>
           {f.company && (
-            <Box sx={{ display: 'inline-flex', alignItems: 'center', height: 34, px: '14px', borderRadius: 999, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: 15, letterSpacing: LIB_TRACKING }}>
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', height: 34, px: '14px', borderRadius: 999, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>
               {f.company}
             </Box>
           )}
@@ -348,7 +348,7 @@ export default function FriendProfileDialog({ f, onClose, onRemove, onChat, onCo
       key={key}
       onClick={() => setTab(key)}
       aria-pressed={tab === key}
-      sx={(t) => ({ flex: 1, height: 36, borderRadius: 999, fontFamily: 'inherit', fontWeight: 800, fontSize: 14, bgcolor: tab === key ? t.palette.text.primary : 'transparent', color: tab === key ? t.palette.background.paper : t.palette.text.secondary })}
+      sx={(t) => ({ flex: 1, height: 36, borderRadius: 999, fontFamily: 'inherit', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, bgcolor: tab === key ? t.palette.text.primary : 'transparent', color: tab === key ? t.palette.background.paper : t.palette.text.secondary })}
     >
       {label}
     </ButtonBase>
@@ -369,19 +369,19 @@ export default function FriendProfileDialog({ f, onClose, onRemove, onChat, onCo
       <Box sx={(t) => ({ position: 'relative', pt: 3, px: 2.5, pb: 2, textAlign: 'center', background: `linear-gradient(180deg, ${tint(tier.color, 14)}, transparent 150px)` })}>
         <IconButton aria-label="Close" onClick={onClose} sx={{ position: 'absolute', top: 8, right: 8 }}><CloseRoundedIcon /></IconButton>
         <PersonAvatar person={f} size={80} ring={tier.color} online={online} />
-        <Typography sx={{ fontWeight: 800, fontSize: '1.2rem', mt: 1.25 }}>{f.name}</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, mt: 1.25 }}>{f.name}</Typography>
         <Typography variant="body2" color="text.secondary">@{f.handle}</Typography>
 
         <Stack direction="row" spacing={0.75} useFlexGap sx={{ justifyContent: 'center', flexWrap: 'wrap', mt: 1.25 }}>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontWeight: 700, fontSize: 13 }}>
-            <WorkspacePremiumRoundedIcon sx={{ fontSize: 16 }} /> {tier.name}
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: tint(tier.color, 16), color: tier.color, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
+            <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /> {tier.name}
           </Box>
           {f.company && (
-            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: 'text.secondary', fontWeight: 600, fontSize: 13 }}>
-              <BusinessRoundedIcon sx={{ fontSize: 16 }} /> {f.company}
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: 'text.secondary', fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body }}>
+              <BusinessRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /> {f.company}
             </Box>
           )}
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: act.live ? 'success.main' : 'text.secondary', fontWeight: 700, fontSize: 13 }}>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, px: 1, py: 0.35, borderRadius: 999, bgcolor: 'action.hover', color: act.live ? 'success.main' : 'text.secondary', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
             <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: act.live ? COLOR_PALETTE.green[500] : 'text.disabled' }} />
             {act.text}
           </Box>
@@ -403,7 +403,7 @@ export default function FriendProfileDialog({ f, onClose, onRemove, onChat, onCo
 
         <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 2.25 }}>
           <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', color: 'text.secondary' }}>
-            <PeopleAltRoundedIcon sx={{ fontSize: 18 }} />
+            <PeopleAltRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
             <Typography variant="caption">{since ? `Friends since ${since}` : 'Friends'}</Typography>
           </Stack>
           <Tooltip title="Remove friend">

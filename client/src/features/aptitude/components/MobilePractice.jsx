@@ -13,7 +13,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libChipSx, libIconBtnSx, libSearchSx, libTintBtnSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { DIFFICULTY, difficultyMeta } from './aptitudeUi';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Phone layout of the Aptitude Practice list. It follows the phone Problems page: same page padding, back button,
 // filter menu, search pill, centred header, progress bar, pill button, chips and row sizes.
@@ -35,7 +35,7 @@ export function DifficultyTag({ difficulty }) {
   return (
     <Typography
       component="span"
-      sx={{ flexShrink: 0, minWidth: 43, textAlign: 'center', px: '5px', py: '2px', borderRadius: '8px', fontSize: 15, fontWeight: 400, letterSpacing: LIB_TRACKING, lineHeight: '20px', color, bgcolor: tint(color, 14) }}
+      sx={{ flexShrink: 0, minWidth: 43, textAlign: 'center', px: '5px', py: '2px', borderRadius: '8px', fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.regular, letterSpacing: LIB_TRACKING, lineHeight: '20px', color, bgcolor: tint(color, 14) }}
     >
       {SHORT_DIFF[meta.label] || meta.label}
     </Typography>
@@ -43,9 +43,9 @@ export function DifficultyTag({ difficulty }) {
 }
 
 function StatusMark({ status }) {
-  if (status === 'solved') return <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: 20, color: 'var(--jc-easy)' }} />;
-  if (status === 'attempted') return <ErrorOutlineRoundedIcon aria-label="Attempted, not solved yet" sx={{ fontSize: 20, color: 'var(--jc-medium)' }} />;
-  return <RemoveRoundedIcon aria-label="Not tried" sx={{ fontSize: 20, color: 'var(--lib-muted)', opacity: 0.6 }} />;
+  if (status === 'solved') return <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-easy)' }} />;
+  if (status === 'attempted') return <ErrorOutlineRoundedIcon aria-label="Attempted, not solved yet" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-medium)' }} />;
+  return <RemoveRoundedIcon aria-label="Not tried" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--lib-muted)', opacity: 0.6 }} />;
 }
 
 function QuestionRow({ slug, q, topic }) {
@@ -62,13 +62,13 @@ function QuestionRow({ slug, q, topic }) {
       </Stack>
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Stack direction="row" spacing={0.75} sx={{ alignItems: 'flex-start', minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: LIB_TRACKING, minWidth: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING, minWidth: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
             {q.order}. {q.title}
           </Typography>
-          {q.bookmarked && <StarRoundedIcon aria-label="Bookmarked" sx={{ fontSize: 18, color: 'warning.main', flexShrink: 0, mt: '5px' }} />}
+          {q.bookmarked && <StarRoundedIcon aria-label="Bookmarked" sx={{ fontSize: FONT_SIZES.subheading, color: 'warning.main', flexShrink: 0, mt: '5px' }} />}
         </Stack>
         {meta && (
-          <Typography noWrap sx={{ mt: 1.5, fontSize: 15, letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: 'var(--lib-muted)' }}>
+          <Typography noWrap sx={{ mt: 1.5, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: 'var(--lib-muted)' }}>
             {meta}
           </Typography>
         )}
@@ -127,8 +127,8 @@ export default function MobilePractice({
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
-  const menuItemSx = { py: 1.25, fontSize: 16, letterSpacing: LIB_TRACKING, color: pal.text };
-  const groupLabelSx = { px: 2, pt: 1, pb: 0.5, fontSize: 14, letterSpacing: LIB_TRACKING, color: pal.muted };
+  const menuItemSx = { py: 1.25, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, color: pal.text };
+  const groupLabelSx = { px: 2, pt: 1, pb: 0.5, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, color: pal.muted };
 
   return (
     <LibraryFont>
@@ -170,9 +170,9 @@ export default function MobilePractice({
           >
             <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
           </Box>
-          <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {totals ? totals.solved : '–'}
-            <Box component="span" sx={{ color: pal.muted, fontWeight: 400 }}>
+            <Box component="span" sx={{ color: pal.muted, fontWeight: FONT_WEIGHTS.regular }}>
               /{totals ? totals.total : '–'}
             </Box>
           </Typography>
@@ -184,7 +184,7 @@ export default function MobilePractice({
             disableElevation
             variant="contained"
             startIcon={picking ? <CircularProgress size={18} color="inherit" /> : <PlayArrowRoundedIcon />}
-            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: LIB_TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
+            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
           >
             Random
           </Button>
@@ -210,7 +210,7 @@ export default function MobilePractice({
             {search && <Chip size="small" label={`Search: ${search}`} onDelete={() => { onSearchDraft(''); onUpdate({ search: '' }); }} />}
             {difficulty && <Chip size="small" label={DIFFICULTY[difficulty]?.label ?? difficulty} onDelete={() => onUpdate({ difficulty: '' })} />}
             {status && <Chip size="small" label={STATUS_LABEL[status] ?? status} onDelete={() => onUpdate({ status: '' })} />}
-            <Button size="small" onClick={onClear} sx={{ minWidth: 0, fontWeight: 700, textTransform: 'none' }}>
+            <Button size="small" onClick={onClear} sx={{ minWidth: 0, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' }}>
               Clear all
             </Button>
           </Stack>
@@ -228,8 +228,8 @@ export default function MobilePractice({
             <SkeletonRows />
           ) : list.items.length === 0 ? (
             <Box sx={{ py: 7, px: 2, textAlign: 'center' }}>
-              <Typography sx={{ fontWeight: 700, fontSize: 18 }}>No questions match this view</Typography>
-              <Typography sx={{ mt: 0.5, mb: 2, fontSize: 15, letterSpacing: LIB_TRACKING, color: pal.muted }}>Try another topic or clear the filters.</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading }}>No questions match this view</Typography>
+              <Typography sx={{ mt: 0.5, mb: 2, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, color: pal.muted }}>Try another topic or clear the filters.</Typography>
               {filtersActive && (
                 <Button onClick={onClear} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 40 }}>
                   Clear filters
@@ -243,19 +243,19 @@ export default function MobilePractice({
 
         {list && pageCount > 1 && (
           <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 2, mt: 2 }}>
-            <Button disabled={page <= 1} onClick={() => goPage(page - 1)} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: 15 }}>
+            <Button disabled={page <= 1} onClick={() => goPage(page - 1)} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
               Previous
             </Button>
-            <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>
+            <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>
               {page} / {pageCount}
             </Typography>
-            <Button disabled={page >= pageCount} onClick={() => goPage(page + 1)} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: 15 }}>
+            <Button disabled={page >= pageCount} onClick={() => goPage(page + 1)} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
               Next
             </Button>
           </Stack>
         )}
         {list && list.total > 0 && (
-          <Typography sx={{ display: 'block', textAlign: 'center', mt: 1.5, fontSize: 14, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
+          <Typography sx={{ display: 'block', textAlign: 'center', mt: 1.5, fontSize: FONT_SIZES.body, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
             {list.total} {list.total === 1 ? 'question' : 'questions'}
           </Typography>
         )}

@@ -11,7 +11,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import BackToDashboard from '../../components/BackToDashboard';
 import { PLAN_AMBER } from '../studyplan/planUtils';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const when = (d) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
 
@@ -23,12 +23,12 @@ function PaperCard({ paper, busy, onStart }) {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
         <CompanyAvatar name={paper.company} size={40} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography sx={{ fontWeight: 800, lineHeight: 1.25 }}>{paper.title}</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.25 }}>{paper.title}</Typography>
           <Typography variant="caption" color="text.secondary">{paper.short}</Typography>
         </Box>
         {paper.bestScore !== null && (
           <Box sx={{ textAlign: 'right' }}>
-            <Typography sx={{ fontWeight: 900, fontSize: '1.05rem', lineHeight: 1 }}>{Math.round(paper.bestScore)}%</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, lineHeight: 1 }}>{Math.round(paper.bestScore)}%</Typography>
             <Typography variant="caption" color="text.secondary">best</Typography>
           </Box>
         )}
@@ -37,9 +37,9 @@ function PaperCard({ paper, busy, onStart }) {
       <Typography variant="body2" color="text.secondary">{paper.blurb}</Typography>
 
       <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center', flexWrap: 'wrap', color: 'text.secondary' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><QuizRoundedIcon sx={{ fontSize: 16 }} /><Typography variant="caption" sx={{ fontWeight: 700 }}>{paper.questions} questions</Typography></Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><TimerRoundedIcon sx={{ fontSize: 16 }} /><Typography variant="caption" sx={{ fontWeight: 700 }}>{paper.minutes} min</Typography></Box>
-        <Typography variant="caption" sx={{ fontWeight: 700 }}>{paper.sections.length} {paper.sections.length === 1 ? 'section' : 'sections'}</Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><QuizRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /><Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{paper.questions} questions</Typography></Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}><TimerRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /><Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{paper.minutes} min</Typography></Box>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{paper.sections.length} {paper.sections.length === 1 ? 'section' : 'sections'}</Typography>
       </Box>
 
       {paper.comingSoon.length > 0 && (
@@ -49,20 +49,20 @@ function PaperCard({ paper, busy, onStart }) {
       <Box sx={{ display: 'flex', gap: 0.75, mt: 'auto', pt: 0.5 }}>
         {paper.locked ? (
           <Button fullWidth disableElevation startIcon={<LockRoundedIcon />} onClick={() => navigate('/pricing')}
-            sx={{ height: 38, borderRadius: '10px', fontWeight: 800, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
+            sx={{ height: 38, borderRadius: '10px', fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
             Go Pro for more attempts
           </Button>
         ) : (
           <Button fullWidth disableElevation disabled={!paper.available || busy} startIcon={busy ? <CircularProgress size={16} /> : <PlayArrowRoundedIcon />}
             onClick={() => onStart(paper)}
-            sx={{ height: 38, borderRadius: '10px', fontWeight: 800, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
+            sx={{ height: 38, borderRadius: '10px', fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
             {!paper.available ? 'Questions being added' : resume ? 'Resume paper' : paper.attemptsCount ? 'Take again' : 'Start mock'}
           </Button>
         )}
         {paper.officialUrl && (
           <Button component="a" href={paper.officialUrl} target="_blank" rel="noopener noreferrer" aria-label={`${paper.company} official site`}
             sx={(t) => ({ minWidth: 38, width: 38, height: 38, borderRadius: '10px', color: 'text.secondary', border: `1px solid ${t.palette.divider}` })}>
-            <LaunchRoundedIcon sx={{ fontSize: 18 }} />
+            <LaunchRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
           </Button>
         )}
       </Box>
@@ -103,7 +103,7 @@ export default function MockHubPage() {
       <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.25, mb: 2 }}>
         <BackToDashboard sx={{ mt: 0.25 }} />
         <Box>
-          <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Mock tests</Typography>
+          <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Mock tests</Typography>
           <Typography variant="body2" color="text.secondary">Full timed papers in the real exam format. Sectional clocks, no negative marking, a topic report at the end.</Typography>
         </Box>
       </Box>
@@ -122,17 +122,17 @@ export default function MockHubPage() {
 
           {data.recent.length > 0 && (
             <Box sx={{ mt: 3 }}>
-              <Typography sx={{ fontWeight: 800, mb: 1 }}>Recent attempts</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>Recent attempts</Typography>
               <Box sx={(t) => ({ borderRadius: '14px', border: `1px solid ${t.palette.divider}`, bgcolor: 'background.paper', overflow: 'hidden' })}>
                 {data.recent.map((a, i) => (
                   <Box key={a.id} onClick={() => navigate(`/mocks/result/${a.id}`)} role="button" tabIndex={0}
                     onKeyDown={(e) => e.key === 'Enter' && navigate(`/mocks/result/${a.id}`)}
                     sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 1.75, py: 1.25, cursor: 'pointer', borderTop: i ? `1px solid ${t.palette.divider}` : 'none', '&:hover': { bgcolor: 'action.hover' } })}>
                     <Box sx={{ flex: 1, minWidth: 0 }}>
-                      <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.9rem' }}>{a.paperTitle}</Typography>
+                      <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>{a.paperTitle}</Typography>
                       <Typography variant="caption" color="text.secondary">{when(a.createdAt)} · {a.correctCount}/{a.totalCount} correct</Typography>
                     </Box>
-                    <Typography sx={{ fontWeight: 900 }}>{Math.round(a.score)}%</Typography>
+                    <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{Math.round(a.score)}%</Typography>
                   </Box>
                 ))}
               </Box>
@@ -144,13 +144,13 @@ export default function MockHubPage() {
       <Dialog open={Boolean(confirm)} onClose={() => !busy && setConfirm(null)} fullWidth maxWidth="xs" slotProps={{ paper: { sx: { borderRadius: '16px' } } }}>
         {confirm && (
           <>
-            <DialogTitle sx={{ fontWeight: 900 }}>{confirm.title}</DialogTitle>
+            <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{confirm.title}</DialogTitle>
             <DialogContent>
               <Typography variant="body2" sx={{ mb: 1.5 }}>{confirm.questions} questions · {confirm.minutes} minutes</Typography>
               {confirm.sections.map((s) => (
                 <Typography key={s.key} variant="body2" color="text.secondary">• {s.title}: {s.questions} questions, {s.minutes} min</Typography>
               ))}
-              <Box component="ul" sx={{ pl: 2.5, mt: 1.5, mb: 0, color: 'text.secondary', fontSize: '0.85rem' }}>
+              <Box component="ul" sx={{ pl: 2.5, mt: 1.5, mb: 0, color: 'text.secondary', fontSize: FONT_SIZES.body }}>
                 <li>Each section has its own clock. When it ends, the section locks.</li>
                 <li>Once you submit a section you cannot go back to it.</li>
                 <li>No negative marking. Attempt every question.</li>
@@ -159,7 +159,7 @@ export default function MockHubPage() {
             </DialogContent>
             <DialogActions sx={{ px: 3, pb: 2 }}>
               <Button onClick={() => setConfirm(null)} disabled={busy}>Cancel</Button>
-              <Button variant="contained" disableElevation disabled={busy} onClick={() => begin(confirm)} sx={{ fontWeight: 800 }}>
+              <Button variant="contained" disableElevation disabled={busy} onClick={() => begin(confirm)} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 {busy ? 'Starting…' : 'Start now'}
               </Button>
             </DialogActions>

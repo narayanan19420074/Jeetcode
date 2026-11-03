@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Box } from '@mui/material';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const GOLD = COLOR_PALETTE.custom.yellowF5B301;
 const BOSS = COLOR_PALETTE.orange[500];
@@ -43,7 +43,7 @@ export function QuestCoin({ pct, state, boss, Icon, label, active, size = 56 }) 
               boxShadow: `inset 0 2px 3px ${withAlpha(COLOR_PALETTE.white, .55)}, inset 0 -3px 5px ${withAlpha(COLOR_PALETTE.black, .14)}`,
             }}
           >
-            {label !== undefined ? <Box component="span" sx={{ fontWeight: 900, fontSize: size * 0.38, lineHeight: 1 }}>{label}</Box> : <Icon sx={{ fontSize: size * 0.46 }} />}
+            {label !== undefined ? <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: size * 0.38, lineHeight: 1 }}>{label}</Box> : <Icon sx={{ fontSize: size * 0.46 }} />}
           </Box>
         </Box>
       </motion.div>

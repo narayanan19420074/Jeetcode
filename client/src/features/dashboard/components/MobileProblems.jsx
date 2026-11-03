@@ -42,7 +42,7 @@ import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
 import { LibraryFont, MiniPlayer, useLibraryPalette } from './libraryStyle';
 import { readLastProblem } from '../../workspace/lastProblem';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Phone layout of the Problems page. It uses the same accent colour, rounded panels and tinted
 // chips as the phone dashboard (MobileHome), and the page itself scrolls (infinite scroll).
@@ -69,8 +69,8 @@ function DifficultyTag({ difficulty }) {
         px: '5px',
         py: '2px',
         borderRadius: '8px',
-        fontSize: 15,
-        fontWeight: 400,
+        fontSize: FONT_SIZES.bodyLg,
+        fontWeight: FONT_WEIGHTS.regular,
         letterSpacing: TRACKING,
         lineHeight: '20px',
         color,
@@ -93,21 +93,21 @@ function ProblemRow({ p, index, isDaily, saved, onStar, pal }) {
         <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.25, pt: '2px' }}>
           <DifficultyTag difficulty={p.difficulty} />
           {p.solvedByMe ? (
-            <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: 20, color: 'var(--jc-easy)' }} />
+            <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-easy)' }} />
           ) : (
-            <RemoveRoundedIcon aria-label="Not solved" sx={{ fontSize: 20, color: pal.muted, opacity: 0.6 }} />
+            <RemoveRoundedIcon aria-label="Not solved" sx={{ fontSize: FONT_SIZES.heading, color: pal.muted, opacity: 0.6 }} />
           )}
         </Stack>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', minWidth: 0 }}>
-            <Typography noWrap sx={{ fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: TRACKING, minWidth: 0 }}>
+            <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: TRACKING, minWidth: 0 }}>
               {index}. {p.title}
             </Typography>
-            {isDaily && <EventRoundedIcon aria-label="Today's challenge" sx={{ fontSize: 17, color: ACCENT, flexShrink: 0 }} />}
+            {isDaily && <EventRoundedIcon aria-label="Today's challenge" sx={{ fontSize: FONT_SIZES.subheading, color: ACCENT, flexShrink: 0 }} />}
           </Stack>
           <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 1.5, color: pal.muted }}>
-            <Typography sx={{ fontSize: 15, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums' }}>Acceptance {(p.acceptanceRate ?? 0).toFixed(1)}%</Typography>
-            {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: 16, color: 'warning.main' }} />}
+            <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums' }}>Acceptance {(p.acceptanceRate ?? 0).toFixed(1)}%</Typography>
+            {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />}
           </Stack>
         </Box>
       </ButtonBase>
@@ -370,7 +370,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         sx={{
           mt: 1,
           px: '4px',
-          '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: 18, letterSpacing: TRACKING, px: '16px' },
+          '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, px: '16px' },
           '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
         }}
       />
@@ -389,13 +389,13 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           }}
         >
           <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
-            <CodeRoundedIcon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
+            <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg, color: COLOR_PALETTE.white }} />
           </Box>
         </Box>
-        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
+        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px' }}>
           {heading}
         </Typography>
-        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: TRACKING, color: pal.muted }}>Coding practice</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: TRACKING, color: pal.muted }}>Coding practice</Typography>
 
         <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2.5 }}>
           <Box
@@ -408,9 +408,9 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           >
             <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
           </Box>
-          <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {progress ? solvedAll : '–'}
-            <Box component="span" sx={{ color: pal.muted, fontWeight: 400 }}>
+            <Box component="span" sx={{ color: pal.muted, fontWeight: FONT_WEIGHTS.regular }}>
               /{progress ? totalAll.toLocaleString('en-IN') : '–'}
             </Box>
           </Typography>
@@ -423,7 +423,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             disableElevation
             variant="contained"
             startIcon={picking ? <CircularProgress size={18} color="inherit" /> : <PlayArrowRoundedIcon />}
-            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
+            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
           >
             Practice
           </Button>
@@ -434,7 +434,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
               disableElevation
               variant="contained"
               startIcon={<EventRoundedIcon />}
-              sx={{ height: 40, px: 2.5, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: TRACKING, textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, ${COLOR_PALETTE.black})` } }}
+              sx={{ height: 40, px: 2.5, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, ${COLOR_PALETTE.black})` } }}
             >
               Daily
             </Button>
@@ -454,7 +454,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           {q.companies.map((c) => (
             <Chip key={c} size="small" label={c} onDelete={() => toggleCompany(c)} />
           ))}
-          <Button size="small" onClick={clearAll} sx={{ minWidth: 0, fontWeight: 700, textTransform: 'none' }}>
+          <Button size="small" onClick={clearAll} sx={{ minWidth: 0, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' }}>
             Clear all
           </Button>
         </Stack>
@@ -480,11 +480,11 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           <SkeletonRows />
         ) : items.length === 0 && !error ? (
           <Box sx={{ py: 7, px: 2, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 800 }}>No problems match this view</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No problems match this view</Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 2 }}>
               Loosen a filter or clear them all to see the full library.
             </Typography>
-            <Button variant="outlined" onClick={clearAll} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+            <Button variant="outlined" onClick={clearAll} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
               Clear filters
             </Button>
           </Box>
@@ -515,7 +515,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         {DIFFICULTIES.map((d) => {
           const Icon = DIFF_ICON[d];
           return (
-            <MenuItem key={d} selected={q.difficulty === d} onClick={closeMenuAnd(() => patch({ difficulty: q.difficulty === d ? 'All' : d }))} sx={{ py: 1.25, fontWeight: 700 }}>
+            <MenuItem key={d} selected={q.difficulty === d} onClick={closeMenuAnd(() => patch({ difficulty: q.difficulty === d ? 'All' : d }))} sx={{ py: 1.25, fontWeight: FONT_WEIGHTS.bold }}>
               <ListItemIcon sx={{ color: DIFF_COLOR[d] }}>
                 <Icon fontSize="small" />
               </ListItemIcon>
@@ -528,7 +528,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           disabled={!isAuthenticated}
           selected={q.status === 'unsolved'}
           onClick={closeMenuAnd(() => patch({ status: q.status === 'unsolved' ? 'All' : 'unsolved' }))}
-          sx={{ py: 1.25, fontWeight: 700 }}
+          sx={{ py: 1.25, fontWeight: FONT_WEIGHTS.bold }}
         >
           <ListItemIcon>
             <RadioButtonUncheckedRoundedIcon fontSize="small" />
@@ -540,7 +540,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           disabled={!isAuthenticated}
           selected={q.status === 'solved'}
           onClick={closeMenuAnd(() => patch({ status: q.status === 'solved' ? 'All' : 'solved' }))}
-          sx={{ py: 1.25, fontWeight: 700 }}
+          sx={{ py: 1.25, fontWeight: FONT_WEIGHTS.bold }}
         >
           <ListItemIcon sx={{ color: 'var(--jc-easy)' }}>
             <CheckCircleRoundedIcon fontSize="small" />
@@ -549,7 +549,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           {q.status === 'solved' && <CheckRoundedIcon fontSize="small" color="primary" sx={{ ml: 'auto' }} />}
         </MenuItem>
         <Divider />
-        <MenuItem disabled={!anyActive} onClick={closeMenuAnd(clearAll)} sx={{ py: 1.25, fontWeight: 700 }}>
+        <MenuItem disabled={!anyActive} onClick={closeMenuAnd(clearAll)} sx={{ py: 1.25, fontWeight: FONT_WEIGHTS.bold }}>
           <ListItemIcon>
             <FilterAltOffRoundedIcon fontSize="small" />
           </ListItemIcon>

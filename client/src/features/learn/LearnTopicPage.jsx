@@ -28,7 +28,7 @@ import { getTopicBySlug } from './content';
 import { AVERAGES_VISUAL_REGISTRY } from './animations/AveragesVisuals';
 import MissingValueVisual from './visuals/MissingValueVisual';
 import { aptitudeApi } from '../../api/aptitudeApi';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, FONTS } from '../../app/design/designTokens';
 
 const MAIN_NAV_HEIGHT_PX = 72;
 const CONTENT_MAX = 720;
@@ -63,7 +63,7 @@ function LearnTopBar({ topic, active, completedCount, total, progressPct, onBack
           <ArrowBackRoundedIcon fontSize="small" />
         </IconButton>
         <Stack spacing={0} sx={{ minWidth: 0, flexShrink: 1 }}>
-          <Typography variant="subtitle2" sx={{ fontWeight: 800, fontSize: 14 }}>
+          <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
             {topic.title}
           </Typography>
           <Typography variant="caption" color="text.secondary" noWrap>
@@ -82,7 +82,7 @@ function LearnTopBar({ topic, active, completedCount, total, progressPct, onBack
               '& .MuiLinearProgress-bar': { transition: 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)' },
             }}
           />
-          <Typography variant="caption" sx={{ fontWeight: 700, fontFamily: 'monospace', color: 'text.secondary' }}>
+          <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: FONTS.mono, color: 'text.secondary' }}>
             {completedCount} / {total}
           </Typography>
         </Stack>
@@ -114,13 +114,13 @@ function LearnSidebar({ sections, activeId, completedIds, onSelect }) {
             variant="overline"
             sx={{
               display: 'block',
-              fontWeight: 700,
+              fontWeight: FONT_WEIGHTS.bold,
               px: 2,
               pt: secIdx === 0 ? 2 : 2.5,
               pb: 0.5,
               color: 'text.secondary',
               letterSpacing: '0.08em',
-              fontSize: 10.5,
+              fontSize: FONT_SIZES.micro,
             }}
           >
             {sec.title}
@@ -161,7 +161,7 @@ function LearnSidebar({ sections, activeId, completedIds, onSelect }) {
                   )}
                   <Stack direction="row" spacing={1.25} alignItems="center" sx={{ minWidth: 0 }}>
                     {isDone ? (
-                      <CheckRoundedIcon sx={{ fontSize: 15, color: 'success.main', flexShrink: 0 }} />
+                      <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'success.main', flexShrink: 0 }} />
                     ) : (
                       <CircleIcon
                         sx={{
@@ -176,8 +176,8 @@ function LearnSidebar({ sections, activeId, completedIds, onSelect }) {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: 13,
-                        fontWeight: isActive ? 700 : 500,
+                        fontSize: FONT_SIZES.body,
+                        fontWeight: isActive ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
                         color: isActive ? 'text.primary' : 'text.secondary',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
@@ -221,17 +221,17 @@ function SectionHeading({ children, overline }) {
           variant="overline"
           sx={{
             display: 'block',
-            fontWeight: 800,
+            fontWeight: FONT_WEIGHTS.bold,
             color: 'primary.main',
             letterSpacing: '0.1em',
-            fontSize: 10.5,
+            fontSize: FONT_SIZES.micro,
             mb: 0.5,
           }}
         >
           {overline}
         </Typography>
       )}
-      <Typography variant="h5" sx={{ fontWeight: 800, letterSpacing: '-0.02em', fontSize: 22 }}>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.02em', fontSize: FONT_SIZES.display }}>
         {children}
       </Typography>
     </Box>
@@ -253,10 +253,10 @@ function FormulaDisplay({ text }) {
       }}
     >
       <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 2 }}>
-        <BoltRoundedIcon sx={{ fontSize: 16, color: 'primary.main' }} />
+        <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'primary.main' }} />
         <Typography
           variant="caption"
-          sx={{ fontWeight: 800, color: 'primary.main', letterSpacing: '0.1em', fontSize: 10.5 }}
+          sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em', fontSize: FONT_SIZES.micro }}
         >
           FORMULA
         </Typography>
@@ -272,9 +272,9 @@ function FormulaDisplay({ text }) {
           >
             <Typography
               sx={{
-                fontFamily: '"JetBrains Mono", "Fira Code", monospace',
-                fontSize: 15,
-                fontWeight: 600,
+                fontFamily: FONTS.mono,
+                fontSize: FONT_SIZES.bodyLg,
+                fontWeight: FONT_WEIGHTS.semibold,
                 color: 'text.primary',
                 lineHeight: 1.7,
               }}
@@ -314,21 +314,21 @@ function ExampleCard({ example, index }) {
               color: 'primary.contrastText',
               display: 'grid',
               placeItems: 'center',
-              fontSize: 12,
-              fontWeight: 800,
+              fontSize: FONT_SIZES.caption,
+              fontWeight: FONT_WEIGHTS.bold,
             }}
           >
             {index + 1}
           </Box>
           <Typography
             variant="caption"
-            sx={{ fontWeight: 700, color: 'text.secondary', letterSpacing: '0.08em', fontSize: 10.5 }}
+            sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', letterSpacing: '0.08em', fontSize: FONT_SIZES.micro }}
           >
             WORKED EXAMPLE
           </Typography>
         </Stack>
 
-        <Typography variant="body1" sx={{ fontWeight: 600, mb: 2.5, lineHeight: 1.6, fontSize: 15.5 }}>
+        <Typography variant="body1" sx={{ fontWeight: FONT_WEIGHTS.semibold, mb: 2.5, lineHeight: 1.6, fontSize: FONT_SIZES.title }}>
           {example.question}
         </Typography>
 
@@ -345,20 +345,20 @@ function ExampleCard({ example, index }) {
                 <Typography
                   variant="caption"
                   sx={{
-                    fontFamily: 'monospace',
-                    fontWeight: 700,
+                    fontFamily: FONTS.mono,
+                    fontWeight: FONT_WEIGHTS.bold,
                     color: 'text.disabled',
                     mt: 0.35,
                     minWidth: 16,
-                    fontSize: 12,
+                    fontSize: FONT_SIZES.caption,
                   }}
                 >
                   {i + 1}.
                 </Typography>
                 <Typography
                   sx={{
-                    fontFamily: '"JetBrains Mono", "Fira Code", monospace',
-                    fontSize: 13.5,
+                    fontFamily: FONTS.mono,
+                    fontSize: FONT_SIZES.body,
                     lineHeight: 1.7,
                     color: 'text.secondary',
                   }}
@@ -378,14 +378,14 @@ function ExampleCard({ example, index }) {
         >
           <Divider sx={{ my: 2 }} />
           <Stack direction="row" spacing={1.5} alignItems="baseline">
-            <Typography variant="caption" sx={{ fontWeight: 800, color: 'success.main', letterSpacing: '0.1em', fontSize: 10.5 }}>
+            <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'success.main', letterSpacing: '0.1em', fontSize: FONT_SIZES.micro }}>
               ANSWER
             </Typography>
             <Typography
               sx={{
-                fontFamily: '"JetBrains Mono", "Fira Code", monospace',
-                fontWeight: 800,
-                fontSize: 15,
+                fontFamily: FONTS.mono,
+                fontWeight: FONT_WEIGHTS.bold,
+                fontSize: FONT_SIZES.bodyLg,
                 color: 'success.main',
               }}
             >
@@ -415,12 +415,12 @@ function TrapCallout({ text }) {
         borderColor: (t) => alpha(COLOR_PALETTE.red[500], 0.3),
       }}
     >
-      <WarningAmberRoundedIcon sx={{ fontSize: 20, color: COLOR_PALETTE.red[500], mt: 0.25 }} />
+      <WarningAmberRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.red[500], mt: 0.25 }} />
       <Box>
-        <Typography variant="caption" sx={{ fontWeight: 800, color: COLOR_PALETTE.red[500], display: 'block', letterSpacing: '0.1em', fontSize: 10.5 }}>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.red[500], display: 'block', letterSpacing: '0.1em', fontSize: FONT_SIZES.micro }}>
           TRAP
         </Typography>
-        <Typography variant="body2" sx={{ mt: 0.5, lineHeight: 1.65, fontSize: 14.5 }}>
+        <Typography variant="body2" sx={{ mt: 0.5, lineHeight: 1.65, fontSize: FONT_SIZES.bodyLg }}>
           {text}
         </Typography>
       </Box>
@@ -477,14 +477,14 @@ function CheckCard({ check, index, onCorrect }) {
             label={isChallenge ? 'Challenge' : 'Quick check'}
             size="small"
             sx={{
-              fontWeight: 700,
+              fontWeight: FONT_WEIGHTS.bold,
               bgcolor: isChallenge ? (t) => alpha(t.palette.warning.main, 0.15) : (t) => alpha(t.palette.primary.main, 0.12),
               color: isChallenge ? 'warning.main' : 'primary.main',
             }}
           />
         </Stack>
 
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, lineHeight: 1.45, fontSize: 17 }}>
+        <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 3, lineHeight: 1.45, fontSize: FONT_SIZES.subheading }}>
           {check.question}
         </Typography>
 
@@ -528,8 +528,8 @@ function CheckCard({ check, index, onCorrect }) {
                     borderRadius: '50%',
                     display: 'grid',
                     placeItems: 'center',
-                    fontWeight: 800,
-                    fontSize: 13,
+                    fontWeight: FONT_WEIGHTS.bold,
+                    fontSize: FONT_SIZES.body,
                     flexShrink: 0,
                     border: '1.5px solid',
                     borderColor: showCorrect ? COLOR_PALETTE.emerald[500] : showWrong ? COLOR_PALETTE.red[500] : 'currentColor',
@@ -539,18 +539,18 @@ function CheckCard({ check, index, onCorrect }) {
                 >
                   {String.fromCharCode(65 + i)}
                 </Box>
-                <Typography sx={{ flexGrow: 1, fontWeight: 600, fontSize: 15 }}>
+                <Typography sx={{ flexGrow: 1, fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.bodyLg }}>
                   {opt}
                 </Typography>
-                {showCorrect && <CheckCircleRoundedIcon sx={{ color: COLOR_PALETTE.emerald[500], fontSize: 20 }} />}
-                {showWrong && <CancelRoundedIcon sx={{ color: COLOR_PALETTE.red[500], fontSize: 20 }} />}
+                {showCorrect && <CheckCircleRoundedIcon sx={{ color: COLOR_PALETTE.emerald[500], fontSize: FONT_SIZES.heading }} />}
+                {showWrong && <CancelRoundedIcon sx={{ color: COLOR_PALETTE.red[500], fontSize: FONT_SIZES.heading }} />}
               </motion.button>
             );
           })}
         </Stack>
 
         {!solved && wrongAttempts >= 3 && (
-          <Button onClick={handleReveal} size="small" sx={{ mt: 2, fontWeight: 700 }}>
+          <Button onClick={handleReveal} size="small" sx={{ mt: 2, fontWeight: FONT_WEIGHTS.bold }}>
             Stuck? Reveal the answer
           </Button>
         )}
@@ -576,17 +576,17 @@ function CheckCard({ check, index, onCorrect }) {
                 <Typography
                   variant="caption"
                   sx={{
-                    fontWeight: 800,
+                    fontWeight: FONT_WEIGHTS.bold,
                     color: revealed ? 'warning.main' : 'success.main',
                     display: 'block',
                     mb: 0.5,
                     letterSpacing: '0.08em',
-                    fontSize: 10.5,
+                    fontSize: FONT_SIZES.micro,
                   }}
                 >
                   {revealed ? 'ANSWER REVEALED' : 'CORRECT'}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.65, fontSize: 13.5 }}>
+                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.65, fontSize: FONT_SIZES.body }}>
                   {check.explanation}
                 </Typography>
               </Box>
@@ -620,8 +620,8 @@ function CompletionBanner({ topic, total, onFinish }) {
         }}
       >
         <Stack spacing={2} alignItems="center">
-          <WorkspacePremiumRoundedIcon sx={{ fontSize: 48, color: 'success.main' }} />
-          <Typography variant="h4" sx={{ fontWeight: 800, letterSpacing: '-0.02em' }}>
+          <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.jumbo, color: 'success.main' }} />
+          <Typography variant="h4" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.02em' }}>
             You are placement-ready in {topic.title}
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 520, lineHeight: 1.7 }}>
@@ -630,7 +630,7 @@ function CompletionBanner({ topic, total, onFinish }) {
           </Typography>
           <Stack direction="row" spacing={1} alignItems="center" sx={{ color: 'success.main' }}>
             <EmojiEventsRoundedIcon fontSize="small" />
-            <Typography variant="caption" sx={{ fontWeight: 700, letterSpacing: '0.05em' }}>
+            <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.05em' }}>
               READY FOR PRACTICE & TEST
             </Typography>
           </Stack>
@@ -642,7 +642,7 @@ function CompletionBanner({ topic, total, onFinish }) {
             endIcon={<ArrowForwardRoundedIcon />}
             sx={{
               mt: 1,
-              fontWeight: 700,
+              fontWeight: FONT_WEIGHTS.bold,
               py: 1.5,
               px: 4,
               borderRadius: 2,
@@ -807,7 +807,7 @@ export default function LearnTopicPage() {
                     size="small"
                     sx={{
                       alignSelf: 'flex-start',
-                      fontWeight: 700,
+                      fontWeight: FONT_WEIGHTS.bold,
                       bgcolor: (t) => alpha(t.palette.primary.main, 0.1),
                       color: 'primary.main',
                       letterSpacing: '0.04em',
@@ -816,15 +816,15 @@ export default function LearnTopicPage() {
                   <Typography
                     variant="h3"
                     sx={{
-                      fontWeight: 800,
+                      fontWeight: FONT_WEIGHTS.bold,
                       letterSpacing: '-0.03em',
-                      fontSize: { xs: 28, md: 34 },
+                      fontSize: { xs: FONT_SIZES.displayLg, md: FONT_SIZES.hero },
                       lineHeight: 1.15,
                     }}
                   >
                     {active.title}
                   </Typography>
-                  <Typography variant="body2" color="text.disabled" sx={{ fontWeight: 600 }}>
+                  <Typography variant="body2" color="text.disabled" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
                     Lesson {activeIndex + 1} of {total}
                   </Typography>
                 </Stack>
@@ -844,7 +844,7 @@ export default function LearnTopicPage() {
                 <RevealSection delay={0.05}>
                   <Box sx={{ mb: 6 }}>
                     <SectionHeading overline="The pattern">What to look for</SectionHeading>
-                    <Typography variant="body1" sx={{ lineHeight: 1.8, fontSize: 16.5, color: 'text.secondary' }}>
+                    <Typography variant="body1" sx={{ lineHeight: 1.8, fontSize: FONT_SIZES.title, color: 'text.secondary' }}>
                       {active.pattern}
                     </Typography>
                   </Box>
@@ -912,7 +912,7 @@ export default function LearnTopicPage() {
                     variant="outlined"
                     disabled={activeIndex === 0}
                     onClick={handlePrevLesson}
-                    sx={{ fontWeight: 700, py: 1.5, px: 3, borderRadius: 2 }}
+                    sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.5, px: 3, borderRadius: 2 }}
                   >
                     Previous lesson
                   </Button>
@@ -924,11 +924,11 @@ export default function LearnTopicPage() {
                     onClick={handleAdvance}
                     disabled={savingId === active.id}
                     sx={{
-                      fontWeight: 700,
+                      fontWeight: FONT_WEIGHTS.bold,
                       py: 1.5,
                       px: 4,
                       borderRadius: 2,
-                      fontSize: 15,
+                      fontSize: FONT_SIZES.bodyLg,
                       bgcolor: isLast ? 'success.main' : 'primary.main',
                       '&:hover': { bgcolor: isLast ? 'success.dark' : 'primary.dark' },
                     }}

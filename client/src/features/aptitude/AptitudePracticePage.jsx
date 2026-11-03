@@ -33,14 +33,15 @@ import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFFICULTY, difficultyMeta } from './components/aptitudeUi';
 import MobilePractice from './components/MobilePractice';
+import { FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const PAGE_SIZE = 25;
-const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
+const mono = { fontFamily: FONTS.mono };
 
 function StatusIcon({ status }) {
-  if (status === 'solved') return <CheckCircleRoundedIcon sx={{ fontSize: 20, color: 'success.main' }} titleAccess="Solved" />;
-  if (status === 'attempted') return <ErrorOutlineRoundedIcon sx={{ fontSize: 20, color: 'warning.main' }} titleAccess="Attempted, not solved yet" />;
-  return <RadioButtonUncheckedRoundedIcon sx={{ fontSize: 20, color: 'text.disabled' }} titleAccess="Not attempted" />;
+  if (status === 'solved') return <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'success.main' }} titleAccess="Solved" />;
+  if (status === 'attempted') return <ErrorOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'warning.main' }} titleAccess="Attempted, not solved yet" />;
+  return <RadioButtonUncheckedRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'text.disabled' }} titleAccess="Not attempted" />;
 }
 
 export default function AptitudePracticePage() {
@@ -165,21 +166,21 @@ export default function AptitudePracticePage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
-      <Breadcrumbs sx={{ mb: 1, fontSize: 13 }}>
+      <Breadcrumbs sx={{ mb: 1, fontSize: FONT_SIZES.body }}>
         <Link component={RouterLink} to="/aptitude" underline="hover" color="text.secondary">
           Aptitude
         </Link>
         <Link component={RouterLink} to={`/aptitude/${slug}`} underline="hover" color="text.secondary">
           {hub?.pattern.title ?? '…'}
         </Link>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
           Practice
         </Typography>
       </Breadcrumbs>
 
       <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} sx={{ alignItems: { md: 'flex-end' }, justifyContent: 'space-between', mb: 2.5 }}>
         <Box>
-          <Typography variant="h4" sx={{ fontWeight: 800, letterSpacing: '-0.02em' }}>
+          <Typography variant="h4" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.02em' }}>
             Practice
           </Typography>
           <Typography color="text.secondary">Solve at your own pace — every answer comes with the method and the exam shortcut.</Typography>
@@ -188,9 +189,9 @@ export default function AptitudePracticePage() {
         {totals && (
           <Stack direction="row" spacing={2.5} sx={{ alignItems: 'center' }}>
             <Box>
-              <Typography sx={{ ...mono, fontWeight: 800, fontSize: 22, lineHeight: 1 }}>
+              <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, lineHeight: 1 }}>
                 {totals.solved}
-                <Typography component="span" color="text.secondary" sx={{ ...mono, fontSize: 14 }}>
+                <Typography component="span" color="text.secondary" sx={{ ...mono, fontSize: FONT_SIZES.body }}>
                   /{totals.total}
                 </Typography>
               </Typography>
@@ -200,7 +201,7 @@ export default function AptitudePracticePage() {
             </Box>
             {Object.entries(DIFFICULTY).map(([k, m]) => (
               <Box key={k}>
-                <Typography sx={{ ...mono, fontWeight: 800, fontSize: 15, color: m.color, lineHeight: 1.2 }}>
+                <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, color: m.color, lineHeight: 1.2 }}>
                   {byDiff[k].solved}/{byDiff[k].total}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
@@ -246,7 +247,7 @@ export default function AptitudePracticePage() {
           aria-label="Difficulty"
         >
           {Object.entries(DIFFICULTY).map(([k, m]) => (
-            <ToggleButton key={k} value={k} sx={{ px: 1.75, textTransform: 'none', fontWeight: 700, '&.Mui-selected': { color: m.color, bgcolor: alpha(m.color, 0.12) } }}>
+            <ToggleButton key={k} value={k} sx={{ px: 1.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold, '&.Mui-selected': { color: m.color, bgcolor: alpha(m.color, 0.12) } }}>
               {m.label}
             </ToggleButton>
           ))}
@@ -287,7 +288,7 @@ export default function AptitudePracticePage() {
       <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
         <Box sx={{ display: { xs: 'none', sm: 'grid' }, gridTemplateColumns: '44px 56px 1fr 190px 96px 84px', px: 2, py: 1.1, bgcolor: 'action.hover', borderBottom: '1px solid', borderColor: 'divider' }}>
           {['', '#', 'Question', 'Topic', 'Accept.', 'Level'].map((h, i) => (
-            <Typography key={i} variant="caption" sx={{ fontWeight: 800, color: 'text.secondary', textAlign: i >= 4 ? 'right' : 'left' }}>
+            <Typography key={i} variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', textAlign: i >= 4 ? 'right' : 'left' }}>
               {h}
             </Typography>
           ))}
@@ -298,7 +299,7 @@ export default function AptitudePracticePage() {
 
         {list && list.items.length === 0 && (
           <Box sx={{ py: 7, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 700 }}>No questions match these filters</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No questions match these filters</Typography>
             <Typography variant="body2" color="text.secondary">
               Try a different topic or clear the filters.
             </Typography>
@@ -329,10 +330,10 @@ export default function AptitudePracticePage() {
                 {q.order}
               </Typography>
               <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', minWidth: 0, pr: 2 }}>
-                <Typography variant="body2" sx={{ fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                   {q.title}
                 </Typography>
-                {q.bookmarked && <StarRoundedIcon sx={{ fontSize: 16, color: 'warning.main', flexShrink: 0 }} />}
+                {q.bookmarked && <StarRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main', flexShrink: 0 }} />}
               </Stack>
               <Typography variant="caption" color="text.secondary" noWrap sx={{ display: { xs: 'none', sm: 'block' }, pr: 1 }}>
                 {subTitles[q.subPattern] ?? q.subPattern}
@@ -340,7 +341,7 @@ export default function AptitudePracticePage() {
               <Typography variant="body2" color="text.secondary" sx={{ ...mono, textAlign: 'right', display: { xs: 'none', sm: 'block' } }}>
                 {q.acceptance == null ? '—' : `${q.acceptance}%`}
               </Typography>
-              <Typography variant="body2" sx={{ fontWeight: 700, color: dm.color, textAlign: 'right' }}>
+              <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, color: dm.color, textAlign: 'right' }}>
                 {dm.label}
               </Typography>
             </Box>

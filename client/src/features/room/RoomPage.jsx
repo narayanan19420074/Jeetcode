@@ -74,6 +74,7 @@ import useStopwatch from '../workspace/useStopwatch';
 import { MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton } from '../workspace/wsUi';
 import { WS } from '../workspace/wsTokens';
 import { wsSurface } from '../workspace/workspaceTheme';
+import { FONT_WEIGHTS, FONT_SIZES, FONTS } from '../../app/design/designTokens';
 
 // Shared documents must indent the same way for everyone, so the room always
 // uses 4 spaces (a personal tab size would make Python blocks disagree).
@@ -350,7 +351,7 @@ export default function RoomPage() {
     };
     return (
       <Dialog open fullWidth maxWidth="xs">
-        <DialogTitle sx={{ fontWeight: 800 }}>Join the room</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Join the room</DialogTitle>
         <DialogContent>
           <DialogContentText sx={{ mb: 1 }}>Enter a display name so your partner knows who you are.</DialogContentText>
           <TextField autoFocus fullWidth margin="dense" label="Your name" value={nameDraft} onChange={(e) => setNameDraft(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && go()} />
@@ -515,14 +516,14 @@ export default function RoomPage() {
           <FormatListBulletedRoundedIcon />
         </WsIconButton>
         <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1, pl: { xs: 0.5, md: 0.5 } }}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.95rem' }}>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg }}>
             {room.meta.title || problem?.title || 'Pair room'}
           </Typography>
-          <Typography noWrap sx={{ display: { xs: 'none', md: 'block' }, fontFamily: '"JetBrains Mono", monospace', fontSize: '0.72rem', color: 'text.disabled' }}>
+          <Typography noWrap sx={{ display: { xs: 'none', md: 'block' }, fontFamily: FONTS.mono, fontSize: FONT_SIZES.caption, color: 'text.disabled' }}>
             #{roomId}
           </Typography>
           {room.status === 'reconnecting' && (
-            <Typography noWrap sx={{ fontSize: '0.75rem', fontWeight: 600, color: 'warning.main' }}>
+            <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold, color: 'warning.main' }}>
               Reconnecting…
             </Typography>
           )}

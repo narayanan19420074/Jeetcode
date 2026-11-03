@@ -11,7 +11,7 @@ import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { MONO_FONT, blink, pulseDot, typeLine } from '../anim';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
 
 // The hero's live product window. Three real moments from the app:
 // solving against test cases, answering a timed aptitude question, and
@@ -48,7 +48,7 @@ const CODE = [
 function CodeBlock({ animate: play = true, startDelay = 0 }) {
   const c = useSyntax();
   return (
-    <Box sx={{ fontFamily: MONO_FONT, fontSize: { xs: '0.7rem', sm: '0.78rem' }, lineHeight: 1.75 }}>
+    <Box sx={{ fontFamily: MONO_FONT, fontSize: { xs: FONT_SIZES.micro, sm: FONT_SIZES.caption }, lineHeight: 1.75 }}>
       {CODE.map((line, i) => (
         <Box
           key={i}
@@ -58,7 +58,7 @@ function CodeBlock({ animate: play = true, startDelay = 0 }) {
           }}
         >
           {line.map(([txt, kind], j) => (
-            <Box key={j} component="span" sx={{ color: c[kind], fontWeight: kind === 'kw' ? 600 : 400 }}>
+            <Box key={j} component="span" sx={{ color: c[kind], fontWeight: kind === 'kw' ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.regular }}>
               {txt}
             </Box>
           ))}
@@ -79,8 +79,8 @@ function SolvePanel() {
   return (
     <Stack spacing={2}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-        <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Two Sum</Typography>
-        <Box sx={{ px: 1, py: 0.1, borderRadius: 99, fontSize: '0.7rem', fontWeight: 700, color: 'success.main', bgcolor: alpha(t.palette.success.main, 0.14) }}>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Two Sum</Typography>
+        <Box sx={{ px: 1, py: 0.1, borderRadius: 99, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: 'success.main', bgcolor: alpha(t.palette.success.main, 0.14) }}>
           Easy
         </Box>
         <Typography variant="caption" color="text.secondary" sx={{ ml: 'auto' }}>
@@ -98,8 +98,8 @@ function SolvePanel() {
               transition={{ delay: 2.7 + i * 0.4, duration: 0.3 }}
             >
               <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                <CheckCircleRoundedIcon sx={{ fontSize: 16, color: 'success.main' }} />
-                <Typography noWrap sx={{ fontFamily: MONO_FONT, fontSize: '0.7rem', color: 'text.secondary', flex: 1 }}>
+                <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'success.main' }} />
+                <Typography noWrap sx={{ fontFamily: MONO_FONT, fontSize: FONT_SIZES.micro, color: 'text.secondary', flex: 1 }}>
                   {input} returns {out}
                 </Typography>
               </Stack>
@@ -121,8 +121,8 @@ function SolvePanel() {
               px: 1.5,
               py: 0.5,
               borderRadius: 99,
-              fontWeight: 800,
-              fontSize: '0.82rem',
+              fontWeight: FONT_WEIGHTS.bold,
+              fontSize: FONT_SIZES.body,
               color: 'success.main',
               bgcolor: alpha(t.palette.success.main, 0.14),
             }}
@@ -157,15 +157,15 @@ function TimePanel({ onInteract }) {
   return (
     <Stack spacing={2}>
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-        <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Time and Distance</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Time and Distance</Typography>
         <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', color: left < 20 ? 'error.main' : 'text.secondary' }}>
-          <TimerRoundedIcon sx={{ fontSize: 17 }} />
-          <Typography sx={{ fontFamily: MONO_FONT, fontWeight: 600, fontSize: '0.85rem', fontVariantNumeric: 'tabular-nums' }}>
+          <TimerRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
+          <Typography sx={{ fontFamily: MONO_FONT, fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, fontVariantNumeric: 'tabular-nums' }}>
             {mm}:{ss}
           </Typography>
         </Stack>
       </Stack>
-      <Typography sx={{ fontWeight: 600, lineHeight: 1.5 }}>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.5 }}>
         A train 150 m long passes a pole in 10 seconds. What is its speed?
       </Typography>
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1 }}>
@@ -189,20 +189,20 @@ function TimePanel({ onInteract }) {
                 border: '1.5px solid',
                 borderColor: isRight ? 'success.main' : isWrong ? 'error.main' : 'divider',
                 bgcolor: isRight ? alpha(t.palette.success.main, 0.12) : isWrong ? alpha(t.palette.error.main, 0.1) : 'transparent',
-                fontWeight: 600,
-                fontSize: '0.88rem',
+                fontWeight: FONT_WEIGHTS.semibold,
+                fontSize: FONT_SIZES.body,
                 color: 'text.primary',
                 transition: 'border-color .15s, background-color .15s',
                 '&:hover': { borderColor: done ? undefined : 'primary.main' },
                 '&.Mui-disabled': { color: 'text.primary' },
               }}
             >
-              <Box component="span" sx={{ width: 20, color: 'text.secondary', fontWeight: 700 }}>
+              <Box component="span" sx={{ width: 20, color: 'text.secondary', fontWeight: FONT_WEIGHTS.bold }}>
                 {'ABCD'[i]}
               </Box>
               {o}
-              {isRight && <CheckCircleRoundedIcon sx={{ ml: 'auto', fontSize: 18, color: 'success.main' }} />}
-              {isWrong && <CancelRoundedIcon sx={{ ml: 'auto', fontSize: 18, color: 'error.main' }} />}
+              {isRight && <CheckCircleRoundedIcon sx={{ ml: 'auto', fontSize: FONT_SIZES.subheading, color: 'success.main' }} />}
+              {isWrong && <CancelRoundedIcon sx={{ ml: 'auto', fontSize: FONT_SIZES.subheading, color: 'error.main' }} />}
             </ButtonBase>
           );
         })}
@@ -243,23 +243,23 @@ function PairPanel() {
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
         <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
           <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'success.main', '--pulse': alpha(t.palette.success.main, 0.5), animation: `${pulseDot} 2s infinite` }} />
-          <Typography sx={{ fontWeight: 700, fontSize: '0.9rem' }}>Room is live</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Room is live</Typography>
         </Stack>
         <Stack direction="row" spacing={0.75}>
           {[MicRoundedIcon, VideocamRoundedIcon].map((I, i) => (
             <Box key={i} sx={{ width: 28, height: 28, borderRadius: '8px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.text.secondary, 0.12) }}>
-              <I sx={{ fontSize: 16, color: 'text.secondary' }} />
+              <I sx={{ fontSize: FONT_SIZES.title, color: 'text.secondary' }} />
             </Box>
           ))}
-          <Box sx={{ px: 1.1, height: 28, borderRadius: '8px', display: 'flex', alignItems: 'center', gap: 0.4, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 700, fontSize: '0.75rem' }}>
-            <PlayArrowRoundedIcon sx={{ fontSize: 16 }} /> Run
+          <Box sx={{ px: 1.1, height: 28, borderRadius: '8px', display: 'flex', alignItems: 'center', gap: 0.4, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption }}>
+            <PlayArrowRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /> Run
           </Box>
         </Stack>
       </Stack>
 
-      <Box sx={{ position: 'relative', fontFamily: MONO_FONT, fontSize: { xs: '0.7rem', sm: '0.76rem' }, lineHeight: 1.8, p: 1.5, borderRadius: '10px', bgcolor: alpha(t.palette.text.secondary, 0.07) }}>
+      <Box sx={{ position: 'relative', fontFamily: MONO_FONT, fontSize: { xs: FONT_SIZES.micro, sm: FONT_SIZES.caption }, lineHeight: 1.8, p: 1.5, borderRadius: '10px', bgcolor: alpha(t.palette.text.secondary, 0.07) }}>
         <Box sx={{ whiteSpace: 'pre', color: c.tx }}>
-          <Box component="span" sx={{ color: c.kw, fontWeight: 600 }}>def </Box>
+          <Box component="span" sx={{ color: c.kw, fontWeight: FONT_WEIGHTS.semibold }}>def </Box>
           <Box component="span" sx={{ color: c.fn }}>two_sum</Box>(nums, target):
         </Box>
         <Box sx={{ whiteSpace: 'pre', color: c.tx }}>
@@ -267,8 +267,8 @@ function PairPanel() {
           <Cursor color={other} label="Karthik" />
         </Box>
         <Box sx={{ whiteSpace: 'pre', color: c.tx }}>
-          <Box component="span" sx={{ color: c.kw, fontWeight: 600 }}>{'    for '}</Box>i, n{' '}
-          <Box component="span" sx={{ color: c.kw, fontWeight: 600 }}>in </Box>
+          <Box component="span" sx={{ color: c.kw, fontWeight: FONT_WEIGHTS.semibold }}>{'    for '}</Box>i, n{' '}
+          <Box component="span" sx={{ color: c.kw, fontWeight: FONT_WEIGHTS.semibold }}>in </Box>
           <Box component="span" sx={{ color: c.fn }}>enumerate</Box>(nums):
           <Cursor color={me} label="Asha" />
         </Box>
@@ -290,8 +290,8 @@ function PairPanel() {
                   px: 1.4,
                   py: 0.7,
                   borderRadius: mine ? '12px 12px 12px 3px' : '12px 12px 3px 12px',
-                  fontSize: '0.82rem',
-                  fontWeight: 500,
+                  fontSize: FONT_SIZES.body,
+                  fontWeight: FONT_WEIGHTS.medium,
                   bgcolor: mine ? alpha(me, 0.14) : alpha(other, 0.16),
                 }}
               >
@@ -308,7 +308,7 @@ function PairPanel() {
 function Cursor({ color, label }) {
   return (
     <Box component="span" sx={{ position: 'relative', display: 'inline-block', width: 2, height: '1.1em', bgcolor: color, ml: '2px', verticalAlign: 'text-bottom', animation: `${blink} 1.1s steps(1) infinite` }}>
-      <Box component="span" sx={{ position: 'absolute', bottom: '100%', left: 0, px: 0.6, borderRadius: '4px 4px 4px 0', bgcolor: color, color: COLOR_PALETTE.white, fontFamily: 'Geist, system-ui, sans-serif', fontSize: '0.6rem', fontWeight: 700, lineHeight: 1.5, whiteSpace: 'nowrap' }}>
+      <Box component="span" sx={{ position: 'absolute', bottom: '100%', left: 0, px: 0.6, borderRadius: '4px 4px 4px 0', bgcolor: color, color: COLOR_PALETTE.white, fontFamily: FONTS.sans, fontSize: '0.6rem', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.5, whiteSpace: 'nowrap' }}>
         {label}
       </Box>
     </Box>
@@ -355,15 +355,15 @@ export default function HeroDemo() {
                 gap: 0.75,
                 px: 1.75,
                 py: 1.1,
-                fontWeight: 700,
-                fontSize: '0.86rem',
+                fontWeight: FONT_WEIGHTS.bold,
+                fontSize: FONT_SIZES.body,
                 color: on ? 'text.primary' : 'text.secondary',
                 borderRadius: '8px 8px 0 0',
                 '&:hover': { color: 'text.primary' },
                 '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: -2 },
               }}
             >
-              <Icon sx={{ fontSize: 18 }} />
+              <Icon sx={{ fontSize: FONT_SIZES.subheading }} />
               {label}
               {on && (
                 <Box

@@ -8,7 +8,7 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LibraryFont, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import RoadMap from './RoadMap';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Phone layout of the Aptitude page. It follows the phone Problems page: same page padding, back button,
 // centred header, progress bar, pill button and type sizes. The level map climbs from the bottom to the top.
@@ -31,11 +31,11 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
 
       {/* Header */}
       <Box sx={{ textAlign: 'center', mt: 1.5 }}>
-        <HeaderTile>{cloneElement(track.icon, { sx: { fontSize: 28 } })}</HeaderTile>
-        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
+        <HeaderTile>{cloneElement(track.icon, { sx: { fontSize: FONT_SIZES.displayLg } })}</HeaderTile>
+        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px' }}>
           {track.label}
         </Typography>
-        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: '0.03em', color: pal.muted }}>Placement preparation</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: '0.03em', color: pal.muted }}>Placement preparation</Typography>
 
         {!loading && total > 0 && (
           <>
@@ -50,9 +50,9 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
               >
                 <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
               </Box>
-              <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
                 {cleared}
-                <Box component="span" sx={{ color: pal.muted, fontWeight: 400 }}>
+                <Box component="span" sx={{ color: pal.muted, fontWeight: FONT_WEIGHTS.regular }}>
                   /{total}
                 </Box>
               </Typography>
@@ -64,7 +64,7 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                 disableElevation
                 variant="contained"
                 startIcon={<PlayArrowRoundedIcon />}
-                sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: '0.03em', textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
+                sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: '0.03em', textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
               >
                 {actionLabel}
               </Button>
@@ -112,9 +112,9 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                   }}
                 >
                   <Box sx={{ width: 44, height: 44, borderRadius: '15px', display: 'grid', placeItems: 'center', bgcolor: tint(t.color, selected ? 24 : 12), color: t.color }}>
-                    {cloneElement(t.icon, { sx: { fontSize: 26 } })}
+                    {cloneElement(t.icon, { sx: { fontSize: FONT_SIZES.displayLg } })}
                   </Box>
-                  <Typography noWrap sx={{ maxWidth: '100%', fontWeight: 500, fontSize: 13, lineHeight: 1.2, letterSpacing: '0.03em' }}>
+                  <Typography noWrap sx={{ maxWidth: '100%', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, lineHeight: 1.2, letterSpacing: '0.03em' }}>
                     {t.short}
                   </Typography>
                 </ButtonBase>

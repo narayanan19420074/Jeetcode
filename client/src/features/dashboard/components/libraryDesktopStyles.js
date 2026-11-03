@@ -1,5 +1,5 @@
 import { LIB_ACCENT, LIB_TRACKING } from './libraryStyle';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // Shared styles of the desktop pages in the Library look (Problems, Store): cream panels, pill buttons, indigo accent.
 
@@ -16,8 +16,8 @@ export const pillButtonSx = (solid, palette) => ({
   px: 2.25,
   borderRadius: 999,
   textTransform: 'none',
-  fontWeight: 500,
-  fontSize: 15,
+  fontWeight: FONT_WEIGHTS.medium,
+  fontSize: FONT_SIZES.bodyLg,
   letterSpacing: LIB_TRACKING,
   whiteSpace: 'nowrap',
   ...(solid

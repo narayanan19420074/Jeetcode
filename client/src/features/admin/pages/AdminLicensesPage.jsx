@@ -25,6 +25,7 @@ import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
+import { FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
 
 // Admin generates one key at a time — either lifetime or a fixed number
 // of days from the moment of activation (not from generation), matching
@@ -84,7 +85,7 @@ export default function AdminLicensesPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
         License Keys
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -102,12 +103,12 @@ export default function AdminLicensesPage() {
           <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
               <VpnKeyRoundedIcon color="primary" />
-              <Typography variant="h6" sx={{ fontWeight: 700 }}>
+              <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 Generate a key
               </Typography>
             </Stack>
 
-            <Typography variant="body2" sx={{ mb: 1, fontWeight: 600 }}>
+            <Typography variant="body2" sx={{ mb: 1, fontWeight: FONT_WEIGHTS.semibold }}>
               Duration
             </Typography>
             <ToggleButtonGroup
@@ -118,7 +119,7 @@ export default function AdminLicensesPage() {
               sx={{ mb: 2, flexWrap: 'wrap' }}
             >
               {DURATION_PRESETS.map((p) => (
-                <ToggleButton key={p.value} value={p.value} sx={{ fontWeight: 600, textTransform: 'none' }}>
+                <ToggleButton key={p.value} value={p.value} sx={{ fontWeight: FONT_WEIGHTS.semibold, textTransform: 'none' }}>
                   {p.label}
                 </ToggleButton>
               ))}
@@ -140,7 +141,7 @@ export default function AdminLicensesPage() {
               disableElevation
               onClick={handleGenerate}
               disabled={generating}
-              sx={{ fontWeight: 700 }}
+              sx={{ fontWeight: FONT_WEIGHTS.bold }}
             >
               {generating ? <CircularProgress size={20} color="inherit" /> : 'Generate key'}
             </Button>
@@ -150,7 +151,7 @@ export default function AdminLicensesPage() {
                 variant="outlined"
                 sx={{ mt: 2.5, p: 2, borderRadius: 2, bgcolor: 'action.hover', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
               >
-                <Typography sx={{ fontFamily: 'monospace', fontWeight: 700 }}>{lastGeneratedKey}</Typography>
+                <Typography sx={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.bold }}>{lastGeneratedKey}</Typography>
                 <Tooltip title="Copy">
                   <IconButton size="small" onClick={() => handleCopy(lastGeneratedKey)}>
                     <ContentCopyRoundedIcon fontSize="small" />
@@ -163,7 +164,7 @@ export default function AdminLicensesPage() {
 
         <Grid item xs={12} md={7}>
           <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
-            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
               Issued keys
             </Typography>
             {loading ? (
@@ -187,7 +188,7 @@ export default function AdminLicensesPage() {
                 <TableBody>
                   {licenses.map((l) => (
                     <TableRow key={l._id} hover>
-                      <TableCell sx={{ fontFamily: 'monospace', fontWeight: 600 }}>{l.key}</TableCell>
+                      <TableCell sx={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.semibold }}>{l.key}</TableCell>
                       <TableCell>
                         <Chip
                           label={l.isUsed ? 'Used' : 'Unused'}

@@ -22,14 +22,15 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { Coins, SHIP_STEPS, STATUS_META, fmt, fmtDate, fmtDateTime } from './storeUtils';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Phone screens for My orders and the coin Wallet in the Library look (same page padding, back button, centred
 // header, 18px row titles, 15px muted details and cream panels as the phone Store, Problems and Aptitude pages).
 // They replace the dialogs the desktop Store uses. Each shows only what a shopper needs.
 
-const ROW_TITLE = { fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: LIB_TRACKING };
-const ROW_META = { fontSize: 15, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' };
-const BODY = { fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING };
+const ROW_TITLE = { fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING };
+const ROW_META = { fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' };
+const BODY = { fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING };
 const TOP_BORDER = '1px solid var(--lib-divider)';
 
 const STATUS_COLOR = {
@@ -73,7 +74,7 @@ function SectionTitle({ children, sx }) {
 function StatusPill({ status }) {
   const color = STATUS_COLOR[status] || STATUS_COLOR.placed;
   return (
-    <Typography component="span" sx={{ flexShrink: 0, px: '8px', py: '2px', borderRadius: '8px', fontSize: 15, lineHeight: '20px', letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) }}>
+    <Typography component="span" sx={{ flexShrink: 0, px: '8px', py: '2px', borderRadius: '8px', fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) }}>
       {(STATUS_META[status] || STATUS_META.placed).label}
     </Typography>
   );
@@ -92,7 +93,7 @@ function Row({ title, meta, right, onClick }) {
         </Typography>
       </Box>
       {right}
-      {onClick && <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: 22, color: 'var(--lib-muted)', flexShrink: 0 }} />}
+      {onClick && <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, color: 'var(--lib-muted)', flexShrink: 0 }} />}
     </>
   );
   const sx = { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px', py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderBottom: '1px solid var(--lib-divider)' };
@@ -114,7 +115,7 @@ function ShipProgress({ status }) {
       {SHIP_STEPS.map((s, i) => (
         <Box key={s}>
           <Box sx={{ height: 6, borderRadius: 99, bgcolor: i <= at ? LIB_ACCENT : 'var(--lib-divider)' }} />
-          <Typography sx={{ mt: 0.75, fontSize: 14, lineHeight: '20px', textAlign: 'center', color: i <= at ? 'var(--lib-text)' : 'var(--lib-muted)', fontWeight: i === at ? 500 : 400 }}>
+          <Typography sx={{ mt: 0.75, fontSize: FONT_SIZES.body, lineHeight: '20px', textAlign: 'center', color: i <= at ? 'var(--lib-text)' : 'var(--lib-muted)', fontWeight: i === at ? FONT_WEIGHTS.medium : FONT_WEIGHTS.regular }}>
             {STATUS_META[s].label}
           </Typography>
         </Box>
@@ -155,11 +156,11 @@ function OrderDetail({ order, onBack, onChanged, onOpenCourse }) {
   return (
     <Shell onBack={onBack} backLabel="Back to orders">
       <Box sx={{ textAlign: 'center', mt: 1.5 }}>
-        <Typography component="h1" sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        <Typography component="h1" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
           {order.itemName}
           {order.qty > 1 ? ` ×${order.qty}` : ''}
         </Typography>
-        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+        <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
           {order.orderNo} · {fmtDateTime(order.createdAt)}
         </Typography>
         <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 1.5, mt: 1.5 }}>
@@ -265,7 +266,7 @@ export function MobileOrders({ orders, onBack, onChanged, onOpenCourse, onGoShop
           <Loading />
         ) : orders.length === 0 ? (
           <Stack sx={{ alignItems: 'center', textAlign: 'center', gap: 0.5, py: 6 }}>
-            <Typography sx={{ ...ROW_TITLE, fontWeight: 700 }}>No orders yet</Typography>
+            <Typography sx={{ ...ROW_TITLE, fontWeight: FONT_WEIGHTS.bold }}>No orders yet</Typography>
             <Typography sx={{ ...BODY, color: 'var(--lib-muted)' }}>Redeem your coins for Pro, courses or merch.</Typography>
             <Button onClick={onGoShop} disableElevation variant="contained" sx={{ ...libSolidBtnSx, mt: 2, px: 4 }}>
               Browse the store
@@ -317,7 +318,7 @@ export function MobileWallet({ wallet, refreshKey, onClaim, claiming, onBack }) 
       ) : (
         <>
           {error && (
-            <Typography role="alert" color="error" sx={{ mt: 2, fontSize: 15 }}>
+            <Typography role="alert" color="error" sx={{ mt: 2, fontSize: FONT_SIZES.bodyLg }}>
               {error}
             </Typography>
           )}
@@ -325,7 +326,7 @@ export function MobileWallet({ wallet, refreshKey, onClaim, claiming, onBack }) 
           {/* Balance */}
           <Box sx={{ ...libPanelSx, mt: 3, p: 2 }}>
             <Stack sx={{ alignItems: 'center', textAlign: 'center' }}>
-              <Typography sx={{ fontSize: 14, letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>Balance</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>Balance</Typography>
               <Coins value={wallet.coins} size={36} />
             </Stack>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', mt: 2, pt: 2, borderTop: TOP_BORDER, textAlign: 'center' }}>
@@ -335,8 +336,8 @@ export function MobileWallet({ wallet, refreshKey, onClaim, claiming, onBack }) 
                 ['Streak', `${wallet.streakDays} ${wallet.streakDays === 1 ? 'day' : 'days'}`],
               ].map(([label, value]) => (
                 <Box key={label}>
-                  <Typography sx={{ fontWeight: 700, fontSize: 18, lineHeight: '24px', fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
-                  <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{label}</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: '24px', fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
+                  <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>{label}</Typography>
                 </Box>
               ))}
             </Box>
@@ -389,13 +390,13 @@ export function MobileWallet({ wallet, refreshKey, onClaim, claiming, onBack }) 
               </Box>
               {tx.pages > 1 && (
                 <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 2, mt: 2 }}>
-                  <Button disabled={page <= 1} onClick={() => setPage((p) => p - 1)} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: 15 }}>
+                  <Button disabled={page <= 1} onClick={() => setPage((p) => p - 1)} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
                     Previous
                   </Button>
                   <Typography sx={{ ...ROW_META, color: 'var(--lib-muted)' }}>
                     {page} / {tx.pages}
                   </Typography>
-                  <Button disabled={page >= tx.pages} onClick={() => setPage((p) => p + 1)} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: 15 }}>
+                  <Button disabled={page >= tx.pages} onClick={() => setPage((p) => p + 1)} disableElevation variant="contained" sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
                     Next
                   </Button>
                 </Stack>

@@ -7,6 +7,7 @@ import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRou
 import StatCard from '../components/StatCard';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 export default function AdminOverviewPage() {
   const [stats, setStats] = useState(null);
@@ -46,7 +47,7 @@ export default function AdminOverviewPage() {
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 3 }}>
         <Box>
-          <Typography variant="h5" sx={{ fontWeight: 800 }}>
+          <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Overview
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -57,7 +58,7 @@ export default function AdminOverviewPage() {
           label={stats.queueMode === 'redis' ? 'Queue: Redis' : 'Queue: Inline (dev)'}
           color={stats.queueMode === 'redis' ? 'success' : 'warning'}
           variant="outlined"
-          sx={{ fontWeight: 700 }}
+          sx={{ fontWeight: FONT_WEIGHTS.bold }}
         />
       </Stack>
 
@@ -99,7 +100,7 @@ export default function AdminOverviewPage() {
       </Grid>
 
       <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+        <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
           Recent signups
         </Typography>
         {signups.length === 0 ? (
@@ -110,7 +111,7 @@ export default function AdminOverviewPage() {
           <Stack spacing={1.5}>
             {signups.map((u) => (
               <Stack key={u._id} direction="row" justifyContent="space-between" alignItems="center">
-                <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
                   {u.name}{' '}
                   <Typography component="span" variant="caption" color="text.secondary">
                     @{u.handle}

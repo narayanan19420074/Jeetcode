@@ -4,7 +4,7 @@ import { Avatar, Box } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
 import { DIFF_COLOR, todayKey } from '../dashboard/dashboardUtils';
 import { PLAN_AMBER } from '../studyplan/planUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Bits shared by the leaderboard card (EmpireCard) and the side panel (LeaderboardView).
 
@@ -16,7 +16,7 @@ export const MEDAL = {
 export const grad = (m) => `linear-gradient(135deg, ${m.a}, ${m.b})`;
 export const APT_COLOR = COLOR_PALETTE.violet[500];
 export const PT = { easy: 10, medium: 20, hard: 40, aptitude: 5 };
-export const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
+export const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 
 // ---- motion (all CSS, switched off for people who asked for less motion) ----
 export const sweep = keyframes`0%{transform:translateX(-160%) skewX(-20deg)}60%,100%{transform:translateX(380%) skewX(-20deg)}`;
@@ -51,7 +51,7 @@ export function activeLabel(lastActive) {
 export function AvatarRing({ src, name, size = 34, a, b, ring = 2.5, inner = 'background.paper' }) {
   return (
     <Box sx={{ p: `${ring}px`, borderRadius: '50%', background: `linear-gradient(135deg, ${a}, ${b})`, display: 'inline-flex', flexShrink: 0 }}>
-      <Avatar src={src || undefined} sx={{ width: size, height: size, fontSize: size * 0.4, fontWeight: 700, border: '2px solid', borderColor: inner }}>{name?.[0]?.toUpperCase()}</Avatar>
+      <Avatar src={src || undefined} sx={{ width: size, height: size, fontSize: size * 0.4, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: inner }}>{name?.[0]?.toUpperCase()}</Avatar>
     </Box>
   );
 }
@@ -72,5 +72,5 @@ export function Mix({ row, onDark = false, sx }) {
 }
 
 export function YouChip() {
-  return <Box component="span" sx={{ ml: 0.75, px: 0.8, borderRadius: 99, fontSize: 10.5, fontWeight: 800, color: COLOR_PALETTE.custom.black1B1200, bgcolor: PLAN_AMBER, verticalAlign: 'middle', flexShrink: 0 }}>You</Box>;
+  return <Box component="span" sx={{ ml: 0.75, px: 0.8, borderRadius: 99, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.custom.black1B1200, bgcolor: PLAN_AMBER, verticalAlign: 'middle', flexShrink: 0 }}>You</Box>;
 }

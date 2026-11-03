@@ -8,7 +8,7 @@ import { useSnackbar } from 'notistack';
 import { billingApi } from '../../../api/billingApi';
 import ActivateLicenseModal from '../../../components/ActivateLicenseModal';
 import { Card, CardBody, PageTitle, Row, describeError } from '../components/SettingsUi';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 const PLAN_LABEL = { monthly: 'Monthly subscription', yearly: 'Yearly subscription', 'license-key': 'License key' };
 
@@ -51,7 +51,7 @@ export default function BillingSection() {
               </Box>
               <Box>
                 <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
-                  <Typography sx={{ fontWeight: 800, fontSize: '1.1rem' }}>{user.isPro ? 'JeetCode Pro' : 'Free plan'}</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading }}>{user.isPro ? 'JeetCode Pro' : 'Free plan'}</Typography>
                   {user.isPro && <Chip size="small" color="warning" label="Active" />}
                 </Stack>
                 <Typography variant="body2" color="text.secondary">
@@ -62,7 +62,7 @@ export default function BillingSection() {
               </Box>
             </Stack>
             {!user.isPro && (
-              <Button component={RouterLink} to="/pricing" variant="contained" disableElevation sx={{ fontWeight: 700 }}>
+              <Button component={RouterLink} to="/pricing" variant="contained" disableElevation sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 View plans
               </Button>
             )}
@@ -95,7 +95,7 @@ export default function BillingSection() {
       <ActivateLicenseModal open={licenseOpen} onClose={() => setLicenseOpen(false)} />
 
       <Dialog open={cancelOpen} onClose={() => !busy && setCancelOpen(false)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800 }}>Cancel your subscription?</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Cancel your subscription?</DialogTitle>
         <DialogContent>
           {error && (
             <Alert severity="error" sx={{ mb: 2 }}>

@@ -8,7 +8,7 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import { QuestCoin } from './PrepQuestBits';
 import { CLEARED_AT, sectionPct } from './questLogic';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const ROW = 112;
 const PROBLEMS_SHOWN = 12;
@@ -121,10 +121,10 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
           <ArrowBackRoundedIcon />
         </IconButton>
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 900, fontSize: '1.25rem', lineHeight: 1.2 }}>{section.name}</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.2 }}>{section.name}</Typography>
           <Typography variant="caption" color="text.secondary">{cleared} of {nodes.length} cleared</Typography>
         </Box>
-        <Typography sx={{ fontWeight: 900, fontSize: '1.5rem', fontVariantNumeric: 'tabular-nums' }}>{pct}%</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, fontVariantNumeric: 'tabular-nums' }}>{pct}%</Typography>
       </Stack>
       <LinearProgress variant="determinate" value={pct} sx={{ height: 8, borderRadius: '8px', mb: 1.5 }} />
       {section.description && <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>{section.description}</Typography>}
@@ -160,7 +160,7 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
                       transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
                       style={{ position: 'absolute', top: -30, left: '50%', translateX: '-50%', whiteSpace: 'nowrap' }}
                     >
-                      <Box sx={{ px: 1.25, py: 0.25, borderRadius: '99px', bgcolor: 'primary.main', color: 'primary.contrastText', fontSize: 12, fontWeight: 800 }}>You are here</Box>
+                      <Box sx={{ px: 1.25, py: 0.25, borderRadius: '99px', bgcolor: 'primary.main', color: 'primary.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>You are here</Box>
                     </motion.div>
                   )}
                   <ButtonBase onClick={() => setPicked(i)} aria-label={n.title} sx={{ borderRadius: '50%', opacity: n.state === 'locked' ? 0.55 : 1 }}>
@@ -175,7 +175,7 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
                     opacity: n.state === 'locked' ? 0.6 : 1,
                   }}
                 >
-                  <Typography sx={{ fontWeight: 800, fontSize: '0.95rem', lineHeight: 1.2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{n.title}</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{n.title}</Typography>
                   <Typography variant="caption" color="text.secondary">{n.sub}</Typography>
                 </ButtonBase>
               </Box>
@@ -185,7 +185,7 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
       )}
 
       {!showAll && totalProblems > PROBLEMS_SHOWN && (
-        <Button fullWidth onClick={() => setShowAll(true)} sx={{ mt: 1, fontWeight: 700 }}>Show all {section.problemTotal ?? totalProblems} problems</Button>
+        <Button fullWidth onClick={() => setShowAll(true)} sx={{ mt: 1, fontWeight: FONT_WEIGHTS.bold }}>Show all {section.problemTotal ?? totalProblems} problems</Button>
       )}
 
       {/* tap a node: a sheet slides up with its buttons */}
@@ -198,16 +198,16 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
               style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 1300, display: 'flex', justifyContent: 'center' }}>
               <Box sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper', borderRadius: '24px 24px 0 0', p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, .3)}` }}>
                 <Box sx={{ width: 40, height: 4, borderRadius: '4px', bgcolor: 'divider', mx: 'auto', mb: 2 }} />
-                <Typography sx={{ fontWeight: 900, fontSize: '1.2rem' }}>{picks.title}</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading }}>{picks.title}</Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>{picks.sub}</Typography>
                 {picks.note && <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>{picks.note}</Typography>}
                 <Stack spacing={1.25}>
                   {picks.actions.map((a) => (
-                    <Button key={a.label} fullWidth size="large" variant={a.variant} disableElevation onClick={() => { setPicked(null); a.run(); }} sx={{ fontWeight: 800, borderRadius: '14px', py: 1.25 }}>
+                    <Button key={a.label} fullWidth size="large" variant={a.variant} disableElevation onClick={() => { setPicked(null); a.run(); }} sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: '14px', py: 1.25 }}>
                       {a.label}
                     </Button>
                   ))}
-                  {picks.actions.length === 0 && <Button fullWidth size="large" variant="outlined" disabled sx={{ fontWeight: 800, borderRadius: '14px', py: 1.25 }}>Locked</Button>}
+                  {picks.actions.length === 0 && <Button fullWidth size="large" variant="outlined" disabled sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: '14px', py: 1.25 }}>Locked</Button>}
                 </Stack>
               </Box>
             </motion.div>

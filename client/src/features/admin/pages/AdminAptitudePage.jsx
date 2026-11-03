@@ -29,6 +29,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 export default function AdminAptitudePage() {
   const [patterns, setPatterns] = useState([]);
@@ -119,14 +120,14 @@ export default function AdminAptitudePage() {
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 3 }}>
         <Box>
-          <Typography variant="h5" sx={{ fontWeight: 800 }}>
+          <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Aptitude
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Manage patterns and their questions.
           </Typography>
         </Box>
-        <Button variant="contained" disableElevation startIcon={<AddRoundedIcon />} onClick={() => setCreateOpen(true)} sx={{ fontWeight: 700 }}>
+        <Button variant="contained" disableElevation startIcon={<AddRoundedIcon />} onClick={() => setCreateOpen(true)} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
           New pattern
         </Button>
       </Stack>
@@ -145,7 +146,7 @@ export default function AdminAptitudePage() {
         <Grid container spacing={2.5}>
           <Grid item xs={12} md={5}>
             <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+              <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
                 Patterns
               </Typography>
               {patterns.length === 0 ? (
@@ -163,7 +164,7 @@ export default function AdminAptitudePage() {
                         onClick={() => handleSelectPattern(p)}
                         sx={{ cursor: 'pointer' }}
                       >
-                        <TableCell sx={{ fontWeight: 600 }}>
+                        <TableCell sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
                           {p.order}. {p.title}
                           <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
                             {p.totalQuestions} questions
@@ -207,7 +208,7 @@ export default function AdminAptitudePage() {
 
           <Grid item xs={12} md={7}>
             <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+              <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
                 {selectedPattern ? `Questions — ${selectedPattern.title}` : 'Select a pattern'}
               </Typography>
               {!selectedPattern ? (

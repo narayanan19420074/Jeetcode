@@ -1,6 +1,7 @@
 import { Box, ButtonBase, Stack, Typography } from '@mui/material';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import DifficultyChip from '../../components/DifficultyChip';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Phone: tap the problem name -> the description slides in from the right.
 export default function MobileProblemHeader({ problem, onOpen, sx }) {
@@ -11,7 +12,7 @@ export default function MobileProblemHeader({ problem, onOpen, sx }) {
       sx={{ justifyContent: 'flex-start', gap: 1.25, pt: 1.25, pb: 0.75, textAlign: 'left', ...sx }}
     >
       <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Typography noWrap sx={{ fontWeight: 800, fontSize: '1rem', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
           {problem.title}
         </Typography>
         <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mt: 0.5, minWidth: 0 }}>
@@ -24,8 +25,8 @@ export default function MobileProblemHeader({ problem, onOpen, sx }) {
         </Stack>
       </Box>
       <Stack direction="row" sx={{ alignItems: 'center', flexShrink: 0, color: 'primary.main' }}>
-        <Typography sx={{ fontWeight: 600, fontSize: '0.8125rem' }}>Problem</Typography>
-        <ChevronRightRoundedIcon sx={{ fontSize: 20 }} />
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body }}>Problem</Typography>
+        <ChevronRightRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
       </Stack>
     </ButtonBase>
   );

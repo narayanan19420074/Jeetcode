@@ -30,6 +30,7 @@ import {
   clamp,
 } from './CommunityBits';
 import CommentSection from './CommentSection';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 const SORTS = [
   { value: 'active', label: 'Active', icon: <BoltRoundedIcon /> },
@@ -96,9 +97,9 @@ function ThreadPost({ t, onOpen }) {
         onKeyDown={(e) => e.key === 'Enter' && onOpen()}
         sx={{ mt: 1.5, cursor: 'pointer', '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', borderRadius: 2 } }}
       >
-        <Typography sx={{ fontWeight: 700, fontSize: '1.08rem', lineHeight: 1.35 }}>{t.title}</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.35 }}>{t.title}</Typography>
         {t.excerpt && (
-          <Typography color="text.secondary" sx={{ mt: 0.5, fontSize: '0.93rem', lineHeight: 1.55, ...clamp(3) }}>
+          <Typography color="text.secondary" sx={{ mt: 0.5, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.55, ...clamp(3) }}>
             {t.excerpt}
           </Typography>
         )}
@@ -149,7 +150,7 @@ function ThreadDetail({ id, onBack }) {
 
   return (
     <Box>
-      <Button startIcon={<ArrowBackRoundedIcon />} onClick={onBack} sx={{ mb: 1, ml: -1, height: 44, fontWeight: 700 }}>
+      <Button startIcon={<ArrowBackRoundedIcon />} onClick={onBack} sx={{ mb: 1, ml: -1, height: 44, fontWeight: FONT_WEIGHTS.bold }}>
         Discussion
       </Button>
 
@@ -194,7 +195,7 @@ function ThreadDetail({ id, onBack }) {
             </Box>
           ) : (
             <>
-              <Typography sx={{ mt: 2, fontWeight: 800, fontSize: '1.3rem', lineHeight: 1.3 }}>{thread.title}</Typography>
+              <Typography sx={{ mt: 2, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.3 }}>{thread.title}</Typography>
               <Box sx={{ mt: 1.5 }}>
                 <Markdown source={thread.body} />
               </Box>
@@ -207,8 +208,8 @@ function ThreadDetail({ id, onBack }) {
 
           <Divider sx={{ my: 2.5 }} />
           <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
-            <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 22 }} />
-            <Typography sx={{ fontWeight: 700, fontSize: '1.05rem' }}>Comments · {thread.commentCount}</Typography>
+            <ChatBubbleOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }}>Comments · {thread.commentCount}</Typography>
           </Stack>
           <CommentSection kind="threads" targetId={thread._id} onCountChange={(d) => setThread((t) => ({ ...t, commentCount: Math.max(0, t.commentCount + d) }))} />
 
@@ -287,10 +288,10 @@ export default function DiscussionPanel({ slug }) {
   if (view.name === 'new') {
     return (
       <Box>
-        <Button startIcon={<ArrowBackRoundedIcon />} onClick={() => setView({ name: 'list' })} sx={{ mb: 1, ml: -1, height: 44, fontWeight: 700 }}>
+        <Button startIcon={<ArrowBackRoundedIcon />} onClick={() => setView({ name: 'list' })} sx={{ mb: 1, ml: -1, height: 44, fontWeight: FONT_WEIGHTS.bold }}>
           Discussion
         </Button>
-        <Typography sx={{ fontWeight: 800, fontSize: '1.3rem', mb: 2.5 }}>New topic</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, mb: 2.5 }}>New topic</Typography>
         <ThreadForm
           submitLabel="Post"
           onCancel={() => setView({ name: 'list' })}

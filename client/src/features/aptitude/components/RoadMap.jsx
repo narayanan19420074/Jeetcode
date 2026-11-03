@@ -12,7 +12,7 @@ import Alien3D from './Alien3D';
 import { starsFor, testXp } from './gamification';
 import { tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
 
 // Level map. Follows the app theme (dark / light) and the product palette:
 // slate surfaces, blue = current, green = cleared. A slim road winds through
@@ -154,17 +154,17 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
           '&:active': status === 'locked' ? undefined : { transform: 'scale(0.97)' },
         }}
       >
-        {status === 'locked' && <LockRoundedIcon sx={{ color: text.secondary, fontSize: 24 }} />}
-        {passed && narrow && <Typography sx={{ color: COLOR_PALETTE.white, fontWeight: 800, fontSize: 20, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
-        {passed && !narrow && (isLast ? <EmojiEventsRoundedIcon sx={{ color: COLOR_PALETTE.white, fontSize: 30 }} /> : <StarRoundedIcon sx={{ color: COLOR_PALETTE.white, fontSize: 32 }} />)}
-        {status === 'current' && <Typography sx={{ color: COLOR_PALETTE.white, fontWeight: 800, fontSize: narrow ? 20 : 24, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
+        {status === 'locked' && <LockRoundedIcon sx={{ color: text.secondary, fontSize: FONT_SIZES.display }} />}
+        {passed && narrow && <Typography sx={{ color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontFamily: FONTS.mono }}>{index + 1}</Typography>}
+        {passed && !narrow && (isLast ? <EmojiEventsRoundedIcon sx={{ color: COLOR_PALETTE.white, fontSize: FONT_SIZES.hero }} /> : <StarRoundedIcon sx={{ color: COLOR_PALETTE.white, fontSize: FONT_SIZES.hero }} />)}
+        {status === 'current' && <Typography sx={{ color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: narrow ? FONT_SIZES.heading : FONT_SIZES.display, fontFamily: FONTS.mono }}>{index + 1}</Typography>}
       </Box>
 
       {/* compact phone label: stars on the disc, short title underneath */}
       {narrow && passed && (
         <Box sx={{ position: 'absolute', left: '50%', bottom: -9, transform: 'translateX(-50%)', display: 'flex', zIndex: 3, pointerEvents: 'none' }}>
           {[0, 1, 2].map((n) => (
-            <StarRoundedIcon key={n} sx={{ fontSize: 14, mx: '-1px', color: n < stars ? warning.main : 'action.disabled', filter: `drop-shadow(0 1px 1px ${withAlpha(COLOR_PALETTE.black, .35)})` }} />
+            <StarRoundedIcon key={n} sx={{ fontSize: FONT_SIZES.body, mx: '-1px', color: n < stars ? warning.main : 'action.disabled', filter: `drop-shadow(0 1px 1px ${withAlpha(COLOR_PALETTE.black, .35)})` }} />
           ))}
         </Box>
       )}
@@ -178,8 +178,8 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
             transform: 'translateX(-50%)',
             width: 124,
             textAlign: 'center',
-            fontWeight: 700,
-            fontSize: '0.82rem',
+            fontWeight: FONT_WEIGHTS.bold,
+            fontSize: FONT_SIZES.body,
             lineHeight: 1.2,
             px: 0.5,
             py: 0.15,
@@ -215,27 +215,27 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
           opacity: status === 'locked' ? 0.78 : 1,
         }}
       >
-        <Typography variant="overline" sx={{ display: 'block', lineHeight: 1.2, fontWeight: 800, letterSpacing: '0.1em', color: status === 'current' ? primary.main : status === 'completed' ? success.main : 'text.secondary' }}>
+        <Typography variant="overline" sx={{ display: 'block', lineHeight: 1.2, fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.1em', color: status === 'current' ? primary.main : status === 'completed' ? success.main : 'text.secondary' }}>
           Level {index + 1}
         </Typography>
-        <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.3, color: 'text.primary' }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.3, color: 'text.primary' }}>
           {pattern.title}
         </Typography>
 
         {status === 'locked' ? (
           <Typography variant="caption" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5, justifyContent: below ? 'center' : labelOnRight ? 'flex-start' : 'flex-end' }}>
-            <LockRoundedIcon sx={{ fontSize: 13 }} /> Clear Level {index} to unlock
+            <LockRoundedIcon sx={{ fontSize: FONT_SIZES.body }} /> Clear Level {index} to unlock
           </Typography>
         ) : (
           <>
             <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap', mt: 0.75, justifyContent: below ? 'center' : labelOnRight ? 'flex-start' : 'flex-end' }}>
-              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.25, px: 0.75, py: 0.15, borderRadius: '6px', bgcolor: alpha(warning.main, 0.14), color: dark ? warning.light : warning.dark, fontSize: 11.5, fontWeight: 800 }}>
-                <BoltRoundedIcon sx={{ fontSize: 13 }} /> {passed ? '' : '+'}
+              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.25, px: 0.75, py: 0.15, borderRadius: '6px', bgcolor: alpha(warning.main, 0.14), color: dark ? warning.light : warning.dark, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
+                <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.body }} /> {passed ? '' : '+'}
                 {testXp(100, true)} XP
               </Box>
               {pattern.timeLimitMinutes ? (
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.25, px: 0.75, py: 0.15, borderRadius: '6px', bgcolor: 'action.hover', color: 'text.secondary', fontSize: 11.5, fontWeight: 700 }}>
-                  <TimerRoundedIcon sx={{ fontSize: 13 }} /> {pattern.timeLimitMinutes} min
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.25, px: 0.75, py: 0.15, borderRadius: '6px', bgcolor: 'action.hover', color: 'text.secondary', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
+                  <TimerRoundedIcon sx={{ fontSize: FONT_SIZES.body }} /> {pattern.timeLimitMinutes} min
                 </Box>
               ) : null}
             </Box>
@@ -255,7 +255,7 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
                     initial={{ scale: 0, rotate: -40 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ delay: 0.8 + index * 0.1 + n * 0.12, type: 'spring', stiffness: 300 }}
-                    sx={{ fontSize: 17, color: n < stars ? warning.main : 'action.disabled' }}
+                    sx={{ fontSize: FONT_SIZES.subheading, color: n < stars ? warning.main : 'action.disabled' }}
                   />
                 ))}
               </Box>
@@ -350,15 +350,15 @@ function PhoneLevelNode({ pattern, index, status, x, y, onClick }) {
           '&:focus-visible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 4 },
         }}
       >
-        {locked && <LockRoundedIcon aria-hidden sx={{ fontSize: 28, opacity: 0.8 }} />}
-        {status === 'completed' && <CheckRoundedIcon aria-hidden sx={{ fontSize: 34 }} />}
-        {status === 'current' && <Typography component="span" sx={{ fontWeight: 700, fontSize: 26, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{index + 1}</Typography>}
+        {locked && <LockRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.displayLg, opacity: 0.8 }} />}
+        {status === 'completed' && <CheckRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.hero }} />}
+        {status === 'current' && <Typography component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{index + 1}</Typography>}
       </Box>
 
       {status === 'completed' && (
         <Box aria-hidden sx={{ position: 'absolute', left: '50%', bottom: -12, transform: 'translateX(-50%)', display: 'flex', zIndex: 3, pointerEvents: 'none' }}>
           {[0, 1, 2].map((n) => (
-            <StarRoundedIcon key={n} sx={{ fontSize: 16, mx: '-1px', color: n < stars ? PHONE_STAR : pal.divider, filter: `drop-shadow(0 0 2px ${pal.bg})` }} />
+            <StarRoundedIcon key={n} sx={{ fontSize: FONT_SIZES.title, mx: '-1px', color: n < stars ? PHONE_STAR : pal.divider, filter: `drop-shadow(0 0 2px ${pal.bg})` }} />
           ))}
         </Box>
       )}
@@ -372,9 +372,9 @@ function PhoneLevelNode({ pattern, index, status, x, y, onClick }) {
           transform: 'translateX(-50%)',
           width: 116,
           textAlign: 'center',
-          fontSize: 14,
+          fontSize: FONT_SIZES.body,
           lineHeight: '17px',
-          fontWeight: 500,
+          fontWeight: FONT_WEIGHTS.medium,
           letterSpacing: LIB_TRACKING,
           px: '4px',
           py: '1px',
@@ -470,8 +470,8 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0, phone = false }) 
                 width: 104,
                 mb: 0.5,
                 ...(phone
-                  ? { height: 32, borderRadius: 999, bgcolor: LIB_ACCENT, fontSize: 14, fontWeight: 500, letterSpacing: LIB_TRACKING, boxShadow: 'none' }
-                  : { py: 0.6, borderRadius: '8px', bgcolor: 'primary.main', fontSize: 12.5, fontWeight: 700, boxShadow: (t) => `0 8px 20px ${alpha(t.palette.primary.main, 0.45)}` }),
+                  ? { height: 32, borderRadius: 999, bgcolor: LIB_ACCENT, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, boxShadow: 'none' }
+                  : { py: 0.6, borderRadius: '8px', bgcolor: 'primary.main', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, boxShadow: (t) => `0 8px 20px ${alpha(t.palette.primary.main, 0.45)}` }),
                 border: 0,
                 color: COLOR_PALETTE.white,
                 fontFamily: 'inherit',
@@ -603,11 +603,11 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
               animate={{ opacity: 1, x: 0 }}
               sx={
                 compact
-                  ? { display: 'flex', alignItems: 'center', gap: 0.5, height: 30, px: '12px', borderRadius: 999, bgcolor: pal.player, color: pal.text, fontWeight: 500, fontSize: 14, letterSpacing: LIB_TRACKING }
-                  : { display: 'flex', alignItems: 'center', gap: 0.5, px: 1.25, py: 0.5, borderRadius: '8px', bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: 800, fontSize: 11.5, letterSpacing: '0.1em', boxShadow: (t) => `0 6px 16px ${alpha(t.palette.primary.main, 0.4)}` }
+                  ? { display: 'flex', alignItems: 'center', gap: 0.5, height: 30, px: '12px', borderRadius: 999, bgcolor: pal.player, color: pal.text, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }
+                  : { display: 'flex', alignItems: 'center', gap: 0.5, px: 1.25, py: 0.5, borderRadius: '8px', bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, letterSpacing: '0.1em', boxShadow: (t) => `0 6px 16px ${alpha(t.palette.primary.main, 0.4)}` }
               }
             >
-              <FlagRoundedIcon sx={{ fontSize: compact ? 16 : 14 }} /> {compact ? 'Start' : 'START'}
+              <FlagRoundedIcon sx={{ fontSize: compact ? FONT_SIZES.title : FONT_SIZES.body }} /> {compact ? 'Start' : 'START'}
             </Box>
           </Box>
 

@@ -5,6 +5,7 @@ import { authApi } from '../../api/authApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import AuthShell, { AuthField } from './AuthShell';
 import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
@@ -59,7 +60,7 @@ export default function ForgotPasswordPage() {
   };
 
   const footer = (
-    <Link component={RouterLink} to="/login" underline="hover" sx={{ fontWeight: 600 }}>
+    <Link component={RouterLink} to="/login" underline="hover" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
       Back to sign in
     </Link>
   );
@@ -69,7 +70,7 @@ export default function ForgotPasswordPage() {
       <AuthShell title="Password updated" footer={footer}>
         <Alert severity="success">
           Your password has been updated and you have been signed out on all devices.{' '}
-          <Link component={RouterLink} to="/login" sx={{ fontWeight: 600 }}>Sign in</Link>
+          <Link component={RouterLink} to="/login" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>Sign in</Link>
         </Alert>
       </AuthShell>
     );
@@ -109,12 +110,12 @@ export default function ForgotPasswordPage() {
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
             />
-            <Button type="submit" variant="contained" disableElevation fullWidth disabled={busy || code.length !== 6} sx={{ fontWeight: 600 }}>
+            <Button type="submit" variant="contained" disableElevation fullWidth disabled={busy || code.length !== 6} sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
               {busy ? <CircularProgress size={20} color="inherit" /> : 'Update password'}
             </Button>
             <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center' }}>
               Did not get it?{' '}
-              <Link component="button" type="button" onClick={askAgain} underline="hover" sx={{ fontWeight: 600, verticalAlign: 'baseline' }}>
+              <Link component="button" type="button" onClick={askAgain} underline="hover" sx={{ fontWeight: FONT_WEIGHTS.semibold, verticalAlign: 'baseline' }}>
                 Send a new code
               </Link>
               . You can ask once a minute.
@@ -142,7 +143,7 @@ export default function ForgotPasswordPage() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <TurnstileWidget ref={captchaRef} onToken={setCaptcha} action="forgot-password" />
-          <Button type="submit" variant="contained" disableElevation fullWidth disabled={busy || (Boolean(TURNSTILE_SITE_KEY) && !captcha)} sx={{ fontWeight: 600 }}>
+          <Button type="submit" variant="contained" disableElevation fullWidth disabled={busy || (Boolean(TURNSTILE_SITE_KEY) && !captcha)} sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
             {busy ? <CircularProgress size={20} color="inherit" /> : 'Send code'}
           </Button>
         </Stack>

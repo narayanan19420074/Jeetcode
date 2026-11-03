@@ -1,4 +1,4 @@
-import { RADII, STATES } from './designTokens';
+import { FONT_SCALE, RADII, STATES } from './designTokens';
 import { buildInteractiveOverrides } from './buildInteractiveOverrides';
 import { rootCssVariables } from './cssVariables';
 import { buildSpinnerOverrides, spinnerKeyframes } from './spinner';
@@ -11,8 +11,12 @@ const FOCUS_RING_SELECTOR = 'a, button, [role="button"], [role="tab"], [role="me
 const focusRingCss = ({ palette }) =>
   `:is(${FOCUS_RING_SELECTOR}):focus-visible { outline: ${STATES.focusRing.width}px solid ${palette.primary.main}; outline-offset: ${STATES.focusRing.offset}px; }`;
 
-const buildGlobalCss = ({ mode, reduceMotion, underlineLinks }, theme) => `
+// Settings -> Text size: the whole product is sized in rem, so scaling the root font size scales all text at once.
+const rootFontSizeCss = (fontScale) => `html { font-size: ${Math.round((FONT_SCALE[fontScale] ?? 1) * 100)}%; }`;
+
+const buildGlobalCss = ({ mode, reduceMotion, underlineLinks, fontScale }, theme) => `
   ${spinnerKeyframes}
+  ${rootFontSizeCss(fontScale)}
   ${rootCssVariables(mode)}
   ${focusRingCss(theme)}
   ${underlineLinks ? 'a { text-decoration: underline !important; }' : ''}
@@ -63,10 +67,10 @@ const surfaceOverrides = () => ({
   MuiDrawer: { styleOverrides: { paper: { backgroundImage: 'none' } } },
 });
 
-export function buildComponents({ mode, density, reduceMotion, underlineLinks }) {
+export function buildComponents({ mode, density, reduceMotion, underlineLinks, fontScale }) {
   const compact = density === 'compact';
   return {
-    MuiCssBaseline: { styleOverrides: (theme) => buildGlobalCss({ mode, reduceMotion, underlineLinks }, theme) },
+    MuiCssBaseline: { styleOverrides: (theme) => buildGlobalCss({ mode, reduceMotion, underlineLinks, fontScale }, theme) },
     ...(compact ? compactDefaults : {}),
     ...buildInteractiveOverrides(compact),
     MuiCircularProgress: buildSpinnerOverrides(mode),

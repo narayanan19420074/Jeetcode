@@ -5,7 +5,7 @@ import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
 import CallEndRoundedIcon from '@mui/icons-material/CallEndRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Mini floating call, drawn like a TV remote: the friend's video is the centre, and a ring
 // of three big segment buttons (maximize / mute / end call) wraps all the way around it,
@@ -187,12 +187,12 @@ export default function MiniCallBubble({ remoteStream, friendName, micOn, hasCal
           display: 'grid',
           placeItems: 'center',
           color: 'text.primary',
-          fontWeight: 700,
-          fontSize: 36,
+          fontWeight: FONT_WEIGHTS.bold,
+          fontSize: FONT_SIZES.heroLg,
         })}
       >
         <Vid stream={remoteStream} show={hasVideo} />
-        {!hasVideo && (initial || <PersonRoundedIcon sx={{ fontSize: 40, opacity: 0.7 }} />)}
+        {!hasVideo && (initial || <PersonRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, opacity: 0.7 }} />)}
       </Box>
 
       {/* ring of three keys */}
@@ -262,7 +262,7 @@ export default function MiniCallBubble({ remoteStream, friendName, micOn, hasCal
               pointerEvents: 'none',
               color: p.on ? COLOR_PALETTE.white : accent,
               opacity: p.disabled ? 0.5 : 1,
-              '& svg': { fontSize: 21 },
+              '& svg': { fontSize: FONT_SIZES.heading },
             }}
           >
             <p.Icon />

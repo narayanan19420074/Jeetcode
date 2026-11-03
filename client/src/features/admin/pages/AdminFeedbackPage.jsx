@@ -25,6 +25,7 @@ import {
 } from '@mui/material';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const STATUSES = ['open', 'in-progress', 'resolved'];
 const TYPES = ['bug', 'feature', 'question', 'payment', 'account', 'other'];
@@ -72,7 +73,7 @@ export default function AdminFeedbackPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
         Support Inbox
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -118,14 +119,14 @@ export default function AdminFeedbackPage() {
                   {items.map((f) => (
                     <TableRow key={f._id} hover sx={{ verticalAlign: 'top' }}>
                       <TableCell sx={{ minWidth: 160 }}>
-                        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
                           {f.user ? `${f.user.name} (@${f.user.handle})` : f.name || 'Guest'}
                         </Typography>
                         <Typography variant="caption" color="text.secondary" sx={{ wordBreak: 'break-all' }}>{f.email}</Typography>
                       </TableCell>
                       <TableCell><Chip size="small" variant="outlined" label={f.type} color={TYPE_COLOR[f.type] || 'default'} /></TableCell>
                       <TableCell sx={{ minWidth: 280, maxWidth: 480 }}>
-                        {f.subject && <Typography variant="body2" sx={{ fontWeight: 700 }}>{f.subject}</Typography>}
+                        {f.subject && <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{f.subject}</Typography>}
                         <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{f.message}</Typography>
                         {f.pageUrl && <Typography variant="caption" color="text.secondary" sx={{ display: 'block', wordBreak: 'break-all' }}>Page: {f.pageUrl}</Typography>}
                         {f.adminNote && <Typography variant="caption" color="warning.main" sx={{ display: 'block' }}>Note: {f.adminNote}</Typography>}

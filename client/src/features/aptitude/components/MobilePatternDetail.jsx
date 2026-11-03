@@ -7,14 +7,14 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LIB_TRACKING, LibraryFont, libBackBtnSx, libChipSx, libPanelSx, libSectionTitleSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { formatDuration } from './aptitudeUi';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // Phone layout of a single Aptitude topic (for example Number System). It follows the phone Problems and
 // Aptitude pages: same page padding, back button, centred header, progress bar, row sizes and type scale.
 // It only shows what a learner needs: overall progress, the three ways to study, topics and past tests.
 
-const ROW_TITLE = { fontWeight: 500, fontSize: 18, lineHeight: '28px', letterSpacing: LIB_TRACKING };
-const ROW_META = { fontSize: 15, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' };
+const ROW_TITLE = { fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING };
+const ROW_META = { fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' };
 
 const accuracyColor = (acc) => (acc == null ? 'var(--lib-muted)' : acc >= 75 ? DIFF_COLOR.Easy : acc >= 50 ? DIFF_COLOR.Medium : DIFF_COLOR.Hard);
 
@@ -43,7 +43,7 @@ function Row({ title, meta, metaColor, value, valueColor, disabled, solved, onCl
           <Typography noWrap sx={{ ...ROW_TITLE, minWidth: 0 }}>
             {title}
           </Typography>
-          {solved && <CheckCircleRoundedIcon aria-label="Completed" sx={{ fontSize: 20, color: DIFF_COLOR.Easy, flexShrink: 0 }} />}
+          {solved && <CheckCircleRoundedIcon aria-label="Completed" sx={{ fontSize: FONT_SIZES.heading, color: DIFF_COLOR.Easy, flexShrink: 0 }} />}
         </Stack>
         <Typography noWrap sx={{ ...ROW_META, mt: 0.5, color: metaColor || 'var(--lib-muted)' }}>
           {meta}
@@ -54,7 +54,7 @@ function Row({ title, meta, metaColor, value, valueColor, disabled, solved, onCl
           {value}
         </Typography>
       )}
-      {!disabled && <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: 22, color: 'var(--lib-muted)', flexShrink: 0 }} />}
+      {!disabled && <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, color: 'var(--lib-muted)', flexShrink: 0 }} />}
     </ButtonBase>
   );
 }
@@ -129,15 +129,15 @@ export default function MobilePatternDetail({
       {/* Header */}
       <Box sx={{ textAlign: 'center', mt: 1.5 }}>
         <HeaderTile>
-          <CalculateRoundedIcon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
+          <CalculateRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg, color: COLOR_PALETTE.white }} />
         </HeaderTile>
         <Typography
           component="h1"
-          sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+          sx={{ mt: 1.5, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
         >
           {pattern.title}
         </Typography>
-        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{pattern.category || 'Aptitude'}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{pattern.category || 'Aptitude'}</Typography>
 
         <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2.5 }}>
           <Box
@@ -150,9 +150,9 @@ export default function MobilePatternDetail({
           >
             <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
           </Box>
-          <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {totals.solved}
-            <Box component="span" sx={{ color: pal.muted, fontWeight: 400 }}>
+            <Box component="span" sx={{ color: pal.muted, fontWeight: FONT_WEIGHTS.regular }}>
               /{totals.total}
             </Box>
           </Typography>

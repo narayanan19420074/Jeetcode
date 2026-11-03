@@ -44,14 +44,14 @@ import ActivityFeed from './ActivityFeed';
 import FriendChat, { ChatPanel } from './FriendChat';
 import MobileFriends, { MobileShell } from './MobileFriends';
 import { FriendProfilePanel } from './FriendProfileDialog';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const SORTS = [['recent', 'Recent chats'], ['online', 'Online first'], ['points', 'Most points'], ['name', 'Name A to Z']];
 const REQUEST_TABS = ['friends', 'requests', 'sent'];
 
 // Soft tonal pill button used for "Add friend", "Accept" and friends' small actions.
 const pillBtn = (color) => (t) => ({
-  height: 32, px: 1.5, flexShrink: 0, borderRadius: `${WS.radius + 2}px`, fontSize: 12.5, fontWeight: 700, textTransform: 'none', whiteSpace: 'nowrap',
+  height: 32, px: 1.5, flexShrink: 0, borderRadius: `${WS.radius + 2}px`, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', whiteSpace: 'nowrap',
   color: t.palette[color].main, bgcolor: alpha(t.palette[color].main, 0.12), transition: 'background-color .18s, transform .12s',
   '&:hover': { bgcolor: alpha(t.palette[color].main, 0.22) },
   '&:active': { transform: 'scale(0.96)' },
@@ -110,8 +110,8 @@ function InviteBanner({ handle, onDone }) {
       <Box sx={[surface, (t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.25, borderColor: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.06) })]}>
         <PersonAvatar person={state.user} size={38} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: 14, lineHeight: 1.35 }}>{state.user.name}</Typography>
-          <Typography noWrap sx={{ fontSize: 12.5, color: 'text.secondary' }}>invited you to be friends</Typography>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, lineHeight: 1.35 }}>{state.user.name}</Typography>
+          <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary' }}>invited you to be friends</Typography>
         </Box>
         <WsIconButton title="Accept" disabled={busy === 'invite'} onClick={accept} sx={tint('success')}><CheckRoundedIcon /></WsIconButton>
         <WsIconButton title="Not now" onClick={onDone} sx={tint()}><CloseRoundedIcon /></WsIconButton>
@@ -282,7 +282,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     if (sentIds.has(p.userId)) {
       return (
         <Tooltip title="Waiting for them to accept">
-          <Box component="span" sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.6, height: 32, px: 1.25, borderRadius: `${WS.radius + 2}px`, fontSize: 12.5, fontWeight: 700, whiteSpace: 'nowrap', color: 'text.secondary', bgcolor: wsSurface(t).raised, '& svg': { fontSize: 16 } })}>
+          <Box component="span" sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.6, height: 32, px: 1.25, borderRadius: `${WS.radius + 2}px`, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', color: 'text.secondary', bgcolor: wsSurface(t).raised, '& svg': { fontSize: FONT_SIZES.title } })}>
             <ScheduleSendRoundedIcon />Request sent
           </Box>
         </Tooltip>
@@ -318,10 +318,10 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const playerFooter = (
     <>
       {global.rows === null && global.loading && <SkeletonRows count={5} />}
-      {global.error && <Typography sx={{ px: 2, py: 1.25, fontSize: 13, color: 'text.secondary' }}>{global.error}</Typography>}
+      {global.error && <Typography sx={{ px: 2, py: 1.25, fontSize: FONT_SIZES.body, color: 'text.secondary' }}>{global.error}</Typography>}
       {global.hasMore && (
         <Box sx={{ textAlign: 'center', py: 1.5 }}>
-          <Button size="small" onClick={global.loadMore} disabled={global.loading} sx={{ textTransform: 'none', fontWeight: 600 }}>{global.loading ? 'Loading…' : 'Show more players'}</Button>
+          <Button size="small" onClick={global.loadMore} disabled={global.loading} sx={{ textTransform: 'none', fontWeight: FONT_WEIGHTS.semibold }}>{global.loading ? 'Loading…' : 'Show more players'}</Button>
         </Box>
       )}
     </>
@@ -344,7 +344,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     const rows = incoming.filter((r) => nameMatch(r.user));
     body = (
       <>
-        <SectionLabel right={rows.length > 0 ? <Typography sx={{ fontSize: 12, color: 'text.disabled', fontWeight: 600 }}>{rows.length}</Typography> : null}>Friend requests</SectionLabel>
+        <SectionLabel right={rows.length > 0 ? <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.disabled', fontWeight: FONT_WEIGHTS.semibold }}>{rows.length}</Typography> : null}>Friend requests</SectionLabel>
         {rows.length === 0 && <EmptyNote icon={<MarkunreadRoundedIcon />} title="No friend requests">When someone sends you a request, it shows up here.</EmptyNote>}
         {rows.map((r, i) => (
           <Reveal key={r.requestId} index={i}>
@@ -366,7 +366,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     const rows = outgoing.filter((r) => nameMatch(r.user));
     body = (
       <>
-        <SectionLabel right={rows.length > 0 ? <Typography sx={{ fontSize: 12, color: 'text.disabled', fontWeight: 600 }}>{rows.length}</Typography> : null}>Sent requests</SectionLabel>
+        <SectionLabel right={rows.length > 0 ? <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.disabled', fontWeight: FONT_WEIGHTS.semibold }}>{rows.length}</Typography> : null}>Sent requests</SectionLabel>
         {rows.length === 0 && <EmptyNote icon={<ScheduleSendRoundedIcon />} title="No sent requests">Requests you send wait here until the other person accepts.</EmptyNote>}
         {rows.map((r, i) => (
           <Reveal key={r.requestId} index={i}>
@@ -476,7 +476,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       {/* sort menu */}
       <Menu anchorEl={sortAnchor} open={Boolean(sortAnchor)} onClose={() => setSortAnchor(null)}>
         {SORTS.map(([key, label]) => (
-          <MenuItem key={key} selected={sortBy === key} onClick={() => { setSortBy(key); setSortAnchor(null); }} sx={{ minHeight: 42, fontSize: 14 }}>
+          <MenuItem key={key} selected={sortBy === key} onClick={() => { setSortBy(key); setSortAnchor(null); }} sx={{ minHeight: 42, fontSize: FONT_SIZES.body }}>
             <ListItemIcon>{sortBy === key ? <CheckCircleRoundedIcon fontSize="small" color="primary" /> : null}</ListItemIcon>{label}
           </MenuItem>
         ))}
@@ -500,7 +500,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
       )}
 
       <Dialog open={Boolean(confirm)} onClose={() => setConfirm(null)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 700 }}>Remove friend?</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Remove friend?</DialogTitle>
         <DialogContent>
           <DialogContentText>
             {confirm?.name} (@{confirm?.handle}) will leave your friends list and friends leaderboard. You can add them again later.
@@ -599,7 +599,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', minHeight: 68, px: 2, pt: 1.5, pb: 1, flexShrink: 0 }}>
             <Box sx={{ minWidth: 0, flex: 1, pr: 1 }}>
               <motion.div key={title} initial={reduce ? false : { opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}>
-                <Typography noWrap sx={{ fontWeight: 800, fontSize: 19, lineHeight: 1.25, letterSpacing: -0.3 }}>{title}</Typography>
+                <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.25, letterSpacing: -0.3 }}>{title}</Typography>
               </motion.div>
               <LiveLine text={subtitle} online={view === 'find' || view === 'activity' ? 0 : onlineCount} />
             </Box>
@@ -624,13 +624,13 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
                 value={q}
                 onChange={(e) => setQ(e.target.value.slice(0, 40))}
                 sx={(t) => ({
-                  '& .MuiOutlinedInput-root': { height: 42, borderRadius: '12px', bgcolor: wsSurface(t).raised, fontSize: 14, transition: 'box-shadow .18s' },
+                  '& .MuiOutlinedInput-root': { height: 42, borderRadius: '12px', bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.body, transition: 'box-shadow .18s' },
                   '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${alpha(t.palette.primary.main, 0.45)}` },
                   '& fieldset': { border: 'none' },
                 })}
                 slotProps={{
                   input: {
-                    startAdornment: <InputAdornment position="start"><SearchRoundedIcon sx={{ fontSize: 20 }} /></InputAdornment>,
+                    startAdornment: <InputAdornment position="start"><SearchRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} /></InputAdornment>,
                     endAdornment: q ? (
                       <InputAdornment position="end">
                         <WsIconButton title="Clear search" onClick={() => setQ('')} sx={{ width: 26, height: 26 }}><CloseRoundedIcon sx={{ fontSize: '16px !important' }} /></WsIconButton>
@@ -698,8 +698,8 @@ export default function FriendsView({ isAuthenticated, user, inviteHandle, onCle
   if (!isAuthenticated) {
     const card = (
       <Box sx={[surface, { p: 4, textAlign: 'center' }]}>
-        <PeopleAltRoundedIcon sx={{ fontSize: 36, color: 'primary.main' }} />
-        <Typography sx={{ fontWeight: 800, mt: 1 }}>Compete with friends</Typography>
+        <PeopleAltRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: 'primary.main' }} />
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 1 }}>Compete with friends</Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 0.75, mb: 2.5 }}>
           {inviteHandle ? `@${inviteHandle} invited you. Log in or sign up to accept.` : 'Log in to add friends and see them on the leaderboard.'}
         </Typography>

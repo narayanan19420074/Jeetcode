@@ -12,7 +12,7 @@ import TagRoundedIcon from '@mui/icons-material/TagRounded';
 import { tierFor, TIERS } from './tiers';
 import { AvatarRing, CountUp, MEDAL, YouChip, grad, mono } from './lbShared';
 import { ACCENT, lbTokens } from './lbTheme';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Side panel of the leaderboard. Same neumorphic panel as the board (EmpireCard). In the middle sits a
 // "mirror frame": raised bezel + pressed lip around a vivid glass pane. The pane shows only what matters
@@ -41,7 +41,7 @@ const glass = {
   backdropFilter: 'blur(16px) saturate(160%)', WebkitBackdropFilter: 'blur(16px) saturate(160%)',
   boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.4)}, 0 12px 24px -14px ${withAlpha(COLOR_PALETTE.custom.indigo140A3C, 0.6)}`,
 };
-const cap = { fontSize: 11, fontWeight: 800, letterSpacing: 0.8, textTransform: 'uppercase', color: WHITE_SOFT, textShadow: SHADOW_TXT };
+const cap = { fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.8, textTransform: 'uppercase', color: WHITE_SOFT, textShadow: SHADOW_TXT };
 
 function GlassStat({ label, children }) {
   return (
@@ -61,16 +61,16 @@ function SolvedCard({ row, track, points }) {
   const diff = [['Easy', row.easy, points.easy, DIFF.easy], ['Medium', row.medium, points.medium, DIFF.medium], ['Hard', row.hard, points.hard, DIFF.hard]];
   const chip = (Icon, label, n, color) => (
     <Box sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 0.75, py: 0.7, px: 1, borderRadius: '12px', bgcolor: withAlpha(COLOR_PALETTE.custom.indigo140A3C, 0.35) }}>
-      <Icon sx={{ fontSize: 18, color }} />
-      <Typography sx={{ flex: 1, fontSize: 13, fontWeight: 700, textShadow: SHADOW_TXT }}>{label}</Typography>
-      <Typography sx={[{ fontWeight: 900, fontSize: 16, lineHeight: 1 }, mono]}>{n}</Typography>
+      <Icon sx={{ fontSize: FONT_SIZES.subheading, color }} />
+      <Typography sx={{ flex: 1, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, textShadow: SHADOW_TXT }}>{label}</Typography>
+      <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, lineHeight: 1 }, mono]}>{n}</Typography>
     </Box>
   );
   return (
     <Box sx={[glass, { p: 1.5, display: 'grid', gap: 1.1 }]}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Typography sx={cap}>{title}</Typography>
-        <Typography sx={[{ fontWeight: 900, fontSize: 30, lineHeight: 1, textShadow: SHADOW_TXT }, mono]}>{big.toLocaleString()}</Typography>
+        <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.hero, lineHeight: 1, textShadow: SHADOW_TXT }, mono]}>{big.toLocaleString()}</Typography>
       </Box>
       {track === 'overall' && (
         <Box sx={{ display: 'flex', gap: 0.9 }}>
@@ -82,15 +82,15 @@ function SolvedCard({ row, track, points }) {
         <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 0.9 }}>
           {diff.map(([l, n, pts, color]) => (
             <Box key={l} sx={{ py: 0.7, textAlign: 'center', borderRadius: '12px', bgcolor: withAlpha(COLOR_PALETTE.custom.indigo140A3C, 0.35), minWidth: 0 }}>
-              <Typography sx={[{ fontWeight: 900, fontSize: 20, lineHeight: 1.15, color }, mono]}>{n}</Typography>
-              <Typography noWrap sx={{ fontSize: 11.5, fontWeight: 700, textShadow: SHADOW_TXT }}>{l}</Typography>
-              <Typography noWrap sx={[{ fontSize: 10.5, color: WHITE_SOFT }, mono]}>{n * pts} pts</Typography>
+              <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.15, color }, mono]}>{n}</Typography>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, textShadow: SHADOW_TXT }}>{l}</Typography>
+              <Typography noWrap sx={[{ fontSize: FONT_SIZES.micro, color: WHITE_SOFT }, mono]}>{n * pts} pts</Typography>
             </Box>
           ))}
         </Box>
       )}
       {track === 'aptitude' && (
-        <Typography sx={{ fontSize: 13, fontWeight: 700, textShadow: SHADOW_TXT }}>
+        <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, textShadow: SHADOW_TXT }}>
           {(apt * points.aptitude).toLocaleString()} pts from aptitude
         </Typography>
       )}
@@ -121,15 +121,15 @@ function PlayerFace({ row, track, points, isMe, learners, topPercent, loading })
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
         <AvatarRing src={row.avatarUrl} name={row.name} size={54} a={medal ? medal.a : COLOR_PALETTE.white} b={medal ? medal.b : GOLD} ring={3} inner={withAlpha(COLOR_PALETTE.white, 0.9)} />
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography noWrap sx={{ fontWeight: 900, fontSize: 18, lineHeight: 1.25, textShadow: SHADOW_TXT }}>{row.name}{isMe && <YouChip />}</Typography>
-          <Typography noWrap sx={{ fontSize: 13, color: WHITE_SOFT, textShadow: SHADOW_TXT }}>@{row.handle}</Typography>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.25, textShadow: SHADOW_TXT }}>{row.name}{isMe && <YouChip />}</Typography>
+          <Typography noWrap sx={{ fontSize: FONT_SIZES.body, color: WHITE_SOFT, textShadow: SHADOW_TXT }}>@{row.handle}</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.4, flexWrap: 'wrap' }}>
-            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.9, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.custom.indigo140A3C, 0.38), fontSize: 11.5, fontWeight: 800, lineHeight: 1.7 }}>
-              <WorkspacePremiumRoundedIcon sx={{ fontSize: 14, color: COLOR_PALETTE.amber[200] }} />{tier.name}
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.9, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.custom.indigo140A3C, 0.38), fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.7 }}>
+              <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: COLOR_PALETTE.amber[200] }} />{tier.name}
             </Box>
             {isMe && topPercent && learners > 0 && (
               <Tooltip title={`Top ${topPercent}% of ${learners.toLocaleString()} ranked players`}>
-                <Box sx={{ px: 0.9, borderRadius: 99, fontSize: 11.5, fontWeight: 800, lineHeight: 1.7, color: COLOR_PALETTE.amber[950], bgcolor: COLOR_PALETTE.amber[200] }}>Top {topPercent}%</Box>
+                <Box sx={{ px: 0.9, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.7, color: COLOR_PALETTE.amber[950], bgcolor: COLOR_PALETTE.amber[200] }}>Top {topPercent}%</Box>
               </Tooltip>
             )}
           </Box>
@@ -138,14 +138,14 @@ function PlayerFace({ row, track, points, isMe, learners, topPercent, loading })
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 1 }}>
         <GlassStat label="Rank">
-          <Typography noWrap sx={[{ fontWeight: 900, fontSize: 24, lineHeight: 1.3, ...(medal ? { background: grad(medal), WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' } : { textShadow: SHADOW_TXT }) }, mono]}>#{row.rank}</Typography>
+          <Typography noWrap sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, lineHeight: 1.3, ...(medal ? { background: grad(medal), WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' } : { textShadow: SHADOW_TXT }) }, mono]}>#{row.rank}</Typography>
         </GlassStat>
         <GlassStat label="Points">
-          <Typography noWrap sx={[{ fontWeight: 900, fontSize: 24, lineHeight: 1.3, color: COLOR_PALETTE.yellow[200], textShadow: SHADOW_TXT }, mono]}>{loading ? row.score.toLocaleString() : <CountUp value={row.score} />}</Typography>
+          <Typography noWrap sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, lineHeight: 1.3, color: COLOR_PALETTE.yellow[200], textShadow: SHADOW_TXT }, mono]}>{loading ? row.score.toLocaleString() : <CountUp value={row.score} />}</Typography>
         </GlassStat>
         <GlassStat label="Streak">
-          <LocalFireDepartmentRoundedIcon sx={{ fontSize: 22, color: row.streak > 0 ? COLOR_PALETTE.orange[300] : WHITE_SOFT }} />
-          <Typography noWrap sx={[{ fontWeight: 900, fontSize: 24, lineHeight: 1.3, textShadow: SHADOW_TXT }, mono]}>{row.streak}</Typography>
+          <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: row.streak > 0 ? COLOR_PALETTE.orange[300] : WHITE_SOFT }} />
+          <Typography noWrap sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, lineHeight: 1.3, textShadow: SHADOW_TXT }, mono]}>{row.streak}</Typography>
         </GlassStat>
       </Box>
 
@@ -153,8 +153,8 @@ function PlayerFace({ row, track, points, isMe, learners, topPercent, loading })
 
       <Box sx={[glass, { px: 1.5, py: 1.1 }]}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, mb: 0.7 }}>
-          <Typography sx={{ fontSize: 13, fontWeight: 800, textShadow: SHADOW_TXT }}>{next ? `Next: ${next.name}` : 'Top tier'}</Typography>
-          <Typography noWrap sx={[{ fontSize: 12.5, fontWeight: 800, color: COLOR_PALETTE.yellow[200], textShadow: SHADOW_TXT }, mono]}>{next ? `${toNext.toLocaleString()} pts` : 'Reached'}</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, textShadow: SHADOW_TXT }}>{next ? `Next: ${next.name}` : 'Top tier'}</Typography>
+          <Typography noWrap sx={[{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.yellow[200], textShadow: SHADOW_TXT }, mono]}>{next ? `${toNext.toLocaleString()} pts` : 'Reached'}</Typography>
         </Box>
         <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Progress to next tier" sx={{ height: 10, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.custom.indigo140A3C, 0.4), overflow: 'hidden' }}>
           <Box sx={{ width: `${Math.max(progress, 4)}%`, height: '100%', borderRadius: 99, background: `linear-gradient(90deg,${COLOR_PALETTE.yellow[200]},${COLOR_PALETTE.amber[400]})`, transition: 'width .6s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
@@ -179,9 +179,9 @@ function TrackSwitch({ T, value, onChange }) {
         return (
           <ButtonBase
             key={v} role="tab" aria-selected={on} onClick={() => onChange(v)}
-            sx={{ gap: 0.4, height: 34, minWidth: 0, borderRadius: 99, fontFamily: 'inherit', fontSize: 12, fontWeight: 800, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : 'transparent', boxShadow: on ? `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : 'none', transition: 'color .2s', '&:active': { transform: 'scale(0.97)' } }}
+            sx={{ gap: 0.4, height: 34, minWidth: 0, borderRadius: 99, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : 'transparent', boxShadow: on ? `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : 'none', transition: 'color .2s', '&:active': { transform: 'scale(0.97)' } }}
           >
-            <Icon sx={{ fontSize: 16 }} />{label}
+            <Icon sx={{ fontSize: FONT_SIZES.title }} />{label}
           </ButtonBase>
         );
       })}
@@ -210,8 +210,8 @@ function FocusCard({ T, me, neighbors, ranked, isAuthenticated, period, points, 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
           <SoftTile T={T}><Icon /></SoftTile>
           <Box sx={{ minWidth: 0, flex: 1 }}>
-            <Typography noWrap title={head} sx={{ fontWeight: 800, fontSize: 14, lineHeight: 1.3, color: T.ink }}>{head}</Typography>
-            <Typography noWrap title={sub} sx={{ fontSize: 12, color: T.muted }}>{sub}</Typography>
+            <Typography noWrap title={head} sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, lineHeight: 1.3, color: T.ink }}>{head}</Typography>
+            <Typography noWrap title={sub} sx={{ fontSize: FONT_SIZES.caption, color: T.muted }}>{sub}</Typography>
           </Box>
         </Box>
       )}
@@ -225,10 +225,10 @@ function LoginCard({ T }) {
     <Box sx={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: 1.25, p: 1.25, borderRadius: '22px', bgcolor: T.soft, boxShadow: T.raised }}>
       <SoftTile T={T}><EmojiEventsRoundedIcon /></SoftTile>
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 800, fontSize: 14, color: T.ink }}>See where you stand</Typography>
-        <Typography noWrap sx={{ fontSize: 12, color: T.muted }}>Log in to get your rank.</Typography>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.ink }}>See where you stand</Typography>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: T.muted }}>Log in to get your rank.</Typography>
       </Box>
-      <Button component={RouterLink} to="/login" size="small" disableElevation startIcon={<BoltRoundedIcon />} sx={{ borderRadius: 99, px: 1.75, color: COLOR_PALETTE.white, background: ACCENT, fontWeight: 800, textTransform: 'none', boxShadow: `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}` }}>Log in</Button>
+      <Button component={RouterLink} to="/login" size="small" disableElevation startIcon={<BoltRoundedIcon />} sx={{ borderRadius: 99, px: 1.75, color: COLOR_PALETTE.white, background: ACCENT, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', boxShadow: `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}` }}>Log in</Button>
     </Box>
   );
 }
@@ -245,7 +245,7 @@ function TierStrip({ T, currentKey }) {
               role="img" aria-label={`${t.name} tier, ${t.min} points`} tabIndex={0}
               sx={{ width: 38, height: 38, borderRadius: '50%', display: 'grid', placeItems: 'center', color: on ? COLOR_PALETTE.white : t.color, background: on ? `linear-gradient(135deg, ${t.color}, color-mix(in srgb, ${t.color} 55%, ${COLOR_PALETTE.black}))` : T.soft, boxShadow: on ? `${T.raised}, 0 6px 14px -4px ${t.color}` : 'none', opacity: on ? 1 : 0.75 }}
             >
-              <WorkspacePremiumRoundedIcon sx={{ fontSize: 20 }} />
+              <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
             </Box>
           </Tooltip>
         );
@@ -273,9 +273,9 @@ export default function LeaderboardPanel({ row, me, isAuthenticated, meta, perio
             <Box sx={{ flex: 1, display: 'grid', placeItems: 'center', textAlign: 'center', p: 2 }}>
               {loading ? <Skeleton variant="rounded" width="100%" height={220} sx={{ bgcolor: withAlpha(COLOR_PALETTE.white, 0.3), borderRadius: '16px' }} /> : (
                 <Box>
-                  <TagRoundedIcon sx={{ fontSize: 34, color: COLOR_PALETTE.yellow[200] }} />
-                  <Typography sx={{ fontWeight: 800, textShadow: SHADOW_TXT }}>No player picked</Typography>
-                  <Typography sx={{ fontSize: 13, color: WHITE_SOFT, textShadow: SHADOW_TXT }}>Tap a player on the board.</Typography>
+                  <TagRoundedIcon sx={{ fontSize: FONT_SIZES.hero, color: COLOR_PALETTE.yellow[200] }} />
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, textShadow: SHADOW_TXT }}>No player picked</Typography>
+                  <Typography sx={{ fontSize: FONT_SIZES.body, color: WHITE_SOFT, textShadow: SHADOW_TXT }}>Tap a player on the board.</Typography>
                 </Box>
               )}
             </Box>

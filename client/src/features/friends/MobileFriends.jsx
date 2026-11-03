@@ -36,7 +36,7 @@ import { acceptFriendInvite } from './friendsSlice';
 import { PersonAvatar, statusInfo, timeAgo } from './friendsUi';
 import { previewOf, shortTime } from './friendsKit';
 import ActivityFeed from './ActivityFeed';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Phone layout of the Friends page in the Library look (same as the phone Problems, Home and You pages):
 // Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section titles,
@@ -88,7 +88,7 @@ function SectionTitle({ children, first = false }) {
 function Empty({ title, children, action }) {
   return (
     <Box sx={{ py: 6, px: 2, textAlign: 'center' }}>
-      <Typography sx={{ fontWeight: 700 }}>{title}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{title}</Typography>
       <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5, mb: action ? 2 : 0 }}>
         {children}
       </Typography>
@@ -148,21 +148,21 @@ function FriendRow({ f, last, myId, online, unread, fav, onOpen }) {
         <PersonAvatar person={f} size={48} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
-            <Typography noWrap sx={{ fontWeight: unread ? 700 : 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, flex: 1, minWidth: 0 }}>
+            <Typography noWrap sx={{ fontWeight: unread ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, flex: 1, minWidth: 0 }}>
               {f.name}
             </Typography>
-            {fav && <StarRoundedIcon aria-label="Favourite" sx={{ fontSize: 16, color: 'warning.main', flexShrink: 0 }} />}
+            {fav && <StarRoundedIcon aria-label="Favourite" sx={{ fontSize: FONT_SIZES.title, color: 'warning.main', flexShrink: 0 }} />}
             {last && (
-              <Typography sx={{ flexShrink: 0, fontSize: 12, fontWeight: unread ? 700 : 400, color: unread ? ACCENT : 'var(--lib-muted)' }}>{shortTime(last.at)}</Typography>
+              <Typography sx={{ flexShrink: 0, fontSize: FONT_SIZES.caption, fontWeight: unread ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, color: unread ? ACCENT : 'var(--lib-muted)' }}>{shortTime(last.at)}</Typography>
             )}
           </Stack>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, mt: 0.2 }}>
-            {mine && last.kind === 'text' && (last.read ? <DoneAllRoundedIcon sx={{ fontSize: 16, color: ACCENT, flexShrink: 0 }} /> : <DoneRoundedIcon sx={{ fontSize: 16, color: 'var(--lib-muted)', flexShrink: 0 }} />)}
-            <Typography noWrap sx={{ flex: 1, minWidth: 0, fontSize: 14, letterSpacing: LIB_TRACKING, fontWeight: unread ? 500 : 400, color: !last && st.live ? SUCCESS : unread ? 'var(--lib-text)' : 'var(--lib-muted)' }}>
+            {mine && last.kind === 'text' && (last.read ? <DoneAllRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: ACCENT, flexShrink: 0 }} /> : <DoneRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'var(--lib-muted)', flexShrink: 0 }} />)}
+            <Typography noWrap sx={{ flex: 1, minWidth: 0, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, fontWeight: unread ? FONT_WEIGHTS.medium : FONT_WEIGHTS.regular, color: !last && st.live ? SUCCESS : unread ? 'var(--lib-text)' : 'var(--lib-muted)' }}>
               {preview}
             </Typography>
             {unread > 0 && (
-              <Typography component="span" aria-hidden sx={{ flexShrink: 0, minWidth: 22, height: 22, px: 0.75, borderRadius: 11, display: 'grid', placeItems: 'center', bgcolor: ACCENT, color: COLOR_PALETTE.white, fontSize: 12, fontWeight: 700 }}>
+              <Typography component="span" aria-hidden sx={{ flexShrink: 0, minWidth: 22, height: 22, px: 0.75, borderRadius: 11, display: 'grid', placeItems: 'center', bgcolor: ACCENT, color: COLOR_PALETTE.white, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
                 {unread > 99 ? '99+' : unread}
               </Typography>
             )}
@@ -177,14 +177,14 @@ function PersonRow({ person, rank, sub, action }) {
   return (
     <Stack direction="row" sx={{ alignItems: 'center', gap: '12px', py: 1.25, px: 0.5, minHeight: 68, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
       {rank != null && (
-        <Typography sx={{ width: 28, flexShrink: 0, textAlign: 'center', fontSize: 15, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'var(--lib-muted)' }}>{rank}</Typography>
+        <Typography sx={{ width: 28, flexShrink: 0, textAlign: 'center', fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums', color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'var(--lib-muted)' }}>{rank}</Typography>
       )}
       <PersonAvatar person={person} size={44} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
+        <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
           {person.name}
         </Typography>
-        <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING }}>
+        <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING }}>
           {sub || `@${person.handle}`}
         </Typography>
       </Box>
@@ -226,10 +226,10 @@ function InviteBanner({ handle, onDone, run, busy }) {
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
         <PersonAvatar person={state.user} size={48} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
             {state.user.name}
           </Typography>
-          <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
+          <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }}>
             Invited you to be friends
           </Typography>
         </Box>
@@ -315,8 +315,8 @@ export default function MobileFriends({
     if (sentIds.has(p.userId)) {
       return (
         <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, flexShrink: 0, color: 'var(--lib-muted)' }}>
-          <ScheduleSendRoundedIcon sx={{ fontSize: 18 }} />
-          <Typography sx={{ fontSize: 14, whiteSpace: 'nowrap' }}>Request sent</Typography>
+          <ScheduleSendRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
+          <Typography sx={{ fontSize: FONT_SIZES.body, whiteSpace: 'nowrap' }}>Request sent</Typography>
         </Stack>
       );
     }
@@ -341,13 +341,13 @@ export default function MobileFriends({
     <>
       {global.rows === null && global.loading && <SkeletonRows count={5} />}
       {global.error && (
-        <Typography color="var(--lib-muted)" sx={{ py: 1.5, fontSize: 15 }}>
+        <Typography color="var(--lib-muted)" sx={{ py: 1.5, fontSize: FONT_SIZES.bodyLg }}>
           {global.error}
         </Typography>
       )}
       {global.hasMore && (
         <Box sx={{ textAlign: 'center', pt: 1.5 }}>
-          <Button variant="outlined" onClick={global.loadMore} disabled={global.loading} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 500, fontSize: 16, color: 'var(--lib-text)', borderColor: 'var(--lib-divider)' }}>
+          <Button variant="outlined" onClick={global.loadMore} disabled={global.loading} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, color: 'var(--lib-text)', borderColor: 'var(--lib-divider)' }}>
             {global.loading ? 'Loading…' : 'Show more players'}
           </Button>
         </Box>
@@ -453,7 +453,7 @@ export default function MobileFriends({
               {onlineFriends.map((p) => (
                 <ButtonBase key={p.userId} onClick={() => onOpenChat(p.userId)} aria-label={`Chat with ${p.name}, online`} sx={{ flexDirection: 'column', gap: 0.6, width: 64, flexShrink: 0, fontFamily: 'inherit' }}>
                   <PersonAvatar person={p} size={52} online />
-                  <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 13, letterSpacing: LIB_TRACKING, width: '100%', textAlign: 'center' }}>
+                  <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, width: '100%', textAlign: 'center' }}>
                     {p.name.split(' ')[0]}
                   </Typography>
                 </ButtonBase>

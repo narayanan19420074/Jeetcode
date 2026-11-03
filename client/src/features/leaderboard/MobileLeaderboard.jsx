@@ -41,7 +41,7 @@ import {
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
 import { APT_COLOR, PT } from './lbShared';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Phone layout of the Leaderboard in the Library look (same as the phone Problems, Home and You pages):
 // Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section
@@ -82,7 +82,7 @@ function SectionTitle({ children }) {
 function FilterGroup({ label, options, value, onChange, disabled = () => false }) {
   return (
     <Box component="section" aria-label={label} sx={{ mt: 2.5 }}>
-      <Typography component="h3" sx={{ fontWeight: 700, fontSize: 16, lineHeight: '24px', mb: 1 }}>
+      <Typography component="h3" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, lineHeight: '24px', mb: 1 }}>
         {label}
       </Typography>
       <Box role="radiogroup" aria-label={label} sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
@@ -125,14 +125,14 @@ function FilterSheet({ open, onClose, isAuthenticated, track, period, scope, onT
           <Typography component="h2" sx={{ flex: 1, ...libSectionTitleSx }}>
             Filters
           </Typography>
-          <Button onClick={onReset} disabled={isDefault} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 500, fontSize: 16, color: ACCENT }}>
+          <Button onClick={onReset} disabled={isDefault} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, color: ACCENT }}>
             Reset
           </Button>
         </Stack>
 
         <FilterGroup label="Leaderboard" options={SCOPES} value={scope} onChange={onScope} disabled={(v) => v === 'friends' && !isAuthenticated} />
         {!isAuthenticated && (
-          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, mt: 0.75 }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 0.75 }}>
             Sign in to compare with friends.
           </Typography>
         )}
@@ -170,8 +170,8 @@ function RankMark({ rank }) {
         borderRadius: '50%',
         display: 'grid',
         placeItems: 'center',
-        fontSize: rank > 999 ? 12 : 15,
-        fontWeight: podium ? 700 : 500,
+        fontSize: rank > 999 ? FONT_SIZES.caption : FONT_SIZES.bodyLg,
+        fontWeight: podium ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
         fontVariantNumeric: 'tabular-nums',
         color: podium ? podium.color : 'var(--lib-muted)',
         bgcolor: podium ? (t.palette.mode === 'dark' ? tint(podium.color, 16) : podium.bg) : 'transparent',
@@ -184,7 +184,7 @@ function RankMark({ rank }) {
 
 function YouTag() {
   return (
-    <Typography component="span" sx={{ flexShrink: 0, px: '8px', py: '1px', borderRadius: 99, fontSize: 12, lineHeight: '18px', fontWeight: 500, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
+    <Typography component="span" sx={{ flexShrink: 0, px: '8px', py: '1px', borderRadius: 99, fontSize: FONT_SIZES.caption, lineHeight: '18px', fontWeight: FONT_WEIGHTS.medium, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
       You
     </Typography>
   );
@@ -194,7 +194,7 @@ function YouTag() {
 function Move({ row }) {
   if (row.isNew) {
     return (
-      <Typography component="span" sx={{ fontSize: 14, lineHeight: '20px', fontWeight: 500, color: ACCENT }}>
+      <Typography component="span" sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', fontWeight: FONT_WEIGHTS.medium, color: ACCENT }}>
         New
       </Typography>
     );
@@ -207,9 +207,9 @@ function Move({ row }) {
     <Box
       component="span"
       aria-label={`${up ? 'Up' : 'Down'} ${Math.abs(m)} since last week`}
-      sx={{ display: 'inline-flex', alignItems: 'center', color: up ? 'var(--jc-easy)' : 'var(--jc-hard)', fontSize: 14, lineHeight: '20px', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}
+      sx={{ display: 'inline-flex', alignItems: 'center', color: up ? 'var(--jc-easy)' : 'var(--jc-hard)', fontSize: FONT_SIZES.body, lineHeight: '20px', fontWeight: FONT_WEIGHTS.medium, fontVariantNumeric: 'tabular-nums' }}
     >
-      <Icon aria-hidden sx={{ fontSize: 22, ml: -0.5 }} />
+      <Icon aria-hidden sx={{ fontSize: FONT_SIZES.display, ml: -0.5 }} />
       {Math.abs(m)}
     </Box>
   );
@@ -234,24 +234,24 @@ function PlayerRow({ row, isMe, onPick }) {
         sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: '10px', textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
         <RankMark rank={row.rank} />
-        <Avatar src={row.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, flexShrink: 0, fontSize: 18, fontWeight: 500 }}>
+        <Avatar src={row.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, flexShrink: 0, fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.medium }}>
           {row.name?.[0]?.toUpperCase()}
         </Avatar>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, minWidth: 0 }}>
-            <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, minWidth: 0 }}>
+            <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, minWidth: 0 }}>
               {row.name}
             </Typography>
             {isMe && <YouTag />}
           </Stack>
-          <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+          <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
             @{row.handle}
           </Typography>
         </Box>
         <Box sx={{ flexShrink: 0, textAlign: 'right' }}>
-          <Typography component="div" sx={{ fontWeight: 700, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
+          <Typography component="div" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums' }}>
             {num(row.score)}
-            <Typography component="span" sx={{ ml: 0.5, fontWeight: 400, fontSize: 14, color: 'var(--lib-muted)' }}>
+            <Typography component="span" sx={{ ml: 0.5, fontWeight: FONT_WEIGHTS.regular, fontSize: FONT_SIZES.body, color: 'var(--lib-muted)' }}>
               pts
             </Typography>
           </Typography>
@@ -296,27 +296,27 @@ function MyRank({ me, canFind, onOpen, onFind }) {
         sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, fontFamily: 'inherit', color: 'inherit', textAlign: 'left' }}
       >
         <Box sx={{ minWidth: 0 }}>
-          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }}>
             Your rank
           </Typography>
-          <Typography sx={{ fontWeight: 700, fontSize: 28, lineHeight: '34px', fontVariantNumeric: 'tabular-nums' }}>#{num(me.rank)}</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '34px', fontVariantNumeric: 'tabular-nums' }}>#{num(me.rank)}</Typography>
         </Box>
         <Box sx={{ textAlign: 'right', minWidth: 0 }}>
-          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }}>
             Points
           </Typography>
-          <Typography sx={{ fontWeight: 700, fontSize: 28, lineHeight: '34px', fontVariantNumeric: 'tabular-nums' }}>{num(me.score)}</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '34px', fontVariantNumeric: 'tabular-nums' }}>{num(me.score)}</Typography>
         </Box>
         <ChevronRightRoundedIcon sx={{ color: 'var(--lib-muted)', flexShrink: 0 }} />
       </ButtonBase>
 
       <Box sx={{ mt: 1.5 }}>
         <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: 700, fontSize: 15 }}>
-            <WorkspacePremiumRoundedIcon sx={{ fontSize: 18 }} />
+          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg }}>
+            <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
             {tier.name}
           </Stack>
-          <Typography color="var(--lib-muted)" sx={{ fontSize: 14, fontVariantNumeric: 'tabular-nums' }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, fontVariantNumeric: 'tabular-nums' }}>
             {next ? `${num(toNext)} points to ${next.name}` : 'Top level reached'}
           </Typography>
         </Stack>
@@ -367,14 +367,14 @@ function PlayerSheet({ row, onClose }) {
         <LibraryFont>
         <Box sx={{ px: 2, pt: 1.25, pb: 2 }}>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
-            <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: 52, height: 52, fontSize: '1.2rem', fontWeight: 800, border: `2px solid ${tint(info.tier.color, 70)}` }}>
+            <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: 52, height: 52, fontSize: FONT_SIZES.heading, fontWeight: FONT_WEIGHTS.bold, border: `2px solid ${tint(info.tier.color, 70)}` }}>
               {row.name?.[0]?.toUpperCase()}
             </Avatar>
             <Box sx={{ minWidth: 0, flex: 1 }}>
               <Typography component="h2" noWrap sx={{ ...libSectionTitleSx }}>
                 {row.name}
               </Typography>
-              <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
+              <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }}>
                 @{row.handle}
                 {row.company ? `, ${row.company}` : ''}
               </Typography>
@@ -386,7 +386,7 @@ function PlayerSheet({ row, onClose }) {
 
           <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mt: 1.5 }}>
             {[`Rank #${num(row.rank)}`, `${num(row.score)} points`, ...(row.streak > 0 ? [`${row.streak}-day streak`] : [])].map((text) => (
-              <Typography key={text} component="span" sx={{ px: 1.25, py: 0.4, borderRadius: 99, fontSize: 14, fontWeight: 500, color: ACCENT, bgcolor: tint(ACCENT, 16), fontVariantNumeric: 'tabular-nums' }}>
+              <Typography key={text} component="span" sx={{ px: 1.25, py: 0.4, borderRadius: 99, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, color: ACCENT, bgcolor: tint(ACCENT, 16), fontVariantNumeric: 'tabular-nums' }}>
                 {text}
               </Typography>
             ))}
@@ -395,11 +395,11 @@ function PlayerSheet({ row, onClose }) {
           <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 1, mt: 2 }}>
             {tiles.map(([label, n, pts, color]) => (
               <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: '16px', bgcolor: tint(color, 14), border: `1px solid ${tint(color, 30)}` }}>
-                <Typography sx={{ fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.2, color, fontVariantNumeric: 'tabular-nums' }}>{n}</Typography>
-                <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.78rem' }}>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.2, color, fontVariantNumeric: 'tabular-nums' }}>{n}</Typography>
+                <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption }}>
                   {label}
                 </Typography>
-                <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: '0.72rem', fontVariantNumeric: 'tabular-nums' }}>
+                <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.caption, fontVariantNumeric: 'tabular-nums' }}>
                   {n * pts} pts
                 </Typography>
               </Box>
@@ -408,11 +408,11 @@ function PlayerSheet({ row, onClose }) {
 
           <Box sx={{ mt: 2 }}>
             <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-              <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: info.tier.color, fontWeight: 700, fontSize: 15 }}>
-                <WorkspacePremiumRoundedIcon sx={{ fontSize: 20 }} />
+              <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: info.tier.color, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg }}>
+                <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
                 {info.tier.name}
               </Stack>
-              <Typography color="var(--lib-muted)" sx={{ fontSize: 14, fontVariantNumeric: 'tabular-nums' }}>
+              <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, fontVariantNumeric: 'tabular-nums' }}>
                 {info.next ? `${num(info.toNext)} points to ${info.next.name}` : 'Top level reached'}
               </Typography>
             </Stack>
@@ -426,7 +426,7 @@ function PlayerSheet({ row, onClose }) {
             >
               <Box sx={{ width: `${Math.max(info.progress, 4)}%`, height: '100%', borderRadius: 99, bgcolor: info.tier.color }} />
             </Box>
-            <Typography color="var(--lib-muted)" sx={{ fontSize: 14, mt: 1 }}>
+            <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 1 }}>
               {row.recent} solved in the last 7 days
             </Typography>
           </Box>
@@ -519,7 +519,7 @@ export default function MobileLeaderboard({
       {/* Your position */}
       {me && <MyRank me={me} canFind={meInList} onOpen={() => setSheetRow(me)} onFind={scrollToMe} />}
       {isAuthenticated && meta && !meta.me && !loading && (
-        <Typography color="var(--lib-muted)" sx={{ mt: 2, fontSize: 15, textAlign: 'center' }}>
+        <Typography color="var(--lib-muted)" sx={{ mt: 2, fontSize: FONT_SIZES.bodyLg, textAlign: 'center' }}>
           Solve a question{period === 'all' ? '' : ' in this period'} to enter the leaderboard.
         </Typography>
       )}
@@ -547,7 +547,7 @@ export default function MobileLeaderboard({
             <SkeletonRows />
           ) : rows.length === 0 && !error ? (
             <Box sx={{ py: 7, px: 2, textAlign: 'center' }}>
-              <Typography sx={{ fontWeight: 700 }}>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 {q ? `No player matches "${q}"` : scope === 'friends' ? 'No friends on this board yet' : 'No one has scored in this period yet'}
               </Typography>
               <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5, mb: 2 }}>
@@ -555,17 +555,17 @@ export default function MobileLeaderboard({
               </Typography>
               <Stack direction="row" sx={{ justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
                 {q && (
-                  <Button variant="outlined" onClick={() => setSearch('')} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+                  <Button variant="outlined" onClick={() => setSearch('')} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                     Clear search
                   </Button>
                 )}
                 {!q && scope === 'friends' && (
-                  <Button variant="outlined" onClick={showEveryone} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+                  <Button variant="outlined" onClick={showEveryone} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                     Show everyone
                   </Button>
                 )}
                 {!q && period !== 'all' && (
-                  <Button variant="outlined" onClick={() => onPeriod('all')} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 700 }}>
+                  <Button variant="outlined" onClick={() => onPeriod('all')} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                     Show all-time
                   </Button>
                 )}

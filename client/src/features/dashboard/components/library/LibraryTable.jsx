@@ -3,6 +3,7 @@ import { PAD_X, ACC_W, DIFF_W } from './libraryConstants';
 import ProblemRow from './ProblemRow';
 import { ColumnHeader, SkeletonRows } from './TableBits';
 import useLibraryStyles from './libraryStyles';
+import { FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 function TableHeader({ lib }) {
   const styles = useLibraryStyles();
@@ -40,7 +41,7 @@ function ErrorBanner({ message, onRetry }) {
 function EmptyState({ onClear }) {
   return (
     <Box sx={{ py: 7, px: 3, textAlign: 'center' }}>
-      <Typography sx={{ fontWeight: 800 }}>No problems match this view</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No problems match this view</Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 2 }}>
         Loosen a filter or clear them all to see the full library.
       </Typography>

@@ -4,7 +4,7 @@ import KeyboardDoubleArrowDownRoundedIcon from '@mui/icons-material/KeyboardDoub
 import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowUpRounded';
 import { TOPIC_ROW_H } from './libraryConstants';
 import useLibraryStyles from './libraryStyles';
-import { COLOR_PALETTE } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 const FADE_MASK = `linear-gradient(to right, ${COLOR_PALETTE.black} calc(100% - 130px), transparent calc(100% - 40px))`;
 
@@ -41,7 +41,7 @@ function ExpandToggle({ expanded, onToggle }) {
   const placement = expanded ? { display: 'flex', ml: 'auto', mt: 0.25 } : { position: 'absolute', top: 0, right: 0 };
   return (
     <ButtonBase onClick={onToggle} aria-expanded={expanded} sx={{ gap: 0.25, height: TOPIC_ROW_H, fontFamily: 'inherit', color: 'text.secondary', ...placement }}>
-      <Typography variant="body2" sx={{ fontWeight: 700 }}>
+      <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
         {expanded ? 'Collapse' : 'Expand'}
       </Typography>
       <Icon fontSize="small" />

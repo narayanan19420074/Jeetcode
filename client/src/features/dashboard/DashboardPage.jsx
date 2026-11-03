@@ -34,7 +34,7 @@ import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { LibraryFont, useLibraryPalette } from './components/libraryStyle';
 import { STATUS_COLOR, featuredPageForToday, surface, todayKey } from './dashboardUtils';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Same accent the other phone pages use.
 const PHONE_ACCENT = COLOR_PALETTE.indigo[500];
@@ -354,8 +354,8 @@ export default function DashboardPage() {
                   <LibraryFont sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: 40 }}>
                     {isAuthenticated ? (
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <LocalFireDepartmentRoundedIcon sx={{ fontSize: 24, color: 'warning.main' }} />
-                        <Typography sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: '0.03em' }}>
+                        <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'warning.main' }} />
+                        <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: '0.03em' }}>
                           {user?.streakDays ?? 0}-day streak
                         </Typography>
                       </Box>
@@ -377,7 +377,7 @@ export default function DashboardPage() {
                     <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 560 }}>
                       You're browsing as a guest. Sign up to save streaks, track submissions, and unlock AI hints. It's free.
                     </Typography>
-                    <Button variant="contained" disableElevation size="small" onClick={() => navigate('/login')} sx={{ fontWeight: 700 }}>
+                    <Button variant="contained" disableElevation size="small" onClick={() => navigate('/login')} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                       Sign up free
                     </Button>
                   </Box>
@@ -432,14 +432,14 @@ export default function DashboardPage() {
                       <Typography variant="caption" color="text.secondary">
                         Pick up where you left off
                       </Typography>
-                      <Typography variant="body2" noWrap sx={{ fontWeight: 700 }}>
+                      <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                         {resume.problem.title}{' '}
-                        <Box component="span" sx={{ color: STATUS_COLOR[resume.status] || 'text.secondary', fontWeight: 600 }}>
+                        <Box component="span" sx={{ color: STATUS_COLOR[resume.status] || 'text.secondary', fontWeight: FONT_WEIGHTS.semibold }}>
                           ({resume.status})
                         </Box>
                       </Typography>
                     </Box>
-                    <Button component={RouterLink} to={`/workspace/${resume.problem.slug}`} size="small" variant="contained" disableElevation sx={{ fontWeight: 700, flexShrink: 0 }}>
+                    <Button component={RouterLink} to={`/workspace/${resume.problem.slug}`} size="small" variant="contained" disableElevation sx={{ fontWeight: FONT_WEIGHTS.bold, flexShrink: 0 }}>
                       Resume
                     </Button>
                   </Box>
@@ -554,12 +554,12 @@ export default function DashboardPage() {
             <PlayArrowRoundedIcon />
           </Box>
           <Box sx={{ minWidth: 0, flex: 1 }}>
-            <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.95rem', lineHeight: 1.25 }}>
+            <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.25 }}>
               {resume.problem.title}
             </Typography>
             <Typography noWrap variant="caption" color="text.secondary">
               Pick up where you left off ·{' '}
-              <Box component="span" sx={{ color: STATUS_COLOR[resume.status] || 'text.secondary', fontWeight: 600 }}>
+              <Box component="span" sx={{ color: STATUS_COLOR[resume.status] || 'text.secondary', fontWeight: FONT_WEIGHTS.semibold }}>
                 {resume.status}
               </Box>
             </Typography>
@@ -590,7 +590,7 @@ export default function DashboardPage() {
         <LibraryFont>
         <Box sx={{ px: 2, pt: 1.25, pb: 2 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
-            <Typography component="h2" sx={{ fontSize: 18, lineHeight: '24px', fontWeight: 700 }}>
+            <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold }}>
               Calendar
             </Typography>
             <IconButton onClick={() => setCalendarOpen(false)} aria-label="Close calendar" sx={{ width: 40, height: 40, mr: -0.5, color: pal.text, bgcolor: pal.player, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } }}>
@@ -607,7 +607,7 @@ export default function DashboardPage() {
                 setCalendarOpen(false);
                 goView('plans');
               }}
-              sx={{ mt: 2, fontWeight: 700, height: 48, borderRadius: 99, color: PHONE_ACCENT, borderColor: alpha(PHONE_ACCENT, 0.5) }}
+              sx={{ mt: 2, fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: 99, color: PHONE_ACCENT, borderColor: alpha(PHONE_ACCENT, 0.5) }}
             >
               Open Study Plans
             </Button>

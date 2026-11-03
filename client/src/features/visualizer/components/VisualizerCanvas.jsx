@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 export default function VisualizerCanvas({ category, step, graph }) {
   if (!step) return null;
@@ -56,7 +56,7 @@ function ArrayCanvas({ step }) {
               fontFamily: (t) => t.typography.monospace.fontFamily,
               color: 'text.secondary',
               whiteSpace: 'nowrap',
-              fontSize: '0.7rem',
+              fontSize: FONT_SIZES.micro,
             }}
           >
             {item.value}
@@ -172,7 +172,7 @@ function FibonacciCanvas({ step }) {
               justifyContent: 'center',
               bgcolor: idx === highlightIdx ? 'warning.main' : val !== null ? 'success.main' : 'action.disabledBackground',
               color: COLOR_PALETTE.white,
-              fontWeight: 700,
+              fontWeight: FONT_WEIGHTS.bold,
               fontFamily: (t) => t.typography.monospace.fontFamily,
               transition: 'all 0.2s ease',
             }}
@@ -199,7 +199,7 @@ function KnapsackCanvas({ step }) {
         sx={{
           borderCollapse: 'collapse',
           fontFamily: (t) => t.typography.monospace.fontFamily,
-          fontSize: '0.8rem',
+          fontSize: FONT_SIZES.caption,
         }}
       >
         <tbody>
@@ -217,7 +217,7 @@ function KnapsackCanvas({ step }) {
                     textAlign: 'center',
                     bgcolor: r === curRow && c === curCol ? 'warning.main' : 'transparent',
                     color: r === curRow && c === curCol ? COLOR_PALETTE.white : 'text.primary',
-                    fontWeight: r === curRow && c === curCol ? 700 : 400,
+                    fontWeight: r === curRow && c === curCol ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular,
                     transition: 'all 0.15s ease',
                   }}
                 >

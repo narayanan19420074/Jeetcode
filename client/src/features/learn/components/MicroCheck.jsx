@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box, Stack, Typography, ButtonBase, Collapse, alpha } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 // Inline quick-check under each concept's explanation.
 // Retry until correct: once the user picks the right option, it locks and
@@ -38,16 +38,16 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
           <Typography
             variant="caption"
             sx={{
-              fontWeight: 700,
+              fontWeight: FONT_WEIGHTS.bold,
               color: 'primary.main',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              fontSize: 10.5,
+              fontSize: FONT_SIZES.micro,
             }}
           >
             Quick check
           </Typography>
-          <Typography variant="subtitle1" sx={{ fontWeight: 700, mt: 0.5, lineHeight: 1.4 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 0.5, lineHeight: 1.4 }}>
             {checkQuestion.question}
           </Typography>
         </Box>
@@ -90,8 +90,8 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
                       borderRadius: '50%',
                       display: 'grid',
                       placeItems: 'center',
-                      fontSize: 13,
-                      fontWeight: 700,
+                      fontSize: FONT_SIZES.body,
+                      fontWeight: FONT_WEIGHTS.bold,
                       flexShrink: 0,
                       border: '1.5px solid',
                       borderColor: showAsCorrect ? 'success.main' : showAsWrong ? 'error.main' : 'divider',
@@ -101,7 +101,7 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
                   >
                     {String.fromCharCode(65 + i)}
                   </Box>
-                  <Typography variant="body2" sx={{ fontWeight: 600, flexGrow: 1 }}>
+                  <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold, flexGrow: 1 }}>
                     {opt}
                   </Typography>
                   {showAsCorrect && <CheckCircleRoundedIcon fontSize="small" color="success" />}
@@ -122,7 +122,7 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
               bgcolor: alpha(COLOR_PALETTE.emerald[500], 0.08),
             }}
           >
-            <Typography variant="subtitle2" sx={{ fontWeight: 800, mb: 0.5, color: 'success.main' }}>
+            <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5, color: 'success.main' }}>
               Correct!
             </Typography>
             <Typography variant="body2" color="text.secondary">

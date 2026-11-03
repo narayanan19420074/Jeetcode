@@ -1,5 +1,5 @@
 import { Box, Stack, Tooltip, Typography } from '@mui/material';
-import { COLOR_PALETTE } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 const RADIUS = 9;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
@@ -29,9 +29,9 @@ export default function SolvedMeter({ solved, total, solvedBy, totals }) {
     <Tooltip title={detail}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', flexShrink: 0 }}>
         <CompletionRing fraction={fraction} />
-        <Typography variant="body2" sx={{ fontWeight: 700, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
           {solved}
-          <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+          <Box component="span" sx={{ color: 'text.secondary', fontWeight: FONT_WEIGHTS.medium }}>
             /{total} Solved
           </Box>
         </Typography>

@@ -20,6 +20,7 @@ import { loginUser, googleSignIn } from './authSlice';
 import AuthShell, { AuthField } from './AuthShell';
 import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
+import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // These env vars must exist in client/.env. GITHUB redirect URI must EXACTLY
 // match what's registered on GitHub's app settings (trailing slashes matter).
@@ -122,7 +123,7 @@ export default function LoginPage() {
       footer={
         <>
           New to JeetCode?{' '}
-          <Link component={RouterLink} to="/signup" underline="hover" sx={{ fontWeight: 600 }}>
+          <Link component={RouterLink} to="/signup" underline="hover" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
             Create an account
           </Link>
         </>
@@ -164,7 +165,7 @@ export default function LoginPage() {
             disableElevation
             fullWidth
             disabled={status === 'loading' || (Boolean(TURNSTILE_SITE_KEY) && !captcha)}
-            sx={{ fontWeight: 600 }}
+            sx={{ fontWeight: FONT_WEIGHTS.semibold }}
           >
             {status === 'loading' ? <CircularProgress size={20} color="inherit" /> : 'Sign in'}
           </Button>

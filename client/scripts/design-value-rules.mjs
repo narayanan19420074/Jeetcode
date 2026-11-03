@@ -4,9 +4,10 @@
 
 // Each pattern matches the literal forms only. Token and theme references (`RADII_PX.card`, 'fontWeightBold',
 // `typography: 'caption'`, `fontFamily: 'inherit'`) never match, and neither do zero and circle (50%) radii.
+// A responsive object (`{ xs: 12, md: 14 }`) matches only while it still holds a number.
 export const VALUE_RULES = [
-  { name: 'fontSize', pattern: /\bfontSize:\s*(?:['"`]?\d|\{)/g, fix: "Use a Typography variant, sx `typography: 'caption'`, or SIZES.iconSize for icons" },
-  { name: 'borderRadius', pattern: /\bborderRadius:\s*(?:['"`]?(?!0(?![\d.])|50%)\d|\{)/g, fix: 'Use RADII_PX.<role> from app/design/designTokens' },
+  { name: 'fontSize', pattern: /\bfontSize:\s*(?:['"`]?\d|\{[^}]*\d)/g, fix: "Use a Typography variant, sx `typography: 'caption'`, or SIZES.iconSize for icons" },
+  { name: 'borderRadius', pattern: /\bborderRadius:\s*(?:['"`]?(?!0(?![\d.])|50%)\d|\{[^}]*\d)/g, fix: 'Use RADII_PX.<role> from app/design/designTokens' },
   { name: 'fontFamily', pattern: /\bfontFamily:\s*['"`](?!inherit['"`])/g, fix: 'Use FONTS.sans or FONTS.mono, or inherit the theme font' },
   { name: 'fontWeight', pattern: /\bfontWeight:\s*['"`]?\d/g, fix: "Use 'fontWeightRegular', 'fontWeightMedium', 'fontWeightSemibold' or 'fontWeightBold'" },
 ];

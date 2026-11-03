@@ -20,7 +20,7 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone layout of the Store in the Library look (same as the phone Problems, Home and You pages): Roboto type,
 // warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section titles, cream tiles. The order
@@ -53,7 +53,7 @@ function SectionTitle({ children }) {
 
 function Badge({ children, color }) {
   return (
-    <Typography component="span" sx={{ px: 1, py: 0.3, borderRadius: 99, fontSize: 12, fontWeight: 500, lineHeight: 1.2, color, bgcolor: 'var(--lib-bg)', border: `1px solid ${tint(color, 40)}` }}>
+    <Typography component="span" sx={{ px: 1, py: 0.3, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.2, color, bgcolor: 'var(--lib-bg)', border: `1px solid ${tint(color, 40)}` }}>
       {children}
     </Typography>
   );
@@ -92,18 +92,18 @@ function ItemTile({ item, balance, signedIn, onBuy, onCourse }) {
       </ButtonBase>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, p: 1.5, gap: 0.5, minWidth: 0 }}>
-        <Typography component="h3" sx={{ fontWeight: 500, fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        <Typography component="h3" sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '22px', letterSpacing: LIB_TRACKING, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
           {item.name}
         </Typography>
         <Box sx={{ mt: 'auto', pt: 0.5 }}>
           <Coins value={item.price} size={20} />
           {!owned && signedIn && !afford && !soldOut && (
-            <Typography color="var(--lib-muted)" sx={{ fontSize: 13, mt: 0.25 }}>
+            <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 0.25 }}>
               Need {fmt(item.price - balance)} more
             </Typography>
           )}
         </Box>
-        <Button onClick={open} disabled={soldOut} fullWidth disableElevation variant="contained" sx={{ ...(afford && !owned ? solidBtn : tintBtn), mt: 1, height: 40, px: 1, fontSize: 16 }}>
+        <Button onClick={open} disabled={soldOut} fullWidth disableElevation variant="contained" sx={{ ...(afford && !owned ? solidBtn : tintBtn), mt: 1, height: 40, px: 1, fontSize: FONT_SIZES.title }}>
           {label}
         </Button>
       </Box>
@@ -163,13 +163,13 @@ export default function MobileStore({
           <>
             <ButtonBase onClick={onWallet} aria-label="Open coin wallet" sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, fontFamily: 'inherit', color: 'inherit', textAlign: 'left' }}>
               <Box>
-                <Typography color="var(--lib-muted)" sx={{ fontSize: 14, letterSpacing: LIB_TRACKING }}>
+                <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }}>
                   Your coins
                 </Typography>
                 <Coins value={balance} size={30} />
               </Box>
               <Stack direction="row" sx={{ alignItems: 'center', color: 'var(--lib-muted)' }}>
-                <Typography sx={{ fontWeight: 500, fontSize: 15, letterSpacing: LIB_TRACKING }}>Wallet</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>Wallet</Typography>
                 <ChevronRightRoundedIcon />
               </Stack>
             </ButtonBase>
@@ -184,14 +184,14 @@ export default function MobileStore({
               </Button>
             ) : daily?.claimed ? (
               <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 0.75, mt: 1.5, color: 'var(--lib-muted)' }}>
-                <CheckCircleRoundedIcon sx={{ fontSize: 18, color: 'var(--jc-easy)' }} />
-                <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING }}>Checked in today</Typography>
+                <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'var(--jc-easy)' }} />
+                <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>Checked in today</Typography>
               </Stack>
             ) : null}
           </>
         ) : (
           <Stack sx={{ alignItems: 'center', textAlign: 'center', gap: 1.25 }}>
-            <Typography color="var(--lib-muted)" sx={{ fontSize: 16 }}>
+            <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.title }}>
               Sign in to see your coins and redeem items.
             </Typography>
             <Button onClick={onSignIn} disableElevation variant="contained" sx={{ ...solidBtn, px: 4 }}>
@@ -202,7 +202,7 @@ export default function MobileStore({
       </Box>
 
       {error && (
-        <Typography role="alert" color="error" sx={{ mt: 2, fontSize: '0.9rem' }}>
+        <Typography role="alert" color="error" sx={{ mt: 2, fontSize: FONT_SIZES.body }}>
           {error}
         </Typography>
       )}
@@ -229,10 +229,10 @@ export default function MobileStore({
                   border: '1px solid var(--lib-border)',
                 }}
               >
-                <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
+                <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
                   {c.name}
                 </Typography>
-                <Typography color="var(--lib-muted)" sx={{ fontSize: 14, mt: 0.4, fontVariantNumeric: 'tabular-nums' }}>
+                <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 0.4, fontVariantNumeric: 'tabular-nums' }}>
                   {c.progress.doneCount}/{c.progress.lessonCount} lessons
                 </Typography>
                 <Box role="progressbar" aria-label={`${c.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={c.progress.percent} sx={{ mt: 1, height: 5, borderRadius: 99, bgcolor: tint(ACCENT, 20), overflow: 'hidden' }}>
@@ -246,8 +246,8 @@ export default function MobileStore({
 
       {merchLocked && (
         <Stack direction="row" sx={{ mt: 3, p: 2, gap: 1.25, alignItems: 'center', borderRadius: '16px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}>
-          <LockRoundedIcon sx={{ fontSize: 20, color: ACCENT, flexShrink: 0 }} />
-          <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING }}>
+          <LockRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: ACCENT, flexShrink: 0 }} />
+          <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>
             Merch unlocks after you solve {minSolved} problems. You have solved {solved}.
           </Typography>
         </Stack>
@@ -281,7 +281,7 @@ export default function MobileStore({
           </Box>
         ) : items.length === 0 ? (
           <Box sx={{ py: 7, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 700 }}>Nothing here yet</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>Nothing here yet</Typography>
             <Typography variant="body2" color="var(--lib-muted)" sx={{ mt: 0.5 }}>
               Try another category.
             </Typography>

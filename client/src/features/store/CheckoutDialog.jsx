@@ -10,9 +10,10 @@ import { userUpdated } from '../auth/authSlice';
 import { Choice, Eyebrow, FFButton, FFDialog, Notice, Tag } from '../quests/QuestParts';
 import { FF } from '../quests/questUtils';
 import { Coins, ItemArt, fmt } from './storeUtils';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Text fields in the game look: square corners, sunken fill. Colours follow the app theme, so light and dark both work.
-const fieldSx = { '& .MuiOutlinedInput-root': { borderRadius: 0, bgcolor: FF.well }, '& .MuiInputLabel-root': { fontWeight: 600 } };
+const fieldSx = { '& .MuiOutlinedInput-root': { borderRadius: 0, bgcolor: FF.well }, '& .MuiInputLabel-root': { fontWeight: FONT_WEIGHTS.semibold } };
 const stepBtn = { color: FF.text, border: `1px solid ${FF.line}`, borderRadius: 0 };
 
 const EMPTY = { fullName: '', phone: '', line1: '', line2: '', city: '', state: '', pincode: '' };
@@ -95,16 +96,16 @@ export default function CheckoutDialog({ item, balance, states = [], open, onClo
   const footer = (
     <Box sx={{ display: 'grid', gap: 2 }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 2 }}>
-        <Typography sx={{ fontSize: 13.5, color: FF.muted }}>Your balance: <Box component="span" sx={{ color: FF.text, fontWeight: 800 }}>{fmt(balance)}</Box></Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.body, color: FF.muted }}>Your balance: <Box component="span" sx={{ color: FF.text, fontWeight: FONT_WEIGHTS.bold }}>{fmt(balance)}</Box></Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <Typography sx={{ fontSize: 13.5, color: FF.muted }}>Total</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.body, color: FF.muted }}>Total</Typography>
           <Coins value={total} size={22} />
         </Box>
       </Box>
       {short > 0 ? (
         <Notice tone="warning">You need {fmt(short)} more coins. Solve problems to earn them.</Notice>
       ) : (
-        <FFButton onClick={submit} disabled={busy} sx={{ width: '100%', minHeight: 54, fontSize: 16 }}>
+        <FFButton onClick={submit} disabled={busy} sx={{ width: '100%', minHeight: 54, fontSize: FONT_SIZES.title }}>
           {busy ? 'Redeeming…' : `Redeem for ${fmt(total)} coins`}
         </FFButton>
       )}
@@ -116,8 +117,8 @@ export default function CheckoutDialog({ item, balance, states = [], open, onClo
       <Box sx={{ display: 'flex', gap: 2.5, mb: 3 }}>
         <Box sx={{ width: 104, flexShrink: 0, border: `1px solid ${FF.line}` }}><ItemArt art={item.art} accent={item.accent} height={104} image={item.image} /></Box>
         <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 900, fontSize: 18, color: FF.text }}>{item.name}</Typography>
-          <Typography sx={{ mt: 0.5, mb: 1.25, fontSize: 14, color: FF.muted }}>{item.blurb}</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, color: FF.text }}>{item.name}</Typography>
+          <Typography sx={{ mt: 0.5, mb: 1.25, fontSize: FONT_SIZES.body, color: FF.muted }}>{item.blurb}</Typography>
           <Coins value={item.price} />
         </Box>
       </Box>
@@ -144,14 +145,14 @@ export default function CheckoutDialog({ item, balance, states = [], open, onClo
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
             <Eyebrow sx={{ flex: 1 }}>Quantity</Eyebrow>
             <IconButton onClick={() => setQty((q) => Math.max(1, q - 1))} disabled={qty <= 1} aria-label="Less" sx={stepBtn}><RemoveRoundedIcon /></IconButton>
-            <Typography sx={{ minWidth: 32, textAlign: 'center', fontWeight: 900, fontSize: 18, color: FF.text }}>{qty}</Typography>
+            <Typography sx={{ minWidth: 32, textAlign: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, color: FF.text }}>{qty}</Typography>
             <IconButton onClick={() => setQty((q) => Math.min(maxQty, q + 1))} disabled={qty >= maxQty} aria-label="More" sx={stepBtn}><AddRoundedIcon /></IconButton>
           </Box>
 
           <Box sx={{ borderTop: `1px solid ${FF.line}`, pt: 3 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 1.25, mb: 2.5 }}>
               <LocalShippingRoundedIcon sx={{ color: FF.orangeInk }} />
-              <Typography sx={{ fontWeight: 900, color: FF.text }}>Delivery address</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>Delivery address</Typography>
               <Tag>Ships within {item.shipsTo || 'India'}</Tag>
             </Box>
             <Box sx={{ display: 'grid', gap: 2, gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' } }}>
@@ -165,7 +166,7 @@ export default function CheckoutDialog({ item, balance, states = [], open, onClo
               </TextField>
               <TextField sx={fieldSx} size="small" label="Pincode" value={addr.pincode} onChange={set('pincode')} error={!!errors.pincode} helperText={errors.pincode} inputProps={{ inputMode: 'numeric', maxLength: 6 }} autoComplete="postal-code" />
             </Box>
-            <Typography sx={{ mt: 2, fontSize: 12.5, color: FF.muted }}>
+            <Typography sx={{ mt: 2, fontSize: FONT_SIZES.caption, color: FF.muted }}>
               You can cancel for a full coin refund until we start packing. Merch is not exchangeable.
             </Typography>
           </Box>

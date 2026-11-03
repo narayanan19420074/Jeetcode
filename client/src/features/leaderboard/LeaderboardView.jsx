@@ -12,7 +12,7 @@ import { APT_COLOR, AvatarRing, PT, calm, mono, sweep } from './lbShared';
 import EmpireCard from './EmpireCard';
 import LeaderboardPanel from './lbPanel';
 import MobileLeaderboard from './MobileLeaderboard';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const LIMIT = 30;
 
@@ -61,33 +61,33 @@ function RowDetail({ row }) {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
         <AvatarRing src={row.avatarUrl} name={row.name} size={38} a={tier.color} b={`color-mix(in srgb, ${tier.color} 40%, ${COLOR_PALETTE.white})`} />
         <Box sx={{ minWidth: 0 }}>
-          <Typography noWrap sx={{ fontWeight: 800, lineHeight: 1.25 }}>{row.name}</Typography>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.25 }}>{row.name}</Typography>
           <Typography noWrap variant="caption" color="text.secondary">@{row.handle}{row.company ? `, ${row.company}` : ''}</Typography>
         </Box>
       </Box>
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 1 }}>
         {tiles.map(([label, n, pts, color]) => (
           <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: '12px', border: `1px solid color-mix(in srgb, ${color} 35%, transparent)`, background: `linear-gradient(160deg, color-mix(in srgb, ${color} 20%, transparent), transparent 80%)` }}>
-            <Typography sx={[{ fontWeight: 900, fontSize: 19, lineHeight: 1.2, color }, mono]}>{n}</Typography>
-            <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', fontWeight: 700 }}>{label}</Typography>
-            <Typography variant="caption" color="text.disabled" sx={[{ fontSize: 10.5 }, mono]}>{n * pts} pts</Typography>
+            <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.2, color }, mono]}>{n}</Typography>
+            <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', fontWeight: FONT_WEIGHTS.bold }}>{label}</Typography>
+            <Typography variant="caption" color="text.disabled" sx={[{ fontSize: FONT_SIZES.micro }, mono]}>{n * pts} pts</Typography>
           </Box>
         ))}
       </Box>
 
       <Box>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.6 }}>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: 800, fontSize: 13 }}>
-            <WorkspacePremiumRoundedIcon sx={{ fontSize: 18 }} />{tier.name}
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
+            <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />{tier.name}
           </Box>
-          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>
+          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top level reached'}
           </Typography>
         </Box>
         <Box sx={{ height: 9, borderRadius: 99, bgcolor: 'divider', overflow: 'hidden' }}>
           <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: 99, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, ${COLOR_PALETTE.white}))`, transition: 'width .6s ease', '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(90deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
         </Box>
-        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75, fontWeight: 600 }}>
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75, fontWeight: FONT_WEIGHTS.semibold }}>
           {row.recent} solved in the last 7 days
         </Typography>
       </Box>

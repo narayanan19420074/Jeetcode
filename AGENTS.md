@@ -201,7 +201,9 @@ read from that file.
    - Theme: `palette.*` (`text.primary`, `background.paper`, `primary.main`, `success.main`, `divider`),
      `typography` variants (`variant="h5"`, `body2`, `caption`), `theme.spacing`, `theme.shape`, `theme.jc.*`
      (`sizes`, `radii`, `layout`, `fonts`, `elevation`, `motion`).
-   - Tokens: `import { COLOR_PALETTE, withAlpha, RADII, SIZES, ... } from '<path>/app/design/designTokens'`.
+   - Tokens: `import { COLOR_PALETTE, withAlpha, RADII_PX, SIZES, FONT_SIZES, FONT_WEIGHTS, FONTS, ... } from '<path>/app/design/designTokens'`.
+     In `sx`, radii are strings (`borderRadius: RADII_PX.card`): a bare number is multiplied by the theme shape.
+     Font sizes outside Typography variants use `FONT_SIZES.<step>` (rem, so the Text size setting scales them).
 2. Colours that must follow light/dark mode come from `theme.palette`. Same-in-both-modes colours (illustrations,
    charts, game art) come from `COLOR_PALETTE.<hue>[<stop>]`; transparency with `withAlpha(COLOR_PALETTE.white, 0.18)`.
 3. If the token you need does not exist, ADD it to `designTokens.js` first (with a role name, for example
@@ -214,8 +216,11 @@ read from that file.
 ### 4.3.2 Enforcement
 - Colours: `node client/scripts/check-design-tokens.mjs` runs in the Render build. The baseline is empty, so any
   raw colour (hex, rgb, rgba) outside `app/design/` fails the deploy.
-- Font sizes, radii and spacing: not yet enforced by script. Follow rule 1 by review until the same guard is
-  extended to them. Do not add new hard-coded values; existing ones are migrated file by file.
+- Font sizes, font weights, font families and radii: the same script tracks literals in `design-value-baseline.json`.
+  A file may never have MORE literals than its baseline; migrating a file lowers it
+  (`node client/scripts/check-design-tokens.mjs --update`, which refuses to raise a count).
+- Spacing and fixed pixel sizes (heights, widths): not enforced by script yet. Follow rule 1 by review and do not
+  add new hard-coded values; existing ones are migrated file by file.
 - Mechanical migrations (many files at once) are delivered as a git patch (`git apply`) and are exempt from 4.2
   rule 9 for the touched files. Normal edits of those files still follow 4.2.
 

@@ -34,13 +34,13 @@ import { prepApi } from '../../../api/prepApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, surface } from '../dashboardUtils';
 import { NameDialog } from './ListDialogs';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 
 const ViewHeader = ({ title, subtitle, trailing }) => (
   <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between', gap: 2, mb: 2.5 }}>
     <Box sx={{ minWidth: 0 }}>
-      <Typography component="h1" sx={{ fontWeight: 800, fontSize: { xs: '1.4rem', sm: '1.6rem' }, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+      <Typography component="h1" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.display, sm: FONT_SIZES.display }, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
         {title}
       </Typography>
       {subtitle && (
@@ -145,7 +145,7 @@ export function StudyPlanView() {
                 <ProgressRing value={c.readiness ?? 0} max={100} color={accent} size={84} strokeWidth={8} />
                 <Box sx={{ minWidth: 0, flex: 1 }}>
                   <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 0.25 }}>
-                    <Typography sx={{ fontWeight: 800, fontSize: '1.02rem' }} noWrap>
+                    <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }} noWrap>
                       {c.name}
                     </Typography>
                     {started && <Chip size="small" label="In progress" sx={{ height: 20, color: accent, bgcolor: alpha(accent, 0.14) }} />}
@@ -160,12 +160,12 @@ export function StudyPlanView() {
                     </Typography>
                   )}
                   <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-                    <Button size="small" variant={started ? 'contained' : 'outlined'} disableElevation onClick={() => navigate(`/prep/${c.slug}`)} sx={{ fontWeight: 700 }}>
+                    <Button size="small" variant={started ? 'contained' : 'outlined'} disableElevation onClick={() => navigate(`/prep/${c.slug}`)} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                       {started ? 'Continue' : 'Start plan'}
                     </Button>
                     {c.examDurationMinutes && (
                       <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', color: 'text.secondary' }}>
-                        <AccessTimeRoundedIcon sx={{ fontSize: 15 }} />
+                        <AccessTimeRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg }} />
                         <Typography variant="caption">{c.examDurationMinutes} min exam</Typography>
                       </Stack>
                     )}
@@ -229,13 +229,13 @@ export function ListView({ list, onRemove, onRename, onDelete, onBrowse }) {
       {list.items.length === 0 ? (
         <Box sx={[surface, { py: 7, px: 3, textAlign: 'center' }]}>
           <Box sx={{ display: 'inline-flex', mb: 1.5, color: isFavorite ? 'warning.main' : 'text.disabled' }}>
-            {isFavorite ? <StarRoundedIcon sx={{ fontSize: 38 }} /> : <ListAltRoundedIcon sx={{ fontSize: 38 }} />}
+            {isFavorite ? <StarRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg }} /> : <ListAltRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg }} />}
           </Box>
-          <Typography sx={{ fontWeight: 800 }}>This list is empty</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>This list is empty</Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 2 }}>
             Tap the star on any problem in the Library to save it here.
           </Typography>
-          <Button variant="contained" disableElevation onClick={() => onBrowse()} sx={{ fontWeight: 700 }}>
+          <Button variant="contained" disableElevation onClick={() => onBrowse()} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Browse problems
           </Button>
         </Box>
@@ -268,15 +268,15 @@ export function ListView({ list, onRemove, onRename, onDelete, onBrowse }) {
                   '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: -2, borderRadius: '8px' },
                 }}
               >
-                <Typography variant="body2" noWrap sx={{ fontWeight: 600, fontSize: '0.9rem', minWidth: 0 }}>
-                  <Box component="span" sx={{ color: 'text.secondary', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>
+                <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, minWidth: 0 }}>
+                  <Box component="span" sx={{ color: 'text.secondary', fontWeight: FONT_WEIGHTS.medium, fontVariantNumeric: 'tabular-nums' }}>
                     {i + 1}.
                   </Box>{' '}
                   {p.title}
                 </Typography>
-                {p.locked && <LockRoundedIcon sx={{ fontSize: 15, color: 'warning.main', flexShrink: 0 }} />}
+                {p.locked && <LockRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'warning.main', flexShrink: 0 }} />}
                 <Box sx={{ flex: 1 }} />
-                <Typography variant="body2" sx={{ fontWeight: 700, color: DIFF_COLOR[p.difficulty] || 'text.secondary', flexShrink: 0 }}>
+                <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, color: DIFF_COLOR[p.difficulty] || 'text.secondary', flexShrink: 0 }}>
                   {p.difficulty}
                 </Typography>
               </Box>
@@ -300,7 +300,7 @@ export function ListView({ list, onRemove, onRename, onDelete, onBrowse }) {
       />
 
       <Dialog open={confirmDelete} onClose={() => setConfirmDelete(false)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800 }}>Delete “{list.name}”?</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Delete “{list.name}”?</DialogTitle>
         <DialogContent>
           <DialogContentText>The list and its {list.items.length} saved problems will be removed from this device. The problems themselves stay in the Library.</DialogContentText>
         </DialogContent>

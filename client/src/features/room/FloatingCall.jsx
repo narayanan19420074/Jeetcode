@@ -7,7 +7,7 @@ import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import CallEndRoundedIcon from '@mui/icons-material/CallEndRounded';
 import CloseFullscreenRoundedIcon from '@mui/icons-material/CloseFullscreenRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const SIZE = 60; // collapsed bubble diameter
 const GAP = 8;
@@ -54,7 +54,7 @@ function Circle({ stream, muted, mirror, name, videoOn = true, size, badge }) {
     >
       <Vid stream={stream} muted={muted} mirror={mirror} show={show} />
       {!show && (
-        <Box sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: 700, fontSize: size * 0.38 }}>
+        <Box sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: size * 0.38 }}>
           {initialOf(name) || <PersonRoundedIcon sx={{ fontSize: size * 0.5, opacity: 0.7 }} />}
         </Box>
       )}
@@ -166,7 +166,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
           badge={
             !micOn && (
               <Box sx={{ position: 'absolute', right: 0, bottom: 0, left: 0, height: 18, display: 'grid', placeItems: 'center', bgcolor: withAlpha(COLOR_PALETTE.red[600], .9), color: COLOR_PALETTE.white }}>
-                <MicOffRoundedIcon sx={{ fontSize: 13 }} />
+                <MicOffRoundedIcon sx={{ fontSize: FONT_SIZES.body }} />
               </Box>
             )
           }
@@ -194,7 +194,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
         {!remoteStream && (
           <Box sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', color: 'grey.400' }}>
             <Box sx={{ textAlign: 'center' }}>
-              <Box sx={{ width: 64, height: 64, mx: 'auto', mb: 1, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: COLOR_PALETTE.slate[800], color: COLOR_PALETTE.white, fontSize: 26, fontWeight: 700 }}>
+              <Box sx={{ width: 64, height: 64, mx: 'auto', mb: 1, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: COLOR_PALETTE.slate[800], color: COLOR_PALETTE.white, fontSize: FONT_SIZES.displayLg, fontWeight: FONT_WEIGHTS.bold }}>
                 {hasFriend ? initialOf(friendName) : <PersonRoundedIcon />}
               </Box>
               <Typography variant="caption">{status}</Typography>
@@ -205,7 +205,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
         {/* friend name, top-left */}
         <Typography
           variant="caption"
-          sx={{ position: 'absolute', left: 10, top: 10, px: 1, py: 0.25, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.black, .55), color: COLOR_PALETTE.white, fontWeight: 600 }}
+          sx={{ position: 'absolute', left: 10, top: 10, px: 1, py: 0.25, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.black, .55), color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.semibold }}
         >
           {remoteStream ? friendName : status}
         </Typography>
@@ -218,7 +218,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
             onClick={() => setOpen(false)}
             sx={{ position: 'absolute', right: 8, top: 8, width: 32, height: 32, bgcolor: withAlpha(COLOR_PALETTE.black, .55), color: COLOR_PALETTE.white, '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.black, .75) } }}
           >
-            <CloseFullscreenRoundedIcon sx={{ fontSize: 18 }} />
+            <CloseFullscreenRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
           </IconButton>
         </Tooltip>
 

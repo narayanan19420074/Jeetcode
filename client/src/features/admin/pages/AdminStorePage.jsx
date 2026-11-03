@@ -6,6 +6,7 @@ import {
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { STATUS_META, fmt, fmtDateTime } from '../../store/storeUtils';
+import { FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
 
 const NEXT = { placed: ['processing', 'cancelled'], processing: ['shipped', 'cancelled'], shipped: ['delivered'] };
 
@@ -13,7 +14,7 @@ function Stat({ label, value }) {
   return (
     <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, flex: '1 1 140px' }}>
       <Typography variant="caption" color="text.secondary">{label}</Typography>
-      <Typography variant="h5" sx={{ fontWeight: 800 }}>{fmt(value)}</Typography>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{fmt(value)}</Typography>
     </Paper>
   );
 }
@@ -52,7 +53,7 @@ function OrderDialog({ order, onClose, onSaved, setError }) {
 
   return (
     <Dialog open onClose={onClose} fullWidth maxWidth="sm">
-      <DialogTitle sx={{ fontWeight: 800 }}>{order.orderNo} · {order.itemName}{order.qty > 1 ? ` ×${order.qty}` : ''}</DialogTitle>
+      <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{order.orderNo} · {order.itemName}{order.qty > 1 ? ` ×${order.qty}` : ''}</DialogTitle>
       <DialogContent dividers>
         <Typography variant="body2" sx={{ mb: 1 }}>
           {order.user ? `${order.user.name} (@${order.user.handle}) · ${order.user.email}` : 'Unknown user'} · {fmt(order.total)} coins
@@ -132,7 +133,7 @@ function OrdersTab({ setError, onChanged }) {
               {data.items.length === 0 && <TableRow><TableCell colSpan={6}><Typography color="text.secondary" sx={{ py: 2 }}>No orders found.</Typography></TableCell></TableRow>}
               {data.items.map((o) => (
                 <TableRow key={o.id} hover sx={{ cursor: 'pointer' }} onClick={() => setOpen(o)}>
-                  <TableCell sx={{ fontFamily: 'monospace', fontWeight: 700 }}>{o.orderNo}</TableCell>
+                  <TableCell sx={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.bold }}>{o.orderNo}</TableCell>
                   <TableCell>{o.itemName}{o.qty > 1 ? ` ×${o.qty}` : ''}</TableCell>
                   <TableCell>{o.user ? `@${o.user.handle}` : '—'}</TableCell>
                   <TableCell align="right">{fmt(o.total)}</TableCell>
@@ -171,7 +172,7 @@ function ItemRow({ item, onSaved, setError }) {
 
   return (
     <TableRow>
-      <TableCell><Typography sx={{ fontWeight: 700 }}>{item.name}</Typography><Typography variant="caption" color="text.secondary">{item.slug} · {item.kind}</Typography></TableCell>
+      <TableCell><Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{item.name}</Typography><Typography variant="caption" color="text.secondary">{item.slug} · {item.kind}</Typography></TableCell>
       <TableCell><TextField size="small" type="number" value={price} onChange={(e) => setPrice(e.target.value)} sx={{ width: 100 }} /></TableCell>
       <TableCell><TextField size="small" type="number" value={stock} placeholder="∞" onChange={(e) => setStock(e.target.value)} sx={{ width: 90 }} /></TableCell>
       <TableCell>{fmt(item.sold)}</TableCell>
@@ -226,7 +227,7 @@ function CoinsTab({ setError }) {
   return (
     <Stack spacing={2}>
       <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
-        <Typography sx={{ fontWeight: 800, mb: 1.5 }}>Give or take coins</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1.5 }}>Give or take coins</Typography>
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
           <TextField size="small" label="User handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
           <TextField size="small" type="number" label="Amount (− to take)" value={amount} onChange={(e) => setAmount(e.target.value)} />
@@ -236,13 +237,13 @@ function CoinsTab({ setError }) {
         {msg && <Alert severity="success" sx={{ mt: 1.5 }}>{msg}</Alert>}
       </Paper>
       <Paper variant="outlined" sx={{ borderRadius: 3, overflowX: 'auto' }}>
-        <Typography sx={{ fontWeight: 800, p: 2, pb: 0 }}>Latest ledger entries</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, p: 2, pb: 0 }}>Latest ledger entries</Typography>
         <Table size="small">
           <TableHead><TableRow><TableCell>When</TableCell><TableCell>User</TableCell><TableCell>What</TableCell><TableCell align="right">Coins</TableCell></TableRow></TableHead>
           <TableBody>
             {(ledger || []).map((t) => (
               <TableRow key={t.id}><TableCell>{fmtDateTime(t.at)}</TableCell><TableCell>@{t.handle}</TableCell><TableCell>{t.title}</TableCell>
-                <TableCell align="right" sx={{ fontWeight: 700, color: t.amount > 0 ? 'success.main' : 'text.primary' }}>{t.amount > 0 ? '+' : '−'}{fmt(Math.abs(t.amount))}</TableCell></TableRow>
+                <TableCell align="right" sx={{ fontWeight: FONT_WEIGHTS.bold, color: t.amount > 0 ? 'success.main' : 'text.primary' }}>{t.amount > 0 ? '+' : '−'}{fmt(Math.abs(t.amount))}</TableCell></TableRow>
             ))}
           </TableBody>
         </Table>
@@ -261,7 +262,7 @@ export default function AdminStorePage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>Store</Typography>
+      <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>Store</Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>Ship merch, manage prices and stock, and adjust user coins.</Typography>
       {error && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError(null)}>{error}</Alert>}
 

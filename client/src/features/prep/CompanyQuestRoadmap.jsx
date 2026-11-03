@@ -12,7 +12,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { problemsApi } from '../../api/problemsApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import { Confetti, CountUp, XpBar } from '../aptitude/components/MotionBits';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const ROW = 108;
 const GOLD = COLOR_PALETTE.amber[400];
@@ -128,24 +128,24 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
           </IconButton>
           <CompanyAvatar name={company.name} logoUrl={company.logoUrl} size={40} />
           <Box sx={{ minWidth: 0, flex: 1 }}>
-            <Typography noWrap sx={{ fontWeight: 900, fontSize: '1.2rem', lineHeight: 1.15 }}>{company.name}</Typography>
-            <Typography sx={{ fontSize: 12, fontWeight: 700, opacity: 0.9 }}>{nodes.length} levels · easy to hard</Typography>
+            <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.15 }}>{company.name}</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, opacity: 0.9 }}>{nodes.length} levels · easy to hard</Typography>
           </Box>
         </Box>
 
         <Box sx={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 2 }}>
           <Box>
-            <Typography sx={{ fontWeight: 900, fontSize: '3rem', lineHeight: 1, textShadow: `0 3px 0 ${withAlpha(COLOR_PALETTE.black, 0.18)}` }}>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.jumbo, lineHeight: 1, textShadow: `0 3px 0 ${withAlpha(COLOR_PALETTE.black, 0.18)}` }}>
               <CountUp value={pct} />%
             </Typography>
-            <Typography sx={{ fontWeight: 800, fontSize: 13, opacity: 0.95 }}>complete</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, opacity: 0.95 }}>complete</Typography>
           </Box>
           <Box sx={{ textAlign: 'right' }}>
             <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1.25, py: 0.4, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.black, 0.22) }}>
-              <StarRoundedIcon sx={{ fontSize: 20, color: GOLD }} />
-              <Typography sx={{ fontWeight: 900, fontSize: 14, fontVariantNumeric: 'tabular-nums' }}>{stars}/{maxStars}</Typography>
+              <StarRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: GOLD }} />
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, fontVariantNumeric: 'tabular-nums' }}>{stars}/{maxStars}</Typography>
             </Box>
-            <Typography sx={{ fontWeight: 800, fontSize: 13, mt: 0.5 }}>{solved} of {nodes.length} solved</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, mt: 0.5 }}>{solved} of {nodes.length} solved</Typography>
           </Box>
         </Box>
         <Box sx={{ position: 'relative', mt: 1.5 }}>
@@ -154,7 +154,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
         {company.examSlug && (
           <Button
             onClick={() => navigate(`/prep/${company.examSlug}`)} endIcon={<ArrowForwardRoundedIcon />} disableElevation size="small"
-            sx={{ position: 'relative', mt: 1.5, fontWeight: 800, borderRadius: 99, color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.32) } }}
+            sx={{ position: 'relative', mt: 1.5, fontWeight: FONT_WEIGHTS.bold, borderRadius: 99, color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.32) } }}
           >
             Exam pattern roadmap
           </Button>
@@ -208,7 +208,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
                         transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
                         style={{ position: 'absolute', top: -40, left: '50%', translateX: '-50%', whiteSpace: 'nowrap', zIndex: 2 }}
                       >
-                        <Box sx={{ px: 1.4, py: 0.3, borderRadius: 99, bgcolor: COLOR_PALETTE.white, color: colors[2], fontSize: 12, fontWeight: 900, boxShadow: `0 4px 10px ${withAlpha(COLOR_PALETTE.black, 0.25)}`, position: 'relative', '&::after': { content: '""', position: 'absolute', left: '50%', bottom: -5, width: 10, height: 10, bgcolor: COLOR_PALETTE.white, transform: 'translateX(-50%) rotate(45deg)' } }}>
+                        <Box sx={{ px: 1.4, py: 0.3, borderRadius: 99, bgcolor: COLOR_PALETTE.white, color: colors[2], fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, boxShadow: `0 4px 10px ${withAlpha(COLOR_PALETTE.black, 0.25)}`, position: 'relative', '&::after': { content: '""', position: 'absolute', left: '50%', bottom: -5, width: 10, height: 10, bgcolor: COLOR_PALETTE.white, transform: 'translateX(-50%) rotate(45deg)' } }}>
                           PLAY
                         </Box>
                       </motion.div>
@@ -224,7 +224,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
                       sx={{ borderRadius: '50%', display: 'block', WebkitTapHighlightColor: 'transparent' }}
                     >
                       <Candy colors={colors} size={isCurrent ? 68 : 58} done={p.solvedByMe}>
-                        {p.locked ? <LockRoundedIcon sx={{ fontSize: 26 }} /> : p.solvedByMe ? <CheckRoundedIcon sx={{ fontSize: 30 }} /> : <Box component="span" sx={{ fontWeight: 900, fontSize: isCurrent ? 24 : 20, textShadow: `0 2px 0 ${colors[2]}` }}>{i + 1}</Box>}
+                        {p.locked ? <LockRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg }} /> : p.solvedByMe ? <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.hero }} /> : <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: isCurrent ? FONT_SIZES.display : FONT_SIZES.heading, textShadow: `0 2px 0 ${colors[2]}` }}>{i + 1}</Box>}
                       </Candy>
                     </ButtonBase>
                   </motion.div>
@@ -232,7 +232,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
                     <Box sx={{ position: 'absolute', left: '50%', bottom: -20, transform: 'translateX(-50%)', display: 'flex' }}>
                       {Array.from({ length: earned }, (_, k) => (
                         <motion.span key={k} initial={reduce ? false : { scale: 0, rotate: -90 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 320, damping: 12, delay: 0.6 + k * 0.12 + Math.min(i, 14) * 0.05 }} style={{ display: 'flex' }}>
-                          <StarRoundedIcon sx={{ fontSize: 20, color: GOLD, filter: `drop-shadow(0 1px 1px ${withAlpha(COLOR_PALETTE.black, 0.35)})` }} />
+                          <StarRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: GOLD, filter: `drop-shadow(0 1px 1px ${withAlpha(COLOR_PALETTE.black, 0.35)})` }} />
                         </motion.span>
                       ))}
                     </Box>
@@ -247,8 +247,8 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
                     opacity: p.locked ? 0.6 : 1,
                   }}
                 >
-                  <Typography sx={{ fontWeight: 800, fontSize: '0.88rem', lineHeight: 1.2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{p.title}</Typography>
-                  <Typography variant="caption" sx={{ fontWeight: 700, color: p.solvedByMe ? 'text.secondary' : CANDY[p.difficulty]?.c[1] }}>{p.solvedByMe ? 'Cleared' : p.difficulty}</Typography>
+                  <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, lineHeight: 1.2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{p.title}</Typography>
+                  <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: p.solvedByMe ? 'text.secondary' : CANDY[p.difficulty]?.c[1] }}>{p.solvedByMe ? 'Cleared' : p.difficulty}</Typography>
                 </ButtonBase>
               </Box>
             );
@@ -261,10 +261,10 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
           >
             <motion.div animate={done && !reduce ? { rotate: [-8, 8, -8], scale: [1, 1.12, 1] } : undefined} transition={{ duration: 1.4, repeat: Infinity }}>
               <Box sx={{ width: 76, height: 76, borderRadius: '50%', display: 'grid', placeItems: 'center', mx: 'auto', color: done ? COLOR_PALETTE.custom.yellow5B3A00 : COLOR_PALETTE.white, background: done ? `radial-gradient(circle at 30% 25%,${COLOR_PALETTE.yellow[200]},${COLOR_PALETTE.amber[500]})` : `radial-gradient(circle at 30% 25%,${LOCKED[0]},${LOCKED[1]})`, boxShadow: done ? `0 0 0 6px ${withAlpha(COLOR_PALETTE.amber[400], 0.3)}, 0 12px 24px ${withAlpha(COLOR_PALETTE.amber[500], 0.5)}` : `0 6px 0 ${COLOR_PALETTE.slate[500]}` }}>
-                <EmojiEventsRoundedIcon sx={{ fontSize: 40 }} />
+                <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg }} />
               </Box>
             </motion.div>
-            <Typography sx={{ fontWeight: 900, mt: 1 }}>{done ? `${company.name} cleared!` : 'Finish line'}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 1 }}>{done ? `${company.name} cleared!` : 'Finish line'}</Typography>
           </motion.div>
         </Box>
       )}
@@ -283,24 +283,24 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
                 <Box sx={{ display: 'grid', placeItems: 'center', mb: 1.5 }}>
                   <motion.div initial={reduce ? false : { scale: 0.4, rotate: -20 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 14 }}>
                     <Candy colors={sheetColors} size={72} done={sheet.solvedByMe}>
-                      {sheet.locked ? <LockRoundedIcon sx={{ fontSize: 30 }} /> : sheet.solvedByMe ? <CheckRoundedIcon sx={{ fontSize: 36 }} /> : <Box component="span" sx={{ fontWeight: 900, fontSize: 28, textShadow: `0 2px 0 ${sheetColors[2]}` }}>{picked + 1}</Box>}
+                      {sheet.locked ? <LockRoundedIcon sx={{ fontSize: FONT_SIZES.hero }} /> : sheet.solvedByMe ? <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg }} /> : <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, textShadow: `0 2px 0 ${sheetColors[2]}` }}>{picked + 1}</Box>}
                     </Candy>
                   </motion.div>
                 </Box>
-                <Typography sx={{ fontWeight: 900, fontSize: '1.2rem', lineHeight: 1.25 }}>{sheet.title}</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.25 }}>{sheet.title}</Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1, mt: 0.75, mb: 2 }}>
-                  <Box sx={{ px: 1.25, py: 0.2, borderRadius: 99, fontSize: 12, fontWeight: 800, color: COLOR_PALETTE.white, bgcolor: CANDY[sheet.difficulty]?.c[1] }}>{sheet.difficulty}</Box>
+                  <Box sx={{ px: 1.25, py: 0.2, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.white, bgcolor: CANDY[sheet.difficulty]?.c[1] }}>{sheet.difficulty}</Box>
                   <Box sx={{ display: 'flex' }}>
-                    {[1, 2, 3].map((k) => <StarRoundedIcon key={k} sx={{ fontSize: 20, color: k <= (CANDY[sheet.difficulty]?.stars || 1) ? GOLD : 'action.disabled' }} />)}
+                    {[1, 2, 3].map((k) => <StarRoundedIcon key={k} sx={{ fontSize: FONT_SIZES.heading, color: k <= (CANDY[sheet.difficulty]?.stars || 1) ? GOLD : 'action.disabled' }} />)}
                   </Box>
-                  {sheet.acceptanceRate > 0 && <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 700 }}>{sheet.acceptanceRate}% accepted</Typography>}
+                  {sheet.acceptanceRate > 0 && <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{sheet.acceptanceRate}% accepted</Typography>}
                 </Box>
                 {sheet.locked ? (
-                  <Button fullWidth size="large" variant="contained" disableElevation startIcon={<LockRoundedIcon />} onClick={() => navigate('/pricing')} sx={{ fontWeight: 800, borderRadius: '16px', py: 1.3 }}>Unlock with Pro</Button>
+                  <Button fullWidth size="large" variant="contained" disableElevation startIcon={<LockRoundedIcon />} onClick={() => navigate('/pricing')} sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: '16px', py: 1.3 }}>Unlock with Pro</Button>
                 ) : (
                   <Button
                     fullWidth size="large" variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} onClick={() => navigate(`/workspace/${sheet.slug}`)}
-                    sx={{ fontWeight: 900, borderRadius: '16px', py: 1.3, color: COLOR_PALETTE.white, background: `linear-gradient(180deg, ${sheetColors[1]}, ${sheetColors[2]})`, boxShadow: `0 5px 0 ${sheetColors[2]}`, '&:hover': { background: `linear-gradient(180deg, ${sheetColors[1]}, ${sheetColors[2]})`, filter: 'brightness(1.08)' } }}
+                    sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: '16px', py: 1.3, color: COLOR_PALETTE.white, background: `linear-gradient(180deg, ${sheetColors[1]}, ${sheetColors[2]})`, boxShadow: `0 5px 0 ${sheetColors[2]}`, '&:hover': { background: `linear-gradient(180deg, ${sheetColors[1]}, ${sheetColors[2]})`, filter: 'brightness(1.08)' } }}
                   >
                     {sheet.solvedByMe ? 'Play again' : 'Play level'}
                   </Button>

@@ -12,7 +12,7 @@ import CompanyAvatar from '../../../components/CompanyAvatar';
 import NqtExploreCard from './NqtExploreCard';
 import { tint } from '../dashboardUtils';
 import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libSectionTitleSx } from './libraryStyle';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Phone Explore screen in the Library look (same tokens as the phone home): 16px gutter, 18px section titles,
 // 32px between sections, 12px between a title and its content, 48px tiles and logos, 34px chips, divider-separated rows.
@@ -62,12 +62,12 @@ function ToolRow({ to, title, text, icon: Icon, color, bg }) {
         bgcolor: t.palette.mode === 'dark' ? tint(color, 16) : bg,
       })}
     >
-      <Icon aria-hidden sx={{ fontSize: 28, flex: 'none', color }} />
+      <Icon aria-hidden sx={{ fontSize: FONT_SIZES.displayLg, flex: 'none', color }} />
       <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Typography sx={{ fontSize: 16, lineHeight: '24px', fontWeight: 500, letterSpacing: LIB_TRACKING }}>{title}</Typography>
-        <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{text}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>{title}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{text}</Typography>
       </Box>
-      <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: 24, flex: 'none', color: 'var(--lib-muted)' }} />
+      <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, flex: 'none', color: 'var(--lib-muted)' }} />
     </ButtonBase>
   );
 }
@@ -86,8 +86,8 @@ function Companies({ companies, onBrowse }) {
           >
             <CompanyAvatar name={company} size={48} />
             <Box sx={{ flex: 1, minWidth: 0, pb: '4px', borderBottom: '1px solid var(--lib-divider)' }}>
-              <Typography noWrap sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{company}</Typography>
-              <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{company}</Typography>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
                 {count.toLocaleString('en-IN')} {count === 1 ? 'Question' : 'Questions'}
               </Typography>
             </Box>
@@ -112,10 +112,10 @@ function Topics({ tags, onBrowse }) {
                 key={tag}
                 onClick={() => onBrowse({ tags: [tag] })}
                 aria-label={`Browse ${tag} questions`}
-                sx={{ height: 34, px: '14px', gap: 0.75, borderRadius: 999, fontFamily: 'inherit', bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: 15, letterSpacing: LIB_TRACKING, whiteSpace: 'nowrap' }}
+                sx={{ height: 34, px: '14px', gap: 0.75, borderRadius: 999, fontFamily: 'inherit', bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, whiteSpace: 'nowrap' }}
               >
                 {tag}
-                <Box component="span" sx={{ fontSize: 13, opacity: 0.7, fontVariantNumeric: 'tabular-nums' }}>{count}</Box>
+                <Box component="span" sx={{ fontSize: FONT_SIZES.body, opacity: 0.7, fontVariantNumeric: 'tabular-nums' }}>{count}</Box>
               </ButtonBase>
             ))}
           </Box>

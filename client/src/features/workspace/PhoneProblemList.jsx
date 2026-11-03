@@ -8,6 +8,7 @@ import { problemsApi } from '../../api/problemsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { LIB_TRACKING, LibraryFont, libChipSx, libIconBtnSx, libSearchSx, libSectionTitleSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { PhoneDifficultyTag } from './phoneStyle';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const PAGE_SIZE = 30;
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
@@ -125,7 +126,7 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
           <Typography component="h2" sx={{ ...libSectionTitleSx, flex: 1 }}>
             Problems
             {total > 0 && (
-              <Box component="span" sx={{ ml: 1, color: pal.muted, fontWeight: 400, fontVariantNumeric: 'tabular-nums' }}>
+              <Box component="span" sx={{ ml: 1, color: pal.muted, fontWeight: FONT_WEIGHTS.regular, fontVariantNumeric: 'tabular-nums' }}>
                 {total.toLocaleString('en-IN')}
               </Box>
             )}
@@ -148,7 +149,7 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
                 endAdornment: searchInput ? (
                   <InputAdornment position="end">
                     <IconButton size="small" aria-label="Clear search" onClick={() => setSearchInput('')} edge="end">
-                      <ClearRoundedIcon sx={{ fontSize: 20 }} />
+                      <ClearRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
                     </IconButton>
                   </InputAdornment>
                 ) : null,
@@ -179,15 +180,15 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
 
           {error && (
             <Box sx={{ py: 5, textAlign: 'center' }}>
-              <Typography sx={{ fontSize: 15, letterSpacing: LIB_TRACKING, color: pal.muted, mb: 1.5 }}>{error}</Typography>
-              <Button disableElevation onClick={() => setReloadKey((k) => k + 1)} sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: 15 }}>
+              <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, color: pal.muted, mb: 1.5 }}>{error}</Typography>
+              <Button disableElevation onClick={() => setReloadKey((k) => k + 1)} sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
                 Try again
               </Button>
             </Box>
           )}
 
           {!firstLoad && !error && items.length === 0 && (
-            <Typography sx={{ py: 5, textAlign: 'center', fontSize: 15, letterSpacing: LIB_TRACKING, color: pal.muted }}>No problems match.</Typography>
+            <Typography sx={{ py: 5, textAlign: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, color: pal.muted }}>No problems match.</Typography>
           )}
 
           {items.map((p, i) => {
@@ -215,15 +216,15 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
               >
                 <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.25, pt: '2px' }}>
                   <PhoneDifficultyTag difficulty={p.difficulty} />
-                  {p.solvedByMe && <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: 20, color: 'var(--jc-easy)' }} />}
+                  {p.solvedByMe && <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-easy)' }} />}
                 </Stack>
                 <Box sx={{ minWidth: 0, flex: 1 }}>
                   <Stack direction="row" spacing={0.75} sx={{ alignItems: 'flex-start', minWidth: 0 }}>
                     <Typography
                       sx={{
                         minWidth: 0,
-                        fontWeight: current ? 700 : 500,
-                        fontSize: 16,
+                        fontWeight: current ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
+                        fontSize: FONT_SIZES.title,
                         lineHeight: '24px',
                         letterSpacing: LIB_TRACKING,
                         display: '-webkit-box',
@@ -235,9 +236,9 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
                     >
                       {i + 1}. {p.title}
                     </Typography>
-                    {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: 16, mt: '4px', color: 'warning.main', flexShrink: 0 }} />}
+                    {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: FONT_SIZES.title, mt: '4px', color: 'warning.main', flexShrink: 0 }} />}
                   </Stack>
-                  <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
+                  <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
                     Acceptance {(p.acceptanceRate ?? 0).toFixed(1)}%
                   </Typography>
                 </Box>
@@ -247,7 +248,7 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
 
           {!error && items.length > 0 && page < totalPages && (
             <Box sx={{ pt: 1.5, display: 'flex', justifyContent: 'center' }}>
-              <Button disableElevation disabled={loading} onClick={() => setPage((n) => n + 1)} sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: 15 }}>
+              <Button disableElevation disabled={loading} onClick={() => setPage((n) => n + 1)} sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
                 {loading ? <CircularProgress size={16} color="inherit" /> : 'Load more'}
               </Button>
             </Box>

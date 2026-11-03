@@ -15,7 +15,7 @@ import { linearSearchSteps, binarySearchSteps } from './algorithms/searching';
 import { bfsSteps, dfsSteps, dijkstraSteps, defaultGraph } from './algorithms/graph';
 import { bstInsertSteps, bstTraversalSteps } from './algorithms/trees';
 import { fibonacciSteps, knapsackSteps, defaultKnapsack } from './algorithms/dp';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Blip's guided lesson (3D mascot + speech) is only downloaded when someone
 // clicks Teach.
@@ -216,7 +216,7 @@ export default function VisualizerPage() {
       {/* Compact header + all controls in one row */}
       <Box sx={{ mb: 2, flexShrink: 0 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, mb: 1 }}>
-          <Typography variant="h6" sx={{ fontWeight: 800 }}>Algorithm Visualizer</Typography>
+          <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>Algorithm Visualizer</Typography>
           <Button
             data-teach="teach"
             onClick={() => setTeaching(true)}
@@ -227,7 +227,7 @@ export default function VisualizerPage() {
             variant="contained"
             size="small"
             sx={{
-              fontWeight: 800,
+              fontWeight: FONT_WEIGHTS.bold,
               borderRadius: 99,
               px: 2,
               color: COLOR_PALETTE.emerald[950],
@@ -260,7 +260,7 @@ export default function VisualizerPage() {
           </FormControl>
 
           {showArrayControls && (
-            <Button data-teach="new-array" startIcon={<ShuffleRoundedIcon />} onClick={() => setArray(randomArray(arraySize))} variant="outlined" size="small" sx={{ fontWeight: 600, height: 40 }}>
+            <Button data-teach="new-array" startIcon={<ShuffleRoundedIcon />} onClick={() => setArray(randomArray(arraySize))} variant="outlined" size="small" sx={{ fontWeight: FONT_WEIGHTS.semibold, height: 40 }}>
               New array
             </Button>
           )}
@@ -296,7 +296,7 @@ export default function VisualizerPage() {
               helperText={customError || ' '}
               sx={{ width: 190 }}
             />
-            <Button onClick={applyCustomArray} variant="text" size="small" sx={{ fontWeight: 600, height: 40 }}>
+            <Button onClick={applyCustomArray} variant="text" size="small" sx={{ fontWeight: FONT_WEIGHTS.semibold, height: 40 }}>
               Apply
             </Button>
             </Box>

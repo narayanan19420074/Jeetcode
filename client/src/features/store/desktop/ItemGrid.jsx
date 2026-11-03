@@ -1,6 +1,7 @@
 import { Box, Skeleton, Typography } from '@mui/material';
 import { useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import StoreItemCard from './StoreItemCard';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 const COLUMNS = { xs: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))', lg: 'repeat(4, minmax(0, 1fr))' };
 const SKELETON_COUNT = 8;
@@ -8,7 +9,7 @@ const SKELETON_COUNT = 8;
 function EmptyShelf({ palette }) {
   return (
     <Box sx={{ py: 8, textAlign: 'center' }}>
-      <Typography sx={{ fontWeight: 700, fontSize: 18 }}>Nothing here yet</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading }}>Nothing here yet</Typography>
       <Typography sx={{ mt: 0.5, color: palette.muted }}>Try another category.</Typography>
     </Box>
   );

@@ -6,6 +6,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { LIB_TRACKING, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { PhoneDifficultyTag } from './phoneStyle';
 import { mono } from './wsTokens';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Problem statement on phones, in the Library look: page-title name, tags (switchable from the menu),
 // description, then folded examples and constraints. Used inside ProblemSheet.
@@ -21,7 +22,7 @@ function TagPill({ label, outlined = false }) {
         display: 'inline-flex',
         alignItems: 'center',
         borderRadius: 999,
-        fontSize: 15,
+        fontSize: FONT_SIZES.bodyLg,
         letterSpacing: LIB_TRACKING,
         whiteSpace: 'nowrap',
         color: pal.chipText,
@@ -44,15 +45,15 @@ function Fold({ title, count, children }) {
         aria-expanded={open}
         sx={{ display: 'flex', width: '100%', justifyContent: 'flex-start', gap: 1, px: 2, py: 1.5, textAlign: 'left', fontFamily: 'inherit', color: pal.text }}
       >
-        <Typography sx={{ flex: 1, fontSize: 16, fontWeight: 500, letterSpacing: LIB_TRACKING }}>
+        <Typography sx={{ flex: 1, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>
           {title}
           {count > 0 && (
-            <Box component="span" sx={{ ml: 1, color: pal.muted, fontWeight: 400 }}>
+            <Box component="span" sx={{ ml: 1, color: pal.muted, fontWeight: FONT_WEIGHTS.regular }}>
               {count}
             </Box>
           )}
         </Typography>
-        <ExpandMoreRoundedIcon sx={{ fontSize: 22, color: pal.muted, transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none' }} />
+        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: pal.muted, transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none' }} />
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
         <Box sx={{ px: 2, pb: 2 }}>{children}</Box>
@@ -66,8 +67,8 @@ function ConstraintList({ items }) {
   return (
     <Stack component="ul" sx={{ gap: 1, m: 0, pl: 2.25 }}>
       {items.map((c, i) => (
-        <Typography key={i} component="li" sx={{ fontSize: 15, lineHeight: '24px', '&::marker': { color: pal.muted } }}>
-          <Box component="code" sx={{ ...mono, fontSize: 13, px: 0.75, py: 0.25, borderRadius: '8px', wordBreak: 'break-word', bgcolor: pal.chip }}>
+        <Typography key={i} component="li" sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: '24px', '&::marker': { color: pal.muted } }}>
+          <Box component="code" sx={{ ...mono, fontSize: FONT_SIZES.body, px: 0.75, py: 0.25, borderRadius: '8px', wordBreak: 'break-word', bgcolor: pal.chip }}>
             {c}
           </Box>
         </Typography>
@@ -84,19 +85,19 @@ function ExampleBlock({ index, example }) {
   ];
   return (
     <Box sx={{ mb: 2, '&:last-of-type': { mb: 0 } }}>
-      <Typography sx={{ fontWeight: 700, fontSize: 15, letterSpacing: LIB_TRACKING, mb: 1 }}>Example {index + 1}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, mb: 1 }}>Example {index + 1}</Typography>
       <Box sx={{ p: 1.5, borderRadius: '16px', bgcolor: pal.chip }}>
         {rows.map(([label, value]) => (
-          <Typography key={label} sx={{ ...mono, fontSize: 14, lineHeight: 1.7, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-            <Box component="span" sx={{ fontWeight: 700, color: pal.muted }}>
+          <Typography key={label} sx={{ ...mono, fontSize: FONT_SIZES.body, lineHeight: 1.7, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+            <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, color: pal.muted }}>
               {label}:{' '}
             </Box>
             {value}
           </Typography>
         ))}
         {example.explanation && (
-          <Typography sx={{ mt: 1, fontSize: 15, lineHeight: '24px', whiteSpace: 'pre-wrap' }}>
-            <Box component="span" sx={{ fontWeight: 700, color: pal.muted }}>
+          <Typography sx={{ mt: 1, fontSize: FONT_SIZES.bodyLg, lineHeight: '24px', whiteSpace: 'pre-wrap' }}>
+            <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, color: pal.muted }}>
               Explanation:{' '}
             </Box>
             {example.explanation}
@@ -121,7 +122,7 @@ export default function PhoneProblemDescription({ problem, showTags = true, nav 
   return (
     <>
       <Stack direction="row" sx={{ alignItems: 'flex-start', gap: 1 }}>
-        <Typography component="h1" sx={{ flex: 1, minWidth: 0, fontWeight: 700, fontSize: 26, lineHeight: '32px', wordBreak: 'break-word' }}>
+        <Typography component="h1" sx={{ flex: 1, minWidth: 0, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px', wordBreak: 'break-word' }}>
           {problem.title}
         </Typography>
         {nav && (
@@ -146,7 +147,7 @@ export default function PhoneProblemDescription({ problem, showTags = true, nav 
           </Stack>
           {companies.length > 0 && (
             <Box>
-              <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted, mb: 0.75 }}>Companies</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted, mb: 0.75 }}>Companies</Typography>
               <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1 }}>
                 {companies.map((c) => (
                   <TagPill key={c} label={c} outlined />
@@ -157,7 +158,7 @@ export default function PhoneProblemDescription({ problem, showTags = true, nav 
         </Stack>
       )}
 
-      <Typography sx={{ whiteSpace: 'pre-line', mt: 2.5, mb: 3, fontSize: 16, lineHeight: '27px', letterSpacing: '0.01em' }}>{problem.description}</Typography>
+      <Typography sx={{ whiteSpace: 'pre-line', mt: 2.5, mb: 3, fontSize: FONT_SIZES.title, lineHeight: '27px', letterSpacing: '0.01em' }}>{problem.description}</Typography>
 
       {problem.examples?.length > 0 && (
         <Fold key={`ex-${key}`} title="Examples" count={problem.examples.length}>
@@ -174,7 +175,7 @@ export default function PhoneProblemDescription({ problem, showTags = true, nav 
           </Fold>
         ) : (
           <Box sx={{ mt: 1.5, mb: 2 }}>
-            <Typography sx={{ fontWeight: 500, fontSize: 16, letterSpacing: LIB_TRACKING, mb: 1 }}>Constraints</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, mb: 1 }}>Constraints</Typography>
             <ConstraintList items={constraints} />
           </Box>
         ))}

@@ -27,6 +27,7 @@ import SupportChat from './SupportChat';
 import { feedbackApi } from '../../api/feedbackApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { CONTACT_EMAIL, LEGAL_LINKS, SITE_NAME } from '../legal/legalConfig';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const TYPES = [
   { value: 'question', label: 'Question' },
@@ -158,7 +159,7 @@ export default function HelpPage() {
         <Container maxWidth="md" sx={{ py: 1.5, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
           <Box component={RouterLink} to="/" aria-label={`${SITE_NAME} home`} sx={{ display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', color: 'inherit' }}>
             <CodeRoundedIcon sx={{ color: 'primary.main' }} />
-            <Typography sx={{ fontWeight: 800 }}>{SITE_NAME}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{SITE_NAME}</Typography>
           </Box>
           {isAuthenticated && (
             <Button component={RouterLink} to="/dashboard" size="small" color="inherit">
@@ -169,21 +170,21 @@ export default function HelpPage() {
       </Box>
 
       <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 } }}>
-        <Typography component="h1" sx={{ fontSize: { xs: '1.7rem', md: '2.1rem' }, fontWeight: 800, mb: 0.5 }}>
+        <Typography component="h1" sx={{ fontSize: { xs: FONT_SIZES.displayLg, md: FONT_SIZES.hero }, fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
           Help & Support
         </Typography>
         <Typography color="text.secondary" sx={{ mb: 3 }}>
           Check the answers below first. If you cannot find what you need, send us a message using the form. We usually reply within 2 working days.
         </Typography>
 
-        <Typography component="h2" sx={{ fontSize: '1.15rem', fontWeight: 700, mb: 1 }}>
+        <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
           Quick answers
         </Typography>
         <Box sx={{ mb: 4 }}>
           {FAQ.map((f) => (
             <Accordion key={f.q} disableGutters variant="outlined" sx={{ '&:before': { display: 'none' } }}>
               <AccordionSummary expandIcon={<ExpandMoreRoundedIcon />}>
-                <Typography sx={{ fontWeight: 600 }}>{f.q}</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold }}>{f.q}</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography color="text.secondary" sx={{ lineHeight: 1.7 }}>
@@ -197,20 +198,20 @@ export default function HelpPage() {
         <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3, mb: 4 }}>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ alignItems: { sm: 'center' }, justifyContent: 'space-between' }}>
             <Box>
-              <Typography component="h2" sx={{ fontSize: '1.15rem', fontWeight: 700 }}>
+              <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.bold }}>
                 Chat with support
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Talk to our team about payments, your account or technical issues. Available to signed-in users.
               </Typography>
             </Box>
-            <Button variant="contained" disableElevation startIcon={<ChatRoundedIcon />} onClick={() => setChatOpen(true)} sx={{ fontWeight: 700, flexShrink: 0 }}>
+            <Button variant="contained" disableElevation startIcon={<ChatRoundedIcon />} onClick={() => setChatOpen(true)} sx={{ fontWeight: FONT_WEIGHTS.bold, flexShrink: 0 }}>
               Start chat
             </Button>
           </Stack>
         </Paper>
 
-        <Typography component="h2" sx={{ fontSize: '1.15rem', fontWeight: 700, mb: 1 }}>
+        <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
           Contact us / send feedback
         </Typography>
         <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
@@ -275,7 +276,7 @@ export default function HelpPage() {
                   </label>
                 </Box>
 
-                <Button type="submit" variant="contained" disableElevation disabled={busy} sx={{ fontWeight: 700, alignSelf: 'flex-start', px: 3 }}>
+                <Button type="submit" variant="contained" disableElevation disabled={busy} sx={{ fontWeight: FONT_WEIGHTS.bold, alignSelf: 'flex-start', px: 3 }}>
                   {busy ? 'Sending…' : 'Send message'}
                 </Button>
               </Stack>

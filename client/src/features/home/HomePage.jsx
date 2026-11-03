@@ -33,7 +33,7 @@ import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 // Phones in light mode get the warm cream surface of the Library pages; other screens and dark mode are unchanged.
 const cream = (t, phone, fallback) => (t.palette.mode === 'light' ? { xs: phone, md: fallback } : fallback);
 import { DISPLAY_FONT } from './anim';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // --- Copy rules for this page -------------------------------------------
 // Plain words a student understands in five seconds. One promise (coding +
@@ -108,12 +108,12 @@ function SectionHeading({ children, sub, align = 'center', maxWidth = 680, sx })
     <Box sx={{ textAlign: align, maxWidth, mx: align === 'center' ? 'auto' : 0, mb: { xs: 4, md: 6 }, ...sx }}>
       <Typography
         variant="h2"
-        sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '1.9rem', md: '2.6rem' }, lineHeight: 1.1, letterSpacing: '-0.03em', textWrap: 'balance' }}
+        sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.hero, md: FONT_SIZES.heroLg }, lineHeight: 1.1, letterSpacing: '-0.03em', textWrap: 'balance' }}
       >
         {children}
       </Typography>
       {sub && (
-        <Typography color="text.secondary" sx={{ mt: 1.5, fontSize: '1.08rem', lineHeight: 1.6, maxWidth: '56ch', mx: align === 'center' ? 'auto' : 0 }}>
+        <Typography color="text.secondary" sx={{ mt: 1.5, fontSize: FONT_SIZES.subheading, lineHeight: 1.6, maxWidth: '56ch', mx: align === 'center' ? 'auto' : 0 }}>
           {sub}
         </Typography>
       )}
@@ -130,7 +130,7 @@ function PrimaryCta({ onClick, label, size = 'large', sx, buttonRef, light = fal
       disableElevation
       onClick={onClick}
       sx={{
-        fontWeight: 800,
+        fontWeight: FONT_WEIGHTS.bold,
         px: 3.5,
         py: 1.3,
         whiteSpace: 'nowrap',
@@ -189,12 +189,12 @@ function NavBar({ authed, onStart, onLogin }) {
       <Container maxWidth="lg">
         <Stack direction="row" sx={{ height: 64, alignItems: 'center', justifyContent: 'space-between' }}>
           <Stack direction="row" spacing={4} sx={{ alignItems: 'center' }}>
-            <Typography component="a" href="#top" sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '1.35rem', color: 'text.primary', textDecoration: 'none', letterSpacing: '-0.02em' }}>
+            <Typography component="a" href="#top" sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, color: 'text.primary', textDecoration: 'none', letterSpacing: '-0.02em' }}>
               Jeet<Box component="span" sx={{ color: 'primary.main' }}>Code</Box>
             </Typography>
             <Stack direction="row" spacing={3} sx={{ display: { xs: 'none', md: 'flex' } }}>
               {links.map(([l, h]) => (
-                <Link key={l} href={h} underline="none" color="text.secondary" sx={{ fontWeight: 600, fontSize: '0.92rem', '&:hover': { color: 'text.primary' } }}>
+                <Link key={l} href={h} underline="none" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.bodyLg, '&:hover': { color: 'text.primary' } }}>
                   {l}
                 </Link>
               ))}
@@ -207,7 +207,7 @@ function NavBar({ authed, onStart, onLogin }) {
               </IconButton>
             </Tooltip>
             {!authed && (
-              <Button color="inherit" onClick={onLogin} sx={{ fontWeight: 700, whiteSpace: 'nowrap' }}>
+              <Button color="inherit" onClick={onLogin} sx={{ fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap' }}>
                 Log in
               </Button>
             )}
@@ -223,14 +223,14 @@ function NavBar({ authed, onStart, onLogin }) {
 function FeatureCard({ title, body, shot, alt, points, onClick, cta }) {
   return (
     <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '18px', border: '1px solid', borderColor: 'divider', bgcolor: 'background.default', p: { xs: 2.5, md: 3.5 } }}>
-      <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '1.5rem', letterSpacing: '-0.02em' }}>{title}</Typography>
+      <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, letterSpacing: '-0.02em' }}>{title}</Typography>
       <Typography color="text.secondary" sx={{ mt: 0.75, mb: 2, lineHeight: 1.55 }}>{body}</Typography>
       {points && (
         <Stack spacing={1} sx={{ mb: 2.5 }}>
           {points.map((p) => (
             <Stack key={p} direction="row" spacing={1.1} sx={{ alignItems: 'flex-start' }}>
-              <CheckRoundedIcon sx={{ fontSize: 20, color: 'success.main', mt: '1px' }} />
-              <Typography sx={{ fontWeight: 600, lineHeight: 1.5 }}>{p}</Typography>
+              <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'success.main', mt: '1px' }} />
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.5 }}>{p}</Typography>
             </Stack>
           ))}
         </Stack>
@@ -238,7 +238,7 @@ function FeatureCard({ title, body, shot, alt, points, onClick, cta }) {
       <Box sx={{ mt: 'auto' }}>
         {shot && <Shot src={shot} alt={alt} />}
         {cta && (
-          <Button onClick={onClick} sx={{ mt: 1.5, px: 0, fontWeight: 700 }}>
+          <Button onClick={onClick} sx={{ mt: 1.5, px: 0, fontWeight: FONT_WEIGHTS.bold }}>
             {cta}
           </Button>
         )}
@@ -250,7 +250,7 @@ function FeatureCard({ title, body, shot, alt, points, onClick, cta }) {
 function SmallCard({ title, body }) {
   return (
     <Box sx={{ height: '100%', borderRadius: '16px', border: '1px solid', borderColor: 'divider', bgcolor: 'background.default', p: 3 }}>
-      <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.015em' }}>{title}</Typography>
+      <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, letterSpacing: '-0.015em' }}>{title}</Typography>
       <Typography color="text.secondary" sx={{ mt: 0.75, lineHeight: 1.55 }}>{body}</Typography>
     </Box>
   );
@@ -272,27 +272,27 @@ function PlanCard({ name, price, note, points, cta, onCta, primary = false, badg
       }}
     >
       {badge && (
-        <Box sx={{ position: 'absolute', top: -13, left: 24, px: 1.5, py: 0.3, borderRadius: 99, bgcolor: 'warning.main', color: COLOR_PALETTE.white, fontWeight: 800, fontSize: '0.78rem' }}>
+        <Box sx={{ position: 'absolute', top: -13, left: 24, px: 1.5, py: 0.3, borderRadius: 99, bgcolor: 'warning.main', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption }}>
           {badge}
         </Box>
       )}
-      <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '1.4rem' }}>{name}</Typography>
-      <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '2.6rem', letterSpacing: '-0.03em', mt: 1, lineHeight: 1.1 }}>{price}</Typography>
-      <Typography color="text.secondary" sx={{ mb: 2.5, mt: 0.5, fontSize: '0.95rem' }}>{note}</Typography>
+      <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display }}>{name}</Typography>
+      <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heroLg, letterSpacing: '-0.03em', mt: 1, lineHeight: 1.1 }}>{price}</Typography>
+      <Typography color="text.secondary" sx={{ mb: 2.5, mt: 0.5, fontSize: FONT_SIZES.bodyLg }}>{note}</Typography>
       <Stack spacing={1.2} sx={{ mb: 3.5 }}>
         {points.map((p) => (
           <Stack key={p} direction="row" spacing={1.25}>
-            <CheckCircleRoundedIcon sx={{ fontSize: 20, color: primary ? 'primary.main' : 'success.main', mt: '1px' }} />
-            <Typography sx={{ fontWeight: 600 }}>{p}</Typography>
+            <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: primary ? 'primary.main' : 'success.main', mt: '1px' }} />
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold }}>{p}</Typography>
           </Stack>
         ))}
       </Stack>
       <Box sx={{ mt: 'auto' }}>
-        <Button fullWidth size="large" variant={primary ? 'contained' : 'outlined'} disableElevation onClick={onCta} sx={{ fontWeight: 800, py: 1.25, ...(!primary && { borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }) }}>
+        <Button fullWidth size="large" variant={primary ? 'contained' : 'outlined'} disableElevation onClick={onCta} sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.25, ...(!primary && { borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }) }}>
           {cta}
         </Button>
         {footnote && (
-          <Typography color="text.secondary" sx={{ mt: 1.5, textAlign: 'center', fontSize: '0.85rem' }}>{footnote}</Typography>
+          <Typography color="text.secondary" sx={{ mt: 1.5, textAlign: 'center', fontSize: FONT_SIZES.body }}>{footnote}</Typography>
         )}
       </Box>
     </Box>
@@ -301,10 +301,10 @@ function PlanCard({ name, price, note, points, cta, onCta, primary = false, badg
 
 const FooterCol = ({ title, links }) => (
   <Box>
-    <Typography sx={{ fontWeight: 800, mb: 1.5, fontSize: '0.95rem' }}>{title}</Typography>
+    <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1.5, fontSize: FONT_SIZES.bodyLg }}>{title}</Typography>
     <Stack spacing={1}>
       {links.map(([label, onClick]) => (
-        <Link key={label} component="button" type="button" onClick={onClick} underline="hover" color="text.secondary" sx={{ textAlign: 'left', font: 'inherit', fontSize: '0.92rem' }}>
+        <Link key={label} component="button" type="button" onClick={onClick} underline="hover" color="text.secondary" sx={{ textAlign: 'left', font: 'inherit', fontSize: FONT_SIZES.bodyLg }}>
           {label}
         </Link>
       ))}
@@ -383,29 +383,29 @@ export default function HomePage() {
           <Grid size={{ xs: 12, md: 6 }}>
             {offerEnds && (
               <Stack direction="row" spacing={1} sx={{ mb: 2.5, px: 1.5, py: 0.6, width: 'fit-content', borderRadius: 99, alignItems: 'center', border: '1px solid', borderColor: (t) => alpha(t.palette.warning.main, 0.5), bgcolor: (t) => alpha(t.palette.warning.main, 0.1) }}>
-                <WorkspacePremiumRoundedIcon sx={{ fontSize: 18, color: 'warning.main' }} />
-                <Typography sx={{ fontWeight: 700, fontSize: '0.86rem' }}>Launch offer: Pro is free until {offerEnds}</Typography>
+                <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'warning.main' }} />
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Launch offer: Pro is free until {offerEnds}</Typography>
               </Stack>
             )}
             <Typography
               variant="h1"
-              sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '2.4rem', sm: '3.1rem', md: '2.9rem', lg: '3.3rem' }, lineHeight: 1.05, letterSpacing: '-0.035em', textWrap: 'balance', mb: 2.25 }}
+              sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.heroLg, sm: FONT_SIZES.jumbo, md: FONT_SIZES.jumbo, lg: FONT_SIZES.jumbo }, lineHeight: 1.05, letterSpacing: '-0.035em', textWrap: 'balance', mb: 2.25 }}
             >
               Placement prep for coding and aptitude.
             </Typography>
-            <Typography color="text.secondary" sx={{ fontSize: { xs: '1.1rem', md: '1.2rem' }, maxWidth: '38ch', mb: 3.5, lineHeight: 1.5 }}>
+            <Typography color="text.secondary" sx={{ fontSize: { xs: FONT_SIZES.subheading, md: FONT_SIZES.heading }, maxWidth: '38ch', mb: 3.5, lineHeight: 1.5 }}>
               Practice aptitude and coding problems, take timed tests, and see your progress. All in one place.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
               <PrimaryCta buttonRef={heroCtaRef} label={startLabel} onClick={goStart} />
-              <Button size="large" variant="outlined" href="#features" sx={{ fontWeight: 700, px: 3.5, py: 1.3, whiteSpace: 'nowrap', borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }}>
+              <Button size="large" variant="outlined" href="#features" sx={{ fontWeight: FONT_WEIGHTS.bold, px: 3.5, py: 1.3, whiteSpace: 'nowrap', borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }}>
                 See what's inside
               </Button>
             </Stack>
             <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', columnGap: 2.5, rowGap: 0.5, mt: 3.5 }}>
               {STATS.map((x) => (
-                <Typography key={x.label} color="text.secondary" sx={{ fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
-                  <Box component="span" sx={{ fontWeight: 800, color: 'text.primary' }}>{x.value}</Box> {x.label}
+                <Typography key={x.label} color="text.secondary" sx={{ fontSize: FONT_SIZES.bodyLg, whiteSpace: 'nowrap' }}>
+                  <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.primary' }}>{x.value}</Box> {x.label}
                 </Typography>
               ))}
             </Stack>
@@ -464,11 +464,11 @@ export default function HomePage() {
             {STEPS.map((st, i) => (
               <Grid key={st.title} size={{ xs: 12, md: 4 }}>
                 <Stack direction="row" spacing={2} sx={{ alignItems: 'flex-start' }}>
-                  <Box sx={{ flexShrink: 0, width: 40, height: 40, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main', fontFamily: DISPLAY_FONT, fontWeight: 800 }}>
+                  <Box sx={{ flexShrink: 0, width: 40, height: 40, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main', fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold }}>
                     {i + 1}
                   </Box>
                   <Box>
-                    <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.015em' }}>{st.title}</Typography>
+                    <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, letterSpacing: '-0.015em' }}>{st.title}</Typography>
                     <Typography color="text.secondary" sx={{ mt: 0.5, lineHeight: 1.55 }}>{st.body}</Typography>
                   </Box>
                 </Stack>
@@ -513,8 +513,8 @@ export default function HomePage() {
       <Box sx={{ bgcolor: (t) => cream(t, LIBRARY_PALETTE.light.chip, 'background.paper'), borderTop: '1px solid', borderBottom: '1px solid', borderColor: 'divider' }}>
         <Container maxWidth="md" sx={{ py: { xs: 7, md: 9 } }}>
           <Box sx={{ pl: { xs: 3, md: 5 }, borderLeft: '4px solid', borderColor: 'primary.main' }}>
-            <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 700, color: 'text.secondary', mb: 1.5 }}>Why I built this</Typography>
-            <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 600, fontSize: { xs: '1.3rem', md: '1.7rem' }, lineHeight: 1.42, letterSpacing: '-0.01em', maxWidth: '38ch', textWrap: 'pretty' }}>
+            <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', mb: 1.5 }}>Why I built this</Typography>
+            <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.semibold, fontSize: { xs: FONT_SIZES.heading, md: FONT_SIZES.displayLg }, lineHeight: 1.42, letterSpacing: '-0.01em', maxWidth: '38ch', textWrap: 'pretty' }}>
               I lived the scattered prep: tabs everywhere, no clear next step, nobody to practice with. JeetCode is the tool I wish I had.
             </Typography>
           </Box>
@@ -528,7 +528,7 @@ export default function HomePage() {
           {faq.map((f) => (
             <Accordion key={f.q} disableGutters elevation={0} square sx={{ bgcolor: 'transparent', borderBottom: '1px solid', borderColor: 'divider', '&:before': { display: 'none' } }}>
               <AccordionSummary expandIcon={<ExpandMoreRoundedIcon />} sx={{ px: 0, py: 0.75 }}>
-                <Typography sx={{ fontWeight: 700, fontSize: '1.05rem' }}>{f.q}</Typography>
+                <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }}>{f.q}</Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ px: 0, pt: 0, pb: 2.5 }}>
                 <Typography color="text.secondary" sx={{ maxWidth: '64ch', lineHeight: 1.65 }}>{f.a}</Typography>
@@ -550,15 +550,15 @@ export default function HomePage() {
             background: (t) => `linear-gradient(135deg, ${t.palette.primary.dark} 0%, ${COLOR_PALETTE.slate[900]} 90%)`,
           }}
         >
-          <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '2rem', md: '2.8rem' }, lineHeight: 1.08, letterSpacing: '-0.03em', textWrap: 'balance', mb: 1.5 }}>
+          <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.hero, md: FONT_SIZES.jumbo }, lineHeight: 1.08, letterSpacing: '-0.03em', textWrap: 'balance', mb: 1.5 }}>
             Your first question is two minutes away.
           </Typography>
-          <Typography sx={{ color: alpha(COLOR_PALETTE.white, 0.85), fontSize: '1.1rem', mb: 3.5, lineHeight: 1.6 }}>
+          <Typography sx={{ color: alpha(COLOR_PALETTE.white, 0.85), fontSize: FONT_SIZES.subheading, mb: 3.5, lineHeight: 1.6 }}>
             Create your free account and solve your first question.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ justifyContent: 'center' }}>
             <PrimaryCta light buttonRef={finalCtaRef} label={startLabel} onClick={goStart} />
-            <Button size="large" variant="outlined" onClick={go('/pair')} sx={{ color: COLOR_PALETTE.white, borderColor: alpha(COLOR_PALETTE.white, 0.5), borderWidth: 1.5, fontWeight: 700, px: 3, py: 1.3, whiteSpace: 'nowrap', '&:hover': { borderColor: COLOR_PALETTE.white, borderWidth: 1.5, bgcolor: alpha(COLOR_PALETTE.white, 0.08) } }}>
+            <Button size="large" variant="outlined" onClick={go('/pair')} sx={{ color: COLOR_PALETTE.white, borderColor: alpha(COLOR_PALETTE.white, 0.5), borderWidth: 1.5, fontWeight: FONT_WEIGHTS.bold, px: 3, py: 1.3, whiteSpace: 'nowrap', '&:hover': { borderColor: COLOR_PALETTE.white, borderWidth: 1.5, bgcolor: alpha(COLOR_PALETTE.white, 0.08) } }}>
               Try a pair room
             </Button>
           </Stack>
@@ -570,7 +570,7 @@ export default function HomePage() {
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 5 }}>
-              <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: '1.35rem', letterSpacing: '-0.02em' }}>
+              <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, letterSpacing: '-0.02em' }}>
                 Jeet<Box component="span" sx={{ color: 'primary.main' }}>Code</Box>
               </Typography>
               <Typography color="text.secondary" sx={{ mt: 1, maxWidth: '34ch', lineHeight: 1.6 }}>
@@ -595,7 +595,7 @@ export default function HomePage() {
           </Typography>
           <Stack direction="row" spacing={2} useFlexGap sx={{ mt: 1, flexWrap: 'wrap' }}>
             {[['Privacy Policy', '/privacy'], ['Terms of Service', '/terms'], ['Refund & Cancellation', '/refund'], ['Help & Support', '/help']].map(([label, path]) => (
-              <Link key={path} component="button" type="button" onClick={go(path)} underline="hover" color="text.secondary" sx={{ font: 'inherit', fontSize: '0.8rem' }}>
+              <Link key={path} component="button" type="button" onClick={go(path)} underline="hover" color="text.secondary" sx={{ font: 'inherit', fontSize: FONT_SIZES.caption }}>
                 {label}
               </Link>
             ))}

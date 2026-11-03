@@ -1,6 +1,7 @@
 import { Box, Skeleton, Stack, Typography } from '@mui/material';
 import { DIFF_COLOR, tint } from '../../dashboardUtils';
 import { DIFFICULTIES } from '../common/problemsConstants';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 function DifficultyStat({ label, solved, total }) {
   const percent = total ? Math.min((solved / total) * 100, 100) : 0;
@@ -8,8 +9,8 @@ function DifficultyStat({ label, solved, total }) {
   return (
     <Box sx={{ minWidth: 0 }}>
       <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 0.75 }}>
-        <Typography sx={{ fontSize: 14, fontWeight: 500, color }}>{label}</Typography>
-        <Typography sx={{ fontSize: 14, fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>
+        <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, color }}>{label}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, fontVariantNumeric: 'tabular-nums' }}>
           {solved}
           <Box component="span" sx={{ color: 'text.secondary' }}>/{total}</Box>
         </Typography>

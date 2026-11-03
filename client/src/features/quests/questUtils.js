@@ -1,5 +1,5 @@
 import { msUntilDayEnd } from '../dashboard/dashboardUtils';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 export const GOLD = COLOR_PALETTE.custom.yellowF5B301;
 export const GOLD_LIGHT = COLOR_PALETTE.amber[200];
@@ -80,7 +80,7 @@ export const buttonSx = (tone = 'orange') => {
   }[tone];
   return {
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 0.75, minHeight: 44, px: 2.5, border: 0, cursor: 'pointer', fontFamily: 'inherit',
-    fontWeight: 900, fontSize: 14, letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap',
+    fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap',
     color: tone === 'dark' ? FF.text : COLOR_PALETTE.gray[950], background: `linear-gradient(180deg, ${g[0]}, ${g[1]})`, clipPath: cut(9),
     transition: 'filter .15s ease, transform .1s ease', '&:hover': { filter: 'brightness(1.08)' }, '&:active': { transform: 'translateY(1px)' },
     '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 },

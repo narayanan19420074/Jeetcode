@@ -3,7 +3,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../libraryStyle';
 import { surface, tint } from '../../dashboardUtils';
 import { DIFF_W, PAD_X, STAR_W, TOPIC_ROW_H } from './libraryConstants';
-import { COLOR_PALETTE } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../../app/design/designTokens';
 
 // Two looks for the same problem library. "classic" is the original page style (used by the Problems page).
 // "cream" is the phone Library look: cream pills and panels, accent when selected, tinted difficulty tags.
@@ -28,7 +28,7 @@ const classicPills = (t) => ({
     '&:hover': { borderColor: on ? 'transparent' : t.palette.text.secondary },
     '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: 2 },
   }),
-  pillText: { fontWeight: 700, whiteSpace: 'nowrap' },
+  pillText: { fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap' },
 });
 
 const classicTopics = (t) => ({
@@ -42,12 +42,12 @@ const classicTopics = (t) => ({
     '&:hover': { bgcolor: t.palette.action.hover },
     '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}` },
   }),
-  topicLabel: (on) => ({ fontWeight: on ? 800 : 500, color: on ? 'primary.main' : 'text.primary', whiteSpace: 'nowrap' }),
+  topicLabel: (on) => ({ fontWeight: on ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, color: on ? 'primary.main' : 'text.primary', whiteSpace: 'nowrap' }),
   topicCount: (on) => ({
     px: 0.75,
     borderRadius: 999,
-    fontSize: '0.7rem',
-    fontWeight: 700,
+    fontSize: FONT_SIZES.micro,
+    fontWeight: FONT_WEIGHTS.bold,
     lineHeight: 1.7,
     fontVariantNumeric: 'tabular-nums',
     bgcolor: on ? alpha(t.palette.primary.main, 0.16) : t.palette.action.hover,
@@ -71,7 +71,7 @@ const classicHead = (t) => ({
     borderBottom: `1px solid ${t.palette.divider}`,
     bgcolor: alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.03 : 0.025),
   },
-  headLabel: { fontWeight: 700, color: 'text.secondary' },
+  headLabel: { fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary' },
 });
 
 const classicRow = (t) => ({
@@ -87,9 +87,9 @@ const classicTable = (t) => ({
   ...classicHead(t),
   row: classicRow(t),
   rowLink: { py: 1.35 },
-  title: { fontWeight: 600, minWidth: 0, fontSize: '0.9rem' },
+  title: { fontWeight: FONT_WEIGHTS.semibold, minWidth: 0, fontSize: FONT_SIZES.body },
   acceptance: {},
-  difficulty: (color) => ({ width: DIFF_W, textAlign: 'right', flexShrink: 0, fontWeight: 700, color }),
+  difficulty: (color) => ({ width: DIFF_W, textAlign: 'right', flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, color }),
 });
 
 const classicStyles = (t) => ({ cream: false, ...classicPills(t), ...classicTopics(t), ...classicToolbar(t), ...classicTable(t) });
@@ -109,7 +109,7 @@ const creamPills = (pal) => ({
     '&:hover': { bgcolor: on ? ACCENT_HOVER : pal.player },
     '&.Mui-focusVisible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 2 },
   }),
-  pillText: { fontSize: 15, letterSpacing: LIB_TRACKING, whiteSpace: 'nowrap' },
+  pillText: { fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, whiteSpace: 'nowrap' },
 });
 
 const creamTopics = (pal) => ({
@@ -125,15 +125,15 @@ const creamTopics = (pal) => ({
     '&:hover': { bgcolor: on ? ACCENT_HOVER : pal.player },
     '&.Mui-focusVisible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 2 },
   }),
-  topicLabel: () => ({ fontSize: 15, letterSpacing: LIB_TRACKING, color: 'inherit', whiteSpace: 'nowrap' }),
-  topicCount: () => ({ fontSize: 13, opacity: 0.75, fontVariantNumeric: 'tabular-nums' }),
+  topicLabel: () => ({ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, color: 'inherit', whiteSpace: 'nowrap' }),
+  topicCount: () => ({ fontSize: FONT_SIZES.body, opacity: 0.75, fontVariantNumeric: 'tabular-nums' }),
 });
 
 const creamSearchField = (pal) => ({
   flex: 1,
   minWidth: 0,
   maxWidth: 420,
-  '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: 16, letterSpacing: LIB_TRACKING, px: '16px' },
+  '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, px: '16px' },
   '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
   '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
   '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: LIB_ACCENT, borderWidth: 1 },
@@ -167,7 +167,7 @@ const creamDifficulty = (color) => ({
   px: '5px',
   py: '2px',
   borderRadius: '8px',
-  fontSize: 15,
+  fontSize: FONT_SIZES.bodyLg,
   lineHeight: '20px',
   letterSpacing: LIB_TRACKING,
   color,
@@ -184,7 +184,7 @@ const creamHead = (pal) => ({
     pr: { xs: '12px', sm: `calc(18px + ${STAR_W}px)` },
     borderBottom: `1px solid ${pal.divider}`,
   },
-  headLabel: { fontWeight: 500, fontSize: 13, letterSpacing: LIB_TRACKING, color: pal.muted },
+  headLabel: { fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, color: pal.muted },
 });
 
 const creamTable = (pal) => ({
@@ -192,8 +192,8 @@ const creamTable = (pal) => ({
   ...creamHead(pal),
   row: creamRow(pal),
   rowLink: { py: 1.5 },
-  title: { fontWeight: 500, fontSize: 16, letterSpacing: LIB_TRACKING, minWidth: 0 },
-  acceptance: { fontSize: 15, letterSpacing: LIB_TRACKING },
+  title: { fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, minWidth: 0 },
+  acceptance: { fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING },
   difficulty: creamDifficulty,
 });
 

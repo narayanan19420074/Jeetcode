@@ -9,6 +9,7 @@ import { timeAgo, LANG_LABEL } from './community/CommunityBits';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
 import { EmptyState, WsButton } from './wsUi';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 const statusColor = (status) => {
   if (status === 'Accepted') return 'success.main';
@@ -33,12 +34,12 @@ function Row({ s, open, onToggle, onLoad }) {
         })}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography sx={{ fontWeight: 700, fontSize: '0.86rem', color: statusColor(s.status) }}>{s.status}</Typography>
+          <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: statusColor(s.status) }}>{s.status}</Typography>
           <Typography variant="caption" color="text.secondary">
             {timeAgo(s.createdAt)}
           </Typography>
         </Box>
-        <Typography variant="caption" sx={{ fontWeight: 600, color: 'text.secondary' }}>
+        <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.semibold, color: 'text.secondary' }}>
           {LANG_LABEL[s.language] || s.language}
         </Typography>
         <Typography variant="caption" sx={{ ...mono, color: 'text.secondary', minWidth: 54, textAlign: 'right' }}>
@@ -47,7 +48,7 @@ function Row({ s, open, onToggle, onLoad }) {
         <Typography variant="caption" sx={{ ...mono, color: 'text.secondary', minWidth: 58, textAlign: 'right', display: { xs: 'none', sm: 'block' } }}>
           {s.memoryKb ? `${(s.memoryKb / 1024).toFixed(1)} MB` : '—'}
         </Typography>
-        <ExpandMoreRoundedIcon sx={{ fontSize: 18, color: 'text.secondary', transition: 'transform .15s', transform: open ? 'rotate(180deg)' : 'none' }} />
+        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'text.secondary', transition: 'transform .15s', transform: open ? 'rotate(180deg)' : 'none' }} />
       </ButtonBase>
       {open && (
         <Box sx={{ px: 1.5, pb: 1.5 }}>
@@ -62,7 +63,7 @@ function Row({ s, open, onToggle, onLoad }) {
               p: 1.5,
               maxHeight: 280,
               overflow: 'auto',
-              fontSize: '0.78rem',
+              fontSize: FONT_SIZES.caption,
               lineHeight: 1.65,
               borderRadius: `${WS.radius}px`,
               bgcolor: wsSurface(t).canvas,

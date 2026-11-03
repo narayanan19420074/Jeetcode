@@ -4,6 +4,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { tint } from '../../dashboardUtils';
 import { LIB_TRACKING, useLibraryPalette } from '../../components/libraryStyle';
 import { TOOLS } from '../common/exploreData';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 function ToolCard({ tool, palette }) {
   const { to, title, text, icon: Icon, color, bg } = tool;
@@ -13,10 +14,10 @@ function ToolCard({ tool, palette }) {
       to={to}
       sx={(theme) => ({ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, p: 1.75, minHeight: 96, borderRadius: '16px', border: `1.5px solid ${palette.border}`, textAlign: 'left', fontFamily: 'inherit', color: palette.text, bgcolor: theme.palette.mode === 'dark' ? tint(color, 16) : bg })}
     >
-      <Icon aria-hidden sx={{ fontSize: 32, flex: 'none', color }} />
+      <Icon aria-hidden sx={{ fontSize: FONT_SIZES.hero, flex: 'none', color }} />
       <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Typography sx={{ fontSize: 16, lineHeight: '24px', fontWeight: 500, letterSpacing: LIB_TRACKING }}>{title}</Typography>
-        <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: palette.muted }}>{text}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>{title}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: palette.muted }}>{text}</Typography>
       </Box>
       <ChevronRightRoundedIcon aria-hidden sx={{ flex: 'none', color: palette.muted }} />
     </ButtonBase>

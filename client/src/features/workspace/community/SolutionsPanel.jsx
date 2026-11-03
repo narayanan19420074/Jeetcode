@@ -35,6 +35,7 @@ import {
   clamp,
 } from './CommunityBits';
 import CommentSection from './CommentSection';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const SORTS = [
   { value: 'top', label: 'Most votes', icon: <TrendingUpRoundedIcon /> },
@@ -64,7 +65,7 @@ function SendButton({ onClick, loading, size = 44 }) {
           disabled={loading}
           sx={{ width: size, height: size, color: 'text.primary' }}
         >
-          {loading ? <CircularProgress size={20} /> : <SendOutlinedIcon sx={{ fontSize: 24, transform: 'rotate(-20deg) translate(2px, -1px)' }} />}
+          {loading ? <CircularProgress size={20} /> : <SendOutlinedIcon sx={{ fontSize: FONT_SIZES.display, transform: 'rotate(-20deg) translate(2px, -1px)' }} />}
         </IconButton>
       </span>
     </Tooltip>
@@ -89,9 +90,9 @@ function SolutionPost({ s, onOpen, onSend, sending }) {
         onKeyDown={(e) => e.key === 'Enter' && onOpen()}
         sx={{ mt: 1.5, cursor: 'pointer', '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', borderRadius: 2 } }}
       >
-        <Typography sx={{ fontWeight: 700, fontSize: '1.08rem', lineHeight: 1.35 }}>{s.title}</Typography>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.35 }}>{s.title}</Typography>
         {s.excerpt && (
-          <Typography color="text.secondary" sx={{ mt: 0.5, fontSize: '0.93rem', lineHeight: 1.55, ...clamp(2) }}>
+          <Typography color="text.secondary" sx={{ mt: 0.5, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.55, ...clamp(2) }}>
             {s.excerpt}
           </Typography>
         )}
@@ -166,7 +167,7 @@ function SolutionDetail({ id, onBack, onSendToEditor }) {
 
   return (
     <Box>
-      <Button startIcon={<ArrowBackRoundedIcon />} onClick={onBack} sx={{ mb: 1, ml: -1, height: 44, fontWeight: 700 }}>
+      <Button startIcon={<ArrowBackRoundedIcon />} onClick={onBack} sx={{ mb: 1, ml: -1, height: 44, fontWeight: FONT_WEIGHTS.bold }}>
         Solutions
       </Button>
 
@@ -214,7 +215,7 @@ function SolutionDetail({ id, onBack, onSendToEditor }) {
             </Stack>
           ) : (
             <>
-              <Typography sx={{ mt: 2, fontWeight: 800, fontSize: '1.3rem', lineHeight: 1.3 }}>{sol.title}</Typography>
+              <Typography sx={{ mt: 2, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.3 }}>{sol.title}</Typography>
               <Box sx={{ mt: 1.5 }}>
                 <Stack direction="row" spacing={0.75} alignItems="center" flexWrap="wrap" useFlexGap>
                   <AcceptedBadge />
@@ -241,8 +242,8 @@ function SolutionDetail({ id, onBack, onSendToEditor }) {
 
           <Divider sx={{ my: 2.5 }} />
           <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
-            <ChatBubbleOutlineRoundedIcon sx={{ fontSize: 22 }} />
-            <Typography sx={{ fontWeight: 700, fontSize: '1.05rem' }}>Comments · {sol.commentCount}</Typography>
+            <ChatBubbleOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }}>Comments · {sol.commentCount}</Typography>
           </Stack>
           <CommentSection kind="solutions" targetId={sol._id} onCountChange={(d) => setSol((s) => ({ ...s, commentCount: Math.max(0, s.commentCount + d) }))} />
 

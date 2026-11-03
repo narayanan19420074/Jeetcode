@@ -16,7 +16,7 @@ import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
 import { daysUntil, formatExamDate, pickExamDate } from '../prep/examDate';
 import { CATEGORIES, EXAMS } from './examsData';
 import BackToDashboard from '../../components/BackToDashboard';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Exams that have a full mock paper on /mocks (paper ids live in server/src/config/mockTests.js).
 const HAS_MOCK = new Set(['tcs-nqt', 'infosys', 'cognizant']);
@@ -59,7 +59,7 @@ const TONES = {
 function StatusPill({ status }) {
   const tone = TONES[status.tone];
   return (
-    <Box sx={(t) => ({ minWidth: 0, maxWidth: '100%', px: 1, height: 22, display: 'inline-flex', alignItems: 'center', borderRadius: 99, bgcolor: tone.bg, color: tone.fg[t.palette.mode === 'dark' ? 1 : 0], fontSize: 11.5, fontWeight: 800 })}>
+    <Box sx={(t) => ({ minWidth: 0, maxWidth: '100%', px: 1, height: 22, display: 'inline-flex', alignItems: 'center', borderRadius: 99, bgcolor: tone.bg, color: tone.fg[t.palette.mode === 'dark' ? 1 : 0], fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold })}>
       <Typography noWrap component="span" sx={{ fontSize: 'inherit', fontWeight: 'inherit', lineHeight: 1 }}>{status.text}</Typography>
     </Box>
   );
@@ -74,7 +74,7 @@ function ReadyRing({ value, label }) {
         variant="determinate" value={value ?? 0} size={40} thickness={4.5}
         sx={{ position: 'absolute', inset: 0, color: PLAN_AMBER, '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }}
       />
-      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontSize: 10.5, fontWeight: 800, fontVariantNumeric: 'tabular-nums', color: value === null ? 'text.disabled' : 'text.primary' }}>
+      <Typography sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums', color: value === null ? 'text.disabled' : 'text.primary' }}>
         {value === null ? '–' : `${value}%`}
       </Typography>
     </Box>
@@ -99,7 +99,7 @@ function ExamCard({ exam, index, track, onOpen }) {
       <ButtonBase onClick={onOpen} aria-label={`${exam.name} details`} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, width: '100%', textAlign: 'left', justifyContent: 'flex-start', fontFamily: 'inherit', borderRadius: '10px' }}>
         <CompanyAvatar name={exam.brand || exam.short} size={40} />
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography noWrap sx={{ fontWeight: 800, fontSize: '0.95rem', lineHeight: 1.25 }}>{exam.name}</Typography>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.25 }}>{exam.name}</Typography>
           <Typography noWrap variant="caption" color="text.secondary" sx={{ display: 'block', lineHeight: 1.3 }}>{exam.org}</Typography>
         </Box>
         <ReadyRing value={readiness} label={readiness === null ? `${exam.name} readiness not available` : `${exam.name} readiness ${readiness}%`} />
@@ -107,29 +107,29 @@ function ExamCard({ exam, index, track, onOpen }) {
 
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, minWidth: 0 }}>
         <StatusPill status={status} />
-        <Typography noWrap variant="caption" color="text.secondary" sx={{ flexShrink: 0, maxWidth: '45%', fontWeight: 600 }}>{exam.tags.join(' · ')}</Typography>
+        <Typography noWrap variant="caption" color="text.secondary" sx={{ flexShrink: 0, maxWidth: '45%', fontWeight: FONT_WEIGHTS.semibold }}>{exam.tags.join(' · ')}</Typography>
       </Box>
 
       <Box sx={{ display: 'flex', gap: 0.75, mt: 'auto' }}>
         <Button
-          component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation endIcon={<LaunchRoundedIcon sx={{ fontSize: 16 }} />}
-          sx={{ flex: 1, height: 34, borderRadius: '10px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, fontSize: '0.82rem', '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+          component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation endIcon={<LaunchRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />}
+          sx={{ flex: 1, height: 34, borderRadius: '10px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
         >
           {closed ? 'Official site' : 'Apply'}
         </Button>
         <Button
-          onClick={prepare} disableElevation startIcon={<BoltRoundedIcon sx={{ fontSize: 16 }} />}
-          sx={(t) => ({ flex: 1, height: 34, borderRadius: '10px', fontWeight: 800, fontSize: '0.82rem', color: 'text.primary', border: `1px solid ${t.palette.divider}`, '&:hover': { bgcolor: t.palette.action.hover } })}
+          onClick={prepare} disableElevation startIcon={<BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />}
+          sx={(t) => ({ flex: 1, height: 34, borderRadius: '10px', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: 'text.primary', border: `1px solid ${t.palette.divider}`, '&:hover': { bgcolor: t.palette.action.hover } })}
         >
           {hasTrack ? (readiness ? 'Continue' : 'Start prep') : 'Prepare'}
         </Button>
         {HAS_MOCK.has(exam.id) && (
           <IconButton onClick={() => navigate('/mocks')} aria-label={`${exam.name} mock test`} size="small" sx={{ width: 34, height: 34, borderRadius: '10px', color: PLAN_AMBER }}>
-            <QuizRoundedIcon sx={{ fontSize: 20 }} />
+            <QuizRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
           </IconButton>
         )}
         <IconButton onClick={onOpen} aria-label={`${exam.name} pattern and eligibility`} size="small" sx={{ width: 34, height: 34, borderRadius: '10px', color: 'text.secondary' }}>
-          <InfoOutlinedIcon sx={{ fontSize: 20 }} />
+          <InfoOutlinedIcon sx={{ fontSize: FONT_SIZES.heading }} />
         </IconButton>
       </Box>
     </Box>
@@ -139,7 +139,7 @@ function ExamCard({ exam, index, track, onOpen }) {
 function Fact({ label, children }) {
   return (
     <Box>
-      <Typography sx={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.6, color: 'text.secondary', textTransform: 'uppercase' }}>{label}</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.6, color: 'text.secondary', textTransform: 'uppercase' }}>{label}</Typography>
       <Typography variant="body2" sx={{ mt: 0.25 }}>{children}</Typography>
     </Box>
   );
@@ -158,7 +158,7 @@ function ExamDetails({ exam, track, onClose }) {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <CompanyAvatar name={exam.brand || exam.short} size={46} />
           <Box sx={{ flex: 1, minWidth: 0 }}>
-            <Typography id="exam-details-title" sx={{ fontWeight: 900, fontSize: '1.15rem', lineHeight: 1.2, overflowWrap: 'anywhere' }}>{exam.name}</Typography>
+            <Typography id="exam-details-title" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.2, overflowWrap: 'anywhere' }}>{exam.name}</Typography>
             <Typography variant="caption" color="text.secondary">by {exam.org}</Typography>
           </Box>
           <IconButton onClick={onClose} aria-label="Close" size="small"><CloseRoundedIcon /></IconButton>
@@ -177,12 +177,12 @@ function ExamDetails({ exam, track, onClose }) {
         <Box sx={{ display: 'grid', gap: 1.25, mt: 2, pt: 2, borderTop: (t) => `1px solid ${t.palette.divider}` }}>
           {exam.pattern.map(([k, v]) => (
             <Box key={k}>
-              <Typography sx={{ fontWeight: 800, fontSize: 13.5 }}>{k}</Typography>
+              <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>{k}</Typography>
               <Typography variant="body2" color="text.secondary">{v}</Typography>
             </Box>
           ))}
           <Box>
-            <Typography sx={{ fontWeight: 800, fontSize: 13.5 }}>Who can apply</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Who can apply</Typography>
             <Typography variant="body2" color="text.secondary">{exam.eligibility}</Typography>
           </Box>
         </Box>
@@ -190,17 +190,17 @@ function ExamDetails({ exam, track, onClose }) {
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mt: 2.5 }}>
           <Button
             component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation endIcon={<LaunchRoundedIcon />}
-            sx={{ height: 40, px: 2.5, borderRadius: '12px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+            sx={{ height: 40, px: 2.5, borderRadius: '12px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
           >
             {closed ? 'Official site' : 'Apply'}
           </Button>
           {HAS_MOCK.has(exam.id) && (
-            <Button variant="outlined" startIcon={<QuizRoundedIcon />} onClick={() => go('/mocks')} sx={{ height: 40, borderRadius: '12px', fontWeight: 800 }}>Take mock test</Button>
+            <Button variant="outlined" startIcon={<QuizRoundedIcon />} onClick={() => go('/mocks')} sx={{ height: 40, borderRadius: '12px', fontWeight: FONT_WEIGHTS.bold }}>Take mock test</Button>
           )}
           {hasTrack ? (
-            <Button onClick={() => go(`/prep/${track.slug}`)} variant="outlined" endIcon={<ArrowForwardRoundedIcon />} sx={{ height: 40, borderRadius: '12px', fontWeight: 800 }}>Open prep track</Button>
+            <Button onClick={() => go(`/prep/${track.slug}`)} variant="outlined" endIcon={<ArrowForwardRoundedIcon />} sx={{ height: 40, borderRadius: '12px', fontWeight: FONT_WEIGHTS.bold }}>Open prep track</Button>
           ) : (
-            exam.practice.map((p) => <Button key={p.to} variant="outlined" onClick={() => go(p.to)} sx={{ height: 40, borderRadius: '12px', fontWeight: 800 }}>{p.label}</Button>)
+            exam.practice.map((p) => <Button key={p.to} variant="outlined" onClick={() => go(p.to)} sx={{ height: 40, borderRadius: '12px', fontWeight: FONT_WEIGHTS.bold }}>{p.label}</Button>)
           )}
         </Box>
       </DialogContent>
@@ -229,12 +229,12 @@ function NextUpBanner() {
   const rgb = pick.urgent ? '239,68,68' : '251,191,36';
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 1.5, px: 1.5, py: 0.75, minHeight: 46, borderRadius: '12px', flexShrink: 0, bgcolor: `rgba(${rgb},0.12)`, border: `1px solid rgba(${rgb},0.4)` }}>
-      <EventAvailableRoundedIcon sx={{ fontSize: 22, flexShrink: 0, color: pick.urgent ? 'error.main' : PLAN_AMBER }} />
-      <Typography sx={{ flex: 1, minWidth: 0, fontSize: '0.86rem', fontWeight: 700, lineHeight: 1.3 }}>{pick.text}</Typography>
+      <EventAvailableRoundedIcon sx={{ fontSize: FONT_SIZES.display, flexShrink: 0, color: pick.urgent ? 'error.main' : PLAN_AMBER }} />
+      <Typography sx={{ flex: 1, minWidth: 0, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.3 }}>{pick.text}</Typography>
       <Button
         {...(pick.href ? { component: 'a', href: pick.href, target: '_blank', rel: 'noopener noreferrer' } : { onClick: () => navigate(pick.to) })}
         disableElevation size="small"
-        sx={{ flexShrink: 0, height: 30, px: 1.75, borderRadius: '9px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: 800, fontSize: '0.8rem', '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+        sx={{ flexShrink: 0, height: 30, px: 1.75, borderRadius: '9px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
       >
         {pick.cta}
       </Button>
@@ -270,19 +270,19 @@ export default function ExamsPage() {
           <Box sx={{ minWidth: 0, display: 'flex', alignItems: 'flex-start', gap: 1.25 }}>
             <BackToDashboard sx={{ mt: 0.25 }} />
             <Box sx={{ minWidth: 0 }}>
-              <Typography variant="h5" sx={{ fontWeight: 900, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Exams</Typography>
+              <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Exams</Typography>
               <Typography variant="body2" color="text.secondary">{shown.length} top coding and aptitude exams. Apply on the official site, track how ready you are.</Typography>
             </Box>
           </Box>
           <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', alignItems: 'center', flexShrink: 0 }}>
-          <Button onClick={() => navigate('/mocks')} disableElevation startIcon={<QuizRoundedIcon sx={{ fontSize: 17 }} />} sx={{ height: 32, px: 1.5, borderRadius: 99, fontSize: 13, fontWeight: 800, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Mock tests</Button>
+          <Button onClick={() => navigate('/mocks')} disableElevation startIcon={<QuizRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />} sx={{ height: 32, px: 1.5, borderRadius: 99, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Mock tests</Button>
           <Box role="tablist" aria-label="Exam type" sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', flexShrink: 0 }}>
             {CATEGORIES.map((c) => {
               const on = cat === c.key;
               return (
                 <ButtonBase
                   key={c.key} role="tab" aria-selected={on} onClick={() => setCat(c.key)}
-                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? COLOR_PALETTE.custom.black1B1200 : 'text.primary', transition: 'background-color .15s' })}
+                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: 99, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? COLOR_PALETTE.custom.black1B1200 : 'text.primary', transition: 'background-color .15s' })}
                 >
                   {c.label}
                 </ButtonBase>

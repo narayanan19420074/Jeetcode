@@ -8,6 +8,7 @@ import { usersApi } from '../../../api/usersApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { userUpdated } from '../../auth/authSlice';
 import { setUiPrefs } from '../../../app/uiSlice';
+import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 /* ------------------------------------------------------------------ */
 /* Layout atoms                                                       */
@@ -18,7 +19,7 @@ export function PageTitle({ title, description, action }) {
     <Box sx={{ mb: 3 }}>
       <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between', gap: 2 }}>
         <Box>
-          <Typography variant="h5" component="h1" sx={{ fontWeight: 800, letterSpacing: '-0.01em' }}>
+          <Typography variant="h5" component="h1" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em' }}>
             {title}
           </Typography>
           {description && (
@@ -53,7 +54,7 @@ export function Card({ title, description, children, tone = 'default', sx }) {
       {(title || description) && (
         <Box sx={(t) => ({ px: { xs: 2, sm: 3 }, py: 2, borderBottom: '1px solid', borderColor: danger ? alpha(t.palette.error.main, 0.35) : 'divider', bgcolor: danger ? alpha(t.palette.error.main, 0.06) : 'transparent' })}>
           {title && (
-            <Typography variant="subtitle1" component="h2" sx={{ fontWeight: 700, color: danger ? 'error.main' : 'text.primary' }}>
+            <Typography variant="subtitle1" component="h2" sx={{ fontWeight: FONT_WEIGHTS.bold, color: danger ? 'error.main' : 'text.primary' }}>
               {title}
             </Typography>
           )}
@@ -80,11 +81,11 @@ export function Row({ title, description, control, children, last }) {
     <Box sx={{ px: { xs: 2, sm: 3 }, py: 2, borderBottom: last ? 'none' : '1px solid', borderColor: 'divider', '&:last-of-type': { borderBottom: 'none' } }}>
       <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ alignItems: { xs: 'stretch', sm: 'center' }, justifyContent: 'space-between', gap: { xs: 1.25, sm: 3 } }}>
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography variant="body2" component="div" sx={{ fontWeight: 700 }}>
+          <Typography variant="body2" component="div" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             {title}
           </Typography>
           {description && (
-            <Typography variant="body2" component="div" color="text.secondary" sx={{ mt: 0.25, fontSize: '0.8125rem' }}>
+            <Typography variant="body2" component="div" color="text.secondary" sx={{ mt: 0.25, fontSize: FONT_SIZES.body }}>
               {description}
             </Typography>
           )}
@@ -102,7 +103,7 @@ export function SwitchRow({ title, description, checked, onChange, disabled, bad
       title={
         <Stack direction="row" component="span" sx={{ alignItems: 'center', gap: 1 }}>
           {title}
-          {badge && <Chip size="small" label={badge} variant="outlined" sx={{ height: 20, fontSize: '0.68rem' }} />}
+          {badge && <Chip size="small" label={badge} variant="outlined" sx={{ height: 20, fontSize: FONT_SIZES.micro }} />}
         </Stack>
       }
       description={description}
@@ -141,7 +142,7 @@ export function ChoiceCard({ selected, onClick, label, hint, children, sx }) {
       {children}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
         <Box sx={{ minWidth: 0 }}>
-          <Typography variant="body2" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
+          <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.3 }}>
             {label}
           </Typography>
           {hint && (
@@ -150,7 +151,7 @@ export function ChoiceCard({ selected, onClick, label, hint, children, sx }) {
             </Typography>
           )}
         </Box>
-        {selected && <CheckRoundedIcon color="primary" sx={{ fontSize: 20, flexShrink: 0 }} />}
+        {selected && <CheckRoundedIcon color="primary" sx={{ fontSize: FONT_SIZES.heading, flexShrink: 0 }} />}
       </Stack>
     </Box>
   );
@@ -192,7 +193,7 @@ export const formatDateTime = (date) =>
 const DEFAULTS = {
   appearance: { theme: 'dark', accent: 'violet', surface: 'default', density: 'comfortable', fontScale: 'md', contrast: 'normal' },
   accessibility: { reduceMotion: 'system', underlineLinks: false },
-  editor: { fontSize: 14, tabSize: 2, wordWrap: false, minimap: false, lineNumbers: true, ligatures: false, autoClose: true, theme: 'auto', defaultLanguage: 'javascript' },
+  editor: { fontSize: FONT_SIZES.body, tabSize: 2, wordWrap: false, minimap: false, lineNumbers: true, ligatures: false, autoClose: true, theme: 'auto', defaultLanguage: 'javascript' },
   notifications: { streakReminder: true, weeklyDigest: true, achievements: true, productUpdates: false, reminderTime: '20:00', timezone: null },
 };
 

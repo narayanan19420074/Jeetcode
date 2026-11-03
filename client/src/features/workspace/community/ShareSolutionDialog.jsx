@@ -8,6 +8,7 @@ import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { CodeBlock, MarkdownEditor } from './Markdown';
 import { FeedSkeleton, LANG_LABEL, LangChip, MetricChip, timeAgo } from './CommunityBits';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 // Share one of the user's Accepted submissions as a community solution.
 // Code / language / runtime come from the submission on the server.
@@ -64,7 +65,7 @@ export default function ShareSolutionDialog({ open, onClose, slug, defaultSubmis
 
   return (
     <Dialog open={open} onClose={saving ? undefined : onClose} fullWidth maxWidth="sm" fullScreen={fullScreen}>
-      <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1.25, fontWeight: 800 }}>
+      <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1.25, fontWeight: FONT_WEIGHTS.bold }}>
         <IosShareRoundedIcon color="primary" />
         <Box component="span" sx={{ flex: 1 }}>
           Share your solution

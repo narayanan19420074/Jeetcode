@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box, Button, Stack, Typography, alpha } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, FONTS } from '../../../app/design/designTokens';
 
 const NUMBERS = [10, 15, 20, 25];
 const AVERAGE = 18;
@@ -50,10 +50,10 @@ export default function MissingValueVisual() {
         }}
       />
       <Box sx={{ position: 'relative' }}>
-        <Typography variant="overline" sx={{ fontWeight: 800, color: 'primary.main', letterSpacing: '0.1em', fontSize: 10.5 }}>
+        <Typography variant="overline" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em', fontSize: FONT_SIZES.micro }}>
           Interactive
         </Typography>
-        <Typography variant="h6" sx={{ fontWeight: 700, mt: 0.5, mb: 0.5, letterSpacing: '-0.01em' }}>
+        <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 0.5, mb: 0.5, letterSpacing: '-0.01em' }}>
           {revealed
             ? 'Solved!'
             : allAdded
@@ -95,8 +95,8 @@ export default function MissingValueVisual() {
                     borderColor: isAdded ? withAlpha(COLOR_PALETTE.blue[500], 0.2) : COLOR_PALETTE.blue[500],
                     background: 'transparent',
                     color: isAdded ? withAlpha(COLOR_PALETTE.blue[500], 0.5) : COLOR_PALETTE.blue[500],
-                    fontSize: 18,
-                    fontWeight: 800,
+                    fontSize: FONT_SIZES.subheading,
+                    fontWeight: FONT_WEIGHTS.bold,
                     cursor: isAdded || revealed ? 'default' : 'pointer',
                     fontFamily: 'inherit',
                   }}
@@ -134,8 +134,8 @@ export default function MissingValueVisual() {
                 border: '2px dashed',
                 display: 'grid',
                 placeItems: 'center',
-                fontSize: revealed ? 18 : 24,
-                fontWeight: 800,
+                fontSize: revealed ? FONT_SIZES.subheading : FONT_SIZES.display,
+                fontWeight: FONT_WEIGHTS.bold,
                 fontFamily: 'inherit',
               }}
             >
@@ -156,7 +156,7 @@ export default function MissingValueVisual() {
             minHeight: 90,
           }}
         >
-          <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.secondary', letterSpacing: '0.08em', fontSize: 10 }}>
+          <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', letterSpacing: '0.08em', fontSize: FONT_SIZES.micro }}>
             SUM OF KNOWN NUMBERS
           </Typography>
           {added.length === 0 ? (
@@ -170,7 +170,7 @@ export default function MissingValueVisual() {
                   key={i}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  style={{ fontFamily: 'monospace', fontWeight: 700, color: COLOR_PALETTE.blue[500], fontSize: 18 }}
+                  style={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.blue[500], fontSize: FONT_SIZES.subheading }}
                 >
                   {idx > 0 && <span style={{ color: COLOR_PALETTE.slate[400], margin: '0 4px' }}>+</span>}
                   {NUMBERS[i]}
@@ -182,7 +182,7 @@ export default function MissingValueVisual() {
                     initial={{ opacity: 0, x: -8 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    style={{ fontFamily: 'monospace', fontWeight: 800, color: COLOR_PALETTE.emerald[500], fontSize: 18, marginLeft: 4 }}
+                    style={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.emerald[500], fontSize: FONT_SIZES.subheading, marginLeft: 4 }}
                   >
                     = {sum}
                   </motion.span>
@@ -213,8 +213,8 @@ export default function MissingValueVisual() {
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                     Required sum =
                   </Typography>
-                  <Typography sx={{ fontFamily: 'monospace', fontWeight: 700, fontSize: 15, color: 'text.primary' }}>
-                    {AVERAGE} × {COUNT} = <strong style={{ color: COLOR_PALETTE.blue[500], fontSize: 17 }}>{requiredSum}</strong>
+                  <Typography sx={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, color: 'text.primary' }}>
+                    {AVERAGE} × {COUNT} = <strong style={{ color: COLOR_PALETTE.blue[500], fontSize: FONT_SIZES.subheading }}>{requiredSum}</strong>
                   </Typography>
                 </Stack>
               </Box>
@@ -235,7 +235,7 @@ export default function MissingValueVisual() {
                 disableElevation
                 fullWidth
                 onClick={() => setRevealed(true)}
-                sx={{ fontWeight: 700, py: 1.5, borderRadius: 2, fontSize: 15 }}
+                sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.5, borderRadius: 2, fontSize: FONT_SIZES.bodyLg }}
               >
                 Reveal the missing value
               </Button>
@@ -260,10 +260,10 @@ export default function MissingValueVisual() {
                   textAlign: 'center',
                 }}
               >
-                <Typography variant="caption" sx={{ fontWeight: 700, color: 'success.main', letterSpacing: '0.08em', fontSize: 10 }}>
+                <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'success.main', letterSpacing: '0.08em', fontSize: FONT_SIZES.micro }}>
                   ANSWER
                 </Typography>
-                <Typography sx={{ fontFamily: 'monospace', fontWeight: 800, fontSize: 20, color: 'success.main', mt: 1 }}>
+                <Typography sx={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, color: 'success.main', mt: 1 }}>
                   {requiredSum} − {sum} = {missing}
                 </Typography>
               </Box>
@@ -273,7 +273,7 @@ export default function MissingValueVisual() {
 
         {added.length > 0 && (
           <Box sx={{ mt: 2, textAlign: 'center' }}>
-            <Button onClick={reset} size="small" sx={{ fontWeight: 600, color: 'text.secondary' }}>
+            <Button onClick={reset} size="small" sx={{ fontWeight: FONT_WEIGHTS.semibold, color: 'text.secondary' }}>
               Start over
             </Button>
           </Box>

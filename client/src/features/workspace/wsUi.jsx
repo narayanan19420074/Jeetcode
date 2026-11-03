@@ -5,6 +5,7 @@ import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
 import CloseFullscreenRoundedIcon from '@mui/icons-material/CloseFullscreenRounded';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 /* Workspace UI kit. Every control in the workspace comes from here, so
    buttons, icon buttons, tabs and bars share one size, radius and colour rule.
@@ -40,8 +41,8 @@ export function Kbd({ children }) {
       component="kbd"
       sx={(t) => ({
         ...mono,
-        fontSize: '0.68rem',
-        fontWeight: 500,
+        fontSize: FONT_SIZES.micro,
+        fontWeight: FONT_WEIGHTS.medium,
         lineHeight: 1,
         px: 0.6,
         py: 0.4,
@@ -78,13 +79,13 @@ export const WsButton = forwardRef(function WsButton(
             px: size === 'lg' ? 1.75 : 1.25,
             gap: 0,
             borderRadius: `${WS.radius}px`,
-            fontSize: '0.8125rem',
-            fontWeight: 600,
+            fontSize: FONT_SIZES.body,
+            fontWeight: FONT_WEIGHTS.semibold,
             lineHeight: 1,
             whiteSpace: 'nowrap',
             boxShadow: 'none',
             '& .MuiButton-startIcon': { mr: 0.75, ml: -0.25 },
-            '& .MuiButton-startIcon svg': { fontSize: 18 },
+            '& .MuiButton-startIcon svg': { fontSize: FONT_SIZES.subheading },
             '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: 2 },
           };
           if (variant === 'primary') {
@@ -158,7 +159,7 @@ export const WsIconButton = forwardRef(function WsIconButton(
           color: active ? t.palette.primary.main : t.palette.text.secondary,
           bgcolor: active ? alpha(t.palette.primary.main, 0.14) : 'transparent',
           '&:hover': { bgcolor: active ? alpha(t.palette.primary.main, 0.2) : alpha(t.palette.text.primary, 0.08), color: active ? t.palette.primary.main : t.palette.text.primary },
-          '& svg': { fontSize: size === 'xl' ? 24 : size === 'lg' ? 22 : 19 },
+          '& svg': { fontSize: size === 'xl' ? FONT_SIZES.display : size === 'lg' ? FONT_SIZES.display : FONT_SIZES.heading },
           '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: 2 },
         }),
         ...(Array.isArray(sx) ? sx : [sx]),
@@ -235,13 +236,13 @@ export function PaneTabs({ value, onChange, items, size = 'md', labels = 'all' }
               gap: 0.75,
               flexShrink: 0,
               borderRadius: `${WS.radius}px`,
-              fontSize: size === 'sm' ? '0.78rem' : size === 'lg' ? '0.875rem' : '0.8125rem',
-              fontWeight: 600,
+              fontSize: size === 'sm' ? FONT_SIZES.caption : size === 'lg' ? FONT_SIZES.body : FONT_SIZES.body,
+              fontWeight: FONT_WEIGHTS.semibold,
               whiteSpace: 'nowrap',
               color: on ? t.palette.text.primary : t.palette.text.secondary,
               bgcolor: on ? wsSurface(t).raised : 'transparent',
               '&:hover': { bgcolor: on ? wsSurface(t).raised : alpha(t.palette.text.primary, 0.06), color: t.palette.text.primary },
-              '& svg': { fontSize: size === 'sm' ? 15 : 17, color: on ? t.palette.primary.main : 'inherit' },
+              '& svg': { fontSize: size === 'sm' ? FONT_SIZES.bodyLg : FONT_SIZES.subheading, color: on ? t.palette.primary.main : 'inherit' },
               '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: -2 },
             })}
           >
@@ -274,8 +275,8 @@ export function WsSelect({ sx, ...props }) {
           height: WS.ctrl,
           minWidth: 132,
           borderRadius: `${WS.radius}px`,
-          fontSize: '0.8125rem',
-          fontWeight: 600,
+          fontSize: FONT_SIZES.body,
+          fontWeight: FONT_WEIGHTS.semibold,
           bgcolor: wsSurface(t).raised,
           '& .MuiOutlinedInput-notchedOutline': { border: 'none' },
           '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.14) },
@@ -294,13 +295,13 @@ export function WsSelect({ sx, ...props }) {
 export function CodeField({ label, value, tone }) {
   return (
     <Box sx={{ mb: 1.25, '&:last-child': { mb: 0 } }}>
-      <Typography variant="caption" sx={{ display: 'block', mb: 0.5, fontWeight: 600, color: 'text.secondary', letterSpacing: '0.02em' }}>
+      <Typography variant="caption" sx={{ display: 'block', mb: 0.5, fontWeight: FONT_WEIGHTS.semibold, color: 'text.secondary', letterSpacing: '0.02em' }}>
         {label}
       </Typography>
       <Box
         sx={(t) => ({
           ...mono,
-          fontSize: '0.8rem',
+          fontSize: FONT_SIZES.caption,
           lineHeight: 1.65,
           px: 1.5,
           py: 1,
@@ -329,12 +330,12 @@ export function EmptyState({ icon, title, text, action }) {
           placeItems: 'center',
           bgcolor: alpha(t.palette.primary.main, 0.12),
           color: 'primary.main',
-          '& svg': { fontSize: 26 },
+          '& svg': { fontSize: FONT_SIZES.displayLg },
         })}
       >
         {icon}
       </Box>
-      <Typography sx={{ fontWeight: 700 }}>{title}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{title}</Typography>
       {text && (
         <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 320 }}>
           {text}

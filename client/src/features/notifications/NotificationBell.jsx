@@ -19,7 +19,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
 
 // Same accent as the phone pages.
 const ACCENT = LIB_ACCENT;
@@ -36,18 +36,18 @@ function TabButton({ tab, active, unread, onClick }) {
         gap: 0.75,
         py: 1.1,
         fontFamily: 'inherit',
-        fontWeight: 800,
-        fontSize: '0.86rem',
+        fontWeight: FONT_WEIGHTS.bold,
+        fontSize: FONT_SIZES.body,
         color: active ? 'primary.main' : 'text.secondary',
         borderBottom: `2px solid ${active ? t.palette.primary.main : 'transparent'}`,
         transition: 'color .15s, border-color .15s',
         '&:hover': { bgcolor: t.palette.action.hover },
       })}
     >
-      <Icon sx={{ fontSize: 18 }} />
+      <Icon sx={{ fontSize: FONT_SIZES.subheading }} />
       {tab.label}
       {unread > 0 && (
-        <Box component="span" sx={{ minWidth: 18, height: 18, px: 0.5, borderRadius: 9, bgcolor: 'error.main', color: 'error.contrastText', fontSize: 11, fontWeight: 800, display: 'grid', placeItems: 'center' }}>
+        <Box component="span" sx={{ minWidth: 18, height: 18, px: 0.5, borderRadius: 9, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
           {unread}
         </Box>
       )}
@@ -58,10 +58,10 @@ function TabButton({ tab, active, unread, onClick }) {
 // Phone tabs: the same pill chips as the other phone pages (name and unread count, no icons).
 function PhoneTab({ tab, active, unread, onClick }) {
   return (
-    <ButtonBase role="tab" aria-selected={active} onClick={onClick} sx={{ ...libChipSx(active), fontWeight: 500 }}>
+    <ButtonBase role="tab" aria-selected={active} onClick={onClick} sx={{ ...libChipSx(active), fontWeight: FONT_WEIGHTS.medium }}>
       {tab.label}
       {unread > 0 && (
-        <Box component="span" sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: '0.72rem', fontWeight: 700, display: 'grid', placeItems: 'center' }}>
+        <Box component="span" sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
           {unread}
         </Box>
       )}
@@ -105,14 +105,14 @@ function PhoneCard({ n, onOpen }) {
       }}
     >
       <Box aria-hidden sx={{ width: 44, height: 44, borderRadius: '14px', flexShrink: 0, display: 'grid', placeItems: 'center', color: tone, bgcolor: alpha(color, 0.16) }}>
-        <Icon sx={{ fontSize: 24 }} />
+        <Icon sx={{ fontSize: FONT_SIZES.display }} />
       </Box>
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography sx={{ fontSize: 16, lineHeight: '22px', fontWeight: 500, letterSpacing: LIB_TRACKING }}>{n.text}</Typography>
-        <Typography sx={{ mt: '2px', fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{relTime(n.createdAt)}</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '22px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>{n.text}</Typography>
+        <Typography sx={{ mt: '2px', fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{relTime(n.createdAt)}</Typography>
       </Box>
       {n.link && (
-        <Box sx={{ flexShrink: 0, height: 28, px: '12px', borderRadius: 999, display: 'grid', placeItems: 'center', fontSize: 13, fontWeight: 500, letterSpacing: LIB_TRACKING, color: tone, bgcolor: alpha(color, 0.14), whiteSpace: 'nowrap' }}>{cta}</Box>
+        <Box sx={{ flexShrink: 0, height: 28, px: '12px', borderRadius: 999, display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: tone, bgcolor: alpha(color, 0.14), whiteSpace: 'nowrap' }}>{cta}</Box>
       )}
       <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', flexShrink: 0, bgcolor: n.read ? 'transparent' : ACCENT, transition: 'background-color 200ms' }} />
     </Box>
@@ -146,14 +146,14 @@ function Row({ n, onOpen }) {
       })}
     >
       <Box sx={{ width: 40, height: 40, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', color: tone, bgcolor: alpha(color, 0.16) }}>
-        <Icon sx={{ fontSize: 22 }} />
+        <Icon sx={{ fontSize: FONT_SIZES.display }} />
       </Box>
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography variant="body2" sx={{ fontWeight: 500, lineHeight: 1.35 }}>{n.text}</Typography>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.35 }}>{n.text}</Typography>
         <Typography variant="caption" color="text.secondary">{relTime(n.createdAt)}</Typography>
       </Box>
       {n.link && (
-        <Box sx={{ flexShrink: 0, px: 1.1, py: 0.3, borderRadius: 99, fontSize: '0.74rem', fontWeight: 800, color: tone, bgcolor: alpha(color, 0.12), whiteSpace: 'nowrap' }}>{cta}</Box>
+        <Box sx={{ flexShrink: 0, px: 1.1, py: 0.3, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: tone, bgcolor: alpha(color, 0.12), whiteSpace: 'nowrap' }}>{cta}</Box>
       )}
       <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: n.read ? 'transparent' : 'primary.main', flexShrink: 0 }} />
     </Box>
@@ -230,7 +230,7 @@ export default function NotificationBell() {
               <IconButton onClick={() => setAnchor(null)} aria-label="Close notifications" sx={libBackBtnSx}>
                 <KeyboardArrowDownRoundedIcon />
               </IconButton>
-              <Typography component="h2" sx={{ flex: 1, fontWeight: 700, fontSize: 22, lineHeight: '28px' }}>Notifications</Typography>
+              <Typography component="h2" sx={{ flex: 1, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, lineHeight: '28px' }}>Notifications</Typography>
             </Box>
 
             <Box sx={{ display: 'flex', gap: 1, px: 2, pt: 1, pb: 1.5, flexShrink: 0 }}>
@@ -260,11 +260,11 @@ export default function NotificationBell() {
                     const Icon = TABS.find((t) => t.key === tab).icon;
                     return (
                       <Box aria-hidden sx={{ width: 64, height: 64, mx: 'auto', mb: 1.5, borderRadius: '20px', display: 'grid', placeItems: 'center', bgcolor: pal.chip, color: pal.muted }}>
-                        <Icon sx={{ fontSize: 30 }} />
+                        <Icon sx={{ fontSize: FONT_SIZES.hero }} />
                       </Box>
                     );
                   })()}
-                  <Typography sx={{ fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{TABS.find((t) => t.key === tab).empty}</Typography>
+                  <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '22px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{TABS.find((t) => t.key === tab).empty}</Typography>
                 </Box>
               ) : (
                 visible.map((n) => <PhoneCard key={n.id} n={n} onOpen={go} />)
@@ -296,10 +296,10 @@ export default function NotificationBell() {
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: 2, pt: 1.5, pb: 0.5 }}>
-            <Typography component="h2" sx={{ fontWeight: 900, fontSize: '1.15rem', letterSpacing: '-0.01em' }}>Notifications</Typography>
+            <Typography component="h2" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, letterSpacing: '-0.01em' }}>Notifications</Typography>
             <Box sx={{ display: 'flex', gap: 0.5 }}>
-              <Button size="small" startIcon={<DoneAllRoundedIcon />} disabled={unread === 0} onClick={() => dispatch(markAllRead())} sx={{ fontWeight: 700 }}>Mark all read</Button>
-              <Button size="small" color="inherit" disabled={items.length === 0} onClick={() => dispatch(clearAll())} sx={{ fontWeight: 700 }}>Clear</Button>
+              <Button size="small" startIcon={<DoneAllRoundedIcon />} disabled={unread === 0} onClick={() => dispatch(markAllRead())} sx={{ fontWeight: FONT_WEIGHTS.bold }}>Mark all read</Button>
+              <Button size="small" color="inherit" disabled={items.length === 0} onClick={() => dispatch(clearAll())} sx={{ fontWeight: FONT_WEIGHTS.bold }}>Clear</Button>
             </Box>
           </Box>
 
@@ -315,7 +315,7 @@ export default function NotificationBell() {
                 <Box>
                   {(() => {
                     const Icon = TABS.find((t) => t.key === tab).icon;
-                    return <Icon sx={{ fontSize: 40, opacity: 0.5 }} />;
+                    return <Icon sx={{ fontSize: FONT_SIZES.heroLg, opacity: 0.5 }} />;
                   })()}
                   <Typography variant="body2" sx={{ mt: 1 }}>{TABS.find((t) => t.key === tab).empty}</Typography>
                 </Box>

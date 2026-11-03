@@ -20,6 +20,7 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 const TYPES = ['int', 'float', 'string', 'bool', 'int[]', 'float[]', 'string[]', 'bool[]', 'int[][]'];
@@ -144,7 +145,7 @@ export default function AddProblemDialog({ open, onClose, onCreated }) {
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-      <DialogTitle sx={{ fontWeight: 800 }}>Add Question</DialogTitle>
+      <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Add Question</DialogTitle>
       <DialogContent dividers>
         <Stack spacing={3} sx={{ mt: 0.5 }}>
           {error && <Alert severity="error">{error}</Alert>}
@@ -205,7 +206,7 @@ export default function AddProblemDialog({ open, onClose, onCreated }) {
           {/* --- Examples --- */}
           <Box>
             <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+              <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 Examples
               </Typography>
               <Button size="small" startIcon={<AddRoundedIcon fontSize="small" />} onClick={addExample}>
@@ -248,7 +249,7 @@ export default function AddProblemDialog({ open, onClose, onCreated }) {
           {/* --- Constraints --- */}
           <Box>
             <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+              <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 Constraints
               </Typography>
               <Button size="small" startIcon={<AddRoundedIcon fontSize="small" />} onClick={addConstraint}>
@@ -277,7 +278,7 @@ export default function AddProblemDialog({ open, onClose, onCreated }) {
 
           {/* --- Function signature (auto-generates starter/driver code) --- */}
           <Box>
-            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+            <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
               Function Signature
             </Typography>
             <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1.5 }}>
@@ -294,7 +295,7 @@ export default function AddProblemDialog({ open, onClose, onCreated }) {
                 required
               />
               <Stack direction="row" justifyContent="space-between" alignItems="center">
-                <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
                   Parameters
                 </Typography>
                 <Button size="small" startIcon={<AddRoundedIcon fontSize="small" />} onClick={addParam}>
@@ -351,7 +352,7 @@ export default function AddProblemDialog({ open, onClose, onCreated }) {
           {/* --- Test cases --- */}
           <Box>
             <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+              <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                 Test Cases
               </Typography>
               <Button size="small" startIcon={<AddRoundedIcon fontSize="small" />} onClick={addTestCase}>

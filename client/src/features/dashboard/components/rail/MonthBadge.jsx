@@ -1,6 +1,6 @@
 import { Box, Tooltip, Typography } from '@mui/material';
 import { GOLD_A, GOLD_B } from './railTokens';
-import { COLOR_PALETTE, withAlpha } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../../../app/design/designTokens';
 
 function HexShape() {
   return (
@@ -20,10 +20,10 @@ function HexShape() {
 function BadgeLabel({ label, count, goal }) {
   return (
     <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: COLOR_PALETTE.yellow[950] }}>
-      <Typography sx={{ fontSize: '0.62rem', fontWeight: 800, lineHeight: 1 }}>{label}</Typography>
-      <Typography sx={{ fontSize: '0.95rem', fontWeight: 800, lineHeight: 1.15, fontVariantNumeric: 'tabular-nums' }}>
+      <Typography sx={{ fontSize: '0.62rem', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1 }}>{label}</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.15, fontVariantNumeric: 'tabular-nums' }}>
         {Math.min(count, goal)}
-        <Box component="span" sx={{ fontSize: '0.6rem', fontWeight: 700 }}>
+        <Box component="span" sx={{ fontSize: '0.6rem', fontWeight: FONT_WEIGHTS.bold }}>
           /{goal}
         </Box>
       </Typography>

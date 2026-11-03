@@ -12,7 +12,7 @@ import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import { NameDialog } from './ListDialogs';
 import { ListsHeader, NavButton, RequestBadge } from './SidebarParts';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES } from '../../../app/design/designTokens';
 
 export const NAV_ITEMS = [
   { view: 'library', label: 'Library', icon: LibraryBooksRoundedIcon },
@@ -56,7 +56,7 @@ function ListButtons({ lists, view, activeListId, onSelectList }) {
         trailing={
           isFavorite ? (
             <Tooltip title="Lists are saved on this device">
-              <LockRoundedIcon sx={{ fontSize: 14, color: 'text.disabled' }} />
+              <LockRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: 'text.disabled' }} />
             </Tooltip>
           ) : null
         }

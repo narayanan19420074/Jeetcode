@@ -3,7 +3,7 @@ import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import { FF } from '../quests/questUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 export const fmt = (n) => Number(n || 0).toLocaleString('en-IN');
 export const fmtDate = (d) => (d ? new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '—');
@@ -27,7 +27,7 @@ export function Coins({ value, size = 18, bold = true, color = FF.coin, sx }) {
   return (
     <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, fontVariantNumeric: 'tabular-nums', ...sx }}>
       <MonetizationOnRoundedIcon sx={{ fontSize: size, color, filter: `drop-shadow(0 1px 2px ${withAlpha(COLOR_PALETTE.custom.yellow8F6200, 0.45)})` }} />
-      <Typography component="span" sx={{ fontWeight: bold ? 900 : 600, fontSize: size * 0.85, lineHeight: 1, color: FF.text }}>
+      <Typography component="span" sx={{ fontWeight: bold ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, fontSize: size * 0.85, lineHeight: 1, color: FF.text }}>
         {fmt(value)}
       </Typography>
     </Box>

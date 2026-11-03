@@ -6,6 +6,7 @@ import ItemGrid from './ItemGrid';
 import MerchNotice from './MerchNotice';
 import StoreHeader from './StoreHeader';
 import WalletPanel from './WalletPanel';
+import { FONT_SIZES } from '../../../app/design/designTokens';
 
 function WalletRow({ store }) {
   const { isAuthenticated, balance, wallet, claiming, claim, setTab, needLogin, courses, setCourseSlug } = store;
@@ -27,7 +28,7 @@ export default function StoreDesktopView({ store }) {
       <Container maxWidth={false} sx={{ maxWidth: 1240, py: 3, px: 3, display: 'grid', gap: 2.5 }}>
         <StoreHeader isAuthenticated={isAuthenticated} inTransit={inTransit} onOrders={() => setTab('orders')} />
         <WalletRow store={store} />
-        {error && <Typography role="alert" color="error" sx={{ fontSize: 15 }}>{error}</Typography>}
+        {error && <Typography role="alert" color="error" sx={{ fontSize: FONT_SIZES.bodyLg }}>{error}</Typography>}
         {merchLocked && <MerchNotice minSolved={data?.minSolvedForMerch} solved={user?.totalSolved ?? 0} />}
         <CategoryTabs categories={categories} cat={cat} onCat={setCat} />
         <ItemGrid items={items} loading={loading && !data} balance={balance} signedIn={isAuthenticated} onBuy={buy} onCourse={setCourseSlug} />

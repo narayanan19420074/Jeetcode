@@ -12,6 +12,7 @@ import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRigh
 import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import UndoRoundedIcon from '@mui/icons-material/UndoRounded';
 import RedoRoundedIcon from '@mui/icons-material/RedoRounded';
+import { FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone keyboards have no Tab key, no arrow keys and bury symbols two layers
 // deep. This strip sits right above the keyboard (like Replit / Acode / Termux
@@ -62,16 +63,16 @@ function Key({ children, onPress, label, wide, repeat, danger }) {
           height: 34,
           px: 0.5,
           borderRadius: '8px',
-          fontFamily: '"JetBrains Mono", "Fira Code", monospace',
-          fontSize: '1rem',
-          fontWeight: 600,
+          fontFamily: FONTS.mono,
+          fontSize: FONT_SIZES.title,
+          fontWeight: FONT_WEIGHTS.semibold,
           color: danger ? 'error.main' : 'text.primary',
           bgcolor: danger ? alpha(c, t.palette.mode === 'dark' ? 0.18 : 0.1) : wsSurface(t).raised,
           userSelect: 'none',
           WebkitTouchCallout: 'none',
           touchAction: 'manipulation',
           '&:active': { bgcolor: alpha(c, 0.32) },
-          '& svg': { fontSize: 20 },
+          '& svg': { fontSize: FONT_SIZES.heading },
         };
       }}
     >

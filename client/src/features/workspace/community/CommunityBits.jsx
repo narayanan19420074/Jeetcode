@@ -38,7 +38,7 @@ import FiberManualRecordRoundedIcon from '@mui/icons-material/FiberManualRecordR
 import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { LANG_LABEL, LANG_COLOR } from './Markdown';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 
 export { LANG_LABEL, LANG_COLOR };
 
@@ -80,7 +80,7 @@ export function UserAvatar({ user, size = 40 }) {
         width: size,
         height: size,
         fontSize: size * 0.42,
-        fontWeight: 700,
+        fontWeight: FONT_WEIGHTS.bold,
         color: t.palette.mode === 'dark' ? `hsl(${hue} 80% 85%)` : `hsl(${hue} 60% 28%)`,
         bgcolor: t.palette.mode === 'dark' ? `hsl(${hue} 35% 26%)` : `hsl(${hue} 70% 90%)`,
         border: '1px solid',
@@ -99,12 +99,12 @@ export function AuthorHeader({ author, createdAt, editedAt, isMine, size = 40, r
       <UserAvatar user={author} size={size} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Stack direction="row" alignItems="center" spacing={0.75}>
-          <Typography noWrap sx={{ fontWeight: 700, fontSize: '0.95rem', lineHeight: 1.3 }}>
+          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.3 }}>
             {author?.name || 'Unknown'}
           </Typography>
-          {isMine && <Chip size="small" label="You" color="primary" variant="outlined" sx={{ height: 20, fontSize: '0.7rem', fontWeight: 600 }} />}
+          {isMine && <Chip size="small" label="You" color="primary" variant="outlined" sx={{ height: 20, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.semibold }} />}
         </Stack>
-        <Typography noWrap color="text.secondary" sx={{ fontSize: '0.8rem' }}>
+        <Typography noWrap color="text.secondary" sx={{ fontSize: FONT_SIZES.caption }}>
           {timeAgo(createdAt)}
           {editedAt ? ' · edited' : ''}
         </Typography>
@@ -122,13 +122,13 @@ export function LangChip({ language }) {
       size="small"
       label={LANG_LABEL[language] || language}
       icon={<FiberManualRecordRoundedIcon style={{ color: LANG_COLOR[language] }} sx={{ fontSize: '12px !important' }} />}
-      sx={{ height: 28, fontWeight: 600, bgcolor: 'action.hover' }}
+      sx={{ height: 28, fontWeight: FONT_WEIGHTS.semibold, bgcolor: 'action.hover' }}
     />
   );
 }
 
 export function MetricChip({ icon, label }) {
-  return <Chip size="small" icon={icon} label={label} sx={{ height: 28, fontWeight: 600, bgcolor: 'action.hover', '& .MuiChip-icon': { fontSize: 16 } }} />;
+  return <Chip size="small" icon={icon} label={label} sx={{ height: 28, fontWeight: FONT_WEIGHTS.semibold, bgcolor: 'action.hover', '& .MuiChip-icon': { fontSize: FONT_SIZES.title } }} />;
 }
 
 export function AcceptedBadge() {
@@ -137,7 +137,7 @@ export function AcceptedBadge() {
       size="small"
       icon={<CheckCircleRoundedIcon />}
       label="Accepted"
-      sx={(t) => ({ height: 26, fontWeight: 700, color: 'success.main', bgcolor: alpha(t.palette.success.main, 0.12), '& .MuiChip-icon': { color: 'success.main', fontSize: 16 } })}
+      sx={(t) => ({ height: 26, fontWeight: FONT_WEIGHTS.bold, color: 'success.main', bgcolor: alpha(t.palette.success.main, 0.12), '& .MuiChip-icon': { color: 'success.main', fontSize: FONT_SIZES.title } })}
     />
   );
 }
@@ -221,8 +221,8 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
       sx={{
         minWidth: column ? 0 : 16,
         textAlign: 'center',
-        fontWeight: 600,
-        fontSize: column ? '0.75rem' : '0.95rem',
+        fontWeight: FONT_WEIGHTS.semibold,
+        fontSize: column ? FONT_SIZES.caption : FONT_SIZES.bodyLg,
         lineHeight: 1,
         color: liked ? LIKE_RED : 'text.primary',
       }}
@@ -276,7 +276,7 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
         </Stack>
       )}
       {error && (
-        <Typography color="error" sx={{ fontSize: '0.75rem', mt: 0.5 }}>
+        <Typography color="error" sx={{ fontSize: FONT_SIZES.caption, mt: 0.5 }}>
           {error}
         </Typography>
       )}
@@ -299,9 +299,9 @@ export function ActionButton({ icon, count, label, onClick }) {
         borderRadius: 999,
         color: 'text.primary',
         bgcolor: alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.1 : 0.06),
-        fontWeight: 600,
-        fontSize: '0.95rem',
-        '& .MuiButton-startIcon': { mr: 0.75, '& svg': { fontSize: 24 } },
+        fontWeight: FONT_WEIGHTS.semibold,
+        fontSize: FONT_SIZES.bodyLg,
+        '& .MuiButton-startIcon': { mr: 0.75, '& svg': { fontSize: FONT_SIZES.display } },
       })}
     >
       {count}
@@ -353,7 +353,7 @@ export function ItemMenu({ canEdit, canDelete, canReport, onEdit, onDelete, onRe
 export function ConfirmDialog({ open, title, text, confirmLabel = 'Delete', loading, onConfirm, onClose }) {
   return (
     <Dialog open={open} onClose={loading ? undefined : onClose} maxWidth="xs" fullWidth>
-      <DialogTitle sx={{ fontWeight: 700 }}>{title}</DialogTitle>
+      <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{title}</DialogTitle>
       <DialogContent>
         <DialogContentText>{text}</DialogContentText>
       </DialogContent>
@@ -406,7 +406,7 @@ export function ReportDialog({ open, onClose, targetType, targetId }) {
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
-      <DialogTitle sx={{ fontWeight: 700 }}>Report</DialogTitle>
+      <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Report</DialogTitle>
       <DialogContent>
         {done ? (
           <Alert severity="success">Thanks — our team will review this.</Alert>
@@ -460,11 +460,11 @@ export function SegmentedTabs({ value, onChange, options }) {
               flexShrink: 0,
               whiteSpace: 'nowrap',
               borderRadius: 999,
-              fontWeight: 700,
+              fontWeight: FONT_WEIGHTS.bold,
               color: on ? 'primary.main' : 'text.secondary',
               bgcolor: on ? 'background.paper' : 'transparent',
               boxShadow: on ? `0 1px 4px ${alpha(t.palette.primary.main, 0.28)}` : 'none',
-              '& .MuiButton-startIcon svg': { fontSize: 20 },
+              '& .MuiButton-startIcon svg': { fontSize: FONT_SIZES.heading },
               '&:hover': { bgcolor: on ? 'background.paper' : 'action.hover' },
             })}
           >
@@ -490,7 +490,7 @@ export function FilterChips({ value, onChange, options }) {
             label={o.label}
             color={on ? 'primary' : 'default'}
             variant={on ? 'filled' : 'outlined'}
-            sx={{ height: 36, fontWeight: 600, flexShrink: 0, fontSize: '0.875rem' }}
+            sx={{ height: 36, fontWeight: FONT_WEIGHTS.semibold, flexShrink: 0, fontSize: FONT_SIZES.body }}
           />
         );
       })}
@@ -507,11 +507,11 @@ export function ComposerPrompt({ icon, placeholder, onClick }) {
       sx={{ width: '100%', justifyContent: 'flex-start', gap: 1.25, px: 1.25, py: 1, minHeight: 60, border: '1px solid', borderColor: 'divider', borderRadius: 999, textAlign: 'left' }}
     >
       {user && <UserAvatar user={user} size={38} />}
-      <Typography color="text.secondary" noWrap sx={{ flex: 1, fontSize: '0.95rem', pl: user ? 0 : 1 }}>
+      <Typography color="text.secondary" noWrap sx={{ flex: 1, fontSize: FONT_SIZES.bodyLg, pl: user ? 0 : 1 }}>
         {placeholder}
       </Typography>
       <Box
-        sx={(t) => ({ width: 40, height: 40, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12), '& svg': { fontSize: 22 } })}
+        sx={(t) => ({ width: 40, height: 40, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12), '& svg': { fontSize: FONT_SIZES.display } })}
       >
         {icon}
       </Box>
@@ -523,12 +523,12 @@ export function EmptyBlock({ icon, title, text }) {
   return (
     <Stack sx={{ alignItems: 'center', textAlign: 'center', py: 6, px: 2, gap: 1.5 }}>
       <Box
-        sx={(t) => ({ width: 72, height: 72, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.12), color: 'primary.main', '& svg': { fontSize: 34 } })}
+        sx={(t) => ({ width: 72, height: 72, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.12), color: 'primary.main', '& svg': { fontSize: FONT_SIZES.hero } })}
       >
         {icon}
       </Box>
-      <Typography sx={{ fontWeight: 700, fontSize: '1.05rem' }}>{title}</Typography>
-      <Typography color="text.secondary" sx={{ maxWidth: 320, fontSize: '0.92rem' }}>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }}>{title}</Typography>
+      <Typography color="text.secondary" sx={{ maxWidth: 320, fontSize: FONT_SIZES.bodyLg }}>
         {text}
       </Typography>
     </Stack>

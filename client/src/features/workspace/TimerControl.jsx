@@ -10,6 +10,7 @@ import { formatClock } from './useStopwatch';
 import { WsIconButton } from './wsUi';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Practice timer (personal, not shared): tap the clock to start, tap the time to pause.
 // lib: the phone workspace look (Library style: 40px round buttons and a 40px time pill).
@@ -34,13 +35,13 @@ export default function TimerControl({ sw, size = 'md', lib = false }) {
             flexShrink: 0,
             borderRadius: 999,
             fontFamily: 'inherit',
-            fontSize: 16,
-            fontWeight: 500,
+            fontSize: FONT_SIZES.title,
+            fontWeight: FONT_WEIGHTS.medium,
             letterSpacing: LIB_TRACKING,
             fontVariantNumeric: 'tabular-nums',
             color: sw.running ? LIB_ACCENT : 'var(--lib-chip-text)',
             bgcolor: sw.running ? tint(LIB_ACCENT, 14) : 'var(--lib-chip)',
-            '& svg': { fontSize: 20 },
+            '& svg': { fontSize: FONT_SIZES.heading },
           }}
         >
           {sw.running ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />}
@@ -72,11 +73,11 @@ export default function TimerControl({ sw, size = 'md', lib = false }) {
           borderRadius: `${WS.radius}px`,
           color: sw.running ? t.palette.primary.main : t.palette.text.secondary,
           bgcolor: sw.running ? alpha(t.palette.primary.main, 0.12) : wsSurface(t).raised,
-          '& svg': { fontSize: 17 },
+          '& svg': { fontSize: FONT_SIZES.subheading },
         })}
       >
         {sw.running ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />}
-        <Typography sx={{ ...mono, fontSize: '0.8rem', fontWeight: 600, color: 'inherit' }}>{formatClock(sw.seconds)}</Typography>
+        <Typography sx={{ ...mono, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold, color: 'inherit' }}>{formatClock(sw.seconds)}</Typography>
       </ButtonBase>
       <WsIconButton title="Reset timer" size={size} onClick={sw.reset}>
         <RestartAltRoundedIcon sx={{ fontSize: '17px !important' }} />

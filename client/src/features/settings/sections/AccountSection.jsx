@@ -11,11 +11,12 @@ import { usersApi } from '../../../api/usersApi';
 import { logoutUser, userUpdated } from '../../auth/authSlice';
 import { Card, CardBody, PageTitle, Row, describeError } from '../components/SettingsUi';
 import { COUNTRIES, flagEmoji } from '../countries';
+import { FONT_WEIGHTS, FONT_SIZES, FONTS } from '../../../app/design/designTokens';
 
 function Stat({ label, value }) {
   return (
     <Box>
-      <Typography sx={{ fontWeight: 800, fontSize: '1.35rem', lineHeight: 1.2, fontFamily: '"JetBrains Mono", monospace' }}>{value}</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.2, fontFamily: FONTS.mono }}>{value}</Typography>
       <Typography variant="caption" color="text.secondary">
         {label}
       </Typography>
@@ -169,7 +170,7 @@ export default function AccountSection() {
               isOptionEqualToValue={(o, v) => o.code === v.code}
               renderOption={({ key, ...props }, o) => (
                 <Box component="li" key={key} {...props} sx={{ gap: 1.25 }}>
-                  <span aria-hidden style={{ fontSize: '1.3rem', lineHeight: 1 }}>{flagEmoji(o.code)}</span>
+                  <span aria-hidden style={{ fontSize: FONT_SIZES.heading, lineHeight: 1 }}>{flagEmoji(o.code)}</span>
                   {o.name}
                 </Box>
               )}
@@ -221,7 +222,7 @@ export default function AccountSection() {
 
       {/* Confirm username change */}
       <Dialog open={handleDialog} onClose={() => !handleBusy && setHandleDialog(false)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800 }}>Change username?</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Change username?</DialogTitle>
         <DialogContent>
           <DialogContentText>
             <b>@{user.handle}</b> will become <b>@{handleNorm}</b>. Anyone could claim <b>@{user.handle}</b> afterwards.
@@ -239,7 +240,7 @@ export default function AccountSection() {
 
       {/* Delete account */}
       <Dialog open={delOpen} onClose={() => !delBusy && setDelOpen(false)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: 800, color: 'error.main' }}>Delete your account?</DialogTitle>
+        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'error.main' }}>Delete your account?</DialogTitle>
         <DialogContent>
           <Alert severity="warning" sx={{ mb: 2 }}>
             This permanently deletes your data and cannot be undone.

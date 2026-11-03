@@ -12,7 +12,7 @@ import CompanyAvatar from '../../components/CompanyAvatar';
 import { Confetti } from '../aptitude/components/MotionBits';
 import { tint } from '../dashboard/dashboardUtils';
 import { LibraryFont, libBackBtnSx, libSolidBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone layout of one company's question roadmap (opened from Companies). Same look as the phone
 // dashboard: a banner card in the Contest-banner style (gradient, translucent ring, 28px title), then a
@@ -65,18 +65,18 @@ async function loadCompanyQuestions(company) {
 const plural = (n, word) => `${n.toLocaleString('en-IN')} ${n === 1 ? word : `${word}s`}`;
 
 function Node({ problem, index, current, hero, dark }) {
-  const base = { width: 40, height: 40, borderRadius: '50%', flexShrink: 0, display: 'grid', placeItems: 'center', fontSize: 16, fontWeight: 700, lineHeight: 1 };
+  const base = { width: 40, height: 40, borderRadius: '50%', flexShrink: 0, display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1 };
   if (problem.locked) {
     return (
       <Box aria-hidden sx={{ ...base, bgcolor: dark ? tint(LOCK.color, 16) : LOCK.bg, color: LOCK.color }}>
-        <LockRoundedIcon sx={{ fontSize: 20 }} />
+        <LockRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
       </Box>
     );
   }
   if (problem.solvedByMe) {
     return (
       <Box aria-hidden sx={{ ...base, bgcolor: hero.accent, color: COLOR_PALETTE.white }}>
-        <CheckRoundedIcon sx={{ fontSize: 22 }} />
+        <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
       </Box>
     );
   }
@@ -113,15 +113,15 @@ function ProblemRow({ problem, index, current, last, hero, dark, onOpen }) {
         </Box>
         <Box sx={{ flex: 1, minWidth: 0, pb: last ? 0 : '16px', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
           <Box sx={{ flex: 1, minWidth: 0, opacity: problem.locked ? 0.8 : 1 }}>
-            <Typography sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING, fontWeight: current ? 700 : 400, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+            <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING, fontWeight: current ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
               {problem.title}
             </Typography>
-            <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted }}>
+            <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted }}>
               {meta}
             </Typography>
           </Box>
           {current && (
-            <Box component="span" sx={{ mt: '2px', height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 13, letterSpacing: TRACKING, fontWeight: 500, bgcolor: tint(hero.accent, 18), color: pal.text, flexShrink: 0 }}>
+            <Box component="span" sx={{ mt: '2px', height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.body, letterSpacing: TRACKING, fontWeight: FONT_WEIGHTS.medium, bgcolor: tint(hero.accent, 18), color: pal.text, flexShrink: 0 }}>
               Next up
             </Box>
           )}
@@ -136,8 +136,8 @@ function GroupHeading({ title, solved, total }) {
   const pal = useLibraryPalette();
   return (
     <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 1, mb: 1.5 }}>
-      <Typography component="h2" sx={{ fontSize: 18, lineHeight: '24px', fontWeight: 700 }}>{title}</Typography>
-      <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
+      <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold }}>{title}</Typography>
+      <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
         {solved} of {total} solved
       </Typography>
     </Box>
@@ -224,10 +224,10 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
           <CompanyAvatar name={company.name} logoUrl={company.logoUrl} size={56} />
         </Box>
 
-        <Typography component="h1" sx={{ pr: '36%', fontSize: 28, lineHeight: '33px', fontWeight: 700, letterSpacing: '-0.01em', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        <Typography component="h1" sx={{ pr: '36%', fontSize: FONT_SIZES.displayLg, lineHeight: '33px', fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
           {company.name}
         </Typography>
-        <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: TRACKING, opacity: 0.95 }}>
+        <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: TRACKING, opacity: 0.95 }}>
           {items === null ? 'Loading problems' : `${plural(nodes.length, 'problem')} · Easy to Hard`}
         </Typography>
 
@@ -235,24 +235,24 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
           <Box role="progressbar" aria-label={`${company.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct} sx={{ flex: 1, height: 8, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.black, 0.25), overflow: 'hidden' }}>
             <motion.div initial={{ width: reduce ? `${pct}%` : 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.8, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 99, background: COLOR_PALETTE.white }} />
           </Box>
-          <Typography sx={{ fontSize: 16, lineHeight: '24px', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{pct}%</Typography>
+          <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>{pct}%</Typography>
         </Box>
 
         <Box sx={{ mt: 1.5, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-          <Box sx={{ height: 34, px: '14px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
+          <Box sx={{ height: 34, px: '14px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
             {solved} of {nodes.length} solved
           </Box>
-          <Box sx={{ height: 34, px: '12px', gap: 0.5, borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
-            <StarRoundedIcon aria-hidden sx={{ fontSize: 20, color: COLOR_PALETTE.amber[200] }} />
+          <Box sx={{ height: 34, px: '12px', gap: 0.5, borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
+            <StarRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.amber[200] }} />
             {stars}/{maxStars}
           </Box>
           {company.examSlug && (
             <ButtonBase
               onClick={() => navigate(`/prep/${company.examSlug}`)}
-              sx={{ height: 34, pl: '14px', pr: '8px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, fontFamily: 'inherit', color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22) }}
+              sx={{ height: 34, pl: '14px', pr: '8px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, fontFamily: 'inherit', color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22) }}
             >
               Exam pattern
-              <ChevronRightRoundedIcon sx={{ fontSize: 20 }} />
+              <ChevronRightRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
             </ButtonBase>
           )}
         </Box>
@@ -263,7 +263,7 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
         {items === null ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress size={28} /></Box>
         ) : nodes.length === 0 ? (
-          <Typography sx={{ textAlign: 'center', py: 6, fontSize: 16, letterSpacing: TRACKING, color: pal.muted }}>
+          <Typography sx={{ textAlign: 'center', py: 6, fontSize: FONT_SIZES.title, letterSpacing: TRACKING, color: pal.muted }}>
             {failed ? 'Could not load the problems. Try again in a moment.' : `No ${company.name} problems yet.`}
           </Typography>
         ) : (
@@ -279,7 +279,7 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
               </Box>
             ))}
             {done && (
-              <Typography sx={{ textAlign: 'center', fontSize: 16, lineHeight: '24px', fontWeight: 700 }}>
+              <Typography sx={{ textAlign: 'center', fontSize: FONT_SIZES.title, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold }}>
                 All {company.name} problems solved
               </Typography>
             )}
@@ -304,17 +304,17 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
             >
               <LibraryFont sx={{ width: '100%', maxWidth: 560, bgcolor: pal.bg, borderRadius: '28px 28px 0 0', px: 2, pt: 1.5, pb: 'calc(20px + env(safe-area-inset-bottom))' }}>
                 <Box sx={{ width: 40, height: 4, borderRadius: 4, bgcolor: pal.divider, mx: 'auto', mb: 2 }} />
-                <Typography sx={{ fontSize: 20, lineHeight: '28px', fontWeight: 700 }}>{sheet.title}</Typography>
+                <Typography sx={{ fontSize: FONT_SIZES.heading, lineHeight: '28px', fontWeight: FONT_WEIGHTS.bold }}>{sheet.title}</Typography>
                 <Box sx={{ mt: 1, mb: 2.5, display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
-                  <Box component="span" sx={{ height: 34, px: '14px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, bgcolor: dark ? tint((DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).color, 16) : (DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).bg, color: (DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).color }}>
+                  <Box component="span" sx={{ height: 34, px: '14px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: dark ? tint((DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).color, 16) : (DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).bg, color: (DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).color }}>
                     {sheet.difficulty}
                   </Box>
-                  {sheet.acceptanceRate > 0 && <Typography sx={{ fontSize: 14, letterSpacing: TRACKING, color: pal.muted }}>{sheet.acceptanceRate}% accepted</Typography>}
-                  {sheet.solvedByMe && <Typography sx={{ fontSize: 14, letterSpacing: TRACKING, color: pal.muted }}>Solved</Typography>}
+                  {sheet.acceptanceRate > 0 && <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: TRACKING, color: pal.muted }}>{sheet.acceptanceRate}% accepted</Typography>}
+                  {sheet.solvedByMe && <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: TRACKING, color: pal.muted }}>Solved</Typography>}
                 </Box>
                 {sheet.locked ? (
                   <ButtonBase onClick={() => navigate('/pricing')} sx={{ ...libSolidBtnSx, width: '100%', gap: 1, fontFamily: 'inherit' }}>
-                    <LockRoundedIcon sx={{ fontSize: 20 }} />
+                    <LockRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
                     Unlock with Pro
                   </ButtonBase>
                 ) : (

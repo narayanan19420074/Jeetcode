@@ -5,10 +5,10 @@ import { animate, useReducedMotion } from 'framer-motion';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import { todayKey as indiaToday } from '../dashboard/dashboardUtils';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Small pieces shared by the Friends page, chat, activity feed and profile dialog.
-export const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
+export const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 export const APT_COLOR = COLOR_PALETTE.violet[500];
 export const FLAME = COLOR_PALETTE.orange[500];
 export const AMBER = COLOR_PALETTE.amber[400];
@@ -54,8 +54,8 @@ export function CountUp({ value }) {
 
 export function TierChip({ tier }) {
   return (
-    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.7, py: 0.05, borderRadius: 99, bgcolor: `color-mix(in srgb, ${tier.color} 16%, transparent)`, color: tier.color, fontSize: 11, fontWeight: 800, lineHeight: 1.6 }}>
-      <WorkspacePremiumRoundedIcon sx={{ fontSize: 13 }} />{tier.name}
+    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.7, py: 0.05, borderRadius: 99, bgcolor: `color-mix(in srgb, ${tier.color} 16%, transparent)`, color: tier.color, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.6 }}>
+      <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.body }} />{tier.name}
     </Box>
   );
 }
@@ -106,7 +106,7 @@ export function PersonAvatar({ person, size = 40, online, ring, gradient }) {
     <Avatar
       src={person.avatarUrl || undefined}
       sx={[
-        { width: size, height: size, fontSize: size * 0.4, fontWeight: 700 },
+        { width: size, height: size, fontSize: size * 0.4, fontWeight: FONT_WEIGHTS.bold },
         gradient ? { border: '2px solid', borderColor: 'background.paper' } : ring ? { border: `3px solid ${ring}` } : null,
       ]}
     >
@@ -128,9 +128,9 @@ export function Streak({ value }) {
   return (
     <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.15 }}>
       <LocalFireDepartmentRoundedIcon
-        sx={{ fontSize: 16, color: on ? FLAME : 'text.disabled', ...(on && { animation: `${flicker} 1.4s ease-in-out infinite`, filter: `drop-shadow(0 0 4px ${withAlpha(COLOR_PALETTE.orange[500], 0.7)})`, ...calm }) }}
+        sx={{ fontSize: FONT_SIZES.title, color: on ? FLAME : 'text.disabled', ...(on && { animation: `${flicker} 1.4s ease-in-out infinite`, filter: `drop-shadow(0 0 4px ${withAlpha(COLOR_PALETTE.orange[500], 0.7)})`, ...calm }) }}
       />
-      <Typography variant="caption" sx={[{ fontWeight: 800, color: on ? 'text.primary' : 'text.disabled' }, mono]}>{value || 0}d</Typography>
+      <Typography variant="caption" sx={[{ fontWeight: FONT_WEIGHTS.bold, color: on ? 'text.primary' : 'text.disabled' }, mono]}>{value || 0}d</Typography>
     </Box>
   );
 }

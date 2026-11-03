@@ -10,6 +10,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { CodeField, PaneTabs, WsButton } from '../workspace/wsUi';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WS, mono } from '../workspace/wsTokens';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 const initialOf = (name) => (name || '').trim()[0]?.toUpperCase() || '?';
 
@@ -23,7 +24,7 @@ export function PresenceStack({ meName, peers }) {
     <Tooltip title={title}>
       <Stack direction="row" aria-label={title} sx={{ alignItems: 'center', px: 0.5, flexShrink: 0 }}>
         <Avatar
-          sx={(t) => ({ ...ring(t), width: 24, height: 24, fontSize: '0.75rem', fontWeight: 700, bgcolor: wsSurface(t).raised, color: 'text.primary' })}
+          sx={(t) => ({ ...ring(t), width: 24, height: 24, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, bgcolor: wsSurface(t).raised, color: 'text.primary' })}
         >
           {initialOf(meName)}
         </Avatar>
@@ -39,14 +40,14 @@ export function PresenceStack({ meName, peers }) {
               '& .MuiBadge-badge': { width: 9, height: 9, minWidth: 0, borderRadius: '50%', border: '2px solid', borderColor: wsSurface(t).chrome, boxSizing: 'content-box' },
             })}
           >
-            <Avatar sx={(t) => ({ ...ring(t), width: 24, height: 24, fontSize: '0.75rem', fontWeight: 700, bgcolor: 'primary.main', color: 'primary.contrastText' })}>
+            <Avatar sx={(t) => ({ ...ring(t), width: 24, height: 24, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'primary.main', color: 'primary.contrastText' })}>
               {initialOf(p.name)}
             </Avatar>
           </Badge>
         ))}
         {peers.length === 0 && (
           <Avatar sx={(t) => ({ ...ring(t), ml: -0.75, width: 24, height: 24, bgcolor: 'transparent', color: 'text.disabled', outline: `1px dashed ${t.palette.text.disabled}`, outlineOffset: -3 })}>
-            <PersonOutlineRoundedIcon sx={{ fontSize: 16 }} />
+            <PersonOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />
           </Avatar>
         )}
       </Stack>
@@ -65,7 +66,7 @@ export function RunChip({ running, result, sx, lib = false }) {
         noWrap
         component="span"
         sx={[
-          { minWidth: 0, maxWidth: '44vw', px: '10px', py: '3px', borderRadius: 999, fontSize: 14, lineHeight: '20px', fontWeight: 500, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
+          { minWidth: 0, maxWidth: '44vw', px: '10px', py: '3px', borderRadius: 999, fontSize: FONT_SIZES.body, lineHeight: '20px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}
       >
@@ -81,7 +82,7 @@ export function RunChip({ running, result, sx, lib = false }) {
       icon={result.ok ? <CheckCircleRoundedIcon /> : <CancelRoundedIcon />}
       label={result.status}
       color={result.ok ? 'success' : 'error'}
-      sx={[{ fontWeight: 700, minWidth: 0 }, ...(Array.isArray(sx) ? sx : [sx])]}
+      sx={[{ fontWeight: FONT_WEIGHTS.bold, minWidth: 0 }, ...(Array.isArray(sx) ? sx : [sx])]}
     />
   );
 }
@@ -101,7 +102,7 @@ function RunOutput({ running, result }) {
   if (!result) {
     return (
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
-        {!lib && <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />}
+        {!lib && <PlayArrowRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
         <Typography variant="body2">Run the code to see the output here. Both of you see the result.</Typography>
       </Stack>
     );
@@ -112,7 +113,7 @@ function RunOutput({ running, result }) {
   return (
     <>
       <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.25, mb: 1.5 }}>
-        <Typography sx={{ fontWeight: lib ? 700 : 800, fontSize: lib ? 20 : '1.15rem', color: result.ok ? 'success.main' : 'error.main' }}>{result.status}</Typography>
+        <Typography sx={{ fontWeight: lib ? FONT_WEIGHTS.bold : FONT_WEIGHTS.bold, fontSize: lib ? FONT_SIZES.heading : FONT_SIZES.subheading, color: result.ok ? 'success.main' : 'error.main' }}>{result.status}</Typography>
         {meta.map((m) => (
           <Typography key={m} variant="caption" color="text.secondary">
             {m}
@@ -197,8 +198,8 @@ export function RoomConsoleBody({
                   input: {
                     sx: (t) =>
                       lib
-                        ? { ...mono, fontSize: 14, lineHeight: 1.65, borderRadius: '16px', bgcolor: 'var(--lib-bg)', '& fieldset': { border: 'none' } }
-                        : { ...mono, fontSize: '0.8rem', lineHeight: 1.65, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, '& fieldset': { border: 'none' } },
+                        ? { ...mono, fontSize: FONT_SIZES.body, lineHeight: 1.65, borderRadius: '16px', bgcolor: 'var(--lib-bg)', '& fieldset': { border: 'none' } }
+                        : { ...mono, fontSize: FONT_SIZES.caption, lineHeight: 1.65, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, '& fieldset': { border: 'none' } },
                   },
                 }}
               />
@@ -223,7 +224,7 @@ export function RoomConsoleBody({
                 Sign in to submit. Submissions are saved to your own account and streak.
               </Typography>
               {lib ? (
-                <Button disableElevation onClick={onSignIn} sx={{ ...libTintBtnSx, bgcolor: 'var(--lib-bg)', height: 36, px: 2, fontSize: 15 }}>
+                <Button disableElevation onClick={onSignIn} sx={{ ...libTintBtnSx, bgcolor: 'var(--lib-bg)', height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
                   Sign in
                 </Button>
               ) : (
@@ -234,7 +235,7 @@ export function RoomConsoleBody({
             </Stack>
           ) : !sub.result && sub.status === 'idle' && !sub.error ? (
             <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
-              {!lib && <PlayArrowRoundedIcon sx={{ fontSize: 20 }} />}
+              {!lib && <PlayArrowRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
               <Typography variant="body2">Submit to see your verdict here. It counts for your account only.</Typography>
             </Stack>
           ) : (

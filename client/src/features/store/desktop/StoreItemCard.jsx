@@ -4,7 +4,7 @@ import { pillButtonSx } from '../../dashboard/components/libraryDesktopStyles';
 import StoreBadge from '../common/StoreBadge';
 import { itemAction } from '../common/storeSelectors';
 import { Coins, ItemArt, fmt, priceNote } from '../storeUtils';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const ROSE = COLOR_PALETTE.rose[600];
 const TWO_LINES = { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' };
@@ -28,7 +28,7 @@ function PriceLine({ item, balance, showShortfall, palette }) {
   return (
     <Box>
       <Coins value={item.price} size={20} />
-      {showShortfall && <Typography sx={{ mt: 0.25, fontSize: 13, color: palette.muted }}>Need {fmt(item.price - balance)} more</Typography>}
+      {showShortfall && <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.body, color: palette.muted }}>Need {fmt(item.price - balance)} more</Typography>}
     </Box>
   );
 }
@@ -42,8 +42,8 @@ export default function StoreItemCard({ item, balance, signedIn, onBuy, onCourse
     <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: 0, borderRadius: '16px', overflow: 'hidden', opacity: action.soldOut ? 0.65 : 1, bgcolor: palette.chip, border: `1px solid ${palette.border}`, transition: 'border-color .15s', '&:hover': { borderColor: LIB_ACCENT } }}>
       <ItemPicture item={item} label={action.label} onOpen={open} disabled={action.soldOut} />
       <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, p: 2, gap: 0.5, minWidth: 0 }}>
-        <Typography component="h3" sx={[{ fontWeight: 500, fontSize: 16, lineHeight: '22px', letterSpacing: LIB_TRACKING }, TWO_LINES]}>{item.name}</Typography>
-        <Typography noWrap title={item.blurb} sx={{ fontSize: 14, color: palette.muted }}>{item.blurb}</Typography>
+        <Typography component="h3" sx={[{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '22px', letterSpacing: LIB_TRACKING }, TWO_LINES]}>{item.name}</Typography>
+        <Typography noWrap title={item.blurb} sx={{ fontSize: FONT_SIZES.body, color: palette.muted }}>{item.blurb}</Typography>
         <Box sx={{ mt: 'auto', pt: 1.5, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
           <PriceLine item={item} balance={balance} showShortfall={showShortfall} palette={palette} />
           <Button onClick={open} disabled={action.soldOut} disableElevation sx={pillButtonSx(action.afford && !action.owned, palette)}>{action.label}</Button>

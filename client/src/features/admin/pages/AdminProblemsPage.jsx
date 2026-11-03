@@ -36,6 +36,7 @@ import DifficultyChip from '../../../components/DifficultyChip';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import AddProblemDialog from '../components/AddProblemDialog';
+import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 
 const CONFIRM_WORD = 'DELETE';
 const PAGE_SIZE = 20;
@@ -163,7 +164,7 @@ export default function AdminProblemsPage() {
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Stack direction="row" justifyContent="space-between" alignItems="flex-start" sx={{ mb: 3 }}>
         <Box>
-          <Typography variant="h5" sx={{ fontWeight: 800, mb: 0.5 }}>
+          <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
             Problems
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -189,8 +190,8 @@ export default function AdminProblemsPage() {
       <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1 }}>
           <Tabs value={view} onChange={(e, v) => setView(v)} sx={{ minHeight: 36 }}>
-            <Tab value="active" label="Active" sx={{ minHeight: 36, py: 0.5, fontWeight: 600 }} />
-            <Tab value="trash" label="Trash" sx={{ minHeight: 36, py: 0.5, fontWeight: 600 }} />
+            <Tab value="active" label="Active" sx={{ minHeight: 36, py: 0.5, fontWeight: FONT_WEIGHTS.semibold }} />
+            <Tab value="trash" label="Trash" sx={{ minHeight: 36, py: 0.5, fontWeight: FONT_WEIGHTS.semibold }} />
           </Tabs>
           {view === 'active' && selectedIds.length > 0 && (
             <Button
@@ -237,7 +238,7 @@ export default function AdminProblemsPage() {
                       <Checkbox size="small" checked={selectedIds.includes(p._id)} onChange={() => toggleSelected(p._id)} />
                     </TableCell>
                   )}
-                  <TableCell sx={{ fontWeight: 600 }}>{p.title}</TableCell>
+                  <TableCell sx={{ fontWeight: FONT_WEIGHTS.semibold }}>{p.title}</TableCell>
                   <TableCell>
                     <DifficultyChip difficulty={p.difficulty} />
                   </TableCell>

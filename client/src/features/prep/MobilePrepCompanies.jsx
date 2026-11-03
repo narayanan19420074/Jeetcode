@@ -7,7 +7,7 @@ import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 import { useSelector } from 'react-redux';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import { HeaderTile, LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
 
 // Phone layout of the Companies page. It follows the phone Problems page (MobileProblems): same
 // page padding, back button, pill search, centred header, divider-separated rows and type sizes.
@@ -45,15 +45,15 @@ function CompanyRow({ c, onOpen }) {
     >
       <CompanyAvatar name={c.name} logoUrl={c.logoUrl} size={48} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography noWrap sx={{ fontSize: 16, lineHeight: '24px', letterSpacing: TRACKING }}>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING }}>
           {c.name}
         </Typography>
-        <Typography noWrap sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: TRACKING, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
           {details}
         </Typography>
       </Box>
       {hasReadiness && (
-        <Typography sx={{ fontWeight: 700, fontSize: 14, color: readinessColor(c.readiness), fontVariantNumeric: 'tabular-nums' }}>
+        <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: readinessColor(c.readiness), fontVariantNumeric: 'tabular-nums' }}>
           {c.readiness}%
         </Typography>
       )}
@@ -108,7 +108,7 @@ export default function MobilePrepCompanies({ loading, list, shown, hasMore, que
             },
           }}
           sx={{
-            '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: 18, letterSpacing: TRACKING, px: '16px' },
+            '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, px: '16px' },
             '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
           }}
         />
@@ -117,12 +117,12 @@ export default function MobilePrepCompanies({ loading, list, shown, hasMore, que
       {/* Header */}
       <Box sx={{ textAlign: 'center', mt: 3 }}>
         <HeaderTile>
-          <BusinessRoundedIcon sx={{ fontSize: 28 }} />
+          <BusinessRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg }} />
         </HeaderTile>
-        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
+        <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, lineHeight: '32px' }}>
           Companies
         </Typography>
-        <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: TRACKING, color: pal.muted }}>Questions asked by each company</Typography>
+        <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: TRACKING, color: pal.muted }}>Questions asked by each company</Typography>
       </Box>
 
       {/* List */}
@@ -131,7 +131,7 @@ export default function MobilePrepCompanies({ loading, list, shown, hasMore, que
           <SkeletonRows />
         ) : shown.length === 0 ? (
           <Box sx={{ py: 7, px: 2, textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 800 }}>{query ? 'No companies match your search' : 'No companies yet'}</Typography>
+            <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{query ? 'No companies match your search' : 'No companies yet'}</Typography>
             {query && (
               <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                 Try a different name.
