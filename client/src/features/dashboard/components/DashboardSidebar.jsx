@@ -12,6 +12,7 @@ import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import { NameDialog } from './ListDialogs';
 import { ListsHeader, NavButton, RequestBadge } from './SidebarParts';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 export const NAV_ITEMS = [
   { view: 'library', label: 'Library', icon: LibraryBooksRoundedIcon },
@@ -24,7 +25,7 @@ export const NAV_ITEMS = [
 ];
 
 // Same blue star as the Favorites card on the phone home.
-const FAVORITE_STAR = '#3F8CE8';
+const FAVORITE_STAR = COLOR_PALETTE.custom.blue3F8CE8;
 
 function ViewButtons({ view, onView, friendCounts }) {
   return NAV_ITEMS.map(({ view: v, label, icon }) => (

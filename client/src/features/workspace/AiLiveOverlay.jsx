@@ -8,6 +8,7 @@ import AiGlow from './AiGlow';
 import { isMicCaptureSupported } from './live/micCapture';
 import { LIVE_PHASE } from './live/liveVoiceSession';
 import useGeminiLive from './live/useGeminiLive';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const pulse = keyframes`0%, 100% { transform: scale(1); } 50% { transform: scale(1.14); }`;
 
@@ -36,8 +37,8 @@ const SHEET_SX = {
   fontFamily: LIB_FONT,
   letterSpacing: LIB_TRACKING,
   color: 'var(--lib-text)',
-  bgcolor: 'var(--lib-bg, #FDF8F4)',
-  boxShadow: '0 -12px 40px rgba(0,0,0,0.22)',
+  bgcolor: `var(--lib-bg, ${COLOR_PALETTE.orange[50]})`,
+  boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, 0.22)}`,
 };
 
 const END_BUTTON_SX = {
@@ -49,9 +50,9 @@ const END_BUTTON_SX = {
   fontSize: 16,
   fontFamily: LIB_FONT,
   letterSpacing: LIB_TRACKING,
-  bgcolor: 'var(--lib-player, #F1E7DD)',
+  bgcolor: `var(--lib-player, ${COLOR_PALETTE.custom.orangeF1E7DD})`,
   color: 'var(--lib-text)',
-  '&:hover': { bgcolor: 'var(--lib-player, #F1E7DD)', filter: 'brightness(0.97)' },
+  '&:hover': { bgcolor: `var(--lib-player, ${COLOR_PALETTE.custom.orangeF1E7DD})`, filter: 'brightness(0.97)' },
 };
 
 function statusLabel({ supported, phase, muted }) {
@@ -67,10 +68,10 @@ const orbSx = ({ canPress, muted, pulseSeconds }) => ({
   borderRadius: '50%',
   display: 'grid',
   placeItems: 'center',
-  color: '#fff',
+  color: COLOR_PALETTE.white,
   cursor: canPress ? 'pointer' : 'default',
-  bgcolor: muted ? 'var(--lib-muted, #6F655B)' : LIB_ACCENT,
-  boxShadow: '0 10px 28px rgba(99, 102, 241, 0.4)',
+  bgcolor: muted ? `var(--lib-muted, ${COLOR_PALETTE.custom.gray6F655B})` : LIB_ACCENT,
+  boxShadow: `0 10px 28px ${withAlpha(COLOR_PALETTE.indigo[500], 0.4)}`,
   animation: pulseSeconds ? `${pulse} ${pulseSeconds}s ease-in-out infinite` : 'none',
   '@media (prefers-reduced-motion: reduce)': { animation: 'none' },
 });

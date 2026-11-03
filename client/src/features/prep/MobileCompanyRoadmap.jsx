@@ -12,6 +12,7 @@ import CompanyAvatar from '../../components/CompanyAvatar';
 import { Confetti } from '../aptitude/components/MotionBits';
 import { tint } from '../dashboard/dashboardUtils';
 import { LibraryFont, libBackBtnSx, libSolidBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Phone layout of one company's question roadmap (opened from Companies). Same look as the phone
 // dashboard: a banner card in the Contest-banner style (gradient, translucent ring, 28px title), then a
@@ -24,21 +25,21 @@ const GROUP_ORDER = ['Easy', 'Medium', 'Hard'];
 
 // Difficulty and lock colours are the ones the dashboard category cards and Aptitude lock tiles use.
 const DIFFICULTY = {
-  Easy: { color: '#22A06B', bg: '#EAF6EE' },
-  Medium: { color: '#F09A2E', bg: '#FFF2E3' },
-  Hard: { color: '#EF5B5B', bg: '#FDECEB' },
+  Easy: { color: COLOR_PALETTE.custom.emerald22A06B, bg: COLOR_PALETTE.green[50] },
+  Medium: { color: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
+  Hard: { color: COLOR_PALETTE.custom.redEF5B5B, bg: COLOR_PALETTE.rose[50] },
 };
-const LOCK = { color: '#F09A2E', bg: '#FFF2E3' };
+const LOCK = { color: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] };
 
 // Banner gradients from the dashboard (Contest, Prep, Daily, Aptitude, Visualizer, Pro).
 // A company always gets the same one, picked from its name. "accent" is the solid colour for the timeline.
 const HEROES = [
-  { gradient: 'linear-gradient(135deg,#F7A33B,#E8590C)', accent: '#E8590C' },
-  { gradient: 'linear-gradient(135deg,#0D9488,#134E4A)', accent: '#0D9488' },
-  { gradient: 'linear-gradient(135deg,#7E3FA8,#4A1F8C)', accent: '#7E3FA8' },
-  { gradient: 'linear-gradient(135deg,#DB2777,#4C1D95)', accent: '#DB2777' },
-  { gradient: 'linear-gradient(135deg,#2563EB,#1E1B4B)', accent: '#2563EB' },
-  { gradient: 'linear-gradient(135deg,#F59E0B,#78350F)', accent: '#D97706' },
+  { gradient: `linear-gradient(135deg,${COLOR_PALETTE.custom.orangeF7A33B},${COLOR_PALETTE.orange[600]})`, accent: COLOR_PALETTE.orange[600] },
+  { gradient: `linear-gradient(135deg,${COLOR_PALETTE.teal[600]},${COLOR_PALETTE.teal[900]})`, accent: COLOR_PALETTE.teal[600] },
+  { gradient: `linear-gradient(135deg,${COLOR_PALETTE.custom.purple7E3FA8},${COLOR_PALETTE.custom.purple4A1F8C})`, accent: COLOR_PALETTE.custom.purple7E3FA8 },
+  { gradient: `linear-gradient(135deg,${COLOR_PALETTE.pink[600]},${COLOR_PALETTE.violet[900]})`, accent: COLOR_PALETTE.pink[600] },
+  { gradient: `linear-gradient(135deg,${COLOR_PALETTE.blue[600]},${COLOR_PALETTE.indigo[950]})`, accent: COLOR_PALETTE.blue[600] },
+  { gradient: `linear-gradient(135deg,${COLOR_PALETTE.amber[500]},${COLOR_PALETTE.amber[900]})`, accent: COLOR_PALETTE.amber[600] },
 ];
 const heroFor = (name) => {
   let h = 0;
@@ -74,14 +75,14 @@ function Node({ problem, index, current, hero, dark }) {
   }
   if (problem.solvedByMe) {
     return (
-      <Box aria-hidden sx={{ ...base, bgcolor: hero.accent, color: '#fff' }}>
+      <Box aria-hidden sx={{ ...base, bgcolor: hero.accent, color: COLOR_PALETTE.white }}>
         <CheckRoundedIcon sx={{ fontSize: 22 }} />
       </Box>
     );
   }
   if (current) {
     return (
-      <Box aria-hidden sx={{ ...base, background: hero.gradient, color: '#fff', boxShadow: `0 0 0 4px ${tint(hero.accent, 24)}` }}>
+      <Box aria-hidden sx={{ ...base, background: hero.gradient, color: COLOR_PALETTE.white, boxShadow: `0 0 0 4px ${tint(hero.accent, 24)}` }}>
         {index + 1}
       </Box>
     );
@@ -212,13 +213,13 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          color: '#fff',
-          background: `linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.22) 100%), ${hero.gradient}`,
+          color: COLOR_PALETTE.white,
+          background: `linear-gradient(180deg, ${withAlpha(COLOR_PALETTE.black, 0)} 35%, ${withAlpha(COLOR_PALETTE.black, 0.22)} 100%), ${hero.gradient}`,
         }}
       >
         <Box
           aria-hidden
-          sx={{ position: 'absolute', right: '7%', top: '14%', width: '30%', maxWidth: 120, aspectRatio: '1', borderRadius: '50%', display: 'grid', placeItems: 'center', border: '6px solid rgba(255,255,255,0.55)', background: 'linear-gradient(160deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))' }}
+          sx={{ position: 'absolute', right: '7%', top: '14%', width: '30%', maxWidth: 120, aspectRatio: '1', borderRadius: '50%', display: 'grid', placeItems: 'center', border: `6px solid ${withAlpha(COLOR_PALETTE.white, 0.55)}`, background: `linear-gradient(160deg, ${withAlpha(COLOR_PALETTE.white, 0.25)}, ${withAlpha(COLOR_PALETTE.white, 0.05)})` }}
         >
           <CompanyAvatar name={company.name} logoUrl={company.logoUrl} size={56} />
         </Box>
@@ -231,24 +232,24 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
         </Typography>
 
         <Box sx={{ mt: 1.5, display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <Box role="progressbar" aria-label={`${company.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct} sx={{ flex: 1, height: 8, borderRadius: 99, bgcolor: 'rgba(0,0,0,0.25)', overflow: 'hidden' }}>
-            <motion.div initial={{ width: reduce ? `${pct}%` : 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.8, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 99, background: '#fff' }} />
+          <Box role="progressbar" aria-label={`${company.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct} sx={{ flex: 1, height: 8, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.black, 0.25), overflow: 'hidden' }}>
+            <motion.div initial={{ width: reduce ? `${pct}%` : 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.8, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 99, background: COLOR_PALETTE.white }} />
           </Box>
           <Typography sx={{ fontSize: 16, lineHeight: '24px', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{pct}%</Typography>
         </Box>
 
         <Box sx={{ mt: 1.5, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-          <Box sx={{ height: 34, px: '14px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, bgcolor: 'rgba(255,255,255,0.22)', fontVariantNumeric: 'tabular-nums' }}>
+          <Box sx={{ height: 34, px: '14px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
             {solved} of {nodes.length} solved
           </Box>
-          <Box sx={{ height: 34, px: '12px', gap: 0.5, borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, bgcolor: 'rgba(255,255,255,0.22)', fontVariantNumeric: 'tabular-nums' }}>
-            <StarRoundedIcon aria-hidden sx={{ fontSize: 20, color: '#FFE08A' }} />
+          <Box sx={{ height: 34, px: '12px', gap: 0.5, borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
+            <StarRoundedIcon aria-hidden sx={{ fontSize: 20, color: COLOR_PALETTE.amber[200] }} />
             {stars}/{maxStars}
           </Box>
           {company.examSlug && (
             <ButtonBase
               onClick={() => navigate(`/prep/${company.examSlug}`)}
-              sx={{ height: 34, pl: '14px', pr: '8px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, fontFamily: 'inherit', color: '#fff', bgcolor: 'rgba(255,255,255,0.22)' }}
+              sx={{ height: 34, pl: '14px', pr: '8px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: 15, letterSpacing: TRACKING, fontFamily: 'inherit', color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22) }}
             >
               Exam pattern
               <ChevronRightRoundedIcon sx={{ fontSize: 20 }} />
@@ -290,7 +291,7 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
       <AnimatePresence>
         {sheet && (
           <>
-            <motion.div key="backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setPicked(null)} style={{ position: 'fixed', inset: 0, background: 'rgba(15,23,42,.5)', zIndex: 1290 }} />
+            <motion.div key="backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setPicked(null)} style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.slate[900], .5), zIndex: 1290 }} />
             <motion.div
               key="sheet"
               role="dialog"

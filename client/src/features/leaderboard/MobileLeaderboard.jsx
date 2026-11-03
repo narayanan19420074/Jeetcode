@@ -41,6 +41,7 @@ import {
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
 import { APT_COLOR, PT } from './lbShared';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Phone layout of the Leaderboard in the Library look (same as the phone Problems, Home and You pages):
 // Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section
@@ -152,9 +153,9 @@ function FilterSheet({ open, onClose, isAuthenticated, track, period, scope, onT
 // Rank number: plain muted digits; the top three sit in a soft gold, silver and bronze circle
 // (same pastel-card colours as the dashboard, tinted in dark mode).
 const PODIUM = {
-  1: { color: '#F09A2E', bg: '#FFF2E3' },
-  2: { color: '#64748B', bg: '#EEF1F5' },
-  3: { color: '#B4693A', bg: '#F8E9DE' },
+  1: { color: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
+  2: { color: COLOR_PALETTE.slate[500], bg: COLOR_PALETTE.slate[100] },
+  3: { color: COLOR_PALETTE.custom.yellowB4693A, bg: COLOR_PALETTE.custom.orangeF8E9DE },
 };
 
 function RankMark({ rank }) {

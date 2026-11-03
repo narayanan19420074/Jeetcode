@@ -1,3 +1,4 @@
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 // Shared constants + helpers for the dashboard. Days are India (IST) days on
 // purpose: the backend's streak logic (streak.service.js) and the activity
 // heatmap endpoint both bucket days by IST midnight, so the calendar and
@@ -32,18 +33,18 @@ export const SORT_OPTIONS = [
 // exist in the database. A group only shows if at least one of its tags
 // is present, so new tags never break anything (they still appear as chips).
 export const CATEGORY_GROUPS = [
-  { key: 'arrays', label: 'Arrays & Hashing', color: '#3B82F6', tags: ['Array', 'Hash Table', 'Prefix Sum', 'Matrix'] },
-  { key: 'strings', label: 'Strings', color: '#8B5CF6', tags: ['String', 'String Matching'] },
-  { key: 'search', label: 'Search & Windows', color: '#06B6D4', tags: ['Two Pointers', 'Sliding Window', 'Binary Search', 'Sorting'] },
-  { key: 'dp', label: 'Dynamic Programming', color: '#F59E0B', tags: ['Dynamic Programming', 'Recursion', 'Divide and Conquer'] },
-  { key: 'math', label: 'Math & Bits', color: '#10B981', tags: ['Math', 'Bit Manipulation', 'Combinatorics'] },
+  { key: 'arrays', label: 'Arrays & Hashing', color: COLOR_PALETTE.blue[500], tags: ['Array', 'Hash Table', 'Prefix Sum', 'Matrix'] },
+  { key: 'strings', label: 'Strings', color: COLOR_PALETTE.violet[500], tags: ['String', 'String Matching'] },
+  { key: 'search', label: 'Search & Windows', color: COLOR_PALETTE.cyan[500], tags: ['Two Pointers', 'Sliding Window', 'Binary Search', 'Sorting'] },
+  { key: 'dp', label: 'Dynamic Programming', color: COLOR_PALETTE.amber[500], tags: ['Dynamic Programming', 'Recursion', 'Divide and Conquer'] },
+  { key: 'math', label: 'Math & Bits', color: COLOR_PALETTE.emerald[500], tags: ['Math', 'Bit Manipulation', 'Combinatorics'] },
   {
     key: 'structures',
     label: 'Stacks & Graphs',
-    color: '#EC4899',
+    color: COLOR_PALETTE.pink[500],
     tags: ['Stack', 'Monotonic Stack', 'Heap', 'Linked List', 'DFS', 'Depth-First Search', 'BFS', 'Graph'],
   },
-  { key: 'greedy', label: 'Greedy & Simulation', color: '#EF4444', tags: ['Greedy', 'Simulation'] },
+  { key: 'greedy', label: 'Greedy & Simulation', color: COLOR_PALETTE.red[500], tags: ['Greedy', 'Simulation'] },
 ];
 
 // Card surface used across the dashboard. Hairline border + a faint top
@@ -56,8 +57,8 @@ export const surface = (t) => ({
   backgroundImage: 'none',
   boxShadow:
     t.palette.mode === 'dark'
-      ? 'inset 0 1px 0 rgba(255,255,255,0.045), 0 12px 32px -18px rgba(2,6,23,0.7)'
-      : '0 1px 2px rgba(15,23,42,0.04), 0 14px 32px -22px rgba(15,23,42,0.22)',
+      ? `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.045)}, 0 12px 32px -18px ${withAlpha(COLOR_PALETTE.slate[950], 0.7)}`
+      : `0 1px 2px ${withAlpha(COLOR_PALETTE.slate[900], 0.04)}, 0 14px 32px -22px ${withAlpha(COLOR_PALETTE.slate[900], 0.22)}`,
 });
 
 const DAY_MS = 86400000;

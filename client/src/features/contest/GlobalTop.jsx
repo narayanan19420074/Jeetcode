@@ -8,14 +8,15 @@ import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartm
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import { leaderboardApi } from '../../api/studyPlanApi';
 import { surface } from '../dashboard/dashboardUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
-const AMBER = '#FBBF24';
+const AMBER = COLOR_PALETTE.amber[400];
 
 const MEDAL = {
-  1: { a: '#FDE68A', b: '#F59E0B', text: '#451A03', glow: 'rgba(245,158,11,0.6)' },
-  2: { a: '#F1F5F9', b: '#94A3B8', text: '#0F172A', glow: 'rgba(148,163,184,0.5)' },
-  3: { a: '#FDBA74', b: '#C2410C', text: '#431407', glow: 'rgba(194,65,12,0.55)' },
+  1: { a: COLOR_PALETTE.amber[200], b: COLOR_PALETTE.amber[500], text: COLOR_PALETTE.amber[950], glow: withAlpha(COLOR_PALETTE.amber[500], 0.6) },
+  2: { a: COLOR_PALETTE.slate[100], b: COLOR_PALETTE.slate[400], text: COLOR_PALETTE.slate[900], glow: withAlpha(COLOR_PALETTE.slate[400], 0.5) },
+  3: { a: COLOR_PALETTE.orange[300], b: COLOR_PALETTE.orange[700], text: COLOR_PALETTE.orange[950], glow: withAlpha(COLOR_PALETTE.orange[700], 0.55) },
 };
 const grad = (m) => `linear-gradient(160deg, ${m.a}, ${m.b})`;
 // Podium geometry per rank: pedestal height + avatar size (desktop), phones get a scaled-down version.
@@ -41,12 +42,12 @@ function PodiumAvatar({ row, rank }) {
       <Box sx={{ position: 'relative', p: '3.5px', borderRadius: '50%', background: grad(m), boxShadow: `0 8px 26px -6px ${m.glow}` }}>
         <Avatar
           src={row.avatarUrl || undefined} alt={row.name}
-          sx={{ width: { xs: av - 14, sm: av }, height: { xs: av - 14, sm: av }, fontSize: av * 0.38, fontWeight: 800, border: '3px solid #1E1B4B', bgcolor: '#312E81', color: '#fff' }}
+          sx={{ width: { xs: av - 14, sm: av }, height: { xs: av - 14, sm: av }, fontSize: av * 0.38, fontWeight: 800, border: `3px solid ${COLOR_PALETTE.indigo[950]}`, bgcolor: COLOR_PALETTE.indigo[900], color: COLOR_PALETTE.white }}
         >
           {row.name?.[0]?.toUpperCase()}
         </Avatar>
       </Box>
-      <Box sx={{ position: 'absolute', bottom: -8, width: 24, height: 24, borderRadius: '50%', display: 'grid', placeItems: 'center', fontWeight: 900, fontSize: 12, color: m.text, background: grad(m), border: '2px solid #1E1B4B', ...mono }}>{rank}</Box>
+      <Box sx={{ position: 'absolute', bottom: -8, width: 24, height: 24, borderRadius: '50%', display: 'grid', placeItems: 'center', fontWeight: 900, fontSize: 12, color: m.text, background: grad(m), border: `2px solid ${COLOR_PALETTE.indigo[950]}`, ...mono }}>{rank}</Box>
     </Box>
   );
 }
@@ -63,7 +64,7 @@ function PodiumColumn({ row, rank, delay, reduce }) {
       style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 0 }}
     >
       {first ? (
-        <EmojiEventsRoundedIcon sx={{ fontSize: { xs: 30, sm: 38 }, color: '#FDE68A', mb: 0.4, filter: 'drop-shadow(0 0 12px rgba(251,191,36,0.9))', animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
+        <EmojiEventsRoundedIcon sx={{ fontSize: { xs: 30, sm: 38 }, color: COLOR_PALETTE.amber[200], mb: 0.4, filter: `drop-shadow(0 0 12px ${withAlpha(COLOR_PALETTE.amber[400], 0.9)})`, animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
       ) : <Box sx={{ height: { xs: 12, sm: 14 } }} />}
 
       <PodiumAvatar row={row} rank={rank} />
@@ -79,9 +80,9 @@ function PodiumColumn({ row, rank, delay, reduce }) {
         sx={{
           position: 'relative', overflow: 'hidden', width: '100%', display: 'grid', placeItems: 'center',
           height: { xs: Math.round(h * 0.78), sm: h }, borderRadius: '14px 14px 0 0', background: grad(m),
-          boxShadow: `0 -10px 30px -10px ${m.glow}, inset 0 1px 0 rgba(255,255,255,0.7)`,
-          '&::before': { content: '""', position: 'absolute', inset: '0 0 auto 0', height: 12, background: 'linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0))' },
-          '&::after': first ? { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.55), transparent)', animation: `${sweep} 3.6s ease-in-out infinite`, ...calm } : undefined,
+          boxShadow: `0 -10px 30px -10px ${m.glow}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.7)}`,
+          '&::before': { content: '""', position: 'absolute', inset: '0 0 auto 0', height: 12, background: `linear-gradient(180deg, ${withAlpha(COLOR_PALETTE.white, 0.6)}, ${withAlpha(COLOR_PALETTE.white, 0)})` },
+          '&::after': first ? { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(100deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 3.6s ease-in-out infinite`, ...calm } : undefined,
         }}
       >
         <Typography sx={[{ fontWeight: 900, fontSize: { xs: h * 0.36, sm: h * 0.42 }, lineHeight: 1, color: m.text, opacity: 0.8 }, mono]}>{rank}</Typography>
@@ -96,13 +97,13 @@ function Podium({ rows, reduce }) {
   return (
     <Box
       sx={{
-        position: 'relative', overflow: 'hidden', color: '#fff', px: { xs: 1.5, sm: 4 }, pt: { xs: 8.5, sm: 8.5 }, pb: 0,
-        background: 'radial-gradient(120% 90% at 50% 0%, #5B21B6 0%, #312E81 45%, #1E1B4B 100%)',
+        position: 'relative', overflow: 'hidden', color: COLOR_PALETTE.white, px: { xs: 1.5, sm: 4 }, pt: { xs: 8.5, sm: 8.5 }, pb: 0,
+        background: `radial-gradient(120% 90% at 50% 0%, ${COLOR_PALETTE.violet[800]} 0%, ${COLOR_PALETTE.indigo[900]} 45%, ${COLOR_PALETTE.indigo[950]} 100%)`,
       }}
     >
-      <Box aria-hidden sx={{ position: 'absolute', left: '50%', top: 70, width: 320, height: 320, ml: '-160px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.30), transparent 66%)', pointerEvents: 'none' }} />
+      <Box aria-hidden sx={{ position: 'absolute', left: '50%', top: 70, width: 320, height: 320, ml: '-160px', borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.30)}, transparent 66%)`, pointerEvents: 'none' }} />
       {SPARKS.map(([x, y, d]) => (
-        <Box key={`${x}-${y}`} aria-hidden sx={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: 4, height: 4, borderRadius: '50%', bgcolor: '#fff', animation: `${twinkle} 2.6s ease-in-out ${d}s infinite`, ...calm }} />
+        <Box key={`${x}-${y}`} aria-hidden sx={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: 4, height: 4, borderRadius: '50%', bgcolor: COLOR_PALETTE.white, animation: `${twinkle} 2.6s ease-in-out ${d}s infinite`, ...calm }} />
       ))}
       <Box sx={{ position: 'relative', display: 'grid', gridTemplateColumns: `repeat(${order.length}, minmax(0, 1fr))`, gap: { xs: 0.75, sm: 1.5 }, alignItems: 'end', maxWidth: 540, mx: 'auto' }}>
         {order.map((i) => <PodiumColumn key={rows[i].userId} row={rows[i]} rank={i + 1} delay={(2 - i) * 0.12} reduce={reduce} />)}
@@ -145,7 +146,7 @@ function RankRow({ row, top, index, reduce }) {
             )}
           </Box>
           <Box sx={(t) => ({ mt: 0.7, height: 5, borderRadius: 99, bgcolor: alpha(t.palette.text.primary, 0.08), overflow: 'hidden' })}>
-            <Box sx={{ width: `${pct}%`, height: '100%', borderRadius: 99, background: 'linear-gradient(90deg, #8B5CF6, #FBBF24)', transition: 'width .6s ease' }} />
+            <Box sx={{ width: `${pct}%`, height: '100%', borderRadius: 99, background: `linear-gradient(90deg, ${COLOR_PALETTE.violet[500]}, ${COLOR_PALETTE.amber[400]})`, transition: 'width .6s ease' }} />
           </Box>
         </Box>
       </Box>
@@ -180,8 +181,8 @@ export default function GlobalTop({ fill = false }) {
   return (
     <Box sx={[surface, { overflow: 'hidden', p: 0 }, fill && { height: '100%', display: 'flex', flexDirection: 'column' }]}>
       {/* header lives on the podium panel */}
-      <Box sx={{ position: 'relative', background: '#1E1B4B', flexShrink: 0 }}>
-        <Box sx={{ position: 'absolute', zIndex: 2, left: 0, right: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.75, sm: 2.5 }, pt: { xs: 1.75, sm: 2.25 }, color: '#fff' }}>
+      <Box sx={{ position: 'relative', background: COLOR_PALETTE.indigo[950], flexShrink: 0 }}>
+        <Box sx={{ position: 'absolute', zIndex: 2, left: 0, right: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 1.75, sm: 2.5 }, pt: { xs: 1.75, sm: 2.25 }, color: COLOR_PALETTE.white }}>
           <Box sx={{ minWidth: 0 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
               <PublicRoundedIcon sx={{ fontSize: 20, color: AMBER }} />
@@ -189,21 +190,21 @@ export default function GlobalTop({ fill = false }) {
             </Box>
             <Typography sx={{ fontSize: 12.5, opacity: 0.75, mt: 0.2 }}>Best players worldwide, all-time points</Typography>
           </Box>
-          <Box sx={{ px: 1.1, py: 0.35, borderRadius: 99, bgcolor: 'rgba(255,255,255,0.14)', fontSize: 11, fontWeight: 800, letterSpacing: 0.5, flexShrink: 0 }}>LIVE</Box>
+          <Box sx={{ px: 1.1, py: 0.35, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14), fontSize: 11, fontWeight: 800, letterSpacing: 0.5, flexShrink: 0 }}>LIVE</Box>
         </Box>
 
         {status === 'loading' && (
           <Box sx={{ pt: 10, pb: 3, px: 3, display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 1.5, alignItems: 'end', maxWidth: 540, mx: 'auto' }}>
-            {[92, 124, 72].map((h) => <Skeleton key={h} variant="rounded" height={h + 60} sx={{ bgcolor: 'rgba(255,255,255,0.12)', borderRadius: '14px' }} />)}
+            {[92, 124, 72].map((h) => <Skeleton key={h} variant="rounded" height={h + 60} sx={{ bgcolor: withAlpha(COLOR_PALETTE.white, 0.12), borderRadius: '14px' }} />)}
           </Box>
         )}
         {status === 'ok' && podium.length > 0 && <Podium rows={podium} reduce={reduce} />}
         {(status === 'error' || (status === 'ok' && podium.length === 0)) && (
-          <Box sx={{ pt: 11, pb: 4, px: 3, textAlign: 'center', color: '#fff' }}>
+          <Box sx={{ pt: 11, pb: 4, px: 3, textAlign: 'center', color: COLOR_PALETTE.white }}>
             <EmojiEventsRoundedIcon sx={{ fontSize: 44, color: AMBER, opacity: 0.9 }} />
             <Typography sx={{ fontWeight: 800, mt: 0.5 }}>{status === 'error' ? 'Could not load the rankings' : 'The podium is waiting for its first champion'}</Typography>
             <Typography sx={{ fontSize: 13, opacity: 0.75, mt: 0.25 }}>{status === 'error' ? 'Please try again in a moment.' : 'Solve questions to earn points and take the #1 spot.'}</Typography>
-            {status === 'error' && <Button onClick={() => setTick((n) => n + 1)} sx={{ mt: 1.5, color: '#1B1200', bgcolor: AMBER, fontWeight: 800, '&:hover': { bgcolor: '#F5B50F' } }}>Retry</Button>}
+            {status === 'error' && <Button onClick={() => setTick((n) => n + 1)} sx={{ mt: 1.5, color: COLOR_PALETTE.custom.black1B1200, bgcolor: AMBER, fontWeight: 800, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Retry</Button>}
           </Box>
         )}
       </Box>

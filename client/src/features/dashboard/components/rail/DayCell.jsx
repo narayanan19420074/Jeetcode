@@ -1,6 +1,7 @@
 import { Box, ButtonBase, Tooltip, Typography } from '@mui/material';
 import { PLAN_AMBER } from '../../../studyplan/planUtils';
 import { EMERALD, FAINT } from './railTokens';
+import { COLOR_PALETTE } from '../../../../app/design/designTokens';
 
 function DayNumber({ day, active, today, future, label }) {
   return (
@@ -20,7 +21,7 @@ function DayNumber({ day, active, today, future, label }) {
         fontSize: '0.8rem',
         fontVariantNumeric: 'tabular-nums',
         fontWeight: active || today ? 800 : 500,
-        color: active ? EMERALD : future ? FAINT : '#fff',
+        color: active ? EMERALD : future ? FAINT : COLOR_PALETTE.white,
         border: today ? '2px solid' : 'none',
         borderColor: PLAN_AMBER,
       }}
@@ -36,7 +37,7 @@ function PlanMarker() {
     <Box
       component="span"
       aria-hidden="true"
-      sx={{ position: 'absolute', top: -2, right: 'calc(50% - 20px)', width: 13, height: 13, borderRadius: '50%', display: 'grid', placeItems: 'center', fontSize: 8, fontWeight: 800, lineHeight: 1, bgcolor: PLAN_AMBER, color: '#1B1200' }}
+      sx={{ position: 'absolute', top: -2, right: 'calc(50% - 20px)', width: 13, height: 13, borderRadius: '50%', display: 'grid', placeItems: 'center', fontSize: 8, fontWeight: 800, lineHeight: 1, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200 }}
     >
       P
     </Box>

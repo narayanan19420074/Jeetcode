@@ -7,6 +7,7 @@ import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 import { useSelector } from 'react-redux';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import { HeaderTile, LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Phone layout of the Companies page. It follows the phone Problems page (MobileProblems): same
 // page padding, back button, pill search, centred header, divider-separated rows and type sizes.
@@ -14,7 +15,7 @@ import { HeaderTile, LibraryFont, useLibraryPalette } from '../dashboard/compone
 
 const TRACKING = '0.03em';
 
-const readinessColor = (pct) => (pct < 40 ? '#EF4444' : pct < 70 ? '#F59E0B' : '#10B981');
+const readinessColor = (pct) => (pct < 40 ? COLOR_PALETTE.red[500] : pct < 70 ? COLOR_PALETTE.amber[500] : COLOR_PALETTE.emerald[500]);
 const plural = (n, word) => `${n.toLocaleString('en-IN')} ${n === 1 ? word : `${word}s`}`;
 
 function CompanyRow({ c, onOpen }) {

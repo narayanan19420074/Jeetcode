@@ -34,6 +34,7 @@ import { prepApi } from '../../../api/prepApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, surface } from '../dashboardUtils';
 import { NameDialog } from './ListDialogs';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 
 const ViewHeader = ({ title, subtitle, trailing }) => (
@@ -66,10 +67,10 @@ export function ExploreView({ onBrowse }) {
 // ---------------------------------------------------------------- study plan
 
 const readinessColor = (pct) => {
-  if (pct === null || pct === undefined || pct === 0) return '#3B82F6';
-  if (pct < 40) return '#EF4444';
-  if (pct < 70) return '#F59E0B';
-  return '#10B981';
+  if (pct === null || pct === undefined || pct === 0) return COLOR_PALETTE.blue[500];
+  if (pct < 40) return COLOR_PALETTE.red[500];
+  if (pct < 70) return COLOR_PALETTE.amber[500];
+  return COLOR_PALETTE.emerald[500];
 };
 
 export function StudyPlanView() {

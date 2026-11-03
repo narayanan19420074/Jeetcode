@@ -12,6 +12,7 @@ import CompanyAvatar from '../../../components/CompanyAvatar';
 import NqtExploreCard from './NqtExploreCard';
 import { tint } from '../dashboardUtils';
 import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libSectionTitleSx } from './libraryStyle';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Phone Explore screen in the Library look (same tokens as the phone home): 16px gutter, 18px section titles,
 // 32px between sections, 12px between a title and its content, 48px tiles and logos, 34px chips, divider-separated rows.
@@ -25,9 +26,9 @@ const bleed = { mx: -2, overflowX: 'auto', ...hideScrollbar };
 
 // Card colours are the dashboard category-card colours: pastel card, same-hue icon (tinted in dark mode).
 const TOOLS = [
-  { to: '/aptitude', title: 'Aptitude practice', text: 'Learn a pattern, practice it, then take a timed test.', icon: CalculateRoundedIcon, color: '#F09A2E', bg: '#FFF2E3' },
-  { to: '/visualizer', title: 'Algorithm visualizer', text: 'Watch sorting, searching and graph algorithms step by step.', icon: BarChartRoundedIcon, color: '#3F8CE8', bg: '#EDF2F9' },
-  { to: '/prep', title: 'Prep by company', text: 'See the exam pattern and track your readiness.', icon: BusinessRoundedIcon, color: '#22A06B', bg: '#EAF6EE' },
+  { to: '/aptitude', title: 'Aptitude practice', text: 'Learn a pattern, practice it, then take a timed test.', icon: CalculateRoundedIcon, color: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
+  { to: '/visualizer', title: 'Algorithm visualizer', text: 'Watch sorting, searching and graph algorithms step by step.', icon: BarChartRoundedIcon, color: COLOR_PALETTE.custom.blue3F8CE8, bg: COLOR_PALETTE.blue[50] },
+  { to: '/prep', title: 'Prep by company', text: 'See the exam pattern and track your readiness.', icon: BusinessRoundedIcon, color: COLOR_PALETTE.custom.emerald22A06B, bg: COLOR_PALETTE.green[50] },
 ];
 
 function Section({ title, children }) {

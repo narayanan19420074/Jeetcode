@@ -2,6 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import { BANNER_GRADIENT } from '../bannerGradients';
 import { PROMO_CARD_W } from './promoCarouselConfig';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 const TRACKING = '0.03em';
 
@@ -17,11 +18,11 @@ const cardSx = (gradient) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  color: '#fff',
+  color: COLOR_PALETTE.white,
   textDecoration: 'none',
   background: gradient,
   '&:hover': { filter: 'brightness(1.06)' },
-  '&:focus-visible': { outline: '3px solid #fff', outlineOffset: -4 },
+  '&:focus-visible': { outline: `3px solid ${COLOR_PALETTE.white}`, outlineOffset: -4 },
 });
 
 // Same ring icon as the phone banners.
@@ -38,11 +39,11 @@ function RingIcon({ icon: Icon }) {
         borderRadius: '50%',
         display: 'grid',
         placeItems: 'center',
-        border: '5px solid rgba(255,255,255,0.55)',
-        background: 'linear-gradient(160deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+        border: `5px solid ${withAlpha(COLOR_PALETTE.white, 0.55)}`,
+        background: `linear-gradient(160deg, ${withAlpha(COLOR_PALETTE.white, 0.25)}, ${withAlpha(COLOR_PALETTE.white, 0.05)})`,
       }}
     >
-      <Icon sx={{ fontSize: 30, color: '#fff' }} />
+      <Icon sx={{ fontSize: 30, color: COLOR_PALETTE.white }} />
     </Box>
   );
 }
@@ -56,9 +57,9 @@ export default function PromoCard({ card }) {
       <RingIcon icon={icon} />
       <Box sx={{ position: 'relative', maxWidth: '62%' }}>
         <Typography sx={[{ fontWeight: 700, fontSize: 20, lineHeight: '24px', letterSpacing: '-0.01em' }, clampLines(2)]}>{title}</Typography>
-        <Typography sx={[{ mt: 0.5, fontSize: 13, lineHeight: '18px', letterSpacing: TRACKING, color: 'rgba(255,255,255,0.86)' }, clampLines(2)]}>{text}</Typography>
+        <Typography sx={[{ mt: 0.5, fontSize: 13, lineHeight: '18px', letterSpacing: TRACKING, color: withAlpha(COLOR_PALETTE.white, 0.86) }, clampLines(2)]}>{text}</Typography>
       </Box>
-      <Box sx={{ position: 'relative', alignSelf: 'flex-start', px: 1.75, height: 28, display: 'inline-flex', alignItems: 'center', borderRadius: 999, bgcolor: 'rgba(255,255,255,0.2)', fontSize: 14, letterSpacing: TRACKING }}>
+      <Box sx={{ position: 'relative', alignSelf: 'flex-start', px: 1.75, height: 28, display: 'inline-flex', alignItems: 'center', borderRadius: 999, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), fontSize: 14, letterSpacing: TRACKING }}>
         {cta}
       </Box>
     </Box>

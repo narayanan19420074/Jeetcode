@@ -42,11 +42,12 @@ import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
 import { LibraryFont, MiniPlayer, useLibraryPalette } from './libraryStyle';
 import { readLastProblem } from '../../workspace/lastProblem';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Phone layout of the Problems page. It uses the same accent colour, rounded panels and tinted
 // chips as the phone dashboard (MobileHome), and the page itself scrolls (infinite scroll).
 
-const ACCENT = '#6366F1';
+const ACCENT = COLOR_PALETTE.indigo[500];
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 const TRACKING = '0.03em';
 const SHORT_DIFF = { Easy: 'Easy', Medium: 'Med.', Hard: 'Hard' };
@@ -165,7 +166,7 @@ function BackToTopButton({ pal, bottom }) {
         height: 44,
         bgcolor: pal.player,
         color: pal.text,
-        boxShadow: '0 2px 10px rgba(0,0,0,0.18)',
+        boxShadow: `0 2px 10px ${withAlpha(COLOR_PALETTE.black, 0.18)}`,
         '&:hover': { bgcolor: pal.player },
         opacity: visible ? 1 : 0,
         transform: visible ? 'none' : 'translateY(8px)',
@@ -384,11 +385,11 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             borderRadius: '22px',
             display: 'grid',
             placeItems: 'center',
-            background: 'linear-gradient(135deg, #F6DCE3 0%, #EEE3F6 55%, #F8DDEB 100%)',
+            background: `linear-gradient(135deg, ${COLOR_PALETTE.rose[100]} 0%, ${COLOR_PALETTE.purple[100]} 55%, ${COLOR_PALETTE.pink[100]} 100%)`,
           }}
         >
-          <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', background: 'linear-gradient(160deg, #B58AF2, #F28C7A)' }}>
-            <CodeRoundedIcon sx={{ fontSize: 28, color: '#fff' }} />
+          <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
+            <CodeRoundedIcon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
           </Box>
         </Box>
         <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
@@ -403,9 +404,9 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             aria-valuemin={0}
             aria-valuemax={totalAll}
             aria-valuenow={solvedAll}
-            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint('#F2B63C', 28), overflow: 'hidden' }}
+            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: '#F2B63C', transition: 'width .5s' }} />
+            <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
           </Box>
           <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {progress ? solvedAll : '–'}
@@ -422,7 +423,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             disableElevation
             variant="contained"
             startIcon={picking ? <CircularProgress size={18} color="inherit" /> : <PlayArrowRoundedIcon />}
-            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : '#6B4A1E', '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
+            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
           >
             Practice
           </Button>
@@ -433,7 +434,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
               disableElevation
               variant="contained"
               startIcon={<EventRoundedIcon />}
-              sx={{ height: 40, px: 2.5, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: TRACKING, textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, #000)` } }}
+              sx={{ height: 40, px: 2.5, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: TRACKING, textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, ${COLOR_PALETTE.black})` } }}
             >
               Daily
             </Button>

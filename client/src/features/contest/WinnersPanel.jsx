@@ -7,6 +7,7 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
 import { ACCENT, AVATAR_FRAMES, LB_DARK, LB_LIGHT } from '../leaderboard/lbTheme';
 import { inr } from './contestUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // three.js is heavy, so it only downloads once the panel is on screen.
 const PodiumScene = lazy(() => import('./PodiumScene'));
@@ -16,28 +17,28 @@ const EMPTY = [];
 // Glass needs a bright edge to read as glass: a white border on cream in light mode, a faint white one on dark surfaces.
 const LIGHT = {
   ...LB_LIGHT,
-  stage: 'rgba(255,255,255,0.45)', stageBorder: '1px solid rgba(255,255,255,0.9)', stageGlow: '0 18px 40px -28px rgba(239,108,77,0.4)',
-  locked: '#A89888', pill: 'rgba(253,248,244,0.85)',
-  prize: ['#FEF3C7', '#B45309'], solved: ['#D1FAE5', '#047857'],
+  stage: withAlpha(COLOR_PALETTE.white, 0.45), stageBorder: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.9)}`, stageGlow: `0 18px 40px -28px ${withAlpha(COLOR_PALETTE.custom.redEF6C4D, 0.4)}`,
+  locked: COLOR_PALETTE.custom.grayA89888, pill: withAlpha(COLOR_PALETTE.orange[50], 0.85),
+  prize: [COLOR_PALETTE.amber[100], COLOR_PALETTE.amber[700]], solved: [COLOR_PALETTE.emerald[100], COLOR_PALETTE.emerald[700]],
 };
 const DARK = {
   ...LB_DARK,
-  stage: 'rgba(255,255,255,0.04)', stageBorder: '1px solid rgba(255,255,255,0.10)', stageGlow: '0 18px 40px -26px rgba(99,102,241,0.5)',
-  locked: '#3A4452', pill: 'rgba(31,38,48,0.85)',
-  prize: ['rgba(251,191,36,0.16)', '#FCD34D'], solved: ['rgba(52,211,153,0.16)', '#6EE7B7'],
+  stage: withAlpha(COLOR_PALETTE.white, 0.04), stageBorder: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.10)}`, stageGlow: `0 18px 40px -26px ${withAlpha(COLOR_PALETTE.indigo[500], 0.5)}`,
+  locked: COLOR_PALETTE.gray[700], pill: withAlpha(COLOR_PALETTE.gray[800], 0.85),
+  prize: [withAlpha(COLOR_PALETTE.amber[400], 0.16), COLOR_PALETTE.amber[300]], solved: [withAlpha(COLOR_PALETTE.emerald[400], 0.16), COLOR_PALETTE.emerald[300]],
 };
 
-const BADGES = ['#F59E0B', '#6366F1', '#EF6C4D', '#14B8A6', '#3B82F6', '#8B5CF6', '#F97316'];
+const BADGES = [COLOR_PALETTE.amber[500], COLOR_PALETTE.indigo[500], COLOR_PALETTE.custom.redEF6C4D, COLOR_PALETTE.teal[500], COLOR_PALETTE.blue[500], COLOR_PALETTE.violet[500], COLOR_PALETTE.orange[500]];
 const badgeBg = (rank) => {
   const c = BADGES[(rank - 1) % BADGES.length];
-  return `linear-gradient(135deg, ${c}, color-mix(in srgb, ${c} 60%, #4338CA))`;
+  return `linear-gradient(135deg, ${c}, color-mix(in srgb, ${c} 60%, ${COLOR_PALETTE.indigo[700]}))`;
 };
 
 const nudge = keyframes`0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); }`;
 
 function AvatarFrame({ row, size = 34, index, T }) {
   return (
-    <Box sx={{ p: '3px', borderRadius: '50%', flexShrink: 0, background: AVATAR_FRAMES[index % AVATAR_FRAMES.length], boxShadow: '0 6px 14px -6px rgba(99,102,241,0.55)' }}>
+    <Box sx={{ p: '3px', borderRadius: '50%', flexShrink: 0, background: AVATAR_FRAMES[index % AVATAR_FRAMES.length], boxShadow: `0 6px 14px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.55)}` }}>
       <Box sx={{ p: '2px', borderRadius: '50%', bgcolor: T.frameInner }}>
         <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: size, height: size, fontWeight: 800, fontSize: size * 0.4, color: T.avatarFg, bgcolor: T.avatarBg }}>
           {row.name?.[0]?.toUpperCase()}
@@ -57,7 +58,7 @@ function RankCard({ row, index, delay, reduce, T }) {
     <motion.div initial={reduce ? false : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: reduce ? 0 : delay }} style={{ minWidth: 0 }}>
       <Box sx={{ height: '100%', p: 1.4, borderRadius: '18px', bgcolor: T.soft, boxShadow: T.raised, display: 'grid', gap: 0.9, alignContent: 'start' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ width: 28, height: 28, borderRadius: '10px', display: 'grid', placeItems: 'center', color: '#fff', fontWeight: 900, fontSize: 13, background: badgeBg(row.rank), boxShadow: '0 6px 12px -6px rgba(99,102,241,0.7)' }}>{row.rank}</Box>
+          <Box sx={{ width: 28, height: 28, borderRadius: '10px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: 900, fontSize: 13, background: badgeBg(row.rank), boxShadow: `0 6px 12px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}` }}>{row.rank}</Box>
           <AvatarFrame row={row} index={index} T={T} />
         </Box>
         <Typography noWrap sx={{ fontWeight: 800, fontSize: 13.5, color: T.ink }}>{row.name}</Typography>
@@ -105,7 +106,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
       <Box sx={[{ position: 'relative' }, fill && { flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }]}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, justifyContent: 'space-between', flexShrink: 0 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, minWidth: 0 }}>
-            <Box sx={{ width: 42, height: 42, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: '#F59E0B' }}>
+            <Box sx={{ width: 42, height: 42, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: COLOR_PALETTE.amber[500] }}>
               <EmojiEventsRoundedIcon />
             </Box>
             <Box sx={{ minWidth: 0 }}>
@@ -124,7 +125,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
 
         {failed && !has && (
           <Box sx={{ mt: 2, py: 5, px: 3, textAlign: 'center', borderRadius: '24px', bgcolor: T.soft, boxShadow: T.pressed }}>
-            <EmojiEventsRoundedIcon sx={{ fontSize: 42, color: '#F59E0B' }} />
+            <EmojiEventsRoundedIcon sx={{ fontSize: 42, color: COLOR_PALETTE.amber[500] }} />
             <Typography sx={{ fontWeight: 800, mt: 0.5, color: T.ink }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
           </Box>
         )}
@@ -155,7 +156,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
               <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, display: 'grid', placeItems: 'center', gap: 0.75, pointerEvents: 'none' }}>
                 <Button
                   onClick={onReveal} disableElevation startIcon={<BoltRoundedIcon />}
-                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: '16px', color: '#fff', fontWeight: 800, background: ACCENT, boxShadow: '0 14px 28px -12px rgba(99,102,241,0.7)', animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
+                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: '16px', color: COLOR_PALETTE.white, fontWeight: 800, background: ACCENT, boxShadow: `0 14px 28px -12px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}`, animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
                 >
                   Reveal winners
                 </Button>

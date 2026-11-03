@@ -18,6 +18,7 @@ import { QuestCoin } from './PrepQuestBits';
 import SectionRoadmap from './SectionRoadmap';
 import TcsBuddy from './TcsBuddy';
 import { FORMS, RANKS, formFor, levelFor, loadSeen, pickNextQuest, saveSeen, sectionPct, sectionState } from './questLogic';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const SECTION_ICON = { 'aptitude-pattern': CalculateRoundedIcon, 'external-only': MenuBookRoundedIcon, 'problem-filter': CodeRoundedIcon, 'learn-topic': MenuBookRoundedIcon };
 
@@ -116,7 +117,7 @@ export default function PrepRoadmapPage() {
       {party && (
         <Box key={`pop-${party.id}`} role="status" sx={{ position: 'fixed', left: 0, right: 0, bottom: { xs: 96, md: 48 }, display: 'flex', justifyContent: 'center', zIndex: 1500, pointerEvents: 'none' }}>
           <motion.div initial={{ opacity: 0, y: 24, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }}>
-            <Box sx={{ px: 2.5, py: 1.25, borderRadius: '99px', bgcolor: '#0F172A', color: '#FDE68A', fontWeight: 800, boxShadow: '0 10px 30px rgba(0,0,0,.35)' }}>{party.text}</Box>
+            <Box sx={{ px: 2.5, py: 1.25, borderRadius: '99px', bgcolor: COLOR_PALETTE.slate[900], color: COLOR_PALETTE.amber[200], fontWeight: 800, boxShadow: `0 10px 30px ${withAlpha(COLOR_PALETTE.black, .35)}` }}>{party.text}</Box>
           </motion.div>
         </Box>
       )}
@@ -129,7 +130,7 @@ export default function PrepRoadmapPage() {
         ) : (
           <motion.div key="list" initial={reduce ? { opacity: 0 } : { opacity: 0, x: -48 }} animate={{ opacity: 1, x: 0 }} exit={reduce ? { opacity: 0 } : { opacity: 0, x: -48 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
             {/* HERO: how ready am I, what is the next level, what do I do now */}
-            <Box sx={{ borderRadius: '20px', p: { xs: 2.25, sm: 3 }, color: '#fff', background: 'linear-gradient(150deg, #0B1230 0%, #1B2A6B 60%, #3B2A8C 100%)', boxShadow: '0 18px 40px rgba(27,42,107,.3)', mb: 4 }}>
+            <Box sx={{ borderRadius: '20px', p: { xs: 2.25, sm: 3 }, color: COLOR_PALETTE.white, background: `linear-gradient(150deg, ${COLOR_PALETTE.custom.slate0B1230} 0%, ${COLOR_PALETTE.custom.blue1B2A6B} 60%, ${COLOR_PALETTE.custom.indigo3B2A8C} 100%)`, boxShadow: `0 18px 40px ${withAlpha(COLOR_PALETTE.custom.blue1B2A6B, .3)}`, mb: 4 }}>
               <Typography sx={{ fontWeight: 700, opacity: 0.8, mb: 1 }}>{roadmap.name}</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                 <Box sx={{ flexShrink: 0, width: 124, display: 'grid', placeItems: 'center' }}>
@@ -137,8 +138,8 @@ export default function PrepRoadmapPage() {
                 </Box>
                 <Box sx={{ flex: 1, minWidth: 0 }}>
                   <Typography sx={{ fontWeight: 900, fontSize: '2.4rem', lineHeight: 1 }}><CountUp value={Math.round(readiness)} />% <Typography component="span" sx={{ fontWeight: 700, fontSize: '1rem', opacity: 0.85 }}>ready</Typography></Typography>
-                  <Typography sx={{ fontWeight: 700, color: '#FDE68A', mt: 0.5, mb: 1 }}>Level {level} · {RANKS[level - 1]}</Typography>
-                  <XpBar pct={levelPct} color="#FACC15" height={10} />
+                  <Typography sx={{ fontWeight: 700, color: COLOR_PALETTE.amber[200], mt: 0.5, mb: 1 }}>Level {level} · {RANKS[level - 1]}</Typography>
+                  <XpBar pct={levelPct} color={COLOR_PALETTE.yellow[400]} height={10} />
                   <Typography variant="caption" sx={{ display: 'block', mt: 0.75, opacity: 0.85 }}>
                     {level < 10 ? `${toNext} XP to Level ${level + 1}` : 'Max level reached'}
                   </Typography>
@@ -147,12 +148,12 @@ export default function PrepRoadmapPage() {
 
               {!roadmap.enrolled ? (
                 <Button fullWidth size="large" variant="contained" disableElevation disabled={enrolling} onClick={handleEnroll} startIcon={<PlayArrowRoundedIcon />}
-                  sx={{ mt: 2.5, fontWeight: 800, borderRadius: '99px', color: '#2B1B00', bgcolor: '#FACC15', '&:hover': { bgcolor: '#FDE047' } }}>
+                  sx={{ mt: 2.5, fontWeight: 800, borderRadius: '99px', color: COLOR_PALETTE.custom.yellow2B1B00, bgcolor: COLOR_PALETTE.yellow[400], '&:hover': { bgcolor: COLOR_PALETTE.yellow[300] } }}>
                   {enrolling ? 'Starting…' : 'Start'}
                 </Button>
               ) : nextQuest ? (
                 <Button fullWidth size="large" variant="contained" disableElevation onClick={() => openSection(nextQuest.id)} startIcon={<PlayArrowRoundedIcon />}
-                  sx={{ mt: 2.5, fontWeight: 800, borderRadius: '99px', color: '#2B1B00', bgcolor: '#FACC15', '&:hover': { bgcolor: '#FDE047' } }}>
+                  sx={{ mt: 2.5, fontWeight: 800, borderRadius: '99px', color: COLOR_PALETTE.custom.yellow2B1B00, bgcolor: COLOR_PALETTE.yellow[400], '&:hover': { bgcolor: COLOR_PALETTE.yellow[300] } }}>
                   Next: {nextQuest.name}
                 </Button>
               ) : null}
@@ -171,7 +172,7 @@ export default function PrepRoadmapPage() {
                     <ButtonBase onClick={() => openSection(section.id)} aria-label={`Open ${section.name}`} sx={{ borderRadius: '50%' }}>
                       <QuestCoin pct={pct} state={state} Icon={Icon} active={isNext} size={54} />
                     </ButtonBase>
-                    <Box sx={{ flex: 1, width: 0, minHeight: 20, my: 0.5, borderLeft: '3px', borderLeftStyle: state === 'cleared' ? 'solid' : 'dotted', borderLeftColor: state === 'cleared' ? '#F5B301' : 'divider' }} />
+                    <Box sx={{ flex: 1, width: 0, minHeight: 20, my: 0.5, borderLeft: '3px', borderLeftStyle: state === 'cleared' ? 'solid' : 'dotted', borderLeftColor: state === 'cleared' ? COLOR_PALETTE.custom.yellowF5B301 : 'divider' }} />
                   </Box>
                   <ButtonBase
                     onClick={() => openSection(section.id)}
@@ -190,7 +191,7 @@ export default function PrepRoadmapPage() {
 
             {/* the finish line */}
             <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-              <Box sx={{ width: 54, height: 54, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, color: '#4A3300', background: 'radial-gradient(circle at 30% 25%, #FFE58A, #F5B301)', boxShadow: '0 8px 20px rgba(245,179,1,.4)' }}>
+              <Box sx={{ width: 54, height: 54, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, color: COLOR_PALETTE.custom.yellow4A3300, background: `radial-gradient(circle at 30% 25%, ${COLOR_PALETTE.amber[200]}, ${COLOR_PALETTE.custom.yellowF5B301})`, boxShadow: `0 8px 20px ${withAlpha(COLOR_PALETTE.custom.yellowF5B301, .4)}` }}>
                 <EmojiEventsRoundedIcon />
               </Box>
               <Box>

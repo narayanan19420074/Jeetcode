@@ -34,9 +34,10 @@ import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { LibraryFont, useLibraryPalette } from './components/libraryStyle';
 import { STATUS_COLOR, featuredPageForToday, surface, todayKey } from './dashboardUtils';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Same accent the other phone pages use.
-const PHONE_ACCENT = '#6366F1';
+const PHONE_ACCENT = COLOR_PALETTE.indigo[500];
 
 // Phone-only dismissals, remembered on this device.
 const NQT_DISMISS_KEY = 'jeetcode.dismissed.nqtCard';
@@ -219,7 +220,7 @@ export default function DashboardPage() {
         cta: 'Solve now',
         to: `/workspace/${featured.slug}`,
         icon: EventRoundedIcon,
-        gradient: 'linear-gradient(135deg,#334155,#0F172A)',
+        gradient: `linear-gradient(135deg,${COLOR_PALETTE.slate[700]},${COLOR_PALETTE.slate[900]})`,
       });
     }
     list.push({
@@ -229,7 +230,7 @@ export default function DashboardPage() {
       cta: 'Open prep',
       to: '/prep',
       icon: BusinessRoundedIcon,
-      gradient: 'linear-gradient(135deg,#047857,#0E7490)',
+      gradient: `linear-gradient(135deg,${COLOR_PALETTE.emerald[700]},${COLOR_PALETTE.cyan[700]})`,
     });
     if (!user?.isPro) {
       list.push({
@@ -239,7 +240,7 @@ export default function DashboardPage() {
         cta: 'See plans',
         to: '/pricing',
         icon: WorkspacePremiumRoundedIcon,
-        gradient: 'linear-gradient(135deg,#B45309,#78350F)',
+        gradient: `linear-gradient(135deg,${COLOR_PALETTE.amber[700]},${COLOR_PALETTE.amber[900]})`,
       });
     }
     list.push(
@@ -250,7 +251,7 @@ export default function DashboardPage() {
         cta: 'Start practicing',
         to: '/aptitude',
         icon: CalculateRoundedIcon,
-        gradient: 'linear-gradient(135deg,#7C3AED,#4C1D95)',
+        gradient: `linear-gradient(135deg,${COLOR_PALETTE.violet[600]},${COLOR_PALETTE.violet[900]})`,
       },
       {
         key: 'visualizer',
@@ -259,7 +260,7 @@ export default function DashboardPage() {
         cta: 'Explore',
         to: '/visualizer',
         icon: BarChartRoundedIcon,
-        gradient: 'linear-gradient(135deg,#0E7490,#164E63)',
+        gradient: `linear-gradient(135deg,${COLOR_PALETTE.cyan[700]},${COLOR_PALETTE.cyan[900]})`,
       }
     );
     return list;

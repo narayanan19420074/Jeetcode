@@ -12,6 +12,7 @@ import { APT_COLOR, AvatarRing, PT, calm, mono, sweep } from './lbShared';
 import EmpireCard from './EmpireCard';
 import LeaderboardPanel from './lbPanel';
 import MobileLeaderboard from './MobileLeaderboard';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const LIMIT = 30;
 
@@ -58,7 +59,7 @@ function RowDetail({ row }) {
   return (
     <Box sx={(t) => ({ px: 2, py: 1.5, bgcolor: alpha(t.palette.text.primary, 0.035), display: 'grid', gap: 1.5 })}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
-        <AvatarRing src={row.avatarUrl} name={row.name} size={38} a={tier.color} b={`color-mix(in srgb, ${tier.color} 40%, #fff)`} />
+        <AvatarRing src={row.avatarUrl} name={row.name} size={38} a={tier.color} b={`color-mix(in srgb, ${tier.color} 40%, ${COLOR_PALETTE.white})`} />
         <Box sx={{ minWidth: 0 }}>
           <Typography noWrap sx={{ fontWeight: 800, lineHeight: 1.25 }}>{row.name}</Typography>
           <Typography noWrap variant="caption" color="text.secondary">@{row.handle}{row.company ? `, ${row.company}` : ''}</Typography>
@@ -84,7 +85,7 @@ function RowDetail({ row }) {
           </Typography>
         </Box>
         <Box sx={{ height: 9, borderRadius: 99, bgcolor: 'divider', overflow: 'hidden' }}>
-          <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: 99, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, #fff))`, transition: 'width .6s ease', '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent)', animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
+          <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: 99, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, ${COLOR_PALETTE.white}))`, transition: 'width .6s ease', '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(90deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
         </Box>
         <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75, fontWeight: 600 }}>
           {row.recent} solved in the last 7 days

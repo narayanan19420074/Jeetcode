@@ -19,6 +19,7 @@ import { fmtDate, useContest } from '../../contest/contestUtils';
 import { tint } from '../dashboardUtils';
 import NqtExploreCard from './NqtExploreCard';
 import { LibraryFont, useLibraryPalette } from './libraryStyle';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Phone home screen in the Library layout: swipeable banners, category cards, topic chips and company rows.
 // Sizes: 16px page gutter, 2:1 banners, 115x80 category cards, 34px chips, 48px company logos, 58px company rows.
@@ -36,22 +37,22 @@ const bleedPad = { xs: 2, sm: 3 };
 
 // Phone-only banner colours.
 const BANNER_GRADIENT = {
-  contest: 'linear-gradient(135deg,#F7A33B,#E8590C)',
-  daily: 'linear-gradient(135deg,#7E3FA8,#4A1F8C)',
-  prep: 'linear-gradient(135deg,#0D9488,#134E4A)',
-  pro: 'linear-gradient(135deg,#F59E0B,#78350F)',
-  aptitude: 'linear-gradient(135deg,#DB2777,#4C1D95)',
-  visualizer: 'linear-gradient(135deg,#2563EB,#1E1B4B)',
+  contest: `linear-gradient(135deg,${COLOR_PALETTE.custom.orangeF7A33B},${COLOR_PALETTE.orange[600]})`,
+  daily: `linear-gradient(135deg,${COLOR_PALETTE.custom.purple7E3FA8},${COLOR_PALETTE.custom.purple4A1F8C})`,
+  prep: `linear-gradient(135deg,${COLOR_PALETTE.teal[600]},${COLOR_PALETTE.teal[900]})`,
+  pro: `linear-gradient(135deg,${COLOR_PALETTE.amber[500]},${COLOR_PALETTE.amber[900]})`,
+  aptitude: `linear-gradient(135deg,${COLOR_PALETTE.pink[600]},${COLOR_PALETTE.violet[900]})`,
+  visualizer: `linear-gradient(135deg,${COLOR_PALETTE.blue[600]},${COLOR_PALETTE.indigo[950]})`,
 };
 
 const problemsUrl = (key, value) => `/problems?${new URLSearchParams({ [key]: value }).toString()}`;
 
 const CATEGORIES = [
   { key: 'all', label: 'All Topics', to: '/problems' },
-  { key: 'Easy', label: 'Easy', to: problemsUrl('difficulty', 'Easy'), color: '#22A06B', bg: '#EAF6EE', Icon: SignalCellularAlt1BarRoundedIcon },
-  { key: 'Medium', label: 'Medium', to: problemsUrl('difficulty', 'Medium'), color: '#F09A2E', bg: '#FFF2E3', Icon: SignalCellularAlt2BarRoundedIcon },
-  { key: 'Hard', label: 'Hard', to: problemsUrl('difficulty', 'Hard'), color: '#EF5B5B', bg: '#FDECEB', Icon: SignalCellularAltRoundedIcon },
-  { key: 'lists', label: 'Favorites', to: '/dashboard?view=list&list=favorite', color: '#3F8CE8', bg: '#EDF2F9', Icon: StarRoundedIcon },
+  { key: 'Easy', label: 'Easy', to: problemsUrl('difficulty', 'Easy'), color: COLOR_PALETTE.custom.emerald22A06B, bg: COLOR_PALETTE.green[50], Icon: SignalCellularAlt1BarRoundedIcon },
+  { key: 'Medium', label: 'Medium', to: problemsUrl('difficulty', 'Medium'), color: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50], Icon: SignalCellularAlt2BarRoundedIcon },
+  { key: 'Hard', label: 'Hard', to: problemsUrl('difficulty', 'Hard'), color: COLOR_PALETTE.custom.redEF5B5B, bg: COLOR_PALETTE.rose[50], Icon: SignalCellularAltRoundedIcon },
+  { key: 'lists', label: 'Favorites', to: '/dashboard?view=list&list=favorite', color: COLOR_PALETTE.custom.blue3F8CE8, bg: COLOR_PALETTE.blue[50], Icon: StarRoundedIcon },
 ];
 
 function SectionHeading({ to, children }) {
@@ -89,7 +90,7 @@ function Banners({ cards }) {
               borderRadius: '20px',
               textAlign: 'left',
               display: 'block',
-              color: '#fff',
+              color: COLOR_PALETTE.white,
               background: gradient,
             }}
           >
@@ -104,11 +105,11 @@ function Banners({ cards }) {
                 borderRadius: '50%',
                 display: 'grid',
                 placeItems: 'center',
-                border: '6px solid rgba(255,255,255,0.55)',
-                background: 'linear-gradient(160deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+                border: `6px solid ${withAlpha(COLOR_PALETTE.white, 0.55)}`,
+                background: `linear-gradient(160deg, ${withAlpha(COLOR_PALETTE.white, 0.25)}, ${withAlpha(COLOR_PALETTE.white, 0.05)})`,
               }}
             >
-              <Icon sx={{ fontSize: 'clamp(36px, 12vw, 56px)', color: '#fff' }} />
+              <Icon sx={{ fontSize: 'clamp(36px, 12vw, 56px)', color: COLOR_PALETTE.white }} />
             </Box>
             <Typography
               component="span"
@@ -122,7 +123,7 @@ function Banners({ cards }) {
       {cards.length > 1 && (
         <Box aria-hidden sx={{ position: 'absolute', right: 14, bottom: 10, display: 'flex', gap: '5px', pointerEvents: 'none' }}>
           {cards.map((b, i) => (
-            <Box key={b.key} sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#fff', opacity: i === index ? 0.95 : 0.4 }} />
+            <Box key={b.key} sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: COLOR_PALETTE.white, opacity: i === index ? 0.95 : 0.4 }} />
           ))}
         </Box>
       )}
@@ -153,16 +154,16 @@ function CategoryCard({ to, label, color, bg, icon: Icon, all = false, dim = fal
         opacity: dim ? 0.7 : 1,
         background: all
           ? t.palette.mode === 'dark'
-            ? 'linear-gradient(135deg, rgba(181,138,242,0.22), rgba(242,140,122,0.16))'
-            : 'linear-gradient(125deg, #F6DCE3 0%, #EEE3F6 50%, #F8DDEB 100%)'
+            ? `linear-gradient(135deg, ${withAlpha(COLOR_PALETTE.custom.violetB58AF2, 0.22)}, ${withAlpha(COLOR_PALETTE.custom.redF28C7A, 0.16)})`
+            : `linear-gradient(125deg, ${COLOR_PALETTE.rose[100]} 0%, ${COLOR_PALETTE.purple[100]} 50%, ${COLOR_PALETTE.pink[100]} 100%)`
           : t.palette.mode === 'dark'
             ? tint(color, 16)
             : bg,
       })}
     >
       {all ? (
-        <Box aria-hidden sx={{ width: 30, height: 28, borderRadius: '9px', display: 'grid', placeItems: 'center', background: 'linear-gradient(160deg, #B58AF2, #F28C7A)' }}>
-          <CodeRoundedIcon sx={{ fontSize: 20, color: '#fff' }} />
+        <Box aria-hidden sx={{ width: 30, height: 28, borderRadius: '9px', display: 'grid', placeItems: 'center', background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
+          <CodeRoundedIcon sx={{ fontSize: 20, color: COLOR_PALETTE.white }} />
         </Box>
       ) : (
         <Icon aria-hidden sx={{ fontSize: 28, color }} />
@@ -324,8 +325,8 @@ export default function MobileHome({ cards, nqtDismissed, onDismissNqt }) {
                       key={p.slug}
                       to={`/aptitude/${p.slug}`}
                       label={p.title}
-                      color={cleared ? '#22A06B' : '#F09A2E'}
-                      bg={cleared ? '#EAF6EE' : '#FFF2E3'}
+                      color={cleared ? COLOR_PALETTE.custom.emerald22A06B : COLOR_PALETTE.custom.amberF09A2E}
+                      bg={cleared ? COLOR_PALETTE.green[50] : COLOR_PALETTE.orange[50]}
                       icon={cleared ? CheckRoundedIcon : unlocked ? CalculateRoundedIcon : LockRoundedIcon}
                       dim={!unlocked && !cleared}
                     />

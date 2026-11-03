@@ -38,6 +38,7 @@ import FiberManualRecordRoundedIcon from '@mui/icons-material/FiberManualRecordR
 import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { LANG_LABEL, LANG_COLOR } from './Markdown';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 export { LANG_LABEL, LANG_COLOR };
 
@@ -147,7 +148,7 @@ export function AcceptedBadge() {
 // 💔 = downvote. Optimistic; guests are sent to /login; authors can't vote on
 // their own posts. variant 'pill' = flat action row (feed posts), 'column' =
 // compact stack beside a comment. Solutions pass allowDown={false} (like only).
-const LIKE_RED = '#ff3040';
+const LIKE_RED = COLOR_PALETTE.custom.redFF3040;
 const pop = keyframes`
   0% { transform: scale(1); }
   35% { transform: scale(1.35); }

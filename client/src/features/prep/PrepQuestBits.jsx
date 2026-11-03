@@ -1,9 +1,10 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Box } from '@mui/material';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
-const GOLD = '#F5B301';
-const BOSS = '#F97316';
-const BLUE = '#3B82F6';
+const GOLD = COLOR_PALETTE.custom.yellowF5B301;
+const BOSS = COLOR_PALETTE.orange[500];
+const BLUE = COLOR_PALETTE.blue[500];
 
 // A 3D-feeling coin: progress ring around the edge, presses in with a half flip when tapped.
 export function QuestCoin({ pct, state, boss, Icon, label, active, size = 56 }) {
@@ -28,18 +29,18 @@ export function QuestCoin({ pct, state, boss, Icon, label, active, size = 56 }) 
         <Box
           sx={{
             position: 'absolute', inset: 0, borderRadius: '50%', display: 'grid', placeItems: 'center',
-            background: `conic-gradient(${color} ${Math.max(pct, state === 'cleared' ? 100 : 0) * 3.6}deg, rgba(128,128,128,.25) 0)`,
-            boxShadow: active ? `0 0 0 5px ${color}22, 0 10px 22px ${color}55` : '0 4px 10px rgba(0,0,0,.18)',
+            background: `conic-gradient(${color} ${Math.max(pct, state === 'cleared' ? 100 : 0) * 3.6}deg, ${withAlpha(COLOR_PALETTE.custom.gray808080, .25)} 0)`,
+            boxShadow: active ? `0 0 0 5px ${color}22, 0 10px 22px ${color}55` : `0 4px 10px ${withAlpha(COLOR_PALETTE.black, .18)}`,
           }}
         >
           <Box
             sx={{
               width: size - 10, height: size - 10, borderRadius: '50%', display: 'grid', placeItems: 'center',
-              color: state === 'cleared' ? '#4A3300' : color,
+              color: state === 'cleared' ? COLOR_PALETTE.custom.yellow4A3300 : color,
               background: state === 'cleared'
-                ? `radial-gradient(circle at 30% 25%, #FFE58A, ${GOLD})`
+                ? `radial-gradient(circle at 30% 25%, ${COLOR_PALETTE.amber[200]}, ${GOLD})`
                 : (t) => `radial-gradient(circle at 30% 25%, ${t.palette.background.paper}, ${t.palette.action.hover})`,
-              boxShadow: 'inset 0 2px 3px rgba(255,255,255,.55), inset 0 -3px 5px rgba(0,0,0,.14)',
+              boxShadow: `inset 0 2px 3px ${withAlpha(COLOR_PALETTE.white, .55)}, inset 0 -3px 5px ${withAlpha(COLOR_PALETTE.black, .14)}`,
             }}
           >
             {label !== undefined ? <Box component="span" sx={{ fontWeight: 900, fontSize: size * 0.38, lineHeight: 1 }}>{label}</Box> : <Icon sx={{ fontSize: size * 0.46 }} />}

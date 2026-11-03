@@ -3,14 +3,15 @@ import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { inr } from './contestUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // 3D glass podium. Locked until `revealed` turns true, then: fireworks, blocks rise 3rd -> 2nd -> 1st,
 // winner plates pop in, trophy spins. Drag sideways to turn it. Plain three.js (no extra packages).
 
 const MEDAL = {
-  1: { css: '#F59E0B', css2: '#B45309', hex: 0xfbbf24, dark: '#FFFFFF', ring: ['#FDE68A', '#F59E0B', '#EA580C'] },
-  2: { css: '#64748B', css2: '#475569', hex: 0xcbd5e1, dark: '#FFFFFF', ring: ['#F1F5F9', '#94A3B8', '#64748B'] },
-  3: { css: '#F97316', css2: '#C2410C', hex: 0xfb923c, dark: '#FFFFFF', ring: ['#FDBA74', '#F97316', '#C2410C'] },
+  1: { css: COLOR_PALETTE.amber[500], css2: COLOR_PALETTE.amber[700], hex: 0xfbbf24, dark: COLOR_PALETTE.white, ring: [COLOR_PALETTE.amber[200], COLOR_PALETTE.amber[500], COLOR_PALETTE.orange[600]] },
+  2: { css: COLOR_PALETTE.slate[500], css2: COLOR_PALETTE.slate[600], hex: 0xcbd5e1, dark: COLOR_PALETTE.white, ring: [COLOR_PALETTE.slate[100], COLOR_PALETTE.slate[400], COLOR_PALETTE.slate[500]] },
+  3: { css: COLOR_PALETTE.orange[500], css2: COLOR_PALETTE.orange[700], hex: 0xfb923c, dark: COLOR_PALETTE.white, ring: [COLOR_PALETTE.orange[300], COLOR_PALETTE.orange[500], COLOR_PALETTE.orange[700]] },
 };
 const SLOTS = { 1: { x: 0, h: 2.5, delay: 1.5 }, 2: { x: -1.95, h: 1.85, delay: 0.9 }, 3: { x: 1.95, h: 1.35, delay: 0.3 } };
 const LOCKED = 0.3;
@@ -54,9 +55,9 @@ function fitText(c, text, max) {
 function glowTexture() {
   return canvasTex(128, 128, (c) => {
     const g = c.createRadialGradient(64, 64, 0, 64, 64, 64);
-    g.addColorStop(0, 'rgba(255,255,255,1)');
-    g.addColorStop(0.25, 'rgba(255,255,255,0.55)');
-    g.addColorStop(1, 'rgba(255,255,255,0)');
+    g.addColorStop(0, COLOR_PALETTE.white);
+    g.addColorStop(0.25, withAlpha(COLOR_PALETTE.white, 0.55));
+    g.addColorStop(1, withAlpha(COLOR_PALETTE.white, 0));
     c.fillStyle = g;
     c.fillRect(0, 0, 128, 128);
   });
@@ -65,15 +66,15 @@ function glowTexture() {
 function questionTexture(color, dark) {
   return canvasTex(256, 256, (c) => {
     const g = c.createRadialGradient(128, 128, 10, 128, 128, 120);
-    g.addColorStop(0, dark ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.8)');
-    g.addColorStop(1, 'rgba(255,255,255,0)');
+    g.addColorStop(0, dark ? withAlpha(COLOR_PALETTE.white, 0.18) : withAlpha(COLOR_PALETTE.white, 0.8));
+    g.addColorStop(1, withAlpha(COLOR_PALETTE.white, 0));
     c.fillStyle = g;
     c.fillRect(0, 0, 256, 256);
-    c.fillStyle = dark ? '#FFFFFF' : color;
+    c.fillStyle = dark ? COLOR_PALETTE.white : color;
     c.font = '900 150px system-ui, sans-serif';
     c.textAlign = 'center';
     c.textBaseline = 'middle';
-    c.shadowColor = dark ? color : 'rgba(255,255,255,0.95)';
+    c.shadowColor = dark ? color : withAlpha(COLOR_PALETTE.white, 0.95);
     c.shadowBlur = dark ? 30 : 18;
     c.fillText('?', 128, 138);
   });
@@ -83,14 +84,14 @@ function winnerTexture(w, dark) {
   const m = MEDAL[w.rank];
   return canvasTex(512, 330, (c, W, H) => {
     roundRect(c, 8, 8, W - 16, H - 16, 38);
-    c.shadowColor = dark ? 'rgba(0,0,0,0.5)' : 'rgba(111,101,91,0.28)';
+    c.shadowColor = dark ? withAlpha(COLOR_PALETTE.black, 0.5) : withAlpha(COLOR_PALETTE.custom.gray6F655B, 0.28);
     c.shadowBlur = 22;
     c.shadowOffsetY = 8;
-    c.fillStyle = dark ? 'rgba(22,27,34,0.92)' : 'rgba(253,248,244,0.9)';
+    c.fillStyle = dark ? withAlpha(COLOR_PALETTE.custom.gray161B22, 0.92) : withAlpha(COLOR_PALETTE.orange[50], 0.9);
     c.fill();
     c.shadowColor = 'transparent';
     c.lineWidth = 3;
-    c.strokeStyle = dark ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,1)';
+    c.strokeStyle = dark ? withAlpha(COLOR_PALETTE.white, 0.14) : COLOR_PALETTE.white;
     c.stroke();
 
     // vibrant avatar frame
@@ -104,7 +105,7 @@ function winnerTexture(w, dark) {
     c.fill();
     c.beginPath();
     c.arc(88, 94, 46, 0, Math.PI * 2);
-    c.fillStyle = dark ? '#1F2630' : '#FDF8F4';
+    c.fillStyle = dark ? COLOR_PALETTE.gray[800] : COLOR_PALETTE.orange[50];
     c.fill();
     c.fillStyle = dark ? m.ring[0] : m.css2;
     c.font = '800 48px system-ui, sans-serif';
@@ -114,10 +115,10 @@ function winnerTexture(w, dark) {
 
     c.textAlign = 'left';
     c.textBaseline = 'alphabetic';
-    c.fillStyle = dark ? '#E6EDF3' : '#1A1613';
+    c.fillStyle = dark ? COLOR_PALETTE.slate[200] : COLOR_PALETTE.custom.black1A1613;
     c.font = '800 40px system-ui, sans-serif';
     c.fillText(fitText(c, w.name, 330), 164, 88);
-    c.fillStyle = dark ? '#9DA7B3' : '#6F655B';
+    c.fillStyle = dark ? COLOR_PALETTE.gray[400] : COLOR_PALETTE.custom.gray6F655B;
     c.font = '500 26px system-ui, sans-serif';
     c.fillText(fitText(c, `@${w.handle || ''}`, 330), 164, 126);
 
@@ -135,8 +136,8 @@ function winnerTexture(w, dark) {
       return tw;
     };
     let x = 36;
-    if (w.prize) x += chip(x, 184, inr(w.prize), dark ? 'rgba(251,191,36,0.18)' : '#FEF3C7', dark ? '#FCD34D' : '#B45309') + 12;
-    chip(x, 184, `${w.solved ?? 0} solved`, dark ? 'rgba(52,211,153,0.18)' : '#D1FAE5', dark ? '#6EE7B7' : '#047857');
+    if (w.prize) x += chip(x, 184, inr(w.prize), dark ? withAlpha(COLOR_PALETTE.amber[400], 0.18) : COLOR_PALETTE.amber[100], dark ? COLOR_PALETTE.amber[300] : COLOR_PALETTE.amber[700]) + 12;
+    chip(x, 184, `${w.solved ?? 0} solved`, dark ? withAlpha(COLOR_PALETTE.emerald[400], 0.18) : COLOR_PALETTE.emerald[100], dark ? COLOR_PALETTE.emerald[300] : COLOR_PALETTE.emerald[700]);
 
     const rg = c.createLinearGradient(36, 250, 300, 300);
     rg.addColorStop(0, m.ring[0]);
@@ -265,9 +266,9 @@ function buildScene(host, winners, { reveal: startRevealed, reduce, dark }) {
   // soft pastel backdrop. (An opaque background also keeps the glass visible: transmission needs something behind it.)
   scene.background = canvasTex(4, 256, (c, W, H) => {
     const g = c.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, dark ? '#0E1116' : '#FDF8F4');
-    g.addColorStop(0.55, dark ? '#161B22' : '#F6ECE2');
-    g.addColorStop(1, dark ? '#1F2630' : '#F1E7DD');
+    g.addColorStop(0, dark ? COLOR_PALETTE.gray[950] : COLOR_PALETTE.orange[50]);
+    g.addColorStop(0.55, dark ? COLOR_PALETTE.custom.gray161B22 : COLOR_PALETTE.orange[50]);
+    g.addColorStop(1, dark ? COLOR_PALETTE.gray[800] : COLOR_PALETTE.custom.orangeF1E7DD);
     c.fillStyle = g;
     c.fillRect(0, 0, W, H);
   });

@@ -3,6 +3,7 @@ import { Box, IconButton, Stack, Tab, Tabs, TextField, Tooltip, Typography } fro
 import { alpha } from '@mui/material/styles';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Small, dependency-free markdown renderer. It never uses
 // dangerouslySetInnerHTML — everything becomes React text nodes, so user
@@ -13,7 +14,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
 
 export const LANG_LABEL = { javascript: 'JavaScript', python: 'Python', cpp: 'C++', java: 'Java' };
-export const LANG_COLOR = { javascript: '#F59E0B', python: '#3B82F6', cpp: '#8B5CF6', java: '#EF4444' };
+export const LANG_COLOR = { javascript: COLOR_PALETTE.amber[500], python: COLOR_PALETTE.blue[500], cpp: COLOR_PALETTE.violet[500], java: COLOR_PALETTE.red[500] };
 
 function LangDot({ language }) {
   return <Box component="span" sx={{ width: 9, height: 9, borderRadius: '50%', bgcolor: LANG_COLOR[language] || 'text.disabled', flexShrink: 0 }} />;

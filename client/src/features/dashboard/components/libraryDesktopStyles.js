@@ -1,4 +1,5 @@
 import { LIB_ACCENT, LIB_TRACKING } from './libraryStyle';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Shared styles of the desktop pages in the Library look (Problems, Store): cream panels, pill buttons, indigo accent.
 
@@ -20,6 +21,6 @@ export const pillButtonSx = (solid, palette) => ({
   letterSpacing: LIB_TRACKING,
   whiteSpace: 'nowrap',
   ...(solid
-    ? { bgcolor: LIB_ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)` } }
+    ? { bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` } }
     : { bgcolor: palette.player, color: palette.text, '&:hover': { bgcolor: palette.player, filter: 'brightness(0.97)' } }),
 });

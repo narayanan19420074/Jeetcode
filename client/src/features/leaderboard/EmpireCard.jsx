@@ -23,8 +23,9 @@ import { DIFF_COLOR } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
 import { MEDAL, Mix, YouChip, CountUp, activeLabel, bob, calm, glow, grad, mono, spin, twinkle } from './lbShared';
 import { ACCENT, AVATAR_FRAMES, lbTokens } from './lbTheme';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
-const GOLD = '#FBBF24';
+const GOLD = COLOR_PALETTE.amber[400];
 const TRACKS = [['overall', 'Overall', StarsRoundedIcon], ['coding', 'Coding', CodeRoundedIcon], ['aptitude', 'Aptitude', PsychologyRoundedIcon]];
 // Names + icons used by common leaderboards: infinity for all-time, week and month calendars.
 const PERIODS = [
@@ -38,7 +39,7 @@ const SPARKS = [[8, 18, 0], [20, 64, 0.6], [34, 12, 1.2], [66, 16, 0.3], [82, 58
 
 function Tile({ T, size = 42, children }) {
   return (
-    <Box sx={{ width: size, height: size, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: '#F59E0B' }}>
+    <Box sx={{ width: size, height: size, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: COLOR_PALETTE.amber[500] }}>
       {children}
     </Box>
   );
@@ -52,7 +53,7 @@ function ScopeSwitch({ T, value, onChange, friendsOk }) {
     <Box role="group" aria-label="Show" sx={{ position: 'relative', display: 'inline-grid', gridTemplateColumns: 'repeat(2, 40px)', p: '4px', borderRadius: 99, bgcolor: T.soft, boxShadow: T.pressed, flexShrink: 0 }}>
       <Box
         aria-hidden
-        sx={{ position: 'absolute', top: 4, left: 4, width: 40, height: 36, borderRadius: 99, background: ACCENT, boxShadow: '0 8px 16px -6px rgba(99,102,241,0.8), inset 0 1px 0 rgba(255,255,255,0.3)', transform: `translateX(${idx * 40}px)`, transition: 'transform .25s cubic-bezier(.4,0,.2,1)', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }}
+        sx={{ position: 'absolute', top: 4, left: 4, width: 40, height: 36, borderRadius: 99, background: ACCENT, boxShadow: `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}`, transform: `translateX(${idx * 40}px)`, transition: 'transform .25s cubic-bezier(.4,0,.2,1)', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }}
       />
       {options.map(([v, label, Icon]) => {
         const on = value === v;
@@ -62,7 +63,7 @@ function ScopeSwitch({ T, value, onChange, friendsOk }) {
             <Box component="span" sx={{ display: 'flex' }}>
               <ButtonBase
                 disabled={disabled} onClick={() => onChange(v)} aria-pressed={on} aria-label={label}
-                sx={{ position: 'relative', zIndex: 1, width: 40, height: 36, borderRadius: 99, color: on ? '#fff' : T.muted, opacity: disabled ? 0.4 : 1, transition: 'color .2s' }}
+                sx={{ position: 'relative', zIndex: 1, width: 40, height: 36, borderRadius: 99, color: on ? COLOR_PALETTE.white : T.muted, opacity: disabled ? 0.4 : 1, transition: 'color .2s' }}
               >
                 <Icon sx={{ fontSize: 20 }} />
               </ButtonBase>
@@ -104,7 +105,7 @@ function TrackTabs({ T, value, onChange, iconOnly }) {
           <Tooltip key={v} title={label}>
             <ButtonBase
               role="tab" aria-selected={on} aria-label={label} onClick={() => onChange(v)}
-              sx={{ flexShrink: 0, gap: 0.6, height: 38, px: iconOnly && !on ? 1.25 : 1.75, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, color: on ? '#fff' : T.muted, background: on ? ACCENT : T.soft, boxShadow: on ? '0 10px 20px -8px rgba(99,102,241,0.85), inset 0 1px 0 rgba(255,255,255,0.3)' : T.raised, transition: 'transform .15s', '&:active': { transform: 'scale(0.96)' } }}
+              sx={{ flexShrink: 0, gap: 0.6, height: 38, px: iconOnly && !on ? 1.25 : 1.75, borderRadius: 99, fontFamily: 'inherit', fontSize: 13, fontWeight: 800, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : T.soft, boxShadow: on ? `0 10px 20px -8px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : T.raised, transition: 'transform .15s', '&:active': { transform: 'scale(0.96)' } }}
             >
               <Icon sx={{ fontSize: 18 }} />{(!iconOnly || on) && label}
             </ButtonBase>
@@ -150,13 +151,13 @@ function RankTile({ rank, T }) {
 
 // Rank change vs last week (all-time, everyone board only; the server sends null otherwise).
 function Move({ row }) {
-  if (row.isNew) return <Box component="span" sx={{ px: 0.7, borderRadius: 99, fontSize: 10, fontWeight: 800, color: '#1B1200', bgcolor: GOLD, flexShrink: 0 }}>new</Box>;
+  if (row.isNew) return <Box component="span" sx={{ px: 0.7, borderRadius: 99, fontSize: 10, fontWeight: 800, color: COLOR_PALETTE.custom.black1B1200, bgcolor: GOLD, flexShrink: 0 }}>new</Box>;
   const m = row.movement;
   if (m === null || m === undefined || m === 0) return null;
   const up = m > 0;
   const Icon = up ? ArrowDropUpRoundedIcon : ArrowDropDownRoundedIcon;
   return (
-    <Box component="span" aria-label={`${up ? 'Up' : 'Down'} ${Math.abs(m)} since last week`} sx={[{ display: 'inline-flex', alignItems: 'center', flexShrink: 0, color: up ? '#16A34A' : '#DC2626', fontSize: 11, fontWeight: 800 }, mono]}>
+    <Box component="span" aria-label={`${up ? 'Up' : 'Down'} ${Math.abs(m)} since last week`} sx={[{ display: 'inline-flex', alignItems: 'center', flexShrink: 0, color: up ? COLOR_PALETTE.green[600] : COLOR_PALETTE.red[600], fontSize: 11, fontWeight: 800 }, mono]}>
       <Icon sx={{ fontSize: 20, mx: -0.6 }} />{Math.abs(m)}
     </Box>
   );
@@ -166,7 +167,7 @@ function Streak({ value, T }) {
   const on = value > 0;
   return (
     <Box sx={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
-      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 15, color: on ? '#F97316' : T.muted, opacity: on ? 1 : 0.5 }} />
+      <LocalFireDepartmentRoundedIcon sx={{ fontSize: 15, color: on ? COLOR_PALETTE.orange[500] : T.muted, opacity: on ? 1 : 0.5 }} />
       <Typography component="span" sx={[{ fontWeight: 800, fontSize: 12, color: on ? T.ink : T.muted }, mono]}>{value}d</Typography>
     </Box>
   );
@@ -236,7 +237,7 @@ function PlayerRow({ row, index, T, isMe, selected, onPick, wide, track, reduce,
       {wide && <Stats row={row} track={track} T={T} />}
       {wide && (
         <Tooltip title="Solved in the last 7 days">
-          <Typography component="span" sx={[{ width: 34, flexShrink: 0, textAlign: 'right', fontSize: 12.5, fontWeight: 800, color: row.recent > 0 ? '#16A34A' : T.muted }, mono]}>{row.recent > 0 ? `+${row.recent}` : '–'}</Typography>
+          <Typography component="span" sx={[{ width: 34, flexShrink: 0, textAlign: 'right', fontSize: 12.5, fontWeight: 800, color: row.recent > 0 ? COLOR_PALETTE.green[600] : T.muted }, mono]}>{row.recent > 0 ? `+${row.recent}` : '–'}</Typography>
         </Tooltip>
       )}
       <Box sx={{ textAlign: 'right', minWidth: 62, flexShrink: 0 }}>
@@ -259,7 +260,7 @@ function PlayerRow({ row, index, T, isMe, selected, onPick, wide, track, reduce,
       <Box
         sx={(t) => ({
           position: 'relative', overflow: 'hidden', borderRadius: '18px',
-          background: isMe ? `linear-gradient(100deg, rgba(251,191,36,0.22), transparent 65%), ${T.soft}` : T.soft,
+          background: isMe ? `linear-gradient(100deg, ${withAlpha(COLOR_PALETTE.amber[400], 0.22)}, transparent 65%), ${T.soft}` : T.soft,
           boxShadow: selected ? T.pressed : T.raised,
           outline: selected ? `2px solid ${alpha(t.palette.primary.main, 0.55)}` : 'none', outlineOffset: -2,
           transition: 'box-shadow .18s, transform .18s', '&:hover': { transform: 'translateY(-1px)' },
@@ -292,37 +293,37 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
   const { tier } = tierFor(row.score);
   const m = MEDAL[1];
   const av = tight ? 56 : 72;
-  const shadow = '0 22px 44px -22px rgba(30,27,75,0.85), inset 0 1px 0 rgba(255,255,255,0.22)';
+  const shadow = `0 22px 44px -22px ${withAlpha(COLOR_PALETTE.indigo[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.22)}`;
   return (
     <motion.div initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <ButtonBase
         onClick={(e) => onPick(e, row)} aria-label={`${row.name}, top player, ${row.score} points`}
-        sx={{ position: 'relative', overflow: 'hidden', display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit', color: '#fff', borderRadius: '24px', p: { xs: 1, sm: 1.25 }, background: 'radial-gradient(120% 140% at 0% 0%, #6366F1 0%, #4F46E5 45%, #312E81 100%)', boxShadow: selected ? `0 0 0 2px ${GOLD}, ${shadow}` : shadow }}
+        sx={{ position: 'relative', overflow: 'hidden', display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit', color: COLOR_PALETTE.white, borderRadius: '24px', p: { xs: 1, sm: 1.25 }, background: `radial-gradient(120% 140% at 0% 0%, ${COLOR_PALETTE.indigo[500]} 0%, ${COLOR_PALETTE.indigo[600]} 45%, ${COLOR_PALETTE.indigo[900]} 100%)`, boxShadow: selected ? `0 0 0 2px ${GOLD}, ${shadow}` : shadow }}
       >
-        <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -60, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(251,191,36,0.34), transparent 68%)', animation: `${glow} 3.2s ease-in-out infinite`, ...calm }} />
-        <Box aria-hidden sx={{ position: 'absolute', left: -50, bottom: -80, width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(236,72,153,0.26), transparent 70%)' }} />
+        <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -60, width: 220, height: 220, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.34)}, transparent 68%)`, animation: `${glow} 3.2s ease-in-out infinite`, ...calm }} />
+        <Box aria-hidden sx={{ position: 'absolute', left: -50, bottom: -80, width: 200, height: 200, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.pink[500], 0.26)}, transparent 70%)` }} />
         {SPARKS.map(([x, y, d]) => (
-          <Box key={`${x}-${y}`} aria-hidden sx={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: 4, height: 4, borderRadius: '50%', bgcolor: '#fff', animation: `${twinkle} 2.6s ease-in-out ${d}s infinite`, ...calm }} />
+          <Box key={`${x}-${y}`} aria-hidden sx={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: 4, height: 4, borderRadius: '50%', bgcolor: COLOR_PALETTE.white, animation: `${twinkle} 2.6s ease-in-out ${d}s infinite`, ...calm }} />
         ))}
 
         {/* glass plate */}
-        <Box sx={{ position: 'relative', borderRadius: '18px', p: { xs: 1.25, sm: 1.75 }, bgcolor: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.22)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)' }}>
+        <Box sx={{ position: 'relative', borderRadius: '18px', p: { xs: 1.25, sm: 1.75 }, bgcolor: withAlpha(COLOR_PALETTE.white, 0.10), border: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.22)}`, backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.25)}` }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, sm: 2 }, flexWrap: wide ? 'nowrap' : 'wrap' }}>
             <Box sx={{ position: 'relative', flexShrink: 0, display: 'grid', placeItems: 'center', mx: 0.75 }}>
               <Box aria-hidden sx={{ position: 'absolute', width: av + 22, height: av + 22, borderRadius: '50%', background: `conic-gradient(from 0deg, ${m.a}, transparent 30%, ${m.b} 55%, transparent 80%, ${m.a})`, filter: 'blur(6px)', opacity: 0.85, animation: `${spin} 6s linear infinite`, ...calm }} />
               <Box sx={{ position: 'relative', p: '3.5px', borderRadius: '50%', background: grad(m), boxShadow: `0 8px 26px -6px ${m.glow}` }}>
-                <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: av, height: av, fontSize: av * 0.38, fontWeight: 800, border: '3px solid #312E81', bgcolor: '#4338CA', color: '#fff' }}>{row.name?.[0]?.toUpperCase()}</Avatar>
+                <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: av, height: av, fontSize: av * 0.38, fontWeight: 800, border: `3px solid ${COLOR_PALETTE.indigo[900]}`, bgcolor: COLOR_PALETTE.indigo[700], color: COLOR_PALETTE.white }}>{row.name?.[0]?.toUpperCase()}</Avatar>
               </Box>
-              <EmojiEventsRoundedIcon aria-hidden sx={{ position: 'absolute', top: -14, right: -14, fontSize: tight ? 24 : 28, color: '#FDE68A', filter: 'drop-shadow(0 0 10px rgba(251,191,36,0.9))', animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
+              <EmojiEventsRoundedIcon aria-hidden sx={{ position: 'absolute', top: -14, right: -14, fontSize: tight ? 24 : 28, color: COLOR_PALETTE.amber[200], filter: `drop-shadow(0 0 10px ${withAlpha(COLOR_PALETTE.amber[400], 0.9)})`, animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
             </Box>
 
             <Box sx={{ minWidth: 0, flex: '1 1 150px' }}>
-              <Box sx={{ display: 'inline-flex', alignItems: 'center', px: 1, py: 0.15, mb: 0.5, borderRadius: 99, bgcolor: 'rgba(251,191,36,0.2)', color: '#FDE68A', fontSize: 10.5, fontWeight: 800, letterSpacing: 0.6 }}>TOP PLAYER</Box>
+              <Box sx={{ display: 'inline-flex', alignItems: 'center', px: 1, py: 0.15, mb: 0.5, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.amber[400], 0.2), color: COLOR_PALETTE.amber[200], fontSize: 10.5, fontWeight: 800, letterSpacing: 0.6 }}>TOP PLAYER</Box>
               <Typography noWrap sx={{ fontWeight: 900, fontSize: { xs: 18, sm: tight ? 20 : 23 }, lineHeight: 1.2, letterSpacing: '-0.01em' }}>{row.name}{isMe && <YouChip />}</Typography>
               <Typography noWrap sx={{ fontSize: 12.5, opacity: 0.78 }}>@{row.handle}{row.company ? `, ${row.company}` : ''}</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.6, flexWrap: 'wrap' }}>
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.8, borderRadius: 99, bgcolor: 'rgba(255,255,255,0.16)', fontSize: 11, fontWeight: 800, lineHeight: 1.7 }}>
-                  <WorkspacePremiumRoundedIcon sx={{ fontSize: 13, color: '#FDE68A' }} />{tier.name}
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.8, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.16), fontSize: 11, fontWeight: 800, lineHeight: 1.7 }}>
+                  <WorkspacePremiumRoundedIcon sx={{ fontSize: 13, color: COLOR_PALETTE.amber[200] }} />{tier.name}
                 </Box>
                 <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
                   <LocalFireDepartmentRoundedIcon sx={{ fontSize: 15, color: GOLD }} />
@@ -332,8 +333,8 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
             </Box>
 
             <Box sx={{ flexShrink: 0, textAlign: wide ? 'right' : 'left', ml: wide ? 'auto' : 0 }}>
-              <Typography sx={[{ fontWeight: 900, fontSize: { xs: 26, sm: tight ? 28 : 34 }, lineHeight: 1.05, color: '#FDE68A' }, mono]}>
-                <CountUp value={row.score} /><Box component="span" sx={{ fontSize: 12, ml: 0.5, color: '#fff', opacity: 0.85 }}>pts</Box>
+              <Typography sx={[{ fontWeight: 900, fontSize: { xs: 26, sm: tight ? 28 : 34 }, lineHeight: 1.05, color: COLOR_PALETTE.amber[200] }, mono]}>
+                <CountUp value={row.score} /><Box component="span" sx={{ fontSize: 12, ml: 0.5, color: COLOR_PALETTE.white, opacity: 0.85 }}>pts</Box>
               </Typography>
               <Typography sx={{ fontSize: 12, opacity: 0.78 }}>{row.recent > 0 ? `+${row.recent} this week` : `${row.solved} solved`}</Typography>
             </Box>
@@ -348,7 +349,7 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
 function EmptyChampion({ T, tight }) {
   return (
     <Box sx={{ py: tight ? 2 : 3, px: 2, textAlign: 'center', borderRadius: '24px', bgcolor: T.soft, boxShadow: T.pressed }}>
-      <EmojiEventsRoundedIcon sx={{ fontSize: tight ? 30 : 38, color: '#F59E0B' }} />
+      <EmojiEventsRoundedIcon sx={{ fontSize: tight ? 30 : 38, color: COLOR_PALETTE.amber[500] }} />
       <Typography sx={{ fontWeight: 800, color: T.ink }}>No top player yet</Typography>
       <Typography sx={{ fontSize: 12.5, color: T.muted }}>Solve a question to take the #1 spot.</Typography>
     </Box>
@@ -446,7 +447,7 @@ export default function EmpireCard({
 
             {!loading && rows.length === 0 && !error && (
               <Box sx={{ py: 5, px: 3, textAlign: 'center', borderRadius: '24px', bgcolor: T.soft, boxShadow: T.pressed }}>
-                <EmojiEventsRoundedIcon sx={{ fontSize: 40, color: '#F59E0B', opacity: 0.7 }} />
+                <EmojiEventsRoundedIcon sx={{ fontSize: 40, color: COLOR_PALETTE.amber[500], opacity: 0.7 }} />
                 <Typography sx={{ mt: 0.5, fontWeight: 700, color: T.ink }}>
                   {q ? `No player matches "${q}".` : scope === 'friends' ? 'No friends on this board yet.' : 'No one has scored in this period yet.'}
                 </Typography>
@@ -465,7 +466,7 @@ export default function EmpireCard({
 
         {/* my own position stays pinned under the list */}
         {me && (
-          <Box sx={{ flexShrink: 0, mt: 1, p: '2px', borderRadius: '22px', background: `linear-gradient(135deg, ${GOLD}, ${ACCENT})`, boxShadow: '0 14px 28px -16px rgba(99,102,241,0.8)' }}>
+          <Box sx={{ flexShrink: 0, mt: 1, p: '2px', borderRadius: '22px', background: `linear-gradient(135deg, ${GOLD}, ${ACCENT})`, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}` }}>
             <Box sx={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', bgcolor: T.soft, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ flex: 1, minWidth: 0 }}>
                 <PlayerRow row={me} T={T} isMe you selected={false} onPick={onPick} wide={wide} track={track} reduce={reduce} />

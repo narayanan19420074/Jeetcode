@@ -3,12 +3,13 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../libraryStyle';
 import { surface, tint } from '../../dashboardUtils';
 import { DIFF_W, PAD_X, STAR_W, TOPIC_ROW_H } from './libraryConstants';
+import { COLOR_PALETTE } from '../../../../app/design/designTokens';
 
 // Two looks for the same problem library. "classic" is the original page style (used by the Problems page).
 // "cream" is the phone Library look: cream pills and panels, accent when selected, tinted difficulty tags.
 // The cream look is chosen by the desktop dashboard theme (see desktopLook.jsx).
 
-const ACCENT_HOVER = `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)`;
+const ACCENT_HOVER = `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})`;
 
 // ---------------------------------------------------------------- classic
 
@@ -104,7 +105,7 @@ const creamPills = (pal) => ({
     borderRadius: 999,
     fontFamily: 'inherit',
     bgcolor: on ? LIB_ACCENT : pal.chip,
-    color: on ? '#fff' : pal.chipText,
+    color: on ? COLOR_PALETTE.white : pal.chipText,
     '&:hover': { bgcolor: on ? ACCENT_HOVER : pal.player },
     '&.Mui-focusVisible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 2 },
   }),
@@ -120,7 +121,7 @@ const creamTopics = (pal) => ({
     borderRadius: 999,
     fontFamily: 'inherit',
     bgcolor: on ? LIB_ACCENT : pal.chip,
-    color: on ? '#fff' : pal.chipText,
+    color: on ? COLOR_PALETTE.white : pal.chipText,
     '&:hover': { bgcolor: on ? ACCENT_HOVER : pal.player },
     '&.Mui-focusVisible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 2 },
   }),

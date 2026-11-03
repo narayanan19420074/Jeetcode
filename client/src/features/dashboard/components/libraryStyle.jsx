@@ -5,7 +5,7 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
-import { BRAND, FONTS, LIBRARY_PALETTE } from '../../../app/design/designTokens';
+import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Shared look of the phone Library (Problems) pages: Roboto type and a warm cream surface in light mode.
 // Dark mode keeps the app's normal dark surfaces.
@@ -92,7 +92,7 @@ export function MiniPlayer({ featured, resume, aboveNav }) {
         textDecoration: 'none',
       })}
     >
-      <Box aria-hidden sx={{ width: 40, height: 40, flex: 'none', borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: 'rgba(239,108,77,0.2)', color: '#EF6C4D' }}>
+      <Box aria-hidden sx={{ width: 40, height: 40, flex: 'none', borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: withAlpha(COLOR_PALETTE.custom.redEF6C4D, 0.2), color: COLOR_PALETTE.custom.redEF6C4D }}>
         {resume ? <HistoryRoundedIcon sx={{ fontSize: 22 }} /> : <EventRoundedIcon sx={{ fontSize: 22 }} />}
       </Box>
       <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -111,8 +111,8 @@ export function MiniPlayer({ featured, resume, aboveNav }) {
 // 81px page-header tile: soft gradient square with the page icon on a coloured blob.
 export function HeaderTile({ children }) {
   return (
-    <Box sx={{ width: 81, height: 81, mx: 'auto', borderRadius: '22px', display: 'grid', placeItems: 'center', background: 'linear-gradient(135deg, #F6DCE3 0%, #EEE3F6 55%, #F8DDEB 100%)' }}>
-      <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', color: '#fff', background: 'linear-gradient(160deg, #B58AF2, #F28C7A)' }}>
+    <Box sx={{ width: 81, height: 81, mx: 'auto', borderRadius: '22px', display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${COLOR_PALETTE.rose[100]} 0%, ${COLOR_PALETTE.purple[100]} 55%, ${COLOR_PALETTE.pink[100]} 100%)` }}>
+      <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
         {children}
       </Box>
     </Box>
@@ -141,7 +141,7 @@ export const libSearchSx = {
 export const libSectionTitleSx = { fontSize: 18, lineHeight: '24px', fontWeight: 700 };
 
 const libBtnBase = { height: 48, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: LIB_TRACKING, textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
-export const libSolidBtnSx = { ...libBtnBase, bgcolor: LIB_ACCENT, color: '#fff', '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)` } };
+export const libSolidBtnSx = { ...libBtnBase, bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` } };
 export const libTintBtnSx = { ...libBtnBase, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', '&:hover': { bgcolor: 'var(--lib-player)', filter: 'brightness(0.97)' } };
 export const libSmallBtnSx = { ...libBtnBase, height: 36, px: 2, fontSize: 15 };
 
@@ -157,7 +157,7 @@ export const libChipSx = (on) => ({
   letterSpacing: LIB_TRACKING,
   whiteSpace: 'nowrap',
   bgcolor: on ? LIB_ACCENT : 'var(--lib-chip)',
-  color: on ? '#fff' : 'var(--lib-chip-text)',
+  color: on ? COLOR_PALETTE.white : 'var(--lib-chip-text)',
   '&.Mui-disabled': { opacity: 0.5 },
 });
 
@@ -170,7 +170,7 @@ export function PageHeader({ icon: Icon, title, subtitle }) {
   return (
     <Box sx={{ textAlign: 'center', mt: 3 }}>
       <HeaderTile>
-        <Icon sx={{ fontSize: 28, color: '#fff' }} />
+        <Icon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
       </HeaderTile>
       <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
         {title}

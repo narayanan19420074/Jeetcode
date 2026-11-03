@@ -1,4 +1,5 @@
 import { Box, Stack, Tooltip, Typography } from '@mui/material';
+import { COLOR_PALETTE } from '../../../../app/design/designTokens';
 
 const RADIUS = 9;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
@@ -11,7 +12,7 @@ function CompletionRing({ fraction }) {
       <circle {...ring} stroke="currentColor" strokeOpacity="0.15" />
       <circle
         {...ring}
-        stroke="#10B981"
+        stroke={COLOR_PALETTE.emerald[500]}
         strokeLinecap="round"
         strokeDasharray={`${CIRCUMFERENCE * fraction} ${CIRCUMFERENCE}`}
         transform="rotate(-90 12 12)"

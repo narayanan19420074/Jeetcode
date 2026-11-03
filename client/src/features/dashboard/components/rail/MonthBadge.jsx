@@ -1,5 +1,6 @@
 import { Box, Tooltip, Typography } from '@mui/material';
 import { GOLD_A, GOLD_B } from './railTokens';
+import { COLOR_PALETTE, withAlpha } from '../../../../app/design/designTokens';
 
 function HexShape() {
   return (
@@ -11,14 +12,14 @@ function HexShape() {
         </linearGradient>
       </defs>
       <polygon points="28,2 52,16 52,48 28,62 4,48 4,16" fill="url(#badgeGold)" />
-      <polygon points="28,7 47,18 47,46 28,57 9,46 9,18" fill="none" stroke="rgba(255,255,255,0.55)" strokeWidth="1.5" />
+      <polygon points="28,7 47,18 47,46 28,57 9,46 9,18" fill="none" stroke={withAlpha(COLOR_PALETTE.white, 0.55)} strokeWidth="1.5" />
     </svg>
   );
 }
 
 function BadgeLabel({ label, count, goal }) {
   return (
-    <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#3B1D00' }}>
+    <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: COLOR_PALETTE.yellow[950] }}>
       <Typography sx={{ fontSize: '0.62rem', fontWeight: 800, lineHeight: 1 }}>{label}</Typography>
       <Typography sx={{ fontSize: '0.95rem', fontWeight: 800, lineHeight: 1.15, fontVariantNumeric: 'tabular-nums' }}>
         {Math.min(count, goal)}

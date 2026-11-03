@@ -2,9 +2,10 @@ import { Box, ButtonBase, Typography } from '@mui/material';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import CompanyAvatar from '../../../components/CompanyAvatar';
 import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 const AVATAR_SIZE = 48;
-const readinessColor = (percent) => (percent < 40 ? '#EF4444' : percent < 70 ? '#F59E0B' : '#10B981');
+const readinessColor = (percent) => (percent < 40 ? COLOR_PALETTE.red[500] : percent < 70 ? COLOR_PALETTE.amber[500] : COLOR_PALETTE.emerald[500]);
 const plural = (count, word) => `${count.toLocaleString('en-IN')} ${count === 1 ? word : `${word}s`}`;
 
 function companyDetails(company) {

@@ -4,16 +4,17 @@ import { Avatar, Box } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
 import { DIFF_COLOR, todayKey } from '../dashboard/dashboardUtils';
 import { PLAN_AMBER } from '../studyplan/planUtils';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Bits shared by the leaderboard card (EmpireCard) and the side panel (LeaderboardView).
 
 export const MEDAL = {
-  1: { a: '#FDE68A', b: '#F59E0B', text: '#451A03', glow: 'rgba(245,158,11,0.55)' },
-  2: { a: '#F1F5F9', b: '#94A3B8', text: '#0F172A', glow: 'rgba(148,163,184,0.5)' },
-  3: { a: '#FDBA74', b: '#C2410C', text: '#431407', glow: 'rgba(194,65,12,0.5)' },
+  1: { a: COLOR_PALETTE.amber[200], b: COLOR_PALETTE.amber[500], text: COLOR_PALETTE.amber[950], glow: withAlpha(COLOR_PALETTE.amber[500], 0.55) },
+  2: { a: COLOR_PALETTE.slate[100], b: COLOR_PALETTE.slate[400], text: COLOR_PALETTE.slate[900], glow: withAlpha(COLOR_PALETTE.slate[400], 0.5) },
+  3: { a: COLOR_PALETTE.orange[300], b: COLOR_PALETTE.orange[700], text: COLOR_PALETTE.orange[950], glow: withAlpha(COLOR_PALETTE.orange[700], 0.5) },
 };
 export const grad = (m) => `linear-gradient(135deg, ${m.a}, ${m.b})`;
-export const APT_COLOR = '#8B5CF6';
+export const APT_COLOR = COLOR_PALETTE.violet[500];
 export const PT = { easy: 10, medium: 20, hard: 40, aptitude: 5 };
 export const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 
@@ -64,12 +65,12 @@ export function Mix({ row, onDark = false, sx }) {
     [row.aptitude * PT.aptitude, APT_COLOR],
   ].filter(([v]) => v > 0);
   return (
-    <Box aria-hidden sx={[{ display: 'flex', gap: '2px', height: 6, borderRadius: 99, overflow: 'hidden', bgcolor: onDark ? 'rgba(255,255,255,0.2)' : 'divider' }, sx]}>
+    <Box aria-hidden sx={[{ display: 'flex', gap: '2px', height: 6, borderRadius: 99, overflow: 'hidden', bgcolor: onDark ? withAlpha(COLOR_PALETTE.white, 0.2) : 'divider' }, sx]}>
       {parts.map(([v, c], i) => <Box key={i} sx={{ flex: v, bgcolor: c }} />)}
     </Box>
   );
 }
 
 export function YouChip() {
-  return <Box component="span" sx={{ ml: 0.75, px: 0.8, borderRadius: 99, fontSize: 10.5, fontWeight: 800, color: '#1B1200', bgcolor: PLAN_AMBER, verticalAlign: 'middle', flexShrink: 0 }}>You</Box>;
+  return <Box component="span" sx={{ ml: 0.75, px: 0.8, borderRadius: 99, fontSize: 10.5, fontWeight: 800, color: COLOR_PALETTE.custom.black1B1200, bgcolor: PLAN_AMBER, verticalAlign: 'middle', flexShrink: 0 }}>You</Box>;
 }

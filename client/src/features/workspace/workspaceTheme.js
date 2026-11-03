@@ -15,14 +15,14 @@
 //   panel   - console / results
 //   raised  - problem card, key caps, inline code chips
 import { gpayTokens } from '../../app/theme';
-import { SYNTAX } from '../../app/design/designTokens';
+import { SYNTAX, COLOR_PALETTE } from '../../app/design/designTokens';
 import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 
 // Library look on desktop (light mode): the page and panels are cream. The code area stays white, like a sheet of
 // paper on the cream page, and matches the Monaco light theme below. Dark mode keeps the app's own dark surfaces.
 const creamSurface = (t) => {
   const cream = LIBRARY_PALETTE.light;
-  return { canvas: '#FFFFFF', chrome: t.palette.background.paper, panel: cream.bg, raised: cream.player, line: t.palette.divider };
+  return { canvas: COLOR_PALETTE.white, chrome: t.palette.background.paper, panel: cream.bg, raised: cream.player, line: t.palette.divider };
 };
 
 export const wsSurface = (t) => {
@@ -55,9 +55,9 @@ const tokenRules = (c) => [
 ];
 
 const scrollbarColors = (dark) => ({
-  'scrollbarSlider.background': dark ? '#FFFFFF2E' : '#00000024',
-  'scrollbarSlider.hoverBackground': dark ? '#FFFFFF47' : '#00000038',
-  'scrollbarSlider.activeBackground': dark ? '#FFFFFF5C' : '#0000004D',
+  'scrollbarSlider.background': dark ? `${COLOR_PALETTE.white}2E` : `${COLOR_PALETTE.black}24`,
+  'scrollbarSlider.hoverBackground': dark ? `${COLOR_PALETTE.white}47` : `${COLOR_PALETTE.black}38`,
+  'scrollbarSlider.activeBackground': dark ? `${COLOR_PALETTE.white}5C` : `${COLOR_PALETTE.black}4D`,
 });
 
 const guideColors = (g) => ({
@@ -76,10 +76,10 @@ function editorColors(mode, primary) {
     'editor.background': dark ? g.bg : g.paper,
     'editor.foreground': `#${c.text}`,
     'editorGutter.background': dark ? g.paper : g.bg,
-    'editorLineNumber.foreground': dark ? '#8E99A8' : '#6B7280',
+    'editorLineNumber.foreground': dark ? COLOR_PALETTE.gray[400] : COLOR_PALETTE.gray[500],
     'editorLineNumber.activeForeground': `#${c.text}`,
     'editor.lineHighlightBackground': dark ? g.paper : g.bg,
-    'editor.lineHighlightBorder': '#00000000',
+    'editor.lineHighlightBorder': `${COLOR_PALETTE.black}00`,
     'editor.selectionBackground': g.hero,
     'editor.inactiveSelectionBackground': `${g.hero}99`,
     'editorCursor.foreground': primary,

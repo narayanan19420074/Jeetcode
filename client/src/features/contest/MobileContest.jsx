@@ -17,6 +17,7 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Phone layout of the Contest page in the Library look (same as the phone Problems, Home and You pages): Roboto type,
 // warm surface, 16px page padding, 44px back button, centred header tile, pill tabs and buttons, 18px section titles
@@ -25,8 +26,8 @@ import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtil
 // There is no top navigation bar on phones, and the 3D podium is replaced by a plain top 10 list.
 
 const ACCENT = LIB_ACCENT;
-const ORANGE = '#F97316';
-const STATUS = { live: ['Live', '#16A34A'], upcoming: ['Upcoming', ORANGE], ended: ['Ended', '#64748B'] };
+const ORANGE = COLOR_PALETTE.orange[500];
+const STATUS = { live: ['Live', COLOR_PALETTE.green[600]], upcoming: ['Upcoming', ORANGE], ended: ['Ended', COLOR_PALETTE.slate[500]] };
 const pad = (n) => String(n).padStart(2, '0');
 const mono = { fontFamily: '"JetBrains Mono","Fira Code",monospace', fontVariantNumeric: 'tabular-nums' };
 
@@ -86,7 +87,7 @@ function ContestPanel({ contest, past, action }) {
       </Typography>
 
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mt: 1.5 }}>
-        <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '15px', display: 'grid', placeItems: 'center', color: '#fff', background: `linear-gradient(135deg, ${ORANGE}, color-mix(in srgb, ${ORANGE} 60%, #000))`, boxShadow: `0 8px 18px -8px ${ORANGE}` }}>
+        <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '15px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(135deg, ${ORANGE}, color-mix(in srgb, ${ORANGE} 60%, ${COLOR_PALETTE.black}))`, boxShadow: `0 8px 18px -8px ${ORANGE}` }}>
           <EmojiEventsRoundedIcon sx={{ fontSize: 24 }} />
         </Box>
         <Box sx={{ minWidth: 0 }}>

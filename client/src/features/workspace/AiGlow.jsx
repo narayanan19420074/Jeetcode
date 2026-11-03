@@ -1,19 +1,20 @@
 import { Box } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Full-screen animated outline (the "live assistant" glow): a moving colour sweep that hugs the screen edge.
 // Purely decorative: it never captures taps. Respects the reduced-motion setting.
 const spin = keyframes`from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); }`;
-const SWEEP = 'conic-gradient(from 0deg, #F7A33B, #E8590C, #EC4899, #8B5CF6, #3B82F6, #22D3EE, #F7A33B)';
+const SWEEP = `conic-gradient(from 0deg, ${COLOR_PALETTE.custom.orangeF7A33B}, ${COLOR_PALETTE.orange[600]}, ${COLOR_PALETTE.pink[500]}, ${COLOR_PALETTE.violet[500]}, ${COLOR_PALETTE.blue[500]}, ${COLOR_PALETTE.cyan[400]}, ${COLOR_PALETTE.custom.orangeF7A33B})`;
 
 const ring = (width) => ({
   position: 'absolute',
   inset: 0,
   padding: `${width}px`,
   borderRadius: { xs: '28px', md: '14px' },
-  WebkitMask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
+  WebkitMask: `linear-gradient(${COLOR_PALETTE.black} 0 0) content-box, linear-gradient(${COLOR_PALETTE.black} 0 0)`,
   WebkitMaskComposite: 'xor',
-  mask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
+  mask: `linear-gradient(${COLOR_PALETTE.black} 0 0) content-box, linear-gradient(${COLOR_PALETTE.black} 0 0)`,
   maskComposite: 'exclude',
   overflow: 'hidden',
 });

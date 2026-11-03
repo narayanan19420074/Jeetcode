@@ -8,10 +8,11 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import { QuestCoin } from './PrepQuestBits';
 import { CLEARED_AT, sectionPct } from './questLogic';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const ROW = 112;
 const PROBLEMS_SHOWN = 12;
-const GOLD = '#F5B301';
+const GOLD = COLOR_PALETTE.custom.yellowF5B301;
 
 // Every kind of section becomes the same thing: a list of nodes, each with actions.
 // aptitude patterns -> Learn / Practice, coding problems -> Solve, external -> Open + reviewed.
@@ -133,7 +134,7 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
       ) : (
         <Box sx={{ position: 'relative', height: H, mt: 1 }}>
           <svg viewBox={`0 0 100 ${H}`} preserveAspectRatio="none" width="100%" height={H} style={{ position: 'absolute', inset: 0 }} aria-hidden>
-            <path d={pathTo(nodes.length - 1)} fill="none" stroke="rgba(128,128,128,.45)" strokeWidth="4" strokeLinecap="round" strokeDasharray="1 9" vectorEffect="non-scaling-stroke" />
+            <path d={pathTo(nodes.length - 1)} fill="none" stroke={withAlpha(COLOR_PALETTE.custom.gray808080, .45)} strokeWidth="4" strokeLinecap="round" strokeDasharray="1 9" vectorEffect="non-scaling-stroke" />
             {current > 0 && (
               <motion.path d={pathTo(current)} fill="none" stroke={GOLD} strokeWidth="5" strokeLinecap="round" vectorEffect="non-scaling-stroke"
                 initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, ease: 'easeOut', delay: 0.25 }} />
@@ -192,10 +193,10 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
         {picks && (
           <>
             <motion.div key="bd" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setPicked(null)}
-              style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.45)', zIndex: 1290 }} />
+              style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.black, .45), zIndex: 1290 }} />
             <motion.div key="sheet" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 320, damping: 32 }}
               style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 1300, display: 'flex', justifyContent: 'center' }}>
-              <Box sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper', borderRadius: '24px 24px 0 0', p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: '0 -12px 40px rgba(0,0,0,.3)' }}>
+              <Box sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper', borderRadius: '24px 24px 0 0', p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, .3)}` }}>
                 <Box sx={{ width: 40, height: 4, borderRadius: '4px', bgcolor: 'divider', mx: 'auto', mb: 2 }} />
                 <Typography sx={{ fontWeight: 900, fontSize: '1.2rem' }}>{picks.title}</Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>{picks.sub}</Typography>

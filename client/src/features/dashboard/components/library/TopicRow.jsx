@@ -4,8 +4,9 @@ import KeyboardDoubleArrowDownRoundedIcon from '@mui/icons-material/KeyboardDoub
 import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowUpRounded';
 import { TOPIC_ROW_H } from './libraryConstants';
 import useLibraryStyles from './libraryStyles';
+import { COLOR_PALETTE } from '../../../../app/design/designTokens';
 
-const FADE_MASK = 'linear-gradient(to right, #000 calc(100% - 130px), transparent calc(100% - 40px))';
+const FADE_MASK = `linear-gradient(to right, ${COLOR_PALETTE.black} calc(100% - 130px), transparent calc(100% - 40px))`;
 
 // True when the tags need more than one line, so the "Expand" toggle is needed.
 function useTopicOverflow(listRef, tags) {

@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { Box, ButtonBase, IconButton, Tooltip, Typography } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from './libraryStyle';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Red pill with the number of friend requests and unread chat messages waiting for me (both live).
 export function RequestBadge({ requests }) {
@@ -26,9 +27,9 @@ const navButtonSx = (pal, active) => ({
   textAlign: 'left',
   fontFamily: 'inherit',
   letterSpacing: LIB_TRACKING,
-  color: active ? '#fff' : pal.text,
+  color: active ? COLOR_PALETTE.white : pal.text,
   bgcolor: active ? LIB_ACCENT : 'transparent',
-  '&:hover': { bgcolor: active ? `color-mix(in srgb, ${LIB_ACCENT} 85%, #000)` : pal.chip },
+  '&:hover': { bgcolor: active ? `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` : pal.chip },
   '&.Mui-focusVisible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 1 },
 });
 
@@ -36,12 +37,12 @@ export function NavButton({ active, icon: Icon, label, count, accent, onClick, t
   const pal = useLibraryPalette();
   return (
     <ButtonBase onClick={onClick} aria-current={active ? 'page' : undefined} sx={navButtonSx(pal, active)}>
-      <Icon sx={{ fontSize: 22, color: active ? '#fff' : accent || pal.muted }} />
+      <Icon sx={{ fontSize: 22, color: active ? COLOR_PALETTE.white : accent || pal.muted }} />
       <Typography noWrap sx={{ flex: 1, fontSize: 15, fontWeight: active ? 700 : 500, letterSpacing: LIB_TRACKING }}>
         {label}
       </Typography>
       {count !== undefined && (
-        <Typography variant="caption" sx={{ color: active ? 'rgba(255,255,255,0.8)' : pal.muted, fontVariantNumeric: 'tabular-nums' }}>
+        <Typography variant="caption" sx={{ color: active ? withAlpha(COLOR_PALETTE.white, 0.8) : pal.muted, fontVariantNumeric: 'tabular-nums' }}>
           {count}
         </Typography>
       )}

@@ -11,10 +11,11 @@ import ResetCountdown from './ResetCountdown';
 import useStreakMonth from './useStreakMonth';
 import useStudyPlanMarks from './useStudyPlanMarks';
 import { CALENDAR_GRADIENT, FAINT, SOFT, WEEKDAYS } from './railTokens';
+import { COLOR_PALETTE, withAlpha } from '../../../../app/design/designTokens';
 
 const cardSx = (phone) => [
   surface,
-  { p: 2.25, color: '#fff', background: CALENDAR_GRADIENT, border: 'none', borderRadius: phone ? '14px' : '20px', boxShadow: '0 14px 28px -16px rgba(2,6,23,0.85), inset 0 1px 0 rgba(255,255,255,0.18)' },
+  { p: 2.25, color: COLOR_PALETTE.white, background: CALENDAR_GRADIENT, border: 'none', borderRadius: phone ? '14px' : '20px', boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` },
 ];
 
 function StreakHeader({ streak, isAuthenticated, badge }) {
@@ -41,13 +42,13 @@ function MonthNav({ month, phone }) {
   const size = phone ? { width: 40, height: 40 } : {};
   return (
     <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
-      <IconButton size="small" sx={{ color: '#fff', ...size, ...(phone && { ml: -1 }) }} onClick={() => month.move(-1)} aria-label="Previous month">
+      <IconButton size="small" sx={{ color: COLOR_PALETTE.white, ...size, ...(phone && { ml: -1 }) }} onClick={() => month.move(-1)} aria-label="Previous month">
         <ChevronLeftRoundedIcon fontSize="small" />
       </IconButton>
       <Typography variant="body2" sx={{ fontWeight: 700, ...(phone && { fontSize: 16, letterSpacing: '0.03em' }) }}>
         {month.monthLabel}
       </Typography>
-      <IconButton size="small" sx={{ color: '#fff', '&.Mui-disabled': { color: FAINT }, ...size, ...(phone && { mr: -1 }) }} onClick={() => month.move(1)} disabled={month.isCurrent} aria-label="Next month">
+      <IconButton size="small" sx={{ color: COLOR_PALETTE.white, '&.Mui-disabled': { color: FAINT }, ...size, ...(phone && { mr: -1 }) }} onClick={() => month.move(1)} disabled={month.isCurrent} aria-label="Next month">
         <ChevronRightRoundedIcon fontSize="small" />
       </IconButton>
     </Stack>
@@ -92,7 +93,7 @@ function GuestFooter() {
       <Typography variant="caption" sx={{ color: SOFT }}>
         Log in to start a streak.
       </Typography>
-      <Button size="small" variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: 700, bgcolor: PLAN_AMBER, color: '#1B1200', '&:hover': { bgcolor: '#F5B50F' } }}>
+      <Button size="small" variant="contained" disableElevation onClick={() => navigate('/login')} sx={{ fontWeight: 700, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
         Log in
       </Button>
     </Stack>
@@ -142,7 +143,7 @@ export default function StreakCalendarCard({ user, isAuthenticated, byDate, phon
       <StreakHeader streak={user?.streakDays ?? 0} isAuthenticated={isAuthenticated} badge={badge} />
       <MonthNav month={month} phone={phone} />
       <CalendarGrid month={month} byDate={byDate} marks={marks} />
-      <Box sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid rgba(255,255,255,0.18)' }}>
+      <Box sx={{ mt: 1.5, pt: 1.5, borderTop: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.18)}` }}>
         <StreakFooter user={user} isAuthenticated={isAuthenticated} beforeHistory={month.beforeHistory} />
       </Box>
       <PlanPickerMenu menu={marks.planMenu} onClose={marks.closePlanMenu} onPick={marks.openPlan} />
