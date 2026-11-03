@@ -10,12 +10,13 @@ const FONT_VARIANTS_TO_KEEP = ['monospace']; // code and numbers stay in the mon
 
 export const isDashboardPath = (pathname) => pathname.replace(/\/+$/, '') === '/dashboard';
 
-// Pages that wear the Library look on desktop: the dashboard, Problems, Store, Companies (/prep), Aptitude and Settings
-// (every /settings/... section page).
+// Pages that wear the Library look on desktop: the dashboard, Problems, Store, Companies (/prep), Aptitude, Settings
+// and the code workspace. Settings and the workspace have a sub-path (/settings/profile, /workspace/two-sum).
 const DESKTOP_LOOK_PATHS = ['/dashboard', '/problems', '/store', '/prep', '/aptitude', '/settings'];
+const DESKTOP_LOOK_PREFIXES = ['/settings/', '/workspace/'];
 export const usesDesktopLook = (pathname) => {
   const path = pathname.replace(/\/+$/, '');
-  return DESKTOP_LOOK_PATHS.includes(path) || path.startsWith('/settings/');
+  return DESKTOP_LOOK_PATHS.includes(path) || DESKTOP_LOOK_PREFIXES.some((prefix) => path.startsWith(prefix));
 };
 
 // Components that need the marker (for example the problem library) read it with this hook.

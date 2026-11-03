@@ -15,9 +15,18 @@
 //   panel   - console / results
 //   raised  - problem card, key caps, inline code chips
 import { gpayTokens } from '../../app/theme';
+import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
+
+// Library look on desktop (light mode): the page and panels are cream. The code area stays white, like a sheet of
+// paper on the cream page, and matches the Monaco light theme below. Dark mode keeps the app's own dark surfaces.
+const creamSurface = (t) => {
+  const cream = LIBRARY_PALETTE.light;
+  return { canvas: '#FFFFFF', chrome: t.palette.background.paper, panel: cream.bg, raised: cream.player, line: t.palette.divider };
+};
 
 export const wsSurface = (t) => {
   const dark = t.palette.mode === 'dark';
+  if (t.libraryLook && !dark) return creamSurface(t);
   const g = gpayTokens[dark ? 'dark' : 'light'];
   return {
     canvas: dark ? g.bg : t.palette.background.paper,
@@ -34,58 +43,66 @@ const SYNTAX = {
   dark: { text: 'E6EDF3', comment: '8B96A5', keyword: 'C9A9F5', string: '9ECE9A', number: 'F2B880', type: '7CC4F0', regexp: '7FDBCA' },
 };
 
+const tokenRules = (c) => [
+  { token: '', foreground: c.text },
+  { token: 'comment', foreground: c.comment, fontStyle: 'italic' },
+  { token: 'keyword', foreground: c.keyword },
+  { token: 'keyword.directive', foreground: c.keyword },
+  { token: 'metatag', foreground: c.keyword },
+  { token: 'string', foreground: c.string },
+  { token: 'string.include', foreground: c.string },
+  { token: 'number', foreground: c.number },
+  { token: 'regexp', foreground: c.regexp },
+  { token: 'type', foreground: c.type },
+  { token: 'type.identifier', foreground: c.type },
+  { token: 'delimiter', foreground: c.text },
+  { token: 'operator', foreground: c.keyword },
+];
+
+const scrollbarColors = (dark) => ({
+  'scrollbarSlider.background': dark ? '#FFFFFF2E' : '#00000024',
+  'scrollbarSlider.hoverBackground': dark ? '#FFFFFF47' : '#00000038',
+  'scrollbarSlider.activeBackground': dark ? '#FFFFFF5C' : '#0000004D',
+});
+
+const guideColors = (g) => ({
+  'editorIndentGuide.background': g.tonal,
+  'editorIndentGuide.background1': g.tonal,
+  'editorIndentGuide.activeBackground': g.lineSolid,
+  'editorIndentGuide.activeBackground1': g.lineSolid,
+  'editorWhitespace.foreground': g.lineSolid,
+});
+
+function editorColors(mode, primary) {
+  const g = gpayTokens[mode];
+  const c = SYNTAX[mode];
+  const dark = mode === 'dark';
+  return {
+    'editor.background': dark ? g.bg : g.paper,
+    'editor.foreground': `#${c.text}`,
+    'editorGutter.background': dark ? g.paper : g.bg,
+    'editorLineNumber.foreground': dark ? '#8E99A8' : '#6B7280',
+    'editorLineNumber.activeForeground': `#${c.text}`,
+    'editor.lineHighlightBackground': dark ? g.paper : g.bg,
+    'editor.lineHighlightBorder': '#00000000',
+    'editor.selectionBackground': g.hero,
+    'editor.inactiveSelectionBackground': `${g.hero}99`,
+    'editorCursor.foreground': primary,
+    'editorBracketMatch.background': `${g.hero}99`,
+    'editorBracketMatch.border': primary,
+    'editorWidget.background': dark ? g.tonal : g.paper,
+    'editorSuggestWidget.background': dark ? g.tonal : g.paper,
+    ...guideColors(g),
+    ...scrollbarColors(dark),
+  };
+}
+
 export function defineMonacoThemes(monaco, primary) {
   [
     ['light', 'vs'],
     ['dark', 'vs-dark'],
   ].forEach(([mode, base]) => {
-    const g = gpayTokens[mode];
-    const c = SYNTAX[mode];
-    const dark = mode === 'dark';
-    const canvas = dark ? g.bg : g.paper;
-    monaco.editor.defineTheme(`jeetcode-${mode}`, {
-      base,
-      inherit: true,
-      rules: [
-        { token: '', foreground: c.text },
-        { token: 'comment', foreground: c.comment, fontStyle: 'italic' },
-        { token: 'keyword', foreground: c.keyword },
-        { token: 'keyword.directive', foreground: c.keyword },
-        { token: 'metatag', foreground: c.keyword },
-        { token: 'string', foreground: c.string },
-        { token: 'string.include', foreground: c.string },
-        { token: 'number', foreground: c.number },
-        { token: 'regexp', foreground: c.regexp },
-        { token: 'type', foreground: c.type },
-        { token: 'type.identifier', foreground: c.type },
-        { token: 'delimiter', foreground: c.text },
-        { token: 'operator', foreground: c.keyword },
-      ],
-      colors: {
-        'editor.background': canvas,
-        'editor.foreground': `#${c.text}`,
-        'editorGutter.background': dark ? g.paper : g.bg,
-        'editorLineNumber.foreground': dark ? '#8E99A8' : '#6B7280',
-        'editorLineNumber.activeForeground': `#${c.text}`,
-        'editor.lineHighlightBackground': dark ? g.paper : g.bg,
-        'editor.lineHighlightBorder': '#00000000',
-        'editor.selectionBackground': g.hero,
-        'editor.inactiveSelectionBackground': `${g.hero}99`,
-        'editorCursor.foreground': primary,
-        'editorIndentGuide.background': g.tonal,
-        'editorIndentGuide.background1': g.tonal,
-        'editorIndentGuide.activeBackground': g.lineSolid,
-        'editorIndentGuide.activeBackground1': g.lineSolid,
-        'editorBracketMatch.background': `${g.hero}99`,
-        'editorBracketMatch.border': primary,
-        'editorWhitespace.foreground': g.lineSolid,
-        'editorWidget.background': dark ? g.tonal : g.paper,
-        'editorSuggestWidget.background': dark ? g.tonal : g.paper,
-        'scrollbarSlider.background': dark ? '#FFFFFF2E' : '#00000024',
-        'scrollbarSlider.hoverBackground': dark ? '#FFFFFF47' : '#00000038',
-        'scrollbarSlider.activeBackground': dark ? '#FFFFFF5C' : '#0000004D',
-      },
-    });
+    monaco.editor.defineTheme(`jeetcode-${mode}`, { base, inherit: true, rules: tokenRules(SYNTAX[mode]), colors: editorColors(mode, primary) });
   });
 }
 
