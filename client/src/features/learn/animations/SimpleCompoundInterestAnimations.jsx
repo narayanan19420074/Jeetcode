@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -31,7 +32,7 @@ export function SiBasicAnimation() {
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="210" y="85" textAnchor="middle" fontSize="15" fontWeight="700" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="85" textAnchor="middle" fontSize="15" fontWeight="700" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               = (5000 × 8 × 3) ÷ 100 = ₹1200
             </text>
           </Reveal>
@@ -39,13 +40,13 @@ export function SiBasicAnimation() {
           <Reveal at={3} step={step}>
             <rect x="60" y="105" width="130" height="36" rx="6" fill="currentColor" opacity="0.08" />
             <text x="125" y="127" textAnchor="middle" fontSize="12" fontWeight="700" fill="currentColor">Principal</text>
-            <rect x="230" y="105" width="130" height="36" rx="6" fill="#6366f1" opacity="0.12" />
-            <text x="295" y="127" textAnchor="middle" fontSize="12" fontWeight="700" fill="#6366f1">+ Interest</text>
+            <rect x="230" y="105" width="130" height="36" rx="6" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="295" y="127" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>+ Interest</text>
           </Reveal>
 
           <Reveal at={4} step={step}>
             <rect x="130" y="155" width="160" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="185" textAnchor="middle" fontSize="19" fontWeight="800" fill="#10b981">
+            <text x="210" y="185" textAnchor="middle" fontSize="19" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               Total amount = ₹6200
             </text>
           </Reveal>
@@ -77,29 +78,29 @@ export function CiGrowthAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="130" y="50" fontSize="14" fill="#6366f1">→ +10% →</text>
-            <rect x="200" y="30" width="90" height="32" rx="6" fill="#6366f1" opacity="0.12" />
-            <text x="245" y="51" textAnchor="middle" fontSize="12" fontWeight="700" fill="#6366f1">₹5500</text>
+            <text x="130" y="50" fontSize="14" fill={COLOR_PALETTE.indigo[500]}>→ +10% →</text>
+            <rect x="200" y="30" width="90" height="32" rx="6" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="245" y="51" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>₹5500</text>
             <text x="245" y="75" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.6">Year 1</text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="310" y="50" fontSize="14" fill="#10b981">→ +10% →</text>
-            <rect x="20" y="90" width="90" height="32" rx="6" fill="#10b981" opacity="0.12" />
-            <text x="65" y="111" textAnchor="middle" fontSize="12" fontWeight="700" fill="#10b981">₹6050</text>
+            <text x="310" y="50" fontSize="14" fill={COLOR_PALETTE.emerald[500]}>→ +10% →</text>
+            <rect x="20" y="90" width="90" height="32" rx="6" fill={COLOR_PALETTE.emerald[500]} opacity="0.12" />
+            <text x="65" y="111" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>₹6050</text>
             <text x="65" y="132" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.6">Year 2 (on ₹5500, not ₹5000!)</text>
           </Reveal>
 
           <Reveal at={3} step={step}>
-            <text x="130" y="110" fontSize="14" fill="#f59e0b">→ +10% →</text>
-            <rect x="200" y="90" width="90" height="32" rx="6" fill="#f59e0b" opacity="0.15" />
-            <text x="245" y="111" textAnchor="middle" fontSize="12" fontWeight="700" fill="#f59e0b">₹6655</text>
+            <text x="130" y="110" fontSize="14" fill={COLOR_PALETTE.amber[500]}>→ +10% →</text>
+            <rect x="200" y="90" width="90" height="32" rx="6" fill={COLOR_PALETTE.amber[500]} opacity="0.15" />
+            <text x="245" y="111" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.amber[500]}>₹6655</text>
             <text x="245" y="132" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.6">Year 3</text>
           </Reveal>
 
           <Reveal at={4} step={step}>
             <rect x="80" y="150" width="260" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="180" textAnchor="middle" fontSize="18" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="180" textAnchor="middle" fontSize="18" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               CI = 6655 − 5000 = ₹1655
             </text>
             <text x="210" y="200" textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.7">
@@ -137,12 +138,12 @@ export function SiCiDifferenceAnimation() {
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <rect x="230" y="30" width="140" height="34" rx="6" fill="#6366f1" opacity="0.12" />
-            <text x="300" y="52" textAnchor="middle" fontSize="13" fontWeight="700" fill="#6366f1">CI = ₹820</text>
+            <rect x="230" y="30" width="140" height="34" rx="6" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="300" y="52" textAnchor="middle" fontSize="13" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>CI = ₹820</text>
           </Reveal>
 
           <Reveal at={3} step={step}>
-            <text x="210" y="100" textAnchor="middle" fontSize="14" fontWeight="700" fill="#10b981">
+            <text x="210" y="100" textAnchor="middle" fontSize="14" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               Difference = 820 − 800 = ₹20
             </text>
           </Reveal>
@@ -152,7 +153,7 @@ export function SiCiDifferenceAnimation() {
             <text x="210" y="150" textAnchor="middle" fontSize="14" fill="currentColor">
               Shortcut: P×(R/100)² = 8000×(0.05)²
             </text>
-            <text x="210" y="175" textAnchor="middle" fontSize="18" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="175" textAnchor="middle" fontSize="18" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               = ₹20 ✓ matches!
             </text>
           </Reveal>

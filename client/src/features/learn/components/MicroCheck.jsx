@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Box, Stack, Typography, ButtonBase, Collapse, alpha } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Inline quick-check under each concept's explanation.
 // Retry until correct: once the user picks the right option, it locks and
@@ -72,9 +73,9 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
                   border: '1.5px solid',
                   borderColor: showAsCorrect ? 'success.main' : showAsWrong ? 'error.main' : 'divider',
                   bgcolor: showAsCorrect
-                    ? alpha('#10b981', 0.08)
+                    ? alpha(COLOR_PALETTE.emerald[500], 0.08)
                     : showAsWrong
-                    ? alpha('#ef4444', 0.08)
+                    ? alpha(COLOR_PALETTE.red[500], 0.08)
                     : 'background.paper',
                   opacity: dim ? 0.55 : 1,
                   transition: 'all 0.2s ease',
@@ -118,7 +119,7 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
               borderRadius: 2,
               border: '1.5px solid',
               borderColor: 'success.main',
-              bgcolor: alpha('#10b981', 0.08),
+              bgcolor: alpha(COLOR_PALETTE.emerald[500], 0.08),
             }}
           >
             <Typography variant="subtitle2" sx={{ fontWeight: 800, mb: 0.5, color: 'success.main' }}>

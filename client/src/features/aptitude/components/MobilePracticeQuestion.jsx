@@ -9,6 +9,7 @@ import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, LibraryFont, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './aptitudeUi';
 import { DifficultyTag } from './MobilePractice';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Phone layout of a single Aptitude practice question. Same page padding, back button, type scale (18px question,
 // 16px body, 15px muted details), cream panels and pill buttons as the phone Problems and Aptitude pages.
@@ -125,7 +126,7 @@ function Option({ index, text, state, disabled, onClick }) {
     >
       <Box
         aria-hidden
-        sx={{ width: 28, height: 28, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, fontSize: 15, fontWeight: 500, border: '1.5px solid', borderColor: accent || 'var(--lib-muted)', bgcolor: accent || 'transparent', color: accent ? '#fff' : 'var(--lib-muted)' }}
+        sx={{ width: 28, height: 28, borderRadius: '50%', display: 'grid', placeItems: 'center', flexShrink: 0, fontSize: 15, fontWeight: 500, border: '1.5px solid', borderColor: accent || 'var(--lib-muted)', bgcolor: accent || 'transparent', color: accent ? COLOR_PALETTE.white : 'var(--lib-muted)' }}
       >
         {OPTION_LABELS[index]}
       </Box>

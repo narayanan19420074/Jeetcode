@@ -39,12 +39,13 @@ import ScratchPad from './ScratchPad';
 import QuestionStimulus from './components/QuestionStimulus';
 import { PaletteSymbol } from './AptitudeTestInstructionsPage';
 import { OPTION_LABELS, PALETTE, formatClock } from './components/aptitudeUi';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Exam-style interface. Everything the learner does is autosaved to
 // the server (answers, review flags, per-question time), the countdown is
 // derived from the SERVER clock + expiresAt, and a refresh resumes the paper.
 
-const NAVY = '#1F3A5F';
+const NAVY = COLOR_PALETTE.custom.sky1F3A5F;
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
 
 const emptyState = () => ({ selected: null, marked: false, visited: false, time: 0 });
@@ -91,7 +92,7 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
         ))}
       </Box>
 
-      <Box sx={{ px: 1.5, py: 1, bgcolor: NAVY, color: '#fff' }}>
+      <Box sx={{ px: 1.5, py: 1, bgcolor: NAVY, color: COLOR_PALETTE.white }}>
         <Typography variant="caption" sx={{ fontWeight: 800, letterSpacing: '0.06em' }}>
           QUESTION PALETTE
         </Typography>
@@ -112,7 +113,7 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
                   cursor: 'pointer',
                   justifySelf: 'center',
                   borderRadius: 1,
-                  outline: current ? '2.5px solid #2563EB' : '2.5px solid transparent',
+                  outline: current ? `2.5px solid ${COLOR_PALETTE.blue[600]}` : '2.5px solid transparent',
                   outlineOffset: 2,
                   '&:hover': { filter: 'brightness(0.93)' },
                 }}
@@ -127,7 +128,7 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
       </Box>
 
       <Box sx={{ p: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
-        <Button fullWidth variant="contained" disableElevation onClick={onSubmit} disabled={submitting} sx={{ py: 1.1, bgcolor: '#2E9E4F', '&:hover': { bgcolor: '#26853f' } }}>
+        <Button fullWidth variant="contained" disableElevation onClick={onSubmit} disabled={submitting} sx={{ py: 1.1, bgcolor: COLOR_PALETTE.custom.green2E9E4F, '&:hover': { bgcolor: COLOR_PALETTE.green[700] } }}>
           {submitting ? <CircularProgress size={20} color="inherit" /> : 'Submit Test'}
         </Button>
       </Box>
@@ -446,34 +447,34 @@ function ExamInterface() {
   );
 
   return (
-    <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', bgcolor: '#EEF1F5', color: 'text.primary' }}>
+    <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', bgcolor: COLOR_PALETTE.slate[100], color: 'text.primary' }}>
       {/* Header */}
-      <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', bgcolor: NAVY, color: '#fff', px: { xs: 1.5, sm: 2.5 }, height: 56, flexShrink: 0 }}>
+      <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', bgcolor: NAVY, color: COLOR_PALETTE.white, px: { xs: 1.5, sm: 2.5 }, height: 56, flexShrink: 0 }}>
         <Typography sx={{ fontWeight: 900, letterSpacing: '-0.01em', fontSize: 18 }}>JeetCode</Typography>
         <Typography variant="body2" sx={{ opacity: 0.8, display: { xs: 'none', sm: 'block' } }}>
           Aptitude Test
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', opacity: 0.85, display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-          {saveState === 'error' ? <CloudOffRoundedIcon sx={{ fontSize: 18, color: '#FCA5A5' }} /> : <CloudDoneRoundedIcon sx={{ fontSize: 18 }} />}
+          {saveState === 'error' ? <CloudOffRoundedIcon sx={{ fontSize: 18, color: COLOR_PALETTE.red[300] }} /> : <CloudDoneRoundedIcon sx={{ fontSize: 18 }} />}
           <Typography variant="caption">{saveState === 'saving' ? 'Saving…' : saveState === 'error' ? 'Offline — retrying' : 'All changes saved'}</Typography>
         </Stack>
         <Tooltip title="Calculator">
-          <IconButton onClick={() => setCalcOpen((v) => !v)} sx={{ color: '#fff', bgcolor: calcOpen ? 'rgba(255,255,255,0.18)' : 'transparent' }}>
+          <IconButton onClick={() => setCalcOpen((v) => !v)} sx={{ color: COLOR_PALETTE.white, bgcolor: calcOpen ? withAlpha(COLOR_PALETTE.white, 0.18) : 'transparent' }}>
             <CalculateRoundedIcon />
           </IconButton>
         </Tooltip>
         <Tooltip title={isFull ? 'Exit full screen' : 'Full screen'}>
-          <IconButton onClick={toggleFull} sx={{ color: '#fff', display: { xs: 'none', sm: 'inline-flex' } }}>
+          <IconButton onClick={toggleFull} sx={{ color: COLOR_PALETTE.white, display: { xs: 'none', sm: 'inline-flex' } }}>
             {isFull ? <FullscreenExitRoundedIcon /> : <FullscreenRoundedIcon />}
           </IconButton>
         </Tooltip>
         {compact && (
-          <IconButton onClick={() => setPaletteOpen(true)} sx={{ color: '#fff' }} aria-label="Question palette">
+          <IconButton onClick={() => setPaletteOpen(true)} sx={{ color: COLOR_PALETTE.white }} aria-label="Question palette">
             <GridViewRoundedIcon />
           </IconButton>
         )}
-        <Box sx={{ px: 1.5, py: 0.6, borderRadius: 1, bgcolor: low ? '#B91C1C' : 'rgba(255,255,255,0.14)', transition: 'background-color .3s' }}>
+        <Box sx={{ px: 1.5, py: 0.6, borderRadius: 1, bgcolor: low ? COLOR_PALETTE.red[700] : withAlpha(COLOR_PALETTE.white, 0.14), transition: 'background-color .3s' }}>
           <Typography variant="caption" sx={{ opacity: 0.8, display: 'block', lineHeight: 1, fontSize: 10 }}>
             TIME LEFT
           </Typography>
@@ -484,8 +485,8 @@ function ExamInterface() {
       </Stack>
 
       {/* Section strip */}
-      <Stack direction="row" sx={{ alignItems: 'center', bgcolor: '#fff', borderBottom: '1px solid', borderColor: 'divider', px: { xs: 1.5, sm: 2.5 }, height: 40, flexShrink: 0 }}>
-        <Box sx={{ px: 1.5, py: 0.4, bgcolor: '#2563EB', color: '#fff', borderRadius: 0.75, fontWeight: 700, fontSize: 13 }}>Quantitative Aptitude</Box>
+      <Stack direction="row" sx={{ alignItems: 'center', bgcolor: COLOR_PALETTE.white, borderBottom: '1px solid', borderColor: 'divider', px: { xs: 1.5, sm: 2.5 }, height: 40, flexShrink: 0 }}>
+        <Box sx={{ px: 1.5, py: 0.4, bgcolor: COLOR_PALETTE.blue[600], color: COLOR_PALETTE.white, borderRadius: 0.75, fontWeight: 700, fontSize: 13 }}>Quantitative Aptitude</Box>
         <Typography variant="caption" color="text.secondary" sx={{ ml: 2 }}>
           {questions.length} questions · +1 for correct · no negative marking
         </Typography>
@@ -501,14 +502,14 @@ function ExamInterface() {
       <Box sx={{ flex: 1, display: 'flex', minHeight: 0 }}>
         {/* Question column */}
         <Box sx={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', bgcolor: '#fff', px: { xs: 1.5, sm: 2.5 }, py: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
+          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', bgcolor: COLOR_PALETTE.white, px: { xs: 1.5, sm: 2.5 }, py: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
             <Typography sx={{ fontWeight: 800, fontSize: 17 }}>Question No. {idx + 1}</Typography>
             <Typography variant="caption" color="text.secondary">
-              Marks: <b style={{ color: '#2E9E4F' }}>+1</b> / <b style={{ color: '#E53935' }}>−0</b>
+              Marks: <b style={{ color: COLOR_PALETTE.custom.green2E9E4F }}>+1</b> / <b style={{ color: COLOR_PALETTE.custom.redE53935 }}>−0</b>
             </Typography>
           </Stack>
 
-          <Box sx={{ flex: 1, overflowY: 'auto', bgcolor: '#fff', px: { xs: 1.5, sm: 2.5 }, py: 2.5 }}>
+          <Box sx={{ flex: 1, overflowY: 'auto', bgcolor: COLOR_PALETTE.white, px: { xs: 1.5, sm: 2.5 }, py: 2.5 }}>
             <Box sx={{ maxWidth: 820 }}>
               <QuestionStimulus set={current.setId ? setsById[current.setId] : null} />
               <Typography sx={{ fontSize: 18, lineHeight: 1.7, fontWeight: 500, mb: 3, whiteSpace: 'pre-line' }}>{current.questionText}</Typography>
@@ -529,11 +530,11 @@ function ExamInterface() {
                         px: 1,
                         py: 0.9,
                         border: '1px solid',
-                        borderColor: on ? '#2563EB' : 'divider',
-                        bgcolor: on ? 'rgba(37,99,235,0.07)' : 'transparent',
+                        borderColor: on ? COLOR_PALETTE.blue[600] : 'divider',
+                        bgcolor: on ? withAlpha(COLOR_PALETTE.blue[600], 0.07) : 'transparent',
                         borderRadius: 1,
                         cursor: 'pointer',
-                        '&:hover': { bgcolor: on ? 'rgba(37,99,235,0.07)' : 'action.hover' },
+                        '&:hover': { bgcolor: on ? withAlpha(COLOR_PALETTE.blue[600], 0.07) : 'action.hover' },
                       }}
                     >
                       <Radio checked={on} tabIndex={-1} size="small" sx={{ p: 0.75 }} />
@@ -553,14 +554,14 @@ function ExamInterface() {
             spacing={1}
            
             useFlexGap
-            sx={{ alignItems: 'center', flexWrap: 'wrap', bgcolor: '#F8FAFC', borderTop: '1px solid', borderColor: 'divider', px: { xs: 1.5, sm: 2.5 }, py: 1.25 }}
+            sx={{ alignItems: 'center', flexWrap: 'wrap', bgcolor: COLOR_PALETTE.slate[50], borderTop: '1px solid', borderColor: 'divider', px: { xs: 1.5, sm: 2.5 }, py: 1.25 }}
           >
             {cur.marked ? (
               <Button variant="outlined" size="small" onClick={unmark} sx={{ borderColor: PALETTE.marked.bg, color: PALETTE.marked.bg }}>
                 Unmark review
               </Button>
             ) : (
-              <Button variant="outlined" size="small" onClick={markNext} sx={{ borderColor: PALETTE.marked.bg, color: PALETTE.marked.bg, '&:hover': { borderColor: PALETTE.marked.bg, bgcolor: 'rgba(106,63,181,0.08)' } }}>
+              <Button variant="outlined" size="small" onClick={markNext} sx={{ borderColor: PALETTE.marked.bg, color: PALETTE.marked.bg, '&:hover': { borderColor: PALETTE.marked.bg, bgcolor: withAlpha(COLOR_PALETTE.custom.indigo6A3FB5, 0.08) } }}>
                 Mark for Review &amp; Next
               </Button>
             )}
@@ -574,7 +575,7 @@ function ExamInterface() {
             <Button size="small" color="inherit" disabled={idx === questions.length - 1} onClick={() => goTo(idx + 1)}>
               Next ›
             </Button>
-            <Button variant="contained" disableElevation onClick={saveNext} sx={{ bgcolor: '#2563EB', px: 3, fontWeight: 800 }}>
+            <Button variant="contained" disableElevation onClick={saveNext} sx={{ bgcolor: COLOR_PALETTE.blue[600], px: 3, fontWeight: 800 }}>
               {idx === questions.length - 1 ? 'Save' : 'Save & Next'}
             </Button>
           </Stack>
@@ -592,11 +593,11 @@ function ExamInterface() {
       {/* Calculator */}
       {calcOpen && (
         <Paper elevation={8} sx={{ position: 'fixed', top: 104, right: compact ? 12 : 336, width: 300, zIndex: (t) => t.zIndex.modal - 1, borderRadius: 1 }}>
-          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', bgcolor: NAVY, color: '#fff', px: 1.5, py: 0.5, borderRadius: '4px 4px 0 0' }}>
+          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', bgcolor: NAVY, color: COLOR_PALETTE.white, px: 1.5, py: 0.5, borderRadius: '4px 4px 0 0' }}>
             <Typography variant="caption" sx={{ fontWeight: 800 }}>
               Calculator
             </Typography>
-            <IconButton size="small" onClick={() => setCalcOpen(false)} sx={{ color: '#fff' }}>
+            <IconButton size="small" onClick={() => setCalcOpen(false)} sx={{ color: COLOR_PALETTE.white }}>
               <CloseRoundedIcon fontSize="small" />
             </IconButton>
           </Stack>
@@ -637,7 +638,7 @@ function ExamInterface() {
         </DialogContent>
         <DialogActions sx={{ px: 3, pb: 2 }}>
           <Button onClick={() => setConfirmOpen(false)}>Go back</Button>
-          <Button variant="contained" disableElevation onClick={submit} sx={{ bgcolor: '#2E9E4F', '&:hover': { bgcolor: '#26853f' } }}>
+          <Button variant="contained" disableElevation onClick={submit} sx={{ bgcolor: COLOR_PALETTE.custom.green2E9E4F, '&:hover': { bgcolor: COLOR_PALETTE.green[700] } }}>
             Submit test
           </Button>
         </DialogActions>

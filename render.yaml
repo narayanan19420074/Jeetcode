@@ -12,7 +12,7 @@ services:
 
     # Runs from the repo root. --include=dev is REQUIRED: Render sets
     # NODE_ENV=production, which would otherwise skip devDependencies (vite).
-    buildCommand: npm --prefix client ci --include=dev && npm --prefix client run build && npm --prefix server ci
+    buildCommand: npm --prefix client ci --include=dev && node client/scripts/check-design-tokens.mjs && npm --prefix client run build && npm --prefix server ci
     startCommand: npm --prefix server start
     healthCheckPath: /api/health
 

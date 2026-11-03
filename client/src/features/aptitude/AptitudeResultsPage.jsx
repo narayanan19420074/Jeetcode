@@ -33,6 +33,7 @@ import { Confetti, CountUp } from './components/MotionBits';
 import { ALIENS, testXp } from './components/gamification';
 import QuestionStimulus from './components/QuestionStimulus';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from './components/aptitudeUi';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
 const TARGET = { easy: 45, medium: 90, hard: 150 };
@@ -55,7 +56,7 @@ function Stat({ label, value, color, hint }) {
 
 function BreakdownRow({ row, color, action }) {
   const pct = row.total ? Math.round((row.correct / row.total) * 100) : 0;
-  const tone = pct >= 75 ? '#10B981' : pct >= 50 ? '#F59E0B' : '#EF4444';
+  const tone = pct >= 75 ? COLOR_PALETTE.emerald[500] : pct >= 50 ? COLOR_PALETTE.amber[500] : COLOR_PALETTE.red[500];
   return (
     <Box>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
@@ -104,7 +105,7 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
         <Typography variant="body2" sx={{ flexGrow: 1, fontWeight: 600, display: '-webkit-box', WebkitLineClamp: open ? 'unset' : 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
           {q.questionText}
         </Typography>
-        {answer.markedForReview && <FlagRoundedIcon sx={{ fontSize: 16, color: '#6A3FB5' }} titleAccess="Marked for review" />}
+        {answer.markedForReview && <FlagRoundedIcon sx={{ fontSize: 16, color: COLOR_PALETTE.custom.indigo6A3FB5 }} titleAccess="Marked for review" />}
         <Typography variant="caption" sx={{ ...mono, color: slow ? 'warning.main' : 'text.secondary', flexShrink: 0 }}>
           {formatDuration(answer.timeSpentSec)}
         </Typography>
@@ -288,7 +289,7 @@ export default function AptitudeResultsPage() {
               <Typography variant="h5" sx={{ fontWeight: 800 }}>
                 {passed ? 'Mission cleared!' : 'Not passed yet'}
               </Typography>
-              <Chip size="small" label={`+${testXp(result.score, passed)} XP`} sx={{ fontWeight: 900, bgcolor: '#FACC15', color: '#0F172A' }} />
+              <Chip size="small" label={`+${testXp(result.score, passed)} XP`} sx={{ fontWeight: 900, bgcolor: COLOR_PALETTE.yellow[400], color: COLOR_PALETTE.slate[900] }} />
               <Chip size="small" color={passed ? 'success' : 'error'} label={`Pass mark ${pattern.passPercentage}%`} />
               {result.percentile != null && <Chip size="small" variant="outlined" label={`Better than ${result.percentile}% of test takers`} />}
               {timedOut && <Chip size="small" color="warning" label="Auto-submitted" />}
@@ -380,7 +381,7 @@ export default function AptitudeResultsPage() {
             Question map
           </Typography>
           <Stack direction="row" spacing={2}>
-            {[['Correct', '#10B981'], ['Incorrect', '#EF4444'], ['Skipped', '#94A3B8']].map(([l, c]) => (
+            {[['Correct', COLOR_PALETTE.emerald[500]], ['Incorrect', COLOR_PALETTE.red[500]], ['Skipped', COLOR_PALETTE.slate[400]]].map(([l, c]) => (
               <Stack key={l} direction="row" spacing={0.6} sx={{ alignItems: 'center' }}>
                 <Box sx={{ width: 10, height: 10, borderRadius: '3px', bgcolor: c }} />
                 <Typography variant="caption" color="text.secondary">{l}</Typography>
@@ -390,14 +391,14 @@ export default function AptitudeResultsPage() {
         </Stack>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.9 }}>
           {answers.map((a) => {
-            const c = a.isCorrect ? '#10B981' : a.selectedOption === null ? '#94A3B8' : '#EF4444';
+            const c = a.isCorrect ? COLOR_PALETTE.emerald[500] : a.selectedOption === null ? COLOR_PALETTE.slate[400] : COLOR_PALETTE.red[500];
             return (
               <Box
                 key={a._i}
                 onClick={() => jumpTo(a._i)}
                 role="button"
                 title={`Q${a._i + 1} · ${formatDuration(a.timeSpentSec)}`}
-                sx={{ width: 34, height: 34, borderRadius: 1.5, display: 'grid', placeItems: 'center', bgcolor: c, color: '#fff', fontWeight: 800, fontSize: 13, cursor: 'pointer', '&:hover': { filter: 'brightness(0.9)' } }}
+                sx={{ width: 34, height: 34, borderRadius: 1.5, display: 'grid', placeItems: 'center', bgcolor: c, color: COLOR_PALETTE.white, fontWeight: 800, fontSize: 13, cursor: 'pointer', '&:hover': { filter: 'brightness(0.9)' } }}
               >
                 {a._i + 1}
               </Box>

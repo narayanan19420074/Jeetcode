@@ -28,6 +28,7 @@ import { getTopicBySlug } from './content';
 import { AVERAGES_VISUAL_REGISTRY } from './animations/AveragesVisuals';
 import MissingValueVisual from './visuals/MissingValueVisual';
 import { aptitudeApi } from '../../api/aptitudeApi';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const MAIN_NAV_HEIGHT_PX = 72;
 const CONTENT_MAX = 720;
@@ -153,7 +154,7 @@ function LearnSidebar({ sections, activeId, completedIds, onSelect }) {
                         top: 0,
                         bottom: 0,
                         width: 3,
-                        background: '#3b82f6',
+                        background: COLOR_PALETTE.blue[500],
                         borderRadius: '0 2px 2px 0',
                       }}
                     />
@@ -246,7 +247,7 @@ function FormulaDisplay({ text }) {
       sx={{
         p: 3,
         borderRadius: 3,
-        bgcolor: (t) => (t.palette.mode === 'dark' ? 'rgba(59,130,246,0.12)' : 'rgba(59,130,246,0.06)'),
+        bgcolor: (t) => (t.palette.mode === 'dark' ? withAlpha(COLOR_PALETTE.blue[500], 0.12) : withAlpha(COLOR_PALETTE.blue[500], 0.06)),
         border: '1px solid',
         borderColor: (t) => alpha(t.palette.primary.main, 0.35),
       }}
@@ -409,14 +410,14 @@ function TrapCallout({ text }) {
         display: 'flex',
         gap: 1.5,
         alignItems: 'flex-start',
-        bgcolor: (t) => alpha('#ef4444', 0.05),
+        bgcolor: (t) => alpha(COLOR_PALETTE.red[500], 0.05),
         border: '1px solid',
-        borderColor: (t) => alpha('#ef4444', 0.3),
+        borderColor: (t) => alpha(COLOR_PALETTE.red[500], 0.3),
       }}
     >
-      <WarningAmberRoundedIcon sx={{ fontSize: 20, color: '#ef4444', mt: 0.25 }} />
+      <WarningAmberRoundedIcon sx={{ fontSize: 20, color: COLOR_PALETTE.red[500], mt: 0.25 }} />
       <Box>
-        <Typography variant="caption" sx={{ fontWeight: 800, color: '#ef4444', display: 'block', letterSpacing: '0.1em', fontSize: 10.5 }}>
+        <Typography variant="caption" sx={{ fontWeight: 800, color: COLOR_PALETTE.red[500], display: 'block', letterSpacing: '0.1em', fontSize: 10.5 }}>
           TRAP
         </Typography>
         <Typography variant="body2" sx={{ mt: 0.5, lineHeight: 1.65, fontSize: 14.5 }}>
@@ -502,8 +503,8 @@ function CheckCard({ check, index, onCorrect }) {
                 whileHover={!solved ? { scale: 1.008 } : {}}
                 whileTap={!solved ? { scale: 0.995 } : {}}
                 animate={{
-                  borderColor: showCorrect ? '#10b981' : showWrong ? '#ef4444' : 'rgba(148,163,184,0.35)',
-                  backgroundColor: showCorrect ? 'rgba(16,185,129,0.08)' : showWrong ? 'rgba(239,68,68,0.06)' : 'transparent',
+                  borderColor: showCorrect ? COLOR_PALETTE.emerald[500] : showWrong ? COLOR_PALETTE.red[500] : withAlpha(COLOR_PALETTE.slate[400], 0.35),
+                  backgroundColor: showCorrect ? withAlpha(COLOR_PALETTE.emerald[500], 0.08) : showWrong ? withAlpha(COLOR_PALETTE.red[500], 0.06) : 'transparent',
                 }}
                 transition={{ duration: 0.2 }}
                 style={{
@@ -531,9 +532,9 @@ function CheckCard({ check, index, onCorrect }) {
                     fontSize: 13,
                     flexShrink: 0,
                     border: '1.5px solid',
-                    borderColor: showCorrect ? '#10b981' : showWrong ? '#ef4444' : 'currentColor',
-                    bgcolor: showCorrect ? '#10b981' : 'transparent',
-                    color: showCorrect ? '#fff' : 'inherit',
+                    borderColor: showCorrect ? COLOR_PALETTE.emerald[500] : showWrong ? COLOR_PALETTE.red[500] : 'currentColor',
+                    bgcolor: showCorrect ? COLOR_PALETTE.emerald[500] : 'transparent',
+                    color: showCorrect ? COLOR_PALETTE.white : 'inherit',
                   }}
                 >
                   {String.fromCharCode(65 + i)}
@@ -541,8 +542,8 @@ function CheckCard({ check, index, onCorrect }) {
                 <Typography sx={{ flexGrow: 1, fontWeight: 600, fontSize: 15 }}>
                   {opt}
                 </Typography>
-                {showCorrect && <CheckCircleRoundedIcon sx={{ color: '#10b981', fontSize: 20 }} />}
-                {showWrong && <CancelRoundedIcon sx={{ color: '#ef4444', fontSize: 20 }} />}
+                {showCorrect && <CheckCircleRoundedIcon sx={{ color: COLOR_PALETTE.emerald[500], fontSize: 20 }} />}
+                {showWrong && <CancelRoundedIcon sx={{ color: COLOR_PALETTE.red[500], fontSize: 20 }} />}
               </motion.button>
             );
           })}
@@ -567,9 +568,9 @@ function CheckCard({ check, index, onCorrect }) {
                   mt: 2.5,
                   p: 2,
                   borderRadius: 2,
-                  bgcolor: revealed ? alpha('#f59e0b', 0.08) : 'rgba(16,185,129,0.08)',
+                  bgcolor: revealed ? alpha(COLOR_PALETTE.amber[500], 0.08) : withAlpha(COLOR_PALETTE.emerald[500], 0.08),
                   border: '1px solid',
-                  borderColor: revealed ? alpha('#f59e0b', 0.3) : 'rgba(16,185,129,0.3)',
+                  borderColor: revealed ? alpha(COLOR_PALETTE.amber[500], 0.3) : withAlpha(COLOR_PALETTE.emerald[500], 0.3),
                 }}
               >
                 <Typography

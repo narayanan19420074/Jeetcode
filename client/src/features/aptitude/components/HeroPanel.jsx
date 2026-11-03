@@ -1,9 +1,10 @@
 import { Box, alpha } from '@mui/material';
 import { motion } from 'framer-motion';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Theme-aware hero surface used by the Aptitude pages: paper card, hairline
 // border, faint dot grid and a soft glow in the accent colour.
-export default function HeroPanel({ glow = '#3B82F6', children, sx }) {
+export default function HeroPanel({ glow = COLOR_PALETTE.blue[500], children, sx }) {
   return (
     <Box
       component={motion.div}

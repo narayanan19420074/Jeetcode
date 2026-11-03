@@ -1,13 +1,14 @@
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 // Gamification rules for the Aptitude module. Everything here is derived on the
 // client from data the hub / list endpoints already return, so there is no extra
 // server state to keep in sync: XP is a pure function of progress.
 
 export const ALIENS = [
-  { key: 'blip', name: 'Blip', title: 'Rookie', minXp: 0, color: '#34D399', glow: '#10B981' },
-  { key: 'zapp', name: 'Zapp', title: 'Sprinter', minXp: 250, color: '#FACC15', glow: '#EAB308' },
-  { key: 'ember', name: 'Ember', title: 'Challenger', minXp: 800, color: '#FB923C', glow: '#F97316' },
-  { key: 'crystalix', name: 'Crystalix', title: 'Strategist', minXp: 1600, color: '#38BDF8', glow: '#0EA5E9' },
-  { key: 'nova', name: 'Nova', title: 'Grandmaster', minXp: 2600, color: '#C084FC', glow: '#A855F7' },
+  { key: 'blip', name: 'Blip', title: 'Rookie', minXp: 0, color: COLOR_PALETTE.emerald[400], glow: COLOR_PALETTE.emerald[500] },
+  { key: 'zapp', name: 'Zapp', title: 'Sprinter', minXp: 250, color: COLOR_PALETTE.yellow[400], glow: COLOR_PALETTE.yellow[500] },
+  { key: 'ember', name: 'Ember', title: 'Challenger', minXp: 800, color: COLOR_PALETTE.orange[400], glow: COLOR_PALETTE.orange[500] },
+  { key: 'crystalix', name: 'Crystalix', title: 'Strategist', minXp: 1600, color: COLOR_PALETTE.sky[400], glow: COLOR_PALETTE.sky[500] },
+  { key: 'nova', name: 'Nova', title: 'Grandmaster', minXp: 2600, color: COLOR_PALETTE.purple[400], glow: COLOR_PALETTE.purple[500] },
 ];
 
 export const XP_PER_SOLVE = { easy: 10, medium: 20, hard: 40 };
@@ -58,14 +59,14 @@ export function buildBadges({ practice, progress, learnDone, learnTotal, pattern
   const mastered = bySubPattern.filter((s) => s.total > 0 && s.solved === s.total).length;
   const row = (id, name, desc, icon, color, have, need) => ({ id, name, desc, icon, color, earned: have >= need, have: Math.min(have, need), need });
   return [
-    row('first', 'First Blood', 'Solve your first question', 'bolt', '#34D399', totals.solved, 1),
-    row('scholar', 'Scholar', 'Finish every lesson', 'book', '#60A5FA', learnDone, Math.max(learnTotal, 1)),
-    row('ten', 'Warm-up', 'Solve 10 questions', 'fire', '#FB923C', totals.solved, 10),
-    row('easy', 'Easy Sweep', 'Clear every Easy question', 'star', '#FACC15', easyAll ? 1 : 0, 1),
-    row('hard', 'Hard Hitter', 'Solve 5 Hard questions', 'shield', '#F87171', hard, 5),
-    row('master', 'Topic Master', 'Fully clear 3 topics', 'crown', '#C084FC', mastered, 3),
-    row('exam', 'Exam Ready', 'Pass the timed test', 'trophy', '#FBBF24', passed ? 1 : 0, 1),
-    row('ace', 'Ace', 'Score 90%+ in a test', 'rocket', '#22D3EE', progress.bestScore ?? 0, 90),
+    row('first', 'First Blood', 'Solve your first question', 'bolt', COLOR_PALETTE.emerald[400], totals.solved, 1),
+    row('scholar', 'Scholar', 'Finish every lesson', 'book', COLOR_PALETTE.blue[400], learnDone, Math.max(learnTotal, 1)),
+    row('ten', 'Warm-up', 'Solve 10 questions', 'fire', COLOR_PALETTE.orange[400], totals.solved, 10),
+    row('easy', 'Easy Sweep', 'Clear every Easy question', 'star', COLOR_PALETTE.yellow[400], easyAll ? 1 : 0, 1),
+    row('hard', 'Hard Hitter', 'Solve 5 Hard questions', 'shield', COLOR_PALETTE.red[400], hard, 5),
+    row('master', 'Topic Master', 'Fully clear 3 topics', 'crown', COLOR_PALETTE.purple[400], mastered, 3),
+    row('exam', 'Exam Ready', 'Pass the timed test', 'trophy', COLOR_PALETTE.amber[400], passed ? 1 : 0, 1),
+    row('ace', 'Ace', 'Score 90%+ in a test', 'rocket', COLOR_PALETTE.cyan[400], progress.bestScore ?? 0, 90),
   ];
 }
 

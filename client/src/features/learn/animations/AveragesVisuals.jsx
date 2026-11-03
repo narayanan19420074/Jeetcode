@@ -1,16 +1,17 @@
 import { Box } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Fixed brand colors — visible on both light and dark backgrounds.
 const COLORS = {
-  primary: '#3b82f6',
-  primarySoft: 'rgba(59,130,246,0.15)',
-  success: '#10b981',
-  successSoft: 'rgba(16,185,129,0.15)',
-  danger: '#ef4444',
-  dangerSoft: 'rgba(239,68,68,0.12)',
-  amber: '#f59e0b',
-  amberSoft: 'rgba(245,158,11,0.15)',
+  primary: COLOR_PALETTE.blue[500],
+  primarySoft: withAlpha(COLOR_PALETTE.blue[500], 0.15),
+  success: COLOR_PALETTE.emerald[500],
+  successSoft: withAlpha(COLOR_PALETTE.emerald[500], 0.15),
+  danger: COLOR_PALETTE.red[500],
+  dangerSoft: withAlpha(COLOR_PALETTE.red[500], 0.12),
+  amber: COLOR_PALETTE.amber[500],
+  amberSoft: withAlpha(COLOR_PALETTE.amber[500], 0.15),
 };
 
 const SVG_WRAP = { width: '100%', maxWidth: 560, mx: 'auto' };

@@ -13,6 +13,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libChipSx, libIconBtnSx, libSearchSx, libTintBtnSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { DIFFICULTY, difficultyMeta } from './aptitudeUi';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Phone layout of the Aptitude Practice list. It follows the phone Problems page: same page padding, back button,
 // filter menu, search pill, centred header, progress bar, pill button, chips and row sizes.
@@ -165,9 +166,9 @@ export default function MobilePractice({
             aria-valuemin={0}
             aria-valuemax={totals?.total ?? 0}
             aria-valuenow={totals?.solved ?? 0}
-            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint('#F2B63C', 28), overflow: 'hidden' }}
+            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: 99, bgcolor: '#F2B63C', transition: 'width .5s' }} />
+            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
           </Box>
           <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {totals ? totals.solved : '–'}
@@ -183,7 +184,7 @@ export default function MobilePractice({
             disableElevation
             variant="contained"
             startIcon={picking ? <CircularProgress size={18} color="inherit" /> : <PlayArrowRoundedIcon />}
-            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: LIB_TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : '#6B4A1E', '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
+            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: LIB_TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
           >
             Random
           </Button>

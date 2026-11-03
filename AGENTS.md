@@ -15,7 +15,7 @@ to a developer who works **only from an Android phone**.
 - Deploy: Render, auto-deploys on every push to the branch set in `render.yaml`
   (`branch:` field; currently `main`). Pushing to any other branch
   does NOT deploy. Work on the branch Render deploys.
-- Render build: `npm --prefix client ci --include=dev && npm --prefix client run build && npm --prefix server ci`.
+- Render build: `npm --prefix client ci --include=dev && node client/scripts/check-design-tokens.mjs && npm --prefix client run build && npm --prefix server ci`.
   A broken build = failed deploy (Render keeps the old version live).
 
 ## 2. The developer cannot do manual editing
@@ -200,7 +200,8 @@ sizing, elevation, motion and breakpoints. The MUI theme (`app/design/buildTheme
    modes come from `COLOR_PALETTE.<hue>[<stop>]`; use `withAlpha(COLOR_PALETTE.white, 0.18)` for transparency.
    `COLOR_PALETTE.custom.*` holds legacy one-off colours; never add to it.
 6. Guard: `node client/scripts/check-design-tokens.mjs` fails when any file has more raw colours than
-   `client/scripts/design-token-baseline.json`. After removing colours run it with `--update`.
+   `client/scripts/design-token-baseline.json`. The baseline is now empty, so any raw colour (hex, rgb, rgba)
+   outside `app/design/` fails the Render build. Use a token instead.
 7. Colour migration (hex to tokens) is done with a mechanical codemod and delivered as a git patch
    (`git apply`), because it touches many files. These mechanical patches are exempt from 4.2 rule 9 (no
    splitting or cleanup of the touched files). Later normal edits of those files still follow 4.2.

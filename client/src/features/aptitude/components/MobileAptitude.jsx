@@ -8,6 +8,7 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LibraryFont, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import RoadMap from './RoadMap';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Phone layout of the Aptitude page. It follows the phone Problems page: same page padding, back button,
 // centred header, progress bar, pill button and type sizes. The level map climbs from the bottom to the top.
@@ -45,9 +46,9 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                 aria-valuemin={0}
                 aria-valuemax={total}
                 aria-valuenow={cleared}
-                sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint('#F2B63C', 28), overflow: 'hidden' }}
+                sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
               >
-                <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: 99, bgcolor: '#F2B63C', transition: 'width .5s' }} />
+                <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
               </Box>
               <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
                 {cleared}
@@ -63,7 +64,7 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                 disableElevation
                 variant="contained"
                 startIcon={<PlayArrowRoundedIcon />}
-                sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: '0.03em', textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : '#6B4A1E', '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
+                sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: '0.03em', textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
               >
                 {actionLabel}
               </Button>

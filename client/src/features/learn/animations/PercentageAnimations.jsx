@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -33,7 +34,7 @@ export function PercentGridAnimation() {
         width={CELL - 2}
         height={CELL - 2}
         rx="2"
-        fill={i < shadedTarget ? '#6366f1' : 'currentColor'}
+        fill={i < shadedTarget ? COLOR_PALETTE.indigo[500] : 'currentColor'}
         opacity={i < shadedTarget ? 0.85 : 0.08}
         style={{ transition: 'fill 0.4s ease, opacity 0.4s ease' }}
       />
@@ -65,8 +66,8 @@ export function PercentGridAnimation() {
           </Reveal>
 
           <Reveal at={4} step={step}>
-            <rect x="160" y="0" width="100" height="20" rx="10" fill="#10b981" opacity="0.15" />
-            <text x="210" y="14" textAnchor="middle" fontSize="12" fontWeight="800" fill="#10b981">
+            <rect x="160" y="0" width="100" height="20" rx="10" fill={COLOR_PALETTE.emerald[500]} opacity="0.15" />
+            <text x="210" y="14" textAnchor="middle" fontSize="12" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               = 75%
             </text>
           </Reveal>
@@ -100,23 +101,23 @@ export function SuccessiveChangeAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="150" y="55" fontSize="16" fill="#6366f1">→ +20% →</text>
-            <rect x="200" y="30" width="80" height="40" rx="6" fill="#6366f1" opacity="0.12" />
-            <text x="240" y="55" textAnchor="middle" fontSize="16" fontWeight="800" fill="#6366f1">
+            <text x="150" y="55" fontSize="16" fill={COLOR_PALETTE.indigo[500]}>→ +20% →</text>
+            <rect x="200" y="30" width="80" height="40" rx="6" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="240" y="55" textAnchor="middle" fontSize="16" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>
               ₹120
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="290" y="55" fontSize="16" fill="#ef4444">→ −20% →</text>
-            <rect x="330" y="30" width="70" height="40" rx="6" fill="#ef4444" opacity="0.12" />
-            <text x="365" y="55" textAnchor="middle" fontSize="15" fontWeight="800" fill="#ef4444">
+            <text x="290" y="55" fontSize="16" fill={COLOR_PALETTE.red[500]}>→ −20% →</text>
+            <rect x="330" y="30" width="70" height="40" rx="6" fill={COLOR_PALETTE.red[500]} opacity="0.12" />
+            <text x="365" y="55" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.red[500]}>
               ₹96
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="210" y="105" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ef4444">
+            <text x="210" y="105" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.red[500]}>
               Not ₹100! The 20% drop was taken on ₹120, not ₹100.
             </text>
           </Reveal>
@@ -129,7 +130,7 @@ export function SuccessiveChangeAnimation() {
 
           <Reveal at={4} step={step}>
             <rect x="130" y="155" width="160" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="185" textAnchor="middle" fontSize="18" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="185" textAnchor="middle" fontSize="18" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               Net change = −4%
             </text>
           </Reveal>

@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -25,7 +26,7 @@ export function SpeedBasicsAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="210" y="55" textAnchor="middle" fontSize="16" fontWeight="700" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="55" textAnchor="middle" fontSize="16" fontWeight="700" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               Speed = 150 ÷ 3 = 50 km/h
             </text>
           </Reveal>
@@ -44,7 +45,7 @@ export function SpeedBasicsAnimation() {
 
           <Reveal at={4} step={step}>
             <rect x="140" y="135" width="140" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="165" textAnchor="middle" fontSize="19" fontWeight="800" fill="#10b981">
+            <text x="210" y="165" textAnchor="middle" fontSize="19" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               ≈ 13.9 m/s
             </text>
           </Reveal>
@@ -74,36 +75,36 @@ export function RelativeSpeedAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="210" y="50" textAnchor="middle" fontSize="12" fontWeight="700" fill="#6366f1">
+            <text x="210" y="50" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>
               Same direction (→ →)
             </text>
-            <path d="M60 65 L140 65" stroke="#6366f1" strokeWidth="2" markerEnd="url(#arrow1)" />
-            <path d="M240 65 L300 65" stroke="#6366f1" strokeWidth="2" markerEnd="url(#arrow1)" />
+            <path d="M60 65 L140 65" stroke={COLOR_PALETTE.indigo[500]} strokeWidth="2" markerEnd="url(#arrow1)" />
+            <path d="M240 65 L300 65" stroke={COLOR_PALETTE.indigo[500]} strokeWidth="2" markerEnd="url(#arrow1)" />
             <defs>
               <marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="#6366f1" />
+                <path d="M0,0 L6,3 L0,6 Z" fill={COLOR_PALETTE.indigo[500]} />
               </marker>
             </defs>
-            <text x="210" y="90" textAnchor="middle" fontSize="14" fontWeight="800" fill="#6366f1">
+            <text x="210" y="90" textAnchor="middle" fontSize="14" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>
               Relative speed = 60 − 40 = 20 km/h
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="210" y="130" textAnchor="middle" fontSize="12" fontWeight="700" fill="#10b981">
+            <text x="210" y="130" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               Opposite direction (→ ←)
             </text>
-            <path d="M60 145 L140 145" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrow2)" />
-            <path d="M300 145 L240 145" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrow2)" />
+            <path d="M60 145 L140 145" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="2" markerEnd="url(#arrow2)" />
+            <path d="M300 145 L240 145" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="2" markerEnd="url(#arrow2)" />
             <defs>
               <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="#10b981" />
+                <path d="M0,0 L6,3 L0,6 Z" fill={COLOR_PALETTE.emerald[500]} />
               </marker>
             </defs>
           </Reveal>
 
           <Reveal at={3} step={step}>
-            <text x="210" y="175" textAnchor="middle" fontSize="14" fontWeight="800" fill="#10b981">
+            <text x="210" y="175" textAnchor="middle" fontSize="14" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               Relative speed = 60 + 40 = 100 km/h
             </text>
             <text x="210" y="200" textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.7">
@@ -136,32 +137,32 @@ export function TrainCrossingAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <rect x="80" y="35" width="90" height="24" rx="4" fill="#6366f1" opacity="0.6" />
+            <rect x="80" y="35" width="90" height="24" rx="4" fill={COLOR_PALETTE.indigo[500]} opacity="0.6" />
             <line x1="260" y1="47" x2="260" y2="47" stroke="currentColor" strokeWidth="4" />
             <circle cx="260" cy="47" r="4" fill="currentColor" />
-            <text x="210" y="80" textAnchor="middle" fontSize="12" fontWeight="700" fill="#6366f1">
+            <text x="210" y="80" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>
               Crossing a POLE: distance = train length only = 150m
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="210" y="105" textAnchor="middle" fontSize="14" fontWeight="800" fill="#6366f1">
+            <text x="210" y="105" textAnchor="middle" fontSize="14" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>
               Time = 150 ÷ 15 = 10 sec
             </text>
           </Reveal>
 
           <Reveal at={3} step={step}>
-            <rect x="80" y="125" width="90" height="24" rx="4" fill="#10b981" opacity="0.6" />
+            <rect x="80" y="125" width="90" height="24" rx="4" fill={COLOR_PALETTE.emerald[500]} opacity="0.6" />
             <rect x="220" y="125" width="140" height="24" rx="4" fill="currentColor" opacity="0.08" />
             <text x="290" y="141" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.7">platform 250m</text>
-            <text x="210" y="170" textAnchor="middle" fontSize="12" fontWeight="700" fill="#10b981">
+            <text x="210" y="170" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               Crossing a PLATFORM: distance = 150 + 250 = 400m
             </text>
           </Reveal>
 
           <Reveal at={4} step={step}>
             <rect x="130" y="185" width="160" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="212" textAnchor="middle" fontSize="16" fontWeight="800" fill="#10b981">
+            <text x="210" y="212" textAnchor="middle" fontSize="16" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               Time = 400 ÷ 15 ≈ 26.7 sec
             </text>
           </Reveal>

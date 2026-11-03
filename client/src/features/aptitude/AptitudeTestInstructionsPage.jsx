@@ -16,6 +16,7 @@ import {
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { PALETTE, formatClock } from './components/aptitudeUi';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // "General instructions" screen shown before the timed paper, modelled on the
 // exam candidate instructions page: the learner reads the rules, sees the
@@ -48,7 +49,7 @@ export function PaletteSymbol({ kind, size = 30, children }) {
     >
       {children}
       {kind === 'answeredMarked' && (
-        <Box sx={{ position: 'absolute', right: -1, bottom: -1, width: size * 0.38, height: size * 0.38, borderRadius: '50%', bgcolor: PALETTE.answered.bg, border: '2px solid #fff' }} />
+        <Box sx={{ position: 'absolute', right: -1, bottom: -1, width: size * 0.38, height: size * 0.38, borderRadius: '50%', bgcolor: PALETTE.answered.bg, border: `2px solid ${COLOR_PALETTE.white}` }} />
       )}
     </Box>
   );
@@ -115,7 +116,7 @@ export default function AptitudeTestInstructionsPage() {
 
   return (
     <Box sx={{ minHeight: 'calc(100vh - 64px)', bgcolor: 'background.default' }}>
-      <Box sx={{ bgcolor: '#1F3A5F', color: '#fff' }}>
+      <Box sx={{ bgcolor: COLOR_PALETTE.custom.sky1F3A5F, color: COLOR_PALETTE.white }}>
         <Container maxWidth="lg" sx={{ py: 2 }}>
           <Stack direction="row" useFlexGap spacing={1} sx={{ alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <Box>
@@ -201,7 +202,7 @@ export default function AptitudeTestInstructionsPage() {
               label="I have read and understood the instructions, and I am ready to begin the test."
             />
 
-            <Button fullWidth variant="contained" size="large" disableElevation disabled={!agreed || starting} onClick={begin} sx={{ mt: 2, py: 1.3, bgcolor: '#1F3A5F', '&:hover': { bgcolor: '#17304f' } }}>
+            <Button fullWidth variant="contained" size="large" disableElevation disabled={!agreed || starting} onClick={begin} sx={{ mt: 2, py: 1.3, bgcolor: COLOR_PALETTE.custom.sky1F3A5F, '&:hover': { bgcolor: COLOR_PALETTE.sky[950] } }}>
               {starting ? <CircularProgress size={22} color="inherit" /> : activeTest ? 'Resume test' : 'I am ready to begin'}
             </Button>
             <Button fullWidth sx={{ mt: 1 }} onClick={() => navigate(`/aptitude/${slug}`)}>

@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -17,7 +18,7 @@ function Reveal({ at, step, children }) {
 
 // A friendly little person. `mood`: 'happy' | 'thinking' | 'excited' | 'sad'.
 // `color` tints the shirt; everything else stays on-brand neutral tones.
-function Buddy({ x = 0, y = 0, scale = 1, color = '#6366f1', mood = 'happy', label }) {
+function Buddy({ x = 0, y = 0, scale = 1, color = COLOR_PALETTE.indigo[500], mood = 'happy', label }) {
   const mouth = {
     happy: 'M -6 5 Q 0 10 6 5',
     excited: 'M -7 4 Q 0 13 7 4',
@@ -30,17 +31,17 @@ function Buddy({ x = 0, y = 0, scale = 1, color = '#6366f1', mood = 'happy', lab
       {/* body */}
       <rect x={-14} y={6} width={28} height={26} rx={10} fill={color} />
       {/* head */}
-      <circle cx={0} cy={-8} r={16} fill="#FBCFA0" />
+      <circle cx={0} cy={-8} r={16} fill={COLOR_PALETTE.orange[200]} />
       {/* hair */}
-      <path d="M -16 -12 Q -16 -26 0 -26 Q 16 -26 16 -12 Q 10 -18 0 -18 Q -10 -18 -16 -12 Z" fill="#3a2a1e" />
+      <path d="M -16 -12 Q -16 -26 0 -26 Q 16 -26 16 -12 Q 10 -18 0 -18 Q -10 -18 -16 -12 Z" fill={COLOR_PALETTE.custom.yellow3A2A1E} />
       {/* eyes */}
-      <circle cx={-6} cy={-8} r={1.8} fill="#1f2937" />
-      <circle cx={6} cy={-8} r={1.8} fill="#1f2937" />
+      <circle cx={-6} cy={-8} r={1.8} fill={COLOR_PALETTE.gray[800]} />
+      <circle cx={6} cy={-8} r={1.8} fill={COLOR_PALETTE.gray[800]} />
       {/* blush */}
-      <circle cx={-10} cy={-2} r={2.2} fill="#f4a3a3" opacity="0.6" />
-      <circle cx={10} cy={-2} r={2.2} fill="#f4a3a3" opacity="0.6" />
+      <circle cx={-10} cy={-2} r={2.2} fill={COLOR_PALETTE.red[300]} opacity="0.6" />
+      <circle cx={10} cy={-2} r={2.2} fill={COLOR_PALETTE.red[300]} opacity="0.6" />
       {/* mouth */}
-      <path d={mouth} stroke="#1f2937" strokeWidth={1.6} fill="none" strokeLinecap="round" />
+      <path d={mouth} stroke={COLOR_PALETTE.gray[800]} strokeWidth={1.6} fill="none" strokeLinecap="round" />
       {mood === 'thinking' && (
         <g>
           <circle cx={18} cy={-24} r={2} fill="currentColor" opacity="0.35" />
@@ -60,13 +61,13 @@ function Buddy({ x = 0, y = 0, scale = 1, color = '#6366f1', mood = 'happy', lab
 function CricketBat({ x = 0, y = 0, rotate = -20 }) {
   return (
     <g transform={`translate(${x} ${y}) rotate(${rotate})`}>
-      <rect x={-3} y={-24} width={6} height={22} rx={2} fill="#d9a066" />
-      <rect x={-4} y={-2} width={8} height={16} rx={3} fill="#b97a3f" />
+      <rect x={-3} y={-24} width={6} height={22} rx={2} fill={COLOR_PALETTE.custom.orangeD9A066} />
+      <rect x={-4} y={-2} width={8} height={16} rx={3} fill={COLOR_PALETTE.custom.yellowB97A3F} />
     </g>
   );
 }
 
-function ScoreBar({ x, label, h, color = '#6366f1', highlight }) {
+function ScoreBar({ x, label, h, color = COLOR_PALETTE.indigo[500], highlight }) {
   return (
     <g>
       <rect x={x} y={130 - h} width={30} height={h} rx={8} fill={color} opacity={highlight ? 1 : 0.75} />
@@ -77,7 +78,7 @@ function ScoreBar({ x, label, h, color = '#6366f1', highlight }) {
   );
 }
 
-function Sparkle({ x, y, size = 10, color = '#f59e0b' }) {
+function Sparkle({ x, y, size = 10, color = COLOR_PALETTE.amber[500] }) {
   return (
     <path
       d={`M ${x} ${y - size} L ${x + size * 0.28} ${y - size * 0.28} L ${x + size} ${y} L ${x + size * 0.28} ${y + size * 0.28} L ${x} ${y + size} L ${x - size * 0.28} ${y + size * 0.28} L ${x - size} ${y} L ${x - size * 0.28} ${y - size * 0.28} Z`}
@@ -111,7 +112,7 @@ export function EquationBasedAnimation() {
               Arjun's first 3 match scores
             </text>
             {bars.map((b) => (
-              <ScoreBar key={b.label} x={b.x} label={b.label} h={b.h} color="#6366f1" />
+              <ScoreBar key={b.label} x={b.x} label={b.label} h={b.h} color={COLOR_PALETTE.indigo[500]} />
             ))}
           </Reveal>
 
@@ -122,7 +123,7 @@ export function EquationBasedAnimation() {
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="100" y="197" textAnchor="middle" fontSize="14" fontWeight="800" fill="#6366f1">
+            <text x="100" y="197" textAnchor="middle" fontSize="14" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>
               Average = 150 ÷ 3 = 50
             </text>
           </Reveal>
@@ -146,11 +147,11 @@ export function EquationBasedAnimation() {
 
           <Reveal at={5} step={step}>
             <Sparkle x={280} y="200" size={7} />
-            <Sparkle x={385} y="195" size={5} color="#10b981" />
+            <Sparkle x={385} y="195" size={5} color={COLOR_PALETTE.emerald[500]} />
             <text x="330" y="180" textAnchor="middle" fontSize="12" fill="currentColor" opacity="0.8">
               180 − 150 = 30
             </text>
-            <text x="330" y="205" textAnchor="middle" fontSize="16" fontWeight="800" fill="#10b981">
+            <text x="330" y="205" textAnchor="middle" fontSize="16" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               4th match score = 30
             </text>
           </Reveal>
@@ -178,7 +179,7 @@ export function TrueFalseReadingAnimation() {
             <line x1="40" y1="55" x2="380" y2="55" stroke="currentColor" strokeOpacity="0.25" strokeWidth="3" strokeLinecap="round" />
             {[40, 50, 60].map((v) => (
               <g key={v}>
-                <circle cx={toX(v)} cy="55" r="7" fill="#6366f1" />
+                <circle cx={toX(v)} cy="55" r="7" fill={COLOR_PALETTE.indigo[500]} />
                 <text x={toX(v)} y="38" textAnchor="middle" fontSize="12" fontWeight="800" fill="currentColor">{v}</text>
               </g>
             ))}
@@ -190,21 +191,21 @@ export function TrueFalseReadingAnimation() {
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <line x1={toX(40)} y1="55" x2={toX(60)} y2="55" stroke="#10b981" strokeWidth="5" strokeLinecap="round" opacity="0.55" />
+            <line x1={toX(40)} y1="55" x2={toX(60)} y2="55" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="5" strokeLinecap="round" opacity="0.55" />
             <Buddy x="210" y="115" scale={0.7} mood="happy" />
-            <text x="210" y="150" textAnchor="middle" fontSize="12" fontWeight="700" fill="#10b981">
+            <text x="210" y="150" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               Average must live in here
             </text>
           </Reveal>
 
           <Reveal at={3} step={step}>
             <text x="60" y="180" fontSize="12.5" fill="currentColor">"Average could be 65"</text>
-            <text x="330" y="180" fontSize="15" fontWeight="800" fill="#ef4444">FALSE</text>
+            <text x="330" y="180" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.red[500]}>FALSE</text>
           </Reveal>
 
           <Reveal at={4} step={step}>
             <text x="60" y="202" fontSize="12.5" fill="currentColor">"Average could be 45"</text>
-            <text x="330" y="202" fontSize="15" fontWeight="800" fill="#10b981">TRUE</text>
+            <text x="330" y="202" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>TRUE</text>
           </Reveal>
 
           <Reveal at={5} step={step}>
@@ -237,7 +238,7 @@ export function ReplacingPersonAnimation() {
               Group of 5 — average age 30
             </text>
             {positions.map((x, i) => (
-              <Buddy key={i} x={x} y="55" scale={0.5} mood="happy" color={i === 0 ? '#6366f1' : '#94a3b8'} />
+              <Buddy key={i} x={x} y="55" scale={0.5} mood="happy" color={i === 0 ? COLOR_PALETTE.indigo[500] : COLOR_PALETTE.slate[400]} />
             ))}
             <text x="160" y="105" textAnchor="middle" fontSize="12" fill="currentColor" opacity="0.75">
               Total = 30 × 5 = 150
@@ -245,8 +246,8 @@ export function ReplacingPersonAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <circle cx={positions[0]} cy="52" r="26" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeDasharray="4 3" />
-            <text x={positions[0]} y="130" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ef4444">
+            <circle cx={positions[0]} cy="52" r="26" fill="none" stroke={COLOR_PALETTE.red[500]} strokeWidth="2.5" strokeDasharray="4 3" />
+            <text x={positions[0]} y="130" textAnchor="middle" fontSize="11" fontWeight="700" fill={COLOR_PALETTE.red[500]}>
               leaves (age 22)
             </text>
           </Reveal>
@@ -258,8 +259,8 @@ export function ReplacingPersonAnimation() {
           </Reveal>
 
           <Reveal at={3} step={step}>
-            <Buddy x={positions[0]} y="55" scale={0.5} mood="excited" color="#10b981" />
-            <text x={positions[0]} y="180" textAnchor="middle" fontSize="11" fontWeight="700" fill="#10b981">
+            <Buddy x={positions[0]} y="55" scale={0.5} mood="excited" color={COLOR_PALETTE.emerald[500]} />
+            <text x={positions[0]} y="180" textAnchor="middle" fontSize="11" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               new person joins
             </text>
           </Reveal>
@@ -272,7 +273,7 @@ export function ReplacingPersonAnimation() {
 
           <Reveal at={5} step={step}>
             <Sparkle x={370} y="55" size={9} />
-            <text x="160" y="225" textAnchor="middle" fontSize="15" fontWeight="800" fill="#10b981">
+            <text x="160" y="225" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               New person's age = 160 − 128 = 32
             </text>
           </Reveal>
@@ -296,9 +297,9 @@ export function IncludingExcludingAnimation() {
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 230" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
-            <rect x="30" y="20" width="210" height="75" rx="14" fill="#6366f1" opacity="0.08" stroke="#6366f1" strokeWidth="1.5" />
+            <rect x="30" y="20" width="210" height="75" rx="14" fill={COLOR_PALETTE.indigo[500]} opacity="0.08" stroke={COLOR_PALETTE.indigo[500]} strokeWidth="1.5" />
             {[0, 1, 2].map((i) => (
-              <Buddy key={i} x={65 + i * 45} y="60" scale={0.4} mood="happy" color="#6366f1" />
+              <Buddy key={i} x={65 + i * 45} y="60" scale={0.4} mood="happy" color={COLOR_PALETTE.indigo[500]} />
             ))}
             <text x="135" y="45" textAnchor="middle" fontSize="12" fontWeight="800" fill="currentColor">
               20 students · avg 60 marks
@@ -309,20 +310,20 @@ export function IncludingExcludingAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <Buddy x={300} y="55" scale={0.55} mood="excited" color="#10b981" />
-            <path d="M255 55 L280 55" stroke="#10b981" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <Buddy x={300} y="55" scale={0.55} mood="excited" color={COLOR_PALETTE.emerald[500]} />
+            <path d="M255 55 L280 55" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="2.5" markerEnd="url(#arrow)" />
             <defs>
               <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-                <path d="M0,0 L8,4 L0,8 Z" fill="#10b981" />
+                <path d="M0,0 L8,4 L0,8 Z" fill={COLOR_PALETTE.emerald[500]} />
               </marker>
             </defs>
-            <text x="345" y="60" fontSize="12.5" fontWeight="700" fill="#10b981">
+            <text x="345" y="60" fontSize="12.5" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               +1 joins
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <rect x="30" y="115" width="230" height="70" rx="14" fill="#10b981" opacity="0.08" stroke="#10b981" strokeWidth="1.5" />
+            <rect x="30" y="115" width="230" height="70" rx="14" fill={COLOR_PALETTE.emerald[500]} opacity="0.08" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="1.5" />
             <text x="145" y="140" textAnchor="middle" fontSize="12" fontWeight="800" fill="currentColor">
               21 students now
             </text>
@@ -339,7 +340,7 @@ export function IncludingExcludingAnimation() {
 
           <Reveal at={4} step={step}>
             <Sparkle x={330} y="150" size={8} />
-            <text x="145" y="215" textAnchor="middle" fontSize="14" fontWeight="800" fill="#10b981">
+            <text x="145" y="215" textAnchor="middle" fontSize="14" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               New student's marks = 1281 − 1200 = 81
             </text>
           </Reveal>
@@ -355,13 +356,13 @@ export function IncludingExcludingAnimation() {
 /* ------------------------------------------------------------------ */
 const SPEED_STEPS = 6;
 
-function ToyCar({ x, y, color = '#6366f1' }) {
+function ToyCar({ x, y, color = COLOR_PALETTE.indigo[500] }) {
   return (
     <g transform={`translate(${x} ${y})`}>
       <rect x={-16} y={-8} width={32} height={12} rx={4} fill={color} />
       <rect x={-9} y={-15} width={18} height={9} rx={3} fill={color} opacity="0.8" />
-      <circle cx={-9} cy={5} r={4} fill="#1f2937" />
-      <circle cx={9} cy={5} r={4} fill="#1f2937" />
+      <circle cx={-9} cy={5} r={4} fill={COLOR_PALETTE.gray[800]} />
+      <circle cx={9} cy={5} r={4} fill={COLOR_PALETTE.gray[800]} />
     </g>
   );
 }
@@ -380,24 +381,24 @@ export function AverageSpeedAnimation() {
             <line x1="40" y1="45" x2="380" y2="45" stroke="currentColor" strokeOpacity="0.25" strokeWidth="3" strokeLinecap="round" />
             <text x="40" y="35" fontSize="11" fill="currentColor" opacity="0.7">A</text>
             <text x="380" y="35" fontSize="11" fill="currentColor" opacity="0.7">B</text>
-            <ToyCar x={130} y={45} color="#6366f1" />
-            <text x="210" y="70" textAnchor="middle" fontSize="12.5" fill="#6366f1" fontWeight="700">
+            <ToyCar x={130} y={45} color={COLOR_PALETTE.indigo[500]} />
+            <text x="210" y="70" textAnchor="middle" fontSize="12.5" fill={COLOR_PALETTE.indigo[500]} fontWeight="700">
               Going: 30 km/h
             </text>
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <ToyCar x={290} y={45} color="#10b981" />
-            <text x="210" y="90" textAnchor="middle" fontSize="12.5" fill="#10b981" fontWeight="700">
+            <ToyCar x={290} y={45} color={COLOR_PALETTE.emerald[500]} />
+            <text x="210" y="90" textAnchor="middle" fontSize="12.5" fill={COLOR_PALETTE.emerald[500]} fontWeight="700">
               Returning: 50 km/h
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="210" y="116" textAnchor="middle" fontSize="12.5" fill="#ef4444" textDecoration="line-through" opacity="0.8">
+            <text x="210" y="116" textAnchor="middle" fontSize="12.5" fill={COLOR_PALETTE.red[500]} textDecoration="line-through" opacity="0.8">
               Tempting guess: (30+50)/2 = 40 km/h
             </text>
-            <text x="210" y="132" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ef4444">
+            <text x="210" y="132" textAnchor="middle" fontSize="11" fontWeight="700" fill={COLOR_PALETTE.red[500]}>
               ✗ Wrong — more TIME is spent at the slower speed
             </text>
           </Reveal>
@@ -416,8 +417,8 @@ export function AverageSpeedAnimation() {
 
           <Reveal at={5} step={step}>
             <Sparkle x={130} y="205" size={7} />
-            <Sparkle x={290} y="200" size={5} color="#10b981" />
-            <text x="210" y="215" textAnchor="middle" fontSize="17" fontWeight="800" fill="#10b981">
+            <Sparkle x={290} y="200" size={5} color={COLOR_PALETTE.emerald[500]} />
+            <text x="210" y="215" textAnchor="middle" fontSize="17" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               Average speed = 240/6.4 = 37.5 km/h
             </text>
           </Reveal>

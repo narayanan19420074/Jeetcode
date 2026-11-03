@@ -7,6 +7,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LIB_TRACKING, LibraryFont, libBackBtnSx, libChipSx, libPanelSx, libSectionTitleSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { formatDuration } from './aptitudeUi';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Phone layout of a single Aptitude topic (for example Number System). It follows the phone Problems and
 // Aptitude pages: same page padding, back button, centred header, progress bar, row sizes and type scale.
@@ -128,7 +129,7 @@ export default function MobilePatternDetail({
       {/* Header */}
       <Box sx={{ textAlign: 'center', mt: 1.5 }}>
         <HeaderTile>
-          <CalculateRoundedIcon sx={{ fontSize: 28, color: '#fff' }} />
+          <CalculateRoundedIcon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
         </HeaderTile>
         <Typography
           component="h1"
@@ -145,9 +146,9 @@ export default function MobilePatternDetail({
             aria-valuemin={0}
             aria-valuemax={totals.total}
             aria-valuenow={totals.solved}
-            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint('#F2B63C', 28), overflow: 'hidden' }}
+            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: 99, bgcolor: '#F2B63C', transition: 'width .5s' }} />
+            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
           </Box>
           <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {totals.solved}

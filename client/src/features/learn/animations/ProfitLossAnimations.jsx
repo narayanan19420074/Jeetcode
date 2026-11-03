@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -25,13 +26,13 @@ export function ProfitLossBasicAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <rect x="240" y="20" width="140" height="40" rx="8" fill="#6366f1" opacity="0.12" />
-            <text x="310" y="38" textAnchor="middle" fontSize="11" fontWeight="700" fill="#6366f1">SP (sold for)</text>
-            <text x="310" y="55" textAnchor="middle" fontSize="15" fontWeight="800" fill="#6366f1">₹9200</text>
+            <rect x="240" y="20" width="140" height="40" rx="8" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="310" y="38" textAnchor="middle" fontSize="11" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>SP (sold for)</text>
+            <text x="310" y="55" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>₹9200</text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="210" y="95" textAnchor="middle" fontSize="14" fontWeight="700" fill="#10b981">
+            <text x="210" y="95" textAnchor="middle" fontSize="14" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               Profit = SP − CP = 9200 − 8000 = ₹1200
             </text>
           </Reveal>
@@ -44,7 +45,7 @@ export function ProfitLossBasicAnimation() {
 
           <Reveal at={4} step={step}>
             <rect x="130" y="140" width="160" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="170" textAnchor="middle" fontSize="20" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="170" textAnchor="middle" fontSize="20" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               = 1200/8000 × 100 = 15%
             </text>
           </Reveal>
@@ -74,14 +75,14 @@ export function MarkedPriceDiscountAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="210" y="48" textAnchor="middle" fontSize="13" fill="#ef4444">
+            <text x="210" y="48" textAnchor="middle" fontSize="13" fill={COLOR_PALETTE.red[500]}>
               Discount 20% → −₹2000
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <rect x="130" y="60" width="160" height="34" rx="6" fill="#6366f1" opacity="0.12" />
-            <text x="210" y="82" textAnchor="middle" fontSize="15" fontWeight="800" fill="#6366f1">
+            <rect x="130" y="60" width="160" height="34" rx="6" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="210" y="82" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>
               SP = ₹8000
             </text>
           </Reveal>
@@ -90,14 +91,14 @@ export function MarkedPriceDiscountAnimation() {
             <text x="210" y="120" textAnchor="middle" fontSize="12" fill="currentColor" opacity="0.8">
               Given: CP = ₹6000
             </text>
-            <text x="210" y="140" textAnchor="middle" fontSize="13" fontWeight="700" fill="#10b981">
+            <text x="210" y="140" textAnchor="middle" fontSize="13" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               Profit = SP − CP = 8000 − 6000 = ₹2000
             </text>
           </Reveal>
 
           <Reveal at={4} step={step}>
             <rect x="130" y="155" width="160" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="185" textAnchor="middle" fontSize="19" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="185" textAnchor="middle" fontSize="19" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               Profit % = 2000/6000×100 ≈ 33.3%
             </text>
           </Reveal>
@@ -131,9 +132,9 @@ export function FalseWeightAnimation() {
             <text x="125" y="55" textAnchor="middle" fontSize="11" fontWeight="700" fill="currentColor">Claims to give</text>
             <text x="125" y="73" textAnchor="middle" fontSize="15" fontWeight="800" fill="currentColor">1000 g</text>
 
-            <rect x="230" y="35" width="130" height="46" rx="8" fill="#ef4444" opacity="0.12" />
-            <text x="295" y="55" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ef4444">Actually gives</text>
-            <text x="295" y="73" textAnchor="middle" fontSize="15" fontWeight="800" fill="#ef4444">900 g</text>
+            <rect x="230" y="35" width="130" height="46" rx="8" fill={COLOR_PALETTE.red[500]} opacity="0.12" />
+            <text x="295" y="55" textAnchor="middle" fontSize="11" fontWeight="700" fill={COLOR_PALETTE.red[500]}>Actually gives</text>
+            <text x="295" y="73" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.red[500]}>900 g</text>
           </Reveal>
 
           <Reveal at={2} step={step}>
@@ -150,7 +151,7 @@ export function FalseWeightAnimation() {
 
           <Reveal at={4} step={step}>
             <rect x="130" y="150" width="160" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="180" textAnchor="middle" fontSize="19" fontWeight="800" fill="#10b981">
+            <text x="210" y="180" textAnchor="middle" fontSize="19" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               = (1000−900)/900×100 ≈ 11.1%
             </text>
           </Reveal>

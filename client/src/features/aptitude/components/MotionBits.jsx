@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
 import { Box, Typography } from '@mui/material';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Small reusable motion-graphics pieces for the Aptitude module.
 
@@ -31,7 +32,7 @@ export function CountUp({ value, duration = 1.1, suffix = '', decimals = 0 }) {
 
 // Maths symbols drifting in the background of hero banners.
 const SYMBOLS = ['%', '+', '−', '×', '÷', '=', '√', 'π', '½'];
-export function FloatingSymbols({ count = 16, color = '#fff', opacity = 0.14 }) {
+export function FloatingSymbols({ count = 16, color = COLOR_PALETTE.white, opacity = 0.14 }) {
   const reduce = useReducedMotion();
   return (
     <Box aria-hidden sx={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
@@ -52,7 +53,7 @@ export function FloatingSymbols({ count = 16, color = '#fff', opacity = 0.14 }) 
   );
 }
 
-const CONFETTI = ['#34D399', '#FACC15', '#FB923C', '#38BDF8', '#C084FC', '#F472B6'];
+const CONFETTI = [COLOR_PALETTE.emerald[400], COLOR_PALETTE.yellow[400], COLOR_PALETTE.orange[400], COLOR_PALETTE.sky[400], COLOR_PALETTE.purple[400], COLOR_PALETTE.pink[400]];
 export function Confetti({ pieces = 70 }) {
   const reduce = useReducedMotion();
   if (reduce) return null;
@@ -72,7 +73,7 @@ export function Confetti({ pieces = 70 }) {
 }
 
 // "+20 XP" bubble that floats up and fades. Re-key it to replay.
-export function XpPop({ amount, color = '#FACC15' }) {
+export function XpPop({ amount, color = COLOR_PALETTE.yellow[400] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10, scale: 0.7 }}
@@ -80,13 +81,13 @@ export function XpPop({ amount, color = '#FACC15' }) {
       transition={{ duration: 1.7, times: [0, 0.2, 0.7, 1] }}
       style={{ display: 'inline-block', pointerEvents: 'none' }}
     >
-      <Typography sx={{ fontWeight: 900, fontSize: 22, color, textShadow: '0 2px 10px rgba(0,0,0,.35)', fontFamily: '"JetBrains Mono", monospace' }}>+{amount} XP</Typography>
+      <Typography sx={{ fontWeight: 900, fontSize: 22, color, textShadow: `0 2px 10px ${withAlpha(COLOR_PALETTE.black, .35)}`, fontFamily: '"JetBrains Mono", monospace' }}>+{amount} XP</Typography>
     </motion.div>
   );
 }
 
 // Animated XP bar with a moving shine.
-export function XpBar({ pct, color = '#34D399', height = 12, track = 'rgba(255,255,255,.16)' }) {
+export function XpBar({ pct, color = COLOR_PALETTE.emerald[400], height = 12, track = withAlpha(COLOR_PALETTE.white, .16) }) {
   const reduce = useReducedMotion();
   return (
     <Box sx={{ position: 'relative', height, borderRadius: height, bgcolor: track, overflow: 'hidden' }}>
@@ -94,11 +95,11 @@ export function XpBar({ pct, color = '#34D399', height = 12, track = 'rgba(255,2
         initial={{ width: reduce ? `${pct}%` : 0 }}
         animate={{ width: `${pct}%` }}
         transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
-        style={{ height: '100%', borderRadius: height, background: `linear-gradient(90deg, ${color}, #fff 160%)`, position: 'relative', overflow: 'hidden' }}
+        style={{ height: '100%', borderRadius: height, background: `linear-gradient(90deg, ${color}, ${COLOR_PALETTE.white} 160%)`, position: 'relative', overflow: 'hidden' }}
       >
         {!reduce && (
           <motion.div
-            style={{ position: 'absolute', top: 0, bottom: 0, width: 40, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent)' }}
+            style={{ position: 'absolute', top: 0, bottom: 0, width: 40, background: `linear-gradient(90deg, transparent, ${withAlpha(COLOR_PALETTE.white, .7)}, transparent)` }}
             animate={{ left: ['-20%', '120%'] }}
             transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 1.4, ease: 'easeInOut' }}
           />

@@ -35,6 +35,7 @@ import MobilePracticeQuestion, { MobileQuestionState } from './components/Mobile
 import { Confetti, XpPop } from './components/MotionBits';
 import { XP_PER_SOLVE } from './components/gamification';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './components/aptitudeUi';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 const mono = { fontFamily: '"JetBrains Mono", "Fira Code", monospace' };
 
@@ -43,8 +44,8 @@ function OptionRow({ index, text, state, disabled, onClick }) {
   const palette = {
     idle: { border: 'divider', bg: 'background.paper', badgeBg: 'transparent', badgeFg: 'text.primary' },
     selected: { border: 'primary.main', bg: (t) => alpha(t.palette.primary.main, 0.07), badgeBg: 'primary.main', badgeFg: 'primary.contrastText' },
-    correct: { border: 'success.main', bg: (t) => alpha(t.palette.success.main, 0.1), badgeBg: 'success.main', badgeFg: '#fff' },
-    wrong: { border: 'error.main', bg: (t) => alpha(t.palette.error.main, 0.1), badgeBg: 'error.main', badgeFg: '#fff' },
+    correct: { border: 'success.main', bg: (t) => alpha(t.palette.success.main, 0.1), badgeBg: 'success.main', badgeFg: COLOR_PALETTE.white },
+    wrong: { border: 'error.main', bg: (t) => alpha(t.palette.error.main, 0.1), badgeBg: 'error.main', badgeFg: COLOR_PALETTE.white },
     dim: { border: 'divider', bg: 'background.paper', badgeBg: 'transparent', badgeFg: 'text.disabled' },
   }[state];
 

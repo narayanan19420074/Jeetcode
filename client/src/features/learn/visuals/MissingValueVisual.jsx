@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Box, Button, Stack, Typography, alpha } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 const NUMBERS = [10, 15, 20, 25];
 const AVERAGE = 18;
@@ -91,9 +92,9 @@ export default function MissingValueVisual() {
                     height: 56,
                     borderRadius: 14,
                     border: '2px solid',
-                    borderColor: isAdded ? 'rgba(59,130,246,0.2)' : '#3b82f6',
+                    borderColor: isAdded ? withAlpha(COLOR_PALETTE.blue[500], 0.2) : COLOR_PALETTE.blue[500],
                     background: 'transparent',
-                    color: isAdded ? 'rgba(59,130,246,0.5)' : '#3b82f6',
+                    color: isAdded ? withAlpha(COLOR_PALETTE.blue[500], 0.5) : COLOR_PALETTE.blue[500],
                     fontSize: 18,
                     fontWeight: 800,
                     cursor: isAdded || revealed ? 'default' : 'pointer',
@@ -115,14 +116,14 @@ export default function MissingValueVisual() {
               animate={
                 revealed
                   ? {
-                      backgroundColor: 'rgba(16,185,129,0.12)',
-                      borderColor: '#10b981',
-                      color: '#10b981',
+                      backgroundColor: withAlpha(COLOR_PALETTE.emerald[500], 0.12),
+                      borderColor: COLOR_PALETTE.emerald[500],
+                      color: COLOR_PALETTE.emerald[500],
                       scale: [1, 1.15, 1],
                     }
                   : {
-                      borderColor: '#f59e0b',
-                      color: '#f59e0b',
+                      borderColor: COLOR_PALETTE.amber[500],
+                      color: COLOR_PALETTE.amber[500],
                     }
               }
               transition={{ duration: 0.5 }}
@@ -169,9 +170,9 @@ export default function MissingValueVisual() {
                   key={i}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  style={{ fontFamily: 'monospace', fontWeight: 700, color: '#3b82f6', fontSize: 18 }}
+                  style={{ fontFamily: 'monospace', fontWeight: 700, color: COLOR_PALETTE.blue[500], fontSize: 18 }}
                 >
-                  {idx > 0 && <span style={{ color: '#94a3b8', margin: '0 4px' }}>+</span>}
+                  {idx > 0 && <span style={{ color: COLOR_PALETTE.slate[400], margin: '0 4px' }}>+</span>}
                   {NUMBERS[i]}
                 </motion.span>
               ))}
@@ -181,7 +182,7 @@ export default function MissingValueVisual() {
                     initial={{ opacity: 0, x: -8 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    style={{ fontFamily: 'monospace', fontWeight: 800, color: '#10b981', fontSize: 18, marginLeft: 4 }}
+                    style={{ fontFamily: 'monospace', fontWeight: 800, color: COLOR_PALETTE.emerald[500], fontSize: 18, marginLeft: 4 }}
                   >
                     = {sum}
                   </motion.span>
@@ -213,7 +214,7 @@ export default function MissingValueVisual() {
                     Required sum =
                   </Typography>
                   <Typography sx={{ fontFamily: 'monospace', fontWeight: 700, fontSize: 15, color: 'text.primary' }}>
-                    {AVERAGE} × {COUNT} = <strong style={{ color: '#3b82f6', fontSize: 17 }}>{requiredSum}</strong>
+                    {AVERAGE} × {COUNT} = <strong style={{ color: COLOR_PALETTE.blue[500], fontSize: 17 }}>{requiredSum}</strong>
                   </Typography>
                 </Stack>
               </Box>

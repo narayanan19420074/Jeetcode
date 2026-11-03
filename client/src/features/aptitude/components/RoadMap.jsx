@@ -12,6 +12,7 @@ import Alien3D from './Alien3D';
 import { starsFor, testXp } from './gamification';
 import { tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Level map. Follows the app theme (dark / light) and the product palette:
 // slate surfaces, blue = current, green = cleared. A slim road winds through
@@ -33,11 +34,11 @@ const MOBILE = { ROW: 128, TOP: 96, BOTTOM: 96, AMP: 0.3, NODE: 64, TURN: Math.P
 // Phone map colours are the same solid colours as the level cards on the dashboard:
 // green = cleared, orange = open (locked levels are the same orange, faded, with a lock).
 const PHONE_STATE = {
-  completed: { fg: '#22A06B', bg: '#EAF6EE' },
-  current: { fg: '#F09A2E', bg: '#FFF2E3' },
-  locked: { fg: '#F09A2E', bg: '#FFF2E3' },
+  completed: { fg: COLOR_PALETTE.custom.emerald22A06B, bg: COLOR_PALETTE.green[50] },
+  current: { fg: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
+  locked: { fg: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
 };
-const PHONE_STAR = '#F2B63C';
+const PHONE_STAR = COLOR_PALETTE.custom.amberF2B63C;
 const PHONE_ALIEN = 96; // px, the alien beside the current level
 
 // `dir` is 1 when the road runs downwards from START and -1 when it climbs from the bottom (compact map).
@@ -86,8 +87,8 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
       : status === 'current'
         ? `linear-gradient(145deg, ${primary.light}, ${primary.main} 55%, ${primary.dark})`
         : dark
-          ? 'linear-gradient(145deg, #3B4A63, #263349)'
-          : 'linear-gradient(145deg, #E2E8F0, #CBD5E1)';
+          ? `linear-gradient(145deg, ${COLOR_PALETTE.slate[700]}, ${COLOR_PALETTE.custom.slate263349})`
+          : `linear-gradient(145deg, ${COLOR_PALETTE.slate[200]}, ${COLOR_PALETTE.slate[300]})`;
 
   return (
     <Box
@@ -147,23 +148,23 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
           display: 'grid',
           placeItems: 'center',
           cursor: status === 'locked' ? 'not-allowed' : 'pointer',
-          boxShadow: status === 'locked' ? `inset 0 1px 0 ${alpha('#fff', dark ? 0.08 : 0.6)}` : `inset 0 2px 0 ${alpha('#fff', 0.35)}, inset 0 -6px 12px ${alpha('#000', 0.22)}, 0 10px 26px ${alpha(accent, 0.4)}`,
+          boxShadow: status === 'locked' ? `inset 0 1px 0 ${alpha(COLOR_PALETTE.white, dark ? 0.08 : 0.6)}` : `inset 0 2px 0 ${alpha(COLOR_PALETTE.white, 0.35)}, inset 0 -6px 12px ${alpha(COLOR_PALETTE.black, 0.22)}, 0 10px 26px ${alpha(accent, 0.4)}`,
           transition: 'transform .18s ease',
           '&:hover': status === 'locked' ? undefined : { transform: 'scale(1.06)' },
           '&:active': status === 'locked' ? undefined : { transform: 'scale(0.97)' },
         }}
       >
         {status === 'locked' && <LockRoundedIcon sx={{ color: text.secondary, fontSize: 24 }} />}
-        {passed && narrow && <Typography sx={{ color: '#fff', fontWeight: 800, fontSize: 20, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
-        {passed && !narrow && (isLast ? <EmojiEventsRoundedIcon sx={{ color: '#fff', fontSize: 30 }} /> : <StarRoundedIcon sx={{ color: '#fff', fontSize: 32 }} />)}
-        {status === 'current' && <Typography sx={{ color: '#fff', fontWeight: 800, fontSize: narrow ? 20 : 24, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
+        {passed && narrow && <Typography sx={{ color: COLOR_PALETTE.white, fontWeight: 800, fontSize: 20, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
+        {passed && !narrow && (isLast ? <EmojiEventsRoundedIcon sx={{ color: COLOR_PALETTE.white, fontSize: 30 }} /> : <StarRoundedIcon sx={{ color: COLOR_PALETTE.white, fontSize: 32 }} />)}
+        {status === 'current' && <Typography sx={{ color: COLOR_PALETTE.white, fontWeight: 800, fontSize: narrow ? 20 : 24, fontFamily: '"JetBrains Mono", monospace' }}>{index + 1}</Typography>}
       </Box>
 
       {/* compact phone label: stars on the disc, short title underneath */}
       {narrow && passed && (
         <Box sx={{ position: 'absolute', left: '50%', bottom: -9, transform: 'translateX(-50%)', display: 'flex', zIndex: 3, pointerEvents: 'none' }}>
           {[0, 1, 2].map((n) => (
-            <StarRoundedIcon key={n} sx={{ fontSize: 14, mx: '-1px', color: n < stars ? warning.main : 'action.disabled', filter: 'drop-shadow(0 1px 1px rgba(0,0,0,.35))' }} />
+            <StarRoundedIcon key={n} sx={{ fontSize: 14, mx: '-1px', color: n < stars ? warning.main : 'action.disabled', filter: `drop-shadow(0 1px 1px ${withAlpha(COLOR_PALETTE.black, .35)})` }} />
           ))}
         </Box>
       )}
@@ -210,7 +211,7 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
           bgcolor: 'background.paper',
           border: '1px solid',
           borderColor: status === 'current' ? primary.main : status === 'completed' ? alpha(success.main, 0.5) : 'divider',
-          boxShadow: status === 'current' ? `0 12px 30px ${alpha(primary.main, 0.22)}` : dark ? '0 6px 18px rgba(0,0,0,.25)' : '0 6px 16px rgba(15,23,42,.06)',
+          boxShadow: status === 'current' ? `0 12px 30px ${alpha(primary.main, 0.22)}` : dark ? `0 6px 18px ${withAlpha(COLOR_PALETTE.black, .25)}` : `0 6px 16px ${withAlpha(COLOR_PALETTE.slate[900], .06)}`,
           opacity: status === 'locked' ? 0.78 : 1,
         }}
       >
@@ -472,7 +473,7 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0, phone = false }) 
                   ? { height: 32, borderRadius: 999, bgcolor: LIB_ACCENT, fontSize: 14, fontWeight: 500, letterSpacing: LIB_TRACKING, boxShadow: 'none' }
                   : { py: 0.6, borderRadius: '8px', bgcolor: 'primary.main', fontSize: 12.5, fontWeight: 700, boxShadow: (t) => `0 8px 20px ${alpha(t.palette.primary.main, 0.45)}` }),
                 border: 0,
-                color: '#fff',
+                color: COLOR_PALETTE.white,
                 fontFamily: 'inherit',
                 cursor: 'pointer',
                 '&:after': { content: '""', position: 'absolute', left: '50%', bottom: -5, ml: '-5px', borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: (t) => `6px solid ${phone ? LIB_ACCENT : t.palette.primary.main}` },
@@ -583,7 +584,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
               <>
                 {/* track */}
                 <path d={fullD} fill="none" stroke={alpha(text.secondary, dark ? 0.2 : 0.22)} strokeWidth={trackW + 8} strokeLinecap="round" />
-                <path d={fullD} fill="none" stroke={dark ? '#0F172A' : '#F1F5F9'} strokeWidth={trackW} strokeLinecap="round" />
+                <path d={fullD} fill="none" stroke={dark ? COLOR_PALETTE.slate[900] : COLOR_PALETTE.slate[100]} strokeWidth={trackW} strokeLinecap="round" />
                 {/* travelled stretch */}
                 <motion.path d={walkD} fill="none" stroke="url(#roadLit)" strokeOpacity="0.35" strokeWidth={trackW + 10} strokeLinecap="round" filter="url(#roadGlow)" initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2.6, delay: 0.9, ease: 'easeInOut' }} />
                 <motion.path d={walkD} fill="none" stroke="url(#roadLit)" strokeWidth={trackW - 6} strokeLinecap="round" initial={{ pathLength: reduce ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2.6, delay: 0.9, ease: 'easeInOut' }} />

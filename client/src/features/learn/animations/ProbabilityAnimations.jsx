@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -12,11 +13,11 @@ function Reveal({ at, step, children }) {
 const BASIC_STEPS = 5;
 // Fixed layout, 3 red then 2 blue, positioned inside the bag outline.
 const MARBLES = [
-  { x: 90, cy: 100, color: '#ef4444', favorable: true },
-  { x: 140, cy: 100, color: '#3b82f6', favorable: false },
-  { x: 190, cy: 100, color: '#ef4444', favorable: true },
-  { x: 240, cy: 100, color: '#3b82f6', favorable: false },
-  { x: 290, cy: 100, color: '#ef4444', favorable: true },
+  { x: 90, cy: 100, color: COLOR_PALETTE.red[500], favorable: true },
+  { x: 140, cy: 100, color: COLOR_PALETTE.blue[500], favorable: false },
+  { x: 190, cy: 100, color: COLOR_PALETTE.red[500], favorable: true },
+  { x: 240, cy: 100, color: COLOR_PALETTE.blue[500], favorable: false },
+  { x: 290, cy: 100, color: COLOR_PALETTE.red[500], favorable: true },
 ];
 
 export function BasicProbabilityAnimation() {
@@ -38,9 +39,9 @@ export function BasicProbabilityAnimation() {
 
           <Reveal at={1} step={step}>
             {MARBLES.filter((m) => m.favorable).map((m, i) => (
-              <circle key={i} cx={m.x} cy={m.cy} r="23" fill="none" stroke="#ef4444" strokeWidth="2.5" />
+              <circle key={i} cx={m.x} cy={m.cy} r="23" fill="none" stroke={COLOR_PALETTE.red[500]} strokeWidth="2.5" />
             ))}
-            <text x="210" y="165" textAnchor="middle" fontSize="14" fontWeight="700" fill="#ef4444">
+            <text x="210" y="165" textAnchor="middle" fontSize="14" fontWeight="700" fill={COLOR_PALETTE.red[500]}>
               Favorable (red) = 3
             </text>
           </Reveal>
@@ -52,14 +53,14 @@ export function BasicProbabilityAnimation() {
           </Reveal>
 
           <Reveal at={3} step={step}>
-            <text x="210" y="212" textAnchor="middle" fontSize="16" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="212" textAnchor="middle" fontSize="16" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               P(red) = 3/5
             </text>
           </Reveal>
 
           <Reveal at={4} step={step}>
-            <rect x="150" y="0" width="120" height="22" rx="11" fill="#10b981" opacity="0.15" />
-            <text x="210" y="15" textAnchor="middle" fontSize="12" fontWeight="800" fill="#10b981">
+            <rect x="150" y="0" width="120" height="22" rx="11" fill={COLOR_PALETTE.emerald[500]} opacity="0.15" />
+            <text x="210" y="15" textAnchor="middle" fontSize="12" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               = 60% chance
             </text>
           </Reveal>
@@ -91,24 +92,24 @@ export function AndRuleAnimation() {
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 240" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
-            <text x="105" y="24" textAnchor="middle" fontSize="13" fontWeight="700" fill="#ef4444">Pick a marble</text>
-            <circle cx="80" cy="55" r="14" fill="#ef4444" />
-            <circle cx="110" cy="55" r="14" fill="#3b82f6" />
-            <circle cx="140" cy="55" r="14" fill="#ef4444" />
+            <text x="105" y="24" textAnchor="middle" fontSize="13" fontWeight="700" fill={COLOR_PALETTE.red[500]}>Pick a marble</text>
+            <circle cx="80" cy="55" r="14" fill={COLOR_PALETTE.red[500]} />
+            <circle cx="110" cy="55" r="14" fill={COLOR_PALETTE.blue[500]} />
+            <circle cx="140" cy="55" r="14" fill={COLOR_PALETTE.red[500]} />
 
-            <text x="330" y="24" textAnchor="middle" fontSize="13" fontWeight="700" fill="#10b981">Roll a die</text>
-            <rect x="300" y="42" width="60" height="60" rx="10" fill="#10b981" opacity="0.12" stroke="#10b981" strokeWidth="2" />
-            <text x="330" y="80" textAnchor="middle" fontSize="24" fontWeight="800" fill="#10b981">6</text>
+            <text x="330" y="24" textAnchor="middle" fontSize="13" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>Roll a die</text>
+            <rect x="300" y="42" width="60" height="60" rx="10" fill={COLOR_PALETTE.emerald[500]} opacity="0.12" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="2" />
+            <text x="330" y="80" textAnchor="middle" fontSize="24" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>6</text>
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="105" y="130" textAnchor="middle" fontSize="16" fontWeight="800" fill="#ef4444">
+            <text x="105" y="130" textAnchor="middle" fontSize="16" fontWeight="800" fill={COLOR_PALETTE.red[500]}>
               P(red) = 3/5
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="330" y="130" textAnchor="middle" fontSize="16" fontWeight="800" fill="#10b981">
+            <text x="330" y="130" textAnchor="middle" fontSize="16" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               P(6) = 1/6
             </text>
           </Reveal>
@@ -127,7 +128,7 @@ export function AndRuleAnimation() {
 
           <Reveal at={5} step={step}>
             <rect x="140" y="205" width="140" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="230" textAnchor="middle" fontSize="20" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="230" textAnchor="middle" fontSize="20" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               P(red AND 6) = 1/10
             </text>
           </Reveal>
@@ -174,15 +175,15 @@ export function OrRuleAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <rect x={40 + 1 * 58} y="40" width="46" height="46" rx="8" fill="none" stroke="#ef4444" strokeWidth="3" />
-            <text x="105" y="115" textAnchor="middle" fontSize="14" fontWeight="700" fill="#ef4444">
+            <rect x={40 + 1 * 58} y="40" width="46" height="46" rx="8" fill="none" stroke={COLOR_PALETTE.red[500]} strokeWidth="3" />
+            <text x="105" y="115" textAnchor="middle" fontSize="14" fontWeight="700" fill={COLOR_PALETTE.red[500]}>
               P(2) = 1/6
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <rect x={40 + 4 * 58} y="40" width="46" height="46" rx="8" fill="none" stroke="#10b981" strokeWidth="3" />
-            <text x="337" y="115" textAnchor="middle" fontSize="14" fontWeight="700" fill="#10b981">
+            <rect x={40 + 4 * 58} y="40" width="46" height="46" rx="8" fill="none" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="3" />
+            <text x="337" y="115" textAnchor="middle" fontSize="14" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               P(5) = 1/6
             </text>
           </Reveal>
@@ -201,7 +202,7 @@ export function OrRuleAnimation() {
 
           <Reveal at={5} step={step}>
             <rect x="150" y="180" width="120" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="205" textAnchor="middle" fontSize="20" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="205" textAnchor="middle" fontSize="20" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               P(2 OR 5) = 1/3
             </text>
           </Reveal>

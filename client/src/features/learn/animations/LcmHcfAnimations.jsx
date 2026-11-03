@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Small helper: an SVG text/element that fades in once `step` reaches
 // `at`. Centralizing the transition here keeps every animation's reveal
@@ -25,9 +26,9 @@ export function PrimeFactorizationAnimation() {
         <svg viewBox="0 0 420 260" width="100%" style={{ display: 'block' }}>
           {/* Step 0: the two numbers */}
           <Reveal at={0} step={step}>
-            <rect x="30" y="20" width="80" height="44" rx="8" fill="var(--mui-palette-primary-main, #6366f1)" opacity="0.15" />
+            <rect x="30" y="20" width="80" height="44" rx="8" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`} opacity="0.15" />
             <text x="70" y="48" textAnchor="middle" fontSize="22" fontWeight="800" fill="currentColor">12</text>
-            <rect x="310" y="20" width="80" height="44" rx="8" fill="var(--mui-palette-primary-main, #6366f1)" opacity="0.15" />
+            <rect x="310" y="20" width="80" height="44" rx="8" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`} opacity="0.15" />
             <text x="350" y="48" textAnchor="middle" fontSize="22" fontWeight="800" fill="currentColor">18</text>
           </Reveal>
 
@@ -50,9 +51,9 @@ export function PrimeFactorizationAnimation() {
             <text x="210" y="135" textAnchor="middle" fontSize="13" fontWeight="700" fill="currentColor" opacity="0.7">
               Take each prime at its HIGHEST power
             </text>
-            <text x="150" y="165" textAnchor="middle" fontSize="18" fontWeight="800" fill="#f59e0b">2²</text>
+            <text x="150" y="165" textAnchor="middle" fontSize="18" fontWeight="800" fill={COLOR_PALETTE.amber[500]}>2²</text>
             <text x="150" y="182" textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.6">(from 12)</text>
-            <text x="270" y="165" textAnchor="middle" fontSize="18" fontWeight="800" fill="#10b981">3²</text>
+            <text x="270" y="165" textAnchor="middle" fontSize="18" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>3²</text>
             <text x="270" y="182" textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.6">(from 18)</text>
           </Reveal>
 
@@ -66,7 +67,7 @@ export function PrimeFactorizationAnimation() {
           {/* Step 5: result */}
           <Reveal at={5} step={step}>
             <rect x="150" y="228" width="120" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="252" textAnchor="middle" fontSize="24" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="252" textAnchor="middle" fontSize="24" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               LCM = 36
             </text>
           </Reveal>
@@ -101,21 +102,21 @@ export function HcfLcmRelationAnimation() {
         <svg viewBox="0 0 420 260" width="100%" style={{ display: 'block' }}>
           {/* Step 0: two circles labeled 12 and 18 */}
           <Reveal at={0} step={step}>
-            <circle cx="165" cy="120" r="90" fill="#6366f1" opacity="0.12" stroke="#6366f1" strokeWidth="2" />
-            <circle cx="255" cy="120" r="90" fill="#10b981" opacity="0.12" stroke="#10b981" strokeWidth="2" />
-            <text x="95" y="60" fontSize="16" fontWeight="700" fill="#6366f1">12</text>
-            <text x="315" y="60" fontSize="16" fontWeight="700" fill="#10b981">18</text>
+            <circle cx="165" cy="120" r="90" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" stroke={COLOR_PALETTE.indigo[500]} strokeWidth="2" />
+            <circle cx="255" cy="120" r="90" fill={COLOR_PALETTE.emerald[500]} opacity="0.12" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="2" />
+            <text x="95" y="60" fontSize="16" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>12</text>
+            <text x="315" y="60" fontSize="16" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>18</text>
           </Reveal>
 
           {/* Step 1: left-only exclusive factor */}
           <Reveal at={1} step={step}>
-            <text x="115" y="125" textAnchor="middle" fontSize="20" fontWeight="800" fill="#6366f1">2</text>
+            <text x="115" y="125" textAnchor="middle" fontSize="20" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>2</text>
             <text x="115" y="145" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.6">extra</text>
           </Reveal>
 
           {/* Step 2: right-only exclusive factor */}
           <Reveal at={2} step={step}>
-            <text x="305" y="125" textAnchor="middle" fontSize="20" fontWeight="800" fill="#10b981">3</text>
+            <text x="305" y="125" textAnchor="middle" fontSize="20" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>3</text>
             <text x="305" y="145" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.6">extra</text>
           </Reveal>
 

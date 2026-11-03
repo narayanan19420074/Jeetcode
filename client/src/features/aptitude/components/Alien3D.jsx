@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { Box } from '@mui/material';
 import AlienWalker from './AlienWalker';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Real-time 3D mascots (three.js). Five ORIGINAL characters that evolve with
 // the learner's XP:
@@ -41,9 +42,9 @@ const rnd = (i, s = 1) => {
 function softTexture() {
   const [c, g] = cvs(64);
   const r = g.createRadialGradient(32, 32, 0, 32, 32, 32);
-  r.addColorStop(0, 'rgba(255,255,255,1)');
-  r.addColorStop(0.4, 'rgba(255,255,255,0.45)');
-  r.addColorStop(1, 'rgba(255,255,255,0)');
+  r.addColorStop(0, COLOR_PALETTE.white);
+  r.addColorStop(0.4, withAlpha(COLOR_PALETTE.white, 0.45));
+  r.addColorStop(1, withAlpha(COLOR_PALETTE.white, 0));
   g.fillStyle = r;
   g.fillRect(0, 0, 64, 64);
   return new THREE.CanvasTexture(c);
@@ -52,9 +53,9 @@ function softTexture() {
 function starSkin() {
   const [c, g] = cvs(256);
   const grad = g.createLinearGradient(0, 0, 256, 256);
-  grad.addColorStop(0, '#2b2b9a');
-  grad.addColorStop(0.5, '#150f5c');
-  grad.addColorStop(1, '#4a1a8a');
+  grad.addColorStop(0, COLOR_PALETTE.indigo[800]);
+  grad.addColorStop(0.5, COLOR_PALETTE.custom.violet150F5C);
+  grad.addColorStop(1, COLOR_PALETTE.violet[900]);
   g.fillStyle = grad;
   g.fillRect(0, 0, 256, 256);
   for (let i = 0; i < 26; i += 1) {
@@ -62,13 +63,13 @@ function starSkin() {
     const y = rnd(i, 2) * 256;
     const r = 18 + rnd(i, 3) * 40;
     const n = g.createRadialGradient(x, y, 0, x, y, r);
-    n.addColorStop(0, i % 2 ? 'rgba(103,232,249,.22)' : 'rgba(192,132,252,.25)');
-    n.addColorStop(1, 'rgba(0,0,0,0)');
+    n.addColorStop(0, i % 2 ? withAlpha(COLOR_PALETTE.cyan[300], .22) : withAlpha(COLOR_PALETTE.purple[400], .25));
+    n.addColorStop(1, withAlpha(COLOR_PALETTE.black, 0));
     g.fillStyle = n;
     g.fillRect(x - r, y - r, r * 2, r * 2);
   }
   for (let i = 0; i < 150; i += 1) {
-    g.fillStyle = i % 8 === 0 ? '#fde68a' : '#fff';
+    g.fillStyle = i % 8 === 0 ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white;
     g.globalAlpha = 0.5 + rnd(i, 5) * 0.5;
     g.beginPath();
     g.arc(rnd(i, 6) * 256, rnd(i, 7) * 256, 0.6 + rnd(i, 8) * 1.4, 0, Math.PI * 2);
@@ -81,7 +82,7 @@ function starSkin() {
 
 function magmaSkin() {
   const [c, g] = cvs(256);
-  g.fillStyle = '#2a1815';
+  g.fillStyle = COLOR_PALETTE.custom.black2A1815;
   g.fillRect(0, 0, 256, 256);
   g.lineCap = 'round';
   g.lineJoin = 'round';
@@ -95,10 +96,10 @@ function magmaSkin() {
       y += (rnd(k * 9 + s, 4) - 0.5) * 70;
       g.lineTo(x, y);
     }
-    g.strokeStyle = 'rgba(255,120,30,.28)';
+    g.strokeStyle = withAlpha(COLOR_PALETTE.orange[500], .28);
     g.lineWidth = 9;
     g.stroke();
-    g.strokeStyle = '#ffb23a';
+    g.strokeStyle = COLOR_PALETTE.custom.amberFFB23A;
     g.lineWidth = 2.6;
     g.stroke();
   }
@@ -387,8 +388,8 @@ function buildMascot(kind, brand = false) {
   /* ground contact */
   const [sc, sg] = cvs(128);
   const sh = sg.createRadialGradient(64, 64, 4, 64, 64, 62);
-  sh.addColorStop(0, 'rgba(0,0,0,0.5)');
-  sh.addColorStop(1, 'rgba(0,0,0,0)');
+  sh.addColorStop(0, withAlpha(COLOR_PALETTE.black, 0.5));
+  sh.addColorStop(1, withAlpha(COLOR_PALETTE.black, 0));
   sg.fillStyle = sh;
   sg.fillRect(0, 0, 128, 128);
   const shadow = new THREE.Mesh(track(new THREE.PlaneGeometry(3.2, 3.2)), track(new THREE.MeshBasicMaterial({ map: track(new THREE.CanvasTexture(sc)), transparent: true, depthWrite: false })));

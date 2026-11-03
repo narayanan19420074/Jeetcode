@@ -1,5 +1,6 @@
 import { Box, Paper, Typography } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -55,7 +56,7 @@ export function WorkerEfficiencyAnimation() {
         <svg viewBox="0 0 420 220" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
             <rect x="30" y="20" width="240" height="120" rx="4" fill="none" stroke="currentColor" strokeOpacity="0.3" strokeWidth="2" />
-            <WallProgress x={30} y={20} w={240} h={120} fraction={step === 0 ? 0 : fraction} color="#6366f1" />
+            <WallProgress x={30} y={20} w={240} h={120} fraction={step === 0 ? 0 : fraction} color={COLOR_PALETTE.indigo[500]} />
           </Reveal>
 
           <Reveal at={0} step={step}>
@@ -65,13 +66,13 @@ export function WorkerEfficiencyAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="330" y="60" fontSize="14" fontWeight="700" fill="#6366f1">Each day:</text>
-            <text x="330" y="82" fontSize="22" fontWeight="800" fill="#6366f1">+ 1/6</text>
+            <text x="330" y="60" fontSize="14" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>Each day:</text>
+            <text x="330" y="82" fontSize="22" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>+ 1/6</text>
             <text x="330" y="100" fontSize="11" fill="currentColor" opacity="0.6">of the wall</text>
           </Reveal>
 
           <Reveal at={5} step={step}>
-            <text x="150" y="190" textAnchor="middle" fontSize="16" fontWeight="800" fill="#10b981">
+            <text x="150" y="190" textAnchor="middle" fontSize="16" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               Wall complete — 6/6
             </text>
           </Reveal>
@@ -103,16 +104,16 @@ export function CombinedWorkAnimation() {
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 260" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
-            <text x="20" y="20" fontSize="13" fontWeight="700" fill="#6366f1">Ravi</text>
+            <text x="20" y="20" fontSize="13" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>Ravi</text>
             <rect x="20" y="28" width="160" height="16" rx="4" fill="currentColor" opacity="0.08" />
-            <rect x="20" y="28" width="26.7" height="16" rx="4" fill="#6366f1" />
+            <rect x="20" y="28" width="26.7" height="16" rx="4" fill={COLOR_PALETTE.indigo[500]} />
             <text x="190" y="41" fontSize="12" fill="currentColor" opacity="0.7">1/6 per day</text>
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="20" y="66" fontSize="13" fontWeight="700" fill="#10b981">Kumar</text>
+            <text x="20" y="66" fontSize="13" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>Kumar</text>
             <rect x="20" y="74" width="160" height="16" rx="4" fill="currentColor" opacity="0.08" />
-            <rect x="20" y="74" width="20" height="16" rx="4" fill="#10b981" />
+            <rect x="20" y="74" width="20" height="16" rx="4" fill={COLOR_PALETTE.emerald[500]} />
             <text x="190" y="87" fontSize="12" fill="currentColor" opacity="0.7">1/8 per day</text>
           </Reveal>
 
@@ -123,7 +124,7 @@ export function CombinedWorkAnimation() {
 
           <Reveal at={3} step={step}>
             <rect x="20" y="160" width="200" height="4" fill="currentColor" opacity="0.15" />
-            <text x="20" y="188" fontSize="22" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="20" y="188" fontSize="22" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               = 7/24 per day
             </text>
           </Reveal>
@@ -132,7 +133,7 @@ export function CombinedWorkAnimation() {
             <text x="20" y="225" fontSize="16" fontWeight="700" fill="currentColor">
               Whole wall (24/24) takes:
             </text>
-            <text x="20" y="250" fontSize="22" fontWeight="800" fill="#10b981">
+            <text x="20" y="250" fontSize="22" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               24 ÷ 7 ≈ 3.43 days
             </text>
           </Reveal>
@@ -167,21 +168,21 @@ export function LcmShortcutWorkAnimation() {
             <text x="210" y="24" textAnchor="middle" fontSize="14" fontWeight="700" fill="currentColor">
               Assume total work = LCM(6, 8)
             </text>
-            <text x="210" y="50" textAnchor="middle" fontSize="24" fontWeight="800" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="50" textAnchor="middle" fontSize="24" fontWeight="800" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               24 units
             </text>
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <rect x="30" y="70" width="160" height="40" rx="8" fill="#6366f1" opacity="0.12" />
-            <text x="110" y="95" textAnchor="middle" fontSize="14" fontWeight="700" fill="#6366f1">
+            <rect x="30" y="70" width="160" height="40" rx="8" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="110" y="95" textAnchor="middle" fontSize="14" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>
               Ravi: 24 ÷ 6 = 4/day
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <rect x="230" y="70" width="160" height="40" rx="8" fill="#10b981" opacity="0.12" />
-            <text x="310" y="95" textAnchor="middle" fontSize="14" fontWeight="700" fill="#10b981">
+            <rect x="230" y="70" width="160" height="40" rx="8" fill={COLOR_PALETTE.emerald[500]} opacity="0.12" />
+            <text x="310" y="95" textAnchor="middle" fontSize="14" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>
               Kumar: 24 ÷ 8 = 3/day
             </text>
           </Reveal>
@@ -197,7 +198,7 @@ export function LcmShortcutWorkAnimation() {
             <text x="210" y="190" textAnchor="middle" fontSize="15" fill="currentColor">
               Days needed = 24 ÷ 7
             </text>
-            <text x="210" y="218" textAnchor="middle" fontSize="22" fontWeight="800" fill="#10b981">
+            <text x="210" y="218" textAnchor="middle" fontSize="22" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               = 24/7 days (same answer!)
             </text>
           </Reveal>

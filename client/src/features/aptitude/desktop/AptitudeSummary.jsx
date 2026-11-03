@@ -4,8 +4,9 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
-const PROGRESS_GOLD = '#F2B63C';
+const PROGRESS_GOLD = COLOR_PALETTE.custom.amberF2B63C;
 
 function ProgressLine({ cleared, total, palette }) {
   return (
@@ -22,7 +23,7 @@ function ProgressLine({ cleared, total, palette }) {
 
 function ContinueButton({ label, onClick, palette }) {
   return (
-    <Button onClick={onClick} disableElevation startIcon={<PlayArrowRoundedIcon />} sx={(theme) => ({ mt: 2.5, height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: LIB_TRACKING, textTransform: 'none', bgcolor: palette.player, color: theme.palette.mode === 'dark' ? palette.text : '#6B4A1E', '&:hover': { bgcolor: palette.player, filter: 'brightness(0.97)' } })}>
+    <Button onClick={onClick} disableElevation startIcon={<PlayArrowRoundedIcon />} sx={(theme) => ({ mt: 2.5, height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: 500, fontSize: 18, letterSpacing: LIB_TRACKING, textTransform: 'none', bgcolor: palette.player, color: theme.palette.mode === 'dark' ? palette.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: palette.player, filter: 'brightness(0.97)' } })}>
       {label}
     </Button>
   );

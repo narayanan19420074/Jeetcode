@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -33,21 +34,21 @@ export function DividingRatioAnimation() {
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <text x="210" y="115" textAnchor="middle" fontSize="14" fontWeight="700" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="115" textAnchor="middle" fontSize="14" fontWeight="700" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               Value per part = 5000 ÷ 5 = ₹1000
             </text>
           </Reveal>
 
           <Reveal at={3} step={step}>
-            <rect x="40" y="140" width="150" height="40" rx="8" fill="#6366f1" opacity="0.12" />
-            <text x="115" y="158" textAnchor="middle" fontSize="12" fontWeight="700" fill="#6366f1">Arjun (3 parts)</text>
-            <text x="115" y="175" textAnchor="middle" fontSize="15" fontWeight="800" fill="#6366f1">₹3000</text>
+            <rect x="40" y="140" width="150" height="40" rx="8" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="115" y="158" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>Arjun (3 parts)</text>
+            <text x="115" y="175" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>₹3000</text>
           </Reveal>
 
           <Reveal at={4} step={step}>
-            <rect x="230" y="140" width="150" height="40" rx="8" fill="#10b981" opacity="0.12" />
-            <text x="305" y="158" textAnchor="middle" fontSize="12" fontWeight="700" fill="#10b981">Kumar (2 parts)</text>
-            <text x="305" y="175" textAnchor="middle" fontSize="15" fontWeight="800" fill="#10b981">₹2000</text>
+            <rect x="230" y="140" width="150" height="40" rx="8" fill={COLOR_PALETTE.emerald[500]} opacity="0.12" />
+            <text x="305" y="158" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>Kumar (2 parts)</text>
+            <text x="305" y="175" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>₹2000</text>
           </Reveal>
 
           <Reveal at={5} step={step}>
@@ -84,8 +85,8 @@ export function ProportionSolveAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <path d="M150 65 L 270 100" stroke="#6366f1" strokeWidth="2" fill="none" />
-            <path d="M270 65 L 150 100" stroke="#10b981" strokeWidth="2" fill="none" />
+            <path d="M150 65 L 270 100" stroke={COLOR_PALETTE.indigo[500]} strokeWidth="2" fill="none" />
+            <path d="M270 65 L 150 100" stroke={COLOR_PALETTE.emerald[500]} strokeWidth="2" fill="none" />
             <text x="210" y="120" textAnchor="middle" fontSize="12" fontWeight="700" fill="currentColor">
               Cross multiply
             </text>
@@ -105,7 +106,7 @@ export function ProportionSolveAnimation() {
 
           <Reveal at={4} step={step}>
             <rect x="160" y="185" width="100" height="4" fill="currentColor" opacity="0.15" />
-            <text x="210" y="210" textAnchor="middle" fontSize="20" fontWeight="800" fill="#10b981">
+            <text x="210" y="210" textAnchor="middle" fontSize="20" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>
               x = 15
             </text>
           </Reveal>
@@ -138,21 +139,21 @@ export function CompoundRatioAnimation() {
           </Reveal>
 
           <Reveal at={1} step={step}>
-            <text x="210" y="68" textAnchor="middle" fontSize="13" fontWeight="700" fill="var(--mui-palette-primary-main, #6366f1)">
+            <text x="210" y="68" textAnchor="middle" fontSize="13" fontWeight="700" fill={`var(--mui-palette-primary-main, ${COLOR_PALETTE.indigo[500]})`}>
               Make B match: LCM(3, 4) = 12
             </text>
           </Reveal>
 
           <Reveal at={2} step={step}>
-            <rect x="40" y="85" width="150" height="40" rx="8" fill="#6366f1" opacity="0.12" />
-            <text x="115" y="103" textAnchor="middle" fontSize="12" fontWeight="700" fill="#6366f1">A:B = 2:3 (×4)</text>
-            <text x="115" y="120" textAnchor="middle" fontSize="15" fontWeight="800" fill="#6366f1">= 8 : 12</text>
+            <rect x="40" y="85" width="150" height="40" rx="8" fill={COLOR_PALETTE.indigo[500]} opacity="0.12" />
+            <text x="115" y="103" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.indigo[500]}>A:B = 2:3 (×4)</text>
+            <text x="115" y="120" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.indigo[500]}>= 8 : 12</text>
           </Reveal>
 
           <Reveal at={3} step={step}>
-            <rect x="230" y="85" width="150" height="40" rx="8" fill="#10b981" opacity="0.12" />
-            <text x="305" y="103" textAnchor="middle" fontSize="12" fontWeight="700" fill="#10b981">B:C = 4:5 (×3)</text>
-            <text x="305" y="120" textAnchor="middle" fontSize="15" fontWeight="800" fill="#10b981">= 12 : 15</text>
+            <rect x="230" y="85" width="150" height="40" rx="8" fill={COLOR_PALETTE.emerald[500]} opacity="0.12" />
+            <text x="305" y="103" textAnchor="middle" fontSize="12" fontWeight="700" fill={COLOR_PALETTE.emerald[500]}>B:C = 4:5 (×3)</text>
+            <text x="305" y="120" textAnchor="middle" fontSize="15" fontWeight="800" fill={COLOR_PALETTE.emerald[500]}>= 12 : 15</text>
           </Reveal>
 
           <Reveal at={4} step={step}>

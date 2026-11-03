@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Box, Button, Paper, Slider, Stack, Typography, alpha } from '@mui/material';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Small interactive visuals used inside Learn lessons. Each one lets the
 // learner move a slider and SEE the rule, instead of reading it.
@@ -103,9 +104,9 @@ export function SuccessiveChangeWidget() {
         <SliderRow label="First change" value={a} min={-50} max={50} onChange={setA} sign />
         <SliderRow label="Second change" value={b} min={-50} max={50} onChange={setB} sign />
         <Stack spacing={1}>
-          {bar(100, 'Start', '#94A3B8')}
-          {bar(v1, `After ${a >= 0 ? '+' : ''}${a}%`, '#3B82F6')}
-          {bar(v2, `After ${b >= 0 ? '+' : ''}${b}%`, net >= 0 ? '#10B981' : '#EF4444')}
+          {bar(100, 'Start', COLOR_PALETTE.slate[400])}
+          {bar(v1, `After ${a >= 0 ? '+' : ''}${a}%`, COLOR_PALETTE.blue[500])}
+          {bar(v2, `After ${b >= 0 ? '+' : ''}${b}%`, net >= 0 ? COLOR_PALETTE.emerald[500] : COLOR_PALETTE.red[500])}
         </Stack>
         <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
           <Typography sx={{ ...mono, fontSize: 14 }}>
@@ -140,10 +141,10 @@ export function PriceConsumptionWidget() {
         <SliderRow label="Price rises by" value={x} min={5} max={100} step={5} onChange={setX} />
         <Box sx={{ overflowX: 'auto' }}>
           <svg width={(newW + 16) * scale} height={(H + 16) * scale} viewBox={`0 0 ${newW + 16} ${H + 16}`} role="img" aria-label="Equal-area rectangles">
-            <rect x="8" y="8" width={W} height={H} rx="4" fill="rgba(148,163,184,0.25)" stroke="#94A3B8" />
-            <rect x="8" y={8 + (H - newH)} width={newW} height={newH} rx="4" fill="rgba(59,130,246,0.30)" stroke="#3B82F6" strokeDasharray="5 3" />
-            <text x={16} y={26} fontSize="12" fill="#64748B">Old: price 100 × consumption 100</text>
-            <text x={16} y={8 + H - 8} fontSize="12" fill="#3B82F6">New: price {100 + x} × consumption {(100 - cut).toFixed(1)}</text>
+            <rect x="8" y="8" width={W} height={H} rx="4" fill={withAlpha(COLOR_PALETTE.slate[400], 0.25)} stroke={COLOR_PALETTE.slate[400]} />
+            <rect x="8" y={8 + (H - newH)} width={newW} height={newH} rx="4" fill={withAlpha(COLOR_PALETTE.blue[500], 0.30)} stroke={COLOR_PALETTE.blue[500]} strokeDasharray="5 3" />
+            <text x={16} y={26} fontSize="12" fill={COLOR_PALETTE.slate[500]}>Old: price 100 × consumption 100</text>
+            <text x={16} y={8 + H - 8} fontSize="12" fill={COLOR_PALETTE.blue[500]}>New: price {100 + x} × consumption {(100 - cut).toFixed(1)}</text>
           </svg>
         </Box>
         <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>

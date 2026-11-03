@@ -5,6 +5,7 @@ import { createTheme, darken, lighten, useTheme } from '@mui/material/styles';
 import { rankForPath } from '../components/gamification';
 import { fetchPatterns } from '../aptitudeSlice';
 import { TRACKS, isCleared, trackOf } from './aptitudeTracks';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Aptitude is always shown; the other tracks only when they have levels. The open track lives in ?track=.
 function useTrackSelection(patterns) {
@@ -25,7 +26,7 @@ function useTrackTheme(track) {
   const outerTheme = useTheme();
   return useMemo(() => {
     if (!track.color) return outerTheme;
-    const palette = { primary: { main: track.color, light: lighten(track.color, 0.25), dark: darken(track.color, 0.2), contrastText: '#fff' } };
+    const palette = { primary: { main: track.color, light: lighten(track.color, 0.25), dark: darken(track.color, 0.2), contrastText: COLOR_PALETTE.white } };
     return createTheme(outerTheme, { palette });
   }, [outerTheme, track.color]);
 }

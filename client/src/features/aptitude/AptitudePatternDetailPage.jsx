@@ -47,6 +47,7 @@ import { CountUp, XpBar, popChild, staggerParent } from './components/MotionBits
 import { moduleXp, rankForXp } from './components/gamification';
 import { DIFFICULTY, formatClock, formatDuration } from './components/aptitudeUi';
 import MobilePatternDetail, { MobilePatternError, MobilePatternSkeleton } from './components/MobilePatternDetail';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 const MONO = '"JetBrains Mono", monospace';
 
@@ -71,7 +72,7 @@ function ActionIcon({ icon, accent, name, onClick, disabled, highlight, dot, lab
               display: 'grid',
               placeItems: 'center',
               bgcolor: accent,
-              color: '#fff',
+              color: COLOR_PALETTE.white,
               boxShadow: highlight ? `0 0 0 3px ${alpha(accent, 0.28)}` : 'none',
               transition: 'box-shadow .2s ease, transform .15s ease',
               '& svg': { fontSize: 30 },
@@ -369,7 +370,7 @@ export default function AptitudePatternDetailPage() {
 
         <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 1 }}>
           <Box sx={{ flex: 1 }}>
-            <XpBar pct={rank.pct} color={rank.alien.color} height={4} track="rgba(148,163,184,.22)" />
+            <XpBar pct={rank.pct} color={rank.alien.color} height={4} track={withAlpha(COLOR_PALETTE.slate[400], .22)} />
           </Box>
           <Typography variant="caption" color="text.secondary" noWrap sx={{ flexShrink: 0, fontSize: 11 }}>
             {rank.next ? `${rank.toNext} XP → ${rank.next.name}` : 'Max evolution'}
@@ -377,9 +378,9 @@ export default function AptitudePatternDetailPage() {
         </Stack>
 
         <Stack direction="row" spacing={1} sx={{ mt: 1.25 }}>
-          <Stat icon={<CheckCircleRoundedIcon />} color="#10B981" value={totals.solved} suffix={`/${totals.total}`} label="Solved" />
-          <Stat icon={<MenuBookRoundedIcon />} color="#3B82F6" value={learnDone} suffix={learnTotal ? `/${learnTotal}` : ''} label="Lessons" />
-          <Stat icon={<EmojiEventsRoundedIcon />} color="#F59E0B" value={progress.attemptsCount > 0 ? Math.round(progress.bestScore) : 0} suffix="%" label="Best test" />
+          <Stat icon={<CheckCircleRoundedIcon />} color={COLOR_PALETTE.emerald[500]} value={totals.solved} suffix={`/${totals.total}`} label="Solved" />
+          <Stat icon={<MenuBookRoundedIcon />} color={COLOR_PALETTE.blue[500]} value={learnDone} suffix={learnTotal ? `/${learnTotal}` : ''} label="Lessons" />
+          <Stat icon={<EmojiEventsRoundedIcon />} color={COLOR_PALETTE.amber[500]} value={progress.attemptsCount > 0 ? Math.round(progress.bestScore) : 0} suffix="%" label="Best test" />
         </Stack>
 
         <Stack direction="row" useFlexGap spacing={1.25} sx={{ mt: 1.1, alignItems: 'center', flexWrap: 'wrap' }}>
@@ -463,7 +464,7 @@ export default function AptitudePatternDetailPage() {
       <Box component={motion.div} variants={staggerParent} initial="hidden" animate="show" sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', flexShrink: 0, py: 0.5 }}>
         <ActionIcon
           icon={<MenuBookRoundedIcon />}
-          accent="#3B82F6"
+          accent={COLOR_PALETTE.blue[500]}
           name="Learn"
           label={`Learn: ${learnLine}`}
           disabled={!hasLearn}
@@ -472,7 +473,7 @@ export default function AptitudePatternDetailPage() {
         />
         <ActionIcon
           icon={<CodeRoundedIcon />}
-          accent="#10B981"
+          accent={COLOR_PALETTE.emerald[500]}
           name="Practice"
           label={`Practice: ${practiceLine}`}
           highlight={(learnDone > 0 || !hasLearn) && !activeTest && totals.solved < totals.total}
@@ -480,7 +481,7 @@ export default function AptitudePatternDetailPage() {
         />
         <ActionIcon
           icon={<TimerRoundedIcon />}
-          accent="#F59E0B"
+          accent={COLOR_PALETTE.amber[500]}
           name="Test"
           label={`Test: ${testLine}`}
           highlight={!!activeTest}
