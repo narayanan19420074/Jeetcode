@@ -4,7 +4,6 @@ import {
   Alert,
   Box,
   Button,
-  ButtonBase,
   Chip,
   Dialog,
   DialogActions,
@@ -20,9 +19,6 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
-import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
-import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -32,9 +28,8 @@ import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import ProgressRing from '../../../components/ProgressRing';
-import NqtExploreCard from './NqtExploreCard';
 import MobileExplore from './MobileExplore';
-import { problemsApi } from '../../../api/problemsApi';
+import ExploreDesktopView from '../explore/desktop/ExploreDesktopView';
 import { prepApi } from '../../../api/prepApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, surface } from '../dashboardUtils';
@@ -62,124 +57,10 @@ export { default as QuestsView } from '../../quests/QuestsView';
 
 // ------------------------------------------------------------------- explore
 
-const TOOLS = [
-  {
-    to: '/aptitude',
-    title: 'Aptitude practice',
-    text: 'Learn a pattern, practice it, then take a timed test.',
-    icon: CalculateRoundedIcon,
-    gradient: 'linear-gradient(135deg,#7C3AED,#4C1D95)',
-  },
-  {
-    to: '/visualizer',
-    title: 'Algorithm visualizer',
-    text: 'Watch sorting, searching and graph algorithms run step by step.',
-    icon: BarChartRoundedIcon,
-    gradient: 'linear-gradient(135deg,#0E7490,#164E63)',
-  },
-  {
-    to: '/prep',
-    title: 'Prep by company',
-    text: 'See the exam pattern and track your readiness for each drive.',
-    icon: BusinessRoundedIcon,
-    gradient: 'linear-gradient(135deg,#047857,#0E7490)',
-  },
-];
-
-// Phones get their own full-screen layout (MobileExplore); wide screens keep the dashboard view.
+// Phones get their own full-screen layout (MobileExplore); wide screens get the Library-look dashboard view.
 export function ExploreView({ onBrowse }) {
   const phone = useMediaQuery(useTheme().breakpoints.down('md'), { noSsr: true });
-  return phone ? <MobileExplore onBrowse={onBrowse} /> : <DesktopExplore onBrowse={onBrowse} />;
-}
-
-function DesktopExplore({ onBrowse }) {
-  const [tags, setTags] = useState([]);
-  const [companies, setCompanies] = useState([]);
-
-  useEffect(() => {
-    problemsApi.getTags().then(({ data }) => setTags(data.data.items.slice(0, 18))).catch(() => {});
-    problemsApi.getCompanies().then(({ data }) => setCompanies(data.data.items.slice(0, 14))).catch(() => {});
-  }, []);
-
-  const chip = (label, count, onClick) => (
-    <ButtonBase
-      key={label}
-      onClick={onClick}
-      sx={(t) => ({
-        gap: 0.75,
-        px: 1.5,
-        py: 0.75,
-        borderRadius: 999,
-        fontFamily: 'inherit',
-        border: `1px solid ${t.palette.divider}`,
-        '&:hover': { borderColor: t.palette.primary.main, bgcolor: alpha(t.palette.primary.main, 0.08) },
-        '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: 2 },
-      })}
-    >
-      <Typography variant="body2" sx={{ fontWeight: 600 }}>
-        {label}
-      </Typography>
-      <Typography variant="caption" color="text.secondary" sx={{ fontVariantNumeric: 'tabular-nums' }}>
-        {count}
-      </Typography>
-    </ButtonBase>
-  );
-
-  return (
-    <Box>
-      <ViewHeader title="Explore" subtitle="Everything beyond the problem list: practice tools and shortcuts into the library." />
-
-      <NqtExploreCard />
-
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, minmax(0, 1fr))' }, gap: 1.5, mb: 3.5 }}>
-        {TOOLS.map(({ to, title, text, icon: Icon, gradient }) => (
-          <Box
-            key={to}
-            component={RouterLink}
-            to={to}
-            sx={{
-              position: 'relative',
-              overflow: 'hidden',
-              minHeight: 150,
-              p: 2.25,
-              borderRadius: '14px',
-              color: '#fff',
-              textDecoration: 'none',
-              background: gradient,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-end',
-              boxShadow: '0 14px 28px -18px rgba(2,6,23,0.8), inset 0 1px 0 rgba(255,255,255,0.18)',
-              '&:hover': { filter: 'brightness(1.08)' },
-              '&:focus-visible': { outline: '3px solid #fff', outlineOffset: -4 },
-            }}
-          >
-            <Icon sx={{ position: 'absolute', top: 14, right: 14, fontSize: 34, opacity: 0.9 }} />
-            <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', lineHeight: 1.2 }}>{title}</Typography>
-            <Typography sx={{ mt: 0.5, fontSize: '0.8rem', lineHeight: 1.4, color: 'rgba(255,255,255,0.86)' }}>{text}</Typography>
-          </Box>
-        ))}
-      </Box>
-
-      {companies.length > 0 && (
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="body2" sx={{ fontWeight: 800, mb: 1.25 }}>
-            Browse by company
-          </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>{companies.map((c) => chip(c.company, c.count, () => onBrowse({ companies: [c.company] })))}</Box>
-        </Box>
-      )}
-
-      {tags.length > 0 && (
-        <Box>
-          <Typography variant="body2" sx={{ fontWeight: 800, mb: 1.25 }}>
-            Browse by topic
-          </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>{tags.map((t) => chip(t.tag, t.count, () => onBrowse({ tags: [t.tag] })))}</Box>
-        </Box>
-      )}
-    </Box>
-  );
+  return phone ? <MobileExplore onBrowse={onBrowse} /> : <ExploreDesktopView onBrowse={onBrowse} />;
 }
 
 // ---------------------------------------------------------------- study plan
