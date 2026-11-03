@@ -316,7 +316,7 @@ export default function DashboardPage() {
             transition: `grid-template-columns ${MOTION.slow}ms ${EASING.standard}`,
           }}
         >
-          <Box className="autohide-scroll" sx={{ display: { xs: 'none', md: 'block' }, position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0 }}>
+          <Box sx={{ display: { xs: 'none', md: 'block' }, position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
             <DashboardSidebar
               view={currentView}
               activeListId={activeList?.id}

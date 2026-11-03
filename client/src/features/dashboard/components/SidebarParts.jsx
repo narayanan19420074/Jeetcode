@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Box, ButtonBase, IconButton, Tooltip, Typography } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from './libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 // Red pill with the number of friend requests and unread chat messages waiting for me (both live).
 export function RequestBadge({ requests }) {
@@ -22,7 +22,7 @@ const navButtonSx = (pal, active) => ({
   justifyContent: 'flex-start',
   gap: 1.5,
   px: 2,
-  height: 44,
+  height: SIZES.navItemHeight,
   borderRadius: RADII_PX.pill,
   textAlign: 'left',
   fontFamily: 'inherit',
@@ -54,7 +54,7 @@ export function NavButton({ active, icon: Icon, label, count, accent, onClick, t
 export function ListsHeader({ atLimit, onCreate }) {
   const pal = useLibraryPalette();
   return (
-    <Box sx={{ mt: 2.5, mb: 0.5, px: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+    <Box sx={{ mt: 2, mb: 0.5, px: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold }}>My Lists</Typography>
       <Tooltip title={atLimit ? 'List limit reached' : 'New list'}>
         <span>

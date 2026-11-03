@@ -54,7 +54,7 @@ import { logoutUser, userUpdated } from '../features/auth/authSlice';
 import ProBadge from '../components/ProBadge';
 import NotificationBell from '../features/notifications/NotificationBell';
 import ActivateLicenseModal from '../components/ActivateLicenseModal';
-import BrandMark, { BRAND_ORANGE, BRAND_TEXT_LIGHT } from './BrandMark';
+import BrandMark, { BRAND_TEXT_DARK, BRAND_TEXT_LIGHT } from './BrandMark';
 
 // Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
 import { LIBRARY_PALETTE, LIB_FONT, LibraryFont, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
@@ -90,7 +90,7 @@ function LogoName() {
       })}
     >
       Jeet
-      <Box component="span" sx={(t) => ({ color: 'primary.main', [t.breakpoints.down('md')]: { color: t.palette.mode === 'dark' ? BRAND_ORANGE : BRAND_TEXT_LIGHT } })}>
+      <Box component="span" sx={(t) => ({ color: 'primary.main', [t.breakpoints.down('md')]: { color: t.palette.mode === 'dark' ? BRAND_TEXT_DARK : BRAND_TEXT_LIGHT } })}>
         Code
       </Box>
     </Typography>

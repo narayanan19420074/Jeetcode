@@ -78,7 +78,7 @@ export default function DashboardSidebar({ view, activeListId, lists, onView, on
 
   return (
     <>
-      <Box component="nav" aria-label="Dashboard sections" sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: 0.5 }}>
+      <Box component="nav" aria-label="Dashboard sections" sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: 0 }}>
         <ViewButtons view={view} onView={onView} friendCounts={friendCounts} />
         <ListsHeader atLimit={lists.length >= maxLists} onCreate={() => setCreating(true)} />
         <ListButtons lists={lists} view={view} activeListId={activeListId} onSelectList={onSelectList} />

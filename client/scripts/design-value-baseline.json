@@ -9,9 +9,6 @@
     "shadowPx": 1,
     "fixedSizePx": 4
   },
-  "components/FeatureTile.jsx": {
-    "fixedSizePx": 1
-  },
   "components/MainLayout.jsx": {
     "fixedSizePx": 1
   },
@@ -26,9 +23,6 @@
   },
   "components/PrepReadinessCard.jsx": {
     "fixedSizePx": 8
-  },
-  "components/ProblemExplorer.jsx": {
-    "fixedSizePx": 27
   },
   "components/SolvedCard.jsx": {
     "fixedSizePx": 2
@@ -155,11 +149,6 @@
     "shadowPx": 1,
     "fixedSizePx": 23
   },
-  "features/contest/GlobalTop.jsx": {
-    "motionDuration": 4,
-    "shadowPx": 1,
-    "fixedSizePx": 25
-  },
   "features/contest/MobileContest.jsx": {
     "fixedSizePx": 8
   },
@@ -199,7 +188,7 @@
     "fixedSizePx": 5
   },
   "features/dashboard/components/SidebarParts.jsx": {
-    "fixedSizePx": 6
+    "fixedSizePx": 5
   },
   "features/dashboard/components/library/CategoryPills.jsx": {
     "fixedSizePx": 7
@@ -306,17 +295,6 @@
   "features/home/HomePage.jsx": {
     "fixedSizePx": 19
   },
-  "features/home/art/FeatureVisuals.jsx": {
-    "motionDuration": 3,
-    "fixedSizePx": 40
-  },
-  "features/home/art/HeroDemo.jsx": {
-    "motionDuration": 2,
-    "fixedSizePx": 12
-  },
-  "features/home/art/JourneyRoad.jsx": {
-    "fixedSizePx": 1
-  },
   "features/leaderboard/EmpireCard.jsx": {
     "motionDuration": 4,
     "shadowPx": 1,
@@ -339,46 +317,10 @@
   "features/learn/AnimationShell.jsx": {
     "fixedSizePx": 2
   },
-  "features/learn/LearnHomePage.jsx": {
-    "fixedSizePx": 1
-  },
   "features/learn/LearnTopicPage.jsx": {
     "fixedSizePx": 19
   },
-  "features/learn/PracticePage.jsx": {
-    "fixedSizePx": 2
-  },
-  "features/learn/animations/AveragesAnimations.jsx": {
-    "fixedSizePx": 10
-  },
   "features/learn/animations/AveragesVisuals.jsx": {
-    "fixedSizePx": 2
-  },
-  "features/learn/animations/LcmHcfAnimations.jsx": {
-    "fixedSizePx": 4
-  },
-  "features/learn/animations/PercentageAnimations.jsx": {
-    "fixedSizePx": 4
-  },
-  "features/learn/animations/ProbabilityAnimations.jsx": {
-    "fixedSizePx": 6
-  },
-  "features/learn/animations/ProfitLossAnimations.jsx": {
-    "fixedSizePx": 6
-  },
-  "features/learn/animations/RatioProportionAnimations.jsx": {
-    "fixedSizePx": 6
-  },
-  "features/learn/animations/SimpleCompoundInterestAnimations.jsx": {
-    "fixedSizePx": 6
-  },
-  "features/learn/animations/TimeSpeedDistanceAnimations.jsx": {
-    "fixedSizePx": 6
-  },
-  "features/learn/animations/TimeWorkAnimations.jsx": {
-    "fixedSizePx": 6
-  },
-  "features/learn/components/LearnSidebar.jsx": {
     "fixedSizePx": 2
   },
   "features/learn/components/MicroCheck.jsx": {
@@ -401,10 +343,6 @@
   },
   "features/notifications/NotificationBell.jsx": {
     "fixedSizePx": 31
-  },
-  "features/prep/CompanyQuestRoadmap.jsx": {
-    "shadowPx": 6,
-    "fixedSizePx": 12
   },
   "features/prep/MobileCompanyRoadmap.jsx": {
     "shadowPx": 1,
@@ -455,9 +393,6 @@
   },
   "features/quests/QuestParts.jsx": {
     "fixedSizePx": 23
-  },
-  "features/quests/QuestRoadScene.jsx": {
-    "fixedSizePx": 4
   },
   "features/quests/QuestsView.jsx": {
     "fixedSizePx": 1
@@ -612,9 +547,6 @@
   "features/visualizer/components/VisualizerCanvas.jsx": {
     "fixedSizePx": 10
   },
-  "features/visualizer/components/VisualizerDashboardCard.jsx": {
-    "fixedSizePx": 3
-  },
   "features/visualizer/teach/TeachGuide.jsx": {
     "motionDuration": 1,
     "fixedSizePx": 4
@@ -641,9 +573,6 @@
   "features/workspace/ConsolePanel.jsx": {
     "fixedSizePx": 10
   },
-  "features/workspace/DescriptionDrawer.jsx": {
-    "fixedSizePx": 3
-  },
   "features/workspace/EditorScroller.jsx": {
     "fixedSizePx": 1
   },
@@ -655,9 +584,6 @@
   },
   "features/workspace/MobileKeyBar.jsx": {
     "fixedSizePx": 2
-  },
-  "features/workspace/MobileProblemHeader.jsx": {
-    "fixedSizePx": 3
   },
   "features/workspace/PhoneConsoleBar.jsx": {
     "fixedSizePx": 4

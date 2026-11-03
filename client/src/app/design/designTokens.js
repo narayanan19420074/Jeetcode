@@ -495,15 +495,26 @@ export const STATES = {
 // The launch splash (index.html) and the offline game (static-pages/offline.template.html) are plain HTML, so they
 // cannot import this file at runtime. The build (scripts/designTokensPlugin.mjs) writes these values into them, which
 // keeps their colours, radii and fonts in this file too.
-const BRAND_ORANGE = '#E8590C';
+// The logo uses the same indigo as the selected navigation item and the streak calendar (BRAND.primary).
+// public/favicon.svg and the PNG app icons are drawn with the same hex values.
+export const BRAND_MARK = {
+  gradient: [COLOR_PALETTE.indigo[400], COLOR_PALETTE.indigo[500], COLOR_PALETTE.indigo[800]],
+  glyph: COLOR_PALETTE.indigo[50],
+  glyphSlash: COLOR_PALETTE.indigo[100],
+  // Brand-coloured text: deep indigo on light pages (8:1 on white), light indigo on dark pages.
+  textOnLight: COLOR_PALETTE.indigo[700],
+  textOnDark: COLOR_PALETTE.indigo[300],
+};
+
+// glyphLight is the colour of the two chevrons and glyphWarm the colour of the slash (placeholder names used by index.html).
 export const SPLASH = {
   background: SURFACES.light.bg,
-  ring: COLOR_PALETTE.custom.orangeF7A33B,
-  gradient: [COLOR_PALETTE.custom.orangeF7A33B, BRAND_ORANGE, COLOR_PALETTE.custom.orangeD9480F],
-  glyphLight: '#FFF8EE',
-  glyphWarm: '#FFEFCF',
+  ring: BRAND_MARK.gradient[0],
+  gradient: BRAND_MARK.gradient,
+  glyphLight: BRAND_MARK.glyph,
+  glyphWarm: BRAND_MARK.glyphSlash,
   radius: '26px',
-  shadow: `0 14px 34px ${withAlpha(BRAND_ORANGE, 0.32)}`,
+  shadow: `0 14px 34px ${withAlpha(BRAND_MARK.gradient[1], 0.32)}`,
 };
 
 export const OFFLINE_GAME = {
