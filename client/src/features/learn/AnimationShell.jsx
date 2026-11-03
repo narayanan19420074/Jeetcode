@@ -6,6 +6,7 @@ import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 import FastForwardRoundedIcon from '@mui/icons-material/FastForwardRounded';
 import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
+import { MOTION } from '../../app/design/designTokens';
 
 // Drives any step-based animation: current step index + play/pause/next/
 // prev/reset/skipToEnd. Autoplay advances one step every `stepDurationMs`
@@ -115,7 +116,7 @@ export function AnimationControls({
               height: 7,
               borderRadius: '50%',
               bgcolor: i <= step ? 'primary.main' : 'action.disabledBackground',
-              transition: 'background-color 0.3s ease',
+              transition: `background-color ${MOTION.slow}ms ease`,
             }}
           />
         ))}

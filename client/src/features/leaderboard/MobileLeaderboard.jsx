@@ -41,7 +41,7 @@ import {
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
 import { APT_COLOR, PT } from './lbShared';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 // Phone layout of the Leaderboard in the Library look (same as the phone Problems, Home and You pages):
 // Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section
@@ -328,7 +328,7 @@ function MyRank({ me, canFind, onOpen, onFind }) {
           aria-valuenow={progress}
           sx={{ mt: 1, height: 5, borderRadius: RADII_PX.pill, bgcolor: tint(tier.color, 20), overflow: 'hidden' }}
         >
-          <Box sx={{ width: `${Math.max(progress, 3)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: tier.color, transition: 'width .5s' }} />
+          <Box sx={{ width: `${Math.max(progress, 3)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: tier.color, transition: `width ${MOTION.deliberate}ms` }} />
         </Box>
       </Box>
 

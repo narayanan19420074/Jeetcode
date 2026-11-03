@@ -6,7 +6,7 @@ import BuildRoundedIcon from '@mui/icons-material/BuildRounded';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import { LIB_ACCENT, LIB_FONT, LIB_TRACKING } from '../dashboard/components/libraryStyle';
 import AiGlow from './AiGlow';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, Z_INDEX, MOTION, EASING, SHADOWS } from '../../app/design/designTokens';
 
 const rise = keyframes`from { opacity: 0; transform: translateY(18px) scale(.96); } to { opacity: 1; transform: none; }`;
 
@@ -18,7 +18,7 @@ const OPTIONS = [
 
 const MENU_SX = {
   position: 'fixed',
-  zIndex: 1360,
+  zIndex: Z_INDEX.aiLauncher,
   left: 16,
   right: 16,
   bottom: 'calc(16px + env(safe-area-inset-bottom))',
@@ -34,8 +34,8 @@ const MENU_SX = {
   color: 'var(--lib-text)',
   bgcolor: `var(--lib-bg, ${COLOR_PALETTE.orange[50]})`,
   border: `1px solid var(--lib-divider, ${COLOR_PALETTE.custom.orangeE9DFD5})`,
-  boxShadow: `0 18px 50px ${withAlpha(COLOR_PALETTE.black, 0.25)}`,
-  animation: `${rise} .28s cubic-bezier(.2,.9,.3,1.1) both`,
+  boxShadow: SHADOWS.drop('xl', withAlpha(COLOR_PALETTE.black, 0.25)),
+  animation: `${rise} ${MOTION.slow}ms ${EASING.overshoot} both`,
 };
 
 const OPTION_SX = {
@@ -88,7 +88,7 @@ export default function AiLauncher({ open, onClose, onPick }) {
       <AiGlow active={open} />
       {open && (
         <>
-          <Box onClick={onClose} sx={{ position: 'fixed', inset: 0, zIndex: 1355, bgcolor: withAlpha(COLOR_PALETTE.black, 0.28) }} />
+          <Box onClick={onClose} sx={{ position: 'fixed', inset: 0, zIndex: Z_INDEX.aiBackdrop, bgcolor: withAlpha(COLOR_PALETTE.black, 0.28) }} />
           <Box role="menu" aria-label="AI assistant" sx={MENU_SX}>
             {OPTIONS.map(({ key, ...option }) => (
               <LauncherOption key={key} {...option} onPick={() => onPick(key)} />

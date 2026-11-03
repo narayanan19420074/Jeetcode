@@ -12,7 +12,7 @@ import CompanyAvatar from '../../components/CompanyAvatar';
 import { Confetti } from '../aptitude/components/MotionBits';
 import { tint } from '../dashboard/dashboardUtils';
 import { LibraryFont, libBackBtnSx, libSolidBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII, Z_INDEX } from '../../app/design/designTokens';
 
 // Phone layout of one company's question roadmap (opened from Companies). Same look as the phone
 // dashboard: a banner card in the Contest-banner style (gradient, translucent ring, 28px title), then a
@@ -291,7 +291,7 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
       <AnimatePresence>
         {sheet && (
           <>
-            <motion.div key="backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setPicked(null)} style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.slate[900], .5), zIndex: 1290 }} />
+            <motion.div key="backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setPicked(null)} style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.slate[900], .5), zIndex: Z_INDEX.sheetBackdrop }} />
             <motion.div
               key="sheet"
               role="dialog"
@@ -300,7 +300,7 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ type: 'spring', stiffness: 320, damping: 30 }}
-              style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 1300, display: 'flex', justifyContent: 'center' }}
+              style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: Z_INDEX.sheet, display: 'flex', justifyContent: 'center' }}
             >
               <LibraryFont sx={{ width: '100%', maxWidth: 560, bgcolor: pal.bg, borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, px: 2, pt: 1.5, pb: 'calc(20px + env(safe-area-inset-bottom))' }}>
                 <Box sx={{ width: 40, height: 4, borderRadius: RADII_PX.pill, bgcolor: pal.divider, mx: 'auto', mb: 2 }} />

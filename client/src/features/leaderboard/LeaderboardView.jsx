@@ -12,7 +12,7 @@ import { APT_COLOR, AvatarRing, PT, calm, mono, sweep } from './lbShared';
 import EmpireCard from './EmpireCard';
 import LeaderboardPanel from './lbPanel';
 import MobileLeaderboard from './MobileLeaderboard';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 const LIMIT = 30;
 
@@ -85,7 +85,7 @@ function RowDetail({ row }) {
           </Typography>
         </Box>
         <Box sx={{ height: 9, borderRadius: RADII_PX.pill, bgcolor: 'divider', overflow: 'hidden' }}>
-          <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, ${COLOR_PALETTE.white}))`, transition: 'width .6s ease', '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(90deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
+          <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, ${COLOR_PALETTE.white}))`, transition: `width ${MOTION.progress}ms ease`, '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(90deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
         </Box>
         <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1, fontWeight: FONT_WEIGHTS.semibold }}>
           {row.recent} solved in the last 7 days

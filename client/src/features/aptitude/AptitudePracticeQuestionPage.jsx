@@ -35,7 +35,7 @@ import MobilePracticeQuestion, { MobileQuestionState } from './components/Mobile
 import { Confetti, XpPop } from './components/MotionBits';
 import { XP_PER_SOLVE } from './components/gamification';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './components/aptitudeUi';
-import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono };
 
@@ -64,7 +64,7 @@ function OptionRow({ index, text, state, disabled, onClick }) {
         borderColor: palette.border,
         bgcolor: palette.bg,
         opacity: state === 'dim' ? 0.6 : 1,
-        transition: 'border-color .15s, background-color .15s',
+        transition: `border-color ${MOTION.fast}ms, background-color ${MOTION.fast}ms`,
         '&:hover': disabled ? undefined : { borderColor: 'primary.main' },
         '&.Mui-disabled': { pointerEvents: 'none' },
       }}

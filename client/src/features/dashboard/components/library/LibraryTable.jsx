@@ -3,7 +3,7 @@ import { PAD_X, ACC_W, DIFF_W } from './libraryConstants';
 import ProblemRow from './ProblemRow';
 import { ColumnHeader, SkeletonRows } from './TableBits';
 import useLibraryStyles from './libraryStyles';
-import { FONT_WEIGHTS } from '../../../../app/design/designTokens';
+import { FONT_WEIGHTS, MOTION } from '../../../../app/design/designTokens';
 
 function TableHeader({ lib }) {
   const styles = useLibraryStyles();
@@ -54,7 +54,7 @@ function EmptyState({ onClear }) {
 
 function ProblemRows({ lib, dailyId, listsApi }) {
   return (
-    <Box sx={{ opacity: lib.refetching ? 0.55 : 1, transition: 'opacity 120ms' }} aria-busy={lib.refetching}>
+    <Box sx={{ opacity: lib.refetching ? 0.55 : 1, transition: `opacity ${MOTION.fast}ms` }} aria-busy={lib.refetching}>
       {lib.items.map((problem, i) => (
         <ProblemRow key={problem._id} p={problem} index={i + 1} isDaily={problem._id === dailyId} saved={listsApi.isSaved(problem._id)} onStar={lib.handleStar} />
       ))}

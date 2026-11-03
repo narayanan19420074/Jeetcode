@@ -80,7 +80,7 @@ export default function TimerControl({ sw, size = 'md', lib = false }) {
         <Typography sx={{ ...mono, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold, color: 'inherit' }}>{formatClock(sw.seconds)}</Typography>
       </ButtonBase>
       <WsIconButton title="Reset timer" size={size} onClick={sw.reset}>
-        <RestartAltRoundedIcon sx={{ fontSize: '17px !important' }} />
+        <RestartAltRoundedIcon sx={{ fontSize: `${FONT_SIZES.iconCompact} !important` }} />
       </WsIconButton>
     </Stack>
   );

@@ -4,7 +4,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import tokens, { ACCENTS } from '../../../app/theme';
 import { Card, CardBody, ChoiceCard, PageTitle, Row, SwitchRow, usePreferences } from '../components/SettingsUi';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 // A tiny app window drawn in the real palette so the theme options are
 // recognisable at a glance. `half` renders the diagonal "match my device" split.
@@ -140,7 +140,7 @@ export default function AppearanceSection() {
                           color: def.text,
                           outline: sel ? `3px solid ${swatch}` : '3px solid transparent',
                           outlineOffset: 3,
-                          transition: 'outline-color .15s, transform .15s',
+                          transition: `outline-color ${MOTION.fast}ms, transform ${MOTION.fast}ms`,
                           '&:hover': { transform: 'scale(1.06)' },
                           '&:focus-visible': { outline: `3px solid ${theme.palette.text.primary}` },
                         }}

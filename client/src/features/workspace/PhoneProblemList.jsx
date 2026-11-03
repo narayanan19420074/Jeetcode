@@ -201,7 +201,7 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
                 sx={{
                   display: 'flex',
                   width: 'calc(100% + 16px)',
-                  mx: '-8px',
+                  mx: -1,
                   px: 1,
                   alignItems: 'flex-start',
                   justifyContent: 'flex-start',

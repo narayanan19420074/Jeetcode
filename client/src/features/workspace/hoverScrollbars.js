@@ -1,5 +1,5 @@
 import { alpha } from '@mui/material/styles';
-import { RADII_PX } from '../../app/design/designTokens';
+import { RADII_PX, MOTION } from '../../app/design/designTokens';
 
 // Scrollbars stay invisible until the pointer is over the scrollable area
 // (workspace and pair room). Use as: sx={(t) => ({ ...hoverScrollbars(t), ... })}
@@ -13,7 +13,7 @@ export const hoverScrollbars = (t) => {
     '& *::-webkit-scrollbar-thumb': { backgroundColor: 'transparent', borderRadius: RADII_PX.pill },
     '& *:hover::-webkit-scrollbar-thumb': { backgroundColor: thumb },
     // Monaco draws its own scrollbars
-    '& .monaco-scrollable-element > .scrollbar > .slider': { opacity: 0, transition: 'opacity .2s' },
+    '& .monaco-scrollable-element > .scrollbar > .slider': { opacity: 0, transition: `opacity ${MOTION.standard}ms` },
     '& .monaco-editor:hover .monaco-scrollable-element > .scrollbar > .slider': { opacity: 1 },
   };
 };

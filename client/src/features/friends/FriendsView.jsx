@@ -44,7 +44,7 @@ import ActivityFeed from './ActivityFeed';
 import FriendChat, { ChatPanel } from './FriendChat';
 import MobileFriends, { MobileShell } from './MobileFriends';
 import { FriendProfilePanel } from './FriendProfileDialog';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SHADOWS, MOTION } from '../../app/design/designTokens';
 
 const SORTS = [['recent', 'Recent chats'], ['online', 'Online first'], ['points', 'Most points'], ['name', 'Name A to Z']];
 const REQUEST_TABS = ['friends', 'requests', 'sent'];
@@ -52,7 +52,7 @@ const REQUEST_TABS = ['friends', 'requests', 'sent'];
 // Soft tonal pill button used for "Add friend", "Accept" and friends' small actions.
 const pillBtn = (color) => (t) => ({
   height: 32, px: 1.5, flexShrink: 0, borderRadius: `${WS.radius + 2}px`, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', whiteSpace: 'nowrap',
-  color: t.palette[color].main, bgcolor: alpha(t.palette[color].main, 0.12), transition: 'background-color .18s, transform .12s',
+  color: t.palette[color].main, bgcolor: alpha(t.palette[color].main, 0.12), transition: `background-color ${MOTION.standard}ms, transform ${MOTION.fast}ms`,
   '&:hover': { bgcolor: alpha(t.palette[color].main, 0.22) },
   '&:active': { transform: 'scale(0.96)' },
 });
@@ -290,7 +290,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     }
     if (received.has(p.userId)) {
       return (
-        <Button size="small" disableElevation disabled={busy === p.userId} onClick={() => run(p.userId, acceptFriendRequest(received.get(p.userId)), 'Friend added')} startIcon={<CheckRoundedIcon sx={{ fontSize: '17px !important' }} />} sx={pillBtn('success')}>
+        <Button size="small" disableElevation disabled={busy === p.userId} onClick={() => run(p.userId, acceptFriendRequest(received.get(p.userId)), 'Friend added')} startIcon={<CheckRoundedIcon sx={{ fontSize: `${FONT_SIZES.iconCompact} !important` }} />} sx={pillBtn('success')}>
           Accept
         </Button>
       );
@@ -301,7 +301,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
         disableElevation
         disabled={busy === p.userId}
         onClick={() => run(p.userId, sendFriendRequest(p.handle), 'Friend request sent')}
-        startIcon={<PersonAddAlt1RoundedIcon sx={{ fontSize: '17px !important' }} />}
+        startIcon={<PersonAddAlt1RoundedIcon sx={{ fontSize: `${FONT_SIZES.iconCompact} !important` }} />}
         sx={pillBtn('primary')}
       >
         Add friend
@@ -624,8 +624,8 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
                 value={q}
                 onChange={(e) => setQ(e.target.value.slice(0, 40))}
                 sx={(t) => ({
-                  '& .MuiOutlinedInput-root': { height: 42, borderRadius: RADII_PX.card, bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.body, transition: 'box-shadow .18s' },
-                  '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${alpha(t.palette.primary.main, 0.45)}` },
+                  '& .MuiOutlinedInput-root': { height: 42, borderRadius: RADII_PX.card, bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.body, transition: `box-shadow ${MOTION.standard}ms` },
+                  '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: SHADOWS.ring(alpha(t.palette.primary.main, 0.45)) },
                   '& fieldset': { border: 'none' },
                 })}
                 slotProps={{
@@ -633,7 +633,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
                     startAdornment: <InputAdornment position="start"><SearchRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} /></InputAdornment>,
                     endAdornment: q ? (
                       <InputAdornment position="end">
-                        <WsIconButton title="Clear search" onClick={() => setQ('')} sx={{ width: 26, height: 26 }}><CloseRoundedIcon sx={{ fontSize: '16px !important' }} /></WsIconButton>
+                        <WsIconButton title="Clear search" onClick={() => setQ('')} sx={{ width: 26, height: 26 }}><CloseRoundedIcon sx={{ fontSize: `${FONT_SIZES.title} !important` }} /></WsIconButton>
                       </InputAdornment>
                     ) : null,
                   },

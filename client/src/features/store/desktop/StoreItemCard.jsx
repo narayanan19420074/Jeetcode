@@ -4,7 +4,7 @@ import { pillButtonSx } from '../../dashboard/components/libraryDesktopStyles';
 import StoreBadge from '../common/StoreBadge';
 import { itemAction } from '../common/storeSelectors';
 import { Coins, ItemArt, fmt, priceNote } from '../storeUtils';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 const ROSE = COLOR_PALETTE.rose[600];
 const TWO_LINES = { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' };
@@ -39,7 +39,7 @@ export default function StoreItemCard({ item, balance, signedIn, onBuy, onCourse
   const open = () => (action.opensCourse ? onCourse(item.slug) : onBuy(item));
   const showShortfall = !action.owned && signedIn && !action.afford && !action.soldOut;
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: 0, borderRadius: RADII_PX.card, overflow: 'hidden', opacity: action.soldOut ? 0.65 : 1, bgcolor: palette.chip, border: `1px solid ${palette.border}`, transition: 'border-color .15s', '&:hover': { borderColor: LIB_ACCENT } }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: 0, borderRadius: RADII_PX.card, overflow: 'hidden', opacity: action.soldOut ? 0.65 : 1, bgcolor: palette.chip, border: `1px solid ${palette.border}`, transition: `border-color ${MOTION.fast}ms`, '&:hover': { borderColor: LIB_ACCENT } }}>
       <ItemPicture item={item} label={action.label} onOpen={open} disabled={action.soldOut} />
       <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, p: 2, gap: 0.5, minWidth: 0 }}>
         <Typography component="h3" sx={[{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '22px', letterSpacing: LIB_TRACKING }, TWO_LINES]}>{item.name}</Typography>

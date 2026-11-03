@@ -12,7 +12,7 @@ import Alien3D from './Alien3D';
 import { starsFor, testXp } from './gamification';
 import { tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, FONTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, FONTS, RADII_PX, Z_INDEX, MOTION } from '../../../app/design/designTokens';
 
 // Level map. Follows the app theme (dark / light) and the product palette:
 // slate surfaces, blue = current, green = cleared. A slim road winds through
@@ -96,7 +96,7 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
       initial={{ opacity: 0, scale: 0.6 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.1 + index * 0.08, type: 'spring', stiffness: 240, damping: 20 }}
-      sx={{ position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, height: size, zIndex: 2 }}
+      sx={{ position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, height: size, zIndex: Z_INDEX.raised }}
     >
       {/* progress ring */}
       <Box component="svg" width={box} height={box} viewBox={`0 0 ${box} ${box}`} sx={{ position: 'absolute', left: -14, top: -14, transform: 'rotate(-90deg)', overflow: 'visible' }}>
@@ -149,7 +149,7 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
           placeItems: 'center',
           cursor: status === 'locked' ? 'not-allowed' : 'pointer',
           boxShadow: status === 'locked' ? `inset 0 1px 0 ${alpha(COLOR_PALETTE.white, dark ? 0.08 : 0.6)}` : `inset 0 2px 0 ${alpha(COLOR_PALETTE.white, 0.35)}, inset 0 -6px 12px ${alpha(COLOR_PALETTE.black, 0.22)}, 0 10px 26px ${alpha(accent, 0.4)}`,
-          transition: 'transform .18s ease',
+          transition: `transform ${MOTION.standard}ms ease`,
           '&:hover': status === 'locked' ? undefined : { transform: 'scale(1.06)' },
           '&:active': status === 'locked' ? undefined : { transform: 'scale(0.97)' },
         }}
@@ -162,9 +162,9 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
 
       {/* compact phone label: stars on the disc, short title underneath */}
       {narrow && passed && (
-        <Box sx={{ position: 'absolute', left: '50%', bottom: -9, transform: 'translateX(-50%)', display: 'flex', zIndex: 3, pointerEvents: 'none' }}>
+        <Box sx={{ position: 'absolute', left: '50%', bottom: -9, transform: 'translateX(-50%)', display: 'flex', zIndex: Z_INDEX.overlap, pointerEvents: 'none' }}>
           {[0, 1, 2].map((n) => (
-            <StarRoundedIcon key={n} sx={{ fontSize: FONT_SIZES.body, mx: '-1px', color: n < stars ? warning.main : 'action.disabled', filter: `drop-shadow(0 1px 1px ${withAlpha(COLOR_PALETTE.black, .35)})` }} />
+            <StarRoundedIcon key={n} sx={{ fontSize: FONT_SIZES.body, mx: -0.125, color: n < stars ? warning.main : 'action.disabled', filter: `drop-shadow(0 1px 1px ${withAlpha(COLOR_PALETTE.black, .35)})` }} />
           ))}
         </Box>
       )}
@@ -292,7 +292,7 @@ function PhoneLevelNode({ pattern, index, status, x, y, onClick }) {
       initial={{ opacity: 0, scale: 0.6 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.1 + index * 0.06, type: 'spring', stiffness: 240, damping: 20 }}
-      sx={{ position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, height: size, zIndex: 2 }}
+      sx={{ position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, height: size, zIndex: Z_INDEX.raised }}
     >
       <Box component="svg" width={box} height={box} viewBox={`0 0 ${box} ${box}`} sx={{ position: 'absolute', left: -10, top: -10, transform: 'rotate(-90deg)', overflow: 'visible', pointerEvents: 'none' }}>
         {!locked && <circle cx={box / 2} cy={box / 2} r={ringR} fill="none" stroke={tint(c.fg, 22)} strokeWidth="4" />}
@@ -345,7 +345,7 @@ function PhoneLevelNode({ pattern, index, status, x, y, onClick }) {
           placeItems: 'center',
           color: c.fg,
           cursor: locked ? 'not-allowed' : 'pointer',
-          transition: 'transform .18s ease',
+          transition: `transform ${MOTION.standard}ms ease`,
           '&:active': locked ? undefined : { transform: 'scale(0.96)' },
           '&:focus-visible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 4 },
         }}
@@ -356,9 +356,9 @@ function PhoneLevelNode({ pattern, index, status, x, y, onClick }) {
       </Box>
 
       {status === 'completed' && (
-        <Box aria-hidden sx={{ position: 'absolute', left: '50%', bottom: -12, transform: 'translateX(-50%)', display: 'flex', zIndex: 3, pointerEvents: 'none' }}>
+        <Box aria-hidden sx={{ position: 'absolute', left: '50%', bottom: -12, transform: 'translateX(-50%)', display: 'flex', zIndex: Z_INDEX.overlap, pointerEvents: 'none' }}>
           {[0, 1, 2].map((n) => (
-            <StarRoundedIcon key={n} sx={{ fontSize: FONT_SIZES.title, mx: '-1px', color: n < stars ? PHONE_STAR : pal.divider, filter: `drop-shadow(0 0 2px ${pal.bg})` }} />
+            <StarRoundedIcon key={n} sx={{ fontSize: FONT_SIZES.title, mx: -0.125, color: n < stars ? PHONE_STAR : pal.divider, filter: `drop-shadow(0 0 2px ${pal.bg})` }} />
           ))}
         </Box>
       )}
@@ -450,7 +450,7 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0, phone = false }) 
         <Box
           onClick={() => !walking && setRun((r) => r + 1)}
           title={walking ? undefined : 'Click to walk again'}
-          sx={{ position: 'absolute', left: pos.x, top: pos.y, transform: 'translate(-50%, -84%)', zIndex: 4, cursor: walking ? 'default' : 'pointer' }}
+          sx={{ position: 'absolute', left: pos.x, top: pos.y, transform: 'translate(-50%, -84%)', zIndex: Z_INDEX.marker, cursor: walking ? 'default' : 'pointer' }}
         >
           {!walking && (
             <Box
@@ -466,7 +466,7 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0, phone = false }) 
                 position: 'absolute',
                 bottom: '100%',
                 left: '50%',
-                ml: '-52px',
+                ml: -6.5,
                 width: 104,
                 mb: 0.5,
                 ...(phone
@@ -476,7 +476,7 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0, phone = false }) 
                 color: COLOR_PALETTE.white,
                 fontFamily: 'inherit',
                 cursor: 'pointer',
-                '&:after': { content: '""', position: 'absolute', left: '50%', bottom: -5, ml: '-5px', borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: (t) => `6px solid ${phone ? LIB_ACCENT : t.palette.primary.main}` },
+                '&:after': { content: '""', position: 'absolute', left: '50%', bottom: -5, ml: -0.625, borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: (t) => `6px solid ${phone ? LIB_ACCENT : t.palette.primary.main}` },
               }}
             >
               Start level
@@ -596,7 +596,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
           </svg>
 
           {/* START */}
-          <Box sx={{ position: 'absolute', left: W * 0.14, top: startY, transform: 'translate(-50%, -50%)', zIndex: 3 }}>
+          <Box sx={{ position: 'absolute', left: W * 0.14, top: startY, transform: 'translate(-50%, -50%)', zIndex: Z_INDEX.overlap }}>
             <Box
               component={motion.div}
               initial={{ opacity: 0, x: -16 }}

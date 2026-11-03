@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 export default function VisualizerCanvas({ category, step, graph }) {
   if (!step) return null;
@@ -43,7 +43,7 @@ function ArrayCanvas({ step }) {
             height: `${(item.value / max) * 190 + 12}px`,
             bgcolor: colorFor(idx),
             borderRadius: RADII_PX.control,
-            transition: 'left 0.35s ease, height 0.2s ease, background-color 0.2s ease',
+            transition: `left ${MOTION.slow}ms ease, height ${MOTION.standard}ms ease, background-color ${MOTION.standard}ms ease`,
           }}
         >
           <Typography
@@ -174,7 +174,7 @@ function FibonacciCanvas({ step }) {
               color: COLOR_PALETTE.white,
               fontWeight: FONT_WEIGHTS.bold,
               fontFamily: (t) => t.typography.monospace.fontFamily,
-              transition: 'all 0.2s ease',
+              transition: `all ${MOTION.standard}ms ease`,
             }}
           >
             {val ?? '—'}
@@ -218,7 +218,7 @@ function KnapsackCanvas({ step }) {
                     bgcolor: r === curRow && c === curCol ? 'warning.main' : 'transparent',
                     color: r === curRow && c === curCol ? COLOR_PALETTE.white : 'text.primary',
                     fontWeight: r === curRow && c === curCol ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular,
-                    transition: 'all 0.15s ease',
+                    transition: `all ${MOTION.fast}ms ease`,
                   }}
                 >
                   {cell}

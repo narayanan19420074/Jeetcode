@@ -6,7 +6,7 @@ import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from '../aptitude/components/aptitudeUi';
 import { PLAN_AMBER } from '../studyplan/planUtils';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 const verdict = (s) => (s >= 75 ? 'Strong. Keep the pace.' : s >= 60 ? 'Solid. A few topics are holding you back.' : s >= 40 ? 'Getting there. Fix the weak topics below.' : 'Needs work. Start with the weakest topics.');
 const barColor = (v) => (v >= 70 ? COLOR_PALETTE.emerald[500] : v >= 50 ? COLOR_PALETTE.amber[500] : COLOR_PALETTE.red[500]);
@@ -33,7 +33,7 @@ function ReviewItem({ r }) {
       <ButtonBase onClick={() => setOpen((o) => !o)} sx={{ width: '100%', display: 'flex', alignItems: 'center', gap: 1.5, p: 1.5, textAlign: 'left', fontFamily: 'inherit' }}>
         <Box sx={{ width: 26, height: 26, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', bgcolor: tone, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, flexShrink: 0 }}>{r.n}</Box>
         <Typography noWrap sx={{ flex: 1, fontSize: FONT_SIZES.body }}>{r.questionText}</Typography>
-        <ExpandMoreRoundedIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s', color: 'text.secondary' }} />
+        <ExpandMoreRoundedIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: `transform ${MOTION.standard}ms`, color: 'text.secondary' }} />
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
         <Box sx={{ px: 1.5, pb: 1.5 }}>

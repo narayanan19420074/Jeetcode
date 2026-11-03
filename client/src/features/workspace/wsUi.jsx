@@ -186,7 +186,7 @@ export function MaxButton({ active, onClick, label }) {
         onClick();
       }}
     >
-      {active ? <CloseFullscreenRoundedIcon sx={{ fontSize: '17px !important' }} /> : <OpenInFullRoundedIcon sx={{ fontSize: '17px !important' }} />}
+      {active ? <CloseFullscreenRoundedIcon sx={{ fontSize: `${FONT_SIZES.iconCompact} !important` }} /> : <OpenInFullRoundedIcon sx={{ fontSize: `${FONT_SIZES.iconCompact} !important` }} />}
     </WsIconButton>
   );
 }

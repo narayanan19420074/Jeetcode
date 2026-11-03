@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 // Fixed brand colors — visible on both light and dark backgrounds.
 const COLORS = {
@@ -26,7 +26,7 @@ function Reveal({ at, step, children, delay = 0 }) {
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(6px)',
-        transition: `opacity 0.4s ease ${delay}ms, transform 0.4s ease ${delay}ms`,
+        transition: `opacity ${MOTION.slow}ms ease ${delay}ms, transform ${MOTION.slow}ms ease ${delay}ms`,
       }}
     >
       {children}

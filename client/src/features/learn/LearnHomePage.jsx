@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Grid, Paper, Typography, Chip } from '@mui/material';
 import AutoAwesomeMotionRoundedIcon from '@mui/icons-material/AutoAwesomeMotionRounded';
 import { learnTopics } from './content';
-import { FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 export default function LearnHomePage() {
   return (
@@ -28,7 +28,7 @@ export default function LearnHomePage() {
                 display: 'block',
                 textDecoration: 'none',
                 color: 'inherit',
-                transition: 'border-color 0.2s ease, transform 0.2s ease',
+                transition: `border-color ${MOTION.standard}ms ease, transform ${MOTION.standard}ms ease`,
                 '&:hover': { borderColor: 'primary.main', transform: 'translateY(-2px)' },
               }}
             >

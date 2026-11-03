@@ -255,7 +255,7 @@ export function PlanTaskRow({ item, doers = [] }) {
           <Typography variant="caption" color="text.secondary">{item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
           {item.overdue && <Typography variant="caption" sx={{ color: 'error.main', fontWeight: FONT_WEIGHTS.bold }}>Overdue</Typography>}
           {doers.length > 0 && (
-            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 18, height: 18, fontSize: 9, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: 'background.paper' } }}>
+            <AvatarGroup max={3} sx={{ '& .MuiAvatar-root': { width: 18, height: 18, fontSize: FONT_SIZES.nano, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: 'background.paper' } }}>
               {doers.map((m) => <Avatar key={m.userId} src={m.avatarUrl || undefined} alt={m.name}>{m.name?.[0]?.toUpperCase()}</Avatar>)}
             </AvatarGroup>
           )}

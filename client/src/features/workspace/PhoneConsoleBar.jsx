@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import { LIB_TRACKING, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, MOTION } from '../../app/design/designTokens';
 
 // Phone console under the editor, in the Library look: a cream bar with the word "Console", the verdict,
 // Run / Submit and a chevron. Tap the bar to open or close the testcase / result panel.
@@ -30,7 +30,7 @@ export default function PhoneConsoleBar({ open, setOpen, showLabel = true, chip,
         <Stack direction="row" sx={{ gap: 1, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
           {actions}
         </Stack>
-        <ExpandMoreRoundedIcon aria-hidden sx={{ color: pal.muted, transition: 'transform .2s', transform: open ? 'none' : 'rotate(180deg)' }} />
+        <ExpandMoreRoundedIcon aria-hidden sx={{ color: pal.muted, transition: `transform ${MOTION.standard}ms`, transform: open ? 'none' : 'rotate(180deg)' }} />
       </Stack>
 
       {open && (

@@ -31,7 +31,12 @@ export const RADII = { badge: 4, control: 8, card: 12, dialog: 16, pill: 999 };
 
 // The same radii as CSS pixel strings for sx props. A bare number in sx is multiplied by the theme shape
 // (`borderRadius: 2` = 16px), while a string is used exactly as written, so components pass `RADII_PX.card`.
-export const RADII_PX = Object.fromEntries(Object.entries(RADII).map(([role, value]) => [role, `${value}px`]));
+export const RADII_PX = {
+  ...Object.fromEntries(Object.entries(RADII).map(([role, value]) => [role, `${value}px`])),
+  // Square corners (used to drop the card radius on phones) and fully round shapes (dots, avatars).
+  square: '0px',
+  circle: '50%',
+};
 
 // ---------------------------------------------------------------- sizing
 export const SIZES = {
@@ -53,6 +58,8 @@ export const SIZES = {
   avatar: { xs: 24, sm: 32, md: 40, lg: 56 },
   contentMaxWidth: 1200,
   readingMaxWidth: 720,
+  // Page scrollbars: regular on desktop, slim on phones, thin for auto-hide panels.
+  scrollbar: { regular: 10, slim: 4, thin: 6 },
 };
 
 // ---------------------------------------------------------------- typography
@@ -87,7 +94,21 @@ export const FONT_SIZES = {
   heroLg: remOf(40),
   jumbo: remOf(48),
   jumboLg: remOf(60),
+  // Decorative steps below and above the regular scale: status dots, tiny badges, compact icon buttons,
+  // hero numerals and inline code (em, so it follows the surrounding text).
+  dot: remOf(8),
+  nano: remOf(9.6),
+  iconCompact: remOf(17),
+  heroDisplay: remOf(70.4),
+  heroDisplayLg: remOf(86.4),
+  inlineCode: '0.85em',
 };
+
+// Starting values for the code editor preferences (Settings -> Editor). Users change them; this is the default.
+export const EDITOR_DEFAULTS = { fontSize: 14 };
+
+// Share of the avatar or frame height used for the rank number printed inside it (mobile, then tablet and up).
+export const RANK_TEXT_RATIO = { xs: 0.36, sm: 0.42 };
 
 // Type scale in px: [mobile, desktop], line height (unitless) and weight. Dense, LeetCode-like hierarchy: page title
 // (h1) down to micro labels. Headings tighten letter spacing slightly; body text keeps the default.
@@ -363,6 +384,16 @@ export const withAlpha = (hex, alpha) => {
   return `rgba(${(value >> 16) & 255}, ${(value >> 8) & 255}, ${value & 255}, ${alpha})`;
 };
 
+// Hex colour with transparency (#RRGGBBAA), for CSS and for Monaco themes, which accept hex only.
+export const hexAlpha = (hex, alpha) => `${hex.slice(0, 7)}${Math.round(alpha * 255).toString(16).padStart(2, '0').toUpperCase()}`;
+
+// Avatar tint for a hue between 0 and 360 (for example a hash of the user's name): readable text on a soft
+// background in both modes. Hue is data, so the lightness and saturation live here.
+export const hueTint = (hue, isDark) => ({
+  color: isDark ? `hsl(${hue} 80% 85%)` : `hsl(${hue} 60% 28%)`,
+  bgcolor: isDark ? `hsl(${hue} 35% 26%)` : `hsl(${hue} 70% 90%)`,
+});
+
 // ---------------------------------------------------------------- elevation and motion
 // Shadows are kept subtle: borders carry most of the separation, shadows are for floating layers only.
 export const ELEVATION = {
@@ -370,7 +401,80 @@ export const ELEVATION = {
   dark: { raised: '0 1px 2px rgba(0,0,0,0.4)', floating: '0 8px 24px rgba(0,0,0,0.5)' },
 };
 
-export const MOTION = { fast: 120, standard: 200, slow: 320 };
+// Durations in ms. instant: press feedback; fast: hover and colour changes; standard: most transitions;
+// slow: entrances; deliberate and progress: fades and progress bars that should be noticed.
+export const MOTION = { instant: 80, fast: 120, standard: 200, slow: 320, deliberate: 500, progress: 600 };
+
+// Easing curves: standard for movement between states, decelerate for entrances, overshoot for playful pops.
+export const EASING = {
+  standard: 'cubic-bezier(0.4, 0, 0.2, 1)',
+  decelerate: 'cubic-bezier(0.22, 1, 0.36, 1)',
+  overshoot: 'cubic-bezier(0.2, 0.9, 0.3, 1.1)',
+  overshootLarge: 'cubic-bezier(0.34, 1.25, 0.5, 1)',
+};
+
+// Distance (rootMargin) before an element scrolls into view and its entrance animation starts.
+export const SCROLL_REVEAL_MARGIN = { near: '-60px', far: '-80px' };
+
+// Stacking order. Local steps (behind to dock) order siblings inside one component; the larger values sit above
+// MUI layers (modal is 1300 in the theme) and are listed bottom to top so the order is visible in one place.
+export const Z_INDEX = {
+  behind: -1,
+  base: 1,
+  raised: 2,
+  overlap: 3,
+  marker: 4,
+  pinned: 5,
+  bar: 10,
+  header: 20,
+  dock: 30,
+  supportLauncher: 1200,
+  floatingCall: 1250,
+  sheetBackdrop: 1290,
+  sheet: 1300,
+  miniCall: 1300,
+  aiGlow: 1350,
+  aiBackdrop: 1355,
+  aiLauncher: 1360,
+  aiLiveOverlay: 1360,
+  celebration: 1400,
+  tourBackdrop: 1400,
+  tourHighlight: 1405,
+  tourPointer: 1450,
+  tourCard: 1460,
+  tourControls: 1470,
+  toast: 1500,
+  offlineGame: 2000,
+};
+
+// Media queries for useMediaQuery and CSS. Derived from BREAKPOINTS so a breakpoint change moves every query.
+// 0.05px below a breakpoint avoids a one-pixel overlap with the matching min-width query.
+export const MEDIA_QUERIES = {
+  belowSm: `(max-width:${BREAKPOINTS.sm - 0.05}px)`,
+  belowMd: `(max-width:${BREAKPOINTS.md - 0.05}px)`,
+  // The aptitude test switches to its compact layout earlier than the rest of the app: the question palette needs room.
+  compactTestLayout: '(max-width:1000px)',
+};
+
+// Shadow recipes shared by hero cards, bottom sheets, focus rings and highlights. Colours stay arguments so
+// the recipe works with any palette; the offsets and blur radii live here.
+// Single-layer drop shadows in five steps. The colour (with its alpha) stays an argument.
+const DROP_SHADOWS = {
+  xs: '0 2px 6px',
+  sm: '0 4px 12px',
+  md: '0 8px 20px -6px',
+  lg: '0 14px 28px -12px',
+  xl: '0 18px 40px -16px',
+};
+
+export const SHADOWS = {
+  drop: (step, color) => `${DROP_SHADOWS[step]} ${color}`,
+  card: (color, alpha) => `0 14px 28px -16px ${withAlpha(color, alpha)}`,
+  cardLit: (color, alpha, highlightAlpha) => `0 14px 28px -16px ${withAlpha(color, alpha)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, highlightAlpha)}`,
+  highlight: (alpha) => `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, alpha)}`,
+  sheetUp: (alpha) => `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, alpha)}`,
+  ring: (color) => `0 0 0 2px ${color}`,
+};
 
 // ---------------------------------------------------------------- interaction states
 // One behaviour for every clickable surface (buttons, rows, cards, tabs, chips): normal is flat; hover, pressed and
@@ -384,4 +488,42 @@ export const STATES = {
   selectedOpacity: 0.08,
   disabledOpacity: 0.5,
   focusRing: { width: 2, offset: 2 },
+};
+
+// ---------------------------------------------------------------- pages that render before the app loads
+// The launch splash (index.html) and the offline game (static-pages/offline.template.html) are plain HTML, so they
+// cannot import this file at runtime. The build (scripts/designTokensPlugin.mjs) writes these values into them, which
+// keeps their colours, radii and fonts in this file too.
+const BRAND_ORANGE = '#E8590C';
+export const SPLASH = {
+  background: WARM_SURFACES.light.bg,
+  ring: COLOR_PALETTE.custom.orangeF7A33B,
+  gradient: [COLOR_PALETTE.custom.orangeF7A33B, BRAND_ORANGE, COLOR_PALETTE.custom.orangeD9480F],
+  glyphLight: '#FFF8EE',
+  glyphWarm: '#FFEFCF',
+  radius: '26px',
+  shadow: `0 14px 34px ${withAlpha(BRAND_ORANGE, 0.32)}`,
+};
+
+export const OFFLINE_GAME = {
+  background: COLOR_PALETTE.white,
+  white: COLOR_PALETTE.white,
+  ink: '#1F2328',
+  muted: '#6B7686',
+  wall: '#2B3441',
+  danger: '#C5221F',
+  offline: '#D93025',
+  success: '#1E8E3E',
+  amber: '#FFB020',
+  brand: '#1A73E8',
+  brandDeep: '#0B4FB3',
+  brandRgb: '26,115,232',
+  laneLine: '#E6EBF3',
+  edgeLine: '#D5DDE9',
+  pillText: '#3C4655',
+  pillBackground: '#F3F6FB',
+  pillBorder: '#DDE3EC',
+  radiusPill: RADII_PX.pill,
+  radiusCircle: RADII_PX.circle,
+  font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
 };

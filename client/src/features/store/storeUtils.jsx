@@ -3,7 +3,7 @@ import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import { FF } from '../quests/questUtils';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, hexAlpha, SHADOWS } from '../../app/design/designTokens';
 
 export const fmt = (n) => Number(n || 0).toLocaleString('en-IN');
 export const fmtDate = (d) => (d ? new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '—');
@@ -183,7 +183,7 @@ export function ItemArt({ art, accent = COLOR_PALETTE.indigo[500], height = 150,
   const Svg = SVG_ART[art];
   const Icon = ICONS[art];
   return (
-    <Box sx={{ height, background: `radial-gradient(circle at 50% 58%, ${accent}40, transparent 68%), ${FF.well}`, display: 'grid', placeItems: 'center', overflow: 'hidden' }}>
+    <Box sx={{ height, background: `radial-gradient(circle at 50% 58%, ${hexAlpha(accent, 0.25)}, transparent 68%), ${FF.well}`, display: 'grid', placeItems: 'center', overflow: 'hidden' }}>
       {image ? (
         <Box component="img" src={image} alt="" loading="lazy" sx={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       ) : Svg ? (
@@ -191,7 +191,7 @@ export function ItemArt({ art, accent = COLOR_PALETTE.indigo[500], height = 150,
           <Svg c={accent} />
         </Box>
       ) : Icon ? (
-        <Box sx={{ width: height * 0.52, height: height * 0.52, display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${accent}, ${accent}B3)`, boxShadow: `0 6px 18px ${accent}59`, clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)' }}>
+        <Box sx={{ width: height * 0.52, height: height * 0.52, display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${accent}, ${hexAlpha(accent, 0.702)})`, boxShadow: SHADOWS.drop('md', hexAlpha(accent, 0.349)), clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)' }}>
           <Icon sx={{ fontSize: height * 0.3, color: COLOR_PALETTE.white }} />
         </Box>
       ) : null}

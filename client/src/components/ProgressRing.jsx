@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { COLOR_PALETTE } from '../app/design/designTokens';
+import { COLOR_PALETTE, MOTION } from '../app/design/designTokens';
 
 const TRACK_OPACITY = 0.12;
 
@@ -17,7 +17,7 @@ function RingGraphic({ size, strokeWidth, color, fraction }) {
         strokeDasharray={circumference}
         strokeDashoffset={circumference * (1 - fraction)}
         strokeLinecap="round"
-        style={{ transition: 'stroke-dashoffset 0.6s ease' }}
+        style={{ transition: `stroke-dashoffset ${MOTION.progress}ms ease` }}
       />
     </svg>
   );

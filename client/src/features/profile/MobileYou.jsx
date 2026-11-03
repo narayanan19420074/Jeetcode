@@ -14,7 +14,7 @@ import ProBadge from '../../components/ProBadge';
 import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, tint } from '../dashboard/dashboardUtils';
 import AchievementBadge from './AchievementBadge';
 import { LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION, SHADOWS } from '../../app/design/designTokens';
 
 // Phone layout of the You page. It follows the phone Problems and Dashboard pages (MobileProblems,
 // MobileHome): same page padding, 44px icon buttons, centred header, 1.25rem section titles,
@@ -118,7 +118,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
         <Avatar
           src={user.avatarUrl || undefined}
           alt=""
-          sx={{ width: 81, height: 81, mx: 'auto', fontSize: FONT_SIZES.displayLg, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'primary.main', color: 'primary.contrastText', boxShadow: `0 14px 26px -12px ${ACCENT}` }}
+          sx={{ width: 81, height: 81, mx: 'auto', fontSize: FONT_SIZES.displayLg, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'primary.main', color: 'primary.contrastText', boxShadow: SHADOWS.drop('lg', ACCENT) }}
         >
           {initials}
         </Avatar>
@@ -162,7 +162,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
           aria-valuenow={solvedAll}
           sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
         >
-          <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+          <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: `width ${MOTION.deliberate}ms` }} />
         </Box>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
           {solvedAll}

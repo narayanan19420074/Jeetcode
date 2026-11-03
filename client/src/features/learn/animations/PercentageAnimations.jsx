@@ -1,10 +1,10 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
-  return <g style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.5s ease' }}>{children}</g>;
+  return <g style={{ opacity: visible ? 1 : 0, transition: `opacity ${MOTION.deliberate}ms ease` }}>{children}</g>;
 }
 
 /* ------------------------------------------------------------------ */
@@ -36,7 +36,7 @@ export function PercentGridAnimation() {
         rx="2"
         fill={i < shadedTarget ? COLOR_PALETTE.indigo[500] : 'currentColor'}
         opacity={i < shadedTarget ? 0.85 : 0.08}
-        style={{ transition: 'fill 0.4s ease, opacity 0.4s ease' }}
+        style={{ transition: `fill ${MOTION.slow}ms ease, opacity ${MOTION.slow}ms ease` }}
       />
     );
   }

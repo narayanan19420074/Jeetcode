@@ -44,7 +44,7 @@ import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import { problemsApi } from '../api/problemsApi';
 import { extractErrorMessage } from '../api/apiClient';
-import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX, Z_INDEX, MOTION } from '../app/design/designTokens';
 
 /* ------------------------------------------------------------------ */
 /* Constants                                                           */
@@ -291,7 +291,7 @@ function ProgressSummary({ progress }) {
   const solvedAll = DIFFICULTIES.reduce((s, d) => s + (progress.solved?.[d] || 0), 0);
 
   return (
-    <Paper variant="outlined" sx={{ ...sx, borderRadius: { xs: 0, sm: RADII_PX.card }, border: { xs: 'none', sm: '1px solid' }, borderColor: 'divider', px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1.5 }, bgcolor: { xs: 'transparent', sm: 'background.paper' } }}>
+    <Paper variant="outlined" sx={{ ...sx, borderRadius: { xs: RADII_PX.square, sm: RADII_PX.card }, border: { xs: 'none', sm: '1px solid' }, borderColor: 'divider', px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1.5 }, bgcolor: { xs: 'transparent', sm: 'background.paper' } }}>
       <Stack direction="row" sx={{ alignItems: 'baseline', gap: 1, mb: 1 }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1 }}>{solvedAll}</Typography>
         <Typography variant="body2" color="text.secondary">
@@ -666,7 +666,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
       <Paper
         variant="outlined"
         sx={{
-          borderRadius: { xs: 0, sm: RADII_PX.card },
+          borderRadius: { xs: RADII_PX.square, sm: RADII_PX.card },
           overflow: 'hidden',
           borderLeft: { xs: 'none', sm: '1px solid' },
           borderRight: { xs: 'none', sm: '1px solid' },
@@ -871,7 +871,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
 
         <TableHeader />
         <Box sx={{ position: 'relative', borderTop: { xs: '1px solid', sm: 'none' }, borderColor: 'divider' }}>
-          {refetching && <LinearProgress sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, zIndex: 1 }} />}
+          {refetching && <LinearProgress sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, zIndex: Z_INDEX.base }} />}
 
           {loading ? (
             isSmUp ? <SkeletonRows count={Math.min(pageSize, 10)} /> : <SkeletonRowsMobile count={Math.min(pageSize, 10)} />
@@ -903,7 +903,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
               )}
             </Box>
           ) : (
-            <Box sx={{ opacity: refetching ? 0.55 : 1, transition: 'opacity 0.15s ease' }}>
+            <Box sx={{ opacity: refetching ? 0.55 : 1, transition: `opacity ${MOTION.fast}ms ease` }}>
               {problems.map((p, i) =>
                 isSmUp ? <ProblemRow key={p._id} p={p} index={offset + i + 1} /> : <ProblemRowMobile key={p._id} p={p} index={offset + i + 1} />
               )}

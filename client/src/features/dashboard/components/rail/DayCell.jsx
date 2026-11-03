@@ -37,7 +37,7 @@ function PlanMarker() {
     <Box
       component="span"
       aria-hidden="true"
-      sx={{ position: 'absolute', top: -2, right: 'calc(50% - 20px)', width: 13, height: 13, borderRadius: '50%', display: 'grid', placeItems: 'center', fontSize: 8, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200 }}
+      sx={{ position: 'absolute', top: -2, right: 'calc(50% - 20px)', width: 13, height: 13, borderRadius: '50%', display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.dot, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200 }}
     >
       P
     </Box>

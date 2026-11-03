@@ -10,7 +10,7 @@ import VolumeOffRoundedIcon from '@mui/icons-material/VolumeOffRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { runTour } from './teachScript';
 import { speak, splitSentences, toSpoken, warmUpVoices, cancelSpeech, speechSupported } from './speech';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MEDIA_QUERIES, Z_INDEX, MOTION, EASING } from '../../../app/design/designTokens';
 
 // Blip's guided tour of the Algorithm Visualizer.
 //
@@ -95,7 +95,7 @@ function placeAgent(rect, size, vw, vh) {
 export default function TeachGuide({ page, onClose }) {
   const theme = useTheme();
   const reduce = useMediaQuery('(prefers-reduced-motion: reduce)');
-  const compact = useMediaQuery('(max-width:639.95px)');
+  const compact = useMediaQuery(MEDIA_QUERIES.belowSm);
   const dark = theme.palette.mode === 'dark';
 
   const [caption, setCaption] = useState({ text: '', sentences: [], idx: 0 });
@@ -353,7 +353,7 @@ export default function TeachGuide({ page, onClose }) {
     travelTimer.current = setTimeout(() => { setTravelling(false); setHeading(0); }, reduce ? 150 : 850);
   }, [place.x, place.y, reduce]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const fly = reduce ? 'none' : 'transform 0.85s cubic-bezier(0.34, 1.25, 0.5, 1)';
+  const fly = reduce ? 'none' : `transform 0.85s ${EASING.overshootLarge}`;
   const accent = COLOR_PALETTE.emerald[400];
   const hasText = caption.sentences.length > 0;
 
@@ -364,7 +364,7 @@ export default function TeachGuide({ page, onClose }) {
         position: 'fixed',
         left: 0,
         top: 0,
-        zIndex: 1460,
+        zIndex: Z_INDEX.tourCard,
         transform: `translate(${Math.round(place.x)}px, ${Math.round(place.y)}px)`,
         transition: fly,
         willChange: 'transform',
@@ -427,7 +427,7 @@ export default function TeachGuide({ page, onClose }) {
                 sx={{
                   opacity: i === caption.idx ? 1 : i < caption.idx ? 0.62 : 0.58,
                   fontWeight: i === caption.idx ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.regular,
-                  transition: 'opacity 0.25s',
+                  transition: `opacity ${MOTION.standard}ms`,
                 }}
               >
                 {s}{' '}
@@ -446,11 +446,11 @@ export default function TeachGuide({ page, onClose }) {
         position: 'fixed',
         left: 0,
         top: 0,
-        zIndex: 1405,
+        zIndex: Z_INDEX.tourHighlight,
         width: rect.width + PAD * 2,
         height: rect.height + PAD * 2,
         transform: `translate(${Math.round(rect.left - PAD)}px, ${Math.round(rect.top - PAD)}px)`,
-        transition: reduce ? 'none' : 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), width 0.5s cubic-bezier(0.22, 1, 0.36, 1), height 0.5s cubic-bezier(0.22, 1, 0.36, 1)',
+        transition: reduce ? 'none' : `transform 0.5s ${EASING.decelerate}, width 0.5s ${EASING.decelerate}, height 0.5s ${EASING.decelerate}`,
         borderRadius: RADII_PX.card,
         border: `2px solid ${accent}`,
         boxShadow: `0 0 0 100vmax ${withAlpha(COLOR_PALETTE.slate[950], 0.5)}`,
@@ -465,7 +465,7 @@ export default function TeachGuide({ page, onClose }) {
       elevation={0}
       sx={{
         position: 'fixed',
-        zIndex: 1470,
+        zIndex: Z_INDEX.tourControls,
         left: '50%',
         transform: 'translateX(-50%)',
         ...(compact ? { top: 8 } : { bottom: 16 }),
@@ -517,7 +517,7 @@ export default function TeachGuide({ page, onClose }) {
       <Box
         aria-hidden
         onClick={(e) => e.stopPropagation()}
-        sx={{ position: 'fixed', inset: 0, zIndex: 1400, bgcolor: rect ? 'transparent' : withAlpha(COLOR_PALETTE.slate[950], 0.38), transition: 'background-color 0.4s' }}
+        sx={{ position: 'fixed', inset: 0, zIndex: Z_INDEX.tourBackdrop, bgcolor: rect ? 'transparent' : withAlpha(COLOR_PALETTE.slate[950], 0.38), transition: `background-color ${MOTION.slow}ms` }}
       />
       {spotlight}
       {tap && (
@@ -528,7 +528,7 @@ export default function TeachGuide({ page, onClose }) {
             position: 'fixed',
             left: tap.x,
             top: tap.y,
-            zIndex: 1450,
+            zIndex: Z_INDEX.tourPointer,
             width: 56,
             height: 56,
             borderRadius: '50%',

@@ -37,7 +37,7 @@ import {
   libSmallBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII, SHADOWS, MOTION } from '../../app/design/designTokens';
 
 const clock = (iso) => new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
 const addUnique = (list, m) => (list.some((x) => x.id === m.id) ? list : [...list, m]);
@@ -568,7 +568,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             onClick={jump}
             sx={(t) => (lib
               ? { position: 'absolute', right: 16, bottom: 12, width: 40, height: 40, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', border: '1px solid var(--lib-border)', '&:hover': { bgcolor: 'var(--lib-player)' } }
-              : { position: 'absolute', right: 14, bottom: 12, width: 36, height: 36, bgcolor: t.palette.background.paper, boxShadow: `0 2px 6px ${withAlpha(COLOR_PALETTE.black, 0.25)}`, '&:hover': { bgcolor: t.palette.background.paper } })}
+              : { position: 'absolute', right: 14, bottom: 12, width: 36, height: 36, bgcolor: t.palette.background.paper, boxShadow: SHADOWS.drop('xs', withAlpha(COLOR_PALETTE.black, 0.25)), '&:hover': { bgcolor: t.palette.background.paper } })}
           >
             <KeyboardArrowDownRoundedIcon />
           </IconButton>
@@ -594,7 +594,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             }}
             sx={{
               '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.card, minHeight: 44, py: 1, px: 2, bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-text)' },
-              '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${LIB_ACCENT}` },
+              '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: SHADOWS.ring(LIB_ACCENT) },
               '& .MuiInputBase-input': { p: 0 },
               '& fieldset': { border: 'none' },
             }}
@@ -631,8 +631,8 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
             }
           }}
           sx={(t) => ({
-            '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.card, py: 1, px: 2, bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.bodyLg, transition: 'box-shadow .18s' },
-            '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${alpha(t.palette.primary.main, 0.45)}` },
+            '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.card, py: 1, px: 2, bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.bodyLg, transition: `box-shadow ${MOTION.standard}ms` },
+            '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: SHADOWS.ring(alpha(t.palette.primary.main, 0.45)) },
             '& fieldset': { border: 'none' },
           })}
           slotProps={{ htmlInput: { 'aria-label': `Message ${friend.name}`, maxLength: 1000 } }}
@@ -642,7 +642,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
           onClick={send}
           disabled={!text.trim() || sending}
           sx={(t) => ({
-            width: 42, height: 42, flexShrink: 0, color: t.palette.primary.contrastText, bgcolor: 'primary.main', transition: 'transform .15s, background-color .15s',
+            width: 42, height: 42, flexShrink: 0, color: t.palette.primary.contrastText, bgcolor: 'primary.main', transition: `transform ${MOTION.fast}ms, background-color ${MOTION.fast}ms`,
             '&:hover': { bgcolor: 'primary.dark' }, '&:active': { transform: 'scale(0.9)' },
             '&.Mui-disabled': { color: 'text.disabled', bgcolor: t.palette.action.hover },
           })}

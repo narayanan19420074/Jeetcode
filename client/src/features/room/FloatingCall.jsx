@@ -7,7 +7,7 @@ import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import CallEndRoundedIcon from '@mui/icons-material/CallEndRounded';
 import CloseFullscreenRoundedIcon from '@mui/icons-material/CloseFullscreenRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, Z_INDEX } from '../../app/design/designTokens';
 
 const SIZE = 60; // collapsed bubble diameter
 const GAP = 8;
@@ -126,7 +126,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
           position: 'fixed',
           left: pos?.x ?? 12,
           top: pos?.y ?? 120,
-          zIndex: 1250,
+          zIndex: Z_INDEX.floatingCall,
           display: 'flex',
           flexDirection: 'column',
           gap: `${GAP}px`,
@@ -180,7 +180,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
       elevation={8}
       sx={{
         position: 'fixed',
-        zIndex: 1250,
+        zIndex: Z_INDEX.floatingCall,
         left: '50%',
         transform: 'translateX(-50%)',
         bottom: 'calc(16px + env(safe-area-inset-bottom))',

@@ -33,7 +33,7 @@ import { Confetti, CountUp } from './components/MotionBits';
 import { ALIENS, testXp } from './components/gamification';
 import QuestionStimulus from './components/QuestionStimulus';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from './components/aptitudeUi';
-import { COLOR_PALETTE, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, Z_INDEX, MOTION } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono };
 const TARGET = { easy: 45, medium: 90, hard: 150 };
@@ -112,7 +112,7 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
         <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: dm.color, width: 54, textAlign: 'right', flexShrink: 0, display: { xs: 'none', sm: 'block' } }}>
           {dm.label}
         </Typography>
-        <ExpandMoreRoundedIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s', color: 'text.secondary' }} />
+        <ExpandMoreRoundedIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: `transform ${MOTION.standard}ms`, color: 'text.secondary' }} />
       </Stack>
 
       <Collapse in={open} unmountOnExit>
@@ -281,7 +281,7 @@ export default function AptitudeResultsPage() {
 
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 3, md: 5 }} sx={{ alignItems: { xs: 'center', md: 'center' } }}>
           <Stack sx={{ alignItems: 'center', position: 'relative' }}>
-            <Alien3D kind={ALIENS[passed ? Math.min(ALIENS.length - 1, Math.floor(result.score / 21)) : 0].key} size={120} wave={passed} sx={{ mb: -1.5, zIndex: 1 }} />
+            <Alien3D kind={ALIENS[passed ? Math.min(ALIENS.length - 1, Math.floor(result.score / 21)) : 0].key} size={120} wave={passed} sx={{ mb: -1.5, zIndex: Z_INDEX.base }} />
             <Ring value={result.score} size={156} thickness={4} color={passed ? 'success.main' : 'error.main'} label={<CountUp value={Math.round(result.score)} suffix="%" />} sublabel="score" />
           </Stack>
           <Box sx={{ flexGrow: 1, width: '100%' }}>

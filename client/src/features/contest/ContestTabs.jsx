@@ -16,7 +16,7 @@ import EventBusyRoundedIcon from '@mui/icons-material/EventBusyRounded';
 import { surface } from '../dashboard/dashboardUtils';
 import { LIB_ACCENT } from '../dashboard/components/libraryStyle';
 import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII, SHADOWS, MOTION } from '../../app/design/designTokens';
 
 const AMBER = COLOR_PALETTE.amber[400];
 const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
@@ -41,7 +41,7 @@ export function ContestTile({ contest, past, onOpen, ctaLabel }) {
   const cta = ctaLabel || (past ? 'View results' : contest.applied ? 'You are in' : live ? 'View contest' : 'View & apply');
 
   return (
-    <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: RADII_PX.card, color: COLOR_PALETTE.white, background: past ? SLATE : EMBER, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.custom.gray292524, 0.6)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` }}>
+    <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: RADII_PX.card, color: COLOR_PALETTE.white, background: past ? SLATE : EMBER, boxShadow: SHADOWS.cardLit(COLOR_PALETTE.custom.gray292524, 0.6, 0.18) }}>
       <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.3)}, transparent 70%)`, pointerEvents: 'none' }} />
       <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: 10, width: 150, height: 150, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.white, 0.10)}, transparent 70%)`, pointerEvents: 'none' }} />
 
@@ -129,11 +129,11 @@ export function ContestMini({ contest, past, selected, onOpen }) {
         sx={(t) => ({
           width: '100%', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 1.5, p: 1.5, borderRadius: RADII_PX.card, fontFamily: 'inherit',
           border: `1px solid ${selected ? AMBER : t.palette.divider}`, bgcolor: t.palette.background.paper,
-          boxShadow: selected ? `0 0 0 3px ${withAlpha(COLOR_PALETTE.amber[400], 0.2)}` : t.palette.mode === 'dark' ? `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.045)}` : `0 1px 2px ${withAlpha(COLOR_PALETTE.slate[900], 0.05)}`,
-          transition: 'border-color .2s, box-shadow .2s', '&:hover': { borderColor: AMBER },
+          boxShadow: selected ? `0 0 0 3px ${withAlpha(COLOR_PALETTE.amber[400], 0.2)}` : t.palette.mode === 'dark' ? SHADOWS.highlight(0.045) : `0 1px 2px ${withAlpha(COLOR_PALETTE.slate[900], 0.05)}`,
+          transition: `border-color ${MOTION.standard}ms, box-shadow ${MOTION.standard}ms`, '&:hover': { borderColor: AMBER },
         })}
       >
-        <Box sx={{ width: 52, height: 56, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', alignContent: 'center', color: COLOR_PALETTE.white, background: past ? SLATE : EMBER, boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` }}>
+        <Box sx={{ width: 52, height: 56, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', alignContent: 'center', color: COLOR_PALETTE.white, background: past ? SLATE : EMBER, boxShadow: SHADOWS.highlight(0.18) }}>
           <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1 }, mono]}>{istPart(contest.startsAt, { day: '2-digit' })}</Typography>
           <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.8, textTransform: 'uppercase', opacity: 0.85, mt: 0.5 }}>{istPart(contest.startsAt, { month: 'short' })}</Typography>
         </Box>
@@ -187,7 +187,7 @@ export function LiveNow({ contest, onOpen }) {
 function EmptyPast() {
   return (
     <Box sx={(t) => ({ textAlign: 'center', px: 2.5, py: 4, borderRadius: RADII_PX.card, border: `1.5px dashed ${t.palette.divider}` })}>
-      <Box sx={{ width: 52, height: 52, mx: 'auto', mb: 1.5, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', background: SLATE, color: COLOR_PALETTE.amber[200], boxShadow: `0 10px 22px -12px ${withAlpha(COLOR_PALETTE.slate[950], 0.8)}` }}>
+      <Box sx={{ width: 52, height: 52, mx: 'auto', mb: 1.5, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', background: SLATE, color: COLOR_PALETTE.amber[200], boxShadow: SHADOWS.drop('md', withAlpha(COLOR_PALETTE.slate[950], 0.8)) }}>
         <HistoryRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg }} />
       </Box>
       <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No past contests yet</Typography>
@@ -214,9 +214,9 @@ export default function ContestTabs({ contest, onOpen, onOpenPast, pastSelected 
           return (
             <ButtonBase
               key={key} role="tab" aria-selected={on} onClick={() => setTab(key)}
-              sx={{ position: 'relative', height: 40, borderRadius: RADII_PX.card, fontFamily: 'inherit', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, gap: 1, color: on ? COLOR_PALETTE.white : 'text.secondary', transition: 'color .2s' }}
+              sx={{ position: 'relative', height: 40, borderRadius: RADII_PX.card, fontFamily: 'inherit', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, gap: 1, color: on ? COLOR_PALETTE.white : 'text.secondary', transition: `color ${MOTION.standard}ms` }}
             >
-              {on && <motion.span layoutId="contest-tab-pill" transition={{ type: 'spring', stiffness: 400, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: RADII_PX.card, background: LIB_ACCENT, boxShadow: `0 6px 16px -8px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}` }} />}
+              {on && <motion.span layoutId="contest-tab-pill" transition={{ type: 'spring', stiffness: 400, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: RADII_PX.card, background: LIB_ACCENT, boxShadow: SHADOWS.drop('md', withAlpha(COLOR_PALETTE.indigo[500], 0.7)) }} />}
               <Box component="span" sx={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 1 }}>
                 {label}
                 <Box component="span" sx={{ minWidth: 20, px: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, lineHeight: '20px', textAlign: 'center', bgcolor: on ? withAlpha(COLOR_PALETTE.white, 0.25) : 'action.selected' }}>{lists[key].length}</Box>

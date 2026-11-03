@@ -13,7 +13,7 @@ import { WS } from '../workspace/wsTokens';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WsIconButton } from '../workspace/wsUi';
 import { FLAME, GREEN, PersonAvatar, mono, statusInfo } from './friendsUi';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 // ---- motion --------------------------------------------------------------------------------
 // Everything here is switched off for people who prefer reduced motion.
@@ -126,13 +126,13 @@ export function TabBar({ items, value, onChange }) {
               onClick={() => onChange(key)}
               sx={(t) => ({
                 position: 'relative', flex: 1, minWidth: 0, height: 36, px: 0.5, borderRadius: RADII_PX.control, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold,
-                color: on ? t.palette.text.primary : t.palette.text.secondary, transition: 'color .2s',
+                color: on ? t.palette.text.primary : t.palette.text.secondary, transition: `color ${MOTION.standard}ms`,
                 '&:hover': { color: t.palette.text.primary },
                 '& .tab-pill': { backgroundColor: t.palette.background.paper, boxShadow: t.palette.mode === 'dark' ? `0 1px 3px ${withAlpha(COLOR_PALETTE.black, 0.5)}` : `0 1px 3px ${withAlpha(COLOR_PALETTE.slate[900], 0.14)}` },
               })}
             >
               {on && <motion.span className="tab-pill" layoutId="friends-tab-pill" transition={{ type: 'spring', stiffness: 520, damping: 40 }} style={{ position: 'absolute', inset: 0, borderRadius: RADII_PX.control }} />}
-              <Box component="span" sx={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 0.5, minWidth: 0, '& svg': { fontSize: FONT_SIZES.subheading, color: on ? 'primary.main' : 'inherit', transition: 'color .2s' } }}>
+              <Box component="span" sx={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: 0.5, minWidth: 0, '& svg': { fontSize: FONT_SIZES.subheading, color: on ? 'primary.main' : 'inherit', transition: `color ${MOTION.standard}ms` } }}>
                 {icon}
                 <Box component="span" sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{label}</Box>
                 {count > 0 && (
@@ -164,7 +164,7 @@ export function FilterChip({ label, count, active, onClick, dot }) {
         flexShrink: 0, height: 30, px: 1.5, gap: 1, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold,
         color: active ? t.palette.primary.main : t.palette.text.secondary,
         bgcolor: active ? alpha(t.palette.primary.main, 0.14) : wsSurface(t).raised,
-        transition: 'background-color .2s, color .2s, transform .12s',
+        transition: `background-color ${MOTION.standard}ms, color ${MOTION.standard}ms, transform ${MOTION.fast}ms`,
         '&:hover': { color: active ? t.palette.primary.main : t.palette.text.primary },
         '&:active': { transform: 'scale(0.96)' },
       })}
@@ -219,7 +219,7 @@ export function OnlineRail({ people, onOpen }) {
     <Stack direction="row" spacing={1.5} sx={{ px: 2, pt: 0.5, pb: 1.5, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
       {people.map((p, i) => (
         <Reveal key={p.userId} index={i}>
-          <ButtonBase onClick={() => onOpen(p.userId)} aria-label={`Chat with ${p.name}, online`} sx={{ flexDirection: 'column', gap: 0.5, width: 56, borderRadius: RADII_PX.control, fontFamily: 'inherit', transition: 'transform .12s', '&:active': { transform: 'scale(0.95)' } }}>
+          <ButtonBase onClick={() => onOpen(p.userId)} aria-label={`Chat with ${p.name}, online`} sx={{ flexDirection: 'column', gap: 0.5, width: 56, borderRadius: RADII_PX.control, fontFamily: 'inherit', transition: `transform ${MOTION.fast}ms`, '&:active': { transform: 'scale(0.95)' } }}>
             <Box sx={{ position: 'relative', width: 52, height: 52 }}>
               <Box aria-hidden sx={{ position: 'absolute', inset: 0, borderRadius: '50%', background: `conic-gradient(${GREEN}, ${COLOR_PALETTE.sky[400]}, ${GREEN})`, animation: `${spin} 4s linear infinite`, ...still }} />
               <Box sx={(t) => ({ position: 'absolute', inset: '3px', borderRadius: '50%', bgcolor: t.palette.background.paper, display: 'grid', placeItems: 'center' })}>
@@ -246,8 +246,8 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
       sx={(t) => ({
         position: 'relative', mx: 1, mb: 0.5, borderRadius: RADII_PX.card,
         bgcolor: selected ? alpha(t.palette.primary.main, 0.12) : 'transparent',
-        transition: 'background-color .18s',
-        '&::before': { content: '""', position: 'absolute', left: 0, top: '22%', bottom: '22%', width: 3, borderRadius: RADII_PX.pill, bgcolor: 'primary.main', transform: selected ? 'scaleY(1)' : 'scaleY(0)', transition: 'transform .2s' },
+        transition: `background-color ${MOTION.standard}ms`,
+        '&::before': { content: '""', position: 'absolute', left: 0, top: '22%', bottom: '22%', width: 3, borderRadius: RADII_PX.pill, bgcolor: 'primary.main', transform: selected ? 'scaleY(1)' : 'scaleY(0)', transition: `transform ${MOTION.standard}ms` },
         '&:hover': { bgcolor: selected ? alpha(t.palette.primary.main, 0.14) : alpha(t.palette.text.primary, 0.05) },
         '&:hover .row-actions, &:focus-within .row-actions': { opacity: 1, pointerEvents: 'auto' },
       })}
@@ -273,7 +273,7 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
                 key={unread}
                 component="span"
                 aria-hidden
-                sx={{ minWidth: 20, height: 20, px: 1, borderRadius: RADII_PX.pill, bgcolor: 'primary.main', color: 'primary.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center', flexShrink: 0, animation: `${pop} .35s ease-out`, ...still }}
+                sx={{ minWidth: 20, height: 20, px: 1, borderRadius: RADII_PX.pill, bgcolor: 'primary.main', color: 'primary.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center', flexShrink: 0, animation: `${pop} ${MOTION.slow}ms ease-out`, ...still }}
               >
                 {unread > 99 ? '99+' : unread}
               </Box>
@@ -288,7 +288,7 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
         sx={(t) => ({
           position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', p: 0.5, borderRadius: `${WS.radius + 2}px`,
           bgcolor: t.palette.background.paper, boxShadow: `0 0 0 1px ${t.palette.divider}`,
-          opacity: 0, pointerEvents: 'none', transition: 'opacity .15s',
+          opacity: 0, pointerEvents: 'none', transition: `opacity ${MOTION.fast}ms`,
           '@media (hover: none)': { display: 'none' },
         })}
       >
@@ -313,7 +313,7 @@ export function PersonRow({ person, rank, sub, action }) {
     <Stack
       direction="row"
       spacing={1.5}
-      sx={(t) => ({ alignItems: 'center', mx: 1, mb: 0.5, px: 1.5, py: 1, minHeight: 64, borderRadius: RADII_PX.card, transition: 'background-color .18s', '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.04) } })}
+      sx={(t) => ({ alignItems: 'center', mx: 1, mb: 0.5, px: 1.5, py: 1, minHeight: 64, borderRadius: RADII_PX.card, transition: `background-color ${MOTION.standard}ms`, '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.04) } })}
     >
       {rank != null && (
         <Typography sx={{ width: 24, flexShrink: 0, textAlign: 'center', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'text.disabled', ...mono }}>{rank}</Typography>

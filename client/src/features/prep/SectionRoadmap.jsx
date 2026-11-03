@@ -8,7 +8,7 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import { QuestCoin } from './PrepQuestBits';
 import { CLEARED_AT, sectionPct } from './questLogic';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII, Z_INDEX, SHADOWS } from '../../app/design/designTokens';
 
 const ROW = 112;
 const PROBLEMS_SHOWN = 12;
@@ -193,10 +193,10 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
         {picks && (
           <>
             <motion.div key="bd" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setPicked(null)}
-              style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.black, .45), zIndex: 1290 }} />
+              style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.black, .45), zIndex: Z_INDEX.sheetBackdrop }} />
             <motion.div key="sheet" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 320, damping: 32 }}
-              style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 1300, display: 'flex', justifyContent: 'center' }}>
-              <Box sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper', borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, .3)}` }}>
+              style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: Z_INDEX.sheet, display: 'flex', justifyContent: 'center' }}>
+              <Box sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper', borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: SHADOWS.sheetUp(.3) }}>
                 <Box sx={{ width: 40, height: 4, borderRadius: RADII_PX.pill, bgcolor: 'divider', mx: 'auto', mb: 2 }} />
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading }}>{picks.title}</Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>{picks.sub}</Typography>

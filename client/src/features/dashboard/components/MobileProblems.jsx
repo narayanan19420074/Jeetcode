@@ -42,7 +42,7 @@ import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
 import { LibraryFont, MiniPlayer, useLibraryPalette } from './libraryStyle';
 import { readLastProblem } from '../../workspace/lastProblem';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION, SHADOWS } from '../../../app/design/designTokens';
 
 // Phone layout of the Problems page. It uses the same accent colour, rounded panels and tinted
 // chips as the phone dashboard (MobileHome), and the page itself scrolls (infinite scroll).
@@ -166,12 +166,12 @@ function BackToTopButton({ pal, bottom }) {
         height: 44,
         bgcolor: pal.player,
         color: pal.text,
-        boxShadow: `0 2px 10px ${withAlpha(COLOR_PALETTE.black, 0.18)}`,
+        boxShadow: SHADOWS.drop('sm', withAlpha(COLOR_PALETTE.black, 0.18)),
         '&:hover': { bgcolor: pal.player },
         opacity: visible ? 1 : 0,
         transform: visible ? 'none' : 'translateY(8px)',
         pointerEvents: visible ? 'auto' : 'none',
-        transition: 'opacity 160ms, transform 160ms',
+        transition: `opacity ${MOTION.fast}ms, transform ${MOTION.fast}ms`,
       })}
     >
       <KeyboardArrowUpRoundedIcon />
@@ -406,7 +406,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             aria-valuenow={solvedAll}
             sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+            <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: `width ${MOTION.deliberate}ms` }} />
           </Box>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {progress ? solvedAll : '–'}
@@ -489,7 +489,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             </Button>
           </Box>
         ) : (
-          <Box sx={{ opacity: refetching ? 0.55 : 1, transition: 'opacity 120ms' }} aria-busy={refetching}>
+          <Box sx={{ opacity: refetching ? 0.55 : 1, transition: `opacity ${MOTION.fast}ms` }} aria-busy={refetching}>
             {items.map((p, i) => (
               <ProblemRow key={p._id} pal={pal} p={p} index={i + 1} isDaily={p._id === featured?._id} saved={listsApi.isSaved(p._id)} onStar={handleStar} />
             ))}

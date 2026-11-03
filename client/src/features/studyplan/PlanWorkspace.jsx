@@ -20,7 +20,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import FriendPicker from './FriendPicker';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtRange, localKey, paceLabel, planTheme, relDay, shareUrl } from './planUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, SHADOWS } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 // Each panel scrolls inside itself, so the page never grows.
@@ -151,7 +151,7 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
 
       {/* hero: how the plan is going at a glance (same colours as its card) */}
       <Box
-        sx={{ position: 'relative', overflow: 'hidden', mb: 1.5, p: { xs: 2, sm: 2 }, borderRadius: RADII_PX.card, color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` }}
+        sx={{ position: 'relative', overflow: 'hidden', mb: 1.5, p: { xs: 2, sm: 2 }, borderRadius: RADII_PX.card, color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: SHADOWS.cardLit(COLOR_PALETTE.slate[950], 0.85, 0.18) }}
       >
         <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.26)}, transparent 70%)`, pointerEvents: 'none' }} />
         <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.5 }}>

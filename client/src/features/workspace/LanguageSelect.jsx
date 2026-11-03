@@ -38,9 +38,9 @@ export default function LanguageSelect({ value, onChange, problem, langMode, isM
           : isMobile
             ? { height: WS.ctrlLg, minWidth: 124, '& .MuiSelect-select': { height: `${WS.ctrlLg}px` } }
           : langMode === 'short'
-            ? { minWidth: 0, '& .MuiSelect-select': { pr: '26px !important' } }
+            ? { minWidth: 0, '& .MuiSelect-select': { pr: (t) => `${t.spacing(3.25)} !important` } }
             : langMode === 'icon'
-              ? { minWidth: 0, '& .MuiSelect-select': { pl: 1, pr: '22px !important' }, '& .MuiSelect-icon': { right: 2 } }
+              ? { minWidth: 0, '& .MuiSelect-select': { pl: 1, pr: (t) => `${t.spacing(2.75)} !important` }, '& .MuiSelect-icon': { right: 2 } }
               : undefined
       }
     >

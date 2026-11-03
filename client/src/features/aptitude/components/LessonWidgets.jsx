@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Box, Button, Paper, Slider, Stack, Typography, alpha } from '@mui/material';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 // Small interactive visuals used inside Learn lessons. Each one lets the
 // learner move a slider and SEE the rule, instead of reading it.
@@ -57,7 +57,7 @@ export function PercentGridWidget() {
                 aspectRatio: '1',
                 borderRadius: RADII_PX.badge,
                 bgcolor: i < pct ? 'primary.main' : 'action.disabledBackground',
-                transition: 'background-color .15s',
+                transition: `background-color ${MOTION.fast}ms`,
               }}
             />
           ))}
@@ -94,7 +94,7 @@ export function SuccessiveChangeWidget() {
         </Typography>
       </Stack>
       <Box sx={{ height: 14, borderRadius: RADII_PX.pill, bgcolor: 'action.hover', overflow: 'hidden' }}>
-        <Box sx={{ height: '100%', width: `${Math.min(100, (value / 200) * 100)}%`, bgcolor: color, transition: 'width .2s' }} />
+        <Box sx={{ height: '100%', width: `${Math.min(100, (value / 200) * 100)}%`, bgcolor: color, transition: `width ${MOTION.standard}ms` }} />
       </Box>
     </Box>
   );

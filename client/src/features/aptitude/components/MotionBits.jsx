@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
 import { Box, Typography } from '@mui/material';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONTS, FONT_SIZES, RADII_PX, Z_INDEX, SHADOWS } from '../../../app/design/designTokens';
 
 // Small reusable motion-graphics pieces for the Aptitude module.
 
@@ -58,7 +58,7 @@ export function Confetti({ pieces = 70 }) {
   const reduce = useReducedMotion();
   if (reduce) return null;
   return (
-    <Box aria-hidden sx={{ position: 'fixed', inset: 0, pointerEvents: 'none', overflow: 'hidden', zIndex: 1400 }}>
+    <Box aria-hidden sx={{ position: 'fixed', inset: 0, pointerEvents: 'none', overflow: 'hidden', zIndex: Z_INDEX.celebration }}>
       {Array.from({ length: pieces }, (_, i) => (
         <motion.div
           key={i}
@@ -81,7 +81,7 @@ export function XpPop({ amount, color = COLOR_PALETTE.yellow[400] }) {
       transition={{ duration: 1.7, times: [0, 0.2, 0.7, 1] }}
       style={{ display: 'inline-block', pointerEvents: 'none' }}
     >
-      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, color, textShadow: `0 2px 10px ${withAlpha(COLOR_PALETTE.black, .35)}`, fontFamily: FONTS.mono }}>+{amount} XP</Typography>
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, color, textShadow: SHADOWS.drop('sm', withAlpha(COLOR_PALETTE.black, .35)), fontFamily: FONTS.mono }}>+{amount} XP</Typography>
     </motion.div>
   );
 }

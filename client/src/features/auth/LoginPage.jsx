@@ -38,7 +38,7 @@ const iconBtnSx = (t) => ({
   ...(t.palette.mode === 'light' && {
     bgcolor: { xs: LIBRARY_PALETTE.light.player, md: 'transparent' },
     borderColor: { xs: 'transparent', md: 'divider' },
-    borderRadius: { xs: '50%', md: RADII_PX.control },
+    borderRadius: { xs: RADII_PX.circle, md: RADII_PX.control },
   }),
 });
 

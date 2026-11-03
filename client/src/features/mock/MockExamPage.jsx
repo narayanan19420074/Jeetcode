@@ -5,7 +5,7 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, PALETTE, formatClock } from '../aptitude/components/aptitudeUi';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII, MEDIA_QUERIES } from '../../app/design/designTokens';
 
 // Full mock paper. Sections run on their own SERVER clocks (sectionEndsAt),
 // answers autosave, a refresh resumes, and a locked section never reopens.
@@ -52,7 +52,7 @@ function Palette({ questions, state, cur, onJump }) {
 export default function MockExamPage() {
   const { attemptId } = useParams();
   const navigate = useNavigate();
-  const isMobile = useMediaQuery('(max-width:899px)');
+  const isMobile = useMediaQuery(MEDIA_QUERIES.belowMd);
 
   const [paper, setPaper] = useState(null);
   const [state, setState] = useState({});

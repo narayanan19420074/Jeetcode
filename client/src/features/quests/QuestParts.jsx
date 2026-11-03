@@ -8,7 +8,7 @@ import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import { Confetti } from '../aptitude/components/MotionBits';
 import { FF, buttonSx, cut, formatDate, panelSx } from './questUtils';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, MOTION } from '../../app/design/designTokens';
 
 // Free-Fire-style building blocks shared by the Quests page and the Store: cut-corner panels, orange/green buttons,
 // tags, notices and dialogs. Colours come from FF (CSS variables), so everything follows light / dark mode.
@@ -52,7 +52,7 @@ export function Stat({ icon, value, color = FF.text, label, onClick }) {
 export function Bar({ pct, color = FF.orange, height = 8 }) {
   return (
     <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(Math.min(100, Math.max(0, pct)))} sx={{ height, bgcolor: FF.well, border: `1px solid ${FF.line}`, overflow: 'hidden' }}>
-      <Box sx={{ width: `${Math.min(100, Math.max(0, pct))}%`, height: '100%', bgcolor: color, transition: 'width .6s ease' }} />
+      <Box sx={{ width: `${Math.min(100, Math.max(0, pct))}%`, height: '100%', bgcolor: color, transition: `width ${MOTION.progress}ms ease` }} />
     </Box>
   );
 }

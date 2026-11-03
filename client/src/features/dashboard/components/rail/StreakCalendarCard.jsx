@@ -11,11 +11,11 @@ import ResetCountdown from './ResetCountdown';
 import useStreakMonth from './useStreakMonth';
 import useStudyPlanMarks from './useStudyPlanMarks';
 import { CALENDAR_GRADIENT, FAINT, SOFT, WEEKDAYS } from './railTokens';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, SHADOWS } from '../../../../app/design/designTokens';
 
 const cardSx = (phone) => [
   surface,
-  { p: 2.5, color: COLOR_PALETTE.white, background: CALENDAR_GRADIENT, border: 'none', borderRadius: phone ? RADII_PX.card : RADII_PX.card, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` },
+  { p: 2.5, color: COLOR_PALETTE.white, background: CALENDAR_GRADIENT, border: 'none', borderRadius: phone ? RADII_PX.card : RADII_PX.card, boxShadow: SHADOWS.cardLit(COLOR_PALETTE.slate[950], 0.85, 0.18) },
 ];
 
 function StreakHeader({ streak, isAuthenticated, badge }) {

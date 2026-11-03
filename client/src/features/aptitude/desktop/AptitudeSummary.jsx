@@ -4,7 +4,7 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 const PROGRESS_GOLD = COLOR_PALETTE.custom.amberF2B63C;
 
@@ -12,7 +12,7 @@ function ProgressLine({ cleared, total, palette }) {
   return (
     <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', justifyContent: 'center', mt: 2.5 }}>
       <Box role="progressbar" aria-label="Levels cleared" aria-valuemin={0} aria-valuemax={total} aria-valuenow={cleared} sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(PROGRESS_GOLD, 28), overflow: 'hidden' }}>
-        <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: PROGRESS_GOLD, transition: 'width .5s' }} />
+        <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: PROGRESS_GOLD, transition: `width ${MOTION.deliberate}ms` }} />
       </Box>
       <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
         {cleared}<Box component="span" sx={{ color: palette.muted, fontWeight: FONT_WEIGHTS.regular }}>/{total}</Box>

@@ -3,22 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="theme-color" content="%%OFFLINE.white%%" />
     <title>JeetCode — offline</title>
     <style>
-      html, body { margin: 0; height: 100%; background: #FFFFFF; overflow: hidden; overscroll-behavior: none;
+      html, body { margin: 0; height: 100%; background: %%OFFLINE.white%%; overflow: hidden; overscroll-behavior: none;
         touch-action: none; -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent;
-        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+        font-family: %%OFFLINE.font%%; }
       canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
       .bar { position: fixed; left: 0; right: 0; top: 0; display: flex; justify-content: space-between; align-items: center;
         gap: 8px; padding: calc(10px + env(safe-area-inset-top)) 12px 10px; pointer-events: none; }
-      .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
-        font-size: 13px; font-weight: 600; color: #3C4655; background: #F3F6FB; border: 1px solid #DDE3EC; }
-      .dot { width: 8px; height: 8px; border-radius: 50%; background: #D93025; }
-      .pill.on .dot { background: #1E8E3E; }
-      button { pointer-events: auto; border: 1px solid #1A73E8; border-radius: 999px; padding: 8px 18px; font-size: 13px;
-        font-weight: 700; color: #1A73E8; background: #FFFFFF; font-family: inherit; }
-      button.on { color: #FFFFFF; background: #1A73E8; }
+      .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: %%OFFLINE.radiusPill%%;
+        font-size: 13px; font-weight: 600; color: %%OFFLINE.pillText%%; background: %%OFFLINE.pillBackground%%; border: 1px solid %%OFFLINE.pillBorder%%; }
+      .dot { width: 8px; height: 8px; border-radius: %%OFFLINE.radiusCircle%%; background: %%OFFLINE.offline%%; }
+      .pill.on .dot { background: %%OFFLINE.success%%; }
+      button { pointer-events: auto; border: 1px solid %%OFFLINE.brand%%; border-radius: %%OFFLINE.radiusPill%%; padding: 8px 18px; font-size: 13px;
+        font-weight: 700; color: %%OFFLINE.brand%%; background: %%OFFLINE.white%%; font-family: inherit; }
+      button.on { color: %%OFFLINE.white%%; background: %%OFFLINE.brand%%; }
     </style>
   </head>
   <body>
@@ -30,12 +30,12 @@
     <script>
       (function () {
         var BRAND = 'JeetCode';
-        var BLUE = '#1A73E8';
-        var INK = '#1F2328';
-        var MUTED = '#6B7686';
-        var WALL = '#2B3441';
-        var RED = '#C5221F';
-        var AMBER = '#FFB020';
+        var BLUE = '%%OFFLINE.brand%%';
+        var INK = '%%OFFLINE.ink%%';
+        var MUTED = '%%OFFLINE.muted%%';
+        var WALL = '%%OFFLINE.wall%%';
+        var RED = '%%OFFLINE.danger%%';
+        var AMBER = '%%OFFLINE.amber%%';
 
         var embed = window.parent !== window;
         var fine = !!(window.matchMedia && window.matchMedia('(pointer: fine)').matches);
@@ -44,7 +44,7 @@
         var pill = document.getElementById('pill');
         var ptxt = document.getElementById('ptxt');
         var act = document.getElementById('act');
-        var FONT = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+        var FONT = '%%OFFLINE.font%%';
 
         var W = 0, H = 0, DPR = 1, U = 1;
         var state = 'ready'; // ready | play | over
@@ -215,22 +215,22 @@
         }
 
         function drawBg() {
-          ctx.fillStyle = '#FFFFFF';
+          ctx.fillStyle = '%%OFFLINE.white%%';
           ctx.fillRect(0, 0, W, H);
           ctx.lineCap = 'round';
           for (var i = 0; i < stars.length; i++) {
             var s = stars[i];
-            ctx.strokeStyle = 'rgba(26,115,232,' + (0.05 + s.l / 300) + ')';
+            ctx.strokeStyle = 'rgba(%%OFFLINE.brandRgb%%,' + (0.05 + s.l / 300) + ')';
             ctx.lineWidth = 1.5;
             ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(s.x, s.y + s.l * (state === 'play' ? 1 : 0.5)); ctx.stroke();
           }
-          ctx.strokeStyle = '#E6EBF3';
+          ctx.strokeStyle = '%%OFFLINE.laneLine%%';
           ctx.lineWidth = 2;
           ctx.setLineDash([28 * U, 30 * U]);
           ctx.lineDashOffset = -laneOff;
           [0.25, 0.5, 0.75].forEach(function (f) { ctx.beginPath(); ctx.moveTo(W * f, -60); ctx.lineTo(W * f, H + 60); ctx.stroke(); });
           ctx.setLineDash([]);
-          ctx.strokeStyle = '#D5DDE9';
+          ctx.strokeStyle = '%%OFFLINE.edgeLine%%';
           ctx.beginPath(); ctx.moveTo(6, 0); ctx.lineTo(6, H); ctx.moveTo(W - 6, 0); ctx.lineTo(W - 6, H); ctx.stroke();
         }
 
@@ -243,22 +243,22 @@
           // engine flame
           var f = 8 + Math.random() * 9;
           ctx.beginPath(); ctx.moveTo(-5, 33); ctx.lineTo(0, 33 + f); ctx.lineTo(5, 33); ctx.closePath();
-          ctx.fillStyle = '#FFB020'; ctx.fill();
+          ctx.fillStyle = '%%OFFLINE.amber%%'; ctx.fill();
           // body
           ctx.beginPath();
           ctx.moveTo(0, -30); ctx.lineTo(7, -12); ctx.lineTo(10, 2); ctx.lineTo(34, 24); ctx.lineTo(34, 30);
           ctx.lineTo(10, 26); ctx.lineTo(7, 36); ctx.lineTo(0, 33); ctx.lineTo(-7, 36); ctx.lineTo(-10, 26);
           ctx.lineTo(-34, 30); ctx.lineTo(-34, 24); ctx.lineTo(-10, 2); ctx.lineTo(-7, -12); ctx.closePath();
           ctx.fillStyle = BLUE;
-          ctx.shadowColor = 'rgba(26,115,232,0.35)'; ctx.shadowBlur = 12; ctx.shadowOffsetY = 4;
+          ctx.shadowColor = 'rgba(%%OFFLINE.brandRgb%%,0.35)'; ctx.shadowBlur = 12; ctx.shadowOffsetY = 4;
           ctx.fill();
           ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
           // canopy
           ctx.beginPath(); ctx.ellipse(0, -12, 3.6, 7, 0, 0, 6.283);
-          ctx.fillStyle = '#0B4FB3'; ctx.fill();
+          ctx.fillStyle = '%%OFFLINE.brandDeep%%'; ctx.fill();
           // brand name on the wings
           ctx.font = '700 7.5px ' + FONT;
-          ctx.fillStyle = '#FFFFFF'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          ctx.fillStyle = '%%OFFLINE.white%%'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
           ctx.fillText(BRAND, 0, 17);
           ctx.restore();
         }
@@ -282,7 +282,7 @@
           ctx.save();
           ctx.translate(cx, cy);
           if (rot) ctx.rotate(rot);
-          ctx.fillStyle = '#FFFFFF'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          ctx.fillStyle = '%%OFFLINE.white%%'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
           ctx.fillText(BRAND, 0, 1);
           ctx.restore();
         }
@@ -348,7 +348,7 @@
           } else {
             text('Game over', cx, H * 0.34, 28, INK);
             text('Score ' + score, cx, H * 0.34 + 38 * U, 20, BLUE);
-            text(newBest ? 'New best score' : 'Best score ' + best, cx, H * 0.34 + 66 * U, 13, newBest ? '#1E8E3E' : MUTED, 600);
+            text(newBest ? 'New best score' : 'Best score ' + best, cx, H * 0.34 + 66 * U, 13, newBest ? '%%OFFLINE.success%%' : MUTED, 600);
             text(fine ? 'Press Space or tap to play again' : 'Tap to play again', cx, H * 0.34 + 104 * U, 15, BLUE);
           }
         }

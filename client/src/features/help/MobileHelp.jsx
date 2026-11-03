@@ -35,7 +35,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SHADOWS, MOTION } from '../../app/design/designTokens';
 
 // Phone layout of Help & Support in the Library look (same as the phone Home, Problems, Friends and Explore pages):
 // Roboto type, warm surface, 16px page padding, 44px back arrow, centred header tile, 44px pill search,
@@ -65,7 +65,7 @@ function SectionTitle({ id, children }) {
 const fieldSx = {
   '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.card, bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, color: 'var(--lib-text)' },
   '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
-  '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${LIB_ACCENT}` },
+  '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: SHADOWS.ring(LIB_ACCENT) },
   '& .MuiInputLabel-root': { color: 'var(--lib-muted)', fontSize: FONT_SIZES.title },
   '& .MuiInputLabel-root.Mui-focused': { color: LIB_ACCENT },
   '& .MuiFormHelperText-root': { mx: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', color: 'var(--lib-muted)' },
@@ -82,7 +82,7 @@ function FaqRow({ item, open, onToggle }) {
         sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, py: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
         <Typography sx={{ flex: 1, minWidth: 0, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{item.q}</Typography>
-        <ExpandMoreRoundedIcon aria-hidden sx={{ flexShrink: 0, color: 'var(--lib-muted)', transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
+        <ExpandMoreRoundedIcon aria-hidden sx={{ flexShrink: 0, color: 'var(--lib-muted)', transition: `transform ${MOTION.standard}ms`, transform: open ? 'rotate(180deg)' : 'none', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
         <Typography component="div" sx={{ pb: 2, fontSize: FONT_SIZES.bodyLg, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)', ...answerLinkSx }}>

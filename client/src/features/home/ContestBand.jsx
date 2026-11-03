@@ -52,7 +52,7 @@ export default function ContestBand({ contest }) {
           <Box>
             <Typography
               component="h2"
-              sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.035em', lineHeight: 0.98, fontSize: { xs: FONT_SIZES.jumbo, sm: '4.4rem', md: '5.4rem' }, color: GOLD }}
+              sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.035em', lineHeight: 0.98, fontSize: { xs: FONT_SIZES.jumbo, sm: FONT_SIZES.heroDisplay, md: FONT_SIZES.heroDisplayLg }, color: GOLD }}
             >
               {inr(contest.prizePool)}
             </Typography>

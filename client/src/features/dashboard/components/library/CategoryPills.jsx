@@ -4,6 +4,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { sameSet } from './libraryConstants';
 import useLibraryStyles from './libraryStyles';
 import usePillScroller from './usePillScroller';
+import { Z_INDEX } from '../../../../app/design/designTokens';
 
 const ROW_SX = {
   display: 'flex',
@@ -27,7 +28,7 @@ const arrowSx = (dir) => (t) => ({
   top: '50%',
   transform: 'translateY(-50%)',
   [dir < 0 ? 'left' : 'right']: 0,
-  zIndex: 2,
+  zIndex: Z_INDEX.raised,
   bgcolor: t.palette.background.paper,
   border: `1px solid ${t.palette.divider}`,
   '&:hover': { bgcolor: t.palette.background.paper },

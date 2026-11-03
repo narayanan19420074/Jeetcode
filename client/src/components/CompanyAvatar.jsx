@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box } from '@mui/material';
 import { getBrandLogo } from './brandLogos';
-import { COLOR_PALETTE, withAlpha } from '../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, hexAlpha, SHADOWS } from '../app/design/designTokens';
 
 // Companies without a brand mark get a generated monogram badge: a two-tone gradient picked from the name.
 const GRADIENTS = [
@@ -53,8 +53,8 @@ export default function CompanyAvatar({ name, logoUrl, size = 48 }) {
         color: light ? 'text.primary' : COLOR_PALETTE.white,
         ...(light ? { bgcolor: COLOR_PALETTE.white } : {
           background: `linear-gradient(145deg, ${ga}, ${gb})`,
-          textShadow: `0 1px 2px ${withAlpha(COLOR_PALETTE.black, 0.25)}`,
-          boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.35)}, 0 4px 10px -4px ${gb}99`,
+          textShadow: SHADOWS.drop('xs', withAlpha(COLOR_PALETTE.black, 0.25)),
+          boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.35)}, 0 4px 10px -4px ${hexAlpha(gb, 0.6)}`,
           '&::after': { content: '""', position: 'absolute', inset: 0, background: `radial-gradient(circle at 25% 15%, ${withAlpha(COLOR_PALETTE.white, 0.35)}, transparent 55%)`, pointerEvents: 'none' },
         }),
         border: '1px solid',

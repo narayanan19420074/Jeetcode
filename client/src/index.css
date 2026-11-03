@@ -10,7 +10,7 @@ html, body, #root {
 body {
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
-  font-family: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--jc-font-sans);
   font-feature-settings: 'tnum' 0, 'calt' 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,13 +18,13 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: var(--jc-scrollbar-size);
+  height: var(--jc-scrollbar-size);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.35);
-  border-radius: 8px;
+  background: var(--jc-scrollbar-thumb);
+  border-radius: var(--jc-radius-control);
 }
 
 ::-webkit-scrollbar-track {
@@ -32,10 +32,10 @@ body {
 }
 
 /* Phones: slim scrollbars so they never eat into the layout */
-@media (max-width: 899.95px) {
+@media %%MEDIA.belowMd%% {
   ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: var(--jc-scrollbar-size-slim);
+    height: var(--jc-scrollbar-size-slim);
   }
 }
 
@@ -47,16 +47,16 @@ body {
 }
 .autohide-scroll:hover,
 .autohide-scroll:focus-within {
-  scrollbar-color: rgba(128, 138, 155, 0.45) transparent;
+  scrollbar-color: var(--jc-scrollbar-thumb-panel) transparent;
 }
 @supports not (scrollbar-width: thin) {
   .autohide-scroll::-webkit-scrollbar {
-    width: 6px;
+    width: var(--jc-scrollbar-size-thin);
   }
   .autohide-scroll::-webkit-scrollbar-thumb {
     background: transparent;
   }
   .autohide-scroll:hover::-webkit-scrollbar-thumb {
-    background: rgba(128, 138, 155, 0.45);
+    background: var(--jc-scrollbar-thumb-panel);
   }
 }

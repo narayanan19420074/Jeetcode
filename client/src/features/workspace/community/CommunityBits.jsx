@@ -38,7 +38,7 @@ import FiberManualRecordRoundedIcon from '@mui/icons-material/FiberManualRecordR
 import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { LANG_LABEL, LANG_COLOR } from './Markdown';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, hueTint, MOTION } from '../../../app/design/designTokens';
 
 export { LANG_LABEL, LANG_COLOR };
 
@@ -81,8 +81,7 @@ export function UserAvatar({ user, size = 40 }) {
         height: size,
         fontSize: size * 0.42,
         fontWeight: FONT_WEIGHTS.bold,
-        color: t.palette.mode === 'dark' ? `hsl(${hue} 80% 85%)` : `hsl(${hue} 60% 28%)`,
-        bgcolor: t.palette.mode === 'dark' ? `hsl(${hue} 35% 26%)` : `hsl(${hue} 70% 90%)`,
+        ...hueTint(hue, t.palette.mode === 'dark'),
         border: '1px solid',
         borderColor: 'divider',
       })}
@@ -121,7 +120,7 @@ export function LangChip({ language }) {
     <Chip
       size="small"
       label={LANG_LABEL[language] || language}
-      icon={<FiberManualRecordRoundedIcon style={{ color: LANG_COLOR[language] }} sx={{ fontSize: '12px !important' }} />}
+      icon={<FiberManualRecordRoundedIcon style={{ color: LANG_COLOR[language] }} sx={{ fontSize: `${FONT_SIZES.caption} !important` }} />}
       sx={{ height: 28, fontWeight: FONT_WEIGHTS.semibold, bgcolor: 'action.hover' }}
     />
   );
@@ -206,7 +205,7 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
           sx={{ width: btn, height: btn, color: liked ? LIKE_RED : 'text.primary' }}
         >
           {liked ? (
-            <FavoriteRoundedIcon key="on" sx={{ fontSize: icon, animation: `${pop} .35s ease-out` }} />
+            <FavoriteRoundedIcon key="on" sx={{ fontSize: icon, animation: `${pop} ${MOTION.slow}ms ease-out` }} />
           ) : (
             <FavoriteBorderRoundedIcon key="off" sx={{ fontSize: icon }} />
           )}
@@ -266,7 +265,7 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
               pr: 1.5,
               borderRadius: RADII_PX.pill,
               bgcolor: liked ? alpha(LIKE_RED, 0.12) : alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.1 : 0.06),
-              transition: 'background-color .15s',
+              transition: `background-color ${MOTION.fast}ms`,
             })}
           >
             {likeBtn}

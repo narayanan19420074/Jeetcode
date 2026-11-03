@@ -10,7 +10,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import CompanyAvatar from '../../../components/CompanyAvatar';
 import { MONO_FONT, blink, pulseDot, trainRun } from '../anim';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII, MOTION } from '../../../app/design/designTokens';
 
 const panel = {
   borderRadius: RADII_PX.card,
@@ -42,7 +42,7 @@ function Segmented({ items, value, onChange, label }) {
               color: on ? 'text.primary' : 'text.secondary',
               bgcolor: on ? 'background.paper' : 'transparent',
               boxShadow: on ? `0 1px 3px ${withAlpha(COLOR_PALETTE.black, 0.18)}` : 'none',
-              transition: 'background-color .15s, color .15s',
+              transition: `background-color ${MOTION.fast}ms, color ${MOTION.fast}ms`,
               '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main' },
             }}
           >
@@ -408,7 +408,7 @@ export function SortVisual() {
                 flex: 1,
                 height: `${v * 11}%`,
                 borderRadius: `${RADII.badge}px ${RADII.badge}px ${RADII.badge}px ${RADII.badge}px`,
-                transition: 'height .25s ease, background-color .2s',
+                transition: `height ${MOTION.standard}ms ease, background-color ${MOTION.standard}ms`,
                 bgcolor: sorted ? 'success.main' : active ? (f.swap ? 'warning.main' : 'primary.main') : alpha(t.palette.text.secondary, 0.3),
               }}
             />

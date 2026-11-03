@@ -1,5 +1,5 @@
 import { msUntilDayEnd } from '../dashboard/dashboardUtils';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, Z_INDEX, MOTION } from '../../app/design/designTokens';
 
 export const GOLD = COLOR_PALETTE.custom.yellowF5B301;
 export const GOLD_LIGHT = COLOR_PALETTE.amber[200];
@@ -68,7 +68,7 @@ export const panelSx = (n = 14) => ({
   bgcolor: FF.line,
   color: FF.text,
   clipPath: cut(n),
-  '&::before': { content: '""', position: 'absolute', inset: '1px', zIndex: -1, bgcolor: 'var(--ff-fill, var(--ff-panel))', clipPath: cut(n - 1) },
+  '&::before': { content: '""', position: 'absolute', inset: '1px', zIndex: Z_INDEX.behind, bgcolor: 'var(--ff-fill, var(--ff-panel))', clipPath: cut(n - 1) },
 });
 
 export const buttonSx = (tone = 'orange') => {
@@ -82,7 +82,7 @@ export const buttonSx = (tone = 'orange') => {
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 1, minHeight: 44, px: 2.5, border: 0, cursor: 'pointer', fontFamily: 'inherit',
     fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap',
     color: tone === 'dark' ? FF.text : COLOR_PALETTE.gray[950], background: `linear-gradient(180deg, ${g[0]}, ${g[1]})`, clipPath: cut(9),
-    transition: 'filter .15s ease, transform .1s ease', '&:hover': { filter: 'brightness(1.08)' }, '&:active': { transform: 'translateY(1px)' },
+    transition: `filter ${MOTION.fast}ms ease, transform ${MOTION.instant}ms ease`, '&:hover': { filter: 'brightness(1.08)' }, '&:active': { transform: 'translateY(1px)' },
     '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 },
     '&.Mui-disabled, &:disabled': { background: FF.panelHi, color: FF.muted, cursor: 'not-allowed', filter: 'none' },
   };

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Box, Paper, Typography, Button, IconButton, Tooltip } from '@mui/material';
 import BackspaceRoundedIcon from '@mui/icons-material/BackspaceRounded';
 import DeleteSweepRoundedIcon from '@mui/icons-material/DeleteSweepRounded';
-import { FONT_WEIGHTS, FONTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONTS, FONT_SIZES, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 // --- Basic calculator -------------------------------------------------
 // A button-press state machine (running value + pending operator), same
@@ -183,7 +183,7 @@ function Calculator() {
     height: 36,
     fontWeight: FONT_WEIGHTS.semibold,
     borderRadius: RADII_PX.control,
-    transition: 'transform 0.08s ease, background-color 0.12s ease',
+    transition: `transform ${MOTION.instant}ms ease, background-color ${MOTION.fast}ms ease`,
     '&:active': { transform: 'scale(0.94)' },
   };
 

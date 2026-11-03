@@ -17,7 +17,7 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
-import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SHADOWS } from '../../app/design/designTokens';
 
 // Phone layout of the Contest page in the Library look (same as the phone Problems, Home and You pages): Roboto type,
 // warm surface, 16px page padding, 44px back button, centred header tile, pill tabs and buttons, 18px section titles
@@ -87,7 +87,7 @@ function ContestPanel({ contest, past, action }) {
       </Typography>
 
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mt: 1.5 }}>
-        <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(135deg, ${ORANGE}, color-mix(in srgb, ${ORANGE} 60%, ${COLOR_PALETTE.black}))`, boxShadow: `0 8px 18px -8px ${ORANGE}` }}>
+        <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(135deg, ${ORANGE}, color-mix(in srgb, ${ORANGE} 60%, ${COLOR_PALETTE.black}))`, boxShadow: SHADOWS.drop('md', ORANGE) }}>
           <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
         </Box>
         <Box sx={{ minWidth: 0 }}>

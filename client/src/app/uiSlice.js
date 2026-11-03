@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { EDITOR_DEFAULTS } from './design/designTokens';
 
 // UI preferences: theme mode + the appearance / accessibility / editor options
 // from Settings. They live in localStorage so they apply instantly (no flash,
@@ -19,7 +20,7 @@ const paletteV2Chosen = () => {
 };
 
 export const DEFAULT_EDITOR = {
-  fontSize: 14,
+  fontSize: EDITOR_DEFAULTS.fontSize,
   tabSize: 2,
   wordWrap: false,
   minimap: false,

@@ -9,7 +9,7 @@ import { timeAgo, LANG_LABEL } from './community/CommunityBits';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
 import { EmptyState, WsButton } from './wsUi';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, MOTION } from '../../app/design/designTokens';
 
 const statusColor = (status) => {
   if (status === 'Accepted') return 'success.main';
@@ -48,7 +48,7 @@ function Row({ s, open, onToggle, onLoad }) {
         <Typography variant="caption" sx={{ ...mono, color: 'text.secondary', minWidth: 58, textAlign: 'right', display: { xs: 'none', sm: 'block' } }}>
           {s.memoryKb ? `${(s.memoryKb / 1024).toFixed(1)} MB` : '—'}
         </Typography>
-        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'text.secondary', transition: 'transform .15s', transform: open ? 'rotate(180deg)' : 'none' }} />
+        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'text.secondary', transition: `transform ${MOTION.fast}ms`, transform: open ? 'rotate(180deg)' : 'none' }} />
       </ButtonBase>
       {open && (
         <Box sx={{ px: 1.5, pb: 1.5 }}>

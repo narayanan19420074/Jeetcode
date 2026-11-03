@@ -8,7 +8,7 @@ import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartm
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import { leaderboardApi } from '../../api/studyPlanApi';
 import { surface } from '../dashboard/dashboardUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII, RADII_PX, RANK_TEXT_RATIO, Z_INDEX, MOTION, SHADOWS } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 const AMBER = COLOR_PALETTE.amber[400];
@@ -39,7 +39,7 @@ function PodiumAvatar({ row, rank }) {
       {rank === 1 && (
         <Box aria-hidden sx={{ position: 'absolute', width: { xs: av - 4, sm: av + 22 }, height: { xs: av - 4, sm: av + 22 }, borderRadius: '50%', background: `conic-gradient(from 0deg, ${m.a}, transparent 30%, ${m.b} 55%, transparent 80%, ${m.a})`, filter: 'blur(5px)', opacity: 0.9, animation: `${spin} 6s linear infinite`, ...calm }} />
       )}
-      <Box sx={{ position: 'relative', p: 0.5, borderRadius: '50%', background: grad(m), boxShadow: `0 8px 26px -6px ${m.glow}` }}>
+      <Box sx={{ position: 'relative', p: 0.5, borderRadius: '50%', background: grad(m), boxShadow: SHADOWS.drop('lg', m.glow) }}>
         <Avatar
           src={row.avatarUrl || undefined} alt={row.name}
           sx={{ width: { xs: av - 14, sm: av }, height: { xs: av - 14, sm: av }, fontSize: av * 0.38, fontWeight: FONT_WEIGHTS.bold, border: `3px solid ${COLOR_PALETTE.indigo[950]}`, bgcolor: COLOR_PALETTE.indigo[900], color: COLOR_PALETTE.white }}
@@ -85,7 +85,7 @@ function PodiumColumn({ row, rank, delay, reduce }) {
           '&::after': first ? { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(100deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 3.6s ease-in-out infinite`, ...calm } : undefined,
         }}
       >
-        <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: h * 0.36, sm: h * 0.42 }, lineHeight: 1, color: m.text, opacity: 0.8 }, mono]}>{rank}</Typography>
+        <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: h * RANK_TEXT_RATIO.xs, sm: h * RANK_TEXT_RATIO.sm }, lineHeight: 1, color: m.text, opacity: 0.8 }, mono]}>{rank}</Typography>
       </Box>
     </motion.div>
   );
@@ -101,7 +101,7 @@ function Podium({ rows, reduce }) {
         background: `radial-gradient(120% 90% at 50% 0%, ${COLOR_PALETTE.violet[800]} 0%, ${COLOR_PALETTE.indigo[900]} 45%, ${COLOR_PALETTE.indigo[950]} 100%)`,
       }}
     >
-      <Box aria-hidden sx={{ position: 'absolute', left: '50%', top: 70, width: 320, height: 320, ml: '-160px', borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.30)}, transparent 66%)`, pointerEvents: 'none' }} />
+      <Box aria-hidden sx={{ position: 'absolute', left: '50%', top: 70, width: 320, height: 320, ml: -20, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.30)}, transparent 66%)`, pointerEvents: 'none' }} />
       {SPARKS.map(([x, y, d]) => (
         <Box key={`${x}-${y}`} aria-hidden sx={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: 4, height: 4, borderRadius: '50%', bgcolor: COLOR_PALETTE.white, animation: `${twinkle} 2.6s ease-in-out ${d}s infinite`, ...calm }} />
       ))}
@@ -124,7 +124,7 @@ function RankRow({ row, top, index, reduce }) {
         sx={(t) => ({
           display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, px: { xs: 1.5, sm: 2 }, py: 1, borderRadius: RADII_PX.card,
           border: `1px solid ${t.palette.divider}`, bgcolor: alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.03 : 0.015),
-          transition: 'transform .18s, border-color .18s', '&:hover': { transform: 'translateY(-1px)', borderColor: alpha(t.palette.primary.main, 0.5) },
+          transition: `transform ${MOTION.standard}ms, border-color ${MOTION.standard}ms`, '&:hover': { transform: 'translateY(-1px)', borderColor: alpha(t.palette.primary.main, 0.5) },
         })}
       >
         <Typography sx={(t) => ({ width: 30, height: 30, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: 'text.secondary', bgcolor: alpha(t.palette.text.primary, 0.07), ...mono })}>{row.rank}</Typography>
@@ -146,7 +146,7 @@ function RankRow({ row, top, index, reduce }) {
             )}
           </Box>
           <Box sx={(t) => ({ mt: 0.5, height: 5, borderRadius: RADII_PX.pill, bgcolor: alpha(t.palette.text.primary, 0.08), overflow: 'hidden' })}>
-            <Box sx={{ width: `${pct}%`, height: '100%', borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${COLOR_PALETTE.violet[500]}, ${COLOR_PALETTE.amber[400]})`, transition: 'width .6s ease' }} />
+            <Box sx={{ width: `${pct}%`, height: '100%', borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${COLOR_PALETTE.violet[500]}, ${COLOR_PALETTE.amber[400]})`, transition: `width ${MOTION.progress}ms ease` }} />
           </Box>
         </Box>
       </Box>
@@ -182,7 +182,7 @@ export default function GlobalTop({ fill = false }) {
     <Box sx={[surface, { overflow: 'hidden', p: 0 }, fill && { height: '100%', display: 'flex', flexDirection: 'column' }]}>
       {/* header lives on the podium panel */}
       <Box sx={{ position: 'relative', background: COLOR_PALETTE.indigo[950], flexShrink: 0 }}>
-        <Box sx={{ position: 'absolute', zIndex: 2, left: 0, right: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 2, sm: 2.5 }, pt: { xs: 2, sm: 2.5 }, color: COLOR_PALETTE.white }}>
+        <Box sx={{ position: 'absolute', zIndex: Z_INDEX.raised, left: 0, right: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, px: { xs: 2, sm: 2.5 }, pt: { xs: 2, sm: 2.5 }, color: COLOR_PALETTE.white }}>
           <Box sx={{ minWidth: 0 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <PublicRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: AMBER }} />

@@ -21,7 +21,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import MonthCalendar from './MonthCalendar';
 import { DiffTag, addDays, fmtDay, keyToDate, localKey } from './planUtils';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, hexAlpha, Z_INDEX, SHADOWS } from '../../app/design/designTokens';
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 const itemKey = (type, id) => `${type}:${id}`;
@@ -204,7 +204,7 @@ function QuestionPicker({ items, added, onToggle }) {
               key={itemKey(r.type, r.id)} role="listitem"
               sx={(t) => ({
                 display: 'flex', alignItems: 'center', gap: 1, px: 1, py: 0.5, borderRadius: RADII_PX.control,
-                bgcolor: entry ? `${t.palette.primary.main}14` : 'transparent', '&:hover': { bgcolor: entry ? undefined : t.palette.action.hover },
+                bgcolor: entry ? hexAlpha(t.palette.primary.main, 0.078) : 'transparent', '&:hover': { bgcolor: entry ? undefined : t.palette.action.hover },
               })}
             >
               <IconButton
@@ -340,7 +340,7 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
       <Box
         sx={(t) => ({
           position: 'sticky', bottom: 8, mt: 1.5, px: 1.5, py: 1, display: 'flex', alignItems: 'center', gap: 1.5,
-          borderRadius: RADII_PX.card, border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, boxShadow: `0 10px 26px -14px ${withAlpha(COLOR_PALETTE.slate[950], 0.4)}`, zIndex: 2,
+          borderRadius: RADII_PX.card, border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, boxShadow: SHADOWS.drop('lg', withAlpha(COLOR_PALETTE.slate[950], 0.4)), zIndex: Z_INDEX.raised,
         })}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>

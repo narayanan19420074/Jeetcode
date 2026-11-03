@@ -4,7 +4,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import PromoCard from './PromoCard';
 import { PROMO_GAP } from './promoCarouselConfig';
 import usePromoCarousel from './usePromoCarousel';
-import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, Z_INDEX, SHADOWS } from '../../../app/design/designTokens';
 
 const TRACK_SX = {
   display: 'flex',
@@ -21,11 +21,11 @@ const arrowSx = (dir, hidden) => (t) => ({
   top: '50%',
   [dir < 0 ? 'left' : 'right']: -10,
   transform: 'translateY(-50%)',
-  zIndex: 2,
+  zIndex: Z_INDEX.raised,
   display: hidden ? 'none' : 'inline-flex',
   bgcolor: t.palette.background.paper,
   border: `1px solid ${t.palette.divider}`,
-  boxShadow: `0 6px 16px -8px ${withAlpha(COLOR_PALETTE.custom.black1A1613, 0.4)}`,
+  boxShadow: SHADOWS.drop('md', withAlpha(COLOR_PALETTE.custom.black1A1613, 0.4)),
   '&:hover': { bgcolor: t.palette.background.paper, borderColor: t.palette.primary.main },
 });
 

@@ -7,7 +7,7 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
 import { ACCENT, AVATAR_FRAMES, LB_DARK, LB_LIGHT } from '../leaderboard/lbTheme';
 import { inr } from './contestUtils';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, SHADOWS } from '../../app/design/designTokens';
 
 // three.js is heavy, so it only downloads once the panel is on screen.
 const PodiumScene = lazy(() => import('./PodiumScene'));
@@ -38,7 +38,7 @@ const nudge = keyframes`0%,100% { transform: translateY(0); } 50% { transform: t
 
 function AvatarFrame({ row, size = 34, index, T }) {
   return (
-    <Box sx={{ p: 0.5, borderRadius: '50%', flexShrink: 0, background: AVATAR_FRAMES[index % AVATAR_FRAMES.length], boxShadow: `0 6px 14px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.55)}` }}>
+    <Box sx={{ p: 0.5, borderRadius: '50%', flexShrink: 0, background: AVATAR_FRAMES[index % AVATAR_FRAMES.length], boxShadow: SHADOWS.drop('sm', withAlpha(COLOR_PALETTE.indigo[500], 0.55)) }}>
       <Box sx={{ p: 0.5, borderRadius: '50%', bgcolor: T.frameInner }}>
         <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: size, height: size, fontWeight: FONT_WEIGHTS.bold, fontSize: size * 0.4, color: T.avatarFg, bgcolor: T.avatarBg }}>
           {row.name?.[0]?.toUpperCase()}
@@ -58,7 +58,7 @@ function RankCard({ row, index, delay, reduce, T }) {
     <motion.div initial={reduce ? false : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: reduce ? 0 : delay }} style={{ minWidth: 0 }}>
       <Box sx={{ height: '100%', p: 1.5, borderRadius: RADII_PX.card, bgcolor: T.soft, boxShadow: T.raised, display: 'grid', gap: 1, alignContent: 'start' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ width: 28, height: 28, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, background: badgeBg(row.rank), boxShadow: `0 6px 12px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}` }}>{row.rank}</Box>
+          <Box sx={{ width: 28, height: 28, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, background: badgeBg(row.rank), boxShadow: SHADOWS.drop('sm', withAlpha(COLOR_PALETTE.indigo[500], 0.7)) }}>{row.rank}</Box>
           <AvatarFrame row={row} index={index} T={T} />
         </Box>
         <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.ink }}>{row.name}</Typography>
@@ -156,7 +156,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
               <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, display: 'grid', placeItems: 'center', gap: 1, pointerEvents: 'none' }}>
                 <Button
                   onClick={onReveal} disableElevation startIcon={<BoltRoundedIcon />}
-                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: RADII_PX.card, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, background: ACCENT, boxShadow: `0 14px 28px -12px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}`, animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
+                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: RADII_PX.card, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, background: ACCENT, boxShadow: SHADOWS.drop('lg', withAlpha(COLOR_PALETTE.indigo[500], 0.7)), animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
                 >
                   Reveal winners
                 </Button>

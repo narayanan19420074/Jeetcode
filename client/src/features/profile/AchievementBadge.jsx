@@ -22,7 +22,7 @@ export default function AchievementBadge({ top, value, caption, hint, earned }) 
             <polygon points="28,7 47,18 47,46 28,57 9,46 9,18" fill="none" stroke={withAlpha(COLOR_PALETTE.white, 0.55)} strokeWidth="1.5" />
           </svg>
           <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: COLOR_PALETTE.yellow[950] }}>
-            <Typography sx={{ fontSize: '0.6rem', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1 }}>{top}</Typography>
+            <Typography sx={{ fontSize: FONT_SIZES.nano, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1 }}>{top}</Typography>
             <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.15, fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
           </Box>
         </Box>

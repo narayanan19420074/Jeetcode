@@ -6,7 +6,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { LIB_TRACKING, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { PhoneDifficultyTag } from './phoneStyle';
 import { mono } from './wsTokens';
-import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 // Problem statement on phones, in the Library look: page-title name, tags (switchable from the menu),
 // description, then folded examples and constraints. Used inside ProblemSheet.
@@ -53,7 +53,7 @@ function Fold({ title, count, children }) {
             </Box>
           )}
         </Typography>
-        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: pal.muted, transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none' }} />
+        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: pal.muted, transition: `transform ${MOTION.standard}ms`, transform: open ? 'rotate(180deg)' : 'none' }} />
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
         <Box sx={{ px: 2, pb: 2 }}>{children}</Box>

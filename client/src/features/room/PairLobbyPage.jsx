@@ -19,7 +19,7 @@ import { roomApi } from '../../api/roomApi';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import BackToDashboard from '../../components/BackToDashboard';
-import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX, SHADOWS } from '../../app/design/designTokens';
 
 const FEATURES = [
   { icon: <CodeRoundedIcon />, label: 'Shared editor' },
@@ -138,14 +138,14 @@ export default function PairLobbyPage() {
               bgcolor: wsSurface(t).raised,
               '& .MuiToggleButtonGroup-grouped': {
                 border: 0,
-                borderRadius: '999px !important',
+                borderRadius: `${RADII_PX.pill} !important`,
                 py: 1,
                 gap: 1,
                 fontWeight: FONT_WEIGHTS.bold,
                 textTransform: 'none',
                 color: 'text.secondary',
                 '& svg': { fontSize: FONT_SIZES.heading },
-                '&.Mui-selected': { bgcolor: 'background.paper', color: 'primary.main', boxShadow: `0 1px 3px ${alpha(t.palette.common.black, 0.18)}` },
+                '&.Mui-selected': { bgcolor: 'background.paper', color: 'primary.main', boxShadow: SHADOWS.drop('xs', alpha(t.palette.common.black, 0.18)) },
                 '&.Mui-selected:hover': { bgcolor: 'background.paper' },
               },
             })}

@@ -5,7 +5,7 @@ import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
 import CallEndRoundedIcon from '@mui/icons-material/CallEndRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, hexAlpha, Z_INDEX, MOTION } from '../../app/design/designTokens';
 
 // Mini floating call, drawn like a TV remote: the friend's video is the centre, and a ring
 // of three big segment buttons (maximize / mute / end call) wraps all the way around it,
@@ -145,7 +145,7 @@ export default function MiniCallBubble({ remoteStream, friendName, micOn, hasCal
       aria-label="Call, drag to move"
       sx={(t) => ({
         position: 'fixed',
-        zIndex: 1300,
+        zIndex: Z_INDEX.miniCall,
         left: pos?.x ?? 0,
         top: pos?.y ?? 0,
         width: S,
@@ -224,13 +224,13 @@ export default function MiniCallBubble({ remoteStream, friendName, micOn, hasCal
               sx={(t) => {
                 const c = tones(t);
                 const isDown = down === k.id;
-                const fill = p.on ? accent : isDown ? `${accent}55` : hover === k.id ? c.keyHover : c.key;
+                const fill = p.on ? accent : isDown ? hexAlpha(accent, 0.333) : hover === k.id ? c.keyHover : c.key;
                 return {
                   fill,
                   cursor: p.disabled ? 'not-allowed' : 'pointer',
                   opacity: p.disabled ? 0.5 : 1,
                   outline: 'none',
-                  transition: 'fill 120ms, filter 120ms',
+                  transition: `fill ${MOTION.fast}ms, filter ${MOTION.fast}ms`,
                   // raised key; sinks when pressed or switched on
                   filter: p.on || isDown ? `drop-shadow(1px 1px 1px ${c.lo})` : `drop-shadow(2px 2px 2px ${c.lo}) drop-shadow(-2px -2px 2px ${c.hi})`,
                   '&:focus-visible': { stroke: accent, strokeWidth: 2 },

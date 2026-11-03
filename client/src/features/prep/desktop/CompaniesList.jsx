@@ -33,7 +33,7 @@ export default function CompaniesList({ loading, shown, hasMore, query, onOpen, 
     <>
       <Box sx={[panelSx(palette), { p: 0, overflow: 'hidden' }]}>
         {empty ? <EmptyState query={query} /> : (
-          <Box sx={{ display: 'grid', gridTemplateColumns: COLUMNS, mb: '-1px' }}>
+          <Box sx={{ display: 'grid', gridTemplateColumns: COLUMNS, mb: -0.125 }}>
             {loading ? <SkeletonRows palette={palette} /> : shown.map((company) => <CompanyRow key={company.key} company={company} onOpen={() => onOpen(company)} />)}
           </Box>
         )}

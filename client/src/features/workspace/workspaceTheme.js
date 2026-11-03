@@ -15,7 +15,7 @@
 //   panel   - console / results
 //   raised  - problem card, key caps, inline code chips
 import { gpayTokens } from '../../app/theme';
-import { SYNTAX, COLOR_PALETTE } from '../../app/design/designTokens';
+import { SYNTAX, COLOR_PALETTE, hexAlpha } from '../../app/design/designTokens';
 import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 
 // Library look on desktop (light mode): the page and panels are cream. The code area stays white, like a sheet of
@@ -55,9 +55,9 @@ const tokenRules = (c) => [
 ];
 
 const scrollbarColors = (dark) => ({
-  'scrollbarSlider.background': dark ? `${COLOR_PALETTE.white}2E` : `${COLOR_PALETTE.black}24`,
-  'scrollbarSlider.hoverBackground': dark ? `${COLOR_PALETTE.white}47` : `${COLOR_PALETTE.black}38`,
-  'scrollbarSlider.activeBackground': dark ? `${COLOR_PALETTE.white}5C` : `${COLOR_PALETTE.black}4D`,
+  'scrollbarSlider.background': dark ? hexAlpha(COLOR_PALETTE.white, 0.18) : hexAlpha(COLOR_PALETTE.black, 0.141),
+  'scrollbarSlider.hoverBackground': dark ? hexAlpha(COLOR_PALETTE.white, 0.278) : hexAlpha(COLOR_PALETTE.black, 0.22),
+  'scrollbarSlider.activeBackground': dark ? hexAlpha(COLOR_PALETTE.white, 0.361) : hexAlpha(COLOR_PALETTE.black, 0.302),
 });
 
 const guideColors = (g) => ({
@@ -79,11 +79,11 @@ function editorColors(mode, primary) {
     'editorLineNumber.foreground': dark ? COLOR_PALETTE.gray[400] : COLOR_PALETTE.gray[500],
     'editorLineNumber.activeForeground': `#${c.text}`,
     'editor.lineHighlightBackground': dark ? g.paper : g.bg,
-    'editor.lineHighlightBorder': `${COLOR_PALETTE.black}00`,
+    'editor.lineHighlightBorder': hexAlpha(COLOR_PALETTE.black, 0),
     'editor.selectionBackground': g.hero,
-    'editor.inactiveSelectionBackground': `${g.hero}99`,
+    'editor.inactiveSelectionBackground': hexAlpha(g.hero, 0.6),
     'editorCursor.foreground': primary,
-    'editorBracketMatch.background': `${g.hero}99`,
+    'editorBracketMatch.background': hexAlpha(g.hero, 0.6),
     'editorBracketMatch.border': primary,
     'editorWidget.background': dark ? g.tonal : g.paper,
     'editorSuggestWidget.background': dark ? g.tonal : g.paper,

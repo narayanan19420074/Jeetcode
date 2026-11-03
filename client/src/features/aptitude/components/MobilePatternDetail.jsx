@@ -7,7 +7,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LIB_TRACKING, LibraryFont, libBackBtnSx, libChipSx, libPanelSx, libSectionTitleSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { formatDuration } from './aptitudeUi';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 // Phone layout of a single Aptitude topic (for example Number System). It follows the phone Problems and
 // Aptitude pages: same page padding, back button, centred header, progress bar, row sizes and type scale.
@@ -148,7 +148,7 @@ export default function MobilePatternDetail({
             aria-valuenow={totals.solved}
             sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: `width ${MOTION.deliberate}ms` }} />
           </Box>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {totals.solved}

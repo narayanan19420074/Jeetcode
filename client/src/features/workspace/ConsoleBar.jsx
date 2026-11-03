@@ -7,7 +7,7 @@ import { EditorStatus } from './ConsolePanel';
 import { MaxButton, WsButton } from './wsUi';
 import { WS } from './wsTokens';
 import { wsSurface } from './workspaceTheme';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, MOTION } from '../../app/design/designTokens';
 
 // The collapsible console under the editor: header bar (title, verdict chip,
 // share, cursor status, maximize) and, when open, the page's console body.
@@ -93,7 +93,7 @@ export default function ConsoleBar({
             label="console"
           />
         )}
-        <ExpandMoreRoundedIcon sx={{ color: 'text.secondary', transition: 'transform .2s', transform: open ? 'none' : 'rotate(180deg)' }} />
+        <ExpandMoreRoundedIcon sx={{ color: 'text.secondary', transition: `transform ${MOTION.standard}ms`, transform: open ? 'none' : 'rotate(180deg)' }} />
       </Stack>
 
       {open && (

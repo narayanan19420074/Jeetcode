@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Box } from '@mui/material';
 import { Eye, Mouth } from './Aliens';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, MOTION } from '../../../app/design/designTokens';
 
 // Full-body alien with a walk cycle, drawn with gradients, a specular
 // highlight and a contact shadow so it reads as a 3D toy-like figure. The same
@@ -159,7 +159,7 @@ export default function AlienWalker({ kind = 'blip', size = 96, walking = false,
 
   return (
     <Box sx={{ width: size, height: size * 1.25, flexShrink: 0, ...sx }}>
-      <svg viewBox="0 0 120 150" width="100%" height="100%" style={{ overflow: 'visible', transform: `rotate(${lean}deg)`, transformOrigin: '50% 95%', transition: 'transform .15s linear' }}>
+      <svg viewBox="0 0 120 150" width="100%" height="100%" style={{ overflow: 'visible', transform: `rotate(${lean}deg)`, transformOrigin: '50% 95%', transition: `transform ${MOTION.fast}ms linear` }}>
         <defs>
           <radialGradient id={gid} cx="34%" cy="26%" r="85%">
             <stop offset="0%" stopColor={c.l} />

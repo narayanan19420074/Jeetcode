@@ -6,7 +6,7 @@ import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import VideocamOffRoundedIcon from '@mui/icons-material/VideocamOffRounded';
 import CallEndRoundedIcon from '@mui/icons-material/CallEndRounded';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS } from '../../app/design/designTokens';
 
 // Call window that floats over OTHER tabs and other desktop apps (Chrome desktop:
 // Document Picture-in-Picture). Just the friend's video with a slim control bar underneath:
@@ -23,7 +23,7 @@ const svg = (Icon) => renderToStaticMarkup(createElement(Icon));
 
 const CSS = `
   *{box-sizing:border-box}
-  html,body{margin:0;height:100%;background:${COLOR_PALETTE.gray[800]};overflow:hidden;font-family:system-ui,sans-serif;user-select:none}
+  html,body{margin:0;height:100%;background:${COLOR_PALETTE.gray[800]};overflow:hidden;font-family:${FONTS.sans};user-select:none}
   .video{position:relative;width:${W}px;height:${VIDEO_H}px;background:${COLOR_PALETTE.gray[950]};overflow:hidden;display:grid;place-items:center;
     color:${COLOR_PALETTE.white};font-weight:700;font-size:56px}
   video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}

@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Box } from '@mui/material';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, hexAlpha } from '../../app/design/designTokens';
 
 // The TCS mark turned into a character: the letters are the body, the "c" is the face.
 // `path` and `color` come from getBrandLogo() so the mark is not duplicated in this file.
@@ -16,7 +16,7 @@ export default function TcsBuddy({ path, color, tier = 0, size = 120 }) {
   const blinkT = { duration: 4.5, repeat: Infinity, times: [0, 0.9, 0.95, 1] };
   return (
     <Box sx={{ position: 'relative', width: size, height: size * 0.75, display: 'grid', placeItems: 'center' }}>
-      <Box aria-hidden sx={{ position: 'absolute', inset: '-14%', borderRadius: '50%', background: `radial-gradient(circle, ${glow}66, transparent 68%)` }} />
+      <Box aria-hidden sx={{ position: 'absolute', inset: '-14%', borderRadius: '50%', background: `radial-gradient(circle, ${hexAlpha(glow, 0.4)}, transparent 68%)` }} />
       <svg viewBox="-4 2 32 24" width={size} height={size * 0.75} role="img" aria-label="TCS buddy" style={{ position: 'relative', overflow: 'visible' }}>
         <defs>
           <linearGradient id="tcsBody" x1="0" y1="0" x2="0" y2="1">

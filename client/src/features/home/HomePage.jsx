@@ -33,7 +33,7 @@ import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 // Phones in light mode get the warm cream surface of the Library pages; other screens and dark mode are unchanged.
 const cream = (t, phone, fallback) => (t.palette.mode === 'light' ? { xs: phone, md: fallback } : fallback);
 import { DISPLAY_FONT } from './anim';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, Z_INDEX } from '../../app/design/designTokens';
 
 // --- Copy rules for this page -------------------------------------------
 // Plain words a student understands in five seconds. One promise (coding +
@@ -180,7 +180,7 @@ function NavBar({ authed, onStart, onLogin }) {
       sx={{
         position: 'sticky',
         top: 0,
-        zIndex: 20,
+        zIndex: Z_INDEX.header,
         borderBottom: '1px solid',
         borderColor: 'divider',
         bgcolor: (t) => cream(t, alpha(LIBRARY_PALETTE.light.bg, 0.92), alpha(t.palette.background.default, 0.92)),
@@ -605,7 +605,7 @@ export default function HomePage() {
 
       {/* Sticky CTA bar (mobile): visible while neither the hero nor the final CTA is on screen */}
       {showSticky && (
-        <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 30, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', bgcolor: (t) => cream(t, LIBRARY_PALETTE.light.bg, 'background.paper'), borderTop: '1px solid', borderColor: 'divider' }}>
+        <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: Z_INDEX.dock, p: 1.5, pb: 'calc(12px + env(safe-area-inset-bottom))', bgcolor: (t) => cream(t, LIBRARY_PALETTE.light.bg, 'background.paper'), borderTop: '1px solid', borderColor: 'divider' }}>
           <PrimaryCta label={startLabel} onClick={goStart} sx={{ width: '100%' }} />
         </Box>
       )}

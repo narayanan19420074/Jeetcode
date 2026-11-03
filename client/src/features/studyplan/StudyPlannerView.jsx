@@ -27,7 +27,7 @@ import FriendPicker from './FriendPicker';
 import BackToDashboard from '../../components/BackToDashboard';
 import { MobilePlanWorkspace, MobilePlans, MobileShell } from './MobileStudyPlan';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtDay, fmtRange, localKey, parseInvite, planTheme, relDay, relTime } from './planUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII, hexAlpha, SHADOWS, MOTION } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 
@@ -54,7 +54,7 @@ function FriendsPanel({ friends, onFindFriends, onJoinCode, codeInput, setCodeIn
         <TextField
           size="small" placeholder="Have an invite link? Paste it" value={codeInput} onChange={(e) => setCodeInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && onJoinCode()} error={Boolean(codeError)} helperText={codeError || undefined}
-          slotProps={{ htmlInput: { 'aria-label': 'Invite link or code', style: { padding: '6px 10px', fontSize: FONT_SIZES.body } } }} fullWidth
+          slotProps={{ htmlInput: { 'aria-label': 'Invite link or code' } }} sx={{ '& .MuiInputBase-input': { py: 0.75, px: 1.25, fontSize: FONT_SIZES.body } }} fullWidth
         />
         <Tooltip title="Find plan"><IconButton onClick={onJoinCode} aria-label="Find plan" size="small"><GroupAddRoundedIcon fontSize="small" /></IconButton></Tooltip>
       </Box>
@@ -77,7 +77,7 @@ function NotificationsPopover({ anchorEl, onClose, items, onOpenPlan }) {
       ) : items.map((n) => (
         <ButtonBase
           key={n.id} onClick={() => onOpenPlan(n.plan.id)}
-          sx={(t) => ({ width: '100%', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, px: 1.5, py: 1, textAlign: 'left', fontFamily: 'inherit', bgcolor: n.read ? 'transparent' : `${t.palette.primary.main}12`, '&:hover': { bgcolor: t.palette.action.hover } })}
+          sx={(t) => ({ width: '100%', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, px: 1.5, py: 1, textAlign: 'left', fontFamily: 'inherit', bgcolor: n.read ? 'transparent' : hexAlpha(t.palette.primary.main, 0.071), '&:hover': { bgcolor: t.palette.action.hover } })}
         >
           <Avatar src={n.actor.avatarUrl || undefined} sx={{ width: 26, height: 26, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, mt: 0.5 }}>{n.actor.name?.[0]?.toUpperCase()}</Avatar>
           <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -160,8 +160,8 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
   const glassBtn = { width: 44, height: 44, flexShrink: 0, color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.16), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.28) } };
 
   return (
-    <Box sx={(t) => ({ borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: t.palette.background.paper, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}` })}>
-      <Box sx={{ position: 'relative', color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}`, overflow: 'hidden' }}>
+    <Box sx={(t) => ({ borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: t.palette.background.paper, boxShadow: SHADOWS.card(COLOR_PALETTE.slate[950], 0.85) })}>
+      <Box sx={{ position: 'relative', color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: SHADOWS.highlight(0.18), overflow: 'hidden' }}>
         <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.26)}, transparent 70%)`, pointerEvents: 'none' }} />
         <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: 20, width: 140, height: 140, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.white, 0.10)}, transparent 70%)`, pointerEvents: 'none' }} />
 
@@ -221,7 +221,7 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
               </Box>
             </Box>
             <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} aria-label="Plan progress" sx={{ height: 10, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.white, 0.18), overflow: 'hidden' }}>
-              <Box sx={{ width: `${Math.max(s.percent, 4)}%`, height: '100%', borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${PLAN_AMBER}, ${COLOR_PALETTE.amber[500]})`, transition: 'width .6s ease' }} />
+              <Box sx={{ width: `${Math.max(s.percent, 4)}%`, height: '100%', borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${PLAN_AMBER}, ${COLOR_PALETTE.amber[500]})`, transition: `width ${MOTION.progress}ms ease` }} />
             </Box>
           </Box>
 
@@ -250,7 +250,7 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
           sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5, py: 1, bgcolor: withAlpha(COLOR_PALETTE.black, 0.24), fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.white, '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.black, 0.34) } }}
         >
           {expanded ? 'Hide questions' : `Show ${s.total} question${s.total === 1 ? '' : 's'}`}
-          <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.heading, transition: 'transform .2s', transform: expanded ? 'rotate(180deg)' : 'none' }} />
+          <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.heading, transition: `transform ${MOTION.standard}ms`, transform: expanded ? 'rotate(180deg)' : 'none' }} />
         </ButtonBase>
       </Box>
 

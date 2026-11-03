@@ -39,7 +39,7 @@ import ScratchPad from './ScratchPad';
 import QuestionStimulus from './components/QuestionStimulus';
 import { PaletteSymbol } from './AptitudeTestInstructionsPage';
 import { OPTION_LABELS, PALETTE, formatClock } from './components/aptitudeUi';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII, MEDIA_QUERIES, MOTION } from '../../app/design/designTokens';
 
 // Exam-style interface. Everything the learner does is autosaved to
 // the server (answers, review flags, per-question time), the countdown is
@@ -143,7 +143,7 @@ function ExamInterface() {
   const { slug, attemptId } = useParams();
   const navigate = useNavigate();
   const user = useSelector((s) => s.auth.user);
-  const compact = useMediaQuery('(max-width:1000px)');
+  const compact = useMediaQuery(MEDIA_QUERIES.compactTestLayout);
 
   const [paper, setPaper] = useState(null); // { questions, sets }
   const [states, setStates] = useState({});
@@ -474,7 +474,7 @@ function ExamInterface() {
             <GridViewRoundedIcon />
           </IconButton>
         )}
-        <Box sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.control, bgcolor: low ? COLOR_PALETTE.red[700] : withAlpha(COLOR_PALETTE.white, 0.14), transition: 'background-color .3s' }}>
+        <Box sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.control, bgcolor: low ? COLOR_PALETTE.red[700] : withAlpha(COLOR_PALETTE.white, 0.14), transition: `background-color ${MOTION.slow}ms` }}>
           <Typography variant="caption" sx={{ opacity: 0.8, display: 'block', lineHeight: 1, fontSize: FONT_SIZES.micro }}>
             TIME LEFT
           </Typography>

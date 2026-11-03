@@ -8,7 +8,7 @@ import AiGlow from './AiGlow';
 import { isMicCaptureSupported } from './live/micCapture';
 import { LIVE_PHASE } from './live/liveVoiceSession';
 import useGeminiLive from './live/useGeminiLive';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII, RADII_PX, Z_INDEX, SHADOWS } from '../../app/design/designTokens';
 
 const pulse = keyframes`0%, 100% { transform: scale(1); } 50% { transform: scale(1.14); }`;
 
@@ -22,7 +22,7 @@ const STATUS_LABEL = {
 
 const SHEET_SX = {
   position: 'fixed',
-  zIndex: 1360,
+  zIndex: Z_INDEX.aiLiveOverlay,
   left: 0,
   right: 0,
   bottom: 0,
@@ -38,7 +38,7 @@ const SHEET_SX = {
   letterSpacing: LIB_TRACKING,
   color: 'var(--lib-text)',
   bgcolor: `var(--lib-bg, ${COLOR_PALETTE.orange[50]})`,
-  boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, 0.22)}`,
+  boxShadow: SHADOWS.sheetUp(0.22),
 };
 
 const END_BUTTON_SX = {
@@ -71,7 +71,7 @@ const orbSx = ({ canPress, muted, pulseSeconds }) => ({
   color: COLOR_PALETTE.white,
   cursor: canPress ? 'pointer' : 'default',
   bgcolor: muted ? `var(--lib-muted, ${COLOR_PALETTE.custom.gray6F655B})` : LIB_ACCENT,
-  boxShadow: `0 10px 28px ${withAlpha(COLOR_PALETTE.indigo[500], 0.4)}`,
+  boxShadow: SHADOWS.drop('lg', withAlpha(COLOR_PALETTE.indigo[500], 0.4)),
   animation: pulseSeconds ? `${pulse} ${pulseSeconds}s ease-in-out infinite` : 'none',
   '@media (prefers-reduced-motion: reduce)': { animation: 'none' },
 });

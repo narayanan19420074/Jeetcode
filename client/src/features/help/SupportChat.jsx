@@ -8,7 +8,7 @@ import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
 import { supportChatApi } from '../../api/supportChatApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX, Z_INDEX } from '../../app/design/designTokens';
 
 const TOPICS = [
   { value: 'payment', label: 'Payments & Pro' },
@@ -179,7 +179,7 @@ export default function SupportChat({ open, onOpenChange }) {
           variant="extended"
           onClick={() => onOpenChange(true)}
           aria-label="Chat with support"
-          sx={{ position: 'fixed', right: 16, bottom: 'calc(16px + env(safe-area-inset-bottom))', zIndex: 1200, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' }}
+          sx={{ position: 'fixed', right: 16, bottom: 'calc(16px + env(safe-area-inset-bottom))', zIndex: Z_INDEX.supportLauncher, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' }}
         >
           <Badge color="error" badgeContent={unread} invisible={!unread} sx={{ mr: 1 }}>
             <ChatRoundedIcon />
@@ -195,7 +195,7 @@ export default function SupportChat({ open, onOpenChange }) {
           aria-label="Support chat"
           sx={{
             position: 'fixed',
-            zIndex: 1300,
+            zIndex: Z_INDEX.sheet,
             display: 'flex',
             flexDirection: 'column',
             overflow: 'hidden',
@@ -204,7 +204,7 @@ export default function SupportChat({ open, onOpenChange }) {
             width: { xs: '100%', sm: 380 },
             height: { xs: '100dvh', sm: 560 },
             maxHeight: { sm: 'calc(100dvh - 32px)' },
-            borderRadius: { xs: 0, sm: RADII_PX.card },
+            borderRadius: { xs: RADII_PX.square, sm: RADII_PX.card },
           }}
         >
           <Stack direction="row" spacing={1.5} sx={{ p: 1.5, bgcolor: 'primary.main', color: 'primary.contrastText', alignItems: 'center' }}>

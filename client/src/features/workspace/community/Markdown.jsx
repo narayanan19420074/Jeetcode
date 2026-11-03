@@ -95,7 +95,7 @@ function renderInline(text, keyPrefix) {
     const key = `${keyPrefix}-${n++}`;
     if (m[1] !== undefined) {
       out.push(
-        <Box key={key} component="code" sx={{ px: 0.5, py: 0.5, borderRadius: RADII_PX.control, bgcolor: 'action.hover', fontSize: '0.85em', ...mono }}>
+        <Box key={key} component="code" sx={{ px: 0.5, py: 0.5, borderRadius: RADII_PX.control, bgcolor: 'action.hover', fontSize: FONT_SIZES.inlineCode, ...mono }}>
           {m[1]}
         </Box>
       );

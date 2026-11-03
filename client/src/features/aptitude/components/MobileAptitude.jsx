@@ -8,7 +8,7 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LibraryFont, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import RoadMap from './RoadMap';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, Z_INDEX, MOTION } from '../../../app/design/designTokens';
 
 // Phone layout of the Aptitude page. It follows the phone Problems page: same page padding, back button,
 // centred header, progress bar, pill button and type sizes. The level map climbs from the bottom to the top.
@@ -48,7 +48,7 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                 aria-valuenow={cleared}
                 sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
               >
-                <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+                <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: `width ${MOTION.deliberate}ms` }} />
               </Box>
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
                 {cleared}
@@ -79,7 +79,7 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
           sx={(t) => ({
             position: 'sticky',
             top: 0,
-            zIndex: 10,
+            zIndex: Z_INDEX.bar,
             mx: -2,
             px: 2,
             pt: 'calc(8px + env(safe-area-inset-top))',

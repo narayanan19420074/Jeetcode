@@ -1,8 +1,8 @@
 // Design-token guard. Every visual decision lives in src/app/design/designTokens.js; components use theme values
 // or tokens instead of literals.
 //
-//   Colours (hex, rgb, rgba): hard rule, baseline design-token-baseline.json is empty, any raw colour fails.
-//   Values (fontSize, borderRadius, fontFamily, fontWeight): ledger design-value-baseline.json, counts may only
+//   Colours (hex, rgb, rgba, hsl): hard rule, baseline design-token-baseline.json is empty, any raw colour fails.
+//   Values (font sizes, radii, spacing, z-index, media queries, motion, shadows, fixed sizes, CSS fonts and radii): ledger design-value-baseline.json, counts may only
 //   go down as pages are migrated (see design-value-rules.mjs).
 //
 // Usage:
@@ -19,9 +19,12 @@ const SRC_DIR = path.join(SCRIPT_DIR, '..', 'src');
 const BASELINE_FILE = path.join(SCRIPT_DIR, 'design-token-baseline.json');
 const VALUE_BASELINE_FILE = path.join(SCRIPT_DIR, 'design-value-baseline.json');
 const TOKEN_DIR = `${path.sep}app${path.sep}design${path.sep}`;
-const COLOR_PATTERN = /rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(?:,\s*\d*\.?\d+\s*)?\)|#(?:[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?![0-9a-zA-Z_-])/g;
+const COLOR_PATTERN = /hsla?\(\s*(?:\d|\$\{)|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(?:,\s*\d*\.?\d+\s*)?\)|#(?:[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?![0-9a-zA-Z_-])/g;
 
-const isSourceFile = (name) => /\.(js|jsx)$/.test(name);
+const isSourceFile = (name) => /\.(js|jsx|css)$/.test(name);
+// Plain pages that render before React: they may only hold %%GROUP.key%% placeholders, never raw values.
+const CLIENT_DIR = path.join(SCRIPT_DIR, '..');
+const PLAIN_PAGES = [path.join(CLIENT_DIR, 'index.html'), ...fs.readdirSync(path.join(CLIENT_DIR, 'static-pages')).map((name) => path.join(CLIENT_DIR, 'static-pages', name))];
 
 function listSourceFiles(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -32,7 +35,7 @@ function listSourceFiles(dir) {
 }
 
 // Comments may mention colours when explaining a design decision; only code is checked.
-const stripComments = (text) => text.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|\s)\/\/.*$/gm, '$1');
+const stripComments = (text) => text.replace(/<!--[\s\S]*?-->/g, '').replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|\s)\/\/.*$/gm, '$1');
 
 // Same exclusions as the migration tool: url(#gradient-id) and HTML entities (&#123;) are not colours.
 function countRawColours(text) {
@@ -48,7 +51,7 @@ const relativeName = (file) => path.relative(SRC_DIR, file).split(path.sep).join
 function measureAllFiles() {
   const colours = {};
   const values = {};
-  listSourceFiles(SRC_DIR).forEach((file) => {
+  [...listSourceFiles(SRC_DIR), ...PLAIN_PAGES].forEach((file) => {
     const text = fs.readFileSync(file, 'utf8');
     const colourCount = countRawColours(text);
     const valueCounts = countValueViolations(stripComments(text));

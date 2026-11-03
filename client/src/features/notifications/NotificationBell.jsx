@@ -19,7 +19,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII, MOTION } from '../../app/design/designTokens';
 
 // Same accent as the phone pages.
 const ACCENT = LIB_ACCENT;
@@ -40,7 +40,7 @@ function TabButton({ tab, active, unread, onClick }) {
         fontSize: FONT_SIZES.body,
         color: active ? 'primary.main' : 'text.secondary',
         borderBottom: `2px solid ${active ? t.palette.primary.main : 'transparent'}`,
-        transition: 'color .15s, border-color .15s',
+        transition: `color ${MOTION.fast}ms, border-color ${MOTION.fast}ms`,
         '&:hover': { bgcolor: t.palette.action.hover },
       })}
     >
@@ -93,14 +93,14 @@ function PhoneCard({ n, onOpen }) {
         gap: 1.5,
         alignItems: 'center',
         textAlign: 'left',
-        p: '14px 16px',
+        py: 1.75, px: 2,
         borderRadius: RADII_PX.card,
         border: `1px solid ${pal.border}`,
         font: 'inherit',
         color: pal.text,
         cursor: 'pointer',
         bgcolor: n.read ? pal.chip : `color-mix(in srgb, ${ACCENT} 10%, ${pal.chip})`,
-        transition: 'background-color 200ms',
+        transition: `background-color ${MOTION.standard}ms`,
         '&:focus-visible': { outline: `2px solid ${ACCENT}`, outlineOffset: 2 },
       }}
     >
@@ -114,7 +114,7 @@ function PhoneCard({ n, onOpen }) {
       {n.link && (
         <Box sx={{ flexShrink: 0, height: 28, px: 1.5, borderRadius: RADII_PX.pill, display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: tone, bgcolor: alpha(color, 0.14), whiteSpace: 'nowrap' }}>{cta}</Box>
       )}
-      <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', flexShrink: 0, bgcolor: n.read ? 'transparent' : ACCENT, transition: 'background-color 200ms' }} />
+      <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', flexShrink: 0, bgcolor: n.read ? 'transparent' : ACCENT, transition: `background-color ${MOTION.standard}ms` }} />
     </Box>
   );
 }

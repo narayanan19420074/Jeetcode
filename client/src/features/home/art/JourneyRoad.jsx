@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { motion, useMotionValue, useMotionValueEvent, useScroll } from 'framer-motion';
 import { DISPLAY_FONT } from '../anim';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, MOTION } from '../../../app/design/designTokens';
 
 // The road draws itself as the visitor scrolls, and a marker runs along it.
 // Nodes light up as the marker passes them. Desktop only: on phones the
@@ -120,7 +120,7 @@ export default function JourneyRoad({ steps }) {
             sx={{
               opacity: i <= active ? 1 : 0.55,
               transform: i <= active ? 'none' : 'translateY(6px)',
-              transition: 'opacity 0.4s ease, transform 0.4s ease',
+              transition: `opacity ${MOTION.slow}ms ease, transform ${MOTION.slow}ms ease`,
               pl: { xs: 2, md: 0 },
               textAlign: { xs: 'left', md: 'center' },
               borderLeft: { xs: '3px solid', md: 'none' },

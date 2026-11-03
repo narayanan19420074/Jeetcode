@@ -6,7 +6,7 @@ import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import ProgressRing from './ProgressRing';
 import CompanyAvatar from './CompanyAvatar';
-import { COLOR_PALETTE, RADII, RADII_PX, SIZES, withAlpha } from '../app/design/designTokens';
+import { COLOR_PALETTE, RADII, RADII_PX, SIZES, withAlpha, SHADOWS } from '../app/design/designTokens';
 
 const AMBER = COLOR_PALETTE.amber[400];
 const OTHER_TRACKS_SHOWN = 3;
@@ -19,7 +19,7 @@ const cardSx = {
   borderRadius: RADII_PX.card,
   color: COLOR_PALETTE.white,
   background: `linear-gradient(135deg,${COLOR_PALETTE.indigo[950]} 0%,${COLOR_PALETTE.indigo[800]} 55%,${COLOR_PALETTE.violet[700]} 100%)`,
-  boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}`,
+  boxShadow: SHADOWS.cardLit(COLOR_PALETTE.slate[950], 0.85, 0.18),
 };
 
 const glowSx = (color, position) => ({

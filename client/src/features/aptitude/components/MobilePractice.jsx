@@ -13,7 +13,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libChipSx, libIconBtnSx, libSearchSx, libTintBtnSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { DIFFICULTY, difficultyMeta } from './aptitudeUi';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 // Phone layout of the Aptitude Practice list. It follows the phone Problems page: same page padding, back button,
 // filter menu, search pill, centred header, progress bar, pill button, chips and row sizes.
@@ -168,7 +168,7 @@ export default function MobilePractice({
             aria-valuenow={totals?.solved ?? 0}
             sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: `width ${MOTION.deliberate}ms` }} />
           </Box>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {totals ? totals.solved : '–'}

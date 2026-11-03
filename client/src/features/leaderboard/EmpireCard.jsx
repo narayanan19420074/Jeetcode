@@ -23,7 +23,7 @@ import { DIFF_COLOR } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
 import { MEDAL, Mix, YouChip, CountUp, activeLabel, bob, calm, glow, grad, mono, spin, twinkle } from './lbShared';
 import { ACCENT, AVATAR_FRAMES, lbTokens } from './lbTheme';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, Z_INDEX, SHADOWS, MOTION, EASING } from '../../app/design/designTokens';
 
 const GOLD = COLOR_PALETTE.amber[400];
 const TRACKS = [['overall', 'Overall', StarsRoundedIcon], ['coding', 'Coding', CodeRoundedIcon], ['aptitude', 'Aptitude', PsychologyRoundedIcon]];
@@ -53,7 +53,7 @@ function ScopeSwitch({ T, value, onChange, friendsOk }) {
     <Box role="group" aria-label="Show" sx={{ position: 'relative', display: 'inline-grid', gridTemplateColumns: 'repeat(2, 40px)', p: 0.5, borderRadius: RADII_PX.pill, bgcolor: T.soft, boxShadow: T.pressed, flexShrink: 0 }}>
       <Box
         aria-hidden
-        sx={{ position: 'absolute', top: 4, left: 4, width: 40, height: 36, borderRadius: RADII_PX.pill, background: ACCENT, boxShadow: `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}`, transform: `translateX(${idx * 40}px)`, transition: 'transform .25s cubic-bezier(.4,0,.2,1)', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }}
+        sx={{ position: 'absolute', top: 4, left: 4, width: 40, height: 36, borderRadius: RADII_PX.pill, background: ACCENT, boxShadow: `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}`, transform: `translateX(${idx * 40}px)`, transition: `transform ${MOTION.standard}ms ${EASING.standard}`, '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }}
       />
       {options.map(([v, label, Icon]) => {
         const on = value === v;
@@ -63,7 +63,7 @@ function ScopeSwitch({ T, value, onChange, friendsOk }) {
             <Box component="span" sx={{ display: 'flex' }}>
               <ButtonBase
                 disabled={disabled} onClick={() => onChange(v)} aria-pressed={on} aria-label={label}
-                sx={{ position: 'relative', zIndex: 1, width: 40, height: 36, borderRadius: RADII_PX.pill, color: on ? COLOR_PALETTE.white : T.muted, opacity: disabled ? 0.4 : 1, transition: 'color .2s' }}
+                sx={{ position: 'relative', zIndex: Z_INDEX.base, width: 40, height: 36, borderRadius: RADII_PX.pill, color: on ? COLOR_PALETTE.white : T.muted, opacity: disabled ? 0.4 : 1, transition: `color ${MOTION.standard}ms` }}
               >
                 <Icon sx={{ fontSize: FONT_SIZES.heading }} />
               </ButtonBase>
@@ -85,7 +85,7 @@ function PeriodSwitch({ T, value, onChange, iconOnly }) {
           <Tooltip key={v} title={title}>
             <ButtonBase
               onClick={() => onChange(v)} aria-pressed={on} aria-label={title}
-              sx={{ gap: 0.5, height: 34, minWidth: 34, px: on && !iconOnly ? 1.5 : 1, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: on ? T.icon : T.muted, bgcolor: on ? T.soft : 'transparent', boxShadow: on ? T.raised : 'none', transition: 'box-shadow .2s, color .2s' }}
+              sx={{ gap: 0.5, height: 34, minWidth: 34, px: on && !iconOnly ? 1.5 : 1, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: on ? T.icon : T.muted, bgcolor: on ? T.soft : 'transparent', boxShadow: on ? T.raised : 'none', transition: `box-shadow ${MOTION.standard}ms, color ${MOTION.standard}ms` }}
             >
               <Icon sx={{ fontSize: FONT_SIZES.subheading }} />{on && !iconOnly && label}
             </ButtonBase>
@@ -98,14 +98,14 @@ function PeriodSwitch({ T, value, onChange, iconOnly }) {
 
 function TrackTabs({ T, value, onChange, iconOnly }) {
   return (
-    <Box role="tablist" aria-label="Leaderboard track" sx={{ display: 'flex', gap: 1, minWidth: 0, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' }, py: 1, px: 0.5, mx: '-4px' }}>
+    <Box role="tablist" aria-label="Leaderboard track" sx={{ display: 'flex', gap: 1, minWidth: 0, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' }, py: 1, px: 0.5, mx: -0.5 }}>
       {TRACKS.map(([v, label, Icon]) => {
         const on = value === v;
         return (
           <Tooltip key={v} title={label}>
             <ButtonBase
               role="tab" aria-selected={on} aria-label={label} onClick={() => onChange(v)}
-              sx={{ flexShrink: 0, gap: 0.5, height: 38, px: iconOnly && !on ? 1.5 : 2, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : T.soft, boxShadow: on ? `0 10px 20px -8px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : T.raised, transition: 'transform .15s', '&:active': { transform: 'scale(0.96)' } }}
+              sx={{ flexShrink: 0, gap: 0.5, height: 38, px: iconOnly && !on ? 1.5 : 2, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : T.soft, boxShadow: on ? `0 10px 20px -8px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : T.raised, transition: `transform ${MOTION.fast}ms`, '&:active': { transform: 'scale(0.96)' } }}
             >
               <Icon sx={{ fontSize: FONT_SIZES.subheading }} />{(!iconOnly || on) && label}
             </ButtonBase>
@@ -144,7 +144,7 @@ function SoftButton({ T, children, ...rest }) {
 function RankTile({ rank, T }) {
   const m = MEDAL[rank];
   if (m) {
-    return <Box sx={[{ width: 34, height: 34, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, color: m.text, background: grad(m), boxShadow: `0 6px 14px -4px ${m.glow}` }, mono]}>{rank}</Box>;
+    return <Box sx={[{ width: 34, height: 34, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, color: m.text, background: grad(m), boxShadow: SHADOWS.drop('sm', m.glow) }, mono]}>{rank}</Box>;
   }
   return <Box sx={[{ width: 34, height: 34, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.muted, bgcolor: T.soft, boxShadow: T.pressed }, mono]}>{rank}</Box>;
 }
@@ -263,7 +263,7 @@ function PlayerRow({ row, index, T, isMe, selected, onPick, wide, track, reduce,
           background: isMe ? `linear-gradient(100deg, ${withAlpha(COLOR_PALETTE.amber[400], 0.22)}, transparent 65%), ${T.soft}` : T.soft,
           boxShadow: selected ? T.pressed : T.raised,
           outline: selected ? `2px solid ${alpha(t.palette.primary.main, 0.55)}` : 'none', outlineOffset: -2,
-          transition: 'box-shadow .18s, transform .18s', '&:hover': { transform: 'translateY(-1px)' },
+          transition: `box-shadow ${MOTION.standard}ms, transform ${MOTION.standard}ms`, '&:hover': { transform: 'translateY(-1px)' },
           '&::before': medal ? { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: 4, background: grad(medal) } : undefined,
         })}
       >
@@ -298,7 +298,7 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
     <motion.div initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <ButtonBase
         onClick={(e) => onPick(e, row)} aria-label={`${row.name}, top player, ${row.score} points`}
-        sx={{ position: 'relative', overflow: 'hidden', display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit', color: COLOR_PALETTE.white, borderRadius: RADII_PX.card, p: { xs: 1, sm: 1.5 }, background: `radial-gradient(120% 140% at 0% 0%, ${COLOR_PALETTE.indigo[500]} 0%, ${COLOR_PALETTE.indigo[600]} 45%, ${COLOR_PALETTE.indigo[900]} 100%)`, boxShadow: selected ? `0 0 0 2px ${GOLD}, ${shadow}` : shadow }}
+        sx={{ position: 'relative', overflow: 'hidden', display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit', color: COLOR_PALETTE.white, borderRadius: RADII_PX.card, p: { xs: 1, sm: 1.5 }, background: `radial-gradient(120% 140% at 0% 0%, ${COLOR_PALETTE.indigo[500]} 0%, ${COLOR_PALETTE.indigo[600]} 45%, ${COLOR_PALETTE.indigo[900]} 100%)`, boxShadow: selected ? `${SHADOWS.ring(GOLD)}, ${shadow}` : shadow }}
       >
         <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -60, width: 220, height: 220, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.34)}, transparent 68%)`, animation: `${glow} 3.2s ease-in-out infinite`, ...calm }} />
         <Box aria-hidden sx={{ position: 'absolute', left: -50, bottom: -80, width: 200, height: 200, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.pink[500], 0.26)}, transparent 70%)` }} />
@@ -307,11 +307,11 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
         ))}
 
         {/* glass plate */}
-        <Box sx={{ position: 'relative', borderRadius: RADII_PX.card, p: { xs: 1.5, sm: 2 }, bgcolor: withAlpha(COLOR_PALETTE.white, 0.10), border: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.22)}`, backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.25)}` }}>
+        <Box sx={{ position: 'relative', borderRadius: RADII_PX.card, p: { xs: 1.5, sm: 2 }, bgcolor: withAlpha(COLOR_PALETTE.white, 0.10), border: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.22)}`, backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: SHADOWS.highlight(0.25) }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, sm: 2 }, flexWrap: wide ? 'nowrap' : 'wrap' }}>
             <Box sx={{ position: 'relative', flexShrink: 0, display: 'grid', placeItems: 'center', mx: 1 }}>
               <Box aria-hidden sx={{ position: 'absolute', width: av + 22, height: av + 22, borderRadius: '50%', background: `conic-gradient(from 0deg, ${m.a}, transparent 30%, ${m.b} 55%, transparent 80%, ${m.a})`, filter: 'blur(6px)', opacity: 0.85, animation: `${spin} 6s linear infinite`, ...calm }} />
-              <Box sx={{ position: 'relative', p: 0.5, borderRadius: '50%', background: grad(m), boxShadow: `0 8px 26px -6px ${m.glow}` }}>
+              <Box sx={{ position: 'relative', p: 0.5, borderRadius: '50%', background: grad(m), boxShadow: SHADOWS.drop('lg', m.glow) }}>
                 <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: av, height: av, fontSize: av * 0.38, fontWeight: FONT_WEIGHTS.bold, border: `3px solid ${COLOR_PALETTE.indigo[900]}`, bgcolor: COLOR_PALETTE.indigo[700], color: COLOR_PALETTE.white }}>{row.name?.[0]?.toUpperCase()}</Avatar>
               </Box>
               <EmojiEventsRoundedIcon aria-hidden sx={{ position: 'absolute', top: -14, right: -14, fontSize: tight ? FONT_SIZES.display : FONT_SIZES.displayLg, color: COLOR_PALETTE.amber[200], filter: `drop-shadow(0 0 10px ${withAlpha(COLOR_PALETTE.amber[400], 0.9)})`, animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
@@ -428,7 +428,7 @@ export default function EmpireCard({
         <Box
           ref={scroller} className="autohide-scroll"
           onScroll={(e) => { const el = e.currentTarget; if (el.scrollHeight - el.scrollTop - el.clientHeight < 240) askMore(); }}
-          sx={{ flex: 1, minHeight: 0, mt: 1, mx: '-6px', px: 1, py: 1, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', overscrollBehavior: 'contain' }}
+          sx={{ flex: 1, minHeight: 0, mt: 1, mx: -0.75, px: 1, py: 1, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', overscrollBehavior: 'contain' }}
         >
           <Box sx={{ display: 'grid', gap: { xs: 1, sm: 1 } }}>
             {error && <Alert severity="error" action={<Button color="inherit" size="small" onClick={reload}>Retry</Button>}>{error}</Alert>}
@@ -466,7 +466,7 @@ export default function EmpireCard({
 
         {/* my own position stays pinned under the list */}
         {me && (
-          <Box sx={{ flexShrink: 0, mt: 1, p: 0.5, borderRadius: RADII_PX.card, background: `linear-gradient(135deg, ${GOLD}, ${ACCENT})`, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}` }}>
+          <Box sx={{ flexShrink: 0, mt: 1, p: 0.5, borderRadius: RADII_PX.card, background: `linear-gradient(135deg, ${GOLD}, ${ACCENT})`, boxShadow: SHADOWS.card(COLOR_PALETTE.indigo[500], 0.8) }}>
             <Box sx={{ position: 'relative', borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: T.soft, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ flex: 1, minWidth: 0 }}>
                 <PlayerRow row={me} T={T} isMe you selected={false} onPick={onPick} wide={wide} track={track} reduce={reduce} />

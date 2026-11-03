@@ -8,7 +8,7 @@ import DifficultyChip from '../../components/DifficultyChip';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
 import { WsIconButton } from './wsUi';
-import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 // Pattern names (the problem's topics) under the title: the first thing a learner needs to know.
 function PatternChips({ items }) {
@@ -59,7 +59,7 @@ function Fold({ title, count, children }) {
           {title}
           {count > 0 && <Box component="span" sx={{ ml: 1, color: 'text.secondary', fontWeight: FONT_WEIGHTS.semibold }}>{count}</Box>}
         </Typography>
-        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'text.secondary', transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none' }} />
+        <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'text.secondary', transition: `transform ${MOTION.standard}ms`, transform: open ? 'rotate(180deg)' : 'none' }} />
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
         <Box sx={{ px: 1.5, pb: 1.5 }}>{children}</Box>

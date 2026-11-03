@@ -19,7 +19,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from '../leaderboard/tiers';
 import { APT_COLOR, FLAME, PersonAvatar, mono, practisedToday, statusInfo, tonal } from './friendsUi';
 import { LIB_ACCENT, LIB_TRACKING, libChipSx, libPanelSx, libSectionTitleSx, libTintBtnSx } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 // One head-to-head row: my number | label | their number, with a split bar. `lower` = smaller wins (rank).
 function VsRow({ label, a, b, lower, lib = false }) {
@@ -53,7 +53,7 @@ function VsRow({ label, a, b, lower, lib = false }) {
         <Typography sx={{ fontWeight: bWins ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, color: bWins ? 'error.main' : 'text.primary', minWidth: 56, textAlign: 'right', ...mono }}>{fmt(b)}</Typography>
       </Stack>
       <Box sx={{ display: 'flex', height: 6, borderRadius: RADII_PX.pill, overflow: 'hidden', mt: 0.5, bgcolor: 'action.hover', gap: 0.5 }}>
-        <Box sx={{ width: `${Math.max(4, Math.min(96, share * 100))}%`, bgcolor: aWins ? 'success.main' : 'primary.main', opacity: aWins ? 1 : 0.45, transition: 'width .5s' }} />
+        <Box sx={{ width: `${Math.max(4, Math.min(96, share * 100))}%`, bgcolor: aWins ? 'success.main' : 'primary.main', opacity: aWins ? 1 : 0.45, transition: `width ${MOTION.deliberate}ms` }} />
         <Box sx={{ flex: 1, bgcolor: bWins ? 'error.main' : 'text.disabled', opacity: bWins ? 1 : 0.35 }} />
       </Box>
     </Box>

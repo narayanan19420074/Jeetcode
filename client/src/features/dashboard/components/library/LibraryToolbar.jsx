@@ -6,7 +6,7 @@ import FilterControl from './FilterControl';
 import SolvedMeter from './SolvedMeter';
 import SortControl from './SortControl';
 import useLibraryStyles from './libraryStyles';
-import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, Z_INDEX } from '../../../../app/design/designTokens';
 
 const ZERO_COUNTS = { Easy: 0, Medium: 0, Hard: 0 };
 const sumCounts = (counts) => counts.Easy + counts.Medium + counts.Hard;
@@ -94,7 +94,7 @@ function ActiveFilters({ lib }) {
 // Search and filters stay pinned while the problem list scrolls underneath.
 export default function LibraryToolbar({ lib, progress, isAuthenticated }) {
   return (
-    <Box sx={(t) => ({ position: { md: 'sticky' }, top: 0, zIndex: 3, py: 1, mx: -0.5, px: 0.5, display: 'grid', gap: 1, bgcolor: { md: t.palette.background.default } })}>
+    <Box sx={(t) => ({ position: { md: 'sticky' }, top: 0, zIndex: Z_INDEX.overlap, py: 1, mx: -0.5, px: 0.5, display: 'grid', gap: 1, bgcolor: { md: t.palette.background.default } })}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         <SearchField lib={lib} />
         <SortControl sort={lib.query.sort} disabled={lib.sortDisabled} onChange={(sort) => lib.patch({ sort })} />

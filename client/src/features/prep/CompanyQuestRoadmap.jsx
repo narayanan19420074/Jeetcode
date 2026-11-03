@@ -12,7 +12,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { problemsApi } from '../../api/problemsApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import { Confetti, CountUp, XpBar } from '../aptitude/components/MotionBits';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII, hexAlpha, Z_INDEX, SHADOWS } from '../../app/design/designTokens';
 
 const ROW = 108;
 const GOLD = COLOR_PALETTE.amber[400];
@@ -51,7 +51,7 @@ function Candy({ colors, size, children, done }) {
       sx={{
         position: 'relative', width: size, height: size, borderRadius: '50%', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white,
         background: `radial-gradient(circle at 32% 26%, ${colors[0]} 0%, ${colors[1]} 58%, ${colors[2]} 130%)`,
-        boxShadow: `0 6px 0 ${colors[2]}, 0 12px 18px -4px ${colors[2]}99, inset 0 -4px 6px ${colors[2]}66`,
+        boxShadow: `0 6px 0 ${colors[2]}, 0 12px 18px -4px ${hexAlpha(colors[2], 0.6)}, inset 0 -4px 6px ${hexAlpha(colors[2], 0.4)}`,
         border: `3px solid ${withAlpha(COLOR_PALETTE.white, 0.75)}`,
         '&::after': { content: '""', position: 'absolute', top: '10%', left: '18%', width: '38%', height: '20%', borderRadius: '50%', background: withAlpha(COLOR_PALETTE.white, 0.65), transform: 'rotate(-28deg)', filter: 'blur(0.5px)' },
         ...(done ? { color: COLOR_PALETTE.custom.yellow5B3A00 } : null),
@@ -206,9 +206,9 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
                         aria-hidden
                         animate={reduce ? undefined : { y: [0, -6, 0] }}
                         transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
-                        style={{ position: 'absolute', top: -40, left: '50%', translateX: '-50%', whiteSpace: 'nowrap', zIndex: 2 }}
+                        style={{ position: 'absolute', top: -40, left: '50%', translateX: '-50%', whiteSpace: 'nowrap', zIndex: Z_INDEX.raised }}
                       >
-                        <Box sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.white, color: colors[2], fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, boxShadow: `0 4px 10px ${withAlpha(COLOR_PALETTE.black, 0.25)}`, position: 'relative', '&::after': { content: '""', position: 'absolute', left: '50%', bottom: -5, width: 10, height: 10, bgcolor: COLOR_PALETTE.white, transform: 'translateX(-50%) rotate(45deg)' } }}>
+                        <Box sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.white, color: colors[2], fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, boxShadow: SHADOWS.drop('sm', withAlpha(COLOR_PALETTE.black, 0.25)), position: 'relative', '&::after': { content: '""', position: 'absolute', left: '50%', bottom: -5, width: 10, height: 10, bgcolor: COLOR_PALETTE.white, transform: 'translateX(-50%) rotate(45deg)' } }}>
                           PLAY
                         </Box>
                       </motion.div>
@@ -273,12 +273,12 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
       <AnimatePresence>
         {sheet && (
           <>
-            <motion.div key="bd" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setPicked(null)} style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.slate[900], .5), zIndex: 1290 }} />
+            <motion.div key="bd" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setPicked(null)} style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.slate[900], .5), zIndex: Z_INDEX.sheetBackdrop }} />
             <motion.div
               key="sheet" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 320, damping: 30 }}
-              style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 1300, display: 'flex', justifyContent: 'center' }}
+              style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: Z_INDEX.sheet, display: 'flex', justifyContent: 'center' }}
             >
-              <Box sx={{ width: '100%', maxWidth: 560, bgcolor: 'background.paper', borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, .3)}`, textAlign: 'center' }}>
+              <Box sx={{ width: '100%', maxWidth: 560, bgcolor: 'background.paper', borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: SHADOWS.sheetUp(.3), textAlign: 'center' }}>
                 <Box sx={{ width: 40, height: 4, borderRadius: RADII_PX.pill, bgcolor: 'divider', mx: 'auto', mb: 2 }} />
                 <Box sx={{ display: 'grid', placeItems: 'center', mb: 1.5 }}>
                   <motion.div initial={reduce ? false : { scale: 0.4, rotate: -20 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 14 }}>

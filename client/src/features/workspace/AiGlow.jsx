@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
-import { COLOR_PALETTE, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, RADII_PX, Z_INDEX, MOTION } from '../../app/design/designTokens';
 
 // Full-screen animated outline (the "live assistant" glow): a moving colour sweep that hugs the screen edge.
 // Purely decorative: it never captures taps. Respects the reduced-motion setting.
@@ -26,10 +26,10 @@ export default function AiGlow({ active, intensity = 1 }) {
       sx={{
         position: 'fixed',
         inset: 0,
-        zIndex: 1350,
+        zIndex: Z_INDEX.aiGlow,
         pointerEvents: 'none',
         opacity: active ? 1 : 0,
-        transition: 'opacity .45s ease',
+        transition: `opacity ${MOTION.deliberate}ms ease`,
         '@media (prefers-reduced-motion: reduce)': { '& .jc-sweep': { animation: 'none !important' } },
       }}
     >

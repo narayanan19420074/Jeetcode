@@ -11,7 +11,7 @@ import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { MONO_FONT, blink, pulseDot, typeLine } from '../anim';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, FONTS, RADII_PX, RADII } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, FONTS, RADII_PX, RADII, MOTION } from '../../../app/design/designTokens';
 
 // The hero's live product window. Three real moments from the app:
 // solving against test cases, answering a timed aptitude question, and
@@ -192,7 +192,7 @@ function TimePanel({ onInteract }) {
                 fontWeight: FONT_WEIGHTS.semibold,
                 fontSize: FONT_SIZES.body,
                 color: 'text.primary',
-                transition: 'border-color .15s, background-color .15s',
+                transition: `border-color ${MOTION.fast}ms, background-color ${MOTION.fast}ms`,
                 '&:hover': { borderColor: done ? undefined : 'primary.main' },
                 '&.Mui-disabled': { color: 'text.primary' },
               }}
@@ -308,7 +308,7 @@ function PairPanel() {
 function Cursor({ color, label }) {
   return (
     <Box component="span" sx={{ position: 'relative', display: 'inline-block', width: 2, height: '1.1em', bgcolor: color, ml: 0.5, verticalAlign: 'text-bottom', animation: `${blink} 1.1s steps(1) infinite` }}>
-      <Box component="span" sx={{ position: 'absolute', bottom: '100%', left: 0, px: 0.5, borderRadius: `${RADII.badge}px ${RADII.badge}px ${RADII.badge}px 0`, bgcolor: color, color: COLOR_PALETTE.white, fontFamily: FONTS.sans, fontSize: '0.6rem', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.5, whiteSpace: 'nowrap' }}>
+      <Box component="span" sx={{ position: 'absolute', bottom: '100%', left: 0, px: 0.5, borderRadius: `${RADII.badge}px ${RADII.badge}px ${RADII.badge}px 0`, bgcolor: color, color: COLOR_PALETTE.white, fontFamily: FONTS.sans, fontSize: FONT_SIZES.nano, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.5, whiteSpace: 'nowrap' }}>
         {label}
       </Box>
     </Box>

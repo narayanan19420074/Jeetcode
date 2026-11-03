@@ -3,7 +3,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../libraryStyle';
 import { surface, tint } from '../../dashboardUtils';
 import { DIFF_W, PAD_X, STAR_W, TOPIC_ROW_H } from './libraryConstants';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../../../app/design/designTokens';
 
 // Two looks for the same problem library. "classic" is the original page style (used by the Problems page).
 // "cream" is the phone Library look: cream pills and panels, accent when selected, tinted difficulty tags.
@@ -24,7 +24,7 @@ const classicPills = (t) => ({
     border: `1px solid ${on ? 'transparent' : t.palette.divider}`,
     bgcolor: on ? t.palette.text.primary : alpha(t.palette.background.paper, 0.6),
     color: on ? t.palette.background.default : t.palette.text.primary,
-    transition: 'background-color 120ms, border-color 120ms',
+    transition: `background-color ${MOTION.fast}ms, border-color ${MOTION.fast}ms`,
     '&:hover': { borderColor: on ? 'transparent' : t.palette.text.secondary },
     '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: 2 },
   }),

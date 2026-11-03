@@ -13,7 +13,7 @@ import { getBrandLogo } from '../../../components/brandLogos';
 import TcsBuddy from '../../prep/TcsBuddy';
 import { FORMS, RANKS, levelFor, formFor } from '../../prep/questLogic';
 import { TCS_NQT_APPLY_BY, daysUntil, examCountdown, formatExamDate, pickExamDate } from '../../prep/examDate';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII, SHADOWS, MOTION } from '../../../app/design/designTokens';
 
 const AMBER = COLOR_PALETTE.amber[400];
 
@@ -78,8 +78,8 @@ export default function NqtExploreCard({ onDismiss, hideForNewUser = false }) {
         color: COLOR_PALETTE.white,
         textDecoration: 'none',
         background: `linear-gradient(135deg,${COLOR_PALETTE.indigo[950]} 0%,${COLOR_PALETTE.indigo[800]} 55%,${COLOR_PALETTE.violet[700]} 100%)`,
-        boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}`,
-        transition: 'transform .18s ease, box-shadow .18s ease',
+        boxShadow: SHADOWS.cardLit(COLOR_PALETTE.slate[950], 0.85, 0.18),
+        transition: `transform ${MOTION.standard}ms ease, box-shadow ${MOTION.standard}ms ease`,
         '&:hover': { transform: 'translateY(-2px)', boxShadow: `0 18px 32px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.9)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.22)}` },
         '&:active': { transform: 'scale(0.99)' },
         '&:focus-visible': { outline: `3px solid ${COLOR_PALETTE.white}`, outlineOffset: -4 },

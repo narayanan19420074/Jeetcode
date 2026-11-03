@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { RADII_PX } from '../../app/design/designTokens';
+import { RADII_PX, Z_INDEX, MOTION } from '../../app/design/designTokens';
 
 /**
  * Draggable divider for resizable split panes.
@@ -39,7 +39,7 @@ export default function SplitHandle({ orientation = 'vertical', onDrag, onReset,
       sx={{
         flexShrink: 0,
         position: 'relative',
-        zIndex: 3,
+        zIndex: Z_INDEX.overlap,
         ...(isVertical ? { width: 0, alignSelf: 'stretch' } : { height: 0, width: '100%' }),
       }}
     >
@@ -78,7 +78,7 @@ export default function SplitHandle({ orientation = 'vertical', onDrag, onReset,
             position: 'absolute',
             borderRadius: RADII_PX.card,
             backgroundColor: active ? t.palette.primary.main : 'transparent',
-            transition: 'background-color .15s',
+            transition: `background-color ${MOTION.fast}ms`,
             ...(isVertical ? { top: 0, bottom: 0, left: 3, width: 3 } : { left: 0, right: 0, top: 3, height: 3 }),
           },
           '&:hover::after': { backgroundColor: active ? t.palette.primary.main : alpha(t.palette.primary.main, 0.6) },

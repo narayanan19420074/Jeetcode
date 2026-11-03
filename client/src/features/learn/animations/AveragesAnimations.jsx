@@ -1,11 +1,11 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
   return (
-    <g style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0px)' : 'translateY(6px)', transition: 'opacity 0.45s ease, transform 0.45s ease' }}>
+    <g style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0px)' : 'translateY(6px)', transition: `opacity ${MOTION.deliberate}ms ease, transform ${MOTION.deliberate}ms ease` }}>
       {children}
     </g>
   );

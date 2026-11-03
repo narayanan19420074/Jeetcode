@@ -34,7 +34,7 @@ import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { LibraryFont, useLibraryPalette } from './components/libraryStyle';
 import { STATUS_COLOR, featuredPageForToday, surface, todayKey } from './dashboardUtils';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII, Z_INDEX, MOTION, EASING } from '../../app/design/designTokens';
 
 // Same accent the other phone pages use.
 const PHONE_ACCENT = COLOR_PALETTE.indigo[500];
@@ -313,7 +313,7 @@ export default function DashboardPage() {
               md: '200px minmax(0, 1fr)',
               lg: `232px minmax(0, 1fr) ${showRail ? '340px' : '0px'}`,
             },
-            transition: 'grid-template-columns .4s cubic-bezier(.4,0,.2,1)',
+            transition: `grid-template-columns ${MOTION.slow}ms ${EASING.standard}`,
           }}
         >
           <Box className="autohide-scroll" sx={{ display: { xs: 'none', md: 'block' }, position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0 }}>
@@ -348,7 +348,7 @@ export default function DashboardPage() {
             {/* The library stays mounted while other views are open, so
                 filters, page and search survive a trip to Quests or Explore. */}
             <Box sx={{ display: currentView === 'library' ? 'block' : 'none' }}>
-              <Stack spacing={2.5} sx={{ position: 'relative', zIndex: 1 }}>
+              <Stack spacing={2.5} sx={{ position: 'relative', zIndex: Z_INDEX.base }}>
                 {/* Phone header: streak on the left, plan calendar on the right. */}
                 {!isMdUp && (
                   <LibraryFont sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: 40 }}>
@@ -512,7 +512,7 @@ export default function DashboardPage() {
                 opacity: showRail ? 1 : 0,
                 transform: showRail ? 'none' : 'translateX(28px)',
                 pointerEvents: showRail ? 'auto' : 'none',
-                transition: 'opacity .3s ease, transform .4s cubic-bezier(.4,0,.2,1)',
+                transition: `opacity ${MOTION.slow}ms ease, transform ${MOTION.slow}ms ${EASING.standard}`,
               }}
             >
               <Box sx={{ width: 316 }}>

@@ -16,7 +16,7 @@ import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
 import { daysUntil, formatExamDate, pickExamDate } from '../prep/examDate';
 import { CATEGORIES, EXAMS } from './examsData';
 import BackToDashboard from '../../components/BackToDashboard';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 // Exams that have a full mock paper on /mocks (paper ids live in server/src/config/mockTests.js).
 const HAS_MOCK = new Set(['tcs-nqt', 'infosys', 'cognizant']);
@@ -93,7 +93,7 @@ function ExamCard({ exam, index, track, onOpen }) {
   const prepare = () => (hasTrack ? navigate(`/prep/${track.slug}`) : navigate(exam.practice[0].to));
 
   return (
-    <Box sx={(t) => ({ position: 'relative', display: 'flex', flexDirection: 'column', gap: 1, p: 1.5, pt: 2, borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}`, transition: 'border-color .15s, transform .15s', '&:hover': { borderColor: PLAN_AMBER, transform: 'translateY(-1px)' } })}>
+    <Box sx={(t) => ({ position: 'relative', display: 'flex', flexDirection: 'column', gap: 1, p: 1.5, pt: 2, borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}`, transition: `border-color ${MOTION.fast}ms, transform ${MOTION.fast}ms`, '&:hover': { borderColor: PLAN_AMBER, transform: 'translateY(-1px)' } })}>
       <Box aria-hidden sx={{ position: 'absolute', left: 0, right: 0, top: 0, height: 3, background: theme.gradient }} />
 
       <ButtonBase onClick={onOpen} aria-label={`${exam.name} details`} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, width: '100%', textAlign: 'left', justifyContent: 'flex-start', fontFamily: 'inherit', borderRadius: RADII_PX.control }}>
@@ -226,9 +226,9 @@ function NextUpBanner() {
   }, []);
 
   if (!pick) return null;
-  const rgb = pick.urgent ? '239,68,68' : '251,191,36';
+  const tint = pick.urgent ? COLOR_PALETTE.red[500] : COLOR_PALETTE.amber[400];
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1.5, px: 1.5, py: 1, minHeight: 46, borderRadius: RADII_PX.card, flexShrink: 0, bgcolor: `rgba(${rgb},0.12)`, border: `1px solid rgba(${rgb},0.4)` }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1.5, px: 1.5, py: 1, minHeight: 46, borderRadius: RADII_PX.card, flexShrink: 0, bgcolor: withAlpha(tint, 0.12), border: `1px solid ${withAlpha(tint, 0.4)}` }}>
       <EventAvailableRoundedIcon sx={{ fontSize: FONT_SIZES.display, flexShrink: 0, color: pick.urgent ? 'error.main' : PLAN_AMBER }} />
       <Typography sx={{ flex: 1, minWidth: 0, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.3 }}>{pick.text}</Typography>
       <Button
@@ -282,7 +282,7 @@ export default function ExamsPage() {
               return (
                 <ButtonBase
                   key={c.key} role="tab" aria-selected={on} onClick={() => setCat(c.key)}
-                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? COLOR_PALETTE.custom.black1B1200 : 'text.primary', transition: 'background-color .15s' })}
+                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? COLOR_PALETTE.custom.black1B1200 : 'text.primary', transition: `background-color ${MOTION.fast}ms` })}
                 >
                   {c.label}
                 </ButtonBase>
@@ -295,7 +295,7 @@ export default function ExamsPage() {
         <NextUpBanner />
 
         <Box sx={{ display: 'grid', gap: 2, alignItems: 'start', flex: fillH ? 1 : 'none', minHeight: 0, gridTemplateColumns: { xs: 'minmax(0,1fr)', lg: 'minmax(0,1fr) 330px' }, gridTemplateRows: fillH ? 'minmax(0, 1fr)' : undefined }}>
-          <Box className="autohide-scroll" sx={{ order: { xs: 2, lg: 1 }, minWidth: 0, ...(fillH && { alignSelf: 'stretch', height: '100%', overflowY: 'auto', p: '2px 8px 16px 2px', scrollbarGutter: 'stable' }) }}>
+          <Box className="autohide-scroll" sx={{ order: { xs: 2, lg: 1 }, minWidth: 0, ...(fillH && { alignSelf: 'stretch', height: '100%', overflowY: 'auto', pt: 0.25, pr: 1, pb: 2, pl: 0.25, scrollbarGutter: 'stable' }) }}>
             <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'stretch', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))' } }}>
               {shown.map(({ e, i }) => <ExamCard key={e.id} exam={e} index={i} track={trackFor(e)} onOpen={() => setOpenId(e.id)} />)}
             </Box>

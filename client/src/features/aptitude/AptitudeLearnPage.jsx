@@ -131,7 +131,7 @@ function LessonSidebar({ lessons, activeId, completed, onSelect }) {
                 {done ? (
                   <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'success.main' }} />
                 ) : (
-                  <CircleIcon sx={{ fontSize: 8, mx: 0.5, color: active ? 'primary.main' : 'text.disabled' }} />
+                  <CircleIcon sx={{ fontSize: FONT_SIZES.dot, mx: 0.5, color: active ? 'primary.main' : 'text.disabled' }} />
                 )}
                 <Box sx={{ minWidth: 0 }}>
                   <Typography variant="body2" sx={{ fontSize: FONT_SIZES.body, fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, lineHeight: 1.3, color: active ? 'text.primary' : 'text.secondary' }}>

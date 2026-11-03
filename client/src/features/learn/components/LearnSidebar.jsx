@@ -64,7 +64,7 @@ export default function LearnSidebar({ sections, activeId, completedIds, onSelec
                     ) : (
                       <CircleIcon
                         sx={{
-                          fontSize: 8,
+                          fontSize: FONT_SIZES.dot,
                           color: isActive ? 'primary.main' : 'text.disabled',
                           flexShrink: 0,
                           ml: 0.5,

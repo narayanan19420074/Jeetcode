@@ -213,6 +213,16 @@ read from that file.
    cards"), edit `designTokens.js` only. Do not touch page files for a global design change.
 6. Fix existing violations in every file you touch (hard-coded font sizes, radii, spacing, colours).
 
+### 4.3.1a Other tokens (use these instead of literals)
+- Stacking: `Z_INDEX.<role>`. Motion: `${MOTION.<role>}ms` and `EASING.<name>` inside `transition` strings.
+- Media queries: `MEDIA_QUERIES.<name>` in `useMediaQuery`. Scroll reveal margins: `SCROLL_REVEAL_MARGIN`.
+- Shadows: `SHADOWS.drop(step, colour)`, `SHADOWS.card`, `SHADOWS.cardLit`, `SHADOWS.highlight`, `SHADOWS.sheetUp`, `SHADOWS.ring`.
+- Hex colours with transparency: `hexAlpha(colour, alpha)`. Never append an alpha pair such as `${colour}99`.
+- Hue-based avatar tints: `hueTint(hue, isDark)`. Square and round corners: `RADII_PX.square`, `RADII_PX.circle`.
+- Plain HTML and CSS (`index.html`, `src/index.css`, `static-pages/*.html`) cannot import tokens. They use `var(--jc-*)` CSS
+  variables or `%%GROUP.key%%` placeholders that `scripts/designTokensPlugin.mjs` fills at build time from `designTokens.js`.
+  `public/offline.html` is generated from `static-pages/offline.template.html`; edit the template, never the generated file.
+
 ### 4.3.2 Enforcement
 - Colours: `node client/scripts/check-design-tokens.mjs` runs in the Render build. The baseline is empty, so any
   raw colour (hex, rgb, rgba) outside `app/design/` fails the deploy.
@@ -221,8 +231,10 @@ read from that file.
   (`node client/scripts/check-design-tokens.mjs --update`, which refuses to raise a count).
 - Pixel spacing in `sx` (`p: "12px"`, `gap: "10px"`): same ledger (`spacingPx`). Use theme units on the 4px grid
   (0.5, 1, 1.5, 2, 3, 4 = 4, 8, 12, 16, 24, 32px).
-- Fixed pixel sizes (heights, widths): not enforced by script yet. Follow rule 1 by review and do not add new
-  hard-coded values; existing ones are migrated file by file.
+- Also in the ledger: `zIndex`, `mediaQuery`, `hexAlphaSuffix`, `motionDuration`, `shadowPx`, `fixedSizePx` (widths and
+  heights), `cssFontFamily`, `cssBorderRadius`. The first three, the CSS rules and all rules above are at zero. The
+  remaining counts (`fixedSizePx`, `shadowPx`, `motionDuration`) may only go down; migrate a file when you touch it.
+- Colours also include `hsl()`, and the script scans `.css` files, `index.html` and `static-pages/`.
 - Adding a new rule to the ledger: `node client/scripts/check-design-tokens.mjs --update --allow-raise` once, to
   record the starting counts. Never use `--allow-raise` to hide a regression.
 - Mechanical migrations (many files at once) are delivered as a git patch (`git apply`) and are exempt from 4.2

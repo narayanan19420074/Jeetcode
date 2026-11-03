@@ -47,7 +47,7 @@ import { CountUp, XpBar, popChild, staggerParent } from './components/MotionBits
 import { moduleXp, rankForXp } from './components/gamification';
 import { DIFFICULTY, formatClock, formatDuration } from './components/aptitudeUi';
 import MobilePatternDetail, { MobilePatternError, MobilePatternSkeleton } from './components/MobilePatternDetail';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../app/design/designTokens';
 
 const MONO = '"JetBrains Mono", monospace';
 
@@ -74,7 +74,7 @@ function ActionIcon({ icon, accent, name, onClick, disabled, highlight, dot, lab
               bgcolor: accent,
               color: COLOR_PALETTE.white,
               boxShadow: highlight ? `0 0 0 3px ${alpha(accent, 0.28)}` : 'none',
-              transition: 'box-shadow .2s ease, transform .15s ease',
+              transition: `box-shadow ${MOTION.standard}ms ease, transform ${MOTION.fast}ms ease`,
               '& svg': { fontSize: FONT_SIZES.hero },
               'button:active > span > &': { transform: 'scale(0.96)' },
             }}

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Box } from '@mui/material';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, hexAlpha } from '../../app/design/designTokens';
 
 const GOLD = COLOR_PALETTE.custom.yellowF5B301;
 const BOSS = COLOR_PALETTE.orange[500];
@@ -30,7 +30,7 @@ export function QuestCoin({ pct, state, boss, Icon, label, active, size = 56 }) 
           sx={{
             position: 'absolute', inset: 0, borderRadius: '50%', display: 'grid', placeItems: 'center',
             background: `conic-gradient(${color} ${Math.max(pct, state === 'cleared' ? 100 : 0) * 3.6}deg, ${withAlpha(COLOR_PALETTE.custom.gray808080, .25)} 0)`,
-            boxShadow: active ? `0 0 0 5px ${color}22, 0 10px 22px ${color}55` : `0 4px 10px ${withAlpha(COLOR_PALETTE.black, .18)}`,
+            boxShadow: active ? `0 0 0 5px ${hexAlpha(color, 0.133)}, 0 10px 22px ${hexAlpha(color, 0.333)}` : `0 4px 10px ${withAlpha(COLOR_PALETTE.black, .18)}`,
           }}
         >
           <Box

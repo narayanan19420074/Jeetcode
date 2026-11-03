@@ -28,7 +28,7 @@ import { getTopicBySlug } from './content';
 import { AVERAGES_VISUAL_REGISTRY } from './animations/AveragesVisuals';
 import MissingValueVisual from './visuals/MissingValueVisual';
 import { aptitudeApi } from '../../api/aptitudeApi';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, FONTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, FONTS, RADII_PX, SCROLL_REVEAL_MARGIN, MOTION, EASING } from '../../app/design/designTokens';
 
 const MAIN_NAV_HEIGHT_PX = 72;
 const CONTENT_MAX = 720;
@@ -79,7 +79,7 @@ function LearnTopBar({ topic, active, completedCount, total, progressPct, onBack
               flexGrow: 1,
               height: 6,
               borderRadius: RADII_PX.pill,
-              '& .MuiLinearProgress-bar': { transition: 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)' },
+              '& .MuiLinearProgress-bar': { transition: `transform ${MOTION.progress}ms ${EASING.decelerate}` },
             }}
           />
           <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: FONTS.mono, color: 'text.secondary' }}>
@@ -141,7 +141,7 @@ function LearnSidebar({ sections, activeId, completedIds, onSelect }) {
                     pr: 1.5,
                     bgcolor: isActive ? (t) => alpha(t.palette.primary.main, 0.06) : 'transparent',
                     '&:hover': { bgcolor: (t) => alpha(t.palette.primary.main, 0.05) },
-                    transition: 'background-color 0.2s',
+                    transition: `background-color ${MOTION.standard}ms`,
                   }}
                 >
                   {isActive && (
@@ -165,7 +165,7 @@ function LearnSidebar({ sections, activeId, completedIds, onSelect }) {
                     ) : (
                       <CircleIcon
                         sx={{
-                          fontSize: 8,
+                          fontSize: FONT_SIZES.dot,
                           color: isActive ? 'primary.main' : 'text.disabled',
                           flexShrink: 0,
                           ml: 0.5,
@@ -205,7 +205,7 @@ function RevealSection({ children, delay = 0 }) {
     <motion.section
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: SCROLL_REVEAL_MARGIN.far }}
       transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
@@ -296,7 +296,7 @@ function ExampleCard({ example, index }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
+      viewport={{ once: true, margin: SCROLL_REVEAL_MARGIN.near }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       <Paper
@@ -459,7 +459,7 @@ function CheckCard({ check, index, onCorrect }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
+      viewport={{ once: true, margin: SCROLL_REVEAL_MARGIN.near }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       <Paper

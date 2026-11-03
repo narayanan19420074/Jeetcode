@@ -12,7 +12,7 @@ import TagRoundedIcon from '@mui/icons-material/TagRounded';
 import { tierFor, TIERS } from './tiers';
 import { AvatarRing, CountUp, MEDAL, YouChip, grad, mono } from './lbShared';
 import { ACCENT, lbTokens } from './lbTheme';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION, SHADOWS } from '../../app/design/designTokens';
 
 // Side panel of the leaderboard. Same neumorphic panel as the board (EmpireCard). In the middle sits a
 // "mirror frame": raised bezel + pressed lip around a vivid glass pane. The pane shows only what matters
@@ -157,7 +157,7 @@ function PlayerFace({ row, track, points, isMe, learners, topPercent, loading })
           <Typography noWrap sx={[{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.yellow[200], textShadow: SHADOW_TXT }, mono]}>{next ? `${toNext.toLocaleString()} pts` : 'Reached'}</Typography>
         </Box>
         <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Progress to next tier" sx={{ height: 10, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.custom.indigo140A3C, 0.4), overflow: 'hidden' }}>
-          <Box sx={{ width: `${Math.max(progress, 4)}%`, height: '100%', borderRadius: RADII_PX.pill, background: `linear-gradient(90deg,${COLOR_PALETTE.yellow[200]},${COLOR_PALETTE.amber[400]})`, transition: 'width .6s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
+          <Box sx={{ width: `${Math.max(progress, 4)}%`, height: '100%', borderRadius: RADII_PX.pill, background: `linear-gradient(90deg,${COLOR_PALETTE.yellow[200]},${COLOR_PALETTE.amber[400]})`, transition: `width ${MOTION.progress}ms ease`, '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
         </Box>
       </Box>
     </>
@@ -179,7 +179,7 @@ function TrackSwitch({ T, value, onChange }) {
         return (
           <ButtonBase
             key={v} role="tab" aria-selected={on} onClick={() => onChange(v)}
-            sx={{ gap: 0.5, height: 34, minWidth: 0, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : 'transparent', boxShadow: on ? `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : 'none', transition: 'color .2s', '&:active': { transform: 'scale(0.97)' } }}
+            sx={{ gap: 0.5, height: 34, minWidth: 0, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : 'transparent', boxShadow: on ? `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : 'none', transition: `color ${MOTION.standard}ms`, '&:active': { transform: 'scale(0.97)' } }}
           >
             <Icon sx={{ fontSize: FONT_SIZES.title }} />{label}
           </ButtonBase>
@@ -228,7 +228,7 @@ function LoginCard({ T }) {
         <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.ink }}>See where you stand</Typography>
         <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: T.muted }}>Log in to get your rank.</Typography>
       </Box>
-      <Button component={RouterLink} to="/login" size="small" disableElevation startIcon={<BoltRoundedIcon />} sx={{ borderRadius: RADII_PX.pill, px: 2, color: COLOR_PALETTE.white, background: ACCENT, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', boxShadow: `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}` }}>Log in</Button>
+      <Button component={RouterLink} to="/login" size="small" disableElevation startIcon={<BoltRoundedIcon />} sx={{ borderRadius: RADII_PX.pill, px: 2, color: COLOR_PALETTE.white, background: ACCENT, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', boxShadow: SHADOWS.drop('md', withAlpha(COLOR_PALETTE.indigo[500], 0.85)) }}>Log in</Button>
     </Box>
   );
 }
