@@ -1,21 +1,27 @@
-import { BREAKPOINTS, RADII, SIZES } from './designTokens';
+import { RADII, STATES } from './designTokens';
+import { buildInteractiveOverrides } from './buildInteractiveOverrides';
 import { rootCssVariables } from './cssVariables';
 import { buildSpinnerOverrides, spinnerKeyframes } from './spinner';
 
-const DESKTOP_QUERY = `@media (min-width:${BREAKPOINTS.md}px)`;
 const REDUCED_MOTION_CSS =
   '*, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }';
 
-const buildGlobalCss = ({ mode, reduceMotion, underlineLinks }) => `
+// Keyboard focus ring for every interactive element except text inputs, which show their own focused outline.
+const FOCUS_RING_SELECTOR = 'a, button, [role="button"], [role="tab"], [role="menuitem"], [role="option"]';
+const focusRingCss = ({ palette }) =>
+  `:is(${FOCUS_RING_SELECTOR}):focus-visible { outline: ${STATES.focusRing.width}px solid ${palette.primary.main}; outline-offset: ${STATES.focusRing.offset}px; }`;
+
+const buildGlobalCss = ({ mode, reduceMotion, underlineLinks }, theme) => `
   ${spinnerKeyframes}
   ${rootCssVariables(mode)}
+  ${focusRingCss(theme)}
   ${underlineLinks ? 'a { text-decoration: underline !important; }' : ''}
   ${reduceMotion ? REDUCED_MOTION_CSS : ''}
 `;
 
 // Compact density (Settings -> Appearance) shrinks every control through MUI's own `size` props.
+// Buttons and chips are handled in buildInteractiveOverrides because they also carry the shared states.
 const compactDefaults = {
-  MuiButton: { defaultProps: { size: 'small', disableElevation: true }, styleOverrides: { root: { borderRadius: RADII.control, paddingInline: 14 } } },
   MuiIconButton: { defaultProps: { size: 'small' } },
   MuiTextField: { defaultProps: { size: 'small' } },
   MuiFormControl: { defaultProps: { size: 'small' } },
@@ -23,17 +29,6 @@ const compactDefaults = {
   MuiTable: { defaultProps: { size: 'small' } },
   MuiListItem: { defaultProps: { dense: true } },
   MuiMenuItem: { defaultProps: { dense: true } },
-};
-
-// Comfortable density: buttons meet the touch-target height on phones and a slightly tighter height on desktop.
-const comfortableDefaults = {
-  MuiButton: {
-    defaultProps: { disableElevation: true },
-    styleOverrides: {
-      root: { borderRadius: RADII.control, paddingInline: 18 },
-      sizeMedium: { minHeight: SIZES.controlHeight.mobile, [DESKTOP_QUERY]: { minHeight: SIZES.controlHeight.desktop } },
-    },
-  },
 };
 
 // MUI's default placeholder (42% opacity) is ~3:1; this keeps it readable.
@@ -57,26 +52,26 @@ const appBarOverrides = {
 
 const surfaceOverrides = () => ({
   MuiPaper: { styleOverrides: { root: { backgroundImage: 'none' } } },
-  MuiCard: { styleOverrides: { root: { borderRadius: RADII.card } } },
+  // Cards are flat: a 1px border separates them from the page, shadows are reserved for floating layers.
+  MuiCard: {
+    styleOverrides: {
+      root: ({ theme }) => ({ borderRadius: RADII.card, border: `1px solid ${theme.palette.divider}`, boxShadow: 'none' }),
+    },
+  },
   MuiDialog: { styleOverrides: { paper: { borderRadius: RADII.dialog } } },
   MuiMenu: { styleOverrides: { paper: { borderRadius: RADII.control } } },
   MuiDrawer: { styleOverrides: { paper: { backgroundImage: 'none' } } },
 });
 
-const chipOverrides = (compact) => ({
-  defaultProps: compact ? { size: 'small' } : {},
-  styleOverrides: { root: { fontWeight: 600, fontSize: '0.72rem' } },
-});
-
 export function buildComponents({ mode, density, reduceMotion, underlineLinks }) {
   const compact = density === 'compact';
   return {
-    MuiCssBaseline: { styleOverrides: buildGlobalCss({ mode, reduceMotion, underlineLinks }) },
-    ...(compact ? compactDefaults : comfortableDefaults),
+    MuiCssBaseline: { styleOverrides: (theme) => buildGlobalCss({ mode, reduceMotion, underlineLinks }, theme) },
+    ...(compact ? compactDefaults : {}),
+    ...buildInteractiveOverrides(compact),
     MuiCircularProgress: buildSpinnerOverrides(mode),
     MuiInputBase: readablePlaceholder,
     ...surfaceOverrides(),
-    MuiChip: chipOverrides(compact),
     MuiAppBar: appBarOverrides,
   };
 }

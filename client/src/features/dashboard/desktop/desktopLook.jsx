@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { ThemeProvider, alpha, createTheme, useTheme } from '@mui/material/styles';
 import { LIBRARY_PALETTE, LIB_FONT } from '../components/libraryStyle';
 
-// The desktop dashboard borrows the phone Library look: Roboto type, the cream surfaces, pill buttons.
+// The desktop dashboard borrows the phone Library look: the cream surfaces and the Library type settings.
 // It is applied as a nested theme, so every component under it (navbar, sidebar, cards, dialogs) picks up the
 // colours through the normal theme palette without being edited. Other pages are not wrapped and keep their look.
 
@@ -22,7 +22,7 @@ export const usesDesktopLook = (pathname) => {
 // Components that need the marker (for example the problem library) read it with this hook.
 export const useLibraryLook = () => Boolean(useTheme().libraryLook);
 
-const robotoTypography = (outer) => {
+const libraryTypography = (outer) => {
   const variants = Object.entries(outer.typography)
     .filter(([name, value]) => value && typeof value === 'object' && value.fontFamily && !FONT_VARIANTS_TO_KEEP.includes(name))
     .map(([name]) => [name, { fontFamily: LIB_FONT }]);
@@ -53,12 +53,9 @@ const withDesktopLook = (outer) => {
   const pal = LIBRARY_PALETTE[isLight ? 'light' : 'dark'];
   return createTheme(outer, {
     libraryLook: true,
-    typography: robotoTypography(outer),
-    components: {
-      // Pill buttons, as on the phone pages.
-      MuiButton: { styleOverrides: { root: { borderRadius: 999 } } },
-      ...(isLight && { MuiAppBar: creamAppBar(pal) }),
-    },
+    typography: libraryTypography(outer),
+    // Buttons keep the shared control radius from the main theme; only the app bar changes here.
+    components: isLight ? { MuiAppBar: creamAppBar(pal) } : {},
     ...(isLight && { palette: creamPalette(outer, pal) }),
   });
 };

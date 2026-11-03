@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { BRAND_PALETTE, ELEVATION, FONTS, LAYOUT_SPACING, MOTION, RADII, SIZES, SPACING } from './designTokens';
+import { BRAND_PALETTE, ELEVATION, FONTS, FONT_WEIGHTS, LAYOUT_SPACING, MOTION, RADII, SIZES, SPACING, STATES } from './designTokens';
 import { buildComponents } from './buildComponents';
 import { buildPalette } from './buildPalette';
 import { buildTypography } from './buildTypography';
@@ -22,6 +22,8 @@ const buildJcTokens = (mode) => ({
   radii: RADII,
   layout: LAYOUT_SPACING,
   fonts: FONTS,
+  weights: FONT_WEIGHTS,
+  states: STATES,
   motion: MOTION,
   elevation: ELEVATION[modeKey(mode)],
 });

@@ -1,4 +1,4 @@
-import { BREAKPOINTS, FONTS, FONT_SCALE, TYPE_SCALE } from './designTokens';
+import { BREAKPOINTS, FONTS, FONT_SCALE, FONT_WEIGHTS, TYPE_SCALE } from './designTokens';
 
 const BASE_FONT_PX = 14;
 const REM_BASE_PX = 16;
@@ -22,6 +22,9 @@ export function buildTypography(fontScale = 'md') {
   return {
     fontFamily: FONTS.sans,
     fontSize: BASE_FONT_PX * scale,
+    fontWeightRegular: FONT_WEIGHTS.regular,
+    fontWeightMedium: FONT_WEIGHTS.medium,
+    fontWeightBold: FONT_WEIGHTS.bold,
     ...variants,
     button: { ...variants.button, textTransform: 'none' },
     // Monospace face reserved for code, problem IDs and statistics: signals "engineering tool".

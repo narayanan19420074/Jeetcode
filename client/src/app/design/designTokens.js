@@ -24,46 +24,63 @@ export const LAYOUT_SPACING = {
 };
 
 // ---------------------------------------------------------------- shape
-// Radii in pixels. Pick the role, not a number: controls, cards, dialogs and pills each have one value.
-export const RADII = { small: 8, control: 12, card: 14, dialog: 16, pill: 999 };
+// Radii in pixels. Pick the role, not a number: badge (tiny tags), control (buttons, inputs, list rows, panels),
+// card, dialog and pill (filter chips, tags, avatars). The theme shape uses `control`, so a numeric
+// `borderRadius: 1` in an sx prop equals one control radius; prefer a role from this list instead.
+export const RADII = { badge: 4, control: 8, card: 12, dialog: 16, pill: 999 };
 
 // ---------------------------------------------------------------- sizing
 export const SIZES = {
   // WCAG 2.5.5 / Material: minimum touch target on phones.
   touchTarget: 44,
-  controlHeight: { mobile: 44, desktop: 40 },
+  controlHeight: { mobile: 44, desktop: 36 },
+  iconButton: { mobile: 40, desktop: 32 },
   appBarHeight: { mobile: 56, desktop: 64 },
   bottomNavHeight: 64,
   iconSize: { small: 18, medium: 22, large: 28 },
+  // Rows and chips: one height per role so lists, sidebars and filter bars line up across pages.
+  listRowHeight: 44,
+  navItemHeight: 40,
+  filterPillHeight: 40,
+  chipHeight: 28,
+  chipHeightSmall: 24,
+  avatar: { xs: 24, sm: 32, md: 40, lg: 56 },
   contentMaxWidth: 1200,
   readingMaxWidth: 720,
 };
 
 // ---------------------------------------------------------------- typography
+// One sans family for the whole product. `library` stays as an alias so the Library pages follow the same family.
+const SANS_STACK = '"Geist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
 export const FONTS = {
-  sans: '"Geist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-  // Roboto-first stack used by the Library pages (Problems, Dashboard, Settings, Store, Aptitude).
-  library: '"Roboto", "Geist", system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+  sans: SANS_STACK,
+  library: SANS_STACK,
   // Reserved for code, problem IDs and statistics.
   mono: '"JetBrains Mono", "Fira Code", monospace',
 };
 
-// Type scale in px: [mobile, desktop], line height (unitless) and weight. Hierarchy: page title (h1) down to
-// captions. Headings tighten letter spacing slightly; body text keeps the default.
+// The only font weights the product uses. Components pick a role, never a raw number.
+export const FONT_WEIGHTS = { regular: 400, medium: 500, semibold: 600, bold: 700 };
+const W = FONT_WEIGHTS;
+
+// Type scale in px: [mobile, desktop], line height (unitless) and weight. Dense, LeetCode-like hierarchy: page title
+// (h1) down to micro labels. Headings tighten letter spacing slightly; body text keeps the default.
+// `micro` is a custom variant for the smallest labels (counts, badges, table meta).
 export const TYPE_SCALE = {
-  h1: { size: [30, 40], lineHeight: 1.15, weight: 700, tracking: '-0.03em' },
-  h2: { size: [26, 32], lineHeight: 1.2, weight: 700, tracking: '-0.025em' },
-  h3: { size: [22, 26], lineHeight: 1.25, weight: 700, tracking: '-0.02em' },
-  h4: { size: [20, 24], lineHeight: 1.3, weight: 650, tracking: '-0.015em' },
-  h5: { size: [18, 20], lineHeight: 1.35, weight: 650, tracking: '-0.01em' },
-  h6: { size: [16, 18], lineHeight: 1.4, weight: 650, tracking: '-0.01em' },
-  subtitle1: { size: [16, 16], lineHeight: 1.5, weight: 500, tracking: '0' },
-  subtitle2: { size: [14, 14], lineHeight: 1.45, weight: 600, tracking: '0' },
-  body1: { size: [16, 16], lineHeight: 1.55, weight: 400, tracking: '0' },
-  body2: { size: [14, 14], lineHeight: 1.5, weight: 400, tracking: '0' },
-  button: { size: [14, 14], lineHeight: 1.25, weight: 600, tracking: '0' },
-  caption: { size: [12, 12], lineHeight: 1.4, weight: 400, tracking: '0.005em' },
-  overline: { size: [12, 12], lineHeight: 1.4, weight: 600, tracking: '0.08em' },
+  h1: { size: [28, 36], lineHeight: 1.2, weight: W.bold, tracking: '-0.025em' },
+  h2: { size: [24, 30], lineHeight: 1.25, weight: W.bold, tracking: '-0.02em' },
+  h3: { size: [20, 24], lineHeight: 1.3, weight: W.bold, tracking: '-0.015em' },
+  h4: { size: [18, 20], lineHeight: 1.35, weight: W.semibold, tracking: '-0.01em' },
+  h5: { size: [16, 18], lineHeight: 1.4, weight: W.semibold, tracking: '-0.005em' },
+  h6: { size: [15, 16], lineHeight: 1.4, weight: W.semibold, tracking: '0' },
+  subtitle1: { size: [15, 15], lineHeight: 1.5, weight: W.medium, tracking: '0' },
+  subtitle2: { size: [14, 14], lineHeight: 1.45, weight: W.semibold, tracking: '0' },
+  body1: { size: [15, 14], lineHeight: 1.55, weight: W.regular, tracking: '0' },
+  body2: { size: [14, 14], lineHeight: 1.5, weight: W.regular, tracking: '0' },
+  button: { size: [14, 14], lineHeight: 1.25, weight: W.semibold, tracking: '0' },
+  caption: { size: [12, 12], lineHeight: 1.4, weight: W.regular, tracking: '0.005em' },
+  micro: { size: [11, 11], lineHeight: 1.35, weight: W.medium, tracking: '0.01em' },
+  overline: { size: [12, 12], lineHeight: 1.4, weight: W.semibold, tracking: '0.08em' },
 };
 
 // Fixed text-size choices in Settings -> Appearance.
@@ -328,3 +345,15 @@ export const ELEVATION = {
 };
 
 export const MOTION = { fast: 120, standard: 200, slow: 320 };
+
+// ---------------------------------------------------------------- interaction states
+// One behaviour for every clickable surface (buttons, rows, cards, tabs, chips): normal is flat; hover, pressed and
+// selected add a neutral tonal layer; selected also gets heavier text; keyboard focus shows a ring; disabled fades.
+// Opacities apply to a black (light mode) or white (dark mode) overlay and feed theme.palette.action.
+export const STATES = {
+  hoverOpacity: 0.04,
+  pressedOpacity: 0.08,
+  selectedOpacity: 0.08,
+  disabledOpacity: 0.5,
+  focusRing: { width: 2, offset: 2 },
+};

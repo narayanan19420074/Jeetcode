@@ -7,7 +7,7 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
-// Shared look of the phone Library (Problems) pages: Roboto type and a warm cream surface in light mode.
+// Shared look of the phone Library (Problems) pages: the product font and a warm cream surface in light mode.
 // Dark mode keeps the app's normal dark surfaces.
 
 // Fonts and colours come from the design tokens (app/design/designTokens.js); they are re-exported here so
@@ -33,7 +33,7 @@ export const isLibraryRoute = (pathname, search) => {
   return path === '/store' || /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?$/.test(path) || path === '/problems' || path.startsWith('/problems/') || path.startsWith('/settings/') || ['/aptitude', '/prep', '/you', '/settings', '/plans'].includes(path);
 };
 
-// Roboto for everything inside (menus and dialogs opened from it included).
+// Library font for everything inside (menus and dialogs opened from it included).
 // It also publishes the palette as CSS variables (--lib-*) so nested components can use it without a hook.
 // Portals (drawers, menus) do not inherit them: wrap their content in LibraryFont again.
 export function LibraryFont({ children, sx }) {

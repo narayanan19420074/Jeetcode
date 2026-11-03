@@ -5,19 +5,19 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { LIB_TRACKING, LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
 
 // Phone workspace in the Library look (same rules as the phone Dashboard and Problems pages):
-//   16px page gutter, Roboto, 0.03em tracking, cream surfaces (--lib-*), indigo accent
+//   16px page gutter, 0.03em tracking, cream surfaces (--lib-*), indigo accent
 //   44px back arrow, 40px round controls, 34px chips and tabs, 40px action buttons
 //   20px panels, 16px inner blocks, 8px difficulty tags, pills (999) for chips and buttons
 // Icons appear only where they carry meaning (back, menu, timer, AI assistant, solved, locked).
 
 const SHORT_DIFF = { Easy: 'Easy', Medium: 'Med.', Hard: 'Hard' };
 
-// Wraps the whole phone workspace: Roboto + library palette, and softer corners / dividers for the
+// Wraps the whole phone workspace: library palette and dividers for the
 // shared panels (Solutions, Discussion, Submissions, dialogs) so they sit on the cream surface.
 export function PhoneScope({ children }) {
   const pal = useLibraryPalette();
   const theme = useMemo(
-    () => (outer) => createTheme(outer, { shape: { borderRadius: 16 }, palette: { divider: pal.divider, action: { hover: pal.chip } } }),
+    () => (outer) => createTheme(outer, { palette: { divider: pal.divider, action: { hover: pal.chip } } }),
     [pal]
   );
   return (
