@@ -26,7 +26,7 @@ import {
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
 import { RARITY_COLOR, formatDate, goalMilestone, levelInfo } from './questUtils';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
 
 // Phone layout of Quests in the Library look (same as the phone Problems, Home and You pages): Roboto type, warm
 // surface, 16px page padding, 40px icon buttons, 18px section titles, cream panels, pill buttons and bottom sheets.
@@ -44,7 +44,7 @@ const ButterflyShowcase = lazy(() => import('./ButterflyShowcase'));
 
 const solidBtn = libSolidBtnSx;
 const tintBtn = libTintBtnSx;
-const smallBtn = { height: 36, px: 2, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, textTransform: 'none', flexShrink: 0 };
+const smallBtn = { height: 36, px: 2, borderRadius: RADII_PX.pill, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, textTransform: 'none', flexShrink: 0 };
 
 function SectionTitle({ children, id, aside }) {
   return (
@@ -62,7 +62,7 @@ function Meter({ pct, color = ACCENT, height = 8 }) {
     <LinearProgress
       variant="determinate"
       value={Math.max(0, Math.min(100, pct))}
-      sx={{ height, borderRadius: 999, bgcolor: tint(color, 18), '& .MuiLinearProgress-bar': { borderRadius: 999, bgcolor: color } }}
+      sx={{ height, borderRadius: RADII_PX.pill, bgcolor: tint(color, 18), '& .MuiLinearProgress-bar': { borderRadius: RADII_PX.pill, bgcolor: color } }}
     />
   );
 }
@@ -80,7 +80,7 @@ function SheetHead({ title, onClose, label }) {
   );
 }
 
-const sheetPaper = (pal) => ({ sx: { borderRadius: '26px 26px 0 0', maxHeight: '90dvh', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text } });
+const sheetPaper = (pal) => ({ sx: { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, maxHeight: '90dvh', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text } });
 const sheetBody = { px: 2, pt: 1, pb: 'calc(16px + env(safe-area-inset-bottom))' };
 
 // ---------------------------------------------------------------- sheets
@@ -94,10 +94,10 @@ function MissionsSheet({ open, onClose, quests, busy, onClaim, onSolve }) {
         <SheetHead title="Missions" onClose={onClose} label="Close missions" />
         <Box sx={{ mt: 1, borderTop: '1px solid', borderColor: 'var(--lib-divider)' }}>
           {sorted.map((q) => (
-            <Stack key={q.id} direction="row" sx={{ alignItems: 'center', gap: '12px', py: 1.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' }, opacity: q.claimed ? 0.55 : 1 }}>
+            <Stack key={q.id} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' }, opacity: q.claimed ? 0.55 : 1 }}>
               <Box sx={{ flex: 1, minWidth: 0 }}>
                 <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{q.title}</Typography>
-                <Box sx={{ my: 0.75 }}><Meter pct={(q.value / q.target) * 100} color={q.claimable || q.claimed ? GREEN : ACCENT} height={6} /></Box>
+                <Box sx={{ my: 1 }}><Meter pct={(q.value / q.target) * 100} color={q.claimable || q.claimed ? GREEN : ACCENT} height={6} /></Box>
                 <Typography color="var(--lib-muted)" noWrap sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }}>{q.value}/{q.target} · +{q.xp} XP · {q.reward.label}</Typography>
               </Box>
               {q.claimed ? (
@@ -133,7 +133,7 @@ function WalletSheet({ topUp, onClose, coins, diamonds, rate, busy, onConvert })
         <SheetHead title="Diamonds" onClose={onClose} label="Close diamonds" />
         <Stack direction="row" sx={{ mt: 1, gap: 1 }}>
           {[[<MonetizationOnRoundedIcon key="c" sx={{ color: COIN }} />, coins, 'coins', COIN], [<DiamondRoundedIcon key="d" sx={{ color: DIAMOND }} />, diamonds, 'diamonds', DIAMOND]].map(([icon, v, label, c]) => (
-            <Stack key={label} direction="row" sx={{ flex: 1, alignItems: 'center', gap: 1, p: 1.25, borderRadius: '16px', bgcolor: tint(c, 12) }}>
+            <Stack key={label} direction="row" sx={{ flex: 1, alignItems: 'center', gap: 1, p: 1.5, borderRadius: RADII_PX.card, bgcolor: tint(c, 12) }}>
               {icon}
               <Box>
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.1, fontVariantNumeric: 'tabular-nums' }}>{v.toLocaleString('en-IN')}</Typography>
@@ -154,15 +154,15 @@ function WalletSheet({ topUp, onClose, coins, diamonds, rate, busy, onConvert })
 
         <Stack direction="row" sx={{ gap: 1, justifyContent: 'center' }}>
           {[1, 5, 10].map((v) => (
-            <ButtonBase key={v} disabled={v > max} onClick={() => setN(v)} sx={{ height: 36, px: 2, borderRadius: 999, fontWeight: FONT_WEIGHTS.bold, bgcolor: n === v ? ACCENT : 'var(--lib-chip)', color: n === v ? COLOR_PALETTE.white : 'var(--lib-chip-text)', '&.Mui-disabled': { opacity: 0.45 } }}>{v}</ButtonBase>
+            <ButtonBase key={v} disabled={v > max} onClick={() => setN(v)} sx={{ height: 36, px: 2, borderRadius: RADII_PX.pill, fontWeight: FONT_WEIGHTS.bold, bgcolor: n === v ? ACCENT : 'var(--lib-chip)', color: n === v ? COLOR_PALETTE.white : 'var(--lib-chip-text)', '&.Mui-disabled': { opacity: 0.45 } }}>{v}</ButtonBase>
           ))}
-          <ButtonBase disabled={max < 1} onClick={() => setN(Math.max(max, 1))} sx={{ height: 36, px: 2, borderRadius: 999, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', '&.Mui-disabled': { opacity: 0.45 } }}>Max</ButtonBase>
+          <ButtonBase disabled={max < 1} onClick={() => setN(Math.max(max, 1))} sx={{ height: 36, px: 2, borderRadius: RADII_PX.pill, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', '&.Mui-disabled': { opacity: 0.45 } }}>Max</ButtonBase>
         </Stack>
 
         <Typography sx={{ mt: 2, textAlign: 'center', fontWeight: FONT_WEIGHTS.bold, color: can ? 'text.primary' : 'error.main' }}>
           {can ? `${(n * rate).toLocaleString('en-IN')} coins = ${n} diamond${n > 1 ? 's' : ''}` : `You need ${rate} coins for 1 diamond`}
         </Typography>
-        <Typography color="var(--lib-muted)" sx={{ textAlign: 'center', fontSize: FONT_SIZES.body, mt: 0.25 }}>{rate} coins = 1 diamond</Typography>
+        <Typography color="var(--lib-muted)" sx={{ textAlign: 'center', fontSize: FONT_SIZES.body, mt: 0.5 }}>{rate} coins = 1 diamond</Typography>
 
         <Button fullWidth disableElevation variant="contained" disabled={!can || busy} onClick={() => onConvert(n)} sx={{ ...solidBtn, mt: 2.5 }}>
           {busy ? 'Converting…' : 'Convert'}
@@ -185,7 +185,7 @@ function RewardSheet({ reward, onClose }) {
         <LibraryFont>
         <Box sx={{ ...sheetBody, textAlign: 'center' }}>
           <SheetHead title="Reward" onClose={onClose} label="Close reward" />
-          <Box sx={{ mx: 'auto', mt: 1.5, width: 88, height: 88, borderRadius: '28px', display: 'grid', placeItems: 'center', bgcolor: tint(pro ? COIN : DIAMOND, 16) }}>
+          <Box sx={{ mx: 'auto', mt: 1.5, width: 88, height: 88, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', bgcolor: tint(pro ? COIN : DIAMOND, 16) }}>
             <DiamondRoundedIcon sx={{ fontSize: FONT_SIZES.jumbo, color: pro ? COIN : DIAMOND }} />
           </Box>
           <Typography component="p" sx={{ mt: 2, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, lineHeight: '30px' }}>{reward.reward.label}</Typography>
@@ -227,7 +227,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
         <IconButton onClick={() => setMissions(true)} aria-label={ready ? `Missions, ${ready} ready to claim` : 'Missions'} sx={{ ...libIconBtnSx, position: 'relative' }}>
           <AssignmentRoundedIcon />
           {ready > 0 && (
-            <Box component="span" sx={{ position: 'absolute', top: -2, right: -2, minWidth: 18, height: 18, px: 0.5, display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.white, bgcolor: ORANGE, borderRadius: 9 }}>{ready}</Box>
+            <Box component="span" sx={{ position: 'absolute', top: -2, right: -2, minWidth: 18, height: 18, px: 0.5, display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.white, bgcolor: ORANGE, borderRadius: RADII_PX.pill }}>{ready}</Box>
           )}
         </IconButton>
         <IconButton onClick={() => (isAuthenticated ? onTopUp(1) : onLogin())} aria-label="Diamonds and top up" sx={libIconBtnSx}>
@@ -239,15 +239,15 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
       <Box
         component="section"
         aria-label="Your level"
-        sx={{ mt: 2, borderRadius: '20px', p: 2, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
+        sx={{ mt: 2, borderRadius: RADII_PX.card, p: 2, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
       >
         <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
-          <Box sx={{ width: 48, height: 48, borderRadius: '16px', display: 'grid', placeItems: 'center', flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.white, bgcolor: ACCENT }}>{info.level}</Box>
+          <Box sx={{ width: 48, height: 48, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.white, bgcolor: ACCENT }}>{info.level}</Box>
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{info.rank}</Typography>
             <Typography color="var(--lib-muted)" noWrap sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }}>{info.max ? 'Top level' : `${info.toNext} XP to level ${info.level + 1}`}</Typography>
           </Box>
-          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.25, color: ORANGE }} aria-label={`${state.streakDays} day streak`}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, color: ORANGE }} aria-label={`${state.streakDays} day streak`}>
             <LocalFireDepartmentRoundedIcon />
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>{state.streakDays}</Typography>
           </Stack>
@@ -255,11 +255,11 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
         <Box sx={{ mt: 1.5 }}><Meter pct={info.pct} /></Box>
 
         {!isAuthenticated ? (
-          <Button fullWidth disableElevation variant="contained" onClick={onLogin} sx={{ ...solidBtn, mt: 1.75 }}>Log in to start</Button>
+          <Button fullWidth disableElevation variant="contained" onClick={onLogin} sx={{ ...solidBtn, mt: 2 }}>Log in to start</Button>
         ) : state.checkedInToday ? (
-          <Button fullWidth disabled disableElevation variant="contained" startIcon={<CheckRoundedIcon />} sx={{ ...tintBtn, mt: 1.75, '&.Mui-disabled': { color: GREEN, bgcolor: tint(GREEN, 16) } }}>Checked in today</Button>
+          <Button fullWidth disabled disableElevation variant="contained" startIcon={<CheckRoundedIcon />} sx={{ ...tintBtn, mt: 2, '&.Mui-disabled': { color: GREEN, bgcolor: tint(GREEN, 16) } }}>Checked in today</Button>
         ) : (
-          <Button fullWidth disableElevation variant="contained" startIcon={<PlayArrowRoundedIcon />} onClick={() => onSolve(null)} sx={{ ...solidBtn, mt: 1.75 }}>Solve today&apos;s problem</Button>
+          <Button fullWidth disableElevation variant="contained" startIcon={<PlayArrowRoundedIcon />} onClick={() => onSolve(null)} sx={{ ...solidBtn, mt: 2 }}>Solve today&apos;s problem</Button>
         )}
       </Box>
 
@@ -274,8 +274,8 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
             const pro = m.reward.type === 'pro';
             const c = pro ? COIN : DIAMOND;
             return (
-              <Stack key={m.id} direction="row" sx={{ alignItems: 'center', gap: '12px', py: 1.25, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' }, opacity: m.claimed ? 0.55 : 1 }}>
-                <Box sx={{ width: 48, height: 48, borderRadius: '14px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: tint(c, 16) }}>
+              <Stack key={m.id} direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' }, opacity: m.claimed ? 0.55 : 1 }}>
+                <Box sx={{ width: 48, height: 48, borderRadius: RADII_PX.card, flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: tint(c, 16) }}>
                   <DiamondRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: c }} />
                 </Box>
                 <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -300,10 +300,10 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
         <SectionTitle id="quest-butterfly" aside={<Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body }}>Level {butterfly.level} / {butterfly.max}</Typography>}>
           My butterfly
         </SectionTitle>
-        <Box sx={{ borderRadius: '20px', p: 2, border: `1px solid ${tint(rarity, 30)}`, background: `linear-gradient(160deg, ${tint(rarity, dark ? 18 : 12)} 0%, transparent 70%)` }}>
+        <Box sx={{ borderRadius: RADII_PX.card, p: 2, border: `1px solid ${tint(rarity, 30)}`, background: `linear-gradient(160deg, ${tint(rarity, dark ? 18 : 12)} 0%, transparent 70%)` }}>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
             <Typography component="h3" noWrap sx={{ flex: 1, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: '28px' }}>{butterfly.current.name}</Typography>
-            <Typography component="span" sx={{ px: 1, py: 0.4, borderRadius: '10px', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.2, color: dark ? rarity : `color-mix(in srgb, ${rarity} 70%, ${COLOR_PALETTE.black})`, bgcolor: tint(rarity, 18) }}>{butterfly.current.rarity}</Typography>
+            <Typography component="span" sx={{ px: 1, py: 0.5, borderRadius: RADII_PX.control, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.2, color: dark ? rarity : `color-mix(in srgb, ${rarity} 70%, ${COLOR_PALETTE.black})`, bgcolor: tint(rarity, 18) }}>{butterfly.current.rarity}</Typography>
           </Stack>
           <Box sx={{ position: 'relative', height: 220, my: 0.5 }}>
             {flyFailed ? null : (
@@ -314,7 +314,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
           </Box>
           <Stack direction="row" sx={{ gap: 0.5, mb: 1.5 }} aria-hidden>
             {butterfly.tiers.map((id, i) => (
-              <Box key={id} sx={{ flex: 1, height: 6, borderRadius: 999, bgcolor: i < butterfly.level ? ACCENT : tint(ACCENT, 18) }} />
+              <Box key={id} sx={{ flex: 1, height: 6, borderRadius: RADII_PX.pill, bgcolor: i < butterfly.level ? ACCENT : tint(ACCENT, 18) }} />
             ))}
           </Stack>
           {butterfly.next ? (
@@ -326,7 +326,7 @@ export default function MobileQuests({ state, isAuthenticated, coins, diamonds, 
                 disabled={busy === 'upgrade'}
                 onClick={onUpgrade}
                 startIcon={<ArrowUpwardRoundedIcon />}
-                endIcon={<Stack direction="row" component="span" sx={{ alignItems: 'center', gap: 0.25, px: 1, py: 0.25, borderRadius: 999, bgcolor: withAlpha(COLOR_PALETTE.black, 0.25) }}><DiamondRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />{butterfly.next.cost}</Stack>}
+                endIcon={<Stack direction="row" component="span" sx={{ alignItems: 'center', gap: 0.5, px: 1, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.black, 0.25) }}><DiamondRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />{butterfly.next.cost}</Stack>}
                 sx={short > 0 ? { ...tintBtn } : solidBtn}
               >
                 {busy === 'upgrade' ? 'Upgrading…' : `Upgrade to ${butterfly.next.name}`}

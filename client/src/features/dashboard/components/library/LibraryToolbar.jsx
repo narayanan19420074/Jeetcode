@@ -6,7 +6,7 @@ import FilterControl from './FilterControl';
 import SolvedMeter from './SolvedMeter';
 import SortControl from './SortControl';
 import useLibraryStyles from './libraryStyles';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../../app/design/designTokens';
 
 const ZERO_COUNTS = { Easy: 0, Medium: 0, Hard: 0 };
 const sumCounts = (counts) => counts.Easy + counts.Medium + counts.Hard;
@@ -17,7 +17,7 @@ function SlashHint() {
     <InputAdornment position="end">
       <Box
         component="kbd"
-        sx={(t) => ({ display: { xs: 'none', md: 'block' }, px: 0.75, borderRadius: '6px', border: `1px solid ${t.palette.divider}`, fontFamily: 'inherit', fontSize: FONT_SIZES.micro, color: 'text.secondary' })}
+        sx={(t) => ({ display: { xs: 'none', md: 'block' }, px: 1, borderRadius: RADII_PX.control, border: `1px solid ${t.palette.divider}`, fontFamily: 'inherit', fontSize: FONT_SIZES.micro, color: 'text.secondary' })}
       >
         /
       </Box>
@@ -77,7 +77,7 @@ function ActiveFilters({ lib }) {
   const { query, patch, setSearchText, toggleCompany, clearAll } = lib;
   const statusLabel = query.status === 'solved' ? 'Solved' : 'Unsolved';
   return (
-    <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, alignItems: 'center' }}>
+    <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
       {query.search && <Chip size="small" label={`Search: ${query.search}`} onDelete={() => setSearchText('')} />}
       {query.difficulty !== 'All' && <Chip size="small" label={query.difficulty} onDelete={() => patch({ difficulty: 'All' })} sx={{ color: DIFF_COLOR[query.difficulty] }} />}
       {query.status !== 'All' && <Chip size="small" label={statusLabel} onDelete={() => patch({ status: 'All' })} />}
@@ -94,7 +94,7 @@ function ActiveFilters({ lib }) {
 // Search and filters stay pinned while the problem list scrolls underneath.
 export default function LibraryToolbar({ lib, progress, isAuthenticated }) {
   return (
-    <Box sx={(t) => ({ position: { md: 'sticky' }, top: 0, zIndex: 3, py: 0.75, mx: -0.5, px: 0.5, display: 'grid', gap: 1, bgcolor: { md: t.palette.background.default } })}>
+    <Box sx={(t) => ({ position: { md: 'sticky' }, top: 0, zIndex: 3, py: 1, mx: -0.5, px: 0.5, display: 'grid', gap: 1, bgcolor: { md: t.palette.background.default } })}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         <SearchField lib={lib} />
         <SortControl sort={lib.query.sort} disabled={lib.sortDisabled} onChange={(sort) => lib.patch({ sort })} />

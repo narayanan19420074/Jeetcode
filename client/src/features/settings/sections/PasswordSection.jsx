@@ -5,7 +5,7 @@ import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { Card, CardBody, PageTitle, describeError } from '../components/SettingsUi';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 function strength(pw) {
   let s = 0;
@@ -96,7 +96,7 @@ export default function PasswordSection() {
                   <TextField label="New password" type={show ? 'text' : 'password'} value={next} onChange={(e) => setNext(e.target.value)} autoComplete="new-password" fullWidth helperText="At least 8 characters." slotProps={hasPassword ? undefined : adornment} />
                   {next && (
                     <Box sx={{ mt: 1 }}>
-                      <LinearProgress variant="determinate" value={(st.score / 5) * 100} color={st.color} sx={{ height: 6, borderRadius: 3 }} />
+                      <LinearProgress variant="determinate" value={(st.score / 5) * 100} color={st.color} sx={{ height: 6, borderRadius: RADII_PX.pill }} />
                       <Typography variant="caption" color="text.secondary">
                         Strength: <b>{st.label}</b>
                       </Typography>

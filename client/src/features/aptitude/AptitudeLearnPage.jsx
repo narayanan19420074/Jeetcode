@@ -32,7 +32,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import MicroCheck from '../learn/components/MicroCheck';
 import { getLessonsForPattern } from '../learn/content';
 import { LESSON_WIDGETS } from './components/LessonWidgets';
-import { FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono };
 const CONTENT_MAX = 760;
@@ -55,7 +55,7 @@ function WorkedExample({ example, index }) {
   const done = shown >= total;
 
   return (
-    <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 3 }}>
+    <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: RADII_PX.card }}>
       <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', mb: 1.5 }}>
         <Box sx={{ width: 24, height: 24, borderRadius: '50%', bgcolor: 'primary.main', color: 'primary.contrastText', display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
           {index + 1}
@@ -70,7 +70,7 @@ function WorkedExample({ example, index }) {
         {example.steps.slice(0, shown).map((s, i) => (
           <motion.div key={i} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
             <Stack direction="row" spacing={1.25}>
-              <Typography variant="caption" sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', mt: 0.35, minWidth: 44 }}>
+              <Typography variant="caption" sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', mt: 0.5, minWidth: 44 }}>
                 Step {i + 1}
               </Typography>
               <Typography variant="body2" sx={{ lineHeight: 1.7 }}>
@@ -83,7 +83,7 @@ function WorkedExample({ example, index }) {
 
       {done ? (
         <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }}>
-          <Box sx={{ mt: 2, p: 1.5, borderRadius: 2, bgcolor: (t) => alpha(t.palette.success.main, 0.1), border: '1px solid', borderColor: 'success.main' }}>
+          <Box sx={{ mt: 2, p: 1.5, borderRadius: RADII_PX.card, bgcolor: (t) => alpha(t.palette.success.main, 0.1), border: '1px solid', borderColor: 'success.main' }}>
             <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'success.main' }}>
               Answer: {example.answer}
             </Typography>
@@ -105,7 +105,7 @@ function WorkedExample({ example, index }) {
 
 function LessonSidebar({ lessons, activeId, completed, onSelect }) {
   return (
-    <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden', position: 'sticky', top: 88 }}>
+    <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, overflow: 'hidden', position: 'sticky', top: 88 }}>
       <Typography variant="overline" sx={{ display: 'block', px: 2, pt: 2, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', letterSpacing: '0.08em', fontSize: FONT_SIZES.micro }}>
         Lessons
       </Typography>
@@ -131,7 +131,7 @@ function LessonSidebar({ lessons, activeId, completed, onSelect }) {
                 {done ? (
                   <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'success.main' }} />
                 ) : (
-                  <CircleIcon sx={{ fontSize: 8, mx: '4px', color: active ? 'primary.main' : 'text.disabled' }} />
+                  <CircleIcon sx={{ fontSize: 8, mx: 0.5, color: active ? 'primary.main' : 'text.disabled' }} />
                 )}
                 <Box sx={{ minWidth: 0 }}>
                   <Typography variant="body2" sx={{ fontSize: FONT_SIZES.body, fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, lineHeight: 1.3, color: active ? 'text.primary' : 'text.secondary' }}>
@@ -241,7 +241,7 @@ export default function AptitudeLearnPage() {
     <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
       {/* Top bar */}
       <Box sx={{ position: 'sticky', top: 0, zIndex: (t) => t.zIndex.appBar - 1, bgcolor: 'background.paper', borderBottom: '1px solid', borderColor: 'divider' }}>
-        <Stack direction="row" spacing={2} sx={{ alignItems: 'center', maxWidth: 1280, mx: 'auto', px: 2, py: 1.25 }}>
+        <Stack direction="row" spacing={2} sx={{ alignItems: 'center', maxWidth: 1280, mx: 'auto', px: 2, py: 1.5 }}>
           <IconButton size="small" onClick={() => navigate(`/aptitude/${slug}`)} aria-label="Back to pattern">
             <ArrowBackRoundedIcon fontSize="small" />
           </IconButton>
@@ -255,7 +255,7 @@ export default function AptitudeLearnPage() {
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', minWidth: { xs: 110, sm: 220 } }}>
-            <LinearProgress variant="determinate" value={progressPct} sx={{ flexGrow: 1, height: 6, borderRadius: 3 }} />
+            <LinearProgress variant="determinate" value={progressPct} sx={{ flexGrow: 1, height: 6, borderRadius: RADII_PX.pill }} />
             <Typography variant="caption" sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary' }}>
               {completed.size}/{lessons.length}
             </Typography>
@@ -277,7 +277,7 @@ export default function AptitudeLearnPage() {
               <Box
                 key={l.id}
                 onClick={() => selectLesson(l.id)}
-                sx={{ flex: 1, height: 6, borderRadius: 3, cursor: 'pointer', bgcolor: i === activeIndex ? 'primary.main' : completed.has(l.id) ? 'success.main' : 'action.disabledBackground' }}
+                sx={{ flex: 1, height: 6, borderRadius: RADII_PX.pill, cursor: 'pointer', bgcolor: i === activeIndex ? 'primary.main' : completed.has(l.id) ? 'success.main' : 'action.disabledBackground' }}
               />
             ))}
           </Stack>
@@ -293,7 +293,7 @@ export default function AptitudeLearnPage() {
           </Typography>
 
           <Stack spacing={3}>
-            <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 3, borderLeft: '4px solid', borderLeftColor: 'primary.main' }}>
+            <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: RADII_PX.card, borderLeft: '4px solid', borderLeftColor: 'primary.main' }}>
               <Eyebrow icon={<LightbulbRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'primary.main' }} />}>THE KEY IDEA</Eyebrow>
               <Stack spacing={1.25}>
                 {lesson.keyIdea.map((p) => (
@@ -308,7 +308,7 @@ export default function AptitudeLearnPage() {
               <Eyebrow icon={<BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'primary.main' }} />}>FORMULAS TO REMEMBER</Eyebrow>
               <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' }, gap: 1.5 }}>
                 {lesson.formulas.map((f) => (
-                  <Paper key={f.label} variant="outlined" sx={{ p: 1.75, borderRadius: 2.5, bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}>
+                  <Paper key={f.label} variant="outlined" sx={{ p: 2, borderRadius: RADII_PX.card, bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}>
                     <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
                       {f.label}
                     </Typography>
@@ -319,7 +319,7 @@ export default function AptitudeLearnPage() {
             </Box>
 
             {lesson.table && (
-              <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
+              <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, overflow: 'hidden' }}>
                 <Table size="small">
                   <TableHead>
                     <TableRow>
@@ -347,7 +347,7 @@ export default function AptitudeLearnPage() {
 
             {Widget && <Widget />}
 
-            <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 3, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}>
+            <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: RADII_PX.card, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}>
               <Eyebrow color="warning.main" icon={<BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />}>
                 EXAM SHORTCUTS
               </Eyebrow>
@@ -372,7 +372,7 @@ export default function AptitudeLearnPage() {
               </Eyebrow>
               <Stack spacing={1.25}>
                 {lesson.traps.map((t) => (
-                  <Paper key={t.trap} variant="outlined" sx={{ p: 2, borderRadius: 2.5, borderColor: (th) => alpha(th.palette.error.main, 0.4) }}>
+                  <Paper key={t.trap} variant="outlined" sx={{ p: 2, borderRadius: RADII_PX.card, borderColor: (th) => alpha(th.palette.error.main, 0.4) }}>
                     <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'error.main' }}>
                       ✗ {t.trap}
                     </Typography>

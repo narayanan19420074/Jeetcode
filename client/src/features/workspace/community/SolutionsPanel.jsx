@@ -35,7 +35,7 @@ import {
   clamp,
 } from './CommunityBits';
 import CommentSection from './CommentSection';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const SORTS = [
   { value: 'top', label: 'Most votes', icon: <TrendingUpRoundedIcon /> },
@@ -76,7 +76,7 @@ function SolutionPost({ s, onOpen, onSend, sending }) {
   return (
     <Box component="article" sx={{
         p: 2,
-        borderRadius: '20px',
+        borderRadius: RADII_PX.card,
         border: '1px solid',
         borderColor: 'divider',
         bgcolor: (t) => alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.04 : 0.02),
@@ -88,7 +88,7 @@ function SolutionPost({ s, onOpen, onSend, sending }) {
         tabIndex={0}
         onClick={onOpen}
         onKeyDown={(e) => e.key === 'Enter' && onOpen()}
-        sx={{ mt: 1.5, cursor: 'pointer', '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', borderRadius: 2 } }}
+        sx={{ mt: 1.5, cursor: 'pointer', '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', borderRadius: RADII_PX.card } }}
       >
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.35 }}>{s.title}</Typography>
         {s.excerpt && (
@@ -103,7 +103,7 @@ function SolutionPost({ s, onOpen, onSend, sending }) {
         <Metrics s={s} />
       </Box>
 
-      <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5, pt: 1.25, borderTop: '1px solid', borderColor: 'divider' }}>
+      <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
         <VoteBar targetType="solution" targetId={s._id} score={s.score} myVote={s.myVote} allowDown={false} isMine={s.isMine} />
         <ActionButton icon={<ChatBubbleOutlineRoundedIcon />} count={s.commentCount} label="Open comments" onClick={onOpen} />
         <Box sx={{ flex: 1 }} />

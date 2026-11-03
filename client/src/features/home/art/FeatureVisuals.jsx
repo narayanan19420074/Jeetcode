@@ -10,10 +10,10 @@ import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import CompanyAvatar from '../../../components/CompanyAvatar';
 import { MONO_FONT, blink, pulseDot, trainRun } from '../anim';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../../app/design/designTokens';
 
 const panel = {
-  borderRadius: '14px',
+  borderRadius: RADII_PX.card,
   border: '1px solid',
   borderColor: 'divider',
   bgcolor: 'background.paper',
@@ -24,7 +24,7 @@ const mono = { fontFamily: MONO_FONT, fontVariantNumeric: 'tabular-nums' };
 
 function Segmented({ items, value, onChange, label }) {
   return (
-    <Stack direction="row" role="tablist" aria-label={label} spacing={0.5} sx={{ p: 0.5, borderRadius: '10px', bgcolor: (t) => alpha(t.palette.text.secondary, 0.1), width: 'fit-content', maxWidth: '100%' }}>
+    <Stack direction="row" role="tablist" aria-label={label} spacing={0.5} sx={{ p: 0.5, borderRadius: RADII_PX.control, bgcolor: (t) => alpha(t.palette.text.secondary, 0.1), width: 'fit-content', maxWidth: '100%' }}>
       {items.map((it) => {
         const on = value === it;
         return (
@@ -34,9 +34,9 @@ function Segmented({ items, value, onChange, label }) {
             aria-selected={on}
             onClick={() => onChange(it)}
             sx={{
-              px: 1.6,
-              py: 0.6,
-              borderRadius: '7px',
+              px: 1.5,
+              py: 0.5,
+              borderRadius: RADII_PX.control,
               fontSize: FONT_SIZES.body,
               fontWeight: FONT_WEIGHTS.bold,
               color: on ? 'text.primary' : 'text.secondary',
@@ -110,7 +110,7 @@ export function ArenaVisual() {
         <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', color: 'success.main', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
           <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} /> <span>Accepted on every test case</span>
         </Stack>
-        <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', px: 1.25, py: 0.5, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12), ml: { sm: 'auto !important' } }}>
+        <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold, color: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.12), ml: { sm: 'auto !important' } }}>
           <LightbulbRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg }} /> <span>Stuck? Ask for a hint, not the answer</span>
         </Stack>
       </Stack>
@@ -135,10 +135,10 @@ function TrainLesson() {
   const ink = t.palette.text.secondary;
   return (
     <Stack spacing={1.5}>
-      <Box sx={{ position: 'relative', height: 92, borderRadius: '10px', overflow: 'hidden', bgcolor: alpha(t.palette.primary.main, 0.08) }}>
+      <Box sx={{ position: 'relative', height: 92, borderRadius: RADII_PX.control, overflow: 'hidden', bgcolor: alpha(t.palette.primary.main, 0.08) }}>
         <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 20, height: 3, bgcolor: alpha(ink, 0.5) }} />
         <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, height: 6, backgroundImage: `repeating-linear-gradient(90deg, ${alpha(ink, 0.5)} 0 2px, transparent 2px 14px)` }} />
-        <Box sx={{ position: 'absolute', left: '28%', bottom: 23, width: 5, height: 40, borderRadius: 2, bgcolor: 'warning.main' }} />
+        <Box sx={{ position: 'absolute', left: '28%', bottom: 23, width: 5, height: 40, borderRadius: RADII_PX.pill, bgcolor: 'warning.main' }} />
         <Box
           sx={{
             position: 'absolute',
@@ -150,9 +150,9 @@ function TrainLesson() {
           }}
         >
           {[0, 1, 2].map((i) => (
-            <Box key={i} sx={{ width: 44, height: 28, mr: '3px', borderRadius: i === 0 ? '4px 12px 3px 3px' : '4px', bgcolor: 'primary.main', position: 'relative' }}>
-              <Box sx={{ position: 'absolute', top: 6, left: 7, width: 10, height: 8, borderRadius: 2, bgcolor: alpha(COLOR_PALETTE.white, 0.85) }} />
-              <Box sx={{ position: 'absolute', top: 6, right: 7, width: 10, height: 8, borderRadius: 2, bgcolor: alpha(COLOR_PALETTE.white, 0.85) }} />
+            <Box key={i} sx={{ width: 44, height: 28, mr: 0.5, borderRadius: i === 0 ? `${RADII.badge}px ${RADII.card}px ${RADII.badge}px ${RADII.badge}px` : RADII_PX.badge, bgcolor: 'primary.main', position: 'relative' }}>
+              <Box sx={{ position: 'absolute', top: 6, left: 7, width: 10, height: 8, borderRadius: RADII_PX.pill, bgcolor: alpha(COLOR_PALETTE.white, 0.85) }} />
+              <Box sx={{ position: 'absolute', top: 6, right: 7, width: 10, height: 8, borderRadius: RADII_PX.pill, bgcolor: alpha(COLOR_PALETTE.white, 0.85) }} />
             </Box>
           ))}
         </Box>
@@ -179,7 +179,7 @@ export function LabVisual() {
           {mode === 'Practice' && (
             <Stack spacing={0.9}>
               {PRACTICE.map(([name, diff, done]) => (
-                <Stack key={name} direction="row" spacing={1.25} sx={{ alignItems: 'center', py: 0.7, px: 1.25, borderRadius: '10px', border: '1px solid', borderColor: 'divider' }}>
+                <Stack key={name} direction="row" spacing={1.25} sx={{ alignItems: 'center', py: 0.5, px: 1.5, borderRadius: RADII_PX.control, border: '1px solid', borderColor: 'divider' }}>
                   <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: done ? 'success.main' : alpha(t.palette.text.secondary, 0.35) }} />
                   <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, flex: 1 }}>{name}</Typography>
                   <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: `${DIFF[diff]}.main` }}>{diff}</Typography>
@@ -193,7 +193,7 @@ export function LabVisual() {
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Question palette</Typography>
                 <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, color: 'text.secondary' }}>18:42 left</Typography>
               </Stack>
-              <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(10, minmax(0, 1fr))', gap: 0.6 }}>
+              <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(10, minmax(0, 1fr))', gap: 0.5 }}>
                 {PALETTE.map((s, i) => (
                   <Box
                     key={i}
@@ -201,7 +201,7 @@ export function LabVisual() {
                       aspectRatio: '1',
                       display: 'grid',
                       placeItems: 'center',
-                      borderRadius: '6px',
+                      borderRadius: RADII_PX.control,
                       fontSize: FONT_SIZES.micro,
                       fontWeight: FONT_WEIGHTS.bold,
                       border: '1px solid',
@@ -272,18 +272,18 @@ export function CompanyVisual() {
       <Stack spacing={1.1} sx={{ p: 2 }}>
         {SECTIONS.map(([name, pct], i) => (
           <Box key={name}>
-            <Stack direction="row" sx={{ justifyContent: 'space-between', mb: 0.4 }}>
+            <Stack direction="row" sx={{ justifyContent: 'space-between', mb: 0.5 }}>
               <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold }}>{name}</Typography>
               <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary', ...mono }}>{pct}%</Typography>
             </Stack>
-            <Box sx={{ height: 6, borderRadius: 3, bgcolor: alpha(t.palette.text.secondary, 0.15), overflow: 'hidden' }}>
-              <Box component={motion.div} initial={{ width: 0 }} animate={{ width: inView ? `${pct}%` : 0 }} transition={{ duration: 0.9, delay: 0.1 * i, ease: 'easeOut' }} sx={{ height: '100%', borderRadius: 3, bgcolor: pct < 40 ? 'warning.main' : 'primary.main' }} />
+            <Box sx={{ height: 6, borderRadius: RADII_PX.pill, bgcolor: alpha(t.palette.text.secondary, 0.15), overflow: 'hidden' }}>
+              <Box component={motion.div} initial={{ width: 0 }} animate={{ width: inView ? `${pct}%` : 0 }} transition={{ duration: 0.9, delay: 0.1 * i, ease: 'easeOut' }} sx={{ height: '100%', borderRadius: RADII_PX.card, bgcolor: pct < 40 ? 'warning.main' : 'primary.main' }} />
             </Box>
           </Box>
         ))}
       </Stack>
       <Box sx={{ p: 2, borderTop: '1px solid', borderColor: 'divider', bgcolor: alpha(t.palette.text.secondary, 0.04) }}>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1.1, fontWeight: FONT_WEIGHTS.semibold }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1, fontWeight: FONT_WEIGHTS.semibold }}>
           Coding problems tagged by company
         </Typography>
         <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 1 }}>
@@ -310,7 +310,7 @@ const ROOM_CHAT = [
 
 function Tile({ name, color, speaking }) {
   return (
-    <Box sx={{ position: 'relative', aspectRatio: '4 / 3', borderRadius: '10px', display: 'grid', placeItems: 'center', background: `linear-gradient(145deg, ${alpha(color, 0.32)}, ${alpha(color, 0.1)})`, outline: speaking ? `2px solid ${color}` : 'none' }}>
+    <Box sx={{ position: 'relative', aspectRatio: '4 / 3', borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', background: `linear-gradient(145deg, ${alpha(color, 0.32)}, ${alpha(color, 0.1)})`, outline: speaking ? `2px solid ${color}` : 'none' }}>
       <Box sx={{ width: 44, height: 44, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: color, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading }}>{name[0]}</Box>
       <Typography sx={{ position: 'absolute', left: 8, bottom: 6, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>{name}</Typography>
     </Box>
@@ -330,7 +330,7 @@ export function RoomVisual() {
         <ButtonBase
           onClick={() => setCopied(true)}
           aria-live="polite"
-          sx={{ ml: 'auto', gap: 0.6, px: 1.25, py: 0.55, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: copied ? 'success.main' : 'primary.main', bgcolor: alpha(copied ? t.palette.success.main : t.palette.primary.main, 0.12), '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main' } }}
+          sx={{ ml: 'auto', gap: 0.5, px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: copied ? 'success.main' : 'primary.main', bgcolor: alpha(copied ? t.palette.success.main : t.palette.primary.main, 0.12), '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main' } }}
         >
           {copied ? <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg }} /> : <LinkRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg }} />}
           {copied ? 'Invite link ready' : 'Copy invite link'}
@@ -342,17 +342,17 @@ export function RoomVisual() {
       </Box>
       <Stack spacing={0.8} sx={{ px: 1.5, pb: 1.5 }}>
         {ROOM_CHAT.map(([who, text]) => (
-          <Box key={text} sx={{ alignSelf: who === 'A' ? 'flex-start' : 'flex-end', maxWidth: '84%', px: 1.3, py: 0.6, borderRadius: who === 'A' ? '12px 12px 12px 3px' : '12px 12px 3px 12px', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.medium, bgcolor: alpha(who === 'A' ? me : other, 0.15) }}>
+          <Box key={text} sx={{ alignSelf: who === 'A' ? 'flex-start' : 'flex-end', maxWidth: '84%', px: 1.5, py: 0.5, borderRadius: who === 'A' ? `${RADII.card}px ${RADII.card}px ${RADII.card}px ${RADII.badge}px` : `${RADII.card}px ${RADII.card}px ${RADII.badge}px ${RADII.card}px`, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.medium, bgcolor: alpha(who === 'A' ? me : other, 0.15) }}>
             {text}
           </Box>
         ))}
-        <Stack direction="row" spacing={0.5} sx={{ alignSelf: 'flex-start', px: 1.3, py: 0.9, borderRadius: '12px', bgcolor: alpha(t.palette.text.secondary, 0.1) }} aria-hidden="true">
+        <Stack direction="row" spacing={0.5} sx={{ alignSelf: 'flex-start', px: 1.5, py: 1, borderRadius: RADII_PX.card, bgcolor: alpha(t.palette.text.secondary, 0.1) }} aria-hidden="true">
           {[0, 1, 2].map((i) => (
             <Box key={i} sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: 'text.secondary', animation: `${blink} 1.2s steps(1) ${i * 0.2}s infinite` }} />
           ))}
         </Stack>
       </Stack>
-      <Stack direction="row" spacing={1} sx={{ p: 1.25, borderTop: '1px solid', borderColor: 'divider', justifyContent: 'center' }}>
+      <Stack direction="row" spacing={1} sx={{ p: 1.5, borderTop: '1px solid', borderColor: 'divider', justifyContent: 'center' }}>
         {[MicRoundedIcon, VideocamRoundedIcon].map((I, i) => (
           <Box key={i} sx={{ width: 34, height: 34, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.text.secondary, 0.12) }}>
             <I sx={{ fontSize: FONT_SIZES.subheading, color: 'text.secondary' }} />
@@ -407,7 +407,7 @@ export function SortVisual() {
               sx={{
                 flex: 1,
                 height: `${v * 11}%`,
-                borderRadius: '5px 5px 2px 2px',
+                borderRadius: `${RADII.badge}px ${RADII.badge}px ${RADII.badge}px ${RADII.badge}px`,
                 transition: 'height .25s ease, background-color .2s',
                 bgcolor: sorted ? 'success.main' : active ? (f.swap ? 'warning.main' : 'primary.main') : alpha(t.palette.text.secondary, 0.3),
               }}
@@ -438,10 +438,10 @@ export function TierVisual() {
     <Stack spacing={0.7}>
       {TIERS.map(([name, min, color], i) => (
         <Stack key={name} direction="row" spacing={1.25} sx={{ alignItems: 'center' }}>
-          <Box sx={{ width: 10, height: 10, borderRadius: '3px', bgcolor: color, transform: 'rotate(45deg)', flexShrink: 0 }} />
+          <Box sx={{ width: 10, height: 10, borderRadius: RADII_PX.badge, bgcolor: color, transform: 'rotate(45deg)', flexShrink: 0 }} />
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, width: 66 }}>{name}</Typography>
-          <Box sx={{ flex: 1, height: 5, borderRadius: 3, bgcolor: alpha(color, 0.18), overflow: 'hidden' }}>
-            <Box component={motion.div} initial={{ width: 0 }} whileInView={{ width: `${(i + 1) * (100 / TIERS.length)}%` }} viewport={{ once: true }} transition={{ duration: 0.7, delay: i * 0.08 }} sx={{ height: '100%', bgcolor: color, borderRadius: 3 }} />
+          <Box sx={{ flex: 1, height: 5, borderRadius: RADII_PX.pill, bgcolor: alpha(color, 0.18), overflow: 'hidden' }}>
+            <Box component={motion.div} initial={{ width: 0 }} whileInView={{ width: `${(i + 1) * (100 / TIERS.length)}%` }} viewport={{ once: true }} transition={{ duration: 0.7, delay: i * 0.08 }} sx={{ height: '100%', bgcolor: color, borderRadius: RADII_PX.card }} />
           </Box>
           <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary', width: 40, textAlign: 'right', ...mono }}>{min}</Typography>
         </Stack>
@@ -467,9 +467,9 @@ export function HeatVisual() {
   const alphas = [0.1, 0.35, 0.65, 1];
   return (
     <Box>
-      <Box sx={{ display: 'grid', gridTemplateRows: 'repeat(7, 1fr)', gridAutoFlow: 'column', gap: '3px' }} aria-hidden="true">
+      <Box sx={{ display: 'grid', gridTemplateRows: 'repeat(7, 1fr)', gridAutoFlow: 'column', gap: 0.5 }} aria-hidden="true">
         {cells.map((lvl, i) => (
-          <Box key={i} sx={{ aspectRatio: '1', borderRadius: '3px', bgcolor: lvl === 0 ? alpha(t.palette.text.secondary, 0.14) : alpha(t.palette.success.main, alphas[lvl]) }} />
+          <Box key={i} sx={{ aspectRatio: '1', borderRadius: RADII_PX.badge, bgcolor: lvl === 0 ? alpha(t.palette.text.secondary, 0.14) : alpha(t.palette.success.main, alphas[lvl]) }} />
         ))}
       </Box>
       <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
@@ -495,13 +495,13 @@ export function PlanVisual() {
       {WEEK.map(([day, what, done]) => (
         <Stack key={day} direction="row" spacing={1.25} sx={{ alignItems: 'center' }}>
           <Typography sx={{ width: 32, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary' }}>{day}</Typography>
-          <Box sx={{ flex: 1, px: 1.25, py: 0.6, borderRadius: '8px', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.semibold, display: 'flex', alignItems: 'center', gap: 0.8, border: '1px solid', borderColor: done ? alpha(t.palette.success.main, 0.5) : 'divider', bgcolor: done ? alpha(t.palette.success.main, 0.08) : 'transparent' }}>
+          <Box sx={{ flex: 1, px: 1.5, py: 0.5, borderRadius: RADII_PX.control, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.semibold, display: 'flex', alignItems: 'center', gap: 1, border: '1px solid', borderColor: done ? alpha(t.palette.success.main, 0.5) : 'divider', bgcolor: done ? alpha(t.palette.success.main, 0.08) : 'transparent' }}>
             {done && <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'success.main' }} />}
             {what}
           </Box>
         </Stack>
       ))}
-      <Stack direction="row" spacing={-0.8} sx={{ pt: 0.5, pl: 5.4 }} aria-hidden="true">
+      <Stack direction="row" spacing={-0.8} sx={{ pt: 0.5, pl: 5.5 }} aria-hidden="true">
         {[['A', t.palette.primary.main], ['K', t.palette.warning.main]].map(([n, c]) => (
           <Box key={n} sx={{ width: 24, height: 24, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: c, color: COLOR_PALETTE.white, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: 'background.paper' }}>{n}</Box>
         ))}

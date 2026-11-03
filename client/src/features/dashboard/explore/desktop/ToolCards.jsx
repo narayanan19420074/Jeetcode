@@ -4,7 +4,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { tint } from '../../dashboardUtils';
 import { LIB_TRACKING, useLibraryPalette } from '../../components/libraryStyle';
 import { TOOLS } from '../common/exploreData';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../../app/design/designTokens';
 
 function ToolCard({ tool, palette }) {
   const { to, title, text, icon: Icon, color, bg } = tool;
@@ -12,7 +12,7 @@ function ToolCard({ tool, palette }) {
     <ButtonBase
       component={RouterLink}
       to={to}
-      sx={(theme) => ({ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, p: 1.75, minHeight: 96, borderRadius: '16px', border: `1.5px solid ${palette.border}`, textAlign: 'left', fontFamily: 'inherit', color: palette.text, bgcolor: theme.palette.mode === 'dark' ? tint(color, 16) : bg })}
+      sx={(theme) => ({ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, p: 2, minHeight: 96, borderRadius: RADII_PX.card, border: `1.5px solid ${palette.border}`, textAlign: 'left', fontFamily: 'inherit', color: palette.text, bgcolor: theme.palette.mode === 'dark' ? tint(color, 16) : bg })}
     >
       <Icon aria-hidden sx={{ fontSize: FONT_SIZES.hero, flex: 'none', color }} />
       <Box sx={{ flex: 1, minWidth: 0 }}>

@@ -22,7 +22,7 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const LIST_POLL_MS = 5000;
 const CHAT_POLL_MS = 4000;
@@ -159,7 +159,7 @@ export default function AdminSupportChatPage() {
 
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '340px 1fr' }, gap: 2 }}>
         {/* Conversation list */}
-        <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden', display: { xs: showThread ? 'none' : 'block', md: 'block' } }}>
+        <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, overflow: 'hidden', display: { xs: showThread ? 'none' : 'block', md: 'block' } }}>
           <Tabs
             value={status}
             onChange={(e, v) => {
@@ -220,7 +220,7 @@ export default function AdminSupportChatPage() {
         </Paper>
 
         {/* Conversation */}
-        <Paper variant="outlined" sx={{ borderRadius: 3, display: { xs: showThread ? 'flex' : 'none', md: 'flex' }, flexDirection: 'column', minHeight: 420, height: { md: 620 } }}>
+        <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, display: { xs: showThread ? 'flex' : 'none', md: 'flex' }, flexDirection: 'column', minHeight: 420, height: { md: 620 } }}>
           {!activeId ? (
             <Typography color="text.secondary" sx={{ p: 4 }}>
               Select a conversation to read and reply.
@@ -258,11 +258,11 @@ export default function AdminSupportChatPage() {
                     const agent = m.sender === 'agent';
                     return (
                       <Box key={m.id} sx={{ display: 'flex', justifyContent: agent ? 'flex-end' : 'flex-start' }}>
-                        <Box sx={{ maxWidth: '80%', px: 1.5, py: 1, borderRadius: 2, bgcolor: agent ? 'primary.main' : 'action.hover', color: agent ? 'primary.contrastText' : 'text.primary' }}>
+                        <Box sx={{ maxWidth: '80%', px: 1.5, py: 1, borderRadius: RADII_PX.card, bgcolor: agent ? 'primary.main' : 'action.hover', color: agent ? 'primary.contrastText' : 'text.primary' }}>
                           <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
                             {m.text}
                           </Typography>
-                          <Typography variant="caption" sx={{ display: 'block', textAlign: 'right', opacity: 0.7, mt: 0.25 }}>
+                          <Typography variant="caption" sx={{ display: 'block', textAlign: 'right', opacity: 0.7, mt: 0.5 }}>
                             {agent ? `${m.agentName} · ` : ''}
                             {when(m.createdAt)}
                           </Typography>

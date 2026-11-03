@@ -22,7 +22,7 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { Coins, SHIP_STEPS, STATUS_META, fmt, fmtDate, fmtDateTime } from './storeUtils';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // Phone screens for My orders and the coin Wallet in the Library look (same page padding, back button, centred
 // header, 18px row titles, 15px muted details and cream panels as the phone Store, Problems and Aptitude pages).
@@ -74,7 +74,7 @@ function SectionTitle({ children, sx }) {
 function StatusPill({ status }) {
   const color = STATUS_COLOR[status] || STATUS_COLOR.placed;
   return (
-    <Typography component="span" sx={{ flexShrink: 0, px: '8px', py: '2px', borderRadius: '8px', fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) }}>
+    <Typography component="span" sx={{ flexShrink: 0, px: 1, py: 0.5, borderRadius: RADII_PX.control, fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) }}>
       {(STATUS_META[status] || STATUS_META.placed).label}
     </Typography>
   );
@@ -96,7 +96,7 @@ function Row({ title, meta, right, onClick }) {
       {onClick && <ChevronRightRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, color: 'var(--lib-muted)', flexShrink: 0 }} />}
     </>
   );
-  const sx = { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px', py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderBottom: '1px solid var(--lib-divider)' };
+  const sx = { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderBottom: '1px solid var(--lib-divider)' };
   return onClick ? (
     <ButtonBase onClick={onClick} sx={sx}>
       {body}
@@ -111,11 +111,11 @@ function Row({ title, meta, right, onClick }) {
 function ShipProgress({ status }) {
   const at = SHIP_STEPS.indexOf(status);
   return (
-    <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${SHIP_STEPS.length}, 1fr)`, gap: 0.75, mt: 3 }}>
+    <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${SHIP_STEPS.length}, 1fr)`, gap: 1, mt: 3 }}>
       {SHIP_STEPS.map((s, i) => (
         <Box key={s}>
-          <Box sx={{ height: 6, borderRadius: 99, bgcolor: i <= at ? LIB_ACCENT : 'var(--lib-divider)' }} />
-          <Typography sx={{ mt: 0.75, fontSize: FONT_SIZES.body, lineHeight: '20px', textAlign: 'center', color: i <= at ? 'var(--lib-text)' : 'var(--lib-muted)', fontWeight: i === at ? FONT_WEIGHTS.medium : FONT_WEIGHTS.regular }}>
+          <Box sx={{ height: 6, borderRadius: RADII_PX.pill, bgcolor: i <= at ? LIB_ACCENT : 'var(--lib-divider)' }} />
+          <Typography sx={{ mt: 1, fontSize: FONT_SIZES.body, lineHeight: '20px', textAlign: 'center', color: i <= at ? 'var(--lib-text)' : 'var(--lib-muted)', fontWeight: i === at ? FONT_WEIGHTS.medium : FONT_WEIGHTS.regular }}>
             {STATUS_META[s].label}
           </Typography>
         </Box>
@@ -220,7 +220,7 @@ function OrderDetail({ order, onBack, onChanged, onOpenCourse }) {
         </Button>
       )}
 
-      <Dialog open={confirm} onClose={() => !busy && setConfirm(false)} slotProps={{ paper: { sx: { borderRadius: '20px', mx: 2, width: '100%', maxWidth: 400 } } }}>
+      <Dialog open={confirm} onClose={() => !busy && setConfirm(false)} slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, mx: 2, width: '100%', maxWidth: 400 } } }}>
         <LibraryFont sx={{ p: 3, bgcolor: 'var(--lib-bg)' }}>
           <Typography component="h2" sx={libSectionTitleSx}>
             Cancel this order?

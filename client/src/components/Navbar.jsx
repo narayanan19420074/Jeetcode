@@ -58,7 +58,7 @@ import BrandMark, { BRAND_ORANGE, BRAND_TEXT_LIGHT } from './BrandMark';
 
 // Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
 import { LIBRARY_PALETTE, LIB_FONT, LibraryFont, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../app/design/designTokens';
 
 const ACCENT = COLOR_PALETTE.indigo[500];
 // Warm Library palette for the phone menu (light and dark variants).
@@ -150,8 +150,8 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
       sx={{
         display: 'flex',
         alignItems: 'center',
-        gap: '12px',
-        py: 1.25,
+        gap: 1.5,
+        py: 1.5,
         textDecoration: 'none',
         color: 'inherit',
         borderBottom: (t) => `1px solid ${libPal(t).divider}`,
@@ -162,7 +162,7 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
         sx={(t) => ({
           width: 48,
           height: 48,
-          borderRadius: '12px',
+          borderRadius: RADII_PX.card,
           flexShrink: 0,
           display: 'grid',
           placeItems: 'center',
@@ -190,13 +190,13 @@ const footerIconSx = (t) => ({
 
 // Phone account dropdown in the Library look: warm panel, 48px rows, 24px icons, 16px text with the shared tracking.
 const accountPaperSx = (t) => ({
-  borderRadius: '12px',
+  borderRadius: RADII_PX.card,
   minWidth: 220,
   mt: 0.5,
   [t.breakpoints.down('md')]: {
     minWidth: 288,
     mt: 1,
-    borderRadius: '20px',
+    borderRadius: RADII_PX.card,
     bgcolor: libPal(t).chip,
     color: libPal(t).text,
     backgroundImage: 'none',
@@ -212,8 +212,8 @@ const accountItemSx = (t) => ({
     minHeight: 48,
     mx: 1,
     px: 1.5,
-    gap: '12px',
-    borderRadius: '12px',
+    gap: 1.5,
+    borderRadius: RADII_PX.card,
     '& .MuiListItemIcon-root': { minWidth: 0, color: libPal(t).chipText },
     '& .MuiSvgIcon-root': { fontSize: FONT_SIZES.display },
     '& .MuiListItemText-primary': { fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING },
@@ -315,7 +315,7 @@ export default function Navbar() {
 
   const navButtonSx = (active) => (t) => ({
     fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold,
-    borderRadius: 99,
+    borderRadius: RADII_PX.pill,
     px: 2,
     color: active ? t.palette.text.primary : t.palette.text.secondary,
     bgcolor: active ? alpha(t.palette.primary.main, t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
@@ -350,7 +350,7 @@ export default function Navbar() {
         <Box
           component={RouterLink}
           to={isAuthenticated ? '/dashboard' : '/'}
-          sx={{ display: 'flex', alignItems: 'center', gap: { xs: '12px', md: 1 }, textDecoration: 'none', color: 'inherit', mr: { xs: 0, md: 2 } }}
+          sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, md: 1 }, textDecoration: 'none', color: 'inherit', mr: { xs: 0, md: 2 } }}
         >
           <LogoMark />
           <LogoName />
@@ -383,7 +383,7 @@ export default function Navbar() {
             anchorEl={exploreAnchorEl}
             open={Boolean(exploreAnchorEl)}
             onClose={() => setExploreAnchorEl(null)}
-            slotProps={{ paper: { sx: { borderRadius: '12px', minWidth: 220, mt: 0.5 } } }}
+            slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: 220, mt: 0.5 } } }}
           >
             {EXPLORE_LINKS.map(({ to, label, icon: Icon }) => (
               <MenuItem
@@ -475,7 +475,7 @@ export default function Navbar() {
               <ButtonBase
                 onClick={handleProfileClick}
                 aria-label="Open my profile"
-                sx={(t) => ({ px: 2, py: 1.25, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', textAlign: 'left', [t.breakpoints.down('md')]: { py: 1.5 } })}
+                sx={(t) => ({ px: 2, py: 1.5, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, textAlign: 'left', [t.breakpoints.down('md')]: { py: 1.5 } })}
               >
                 <Avatar
                   src={user?.avatarUrl || undefined}
@@ -567,7 +567,7 @@ export default function Navbar() {
         }}
       >
         <LibraryFont sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px', px: 1.75, height: 60, flexShrink: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, height: 60, flexShrink: 0 }}>
           <LogoMark />
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <LogoName />
@@ -581,12 +581,12 @@ export default function Navbar() {
         </Box>
         <Divider sx={(t) => ({ borderColor: libPal(t).divider })} />
 
-        <Box sx={{ flex: 1, overflowY: 'auto', px: 1.75, pt: 2, pb: 2 }} component="nav" aria-label="Main navigation">
+        <Box sx={{ flex: 1, overflowY: 'auto', px: 2, pt: 2, pb: 2 }} component="nav" aria-label="Main navigation">
           {isAuthenticated && (
             <Box
               sx={(t) => ({
                 mb: 3,
-                borderRadius: '16px',
+                borderRadius: RADII_PX.card,
                 overflow: 'hidden',
                 bgcolor: libPal(t).chip,
               })}
@@ -604,7 +604,7 @@ export default function Navbar() {
                   <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING }}>
                     {user?.name}
                   </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.25 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
                     <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />
                     <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: TRACKING, color: (t) => libPal(t).muted }}>
                       {user?.streakDays ?? 0}-day streak
@@ -620,7 +620,7 @@ export default function Navbar() {
                 aria-label={`${coins} coins, open wallet`}
                 sx={(t) => ({
                   px: 1.5,
-                  py: 1.25,
+                  py: 1.5,
                   display: 'flex',
                   alignItems: 'center',
                   gap: 1,
@@ -662,7 +662,7 @@ export default function Navbar() {
         </Box>
 
         <Divider sx={(t) => ({ borderColor: libPal(t).divider })} />
-        <Box sx={{ px: 1.75, py: 2, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <Box sx={{ px: 2, py: 2, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
           {isAuthenticated ? (
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1.5 }}>
               {!user?.isPro && (
@@ -690,10 +690,10 @@ export default function Navbar() {
             </Box>
           ) : (
             <>
-              <Button component={RouterLink} to="/login" onClick={() => setMobileOpen(false)} variant="contained" disableElevation fullWidth sx={{ fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: 99 }}>
+              <Button component={RouterLink} to="/login" onClick={() => setMobileOpen(false)} variant="contained" disableElevation fullWidth sx={{ fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: RADII_PX.pill }}>
                 Sign in
               </Button>
-              <Button component={RouterLink} to="/signup" onClick={() => setMobileOpen(false)} variant="outlined" color="inherit" fullWidth sx={{ fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: 99 }}>
+              <Button component={RouterLink} to="/signup" onClick={() => setMobileOpen(false)} variant="outlined" color="inherit" fullWidth sx={{ fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: RADII_PX.pill }}>
                 Create account
               </Button>
             </>

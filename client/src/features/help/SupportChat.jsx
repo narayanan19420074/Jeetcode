@@ -8,7 +8,7 @@ import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
 import { supportChatApi } from '../../api/supportChatApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const TOPICS = [
   { value: 'payment', label: 'Payments & Pro' },
@@ -31,7 +31,7 @@ function Bubble({ m }) {
           maxWidth: '82%',
           px: 1.5,
           py: 1,
-          borderRadius: 2,
+          borderRadius: RADII_PX.card,
           bgcolor: mine ? 'primary.main' : 'action.hover',
           color: mine ? 'primary.contrastText' : 'text.primary',
           borderBottomRightRadius: mine ? 4 : undefined,
@@ -46,7 +46,7 @@ function Bubble({ m }) {
         <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
           {m.text}
         </Typography>
-        <Typography variant="caption" sx={{ display: 'block', textAlign: 'right', opacity: 0.7, mt: 0.25 }}>
+        <Typography variant="caption" sx={{ display: 'block', textAlign: 'right', opacity: 0.7, mt: 0.5 }}>
           {timeLabel(m.createdAt)}
         </Typography>
       </Box>
@@ -204,7 +204,7 @@ export default function SupportChat({ open, onOpenChange }) {
             width: { xs: '100%', sm: 380 },
             height: { xs: '100dvh', sm: 560 },
             maxHeight: { sm: 'calc(100dvh - 32px)' },
-            borderRadius: { xs: 0, sm: 3 },
+            borderRadius: { xs: 0, sm: RADII_PX.card },
           }}
         >
           <Stack direction="row" spacing={1.5} sx={{ p: 1.5, bgcolor: 'primary.main', color: 'primary.contrastText', alignItems: 'center' }}>
@@ -244,7 +244,7 @@ export default function SupportChat({ open, onOpenChange }) {
                   </Box>
                 ) : (
                   <Stack spacing={1.25}>
-                    <Box sx={{ alignSelf: 'flex-start', maxWidth: '88%', px: 1.5, py: 1, borderRadius: 2, bgcolor: 'action.hover' }}>
+                    <Box sx={{ alignSelf: 'flex-start', maxWidth: '88%', px: 1.5, py: 1, borderRadius: RADII_PX.card, bgcolor: 'action.hover' }}>
                       <Typography variant="body2">
                         Hi{user?.name ? ` ${user.name.split(' ')[0]}` : ''}, how can we help you today?
                       </Typography>

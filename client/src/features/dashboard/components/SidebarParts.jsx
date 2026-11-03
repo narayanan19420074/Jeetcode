@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Box, ButtonBase, IconButton, Tooltip, Typography } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from './libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Red pill with the number of friend requests and unread chat messages waiting for me (both live).
 export function RequestBadge({ requests }) {
@@ -10,7 +10,7 @@ export function RequestBadge({ requests }) {
   const n = (requests || 0) + unread;
   if (!n) return null;
   return (
-    <Box component="span" aria-label={`${n} friend notifications`} sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
+    <Box component="span" aria-label={`${n} friend notifications`} sx={{ minWidth: 20, height: 20, px: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
       {n}
     </Box>
   );
@@ -23,7 +23,7 @@ const navButtonSx = (pal, active) => ({
   gap: 1.5,
   px: 2,
   height: 44,
-  borderRadius: 999,
+  borderRadius: RADII_PX.pill,
   textAlign: 'left',
   fontFamily: 'inherit',
   letterSpacing: LIB_TRACKING,

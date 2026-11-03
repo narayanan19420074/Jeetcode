@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import { COLOR_PALETTE, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Five separate "tabs" start scattered and tilted, then snap into one
 // dashboard when the section scrolls into view. The toggle lets the
@@ -127,7 +127,7 @@ export default function ChaosToOrder() {
     <Box ref={ref}>
       <Box
         sx={{
-          borderRadius: '16px',
+          borderRadius: RADII_PX.card,
           border: '1px solid',
           borderColor: 'divider',
           bgcolor: alpha(t.palette.primary.main, 0.04),

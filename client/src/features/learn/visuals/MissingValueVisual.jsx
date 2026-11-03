@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box, Button, Stack, Typography, alpha } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, FONTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, FONTS, RADII_PX } from '../../../app/design/designTokens';
 
 const NUMBERS = [10, 15, 20, 25];
 const AVERAGE = 18;
@@ -34,7 +34,7 @@ export default function MissingValueVisual() {
       sx={{
         position: 'relative',
         p: { xs: 2.5, md: 4 },
-        borderRadius: 4,
+        borderRadius: RADII_PX.card,
         bgcolor: 'background.paper',
         border: '1px solid',
         borderColor: 'divider',
@@ -90,7 +90,7 @@ export default function MissingValueVisual() {
                   style={{
                     width: 56,
                     height: 56,
-                    borderRadius: 14,
+                    borderRadius: RADII_PX.card,
                     border: '2px solid',
                     borderColor: isAdded ? withAlpha(COLOR_PALETTE.blue[500], 0.2) : COLOR_PALETTE.blue[500],
                     background: 'transparent',
@@ -130,7 +130,7 @@ export default function MissingValueVisual() {
               style={{
                 width: 56,
                 height: 56,
-                borderRadius: 14,
+                borderRadius: RADII_PX.card,
                 border: '2px dashed',
                 display: 'grid',
                 placeItems: 'center',
@@ -147,7 +147,7 @@ export default function MissingValueVisual() {
         <Box
           sx={{
             p: 2.5,
-            borderRadius: 3,
+            borderRadius: RADII_PX.card,
             bgcolor: (t) => alpha(t.palette.primary.main, 0.05),
             border: '1px solid',
             borderColor: (t) => alpha(t.palette.primary.main, 0.15),
@@ -164,7 +164,7 @@ export default function MissingValueVisual() {
               Tap the numbers above
             </Typography>
           ) : (
-            <Box sx={{ mt: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.75, flexWrap: 'wrap' }}>
+            <Box sx={{ mt: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, flexWrap: 'wrap' }}>
               {added.map((i, idx) => (
                 <motion.span
                   key={i}
@@ -202,7 +202,7 @@ export default function MissingValueVisual() {
               <Box
                 sx={{
                   p: 2,
-                  borderRadius: 2.5,
+                  borderRadius: RADII_PX.card,
                   bgcolor: (t) => alpha(t.palette.primary.main, 0.05),
                   border: '1px solid',
                   borderColor: (t) => alpha(t.palette.primary.main, 0.2),
@@ -235,7 +235,7 @@ export default function MissingValueVisual() {
                 disableElevation
                 fullWidth
                 onClick={() => setRevealed(true)}
-                sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.5, borderRadius: 2, fontSize: FONT_SIZES.bodyLg }}
+                sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.5, borderRadius: RADII_PX.card, fontSize: FONT_SIZES.bodyLg }}
               >
                 Reveal the missing value
               </Button>
@@ -253,7 +253,7 @@ export default function MissingValueVisual() {
               <Box
                 sx={{
                   p: 2.5,
-                  borderRadius: 3,
+                  borderRadius: RADII_PX.card,
                   bgcolor: (t) => alpha(t.palette.success.main, 0.1),
                   border: '1.5px solid',
                   borderColor: 'success.main',

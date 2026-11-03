@@ -18,7 +18,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // One dialog for both "New list" and "Rename list". onConfirm(name) returns
 // true when accepted, false when the name is empty or already taken.
@@ -89,7 +89,7 @@ export function SaveToListMenu({ anchorEl, problem, lists, onToggle, onCreate, o
         anchorEl={anchorEl}
         open={open}
         onClose={close}
-        slotProps={{ paper: { sx: { minWidth: 220, borderRadius: '12px', mt: 0.5 } } }}
+        slotProps={{ paper: { sx: { minWidth: 220, borderRadius: RADII_PX.card, mt: 0.5 } } }}
       >
         <Typography variant="caption" color="text.secondary" sx={{ px: 2, py: 0.5, display: 'block', fontWeight: FONT_WEIGHTS.semibold }}>
           Save to list

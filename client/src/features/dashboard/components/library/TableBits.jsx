@@ -16,7 +16,7 @@ export function ColumnHeader({ label, width, sortKey, sortValue, onSort, disable
     <ButtonBase
       disabled={disabled}
       onClick={() => onSort(sortValue === desc ? asc : desc)}
-      sx={{ width, justifyContent: 'flex-end', gap: 0.25, fontFamily: 'inherit', opacity: disabled ? 0.5 : 1, display: { xs: 'none', sm: 'flex' } }}
+      sx={{ width, justifyContent: 'flex-end', gap: 0.5, fontFamily: 'inherit', opacity: disabled ? 0.5 : 1, display: { xs: 'none', sm: 'flex' } }}
     >
       <Typography variant="caption" sx={[styles.headLabel, active && { color: 'text.primary' }]}>
         {label}
@@ -28,7 +28,7 @@ export function ColumnHeader({ label, width, sortKey, sortValue, onSort, disable
 
 function SkeletonRow() {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: PAD_X, py: 1.6, borderBottom: '1px solid', borderColor: 'divider' }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: PAD_X, py: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
       <Skeleton variant="circular" width={20} height={20} />
       <Skeleton variant="text" sx={{ flex: 1, maxWidth: 360 }} />
       <Box sx={{ flex: 1 }} />

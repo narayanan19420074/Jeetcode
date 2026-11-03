@@ -40,11 +40,11 @@ function OrderCard({ order, onOpen }) {
 function ShipProgress({ status }) {
   const at = SHIP_STEPS.indexOf(status);
   return (
-    <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${SHIP_STEPS.length}, 1fr)`, gap: 0.75, mb: 3 }}>
+    <Box sx={{ display: 'grid', gridTemplateColumns: `repeat(${SHIP_STEPS.length}, 1fr)`, gap: 1, mb: 3 }}>
       {SHIP_STEPS.map((s, i) => (
         <Box key={s}>
           <Box sx={{ height: 7, bgcolor: i <= at ? FF.orange : FF.well, border: `1px solid ${i <= at ? FF.orange : FF.line}` }} />
-          <Typography sx={{ mt: 0.75, fontSize: FONT_SIZES.caption, fontWeight: i === at ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, color: i <= at ? FF.text : FF.muted, textAlign: 'center' }}>{STATUS_META[s].label}</Typography>
+          <Typography sx={{ mt: 1, fontSize: FONT_SIZES.caption, fontWeight: i === at ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, color: i <= at ? FF.text : FF.muted, textAlign: 'center' }}>{STATUS_META[s].label}</Typography>
         </Box>
       ))}
     </Box>
@@ -104,11 +104,11 @@ function OrderDialog({ order, onClose, onChanged, onOpenCourse }) {
       )}
       {a && (
         <Box sx={{ mb: 3 }}>
-          <Eyebrow sx={{ mb: 0.75 }}>Delivering to</Eyebrow>
+          <Eyebrow sx={{ mb: 1 }}>Delivering to</Eyebrow>
           <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: 1.7, color: FF.text }}>{a.fullName}, {a.phone}<br />{a.line1}{a.line2 ? `, ${a.line2}` : ''}<br />{a.city}, {a.state} {a.pincode}</Typography>
         </Box>
       )}
-      <Eyebrow sx={{ mb: 0.75 }}>Timeline</Eyebrow>
+      <Eyebrow sx={{ mb: 1 }}>Timeline</Eyebrow>
       {[...order.history].reverse().map((h, i) => (
         <Typography key={i} sx={{ py: 0.5, fontSize: FONT_SIZES.body, color: FF.muted }}>{fmtDateTime(h.at)} · <Box component="span" sx={{ color: FF.text, fontWeight: FONT_WEIGHTS.bold }}>{STATUS_META[h.status]?.label || h.status}</Box>{h.note ? ` · ${h.note}` : ''}</Typography>
       ))}
@@ -123,7 +123,7 @@ export function OrdersTab({ orders, onChanged, onOpenCourse, onGoShop }) {
     return (
       <Box sx={{ textAlign: 'center', py: 5 }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, color: FF.text }}>No orders yet</Typography>
-        <Typography sx={{ mt: 0.75, mb: 3, color: FF.muted }}>Redeem your coins for Pro, courses or merch.</Typography>
+        <Typography sx={{ mt: 1, mb: 3, color: FF.muted }}>Redeem your coins for Pro, courses or merch.</Typography>
         <FFButton onClick={onGoShop}>Browse the shop</FFButton>
       </Box>
     );

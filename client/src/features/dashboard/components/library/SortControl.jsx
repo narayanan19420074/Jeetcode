@@ -4,6 +4,7 @@ import SwapVertRoundedIcon from '@mui/icons-material/SwapVertRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { SORT_OPTIONS } from '../../dashboardUtils';
 import useLibraryStyles from './libraryStyles';
+import { RADII_PX } from '../../../../app/design/designTokens';
 
 // Sort button with its menu. Sorting is off while searching, because search results are ranked by relevance.
 export default function SortControl({ sort, disabled, onChange }) {
@@ -24,7 +25,7 @@ export default function SortControl({ sort, disabled, onChange }) {
           </IconButton>
         </span>
       </Tooltip>
-      <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={() => setAnchor(null)} slotProps={{ paper: { sx: { borderRadius: '12px', minWidth: 230 } } }}>
+      <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={() => setAnchor(null)} slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: 230 } } }}>
         {SORT_OPTIONS.map((o) => (
           <MenuItem key={o.value} selected={sort === o.value} onClick={() => choose(o.value)} sx={{ justifyContent: 'space-between', gap: 2 }}>
             {o.label}

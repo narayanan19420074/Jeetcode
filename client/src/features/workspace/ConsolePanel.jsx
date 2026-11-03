@@ -9,7 +9,7 @@ import { WS, mono } from './wsTokens';
 import { CodeField, PaneTabs } from './wsUi';
 import { LIB_ACCENT, LIB_TRACKING, libChipSx } from '../dashboard/components/libraryStyle';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const fmtMs = (sec) => (sec == null || Number.isNaN(parseFloat(sec)) ? null : `${Math.round(parseFloat(sec) * 1000)} ms`);
 const fmtMem = (kb) => (kb ? `${(kb / 1024).toFixed(1)} MB` : null);
@@ -30,7 +30,7 @@ function LibCodeField({ label, value, tone }) {
           lineHeight: 1.65,
           px: 1.5,
           py: 1,
-          borderRadius: '16px',
+          borderRadius: RADII_PX.card,
           whiteSpace: 'pre-wrap',
           wordBreak: 'break-word',
           color: tone === 'error' ? 'var(--jc-hard)' : 'var(--lib-text)',
@@ -61,7 +61,7 @@ export function VerdictChip({ isRunning, result, sx, lib = false }) {
         noWrap
         component="span"
         sx={[
-          { minWidth: 0, maxWidth: '44vw', px: '10px', py: '3px', borderRadius: 999, fontSize: FONT_SIZES.body, lineHeight: '20px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
+          { minWidth: 0, maxWidth: '44vw', px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.body, lineHeight: '20px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}
       >
@@ -118,8 +118,8 @@ export function CasePill({ label, dot, active, onClick }) {
           ? libChipSx(active)
           : {
         height: 28,
-        px: 1.25,
-        gap: 0.75,
+        px: 1.5,
+        gap: 1,
         flexShrink: 0,
         borderRadius: `${WS.radius}px`,
         fontSize: FONT_SIZES.caption,
@@ -164,7 +164,7 @@ export function Result({ result, isSubmitView, isRunning, consoleError, activeCa
   if (isRunning) {
     return (
       <Box sx={{ py: 1 }}>
-        <LinearProgress sx={{ borderRadius: 999, mb: 1.5 }} />
+        <LinearProgress sx={{ borderRadius: RADII_PX.pill, mb: 1.5 }} />
         <Typography variant="body2" color="text.secondary">
           Running your code against the test cases…
         </Typography>
@@ -178,7 +178,7 @@ export function Result({ result, isSubmitView, isRunning, consoleError, activeCa
     const stats = [result.runtimeMs != null && `Runtime ${result.runtimeMs} ms`, fmtMem(result.memoryKb) && `Memory ${fmtMem(result.memoryKb)}`].filter(Boolean);
     return (
       <>
-        <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.25, mb: 1.5 }}>
+        <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.5, mb: 1.5 }}>
           <Typography sx={{ fontWeight: lib ? FONT_WEIGHTS.bold : FONT_WEIGHTS.bold, fontSize: lib ? FONT_SIZES.heading : FONT_SIZES.subheading, color: ok ? 'success.main' : 'error.main' }}>{result.status}</Typography>
           <Typography variant="caption" color="text.secondary">
             {isSubmitView ? 'Submission' : 'Sample run'} · {result.passedCount}/{result.totalCount} test cases passed
@@ -217,7 +217,7 @@ export function Result({ result, isSubmitView, isRunning, consoleError, activeCa
   if (consoleError) {
     return (
       <Box sx={(t) => ({ p: 1.5, borderRadius: `${WS.radius}px`, color: 'error.main', bgcolor: alpha(t.palette.error.main, 0.1) })}>
-        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.25 }}>
+        <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>
           {isSubmitView ? 'Submit failed' : 'Run failed'}
         </Typography>
         <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
@@ -227,7 +227,7 @@ export function Result({ result, isSubmitView, isRunning, consoleError, activeCa
     );
   }
   return (
-    <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
+    <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1, color: 'text.secondary' }}>
       {!lib && <PlayArrowRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
       <Typography variant="body2">Run your code to see the results here.</Typography>
     </Stack>
@@ -242,7 +242,7 @@ export function ConsoleBody({ problem, isRunning, result, isSubmitView, consoleE
   return (
     <LibContext.Provider value={lib}>
       <Stack sx={{ flex: 1, minHeight: 0 }}>
-        <Box sx={{ px: lib ? 2 : 1.25, pb: lib ? 1.5 : 0.75, flexShrink: 0 }}>
+        <Box sx={{ px: lib ? 2 : 1.5, pb: lib ? 1.5 : 1, flexShrink: 0 }}>
           {lib ? (
             <Stack direction="row" role="tablist" sx={{ gap: 1 }}>
               {[
@@ -267,7 +267,7 @@ export function ConsoleBody({ problem, isRunning, result, isSubmitView, consoleE
             />
           )}
         </Box>
-        <Box sx={{ overflowY: 'auto', px: lib ? 2 : 1.75, pb: lib ? 2 : 1.75, flex: 1, minHeight: 0 }}>
+        <Box sx={{ overflowY: 'auto', px: lib ? 2 : 2, pb: lib ? 2 : 2, flex: 1, minHeight: 0 }}>
           {tab === 'cases' ? (
             <Samples examples={problem.examples ?? []} />
           ) : (

@@ -9,7 +9,7 @@ import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, LibraryFont, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './aptitudeUi';
 import { DifficultyTag } from './MobilePractice';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Phone layout of a single Aptitude practice question. Same page padding, back button, type scale (18px question,
 // 16px body, 15px muted details), cream panels and pill buttons as the phone Problems and Aptitude pages.
@@ -61,7 +61,7 @@ function chartToTable(set) {
 function Stimulus({ set }) {
   if (!set) return null;
   const table = set.type === 'table' ? set.table : set.type === 'text' ? null : chartToTable(set);
-  const cell = { fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', py: 1, px: 1.25, color: 'var(--lib-text)', borderBottom: '1px solid var(--lib-divider)', whiteSpace: 'nowrap' };
+  const cell = { fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', py: 1, px: 1.5, color: 'var(--lib-text)', borderBottom: '1px solid var(--lib-divider)', whiteSpace: 'nowrap' };
   return (
     <Box sx={{ ...libPanelSx, p: 2, mt: 3 }}>
       {set.title && <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING, mb: 0.5 }}>{set.title}</Typography>}
@@ -109,14 +109,14 @@ function Option({ index, text, state, disabled, onClick }) {
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        gap: '12px',
+        gap: 1.5,
         textAlign: 'left',
         fontFamily: 'inherit',
         color: 'inherit',
         px: 2,
         py: 1.5,
         minHeight: 56,
-        borderRadius: '16px',
+        borderRadius: RADII_PX.card,
         border: '1.5px solid',
         borderColor: accent || 'var(--lib-border)',
         bgcolor: accent ? tint(accent, 12) : 'var(--lib-chip)',
@@ -171,7 +171,7 @@ export default function MobilePracticeQuestion({ slug, data, result, selected, c
       }
     >
       {/* Meta: level, position, timer */}
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, mt: 1 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mt: 1 }}>
         <DifficultyTag difficulty={question.difficulty} />
         <Typography sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>
           {position} / {totalInPattern}
@@ -194,7 +194,7 @@ export default function MobilePracticeQuestion({ slug, data, result, selected, c
 
       <Typography sx={{ mt: 3, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING, whiteSpace: 'pre-line' }}>{question.questionText}</Typography>
 
-      <Stack role="group" aria-label="Answer options" sx={{ mt: 2.5, gap: 1.25 }}>
+      <Stack role="group" aria-label="Answer options" sx={{ mt: 2.5, gap: 1.5 }}>
         {question.options.map((o, i) => (
           <Option key={i} index={i} text={o.text} state={optionState(i)} disabled={!!result || checking} onClick={() => onSelect(i)} />
         ))}

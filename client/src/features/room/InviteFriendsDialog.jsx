@@ -9,7 +9,7 @@ import { friendsApi } from '../../api/friendsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { fetchFriends } from '../friends/friendsSlice';
 import { PersonAvatar } from '../friends/friendsUi';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // "Call a friend" dropdown for a live pair room (opens under the icon, list scrolls inside).
 // Every friend (online or offline) has two small buttons:
@@ -54,7 +54,7 @@ export default function InviteFriendsDialog({ anchorEl, onClose, roomId, roomTit
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
   };
 
-  const small = { width: 28, height: 28, borderRadius: '7px' };
+  const small = { width: 28, height: 28, borderRadius: RADII_PX.control };
 
   return (
     <Popover
@@ -63,7 +63,7 @@ export default function InviteFriendsDialog({ anchorEl, onClose, roomId, roomTit
       onClose={onClose}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      slotProps={{ paper: { sx: { mt: 0.5, width: 'min(300px, calc(100vw - 16px))', maxHeight: 340, display: 'flex', flexDirection: 'column', borderRadius: '12px' } } }}
+      slotProps={{ paper: { sx: { mt: 0.5, width: 'min(300px, calc(100vw - 16px))', maxHeight: 340, display: 'flex', flexDirection: 'column', borderRadius: RADII_PX.card } } }}
     >
       <Typography variant="caption" color="text.secondary" sx={{ px: 1.5, pt: 1, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4, flexShrink: 0 }}>
         CALL A FRIEND
@@ -83,7 +83,7 @@ export default function InviteFriendsDialog({ anchorEl, onClose, roomId, roomTit
             const isOn = Boolean(online[f.userId]);
             const done = sent[f.userId];
             return (
-              <Stack key={f.userId} direction="row" sx={{ alignItems: 'center', gap: 1, px: 1.5, py: 0.6, '&:hover': { bgcolor: 'action.hover' } }}>
+              <Stack key={f.userId} direction="row" sx={{ alignItems: 'center', gap: 1, px: 1.5, py: 0.5, '&:hover': { bgcolor: 'action.hover' } }}>
                 <PersonAvatar person={f} size={28} online={isOn} />
                 <Box sx={{ minWidth: 0, flex: 1 }}>
                   <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, lineHeight: 1.2 }}>

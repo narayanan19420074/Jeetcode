@@ -7,7 +7,7 @@ import { HeaderTile, LIB_TRACKING, LibraryFont, useLibraryPalette } from '../../
 import { initialsFromName } from '../components/SettingsUi';
 import { accentFor } from '../common/settingsAccent';
 import PhoneRow from './PhoneRow';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 function PhoneSearch({ query, setQuery, pal }) {
   return (
@@ -18,7 +18,7 @@ function PhoneSearch({ query, setQuery, pal }) {
       value={query}
       onChange={(event) => setQuery(event.target.value)}
       slotProps={{ htmlInput: { 'aria-label': 'Find a setting' } }}
-      sx={{ mt: 1, px: '4px', '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, px: '16px' }, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' } }}
+      sx={{ mt: 1, px: 0.5, '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, px: 2 }, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' } }}
     />
   );
 }
@@ -55,7 +55,7 @@ function PhoneGroup({ group, pal }) {
         {group.items.map((item) => {
           const Icon = item.icon;
           const tile = (
-            <Box aria-hidden sx={(theme) => ({ width: 48, height: 48, borderRadius: '14px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: tint(color, theme.palette.mode === 'dark' ? 20 : 14), color })}>
+            <Box aria-hidden sx={(theme) => ({ width: 48, height: 48, borderRadius: RADII_PX.card, flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: tint(color, theme.palette.mode === 'dark' ? 20 : 14), color })}>
               <Icon />
             </Box>
           );

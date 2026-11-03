@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import { BANNER_GRADIENT } from '../bannerGradients';
 import { PROMO_CARD_W } from './promoCarouselConfig';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const TRACKING = '0.03em';
 
@@ -13,7 +13,7 @@ const cardSx = (gradient) => ({
   height: 150,
   scrollSnapAlign: 'start',
   overflow: 'hidden',
-  borderRadius: '20px',
+  borderRadius: RADII_PX.card,
   p: 2,
   display: 'flex',
   flexDirection: 'column',
@@ -59,7 +59,7 @@ export default function PromoCard({ card }) {
         <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: '24px', letterSpacing: '-0.01em' }, clampLines(2)]}>{title}</Typography>
         <Typography sx={[{ mt: 0.5, fontSize: FONT_SIZES.body, lineHeight: '18px', letterSpacing: TRACKING, color: withAlpha(COLOR_PALETTE.white, 0.86) }, clampLines(2)]}>{text}</Typography>
       </Box>
-      <Box sx={{ position: 'relative', alignSelf: 'flex-start', px: 1.75, height: 28, display: 'inline-flex', alignItems: 'center', borderRadius: 999, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), fontSize: FONT_SIZES.body, letterSpacing: TRACKING }}>
+      <Box sx={{ position: 'relative', alignSelf: 'flex-start', px: 2, height: 28, display: 'inline-flex', alignItems: 'center', borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), fontSize: FONT_SIZES.body, letterSpacing: TRACKING }}>
         {cta}
       </Box>
     </Box>

@@ -8,7 +8,7 @@ import AiGlow from './AiGlow';
 import { isMicCaptureSupported } from './live/micCapture';
 import { LIVE_PHASE } from './live/liveVoiceSession';
 import useGeminiLive from './live/useGeminiLive';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII, RADII_PX } from '../../app/design/designTokens';
 
 const pulse = keyframes`0%, 100% { transform: scale(1); } 50% { transform: scale(1.14); }`;
 
@@ -33,7 +33,7 @@ const SHEET_SX = {
   px: 2,
   pt: 3,
   pb: 'calc(24px + env(safe-area-inset-bottom))',
-  borderRadius: '24px 24px 0 0',
+  borderRadius: `${RADII.card}px ${RADII.card}px 0 0`,
   fontFamily: LIB_FONT,
   letterSpacing: LIB_TRACKING,
   color: 'var(--lib-text)',
@@ -44,7 +44,7 @@ const SHEET_SX = {
 const END_BUTTON_SX = {
   height: 44,
   px: 3,
-  borderRadius: 999,
+  borderRadius: RADII_PX.pill,
   textTransform: 'none',
   fontWeight: FONT_WEIGHTS.medium,
   fontSize: FONT_SIZES.title,

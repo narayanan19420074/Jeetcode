@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const ACTION_COLOR = {
   problem_delete: 'error',
@@ -94,7 +94,7 @@ export default function AdminAuditLogPage() {
         </Alert>
       )}
 
-      <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
         {loading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
             <CircularProgress />

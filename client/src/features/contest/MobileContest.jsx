@@ -17,7 +17,7 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { fmtDate, fmtDuration, fmtStart, inr, useCountdown } from './contestUtils';
-import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Phone layout of the Contest page in the Library look (same as the phone Problems, Home and You pages): Roboto type,
 // warm surface, 16px page padding, 44px back button, centred header tile, pill tabs and buttons, 18px section titles
@@ -45,7 +45,7 @@ function SectionTitle({ children, id }) {
 function StatusTag({ status }) {
   const [label, color] = STATUS[status] || STATUS.ended;
   return (
-    <Typography component="span" sx={{ px: 1, py: 0.4, borderRadius: '10px', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.2, color, bgcolor: tint(color, 16) }}>
+    <Typography component="span" sx={{ px: 1, py: 0.5, borderRadius: RADII_PX.control, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.2, color, bgcolor: tint(color, 16) }}>
       {label}
     </Typography>
   );
@@ -54,9 +54,9 @@ function StatusTag({ status }) {
 function Countdown({ contest }) {
   const { d, h, m, s } = useCountdown(contest.startsAt, contest.serverTime);
   return (
-    <Box role="timer" aria-label={`Starts in ${d} days ${h} hours ${m} minutes`} sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 0.75, mt: 1.75 }}>
+    <Box role="timer" aria-label={`Starts in ${d} days ${h} hours ${m} minutes`} sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 1, mt: 2 }}>
       {[[d, 'days'], [h, 'hrs'], [m, 'min'], [s, 'sec']].map(([v, label]) => (
-        <Box key={label} sx={(t) => ({ py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) })}>
+        <Box key={label} sx={(t) => ({ py: 1, borderRadius: RADII_PX.card, textAlign: 'center', bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) })}>
           <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.1 }}>{pad(v)}</Typography>
           <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.medium, textTransform: 'uppercase', letterSpacing: 0.5 }}>
             {label}
@@ -74,7 +74,7 @@ function ContestPanel({ contest, past, action }) {
     <Box
       component="section"
       aria-label={contest.title}
-      sx={{ borderRadius: '20px', p: 2, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
+      sx={{ borderRadius: RADII_PX.card, p: 2, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
     >
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
         <StatusTag status={status} />
@@ -87,7 +87,7 @@ function ContestPanel({ contest, past, action }) {
       </Typography>
 
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mt: 1.5 }}>
-        <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '15px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(135deg, ${ORANGE}, color-mix(in srgb, ${ORANGE} 60%, ${COLOR_PALETTE.black}))`, boxShadow: `0 8px 18px -8px ${ORANGE}` }}>
+        <Box sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(135deg, ${ORANGE}, color-mix(in srgb, ${ORANGE} 60%, ${COLOR_PALETTE.black}))`, boxShadow: `0 8px 18px -8px ${ORANGE}` }}>
           <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
         </Box>
         <Box sx={{ minWidth: 0 }}>
@@ -110,8 +110,8 @@ function ContestPanel({ contest, past, action }) {
 
 function WinnerRow({ w }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px', py: 1.25, pl: 0.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
-      <Typography sx={{ ...mono, width: 48, height: 48, flexShrink: 0, display: 'grid', placeItems: 'center', borderRadius: '14px', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, color: w.rank <= 3 ? ORANGE : 'var(--lib-chip-text)', bgcolor: w.rank <= 3 ? tint(ORANGE, 16) : 'var(--lib-chip)' }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 1.5, pl: 0.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
+      <Typography sx={{ ...mono, width: 48, height: 48, flexShrink: 0, display: 'grid', placeItems: 'center', borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, color: w.rank <= 3 ? ORANGE : 'var(--lib-chip-text)', bgcolor: w.rank <= 3 ? tint(ORANGE, 16) : 'var(--lib-chip)' }}>
         {w.rank}
       </Typography>
       <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -129,11 +129,11 @@ function WinnerRow({ w }) {
 
 function Rule({ rule, index }) {
   return (
-    <Box sx={(t) => ({ py: 1.75, px: rule.highlight ? 1.5 : 0.5, borderBottom: rule.highlight ? 'none' : '1px solid', borderColor: 'var(--lib-divider)', ...(rule.highlight && { my: 1, borderRadius: '16px', bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) }) })}>
+    <Box sx={(t) => ({ py: 2, px: rule.highlight ? 1.5 : 0.5, borderBottom: rule.highlight ? 'none' : '1px solid', borderColor: 'var(--lib-divider)', ...(rule.highlight && { my: 1, borderRadius: RADII_PX.card, bgcolor: tint(ORANGE, t.palette.mode === 'dark' ? 16 : 10) }) })}>
       <Typography component="h3" sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, mb: 1 }}>
         {index + 1}. {rule.title}
       </Typography>
-      <Box component="ol" sx={{ m: 0, pl: 2.5, display: 'grid', gap: 0.9 }}>
+      <Box component="ol" sx={{ m: 0, pl: 2.5, display: 'grid', gap: 1 }}>
         {rule.items.map((text) => (
           <Typography key={text} component="li" sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: 1.65, '&::marker': { fontWeight: FONT_WEIGHTS.medium, color: 'var(--lib-muted)' } }}>
             {text}
@@ -171,14 +171,14 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
             contest={contest}
             past={past}
             action={
-              <Button onClick={goApply} fullWidth disableElevation variant="contained" sx={{ ...(upcoming && !contest.applied ? solidBtn : tintBtn), mt: 1.75 }}>
+              <Button onClick={goApply} fullWidth disableElevation variant="contained" sx={{ ...(upcoming && !contest.applied ? solidBtn : tintBtn), mt: 2 }}>
                 {cta}
               </Button>
             }
           />
         </Box>
 
-        <Alert severity="warning" icon={false} sx={{ mt: 2, borderRadius: '20px', fontWeight: FONT_WEIGHTS.semibold }}>
+        <Alert severity="warning" icon={false} sx={{ mt: 2, borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.semibold }}>
           No AI, no outside help. Every solution must be your own work. Cheaters are disqualified and lose any prize.
         </Alert>
 
@@ -200,7 +200,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>You are in. See you on {fmtStart(contest.startsAt)}.</Typography>
               </Stack>
               {upcoming && (
-                <Button onClick={onWithdraw} disabled={busy} color="inherit" sx={{ alignSelf: 'flex-start', borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title }}>
+                <Button onClick={onWithdraw} disabled={busy} color="inherit" sx={{ alignSelf: 'flex-start', borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title }}>
                   Withdraw application
                 </Button>
               )}
@@ -219,7 +219,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
               <FormControlLabel
                 control={<Checkbox checked={accepted} onChange={(e) => setAccepted(e.target.checked)} />}
                 label={<Typography sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: 1.6 }}>I have read the rules above. I will not use AI or any outside help, and I accept that cheating means disqualification and loss of any prize.</Typography>}
-                sx={{ alignItems: 'flex-start', m: 0, mb: 1.5, '& .MuiCheckbox-root': { pt: 0.25, ml: -0.75 } }}
+                sx={{ alignItems: 'flex-start', m: 0, mb: 1.5, '& .MuiCheckbox-root': { pt: 0.5, ml: -0.75 } }}
               />
               <Button onClick={onApply} disabled={!accepted || busy} fullWidth disableElevation variant="contained" sx={solidBtn}>
                 {busy ? 'Applying…' : 'Apply for the contest'}
@@ -261,14 +261,14 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
       </Box>
 
       <Box role="tabpanel" sx={{ mt: 2 }}>
-        {shown === null && <Skeleton variant="rounded" height={260} sx={{ borderRadius: '20px' }} />}
+        {shown === null && <Skeleton variant="rounded" height={260} sx={{ borderRadius: RADII_PX.card }} />}
         {shown === false && <Alert severity="error">Could not load contests. Please try again in a moment.</Alert>}
 
         {ready && tab === 'upcoming' && (counts.upcoming ? (
           <ContestPanel
             contest={shown}
             action={
-              <Button onClick={() => onOpen(shown)} fullWidth disableElevation variant="contained" sx={{ ...(shown.status === 'upcoming' && shown.applied ? tintBtn : solidBtn), mt: 1.75 }}>
+              <Button onClick={() => onOpen(shown)} fullWidth disableElevation variant="contained" sx={{ ...(shown.status === 'upcoming' && shown.applied ? tintBtn : solidBtn), mt: 2 }}>
                 {shown.applied ? 'You are in' : shown.status === 'live' ? 'View contest' : 'View and apply'}
               </Button>
             }

@@ -1,6 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, RADII_PX } from '../../../app/design/designTokens';
 
 // Small helper: an SVG text/element that fades in once `step` reaches
 // `at`. Centralizing the transition here keeps every animation's reveal
@@ -21,7 +21,7 @@ export function PrimeFactorizationAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(LCM_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 260" width="100%" style={{ display: 'block' }}>
           {/* Step 0: the two numbers */}
@@ -97,7 +97,7 @@ export function HcfLcmRelationAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(REL_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 260" width="100%" style={{ display: 'block' }}>
           {/* Step 0: two circles labeled 12 and 18 */}

@@ -38,9 +38,9 @@ function TopicChip({ tag, count, on, onToggle }) {
 
 function ExpandToggle({ expanded, onToggle }) {
   const Icon = expanded ? KeyboardDoubleArrowUpRoundedIcon : KeyboardDoubleArrowDownRoundedIcon;
-  const placement = expanded ? { display: 'flex', ml: 'auto', mt: 0.25 } : { position: 'absolute', top: 0, right: 0 };
+  const placement = expanded ? { display: 'flex', ml: 'auto', mt: 0.5 } : { position: 'absolute', top: 0, right: 0 };
   return (
-    <ButtonBase onClick={onToggle} aria-expanded={expanded} sx={{ gap: 0.25, height: TOPIC_ROW_H, fontFamily: 'inherit', color: 'text.secondary', ...placement }}>
+    <ButtonBase onClick={onToggle} aria-expanded={expanded} sx={{ gap: 0.5, height: TOPIC_ROW_H, fontFamily: 'inherit', color: 'text.secondary', ...placement }}>
       <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
         {expanded ? 'Collapse' : 'Expand'}
       </Typography>

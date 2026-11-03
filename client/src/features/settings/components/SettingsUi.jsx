@@ -8,7 +8,7 @@ import { usersApi } from '../../../api/usersApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { userUpdated } from '../../auth/authSlice';
 import { setUiPrefs } from '../../../app/uiSlice';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 /* ------------------------------------------------------------------ */
 /* Layout atoms                                                       */
@@ -45,7 +45,7 @@ export function Card({ title, description, children, tone = 'default', sx }) {
         mb: 3,
         border: '1px solid',
         borderColor: danger ? alpha(t.palette.error.main, 0.55) : 'divider',
-        borderRadius: '12px',
+        borderRadius: RADII_PX.card,
         bgcolor: 'background.paper',
         overflow: 'hidden',
         ...sx,
@@ -59,7 +59,7 @@ export function Card({ title, description, children, tone = 'default', sx }) {
             </Typography>
           )}
           {description && (
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
               {description}
             </Typography>
           )}
@@ -79,13 +79,13 @@ export function CardBody({ children, sx }) {
 export function Row({ title, description, control, children, last }) {
   return (
     <Box sx={{ px: { xs: 2, sm: 3 }, py: 2, borderBottom: last ? 'none' : '1px solid', borderColor: 'divider', '&:last-of-type': { borderBottom: 'none' } }}>
-      <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ alignItems: { xs: 'stretch', sm: 'center' }, justifyContent: 'space-between', gap: { xs: 1.25, sm: 3 } }}>
+      <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ alignItems: { xs: 'stretch', sm: 'center' }, justifyContent: 'space-between', gap: { xs: 1.5, sm: 3 } }}>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Typography variant="body2" component="div" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             {title}
           </Typography>
           {description && (
-            <Typography variant="body2" component="div" color="text.secondary" sx={{ mt: 0.25, fontSize: FONT_SIZES.body }}>
+            <Typography variant="body2" component="div" color="text.secondary" sx={{ mt: 0.5, fontSize: FONT_SIZES.body }}>
               {description}
             </Typography>
           )}
@@ -128,8 +128,8 @@ export function ChoiceCard({ selected, onClick, label, hint, children, sx }) {
         display: 'flex',
         flexDirection: 'column',
         gap: 1,
-        p: 1.25,
-        borderRadius: '12px',
+        p: 1.5,
+        borderRadius: RADII_PX.card,
         border: '2px solid',
         borderColor: selected ? 'primary.main' : 'divider',
         bgcolor: selected ? alpha(t.palette.primary.main, 0.07) : 'transparent',

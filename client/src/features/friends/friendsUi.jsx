@@ -5,7 +5,7 @@ import { animate, useReducedMotion } from 'framer-motion';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import { todayKey as indiaToday } from '../dashboard/dashboardUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Small pieces shared by the Friends page, chat, activity feed and profile dialog.
 export const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
@@ -29,7 +29,7 @@ export const cardSx = (t, { accent, glowColor, mb = 0.85 } = {}) => {
   return {
     mx: 1,
     mb,
-    borderRadius: '16px',
+    borderRadius: RADII_PX.card,
     overflow: 'hidden',
     position: 'relative',
     border: '1.5px solid transparent',
@@ -54,7 +54,7 @@ export function CountUp({ value }) {
 
 export function TierChip({ tier }) {
   return (
-    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.7, py: 0.05, borderRadius: 99, bgcolor: `color-mix(in srgb, ${tier.color} 16%, transparent)`, color: tier.color, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.6 }}>
+    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 0.5, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: `color-mix(in srgb, ${tier.color} 16%, transparent)`, color: tier.color, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.6 }}>
       <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.body }} />{tier.name}
     </Box>
   );
@@ -116,7 +116,7 @@ export function PersonAvatar({ person, size = 40, online, ring, gradient }) {
   return (
     <Box sx={{ position: 'relative', display: 'inline-flex', flexShrink: 0 }}>
       {gradient ? (
-        <Box sx={{ p: '2.5px', borderRadius: '50%', display: 'inline-flex', background: `linear-gradient(135deg, ${gradient[0]}, ${gradient[1]})` }}>{avatar}</Box>
+        <Box sx={{ p: 0.5, borderRadius: '50%', display: 'inline-flex', background: `linear-gradient(135deg, ${gradient[0]}, ${gradient[1]})` }}>{avatar}</Box>
       ) : avatar}
       {online && <OnlineDot size={Math.max(9, Math.round(size * 0.2))} sx={{ position: 'absolute', right: -2, bottom: -2 }} />}
     </Box>
@@ -126,7 +126,7 @@ export function PersonAvatar({ person, size = 40, online, ring, gradient }) {
 export function Streak({ value }) {
   const on = value > 0;
   return (
-    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.15 }}>
+    <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}>
       <LocalFireDepartmentRoundedIcon
         sx={{ fontSize: FONT_SIZES.title, color: on ? FLAME : 'text.disabled', ...(on && { animation: `${flicker} 1.4s ease-in-out infinite`, filter: `drop-shadow(0 0 4px ${withAlpha(COLOR_PALETTE.orange[500], 0.7)})`, ...calm }) }}
       />

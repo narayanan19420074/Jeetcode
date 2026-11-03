@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 export default function VisualizerCanvas({ category, step, graph }) {
   if (!step) return null;
@@ -42,7 +42,7 @@ function ArrayCanvas({ step }) {
             width: `calc(${barWidthPct}% - 6px)`,
             height: `${(item.value / max) * 190 + 12}px`,
             bgcolor: colorFor(idx),
-            borderRadius: 1,
+            borderRadius: RADII_PX.control,
             transition: 'left 0.35s ease, height 0.2s ease, background-color 0.2s ease',
           }}
         >
@@ -159,14 +159,14 @@ function TreeCanvas({ step }) {
 function FibonacciCanvas({ step }) {
   const { memo = [], highlightIdx } = step;
   return (
-    <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', justifyContent: 'center', py: 2 }}>
+    <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', justifyContent: 'center', py: 2 }}>
       {memo.map((val, idx) => (
         <Box key={idx} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0.5, minWidth: 44 }}>
           <Box
             sx={{
               width: 44,
               height: 44,
-              borderRadius: 1.5,
+              borderRadius: RADII_PX.card,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

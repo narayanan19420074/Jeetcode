@@ -28,7 +28,7 @@ function Row({ s, open, onToggle, onLoad }) {
           textAlign: 'left',
           gap: 1.5,
           px: 1.5,
-          py: 1.1,
+          py: 1,
           borderRadius: `${WS.radius + 2}px`,
           '&:hover': { bgcolor: open ? 'transparent' : wsSurface(t).raised },
         })}
@@ -52,7 +52,7 @@ function Row({ s, open, onToggle, onLoad }) {
       </ButtonBase>
       {open && (
         <Box sx={{ px: 1.5, pb: 1.5 }}>
-          <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.75 }}>
+          <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
             {s.passedCount}/{s.totalCount} test cases passed
           </Typography>
           <Box
@@ -71,7 +71,7 @@ function Row({ s, open, onToggle, onLoad }) {
           >
             {s.code}
           </Box>
-          <WsButton variant="secondary" onClick={() => onLoad(s)} sx={{ mt: 1.25 }}>
+          <WsButton variant="secondary" onClick={() => onLoad(s)} sx={{ mt: 1.5 }}>
             Load in editor
           </WsButton>
         </Box>
@@ -131,7 +131,7 @@ export default function SubmissionsPanel({ slug, isAuthenticated, refreshKey, on
     return <EmptyState icon={<HistoryRoundedIcon />} title="No submissions yet" text="Submit your solution and every attempt will show up here." />;
   }
   return (
-    <Stack sx={{ gap: 0.25, mx: -0.5 }}>
+    <Stack sx={{ gap: 0.5, mx: -0.5 }}>
       {state.items.map((s) => (
         <Row key={s._id} s={s} open={openId === s._id} onToggle={() => setOpenId((id) => (id === s._id ? null : s._id))} onLoad={onLoad} />
       ))}

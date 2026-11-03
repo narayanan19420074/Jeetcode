@@ -30,7 +30,7 @@ export default function EmailVerifyBanner() {
       severity={note?.severity || 'info'}
       variant="standard"
       onClose={() => setHidden(true)}
-      sx={{ borderRadius: 0, py: 0.25, alignItems: 'center' }}
+      sx={{ borderRadius: 0, py: 0.5, alignItems: 'center' }}
       action={
         !note?.severity || note.severity === 'warning' ? (
           <Button color="inherit" size="small" onClick={resend} disabled={busy} sx={{ fontWeight: 'fontWeightSemibold' }}>

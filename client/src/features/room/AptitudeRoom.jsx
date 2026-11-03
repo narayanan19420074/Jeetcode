@@ -22,7 +22,7 @@ import QuestionStimulus from '../aptitude/components/QuestionStimulus';
 import { DIFFICULTY } from '../aptitude/components/aptitudeUi';
 import FloatingCall from './FloatingCall';
 import ChatPanel from './ChatPanel';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../app/design/designTokens';
 
 const MONO = '"JetBrains Mono", monospace';
 const LETTERS = ['A', 'B', 'C', 'D'];
@@ -39,7 +39,7 @@ function OptionRow({ index, text, state, who, disabled, onClick }) {
       sx={{
         width: '100%',
         p: 1.5,
-        borderRadius: 2.5,
+        borderRadius: RADII_PX.card,
         display: 'flex',
         alignItems: 'center',
         gap: 1.5,
@@ -191,7 +191,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
   return (
     <Box sx={{ height: '100dvh', display: 'flex', flexDirection: 'column', bgcolor: 'background.default' }}>
       {/* top bar */}
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.25, pl: { xs: 2, md: 2.5 }, pr: { xs: 0.75, md: 1.5 }, pt: 'env(safe-area-inset-top)', minHeight: 56, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, pl: { xs: 2, md: 2.5 }, pr: { xs: 1, md: 1.5 }, pt: 'env(safe-area-inset-top)', minHeight: 56, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
         <Box sx={{ minWidth: 0, flex: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
           <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }}>
             {room.meta.title || 'Aptitude study room'}
@@ -256,7 +256,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
 
       {/* running score for this room */}
       {sorted.length > 0 && (
-        <Stack direction="row" useFlexGap spacing={1} sx={{ px: 2, py: 0.75, flexWrap: 'wrap', borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
+        <Stack direction="row" useFlexGap spacing={1} sx={{ px: 2, py: 1, flexWrap: 'wrap', borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}>
           {sorted.map((t) => (
             <Chip key={t.key} size="small" variant="outlined" label={`${t.key === me?.key ? 'You' : t.name} ${t.correct}/${t.total}`} sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: MONO }} />
           ))}
@@ -268,7 +268,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
         <Box sx={{ maxWidth: 720, mx: 'auto', p: { xs: 1.5, md: 3 } }}>
           {!q ? (
             <Stack spacing={1.5} sx={{ alignItems: 'center', textAlign: 'center', py: { xs: 6, md: 10 } }}>
-              <Box sx={{ width: 64, height: 64, borderRadius: 4, display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main' }}>
+              <Box sx={{ width: 64, height: 64, borderRadius: RADII_PX.pill, display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main' }}>
                 <QuizRoundedIcon sx={{ fontSize: FONT_SIZES.hero }} />
               </Box>
               <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
@@ -290,7 +290,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
                 {topicTitle && <Chip size="small" variant="outlined" label={topicTitle} />}
               </Stack>
 
-              <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+              <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
                 <QuestionStimulus set={quiz.set} />
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.subheading, lineHeight: 1.65, mb: 2.5, whiteSpace: 'pre-line' }}>{q.questionText}</Typography>
                 <Stack spacing={1.25}>
@@ -312,7 +312,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
                     variant="outlined"
                     sx={{
                       p: 2,
-                      borderRadius: 3,
+                      borderRadius: RADII_PX.card,
                       borderColor: myResult ? (myResult.choice === quiz.correct ? 'success.main' : 'error.main') : 'divider',
                       bgcolor: myResult ? (t) => alpha(myResult.choice === quiz.correct ? t.palette.success.main : t.palette.error.main, 0.07) : 'transparent',
                     }}
@@ -326,23 +326,23 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
                   </Paper>
 
                   {quiz.explanation && (
-                    <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+                    <Paper variant="outlined" sx={{ p: 2.5, borderRadius: RADII_PX.card }}>
                       <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em' }}>
                         SOLUTION
                       </Typography>
-                      <Typography sx={{ mt: 0.75, lineHeight: 1.75, whiteSpace: 'pre-line' }}>{quiz.explanation}</Typography>
+                      <Typography sx={{ mt: 1, lineHeight: 1.75, whiteSpace: 'pre-line' }}>{quiz.explanation}</Typography>
                     </Paper>
                   )}
 
                   {quiz.shortcut && (
-                    <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}>
+                    <Paper variant="outlined" sx={{ p: 2.5, borderRadius: RADII_PX.card, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}>
                       <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center' }}>
                         <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />
                         <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'warning.main', letterSpacing: '0.1em' }}>
                           EXAM SHORTCUT
                         </Typography>
                       </Stack>
-                      <Typography sx={{ mt: 0.75, lineHeight: 1.7, whiteSpace: 'pre-line' }}>{quiz.shortcut}</Typography>
+                      <Typography sx={{ mt: 1, lineHeight: 1.7, whiteSpace: 'pre-line' }}>{quiz.shortcut}</Typography>
                     </Paper>
                   )}
                 </Stack>
@@ -354,7 +354,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
 
       {/* actions */}
       {q && (
-        <Stack direction="row" spacing={1} sx={{ p: 1.25, pb: 'calc(10px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper', justifyContent: 'center' }}>
+        <Stack direction="row" spacing={1} sx={{ p: 1.5, pb: 'calc(10px + env(safe-area-inset-bottom))', borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper', justifyContent: 'center' }}>
           <Box sx={{ display: 'flex', gap: 1, width: '100%', maxWidth: 720 }}>
             <Button variant="outlined" startIcon={<FormatListBulletedRoundedIcon />} onClick={() => setPickerOpen(true)} sx={{ flexShrink: 0 }}>
               Questions
@@ -382,7 +382,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
             sx: {
               width: isMobile ? '100%' : 420,
               height: isMobile ? '85dvh' : '100%',
-              borderRadius: isMobile ? '24px 24px 0 0' : 0,
+              borderRadius: isMobile ? `${RADII.card}px ${RADII.card}px 0 0` : 0,
               display: 'flex',
               flexDirection: 'column',
               pb: 'env(safe-area-inset-bottom)',
@@ -397,7 +397,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
           </IconButton>
         </Stack>
 
-        <Stack spacing={1} sx={{ px: 2, py: 1.25, borderBottom: '1px solid', borderColor: 'divider' }}>
+        <Stack spacing={1} sx={{ px: 2, py: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
           <Stack direction="row" useFlexGap spacing={0.75} sx={{ flexWrap: 'wrap' }}>
             {[['', 'All'], ['easy', 'Easy'], ['medium', 'Medium'], ['hard', 'Hard']].map(([v, label]) => (
               <Chip key={label} size="small" label={label} color={difficulty === v ? 'primary' : 'default'} variant={difficulty === v ? 'filled' : 'outlined'} onClick={() => setDifficulty(v)} sx={{ fontWeight: FONT_WEIGHTS.bold }} />
@@ -425,7 +425,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
               <ButtonBase
                 key={it.id}
                 onClick={() => pick(it.id)}
-                sx={{ width: '100%', display: 'flex', alignItems: 'flex-start', gap: 1.25, textAlign: 'left', px: 2, py: 1.25, borderBottom: '1px solid', borderColor: 'divider', bgcolor: active ? (t) => alpha(t.palette.primary.main, 0.1) : 'transparent', '&:hover': { bgcolor: 'action.hover' } }}
+                sx={{ width: '100%', display: 'flex', alignItems: 'flex-start', gap: 1.5, textAlign: 'left', px: 2, py: 1.5, borderBottom: '1px solid', borderColor: 'divider', bgcolor: active ? (t) => alpha(t.palette.primary.main, 0.1) : 'transparent', '&:hover': { bgcolor: 'action.hover' } }}
               >
                 <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, fontFamily: MONO, color: 'text.secondary', minWidth: 28 }}>{it.n}</Typography>
                 <Typography variant="body2" sx={{ flex: 1, minWidth: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{it.text}</Typography>
@@ -457,7 +457,7 @@ export default function AptitudeRoom({ room, call, roomId, copyLink, leave }) {
             sx: {
               width: isMobile ? '100%' : 360,
               height: isMobile ? '70dvh' : '100%',
-              borderRadius: isMobile ? '24px 24px 0 0' : 0,
+              borderRadius: isMobile ? `${RADII.card}px ${RADII.card}px 0 0` : 0,
               display: 'flex',
               flexDirection: 'column',
               pb: 'env(safe-area-inset-bottom)',

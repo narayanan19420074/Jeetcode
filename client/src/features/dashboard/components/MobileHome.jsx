@@ -19,7 +19,7 @@ import { fmtDate, useContest } from '../../contest/contestUtils';
 import { tint } from '../dashboardUtils';
 import NqtExploreCard from './NqtExploreCard';
 import { LibraryFont, useLibraryPalette } from './libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Phone home screen in the Library layout: swipeable banners, category cards, topic chips and company rows.
 // Sizes: 16px page gutter, 2:1 banners, 115x80 category cards, 34px chips, 48px company logos, 58px company rows.
@@ -73,7 +73,7 @@ function Banners({ cards }) {
     <Box sx={{ position: 'relative' }}>
       <Box
         onScroll={(e) => setIndex(Math.round(e.currentTarget.scrollLeft / (e.currentTarget.clientWidth + 12)))}
-        sx={{ display: 'flex', gap: '12px', overflowX: 'auto', scrollSnapType: 'x mandatory', ...hideScrollbar }}
+        sx={{ display: 'flex', gap: 1.5, overflowX: 'auto', scrollSnapType: 'x mandatory', ...hideScrollbar }}
       >
         {cards.map(({ key, title, to, icon: Icon, gradient }) => (
           <ButtonBase
@@ -87,7 +87,7 @@ function Banners({ cards }) {
               position: 'relative',
               overflow: 'hidden',
               aspectRatio: '2 / 1',
-              borderRadius: '20px',
+              borderRadius: RADII_PX.card,
               textAlign: 'left',
               display: 'block',
               color: COLOR_PALETTE.white,
@@ -121,7 +121,7 @@ function Banners({ cards }) {
         ))}
       </Box>
       {cards.length > 1 && (
-        <Box aria-hidden sx={{ position: 'absolute', right: 14, bottom: 10, display: 'flex', gap: '5px', pointerEvents: 'none' }}>
+        <Box aria-hidden sx={{ position: 'absolute', right: 14, bottom: 10, display: 'flex', gap: 0.5, pointerEvents: 'none' }}>
           {cards.map((b, i) => (
             <Box key={b.key} sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: COLOR_PALETTE.white, opacity: i === index ? 0.95 : 0.4 }} />
           ))}
@@ -142,8 +142,8 @@ function CategoryCard({ to, label, color, bg, icon: Icon, all = false, dim = fal
         flex: 'none',
         width: 115,
         height: 80,
-        p: '12px',
-        borderRadius: '16px',
+        p: 1.5,
+        borderRadius: RADII_PX.card,
         border: `1.5px solid ${pal.border}`,
         display: 'flex',
         flexDirection: 'column',
@@ -162,7 +162,7 @@ function CategoryCard({ to, label, color, bg, icon: Icon, all = false, dim = fal
       })}
     >
       {all ? (
-        <Box aria-hidden sx={{ width: 30, height: 28, borderRadius: '9px', display: 'grid', placeItems: 'center', background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
+        <Box aria-hidden sx={{ width: 30, height: 28, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
           <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.white }} />
         </Box>
       ) : (
@@ -193,7 +193,7 @@ function Knowledge({ tags }) {
                 key={tag}
                 component={RouterLink}
                 to={problemsUrl('tag', tag)}
-                sx={{ height: 34, px: '14px', borderRadius: 999, bgcolor: pal.chip, color: pal.chipText, fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, whiteSpace: 'nowrap' }}
+                sx={{ height: 34, px: 2, borderRadius: RADII_PX.pill, bgcolor: pal.chip, color: pal.chipText, fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, whiteSpace: 'nowrap' }}
               >
                 {tag}
               </ButtonBase>
@@ -210,16 +210,16 @@ function Companies({ companies }) {
   const pal = useLibraryPalette();
   return (
     <Box sx={bleed}>
-      <Box sx={{ display: 'grid', gridAutoFlow: 'column', gridTemplateRows: 'repeat(3, auto)', gridAutoColumns: 236, columnGap: '16px', px: bleedPad, width: 'max-content' }}>
+      <Box sx={{ display: 'grid', gridAutoFlow: 'column', gridTemplateRows: 'repeat(3, auto)', gridAutoColumns: 236, columnGap: 2, px: bleedPad, width: 'max-content' }}>
         {companies.map(({ company, count }) => (
           <ButtonBase
             key={company}
             component={RouterLink}
             to={problemsUrl('company', company)}
-            sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '12px', mb: '5px', textAlign: 'left', color: pal.text }}
+            sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: 1.5, mb: 0.5, textAlign: 'left', color: pal.text }}
           >
             <CompanyAvatar name={company} size={48} />
-            <Box sx={{ flex: 1, minWidth: 0, pb: '4px', borderBottom: `1px solid ${pal.divider}` }}>
+            <Box sx={{ flex: 1, minWidth: 0, pb: 0.5, borderBottom: `1px solid ${pal.divider}` }}>
               <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING }}>
                 {company}
               </Typography>
@@ -240,7 +240,7 @@ function ChipSkeleton() {
       {[0, 1, 2].map((r) => (
         <Box key={r} sx={{ display: 'flex', gap: 1 }}>
           {[70, 110, 84, 130].map((w) => (
-            <Skeleton key={w} variant="rounded" width={w} height={34} sx={{ borderRadius: 999 }} />
+            <Skeleton key={w} variant="rounded" width={w} height={34} sx={{ borderRadius: RADII_PX.pill }} />
           ))}
         </Box>
       ))}
@@ -303,7 +303,7 @@ export default function MobileHome({ cards, nqtDismissed, onDismissNqt }) {
         <Stack spacing={1.5}>
           <SectionHeading to="/problems">Category</SectionHeading>
           <Box sx={bleed}>
-            <Box sx={{ display: 'flex', gap: '11px', px: bleedPad, width: 'max-content' }}>
+            <Box sx={{ display: 'flex', gap: 1.5, px: bleedPad, width: 'max-content' }}>
               {CATEGORIES.map(({ key, icon, Icon, ...c }) => (
                 <CategoryCard key={key} {...c} icon={Icon} all={key === 'all'} />
               ))}
@@ -315,7 +315,7 @@ export default function MobileHome({ cards, nqtDismissed, onDismissNqt }) {
           <Stack spacing={1.5}>
             <SectionHeading to="/aptitude">Aptitude</SectionHeading>
             <Box sx={bleed}>
-              <Box sx={{ display: 'flex', gap: '11px', px: bleedPad, width: 'max-content' }}>
+              <Box sx={{ display: 'flex', gap: 1.5, px: bleedPad, width: 'max-content' }}>
                 {levels.map((p) => {
                   const best = Math.round(p.progress?.bestScore ?? 0);
                   const cleared = best >= p.passPercentage;
@@ -347,7 +347,7 @@ export default function MobileHome({ cards, nqtDismissed, onDismissNqt }) {
         {companies === null || companies.length > 0 ? (
           <Stack spacing={1.5}>
             <SectionHeading to="/prep">Companies</SectionHeading>
-            {companies === null ? <Skeleton variant="rounded" height={168} sx={{ borderRadius: '12px' }} /> : <Companies companies={companies} />}
+            {companies === null ? <Skeleton variant="rounded" height={168} sx={{ borderRadius: RADII_PX.card }} /> : <Companies companies={companies} />}
           </Stack>
         ) : null}
       </Stack>

@@ -1,6 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, RADII_PX } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -102,7 +102,7 @@ export function EquationBasedAnimation() {
   ];
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 230" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
@@ -172,7 +172,7 @@ export function TrueFalseReadingAnimation() {
   const toX = (v) => 40 + ((v - 30) / 40) * 340;
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 230" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
@@ -230,7 +230,7 @@ export function ReplacingPersonAnimation() {
   const positions = [50, 105, 160, 215, 270];
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 240" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
@@ -293,7 +293,7 @@ export function IncludingExcludingAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(INCL_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 230" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
@@ -371,7 +371,7 @@ export function AverageSpeedAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(SPEED_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 240" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>

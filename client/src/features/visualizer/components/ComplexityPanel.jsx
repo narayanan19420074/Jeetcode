@@ -1,9 +1,9 @@
 import { Paper, Typography, Box, Chip, Divider, Stack } from '@mui/material';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 export default function ComplexityPanel({ algo, opsCount, description }) {
   return (
-    <Paper data-teach="complexity" variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+    <Paper data-teach="complexity" variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
       <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>{algo.name}</Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>{algo.description}</Typography>
 

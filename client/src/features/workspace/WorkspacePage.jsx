@@ -66,6 +66,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { LIB_ACCENT, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { tint } from '../dashboard/dashboardUtils';
 import { fetchProblem, setLanguage, updateCode, runCode, submitCode, toggleAiDrawer, loadSavedLanguage, applyDefaultLanguage } from './workspaceSlice';
+import { RADII } from '../../app/design/designTokens';
 
 const DESC_TABS = [
   { value: 0, label: 'Description', icon: <ArticleOutlinedIcon /> },
@@ -476,7 +477,7 @@ export default function WorkspacePage() {
             </IconButton>
           </Stack>
         ) : (
-        <PaneBar sx={{ px: 1.25, gap: 0.5, height: WS.bar, bgcolor: surf.chrome, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
+        <PaneBar sx={{ px: 1.5, gap: 0.5, height: WS.bar, bgcolor: surf.chrome, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
           <LanguageSelect value={activeLanguage} onChange={(v) => dispatch(setLanguage(v))} problem={problem} langMode={langMode} isMobile={isMobile} />
           <TimerControl sw={sw} size={ctl} />
 
@@ -520,7 +521,7 @@ export default function WorkspacePage() {
           </GuestBanner>
         )}
 
-        <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', ...(isMobile && { borderRadius: '20px 20px 0 0', overflow: 'hidden' }) }}>
+        <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', ...(isMobile && { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, overflow: 'hidden' }) }}>
           <CodeEditor
             ref={editorApi}
             path={`${problem._id}-${activeLanguage}`}

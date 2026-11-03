@@ -23,7 +23,7 @@ import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, istShift, utcKey } from '
 import AchievementBadge from './AchievementBadge';
 import BackToDashboard from '../../components/BackToDashboard';
 import MobileYou from './MobileYou';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const initialsFromName = (name) =>
   (name || 'U').trim().split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase()).join('');
@@ -40,7 +40,7 @@ const timeAgo = (iso) => {
 // Socials are stored as usernames; a pasted full link also works.
 const socialUrl = (base, v) => (/^https?:\/\//i.test(v) ? v : `${base}${v.replace(/^@/, '')}`);
 
-const cardSx = { p: 2, borderRadius: '20px' };
+const cardSx = { p: 2, borderRadius: RADII_PX.card };
 
 function SectionTitle({ children }) {
   return (
@@ -50,7 +50,7 @@ function SectionTitle({ children }) {
 
 function StatTile({ label, value, sub }) {
   return (
-    <Paper variant="outlined" sx={{ ...cardSx, p: 1.75 }}>
+    <Paper variant="outlined" sx={{ ...cardSx, p: 2 }}>
       <Typography variant="body2" color="text.secondary">
         {label}
       </Typography>
@@ -77,13 +77,13 @@ function Row({ leading, title, subtitle, trailing, onClick }) {
         width: '100%',
         display: 'flex',
         alignItems: 'center',
-        gap: 1.75,
-        py: 1.25,
+        gap: 2,
+        py: 1.5,
         cursor: 'pointer',
         borderBottom: '1px solid',
         borderColor: 'divider',
         '&:last-of-type': { borderBottom: 0 },
-        '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: 2, borderRadius: '12px' },
+        '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: 2, borderRadius: RADII_PX.card },
         '&:active': { bgcolor: 'action.hover' },
       }}
     >
@@ -215,7 +215,7 @@ export default function YouPage() {
           </Stack>
           <Typography color="text.secondary">@{user.handle}</Typography>
           {user.bio && (
-            <Typography variant="body2" sx={{ mt: 0.75 }}>
+            <Typography variant="body2" sx={{ mt: 1 }}>
               {user.bio}
             </Typography>
           )}
@@ -285,7 +285,7 @@ export default function YouPage() {
             onClick={() => setTab(t.key)}
             color={tab === t.key ? 'primary' : 'default'}
             variant={tab === t.key ? 'filled' : 'outlined'}
-            sx={{ fontWeight: FONT_WEIGHTS.bold, px: 0.5, height: 36, borderRadius: 99 }}
+            sx={{ fontWeight: FONT_WEIGHTS.bold, px: 0.5, height: 36, borderRadius: RADII_PX.pill }}
           />
         ))}
       </Stack>
@@ -303,7 +303,7 @@ export default function YouPage() {
                   sx={(t) => ({
                     width: 52,
                     height: 52,
-                    borderRadius: '14px',
+                    borderRadius: RADII_PX.card,
                     flexShrink: 0,
                     display: 'grid',
                     placeItems: 'center',

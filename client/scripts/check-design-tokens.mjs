@@ -8,6 +8,7 @@
 // Usage:
 //   node client/scripts/check-design-tokens.mjs            fail if any file has MORE literals than its baseline
 //   node client/scripts/check-design-tokens.mjs --update   lower the baselines after a migration (never raises them)
+//   node client/scripts/check-design-tokens.mjs --update --allow-raise   only when a new rule is added: records the starting counts
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -93,7 +94,9 @@ function main() {
   const valueBaseline = readJson(VALUE_BASELINE_FILE);
   const colourRegressions = findRegressions(colours, colourBaseline);
   const valueRegressions = valueBaseline ? findValueRegressions(values, valueBaseline) : [];
-  if (colourRegressions.length || valueRegressions.length) reportRegressions(colourRegressions, valueRegressions, colourBaseline);
+  // --allow-raise is only for introducing a new rule: it records today's counts as the starting point.
+  const allowRaise = process.argv.includes('--update') && process.argv.includes('--allow-raise');
+  if (!allowRaise && (colourRegressions.length || valueRegressions.length)) reportRegressions(colourRegressions, valueRegressions, colourBaseline);
   if (process.argv.includes('--update') || !valueBaseline) {
     writeJson(BASELINE_FILE, colours);
     writeJson(VALUE_BASELINE_FILE, values);

@@ -11,7 +11,7 @@ export default function DescriptionDrawer({ open, onClose, children }) {
   const surf = wsSurface(useTheme());
   return (
     <Drawer anchor="right" open={open} onClose={onClose} slotProps={{ paper: { sx: { width: '100%', maxWidth: '100%' } } }}>
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, px: 1, pb: 0.75, pt: 'calc(6px + env(safe-area-inset-top))', flexShrink: 0, bgcolor: surf.chrome }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, px: 1, pb: 1, pt: 'calc(6px + env(safe-area-inset-top))', flexShrink: 0, bgcolor: surf.chrome }}>
         <WsIconButton title="Back to code" size="lg" onClick={onClose}>
           <ArrowBackRoundedIcon />
         </WsIconButton>

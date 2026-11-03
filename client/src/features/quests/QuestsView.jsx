@@ -6,6 +6,7 @@ import useViewportFill from '../dashboard/useViewportFill';
 import useQuestsData from './common/useQuestsData';
 import questsProps from './common/questsProps';
 import MobileQuests from './MobileQuests';
+import { RADII_PX } from '../../app/design/designTokens';
 
 const BOTTOM_GAP = 24;
 
@@ -15,9 +16,9 @@ function QuestsContent({ isAuthenticated, onPick }) {
   const dark = useTheme().palette.mode === 'dark';
   const reduce = Boolean(useReducedMotion());
   if (quests.error && !quests.state) {
-    return <Alert severity="error" sx={{ m: 1.75 }} action={<Button color="inherit" size="small" onClick={quests.load}>Retry</Button>}>{quests.error}</Alert>;
+    return <Alert severity="error" sx={{ m: 2 }} action={<Button color="inherit" size="small" onClick={quests.load}>Retry</Button>}>{quests.error}</Alert>;
   }
-  if (!quests.state) return <Skeleton variant="rounded" sx={{ m: 1.75, height: 360, borderRadius: '26px' }} />;
+  if (!quests.state) return <Skeleton variant="rounded" sx={{ m: 2, height: 360, borderRadius: RADII_PX.card }} />;
   return <MobileQuests {...questsProps({ quests, isAuthenticated, wallet, dark, reduce, onPick })} />;
 }
 

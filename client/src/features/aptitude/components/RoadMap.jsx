@@ -12,7 +12,7 @@ import Alien3D from './Alien3D';
 import { starsFor, testXp } from './gamification';
 import { tint } from '../../dashboard/dashboardUtils';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, FONTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Level map. Follows the app theme (dark / light) and the product palette:
 // slate surfaces, blue = current, green = cleared. A slim road winds through
@@ -182,8 +182,8 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
             fontSize: FONT_SIZES.body,
             lineHeight: 1.2,
             px: 0.5,
-            py: 0.15,
-            borderRadius: '6px',
+            py: 0.5,
+            borderRadius: RADII_PX.control,
             bgcolor: alpha(theme.palette.background.paper, 0.88),
             color: status === 'locked' ? 'text.secondary' : 'text.primary',
             display: '-webkit-box',
@@ -207,7 +207,7 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
             ? { top: size + 24, left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }
             : { top: '50%', transform: 'translateY(-50%)', ...(labelOnRight ? { left: size + 22, textAlign: 'left' } : { right: size + 22, textAlign: 'right' }) }),
           p: 1.5,
-          borderRadius: '12px',
+          borderRadius: RADII_PX.card,
           bgcolor: 'background.paper',
           border: '1px solid',
           borderColor: status === 'current' ? primary.main : status === 'completed' ? alpha(success.main, 0.5) : 'divider',
@@ -228,26 +228,26 @@ function LevelNode({ pattern, index, status, x, y, isLast, labelOnRight, narrow,
           </Typography>
         ) : (
           <>
-            <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap', mt: 0.75, justifyContent: below ? 'center' : labelOnRight ? 'flex-start' : 'flex-end' }}>
-              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.25, px: 0.75, py: 0.15, borderRadius: '6px', bgcolor: alpha(warning.main, 0.14), color: dark ? warning.light : warning.dark, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
+            <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap', mt: 1, justifyContent: below ? 'center' : labelOnRight ? 'flex-start' : 'flex-end' }}>
+              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.5, borderRadius: RADII_PX.control, bgcolor: alpha(warning.main, 0.14), color: dark ? warning.light : warning.dark, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
                 <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.body }} /> {passed ? '' : '+'}
                 {testXp(100, true)} XP
               </Box>
               {pattern.timeLimitMinutes ? (
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.25, px: 0.75, py: 0.15, borderRadius: '6px', bgcolor: 'action.hover', color: 'text.secondary', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, py: 0.5, borderRadius: RADII_PX.control, bgcolor: 'action.hover', color: 'text.secondary', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
                   <TimerRoundedIcon sx={{ fontSize: FONT_SIZES.body }} /> {pattern.timeLimitMinutes} min
                 </Box>
               ) : null}
             </Box>
-            <Box sx={{ position: 'relative', height: 6, borderRadius: 3, bgcolor: 'action.hover', mt: 1.1 }}>
-              <Box component={motion.div} initial={{ width: 0 }} animate={{ width: `${Math.min(100, best)}%` }} transition={{ duration: 1, delay: 0.5 + index * 0.1 }} sx={{ height: '100%', borderRadius: 3, bgcolor: passed ? success.main : primary.main }} />
-              <Box sx={{ position: 'absolute', top: -3, bottom: -3, left: `${pattern.passPercentage}%`, width: 2, bgcolor: 'text.primary', opacity: 0.55, borderRadius: 1 }} />
+            <Box sx={{ position: 'relative', height: 6, borderRadius: RADII_PX.pill, bgcolor: 'action.hover', mt: 1 }}>
+              <Box component={motion.div} initial={{ width: 0 }} animate={{ width: `${Math.min(100, best)}%` }} transition={{ duration: 1, delay: 0.5 + index * 0.1 }} sx={{ height: '100%', borderRadius: RADII_PX.card, bgcolor: passed ? success.main : primary.main }} />
+              <Box sx={{ position: 'absolute', top: -3, bottom: -3, left: `${pattern.passPercentage}%`, width: 2, bgcolor: 'text.primary', opacity: 0.55, borderRadius: RADII_PX.pill }} />
             </Box>
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.6 }}>
+            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.5 }}>
               {passed ? `Mastery ${best}% · pass mark ${pattern.passPercentage}%` : pattern.progress.attemptsCount > 0 ? `Best ${best}% · need ${pattern.passPercentage}%` : `Score ${pattern.passPercentage}% to clear`}
             </Typography>
             {passed && (
-              <Box sx={{ display: 'flex', gap: 0.25, mt: 0.4, justifyContent: below ? 'center' : labelOnRight ? 'flex-start' : 'flex-end' }}>
+              <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5, justifyContent: below ? 'center' : labelOnRight ? 'flex-start' : 'flex-end' }}>
                 {[0, 1, 2].map((n) => (
                   <StarRoundedIcon
                     key={n}
@@ -376,9 +376,9 @@ function PhoneLevelNode({ pattern, index, status, x, y, onClick }) {
           lineHeight: '17px',
           fontWeight: FONT_WEIGHTS.medium,
           letterSpacing: LIB_TRACKING,
-          px: '4px',
-          py: '1px',
-          borderRadius: '8px',
+          px: 0.5,
+          py: 0,
+          borderRadius: RADII_PX.control,
           bgcolor: alpha(pal.bg, 0.88),
           color: locked ? pal.muted : pal.text,
           display: '-webkit-box',
@@ -470,8 +470,8 @@ function Walker({ d, kind, size, onGo, node = NODE, perch = 0, phone = false }) 
                 width: 104,
                 mb: 0.5,
                 ...(phone
-                  ? { height: 32, borderRadius: 999, bgcolor: LIB_ACCENT, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, boxShadow: 'none' }
-                  : { py: 0.6, borderRadius: '8px', bgcolor: 'primary.main', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, boxShadow: (t) => `0 8px 20px ${alpha(t.palette.primary.main, 0.45)}` }),
+                  ? { height: 32, borderRadius: RADII_PX.pill, bgcolor: LIB_ACCENT, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, boxShadow: 'none' }
+                  : { py: 0.5, borderRadius: RADII_PX.control, bgcolor: 'primary.main', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, boxShadow: (t) => `0 8px 20px ${alpha(t.palette.primary.main, 0.45)}` }),
                 border: 0,
                 color: COLOR_PALETTE.white,
                 fontFamily: 'inherit',
@@ -548,7 +548,7 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
       sx={{
         position: 'relative',
         height: H,
-        borderRadius: compact ? 0 : narrow ? 0 : '14px',
+        borderRadius: compact ? 0 : narrow ? 0 : RADII_PX.card,
         overflow: 'hidden',
         // Phone map sits directly on the page background (no white card, no glow).
         bgcolor: compact ? 'transparent' : 'background.paper',
@@ -603,8 +603,8 @@ export default function RoadMap({ patterns, currentIndex, alienKind, onOpen, aut
               animate={{ opacity: 1, x: 0 }}
               sx={
                 compact
-                  ? { display: 'flex', alignItems: 'center', gap: 0.5, height: 30, px: '12px', borderRadius: 999, bgcolor: pal.player, color: pal.text, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }
-                  : { display: 'flex', alignItems: 'center', gap: 0.5, px: 1.25, py: 0.5, borderRadius: '8px', bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, letterSpacing: '0.1em', boxShadow: (t) => `0 6px 16px ${alpha(t.palette.primary.main, 0.4)}` }
+                  ? { display: 'flex', alignItems: 'center', gap: 0.5, height: 30, px: 1.5, borderRadius: RADII_PX.pill, bgcolor: pal.player, color: pal.text, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING }
+                  : { display: 'flex', alignItems: 'center', gap: 0.5, px: 1.5, py: 0.5, borderRadius: RADII_PX.control, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, letterSpacing: '0.1em', boxShadow: (t) => `0 6px 16px ${alpha(t.palette.primary.main, 0.4)}` }
               }
             >
               <FlagRoundedIcon sx={{ fontSize: compact ? FONT_SIZES.title : FONT_SIZES.body }} /> {compact ? 'Start' : 'START'}

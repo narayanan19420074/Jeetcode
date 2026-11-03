@@ -19,7 +19,7 @@ import { roomApi } from '../../api/roomApi';
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import BackToDashboard from '../../components/BackToDashboard';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const FEATURES = [
   { icon: <CodeRoundedIcon />, label: 'Shared editor' },
@@ -87,7 +87,7 @@ export default function PairLobbyPage() {
       onClick={create}
       disabled={busy || disabled}
       startIcon={busy ? <CircularProgress size={18} color="inherit" /> : <GroupAddRoundedIcon />}
-      sx={{ height: 48, borderRadius: '14px', fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' }}
+      sx={{ height: 48, borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' }}
     >
       Create room
     </Button>
@@ -96,9 +96,9 @@ export default function PairLobbyPage() {
   return (
     <Box sx={{ maxWidth: 520, mx: 'auto', mt: { xs: 2, md: 6 }, mb: 4, px: 2 }}>
       <BackToDashboard sx={{ mb: 1.5 }} />
-      <Paper variant="outlined" sx={{ borderRadius: '20px', p: { xs: 2.5, sm: 3.5 } }}>
+      <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, p: { xs: 2.5, sm: 3.5 } }}>
         <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mb: 1.5 }}>
-          <Box sx={(t) => ({ width: 48, height: 48, borderRadius: '16px', display: 'grid', placeItems: 'center', bgcolor: wsSurface(t).raised, color: 'primary.main' })}>
+          <Box sx={(t) => ({ width: 48, height: 48, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', bgcolor: wsSurface(t).raised, color: 'primary.main' })}>
             <GroupAddRoundedIcon />
           </Box>
           <Box>
@@ -111,7 +111,7 @@ export default function PairLobbyPage() {
           Invite a friend to work in the same editor or aptitude question, with built-in chat and video or audio calling.
         </Typography>
 
-        <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mb: 3 }}>
+        <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, mb: 3 }}>
           {FEATURES.map((f) => (
             <Chip
               key={f.label}
@@ -134,13 +134,13 @@ export default function PairLobbyPage() {
             sx={(t) => ({
               p: 0.5,
               gap: 0.5,
-              borderRadius: 999,
+              borderRadius: RADII_PX.pill,
               bgcolor: wsSurface(t).raised,
               '& .MuiToggleButtonGroup-grouped': {
                 border: 0,
                 borderRadius: '999px !important',
-                py: 0.9,
-                gap: 0.75,
+                py: 1,
+                gap: 1,
                 fontWeight: FONT_WEIGHTS.bold,
                 textTransform: 'none',
                 color: 'text.secondary',
@@ -161,7 +161,7 @@ export default function PairLobbyPage() {
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
                 startAdornment={<CodeRoundedIcon sx={{ fontSize: FONT_SIZES.heading, mr: 1, color: 'primary.main' }} />}
-                sx={{ height: 48, borderRadius: '14px', fontWeight: FONT_WEIGHTS.semibold }}
+                sx={{ height: 48, borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.semibold }}
               >
                 <MenuItem value="javascript">JavaScript</MenuItem>
                 <MenuItem value="python">Python</MenuItem>
@@ -181,7 +181,7 @@ export default function PairLobbyPage() {
                   value={patternSlug}
                   onChange={(e) => setPatternSlug(e.target.value)}
                   startAdornment={<CalculateRoundedIcon sx={{ fontSize: FONT_SIZES.heading, mr: 1, color: 'primary.main' }} />}
-                  sx={{ height: 48, borderRadius: '14px', fontWeight: FONT_WEIGHTS.semibold }}
+                  sx={{ height: 48, borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.semibold }}
                 >
                   {patterns.length === 0 && <MenuItem value="">Loading topics…</MenuItem>}
                   {patterns.map((p) => (
@@ -191,12 +191,12 @@ export default function PairLobbyPage() {
                 {createButton(!patternSlug)}
               </>
             ) : (
-              <Alert severity="info" sx={{ borderRadius: '14px' }}>
+              <Alert severity="info" sx={{ borderRadius: RADII_PX.card }}>
                 Sign in to create an aptitude room. Your friend doesn&apos;t need an account — they can join with the invite link.
               </Alert>
             ))}
 
-          {error && <Alert severity="error" sx={{ borderRadius: '14px' }}>{error}</Alert>}
+          {error && <Alert severity="error" sx={{ borderRadius: RADII_PX.card }}>{error}</Alert>}
         </Stack>
 
         <Divider sx={{ my: 3, color: 'text.secondary', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>OR JOIN A ROOM</Divider>
@@ -215,11 +215,11 @@ export default function PairLobbyPage() {
                     <LinkRoundedIcon fontSize="small" />
                   </InputAdornment>
                 ),
-                sx: { height: 48, borderRadius: '14px' },
+                sx: { height: 48, borderRadius: RADII_PX.card },
               },
             }}
           />
-          <Button variant="outlined" onClick={join} disabled={!code.trim()} startIcon={<LoginRoundedIcon />} sx={{ height: 48, px: 2.5, borderRadius: '14px', fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', flexShrink: 0 }}>
+          <Button variant="outlined" onClick={join} disabled={!code.trim()} startIcon={<LoginRoundedIcon />} sx={{ height: 48, px: 2.5, borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', flexShrink: 0 }}>
             Join
           </Button>
         </Stack>

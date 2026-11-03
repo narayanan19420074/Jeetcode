@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Box, Button, Paper, Slider, Stack, Typography, alpha } from '@mui/material';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // Small interactive visuals used inside Learn lessons. Each one lets the
 // learner move a slider and SEE the rule, instead of reading it.
@@ -9,7 +9,7 @@ const mono = { fontFamily: FONTS.mono };
 
 function WidgetShell({ title, hint, children }) {
   return (
-    <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 3, bgcolor: (t) => alpha(t.palette.primary.main, 0.03) }}>
+    <Paper variant="outlined" sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: RADII_PX.card, bgcolor: (t) => alpha(t.palette.primary.main, 0.03) }}>
       <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em' }}>
         TRY IT · {title.toUpperCase()}
       </Typography>
@@ -49,13 +49,13 @@ export function PercentGridWidget() {
   return (
     <WidgetShell title="Percent grid" hint="100 squares = the whole. Drag the slider and watch x% fill the grid.">
       <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} sx={{ alignItems: { sm: 'center' } }}>
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', gap: '3px', width: 200, flexShrink: 0 }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', gap: 0.5, width: 200, flexShrink: 0 }}>
           {Array.from({ length: 100 }, (_, i) => (
             <Box
               key={i}
               sx={{
                 aspectRatio: '1',
-                borderRadius: '2px',
+                borderRadius: RADII_PX.badge,
                 bgcolor: i < pct ? 'primary.main' : 'action.disabledBackground',
                 transition: 'background-color .15s',
               }}
@@ -65,7 +65,7 @@ export function PercentGridWidget() {
         <Stack spacing={1.5} sx={{ flexGrow: 1 }}>
           <SliderRow label="Percent" value={pct} min={0} max={100} onChange={setPct} />
           <SliderRow label="Of the number" value={n} min={20} max={1000} step={20} onChange={setN} suffix="" />
-          <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
+          <Box sx={{ p: 1.5, borderRadius: RADII_PX.card, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
             <Typography sx={{ ...mono, fontSize: FONT_SIZES.body }}>
               {pct}% of {n} = ({pct} × {n}) / 100 = <b>{Number.isInteger(result) ? result : result.toFixed(2)}</b>
             </Typography>
@@ -93,7 +93,7 @@ export function SuccessiveChangeWidget() {
           {value.toFixed(2)}
         </Typography>
       </Stack>
-      <Box sx={{ height: 14, borderRadius: 1, bgcolor: 'action.hover', overflow: 'hidden' }}>
+      <Box sx={{ height: 14, borderRadius: RADII_PX.pill, bgcolor: 'action.hover', overflow: 'hidden' }}>
         <Box sx={{ height: '100%', width: `${Math.min(100, (value / 200) * 100)}%`, bgcolor: color, transition: 'width .2s' }} />
       </Box>
     </Box>
@@ -108,7 +108,7 @@ export function SuccessiveChangeWidget() {
           {bar(v1, `After ${a >= 0 ? '+' : ''}${a}%`, COLOR_PALETTE.blue[500])}
           {bar(v2, `After ${b >= 0 ? '+' : ''}${b}%`, net >= 0 ? COLOR_PALETTE.emerald[500] : COLOR_PALETTE.red[500])}
         </Stack>
-        <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
+        <Box sx={{ p: 1.5, borderRadius: RADII_PX.card, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
           <Typography sx={{ ...mono, fontSize: FONT_SIZES.body }}>
             Net = {a} + ({b}) + ({a} × {b})/100 = <b>{net > 0 ? '+' : ''}{net.toFixed(2)}%</b>
           </Typography>
@@ -147,7 +147,7 @@ export function PriceConsumptionWidget() {
             <text x={16} y={8 + H - 8} fontSize="12" fill={COLOR_PALETTE.blue[500]}>New: price {100 + x} × consumption {(100 - cut).toFixed(1)}</text>
           </svg>
         </Box>
-        <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
+        <Box sx={{ p: 1.5, borderRadius: RADII_PX.card, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
           <Typography sx={{ ...mono, fontSize: FONT_SIZES.body }}>
             Cut = {x} / (100 + {x}) × 100 = <b>{cut.toFixed(2)}%</b>
           </Typography>

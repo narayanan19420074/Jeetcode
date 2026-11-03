@@ -23,7 +23,7 @@ import { DIFF_COLOR } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
 import { MEDAL, Mix, YouChip, CountUp, activeLabel, bob, calm, glow, grad, mono, spin, twinkle } from './lbShared';
 import { ACCENT, AVATAR_FRAMES, lbTokens } from './lbTheme';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const GOLD = COLOR_PALETTE.amber[400];
 const TRACKS = [['overall', 'Overall', StarsRoundedIcon], ['coding', 'Coding', CodeRoundedIcon], ['aptitude', 'Aptitude', PsychologyRoundedIcon]];
@@ -39,7 +39,7 @@ const SPARKS = [[8, 18, 0], [20, 64, 0.6], [34, 12, 1.2], [66, 16, 0.3], [82, 58
 
 function Tile({ T, size = 42, children }) {
   return (
-    <Box sx={{ width: size, height: size, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: COLOR_PALETTE.amber[500] }}>
+    <Box sx={{ width: size, height: size, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: COLOR_PALETTE.amber[500] }}>
       {children}
     </Box>
   );
@@ -50,10 +50,10 @@ function ScopeSwitch({ T, value, onChange, friendsOk }) {
   const options = [['global', 'Everyone', PublicRoundedIcon], ['friends', 'Friends', PeopleAltRoundedIcon]];
   const idx = value === 'friends' ? 1 : 0;
   return (
-    <Box role="group" aria-label="Show" sx={{ position: 'relative', display: 'inline-grid', gridTemplateColumns: 'repeat(2, 40px)', p: '4px', borderRadius: 99, bgcolor: T.soft, boxShadow: T.pressed, flexShrink: 0 }}>
+    <Box role="group" aria-label="Show" sx={{ position: 'relative', display: 'inline-grid', gridTemplateColumns: 'repeat(2, 40px)', p: 0.5, borderRadius: RADII_PX.pill, bgcolor: T.soft, boxShadow: T.pressed, flexShrink: 0 }}>
       <Box
         aria-hidden
-        sx={{ position: 'absolute', top: 4, left: 4, width: 40, height: 36, borderRadius: 99, background: ACCENT, boxShadow: `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}`, transform: `translateX(${idx * 40}px)`, transition: 'transform .25s cubic-bezier(.4,0,.2,1)', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }}
+        sx={{ position: 'absolute', top: 4, left: 4, width: 40, height: 36, borderRadius: RADII_PX.pill, background: ACCENT, boxShadow: `0 8px 16px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}`, transform: `translateX(${idx * 40}px)`, transition: 'transform .25s cubic-bezier(.4,0,.2,1)', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }}
       />
       {options.map(([v, label, Icon]) => {
         const on = value === v;
@@ -63,7 +63,7 @@ function ScopeSwitch({ T, value, onChange, friendsOk }) {
             <Box component="span" sx={{ display: 'flex' }}>
               <ButtonBase
                 disabled={disabled} onClick={() => onChange(v)} aria-pressed={on} aria-label={label}
-                sx={{ position: 'relative', zIndex: 1, width: 40, height: 36, borderRadius: 99, color: on ? COLOR_PALETTE.white : T.muted, opacity: disabled ? 0.4 : 1, transition: 'color .2s' }}
+                sx={{ position: 'relative', zIndex: 1, width: 40, height: 36, borderRadius: RADII_PX.pill, color: on ? COLOR_PALETTE.white : T.muted, opacity: disabled ? 0.4 : 1, transition: 'color .2s' }}
               >
                 <Icon sx={{ fontSize: FONT_SIZES.heading }} />
               </ButtonBase>
@@ -78,14 +78,14 @@ function ScopeSwitch({ T, value, onChange, friendsOk }) {
 // Small icons: the picked one lifts up and shows its name.
 function PeriodSwitch({ T, value, onChange, iconOnly }) {
   return (
-    <Box role="group" aria-label="Period" sx={{ display: 'inline-flex', gap: 0.25, p: '4px', borderRadius: 99, bgcolor: T.soft, boxShadow: T.pressed, flexShrink: 0 }}>
+    <Box role="group" aria-label="Period" sx={{ display: 'inline-flex', gap: 0.5, p: 0.5, borderRadius: RADII_PX.pill, bgcolor: T.soft, boxShadow: T.pressed, flexShrink: 0 }}>
       {PERIODS.map(([v, label, title, Icon]) => {
         const on = value === v;
         return (
           <Tooltip key={v} title={title}>
             <ButtonBase
               onClick={() => onChange(v)} aria-pressed={on} aria-label={title}
-              sx={{ gap: 0.5, height: 34, minWidth: 34, px: on && !iconOnly ? 1.4 : 1, borderRadius: 99, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: on ? T.icon : T.muted, bgcolor: on ? T.soft : 'transparent', boxShadow: on ? T.raised : 'none', transition: 'box-shadow .2s, color .2s' }}
+              sx={{ gap: 0.5, height: 34, minWidth: 34, px: on && !iconOnly ? 1.5 : 1, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: on ? T.icon : T.muted, bgcolor: on ? T.soft : 'transparent', boxShadow: on ? T.raised : 'none', transition: 'box-shadow .2s, color .2s' }}
             >
               <Icon sx={{ fontSize: FONT_SIZES.subheading }} />{on && !iconOnly && label}
             </ButtonBase>
@@ -98,14 +98,14 @@ function PeriodSwitch({ T, value, onChange, iconOnly }) {
 
 function TrackTabs({ T, value, onChange, iconOnly }) {
   return (
-    <Box role="tablist" aria-label="Leaderboard track" sx={{ display: 'flex', gap: 0.9, minWidth: 0, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' }, py: '6px', px: '4px', mx: '-4px' }}>
+    <Box role="tablist" aria-label="Leaderboard track" sx={{ display: 'flex', gap: 1, minWidth: 0, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' }, py: 1, px: 0.5, mx: '-4px' }}>
       {TRACKS.map(([v, label, Icon]) => {
         const on = value === v;
         return (
           <Tooltip key={v} title={label}>
             <ButtonBase
               role="tab" aria-selected={on} aria-label={label} onClick={() => onChange(v)}
-              sx={{ flexShrink: 0, gap: 0.6, height: 38, px: iconOnly && !on ? 1.25 : 1.75, borderRadius: 99, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : T.soft, boxShadow: on ? `0 10px 20px -8px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : T.raised, transition: 'transform .15s', '&:active': { transform: 'scale(0.96)' } }}
+              sx={{ flexShrink: 0, gap: 0.5, height: 38, px: iconOnly && !on ? 1.5 : 2, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: on ? COLOR_PALETTE.white : T.muted, background: on ? ACCENT : T.soft, boxShadow: on ? `0 10px 20px -8px ${withAlpha(COLOR_PALETTE.indigo[500], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.3)}` : T.raised, transition: 'transform .15s', '&:active': { transform: 'scale(0.96)' } }}
             >
               <Icon sx={{ fontSize: FONT_SIZES.subheading }} />{(!iconOnly || on) && label}
             </ButtonBase>
@@ -118,14 +118,14 @@ function TrackTabs({ T, value, onChange, iconOnly }) {
 
 function SearchBox({ T, value, onChange, placeholder, width = '100%' }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, px: 1.5, height: 40, width, flexShrink: 0, borderRadius: 99, bgcolor: T.soft, boxShadow: T.pressed }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 1.5, height: 40, width, flexShrink: 0, borderRadius: RADII_PX.pill, bgcolor: T.soft, boxShadow: T.pressed }}>
       <SearchRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: T.muted }} />
       <InputBase
         value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} inputProps={{ 'aria-label': 'Search players' }}
         sx={{ flex: 1, minWidth: 0, fontSize: FONT_SIZES.body, color: T.ink, '& input::placeholder': { color: T.muted, opacity: 1 } }}
       />
       {value && (
-        <IconButton size="small" aria-label="Clear search" onClick={() => onChange('')} sx={{ p: 0.25, color: T.muted }}>
+        <IconButton size="small" aria-label="Clear search" onClick={() => onChange('')} sx={{ p: 0.5, color: T.muted }}>
           <CloseRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
         </IconButton>
       )}
@@ -135,7 +135,7 @@ function SearchBox({ T, value, onChange, placeholder, width = '100%' }) {
 
 function SoftButton({ T, children, ...rest }) {
   return (
-    <Button size="small" disableElevation sx={{ borderRadius: 99, px: 2, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', color: T.icon, bgcolor: T.soft, boxShadow: T.raised, '&:hover': { bgcolor: T.soft, boxShadow: T.pressed } }} {...rest}>{children}</Button>
+    <Button size="small" disableElevation sx={{ borderRadius: RADII_PX.pill, px: 2, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', color: T.icon, bgcolor: T.soft, boxShadow: T.raised, '&:hover': { bgcolor: T.soft, boxShadow: T.pressed } }} {...rest}>{children}</Button>
   );
 }
 
@@ -144,14 +144,14 @@ function SoftButton({ T, children, ...rest }) {
 function RankTile({ rank, T }) {
   const m = MEDAL[rank];
   if (m) {
-    return <Box sx={[{ width: 34, height: 34, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, color: m.text, background: grad(m), boxShadow: `0 6px 14px -4px ${m.glow}` }, mono]}>{rank}</Box>;
+    return <Box sx={[{ width: 34, height: 34, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, color: m.text, background: grad(m), boxShadow: `0 6px 14px -4px ${m.glow}` }, mono]}>{rank}</Box>;
   }
-  return <Box sx={[{ width: 34, height: 34, flexShrink: 0, borderRadius: '12px', display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.muted, bgcolor: T.soft, boxShadow: T.pressed }, mono]}>{rank}</Box>;
+  return <Box sx={[{ width: 34, height: 34, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.muted, bgcolor: T.soft, boxShadow: T.pressed }, mono]}>{rank}</Box>;
 }
 
 // Rank change vs last week (all-time, everyone board only; the server sends null otherwise).
 function Move({ row }) {
-  if (row.isNew) return <Box component="span" sx={{ px: 0.7, borderRadius: 99, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.custom.black1B1200, bgcolor: GOLD, flexShrink: 0 }}>new</Box>;
+  if (row.isNew) return <Box component="span" sx={{ px: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.custom.black1B1200, bgcolor: GOLD, flexShrink: 0 }}>new</Box>;
   const m = row.movement;
   if (m === null || m === undefined || m === 0) return null;
   const up = m > 0;
@@ -196,7 +196,7 @@ function Stats({ row, track, T }) {
   const Icon = track === 'aptitude' ? PsychologyRoundedIcon : CodeRoundedIcon;
   return (
     <Tooltip title="Questions solved">
-      <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4, color: T.muted, flexShrink: 0 }}>
+      <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: T.muted, flexShrink: 0 }}>
         <Icon sx={{ fontSize: FONT_SIZES.bodyLg }} />
         <Typography component="span" sx={[{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: T.ink }, mono]}>{row.solved}</Typography>
       </Box>
@@ -212,12 +212,12 @@ function PlayerRow({ row, index, T, isMe, selected, onPick, wide, track, reduce,
   const body = (
     <ButtonBase
       onClick={(e) => onPick(e, row)} aria-current={selected ? 'true' : undefined}
-      sx={{ width: '100%', display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, textAlign: 'left', fontFamily: 'inherit', color: T.ink, px: { xs: 1.1, sm: 1.5 }, py: you ? 1 : 1.1 }}
+      sx={{ width: '100%', display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, textAlign: 'left', fontFamily: 'inherit', color: T.ink, px: { xs: 1, sm: 1.5 }, py: you ? 1 : 1 }}
     >
       <RankTile rank={row.rank} T={T} />
       <Badge variant="dot" overlap="circular" invisible={!live} color="success" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-        <Box sx={{ p: '3px', borderRadius: '50%', background: frame, flexShrink: 0 }}>
-          <Box sx={{ p: '2px', borderRadius: '50%', bgcolor: T.frameInner }}>
+        <Box sx={{ p: 0.5, borderRadius: '50%', background: frame, flexShrink: 0 }}>
+          <Box sx={{ p: 0.5, borderRadius: '50%', bgcolor: T.frameInner }}>
             <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: 36, height: 36, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: T.avatarFg, bgcolor: T.avatarBg }}>{row.name?.[0]?.toUpperCase()}</Avatar>
           </Box>
         </Box>
@@ -228,7 +228,7 @@ function PlayerRow({ row, index, T, isMe, selected, onPick, wide, track, reduce,
           {isMe && <YouChip />}
           <Move row={row} />
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.9, minWidth: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 0 }}>
           <TierDot tier={tier} />
           <Typography noWrap variant="caption" sx={{ minWidth: 0, color: T.muted }}>@{row.handle}</Typography>
           <Streak value={row.streak} T={T} />
@@ -259,7 +259,7 @@ function PlayerRow({ row, index, T, isMe, selected, onPick, wide, track, reduce,
     >
       <Box
         sx={(t) => ({
-          position: 'relative', overflow: 'hidden', borderRadius: '18px',
+          position: 'relative', overflow: 'hidden', borderRadius: RADII_PX.card,
           background: isMe ? `linear-gradient(100deg, ${withAlpha(COLOR_PALETTE.amber[400], 0.22)}, transparent 65%), ${T.soft}` : T.soft,
           boxShadow: selected ? T.pressed : T.raised,
           outline: selected ? `2px solid ${alpha(t.palette.primary.main, 0.55)}` : 'none', outlineOffset: -2,
@@ -275,8 +275,8 @@ function PlayerRow({ row, index, T, isMe, selected, onPick, wide, track, reduce,
 
 function SkelRow({ T, i }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: 1.5, py: 1.2, borderRadius: '18px', bgcolor: T.soft, boxShadow: T.raised }}>
-      <Skeleton variant="rounded" width={34} height={34} sx={{ borderRadius: '12px' }} />
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: 1.5, py: 1, borderRadius: RADII_PX.card, bgcolor: T.soft, boxShadow: T.raised }}>
+      <Skeleton variant="rounded" width={34} height={34} sx={{ borderRadius: RADII_PX.card }} />
       <Skeleton variant="circular" width={42} height={42} />
       <Box sx={{ flex: 1 }}>
         <Skeleton variant="text" width={`${40 + ((i * 17) % 35)}%`} />
@@ -298,7 +298,7 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
     <motion.div initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <ButtonBase
         onClick={(e) => onPick(e, row)} aria-label={`${row.name}, top player, ${row.score} points`}
-        sx={{ position: 'relative', overflow: 'hidden', display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit', color: COLOR_PALETTE.white, borderRadius: '24px', p: { xs: 1, sm: 1.25 }, background: `radial-gradient(120% 140% at 0% 0%, ${COLOR_PALETTE.indigo[500]} 0%, ${COLOR_PALETTE.indigo[600]} 45%, ${COLOR_PALETTE.indigo[900]} 100%)`, boxShadow: selected ? `0 0 0 2px ${GOLD}, ${shadow}` : shadow }}
+        sx={{ position: 'relative', overflow: 'hidden', display: 'block', width: '100%', textAlign: 'left', fontFamily: 'inherit', color: COLOR_PALETTE.white, borderRadius: RADII_PX.card, p: { xs: 1, sm: 1.5 }, background: `radial-gradient(120% 140% at 0% 0%, ${COLOR_PALETTE.indigo[500]} 0%, ${COLOR_PALETTE.indigo[600]} 45%, ${COLOR_PALETTE.indigo[900]} 100%)`, boxShadow: selected ? `0 0 0 2px ${GOLD}, ${shadow}` : shadow }}
       >
         <Box aria-hidden sx={{ position: 'absolute', right: -40, top: -60, width: 220, height: 220, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.34)}, transparent 68%)`, animation: `${glow} 3.2s ease-in-out infinite`, ...calm }} />
         <Box aria-hidden sx={{ position: 'absolute', left: -50, bottom: -80, width: 200, height: 200, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.pink[500], 0.26)}, transparent 70%)` }} />
@@ -307,22 +307,22 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
         ))}
 
         {/* glass plate */}
-        <Box sx={{ position: 'relative', borderRadius: '18px', p: { xs: 1.25, sm: 1.75 }, bgcolor: withAlpha(COLOR_PALETTE.white, 0.10), border: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.22)}`, backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.25)}` }}>
+        <Box sx={{ position: 'relative', borderRadius: RADII_PX.card, p: { xs: 1.5, sm: 2 }, bgcolor: withAlpha(COLOR_PALETTE.white, 0.10), border: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.22)}`, backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.25)}` }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, sm: 2 }, flexWrap: wide ? 'nowrap' : 'wrap' }}>
-            <Box sx={{ position: 'relative', flexShrink: 0, display: 'grid', placeItems: 'center', mx: 0.75 }}>
+            <Box sx={{ position: 'relative', flexShrink: 0, display: 'grid', placeItems: 'center', mx: 1 }}>
               <Box aria-hidden sx={{ position: 'absolute', width: av + 22, height: av + 22, borderRadius: '50%', background: `conic-gradient(from 0deg, ${m.a}, transparent 30%, ${m.b} 55%, transparent 80%, ${m.a})`, filter: 'blur(6px)', opacity: 0.85, animation: `${spin} 6s linear infinite`, ...calm }} />
-              <Box sx={{ position: 'relative', p: '3.5px', borderRadius: '50%', background: grad(m), boxShadow: `0 8px 26px -6px ${m.glow}` }}>
+              <Box sx={{ position: 'relative', p: 0.5, borderRadius: '50%', background: grad(m), boxShadow: `0 8px 26px -6px ${m.glow}` }}>
                 <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: av, height: av, fontSize: av * 0.38, fontWeight: FONT_WEIGHTS.bold, border: `3px solid ${COLOR_PALETTE.indigo[900]}`, bgcolor: COLOR_PALETTE.indigo[700], color: COLOR_PALETTE.white }}>{row.name?.[0]?.toUpperCase()}</Avatar>
               </Box>
               <EmojiEventsRoundedIcon aria-hidden sx={{ position: 'absolute', top: -14, right: -14, fontSize: tight ? FONT_SIZES.display : FONT_SIZES.displayLg, color: COLOR_PALETTE.amber[200], filter: `drop-shadow(0 0 10px ${withAlpha(COLOR_PALETTE.amber[400], 0.9)})`, animation: `${bob} 2.2s ease-in-out infinite`, ...calm }} />
             </Box>
 
             <Box sx={{ minWidth: 0, flex: '1 1 150px' }}>
-              <Box sx={{ display: 'inline-flex', alignItems: 'center', px: 1, py: 0.15, mb: 0.5, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.amber[400], 0.2), color: COLOR_PALETTE.amber[200], fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.6 }}>TOP PLAYER</Box>
+              <Box sx={{ display: 'inline-flex', alignItems: 'center', px: 1, py: 0.5, mb: 0.5, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.amber[400], 0.2), color: COLOR_PALETTE.amber[200], fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.6 }}>TOP PLAYER</Box>
               <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.subheading, sm: tight ? FONT_SIZES.heading : FONT_SIZES.display }, lineHeight: 1.2, letterSpacing: '-0.01em' }}>{row.name}{isMe && <YouChip />}</Typography>
               <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, opacity: 0.78 }}>@{row.handle}{row.company ? `, ${row.company}` : ''}</Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.6, flexWrap: 'wrap' }}>
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.3, px: 0.8, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.16), fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.7 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5, flexWrap: 'wrap' }}>
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.white, 0.16), fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.7 }}>
                   <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: COLOR_PALETTE.amber[200] }} />{tier.name}
                 </Box>
                 <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
@@ -339,7 +339,7 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
               <Typography sx={{ fontSize: FONT_SIZES.caption, opacity: 0.78 }}>{row.recent > 0 ? `+${row.recent} this week` : `${row.solved} solved`}</Typography>
             </Box>
           </Box>
-          <Mix row={row} onDark sx={{ mt: 1.4 }} />
+          <Mix row={row} onDark sx={{ mt: 1.5 }} />
         </Box>
       </ButtonBase>
     </motion.div>
@@ -348,7 +348,7 @@ function Champion({ row, isMe, selected, onPick, tight, wide, reduce }) {
 
 function EmptyChampion({ T, tight }) {
   return (
-    <Box sx={{ py: tight ? 2 : 3, px: 2, textAlign: 'center', borderRadius: '24px', bgcolor: T.soft, boxShadow: T.pressed }}>
+    <Box sx={{ py: tight ? 2 : 3, px: 2, textAlign: 'center', borderRadius: RADII_PX.card, bgcolor: T.soft, boxShadow: T.pressed }}>
       <EmojiEventsRoundedIcon sx={{ fontSize: tight ? FONT_SIZES.hero : FONT_SIZES.heroLg, color: COLOR_PALETTE.amber[500] }} />
       <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: T.ink }}>No top player yet</Typography>
       <Typography sx={{ fontSize: FONT_SIZES.caption, color: T.muted }}>Solve a question to take the #1 spot.</Typography>
@@ -383,7 +383,7 @@ export default function EmpireCard({
   const showChampionEmpty = !firstLoad && !q && !champion && rows.length > 0;
 
   return (
-    <Box sx={{ position: 'relative', overflow: 'hidden', minWidth: 0, minHeight: 0, height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '28px', p: { xs: 1.5, sm: 2.25 }, background: T.panel, border: T.border, boxShadow: T.panelShadow }}>
+    <Box sx={{ position: 'relative', overflow: 'hidden', minWidth: 0, minHeight: 0, height: '100%', display: 'flex', flexDirection: 'column', borderRadius: RADII_PX.card, p: { xs: 1.5, sm: 2.5 }, background: T.panel, border: T.border, boxShadow: T.panelShadow }}>
       <Box aria-hidden sx={{ position: 'absolute', top: -70, right: -50, width: 220, height: 220, borderRadius: '50%', background: `radial-gradient(circle, ${T.blobWarm}, transparent 70%)`, pointerEvents: 'none' }} />
       <Box aria-hidden sx={{ position: 'absolute', bottom: -80, left: -60, width: 260, height: 260, borderRadius: '50%', background: `radial-gradient(circle, ${T.blobAccent}, transparent 70%)`, pointerEvents: 'none' }} />
 
@@ -394,7 +394,7 @@ export default function EmpireCard({
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography component="h2" noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.subheading, sm: FONT_SIZES.heading }, color: T.ink, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Leaderboard</Typography>
             {roomy && (meta ? (
-              <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: T.muted, mt: 0.2 }}>{trackName}, {periodName}{countText ? `, ${countText}` : ''}</Typography>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: T.muted, mt: 0.5 }}>{trackName}, {periodName}{countText ? `, ${countText}` : ''}</Typography>
             ) : <Skeleton width={190} />)}
           </Box>
           {roomy && <SearchBox T={T} value={search} onChange={setSearch} placeholder="Search name or @handle" width={230} />}
@@ -411,12 +411,12 @@ export default function EmpireCard({
 
         {!roomy && (
           <Collapse in={searchOpen} timeout={200} sx={{ flexShrink: 0 }}>
-            <Box sx={{ pt: 1.25, px: '4px' }}><SearchBox T={T} value={search} onChange={setSearch} placeholder="Search name or @handle" /></Box>
+            <Box sx={{ pt: 1.5, px: 0.5 }}><SearchBox T={T} value={search} onChange={setSearch} placeholder="Search name or @handle" /></Box>
           </Collapse>
         )}
 
         {/* track + period */}
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.25, mt: 0.75, flexShrink: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, mt: 1, flexShrink: 0 }}>
           <TrackTabs T={T} value={track} onChange={onTrack} iconOnly={iconOnly} />
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexShrink: 0 }}>
             <PeriodSwitch T={T} value={period} onChange={onPeriod} iconOnly={iconOnly} />
@@ -428,12 +428,12 @@ export default function EmpireCard({
         <Box
           ref={scroller} className="autohide-scroll"
           onScroll={(e) => { const el = e.currentTarget; if (el.scrollHeight - el.scrollTop - el.clientHeight < 240) askMore(); }}
-          sx={{ flex: 1, minHeight: 0, mt: 0.75, mx: '-6px', px: '6px', py: '6px', overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', overscrollBehavior: 'contain' }}
+          sx={{ flex: 1, minHeight: 0, mt: 1, mx: '-6px', px: 1, py: 1, overflowY: firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', overscrollBehavior: 'contain' }}
         >
-          <Box sx={{ display: 'grid', gap: { xs: 1, sm: 1.1 } }}>
+          <Box sx={{ display: 'grid', gap: { xs: 1, sm: 1 } }}>
             {error && <Alert severity="error" action={<Button color="inherit" size="small" onClick={reload}>Retry</Button>}>{error}</Alert>}
 
-            {firstLoad && <Skeleton variant="rounded" height={tight ? 128 : 156} sx={{ borderRadius: '24px' }} />}
+            {firstLoad && <Skeleton variant="rounded" height={tight ? 128 : 156} sx={{ borderRadius: RADII_PX.card }} />}
             {champion && <Champion row={champion} isMe={me?.userId === champion.userId} selected={selectedId === champion.userId} onPick={onPick} tight={tight} wide={wide} reduce={reduce} />}
             {showChampionEmpty && <EmptyChampion T={T} tight={tight} />}
 
@@ -446,7 +446,7 @@ export default function EmpireCard({
             ))}
 
             {!loading && rows.length === 0 && !error && (
-              <Box sx={{ py: 5, px: 3, textAlign: 'center', borderRadius: '24px', bgcolor: T.soft, boxShadow: T.pressed }}>
+              <Box sx={{ py: 5, px: 3, textAlign: 'center', borderRadius: RADII_PX.card, bgcolor: T.soft, boxShadow: T.pressed }}>
                 <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: COLOR_PALETTE.amber[500], opacity: 0.7 }} />
                 <Typography sx={{ mt: 0.5, fontWeight: FONT_WEIGHTS.bold, color: T.ink }}>
                   {q ? `No player matches "${q}".` : scope === 'friends' ? 'No friends on this board yet.' : 'No one has scored in this period yet.'}
@@ -466,8 +466,8 @@ export default function EmpireCard({
 
         {/* my own position stays pinned under the list */}
         {me && (
-          <Box sx={{ flexShrink: 0, mt: 1, p: '2px', borderRadius: '22px', background: `linear-gradient(135deg, ${GOLD}, ${ACCENT})`, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}` }}>
-            <Box sx={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', bgcolor: T.soft, display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ flexShrink: 0, mt: 1, p: 0.5, borderRadius: RADII_PX.card, background: `linear-gradient(135deg, ${GOLD}, ${ACCENT})`, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.indigo[500], 0.8)}` }}>
+            <Box sx={{ position: 'relative', borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: T.soft, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ flex: 1, minWidth: 0 }}>
                 <PlayerRow row={me} T={T} isMe you selected={false} onPick={onPick} wide={wide} track={track} reduce={reduce} />
               </Box>

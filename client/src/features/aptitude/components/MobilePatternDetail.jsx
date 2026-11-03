@@ -7,7 +7,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { DIFF_COLOR, tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LIB_TRACKING, LibraryFont, libBackBtnSx, libChipSx, libPanelSx, libSectionTitleSx, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { formatDuration } from './aptitudeUi';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // Phone layout of a single Aptitude topic (for example Number System). It follows the phone Problems and
 // Aptitude pages: same page padding, back button, centred header, progress bar, row sizes and type scale.
@@ -29,7 +29,7 @@ function Row({ title, meta, metaColor, value, valueColor, disabled, solved, onCl
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        gap: '10px',
+        gap: 1.5,
         py: 2,
         textAlign: 'left',
         fontFamily: 'inherit',
@@ -80,11 +80,11 @@ export function MobilePatternSkeleton() {
     <Shell>
       <BackButton />
       <Box sx={{ textAlign: 'center', mt: 1.5 }}>
-        <Skeleton variant="rounded" width={81} height={81} sx={{ mx: 'auto', borderRadius: '22px' }} />
+        <Skeleton variant="rounded" width={81} height={81} sx={{ mx: 'auto', borderRadius: RADII_PX.card }} />
         <Skeleton width={180} height={32} sx={{ mx: 'auto', mt: 1.5 }} />
         <Skeleton width={120} height={24} sx={{ mx: 'auto' }} />
       </Box>
-      <Skeleton variant="rounded" height={190} sx={{ mt: 3, borderRadius: '20px' }} />
+      <Skeleton variant="rounded" height={190} sx={{ mt: 3, borderRadius: RADII_PX.card }} />
     </Shell>
   );
 }
@@ -146,9 +146,9 @@ export default function MobilePatternDetail({
             aria-valuemin={0}
             aria-valuemax={totals.total}
             aria-valuenow={totals.solved}
-            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
+            sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+            <Box sx={{ width: `${solvedPct}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
           </Box>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {totals.solved}

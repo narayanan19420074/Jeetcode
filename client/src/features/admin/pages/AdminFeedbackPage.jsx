@@ -25,7 +25,7 @@ import {
 } from '@mui/material';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const STATUSES = ['open', 'in-progress', 'resolved'];
 const TYPES = ['bug', 'feature', 'question', 'payment', 'account', 'other'];
@@ -97,7 +97,7 @@ export default function AdminFeedbackPage() {
         </TextField>
       </Stack>
 
-      <Paper variant="outlined" sx={{ p: 2, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 2, borderRadius: RADII_PX.card }}>
         {loading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}><CircularProgress /></Box>
         ) : items.length === 0 ? (

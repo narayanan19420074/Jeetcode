@@ -21,7 +21,7 @@ export default function CompanyRow({ company, onOpen }) {
     <ButtonBase
       onClick={onOpen}
       aria-label={`Open ${company.name}`}
-      sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, width: '100%', px: 2, py: 1.25, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderBottom: `1px solid ${palette.divider}`, '&:hover': { bgcolor: palette.player } }}
+      sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, width: '100%', px: 2, py: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderBottom: `1px solid ${palette.divider}`, '&:hover': { bgcolor: palette.player } }}
     >
       <CompanyAvatar name={company.name} logoUrl={company.logoUrl} size={AVATAR_SIZE} />
       <Box sx={{ minWidth: 0, flex: 1 }}>

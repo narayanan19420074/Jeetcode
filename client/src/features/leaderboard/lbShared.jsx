@@ -4,7 +4,7 @@ import { Avatar, Box } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
 import { DIFF_COLOR, todayKey } from '../dashboard/dashboardUtils';
 import { PLAN_AMBER } from '../studyplan/planUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // Bits shared by the leaderboard card (EmpireCard) and the side panel (LeaderboardView).
 
@@ -65,12 +65,12 @@ export function Mix({ row, onDark = false, sx }) {
     [row.aptitude * PT.aptitude, APT_COLOR],
   ].filter(([v]) => v > 0);
   return (
-    <Box aria-hidden sx={[{ display: 'flex', gap: '2px', height: 6, borderRadius: 99, overflow: 'hidden', bgcolor: onDark ? withAlpha(COLOR_PALETTE.white, 0.2) : 'divider' }, sx]}>
+    <Box aria-hidden sx={[{ display: 'flex', gap: 0.5, height: 6, borderRadius: RADII_PX.pill, overflow: 'hidden', bgcolor: onDark ? withAlpha(COLOR_PALETTE.white, 0.2) : 'divider' }, sx]}>
       {parts.map(([v, c], i) => <Box key={i} sx={{ flex: v, bgcolor: c }} />)}
     </Box>
   );
 }
 
 export function YouChip() {
-  return <Box component="span" sx={{ ml: 0.75, px: 0.8, borderRadius: 99, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.custom.black1B1200, bgcolor: PLAN_AMBER, verticalAlign: 'middle', flexShrink: 0 }}>You</Box>;
+  return <Box component="span" sx={{ ml: 1, px: 1, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.custom.black1B1200, bgcolor: PLAN_AMBER, verticalAlign: 'middle', flexShrink: 0 }}>You</Box>;
 }

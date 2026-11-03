@@ -6,7 +6,7 @@ import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import { LIB_ACCENT, LIB_TRACKING, libBackBtnSx, libChipSx, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { PhoneDifficultyTag } from './phoneStyle';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Phone header of the workspace and the pair room, in the Library look of the phone Problems page.
 //   Row 1: back, name (tap to open the problem), optional extras, menu
@@ -39,7 +39,7 @@ export default function PhoneHeader({
   const [anchor, setAnchor] = useState(null);
   const close = () => setAnchor(null);
 
-  const itemSx = { py: 1.25, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: pal.text };
+  const itemSx = { py: 1.5, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: pal.text };
   const name = title ?? problem?.title ?? '';
   const showTags = chipsOn && Boolean(problem);
 
@@ -49,7 +49,7 @@ export default function PhoneHeader({
         {name}
       </Typography>
       {showTags && (
-        <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: '4px', maxWidth: '100%', minWidth: 0 }}>
+        <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 0.5, maxWidth: '100%', minWidth: 0 }}>
           <PhoneDifficultyTag difficulty={problem.difficulty} />
           {problem.tags?.length > 0 && (
             <Typography noWrap sx={{ minWidth: 0, fontSize: FONT_SIZES.bodyLg, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
@@ -109,7 +109,7 @@ export default function PhoneHeader({
         anchorEl={anchor}
         open={Boolean(anchor)}
         onClose={close}
-        slotProps={{ paper: { sx: { borderRadius: '20px', minWidth: 230, py: 0.5, bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
+        slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: 230, py: 0.5, bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
       >
         {onToggleChips && (
           <MenuItem role="menuitemcheckbox" aria-checked={chipsOn} onClick={onToggleChips} sx={itemSx}>

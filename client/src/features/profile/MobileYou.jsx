@@ -14,7 +14,7 @@ import ProBadge from '../../components/ProBadge';
 import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, tint } from '../dashboard/dashboardUtils';
 import AchievementBadge from './AchievementBadge';
 import { LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // Phone layout of the You page. It follows the phone Problems and Dashboard pages (MobileProblems,
 // MobileHome): same page padding, 44px icon buttons, centred header, 1.25rem section titles,
@@ -62,8 +62,8 @@ function Row({ leading, title, subtitle, trailing, onClick }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        gap: '12px',
-        py: 1.25,
+        gap: 1.5,
+        py: 1.5,
         textAlign: 'left',
         fontFamily: 'inherit',
         color: 'inherit',
@@ -160,9 +160,9 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
           aria-valuemin={0}
           aria-valuemax={totalAll}
           aria-valuenow={solvedAll}
-          sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
+          sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
         >
-          <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+          <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
         </Box>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
           {solvedAll}
@@ -174,9 +174,9 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 1, mt: 2 }}>
         {DIFFICULTIES.map((d) => (
-          <Box key={d} sx={{ p: 1.5, borderRadius: '16px', textAlign: 'center', bgcolor: tint(DIFF_COLOR[d], 14) }}>
+          <Box key={d} sx={{ p: 1.5, borderRadius: RADII_PX.card, textAlign: 'center', bgcolor: tint(DIFF_COLOR[d], 14) }}>
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, color: DIFF_COLOR[d] }}>{d}</Typography>
-            <Typography sx={{ mt: 0.25, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, fontVariantNumeric: 'tabular-nums' }}>
+            <Typography sx={{ mt: 0.5, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, fontVariantNumeric: 'tabular-nums' }}>
               {solvedBy[d]}
               <Box component="span" sx={{ color: 'text.secondary', fontWeight: FONT_WEIGHTS.medium }}>
                 /{totals[d]}
@@ -219,8 +219,8 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
             aria-pressed={tab === t.key}
             sx={{
               height: 34,
-              px: '14px',
-              borderRadius: 999,
+              px: 2,
+              borderRadius: RADII_PX.pill,
               fontFamily: 'inherit',
               fontWeight: FONT_WEIGHTS.medium,
               fontSize: FONT_SIZES.bodyLg,
@@ -248,7 +248,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
                     sx={(t) => ({
                       width: 48,
                       height: 48,
-                      borderRadius: '14px',
+                      borderRadius: RADII_PX.card,
                       flexShrink: 0,
                       display: 'grid',
                       placeItems: 'center',
@@ -303,7 +303,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
                   Couldn’t load submissions.
                 </Typography>
-                <Button onClick={() => onLoadSubs(Math.max(1, subs.page + 1), subs.page === 0)} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
+                <Button onClick={() => onLoadSubs(Math.max(1, subs.page + 1), subs.page === 0)} sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                   Retry
                 </Button>
               </Box>
@@ -315,7 +315,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
                 <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 2 }}>
                   Solve your first problem and it shows up here.
                 </Typography>
-                <Button component={RouterLink} to="/problems" variant="outlined" sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
+                <Button component={RouterLink} to="/problems" variant="outlined" sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                   Browse problems
                 </Button>
               </Box>
@@ -323,7 +323,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
 
             {!subs.loading && !subs.error && subs.total !== null && subs.items.length < subs.total && (
               <Box sx={{ textAlign: 'center', pt: 1.5 }}>
-                <Button onClick={() => onLoadSubs(subs.page + 1)} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
+                <Button onClick={() => onLoadSubs(subs.page + 1)} sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                   Load more
                 </Button>
               </Box>

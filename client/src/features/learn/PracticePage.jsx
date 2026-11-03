@@ -16,7 +16,7 @@ import {
   Chip,
 } from '@mui/material';
 import { getTopicBySlug } from './content';
-import { FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const LEVELS = [
   { key: 'level1', label: 'Level 1', sub: 'Basics' },
@@ -85,7 +85,7 @@ export default function PracticePage() {
           const selected = answers[q.id];
           const isCorrect = selected === q.correctIndex;
           return (
-            <Paper key={q.id} elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+            <Paper key={q.id} elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
               <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold, mb: 1 }}>
                 {qi + 1}. {q.question}
               </Typography>

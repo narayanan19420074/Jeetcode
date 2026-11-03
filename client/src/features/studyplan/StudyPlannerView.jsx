@@ -27,7 +27,7 @@ import FriendPicker from './FriendPicker';
 import BackToDashboard from '../../components/BackToDashboard';
 import { MobilePlanWorkspace, MobilePlans, MobileShell } from './MobileStudyPlan';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtDay, fmtRange, localKey, parseInvite, planTheme, relDay, relTime } from './planUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 
@@ -35,8 +35,8 @@ const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 
 function FriendsPanel({ friends, onFindFriends, onJoinCode, codeInput, setCodeInput, codeError }) {
   return (
-    <Box sx={[surface, { p: 1.25 }]}>
-      <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', alignItems: 'center', maxHeight: 112, overflowY: 'auto', scrollbarWidth: 'thin' }}>
+    <Box sx={[surface, { p: 1.5 }]}>
+      <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center', maxHeight: 112, overflowY: 'auto', scrollbarWidth: 'thin' }}>
         {friends === null && <Skeleton width={160} height={28} />}
         {friends?.length === 0 && (
           <Typography variant="body2" color="text.secondary" sx={{ px: 0.5 }}>
@@ -44,7 +44,7 @@ function FriendsPanel({ friends, onFindFriends, onJoinCode, codeInput, setCodeIn
           </Typography>
         )}
         {friends?.map((f) => (
-          <Box key={f.userId} sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 0.75, pl: 0.4, pr: 1.1, py: 0.3, borderRadius: 999, border: `1px solid ${t.palette.divider}` })}>
+          <Box key={f.userId} sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1, pl: 0.5, pr: 1, py: 0.5, borderRadius: RADII_PX.pill, border: `1px solid ${t.palette.divider}` })}>
             <Avatar src={f.avatarUrl || undefined} sx={{ width: 22, height: 22, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold }}>{f.name?.[0]?.toUpperCase()}</Avatar>
             <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, maxWidth: 120 }}>{f.name}</Typography>
           </Box>
@@ -69,17 +69,17 @@ function NotificationsPopover({ anchorEl, onClose, items, onOpenPlan }) {
     <Popover
       open={Boolean(anchorEl)} anchorEl={anchorEl} onClose={onClose}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      slotProps={{ paper: { sx: { width: 300, maxHeight: 340, mt: 0.5, borderRadius: '12px' } } }}
+      slotProps={{ paper: { sx: { width: 300, maxHeight: 340, mt: 0.5, borderRadius: RADII_PX.card } } }}
     >
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.25, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4 }}>NOTIFICATIONS</Typography>
+      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.5, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4 }}>NOTIFICATIONS</Typography>
       {items.length === 0 ? (
         <Typography variant="body2" color="text.secondary" sx={{ px: 1.5, pb: 1.5 }}>Nothing new.</Typography>
       ) : items.map((n) => (
         <ButtonBase
           key={n.id} onClick={() => onOpenPlan(n.plan.id)}
-          sx={(t) => ({ width: '100%', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, px: 1.5, py: 0.9, textAlign: 'left', fontFamily: 'inherit', bgcolor: n.read ? 'transparent' : `${t.palette.primary.main}12`, '&:hover': { bgcolor: t.palette.action.hover } })}
+          sx={(t) => ({ width: '100%', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, px: 1.5, py: 1, textAlign: 'left', fontFamily: 'inherit', bgcolor: n.read ? 'transparent' : `${t.palette.primary.main}12`, '&:hover': { bgcolor: t.palette.action.hover } })}
         >
-          <Avatar src={n.actor.avatarUrl || undefined} sx={{ width: 26, height: 26, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, mt: 0.2 }}>{n.actor.name?.[0]?.toUpperCase()}</Avatar>
+          <Avatar src={n.actor.avatarUrl || undefined} sx={{ width: 26, height: 26, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, mt: 0.5 }}>{n.actor.name?.[0]?.toUpperCase()}</Avatar>
           <Box sx={{ minWidth: 0, flex: 1 }}>
             <Typography variant="body2" sx={{ lineHeight: 1.3 }}><b>{n.actor.name}</b> added you to <b>{n.plan.title}</b></Typography>
             <Typography variant="caption" color="text.secondary">{relTime(n.createdAt)}</Typography>
@@ -117,17 +117,17 @@ function PlanQuestions({ planId, today }) {
     return out;
   }, [state.items]);
 
-  if (state.loading) return <Box sx={{ p: 1.5 }}><Skeleton variant="rounded" height={52} sx={{ mb: 0.75, borderRadius: '12px' }} /><Skeleton variant="rounded" height={52} sx={{ borderRadius: '12px' }} /></Box>;
+  if (state.loading) return <Box sx={{ p: 1.5 }}><Skeleton variant="rounded" height={52} sx={{ mb: 1, borderRadius: RADII_PX.card }} /><Skeleton variant="rounded" height={52} sx={{ borderRadius: RADII_PX.card }} /></Box>;
   if (state.error) return <Typography variant="body2" color="error" sx={{ p: 1.5 }}>{state.error}</Typography>;
   if (days.length === 0) return <Typography variant="body2" color="text.secondary" sx={{ p: 1.5 }}>No questions in this plan.</Typography>;
 
   return (
-    <Box sx={{ maxHeight: 380, overflowY: 'auto', scrollbarWidth: 'thin', px: 1.25, py: 1 }}>
+    <Box sx={{ maxHeight: 380, overflowY: 'auto', scrollbarWidth: 'thin', px: 1.5, py: 1 }}>
       {days.map((d) => {
         const doneCount = d.items.filter((i) => i.done).length;
         return (
           <Box key={d.date}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, pt: 0.5, pb: 0.6 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, pt: 0.5, pb: 0.5 }}>
               <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>{relDay(d.date, today).toUpperCase()}</Typography>
               <Box sx={{ flex: 1, height: '1px', bgcolor: 'divider' }} />
               <Typography variant="caption" sx={[{ fontWeight: FONT_WEIGHTS.bold, color: doneCount === d.items.length ? 'success.main' : 'text.secondary' }, mono]}>{doneCount}/{d.items.length}</Typography>
@@ -160,43 +160,43 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
   const glassBtn = { width: 44, height: 44, flexShrink: 0, color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.16), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.28) } };
 
   return (
-    <Box sx={(t) => ({ borderRadius: '16px', overflow: 'hidden', bgcolor: t.palette.background.paper, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}` })}>
+    <Box sx={(t) => ({ borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: t.palette.background.paper, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}` })}>
       <Box sx={{ position: 'relative', color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}`, overflow: 'hidden' }}>
         <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.26)}, transparent 70%)`, pointerEvents: 'none' }} />
         <Box aria-hidden sx={{ position: 'absolute', left: -40, bottom: 20, width: 140, height: 140, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.white, 0.10)}, transparent 70%)`, pointerEvents: 'none' }} />
 
-        <Box sx={{ position: 'relative', p: { xs: 2, sm: 2.25 } }}>
+        <Box sx={{ position: 'relative', p: { xs: 2, sm: 2.5 } }}>
           {/* title + countdown tile (tap to open) */}
           <ButtonBase
             onClick={onOpen} aria-label={`Open ${plan.title}`}
-            sx={{ display: 'flex', width: '100%', alignItems: 'flex-start', justifyContent: 'space-between', gap: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderRadius: '8px' }}
+            sx={{ display: 'flex', width: '100%', alignItems: 'flex-start', justifyContent: 'space-between', gap: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', borderRadius: RADII_PX.control }}
           >
             <Box sx={{ minWidth: 0 }}>
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.2, overflowWrap: 'anywhere' }}>{plan.title}</Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.5, color: withAlpha(COLOR_PALETTE.white, 0.88) }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5, color: withAlpha(COLOR_PALETTE.white, 0.88) }}>
                 <CalendarMonthRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />
                 <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold }}>{fmtRange(s.startDate, s.endDate)}</Typography>
               </Box>
               {behind && (
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, mt: 0.75, px: 1, py: 0.25, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.amber[400], 0.18), color: COLOR_PALETTE.amber[200] }}>
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, mt: 1, px: 1, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.amber[400], 0.18), color: COLOR_PALETTE.amber[200] }}>
                   <ErrorOutlineRoundedIcon sx={{ fontSize: FONT_SIZES.body }} />
                   <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold }}>{s.overdue} overdue</Typography>
                 </Box>
               )}
             </Box>
-            <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: tile.urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
+            <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 1, borderRadius: RADII_PX.card, textAlign: 'center', bgcolor: tile.urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: tile.urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: tile.big.length > 3 ? FONT_SIZES.heading : FONT_SIZES.hero, lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
-              {tile.label && <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
+              {tile.label && <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, mt: 0.5, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
             </Box>
           </ButtonBase>
 
           {/* what are we studying today: ring + speech bubble */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 1.5 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mt: 1.5 }}>
             <ProgressRing value={s.percent} size={64} onDark />
-            <Box sx={{ minWidth: 0, flex: 1, px: 1.5, py: 1.1, borderRadius: '16px 16px 16px 4px', bgcolor: withAlpha(COLOR_PALETTE.white, 0.14) }}>
+            <Box sx={{ minWidth: 0, flex: 1, px: 1.5, py: 1, borderRadius: `${RADII.card}px ${RADII.card}px ${RADII.card}px ${RADII.badge}px`, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14) }}>
               <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: 1.4, fontWeight: FONT_WEIGHTS.bold }}>{message}</Typography>
               {!complete && todayItems.slice(0, 3).map((it) => (
-                <Typography key={it.id} noWrap sx={{ fontSize: FONT_SIZES.caption, mt: 0.3, fontWeight: FONT_WEIGHTS.semibold, opacity: it.done ? 0.6 : 0.95, textDecoration: it.done ? 'line-through' : 'none' }}>
+                <Typography key={it.id} noWrap sx={{ fontSize: FONT_SIZES.caption, mt: 0.5, fontWeight: FONT_WEIGHTS.semibold, opacity: it.done ? 0.6 : 0.95, textDecoration: it.done ? 'line-through' : 'none' }}>
                   {it.done ? '✓ ' : it.overdue ? '! ' : '• '}{it.title}
                 </Typography>
               ))}
@@ -220,16 +220,16 @@ function PlanCard({ plan, today, expanded, onToggle, onOpen, onAddFriend, onDele
                 </AvatarGroup>
               </Box>
             </Box>
-            <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} aria-label="Plan progress" sx={{ height: 10, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.white, 0.18), overflow: 'hidden' }}>
-              <Box sx={{ width: `${Math.max(s.percent, 4)}%`, height: '100%', borderRadius: 99, background: `linear-gradient(90deg, ${PLAN_AMBER}, ${COLOR_PALETTE.amber[500]})`, transition: 'width .6s ease' }} />
+            <Box role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} aria-label="Plan progress" sx={{ height: 10, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.white, 0.18), overflow: 'hidden' }}>
+              <Box sx={{ width: `${Math.max(s.percent, 4)}%`, height: '100%', borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${PLAN_AMBER}, ${COLOR_PALETTE.amber[500]})`, transition: 'width .6s ease' }} />
             </Box>
           </Box>
 
           {/* open + quick actions */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1.75 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 2 }}>
             <Button
               onClick={onOpen} startIcon={<BoltRoundedIcon />} endIcon={<ArrowForwardRoundedIcon />} disableElevation
-              sx={{ flex: 1, height: 44, borderRadius: '14px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+              sx={{ flex: 1, height: 44, borderRadius: RADII_PX.card, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
             >
               {cta}
             </Button>
@@ -577,7 +577,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
 
       {plans === null ? (
         <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
-          {[0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={260} sx={{ borderRadius: '14px' }} />)}
+          {[0, 1, 2].map((i) => <Skeleton key={i} variant="rounded" height={260} sx={{ borderRadius: RADII_PX.card }} />)}
         </Box>
       ) : plans.length === 0 ? (
         <Box sx={[surface, { p: 3, textAlign: 'center' }]}>

@@ -10,7 +10,7 @@ import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import { DIFF_COLOR } from '../../dashboardUtils';
 import { ACC_W, PAD_X, STAR_W } from './libraryConstants';
 import useLibraryStyles from './libraryStyles';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../../app/design/designTokens';
 
 const LINK_SX = {
   flex: 1,
@@ -21,7 +21,7 @@ const LINK_SX = {
   px: PAD_X,
   color: 'inherit',
   textDecoration: 'none',
-  '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: -2, borderRadius: '8px' },
+  '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: -2, borderRadius: RADII_PX.control },
 };
 
 // The phone Library look shows an empty dash for problems that are not solved yet.

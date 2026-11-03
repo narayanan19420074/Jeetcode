@@ -33,7 +33,7 @@ import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { DIFFICULTY, difficultyMeta } from './components/aptitudeUi';
 import MobilePractice from './components/MobilePractice';
-import { FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const PAGE_SIZE = 25;
 const mono = { fontFamily: FONTS.mono };
@@ -247,7 +247,7 @@ export default function AptitudePracticePage() {
           aria-label="Difficulty"
         >
           {Object.entries(DIFFICULTY).map(([k, m]) => (
-            <ToggleButton key={k} value={k} sx={{ px: 1.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold, '&.Mui-selected': { color: m.color, bgcolor: alpha(m.color, 0.12) } }}>
+            <ToggleButton key={k} value={k} sx={{ px: 2, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold, '&.Mui-selected': { color: m.color, bgcolor: alpha(m.color, 0.12) } }}>
               {m.label}
             </ToggleButton>
           ))}
@@ -285,8 +285,8 @@ export default function AptitudePracticePage() {
       {error && <Alert severity="info" onClose={() => setError(null)} sx={{ mb: 2 }}>{error}</Alert>}
 
       {/* Problem list */}
-      <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
-        <Box sx={{ display: { xs: 'none', sm: 'grid' }, gridTemplateColumns: '44px 56px 1fr 190px 96px 84px', px: 2, py: 1.1, bgcolor: 'action.hover', borderBottom: '1px solid', borderColor: 'divider' }}>
+      <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, overflow: 'hidden' }}>
+        <Box sx={{ display: { xs: 'none', sm: 'grid' }, gridTemplateColumns: '44px 56px 1fr 190px 96px 84px', px: 2, py: 1, bgcolor: 'action.hover', borderBottom: '1px solid', borderColor: 'divider' }}>
           {['', '#', 'Question', 'Topic', 'Accept.', 'Level'].map((h, i) => (
             <Typography key={i} variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', textAlign: i >= 4 ? 'right' : 'left' }}>
               {h}
@@ -295,7 +295,7 @@ export default function AptitudePracticePage() {
         </Box>
 
         {!list &&
-          Array.from({ length: 8 }, (_, i) => <Skeleton key={i} variant="rectangular" height={52} sx={{ mb: '1px' }} />)}
+          Array.from({ length: 8 }, (_, i) => <Skeleton key={i} variant="rectangular" height={52} sx={{ mb: 0 }} />)}
 
         {list && list.items.length === 0 && (
           <Box sx={{ py: 7, textAlign: 'center' }}>
@@ -317,7 +317,7 @@ export default function AptitudePracticePage() {
                 gridTemplateColumns: { xs: '36px 1fr 70px', sm: '44px 56px 1fr 190px 96px 84px' },
                 alignItems: 'center',
                 px: 2,
-                py: 1.25,
+                py: 1.5,
                 cursor: 'pointer',
                 borderBottom: '1px solid',
                 borderColor: 'divider',

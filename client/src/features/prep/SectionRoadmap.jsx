@@ -8,7 +8,7 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import { QuestCoin } from './PrepQuestBits';
 import { CLEARED_AT, sectionPct } from './questLogic';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
 
 const ROW = 112;
 const PROBLEMS_SHOWN = 12;
@@ -126,7 +126,7 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
         </Box>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, fontVariantNumeric: 'tabular-nums' }}>{pct}%</Typography>
       </Stack>
-      <LinearProgress variant="determinate" value={pct} sx={{ height: 8, borderRadius: '8px', mb: 1.5 }} />
+      <LinearProgress variant="determinate" value={pct} sx={{ height: 8, borderRadius: RADII_PX.pill, mb: 1.5 }} />
       {section.description && <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>{section.description}</Typography>}
 
       {nodes.length === 0 ? (
@@ -160,7 +160,7 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
                       transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
                       style={{ position: 'absolute', top: -30, left: '50%', translateX: '-50%', whiteSpace: 'nowrap' }}
                     >
-                      <Box sx={{ px: 1.25, py: 0.25, borderRadius: '99px', bgcolor: 'primary.main', color: 'primary.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>You are here</Box>
+                      <Box sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'primary.main', color: 'primary.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>You are here</Box>
                     </motion.div>
                   )}
                   <ButtonBase onClick={() => setPicked(i)} aria-label={n.title} sx={{ borderRadius: '50%', opacity: n.state === 'locked' ? 0.55 : 1 }}>
@@ -196,18 +196,18 @@ export default function SectionRoadmap({ section, navigate, onSelfReport, onBack
               style={{ position: 'fixed', inset: 0, background: withAlpha(COLOR_PALETTE.black, .45), zIndex: 1290 }} />
             <motion.div key="sheet" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 320, damping: 32 }}
               style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 1300, display: 'flex', justifyContent: 'center' }}>
-              <Box sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper', borderRadius: '24px 24px 0 0', p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, .3)}` }}>
-                <Box sx={{ width: 40, height: 4, borderRadius: '4px', bgcolor: 'divider', mx: 'auto', mb: 2 }} />
+              <Box sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper', borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, .3)}` }}>
+                <Box sx={{ width: 40, height: 4, borderRadius: RADII_PX.pill, bgcolor: 'divider', mx: 'auto', mb: 2 }} />
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading }}>{picks.title}</Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>{picks.sub}</Typography>
                 {picks.note && <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>{picks.note}</Typography>}
                 <Stack spacing={1.25}>
                   {picks.actions.map((a) => (
-                    <Button key={a.label} fullWidth size="large" variant={a.variant} disableElevation onClick={() => { setPicked(null); a.run(); }} sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: '14px', py: 1.25 }}>
+                    <Button key={a.label} fullWidth size="large" variant={a.variant} disableElevation onClick={() => { setPicked(null); a.run(); }} sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: RADII_PX.card, py: 1.5 }}>
                       {a.label}
                     </Button>
                   ))}
-                  {picks.actions.length === 0 && <Button fullWidth size="large" variant="outlined" disabled sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: '14px', py: 1.25 }}>Locked</Button>}
+                  {picks.actions.length === 0 && <Button fullWidth size="large" variant="outlined" disabled sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: RADII_PX.card, py: 1.5 }}>Locked</Button>}
                 </Stack>
               </Box>
             </motion.div>

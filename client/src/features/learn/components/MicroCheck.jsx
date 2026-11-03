@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box, Stack, Typography, ButtonBase, Collapse, alpha } from '@mui/material';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // Inline quick-check under each concept's explanation.
 // Retry until correct: once the user picks the right option, it locks and
@@ -27,7 +27,7 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
     <Box
       sx={{
         p: { xs: 2, sm: 3 },
-        borderRadius: 3,
+        borderRadius: RADII_PX.card,
         border: '1px solid',
         borderColor: 'divider',
         bgcolor: (t) => alpha(t.palette.primary.main, 0.02),
@@ -69,7 +69,7 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
                   justifyContent: 'flex-start',
                   textAlign: 'left',
                   p: 1.5,
-                  borderRadius: 2,
+                  borderRadius: RADII_PX.card,
                   border: '1.5px solid',
                   borderColor: showAsCorrect ? 'success.main' : showAsWrong ? 'error.main' : 'divider',
                   bgcolor: showAsCorrect
@@ -116,7 +116,7 @@ export default function MicroCheck({ checkQuestion, onCorrect }) {
           <Box
             sx={{
               p: 2,
-              borderRadius: 2,
+              borderRadius: RADII_PX.card,
               border: '1.5px solid',
               borderColor: 'success.main',
               bgcolor: alpha(COLOR_PALETTE.emerald[500], 0.08),

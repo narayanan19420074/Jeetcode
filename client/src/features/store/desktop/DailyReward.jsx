@@ -20,7 +20,7 @@ export default function DailyReward({ daily, claiming, onClaim }) {
   }
   if (!daily?.claimed) return null;
   return (
-    <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 0.75, color: palette.muted }}>
+    <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 1, color: palette.muted }}>
       <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'var(--jc-easy)' }} />
       <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>Checked in today</Typography>
     </Stack>

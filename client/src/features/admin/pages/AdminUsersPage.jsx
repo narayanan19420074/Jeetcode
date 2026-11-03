@@ -26,7 +26,7 @@ import {
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const ROLES = ['learner', 'contributor', 'moderator', 'admin'];
 
@@ -101,7 +101,7 @@ export default function AdminUsersPage() {
         </Alert>
       )}
 
-      <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems={{ sm: 'center' }} justifyContent="space-between" sx={{ mb: 2 }}>
           <Tabs
             value={filter}

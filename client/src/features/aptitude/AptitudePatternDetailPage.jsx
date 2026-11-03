@@ -47,7 +47,7 @@ import { CountUp, XpBar, popChild, staggerParent } from './components/MotionBits
 import { moduleXp, rankForXp } from './components/gamification';
 import { DIFFICULTY, formatClock, formatDuration } from './components/aptitudeUi';
 import MobilePatternDetail, { MobilePatternError, MobilePatternSkeleton } from './components/MobilePatternDetail';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const MONO = '"JetBrains Mono", monospace';
 
@@ -62,7 +62,7 @@ function ActionIcon({ icon, accent, name, onClick, disabled, highlight, dot, lab
         onClick={onClick}
         aria-label={label}
         title={label}
-        sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0.75, py: 0.5, opacity: disabled ? 0.45 : 1 }}
+        sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1, py: 0.5, opacity: disabled ? 0.45 : 1 }}
       >
         <Badge color="warning" variant="dot" invisible={!dot} overlap="rectangular">
           <Box
@@ -107,7 +107,7 @@ function SubPatternRow({ sub, onClick }) {
         width: '100%',
         display: 'flex',
         alignItems: 'center',
-        gap: 1.25,
+        gap: 1.5,
         px: 1.5,
         py: 1,
         minHeight: 54,
@@ -137,7 +137,7 @@ function SubPatternRow({ sub, onClick }) {
         </Typography>
       </Box>
       {!empty && (
-        <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: accColor, flexShrink: 0, display: 'flex', alignItems: 'center', gap: 0.25 }}>
+        <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: accColor, flexShrink: 0, display: 'flex', alignItems: 'center', gap: 0.5 }}>
           {sub.accuracy == null ? '—' : `${sub.accuracy}%`}
         </Typography>
       )}
@@ -149,8 +149,8 @@ function SubPatternRow({ sub, onClick }) {
 
 function Stat({ icon, color, value, label, suffix }) {
   return (
-    <Box sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 0.9 }}>
-      <Box sx={{ width: 30, height: 30, flexShrink: 0, borderRadius: 2, display: 'grid', placeItems: 'center', color, bgcolor: alpha(color, 0.14), '& svg': { fontSize: FONT_SIZES.subheading } }}>{icon}</Box>
+    <Box sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 1 }}>
+      <Box sx={{ width: 30, height: 30, flexShrink: 0, borderRadius: RADII_PX.pill, display: 'grid', placeItems: 'center', color, bgcolor: alpha(color, 0.14), '& svg': { fontSize: FONT_SIZES.subheading } }}>{icon}</Box>
       <Box sx={{ minWidth: 0 }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.1, fontFamily: MONO }} noWrap>
           {value}
@@ -232,11 +232,11 @@ export default function AptitudePatternDetailPage() {
     return (
       <Container maxWidth="md" sx={{ py: { xs: 1.5, md: 3 } }}>
         <Skeleton width={180} height={20} sx={{ mb: 1 }} />
-        <Skeleton variant="rounded" height={230} sx={{ mb: 2, borderRadius: 3 }} />
+        <Skeleton variant="rounded" height={230} sx={{ mb: 2, borderRadius: RADII_PX.card }} />
         <Stack spacing={1.25}>
-          <Skeleton variant="rounded" height={74} sx={{ borderRadius: 3 }} />
-          <Skeleton variant="rounded" height={74} sx={{ borderRadius: 3 }} />
-          <Skeleton variant="rounded" height={74} sx={{ borderRadius: 3 }} />
+          <Skeleton variant="rounded" height={74} sx={{ borderRadius: RADII_PX.card }} />
+          <Skeleton variant="rounded" height={74} sx={{ borderRadius: RADII_PX.card }} />
+          <Skeleton variant="rounded" height={74} sx={{ borderRadius: RADII_PX.card }} />
         </Stack>
       </Container>
     );
@@ -326,7 +326,7 @@ export default function AptitudePatternDetailPage() {
         variant="outlined"
         square
         sx={{
-          p: { xs: 1.25, sm: 2 },
+          p: { xs: 1.5, sm: 2 },
           flexShrink: 0,
           background: (t) => `linear-gradient(150deg, ${alpha(rank.alien.color, t.palette.mode === 'dark' ? 0.18 : 0.1)} 0%, transparent 60%)`,
         }}
@@ -342,7 +342,7 @@ export default function AptitudePatternDetailPage() {
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.02em', lineHeight: 1.15, fontSize: { xs: FONT_SIZES.subheading, sm: FONT_SIZES.display }, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
               {pattern.title}
             </Typography>
-            <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 0.25 }}>
+            <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 0.5 }}>
               <Typography variant="caption" color="text.secondary" noWrap>
                 {rank.alien.name} · {rank.alien.title}
               </Typography>
@@ -377,13 +377,13 @@ export default function AptitudePatternDetailPage() {
           </Typography>
         </Stack>
 
-        <Stack direction="row" spacing={1} sx={{ mt: 1.25 }}>
+        <Stack direction="row" spacing={1} sx={{ mt: 1.5 }}>
           <Stat icon={<CheckCircleRoundedIcon />} color={COLOR_PALETTE.emerald[500]} value={totals.solved} suffix={`/${totals.total}`} label="Solved" />
           <Stat icon={<MenuBookRoundedIcon />} color={COLOR_PALETTE.blue[500]} value={learnDone} suffix={learnTotal ? `/${learnTotal}` : ''} label="Lessons" />
           <Stat icon={<EmojiEventsRoundedIcon />} color={COLOR_PALETTE.amber[500]} value={progress.attemptsCount > 0 ? Math.round(progress.bestScore) : 0} suffix="%" label="Best test" />
         </Stack>
 
-        <Stack direction="row" useFlexGap spacing={1.25} sx={{ mt: 1.1, alignItems: 'center', flexWrap: 'wrap' }}>
+        <Stack direction="row" useFlexGap spacing={1.25} sx={{ mt: 1, alignItems: 'center', flexWrap: 'wrap' }}>
           {Object.entries(DIFFICULTY).map(([key, meta]) => {
             const d = byDifficulty[key];
             return (
@@ -411,7 +411,7 @@ export default function AptitudePatternDetailPage() {
         </Stack>
 
         <Collapse in={showRecent} unmountOnExit>
-          <Box sx={{ mt: 1.25, pt: 1, borderTop: '1px solid', borderColor: 'divider', maxHeight: 180, overflowY: 'auto' }}>
+          <Box sx={{ mt: 1.5, pt: 1, borderTop: '1px solid', borderColor: 'divider', maxHeight: 180, overflowY: 'auto' }}>
             <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', mb: 0.5 }}>
               <HistoryRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'text.secondary' }} />
               <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
@@ -429,7 +429,7 @@ export default function AptitudePatternDetailPage() {
                   <Box
                     key={a._id}
                     onClick={() => navigate(`/aptitude/${slug}/results/${a._id}`)}
-                    sx={{ py: 0.9, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' }, mx: -1, px: 1 }}
+                    sx={{ py: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' }, mx: -1, px: 1 }}
                   >
                     <Box>
                       <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>

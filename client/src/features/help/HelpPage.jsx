@@ -27,7 +27,7 @@ import SupportChat from './SupportChat';
 import { feedbackApi } from '../../api/feedbackApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { CONTACT_EMAIL, LEGAL_LINKS, SITE_NAME } from '../legal/legalConfig';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const TYPES = [
   { value: 'question', label: 'Question' },
@@ -195,7 +195,7 @@ export default function HelpPage() {
           ))}
         </Box>
 
-        <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3, mb: 4 }}>
+        <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card, mb: 4 }}>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ alignItems: { sm: 'center' }, justifyContent: 'space-between' }}>
             <Box>
               <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.bold }}>
@@ -214,7 +214,7 @@ export default function HelpPage() {
         <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
           Contact us / send feedback
         </Typography>
-        <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+        <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
           {sent ? (
             <Stack spacing={2} sx={{ alignItems: 'flex-start' }}>
               <Alert severity="success" sx={{ width: '100%' }}>

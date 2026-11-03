@@ -3,16 +3,16 @@ import { Box, ButtonBase, Typography } from '@mui/material';
 import { tint } from '../../dashboard/dashboardUtils';
 import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { panelSx } from '../../dashboard/components/libraryDesktopStyles';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 function TrackButton({ item, selected, onPick }) {
   return (
     <ButtonBase
       onClick={() => onPick(item.key)}
       aria-pressed={selected}
-      sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: 1.5, width: '100%', p: 1, borderRadius: '16px', textAlign: 'left', fontFamily: 'inherit', color: selected ? item.color : 'text.primary', bgcolor: selected ? tint(item.color, 14) : 'transparent', border: `1px solid ${selected ? tint(item.color, 40) : 'transparent'}` }}
+      sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: 1.5, width: '100%', p: 1, borderRadius: RADII_PX.card, textAlign: 'left', fontFamily: 'inherit', color: selected ? item.color : 'text.primary', bgcolor: selected ? tint(item.color, 14) : 'transparent', border: `1px solid ${selected ? tint(item.color, 40) : 'transparent'}` }}
     >
-      <Box sx={{ width: 40, height: 40, borderRadius: '13px', display: 'grid', placeItems: 'center', flexShrink: 0, color: item.color, bgcolor: tint(item.color, selected ? 24 : 12) }}>
+      <Box sx={{ width: 40, height: 40, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', flexShrink: 0, color: item.color, bgcolor: tint(item.color, selected ? 24 : 12) }}>
         {cloneElement(item.icon, { sx: { fontSize: FONT_SIZES.display } })}
       </Box>
       <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING }}>{item.label}</Typography>

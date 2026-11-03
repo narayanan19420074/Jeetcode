@@ -12,7 +12,7 @@ import CompanyAvatar from '../../../components/CompanyAvatar';
 import NqtExploreCard from './NqtExploreCard';
 import { tint } from '../dashboardUtils';
 import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libSectionTitleSx } from './libraryStyle';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Phone Explore screen in the Library look (same tokens as the phone home): 16px gutter, 18px section titles,
 // 32px between sections, 12px between a title and its content, 48px tiles and logos, 34px chips, divider-separated rows.
@@ -51,10 +51,10 @@ function ToolRow({ to, title, text, icon: Icon, color, bg }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        gap: '12px',
+        gap: 1.5,
         width: '100%',
-        p: '12px',
-        borderRadius: '16px',
+        p: 1.5,
+        borderRadius: RADII_PX.card,
         border: '1.5px solid var(--lib-border)',
         textAlign: 'left',
         fontFamily: 'inherit',
@@ -76,16 +76,16 @@ function ToolRow({ to, title, text, icon: Icon, color, bg }) {
 function Companies({ companies, onBrowse }) {
   return (
     <Box sx={bleed}>
-      <Box sx={{ display: 'grid', gridAutoFlow: 'column', gridTemplateRows: 'repeat(3, auto)', gridAutoColumns: 236, columnGap: '16px', px: 2, width: 'max-content' }}>
+      <Box sx={{ display: 'grid', gridAutoFlow: 'column', gridTemplateRows: 'repeat(3, auto)', gridAutoColumns: 236, columnGap: 2, px: 2, width: 'max-content' }}>
         {companies.map(({ company, count }) => (
           <ButtonBase
             key={company}
             onClick={() => onBrowse({ companies: [company] })}
             aria-label={`Browse ${company} questions`}
-            sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '12px', mb: '5px', textAlign: 'left', fontFamily: 'inherit', color: 'var(--lib-text)' }}
+            sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: 1.5, mb: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'var(--lib-text)' }}
           >
             <CompanyAvatar name={company} size={48} />
-            <Box sx={{ flex: 1, minWidth: 0, pb: '4px', borderBottom: '1px solid var(--lib-divider)' }}>
+            <Box sx={{ flex: 1, minWidth: 0, pb: 0.5, borderBottom: '1px solid var(--lib-divider)' }}>
               <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{company}</Typography>
               <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
                 {count.toLocaleString('en-IN')} {count === 1 ? 'Question' : 'Questions'}
@@ -112,7 +112,7 @@ function Topics({ tags, onBrowse }) {
                 key={tag}
                 onClick={() => onBrowse({ tags: [tag] })}
                 aria-label={`Browse ${tag} questions`}
-                sx={{ height: 34, px: '14px', gap: 0.75, borderRadius: 999, fontFamily: 'inherit', bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, whiteSpace: 'nowrap' }}
+                sx={{ height: 34, px: 2, gap: 1, borderRadius: RADII_PX.pill, fontFamily: 'inherit', bgcolor: 'var(--lib-chip)', color: 'var(--lib-chip-text)', fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, whiteSpace: 'nowrap' }}
               >
                 {tag}
                 <Box component="span" sx={{ fontSize: FONT_SIZES.body, opacity: 0.7, fontVariantNumeric: 'tabular-nums' }}>{count}</Box>
@@ -131,7 +131,7 @@ function ChipSkeleton() {
       {[0, 1, 2].map((r) => (
         <Box key={r} sx={{ display: 'flex', gap: 1 }}>
           {[70, 110, 84, 130].map((w) => (
-            <Skeleton key={w} variant="rounded" width={w} height={34} sx={{ borderRadius: 999 }} />
+            <Skeleton key={w} variant="rounded" width={w} height={34} sx={{ borderRadius: RADII_PX.pill }} />
           ))}
         </Box>
       ))}
@@ -163,7 +163,7 @@ export default function MobileExplore({ onBrowse }) {
           </Box>
 
           <Section title="Practice tools">
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '11px' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
               {TOOLS.map((tool) => (
                 <ToolRow key={tool.to} {...tool} />
               ))}
@@ -172,7 +172,7 @@ export default function MobileExplore({ onBrowse }) {
 
           {(companies === null || companies.length > 0) && (
             <Section title="Companies">
-              {companies === null ? <Skeleton variant="rounded" height={168} sx={{ borderRadius: '12px' }} /> : <Companies companies={companies} onBrowse={onBrowse} />}
+              {companies === null ? <Skeleton variant="rounded" height={168} sx={{ borderRadius: RADII_PX.card }} /> : <Companies companies={companies} onBrowse={onBrowse} />}
             </Section>
           )}
 

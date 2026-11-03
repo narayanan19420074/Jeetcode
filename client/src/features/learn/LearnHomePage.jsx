@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Grid, Paper, Typography, Chip } from '@mui/material';
 import AutoAwesomeMotionRoundedIcon from '@mui/icons-material/AutoAwesomeMotionRounded';
 import { learnTopics } from './content';
-import { FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 export default function LearnHomePage() {
   return (
@@ -24,7 +24,7 @@ export default function LearnHomePage() {
               variant="outlined"
               sx={{
                 p: 3,
-                borderRadius: 3,
+                borderRadius: RADII_PX.card,
                 display: 'block',
                 textDecoration: 'none',
                 color: 'inherit',

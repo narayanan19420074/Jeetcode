@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { LIB_TRACKING, LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Phone workspace in the Library look (same rules as the phone Dashboard and Problems pages):
 //   16px page gutter, 0.03em tracking, cream surfaces (--lib-*), indigo accent
@@ -38,9 +38,9 @@ export function PhoneDifficultyTag({ difficulty }) {
         flexShrink: 0,
         minWidth: 43,
         textAlign: 'center',
-        px: '5px',
-        py: '2px',
-        borderRadius: '8px',
+        px: 0.5,
+        py: 0.5,
+        borderRadius: RADII_PX.control,
         fontSize: FONT_SIZES.bodyLg,
         fontWeight: FONT_WEIGHTS.regular,
         letterSpacing: LIB_TRACKING,

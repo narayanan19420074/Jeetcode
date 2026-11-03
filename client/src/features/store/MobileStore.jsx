@@ -20,7 +20,7 @@ import {
   libTintBtnSx,
 } from '../dashboard/components/libraryStyle';
 import { Coins, ItemArt, fmt, priceNote } from './storeUtils';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Phone layout of the Store in the Library look (same as the phone Problems, Home and You pages): Roboto type,
 // warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section titles, cream tiles. The order
@@ -31,7 +31,7 @@ const ACCENT = LIB_ACCENT;
 
 const scrollRow = {
   display: 'flex',
-  gap: 1.25,
+  gap: 1.5,
   overflowX: 'auto',
   mx: -2,
   px: 2,
@@ -53,7 +53,7 @@ function SectionTitle({ children }) {
 
 function Badge({ children, color }) {
   return (
-    <Typography component="span" sx={{ px: 1, py: 0.3, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.2, color, bgcolor: 'var(--lib-bg)', border: `1px solid ${tint(color, 40)}` }}>
+    <Typography component="span" sx={{ px: 1, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.medium, lineHeight: 1.2, color, bgcolor: 'var(--lib-bg)', border: `1px solid ${tint(color, 40)}` }}>
       {children}
     </Typography>
   );
@@ -74,7 +74,7 @@ function ItemTile({ item, balance, signedIn, onBuy, onCourse }) {
         display: 'flex',
         flexDirection: 'column',
         minWidth: 0,
-        borderRadius: '16px',
+        borderRadius: RADII_PX.card,
         overflow: 'hidden',
         opacity: soldOut ? 0.65 : 1,
         bgcolor: 'var(--lib-chip)',
@@ -98,7 +98,7 @@ function ItemTile({ item, balance, signedIn, onBuy, onCourse }) {
         <Box sx={{ mt: 'auto', pt: 0.5 }}>
           <Coins value={item.price} size={20} />
           {!owned && signedIn && !afford && !soldOut && (
-            <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 0.25 }}>
+            <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 0.5 }}>
               Need {fmt(item.price - balance)} more
             </Typography>
           )}
@@ -158,7 +158,7 @@ export default function MobileStore({
       <PageHeader icon={StorefrontRoundedIcon} title="Store" subtitle="Spend the coins you earn by solving" />
 
       {/* Coins and the daily reward */}
-      <Box sx={{ mt: 3, p: 2, borderRadius: '20px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}>
+      <Box sx={{ mt: 3, p: 2, borderRadius: RADII_PX.card, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}>
         {isAuthenticated ? (
           <>
             <ButtonBase onClick={onWallet} aria-label="Open coin wallet" sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, fontFamily: 'inherit', color: 'inherit', textAlign: 'left' }}>
@@ -183,14 +183,14 @@ export default function MobileStore({
                 Solve 1 problem for daily coins
               </Button>
             ) : daily?.claimed ? (
-              <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 0.75, mt: 1.5, color: 'var(--lib-muted)' }}>
+              <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'center', gap: 1, mt: 1.5, color: 'var(--lib-muted)' }}>
                 <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'var(--jc-easy)' }} />
                 <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>Checked in today</Typography>
               </Stack>
             ) : null}
           </>
         ) : (
-          <Stack sx={{ alignItems: 'center', textAlign: 'center', gap: 1.25 }}>
+          <Stack sx={{ alignItems: 'center', textAlign: 'center', gap: 1.5 }}>
             <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.title }}>
               Sign in to see your coins and redeem items.
             </Typography>
@@ -223,7 +223,7 @@ export default function MobileStore({
                   p: 2,
                   textAlign: 'left',
                   fontFamily: 'inherit',
-                  borderRadius: '16px',
+                  borderRadius: RADII_PX.card,
                   color: 'var(--lib-text)',
                   bgcolor: 'var(--lib-chip)',
                   border: '1px solid var(--lib-border)',
@@ -232,11 +232,11 @@ export default function MobileStore({
                 <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
                   {c.name}
                 </Typography>
-                <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 0.4, fontVariantNumeric: 'tabular-nums' }}>
+                <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 0.5, fontVariantNumeric: 'tabular-nums' }}>
                   {c.progress.doneCount}/{c.progress.lessonCount} lessons
                 </Typography>
-                <Box role="progressbar" aria-label={`${c.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={c.progress.percent} sx={{ mt: 1, height: 5, borderRadius: 99, bgcolor: tint(ACCENT, 20), overflow: 'hidden' }}>
-                  <Box sx={{ width: `${c.progress.percent}%`, height: '100%', borderRadius: 99, bgcolor: ACCENT }} />
+                <Box role="progressbar" aria-label={`${c.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={c.progress.percent} sx={{ mt: 1, height: 5, borderRadius: RADII_PX.pill, bgcolor: tint(ACCENT, 20), overflow: 'hidden' }}>
+                  <Box sx={{ width: `${c.progress.percent}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: ACCENT }} />
                 </Box>
               </ButtonBase>
             ))}
@@ -245,7 +245,7 @@ export default function MobileStore({
       )}
 
       {merchLocked && (
-        <Stack direction="row" sx={{ mt: 3, p: 2, gap: 1.25, alignItems: 'center', borderRadius: '16px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}>
+        <Stack direction="row" sx={{ mt: 3, p: 2, gap: 1.5, alignItems: 'center', borderRadius: RADII_PX.card, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}>
           <LockRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: ACCENT, flexShrink: 0 }} />
           <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>
             Merch unlocks after you solve {minSolved} problems. You have solved {solved}.
@@ -276,7 +276,7 @@ export default function MobileStore({
         {loading ? (
           <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}>
             {Array.from({ length: 6 }).map((_, i) => (
-              <Skeleton key={i} variant="rounded" height={250} sx={{ borderRadius: '20px' }} />
+              <Skeleton key={i} variant="rounded" height={250} sx={{ borderRadius: RADII_PX.card }} />
             ))}
           </Box>
         ) : items.length === 0 ? (

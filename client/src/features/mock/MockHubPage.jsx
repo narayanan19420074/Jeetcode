@@ -11,7 +11,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import BackToDashboard from '../../components/BackToDashboard';
 import { PLAN_AMBER } from '../studyplan/planUtils';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const when = (d) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
 
@@ -19,8 +19,8 @@ function PaperCard({ paper, busy, onStart }) {
   const navigate = useNavigate();
   const resume = Boolean(paper.openAttemptId);
   return (
-    <Box sx={(t) => ({ display: 'flex', flexDirection: 'column', gap: 1.25, p: 1.75, borderRadius: '14px', bgcolor: 'background.paper', border: `1px solid ${t.palette.divider}` })}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
+    <Box sx={(t) => ({ display: 'flex', flexDirection: 'column', gap: 1.5, p: 2, borderRadius: RADII_PX.card, bgcolor: 'background.paper', border: `1px solid ${t.palette.divider}` })}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
         <CompanyAvatar name={paper.company} size={40} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.25 }}>{paper.title}</Typography>
@@ -46,22 +46,22 @@ function PaperCard({ paper, busy, onStart }) {
         <Typography variant="caption" color="text.secondary">Coming soon: {paper.comingSoon.join(', ')}</Typography>
       )}
 
-      <Box sx={{ display: 'flex', gap: 0.75, mt: 'auto', pt: 0.5 }}>
+      <Box sx={{ display: 'flex', gap: 1, mt: 'auto', pt: 0.5 }}>
         {paper.locked ? (
           <Button fullWidth disableElevation startIcon={<LockRoundedIcon />} onClick={() => navigate('/pricing')}
-            sx={{ height: 38, borderRadius: '10px', fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
+            sx={{ height: 38, borderRadius: RADII_PX.control, fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
             Go Pro for more attempts
           </Button>
         ) : (
           <Button fullWidth disableElevation disabled={!paper.available || busy} startIcon={busy ? <CircularProgress size={16} /> : <PlayArrowRoundedIcon />}
             onClick={() => onStart(paper)}
-            sx={{ height: 38, borderRadius: '10px', fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
+            sx={{ height: 38, borderRadius: RADII_PX.control, fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>
             {!paper.available ? 'Questions being added' : resume ? 'Resume paper' : paper.attemptsCount ? 'Take again' : 'Start mock'}
           </Button>
         )}
         {paper.officialUrl && (
           <Button component="a" href={paper.officialUrl} target="_blank" rel="noopener noreferrer" aria-label={`${paper.company} official site`}
-            sx={(t) => ({ minWidth: 38, width: 38, height: 38, borderRadius: '10px', color: 'text.secondary', border: `1px solid ${t.palette.divider}` })}>
+            sx={(t) => ({ minWidth: 38, width: 38, height: 38, borderRadius: RADII_PX.control, color: 'text.secondary', border: `1px solid ${t.palette.divider}` })}>
             <LaunchRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />
           </Button>
         )}
@@ -100,8 +100,8 @@ export default function MockHubPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 2, md: 2.5 }, px: { xs: 1.5, sm: 3 } }}>
-      <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.25, mb: 2 }}>
-        <BackToDashboard sx={{ mt: 0.25 }} />
+      <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mb: 2 }}>
+        <BackToDashboard sx={{ mt: 0.5 }} />
         <Box>
           <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Mock tests</Typography>
           <Typography variant="body2" color="text.secondary">Full timed papers in the real exam format. Sectional clocks, no negative marking, a topic report at the end.</Typography>
@@ -123,11 +123,11 @@ export default function MockHubPage() {
           {data.recent.length > 0 && (
             <Box sx={{ mt: 3 }}>
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>Recent attempts</Typography>
-              <Box sx={(t) => ({ borderRadius: '14px', border: `1px solid ${t.palette.divider}`, bgcolor: 'background.paper', overflow: 'hidden' })}>
+              <Box sx={(t) => ({ borderRadius: RADII_PX.card, border: `1px solid ${t.palette.divider}`, bgcolor: 'background.paper', overflow: 'hidden' })}>
                 {data.recent.map((a, i) => (
                   <Box key={a.id} onClick={() => navigate(`/mocks/result/${a.id}`)} role="button" tabIndex={0}
                     onKeyDown={(e) => e.key === 'Enter' && navigate(`/mocks/result/${a.id}`)}
-                    sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 1.75, py: 1.25, cursor: 'pointer', borderTop: i ? `1px solid ${t.palette.divider}` : 'none', '&:hover': { bgcolor: 'action.hover' } })}>
+                    sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.5, cursor: 'pointer', borderTop: i ? `1px solid ${t.palette.divider}` : 'none', '&:hover': { bgcolor: 'action.hover' } })}>
                     <Box sx={{ flex: 1, minWidth: 0 }}>
                       <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>{a.paperTitle}</Typography>
                       <Typography variant="caption" color="text.secondary">{when(a.createdAt)} · {a.correctCount}/{a.totalCount} correct</Typography>
@@ -141,7 +141,7 @@ export default function MockHubPage() {
         </>
       )}
 
-      <Dialog open={Boolean(confirm)} onClose={() => !busy && setConfirm(null)} fullWidth maxWidth="xs" slotProps={{ paper: { sx: { borderRadius: '16px' } } }}>
+      <Dialog open={Boolean(confirm)} onClose={() => !busy && setConfirm(null)} fullWidth maxWidth="xs" slotProps={{ paper: { sx: { borderRadius: RADII_PX.card } } }}>
         {confirm && (
           <>
             <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{confirm.title}</DialogTitle>

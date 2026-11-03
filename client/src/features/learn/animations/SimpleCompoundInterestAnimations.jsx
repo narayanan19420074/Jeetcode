@@ -1,6 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, RADII_PX } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -16,7 +16,7 @@ export function SiBasicAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(SI_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 210" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
@@ -66,7 +66,7 @@ export function CiGrowthAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(CI_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 220" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
@@ -123,7 +123,7 @@ export function SiCiDifferenceAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(DIFF_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 210" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>

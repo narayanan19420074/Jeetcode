@@ -25,7 +25,7 @@ import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import { FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, FONTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Admin generates one key at a time — either lifetime or a fixed number
 // of days from the moment of activation (not from generation), matching
@@ -100,7 +100,7 @@ export default function AdminLicensesPage() {
 
       <Grid container spacing={2.5}>
         <Grid item xs={12} md={5}>
-          <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+          <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
               <VpnKeyRoundedIcon color="primary" />
               <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
@@ -149,7 +149,7 @@ export default function AdminLicensesPage() {
             {lastGeneratedKey && (
               <Paper
                 variant="outlined"
-                sx={{ mt: 2.5, p: 2, borderRadius: 2, bgcolor: 'action.hover', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+                sx={{ mt: 2.5, p: 2, borderRadius: RADII_PX.card, bgcolor: 'action.hover', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
               >
                 <Typography sx={{ fontFamily: FONTS.mono, fontWeight: FONT_WEIGHTS.bold }}>{lastGeneratedKey}</Typography>
                 <Tooltip title="Copy">
@@ -163,7 +163,7 @@ export default function AdminLicensesPage() {
         </Grid>
 
         <Grid item xs={12} md={7}>
-          <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+          <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
             <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
               Issued keys
             </Typography>

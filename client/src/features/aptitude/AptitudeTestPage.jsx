@@ -39,7 +39,7 @@ import ScratchPad from './ScratchPad';
 import QuestionStimulus from './components/QuestionStimulus';
 import { PaletteSymbol } from './AptitudeTestInstructionsPage';
 import { OPTION_LABELS, PALETTE, formatClock } from './components/aptitudeUi';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
 
 // Exam-style interface. Everything the learner does is autosaved to
 // the server (answers, review flags, per-question time), the countdown is
@@ -66,7 +66,7 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', bgcolor: 'background.paper' }}>
       <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center', p: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-        <Box sx={{ width: 44, height: 44, borderRadius: 1, bgcolor: 'action.hover', display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, color: NAVY, fontSize: FONT_SIZES.subheading }}>
+        <Box sx={{ width: 44, height: 44, borderRadius: RADII_PX.control, bgcolor: 'action.hover', display: 'grid', placeItems: 'center', fontWeight: FONT_WEIGHTS.bold, color: NAVY, fontSize: FONT_SIZES.subheading }}>
           {(user?.name || 'C').charAt(0).toUpperCase()}
         </Box>
         <Box sx={{ minWidth: 0 }}>
@@ -99,7 +99,7 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
       </Box>
 
       <Box sx={{ flex: 1, overflowY: 'auto', p: 1.5 }}>
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 1.1 }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 1 }}>
           {questions.map((q, i) => {
             const kind = statusOf(states[q._id] ?? emptyState());
             const current = i === idx;
@@ -112,7 +112,7 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
                 sx={{
                   cursor: 'pointer',
                   justifySelf: 'center',
-                  borderRadius: 1,
+                  borderRadius: RADII_PX.control,
                   outline: current ? `2.5px solid ${COLOR_PALETTE.blue[600]}` : '2.5px solid transparent',
                   outlineOffset: 2,
                   '&:hover': { filter: 'brightness(0.93)' },
@@ -128,7 +128,7 @@ function PalettePanel({ user, questions, states, idx, counts, onJump, onSubmit, 
       </Box>
 
       <Box sx={{ p: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
-        <Button fullWidth variant="contained" disableElevation onClick={onSubmit} disabled={submitting} sx={{ py: 1.1, bgcolor: COLOR_PALETTE.custom.green2E9E4F, '&:hover': { bgcolor: COLOR_PALETTE.green[700] } }}>
+        <Button fullWidth variant="contained" disableElevation onClick={onSubmit} disabled={submitting} sx={{ py: 1, bgcolor: COLOR_PALETTE.custom.green2E9E4F, '&:hover': { bgcolor: COLOR_PALETTE.green[700] } }}>
           {submitting ? <CircularProgress size={20} color="inherit" /> : 'Submit Test'}
         </Button>
       </Box>
@@ -474,7 +474,7 @@ function ExamInterface() {
             <GridViewRoundedIcon />
           </IconButton>
         )}
-        <Box sx={{ px: 1.5, py: 0.6, borderRadius: 1, bgcolor: low ? COLOR_PALETTE.red[700] : withAlpha(COLOR_PALETTE.white, 0.14), transition: 'background-color .3s' }}>
+        <Box sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.control, bgcolor: low ? COLOR_PALETTE.red[700] : withAlpha(COLOR_PALETTE.white, 0.14), transition: 'background-color .3s' }}>
           <Typography variant="caption" sx={{ opacity: 0.8, display: 'block', lineHeight: 1, fontSize: FONT_SIZES.micro }}>
             TIME LEFT
           </Typography>
@@ -486,7 +486,7 @@ function ExamInterface() {
 
       {/* Section strip */}
       <Stack direction="row" sx={{ alignItems: 'center', bgcolor: COLOR_PALETTE.white, borderBottom: '1px solid', borderColor: 'divider', px: { xs: 1.5, sm: 2.5 }, height: 40, flexShrink: 0 }}>
-        <Box sx={{ px: 1.5, py: 0.4, bgcolor: COLOR_PALETTE.blue[600], color: COLOR_PALETTE.white, borderRadius: 0.75, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Quantitative Aptitude</Box>
+        <Box sx={{ px: 1.5, py: 0.5, bgcolor: COLOR_PALETTE.blue[600], color: COLOR_PALETTE.white, borderRadius: RADII_PX.control, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Quantitative Aptitude</Box>
         <Typography variant="caption" color="text.secondary" sx={{ ml: 2 }}>
           {questions.length} questions · +1 for correct · no negative marking
         </Typography>
@@ -528,16 +528,16 @@ function ExamInterface() {
                         alignItems: 'center',
                         gap: 1,
                         px: 1,
-                        py: 0.9,
+                        py: 1,
                         border: '1px solid',
                         borderColor: on ? COLOR_PALETTE.blue[600] : 'divider',
                         bgcolor: on ? withAlpha(COLOR_PALETTE.blue[600], 0.07) : 'transparent',
-                        borderRadius: 1,
+                        borderRadius: RADII_PX.control,
                         cursor: 'pointer',
                         '&:hover': { bgcolor: on ? withAlpha(COLOR_PALETTE.blue[600], 0.07) : 'action.hover' },
                       }}
                     >
-                      <Radio checked={on} tabIndex={-1} size="small" sx={{ p: 0.75 }} />
+                      <Radio checked={on} tabIndex={-1} size="small" sx={{ p: 1 }} />
                       <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', width: 22 }}>{OPTION_LABELS[i]}.</Typography>
                       <Typography sx={{ fontSize: FONT_SIZES.title }}>{o.text}</Typography>
                     </Box>
@@ -554,7 +554,7 @@ function ExamInterface() {
             spacing={1}
            
             useFlexGap
-            sx={{ alignItems: 'center', flexWrap: 'wrap', bgcolor: COLOR_PALETTE.slate[50], borderTop: '1px solid', borderColor: 'divider', px: { xs: 1.5, sm: 2.5 }, py: 1.25 }}
+            sx={{ alignItems: 'center', flexWrap: 'wrap', bgcolor: COLOR_PALETTE.slate[50], borderTop: '1px solid', borderColor: 'divider', px: { xs: 1.5, sm: 2.5 }, py: 1.5 }}
           >
             {cur.marked ? (
               <Button variant="outlined" size="small" onClick={unmark} sx={{ borderColor: PALETTE.marked.bg, color: PALETTE.marked.bg }}>
@@ -592,8 +592,8 @@ function ExamInterface() {
 
       {/* Calculator */}
       {calcOpen && (
-        <Paper elevation={8} sx={{ position: 'fixed', top: 104, right: compact ? 12 : 336, width: 300, zIndex: (t) => t.zIndex.modal - 1, borderRadius: 1 }}>
-          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', bgcolor: NAVY, color: COLOR_PALETTE.white, px: 1.5, py: 0.5, borderRadius: '4px 4px 0 0' }}>
+        <Paper elevation={8} sx={{ position: 'fixed', top: 104, right: compact ? 12 : 336, width: 300, zIndex: (t) => t.zIndex.modal - 1, borderRadius: RADII_PX.control }}>
+          <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', bgcolor: NAVY, color: COLOR_PALETTE.white, px: 1.5, py: 0.5, borderRadius: `${RADII.badge}px ${RADII.badge}px 0 0` }}>
             <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
               Calculator
             </Typography>
@@ -619,13 +619,13 @@ function ExamInterface() {
                 ['Not visited', counts.notVisited, 'notVisited'],
               ].map(([label, value, kind]) => (
                 <TableRow key={label}>
-                  <TableCell sx={{ border: 0, py: 0.75 }}>
+                  <TableCell sx={{ border: 0, py: 1 }}>
                     <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center' }}>
                       {kind ? <PaletteSymbol kind={kind} size={18} /> : <Box sx={{ width: 18 }} />}
                       <span>{label}</span>
                     </Stack>
                   </TableCell>
-                  <TableCell align="right" sx={{ border: 0, py: 0.75, ...mono, fontWeight: FONT_WEIGHTS.bold }}>
+                  <TableCell align="right" sx={{ border: 0, py: 1, ...mono, fontWeight: FONT_WEIGHTS.bold }}>
                     {value}
                   </TableCell>
                 </TableRow>

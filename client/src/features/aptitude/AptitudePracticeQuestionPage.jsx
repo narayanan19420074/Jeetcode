@@ -35,7 +35,7 @@ import MobilePracticeQuestion, { MobileQuestionState } from './components/Mobile
 import { Confetti, XpPop } from './components/MotionBits';
 import { XP_PER_SOLVE } from './components/gamification';
 import { OPTION_LABELS, difficultyMeta, formatClock, formatDuration } from './components/aptitudeUi';
-import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono };
 
@@ -57,9 +57,9 @@ function OptionRow({ index, text, state, disabled, onClick }) {
         width: '100%',
         justifyContent: 'flex-start',
         textAlign: 'left',
-        px: 1.75,
-        py: 1.4,
-        borderRadius: 2.5,
+        px: 2,
+        py: 1.5,
+        borderRadius: RADII_PX.card,
         border: '1.5px solid',
         borderColor: palette.border,
         bgcolor: palette.bg,
@@ -292,7 +292,7 @@ export default function AptitudePracticeQuestionPage() {
 
       {error && <Alert severity="error" onClose={() => setError(null)} sx={{ mb: 2 }}>{error}</Alert>}
 
-      <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
         <QuestionStimulus set={set} />
         <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.subheading, lineHeight: 1.65, mb: 2.5, whiteSpace: 'pre-line' }}>{question.questionText}</Typography>
 
@@ -325,8 +325,8 @@ export default function AptitudePracticeQuestionPage() {
             transition={{ duration: result.isCorrect ? 0.35 : 0.45 }}
             variant="outlined"
             sx={{
-              p: 2.25,
-              borderRadius: 3,
+              p: 2.5,
+              borderRadius: RADII_PX.card,
               borderColor: result.isCorrect ? 'success.main' : 'error.main',
               bgcolor: (t) => alpha(result.isCorrect ? t.palette.success.main : t.palette.error.main, 0.07),
             }}
@@ -350,18 +350,18 @@ export default function AptitudePracticeQuestionPage() {
           </Paper>
 
           {result.explanation && (
-            <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+            <Paper variant="outlined" sx={{ p: 2.5, borderRadius: RADII_PX.card }}>
               <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.1em' }}>
                 SOLUTION
               </Typography>
-              <Typography sx={{ mt: 0.75, lineHeight: 1.75, whiteSpace: 'pre-line' }}>{result.explanation}</Typography>
+              <Typography sx={{ mt: 1, lineHeight: 1.75, whiteSpace: 'pre-line' }}>{result.explanation}</Typography>
             </Paper>
           )}
 
           {result.shortcut && (
             <Paper
               variant="outlined"
-              sx={{ p: 2.5, borderRadius: 3, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}
+              sx={{ p: 2.5, borderRadius: RADII_PX.card, bgcolor: (t) => alpha(t.palette.warning.main, 0.07), borderColor: (t) => alpha(t.palette.warning.main, 0.5) }}
             >
               <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center' }}>
                 <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />
@@ -369,7 +369,7 @@ export default function AptitudePracticeQuestionPage() {
                   EXAM SHORTCUT
                 </Typography>
               </Stack>
-              <Typography sx={{ mt: 0.75, lineHeight: 1.7 }}>{result.shortcut}</Typography>
+              <Typography sx={{ mt: 1, lineHeight: 1.7 }}>{result.shortcut}</Typography>
             </Paper>
           )}
         </Stack>

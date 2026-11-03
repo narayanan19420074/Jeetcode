@@ -118,7 +118,7 @@ export default function ProblemListDrawer({ open, onClose, currentSlug, onSelect
         paper: { sx: (t) => ({ width: { xs: 'min(88vw, 380px)', sm: 400 }, maxWidth: '100%', bgcolor: wsSurface(t).chrome, backgroundImage: 'none' }) },
       }}
     >
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, pl: 2, pr: 1, pb: 0.75, pt: 'calc(8px + env(safe-area-inset-top))', flexShrink: 0 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, pl: 2, pr: 1, pb: 1, pt: 'calc(8px + env(safe-area-inset-top))', flexShrink: 0 }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, flex: 1 }}>Problems</Typography>
         {total > 0 && (
           <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
@@ -152,7 +152,7 @@ export default function ProblemListDrawer({ open, onClose, currentSlug, onSelect
             },
           }}
         />
-        <Stack direction="row" sx={{ gap: 0.75, mt: 1 }}>
+        <Stack direction="row" sx={{ gap: 1, mt: 1 }}>
           {DIFFICULTIES.map((d) => {
             const on = difficulty === d;
             const color = difficultyColor(d);
@@ -218,9 +218,9 @@ export default function ProblemListDrawer({ open, onClose, currentSlug, onSelect
                 justifyContent: 'flex-start',
                 textAlign: 'left',
                 alignItems: 'center',
-                gap: 1.25,
+                gap: 1.5,
                 px: 2,
-                py: 1.1,
+                py: 1,
                 minHeight: 56,
                 borderBottom: '1px solid',
                 borderColor: 'divider',
@@ -250,7 +250,7 @@ export default function ProblemListDrawer({ open, onClose, currentSlug, onSelect
                 >
                   {i + 1}. {p.title}
                 </Typography>
-                <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mt: 0.25 }}>
+                <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mt: 0.5 }}>
                   <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, color: difficultyColor(p.difficulty) }}>{p.difficulty}</Typography>
                   {p.locked && <LockRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: 'text.disabled' }} />}
                 </Stack>

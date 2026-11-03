@@ -11,19 +11,19 @@ import ResetCountdown from './ResetCountdown';
 import useStreakMonth from './useStreakMonth';
 import useStudyPlanMarks from './useStudyPlanMarks';
 import { CALENDAR_GRADIENT, FAINT, SOFT, WEEKDAYS } from './railTokens';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../../app/design/designTokens';
 
 const cardSx = (phone) => [
   surface,
-  { p: 2.25, color: COLOR_PALETTE.white, background: CALENDAR_GRADIENT, border: 'none', borderRadius: phone ? '14px' : '20px', boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` },
+  { p: 2.5, color: COLOR_PALETTE.white, background: CALENDAR_GRADIENT, border: 'none', borderRadius: phone ? RADII_PX.card : RADII_PX.card, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` },
 ];
 
 function StreakHeader({ streak, isAuthenticated, badge }) {
   const flame = { bgcolor: alpha(PLAN_AMBER, streak > 0 ? 0.2 : 0.1), color: streak > 0 ? PLAN_AMBER : FAINT };
   return (
-    <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 2, mb: 1.75 }}>
+    <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 2, mb: 2 }}>
       <Stack direction="row" spacing={1.25} sx={{ alignItems: 'center', minWidth: 0 }}>
-        <Box sx={{ width: 42, height: 42, borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, ...flame }}>
+        <Box sx={{ width: 42, height: 42, borderRadius: RADII_PX.card, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, ...flame }}>
           <LocalFireDepartmentRoundedIcon />
         </Box>
         <Box sx={{ minWidth: 0 }}>
@@ -65,7 +65,7 @@ function WeekdayHeaders() {
 
 function CalendarGrid({ month, byDate, marks }) {
   return (
-    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', rowGap: '4px' }}>
+    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', rowGap: 0.5 }}>
       <WeekdayHeaders />
       {month.cells.map((c, i) =>
         c ? (
@@ -113,7 +113,7 @@ function StreakFooter({ user, isAuthenticated, beforeHistory }) {
         </Typography>
       </Stack>
       {beforeHistory && (
-        <Typography variant="caption" sx={{ color: SOFT, display: 'block', mt: 0.75 }}>
+        <Typography variant="caption" sx={{ color: SOFT, display: 'block', mt: 1 }}>
           Activity is shown for the last 7 weeks only.
         </Typography>
       )}

@@ -4,7 +4,7 @@ import { WsSelect } from './wsUi';
 import { WS } from './wsTokens';
 import { LIB_TRACKING, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { LANGUAGES, LANG_SHORT, languageLabel } from './languages';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Language picker. langMode comes from usePaneModes: 'full' | 'short' | 'icon'
 // (the narrower the pane, the less text it shows).
@@ -16,16 +16,16 @@ export default function LanguageSelect({ value, onChange, problem, langMode, isM
       value={value}
       onChange={(e) => onChange(e.target.value)}
       renderValue={(v) => (langMode === 'icon' ? '' : langMode === 'short' ? LANG_SHORT[v] : languageLabel(v))}
-      startAdornment={pill ? undefined : <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, mr: langMode === 'icon' ? 0 : 0.75, color: 'primary.main' }} />}
+      startAdornment={pill ? undefined : <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, mr: langMode === 'icon' ? 0 : 1, color: 'primary.main' }} />}
       {...(pill && {
-        MenuProps: { slotProps: { paper: { sx: { mt: 0.5, borderRadius: '20px', bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } } },
+        MenuProps: { slotProps: { paper: { sx: { mt: 0.5, borderRadius: RADII_PX.card, bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } } },
       })}
       sx={
         pill
           ? {
               height: 40,
               minWidth: 112,
-              borderRadius: 999,
+              borderRadius: RADII_PX.pill,
               fontSize: FONT_SIZES.title,
               fontWeight: FONT_WEIGHTS.medium,
               letterSpacing: LIB_TRACKING,

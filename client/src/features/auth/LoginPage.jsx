@@ -20,7 +20,7 @@ import { loginUser, googleSignIn } from './authSlice';
 import AuthShell, { AuthField } from './AuthShell';
 import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
-import { FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // These env vars must exist in client/.env. GITHUB redirect URI must EXACTLY
 // match what's registered on GitHub's app settings (trailing slashes matter).
@@ -34,11 +34,11 @@ const iconBtnSx = (t) => ({
   height: 40,
   border: '1px solid',
   borderColor: 'divider',
-  borderRadius: 1,
+  borderRadius: RADII_PX.control,
   ...(t.palette.mode === 'light' && {
     bgcolor: { xs: LIBRARY_PALETTE.light.player, md: 'transparent' },
     borderColor: { xs: 'transparent', md: 'divider' },
-    borderRadius: { xs: '50%', md: 1 },
+    borderRadius: { xs: '50%', md: RADII_PX.control },
   }),
 });
 

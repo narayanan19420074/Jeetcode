@@ -6,13 +6,13 @@ import {
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { STATUS_META, fmt, fmtDateTime } from '../../store/storeUtils';
-import { FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, FONTS, RADII_PX } from '../../../app/design/designTokens';
 
 const NEXT = { placed: ['processing', 'cancelled'], processing: ['shipped', 'cancelled'], shipped: ['delivered'] };
 
 function Stat({ label, value }) {
   return (
-    <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, flex: '1 1 140px' }}>
+    <Paper variant="outlined" sx={{ p: 2, borderRadius: RADII_PX.card, flex: '1 1 140px' }}>
       <Typography variant="caption" color="text.secondary">{label}</Typography>
       <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{fmt(value)}</Typography>
     </Paper>
@@ -62,7 +62,7 @@ function OrderDialog({ order, onClose, onSaved, setError }) {
           <Typography variant="body2" sx={{ mb: 1 }}>Variant: {[order.variant.size, order.variant.color].filter(Boolean).join(' / ')}</Typography>
         )}
         {a && (
-          <Paper variant="outlined" sx={{ p: 1.5, mb: 2, borderRadius: 2, userSelect: 'all' }}>
+          <Paper variant="outlined" sx={{ p: 1.5, mb: 2, borderRadius: RADII_PX.card, userSelect: 'all' }}>
             <Typography variant="body2">{a.fullName} · {a.phone}<br />{a.line1}{a.line2 ? `, ${a.line2}` : ''}<br />{a.city}, {a.state} {a.pincode}, {a.country}</Typography>
           </Paper>
         )}
@@ -126,7 +126,7 @@ function OrdersTab({ setError, onChanged }) {
         </TextField>
       </Stack>
       {!data ? <CircularProgress /> : (
-        <Paper variant="outlined" sx={{ borderRadius: 3, overflowX: 'auto' }}>
+        <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, overflowX: 'auto' }}>
           <Table size="small">
             <TableHead><TableRow><TableCell>Order</TableCell><TableCell>Item</TableCell><TableCell>User</TableCell><TableCell align="right">Coins</TableCell><TableCell>Status</TableCell><TableCell>Placed</TableCell></TableRow></TableHead>
             <TableBody>
@@ -188,7 +188,7 @@ function ItemsTab({ setError }) {
   useEffect(() => { load(); }, [load]);
   if (!items) return <CircularProgress />;
   return (
-    <Paper variant="outlined" sx={{ borderRadius: 3, overflowX: 'auto' }}>
+    <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, overflowX: 'auto' }}>
       <Table size="small">
         <TableHead><TableRow><TableCell>Item</TableCell><TableCell>Price (coins)</TableCell><TableCell>Stock (blank = unlimited)</TableCell><TableCell>Sold</TableCell><TableCell>Visible</TableCell><TableCell /></TableRow></TableHead>
         <TableBody>{items.map((i) => <ItemRow key={`${i.slug}-${i.price}-${i.stock}-${i.active}`} item={i} onSaved={load} setError={setError} />)}</TableBody>
@@ -226,7 +226,7 @@ function CoinsTab({ setError }) {
 
   return (
     <Stack spacing={2}>
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: RADII_PX.card }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1.5 }}>Give or take coins</Typography>
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
           <TextField size="small" label="User handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
@@ -236,7 +236,7 @@ function CoinsTab({ setError }) {
         </Stack>
         {msg && <Alert severity="success" sx={{ mt: 1.5 }}>{msg}</Alert>}
       </Paper>
-      <Paper variant="outlined" sx={{ borderRadius: 3, overflowX: 'auto' }}>
+      <Paper variant="outlined" sx={{ borderRadius: RADII_PX.card, overflowX: 'auto' }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, p: 2, pb: 0 }}>Latest ledger entries</Typography>
         <Table size="small">
           <TableHead><TableRow><TableCell>When</TableCell><TableCell>User</TableCell><TableCell>What</TableCell><TableCell align="right">Coins</TableCell></TableRow></TableHead>

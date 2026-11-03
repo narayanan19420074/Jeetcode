@@ -1,5 +1,5 @@
 import { Box, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Shared stimulus for DI / reasoning / comprehension questions
 // ("Refer to the table below…"). Renders text and tables; bar/line/pie sets
@@ -19,7 +19,7 @@ export default function QuestionStimulus({ set }) {
   const table = set.type === 'table' ? set.table : set.type === 'text' ? null : chartToTable(set);
 
   return (
-    <Paper variant="outlined" sx={{ p: 2, mb: 2, borderRadius: 2, bgcolor: 'action.hover' }}>
+    <Paper variant="outlined" sx={{ p: 2, mb: 2, borderRadius: RADII_PX.card, bgcolor: 'action.hover' }}>
       {set.title && (
         <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
           {set.title}

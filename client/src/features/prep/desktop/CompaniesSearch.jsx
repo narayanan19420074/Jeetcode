@@ -2,7 +2,7 @@ import { IconButton, InputAdornment, TextField } from '@mui/material';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
-import { FONT_SIZES } from '../../../app/design/designTokens';
+import { FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 export default function CompaniesSearch({ query, onQuery }) {
   const palette = useLibraryPalette();
@@ -24,7 +24,7 @@ export default function CompaniesSearch({ query, onQuery }) {
       }}
       sx={{
         maxWidth: 520,
-        '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: palette.player, fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, px: 2 },
+        '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 44, bgcolor: palette.player, fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, px: 2 },
         '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
       }}
     />

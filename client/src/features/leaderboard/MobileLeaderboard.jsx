@@ -41,7 +41,7 @@ import {
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { tierFor } from './tiers';
 import { APT_COLOR, PT } from './lbShared';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII, RADII_PX } from '../../app/design/designTokens';
 
 // Phone layout of the Leaderboard in the Library look (same as the phone Problems, Home and You pages):
 // Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section
@@ -85,7 +85,7 @@ function FilterGroup({ label, options, value, onChange, disabled = () => false }
       <Typography component="h3" sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, lineHeight: '24px', mb: 1 }}>
         {label}
       </Typography>
-      <Box role="radiogroup" aria-label={label} sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+      <Box role="radiogroup" aria-label={label} sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
         {options.map(([v, text]) => {
           const on = v === value;
           return (
@@ -114,7 +114,7 @@ function FilterSheet({ open, onClose, isAuthenticated, track, period, scope, onT
       anchor="bottom"
       open={open}
       onClose={onClose}
-      slotProps={{ paper: { sx: { borderRadius: '26px 26px 0 0', maxHeight: '90dvh', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text } } }}
+      slotProps={{ paper: { sx: { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, maxHeight: '90dvh', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text } } }}
     >
       <LibraryFont>
       <Box sx={{ px: 2, pt: 1, pb: 'calc(16px + env(safe-area-inset-bottom))' }}>
@@ -125,14 +125,14 @@ function FilterSheet({ open, onClose, isAuthenticated, track, period, scope, onT
           <Typography component="h2" sx={{ flex: 1, ...libSectionTitleSx }}>
             Filters
           </Typography>
-          <Button onClick={onReset} disabled={isDefault} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, color: ACCENT }}>
+          <Button onClick={onReset} disabled={isDefault} sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, color: ACCENT }}>
             Reset
           </Button>
         </Stack>
 
         <FilterGroup label="Leaderboard" options={SCOPES} value={scope} onChange={onScope} disabled={(v) => v === 'friends' && !isAuthenticated} />
         {!isAuthenticated && (
-          <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 0.75 }}>
+          <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 1 }}>
             Sign in to compare with friends.
           </Typography>
         )}
@@ -184,7 +184,7 @@ function RankMark({ rank }) {
 
 function YouTag() {
   return (
-    <Typography component="span" sx={{ flexShrink: 0, px: '8px', py: '1px', borderRadius: 99, fontSize: FONT_SIZES.caption, lineHeight: '18px', fontWeight: FONT_WEIGHTS.medium, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
+    <Typography component="span" sx={{ flexShrink: 0, px: 1, py: 0, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, lineHeight: '18px', fontWeight: FONT_WEIGHTS.medium, color: ACCENT, bgcolor: tint(ACCENT, 16) }}>
       You
     </Typography>
   );
@@ -225,20 +225,20 @@ function PlayerRow({ row, isMe, onPick }) {
         borderBottom: '1px solid',
         borderColor: 'var(--lib-divider)',
         '&:last-of-type': { borderBottom: 'none' },
-        ...(isMe && { mx: -1, px: 1, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), borderRadius: '16px', borderColor: 'transparent' }),
+        ...(isMe && { mx: -1, px: 1, bgcolor: tint(ACCENT, t.palette.mode === 'dark' ? 16 : 9), borderRadius: RADII_PX.card, borderColor: 'transparent' }),
       })}
     >
       <ButtonBase
         onClick={() => onPick(row)}
         aria-label={`${row.name}, rank ${row.rank}, ${num(row.score)} points. Open details`}
-        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: '10px', textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, py: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
         <RankMark rank={row.rank} />
         <Avatar src={row.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, flexShrink: 0, fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.medium }}>
           {row.name?.[0]?.toUpperCase()}
         </Avatar>
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, minWidth: 0 }}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: 1, minWidth: 0 }}>
             <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, minWidth: 0 }}>
               {row.name}
             </Typography>
@@ -268,7 +268,7 @@ function SkeletonRows({ count = 8 }) {
   return (
     <>
       {Array.from({ length: count }).map((_, i) => (
-        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: '12px', py: '10px', borderBottom: '1px solid', borderColor: 'var(--lib-divider)' }}>
+        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 1.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)' }}>
           <Skeleton variant="circular" width={32} height={32} />
           <Skeleton variant="circular" width={48} height={48} />
           <Box sx={{ flex: 1 }}>
@@ -288,7 +288,7 @@ function MyRank({ me, canFind, onOpen, onFind }) {
   const { tier, next, progress, toNext } = tierFor(me.score);
   return (
     <Box
-      sx={{ mt: 3, p: 2, borderRadius: '20px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
+      sx={{ mt: 3, p: 2, borderRadius: RADII_PX.card, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
     >
       <ButtonBase
         onClick={onOpen}
@@ -326,9 +326,9 @@ function MyRank({ me, canFind, onOpen, onFind }) {
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={progress}
-          sx={{ mt: 1, height: 5, borderRadius: 99, bgcolor: tint(tier.color, 20), overflow: 'hidden' }}
+          sx={{ mt: 1, height: 5, borderRadius: RADII_PX.pill, bgcolor: tint(tier.color, 20), overflow: 'hidden' }}
         >
-          <Box sx={{ width: `${Math.max(progress, 3)}%`, height: '100%', borderRadius: 99, bgcolor: tier.color, transition: 'width .5s' }} />
+          <Box sx={{ width: `${Math.max(progress, 3)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: tier.color, transition: 'width .5s' }} />
         </Box>
       </Box>
 
@@ -361,11 +361,11 @@ function PlayerSheet({ row, onClose }) {
       anchor="bottom"
       open={open}
       onClose={onClose}
-      slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text } } }}
+      slotProps={{ paper: { sx: { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text } } }}
     >
       {row && info && (
         <LibraryFont>
-        <Box sx={{ px: 2, pt: 1.25, pb: 2 }}>
+        <Box sx={{ px: 2, pt: 1.5, pb: 2 }}>
           <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
             <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: 52, height: 52, fontSize: FONT_SIZES.heading, fontWeight: FONT_WEIGHTS.bold, border: `2px solid ${tint(info.tier.color, 70)}` }}>
               {row.name?.[0]?.toUpperCase()}
@@ -384,9 +384,9 @@ function PlayerSheet({ row, onClose }) {
             </IconButton>
           </Stack>
 
-          <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mt: 1.5 }}>
+          <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, mt: 1.5 }}>
             {[`Rank #${num(row.rank)}`, `${num(row.score)} points`, ...(row.streak > 0 ? [`${row.streak}-day streak`] : [])].map((text) => (
-              <Typography key={text} component="span" sx={{ px: 1.25, py: 0.4, borderRadius: 99, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, color: ACCENT, bgcolor: tint(ACCENT, 16), fontVariantNumeric: 'tabular-nums' }}>
+              <Typography key={text} component="span" sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, color: ACCENT, bgcolor: tint(ACCENT, 16), fontVariantNumeric: 'tabular-nums' }}>
                 {text}
               </Typography>
             ))}
@@ -394,7 +394,7 @@ function PlayerSheet({ row, onClose }) {
 
           <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 1, mt: 2 }}>
             {tiles.map(([label, n, pts, color]) => (
-              <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: '16px', bgcolor: tint(color, 14), border: `1px solid ${tint(color, 30)}` }}>
+              <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: RADII_PX.card, bgcolor: tint(color, 14), border: `1px solid ${tint(color, 30)}` }}>
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.2, color, fontVariantNumeric: 'tabular-nums' }}>{n}</Typography>
                 <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption }}>
                   {label}
@@ -422,9 +422,9 @@ function PlayerSheet({ row, onClose }) {
               aria-valuemin={0}
               aria-valuemax={100}
               aria-valuenow={info.progress}
-              sx={{ mt: 1, height: 8, borderRadius: 99, bgcolor: tint(info.tier.color, 20), overflow: 'hidden' }}
+              sx={{ mt: 1, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(info.tier.color, 20), overflow: 'hidden' }}
             >
-              <Box sx={{ width: `${Math.max(info.progress, 4)}%`, height: '100%', borderRadius: 99, bgcolor: info.tier.color }} />
+              <Box sx={{ width: `${Math.max(info.progress, 4)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: info.tier.color }} />
             </Box>
             <Typography color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, mt: 1 }}>
               {row.recent} solved in the last 7 days
@@ -555,17 +555,17 @@ export default function MobileLeaderboard({
               </Typography>
               <Stack direction="row" sx={{ justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
                 {q && (
-                  <Button variant="outlined" onClick={() => setSearch('')} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
+                  <Button variant="outlined" onClick={() => setSearch('')} sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                     Clear search
                   </Button>
                 )}
                 {!q && scope === 'friends' && (
-                  <Button variant="outlined" onClick={showEveryone} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
+                  <Button variant="outlined" onClick={showEveryone} sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                     Show everyone
                   </Button>
                 )}
                 {!q && period !== 'all' && (
-                  <Button variant="outlined" onClick={() => onPeriod('all')} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
+                  <Button variant="outlined" onClick={() => onPeriod('all')} sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
                     Show all-time
                   </Button>
                 )}

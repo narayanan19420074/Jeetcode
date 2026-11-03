@@ -6,13 +6,13 @@ import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from '../aptitude/components/aptitudeUi';
 import { PLAN_AMBER } from '../studyplan/planUtils';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const verdict = (s) => (s >= 75 ? 'Strong. Keep the pace.' : s >= 60 ? 'Solid. A few topics are holding you back.' : s >= 40 ? 'Getting there. Fix the weak topics below.' : 'Needs work. Start with the weakest topics.');
 const barColor = (v) => (v >= 70 ? COLOR_PALETTE.emerald[500] : v >= 50 ? COLOR_PALETTE.amber[500] : COLOR_PALETTE.red[500]);
 
 function Card({ children, sx }) {
-  return <Box sx={(t) => ({ p: 1.75, borderRadius: '14px', bgcolor: 'background.paper', border: `1px solid ${t.palette.divider}`, ...sx })}>{children}</Box>;
+  return <Box sx={(t) => ({ p: 2, borderRadius: RADII_PX.card, bgcolor: 'background.paper', border: `1px solid ${t.palette.divider}`, ...sx })}>{children}</Box>;
 }
 
 function Stat({ label, value }) {
@@ -29,9 +29,9 @@ function ReviewItem({ r }) {
   const skipped = r.selectedOption === null;
   const tone = skipped ? COLOR_PALETTE.slate[400] : r.isCorrect ? COLOR_PALETTE.emerald[500] : COLOR_PALETTE.red[500];
   return (
-    <Box sx={(t) => ({ borderRadius: '12px', border: `1px solid ${t.palette.divider}`, overflow: 'hidden' })}>
-      <ButtonBase onClick={() => setOpen((o) => !o)} sx={{ width: '100%', display: 'flex', alignItems: 'center', gap: 1.25, p: 1.25, textAlign: 'left', fontFamily: 'inherit' }}>
-        <Box sx={{ width: 26, height: 26, borderRadius: '8px', display: 'grid', placeItems: 'center', bgcolor: tone, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, flexShrink: 0 }}>{r.n}</Box>
+    <Box sx={(t) => ({ borderRadius: RADII_PX.card, border: `1px solid ${t.palette.divider}`, overflow: 'hidden' })}>
+      <ButtonBase onClick={() => setOpen((o) => !o)} sx={{ width: '100%', display: 'flex', alignItems: 'center', gap: 1.5, p: 1.5, textAlign: 'left', fontFamily: 'inherit' }}>
+        <Box sx={{ width: 26, height: 26, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', bgcolor: tone, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, flexShrink: 0 }}>{r.n}</Box>
         <Typography noWrap sx={{ flex: 1, fontSize: FONT_SIZES.body }}>{r.questionText}</Typography>
         <ExpandMoreRoundedIcon sx={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s', color: 'text.secondary' }} />
       </ButtonBase>
@@ -42,14 +42,14 @@ function ReviewItem({ r }) {
             const right = i === r.correctOptionIndex;
             const mine = i === r.selectedOption;
             return (
-              <Typography key={i} variant="body2" sx={{ py: 0.4, fontWeight: right || mine ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, color: right ? COLOR_PALETTE.emerald[500] : mine ? COLOR_PALETTE.red[500] : 'text.secondary' }}>
+              <Typography key={i} variant="body2" sx={{ py: 0.5, fontWeight: right || mine ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, color: right ? COLOR_PALETTE.emerald[500] : mine ? COLOR_PALETTE.red[500] : 'text.secondary' }}>
                 {OPTION_LABELS[i]}. {o}{right ? '  ✓' : mine ? '  (your answer)' : ''}
               </Typography>
             );
           })}
           {skipped && <Typography variant="caption" color="text.secondary">You skipped this one.</Typography>}
           {r.explanation && <Typography variant="body2" sx={{ mt: 1 }}><b>Why:</b> {r.explanation}</Typography>}
-          {r.shortcut && <Typography variant="body2" sx={{ mt: 0.75 }}><b>Shortcut:</b> {r.shortcut}</Typography>}
+          {r.shortcut && <Typography variant="body2" sx={{ mt: 1 }}><b>Shortcut:</b> {r.shortcut}</Typography>}
           <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
             {r.topic} · {difficultyMeta(r.difficulty).label} · {formatDuration(r.timeSpentSec)}
           </Typography>
@@ -101,12 +101,12 @@ export default function MockResultPage() {
       <Card>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>By section</Typography>
         {r.sections.map((s) => (
-          <Box key={s.key} sx={{ mb: 1.25 }}>
+          <Box key={s.key} sx={{ mb: 1.5 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{s.title}</Typography>
               <Typography variant="body2">{s.correct}/{s.total} · {formatDuration(s.usedSec)} of {formatDuration(s.allowedSec)}</Typography>
             </Box>
-            <LinearProgress variant="determinate" value={s.accuracy} sx={{ height: 8, borderRadius: 4, mt: 0.5, '& .MuiLinearProgress-bar': { bgcolor: barColor(s.accuracy) } }} />
+            <LinearProgress variant="determinate" value={s.accuracy} sx={{ height: 8, borderRadius: RADII_PX.pill, mt: 0.5, '& .MuiLinearProgress-bar': { bgcolor: barColor(s.accuracy) } }} />
           </Box>
         ))}
       </Card>
@@ -115,10 +115,10 @@ export default function MockResultPage() {
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 0.5 }}>By topic (weakest first)</Typography>
         {weak.length > 0 && <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>Focus here first: {weak.map((t) => t.title).join(', ')}.</Typography>}
         {r.topics.map((t) => (
-          <Box key={t.slug} sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 0.75 }}>
+          <Box key={t.slug} sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 1 }}>
             <Box sx={{ flex: 1, minWidth: 0 }}>
               <Typography noWrap variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{t.title}</Typography>
-              <LinearProgress variant="determinate" value={t.accuracy} sx={{ height: 6, borderRadius: 3, mt: 0.4, '& .MuiLinearProgress-bar': { bgcolor: barColor(t.accuracy) } }} />
+              <LinearProgress variant="determinate" value={t.accuracy} sx={{ height: 6, borderRadius: RADII_PX.pill, mt: 0.5, '& .MuiLinearProgress-bar': { bgcolor: barColor(t.accuracy) } }} />
             </Box>
             <Typography variant="caption" sx={{ width: 74, textAlign: 'right' }}>{t.correct}/{t.total} · {formatDuration(t.avgTimeSec)}/q</Typography>
             {t.slug && <Button size="small" onClick={() => navigate(`/aptitude/${t.slug}/practice`)} sx={{ fontWeight: FONT_WEIGHTS.bold, minWidth: 0 }}>Practice</Button>}
@@ -136,15 +136,15 @@ export default function MockResultPage() {
       </Card>
 
       <Box>
-        <Box sx={{ display: 'flex', gap: 0.75, mb: 1, alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', gap: 1, mb: 1, alignItems: 'center' }}>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, flex: 1 }}>Review answers</Typography>
           {['all', 'wrong', 'skipped'].map((k) => (
-            <ButtonBase key={k} onClick={() => setFilter(k)} sx={(t) => ({ px: 1.25, height: 28, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, fontFamily: 'inherit', border: `1px solid ${filter === k ? PLAN_AMBER : t.palette.divider}`, bgcolor: filter === k ? PLAN_AMBER : 'transparent', color: filter === k ? COLOR_PALETTE.custom.black1B1200 : 'text.primary' })}>
+            <ButtonBase key={k} onClick={() => setFilter(k)} sx={(t) => ({ px: 1.5, height: 28, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, fontFamily: 'inherit', border: `1px solid ${filter === k ? PLAN_AMBER : t.palette.divider}`, bgcolor: filter === k ? PLAN_AMBER : 'transparent', color: filter === k ? COLOR_PALETTE.custom.black1B1200 : 'text.primary' })}>
               {k === 'all' ? 'All' : k === 'wrong' ? 'Wrong' : 'Skipped'}
             </ButtonBase>
           ))}
         </Box>
-        <Box sx={{ display: 'grid', gap: 0.75 }}>
+        <Box sx={{ display: 'grid', gap: 1 }}>
           {shown.map((x) => <ReviewItem key={x.n} r={x} />)}
           {shown.length === 0 && <Typography variant="body2" color="text.secondary">Nothing here.</Typography>}
         </Box>

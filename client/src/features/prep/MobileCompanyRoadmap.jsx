@@ -12,7 +12,7 @@ import CompanyAvatar from '../../components/CompanyAvatar';
 import { Confetti } from '../aptitude/components/MotionBits';
 import { tint } from '../dashboard/dashboardUtils';
 import { LibraryFont, libBackBtnSx, libSolidBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../app/design/designTokens';
 
 // Phone layout of one company's question roadmap (opened from Companies). Same look as the phone
 // dashboard: a banner card in the Contest-banner style (gradient, translucent ring, 28px title), then a
@@ -105,13 +105,13 @@ function ProblemRow({ problem, index, current, last, hero, dark, onOpen }) {
       <ButtonBase
         onClick={onOpen}
         aria-label={`Problem ${index + 1}: ${problem.title}`}
-        sx={{ width: '100%', display: 'flex', alignItems: 'stretch', justifyContent: 'flex-start', gap: '12px', textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ width: '100%', display: 'flex', alignItems: 'stretch', justifyContent: 'flex-start', gap: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
         <Box sx={{ width: 40, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Node problem={problem} index={index} current={current} hero={hero} dark={dark} />
-          {!last && <Box aria-hidden sx={{ flex: 1, minHeight: 16, width: 0, my: '4px', borderLeft: solved ? `2px solid ${hero.accent}` : `2px dotted ${pal.divider}` }} />}
+          {!last && <Box aria-hidden sx={{ flex: 1, minHeight: 16, width: 0, my: 0.5, borderLeft: solved ? `2px solid ${hero.accent}` : `2px dotted ${pal.divider}` }} />}
         </Box>
-        <Box sx={{ flex: 1, minWidth: 0, pb: last ? 0 : '16px', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+        <Box sx={{ flex: 1, minWidth: 0, pb: last ? 0 : 2, display: 'flex', alignItems: 'flex-start', gap: 1 }}>
           <Box sx={{ flex: 1, minWidth: 0, opacity: problem.locked ? 0.8 : 1 }}>
             <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING, fontWeight: current ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
               {problem.title}
@@ -121,11 +121,11 @@ function ProblemRow({ problem, index, current, last, hero, dark, onOpen }) {
             </Typography>
           </Box>
           {current && (
-            <Box component="span" sx={{ mt: '2px', height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.body, letterSpacing: TRACKING, fontWeight: FONT_WEIGHTS.medium, bgcolor: tint(hero.accent, 18), color: pal.text, flexShrink: 0 }}>
+            <Box component="span" sx={{ mt: 0.5, height: 24, px: 1.5, borderRadius: RADII_PX.pill, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.body, letterSpacing: TRACKING, fontWeight: FONT_WEIGHTS.medium, bgcolor: tint(hero.accent, 18), color: pal.text, flexShrink: 0 }}>
               Next up
             </Box>
           )}
-          <ChevronRightRoundedIcon aria-hidden sx={{ mt: '1px', color: pal.muted, flexShrink: 0 }} />
+          <ChevronRightRoundedIcon aria-hidden sx={{ mt: 0, color: pal.muted, flexShrink: 0 }} />
         </Box>
       </ButtonBase>
     </motion.div>
@@ -208,7 +208,7 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
           overflow: 'hidden',
           mt: 0.5,
           minHeight: 208,
-          borderRadius: '20px',
+          borderRadius: RADII_PX.card,
           p: 2,
           display: 'flex',
           flexDirection: 'column',
@@ -231,25 +231,25 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
           {items === null ? 'Loading problems' : `${plural(nodes.length, 'problem')} · Easy to Hard`}
         </Typography>
 
-        <Box sx={{ mt: 1.5, display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <Box role="progressbar" aria-label={`${company.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct} sx={{ flex: 1, height: 8, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.black, 0.25), overflow: 'hidden' }}>
-            <motion.div initial={{ width: reduce ? `${pct}%` : 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.8, ease: 'easeOut' }} style={{ height: '100%', borderRadius: 99, background: COLOR_PALETTE.white }} />
+        <Box sx={{ mt: 1.5, display: 'flex', alignItems: 'center', gap: 1.5 }}>
+          <Box role="progressbar" aria-label={`${company.name} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct} sx={{ flex: 1, height: 8, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.black, 0.25), overflow: 'hidden' }}>
+            <motion.div initial={{ width: reduce ? `${pct}%` : 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.8, ease: 'easeOut' }} style={{ height: '100%', borderRadius: RADII_PX.pill, background: COLOR_PALETTE.white }} />
           </Box>
           <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>{pct}%</Typography>
         </Box>
 
         <Box sx={{ mt: 1.5, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-          <Box sx={{ height: 34, px: '14px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
+          <Box sx={{ height: 34, px: 2, borderRadius: RADII_PX.pill, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
             {solved} of {nodes.length} solved
           </Box>
-          <Box sx={{ height: 34, px: '12px', gap: 0.5, borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
+          <Box sx={{ height: 34, px: 1.5, gap: 0.5, borderRadius: RADII_PX.pill, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22), fontVariantNumeric: 'tabular-nums' }}>
             <StarRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.amber[200] }} />
             {stars}/{maxStars}
           </Box>
           {company.examSlug && (
             <ButtonBase
               onClick={() => navigate(`/prep/${company.examSlug}`)}
-              sx={{ height: 34, pl: '14px', pr: '8px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, fontFamily: 'inherit', color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22) }}
+              sx={{ height: 34, pl: 2, pr: 1, borderRadius: RADII_PX.pill, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, fontFamily: 'inherit', color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.22) }}
             >
               Exam pattern
               <ChevronRightRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
@@ -302,11 +302,11 @@ export default function MobileCompanyRoadmap({ company, onBack }) {
               transition={{ type: 'spring', stiffness: 320, damping: 30 }}
               style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 1300, display: 'flex', justifyContent: 'center' }}
             >
-              <LibraryFont sx={{ width: '100%', maxWidth: 560, bgcolor: pal.bg, borderRadius: '28px 28px 0 0', px: 2, pt: 1.5, pb: 'calc(20px + env(safe-area-inset-bottom))' }}>
-                <Box sx={{ width: 40, height: 4, borderRadius: 4, bgcolor: pal.divider, mx: 'auto', mb: 2 }} />
+              <LibraryFont sx={{ width: '100%', maxWidth: 560, bgcolor: pal.bg, borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, px: 2, pt: 1.5, pb: 'calc(20px + env(safe-area-inset-bottom))' }}>
+                <Box sx={{ width: 40, height: 4, borderRadius: RADII_PX.pill, bgcolor: pal.divider, mx: 'auto', mb: 2 }} />
                 <Typography sx={{ fontSize: FONT_SIZES.heading, lineHeight: '28px', fontWeight: FONT_WEIGHTS.bold }}>{sheet.title}</Typography>
                 <Box sx={{ mt: 1, mb: 2.5, display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
-                  <Box component="span" sx={{ height: 34, px: '14px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: dark ? tint((DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).color, 16) : (DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).bg, color: (DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).color }}>
+                  <Box component="span" sx={{ height: 34, px: 2, borderRadius: RADII_PX.pill, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, bgcolor: dark ? tint((DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).color, 16) : (DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).bg, color: (DIFFICULTY[sheet.difficulty] || DIFFICULTY.Easy).color }}>
                     {sheet.difficulty}
                   </Box>
                   {sheet.acceptanceRate > 0 && <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: TRACKING, color: pal.muted }}>{sheet.acceptanceRate}% accepted</Typography>}

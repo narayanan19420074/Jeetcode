@@ -16,7 +16,7 @@ import { PLAN_AMBER, PLAN_THEMES } from '../studyplan/planUtils';
 import { daysUntil, formatExamDate, pickExamDate } from '../prep/examDate';
 import { CATEGORIES, EXAMS } from './examsData';
 import BackToDashboard from '../../components/BackToDashboard';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Exams that have a full mock paper on /mocks (paper ids live in server/src/config/mockTests.js).
 const HAS_MOCK = new Set(['tcs-nqt', 'infosys', 'cognizant']);
@@ -59,7 +59,7 @@ const TONES = {
 function StatusPill({ status }) {
   const tone = TONES[status.tone];
   return (
-    <Box sx={(t) => ({ minWidth: 0, maxWidth: '100%', px: 1, height: 22, display: 'inline-flex', alignItems: 'center', borderRadius: 99, bgcolor: tone.bg, color: tone.fg[t.palette.mode === 'dark' ? 1 : 0], fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold })}>
+    <Box sx={(t) => ({ minWidth: 0, maxWidth: '100%', px: 1, height: 22, display: 'inline-flex', alignItems: 'center', borderRadius: RADII_PX.pill, bgcolor: tone.bg, color: tone.fg[t.palette.mode === 'dark' ? 1 : 0], fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold })}>
       <Typography noWrap component="span" sx={{ fontSize: 'inherit', fontWeight: 'inherit', lineHeight: 1 }}>{status.text}</Typography>
     </Box>
   );
@@ -93,10 +93,10 @@ function ExamCard({ exam, index, track, onOpen }) {
   const prepare = () => (hasTrack ? navigate(`/prep/${track.slug}`) : navigate(exam.practice[0].to));
 
   return (
-    <Box sx={(t) => ({ position: 'relative', display: 'flex', flexDirection: 'column', gap: 1, p: 1.5, pt: 1.75, borderRadius: '14px', overflow: 'hidden', bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}`, transition: 'border-color .15s, transform .15s', '&:hover': { borderColor: PLAN_AMBER, transform: 'translateY(-1px)' } })}>
+    <Box sx={(t) => ({ position: 'relative', display: 'flex', flexDirection: 'column', gap: 1, p: 1.5, pt: 2, borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: t.palette.background.paper, border: `1px solid ${t.palette.divider}`, transition: 'border-color .15s, transform .15s', '&:hover': { borderColor: PLAN_AMBER, transform: 'translateY(-1px)' } })}>
       <Box aria-hidden sx={{ position: 'absolute', left: 0, right: 0, top: 0, height: 3, background: theme.gradient }} />
 
-      <ButtonBase onClick={onOpen} aria-label={`${exam.name} details`} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, width: '100%', textAlign: 'left', justifyContent: 'flex-start', fontFamily: 'inherit', borderRadius: '10px' }}>
+      <ButtonBase onClick={onOpen} aria-label={`${exam.name} details`} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, width: '100%', textAlign: 'left', justifyContent: 'flex-start', fontFamily: 'inherit', borderRadius: RADII_PX.control }}>
         <CompanyAvatar name={exam.brand || exam.short} size={40} />
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.25 }}>{exam.name}</Typography>
@@ -110,25 +110,25 @@ function ExamCard({ exam, index, track, onOpen }) {
         <Typography noWrap variant="caption" color="text.secondary" sx={{ flexShrink: 0, maxWidth: '45%', fontWeight: FONT_WEIGHTS.semibold }}>{exam.tags.join(' · ')}</Typography>
       </Box>
 
-      <Box sx={{ display: 'flex', gap: 0.75, mt: 'auto' }}>
+      <Box sx={{ display: 'flex', gap: 1, mt: 'auto' }}>
         <Button
           component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation endIcon={<LaunchRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />}
-          sx={{ flex: 1, height: 34, borderRadius: '10px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+          sx={{ flex: 1, height: 34, borderRadius: RADII_PX.control, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
         >
           {closed ? 'Official site' : 'Apply'}
         </Button>
         <Button
           onClick={prepare} disableElevation startIcon={<BoltRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />}
-          sx={(t) => ({ flex: 1, height: 34, borderRadius: '10px', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: 'text.primary', border: `1px solid ${t.palette.divider}`, '&:hover': { bgcolor: t.palette.action.hover } })}
+          sx={(t) => ({ flex: 1, height: 34, borderRadius: RADII_PX.control, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: 'text.primary', border: `1px solid ${t.palette.divider}`, '&:hover': { bgcolor: t.palette.action.hover } })}
         >
           {hasTrack ? (readiness ? 'Continue' : 'Start prep') : 'Prepare'}
         </Button>
         {HAS_MOCK.has(exam.id) && (
-          <IconButton onClick={() => navigate('/mocks')} aria-label={`${exam.name} mock test`} size="small" sx={{ width: 34, height: 34, borderRadius: '10px', color: PLAN_AMBER }}>
+          <IconButton onClick={() => navigate('/mocks')} aria-label={`${exam.name} mock test`} size="small" sx={{ width: 34, height: 34, borderRadius: RADII_PX.control, color: PLAN_AMBER }}>
             <QuizRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
           </IconButton>
         )}
-        <IconButton onClick={onOpen} aria-label={`${exam.name} pattern and eligibility`} size="small" sx={{ width: 34, height: 34, borderRadius: '10px', color: 'text.secondary' }}>
+        <IconButton onClick={onOpen} aria-label={`${exam.name} pattern and eligibility`} size="small" sx={{ width: 34, height: 34, borderRadius: RADII_PX.control, color: 'text.secondary' }}>
           <InfoOutlinedIcon sx={{ fontSize: FONT_SIZES.heading }} />
         </IconButton>
       </Box>
@@ -140,7 +140,7 @@ function Fact({ label, children }) {
   return (
     <Box>
       <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.6, color: 'text.secondary', textTransform: 'uppercase' }}>{label}</Typography>
-      <Typography variant="body2" sx={{ mt: 0.25 }}>{children}</Typography>
+      <Typography variant="body2" sx={{ mt: 0.5 }}>{children}</Typography>
     </Box>
   );
 }
@@ -153,7 +153,7 @@ function ExamDetails({ exam, track, onClose }) {
   const go = (to) => { onClose(); navigate(to); };
 
   return (
-    <Dialog open onClose={onClose} fullWidth maxWidth="sm" aria-labelledby="exam-details-title" slotProps={{ paper: { sx: { borderRadius: '16px' } } }}>
+    <Dialog open onClose={onClose} fullWidth maxWidth="sm" aria-labelledby="exam-details-title" slotProps={{ paper: { sx: { borderRadius: RADII_PX.card } } }}>
       <DialogContent sx={{ p: { xs: 2, sm: 2.5 } }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <CompanyAvatar name={exam.brand || exam.short} size={46} />
@@ -165,7 +165,7 @@ function ExamDetails({ exam, track, onClose }) {
         </Box>
 
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1.5 }}>{exam.blurb}</Typography>
-        <Box sx={{ mt: 1.25 }}><StatusPill status={status} /></Box>
+        <Box sx={{ mt: 1.5 }}><StatusPill status={status} /></Box>
 
         <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, mt: 2 }}>
           <Fact label="Exam date">{examOn ? formatExamDate(examOn) : 'Announced on the official site'}</Fact>
@@ -174,7 +174,7 @@ function ExamDetails({ exam, track, onClose }) {
           <Fact label="Covers">{exam.tags.join(', ')}</Fact>
         </Box>
 
-        <Box sx={{ display: 'grid', gap: 1.25, mt: 2, pt: 2, borderTop: (t) => `1px solid ${t.palette.divider}` }}>
+        <Box sx={{ display: 'grid', gap: 1.5, mt: 2, pt: 2, borderTop: (t) => `1px solid ${t.palette.divider}` }}>
           {exam.pattern.map(([k, v]) => (
             <Box key={k}>
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>{k}</Typography>
@@ -190,17 +190,17 @@ function ExamDetails({ exam, track, onClose }) {
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mt: 2.5 }}>
           <Button
             component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation endIcon={<LaunchRoundedIcon />}
-            sx={{ height: 40, px: 2.5, borderRadius: '12px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+            sx={{ height: 40, px: 2.5, borderRadius: RADII_PX.card, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
           >
             {closed ? 'Official site' : 'Apply'}
           </Button>
           {HAS_MOCK.has(exam.id) && (
-            <Button variant="outlined" startIcon={<QuizRoundedIcon />} onClick={() => go('/mocks')} sx={{ height: 40, borderRadius: '12px', fontWeight: FONT_WEIGHTS.bold }}>Take mock test</Button>
+            <Button variant="outlined" startIcon={<QuizRoundedIcon />} onClick={() => go('/mocks')} sx={{ height: 40, borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.bold }}>Take mock test</Button>
           )}
           {hasTrack ? (
-            <Button onClick={() => go(`/prep/${track.slug}`)} variant="outlined" endIcon={<ArrowForwardRoundedIcon />} sx={{ height: 40, borderRadius: '12px', fontWeight: FONT_WEIGHTS.bold }}>Open prep track</Button>
+            <Button onClick={() => go(`/prep/${track.slug}`)} variant="outlined" endIcon={<ArrowForwardRoundedIcon />} sx={{ height: 40, borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.bold }}>Open prep track</Button>
           ) : (
-            exam.practice.map((p) => <Button key={p.to} variant="outlined" onClick={() => go(p.to)} sx={{ height: 40, borderRadius: '12px', fontWeight: FONT_WEIGHTS.bold }}>{p.label}</Button>)
+            exam.practice.map((p) => <Button key={p.to} variant="outlined" onClick={() => go(p.to)} sx={{ height: 40, borderRadius: RADII_PX.card, fontWeight: FONT_WEIGHTS.bold }}>{p.label}</Button>)
           )}
         </Box>
       </DialogContent>
@@ -228,13 +228,13 @@ function NextUpBanner() {
   if (!pick) return null;
   const rgb = pick.urgent ? '239,68,68' : '251,191,36';
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 1.5, px: 1.5, py: 0.75, minHeight: 46, borderRadius: '12px', flexShrink: 0, bgcolor: `rgba(${rgb},0.12)`, border: `1px solid rgba(${rgb},0.4)` }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1.5, px: 1.5, py: 1, minHeight: 46, borderRadius: RADII_PX.card, flexShrink: 0, bgcolor: `rgba(${rgb},0.12)`, border: `1px solid rgba(${rgb},0.4)` }}>
       <EventAvailableRoundedIcon sx={{ fontSize: FONT_SIZES.display, flexShrink: 0, color: pick.urgent ? 'error.main' : PLAN_AMBER }} />
       <Typography sx={{ flex: 1, minWidth: 0, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.3 }}>{pick.text}</Typography>
       <Button
         {...(pick.href ? { component: 'a', href: pick.href, target: '_blank', rel: 'noopener noreferrer' } : { onClick: () => navigate(pick.to) })}
         disableElevation size="small"
-        sx={{ flexShrink: 0, height: 30, px: 1.75, borderRadius: '9px', bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
+        sx={{ flexShrink: 0, height: 30, px: 2, borderRadius: RADII_PX.control, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}
       >
         {pick.cta}
       </Button>
@@ -266,23 +266,23 @@ export default function ExamsPage() {
   return (
     <Box ref={rootRef} sx={fillH ? { height: fillH, overflow: 'hidden' } : undefined}>
       <Container maxWidth="lg" sx={{ py: { xs: 2, md: 2.5 }, px: { xs: 1.5, sm: 3 }, height: fillH ? '100%' : 'auto', display: 'flex', flexDirection: 'column' }}>
-        <Box sx={{ display: 'flex', alignItems: { xs: 'flex-start', md: 'center' }, justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' }, gap: 1.25, mb: 1.5, flexShrink: 0 }}>
-          <Box sx={{ minWidth: 0, display: 'flex', alignItems: 'flex-start', gap: 1.25 }}>
-            <BackToDashboard sx={{ mt: 0.25 }} />
+        <Box sx={{ display: 'flex', alignItems: { xs: 'flex-start', md: 'center' }, justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' }, gap: 1.5, mb: 1.5, flexShrink: 0 }}>
+          <Box sx={{ minWidth: 0, display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
+            <BackToDashboard sx={{ mt: 0.5 }} />
             <Box sx={{ minWidth: 0 }}>
               <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Exams</Typography>
               <Typography variant="body2" color="text.secondary">{shown.length} top coding and aptitude exams. Apply on the official site, track how ready you are.</Typography>
             </Box>
           </Box>
-          <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', alignItems: 'center', flexShrink: 0 }}>
-          <Button onClick={() => navigate('/mocks')} disableElevation startIcon={<QuizRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />} sx={{ height: 32, px: 1.5, borderRadius: 99, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Mock tests</Button>
-          <Box role="tablist" aria-label="Exam type" sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', flexShrink: 0 }}>
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center', flexShrink: 0 }}>
+          <Button onClick={() => navigate('/mocks')} disableElevation startIcon={<QuizRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />} sx={{ height: 32, px: 1.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, bgcolor: PLAN_AMBER, color: COLOR_PALETTE.custom.black1B1200, '&:hover': { bgcolor: COLOR_PALETTE.amber[400] } }}>Mock tests</Button>
+          <Box role="tablist" aria-label="Exam type" sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', flexShrink: 0 }}>
             {CATEGORIES.map((c) => {
               const on = cat === c.key;
               return (
                 <ButtonBase
                   key={c.key} role="tab" aria-selected={on} onClick={() => setCat(c.key)}
-                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: 99, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? COLOR_PALETTE.custom.black1B1200 : 'text.primary', transition: 'background-color .15s' })}
+                  sx={(t) => ({ px: 1.5, height: 32, borderRadius: RADII_PX.pill, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, border: `1px solid ${on ? PLAN_AMBER : t.palette.divider}`, bgcolor: on ? PLAN_AMBER : 'transparent', color: on ? COLOR_PALETTE.custom.black1B1200 : 'text.primary', transition: 'background-color .15s' })}
                 >
                   {c.label}
                 </ButtonBase>

@@ -7,7 +7,7 @@ import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 import { useSelector } from 'react-redux';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import { HeaderTile, LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Phone layout of the Companies page. It follows the phone Problems page (MobileProblems): same
 // page padding, back button, pill search, centred header, divider-separated rows and type sizes.
@@ -34,8 +34,8 @@ function CompanyRow({ c, onOpen }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        gap: '12px',
-        py: 1.25,
+        gap: 1.5,
+        py: 1.5,
         textAlign: 'left',
         fontFamily: 'inherit',
         color: 'inherit',
@@ -66,8 +66,8 @@ function SkeletonRows({ count = 8 }) {
   return (
     <>
       {Array.from({ length: count }).map((_, i) => (
-        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: '12px', py: 1.25, borderBottom: '1px solid', borderColor: 'divider' }}>
-          <Skeleton variant="rounded" width={48} height={48} sx={{ borderRadius: '14px' }} />
+        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
+          <Skeleton variant="rounded" width={48} height={48} sx={{ borderRadius: RADII_PX.card }} />
           <Box sx={{ flex: 1 }}>
             <Skeleton variant="text" width="55%" />
             <Skeleton variant="text" width="35%" />
@@ -108,7 +108,7 @@ export default function MobilePrepCompanies({ loading, list, shown, hasMore, que
             },
           }}
           sx={{
-            '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, px: '16px' },
+            '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, px: 2 },
             '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
           }}
         />

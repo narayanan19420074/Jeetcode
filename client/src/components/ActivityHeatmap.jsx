@@ -18,9 +18,9 @@ export default function ActivityHeatmap({ data }) {
   for (let i = 0; i < data.length; i += 7) weeks.push(data.slice(i, i + 7));
 
   return (
-    <Box sx={{ display: 'flex', gap: 0.6, overflowX: 'auto', py: 1 }}>
+    <Box sx={{ display: 'flex', gap: 0.5, overflowX: 'auto', py: 1 }}>
       {weeks.map((week, wi) => (
-        <Box key={wi} sx={{ display: 'flex', flexDirection: 'column', gap: 0.6 }}>
+        <Box key={wi} sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
           {week.map((cell) => (
             <Tooltip key={cell.day} title={`${cell.submissions} submission${cell.submissions === 1 ? '' : 's'}`}>
               <Box

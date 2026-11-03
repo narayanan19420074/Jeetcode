@@ -33,7 +33,7 @@ import { Confetti, CountUp } from './components/MotionBits';
 import { ALIENS, testXp } from './components/gamification';
 import QuestionStimulus from './components/QuestionStimulus';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from './components/aptitudeUi';
-import { COLOR_PALETTE, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono };
 const TARGET = { easy: 45, medium: 90, hard: 150 };
@@ -67,7 +67,7 @@ function BreakdownRow({ row, color, action }) {
           {row.correct}/{row.total} · {pct}%
         </Typography>
       </Stack>
-      <LinearProgress variant="determinate" value={pct} sx={{ my: 0.6, height: 6, borderRadius: 3, bgcolor: alpha(tone, 0.15), '& .MuiLinearProgress-bar': { bgcolor: tone } }} />
+      <LinearProgress variant="determinate" value={pct} sx={{ my: 0.5, height: 6, borderRadius: RADII_PX.pill, bgcolor: alpha(tone, 0.15), '& .MuiLinearProgress-bar': { bgcolor: tone } }} />
       <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
         <Typography variant="caption" color="text.disabled">
           {row.attempted < row.total ? `${row.total - row.attempted} skipped · ` : ''}avg {row.total ? formatDuration(row.timeSec / row.total) : '—'} / question
@@ -91,15 +91,15 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
 
   if (!q) {
     return (
-      <Paper variant="outlined" sx={{ p: 2, borderRadius: 2.5, mb: 1.25 }}>
+      <Paper variant="outlined" sx={{ p: 2, borderRadius: RADII_PX.card, mb: 1.5 }}>
         <Typography variant="body2" color="text.secondary">Question {index + 1} is no longer available.</Typography>
       </Paper>
     );
   }
 
   return (
-    <Paper ref={forwardedRef} variant="outlined" sx={{ borderRadius: 2.5, mb: 1.25, overflow: 'hidden', borderColor: open ? color : 'divider' }}>
-      <Stack direction="row" spacing={1.5} onClick={onToggle} sx={{ alignItems: 'center', p: 1.75, cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}>
+    <Paper ref={forwardedRef} variant="outlined" sx={{ borderRadius: RADII_PX.card, mb: 1.5, overflow: 'hidden', borderColor: open ? color : 'divider' }}>
+      <Stack direction="row" spacing={1.5} onClick={onToggle} sx={{ alignItems: 'center', p: 2, cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}>
         <Icon sx={{ color, flexShrink: 0 }} />
         <Typography sx={{ ...mono, fontWeight: FONT_WEIGHTS.bold, width: 28, color: 'text.secondary' }}>{index + 1}</Typography>
         <Typography variant="body2" sx={{ flexGrow: 1, fontWeight: FONT_WEIGHTS.semibold, display: '-webkit-box', WebkitLineClamp: open ? 'unset' : 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
@@ -116,7 +116,7 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
       </Stack>
 
       <Collapse in={open} unmountOnExit>
-        <Box sx={{ px: 2, pb: 2.25 }}>
+        <Box sx={{ px: 2, pb: 2.5 }}>
           <QuestionStimulus set={set} />
           <Stack spacing={0.9} sx={{ my: 1.5 }}>
             {q.options.map((o, i) => {
@@ -129,7 +129,7 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
                   direction="row"
                   spacing={1.25}
                  
-                  sx={{ alignItems: 'center', px: 1.5, py: 1, borderRadius: 2, border: '1.5px solid', borderColor: tone, bgcolor: (t) => (isCorrect ? alpha(t.palette.success.main, 0.1) : isPick ? alpha(t.palette.error.main, 0.1) : 'transparent') }}
+                  sx={{ alignItems: 'center', px: 1.5, py: 1, borderRadius: RADII_PX.card, border: '1.5px solid', borderColor: tone, bgcolor: (t) => (isCorrect ? alpha(t.palette.success.main, 0.1) : isPick ? alpha(t.palette.error.main, 0.1) : 'transparent') }}
                 >
                   <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, width: 20, color: 'text.secondary' }}>{OPTION_LABELS[i]}</Typography>
                   <Typography variant="body2" sx={{ flexGrow: 1, fontWeight: isCorrect || isPick ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular }}>
@@ -144,7 +144,7 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
           </Stack>
 
           {q.explanation && (
-            <Box sx={{ p: 1.75, borderRadius: 2, bgcolor: 'action.hover', mb: 1.25 }}>
+            <Box sx={{ p: 2, borderRadius: RADII_PX.card, bgcolor: 'action.hover', mb: 1.5 }}>
               <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'primary.main', letterSpacing: '0.08em' }}>
                 SOLUTION
               </Typography>
@@ -154,7 +154,7 @@ function ReviewItem({ index, answer, sets, slug, open, onToggle, forwardedRef })
             </Box>
           )}
           {q.shortcut && (
-            <Box sx={{ p: 1.75, borderRadius: 2, bgcolor: (t) => alpha(t.palette.warning.main, 0.08), border: '1px solid', borderColor: (t) => alpha(t.palette.warning.main, 0.4), mb: 1.25 }}>
+            <Box sx={{ p: 2, borderRadius: RADII_PX.card, bgcolor: (t) => alpha(t.palette.warning.main, 0.08), border: '1px solid', borderColor: (t) => alpha(t.palette.warning.main, 0.4), mb: 1.5 }}>
               <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
                 <BoltRoundedIcon sx={{ fontSize: FONT_SIZES.bodyLg, color: 'warning.main' }} />
                 <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'warning.main', letterSpacing: '0.08em' }}>
@@ -276,7 +276,7 @@ export default function AptitudeResultsPage() {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ type: 'spring', stiffness: 200, damping: 22 }}
         variant="outlined"
-        sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: '14px', mb: 3, position: 'relative', overflow: 'hidden', background: (t) => `linear-gradient(135deg, ${alpha(passed ? t.palette.success.main : t.palette.error.main, 0.12)}, transparent 60%)` }}
+        sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: RADII_PX.card, mb: 3, position: 'relative', overflow: 'hidden', background: (t) => `linear-gradient(135deg, ${alpha(passed ? t.palette.success.main : t.palette.error.main, 0.12)}, transparent 60%)` }}
       >
 
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 3, md: 5 }} sx={{ alignItems: { xs: 'center', md: 'center' } }}>
@@ -327,7 +327,7 @@ export default function AptitudeResultsPage() {
 
       {/* Breakdown */}
       <Stack direction={{ xs: 'column', md: 'row' }} spacing={3} sx={{ alignItems: 'stretch', mb: 3 }}>
-        <Paper variant="outlined" sx={{ flex: 1.4, p: 2.5, borderRadius: 3 }}>
+        <Paper variant="outlined" sx={{ flex: 1.4, p: 2.5, borderRadius: RADII_PX.card }}>
           <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
             By topic <Typography component="span" variant="caption" color="text.secondary">(weakest first)</Typography>
           </Typography>
@@ -349,7 +349,7 @@ export default function AptitudeResultsPage() {
         </Paper>
 
         <Stack spacing={3} sx={{ flex: 1 }}>
-          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3 }}>
+          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: RADII_PX.card }}>
             <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
               By difficulty
             </Typography>
@@ -359,7 +359,7 @@ export default function AptitudeResultsPage() {
               ))}
             </Stack>
           </Paper>
-          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3, bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}>
+          <Paper variant="outlined" sx={{ p: 2.5, borderRadius: RADII_PX.card, bgcolor: (t) => alpha(t.palette.primary.main, 0.04) }}>
             <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
               What to do next
             </Typography>
@@ -375,7 +375,7 @@ export default function AptitudeResultsPage() {
       </Stack>
 
       {/* Question map */}
-      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: 3, mb: 3 }}>
+      <Paper variant="outlined" sx={{ p: 2.5, borderRadius: RADII_PX.card, mb: 3 }}>
         <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', mb: 1.5 }} useFlexGap>
           <Typography variant="subtitle1" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Question map
@@ -383,13 +383,13 @@ export default function AptitudeResultsPage() {
           <Stack direction="row" spacing={2}>
             {[['Correct', COLOR_PALETTE.emerald[500]], ['Incorrect', COLOR_PALETTE.red[500]], ['Skipped', COLOR_PALETTE.slate[400]]].map(([l, c]) => (
               <Stack key={l} direction="row" spacing={0.6} sx={{ alignItems: 'center' }}>
-                <Box sx={{ width: 10, height: 10, borderRadius: '3px', bgcolor: c }} />
+                <Box sx={{ width: 10, height: 10, borderRadius: RADII_PX.badge, bgcolor: c }} />
                 <Typography variant="caption" color="text.secondary">{l}</Typography>
               </Stack>
             ))}
           </Stack>
         </Stack>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.9 }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
           {answers.map((a) => {
             const c = a.isCorrect ? COLOR_PALETTE.emerald[500] : a.selectedOption === null ? COLOR_PALETTE.slate[400] : COLOR_PALETTE.red[500];
             return (
@@ -398,7 +398,7 @@ export default function AptitudeResultsPage() {
                 onClick={() => jumpTo(a._i)}
                 role="button"
                 title={`Q${a._i + 1} · ${formatDuration(a.timeSpentSec)}`}
-                sx={{ width: 34, height: 34, borderRadius: 1.5, display: 'grid', placeItems: 'center', bgcolor: c, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, cursor: 'pointer', '&:hover': { filter: 'brightness(0.9)' } }}
+                sx={{ width: 34, height: 34, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', bgcolor: c, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, cursor: 'pointer', '&:hover': { filter: 'brightness(0.9)' } }}
               >
                 {a._i + 1}
               </Box>

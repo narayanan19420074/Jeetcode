@@ -15,7 +15,7 @@ import { linearSearchSteps, binarySearchSteps } from './algorithms/searching';
 import { bfsSteps, dfsSteps, dijkstraSteps, defaultGraph } from './algorithms/graph';
 import { bstInsertSteps, bstTraversalSteps } from './algorithms/trees';
 import { fibonacciSteps, knapsackSteps, defaultKnapsack } from './algorithms/dp';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Blip's guided lesson (3D mascot + speech) is only downloaded when someone
 // clicks Teach.
@@ -228,7 +228,7 @@ export default function VisualizerPage() {
             size="small"
             sx={{
               fontWeight: FONT_WEIGHTS.bold,
-              borderRadius: 99,
+              borderRadius: RADII_PX.pill,
               px: 2,
               color: COLOR_PALETTE.emerald[950],
               background: `linear-gradient(135deg, ${COLOR_PALETTE.emerald[500]} 0%, ${COLOR_PALETTE.emerald[400]} 100%)`,
@@ -340,7 +340,7 @@ export default function VisualizerPage() {
 
       {/* Main area — fills remaining height, no page scroll on md+ */}
       <Box sx={{ flex: 1, minHeight: 0, display: 'flex', gap: 2, flexDirection: { xs: 'column', md: 'row' } }}>
-        <Paper variant="outlined" sx={{ flex: 2, minHeight: 0, display: 'flex', flexDirection: 'column', p: 2, borderRadius: 3 }}>
+        <Paper variant="outlined" sx={{ flex: 2, minHeight: 0, display: 'flex', flexDirection: 'column', p: 2, borderRadius: RADII_PX.card }}>
           <Box data-teach="stage" sx={{ flex: 1, minHeight: 0, overflow: 'auto', display: 'flex', alignItems: 'center', width: '100%' }}>
             {currentStep ? (
               <VisualizerCanvas category={category} step={currentStep} graph={defaultGraph} />

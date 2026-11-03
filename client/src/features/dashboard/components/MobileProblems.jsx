@@ -42,7 +42,7 @@ import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
 import { LibraryFont, MiniPlayer, useLibraryPalette } from './libraryStyle';
 import { readLastProblem } from '../../workspace/lastProblem';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Phone layout of the Problems page. It uses the same accent colour, rounded panels and tinted
 // chips as the phone dashboard (MobileHome), and the page itself scrolls (infinite scroll).
@@ -66,9 +66,9 @@ function DifficultyTag({ difficulty }) {
         flexShrink: 0,
         minWidth: 43,
         textAlign: 'center',
-        px: '5px',
-        py: '2px',
-        borderRadius: '8px',
+        px: 0.5,
+        py: 0.5,
+        borderRadius: RADII_PX.control,
         fontSize: FONT_SIZES.bodyLg,
         fontWeight: FONT_WEIGHTS.regular,
         letterSpacing: TRACKING,
@@ -88,9 +88,9 @@ function ProblemRow({ p, index, isDaily, saved, onStar, pal }) {
       <ButtonBase
         component={RouterLink}
         to={`/workspace/${p.slug}`}
-        sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '10px', py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: 1.5, py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
-        <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.25, pt: '2px' }}>
+        <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.5, pt: 0.5 }}>
           <DifficultyTag difficulty={p.difficulty} />
           {p.solvedByMe ? (
             <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-easy)' }} />
@@ -183,8 +183,8 @@ function SkeletonRows({ count = 8 }) {
   return (
     <>
       {Array.from({ length: count }).map((_, i) => (
-        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, py: 2.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-          <Skeleton variant="rounded" width={43} height={24} sx={{ borderRadius: '8px' }} />
+        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 2.5, borderBottom: '1px solid', borderColor: 'divider' }}>
+          <Skeleton variant="rounded" width={43} height={24} sx={{ borderRadius: RADII_PX.control }} />
           <Box sx={{ flex: 1 }}>
             <Skeleton variant="text" width="70%" />
             <Skeleton variant="text" width="40%" />
@@ -340,7 +340,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
 
   return (
     <LibraryFont>
-    <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: featured || resume ? '84px' : 2, maxWidth: 640, mx: 'auto' }}>
+    <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: featured || resume ? 10.5 : 2, maxWidth: 640, mx: 'auto' }}>
       {/* Back + menu */}
       <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
         <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={{ width: 44, height: 44, ml: -1, color: pal.text }}>
@@ -369,8 +369,8 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         slotProps={{ htmlInput: { 'aria-label': 'Search problems' } }}
         sx={{
           mt: 1,
-          px: '4px',
-          '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, px: '16px' },
+          px: 0.5,
+          '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, px: 2 },
           '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
         }}
       />
@@ -382,13 +382,13 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             width: 81,
             height: 81,
             mx: 'auto',
-            borderRadius: '22px',
+            borderRadius: RADII_PX.card,
             display: 'grid',
             placeItems: 'center',
             background: `linear-gradient(135deg, ${COLOR_PALETTE.rose[100]} 0%, ${COLOR_PALETTE.purple[100]} 55%, ${COLOR_PALETTE.pink[100]} 100%)`,
           }}
         >
-          <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
+          <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
             <CodeRoundedIcon sx={{ fontSize: FONT_SIZES.displayLg, color: COLOR_PALETTE.white }} />
           </Box>
         </Box>
@@ -404,9 +404,9 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             aria-valuemin={0}
             aria-valuemax={totalAll}
             aria-valuenow={solvedAll}
-            sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
+            sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
           >
-            <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+            <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
           </Box>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {progress ? solvedAll : '–'}
@@ -423,7 +423,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             disableElevation
             variant="contained"
             startIcon={picking ? <CircularProgress size={18} color="inherit" /> : <PlayArrowRoundedIcon />}
-            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
+            sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: RADII_PX.pill, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
           >
             Practice
           </Button>
@@ -434,7 +434,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
               disableElevation
               variant="contained"
               startIcon={<EventRoundedIcon />}
-              sx={{ height: 40, px: 2.5, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, ${COLOR_PALETTE.black})` } }}
+              sx={{ height: 40, px: 2.5, borderRadius: RADII_PX.pill, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: TRACKING, textTransform: 'none', bgcolor: ACCENT, '&:hover': { bgcolor: `color-mix(in srgb, ${ACCENT} 85%, ${COLOR_PALETTE.black})` } }}
             >
               Daily
             </Button>
@@ -444,7 +444,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
 
       {/* Active filters */}
       {anyActive && (
-        <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, alignItems: 'center', mt: 1.5 }}>
+        <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, alignItems: 'center', mt: 1.5 }}>
           {q.search && <Chip size="small" label={`Search: ${q.search}`} onDelete={() => setSearchText('')} />}
           {q.difficulty !== 'All' && <Chip size="small" label={q.difficulty} onDelete={() => patch({ difficulty: 'All' })} sx={{ color: DIFF_COLOR[q.difficulty] }} />}
           {q.tags.map((tag) => (
@@ -484,7 +484,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 2 }}>
               Loosen a filter or clear them all to see the full library.
             </Typography>
-            <Button variant="outlined" onClick={clearAll} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
+            <Button variant="outlined" onClick={clearAll} sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}>
               Clear filters
             </Button>
           </Box>
@@ -510,12 +510,12 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         anchorEl={menuAnchor}
         open={Boolean(menuAnchor)}
         onClose={() => setMenuAnchor(null)}
-        slotProps={{ paper: { sx: { borderRadius: '20px', minWidth: 230, py: 0.5, bgcolor: pal.bg } } }}
+        slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: 230, py: 0.5, bgcolor: pal.bg } } }}
       >
         {DIFFICULTIES.map((d) => {
           const Icon = DIFF_ICON[d];
           return (
-            <MenuItem key={d} selected={q.difficulty === d} onClick={closeMenuAnd(() => patch({ difficulty: q.difficulty === d ? 'All' : d }))} sx={{ py: 1.25, fontWeight: FONT_WEIGHTS.bold }}>
+            <MenuItem key={d} selected={q.difficulty === d} onClick={closeMenuAnd(() => patch({ difficulty: q.difficulty === d ? 'All' : d }))} sx={{ py: 1.5, fontWeight: FONT_WEIGHTS.bold }}>
               <ListItemIcon sx={{ color: DIFF_COLOR[d] }}>
                 <Icon fontSize="small" />
               </ListItemIcon>
@@ -528,7 +528,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           disabled={!isAuthenticated}
           selected={q.status === 'unsolved'}
           onClick={closeMenuAnd(() => patch({ status: q.status === 'unsolved' ? 'All' : 'unsolved' }))}
-          sx={{ py: 1.25, fontWeight: FONT_WEIGHTS.bold }}
+          sx={{ py: 1.5, fontWeight: FONT_WEIGHTS.bold }}
         >
           <ListItemIcon>
             <RadioButtonUncheckedRoundedIcon fontSize="small" />
@@ -540,7 +540,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           disabled={!isAuthenticated}
           selected={q.status === 'solved'}
           onClick={closeMenuAnd(() => patch({ status: q.status === 'solved' ? 'All' : 'solved' }))}
-          sx={{ py: 1.25, fontWeight: FONT_WEIGHTS.bold }}
+          sx={{ py: 1.5, fontWeight: FONT_WEIGHTS.bold }}
         >
           <ListItemIcon sx={{ color: 'var(--jc-easy)' }}>
             <CheckCircleRoundedIcon fontSize="small" />
@@ -549,7 +549,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
           {q.status === 'solved' && <CheckRoundedIcon fontSize="small" color="primary" sx={{ ml: 'auto' }} />}
         </MenuItem>
         <Divider />
-        <MenuItem disabled={!anyActive} onClick={closeMenuAnd(clearAll)} sx={{ py: 1.25, fontWeight: FONT_WEIGHTS.bold }}>
+        <MenuItem disabled={!anyActive} onClick={closeMenuAnd(clearAll)} sx={{ py: 1.5, fontWeight: FONT_WEIGHTS.bold }}>
           <ListItemIcon>
             <FilterAltOffRoundedIcon fontSize="small" />
           </ListItemIcon>

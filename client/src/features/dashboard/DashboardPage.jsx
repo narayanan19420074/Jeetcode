@@ -34,7 +34,7 @@ import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { LibraryFont, useLibraryPalette } from './components/libraryStyle';
 import { STATUS_COLOR, featuredPageForToday, surface, todayKey } from './dashboardUtils';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../app/design/designTokens';
 
 // Same accent the other phone pages use.
 const PHONE_ACCENT = COLOR_PALETTE.indigo[500];
@@ -405,7 +405,7 @@ export default function DashboardPage() {
                       surface,
                       (t) => ({
                         px: 2,
-                        py: 1.25,
+                        py: 1.5,
                         display: 'flex',
                         alignItems: 'center',
                         gap: 1.5,
@@ -540,17 +540,17 @@ export default function DashboardPage() {
             zIndex: t.zIndex.appBar - 1,
             display: 'flex',
             alignItems: 'center',
-            gap: 1.25,
-            pl: 1.25,
+            gap: 1.5,
+            pl: 1.5,
             pr: 0.5,
-            py: 0.75,
-            borderRadius: '20px',
+            py: 1,
+            borderRadius: RADII_PX.card,
             bgcolor: t.palette.mode === 'dark' ? alpha(PHONE_ACCENT, 0.22) : alpha(PHONE_ACCENT, 0.14),
             backdropFilter: 'blur(12px)',
             border: `1px solid ${alpha(PHONE_ACCENT, 0.25)}`,
           })}
         >
-          <Box sx={{ width: 40, height: 40, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: alpha(PHONE_ACCENT, 0.2), color: PHONE_ACCENT }}>
+          <Box sx={{ width: 40, height: 40, borderRadius: RADII_PX.card, flexShrink: 0, display: 'grid', placeItems: 'center', bgcolor: alpha(PHONE_ACCENT, 0.2), color: PHONE_ACCENT }}>
             <PlayArrowRoundedIcon />
           </Box>
           <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -585,10 +585,10 @@ export default function DashboardPage() {
         anchor="bottom"
         open={calendarOpen && !isMdUp}
         onClose={() => setCalendarOpen(false)}
-        slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
+        slotProps={{ paper: { sx: { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
       >
         <LibraryFont>
-        <Box sx={{ px: 2, pt: 1.25, pb: 2 }}>
+        <Box sx={{ px: 2, pt: 1.5, pb: 2 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
             <Typography component="h2" sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold }}>
               Calendar
@@ -607,7 +607,7 @@ export default function DashboardPage() {
                 setCalendarOpen(false);
                 goView('plans');
               }}
-              sx={{ mt: 2, fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: 99, color: PHONE_ACCENT, borderColor: alpha(PHONE_ACCENT, 0.5) }}
+              sx={{ mt: 2, fontWeight: FONT_WEIGHTS.bold, height: 48, borderRadius: RADII_PX.pill, color: PHONE_ACCENT, borderColor: alpha(PHONE_ACCENT, 0.5) }}
             >
               Open Study Plans
             </Button>

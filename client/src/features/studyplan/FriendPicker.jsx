@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Avatar, Box, ButtonBase, CircularProgress, Popover, Typography } from '@mui/material';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import PersonAddRoundedIcon from '@mui/icons-material/PersonAddRounded';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // Popover with your friends. Tap one and they join the plan (and get a notification).
 // `memberIds`: Set of user ids already in the plan. `onAdd(friend)` returns a promise.
@@ -18,9 +18,9 @@ export default function FriendPicker({ anchorEl, onClose, friends, memberIds, on
     <Popover
       open={Boolean(anchorEl)} anchorEl={anchorEl} onClose={onClose}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      slotProps={{ paper: { sx: { width: 250, maxHeight: 300, mt: 0.5, borderRadius: '12px' } } }}
+      slotProps={{ paper: { sx: { width: 250, maxHeight: 300, mt: 0.5, borderRadius: RADII_PX.card } } }}
     >
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.25, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4 }}>ADD FRIENDS TO PLAN</Typography>
+      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.5, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4 }}>ADD FRIENDS TO PLAN</Typography>
       {friends === null ? (
         <Box sx={{ p: 2, textAlign: 'center' }}><CircularProgress size={18} /></Box>
       ) : friends.length === 0 ? (
@@ -35,7 +35,7 @@ export default function FriendPicker({ anchorEl, onClose, friends, memberIds, on
             return (
               <ButtonBase
                 key={f.userId} disabled={inPlan || busy === f.userId} onClick={() => add(f)}
-                sx={(t) => ({ width: '100%', justifyContent: 'flex-start', gap: 1, px: 1.5, py: 0.7, textAlign: 'left', fontFamily: 'inherit', '&:hover': { bgcolor: t.palette.action.hover } })}
+                sx={(t) => ({ width: '100%', justifyContent: 'flex-start', gap: 1, px: 1.5, py: 0.5, textAlign: 'left', fontFamily: 'inherit', '&:hover': { bgcolor: t.palette.action.hover } })}
               >
                 <Avatar src={f.avatarUrl || undefined} sx={{ width: 26, height: 26, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>{f.name?.[0]?.toUpperCase()}</Avatar>
                 <Box sx={{ minWidth: 0, flex: 1 }}>

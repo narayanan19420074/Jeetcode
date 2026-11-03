@@ -33,7 +33,7 @@ function RuleSection({ rule, index }) {
         <Icon sx={{ fontSize: FONT_SIZES.display, color: rule.highlight ? 'warning.main' : 'primary.main' }} />
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }}>{index + 1}. {rule.title}</Typography>
       </Box>
-      <Box component="ol" sx={{ m: 0, pl: 2.75, display: 'grid', gap: 0.9 }}>
+      <Box component="ol" sx={{ m: 0, pl: 3, display: 'grid', gap: 1 }}>
         {rule.items.map((text) => (
           <Typography key={text} component="li" variant="body2" sx={{ lineHeight: 1.6, '&::marker': { fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary' } }}>{text}</Typography>
         ))}
@@ -192,7 +192,7 @@ export default function ContestPage({ embedded = false }) {
               <FormControlLabel
                 control={<Checkbox checked={accepted} onChange={(e) => setAccepted(e.target.checked)} />}
                 label={<Typography variant="body2">I have read the rules above. I will not use AI or any outside help, and I accept that cheating means disqualification and loss of any prize.</Typography>}
-                sx={{ alignItems: 'flex-start', m: 0, mb: 1.5, '& .MuiCheckbox-root': { pt: 0.25 } }}
+                sx={{ alignItems: 'flex-start', m: 0, mb: 1.5, '& .MuiCheckbox-root': { pt: 0.5 } }}
               />
               <Button variant="contained" disableElevation disabled={!accepted || busy} onClick={() => run(contestApi.apply, 'You are in!')} sx={{ fontWeight: FONT_WEIGHTS.bold, px: 4 }}>
                 {busy ? 'Applying…' : 'Apply for the contest'}

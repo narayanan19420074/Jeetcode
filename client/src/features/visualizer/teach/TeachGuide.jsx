@@ -10,7 +10,7 @@ import VolumeOffRoundedIcon from '@mui/icons-material/VolumeOffRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { runTour } from './teachScript';
 import { speak, splitSentences, toSpoken, warmUpVoices, cancelSpeech, speechSupported } from './speech';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // Blip's guided tour of the Algorithm Visualizer.
 //
@@ -392,9 +392,9 @@ export default function TeachGuide({ page, onClose }) {
             width: compact ? 'auto' : BUBBLE_W,
             flex: compact ? 1 : 'none',
             mb: 1.5,
-            px: 1.75,
-            py: 1.25,
-            borderRadius: 3,
+            px: 2,
+            py: 1.5,
+            borderRadius: RADII_PX.card,
             bgcolor: dark ? COLOR_PALETTE.slate[900] : COLOR_PALETTE.white,
             color: 'text.primary',
             border: `1.5px solid ${accent}`,
@@ -416,7 +416,7 @@ export default function TeachGuide({ page, onClose }) {
             },
           }}
         >
-          <Typography variant="caption" sx={{ display: 'block', fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.08em', color: dark ? accent : COLOR_PALETTE.emerald[700], mb: 0.25 }}>
+          <Typography variant="caption" sx={{ display: 'block', fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.08em', color: dark ? accent : COLOR_PALETTE.emerald[700], mb: 0.5 }}>
             BLIP
           </Typography>
           <Typography variant="body2" sx={{ lineHeight: 1.5, fontSize: FONT_SIZES.bodyLg }}>
@@ -451,7 +451,7 @@ export default function TeachGuide({ page, onClose }) {
         height: rect.height + PAD * 2,
         transform: `translate(${Math.round(rect.left - PAD)}px, ${Math.round(rect.top - PAD)}px)`,
         transition: reduce ? 'none' : 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), width 0.5s cubic-bezier(0.22, 1, 0.36, 1), height 0.5s cubic-bezier(0.22, 1, 0.36, 1)',
-        borderRadius: '14px',
+        borderRadius: RADII_PX.card,
         border: `2px solid ${accent}`,
         boxShadow: `0 0 0 100vmax ${withAlpha(COLOR_PALETTE.slate[950], 0.5)}`,
         animation: reduce ? 'none' : `${pulse} 1.8s ease-in-out infinite`,
@@ -471,10 +471,10 @@ export default function TeachGuide({ page, onClose }) {
         ...(compact ? { top: 8 } : { bottom: 16 }),
         display: 'flex',
         alignItems: 'center',
-        gap: 0.25,
-        px: 0.75,
+        gap: 0.5,
+        px: 1,
         py: 0.5,
-        borderRadius: 99,
+        borderRadius: RADII_PX.pill,
         bgcolor: dark ? withAlpha(COLOR_PALETTE.slate[900], 0.96) : withAlpha(COLOR_PALETTE.white, 0.97),
         border: '1px solid',
         borderColor: 'divider',
@@ -482,7 +482,7 @@ export default function TeachGuide({ page, onClose }) {
         backdropFilter: 'blur(8px)',
       }}
     >
-      <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: dark ? accent : COLOR_PALETTE.emerald[700], px: 1.25, letterSpacing: '0.06em' }}>
+      <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: dark ? accent : COLOR_PALETTE.emerald[700], px: 1.5, letterSpacing: '0.06em' }}>
         {finished ? 'DONE' : paused ? 'PAUSED' : 'TEACHING'}
       </Typography>
       <Tooltip title={paused ? 'Resume' : 'Pause'}>

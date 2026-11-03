@@ -36,7 +36,7 @@ import { acceptFriendInvite } from './friendsSlice';
 import { PersonAvatar, statusInfo, timeAgo } from './friendsUi';
 import { previewOf, shortTime } from './friendsKit';
 import ActivityFeed from './ActivityFeed';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // Phone layout of the Friends page in the Library look (same as the phone Problems, Home and You pages):
 // Roboto type, warm surface, 16px page padding, 40px icon buttons, centred header tile, 18px section titles,
@@ -143,11 +143,11 @@ function FriendRow({ f, last, myId, online, unread, fav, onOpen }) {
       <ButtonBase
         onClick={onOpen}
         aria-label={`Chat with ${f.name}${unread ? `, ${unread} unread` : ''}`}
-        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: 1.25, px: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
+        sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, py: 1.5, px: 0.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
       >
         <PersonAvatar person={f} size={48} online={online} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
             <Typography noWrap sx={{ fontWeight: unread ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, flex: 1, minWidth: 0 }}>
               {f.name}
             </Typography>
@@ -156,13 +156,13 @@ function FriendRow({ f, last, myId, online, unread, fav, onOpen }) {
               <Typography sx={{ flexShrink: 0, fontSize: FONT_SIZES.caption, fontWeight: unread ? FONT_WEIGHTS.bold : FONT_WEIGHTS.regular, color: unread ? ACCENT : 'var(--lib-muted)' }}>{shortTime(last.at)}</Typography>
             )}
           </Stack>
-          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, mt: 0.2 }}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5, mt: 0.5 }}>
             {mine && last.kind === 'text' && (last.read ? <DoneAllRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: ACCENT, flexShrink: 0 }} /> : <DoneRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'var(--lib-muted)', flexShrink: 0 }} />)}
             <Typography noWrap sx={{ flex: 1, minWidth: 0, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, fontWeight: unread ? FONT_WEIGHTS.medium : FONT_WEIGHTS.regular, color: !last && st.live ? SUCCESS : unread ? 'var(--lib-text)' : 'var(--lib-muted)' }}>
               {preview}
             </Typography>
             {unread > 0 && (
-              <Typography component="span" aria-hidden sx={{ flexShrink: 0, minWidth: 22, height: 22, px: 0.75, borderRadius: 11, display: 'grid', placeItems: 'center', bgcolor: ACCENT, color: COLOR_PALETTE.white, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
+              <Typography component="span" aria-hidden sx={{ flexShrink: 0, minWidth: 22, height: 22, px: 1, borderRadius: RADII_PX.pill, display: 'grid', placeItems: 'center', bgcolor: ACCENT, color: COLOR_PALETTE.white, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>
                 {unread > 99 ? '99+' : unread}
               </Typography>
             )}
@@ -175,7 +175,7 @@ function FriendRow({ f, last, myId, online, unread, fav, onOpen }) {
 
 function PersonRow({ person, rank, sub, action }) {
   return (
-    <Stack direction="row" sx={{ alignItems: 'center', gap: '12px', py: 1.25, px: 0.5, minHeight: 68, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
+    <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1.5, px: 0.5, minHeight: 68, borderBottom: '1px solid', borderColor: 'var(--lib-divider)', '&:last-of-type': { borderBottom: 'none' } }}>
       {rank != null && (
         <Typography sx={{ width: 28, flexShrink: 0, textAlign: 'center', fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums', color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'var(--lib-muted)' }}>{rank}</Typography>
       )}
@@ -210,7 +210,7 @@ function InviteBanner({ handle, onDone, run, busy }) {
     };
   }, [handle]);
 
-  if (state.loading) return <Skeleton variant="rounded" height={120} sx={{ mt: 1.5, borderRadius: '20px' }} />;
+  if (state.loading) return <Skeleton variant="rounded" height={120} sx={{ mt: 1.5, borderRadius: RADII_PX.card }} />;
   if (state.error) return <Alert severity="warning" onClose={onDone} sx={{ mt: 1.5 }}>{state.error}</Alert>;
   if (state.isSelf) return <Alert severity="info" onClose={onDone} sx={{ mt: 1.5 }}>This is your own invite link.</Alert>;
   if (state.relation === 'friends') return <Alert severity="success" onClose={onDone} sx={{ mt: 1.5 }}>You and @{state.user.handle} are already friends.</Alert>;
@@ -221,7 +221,7 @@ function InviteBanner({ handle, onDone, run, busy }) {
 
   return (
     <Box
-      sx={{ mt: 1.5, p: 2, borderRadius: '20px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
+      sx={{ mt: 1.5, p: 2, borderRadius: RADII_PX.card, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' }}
     >
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
         <PersonAvatar person={state.user} size={48} />
@@ -347,7 +347,7 @@ export default function MobileFriends({
       )}
       {global.hasMore && (
         <Box sx={{ textAlign: 'center', pt: 1.5 }}>
-          <Button variant="outlined" onClick={global.loadMore} disabled={global.loading} sx={{ borderRadius: 999, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, color: 'var(--lib-text)', borderColor: 'var(--lib-divider)' }}>
+          <Button variant="outlined" onClick={global.loadMore} disabled={global.loading} sx={{ borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, color: 'var(--lib-text)', borderColor: 'var(--lib-divider)' }}>
             {global.loading ? 'Loading…' : 'Show more players'}
           </Button>
         </Box>
@@ -388,7 +388,7 @@ export default function MobileFriends({
                 person={r.user}
                 sub={`@${r.user.handle} · ${timeAgo(r.createdAt)}`}
                 action={
-                  <Stack direction="row" sx={{ gap: 0.75 }}>
+                  <Stack direction="row" sx={{ gap: 1 }}>
                     <IconButton disabled={busy === r.requestId} onClick={() => onAccept(r.requestId, r.requestId)} aria-label={`Accept request from ${r.user.name}`} sx={tintIcon(SUCCESS)}>
                       <CheckRoundedIcon />
                     </IconButton>
@@ -451,7 +451,7 @@ export default function MobileFriends({
             <SectionTitle first>Online now</SectionTitle>
             <Box sx={scrollRow}>
               {onlineFriends.map((p) => (
-                <ButtonBase key={p.userId} onClick={() => onOpenChat(p.userId)} aria-label={`Chat with ${p.name}, online`} sx={{ flexDirection: 'column', gap: 0.6, width: 64, flexShrink: 0, fontFamily: 'inherit' }}>
+                <ButtonBase key={p.userId} onClick={() => onOpenChat(p.userId)} aria-label={`Chat with ${p.name}, online`} sx={{ flexDirection: 'column', gap: 0.5, width: 64, flexShrink: 0, fontFamily: 'inherit' }}>
                   <PersonAvatar person={p} size={52} online />
                   <Typography noWrap color="var(--lib-muted)" sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, width: '100%', textAlign: 'center' }}>
                     {p.name.split(' ')[0]}

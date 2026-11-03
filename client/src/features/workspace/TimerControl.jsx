@@ -10,7 +10,7 @@ import { formatClock } from './useStopwatch';
 import { WsIconButton } from './wsUi';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Practice timer (personal, not shared): tap the clock to start, tap the time to pause.
 // lib: the phone workspace look (Library style: 40px round buttons and a 40px time pill).
@@ -30,10 +30,10 @@ export default function TimerControl({ sw, size = 'md', lib = false }) {
           aria-label={sw.running ? 'Pause timer' : 'Resume timer'}
           sx={{
             height: 40,
-            px: '14px',
-            gap: 0.75,
+            px: 2,
+            gap: 1,
             flexShrink: 0,
-            borderRadius: 999,
+            borderRadius: RADII_PX.pill,
             fontFamily: 'inherit',
             fontSize: FONT_SIZES.title,
             fontWeight: FONT_WEIGHTS.medium,
@@ -62,14 +62,14 @@ export default function TimerControl({ sw, size = 'md', lib = false }) {
     );
   }
   return (
-    <Stack direction="row" sx={{ alignItems: 'center', gap: 0.25 }}>
+    <Stack direction="row" sx={{ alignItems: 'center', gap: 0.5 }}>
       <ButtonBase
         onClick={sw.running ? sw.pause : sw.start}
         aria-label={sw.running ? 'Pause timer' : 'Resume timer'}
         sx={(t) => ({
           height: h,
-          px: 1.1,
-          gap: 0.6,
+          px: 1,
+          gap: 0.5,
           borderRadius: `${WS.radius}px`,
           color: sw.running ? t.palette.primary.main : t.palette.text.secondary,
           bgcolor: sw.running ? alpha(t.palette.primary.main, 0.12) : wsSurface(t).raised,

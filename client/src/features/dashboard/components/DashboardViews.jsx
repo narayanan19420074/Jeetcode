@@ -34,7 +34,7 @@ import { prepApi } from '../../../api/prepApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, surface } from '../dashboardUtils';
 import { NameDialog } from './ListDialogs';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 
 const ViewHeader = ({ title, subtitle, trailing }) => (
@@ -100,7 +100,7 @@ export function StudyPlanView() {
       {error && (
         <Alert
           severity="error"
-          sx={{ borderRadius: '12px' }}
+          sx={{ borderRadius: RADII_PX.card }}
           action={
             <Button color="inherit" size="small" onClick={load}>
               Try again
@@ -114,7 +114,7 @@ export function StudyPlanView() {
       {!error && items === null && (
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, minmax(0, 1fr))' }, gap: 1.5 }}>
           {[0, 1, 2, 3].map((i) => (
-            <Skeleton key={i} variant="rounded" height={150} sx={{ borderRadius: '14px' }} />
+            <Skeleton key={i} variant="rounded" height={150} sx={{ borderRadius: RADII_PX.card }} />
           ))}
         </Box>
       )}
@@ -134,7 +134,7 @@ export function StudyPlanView() {
                 sx={[
                   surface,
                   (t) => ({
-                    p: 2.25,
+                    p: 2.5,
                     display: 'flex',
                     gap: 2,
                     alignItems: 'center',
@@ -144,7 +144,7 @@ export function StudyPlanView() {
               >
                 <ProgressRing value={c.readiness ?? 0} max={100} color={accent} size={84} strokeWidth={8} />
                 <Box sx={{ minWidth: 0, flex: 1 }}>
-                  <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 0.25 }}>
+                  <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 0.5 }}>
                     <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }} noWrap>
                       {c.name}
                     </Typography>
@@ -261,11 +261,11 @@ export function ListView({ list, onRemove, onRename, onDelete, onBrowse }) {
                   display: 'flex',
                   alignItems: 'center',
                   gap: 1.5,
-                  px: 2.25,
-                  py: 1.35,
+                  px: 2.5,
+                  py: 1.5,
                   color: 'inherit',
                   textDecoration: 'none',
-                  '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: -2, borderRadius: '8px' },
+                  '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: -2, borderRadius: RADII_PX.control },
                 }}
               >
                 <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, minWidth: 0 }}>

@@ -2,172 +2,21 @@
   "app/uiSlice.js": {
     "fontSize": 1
   },
-  "components/Navbar.jsx": {
-    "borderRadius": 9
-  },
   "components/ProblemExplorer.jsx": {
-    "borderRadius": 9
-  },
-  "features/admin/AdminLayout.jsx": {
-    "borderRadius": 1
-  },
-  "features/admin/components/StatCard.jsx": {
-    "borderRadius": 1
-  },
-  "features/admin/pages/AdminAptitudePage.jsx": {
     "borderRadius": 2
-  },
-  "features/admin/pages/AdminAuditLogPage.jsx": {
-    "borderRadius": 1
-  },
-  "features/admin/pages/AdminFeedbackPage.jsx": {
-    "borderRadius": 1
-  },
-  "features/admin/pages/AdminLicensesPage.jsx": {
-    "borderRadius": 3
-  },
-  "features/admin/pages/AdminOverviewPage.jsx": {
-    "borderRadius": 1
-  },
-  "features/admin/pages/AdminProblemsPage.jsx": {
-    "borderRadius": 1
-  },
-  "features/admin/pages/AdminStorePage.jsx": {
-    "borderRadius": 6
-  },
-  "features/admin/pages/AdminSupportChatPage.jsx": {
-    "borderRadius": 3
-  },
-  "features/admin/pages/AdminUsersPage.jsx": {
-    "borderRadius": 1
   },
   "features/aptitude/AptitudeLearnPage.jsx": {
-    "fontSize": 1,
-    "borderRadius": 10
-  },
-  "features/aptitude/AptitudePatternDetailPage.jsx": {
-    "borderRadius": 5
-  },
-  "features/aptitude/AptitudePracticePage.jsx": {
-    "borderRadius": 1
-  },
-  "features/aptitude/AptitudePracticeQuestionPage.jsx": {
-    "borderRadius": 5
-  },
-  "features/aptitude/AptitudeResultsPage.jsx": {
-    "borderRadius": 13
-  },
-  "features/aptitude/AptitudeTestInstructionsPage.jsx": {
-    "borderRadius": 3
-  },
-  "features/aptitude/AptitudeTestPage.jsx": {
-    "borderRadius": 7
-  },
-  "features/aptitude/ScratchPad.jsx": {
-    "borderRadius": 4
-  },
-  "features/aptitude/components/HeroPanel.jsx": {
-    "borderRadius": 1
-  },
-  "features/aptitude/components/LessonWidgets.jsx": {
-    "borderRadius": 6
-  },
-  "features/aptitude/components/MobileAptitude.jsx": {
-    "borderRadius": 5
-  },
-  "features/aptitude/components/MobilePatternDetail.jsx": {
-    "borderRadius": 4
-  },
-  "features/aptitude/components/MobilePractice.jsx": {
-    "borderRadius": 6
-  },
-  "features/aptitude/components/MobilePracticeQuestion.jsx": {
-    "borderRadius": 1
-  },
-  "features/aptitude/components/QuestionStimulus.jsx": {
-    "borderRadius": 1
+    "fontSize": 1
   },
   "features/aptitude/components/RoadMap.jsx": {
-    "borderRadius": 12
-  },
-  "features/aptitude/desktop/AptitudeSummary.jsx": {
-    "borderRadius": 3
-  },
-  "features/aptitude/desktop/TrackPicker.jsx": {
-    "borderRadius": 2
-  },
-  "features/auth/AdminLoginPage.jsx": {
-    "borderRadius": 1
-  },
-  "features/auth/AuthShell.jsx": {
-    "borderRadius": 2
+    "spacingPx": 4
   },
   "features/auth/LoginPage.jsx": {
-    "borderRadius": 2
-  },
-  "features/contest/ContestCard.jsx": {
     "borderRadius": 1
-  },
-  "features/contest/ContestTabs.jsx": {
-    "borderRadius": 19
   },
   "features/contest/GlobalTop.jsx": {
     "fontSize": 1,
-    "borderRadius": 7
-  },
-  "features/contest/MobileContest.jsx": {
-    "borderRadius": 9
-  },
-  "features/contest/WinnersPanel.jsx": {
-    "borderRadius": 11
-  },
-  "features/dashboard/DashboardPage.jsx": {
-    "borderRadius": 4
-  },
-  "features/dashboard/components/DashboardViews.jsx": {
-    "borderRadius": 3
-  },
-  "features/dashboard/components/ListDialogs.jsx": {
-    "borderRadius": 1
-  },
-  "features/dashboard/components/MobileExplore.jsx": {
-    "borderRadius": 4
-  },
-  "features/dashboard/components/MobileHome.jsx": {
-    "borderRadius": 6
-  },
-  "features/dashboard/components/MobileProblems.jsx": {
-    "borderRadius": 11
-  },
-  "features/dashboard/components/NqtExploreCard.jsx": {
-    "borderRadius": 9
-  },
-  "features/dashboard/components/PromoCard.jsx": {
-    "borderRadius": 2
-  },
-  "features/dashboard/components/SidebarParts.jsx": {
-    "borderRadius": 2
-  },
-  "features/dashboard/components/library/FilterControl.jsx": {
-    "borderRadius": 1
-  },
-  "features/dashboard/components/library/LibraryToolbar.jsx": {
-    "borderRadius": 1
-  },
-  "features/dashboard/components/library/ProblemRow.jsx": {
-    "borderRadius": 1
-  },
-  "features/dashboard/components/library/SortControl.jsx": {
-    "borderRadius": 1
-  },
-  "features/dashboard/components/library/libraryStyles.js": {
-    "borderRadius": 10
-  },
-  "features/dashboard/components/libraryDesktopStyles.js": {
-    "borderRadius": 2
-  },
-  "features/dashboard/components/libraryStyle.jsx": {
-    "borderRadius": 8
+    "spacingPx": 1
   },
   "features/dashboard/components/rail/DayCell.jsx": {
     "fontSize": 1
@@ -175,374 +24,65 @@
   "features/dashboard/components/rail/MonthBadge.jsx": {
     "fontSize": 2
   },
-  "features/dashboard/components/rail/StreakCalendarCard.jsx": {
-    "borderRadius": 1
-  },
-  "features/dashboard/dashboardUtils.js": {
-    "borderRadius": 1
-  },
-  "features/dashboard/explore/desktop/CompanyGrid.jsx": {
-    "borderRadius": 2
-  },
-  "features/dashboard/explore/desktop/ToolCards.jsx": {
-    "borderRadius": 1
-  },
-  "features/dashboard/explore/desktop/TopicChips.jsx": {
-    "borderRadius": 2
-  },
-  "features/dashboard/problems/desktop/DifficultyBars.jsx": {
-    "borderRadius": 2
-  },
   "features/exams/ExamsPage.jsx": {
-    "borderRadius": 16
-  },
-  "features/friends/ActivityFeed.jsx": {
-    "borderRadius": 2
-  },
-  "features/friends/FriendChat.jsx": {
-    "borderRadius": 14
-  },
-  "features/friends/FriendProfileDialog.jsx": {
-    "borderRadius": 20
+    "spacingPx": 1
   },
   "features/friends/FriendsView.jsx": {
-    "fontSize": 3,
-    "borderRadius": 2
-  },
-  "features/friends/MobileFriends.jsx": {
-    "borderRadius": 4
-  },
-  "features/friends/friendsKit.jsx": {
-    "borderRadius": 11
-  },
-  "features/friends/friendsUi.jsx": {
-    "borderRadius": 2
-  },
-  "features/help/HelpPage.jsx": {
-    "borderRadius": 2
-  },
-  "features/help/MobileHelp.jsx": {
-    "borderRadius": 4
+    "fontSize": 3
   },
   "features/help/SupportChat.jsx": {
-    "borderRadius": 3
+    "borderRadius": 1
   },
   "features/home/ContestBand.jsx": {
-    "fontSize": 1,
-    "borderRadius": 1
-  },
-  "features/home/HomePage.jsx": {
-    "borderRadius": 8
-  },
-  "features/home/art/ChaosToOrder.jsx": {
-    "borderRadius": 1
-  },
-  "features/home/art/FeatureVisuals.jsx": {
-    "borderRadius": 21
+    "fontSize": 1
   },
   "features/home/art/HeroDemo.jsx": {
-    "fontSize": 1,
-    "borderRadius": 10
+    "fontSize": 1
   },
   "features/leaderboard/EmpireCard.jsx": {
-    "borderRadius": 25
-  },
-  "features/leaderboard/LeaderboardView.jsx": {
-    "borderRadius": 4
-  },
-  "features/leaderboard/MobileLeaderboard.jsx": {
-    "borderRadius": 15
-  },
-  "features/leaderboard/lbPanel.jsx": {
-    "borderRadius": 19
-  },
-  "features/leaderboard/lbShared.jsx": {
-    "borderRadius": 2
-  },
-  "features/learn/LearnHomePage.jsx": {
-    "borderRadius": 1
+    "spacingPx": 2
   },
   "features/learn/LearnTopicPage.jsx": {
     "fontSize": 1,
-    "borderRadius": 12
-  },
-  "features/learn/PracticePage.jsx": {
-    "borderRadius": 1
-  },
-  "features/learn/animations/AveragesAnimations.jsx": {
-    "borderRadius": 5
-  },
-  "features/learn/animations/AveragesVisuals.jsx": {
-    "borderRadius": 1
-  },
-  "features/learn/animations/LcmHcfAnimations.jsx": {
-    "borderRadius": 2
-  },
-  "features/learn/animations/PercentageAnimations.jsx": {
-    "borderRadius": 2
-  },
-  "features/learn/animations/ProbabilityAnimations.jsx": {
-    "borderRadius": 3
-  },
-  "features/learn/animations/ProfitLossAnimations.jsx": {
-    "borderRadius": 3
-  },
-  "features/learn/animations/RatioProportionAnimations.jsx": {
-    "borderRadius": 3
-  },
-  "features/learn/animations/SimpleCompoundInterestAnimations.jsx": {
-    "borderRadius": 3
-  },
-  "features/learn/animations/TimeSpeedDistanceAnimations.jsx": {
-    "borderRadius": 3
-  },
-  "features/learn/animations/TimeWorkAnimations.jsx": {
-    "borderRadius": 3
+    "spacingPx": 3
   },
   "features/learn/components/LearnSidebar.jsx": {
-    "fontSize": 1,
-    "borderRadius": 1
-  },
-  "features/learn/components/MicroCheck.jsx": {
-    "borderRadius": 3
-  },
-  "features/learn/visuals/MissingValueVisual.jsx": {
-    "borderRadius": 7
-  },
-  "features/mock/MockExamPage.jsx": {
-    "borderRadius": 5
-  },
-  "features/mock/MockHubPage.jsx": {
-    "borderRadius": 6
-  },
-  "features/mock/MockResultPage.jsx": {
-    "borderRadius": 6
+    "fontSize": 1
   },
   "features/notifications/NotificationBell.jsx": {
-    "borderRadius": 10
-  },
-  "features/prep/CompanyQuestRoadmap.jsx": {
-    "borderRadius": 9
-  },
-  "features/prep/MobileCompanyRoadmap.jsx": {
-    "borderRadius": 10
-  },
-  "features/prep/MobilePrepCompanies.jsx": {
-    "borderRadius": 2
-  },
-  "features/prep/PrepRoadmapPage.jsx": {
-    "borderRadius": 5
-  },
-  "features/prep/SectionRoadmap.jsx": {
-    "borderRadius": 6
+    "spacingPx": 1
   },
   "features/prep/desktop/CompaniesList.jsx": {
-    "borderRadius": 1
-  },
-  "features/prep/desktop/CompaniesSearch.jsx": {
-    "borderRadius": 1
+    "spacingPx": 1
   },
   "features/profile/AchievementBadge.jsx": {
     "fontSize": 1
   },
-  "features/profile/MobileYou.jsx": {
-    "borderRadius": 8
-  },
-  "features/profile/YouPage.jsx": {
-    "borderRadius": 4
-  },
-  "features/quests/MobileQuests.jsx": {
-    "borderRadius": 16
-  },
-  "features/quests/QuestsView.jsx": {
-    "borderRadius": 1
-  },
-  "features/room/AptitudeRoom.jsx": {
-    "borderRadius": 6
-  },
-  "features/room/FloatingCall.jsx": {
-    "borderRadius": 4
-  },
-  "features/room/InviteFriendsDialog.jsx": {
-    "borderRadius": 2
-  },
   "features/room/PairLobbyPage.jsx": {
-    "borderRadius": 11
-  },
-  "features/room/RoomPage.jsx": {
     "borderRadius": 1
-  },
-  "features/room/RoomParts.jsx": {
-    "borderRadius": 3
-  },
-  "features/settings/components/SettingsUi.jsx": {
-    "borderRadius": 2
-  },
-  "features/settings/desktop/SettingsSidebar.jsx": {
-    "borderRadius": 1
-  },
-  "features/settings/desktop/SidebarItem.jsx": {
-    "borderRadius": 2
-  },
-  "features/settings/mobile/PhoneMenu.jsx": {
-    "borderRadius": 2
-  },
-  "features/settings/sections/AppearanceSection.jsx": {
-    "borderRadius": 10
-  },
-  "features/settings/sections/BillingSection.jsx": {
-    "borderRadius": 1
-  },
-  "features/settings/sections/EditorSection.jsx": {
-    "borderRadius": 1
-  },
-  "features/settings/sections/PasswordSection.jsx": {
-    "borderRadius": 1
-  },
-  "features/settings/sections/SecurityLogSection.jsx": {
-    "borderRadius": 1
-  },
-  "features/settings/sections/SessionsSection.jsx": {
-    "borderRadius": 1
-  },
-  "features/store/MobileAccount.jsx": {
-    "borderRadius": 3
-  },
-  "features/store/MobileStore.jsx": {
-    "borderRadius": 8
-  },
-  "features/store/PlansPage.jsx": {
-    "borderRadius": 4
-  },
-  "features/store/common/StoreBadge.jsx": {
-    "borderRadius": 1
-  },
-  "features/store/desktop/CourseStrip.jsx": {
-    "borderRadius": 3
-  },
-  "features/store/desktop/ItemGrid.jsx": {
-    "borderRadius": 1
-  },
-  "features/store/desktop/StoreHeader.jsx": {
-    "borderRadius": 1
-  },
-  "features/store/desktop/StoreItemCard.jsx": {
-    "borderRadius": 1
-  },
-  "features/studyplan/FriendPicker.jsx": {
-    "borderRadius": 1
-  },
-  "features/studyplan/MobileStudyPlan.jsx": {
-    "borderRadius": 10
-  },
-  "features/studyplan/MonthCalendar.jsx": {
-    "borderRadius": 1
-  },
-  "features/studyplan/PlanBuilder.jsx": {
-    "borderRadius": 3
-  },
-  "features/studyplan/PlanWorkspace.jsx": {
-    "borderRadius": 5
   },
   "features/studyplan/StudyPlannerView.jsx": {
-    "borderRadius": 13
+    "spacingPx": 1
   },
   "features/studyplan/planUtils.jsx": {
-    "fontSize": 1,
-    "borderRadius": 5
-  },
-  "features/visualizer/VisualizerPage.jsx": {
-    "borderRadius": 2
-  },
-  "features/visualizer/components/ComplexityPanel.jsx": {
-    "borderRadius": 1
-  },
-  "features/visualizer/components/VisualizerCanvas.jsx": {
-    "borderRadius": 2
-  },
-  "features/visualizer/components/VisualizerDashboardCard.jsx": {
-    "borderRadius": 2
-  },
-  "features/visualizer/teach/TeachGuide.jsx": {
-    "borderRadius": 3
-  },
-  "features/workspace/AiGlow.jsx": {
-    "borderRadius": 1
-  },
-  "features/workspace/AiLauncher.jsx": {
-    "borderRadius": 2
-  },
-  "features/workspace/AiLiveOverlay.jsx": {
-    "borderRadius": 2
-  },
-  "features/workspace/ConsolePanel.jsx": {
-    "borderRadius": 3
-  },
-  "features/workspace/EditorScroller.jsx": {
-    "borderRadius": 2
-  },
-  "features/workspace/GuestBanner.jsx": {
-    "borderRadius": 1
+    "fontSize": 1
   },
   "features/workspace/LanguageSelect.jsx": {
-    "borderRadius": 2
-  },
-  "features/workspace/MobileKeyBar.jsx": {
-    "borderRadius": 1
-  },
-  "features/workspace/PhoneHeader.jsx": {
-    "borderRadius": 1
-  },
-  "features/workspace/PhoneProblemDescription.jsx": {
-    "borderRadius": 4
+    "spacingPx": 2
   },
   "features/workspace/PhoneProblemList.jsx": {
-    "borderRadius": 2
-  },
-  "features/workspace/ProblemDescription.jsx": {
-    "borderRadius": 3
-  },
-  "features/workspace/ProblemSheet.jsx": {
-    "borderRadius": 1
-  },
-  "features/workspace/ProblemSkeleton.jsx": {
-    "borderRadius": 1
-  },
-  "features/workspace/SplitHandle.jsx": {
-    "borderRadius": 1
+    "spacingPx": 1
   },
   "features/workspace/TimerControl.jsx": {
-    "fontSize": 1,
-    "borderRadius": 1
-  },
-  "features/workspace/WorkspacePage.jsx": {
-    "borderRadius": 1
-  },
-  "features/workspace/community/CommentSection.jsx": {
-    "borderRadius": 1
+    "fontSize": 1
   },
   "features/workspace/community/CommunityBits.jsx": {
-    "fontSize": 1,
-    "borderRadius": 8
-  },
-  "features/workspace/community/DiscussionPanel.jsx": {
-    "borderRadius": 3
+    "fontSize": 1
   },
   "features/workspace/community/Markdown.jsx": {
-    "fontSize": 1,
-    "borderRadius": 4
-  },
-  "features/workspace/community/SolutionsPanel.jsx": {
-    "borderRadius": 2
-  },
-  "features/workspace/hoverScrollbars.js": {
-    "borderRadius": 1
-  },
-  "features/workspace/phoneStyle.jsx": {
-    "borderRadius": 1
+    "fontSize": 1
   },
   "features/workspace/wsUi.jsx": {
-    "fontSize": 2,
-    "borderRadius": 2
+    "fontSize": 2
   }
 }

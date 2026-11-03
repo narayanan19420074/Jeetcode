@@ -3,7 +3,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../libraryStyle';
 import { surface, tint } from '../../dashboardUtils';
 import { DIFF_W, PAD_X, STAR_W, TOPIC_ROW_H } from './libraryConstants';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../../app/design/designTokens';
 
 // Two looks for the same problem library. "classic" is the original page style (used by the Problems page).
 // "cream" is the phone Library look: cream pills and panels, accent when selected, tinted difficulty tags.
@@ -16,10 +16,10 @@ const ACCENT_HOVER = `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.blac
 const classicPills = (t) => ({
   pill: (on) => ({
     flexShrink: 0,
-    gap: 0.9,
+    gap: 1,
     px: 2,
-    py: 0.85,
-    borderRadius: 999,
+    py: 1,
+    borderRadius: RADII_PX.pill,
     fontFamily: 'inherit',
     border: `1px solid ${on ? 'transparent' : t.palette.divider}`,
     bgcolor: on ? t.palette.text.primary : alpha(t.palette.background.paper, 0.6),
@@ -32,20 +32,20 @@ const classicPills = (t) => ({
 });
 
 const classicTopics = (t) => ({
-  topicGap: { columnGap: 2, rowGap: 0.25 },
+  topicGap: { columnGap: 2, rowGap: 0.5 },
   topicChip: () => ({
-    gap: 0.75,
+    gap: 1,
     height: TOPIC_ROW_H,
     px: 0.5,
-    borderRadius: '8px',
+    borderRadius: RADII_PX.control,
     fontFamily: 'inherit',
     '&:hover': { bgcolor: t.palette.action.hover },
     '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}` },
   }),
   topicLabel: (on) => ({ fontWeight: on ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, color: on ? 'primary.main' : 'text.primary', whiteSpace: 'nowrap' }),
   topicCount: (on) => ({
-    px: 0.75,
-    borderRadius: 999,
+    px: 1,
+    borderRadius: RADII_PX.pill,
     fontSize: FONT_SIZES.micro,
     fontWeight: FONT_WEIGHTS.bold,
     lineHeight: 1.7,
@@ -56,18 +56,18 @@ const classicTopics = (t) => ({
 });
 
 const classicToolbar = (t) => ({
-  search: { flex: 1, minWidth: 0, maxWidth: 420, '& .MuiOutlinedInput-root': { borderRadius: 999 } },
-  toolButton: { border: `1px solid ${t.palette.divider}`, borderRadius: '10px' },
+  search: { flex: 1, minWidth: 0, maxWidth: 420, '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill } },
+  toolButton: { border: `1px solid ${t.palette.divider}`, borderRadius: RADII_PX.control },
 });
 
 const classicHead = (t) => ({
   headRow: {
     display: 'flex',
     alignItems: 'center',
-    gap: '12px',
+    gap: 1.5,
     height: 38,
     pl: PAD_X,
-    pr: { xs: '12px', sm: `calc(18px + ${STAR_W}px)` },
+    pr: { xs: 1.5, sm: `calc(18px + ${STAR_W}px)` },
     borderBottom: `1px solid ${t.palette.divider}`,
     bgcolor: alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.03 : 0.025),
   },
@@ -86,7 +86,7 @@ const classicTable = (t) => ({
   card: surface(t),
   ...classicHead(t),
   row: classicRow(t),
-  rowLink: { py: 1.35 },
+  rowLink: { py: 1.5 },
   title: { fontWeight: FONT_WEIGHTS.semibold, minWidth: 0, fontSize: FONT_SIZES.body },
   acceptance: {},
   difficulty: (color) => ({ width: DIFF_W, textAlign: 'right', flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, color }),
@@ -99,10 +99,10 @@ const classicStyles = (t) => ({ cream: false, ...classicPills(t), ...classicTopi
 const creamPills = (pal) => ({
   pill: (on) => ({
     flexShrink: 0,
-    gap: 0.75,
+    gap: 1,
     height: 34,
-    px: '14px',
-    borderRadius: 999,
+    px: 2,
+    borderRadius: RADII_PX.pill,
     fontFamily: 'inherit',
     bgcolor: on ? LIB_ACCENT : pal.chip,
     color: on ? COLOR_PALETTE.white : pal.chipText,
@@ -115,10 +115,10 @@ const creamPills = (pal) => ({
 const creamTopics = (pal) => ({
   topicGap: { columnGap: 1, rowGap: 1 },
   topicChip: (on) => ({
-    gap: 0.75,
+    gap: 1,
     height: TOPIC_ROW_H,
-    px: '14px',
-    borderRadius: 999,
+    px: 2,
+    borderRadius: RADII_PX.pill,
     fontFamily: 'inherit',
     bgcolor: on ? LIB_ACCENT : pal.chip,
     color: on ? COLOR_PALETTE.white : pal.chipText,
@@ -133,7 +133,7 @@ const creamSearchField = (pal) => ({
   flex: 1,
   minWidth: 0,
   maxWidth: 420,
-  '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, px: '16px' },
+  '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 44, bgcolor: pal.player, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING, px: 2 },
   '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
   '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
   '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: LIB_ACCENT, borderWidth: 1 },
@@ -164,9 +164,9 @@ const creamDifficulty = (color) => ({
   width: DIFF_W,
   flexShrink: 0,
   textAlign: 'center',
-  px: '5px',
-  py: '2px',
-  borderRadius: '8px',
+  px: 0.5,
+  py: 0.5,
+  borderRadius: RADII_PX.control,
   fontSize: FONT_SIZES.bodyLg,
   lineHeight: '20px',
   letterSpacing: LIB_TRACKING,
@@ -178,17 +178,17 @@ const creamHead = (pal) => ({
   headRow: {
     display: 'flex',
     alignItems: 'center',
-    gap: '12px',
+    gap: 1.5,
     height: 40,
     pl: PAD_X,
-    pr: { xs: '12px', sm: `calc(18px + ${STAR_W}px)` },
+    pr: { xs: 1.5, sm: `calc(18px + ${STAR_W}px)` },
     borderBottom: `1px solid ${pal.divider}`,
   },
   headLabel: { fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, color: pal.muted },
 });
 
 const creamTable = (pal) => ({
-  card: { borderRadius: '20px', border: `1px solid ${pal.border}`, bgcolor: pal.chip, boxShadow: 'none' },
+  card: { borderRadius: RADII_PX.card, border: `1px solid ${pal.border}`, bgcolor: pal.chip, boxShadow: 'none' },
   ...creamHead(pal),
   row: creamRow(pal),
   rowLink: { py: 1.5 },

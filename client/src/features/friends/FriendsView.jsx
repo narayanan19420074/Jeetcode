@@ -44,7 +44,7 @@ import ActivityFeed from './ActivityFeed';
 import FriendChat, { ChatPanel } from './FriendChat';
 import MobileFriends, { MobileShell } from './MobileFriends';
 import { FriendProfilePanel } from './FriendProfileDialog';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const SORTS = [['recent', 'Recent chats'], ['online', 'Online first'], ['points', 'Most points'], ['name', 'Name A to Z']];
 const REQUEST_TABS = ['friends', 'requests', 'sent'];
@@ -96,7 +96,7 @@ function InviteBanner({ handle, onDone }) {
     return () => { cancelled = true; };
   }, [handle]);
 
-  if (state.loading) return <Skeleton variant="rounded" height={60} sx={{ borderRadius: '14px' }} />;
+  if (state.loading) return <Skeleton variant="rounded" height={60} sx={{ borderRadius: RADII_PX.card }} />;
   if (state.error) return <Alert severity="warning" onClose={onDone}>{state.error}</Alert>;
   if (state.isSelf) return <Alert severity="info" onClose={onDone}>This is your own invite link.</Alert>;
   if (state.relation === 'friends') return <Alert severity="success" onClose={onDone}>You and @{state.user.handle} are already friends.</Alert>;
@@ -107,7 +107,7 @@ function InviteBanner({ handle, onDone }) {
 
   return (
     <Reveal>
-      <Box sx={[surface, (t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.25, borderColor: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.06) })]}>
+      <Box sx={[surface, (t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.5, borderColor: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.06) })]}>
         <PersonAvatar person={state.user} size={38} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, lineHeight: 1.35 }}>{state.user.name}</Typography>
@@ -282,7 +282,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     if (sentIds.has(p.userId)) {
       return (
         <Tooltip title="Waiting for them to accept">
-          <Box component="span" sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.6, height: 32, px: 1.25, borderRadius: `${WS.radius + 2}px`, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', color: 'text.secondary', bgcolor: wsSurface(t).raised, '& svg': { fontSize: FONT_SIZES.title } })}>
+          <Box component="span" sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.5, height: 32, px: 1.5, borderRadius: `${WS.radius + 2}px`, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', color: 'text.secondary', bgcolor: wsSurface(t).raised, '& svg': { fontSize: FONT_SIZES.title } })}>
             <ScheduleSendRoundedIcon />Request sent
           </Box>
         </Tooltip>
@@ -318,7 +318,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const playerFooter = (
     <>
       {global.rows === null && global.loading && <SkeletonRows count={5} />}
-      {global.error && <Typography sx={{ px: 2, py: 1.25, fontSize: FONT_SIZES.body, color: 'text.secondary' }}>{global.error}</Typography>}
+      {global.error && <Typography sx={{ px: 2, py: 1.5, fontSize: FONT_SIZES.body, color: 'text.secondary' }}>{global.error}</Typography>}
       {global.hasMore && (
         <Box sx={{ textAlign: 'center', py: 1.5 }}>
           <Button size="small" onClick={global.loadMore} disabled={global.loading} sx={{ textTransform: 'none', fontWeight: FONT_WEIGHTS.semibold }}>{global.loading ? 'Loading…' : 'Show more players'}</Button>
@@ -624,7 +624,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
                 value={q}
                 onChange={(e) => setQ(e.target.value.slice(0, 40))}
                 sx={(t) => ({
-                  '& .MuiOutlinedInput-root': { height: 42, borderRadius: '12px', bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.body, transition: 'box-shadow .18s' },
+                  '& .MuiOutlinedInput-root': { height: 42, borderRadius: RADII_PX.card, bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.body, transition: 'box-shadow .18s' },
                   '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: `0 0 0 2px ${alpha(t.palette.primary.main, 0.45)}` },
                   '& fieldset': { border: 'none' },
                 })}
@@ -700,7 +700,7 @@ export default function FriendsView({ isAuthenticated, user, inviteHandle, onCle
       <Box sx={[surface, { p: 4, textAlign: 'center' }]}>
         <PeopleAltRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: 'primary.main' }} />
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 1 }}>Compete with friends</Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.75, mb: 2.5 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 1, mb: 2.5 }}>
           {inviteHandle ? `@${inviteHandle} invited you. Log in or sign up to accept.` : 'Log in to add friends and see them on the leaderboard.'}
         </Typography>
         <Button variant="contained" disableElevation onClick={() => navigate('/login', { state: { from: { pathname: '/dashboard' } } })} sx={{ height: 40, px: 3 }}>

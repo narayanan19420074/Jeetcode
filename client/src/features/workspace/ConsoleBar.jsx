@@ -78,7 +78,7 @@ export default function ConsoleBar({
         )}
         <Box sx={{ flex: 1 }} />
         {isMobile && (
-          <Stack direction="row" sx={{ gap: 0.75, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
+          <Stack direction="row" sx={{ gap: 1, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
             {mobileActions}
           </Stack>
         )}
@@ -97,7 +97,7 @@ export default function ConsoleBar({
       </Stack>
 
       {open && (
-        <Box sx={{ pt: 0.25, flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ pt: 0.5, flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
           {isMobile && canShare && (
             <Box sx={{ px: 1.5, pb: 1 }}>
               <WsButton variant="secondary" onClick={onShare}>

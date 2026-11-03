@@ -34,7 +34,7 @@ export default function PhoneConsoleBar({ open, setOpen, showLabel = true, chip,
       </Stack>
 
       {open && (
-        <Box sx={{ pt: 0.25, flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ pt: 0.5, flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
           {canShare && (
             <Box sx={{ px: 2, pb: 1.5 }}>
               <Button disableElevation onClick={onShare} sx={{ ...libTintBtnSx, bgcolor: pal.bg, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>

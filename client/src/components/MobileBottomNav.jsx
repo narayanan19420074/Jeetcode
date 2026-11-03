@@ -57,7 +57,7 @@ const tabIconSx = (active) => (t) => ({
 });
 
 function NavTab({ to, label, icon: Icon, active }) {
-  const tabSx = { flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0.4, textDecoration: 'none', color: active ? 'text.primary' : 'text.secondary' };
+  const tabSx = { flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0.5, textDecoration: 'none', color: active ? 'text.primary' : 'text.secondary' };
   return (
     <Box component={RouterLink} to={to} aria-current={active ? 'page' : undefined} sx={tabSx}>
       <Box sx={tabIconSx(active)}>

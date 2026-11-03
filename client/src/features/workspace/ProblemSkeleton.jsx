@@ -1,12 +1,13 @@
 import { Box, Skeleton } from '@mui/material';
 import { WS } from './wsTokens';
+import { RADII_PX } from '../../app/design/designTokens';
 
 // Placeholder lines for a problem description that is still loading.
 export function ProblemSkeletonBody() {
   return (
     <Box sx={{ pt: 0.5 }}>
       <Skeleton width="55%" height={32} />
-      <Skeleton variant="rounded" width={72} height={24} sx={{ my: 1.5, borderRadius: 999 }} />
+      <Skeleton variant="rounded" width={72} height={24} sx={{ my: 1.5, borderRadius: RADII_PX.pill }} />
       <Skeleton height={20} />
       <Skeleton height={20} />
       <Skeleton width="80%" height={20} />

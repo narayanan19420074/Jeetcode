@@ -3,7 +3,7 @@ import { Box, IconButton, Stack, Tab, Tabs, TextField, Tooltip, Typography } fro
 import { alpha } from '@mui/material/styles';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import { COLOR_PALETTE, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // Small, dependency-free markdown renderer. It never uses
 // dangerouslySetInnerHTML — everything becomes React text nodes, so user
@@ -24,14 +24,14 @@ function LangDot({ language }) {
 // code with a fade-out at the bottom. Tapping is handled by the parent.
 export function CodePreview({ code, language }) {
   return (
-    <Box sx={{ position: 'relative', mt: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 3, bgcolor: 'background.default', overflow: 'hidden' }}>
-      <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 1.5, py: 0.75, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'action.hover' }}>
+    <Box sx={{ position: 'relative', mt: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.card, bgcolor: 'background.default', overflow: 'hidden' }}>
+      <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 1.5, py: 1, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'action.hover' }}>
         <LangDot language={language} />
         <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.semibold, ...mono }}>
           {LANG_LABEL[language] || language}
         </Typography>
       </Stack>
-      <Box component="pre" sx={{ m: 0, px: 1.5, py: 1.25, maxHeight: 150, overflow: 'hidden', fontSize: FONT_SIZES.caption, lineHeight: 1.6, ...mono }}>
+      <Box component="pre" sx={{ m: 0, px: 1.5, py: 1.5, maxHeight: 150, overflow: 'hidden', fontSize: FONT_SIZES.caption, lineHeight: 1.6, ...mono }}>
         <code>{code}</code>
       </Box>
       <Box
@@ -63,7 +63,7 @@ export function CodeBlock({ code, language, maxHeight = 420 }) {
   };
 
   return (
-    <Box sx={{ my: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 3, bgcolor: 'background.default', overflow: 'hidden' }}>
+    <Box sx={{ my: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.card, bgcolor: 'background.default', overflow: 'hidden' }}>
       <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ pl: 1.5, pr: 0.5, minHeight: 40, borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'action.hover' }}>
         <Stack direction="row" alignItems="center" spacing={0.75}>
           {language && <LangDot language={language} />}
@@ -95,7 +95,7 @@ function renderInline(text, keyPrefix) {
     const key = `${keyPrefix}-${n++}`;
     if (m[1] !== undefined) {
       out.push(
-        <Box key={key} component="code" sx={{ px: 0.6, py: 0.1, borderRadius: 1, bgcolor: 'action.hover', fontSize: '0.85em', ...mono }}>
+        <Box key={key} component="code" sx={{ px: 0.5, py: 0.5, borderRadius: RADII_PX.control, bgcolor: 'action.hover', fontSize: '0.85em', ...mono }}>
           {m[1]}
         </Box>
       );
@@ -244,7 +244,7 @@ export function MarkdownEditor({ value, onChange, maxLength = 10000, minRows = 6
           slotProps={{ htmlInput: { style: { fontSize: FONT_SIZES.bodyLg } } }}
         />
       ) : (
-        <Box sx={{ minHeight: minRows * 24, p: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>
+        <Box sx={{ minHeight: minRows * 24, p: 1.5, border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.card }}>
           {value.trim() ? <Markdown source={value} /> : <Typography variant="body2" color="text.secondary">Nothing to preview.</Typography>}
         </Box>
       )}

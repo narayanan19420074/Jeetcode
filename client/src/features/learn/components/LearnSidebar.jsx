@@ -1,7 +1,7 @@
 import { Box, Paper, Typography, List, ListItemButton, Stack, alpha } from '@mui/material';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CircleIcon from '@mui/icons-material/Circle';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // Left navigation rail for LearnTopicPage.
 // Per-subsection status: check icon (done), filled blue dot (current),
@@ -12,7 +12,7 @@ export default function LearnSidebar({ sections, activeId, completedIds, onSelec
       elevation={0}
       variant="outlined"
       sx={{
-        borderRadius: 3,
+        borderRadius: RADII_PX.card,
         overflow: 'hidden',
         position: { md: 'sticky' },
         top: { md: 88 },
@@ -48,7 +48,7 @@ export default function LearnSidebar({ sections, activeId, completedIds, onSelec
                   selected={isActive}
                   onClick={() => onSelect(sub.id)}
                   sx={{
-                    py: 0.75,
+                    py: 1,
                     pl: 1.5,
                     borderLeft: '3px solid',
                     borderColor: isActive ? 'primary.main' : 'transparent',

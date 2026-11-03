@@ -65,7 +65,7 @@ export default function ShareSolutionDialog({ open, onClose, slug, defaultSubmis
 
   return (
     <Dialog open={open} onClose={saving ? undefined : onClose} fullWidth maxWidth="sm" fullScreen={fullScreen}>
-      <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1.25, fontWeight: FONT_WEIGHTS.bold }}>
+      <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1.5, fontWeight: FONT_WEIGHTS.bold }}>
         <IosShareRoundedIcon color="primary" />
         <Box component="span" sx={{ flex: 1 }}>
           Share your solution

@@ -5,7 +5,7 @@ import OpenInFullRoundedIcon from '@mui/icons-material/OpenInFullRounded';
 import CloseFullscreenRoundedIcon from '@mui/icons-material/CloseFullscreenRounded';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 /* Workspace UI kit. Every control in the workspace comes from here, so
    buttons, icon buttons, tabs and bars share one size, radius and colour rule.
@@ -44,9 +44,9 @@ export function Kbd({ children }) {
         fontSize: FONT_SIZES.micro,
         fontWeight: FONT_WEIGHTS.medium,
         lineHeight: 1,
-        px: 0.6,
-        py: 0.4,
-        borderRadius: '4px',
+        px: 0.5,
+        py: 0.5,
+        borderRadius: RADII_PX.badge,
         color: 'inherit',
         opacity: 0.75,
         bgcolor: alpha(t.palette.text.primary, 0.1),
@@ -76,7 +76,7 @@ export const WsButton = forwardRef(function WsButton(
           const base = {
             height: h,
             minWidth: 0,
-            px: size === 'lg' ? 1.75 : 1.25,
+            px: size === 'lg' ? 2 : 1.5,
             gap: 0,
             borderRadius: `${WS.radius}px`,
             fontSize: FONT_SIZES.body,
@@ -84,7 +84,7 @@ export const WsButton = forwardRef(function WsButton(
             lineHeight: 1,
             whiteSpace: 'nowrap',
             boxShadow: 'none',
-            '& .MuiButton-startIcon': { mr: 0.75, ml: -0.25 },
+            '& .MuiButton-startIcon': { mr: 1, ml: -0.25 },
             '& .MuiButton-startIcon svg': { fontSize: FONT_SIZES.subheading },
             '&.Mui-focusVisible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: 2 },
           };
@@ -201,7 +201,7 @@ export function PaneBar({ children, sx, height = WS.bar }) {
           alignItems: 'center',
           gap: 0.5,
           height,
-          px: 1.25,
+          px: 1.5,
           flexShrink: 0,
           bgcolor: wsSurface(t).chrome,
           minWidth: 0,
@@ -218,7 +218,7 @@ export function PaneBar({ children, sx, height = WS.bar }) {
 export function PaneTabs({ value, onChange, items, size = 'md', labels = 'all' }) {
   const h = size === 'sm' ? 28 : size === 'lg' ? 38 : WS.ctrl;
   return (
-    <Stack direction="row" role="tablist" sx={{ gap: 0.25, minWidth: 0, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' }, scrollbarWidth: 'none' }}>
+    <Stack direction="row" role="tablist" sx={{ gap: 0.5, minWidth: 0, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' }, scrollbarWidth: 'none' }}>
       {items.map((it) => {
         const on = it.value === value;
         // labels: 'all' | 'active' (only the open tab keeps its name) | 'none' (icons only)
@@ -232,8 +232,8 @@ export function PaneTabs({ value, onChange, items, size = 'md', labels = 'all' }
             onClick={() => onChange(it.value)}
             sx={(t) => ({
               height: h,
-              px: showLabel ? (size === 'sm' ? 1.25 : size === 'lg' ? 1.75 : 1.5) : 1,
-              gap: 0.75,
+              px: showLabel ? (size === 'sm' ? 1.5 : size === 'lg' ? 2 : 1.5) : 1,
+              gap: 1,
               flexShrink: 0,
               borderRadius: `${WS.radius}px`,
               fontSize: size === 'sm' ? FONT_SIZES.caption : size === 'lg' ? FONT_SIZES.body : FONT_SIZES.body,
@@ -281,7 +281,7 @@ export function WsSelect({ sx, ...props }) {
           '& .MuiOutlinedInput-notchedOutline': { border: 'none' },
           '&:hover': { bgcolor: alpha(t.palette.text.primary, 0.14) },
           '&.Mui-focused': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: -2 },
-          '& .MuiSelect-select': { py: 0, display: 'flex', alignItems: 'center', minHeight: 'unset !important', height: `${WS.ctrl}px`, pl: 1.25 },
+          '& .MuiSelect-select': { py: 0, display: 'flex', alignItems: 'center', minHeight: 'unset !important', height: `${WS.ctrl}px`, pl: 1.5 },
           '& .MuiSelect-icon': { right: 6 },
         }),
         ...(Array.isArray(sx) ? sx : [sx]),
@@ -294,7 +294,7 @@ export function WsSelect({ sx, ...props }) {
 /* Labelled monospace block (input / output / expected). */
 export function CodeField({ label, value, tone }) {
   return (
-    <Box sx={{ mb: 1.25, '&:last-child': { mb: 0 } }}>
+    <Box sx={{ mb: 1.5, '&:last-child': { mb: 0 } }}>
       <Typography variant="caption" sx={{ display: 'block', mb: 0.5, fontWeight: FONT_WEIGHTS.semibold, color: 'text.secondary', letterSpacing: '0.02em' }}>
         {label}
       </Typography>
@@ -320,12 +320,12 @@ export function CodeField({ label, value, tone }) {
 
 export function EmptyState({ icon, title, text, action }) {
   return (
-    <Stack sx={{ alignItems: 'center', textAlign: 'center', py: 6, px: 2, gap: 1.25 }}>
+    <Stack sx={{ alignItems: 'center', textAlign: 'center', py: 6, px: 2, gap: 1.5 }}>
       <Box
         sx={(t) => ({
           width: 52,
           height: 52,
-          borderRadius: '14px',
+          borderRadius: RADII_PX.card,
           display: 'grid',
           placeItems: 'center',
           bgcolor: alpha(t.palette.primary.main, 0.12),

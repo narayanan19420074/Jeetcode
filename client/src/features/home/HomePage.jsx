@@ -33,7 +33,7 @@ import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 // Phones in light mode get the warm cream surface of the Library pages; other screens and dark mode are unchanged.
 const cream = (t, phone, fallback) => (t.palette.mode === 'light' ? { xs: phone, md: fallback } : fallback);
 import { DISPLAY_FONT } from './anim';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // --- Copy rules for this page -------------------------------------------
 // Plain words a student understands in five seconds. One promise (coding +
@@ -132,7 +132,7 @@ function PrimaryCta({ onClick, label, size = 'large', sx, buttonRef, light = fal
       sx={{
         fontWeight: FONT_WEIGHTS.bold,
         px: 3.5,
-        py: 1.3,
+        py: 1.5,
         whiteSpace: 'nowrap',
         ...(light && { bgcolor: COLOR_PALETTE.white, color: COLOR_PALETTE.indigo[950], '&:hover': { bgcolor: alpha(COLOR_PALETTE.white, 0.9) } }),
         ...sx,
@@ -148,8 +148,8 @@ function Shot({ src, alt, priority = false, sx }) {
   const [failed, setFailed] = useState(false);
   if (failed) return null;
   return (
-    <Box sx={{ width: '100%', overflow: 'hidden', borderRadius: '12px', border: '1px solid', borderColor: 'divider', bgcolor: COLOR_PALETTE.slate[900], ...sx }}>
-      <Stack direction="row" spacing={0.6} sx={{ alignItems: 'center', px: 1.25, height: 22, bgcolor: alpha(COLOR_PALETTE.white, 0.06) }} aria-hidden>
+    <Box sx={{ width: '100%', overflow: 'hidden', borderRadius: RADII_PX.card, border: '1px solid', borderColor: 'divider', bgcolor: COLOR_PALETTE.slate[900], ...sx }}>
+      <Stack direction="row" spacing={0.6} sx={{ alignItems: 'center', px: 1.5, height: 22, bgcolor: alpha(COLOR_PALETTE.white, 0.06) }} aria-hidden>
         {[0, 1, 2].map((i) => (
           <Box key={i} sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: alpha(COLOR_PALETTE.white, 0.28) }} />
         ))}
@@ -211,7 +211,7 @@ function NavBar({ authed, onStart, onLogin }) {
                 Log in
               </Button>
             )}
-            <PrimaryCta size="medium" label={authed ? 'Dashboard' : 'Sign up'} onClick={onStart} sx={{ px: 2.5, py: 0.7 }} />
+            <PrimaryCta size="medium" label={authed ? 'Dashboard' : 'Sign up'} onClick={onStart} sx={{ px: 2.5, py: 0.5 }} />
           </Stack>
         </Stack>
       </Container>
@@ -222,14 +222,14 @@ function NavBar({ authed, onStart, onLogin }) {
 // One feature: short title, one line, a real screenshot.
 function FeatureCard({ title, body, shot, alt, points, onClick, cta }) {
   return (
-    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '18px', border: '1px solid', borderColor: 'divider', bgcolor: 'background.default', p: { xs: 2.5, md: 3.5 } }}>
+    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', borderRadius: RADII_PX.card, border: '1px solid', borderColor: 'divider', bgcolor: 'background.default', p: { xs: 2.5, md: 3.5 } }}>
       <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.display, letterSpacing: '-0.02em' }}>{title}</Typography>
-      <Typography color="text.secondary" sx={{ mt: 0.75, mb: 2, lineHeight: 1.55 }}>{body}</Typography>
+      <Typography color="text.secondary" sx={{ mt: 1, mb: 2, lineHeight: 1.55 }}>{body}</Typography>
       {points && (
         <Stack spacing={1} sx={{ mb: 2.5 }}>
           {points.map((p) => (
             <Stack key={p} direction="row" spacing={1.1} sx={{ alignItems: 'flex-start' }}>
-              <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'success.main', mt: '1px' }} />
+              <CheckRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: 'success.main', mt: 0 }} />
               <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.5 }}>{p}</Typography>
             </Stack>
           ))}
@@ -249,9 +249,9 @@ function FeatureCard({ title, body, shot, alt, points, onClick, cta }) {
 
 function SmallCard({ title, body }) {
   return (
-    <Box sx={{ height: '100%', borderRadius: '16px', border: '1px solid', borderColor: 'divider', bgcolor: 'background.default', p: 3 }}>
+    <Box sx={{ height: '100%', borderRadius: RADII_PX.card, border: '1px solid', borderColor: 'divider', bgcolor: 'background.default', p: 3 }}>
       <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, letterSpacing: '-0.015em' }}>{title}</Typography>
-      <Typography color="text.secondary" sx={{ mt: 0.75, lineHeight: 1.55 }}>{body}</Typography>
+      <Typography color="text.secondary" sx={{ mt: 1, lineHeight: 1.55 }}>{body}</Typography>
     </Box>
   );
 }
@@ -261,7 +261,7 @@ function PlanCard({ name, price, note, points, cta, onCta, primary = false, badg
     <Box
       sx={{
         position: 'relative',
-        borderRadius: '18px',
+        borderRadius: RADII_PX.card,
         p: { xs: 3, md: 4 },
         border: '1.5px solid',
         borderColor: primary ? 'primary.main' : 'divider',
@@ -272,7 +272,7 @@ function PlanCard({ name, price, note, points, cta, onCta, primary = false, badg
       }}
     >
       {badge && (
-        <Box sx={{ position: 'absolute', top: -13, left: 24, px: 1.5, py: 0.3, borderRadius: 99, bgcolor: 'warning.main', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption }}>
+        <Box sx={{ position: 'absolute', top: -13, left: 24, px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'warning.main', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption }}>
           {badge}
         </Box>
       )}
@@ -282,13 +282,13 @@ function PlanCard({ name, price, note, points, cta, onCta, primary = false, badg
       <Stack spacing={1.2} sx={{ mb: 3.5 }}>
         {points.map((p) => (
           <Stack key={p} direction="row" spacing={1.25}>
-            <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: primary ? 'primary.main' : 'success.main', mt: '1px' }} />
+            <CheckCircleRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: primary ? 'primary.main' : 'success.main', mt: 0 }} />
             <Typography sx={{ fontWeight: FONT_WEIGHTS.semibold }}>{p}</Typography>
           </Stack>
         ))}
       </Stack>
       <Box sx={{ mt: 'auto' }}>
-        <Button fullWidth size="large" variant={primary ? 'contained' : 'outlined'} disableElevation onClick={onCta} sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.25, ...(!primary && { borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }) }}>
+        <Button fullWidth size="large" variant={primary ? 'contained' : 'outlined'} disableElevation onClick={onCta} sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.5, ...(!primary && { borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }) }}>
           {cta}
         </Button>
         {footnote && (
@@ -382,14 +382,14 @@ export default function HomePage() {
         <Grid container spacing={{ xs: 5, md: 6 }} sx={{ alignItems: 'center' }}>
           <Grid size={{ xs: 12, md: 6 }}>
             {offerEnds && (
-              <Stack direction="row" spacing={1} sx={{ mb: 2.5, px: 1.5, py: 0.6, width: 'fit-content', borderRadius: 99, alignItems: 'center', border: '1px solid', borderColor: (t) => alpha(t.palette.warning.main, 0.5), bgcolor: (t) => alpha(t.palette.warning.main, 0.1) }}>
+              <Stack direction="row" spacing={1} sx={{ mb: 2.5, px: 1.5, py: 0.5, width: 'fit-content', borderRadius: RADII_PX.pill, alignItems: 'center', border: '1px solid', borderColor: (t) => alpha(t.palette.warning.main, 0.5), bgcolor: (t) => alpha(t.palette.warning.main, 0.1) }}>
                 <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'warning.main' }} />
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Launch offer: Pro is free until {offerEnds}</Typography>
               </Stack>
             )}
             <Typography
               variant="h1"
-              sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.heroLg, sm: FONT_SIZES.jumbo, md: FONT_SIZES.jumbo, lg: FONT_SIZES.jumbo }, lineHeight: 1.05, letterSpacing: '-0.035em', textWrap: 'balance', mb: 2.25 }}
+              sx={{ fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.heroLg, sm: FONT_SIZES.jumbo, md: FONT_SIZES.jumbo, lg: FONT_SIZES.jumbo }, lineHeight: 1.05, letterSpacing: '-0.035em', textWrap: 'balance', mb: 2.5 }}
             >
               Placement prep for coding and aptitude.
             </Typography>
@@ -398,7 +398,7 @@ export default function HomePage() {
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
               <PrimaryCta buttonRef={heroCtaRef} label={startLabel} onClick={goStart} />
-              <Button size="large" variant="outlined" href="#features" sx={{ fontWeight: FONT_WEIGHTS.bold, px: 3.5, py: 1.3, whiteSpace: 'nowrap', borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }}>
+              <Button size="large" variant="outlined" href="#features" sx={{ fontWeight: FONT_WEIGHTS.bold, px: 3.5, py: 1.5, whiteSpace: 'nowrap', borderWidth: 1.5, '&:hover': { borderWidth: 1.5 } }}>
                 See what's inside
               </Button>
             </Stack>
@@ -464,7 +464,7 @@ export default function HomePage() {
             {STEPS.map((st, i) => (
               <Grid key={st.title} size={{ xs: 12, md: 4 }}>
                 <Stack direction="row" spacing={2} sx={{ alignItems: 'flex-start' }}>
-                  <Box sx={{ flexShrink: 0, width: 40, height: 40, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main', fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold }}>
+                  <Box sx={{ flexShrink: 0, width: 40, height: 40, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', bgcolor: (t) => alpha(t.palette.primary.main, 0.12), color: 'primary.main', fontFamily: DISPLAY_FONT, fontWeight: FONT_WEIGHTS.bold }}>
                     {i + 1}
                   </Box>
                   <Box>
@@ -527,7 +527,7 @@ export default function HomePage() {
         <Box>
           {faq.map((f) => (
             <Accordion key={f.q} disableGutters elevation={0} square sx={{ bgcolor: 'transparent', borderBottom: '1px solid', borderColor: 'divider', '&:before': { display: 'none' } }}>
-              <AccordionSummary expandIcon={<ExpandMoreRoundedIcon />} sx={{ px: 0, py: 0.75 }}>
+              <AccordionSummary expandIcon={<ExpandMoreRoundedIcon />} sx={{ px: 0, py: 1 }}>
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title }}>{f.q}</Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ px: 0, pt: 0, pb: 2.5 }}>
@@ -542,7 +542,7 @@ export default function HomePage() {
       <Container maxWidth="lg" sx={{ pb: { xs: 7, md: 10 } }}>
         <Box
           sx={{
-            borderRadius: '20px',
+            borderRadius: RADII_PX.card,
             px: { xs: 3, md: 8 },
             py: { xs: 5, md: 7 },
             textAlign: 'center',
@@ -558,7 +558,7 @@ export default function HomePage() {
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ justifyContent: 'center' }}>
             <PrimaryCta light buttonRef={finalCtaRef} label={startLabel} onClick={goStart} />
-            <Button size="large" variant="outlined" onClick={go('/pair')} sx={{ color: COLOR_PALETTE.white, borderColor: alpha(COLOR_PALETTE.white, 0.5), borderWidth: 1.5, fontWeight: FONT_WEIGHTS.bold, px: 3, py: 1.3, whiteSpace: 'nowrap', '&:hover': { borderColor: COLOR_PALETTE.white, borderWidth: 1.5, bgcolor: alpha(COLOR_PALETTE.white, 0.08) } }}>
+            <Button size="large" variant="outlined" onClick={go('/pair')} sx={{ color: COLOR_PALETTE.white, borderColor: alpha(COLOR_PALETTE.white, 0.5), borderWidth: 1.5, fontWeight: FONT_WEIGHTS.bold, px: 3, py: 1.5, whiteSpace: 'nowrap', '&:hover': { borderColor: COLOR_PALETTE.white, borderWidth: 1.5, bgcolor: alpha(COLOR_PALETTE.white, 0.08) } }}>
               Try a pair room
             </Button>
           </Stack>

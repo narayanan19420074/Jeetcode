@@ -41,7 +41,7 @@ export function Stat({ icon, value, color = FF.text, label, onClick }) {
       onClick={onClick}
       aria-label={label}
       title={label}
-      sx={{ display: 'inline-flex', alignItems: 'center', gap: 1, px: 1.75, height: 44, bgcolor: FF.hud, border: `1px solid ${FF.line}`, clipPath: cut(8), fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, color, fontVariantNumeric: 'tabular-nums', backdropFilter: 'blur(6px)', ...(onClick ? { cursor: 'pointer', '&:hover': { borderColor: FF.orange }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } } : null) }}
+      sx={{ display: 'inline-flex', alignItems: 'center', gap: 1, px: 2, height: 44, bgcolor: FF.hud, border: `1px solid ${FF.line}`, clipPath: cut(8), fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, color, fontVariantNumeric: 'tabular-nums', backdropFilter: 'blur(6px)', ...(onClick ? { cursor: 'pointer', '&:hover': { borderColor: FF.orange }, '&:focus-visible': { outline: `2px solid ${FF.orange}`, outlineOffset: 2 } } : null) }}
     >
       {icon}
       {value}
@@ -147,8 +147,8 @@ export function TopUpDialog({ open, onClose, coins, diamonds, rate, want, busy, 
       <DialogHead title="Top up diamonds" onClose={onClose} />
       <Box sx={{ p: 3 }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3, color: FF.muted, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75 }}><Coin /> {coins.toLocaleString('en-IN')} coins</Box>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75 }}><Diamond /> {diamonds.toLocaleString('en-IN')} diamonds</Box>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 1 }}><Coin /> {coins.toLocaleString('en-IN')} coins</Box>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 1 }}><Diamond /> {diamonds.toLocaleString('en-IN')} diamonds</Box>
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3, py: 3, bgcolor: FF.well, border: `1px solid ${FF.line}` }}>
@@ -194,15 +194,15 @@ export function MissionsDialog({ open, onClose, quests, busy, onClaim, onSolve }
           <Box key={q.id} sx={{ display: 'flex', alignItems: 'center', gap: 2, px: 3, py: 2, borderBottom: `1px solid ${FF.line}`, opacity: q.claimed ? 0.55 : 1 }}>
             <Box sx={{ flex: 1, minWidth: 0 }}>
               <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, color: FF.text }}>{q.title}</Typography>
-              <Box sx={{ my: 0.9 }}><Bar pct={(q.value / q.target) * 100} color={q.claimable ? FF.green : FF.orange} height={7} /></Box>
+              <Box sx={{ my: 1 }}><Bar pct={(q.value / q.target) * 100} color={q.claimable ? FF.green : FF.orange} height={7} /></Box>
               <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: FF.muted }}>{q.value}/{q.target} · +{q.xp} XP · {q.reward.label}</Typography>
             </Box>
             {q.claimed ? (
               <CheckRoundedIcon sx={{ color: FF.greenInk }} />
             ) : q.claimable ? (
-              <FFButton tone="green" disabled={busy === q.id} onClick={() => onClaim(q)} sx={{ minHeight: 40, px: 2.25 }}>Claim</FFButton>
+              <FFButton tone="green" disabled={busy === q.id} onClick={() => onClaim(q)} sx={{ minHeight: 40, px: 2.5 }}>Claim</FFButton>
             ) : (
-              <FFButton tone="dark" onClick={() => onSolve(q.difficulty)} sx={{ minHeight: 40, px: 2.25 }}>Go</FFButton>
+              <FFButton tone="dark" onClick={() => onSolve(q.difficulty)} sx={{ minHeight: 40, px: 2.5 }}>Go</FFButton>
             )}
           </Box>
         ))}
@@ -227,7 +227,7 @@ export function RewardDialog({ reward, onClose }) {
                 <DiamondRoundedIcon sx={{ fontSize: FONT_SIZES.jumboLg, color: pro ? FF.yellow : FF.diamond, filter: `drop-shadow(0 0 12px ${pro ? FF.yellow : FF.diamond})` }} />
               </Box>
               <Typography sx={{ mt: 3, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.displayLg, textTransform: 'uppercase', letterSpacing: '0.03em', color: pro ? FF.coinInk : FF.text }}>{reward.reward.label}</Typography>
-              <Typography sx={{ mt: 0.75, color: FF.muted }}>{pro && reward.proUntil ? `Pro active until ${formatDate(reward.proUntil)}` : 'Added to your profile'}</Typography>
+              <Typography sx={{ mt: 1, color: FF.muted }}>{pro && reward.proUntil ? `Pro active until ${formatDate(reward.proUntil)}` : 'Added to your profile'}</Typography>
               <Box sx={{ mt: 2.5, display: 'flex', justifyContent: 'center', gap: 2, fontWeight: FONT_WEIGHTS.bold }}>
                 <Box sx={{ color: FF.orangeInk }}>+{reward.xp} XP</Box>
                 {reward.coins > 0 && <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: FF.coinInk }}><Coin size={18} />+{reward.coins}</Box>}

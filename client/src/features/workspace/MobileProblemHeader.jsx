@@ -9,13 +9,13 @@ export default function MobileProblemHeader({ problem, onOpen, sx }) {
     <ButtonBase
       onClick={onOpen}
       aria-label="Open problem description"
-      sx={{ justifyContent: 'flex-start', gap: 1.25, pt: 1.25, pb: 0.75, textAlign: 'left', ...sx }}
+      sx={{ justifyContent: 'flex-start', gap: 1.5, pt: 1.5, pb: 1, textAlign: 'left', ...sx }}
     >
       <Box sx={{ flex: 1, minWidth: 0 }}>
         <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.title, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
           {problem.title}
         </Typography>
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, mt: 0.5, minWidth: 0 }}>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 1, mt: 0.5, minWidth: 0 }}>
           <DifficultyChip difficulty={problem.difficulty} />
           {problem.tags?.length > 0 && (
             <Typography noWrap variant="caption" color="text.secondary" sx={{ minWidth: 0 }}>

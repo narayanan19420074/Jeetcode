@@ -3,7 +3,7 @@ import { Box, Link, Paper, Typography, TextField } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import BrandMark from '../../components/BrandMark';
 import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Shared GitHub-style shell for Login / Signup: logo + title on top,
 // a small outlined card for the form, and a second small card below it
@@ -37,7 +37,7 @@ export default function AuthShell({ title, children, footer }) {
         {title}
       </Typography>
 
-      <Paper elevation={0} variant="outlined" sx={{ p: 2.5, width: '100%', maxWidth: 340, borderRadius: 2 }}>
+      <Paper elevation={0} variant="outlined" sx={{ p: 2.5, width: '100%', maxWidth: 340, borderRadius: RADII_PX.card }}>
         {children}
       </Paper>
 
@@ -52,7 +52,7 @@ export default function AuthShell({ title, children, footer }) {
         <Paper
           elevation={0}
           variant="outlined"
-          sx={{ p: 2, mt: 2, width: '100%', maxWidth: 340, borderRadius: 2, textAlign: 'center' }}
+          sx={{ p: 2, mt: 2, width: '100%', maxWidth: 340, borderRadius: RADII_PX.card, textAlign: 'center' }}
         >
           <Typography variant="body2">{footer}</Typography>
         </Paper>

@@ -6,7 +6,7 @@ import BuildRoundedIcon from '@mui/icons-material/BuildRounded';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import { LIB_ACCENT, LIB_FONT, LIB_TRACKING } from '../dashboard/components/libraryStyle';
 import AiGlow from './AiGlow';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const rise = keyframes`from { opacity: 0; transform: translateY(18px) scale(.96); } to { opacity: 1; transform: none; }`;
 
@@ -27,8 +27,8 @@ const MENU_SX = {
   p: 1,
   display: 'flex',
   flexDirection: 'column',
-  gap: 0.75,
-  borderRadius: '28px',
+  gap: 1,
+  borderRadius: RADII_PX.card,
   fontFamily: LIB_FONT,
   letterSpacing: LIB_TRACKING,
   color: 'var(--lib-text)',
@@ -45,8 +45,8 @@ const OPTION_SX = {
   gap: 1.5,
   textAlign: 'left',
   px: 1.5,
-  py: 1.25,
-  borderRadius: '20px',
+  py: 1.5,
+  borderRadius: RADII_PX.card,
   fontFamily: LIB_FONT,
   bgcolor: `var(--lib-player, ${COLOR_PALETTE.custom.orangeF1E7DD})`,
   '&:hover, &:focus-visible': { filter: 'brightness(0.97)' },

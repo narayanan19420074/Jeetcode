@@ -5,7 +5,7 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
-import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Shared look of the phone Library (Problems) pages: the product font and a warm cream surface in light mode.
 // Dark mode keeps the app's normal dark surfaces.
@@ -83,16 +83,16 @@ export function MiniPlayer({ featured, resume, aboveNav }) {
         height: 57,
         display: 'flex',
         alignItems: 'center',
-        gap: '12px',
+        gap: 1.5,
         pl: 2,
         pr: 2.5,
-        borderRadius: 999,
+        borderRadius: RADII_PX.pill,
         bgcolor: pal.player,
         color: pal.text,
         textDecoration: 'none',
       })}
     >
-      <Box aria-hidden sx={{ width: 40, height: 40, flex: 'none', borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: withAlpha(COLOR_PALETTE.custom.redEF6C4D, 0.2), color: COLOR_PALETTE.custom.redEF6C4D }}>
+      <Box aria-hidden sx={{ width: 40, height: 40, flex: 'none', borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', bgcolor: withAlpha(COLOR_PALETTE.custom.redEF6C4D, 0.2), color: COLOR_PALETTE.custom.redEF6C4D }}>
         {resume ? <HistoryRoundedIcon sx={{ fontSize: FONT_SIZES.display }} /> : <EventRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />}
       </Box>
       <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -111,8 +111,8 @@ export function MiniPlayer({ featured, resume, aboveNav }) {
 // 81px page-header tile: soft gradient square with the page icon on a coloured blob.
 export function HeaderTile({ children }) {
   return (
-    <Box sx={{ width: 81, height: 81, mx: 'auto', borderRadius: '22px', display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${COLOR_PALETTE.rose[100]} 0%, ${COLOR_PALETTE.purple[100]} 55%, ${COLOR_PALETTE.pink[100]} 100%)` }}>
-      <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: '14px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
+    <Box sx={{ width: 81, height: 81, mx: 'auto', borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${COLOR_PALETTE.rose[100]} 0%, ${COLOR_PALETTE.purple[100]} 55%, ${COLOR_PALETTE.pink[100]} 100%)` }}>
+      <Box aria-hidden sx={{ width: 46, height: 42, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, background: `linear-gradient(160deg, ${COLOR_PALETTE.custom.violetB58AF2}, ${COLOR_PALETTE.custom.redF28C7A})` }}>
         {children}
       </Box>
     </Box>
@@ -133,14 +133,14 @@ export const libIconBtnSx = { width: 40, height: 40, flexShrink: 0, bgcolor: 'va
 // 44px pill search field.
 export const libSearchSx = {
   mt: 1,
-  px: '4px',
-  '& .MuiOutlinedInput-root': { borderRadius: 999, height: 44, bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, px: '16px' },
+  px: 0.5,
+  '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 44, bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, px: 2 },
   '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
 };
 
 export const libSectionTitleSx = { fontSize: FONT_SIZES.subheading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold };
 
-const libBtnBase = { height: 48, px: 3, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
+const libBtnBase = { height: 48, px: 3, borderRadius: RADII_PX.pill, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: LIB_TRACKING, textTransform: 'none', whiteSpace: 'nowrap', flexShrink: 0 };
 export const libSolidBtnSx = { ...libBtnBase, bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` } };
 export const libTintBtnSx = { ...libBtnBase, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', '&:hover': { bgcolor: 'var(--lib-player)', filter: 'brightness(0.97)' } };
 export const libSmallBtnSx = { ...libBtnBase, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg };
@@ -149,9 +149,9 @@ export const libSmallBtnSx = { ...libBtnBase, height: 36, px: 2, fontSize: FONT_
 export const libChipSx = (on) => ({
   flexShrink: 0,
   height: 34,
-  px: '14px',
-  gap: 0.75,
-  borderRadius: 999,
+  px: 2,
+  gap: 1,
+  borderRadius: RADII_PX.pill,
   fontFamily: 'inherit',
   fontSize: FONT_SIZES.bodyLg,
   letterSpacing: LIB_TRACKING,
@@ -162,7 +162,7 @@ export const libChipSx = (on) => ({
 });
 
 // Rounded cream panel for summary blocks.
-export const libPanelSx = { borderRadius: '20px', bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' };
+export const libPanelSx = { borderRadius: RADII_PX.card, bgcolor: 'var(--lib-chip)', border: '1px solid var(--lib-border)' };
 
 // Centred page header: tile, title and subtitle.
 export function PageHeader({ icon: Icon, title, subtitle }) {

@@ -5,7 +5,7 @@ import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { Card, PageTitle, describeError, formatDateTime, relativeTime } from '../components/SettingsUi';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 export default function SessionsSection() {
   const { enqueueSnackbar } = useSnackbar();
@@ -93,7 +93,7 @@ export default function SessionsSection() {
           const Icon = s.device.mobile ? PhoneIphoneRoundedIcon : LaptopMacRoundedIcon;
           return (
             <Stack key={s.id} direction="row" sx={{ gap: 2, px: { xs: 2, sm: 3 }, py: 2, alignItems: 'center', borderBottom: i === items.length - 1 ? 'none' : '1px solid', borderColor: 'divider' }}>
-              <Box sx={{ width: 40, height: 40, borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: 'action.hover', flexShrink: 0 }}>
+              <Box sx={{ width: 40, height: 40, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', bgcolor: 'action.hover', flexShrink: 0 }}>
                 <Icon />
               </Box>
               <Box sx={{ minWidth: 0, flex: 1 }}>

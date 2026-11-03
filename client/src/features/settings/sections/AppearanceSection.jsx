@@ -4,7 +4,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import tokens, { ACCENTS } from '../../../app/theme';
 import { Card, CardBody, ChoiceCard, PageTitle, Row, SwitchRow, usePreferences } from '../components/SettingsUi';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // A tiny app window drawn in the real palette so the theme options are
 // recognisable at a glance. `half` renders the diagonal "match my device" split.
@@ -16,15 +16,15 @@ function Mock({ scheme, accent, warm = false }) {
   const text = warm ? (dark ? COLOR_PALETTE.orange[50] : COLOR_PALETTE.custom.black1A1613) : dark ? COLOR_PALETTE.slate[50] : COLOR_PALETTE.slate[900];
   return (
     <Box sx={{ position: 'absolute', inset: 0, bgcolor: bg, p: 1 }}>
-      <Box sx={{ height: 9, borderRadius: 1, bgcolor: paper, mb: 0.75, display: 'flex', alignItems: 'center', px: 0.5, gap: 0.5 }}>
-        <Box sx={{ width: 10, height: 4, borderRadius: 1, bgcolor: accent }} />
-        <Box sx={{ width: 16, height: 3, borderRadius: 1, bgcolor: line }} />
+      <Box sx={{ height: 9, borderRadius: RADII_PX.pill, bgcolor: paper, mb: 1, display: 'flex', alignItems: 'center', px: 0.5, gap: 0.5 }}>
+        <Box sx={{ width: 10, height: 4, borderRadius: RADII_PX.pill, bgcolor: accent }} />
+        <Box sx={{ width: 16, height: 3, borderRadius: RADII_PX.pill, bgcolor: line }} />
       </Box>
-      <Box sx={{ bgcolor: paper, borderRadius: 1, p: 0.75, border: `1px solid ${line}` }}>
-        <Box sx={{ width: '55%', height: 4, borderRadius: 1, bgcolor: text, mb: 0.6, opacity: 0.85 }} />
-        <Box sx={{ width: '85%', height: 3, borderRadius: 1, bgcolor: line, mb: 0.4 }} />
-        <Box sx={{ width: '70%', height: 3, borderRadius: 1, bgcolor: line, mb: 0.75 }} />
-        <Box sx={{ width: 26, height: 8, borderRadius: 1, bgcolor: accent }} />
+      <Box sx={{ bgcolor: paper, borderRadius: RADII_PX.control, p: 1, border: `1px solid ${line}` }}>
+        <Box sx={{ width: '55%', height: 4, borderRadius: RADII_PX.pill, bgcolor: text, mb: 0.5, opacity: 0.85 }} />
+        <Box sx={{ width: '85%', height: 3, borderRadius: RADII_PX.pill, bgcolor: line, mb: 0.5 }} />
+        <Box sx={{ width: '70%', height: 3, borderRadius: RADII_PX.pill, bgcolor: line, mb: 1 }} />
+        <Box sx={{ width: 26, height: 8, borderRadius: RADII_PX.pill, bgcolor: accent }} />
       </Box>
     </Box>
   );
@@ -32,7 +32,7 @@ function Mock({ scheme, accent, warm = false }) {
 
 function ThemePreview({ variant, accent }) {
   return (
-    <Box sx={{ position: 'relative', height: 92, borderRadius: '8px', overflow: 'hidden', border: '1px solid', borderColor: 'divider' }}>
+    <Box sx={{ position: 'relative', height: 92, borderRadius: RADII_PX.control, overflow: 'hidden', border: '1px solid', borderColor: 'divider' }}>
       {variant === 'system' ? (
         <>
           <Mock scheme="light" accent={accent} />
@@ -74,7 +74,7 @@ export default function AppearanceSection() {
 
       <Card title="Theme mode" description="Choose light, dark, or follow your device.">
         <CardBody>
-          <Box role="radiogroup" aria-label="Theme mode" sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(3, minmax(0,1fr))' }, gap: { xs: 1, sm: 1.75 } }}>
+          <Box role="radiogroup" aria-label="Theme mode" sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(3, minmax(0,1fr))' }, gap: { xs: 1, sm: 2 } }}>
             {[
               { key: 'light', label: 'Light' },
               { key: 'dark', label: 'Dark' },
@@ -90,13 +90,13 @@ export default function AppearanceSection() {
 
       <Card title="Surface" description="The background and card colours. Warm uses soft cream tones in light mode and warm charcoal in dark mode.">
         <CardBody>
-          <Box role="radiogroup" aria-label="Surface" sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0,1fr))', gap: { xs: 1, sm: 1.75 } }}>
+          <Box role="radiogroup" aria-label="Surface" sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0,1fr))', gap: { xs: 1, sm: 2 } }}>
             {[
               { key: 'default', label: 'Default', hint: 'Cool neutral' },
               { key: 'warm', label: 'Warm', hint: 'Cream and clay' },
             ].map((o) => (
               <ChoiceCard key={o.key} selected={(a.surface || 'default') === o.key} onClick={() => set('appearance', { surface: o.key })} label={o.label} hint={o.hint}>
-                <Box sx={{ position: 'relative', height: 92, borderRadius: '8px', overflow: 'hidden', border: '1px solid', borderColor: 'divider' }}>
+                <Box sx={{ position: 'relative', height: 92, borderRadius: RADII_PX.control, overflow: 'hidden', border: '1px solid', borderColor: 'divider' }}>
                   <Mock scheme={theme.palette.mode === 'dark' ? 'dark' : 'light'} accent={previewAccent} warm={o.key === 'warm'} />
                 </Box>
               </ChoiceCard>
@@ -173,7 +173,7 @@ export default function AppearanceSection() {
           control={
             <ToggleButtonGroup exclusive size="small" value={a.fontScale} onChange={(_, v) => v && set('appearance', { fontScale: v })} aria-label="Text size">
               {SIZES.map((s) => (
-                <ToggleButton key={s.key} value={s.key} sx={{ px: 2, gap: 0.75, alignItems: 'baseline' }}>
+                <ToggleButton key={s.key} value={s.key} sx={{ px: 2, gap: 1, alignItems: 'baseline' }}>
                   <span style={{ fontSize: s.px, fontWeight: FONT_WEIGHTS.bold }}>Aa</span>
                   <span style={{ fontSize: FONT_SIZES.caption }}>{s.label}</span>
                 </ToggleButton>

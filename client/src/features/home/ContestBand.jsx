@@ -4,7 +4,7 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import { useNavigate } from 'react-router-dom';
 import { useCountdown, inr, fmtStart, fmtDuration } from '../contest/contestUtils';
 import { DISPLAY_FONT, MONO_FONT } from './anim';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // Dark, fixed palette on purpose: this is the one loud moment on the page, so
 // it keeps its own colours in both light and dark mode. All numbers come from
@@ -64,7 +64,7 @@ export default function ContestBand({ contest }) {
             </Typography>
             <Stack direction="row" useFlexGap sx={{ flexWrap: 'wrap', gap: 1, mt: 3 }}>
               {facts.map((f) => (
-                <Box key={f} sx={{ px: 1.5, py: 0.6, borderRadius: 99, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.semibold, border: `1px solid ${alpha(COLOR_PALETTE.white, 0.22)}`, bgcolor: alpha(COLOR_PALETTE.white, 0.06) }}>
+                <Box key={f} sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.semibold, border: `1px solid ${alpha(COLOR_PALETTE.white, 0.22)}`, bgcolor: alpha(COLOR_PALETTE.white, 0.06) }}>
                   {f}
                 </Box>
               ))}
@@ -84,7 +84,7 @@ export default function ContestBand({ contest }) {
                 variant="contained"
                 disableElevation
                 onClick={() => navigate('/contest')}
-                sx={{ bgcolor: GOLD, color: INK, fontWeight: FONT_WEIGHTS.bold, px: 3.5, py: 1.3, whiteSpace: 'nowrap', '&:hover': { bgcolor: COLOR_PALETTE.amber[300] } }}
+                sx={{ bgcolor: GOLD, color: INK, fontWeight: FONT_WEIGHTS.bold, px: 3.5, py: 1.5, whiteSpace: 'nowrap', '&:hover': { bgcolor: COLOR_PALETTE.amber[300] } }}
               >
                 {live ? 'Enter the contest' : 'Apply for the contest'}
               </Button>
@@ -92,7 +92,7 @@ export default function ContestBand({ contest }) {
                 size="large"
                 variant="outlined"
                 onClick={() => navigate('/contest')}
-                sx={{ color: COLOR_PALETTE.white, borderColor: alpha(COLOR_PALETTE.white, 0.4), fontWeight: FONT_WEIGHTS.bold, px: 3, py: 1.3, whiteSpace: 'nowrap', '&:hover': { borderColor: COLOR_PALETTE.white, bgcolor: alpha(COLOR_PALETTE.white, 0.08) } }}
+                sx={{ color: COLOR_PALETTE.white, borderColor: alpha(COLOR_PALETTE.white, 0.4), fontWeight: FONT_WEIGHTS.bold, px: 3, py: 1.5, whiteSpace: 'nowrap', '&:hover': { borderColor: COLOR_PALETTE.white, bgcolor: alpha(COLOR_PALETTE.white, 0.08) } }}
               >
                 Read the rules
               </Button>

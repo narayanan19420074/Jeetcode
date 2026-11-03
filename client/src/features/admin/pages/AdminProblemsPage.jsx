@@ -36,7 +36,7 @@ import DifficultyChip from '../../../components/DifficultyChip';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import AddProblemDialog from '../components/AddProblemDialog';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const CONFIRM_WORD = 'DELETE';
 const PAGE_SIZE = 20;
@@ -187,7 +187,7 @@ export default function AdminProblemsPage() {
         </Alert>
       )}
 
-      <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1 }}>
           <Tabs value={view} onChange={(e, v) => setView(v)} sx={{ minHeight: 36 }}>
             <Tab value="active" label="Active" sx={{ minHeight: 36, py: 0.5, fontWeight: FONT_WEIGHTS.semibold }} />

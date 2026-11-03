@@ -11,7 +11,7 @@ import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { MONO_FONT, blink, pulseDot, typeLine } from '../anim';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, FONTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, FONTS, RADII_PX, RADII } from '../../../app/design/designTokens';
 
 // The hero's live product window. Three real moments from the app:
 // solving against test cases, answering a timed aptitude question, and
@@ -80,7 +80,7 @@ function SolvePanel() {
     <Stack spacing={2}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>Two Sum</Typography>
-        <Box sx={{ px: 1, py: 0.1, borderRadius: 99, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: 'success.main', bgcolor: alpha(t.palette.success.main, 0.14) }}>
+        <Box sx={{ px: 1, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, color: 'success.main', bgcolor: alpha(t.palette.success.main, 0.14) }}>
           Easy
         </Box>
         <Typography variant="caption" color="text.secondary" sx={{ ml: 'auto' }}>
@@ -117,10 +117,10 @@ function SolvePanel() {
               mt: 1.5,
               display: 'inline-flex',
               alignItems: 'center',
-              gap: 0.75,
+              gap: 1,
               px: 1.5,
               py: 0.5,
-              borderRadius: 99,
+              borderRadius: RADII_PX.pill,
               fontWeight: FONT_WEIGHTS.bold,
               fontSize: FONT_SIZES.body,
               color: 'success.main',
@@ -184,8 +184,8 @@ function TimePanel({ onInteract }) {
                 justifyContent: 'flex-start',
                 gap: 1,
                 px: 1.5,
-                py: 1.1,
-                borderRadius: '10px',
+                py: 1,
+                borderRadius: RADII_PX.control,
                 border: '1.5px solid',
                 borderColor: isRight ? 'success.main' : isWrong ? 'error.main' : 'divider',
                 bgcolor: isRight ? alpha(t.palette.success.main, 0.12) : isWrong ? alpha(t.palette.error.main, 0.1) : 'transparent',
@@ -247,17 +247,17 @@ function PairPanel() {
         </Stack>
         <Stack direction="row" spacing={0.75}>
           {[MicRoundedIcon, VideocamRoundedIcon].map((I, i) => (
-            <Box key={i} sx={{ width: 28, height: 28, borderRadius: '8px', display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.text.secondary, 0.12) }}>
+            <Box key={i} sx={{ width: 28, height: 28, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.text.secondary, 0.12) }}>
               <I sx={{ fontSize: FONT_SIZES.title, color: 'text.secondary' }} />
             </Box>
           ))}
-          <Box sx={{ px: 1.1, height: 28, borderRadius: '8px', display: 'flex', alignItems: 'center', gap: 0.4, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption }}>
+          <Box sx={{ px: 1, height: 28, borderRadius: RADII_PX.control, display: 'flex', alignItems: 'center', gap: 0.5, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption }}>
             <PlayArrowRoundedIcon sx={{ fontSize: FONT_SIZES.title }} /> Run
           </Box>
         </Stack>
       </Stack>
 
-      <Box sx={{ position: 'relative', fontFamily: MONO_FONT, fontSize: { xs: FONT_SIZES.micro, sm: FONT_SIZES.caption }, lineHeight: 1.8, p: 1.5, borderRadius: '10px', bgcolor: alpha(t.palette.text.secondary, 0.07) }}>
+      <Box sx={{ position: 'relative', fontFamily: MONO_FONT, fontSize: { xs: FONT_SIZES.micro, sm: FONT_SIZES.caption }, lineHeight: 1.8, p: 1.5, borderRadius: RADII_PX.control, bgcolor: alpha(t.palette.text.secondary, 0.07) }}>
         <Box sx={{ whiteSpace: 'pre', color: c.tx }}>
           <Box component="span" sx={{ color: c.kw, fontWeight: FONT_WEIGHTS.semibold }}>def </Box>
           <Box component="span" sx={{ color: c.fn }}>two_sum</Box>(nums, target):
@@ -287,9 +287,9 @@ function PairPanel() {
             >
               <Box
                 sx={{
-                  px: 1.4,
-                  py: 0.7,
-                  borderRadius: mine ? '12px 12px 12px 3px' : '12px 12px 3px 12px',
+                  px: 1.5,
+                  py: 0.5,
+                  borderRadius: mine ? `${RADII.card}px ${RADII.card}px ${RADII.card}px ${RADII.badge}px` : `${RADII.card}px ${RADII.card}px ${RADII.badge}px ${RADII.card}px`,
                   fontSize: FONT_SIZES.body,
                   fontWeight: FONT_WEIGHTS.medium,
                   bgcolor: mine ? alpha(me, 0.14) : alpha(other, 0.16),
@@ -307,8 +307,8 @@ function PairPanel() {
 
 function Cursor({ color, label }) {
   return (
-    <Box component="span" sx={{ position: 'relative', display: 'inline-block', width: 2, height: '1.1em', bgcolor: color, ml: '2px', verticalAlign: 'text-bottom', animation: `${blink} 1.1s steps(1) infinite` }}>
-      <Box component="span" sx={{ position: 'absolute', bottom: '100%', left: 0, px: 0.6, borderRadius: '4px 4px 4px 0', bgcolor: color, color: COLOR_PALETTE.white, fontFamily: FONTS.sans, fontSize: '0.6rem', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.5, whiteSpace: 'nowrap' }}>
+    <Box component="span" sx={{ position: 'relative', display: 'inline-block', width: 2, height: '1.1em', bgcolor: color, ml: 0.5, verticalAlign: 'text-bottom', animation: `${blink} 1.1s steps(1) infinite` }}>
+      <Box component="span" sx={{ position: 'absolute', bottom: '100%', left: 0, px: 0.5, borderRadius: `${RADII.badge}px ${RADII.badge}px ${RADII.badge}px 0`, bgcolor: color, color: COLOR_PALETTE.white, fontFamily: FONTS.sans, fontSize: '0.6rem', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.5, whiteSpace: 'nowrap' }}>
         {label}
       </Box>
     </Box>
@@ -333,7 +333,7 @@ export default function HeroDemo() {
       onPointerDown={stop}
       onFocusCapture={stop}
       sx={{
-        borderRadius: '16px',
+        borderRadius: RADII_PX.card,
         border: '1px solid',
         borderColor: 'divider',
         bgcolor: 'background.paper',
@@ -352,13 +352,13 @@ export default function HeroDemo() {
               onClick={() => setTab(id)}
               sx={{
                 position: 'relative',
-                gap: 0.75,
-                px: 1.75,
-                py: 1.1,
+                gap: 1,
+                px: 2,
+                py: 1,
                 fontWeight: FONT_WEIGHTS.bold,
                 fontSize: FONT_SIZES.body,
                 color: on ? 'text.primary' : 'text.secondary',
-                borderRadius: '8px 8px 0 0',
+                borderRadius: `${RADII.control}px ${RADII.control}px 0 0`,
                 '&:hover': { color: 'text.primary' },
                 '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', outlineOffset: -2 },
               }}
@@ -369,7 +369,7 @@ export default function HeroDemo() {
                 <Box
                   component={motion.span}
                   layoutId="hero-tab-underline"
-                  sx={{ position: 'absolute', left: 8, right: 8, bottom: -1, height: 2, borderRadius: 2, bgcolor: 'primary.main' }}
+                  sx={{ position: 'absolute', left: 8, right: 8, bottom: -1, height: 2, borderRadius: RADII_PX.pill, bgcolor: 'primary.main' }}
                 />
               )}
             </ButtonBase>

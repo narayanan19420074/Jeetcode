@@ -8,7 +8,7 @@ import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import { usersApi } from '../../../api/usersApi';
 import { Card, PageTitle, describeError, formatDateTime, relativeTime } from '../components/SettingsUi';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const EVENTS = {
   login: { label: 'Signed in', icon: LoginRoundedIcon },
@@ -59,8 +59,8 @@ export default function SecurityLogSection() {
           const def = EVENTS[e.type] || { label: e.type, icon: HistoryRoundedIcon };
           const Icon = def.icon;
           return (
-            <Stack key={`${e.at}-${i}`} direction="row" sx={{ gap: 2, px: { xs: 2, sm: 3 }, py: 1.75, alignItems: 'center', borderBottom: i === items.length - 1 ? 'none' : '1px solid', borderColor: 'divider' }}>
-              <Box sx={{ width: 36, height: 36, borderRadius: '10px', display: 'grid', placeItems: 'center', bgcolor: 'action.hover', flexShrink: 0 }}>
+            <Stack key={`${e.at}-${i}`} direction="row" sx={{ gap: 2, px: { xs: 2, sm: 3 }, py: 2, alignItems: 'center', borderBottom: i === items.length - 1 ? 'none' : '1px solid', borderColor: 'divider' }}>
+              <Box sx={{ width: 36, height: 36, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', bgcolor: 'action.hover', flexShrink: 0 }}>
                 <Icon fontSize="small" />
               </Box>
               <Box sx={{ minWidth: 0, flex: 1 }}>

@@ -19,7 +19,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
 
 // Same accent as the phone pages.
 const ACCENT = LIB_ACCENT;
@@ -33,8 +33,8 @@ function TabButton({ tab, active, unread, onClick }) {
       onClick={onClick}
       sx={(t) => ({
         flex: 1,
-        gap: 0.75,
-        py: 1.1,
+        gap: 1,
+        py: 1,
         fontFamily: 'inherit',
         fontWeight: FONT_WEIGHTS.bold,
         fontSize: FONT_SIZES.body,
@@ -47,7 +47,7 @@ function TabButton({ tab, active, unread, onClick }) {
       <Icon sx={{ fontSize: FONT_SIZES.subheading }} />
       {tab.label}
       {unread > 0 && (
-        <Box component="span" sx={{ minWidth: 18, height: 18, px: 0.5, borderRadius: 9, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
+        <Box component="span" sx={{ minWidth: 18, height: 18, px: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
           {unread}
         </Box>
       )}
@@ -61,7 +61,7 @@ function PhoneTab({ tab, active, unread, onClick }) {
     <ButtonBase role="tab" aria-selected={active} onClick={onClick} sx={{ ...libChipSx(active), fontWeight: FONT_WEIGHTS.medium }}>
       {tab.label}
       {unread > 0 && (
-        <Box component="span" sx={{ minWidth: 20, height: 20, px: 0.6, borderRadius: 10, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
+        <Box component="span" sx={{ minWidth: 20, height: 20, px: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
           {unread}
         </Box>
       )}
@@ -90,11 +90,11 @@ function PhoneCard({ n, onOpen }) {
         display: 'flex',
         width: '100%',
         minHeight: 76,
-        gap: '12px',
+        gap: 1.5,
         alignItems: 'center',
         textAlign: 'left',
         p: '14px 16px',
-        borderRadius: '20px',
+        borderRadius: RADII_PX.card,
         border: `1px solid ${pal.border}`,
         font: 'inherit',
         color: pal.text,
@@ -104,15 +104,15 @@ function PhoneCard({ n, onOpen }) {
         '&:focus-visible': { outline: `2px solid ${ACCENT}`, outlineOffset: 2 },
       }}
     >
-      <Box aria-hidden sx={{ width: 44, height: 44, borderRadius: '14px', flexShrink: 0, display: 'grid', placeItems: 'center', color: tone, bgcolor: alpha(color, 0.16) }}>
+      <Box aria-hidden sx={{ width: 44, height: 44, borderRadius: RADII_PX.card, flexShrink: 0, display: 'grid', placeItems: 'center', color: tone, bgcolor: alpha(color, 0.16) }}>
         <Icon sx={{ fontSize: FONT_SIZES.display }} />
       </Box>
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '22px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>{n.text}</Typography>
-        <Typography sx={{ mt: '2px', fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{relTime(n.createdAt)}</Typography>
+        <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{relTime(n.createdAt)}</Typography>
       </Box>
       {n.link && (
-        <Box sx={{ flexShrink: 0, height: 28, px: '12px', borderRadius: 999, display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: tone, bgcolor: alpha(color, 0.14), whiteSpace: 'nowrap' }}>{cta}</Box>
+        <Box sx={{ flexShrink: 0, height: 28, px: 1.5, borderRadius: RADII_PX.pill, display: 'grid', placeItems: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: tone, bgcolor: alpha(color, 0.14), whiteSpace: 'nowrap' }}>{cta}</Box>
       )}
       <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', flexShrink: 0, bgcolor: n.read ? 'transparent' : ACCENT, transition: 'background-color 200ms' }} />
     </Box>
@@ -139,13 +139,13 @@ function Row({ n, onOpen }) {
         color: 'inherit',
         cursor: 'pointer',
         px: 2,
-        py: 1.4,
+        py: 1.5,
         bgcolor: n.read ? 'transparent' : alpha(t.palette.primary.main, 0.07),
         '&:hover': { bgcolor: t.palette.action.hover },
         '&:focus-visible': { outline: `2px solid ${t.palette.primary.main}`, outlineOffset: -2 },
       })}
     >
-      <Box sx={{ width: 40, height: 40, borderRadius: '12px', flexShrink: 0, display: 'grid', placeItems: 'center', color: tone, bgcolor: alpha(color, 0.16) }}>
+      <Box sx={{ width: 40, height: 40, borderRadius: RADII_PX.card, flexShrink: 0, display: 'grid', placeItems: 'center', color: tone, bgcolor: alpha(color, 0.16) }}>
         <Icon sx={{ fontSize: FONT_SIZES.display }} />
       </Box>
       <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -153,7 +153,7 @@ function Row({ n, onOpen }) {
         <Typography variant="caption" color="text.secondary">{relTime(n.createdAt)}</Typography>
       </Box>
       {n.link && (
-        <Box sx={{ flexShrink: 0, px: 1.1, py: 0.3, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: tone, bgcolor: alpha(color, 0.12), whiteSpace: 'nowrap' }}>{cta}</Box>
+        <Box sx={{ flexShrink: 0, px: 1, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: tone, bgcolor: alpha(color, 0.12), whiteSpace: 'nowrap' }}>{cta}</Box>
       )}
       <Box aria-hidden sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: n.read ? 'transparent' : 'primary.main', flexShrink: 0 }} />
     </Box>
@@ -222,7 +222,7 @@ export default function NotificationBell() {
           anchor="bottom"
           open={Boolean(anchor)}
           onClose={() => setAnchor(null)}
-          slotProps={{ paper: { sx: { height: '85dvh', maxHeight: '85dvh', borderRadius: '26px 26px 0 0', backgroundImage: 'none', bgcolor: pal.bg, overflow: 'hidden' } } }}
+          slotProps={{ paper: { sx: { height: '85dvh', maxHeight: '85dvh', borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, backgroundImage: 'none', bgcolor: pal.bg, overflow: 'hidden' } } }}
         >
           {/* The drawer renders outside the page, so it gets the Library font and colours itself. */}
           <LibraryFont sx={{ height: '100%', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
@@ -253,13 +253,13 @@ export default function NotificationBell() {
               ))}
             </Box>
 
-            <Box role="tabpanel" sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: 2, pb: 'calc(16px + env(safe-area-inset-bottom))', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <Box role="tabpanel" sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', px: 2, pb: 'calc(16px + env(safe-area-inset-bottom))', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
               {visible.length === 0 ? (
                 <Box sx={{ py: 7, px: 3, textAlign: 'center' }}>
                   {(() => {
                     const Icon = TABS.find((t) => t.key === tab).icon;
                     return (
-                      <Box aria-hidden sx={{ width: 64, height: 64, mx: 'auto', mb: 1.5, borderRadius: '20px', display: 'grid', placeItems: 'center', bgcolor: pal.chip, color: pal.muted }}>
+                      <Box aria-hidden sx={{ width: 64, height: 64, mx: 'auto', mb: 1.5, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', bgcolor: pal.chip, color: pal.muted }}>
                         <Icon sx={{ fontSize: FONT_SIZES.hero }} />
                       </Box>
                     );
@@ -285,8 +285,8 @@ export default function NotificationBell() {
                 width: 460,
                 maxWidth: 'calc(100vw - 24px)',
                 height: 'min(580px, calc(100dvh - 96px))',
-                borderRadius: '20px',
-                mt: 0.75,
+                borderRadius: RADII_PX.card,
+                mt: 1,
                 display: 'flex',
                 flexDirection: 'column',
                 overflow: 'hidden',

@@ -41,11 +41,11 @@ export default function LegalLayout({ title, intro, sections }) {
             </Typography>
             {s.body.map((b, j) =>
               typeof b === 'string' ? (
-                <Typography key={j} sx={{ mb: 1.25, lineHeight: 1.75 }}>
+                <Typography key={j} sx={{ mb: 1.5, lineHeight: 1.75 }}>
                   {b}
                 </Typography>
               ) : (
-                <Box key={j} component="ul" sx={{ mt: 0, mb: 1.25, pl: 3 }}>
+                <Box key={j} component="ul" sx={{ mt: 0, mb: 1.5, pl: 3 }}>
                   {b.list.map((li) => (
                     <Typography key={li} component="li" sx={{ lineHeight: 1.75, mb: 0.5 }}>
                       {li}

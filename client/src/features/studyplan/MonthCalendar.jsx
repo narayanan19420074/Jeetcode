@@ -3,7 +3,7 @@ import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { monthCells } from '../dashboard/dashboardUtils';
 import { monthLabel } from './planUtils';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const DOW = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
@@ -24,7 +24,7 @@ export default function MonthCalendar({ cursor, onCursor, selected, onSelect, to
         <IconButton size="small" aria-label="Next month" onClick={() => move(1)}><ChevronRightRoundedIcon fontSize="small" /></IconButton>
       </Box>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '3px' }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 0.5 }}>
         {DOW.map((d, i) => (
           <Typography key={i} variant="caption" color="text.secondary" sx={{ textAlign: 'center', fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.6 }}>{d}</Typography>
         ))}
@@ -38,7 +38,7 @@ export default function MonthCalendar({ cursor, onCursor, selected, onSelect, to
             <ButtonBase
               key={cell.key} disabled={disabled} onClick={() => onSelect?.(cell.key)} aria-label={cell.key} aria-pressed={isSel}
               sx={(t) => ({
-                height: 32, borderRadius: '8px', fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: isSel || isToday ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
+                height: 32, borderRadius: RADII_PX.control, fontFamily: 'inherit', fontSize: FONT_SIZES.body, fontWeight: isSel || isToday ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
                 color: isSel ? t.palette.primary.contrastText : disabled ? t.palette.text.disabled : t.palette.text.primary,
                 bgcolor: isSel ? t.palette.primary.main : inSpan ? alpha(t.palette.primary.main, 0.12) : 'transparent',
                 border: `1px solid ${isToday && !isSel ? t.palette.primary.main : 'transparent'}`,

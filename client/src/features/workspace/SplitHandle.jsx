@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { RADII_PX } from '../../app/design/designTokens';
 
 /**
  * Draggable divider for resizable split panes.
@@ -75,7 +76,7 @@ export default function SplitHandle({ orientation = 'vertical', onDrag, onReset,
           '&::after': {
             content: '""',
             position: 'absolute',
-            borderRadius: 2,
+            borderRadius: RADII_PX.card,
             backgroundColor: active ? t.palette.primary.main : 'transparent',
             transition: 'background-color .15s',
             ...(isVertical ? { top: 0, bottom: 0, left: 3, width: 3 } : { left: 0, right: 0, top: 3, height: 3 }),

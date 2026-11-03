@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Box, Paper, Typography, Button, IconButton, Tooltip } from '@mui/material';
 import BackspaceRoundedIcon from '@mui/icons-material/BackspaceRounded';
 import DeleteSweepRoundedIcon from '@mui/icons-material/DeleteSweepRounded';
-import { FONT_WEIGHTS, FONTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // --- Basic calculator -------------------------------------------------
 // A button-press state machine (running value + pending operator), same
@@ -182,7 +182,7 @@ function Calculator() {
     minWidth: 0,
     height: 36,
     fontWeight: FONT_WEIGHTS.semibold,
-    borderRadius: 1,
+    borderRadius: RADII_PX.control,
     transition: 'transform 0.08s ease, background-color 0.12s ease',
     '&:active': { transform: 'scale(0.94)' },
   };
@@ -222,7 +222,7 @@ function Calculator() {
         sx={{
           p: 1,
           mb: 1,
-          borderRadius: 1,
+          borderRadius: RADII_PX.control,
           textAlign: 'right',
           fontFamily: FONTS.mono,
           fontSize: FONT_SIZES.subheading,
@@ -235,7 +235,7 @@ function Calculator() {
         {display}
       </Paper>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0.75 }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1 }}>
         <Button fullWidth variant="outlined" color="error" sx={clearBtnSx} onClick={pressClear}>
           C
         </Button>
@@ -310,14 +310,14 @@ function Calculator() {
         <Paper
           variant="outlined"
           sx={{
-            borderRadius: 1,
+            borderRadius: RADII_PX.control,
             maxHeight: 140,
             overflowY: 'auto',
             bgcolor: 'action.hover',
           }}
         >
           {history.length === 0 ? (
-            <Typography variant="caption" sx={{ display: 'block', p: 1.25, color: 'text.disabled' }}>
+            <Typography variant="caption" sx={{ display: 'block', p: 1.5, color: 'text.disabled' }}>
               No calculations yet
             </Typography>
           ) : (
@@ -325,8 +325,8 @@ function Calculator() {
               <Box
                 key={idx}
                 sx={{
-                  px: 1.25,
-                  py: 0.75,
+                  px: 1.5,
+                  py: 1,
                   borderBottom: idx < history.length - 1 ? '1px solid' : 'none',
                   borderColor: 'divider',
                 }}
@@ -352,7 +352,7 @@ function Calculator() {
 // --- Panel shell ------------------------------------------------------
 export default function ScratchPad() {
   return (
-    <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
+    <Paper variant="outlined" sx={{ p: 2, borderRadius: RADII_PX.control }}>
       <Calculator />
     </Paper>
   );

@@ -11,7 +11,7 @@ export default function PhoneRow({ to, title, subtitle, leading }) {
     <ButtonBase
       component={RouterLink}
       to={to}
-      sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', py: 1.25, textAlign: 'left', fontFamily: 'inherit', color: pal.text, borderBottom: `1px solid ${pal.divider}`, '&:last-of-type': { borderBottom: 'none' } }}
+      sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, py: 1.5, textAlign: 'left', fontFamily: 'inherit', color: pal.text, borderBottom: `1px solid ${pal.divider}`, '&:last-of-type': { borderBottom: 'none' } }}
     >
       {leading}
       <Box sx={{ minWidth: 0, flex: 1 }}>

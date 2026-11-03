@@ -12,7 +12,7 @@ import { APT_COLOR, AvatarRing, PT, calm, mono, sweep } from './lbShared';
 import EmpireCard from './EmpireCard';
 import LeaderboardPanel from './lbPanel';
 import MobileLeaderboard from './MobileLeaderboard';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const LIMIT = 30;
 
@@ -58,7 +58,7 @@ function RowDetail({ row }) {
   ];
   return (
     <Box sx={(t) => ({ px: 2, py: 1.5, bgcolor: alpha(t.palette.text.primary, 0.035), display: 'grid', gap: 1.5 })}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 0 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, minWidth: 0 }}>
         <AvatarRing src={row.avatarUrl} name={row.name} size={38} a={tier.color} b={`color-mix(in srgb, ${tier.color} 40%, ${COLOR_PALETTE.white})`} />
         <Box sx={{ minWidth: 0 }}>
           <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.25 }}>{row.name}</Typography>
@@ -67,7 +67,7 @@ function RowDetail({ row }) {
       </Box>
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 1 }}>
         {tiles.map(([label, n, pts, color]) => (
-          <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: '12px', border: `1px solid color-mix(in srgb, ${color} 35%, transparent)`, background: `linear-gradient(160deg, color-mix(in srgb, ${color} 20%, transparent), transparent 80%)` }}>
+          <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: RADII_PX.card, border: `1px solid color-mix(in srgb, ${color} 35%, transparent)`, background: `linear-gradient(160deg, color-mix(in srgb, ${color} 20%, transparent), transparent 80%)` }}>
             <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.2, color }, mono]}>{n}</Typography>
             <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', fontWeight: FONT_WEIGHTS.bold }}>{label}</Typography>
             <Typography variant="caption" color="text.disabled" sx={[{ fontSize: FONT_SIZES.micro }, mono]}>{n * pts} pts</Typography>
@@ -76,7 +76,7 @@ function RowDetail({ row }) {
       </Box>
 
       <Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.6 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
           <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
             <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />{tier.name}
           </Box>
@@ -84,10 +84,10 @@ function RowDetail({ row }) {
             {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top level reached'}
           </Typography>
         </Box>
-        <Box sx={{ height: 9, borderRadius: 99, bgcolor: 'divider', overflow: 'hidden' }}>
-          <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: 99, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, ${COLOR_PALETTE.white}))`, transition: 'width .6s ease', '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(90deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
+        <Box sx={{ height: 9, borderRadius: RADII_PX.pill, bgcolor: 'divider', overflow: 'hidden' }}>
+          <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, ${COLOR_PALETTE.white}))`, transition: 'width .6s ease', '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(90deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
         </Box>
-        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.75, fontWeight: FONT_WEIGHTS.semibold }}>
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1, fontWeight: FONT_WEIGHTS.semibold }}>
           {row.recent} solved in the last 7 days
         </Typography>
       </Box>
@@ -248,7 +248,7 @@ export default function LeaderboardView({ isAuthenticated }) {
       <Popover
         anchorEl={detail?.el} open={Boolean(detail)} onClose={() => setDetail(null)}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }} transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-        slotProps={{ paper: { sx: { width: 380, maxWidth: 'calc(100vw - 24px)', borderRadius: '14px', overflow: 'hidden', mt: 0.5 } } }}
+        slotProps={{ paper: { sx: { width: 380, maxWidth: 'calc(100vw - 24px)', borderRadius: RADII_PX.card, overflow: 'hidden', mt: 0.5 } } }}
       >
         {detail && <RowDetail row={detail.row} />}
       </Popover>

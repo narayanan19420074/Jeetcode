@@ -1,7 +1,7 @@
 import { Box, Button, MenuItem, Select, Slider, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import { Card, CardBody, PageTitle, Row, SwitchRow, usePreferences } from '../components/SettingsUi';
-import { COLOR_PALETTE, FONTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, RADII_PX } from '../../../app/design/designTokens';
 
 const SAMPLE = `function twoSum(nums, target) {
 \tconst seen = new Map();
@@ -25,8 +25,8 @@ function Preview({ e, uiMode }) {
   const t = THEMES[e.theme === 'auto' ? (uiMode === 'dark' ? 'vs-dark' : 'vs') : e.theme];
   const lines = SAMPLE.split('\n');
   return (
-    <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: '10px', overflow: 'hidden', bgcolor: t.bg }}>
-      <Box sx={{ overflowX: 'auto', py: 1.25 }}>
+    <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.control, overflow: 'hidden', bgcolor: t.bg }}>
+      <Box sx={{ overflowX: 'auto', py: 1.5 }}>
         {lines.map((line, i) => (
           <Box key={i} sx={{ display: 'flex', fontFamily: FONTS.mono, fontSize: e.fontSize, lineHeight: 1.6, tabSize: e.tabSize, MozTabSize: e.tabSize, fontVariantLigatures: e.ligatures ? 'normal' : 'none', color: t.fg }}>
             {e.lineNumbers && (

@@ -7,7 +7,7 @@ import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
 import { ACCENT, AVATAR_FRAMES, LB_DARK, LB_LIGHT } from '../leaderboard/lbTheme';
 import { inr } from './contestUtils';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // three.js is heavy, so it only downloads once the panel is on screen.
 const PodiumScene = lazy(() => import('./PodiumScene'));
@@ -38,8 +38,8 @@ const nudge = keyframes`0%,100% { transform: translateY(0); } 50% { transform: t
 
 function AvatarFrame({ row, size = 34, index, T }) {
   return (
-    <Box sx={{ p: '3px', borderRadius: '50%', flexShrink: 0, background: AVATAR_FRAMES[index % AVATAR_FRAMES.length], boxShadow: `0 6px 14px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.55)}` }}>
-      <Box sx={{ p: '2px', borderRadius: '50%', bgcolor: T.frameInner }}>
+    <Box sx={{ p: 0.5, borderRadius: '50%', flexShrink: 0, background: AVATAR_FRAMES[index % AVATAR_FRAMES.length], boxShadow: `0 6px 14px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.55)}` }}>
+      <Box sx={{ p: 0.5, borderRadius: '50%', bgcolor: T.frameInner }}>
         <Avatar src={row.avatarUrl || undefined} alt={row.name} sx={{ width: size, height: size, fontWeight: FONT_WEIGHTS.bold, fontSize: size * 0.4, color: T.avatarFg, bgcolor: T.avatarBg }}>
           {row.name?.[0]?.toUpperCase()}
         </Avatar>
@@ -49,16 +49,16 @@ function AvatarFrame({ row, size = 34, index, T }) {
 }
 
 function Chip({ bg, fg, children }) {
-  return <Box sx={{ px: 1, py: 0.25, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', bgcolor: bg, color: fg }}>{children}</Box>;
+  return <Box sx={{ px: 1, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', bgcolor: bg, color: fg }}>{children}</Box>;
 }
 
 // Rank 4-10 as small cards so the whole top 10 fits one screen.
 function RankCard({ row, index, delay, reduce, T }) {
   return (
     <motion.div initial={reduce ? false : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: reduce ? 0 : delay }} style={{ minWidth: 0 }}>
-      <Box sx={{ height: '100%', p: 1.4, borderRadius: '18px', bgcolor: T.soft, boxShadow: T.raised, display: 'grid', gap: 0.9, alignContent: 'start' }}>
+      <Box sx={{ height: '100%', p: 1.5, borderRadius: RADII_PX.card, bgcolor: T.soft, boxShadow: T.raised, display: 'grid', gap: 1, alignContent: 'start' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ width: 28, height: 28, borderRadius: '10px', display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, background: badgeBg(row.rank), boxShadow: `0 6px 12px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}` }}>{row.rank}</Box>
+          <Box sx={{ width: 28, height: 28, borderRadius: RADII_PX.control, display: 'grid', placeItems: 'center', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, background: badgeBg(row.rank), boxShadow: `0 6px 12px -6px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}` }}>{row.rank}</Box>
           <AvatarFrame row={row} index={index} T={T} />
         </Box>
         <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.ink }}>{row.name}</Typography>
@@ -73,7 +73,7 @@ function RankCard({ row, index, delay, reduce, T }) {
 
 function LockedCard({ rank, T }) {
   return (
-    <Box sx={{ height: '100%', minHeight: 96, borderRadius: '18px', bgcolor: T.soft, boxShadow: T.pressed, display: 'grid', placeItems: 'center', color: T.locked, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading }}>#{rank}</Box>
+    <Box sx={{ height: '100%', minHeight: 96, borderRadius: RADII_PX.card, bgcolor: T.soft, boxShadow: T.pressed, display: 'grid', placeItems: 'center', color: T.locked, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading }}>#{rank}</Box>
   );
 }
 
@@ -94,7 +94,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
     <Box
       sx={[
         {
-          position: 'relative', overflow: 'hidden', borderRadius: '28px', p: { xs: 1.75, sm: 2.5 },
+          position: 'relative', overflow: 'hidden', borderRadius: RADII_PX.card, p: { xs: 2, sm: 2.5 },
           background: T.panel, border: T.border, boxShadow: T.panelShadow,
         },
         fill && { height: '100%', display: 'flex', flexDirection: 'column' },
@@ -106,12 +106,12 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
       <Box sx={[{ position: 'relative' }, fill && { flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }]}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, justifyContent: 'space-between', flexShrink: 0 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, minWidth: 0 }}>
-            <Box sx={{ width: 42, height: 42, flexShrink: 0, borderRadius: '14px', display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: COLOR_PALETTE.amber[500] }}>
+            <Box sx={{ width: 42, height: 42, flexShrink: 0, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', bgcolor: T.soft, boxShadow: T.raised, color: COLOR_PALETTE.amber[500] }}>
               <EmojiEventsRoundedIcon />
             </Box>
             <Box sx={{ minWidth: 0 }}>
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.subheading, sm: FONT_SIZES.heading }, color: T.ink, letterSpacing: '-0.01em', lineHeight: 1.2 }}>Contest top 10</Typography>
-              <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: T.muted, mt: 0.2 }}>{contest ? contest.title : 'Winners will stand here'}</Typography>
+              <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: T.muted, mt: 0.5 }}>{contest ? contest.title : 'Winners will stand here'}</Typography>
             </Box>
           </Box>
           {has && revealed && !failed && (
@@ -124,7 +124,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
         </Box>
 
         {failed && !has && (
-          <Box sx={{ mt: 2, py: 5, px: 3, textAlign: 'center', borderRadius: '24px', bgcolor: T.soft, boxShadow: T.pressed }}>
+          <Box sx={{ mt: 2, py: 5, px: 3, textAlign: 'center', borderRadius: RADII_PX.card, bgcolor: T.soft, boxShadow: T.pressed }}>
             <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: COLOR_PALETTE.amber[500] }} />
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mt: 0.5, color: T.ink }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
           </Box>
@@ -134,29 +134,29 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
           <Box
             sx={[
               {
-                position: 'relative', mt: 2, overflow: 'hidden', borderRadius: '22px', height: { xs: 330, sm: 420 },
+                position: 'relative', mt: 2, overflow: 'hidden', borderRadius: RADII_PX.card, height: { xs: 330, sm: 420 },
                 bgcolor: T.stage, backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
                 border: T.stageBorder, boxShadow: `${T.pressed}, ${T.stageGlow}`,
               },
               fill && { height: 'auto', flex: 1, minHeight: 190 },
             ]}
           >
-            <Suspense fallback={<Skeleton variant="rounded" sx={{ position: 'absolute', inset: 14, height: 'auto', borderRadius: '16px' }} />}>
+            <Suspense fallback={<Skeleton variant="rounded" sx={{ position: 'absolute', inset: 14, height: 'auto', borderRadius: RADII_PX.card }} />}>
               <PodiumScene key={`${contest?.id || 'none'}-${runKey}`} winners={winners} revealed={revealed} reduce={Boolean(reduce)} dark={T.dark} onFail={onFail} />
             </Suspense>
             {!has && (
               <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, display: 'grid', placeItems: 'center', pointerEvents: 'none' }}>
-                <Box sx={{ px: 2.5, py: 1, borderRadius: 99, bgcolor: T.pill, backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', boxShadow: T.raised, textAlign: 'center' }}>
+                <Box sx={{ px: 2.5, py: 1, borderRadius: RADII_PX.pill, bgcolor: T.pill, backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', boxShadow: T.raised, textAlign: 'center' }}>
                   <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, color: T.ink }}>{contest ? 'Results coming soon' : 'No contest finished yet'}</Typography>
                   <Typography sx={{ fontSize: FONT_SIZES.caption, color: T.muted }}>{contest ? 'Winners appear once rankings are verified' : 'Winners will stand on this podium'}</Typography>
                 </Box>
               </Box>
             )}
             {has && !revealed && (
-              <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, display: 'grid', placeItems: 'center', gap: 0.75, pointerEvents: 'none' }}>
+              <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 14, display: 'grid', placeItems: 'center', gap: 1, pointerEvents: 'none' }}>
                 <Button
                   onClick={onReveal} disableElevation startIcon={<BoltRoundedIcon />}
-                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: '16px', color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, background: ACCENT, boxShadow: `0 14px 28px -12px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}`, animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
+                  sx={{ pointerEvents: 'auto', px: 3.5, height: 44, borderRadius: RADII_PX.card, color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.bold, background: ACCENT, boxShadow: `0 14px 28px -12px ${withAlpha(COLOR_PALETTE.indigo[500], 0.7)}`, animation: `${nudge} 2s ease-in-out infinite`, '@media (prefers-reduced-motion: reduce)': { animation: 'none' } }}
                 >
                   Reveal winners
                 </Button>
@@ -170,7 +170,7 @@ export default function WinnersPanel({ contest, revealed, runKey, onReveal, onRe
           <Box
             className="autohide-scroll"
             sx={{
-              mt: 1.75, flexShrink: 0, display: 'grid', gap: 1.25, pb: { xs: 0.75, md: 0 },
+              mt: 2, flexShrink: 0, display: 'grid', gap: 1.5, pb: { xs: 1, md: 0 },
               gridAutoFlow: { xs: 'column', md: 'row' }, gridAutoColumns: { xs: '132px', md: 'auto' },
               gridTemplateColumns: { md: 'repeat(auto-fill, minmax(128px, 1fr))' },
               overflowX: { xs: 'auto', md: 'visible' },

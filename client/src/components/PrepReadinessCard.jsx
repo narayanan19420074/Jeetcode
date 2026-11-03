@@ -50,13 +50,13 @@ function ExamDuration({ minutes }) {
 
 function ActiveTrackHeader({ active }) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mt: 1.75 }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mt: 2 }}>
       <Box sx={{ color: COLOR_PALETTE.white, flexShrink: 0 }}>
         <ProgressRing value={active.readiness ?? 0} max={100} label="Ready" color={AMBER} size={104} strokeWidth={9} />
       </Box>
       <Box sx={{ minWidth: 0 }}>
         <CompanyAvatar name={active.name} logoUrl={active.logoUrl} size={36} />
-        <Typography variant="h5" sx={{ fontWeight: 'fontWeightBold', mt: 0.75, overflowWrap: 'anywhere' }}>{active.name}</Typography>
+        <Typography variant="h5" sx={{ fontWeight: 'fontWeightBold', mt: 1, overflowWrap: 'anywhere' }}>{active.name}</Typography>
         {active.examDurationMinutes && <ExamDuration minutes={active.examDurationMinutes} />}
       </Box>
     </Box>
@@ -66,16 +66,16 @@ function ActiveTrackHeader({ active }) {
 function EncouragementBubble({ active }) {
   const message = active.readiness ? `You are ${active.readiness}% ready. Keep going!` : 'Start this track to see how ready you are.';
   return (
-    <Box sx={{ mt: 1.5, px: 1.5, py: 1.1, borderRadius: BUBBLE_RADIUS, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14) }}>
+    <Box sx={{ mt: 1.5, px: 1.5, py: 1, borderRadius: BUBBLE_RADIUS, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14) }}>
       <Typography variant="body2" sx={{ fontWeight: 'fontWeightBold' }}>{message}</Typography>
-      {active.description && <Typography variant="caption" noWrap sx={{ display: 'block', mt: 0.3, opacity: 0.85 }}>{active.description}</Typography>}
+      {active.description && <Typography variant="caption" noWrap sx={{ display: 'block', mt: 0.5, opacity: 0.85 }}>{active.description}</Typography>}
     </Box>
   );
 }
 
 function ContinueButton({ active, onOpen }) {
   const buttonSx = {
-    mt: 1.75,
+    mt: 2,
     height: SIZES.touchTarget,
     bgcolor: AMBER,
     color: COLOR_PALETTE.custom.black1B1200,
@@ -90,7 +90,7 @@ function ContinueButton({ active, onOpen }) {
 }
 
 function ReadinessBar({ readiness }) {
-  const barSx = { mt: 0.4, height: 5, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.white, 0.18), overflow: 'hidden' };
+  const barSx = { mt: 0.5, height: 5, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.white, 0.18), overflow: 'hidden' };
   const fillSx = { width: `${Math.max(readiness, 4)}%`, height: '100%', borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${AMBER}, ${COLOR_PALETTE.amber[500]})` };
   return (
     <Box sx={barSx}>
@@ -117,7 +117,7 @@ function OtherTrackRow({ track, onOpen }) {
 
 function OtherTracks({ tracks, average, onOpen }) {
   return (
-    <Box sx={{ mt: 1.75, display: 'grid', gap: 1 }}>
+    <Box sx={{ mt: 2, display: 'grid', gap: 1 }}>
       <Typography variant="micro" sx={{ fontWeight: 'fontWeightBold', letterSpacing: 0.6, opacity: 0.75 }}>ALSO IN PROGRESS · AVG {average}%</Typography>
       {tracks.map((track) => (
         <OtherTrackRow key={track.slug} track={track} onOpen={() => onOpen(track.slug)} />
@@ -167,8 +167,8 @@ export default function PrepReadinessCard({ tracks }) {
   return (
     <Box sx={cardSx}>
       <CardGlows />
-      <Box sx={{ position: 'relative', p: 2.25 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, opacity: 0.9 }}>
+      <Box sx={{ position: 'relative', p: 2.5 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, opacity: 0.9 }}>
           <BusinessRoundedIcon sx={{ fontSize: SIZES.iconSize.small, color: AMBER }} />
           <Typography variant="overline" sx={{ fontWeight: 'fontWeightBold' }}>PREPARATION READINESS</Typography>
         </Box>

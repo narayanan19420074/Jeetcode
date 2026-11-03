@@ -7,7 +7,7 @@ import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import CallEndRoundedIcon from '@mui/icons-material/CallEndRounded';
 import CloseFullscreenRoundedIcon from '@mui/icons-material/CloseFullscreenRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const SIZE = 60; // collapsed bubble diameter
 const GAP = 8;
@@ -186,10 +186,10 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
         bottom: 'calc(16px + env(safe-area-inset-bottom))',
         width: 'min(92vw, 360px)',
         p: 1,
-        borderRadius: '28px',
+        borderRadius: RADII_PX.card,
       }}
     >
-      <Box sx={{ position: 'relative', height: 230, borderRadius: '22px', overflow: 'hidden', bgcolor: COLOR_PALETTE.slate[900] }}>
+      <Box sx={{ position: 'relative', height: 230, borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: COLOR_PALETTE.slate[900] }}>
         <Vid stream={remoteStream} show={!!remoteStream} />
         {!remoteStream && (
           <Box sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', color: 'grey.400' }}>
@@ -205,7 +205,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
         {/* friend name, top-left */}
         <Typography
           variant="caption"
-          sx={{ position: 'absolute', left: 10, top: 10, px: 1, py: 0.25, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.black, .55), color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.semibold }}
+          sx={{ position: 'absolute', left: 10, top: 10, px: 1, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.black, .55), color: COLOR_PALETTE.white, fontWeight: FONT_WEIGHTS.semibold }}
         >
           {remoteStream ? friendName : status}
         </Typography>
@@ -228,7 +228,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
         </Box>
       </Box>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, pt: 1.25, pb: 0.5 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, pt: 1.5, pb: 0.5 }}>
         <Tooltip title={micOn ? 'Mute' : 'Unmute'}>
           <IconButton
             onClick={toggleMic}
@@ -254,7 +254,7 @@ export default function FloatingCall({ call, friendName, myName, hasFriend }) {
               stop();
             }}
             aria-label="End call"
-            sx={{ width: 64, height: 48, borderRadius: 99, bgcolor: 'error.main', color: COLOR_PALETTE.white, '&:hover': { bgcolor: 'error.dark' } }}
+            sx={{ width: 64, height: 48, borderRadius: RADII_PX.pill, bgcolor: 'error.main', color: COLOR_PALETTE.white, '&:hover': { bgcolor: 'error.dark' } }}
           >
             <CallEndRoundedIcon />
           </IconButton>

@@ -30,7 +30,7 @@ import {
   clamp,
 } from './CommunityBits';
 import CommentSection from './CommentSection';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 const SORTS = [
   { value: 'active', label: 'Active', icon: <BoltRoundedIcon /> },
@@ -84,7 +84,7 @@ function ThreadPost({ t, onOpen }) {
   return (
     <Box component="article" sx={{
         p: 2,
-        borderRadius: '20px',
+        borderRadius: RADII_PX.card,
         border: '1px solid',
         borderColor: 'divider',
         bgcolor: (t) => alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.04 : 0.02),
@@ -95,7 +95,7 @@ function ThreadPost({ t, onOpen }) {
         tabIndex={0}
         onClick={onOpen}
         onKeyDown={(e) => e.key === 'Enter' && onOpen()}
-        sx={{ mt: 1.5, cursor: 'pointer', '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', borderRadius: 2 } }}
+        sx={{ mt: 1.5, cursor: 'pointer', '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main', borderRadius: RADII_PX.card } }}
       >
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, lineHeight: 1.35 }}>{t.title}</Typography>
         {t.excerpt && (
@@ -104,7 +104,7 @@ function ThreadPost({ t, onOpen }) {
           </Typography>
         )}
       </Box>
-      <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5, pt: 1.25, borderTop: '1px solid', borderColor: 'divider' }}>
+      <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
         <VoteBar targetType="thread" targetId={t._id} score={t.score} myVote={t.myVote} isMine={t.isMine} />
         <ActionButton icon={<ChatBubbleOutlineRoundedIcon />} count={t.commentCount} label="Open comments" onClick={onOpen} />
       </Stack>
@@ -316,7 +316,7 @@ export default function DiscussionPanel({ slug }) {
           placeholder="Search topics"
           value={qInput}
           onChange={(e) => setQInput(e.target.value.slice(0, 60))}
-          sx={{ '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48 } }}
+          sx={{ '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 48 } }}
           slotProps={{
             input: {
               startAdornment: (

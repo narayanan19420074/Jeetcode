@@ -44,7 +44,7 @@ import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import { problemsApi } from '../api/problemsApi';
 import { extractErrorMessage } from '../api/apiClient';
-import { FONT_WEIGHTS, FONT_SIZES } from '../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../app/design/designTokens';
 
 /* ------------------------------------------------------------------ */
 /* Constants                                                           */
@@ -88,7 +88,7 @@ function FilterButton({ label, active, onClick, disabled }) {
       sx={{
         height: 36,
         px: 1.5,
-        borderRadius: 2,
+        borderRadius: RADII_PX.card,
         textTransform: 'none',
         fontWeight: FONT_WEIGHTS.semibold,
         whiteSpace: 'nowrap',
@@ -114,7 +114,7 @@ function SingleSelectFilter({ label, value, defaultValue, options, onChange, dis
   return (
     <>
       <FilterButton label={buttonLabel} active={active && !showValue} disabled={disabled} onClick={(e) => setAnchor(e.currentTarget)} />
-      <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={() => setAnchor(null)} slotProps={{ paper: { sx: { mt: 0.5, minWidth: 190, borderRadius: 2 } } }}>
+      <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={() => setAnchor(null)} slotProps={{ paper: { sx: { mt: 0.5, minWidth: 190, borderRadius: RADII_PX.card } } }}>
         {options.map((o) => (
           <MenuItem
             key={o.value}
@@ -163,9 +163,9 @@ function MultiSelectFilter({ label, items, nameKey, selected, onToggle, onClear 
         open={Boolean(anchor)}
         onClose={close}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        slotProps={{ paper: { sx: { mt: 0.5, width: 300, borderRadius: 2 } } }}
+        slotProps={{ paper: { sx: { mt: 0.5, width: 300, borderRadius: RADII_PX.card } } }}
       >
-        <Box sx={{ p: 1.25 }}>
+        <Box sx={{ p: 1.5 }}>
           <TextField
             size="small"
             fullWidth
@@ -207,7 +207,7 @@ function MultiSelectFilter({ label, items, nameKey, selected, onToggle, onClear 
           })}
         </MenuList>
         <Divider />
-        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', px: 1.5, py: 0.75 }}>
+        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', px: 1.5, py: 1 }}>
           <Typography variant="caption" color="text.secondary">
             {selected.length} selected
           </Typography>
@@ -252,7 +252,7 @@ function ChipPicker({ title, items, nameKey, selected, onToggle }) {
       {items.length > LIMIT && (
         <TextField size="small" fullWidth placeholder={`Search ${title.toLowerCase()}`} value={query} onChange={(e) => setQuery(e.target.value)} sx={{ mb: 1 }} />
       )}
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
         {visible.map((item) => {
           const name = item[nameKey];
           const isSel = selected.includes(name);
@@ -284,15 +284,15 @@ function ChipPicker({ title, items, nameKey, selected, onToggle }) {
 
 function ProgressSummary({ progress }) {
   const sx = { width: { xs: '100%', md: 400 }, flexShrink: 0 };
-  if (progress === undefined) return <Skeleton variant="rounded" height={84} sx={{ ...sx, borderRadius: 3 }} />;
+  if (progress === undefined) return <Skeleton variant="rounded" height={84} sx={{ ...sx, borderRadius: RADII_PX.card }} />;
   if (!progress) return null;
 
   const totalAll = DIFFICULTIES.reduce((s, d) => s + (progress.total?.[d] || 0), 0);
   const solvedAll = DIFFICULTIES.reduce((s, d) => s + (progress.solved?.[d] || 0), 0);
 
   return (
-    <Paper variant="outlined" sx={{ ...sx, borderRadius: { xs: 0, sm: 3 }, border: { xs: 'none', sm: '1px solid' }, borderColor: 'divider', px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1.5 }, bgcolor: { xs: 'transparent', sm: 'background.paper' } }}>
-      <Stack direction="row" sx={{ alignItems: 'baseline', gap: 0.75, mb: 1 }}>
+    <Paper variant="outlined" sx={{ ...sx, borderRadius: { xs: 0, sm: RADII_PX.card }, border: { xs: 'none', sm: '1px solid' }, borderColor: 'divider', px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1.5 }, bgcolor: { xs: 'transparent', sm: 'background.paper' } }}>
+      <Stack direction="row" sx={{ alignItems: 'baseline', gap: 1, mb: 1 }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1 }}>{solvedAll}</Typography>
         <Typography variant="body2" color="text.secondary">
           / {totalAll} solved
@@ -311,7 +311,7 @@ function ProgressSummary({ progress }) {
                 flex: total || 1,
                 minWidth: 6,
                 height: 6,
-                borderRadius: 3,
+                borderRadius: RADII_PX.pill,
                 overflow: 'hidden',
                 bgcolor: (t) => alpha(t.palette[{ Easy: 'success', Medium: 'warning', Hard: 'error' }[d]].main, 0.22),
               }}
@@ -324,7 +324,7 @@ function ProgressSummary({ progress }) {
 
       <Stack direction="row" sx={{ gap: 2, flexWrap: 'wrap' }}>
         {DIFFICULTIES.map((d) => (
-          <Stack key={d} direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
+          <Stack key={d} direction="row" sx={{ alignItems: 'center', gap: 1 }}>
             <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: DIFF_COLOR[d] }} />
             <Typography variant="caption" color="text.secondary">
               {d} {progress.solved?.[d] || 0}/{progress.total?.[d] || 0}
@@ -376,7 +376,7 @@ function ProblemRow({ p, index }) {
         alignItems: 'center',
         columnGap: { xs: 1, sm: 1.5 },
         px: PAD_X,
-        py: { xs: 1.25, sm: 1 },
+        py: { xs: 1.5, sm: 1 },
         minHeight: { xs: 56, sm: 48 },
         color: 'inherit',
         textDecoration: 'none',
@@ -395,7 +395,7 @@ function ProblemRow({ p, index }) {
       </Box>
 
       <Box sx={{ minWidth: 0 }}>
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75, minWidth: 0 }}>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 1, minWidth: 0 }}>
           <Typography
             variant="body2"
             sx={{
@@ -416,7 +416,7 @@ function ProblemRow({ p, index }) {
             </Tooltip>
           )}
         </Stack>
-        <Typography variant="caption" color="text.secondary" sx={{ display: { xs: 'block', sm: 'none' }, mt: 0.25 }}>
+        <Typography variant="caption" color="text.secondary" sx={{ display: { xs: 'block', sm: 'none' }, mt: 0.5 }}>
           {accept} acceptance
         </Typography>
       </Box>
@@ -469,7 +469,7 @@ function ProblemRowMobile({ p, index }) {
         >
           {index}. {p.title}
         </Typography>
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, mt: 0.5 }}>
+        <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, mt: 0.5 }}>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.caption, color: DIFF_COLOR[p.difficulty] || 'text.secondary' }}>{p.difficulty}</Typography>
           <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary' }}>{accept}</Typography>
           {p.locked && <LockRoundedIcon sx={{ fontSize: FONT_SIZES.body, color: 'text.disabled' }} />}
@@ -666,7 +666,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
       <Paper
         variant="outlined"
         sx={{
-          borderRadius: { xs: 0, sm: 3 },
+          borderRadius: { xs: 0, sm: RADII_PX.card },
           overflow: 'hidden',
           borderLeft: { xs: 'none', sm: '1px solid' },
           borderRight: { xs: 'none', sm: '1px solid' },
@@ -686,7 +686,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
                 flex: 1,
                 minWidth: 0,
                 '& .MuiOutlinedInput-root': {
-                  borderRadius: { xs: 999, sm: 1 },
+                  borderRadius: { xs: RADII_PX.pill, sm: RADII_PX.control },
                   bgcolor: { xs: (t) => alpha(t.palette.text.primary, 0.06), sm: 'transparent' },
                 },
                 '& .MuiOutlinedInput-notchedOutline': { borderColor: { xs: 'transparent', sm: 'divider' } },
@@ -738,7 +738,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
                   onClick={handlePickOne}
                   disabled={pickingRandom}
                   aria-label="Pick a random problem"
-                  sx={{ display: { xs: 'inline-flex', sm: 'none' }, border: '1px solid', borderColor: 'divider', borderRadius: 1, height: 40, width: 40 }}
+                  sx={{ display: { xs: 'inline-flex', sm: 'none' }, border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.control, height: 40, width: 40 }}
                 >
                   {pickingRandom ? <CircularProgress size={16} /> : <ShuffleRoundedIcon fontSize="small" />}
                 </IconButton>
@@ -751,8 +751,8 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
             direction="row"
             sx={{
               display: { xs: 'flex', sm: 'none' },
-              gap: 0.75,
-              mt: 1.25,
+              gap: 1,
+              mt: 1.5,
               mx: -2,
               px: 2,
               overflowX: 'auto',
@@ -837,7 +837,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
 
           {/* Active filter chips */}
           {activeCount > 0 && (
-            <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, alignItems: 'center', mt: 1.5 }}>
+            <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, alignItems: 'center', mt: 1.5 }}>
               {filters.tags.map((t) => (
                 <Chip key={`t-${t}`} size="small" color="primary" variant="outlined" label={t} onDelete={() => toggleTag(t)} />
               ))}
@@ -863,7 +863,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
         )}
 
         {/* Results meta */}
-        <Box ref={listTopRef} sx={{ px: PAD_X, py: 0.75, scrollMarginTop: 80, minHeight: 28 }}>
+        <Box ref={listTopRef} sx={{ px: PAD_X, py: 1, scrollMarginTop: 80, minHeight: 28 }}>
           <Typography variant="caption" color="text.secondary">
             {loading ? ' ' : error && problems.length === 0 ? ' ' : `Showing ${rangeStart}–${rangeEnd} of ${pagination.total} problems`}
           </Typography>
@@ -975,7 +975,7 @@ export default function ProblemExplorer({ pageSize = 20, title = 'Problems' }) {
           <Typography variant="subtitle2" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>
             Sort by
           </Typography>
-          <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 0.75, mb: 2.5, opacity: filters.search ? 0.5 : 1 }}>
+          <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, mb: 2.5, opacity: filters.search ? 0.5 : 1 }}>
             {SORT_OPTIONS.map((o) => (
               <Chip
                 key={o.value}

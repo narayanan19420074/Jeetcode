@@ -6,7 +6,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import { LIB_TRACKING, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { PhoneDifficultyTag } from './phoneStyle';
 import { mono } from './wsTokens';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Problem statement on phones, in the Library look: page-title name, tags (switchable from the menu),
 // description, then folded examples and constraints. Used inside ProblemSheet.
@@ -18,10 +18,10 @@ function TagPill({ label, outlined = false }) {
       component="span"
       sx={{
         height: 34,
-        px: '14px',
+        px: 2,
         display: 'inline-flex',
         alignItems: 'center',
-        borderRadius: 999,
+        borderRadius: RADII_PX.pill,
         fontSize: FONT_SIZES.bodyLg,
         letterSpacing: LIB_TRACKING,
         whiteSpace: 'nowrap',
@@ -39,7 +39,7 @@ function Fold({ title, count, children }) {
   const pal = useLibraryPalette();
   const [open, setOpen] = useState(false);
   return (
-    <Box sx={{ mb: 1.5, borderRadius: '20px', border: `1px solid ${pal.border}`, overflow: 'hidden' }}>
+    <Box sx={{ mb: 1.5, borderRadius: RADII_PX.card, border: `1px solid ${pal.border}`, overflow: 'hidden' }}>
       <ButtonBase
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
@@ -65,10 +65,10 @@ function Fold({ title, count, children }) {
 function ConstraintList({ items }) {
   const pal = useLibraryPalette();
   return (
-    <Stack component="ul" sx={{ gap: 1, m: 0, pl: 2.25 }}>
+    <Stack component="ul" sx={{ gap: 1, m: 0, pl: 2.5 }}>
       {items.map((c, i) => (
         <Typography key={i} component="li" sx={{ fontSize: FONT_SIZES.bodyLg, lineHeight: '24px', '&::marker': { color: pal.muted } }}>
-          <Box component="code" sx={{ ...mono, fontSize: FONT_SIZES.body, px: 0.75, py: 0.25, borderRadius: '8px', wordBreak: 'break-word', bgcolor: pal.chip }}>
+          <Box component="code" sx={{ ...mono, fontSize: FONT_SIZES.body, px: 1, py: 0.5, borderRadius: RADII_PX.control, wordBreak: 'break-word', bgcolor: pal.chip }}>
             {c}
           </Box>
         </Typography>
@@ -86,7 +86,7 @@ function ExampleBlock({ index, example }) {
   return (
     <Box sx={{ mb: 2, '&:last-of-type': { mb: 0 } }}>
       <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, mb: 1 }}>Example {index + 1}</Typography>
-      <Box sx={{ p: 1.5, borderRadius: '16px', bgcolor: pal.chip }}>
+      <Box sx={{ p: 1.5, borderRadius: RADII_PX.card, bgcolor: pal.chip }}>
         {rows.map(([label, value]) => (
           <Typography key={label} sx={{ ...mono, fontSize: FONT_SIZES.body, lineHeight: 1.7, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
             <Box component="span" sx={{ fontWeight: FONT_WEIGHTS.bold, color: pal.muted }}>
@@ -147,7 +147,7 @@ export default function PhoneProblemDescription({ problem, showTags = true, nav 
           </Stack>
           {companies.length > 0 && (
             <Box>
-              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted, mb: 0.75 }}>Companies</Typography>
+              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted, mb: 1 }}>Companies</Typography>
               <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1 }}>
                 {companies.map((c) => (
                   <TagPill key={c} label={c} outlined />

@@ -12,7 +12,7 @@ import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRigh
 import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import UndoRoundedIcon from '@mui/icons-material/UndoRounded';
 import RedoRoundedIcon from '@mui/icons-material/RedoRounded';
-import { FONTS, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Phone keyboards have no Tab key, no arrow keys and bury symbols two layers
 // deep. This strip sits right above the keyboard (like Replit / Acode / Termux
@@ -62,7 +62,7 @@ function Key({ children, onPress, label, wide, repeat, danger }) {
           minWidth: wide ? 42 : 34,
           height: 34,
           px: 0.5,
-          borderRadius: '8px',
+          borderRadius: RADII_PX.control,
           fontFamily: FONTS.mono,
           fontSize: FONT_SIZES.title,
           fontWeight: FONT_WEIGHTS.semibold,
@@ -85,7 +85,7 @@ export default function MobileKeyBar({ onKey, onTab, onOutdent, onDeleteLine, on
   return (
     <Stack
       direction="row"
-      sx={{ alignItems: 'center', gap: 0.5, px: 0.75, py: 0.5, flexShrink: 0, borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}
+      sx={{ alignItems: 'center', gap: 0.5, px: 1, py: 0.5, flexShrink: 0, borderTop: '1px solid', borderColor: 'divider', bgcolor: 'background.paper' }}
     >
       <Key label="Indent (Tab)" wide onPress={onTab}>
         <KeyboardTabRoundedIcon />

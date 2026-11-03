@@ -10,13 +10,13 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { APT_COLOR, PersonAvatar, dayLabel, mono, timeAgo } from './friendsUi';
 import { EmptyNote, Reveal, SectionLabel } from './friendsKit';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const LANG = { javascript: 'JS', python: 'Python', cpp: 'C++', java: 'Java' };
 
 function Chip({ color, children }) {
   return (
-    <Box component="span" sx={{ px: 0.8, py: 0.05, borderRadius: 999, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, bgcolor: tint(color, 16), color }}>
+    <Box component="span" sx={{ px: 1, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, bgcolor: tint(color, 16), color }}>
       {children}
     </Box>
   );
@@ -26,7 +26,7 @@ function Item({ e, online, onOpenProblem }) {
   const isApt = e.type === 'aptitude';
   const accent = isApt ? APT_COLOR : DIFF_COLOR[e.problem.difficulty];
   return (
-    <Stack direction="row" spacing={1.5} sx={{ alignItems: 'flex-start', mx: 1, px: 1.25, py: 1.1 }}>
+    <Stack direction="row" spacing={1.5} sx={{ alignItems: 'flex-start', mx: 1, px: 1.5, py: 1 }}>
       <PersonAvatar person={e.user} size={40} online={online} />
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: 1.45 }}>
@@ -41,14 +41,14 @@ function Item({ e, online, onOpenProblem }) {
             </>
           )}
         </Typography>
-        <Stack direction="row" spacing={0.75} useFlexGap sx={{ alignItems: 'center', flexWrap: 'wrap', mt: 0.6 }}>
+        <Stack direction="row" spacing={0.75} useFlexGap sx={{ alignItems: 'center', flexWrap: 'wrap', mt: 0.5 }}>
           {isApt ? <Chip color={APT_COLOR}>Aptitude</Chip> : <Chip color={accent}>{e.problem.difficulty}</Chip>}
           {!isApt && e.language && <Chip color={COLOR_PALETTE.slate[500]}>{LANG[e.language] || e.language}</Chip>}
           {!isApt && e.runtimeMs != null && <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary', ...mono }}>{e.runtimeMs} ms</Typography>}
           <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.disabled' }}>{timeAgo(e.at)}</Typography>
         </Stack>
       </Box>
-      <Box sx={{ pt: 0.25, color: accent, '& svg': { fontSize: FONT_SIZES.subheading } }}>{isApt ? <PsychologyRoundedIcon /> : <CheckCircleRoundedIcon />}</Box>
+      <Box sx={{ pt: 0.5, color: accent, '& svg': { fontSize: FONT_SIZES.subheading } }}>{isApt ? <PsychologyRoundedIcon /> : <CheckCircleRoundedIcon />}</Box>
     </Stack>
   );
 }
@@ -86,7 +86,7 @@ export default function ActivityFeed() {
   return (
     <Box>
       {error && <Alert severity="error" sx={{ mx: 1.5, my: 1 }} action={<Button color="inherit" onClick={() => load()}>Retry</Button>}>{error}</Alert>}
-      {items === null && [0, 1, 2, 3].map((i) => <Skeleton key={i} variant="rounded" height={60} sx={{ mx: 2, my: 1.25, borderRadius: '12px' }} />)}
+      {items === null && [0, 1, 2, 3].map((i) => <Skeleton key={i} variant="rounded" height={60} sx={{ mx: 2, my: 1.5, borderRadius: RADII_PX.card }} />)}
       {items && items.length === 0 && !error && <EmptyNote icon={<TimelineRoundedIcon />} title="Quiet for now">Nobody has solved anything in the last 30 days. Be the first.</EmptyNote>}
       {items?.map((e, i) => {
         const day = dayLabel(e.at);

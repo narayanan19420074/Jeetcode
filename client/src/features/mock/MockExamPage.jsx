@@ -5,7 +5,7 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, PALETTE, formatClock } from '../aptitude/components/aptitudeUi';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
 
 // Full mock paper. Sections run on their own SERVER clocks (sectionEndsAt),
 // answers autosave, a refresh resumes, and a locked section never reopens.
@@ -26,12 +26,12 @@ function statusOf(st) {
 function Palette({ questions, state, cur, onJump }) {
   return (
     <Box>
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0.75 }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 1 }}>
         {questions.map((q, i) => {
           const p = PALETTE[statusOf(state[q._id] || blank())];
           return (
             <Box key={q._id} component="button" type="button" onClick={() => onJump(i)} aria-label={`Question ${i + 1}: ${p.label}`}
-              sx={{ height: 38, borderRadius: '8px', border: i === cur ? `2px solid ${NAVY}` : '2px solid transparent', bgcolor: p.bg, color: p.fg, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, cursor: 'pointer', fontFamily: 'inherit' }}>
+              sx={{ height: 38, borderRadius: RADII_PX.control, border: i === cur ? `2px solid ${NAVY}` : '2px solid transparent', bgcolor: p.bg, color: p.fg, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, cursor: 'pointer', fontFamily: 'inherit' }}>
               {i + 1}
             </Box>
           );
@@ -40,7 +40,7 @@ function Palette({ questions, state, cur, onJump }) {
       <Box sx={{ mt: 1.5, display: 'grid', gap: 0.5 }}>
         {['answered', 'notAnswered', 'notVisited', 'marked'].map((k) => (
           <Box key={k} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Box sx={{ width: 14, height: 14, borderRadius: '4px', bgcolor: PALETTE[k].bg }} />
+            <Box sx={{ width: 14, height: 14, borderRadius: RADII_PX.badge, bgcolor: PALETTE[k].bg }} />
             <Typography variant="caption">{PALETTE[k].label}</Typography>
           </Box>
         ))}
@@ -221,9 +221,9 @@ export default function MockExamPage() {
       <Box sx={{ bgcolor: NAVY, color: COLOR_PALETTE.white, px: { xs: 1.5, md: 3 }, py: 1, display: 'flex', alignItems: 'center', gap: 1.5 }}>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: { xs: FONT_SIZES.body, md: FONT_SIZES.bodyLg } }}>{paper.paperTitle}</Typography>
-          <Box sx={{ display: 'flex', gap: 0.75, mt: 0.25, overflowX: 'auto' }}>
+          <Box sx={{ display: 'flex', gap: 1, mt: 0.5, overflowX: 'auto' }}>
             {paper.sections.map((s, i) => (
-              <Box key={s.key} sx={{ px: 1, py: 0.1, borderRadius: 99, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', bgcolor: i === paper.currentSection ? COLOR_PALETTE.white : withAlpha(COLOR_PALETTE.white, 0.15), color: i === paper.currentSection ? NAVY : withAlpha(COLOR_PALETTE.white, 0.75) }}>
+              <Box key={s.key} sx={{ px: 1, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', bgcolor: i === paper.currentSection ? COLOR_PALETTE.white : withAlpha(COLOR_PALETTE.white, 0.15), color: i === paper.currentSection ? NAVY : withAlpha(COLOR_PALETTE.white, 0.75) }}>
                 {i < paper.currentSection ? '✓ ' : ''}{s.title}
               </Box>
             ))}
@@ -254,7 +254,7 @@ export default function MockExamPage() {
                 <Box key={i} role="radio" aria-checked={on} tabIndex={0}
                   onClick={() => patch(current._id, (s) => ({ ...s, selected: i, visited: true }))}
                   onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && patch(current._id, (s) => ({ ...s, selected: i, visited: true }))}
-                  sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1, px: 1.25, py: 1, borderRadius: '10px', cursor: 'pointer', border: `1.5px solid ${on ? NAVY : t.palette.divider}`, bgcolor: on ? withAlpha(COLOR_PALETTE.custom.sky1F3A5F, 0.08) : 'background.paper' })}>
+                  sx={(t) => ({ display: 'flex', alignItems: 'center', gap: 1, px: 1.5, py: 1, borderRadius: RADII_PX.control, cursor: 'pointer', border: `1.5px solid ${on ? NAVY : t.palette.divider}`, bgcolor: on ? withAlpha(COLOR_PALETTE.custom.sky1F3A5F, 0.08) : 'background.paper' })}>
                   <Radio checked={on} size="small" tabIndex={-1} sx={{ p: 0.5 }} />
                   <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', width: 22 }}>{OPTION_LABELS[i]}.</Typography>
                   <Typography sx={{ flex: 1 }}>{o.text}</Typography>
@@ -274,7 +274,7 @@ export default function MockExamPage() {
       </Box>
 
       {/* actions */}
-      <Box sx={(t) => ({ display: 'flex', flexWrap: 'wrap', gap: 1, p: 1.25, borderTop: `1px solid ${t.palette.divider}`, bgcolor: 'background.paper', pb: 'calc(10px + env(safe-area-inset-bottom))' })}>
+      <Box sx={(t) => ({ display: 'flex', flexWrap: 'wrap', gap: 1, p: 1.5, borderTop: `1px solid ${t.palette.divider}`, bgcolor: 'background.paper', pb: 'calc(10px + env(safe-area-inset-bottom))' })}>
         <Button size="small" variant="outlined" onClick={() => { patch(current._id, (s) => ({ ...s, marked: !s.marked })); }} sx={{ fontWeight: FONT_WEIGHTS.bold }}>
           {st.marked ? 'Unmark' : 'Mark for review'}
         </Button>
@@ -287,7 +287,7 @@ export default function MockExamPage() {
         </Button>
       </Box>
 
-      <Drawer anchor="bottom" open={paletteOpen} onClose={() => setPaletteOpen(false)} slotProps={{ paper: { sx: { borderRadius: '16px 16px 0 0', p: 2, maxHeight: '70dvh' } } }}>
+      <Drawer anchor="bottom" open={paletteOpen} onClose={() => setPaletteOpen(false)} slotProps={{ paper: { sx: { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, p: 2, maxHeight: '70dvh' } } }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 1 }}>Palette</Typography>
         <Palette questions={questions} state={state} cur={cur} onJump={goTo} />
       </Drawer>

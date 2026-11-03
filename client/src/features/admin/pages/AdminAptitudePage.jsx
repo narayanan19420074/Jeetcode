@@ -29,7 +29,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 export default function AdminAptitudePage() {
   const [patterns, setPatterns] = useState([]);
@@ -145,7 +145,7 @@ export default function AdminAptitudePage() {
       ) : (
         <Grid container spacing={2.5}>
           <Grid item xs={12} md={5}>
-            <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+            <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
               <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
                 Patterns
               </Typography>
@@ -207,7 +207,7 @@ export default function AdminAptitudePage() {
           </Grid>
 
           <Grid item xs={12} md={7}>
-            <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+            <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
               <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
                 {selectedPattern ? `Questions — ${selectedPattern.title}` : 'Select a pattern'}
               </Typography>

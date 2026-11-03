@@ -21,7 +21,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import MonthCalendar from './MonthCalendar';
 import { DiffTag, addDays, fmtDay, keyToDate, localKey } from './planUtils';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 const itemKey = (type, id) => `${type}:${id}`;
@@ -153,8 +153,8 @@ function QuestionPicker({ items, added, onToggle }) {
   const shown = selectedOnly ? items : rows;
 
   return (
-    <Box sx={[surface, { p: 1.25, display: 'flex', flexDirection: 'column', gap: 1, height: panelHeight, minHeight: 0 }]}>
-      <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center' }}>
+    <Box sx={[surface, { p: 1.5, display: 'flex', flexDirection: 'column', gap: 1, height: panelHeight, minHeight: 0 }]}>
+      <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
         <ToggleButtonGroup size="small" exclusive value={source} onChange={(_, v) => v && (setSource(v), setRows([]), setSelectedOnly(false))}>
           <ToggleButton value="problem" aria-label="Coding questions" sx={{ px: 1, height: 34 }}><Tooltip title="Coding"><CodeRoundedIcon fontSize="small" /></Tooltip></ToggleButton>
           <ToggleButton value="aptitude" aria-label="Aptitude questions" sx={{ px: 1, height: 34 }}><Tooltip title="Aptitude"><CalculateRoundedIcon fontSize="small" /></Tooltip></ToggleButton>
@@ -171,7 +171,7 @@ function QuestionPicker({ items, added, onToggle }) {
       </Box>
 
       {!selectedOnly && (
-        <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
           <TextField select size="small" value={difficulty} onChange={(e) => setDifficulty(e.target.value)} sx={[compactField, { minWidth: 104 }]} slotProps={{ select: { displayEmpty: true } }}>
             <MenuItem value="">Any level</MenuItem>
             {['Easy', 'Medium', 'Hard'].map((d) => <MenuItem key={d} value={d}>{d}</MenuItem>)}
@@ -203,7 +203,7 @@ function QuestionPicker({ items, added, onToggle }) {
             <Box
               key={itemKey(r.type, r.id)} role="listitem"
               sx={(t) => ({
-                display: 'flex', alignItems: 'center', gap: 1, px: 0.75, py: 0.55, borderRadius: '8px',
+                display: 'flex', alignItems: 'center', gap: 1, px: 1, py: 0.5, borderRadius: RADII_PX.control,
                 bgcolor: entry ? `${t.palette.primary.main}14` : 'transparent', '&:hover': { bgcolor: entry ? undefined : t.palette.action.hover },
               })}
             >
@@ -227,7 +227,7 @@ function QuestionPicker({ items, added, onToggle }) {
           );
         })}
         {loading && !selectedOnly && (rows.length === 0
-          ? [0, 1, 2, 3, 4, 5].map((i) => <Skeleton key={i} height={38} sx={{ borderRadius: '8px' }} />)
+          ? [0, 1, 2, 3, 4, 5].map((i) => <Skeleton key={i} height={38} sx={{ borderRadius: RADII_PX.control }} />)
           : <Box sx={{ textAlign: 'center', py: 1 }}><CircularProgress size={16} /></Box>)}
         {!loading && shown.length === 0 && !error && (
           <Typography color="text.secondary" variant="body2" sx={{ py: 3, textAlign: 'center' }}>{selectedOnly ? 'Nothing selected yet.' : 'No questions match.'}</Typography>
@@ -298,12 +298,12 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
 
   const datePanel = (
     <Box sx={[surface, { p: 1.5, display: { xs: panel === 'date' ? 'block' : 'none', md: 'block' } }]}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mb: 1 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
         <EventRoundedIcon sx={{ fontSize: FONT_SIZES.subheading, color: 'primary.main' }} />
         <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, flex: 1 }}>Finish by <Box component="span" sx={{ color: 'primary.main' }}>{fmtDay(endDate)}</Box></Typography>
       </Box>
       <MonthCalendar cursor={cursor} onCursor={setCursor} selected={endDate} onSelect={pickDate} today={today} min={today} />
-      <Box sx={{ display: 'flex', gap: 0.75, mt: 1.25 }}>
+      <Box sx={{ display: 'flex', gap: 1, mt: 1.5 }}>
         {[['1 week', 7], ['2 weeks', 14], ['1 month', 30]].map(([label, n]) => (
           <Chip key={label} size="small" label={label} clickable onClick={() => pickDate(addDays(today, n))} variant={endDate === addDays(today, n) ? 'filled' : 'outlined'} color={endDate === addDays(today, n) ? 'primary' : 'default'} sx={{ fontWeight: FONT_WEIGHTS.semibold }} />
         ))}
@@ -326,8 +326,8 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
         size="small" exclusive value={panel} onChange={(_, v) => v && setPanel(v)} fullWidth
         sx={{ display: { xs: 'flex', md: 'none' }, mb: 1 }}
       >
-        <ToggleButton value="questions" sx={{ gap: 0.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><ListAltRoundedIcon fontSize="small" />Questions · {items.length}</ToggleButton>
-        <ToggleButton value="date" sx={{ gap: 0.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><EventRoundedIcon fontSize="small" />{fmtDay(endDate, { weekday: undefined })}</ToggleButton>
+        <ToggleButton value="questions" sx={{ gap: 1, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><ListAltRoundedIcon fontSize="small" />Questions · {items.length}</ToggleButton>
+        <ToggleButton value="date" sx={{ gap: 1, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><EventRoundedIcon fontSize="small" />{fmtDay(endDate, { weekday: undefined })}</ToggleButton>
       </ToggleButtonGroup>
 
       <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.5fr) minmax(280px,1fr)' } }}>
@@ -340,7 +340,7 @@ export default function PlanBuilder({ plan, onSaved, onCancel }) {
       <Box
         sx={(t) => ({
           position: 'sticky', bottom: 8, mt: 1.5, px: 1.5, py: 1, display: 'flex', alignItems: 'center', gap: 1.5,
-          borderRadius: '12px', border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, boxShadow: `0 10px 26px -14px ${withAlpha(COLOR_PALETTE.slate[950], 0.4)}`, zIndex: 2,
+          borderRadius: RADII_PX.card, border: `1px solid ${t.palette.divider}`, bgcolor: t.palette.background.paper, boxShadow: `0 10px 26px -14px ${withAlpha(COLOR_PALETTE.slate[950], 0.4)}`, zIndex: 2,
         })}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>

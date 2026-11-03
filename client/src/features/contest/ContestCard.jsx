@@ -6,7 +6,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import { surface } from '../dashboard/dashboardUtils';
 import Countdown from './Countdown';
 import { fmtDate, inr, useContest } from './contestUtils';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // Dashboard card under the problem library. Stays out of the way if the contest can't be loaded.
 export default function ContestCard() {
@@ -21,7 +21,7 @@ export default function ContestCard() {
         background: `linear-gradient(100deg, ${alpha(t.palette.warning.main, t.palette.mode === 'dark' ? 0.16 : 0.1)}, transparent 60%), ${t.palette.background.paper}`,
       })]}
     >
-      <Box sx={(t) => ({ width: 48, height: 48, borderRadius: '14px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: alpha(t.palette.warning.main, 0.18), color: 'warning.main' })}>
+      <Box sx={(t) => ({ width: 48, height: 48, borderRadius: RADII_PX.card, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: alpha(t.palette.warning.main, 0.18), color: 'warning.main' })}>
         <EmojiEventsRoundedIcon />
       </Box>
 

@@ -1,7 +1,7 @@
 import { Box, ButtonBase, Skeleton, Typography } from '@mui/material';
 import CompanyAvatar from '../../../../components/CompanyAvatar';
 import { LIB_TRACKING, useLibraryPalette } from '../../components/libraryStyle';
-import { FONT_SIZES } from '../../../../app/design/designTokens';
+import { FONT_SIZES, RADII_PX } from '../../../../app/design/designTokens';
 
 const COLUMNS = 'repeat(auto-fill, minmax(240px, 1fr))';
 const AVATAR_SIZE = 48;
@@ -11,7 +11,7 @@ function CompanyButton({ company, count, onBrowse, palette }) {
     <ButtonBase
       onClick={() => onBrowse({ companies: [company] })}
       aria-label={`Browse ${company} questions`}
-      sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, p: 1.25, borderRadius: '16px', textAlign: 'left', fontFamily: 'inherit', color: palette.text, '&:hover': { bgcolor: palette.player } }}
+      sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 1.5, p: 1.5, borderRadius: RADII_PX.card, textAlign: 'left', fontFamily: 'inherit', color: palette.text, '&:hover': { bgcolor: palette.player } }}
     >
       <CompanyAvatar name={company} size={AVATAR_SIZE} />
       <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -27,7 +27,7 @@ function CompanyButton({ company, count, onBrowse, palette }) {
 // Companies that have questions, as a flowing grid. Tapping one opens the library filtered to that company.
 export default function CompanyGrid({ companies, onBrowse }) {
   const palette = useLibraryPalette();
-  if (companies === null) return <Skeleton variant="rounded" height={168} sx={{ borderRadius: '16px' }} />;
+  if (companies === null) return <Skeleton variant="rounded" height={168} sx={{ borderRadius: RADII_PX.card }} />;
   return (
     <Box sx={{ display: 'grid', gridTemplateColumns: COLUMNS, gap: 0.5 }}>
       {companies.map(({ company, count }) => <CompanyButton key={company} company={company} count={count} onBrowse={onBrowse} palette={palette} />)}

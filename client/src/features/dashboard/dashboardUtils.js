@@ -1,4 +1,4 @@
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, RADII_PX } from '../../app/design/designTokens';
 // Shared constants + helpers for the dashboard. Days are India (IST) days on
 // purpose: the backend's streak logic (streak.service.js) and the activity
 // heatmap endpoint both bucket days by IST midnight, so the calendar and
@@ -51,7 +51,7 @@ export const CATEGORY_GROUPS = [
 // highlight in dark mode so panels read as layered glass rather than flat
 // boxes. Pass as `sx={surface}` or inside an sx array.
 export const surface = (t) => ({
-  borderRadius: '14px',
+  borderRadius: RADII_PX.card,
   border: `1px solid ${t.palette.divider}`,
   backgroundColor: t.palette.background.paper,
   backgroundImage: 'none',

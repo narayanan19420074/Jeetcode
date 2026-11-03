@@ -21,7 +21,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Plans page: Free, Pro Monthly and Pro Yearly in the Library look (cream panels, 16px gutter, Roboto, pill buttons).
 // Prices are the same as on the home page. Keep them in sync.
@@ -51,7 +51,7 @@ function FeatureList({ items }) {
     <Stack component="ul" spacing={1.25} sx={{ listStyle: 'none', m: 0, p: 0 }}>
       {items.map((text) => (
         <Stack component="li" key={text} direction="row" spacing={1.25} sx={{ alignItems: 'flex-start' }}>
-          <CheckRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, mt: '1px', color: CHECK_GREEN, flexShrink: 0 }} />
+          <CheckRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, mt: 0, color: CHECK_GREEN, flexShrink: 0 }} />
           <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{text}</Typography>
         </Stack>
       ))}
@@ -183,7 +183,7 @@ export default function PlansPage() {
 
         {isPro && status && (
           <Box sx={{ ...libPanelSx, mt: 3, p: 2, display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
-            <Box aria-hidden sx={{ width: 44, height: 44, borderRadius: '14px', display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: tint(COLOR_PALETTE.custom.amberF09A2E, 16), color: COLOR_PALETTE.custom.amberF09A2E }}>
+            <Box aria-hidden sx={{ width: 44, height: 44, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: tint(COLOR_PALETTE.custom.amberF09A2E, 16), color: COLOR_PALETTE.custom.amberF09A2E }}>
               <WorkspacePremiumRoundedIcon />
             </Box>
             <Box sx={{ flex: 1, minWidth: 200 }}>
@@ -229,14 +229,14 @@ export default function PlansPage() {
                 <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
                   <Typography component="h2" sx={{ fontSize: FONT_SIZES.heading, lineHeight: '28px', fontWeight: FONT_WEIGHTS.bold }}>Pro {PLAN_LABEL[plan]}</Typography>
                   {plan === 'yearly' && (
-                    <Box component="span" sx={{ height: 24, px: '10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: COLOR_PALETTE.white, bgcolor: LIB_ACCENT }}>
+                    <Box component="span" sx={{ height: 24, px: 1.5, borderRadius: RADII_PX.pill, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: COLOR_PALETTE.white, bgcolor: LIB_ACCENT }}>
                       Best value
                     </Box>
                   )}
                 </Stack>
                 <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.hero, lineHeight: '40px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>
                   ₹{PRICE[plan].toLocaleString('en-IN')}
-                  <Box component="span" sx={{ ml: 0.75, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.regular, letterSpacing: LIB_TRACKING, color: pal.muted }}>
+                  <Box component="span" sx={{ ml: 1, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.regular, letterSpacing: LIB_TRACKING, color: pal.muted }}>
                     per {PERIOD[plan]}
                   </Box>
                 </Typography>
@@ -245,7 +245,7 @@ export default function PlansPage() {
                 </Typography>
               </Box>
               <Box sx={{ flex: 1 }}>
-                <Typography sx={{ mb: 1.25, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything in Free, plus:</Typography>
+                <Typography sx={{ mb: 1.5, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything in Free, plus:</Typography>
                 <FeatureList items={PRO_FEATURES} />
               </Box>
               <Button
@@ -286,7 +286,7 @@ export default function PlansPage() {
         onClose={() => !cancelling && setCancelOpen(false)}
         fullWidth
         maxWidth="xs"
-        slotProps={{ paper: { sx: { borderRadius: '24px', bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
+        slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
       >
         <DialogTitle sx={{ fontSize: FONT_SIZES.heading, fontWeight: FONT_WEIGHTS.bold }}>Cancel subscription?</DialogTitle>
         <DialogContent>
@@ -298,7 +298,7 @@ export default function PlansPage() {
           <Button disableElevation disabled={cancelling} onClick={() => setCancelOpen(false)} sx={{ ...libTintBtnSx, height: 40, px: 2.5, fontSize: FONT_SIZES.title }}>
             Keep plan
           </Button>
-          <Button disableElevation disabled={cancelling} onClick={handleCancel} color="error" variant="contained" sx={{ height: 40, px: 2.5, borderRadius: 999, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, textTransform: 'none' }}>
+          <Button disableElevation disabled={cancelling} onClick={handleCancel} color="error" variant="contained" sx={{ height: 40, px: 2.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, textTransform: 'none' }}>
             {cancelling ? 'Cancelling…' : 'Cancel subscription'}
           </Button>
         </DialogActions>

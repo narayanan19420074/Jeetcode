@@ -8,7 +8,7 @@ import { problemsApi } from '../../api/problemsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { LIB_TRACKING, LibraryFont, libChipSx, libIconBtnSx, libSearchSx, libSectionTitleSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import { PhoneDifficultyTag } from './phoneStyle';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const PAGE_SIZE = 30;
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
@@ -169,8 +169,8 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
         <Box sx={{ flex: 1, minHeight: 0, overflowY: 'auto', px: 2, borderTop: `1px solid ${pal.divider}`, opacity: disabled ? 0.6 : 1, pb: 'calc(16px + env(safe-area-inset-bottom))' }}>
           {firstLoad &&
             Array.from({ length: 8 }).map((_, i) => (
-              <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.25, py: 2 }}>
-                <Skeleton variant="rounded" width={43} height={24} sx={{ borderRadius: '8px' }} />
+              <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 2 }}>
+                <Skeleton variant="rounded" width={43} height={24} sx={{ borderRadius: RADII_PX.control }} />
                 <Box sx={{ flex: 1 }}>
                   <Skeleton variant="text" width={`${50 + ((i * 17) % 40)}%`} />
                   <Skeleton variant="text" width="30%" height={16} />
@@ -202,19 +202,19 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
                   display: 'flex',
                   width: 'calc(100% + 16px)',
                   mx: '-8px',
-                  px: '8px',
+                  px: 1,
                   alignItems: 'flex-start',
                   justifyContent: 'flex-start',
-                  gap: '10px',
-                  py: 1.75,
+                  gap: 1.5,
+                  py: 2,
                   textAlign: 'left',
                   fontFamily: 'inherit',
                   color: 'inherit',
-                  borderRadius: '16px',
+                  borderRadius: RADII_PX.card,
                   bgcolor: current ? pal.chip : 'transparent',
                 }}
               >
-                <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.25, pt: '2px' }}>
+                <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.5, pt: 0.5 }}>
                   <PhoneDifficultyTag difficulty={p.difficulty} />
                   {p.solvedByMe && <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-easy)' }} />}
                 </Stack>
@@ -236,7 +236,7 @@ export default function PhoneProblemList({ open, onOpen, onClose, currentSlug, o
                     >
                       {i + 1}. {p.title}
                     </Typography>
-                    {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: FONT_SIZES.title, mt: '4px', color: 'warning.main', flexShrink: 0 }} />}
+                    {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: FONT_SIZES.title, mt: 0.5, color: 'warning.main', flexShrink: 0 }} />}
                   </Stack>
                   <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted, fontVariantNumeric: 'tabular-nums' }}>
                     Acceptance {(p.acceptanceRate ?? 0).toFixed(1)}%

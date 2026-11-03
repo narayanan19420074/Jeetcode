@@ -12,7 +12,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { problemsApi } from '../../api/problemsApi';
 import CompanyAvatar from '../../components/CompanyAvatar';
 import { Confetti, CountUp, XpBar } from '../aptitude/components/MotionBits';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII } from '../../app/design/designTokens';
 
 const ROW = 108;
 const GOLD = COLOR_PALETTE.amber[400];
@@ -113,7 +113,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
       {done && <Confetti pieces={60} />}
 
       {/* HERO: company, % complete, stars */}
-      <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: '22px', p: { xs: 2, sm: 2.75 }, color: COLOR_PALETTE.white, background: `linear-gradient(140deg,${COLOR_PALETTE.violet[600]} 0%,${COLOR_PALETTE.pink[600]} 55%,${COLOR_PALETTE.orange[500]} 100%)`, boxShadow: `0 18px 36px -16px ${withAlpha(COLOR_PALETTE.violet[600], 0.75)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.35)}` }}>
+      <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: RADII_PX.card, p: { xs: 2, sm: 3 }, color: COLOR_PALETTE.white, background: `linear-gradient(140deg,${COLOR_PALETTE.violet[600]} 0%,${COLOR_PALETTE.pink[600]} 55%,${COLOR_PALETTE.orange[500]} 100%)`, boxShadow: `0 18px 36px -16px ${withAlpha(COLOR_PALETTE.violet[600], 0.75)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.35)}` }}>
         {sprinkles.map((s, i) => (
           <motion.span
             key={i} aria-hidden
@@ -122,7 +122,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
             transition={{ duration: s.d, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
           />
         ))}
-        <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.25, mb: 1.75 }}>
+        <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
           <IconButton onClick={onBack} aria-label="Back to companies" size="small" sx={{ color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.3) } }}>
             <ArrowBackRoundedIcon fontSize="small" />
           </IconButton>
@@ -141,7 +141,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, opacity: 0.95 }}>complete</Typography>
           </Box>
           <Box sx={{ textAlign: 'right' }}>
-            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1.25, py: 0.4, borderRadius: 99, bgcolor: withAlpha(COLOR_PALETTE.black, 0.22) }}>
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: withAlpha(COLOR_PALETTE.black, 0.22) }}>
               <StarRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: GOLD }} />
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, fontVariantNumeric: 'tabular-nums' }}>{stars}/{maxStars}</Typography>
             </Box>
@@ -154,7 +154,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
         {company.examSlug && (
           <Button
             onClick={() => navigate(`/prep/${company.examSlug}`)} endIcon={<ArrowForwardRoundedIcon />} disableElevation size="small"
-            sx={{ position: 'relative', mt: 1.5, fontWeight: FONT_WEIGHTS.bold, borderRadius: 99, color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.32) } }}
+            sx={{ position: 'relative', mt: 1.5, fontWeight: FONT_WEIGHTS.bold, borderRadius: RADII_PX.pill, color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.2), '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.32) } }}
           >
             Exam pattern roadmap
           </Button>
@@ -208,7 +208,7 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
                         transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
                         style={{ position: 'absolute', top: -40, left: '50%', translateX: '-50%', whiteSpace: 'nowrap', zIndex: 2 }}
                       >
-                        <Box sx={{ px: 1.4, py: 0.3, borderRadius: 99, bgcolor: COLOR_PALETTE.white, color: colors[2], fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, boxShadow: `0 4px 10px ${withAlpha(COLOR_PALETTE.black, 0.25)}`, position: 'relative', '&::after': { content: '""', position: 'absolute', left: '50%', bottom: -5, width: 10, height: 10, bgcolor: COLOR_PALETTE.white, transform: 'translateX(-50%) rotate(45deg)' } }}>
+                        <Box sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.white, color: colors[2], fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, boxShadow: `0 4px 10px ${withAlpha(COLOR_PALETTE.black, 0.25)}`, position: 'relative', '&::after': { content: '""', position: 'absolute', left: '50%', bottom: -5, width: 10, height: 10, bgcolor: COLOR_PALETTE.white, transform: 'translateX(-50%) rotate(45deg)' } }}>
                           PLAY
                         </Box>
                       </motion.div>
@@ -278,8 +278,8 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
               key="sheet" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 320, damping: 30 }}
               style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 1300, display: 'flex', justifyContent: 'center' }}
             >
-              <Box sx={{ width: '100%', maxWidth: 560, bgcolor: 'background.paper', borderRadius: '26px 26px 0 0', p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, .3)}`, textAlign: 'center' }}>
-                <Box sx={{ width: 40, height: 4, borderRadius: 4, bgcolor: 'divider', mx: 'auto', mb: 2 }} />
+              <Box sx={{ width: '100%', maxWidth: 560, bgcolor: 'background.paper', borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, p: 2.5, pb: 'calc(20px + env(safe-area-inset-bottom))', boxShadow: `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, .3)}`, textAlign: 'center' }}>
+                <Box sx={{ width: 40, height: 4, borderRadius: RADII_PX.pill, bgcolor: 'divider', mx: 'auto', mb: 2 }} />
                 <Box sx={{ display: 'grid', placeItems: 'center', mb: 1.5 }}>
                   <motion.div initial={reduce ? false : { scale: 0.4, rotate: -20 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 14 }}>
                     <Candy colors={sheetColors} size={72} done={sheet.solvedByMe}>
@@ -288,19 +288,19 @@ export default function CompanyQuestRoadmap({ company, onBack }) {
                   </motion.div>
                 </Box>
                 <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.25 }}>{sheet.title}</Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1, mt: 0.75, mb: 2 }}>
-                  <Box sx={{ px: 1.25, py: 0.2, borderRadius: 99, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.white, bgcolor: CANDY[sheet.difficulty]?.c[1] }}>{sheet.difficulty}</Box>
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1, mt: 1, mb: 2 }}>
+                  <Box sx={{ px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.white, bgcolor: CANDY[sheet.difficulty]?.c[1] }}>{sheet.difficulty}</Box>
                   <Box sx={{ display: 'flex' }}>
                     {[1, 2, 3].map((k) => <StarRoundedIcon key={k} sx={{ fontSize: FONT_SIZES.heading, color: k <= (CANDY[sheet.difficulty]?.stars || 1) ? GOLD : 'action.disabled' }} />)}
                   </Box>
                   {sheet.acceptanceRate > 0 && <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold }}>{sheet.acceptanceRate}% accepted</Typography>}
                 </Box>
                 {sheet.locked ? (
-                  <Button fullWidth size="large" variant="contained" disableElevation startIcon={<LockRoundedIcon />} onClick={() => navigate('/pricing')} sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: '16px', py: 1.3 }}>Unlock with Pro</Button>
+                  <Button fullWidth size="large" variant="contained" disableElevation startIcon={<LockRoundedIcon />} onClick={() => navigate('/pricing')} sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: RADII_PX.card, py: 1.5 }}>Unlock with Pro</Button>
                 ) : (
                   <Button
                     fullWidth size="large" variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} onClick={() => navigate(`/workspace/${sheet.slug}`)}
-                    sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: '16px', py: 1.3, color: COLOR_PALETTE.white, background: `linear-gradient(180deg, ${sheetColors[1]}, ${sheetColors[2]})`, boxShadow: `0 5px 0 ${sheetColors[2]}`, '&:hover': { background: `linear-gradient(180deg, ${sheetColors[1]}, ${sheetColors[2]})`, filter: 'brightness(1.08)' } }}
+                    sx={{ fontWeight: FONT_WEIGHTS.bold, borderRadius: RADII_PX.card, py: 1.5, color: COLOR_PALETTE.white, background: `linear-gradient(180deg, ${sheetColors[1]}, ${sheetColors[2]})`, boxShadow: `0 5px 0 ${sheetColors[2]}`, '&:hover': { background: `linear-gradient(180deg, ${sheetColors[1]}, ${sheetColors[2]})`, filter: 'brightness(1.08)' } }}
                   >
                     {sheet.solvedByMe ? 'Play again' : 'Play level'}
                   </Button>

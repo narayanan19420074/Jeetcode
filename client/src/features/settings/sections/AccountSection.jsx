@@ -169,7 +169,7 @@ export default function AccountSection() {
               getOptionLabel={(o) => `${flagEmoji(o.code)} ${o.name}`}
               isOptionEqualToValue={(o, v) => o.code === v.code}
               renderOption={({ key, ...props }, o) => (
-                <Box component="li" key={key} {...props} sx={{ gap: 1.25 }}>
+                <Box component="li" key={key} {...props} sx={{ gap: 1.5 }}>
                   <span aria-hidden style={{ fontSize: FONT_SIZES.heading, lineHeight: 1 }}>{flagEmoji(o.code)}</span>
                   {o.name}
                 </Box>

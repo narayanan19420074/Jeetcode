@@ -19,7 +19,7 @@ export default function Ring({ value, size = 120, thickness = 4.5, color = 'prim
           {label}
         </Typography>
         {sublabel && (
-          <Typography variant="caption" color="text.secondary" sx={{ mt: 0.4, fontSize: Math.max(10, size * 0.09) }}>
+          <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, fontSize: Math.max(10, size * 0.09) }}>
             {sublabel}
           </Typography>
         )}

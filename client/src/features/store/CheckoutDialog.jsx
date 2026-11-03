@@ -118,7 +118,7 @@ export default function CheckoutDialog({ item, balance, states = [], open, onClo
         <Box sx={{ width: 104, flexShrink: 0, border: `1px solid ${FF.line}` }}><ItemArt art={item.art} accent={item.accent} height={104} image={item.image} /></Box>
         <Box sx={{ minWidth: 0 }}>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading, color: FF.text }}>{item.name}</Typography>
-          <Typography sx={{ mt: 0.5, mb: 1.25, fontSize: FONT_SIZES.body, color: FF.muted }}>{item.blurb}</Typography>
+          <Typography sx={{ mt: 0.5, mb: 1.5, fontSize: FONT_SIZES.body, color: FF.muted }}>{item.blurb}</Typography>
           <Coins value={item.price} />
         </Box>
       </Box>
@@ -150,7 +150,7 @@ export default function CheckoutDialog({ item, balance, states = [], open, onClo
           </Box>
 
           <Box sx={{ borderTop: `1px solid ${FF.line}`, pt: 3 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 1.25, mb: 2.5 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 1.5, mb: 2.5 }}>
               <LocalShippingRoundedIcon sx={{ color: FF.orangeInk }} />
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>Delivery address</Typography>
               <Tag>Ships within {item.shipsTo || 'India'}</Tag>

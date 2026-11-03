@@ -5,7 +5,7 @@ import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { EmptyState, WsIconButton } from '../workspace/wsUi';
 import { WS } from '../workspace/wsTokens';
-import { FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_SIZES, RADII } from '../../app/design/designTokens';
 
 // Pair-room chat, styled with the workspace UI kit (same radius, tones and buttons).
 export default function ChatPanel({ messages, myId, onSend, disabled, friendName }) {
@@ -35,8 +35,8 @@ export default function ChatPanel({ messages, myId, onSend, disabled, friendName
         {messages.map((m) => {
           const mine = m.from === myId;
           return (
-            <Box key={m.id} sx={{ mb: 1.25, textAlign: mine ? 'right' : 'left' }}>
-              <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.25 }}>
+            <Box key={m.id} sx={{ mb: 1.5, textAlign: mine ? 'right' : 'left' }}>
+              <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.5 }}>
                 {mine ? 'You' : m.name}
               </Typography>
               <Box
@@ -45,7 +45,7 @@ export default function ChatPanel({ messages, myId, onSend, disabled, friendName
                   maxWidth: '88%',
                   px: 1.5,
                   py: 1,
-                  borderRadius: mine ? '12px 12px 4px 12px' : '12px 12px 12px 4px',
+                  borderRadius: mine ? `${RADII.card}px ${RADII.card}px ${RADII.badge}px ${RADII.card}px` : `${RADII.card}px ${RADII.card}px ${RADII.card}px ${RADII.badge}px`,
                   bgcolor: mine ? 'primary.main' : wsSurface(t).raised,
                   color: mine ? 'primary.contrastText' : 'text.primary',
                   textAlign: 'left',

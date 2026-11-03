@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, RADII_PX } from '../../../app/design/designTokens';
 
 function Reveal({ at, step, children }) {
   const visible = step >= at;
@@ -48,7 +48,7 @@ export function WorkerEfficiencyAnimation() {
   const fraction = step === 0 ? 0 : (currentDay + 1) / 6;
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
         Ravi paints this wall alone in 6 days
       </Typography>
@@ -100,7 +100,7 @@ export function CombinedWorkAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(COMBINED_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 260" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>
@@ -161,7 +161,7 @@ export function LcmShortcutWorkAnimation() {
   const { step, playing, next, prev, reset, togglePlay } = useStepPlayer(LCM_WORK_STEPS);
 
   return (
-    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+    <Paper elevation={0} variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: RADII_PX.card }}>
       <Box sx={{ width: '100%', maxWidth: 480, mx: 'auto' }}>
         <svg viewBox="0 0 420 240" width="100%" style={{ display: 'block' }}>
           <Reveal at={0} step={step}>

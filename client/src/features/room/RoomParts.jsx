@@ -10,7 +10,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { CodeField, PaneTabs, WsButton } from '../workspace/wsUi';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WS, mono } from '../workspace/wsTokens';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const initialOf = (name) => (name || '').trim()[0]?.toUpperCase() || '?';
 
@@ -66,7 +66,7 @@ export function RunChip({ running, result, sx, lib = false }) {
         noWrap
         component="span"
         sx={[
-          { minWidth: 0, maxWidth: '44vw', px: '10px', py: '3px', borderRadius: 999, fontSize: FONT_SIZES.body, lineHeight: '20px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
+          { minWidth: 0, maxWidth: '44vw', px: 1.5, py: 0.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.body, lineHeight: '20px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color, bgcolor: tint(color, 14) },
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}
       >
@@ -92,7 +92,7 @@ function RunOutput({ running, result }) {
   if (running) {
     return (
       <Box sx={{ py: 1 }}>
-        <LinearProgress sx={{ borderRadius: 999, mb: 1.5 }} />
+        <LinearProgress sx={{ borderRadius: RADII_PX.pill, mb: 1.5 }} />
         <Typography variant="body2" color="text.secondary">
           Running the shared code…
         </Typography>
@@ -101,7 +101,7 @@ function RunOutput({ running, result }) {
   }
   if (!result) {
     return (
-      <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1, color: 'text.secondary' }}>
         {!lib && <PlayArrowRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
         <Typography variant="body2">Run the code to see the output here. Both of you see the result.</Typography>
       </Stack>
@@ -112,7 +112,7 @@ function RunOutput({ running, result }) {
   const meta = [result.by && `Run by ${result.by}`, result.time != null && result.time !== '' && `${Math.round(parseFloat(result.time) * 1000)} ms`].filter(Boolean);
   return (
     <>
-      <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.25, mb: 1.5 }}>
+      <Stack direction="row" sx={{ alignItems: 'baseline', flexWrap: 'wrap', columnGap: 1.5, rowGap: 0.5, mb: 1.5 }}>
         <Typography sx={{ fontWeight: lib ? FONT_WEIGHTS.bold : FONT_WEIGHTS.bold, fontSize: lib ? FONT_SIZES.heading : FONT_SIZES.subheading, color: result.ok ? 'success.main' : 'error.main' }}>{result.status}</Typography>
         {meta.map((m) => (
           <Typography key={m} variant="caption" color="text.secondary">
@@ -161,7 +161,7 @@ export function RoomConsoleBody({
   return (
     <LibContext.Provider value={lib}>
     <Stack sx={{ flex: 1, minHeight: 0 }}>
-      <Box sx={{ px: lib ? 2 : 1.25, pb: lib ? 1.5 : 0.75, flexShrink: 0 }}>
+      <Box sx={{ px: lib ? 2 : 1.5, pb: lib ? 1.5 : 1, flexShrink: 0 }}>
         {lib ? (
           <Stack direction="row" role="tablist" sx={{ gap: 1, overflowX: 'auto' }}>
             {items.map((it) => (
@@ -175,7 +175,7 @@ export function RoomConsoleBody({
           <PaneTabs size="sm" value={tab} onChange={onTab} items={items} />
         )}
       </Box>
-      <Box sx={{ overflowY: 'auto', px: lib ? 2 : 1.75, pb: lib ? 2 : 1.75, flex: 1, minHeight: 0 }}>
+      <Box sx={{ overflowY: 'auto', px: lib ? 2 : 2, pb: lib ? 2 : 2, flex: 1, minHeight: 0 }}>
         {tab === 'cases' && (
           <>
             <Stack direction="row" sx={{ gap: lib ? 1 : 0.5, mb: 1.5, overflowX: 'auto' }}>
@@ -198,7 +198,7 @@ export function RoomConsoleBody({
                   input: {
                     sx: (t) =>
                       lib
-                        ? { ...mono, fontSize: FONT_SIZES.body, lineHeight: 1.65, borderRadius: '16px', bgcolor: 'var(--lib-bg)', '& fieldset': { border: 'none' } }
+                        ? { ...mono, fontSize: FONT_SIZES.body, lineHeight: 1.65, borderRadius: RADII_PX.card, bgcolor: 'var(--lib-bg)', '& fieldset': { border: 'none' } }
                         : { ...mono, fontSize: FONT_SIZES.caption, lineHeight: 1.65, borderRadius: `${WS.radius}px`, bgcolor: wsSurface(t).raised, '& fieldset': { border: 'none' } },
                   },
                 }}
@@ -209,7 +209,7 @@ export function RoomConsoleBody({
                 <ConsoleField label="Expected output" value={ex.output} />
               </>
             )}
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.25 }}>
+            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1.5 }}>
               Run uses this input and shows the output to both of you.
             </Typography>
           </>
@@ -234,7 +234,7 @@ export function RoomConsoleBody({
               )}
             </Stack>
           ) : !sub.result && sub.status === 'idle' && !sub.error ? (
-            <Stack direction="row" sx={{ alignItems: 'center', gap: 1.25, py: 1, color: 'text.secondary' }}>
+            <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5, py: 1, color: 'text.secondary' }}>
               {!lib && <PlayArrowRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />}
               <Typography variant="body2">Submit to see your verdict here. It counts for your account only.</Typography>
             </Stack>

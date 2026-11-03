@@ -1,6 +1,7 @@
 import { Box, Drawer, IconButton, Stack, Typography } from '@mui/material';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import { LibraryFont, libBackBtnSx, libSectionTitleSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
+import { RADII } from '../../app/design/designTokens';
 
 // Phone: the problem statement as a sheet that slides up over the editor (see useDescPanel).
 // The arrow at the top closes it; the phone's Back button does too. Library look: cream surface, 24px top corners.
@@ -12,7 +13,7 @@ export default function ProblemSheet({ open, onClose, children }) {
       open={open}
       onClose={onClose}
       slotProps={{
-        paper: { sx: { height: '94dvh', maxHeight: '94dvh', borderRadius: '24px 24px 0 0', backgroundImage: 'none', bgcolor: pal.bg, color: pal.text, display: 'flex', flexDirection: 'column' } },
+        paper: { sx: { height: '94dvh', maxHeight: '94dvh', borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, backgroundImage: 'none', bgcolor: pal.bg, color: pal.text, display: 'flex', flexDirection: 'column' } },
       }}
     >
       {/* Portals do not inherit the library variables, so the sheet content gets its own scope. */}

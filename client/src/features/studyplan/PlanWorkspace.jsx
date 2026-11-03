@@ -20,7 +20,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { surface } from '../dashboard/dashboardUtils';
 import FriendPicker from './FriendPicker';
 import { PLAN_AMBER, PlanTaskRow, ProgressRing, daysTile, fmtRange, localKey, paceLabel, planTheme, relDay, shareUrl } from './planUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 // Each panel scrolls inside itself, so the page never grows.
@@ -105,7 +105,7 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
     return error ? (
       <Box><Box sx={{ mb: 1 }}>{back}</Box><Alert severity="error">{error}</Alert></Box>
     ) : (
-      <Box><Skeleton variant="rounded" height={40} sx={{ mb: 1.5, borderRadius: '10px' }} /><Skeleton variant="rounded" height={320} sx={{ borderRadius: '14px' }} /></Box>
+      <Box><Skeleton variant="rounded" height={40} sx={{ mb: 1.5, borderRadius: RADII_PX.control }} /><Skeleton variant="rounded" height={320} sx={{ borderRadius: RADII_PX.card }} /></Box>
     );
   }
 
@@ -151,13 +151,13 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
 
       {/* hero: how the plan is going at a glance (same colours as its card) */}
       <Box
-        sx={{ position: 'relative', overflow: 'hidden', mb: 1.25, p: { xs: 1.75, sm: 2 }, borderRadius: '16px', color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` }}
+        sx={{ position: 'relative', overflow: 'hidden', mb: 1.5, p: { xs: 2, sm: 2 }, borderRadius: RADII_PX.card, color: COLOR_PALETTE.white, background: theme.gradient, boxShadow: `0 14px 28px -16px ${withAlpha(COLOR_PALETTE.slate[950], 0.85)}, inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.18)}` }}
       >
         <Box aria-hidden sx={{ position: 'absolute', right: -50, top: -50, width: 190, height: 190, borderRadius: '50%', background: `radial-gradient(circle, ${withAlpha(COLOR_PALETTE.amber[400], 0.26)}, transparent 70%)`, pointerEvents: 'none' }} />
         <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <ProgressRing value={s.percent} size={68} onDark />
           <Box sx={{ minWidth: 0, flex: 1 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, flexWrap: 'wrap' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
               <Typography sx={{ fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>{s.done}/{s.total} solved</Typography>
               {s.streak > 0 && (
                 <Box sx={{ display: 'inline-flex', alignItems: 'center' }}>
@@ -166,8 +166,8 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
                 </Box>
               )}
             </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mt: 0.5, flexWrap: 'wrap', color: withAlpha(COLOR_PALETTE.white, 0.9) }}>
-              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.4 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mt: 0.5, flexWrap: 'wrap', color: withAlpha(COLOR_PALETTE.white, 0.9) }}>
+              <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}>
                 <TodayRoundedIcon sx={{ fontSize: FONT_SIZES.title }} />
                 <Typography sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>{s.todayTotal > 0 ? `Today ${s.todayDone}/${s.todayTotal}` : 'Nothing today'}</Typography>
               </Box>
@@ -176,9 +176,9 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
               )}
             </Box>
           </Box>
-          <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 0.9, borderRadius: '14px', textAlign: 'center', bgcolor: tile.urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: tile.urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
+          <Box sx={{ flexShrink: 0, minWidth: 84, px: 1.5, py: 1, borderRadius: RADII_PX.card, textAlign: 'center', bgcolor: tile.urgent ? withAlpha(COLOR_PALETTE.amber[400], 0.2) : withAlpha(COLOR_PALETTE.white, 0.14), border: tile.urgent ? `1px solid ${withAlpha(COLOR_PALETTE.amber[400], 0.6)}` : '1px solid transparent' }}>
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: tile.big.length > 3 ? FONT_SIZES.heading : FONT_SIZES.hero, lineHeight: tile.big.length > 3 ? 1.5 : 1, fontVariantNumeric: 'tabular-nums', color: tile.urgent ? COLOR_PALETTE.amber[200] : COLOR_PALETTE.white }}>{tile.big}</Typography>
-            {tile.label && <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, mt: 0.4, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
+            {tile.label && <Typography sx={{ fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.bold, mt: 0.5, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>{tile.label}</Typography>}
           </Box>
         </Box>
       </Box>
@@ -189,18 +189,18 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
         size="small" exclusive value={panel} onChange={(_, v) => v && setPanel(v)} fullWidth
         sx={{ display: { xs: 'flex', md: 'none' }, mb: 1 }}
       >
-        <ToggleButton value="questions" sx={{ gap: 0.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><ListAltRoundedIcon fontSize="small" />Questions · {s.total}</ToggleButton>
-        <ToggleButton value="friends" sx={{ gap: 0.75, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><GroupsRoundedIcon fontSize="small" />Friends · {plan.members.length}</ToggleButton>
+        <ToggleButton value="questions" sx={{ gap: 1, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><ListAltRoundedIcon fontSize="small" />Questions · {s.total}</ToggleButton>
+        <ToggleButton value="friends" sx={{ gap: 1, textTransform: 'none', fontWeight: FONT_WEIGHTS.bold }}><GroupsRoundedIcon fontSize="small" />Friends · {plan.members.length}</ToggleButton>
       </ToggleButtonGroup>
 
       <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', md: 'minmax(0,1.6fr) minmax(0,1fr)' } }}>
-        <Box sx={[surface, { display: { xs: panel === 'questions' ? 'block' : 'none', md: 'block' }, height: panelHeight, overflowY: 'auto', scrollbarWidth: 'thin', p: 0.75 }]}>
+        <Box sx={[surface, { display: { xs: panel === 'questions' ? 'block' : 'none', md: 'block' }, height: panelHeight, overflowY: 'auto', scrollbarWidth: 'thin', p: 1 }]}>
           {days.length === 0 && <Typography variant="body2" color="text.secondary" sx={{ p: 2 }}>No questions in this plan.</Typography>}
           {days.map((d) => {
             const doneCount = d.items.filter((i) => i.done).length;
             return (
-              <Box key={d.date} sx={{ px: 0.75 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, pt: 1.1, pb: 0.7 }}>
+              <Box key={d.date} sx={{ px: 1 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, pt: 1, pb: 0.5 }}>
                   <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4, color: d.date === today ? 'primary.main' : 'text.secondary' }}>
                     {relDay(d.date, today).toUpperCase()}
                   </Typography>
@@ -213,18 +213,18 @@ export default function PlanWorkspace({ id, friends, onBack, onEdit, onGone, onC
           })}
         </Box>
 
-        <Box sx={[surface, { display: { xs: panel === 'friends' ? 'block' : 'none', md: 'block' }, height: panelHeight, overflowY: 'auto', scrollbarWidth: 'thin', p: 1.25 }]}>
+        <Box sx={[surface, { display: { xs: panel === 'friends' ? 'block' : 'none', md: 'block' }, height: panelHeight, overflowY: 'auto', scrollbarWidth: 'thin', p: 1.5 }]}>
           {plan.members.map((m) => (
-            <Box key={m.userId} sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 0.8 }}>
+            <Box key={m.userId} sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 1 }}>
               <Avatar src={m.avatarUrl || undefined} sx={{ width: 28, height: 28, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold }}>{m.name?.[0]?.toUpperCase()}</Avatar>
               <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 0.75 }}>
+                <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1 }}>
                   <Typography variant="body2" noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, flex: 1 }}>{m.isMe ? 'You' : m.name}</Typography>
                   <Typography variant="caption" sx={[{ fontWeight: FONT_WEIGHTS.bold }, mono]}>{m.done}/{m.total}</Typography>
                 </Box>
                 <LinearProgress
                   variant="determinate" value={m.percent} aria-label={`${m.name} progress`}
-                  color={m.status === 'completed' ? 'success' : m.status === 'behind' ? 'error' : 'primary'} sx={{ mt: 0.4, height: 5, borderRadius: 3 }}
+                  color={m.status === 'completed' ? 'success' : m.status === 'behind' ? 'error' : 'primary'} sx={{ mt: 0.5, height: 5, borderRadius: RADII_PX.pill }}
                 />
               </Box>
               {plan.isOwner && !m.isOwner && (

@@ -45,7 +45,7 @@ import { DIFF_COLOR, tint } from '../dashboard/dashboardUtils';
 import { LIB_TRACKING, LibraryFont, PageHeader, libBackBtnSx, libIconBtnSx, libPanelSx, libSectionTitleSx, libSmallBtnSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
 import FriendPicker from './FriendPicker';
 import { daysLeftInfo, fmtDay, fmtRange, itemLink, planTheme, relTime, shareUrl } from './planUtils';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII } from '../../app/design/designTokens';
 
 // Phone layout of the Study Plan screens (plans list and open plan) in the Library look
 // (same as the phone Home, Problems, Store and Friends pages): Roboto type, warm surface,
@@ -100,11 +100,11 @@ function Chip({ color, children }) {
     <Typography
       component="span"
       sx={{
-        px: '12px',
+        px: 1.5,
         height: 28,
         display: 'inline-flex',
         alignItems: 'center',
-        borderRadius: 999,
+        borderRadius: RADII_PX.pill,
         fontSize: FONT_SIZES.body,
         fontWeight: FONT_WEIGHTS.medium,
         letterSpacing: LIB_TRACKING,
@@ -152,10 +152,10 @@ function Sheet({ open, onClose, title, children }) {
       anchor="bottom"
       open={open}
       onClose={onClose}
-      slotProps={{ paper: { sx: { borderRadius: '24px 24px 0 0', maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', bgcolor: pal.bg, backgroundImage: 'none' } } }}
+      slotProps={{ paper: { sx: { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, maxHeight: '90dvh', pb: 'env(safe-area-inset-bottom)', bgcolor: pal.bg, backgroundImage: 'none' } } }}
     >
       <LibraryFont>
-        <Box sx={{ px: 2, pt: 1.25, pb: 2 }}>
+        <Box sx={{ px: 2, pt: 1.5, pb: 2 }}>
           <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
             <Typography component="h2" sx={{ ...libSectionTitleSx, color: 'var(--lib-text)' }}>
               {title}
@@ -185,8 +185,8 @@ function PillTabs({ label, options, value, onChange, accent = ACCENT }) {
             sx={{
               flexShrink: 0,
               height: 34,
-              px: '14px',
-              borderRadius: 999,
+              px: 2,
+              borderRadius: RADII_PX.pill,
               fontFamily: 'inherit',
               fontSize: FONT_SIZES.bodyLg,
               letterSpacing: LIB_TRACKING,
@@ -241,7 +241,7 @@ function PlanCard({ plan, today, onOpen, onAddFriend, onDelete }) {
         </Box>
       </ButtonBase>
 
-      <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 0.75, mt: 1.5 }}>
+      <Stack direction="row" sx={{ alignItems: 'center', flexWrap: 'wrap', gap: 1, mt: 1.5 }}>
         <Chip color={leftColor}>{left.text}</Chip>
         <Chip>
           {s.total} {s.total === 1 ? 'Question' : 'Questions'}
@@ -395,7 +395,7 @@ export function MobilePlans({
         {plans === null ? (
           <Stack spacing={1.5}>
             {[0, 1, 2].map((i) => (
-              <Skeleton key={i} variant="rounded" height={214} sx={{ borderRadius: '20px' }} />
+              <Skeleton key={i} variant="rounded" height={214} sx={{ borderRadius: RADII_PX.card }} />
             ))}
           </Stack>
         ) : plans.length === 0 ? (
@@ -417,7 +417,7 @@ export function MobilePlans({
 
       {/* Friends and invite code */}
       <Sheet open={friendsOpen} onClose={() => setFriendsOpen(false)} title="Friends">
-        {friends === null && <Skeleton variant="rounded" height={56} sx={{ borderRadius: '16px' }} />}
+        {friends === null && <Skeleton variant="rounded" height={56} sx={{ borderRadius: RADII_PX.card }} />}
         {friends?.length === 0 && (
           <Box sx={{ pb: 1 }}>
             <Typography sx={{ fontSize: FONT_SIZES.title, color: MUTED }}>No friends yet.</Typography>
@@ -467,7 +467,7 @@ export function MobilePlans({
             helperText={codeError || undefined}
             slotProps={{ htmlInput: { 'aria-label': 'Invite link or code' } }}
             sx={{
-              '& .MuiOutlinedInput-root': { borderRadius: 999, height: 48, bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING },
+              '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 48, bgcolor: 'var(--lib-player)', fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING },
               '& .MuiOutlinedInput-notchedOutline': { borderColor: 'transparent' },
             }}
           />
@@ -502,9 +502,9 @@ export function MobilePlans({
                 alignItems: 'flex-start',
                 gap: 1.5,
                 px: 1,
-                py: 1.25,
+                py: 1.5,
                 mb: 0.5,
-                borderRadius: '16px',
+                borderRadius: RADII_PX.card,
                 textAlign: 'left',
                 fontFamily: 'inherit',
                 color: 'var(--lib-text)',
@@ -518,7 +518,7 @@ export function MobilePlans({
                 <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '22px', letterSpacing: LIB_TRACKING }}>
                   <b>{n.actor.name}</b> added you to <b>{n.plan.title}</b>
                 </Typography>
-                <Typography sx={{ fontSize: FONT_SIZES.body, color: MUTED, mt: 0.25 }}>{relTime(n.createdAt)}</Typography>
+                <Typography sx={{ fontSize: FONT_SIZES.body, color: MUTED, mt: 0.5 }}>{relTime(n.createdAt)}</Typography>
               </Box>
             </ButtonBase>
           ))
@@ -538,10 +538,10 @@ function QuestionRow({ item, index, doers }) {
 
   const body = (
     <>
-      <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.25, pt: '2px' }}>
+      <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.5, pt: 0.5 }}>
         <Typography
           component="span"
-          sx={{ flexShrink: 0, minWidth: 43, textAlign: 'center', px: '5px', py: '2px', borderRadius: '8px', fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, lineHeight: '20px', color: diffColor, bgcolor: tint(diffColor, 14) }}
+          sx={{ flexShrink: 0, minWidth: 43, textAlign: 'center', px: 0.5, py: 0.5, borderRadius: RADII_PX.control, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING, lineHeight: '20px', color: diffColor, bgcolor: tint(diffColor, 14) }}
         >
           {SHORT_DIFF[item.difficulty] || item.difficulty}
         </Typography>
@@ -579,7 +579,7 @@ function QuestionRow({ item, index, doers }) {
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    gap: '10px',
+    gap: 1.5,
     py: 2,
     textAlign: 'left',
     fontFamily: 'inherit',
@@ -697,8 +697,8 @@ export function MobilePlanWorkspace({ id, friends, onBack, onEdit, onGone, onCha
     ) : (
       <Box>
         {backBtn}
-        <Skeleton variant="rounded" height={150} sx={{ mt: 1, borderRadius: '20px' }} />
-        <Skeleton variant="rounded" height={240} sx={{ mt: 1.5, borderRadius: '20px' }} />
+        <Skeleton variant="rounded" height={150} sx={{ mt: 1, borderRadius: RADII_PX.card }} />
+        <Skeleton variant="rounded" height={240} sx={{ mt: 1.5, borderRadius: RADII_PX.card }} />
       </Box>
     );
   }

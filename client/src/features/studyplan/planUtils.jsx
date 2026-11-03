@@ -4,7 +4,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { DIFF_COLOR } from '../dashboard/dashboardUtils';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -76,7 +76,7 @@ export function StatusPill({ status, small }) {
     <Box
       component="span"
       sx={(t) => ({
-        display: 'inline-flex', alignItems: 'center', gap: 0.6, px: small ? 0.9 : 1.2, py: small ? 0.1 : 0.3, borderRadius: 999,
+        display: 'inline-flex', alignItems: 'center', gap: 0.5, px: small ? 1 : 1, py: small ? 0.5 : 0.5, borderRadius: RADII_PX.pill,
         fontSize: small ? FONT_SIZES.micro : FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.6, whiteSpace: 'nowrap',
         color: t.palette[m.tone].main, bgcolor: alpha(t.palette[m.tone].main, 0.12),
       })}
@@ -90,7 +90,7 @@ export function StatusPill({ status, small }) {
 export function DiffTag({ difficulty }) {
   const c = DIFF_COLOR[difficulty] || 'var(--jc-pending)';
   return (
-    <Typography component="span" sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: c, bgcolor: `color-mix(in srgb, ${c} 12%, transparent)`, px: 1, py: 0.1, borderRadius: 999, whiteSpace: 'nowrap' }}>
+    <Typography component="span" sx={{ fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: c, bgcolor: `color-mix(in srgb, ${c} 12%, transparent)`, px: 1, py: 0.5, borderRadius: RADII_PX.pill, whiteSpace: 'nowrap' }}>
       {difficulty}
     </Typography>
   );
@@ -234,8 +234,8 @@ export function PlanTaskRow({ item, doers = [] }) {
   return (
     <Box
       sx={(t) => ({
-        display: 'flex', alignItems: 'center', gap: 1.25, px: 1.25, py: 1, borderRadius: '12px', border: `1px solid ${accent ? alpha(t.palette[accent].main, 0.35) : t.palette.divider}`,
-        bgcolor: accent ? alpha(t.palette[accent].main, item.done ? 0.07 : 0.05) : 'transparent', mb: 0.75,
+        display: 'flex', alignItems: 'center', gap: 1.5, px: 1.5, py: 1, borderRadius: RADII_PX.card, border: `1px solid ${accent ? alpha(t.palette[accent].main, 0.35) : t.palette.divider}`,
+        bgcolor: accent ? alpha(t.palette[accent].main, item.done ? 0.07 : 0.05) : 'transparent', mb: 1,
       })}
     >
       {item.done ? (
@@ -250,7 +250,7 @@ export function PlanTaskRow({ item, doers = [] }) {
 
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.3, color: item.done ? 'text.secondary' : 'text.primary', overflowWrap: 'anywhere' }}>{item.title}</Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.4, flexWrap: 'wrap' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5, flexWrap: 'wrap' }}>
           <DiffTag difficulty={item.difficulty} />
           <Typography variant="caption" color="text.secondary">{item.type === 'problem' ? 'Coding' : 'Aptitude'}</Typography>
           {item.overdue && <Typography variant="caption" sx={{ color: 'error.main', fontWeight: FONT_WEIGHTS.bold }}>Overdue</Typography>}
@@ -263,9 +263,9 @@ export function PlanTaskRow({ item, doers = [] }) {
       </Box>
 
       {item.done ? (
-        <Typography variant="caption" sx={(t) => ({ color: 'success.main', fontWeight: FONT_WEIGHTS.bold, px: 1, py: 0.3, borderRadius: 999, bgcolor: alpha(t.palette.success.main, 0.14), flexShrink: 0 })}>Solved</Typography>
+        <Typography variant="caption" sx={(t) => ({ color: 'success.main', fontWeight: FONT_WEIGHTS.bold, px: 1, py: 0.5, borderRadius: RADII_PX.pill, bgcolor: alpha(t.palette.success.main, 0.14), flexShrink: 0 })}>Solved</Typography>
       ) : link ? (
-        <Button component={RouterLink} to={link} size="small" variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} sx={{ flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, borderRadius: '10px', whiteSpace: 'nowrap' }}>
+        <Button component={RouterLink} to={link} size="small" variant="contained" disableElevation startIcon={<PlayArrowRoundedIcon />} sx={{ flexShrink: 0, fontWeight: FONT_WEIGHTS.bold, borderRadius: RADII_PX.control, whiteSpace: 'nowrap' }}>
           Solve now
         </Button>
       ) : null}

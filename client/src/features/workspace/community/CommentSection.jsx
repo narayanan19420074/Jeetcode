@@ -9,7 +9,7 @@ import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import Markdown from './Markdown';
 import { UserAvatar, VoteBar, ItemMenu, ConfirmDialog, ReportDialog, timeAgo } from './CommunityBits';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const MAX_DEPTH = 3; // keep in sync with MAX_COMMENT_DEPTH on the server
 
@@ -49,7 +49,7 @@ function Composer({ initial = '', placeholder, submitLabel = 'Post', onSubmit, o
           disabled={saving}
           placeholder={placeholder}
           onChange={(e) => setBody(e.target.value.slice(0, 3000))}
-          sx={{ '& .MuiOutlinedInput-root': { borderRadius: '22px', px: 2, py: 1.1, fontSize: FONT_SIZES.bodyLg } }}
+          sx={{ '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.card, px: 2, py: 1, fontSize: FONT_SIZES.bodyLg } }}
         />
         {(body.trim() || onCancel) && (
           <Stack direction="row" spacing={1} justifyContent="flex-end" alignItems="center">
@@ -96,7 +96,7 @@ function CommentNode({ c, byParent, ctx }) {
   };
 
   return (
-    <Box sx={{ mt: 2.25, ...(c.depth > 0 && { ml: 1.25, pl: 1.5, borderLeft: '2px solid', borderColor: 'divider' }) }}>
+    <Box sx={{ mt: 2.5, ...(c.depth > 0 && { ml: 1.5, pl: 1.5, borderLeft: '2px solid', borderColor: 'divider' }) }}>
       {c.isDeleted ? (
         <Typography color="text.secondary" sx={{ fontStyle: 'italic', fontSize: FONT_SIZES.bodyLg }}>
           [deleted]
@@ -129,12 +129,12 @@ function CommentNode({ c, byParent, ctx }) {
                 />
               </Box>
             ) : (
-              <Box sx={{ mt: 0.25 }}>
+              <Box sx={{ mt: 0.5 }}>
                 <Markdown source={c.body} />
               </Box>
             )}
 
-            <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mt: 0.25, ml: -1 }}>
+            <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mt: 0.5, ml: -1 }}>
               {canReply && (
                 <Button size="small" startIcon={<ReplyRoundedIcon />} onClick={() => setReplying((v) => !v)} sx={{ color: 'text.secondary', fontWeight: FONT_WEIGHTS.semibold, height: 36 }}>
                   Reply

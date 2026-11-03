@@ -7,7 +7,7 @@ import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRou
 import StatCard from '../components/StatCard';
 import { adminApi } from '../../../api/adminApi';
 import { extractErrorMessage } from '../../../api/apiClient';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 export default function AdminOverviewPage() {
   const [stats, setStats] = useState(null);
@@ -99,7 +99,7 @@ export default function AdminOverviewPage() {
         </Grid>
       </Grid>
 
-      <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
+      <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
         <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
           Recent signups
         </Typography>

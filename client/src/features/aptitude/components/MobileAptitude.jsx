@@ -8,7 +8,7 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { tint } from '../../dashboard/dashboardUtils';
 import { HeaderTile, LibraryFont, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import RoadMap from './RoadMap';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Phone layout of the Aptitude page. It follows the phone Problems page: same page padding, back button,
 // centred header, progress bar, pill button and type sizes. The level map climbs from the bottom to the top.
@@ -46,9 +46,9 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                 aria-valuemin={0}
                 aria-valuemax={total}
                 aria-valuenow={cleared}
-                sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
+                sx={{ width: 162, height: 8, borderRadius: RADII_PX.pill, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
               >
-                <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
+                <Box sx={{ width: `${Math.min((cleared / total) * 100, 100)}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
               </Box>
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
                 {cleared}
@@ -64,7 +64,7 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                 disableElevation
                 variant="contained"
                 startIcon={<PlayArrowRoundedIcon />}
-                sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: 999, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: '0.03em', textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
+                sx={(t) => ({ height: 40, minWidth: 152, px: 3, borderRadius: RADII_PX.pill, fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, letterSpacing: '0.03em', textTransform: 'none', bgcolor: pal.player, color: t.palette.mode === 'dark' ? pal.text : COLOR_PALETTE.custom.yellow6B4A1E, '&:hover': { bgcolor: pal.player, filter: 'brightness(0.97)' } })}
               >
                 {actionLabel}
               </Button>
@@ -89,7 +89,7 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
             backdropFilter: 'blur(8px)',
           })}
         >
-          <Box role="group" aria-label="Aptitude sections" sx={{ display: 'grid', gridTemplateColumns: `repeat(${tracks.length}, 1fr)`, gap: 0.75 }}>
+          <Box role="group" aria-label="Aptitude sections" sx={{ display: 'grid', gridTemplateColumns: `repeat(${tracks.length}, 1fr)`, gap: 1 }}>
             {tracks.map((t) => {
               const selected = t.key === track.key;
               return (
@@ -104,14 +104,14 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
                     gap: 0.5,
                     py: 1,
                     px: 0.5,
-                    borderRadius: '20px',
+                    borderRadius: RADII_PX.card,
                     fontFamily: 'inherit',
                     color: selected ? t.color : 'text.secondary',
                     bgcolor: selected ? tint(t.color, 14) : 'transparent',
                     border: `1px solid ${selected ? tint(t.color, 40) : 'transparent'}`,
                   }}
                 >
-                  <Box sx={{ width: 44, height: 44, borderRadius: '15px', display: 'grid', placeItems: 'center', bgcolor: tint(t.color, selected ? 24 : 12), color: t.color }}>
+                  <Box sx={{ width: 44, height: 44, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', bgcolor: tint(t.color, selected ? 24 : 12), color: t.color }}>
                     {cloneElement(t.icon, { sx: { fontSize: FONT_SIZES.displayLg } })}
                   </Box>
                   <Typography noWrap sx={{ maxWidth: '100%', fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, lineHeight: 1.2, letterSpacing: '0.03em' }}>

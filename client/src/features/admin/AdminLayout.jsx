@@ -12,7 +12,7 @@ import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
 import FeedbackRoundedIcon from '@mui/icons-material/FeedbackRounded';
 import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 import AdminNavbar from './AdminNavbar';
-import { FONT_WEIGHTS, FONT_SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 const SIDEBAR_WIDTH = 240;
 
@@ -74,7 +74,7 @@ export default function AdminLayout() {
                 to={item.to}
                 end={item.end}
                 sx={{
-                  borderRadius: 2,
+                  borderRadius: RADII_PX.card,
                   mb: 0.5,
                   '&.active': {
                     bgcolor: 'action.selected',

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
 import { Box, Typography } from '@mui/material';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 // Small reusable motion-graphics pieces for the Aptitude module.
 
@@ -62,7 +62,7 @@ export function Confetti({ pieces = 70 }) {
       {Array.from({ length: pieces }, (_, i) => (
         <motion.div
           key={i}
-          style={{ position: 'absolute', top: -20, left: `${rnd(i, 1) * 100}%`, width: 8 + rnd(i, 2) * 6, height: 10 + rnd(i, 3) * 8, background: CONFETTI[i % CONFETTI.length], borderRadius: rnd(i, 4) > 0.6 ? '50%' : 2 }}
+          style={{ position: 'absolute', top: -20, left: `${rnd(i, 1) * 100}%`, width: 8 + rnd(i, 2) * 6, height: 10 + rnd(i, 3) * 8, background: CONFETTI[i % CONFETTI.length], borderRadius: rnd(i, 4) > 0.6 ? '50%' : RADII_PX.badge }}
           initial={{ y: -30, rotate: 0, opacity: 1 }}
           animate={{ y: '105vh', x: (rnd(i, 5) - 0.5) * 220, rotate: 360 * (1 + rnd(i, 6) * 2), opacity: [1, 1, 0.9, 0] }}
           transition={{ duration: 2.6 + rnd(i, 7) * 2, delay: rnd(i, 8) * 0.9, ease: 'easeIn' }}

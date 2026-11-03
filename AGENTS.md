@@ -219,8 +219,12 @@ read from that file.
 - Font sizes, font weights, font families and radii: the same script tracks literals in `design-value-baseline.json`.
   A file may never have MORE literals than its baseline; migrating a file lowers it
   (`node client/scripts/check-design-tokens.mjs --update`, which refuses to raise a count).
-- Spacing and fixed pixel sizes (heights, widths): not enforced by script yet. Follow rule 1 by review and do not
-  add new hard-coded values; existing ones are migrated file by file.
+- Pixel spacing in `sx` (`p: "12px"`, `gap: "10px"`): same ledger (`spacingPx`). Use theme units on the 4px grid
+  (0.5, 1, 1.5, 2, 3, 4 = 4, 8, 12, 16, 24, 32px).
+- Fixed pixel sizes (heights, widths): not enforced by script yet. Follow rule 1 by review and do not add new
+  hard-coded values; existing ones are migrated file by file.
+- Adding a new rule to the ledger: `node client/scripts/check-design-tokens.mjs --update --allow-raise` once, to
+  record the starting counts. Never use `--allow-raise` to hide a regression.
 - Mechanical migrations (many files at once) are delivered as a git patch (`git apply`) and are exempt from 4.2
   rule 9 for the touched files. Normal edits of those files still follow 4.2.
 

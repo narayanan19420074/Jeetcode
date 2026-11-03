@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { keyframes } from '@mui/material/styles';
-import { COLOR_PALETTE } from '../../app/design/designTokens';
+import { COLOR_PALETTE, RADII_PX } from '../../app/design/designTokens';
 
 // Full-screen animated outline (the "live assistant" glow): a moving colour sweep that hugs the screen edge.
 // Purely decorative: it never captures taps. Respects the reduced-motion setting.
@@ -11,7 +11,7 @@ const ring = (width) => ({
   position: 'absolute',
   inset: 0,
   padding: `${width}px`,
-  borderRadius: { xs: '28px', md: '14px' },
+  borderRadius: { xs: RADII_PX.card, md: RADII_PX.card },
   WebkitMask: `linear-gradient(${COLOR_PALETTE.black} 0 0) content-box, linear-gradient(${COLOR_PALETTE.black} 0 0)`,
   WebkitMaskComposite: 'xor',
   mask: `linear-gradient(${COLOR_PALETTE.black} 0 0) content-box, linear-gradient(${COLOR_PALETTE.black} 0 0)`,

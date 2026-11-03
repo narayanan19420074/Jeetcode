@@ -8,7 +8,7 @@ import { FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
 export default function SettingsHeader({ user }) {
   const palette = useLibraryPalette();
   return (
-    <Stack direction="row" sx={{ alignItems: 'center', gap: 1.75, mb: 3, flexShrink: 0 }}>
+    <Stack direction="row" sx={{ alignItems: 'center', gap: 2, mb: 3, flexShrink: 0 }}>
       <BackToDashboard />
       <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: 48, height: 48, bgcolor: 'primary.main', color: 'primary.contrastText', fontWeight: FONT_WEIGHTS.bold }}>
         {initialsFromName(user.name)}

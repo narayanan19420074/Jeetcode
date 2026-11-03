@@ -16,7 +16,7 @@ import {
 import { aptitudeApi } from '../../api/aptitudeApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { PALETTE, formatClock } from './components/aptitudeUi';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONTS, FONT_SIZES } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
 
 // "General instructions" screen shown before the timed paper, modelled on the
 // exam candidate instructions page: the learner reads the rules, sees the
@@ -25,7 +25,7 @@ import { COLOR_PALETTE, FONT_WEIGHTS, FONTS, FONT_SIZES } from '../../app/design
 export function PaletteSymbol({ kind, size = 30, children }) {
   const p = PALETTE[kind];
   const shape = {
-    notVisited: { borderRadius: '6px' },
+    notVisited: { borderRadius: RADII_PX.control },
     notAnswered: { clipPath: 'polygon(14% 0, 86% 0, 100% 28%, 100% 100%, 0 100%, 0 28%)' },
     answered: { clipPath: 'polygon(0 0, 100% 0, 100% 72%, 86% 100%, 14% 100%, 0 72%)' },
     marked: { borderRadius: '50%' },
@@ -154,7 +154,7 @@ export default function AptitudeTestInstructionsPage() {
         {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
 
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={3} sx={{ alignItems: 'flex-start' }}>
-          <Paper variant="outlined" sx={{ flex: 1, p: { xs: 2.5, sm: 3.5 }, borderRadius: 2 }}>
+          <Paper variant="outlined" sx={{ flex: 1, p: { xs: 2.5, sm: 3.5 }, borderRadius: RADII_PX.card }}>
             <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
               General instructions
             </Typography>
@@ -185,7 +185,7 @@ export default function AptitudeTestInstructionsPage() {
             </Box>
           </Paper>
 
-          <Paper variant="outlined" sx={{ width: { xs: '100%', md: 340 }, p: 3, borderRadius: 2, flexShrink: 0 }}>
+          <Paper variant="outlined" sx={{ width: { xs: '100%', md: 340 }, p: 3, borderRadius: RADII_PX.card, flexShrink: 0 }}>
             <Typography variant="overline" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold, letterSpacing: '0.1em' }}>
               Candidate
             </Typography>
@@ -197,12 +197,12 @@ export default function AptitudeTestInstructionsPage() {
             )}
 
             <FormControlLabel
-              sx={{ mt: 3, alignItems: 'flex-start', '& .MuiFormControlLabel-label': { fontSize: FONT_SIZES.body, lineHeight: 1.6, mt: 0.6 } }}
+              sx={{ mt: 3, alignItems: 'flex-start', '& .MuiFormControlLabel-label': { fontSize: FONT_SIZES.body, lineHeight: 1.6, mt: 0.5 } }}
               control={<Checkbox checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />}
               label="I have read and understood the instructions, and I am ready to begin the test."
             />
 
-            <Button fullWidth variant="contained" size="large" disableElevation disabled={!agreed || starting} onClick={begin} sx={{ mt: 2, py: 1.3, bgcolor: COLOR_PALETTE.custom.sky1F3A5F, '&:hover': { bgcolor: COLOR_PALETTE.sky[950] } }}>
+            <Button fullWidth variant="contained" size="large" disableElevation disabled={!agreed || starting} onClick={begin} sx={{ mt: 2, py: 1.5, bgcolor: COLOR_PALETTE.custom.sky1F3A5F, '&:hover': { bgcolor: COLOR_PALETTE.sky[950] } }}>
               {starting ? <CircularProgress size={22} color="inherit" /> : activeTest ? 'Resume test' : 'I am ready to begin'}
             </Button>
             <Button fullWidth sx={{ mt: 1 }} onClick={() => navigate(`/aptitude/${slug}`)}>

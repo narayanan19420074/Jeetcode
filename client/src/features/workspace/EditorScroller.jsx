@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
 
 // Phone fast-scroller: Monaco's own scrollbar is 6px wide, impossible to grab.
 // This is a big draggable handle on the right edge (like Android's fast scroll):
@@ -72,7 +72,7 @@ export default function EditorScroller({ editor }) {
         zIndex: 5,
         display: 'grid',
         placeItems: 'center',
-        borderRadius: '11px',
+        borderRadius: RADII_PX.pill,
         touchAction: 'none',
         cursor: 'grab',
         color: dragging ? t.palette.primary.contrastText : t.palette.text.secondary,
@@ -90,9 +90,9 @@ export default function EditorScroller({ editor }) {
             right: 30,
             top: '50%',
             transform: 'translateY(-50%)',
-            px: 1.25,
-            py: 0.4,
-            borderRadius: '8px',
+            px: 1.5,
+            py: 0.5,
+            borderRadius: RADII_PX.control,
             fontSize: FONT_SIZES.caption,
             fontWeight: FONT_WEIGHTS.bold,
             whiteSpace: 'nowrap',

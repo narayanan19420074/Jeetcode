@@ -12,7 +12,7 @@ function TableHeader({ lib }) {
   );
   return (
     <Box sx={styles.headRow}>
-      <Typography variant="caption" sx={[styles.headLabel, { pl: '32px' }]}>
+      <Typography variant="caption" sx={[styles.headLabel, { pl: 4 }]}>
         Title
       </Typography>
       <Box sx={{ flex: 1 }} />
@@ -73,7 +73,7 @@ function ListBody({ lib, dailyId, listsApi }) {
 function TableFooter({ shown, total }) {
   if (total <= 0) return null;
   return (
-    <Box sx={(t) => ({ display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: PAD_X, py: 1.25, borderTop: `1px solid ${t.palette.divider}` })}>
+    <Box sx={(t) => ({ display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: PAD_X, py: 1.5, borderTop: `1px solid ${t.palette.divider}` })}>
       <Typography variant="caption" color="text.secondary" sx={{ fontVariantNumeric: 'tabular-nums' }}>
         Showing {shown} of {total}
       </Typography>

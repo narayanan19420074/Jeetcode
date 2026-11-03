@@ -28,7 +28,7 @@ import { getTopicBySlug } from './content';
 import { AVERAGES_VISUAL_REGISTRY } from './animations/AveragesVisuals';
 import MissingValueVisual from './visuals/MissingValueVisual';
 import { aptitudeApi } from '../../api/aptitudeApi';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, FONTS } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, FONTS, RADII_PX } from '../../app/design/designTokens';
 
 const MAIN_NAV_HEIGHT_PX = 72;
 const CONTENT_MAX = 720;
@@ -54,7 +54,7 @@ function LearnTopBar({ topic, active, completedCount, total, progressPct, onBack
         bgcolor: 'background.paper',
         borderBottom: '1px solid',
         borderColor: 'divider',
-        py: 1.25,
+        py: 1.5,
         px: 2,
       }}
     >
@@ -78,7 +78,7 @@ function LearnTopBar({ topic, active, completedCount, total, progressPct, onBack
             sx={{
               flexGrow: 1,
               height: 6,
-              borderRadius: 3,
+              borderRadius: RADII_PX.pill,
               '& .MuiLinearProgress-bar': { transition: 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)' },
             }}
           />
@@ -100,7 +100,7 @@ function LearnSidebar({ sections, activeId, completedIds, onSelect }) {
       elevation={0}
       variant="outlined"
       sx={{
-        borderRadius: 3,
+        borderRadius: RADII_PX.card,
         overflow: 'hidden',
         position: 'sticky',
         top: MAIN_NAV_HEIGHT_PX + 24,
@@ -136,7 +136,7 @@ function LearnSidebar({ sections, activeId, completedIds, onSelect }) {
                   sx={{
                     position: 'relative',
                     cursor: 'pointer',
-                    py: 0.9,
+                    py: 1,
                     pl: 1.5,
                     pr: 1.5,
                     bgcolor: isActive ? (t) => alpha(t.palette.primary.main, 0.06) : 'transparent',
@@ -246,7 +246,7 @@ function FormulaDisplay({ text }) {
     <Box
       sx={{
         p: 3,
-        borderRadius: 3,
+        borderRadius: RADII_PX.card,
         bgcolor: (t) => (t.palette.mode === 'dark' ? withAlpha(COLOR_PALETTE.blue[500], 0.12) : withAlpha(COLOR_PALETTE.blue[500], 0.06)),
         border: '1px solid',
         borderColor: (t) => alpha(t.palette.primary.main, 0.35),
@@ -302,7 +302,7 @@ function ExampleCard({ example, index }) {
       <Paper
         elevation={0}
         variant="outlined"
-        sx={{ p: { xs: 2.5, sm: 3 }, borderRadius: 3, bgcolor: 'background.paper' }}
+        sx={{ p: { xs: 2.5, sm: 3 }, borderRadius: RADII_PX.card, bgcolor: 'background.paper' }}
       >
         <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 2 }}>
           <Box
@@ -348,7 +348,7 @@ function ExampleCard({ example, index }) {
                     fontFamily: FONTS.mono,
                     fontWeight: FONT_WEIGHTS.bold,
                     color: 'text.disabled',
-                    mt: 0.35,
+                    mt: 0.5,
                     minWidth: 16,
                     fontSize: FONT_SIZES.caption,
                   }}
@@ -406,7 +406,7 @@ function TrapCallout({ text }) {
     <Box
       sx={{
         p: 2.5,
-        borderRadius: 3,
+        borderRadius: RADII_PX.card,
         display: 'flex',
         gap: 1.5,
         alignItems: 'flex-start',
@@ -415,7 +415,7 @@ function TrapCallout({ text }) {
         borderColor: (t) => alpha(COLOR_PALETTE.red[500], 0.3),
       }}
     >
-      <WarningAmberRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.red[500], mt: 0.25 }} />
+      <WarningAmberRoundedIcon sx={{ fontSize: FONT_SIZES.heading, color: COLOR_PALETTE.red[500], mt: 0.5 }} />
       <Box>
         <Typography variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: COLOR_PALETTE.red[500], display: 'block', letterSpacing: '0.1em', fontSize: FONT_SIZES.micro }}>
           TRAP
@@ -467,7 +467,7 @@ function CheckCard({ check, index, onCorrect }) {
         variant="outlined"
         sx={{
           p: { xs: 2.5, sm: 3 },
-          borderRadius: 3,
+          borderRadius: RADII_PX.card,
           borderColor: isChallenge ? (t) => alpha(t.palette.warning.main, 0.4) : 'divider',
           bgcolor: isChallenge ? (t) => alpha(t.palette.warning.main, 0.02) : 'background.paper',
         }}
@@ -512,7 +512,7 @@ function CheckCard({ check, index, onCorrect }) {
                   alignItems: 'center',
                   gap: 14,
                   padding: 16,
-                  borderRadius: 12,
+                  borderRadius: RADII_PX.card,
                   border: '1.5px solid',
                   cursor: solved ? 'default' : 'pointer',
                   textAlign: 'left',
@@ -567,7 +567,7 @@ function CheckCard({ check, index, onCorrect }) {
                 sx={{
                   mt: 2.5,
                   p: 2,
-                  borderRadius: 2,
+                  borderRadius: RADII_PX.card,
                   bgcolor: revealed ? alpha(COLOR_PALETTE.amber[500], 0.08) : withAlpha(COLOR_PALETTE.emerald[500], 0.08),
                   border: '1px solid',
                   borderColor: revealed ? alpha(COLOR_PALETTE.amber[500], 0.3) : withAlpha(COLOR_PALETTE.emerald[500], 0.3),
@@ -613,7 +613,7 @@ function CompletionBanner({ topic, total, onFinish }) {
         variant="outlined"
         sx={{
           p: 4,
-          borderRadius: 4,
+          borderRadius: RADII_PX.card,
           textAlign: 'center',
           bgcolor: (t) => alpha(t.palette.success.main, 0.05),
           borderColor: (t) => alpha(t.palette.success.main, 0.35),
@@ -645,7 +645,7 @@ function CompletionBanner({ topic, total, onFinish }) {
               fontWeight: FONT_WEIGHTS.bold,
               py: 1.5,
               px: 4,
-              borderRadius: 2,
+              borderRadius: RADII_PX.card,
               bgcolor: 'success.main',
               '&:hover': { bgcolor: 'success.dark' },
             }}
@@ -912,7 +912,7 @@ export default function LearnTopicPage() {
                     variant="outlined"
                     disabled={activeIndex === 0}
                     onClick={handlePrevLesson}
-                    sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.5, px: 3, borderRadius: 2 }}
+                    sx={{ fontWeight: FONT_WEIGHTS.bold, py: 1.5, px: 3, borderRadius: RADII_PX.card }}
                   >
                     Previous lesson
                   </Button>
@@ -927,7 +927,7 @@ export default function LearnTopicPage() {
                       fontWeight: FONT_WEIGHTS.bold,
                       py: 1.5,
                       px: 4,
-                      borderRadius: 2,
+                      borderRadius: RADII_PX.card,
                       fontSize: FONT_SIZES.bodyLg,
                       bgcolor: isLast ? 'success.main' : 'primary.main',
                       '&:hover': { bgcolor: isLast ? 'success.dark' : 'primary.dark' },

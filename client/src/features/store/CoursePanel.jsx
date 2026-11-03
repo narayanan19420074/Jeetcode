@@ -62,7 +62,7 @@ export default function CoursePanel({ slug, signedIn, onClose, onBuy, onProgress
               <Typography sx={{ color: FF.muted, lineHeight: 1.6 }}>{course.desc}</Typography>
               {owned ? (
                 <Box sx={{ mt: 2.5 }}>
-                  <Typography sx={{ mb: 0.75, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{progress.doneCount}/{progress.lessonCount} done · {progress.percent}%</Typography>
+                  <Typography sx={{ mb: 1, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{progress.doneCount}/{progress.lessonCount} done · {progress.percent}%</Typography>
                   <Bar pct={progress.percent} height={9} color={progress.percent === 100 ? FF.green : FF.orange} />
                   {progress.percent === 100 && <Notice tone="success" sx={{ mt: 2 }}>Course complete. Nice work!</Notice>}
                 </Box>
@@ -78,7 +78,7 @@ export default function CoursePanel({ slug, signedIn, onClose, onBuy, onProgress
           <Box sx={{ display: 'grid', gap: 2.5 }}>
             {course.modules.map((m, mi) => (
               <Box key={m.id} sx={{ border: `1px solid ${FF.line}` }}>
-                <Box sx={{ px: 2.5, py: 1.75, bgcolor: FF.panelHi }}>
+                <Box sx={{ px: 2.5, py: 2, bgcolor: FF.panelHi }}>
                   <Eyebrow sx={{ color: FF.orangeInk }}>Module {mi + 1}</Eyebrow>
                   <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, color: FF.text }}>{m.title}</Typography>
                 </Box>

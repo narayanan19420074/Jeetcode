@@ -10,7 +10,7 @@ import { extractErrorMessage } from '../../api/apiClient';
 import { PaneBar, WsIconButton } from './wsUi';
 import { WS } from './wsTokens';
 import { wsSurface } from './workspaceTheme';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII } from '../../app/design/designTokens';
 
 const QUICK_PROMPTS = ['Give me a hint', 'What is the time complexity?', 'Which edge cases should I test?'];
 
@@ -67,7 +67,7 @@ export default function AiAssistantDrawer({ open, onClose, slug, language, getCo
   return (
     <Drawer anchor="right" open={open} onClose={onClose} slotProps={{ paper: { sx: { width: 'min(400px, 100vw)', borderRadius: 0 } } }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <PaneBar height={56} sx={{ px: 2, gap: 1.25, pt: 'env(safe-area-inset-top)', boxSizing: 'content-box' }}>
+        <PaneBar height={56} sx={{ px: 2, gap: 1.5, pt: 'env(safe-area-inset-top)', boxSizing: 'content-box' }}>
           <Box sx={(t) => ({ width: 32, height: 32, borderRadius: `${WS.radius}px`, display: 'grid', placeItems: 'center', bgcolor: alpha(t.palette.primary.main, 0.14), color: 'primary.main' })}>
             <AutoAwesomeRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} />
           </Box>
@@ -88,14 +88,14 @@ export default function AiAssistantDrawer({ open, onClose, slug, language, getCo
         </PaneBar>
 
         <Box sx={{ flex: 1, overflowY: 'auto', px: 2, py: 1.5 }}>
-          <Stack sx={{ gap: 1.25 }}>
+          <Stack sx={{ gap: 1.5 }}>
             {messages.map((m, i) => (
               <Box
                 key={i}
                 sx={(t) => ({
                   px: 1.5,
-                  py: 1.1,
-                  borderRadius: m.role === 'user' ? '12px 12px 4px 12px' : '12px 12px 12px 4px',
+                  py: 1,
+                  borderRadius: m.role === 'user' ? `${RADII.card}px ${RADII.card}px ${RADII.badge}px ${RADII.card}px` : `${RADII.card}px ${RADII.card}px ${RADII.card}px ${RADII.badge}px`,
                   bgcolor: m.role === 'user' ? 'primary.main' : wsSurface(t).raised,
                   color: m.role === 'user' ? 'primary.contrastText' : 'text.primary',
                   ml: m.role === 'user' ? 5 : 0,
@@ -118,7 +118,7 @@ export default function AiAssistantDrawer({ open, onClose, slug, language, getCo
         </Box>
 
         <Box sx={{ px: 2, pt: 1, pb: 'calc(14px + env(safe-area-inset-bottom))' }}>
-          <Stack direction="row" sx={{ gap: 0.75, mb: 1.25, overflowX: 'auto', pb: 0.25 }}>
+          <Stack direction="row" sx={{ gap: 1, mb: 1.5, overflowX: 'auto', pb: 0.5 }}>
             {QUICK_PROMPTS.map((p) => (
               <Chip
                 key={p}

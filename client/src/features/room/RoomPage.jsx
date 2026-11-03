@@ -74,7 +74,7 @@ import useStopwatch from '../workspace/useStopwatch';
 import { MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton } from '../workspace/wsUi';
 import { WS } from '../workspace/wsTokens';
 import { wsSurface } from '../workspace/workspaceTheme';
-import { FONT_WEIGHTS, FONT_SIZES, FONTS } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, FONTS, RADII } from '../../app/design/designTokens';
 
 // Shared documents must indent the same way for everyone, so the room always
 // uses 4 spaces (a personal tab size would make Python blocks disagree).
@@ -510,7 +510,7 @@ export default function RoomPage() {
       ) : (
       <PaneBar
         height="auto"
-        sx={{ minHeight: 48, pt: 'env(safe-area-inset-top)', px: { xs: 0.75, md: 1.5 }, gap: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}
+        sx={{ minHeight: 48, pt: 'env(safe-area-inset-top)', px: { xs: 1, md: 1.5 }, gap: 0.5, borderBottom: '1px solid', borderColor: 'divider' }}
       >
         <WsIconButton title="Problem list" size={ctl} onClick={() => setListOpen(true)}>
           <FormatListBulletedRoundedIcon />
@@ -642,7 +642,7 @@ export default function RoomPage() {
               )}
             </Stack>
           ) : (
-          <PaneBar sx={{ px: 1.25, gap: 0.5, height: WS.bar, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
+          <PaneBar sx={{ px: 1.5, gap: 0.5, height: WS.bar, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
             <LanguageSelect value={room.language} onChange={room.changeLanguage} problem={problem} langMode={langMode} isMobile={isMobile} />
             <TimerControl sw={sw} size={ctl} />
 
@@ -684,7 +684,7 @@ export default function RoomPage() {
             <GuestBanner lib={isMobile} onSignIn={goLogin}>You can run code together as a guest. Sign in to submit and save your progress.</GuestBanner>
           )}
 
-          <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', ...(isMobile && { borderRadius: '20px 20px 0 0', overflow: 'hidden' }) }}>
+          <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', ...(isMobile && { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, overflow: 'hidden' }) }}>
             <CodeEditor
               ref={editorApi}
               language={room.language}

@@ -38,7 +38,7 @@ import FiberManualRecordRoundedIcon from '@mui/icons-material/FiberManualRecordR
 import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { LANG_LABEL, LANG_COLOR } from './Markdown';
-import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
 export { LANG_LABEL, LANG_COLOR };
 
@@ -256,7 +256,7 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
           {dislikeBtn}
         </Stack>
       ) : (
-        <Stack direction="row" alignItems="center" sx={{ gap: 0.75 }}>
+        <Stack direction="row" alignItems="center" sx={{ gap: 1 }}>
           {/* ♥ + count live together in one tonal pill so it reads as the Like button */}
           <Stack
             direction="row"
@@ -264,7 +264,7 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
             sx={(t) => ({
               height: 40,
               pr: 1.5,
-              borderRadius: 999,
+              borderRadius: RADII_PX.pill,
               bgcolor: liked ? alpha(LIKE_RED, 0.12) : alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.1 : 0.06),
               transition: 'background-color .15s',
             })}
@@ -296,12 +296,12 @@ export function ActionButton({ icon, count, label, onClick }) {
         height: 40,
         px: 1.5,
         minWidth: 0,
-        borderRadius: 999,
+        borderRadius: RADII_PX.pill,
         color: 'text.primary',
         bgcolor: alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.1 : 0.06),
         fontWeight: FONT_WEIGHTS.semibold,
         fontSize: FONT_SIZES.bodyLg,
-        '& .MuiButton-startIcon': { mr: 0.75, '& svg': { fontSize: FONT_SIZES.display } },
+        '& .MuiButton-startIcon': { mr: 1, '& svg': { fontSize: FONT_SIZES.display } },
       })}
     >
       {count}
@@ -443,7 +443,7 @@ export function SegmentedTabs({ value, onChange, options }) {
       direction="row"
       role="tablist"
       spacing={0.5}
-      sx={{ p: 0.5, borderRadius: 999, bgcolor: 'action.hover', width: 'fit-content', maxWidth: '100%', overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}
+      sx={{ p: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'action.hover', width: 'fit-content', maxWidth: '100%', overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}
     >
       {options.map((o) => {
         const on = o.value === value;
@@ -456,10 +456,10 @@ export function SegmentedTabs({ value, onChange, options }) {
             startIcon={o.icon}
             sx={(t) => ({
               height: 40,
-              px: 1.75,
+              px: 2,
               flexShrink: 0,
               whiteSpace: 'nowrap',
-              borderRadius: 999,
+              borderRadius: RADII_PX.pill,
               fontWeight: FONT_WEIGHTS.bold,
               color: on ? 'primary.main' : 'text.secondary',
               bgcolor: on ? 'background.paper' : 'transparent',
@@ -479,7 +479,7 @@ export function SegmentedTabs({ value, onChange, options }) {
 // Horizontal scrolling filter chips (language filter).
 export function FilterChips({ value, onChange, options }) {
   return (
-    <Stack direction="row" spacing={1} sx={{ overflowX: 'auto', py: 0.25, '&::-webkit-scrollbar': { display: 'none' } }}>
+    <Stack direction="row" spacing={1} sx={{ overflowX: 'auto', py: 0.5, '&::-webkit-scrollbar': { display: 'none' } }}>
       {options.map((o) => {
         const on = o.value === value;
         return (
@@ -504,7 +504,7 @@ export function ComposerPrompt({ icon, placeholder, onClick }) {
   return (
     <ButtonBase
       onClick={onClick}
-      sx={{ width: '100%', justifyContent: 'flex-start', gap: 1.25, px: 1.25, py: 1, minHeight: 60, border: '1px solid', borderColor: 'divider', borderRadius: 999, textAlign: 'left' }}
+      sx={{ width: '100%', justifyContent: 'flex-start', gap: 1.5, px: 1.5, py: 1, minHeight: 60, border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.pill, textAlign: 'left' }}
     >
       {user && <UserAvatar user={user} size={38} />}
       <Typography color="text.secondary" noWrap sx={{ flex: 1, fontSize: FONT_SIZES.bodyLg, pl: user ? 0 : 1 }}>
@@ -550,10 +550,10 @@ export function FeedSkeleton({ count = 3, withCode = false }) {
           </Stack>
           <Skeleton width="78%" height={28} sx={{ mt: 1.5 }} />
           <Skeleton width="95%" height={20} />
-          {withCode && <Skeleton variant="rounded" height={120} sx={{ mt: 1.5, borderRadius: 3 }} />}
+          {withCode && <Skeleton variant="rounded" height={120} sx={{ mt: 1.5, borderRadius: RADII_PX.card }} />}
           <Stack direction="row" spacing={1} sx={{ mt: 1.5 }}>
-            <Skeleton variant="rounded" width={104} height={42} sx={{ borderRadius: 999 }} />
-            <Skeleton variant="rounded" width={64} height={42} sx={{ borderRadius: 999 }} />
+            <Skeleton variant="rounded" width={104} height={42} sx={{ borderRadius: RADII_PX.pill }} />
+            <Skeleton variant="rounded" width={64} height={42} sx={{ borderRadius: RADII_PX.pill }} />
           </Stack>
         </Box>
       ))}

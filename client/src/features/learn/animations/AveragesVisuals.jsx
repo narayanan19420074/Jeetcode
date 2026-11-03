@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { useStepPlayer, AnimationControls } from '../AnimationShell';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 // Fixed brand colors — visible on both light and dark backgrounds.
 const COLORS = {
@@ -40,7 +40,7 @@ function VisualFrame({ steps, children, title }) {
     <Box
       sx={{
         p: { xs: 1.5, sm: 2 },
-        borderRadius: 3,
+        borderRadius: RADII_PX.card,
         border: '1px solid',
         borderColor: 'divider',
         bgcolor: 'background.paper',

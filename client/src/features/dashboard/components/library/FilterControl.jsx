@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Badge, Box, Button, Chip, IconButton, Popover, Stack, ToggleButton, ToggleButtonGroup, Tooltip, Typography } from '@mui/material';
 import FilterListRoundedIcon from '@mui/icons-material/FilterListRounded';
 import useLibraryStyles from './libraryStyles';
-import { FONT_WEIGHTS } from '../../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../../app/design/designTokens';
 
 const toggleSx = { fontWeight: FONT_WEIGHTS.bold, textTransform: 'none' };
 
@@ -34,7 +34,7 @@ function CompanyFilter({ companies, selected, onToggle }) {
   return (
     <>
       <FilterHeading>Company</FilterHeading>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, maxHeight: 168, overflowY: 'auto', mb: 2 }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, maxHeight: 168, overflowY: 'auto', mb: 2 }}>
         {companies.map(({ company, count }) => {
           const on = selected.includes(company);
           return (
@@ -99,7 +99,7 @@ export default function FilterControl({ lib, isAuthenticated }) {
         open={Boolean(anchor)}
         onClose={() => setAnchor(null)}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        slotProps={{ paper: { sx: { borderRadius: '14px', p: 2.25, width: 340, maxWidth: 'calc(100vw - 24px)', mt: 0.5 } } }}
+        slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, p: 2.5, width: 340, maxWidth: 'calc(100vw - 24px)', mt: 0.5 } } }}
       >
         <FilterPanel lib={lib} isAuthenticated={isAuthenticated} onDone={() => setAnchor(null)} />
       </Popover>

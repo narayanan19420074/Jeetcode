@@ -2,15 +2,15 @@ import { Box, CircularProgress, Skeleton, Typography } from '@mui/material';
 import { useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { panelSx } from '../../dashboard/components/libraryDesktopStyles';
 import CompanyRow from './CompanyRow';
-import { FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const COLUMNS = { xs: 'minmax(0,1fr)', md: 'repeat(2, minmax(0,1fr))' };
 const SKELETON_ROWS = 8;
 
 function SkeletonRows({ palette }) {
   return Array.from({ length: SKELETON_ROWS }, (_, i) => (
-    <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.25, borderBottom: `1px solid ${palette.divider}` }}>
-      <Skeleton variant="rounded" width={48} height={48} sx={{ borderRadius: '14px' }} />
+    <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.5, borderBottom: `1px solid ${palette.divider}` }}>
+      <Skeleton variant="rounded" width={48} height={48} sx={{ borderRadius: RADII_PX.card }} />
       <Box sx={{ flex: 1 }}><Skeleton variant="text" width="55%" /><Skeleton variant="text" width="35%" /></Box>
     </Box>
   ));
