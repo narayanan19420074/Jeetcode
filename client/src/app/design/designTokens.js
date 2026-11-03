@@ -134,11 +134,11 @@ export const TYPE_SCALE = {
 export const FONT_SCALE = { sm: 0.92, md: 1, lg: 1.12 };
 
 // ---------------------------------------------------------------- colours: surfaces
-// Light mode is creamy white with warm near-black text, so every light page and card shares one family.
+// Light mode is a plain white page and white cards (cards are separated by a 1px line) with neutral near-black text, so every light page and card shares one family.
 // Layers, back to front: bg (page) < paper (cards, bars) < tonal (raised chips, inputs) < hero (selected).
 // Every text/background pair meets WCAG AA (4.5:1 for text).
 export const SURFACES = {
-  light: { bg: '#FBF7EF', paper: '#FFFDF8', tonal: '#F3EDE0', hero: '#E0E2FF', text: '#1F1B16', muted: '#5E5547', line: '#E5DDCB', lineSolid: '#E5DDCB' },
+  light: { bg: '#FFFFFF', paper: '#FFFFFF', tonal: '#F4F4F5', hero: '#E0E2FF', text: '#1A1A1A', muted: '#55585F', line: '#E4E4E7', lineSolid: '#E4E4E7' },
   dark: { bg: '#0E1116', paper: '#161B22', tonal: '#1F2630', hero: '#2A2F6B', text: '#E6EDF3', muted: '#9DA7B3', line: 'rgba(255,255,255,0.10)', lineSolid: '#2A313C' },
 };
 
@@ -154,9 +154,9 @@ export const LIBRARY_PALETTE = {
     bg: SURFACES.light.bg,
     chip: SURFACES.light.tonal,
     chipText: SURFACES.light.muted,
-    player: '#EFE8D8',
+    player: '#F0F0F2',
     nav: SURFACES.light.tonal,
-    border: '#EDE4D2',
+    border: '#E8E8EB',
     divider: SURFACES.light.line,
     text: SURFACES.light.text,
     muted: SURFACES.light.muted,
@@ -236,7 +236,7 @@ export const HIGH_CONTRAST = {
 // "Ink" colours are the text-safe shade of each accent.
 export const GAME_SURFACES = {
   dark: { bg: '#0B0E14', panel: '#151A24', panelHi: '#1D2431', line: '#2B3345', well: '#0B0E14', hud: 'rgba(11,14,20,0.82)', text: '#FFFFFF', muted: '#8E99AD', orangeInk: '#FFB020', greenInk: '#2ED573', blueInk: '#27B6FF', coinInk: '#FFC933', redInk: '#FF6B79' },
-  light: { bg: '#F6F1E6', panel: '#FFFDF8', panelHi: '#F6F1E6', line: '#DDD3BD', well: '#F3EDE0', hud: 'rgba(255,253,248,0.92)', text: '#1A160F', muted: '#5A5143', orangeInk: '#B14500', greenInk: '#087A3E', blueInk: '#0A6AAD', coinInk: '#8F6200', redInk: '#C21F33' },
+  light: { bg: '#FFFFFF', panel: '#FFFFFF', panelHi: '#F6F6F7', line: '#E4E4E7', well: '#F4F4F5', hud: 'rgba(255,255,255,0.92)', text: '#1A1A1A', muted: '#55585F', orangeInk: '#B14500', greenInk: '#087A3E', blueInk: '#0A6AAD', coinInk: '#8F6200', redInk: '#C21F33' },
 };
 
 // ---------------------------------------------------------------- colours: code editor
