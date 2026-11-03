@@ -13,7 +13,7 @@ to a developer who works **only from an Android phone**.
 - Repo location on phone: `~/Jeetcode`
 - Stack: React (Vite) + MUI + Redux Toolkit (`client/`), Node + Express + MongoDB (`server/`).
 - Deploy: Render, auto-deploys on every push to the branch set in `render.yaml`
-  (`branch:` field; currently `feature/aptitude`). Pushing to any other branch
+  (`branch:` field; currently `main`). Pushing to any other branch
   does NOT deploy. Work on the branch Render deploys.
 - Render build: `npm --prefix client ci --include=dev && npm --prefix client run build && npm --prefix server ci`.
   A broken build = failed deploy (Render keeps the old version live).
@@ -184,6 +184,18 @@ These apply to every file you write or touch, client and server. They override t
    over 30 lines, or contains duplicated code, split or clean it in the same delivery
    and list the new or moved files in the summary.
 
+## 4.3 Design system (single source of truth)
+
+All visual decisions live in `client/src/app/design/designTokens.js`: colours, type scale, spacing, radii,
+sizing, elevation, motion and breakpoints. The MUI theme (`app/design/buildTheme.js`) and every legacy palette
+(Library, Workspace, Leaderboard, Quests/Store) read from it.
+
+1. Never write a raw hex colour, font size, font family or radius inside a component. Use theme values
+   (`palette`, `typography` variants, `spacing`, `shape`, `theme.jc.*`) or import a token.
+2. To restyle the product, edit `designTokens.js` only. A new token goes there first, then into the theme builder.
+3. Mobile and desktop differ only through responsive tokens (`TYPE_SCALE`, `SIZES`, `LAYOUT_SPACING`).
+4. If a touched file still has hard-coded colours or sizes, move them to tokens in the same delivery.
+
 ## 5. Project-specific gotchas
 
 - MUI (v6–v7): `Grid` uses the new `size` prop (e.g. `size={{ xs: 12, md: 6 }}`),
@@ -215,6 +227,7 @@ These apply to every file you write or touch, client and server. They override t
 - [ ] One job per function, no repeated code (SOLID and DRY, 4.2)
 - [ ] Meaningful names; comments explain business logic and why the code exists (4.2)
 - [ ] Mobile/desktop pages split into common, mobile and desktop parts (4.2)
+- [ ] No raw colours, font sizes or radii in components; tokens only (4.3)
 
 ## 7. Shortcuts defined in the developer's `~/.bashrc`
 

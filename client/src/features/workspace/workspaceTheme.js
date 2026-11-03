@@ -15,6 +15,7 @@
 //   panel   - console / results
 //   raised  - problem card, key caps, inline code chips
 import { gpayTokens } from '../../app/theme';
+import { SYNTAX } from '../../app/design/designTokens';
 import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 
 // Library look on desktop (light mode): the page and panels are cream. The code area stays white, like a sheet of
@@ -35,12 +36,6 @@ export const wsSurface = (t) => {
     raised: g.tonal,
     line: t.palette.divider,
   };
-};
-
-// Soft, desaturated hues (no neon): every pair is >= 7:1 on its canvas.
-const SYNTAX = {
-  light: { text: '1F2328', comment: '66707B', keyword: '6F42C1', string: '0A6B3D', number: 'B35900', type: '0550AE', regexp: '0F766E' },
-  dark: { text: 'E6EDF3', comment: '8B96A5', keyword: 'C9A9F5', string: '9ECE9A', number: 'F2B880', type: '7CC4F0', regexp: '7FDBCA' },
 };
 
 const tokenRules = (c) => [

@@ -5,36 +5,15 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
+import { BRAND, FONTS, LIBRARY_PALETTE } from '../../../app/design/designTokens';
 
 // Shared look of the phone Library (Problems) pages: Roboto type and a warm cream surface in light mode.
 // Dark mode keeps the app's normal dark surfaces.
 
-export const LIB_FONT = '"Roboto", "Geist", system-ui, -apple-system, "Segoe UI", Arial, sans-serif';
-
-export const LIBRARY_PALETTE = {
-  light: {
-    bg: '#FDF8F4',
-    chip: '#F6ECE2',
-    chipText: '#6F655B',
-    player: '#F1E7DD',
-    nav: '#F6ECE2',
-    border: '#F3E4D4',
-    divider: '#E9DFD5',
-    text: '#1A1613',
-    muted: '#6F655B',
-  },
-  dark: {
-    bg: '#0E1116',
-    chip: '#1F2630',
-    chipText: '#B4BDC8',
-    player: '#1F2630',
-    nav: '#161B22',
-    border: 'rgba(255,255,255,0.10)',
-    divider: 'rgba(255,255,255,0.10)',
-    text: '#E6EDF3',
-    muted: '#9DA7B3',
-  },
-};
+// Fonts and colours come from the design tokens (app/design/designTokens.js); they are re-exported here so
+// existing imports keep working.
+export const LIB_FONT = FONTS.library;
+export { LIBRARY_PALETTE };
 
 export const useLibraryPalette = () => LIBRARY_PALETTE[useTheme().palette.mode === 'dark' ? 'dark' : 'light'];
 
@@ -142,7 +121,7 @@ export function HeaderTile({ children }) {
 
 // ---- Shared pieces for the phone pages in the Library look ----
 
-export const LIB_ACCENT = '#6366F1';
+export const LIB_ACCENT = BRAND.primary;
 export const LIB_TRACKING = '0.03em';
 
 // 44px back arrow, flush with the page gutter.
