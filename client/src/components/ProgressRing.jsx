@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
-export default function ProgressRing({ value, max, label, color = '#3B82F6', size = 120, strokeWidth = 10 }) {
+export default function ProgressRing({ value, max, label, color = COLOR_PALETTE.blue[500], size = 120, strokeWidth = 10 }) {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const pct = max > 0 ? Math.min(value / max, 1) : 0;

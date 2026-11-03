@@ -2,10 +2,11 @@ import { Box, Paper, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import ActivityHeatmap from './ActivityHeatmap';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
-const EASY = '#10B981';
-const MEDIUM = '#F59E0B';
-const HARD = '#EF4444';
+const EASY = COLOR_PALETTE.emerald[500];
+const MEDIUM = COLOR_PALETTE.amber[500];
+const HARD = COLOR_PALETTE.red[500];
 
 // LeetCode-style donut: the ring is split into 3 equal arcs (Easy, Medium,
 // Hard). Each arc fills up in its own colour by solved/total of that

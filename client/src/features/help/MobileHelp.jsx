@@ -35,6 +35,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Phone layout of Help & Support in the Library look (same as the phone Home, Problems, Friends and Explore pages):
 // Roboto type, warm surface, 16px page padding, 44px back arrow, centred header tile, 44px pill search,
@@ -43,13 +44,13 @@ import {
 // floating launcher at the bottom right (it carries the unread badge). There is no top navigation bar on phones.
 
 // Rich purple gradient from the phone home banners, used for the main actions on this page.
-const HELP_GRADIENT = 'linear-gradient(135deg,#7E3FA8,#4A1F8C)';
+const HELP_GRADIENT = `linear-gradient(135deg,${COLOR_PALETTE.custom.purple7E3FA8},${COLOR_PALETTE.custom.purple4A1F8C})`;
 const gradientBtnSx = {
   ...libSolidBtnSx,
-  color: '#fff',
+  color: COLOR_PALETTE.white,
   background: HELP_GRADIENT,
   '&:hover': { background: HELP_GRADIENT, filter: 'brightness(1.1)' },
-  '&.Mui-disabled': { color: '#fff', opacity: 0.6 },
+  '&.Mui-disabled': { color: COLOR_PALETTE.white, opacity: 0.6 },
 };
 
 function SectionTitle({ id, children }) {
@@ -129,14 +130,14 @@ export default function MobileHelp({
         <ButtonBase
           onClick={goToForm}
           aria-label="Send a message"
-          sx={{ mt: 3, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, p: 2, borderRadius: '20px', textAlign: 'left', color: '#fff', fontFamily: 'inherit', background: HELP_GRADIENT }}
+          sx={{ mt: 3, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, p: 2, borderRadius: '20px', textAlign: 'left', color: COLOR_PALETTE.white, fontFamily: 'inherit', background: HELP_GRADIENT }}
         >
           <Box sx={{ minWidth: 0 }}>
             <Typography sx={{ fontSize: 22, lineHeight: '28px', fontWeight: 700, letterSpacing: '-0.01em' }}>Send us a message</Typography>
-            <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'rgba(255,255,255,0.85)' }}>We usually reply within 2 working days</Typography>
+            <Typography sx={{ mt: 0.5, fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: withAlpha(COLOR_PALETTE.white, 0.85) }}>We usually reply within 2 working days</Typography>
           </Box>
-          <Box aria-hidden sx={{ flex: 'none', width: 60, height: 60, borderRadius: '50%', display: 'grid', placeItems: 'center', border: '5px solid rgba(255,255,255,0.55)', background: 'linear-gradient(160deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))' }}>
-            <MailOutlineRoundedIcon sx={{ fontSize: 28, color: '#fff' }} />
+          <Box aria-hidden sx={{ flex: 'none', width: 60, height: 60, borderRadius: '50%', display: 'grid', placeItems: 'center', border: `5px solid ${withAlpha(COLOR_PALETTE.white, 0.55)}`, background: `linear-gradient(160deg, ${withAlpha(COLOR_PALETTE.white, 0.25)}, ${withAlpha(COLOR_PALETTE.white, 0.05)})` }}>
+            <MailOutlineRoundedIcon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
           </Box>
         </ButtonBase>
 
@@ -187,9 +188,9 @@ export default function MobileHelp({
         <Box component="section" aria-labelledby="help-contact" ref={formRef} sx={{ mt: 4, scrollMarginTop: 16 }}>
           <SectionTitle id="help-contact">Send a message</SectionTitle>
           {form.sent ? (
-            <Box role="status" sx={(t) => ({ p: '12px', borderRadius: '16px', border: '1.5px solid var(--lib-border)', bgcolor: t.palette.mode === 'dark' ? tint('#22A06B', 16) : '#EAF6EE' })}>
+            <Box role="status" sx={(t) => ({ p: '12px', borderRadius: '16px', border: '1.5px solid var(--lib-border)', bgcolor: t.palette.mode === 'dark' ? tint(COLOR_PALETTE.custom.emerald22A06B, 16) : COLOR_PALETTE.green[50] })}>
               <Stack direction="row" sx={{ alignItems: 'center', gap: '12px' }}>
-                <CheckCircleRoundedIcon aria-hidden sx={{ fontSize: 28, color: '#22A06B', flex: 'none' }} />
+                <CheckCircleRoundedIcon aria-hidden sx={{ fontSize: 28, color: COLOR_PALETTE.custom.emerald22A06B, flex: 'none' }} />
                 <Box sx={{ minWidth: 0 }}>
                   <Typography sx={{ fontWeight: 500, fontSize: 16, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>Message sent</Typography>
                   <Typography sx={{ fontSize: 14, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>

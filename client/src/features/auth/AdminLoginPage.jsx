@@ -5,6 +5,7 @@ import { Box, Paper, TextField, Button, Typography, Alert, Stack, CircularProgre
 import ShieldRoundedIcon from '@mui/icons-material/ShieldRounded';
 import { adminLoginUser } from './authSlice';
 import TurnstileWidget, { TURNSTILE_SITE_KEY } from '../../components/TurnstileWidget';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Deliberately separate from the general LoginPage — no OAuth buttons, no
 // "Continue as Guest", no signup link, distinct dark visual treatment so
@@ -38,7 +39,7 @@ export default function AdminLoginPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        bgcolor: '#0b0f19',
+        bgcolor: COLOR_PALETTE.gray[950],
         px: 2,
       }}
     >

@@ -33,6 +33,7 @@ import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 // Phones in light mode get the warm cream surface of the Library pages; other screens and dark mode are unchanged.
 const cream = (t, phone, fallback) => (t.palette.mode === 'light' ? { xs: phone, md: fallback } : fallback);
 import { DISPLAY_FONT } from './anim';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // --- Copy rules for this page -------------------------------------------
 // Plain words a student understands in five seconds. One promise (coding +
@@ -133,7 +134,7 @@ function PrimaryCta({ onClick, label, size = 'large', sx, buttonRef, light = fal
         px: 3.5,
         py: 1.3,
         whiteSpace: 'nowrap',
-        ...(light && { bgcolor: '#fff', color: '#1E1B4B', '&:hover': { bgcolor: alpha('#fff', 0.9) } }),
+        ...(light && { bgcolor: COLOR_PALETTE.white, color: COLOR_PALETTE.indigo[950], '&:hover': { bgcolor: alpha(COLOR_PALETTE.white, 0.9) } }),
         ...sx,
       }}
     >
@@ -147,10 +148,10 @@ function Shot({ src, alt, priority = false, sx }) {
   const [failed, setFailed] = useState(false);
   if (failed) return null;
   return (
-    <Box sx={{ width: '100%', overflow: 'hidden', borderRadius: '12px', border: '1px solid', borderColor: 'divider', bgcolor: '#0F172A', ...sx }}>
-      <Stack direction="row" spacing={0.6} sx={{ alignItems: 'center', px: 1.25, height: 22, bgcolor: alpha('#fff', 0.06) }} aria-hidden>
+    <Box sx={{ width: '100%', overflow: 'hidden', borderRadius: '12px', border: '1px solid', borderColor: 'divider', bgcolor: COLOR_PALETTE.slate[900], ...sx }}>
+      <Stack direction="row" spacing={0.6} sx={{ alignItems: 'center', px: 1.25, height: 22, bgcolor: alpha(COLOR_PALETTE.white, 0.06) }} aria-hidden>
         {[0, 1, 2].map((i) => (
-          <Box key={i} sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: alpha('#fff', 0.28) }} />
+          <Box key={i} sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: alpha(COLOR_PALETTE.white, 0.28) }} />
         ))}
       </Stack>
       <Box
@@ -271,7 +272,7 @@ function PlanCard({ name, price, note, points, cta, onCta, primary = false, badg
       }}
     >
       {badge && (
-        <Box sx={{ position: 'absolute', top: -13, left: 24, px: 1.5, py: 0.3, borderRadius: 99, bgcolor: 'warning.main', color: '#fff', fontWeight: 800, fontSize: '0.78rem' }}>
+        <Box sx={{ position: 'absolute', top: -13, left: 24, px: 1.5, py: 0.3, borderRadius: 99, bgcolor: 'warning.main', color: COLOR_PALETTE.white, fontWeight: 800, fontSize: '0.78rem' }}>
           {badge}
         </Box>
       )}
@@ -545,19 +546,19 @@ export default function HomePage() {
             px: { xs: 3, md: 8 },
             py: { xs: 5, md: 7 },
             textAlign: 'center',
-            color: '#fff',
-            background: (t) => `linear-gradient(135deg, ${t.palette.primary.dark} 0%, #0F172A 90%)`,
+            color: COLOR_PALETTE.white,
+            background: (t) => `linear-gradient(135deg, ${t.palette.primary.dark} 0%, ${COLOR_PALETTE.slate[900]} 90%)`,
           }}
         >
           <Typography sx={{ fontFamily: DISPLAY_FONT, fontWeight: 800, fontSize: { xs: '2rem', md: '2.8rem' }, lineHeight: 1.08, letterSpacing: '-0.03em', textWrap: 'balance', mb: 1.5 }}>
             Your first question is two minutes away.
           </Typography>
-          <Typography sx={{ color: alpha('#fff', 0.85), fontSize: '1.1rem', mb: 3.5, lineHeight: 1.6 }}>
+          <Typography sx={{ color: alpha(COLOR_PALETTE.white, 0.85), fontSize: '1.1rem', mb: 3.5, lineHeight: 1.6 }}>
             Create your free account and solve your first question.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ justifyContent: 'center' }}>
             <PrimaryCta light buttonRef={finalCtaRef} label={startLabel} onClick={goStart} />
-            <Button size="large" variant="outlined" onClick={go('/pair')} sx={{ color: '#fff', borderColor: alpha('#fff', 0.5), borderWidth: 1.5, fontWeight: 700, px: 3, py: 1.3, whiteSpace: 'nowrap', '&:hover': { borderColor: '#fff', borderWidth: 1.5, bgcolor: alpha('#fff', 0.08) } }}>
+            <Button size="large" variant="outlined" onClick={go('/pair')} sx={{ color: COLOR_PALETTE.white, borderColor: alpha(COLOR_PALETTE.white, 0.5), borderWidth: 1.5, fontWeight: 700, px: 3, py: 1.3, whiteSpace: 'nowrap', '&:hover': { borderColor: COLOR_PALETTE.white, borderWidth: 1.5, bgcolor: alpha(COLOR_PALETTE.white, 0.08) } }}>
               Try a pair room
             </Button>
           </Stack>

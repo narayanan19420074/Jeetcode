@@ -184,9 +184,9 @@ export const SYNTAX = {
 
 // ---------------------------------------------------------------- colours: primitive palette
 // Raw colour scales (Tailwind-style, 50 = lightest, 950 = darkest). This is the ONLY place raw hex values
-// for illustrations, charts and game art may live; components reference PALETTE.<hue>[<stop>] instead of
+// for illustrations, charts and game art may live; components reference COLOR_PALETTE.<hue>[<stop>] instead of
 // writing a hex. Prefer theme.palette / semantic tokens above for anything that must follow light and dark mode.
-export const PALETTE = {
+export const COLOR_PALETTE = {
   white: '#FFFFFF',
   black: '#000000',
   slate: { 50: '#F8FAFC', 100: '#F1F5F9', 200: '#E2E8F0', 300: '#CBD5E1', 400: '#94A3B8', 500: '#64748B', 600: '#475569', 700: '#334155', 800: '#1E293B', 900: '#0F172A', 950: '#020617' },
@@ -314,7 +314,7 @@ export const PALETTE = {
   },
 };
 
-// Colour with transparency, for overlays and glows: withAlpha(PALETTE.white, 0.18) -> 'rgba(255, 255, 255, 0.18)'.
+// Colour with transparency, for overlays and glows: withAlpha(COLOR_PALETTE.white, 0.18) -> 'rgba(255, 255, 255, 0.18)'.
 export const withAlpha = (hex, alpha) => {
   const value = parseInt(hex.slice(1, 7), 16);
   return `rgba(${(value >> 16) & 255}, ${(value >> 8) & 255}, ${value & 255}, ${alpha})`;

@@ -8,9 +8,10 @@ import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import { LIB_FONT, LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
 import { BRAND_ORANGE, BRAND_TEXT_LIGHT } from './BrandMark';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
 // Active tab uses the logo orange (pill tint on the Contest-banner orange, deeper orange icon for contrast on cream).
-const PILL = '#E8590C';
+const PILL = COLOR_PALETTE.orange[600];
 
 const ITEMS = [
   { to: '/dashboard', label: 'Home', icon: HomeRoundedIcon },

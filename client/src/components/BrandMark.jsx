@@ -1,13 +1,14 @@
 import { useId } from 'react';
 import { Box } from '@mui/material';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
 // Brand colours: the orange ramp of the Contest banner (#F7A33B to #E8590C), so the logo sits
 // naturally on the warm Library surface (light) and on the dark surface.
-export const BRAND_ORANGE = '#F7A33B';
-export const BRAND_ORANGE_MID = '#E8590C';
-export const BRAND_ORANGE_DEEP = '#D9480F';
+export const BRAND_ORANGE = COLOR_PALETTE.custom.orangeF7A33B;
+export const BRAND_ORANGE_MID = COLOR_PALETTE.orange[600];
+export const BRAND_ORANGE_DEEP = COLOR_PALETTE.custom.orangeD9480F;
 // Orange for text on the cream page (5.2:1 contrast, WCAG 2.1 AA); the bright orange is used on dark.
-export const BRAND_TEXT_LIGHT = '#C2410C';
+export const BRAND_TEXT_LIGHT = COLOR_PALETTE.orange[700];
 
 // The app logo: rounded tile with the code glyph. Drawn on a 512 grid, identical to
 // public/favicon.svg and the installed app icons, so there is one source of truth.
@@ -33,9 +34,9 @@ export default function BrandMark({ size = 40, sx }) {
       </defs>
       <rect width="512" height="512" rx="112" fill={`url(#${gradId})`} />
       <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="40">
-        <path d="M176 176 96 256l80 80" stroke="#FFF8EE" />
-        <path d="M336 176l80 80-80 80" stroke="#FFF8EE" />
-        <path d="M278 140 234 372" stroke="#FFEFCF" />
+        <path d="M176 176 96 256l80 80" stroke={COLOR_PALETTE.orange[50]} />
+        <path d="M336 176l80 80-80 80" stroke={COLOR_PALETTE.orange[50]} />
+        <path d="M278 140 234 372" stroke={COLOR_PALETTE.orange[100]} />
       </g>
     </Box>
   );

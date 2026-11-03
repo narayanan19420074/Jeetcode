@@ -1,6 +1,7 @@
 import { Box, Button, MenuItem, Select, Slider, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import { Card, CardBody, PageTitle, Row, SwitchRow, usePreferences } from '../components/SettingsUi';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 const SAMPLE = `function twoSum(nums, target) {
 \tconst seen = new Map();
@@ -13,9 +14,9 @@ const SAMPLE = `function twoSum(nums, target) {
 }`;
 
 const THEMES = {
-  'vs-dark': { bg: '#0E1116', fg: '#E6EDF3', gutter: '#8E99A8' },
-  vs: { bg: '#FFFFFF', fg: '#1F2328', gutter: '#6B7280' },
-  'hc-black': { bg: '#000000', fg: '#FFFFFF', gutter: '#FFFFFF' },
+  'vs-dark': { bg: COLOR_PALETTE.gray[950], fg: COLOR_PALETTE.slate[200], gutter: COLOR_PALETTE.gray[400] },
+  vs: { bg: COLOR_PALETTE.white, fg: COLOR_PALETTE.custom.gray1F2328, gutter: COLOR_PALETTE.gray[500] },
+  'hc-black': { bg: COLOR_PALETTE.black, fg: COLOR_PALETTE.white, gutter: COLOR_PALETTE.white },
 };
 
 // Static stand-in for Monaco that honours the same settings, so changes are

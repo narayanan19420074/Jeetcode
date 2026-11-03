@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
 // Full-screen mini-game (jet dodge) shown when the phone loses network while the
 // app is already open. The game itself lives in /public/offline.html — the same
@@ -55,7 +56,7 @@ export default function OfflineGame() {
       title="Offline game"
       onLoad={() => frameRef.current?.contentWindow?.focus()}
       {...(html ? { srcDoc: html } : { src: '/offline.html' })}
-      style={{ position: 'fixed', inset: 0, width: '100%', height: '100%', border: 0, zIndex: 2000, background: '#FFFFFF' }}
+      style={{ position: 'fixed', inset: 0, width: '100%', height: '100%', border: 0, zIndex: 2000, background: COLOR_PALETTE.white }}
     />
   );
 }

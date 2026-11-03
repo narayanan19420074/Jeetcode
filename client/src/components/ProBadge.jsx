@@ -1,5 +1,6 @@
 import { Chip } from '@mui/material';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
 export default function ProBadge({ size = 'small' }) {
   return (
@@ -11,8 +12,8 @@ export default function ProBadge({ size = 'small' }) {
         fontWeight: 800,
         letterSpacing: '0.03em',
         bgcolor: 'warning.main',
-        color: '#fff',
-        '& .MuiChip-icon': { color: '#fff' },
+        color: COLOR_PALETTE.white,
+        '& .MuiChip-icon': { color: COLOR_PALETTE.white },
       }}
     />
   );

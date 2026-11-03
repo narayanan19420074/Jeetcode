@@ -1,7 +1,8 @@
 import { useId } from 'react';
 import { Box, Tooltip, Typography } from '@mui/material';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
-const GOLD = ['#FCD34D', '#D97706'];
+const GOLD = [COLOR_PALETTE.amber[300], COLOR_PALETTE.amber[600]];
 
 // Hexagon badge. Earned = gold, not yet earned = greyed out with its progress.
 export default function AchievementBadge({ top, value, caption, hint, earned }) {
@@ -18,9 +19,9 @@ export default function AchievementBadge({ top, value, caption, hint, earned }) 
               </linearGradient>
             </defs>
             <polygon points="28,2 52,16 52,48 28,62 4,48 4,16" fill={`url(#${id})`} />
-            <polygon points="28,7 47,18 47,46 28,57 9,46 9,18" fill="none" stroke="rgba(255,255,255,0.55)" strokeWidth="1.5" />
+            <polygon points="28,7 47,18 47,46 28,57 9,46 9,18" fill="none" stroke={withAlpha(COLOR_PALETTE.white, 0.55)} strokeWidth="1.5" />
           </svg>
-          <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#3B1D00' }}>
+          <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: COLOR_PALETTE.yellow[950] }}>
             <Typography sx={{ fontSize: '0.6rem', fontWeight: 800, lineHeight: 1 }}>{top}</Typography>
             <Typography sx={{ fontSize: '1rem', fontWeight: 800, lineHeight: 1.15, fontVariantNumeric: 'tabular-nums' }}>{value}</Typography>
           </Box>

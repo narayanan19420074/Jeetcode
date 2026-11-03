@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material';
 import { LIB_TRACKING, HeaderTile, LibraryFont, libPanelSx, libSolidBtnSx, libTintBtnSx, useLibraryPalette } from '../features/dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
 // Shared full-screen layout for status pages (error screen, page not found) in the Library look.
 // The layout is identical on phone and desktop; only the button stacking changes, so no separate views are needed.
@@ -33,7 +34,7 @@ function StatusContent({ icon: Icon, title, description, detail, children }) {
   return (
     <Stack spacing={2} sx={{ maxWidth: 440, width: '100%', textAlign: 'center', alignItems: 'center' }}>
       <HeaderTile>
-        <Icon sx={{ fontSize: 28, color: '#fff' }} />
+        <Icon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} />
       </HeaderTile>
       <Typography component="h1" sx={{ fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>
         {title}

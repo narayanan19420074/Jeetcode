@@ -1,4 +1,5 @@
 import { keyframes } from '@mui/material/styles';
+import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
 
 // Shared CSS keyframes for the landing page. Hidden "from" states live inside
 // the keyframes (animation-fill-mode: both), so when a visitor has
@@ -73,9 +74,9 @@ export const blink = keyframes`
 `;
 
 export const pulseDot = keyframes`
-  0% { box-shadow: 0 0 0 0 var(--pulse, rgba(16, 185, 129, 0.55)); }
-  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% { box-shadow: 0 0 0 0 var(--pulse, ${withAlpha(COLOR_PALETTE.emerald[500], 0.55)}); }
+  70% { box-shadow: 0 0 0 8px ${withAlpha(COLOR_PALETTE.emerald[500], 0)}; }
+  100% { box-shadow: 0 0 0 0 ${withAlpha(COLOR_PALETTE.emerald[500], 0)}; }
 `;
 
 export const trainRun = keyframes`

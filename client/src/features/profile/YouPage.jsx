@@ -23,6 +23,7 @@ import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, istShift, utcKey } from '
 import AchievementBadge from './AchievementBadge';
 import BackToDashboard from '../../components/BackToDashboard';
 import MobileYou from './MobileYou';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 const initialsFromName = (name) =>
   (name || 'U').trim().split(/\s+/).slice(0, 2).map((p) => p[0]?.toUpperCase()).join('');
@@ -306,8 +307,8 @@ export default function YouPage() {
                     flexShrink: 0,
                     display: 'grid',
                     placeItems: 'center',
-                    bgcolor: l.id === 'favorite' ? alpha('#F59E0B', 0.16) : alpha(t.palette.primary.main, 0.12),
-                    color: l.id === 'favorite' ? '#F59E0B' : 'primary.main',
+                    bgcolor: l.id === 'favorite' ? alpha(COLOR_PALETTE.amber[500], 0.16) : alpha(t.palette.primary.main, 0.12),
+                    color: l.id === 'favorite' ? COLOR_PALETTE.amber[500] : 'primary.main',
                   })}
                 >
                   {l.id === 'favorite' ? <StarRoundedIcon /> : <FormatListBulletedRoundedIcon />}

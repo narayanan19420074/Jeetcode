@@ -7,6 +7,7 @@ import { HeaderTile, LIB_TRACKING, LibraryFont, useLibraryPalette } from '../../
 import { initialsFromName } from '../components/SettingsUi';
 import { accentFor } from '../common/settingsAccent';
 import PhoneRow from './PhoneRow';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 function PhoneSearch({ query, setQuery, pal }) {
   return (
@@ -25,7 +26,7 @@ function PhoneSearch({ query, setQuery, pal }) {
 function PhoneHeader({ pal }) {
   return (
     <Box sx={{ textAlign: 'center', mt: 3 }}>
-      <HeaderTile><SettingsRoundedIcon sx={{ fontSize: 28, color: '#fff' }} /></HeaderTile>
+      <HeaderTile><SettingsRoundedIcon sx={{ fontSize: 28, color: COLOR_PALETTE.white }} /></HeaderTile>
       <Typography component="h1" noWrap sx={{ mt: 1.5, fontWeight: 700, fontSize: 26, lineHeight: '32px' }}>Settings</Typography>
       <Typography sx={{ fontSize: 17, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Account and preferences</Typography>
     </Box>

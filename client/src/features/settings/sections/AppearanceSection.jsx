@@ -4,15 +4,16 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import tokens, { ACCENTS } from '../../../app/theme';
 import { Card, CardBody, ChoiceCard, PageTitle, Row, SwitchRow, usePreferences } from '../components/SettingsUi';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // A tiny app window drawn in the real palette so the theme options are
 // recognisable at a glance. `half` renders the diagonal "match my device" split.
 function Mock({ scheme, accent, warm = false }) {
   const dark = scheme === 'dark';
-  const bg = warm ? (dark ? '#17120F' : '#FDF8F4') : dark ? tokens.slate900 : tokens.slate50;
-  const paper = warm ? (dark ? '#201A16' : '#FFFFFF') : dark ? tokens.slate800 : '#FFFFFF';
-  const line = warm ? (dark ? 'rgba(255,235,220,.3)' : '#E3D6C9') : dark ? 'rgba(148,163,184,.35)' : '#CBD5E1';
-  const text = warm ? (dark ? '#F3EBE3' : '#1A1613') : dark ? '#F8FAFC' : '#0F172A';
+  const bg = warm ? (dark ? COLOR_PALETTE.custom.black17120F : COLOR_PALETTE.orange[50]) : dark ? tokens.slate900 : tokens.slate50;
+  const paper = warm ? (dark ? COLOR_PALETTE.custom.black201A16 : COLOR_PALETTE.white) : dark ? tokens.slate800 : COLOR_PALETTE.white;
+  const line = warm ? (dark ? withAlpha(COLOR_PALETTE.orange[100], .3) : COLOR_PALETTE.custom.orangeE3D6C9) : dark ? withAlpha(COLOR_PALETTE.slate[400], .35) : COLOR_PALETTE.slate[300];
+  const text = warm ? (dark ? COLOR_PALETTE.orange[50] : COLOR_PALETTE.custom.black1A1613) : dark ? COLOR_PALETTE.slate[50] : COLOR_PALETTE.slate[900];
   return (
     <Box sx={{ position: 'absolute', inset: 0, bgcolor: bg, p: 1 }}>
       <Box sx={{ height: 9, borderRadius: 1, bgcolor: paper, mb: 0.75, display: 'flex', alignItems: 'center', px: 0.5, gap: 0.5 }}>

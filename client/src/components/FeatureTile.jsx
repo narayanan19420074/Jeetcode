@@ -1,5 +1,6 @@
 import { Paper, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { COLOR_PALETTE, withAlpha } from '../app/design/designTokens';
 
 export default function FeatureTile({ icon, title, description, to, badge = 'New', accentColor = 'primary.main' }) {
   const navigate = useNavigate();
@@ -19,12 +20,12 @@ export default function FeatureTile({ icon, title, description, to, badge = 'New
         '&:hover': {
           borderColor: accentColor,
           transform: 'translateY(-2px)',
-          boxShadow: (t) => (t.palette.mode === 'dark' ? '0 4px 16px rgba(0,0,0,0.4)' : '0 4px 16px rgba(0,0,0,0.08)'),
+          boxShadow: (t) => (t.palette.mode === 'dark' ? `0 4px 16px ${withAlpha(COLOR_PALETTE.black, 0.4)}` : `0 4px 16px ${withAlpha(COLOR_PALETTE.black, 0.08)}`),
         },
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, borderRadius: 2, bgcolor: accentColor, color: '#fff', flexShrink: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, borderRadius: 2, bgcolor: accentColor, color: COLOR_PALETTE.white, flexShrink: 0 }}>
           {icon}
         </Box>
         {badge && (

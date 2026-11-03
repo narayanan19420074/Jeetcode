@@ -19,6 +19,7 @@ import {
   libTintBtnSx,
   useLibraryPalette,
 } from '../dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Same accent as the phone pages.
 const ACCENT = LIB_ACCENT;
@@ -71,7 +72,7 @@ function PhoneTab({ tab, active, unread, onClick }) {
 // Icon colours are chosen for the light cream cards; in dark mode they are lifted toward white so they stay readable.
 const useTone = (color) => {
   const dark = useTheme().palette.mode === 'dark';
-  return dark ? `color-mix(in srgb, ${color} 72%, #fff)` : color;
+  return dark ? `color-mix(in srgb, ${color} 72%, ${COLOR_PALETTE.white})` : color;
 };
 
 // Phone card: the same rounded cream panel as the other phone pages. Only the dot and the tint show

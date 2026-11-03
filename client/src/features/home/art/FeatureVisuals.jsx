@@ -10,6 +10,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import CompanyAvatar from '../../../components/CompanyAvatar';
 import { MONO_FONT, blink, pulseDot, trainRun } from '../anim';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 const panel = {
   borderRadius: '14px',
@@ -40,7 +41,7 @@ function Segmented({ items, value, onChange, label }) {
               fontWeight: 700,
               color: on ? 'text.primary' : 'text.secondary',
               bgcolor: on ? 'background.paper' : 'transparent',
-              boxShadow: on ? '0 1px 3px rgba(0,0,0,0.18)' : 'none',
+              boxShadow: on ? `0 1px 3px ${withAlpha(COLOR_PALETTE.black, 0.18)}` : 'none',
               transition: 'background-color .15s, color .15s',
               '&:focus-visible': { outline: '2px solid', outlineColor: 'primary.main' },
             }}
@@ -150,8 +151,8 @@ function TrainLesson() {
         >
           {[0, 1, 2].map((i) => (
             <Box key={i} sx={{ width: 44, height: 28, mr: '3px', borderRadius: i === 0 ? '4px 12px 3px 3px' : '4px', bgcolor: 'primary.main', position: 'relative' }}>
-              <Box sx={{ position: 'absolute', top: 6, left: 7, width: 10, height: 8, borderRadius: 2, bgcolor: alpha('#fff', 0.85) }} />
-              <Box sx={{ position: 'absolute', top: 6, right: 7, width: 10, height: 8, borderRadius: 2, bgcolor: alpha('#fff', 0.85) }} />
+              <Box sx={{ position: 'absolute', top: 6, left: 7, width: 10, height: 8, borderRadius: 2, bgcolor: alpha(COLOR_PALETTE.white, 0.85) }} />
+              <Box sx={{ position: 'absolute', top: 6, right: 7, width: 10, height: 8, borderRadius: 2, bgcolor: alpha(COLOR_PALETTE.white, 0.85) }} />
             </Box>
           ))}
         </Box>
@@ -310,7 +311,7 @@ const ROOM_CHAT = [
 function Tile({ name, color, speaking }) {
   return (
     <Box sx={{ position: 'relative', aspectRatio: '4 / 3', borderRadius: '10px', display: 'grid', placeItems: 'center', background: `linear-gradient(145deg, ${alpha(color, 0.32)}, ${alpha(color, 0.1)})`, outline: speaking ? `2px solid ${color}` : 'none' }}>
-      <Box sx={{ width: 44, height: 44, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: color, color: '#fff', fontWeight: 800, fontSize: '1.1rem' }}>{name[0]}</Box>
+      <Box sx={{ width: 44, height: 44, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: color, color: COLOR_PALETTE.white, fontWeight: 800, fontSize: '1.1rem' }}>{name[0]}</Box>
       <Typography sx={{ position: 'absolute', left: 8, bottom: 6, fontSize: '0.72rem', fontWeight: 700 }}>{name}</Typography>
     </Box>
   );
@@ -424,12 +425,12 @@ export function SortVisual() {
 // ---------------------------------------------------------------------------
 // Leaderboard tiers (real thresholds from the app).
 const TIERS = [
-  ['Bronze', 0, '#C2410C'],
-  ['Silver', 150, '#94A3B8'],
-  ['Gold', 500, '#F59E0B'],
-  ['Platinum', 1200, '#22D3EE'],
-  ['Diamond', 2500, '#818CF8'],
-  ['Legend', 5000, '#F43F5E'],
+  ['Bronze', 0, COLOR_PALETTE.orange[700]],
+  ['Silver', 150, COLOR_PALETTE.slate[400]],
+  ['Gold', 500, COLOR_PALETTE.amber[500]],
+  ['Platinum', 1200, COLOR_PALETTE.cyan[400]],
+  ['Diamond', 2500, COLOR_PALETTE.indigo[400]],
+  ['Legend', 5000, COLOR_PALETTE.rose[500]],
 ];
 
 export function TierVisual() {
@@ -502,7 +503,7 @@ export function PlanVisual() {
       ))}
       <Stack direction="row" spacing={-0.8} sx={{ pt: 0.5, pl: 5.4 }} aria-hidden="true">
         {[['A', t.palette.primary.main], ['K', t.palette.warning.main]].map(([n, c]) => (
-          <Box key={n} sx={{ width: 24, height: 24, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: c, color: '#fff', fontSize: '0.7rem', fontWeight: 800, border: '2px solid', borderColor: 'background.paper' }}>{n}</Box>
+          <Box key={n} sx={{ width: 24, height: 24, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: c, color: COLOR_PALETTE.white, fontSize: '0.7rem', fontWeight: 800, border: '2px solid', borderColor: 'background.paper' }}>{n}</Box>
         ))}
         <Typography sx={{ pl: 2, fontSize: '0.74rem', color: 'text.secondary', alignSelf: 'center' }}>Planning together</Typography>
       </Stack>

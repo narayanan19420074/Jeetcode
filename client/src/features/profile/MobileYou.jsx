@@ -14,12 +14,13 @@ import ProBadge from '../../components/ProBadge';
 import { DIFF_COLOR, MONTHLY_BADGE_GOAL, STATUS_COLOR, tint } from '../dashboard/dashboardUtils';
 import AchievementBadge from './AchievementBadge';
 import { LibraryFont, useLibraryPalette } from '../dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../../app/design/designTokens';
 
 // Phone layout of the You page. It follows the phone Problems and Dashboard pages (MobileProblems,
 // MobileHome): same page padding, 44px icon buttons, centred header, 1.25rem section titles,
 // divider-separated rows and the same type sizes. There is no top navigation bar on phones.
 
-const ACCENT = '#6366F1';
+const ACCENT = COLOR_PALETTE.indigo[500];
 const TRACKING = '0.03em';
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 const EMPTY_HEATMAP = Array.from({ length: 49 }, (_, i) => ({ day: i, submissions: 0 }));
@@ -159,9 +160,9 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
           aria-valuemin={0}
           aria-valuemax={totalAll}
           aria-valuenow={solvedAll}
-          sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint('#F2B63C', 28), overflow: 'hidden' }}
+          sx={{ width: 162, height: 8, borderRadius: 99, bgcolor: tint(COLOR_PALETTE.custom.amberF2B63C, 28), overflow: 'hidden' }}
         >
-          <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: '#F2B63C', transition: 'width .5s' }} />
+          <Box sx={{ width: `${totalAll ? Math.min((solvedAll / totalAll) * 100, 100) : 0}%`, height: '100%', borderRadius: 99, bgcolor: COLOR_PALETTE.custom.amberF2B63C, transition: 'width .5s' }} />
         </Box>
         <Typography sx={{ fontWeight: 700, fontSize: 20, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
           {solvedAll}
@@ -224,7 +225,7 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
               fontWeight: 500,
               fontSize: 15,
               letterSpacing: TRACKING,
-              color: tab === t.key ? '#fff' : pal.chipText,
+              color: tab === t.key ? COLOR_PALETTE.white : pal.chipText,
               bgcolor: tab === t.key ? ACCENT : pal.chip,
             }}
           >
@@ -251,8 +252,8 @@ export default function MobileYou({ user, initials, socials, socialUrl, totals, 
                       flexShrink: 0,
                       display: 'grid',
                       placeItems: 'center',
-                      bgcolor: l.id === 'favorite' ? alpha('#F59E0B', 0.16) : alpha(t.palette.primary.main, 0.12),
-                      color: l.id === 'favorite' ? '#F59E0B' : 'primary.main',
+                      bgcolor: l.id === 'favorite' ? alpha(COLOR_PALETTE.amber[500], 0.16) : alpha(t.palette.primary.main, 0.12),
+                      color: l.id === 'favorite' ? COLOR_PALETTE.amber[500] : 'primary.main',
                     })}
                   >
                     {l.id === 'favorite' ? <StarRoundedIcon /> : <FormatListBulletedRoundedIcon />}

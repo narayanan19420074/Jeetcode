@@ -1,5 +1,5 @@
 // Design-token guard: components must not contain raw colour literals (hex, rgb, rgba).
-// Colours live in src/app/design/designTokens.js; components use theme values or PALETTE references.
+// Colours live in src/app/design/designTokens.js; components use theme values or COLOR_PALETTE references.
 //
 // Usage:
 //   node client/scripts/check-design-tokens.mjs            fail if any file has MORE raw colours than the baseline
@@ -55,7 +55,7 @@ function findRegressions(current, baseline) {
 }
 
 function reportRegressions(regressions, baseline) {
-  console.error('Raw colours found. Use theme values or PALETTE tokens from src/app/design/designTokens.js:\n');
+  console.error('Raw colours found. Use theme values or COLOR_PALETTE tokens from src/app/design/designTokens.js:\n');
   regressions.forEach(([file, count]) => console.error(`  ${file}: ${count} (allowed ${baseline[file] ?? 0})`));
   process.exit(1);
 }

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // Five separate "tabs" start scattered and tilted, then snap into one
 // dashboard when the section scrolls into view. The toggle lets the
@@ -180,7 +181,7 @@ export default function ChaosToOrder() {
                 fill={t.palette.background.paper}
                 stroke={alpha(t.palette.text.secondary, unified ? 0.3 : 0.55)}
                 strokeWidth="1.2"
-                style={{ filter: unified ? 'none' : `drop-shadow(0 6px 8px ${alpha('#0F172A', 0.18)})` }}
+                style={{ filter: unified ? 'none' : `drop-shadow(0 6px 8px ${alpha(COLOR_PALETTE.slate[900], 0.18)})` }}
               />
               <text x="14" y="24" fontSize="12" fontWeight="700" fill={t.palette.text.primary} fontFamily="Geist, system-ui, sans-serif">
                 {tile.title}

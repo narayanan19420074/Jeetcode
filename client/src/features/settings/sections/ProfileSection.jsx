@@ -8,6 +8,7 @@ import { useSnackbar } from 'notistack';
 import { usersApi } from '../../../api/usersApi';
 import { userUpdated } from '../../auth/authSlice';
 import { Card, CardBody, PageTitle, describeError, initialsFromName } from '../components/SettingsUi';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 const SOCIALS = [
   { key: 'github', label: 'GitHub', prefix: 'github.com/' },
@@ -39,7 +40,7 @@ function resizeToAvatar(file) {
       canvas.width = size;
       canvas.height = size;
       const ctx = canvas.getContext('2d');
-      ctx.fillStyle = '#fff';
+      ctx.fillStyle = COLOR_PALETTE.white;
       ctx.fillRect(0, 0, size, size);
       ctx.drawImage(img, (img.naturalWidth - side) / 2, (img.naturalHeight - side) / 2, side, side, 0, 0, size, size);
       resolve(canvas.toDataURL('image/jpeg', 0.85));

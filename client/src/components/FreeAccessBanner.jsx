@@ -5,6 +5,7 @@ import { Box, Button, IconButton, Typography } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { apiClient } from '../api/apiClient';
+import { COLOR_PALETTE, withAlpha } from '../app/design/designTokens';
 
 const DAY_MS = 86400000;
 const dismissKey = (until) => `jeetcode-offer-dismissed:${until.toISOString().slice(0, 10)}`;
@@ -66,9 +67,9 @@ export default function FreeAccessBanner() {
         pl: { xs: 1.5, sm: 3 },
         pr: { xs: 5, sm: 6 },
         py: 0.75,
-        color: '#fff',
-        background: 'linear-gradient(90deg, #0F172A 0%, #1E293B 55%, #334155 100%)',
-        borderBottom: '1px solid rgba(255,255,255,0.14)',
+        color: COLOR_PALETTE.white,
+        background: `linear-gradient(90deg, ${COLOR_PALETTE.slate[900]} 0%, ${COLOR_PALETTE.slate[800]} 55%, ${COLOR_PALETTE.slate[700]} 100%)`,
+        borderBottom: `1px solid ${withAlpha(COLOR_PALETTE.white, 0.14)}`,
       }}
     >
       <WorkspacePremiumRoundedIcon sx={{ fontSize: 20, flexShrink: 0, display: { xs: 'none', sm: 'block' } }} />
@@ -90,7 +91,7 @@ export default function FreeAccessBanner() {
           fontSize: '0.72rem',
           fontWeight: 700,
           whiteSpace: 'nowrap',
-          bgcolor: 'rgba(255,255,255,0.18)',
+          bgcolor: withAlpha(COLOR_PALETTE.white, 0.18),
           display: { xs: 'none', md: 'block' },
         }}
       >
@@ -108,9 +109,9 @@ export default function FreeAccessBanner() {
             fontWeight: 700,
             px: 1.75,
             borderRadius: 999,
-            bgcolor: '#fff',
-            color: '#0F172A',
-            '&:hover': { bgcolor: 'rgba(255,255,255,0.9)' },
+            bgcolor: COLOR_PALETTE.white,
+            color: COLOR_PALETTE.slate[900],
+            '&:hover': { bgcolor: withAlpha(COLOR_PALETTE.white, 0.9) },
           }}
         >
           Sign in
@@ -126,8 +127,8 @@ export default function FreeAccessBanner() {
           right: { xs: 4, sm: 12 },
           top: '50%',
           transform: 'translateY(-50%)',
-          color: 'rgba(255,255,255,0.85)',
-          '&:hover': { color: '#fff', bgcolor: 'rgba(255,255,255,0.14)' },
+          color: withAlpha(COLOR_PALETTE.white, 0.85),
+          '&:hover': { color: COLOR_PALETTE.white, bgcolor: withAlpha(COLOR_PALETTE.white, 0.14) },
         }}
       >
         <CloseRoundedIcon fontSize="small" />

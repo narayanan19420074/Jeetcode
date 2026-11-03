@@ -1,6 +1,7 @@
 import { Chip, Tooltip } from '@mui/material';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import { useNavigate } from 'react-router-dom';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
 // Renders in place of company-tag chips when problem.locked is true
 // (see problem.controller.js — locked = isPremium && !req.hasProAccess).
@@ -15,7 +16,7 @@ export default function PremiumLockChip() {
         label="Pro"
         size="small"
         onClick={(e) => { e.stopPropagation(); navigate('/pricing'); }}
-        sx={{ fontWeight: 700, bgcolor: 'warning.main', color: '#fff', '& .MuiChip-icon': { color: '#fff' } }}
+        sx={{ fontWeight: 700, bgcolor: 'warning.main', color: COLOR_PALETTE.white, '& .MuiChip-icon': { color: COLOR_PALETTE.white } }}
       />
     </Tooltip>
   );

@@ -58,12 +58,13 @@ import BrandMark, { BRAND_ORANGE, BRAND_TEXT_LIGHT } from './BrandMark';
 
 // Phones use the same indigo accent and gradient as the phone pages (Home, Problems, You, Settings).
 import { LIBRARY_PALETTE, LIB_FONT, LibraryFont, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
-const ACCENT = '#6366F1';
+const ACCENT = COLOR_PALETTE.indigo[500];
 // Warm Library palette for the phone menu (light and dark variants).
 const libPal = (t) => LIBRARY_PALETTE[t.palette.mode === 'dark' ? 'dark' : 'light'];
 const TRACKING = '0.03em';
-const ACCENT_GRADIENT = `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, #000))`;
+const ACCENT_GRADIENT = `linear-gradient(135deg, ${ACCENT}, color-mix(in srgb, ${ACCENT} 60%, ${COLOR_PALETTE.black}))`;
 
 // Logo: the plain icon on desktop, the amber app-logo tile on phones (same drawing as the installed app icon).
 function LogoMark() {
@@ -166,7 +167,7 @@ function MenuRow({ to, label, icon: Icon, active, onNavigate }) {
           display: 'grid',
           placeItems: 'center',
           ...(active
-            ? { background: ACCENT_GRADIENT, color: '#fff' }
+            ? { background: ACCENT_GRADIENT, color: COLOR_PALETTE.white }
             : { bgcolor: libPal(t).chip, color: libPal(t).chipText }),
         })}
       >
@@ -457,7 +458,7 @@ export default function Navbar() {
             >
               <Avatar
                 src={user?.avatarUrl || undefined}
-                sx={(t) => ({ bgcolor: 'primary.main', width: 34, height: 34, fontSize: '0.85rem', fontWeight: 700, [t.breakpoints.down('md')]: { bgcolor: ACCENT, color: '#fff', width: 40, height: 40, fontSize: '1rem' } })}
+                sx={(t) => ({ bgcolor: 'primary.main', width: 34, height: 34, fontSize: '0.85rem', fontWeight: 700, [t.breakpoints.down('md')]: { bgcolor: ACCENT, color: COLOR_PALETTE.white, width: 40, height: 40, fontSize: '1rem' } })}
               >
                 {initialsFromName(user?.name)}
               </Avatar>
@@ -478,7 +479,7 @@ export default function Navbar() {
               >
                 <Avatar
                   src={user?.avatarUrl || undefined}
-                  sx={{ display: { xs: 'flex', md: 'none' }, bgcolor: ACCENT, color: '#fff', width: 48, height: 48, fontSize: '1rem', fontWeight: 800, flexShrink: 0 }}
+                  sx={{ display: { xs: 'flex', md: 'none' }, bgcolor: ACCENT, color: COLOR_PALETTE.white, width: 48, height: 48, fontSize: '1rem', fontWeight: 800, flexShrink: 0 }}
                 >
                   {initialsFromName(user?.name)}
                 </Avatar>

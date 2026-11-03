@@ -8,6 +8,7 @@ import { useSnackbar } from 'notistack';
 import { billingApi } from '../../../api/billingApi';
 import ActivateLicenseModal from '../../../components/ActivateLicenseModal';
 import { Card, CardBody, PageTitle, Row, describeError } from '../components/SettingsUi';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 const PLAN_LABEL = { monthly: 'Monthly subscription', yearly: 'Yearly subscription', 'license-key': 'License key' };
 
@@ -45,7 +46,7 @@ export default function BillingSection() {
         <CardBody>
           <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ alignItems: { xs: 'flex-start', sm: 'center' }, justifyContent: 'space-between', gap: 2 }}>
             <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
-              <Box sx={{ width: 44, height: 44, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: user.isPro ? 'warning.main' : 'action.hover', color: user.isPro ? '#111827' : 'text.secondary' }}>
+              <Box sx={{ width: 44, height: 44, borderRadius: '12px', display: 'grid', placeItems: 'center', bgcolor: user.isPro ? 'warning.main' : 'action.hover', color: user.isPro ? COLOR_PALETTE.gray[900] : 'text.secondary' }}>
                 <WorkspacePremiumRoundedIcon />
               </Box>
               <Box>

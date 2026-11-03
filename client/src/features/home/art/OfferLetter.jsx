@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { alpha, useTheme } from '@mui/material/styles';
+import { COLOR_PALETTE, withAlpha } from '../../../app/design/designTokens';
 
 // Offer-letter illustration: the outcome the whole product points at.
 // "JC" is our own monogram, no real company mark. The SELECTED stamp
@@ -8,9 +9,9 @@ export default function OfferLetter({ stampDelay = 1, width = 160, replayKey = 0
   const t = useTheme();
   const reduce = useReducedMotion();
   // onDark: always draw a white sheet so the letter pops on the blue CTA panel.
-  const ink = onDark ? '#0F172A' : t.palette.text.primary;
-  const soft = onDark ? 'rgba(15,23,42,0.22)' : alpha(t.palette.text.secondary, 0.35);
-  const sheet = onDark ? '#FFFFFF' : t.palette.background.paper;
+  const ink = onDark ? COLOR_PALETTE.slate[900] : t.palette.text.primary;
+  const soft = onDark ? withAlpha(COLOR_PALETTE.slate[900], 0.22) : alpha(t.palette.text.secondary, 0.35);
+  const sheet = onDark ? COLOR_PALETTE.white : t.palette.background.paper;
   const ok = t.palette.success.main;
 
   return (
@@ -33,7 +34,7 @@ export default function OfferLetter({ stampDelay = 1, width = 160, replayKey = 0
         strokeWidth="1.5"
       />
       <rect x="18" y="18" width="30" height="30" rx="8" fill={t.palette.primary.main} />
-      <text x="33" y="38" textAnchor="middle" fontSize="12" fontWeight="800" fill="#fff" fontFamily="Geist, system-ui, sans-serif">
+      <text x="33" y="38" textAnchor="middle" fontSize="12" fontWeight="800" fill={COLOR_PALETTE.white} fontFamily="Geist, system-ui, sans-serif">
         JC
       </text>
       <rect x="58" y="22" width="86" height="8" rx="4" fill={ink} opacity="0.85" />

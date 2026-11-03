@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Box } from '@mui/material';
 import { getBrandLogo } from './brandLogos';
+import { COLOR_PALETTE, withAlpha } from '../app/design/designTokens';
 
 // Companies without a brand mark get a generated monogram badge: a two-tone gradient picked from the name.
 const GRADIENTS = [
-  ['#6366F1', '#8B5CF6'], ['#0EA5E9', '#2563EB'], ['#10B981', '#0D9488'], ['#F59E0B', '#EA580C'],
-  ['#EC4899', '#BE185D'], ['#14B8A6', '#0891B2'], ['#A855F7', '#C026D3'], ['#EF4444', '#B91C1C'],
-  ['#65A30D', '#16A34A'], ['#F97316', '#DB2777'], ['#3B82F6', '#4F46E5'], ['#64748B', '#334155'],
+  [COLOR_PALETTE.indigo[500], COLOR_PALETTE.violet[500]], [COLOR_PALETTE.sky[500], COLOR_PALETTE.blue[600]], [COLOR_PALETTE.emerald[500], COLOR_PALETTE.teal[600]], [COLOR_PALETTE.amber[500], COLOR_PALETTE.orange[600]],
+  [COLOR_PALETTE.pink[500], COLOR_PALETTE.pink[700]], [COLOR_PALETTE.teal[500], COLOR_PALETTE.cyan[600]], [COLOR_PALETTE.purple[500], COLOR_PALETTE.custom.purpleC026D3], [COLOR_PALETTE.red[500], COLOR_PALETTE.red[700]],
+  [COLOR_PALETTE.custom.green65A30D, COLOR_PALETTE.green[600]], [COLOR_PALETTE.orange[500], COLOR_PALETTE.pink[600]], [COLOR_PALETTE.blue[500], COLOR_PALETTE.indigo[600]], [COLOR_PALETTE.slate[500], COLOR_PALETTE.slate[700]],
 ];
 
 const hash = (s) => {
@@ -49,12 +50,12 @@ export default function CompanyAvatar({ name, logoUrl, size = 48 }) {
         position: 'relative',
         fontSize: size * (text.length >= 3 ? 0.3 : 0.4),
         letterSpacing: '-0.02em',
-        color: light ? 'text.primary' : '#fff',
-        ...(light ? { bgcolor: '#fff' } : {
+        color: light ? 'text.primary' : COLOR_PALETTE.white,
+        ...(light ? { bgcolor: COLOR_PALETTE.white } : {
           background: `linear-gradient(145deg, ${ga}, ${gb})`,
-          textShadow: '0 1px 2px rgba(0,0,0,0.25)',
-          boxShadow: `inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 10px -4px ${gb}99`,
-          '&::after': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(circle at 25% 15%, rgba(255,255,255,0.35), transparent 55%)', pointerEvents: 'none' },
+          textShadow: `0 1px 2px ${withAlpha(COLOR_PALETTE.black, 0.25)}`,
+          boxShadow: `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, 0.35)}, 0 4px 10px -4px ${gb}99`,
+          '&::after': { content: '""', position: 'absolute', inset: 0, background: `radial-gradient(circle at 25% 15%, ${withAlpha(COLOR_PALETTE.white, 0.35)}, transparent 55%)`, pointerEvents: 'none' },
         }),
         border: '1px solid',
         borderColor: light ? 'divider' : 'transparent',

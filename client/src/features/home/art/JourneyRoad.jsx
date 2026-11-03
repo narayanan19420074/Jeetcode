@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { motion, useMotionValue, useMotionValueEvent, useScroll } from 'framer-motion';
 import { DISPLAY_FONT } from '../anim';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // The road draws itself as the visitor scrolls, and a marker runs along it.
 // Nodes light up as the marker passes them. Desktop only: on phones the
@@ -94,7 +95,7 @@ export default function JourneyRoad({ steps }) {
                   textAnchor="middle"
                   fontSize="17"
                   fontWeight="800"
-                  fill={on ? '#fff' : t.palette.text.primary}
+                  fill={on ? COLOR_PALETTE.white : t.palette.text.primary}
                   fontFamily="Geist, system-ui, sans-serif"
                 >
                   {i + 1}
