@@ -10,7 +10,7 @@ export default function DifficultyChip({ difficulty, size = 'small' }) {
       sx={{
         color,
         bgcolor: `color-mix(in srgb, ${color} 12%, transparent)`,
-        fontWeight: 700,
+        fontWeight: 'fontWeightBold',
         border: 'none',
       }}
     />

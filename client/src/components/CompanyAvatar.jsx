@@ -46,7 +46,7 @@ export default function CompanyAvatar({ name, logoUrl, size = 48 }) {
         overflow: 'hidden',
         display: 'grid',
         placeItems: 'center',
-        fontWeight: 800,
+        fontWeight: 'fontWeightBold',
         position: 'relative',
         fontSize: size * (text.length >= 3 ? 0.3 : 0.4),
         letterSpacing: '-0.02em',

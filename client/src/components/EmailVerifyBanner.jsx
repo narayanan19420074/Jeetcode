@@ -33,7 +33,7 @@ export default function EmailVerifyBanner() {
       sx={{ borderRadius: 0, py: 0.25, alignItems: 'center' }}
       action={
         !note?.severity || note.severity === 'warning' ? (
-          <Button color="inherit" size="small" onClick={resend} disabled={busy} sx={{ fontWeight: 600 }}>
+          <Button color="inherit" size="small" onClick={resend} disabled={busy} sx={{ fontWeight: 'fontWeightSemibold' }}>
             {busy ? 'Sending...' : 'Resend email'}
           </Button>
         ) : undefined

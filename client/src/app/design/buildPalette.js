@@ -26,11 +26,12 @@ const buildTextAndDivider = (surfaces, mode, highContrast) => {
   };
 };
 
-// Neutral tonal layers for hover and selected states (black overlay in light mode, white in dark mode), so every
+// Neutral tonal layers for zebra stripes and hover and selected states (black overlay in light mode, white in dark mode), so every
 // clickable surface reacts the same way. Opacities come from STATES.
 const buildActionStates = (mode) => {
   const overlay = mode === 'dark' ? COLOR_PALETTE.white : COLOR_PALETTE.black;
   return {
+    stripe: withAlpha(overlay, STATES.stripeOpacity),
     hover: withAlpha(overlay, STATES.hoverOpacity),
     hoverOpacity: STATES.hoverOpacity,
     selected: withAlpha(overlay, STATES.selectedOpacity),

@@ -1,5 +1,6 @@
 import { Box, Tooltip } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { RADII_PX } from '../app/design/designTokens';
 
 export default function ActivityHeatmap({ data }) {
   const theme = useTheme();
@@ -26,7 +27,7 @@ export default function ActivityHeatmap({ data }) {
                 sx={{
                   width: 12,
                   height: 12,
-                  borderRadius: 0.6,
+                  borderRadius: RADII_PX.badge,
                   bgcolor: colorFor(cell.submissions),
                 }}
               />

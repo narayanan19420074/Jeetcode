@@ -29,6 +29,10 @@ export const LAYOUT_SPACING = {
 // `borderRadius: 1` in an sx prop equals one control radius; prefer a role from this list instead.
 export const RADII = { badge: 4, control: 8, card: 12, dialog: 16, pill: 999 };
 
+// The same radii as CSS pixel strings for sx props. A bare number in sx is multiplied by the theme shape
+// (`borderRadius: 2` = 16px), while a string is used exactly as written, so components pass `RADII_PX.card`.
+export const RADII_PX = Object.fromEntries(Object.entries(RADII).map(([role, value]) => [role, `${value}px`]));
+
 // ---------------------------------------------------------------- sizing
 export const SIZES = {
   // WCAG 2.5.5 / Material: minimum touch target on phones.
@@ -37,9 +41,11 @@ export const SIZES = {
   iconButton: { mobile: 40, desktop: 32 },
   appBarHeight: { mobile: 56, desktop: 64 },
   bottomNavHeight: 64,
-  iconSize: { small: 18, medium: 22, large: 28 },
+  iconSize: { small: 18, medium: 24, large: 28 },
+  chipIconSize: 16,
   // Rows and chips: one height per role so lists, sidebars and filter bars line up across pages.
   listRowHeight: 44,
+  listRowHeightDense: 36,
   navItemHeight: 40,
   filterPillHeight: 40,
   chipHeight: 28,
@@ -351,6 +357,8 @@ export const MOTION = { fast: 120, standard: 200, slow: 320 };
 // selected add a neutral tonal layer; selected also gets heavier text; keyboard focus shows a ring; disabled fades.
 // Opacities apply to a black (light mode) or white (dark mode) overlay and feed theme.palette.action.
 export const STATES = {
+  // Zebra stripe of alternating list rows: fainter than hover so a hovered row still stands out.
+  stripeOpacity: 0.02,
   hoverOpacity: 0.04,
   pressedOpacity: 0.08,
   selectedOpacity: 0.08,

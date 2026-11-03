@@ -24,6 +24,8 @@ export function buildTypography(fontScale = 'md') {
     fontSize: BASE_FONT_PX * scale,
     fontWeightRegular: FONT_WEIGHTS.regular,
     fontWeightMedium: FONT_WEIGHTS.medium,
+    // Not a MUI key: lets sx props write fontWeight: 'fontWeightSemibold' instead of a raw 600.
+    fontWeightSemibold: FONT_WEIGHTS.semibold,
     fontWeightBold: FONT_WEIGHTS.bold,
     ...variants,
     button: { ...variants.button, textTransform: 'none' },

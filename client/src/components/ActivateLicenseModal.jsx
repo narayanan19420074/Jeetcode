@@ -39,7 +39,7 @@ export default function ActivateLicenseModal({ open, onClose }) {
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
-      <DialogTitle sx={{ fontWeight: 800 }}>Activate Pro License</DialogTitle>
+      <DialogTitle sx={{ fontWeight: 'fontWeightBold' }}>Activate Pro License</DialogTitle>
       <Box component="form" onSubmit={handleSubmit}>
         <DialogContent>
           {status === 'success' ? (

@@ -1,19 +1,22 @@
-// Design-token guard: components must not contain raw colour literals (hex, rgb, rgba).
-// Colours live in src/app/design/designTokens.js; components use theme values or COLOR_PALETTE references.
+// Design-token guard. Every visual decision lives in src/app/design/designTokens.js; components use theme values
+// or tokens instead of literals.
+//
+//   Colours (hex, rgb, rgba): hard rule, baseline design-token-baseline.json is empty, any raw colour fails.
+//   Values (fontSize, borderRadius, fontFamily, fontWeight): ledger design-value-baseline.json, counts may only
+//   go down as pages are migrated (see design-value-rules.mjs).
 //
 // Usage:
-//   node client/scripts/check-design-tokens.mjs            fail if any file has MORE raw colours than the baseline
-//   node client/scripts/check-design-tokens.mjs --update   rewrite the baseline (only after removing colours)
-//
-// The baseline (design-token-baseline.json) is the migration ledger: counts may only go down. When it is empty
-// the check is a hard rule and any raw colour fails the build.
+//   node client/scripts/check-design-tokens.mjs            fail if any file has MORE literals than its baseline
+//   node client/scripts/check-design-tokens.mjs --update   lower the baselines after a migration (never raises them)
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { VALUE_RULES, countValueViolations } from './design-value-rules.mjs';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const SRC_DIR = path.join(SCRIPT_DIR, '..', 'src');
 const BASELINE_FILE = path.join(SCRIPT_DIR, 'design-token-baseline.json');
+const VALUE_BASELINE_FILE = path.join(SCRIPT_DIR, 'design-value-baseline.json');
 const TOKEN_DIR = `${path.sep}app${path.sep}design${path.sep}`;
 const COLOR_PATTERN = /rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(?:,\s*\d*\.?\d+\s*)?\)|#(?:[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?![0-9a-zA-Z_-])/g;
 
@@ -38,39 +41,66 @@ function countRawColours(text) {
   }).length;
 }
 
+const relativeName = (file) => path.relative(SRC_DIR, file).split(path.sep).join('/');
+
+// One pass over the source: raw colour counts and design-value counts per file.
 function measureAllFiles() {
-  const counts = {};
+  const colours = {};
+  const values = {};
   listSourceFiles(SRC_DIR).forEach((file) => {
-    const count = countRawColours(fs.readFileSync(file, 'utf8'));
-    if (count > 0) counts[path.relative(SRC_DIR, file).split(path.sep).join('/')] = count;
+    const text = fs.readFileSync(file, 'utf8');
+    const colourCount = countRawColours(text);
+    const valueCounts = countValueViolations(stripComments(text));
+    if (colourCount > 0) colours[relativeName(file)] = colourCount;
+    if (Object.keys(valueCounts).length) values[relativeName(file)] = valueCounts;
   });
-  return counts;
+  return { colours, values };
 }
 
-const readBaseline = () => (fs.existsSync(BASELINE_FILE) ? JSON.parse(fs.readFileSync(BASELINE_FILE, 'utf8')) : {});
+const readJson = (file) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null);
+const writeJson = (file, data) => fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`);
 const sumCounts = (counts) => Object.values(counts).reduce((total, value) => total + value, 0);
+const sumValueCounts = (values) => Object.values(values).reduce((total, perFile) => total + sumCounts(perFile), 0);
 
 function findRegressions(current, baseline) {
   return Object.entries(current).filter(([file, count]) => count > (baseline[file] ?? 0));
 }
 
-function reportRegressions(regressions, baseline) {
-  console.error('Raw colours found. Use theme values or COLOR_PALETTE tokens from src/app/design/designTokens.js:\n');
-  regressions.forEach(([file, count]) => console.error(`  ${file}: ${count} (allowed ${baseline[file] ?? 0})`));
+function findValueRegressions(current, baseline) {
+  return Object.entries(current).flatMap(([file, counts]) =>
+    Object.entries(counts)
+      .filter(([rule, count]) => count > (baseline[file]?.[rule] ?? 0))
+      .map(([rule, count]) => ({ file, rule, count, allowed: baseline[file]?.[rule] ?? 0 }))
+  );
+}
+
+function reportRegressions(colourRegressions, valueRegressions, baseline) {
+  if (colourRegressions.length) {
+    console.error('Raw colours found. Use theme values or COLOR_PALETTE tokens from src/app/design/designTokens.js:\n');
+    colourRegressions.forEach(([file, count]) => console.error(`  ${file}: ${count} (allowed ${baseline[file] ?? 0})`));
+  }
+  if (valueRegressions.length) {
+    console.error('Hard-coded design values found. Use the theme or tokens from src/app/design/designTokens.js:\n');
+    valueRegressions.forEach(({ file, rule, count, allowed }) => console.error(`  ${file}: ${rule} ${count} (allowed ${allowed})`));
+    VALUE_RULES.forEach(({ name, fix }) => console.error(`  ${name}: ${fix}`));
+  }
   process.exit(1);
 }
 
 function main() {
-  const current = measureAllFiles();
-  if (process.argv.includes('--update')) {
-    fs.writeFileSync(BASELINE_FILE, `${JSON.stringify(current, null, 2)}\n`);
-    console.log(`Baseline updated: ${sumCounts(current)} raw colours in ${Object.keys(current).length} files.`);
+  const { colours, values } = measureAllFiles();
+  const colourBaseline = readJson(BASELINE_FILE) ?? {};
+  const valueBaseline = readJson(VALUE_BASELINE_FILE);
+  const colourRegressions = findRegressions(colours, colourBaseline);
+  const valueRegressions = valueBaseline ? findValueRegressions(values, valueBaseline) : [];
+  if (colourRegressions.length || valueRegressions.length) reportRegressions(colourRegressions, valueRegressions, colourBaseline);
+  if (process.argv.includes('--update') || !valueBaseline) {
+    writeJson(BASELINE_FILE, colours);
+    writeJson(VALUE_BASELINE_FILE, values);
+    console.log(`Baselines written: ${sumCounts(colours)} raw colours, ${sumValueCounts(values)} design values in ${Object.keys(values).length} files.`);
     return;
   }
-  const baseline = readBaseline();
-  const regressions = findRegressions(current, baseline);
-  if (regressions.length) reportRegressions(regressions, baseline);
-  console.log(`Design tokens OK: ${sumCounts(current)} raw colours left (baseline ${sumCounts(baseline)}).`);
+  console.log(`Design tokens OK: ${sumCounts(colours)} raw colours left, ${sumValueCounts(values)} design values (baseline ${sumValueCounts(valueBaseline)}).`);
 }
 
 main();

@@ -19,7 +19,7 @@ export default function ProtectedRoute({ children, requireRole, redirectTo = '/l
   if (requireRole && role !== requireRole) {
     return (
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', py: 12, gap: 2 }}>
-        <Typography variant="h5" sx={{ fontWeight: 700 }}>
+        <Typography variant="h5">
           You don't have access to this page
         </Typography>
         <Typography color="text.secondary">This area is restricted to {requireRole}s.</Typography>

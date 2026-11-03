@@ -1,59 +1,44 @@
 import { Box, Typography } from '@mui/material';
 import { COLOR_PALETTE } from '../app/design/designTokens';
 
-export default function ProgressRing({ value, max, label, color = COLOR_PALETTE.blue[500], size = 120, strokeWidth = 10 }) {
+const TRACK_OPACITY = 0.12;
+
+// Faint full circle plus the filled arc; the arc length is the share of `value` in `max`.
+function RingGraphic({ size, strokeWidth, color, fraction }) {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
-  const pct = max > 0 ? Math.min(value / max, 1) : 0;
-  const offset = circumference * (1 - pct);
+  const circle = { cx: size / 2, cy: size / 2, r: radius, fill: 'none', strokeWidth };
+  return (
+    <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
+      <circle {...circle} stroke="currentColor" opacity={TRACK_OPACITY} />
+      <circle
+        {...circle}
+        stroke={color}
+        strokeDasharray={circumference}
+        strokeDashoffset={circumference * (1 - fraction)}
+        strokeLinecap="round"
+        style={{ transition: 'stroke-dashoffset 0.6s ease' }}
+      />
+    </svg>
+  );
+}
 
+function RingLabels({ value, max, label, color }) {
+  return (
+    <Box sx={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <Typography variant="h5" sx={{ fontWeight: 'fontWeightBold', lineHeight: 1 }}>{value}</Typography>
+      <Typography variant="caption" color="text.secondary">/ {max}</Typography>
+      {label && <Typography variant="caption" sx={{ mt: 0.5, fontWeight: 'fontWeightBold', color }}>{label}</Typography>}
+    </Box>
+  );
+}
+
+export default function ProgressRing({ value, max, label, color = COLOR_PALETTE.blue[500], size = 120, strokeWidth = 10 }) {
+  const fraction = max > 0 ? Math.min(value / max, 1) : 0;
   return (
     <Box sx={{ position: 'relative', width: size, height: size, display: 'inline-flex' }}>
-      <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          strokeWidth={strokeWidth}
-          stroke="currentColor"
-          opacity={0.12}
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          strokeWidth={strokeWidth}
-          stroke={color}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          style={{ transition: 'stroke-dashoffset 0.6s ease' }}
-        />
-      </svg>
-      <Box
-        sx={{
-          position: 'absolute',
-          inset: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Typography variant="h5" sx={{ fontWeight: 800, lineHeight: 1 }}>
-          {value}
-        </Typography>
-        <Typography variant="caption" color="text.secondary">
-          / {max}
-        </Typography>
-        {label && (
-          <Typography variant="caption" sx={{ mt: 0.5, fontWeight: 700, color }}>
-            {label}
-          </Typography>
-        )}
-      </Box>
+      <RingGraphic size={size} strokeWidth={strokeWidth} color={color} fraction={fraction} />
+      <RingLabels value={value} max={max} label={label} color={color} />
     </Box>
   );
 }
