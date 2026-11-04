@@ -3,7 +3,7 @@ import { modeKey } from './modeHelpers';
 
 // Loading spinner: a small eight-ray burst that turns and softly pulses. It replaces the default MUI ring for every
 // indeterminate CircularProgress, so all existing spinners pick it up. It is drawn as a mask, so it takes the text
-// colour of its parent (buttons use color="inherit"); on its own it uses the warm SPINNER_COLOR.
+// colour of its parent (buttons use color="inherit"); on its own it uses the brand-coloured SPINNER_COLOR.
 const SPINNER_RAYS = [0, 45, 90, 135, 180, 225, 270, 315]
   .map((deg, index) => `<path d="M12 ${index % 2 ? 4 : 2.5}V8" transform="rotate(${deg} 12 12)"/>`)
   .join('');

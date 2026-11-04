@@ -239,8 +239,8 @@ export const SEMANTIC = {
 // Reward colour: streaks, XP and badges only. Kept rare on purpose so it stands out.
 export const REWARD = { light: '#D97706', dark: '#FBBF24' };
 
-// Loading spinner tint (warm clay reads well on cream and dark surfaces).
-export const SPINNER_COLOR = { light: '#D97757', dark: '#E8946F' };
+// Loading spinner tint: the logo indigo (BRAND.primary), and its lighter shade on dark surfaces. Every spinner in the app reads this.
+export const SPINNER_COLOR = { light: BRAND.primary, dark: ACCENTS.violet.dark[0] };
 
 // Original product palette, still read by charts such as the activity heatmap (theme.tokens).
 export const BRAND_PALETTE = {
