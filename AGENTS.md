@@ -4,7 +4,8 @@ Read this file fully before making any change. It tells you how to deliver code
 to a developer who works **only from an Android phone**.
 
 > **Design rule (read first):** all colours, typography, spacing, radii and sizing live in
-> `client/src/app/design/designTokens.js` and nowhere else. See section 4.3.
+> `client/src/app/design/designTokens.js` (it re-exports the group files in `client/src/app/design/tokens/`)
+> and nowhere else. See section 4.3.
 
 ## 1. Context
 
@@ -189,7 +190,9 @@ These apply to every file you write or touch, client and server. They override t
 
 ## 4.3 Design system (single source of truth) — MANDATORY
 
-**Every visual decision comes from one place: `client/src/app/design/designTokens.js`.** This covers colours,
+**Every visual decision comes from one place: `client/src/app/design/designTokens.js`.** It re-exports the group files in
+`client/src/app/design/tokens/` (`layout`, `typography`, `colors`, `colorPalette`, `elevationMotion`, `pages`); components always
+import from `designTokens`, never from a group file. This covers colours,
 fonts and type scale, font sizes, spacing, radii, sizing (control and touch-target heights, bar heights),
 shadows, motion and breakpoints, for mobile and desktop. No exceptions, for any page or component, new or old.
 The MUI theme (`app/design/buildTheme.js`) and every legacy palette (Library, Workspace, Leaderboard, Quests/Store)
@@ -206,11 +209,11 @@ read from that file.
      Font sizes outside Typography variants use `FONT_SIZES.<step>` (rem, so the Text size setting scales them).
 2. Colours that must follow light/dark mode come from `theme.palette`. Same-in-both-modes colours (illustrations,
    charts, game art) come from `COLOR_PALETTE.<hue>[<stop>]`; transparency with `withAlpha(COLOR_PALETTE.white, 0.18)`.
-3. If the token you need does not exist, ADD it to `designTokens.js` first (with a role name, for example
-   `RADII.card`), then use it. Never add to `COLOR_PALETTE.custom.*`; that group is legacy only.
+3. If the token you need does not exist, ADD it first to the matching group file in `app/design/tokens/` (with a role name,
+   for example `RADII.card` in `layout.js`), then use it. Never add to `COLOR_PALETTE.custom.*`; that group is legacy only.
 4. Responsive design uses responsive tokens (`TYPE_SCALE`, `SIZES`, `LAYOUT_SPACING`), not per-page numbers.
 5. When the developer asks to change the look of the app ("change the colour", "bigger headings", "rounder
-   cards"), edit `designTokens.js` only. Do not touch page files for a global design change.
+   cards"), edit only the files in `app/design/tokens/`. Do not touch page files for a global design change.
 6. Fix existing violations in every file you touch (hard-coded font sizes, radii, spacing, colours).
 
 ### 4.3.1a Other tokens (use these instead of literals)
@@ -271,7 +274,7 @@ read from that file.
 - [ ] One job per function, no repeated code (SOLID and DRY, 4.2)
 - [ ] Meaningful names; comments explain business logic and why the code exists (4.2)
 - [ ] Mobile/desktop pages split into common, mobile and desktop parts (4.2)
-- [ ] Design values (colours, font sizes, spacing, radii, sizing, shadows) come from the theme or `designTokens.js`; nothing hard-coded in components; missing tokens added to `designTokens.js` first (4.3)
+- [ ] Design values (colours, font sizes, spacing, radii, sizing, shadows) come from the theme or `designTokens.js`; nothing hard-coded in components; missing tokens added to the `app/design/tokens/` group file first (4.3)
 - [ ] `node client/scripts/check-design-tokens.mjs` passes (no raw colours)
 
 ## 7. Shortcuts defined in the developer's `~/.bashrc`
