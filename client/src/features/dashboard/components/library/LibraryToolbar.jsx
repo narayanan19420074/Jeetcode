@@ -73,14 +73,16 @@ function ProgressSummary({ progress }) {
 }
 
 // One removable chip per filter that is on, plus "Clear all".
-function ActiveFilters({ lib }) {
-  const { query, patch, setSearchText, toggleCompany, clearAll } = lib;
+// Selected topics get chips only when the topic pills are not on the page (`topicsInFilter`), otherwise the pills show them.
+function ActiveFilters({ lib, topicsInFilter }) {
+  const { query, patch, setSearchText, toggleCompany, toggleTag, clearAll } = lib;
   const statusLabel = query.status === 'solved' ? 'Solved' : 'Unsolved';
   return (
     <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
       {query.search && <Chip size="small" label={`Search: ${query.search}`} onDelete={() => setSearchText('')} />}
       {query.difficulty !== 'All' && <Chip size="small" label={query.difficulty} onDelete={() => patch({ difficulty: 'All' })} sx={{ color: DIFF_COLOR[query.difficulty] }} />}
       {query.status !== 'All' && <Chip size="small" label={statusLabel} onDelete={() => patch({ status: 'All' })} />}
+      {topicsInFilter && query.tags.map((tag) => <Chip key={tag} size="small" label={tag} onDelete={() => toggleTag(tag)} />)}
       {query.companies.map((company) => (
         <Chip key={company} size="small" label={company} onDelete={() => toggleCompany(company)} />
       ))}
@@ -92,18 +94,18 @@ function ActiveFilters({ lib }) {
 }
 
 // Search and filters stay pinned while the problem list scrolls underneath.
-export default function LibraryToolbar({ lib, progress, isAuthenticated }) {
+export default function LibraryToolbar({ lib, progress, isAuthenticated, topicsInFilter = false }) {
   return (
     <Box sx={(t) => ({ position: { md: 'sticky' }, top: 0, zIndex: Z_INDEX.overlap, py: 1, mx: -0.5, px: 0.5, display: 'grid', gap: 1, bgcolor: { md: t.palette.background.default } })}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         <SearchField lib={lib} />
         <SortControl sort={lib.query.sort} disabled={lib.sortDisabled} onChange={(sort) => lib.patch({ sort })} />
-        <FilterControl lib={lib} isAuthenticated={isAuthenticated} />
+        <FilterControl lib={lib} isAuthenticated={isAuthenticated} topicsInFilter={topicsInFilter} />
         <RandomProblemButton lib={lib} />
         <Box sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }} />
         <ProgressSummary progress={progress} />
       </Stack>
-      {lib.anyActive && <ActiveFilters lib={lib} />}
+      {lib.anyActive && <ActiveFilters lib={lib} topicsInFilter={topicsInFilter} />}
     </Box>
   );
 }

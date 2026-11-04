@@ -127,3 +127,6 @@ export function timeAgo(dateLike) {
 }
 
 export const MONTHLY_BADGE_GOAL = 10; // active days in a month to earn the badge
+
+// Width of the streak rail column on wide screens. The page grid and the rail pane both read it, so they cannot drift apart.
+export const RAIL_COLUMN_WIDTH = '340px';

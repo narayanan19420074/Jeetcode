@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useSnackbar } from 'notistack';
-import { Box, Button, Collapse, Container, Drawer, IconButton, Stack, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, Container, Drawer, IconButton, Stack, Typography, alpha, useMediaQuery, useTheme } from '@mui/material';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
@@ -20,12 +20,12 @@ import { submissionsApi } from '../../api/submissionsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import DashboardSidebar from './components/DashboardSidebar';
 import DashboardSidebarPane from './components/DashboardSidebarPane';
+import DashboardRailPane from './components/DashboardRailPane';
 import PromoCarousel from './components/PromoCarousel';
 import MobileHome from './components/MobileHome';
 import ProblemLibrary from './components/ProblemLibrary';
 import RightRail from './components/RightRail';
 import { ExploreView, ListView, QuestsView } from './components/DashboardViews';
-import ContestCard from '../contest/ContestCard';
 import ContestPage from '../contest/ContestPage';
 import StudyPlannerView from '../studyplan/StudyPlannerView';
 import LeaderboardView from '../leaderboard/LeaderboardView';
@@ -34,7 +34,7 @@ import { fetchFriends } from '../friends/friendsSlice';
 import useProblemLists from './useProblemLists';
 import useViewportFill from './useViewportFill';
 import { LibraryFont, useLibraryPalette } from './components/libraryStyle';
-import { STATUS_COLOR, featuredPageForToday, surface, todayKey } from './dashboardUtils';
+import { RAIL_COLUMN_WIDTH, STATUS_COLOR, featuredPageForToday, surface, todayKey } from './dashboardUtils';
 import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, RADII, Z_INDEX, MOTION, EASING } from '../../app/design/designTokens';
 
 // Same accent the other phone pages use.
@@ -312,7 +312,7 @@ export default function DashboardPage() {
             gridTemplateColumns: {
               xs: 'minmax(0, 1fr)',
               md: '200px minmax(0, 1fr)',
-              lg: `232px minmax(0, 1fr) ${showRail ? '340px' : '0px'}`,
+              lg: `232px minmax(0, 1fr) ${showRail ? RAIL_COLUMN_WIDTH : '0px'}`,
             },
             transition: `grid-template-columns ${MOTION.slow}ms ${EASING.standard}`,
           }}
@@ -454,10 +454,10 @@ export default function DashboardPage() {
                     dailyId={featured?._id}
                     preset={preset}
                     listsApi={listsApi}
+                    topicsInFilter
                   />
                 )}
 
-                {isMdUp && <ContestCard />}
                 {!isMdUp && showResumeBar && <Box aria-hidden sx={{ height: 76 }} />}
               </Stack>
             </Box>
@@ -499,34 +499,9 @@ export default function DashboardPage() {
           </Box>
 
           {/* Streak + calendar rail. Slides away on Study Plan and Leaderboard. */}
-          {isLg ? (
-            <Box
-              className="autohide-scroll"
-              aria-hidden={!showRail}
-              sx={{
-                minWidth: 0,
-                minHeight: 0,
-                height: '100%',
-                overflowX: 'hidden',
-                overflowY: showRail ? 'auto' : 'hidden',
-                pl: 3,
-                opacity: showRail ? 1 : 0,
-                transform: showRail ? 'none' : 'translateX(28px)',
-                pointerEvents: showRail ? 'auto' : 'none',
-                transition: `opacity ${MOTION.slow}ms ease, transform ${MOTION.slow}ms ${EASING.standard}`,
-              }}
-            >
-              <Box sx={{ width: 316 }}>
-                <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
-              </Box>
-            </Box>
-          ) : isMdUp ? (
-            <Box sx={{ gridColumn: '1 / -1' }}>
-              <Collapse in={showRail} timeout={350} unmountOnExit>
-                <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
-              </Collapse>
-            </Box>
-          ) : null}
+          <DashboardRailPane isLg={isLg} isMdUp={isMdUp} showRail={showRail}>
+            <RightRail user={user} isAuthenticated={isAuthenticated} progress={progress} activity={activity} />
+          </DashboardRailPane>
         </Box>
       </Container>
 
