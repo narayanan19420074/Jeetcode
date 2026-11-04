@@ -4,7 +4,7 @@ import { Box, Button, ListItemIcon, ListItemText, Menu, MenuItem } from '@mui/ma
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../app/design/designTokens';
 import { EXPLORE_LINKS, PRIMARY_LINKS, isActivePath } from './navConfig';
-import { navButtonSx } from './navLinkStyles';
+import { exploreItemSx, navButtonSx } from './navLinkStyles';
 
 function ExploreMenu({ anchorEl, pathname, onClose }) {
   return (
@@ -15,7 +15,7 @@ function ExploreMenu({ anchorEl, pathname, onClose }) {
       slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: SIZES.accountMenuMinWidth.desktop, mt: 0.5 } } }}
     >
       {EXPLORE_LINKS.map(({ to, label, icon: Icon }) => (
-        <MenuItem key={to} component={RouterLink} to={to} selected={isActivePath(pathname, to)} onClick={onClose}>
+        <MenuItem key={to} component={RouterLink} to={to} selected={isActivePath(pathname, to)} onClick={onClose} sx={exploreItemSx}>
           <ListItemIcon>
             <Icon fontSize="small" />
           </ListItemIcon>
