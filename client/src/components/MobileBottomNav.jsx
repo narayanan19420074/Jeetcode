@@ -7,11 +7,8 @@ import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBullete
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import { LIB_FONT, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
-import { BRAND_TEXT_DARK, BRAND_TEXT_LIGHT } from './BrandMark';
-import { COLOR_PALETTE, RADII_PX, SIZES, MOTION } from '../app/design/designTokens';
-
-// Active tab uses the logo orange (pill tint on the Contest-banner orange, deeper orange icon for contrast on cream).
-const PILL = COLOR_PALETTE.orange[600];
+import { RADII_PX, SIZES, MOTION } from '../app/design/designTokens';
+import { navActiveColor } from './navbar/navLinkStyles';
 
 const ITEMS = [
   { to: '/dashboard', label: 'Home', icon: HomeRoundedIcon },
@@ -42,14 +39,15 @@ const barSx = (library) => (t) => ({
   borderTop: `1px solid ${t.palette.divider}`,
 });
 
+// Active tab uses the navigation blue, the same blue as the active desktop link, for the icon and the pill tint.
 const tabIconSx = (active) => (t) => ({
   width: 64,
   height: 32,
   borderRadius: RADII_PX.pill,
   display: 'grid',
   placeItems: 'center',
-  color: active ? (t.palette.mode === 'dark' ? BRAND_TEXT_DARK : BRAND_TEXT_LIGHT) : 'inherit',
-  bgcolor: active ? alpha(PILL, t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
+  color: active ? navActiveColor(t) : 'inherit',
+  bgcolor: active ? alpha(navActiveColor(t), t.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',
   transition: `background-color ${MOTION.standard}ms`,
 });
 

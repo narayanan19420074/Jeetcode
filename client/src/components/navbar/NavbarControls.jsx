@@ -1,9 +1,10 @@
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { Box, Button, IconButton, Tooltip } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
 import { FONT_WEIGHTS } from '../../app/design/designTokens';
+import { isDashboardPath } from '../../features/dashboard/desktop/desktopLook';
 import { LogoMark, LogoName } from './NavbarBrand';
 import { hamburgerSx, phoneBtnSx } from './navbarTheme';
 
@@ -15,12 +16,15 @@ export function HamburgerButton({ onClick }) {
   );
 }
 
+// The phone Home page shows only the menu button in the top bar; the brand stays visible on every other phone page and on desktop.
 export function BrandLink({ isAuthenticated }) {
+  const { pathname } = useLocation();
+  const brandDisplay = { xs: isDashboardPath(pathname) ? 'none' : 'flex', md: 'flex' };
   return (
     <Box
       component={RouterLink}
       to={isAuthenticated ? '/dashboard' : '/'}
-      sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, md: 1 }, textDecoration: 'none', color: 'inherit', mr: { xs: 0, md: 2 } }}
+      sx={{ display: brandDisplay, alignItems: 'center', gap: { xs: 1.5, md: 1 }, textDecoration: 'none', color: 'inherit', mr: { xs: 0, md: 2 } }}
     >
       <LogoMark />
       <LogoName />
