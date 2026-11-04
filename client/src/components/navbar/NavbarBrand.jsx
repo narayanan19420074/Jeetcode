@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
-import BrandMark from './BrandMark';
-import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../app/design/designTokens';
+import BrandMark from '../BrandMark';
+import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../../app/design/designTokens';
 
 // Logo: the plain icon on desktop, the app-logo tile on phones (same drawing as the installed app icon).
 export function LogoMark() {

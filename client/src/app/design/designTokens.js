@@ -54,6 +54,15 @@ export const SIZES = {
   navItemHeight: 40,
   // Thickness of the bottom border that marks the active navigation link.
   navActiveIndicator: 2,
+  // Top bar on phones, and the rows and tiles of the phone menu and account dropdown.
+  navbarHeightPhone: 60,
+  menuRowHeight: 48,
+  navAvatar: 34,
+  accountMenuMinWidth: { desktop: 220, mobile: 288 },
+  drawerWidth: 'min(88vw, 360px)',
+  viewportHeight: '100dvh',
+  // Lets a flex child shrink below its content width so long text can truncate with an ellipsis.
+  flexShrinkMinWidth: 0,
   filterPillHeight: 40,
   chipHeight: 28,
   chipHeightSmall: 24,
