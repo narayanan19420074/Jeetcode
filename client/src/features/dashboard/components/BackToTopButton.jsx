@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IconButton } from '@mui/material';
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
-import { COLOR_PALETTE, withAlpha, MOTION, SHADOWS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, MOTION, SHADOWS, SIZES } from '../../../app/design/designTokens';
 
 const BACK_TO_TOP_AFTER = 600; // px scrolled before the button appears
 
@@ -40,8 +40,8 @@ const buttonSx = (pal, bottom, visible) => (t) => ({
   right: 16,
   bottom,
   zIndex: t.zIndex.appBar - 10,
-  width: 44,
-  height: 44,
+  width: SIZES.touchTarget,
+  height: SIZES.touchTarget,
   bgcolor: pal.player,
   color: pal.text,
   boxShadow: SHADOWS.drop('sm', withAlpha(COLOR_PALETTE.black, 0.18)),

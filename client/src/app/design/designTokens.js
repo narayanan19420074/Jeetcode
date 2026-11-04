@@ -81,6 +81,10 @@ export const SIZES = {
   chipHeightSmall: 24,
   avatar: { xs: 24, sm: 32, md: 40, lg: 56 },
   contentMaxWidth: 1200,
+  // Widest the dashboard grows (sidebar, content and streak rail together) on very large screens.
+  dashboardMaxWidth: 1480,
+  // Left column of a phone problem row: the difficulty tag above the solved marker.
+  problemDifficultyColumn: 43,
   readingMaxWidth: 720,
   // Page scrollbars: regular on desktop, slim on phones, thin for auto-hide panels.
   scrollbar: { regular: 10, slim: 4, thin: 6 },

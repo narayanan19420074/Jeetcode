@@ -1,7 +1,4 @@
 {
-  "App.jsx": {
-    "fixedSizePx": 1
-  },
   "components/ActivityHeatmap.jsx": {
     "fixedSizePx": 2
   },
@@ -14,9 +11,6 @@
   },
   "components/MobileBottomNav.jsx": {
     "fixedSizePx": 2
-  },
-  "components/Navbar.jsx": {
-    "fixedSizePx": 39
   },
   "components/OfflineGame.jsx": {
     "fixedSizePx": 2
@@ -126,17 +120,11 @@
   "features/auth/AdminLoginPage.jsx": {
     "fixedSizePx": 3
   },
-  "features/auth/AuthShell.jsx": {
-    "fixedSizePx": 6
-  },
   "features/auth/GithubCallbackPage.jsx": {
     "fixedSizePx": 4
   },
   "features/auth/LinkedinCallbackPage.jsx": {
     "fixedSizePx": 4
-  },
-  "features/auth/LoginPage.jsx": {
-    "fixedSizePx": 6
   },
   "features/contest/ContestCard.jsx": {
     "fixedSizePx": 3
@@ -159,9 +147,6 @@
     "motionDuration": 1,
     "fixedSizePx": 18
   },
-  "features/dashboard/DashboardPage.jsx": {
-    "fixedSizePx": 24
-  },
   "features/dashboard/components/DashboardViews.jsx": {
     "fixedSizePx": 6
   },
@@ -175,7 +160,7 @@
     "fixedSizePx": 10
   },
   "features/dashboard/components/MobileProblems.jsx": {
-    "fixedSizePx": 31
+    "fixedSizePx": 21
   },
   "features/dashboard/components/NqtExploreCard.jsx": {
     "shadowPx": 1,
@@ -289,12 +274,6 @@
   "features/help/SupportChat.jsx": {
     "fixedSizePx": 3
   },
-  "features/home/ContestBand.jsx": {
-    "fixedSizePx": 3
-  },
-  "features/home/HomePage.jsx": {
-    "fixedSizePx": 19
-  },
   "features/leaderboard/EmpireCard.jsx": {
     "motionDuration": 4,
     "shadowPx": 1,
@@ -393,9 +372,6 @@
   },
   "features/quests/QuestParts.jsx": {
     "fixedSizePx": 23
-  },
-  "features/quests/QuestsView.jsx": {
-    "fixedSizePx": 1
   },
   "features/quests/questUtils.js": {
     "fixedSizePx": 1

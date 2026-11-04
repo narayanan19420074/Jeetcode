@@ -8,7 +8,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { LIB_TRACKING } from './libraryStyle';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 export const ACCENT = COLOR_PALETTE.indigo[500];
 const SHORT_DIFF = { Easy: 'Easy', Medium: 'Med.', Hard: 'Hard' };
@@ -20,7 +20,7 @@ function DifficultyTag({ difficulty }) {
       component="span"
       sx={{
         flexShrink: 0,
-        minWidth: 43,
+        minWidth: SIZES.problemDifficultyColumn,
         textAlign: 'center',
         px: 0.5,
         py: 0.5,
@@ -46,8 +46,8 @@ function SolvedMarker({ solved, pal }) {
 
 function ProblemTitleLine({ index, title, isDaily }) {
   return (
-    <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', minWidth: 0 }}>
-      <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING, minWidth: 0 }}>
+    <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', minWidth: SIZES.flexShrinkMinWidth }}>
+      <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: LIB_TRACKING, minWidth: SIZES.flexShrinkMinWidth }}>
         {index}. {title}
       </Typography>
       {isDaily && <EventRoundedIcon aria-label="Today's challenge" sx={{ fontSize: FONT_SIZES.subheading, color: ACCENT, flexShrink: 0 }} />}
@@ -64,16 +64,16 @@ function ProblemMetaLine({ acceptanceRate, locked, pal }) {
   );
 }
 
-const rowLinkSx = { flex: 1, minWidth: 0, display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: 1.5, py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' };
+const rowLinkSx = { flex: 1, minWidth: SIZES.flexShrinkMinWidth, display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: 1.5, py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' };
 
 function ProblemRowLink({ p, index, isDaily, pal }) {
   return (
     <ButtonBase component={RouterLink} to={`/workspace/${p.slug}`} sx={rowLinkSx}>
-      <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.5, pt: 0.5 }}>
+      <Stack sx={{ width: SIZES.problemDifficultyColumn, flexShrink: 0, alignItems: 'center', gap: 1.5, pt: 0.5 }}>
         <DifficultyTag difficulty={p.difficulty} />
         <SolvedMarker solved={p.solvedByMe} pal={pal} />
       </Stack>
-      <Box sx={{ minWidth: 0, flex: 1 }}>
+      <Box sx={{ minWidth: SIZES.flexShrinkMinWidth, flex: 1 }}>
         <ProblemTitleLine index={index} title={p.title} isDaily={isDaily} />
         <ProblemMetaLine acceptanceRate={p.acceptanceRate} locked={p.locked} pal={pal} />
       </Box>
@@ -86,7 +86,7 @@ export default function ProblemRow({ p, index, isDaily, saved, onStar, pal }) {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: `1px solid ${pal.divider}`, '&:last-of-type': { borderBottom: 'none' } }}>
       <ProblemRowLink p={p} index={index} isDaily={isDaily} pal={pal} />
-      <IconButton size="small" onClick={(e) => onStar(e.currentTarget, p)} aria-label={starLabel} sx={{ width: 44, height: 44 }}>
+      <IconButton size="small" onClick={(e) => onStar(e.currentTarget, p)} aria-label={starLabel} sx={{ width: SIZES.touchTarget, height: SIZES.touchTarget }}>
         {saved ? <StarRoundedIcon sx={{ color: 'warning.main' }} /> : <StarBorderRoundedIcon />}
       </IconButton>
     </Box>
