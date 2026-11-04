@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Box, CircularProgress } from '@mui/material';
+import PageLoader from './components/PageLoader';
 import MainLayout from './components/MainLayout';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoginPage from './features/auth/LoginPage';
@@ -73,17 +73,11 @@ const RefundPolicyPage = lazy(() => import('./features/legal/RefundPolicyPage'))
 const HelpPage = lazy(() => import('./features/help/HelpPage'));
 const NotFoundPage = lazy(() => import('./features/errors/NotFoundPage'));
 
-const RouteFallback = () => (
-  <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
-    <CircularProgress />
-  </Box>
-);
-
 // "/" is the marketing home page for visitors only. A signed-in user goes straight
 // to the dashboard (we wait for the silent session restore first, so there is no flash).
 function HomeGate() {
   const { isAuthenticated, bootstrapped } = useSelector((s) => s.auth);
-  if (!bootstrapped) return <RouteFallback />;
+  if (!bootstrapped) return <PageLoader />;
   if (isAuthenticated) return <Navigate to="/dashboard" replace />;
   return <HomePage />;
 }
@@ -97,10 +91,10 @@ export default function App() {
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
       <Route path="/verify-email" element={<VerifyEmailPage />} />
-      <Route path="/privacy" element={<Suspense fallback={<RouteFallback />}><PrivacyPolicyPage /></Suspense>} />
-      <Route path="/terms" element={<Suspense fallback={<RouteFallback />}><TermsPage /></Suspense>} />
-      <Route path="/refund" element={<Suspense fallback={<RouteFallback />}><RefundPolicyPage /></Suspense>} />
-      <Route path="/help" element={<Suspense fallback={<RouteFallback />}><HelpPage /></Suspense>} />
+      <Route path="/privacy" element={<Suspense fallback={<PageLoader />}><PrivacyPolicyPage /></Suspense>} />
+      <Route path="/terms" element={<Suspense fallback={<PageLoader />}><TermsPage /></Suspense>} />
+      <Route path="/refund" element={<Suspense fallback={<PageLoader />}><RefundPolicyPage /></Suspense>} />
+      <Route path="/help" element={<Suspense fallback={<PageLoader />}><HelpPage /></Suspense>} />
       <Route path="/support" element={<Navigate to="/help" replace />} />
       <Route path="/feedback" element={<Navigate to="/help" replace />} />
 
@@ -126,21 +120,21 @@ export default function App() {
         path="/admin"
         element={
           <ProtectedRoute requireRole="admin" redirectTo="/admin/login">
-            <Suspense fallback={<RouteFallback />}>
+            <Suspense fallback={<PageLoader />}>
               <AdminLayout />
             </Suspense>
           </ProtectedRoute>
         }
       >
-        <Route index element={<Suspense fallback={<RouteFallback />}><AdminOverviewPage /></Suspense>} />
-        <Route path="users" element={<Suspense fallback={<RouteFallback />}><AdminUsersPage /></Suspense>} />
-        <Route path="licenses" element={<Suspense fallback={<RouteFallback />}><AdminLicensesPage /></Suspense>} />
-        <Route path="problems" element={<Suspense fallback={<RouteFallback />}><AdminProblemsPage /></Suspense>} />
-        <Route path="aptitude" element={<Suspense fallback={<RouteFallback />}><AdminAptitudePage /></Suspense>} />
-        <Route path="store" element={<Suspense fallback={<RouteFallback />}><AdminStorePage /></Suspense>} />
-        <Route path="support-chat" element={<Suspense fallback={<RouteFallback />}><AdminSupportChatPage /></Suspense>} />
-        <Route path="feedback" element={<Suspense fallback={<RouteFallback />}><AdminFeedbackPage /></Suspense>} />
-        <Route path="audit-log" element={<Suspense fallback={<RouteFallback />}><AdminAuditLogPage /></Suspense>} />
+        <Route index element={<Suspense fallback={<PageLoader />}><AdminOverviewPage /></Suspense>} />
+        <Route path="users" element={<Suspense fallback={<PageLoader />}><AdminUsersPage /></Suspense>} />
+        <Route path="licenses" element={<Suspense fallback={<PageLoader />}><AdminLicensesPage /></Suspense>} />
+        <Route path="problems" element={<Suspense fallback={<PageLoader />}><AdminProblemsPage /></Suspense>} />
+        <Route path="aptitude" element={<Suspense fallback={<PageLoader />}><AdminAptitudePage /></Suspense>} />
+        <Route path="store" element={<Suspense fallback={<PageLoader />}><AdminStorePage /></Suspense>} />
+        <Route path="support-chat" element={<Suspense fallback={<PageLoader />}><AdminSupportChatPage /></Suspense>} />
+        <Route path="feedback" element={<Suspense fallback={<PageLoader />}><AdminFeedbackPage /></Suspense>} />
+        <Route path="audit-log" element={<Suspense fallback={<PageLoader />}><AdminAuditLogPage /></Suspense>} />
       </Route>
 
       {/* exam-style interface — standalone full-screen shell, deliberately
@@ -150,7 +144,7 @@ export default function App() {
         path="/aptitude/:slug/test/:attemptId"
         element={
           <ProtectedRoute>
-            <Suspense fallback={<RouteFallback />}>
+            <Suspense fallback={<PageLoader />}>
               <AptitudeTestPage />
             </Suspense>
           </ProtectedRoute>
@@ -162,7 +156,7 @@ export default function App() {
         path="/mocks/attempt/:attemptId"
         element={
           <ProtectedRoute>
-            <Suspense fallback={<RouteFallback />}>
+            <Suspense fallback={<PageLoader />}>
               <MockExamPage />
             </Suspense>
           </ProtectedRoute>
@@ -170,79 +164,79 @@ export default function App() {
       />
 
       {/* Pair-coding room — public (guests allowed via invite link), full-screen, no site navbar. */}
-      <Route path="/room/:roomId" element={<Suspense fallback={<RouteFallback />}><RoomPage /></Suspense>} />
+      <Route path="/room/:roomId" element={<Suspense fallback={<PageLoader />}><RoomPage /></Suspense>} />
 
       <Route element={<MainLayout />}>
-        <Route path="/pair" element={<Suspense fallback={<RouteFallback />}><PairLobbyPage /></Suspense>} />
+        <Route path="/pair" element={<Suspense fallback={<PageLoader />}><PairLobbyPage /></Suspense>} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/problems" element={<ProblemsPage />} />
         <Route
           path="/visualizer"
-          element={<Suspense fallback={<RouteFallback />}><VisualizerPage /></Suspense>}
+          element={<Suspense fallback={<PageLoader />}><VisualizerPage /></Suspense>}
         />
         <Route
           path="/workspace/:slug"
           element={
-            <Suspense fallback={<RouteFallback />}>
+            <Suspense fallback={<PageLoader />}>
               <WorkspacePage />
             </Suspense>
           }
         />
         <Route
           path="/aptitude"
-          element={<Suspense fallback={<RouteFallback />}><AptitudePatternsPage /></Suspense>}
+          element={<Suspense fallback={<PageLoader />}><AptitudePatternsPage /></Suspense>}
         />
         <Route
           path="/aptitude/:slug"
-          element={<Suspense fallback={<RouteFallback />}><AptitudePatternDetailPage /></Suspense>}
+          element={<Suspense fallback={<PageLoader />}><AptitudePatternDetailPage /></Suspense>}
         />
         <Route
           path="/aptitude/:slug/learn"
-          element={<Suspense fallback={<RouteFallback />}><AptitudeLearnPage /></Suspense>}
+          element={<Suspense fallback={<PageLoader />}><AptitudeLearnPage /></Suspense>}
         />
         <Route
           path="/aptitude/:slug/test"
-          element={<Suspense fallback={<RouteFallback />}><AptitudeTestInstructionsPage /></Suspense>}
+          element={<Suspense fallback={<PageLoader />}><AptitudeTestInstructionsPage /></Suspense>}
         />
         <Route
           path="/aptitude/:slug/practice"
-          element={<Suspense fallback={<RouteFallback />}><AptitudePracticePage /></Suspense>}
+          element={<Suspense fallback={<PageLoader />}><AptitudePracticePage /></Suspense>}
         />
         <Route
           path="/aptitude/:slug/practice/:questionId"
-          element={<Suspense fallback={<RouteFallback />}><AptitudePracticeQuestionPage /></Suspense>}
+          element={<Suspense fallback={<PageLoader />}><AptitudePracticeQuestionPage /></Suspense>}
         />
         <Route path="/companies" element={<Navigate to="/prep" replace />} />
-        <Route path="/you" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><YouPage /></Suspense></ProtectedRoute>} />
-        <Route path="/prep" element={<Suspense fallback={<RouteFallback />}><PrepCompaniesPage /></Suspense>} />
-        <Route path="/store" element={<Suspense fallback={<RouteFallback />}><StorePage /></Suspense>} />
+        <Route path="/you" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><YouPage /></Suspense></ProtectedRoute>} />
+        <Route path="/prep" element={<Suspense fallback={<PageLoader />}><PrepCompaniesPage /></Suspense>} />
+        <Route path="/store" element={<Suspense fallback={<PageLoader />}><StorePage /></Suspense>} />
         {/* Store is ONE page (Shop / Orders / Coins tabs); old deep links just redirect into it. */}
         <Route path="/store/wallet" element={<Navigate to="/store?tab=coins" replace />} />
         <Route path="/store/orders" element={<Navigate to="/store?tab=orders" replace />} />
         <Route path="/store/course/:slug" element={<Navigate to="/store" replace />} />
-        <Route path="/exams" element={<Suspense fallback={<RouteFallback />}><ExamsPage /></Suspense>} />
-        <Route path="/mocks" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><MockHubPage /></Suspense></ProtectedRoute>} />
-        <Route path="/mocks/result/:attemptId" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><MockResultPage /></Suspense></ProtectedRoute>} />
-        <Route path="/prep/:companySlug" element={<Suspense fallback={<RouteFallback />}><PrepRoadmapPage /></Suspense>} />
+        <Route path="/exams" element={<Suspense fallback={<PageLoader />}><ExamsPage /></Suspense>} />
+        <Route path="/mocks" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><MockHubPage /></Suspense></ProtectedRoute>} />
+        <Route path="/mocks/result/:attemptId" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><MockResultPage /></Suspense></ProtectedRoute>} />
+        <Route path="/prep/:companySlug" element={<Suspense fallback={<PageLoader />}><PrepRoadmapPage /></Suspense>} />
 
         <Route
           path="/aptitude/:slug/results/:attemptId"
-          element={<Suspense fallback={<RouteFallback />}><AptitudeResultsPage /></Suspense>}
+          element={<Suspense fallback={<PageLoader />}><AptitudeResultsPage /></Suspense>}
         />
         {/* Old results URL carried no attempt id (lost on refresh) — send to the hub. */}
         <Route path="/aptitude/:slug/results" element={<Navigate to=".." relative="path" replace />} />
         {/* Contest now lives inside the dashboard so the sidebar stays visible. */}
         <Route path="/contest" element={<Navigate to="/dashboard?view=contest" replace />} />
-        <Route path="/plans" element={<Suspense fallback={<RouteFallback />}><PlansPage /></Suspense>} />
+        <Route path="/plans" element={<Suspense fallback={<PageLoader />}><PlansPage /></Suspense>} />
         {/* Old pricing URL: still linked from several places, so keep it working. */}
         <Route path="/pricing" element={<Navigate to="/plans" replace />} />
-        <Route path="/settings/*" element={<ProtectedRoute><Suspense fallback={<RouteFallback />}><SettingsPage /></Suspense></ProtectedRoute>} />
+        <Route path="/settings/*" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><SettingsPage /></Suspense></ProtectedRoute>} />
         {/* REMOVED: <Route path="/learn" .../> (LearnHomePage) */}
-        <Route path="/learn/:topicSlug" element={<Suspense fallback={<RouteFallback />}><LearnTopicPage /></Suspense>} />
+        <Route path="/learn/:topicSlug" element={<Suspense fallback={<PageLoader />}><LearnTopicPage /></Suspense>} />
         {/* REMOVED: <Route path="/learn/:topicSlug/practice" .../> (PracticePage) */}
       </Route>
 
-      <Route path="*" element={<Suspense fallback={<RouteFallback />}><NotFoundPage /></Suspense>} />
+      <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFoundPage /></Suspense>} />
     </Routes>
   );
 }

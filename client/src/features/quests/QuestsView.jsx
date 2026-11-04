@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useReducedMotion } from 'framer-motion';
-import { Alert, Box, Button, Skeleton, useMediaQuery, useTheme } from '@mui/material';
+import { Alert, Box, Button, useMediaQuery, useTheme } from '@mui/material';
+import PageLoader from '../../components/PageLoader';
 import useViewportFill from '../dashboard/useViewportFill';
 import useQuestsData from './common/useQuestsData';
 import questsProps from './common/questsProps';
 import MobileQuests from './MobileQuests';
-import { RADII_PX } from '../../app/design/designTokens';
 
 const BOTTOM_GAP = 24;
 
@@ -18,7 +18,7 @@ function QuestsContent({ isAuthenticated, onPick }) {
   if (quests.error && !quests.state) {
     return <Alert severity="error" sx={{ m: 2 }} action={<Button color="inherit" size="small" onClick={quests.load}>Retry</Button>}>{quests.error}</Alert>;
   }
-  if (!quests.state) return <Skeleton variant="rounded" sx={{ m: 2, height: 360, borderRadius: RADII_PX.card }} />;
+  if (!quests.state) return <PageLoader />;
   return <MobileQuests {...questsProps({ quests, isAuthenticated, wallet, dark, reduce, onPick })} />;
 }
 

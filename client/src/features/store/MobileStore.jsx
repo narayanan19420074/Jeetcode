@@ -1,5 +1,6 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Button, ButtonBase, IconButton, Skeleton, Stack, Typography } from '@mui/material';
+import PageLoader from '../../components/PageLoader';
+import { Box, Button, ButtonBase, IconButton, Stack, Typography } from '@mui/material';
 import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
@@ -274,11 +275,7 @@ export default function MobileStore({
       {/* Items */}
       <Box sx={{ mt: 2 }}>
         {loading ? (
-          <Box sx={{ display: 'grid', gap: 1.5, gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}>
-            {Array.from({ length: 6 }).map((_, i) => (
-              <Skeleton key={i} variant="rounded" height={250} sx={{ borderRadius: RADII_PX.card }} />
-            ))}
-          </Box>
+          <PageLoader />
         ) : items.length === 0 ? (
           <Box sx={{ py: 7, textAlign: 'center' }}>
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>Nothing here yet</Typography>

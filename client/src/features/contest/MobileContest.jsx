@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
-import { Alert, Box, Button, ButtonBase, Checkbox, FormControlLabel, IconButton, Skeleton, Stack, Typography } from '@mui/material';
+import PageLoader from '../../components/PageLoader';
+import { Alert, Box, Button, ButtonBase, Checkbox, FormControlLabel, IconButton, Stack, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
@@ -261,7 +262,7 @@ export default function MobileContest({ contest, shown, detail, isAuthenticated,
       </Box>
 
       <Box role="tabpanel" sx={{ mt: 2 }}>
-        {shown === null && <Skeleton variant="rounded" height={260} sx={{ borderRadius: RADII_PX.card }} />}
+        {shown === null && <PageLoader />}
         {shown === false && <Alert severity="error">Could not load contests. Please try again in a moment.</Alert>}
 
         {ready && tab === 'upcoming' && (counts.upcoming ? (

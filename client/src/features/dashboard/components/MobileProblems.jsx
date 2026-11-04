@@ -6,7 +6,6 @@ import {
   Alert,
   Box,
   Button,
-  ButtonBase,
   Chip,
   CircularProgress,
   Divider,
@@ -14,7 +13,6 @@ import {
   ListItemIcon,
   Menu,
   MenuItem,
-  Skeleton,
   Stack,
   TextField,
   Typography,
@@ -23,9 +21,6 @@ import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
-import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
-import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import FilterAltOffRoundedIcon from '@mui/icons-material/FilterAltOffRounded';
@@ -34,166 +29,27 @@ import SignalCellularAlt1BarRoundedIcon from '@mui/icons-material/SignalCellular
 import SignalCellularAlt2BarRoundedIcon from '@mui/icons-material/SignalCellularAlt2BarRounded';
 import SignalCellularAltRoundedIcon from '@mui/icons-material/SignalCellularAltRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
-import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
 import { problemsApi } from '../../../api/problemsApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import { DIFF_COLOR, tint } from '../dashboardUtils';
 import { SaveToListMenu } from './ListDialogs';
 import { LibraryFont, MiniPlayer, useLibraryPalette } from './libraryStyle';
+import ProblemRow, { ACCENT } from './MobileProblemRow';
+import BackToTopButton from './BackToTopButton';
+import PageLoader from '../../../components/PageLoader';
 import { readLastProblem } from '../../workspace/lastProblem';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION, SHADOWS } from '../../../app/design/designTokens';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../../app/design/designTokens';
 
 // Phone layout of the Problems page. It uses the same accent colour, rounded panels and tinted
 // chips as the phone dashboard (MobileHome), and the page itself scrolls (infinite scroll).
 
-const ACCENT = COLOR_PALETTE.indigo[500];
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 const TRACKING = '0.03em';
-const SHORT_DIFF = { Easy: 'Easy', Medium: 'Med.', Hard: 'Hard' };
 const PAGE_SIZE = 30;
 
 const INITIAL_QUERY = { search: '', difficulty: 'All', status: 'All', sort: 'newest', tags: [], companies: [], page: 1 };
 
 const DIFF_ICON = { Easy: SignalCellularAlt1BarRoundedIcon, Medium: SignalCellularAlt2BarRoundedIcon, Hard: SignalCellularAltRoundedIcon };
-
-function DifficultyTag({ difficulty }) {
-  const color = DIFF_COLOR[difficulty] || 'var(--jc-pending)';
-  return (
-    <Typography
-      component="span"
-      sx={{
-        flexShrink: 0,
-        minWidth: 43,
-        textAlign: 'center',
-        px: 0.5,
-        py: 0.5,
-        borderRadius: RADII_PX.control,
-        fontSize: FONT_SIZES.bodyLg,
-        fontWeight: FONT_WEIGHTS.regular,
-        letterSpacing: TRACKING,
-        lineHeight: '20px',
-        color,
-        bgcolor: tint(color, 14),
-      }}
-    >
-      {SHORT_DIFF[difficulty] || difficulty}
-    </Typography>
-  );
-}
-
-function ProblemRow({ p, index, isDaily, saved, onStar, pal }) {
-  return (
-    <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: `1px solid ${pal.divider}`, '&:last-of-type': { borderBottom: 'none' } }}>
-      <ButtonBase
-        component={RouterLink}
-        to={`/workspace/${p.slug}`}
-        sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: 1.5, py: 2, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' }}
-      >
-        <Stack sx={{ width: 43, flexShrink: 0, alignItems: 'center', gap: 1.5, pt: 0.5 }}>
-          <DifficultyTag difficulty={p.difficulty} />
-          {p.solvedByMe ? (
-            <CheckCircleRoundedIcon aria-label="Solved" sx={{ fontSize: FONT_SIZES.heading, color: 'var(--jc-easy)' }} />
-          ) : (
-            <RemoveRoundedIcon aria-label="Not solved" sx={{ fontSize: FONT_SIZES.heading, color: pal.muted, opacity: 0.6 }} />
-          )}
-        </Stack>
-        <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', minWidth: 0 }}>
-            <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: TRACKING, minWidth: 0 }}>
-              {index}. {p.title}
-            </Typography>
-            {isDaily && <EventRoundedIcon aria-label="Today's challenge" sx={{ fontSize: FONT_SIZES.subheading, color: ACCENT, flexShrink: 0 }} />}
-          </Stack>
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mt: 1.5, color: pal.muted }}>
-            <Typography sx={{ fontSize: FONT_SIZES.bodyLg, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums' }}>Acceptance {(p.acceptanceRate ?? 0).toFixed(1)}%</Typography>
-            {p.locked && <LockRoundedIcon aria-label="Pro problem" sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />}
-          </Stack>
-        </Box>
-      </ButtonBase>
-      <IconButton
-        size="small"
-        onClick={(e) => onStar(e.currentTarget, p)}
-        aria-label={saved ? `Manage lists for ${p.title}` : `Save ${p.title} to a list`}
-        sx={{ width: 44, height: 44 }}
-      >
-        {saved ? <StarRoundedIcon sx={{ color: 'warning.main' }} /> : <StarBorderRoundedIcon />}
-      </IconButton>
-    </Box>
-  );
-}
-
-const BACK_TO_TOP_AFTER = 600; // px scrolled before the button appears
-
-// Floating "back to top" button. It stays hidden until the reader has scrolled down the list.
-function BackToTopButton({ pal, bottom }) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    let frame = 0;
-    const update = () => {
-      frame = 0;
-      setVisible(window.scrollY > BACK_TO_TOP_AFTER);
-    };
-    const onScroll = () => {
-      if (!frame) frame = window.requestAnimationFrame(update);
-    };
-    update();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
-
-  const goTop = () => {
-    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
-  };
-
-  return (
-    <IconButton
-      onClick={goTop}
-      aria-label="Back to top"
-      tabIndex={visible ? 0 : -1}
-      aria-hidden={!visible}
-      sx={(t) => ({
-        position: 'fixed',
-        right: 16,
-        bottom,
-        zIndex: t.zIndex.appBar - 10,
-        width: 44,
-        height: 44,
-        bgcolor: pal.player,
-        color: pal.text,
-        boxShadow: SHADOWS.drop('sm', withAlpha(COLOR_PALETTE.black, 0.18)),
-        '&:hover': { bgcolor: pal.player },
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'none' : 'translateY(8px)',
-        pointerEvents: visible ? 'auto' : 'none',
-        transition: `opacity ${MOTION.fast}ms, transform ${MOTION.fast}ms`,
-      })}
-    >
-      <KeyboardArrowUpRoundedIcon />
-    </IconButton>
-  );
-}
-
-function SkeletonRows({ count = 8 }) {
-  return (
-    <>
-      {Array.from({ length: count }).map((_, i) => (
-        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 2.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-          <Skeleton variant="rounded" width={43} height={24} sx={{ borderRadius: RADII_PX.control }} />
-          <Box sx={{ flex: 1 }}>
-            <Skeleton variant="text" width="70%" />
-            <Skeleton variant="text" width="40%" />
-          </Box>
-        </Box>
-      ))}
-    </>
-  );
-}
 
 export default function MobileProblems({ isAuthenticated, progress, featured, preset, listsApi }) {
   const navigate = useNavigate();
@@ -477,7 +333,7 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
         )}
 
         {loading ? (
-          <SkeletonRows />
+          <PageLoader />
         ) : items.length === 0 && !error ? (
           <Box sx={{ py: 7, px: 2, textAlign: 'center' }}>
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No problems match this view</Typography>
@@ -494,7 +350,11 @@ export default function MobileProblems({ isAuthenticated, progress, featured, pr
               <ProblemRow key={p._id} pal={pal} p={p} index={i + 1} isDaily={p._id === featured?._id} saved={listsApi.isSaved(p._id)} onStar={handleStar} />
             ))}
             <Box ref={sentinelRef} aria-hidden sx={{ height: 1 }} />
-            {loadingMore && <SkeletonRows count={3} />}
+            {loadingMore && (
+              <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
+                <CircularProgress size={22} />
+              </Box>
+            )}
           </Box>
         )}
       </Box>

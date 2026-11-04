@@ -1,5 +1,6 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, ButtonBase, CircularProgress, IconButton, InputAdornment, Skeleton, TextField, Typography } from '@mui/material';
+import PageLoader from '../../components/PageLoader';
+import { Box, ButtonBase, CircularProgress, IconButton, InputAdornment, TextField, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
@@ -62,22 +63,6 @@ function CompanyRow({ c, onOpen }) {
   );
 }
 
-function SkeletonRows({ count = 8 }) {
-  return (
-    <>
-      {Array.from({ length: count }).map((_, i) => (
-        <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, py: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-          <Skeleton variant="rounded" width={48} height={48} sx={{ borderRadius: RADII_PX.card }} />
-          <Box sx={{ flex: 1 }}>
-            <Skeleton variant="text" width="55%" />
-            <Skeleton variant="text" width="35%" />
-          </Box>
-        </Box>
-      ))}
-    </>
-  );
-}
-
 export default function MobilePrepCompanies({ loading, list, shown, hasMore, query, onQuery, onOpen, sentinelRef }) {
   const pal = useLibraryPalette();
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
@@ -128,7 +113,7 @@ export default function MobilePrepCompanies({ loading, list, shown, hasMore, que
       {/* List */}
       <Box sx={{ mt: 3, borderTop: `1px solid ${pal.divider}` }}>
         {loading ? (
-          <SkeletonRows />
+          <PageLoader />
         ) : shown.length === 0 ? (
           <Box sx={{ py: 7, px: 2, textAlign: 'center' }}>
             <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>{query ? 'No companies match your search' : 'No companies yet'}</Typography>

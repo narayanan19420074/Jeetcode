@@ -1,7 +1,8 @@
 import { cloneElement } from 'react';
+import PageLoader from '../../../components/PageLoader';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Alert, Box, Button, ButtonBase, CircularProgress, IconButton, Stack, Typography } from '@mui/material';
+import { Alert, Box, Button, ButtonBase, IconButton, Stack, Typography } from '@mui/material';
 import { ThemeProvider, alpha } from '@mui/material/styles';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
@@ -133,9 +134,7 @@ export default function MobileAptitude({ tracks, track, trackPatterns, cleared, 
       {/* Level map */}
       <Box sx={{ mt: 1.5 }}>
         {loading ? (
-          <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
-            <CircularProgress size={28} />
-          </Box>
+          <PageLoader />
         ) : total === 0 ? (
           <Typography color="text.secondary" sx={{ textAlign: 'center', py: 6 }}>
             No levels in this section yet.
