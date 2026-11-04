@@ -15,7 +15,7 @@ export function LogoMark() {
   );
 }
 
-// The whole wordmark ("JeetCode") uses one text colour so both halves of the name always match.
+// "Code" and the </> icon use the brand colour (the same blue as the active navigation link) on desktop and phones.
 export function LogoName() {
   return (
     <Typography
@@ -26,7 +26,10 @@ export function LogoName() {
         [t.breakpoints.down('md')]: { fontSize: FONT_SIZES.heading, lineHeight: '24px', fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0 },
       })}
     >
-      JeetCode
+      Jeet
+      <Box component="span" sx={{ color: 'primary.main' }}>
+        Code
+      </Box>
     </Typography>
   );
 }

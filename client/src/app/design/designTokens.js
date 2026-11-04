@@ -63,6 +63,8 @@ export const SIZES = {
   viewportHeight: '100dvh',
   // Lets a flex child shrink below its content width so long text can truncate with an ellipsis.
   flexShrinkMinWidth: 0,
+  // Same for a scrolling pane inside a flex or grid layout: it may shrink below its content height and scroll.
+  flexShrinkMinHeight: 0,
   // Full width or height of the parent (cards in a grid row, buttons that fill their container).
   fill: '100%',
   // Fake browser frame around the landing page screenshots: title bar height and window dot size.

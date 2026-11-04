@@ -19,6 +19,7 @@ import { usersApi } from '../../api/usersApi';
 import { submissionsApi } from '../../api/submissionsApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import DashboardSidebar from './components/DashboardSidebar';
+import DashboardSidebarPane from './components/DashboardSidebarPane';
 import PromoCarousel from './components/PromoCarousel';
 import MobileHome from './components/MobileHome';
 import ProblemLibrary from './components/ProblemLibrary';
@@ -316,7 +317,7 @@ export default function DashboardPage() {
             transition: `grid-template-columns ${MOTION.slow}ms ${EASING.standard}`,
           }}
         >
-          <Box sx={{ display: { xs: 'none', md: 'block' }, position: { md: 'sticky' }, top: { md: 84, lg: 0 }, pr: { lg: 3 }, height: { lg: '100%' }, overflowY: { lg: 'auto' }, minHeight: 0, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
+          <DashboardSidebarPane>
             <DashboardSidebar
               view={currentView}
               activeListId={activeList?.id}
@@ -327,7 +328,7 @@ export default function DashboardPage() {
               onCreateList={listsApi.createList}
               friendCounts={isAuthenticated ? { friends: friends.friends.length, incoming: friends.incoming.length } : null}
             />
-          </Box>
+          </DashboardSidebarPane>
 
           <Box
             component="section"
