@@ -1,5 +1,5 @@
 import { keyframes } from '@mui/material/styles';
-import { COLOR_PALETTE, withAlpha } from '../../app/design/designTokens';
+import { COLOR_PALETTE, FONTS, withAlpha } from '../../app/design/designTokens';
 
 // Shared CSS keyframes for the landing page. Hidden "from" states live inside
 // the keyframes (animation-fill-mode: both), so when a visitor has
@@ -65,8 +65,9 @@ export const glyphFloat = keyframes`
   50% { transform: translateY(-18px) rotate(var(--r, 0deg)); }
 `;
 
-export const DISPLAY_FONT = '"Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif';
-export const MONO_FONT = '"JetBrains Mono", "Fira Code", monospace';
+// Fonts come from the design tokens so the landing page always matches the rest of the product.
+export const DISPLAY_FONT = FONTS.sans;
+export const MONO_FONT = FONTS.mono;
 
 export const blink = keyframes`
   0%, 49% { opacity: 1; }

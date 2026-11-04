@@ -63,6 +63,17 @@ export const SIZES = {
   viewportHeight: '100dvh',
   // Lets a flex child shrink below its content width so long text can truncate with an ellipsis.
   flexShrinkMinWidth: 0,
+  // Full width or height of the parent (cards in a grid row, buttons that fill their container).
+  fill: '100%',
+  // Fake browser frame around the landing page screenshots: title bar height and window dot size.
+  browserBarHeight: 22,
+  browserDot: 7,
+  // Maximum width of a section heading block on the landing page.
+  headingMaxWidth: { default: 680, narrow: 560 },
+  // Width of the sign in and sign up cards.
+  authCardWidth: 340,
+  // One cell of the contest countdown (days, hours, minutes, seconds).
+  countdownCell: 52,
   filterPillHeight: 40,
   chipHeight: 28,
   chipHeightSmall: 24,
@@ -140,6 +151,16 @@ export const TYPE_SCALE = {
   micro: { size: [11, 11], lineHeight: 1.35, weight: W.medium, tracking: '0.01em' },
   overline: { size: [12, 12], lineHeight: 1.4, weight: W.semibold, tracking: '0.08em' },
 };
+
+// Letter spacing and line heights for display text that sits outside the Typography variants (landing page, auth pages).
+export const LETTER_SPACING = { display: '-0.035em', title: '-0.03em', heading: '-0.02em', subheading: '-0.015em', quote: '-0.01em' };
+export const LINE_HEIGHTS = { tight: 1.05, display: 1.1, snug: 1.42, body: 1.5, comfortable: 1.55, relaxed: 1.6, long: 1.65 };
+
+// Line length of running text, in characters, so paragraphs stay readable at any screen width.
+export const TEXT_MEASURE = { headline: '22ch', brief: '34ch', lead: '38ch', body: '50ch', intro: '56ch', answer: '64ch', legal: '90ch' };
+
+// Border thickness in px: hairline card outlines, emphasised outlines (outlined buttons, plan cards) and accent bars.
+export const BORDER_WIDTHS = { thin: 1, emphasis: 1.5, accent: 4 };
 
 // Fixed text-size choices in Settings -> Appearance.
 export const FONT_SCALE = { sm: 0.92, md: 1, lg: 1.12 };
