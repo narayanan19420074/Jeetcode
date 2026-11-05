@@ -4,6 +4,7 @@ import { ApiError } from '../utils/ApiError.js';
 import { logger } from '../utils/logger.js';
 import * as localJudge from './localJudge.service.js';
 import * as remoteJudge from './remoteJudge.service.js';
+import { runTrace as runLocalTrace } from './trace/traceRunner.service.js';
 
 // JUDGE_MODE=remote -> our isolated judge service (remoteJudge.service.js). Use this in production.
 // JUDGE_MODE=local  -> judge on this machine (localJudge.service.js). Development only.
@@ -119,4 +120,17 @@ export async function pollBatchResults(tokens, { maxAttempts = 15, intervalMs = 
     await new Promise((r) => setTimeout(r, intervalMs));
   }
   throw ApiError.internal('Judging timed out — the code may be too slow or the service is overloaded.');
+}
+
+/**
+ * Runs one program step by step for the code visualizer and returns its trace.
+ * Only the isolated judge (remote) or a development machine (local) can do this; the external Judge0 API cannot.
+ */
+export async function runTrace(job) {
+  if (useRemote()) return remoteJudge.runTrace(job);
+  if (useLocal()) {
+    assertLocalAllowed();
+    return runLocalTrace(job);
+  }
+  throw ApiError.badRequest('Step-by-step visualization is not available right now.');
 }

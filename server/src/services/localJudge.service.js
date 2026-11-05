@@ -40,7 +40,7 @@ const MAX_STORED_STDERR = 8 * 1024;
 const RESULT_TTL_MS = 10 * 60 * 1000;
 
 // Drop privileges for submitted code. Only possible when this process is root (the judge container).
-const RUN_AS = (() => {
+export const RUN_AS = (() => {
   const uid = Number(env.JUDGE_RUN_AS_UID);
   const gid = env.JUDGE_RUN_AS_GID !== undefined ? Number(env.JUDGE_RUN_AS_GID) : uid;
   if (!Number.isInteger(uid) || uid <= 0 || typeof process.getuid !== 'function' || process.getuid() !== 0) return null;
@@ -100,7 +100,7 @@ const jobs = new Map(); // token -> Promise<result>
 // --- tool discovery (cached) -------------------------------------------------
 
 const toolCache = {};
-function findTool(key, candidates) {
+export function findTool(key, candidates) {
   if (key in toolCache) return toolCache[key];
   toolCache[key] = null;
   for (const c of candidates) {
@@ -159,7 +159,7 @@ function nodePermArgs(dir) {
 
 // --- process runner ----------------------------------------------------------
 
-function exec(cmd, args, { cwd, input = '', timeoutMs, memLimitKb = 0 }) {
+export function exec(cmd, args, { cwd, input = '', timeoutMs, memLimitKb = 0 }) {
   return new Promise((resolve) => {
     const started = Date.now();
     const outChunks = [];
@@ -354,9 +354,12 @@ function result(token, statusId, { stdout = '', stderr = '', ms = 0, memory = 0 
   };
 }
 
+// Memory, process-count (fork bombs) and file-size (disk filling) limits. Failures are ignored on shells without a flag.
+// Shared with the code visualizer, which runs learner code under the same limits.
+export const SANDBOX_LIMITS_SCRIPT = 'ulimit -v 1048576 2>/dev/null; ulimit -u 512 2>/dev/null; ulimit -f 32768 2>/dev/null; exec "$0" "$@"';
+
 function buildCommand(ws) {
-  // Memory, process-count (fork bombs) and file-size (disk filling) limits. Failures are ignored on shells without a flag.
-  const memScript = 'ulimit -v 1048576 2>/dev/null; ulimit -u 512 2>/dev/null; ulimit -f 32768 2>/dev/null; exec "$0" "$@"';
+  const memScript = SANDBOX_LIMITS_SCRIPT;
   if (ws.lang === 'javascript') {
     return {
       cmd: process.execPath,

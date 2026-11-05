@@ -30,3 +30,13 @@ export function buildSourceCode(driverTemplate, userCode, language) {
   const code = language === 'java' ? userCode.replace(/\bpublic\s+(class|interface|enum|record)\b/g, '$1') : userCode;
   return driverTemplate.replace(PLACEHOLDER, () => code);
 }
+
+/**
+ * Where the learner's code ends up inside the built program, as 1-based line numbers.
+ * The code visualizer traces the whole program but only shows these lines, so the problem driver stays hidden.
+ */
+export function locateUserCode(driverTemplate, userCode) {
+  const linesBefore = driverTemplate.slice(0, driverTemplate.indexOf(PLACEHOLDER)).split('\n').length - 1;
+  const firstLine = linesBefore + 1;
+  return { firstLine, lastLine: firstLine + userCode.split('\n').length - 1 };
+}

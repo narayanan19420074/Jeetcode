@@ -70,6 +70,9 @@ export const SIZES = {
   authCardWidth: 340,
   // One cell of the contest countdown (days, hours, minutes, seconds).
   countdownCell: 52,
+  // Code visualizer (workspace dialog): dialog size, the code pane height on phones, the line-number column and
+  // the smallest box a value is drawn in.
+  codeVisualizer: { dialogMaxWidth: 1240, dialogHeight: '90dvh', phoneCodeHeight: '32dvh', lineNumberColumn: 44, valueBox: 28, speedSelect: 96, outputMaxHeight: '40%' },
   filterPillHeight: 40,
   chipHeight: 28,
   chipHeightSmall: 24,

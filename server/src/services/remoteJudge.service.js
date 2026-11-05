@@ -14,7 +14,7 @@ const results = new Map(); // token -> result
 
 const RETRYABLE_STATUS = new Set([502, 503, 504]);
 
-async function callJudge(payload) {
+async function callJudge(payload, endpoint = '/run') {
   const base = (env.JUDGE_SERVICE_URL || '').replace(/\/+$/, '');
   if (!base || !env.JUDGE_SERVICE_TOKEN) {
     logger.error('Remote judge is not configured (JUDGE_SERVICE_URL / JUDGE_SERVICE_TOKEN).');
@@ -24,7 +24,7 @@ async function callJudge(payload) {
   let lastErr;
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const { data } = await axios.post(`${base}/run`, payload, {
+      const { data } = await axios.post(`${base}${endpoint}`, payload, {
         headers: { Authorization: `Bearer ${env.JUDGE_SERVICE_TOKEN}` },
         timeout: REQUEST_TIMEOUT_MS,
         maxBodyLength: 6 * 1024 * 1024,
@@ -72,4 +72,14 @@ export async function pollBatchResults(tokens) {
     results.delete(token);
     return r;
   });
+}
+
+// Step-by-step trace of one program (code visualizer). Same service, same bearer token as /run.
+export async function runTrace(job) {
+  const data = await callJudge(job, '/trace');
+  if (!data?.trace || !Array.isArray(data.trace.steps)) {
+    logger.error('Remote judge returned an unexpected trace response');
+    throw ApiError.internal('Code execution service returned an invalid response.');
+  }
+  return data.trace;
 }

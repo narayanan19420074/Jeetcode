@@ -3,6 +3,7 @@ import express from 'express';
 import { env } from './config/env.js';
 import { logger } from './utils/logger.js';
 import { submitBatch, pollBatchResults, canRun } from './services/localJudge.service.js';
+import { isValidTraceJob, runTrace } from './services/trace/traceRunner.service.js';
 
 // Isolated code-execution service. Deployed as its own container (server/judge/Dockerfile) with
 // JUDGE_SERVICE=true, so it has NO database or auth secrets. The main API calls POST /run with a
@@ -55,6 +56,18 @@ app.post('/run', async (req, res) => {
   } catch (err) {
     logger.error('Judge run failed', err);
     res.status(500).json({ success: false, message: 'Judge internal error' });
+  }
+});
+
+// Step-by-step trace for the code visualizer: one program, one trace, same token and same isolation as /run.
+app.post('/trace', async (req, res) => {
+  if (!authorized(req)) return res.status(401).json({ success: false, message: 'Unauthorized' });
+  if (!isValidTraceJob(req.body)) return res.status(400).json({ success: false, message: 'Invalid trace request' });
+  try {
+    res.json({ success: true, trace: await runTrace(req.body) });
+  } catch (err) {
+    logger.error('Judge trace failed', err);
+    res.status(err.statusCode || 500).json({ success: false, message: err.statusCode ? err.message : 'Judge internal error' });
   }
 });
 

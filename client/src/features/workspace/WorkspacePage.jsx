@@ -28,6 +28,8 @@ import ProblemDescription from './ProblemDescription';
 import { ConsoleBody, VerdictChip } from './ConsolePanel';
 import SplitHandle from './SplitHandle';
 import AiAssistantLayer from './AiAssistantLayer';
+import CodeVisualizerLayer from './codeVisualizer/CodeVisualizerLayer';
+import VisualizeButton from './codeVisualizer/VisualizeButton';
 import { saveLastProblem } from './lastProblem';
 import ConfirmDialog from './ConfirmDialog';
 import ConsoleBar from './ConsoleBar';
@@ -132,6 +134,7 @@ export default function WorkspacePage() {
   const [moreAnchor, setMoreAnchor] = useState(null);
   const [listOpen, setListOpen] = useState(false); // problem list overlay (left)
   const [aiMenuOpen, setAiMenuOpen] = useState(false); // AI icon menu: Go live / Fix / Hint (see AiAssistantLayer)
+  const [visualizerOpen, setVisualizerOpen] = useState(false); // step-by-step code visualizer (see CodeVisualizerLayer)
   const sw = useStopwatch();
 
   const { descOpen, openDesc, closeDesc } = useDescPanel(isMobile);
@@ -269,6 +272,12 @@ export default function WorkspacePage() {
   };
 
   const handleCopyCode = () => copyCode(code, enqueueSnackbar);
+
+  // Visualizing runs the code on the server, so it needs a signed-in user, like Run.
+  const handleVisualize = () => {
+    if (!isAuthenticated) return navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } });
+    setVisualizerOpen(true);
+  };
   const { invite: inviteFriend } = useInviteToRoom({ problem, language: activeLanguage, code });
 
   const handleFormat = () => {
@@ -467,6 +476,7 @@ export default function WorkspacePage() {
             <LanguageSelect value={activeLanguage} onChange={(v) => dispatch(setLanguage(v))} problem={problem} langMode={langMode} isMobile={isMobile} pill />
             <TimerControl sw={sw} size={ctl} lib />
             <Box sx={{ flex: 1, minWidth: 8 }} />
+            <VisualizeButton isMobile onClick={handleVisualize} />
             <IconButton
               onClick={() => setAiMenuOpen(true)}
               aria-label="AI assistant"
@@ -484,6 +494,7 @@ export default function WorkspacePage() {
           <Box sx={{ flex: 1, minWidth: 8 }} />
 
           {!isMobile && <InviteButton problem={problem} language={activeLanguage} code={code} size={ctl} />}
+          <VisualizeButton size={ctl} active={visualizerOpen} onClick={handleVisualize} />
           <WsIconButton title="AI assistant" size={ctl} active={aiDrawerOpen} onClick={() => dispatch(toggleAiDrawer())}>
             <AutoAwesomeRoundedIcon />
           </WsIconButton>
@@ -638,6 +649,8 @@ export default function WorkspacePage() {
         onCancel={() => setPendingLoad(null)}
         onConfirm={() => applySolution(pendingLoad)}
       />
+
+      <CodeVisualizerLayer open={visualizerOpen} onClose={() => setVisualizerOpen(false)} isMobile={isMobile} slug={slug} language={activeLanguage} code={code} />
 
       <AiAssistantLayer
         isMobile={isMobile}
