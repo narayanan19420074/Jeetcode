@@ -1,7 +1,7 @@
 import { Alert, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControlLabel, MenuItem, Stack, Switch, TextField, useMediaQuery, useTheme } from '@mui/material';
 import { MarkdownEditor } from '../../workspace/community/Markdown';
 import useComposePost from './useComposePost';
-import ComposePostScreen from './ComposePostScreen';
+import ComposePostScreen from '../mobile/ComposePostScreen';
 import { POST_BODY_MAX, POST_CATEGORY_OPTIONS, POST_TITLE_MAX } from './communityCategories';
 
 function ComposeFields({ draft, update, saving }) {
@@ -22,7 +22,7 @@ function ComposeFields({ draft, update, saving }) {
   );
 }
 
-// Phones get the full-screen compose page (ComposePostScreen); desktop keeps the regular dialog.
+// Phones get the full-screen compose page; desktop keeps the regular dialog.
 export default function ComposePostDialog({ open, onClose, onPublished }) {
   const fullScreen = useMediaQuery(useTheme().breakpoints.down('md'));
   const compose = useComposePost((post) => {

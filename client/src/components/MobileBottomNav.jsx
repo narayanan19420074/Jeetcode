@@ -17,8 +17,9 @@ const ITEMS = [
   { to: '/community', label: 'Community', icon: ForumRoundedIcon },
 ];
 
-// The code workspace needs the full phone height, so no bottom bar there.
-export const showMobileBottomNav = (pathname) => !pathname.startsWith('/workspace');
+// The code workspace needs the full phone height, and an open community post has its own action bar at the bottom,
+// so neither shows the tab bar.
+export const showMobileBottomNav = (pathname) => !pathname.startsWith('/workspace') && !pathname.startsWith('/community/');
 
 const isActive = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
@@ -41,8 +42,8 @@ const barSx = (library) => (t) => ({
 
 // Active tab uses the navigation blue, the same blue as the active desktop link, for the icon and the pill tint.
 const tabIconSx = (active) => (t) => ({
-  width: 64,
-  height: 32,
+  width: SIZES.bottomNavTabIcon.width,
+  height: SIZES.bottomNavTabIcon.height,
   borderRadius: RADII_PX.pill,
   display: 'grid',
   placeItems: 'center',

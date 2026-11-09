@@ -40,6 +40,8 @@ export const SIZES = {
   iconButton: { mobile: 40, desktop: 32 },
   appBarHeight: { mobile: 56, desktop: 64 },
   bottomNavHeight: 64,
+  // Icon pill of one bottom navigation tab.
+  bottomNavTabIcon: { width: 64, height: 32 },
   iconSize: { small: 18, medium: 24, large: 28 },
   chipIconSize: 16,
   // Rows and chips: one height per role so lists, sidebars and filter bars line up across pages.
