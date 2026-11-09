@@ -9,7 +9,7 @@ import { UserAvatar } from '../../workspace/community/CommunityBits';
 import { PostAvatar } from './PostAuthor';
 import { validateDraft } from './useComposePost';
 import { POST_BODY_MAX, POST_CATEGORY_OPTIONS, POST_TITLE_MAX } from './communityCategories';
-import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 const CODE_FENCE = '```\n\n```\n';
 
@@ -46,7 +46,7 @@ function ComposeBody({ draft, update, publish, saving, error, clearError, onClos
   };
 
   return (
-    <Stack sx={{ height: '100dvh', bgcolor: 'var(--lib-bg)', px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 'env(safe-area-inset-bottom)' }}>
+    <Stack sx={{ height: SIZES.viewportHeight, bgcolor: 'var(--lib-bg)', px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 'env(safe-area-inset-bottom)' }}>
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <IconButton aria-label="Close" onClick={onClose} disabled={saving} sx={libBackBtnSx}>
           <ArrowBackRoundedIcon />
@@ -55,7 +55,7 @@ function ComposeBody({ draft, update, publish, saving, error, clearError, onClos
           onClick={publish}
           disabled={!canPost}
           sx={(t) => ({
-            height: 44,
+            height: SIZES.controlHeight.mobile,
             px: 3.5,
             borderRadius: RADII_PX.pill,
             fontFamily: 'inherit',
@@ -70,7 +70,7 @@ function ComposeBody({ draft, update, publish, saving, error, clearError, onClos
         </ButtonBase>
       </Stack>
 
-      <Box sx={{ flex: 1, minHeight: 0, overflowY: 'auto', pt: 2 }}>
+      <Box onClick={() => bodyRef.current?.focus()} sx={{ flex: 1, minHeight: SIZES.flexShrinkMinHeight, overflowY: 'auto', pt: 2 }}>
         <InputBase
           multiline
           fullWidth
@@ -96,7 +96,7 @@ function ComposeBody({ draft, update, publish, saving, error, clearError, onClos
           }}
           inputRef={bodyRef}
           inputProps={{ 'aria-label': 'Post' }}
-          sx={{ mt: 1.5, alignItems: 'flex-start', minHeight: 200, fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: '0.03em', '& textarea::placeholder': { color: pal.muted, opacity: 0.55 } }}
+          sx={{ mt: 1.5, alignItems: 'flex-start', fontSize: FONT_SIZES.subheading, lineHeight: '28px', letterSpacing: '0.03em', '& textarea::placeholder': { color: pal.muted, opacity: 0.55 } }}
         />
         {error && (
           <Typography role="alert" sx={{ mt: 1, fontSize: FONT_SIZES.bodyLg, color: 'error.main' }}>
@@ -109,19 +109,19 @@ function ComposeBody({ draft, update, publish, saving, error, clearError, onClos
         <ButtonBase
           aria-label={draft.isAnonymous ? 'Posting anonymously' : 'Posting as you'}
           onClick={(e) => setIdentityAnchor(e.currentTarget)}
-          sx={{ width: 48, height: 48, borderRadius: '50%', bgcolor: 'var(--lib-player)', flexShrink: 0 }}
+          sx={{ width: SIZES.touchTarget, height: SIZES.touchTarget, borderRadius: RADII_PX.circle, bgcolor: 'var(--lib-player)', flexShrink: 0 }}
         >
-          {draft.isAnonymous ? <PostAvatar author={null} size={36} /> : <UserAvatar user={user} size={36} />}
+          {draft.isAnonymous ? <PostAvatar author={null} size={SIZES.avatar.md} /> : <UserAvatar user={user} size={SIZES.avatar.md} />}
         </ButtonBase>
         <ButtonBase
           onClick={(e) => setCategoryAnchor(e.currentTarget)}
-          sx={{ height: 40, pl: 2, pr: 1.25, gap: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'var(--lib-player)', fontFamily: 'inherit', fontSize: FONT_SIZES.bodyLg, letterSpacing: '0.03em', color: 'var(--lib-text)' }}
+          sx={{ height: SIZES.filterPillHeight, pl: 2, pr: 1.25, gap: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'var(--lib-player)', fontFamily: 'inherit', fontSize: FONT_SIZES.bodyLg, letterSpacing: '0.03em', color: 'var(--lib-text)' }}
         >
           {category?.label}
           <ExpandMoreRoundedIcon sx={{ fontSize: FONT_SIZES.display }} />
         </ButtonBase>
         <Box sx={{ flex: 1 }} />
-        <Stack direction="row" sx={{ height: 48, px: 1.5, borderRadius: RADII_PX.pill, bgcolor: 'var(--lib-player)', alignItems: 'center' }}>
+        <Stack direction="row" sx={{ height: SIZES.controlHeight.mobile, px: 1.5, borderRadius: RADII_PX.pill, bgcolor: 'var(--lib-player)', alignItems: 'center' }}>
           <IconButton aria-label="Insert code block" onClick={insertCode} disabled={saving} sx={{ color: 'var(--lib-text)' }}>
             <CodeRoundedIcon />
           </IconButton>
