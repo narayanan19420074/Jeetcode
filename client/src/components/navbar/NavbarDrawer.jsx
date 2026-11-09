@@ -9,6 +9,7 @@ import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
+import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../app/design/designTokens';
@@ -103,6 +104,7 @@ function DrawerLinks({ pathname, dashView, onNavigate }) {
   return (
     <Box sx={(theme) => ({ borderTop: `1px solid ${libPal(theme).divider}` })}>
       <NavbarMenuRow to="/store" label="Store" icon={StorefrontRoundedIcon} active={isActivePath(pathname, '/store')} onNavigate={onNavigate} />
+      <NavbarMenuRow to="/prep" label="Companies" icon={BusinessRoundedIcon} active={isActivePath(pathname, '/prep')} onNavigate={onNavigate} />
       <NavbarMenuRow to="/plans" label="Plans" icon={WorkspacePremiumRoundedIcon} active={isActivePath(pathname, '/plans')} onNavigate={onNavigate} />
       {DASH_SECTIONS.map(({ to, label, icon, view }) => (
         <NavbarMenuRow key={label} to={to} label={label} icon={icon} active={pathname === '/dashboard' && (dashView || null) === view} onNavigate={onNavigate} />

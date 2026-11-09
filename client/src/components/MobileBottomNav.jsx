@@ -5,7 +5,7 @@ import { alpha } from '@mui/material/styles';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
-import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
+import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import { LIB_FONT, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
 import { RADII_PX, SIZES, MOTION } from '../app/design/designTokens';
 import { navActiveColor } from './navbar/navLinkStyles';
@@ -14,7 +14,7 @@ const ITEMS = [
   { to: '/dashboard', label: 'Home', icon: HomeRoundedIcon },
   { to: '/problems', label: 'Problems', icon: FormatListBulletedRoundedIcon },
   { to: '/aptitude', label: 'Aptitude', icon: CalculateRoundedIcon },
-  { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
+  { to: '/community', label: 'Community', icon: ForumRoundedIcon },
 ];
 
 // The code workspace needs the full phone height, so no bottom bar there.
@@ -63,7 +63,7 @@ function NavTab({ to, label, icon: Icon, active }) {
   );
 }
 
-// Phone-only tab bar (Home / Problems / Aptitude / Companies), like Google Pay.
+// Phone-only tab bar (Home / Problems / Aptitude / Community), like Google Pay.
 export default function MobileBottomNav() {
   const { pathname, search } = useLocation();
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);

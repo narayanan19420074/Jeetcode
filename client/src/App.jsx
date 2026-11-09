@@ -60,6 +60,7 @@ const LearnTopicPage = lazy(() => import('./features/learn/LearnTopicPage'));
 // now lives on the Aptitude module (AptitudePracticePage) instead.
 const YouPage = lazy(() => import('./features/profile/YouPage'));
 const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage'));
+const CommunityPage = lazy(() => import('./features/community/CommunityPage'));
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
 const ExamsPage = lazy(() => import('./features/exams/ExamsPage'));
 const StorePage = lazy(() => import('./features/store/StorePage'));
@@ -209,6 +210,7 @@ export default function App() {
         <Route path="/companies" element={<Navigate to="/prep" replace />} />
         <Route path="/you" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><YouPage /></Suspense></ProtectedRoute>} />
         <Route path="/prep" element={<Suspense fallback={<PageLoader />}><PrepCompaniesPage /></Suspense>} />
+        <Route path="/community" element={<Suspense fallback={<PageLoader />}><CommunityPage /></Suspense>} />
         <Route path="/store" element={<Suspense fallback={<PageLoader />}><StorePage /></Suspense>} />
         {/* Store is ONE page (Shop / Orders / Coins tabs); old deep links just redirect into it. */}
         <Route path="/store/wallet" element={<Navigate to="/store?tab=coins" replace />} />
