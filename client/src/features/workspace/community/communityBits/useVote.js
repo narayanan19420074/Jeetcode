@@ -4,6 +4,8 @@ import useSignInRedirect from './useSignInRedirect';
 import { communityApi } from '../../../../api/communityApi';
 import { extractErrorMessage } from '../../../../api/apiClient';
 
+export const OWN_POST_VOTE_MESSAGE = "You can't vote on your own post";
+
 // Voting the same way twice removes the vote; the score changes by the difference between the old and new vote.
 const nextVoteState = (previous, value) => {
   const myVote = previous.myVote === value ? 0 : value;
@@ -22,7 +24,8 @@ export default function useVote({ targetType, targetId, score, myVote, isMine, o
   }, [score, myVote]);
   const cast = async (value) => {
     if (!isAuthenticated) return redirectToSignIn();
-    if (busy || isMine) return;
+    if (isMine) return setError(OWN_POST_VOTE_MESSAGE);
+    if (busy) return;
     const optimistic = nextVoteState(state, value);
     setState(optimistic);
     setBusy(true);

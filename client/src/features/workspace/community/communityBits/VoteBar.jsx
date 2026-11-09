@@ -4,7 +4,7 @@ import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import HeartBrokenOutlinedIcon from '@mui/icons-material/HeartBrokenOutlined';
 import HeartBrokenRoundedIcon from '@mui/icons-material/HeartBrokenRounded';
-import useVote from './useVote';
+import useVote, { OWN_POST_VOTE_MESSAGE } from './useVote';
 import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION, SIZES } from '../../../../app/design/designTokens';
 
 // Instagram-style vote control: ♥ = upvote (red + pop animation when liked),
@@ -113,7 +113,7 @@ export function VoteBar({ targetType, targetId, score, myVote, allowDown = true,
   const { state, error, cast } = useVote({ targetType, targetId, score, myVote, isMine, onChange });
   const column = variant === 'column';
   const { btn, icon } = VOTE_SIZES[variant === 'column' ? 'column' : 'pill'];
-  const tip = isMine ? "You can't vote on your own post" : '';
+  const tip = isMine ? OWN_POST_VOTE_MESSAGE : '';
   const liked = state.myVote === 1;
   const buttons = {
     likeBtn: <LikeButton liked={liked} tip={tip} isMine={isMine} btn={btn} icon={icon} onCast={cast} />,
