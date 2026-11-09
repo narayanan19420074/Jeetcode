@@ -1,6 +1,7 @@
 import { Alert, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControlLabel, MenuItem, Stack, Switch, TextField, useMediaQuery, useTheme } from '@mui/material';
 import { MarkdownEditor } from '../../workspace/community/Markdown';
 import useComposePost from './useComposePost';
+import ComposePostScreen from './ComposePostScreen';
 import { POST_BODY_MAX, POST_CATEGORY_OPTIONS, POST_TITLE_MAX } from './communityCategories';
 
 function ComposeFields({ draft, update, saving }) {
@@ -21,16 +22,19 @@ function ComposeFields({ draft, update, saving }) {
   );
 }
 
-// Full screen on phones, a regular dialog on desktop.
+// Phones get the full-screen compose page (ComposePostScreen); desktop keeps the regular dialog.
 export default function ComposePostDialog({ open, onClose, onPublished }) {
   const fullScreen = useMediaQuery(useTheme().breakpoints.down('md'));
-  const { draft, update, publish, saving, error, clearError } = useComposePost((post) => {
+  const compose = useComposePost((post) => {
     onPublished(post);
     onClose();
   });
+  const { draft, update, publish, saving, error, clearError } = compose;
+
+  if (fullScreen) return <ComposePostScreen open={open} onClose={onClose} compose={compose} />;
 
   return (
-    <Dialog open={open} onClose={saving ? undefined : onClose} fullScreen={fullScreen} fullWidth maxWidth="sm">
+    <Dialog open={open} onClose={saving ? undefined : onClose} fullWidth maxWidth="sm">
       <DialogTitle>Create post</DialogTitle>
       <DialogContent>
         {error && <Alert severity="error" onClose={clearError} sx={{ mb: 1 }}>{error}</Alert>}
