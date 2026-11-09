@@ -5,15 +5,13 @@ import { Submission } from '../models/Submission.js';
 import { StoreItem } from '../models/StoreItem.js';
 import { StoreOrder } from '../models/StoreOrder.js';
 import { CoinTransaction } from '../models/CoinTransaction.js';
+import { loadCatalog, publicItem } from './store/storeCatalog.service.js';
 import { QUEST_PRO_PLAN } from '../config/quests.js';
 import {
-  CATALOG,
   COIN_RULES,
-  LOW_STOCK_AT,
   ORDER_TRANSITIONS,
   PHYSICAL_MIN_SOLVED,
   SHIP_COUNTRY,
-  courseLessonKeys,
 } from '../config/store.js';
 import { ApiError } from '../utils/ApiError.js';
 import { debitCoins, grantCoins } from './coin.service.js';
@@ -21,96 +19,7 @@ import { istDayKey, istDayStart } from '../utils/istDay.js';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-// ---------------------------------------------------------------- catalog
-
-let seeding = null;
-
-// Creates the mutable StoreItem row for any catalog item that has none yet.
-// Never touches existing rows, so admin edits survive redeploys.
-export function ensureStoreSeeded() {
-  if (!seeding) {
-    seeding = (async () => {
-      const have = new Set((await StoreItem.find({}, 'slug').lean()).map((r) => r.slug));
-      const missing = CATALOG.filter((i) => !have.has(i.slug)).map((i) => ({ slug: i.slug, price: i.price, stock: i.stock ?? null, active: true }));
-      if (!missing.length) return;
-      try {
-        await StoreItem.insertMany(missing, { ordered: false });
-      } catch (err) {
-        // A parallel boot may have inserted the same rows; that is fine.
-        if (err?.code !== 11000 && !err?.writeErrors?.length) throw err;
-      }
-    })().catch((err) => {
-      seeding = null;
-      throw err;
-    });
-  }
-  return seeding;
-}
-
-// slug -> static config merged with the live price / stock / active row.
-export async function loadCatalog() {
-  await ensureStoreSeeded();
-  const rows = await StoreItem.find({}).lean();
-  const bySlug = new Map(rows.map((r) => [r.slug, r]));
-  const out = new Map();
-  for (const cfg of CATALOG) {
-    const row = bySlug.get(cfg.slug);
-    out.set(cfg.slug, {
-      ...cfg,
-      price: row?.price ?? cfg.price,
-      stock: row ? row.stock ?? null : cfg.stock ?? null,
-      active: row ? row.active !== false : true,
-      sold: row?.sold ?? 0,
-    });
-  }
-  return out;
-}
-
 const totalSolved = (u) => (u?.easySolved ?? 0) + (u?.mediumSolved ?? 0) + (u?.hardSolved ?? 0);
-
-function courseStats(item) {
-  const keys = courseLessonKeys(item);
-  const minutes = (item.modules || []).reduce((s, m) => s + m.lessons.reduce((a, l) => a + (l.minutes || 0), 0), 0);
-  return { moduleCount: (item.modules || []).length, lessonCount: keys.length, minutes };
-}
-
-// What the client sees for one item. `ctx` carries the viewer's own state.
-export function publicItem(item, ctx = {}) {
-  const limited = item.stock !== null && item.stock !== undefined;
-  const base = {
-    slug: item.slug,
-    name: item.name,
-    category: item.category,
-    kind: item.kind,
-    price: item.price,
-    blurb: item.blurb,
-    desc: item.desc,
-    art: item.art,
-    image: item.image || null, // optional real photo URL, set in config/store.js
-    accent: item.accent,
-    popular: Boolean(item.popular),
-    active: item.active,
-    limited,
-    stockLeft: limited ? item.stock : null,
-    soldOut: limited && item.stock <= 0,
-    lowStock: limited && item.stock > 0 && item.stock <= LOW_STOCK_AT,
-    perUser: item.perUser ?? null,
-    purchased: ctx.purchased?.[item.slug] ?? 0,
-  };
-  if (item.kind === 'pro') base.days = item.days;
-  if (item.kind === 'physical') {
-    base.sizes = item.sizes || [];
-    base.colors = item.colors || [];
-    base.minSolved = PHYSICAL_MIN_SOLVED;
-    base.shipsTo = SHIP_COUNTRY;
-  }
-  if (item.kind === 'course') {
-    base.level = item.level;
-    Object.assign(base, courseStats(item));
-    base.owned = Boolean(ctx.owned?.has(item.slug));
-  }
-  return base;
-}
 
 // Active items + the viewer's own context (owned courses, per-account purchase counts).
 export async function listItems(userId) {
@@ -445,67 +354,5 @@ export async function claimDaily(userId) {
   return { amount, balance: res.balance };
 }
 
-// ---------------------------------------------------------------- courses
-
-function courseProgress(item, owned) {
-  const keys = courseLessonKeys(item);
-  const done = new Set((owned?.done || []).filter((k) => keys.includes(k)));
-  return { done: [...done], doneCount: done.size, lessonCount: keys.length, percent: keys.length ? Math.round((done.size / keys.length) * 100) : 0 };
-}
-
-export async function myCourses(userId) {
-  const [catalog, user] = await Promise.all([loadCatalog(), User.findById(userId).select('ownedCourses').lean()]);
-  return (user?.ownedCourses || [])
-    .map((o) => {
-      const item = catalog.get(o.slug);
-      if (!item) return null;
-      return { ...publicItem(item, { owned: new Set([o.slug]) }), purchasedAt: o.at, progress: courseProgress(item, o) };
-    })
-    .filter(Boolean);
-}
-
-// Syllabus is public; lesson links and progress are only for owners.
-export async function courseDetail(userId, slug) {
-  const catalog = await loadCatalog();
-  const item = catalog.get(slug);
-  if (!item || item.kind !== 'course') throw ApiError.notFound('Course not found');
-  if (!item.active && !userId) throw ApiError.notFound('Course not found');
-
-  let owned = null;
-  if (userId) {
-    const user = await User.findById(userId).select('ownedCourses').lean();
-    owned = (user?.ownedCourses || []).find((c) => c.slug === slug) || null;
-  }
-  if (!item.active && !owned) throw ApiError.notFound('Course not found');
-
-  const modules = item.modules.map((m) => ({
-    id: m.id,
-    title: m.title,
-    lessons: m.lessons.map((l) => ({
-      key: `${m.id}.${l.id}`,
-      title: l.title,
-      minutes: l.minutes,
-      kind: l.kind,
-      ...(owned ? { href: l.href } : {}),
-    })),
-  }));
-
-  return {
-    course: { ...publicItem(item, { owned: new Set(owned ? [slug] : []) }), modules },
-    owned: Boolean(owned),
-    progress: owned ? courseProgress(item, owned) : null,
-  };
-}
-
-export async function setLessonDone(userId, slug, key, done) {
-  const catalog = await loadCatalog();
-  const item = catalog.get(slug);
-  if (!item || item.kind !== 'course') throw ApiError.notFound('Course not found');
-  if (!courseLessonKeys(item).includes(key)) throw ApiError.badRequest('Unknown lesson');
-
-  const op = done ? { $addToSet: { 'ownedCourses.$.done': key } } : { $pull: { 'ownedCourses.$.done': key } };
-  const user = await User.findOneAndUpdate({ _id: userId, 'ownedCourses.slug': slug }, op, { new: true }).select('ownedCourses').lean();
-  if (!user) throw ApiError.forbidden('Buy this course to track your progress');
-  const owned = user.ownedCourses.find((c) => c.slug === slug);
-  return courseProgress(item, owned);
-}
+export { ensureStoreSeeded, loadCatalog, publicItem } from './store/storeCatalog.service.js';
+export { myCourses, courseDetail, setLessonDone } from './store/storeCourses.service.js';

@@ -67,7 +67,7 @@
     "fixedSizePx": 13
   },
   "features/aptitude/AptitudePatternDetailPage.jsx": {
-    "fixedSizePx": 23
+    "fixedSizePx": 10
   },
   "features/aptitude/AptitudePracticePage.jsx": {
     "fixedSizePx": 2
@@ -79,7 +79,7 @@
     "fixedSizePx": 11
   },
   "features/aptitude/AptitudeTestPage.jsx": {
-    "fixedSizePx": 16
+    "fixedSizePx": 6
   },
   "features/aptitude/ScratchPad.jsx": {
     "fixedSizePx": 3
@@ -102,8 +102,20 @@
   "features/aptitude/components/MotionBits.jsx": {
     "fixedSizePx": 6
   },
-  "features/aptitude/components/RoadMap.jsx": {
-    "fixedSizePx": 13
+  "features/aptitude/components/roadMap/LevelLabelCard.jsx": {
+    "fixedSizePx": 4
+  },
+  "features/aptitude/components/roadMap/LevelNode.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/aptitude/components/roadMap/PhoneLevelNode.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/aptitude/components/roadMap/RoadScenery.jsx": {
+    "fixedSizePx": 1
+  },
+  "features/aptitude/components/roadMap/RoadWalker.jsx": {
+    "fixedSizePx": 2
   },
   "features/aptitude/desktop/AptitudeDesktopView.jsx": {
     "fixedSizePx": 1
@@ -116,6 +128,24 @@
   },
   "features/aptitude/desktop/TrackPicker.jsx": {
     "fixedSizePx": 3
+  },
+  "features/aptitude/exam/ExamCalculator.jsx": {
+    "fixedSizePx": 1
+  },
+  "features/aptitude/exam/ExamHeader.jsx": {
+    "fixedSizePx": 1
+  },
+  "features/aptitude/exam/ExamQuestionPane.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/aptitude/exam/ExamSummaryDialog.jsx": {
+    "fixedSizePx": 1
+  },
+  "features/aptitude/exam/PalettePanel.jsx": {
+    "fixedSizePx": 4
+  },
+  "features/aptitude/patternDetail/patternDetailParts.jsx": {
+    "fixedSizePx": 13
   },
   "features/auth/AdminLoginPage.jsx": {
     "fixedSizePx": 3
@@ -141,11 +171,14 @@
     "fixedSizePx": 8
   },
   "features/contest/PodiumScene.jsx": {
-    "fixedSizePx": 4
+    "fixedSizePx": 2
   },
   "features/contest/WinnersPanel.jsx": {
     "motionDuration": 1,
     "fixedSizePx": 18
+  },
+  "features/contest/podium/buildPodiumScene.js": {
+    "fixedSizePx": 2
   },
   "features/dashboard/components/DashboardViews.jsx": {
     "fixedSizePx": 6
@@ -245,17 +278,41 @@
     "fixedSizePx": 1
   },
   "features/friends/FriendChat.jsx": {
-    "motionDuration": 1,
-    "fixedSizePx": 42
+    "fixedSizePx": 3
   },
   "features/friends/FriendProfileDialog.jsx": {
     "fixedSizePx": 25
   },
   "features/friends/FriendsView.jsx": {
-    "fixedSizePx": 25
+    "fixedSizePx": 3
   },
   "features/friends/MobileFriends.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/friends/chat/ChatBubbles.jsx": {
+    "motionDuration": 1,
+    "fixedSizePx": 17
+  },
+  "features/friends/chat/ChatPanel.jsx": {
     "fixedSizePx": 18
+  },
+  "features/friends/chat/LibHeader.jsx": {
+    "fixedSizePx": 4
+  },
+  "features/friends/desktop/DesktopFriendsLayout.jsx": {
+    "fixedSizePx": 12
+  },
+  "features/friends/desktop/InviteBanner.jsx": {
+    "fixedSizePx": 1
+  },
+  "features/friends/desktop/friendsListBody.jsx": {
+    "fixedSizePx": 2
+  },
+  "features/friends/desktop/friendsOverlays.jsx": {
+    "fixedSizePx": 4
+  },
+  "features/friends/desktop/friendsStyle.js": {
+    "fixedSizePx": 3
   },
   "features/friends/friendsKit.jsx": {
     "motionDuration": 4,
@@ -264,6 +321,12 @@
   },
   "features/friends/friendsUi.jsx": {
     "motionDuration": 2
+  },
+  "features/friends/mobileFriends/MobileFriendsParts.jsx": {
+    "fixedSizePx": 13
+  },
+  "features/friends/mobileFriends/mobileFriendsStyle.js": {
+    "fixedSizePx": 2
   },
   "features/help/HelpPage.jsx": {
     "fixedSizePx": 3
@@ -284,7 +347,7 @@
     "fixedSizePx": 12
   },
   "features/leaderboard/MobileLeaderboard.jsx": {
-    "fixedSizePx": 28
+    "fixedSizePx": 4
   },
   "features/leaderboard/lbPanel.jsx": {
     "shadowPx": 2,
@@ -293,17 +356,38 @@
   "features/leaderboard/lbShared.jsx": {
     "fixedSizePx": 1
   },
+  "features/leaderboard/mobileLeaderboard/LeaderboardFilters.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/leaderboard/mobileLeaderboard/PlayerRows.jsx": {
+    "fixedSizePx": 9
+  },
+  "features/leaderboard/mobileLeaderboard/RankAndPlayerSheet.jsx": {
+    "fixedSizePx": 12
+  },
   "features/learn/AnimationShell.jsx": {
     "fixedSizePx": 2
   },
   "features/learn/LearnTopicPage.jsx": {
-    "fixedSizePx": 19
+    "fixedSizePx": 5
   },
-  "features/learn/animations/AveragesVisuals.jsx": {
+  "features/learn/animations/averages/visualPrimitives.jsx": {
     "fixedSizePx": 2
   },
   "features/learn/components/MicroCheck.jsx": {
     "fixedSizePx": 3
+  },
+  "features/learn/topic/CheckCard.jsx": {
+    "fixedSizePx": 5
+  },
+  "features/learn/topic/CompletionBanner.jsx": {
+    "fixedSizePx": 1
+  },
+  "features/learn/topic/ExampleCard.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/learn/topic/LearnNavigation.jsx": {
+    "fixedSizePx": 5
   },
   "features/learn/visuals/MissingValueVisual.jsx": {
     "fixedSizePx": 6
@@ -395,7 +479,7 @@
     "fixedSizePx": 8
   },
   "features/room/RoomPage.jsx": {
-    "fixedSizePx": 18
+    "fixedSizePx": 3
   },
   "features/room/RoomParts.jsx": {
     "fixedSizePx": 17
@@ -405,6 +489,12 @@
   },
   "features/room/docPip.js": {
     "fixedSizePx": 7
+  },
+  "features/room/roomPage/renderRoomBody.jsx": {
+    "fixedSizePx": 13
+  },
+  "features/room/roomPage/renderRoomHeader.jsx": {
+    "fixedSizePx": 2
   },
   "features/settings/components/SettingsUi.jsx": {
     "fixedSizePx": 4
@@ -496,9 +586,6 @@
   "features/studyplan/FriendPicker.jsx": {
     "fixedSizePx": 6
   },
-  "features/studyplan/MobileStudyPlan.jsx": {
-    "fixedSizePx": 30
-  },
   "features/studyplan/MonthCalendar.jsx": {
     "fixedSizePx": 1
   },
@@ -509,10 +596,40 @@
     "fixedSizePx": 10
   },
   "features/studyplan/StudyPlannerView.jsx": {
-    "fixedSizePx": 32
+    "fixedSizePx": 4
+  },
+  "features/studyplan/mobile/MobileFriendsSheet.jsx": {
+    "fixedSizePx": 6
+  },
+  "features/studyplan/mobile/MobileMembersGrid.jsx": {
+    "fixedSizePx": 1
+  },
+  "features/studyplan/mobile/MobileNotesSheet.jsx": {
+    "fixedSizePx": 4
+  },
+  "features/studyplan/mobile/MobilePlanCard.jsx": {
+    "fixedSizePx": 7
+  },
+  "features/studyplan/mobile/MobileShell.jsx": {
+    "fixedSizePx": 1
+  },
+  "features/studyplan/mobile/MobileUi.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/studyplan/mobile/QuestionRow.jsx": {
+    "fixedSizePx": 6
+  },
+  "features/studyplan/mobile/mobileStyle.js": {
+    "fixedSizePx": 2
   },
   "features/studyplan/planUtils.jsx": {
     "fixedSizePx": 9
+  },
+  "features/studyplan/planner/PlanCardParts.jsx": {
+    "fixedSizePx": 18
+  },
+  "features/studyplan/planner/PlannerSidePanels.jsx": {
+    "fixedSizePx": 10
   },
   "features/visualizer/VisualizerPage.jsx": {
     "fixedSizePx": 19
@@ -523,9 +640,12 @@
   "features/visualizer/components/VisualizerCanvas.jsx": {
     "fixedSizePx": 10
   },
-  "features/visualizer/teach/TeachGuide.jsx": {
+  "features/visualizer/teach/guide/GuideAgent.jsx": {
+    "fixedSizePx": 2
+  },
+  "features/visualizer/teach/guide/GuideSpotlight.jsx": {
     "motionDuration": 1,
-    "fixedSizePx": 4
+    "fixedSizePx": 2
   },
   "features/workspace/AiAssistantDrawer.jsx": {
     "fixedSizePx": 4
@@ -597,14 +717,8 @@
   "features/workspace/TimerControl.jsx": {
     "fixedSizePx": 1
   },
-  "features/workspace/WorkspacePage.jsx": {
-    "fixedSizePx": 10
-  },
   "features/workspace/community/CommentSection.jsx": {
     "fixedSizePx": 4
-  },
-  "features/workspace/community/CommunityBits.jsx": {
-    "fixedSizePx": 23
   },
   "features/workspace/community/DiscussionPanel.jsx": {
     "fixedSizePx": 5
@@ -618,8 +732,29 @@
   "features/workspace/community/SolutionsPanel.jsx": {
     "fixedSizePx": 3
   },
+  "features/workspace/community/communityBits/Chips.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/workspace/community/communityBits/CommunityDialogs.jsx": {
+    "fixedSizePx": 4
+  },
+  "features/workspace/community/communityBits/FeedFurniture.jsx": {
+    "fixedSizePx": 12
+  },
+  "features/workspace/community/communityBits/Identity.jsx": {
+    "fixedSizePx": 3
+  },
+  "features/workspace/community/communityBits/VoteBar.jsx": {
+    "fixedSizePx": 1
+  },
   "features/workspace/hoverScrollbars.js": {
     "fixedSizePx": 2
+  },
+  "features/workspace/page/renderEditorPane.jsx": {
+    "fixedSizePx": 7
+  },
+  "features/workspace/page/renderProblemPane.jsx": {
+    "fixedSizePx": 3
   },
   "features/workspace/phoneStyle.jsx": {
     "fixedSizePx": 1

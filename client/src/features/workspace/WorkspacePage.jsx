@@ -1,88 +1,39 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { Box, IconButton, Stack, useMediaQuery, useTheme } from '@mui/material';
-import { useSnackbar } from 'notistack';
-import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
-import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
-import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
-import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
-import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
-import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
-import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
-import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
-import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import InviteButton, { useInviteToRoom } from '../room/InviteButton';
-import SolutionsPanel from './community/SolutionsPanel';
-import DiscussionPanel from './community/DiscussionPanel';
-import ShareSolutionDialog from './community/ShareSolutionDialog';
-import SubmissionsPanel from './SubmissionsPanel';
-import ProblemListDrawer from './ProblemListDrawer';
-import ProblemDescription from './ProblemDescription';
-import { ConsoleBody, VerdictChip } from './ConsolePanel';
-import SplitHandle from './SplitHandle';
-import AiAssistantLayer from './AiAssistantLayer';
-import CodeVisualizerLayer from './codeVisualizer/CodeVisualizerLayer';
-import VisualizeButton from './codeVisualizer/VisualizeButton';
-import { saveLastProblem } from './lastProblem';
-import ConfirmDialog from './ConfirmDialog';
-import ConsoleBar from './ConsoleBar';
-import GuestBanner from './GuestBanner';
-import LanguageSelect from './LanguageSelect';
-import PhoneConsoleBar from './PhoneConsoleBar';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import { ConsoleBody } from './ConsolePanel';
+import { EmptyState, WsButton } from './wsUi';
 import PhoneHeader from './PhoneHeader';
-import PhoneProblemDescription from './PhoneProblemDescription';
-import PhoneProblemList from './PhoneProblemList';
-import ProblemSheet from './ProblemSheet';
-import { PhoneRunButton, PhoneSubmitButton } from './PhoneRunButtons';
-import MoreMenu from './MoreMenu';
-import PhonePanel from './PhonePanel';
-import TimerControl from './TimerControl';
+import { PhoneScope } from './phoneStyle';
 import { ProblemPageSkeleton } from './ProblemSkeleton';
-import { RunButton, SubmitButton } from './RunSubmitButtons';
+import SplitHandle from './SplitHandle';
+import { applyDefaultLanguage, fetchProblem, loadSavedLanguage, runCode, setLanguage, submitCode, updateCode } from './workspaceSlice';
 import { copyCode } from './copyCode';
+import { extractErrorMessage } from '../../api/apiClient';
+import { formatCode } from './formatCode';
 import { hoverScrollbars } from './hoverScrollbars';
-import { languageLabel } from './languages';
+import { problemsApi } from '../../api/problemsApi';
+import { saveLastProblem } from './lastProblem';
 import useAdjacentProblems from './useAdjacentProblems';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import useChipsPref from './useChipsPref';
 import useDescPanel from './useDescPanel';
+import { useDispatch, useSelector } from 'react-redux';
+import { useInviteToRoom } from '../room/InviteButton';
+import { useLibraryPalette } from '../dashboard/components/libraryStyle';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import usePaneLayout from './usePaneLayout';
 import usePaneModes from './usePaneModes';
 import useRunShortcuts from './useRunShortcuts';
-import useThemeColorMeta from './useThemeColorMeta';
-import useChipsPref from './useChipsPref';
-import { PhoneScope } from './phoneStyle';
-import CodeEditor from './CodeEditor';
+import { useSnackbar } from 'notistack';
 import useStopwatch from './useStopwatch';
-import { EmptyState, MaxButton, PaneBar, PaneTabs, WsButton, WsIconButton } from './wsUi';
-import { WS } from './wsTokens';
+import useThemeColorMeta from './useThemeColorMeta';
 import { wsSurface } from './workspaceTheme';
-import { formatCode } from './formatCode';
-import { problemsApi } from '../../api/problemsApi';
-import { extractErrorMessage } from '../../api/apiClient';
-import { LIB_ACCENT, libIconBtnSx, useLibraryPalette } from '../dashboard/components/libraryStyle';
-import { tint } from '../dashboard/dashboardUtils';
-import { fetchProblem, setLanguage, updateCode, runCode, submitCode, toggleAiDrawer, loadSavedLanguage, applyDefaultLanguage } from './workspaceSlice';
-import { RADII } from '../../app/design/designTokens';
-
-const DESC_TABS = [
-  { value: 0, label: 'Description', icon: <ArticleOutlinedIcon /> },
-  { value: 1, label: 'Solutions', icon: <LightbulbOutlinedIcon /> },
-  { value: 2, label: 'Discussion', icon: <ForumOutlinedIcon /> },
-  { value: 3, label: 'Submissions', icon: <HistoryRoundedIcon /> },
-];
-
-const MOBILE_TABS = [
-  { value: 'code', label: 'Code' },
-  { value: 'solutions', label: 'Solutions' },
-  { value: 'discussion', label: 'Discussion' },
-  { value: 'submissions', label: 'Submissions' },
-];
+import { renderProblemPane } from './page/renderProblemPane';
+import { renderEditorPane } from './page/renderEditorPane';
+import { renderPhoneTabs } from './page/renderPhoneTabs';
+import { renderPageOverlays } from './page/renderPageOverlays';
+import { MOBILE_TABS } from './page/workspaceTabs';
 
 export default function WorkspacePage() {
   const { slug } = useParams();
@@ -374,6 +325,8 @@ export default function WorkspacePage() {
     onCodeTab && { key: 'settings', label: 'Editor settings', onClick: () => navigate('/settings') },
   ];
 
+  const ctx = { activeCase, activeLanguage, adjacent, aiDrawerOpen, aiMenuOpen, applySolution, authUser, canShare, closeDesc, code, codeByProblem, consoleBody, consoleError, consoleOpen, consoleTab, ctl, descOpen, descTab, dispatch, dragConsole, dragLeft, editorApi, editorColRef, editorInstance, editorPrefs, enqueueSnackbar, goToProblem, handleBack, handleCopyCode, handleEditorChange, handleFormat, handleRandom, handleResetCode, handleRun, handleSendToEditor, handleShared, handleSubmit, handleVisualize, hideConsoleLabel, iconActions, inviteFriend, isAuthenticated, isMobile, isRunning, isSubmitView, langMode, lastResultKind, layout, listOpen, location, maximized, mobileView, moreAnchor, mountedTabs, narrowConsole, nav, navigate, onCodeTab, openDesc, openMobileView, openTab, pal, pauseSw, pendingLoad, phoneMenu, prepareCode, problem, problemError, problemStatus, resetConsole, resetLeft, resetSw, resultToShow, rootRef, runResult, runStatus, setActiveCase, setAiMenuOpen, setConsoleOpen, setConsoleTab, setDescTab, setEditorInstance, setLeftEl, setListOpen, setMaximized, setMobileView, setMoreAnchor, setMountedTabs, setPendingLoad, setRightEl, setShareOpen, setSolutionsRefresh, setVisualizerOpen, shareOpen, showKbd, showTags, slug, solutionsRefresh, submitResult, submitStatus, surf, sw, tabLabels, theme, toggleMax, toggleTags, visualizerOpen };
+
   const page = (
     <Box
       ref={rootRef}
@@ -400,271 +353,21 @@ export default function WorkspacePage() {
         />
       )}
 
-      {/* Left pane — problem description (desktop only) */}
-      {!isMobile && (
-        <Box
-          ref={setLeftEl}
-          sx={{
-            bgcolor: surf.chrome,
-            width: maximized === 'problem' ? '100%' : `${layout.left * 100}%`,
-            minWidth: 0,
-            flex: maximized === 'problem' ? 1 : 'none',
-            display: maximized === 'editor' || maximized === 'console' ? 'none' : 'flex',
-            flexDirection: 'column',
-            minHeight: 0,
-          }}
-        >
-          <PaneBar>
-            <WsIconButton title="Problem list" onClick={() => setListOpen(true)}>
-              <FormatListBulletedRoundedIcon />
-            </WsIconButton>
-            <PaneTabs value={descTab} onChange={openTab} items={DESC_TABS} labels={tabLabels} />
-            <Box sx={{ flex: 1 }} />
-            <WsIconButton title="Random problem" onClick={handleRandom}>
-              <ShuffleRoundedIcon />
-            </WsIconButton>
-            <MaxButton active={maximized === 'problem'} onClick={() => toggleMax('problem')} label="problem" />
-          </PaneBar>
-
-          <Box sx={{ overflowY: 'auto', px: 2.5, pt: 1.5, pb: 3, flex: 1, minHeight: 0 }}>
-            {descTab === 0 && <ProblemDescription problem={problem} nav={nav} />}
-            {mountedTabs[1] && (
-              <Box sx={{ display: descTab === 1 ? 'block' : 'none' }}>
-                <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
-              </Box>
-            )}
-            {mountedTabs[2] && (
-              <Box sx={{ display: descTab === 2 ? 'block' : 'none' }}>
-                <DiscussionPanel slug={slug} />
-              </Box>
-            )}
-            {mountedTabs[3] && (
-              <Box sx={{ display: descTab === 3 ? 'block' : 'none' }}>
-                <SubmissionsPanel
-                  slug={slug}
-                  isAuthenticated={isAuthenticated}
-                  refreshKey={submitResult?._id ?? 0}
-                  onLoad={handleSendToEditor}
-                  onSignIn={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}
-                />
-              </Box>
-            )}
-          </Box>
-        </Box>
-      )}
+      {renderProblemPane(ctx)}
 
       {/* The single seam between problem and editor (desktop) */}
       <Box sx={{ display: { xs: 'none', md: maximized ? 'none' : 'flex' }, alignSelf: 'stretch' }}>
         <SplitHandle orientation="vertical" label="Resize problem and editor panes" onDrag={dragLeft} onReset={resetLeft} />
       </Box>
 
-      {/* Right pane — editor + runner */}
-      <Box
-        ref={setRightEl}
-        sx={{
-          bgcolor: { xs: 'transparent', md: surf.chrome },
-          flex: 1,
-          minWidth: 0,
-          minHeight: 0,
-          flexDirection: 'column',
-          display: { xs: mobileView === 'code' ? 'flex' : 'none', md: maximized === 'problem' ? 'none' : 'flex' },
-        }}
-      >
-        {isMobile ? (
-          // Phone toolbar: language, timer, AI assistant. The editor actions live in the header menu.
-          <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 2, height: 56, flexShrink: 0, overflowX: 'auto', scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } }}>
-            <LanguageSelect value={activeLanguage} onChange={(v) => dispatch(setLanguage(v))} problem={problem} langMode={langMode} isMobile={isMobile} pill />
-            <TimerControl sw={sw} size={ctl} lib />
-            <Box sx={{ flex: 1, minWidth: 8 }} />
-            <VisualizeButton isMobile onClick={handleVisualize} />
-            <IconButton
-              onClick={() => setAiMenuOpen(true)}
-              aria-label="AI assistant"
-              aria-pressed={aiDrawerOpen}
-              sx={[libIconBtnSx, aiDrawerOpen && { bgcolor: tint(LIB_ACCENT, 16), color: LIB_ACCENT, '&:hover': { bgcolor: tint(LIB_ACCENT, 16) } }]}
-            >
-              <AutoAwesomeRoundedIcon />
-            </IconButton>
-          </Stack>
-        ) : (
-        <PaneBar sx={{ px: 1.5, gap: 0.5, height: WS.bar, bgcolor: surf.chrome, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
-          <LanguageSelect value={activeLanguage} onChange={(v) => dispatch(setLanguage(v))} problem={problem} langMode={langMode} isMobile={isMobile} />
-          <TimerControl sw={sw} size={ctl} />
+      {renderEditorPane(ctx)}
 
-          <Box sx={{ flex: 1, minWidth: 8 }} />
+      {renderPhoneTabs(ctx)}
 
-          {!isMobile && <InviteButton problem={problem} language={activeLanguage} code={code} size={ctl} />}
-          <VisualizeButton size={ctl} active={visualizerOpen} onClick={handleVisualize} />
-          <WsIconButton title="AI assistant" size={ctl} active={aiDrawerOpen} onClick={() => dispatch(toggleAiDrawer())}>
-            <AutoAwesomeRoundedIcon />
-          </WsIconButton>
-          <WsIconButton title="More" size={ctl} aria-label="More editor actions" onClick={(e) => setMoreAnchor(e.currentTarget)}>
-            <MoreVertRoundedIcon />
-          </WsIconButton>
-          <MoreMenu
-            anchorEl={moreAnchor}
-            onClose={() => setMoreAnchor(null)}
-            items={[
-              isMobile && { key: 'invite', label: 'Invite a friend', icon: <GroupAddRoundedIcon fontSize="small" />, onClick: inviteFriend },
-              { key: 'copy', label: 'Copy code', icon: <ContentCopyRoundedIcon fontSize="small" />, onClick: handleCopyCode },
-              { key: 'format', label: 'Format code', icon: <AutoFixHighRoundedIcon fontSize="small" />, onClick: handleFormat },
-              { key: 'reset', label: 'Reset to starter', icon: <RestartAltRoundedIcon fontSize="small" />, onClick: handleResetCode },
-              { key: 'div', divider: true },
-              { key: 'settings', label: 'Editor settings', icon: <SettingsOutlinedIcon fontSize="small" />, onClick: () => navigate('/settings') },
-            ]}
-          />
-          {!isMobile && <MaxButton active={maximized === 'editor'} onClick={() => toggleMax('editor')} label="editor" />}
-
-          {/* Run / Submit: bottom bar on phones (thumb reach), here on md+ */}
-          {!isMobile && (
-            <>
-              <Box sx={{ width: 4 }} />
-              <RunButton size="md" iconActions={iconActions} showKbd={showKbd} loading={runStatus === 'running'} disabled={isRunning} onClick={handleRun} />
-              <SubmitButton size="md" iconActions={iconActions} showKbd={showKbd} loading={submitStatus === 'running'} disabled={isRunning} onClick={handleSubmit} />
-            </>
-          )}
-        </PaneBar>
-        )}
-
-        {!isAuthenticated && (
-          <GuestBanner lib={isMobile} onSignIn={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}>
-            Sign in to run or submit — your progress and streak are saved.
-          </GuestBanner>
-        )}
-
-        <Box ref={editorColRef} sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', ...(isMobile && { borderRadius: `${RADII.card}px ${RADII.card}px 0 0`, overflow: 'hidden' }) }}>
-          <CodeEditor
-            ref={editorApi}
-            path={`${problem._id}-${activeLanguage}`}
-            language={activeLanguage}
-            value={code}
-            onChange={handleEditorChange}
-            tabSize={editorPrefs.tabSize}
-            isMobile={isMobile}
-            hidden={!isMobile && maximized === 'console'}
-            autoFormat
-            resetKey={slug}
-            onReady={setEditorInstance}
-          />
-
-          {/* Seam between editor and console (desktop, only while the console is open) */}
-          {!isMobile && consoleOpen && maximized !== 'console' && (
-            <SplitHandle orientation="horizontal" label="Resize editor and console" onDrag={dragConsole} onReset={resetConsole} />
-          )}
-
-          {/* Console — collapsible testcase / result panel */}
-          {isMobile ? (
-            <PhoneConsoleBar
-              open={consoleOpen}
-              setOpen={setConsoleOpen}
-              showLabel={!(isRunning || resultToShow)}
-              chip={<VerdictChip lib isRunning={isRunning} result={resultToShow} />}
-              canShare={canShare}
-              onShare={() => setShareOpen(true)}
-              actions={
-                <>
-                  <PhoneRunButton loading={runStatus === 'running'} disabled={isRunning} onClick={handleRun} />
-                  <PhoneSubmitButton loading={submitStatus === 'running'} disabled={isRunning} onClick={handleSubmit} />
-                </>
-              }
-            >
-              {consoleBody}
-            </PhoneConsoleBar>
-          ) : (
-          <ConsoleBar
-            isMobile={isMobile}
-            open={consoleOpen}
-            setOpen={setConsoleOpen}
-            maximized={maximized}
-            setMaximized={setMaximized}
-            toggleMax={toggleMax}
-            size={layout.console}
-            showLabel={!hideConsoleLabel}
-            chip={<VerdictChip isRunning={isRunning} result={resultToShow} sx={{ maxWidth: { xs: '44vw', md: 'none' } }} />}
-            canShare={canShare}
-            onShare={() => setShareOpen(true)}
-            narrow={narrowConsole}
-            editor={editorInstance}
-            tabSize={editorPrefs.tabSize}
-            mobileActions={
-              <>
-                <PhoneRunButton loading={runStatus === 'running'} disabled={isRunning} onClick={handleRun} />
-                <PhoneSubmitButton loading={submitStatus === 'running'} disabled={isRunning} onClick={handleSubmit} />
-              </>
-            }
-          >
-            {consoleBody}
-          </ConsoleBar>
-          )}
-        </Box>
-      </Box>
-
-      {/* Phone: Solutions / Discussion / Submissions sit next to the Code tab */}
-      {isMobile && mountedTabs[1] && (
-        <PhonePanel bg="transparent" show={mobileView === 'solutions'}>
-          <SolutionsPanel slug={slug} refreshKey={solutionsRefresh} onShare={() => setShareOpen(true)} onSendToEditor={handleSendToEditor} />
-        </PhonePanel>
-      )}
-      {isMobile && mountedTabs[2] && (
-        <PhonePanel bg="transparent" show={mobileView === 'discussion'}>
-          <DiscussionPanel slug={slug} />
-        </PhonePanel>
-      )}
-      {isMobile && mountedTabs[3] && (
-        <PhonePanel bg="transparent" show={mobileView === 'submissions'}>
-          <SubmissionsPanel
-            slug={slug}
-            isAuthenticated={isAuthenticated}
-            refreshKey={submitResult?._id ?? 0}
-            onLoad={handleSendToEditor}
-            onSignIn={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}
-          />
-        </PhonePanel>
-      )}
-
-      {/* Phone: the problem statement slides up as a sheet */}
-      <ProblemSheet open={descOpen} onClose={closeDesc}>
-        <PhoneProblemDescription problem={problem} showTags={showTags} />
-      </ProblemSheet>
-
-      {isMobile ? (
-        <PhoneProblemList open={listOpen} onOpen={() => setListOpen(true)} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={goToProblem} />
-      ) : (
-        <ProblemListDrawer open={listOpen} onClose={() => setListOpen(false)} currentSlug={slug} onSelect={goToProblem} />
-      )}
-
-      <ShareSolutionDialog
-        open={shareOpen}
-        onClose={() => setShareOpen(false)}
-        slug={slug}
-        defaultSubmissionId={submitResult?._id}
-        onShared={handleShared}
-      />
-
-      <ConfirmDialog
-        open={Boolean(pendingLoad)}
-        title="Replace your code?"
-        text={`Your current ${languageLabel(pendingLoad?.language)} code in the editor will be replaced with this solution.`}
-        confirmLabel="Replace"
-        onCancel={() => setPendingLoad(null)}
-        onConfirm={() => applySolution(pendingLoad)}
-      />
-
-      <CodeVisualizerLayer open={visualizerOpen} onClose={() => setVisualizerOpen(false)} isMobile={isMobile} slug={slug} language={activeLanguage} code={code} />
-
-      <AiAssistantLayer
-        isMobile={isMobile}
-        menuOpen={aiMenuOpen}
-        onCloseMenu={() => setAiMenuOpen(false)}
-        problemId={problem?._id}
-        slug={slug}
-        language={activeLanguage}
-        code={code}
-        isAuthenticated={isAuthenticated}
-        onSignIn={() => navigate('/login', { state: { from: { pathname: `/workspace/${slug}` } } })}
-      />
+      {renderPageOverlays(ctx)}
     </Box>
   );
+
 
   return isMobile ? <PhoneScope>{page}</PhoneScope> : page;
 }

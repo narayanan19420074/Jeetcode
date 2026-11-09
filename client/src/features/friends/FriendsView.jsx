@@ -1,124 +1,27 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useSnackbar } from 'notistack';
-import { motion, useReducedMotion } from 'framer-motion';
-import {
-  Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, InputAdornment, ListItemIcon, Menu, MenuItem,
-  Skeleton, Stack, TextField, Tooltip, Typography, alpha, useMediaQuery, useTheme,
-} from '@mui/material';
-import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
-import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
-import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
-import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import ScheduleSendRoundedIcon from '@mui/icons-material/ScheduleSendRounded';
-import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
-import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
-import MarkunreadRoundedIcon from '@mui/icons-material/MarkunreadRounded';
-import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
-import WifiTetheringRoundedIcon from '@mui/icons-material/WifiTetheringRounded';
-import TimelineRoundedIcon from '@mui/icons-material/TimelineRounded';
-import SortRoundedIcon from '@mui/icons-material/SortRounded';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
-import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import { friendsApi } from '../../api/friendsApi';
-import { extractErrorMessage } from '../../api/apiClient';
-import { surface } from '../dashboard/dashboardUtils';
-import useViewportFill from '../dashboard/useViewportFill';
 import BackToDashboard from '../../components/BackToDashboard';
-import { WS } from '../workspace/wsTokens';
-import { wsSurface } from '../workspace/workspaceTheme';
-import { WsIconButton } from '../workspace/wsUi';
-import {
-  acceptFriendInvite, acceptFriendRequest, cancelFriendRequest, declineFriendRequest, fetchChatOverview, fetchFriends, removeFriend, sendFriendRequest,
-} from './friendsSlice';
-import { FLAME, PersonAvatar, practisedToday, timeAgo } from './friendsUi';
-import { EmptyNote, FilterChip, FriendRow, LiveLine, OnlineRail, PersonRow, Reveal, SectionLabel, SkeletonRows, TabBar, useFavourites } from './friendsKit';
-import useGlobalPlayers from './useGlobalPlayers';
-import ActivityFeed from './ActivityFeed';
-import FriendChat, { ChatPanel } from './FriendChat';
+import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS } from '../../app/design/designTokens';
+import MarkunreadRoundedIcon from '@mui/icons-material/MarkunreadRounded';
 import MobileFriends, { MobileShell } from './MobileFriends';
-import { FriendProfilePanel } from './FriendProfileDialog';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SHADOWS, MOTION } from '../../app/design/designTokens';
-
-const SORTS = [['recent', 'Recent chats'], ['online', 'Online first'], ['points', 'Most points'], ['name', 'Name A to Z']];
-const REQUEST_TABS = ['friends', 'requests', 'sent'];
-
-// Soft tonal pill button used for "Add friend", "Accept" and friends' small actions.
-const pillBtn = (color) => (t) => ({
-  height: 32, px: 1.5, flexShrink: 0, borderRadius: `${WS.radius + 2}px`, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, textTransform: 'none', whiteSpace: 'nowrap',
-  color: t.palette[color].main, bgcolor: alpha(t.palette[color].main, 0.12), transition: `background-color ${MOTION.standard}ms, transform ${MOTION.fast}ms`,
-  '&:hover': { bgcolor: alpha(t.palette[color].main, 0.22) },
-  '&:active': { transform: 'scale(0.96)' },
-});
-
-// Round icon-only action (accept / decline / cancel) with a tinted background.
-const tint = (color) => (t) => ({
-  width: 36, height: 36,
-  color: color ? t.palette[color].main : t.palette.text.secondary,
-  bgcolor: alpha(color ? t.palette[color].main : t.palette.text.primary, color ? 0.12 : 0.06),
-  '&:hover': { bgcolor: alpha(color ? t.palette[color].main : t.palette.text.primary, color ? 0.22 : 0.12), color: color ? t.palette[color].main : t.palette.text.primary },
-});
-
-// Runs a friends thunk, shows the result as a toast, reports success.
-function useFriendAction() {
-  const dispatch = useDispatch();
-  const { enqueueSnackbar } = useSnackbar();
-  const [busy, setBusy] = useState('');
-  const run = async (key, thunk, okMessage) => {
-    setBusy(key);
-    const res = await dispatch(thunk);
-    setBusy('');
-    const ok = res.meta.requestStatus === 'fulfilled';
-    enqueueSnackbar(ok ? res.payload || okMessage : res.payload || 'Something went wrong', { variant: ok ? 'success' : 'error' });
-    return ok;
-  };
-  return { busy, run };
-}
-
-// ?invite=handle: someone shared their link with me. One slim row: accept or dismiss.
-function InviteBanner({ handle, onDone }) {
-  const [state, setState] = useState({ loading: true });
-  const { busy, run } = useFriendAction();
-
-  useEffect(() => {
-    let cancelled = false;
-    setState({ loading: true });
-    friendsApi
-      .previewInvite(handle)
-      .then(({ data }) => !cancelled && setState({ loading: false, ...data.data }))
-      .catch((err) => !cancelled && setState({ loading: false, error: extractErrorMessage(err) }));
-    return () => { cancelled = true; };
-  }, [handle]);
-
-  if (state.loading) return <Skeleton variant="rounded" height={60} sx={{ borderRadius: RADII_PX.card }} />;
-  if (state.error) return <Alert severity="warning" onClose={onDone}>{state.error}</Alert>;
-  if (state.isSelf) return <Alert severity="info" onClose={onDone}>This is your own invite link.</Alert>;
-  if (state.relation === 'friends') return <Alert severity="success" onClose={onDone}>You and @{state.user.handle} are already friends.</Alert>;
-
-  const accept = async () => {
-    if (await run('invite', acceptFriendInvite(handle), `You and @${handle} are now friends`)) onDone();
-  };
-
-  return (
-    <Reveal>
-      <Box sx={[surface, (t) => ({ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1.5, borderColor: 'primary.main', bgcolor: alpha(t.palette.primary.main, 0.06) })]}>
-        <PersonAvatar person={state.user} size={38} />
-        <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body, lineHeight: 1.35 }}>{state.user.name}</Typography>
-          <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary' }}>invited you to be friends</Typography>
-        </Box>
-        <WsIconButton title="Accept" disabled={busy === 'invite'} onClick={accept} sx={tint('success')}><CheckRoundedIcon /></WsIconButton>
-        <WsIconButton title="Not now" onClick={onDone} sx={tint()}><CloseRoundedIcon /></WsIconButton>
-      </Box>
-    </Reveal>
-  );
-}
+import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
+import ScheduleSendRoundedIcon from '@mui/icons-material/ScheduleSendRounded';
+import { acceptFriendRequest, cancelFriendRequest, declineFriendRequest, fetchChatOverview, fetchFriends, sendFriendRequest } from './friendsSlice';
+import { extractErrorMessage } from '../../api/apiClient';
+import { friendsApi } from '../../api/friendsApi';
+import { surface } from '../dashboard/dashboardUtils';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useFavourites } from './friendsKit';
+import useGlobalPlayers from './useGlobalPlayers';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useReducedMotion } from 'framer-motion';
+import { useSnackbar } from 'notistack';
+import useViewportFill from '../dashboard/useViewportFill';
+import { renderFriendsList } from './desktop/friendsListBody';
+import { buildChatHandlers } from './desktop/friendsChatHandlers';
+import { renderOverlays } from './desktop/friendsOverlays';
+import { renderDesktopLayout } from './desktop/DesktopFriendsLayout';
+import { useFriendAction } from './desktop/useFriendAction';
 
 function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) {
   const dispatch = useDispatch();
@@ -274,176 +177,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   };
   const toggleView = (next) => goView(view === next ? 'friends' : next);
 
-  // ---- action cell for a player who is not a friend (or is, in the find list)
-  const playerAction = (p) => {
-    if (friendIds.has(p.userId)) {
-      return <WsIconButton title="Chat" onClick={() => openChat(p.userId)} sx={tint('primary')}><ChatRoundedIcon /></WsIconButton>;
-    }
-    if (sentIds.has(p.userId)) {
-      return (
-        <Tooltip title="Waiting for them to accept">
-          <Box component="span" sx={(t) => ({ display: 'inline-flex', alignItems: 'center', gap: 0.5, height: 32, px: 1.5, borderRadius: `${WS.radius + 2}px`, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, whiteSpace: 'nowrap', color: 'text.secondary', bgcolor: wsSurface(t).raised, '& svg': { fontSize: FONT_SIZES.title } })}>
-            <ScheduleSendRoundedIcon />Request sent
-          </Box>
-        </Tooltip>
-      );
-    }
-    if (received.has(p.userId)) {
-      return (
-        <Button size="small" disableElevation disabled={busy === p.userId} onClick={() => run(p.userId, acceptFriendRequest(received.get(p.userId)), 'Friend added')} startIcon={<CheckRoundedIcon sx={{ fontSize: `${FONT_SIZES.iconCompact} !important` }} />} sx={pillBtn('success')}>
-          Accept
-        </Button>
-      );
-    }
-    return (
-      <Button
-        size="small"
-        disableElevation
-        disabled={busy === p.userId}
-        onClick={() => run(p.userId, sendFriendRequest(p.handle), 'Friend request sent')}
-        startIcon={<PersonAddAlt1RoundedIcon sx={{ fontSize: `${FONT_SIZES.iconCompact} !important` }} />}
-        sx={pillBtn('primary')}
-      >
-        Add friend
-      </Button>
-    );
-  };
-
   const players = (global.rows || []).filter((p) => p.userId !== user.id && (view === 'find' || !friendIds.has(p.userId)));
-  const playerRows = (withRank) => players.map((p, i) => (
-    <Reveal key={p.userId} index={i}>
-      <PersonRow person={p} rank={withRank ? p.rank : null} sub={`@${p.handle} · ${p.score.toLocaleString()} pts`} action={playerAction(p)} />
-    </Reveal>
-  ));
-  const playerFooter = (
-    <>
-      {global.rows === null && global.loading && <SkeletonRows count={5} />}
-      {global.error && <Typography sx={{ px: 2, py: 1.5, fontSize: FONT_SIZES.body, color: 'text.secondary' }}>{global.error}</Typography>}
-      {global.hasMore && (
-        <Box sx={{ textAlign: 'center', py: 1.5 }}>
-          <Button size="small" onClick={global.loadMore} disabled={global.loading} sx={{ textTransform: 'none', fontWeight: FONT_WEIGHTS.semibold }}>{global.loading ? 'Loading…' : 'Show more players'}</Button>
-        </Box>
-      )}
-    </>
-  );
-
-  // ---- what to show under the toolbar
-  let body;
-  if (view === 'find') {
-    body = (
-      <>
-        <SectionLabel>{needle ? 'Search results' : 'Top players'}</SectionLabel>
-        {playerRows(true)}
-        {global.rows && players.length === 0 && !global.loading && !global.error && <EmptyNote icon={<SearchRoundedIcon />} title="No player found">{needle ? `Nobody matches “${needle}”. Check the spelling or try their @handle.` : 'No players to show yet.'}</EmptyNote>}
-        {playerFooter}
-      </>
-    );
-  } else if (view === 'activity') {
-    body = <ActivityFeed />;
-  } else if (view === 'requests') {
-    const rows = incoming.filter((r) => nameMatch(r.user));
-    body = (
-      <>
-        <SectionLabel right={rows.length > 0 ? <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.disabled', fontWeight: FONT_WEIGHTS.semibold }}>{rows.length}</Typography> : null}>Friend requests</SectionLabel>
-        {rows.length === 0 && <EmptyNote icon={<MarkunreadRoundedIcon />} title="No friend requests">When someone sends you a request, it shows up here.</EmptyNote>}
-        {rows.map((r, i) => (
-          <Reveal key={r.requestId} index={i}>
-            <PersonRow
-              person={r.user}
-              sub={`@${r.user.handle} · ${timeAgo(r.createdAt)}`}
-              action={(
-                <Stack direction="row" spacing={0.75}>
-                  <WsIconButton title="Accept request" disabled={busy === r.requestId} onClick={() => run(r.requestId, acceptFriendRequest(r.requestId), 'Friend added')} sx={tint('success')}><CheckRoundedIcon /></WsIconButton>
-                  <WsIconButton title="Decline request" disabled={busy === r.requestId} onClick={() => run(r.requestId, declineFriendRequest(r.requestId), 'Request declined')} sx={tint()}><CloseRoundedIcon /></WsIconButton>
-                </Stack>
-              )}
-            />
-          </Reveal>
-        ))}
-      </>
-    );
-  } else if (view === 'sent') {
-    const rows = outgoing.filter((r) => nameMatch(r.user));
-    body = (
-      <>
-        <SectionLabel right={rows.length > 0 ? <Typography sx={{ fontSize: FONT_SIZES.caption, color: 'text.disabled', fontWeight: FONT_WEIGHTS.semibold }}>{rows.length}</Typography> : null}>Sent requests</SectionLabel>
-        {rows.length === 0 && <EmptyNote icon={<ScheduleSendRoundedIcon />} title="No sent requests">Requests you send wait here until the other person accepts.</EmptyNote>}
-        {rows.map((r, i) => (
-          <Reveal key={r.requestId} index={i}>
-            <PersonRow
-              person={r.user}
-              sub={`@${r.user.handle} · request sent ${timeAgo(r.createdAt)}`}
-              action={<WsIconButton title="Cancel request" disabled={busy === r.requestId} onClick={() => run(r.requestId, cancelFriendRequest(r.requestId), 'Request cancelled')} sx={tint()}><CloseRoundedIcon /></WsIconButton>}
-            />
-          </Reveal>
-        ))}
-      </>
-    );
-  } else {
-    const showRail = filter === 'all' && !needle && onlineCount > 0;
-    body = (
-      <>
-        {error && <Alert severity="error" sx={{ mx: 2, my: 1.5 }} action={<Button color="inherit" onClick={() => dispatch(fetchFriends())}>Retry</Button>}>{error}</Alert>}
-        {!loaded && loading && <SkeletonRows />}
-        {showRail && (
-          <>
-            <SectionLabel>Online now</SectionLabel>
-            <OnlineRail people={onlineFriends} onOpen={setChatId} />
-            <SectionLabel>All friends</SectionLabel>
-          </>
-        )}
-        {!showRail && shownFriends.length > 0 && <Box sx={{ height: 8 }} />}
-        {shownFriends.map((f, i) => (
-          <Reveal key={f.userId} index={i}>
-            <FriendRow
-              f={f}
-              last={last[f.userId]}
-              myId={user.id}
-              online={isOnline(f)}
-              unread={unread[f.userId]}
-              selected={desktop && chatId === f.userId}
-              fav={favs.has(f.userId)}
-              canNudge={!practisedToday(f)}
-              nudging={acting === `nudge:${f.userId}`}
-              coding={acting === `room:${f.userId}`}
-              onOpen={() => setChatId(f.userId)}
-              onFav={() => toggleFav(f.userId)}
-              onNudge={() => nudge(f)}
-              onCode={() => codeTogether(f, desktop)}
-              onRemove={() => setConfirm(f)}
-            />
-          </Reveal>
-        ))}
-        {loaded && friends.length > 0 && shownFriends.length === 0 && !needle && (
-          <EmptyNote icon={<WifiTetheringRoundedIcon />} title="Nobody is online">Friends show up here as soon as they are active on JeetCode.</EmptyNote>
-        )}
-        {noFriends && !needle && (
-          <>
-            <EmptyNote icon={<PeopleAltRoundedIcon />} title="No friends yet">Add someone from the list below, or share your invite link with the share icon above.</EmptyNote>
-            <SectionLabel>Players you can add</SectionLabel>
-          </>
-        )}
-        {needle.length >= 2 && friends.length > 0 && <SectionLabel>Other players</SectionLabel>}
-        {globalOn && playerRows(noFriends && !needle)}
-        {globalOn && playerFooter}
-        {needle && shownFriends.length === 0 && global.rows && players.length === 0 && !global.loading && <EmptyNote icon={<SearchRoundedIcon />} title="No one found">{needle.length < 2 ? 'Type at least 2 letters.' : `Nobody matches “${needle}”.`}</EmptyNote>}
-      </>
-    );
-  }
-
-  // ---- chat header icons (desktop panel and phone drawer share them)
-  const chatActions = (f) => (
-    <>
-      {!practisedToday(f) && (
-        <WsIconButton title="Nudge: remind about streak" disabled={acting === `nudge:${f.userId}`} onClick={() => { setPanelMode('chat'); nudge(f); }} sx={{ color: FLAME }}>
-          <LocalFireDepartmentRoundedIcon />
-        </WsIconButton>
-      )}
-      <WsIconButton title="Profile & compare" active={panelMode === 'profile'} onClick={() => setPanelMode((m) => (m === 'profile' ? 'chat' : 'profile'))}><BadgeRoundedIcon /></WsIconButton>
-      <WsIconButton title="Remove friend" onClick={() => setConfirm(f)} sx={{ '&:hover': { color: 'error.main' } }}><PersonRemoveRoundedIcon /></WsIconButton>
-    </>
-  );
-  const chatOverlay = (f) => (panelMode === 'profile' ? <FriendProfilePanel f={f} onRemove={() => setConfirm(f)} lib={phone} /> : null);
 
   const showChips = view === 'friends' && friends.length > 0;
   const showSearch = view !== 'activity';
@@ -462,70 +196,11 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     { key: 'sent', label: 'Sent', title: 'Sent requests', icon: <ScheduleSendRoundedIcon />, count: outgoing.length, badge: COLOR_PALETTE.amber[500] },
   ];
 
-  const overlays = (
-    <>
-      {/* invite menu */}
-      <Menu anchorEl={inviteAnchor} open={Boolean(inviteAnchor)} onClose={closeInvite}>
-        <MenuItem onClick={copy} sx={{ minHeight: 44 }}><ListItemIcon><ContentCopyRoundedIcon fontSize="small" /></ListItemIcon>Copy link</MenuItem>
-        <MenuItem onClick={share} sx={{ minHeight: 44 }}><ListItemIcon><IosShareRoundedIcon fontSize="small" /></ListItemIcon>Share…</MenuItem>
-        <MenuItem component="a" href={`https://wa.me/?text=${encodeURIComponent(`${message} ${link}`)}`} target="_blank" rel="noopener noreferrer" onClick={closeInvite} sx={{ minHeight: 44 }}>
-          <ListItemIcon><WhatsAppIcon fontSize="small" /></ListItemIcon>WhatsApp
-        </MenuItem>
-      </Menu>
-
-      {/* sort menu */}
-      <Menu anchorEl={sortAnchor} open={Boolean(sortAnchor)} onClose={() => setSortAnchor(null)}>
-        {SORTS.map(([key, label]) => (
-          <MenuItem key={key} selected={sortBy === key} onClick={() => { setSortBy(key); setSortAnchor(null); }} sx={{ minHeight: 42, fontSize: FONT_SIZES.body }}>
-            <ListItemIcon>{sortBy === key ? <CheckCircleRoundedIcon fontSize="small" color="primary" /> : null}</ListItemIcon>{label}
-          </MenuItem>
-        ))}
-      </Menu>
-
-      {/* phone / tablet: chat opens as a full-height drawer */}
-      {!desktop && (
-        <FriendChat
-          friend={chatFriend}
-          lib={phone}
-          onClose={() => setChatId(null)}
-          onCodeTogether={(f) => codeTogether(f)}
-          actions={chatFriend && !phone ? chatActions(chatFriend) : null}
-          overlay={chatFriend ? chatOverlay(chatFriend) : null}
-          profileOpen={panelMode === 'profile'}
-          onToggleProfile={() => setPanelMode((m) => (m === 'profile' ? 'chat' : 'profile'))}
-          onNudge={chatFriend && !practisedToday(chatFriend) ? () => { setPanelMode('chat'); nudge(chatFriend); } : undefined}
-          nudging={Boolean(chatFriend) && acting === `nudge:${chatFriend.userId}`}
-          onRemove={() => setConfirm(chatFriend)}
-        />
-      )}
-
-      <Dialog open={Boolean(confirm)} onClose={() => setConfirm(null)} maxWidth="xs" fullWidth>
-        <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>Remove friend?</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            {confirm?.name} (@{confirm?.handle}) will leave your friends list and friends leaderboard. You can add them again later.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions sx={{ px: 3, pb: 2 }}>
-          <Button onClick={() => setConfirm(null)}>Cancel</Button>
-          <Button
-            color="error"
-            variant="contained"
-            disableElevation
-            disabled={busy === 'remove'}
-            onClick={async () => {
-              if (await run('remove', removeFriend(confirm.userId), 'Friend removed')) {
-                if (chatId === confirm.userId) setChatId(null);
-                setConfirm(null);
-              }
-            }}
-          >
-            Remove
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </>
-  );
+  const ctx = { dispatch, enqueueSnackbar, navigate, reduce, params, setParams, friends, incoming, outgoing, loaded, loading, error, online, unread, last, busy, run, theme, desktop, phone, favs, toggleFav, view, setView, filter, setFilter, sortBy, setSortBy, q, setQ, chatId, setChatId, panelMode, setPanelMode, acting, setActing, confirm, setConfirm, inviteAnchor, setInviteAnchor, sortAnchor, setSortAnchor, rootRef, listRef, searchRef, fillH, needle, noFriends, globalOn, global, friendIds, sentIds, received, chatFriend, isOnline, onlineFriends, onlineCount, nameMatch, shownFriends, codeTogether, nudge, openChat, onListKey, link, message, closeInvite, copy, share, goView, toggleView, players, showChips, showSearch, iconSize, title, subtitle, tabs, user, inviteHandle, onClearInvite, onOpenLeaderboard };
+  Object.assign(ctx, buildChatHandlers(ctx));
+  ctx.body = renderFriendsList(ctx);
+  ctx.overlays = renderOverlays(ctx);
+  const { overlays } = ctx;
 
   // Phone: its own layout (same look as the phone Problems, Store and Contest pages). The chat still opens in its drawer.
   if (phone) {
@@ -584,111 +259,7 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
     );
   }
 
-  return (
-    <Stack
-      ref={rootRef}
-      spacing={2}
-      sx={fillH ? { height: { xs: `calc(${fillH}px - 92px - env(safe-area-inset-bottom))`, md: `calc(${fillH}px - 24px)` } } : { minHeight: 480 }}
-    >
-      {inviteHandle && <InviteBanner handle={inviteHandle} onDone={onClearInvite} />}
-
-      <Box sx={[surface, { flex: 1, minHeight: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: desktop ? '380px minmax(0, 1fr)' : 'minmax(0, 1fr)', gridTemplateRows: 'minmax(0, 1fr)' }]}>
-        {/* ---------------- left: friends / requests / find */}
-        <Box sx={(t) => ({ minWidth: 0, minHeight: 0, display: 'flex', flexDirection: 'column', borderRight: desktop ? `1px solid ${t.palette.divider}` : 'none' })}>
-          {/* header: title + live count, quick icons */}
-          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', minHeight: 68, px: 2, pt: 1.5, pb: 1, flexShrink: 0 }}>
-            <Box sx={{ minWidth: 0, flex: 1, pr: 1 }}>
-              <motion.div key={title} initial={reduce ? false : { opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}>
-                <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.25, letterSpacing: -0.3 }}>{title}</Typography>
-              </motion.div>
-              <LiveLine text={subtitle} online={view === 'find' || view === 'activity' ? 0 : onlineCount} />
-            </Box>
-            <WsIconButton title="Find players" size={iconSize} active={view === 'find'} onClick={() => { toggleView('find'); setTimeout(() => searchRef.current?.focus(), 0); }}><PersonAddAlt1RoundedIcon /></WsIconButton>
-            <WsIconButton title="Invite with link" size={iconSize} onClick={(e) => setInviteAnchor(e.currentTarget)}><IosShareRoundedIcon /></WsIconButton>
-            <WsIconButton title="Friend activity" size={iconSize} active={view === 'activity'} onClick={() => toggleView('activity')}><TimelineRoundedIcon /></WsIconButton>
-            <WsIconButton title="Friends leaderboard" size={iconSize} onClick={onOpenLeaderboard}><LeaderboardRoundedIcon /></WsIconButton>
-          </Stack>
-
-          {/* Friends / Friend requests / Sent requests, each with its own icon and count */}
-          <Box sx={{ px: 2, pb: 1.5, flexShrink: 0 }}>
-            <TabBar items={tabs} value={REQUEST_TABS.includes(view) ? view : ''} onChange={(key) => goView(key)} />
-          </Box>
-
-          {showSearch && (
-            <Box sx={{ px: 2, pb: 1.5, flexShrink: 0 }}>
-              <TextField
-                fullWidth
-                size="small"
-                inputRef={searchRef}
-                placeholder={view === 'find' ? 'Search all players by name or @handle' : 'Search by name or @handle'}
-                value={q}
-                onChange={(e) => setQ(e.target.value.slice(0, 40))}
-                sx={(t) => ({
-                  '& .MuiOutlinedInput-root': { height: 42, borderRadius: RADII_PX.card, bgcolor: wsSurface(t).raised, fontSize: FONT_SIZES.body, transition: `box-shadow ${MOTION.standard}ms` },
-                  '& .MuiOutlinedInput-root.Mui-focused': { boxShadow: SHADOWS.ring(alpha(t.palette.primary.main, 0.45)) },
-                  '& fieldset': { border: 'none' },
-                })}
-                slotProps={{
-                  input: {
-                    startAdornment: <InputAdornment position="start"><SearchRoundedIcon sx={{ fontSize: FONT_SIZES.heading }} /></InputAdornment>,
-                    endAdornment: q ? (
-                      <InputAdornment position="end">
-                        <WsIconButton title="Clear search" onClick={() => setQ('')} sx={{ width: 26, height: 26 }}><CloseRoundedIcon sx={{ fontSize: `${FONT_SIZES.title} !important` }} /></WsIconButton>
-                      </InputAdornment>
-                    ) : null,
-                  },
-                  htmlInput: { 'aria-label': 'Search friends or players', autoCapitalize: 'none', autoCorrect: 'off' },
-                }}
-              />
-            </Box>
-          )}
-
-          {showChips && (
-            <Stack direction="row" spacing={1} sx={{ alignItems: 'center', px: 2, pb: 1.5, flexShrink: 0 }}>
-              <FilterChip label="All" count={friends.length} active={filter === 'all'} onClick={() => setFilter('all')} />
-              <FilterChip label="Online" dot count={onlineCount} active={filter === 'online'} onClick={() => setFilter('online')} />
-              <Box sx={{ flex: 1 }} />
-              <WsIconButton title="Sort" onClick={(e) => setSortAnchor(e.currentTarget)}><SortRoundedIcon /></WsIconButton>
-            </Stack>
-          )}
-
-          <Box
-            ref={listRef}
-            className="autohide-scroll"
-            onKeyDown={onListKey}
-            sx={(t) => ({ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', borderTop: `1px solid ${t.palette.divider}`, pb: 2 })}
-          >
-            <motion.div key={`${view}:${filter}`} initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.18 }}>
-              {body}
-            </motion.div>
-          </Box>
-        </Box>
-
-        {/* ---------------- right: the chat (desktop) */}
-        {desktop && (
-          <Box sx={(t) => ({ minWidth: 0, minHeight: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', bgcolor: wsSurface(t).panel })}>
-            {chatFriend ? (
-              <ChatPanel
-                key={chatFriend.userId}
-                friend={chatFriend}
-                onCodeTogether={() => { setPanelMode('chat'); codeTogether(chatFriend, true); }}
-                overlay={chatOverlay(chatFriend)}
-                actions={chatActions(chatFriend)}
-              />
-            ) : (
-              <Box sx={{ m: 'auto' }}>
-                <EmptyNote icon={<ChatRoundedIcon />} title={noFriends ? 'No chats yet' : 'Your messages'}>
-                  {noFriends ? 'Add a player from the list and your chat will open here.' : 'Pick a friend on the left to start chatting.'}
-                </EmptyNote>
-              </Box>
-            )}
-          </Box>
-        )}
-      </Box>
-
-      {overlays}
-    </Stack>
-  );
+  return renderDesktopLayout(ctx);
 }
 
 export default function FriendsView({ isAuthenticated, user, inviteHandle, onClearInvite, onOpenLeaderboard }) {
