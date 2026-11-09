@@ -6,6 +6,8 @@ import { communityWriteLimiter } from '../middlewares/rateLimiter.js';
 import {
   listSolutionsQuerySchema,
   listThreadsQuerySchema,
+  listPostsQuerySchema,
+  createPostSchema,
   createSolutionSchema,
   updateSolutionSchema,
   createThreadSchema,
@@ -35,6 +37,7 @@ import {
   castVote,
   createReport,
 } from '../controllers/community.controller.js';
+import { listPosts, createPost, getPost, deletePost } from '../controllers/communityPost.controller.js';
 
 const router = Router();
 
@@ -58,10 +61,18 @@ router.get('/threads/:id', ...read, getThread);
 router.patch('/threads/:id', ...write, validate(updateThreadSchema), updateThread);
 router.delete('/threads/:id', ...write, deleteThread);
 
+// Community feed posts (global, not tied to a problem; no Pro gate)
+router.get('/posts', attachUserIfPresent, validate(listPostsQuerySchema, 'query'), listPosts);
+router.post('/posts', ...write, validate(createPostSchema), createPost);
+router.get('/posts/:id', attachUserIfPresent, getPost);
+router.delete('/posts/:id', ...write, deletePost);
+
 // Comments (nested replies) — same handlers for solutions and threads.
 router.get('/solutions/:id/comments', ...read, setTargetType('solution'), listComments);
 router.get('/threads/:id/comments', ...read, setTargetType('thread'), listComments);
 router.post('/solutions/:id/comments', ...write, checkProAccess, setTargetType('solution'), validate(createCommentSchema), createComment);
+router.get('/posts/:id/comments', attachUserIfPresent, setTargetType('post'), listComments);
+router.post('/posts/:id/comments', ...write, setTargetType('post'), validate(createCommentSchema), createComment);
 router.post('/threads/:id/comments', ...write, checkProAccess, setTargetType('thread'), validate(createCommentSchema), createComment);
 router.patch('/comments/:id', ...write, validate(updateCommentSchema), updateComment);
 router.delete('/comments/:id', ...write, deleteComment);

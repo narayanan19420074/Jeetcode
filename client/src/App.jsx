@@ -61,6 +61,7 @@ const LearnTopicPage = lazy(() => import('./features/learn/LearnTopicPage'));
 const YouPage = lazy(() => import('./features/profile/YouPage'));
 const PrepCompaniesPage = lazy(() => import('./features/prep/PrepCompaniesPage'));
 const CommunityPage = lazy(() => import('./features/community/CommunityPage'));
+const PostDetailPage = lazy(() => import('./features/community/PostDetailPage'));
 const PrepRoadmapPage = lazy(() => import('./features/prep/PrepRoadmapPage'));
 const ExamsPage = lazy(() => import('./features/exams/ExamsPage'));
 const StorePage = lazy(() => import('./features/store/StorePage'));
@@ -211,6 +212,7 @@ export default function App() {
         <Route path="/you" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><YouPage /></Suspense></ProtectedRoute>} />
         <Route path="/prep" element={<Suspense fallback={<PageLoader />}><PrepCompaniesPage /></Suspense>} />
         <Route path="/community" element={<Suspense fallback={<PageLoader />}><CommunityPage /></Suspense>} />
+        <Route path="/community/:postId" element={<Suspense fallback={<PageLoader />}><PostDetailPage /></Suspense>} />
         <Route path="/store" element={<Suspense fallback={<PageLoader />}><StorePage /></Suspense>} />
         {/* Store is ONE page (Shop / Orders / Coins tabs); old deep links just redirect into it. */}
         <Route path="/store/wallet" element={<Navigate to="/store?tab=coins" replace />} />

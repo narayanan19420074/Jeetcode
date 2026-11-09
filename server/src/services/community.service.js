@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import { Problem } from '../models/Problem.js';
 import { Solution } from '../models/Solution.js';
 import { Thread } from '../models/Thread.js';
+import { CommunityPost } from '../models/CommunityPost.js';
 import { Comment } from '../models/Comment.js';
 import { Vote } from '../models/Vote.js';
 import { ApiError } from '../utils/ApiError.js';
@@ -9,7 +10,7 @@ import { ApiError } from '../utils/ApiError.js';
 export const MAX_COMMENT_DEPTH = 3; // 0..3 => 4 visible levels
 export const AUTHOR_FIELDS = 'name handle avatarUrl';
 
-export const TARGET_MODELS = { solution: Solution, thread: Thread, comment: Comment };
+export const TARGET_MODELS = { solution: Solution, thread: Thread, post: CommunityPost, comment: Comment };
 
 // Same rule as getProblemBySlug: premium (company-tagged) problems need Pro.
 // Requires checkProAccess to have run before (sets req.hasProAccess).
@@ -36,6 +37,12 @@ export async function assertProblemIdAccess(problemId, req) {
   if (!problem) throw ApiError.notFound('Problem not found');
   assertPremiumAccess(problem, req);
   return problem;
+}
+
+// Problem threads and solutions inherit the problem's Pro gate; community posts are not tied to a problem.
+export async function assertTargetAccess(targetType, target, req) {
+  if (targetType === 'post') return;
+  await assertProblemIdAccess(target.problem, req);
 }
 
 export function toObjectId(id, label = 'Item') {

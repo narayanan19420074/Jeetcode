@@ -48,14 +48,31 @@ export const updateCommentSchema = z.object({
 });
 
 export const voteSchema = z.object({
-  targetType: z.enum(['solution', 'thread', 'comment']),
+  targetType: z.enum(['solution', 'thread', 'post', 'comment']),
   targetId: objectId,
   value: z.union([z.literal(1), z.literal(-1), z.literal(0)]), // 0 = clear my vote
 });
 
 export const reportSchema = z.object({
-  targetType: z.enum(['solution', 'thread', 'comment']),
+  targetType: z.enum(['solution', 'thread', 'post', 'comment']),
   targetId: objectId,
   reason: z.enum(['spam', 'abusive', 'off-topic', 'wrong-solution', 'other']),
   note: z.string().trim().max(300).default(''),
+});
+
+export const POST_CATEGORIES = ['general', 'career', 'interview', 'contest', 'compensation'];
+
+export const listPostsQuerySchema = z.object({
+  category: z.enum(POST_CATEGORIES).optional(),
+  sort: z.enum(['new', 'top']).default('new'),
+  q: z.string().trim().max(60).optional(),
+  page,
+  limit,
+});
+
+export const createPostSchema = z.object({
+  title: z.string().trim().min(3).max(150),
+  body: z.string().trim().min(1).max(10000),
+  category: z.enum(POST_CATEGORIES).default('general'),
+  isAnonymous: z.boolean().default(false),
 });

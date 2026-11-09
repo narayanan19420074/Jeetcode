@@ -2,7 +2,7 @@ import { apiClient } from './apiClient';
 
 const base = '/community';
 
-// `kind` for comments is 'solutions' | 'threads' (matches the URL segment).
+// `kind` for comments is 'solutions' | 'threads' | 'posts' (matches the URL segment).
 export const communityApi = {
   // Solutions
   listSolutions: (slug, params) => apiClient.get(`${base}/problems/${slug}/solutions`, { params }),
@@ -18,6 +18,12 @@ export const communityApi = {
   getThread: (id) => apiClient.get(`${base}/threads/${id}`),
   updateThread: (id, body) => apiClient.patch(`${base}/threads/${id}`, body),
   deleteThread: (id) => apiClient.delete(`${base}/threads/${id}`),
+
+  // Community feed posts (global, not tied to a problem)
+  listPosts: (params) => apiClient.get(`${base}/posts`, { params }),
+  createPost: (body) => apiClient.post(`${base}/posts`, body),
+  getPost: (id) => apiClient.get(`${base}/posts/${id}`),
+  deletePost: (id) => apiClient.delete(`${base}/posts/${id}`),
 
   // Comments (nested replies)
   listComments: (kind, id) => apiClient.get(`${base}/${kind}/${id}/comments`),

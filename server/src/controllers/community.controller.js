@@ -12,6 +12,7 @@ import {
   MAX_COMMENT_DEPTH,
   getAccessibleProblem,
   assertProblemIdAccess,
+  assertTargetAccess,
   loadTarget,
   makeExcerpt,
   makeCodePreview,
@@ -20,6 +21,7 @@ import {
   applyVote,
   cascadeDelete,
   toObjectId,
+  TARGET_MODELS,
 } from '../services/community.service.js';
 
 const pagination = (page, limit, total) => ({ page, limit, total, totalPages: Math.ceil(total / limit) });
@@ -232,7 +234,7 @@ export const setTargetType = (targetType) => (req, res, next) => {
 // GET /community/(solutions|threads)/:id/comments — flat list; client builds the tree.
 export const listComments = asyncHandler(async (req, res) => {
   const target = await loadTarget(req.targetType, req.params.id);
-  await assertProblemIdAccess(target.problem, req);
+  await assertTargetAccess(req.targetType, target, req);
 
   const rows = await Comment.find({ targetType: req.targetType, target: target._id })
     .sort({ createdAt: 1 })
@@ -247,7 +249,7 @@ export const listComments = asyncHandler(async (req, res) => {
 // POST /community/(solutions|threads)/:id/comments
 export const createComment = asyncHandler(async (req, res) => {
   const target = await loadTarget(req.targetType, req.params.id);
-  await assertProblemIdAccess(target.problem, req);
+  await assertTargetAccess(req.targetType, target, req);
 
   let depth = 0;
   let parent = null;
@@ -271,7 +273,7 @@ export const createComment = asyncHandler(async (req, res) => {
   });
 
   target.commentCount += 1;
-  if (req.targetType === 'thread') target.lastActivityAt = new Date();
+  if (req.targetType === 'thread' || req.targetType === 'post') target.lastActivityAt = new Date();
   await target.save();
 
   const populated = await Comment.findById(comment._id).populate('author', AUTHOR_FIELDS).lean();
@@ -310,8 +312,7 @@ export const deleteComment = asyncHandler(async (req, res) => {
     await comment.deleteOne();
   }
 
-  const Parent = comment.targetType === 'solution' ? Solution : Thread;
-  await Parent.updateOne({ _id: comment.target, commentCount: { $gt: 0 } }, { $inc: { commentCount: -1 } });
+  await TARGET_MODELS[comment.targetType].updateOne({ _id: comment.target, commentCount: { $gt: 0 } }, { $inc: { commentCount: -1 } });
 
   new ApiResponse(200, { deleted: true, soft }).send(res);
 });

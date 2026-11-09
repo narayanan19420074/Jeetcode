@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 // (body blanked) so the reply chain doesn't vanish.
 const commentSchema = new mongoose.Schema(
   {
-    targetType: { type: String, enum: ['solution', 'thread'], required: true },
+    targetType: { type: String, enum: ['solution', 'thread', 'post'], required: true },
     target: { type: mongoose.Schema.Types.ObjectId, required: true },
     parent: { type: mongoose.Schema.Types.ObjectId, ref: 'Comment', default: null },
     depth: { type: Number, default: 0 },

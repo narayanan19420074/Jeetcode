@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 const reportSchema = new mongoose.Schema(
   {
     reporter: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    targetType: { type: String, enum: ['solution', 'thread', 'comment'], required: true },
+    targetType: { type: String, enum: ['solution', 'thread', 'post', 'comment'], required: true },
     target: { type: mongoose.Schema.Types.ObjectId, required: true },
     reason: { type: String, enum: ['spam', 'abusive', 'off-topic', 'wrong-solution', 'other'], required: true },
     note: { type: String, default: '', maxlength: 300 },

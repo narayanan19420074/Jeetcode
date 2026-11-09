@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 const voteSchema = new mongoose.Schema(
   {
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    targetType: { type: String, enum: ['solution', 'thread', 'comment'], required: true },
+    targetType: { type: String, enum: ['solution', 'thread', 'post', 'comment'], required: true },
     target: { type: mongoose.Schema.Types.ObjectId, required: true },
     value: { type: Number, required: true, validate: (v) => v === 1 || v === -1 },
   },
