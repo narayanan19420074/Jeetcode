@@ -11,15 +11,15 @@ export default function PostCard({ post }) {
     <Box
       component={RouterLink}
       to={`/community/${post._id}`}
-      sx={{ display: 'flex', gap: 1.5, py: 2, textDecoration: 'none', color: 'inherit', borderBottom: 1, borderColor: 'divider' }}
+      sx={{ display: 'flex', gap: 1.5, py: 2, textDecoration: 'none', color: 'inherit', borderBottom: 1, borderColor: 'var(--lib-divider)' }}
     >
       <PostAvatar author={post.author} />
       <Stack spacing={0.5} sx={{ flex: 1, minWidth: SIZES.flexShrinkMinWidth }}>
-        <Typography noWrap color="text.secondary" sx={{ fontSize: FONT_SIZES.body }}>
+        <Typography noWrap sx={{ fontSize: FONT_SIZES.body, color: 'var(--lib-muted)' }}>
           {authorLabel(post.author)} · {timeAgo(post.createdAt)}
         </Typography>
         <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold, ...clamp(1) }}>{post.title}</Typography>
-        <Typography color="text.secondary" sx={{ fontSize: FONT_SIZES.bodyLg, ...clamp(3) }}>
+        <Typography sx={{ fontSize: FONT_SIZES.bodyLg, color: 'var(--lib-muted)', ...clamp(3) }}>
           {post.excerpt}
         </Typography>
         <Box sx={{ pt: 0.75 }}>

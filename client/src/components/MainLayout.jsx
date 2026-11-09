@@ -27,6 +27,8 @@ const hidesNavbarOnPhone = (pathname, search) =>
   pathname.startsWith('/settings/') ||
   pathname.startsWith('/workspace/') ||
   pathname === '/store' ||
+  pathname === '/community' ||
+  pathname.startsWith('/community/') ||
   hasPhoneHeaderOnDashboard(pathname, search);
 
 // Every page change starts at the top. The instant jump also cancels any smooth scroll that is

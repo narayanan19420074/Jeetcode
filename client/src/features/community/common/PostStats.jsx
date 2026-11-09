@@ -16,7 +16,7 @@ function Stat({ icon: Icon, value, label }) {
 // Read-only counters on a feed card; voting happens on the post page.
 export default function PostStats({ score, viewCount, commentCount }) {
   return (
-    <Stack direction="row" spacing={2.5} sx={{ color: 'text.secondary' }}>
+    <Stack direction="row" spacing={2.5} sx={{ color: 'var(--lib-muted)' }}>
       <Stat icon={ArrowUpwardRoundedIcon} value={score} label="upvotes" />
       <Stat icon={VisibilityOutlinedIcon} value={viewCount} label="views" />
       <Stat icon={ChatBubbleOutlineRoundedIcon} value={commentCount} label="comments" />
