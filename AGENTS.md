@@ -28,10 +28,14 @@ Copy-pasting snippets into files, merging diffs, or editing many files by hand
 on a phone is painful. Therefore:
 
 1. **Never** tell him to "add this snippet somewhere" or "find the line and change it".
-2. **Always deliver complete files** (full content of every changed/new file),
-   as separate downloadable files. Not a zip, not the whole project.
-3. **Only deliver files that changed or are new.** Never re-send unchanged files.
-4. Give **one command block** that puts every file in its exact place.
+2. **Always deliver complete files** (full content of every changed/new file), packed
+   into **one `.tgz` archive**. Not a zip, not the whole project, not many separate files.
+3. **Only put files that changed or are new in the archive.** Never re-send unchanged files.
+   Paths inside the archive are relative to the repo root (`client/src/...`,
+   `server/src/...`, `AGENTS.md`), so extracting inside `~/Jeetcode` puts every file
+   in its exact place.
+4. Give **one Termux command** that extracts the archive, removes it from Downloads and
+   shows `git status -s`.
 
 ## 3. Delivery format (every response that changes code)
 
@@ -39,26 +43,24 @@ on a phone is painful. Therefore:
 What changed and why. Mention anything he must do outside the repo
 (Render env vars, new npm package, DB migration).
 
-### 3.2 Files
-Download file names must be unique in the phone's `Downloads` folder.
-- Use the real file name by default (`Navbar.jsx`).
-- If two delivered files share a name (e.g. two `index.js`), prefix with the
-  area: `server-index.js`, `client-index.js`.
+### 3.2 The archive
+One file per delivery, named `jeetcode-<short-topic>.tgz` (for example
+`jeetcode-community-compose.tgz`). Use a new, unique name every time so Downloads never
+holds `file (1).tgz` copies. Build it from the repo-root-relative paths, for example
+`tar czf jeetcode-community-compose.tgz client server`.
 
-### 3.3 Apply block (Termux)
-Use `mv` (not `cp`) so Downloads stays clean and old copies don't pile up as `file (1).jsx`.
-Create folders for new files with `mkdir -p`. Use absolute `~/Jeetcode/...` paths so
-it works from any directory.
+### 3.3 Apply command (Termux)
+One command, run from any directory:
 
 ```bash
-mkdir -p ~/Jeetcode/client/src/features/example
-mv ~/storage/downloads/Navbar.jsx ~/Jeetcode/client/src/components/Navbar.jsx
-mv ~/storage/downloads/user.controller.js ~/Jeetcode/server/src/controllers/user.controller.js
-rm -f ~/Jeetcode/client/src/components/OldThing.jsx   # only if a file must be deleted
-cd ~/Jeetcode && git status -s
+cd ~/Jeetcode && tar xzf ~/storage/downloads/jeetcode-community-compose.tgz && rm -f ~/storage/downloads/jeetcode-community-compose.tgz && git status -s
 ```
 
-The `git status -s` at the end lets him confirm that exactly the expected files changed.
+- A tar archive cannot delete files. If a file must be removed, add
+  `&& rm -f ~/Jeetcode/<path>` before `git status -s` in the same command.
+- Do not put `git restore .` or `git clean -fd` in the command: they throw away his
+  uncommitted work. Mention them only as a rollback option (3.5).
+- `git status -s` at the end lets him confirm that exactly the expected files changed.
 
 ### 3.4 Ship line (separate block)
 ```bash
@@ -262,8 +264,8 @@ read from that file.
 ## 6. Response checklist (use every time)
 
 - [ ] Used the latest zip (or asked for it)
-- [ ] Only changed/new files delivered, each complete
-- [ ] One apply block with `mkdir -p`, `mv`, optional `rm`, and `git status -s`
+- [ ] Only changed/new files delivered, each complete, packed in one `.tgz` with repo-root-relative paths
+- [ ] One apply command: `cd ~/Jeetcode && tar xzf ... && rm -f ... && git status -s`
 - [ ] A separate `ship "message"` line
 - [ ] Render env vars / npm installs / seeds called out if needed
 - [ ] No secrets touched
