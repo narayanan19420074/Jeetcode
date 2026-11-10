@@ -78,7 +78,8 @@ export const SIZES = {
   filterPillHeight: 40,
   chipHeight: 28,
   chipHeightSmall: 24,
-  avatar: { xs: 24, sm: 32, md: 40, lg: 56 },
+  // `post` is the author photo on a feed post.
+  avatar: { xs: 24, sm: 32, md: 40, post: 48, lg: 56 },
   contentMaxWidth: 1200,
   // Widest the dashboard grows (sidebar, content and streak rail together) on very large screens.
   dashboardMaxWidth: 1480,

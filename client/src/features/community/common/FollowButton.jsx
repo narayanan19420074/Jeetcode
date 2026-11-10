@@ -3,14 +3,15 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { useFollowAuthor } from './usePostEngagement';
 import { navActiveColor } from '../../../components/navbar/navLinkStyles';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../../../app/design/designTokens';
 
 const followSx = (theme) => ({
   flexShrink: 0,
-  fontSize: FONT_SIZES.title,
+  fontSize: FONT_SIZES.subheading,
   fontWeight: FONT_WEIGHTS.semibold,
   textTransform: 'none',
   color: navActiveColor(theme),
+  '& .MuiButton-startIcon > *:nth-of-type(1)': { fontSize: SIZES.iconSize.medium },
 });
 
 // "+ Follow" next to the author. Hidden for your own posts and for anonymous posts, whose author is never revealed.

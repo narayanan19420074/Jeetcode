@@ -13,7 +13,7 @@ const categoryLabel = (value) => POST_CATEGORY_OPTIONS.find((option) => option.v
 export default function PostCardHeader({ post, onRemoved }) {
   return (
     <Stack direction="row" alignItems="center" spacing={1}>
-      <PostAvatar author={post.author} size={SIZES.avatar.md} />
+      <PostAvatar author={post.author} size={SIZES.avatar.post} />
       <Box sx={{ flex: 1, minWidth: SIZES.flexShrinkMinWidth }}>
         <Typography noWrap sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold }}>{authorLabel(post.author)}</Typography>
         <Typography noWrap sx={{ color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING, fontSize: FONT_SIZES.body }}>

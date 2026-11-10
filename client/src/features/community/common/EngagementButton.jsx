@@ -7,7 +7,7 @@ const buttonSx = (active) => (theme) => ({
   minWidth: SIZES.touchTarget,
   height: SIZES.touchTarget,
   px: 1.5,
-  gap: 0.75,
+  gap: 1,
   borderRadius: RADII_PX.pill,
   color: active ? navActiveColor(theme) : 'var(--lib-muted)',
 });
@@ -20,7 +20,7 @@ export default function EngagementButton({ icon: Icon, label, count, active, to,
   return (
     <ButtonBase {...behaviour} disabled={disabled} aria-label={hasCount ? `${label}, ${count}` : label} sx={buttonSx(active)}>
       <Icon sx={{ fontSize: SIZES.iconSize.medium }} />
-      {hasCount && <Typography component="span" sx={{ fontSize: FONT_SIZES.bodyLg, color: 'inherit' }}>{count.toLocaleString()}</Typography>}
+      {hasCount && <Typography component="span" sx={{ fontSize: FONT_SIZES.title, color: 'inherit' }}>{count.toLocaleString()}</Typography>}
     </ButtonBase>
   );
 }

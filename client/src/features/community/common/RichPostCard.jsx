@@ -4,14 +4,15 @@ import PostCardHeader from './PostCardHeader';
 import PostEngagementBar from './PostEngagementBar';
 import { communityImageUrl } from './imageUpload';
 import { LIB_TRACKING } from '../../dashboard/components/libraryStyle';
-import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const PREVIEW_CHARS = 140;
-const coverSx = { display: 'block', width: SIZES.fill, mt: 1.5, borderRadius: RADII_PX.card };
+// The photo runs edge to edge inside the card, at its own proportions, like a LinkedIn photo post.
+const coverSx = { display: 'block', width: (theme) => `calc(100% + ${theme.spacing(4)})`, mx: -2, mt: 1, borderRadius: RADII_PX.square };
 
 const cardSx = { px: 2, pt: 2, pb: 0.5, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card } };
-const contentLinkSx = { display: 'block', mt: 1.5, textDecoration: 'none', color: 'inherit' };
-const actionsSx = { mt: 1.5, pt: 0.5, borderTop: 1, borderColor: 'var(--lib-divider)' };
+const contentLinkSx = { display: 'block', mt: 1, textDecoration: 'none', color: 'inherit' };
+const actionsSx = { pt: 0.5 };
 const mutedSx = { color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING };
 
 // First characters of the text, cut at a word boundary, so long posts end in "…more" like on LinkedIn.
@@ -25,8 +26,8 @@ function PostText({ title, excerpt }) {
   const preview = previewOf(excerpt);
   return (
     <>
-      <Typography sx={{ fontSize: FONT_SIZES.subheading, fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.3 }}>{title}</Typography>
-      <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.bodyLg, letterSpacing: LIB_TRACKING }}>
+      <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.4 }}>{title}</Typography>
+      <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING }}>
         {preview.text}
         {preview.cut && <Box component="span" sx={mutedSx}>… more</Box>}
       </Typography>
