@@ -1,20 +1,31 @@
 import { Alert, Box, Button } from '@mui/material';
 import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import PostCard from './PostCard';
-import CareerPostCard from './CareerPostCard';
+import RichPostCard from './RichPostCard';
 import { CAREER_CATEGORY } from './communityCategories';
 import { EmptyBlock, FeedSkeleton } from '../../workspace/community/CommunityBits';
 
-// Career posts are white cards on a grey strip that runs edge to edge on phones, like a LinkedIn feed.
+// Rich cards are white on a grey strip that runs edge to edge on phones, like a LinkedIn feed. The Career tab is one
+// continuous strip; in other tabs only the posts with an image get a strip of their own.
 const careerFeedSx = { display: 'flex', flexDirection: 'column', gap: 1, mt: 1, mx: { xs: -2, md: 0 }, bgcolor: 'var(--lib-player)' };
+const imagePostStripSx = { my: 1, py: 1, mx: { xs: -2, md: 0 }, bgcolor: 'var(--lib-player)' };
+
+function FeedRow({ post, inCareerTab }) {
+  if (inCareerTab) return <RichPostCard post={post} />;
+  if (!post.coverImage) return <PostCard post={post} />;
+  return (
+    <Box sx={imagePostStripSx}>
+      <RichPostCard post={post} />
+    </Box>
+  );
+}
 
 function FeedRows({ items, category }) {
-  const career = category === CAREER_CATEGORY;
-  const Card = career ? CareerPostCard : PostCard;
+  const inCareerTab = category === CAREER_CATEGORY;
   return (
-    <Box sx={career ? careerFeedSx : undefined}>
+    <Box sx={inCareerTab ? careerFeedSx : undefined}>
       {items.map((post) => (
-        <Card key={post._id} post={post} />
+        <FeedRow key={post._id} post={post} inCareerTab={inCareerTab} />
       ))}
     </Box>
   );

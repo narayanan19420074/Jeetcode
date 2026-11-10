@@ -4,6 +4,7 @@ import ThumbUpOffAltRoundedIcon from '@mui/icons-material/ThumbUpOffAltRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { PostAvatar, authorLabel } from './PostAuthor';
+import { POST_CATEGORY_OPTIONS } from './communityCategories';
 import { timeAgo } from '../../workspace/community/CommunityBits';
 import { communityImageUrl } from './imageUpload';
 import { LIB_TRACKING } from '../../dashboard/components/libraryStyle';
@@ -22,13 +23,15 @@ function previewOf(text) {
   return { text: head.slice(0, head.lastIndexOf(' ') > 0 ? head.lastIndexOf(' ') : PREVIEW_CHARS), cut: true };
 }
 
+const categoryLabel = (value) => POST_CATEGORY_OPTIONS.find((option) => option.value === value)?.label;
+
 function AuthorRow({ post }) {
   return (
     <Stack direction="row" alignItems="center" spacing={1.5}>
       <PostAvatar author={post.author} size={SIZES.avatar.md} />
       <Box sx={{ flex: 1, minWidth: SIZES.flexShrinkMinWidth }}>
         <Typography noWrap sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold }}>{authorLabel(post.author)}</Typography>
-        <Typography noWrap sx={{ ...mutedSx, fontSize: FONT_SIZES.body }}>{timeAgo(post.createdAt)} · Career</Typography>
+        <Typography noWrap sx={{ ...mutedSx, fontSize: FONT_SIZES.body }}>{timeAgo(post.createdAt)} · {categoryLabel(post.category)}</Typography>
       </Box>
     </Stack>
   );
@@ -56,8 +59,9 @@ function Action({ icon: Icon, value, label }) {
   );
 }
 
-// One Career post, laid out like a LinkedIn post: author, text with "…more", then the counters. Opens the post.
-export default function CareerPostCard({ post }) {
+// A post laid out like a LinkedIn post: author, text with "…more", its first image, then the counters. Used for every
+// Career post and for any post that has an image. Opens the post.
+export default function RichPostCard({ post }) {
   return (
     <Box component={RouterLink} to={`/community/${post._id}`} sx={cardSx}>
       <AuthorRow post={post} />
