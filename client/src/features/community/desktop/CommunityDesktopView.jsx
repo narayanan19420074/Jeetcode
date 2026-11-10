@@ -19,7 +19,7 @@ export default function CommunityDesktopView({ page }) {
         <Button variant="contained" disableElevation sx={(theme) => ({ bgcolor: navActiveColor(theme), '&:hover': { bgcolor: navActiveColor(theme) } })} startIcon={<EditNoteRoundedIcon />} onClick={openCompose}>Create post</Button>
       </Stack>
       <CategoryTabs value={category} onChange={setCategory} options={FEED_TABS} />
-      <PostList feed={feed} />
+      <PostList feed={feed} category={category} />
       <ComposePostDialog open={composeOpen} onClose={closeCompose} onPublished={feed.prepend} />
     </Box>
     </LibraryFont>

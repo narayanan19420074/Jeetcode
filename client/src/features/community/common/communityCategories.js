@@ -8,6 +8,9 @@ export const FEED_TABS = [
   { value: 'general', label: 'General' },
 ];
 
+// The Career tab shows its posts in a LinkedIn-style feed (see CareerPostCard).
+export const CAREER_CATEGORY = 'career';
+
 // Categories a post can be filed under (every tab except the unfiltered feed).
 export const POST_CATEGORY_OPTIONS = FEED_TABS.filter((tab) => tab.value);
 

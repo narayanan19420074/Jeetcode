@@ -15,7 +15,7 @@ export default function CommunityMobileView({ page }) {
     <LibraryFont>
     <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))' }}>
       <CategoryTabs value={category} onChange={setCategory} options={FEED_TABS} />
-      <PostList feed={feed} />
+      <PostList feed={feed} category={category} />
       <Fab
         aria-label="Create post"
         onClick={openCompose}
