@@ -21,7 +21,7 @@ const composeFabSx = (theme) => ({
 export default function MessagesScreen({ open, onClose }) {
   return (
     <Dialog fullScreen open={open} onClose={onClose} aria-label="Messages">
-      <LibraryFont sx={{ minHeight: '100%', bgcolor: 'background.paper' }}>
+      <LibraryFont sx={{ flexGrow: 1, bgcolor: 'background.paper' }}>
         <MessagesTopBar onBack={onClose} />
         <MessageFilterChips />
         <Box component="ul" sx={{ m: 0, p: 0, listStyle: 'none', borderTop: '1px solid', borderColor: 'divider' }}>
