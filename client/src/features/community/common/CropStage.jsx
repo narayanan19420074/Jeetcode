@@ -1,7 +1,8 @@
 import { Box } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { SIZES } from '../../../app/design/designTokens';
 
-const stageSx = { position: 'relative', width: '100%', aspectRatio: '1', overflow: 'hidden', bgcolor: 'action.hover', touchAction: 'none', userSelect: 'none', cursor: 'grab' };
+const stageSx = { position: 'relative', width: SIZES.fill, aspectRatio: '1', overflow: 'hidden', bgcolor: 'action.hover', touchAction: 'none', userSelect: 'none', cursor: 'grab' };
 const photoSx = { position: 'absolute', left: '50%', top: '50%', maxWidth: 'none', pointerEvents: 'none' };
 const dimSx = (theme) => ({ position: 'absolute', inset: 0, pointerEvents: 'none', bgcolor: alpha(theme.palette.common.black, 0.55) });
 const frameSx = { position: 'absolute', pointerEvents: 'none', border: 2, borderColor: 'common.white' };

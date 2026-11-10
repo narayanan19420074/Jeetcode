@@ -23,6 +23,7 @@ import {
   toObjectId,
   TARGET_MODELS,
 } from '../services/community.service.js';
+import { addAuthorFollowState } from '../services/communityViewerState.service.js';
 
 const pagination = (page, limit, total) => ({ page, limit, total, totalPages: Math.ceil(total / limit) });
 const canModify = (doc, user) => isOwner(doc, user) || user.role === 'admin';
@@ -242,7 +243,7 @@ export const listComments = asyncHandler(async (req, res) => {
     .populate('author', AUTHOR_FIELDS)
     .lean();
 
-  const items = await decorate(rows, 'comment', req.user);
+  const items = await addAuthorFollowState(await decorate(rows, 'comment', req.user), req.user);
   new ApiResponse(200, items).send(res);
 });
 

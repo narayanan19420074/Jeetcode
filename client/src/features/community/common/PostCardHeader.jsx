@@ -20,7 +20,7 @@ export default function PostCardHeader({ post, onRemoved }) {
           {timeAgo(post.createdAt)} · {categoryLabel(post.category)}
         </Typography>
       </Box>
-      <FollowButton post={post} />
+      <FollowButton author={post.author} isOwn={post.isMine} isFollowing={post.isFollowingAuthor} />
       <PostMenu post={post} onRemoved={onRemoved} />
     </Stack>
   );

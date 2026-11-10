@@ -88,6 +88,10 @@ export const SIZES = {
   readingMaxWidth: 720,
   // Preview of an attached image on the compose screen.
   composeThumbnail: 80,
+  // Bottom sheet that lists the comments of a feed post: its height, and the grab handle at its top edge.
+  commentSheetHeight: '70dvh',
+  sheetHandleWidth: 48,
+  sheetHandleHeight: 4,
   // Page scrollbars: regular on desktop, slim on phones, thin for auto-hide panels.
   scrollbar: { regular: 10, slim: 4, thin: 6 },
 };

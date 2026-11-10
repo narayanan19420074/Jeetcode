@@ -18,7 +18,7 @@ export default function PostMeta({ post }) {
       <Stack direction="row" alignItems="center" spacing={1.5}>
         <PostAvatar author={post.author} size={SIZES.avatar.md} />
         <Typography noWrap sx={{ ...mutedSx, flex: 1, fontSize: FONT_SIZES.subheading }}>{authorLabel(post.author)}</Typography>
-        <FollowButton post={post} />
+        <FollowButton author={post.author} isOwn={post.isMine} isFollowing={post.isFollowingAuthor} />
       </Stack>
       {category && (
         <Box>

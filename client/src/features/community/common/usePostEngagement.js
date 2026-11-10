@@ -4,13 +4,9 @@ import { communityApi } from '../../../api/communityApi';
 export const useSavePost = (post) =>
   useRemoteToggle({ initial: Boolean(post.isSaved), enable: () => communityApi.savePost(post._id), disable: () => communityApi.unsavePost(post._id) });
 
-// Follows the post's author. Anonymous posts have no author, so there is nothing to follow.
-export const useFollowAuthor = (post) =>
-  useRemoteToggle({
-    initial: Boolean(post.isFollowingAuthor),
-    enable: () => communityApi.followUser(post.author?._id),
-    disable: () => communityApi.unfollowUser(post.author?._id),
-  });
+// Follows a user (the author of a post or of a comment). `userId` is undefined when the author is anonymous.
+export const useFollowUser = (userId, isFollowing) =>
+  useRemoteToggle({ initial: Boolean(isFollowing), enable: () => communityApi.followUser(userId), disable: () => communityApi.unfollowUser(userId) });
 
 // The repost count shown to the viewer includes their own repost the moment they tap, before the server answers.
 export function useRepostPost(post) {

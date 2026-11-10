@@ -25,3 +25,10 @@ export async function addViewerState(posts, user) {
     isFollowingAuthor: !post.isAnonymous && followed.has(String(post.author?._id)),
   }));
 }
+
+// Comment authors are always named, so every comment can show a Follow button for people the viewer does not follow yet.
+export async function addAuthorFollowState(comments, user) {
+  const authorIds = comments.map((comment) => String(comment.author?._id)).filter(Boolean);
+  const followed = user && authorIds.length ? await findFollowedUserIds(user.id, authorIds) : new Set();
+  return comments.map((comment) => ({ ...comment, isFollowingAuthor: followed.has(String(comment.author?._id)) }));
+}

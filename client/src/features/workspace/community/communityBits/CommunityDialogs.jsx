@@ -9,7 +9,7 @@ import { extractErrorMessage } from '../../../../api/apiClient';
 import { FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 // ⋯ menu: Edit / Delete for the owner (admin can also delete), Report for others.
-export function ItemMenu({ canEdit, canDelete, canReport, onEdit, onDelete, onReport, size = 'medium' }) {
+export function ItemMenu({ canEdit, canDelete, canReport, onEdit, onDelete, onReport, size = 'medium', icon: TriggerIcon = MoreHorizRoundedIcon }) {
   const [anchor, setAnchor] = useState(null);
   if (!canEdit && !canDelete && !canReport) return null;
   const close = () => setAnchor(null);
@@ -21,7 +21,7 @@ export function ItemMenu({ canEdit, canDelete, canReport, onEdit, onDelete, onRe
   return (
     <>
       <IconButton size={size} aria-label="More actions" onClick={(e) => setAnchor(e.currentTarget)}>
-        <MoreHorizRoundedIcon />
+        <TriggerIcon />
       </IconButton>
       <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={close}>
         {canEdit && (
