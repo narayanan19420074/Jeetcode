@@ -1,42 +1,69 @@
 import { useSelector } from 'react-redux';
-import { Avatar, Box, Chip, Paper, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Button, Paper, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
-import { IconAction } from './ProfileCard';
+import { BANNER_GRADIENT } from '../../dashboard/bannerGradients';
 import { initialsFromName } from '../../../components/navbar/navConfig';
+import AddSectionMenu from './AddSectionMenu';
+import { IconAction } from './ProfileCard';
 
-// Name, photo and headline. The name, photo and location come from the account (Settings > Profile),
-// the headline and the open-to-work flag from the Job profile.
-export default function IdentityHeader({ editor }) {
-  const user = useSelector((state) => state.auth.user);
-  const { profile } = editor;
+// Current company and latest school, shown under the headline like the LinkedIn top card.
+const organizationLine = ({ experience, education }) => {
+  const currentJob = experience.find((job) => job.isCurrent) ?? experience[0];
+  return [currentJob?.company, education[0]?.school].filter(Boolean).join(' · ');
+};
 
+function ProfilePhoto({ user }) {
   return (
-    <Paper variant="outlined" sx={{ p: 2, borderRadius: RADII_PX.card }}>
-      <Stack direction="row" spacing={2} sx={{ alignItems: 'flex-start' }}>
-        <Avatar src={user.avatarUrl || undefined} alt="" sx={{ width: SIZES.avatar.lg, height: SIZES.avatar.lg, fontSize: FONT_SIZES.heading, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'primary.main' }}>
-          {initialsFromName(user.name)}
-        </Avatar>
-        <Box sx={{ minWidth: SIZES.flexShrinkMinWidth, flex: 1 }}>
-          <Typography component="h1" variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, wordBreak: 'break-word' }}>
-            {user.name}
-          </Typography>
-          <Typography color={profile.headline ? 'text.primary' : 'text.secondary'}>{profile.headline || 'Add a headline to tell recruiters what you do.'}</Typography>
-          <HeaderMeta location={user.location} openToWork={profile.openToWork} />
-        </Box>
-        <IconAction label="Edit intro" icon={EditRoundedIcon} onClick={editor.editIntro} />
-      </Stack>
-    </Paper>
+    <Avatar
+      src={user.avatarUrl || undefined}
+      alt=""
+      sx={{ width: SIZES.avatar.xl, height: SIZES.avatar.xl, mt: -7, ml: 2, border: '4px solid', borderColor: 'background.paper', fontSize: FONT_SIZES.display, fontWeight: FONT_WEIGHTS.bold, bgcolor: 'primary.main' }}
+    >
+      {initialsFromName(user.name)}
+    </Avatar>
   );
 }
 
-function HeaderMeta({ location, openToWork }) {
-  if (!location && !openToWork) return null;
+function HeaderText({ user, profile }) {
   return (
-    <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, mt: 1 }}>
-      {location && <Chip size="small" icon={<PlaceRoundedIcon />} label={location} />}
-      {openToWork && <Chip size="small" color="success" label="Open to work" />}
-    </Stack>
+    <Box sx={{ px: 2, pb: 2 }}>
+      <Typography component="h1" variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, wordBreak: 'break-word' }}>
+        {user.name}
+      </Typography>
+      <Typography sx={{ mt: 0.5 }} color={profile.headline ? 'text.primary' : 'text.secondary'}>
+        {profile.headline || 'Add a headline to tell recruiters what you do.'}
+      </Typography>
+      <Typography variant="body2" sx={{ mt: 1 }}>
+        {organizationLine(profile)}
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        {user.location}
+      </Typography>
+    </Box>
+  );
+}
+
+// Banner, round photo, name, headline, organisation, location and the two action buttons.
+export default function IdentityHeader({ editor }) {
+  const user = useSelector((state) => state.auth.user);
+  const isMobile = useMediaQuery(useTheme().breakpoints.down('md'));
+  const { profile } = editor;
+
+  return (
+    <Paper variant={isMobile ? 'elevation' : 'outlined'} elevation={0} sx={{ overflow: 'hidden', borderRadius: isMobile ? RADII_PX.square : RADII_PX.card }}>
+      <Box sx={{ height: SIZES.profileBannerHeight, background: BANNER_GRADIENT.visualizer }} />
+      <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between', pr: 1 }}>
+        <ProfilePhoto user={user} />
+        <IconAction label="Edit intro" icon={EditRoundedIcon} onClick={editor.editIntro} />
+      </Stack>
+      <HeaderText user={user} profile={profile} />
+      <Stack direction="row" spacing={1} sx={{ px: 2, pb: 2 }}>
+        <Button variant="contained" disableElevation fullWidth onClick={editor.editIntro}>
+          {profile.openToWork ? 'Open to work' : 'Open to'}
+        </Button>
+        <AddSectionMenu editor={editor} />
+      </Stack>
+    </Paper>
   );
 }

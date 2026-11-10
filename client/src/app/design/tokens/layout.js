@@ -82,7 +82,10 @@ export const SIZES = {
   chipHeight: 28,
   chipHeightSmall: 24,
   // `post` is the author photo on a feed post.
-  avatar: { xs: 24, sm: 32, md: 40, post: 48, lg: 56 },
+  // `xl` is the round photo on the Job profile top card; it overlaps the banner by half its height.
+  avatar: { xs: 24, sm: 32, md: 40, post: 48, lg: 56, xl: 112 },
+  // Coloured banner at the top of the Job profile.
+  profileBannerHeight: 120,
   // Round reaction icon in the overlapping stack at the end of the row under a phone feed post.
   reactionBadge: 18,
   // Green online dot on the avatar of a conversation in the phone messages list.

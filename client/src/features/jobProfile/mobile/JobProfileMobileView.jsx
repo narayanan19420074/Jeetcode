@@ -1,29 +1,33 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, IconButton, Stack, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import { LibraryFont, libBackBtnSx } from '../../dashboard/components/libraryStyle';
 import { SIZES } from '../../../app/design/designTokens';
 import JobProfileGate from '../common/JobProfileGate';
-import { HistorySections, OverviewSections } from '../common/JobProfileSections';
+import JobProfileSections from '../common/JobProfileSections';
 
-// Phone layout: the Library look with its own back header (the top bar is hidden on this page), one column.
+// Phone layout: full-width blocks separated by a grey band, like the LinkedIn app. The top bar is hidden on
+// this page, so it has its own back and settings buttons.
 export default function JobProfileMobileView({ editor }) {
   return (
     <LibraryFont>
-      <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 2, maxWidth: SIZES.readingMaxWidth, mx: 'auto' }}>
-        <Stack direction="row" sx={{ alignItems: 'center', mb: 1 }}>
+      <Box sx={{ pt: 'env(safe-area-inset-top)', pb: 2, maxWidth: SIZES.readingMaxWidth, mx: 'auto', bgcolor: 'action.hover' }}>
+        <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', px: 2, py: 1, bgcolor: 'background.paper' }}>
           <IconButton component={RouterLink} to="/dashboard" aria-label="Back to dashboard" sx={libBackBtnSx}>
             <ArrowBackRoundedIcon />
           </IconButton>
-          <Typography component="p" variant="h6" sx={{ flex: 1, textAlign: 'center', mr: 4 }}>
+          <Typography component="p" variant="subtitle1">
             Job profile
           </Typography>
+          <IconButton component={RouterLink} to="/settings" aria-label="Settings">
+            <SettingsRoundedIcon />
+          </IconButton>
         </Stack>
         <JobProfileGate editor={editor}>
-          <Stack spacing={2}>
-            <OverviewSections editor={editor} />
-            <HistorySections editor={editor} />
-          </Stack>
+          <Box sx={{ mt: 1 }}>
+            <JobProfileSections editor={editor} spacing={1} />
+          </Box>
         </JobProfileGate>
       </Box>
     </LibraryFont>
