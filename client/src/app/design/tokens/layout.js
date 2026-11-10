@@ -103,6 +103,6 @@ export const SIZES = {
   scrollbar: { regular: 10, slim: 4, thin: 6 },
 };
 
-// The photo of a feed post is always shown in this frame (portrait 4:5, the largest portrait shape LinkedIn feeds show), so
+// The photo of a feed post is always shown in this frame (square 1:1, the standard LinkedIn feed shape), so
 // every post keeps the same layout. `outputWidth` is the pixel width of an image cropped to this frame before upload.
-export const FEED_IMAGE_FRAME = { aspectRatio: '4 / 5', widthPerHeight: 4 / 5, outputWidth: 1080 };
+export const FEED_IMAGE_FRAME = { aspectRatio: '1 / 1', widthPerHeight: 1, outputWidth: 1080 };

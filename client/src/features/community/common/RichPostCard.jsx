@@ -11,7 +11,7 @@ const PREVIEW_CHARS = 140;
 // A post never grows past these lines in the feed, whatever its length; the rest is read on the post page.
 const TITLE_LINES = 2;
 const TEXT_LINES = 3;
-// Every photo is shown in the same portrait frame, edge to edge inside the card, so all posts keep the same layout.
+// Every photo is shown in the same square frame, edge to edge inside the card, so all posts keep the same layout.
 // Photos that were not cropped when the post was written are centred and trimmed to the frame.
 const frameSx = {
   position: 'relative',
