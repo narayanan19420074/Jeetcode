@@ -8,11 +8,11 @@ import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTo
 
 const PREVIEW_CHARS = 140;
 // The photo runs edge to edge inside the card, at its own proportions, like a LinkedIn photo post.
-const coverSx = { display: 'block', width: (theme) => `calc(100% + ${theme.spacing(4)})`, mx: -2, mt: 1, borderRadius: RADII_PX.square };
+const coverSx = { display: 'block', width: (theme) => `calc(100% + ${theme.spacing(3)})`, mx: -1.5, mt: 1, borderRadius: RADII_PX.square };
 
-const cardSx = { px: 2, pt: 2, pb: 0.5, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card } };
-const contentLinkSx = { display: 'block', mt: 1, textDecoration: 'none', color: 'inherit' };
-const actionsSx = { pt: 0.5 };
+const cardSx = { px: 1.5, pt: 1, pb: 0, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card } };
+const contentLinkSx = { display: 'block', mt: 1.25, textDecoration: 'none', color: 'inherit' };
+const actionsSx = { py: 0.5 };
 const mutedSx = { color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING };
 
 // First characters of the text, cut at a word boundary, so long posts end in "…more" like on LinkedIn.
@@ -27,7 +27,7 @@ function PostText({ title, excerpt }) {
   return (
     <>
       <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.4 }}>{title}</Typography>
-      <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.title, letterSpacing: LIB_TRACKING }}>
+      <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.body, lineHeight: 1.45, letterSpacing: LIB_TRACKING }}>
         {preview.text}
         {preview.cut && <Box component="span" sx={mutedSx}>… more</Box>}
       </Typography>

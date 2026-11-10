@@ -1,11 +1,7 @@
 import { Box, Stack, Typography } from '@mui/material';
-import ThumbUpOffAltRoundedIcon from '@mui/icons-material/ThumbUpOffAltRounded';
-import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
-import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
-import RepeatRoundedIcon from '@mui/icons-material/RepeatRounded';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import EngagementButton from './EngagementButton';
+import { CommentOutlineIcon, LikeFilledIcon, LikeOutlineIcon, RepostOutlineIcon, SendOutlineIcon } from './feedActionIcons';
 import { useRepostPost } from './usePostEngagement';
 import { useSharePost } from './sharePost';
 import useVote from '../../workspace/community/communityBits/useVote';
@@ -27,11 +23,11 @@ export default function PostEngagementBar({ post }) {
   const share = useSharePost(post);
   return (
     <Box>
-      <Stack direction="row" alignItems="center" sx={{ ml: -1.5 }}>
-        <EngagementButton icon={vote.state.myVote === 1 ? ThumbUpAltRoundedIcon : ThumbUpOffAltRoundedIcon} label="Like" count={vote.state.score} active={vote.state.myVote === 1} onClick={() => vote.cast(1)} />
-        <EngagementButton icon={ChatBubbleOutlineRoundedIcon} label="Comments" count={post.commentCount} to={`/community/${post._id}`} />
-        <EngagementButton icon={RepeatRoundedIcon} label="Repost" count={repost.count} active={repost.on} onClick={repost.toggle} disabled={repost.busy} />
-        <EngagementButton icon={SendRoundedIcon} label="Share" onClick={share} />
+      <Stack direction="row" alignItems="center">
+        <EngagementButton icon={vote.state.myVote === 1 ? LikeFilledIcon : LikeOutlineIcon} label="Like" count={vote.state.score} active={vote.state.myVote === 1} onClick={() => vote.cast(1)} />
+        <EngagementButton icon={CommentOutlineIcon} label="Comments" count={post.commentCount} to={`/community/${post._id}`} />
+        <EngagementButton icon={RepostOutlineIcon} label="Repost" count={repost.count} active={repost.on} onClick={repost.toggle} disabled={repost.busy} />
+        <EngagementButton icon={SendOutlineIcon} label="Share" onClick={share} />
         <Box sx={{ flex: 1 }} />
         <ViewCount value={post.viewCount} />
       </Stack>

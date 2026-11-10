@@ -6,7 +6,7 @@ import { FONT_SIZES, RADII_PX, SIZES } from '../../../app/design/designTokens';
 const buttonSx = (active) => (theme) => ({
   minWidth: SIZES.touchTarget,
   height: SIZES.touchTarget,
-  px: 1.5,
+  px: 1.25,
   gap: 1,
   borderRadius: RADII_PX.pill,
   color: active ? navActiveColor(theme) : 'var(--lib-muted)',
