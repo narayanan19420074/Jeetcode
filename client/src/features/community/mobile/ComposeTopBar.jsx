@@ -13,17 +13,18 @@ const postButtonSx = (theme) => ({
   letterSpacing: LIB_TRACKING,
   bgcolor: theme.palette.success.main,
   color: theme.palette.common.white,
-  '&.Mui-disabled': { opacity: 0.35, color: theme.palette.common.white },
+  '&.Mui-disabled': { opacity: 0.6, color: theme.palette.common.white },
 });
 
-// Back arrow on the left, the Post button on the right. Post stays disabled until the draft passes validation.
-export default function ComposeTopBar({ onClose, onPost, canPost, saving }) {
+// Back arrow on the left, the Post button on the right. Post is only blocked while saving; an incomplete draft
+// shows its reason when tapped, so the button never looks dead.
+export default function ComposeTopBar({ onClose, onPost, saving }) {
   return (
     <Stack direction="row" alignItems="center" justifyContent="space-between">
       <IconButton aria-label="Close" onClick={onClose} disabled={saving} sx={libBackBtnSx}>
         <ArrowBackRoundedIcon />
       </IconButton>
-      <ButtonBase onClick={onPost} disabled={!canPost} sx={postButtonSx}>
+      <ButtonBase onClick={onPost} disabled={saving} sx={postButtonSx}>
         {saving ? 'Posting…' : 'Post'}
       </ButtonBase>
     </Stack>

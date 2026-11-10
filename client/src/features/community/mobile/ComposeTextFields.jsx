@@ -1,4 +1,4 @@
-import { InputBase, Typography } from '@mui/material';
+import { InputBase } from '@mui/material';
 import { useLibraryPalette, LIB_TRACKING } from '../../dashboard/components/libraryStyle';
 import { POST_BODY_MAX, POST_TITLE_MAX } from '../common/communityCategories';
 import { FONT_SIZES, FONT_WEIGHTS } from '../../../app/design/designTokens';
@@ -18,7 +18,7 @@ function ComposeInput({ sx, label, placeholder, value, onChange, disabled, input
 }
 
 // Large title line followed by the free-form body. Typing clears any earlier error so it never lingers.
-export default function ComposeTextFields({ draft, update, saving, error, clearError, bodyRef }) {
+export default function ComposeTextFields({ draft, update, saving, clearError, bodyRef }) {
   const muted = useLibraryPalette().muted;
   const change = (field, clean) => (event) => {
     clearError();
@@ -28,7 +28,6 @@ export default function ComposeTextFields({ draft, update, saving, error, clearE
     <>
       <ComposeInput label="Title" placeholder={TITLE_PLACEHOLDER} value={draft.title} disabled={saving} onChange={change('title', cleanTitle)} sx={withMutedPlaceholder(titleSx, muted)} />
       <ComposeInput label="Post" placeholder={BODY_PLACEHOLDER} value={draft.body} disabled={saving} onChange={change('body', cleanBody)} inputRef={bodyRef} sx={withMutedPlaceholder(bodySx, muted)} />
-      {error && <Typography role="alert" sx={{ mt: 1, fontSize: FONT_SIZES.bodyLg, color: 'error.main' }}>{error}</Typography>}
     </>
   );
 }

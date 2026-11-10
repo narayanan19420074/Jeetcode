@@ -1,13 +1,12 @@
 import { useSelector } from 'react-redux';
-import { Box, Dialog, Stack } from '@mui/material';
+import { Box, Dialog, Stack, Typography } from '@mui/material';
 import { LibraryFont, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import ComposeTopBar from './ComposeTopBar';
 import ComposeTextFields from './ComposeTextFields';
 import ComposeBottomBar from './ComposeBottomBar';
 import useCodeBlockInsert from '../common/useCodeBlockInsert';
-import { validateDraft } from '../common/useComposePost';
 import { POST_BODY_MAX } from '../common/communityCategories';
-import { SIZES } from '../../../app/design/designTokens';
+import { FONT_SIZES, SIZES } from '../../../app/design/designTokens';
 
 const screenSx = { height: SIZES.viewportHeight, bgcolor: 'var(--lib-bg)', px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 'env(safe-area-inset-bottom)' };
 const scrollAreaSx = { flex: 1, minHeight: SIZES.flexShrinkMinHeight, overflowY: 'auto', pt: 2 };
@@ -18,10 +17,11 @@ function ComposeScreenBody({ compose, onClose }) {
   const { bodyRef, insertCodeBlock } = useCodeBlockInsert(draft.body, update('body'), POST_BODY_MAX);
   return (
     <Stack sx={screenSx}>
-      <ComposeTopBar onClose={onClose} onPost={publish} canPost={!saving && !validateDraft(draft)} saving={saving} />
+      <ComposeTopBar onClose={onClose} onPost={publish} saving={saving} />
+      {error && <Typography role="alert" sx={{ pt: 1.5, fontSize: FONT_SIZES.bodyLg, color: 'error.main' }}>{error}</Typography>}
       {/* Tapping the empty area under the text still puts the cursor in the post body. */}
       <Box onClick={() => bodyRef.current?.focus()} sx={scrollAreaSx}>
-        <ComposeTextFields draft={draft} update={update} saving={saving} error={error} clearError={clearError} bodyRef={bodyRef} />
+        <ComposeTextFields draft={draft} update={update} saving={saving} clearError={clearError} bodyRef={bodyRef} />
       </Box>
       <ComposeBottomBar draft={draft} update={update} user={user} saving={saving} onInsertCode={insertCodeBlock} />
     </Stack>
