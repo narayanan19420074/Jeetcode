@@ -23,6 +23,9 @@ const TYPOGRAPHY = { fontFamily: LIB_FONT, ...Object.fromEntries(VARIANTS.map((v
 // Dashboard views that are full phone screens in the Library look.
 const LIBRARY_VIEWS = ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests'];
 
+// Pages with their own phone header: they use the Library look and hide the top bar on phones.
+export const LIBRARY_PAGE_PATHS = ['/aptitude', '/prep', '/you', '/job-profile', '/settings', '/plans'];
+
 // Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude (list and topic pages), Companies, You, Settings, Store, Plans and the Contest, Explore, Friends, Leaderboard, Study Plan and Quests views.
 export const isLibraryRoute = (pathname, search) => {
   const path = pathname.replace(/\/+$/, '');
@@ -30,7 +33,7 @@ export const isLibraryRoute = (pathname, search) => {
     const view = new URLSearchParams(search).get('view');
     return !view || LIBRARY_VIEWS.includes(view);
   }
-  return path === '/store' || /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?$/.test(path) || path === '/problems' || path === '/community' || path.startsWith('/community/') || path.startsWith('/problems/') || path.startsWith('/settings/') || ['/aptitude', '/prep', '/you', '/settings', '/plans'].includes(path);
+  return path === '/store' || /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?$/.test(path) || path === '/problems' || path === '/community' || path.startsWith('/community/') || path.startsWith('/problems/') || path.startsWith('/settings/') || LIBRARY_PAGE_PATHS.includes(path);
 };
 
 // Library font for everything inside (menus and dialogs opened from it included).

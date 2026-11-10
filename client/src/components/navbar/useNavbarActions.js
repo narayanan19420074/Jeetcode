@@ -34,6 +34,7 @@ export default function useNavbarActions() {
     closeLicenseModal: () => setLicenseModalOpen(false),
     openLicenseModal,
     goToProfile: goTo('/you'),
+    goToJobProfile: goTo('/job-profile'),
     goToSettings: goTo('/settings'),
     goToHelp: goTo('/help'),
     logout,

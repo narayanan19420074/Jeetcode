@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Avatar, Box, Button, ButtonBase, Divider, ListItemIcon, ListItemText, Menu, MenuItem, Typography, alpha } from '@mui/material';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import WorkOutlineRoundedIcon from '@mui/icons-material/WorkOutlineRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
@@ -133,6 +134,7 @@ export default function NavbarAccountMenu({ user, actions }) {
         <AccountHeader user={user} onClick={run(actions.goToProfile)} />
         <Divider sx={accountDividerSx} />
         <AccountItem icon={PersonRoundedIcon} label="My profile" onClick={run(actions.goToProfile)} />
+        <AccountItem icon={WorkOutlineRoundedIcon} label="Job profile" onClick={run(actions.goToJobProfile)} />
         <AccountItem icon={SettingsRoundedIcon} label="Settings" onClick={run(actions.goToSettings)} />
         <AccountItem icon={HelpOutlineRoundedIcon} label="Help & support" onClick={run(actions.goToHelp)} />
         {!user?.isPro && <AccountItem icon={VpnKeyRoundedIcon} label="Activate license" onClick={run(actions.openLicenseModal)} />}

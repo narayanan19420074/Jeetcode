@@ -8,11 +8,11 @@ import FreeAccessBanner from './FreeAccessBanner';
 import EmailVerifyBanner from './EmailVerifyBanner';
 import FriendsRealtime from '../features/friends/friendsRealtime';
 import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
-import { LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
+import { LIBRARY_PAGE_PATHS, LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
 import { DesktopLookProvider, isDashboardPath, usesDesktopLook } from '../features/dashboard/desktop/desktopLook';
 
 // Pages with their own phone header hide the top bar on phones. The bar stays mounted so the coin polling keeps running.
-const PHONE_HEADER_PATHS = ['/aptitude', '/prep', '/you', '/settings', '/plans'];
+const PHONE_HEADER_PATHS = LIBRARY_PAGE_PATHS;
 const PHONE_HEADER_DASHBOARD_VIEWS = ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests'];
 const APTITUDE_LEVEL_PATH = /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?\/?$/;
 

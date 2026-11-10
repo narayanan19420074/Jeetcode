@@ -73,6 +73,7 @@ const TermsPage = lazy(() => import('./features/legal/TermsPage'));
 const RefundPolicyPage = lazy(() => import('./features/legal/RefundPolicyPage'));
 // Help & Support (public, standalone) — FAQ + contact/feedback form
 const HelpPage = lazy(() => import('./features/help/HelpPage'));
+const JobProfilePage = lazy(() => import('./features/jobProfile/JobProfilePage'));
 const NotFoundPage = lazy(() => import('./features/errors/NotFoundPage'));
 
 // "/" is the marketing home page for visitors only. A signed-in user goes straight
@@ -209,6 +210,7 @@ export default function App() {
           element={<Suspense fallback={<PageLoader />}><AptitudePracticeQuestionPage /></Suspense>}
         />
         <Route path="/companies" element={<Navigate to="/prep" replace />} />
+        <Route path="/job-profile" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><JobProfilePage /></Suspense></ProtectedRoute>} />
         <Route path="/you" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><YouPage /></Suspense></ProtectedRoute>} />
         <Route path="/prep" element={<Suspense fallback={<PageLoader />}><PrepCompaniesPage /></Suspense>} />
         <Route path="/community" element={<Suspense fallback={<PageLoader />}><CommunityPage /></Suspense>} />

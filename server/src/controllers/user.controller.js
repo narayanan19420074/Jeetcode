@@ -10,6 +10,7 @@ import { SupportChat } from '../models/SupportChat.js';
 import { SupportMessage } from '../models/SupportMessage.js';
 import { REFRESH_COOKIE } from '../services/authToken.service.js';
 import { logSecurityEvent } from '../services/securityLog.service.js';
+import { deleteJobProfile, getJobProfile } from '../services/jobProfile.service.js';
 import { describeUserAgent } from '../utils/userAgent.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
@@ -210,6 +211,48 @@ export const getSecurityLog = asyncHandler(async (req, res) => {
 });
 
 // GET /api/users/me/export — everything we hold about the account, as a JSON download.
+const loadExportRows = async (user) => {
+  const [submissions, aptitudeAttempts, aptitudeProgress, questionProgress, prepProgress, jobProfile] = await Promise.all([
+    Submission.find({ user: user._id }).sort({ createdAt: -1 }).limit(5000).populate('problem', 'slug').lean(),
+    AptitudeAttempt.find({ user: user._id }).select('-answers').populate('pattern', 'slug').lean(),
+    AptitudeProgress.find({ user: user._id }).populate('pattern', 'slug').lean(),
+    AptitudeQuestionProgress.find({ user: user._id }).lean(),
+    UserPrepProgress.find({ user: user._id }).lean(),
+    getJobProfile(user._id),
+  ]);
+  return { submissions, aptitudeAttempts, aptitudeProgress, questionProgress, prepProgress, jobProfile };
+};
+
+const exportSubmission = (s) => ({
+  problem: s.problem?.slug ?? null,
+  language: s.language,
+  mode: s.mode,
+  status: s.status,
+  passed: `${s.passedCount}/${s.totalCount}`,
+  runtimeMs: s.runtimeMs,
+  memoryKb: s.memoryKb,
+  code: s.code,
+  submittedAt: s.createdAt,
+});
+
+const exportAptitude = ({ aptitudeProgress, aptitudeAttempts, questionProgress }) => ({
+  progress: aptitudeProgress.map((p) => ({ pattern: p.pattern?.slug ?? null, bestScore: p.bestScore, attempts: p.attemptsCount, unlocked: p.unlocked, learnCompleted: p.learnCompleted })),
+  attempts: aptitudeAttempts.map((a) => ({ pattern: a.pattern?.slug ?? null, mode: a.mode, status: a.status, score: a.score, correct: a.correctCount, total: a.totalCount, startedAt: a.startedAt, submittedAt: a.submittedAt })),
+  questionProgress: questionProgress.length,
+});
+
+const buildExportPayload = (user, rows) => ({
+  exportedAt: new Date().toISOString(),
+  profile: user.toPublicJSON(),
+  jobProfile: rows.jobProfile,
+  bookmarks: user.bookmarks.map((p) => ({ slug: p.slug, title: p.title })),
+  solvedProblems: user.solvedProblems.map((p) => ({ slug: p.slug, title: p.title, difficulty: p.difficulty })),
+  submissions: rows.submissions.map(exportSubmission),
+  aptitude: exportAptitude(rows),
+  prepProgress: rows.prepProgress.length,
+  securityLog: (user.securityLog ?? []).map((e) => ({ type: e.type, detail: e.detail, at: e.at, ip: e.ip })),
+});
+
 export const exportData = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user.id)
     .select('+securityLog')
@@ -217,44 +260,12 @@ export const exportData = asyncHandler(async (req, res) => {
     .populate('solvedProblems', 'slug title difficulty');
   if (!user) throw ApiError.unauthorized('User no longer exists');
 
-  const [submissions, aptitudeAttempts, aptitudeProgress, questionProgress, prepProgress] = await Promise.all([
-    Submission.find({ user: user._id }).sort({ createdAt: -1 }).limit(5000).populate('problem', 'slug').lean(),
-    AptitudeAttempt.find({ user: user._id }).select('-answers').populate('pattern', 'slug').lean(),
-    AptitudeProgress.find({ user: user._id }).populate('pattern', 'slug').lean(),
-    AptitudeQuestionProgress.find({ user: user._id }).lean(),
-    UserPrepProgress.find({ user: user._id }).lean(),
-  ]);
-
+  const rows = await loadExportRows(user);
   await logSecurityEvent(user._id, req, 'data_exported');
-
-  const payload = {
-    exportedAt: new Date().toISOString(),
-    profile: user.toPublicJSON(),
-    bookmarks: user.bookmarks.map((p) => ({ slug: p.slug, title: p.title })),
-    solvedProblems: user.solvedProblems.map((p) => ({ slug: p.slug, title: p.title, difficulty: p.difficulty })),
-    submissions: submissions.map((s) => ({
-      problem: s.problem?.slug ?? null,
-      language: s.language,
-      mode: s.mode,
-      status: s.status,
-      passed: `${s.passedCount}/${s.totalCount}`,
-      runtimeMs: s.runtimeMs,
-      memoryKb: s.memoryKb,
-      code: s.code,
-      submittedAt: s.createdAt,
-    })),
-    aptitude: {
-      progress: aptitudeProgress.map((p) => ({ pattern: p.pattern?.slug ?? null, bestScore: p.bestScore, attempts: p.attemptsCount, unlocked: p.unlocked, learnCompleted: p.learnCompleted })),
-      attempts: aptitudeAttempts.map((a) => ({ pattern: a.pattern?.slug ?? null, mode: a.mode, status: a.status, score: a.score, correct: a.correctCount, total: a.totalCount, startedAt: a.startedAt, submittedAt: a.submittedAt })),
-      questionProgress: questionProgress.length,
-    },
-    prepProgress: prepProgress.length,
-    securityLog: (user.securityLog ?? []).map((e) => ({ type: e.type, detail: e.detail, at: e.at, ip: e.ip })),
-  };
 
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Content-Disposition', `attachment; filename="jeetcode-${user.handle}-export.json"`);
-  res.send(JSON.stringify(payload, null, 2));
+  res.send(JSON.stringify(buildExportPayload(user, rows), null, 2));
 });
 
 // POST /api/users/me/delete — body: { confirm: <your handle>, password? }.
@@ -285,6 +296,7 @@ export const deleteAccount = asyncHandler(async (req, res) => {
     UserPrepProgress.deleteMany({ user: user._id }),
     SupportChat.deleteMany({ user: user._id }),
     SupportMessage.deleteMany({ user: user._id }),
+    deleteJobProfile(user._id),
   ]);
   await User.deleteOne({ _id: user._id });
 

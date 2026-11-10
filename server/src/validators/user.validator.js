@@ -18,7 +18,7 @@ const httpUrl = (max) =>
 const localAvatarPath = z.string().regex(/^\/api\/users\/avatar\/[a-f0-9]{24}(?:\?v=\d+)?$/);
 
 // '' clears the field.
-const optionalUrl = (max) => z.union([z.literal(''), httpUrl(max)]);
+export const optionalUrl = (max) => z.union([z.literal(''), httpUrl(max)]);
 
 const socialSchema = z
   .object({
