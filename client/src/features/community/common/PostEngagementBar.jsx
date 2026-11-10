@@ -18,7 +18,7 @@ function ViewCount({ value }) {
 
 // The row under a feed post: like, comment, repost and share, then the view count. Liking is the same vote the post page uses.
 export default function PostEngagementBar({ post }) {
-  const vote = useVote({ targetType: 'post', targetId: post._id, score: post.score, myVote: post.myVote, isMine: post.isMine });
+  const vote = useVote({ targetType: 'post', targetId: post._id, score: post.score, myVote: post.myVote });
   const repost = useRepostPost(post);
   const share = useSharePost(post);
   return (

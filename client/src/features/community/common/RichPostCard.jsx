@@ -3,12 +3,26 @@ import { Box, Typography } from '@mui/material';
 import PostCardHeader from './PostCardHeader';
 import PostEngagementBar from './PostEngagementBar';
 import { communityImageUrl } from './imageUpload';
+import { clamp } from '../../workspace/community/CommunityBits';
 import { LIB_TRACKING } from '../../dashboard/components/libraryStyle';
-import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { FEED_IMAGE_FRAME, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 const PREVIEW_CHARS = 140;
-// The photo runs edge to edge inside the card, at its own proportions, like a LinkedIn photo post.
-const coverSx = { display: 'block', width: (theme) => `calc(100% + ${theme.spacing(3)})`, mx: -1.5, mt: 1, borderRadius: RADII_PX.square };
+// A post never grows past these lines in the feed, whatever its length; the rest is read on the post page.
+const TITLE_LINES = 2;
+const TEXT_LINES = 3;
+// Every photo is shown in the same portrait frame, edge to edge inside the card, so all posts keep the same layout.
+// Photos that were not cropped when the post was written are centred and trimmed to the frame.
+const frameSx = {
+  position: 'relative',
+  width: (theme) => `calc(100% + ${theme.spacing(3)})`,
+  mx: -1.5,
+  mt: 1,
+  aspectRatio: FEED_IMAGE_FRAME.aspectRatio,
+  overflow: 'hidden',
+  bgcolor: 'action.hover',
+};
+const coverSx = { position: 'absolute', inset: 0, display: 'block', width: SIZES.fill, height: SIZES.fill, objectFit: 'cover' };
 
 const cardSx = { px: 1.5, pt: 1, pb: 0, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card } };
 const contentLinkSx = { display: 'block', mt: 1.25, textDecoration: 'none', color: 'inherit' };
@@ -26,8 +40,8 @@ function PostText({ title, excerpt }) {
   const preview = previewOf(excerpt);
   return (
     <>
-      <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.4 }}>{title}</Typography>
-      <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.body, lineHeight: 1.45, letterSpacing: LIB_TRACKING }}>
+      <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.4, ...clamp(TITLE_LINES) }}>{title}</Typography>
+      <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.body, lineHeight: 1.45, letterSpacing: LIB_TRACKING, ...clamp(TEXT_LINES) }}>
         {preview.text}
         {preview.cut && <Box component="span" sx={mutedSx}>… more</Box>}
       </Typography>
@@ -43,7 +57,11 @@ export default function RichPostCard({ post, onRemoved }) {
       <PostCardHeader post={post} onRemoved={onRemoved} />
       <Box component={RouterLink} to={`/community/${post._id}`} sx={contentLinkSx}>
         <PostText title={post.title} excerpt={post.excerpt} />
-        {post.coverImage && <Box component="img" src={communityImageUrl(post.coverImage)} alt="" loading="lazy" sx={coverSx} />}
+        {post.coverImage && (
+          <Box sx={frameSx}>
+            <Box component="img" src={communityImageUrl(post.coverImage)} alt="" loading="lazy" sx={coverSx} />
+          </Box>
+        )}
       </Box>
       <Box sx={actionsSx}>
         <PostEngagementBar post={post} />

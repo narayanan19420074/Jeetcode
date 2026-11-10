@@ -327,7 +327,9 @@ export const castVote = asyncHandler(async (req, res) => {
   }
   const target = await loadTarget(targetType, targetId);
   if (target.isDeleted) throw ApiError.badRequest('This comment was deleted');
-  if (isOwner(target, req.user)) throw ApiError.badRequest("You can't vote on your own post");
+  // Authors may like their own feed post, like on other social feeds; solutions, threads and comments stay protected
+  // so nobody can raise their own ranking in the problem discussions.
+  if (targetType !== 'post' && isOwner(target, req.user)) throw ApiError.badRequest("You can't vote on your own post");
 
   const result = await applyVote({ userId: req.user.id, targetType, targetId: target._id, value });
   new ApiResponse(200, result).send(res);

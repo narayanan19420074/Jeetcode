@@ -44,7 +44,7 @@ function BarMessage({ text }) {
 
 // Fixed bar at the bottom of an open post: vote up or down, the view count and a field to write a comment.
 export default function PostActionBar({ post, onCommentPosted }) {
-  const vote = useVote({ targetType: 'post', targetId: post._id, score: post.score, myVote: post.myVote, isMine: post.isMine });
+  const vote = useVote({ targetType: 'post', targetId: post._id, score: post.score, myVote: post.myVote });
   const comment = usePostComment(post._id, onCommentPosted);
   return (
     <Box sx={barSx}>

@@ -9,7 +9,7 @@ const MAX_UPLOAD_BYTES = 2 * 1024 * 1024; // keep in sync with MAX_IMAGE_BYTES o
 
 export const communityImageUrl = (id) => `${apiClient.defaults.baseURL}/community/images/${id}`;
 
-const canvasToJpeg = (canvas) =>
+export const canvasToJpeg = (canvas) =>
   new Promise((resolve, reject) => {
     canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error('The image could not be processed.'))), 'image/jpeg', JPEG_QUALITY);
   });
@@ -32,7 +32,11 @@ async function prepareImage(file) {
 }
 
 export async function uploadImageFile(file) {
-  const blob = await prepareImage(file);
+  return uploadImageBlob(await prepareImage(file));
+}
+
+// Used for images that are already JPEG, such as the result of the crop dialog.
+export async function uploadImageBlob(blob) {
   if (blob.size > MAX_UPLOAD_BYTES) throw new Error('The image is too large. Choose a smaller one.');
   const { data } = await communityApi.uploadImage(blob);
   return { id: data.data.id };

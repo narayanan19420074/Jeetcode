@@ -1,9 +1,11 @@
 import { useRef } from 'react';
 import { IconButton } from '@mui/material';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
+import ImageCropDialog from './ImageCropDialog';
 import { ACCEPTED_IMAGE_TYPES } from './imageUpload';
 
-// Opens the photo picker. The file input is hidden; the icon button is the control people see.
+// Opens the photo picker. The file input is hidden; the icon button is the control people see. A chosen photo then
+// opens the crop dialog.
 export default function AddImageButton({ uploads, disabled, sx }) {
   const inputRef = useRef(null);
   const handleChange = (event) => {
@@ -16,6 +18,7 @@ export default function AddImageButton({ uploads, disabled, sx }) {
         <ImageOutlinedIcon />
       </IconButton>
       <input ref={inputRef} type="file" accept={ACCEPTED_IMAGE_TYPES.join(',')} multiple hidden onChange={handleChange} />
+      <ImageCropDialog uploads={uploads} />
     </>
   );
 }
