@@ -11,6 +11,12 @@ import { FONT_SIZES, SIZES } from '../../../app/design/designTokens';
 const screenSx = { height: SIZES.viewportHeight, bgcolor: 'var(--lib-bg)', px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 'env(safe-area-inset-bottom)' };
 const scrollAreaSx = { flex: 1, minHeight: SIZES.flexShrinkMinHeight, overflowY: 'auto', pt: 2 };
 
+// Tapping the empty area under the text puts the cursor in the post body. Taps on the title or the body themselves
+// must keep their own focus, so only taps on the blank area count.
+const focusBodyOnBlankTap = (bodyRef) => (event) => {
+  if (event.target === event.currentTarget) bodyRef.current?.focus();
+};
+
 function ComposeScreenBody({ compose, onClose }) {
   const { draft, update, publish, saving, error, clearError } = compose;
   const user = useSelector((state) => state.auth.user);
@@ -19,8 +25,7 @@ function ComposeScreenBody({ compose, onClose }) {
     <Stack sx={screenSx}>
       <ComposeTopBar onClose={onClose} onPost={publish} saving={saving} />
       {error && <Typography role="alert" sx={{ pt: 1.5, fontSize: FONT_SIZES.bodyLg, color: 'error.main' }}>{error}</Typography>}
-      {/* Tapping the empty area under the text still puts the cursor in the post body. */}
-      <Box onClick={() => bodyRef.current?.focus()} sx={scrollAreaSx}>
+      <Box onClick={focusBodyOnBlankTap(bodyRef)} sx={scrollAreaSx}>
         <ComposeTextFields draft={draft} update={update} saving={saving} clearError={clearError} bodyRef={bodyRef} />
       </Box>
       <ComposeBottomBar draft={draft} update={update} user={user} saving={saving} onInsertCode={insertCodeBlock} />
