@@ -15,17 +15,18 @@ function EmptyFeed({ category }) {
   return <EmptyBlock icon={<ForumRoundedIcon />} title="No posts yet" text="Be the first to start a conversation in this category." />;
 }
 
-function FeedRows({ items, onRemoved }) {
+function FeedRows({ items, onRemoved, PostCard }) {
   return (
     <Box sx={feedStripSx}>
       {items.map((post) => (
-        <RichPostCard key={post._id} post={post} onRemoved={onRemoved} />
+        <PostCard key={post._id} post={post} onRemoved={onRemoved} />
       ))}
     </Box>
   );
 }
 
-export default function PostList({ feed, category }) {
+// `PostCard` lets the phone feed draw its own card; the desktop feed uses the default.
+export default function PostList({ feed, category, PostCard = RichPostCard }) {
   const { items, loading, error, hasMore, loadMore, reload, removePosts } = feed;
   if (error && items.length === 0) {
     return (
@@ -38,7 +39,7 @@ export default function PostList({ feed, category }) {
   if (items.length === 0) return <EmptyFeed category={category} />;
   return (
     <>
-      <FeedRows items={items} onRemoved={removePosts} />
+      <FeedRows items={items} onRemoved={removePosts} PostCard={PostCard} />
       {hasMore && (
         <Button fullWidth onClick={loadMore} disabled={loading} sx={{ my: 2 }}>
           {loading ? 'Loading…' : 'Load more'}

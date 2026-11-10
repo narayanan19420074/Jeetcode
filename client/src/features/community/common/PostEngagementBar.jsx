@@ -18,8 +18,9 @@ function ViewCount({ value }) {
   );
 }
 
-// The row under a feed post: like, comment, repost and share, then the view count. Liking is the same vote the post page uses.
-export default function PostEngagementBar({ post }) {
+// The row under a feed post: like, comment, repost and share, then the view count (or `trailing`, which the phone feed
+// uses for its reactions). Liking is the same vote the post page uses.
+export default function PostEngagementBar({ post, trailing }) {
   const vote = useVote({ targetType: 'post', targetId: post._id, score: post.score, myVote: post.myVote });
   const repost = useRepostPost(post);
   const share = useSharePost(post);
@@ -32,7 +33,7 @@ export default function PostEngagementBar({ post }) {
         <EngagementButton icon={RepostOutlineIcon} label="Repost" count={repost.count} active={repost.on} onClick={repost.toggle} disabled={repost.busy} />
         <EngagementButton icon={SendOutlineIcon} label="Share" onClick={share} />
         <Box sx={{ flex: 1 }} />
-        <ViewCount value={post.viewCount} />
+        {trailing ?? <ViewCount value={post.viewCount} />}
       </Stack>
       <CommentsSheet post={post} open={comments.open} onClose={comments.hide} onCountChange={comments.changeCount} />
       {vote.error && <Typography role="alert" sx={{ fontSize: FONT_SIZES.caption, color: 'error.main' }}>{vote.error}</Typography>}

@@ -4,17 +4,22 @@ import CategoryTabs from '../common/CategoryTabs';
 import { LibraryFont } from '../../dashboard/components/libraryStyle';
 import { navActiveColor } from '../../../components/navbar/navLinkStyles';
 import PostList from '../common/PostList';
+import CommunityTopBar from './CommunityTopBar';
+import PhonePostCard from './PhonePostCard';
 import ComposePostDialog from '../common/ComposePostDialog';
 import { SIZES } from '../../../app/design/designTokens';
 
-// Phone layout: scrolling category tabs on top, full-width feed, floating compose button above the bottom bar.
+// Phone layout: top bar with search, scrolling category tabs, full-width feed, floating compose button above the bottom bar.
 export default function CommunityMobileView({ page }) {
   const { category, setCategory, tabs, feed, composeOpen, openCompose, closeCompose } = page;
   return (
     <LibraryFont>
     <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))' }}>
-      <CategoryTabs value={category} onChange={setCategory} options={tabs} />
-      <PostList feed={feed} category={category} />
+      <CommunityTopBar />
+      <Box sx={{ mt: 1 }}>
+        <CategoryTabs value={category} onChange={setCategory} options={tabs} />
+      </Box>
+      <PostList feed={feed} category={category} PostCard={PhonePostCard} />
       <Fab
         aria-label="Create post"
         onClick={openCompose}

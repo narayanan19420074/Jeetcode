@@ -15,5 +15,7 @@ export const SAVED_TAB = { value: SAVED_FEED, label: 'Saved' };
 // Categories a post can be filed under (every tab except the unfiltered feed).
 export const POST_CATEGORY_OPTIONS = FEED_TABS.filter((tab) => tab.value);
 
+export const categoryLabel = (value) => POST_CATEGORY_OPTIONS.find((option) => option.value === value)?.label;
+
 export const POST_TITLE_MAX = 150;
 export const POST_BODY_MAX = 10000;

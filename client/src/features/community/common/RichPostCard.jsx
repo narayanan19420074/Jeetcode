@@ -50,11 +50,12 @@ function PostText({ title, excerpt }) {
 }
 
 // A feed post laid out like a LinkedIn post: author row with Follow and the "..." menu, the text with "…more" and its
-// first image (both open the post), then the like, comment, repost and share row.
-export default function RichPostCard({ post, onRemoved }) {
+// first image (both open the post), then the like, comment, repost and share row. The phone feed swaps in its own
+// `Header` and `engagementTrailing`; everything else is shared.
+export default function RichPostCard({ post, onRemoved, Header = PostCardHeader, engagementTrailing }) {
   return (
     <Box component="article" sx={cardSx}>
-      <PostCardHeader post={post} onRemoved={onRemoved} />
+      <Header post={post} onRemoved={onRemoved} />
       <Box component={RouterLink} to={`/community/${post._id}`} sx={contentLinkSx}>
         <PostText title={post.title} excerpt={post.excerpt} />
         {post.coverImage && (
@@ -64,7 +65,7 @@ export default function RichPostCard({ post, onRemoved }) {
         )}
       </Box>
       <Box sx={actionsSx}>
-        <PostEngagementBar post={post} />
+        <PostEngagementBar post={post} trailing={engagementTrailing} />
       </Box>
     </Box>
   );
