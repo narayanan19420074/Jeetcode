@@ -2,9 +2,11 @@ import { Alert, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormC
 import { MarkdownEditor } from '../../workspace/community/Markdown';
 import useComposePost from './useComposePost';
 import ComposePostScreen from '../mobile/ComposePostScreen';
+import ComposeImageStrip from './ComposeImageStrip';
+import AddImageButton from './AddImageButton';
 import { POST_BODY_MAX, POST_CATEGORY_OPTIONS, POST_TITLE_MAX } from './communityCategories';
 
-function ComposeFields({ draft, update, saving }) {
+function ComposeFields({ draft, update, saving, uploads }) {
   return (
     <Stack spacing={2} sx={{ pt: 1 }}>
       <TextField label="Title" value={draft.title} disabled={saving} onChange={(e) => update('title')(e.target.value.slice(0, POST_TITLE_MAX))} fullWidth />
@@ -14,10 +16,14 @@ function ComposeFields({ draft, update, saving }) {
         ))}
       </TextField>
       <MarkdownEditor label="Post" value={draft.body} onChange={update('body')} maxLength={POST_BODY_MAX} disabled={saving} placeholder="Share your question, experience or advice…" />
-      <FormControlLabel
-        control={<Switch checked={draft.isAnonymous} disabled={saving} onChange={(e) => update('isAnonymous')(e.target.checked)} />}
-        label="Post anonymously"
-      />
+      <ComposeImageStrip uploads={uploads} />
+      <Stack direction="row" alignItems="center" justifyContent="space-between">
+        <FormControlLabel
+          control={<Switch checked={draft.isAnonymous} disabled={saving} onChange={(e) => update('isAnonymous')(e.target.checked)} />}
+          label="Post anonymously"
+        />
+        <AddImageButton uploads={uploads} disabled={saving} />
+      </Stack>
     </Stack>
   );
 }
@@ -29,7 +35,7 @@ export default function ComposePostDialog({ open, onClose, onPublished }) {
     onPublished(post);
     onClose();
   });
-  const { draft, update, publish, saving, error, clearError } = compose;
+  const { draft, update, publish, saving, error, clearError, imageUploads } = compose;
 
   if (fullScreen) return <ComposePostScreen open={open} onClose={onClose} compose={compose} />;
 
@@ -38,7 +44,7 @@ export default function ComposePostDialog({ open, onClose, onPublished }) {
       <DialogTitle>Create post</DialogTitle>
       <DialogContent>
         {error && <Alert severity="error" onClose={clearError} sx={{ mb: 1 }}>{error}</Alert>}
-        <ComposeFields draft={draft} update={update} saving={saving} />
+        <ComposeFields draft={draft} update={update} saving={saving} uploads={imageUploads} />
       </DialogContent>
       <DialogActions sx={{ px: 3, pb: 2 }}>
         <Button onClick={onClose} disabled={saving}>Cancel</Button>

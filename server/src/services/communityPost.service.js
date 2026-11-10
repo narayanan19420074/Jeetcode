@@ -1,6 +1,7 @@
 import { CommunityPost } from '../models/CommunityPost.js';
 import { ApiError } from '../utils/ApiError.js';
 import { AUTHOR_FIELDS, decorate, makeExcerpt, toObjectId } from './community.service.js';
+import { findOwnedImageIds, markImagesAttached } from './communityImage.service.js';
 
 const escapeRegex = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -33,7 +34,9 @@ export async function findPostPage({ category, sort, q, page, limit }) {
 }
 
 export async function createPostForUser(userId, { title, body, category, isAnonymous }) {
-  const post = await CommunityPost.create({ author: userId, title, body, category, isAnonymous, excerpt: makeExcerpt(body) });
+  const imageIds = await findOwnedImageIds(userId, body);
+  const post = await CommunityPost.create({ author: userId, title, body, category, isAnonymous, excerpt: makeExcerpt(body), coverImage: imageIds[0] || '' });
+  await markImagesAttached(imageIds);
   return CommunityPost.findById(post._id).select('-body').populate('author', AUTHOR_FIELDS).lean();
 }
 

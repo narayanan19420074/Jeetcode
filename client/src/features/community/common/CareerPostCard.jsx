@@ -5,10 +5,12 @@ import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineR
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { PostAvatar, authorLabel } from './PostAuthor';
 import { timeAgo } from '../../workspace/community/CommunityBits';
+import { communityImageUrl } from './imageUpload';
 import { LIB_TRACKING } from '../../dashboard/components/libraryStyle';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 const PREVIEW_CHARS = 140;
+const coverSx = { display: 'block', width: SIZES.fill, mt: 1.5, borderRadius: RADII_PX.card };
 
 const cardSx = { display: 'block', px: 2, pt: 2, pb: 1.5, textDecoration: 'none', color: 'inherit', bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card } };
 const mutedSx = { color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING };
@@ -60,6 +62,7 @@ export default function CareerPostCard({ post }) {
     <Box component={RouterLink} to={`/community/${post._id}`} sx={cardSx}>
       <AuthorRow post={post} />
       <PostText title={post.title} excerpt={post.excerpt} />
+      {post.coverImage && <Box component="img" src={communityImageUrl(post.coverImage)} alt="" loading="lazy" sx={coverSx} />}
       <Stack direction="row" spacing={3} sx={{ ...mutedSx, mt: 2 }}>
         <Action icon={ThumbUpOffAltRoundedIcon} value={post.score} label="upvotes" />
         <Action icon={ChatBubbleOutlineRoundedIcon} value={post.commentCount} label="comments" />

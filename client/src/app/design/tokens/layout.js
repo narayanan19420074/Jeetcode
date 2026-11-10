@@ -85,6 +85,8 @@ export const SIZES = {
   // Left column of a phone problem row: the difficulty tag above the solved marker.
   problemDifficultyColumn: 43,
   readingMaxWidth: 720,
+  // Preview of an attached image on the compose screen.
+  composeThumbnail: 80,
   // Page scrollbars: regular on desktop, slim on phones, thin for auto-hide panels.
   scrollbar: { regular: 10, slim: 4, thin: 6 },
 };

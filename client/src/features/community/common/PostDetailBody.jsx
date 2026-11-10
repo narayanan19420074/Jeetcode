@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Divider, Stack } from '@mui/material';
 import PostMeta from './PostMeta';
 import PostActionBar from './PostActionBar';
-import Markdown from '../../workspace/community/Markdown';
+import PostBody from './PostBody';
 import CommentSection from '../../workspace/community/CommentSection';
 
 // An open post: its heading block, the text, the comment thread and the fixed action bar.
@@ -17,7 +17,7 @@ export default function PostDetailBody({ post, onCommentCountChange }) {
     <>
       <Stack spacing={2.5}>
         <PostMeta post={post} />
-        <Markdown source={post.body} />
+        <PostBody source={post.body} />
         <Divider />
         <CommentSection key={threadVersion} kind="posts" targetId={post._id} onCountChange={onCommentCountChange} />
       </Stack>

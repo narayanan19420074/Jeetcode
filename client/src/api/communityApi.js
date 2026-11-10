@@ -22,6 +22,7 @@ export const communityApi = {
   // Community feed posts (global, not tied to a problem)
   listPosts: (params) => apiClient.get(`${base}/posts`, { params }),
   createPost: (body) => apiClient.post(`${base}/posts`, body),
+  uploadImage: (blob) => apiClient.post(`${base}/images`, blob, { headers: { 'Content-Type': blob.type } }),
   getPost: (id) => apiClient.get(`${base}/posts/${id}`),
   deletePost: (id) => apiClient.delete(`${base}/posts/${id}`),
 

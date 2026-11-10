@@ -38,6 +38,8 @@ import {
   createReport,
 } from '../controllers/community.controller.js';
 import { listPosts, createPost, getPost, deletePost } from '../controllers/communityPost.controller.js';
+import { uploadImage, serveImage } from '../controllers/communityImage.controller.js';
+import { readImageBody } from '../middlewares/imageBody.middleware.js';
 
 const router = Router();
 
@@ -66,6 +68,10 @@ router.get('/posts', attachUserIfPresent, validate(listPostsQuerySchema, 'query'
 router.post('/posts', ...write, validate(createPostSchema), createPost);
 router.get('/posts/:id', attachUserIfPresent, getPost);
 router.delete('/posts/:id', ...write, deletePost);
+
+// Post images: uploading needs an account, viewing is public because posts can be read by guests.
+router.post('/images', ...write, readImageBody, uploadImage);
+router.get('/images/:id', serveImage);
 
 // Comments (nested replies) — same handlers for solutions and threads.
 router.get('/solutions/:id/comments', ...read, setTargetType('solution'), listComments);

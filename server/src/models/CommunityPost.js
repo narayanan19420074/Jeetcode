@@ -11,6 +11,8 @@ const communityPostSchema = new mongoose.Schema(
     title: { type: String, required: true, trim: true, minlength: 3, maxlength: 150 },
     body: { type: String, required: true, maxlength: 10000 },
     excerpt: { type: String, default: '', maxlength: 200 },
+    // Id of the first image in the post; the feed shows it as the post picture.
+    coverImage: { type: String, default: '' },
 
     score: { type: Number, default: 0 },
     commentCount: { type: Number, default: 0 },

@@ -4,6 +4,7 @@ import { LibraryFont, useLibraryPalette } from '../../dashboard/components/libra
 import ComposeTopBar from './ComposeTopBar';
 import ComposeTextFields from './ComposeTextFields';
 import ComposeBottomBar from './ComposeBottomBar';
+import ComposeImageStrip from '../common/ComposeImageStrip';
 import useCodeBlockInsert from '../common/useCodeBlockInsert';
 import { POST_BODY_MAX } from '../common/communityCategories';
 import { FONT_SIZES, SIZES } from '../../../app/design/designTokens';
@@ -18,7 +19,7 @@ const focusBodyOnBlankTap = (bodyRef) => (event) => {
 };
 
 function ComposeScreenBody({ compose, onClose }) {
-  const { draft, update, publish, saving, error, clearError } = compose;
+  const { draft, update, publish, saving, error, clearError, imageUploads } = compose;
   const user = useSelector((state) => state.auth.user);
   const { bodyRef, insertCodeBlock } = useCodeBlockInsert(draft.body, update('body'), POST_BODY_MAX);
   return (
@@ -28,7 +29,8 @@ function ComposeScreenBody({ compose, onClose }) {
       <Box onClick={focusBodyOnBlankTap(bodyRef)} sx={scrollAreaSx}>
         <ComposeTextFields draft={draft} update={update} saving={saving} clearError={clearError} bodyRef={bodyRef} />
       </Box>
-      <ComposeBottomBar draft={draft} update={update} user={user} saving={saving} onInsertCode={insertCodeBlock} />
+      <ComposeImageStrip uploads={imageUploads} />
+      <ComposeBottomBar draft={draft} update={update} user={user} saving={saving} uploads={imageUploads} onInsertCode={insertCodeBlock} />
     </Stack>
   );
 }
