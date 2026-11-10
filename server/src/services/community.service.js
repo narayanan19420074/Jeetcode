@@ -5,6 +5,7 @@ import { Thread } from '../models/Thread.js';
 import { CommunityPost } from '../models/CommunityPost.js';
 import { Comment } from '../models/Comment.js';
 import { Vote } from '../models/Vote.js';
+import { PostRepost } from '../models/PostRepost.js';
 import { ApiError } from '../utils/ApiError.js';
 
 export const MAX_COMMENT_DEPTH = 3; // 0..3 => 4 visible levels
@@ -141,6 +142,8 @@ export async function cascadeDelete(targetType, doc) {
     Comment.deleteMany({ targetType, target: doc._id }),
     Vote.deleteMany({ targetType: 'comment', target: { $in: commentIds } }),
     Vote.deleteMany({ targetType, target: doc._id }),
+    // Reposts only exist for feed posts; they must go with the post so counts and lists never point at a deleted post.
+    targetType === 'post' ? PostRepost.deleteMany({ post: doc._id }) : null,
     doc.deleteOne(),
   ]);
 }

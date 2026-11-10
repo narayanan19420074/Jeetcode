@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useCommunityFeed from './useCommunityFeed';
+import { FEED_TABS, SAVED_TAB } from './communityCategories';
 
 // State shared by the phone and desktop feed views: active tab, the feed itself and the compose dialog.
 export default function useCommunityPage() {
@@ -18,5 +19,7 @@ export default function useCommunityPage() {
     setComposeOpen(true);
   };
 
-  return { category, setCategory, feed, composeOpen, openCompose, closeCompose: () => setComposeOpen(false) };
+  const tabs = isAuthenticated ? [...FEED_TABS, SAVED_TAB] : FEED_TABS;
+
+  return { category, setCategory, tabs, feed, composeOpen, openCompose, closeCompose: () => setComposeOpen(false) };
 }

@@ -26,6 +26,16 @@ export const communityApi = {
   getPost: (id) => apiClient.get(`${base}/posts/${id}`),
   deletePost: (id) => apiClient.delete(`${base}/posts/${id}`),
 
+  // Feed engagement: save, repost, hide ("Not interested" and "Hide posts by ...") and follow an author
+  savePost: (id) => apiClient.put(`${base}/posts/${id}/save`),
+  unsavePost: (id) => apiClient.delete(`${base}/posts/${id}/save`),
+  repostPost: (id) => apiClient.put(`${base}/posts/${id}/repost`),
+  unrepostPost: (id) => apiClient.delete(`${base}/posts/${id}/repost`),
+  hidePost: (id) => apiClient.put(`${base}/posts/${id}/hide`),
+  hidePostAuthor: (id) => apiClient.put(`${base}/posts/${id}/hide-author`),
+  followUser: (userId) => apiClient.put(`${base}/follows/${userId}`),
+  unfollowUser: (userId) => apiClient.delete(`${base}/follows/${userId}`),
+
   // Comments (nested replies)
   listComments: (kind, id) => apiClient.get(`${base}/${kind}/${id}/comments`),
   createComment: (kind, id, body) => apiClient.post(`${base}/${kind}/${id}/comments`, body),

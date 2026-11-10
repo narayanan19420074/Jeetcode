@@ -1,7 +1,7 @@
-import { Link as RouterLink, useParams } from 'react-router-dom';
+import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import { Alert, Box, IconButton, Skeleton, Stack } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import { LibraryFont, libBackBtnSx } from '../dashboard/components/libraryStyle';
+import { LibraryFont, libBackBtnSx, libIconBtnSx } from '../dashboard/components/libraryStyle';
 import usePost from './common/usePost';
 import PostDetailBody from './common/PostDetailBody';
 import PostMenu from './common/PostMenu';
@@ -20,6 +20,9 @@ const pageSx = (theme) => ({
 export default function PostDetailPage() {
   const { postId } = useParams();
   const { post, loading, error, changeCommentCount } = usePost(postId);
+  const navigate = useNavigate();
+  // Deleting or hiding the open post leaves nothing to show, so go back to the feed.
+  const leavePost = () => navigate('/community', { replace: true });
   return (
     <LibraryFont>
       <Box sx={pageSx}>
@@ -27,7 +30,7 @@ export default function PostDetailPage() {
           <IconButton component={RouterLink} to="/community" aria-label="Back to community" sx={libBackBtnSx}>
             <ArrowBackRoundedIcon />
           </IconButton>
-          {post && <PostMenu post={post} />}
+          {post && <PostMenu post={post} onRemoved={leavePost} triggerSx={libIconBtnSx} />}
         </Stack>
         {loading && <Skeleton variant="rounded" height={SIZES.avatar.lg * 4} />}
         {error && <Alert severity="error">{error}</Alert>}

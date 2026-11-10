@@ -16,6 +16,7 @@ const communityPostSchema = new mongoose.Schema(
 
     score: { type: Number, default: 0 },
     commentCount: { type: Number, default: 0 },
+    repostCount: { type: Number, default: 0 },
     viewCount: { type: Number, default: 0 },
     lastActivityAt: { type: Date, default: Date.now },
   },

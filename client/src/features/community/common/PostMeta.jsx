@@ -1,5 +1,6 @@
 import { Box, Chip, Stack, Typography } from '@mui/material';
 import { PostAvatar, authorLabel } from './PostAuthor';
+import FollowButton from './FollowButton';
 import { POST_CATEGORY_OPTIONS } from './communityCategories';
 import { timeAgo } from '../../workspace/community/CommunityBits';
 import { LIB_TRACKING, libChipSx } from '../../dashboard/components/libraryStyle';
@@ -16,7 +17,8 @@ export default function PostMeta({ post }) {
       <Typography component="h1" sx={{ fontSize: FONT_SIZES.displayLg, lineHeight: 1.25, fontWeight: FONT_WEIGHTS.bold }}>{post.title}</Typography>
       <Stack direction="row" alignItems="center" spacing={1.5}>
         <PostAvatar author={post.author} size={SIZES.avatar.md} />
-        <Typography noWrap sx={{ ...mutedSx, fontSize: FONT_SIZES.subheading }}>{authorLabel(post.author)}</Typography>
+        <Typography noWrap sx={{ ...mutedSx, flex: 1, fontSize: FONT_SIZES.subheading }}>{authorLabel(post.author)}</Typography>
+        <FollowButton post={post} />
       </Stack>
       {category && (
         <Box>

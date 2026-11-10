@@ -66,6 +66,8 @@ export const listPostsQuerySchema = z.object({
   category: z.enum(POST_CATEGORIES).optional(),
   sort: z.enum(['new', 'top']).default('new'),
   q: z.string().trim().max(60).optional(),
+  // `true` returns only the posts the signed-in user saved.
+  saved: z.enum(['true', 'false']).optional(),
   page,
   limit,
 });

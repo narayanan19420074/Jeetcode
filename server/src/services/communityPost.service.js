@@ -2,6 +2,8 @@ import { CommunityPost } from '../models/CommunityPost.js';
 import { ApiError } from '../utils/ApiError.js';
 import { AUTHOR_FIELDS, decorate, makeExcerpt, toObjectId } from './community.service.js';
 import { findOwnedImageIds, markImagesAttached } from './communityImage.service.js';
+import { applyViewerPreferences } from './communityPreference.service.js';
+import { addViewerState } from './communityViewerState.service.js';
 
 const escapeRegex = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -21,11 +23,12 @@ const hideAnonymousAuthor = (post) => (post.isAnonymous ? { ...post, author: nul
 
 export async function presentPosts(rows, user) {
   const decorated = await decorate(rows, 'post', user);
-  return decorated.map(hideAnonymousAuthor);
+  const withViewerState = await addViewerState(decorated, user);
+  return withViewerState.map(hideAnonymousAuthor);
 }
 
-export async function findPostPage({ category, sort, q, page, limit }) {
-  const filter = buildPostFilter({ category, q });
+export async function findPostPage({ category, sort, q, saved, page, limit }, user) {
+  const filter = await applyViewerPreferences(buildPostFilter({ category, q }), user, saved === 'true');
   const [rows, total] = await Promise.all([
     CommunityPost.find(filter).select('-body').sort(postSortSpec(sort)).skip((page - 1) * limit).limit(limit).populate('author', AUTHOR_FIELDS).lean(),
     CommunityPost.countDocuments(filter),

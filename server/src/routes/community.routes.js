@@ -39,6 +39,16 @@ import {
 } from '../controllers/community.controller.js';
 import { listPosts, createPost, getPost, deletePost } from '../controllers/communityPost.controller.js';
 import { uploadImage, serveImage } from '../controllers/communityImage.controller.js';
+import {
+  savePost,
+  unsavePost,
+  repostPost,
+  unrepostPost,
+  hidePost,
+  hidePostAuthor,
+  followUser,
+  unfollowUser,
+} from '../controllers/communityEngagement.controller.js';
 import { readImageBody } from '../middlewares/imageBody.middleware.js';
 
 const router = Router();
@@ -68,6 +78,16 @@ router.get('/posts', attachUserIfPresent, validate(listPostsQuerySchema, 'query'
 router.post('/posts', ...write, validate(createPostSchema), createPost);
 router.get('/posts/:id', attachUserIfPresent, getPost);
 router.delete('/posts/:id', ...write, deletePost);
+
+// Feed engagement (all idempotent: repeating a request leaves the same state).
+router.put('/posts/:id/save', ...write, savePost);
+router.delete('/posts/:id/save', ...write, unsavePost);
+router.put('/posts/:id/repost', ...write, repostPost);
+router.delete('/posts/:id/repost', ...write, unrepostPost);
+router.put('/posts/:id/hide', ...write, hidePost);
+router.put('/posts/:id/hide-author', ...write, hidePostAuthor);
+router.put('/follows/:userId', ...write, followUser);
+router.delete('/follows/:userId', ...write, unfollowUser);
 
 // Post images: uploading needs an account, viewing is public because posts can be read by guests.
 router.post('/images', ...write, readImageBody, uploadImage);

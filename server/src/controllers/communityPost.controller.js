@@ -8,7 +8,7 @@ import { deleteImagesOfPost } from '../services/communityImage.service.js';
 // GET /community/posts
 export const listPosts = asyncHandler(async (req, res) => {
   const { page, limit } = req.query;
-  const { rows, total } = await findPostPage(req.query);
+  const { rows, total } = await findPostPage(req.query, req.user);
   const items = await presentPosts(rows, req.user);
   new ApiResponse(200, { items, pagination: { page, limit, total, totalPages: Math.ceil(total / limit) } }).send(res);
 });

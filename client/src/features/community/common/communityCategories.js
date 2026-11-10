@@ -8,8 +8,9 @@ export const FEED_TABS = [
   { value: 'general', label: 'General' },
 ];
 
-// The Career tab shows its posts in a LinkedIn-style feed (see RichPostCard).
-export const CAREER_CATEGORY = 'career';
+// The Saved tab is not a category: it lists the posts the signed-in user saved, and is shown only to signed-in users.
+export const SAVED_FEED = 'saved';
+export const SAVED_TAB = { value: SAVED_FEED, label: 'Saved' };
 
 // Categories a post can be filed under (every tab except the unfiltered feed).
 export const POST_CATEGORY_OPTIONS = FEED_TABS.filter((tab) => tab.value);
