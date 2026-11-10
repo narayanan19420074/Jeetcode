@@ -1,9 +1,8 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Button, Divider, Drawer, IconButton, Tooltip, Typography } from '@mui/material';
+import { Box, Button, Divider, Drawer, IconButton, Tooltip } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
-import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
@@ -12,13 +11,13 @@ import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import InsightsRoundedIcon from '@mui/icons-material/InsightsRounded';
 import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
-import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, RADII_PX, SIZES } from '../../app/design/designTokens';
 import { LIB_FONT, LibraryFont } from '../../features/dashboard/components/libraryStyle';
 import ProBadge from '../ProBadge';
 import { LogoMark, LogoName } from './NavbarBrand';
 import NavbarMenuRow from './NavbarMenuRow';
 import { DASH_SECTIONS, isActivePath } from './navConfig';
-import { TRACKING, footerIconSx, libPal, phoneBtnSx } from './navbarTheme';
+import { footerIconSx, libPal, phoneBtnSx } from './navbarTheme';
 
 const drawerPaperSx = {
   width: SIZES.drawerWidth,
@@ -53,26 +52,38 @@ function DrawerHeader({ mode, onToggleTheme, onClose }) {
   );
 }
 
-// Coin balance shown at the end of the Store row; it opens the same Store page as the row itself.
-function StoreCoinsBadge({ coins }) {
-  return (
-    <Box aria-label={`${coins} coins`} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-      <MonetizationOnRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'warning.main' }} />
-      <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums' }}>{coins.toLocaleString('en-IN')}</Typography>
-    </Box>
-  );
-}
+// Phone menu rows, most used first: own progress, learning plan and company prep, then competition and
+// social, then Explore, Store and Plans. Dashboard sections come from DASH_SECTIONS (looked up by view).
+const dashRow = (view) => ({ ...DASH_SECTIONS.find((section) => section.view === view), isDashboard: true });
+const DRAWER_ROWS = [
+  { to: '/you', label: 'My stats', icon: InsightsRoundedIcon, signedInOnly: true },
+  dashRow('plans'),
+  { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
+  dashRow('contest'),
+  dashRow('quests'),
+  dashRow('leaderboard'),
+  dashRow('friends'),
+  dashRow('explore'),
+  { to: '/store', label: 'Store', icon: StorefrontRoundedIcon },
+  { to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon },
+];
 
 // Dashboard sections are active when the dashboard is open on that view (no view = the default section).
-function DrawerLinks({ pathname, dashView, user, coins, showCoins, onNavigate }) {
+const isRowActive = (row, pathname, dashView) => (row.isDashboard ? pathname === '/dashboard' && (dashView || null) === row.view : isActivePath(pathname, row.to));
+
+function DrawerLinks({ pathname, dashView, user, isAuthenticated, onNavigate }) {
   return (
     <Box>
-      {showCoins && <NavbarMenuRow to="/you" label="My stats" icon={InsightsRoundedIcon} active={isActivePath(pathname, '/you')} trailing={user?.isPro ? <ProBadge /> : null} onNavigate={onNavigate} />}
-      <NavbarMenuRow to="/store" label="Store" icon={StorefrontRoundedIcon} active={isActivePath(pathname, '/store')} trailing={showCoins ? <StoreCoinsBadge coins={coins} /> : null} onNavigate={onNavigate} />
-      <NavbarMenuRow to="/prep" label="Companies" icon={BusinessRoundedIcon} active={isActivePath(pathname, '/prep')} onNavigate={onNavigate} />
-      <NavbarMenuRow to="/plans" label="Plans" icon={WorkspacePremiumRoundedIcon} active={isActivePath(pathname, '/plans')} onNavigate={onNavigate} />
-      {DASH_SECTIONS.map(({ to, label, icon, view }) => (
-        <NavbarMenuRow key={label} to={to} label={label} icon={icon} active={pathname === '/dashboard' && (dashView || null) === view} onNavigate={onNavigate} />
+      {DRAWER_ROWS.filter((row) => isAuthenticated || !row.signedInOnly).map((row) => (
+        <NavbarMenuRow
+          key={row.label}
+          to={row.to}
+          label={row.label}
+          icon={row.icon}
+          active={isRowActive(row, pathname, dashView)}
+          trailing={row.to === '/you' && user?.isPro ? <ProBadge /> : null}
+          onNavigate={onNavigate}
+        />
       ))}
     </Box>
   );
@@ -114,14 +125,14 @@ function SignedOutFooter({ onNavigate }) {
 }
 
 // Phone menu: side sheet with the profile card, icon rows and account actions at the bottom.
-export default function NavbarDrawer({ open, pathname, dashView, mode, isAuthenticated, user, coins, actions, onToggleTheme }) {
+export default function NavbarDrawer({ open, pathname, dashView, mode, isAuthenticated, user, actions, onToggleTheme }) {
   return (
     <Drawer anchor="left" open={open} onClose={actions.closeDrawer} transitionDuration={220} slotProps={{ paper: { sx: drawerPaperSx } }}>
       <LibraryFont sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: SIZES.flexShrinkMinWidth }}>
         <DrawerHeader mode={mode} onToggleTheme={onToggleTheme} onClose={actions.closeDrawer} />
         <Divider sx={dividerSx} />
         <Box component="nav" aria-label="Main navigation" sx={{ flex: 1, overflowY: 'auto', px: 2, pt: 1, pb: 1 }}>
-          <DrawerLinks pathname={pathname} dashView={dashView} user={user} coins={coins} showCoins={isAuthenticated} onNavigate={actions.closeDrawer} />
+          <DrawerLinks pathname={pathname} dashView={dashView} user={user} isAuthenticated={isAuthenticated} onNavigate={actions.closeDrawer} />
         </Box>
         <Divider sx={dividerSx} />
         <Box sx={{ px: 2, py: 1.5, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
