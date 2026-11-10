@@ -82,6 +82,8 @@ export const SIZES = {
   avatar: { xs: 24, sm: 32, md: 40, post: 48, lg: 56 },
   // Round reaction icon in the overlapping stack at the end of the row under a phone feed post.
   reactionBadge: 22,
+  // Green online dot on the avatar of a conversation in the phone messages list.
+  presenceDot: 14,
   contentMaxWidth: 1200,
   // Widest the dashboard grows (sidebar, content and streak rail together) on very large screens.
   dashboardMaxWidth: 1480,
