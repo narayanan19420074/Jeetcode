@@ -15,7 +15,7 @@ const badgeSx = (background, index) => ({
   placeItems: 'center',
   width: SIZES.reactionBadge,
   height: SIZES.reactionBadge,
-  ml: index === 0 ? 0 : -0.75,
+  ml: index === 0 ? 0 : -0.5,
   borderRadius: RADII_PX.circle,
   bgcolor: background,
   color: 'common.white',
@@ -29,7 +29,7 @@ export default function ReactionStack() {
     <Stack direction="row" role="img" aria-label="Reactions" sx={{ pr: 0.5 }}>
       {REACTIONS.map(({ key, icon: Icon, background }, index) => (
         <Box key={key} sx={badgeSx(background, index)}>
-          <Icon sx={{ fontSize: FONT_SIZES.caption }} />
+          <Icon sx={{ fontSize: FONT_SIZES.micro }} />
         </Box>
       ))}
     </Stack>

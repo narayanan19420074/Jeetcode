@@ -7,7 +7,7 @@ import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../../../app/design/designToken
 
 const followSx = (compact) => (theme) => ({
   flexShrink: 0,
-  fontSize: compact ? FONT_SIZES.title : FONT_SIZES.subheading,
+  fontSize: compact ? FONT_SIZES.body : FONT_SIZES.subheading,
   fontWeight: FONT_WEIGHTS.semibold,
   textTransform: 'none',
   color: navActiveColor(theme),

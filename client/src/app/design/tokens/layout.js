@@ -76,12 +76,15 @@ export const SIZES = {
   // the smallest box a value is drawn in.
   codeVisualizer: { dialogMaxWidth: 1240, dialogHeight: '90dvh', phoneCodeHeight: '32dvh', lineNumberColumn: 44, valueBox: 28, speedSelect: 96, outputMaxHeight: '40%' },
   filterPillHeight: 40,
+  // Category tabs of the community feed and the search field of the phone top bars (same height as the LinkedIn app).
+  compactPillHeight: 32,
+  phoneSearchHeight: 32,
   chipHeight: 28,
   chipHeightSmall: 24,
   // `post` is the author photo on a feed post.
   avatar: { xs: 24, sm: 32, md: 40, post: 48, lg: 56 },
   // Round reaction icon in the overlapping stack at the end of the row under a phone feed post.
-  reactionBadge: 22,
+  reactionBadge: 18,
   // Green online dot on the avatar of a conversation in the phone messages list.
   presenceDot: 14,
   contentMaxWidth: 1200,

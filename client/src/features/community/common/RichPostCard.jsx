@@ -24,9 +24,8 @@ const frameSx = {
 };
 const coverSx = { position: 'absolute', inset: 0, display: 'block', width: SIZES.fill, height: SIZES.fill, objectFit: 'cover' };
 
-const cardSx = { px: 1.5, pt: 1, pb: 0, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card } };
-const contentLinkSx = { display: 'block', mt: 1.25, textDecoration: 'none', color: 'inherit' };
-const actionsSx = { py: 0.5 };
+const cardSx = { px: 1.5, pt: 1.5, pb: 0, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card } };
+const contentLinkSx = { display: 'block', mt: 1, textDecoration: 'none', color: 'inherit' };
 const mutedSx = { color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING };
 
 // First characters of the text, cut at a word boundary, so long posts end in "…more" like on LinkedIn.
@@ -40,8 +39,8 @@ function PostText({ title, excerpt }) {
   const preview = previewOf(excerpt);
   return (
     <>
-      <Typography sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.4, ...clamp(TITLE_LINES) }}>{title}</Typography>
-      <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.body, lineHeight: 1.45, letterSpacing: LIB_TRACKING, ...clamp(TEXT_LINES) }}>
+      <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.3, ...clamp(TITLE_LINES) }}>{title}</Typography>
+      <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.body, lineHeight: 1.3, letterSpacing: LIB_TRACKING, ...clamp(TEXT_LINES) }}>
         {preview.text}
         {preview.cut && <Box component="span" sx={mutedSx}>… more</Box>}
       </Typography>
@@ -64,9 +63,7 @@ export default function RichPostCard({ post, onRemoved, Header = PostCardHeader,
           </Box>
         )}
       </Box>
-      <Box sx={actionsSx}>
-        <PostEngagementBar post={post} trailing={engagementTrailing} />
-      </Box>
+      <PostEngagementBar post={post} trailing={engagementTrailing} />
     </Box>
   );
 }

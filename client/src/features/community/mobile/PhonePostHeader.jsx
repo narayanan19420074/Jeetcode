@@ -11,14 +11,14 @@ import { timeAgo } from '../../workspace/community/CommunityBits';
 import { LIB_TRACKING } from '../../dashboard/components/libraryStyle';
 import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../../../app/design/designTokens';
 
-const mutedSx = { color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING, fontSize: FONT_SIZES.body };
+const mutedSx = { color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING, fontSize: FONT_SIZES.caption };
 
 // Name with the verified mark and connection level. Anonymous posts show only the label.
 function AuthorLine({ author }) {
   return (
     <Stack direction="row" alignItems="center" spacing={0.5}>
-      <Typography noWrap sx={{ fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold }}>{authorLabel(author)}</Typography>
-      {author && <VerifiedUserOutlinedIcon aria-label="Verified" sx={{ fontSize: SIZES.iconSize.small, color: 'text.secondary', flexShrink: 0 }} />}
+      <Typography noWrap sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.semibold }}>{authorLabel(author)}</Typography>
+      {author && <VerifiedUserOutlinedIcon aria-label="Verified" sx={{ fontSize: SIZES.chipIconSize, color: 'text.secondary', flexShrink: 0 }} />}
       {author && <Typography noWrap sx={{ ...mutedSx, flexShrink: 0 }}>· {CONNECTION_LEVEL_LABEL}</Typography>}
     </Stack>
   );

@@ -1,18 +1,17 @@
-import { Stack } from '@mui/material';
-import { ButtonBase } from '@mui/material';
+import { ButtonBase, Stack } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { navActiveColor } from '../../../components/navbar/navLinkStyles';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 // Same look as the bottom bar: the active tab is a pill tinted with the navigation blue, the others are plain text.
 const tabSx = (active) => (theme) => ({
-  height: SIZES.filterPillHeight,
-  px: 2,
+  height: SIZES.compactPillHeight,
+  px: 1.5,
   flexShrink: 0,
   whiteSpace: 'nowrap',
   borderRadius: RADII_PX.pill,
   fontFamily: 'inherit',
-  fontSize: FONT_SIZES.title,
+  fontSize: FONT_SIZES.body,
   fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium,
   color: active ? navActiveColor(theme) : 'var(--lib-muted)',
   bgcolor: active ? alpha(navActiveColor(theme), theme.palette.mode === 'dark' ? 0.24 : 0.16) : 'transparent',

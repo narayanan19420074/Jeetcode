@@ -10,7 +10,7 @@ export default function CommunityTopBar() {
   const user = useSelector((state) => state.auth.user);
   return (
     <Stack component="header" direction="row" alignItems="center" spacing={1.5}>
-      <PostAvatar author={user} size={SIZES.avatar.md} />
+      <PostAvatar author={user} size={SIZES.avatar.sm} />
       <SearchField placeholder="Search" label="Search community" />
       <MessagesButton />
     </Stack>
