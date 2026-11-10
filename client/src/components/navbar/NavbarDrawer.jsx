@@ -1,9 +1,8 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Avatar, Box, Button, Divider, Drawer, IconButton, Tooltip, Typography, alpha } from '@mui/material';
+import { Avatar, Box, Button, Divider, Drawer, IconButton, Tooltip, Typography } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
@@ -55,7 +54,7 @@ function DrawerHeader({ mode, onToggleTheme, onClose }) {
 
 function DrawerProfileRow({ user, onNavigate }) {
   return (
-    <Box component={RouterLink} to="/you" onClick={onNavigate} sx={{ p: 1.5, display: 'flex', alignItems: 'center', gap: 1.5, textDecoration: 'none', color: 'inherit' }}>
+    <Box component={RouterLink} to="/you" onClick={onNavigate} sx={{ p: 1, display: 'flex', alignItems: 'center', gap: 1.5, textDecoration: 'none', color: 'inherit' }}>
       <Avatar src={user?.avatarUrl || undefined} sx={{ bgcolor: ACCENT, width: SIZES.menuRowHeight, height: SIZES.menuRowHeight, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold, flexShrink: 0 }}>
         {initialsFromName(user?.name)}
       </Avatar>
@@ -63,47 +62,39 @@ function DrawerProfileRow({ user, onNavigate }) {
         <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: TRACKING }}>
           {user?.name}
         </Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
-          <LocalFireDepartmentRoundedIcon sx={{ fontSize: FONT_SIZES.title, color: 'warning.main' }} />
-          <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: TRACKING, color: (theme) => libPal(theme).muted }}>{user?.streakDays ?? 0}-day streak</Typography>
-          {user?.isPro && <ProBadge />}
-        </Box>
+        {user?.isPro && (
+          <Box sx={{ mt: 0.5 }}>
+            <ProBadge />
+          </Box>
+        )}
       </Box>
     </Box>
   );
 }
 
-function DrawerCoinsRow({ coins, onNavigate }) {
-  const labelSx = { fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.title, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums', flex: 1 };
+function DrawerAccountCard({ user, onNavigate }) {
   return (
-    <Box
-      component={RouterLink}
-      to="/store?tab=coins"
-      onClick={onNavigate}
-      aria-label={`${coins} coins, open wallet`}
-      sx={(theme) => ({ px: 1.5, py: 1.5, display: 'flex', alignItems: 'center', gap: 1, textDecoration: 'none', color: 'inherit', borderTop: `1px solid ${libPal(theme).divider}`, '&:active': { bgcolor: alpha(ACCENT, 0.12) } })}
-    >
-      <MonetizationOnRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'warning.main' }} />
-      <Typography sx={labelSx}>{coins.toLocaleString('en-IN')} coins</Typography>
-      <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: TRACKING, color: ACCENT }}>Wallet</Typography>
+    <Box sx={(theme) => ({ mb: 1.5, borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: libPal(theme).chip })}>
+      <DrawerProfileRow user={user} onNavigate={onNavigate} />
     </Box>
   );
 }
 
-function DrawerAccountCard({ user, coins, onNavigate }) {
+// Coin balance shown at the end of the Store row; it opens the same Store page as the row itself.
+function StoreCoinsBadge({ coins }) {
   return (
-    <Box sx={(theme) => ({ mb: 3, borderRadius: RADII_PX.card, overflow: 'hidden', bgcolor: libPal(theme).chip })}>
-      <DrawerProfileRow user={user} onNavigate={onNavigate} />
-      <DrawerCoinsRow coins={coins} onNavigate={onNavigate} />
+    <Box aria-label={`${coins} coins`} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+      <MonetizationOnRoundedIcon sx={{ fontSize: FONT_SIZES.display, color: 'warning.main' }} />
+      <Typography sx={{ fontWeight: FONT_WEIGHTS.medium, fontSize: FONT_SIZES.body, letterSpacing: TRACKING, fontVariantNumeric: 'tabular-nums' }}>{coins.toLocaleString('en-IN')}</Typography>
     </Box>
   );
 }
 
 // Dashboard sections are active when the dashboard is open on that view (no view = the default section).
-function DrawerLinks({ pathname, dashView, onNavigate }) {
+function DrawerLinks({ pathname, dashView, coins, showCoins, onNavigate }) {
   return (
     <Box sx={(theme) => ({ borderTop: `1px solid ${libPal(theme).divider}` })}>
-      <NavbarMenuRow to="/store" label="Store" icon={StorefrontRoundedIcon} active={isActivePath(pathname, '/store')} onNavigate={onNavigate} />
+      <NavbarMenuRow to="/store" label="Store" icon={StorefrontRoundedIcon} active={isActivePath(pathname, '/store')} trailing={showCoins ? <StoreCoinsBadge coins={coins} /> : null} onNavigate={onNavigate} />
       <NavbarMenuRow to="/prep" label="Companies" icon={BusinessRoundedIcon} active={isActivePath(pathname, '/prep')} onNavigate={onNavigate} />
       <NavbarMenuRow to="/plans" label="Plans" icon={WorkspacePremiumRoundedIcon} active={isActivePath(pathname, '/plans')} onNavigate={onNavigate} />
       {DASH_SECTIONS.map(({ to, label, icon, view }) => (
@@ -155,12 +146,12 @@ export default function NavbarDrawer({ open, pathname, dashView, mode, isAuthent
       <LibraryFont sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: SIZES.flexShrinkMinWidth }}>
         <DrawerHeader mode={mode} onToggleTheme={onToggleTheme} onClose={actions.closeDrawer} />
         <Divider sx={dividerSx} />
-        <Box component="nav" aria-label="Main navigation" sx={{ flex: 1, overflowY: 'auto', px: 2, pt: 2, pb: 2 }}>
-          {isAuthenticated && <DrawerAccountCard user={user} coins={coins} onNavigate={actions.closeDrawer} />}
-          <DrawerLinks pathname={pathname} dashView={dashView} onNavigate={actions.closeDrawer} />
+        <Box component="nav" aria-label="Main navigation" sx={{ flex: 1, overflowY: 'auto', px: 2, pt: 1, pb: 1 }}>
+          {isAuthenticated && <DrawerAccountCard user={user} onNavigate={actions.closeDrawer} />}
+          <DrawerLinks pathname={pathname} dashView={dashView} coins={coins} showCoins={isAuthenticated} onNavigate={actions.closeDrawer} />
         </Box>
         <Divider sx={dividerSx} />
-        <Box sx={{ px: 2, py: 2, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <Box sx={{ px: 2, py: 1.5, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
           {isAuthenticated ? <SignedInFooter user={user} actions={actions} /> : <SignedOutFooter onNavigate={actions.closeDrawer} />}
         </Box>
       </LibraryFont>

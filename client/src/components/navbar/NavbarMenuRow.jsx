@@ -7,7 +7,7 @@ const rowSx = {
   display: 'flex',
   alignItems: 'center',
   gap: 1.5,
-  py: 1.5,
+  py: 1,
   textDecoration: 'none',
   color: 'inherit',
   borderBottom: (theme) => `1px solid ${libPal(theme).divider}`,
@@ -36,7 +36,7 @@ const labelSx = (active) => ({
 });
 
 // Row of the phone menu: same shape as the rows on the phone pages (tile, 1rem title, divider between rows).
-export default function NavbarMenuRow({ to, label, icon: Icon, active, onNavigate }) {
+export default function NavbarMenuRow({ to, label, icon: Icon, active, trailing, onNavigate }) {
   return (
     <Box component={RouterLink} to={to} onClick={onNavigate} aria-current={active ? 'page' : undefined} sx={rowSx}>
       <Box sx={tileSx(active)}>
@@ -45,6 +45,7 @@ export default function NavbarMenuRow({ to, label, icon: Icon, active, onNavigat
       <Typography noWrap sx={labelSx(active)}>
         {label}
       </Typography>
+      {trailing}
     </Box>
   );
 }
