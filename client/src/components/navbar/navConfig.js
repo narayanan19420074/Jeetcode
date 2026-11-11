@@ -4,7 +4,6 @@ import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
-import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
@@ -29,7 +28,6 @@ export const EXPLORE_LINKS = [
   { to: '/exams', label: 'Exams', icon: AssignmentRoundedIcon },
   { to: '/store', label: 'Store', icon: StorefrontRoundedIcon },
   { to: '/visualizer', label: 'Visualizer', icon: BarChartRoundedIcon },
-  { to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon },
 ];
 
 // Phone menu = the dashboard sections (same list as the desktop dashboard sidebar).

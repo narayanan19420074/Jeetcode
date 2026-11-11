@@ -9,7 +9,7 @@ export default function DashboardSidebarPane({ children }) {
       sx={{
         display: { xs: 'none', md: 'block' },
         position: { md: 'sticky' },
-        top: { md: 84, lg: 0 },
+        top: { md: SIZES.desktopFrame.stickyTop, lg: 0 },
         pr: { lg: 3 },
         height: { lg: SIZES.fill },
         overflowY: { lg: 'auto' },

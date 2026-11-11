@@ -96,8 +96,12 @@ export const SIZES = {
   // Left column of a phone problem row: the difficulty tag above the solved marker.
   problemDifficultyColumn: 43,
   readingMaxWidth: 720,
-  // Desktop Community page, laid out like the LinkedIn feed: left rail, feed, right rail.
-  communityLayout: { left: 225, right: 300, maxWidth: 1128, stickyTop: 88, bannerHeight: 56 },
+  // One desktop page frame for every page with side columns (Dashboard, Problems, Aptitude, Community): the page
+  // width is `dashboardMaxWidth`, the left column is `sidebar` (md / lg), the right column is `rail`, and the
+  // columns stick `stickyTop` below the top of the window.
+  desktopFrame: { sidebar: { md: 200, lg: 232 }, rail: 340, stickyTop: 84 },
+  // Banner of the profile card at the top of the Community left column.
+  communityBannerHeight: 56,
   // Preview of an attached image on the compose screen.
   composeThumbnail: 80,
   // Bottom sheet that lists the comments of a feed post: its height, and the grab handle at its top edge.

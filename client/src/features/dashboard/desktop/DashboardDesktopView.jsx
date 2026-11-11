@@ -17,7 +17,7 @@ const gridSx = (isPageOneWindowTall, showRail) => ({
   alignItems: 'start',
   height: isPageOneWindowTall ? SIZES.fill : 'auto',
   gridTemplateRows: isPageOneWindowTall ? 'minmax(0, 1fr)' : undefined,
-  gridTemplateColumns: { md: '200px minmax(0, 1fr)', lg: `232px minmax(0, 1fr) ${showRail ? RAIL_COLUMN_WIDTH : '0px'}` },
+  gridTemplateColumns: { md: `${SIZES.desktopFrame.sidebar.md}px minmax(0, 1fr)`, lg: `${SIZES.desktopFrame.sidebar.lg}px minmax(0, 1fr) ${showRail ? RAIL_COLUMN_WIDTH : '0px'}` },
   transition: `grid-template-columns ${MOTION.slow}ms ${EASING.standard}`,
 });
 

@@ -1,4 +1,4 @@
-import { COLOR_PALETTE, withAlpha, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, RADII_PX, SIZES } from '../../app/design/designTokens';
 // Shared constants + helpers for the dashboard. Days are India (IST) days on
 // purpose: the backend's streak logic (streak.service.js) and the activity
 // heatmap endpoint both bucket days by IST midnight, so the calendar and
@@ -129,4 +129,4 @@ export function timeAgo(dateLike) {
 export const MONTHLY_BADGE_GOAL = 10; // active days in a month to earn the badge
 
 // Width of the streak rail column on wide screens. The page grid and the rail pane both read it, so they cannot drift apart.
-export const RAIL_COLUMN_WIDTH = '340px';
+export const RAIL_COLUMN_WIDTH = `${SIZES.desktopFrame.rail}px`;

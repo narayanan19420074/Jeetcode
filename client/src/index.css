@@ -7,6 +7,12 @@ html, body, #root {
   margin: 0;
 }
 
+/* The scrollbar space is always reserved, so a page that needs a scrollbar and one that does not have the same
+   width. Without it the navbar and the page columns jump sideways when you move between such pages. */
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;

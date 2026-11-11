@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Box, Tooltip } from '@mui/material';
 import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
@@ -10,6 +11,7 @@ import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
+import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { NameDialog } from './ListDialogs';
 import { ListsHeader, NavButton, RequestBadge } from './SidebarParts';
 import { COLOR_PALETTE, FONT_SIZES } from '../../../app/design/designTokens';
@@ -23,6 +25,9 @@ export const NAV_ITEMS = [
   { view: 'leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon },
   { view: 'friends', label: 'Friends', icon: PeopleAltRoundedIcon },
 ];
+
+// Pages (not dashboard views) that live in the same rail.
+const PAGE_ITEMS = [{ to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon }];
 
 // Same blue star as the Favorites card on the phone home.
 const FAVORITE_STAR = COLOR_PALETTE.custom.blue3F8CE8;
@@ -39,6 +44,11 @@ function ViewButtons({ view, onView, friendCounts }) {
       onClick={() => onView(v)}
     />
   ));
+}
+
+function PageButtons() {
+  const navigate = useNavigate();
+  return PAGE_ITEMS.map(({ to, label, icon }) => <NavButton key={to} active={false} icon={icon} label={label} onClick={() => navigate(to)} />);
 }
 
 function ListButtons({ lists, view, activeListId, onSelectList }) {
@@ -80,6 +90,7 @@ export default function DashboardSidebar({ view, activeListId, lists, onView, on
     <>
       <Box component="nav" aria-label="Dashboard sections" sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: 0 }}>
         <ViewButtons view={view} onView={onView} friendCounts={friendCounts} />
+        <PageButtons />
         <ListsHeader atLimit={lists.length >= maxLists} onCreate={() => setCreating(true)} />
         <ListButtons lists={lists} view={view} activeListId={activeListId} onSelectList={onSelectList} />
       </Box>

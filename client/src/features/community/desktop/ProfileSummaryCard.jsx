@@ -42,7 +42,7 @@ export default function ProfileSummaryCard() {
 
   return (
     <RailCard>
-      <Box sx={{ height: SIZES.communityLayout.bannerHeight, background: BANNER_GRADIENT.visualizer }} />
+      <Box sx={{ height: SIZES.communityBannerHeight, background: BANNER_GRADIENT.visualizer }} />
       <Stack sx={{ alignItems: 'center', px: 2, pb: 2, mt: -3.5 }}>
         <Box sx={{ border: '2px solid', borderColor: 'background.paper', borderRadius: RADII_PX.pill, display: 'flex' }}>
           <PostAvatar author={user} size={SIZES.avatar.lg} />

@@ -1,4 +1,5 @@
-import { Box, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
+import DesktopPageFrame from '../../../components/DesktopPageFrame';
 import CategoryTabs from '../common/CategoryTabs';
 import ComposePostDialog from '../common/ComposePostDialog';
 import PostList from '../common/PostList';
@@ -10,41 +11,29 @@ import ProfileSummaryCard from './ProfileSummaryCard';
 import RightRail from './RightRail';
 import ShortcutsCard from './ShortcutsCard';
 
-const { left, right, maxWidth, stickyTop } = SIZES.communityLayout;
-const columns = `${left}px minmax(0, 1fr)`;
-const pageSx = {
-  maxWidth,
-  mx: 'auto',
-  px: 3,
-  py: 3,
-  display: 'grid',
-  gridTemplateColumns: { md: columns, lg: `${columns} ${right}px` },
-  gap: 3,
-  alignItems: 'start',
-};
-const stickySx = { position: 'sticky', top: stickyTop };
+function LeftRail({ onShowSaved }) {
+  return (
+    <Stack spacing={1.5}>
+      <ProfileSummaryCard />
+      <ShortcutsCard onShowSaved={onShowSaved} />
+    </Stack>
+  );
+}
 
-// Desktop layout, like the LinkedIn feed: your card on the left, the feed in the middle, search and topics on the
-// right. The feed itself is the same as on phones (same tabs, same post card). Below the lg breakpoint the right
-// rail is hidden.
+// Desktop layout in the shared page frame (same margins and column widths as the Dashboard): your card on the
+// left, the feed in the middle at reading width, search and topics on the right. The feed itself is the same as on
+// phones (same tabs, same post card).
 export default function CommunityDesktopView({ page }) {
   const { category, setCategory, tabs, feed, composeOpen, openCompose, closeCompose } = page;
   return (
     <LibraryFont>
-      <Box sx={pageSx}>
-        <Stack component="aside" spacing={1.5} sx={stickySx}>
-          <ProfileSummaryCard />
-          <ShortcutsCard onShowSaved={setCategory} />
-        </Stack>
-        <Stack spacing={1.5}>
+      <DesktopPageFrame left={<LeftRail onShowSaved={setCategory} />} right={<RightRail category={category} onCategoryChange={setCategory} />}>
+        <Stack spacing={1.5} sx={{ maxWidth: SIZES.readingMaxWidth, mx: 'auto' }}>
           <ComposerCard onOpen={openCompose} />
           <CategoryTabs value={category} onChange={setCategory} options={tabs} />
           <PostList feed={feed} category={category} PostCard={PhonePostCard} />
         </Stack>
-        <Box component="aside" sx={{ ...stickySx, display: { xs: 'none', lg: 'block' } }}>
-          <RightRail category={category} onCategoryChange={setCategory} />
-        </Box>
-      </Box>
+      </DesktopPageFrame>
       <ComposePostDialog open={composeOpen} onClose={closeCompose} onPublished={feed.prepend} />
     </LibraryFont>
   );
