@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/material';
-import { BORDER_WIDTHS, SIZES } from '../app/design/designTokens';
+import { BORDER_WIDTHS, LAYOUT_SPACING, SIZES } from '../app/design/designTokens';
 
 const { sidebar, rail, stickyTop } = SIZES.desktopFrame;
 const SIDE_PADDING_UNITS = 3;
@@ -42,7 +42,7 @@ export default function DesktopPageFrame({ left, right, children }) {
     <Container maxWidth={false} sx={{ maxWidth: SIZES.dashboardMaxWidth, py: 3, px: 3 }}>
       <Box sx={gridSx(Boolean(right))}>
         {left ? <SidePane side="left">{left}</SidePane> : <Box />}
-        <Box sx={{ minWidth: SIZES.flexShrinkMinWidth }}>{children}</Box>
+        <Box sx={{ minWidth: SIZES.flexShrinkMinWidth, px: LAYOUT_SPACING.frameContentGutter }}>{children}</Box>
         {right && <SidePane side="right">{right}</SidePane>}
       </Box>
     </Container>

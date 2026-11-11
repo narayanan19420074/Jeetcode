@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import {
   listMyPlans, createPlan, savePlan, getPlan, getFeed, postMessage, nudgeMember, removeMember,
-  deletePlan, leavePlan, previewJoin, joinPlan, addFriendToPlan, listNotifications, markNotificationsRead,
+  deletePlan, leavePlan, previewJoin, joinPlan, addFriendToPlan, inviteFriendToPlan, listNotifications, markNotificationsRead,
 } from '../controllers/studyPlan.controller.js';
 import { requireAuth } from '../middlewares/auth.middleware.js';
 import { validate } from '../middlewares/validate.js';
@@ -32,6 +32,7 @@ router.get('/:id/feed', getFeed);
 router.post('/:id/messages', validate(messageSchema), postMessage);
 router.post('/:id/nudge/:userId', tz, nudgeMember);
 router.post('/:id/members', validate(addMemberSchema), addFriendToPlan);
+router.post('/:id/invites', validate(addMemberSchema), inviteFriendToPlan);
 router.delete('/:id/members/:userId', removeMember);
 
 export default router;

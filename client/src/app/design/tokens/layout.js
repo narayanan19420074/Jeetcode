@@ -15,6 +15,8 @@ export const LAYOUT_SPACING = {
   sectionGap: { xs: 3, md: 4 },
   cardPadding: { xs: 2, md: 2.5 },
   stackGap: { xs: 1.5, md: 2 },
+  // Space on each side of the middle column of a desktop page that has side columns, so the content never touches the hairlines.
+  frameContentGutter: { xs: 0, lg: 3 },
 };
 
 // ---------------------------------------------------------------- shape

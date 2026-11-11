@@ -1,10 +1,7 @@
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import { Alert, Badge, Box, Button, Collapse, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Skeleton, Snackbar, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Skeleton, Snackbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import BackToDashboard from '../../components/BackToDashboard';
 import { FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
-import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import { MobilePlanWorkspace, MobilePlans, MobileShell } from './MobileStudyPlan';
-import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import PlanBuilder from './PlanBuilder';
 import PlanWorkspace from './PlanWorkspace';
 import { extractErrorMessage } from '../../api/apiClient';
@@ -14,8 +11,9 @@ import { studyPlanApi } from '../../api/studyPlanApi';
 import { surface } from '../dashboard/dashboardUtils';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { FriendsPanel, NotificationsPopover } from './planner/PlannerSidePanels';
 import PlanSummaryCard from './common/PlanSummaryCard';
+import PlanSharePicker from './common/PlanSharePicker';
+import NewPlanButton from './common/NewPlanButton';
 
 export default function StudyPlannerView({ isAuthenticated }) {
   const navigate = useNavigate();
@@ -35,8 +33,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
   const [joining, setJoining] = useState(false);
   const [codeInput, setCodeInput] = useState('');
   const [codeError, setCodeError] = useState('');
-  const [showFriends, setShowFriends] = useState(false);
-  const [bellEl, setBellEl] = useState(null);
+  const [shareTarget, setShareTarget] = useState(null); // { el, plan } while the share picker is open
   const [toDelete, setToDelete] = useState(null); // plan waiting for delete / leave confirmation
   const [deleting, setDeleting] = useState(false);
   const today = localKey();
@@ -115,19 +112,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
     go({ join: code });
   };
 
-  const openBell = async (e) => {
-    setBellEl(e.currentTarget);
-    try {
-      const { data } = await studyPlanApi.notifications();
-      setNotes(data.data); // items keep their "new" highlight while the popover is open
-      if (data.data.unread > 0) {
-        await studyPlanApi.markNotificationsRead();
-        setNotes((n) => ({ ...n, unread: 0 }));
-      }
-    } catch { /* keep whatever we had */ }
-  };
-
-  // Phone: the notifications sheet. Same refresh and mark-as-read as the bell popover.
+  // Phone: the notifications sheet. Opening it refreshes the list and marks everything as read.
   const openNotes = async () => {
     try {
       const { data } = await studyPlanApi.notifications();
@@ -227,11 +212,13 @@ export default function StudyPlannerView({ isAuthenticated }) {
         <MobilePlans
           plans={plans} friends={friends} notes={notes} error={error} onDismissError={() => setError('')}
           invite={invite} joining={joining} onAccept={accept} onDismissInvite={() => go()}
-          dueToday={dueToday} onNew={() => setBuilder({})} onOpenPlan={(id) => go({ plan: id })}
-          onDelete={setToDelete} onFindFriends={findFriends}
+          dueToday={dueToday} onOpenPlan={(id) => go({ plan: id })}
+          onDelete={setToDelete} onShare={(el, plan) => setShareTarget({ el, plan })} onFindFriends={findFriends}
           codeInput={codeInput} setCodeInput={(v) => { setCodeInput(v); setCodeError(''); }} codeError={codeError}
           onJoinCode={joinFromInput} onOpenNotes={openNotes}
         />
+        <NewPlanButton onClick={() => setBuilder({})} />
+        <PlanSharePicker target={shareTarget} friends={friends} onClose={() => setShareTarget(null)} notify={setToast} onFindFriends={findFriends} />
         <Dialog open={Boolean(toDelete)} onClose={() => !deleting && setToDelete(null)} maxWidth="xs" fullWidth>
           <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
           <DialogContent>
@@ -264,25 +251,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
             </Typography>
           )}
         </Box>
-        <Tooltip title="Friends">
-          <IconButton onClick={() => setShowFriends((v) => !v)} aria-label="Friends" aria-expanded={showFriends} color={showFriends ? 'primary' : 'default'}>
-            <GroupsRoundedIcon />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="Notifications">
-          <IconButton onClick={openBell} aria-label="Notifications">
-            <Badge color="error" badgeContent={notes.unread} max={9}><NotificationsRoundedIcon /></Badge>
-          </IconButton>
-        </Tooltip>
-        <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: FONT_WEIGHTS.bold, ml: 0.5 }}>New plan</Button>
       </Box>
-
-      <Collapse in={showFriends} unmountOnExit>
-        <FriendsPanel
-          friends={friends} onFindFriends={findFriends} onJoinCode={joinFromInput}
-          codeInput={codeInput} setCodeInput={(v) => { setCodeInput(v); setCodeError(''); }} codeError={codeError}
-        />
-      </Collapse>
 
       {error && <Alert severity="error" onClose={() => setError('')}>{error}</Alert>}
 
@@ -316,21 +285,18 @@ export default function StudyPlannerView({ isAuthenticated }) {
       ) : plans.length === 0 ? (
         <Box sx={[surface, { p: 3, textAlign: 'center' }]}>
           <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No plans yet</Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, mb: 1.5 }}>Pick questions, set a finish date and add friends.</Typography>
-          <Button variant="contained" disableElevation size="small" startIcon={<AddRoundedIcon />} onClick={() => setBuilder({})} sx={{ fontWeight: FONT_WEIGHTS.bold }}>Create a plan</Button>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>Pick questions, set a finish date and share it with friends.</Typography>
         </Box>
       ) : (
         <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
           {plans.map((p) => (
-            <PlanSummaryCard key={p.id} plan={p} onOpen={() => go({ plan: p.id })} onDelete={setToDelete} />
+            <PlanSummaryCard key={p.id} plan={p} onOpen={() => go({ plan: p.id })} onDelete={setToDelete} onShare={(el) => setShareTarget({ el, plan: p })} />
           ))}
         </Box>
       )}
 
-      <NotificationsPopover
-        anchorEl={bellEl} onClose={() => setBellEl(null)} items={notes.items}
-        onOpenPlan={(id) => { setBellEl(null); go({ plan: id }); }}
-      />
+      <NewPlanButton onClick={() => setBuilder({})} />
+      <PlanSharePicker target={shareTarget} friends={friends} onClose={() => setShareTarget(null)} notify={setToast} onFindFriends={findFriends} />
       <Dialog open={Boolean(toDelete)} onClose={() => !deleting && setToDelete(null)} maxWidth="xs" fullWidth>
         <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
         <DialogContent>

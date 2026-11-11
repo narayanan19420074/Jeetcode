@@ -6,7 +6,7 @@ import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designToken
 
 // Popover with your friends. Tap one and they join the plan (and get a notification).
 // `memberIds`: Set of user ids already in the plan. `onAdd(friend)` returns a promise.
-export default function FriendPicker({ anchorEl, onClose, friends, memberIds, onAdd, onFindFriends }) {
+export default function FriendPicker({ anchorEl, onClose, friends, memberIds, onAdd, onFindFriends, title = 'ADD FRIENDS TO PLAN' }) {
   const [busy, setBusy] = useState('');
 
   const add = async (f) => {
@@ -20,7 +20,7 @@ export default function FriendPicker({ anchorEl, onClose, friends, memberIds, on
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       slotProps={{ paper: { sx: { width: 250, maxHeight: 300, mt: 0.5, borderRadius: RADII_PX.card } } }}
     >
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.5, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4 }}>ADD FRIENDS TO PLAN</Typography>
+      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', px: 1.5, pt: 1.5, pb: 0.5, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 0.4 }}>{title}</Typography>
       {friends === null ? (
         <Box sx={{ p: 2, textAlign: 'center' }}><CircularProgress size={18} /></Box>
       ) : friends.length === 0 ? (

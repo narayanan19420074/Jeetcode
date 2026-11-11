@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
-// "<actor> added you to <plan>" — shown behind the bell icon in the Study Plan tab.
+// "<actor> added you to <plan>" or "<actor> invited you to <plan>" — shown in the notification bell of the top bar.
 const planNotificationSchema = new mongoose.Schema(
   {
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     plan: { type: mongoose.Schema.Types.ObjectId, ref: 'StudyPlan', required: true },
     actor: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    kind: { type: String, enum: ['added'], default: 'added' },
+    kind: { type: String, enum: ['added', 'invited'], default: 'added' },
     readAt: { type: Date, default: null },
   },
   { timestamps: { createdAt: true, updatedAt: false } }

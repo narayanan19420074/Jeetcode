@@ -13,6 +13,12 @@ const HOUR_MS = 3600000;
 const DAY_MS = 86400000;
 const rankKey = (userId) => `jc:friendsRank:${userId}`;
 
+// An invitation opens the plan's invite link, where the friend accepts; being added goes to the Study Plan page.
+const planNotificationContent = (n) =>
+  n.kind === 'invited'
+    ? { text: `${n.actor.name} invited you to “${n.plan.title}”`, link: `/dashboard?view=plans&join=${n.plan.shareCode}` }
+    : { text: `${n.actor.name} added you to “${n.plan.title}”`, link: '/dashboard?view=plans' };
+
 // Mount once for logged-in users (renders nothing). Turns friend / leaderboard changes into notifications.
 // Room invites and nudges are added from friendsRealtime.jsx, where the socket events arrive.
 export default function NotificationsWatcher() {
@@ -160,7 +166,7 @@ export default function NotificationsWatcher() {
         .then(({ data }) => {
           (data.data.items || [])
             .filter((n) => !n.read)
-            .forEach((n) => add({ id: `plan:${n.id}`, type: 'plan', text: `${n.actor.name} added you to “${n.plan.title}”`, link: '/dashboard?view=plans', createdAt: n.createdAt }));
+            .forEach((n) => add({ id: `plan:${n.id}`, type: 'plan', ...planNotificationContent(n), createdAt: n.createdAt }));
         })
         .catch(() => {});
     };

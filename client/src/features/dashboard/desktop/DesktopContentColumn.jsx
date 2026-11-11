@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { SIZES } from '../../../app/design/designTokens';
+import { LAYOUT_SPACING, SIZES } from '../../../app/design/designTokens';
 import DashboardViewSwitch from '../common/DashboardViewSwitch';
 import LibraryPane from '../common/LibraryPane';
 import DesktopLibraryContent from './DesktopLibraryContent';
@@ -9,7 +9,6 @@ const scrollingColumnSx = (ownScroll) => ({
   height: SIZES.fill,
   overflowY: ownScroll ? 'hidden' : 'auto',
   overflowX: 'hidden',
-  pr: ownScroll ? 0 : 1,
   scrollbarGutter: ownScroll ? 'auto' : 'stable',
 });
 
@@ -19,7 +18,7 @@ export default function DesktopContentColumn({ dashboard, isPageOneWindowTall })
       component="section"
       className="autohide-scroll"
       aria-label="Dashboard content"
-      sx={{ minWidth: SIZES.flexShrinkMinWidth, minHeight: SIZES.flexShrinkMinHeight, ...(isPageOneWindowTall && scrollingColumnSx(dashboard.ownScroll)) }}
+      sx={{ minWidth: SIZES.flexShrinkMinWidth, minHeight: SIZES.flexShrinkMinHeight, px: LAYOUT_SPACING.frameContentGutter, ...(isPageOneWindowTall && scrollingColumnSx(dashboard.ownScroll)) }}
     >
       <LibraryPane active={dashboard.currentView === 'library'}>
         <DesktopLibraryContent dashboard={dashboard} />

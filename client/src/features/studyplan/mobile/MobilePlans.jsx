@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Alert, Badge, Box, Button, IconButton, Skeleton, Stack, Typography } from '@mui/material';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import { Alert, Badge, Box, IconButton, Skeleton, Stack, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-import { PageHeader, libBackBtnSx, libIconBtnSx, libSolidBtnSx, libTintBtnSx } from '../../dashboard/components/libraryStyle';
+import { PageHeader, libBackBtnSx, libIconBtnSx } from '../../dashboard/components/libraryStyle';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 import { MUTED } from './mobileStyle';
 import { SectionTitle } from './MobileUi';
@@ -42,7 +41,7 @@ function PlansTopBar({ unread, onOpenFriends, onOpenNotes }) {
 }
 
 // Empty state, skeletons or the list of plan cards.
-function PlansList({ plans, onNew, onOpenPlan, onDelete }) {
+function PlansList({ plans, onOpenPlan, onDelete, onShare }) {
   if (plans === null) {
     return (
       <Stack spacing={1.5}>
@@ -56,25 +55,22 @@ function PlansList({ plans, onNew, onOpenPlan, onDelete }) {
     return (
       <Box sx={{ py: 5, px: 2, textAlign: 'center' }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.subheading }}>No plans yet</Typography>
-        <Typography sx={{ fontSize: FONT_SIZES.title, color: MUTED, mt: 0.5, mb: 2 }}>Pick questions, set a finish date and add friends.</Typography>
-        <Button onClick={onNew} disableElevation variant="contained" sx={libTintBtnSx}>
-          Create a plan
-        </Button>
+        <Typography sx={{ fontSize: FONT_SIZES.title, color: MUTED, mt: 0.5 }}>Pick questions, set a finish date and share it with friends.</Typography>
       </Box>
     );
   }
   return (
     <Stack spacing={1.5}>
       {plans.map((p) => (
-        <PlanSummaryCard key={p.id} plan={p} onOpen={() => onOpenPlan(p.id)} onDelete={onDelete} />
+        <PlanSummaryCard key={p.id} plan={p} onOpen={() => onOpenPlan(p.id)} onDelete={onDelete} onShare={(el) => onShare(el, p)} />
       ))}
     </Stack>
   );
 }
 
 export function MobilePlans({
-  plans, friends, notes, error, onDismissError, invite, joining, onAccept, onDismissInvite, dueToday, onNew,
-  onOpenPlan, onDelete, onFindFriends, codeInput, setCodeInput, codeError, onJoinCode, onOpenNotes,
+  plans, friends, notes, error, onDismissError, invite, joining, onAccept, onDismissInvite, dueToday,
+  onOpenPlan, onDelete, onShare, onFindFriends, codeInput, setCodeInput, codeError, onJoinCode, onOpenNotes,
 }) {
   const [friendsOpen, setFriendsOpen] = useState(false);
   const [notesOpen, setNotesOpen] = useState(false);
@@ -104,12 +100,6 @@ export function MobilePlans({
 
       {/* Header */}
       <PageHeader icon={SchoolRoundedIcon} title="Study Plan" subtitle={sub} />
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-        <Button onClick={onNew} disableElevation variant="contained" startIcon={<AddRoundedIcon />} sx={libSolidBtnSx}>
-          New plan
-        </Button>
-      </Box>
-
       {error && (
         <Alert severity="error" onClose={onDismissError} sx={{ mt: 2 }}>
           {error}
@@ -120,7 +110,7 @@ export function MobilePlans({
 
       <Box component="section" aria-label="Your plans" sx={{ mt: 4 }}>
         {plans && plans.length > 0 && <SectionTitle>Your plans</SectionTitle>}
-        <PlansList plans={plans} onNew={onNew} onOpenPlan={onOpenPlan} onDelete={onDelete} />
+        <PlansList plans={plans} onOpenPlan={onOpenPlan} onDelete={onDelete} onShare={onShare} />
       </Box>
 
       <MobileFriendsSheet
