@@ -1,26 +1,51 @@
-import { Box, Button, Stack, Typography } from '@mui/material';
-import EditNoteRoundedIcon from '@mui/icons-material/EditNoteRounded';
+import { Box, Stack } from '@mui/material';
 import CategoryTabs from '../common/CategoryTabs';
-import { LibraryFont } from '../../dashboard/components/libraryStyle';
-import { navActiveColor } from '../../../components/navbar/navLinkStyles';
-import PostList from '../common/PostList';
 import ComposePostDialog from '../common/ComposePostDialog';
-import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../../../app/design/designTokens';
+import PostList from '../common/PostList';
+import PhonePostCard from '../mobile/PhonePostCard';
+import { LibraryFont } from '../../dashboard/components/libraryStyle';
+import { SIZES } from '../../../app/design/designTokens';
+import ComposerCard from './ComposerCard';
+import ProfileSummaryCard from './ProfileSummaryCard';
+import RightRail from './RightRail';
+import ShortcutsCard from './ShortcutsCard';
 
-// Desktop layout: a centred reading column with the title and the compose button in the header.
+const { left, right, maxWidth, stickyTop } = SIZES.communityLayout;
+const columns = `${left}px minmax(0, 1fr)`;
+const pageSx = {
+  maxWidth,
+  mx: 'auto',
+  px: 3,
+  py: 3,
+  display: 'grid',
+  gridTemplateColumns: { md: columns, lg: `${columns} ${right}px` },
+  gap: 3,
+  alignItems: 'start',
+};
+const stickySx = { position: 'sticky', top: stickyTop };
+
+// Desktop layout, like the LinkedIn feed: your card on the left, the feed in the middle, search and topics on the
+// right. The feed itself is the same as on phones (same tabs, same post card). Below the lg breakpoint the right
+// rail is hidden.
 export default function CommunityDesktopView({ page }) {
   const { category, setCategory, tabs, feed, composeOpen, openCompose, closeCompose } = page;
   return (
     <LibraryFont>
-    <Box sx={{ maxWidth: SIZES.readingMaxWidth, mx: 'auto', px: 3, py: 4 }}>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 2 }}>
-        <Typography component="h1" sx={{ fontSize: FONT_SIZES.hero, fontWeight: FONT_WEIGHTS.bold }}>Community</Typography>
-        <Button variant="contained" disableElevation sx={(theme) => ({ bgcolor: navActiveColor(theme), '&:hover': { bgcolor: navActiveColor(theme) } })} startIcon={<EditNoteRoundedIcon />} onClick={openCompose}>Create post</Button>
-      </Stack>
-      <CategoryTabs value={category} onChange={setCategory} options={tabs} />
-      <PostList feed={feed} category={category} />
+      <Box sx={pageSx}>
+        <Stack component="aside" spacing={1.5} sx={stickySx}>
+          <ProfileSummaryCard />
+          <ShortcutsCard onShowSaved={setCategory} />
+        </Stack>
+        <Stack spacing={1.5}>
+          <ComposerCard onOpen={openCompose} />
+          <CategoryTabs value={category} onChange={setCategory} options={tabs} />
+          <PostList feed={feed} category={category} PostCard={PhonePostCard} />
+        </Stack>
+        <Box component="aside" sx={{ ...stickySx, display: { xs: 'none', lg: 'block' } }}>
+          <RightRail category={category} onCategoryChange={setCategory} />
+        </Box>
+      </Box>
       <ComposePostDialog open={composeOpen} onClose={closeCompose} onPublished={feed.prepend} />
-    </Box>
     </LibraryFont>
   );
 }

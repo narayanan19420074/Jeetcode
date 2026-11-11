@@ -96,6 +96,8 @@ export const SIZES = {
   // Left column of a phone problem row: the difficulty tag above the solved marker.
   problemDifficultyColumn: 43,
   readingMaxWidth: 720,
+  // Desktop Community page, laid out like the LinkedIn feed: left rail, feed, right rail.
+  communityLayout: { left: 225, right: 300, maxWidth: 1128, stickyTop: 88, bannerHeight: 56 },
   // Preview of an attached image on the compose screen.
   composeThumbnail: 80,
   // Bottom sheet that lists the comments of a feed post: its height, and the grab handle at its top edge.

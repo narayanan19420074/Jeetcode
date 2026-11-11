@@ -24,7 +24,7 @@ const frameSx = {
 };
 const coverSx = { position: 'absolute', inset: 0, display: 'block', width: SIZES.fill, height: SIZES.fill, objectFit: 'cover' };
 
-const cardSx = { px: 1.5, pt: 1.5, pb: 0, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card } };
+const cardSx = { px: 1.5, pt: 1.5, pb: 0, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card }, border: { md: '1px solid' }, borderColor: 'divider' };
 const contentLinkSx = { display: 'block', mt: 1, textDecoration: 'none', color: 'inherit' };
 const mutedSx = { color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING };
 

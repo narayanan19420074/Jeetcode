@@ -40,7 +40,7 @@ export default function Navbar() {
         <BrandLink isAuthenticated={isAuthenticated} />
         <NavbarDesktopLinks pathname={pathname} />
         <Box sx={{ flexGrow: 1 }} />
-        {isAuthenticated && <NavbarStatusChips user={user} coins={coins} />}
+        {isAuthenticated && <NavbarStatusChips user={user} />}
         <ThemeToggleButton mode={mode} onToggle={toggleTheme} />
         {isAuthenticated ? <SignedInControls user={user} actions={actions} /> : <SignInButton />}
       </Toolbar>
@@ -51,7 +51,6 @@ export default function Navbar() {
         mode={mode}
         isAuthenticated={isAuthenticated}
         user={user}
-        coins={coins}
         actions={actions}
         onToggleTheme={toggleTheme}
       />
