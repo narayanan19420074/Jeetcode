@@ -79,6 +79,8 @@ export const SIZES = {
   // Category tabs of the community feed and the search field of the phone top bars (same height as the LinkedIn app).
   compactPillHeight: 32,
   phoneSearchHeight: 32,
+  // Thin progress bar in the cards of the Exams page.
+  progressBarHeight: 6,
   chipHeight: 28,
   chipHeightSmall: 24,
   // `post` is the author photo on a feed post.

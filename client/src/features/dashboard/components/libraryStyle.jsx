@@ -33,7 +33,7 @@ export const isLibraryRoute = (pathname, search) => {
     const view = new URLSearchParams(search).get('view');
     return !view || LIBRARY_VIEWS.includes(view);
   }
-  return path === '/store' || /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?$/.test(path) || path === '/problems' || path === '/community' || path.startsWith('/community/') || path.startsWith('/problems/') || path.startsWith('/settings/') || LIBRARY_PAGE_PATHS.includes(path);
+  return path === '/store' || path === '/exams' || /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?$/.test(path) || path === '/problems' || path === '/community' || path.startsWith('/community/') || path.startsWith('/problems/') || path.startsWith('/settings/') || LIBRARY_PAGE_PATHS.includes(path);
 };
 
 // Library font for everything inside (menus and dialogs opened from it included).

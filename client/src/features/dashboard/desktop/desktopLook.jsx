@@ -12,7 +12,7 @@ export const isDashboardPath = (pathname) => pathname.replace(/\/+$/, '') === '/
 
 // Pages that wear the Library look on desktop: the dashboard, Problems, Store, Companies (/prep), Aptitude, Settings
 // and the code workspace. Settings and the workspace have a sub-path (/settings/profile, /workspace/two-sum).
-const DESKTOP_LOOK_PATHS = ['/dashboard', '/problems', '/store', '/prep', '/aptitude', '/settings'];
+const DESKTOP_LOOK_PATHS = ['/dashboard', '/problems', '/store', '/prep', '/aptitude', '/exams', '/settings'];
 const DESKTOP_LOOK_PREFIXES = ['/settings/', '/workspace/'];
 export const usesDesktopLook = (pathname) => {
   const path = pathname.replace(/\/+$/, '');
