@@ -100,6 +100,9 @@ export const SIZES = {
   // width is `dashboardMaxWidth`, the left column is `sidebar` (md / lg), the right column is `rail`, and the
   // columns stick `stickyTop` below the top of the window.
   desktopFrame: { sidebar: { md: 200, lg: 232 }, rail: 340, stickyTop: 84 },
+  // Desktop "Create post" dialog and the docked messaging panel at the bottom right of the Community page.
+  composeDialog: { width: 744, minHeight: 520 },
+  messagingDock: { width: 320, height: 480 },
   // Banner of the profile card at the top of the Community left column.
   communityBannerHeight: 56,
   // Preview of an attached image on the compose screen.

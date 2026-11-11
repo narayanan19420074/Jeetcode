@@ -11,7 +11,7 @@ function fetchFeaturedProblem(totals) {
   return total > 0 ? problemsApi.list({ page: featuredPageForToday(total), limit: 1 }) : null;
 }
 
-function useProgressAndFeatured(isAuthenticated) {
+export function useProgressAndFeatured(isAuthenticated) {
   const [progress, setProgress] = useState(null);
   const [featured, setFeatured] = useState(null);
 

@@ -1,25 +1,26 @@
 import { useSelector } from 'react-redux';
-import { Link as RouterLink } from 'react-router-dom';
-import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
-import InsightsRoundedIcon from '@mui/icons-material/InsightsRounded';
-import WorkOutlineRoundedIcon from '@mui/icons-material/WorkOutlineRounded';
+import { Chip, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import BookmarkRoundedIcon from '@mui/icons-material/BookmarkRounded';
+import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
+import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 import { SAVED_FEED } from '../common/communityCategories';
 import RailCard from './RailCard';
 
-function Shortcut({ icon: Icon, label, ...buttonProps }) {
+function Shortcut({ icon: Icon, label, soon = false, onClick }) {
   return (
-    <ListItemButton {...buttonProps}>
+    <ListItemButton disabled={soon} onClick={onClick}>
       <ListItemIcon sx={{ minWidth: 'auto', mr: 1.5 }}>
         <Icon fontSize="small" />
       </ListItemIcon>
       <ListItemText primary={label} slotProps={{ primary: { variant: 'body2', fontWeight: FONT_WEIGHTS.semibold } }} />
+      {soon && <Chip size="small" label="Soon" />}
     </ListItemButton>
   );
 }
 
-// Left rail second card: quick ways to your own pages. Saved posts switches the feed to the Saved tab.
+// Saved items switches the feed to the Saved tab. Groups and Newsletters do not exist in JeetCode yet, so they
+// are shown as "Soon" and cannot be opened.
 export default function ShortcutsCard({ onShowSaved }) {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   if (!isAuthenticated) return null;
@@ -27,9 +28,9 @@ export default function ShortcutsCard({ onShowSaved }) {
   return (
     <RailCard>
       <List disablePadding>
-        <Shortcut icon={InsightsRoundedIcon} label="My stats" component={RouterLink} to="/you" />
-        <Shortcut icon={WorkOutlineRoundedIcon} label="Job profile" component={RouterLink} to="/job-profile" />
-        <Shortcut icon={BookmarkBorderRoundedIcon} label="Saved posts" onClick={() => onShowSaved(SAVED_FEED)} />
+        <Shortcut icon={BookmarkRoundedIcon} label="Saved items" onClick={() => onShowSaved(SAVED_FEED)} />
+        <Shortcut icon={GroupsRoundedIcon} label="Groups" soon />
+        <Shortcut icon={NewspaperRoundedIcon} label="Newsletters" soon />
       </List>
     </RailCard>
   );
