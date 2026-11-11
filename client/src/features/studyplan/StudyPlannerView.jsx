@@ -2,7 +2,6 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { Alert, Badge, Box, Button, Collapse, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Skeleton, Snackbar, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
 import BackToDashboard from '../../components/BackToDashboard';
 import { FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
-import FriendPicker from './FriendPicker';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import { MobilePlanWorkspace, MobilePlans, MobileShell } from './MobileStudyPlan';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
@@ -13,10 +12,10 @@ import { fmtRange, localKey, parseInvite } from './planUtils';
 import { friendsApi } from '../../api/friendsApi';
 import { studyPlanApi } from '../../api/studyPlanApi';
 import { surface } from '../dashboard/dashboardUtils';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { FriendsPanel, NotificationsPopover } from './planner/PlannerSidePanels';
-import { PlanCard } from './planner/PlanCardParts';
+import PlanSummaryCard from './common/PlanSummaryCard';
 
 export default function StudyPlannerView({ isAuthenticated }) {
   const navigate = useNavigate();
@@ -38,8 +37,6 @@ export default function StudyPlannerView({ isAuthenticated }) {
   const [codeError, setCodeError] = useState('');
   const [showFriends, setShowFriends] = useState(false);
   const [bellEl, setBellEl] = useState(null);
-  const [picker, setPicker] = useState(null); // { el, plan }
-  const [expandedId, setExpandedId] = useState(null); // plan whose questions are showing
   const [toDelete, setToDelete] = useState(null); // plan waiting for delete / leave confirmation
   const [deleting, setDeleting] = useState(false);
   const today = localKey();
@@ -118,18 +115,6 @@ export default function StudyPlannerView({ isAuthenticated }) {
     go({ join: code });
   };
 
-  const addFriend = async (planToJoin, friend) => {
-    try {
-      await studyPlanApi.addMember(planToJoin.id, friend.userId);
-      setToast(`${friend.name} added to ${planToJoin.title}`);
-      await loadPlans();
-      return true;
-    } catch (err) {
-      setToast(extractErrorMessage(err));
-      return false;
-    }
-  };
-
   const openBell = async (e) => {
     setBellEl(e.currentTarget);
     try {
@@ -161,7 +146,6 @@ export default function StudyPlannerView({ isAuthenticated }) {
       if (toDelete.isOwner) await studyPlanApi.remove(toDelete.id);
       else await studyPlanApi.leave(toDelete.id);
       setToast(toDelete.isOwner ? 'Plan deleted' : 'You left the plan');
-      if (expandedId === toDelete.id) setExpandedId(null);
       setToDelete(null);
       await loadPlans();
     } catch (err) {
@@ -174,7 +158,6 @@ export default function StudyPlannerView({ isAuthenticated }) {
 
   const dueToday = (plans || []).reduce((n, p) => n + Math.max(0, p.summary.todayTotal - p.summary.todayDone), 0);
 
-  const pickerMemberIds = useMemo(() => new Set((picker?.plan?.members || []).map((m) => m.id)), [picker]);
   const findFriends = () => setParams({ view: 'friends' });
 
   if (!isAuthenticated) {
@@ -244,14 +227,10 @@ export default function StudyPlannerView({ isAuthenticated }) {
         <MobilePlans
           plans={plans} friends={friends} notes={notes} error={error} onDismissError={() => setError('')}
           invite={invite} joining={joining} onAccept={accept} onDismissInvite={() => go()}
-          dueToday={dueToday} today={today} onNew={() => setBuilder({})} onOpenPlan={(id) => go({ plan: id })}
-          onAddFriend={(el, p) => setPicker({ el, plan: p })} onDelete={setToDelete} onFindFriends={findFriends}
+          dueToday={dueToday} onNew={() => setBuilder({})} onOpenPlan={(id) => go({ plan: id })}
+          onDelete={setToDelete} onFindFriends={findFriends}
           codeInput={codeInput} setCodeInput={(v) => { setCodeInput(v); setCodeError(''); }} codeError={codeError}
           onJoinCode={joinFromInput} onOpenNotes={openNotes}
-        />
-        <FriendPicker
-          anchorEl={picker?.el} onClose={() => setPicker(null)} friends={friends} memberIds={pickerMemberIds} onFindFriends={findFriends}
-          onAdd={async (f) => { if (await addFriend(picker.plan, f)) setPicker((p) => p && ({ ...p, plan: { ...p.plan, members: [...p.plan.members, { id: f.userId }] } })); }}
         />
         <Dialog open={Boolean(toDelete)} onClose={() => !deleting && setToDelete(null)} maxWidth="xs" fullWidth>
           <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>
@@ -343,11 +322,7 @@ export default function StudyPlannerView({ isAuthenticated }) {
       ) : (
         <Box sx={{ display: 'grid', gap: 1.5, alignItems: 'start', gridTemplateColumns: { xs: 'minmax(0,1fr)', sm: 'repeat(2, minmax(0,1fr))', lg: 'repeat(3, minmax(0,1fr))' } }}>
           {plans.map((p) => (
-            <PlanCard
-              key={p.id} plan={p} today={today} expanded={expandedId === p.id}
-              onToggle={() => setExpandedId((cur) => (cur === p.id ? null : p.id))}
-              onOpen={() => go({ plan: p.id })} onAddFriend={(el) => setPicker({ el, plan: p })} onDelete={setToDelete}
-            />
+            <PlanSummaryCard key={p.id} plan={p} onOpen={() => go({ plan: p.id })} onDelete={setToDelete} />
           ))}
         </Box>
       )}
@@ -355,10 +330,6 @@ export default function StudyPlannerView({ isAuthenticated }) {
       <NotificationsPopover
         anchorEl={bellEl} onClose={() => setBellEl(null)} items={notes.items}
         onOpenPlan={(id) => { setBellEl(null); go({ plan: id }); }}
-      />
-      <FriendPicker
-        anchorEl={picker?.el} onClose={() => setPicker(null)} friends={friends} memberIds={pickerMemberIds} onFindFriends={findFriends}
-        onAdd={async (f) => { if (await addFriend(picker.plan, f)) setPicker((p) => p && ({ ...p, plan: { ...p.plan, members: [...p.plan.members, { id: f.userId }] } })); }}
       />
       <Dialog open={Boolean(toDelete)} onClose={() => !deleting && setToDelete(null)} maxWidth="xs" fullWidth>
         <DialogTitle sx={{ fontWeight: FONT_WEIGHTS.bold }}>{toDelete?.isOwner ? 'Delete plan?' : 'Leave plan?'}</DialogTitle>

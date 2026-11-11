@@ -10,7 +10,7 @@ import { PageHeader, libBackBtnSx, libIconBtnSx, libSolidBtnSx, libTintBtnSx } f
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 import { MUTED } from './mobileStyle';
 import { SectionTitle } from './MobileUi';
-import MobilePlanCard from './MobilePlanCard';
+import PlanSummaryCard from '../common/PlanSummaryCard';
 import MobileInviteCard from './MobileInviteCard';
 import MobileFriendsSheet from './MobileFriendsSheet';
 import MobileNotesSheet from './MobileNotesSheet';
@@ -42,12 +42,12 @@ function PlansTopBar({ unread, onOpenFriends, onOpenNotes }) {
 }
 
 // Empty state, skeletons or the list of plan cards.
-function PlansList({ plans, today, onNew, onOpenPlan, onAddFriend, onDelete }) {
+function PlansList({ plans, onNew, onOpenPlan, onDelete }) {
   if (plans === null) {
     return (
       <Stack spacing={1.5}>
         {[0, 1, 2].map((i) => (
-          <Skeleton key={i} variant="rounded" height={214} sx={{ borderRadius: RADII_PX.card }} />
+          <Skeleton key={i} variant="rounded" height={190} sx={{ borderRadius: RADII_PX.card }} />
         ))}
       </Stack>
     );
@@ -66,15 +66,15 @@ function PlansList({ plans, today, onNew, onOpenPlan, onAddFriend, onDelete }) {
   return (
     <Stack spacing={1.5}>
       {plans.map((p) => (
-        <MobilePlanCard key={p.id} plan={p} today={today} onOpen={() => onOpenPlan(p.id)} onAddFriend={onAddFriend} onDelete={onDelete} />
+        <PlanSummaryCard key={p.id} plan={p} onOpen={() => onOpenPlan(p.id)} onDelete={onDelete} />
       ))}
     </Stack>
   );
 }
 
 export function MobilePlans({
-  plans, friends, notes, error, onDismissError, invite, joining, onAccept, onDismissInvite, dueToday, today, onNew,
-  onOpenPlan, onAddFriend, onDelete, onFindFriends, codeInput, setCodeInput, codeError, onJoinCode, onOpenNotes,
+  plans, friends, notes, error, onDismissError, invite, joining, onAccept, onDismissInvite, dueToday, onNew,
+  onOpenPlan, onDelete, onFindFriends, codeInput, setCodeInput, codeError, onJoinCode, onOpenNotes,
 }) {
   const [friendsOpen, setFriendsOpen] = useState(false);
   const [notesOpen, setNotesOpen] = useState(false);
@@ -120,7 +120,7 @@ export function MobilePlans({
 
       <Box component="section" aria-label="Your plans" sx={{ mt: 4 }}>
         {plans && plans.length > 0 && <SectionTitle>Your plans</SectionTitle>}
-        <PlansList plans={plans} today={today} onNew={onNew} onOpenPlan={onOpenPlan} onAddFriend={onAddFriend} onDelete={onDelete} />
+        <PlansList plans={plans} onNew={onNew} onOpenPlan={onOpenPlan} onDelete={onDelete} />
       </Box>
 
       <MobileFriendsSheet

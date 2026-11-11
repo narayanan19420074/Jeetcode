@@ -5,7 +5,7 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
-import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
+import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 // Shared look of the phone Library (Problems) pages: the product font and a warm cream surface in light mode.
 // Dark mode keeps the app's normal dark surfaces.
@@ -147,6 +147,11 @@ const libBtnBase = { height: 48, px: 3, borderRadius: RADII_PX.pill, fontWeight:
 export const libSolidBtnSx = { ...libBtnBase, bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, '&:hover': { bgcolor: `color-mix(in srgb, ${LIB_ACCENT} 85%, ${COLOR_PALETTE.black})` } };
 export const libTintBtnSx = { ...libBtnBase, bgcolor: 'var(--lib-player)', color: 'var(--lib-text)', '&:hover': { bgcolor: 'var(--lib-player)', filter: 'brightness(0.97)' } };
 export const libSmallBtnSx = { ...libBtnBase, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg };
+
+// Two equal buttons side by side in the bottom row of a card (exam cards, study plan cards).
+const libCompactBtn = { height: SIZES.listRowHeightDense, px: 2, fontSize: FONT_SIZES.bodyLg, flex: 1 };
+export const libCompactSolidBtnSx = { ...libSolidBtnSx, ...libCompactBtn };
+export const libCompactTintBtnSx = { ...libTintBtnSx, ...libCompactBtn };
 
 // Chip / tab pill: cream when idle, accent when selected.
 export const libChipSx = (on) => ({

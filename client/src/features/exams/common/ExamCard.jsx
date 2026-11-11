@@ -3,8 +3,7 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import AppCard from '../../../components/ui/AppCard';
 import CompanyAvatar from '../../../components/CompanyAvatar';
 import { examDateLabel } from './examSchedule';
-import { applyButtonSx, mockTestButtonSx } from './examCardStyles';
-import { LIB_TRACKING } from '../../dashboard/components/libraryStyle';
+import { LIB_TRACKING, libCompactSolidBtnSx, libCompactTintBtnSx } from '../../dashboard/components/libraryStyle';
 import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../../../app/design/designTokens';
 
 // One exam: logo, name and date, then Apply (the official site) and Mock test.
@@ -20,8 +19,8 @@ export default function ExamCard({ exam, examOn }) {
         </Box>
       </Stack>
       <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
-        <Button component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation sx={applyButtonSx}>Apply</Button>
-        <Button onClick={() => navigate('/mocks')} disableElevation sx={mockTestButtonSx}>Mock test</Button>
+        <Button component="a" href={exam.applyUrl} target="_blank" rel="noopener noreferrer" disableElevation sx={libCompactSolidBtnSx}>Apply</Button>
+        <Button onClick={() => navigate('/mocks')} disableElevation sx={libCompactTintBtnSx}>Mock test</Button>
       </Stack>
     </AppCard>
   );

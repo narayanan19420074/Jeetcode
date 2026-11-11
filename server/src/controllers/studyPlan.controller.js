@@ -34,6 +34,17 @@ const header = (plan, me) => ({
 
 const publicUser = (u) => ({ id: String(u._id), handle: u.handle, name: u.name, avatarUrl: u.avatarUrl || null });
 
+// Everyone in a plan with how much of it they have completed, so the plan card can place each profile on the progress bar.
+function serializeListMembers(plan, personById, progress, me, today) {
+  return plan.members
+    .map((m) => personById.get(String(m.user)))
+    .filter(Boolean)
+    .map((u) => {
+      const doneIds = progress.get(String(u._id))?.doneIds || new Set();
+      return { ...publicUser(u), isMe: String(u._id) === me, percent: summarize(plan, doneIds, today).percent };
+    });
+}
+
 // GET /study-plans — rail + overview (summary and today's checklist per plan)
 export const listMyPlans = asyncHandler(async (req, res) => {
   const me = req.user.id;
@@ -47,17 +58,14 @@ export const listMyPlans = asyncHandler(async (req, res) => {
 
   const data = await Promise.all(
     plans.map(async (plan) => {
-      const progress = await loadMemberProgress(plan, [me]);
+      const progress = await loadMemberProgress(plan, plan.members.map((m) => m.user));
       const doneIds = progress.get(me)?.doneIds || new Set();
       const todayItems = plan.items
         .filter((i) => i.date.getTime() === today.getTime() || (i.date.getTime() < today.getTime() && !doneIds.has(String(i._id))))
         .sort((a, b) => a.date - b.date || a.order - b.order)
         .slice(0, 8)
         .map((i) => serializeItem(i, doneIds, today));
-      const members = plan.members
-        .map((m) => personById.get(String(m.user)))
-        .filter(Boolean)
-        .map((u) => ({ ...publicUser(u), isMe: String(u._id) === me }));
+      const members = serializeListMembers(plan, personById, progress, me, today);
       return { ...header(plan, me), members, summary: summarize(plan, doneIds, today), today: todayItems };
     })
   );

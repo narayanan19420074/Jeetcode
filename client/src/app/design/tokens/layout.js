@@ -81,6 +81,8 @@ export const SIZES = {
   phoneSearchHeight: 32,
   // Thin progress bar in the cards of the Exams page.
   progressBarHeight: 6,
+  // Profile picture of a member on the progress bar of a study plan card.
+  progressAvatar: 28,
   chipHeight: 28,
   chipHeightSmall: 24,
   // `post` is the author photo on a feed post.
