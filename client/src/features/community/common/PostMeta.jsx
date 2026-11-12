@@ -15,7 +15,7 @@ export default function PostMeta({ post }) {
     <Stack spacing={1.5}>
       <Typography sx={{ ...mutedSx, fontSize: FONT_SIZES.bodyLg }}>{timeAgo(post.createdAt)}</Typography>
       <Typography component="h1" sx={{ fontSize: FONT_SIZES.displayLg, lineHeight: 1.25, fontWeight: FONT_WEIGHTS.bold }}>{post.title}</Typography>
-      <Stack direction="row" alignItems="center" spacing={1.5}>
+      <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
         <PostAvatar author={post.author} size={SIZES.avatar.md} />
         <Typography noWrap sx={{ ...mutedSx, flex: 1, fontSize: FONT_SIZES.subheading }}>{authorLabel(post.author)}</Typography>
         <FollowButton author={post.author} isOwn={post.isMine} isFollowing={post.isFollowingAuthor} />

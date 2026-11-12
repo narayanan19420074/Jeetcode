@@ -11,7 +11,7 @@ import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../../../app/design/designToken
 // Top of a feed post: avatar, author, time and category, then Follow and the "..." menu on the right.
 export default function PostCardHeader({ post, onRemoved }) {
   return (
-    <Stack direction="row" alignItems="center" spacing={1}>
+    <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
       <AuthorLink author={post.author} sx={{ display: 'flex', alignItems: 'center', gap: 1, flex: 1, minWidth: SIZES.flexShrinkMinWidth }}>
         <PostAvatar author={post.author} size={SIZES.avatar.post} />
         <Box sx={{ flex: 1, minWidth: SIZES.flexShrinkMinWidth }}>

@@ -11,7 +11,7 @@ import { FONT_SIZES, SIZES } from '../../../app/design/designTokens';
 
 function ViewCount({ value }) {
   return (
-    <Stack direction="row" alignItems="center" spacing={0.5} aria-label={`${value} views`} sx={{ color: 'var(--lib-muted)', pr: 1 }}>
+    <Stack direction="row" spacing={0.5} aria-label={`${value} views`} sx={{ alignItems: 'center', color: 'var(--lib-muted)', pr: 1 }}>
       <VisibilityOutlinedIcon sx={{ fontSize: SIZES.iconSize.small }} />
       <Typography component="span" sx={{ fontSize: FONT_SIZES.body }}>{value}</Typography>
     </Stack>
@@ -27,7 +27,7 @@ export default function PostEngagementBar({ post, trailing }) {
   const comments = useCommentsSheet(post);
   return (
     <Box>
-      <Stack direction="row" alignItems="center">
+      <Stack direction="row" sx={{ alignItems: 'center' }}>
         <EngagementButton icon={vote.state.myVote === 1 ? LikeFilledIcon : LikeOutlineIcon} label="Like" count={vote.state.score} active={vote.state.myVote === 1} onClick={() => vote.cast(1)} />
         <EngagementButton icon={CommentOutlineIcon} label="Comments" count={comments.count} onClick={comments.show} />
         <EngagementButton icon={RepostOutlineIcon} label="Repost" count={repost.count} active={repost.on} onClick={repost.toggle} disabled={repost.busy} />
