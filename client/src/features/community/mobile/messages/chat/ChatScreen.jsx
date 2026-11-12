@@ -3,6 +3,7 @@ import { Dialog } from '@mui/material';
 import { LibraryFont } from '../../../../dashboard/components/libraryStyle';
 import { SIZES } from '../../../../../app/design/designTokens';
 import ChatComposer from './ChatComposer';
+import ChatErrorBoundary from './ChatErrorBoundary';
 import ChatHeader from './ChatHeader';
 import ChatThread from './ChatThread';
 import useChatThread from './useChatThread';
@@ -33,7 +34,11 @@ export default function ChatScreen({ friend, onClose, actions }) {
   return (
     <Dialog fullScreen open={Boolean(friend)} onClose={onClose} aria-label="Chat">
       <LibraryFont sx={{ flexGrow: 1, minHeight: SIZES.flexShrinkMinHeight, display: 'flex', flexDirection: 'column', bgcolor: 'background.paper' }}>
-        {friend && <ChatContent friend={friend} onClose={onClose} actions={actions} />}
+        {friend && (
+          <ChatErrorBoundary key={friend.userId} onClose={onClose}>
+            <ChatContent friend={friend} onClose={onClose} actions={actions} />
+          </ChatErrorBoundary>
+        )}
       </LibraryFont>
     </Dialog>
   );
