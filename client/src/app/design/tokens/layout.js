@@ -109,6 +109,8 @@ export const SIZES = {
   // Desktop "Create post" dialog and the docked messaging panel at the bottom right of the Community page.
   composeDialog: { width: 744, minHeight: 520 },
   messagingDock: { width: 320, height: 480 },
+  // Widest a card (pair room invitation) grows inside a phone chat message.
+  chatCardMaxWidth: 320,
   // Banner of the profile card at the top of the Community left column.
   communityBannerHeight: 56,
   // Preview of an attached image on the compose screen.
