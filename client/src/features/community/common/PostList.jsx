@@ -5,8 +5,8 @@ import RichPostCard from './RichPostCard';
 import { SAVED_FEED } from './communityCategories';
 import { EmptyBlock, FeedSkeleton } from '../../workspace/community/CommunityBits';
 
-// Posts are white cards on a grey strip that runs edge to edge on phones, like a LinkedIn feed. On desktop the cards stand alone.
-const feedStripSx = { display: 'flex', flexDirection: 'column', gap: 1, mt: 1, mx: { xs: -2, md: 0 }, bgcolor: { xs: 'var(--lib-player)', md: 'transparent' } };
+// Posts are white cards on a grey strip that runs edge to edge on phones, like a LinkedIn feed (a thin band between cards). On desktop the cards stand alone.
+const feedStripSx = { display: 'flex', flexDirection: 'column', gap: { xs: 0.5, md: 1 }, mt: 1, mx: { xs: -2, md: 0 }, bgcolor: { xs: 'var(--lib-player)', md: 'transparent' } };
 
 function EmptyFeed({ category }) {
   if (category === SAVED_FEED) {

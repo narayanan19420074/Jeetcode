@@ -40,7 +40,7 @@ function PostText({ title, excerpt }) {
   return (
     <>
       <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.semibold, lineHeight: 1.3, ...clamp(TITLE_LINES) }}>{title}</Typography>
-      <Typography sx={{ mt: 0.25, fontSize: FONT_SIZES.body, lineHeight: 1.3, letterSpacing: LIB_TRACKING, ...clamp(TEXT_LINES) }}>
+      <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: 1.3, letterSpacing: LIB_TRACKING, ...clamp(TEXT_LINES) }}>
         {preview.text}
         {preview.cut && <Box component="span" sx={mutedSx}>… more</Box>}
       </Typography>

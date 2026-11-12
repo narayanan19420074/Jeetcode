@@ -4,7 +4,7 @@ import useJobProfileEditor from './common/useJobProfileEditor';
 import JobProfileDesktopView from './desktop/JobProfileDesktopView';
 import JobProfileMobileView from './mobile/JobProfileMobileView';
 
-// Thin entry: loads the profile once and picks the phone or desktop layout.
+// Thin entry for the member's own, editable profile: loads the profile once and picks the phone or desktop layout.
 export default function JobProfilePage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));

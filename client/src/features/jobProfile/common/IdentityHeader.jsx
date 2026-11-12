@@ -1,5 +1,4 @@
-import { useSelector } from 'react-redux';
-import { Avatar, Box, Button, Paper, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Avatar, Box, Button, Chip, Paper, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 import { BANNER_GRADIENT } from '../../dashboard/bannerGradients';
@@ -25,14 +24,14 @@ function ProfilePhoto({ user }) {
   );
 }
 
-function HeaderText({ user, profile }) {
+function HeaderText({ user, profile, readOnly }) {
   return (
     <Box sx={{ px: 2, pb: 2 }}>
       <Typography component="h1" variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, wordBreak: 'break-word' }}>
         {user.name}
       </Typography>
       <Typography sx={{ mt: 0.5 }} color={profile.headline ? 'text.primary' : 'text.secondary'}>
-        {profile.headline || 'Add a headline to tell recruiters what you do.'}
+        {profile.headline || (readOnly ? '' : 'Add a headline to tell recruiters what you do.')}
       </Typography>
       <Typography variant="body2" sx={{ mt: 1 }}>
         {organizationLine(profile)}
@@ -44,26 +43,41 @@ function HeaderText({ user, profile }) {
   );
 }
 
+// Another member's profile only says whether they are open to work.
+function OpenToWorkNote({ isOpen }) {
+  if (!isOpen) return null;
+  return (
+    <Box sx={{ px: 2, pb: 2 }}>
+      <Chip label="Open to work" color="success" size="small" />
+    </Box>
+  );
+}
+
+function OwnerActions({ editor }) {
+  return (
+    <Stack direction="row" spacing={1} sx={{ px: 2, pb: 2 }}>
+      <Button variant="contained" disableElevation fullWidth onClick={editor.editIntro}>
+        {editor.profile.openToWork ? 'Open to work' : 'Open to'}
+      </Button>
+      <AddSectionMenu editor={editor} />
+    </Stack>
+  );
+}
+
 // Banner, round photo, name, headline, organisation, location and the two action buttons.
 export default function IdentityHeader({ editor }) {
-  const user = useSelector((state) => state.auth.user);
+  const { owner: user, profile, readOnly } = editor;
   const isMobile = useMediaQuery(useTheme().breakpoints.down('md'));
-  const { profile } = editor;
 
   return (
     <Paper variant={isMobile ? 'elevation' : 'outlined'} elevation={0} sx={{ overflow: 'hidden', borderRadius: isMobile ? RADII_PX.square : RADII_PX.card }}>
       <Box sx={{ height: SIZES.profileBannerHeight, background: BANNER_GRADIENT.visualizer }} />
       <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between', pr: 1 }}>
         <ProfilePhoto user={user} />
-        <IconAction label="Edit intro" icon={EditRoundedIcon} onClick={editor.editIntro} />
+        {!readOnly && <IconAction label="Edit intro" icon={EditRoundedIcon} onClick={editor.editIntro} />}
       </Stack>
-      <HeaderText user={user} profile={profile} />
-      <Stack direction="row" spacing={1} sx={{ px: 2, pb: 2 }}>
-        <Button variant="contained" disableElevation fullWidth onClick={editor.editIntro}>
-          {profile.openToWork ? 'Open to work' : 'Open to'}
-        </Button>
-        <AddSectionMenu editor={editor} />
-      </Stack>
+      <HeaderText user={user} profile={profile} readOnly={readOnly} />
+      {readOnly ? <OpenToWorkNote isOpen={profile.openToWork} /> : <OwnerActions editor={editor} />}
     </Paper>
   );
 }

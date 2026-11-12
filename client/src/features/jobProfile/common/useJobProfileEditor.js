@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import useJobProfile from './useJobProfile';
 import { removeAt, upsertAt } from './jobProfileEntries';
 
@@ -16,10 +17,11 @@ function useDialogState() {
   };
 }
 
-// Everything a Job profile screen needs: the data, the open dialog, and one function per change.
+// Everything a Job profile screen needs (`readOnly` and `owner` match the member view, see useMemberJobProfile): the data, the open dialog, and one function per change.
 export default function useJobProfileEditor() {
   const { profile, status, reload, save } = useJobProfile();
   const dialogState = useDialogState();
+  const owner = useSelector((state) => state.auth.user);
 
   // Close only after the server accepted the change, so a failed save keeps the form open.
   const commit = async (changes) => {
@@ -29,6 +31,8 @@ export default function useJobProfileEditor() {
 
   return {
     ...dialogState,
+    readOnly: false,
+    owner,
     profile,
     status,
     reload,

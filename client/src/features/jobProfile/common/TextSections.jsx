@@ -19,8 +19,9 @@ const EmptyHint = ({ children }) => (
 // The first skills in the About block, with an arrow that leads to the full list.
 function TopSkills({ skills, onOpen }) {
   if (skills.length === 0) return null;
+  const isEditable = Boolean(onOpen);
   return (
-    <Box component="button" type="button" onClick={onOpen} aria-label="Edit skills" sx={{ all: 'unset', boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 2, mt: 2, p: 2, cursor: 'pointer', border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.card }}>
+    <Box component={isEditable ? 'button' : 'div'} type={isEditable ? 'button' : undefined} onClick={onOpen} aria-label={isEditable ? 'Edit skills' : undefined} sx={{ all: 'unset', boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 2, mt: 2, p: 2, cursor: isEditable ? 'pointer' : 'default', border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.card }}>
       <DiamondOutlinedIcon />
       <Box sx={{ flex: 1 }}>
         <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>Top skills</Typography>
@@ -28,7 +29,7 @@ function TopSkills({ skills, onOpen }) {
           <Typography key={skill}>{skill}</Typography>
         ))}
       </Box>
-      <ArrowForwardRoundedIcon />
+      {isEditable && <ArrowForwardRoundedIcon />}
     </Box>
   );
 }
@@ -36,9 +37,9 @@ function TopSkills({ skills, onOpen }) {
 export function AboutSection({ editor }) {
   const { about, skills } = editor.profile;
   return (
-    <ProfileCard title="About" actions={<IconAction label="Edit about" icon={EditRoundedIcon} onClick={editor.editIntro} />}>
+    <ProfileCard title="About" actions={editor.readOnly ? null : <IconAction label="Edit about" icon={EditRoundedIcon} onClick={editor.editIntro} />}>
       {about ? <Typography sx={{ whiteSpace: 'pre-line' }}>{about}</Typography> : <EmptyHint>Summarise your background, strengths and what you are looking for.</EmptyHint>}
-      <TopSkills skills={skills} onOpen={editor.editSkills} />
+      <TopSkills skills={skills} onOpen={editor.readOnly ? undefined : editor.editSkills} />
     </ProfileCard>
   );
 }
@@ -48,7 +49,7 @@ export function SkillsSection({ editor }) {
   const { skills } = editor.profile;
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? skills : skills.slice(0, COLLAPSED_SKILL_COUNT);
-  const actions = (
+  const actions = editor.readOnly ? null : (
     <>
       <IconAction label="Add skills" icon={AddRoundedIcon} onClick={editor.editSkills} />
       <IconAction label="Edit skills" icon={EditRoundedIcon} onClick={editor.editSkills} />
@@ -57,7 +58,7 @@ export function SkillsSection({ editor }) {
 
   return (
     <ProfileCard title="Skills" actions={actions}>
-      {skills.length === 0 && <EmptyHint>Add the tools and technologies you work with.</EmptyHint>}
+      {skills.length === 0 && !editor.readOnly && <EmptyHint>Add the tools and technologies you work with.</EmptyHint>}
       <Stack divider={<Divider />}>
         {visible.map((skill) => (
           <Typography key={skill} sx={{ py: 1.5, fontWeight: FONT_WEIGHTS.semibold }}>

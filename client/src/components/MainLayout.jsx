@@ -25,6 +25,7 @@ const hidesNavbarOnPhone = (pathname, search) =>
   PHONE_HEADER_PATHS.includes(pathname.replace(/\/+$/, '')) ||
   APTITUDE_LEVEL_PATH.test(pathname) ||
   pathname.startsWith('/settings/') ||
+  pathname.startsWith('/job-profile/') ||
   pathname.startsWith('/workspace/') ||
   pathname === '/store' ||
   pathname === '/community' ||

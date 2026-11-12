@@ -47,22 +47,27 @@ function EntryItem({ sectionKey, entry, onEdit, onRemove }) {
         {body && <Typography sx={{ mt: 1, whiteSpace: 'pre-line' }}>{body}</Typography>}
         {link && <CredentialLink href={link} />}
       </Box>
-      <Stack>
-        <IconAction label={`Edit ${title}`} icon={EditRoundedIcon} onClick={onEdit} />
-        <IconAction label={`Delete ${title}`} icon={DeleteOutlineRoundedIcon} onClick={onRemove} />
-      </Stack>
+      {onEdit && (
+        <Stack>
+          <IconAction label={`Edit ${title}`} icon={EditRoundedIcon} onClick={onEdit} />
+          <IconAction label={`Delete ${title}`} icon={DeleteOutlineRoundedIcon} onClick={onRemove} />
+        </Stack>
+      )}
     </Stack>
   );
 }
 
 // One list section (experience, education or certifications), fully described by ENTRY_SECTIONS[sectionKey].
+// Another member's profile shows the entries without any add, edit or delete control.
 export default function EntrySection({ sectionKey, editor }) {
   const section = ENTRY_SECTIONS[sectionKey];
   const entries = editor.profile[sectionKey];
+  const canEdit = !editor.readOnly;
+  const addAction = canEdit && <IconAction label={`Add ${section.itemLabel}`} icon={AddRoundedIcon} onClick={() => editor.addEntry(sectionKey)} />;
 
   return (
-    <ProfileCard title={section.title} actions={<IconAction label={`Add ${section.itemLabel}`} icon={AddRoundedIcon} onClick={() => editor.addEntry(sectionKey)} />}>
-      {entries.length === 0 && (
+    <ProfileCard title={section.title} actions={addAction}>
+      {canEdit && entries.length === 0 && (
         <Typography variant="body2" color="text.secondary">
           {section.emptyText}
         </Typography>
@@ -70,7 +75,7 @@ export default function EntrySection({ sectionKey, editor }) {
       {entries.map((entry, index) => (
         <Box key={`${sectionKey}-${index}`}>
           {index > 0 && <Divider />}
-          <EntryItem sectionKey={sectionKey} entry={entry} onEdit={() => editor.editEntry(sectionKey, index)} onRemove={() => editor.askRemoveEntry(sectionKey, index)} />
+          <EntryItem sectionKey={sectionKey} entry={entry} onEdit={canEdit ? () => editor.editEntry(sectionKey, index) : undefined} onRemove={() => editor.askRemoveEntry(sectionKey, index)} />
         </Box>
       ))}
     </ProfileCard>

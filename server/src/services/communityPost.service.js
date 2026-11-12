@@ -4,6 +4,7 @@ import { AUTHOR_FIELDS, decorate, makeExcerpt, toObjectId } from './community.se
 import { findOwnedImageIds, markImagesAttached } from './communityImage.service.js';
 import { applyViewerPreferences } from './communityPreference.service.js';
 import { addViewerState } from './communityViewerState.service.js';
+import { addSocialContext } from './communityPostContext.service.js';
 
 const escapeRegex = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -24,7 +25,8 @@ const hideAnonymousAuthor = (post) => (post.isAnonymous ? { ...post, author: nul
 export async function presentPosts(rows, user) {
   const decorated = await decorate(rows, 'post', user);
   const withViewerState = await addViewerState(decorated, user);
-  return withViewerState.map(hideAnonymousAuthor);
+  const withSocialContext = await addSocialContext(withViewerState, user);
+  return withSocialContext.map(hideAnonymousAuthor);
 }
 
 export async function findPostPage({ category, sort, q, saved, page, limit }, user) {

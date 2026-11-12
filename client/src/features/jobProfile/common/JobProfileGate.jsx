@@ -10,7 +10,7 @@ export default function JobProfileGate({ editor, children }) {
         <CircularProgress aria-label="Loading Job profile" />
       ) : (
         <>
-          <Typography sx={{ mb: 2 }}>Couldn’t load your Job profile.</Typography>
+          <Typography sx={{ mb: 2 }}>{editor.readOnly ? 'Couldn’t load this Job profile.' : 'Couldn’t load your Job profile.'}</Typography>
           <Button variant="contained" disableElevation onClick={editor.reload}>
             Try again
           </Button>

@@ -1,13 +1,11 @@
 import { Box, Stack } from '@mui/material';
 import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
-import VolunteerActivismRoundedIcon from '@mui/icons-material/VolunteerActivismRounded';
 import { COLOR_PALETTE, FONT_SIZES, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 const REACTIONS = [
   { key: 'like', icon: ThumbUpRoundedIcon, background: COLOR_PALETTE.blue[600] },
   { key: 'love', icon: FavoriteRoundedIcon, background: COLOR_PALETTE.red[500] },
-  { key: 'support', icon: VolunteerActivismRoundedIcon, background: COLOR_PALETTE.green[600] },
 ];
 
 const badgeSx = (background, index) => ({
@@ -15,7 +13,7 @@ const badgeSx = (background, index) => ({
   placeItems: 'center',
   width: SIZES.reactionBadge,
   height: SIZES.reactionBadge,
-  ml: index === 0 ? 0 : -0.5,
+  ml: index === 0 ? 0 : -0.25,
   borderRadius: RADII_PX.circle,
   bgcolor: background,
   color: 'common.white',
@@ -23,13 +21,13 @@ const badgeSx = (background, index) => ({
   borderColor: 'background.paper',
 });
 
-// Overlapping round reaction icons at the end of the row under a phone feed post. Display only for now.
+// Two overlapping round reaction icons (like and love, as on LinkedIn) at the end of the row under a phone feed post. Display only for now.
 export default function ReactionStack() {
   return (
     <Stack direction="row" role="img" aria-label="Reactions" sx={{ pr: 0.5 }}>
       {REACTIONS.map(({ key, icon: Icon, background }, index) => (
         <Box key={key} sx={badgeSx(background, index)}>
-          <Icon sx={{ fontSize: FONT_SIZES.micro }} />
+          <Icon sx={{ fontSize: FONT_SIZES.nano }} />
         </Box>
       ))}
     </Stack>

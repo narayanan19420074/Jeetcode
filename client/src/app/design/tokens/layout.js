@@ -93,7 +93,7 @@ export const SIZES = {
   // Coloured banner at the top of the Job profile.
   profileBannerHeight: 120,
   // Round reaction icon in the overlapping stack at the end of the row under a phone feed post.
-  reactionBadge: 18,
+  reactionBadge: 14,
   // Green online dot on the avatar of a conversation in the phone messages list.
   presenceDot: 14,
   contentMaxWidth: 1200,
