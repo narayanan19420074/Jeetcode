@@ -30,12 +30,17 @@ function AuthorText({ post }) {
   );
 }
 
-// Follow on the right of the author row. With no friend row above, the "..." menu and dismiss button sit over it.
+// Follow on the right of the author row. With no friend row above, the "..." menu and dismiss button sit over it,
+// centred on the name line.
 function AuthorRowActions({ post, onRemoved, showMenu }) {
   return (
     <Stack sx={{ alignItems: 'flex-end', flexShrink: 0, mr: -1 }}>
-      {showMenu && <PhoneHeaderActions post={post} onRemoved={onRemoved} />}
-      <FollowButton author={post.author} isOwn={post.isMine} isFollowing={post.isFollowingAuthor} fontSize={FONT_SIZES.title} />
+      {showMenu && (
+        <Box sx={{ mt: -0.75 }}>
+          <PhoneHeaderActions post={post} onRemoved={onRemoved} />
+        </Box>
+      )}
+      <FollowButton author={post.author} isOwn={post.isMine} isFollowing={post.isFollowingAuthor} fontSize={FONT_SIZES.body} />
     </Stack>
   );
 }

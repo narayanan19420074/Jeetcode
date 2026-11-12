@@ -31,7 +31,7 @@ function HeaderText({ user, profile, readOnly }) {
         {user.name}
       </Typography>
       <Typography sx={{ mt: 0.5 }} color={profile.headline ? 'text.primary' : 'text.secondary'}>
-        {profile.headline || (readOnly ? '' : 'Add a headline to tell recruiters what you do.')}
+        {profile.headline || (readOnly ? (user.handle && `@${user.handle}`) : 'Add a headline to tell recruiters what you do.')}
       </Typography>
       <Typography variant="body2" sx={{ mt: 1 }}>
         {organizationLine(profile)}

@@ -1,4 +1,5 @@
-import { Stack } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
+import ProfileCard from './ProfileCard';
 import { SECTION_ORDER } from './jobProfileConfig';
 import EntrySection from './EntrySection';
 import IdentityHeader from './IdentityHeader';
@@ -11,12 +12,25 @@ import { AboutSection, SkillsSection } from './TextSections';
 // that have content, and never the private analytics.
 const isShown = (editor, hasContent) => !editor.readOnly || hasContent;
 
+const hasAnyContent = ({ about, skills, ...entries }) => Boolean(about) || skills.length > 0 || SECTION_ORDER.some((key) => entries[key].length > 0);
+
+function EmptyMemberNote() {
+  return (
+    <ProfileCard title="Job profile">
+      <Typography variant="body2" color="text.secondary">
+        This member has not added any Job profile details yet.
+      </Typography>
+    </ProfileCard>
+  );
+}
+
 export default function JobProfileSections({ editor, spacing }) {
   const { profile } = editor;
   return (
     <Stack spacing={spacing}>
       <IdentityHeader editor={editor} />
       {!editor.readOnly && <StatsSection />}
+      {editor.readOnly && !hasAnyContent(profile) && <EmptyMemberNote />}
       {isShown(editor, Boolean(profile.about)) && <AboutSection editor={editor} />}
       {SECTION_ORDER.filter((key) => isShown(editor, profile[key].length > 0)).map((key) => (
         <EntrySection key={key} sectionKey={key} editor={editor} />
