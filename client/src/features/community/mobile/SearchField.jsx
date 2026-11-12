@@ -13,11 +13,13 @@ const searchFieldSx = {
 };
 const searchIconSx = { fontSize: SIZES.iconSize.small };
 
-// Pill search field used in the phone top bars. Display only for now.
-export default function SearchField({ placeholder, label }) {
+// Pill search field used in the phone top bars. Pass `value` and `onChange(text)` to make it filter something.
+export default function SearchField({ placeholder, label, value, onChange }) {
   return (
     <TextField
       placeholder={placeholder}
+      value={value}
+      onChange={onChange ? (event) => onChange(event.target.value) : undefined}
       sx={searchFieldSx}
       slotProps={{
         htmlInput: { 'aria-label': label },

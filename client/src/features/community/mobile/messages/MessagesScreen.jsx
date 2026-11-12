@@ -1,36 +1,28 @@
-import { Box, Dialog, Fab } from '@mui/material';
-import EditNoteRoundedIcon from '@mui/icons-material/EditNoteRounded';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Dialog } from '@mui/material';
 import { LibraryFont } from '../../../dashboard/components/libraryStyle';
-import { navActiveColor } from '../../../../components/navbar/navLinkStyles';
 import MessagesTopBar from './MessagesTopBar';
-import MessageFilterChips from './MessageFilterChips';
-import ConversationRow from './ConversationRow';
-import { SAMPLE_CONVERSATIONS } from './messagesSample';
+import ConversationList from './ConversationList';
+import MessageChat from './MessageChat';
+import useConversations from './useConversations';
+import useMessageChat from './useMessageChat';
 
-const composeFabSx = (theme) => ({
-  position: 'fixed',
-  right: theme.spacing(2),
-  bottom: `calc(${theme.spacing(3)} + env(safe-area-inset-bottom))`,
-  bgcolor: navActiveColor(theme),
-  color: theme.palette.common.white,
-  '&:hover': { bgcolor: navActiveColor(theme) },
-});
-
-// Full-screen inbox opened from the messages button: search, filters and the conversation list.
+// Full-screen inbox opened from the messages button: a search field and the member's friends with their latest
+// message. Tapping a row opens the same chat as the Friends page.
 // The dialog is a portal, so it wraps its content in LibraryFont again to get the page fonts and colours.
 export default function MessagesScreen({ open, onClose }) {
+  const [query, setQuery] = useState('');
+  const myId = useSelector((state) => state.auth.user?.id);
+  const { conversations, loaded } = useConversations({ open, query });
+  const chat = useMessageChat();
   return (
     <Dialog fullScreen open={open} onClose={onClose} aria-label="Messages">
       <LibraryFont sx={{ flexGrow: 1, bgcolor: 'background.paper' }}>
-        <MessagesTopBar onBack={onClose} />
-        <MessageFilterChips />
-        <Box component="ul" sx={{ m: 0, p: 0, listStyle: 'none', borderTop: '1px solid', borderColor: 'divider' }}>
-          {SAMPLE_CONVERSATIONS.map((conversation) => (
-            <ConversationRow key={conversation.id} conversation={conversation} />
-          ))}
-        </Box>
-        <Fab aria-label="New message" sx={composeFabSx}><EditNoteRoundedIcon /></Fab>
+        <MessagesTopBar onBack={onClose} query={query} onQueryChange={setQuery} />
+        <ConversationList conversations={conversations} loaded={loaded} myId={myId} hasQuery={Boolean(query.trim())} onOpen={chat.open} />
       </LibraryFont>
+      <MessageChat chat={chat} />
     </Dialog>
   );
 }
