@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Dialog } from '@mui/material';
 import { LibraryFont } from '../../../../dashboard/components/libraryStyle';
+import { SIZES } from '../../../../../app/design/designTokens';
 import ChatComposer from './ChatComposer';
 import ChatHeader from './ChatHeader';
 import ChatThread from './ChatThread';
@@ -31,7 +32,7 @@ function ChatContent({ friend, onClose, actions }) {
 export default function ChatScreen({ friend, onClose, actions }) {
   return (
     <Dialog fullScreen open={Boolean(friend)} onClose={onClose} aria-label="Chat">
-      <LibraryFont sx={{ flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column', bgcolor: 'background.paper' }}>
+      <LibraryFont sx={{ flexGrow: 1, minHeight: SIZES.flexShrinkMinHeight, display: 'flex', flexDirection: 'column', bgcolor: 'background.paper' }}>
         {friend && <ChatContent friend={friend} onClose={onClose} actions={actions} />}
       </LibraryFont>
     </Dialog>

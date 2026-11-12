@@ -37,7 +37,7 @@ export default function ChatMessageRow({ item, friend, me }) {
   return (
     <Stack direction="row" sx={{ gap: 1.5, mt: continuesRun ? 0.5 : 2 }}>
       <Box sx={{ width: SIZES.avatar.md, flexShrink: 0 }}>{!continuesRun && <PersonAvatar person={sender} size={SIZES.avatar.md} />}</Box>
-      <Box sx={{ minWidth: 0, flex: 1 }}>
+      <Box sx={{ minWidth: SIZES.flexShrinkMinWidth, flex: 1 }}>
         {!continuesRun && <SenderHeading name={sender.name} sentAt={message.createdAt} />}
         <MessageContent message={message} isMine={isMine} friend={friend} />
       </Box>

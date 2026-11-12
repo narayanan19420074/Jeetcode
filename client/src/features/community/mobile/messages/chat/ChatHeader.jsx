@@ -8,7 +8,7 @@ import { LIB_FONT, LIB_TRACKING, libBackBtnSx, libIconBtnSx } from '../../../../
 import { statusInfo } from '../../../../friends/friendsUi';
 import { LIB_SUCCESS } from '../../../../friends/chat/chatShared';
 
-const menuItemSx = { minHeight: 48, fontSize: FONT_SIZES.title, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING };
+const menuItemSx = { minHeight: SIZES.menuRowHeight, fontSize: FONT_SIZES.title, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING };
 
 function StatusLine({ friend, isTyping }) {
   const isOnline = useSelector((state) => Boolean(state.friends.online[friend.userId]));
@@ -26,7 +26,7 @@ function StatusLine({ friend, isTyping }) {
 function ChatMenu({ anchor, onClose, actions }) {
   const run = (action) => () => { onClose(); action(); };
   return (
-    <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={onClose} slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: 220 } } }}>
+    <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={onClose} slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: SIZES.accountMenuMinWidth.desktop } } }}>
       <MenuItem onClick={run(actions.openProfile)} sx={menuItemSx}>View profile</MenuItem>
       <MenuItem onClick={run(actions.invitePairRoom)} sx={menuItemSx}>Invite to pair room</MenuItem>
       <MenuItem onClick={run(actions.removeFriend)} sx={{ ...menuItemSx, color: 'error.main' }}>Remove friend</MenuItem>
@@ -40,7 +40,7 @@ export default function ChatHeader({ friend, isTyping, onBack, actions }) {
   return (
     <Stack direction="row" sx={{ alignItems: 'center', gap: 1, px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 1, flexShrink: 0, borderBottom: '1px solid var(--lib-divider)' }}>
       <IconButton onClick={onBack} aria-label="Back to messages" sx={libBackBtnSx}><ArrowBackRoundedIcon /></IconButton>
-      <Box sx={{ minWidth: 0, flex: 1 }}>
+      <Box sx={{ minWidth: SIZES.flexShrinkMinWidth, flex: 1 }}>
         <Typography noWrap sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontWeight: FONT_WEIGHTS.bold }}>{friend.name}</Typography>
         <StatusLine friend={friend} isTyping={isTyping} />
       </Box>

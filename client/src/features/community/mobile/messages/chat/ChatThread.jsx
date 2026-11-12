@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Box, ButtonBase, CircularProgress, Typography } from '@mui/material';
-import { FONT_SIZES } from '../../../../../app/design/designTokens';
+import { FONT_SIZES, SIZES } from '../../../../../app/design/designTokens';
 import { libChipSx } from '../../../../dashboard/components/libraryStyle';
 import { TypingDots } from '../../../../friends/chat/ChatBubbles';
 import ChatIntro from './ChatIntro';
@@ -21,7 +21,7 @@ export default function ChatThread({ friend, me, thread, scroll, onOpenProfile }
   const items = useMemo(() => describeMessages(thread.messages), [thread.messages]);
   const loadOlder = () => scroll.keepPositionWhile(thread.loadOlder);
   return (
-    <Box ref={scroll.scrollerRef} onScroll={scroll.onScroll} sx={{ flex: 1, minHeight: 0, overflowY: 'auto', overscrollBehavior: 'contain', display: 'flex', flexDirection: 'column', px: 2, pb: 2 }}>
+    <Box ref={scroll.scrollerRef} onScroll={scroll.onScroll} sx={{ flex: 1, minHeight: SIZES.flexShrinkMinHeight, overflowY: 'auto', overscrollBehavior: 'contain', display: 'flex', flexDirection: 'column', px: 2, pb: 2 }}>
       <Box sx={{ mt: 'auto', display: 'flex', flexDirection: 'column' }}>
         {thread.isLoading && <CircularProgress aria-label="Loading messages" sx={{ alignSelf: 'center', my: 4 }} />}
         {thread.error && <Typography color="error" sx={{ textAlign: 'center', my: 4 }}>{thread.error}</Typography>}

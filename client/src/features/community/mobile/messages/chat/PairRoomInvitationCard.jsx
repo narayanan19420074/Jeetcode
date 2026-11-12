@@ -14,7 +14,7 @@ export default function PairRoomInvitationCard({ message, isMine, friend }) {
     <Box sx={{ mt: 1, p: 2, maxWidth: SIZES.chatCardMaxWidth, borderRadius: RADII_PX.card, border: '1px solid var(--lib-border)', bgcolor: 'var(--lib-chip)' }}>
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1.5 }}>
         <LaptopMacRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.displayLg, color: LIB_ACCENT, flexShrink: 0 }} />
-        <Box sx={{ minWidth: 0, flex: 1 }}>
+        <Box sx={{ minWidth: SIZES.flexShrinkMinWidth, flex: 1 }}>
           <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, fontWeight: FONT_WEIGHTS.medium }}>Pair room invitation</Typography>
           <Typography noWrap sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
             {message.roomTitle ? `${inviter} · ${message.roomTitle}` : inviter}
