@@ -17,12 +17,12 @@ export function RequestBadge({ requests }) {
 }
 
 // Pill button like the phone chips: cream when idle, accent when selected.
-const navButtonSx = (pal, active) => ({
+const navButtonSx = (pal, active, dense) => ({
   width: '100%',
   justifyContent: 'flex-start',
-  gap: 1.5,
-  px: 2,
-  height: SIZES.navItemHeight,
+  gap: dense ? 1 : 1.5,
+  px: dense ? 1.5 : 2,
+  height: dense ? SIZES.navItemHeightDense : SIZES.navItemHeight,
   borderRadius: RADII_PX.pill,
   textAlign: 'left',
   fontFamily: 'inherit',
@@ -33,12 +33,13 @@ const navButtonSx = (pal, active) => ({
   '&.Mui-focusVisible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 1 },
 });
 
-export function NavButton({ active, icon: Icon, label, count, accent, onClick, trailing, disabled }) {
+// `dense` shrinks the row, the icon and the label for long lists.
+export function NavButton({ active, icon: Icon, label, count, accent, onClick, trailing, dense = false }) {
   const pal = useLibraryPalette();
   return (
-    <ButtonBase onClick={onClick} disabled={disabled} aria-current={active ? 'page' : undefined} sx={[navButtonSx(pal, active), disabled && { opacity: 0.5 }]}>
-      <Icon sx={{ fontSize: FONT_SIZES.display, color: active ? COLOR_PALETTE.white : accent || pal.muted }} />
-      <Typography noWrap sx={{ flex: 1, fontSize: FONT_SIZES.bodyLg, fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>
+    <ButtonBase onClick={onClick} aria-current={active ? 'page' : undefined} sx={navButtonSx(pal, active, dense)}>
+      <Icon sx={{ fontSize: dense ? FONT_SIZES.title : FONT_SIZES.display, color: active ? COLOR_PALETTE.white : accent || pal.muted }} />
+      <Typography noWrap sx={{ flex: 1, fontSize: dense ? FONT_SIZES.body : FONT_SIZES.bodyLg, fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>
         {label}
       </Typography>
       {count !== undefined && (

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { problemsApi } from '../../../../api/problemsApi';
-import useActivityDays from '../../common/useActivityDays';
 import useProblemLists from '../../useProblemLists';
 import { featuredPageForToday } from '../../dashboardUtils';
 import { DIFFICULTIES, sumDifficulties } from './problemsConstants';
@@ -52,20 +51,9 @@ function useLibraryPreset() {
   }, [urlKey]);
 }
 
-// A problem saved in several lists still counts once.
-function useSavedProblemCount(lists) {
-  return useMemo(() => {
-    const ids = new Set();
-    lists.forEach((list) => list.items.forEach((item) => ids.add(item._id)));
-    return ids.size;
-  }, [lists]);
-}
-
 export default function useProblemsPageData(isAuthenticated, userId) {
   const listsApi = useProblemLists(userId);
   const { progress, featured } = useProgressAndFeatured(isAuthenticated);
   const preset = useLibraryPreset();
-  const savedCount = useSavedProblemCount(listsApi.lists);
-  const activity = useActivityDays(isAuthenticated);
-  return { listsApi, progress, featured, preset, savedCount, activity };
+  return { listsApi, progress, featured, preset };
 }

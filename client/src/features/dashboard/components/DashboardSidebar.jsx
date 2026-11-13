@@ -51,7 +51,7 @@ function PageButtons() {
   return PAGE_ITEMS.map(({ to, label, icon }) => <NavButton key={to} active={false} icon={icon} label={label} onClick={() => navigate(to)} />);
 }
 
-function ListButtons({ lists, view, activeListId, onSelectList }) {
+export function ListButtons({ lists, view, activeListId, onSelectList }) {
   return lists.map((l) => {
     const isFavorite = l.id === 'favorite';
     return (

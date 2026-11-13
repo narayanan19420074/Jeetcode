@@ -94,17 +94,17 @@ function ActiveFilters({ lib, topicsInFilter }) {
 }
 
 // Search and filters stay pinned while the problem list scrolls underneath.
-// `filterInSidebar` leaves the filter button and the solved meter out, because the page shows them elsewhere.
-export default function LibraryToolbar({ lib, progress, isAuthenticated, topicsInFilter = false, filterInSidebar = false }) {
+// `searchOnly` keeps just the search box: the page shows the filter, topics and progress elsewhere.
+export default function LibraryToolbar({ lib, progress, isAuthenticated, topicsInFilter = false, searchOnly = false }) {
   return (
     <Box sx={(t) => ({ position: { md: 'sticky' }, top: 0, zIndex: Z_INDEX.overlap, py: 1, mx: -0.5, px: 0.5, display: 'grid', gap: 1, bgcolor: { md: t.palette.background.default } })}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         <SearchField lib={lib} />
-        <SortControl sort={lib.query.sort} disabled={lib.sortDisabled} onChange={(sort) => lib.patch({ sort })} />
-        {!filterInSidebar && <FilterControl lib={lib} isAuthenticated={isAuthenticated} topicsInFilter={topicsInFilter} />}
-        <RandomProblemButton lib={lib} />
+        {!searchOnly && <SortControl sort={lib.query.sort} disabled={lib.sortDisabled} onChange={(sort) => lib.patch({ sort })} />}
+        {!searchOnly && <FilterControl lib={lib} isAuthenticated={isAuthenticated} topicsInFilter={topicsInFilter} />}
+        {!searchOnly && <RandomProblemButton lib={lib} />}
         <Box sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }} />
-        {!filterInSidebar && <ProgressSummary progress={progress} />}
+        {!searchOnly && <ProgressSummary progress={progress} />}
       </Stack>
       {lib.anyActive && <ActiveFilters lib={lib} topicsInFilter={topicsInFilter} />}
     </Box>

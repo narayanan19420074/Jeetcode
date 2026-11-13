@@ -20,12 +20,12 @@ function ProblemsContentColumn({ isPageOneWindowTall, ...libraryProps }) {
 }
 
 // Wide screens: same three-column frame as the dashboard. Topics and the filter live in the sidebar, the library in the middle.
-export default function ProblemsDesktopView({ isAuthenticated, user, activity, progress, featured, preset, listsApi, savedCount }) {
+export default function ProblemsDesktopView({ isAuthenticated, progress, featured, preset, listsApi }) {
   const lib = useProblemLibrary({ preset, listsApi });
   return (
     <DesktopFrame
-      sidebar={<ProblemsSidebar lib={lib} isAuthenticated={isAuthenticated} />}
-      rail={<ProblemsRail user={user} isAuthenticated={isAuthenticated} activity={activity} progress={progress} featured={featured} savedCount={savedCount} />}
+      sidebar={<ProblemsSidebar lib={lib} isAuthenticated={isAuthenticated} listsApi={listsApi} />}
+      rail={<ProblemsRail progress={progress} featured={featured} />}
       renderContent={(isPageOneWindowTall) => (
         <ProblemsContentColumn isPageOneWindowTall={isPageOneWindowTall} lib={lib} isAuthenticated={isAuthenticated} progress={progress} dailyId={featured?._id} listsApi={listsApi} />
       )}

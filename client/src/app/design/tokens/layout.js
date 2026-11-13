@@ -50,6 +50,10 @@ export const SIZES = {
   listRowHeight: 44,
   listRowHeightDense: 36,
   navItemHeight: 40,
+  // Compact sidebar row, for long lists such as the problem topics.
+  navItemHeightDense: 32,
+  // Most of a sidebar column that the saved lists may take before they scroll on their own.
+  sidebarListsMaxHeight: '35%',
   // Thickness of the bottom border that marks the active navigation link.
   navActiveIndicator: 2,
   // Top bar on phones, and the rows and tiles of the phone menu and account dropdown.

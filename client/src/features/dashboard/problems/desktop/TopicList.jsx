@@ -7,18 +7,18 @@ import { findSelectedGroup } from '../common/topicNavigation';
 import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
 
 function SectionHeading({ children }) {
-  return <Typography sx={{ mt: 2, mb: 0.5, px: 2, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.bold }}>{children}</Typography>;
+  return <Typography sx={{ mt: 1.5, mb: 0.5, px: 1.5, fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold }}>{children}</Typography>;
 }
 
 function GroupButtons({ groups, selectedGroup, onSelectGroup }) {
   return groups.map((group) => (
-    <NavButton key={group.key} active={selectedGroup?.key === group.key} icon={CategoryRoundedIcon} accent={group.color} label={group.label} onClick={() => onSelectGroup(group)} />
+    <NavButton dense key={group.key} active={selectedGroup?.key === group.key} icon={CategoryRoundedIcon} accent={group.color} label={group.label} onClick={() => onSelectGroup(group)} />
   ));
 }
 
 function TagButtons({ tags, selectedTags, isGroupSelected, onToggleTag }) {
   return tags.map(({ tag, count }) => (
-    <NavButton key={tag} active={!isGroupSelected && selectedTags.includes(tag)} icon={TagRoundedIcon} label={tag} count={count} onClick={() => onToggleTag(tag)} />
+    <NavButton dense key={tag} active={!isGroupSelected && selectedTags.includes(tag)} icon={TagRoundedIcon} label={tag} count={count} onClick={() => onToggleTag(tag)} />
   ));
 }
 
@@ -28,12 +28,12 @@ export default function TopicList({ entries, groups, selectedTags, onClear, onSe
   const isEmpty = !entries.showAll && entries.groups.length === 0 && entries.tags.length === 0;
   return (
     <Box component="nav" aria-label="Problem topics" sx={{ display: 'flex', flexDirection: 'column' }}>
-      {entries.showAll && <NavButton active={selectedTags.length === 0} icon={GridViewRoundedIcon} label="All Topics" onClick={onClear} />}
+      {entries.showAll && <NavButton dense active={selectedTags.length === 0} icon={GridViewRoundedIcon} label="All Topics" onClick={onClear} />}
       {entries.groups.length > 0 && <SectionHeading>Topic groups</SectionHeading>}
       <GroupButtons groups={entries.groups} selectedGroup={selectedGroup} onSelectGroup={onSelectGroup} />
       {entries.tags.length > 0 && <SectionHeading>Topics</SectionHeading>}
       <TagButtons tags={entries.tags} selectedTags={selectedTags} isGroupSelected={Boolean(selectedGroup)} onToggleTag={onToggleTag} />
-      {isEmpty && <Typography variant="body2" color="text.secondary" sx={{ px: 2, py: 1 }}>No topics match your search.</Typography>}
+      {isEmpty && <Typography variant="body2" color="text.secondary" sx={{ px: 1.5, py: 1 }}>No topics match your search.</Typography>}
     </Box>
   );
 }

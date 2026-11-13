@@ -19,12 +19,12 @@ function InlineTopicBrowser({ lib }) {
 // `height` (optional, lg+ only) overrides the default dashboard height, so other pages can host the library under a header.
 // On wide screens the whole library fits the window once it is scrolled to the top, so only the problem list scrolls.
 // `topicsInFilter` moves every topic filter into the filter button's panel and drops the topic rows above the list.
-// `topicsInSidebar` is for a page whose sidebar owns the topics and the filter button, so the library shows only the search, sort and list.
+// `topicsInSidebar` is for a page whose sidebar owns the topics and the filter button, so the library shows only the search box and the list.
 export function ProblemLibraryView({ lib, isAuthenticated, progress, dailyId, listsApi, height, topicsInFilter = false, topicsInSidebar = false }) {
   return (
     <Stack ref={lib.cardRef} spacing={1.5} sx={{ height: { lg: height ?? 'calc(100vh - 120px)' }, scrollMarginTop: { xs: 72, lg: 0 }, minWidth: 0, maxWidth: '100%' }}>
       {!topicsInFilter && !topicsInSidebar && <InlineTopicBrowser lib={lib} />}
-      <LibraryToolbar lib={lib} progress={progress} isAuthenticated={isAuthenticated} topicsInFilter={topicsInFilter} filterInSidebar={topicsInSidebar} />
+      <LibraryToolbar lib={lib} progress={progress} isAuthenticated={isAuthenticated} topicsInFilter={topicsInFilter} searchOnly={topicsInSidebar} />
       <LibraryTable lib={lib} dailyId={dailyId} listsApi={listsApi} />
       <SaveToListMenu
         anchorEl={lib.saveAnchor}
