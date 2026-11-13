@@ -7,16 +7,10 @@ import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
-import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
-import InsightsRoundedIcon from '@mui/icons-material/InsightsRounded';
-import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
-import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { FONT_WEIGHTS, RADII_PX, SIZES } from '../../app/design/designTokens';
 import { LIB_FONT, LibraryFont } from '../../features/dashboard/components/libraryStyle';
-import ProBadge from '../ProBadge';
 import { LogoMark, LogoName } from './NavbarBrand';
-import NavbarMenuRow from './NavbarMenuRow';
-import { DASH_SECTIONS, isActivePath } from './navConfig';
+import NavbarDrawerLinks from './NavbarDrawerLinks';
 import { footerIconSx, libPal, phoneBtnSx } from './navbarTheme';
 
 const drawerPaperSx = {
@@ -48,43 +42,6 @@ function DrawerHeader({ mode, onToggleTheme, onClose }) {
       <IconButton onClick={onClose} aria-label="Close navigation menu" sx={{ width: SIZES.touchTarget, height: SIZES.touchTarget }}>
         <CloseRoundedIcon />
       </IconButton>
-    </Box>
-  );
-}
-
-// Phone menu rows, most used first: own progress, learning plan and company prep, then competition and
-// social, then Explore, Store and Plans. Dashboard sections come from DASH_SECTIONS (looked up by view).
-const dashRow = (view) => ({ ...DASH_SECTIONS.find((section) => section.view === view), isDashboard: true });
-const DRAWER_ROWS = [
-  { to: '/you', label: 'My stats', icon: InsightsRoundedIcon, signedInOnly: true },
-  dashRow('plans'),
-  { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
-  dashRow('contest'),
-  dashRow('quests'),
-  dashRow('leaderboard'),
-  dashRow('friends'),
-  dashRow('explore'),
-  { to: '/store', label: 'Store', icon: StorefrontRoundedIcon },
-  { to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon },
-];
-
-// Dashboard sections are active when the dashboard is open on that view (no view = the default section).
-const isRowActive = (row, pathname, dashView) => (row.isDashboard ? pathname === '/dashboard' && (dashView || null) === row.view : isActivePath(pathname, row.to));
-
-function DrawerLinks({ pathname, dashView, user, isAuthenticated, onNavigate }) {
-  return (
-    <Box>
-      {DRAWER_ROWS.filter((row) => isAuthenticated || !row.signedInOnly).map((row) => (
-        <NavbarMenuRow
-          key={row.label}
-          to={row.to}
-          label={row.label}
-          icon={row.icon}
-          active={isRowActive(row, pathname, dashView)}
-          trailing={row.to === '/you' && user?.isPro ? <ProBadge /> : null}
-          onNavigate={onNavigate}
-        />
-      ))}
     </Box>
   );
 }
@@ -132,7 +89,7 @@ export default function NavbarDrawer({ open, pathname, dashView, mode, isAuthent
         <DrawerHeader mode={mode} onToggleTheme={onToggleTheme} onClose={actions.closeDrawer} />
         <Divider sx={dividerSx} />
         <Box component="nav" aria-label="Main navigation" sx={{ flex: 1, overflowY: 'auto', px: 2, pt: 1, pb: 1 }}>
-          <DrawerLinks pathname={pathname} dashView={dashView} user={user} isAuthenticated={isAuthenticated} onNavigate={actions.closeDrawer} />
+          <NavbarDrawerLinks pathname={pathname} dashView={dashView} user={user} isAuthenticated={isAuthenticated} onNavigate={actions.closeDrawer} />
         </Box>
         <Divider sx={dividerSx} />
         <Box sx={{ px: 2, py: 1.5, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 1 }}>
