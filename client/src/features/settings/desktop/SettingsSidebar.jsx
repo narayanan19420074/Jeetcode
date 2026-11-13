@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { Box, InputAdornment, TextField, Typography } from '@mui/material';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { accentFor } from '../common/settingsAccent';
+import { NavButton } from '../../dashboard/components/SidebarParts';
 import SidebarItem from './SidebarItem';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
@@ -22,11 +25,19 @@ function SidebarSearch({ query, setQuery, palette }) {
   );
 }
 
-// Search plus the settings groups. `fill` = the page is one window tall, so the sidebar scrolls by itself.
-export default function SettingsSidebar({ groups, section, query, setQuery, fill }) {
+function BackLink() {
+  const navigate = useNavigate();
+  return <NavButton active={false} icon={ArrowBackRoundedIcon} label="Back to Dashboard" onClick={() => navigate('/dashboard')} />;
+}
+
+// The way back, a search and the settings groups. The sidebar column of the page frame scrolls them when they are taller than the window.
+export default function SettingsSidebar({ groups, section, query, setQuery }) {
   const palette = useLibraryPalette();
   return (
-    <Box component="nav" aria-label="Settings sections" sx={fill ? { minHeight: 0, overflowY: 'auto', pr: 1, pb: 1 } : { position: 'sticky', top: 88 }}>
+    <Box component="nav" aria-label="Settings sections">
+      <Box sx={{ mb: 1 }}>
+        <BackLink />
+      </Box>
       <SidebarSearch query={query} setQuery={setQuery} palette={palette} />
       {groups.length === 0 && <Typography sx={{ px: 1, fontSize: FONT_SIZES.bodyLg, color: palette.muted }}>No settings match “{query}”.</Typography>}
       {groups.map((group) => (

@@ -20,5 +20,5 @@ export default function SettingsPage() {
   if (!SECTIONS[section]) return <Navigate to={isPhone ? '/settings' : `/settings/${DEFAULT_SECTION}`} replace />;
   const current = SETTINGS_ITEMS.find((item) => item.key === section);
   if (isPhone) return <PhoneSectionPage section={section} current={current} />;
-  return <SettingsDesktopView user={user} section={section} current={current} {...menu} />;
+  return <SettingsDesktopView section={section} current={current} {...menu} />;
 }
