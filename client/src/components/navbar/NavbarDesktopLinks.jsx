@@ -12,6 +12,8 @@ function ExploreMenu({ anchorEl, pathname, onClose }) {
       anchorEl={anchorEl}
       open={Boolean(anchorEl)}
       onClose={onClose}
+      // The page keeps its width while the menu is open; scroll locking would add padding where the scroll bar was.
+      disableScrollLock
       slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: SIZES.accountMenuMinWidth.desktop, mt: 0.5 } } }}
     >
       {EXPLORE_LINKS.map(({ to, label, icon: Icon }) => (

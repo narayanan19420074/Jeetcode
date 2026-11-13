@@ -130,7 +130,7 @@ export default function NavbarAccountMenu({ user, actions }) {
   return (
     <>
       <AccountTrigger user={user} onOpen={(event) => setAnchorEl(event.currentTarget)} />
-      <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={close} slotProps={{ paper: { sx: accountPaperSx } }}>
+      <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={close} disableScrollLock slotProps={{ paper: { sx: accountPaperSx } }}>
         <AccountHeader user={user} onClick={run(actions.goToProfile)} />
         <Divider sx={accountDividerSx} />
         <AccountItem icon={PersonRoundedIcon} label="My profile" onClick={run(actions.goToProfile)} />
