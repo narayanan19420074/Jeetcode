@@ -1,29 +1,34 @@
-import { useRef } from 'react';
-import { Box, Container, useMediaQuery, useTheme } from '@mui/material';
-import { SIZES } from '../../../../app/design/designTokens';
-import ProblemLibrary from '../../components/ProblemLibrary';
-import useViewportFill from '../../useViewportFill';
-import ProblemsHeader from './ProblemsHeader';
-import SideRail from './SideRail';
+import { Box } from '@mui/material';
+import { LAYOUT_SPACING, SIZES } from '../../../../app/design/designTokens';
+import { ProblemLibraryView } from '../../components/ProblemLibrary';
+import useProblemLibrary from '../../components/library/useProblemLibrary';
+import DesktopFrame from '../../desktop/DesktopFrame';
+import ProblemsRail from './ProblemsRail';
+import ProblemsSidebar from './ProblemsSidebar';
 
-// Wide screens: the page is exactly one window tall, so only the problem list and the side rail scroll.
-export default function ProblemsDesktopView({ isAuthenticated, progress, featured, preset, listsApi, savedCount }) {
-  const isLarge = useMediaQuery(useTheme().breakpoints.up('lg'));
-  const rootRef = useRef(null);
-  const fillHeight = useViewportFill(rootRef, isLarge);
+// Middle column: only the problem list scrolls, so the sidebar and the rail stay put like on the dashboard.
+function ProblemsContentColumn({ isPageOneWindowTall, ...libraryProps }) {
   return (
-    <Box ref={rootRef} sx={fillHeight ? { height: fillHeight, overflow: 'hidden' } : { minHeight: `calc(100vh - ${SIZES.appBarHeight.desktop}px)` }}>
-      <Container maxWidth={false} sx={{ maxWidth: SIZES.dashboardMaxWidth, py: 3, px: 3, height: fillHeight ? SIZES.fill : 'auto', display: 'flex', flexDirection: 'column', gap: 3 }}>
-        <ProblemsHeader progress={progress} />
-        <Box sx={{ flex: { lg: 1 }, minHeight: 0, display: 'grid', gap: 3, gridTemplateColumns: { xs: 'minmax(0,1fr)', lg: `minmax(0,1fr) ${SIZES.desktopFrame.rail}px` }, gridTemplateRows: { lg: 'minmax(0,1fr)' } }}>
-          <Box sx={{ order: { xs: 2, lg: 1 }, minWidth: 0, minHeight: 0 }}>
-            <ProblemLibrary isAuthenticated={isAuthenticated} progress={progress} dailyId={featured?._id} preset={preset} listsApi={listsApi} height={SIZES.fill} />
-          </Box>
-          <Box sx={{ order: { xs: 1, lg: 2 }, minWidth: 0, minHeight: 0, display: 'grid' }}>
-            <SideRail progress={progress} featured={featured} savedCount={savedCount} />
-          </Box>
-        </Box>
-      </Container>
+    <Box
+      component="section"
+      aria-label="Problems"
+      sx={{ minWidth: SIZES.flexShrinkMinWidth, minHeight: SIZES.flexShrinkMinHeight, px: LAYOUT_SPACING.frameContentGutter, height: isPageOneWindowTall ? SIZES.fill : 'auto' }}
+    >
+      <ProblemLibraryView {...libraryProps} height={SIZES.fill} topicsInSidebar />
     </Box>
+  );
+}
+
+// Wide screens: same three-column frame as the dashboard. Topics and the filter live in the sidebar, the library in the middle.
+export default function ProblemsDesktopView({ isAuthenticated, user, activity, progress, featured, preset, listsApi, savedCount }) {
+  const lib = useProblemLibrary({ preset, listsApi });
+  return (
+    <DesktopFrame
+      sidebar={<ProblemsSidebar lib={lib} isAuthenticated={isAuthenticated} />}
+      rail={<ProblemsRail user={user} isAuthenticated={isAuthenticated} activity={activity} progress={progress} featured={featured} savedCount={savedCount} />}
+      renderContent={(isPageOneWindowTall) => (
+        <ProblemsContentColumn isPageOneWindowTall={isPageOneWindowTall} lib={lib} isAuthenticated={isAuthenticated} progress={progress} dailyId={featured?._id} listsApi={listsApi} />
+      )}
+    />
   );
 }

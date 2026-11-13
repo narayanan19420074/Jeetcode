@@ -4,19 +4,15 @@ import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import { PLAN_AMBER } from '../../../studyplan/planUtils';
-import { MONTHLY_BADGE_GOAL, surface } from '../../dashboardUtils';
+import { MONTHLY_BADGE_GOAL } from '../../dashboardUtils';
 import DayCell from './DayCell';
 import MonthBadge from './MonthBadge';
 import ResetCountdown from './ResetCountdown';
 import useStreakMonth from './useStreakMonth';
 import useStudyPlanMarks from './useStudyPlanMarks';
-import { CALENDAR_GRADIENT, FAINT, SOFT, WEEKDAYS } from './railTokens';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, SHADOWS } from '../../../../app/design/designTokens';
-
-const cardSx = (phone) => [
-  surface,
-  { p: 2.5, color: COLOR_PALETTE.white, background: CALENDAR_GRADIENT, border: 'none', borderRadius: phone ? RADII_PX.card : RADII_PX.card, boxShadow: SHADOWS.cardLit(COLOR_PALETTE.slate[950], 0.85, 0.18) },
-];
+import { railCardSx } from './railCardStyles';
+import { FAINT, SOFT, WEEKDAYS } from './railTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../../app/design/designTokens';
 
 function StreakHeader({ streak, isAuthenticated, badge }) {
   const flame = { bgcolor: alpha(PLAN_AMBER, streak > 0 ? 0.2 : 0.1), color: streak > 0 ? PLAN_AMBER : FAINT };
@@ -139,7 +135,7 @@ export default function StreakCalendarCard({ user, isAuthenticated, byDate, phon
   const marks = useStudyPlanMarks(isAuthenticated, onNavigate);
   const badge = <MonthBadge label={month.badgeLabel} count={month.activeThisMonth} goal={MONTHLY_BADGE_GOAL} />;
   return (
-    <Box sx={cardSx(phone)}>
+    <Box sx={railCardSx}>
       <StreakHeader streak={user?.streakDays ?? 0} isAuthenticated={isAuthenticated} badge={badge} />
       <MonthNav month={month} phone={phone} />
       <CalendarGrid month={month} byDate={byDate} marks={marks} />

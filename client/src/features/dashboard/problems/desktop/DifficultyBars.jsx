@@ -1,34 +1,36 @@
 import { Box, Skeleton, Stack, Typography } from '@mui/material';
-import { DIFF_COLOR, tint } from '../../dashboardUtils';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION, EASING, SIZES } from '../../../../app/design/designTokens';
+import { FAINT, LEVEL_COLOR, SOFT } from '../../components/rail/railTokens';
 import { DIFFICULTIES } from '../common/problemsConstants';
-import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION, EASING } from '../../../../app/design/designTokens';
+
+const TRACK_COLOR = withAlpha(COLOR_PALETTE.white, 0.18);
 
 function DifficultyStat({ label, solved, total }) {
   const percent = total ? Math.min((solved / total) * 100, 100) : 0;
-  const color = DIFF_COLOR[label];
+  const color = LEVEL_COLOR[label];
   return (
-    <Box sx={{ minWidth: 0 }}>
+    <Box sx={{ minWidth: SIZES.flexShrinkMinWidth }}>
       <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 1 }}>
         <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, color }}>{label}</Typography>
         <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, fontVariantNumeric: 'tabular-nums' }}>
           {solved}
-          <Box component="span" sx={{ color: 'text.secondary' }}>/{total}</Box>
+          <Box component="span" sx={{ color: SOFT }}>/{total}</Box>
         </Typography>
       </Stack>
-      <Box sx={{ height: 6, borderRadius: RADII_PX.pill, overflow: 'hidden', bgcolor: tint(color, 18) }}>
-        <Box sx={{ width: `${percent}%`, height: '100%', borderRadius: RADII_PX.pill, bgcolor: color, transition: `width ${MOTION.deliberate}ms ${EASING.standard}` }} />
+      <Box sx={{ height: 6, borderRadius: RADII_PX.pill, overflow: 'hidden', bgcolor: TRACK_COLOR }}>
+        <Box sx={{ width: `${percent}%`, height: SIZES.fill, borderRadius: RADII_PX.pill, bgcolor: color, transition: `width ${MOTION.deliberate}ms ${EASING.standard}` }} />
       </Box>
     </Box>
   );
 }
 
-// Solved count per difficulty, one bar each.
+// Solved count per difficulty, one bar each, in the colours of the streak calendar.
 export default function DifficultyBars({ progress }) {
   return (
     <Box sx={{ display: 'grid', gap: 1.5 }}>
       {DIFFICULTIES.map((level) => (progress
         ? <DifficultyStat key={level} label={level} solved={progress.solved?.[level] || 0} total={progress.total?.[level] || 0} />
-        : <Skeleton key={level} variant="rounded" height={30} />))}
+        : <Skeleton key={level} variant="rounded" height={30} sx={{ bgcolor: FAINT }} />))}
     </Box>
   );
 }

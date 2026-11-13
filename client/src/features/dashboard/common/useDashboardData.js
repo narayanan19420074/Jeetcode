@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { problemsApi } from '../../../api/problemsApi';
-import { usersApi } from '../../../api/usersApi';
 import { submissionsApi } from '../../../api/submissionsApi';
 import { featuredPageForToday } from '../dashboardUtils';
+import useActivityDays from './useActivityDays';
 
 // Totals and solved counts per difficulty (one call), then today's featured problem.
 // The featured problem is the same deterministic "problem of the day" for everyone.
@@ -30,22 +30,19 @@ function useProgressAndFeatured(isAuthenticated) {
   return { progress, featured };
 }
 
-// The signed-in person's activity heatmap and latest submissions. Guests have neither.
-function useUserActivity(isAuthenticated) {
-  const [activity, setActivity] = useState([]);
+// The signed-in person's latest submissions. Guests have none.
+function useRecentSubmissions(isAuthenticated) {
   const [submissions, setSubmissions] = useState([]);
   useEffect(() => {
     if (!isAuthenticated) {
-      setActivity([]);
       setSubmissions([]);
       return;
     }
-    usersApi.activity().then(({ data }) => setActivity(data.data)).catch(() => {});
     submissionsApi.history({ limit: 5 }).then(({ data }) => setSubmissions(data.data.items)).catch(() => {});
   }, [isAuthenticated]);
-  return { activity, submissions };
+  return submissions;
 }
 
 export default function useDashboardData(isAuthenticated) {
-  return { ...useProgressAndFeatured(isAuthenticated), ...useUserActivity(isAuthenticated) };
+  return { ...useProgressAndFeatured(isAuthenticated), activity: useActivityDays(isAuthenticated), submissions: useRecentSubmissions(isAuthenticated) };
 }

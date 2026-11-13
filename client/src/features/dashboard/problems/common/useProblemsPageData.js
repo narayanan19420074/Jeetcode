@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { problemsApi } from '../../../../api/problemsApi';
+import useActivityDays from '../../common/useActivityDays';
 import useProblemLists from '../../useProblemLists';
 import { featuredPageForToday } from '../../dashboardUtils';
 import { DIFFICULTIES, sumDifficulties } from './problemsConstants';
@@ -65,5 +66,6 @@ export default function useProblemsPageData(isAuthenticated, userId) {
   const { progress, featured } = useProgressAndFeatured(isAuthenticated);
   const preset = useLibraryPreset();
   const savedCount = useSavedProblemCount(listsApi.lists);
-  return { listsApi, progress, featured, preset, savedCount };
+  const activity = useActivityDays(isAuthenticated);
+  return { listsApi, progress, featured, preset, savedCount, activity };
 }

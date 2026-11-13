@@ -13,5 +13,5 @@ export default function ProblemsPage() {
   if (isPhone) {
     return <MobileProblems isAuthenticated={isAuthenticated} progress={data.progress} featured={data.featured} preset={data.preset} listsApi={data.listsApi} />;
   }
-  return <ProblemsDesktopView isAuthenticated={isAuthenticated} {...data} />;
+  return <ProblemsDesktopView isAuthenticated={isAuthenticated} user={user} {...data} />;
 }

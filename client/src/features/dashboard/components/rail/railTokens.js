@@ -6,4 +6,6 @@ export const SOFT = withAlpha(COLOR_PALETTE.white, 0.68);
 export const FAINT = withAlpha(COLOR_PALETTE.white, 0.35);
 export const GOLD_A = COLOR_PALETTE.amber[300];
 export const GOLD_B = COLOR_PALETTE.amber[600];
+// Difficulty colours in light tones that read on the indigo card, like the green days of the calendar.
+export const LEVEL_COLOR = { Easy: EMERALD, Medium: GOLD_A, Hard: COLOR_PALETTE.rose[300] };
 export const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
