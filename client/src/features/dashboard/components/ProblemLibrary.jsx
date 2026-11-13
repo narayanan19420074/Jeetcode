@@ -25,7 +25,7 @@ export function ProblemLibraryView({ lib, isAuthenticated, progress, dailyId, li
     <Stack ref={lib.cardRef} spacing={1.5} sx={{ height: { lg: height ?? 'calc(100vh - 120px)' }, scrollMarginTop: { xs: 72, lg: 0 }, minWidth: 0, maxWidth: '100%' }}>
       {!topicsInFilter && !topicsInSidebar && <InlineTopicBrowser lib={lib} />}
       <LibraryToolbar lib={lib} progress={progress} isAuthenticated={isAuthenticated} topicsInFilter={topicsInFilter} searchOnly={topicsInSidebar} />
-      <LibraryTable lib={lib} dailyId={dailyId} listsApi={listsApi} />
+      <LibraryTable lib={lib} dailyId={dailyId} listsApi={listsApi} flat={topicsInSidebar} />
       <SaveToListMenu
         anchorEl={lib.saveAnchor}
         problem={lib.saveProblem}

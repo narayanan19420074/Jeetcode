@@ -52,6 +52,9 @@ export const SIZES = {
   navItemHeight: 40,
   // Compact sidebar row, for long lists such as the problem topics.
   navItemHeightDense: 32,
+  // Search box of the Problems page: centred, wider and taller than the toolbar search elsewhere.
+  problemSearchMaxWidth: 640,
+  problemSearchHeight: 52,
   // Most of a sidebar column that the saved lists may take before they scroll on their own.
   sidebarListsMaxHeight: '35%',
   // Thickness of the bottom border that marks the active navigation link.

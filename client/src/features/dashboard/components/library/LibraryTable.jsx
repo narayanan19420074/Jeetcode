@@ -92,16 +92,17 @@ const SCROLLER_SX = {
 };
 
 // The problem card: column titles, the scrolling list and the "Showing x of y" footer.
-export default function LibraryTable({ lib, dailyId, listsApi }) {
+// `flat` drops the card around the list, so the problems sit straight on the page and the page's scroll bar is the list's.
+export default function LibraryTable({ lib, dailyId, listsApi, flat = false }) {
   const styles = useLibraryStyles();
   return (
-    <Box sx={[styles.card, { overflow: 'hidden', display: 'flex', flexDirection: 'column', flex: { lg: 1 }, minHeight: { lg: 0 } }]}>
+    <Box sx={[!flat && styles.card, { overflow: 'hidden', display: 'flex', flexDirection: 'column', flex: { lg: 1 }, minHeight: { lg: 0 } }]}>
       <TableHeader lib={lib} />
       <Box ref={lib.listRef} tabIndex={0} role="region" aria-label="Problems list. Use arrow keys to scroll." sx={SCROLLER_SX}>
         {lib.error && <ErrorBanner message={lib.error} onRetry={lib.retry} />}
         <ListBody lib={lib} dailyId={dailyId} listsApi={listsApi} />
       </Box>
-      <TableFooter shown={lib.items.length} total={lib.pagination.total} />
+      {!flat && <TableFooter shown={lib.items.length} total={lib.pagination.total} />}
     </Box>
   );
 }

@@ -6,7 +6,7 @@ import FilterControl from './FilterControl';
 import SolvedMeter from './SolvedMeter';
 import SortControl from './SortControl';
 import useLibraryStyles from './libraryStyles';
-import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, Z_INDEX } from '../../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES, Z_INDEX } from '../../../../app/design/designTokens';
 
 const ZERO_COUNTS = { Easy: 0, Medium: 0, Hard: 0 };
 const sumCounts = (counts) => counts.Easy + counts.Medium + counts.Hard;
@@ -25,7 +25,10 @@ function SlashHint() {
   );
 }
 
-function SearchField({ lib }) {
+// The Problems page centres a large search box; elsewhere it shares the row with the other controls.
+const wideSearchSx = { maxWidth: SIZES.problemSearchMaxWidth, '& .MuiOutlinedInput-root': { height: SIZES.problemSearchHeight } };
+
+function SearchField({ lib, wide = false }) {
   const styles = useLibraryStyles();
   return (
     <TextField
@@ -34,7 +37,7 @@ function SearchField({ lib }) {
       placeholder="Search questions"
       value={lib.searchText}
       onChange={(e) => lib.setSearchText(e.target.value)}
-      sx={styles.search}
+      sx={[styles.search, wide && wideSearchSx]}
       slotProps={{
         input: {
           startAdornment: (
@@ -98,12 +101,12 @@ function ActiveFilters({ lib, topicsInFilter }) {
 export default function LibraryToolbar({ lib, progress, isAuthenticated, topicsInFilter = false, searchOnly = false }) {
   return (
     <Box sx={(t) => ({ position: { md: 'sticky' }, top: 0, zIndex: Z_INDEX.overlap, py: 1, mx: -0.5, px: 0.5, display: 'grid', gap: 1, bgcolor: { md: t.palette.background.default } })}>
-      <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-        <SearchField lib={lib} />
+      <Stack direction="row" spacing={1} sx={{ alignItems: 'center', justifyContent: searchOnly ? 'center' : 'flex-start' }}>
+        <SearchField lib={lib} wide={searchOnly} />
         {!searchOnly && <SortControl sort={lib.query.sort} disabled={lib.sortDisabled} onChange={(sort) => lib.patch({ sort })} />}
         {!searchOnly && <FilterControl lib={lib} isAuthenticated={isAuthenticated} topicsInFilter={topicsInFilter} />}
         {!searchOnly && <RandomProblemButton lib={lib} />}
-        <Box sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }} />
+        {!searchOnly && <Box sx={{ flex: 1, display: { xs: 'none', sm: 'block' } }} />}
         {!searchOnly && <ProgressSummary progress={progress} />}
       </Stack>
       {lib.anyActive && <ActiveFilters lib={lib} topicsInFilter={topicsInFilter} />}

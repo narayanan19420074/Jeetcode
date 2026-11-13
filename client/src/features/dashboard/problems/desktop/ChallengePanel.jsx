@@ -14,16 +14,16 @@ export default function ChallengePanel({ featured }) {
   const palette = useLibraryPalette();
   if (!featured) return null;
   return (
-    <Box sx={panelSx(palette)}>
+    <Box sx={[panelSx(palette), { p: 2 }]}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         <EventRoundedIcon sx={{ color: LIB_ACCENT }} />
         <Typography component="h2" sx={libSectionTitleSx}>Today&apos;s challenge</Typography>
       </Stack>
-      <Typography sx={[{ mt: 1.5, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }, TWO_LINES]}>{featured.title}</Typography>
-      <Box sx={{ mt: 1 }}>
+      <Typography sx={[{ mt: 1, fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }, TWO_LINES]}>{featured.title}</Typography>
+      <Box sx={{ mt: 0.5 }}>
         <DifficultyChip difficulty={featured.difficulty} />
       </Box>
-      <Button component={RouterLink} to={`/workspace/${featured.slug}`} fullWidth disableElevation startIcon={<PlayArrowRoundedIcon />} sx={[pillButtonSx(true, palette), { mt: 2 }]}>
+      <Button component={RouterLink} to={`/workspace/${featured.slug}`} fullWidth disableElevation startIcon={<PlayArrowRoundedIcon />} sx={[pillButtonSx(true, palette), { mt: 1.5 }]}>
         Start solving
       </Button>
     </Box>

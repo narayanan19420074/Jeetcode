@@ -10,7 +10,7 @@ function DifficultyStat({ label, solved, total }) {
   const color = LEVEL_COLOR[label];
   return (
     <Box sx={{ minWidth: SIZES.flexShrinkMinWidth }}>
-      <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 1 }}>
+      <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: 0.5 }}>
         <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, color }}>{label}</Typography>
         <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, fontVariantNumeric: 'tabular-nums' }}>
           {solved}
@@ -27,7 +27,7 @@ function DifficultyStat({ label, solved, total }) {
 // Solved count per difficulty, one bar each, in the colours of the streak calendar.
 export default function DifficultyBars({ progress }) {
   return (
-    <Box sx={{ display: 'grid', gap: 1.5 }}>
+    <Box sx={{ display: 'grid', gap: 1 }}>
       {DIFFICULTIES.map((level) => (progress
         ? <DifficultyStat key={level} label={level} solved={progress.solved?.[level] || 0} total={progress.total?.[level] || 0} />
         : <Skeleton key={level} variant="rounded" height={30} sx={{ bgcolor: FAINT }} />))}
