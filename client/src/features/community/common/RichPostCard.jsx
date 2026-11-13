@@ -1,5 +1,5 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Typography } from '@mui/material';
+import { Box, ButtonBase, Typography } from '@mui/material';
 import PostCardHeader from './PostCardHeader';
 import PostEngagementBar from './PostEngagementBar';
 import { communityImageUrl } from './imageUpload';
@@ -25,6 +25,7 @@ const frameSx = {
 const coverSx = { position: 'absolute', inset: 0, display: 'block', width: SIZES.fill, height: SIZES.fill, objectFit: 'cover' };
 
 const cardSx = { px: 1.5, pt: 1.5, pb: 0, bgcolor: 'background.paper', borderRadius: { md: RADII_PX.card }, border: { md: '1px solid' }, borderColor: 'divider' };
+const photoButtonSx = { display: 'block', width: SIZES.fill, textAlign: 'left' };
 const contentLinkSx = { display: 'block', mt: 1, textDecoration: 'none', color: 'inherit' };
 const mutedSx = { color: 'var(--lib-muted)', letterSpacing: LIB_TRACKING };
 
@@ -48,21 +49,31 @@ function PostText({ title, excerpt }) {
   );
 }
 
+function PostPhoto({ post }) {
+  return (
+    <Box sx={frameSx}>
+      <Box component="img" src={communityImageUrl(post.coverImage)} alt="" loading="lazy" sx={coverSx} />
+    </Box>
+  );
+}
+
 // A feed post laid out like a LinkedIn post: author row with Follow and the "..." menu, the text with "…more" and its
 // first image (both open the post), then the like, comment, repost and share row. The phone feed swaps in its own
-// `Header` and `engagementTrailing`; everything else is shared.
-export default function RichPostCard({ post, onRemoved, Header = PostCardHeader, engagementTrailing }) {
+// `Header` and `engagementTrailing`, and can pass `onOpenImage` so a tap on the photo opens the posts viewer instead of the
+// post page; everything else is shared.
+export default function RichPostCard({ post, onRemoved, Header = PostCardHeader, engagementTrailing, onOpenImage }) {
   return (
     <Box component="article" sx={cardSx}>
       <Header post={post} onRemoved={onRemoved} />
       <Box component={RouterLink} to={`/community/${post._id}`} sx={contentLinkSx}>
         <PostText title={post.title} excerpt={post.excerpt} />
-        {post.coverImage && (
-          <Box sx={frameSx}>
-            <Box component="img" src={communityImageUrl(post.coverImage)} alt="" loading="lazy" sx={coverSx} />
-          </Box>
-        )}
+        {post.coverImage && !onOpenImage && <PostPhoto post={post} />}
       </Box>
+      {post.coverImage && onOpenImage && (
+        <ButtonBase component="div" aria-label="Open post photo" onClick={() => onOpenImage(post)} sx={photoButtonSx}>
+          <PostPhoto post={post} />
+        </ButtonBase>
+      )}
       <PostEngagementBar post={post} trailing={engagementTrailing} />
     </Box>
   );

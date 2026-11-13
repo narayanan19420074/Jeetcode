@@ -17,6 +17,8 @@ const sheetSx = {
   mx: 'auto',
   borderRadius: `${RADII_PX.dialog} ${RADII_PX.dialog} 0 0`,
 };
+// The posts viewer is a full-screen dialog on the modal layer; a sheet opened from it must sit above that layer.
+const raisedSx = (theme) => ({ zIndex: theme.zIndex.modal + 1 });
 const handleSx = { alignSelf: 'center', flexShrink: 0, mt: 1.5, width: SIZES.sheetHandleWidth, height: SIZES.sheetHandleHeight, borderRadius: RADII_PX.pill, bgcolor: 'text.primary' };
 
 function CommentsBody({ thread, tree, onReply }) {
@@ -29,13 +31,13 @@ function CommentsBody({ thread, tree, onReply }) {
 }
 
 // Bottom sheet with the comments of a feed post: sort menu, the comments with Like and Reply, and the comment field.
-export default function CommentsSheet({ post, open, onClose, onCountChange }) {
+export default function CommentsSheet({ post, open, onClose, onCountChange, raised = false }) {
   const thread = useCommentThread(post._id, open, onCountChange);
   const [sort, setSort] = useState('relevant');
   const [replyTo, setReplyTo] = useState(null);
   const tree = useMemo(() => buildCommentTree(thread.comments, sort), [thread.comments, sort]);
   return (
-    <Drawer anchor="bottom" open={open} onClose={onClose} slotProps={{ paper: { sx: sheetSx } }}>
+    <Drawer anchor="bottom" open={open} onClose={onClose} sx={raised ? raisedSx : undefined} slotProps={{ paper: { sx: sheetSx } }}>
       <Box sx={handleSx} />
       <Box sx={{ flexShrink: 0, px: 1, pt: 1 }}><CommentSortMenu value={sort} onChange={setSort} /></Box>
       <Stack sx={{ flex: 1, overflowY: 'auto', px: 1.5 }}>

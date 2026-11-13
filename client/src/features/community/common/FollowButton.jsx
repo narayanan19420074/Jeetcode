@@ -16,8 +16,8 @@ const followSx = (compact, fontSize, isFollowing) => (theme) => ({
 
 // "+ Follow" (blue) next to an author, which turns into grey "Following" once followed (a post header shows the icon, a comment row only the word). Nothing is shown for your own
 // content or for anonymous posts, whose author is never revealed.
-// `fontSize` overrides the default size for a header that needs its own (the phone feed).
-export default function FollowButton({ author, isOwn, isFollowing, compact = false, fontSize }) {
+// `fontSize` overrides the default size for a header that needs its own (the phone feed); `sx` adds layout tweaks.
+export default function FollowButton({ author, isOwn, isFollowing, compact = false, fontSize, sx }) {
   const follow = useFollowUser(author?._id, isFollowing);
   if (!author || isOwn) return null;
   const icon = follow.on ? <CheckRoundedIcon /> : <AddRoundedIcon />;
@@ -29,7 +29,7 @@ export default function FollowButton({ author, isOwn, isFollowing, compact = fal
       aria-pressed={follow.on}
       aria-label={`${follow.on ? 'Unfollow' : 'Follow'} ${author.name}`}
       startIcon={compact ? undefined : icon}
-      sx={followSx(compact, fontSize, follow.on)}
+      sx={[followSx(compact, fontSize, follow.on), sx]}
     >
       {follow.on ? 'Following' : 'Follow'}
     </Button>
