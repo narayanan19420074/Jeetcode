@@ -33,10 +33,10 @@ const navButtonSx = (pal, active) => ({
   '&.Mui-focusVisible': { outline: `2px solid ${LIB_ACCENT}`, outlineOffset: 1 },
 });
 
-export function NavButton({ active, icon: Icon, label, count, accent, onClick, trailing }) {
+export function NavButton({ active, icon: Icon, label, count, accent, onClick, trailing, disabled }) {
   const pal = useLibraryPalette();
   return (
-    <ButtonBase onClick={onClick} aria-current={active ? 'page' : undefined} sx={navButtonSx(pal, active)}>
+    <ButtonBase onClick={onClick} disabled={disabled} aria-current={active ? 'page' : undefined} sx={[navButtonSx(pal, active), disabled && { opacity: 0.5 }]}>
       <Icon sx={{ fontSize: FONT_SIZES.display, color: active ? COLOR_PALETTE.white : accent || pal.muted }} />
       <Typography noWrap sx={{ flex: 1, fontSize: FONT_SIZES.bodyLg, fontWeight: active ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>
         {label}
