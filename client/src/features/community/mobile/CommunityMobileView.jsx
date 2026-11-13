@@ -11,6 +11,8 @@ import MemberList from './members/MemberList';
 import MemberSearchResults from './members/MemberSearchResults';
 import SuggestedMembersStrip from './members/SuggestedMembersStrip';
 import useMobileCommunity from './useMobileCommunity';
+import PostReelsScreen from './reels/PostReelsScreen';
+import useReelsRoute from './reels/useReelsRoute';
 import { SIZES } from '../../../app/design/designTokens';
 
 function ComposeButton({ onClick }) {
@@ -26,7 +28,7 @@ function ComposeButton({ onClick }) {
 }
 
 // Below the top bar: search results while searching, otherwise the tabs with either the Accounts list or the post feed.
-function CommunityMobileBody({ page, mobile }) {
+function CommunityMobileBody({ page, mobile, onOpenImage }) {
   if (mobile.isSearching) return <MemberSearchResults query={mobile.query} />;
   const renderInterlude = mobile.showsSuggestionsInFeed ? (slot) => <SuggestedMembersStrip members={mobile.suggestions.items} slot={slot} /> : undefined;
   return (
@@ -37,22 +39,25 @@ function CommunityMobileBody({ page, mobile }) {
       {mobile.isAccountsTabOpen ? (
         <MemberList state={mobile.suggestions} heading="People you may know" emptyText="No suggestions right now. Check back later." />
       ) : (
-        <PostList feed={page.feed} category={page.category} PostCard={PhonePostCard} renderInterlude={renderInterlude} />
+        <PostList feed={page.feed} category={page.category} PostCard={PhonePostCard} renderInterlude={renderInterlude} onOpenImage={onOpenImage} />
       )}
     </>
   );
 }
 
 // Phone layout: top bar with member search, scrolling category tabs (including Accounts), full-width feed with suggested
-// members between posts, and a floating compose button above the bottom bar.
+// members between posts, and a floating compose button above the bottom bar. Tapping a post photo opens the swipeable
+// posts viewer on top of the feed.
 export default function CommunityMobileView({ page }) {
   const mobile = useMobileCommunity(page);
+  const reels = useReelsRoute();
   return (
     <LibraryFont>
       <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))' }}>
         <CommunityTopBar query={mobile.query} onQueryChange={mobile.setQuery} />
-        <CommunityMobileBody page={page} mobile={mobile} />
+        <CommunityMobileBody page={page} mobile={mobile} onOpenImage={(post) => reels.open(post._id)} />
         <ComposeButton onClick={page.openCompose} />
+        <PostReelsScreen feed={page.feed} startId={reels.startId} onClose={reels.close} />
         <ComposePostDialog open={page.composeOpen} onClose={page.closeCompose} onPublished={page.feed.prepend} />
       </Box>
     </LibraryFont>

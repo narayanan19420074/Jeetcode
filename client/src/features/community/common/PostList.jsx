@@ -20,12 +20,12 @@ function EmptyFeed({ category }) {
 const INTERLUDE_EVERY = 6;
 const isInterludePosition = (index) => (index + 1) % INTERLUDE_EVERY === 0;
 
-function FeedRows({ items, onRemoved, PostCard, renderInterlude }) {
+function FeedRows({ items, onRemoved, onOpenImage, PostCard, renderInterlude }) {
   return (
     <Box sx={feedStripSx}>
       {items.map((post, index) => (
         <Fragment key={post._id}>
-          <PostCard post={post} onRemoved={onRemoved} />
+          <PostCard post={post} onRemoved={onRemoved} onOpenImage={onOpenImage} />
           {renderInterlude && isInterludePosition(index) && renderInterlude(Math.floor(index / INTERLUDE_EVERY))}
         </Fragment>
       ))}
@@ -33,8 +33,9 @@ function FeedRows({ items, onRemoved, PostCard, renderInterlude }) {
   );
 }
 
-// `PostCard` lets the phone feed draw its own card; the desktop feed uses the default.
-export default function PostList({ feed, category, PostCard = RichPostCard, renderInterlude }) {
+// `PostCard` lets the phone feed draw its own card; the desktop feed uses the default. `onOpenImage(post)` is called when
+// the photo of a post is tapped (the phone feed opens the posts viewer with it).
+export default function PostList({ feed, category, PostCard = RichPostCard, renderInterlude, onOpenImage }) {
   const { items, loading, error, hasMore, loadMore, reload, removePosts } = feed;
   if (error && items.length === 0) {
     return (
@@ -47,7 +48,7 @@ export default function PostList({ feed, category, PostCard = RichPostCard, rend
   if (items.length === 0) return <EmptyFeed category={category} />;
   return (
     <>
-      <FeedRows items={items} onRemoved={removePosts} PostCard={PostCard} renderInterlude={renderInterlude} />
+      <FeedRows items={items} onRemoved={removePosts} onOpenImage={onOpenImage} PostCard={PostCard} renderInterlude={renderInterlude} />
       {hasMore && (
         <Button fullWidth onClick={loadMore} disabled={loading} sx={{ my: 2 }}>
           {loading ? 'Loading…' : 'Load more'}
