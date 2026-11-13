@@ -18,7 +18,8 @@ const initialState = {
   online: {}, // { [userId]: true } — friends with a live socket right now (pushed by the server)
   unread: {}, // { [friendId]: n } — unread chat messages per friend
   activeChat: null, // friendId whose chat drawer is open (no badge / toast for that one)
-  last: {}, // { [friendId]: { from, kind, text, at } } — newest chat message per friend (list preview)
+  last: {}, // { [memberId]: { from, kind, text, at } } — newest chat message per conversation (list preview)
+  chatPeople: {}, // { [memberId]: card } — members in the inbox who are not friends
 };
 
 export const fetchFriends = createAsyncThunk('friends/fetch', async (_, { rejectWithValue }) => {
@@ -75,6 +76,9 @@ const friendsSlice = createSlice({
     setLastMap: (state, { payload }) => {
       state.last = payload || {};
     },
+    setChatPeople: (state, { payload }) => {
+      state.chatPeople = payload || {};
+    },
     setLast: (state, { payload }) => {
       const cur = state.last[payload.id];
       if (!cur || Date.parse(payload.m.at) >= Date.parse(cur.at)) state.last[payload.id] = payload.m;
@@ -105,15 +109,19 @@ const friendsSlice = createSlice({
   },
 });
 
-export const { setOnlineList, setPresence, setUnread, bumpUnread, clearUnread, setActiveChat, setLastMap, setLast } = friendsSlice.actions;
+export const { setOnlineList, setPresence, setUnread, bumpUnread, clearUnread, setActiveChat, setLastMap, setChatPeople, setLast } = friendsSlice.actions;
 
-// Last message per friend, for the chat-list preview. Best effort: a failure just leaves the previews empty.
+// Last message per conversation (friends and other members), for the chat-list preview. Best effort: a failure just leaves the previews empty.
 export const fetchChatOverview = () => async (dispatch) => {
   try {
     const { data } = await friendsApi.chatOverview();
     dispatch(setLastMap(data.data.byUser));
+    dispatch(setChatPeople(data.data.people));
   } catch { /* preview only */ }
 };
+
+// Friends get pair rooms, nudges and a status line; other members can only be written to.
+export const selectIsFriend = (userId) => (state) => state.friends.friends.some((friend) => friend.userId === userId);
 
 // Total unread chat messages (Friends badge in the sidebar).
 export const selectUnreadTotal = (s) => Object.values(s.friends.unread).reduce((a, n) => a + n, 0);

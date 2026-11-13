@@ -1,5 +1,6 @@
-import { InputAdornment, TextField } from '@mui/material';
+import { IconButton, InputAdornment, TextField } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { libSearchSx } from '../../dashboard/components/libraryStyle';
 import { FONT_SIZES, SIZES } from '../../../app/design/designTokens';
 
@@ -13,8 +14,20 @@ const searchFieldSx = {
 };
 const searchIconSx = { fontSize: SIZES.iconSize.small };
 
-// Pill search field used in the phone top bars. Pass `value` and `onChange(text)` to make it filter something.
+function ClearButton({ onClear }) {
+  return (
+    <InputAdornment position="end">
+      <IconButton size="small" edge="end" aria-label="Clear search" onClick={onClear}>
+        <CloseRoundedIcon sx={searchIconSx} />
+      </IconButton>
+    </InputAdornment>
+  );
+}
+
+// Pill search field used in the phone top bars. Pass `value` and `onChange(text)` to make it filter something; a clear
+// button appears while it holds text.
 export default function SearchField({ placeholder, label, value, onChange }) {
+  const hasText = Boolean(value) && Boolean(onChange);
   return (
     <TextField
       placeholder={placeholder}
@@ -23,7 +36,10 @@ export default function SearchField({ placeholder, label, value, onChange }) {
       sx={searchFieldSx}
       slotProps={{
         htmlInput: { 'aria-label': label },
-        input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon sx={searchIconSx} /></InputAdornment> },
+        input: {
+          startAdornment: <InputAdornment position="start"><SearchRoundedIcon sx={searchIconSx} /></InputAdornment>,
+          endAdornment: hasText ? <ClearButton onClear={() => onChange('')} /> : undefined,
+        },
       }}
     />
   );

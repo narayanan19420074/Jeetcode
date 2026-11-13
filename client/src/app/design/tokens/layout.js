@@ -118,6 +118,8 @@ export const SIZES = {
   messagingDock: { width: 320, height: 480 },
   // Widest a card (pair room invitation) grows inside a phone chat message.
   chatCardMaxWidth: 320,
+  // One suggested member card in the horizontal strip between feed posts on phones.
+  memberCardWidth: 168,
   // Banner of the profile card at the top of the Community left column.
   communityBannerHeight: 56,
   // Preview of an attached image on the compose screen.

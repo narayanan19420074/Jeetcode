@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import { JobProfile } from '../models/JobProfile.js';
 import { User } from '../models/User.js';
 import { ApiError } from '../utils/ApiError.js';
+import { findFollowedUserIds } from './communityFollow.service.js';
 
 export const EMPTY_JOB_PROFILE = {
   headline: '',
@@ -21,13 +22,14 @@ export async function getJobProfile(userId) {
   return profile ?? EMPTY_JOB_PROFILE;
 }
 
-// What another signed-in member sees: the account's public identity plus the profile content. Private account
-// data (email, coins, progress) is never selected.
-export async function getMemberJobProfile(userId) {
+// What another signed-in member sees: the account's public identity, the profile content and whether the viewer already
+// follows them. Private account data (email, coins, progress) is never selected.
+export async function getMemberJobProfile(userId, viewerId) {
   if (!mongoose.isValidObjectId(userId)) throw ApiError.notFound('Profile not found');
   const user = await User.findById(userId).select('name handle avatarUrl location').lean();
   if (!user) throw ApiError.notFound('Profile not found');
-  return { user, profile: await getJobProfile(userId) };
+  const [profile, followed] = await Promise.all([getJobProfile(userId), findFollowedUserIds(viewerId, [userId])]);
+  return { user, profile, isFollowing: followed.has(String(userId)) };
 }
 
 // The first save creates the document, so a new user never needs a separate "create" step.

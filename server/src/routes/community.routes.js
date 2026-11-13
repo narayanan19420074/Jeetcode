@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { requireAuth, attachUserIfPresent } from '../middlewares/auth.middleware.js';
 import { checkProAccess } from '../middlewares/checkProAccess.middleware.js';
 import { validate } from '../middlewares/validate.js';
-import { communityWriteLimiter } from '../middlewares/rateLimiter.js';
+import { communityWriteLimiter, friendsLimiter } from '../middlewares/rateLimiter.js';
 import {
   listSolutionsQuerySchema,
   listThreadsQuerySchema,
@@ -50,6 +50,8 @@ import {
   unfollowUser,
 } from '../controllers/communityEngagement.controller.js';
 import { readImageBody } from '../middlewares/imageBody.middleware.js';
+import { memberSearchSchema, suggestedMembersSchema } from '../validators/communityMember.validator.js';
+import { searchCommunityMembers, listSuggestedMembers } from '../controllers/communityMember.controller.js';
 
 const router = Router();
 
@@ -88,6 +90,10 @@ router.put('/posts/:id/hide', ...write, hidePost);
 router.put('/posts/:id/hide-author', ...write, hidePostAuthor);
 router.put('/follows/:userId', ...write, followUser);
 router.delete('/follows/:userId', ...write, unfollowUser);
+
+// Member discovery: signed-in members only, because it lists accounts. Search covers every member, not only friends.
+router.get('/members/search', requireAuth, friendsLimiter, validate(memberSearchSchema, 'query'), searchCommunityMembers);
+router.get('/members/suggested', requireAuth, friendsLimiter, validate(suggestedMembersSchema, 'query'), listSuggestedMembers);
 
 // Post images: uploading needs an account, viewing is public because posts can be read by guests.
 router.post('/images', ...write, readImageBody, uploadImage);

@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Badge, IconButton } from '@mui/material';
-import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
-import { libIconBtnSx } from '../../../dashboard/components/libraryStyle';
+import { useCallback, useState } from 'react';
+import { IconButton } from '@mui/material';
+import ChatBubbleRoundedIcon from '@mui/icons-material/ChatBubbleRounded';
 import MessagesScreen from './MessagesScreen';
+import useChatLink from './useChatLink';
 
-const totalUnread = (state) => Object.values(state.friends.unread).reduce((sum, count) => sum + count, 0);
-
-// The messages icon of the phone top bar. It is drawn like the search field next to it (round, same soft fill, outline
-// icon) and shows a dot while a friend's message is unread. It opens the messages screen.
+// The messages icon of the phone top bar; it opens the messages screen. A chat link (the Message button of a Job
+// profile) opens the screen with that member's chat already open.
 export default function MessagesButton() {
   const [open, setOpen] = useState(false);
-  const hasUnread = useSelector(totalUnread) > 0;
+  const [linkedPerson, setLinkedPerson] = useState(null);
+  const showLinkedChat = useCallback((person) => {
+    setLinkedPerson(person);
+    setOpen(true);
+  }, []);
+  useChatLink(showLinkedChat);
   return (
     <>
-      <IconButton aria-label={hasUnread ? 'Messages, unread messages' : 'Messages'} onClick={() => setOpen(true)} sx={libIconBtnSx}>
-        <Badge color="primary" variant="dot" invisible={!hasUnread}>
-          <ChatBubbleOutlineRoundedIcon />
-        </Badge>
+      <IconButton aria-label="Messages" onClick={() => setOpen(true)} sx={{ color: 'var(--lib-text)' }}>
+        <ChatBubbleRoundedIcon />
       </IconButton>
-      <MessagesScreen open={open} onClose={() => setOpen(false)} />
+      <MessagesScreen open={open} onClose={() => setOpen(false)} initialChat={linkedPerson} />
     </>
   );
 }

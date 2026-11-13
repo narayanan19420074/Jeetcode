@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Alert, Box, Button } from '@mui/material';
 import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
@@ -15,18 +16,25 @@ function EmptyFeed({ category }) {
   return <EmptyBlock icon={<ForumRoundedIcon />} title="No posts yet" text="Be the first to start a conversation in this category." />;
 }
 
-function FeedRows({ items, onRemoved, PostCard, cardProps }) {
+// `renderInterlude(slot)` draws extra content (the phone feed shows suggested members) after every INTERLUDE_EVERY posts.
+const INTERLUDE_EVERY = 6;
+const isInterludePosition = (index) => (index + 1) % INTERLUDE_EVERY === 0;
+
+function FeedRows({ items, onRemoved, PostCard, renderInterlude }) {
   return (
     <Box sx={feedStripSx}>
-      {items.map((post) => (
-        <PostCard key={post._id} post={post} onRemoved={onRemoved} {...cardProps} />
+      {items.map((post, index) => (
+        <Fragment key={post._id}>
+          <PostCard post={post} onRemoved={onRemoved} />
+          {renderInterlude && isInterludePosition(index) && renderInterlude(Math.floor(index / INTERLUDE_EVERY))}
+        </Fragment>
       ))}
     </Box>
   );
 }
 
-// `PostCard` lets the phone feed draw its own card (the desktop feed uses the default); `cardProps` are extra props for it.
-export default function PostList({ feed, category, PostCard = RichPostCard, cardProps }) {
+// `PostCard` lets the phone feed draw its own card; the desktop feed uses the default.
+export default function PostList({ feed, category, PostCard = RichPostCard, renderInterlude }) {
   const { items, loading, error, hasMore, loadMore, reload, removePosts } = feed;
   if (error && items.length === 0) {
     return (
@@ -39,7 +47,7 @@ export default function PostList({ feed, category, PostCard = RichPostCard, card
   if (items.length === 0) return <EmptyFeed category={category} />;
   return (
     <>
-      <FeedRows items={items} onRemoved={removePosts} PostCard={PostCard} cardProps={cardProps} />
+      <FeedRows items={items} onRemoved={removePosts} PostCard={PostCard} renderInterlude={renderInterlude} />
       {hasMore && (
         <Button fullWidth onClick={loadMore} disabled={loading} sx={{ my: 2 }}>
           {loading ? 'Loading…' : 'Load more'}

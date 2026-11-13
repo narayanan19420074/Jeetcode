@@ -6,18 +6,21 @@ import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../../../app/design/designTokens';
 import { LIB_FONT, LIB_TRACKING, libBackBtnSx, libIconBtnSx } from '../../../../dashboard/components/libraryStyle';
 import { statusInfo } from '../../../../friends/friendsUi';
+import { selectIsFriend } from '../../../../friends/friendsSlice';
 import { LIB_SUCCESS } from '../../../../friends/chat/chatShared';
 
 const menuItemSx = { minHeight: SIZES.menuRowHeight, fontSize: FONT_SIZES.title, fontFamily: LIB_FONT, letterSpacing: LIB_TRACKING };
 
 function StatusLine({ friend, isTyping }) {
   const isOnline = useSelector((state) => Boolean(state.friends.online[friend.userId]));
-  const status = statusInfo(friend, isOnline);
+  const isFriend = useSelector(selectIsFriend(friend.userId));
+  // Activity is shown to friends only; every other member shows their handle.
+  const idleText = isFriend ? statusInfo(friend, isOnline).text : `@${friend.handle}`;
   return (
     <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
       {isOnline && <Box component="span" aria-hidden sx={{ width: SIZES.presenceDot, height: SIZES.presenceDot, borderRadius: RADII_PX.circle, bgcolor: LIB_SUCCESS }} />}
       <Typography noWrap sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: 'var(--lib-muted)' }}>
-        {isTyping ? 'Typing…' : isOnline ? 'Active now' : status.text}
+        {isTyping ? 'Typing…' : isOnline ? 'Active now' : idleText}
       </Typography>
     </Stack>
   );
@@ -28,8 +31,8 @@ function ChatMenu({ anchor, onClose, actions }) {
   return (
     <Menu anchorEl={anchor} open={Boolean(anchor)} onClose={onClose} slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, minWidth: SIZES.accountMenuMinWidth.desktop } } }}>
       <MenuItem onClick={run(actions.openProfile)} sx={menuItemSx}>View profile</MenuItem>
-      <MenuItem onClick={run(actions.invitePairRoom)} sx={menuItemSx}>Invite to pair room</MenuItem>
-      <MenuItem onClick={run(actions.removeFriend)} sx={{ ...menuItemSx, color: 'error.main' }}>Remove friend</MenuItem>
+      {actions.invitePairRoom && <MenuItem onClick={run(actions.invitePairRoom)} sx={menuItemSx}>Invite to pair room</MenuItem>}
+      {actions.removeFriend && <MenuItem onClick={run(actions.removeFriend)} sx={{ ...menuItemSx, color: 'error.main' }}>Remove friend</MenuItem>}
     </Menu>
   );
 }

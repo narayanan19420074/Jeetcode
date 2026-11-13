@@ -30,7 +30,7 @@ export const getUnread = asyncHandler(async (req, res) => {
   new ApiResponse(200, await unreadSummary(req.user.id)).send(res);
 });
 
-// GET /friends/chat/overview -> { byUser: { friendId: lastMessage } } (chat list previews)
+// GET /friends/chat/overview -> { byUser: { memberId: lastMessage }, people } (inbox previews)
 export const chatOverview = asyncHandler(async (req, res) => {
   new ApiResponse(200, await conversationSummaries(req.user.id)).send(res);
 });
@@ -48,10 +48,9 @@ export const postMessage = asyncHandler(async (req, res) => {
   new ApiResponse(201, { message }).send(res);
 });
 
-// POST /friends/chat/:userId/read — I opened this conversation.
+// POST /friends/chat/:userId/read — I opened this conversation (any member, not only friends).
 export const readChat = asyncHandler(async (req, res) => {
   assertObjectId(req.params.userId);
-  await assertFriends(req.user.id, req.params.userId);
   new ApiResponse(200, { marked: await markRead(req.user.id, req.params.userId) }).send(res);
 });
 

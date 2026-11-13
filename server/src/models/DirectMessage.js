@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-// One document per chat message between two friends.
+// One document per chat message between two members.
 //   text  = a normal typed message
 //   room  = "come code with me" invite (roomId points at a live pair-coding room)
 //   nudge = "keep your streak alive" reminder
@@ -21,6 +21,8 @@ const directMessageSchema = new mongoose.Schema(
 
 // Conversation history, newest first.
 directMessageSchema.index({ pairKey: 1, createdAt: -1 });
+// The inbox: "the newest message of every conversation I am part of", whether I sent or received it.
+directMessageSchema.index({ from: 1, createdAt: -1 });
 // Unread badge: "everything sent to me that I have not opened".
 directMessageSchema.index({ to: 1, readAt: 1, from: 1 });
 

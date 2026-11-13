@@ -16,13 +16,13 @@ function OwnProfileLink({ user }) {
   );
 }
 
-// Top of the phone feed: your photo, the search field and the messages button.
-export default function CommunityTopBar() {
+// Top of the phone feed: your photo, the member search field and the messages button.
+export default function CommunityTopBar({ query, onQueryChange }) {
   const user = useSelector((state) => state.auth.user);
   return (
     <Stack component="header" direction="row" alignItems="center" spacing={1.5}>
       <OwnProfileLink user={user} />
-      <SearchField placeholder="Search" label="Search community" />
+      <SearchField placeholder="Search members" label="Search members" value={query} onChange={onQueryChange} />
       <MessagesButton />
     </Stack>
   );

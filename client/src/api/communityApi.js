@@ -36,6 +36,10 @@ export const communityApi = {
   followUser: (userId) => apiClient.put(`${base}/follows/${userId}`),
   unfollowUser: (userId) => apiClient.delete(`${base}/follows/${userId}`),
 
+  // Member discovery: search every account, and the accounts the viewer may want to follow
+  searchMembers: (q) => apiClient.get(`${base}/members/search`, { params: { q } }),
+  suggestedMembers: (limit) => apiClient.get(`${base}/members/suggested`, { params: { limit } }),
+
   // Comments (nested replies)
   listComments: (kind, id) => apiClient.get(`${base}/${kind}/${id}/comments`),
   createComment: (kind, id, body) => apiClient.post(`${base}/${kind}/${id}/comments`, body),

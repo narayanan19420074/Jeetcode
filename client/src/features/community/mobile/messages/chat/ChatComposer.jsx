@@ -39,7 +39,7 @@ function SendButton({ canSend, isSending, onSend }) {
   );
 }
 
-// "Write a message…" field with the "+" button and Send. Quick replies appear while the field is empty. Pressing Enter
+// "Write a message…" field with the "+" button (friends only) and Send. Quick replies appear while the field is empty. Pressing Enter
 // sends; Shift+Enter starts a new line.
 export default function ChatComposer({ friend, isSending, onSend, onTyping, onInvitePairRoom }) {
   const [text, setText] = useState('');
@@ -55,7 +55,7 @@ export default function ChatComposer({ friend, isSending, onSend, onTyping, onIn
     <Stack sx={{ flexShrink: 0, pb: 'calc(8px + env(safe-area-inset-bottom))', borderTop: '1px solid var(--lib-divider)' }}>
       {!text.trim() && <QuickReplies onPick={onSend} />}
       <Stack direction="row" sx={{ alignItems: 'flex-end', gap: 1, px: 2, pt: 1 }}>
-        <AttachButton onInvitePairRoom={onInvitePairRoom} />
+        {onInvitePairRoom && <AttachButton onInvitePairRoom={onInvitePairRoom} />}
         <TextField fullWidth multiline maxRows={4} size="small" placeholder="Write a message…" value={text} onKeyDown={handleKeyDown} sx={fieldSx}
           onChange={(event) => { setText(event.target.value.slice(0, MAX_MESSAGE_LENGTH)); onTyping(); }}
           slotProps={{ htmlInput: { 'aria-label': `Message ${friend.name}`, maxLength: MAX_MESSAGE_LENGTH } }} />

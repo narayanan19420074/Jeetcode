@@ -5,6 +5,7 @@ import { BANNER_GRADIENT } from '../../dashboard/bannerGradients';
 import { initialsFromName } from '../../../components/navbar/navConfig';
 import AddSectionMenu from './AddSectionMenu';
 import { IconAction } from './ProfileCard';
+import MemberProfileActions from '../mobile/MemberProfileActions';
 
 // Current company and latest school, shown under the headline like the LinkedIn top card.
 const organizationLine = ({ experience, education }) => {
@@ -78,6 +79,7 @@ export default function IdentityHeader({ editor }) {
       </Stack>
       <HeaderText user={user} profile={profile} readOnly={readOnly} />
       {readOnly ? <OpenToWorkNote isOpen={profile.openToWork} /> : <OwnerActions editor={editor} />}
+      {readOnly && isMobile && <MemberProfileActions editor={editor} />}
     </Paper>
   );
 }
