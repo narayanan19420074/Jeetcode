@@ -52,6 +52,9 @@ const jobProfileSchema = new mongoose.Schema(
     headline: text(LIMITS.headline),
     about: text(LIMITS.about),
     openToWork: { type: Boolean, default: false },
+    hiring: { type: Boolean, default: false },
+    // Id of the uploaded banner picture (a CommunityImage owned by this user); empty means the default gradient banner.
+    bannerImage: { type: String, default: '', match: /^([a-f\d]{24})?$/i },
     experience: { type: [experienceSchema], default: [] },
     education: { type: [educationSchema], default: [] },
     certifications: { type: [certificationSchema], default: [] },

@@ -3,7 +3,7 @@ import EntryFormDialog from './EntryFormDialog';
 import SkillsDialog from './SkillsDialog';
 import { ENTRY_SECTIONS, INTRO_FIELDS } from './jobProfileConfig';
 
-const introValues = (profile) => ({ headline: profile.headline, about: profile.about, openToWork: profile.openToWork });
+const introValues = (profile) => ({ headline: profile.headline, about: profile.about, openToWork: profile.openToWork, hiring: Boolean(profile.hiring) });
 
 function EntryDialog({ editor, dialog }) {
   const section = ENTRY_SECTIONS[dialog.section];

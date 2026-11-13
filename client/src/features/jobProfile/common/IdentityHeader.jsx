@@ -1,11 +1,11 @@
 import { Avatar, Box, Button, Chip, Paper, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
-import { BANNER_GRADIENT } from '../../dashboard/bannerGradients';
 import { initialsFromName } from '../../../components/navbar/navConfig';
 import AddSectionMenu from './AddSectionMenu';
 import { IconAction } from './ProfileCard';
 import MemberProfileActions from '../mobile/MemberProfileActions';
+import ProfileBanner from './ProfileBanner';
 
 // Current company and latest school, shown under the headline like the LinkedIn top card.
 const organizationLine = ({ experience, education }) => {
@@ -44,13 +44,14 @@ function HeaderText({ user, profile, readOnly }) {
   );
 }
 
-// Another member's profile only says whether they are open to work.
-function OpenToWorkNote({ isOpen }) {
-  if (!isOpen) return null;
+// The statuses the member switched on in Edit intro. Everyone who opens the profile, the owner included, sees them.
+function StatusChips({ profile }) {
+  if (!profile.openToWork && !profile.hiring) return null;
   return (
-    <Box sx={{ px: 2, pb: 2 }}>
-      <Chip label="Open to work" color="success" size="small" />
-    </Box>
+    <Stack direction="row" spacing={1} sx={{ px: 2, pb: 2 }}>
+      {profile.openToWork && <Chip label="Open to work" color="success" size="small" />}
+      {profile.hiring && <Chip label="Hiring" color="primary" size="small" />}
+    </Stack>
   );
 }
 
@@ -72,13 +73,14 @@ export default function IdentityHeader({ editor }) {
 
   return (
     <Paper variant={isMobile ? 'elevation' : 'outlined'} elevation={0} sx={{ overflow: 'hidden', borderRadius: isMobile ? RADII_PX.square : RADII_PX.card }}>
-      <Box sx={{ height: SIZES.profileBannerHeight, background: BANNER_GRADIENT.visualizer }} />
+      <ProfileBanner editor={editor} />
       <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between', pr: 1 }}>
         <ProfilePhoto user={user} />
         {!readOnly && <IconAction label="Edit intro" icon={EditRoundedIcon} onClick={editor.editIntro} />}
       </Stack>
       <HeaderText user={user} profile={profile} readOnly={readOnly} />
-      {readOnly ? <OpenToWorkNote isOpen={profile.openToWork} /> : <OwnerActions editor={editor} />}
+      <StatusChips profile={profile} />
+      {!readOnly && <OwnerActions editor={editor} />}
       {readOnly && isMobile && <MemberProfileActions editor={editor} />}
     </Paper>
   );

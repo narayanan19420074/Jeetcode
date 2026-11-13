@@ -38,6 +38,7 @@ export default function useJobProfileEditor() {
     reload,
     saveIntro: (values) => commit(values),
     saveSkills: (skills) => commit({ skills }),
+    saveBannerImage: (bannerImage) => commit({ bannerImage }),
     saveEntry: (section, index, entry) => commit({ [section]: upsertAt(profile[section], index, entry) }),
     removeEntry: (section, index) => commit({ [section]: removeAt(profile[section], index) }),
   };

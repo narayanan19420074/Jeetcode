@@ -67,6 +67,8 @@ export const saveJobProfileSchema = z
     headline: text(LIMITS.headline),
     about: text(LIMITS.about),
     openToWork: z.boolean(),
+    hiring: z.boolean(),
+    bannerImage: z.union([z.literal(''), z.string().regex(/^[a-f\d]{24}$/i, 'Invalid image')]),
     experience: z.array(experienceSchema).max(LIMITS.maxExperience),
     education: z.array(educationSchema).max(LIMITS.maxEducation),
     certifications: z.array(certificationSchema).max(LIMITS.maxCertifications),

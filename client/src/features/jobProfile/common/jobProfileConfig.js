@@ -27,6 +27,7 @@ export const INTRO_FIELDS = [
   text('headline', 'Headline', L.headline, { helper: 'For example: Full Stack Developer (MERN)' }),
   longText('about', 'About', L.about),
   checkbox('openToWork', 'Open to work'),
+  checkbox('hiring', 'Hiring'),
 ];
 
 const EXPERIENCE_FIELDS = [
