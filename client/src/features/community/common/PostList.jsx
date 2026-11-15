@@ -33,9 +33,10 @@ function FeedRows({ items, onRemoved, onOpenImage, PostCard, renderInterlude }) 
   );
 }
 
+// `emptyState` replaces the default empty message (used inside a group or newsletter).
 // `PostCard` lets the phone feed draw its own card; the desktop feed uses the default. `onOpenImage(post)` is called when
 // the photo of a post is tapped (the phone feed opens the posts viewer with it).
-export default function PostList({ feed, category, PostCard = RichPostCard, renderInterlude, onOpenImage }) {
+export default function PostList({ feed, category, PostCard = RichPostCard, renderInterlude, onOpenImage, emptyState }) {
   const { items, loading, error, hasMore, loadMore, reload, removePosts } = feed;
   if (error && items.length === 0) {
     return (
@@ -45,7 +46,7 @@ export default function PostList({ feed, category, PostCard = RichPostCard, rend
     );
   }
   if (loading && items.length === 0) return <FeedSkeleton count={4} />;
-  if (items.length === 0) return <EmptyFeed category={category} />;
+  if (items.length === 0) return emptyState || <EmptyFeed category={category} />;
   return (
     <>
       <FeedRows items={items} onRemoved={removePosts} onOpenImage={onOpenImage} PostCard={PostCard} renderInterlude={renderInterlude} />

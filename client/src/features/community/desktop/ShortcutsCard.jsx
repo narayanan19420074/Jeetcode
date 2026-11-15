@@ -1,27 +1,25 @@
 import { useSelector } from 'react-redux';
-import { Chip, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import BookmarkRoundedIcon from '@mui/icons-material/BookmarkRounded';
-import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
-import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 import { SAVED_FEED } from '../common/communityCategories';
+import { CHANNEL_KINDS } from '../common/channels/channelKinds';
+import { CHANNEL_ICONS } from './channels/channelIcons';
 import RailCard from './RailCard';
 
-function Shortcut({ icon: Icon, label, soon = false, onClick }) {
+function Shortcut({ icon: Icon, label, onClick }) {
   return (
-    <ListItemButton disabled={soon} onClick={onClick}>
+    <ListItemButton onClick={onClick}>
       <ListItemIcon sx={{ minWidth: 'auto', mr: 1.5 }}>
         <Icon fontSize="small" />
       </ListItemIcon>
       <ListItemText primary={label} slotProps={{ primary: { variant: 'body2', fontWeight: FONT_WEIGHTS.semibold } }} />
-      {soon && <Chip size="small" label="Soon" />}
     </ListItemButton>
   );
 }
 
-// Saved items switches the feed to the Saved tab. Groups and Newsletters do not exist in JeetCode yet, so they
-// are shown as "Soon" and cannot be opened.
-export default function ShortcutsCard({ onShowSaved }) {
+// Saved items switches the feed to the Saved tab. Groups and Newsletters open their own pages in the middle column.
+export default function ShortcutsCard({ onShowSaved, onOpenChannels }) {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   if (!isAuthenticated) return null;
 
@@ -29,8 +27,9 @@ export default function ShortcutsCard({ onShowSaved }) {
     <RailCard>
       <List disablePadding>
         <Shortcut icon={BookmarkRoundedIcon} label="Saved items" onClick={() => onShowSaved(SAVED_FEED)} />
-        <Shortcut icon={GroupsRoundedIcon} label="Groups" soon />
-        <Shortcut icon={NewspaperRoundedIcon} label="Newsletters" soon />
+        {Object.values(CHANNEL_KINDS).map(({ kind, title }) => (
+          <Shortcut key={kind} icon={CHANNEL_ICONS[kind]} label={title} onClick={() => onOpenChannels(kind)} />
+        ))}
       </List>
     </RailCard>
   );

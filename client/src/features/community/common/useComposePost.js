@@ -13,14 +13,16 @@ export const validateDraft = ({ title, body, images }) => {
   return '';
 };
 
-const toPostPayload = (draft) => ({
+const toPostPayload = (draft, channelId) => ({
+  ...(channelId ? { channel: channelId } : {}),
   title: draft.title.trim(),
   category: draft.category,
   isAnonymous: draft.isAnonymous,
   body: appendImages(draft.body.trim(), draft.images),
 });
 
-export default function useComposePost(onPublished) {
+// `channelId` publishes into a group or newsletter instead of the main feed.
+export default function useComposePost(onPublished, channelId) {
   const [draft, setDraft] = useState(EMPTY_DRAFT);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -34,7 +36,7 @@ export default function useComposePost(onPublished) {
     setSaving(true);
     setError('');
     try {
-      const { data } = await communityApi.createPost(toPostPayload(draft));
+      const { data } = await communityApi.createPost(toPostPayload(draft, channelId));
       setDraft(EMPTY_DRAFT);
       onPublished(data.data);
     } catch (err) {

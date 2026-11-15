@@ -8,6 +8,9 @@ const communityPostSchema = new mongoose.Schema(
     isAnonymous: { type: Boolean, default: false },
     category: { type: String, enum: ['general', 'career', 'interview', 'contest', 'compensation'], default: 'general' },
 
+    // Set when the post belongs to a group or newsletter. Such posts stay out of the main feed.
+    channel: { type: mongoose.Schema.Types.ObjectId, ref: 'CommunityChannel', default: null },
+
     title: { type: String, required: true, trim: true, minlength: 3, maxlength: 150 },
     body: { type: String, required: true, maxlength: 10000 },
     excerpt: { type: String, default: '', maxlength: 200 },
@@ -25,6 +28,7 @@ const communityPostSchema = new mongoose.Schema(
 
 communityPostSchema.index({ category: 1, createdAt: -1 });
 communityPostSchema.index({ createdAt: -1 });
+communityPostSchema.index({ channel: 1, createdAt: -1 });
 communityPostSchema.index({ score: -1, createdAt: -1 });
 
 export const CommunityPost = mongoose.model('CommunityPost', communityPostSchema);

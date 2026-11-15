@@ -5,11 +5,19 @@ import { findOwnedImageIds, markImagesAttached } from './communityImage.service.
 import { applyViewerPreferences } from './communityPreference.service.js';
 import { addViewerState } from './communityViewerState.service.js';
 import { addSocialContext } from './communityPostContext.service.js';
+import { assertCanPublish } from './communityChannel.service.js';
 
 const escapeRegex = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-export const buildPostFilter = ({ category, q }) => {
-  const filter = category ? { category } : {};
+// Posts of a group or newsletter appear only inside it. The main feed skips them; the Saved list keeps them, because
+// saving is the viewer's own choice.
+const channelScope = ({ channel, saved }) => {
+  if (channel) return { channel };
+  return saved ? {} : { channel: null };
+};
+
+export const buildPostFilter = ({ category, q, channel, saved }) => {
+  const filter = { ...(category ? { category } : {}), ...channelScope({ channel, saved }) };
   if (q) {
     const pattern = new RegExp(escapeRegex(q), 'i');
     filter.$or = [{ title: pattern }, { body: pattern }];
@@ -29,8 +37,8 @@ export async function presentPosts(rows, user) {
   return withSocialContext.map(hideAnonymousAuthor);
 }
 
-export async function findPostPage({ category, sort, q, saved, page, limit }, user) {
-  const filter = await applyViewerPreferences(buildPostFilter({ category, q }), user, saved === 'true');
+export async function findPostPage({ category, sort, q, saved, channel, page, limit }, user) {
+  const filter = await applyViewerPreferences(buildPostFilter({ category, q, channel, saved: saved === 'true' }), user, saved === 'true');
   const [rows, total] = await Promise.all([
     CommunityPost.find(filter).select('-body').sort(postSortSpec(sort)).skip((page - 1) * limit).limit(limit).populate('author', AUTHOR_FIELDS).lean(),
     CommunityPost.countDocuments(filter),
@@ -38,9 +46,10 @@ export async function findPostPage({ category, sort, q, saved, page, limit }, us
   return { rows, total };
 }
 
-export async function createPostForUser(userId, { title, body, category, isAnonymous }) {
+export async function createPostForUser(userId, { title, body, category, isAnonymous, channel }) {
+  if (channel) await assertCanPublish(userId, channel);
   const imageIds = await findOwnedImageIds(userId, body);
-  const post = await CommunityPost.create({ author: userId, title, body, category, isAnonymous, excerpt: makeExcerpt(body), coverImage: imageIds[0] || '' });
+  const post = await CommunityPost.create({ author: userId, title, body, category, isAnonymous, channel: channel || null, excerpt: makeExcerpt(body), coverImage: imageIds[0] || '' });
   await markImagesAttached(imageIds);
   return CommunityPost.findById(post._id).select('-body').populate('author', AUTHOR_FIELDS).lean();
 }

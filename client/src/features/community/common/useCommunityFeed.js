@@ -1,51 +1,31 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 import { communityApi } from '../../../api/communityApi';
-import { extractErrorMessage } from '../../../api/apiClient';
 import { SAVED_FEED } from './communityCategories';
+import usePagedList from './usePagedList';
 
 const PAGE_SIZE = 15;
 
-const feedFilterFor = (category) => {
+const feedFilterFor = (category, channelId) => {
+  if (channelId) return { channel: channelId };
   if (category === SAVED_FEED) return { saved: true };
   return category ? { category } : {};
 };
 
-// Loads the post feed for one category and appends further pages. Switching category restarts from page 1.
-export default function useCommunityFeed(category) {
-  const [items, setItems] = useState([]);
-  const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  const load = useCallback(
-    async (pageToLoad) => {
-      setLoading(true);
-      setError('');
-      try {
-        const params = { page: pageToLoad, limit: PAGE_SIZE, ...feedFilterFor(category) };
-        const { data } = await communityApi.listPosts(params);
-        const { items: rows, pagination } = data.data;
-        setItems((previous) => (pageToLoad === 1 ? rows : [...previous, ...rows]));
-        setPage(pageToLoad);
-        setHasMore(pageToLoad < pagination.totalPages);
-      } catch (err) {
-        setError(extractErrorMessage(err));
-      } finally {
-        setLoading(false);
-      }
+// Loads the post feed for one category, or for one group or newsletter when `channelId` is given, and appends further
+// pages. Switching category or channel restarts from page 1.
+export default function useCommunityFeed(category, channelId) {
+  const fetchPage = useCallback(
+    async (page) => {
+      const { data } = await communityApi.listPosts({ page, limit: PAGE_SIZE, ...feedFilterFor(category, channelId) });
+      return { rows: data.data.items, totalPages: data.data.pagination.totalPages };
     },
-    [category]
+    [category, channelId]
   );
+  const { setItems, ...list } = usePagedList(fetchPage);
 
-  useEffect(() => {
-    load(1);
-  }, [load]);
-
-  const loadMore = () => load(page + 1);
   const prepend = (post) => setItems((previous) => [post, ...previous]);
   // `removal` is { postId } for one post or { authorId } for every named post of that author.
   const removePosts = ({ postId, authorId }) =>
     setItems((previous) => previous.filter((post) => post._id !== postId && (!authorId || post.author?._id !== authorId)));
-  return { items, loading, error, hasMore, loadMore, reload: () => load(1), prepend, removePosts };
+  return { ...list, prepend, removePosts };
 }

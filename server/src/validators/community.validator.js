@@ -68,6 +68,8 @@ export const listPostsQuerySchema = z.object({
   q: z.string().trim().max(60).optional(),
   // `true` returns only the posts the signed-in user saved.
   saved: z.enum(['true', 'false']).optional(),
+  // Lists the posts of one group or newsletter instead of the main feed.
+  channel: objectId.optional(),
   page,
   limit,
 });
@@ -77,4 +79,6 @@ export const createPostSchema = z.object({
   body: z.string().trim().min(1).max(10000),
   category: z.enum(POST_CATEGORIES).default('general'),
   isAnonymous: z.boolean().default(false),
+  // Publishes into a group or newsletter instead of the main feed.
+  channel: objectId.optional(),
 });

@@ -52,6 +52,8 @@ import {
 import { readImageBody } from '../middlewares/imageBody.middleware.js';
 import { memberSearchSchema, suggestedMembersSchema } from '../validators/communityMember.validator.js';
 import { searchCommunityMembers, listSuggestedMembers } from '../controllers/communityMember.controller.js';
+import { listChannelsQuerySchema, createChannelSchema } from '../validators/communityChannel.validator.js';
+import { listChannels, createChannelHandler, getChannel, joinChannel, leaveChannel } from '../controllers/communityChannel.controller.js';
 
 const router = Router();
 
@@ -94,6 +96,13 @@ router.delete('/follows/:userId', ...write, unfollowUser);
 // Member discovery: signed-in members only, because it lists accounts. Search covers every member, not only friends.
 router.get('/members/search', requireAuth, friendsLimiter, validate(memberSearchSchema, 'query'), searchCommunityMembers);
 router.get('/members/suggested', requireAuth, friendsLimiter, validate(suggestedMembersSchema, 'query'), listSuggestedMembers);
+
+// Groups and newsletters (one model, told apart by `kind`). Reading is public; creating and joining need an account.
+router.get('/channels', attachUserIfPresent, validate(listChannelsQuerySchema, 'query'), listChannels);
+router.post('/channels', ...write, validate(createChannelSchema), createChannelHandler);
+router.get('/channels/:id', attachUserIfPresent, getChannel);
+router.put('/channels/:id/membership', ...write, joinChannel);
+router.delete('/channels/:id/membership', ...write, leaveChannel);
 
 // Post images: uploading needs an account, viewing is public because posts can be read by guests.
 router.post('/images', ...write, readImageBody, uploadImage);

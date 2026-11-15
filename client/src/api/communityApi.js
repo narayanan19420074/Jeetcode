@@ -40,6 +40,13 @@ export const communityApi = {
   searchMembers: (q) => apiClient.get(`${base}/members/search`, { params: { q } }),
   suggestedMembers: (limit) => apiClient.get(`${base}/members/suggested`, { params: { limit } }),
 
+  // Groups and newsletters ("channels"): `kind` is 'group' | 'newsletter'. Joining a group or subscribing to a newsletter is one membership.
+  listChannels: (params) => apiClient.get(`${base}/channels`, { params }),
+  createChannel: (body) => apiClient.post(`${base}/channels`, body),
+  getChannel: (id) => apiClient.get(`${base}/channels/${id}`),
+  joinChannel: (id) => apiClient.put(`${base}/channels/${id}/membership`),
+  leaveChannel: (id) => apiClient.delete(`${base}/channels/${id}/membership`),
+
   // Comments (nested replies)
   listComments: (kind, id) => apiClient.get(`${base}/${kind}/${id}/comments`),
   createComment: (kind, id, body) => apiClient.post(`${base}/${kind}/${id}/comments`, body),
