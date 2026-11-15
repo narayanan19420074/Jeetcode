@@ -83,7 +83,7 @@ Because it stages everything, the status check in 3.3 matters.
    import (named vs default), route paths must match between `client/src/api/*`
    and `server/src/routes/*`, and Redux slices must be registered in
    `client/src/app/store.js`.
-3. **Build-check if you can run code.** In your sandbox, run
+3. **Design-token gate first (section 4.3.3), always.** Then build-check if you can run code. In your sandbox, run
    `npm --prefix client ci --include=dev && npm --prefix client run build` and
    `node --check` on changed server files. Fix errors before delivering. If you
    cannot run code, say so in one line.
@@ -245,6 +245,29 @@ read from that file.
 - Mechanical migrations (many files at once) are delivered as a git patch (`git apply`) and are exempt from 4.2
   rule 9 for the touched files. Normal edits of those files still follow 4.2.
 
+### 4.3.3 Design-token gate (run before every delivery that touches `client/`) — MANDATORY
+
+The Render build runs `check-design-tokens.mjs`. A single violation fails the whole deploy, so this check is part of
+the work, not an optional test. It is a fast static scan (no install, no build), so it is allowed even when the developer
+says "no tests".
+
+1. **Run it before you pack the archive:** `node client/scripts/check-design-tokens.mjs`. It must print
+   `Design tokens OK`. If it lists a file, fix that file and run it again. Never deliver while it fails.
+2. **If you cannot run it**, scan every new or changed client file yourself with this checklist and say so in one line.
+   The script counts these literal forms (any number, any file under `client/src` outside `app/design/`):
+   - `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight` followed by a digit. This includes `minWidth: 0`
+     and `minHeight: 0`. For flex children that must shrink, use `overflow: 'hidden'`, or a SIZES token.
+   - `fontSize`, `borderRadius`, `fontWeight` with a number (`fontWeight: 600`), or `fontFamily` with a string other than `'inherit'`.
+     Only `borderRadius: 0` and `50%` are allowed as numbers.
+   - `zIndex` with a number, `(max-width: 900px)` style media queries, `transition: 'all 200ms'`, `boxShadow` with `px`.
+   - Spacing written as `"12px"` strings, and hex alpha suffixes such as `${colour}99`.
+   - Raw colours: hex, `rgb()`, `rgba()`, `hsl()`.
+3. **Safe patterns:** theme spacing numbers (`p: 2`), `SIZES.*`, `RADII_PX.*`, `FONT_SIZES.*`, `FONT_WEIGHTS.*`,
+   `Z_INDEX.*`, `MEDIA_QUERIES.*`, `fontFamily: 'inherit'`, Typography variants, `theme.palette` colours.
+4. **No token for it?** Add the token to the matching file in `app/design/tokens/` first (4.3.1 rule 3), then use it.
+   Never raise the baseline (`--update --allow-raise`) to make the check pass.
+5. **Say the result in the summary:** "Token check passed" or "Token check not run" (one line).
+
 ## 5. Project-specific gotchas
 
 - MUI (v6–v7): `Grid` uses the new `size` prop (e.g. `size={{ xs: 12, md: 6 }}`),
@@ -277,7 +300,7 @@ read from that file.
 - [ ] Meaningful names; comments explain business logic and why the code exists (4.2)
 - [ ] Mobile/desktop pages split into common, mobile and desktop parts (4.2)
 - [ ] Design values (colours, font sizes, spacing, radii, sizing, shadows) come from the theme or `designTokens.js`; nothing hard-coded in components; missing tokens added to the `app/design/tokens/` group file first (4.3)
-- [ ] `node client/scripts/check-design-tokens.mjs` passes (no raw colours)
+- [ ] `node client/scripts/check-design-tokens.mjs` was RUN on the final files and printed `Design tokens OK` (4.3.3). No `minWidth: 0`, no numeric `width`/`height`/`fontWeight`/`zIndex` literals in any new or changed client file
 
 ## 7. Shortcuts defined in the developer's `~/.bashrc`
 
