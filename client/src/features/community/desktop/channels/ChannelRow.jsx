@@ -9,8 +9,8 @@ const clampSx = { display: '-webkit-box', WebkitLineClamp: DESCRIPTION_LINES, We
 
 function ChannelSummary({ channel, onOpen }) {
   return (
-    <ButtonBase onClick={() => onOpen(channel)} sx={{ flex: 1, minWidth: 0, justifyContent: 'flex-start', textAlign: 'left', fontFamily: 'inherit', borderRadius: RADII_PX.control }}>
-      <Stack sx={{ minWidth: 0 }}>
+    <ButtonBase onClick={() => onOpen(channel)} sx={{ flex: 1, overflow: 'hidden', justifyContent: 'flex-start', textAlign: 'left', fontFamily: 'inherit', borderRadius: RADII_PX.control }}>
+      <Stack sx={{ overflow: 'hidden' }}>
         <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold }}>{channel.name}</Typography>
         <Typography variant="caption" color="text.secondary">
           {memberCountLabel(channel.kind, channel.memberCount)}
