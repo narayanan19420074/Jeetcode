@@ -44,6 +44,7 @@ import {
 import adminUsersRouter from './adminUsers.routes.js';
 import adminLicensesRouter from './adminLicenses.routes.js';
 import adminStoreRouter from './adminStore.routes.js';
+import adminSettingsRouter from './adminSettings.routes.js';
 
 const router = Router();
 
@@ -102,5 +103,8 @@ router.use('/licenses', adminLicensesRouter);
 
 // --- JeetCode Store: orders, stock/prices, coin adjustments (see ./adminStore.routes.js) ---
 router.use('/store', adminStoreRouter);
+
+// --- Platform settings, e.g. Pro for all users (see ./adminSettings.routes.js) ---
+router.use('/settings', adminSettingsRouter);
 
 export default router;

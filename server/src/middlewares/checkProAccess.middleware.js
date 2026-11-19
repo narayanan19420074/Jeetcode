@@ -1,5 +1,5 @@
 import { User } from '../models/User.js';
-import { env } from '../config/env.js';
+import { isProGrantedToEveryone } from '../services/platformSettings.service.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 
 // Deliberately NOT read from the JWT payload like requireAuth's req.user —
@@ -16,8 +16,8 @@ export const checkProAccess = asyncHandler(async (req, res, next) => {
     req.hasProAccess = false;
     return next();
   }
-  // Launch offer: free Pro for all logged-in users until FREE_ACCESS_UNTIL.
-  if (env.FREE_ACCESS_UNTIL && new Date() < new Date(env.FREE_ACCESS_UNTIL)) {
+  // Free Pro for all signed-in users: the admin switch, or the FREE_ACCESS_UNTIL launch offer.
+  if (await isProGrantedToEveryone()) {
     req.hasProAccess = true;
     return next();
   }

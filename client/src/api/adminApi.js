@@ -50,6 +50,10 @@ export const adminApi = {
   sendChatMessage: (id, text) => apiClient.post(`/admin/support/chats/${id}/messages`, { text }),
   closeChat: (id) => apiClient.post(`/admin/support/chats/${id}/close`),
 
+  // --- Platform settings ---
+  getSettings: () => apiClient.get('/admin/settings'),
+  setProForEveryone: (enabled) => apiClient.patch('/admin/settings/pro-for-everyone', { enabled }),
+
   // --- Licenses ---
   listLicenses: () => apiClient.get('/admin/licenses'),
   generateLicense: (payload) => apiClient.post('/admin/licenses/generate', payload),
