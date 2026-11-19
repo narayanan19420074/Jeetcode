@@ -14,32 +14,51 @@ const results = new Map(); // token -> result
 
 const RETRYABLE_STATUS = new Set([502, 503, 504]);
 
-async function callJudge(payload, endpoint = '/run') {
+// The judge's own message for a busy (429) or rejected (400) request tells the learner what to do
+// ("the visualizer is busy, try again"). Any other failure stays generic so internals are not leaked.
+const FORWARDED_JUDGE_STATUS = new Set([400, 429]);
+
+function judgeBaseUrl() {
   const base = (env.JUDGE_SERVICE_URL || '').replace(/\/+$/, '');
   if (!base || !env.JUDGE_SERVICE_TOKEN) {
     logger.error('Remote judge is not configured (JUDGE_SERVICE_URL / JUDGE_SERVICE_TOKEN).');
     throw ApiError.internal('Code execution is not configured right now. Please try again later.');
   }
+  return base;
+}
 
+async function postToJudge(url, payload) {
+  const { data } = await axios.post(url, payload, {
+    headers: { Authorization: `Bearer ${env.JUDGE_SERVICE_TOKEN}` },
+    timeout: REQUEST_TIMEOUT_MS,
+    maxBodyLength: 6 * 1024 * 1024,
+  });
+  return data;
+}
+
+const isTransientFailure = (err) => !err.response || RETRYABLE_STATUS.has(err.response.status);
+
+function toJudgeApiError(err) {
+  const status = err.response?.status;
+  const message = err.response?.data?.message;
+  if (FORWARDED_JUDGE_STATUS.has(status) && message) return new ApiError(status, message);
+  return ApiError.internal('Code execution service is unavailable right now. Try again shortly.');
+}
+
+async function callJudge(payload, endpoint = '/run') {
+  const url = `${judgeBaseUrl()}${endpoint}`;
   let lastErr;
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const { data } = await axios.post(`${base}${endpoint}`, payload, {
-        headers: { Authorization: `Bearer ${env.JUDGE_SERVICE_TOKEN}` },
-        timeout: REQUEST_TIMEOUT_MS,
-        maxBodyLength: 6 * 1024 * 1024,
-      });
-      return data;
+      return await postToJudge(url, payload);
     } catch (err) {
       lastErr = err;
-      const status = err.response?.status;
-      const transient = !err.response || RETRYABLE_STATUS.has(status);
-      if (!transient) break;
+      if (!isTransientFailure(err)) break;
       await new Promise((r) => setTimeout(r, 3000)); // service may still be waking up
     }
   }
   logger.error('Remote judge request failed', lastErr);
-  throw ApiError.internal('Code execution service is unavailable right now. Try again shortly.');
+  throw toJudgeApiError(lastErr);
 }
 
 export async function submitBatch(items) {
