@@ -8,7 +8,13 @@ import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 function OverviewHeader({ queueMode }) {
   const isRedisQueue = queueMode === 'redis';
   return (
-    <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 3 }}>
+    <Stack
+      direction={{ xs: 'column', sm: 'row' }}
+      alignItems={{ xs: 'flex-start', sm: 'center' }}
+      justifyContent="space-between"
+      spacing={1.5}
+      sx={{ mb: 3 }}
+    >
       <Box>
         <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
           Overview
@@ -39,7 +45,7 @@ export default function AdminOverviewPage() {
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
       {error ? (
         <Alert severity="error">{error}</Alert>
       ) : (

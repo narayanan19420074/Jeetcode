@@ -42,9 +42,9 @@ const buildStatCards = (stats) => [
 
 export default function OverviewStatCards({ stats }) {
   return (
-    <Grid container spacing={2.5} sx={{ mb: 3 }}>
+    <Grid container spacing={{ xs: 1.5, md: 2.5 }} sx={{ mb: 3 }}>
       {buildStatCards(stats).map(({ key, ...cardProps }) => (
-        <Grid key={key} size={{ xs: 12, sm: 6, md: 3 }}>
+        <Grid key={key} size={{ xs: 6, md: 3 }}>
           <StatCard {...cardProps} />
         </Grid>
       ))}

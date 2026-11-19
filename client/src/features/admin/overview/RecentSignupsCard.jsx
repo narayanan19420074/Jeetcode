@@ -3,14 +3,14 @@ import { FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 function SignupRow({ user }) {
   return (
-    <Stack direction="row" justifyContent="space-between" alignItems="center">
-      <Typography variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
+    <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
+      <Typography noWrap variant="body2" sx={{ fontWeight: FONT_WEIGHTS.semibold }}>
         {user.name}{' '}
         <Typography component="span" variant="caption" color="text.secondary">
           @{user.handle}
         </Typography>
       </Typography>
-      <Typography variant="caption" color="text.secondary">
+      <Typography variant="caption" color="text.secondary" sx={{ flexShrink: 0 }}>
         {new Date(user.createdAt).toLocaleDateString()}
       </Typography>
     </Stack>
@@ -19,7 +19,7 @@ function SignupRow({ user }) {
 
 export default function RecentSignupsCard({ signups }) {
   return (
-    <Paper variant="outlined" sx={{ p: 3, borderRadius: RADII_PX.card }}>
+    <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, borderRadius: RADII_PX.card }}>
       <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold, mb: 2 }}>
         Recent signups
       </Typography>

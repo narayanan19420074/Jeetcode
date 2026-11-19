@@ -4,7 +4,7 @@ import useProForEveryone from './useProForEveryone';
 
 function ProAccessHeader({ enabled }) {
   return (
-    <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1 }}>
+    <Stack direction="row" alignItems="center" justifyContent="space-between" flexWrap="wrap" gap={1} sx={{ mb: 1 }}>
       <Typography variant="h6" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
         Pro access
       </Typography>
@@ -25,7 +25,7 @@ export default function ProAccessCard() {
   const { enabled, busy, error, changeProForEveryone } = useProForEveryone();
 
   return (
-    <Paper variant="outlined" sx={{ p: 3, mb: 3, borderRadius: RADII_PX.card }}>
+    <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, mb: 3, borderRadius: RADII_PX.card }}>
       <ProAccessHeader enabled={enabled} />
       <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
         Give every signed-in user Pro access. It stays on until you turn it off here.

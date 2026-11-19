@@ -65,6 +65,9 @@ export const SIZES = {
   navAvatar: 34,
   accountMenuMinWidth: { desktop: 220, mobile: 288 },
   drawerWidth: 'min(88vw, 360px)',
+  // Admin console: fixed sidebar column on desktop, and the icon column of each sidebar link.
+  adminSidebarWidth: 240,
+  adminNavIconWidth: 36,
   viewportHeight: '100dvh',
   // Lets a flex child shrink below its content width so long text can truncate with an ellipsis.
   flexShrinkMinWidth: 0,
