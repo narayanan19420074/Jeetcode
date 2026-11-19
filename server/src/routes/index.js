@@ -23,15 +23,18 @@ import feedbackRoutes from './feedback.routes.js';
 import supportChatRoutes from './supportChat.routes.js';
 import visualizerRoutes from './visualizer.routes.js';
 import jobProfileRoutes from './jobProfile.routes.js';
+import { isProGrantedToEveryone } from '../services/platformSettings.service.js';
 import '../models/AdminActionLog.js';
 
 const router = Router();
 
-router.get('/health', (req, res) =>
+router.get('/health', async (req, res) =>
   res.json({
     success: true,
     message: 'JeetCode API is up',
     freeAccessUntil: env.FREE_ACCESS_UNTIL || null,
+    // True while Pro is switched on for every signed-in user (admin switch or launch offer).
+    proForEveryone: await isProGrantedToEveryone(),
   })
 );
 
