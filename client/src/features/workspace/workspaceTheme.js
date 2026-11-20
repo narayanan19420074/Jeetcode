@@ -18,11 +18,11 @@ import { gpayTokens } from '../../app/theme';
 import { SYNTAX, COLOR_PALETTE, hexAlpha } from '../../app/design/designTokens';
 import { LIBRARY_PALETTE } from '../dashboard/components/libraryStyle';
 
-// Library look on desktop (light mode): the page and panels are cream. The code area stays white, like a sheet of
+// Library look on desktop (light mode): the page, bars and panels are pure white (the theme's paper colour is a light grey, so it is not used here). The code area stays white, like a sheet of
 // paper on the cream page, and matches the Monaco light theme below. Dark mode keeps the app's own dark surfaces.
 const creamSurface = (t) => {
   const cream = LIBRARY_PALETTE.light;
-  return { canvas: COLOR_PALETTE.white, chrome: t.palette.background.paper, panel: cream.bg, raised: cream.player, line: t.palette.divider };
+  return { canvas: COLOR_PALETTE.white, chrome: cream.bg, panel: cream.bg, raised: cream.player, line: t.palette.divider };
 };
 
 export const wsSurface = (t) => {
