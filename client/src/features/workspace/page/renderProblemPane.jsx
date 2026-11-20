@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import DiscussionPanel from '../community/DiscussionPanel';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
+import BugReportButton from '../desktop/BugReportButton';
 import { FlatLookProvider } from '../community/CommunityBits';
 import { MaxButton, PaneBar, WsIconButton } from '../wsUi';
 import ProblemDescription from '../ProblemDescription';
@@ -9,6 +10,7 @@ import SolutionsPanel from '../community/SolutionsPanel';
 import SubmissionsPanel from '../SubmissionsPanel';
 import UnderlineTabs from '../desktop/UnderlineTabs';
 import { flatBarSx } from '../desktop/flatBarStyle';
+import { WS } from '../wsTokens';
 import { DESC_TABS, MOBILE_TABS } from './workspaceTabs';
 
 export function renderProblemPane(c) {
@@ -65,6 +67,10 @@ export function renderProblemPane(c) {
             )}
           </Box>
           </FlatLookProvider>
+
+          <PaneBar height={WS.barSm} sx={flatBarSx}>
+            <BugReportButton slug={slug} />
+          </PaneBar>
         </Box>
       )
   );
