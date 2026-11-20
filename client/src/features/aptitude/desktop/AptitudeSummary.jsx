@@ -1,34 +1,17 @@
 import { cloneElement } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, Skeleton, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
-import ProgressRing from '../../../components/ProgressRing';
-import { LIGHT_CARD_MUTED_OPACITY, lightCardSx } from '../../dashboard/components/rail/lightCardStyles';
+import LightCardRing from '../../dashboard/components/rail/LightCardRing';
+import { lightCardSx } from '../../dashboard/components/rail/lightCardStyles';
 import { LIB_TRACKING, libSectionTitleSx } from '../../dashboard/components/libraryStyle';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
-
-const RING_SIZE = 88;
 
 function CardHeading({ track }) {
   return (
     <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
       {cloneElement(track.icon, { sx: { fontSize: FONT_SIZES.display } })}
       <Typography component="h1" sx={libSectionTitleSx}>{track.label}</Typography>
-    </Stack>
-  );
-}
-
-function CompletionSummary({ cleared, total, loading }) {
-  const percent = total ? Math.round((cleared / total) * 100) : 0;
-  return (
-    <Stack direction="row" spacing={2} sx={{ alignItems: 'center', my: 1.5 }}>
-      {loading
-        ? <Skeleton variant="circular" width={RING_SIZE} height={RING_SIZE} sx={{ opacity: LIGHT_CARD_MUTED_OPACITY }} />
-        : <ProgressRing value={cleared} max={total} color="currentColor" mutedColor="inherit" size={RING_SIZE} strokeWidth={10} />}
-      <Box sx={{ minWidth: SIZES.flexShrinkMinWidth }}>
-        <Typography sx={{ fontSize: FONT_SIZES.displayLg, lineHeight: '32px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>{percent}%</Typography>
-        <Typography sx={{ fontSize: FONT_SIZES.body, letterSpacing: LIB_TRACKING, opacity: LIGHT_CARD_MUTED_OPACITY }}>of the levels cleared</Typography>
-      </Box>
     </Stack>
   );
 }
@@ -44,7 +27,7 @@ function ContinueButton({ label, onClick }) {
 
 const actionLabel = (cleared, total) => (cleared === 0 ? 'Start' : cleared >= total ? 'Review' : 'Continue');
 
-// Open section as a white card with blue content, the inverse of "Your progress" on the Problems page: ring, share cleared and one action.
+// Open section as a white card with blue content, the inverse of "Your progress" on the Problems page: ring and one action.
 export default function AptitudeSummary({ track, trackPatterns, cleared, currentIndex, loading }) {
   const navigate = useNavigate();
   const total = trackPatterns.length;
@@ -52,7 +35,7 @@ export default function AptitudeSummary({ track, trackPatterns, cleared, current
   return (
     <Box component="section" aria-label={`${track.label} progress`} sx={lightCardSx}>
       <CardHeading track={track} />
-      <CompletionSummary cleared={cleared} total={total} loading={loading} />
+      <LightCardRing value={cleared} max={total} loading={loading} />
       {!loading && total > 0 && <ContinueButton label={actionLabel(cleared, total)} onClick={() => current && navigate(`/aptitude/${current.slug}`)} />}
     </Box>
   );

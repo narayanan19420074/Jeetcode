@@ -8,6 +8,8 @@ const INK = { light: COLOR_PALETTE.indigo[600], dark: COLOR_PALETTE.indigo[300] 
 const BORDER_PERCENT = 24;
 const SELECTED_PERCENT = 12;
 
+// Difficulty colours that read on a white card (the indigo rail card uses lighter tones).
+export const LIGHT_CARD_LEVEL_COLOR = { Easy: COLOR_PALETTE.emerald[600], Medium: COLOR_PALETTE.amber[600], Hard: COLOR_PALETTE.rose[600] };
 export const LIGHT_CARD_MUTED_OPACITY = 0.72;
 export const LIGHT_CARD_SELECTED_BG = tint('currentColor', SELECTED_PERCENT);
 
