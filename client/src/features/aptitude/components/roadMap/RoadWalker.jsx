@@ -92,7 +92,7 @@ export default function RoadWalker({ d, kind, size, onGo, node = NODE, perch = 0
               Start level
             </Box>
           )}
-          <Alien3D kind={kind} size={size} walking={walking} heading={pos.lean / 12} brand={phone} />
+          <Alien3D kind={kind} size={size} walking={walking} heading={pos.lean / 12} brand />
         </Box>
       )}
     </>

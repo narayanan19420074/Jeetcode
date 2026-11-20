@@ -16,7 +16,7 @@ const PAL = {
   nova: { l: COLOR_PALETTE.purple[100], m: COLOR_PALETTE.purple[500], d: COLOR_PALETTE.violet[900], x: COLOR_PALETTE.violet[950] },
 };
 
-const BRAND_BLIP = { l: COLOR_PALETTE.orange[300], m: COLOR_PALETTE.custom.orangeF08125, d: COLOR_PALETTE.custom.orangeD9480F, x: COLOR_PALETTE.orange[900] };
+const BRAND_BLIP = { l: COLOR_PALETTE.indigo[300], m: COLOR_PALETTE.indigo[500], d: COLOR_PALETTE.indigo[700], x: COLOR_PALETTE.indigo[900] };
 
 const pivot = (x, y) => ({ transformBox: 'view-box', transformOrigin: `${x}px ${y}px` });
 const STEP = 0.6; // seconds per full stride

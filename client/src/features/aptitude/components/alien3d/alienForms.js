@@ -8,5 +8,5 @@ export const FORMS = {
 };
 
 
-// Brand tone (phone aptitude map): the green Blip wears the logo's bright orange instead.
-export const BRAND_BLIP = { skin: 0xf08125, belly: 0xffe4c7, glove: 0xffffff, shoe: 0xd9480f, accent: 0xf7a33b, iris: 0x7c2d12, glow: 0xf7a33b };
+// Brand tone (aptitude level map): the green Blip wears the app's theme indigo (BRAND.primary) on phone and desktop.
+export const BRAND_BLIP = { skin: 0x6366f1, belly: 0xe0e7ff, glove: 0xffffff, shoe: 0x4338ca, accent: 0xa5b4fc, iris: 0x312e81, glow: 0x818cf8 };
