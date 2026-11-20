@@ -121,6 +121,9 @@ export const SIZES = {
   // Desktop "Create post" dialog and the docked messaging panel at the bottom right of the Community page.
   composeDialog: { width: 744, minHeight: 520 },
   messagingDock: { width: 320, height: 480 },
+  // Toolbar at the top of the desktop Community page: the widest the search field grows, the tallest its results
+  // list gets before it scrolls, and the Messages dialog (the Friends page in a dialog).
+  communityToolbar: { searchMaxWidth: 520, resultsMaxHeight: 440, messagesDialog: { maxWidth: 1240, width: 'calc(100% - 48px)', height: 'calc(100dvh - 24px)' } },
   // Widest a card (pair room invitation) grows inside a phone chat message.
   chatCardMaxWidth: 320,
   // One suggested member card in the horizontal strip between feed posts on phones.

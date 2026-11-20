@@ -17,7 +17,8 @@ function MemberText({ member }) {
 }
 
 // One account in a list: photo, name and headline open the member's Job profile; Follow is on the right.
-export default function MemberRow({ member }) {
+// `extraAction` adds one more control after Follow (the desktop search adds the friend request button).
+export default function MemberRow({ member, extraAction = null }) {
   return (
     <Stack direction="row" sx={{ alignItems: 'center', gap: 1, py: 1.5, borderBottom: '1px solid', borderColor: 'var(--lib-divider)' }}>
       <ButtonBase component={RouterLink} to={jobProfilePathOf(member.userId)} aria-label={`View profile of ${member.name}`} sx={profileLinkSx}>
@@ -25,6 +26,7 @@ export default function MemberRow({ member }) {
         <MemberText member={member} />
       </ButtonBase>
       <MemberFollowButton member={member} />
+      {extraAction}
     </Stack>
   );
 }

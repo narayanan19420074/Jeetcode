@@ -8,11 +8,11 @@ import { LibraryFont } from '../../dashboard/components/libraryStyle';
 import { SIZES } from '../../../app/design/designTokens';
 import ComposerCard from './ComposerCard';
 import AnalyticsCard from './AnalyticsCard';
-import MessagingDock from './MessagingDock';
 import PremiumCard from './PremiumCard';
 import ProfileSummaryCard from './ProfileSummaryCard';
 import RightRail from './RightRail';
 import ShortcutsCard from './ShortcutsCard';
+import CommunityToolbar from './toolbar/CommunityToolbar';
 import ChannelDetailView from './channels/ChannelDetailView';
 import ChannelsView from './channels/ChannelsView';
 import useDesktopSection from './channels/useDesktopSection';
@@ -47,9 +47,9 @@ function CenterColumn({ page, nav }) {
   return <FeedColumn page={page} />;
 }
 
-// Desktop layout in the shared page frame (same margins and column widths as the Dashboard): your card on the
-// left, the feed in the middle at reading width, news and puzzles on the right, with the messaging dock at the bottom right. The feed itself is the same as on
-// phones (same tabs, same post card).
+// Desktop layout: a toolbar (search and Messages) above the shared page frame (same margins and column widths as the
+// Dashboard): your card on the left, the feed in the middle at reading width, news and puzzles on the right. The feed
+// itself is the same as on phones (same tabs, same post card).
 export default function CommunityDesktopView({ page }) {
   const { setCategory, feed, composeOpen, closeCompose } = page;
   const nav = useDesktopSection();
@@ -60,10 +60,10 @@ export default function CommunityDesktopView({ page }) {
   };
   return (
     <LibraryFont>
+      <CommunityToolbar />
       <DesktopPageFrame left={<LeftRail onShowSaved={showSaved} onOpenChannels={nav.showChannelList} />} right={<RightRail items={feed.items} />}>
         <CenterColumn page={page} nav={nav} />
       </DesktopPageFrame>
-      <MessagingDock />
       <ComposePostDialog open={composeOpen} onClose={closeCompose} onPublished={feed.prepend} />
     </LibraryFont>
   );

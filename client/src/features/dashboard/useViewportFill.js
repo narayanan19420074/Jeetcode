@@ -14,7 +14,9 @@ export default function useViewportFill(ref, enabled, min = 480) {
     const measure = () => {
       const el = ref.current;
       if (!el) return;
-      const top = el.getBoundingClientRect().top + window.scrollY;
+      // A dialog is fixed to the window, so the page scroll position must not be added to its offset.
+      const pageScroll = el.closest('[role="dialog"]') ? 0 : window.scrollY;
+      const top = el.getBoundingClientRect().top + pageScroll;
       setHeight(Math.max(min, Math.round(window.innerHeight - top)));
     };
     measure();

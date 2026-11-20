@@ -9,9 +9,6 @@
   "components/MainLayout.jsx": {
     "fixedSizePx": 1
   },
-  "components/MobileBottomNav.jsx": {
-    "fixedSizePx": 2
-  },
   "components/OfflineGame.jsx": {
     "fixedSizePx": 2
   },
@@ -32,12 +29,6 @@
   },
   "components/ui/ListRow.jsx": {
     "fixedSizePx": 1
-  },
-  "features/admin/AdminLayout.jsx": {
-    "fixedSizePx": 3
-  },
-  "features/admin/AdminNavbar.jsx": {
-    "fixedSizePx": 4
   },
   "features/admin/components/AddProblemDialog.jsx": {
     "fixedSizePx": 3
@@ -65,9 +56,6 @@
   },
   "features/aptitude/AptitudeLearnPage.jsx": {
     "fixedSizePx": 13
-  },
-  "features/aptitude/AptitudePatternDetailPage.jsx": {
-    "fixedSizePx": 10
   },
   "features/aptitude/AptitudePracticePage.jsx": {
     "fixedSizePx": 2
@@ -117,17 +105,8 @@
   "features/aptitude/components/roadMap/RoadWalker.jsx": {
     "fixedSizePx": 2
   },
-  "features/aptitude/desktop/AptitudeDesktopView.jsx": {
-    "fixedSizePx": 1
-  },
-  "features/aptitude/desktop/AptitudeSummary.jsx": {
-    "fixedSizePx": 5
-  },
   "features/aptitude/desktop/LevelMap.jsx": {
     "fixedSizePx": 2
-  },
-  "features/aptitude/desktop/TrackPicker.jsx": {
-    "fixedSizePx": 3
   },
   "features/aptitude/exam/ExamCalculator.jsx": {
     "fixedSizePx": 1
@@ -143,9 +122,6 @@
   },
   "features/aptitude/exam/PalettePanel.jsx": {
     "fixedSizePx": 4
-  },
-  "features/aptitude/patternDetail/patternDetailParts.jsx": {
-    "fixedSizePx": 13
   },
   "features/auth/AdminLoginPage.jsx": {
     "fixedSizePx": 3
@@ -255,24 +231,6 @@
   },
   "features/dashboard/explore/desktop/TopicChips.jsx": {
     "fixedSizePx": 1
-  },
-  "features/dashboard/problems/desktop/DifficultyBars.jsx": {
-    "fixedSizePx": 3
-  },
-  "features/dashboard/problems/desktop/ProblemsDesktopView.jsx": {
-    "fixedSizePx": 6
-  },
-  "features/dashboard/problems/desktop/ProblemsHeader.jsx": {
-    "fixedSizePx": 1
-  },
-  "features/dashboard/problems/desktop/ProgressPanel.jsx": {
-    "fixedSizePx": 1
-  },
-  "features/dashboard/problems/desktop/SideRail.jsx": {
-    "fixedSizePx": 1
-  },
-  "features/exams/ExamsPage.jsx": {
-    "fixedSizePx": 33
   },
   "features/friends/ActivityFeed.jsx": {
     "fixedSizePx": 1
@@ -499,14 +457,8 @@
   "features/settings/components/SettingsUi.jsx": {
     "fixedSizePx": 4
   },
-  "features/settings/desktop/SettingsDesktopView.jsx": {
-    "fixedSizePx": 5
-  },
-  "features/settings/desktop/SettingsHeader.jsx": {
-    "fixedSizePx": 3
-  },
   "features/settings/desktop/SettingsSidebar.jsx": {
-    "fixedSizePx": 2
+    "fixedSizePx": 1
   },
   "features/settings/desktop/SidebarItem.jsx": {
     "fixedSizePx": 3
@@ -607,9 +559,6 @@
   "features/studyplan/mobile/MobileNotesSheet.jsx": {
     "fixedSizePx": 4
   },
-  "features/studyplan/mobile/MobilePlanCard.jsx": {
-    "fixedSizePx": 7
-  },
   "features/studyplan/mobile/MobileShell.jsx": {
     "fixedSizePx": 1
   },
@@ -624,9 +573,6 @@
   },
   "features/studyplan/planUtils.jsx": {
     "fixedSizePx": 9
-  },
-  "features/studyplan/planner/PlanCardParts.jsx": {
-    "fixedSizePx": 18
   },
   "features/studyplan/planner/PlannerSidePanels.jsx": {
     "fixedSizePx": 10
@@ -659,9 +605,6 @@
   },
   "features/workspace/AiLiveOverlay.jsx": {
     "fixedSizePx": 4
-  },
-  "features/workspace/CodeEditor.jsx": {
-    "fixedSizePx": 1
   },
   "features/workspace/ConsoleBar.jsx": {
     "fixedSizePx": 4
@@ -718,7 +661,7 @@
     "fixedSizePx": 1
   },
   "features/workspace/community/CommentSection.jsx": {
-    "fixedSizePx": 4
+    "fixedSizePx": 3
   },
   "features/workspace/community/DiscussionPanel.jsx": {
     "fixedSizePx": 5
@@ -742,10 +685,7 @@
     "fixedSizePx": 12
   },
   "features/workspace/community/communityBits/Identity.jsx": {
-    "fixedSizePx": 3
-  },
-  "features/workspace/community/communityBits/VoteBar.jsx": {
-    "fixedSizePx": 1
+    "fixedSizePx": 2
   },
   "features/workspace/hoverScrollbars.js": {
     "fixedSizePx": 2
