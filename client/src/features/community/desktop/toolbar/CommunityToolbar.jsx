@@ -15,7 +15,7 @@ const messagesSlotSx = { gridColumn: 3, justifySelf: 'end' };
 
 // Toolbar above the desktop Community page, in the same page width as the columns below: the search field for
 // members and posts in the centre and the Messages icon at the right end. Messages are for signed-in people only.
-export default function CommunityToolbar() {
+export default function CommunityToolbar({ isMessagesOpen, onToggleMessages }) {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   return (
     <Box component="header" sx={barSx}>
@@ -24,7 +24,7 @@ export default function CommunityToolbar() {
           <ToolbarSearch />
           {isAuthenticated && (
             <Box sx={messagesSlotSx}>
-              <MessagesToolbarButton />
+              <MessagesToolbarButton isOpen={isMessagesOpen} onToggle={onToggleMessages} />
             </Box>
           )}
         </Box>

@@ -10,6 +10,7 @@ import ComposerCard from './ComposerCard';
 import AnalyticsCard from './AnalyticsCard';
 import PremiumCard from './PremiumCard';
 import ProfileSummaryCard from './ProfileSummaryCard';
+import MessagesPanel from './MessagesPanel';
 import RightRail from './RightRail';
 import ShortcutsCard from './ShortcutsCard';
 import CommunityToolbar from './toolbar/CommunityToolbar';
@@ -47,23 +48,32 @@ function CenterColumn({ page, nav }) {
   return <FeedColumn page={page} />;
 }
 
-// Desktop layout: a toolbar (search and Messages) above the shared page frame (same margins and column widths as the
-// Dashboard): your card on the left, the feed in the middle at reading width, news and puzzles on the right. The feed
-// itself is the same as on phones (same tabs, same post card).
-export default function CommunityDesktopView({ page }) {
-  const { setCategory, feed, composeOpen, closeCompose } = page;
-  const nav = useDesktopSection();
-  // The Saved tab lives in the feed, so choosing Saved items from a group or newsletter page returns to the feed first.
+// Under the toolbar: Messages fill the whole area; every other section sits inside the shared page frame (same margins
+// and column widths as the Dashboard): your card on the left, the section in the middle at reading width, news and
+// puzzles on the right.
+function PageBody({ page, nav }) {
   const showSaved = (value) => {
-    setCategory(value);
+    page.setCategory(value);
     nav.showFeed();
   };
+  if (nav.section.type === 'messages') return <MessagesPanel />;
+  return (
+    <DesktopPageFrame left={<LeftRail onShowSaved={showSaved} onOpenChannels={nav.showChannelList} />} right={<RightRail items={page.feed.items} />}>
+      <CenterColumn page={page} nav={nav} />
+    </DesktopPageFrame>
+  );
+}
+
+// Desktop layout: a toolbar (search and Messages) above the page body. The feed itself is the same as on phones (same
+// tabs, same post card). The Saved tab lives in the feed, so choosing Saved items from another section returns to the
+// feed first.
+export default function CommunityDesktopView({ page }) {
+  const { feed, composeOpen, closeCompose } = page;
+  const nav = useDesktopSection();
   return (
     <LibraryFont>
-      <CommunityToolbar />
-      <DesktopPageFrame left={<LeftRail onShowSaved={showSaved} onOpenChannels={nav.showChannelList} />} right={<RightRail items={feed.items} />}>
-        <CenterColumn page={page} nav={nav} />
-      </DesktopPageFrame>
+      <CommunityToolbar isMessagesOpen={nav.section.type === 'messages'} onToggleMessages={nav.toggleMessages} />
+      <PageBody page={page} nav={nav} />
       <ComposePostDialog open={composeOpen} onClose={closeCompose} onPublished={feed.prepend} />
     </LibraryFont>
   );
