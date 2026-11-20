@@ -83,6 +83,8 @@ export const SHADOWS = {
   highlight: (alpha) => `inset 0 1px 0 ${withAlpha(COLOR_PALETTE.white, alpha)}`,
   sheetUp: (alpha) => `0 -12px 40px ${withAlpha(COLOR_PALETTE.black, alpha)}`,
   ring: (color) => `0 0 0 2px ${color}`,
+  // Page toolbar that sits above bordered cards: a soft shadow under the bar lifts it off the white page.
+  toolbar: `0 4px 14px -6px ${withAlpha(COLOR_PALETTE.black, 0.18)}, 0 1px 3px ${withAlpha(COLOR_PALETTE.black, 0.08)}`,
 };
 
 // ---------------------------------------------------------------- interaction states

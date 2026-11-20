@@ -43,16 +43,19 @@ function useScrollToTopOnNavigate(pathname, hash) {
   }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
+// The desktop Community page is a plain white page: no soft wash behind the cards.
+const isCommunityPath = (pathname) => pathname === '/community' || pathname.startsWith('/community/');
+
 // Phone home (light mode) is a flat warm page. The desktop dashboard, Problems page and Store use the same cream page.
 // Every other page keeps the soft wash.
-function pageBackgroundSx(t, { libraryLook, desktopLook }) {
+function pageBackgroundSx(t, { libraryLook, desktopLook, flatDesktop }) {
   const isLight = t.palette.mode === 'light';
   const wash = `linear-gradient(180deg, ${alpha(t.palette.primary.main, isLight ? 0.07 : 0.08)} 0, transparent 280px)`;
   const cream = LIBRARY_PALETTE.light.bg;
   if (!isLight) return { bgcolor: 'background.default', backgroundImage: wash, backgroundRepeat: 'no-repeat' };
   return {
     bgcolor: { xs: libraryLook ? cream : 'background.default', md: desktopLook ? cream : 'background.default' },
-    backgroundImage: { xs: libraryLook ? 'none' : wash, md: desktopLook ? 'none' : wash },
+    backgroundImage: { xs: libraryLook ? 'none' : wash, md: desktopLook || flatDesktop ? 'none' : wash },
     backgroundRepeat: 'no-repeat',
   };
 }
@@ -72,7 +75,7 @@ export default function MainLayout() {
   useScrollToTopOnNavigate(pathname, hash);
 
   const bottomNav = showMobileBottomNav(pathname);
-  const pageLook = { libraryLook: isLibraryRoute(pathname, search), desktopLook: usesDesktopLook(pathname) };
+  const pageLook = { libraryLook: isLibraryRoute(pathname, search), desktopLook: usesDesktopLook(pathname), flatDesktop: isCommunityPath(pathname) };
 
   return (
     <Box sx={(t) => ({ minHeight: '100vh', ...pageBackgroundSx(t, pageLook) })}>

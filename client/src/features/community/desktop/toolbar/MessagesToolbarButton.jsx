@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Badge, IconButton } from '@mui/material';
-import ChatBubbleRoundedIcon from '@mui/icons-material/ChatBubbleRounded';
+import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
 import { selectUnreadTotal } from '../../../friends/friendsSlice';
 import MessagesDialog from './MessagesDialog';
 
@@ -14,7 +14,7 @@ export default function MessagesToolbarButton() {
   return (
     <>
       <IconButton aria-label="Messages" onClick={() => setOpen(true)}>
-        <Badge color="error" badgeContent={unreadMessages + pendingRequests}><ChatBubbleRoundedIcon /></Badge>
+        <Badge color="error" badgeContent={unreadMessages + pendingRequests}><ChatBubbleOutlineRoundedIcon /></Badge>
       </IconButton>
       <MessagesDialog open={open} onClose={() => setOpen(false)} />
     </>
