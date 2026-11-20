@@ -1,7 +1,7 @@
 import { COLOR_PALETTE } from '../../../../app/design/designTokens';
 
 // Level map. Follows the app theme (dark / light) and the product palette:
-// slate surfaces, blue = current, green = cleared. A slim road winds through
+// slate surfaces and one blue family: deep blue = cleared, bright blue = current, pale blue = locked. A slim road winds through
 // the levels; the learner's alien walks it from START to the current level.
 // Geometry is in real pixels (measured width) so nothing is stretched.
 
@@ -17,12 +17,12 @@ export const NODE = 72;
 export const DESKTOP = { ROW, TOP, BOTTOM, AMP, NODE, TURN: Math.PI / 2 };
 export const MOBILE = { ROW: 128, TOP: 96, BOTTOM: 96, AMP: 0.3, NODE: 64, TURN: Math.PI / 3 };
 
-// Phone map colours are the same solid colours as the level cards on the dashboard:
-// green = cleared, orange = open (locked levels are the same orange, faded, with a lock).
+// Phone map colours: the app's indigo in three strengths, so the map matches the cards beside it.
+// Locked levels are the palest blue, faded, with a lock.
 export const PHONE_STATE = {
-  completed: { fg: COLOR_PALETTE.custom.emerald22A06B, bg: COLOR_PALETTE.green[50] },
-  current: { fg: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
-  locked: { fg: COLOR_PALETTE.custom.amberF09A2E, bg: COLOR_PALETTE.orange[50] },
+  completed: { fg: COLOR_PALETTE.indigo[700], bg: COLOR_PALETTE.indigo[100] },
+  current: { fg: COLOR_PALETTE.indigo[500], bg: COLOR_PALETTE.indigo[50] },
+  locked: { fg: COLOR_PALETTE.indigo[300], bg: COLOR_PALETTE.indigo[50] },
 };
 export const PHONE_STAR = COLOR_PALETTE.custom.amberF2B63C;
 export const PHONE_ALIEN = 96; // px, the alien beside the current level

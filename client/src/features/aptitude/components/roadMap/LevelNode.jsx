@@ -13,7 +13,7 @@ export default function LevelNode({ pattern, index, status, x, y, isLast, labelO
   const theme = useTheme();
   const reduce = useReducedMotion();
   const dark = theme.palette.mode === 'dark';
-  const { primary, success, warning, text, divider } = theme.palette;
+  const { primary, warning, text, divider } = theme.palette;
   const passed = status === 'completed';
   const best = Math.round(pattern.progress.bestScore || 0);
   const stars = starsFor(pattern.progress.bestScore, pattern.passPercentage);
@@ -21,11 +21,11 @@ export default function LevelNode({ pattern, index, status, x, y, isLast, labelO
   const box = size + 28;
   const ringR = size / 2 + 7;
   const circ = 2 * Math.PI * ringR;
-  const accent = status === 'completed' ? success.main : status === 'current' ? primary.main : divider;
+  const accent = status === 'completed' ? primary.dark : status === 'current' ? primary.main : divider;
 
   const disc =
     status === 'completed'
-      ? `linear-gradient(145deg, ${success.light}, ${success.main} 55%, ${success.dark})`
+      ? `linear-gradient(145deg, ${primary.main}, ${primary.dark} 55%, ${primary.dark})`
       : status === 'current'
         ? `linear-gradient(145deg, ${primary.light}, ${primary.main} 55%, ${primary.dark})`
         : dark
