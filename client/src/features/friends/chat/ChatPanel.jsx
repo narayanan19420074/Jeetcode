@@ -21,6 +21,7 @@ import { wsSurface } from '../../workspace/workspaceTheme';
 import { EMOJIS, addUnique, libDayPill, pill } from './chatShared';
 import { Bubble, LibBubble, LibNudgeLine, LibRoomCard, NudgeLine, RoomCard, TypingDots } from './ChatBubbles';
 import { LibHeader } from './LibHeader';
+import ProfileButton from '../ProfileButton';
 
 // `actions`: extra header icons. No `onClose` = no close button (always-open desktop panel).
 // `overlay`: node shown instead of the messages + composer (e.g. the friend's profile) while the chat stays live underneath.
@@ -211,7 +212,7 @@ export function ChatPanel({ friend, onClose, onCodeTogether, actions, overlay, l
         spacing={1.5}
         sx={(t) => ({ alignItems: 'center', height: 68, px: 2, flexShrink: 0, bgcolor: wsSurface(t).chrome, borderBottom: `1px solid ${t.palette.divider}` })}
       >
-        <PersonAvatar person={friend} size={42} online={online} />
+        <ProfileButton person={friend}><PersonAvatar person={friend} size={42} online={online} /></ProfileButton>
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.3 }}>{friend.name}</Typography>
           <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, mt: 0.5, color: typing || status.live ? 'success.main' : 'text.secondary', fontWeight: typing || status.live ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.regular }}>

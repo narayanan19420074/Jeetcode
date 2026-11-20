@@ -1,8 +1,10 @@
 import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
 import { FLAME, practisedToday } from '../friendsUi';
+import ActivityPanel from '../ActivityPanel';
 import { FriendProfilePanel } from '../FriendProfileDialog';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import PersonRemoveRoundedIcon from '@mui/icons-material/PersonRemoveRounded';
+import TimelineRoundedIcon from '@mui/icons-material/TimelineRounded';
 import { WsIconButton } from '../../workspace/wsUi';
 
 export function buildChatHandlers(c) {
@@ -15,10 +17,14 @@ export function buildChatHandlers(c) {
           <LocalFireDepartmentRoundedIcon />
         </WsIconButton>
       )}
+      <WsIconButton title="Friend activity" active={panelMode === 'activity'} onClick={() => setPanelMode((m) => (m === 'activity' ? 'chat' : 'activity'))}><TimelineRoundedIcon /></WsIconButton>
       <WsIconButton title="Profile & compare" active={panelMode === 'profile'} onClick={() => setPanelMode((m) => (m === 'profile' ? 'chat' : 'profile'))}><BadgeRoundedIcon /></WsIconButton>
       <WsIconButton title="Remove friend" onClick={() => setConfirm(f)} sx={{ '&:hover': { color: 'error.main' } }}><PersonRemoveRoundedIcon /></WsIconButton>
     </>
   );
-  const chatOverlay = (f) => (panelMode === 'profile' ? <FriendProfilePanel f={f} onRemove={() => setConfirm(f)} lib={phone} /> : null);
+  const chatOverlay = (f) => {
+    if (panelMode === 'activity') return <ActivityPanel />;
+    return panelMode === 'profile' ? <FriendProfilePanel f={f} onRemove={() => setConfirm(f)} lib={phone} /> : null;
+  };
   return { chatActions, chatOverlay };
 }

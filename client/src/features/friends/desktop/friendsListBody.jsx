@@ -1,4 +1,3 @@
-import ActivityFeed from '../ActivityFeed';
 import { Alert, Box, Button, Stack, Tooltip, Typography } from '@mui/material';
 import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
@@ -83,8 +82,6 @@ export function renderFriendsList(c) {
         {playerFooter}
       </>
     );
-  } else if (view === 'activity') {
-    body = <ActivityFeed />;
   } else if (view === 'requests') {
     const rows = incoming.filter((r) => nameMatch(r.user));
     body = (

@@ -9,7 +9,6 @@ import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
 import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SortRoundedIcon from '@mui/icons-material/SortRounded';
-import TimelineRoundedIcon from '@mui/icons-material/TimelineRounded';
 import { WsIconButton } from '../../workspace/wsUi';
 import { motion } from 'framer-motion';
 import { surface } from '../../dashboard/dashboardUtils';
@@ -40,7 +39,6 @@ export function renderDesktopLayout(c) {
             </Box>
             <WsIconButton title="Find players" size={iconSize} active={view === 'find'} onClick={() => { toggleView('find'); setTimeout(() => searchRef.current?.focus(), 0); }}><PersonAddAlt1RoundedIcon /></WsIconButton>
             <WsIconButton title="Invite with link" size={iconSize} onClick={(e) => setInviteAnchor(e.currentTarget)}><IosShareRoundedIcon /></WsIconButton>
-            <WsIconButton title="Friend activity" size={iconSize} active={view === 'activity'} onClick={() => toggleView('activity')}><TimelineRoundedIcon /></WsIconButton>
             <WsIconButton title="Friends leaderboard" size={iconSize} onClick={onOpenLeaderboard}><LeaderboardRoundedIcon /></WsIconButton>
           </Stack>
 

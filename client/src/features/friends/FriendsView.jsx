@@ -180,7 +180,8 @@ function FriendsPanel({ user, inviteHandle, onClearInvite, onOpenLeaderboard }) 
   const players = (global.rows || []).filter((p) => p.userId !== user.id && (view === 'find' || !friendIds.has(p.userId)));
 
   const showChips = view === 'friends' && friends.length > 0;
-  const showSearch = view !== 'activity';
+  // Friends and requests are short lists, so the search box appears only when looking for new players.
+  const showSearch = view === 'find';
   const iconSize = desktop ? 'md' : 'lg';
 
   const title = view === 'find' ? 'Find players' : view === 'activity' ? 'Friend activity' : 'Friends';

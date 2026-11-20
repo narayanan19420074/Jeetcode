@@ -13,7 +13,8 @@ import { WS } from '../workspace/wsTokens';
 import { wsSurface } from '../workspace/workspaceTheme';
 import { WsIconButton } from '../workspace/wsUi';
 import { FLAME, GREEN, PersonAvatar, mono, statusInfo } from './friendsUi';
-import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION } from '../../app/design/designTokens';
+import ProfileButton from './ProfileButton';
+import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, MOTION, SIZES } from '../../app/design/designTokens';
 
 // ---- motion --------------------------------------------------------------------------------
 // Everything here is switched off for people who prefer reduced motion.
@@ -258,7 +259,7 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
         aria-label={`Chat with ${f.name}${unread ? `, ${unread} unread` : ''}`}
         sx={{ width: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: 1.5, px: 1.5, py: 1, textAlign: 'left', borderRadius: RADII_PX.card, fontFamily: 'inherit' }}
       >
-        <PersonAvatar person={f} size={44} online={online} />
+        <Box aria-hidden sx={{ width: SIZES.chatListAvatar, height: SIZES.chatListAvatar, flexShrink: 0 }} />
         <Box sx={{ minWidth: 0, flex: 1 }}>
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
             <Typography noWrap sx={{ fontWeight: unread ? FONT_WEIGHTS.bold : FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, lineHeight: 1.35, flex: 1, minWidth: 0 }}>{f.name}</Typography>
@@ -281,6 +282,10 @@ export function FriendRow({ f, last, myId, online, unread, selected, fav, canNud
           </Stack>
         </Box>
       </ButtonBase>
+      {/* The avatar is its own button (a button cannot sit inside the chat button), laid over the spacer above. */}
+      <ProfileButton person={f} sx={(t) => ({ position: 'absolute', left: t.spacing(1.5), top: '50%', transform: 'translateY(-50%)' })}>
+        <PersonAvatar person={f} size={SIZES.chatListAvatar} online={online} />
+      </ProfileButton>
       <Stack
         className="row-actions"
         direction="row"
@@ -318,7 +323,7 @@ export function PersonRow({ person, rank, sub, action }) {
       {rank != null && (
         <Typography sx={{ width: 24, flexShrink: 0, textAlign: 'center', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, color: rank <= 3 ? COLOR_PALETTE.amber[500] : 'text.disabled', ...mono }}>{rank}</Typography>
       )}
-      <PersonAvatar person={person} size={42} />
+      <ProfileButton person={person}><PersonAvatar person={person} size={42} /></ProfileButton>
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.semibold, fontSize: FONT_SIZES.body, lineHeight: 1.35 }}>{person.name}</Typography>
         <Typography noWrap sx={{ fontSize: FONT_SIZES.caption, color: 'text.secondary', mt: 0.5 }}>{sub || `@${person.handle}`}</Typography>
