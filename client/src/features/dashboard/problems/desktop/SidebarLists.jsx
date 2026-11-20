@@ -1,9 +1,21 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box } from '@mui/material';
-import { ListButtons } from '../../components/DashboardSidebar';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import { NameDialog } from '../../components/ListDialogs';
-import { ListsHeader } from '../../components/SidebarParts';
+import { LIB_TRACKING } from '../../components/libraryStyle';
+import SidebarTextRow from './SidebarTextRow';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../../../app/design/designTokens';
+
+function ListsHeading({ atLimit, onCreate }) {
+  return (
+    <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', pt: 1.5, pb: 0.5, px: 1.5 }}>
+      <Typography component="h2" sx={{ fontSize: FONT_SIZES.bodyLg, fontWeight: FONT_WEIGHTS.bold }}>My lists</Typography>
+      <Box component="span" title={atLimit ? 'List limit reached' : undefined}>
+        <Button size="small" disabled={atLimit} onClick={onCreate} sx={{ textTransform: 'none', letterSpacing: LIB_TRACKING, fontWeight: FONT_WEIGHTS.medium }}>New list</Button>
+      </Box>
+    </Stack>
+  );
+}
 
 // The learner's saved lists. A list opens in the dashboard, where its problems are managed.
 export default function SidebarLists({ listsApi }) {
@@ -18,8 +30,8 @@ export default function SidebarLists({ listsApi }) {
   };
   return (
     <Box component="nav" aria-label="My lists">
-      <ListsHeader atLimit={listsApi.lists.length >= listsApi.maxLists} onCreate={() => setCreating(true)} />
-      <ListButtons lists={listsApi.lists} view="" onSelectList={openList} />
+      <ListsHeading atLimit={listsApi.lists.length >= listsApi.maxLists} onCreate={() => setCreating(true)} />
+      {listsApi.lists.map((list) => <SidebarTextRow key={list.id} label={list.name} count={list.items.length} onClick={() => openList(list.id)} />)}
       <NameDialog open={creating} title="Create a list" confirmLabel="Create" onClose={() => setCreating(false)} onConfirm={createList} />
     </Box>
   );
