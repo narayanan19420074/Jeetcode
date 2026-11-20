@@ -1,11 +1,14 @@
 import { Box } from '@mui/material';
 import DiscussionPanel from '../community/DiscussionPanel';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
-import { MaxButton, PaneBar, PaneTabs, WsIconButton } from '../wsUi';
+import { FlatLookProvider } from '../community/CommunityBits';
+import { MaxButton, PaneBar, WsIconButton } from '../wsUi';
 import ProblemDescription from '../ProblemDescription';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
 import SolutionsPanel from '../community/SolutionsPanel';
 import SubmissionsPanel from '../SubmissionsPanel';
+import UnderlineTabs from '../desktop/UnderlineTabs';
+import { flatBarSx } from '../desktop/flatBarStyle';
 import { DESC_TABS, MOBILE_TABS } from './workspaceTabs';
 
 export function renderProblemPane(c) {
@@ -24,11 +27,11 @@ export function renderProblemPane(c) {
             minHeight: 0,
           }}
         >
-          <PaneBar>
+          <PaneBar sx={flatBarSx}>
             <WsIconButton title="Problem list" onClick={() => setListOpen(true)}>
               <FormatListBulletedRoundedIcon />
             </WsIconButton>
-            <PaneTabs value={descTab} onChange={openTab} items={DESC_TABS} labels={tabLabels} />
+            <UnderlineTabs value={descTab} onChange={openTab} items={DESC_TABS} labels={tabLabels} />
             <Box sx={{ flex: 1 }} />
             <WsIconButton title="Random problem" onClick={handleRandom}>
               <ShuffleRoundedIcon />
@@ -36,6 +39,7 @@ export function renderProblemPane(c) {
             <MaxButton active={maximized === 'problem'} onClick={() => toggleMax('problem')} label="problem" />
           </PaneBar>
 
+          <FlatLookProvider value>
           <Box sx={{ overflowY: 'auto', px: 2.5, pt: 1.5, pb: 3, flex: 1, minHeight: 0 }}>
             {descTab === 0 && <ProblemDescription problem={problem} nav={nav} />}
             {mountedTabs[1] && (
@@ -60,6 +64,7 @@ export function renderProblemPane(c) {
               </Box>
             )}
           </Box>
+          </FlatLookProvider>
         </Box>
       )
   );

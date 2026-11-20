@@ -21,6 +21,7 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import SplitHandle from '../SplitHandle';
 import TimerControl from '../TimerControl';
 import { VerdictChip } from '../ConsolePanel';
+import { flatBarSx } from '../desktop/flatBarStyle';
 import VisualizeButton from '../codeVisualizer/VisualizeButton';
 import { WS } from '../wsTokens';
 import { setLanguage, toggleAiDrawer } from '../workspaceSlice';
@@ -57,9 +58,9 @@ export function renderEditorPane(c) {
             </IconButton>
           </Stack>
         ) : (
-        <PaneBar sx={{ px: 1.5, gap: 0.5, height: WS.bar, bgcolor: surf.chrome, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }}>
+        <PaneBar sx={[{ px: 1.5, gap: 0.5, height: WS.bar, bgcolor: surf.chrome, overflowX: 'auto', '&::-webkit-scrollbar': { display: 'none' } }, flatBarSx]}>
           <LanguageSelect value={activeLanguage} onChange={(v) => dispatch(setLanguage(v))} problem={problem} langMode={langMode} isMobile={isMobile} />
-          <TimerControl sw={sw} size={ctl} />
+          <TimerControl sw={sw} size={ctl} flat />
 
           <Box sx={{ flex: 1, minWidth: 8 }} />
 
@@ -89,7 +90,7 @@ export function renderEditorPane(c) {
           {!isMobile && (
             <>
               <Box sx={{ width: 4 }} />
-              <RunButton size="md" iconActions={iconActions} showKbd={showKbd} loading={runStatus === 'running'} disabled={isRunning} onClick={handleRun} />
+              <RunButton size="md" variant="ghost" iconActions={iconActions} showKbd={showKbd} loading={runStatus === 'running'} disabled={isRunning} onClick={handleRun} />
               <SubmitButton size="md" iconActions={iconActions} showKbd={showKbd} loading={submitStatus === 'running'} disabled={isRunning} onClick={handleSubmit} />
             </>
           )}

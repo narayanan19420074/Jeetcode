@@ -1,11 +1,39 @@
 import { Box, Button, ButtonBase, Chip, Divider, Skeleton, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
-import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, RADII_PX, SIZES } from '../../../../app/design/designTokens';
+import FlatOptions from './FlatOptions';
+import { useFlatLook } from './flatLook';
 import { UserAvatar } from './Identity';
+
+// Desktop workspace look of the action button: icon and count only, no pill and no fill.
+function FlatActionButton({ icon, count, label, onClick }) {
+  return (
+    <Button
+      color="inherit"
+      aria-label={label}
+      onClick={onClick}
+      startIcon={icon}
+      sx={{
+        height: SIZES.iconButton.desktop,
+        px: 1,
+        minWidth: 'auto',
+        borderRadius: RADII_PX.square,
+        color: 'text.secondary',
+        fontWeight: FONT_WEIGHTS.semibold,
+        fontSize: FONT_SIZES.body,
+        '& .MuiButton-startIcon': { mr: 0.5, '& svg': { fontSize: FONT_SIZES.iconCompact } },
+      }}
+    >
+      {count}
+    </Button>
+  );
+}
 
 // Icon + count button for the action row (comments etc.).
 export function ActionButton({ icon, count, label, onClick }) {
+  const flat = useFlatLook();
+  if (flat) return <FlatActionButton icon={icon} count={count} label={label} onClick={onClick} />;
   return (
     <Button
       color="inherit"
@@ -31,6 +59,8 @@ export function ActionButton({ icon, count, label, onClick }) {
 
 // Pill segmented control (sort). Scrolls sideways instead of wrapping.
 export function SegmentedTabs({ value, onChange, options }) {
+  const flat = useFlatLook();
+  if (flat) return <FlatOptions value={value} onChange={onChange} options={options} />;
   return (
     <Stack
       direction="row"
@@ -71,6 +101,8 @@ export function SegmentedTabs({ value, onChange, options }) {
 
 // Horizontal scrolling filter chips (language filter).
 export function FilterChips({ value, onChange, options }) {
+  const flat = useFlatLook();
+  if (flat) return <FlatOptions value={value} onChange={onChange} options={options} />;
   return (
     <Stack direction="row" spacing={1} sx={{ overflowX: 'auto', py: 0.5, '&::-webkit-scrollbar': { display: 'none' } }}>
       {options.map((o) => {
@@ -91,9 +123,26 @@ export function FilterChips({ value, onChange, options }) {
   );
 }
 
+// Desktop workspace look of the composer bar: a plain bordered box with the action icon at the end, no photo and no tinted circle.
+function FlatComposerPrompt({ icon, placeholder, onClick }) {
+  return (
+    <ButtonBase
+      onClick={onClick}
+      sx={{ width: SIZES.fill, justifyContent: 'flex-start', gap: 1.5, px: 1.5, py: 1, border: '1px solid', borderColor: 'divider', borderRadius: RADII_PX.card, textAlign: 'left', color: 'text.secondary', '& svg': { fontSize: FONT_SIZES.iconCompact } }}
+    >
+      <Typography color="text.secondary" noWrap sx={{ flex: 1, fontSize: FONT_SIZES.body }}>
+        {placeholder}
+      </Typography>
+      {icon}
+    </ButtonBase>
+  );
+}
+
 // "What's on your mind?" bar at the top of a feed.
 export function ComposerPrompt({ icon, placeholder, onClick }) {
   const user = useSelector((s) => s.auth.user);
+  const flat = useFlatLook();
+  if (flat) return <FlatComposerPrompt icon={icon} placeholder={placeholder} onClick={onClick} />;
   return (
     <ButtonBase
       onClick={onClick}
@@ -124,6 +173,35 @@ export function EmptyBlock({ icon, title, text }) {
       <Typography color="text.secondary" sx={{ maxWidth: 320, fontSize: FONT_SIZES.bodyLg }}>
         {text}
       </Typography>
+    </Stack>
+  );
+}
+
+const cardPostSx = (t) => ({
+  p: 2,
+  borderRadius: RADII_PX.card,
+  border: '1px solid',
+  borderColor: 'divider',
+  bgcolor: alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.04 : 0.02),
+});
+const flatPostSx = { py: 2, borderBottom: '1px solid', borderColor: 'divider' };
+
+// One post of a feed (solution or topic). Phone: a tinted card. Desktop workspace: plain text with a divider underneath.
+export function PostCard({ children }) {
+  const flat = useFlatLook();
+  return (
+    <Box component="article" sx={flat ? flatPostSx : cardPostSx}>
+      {children}
+    </Box>
+  );
+}
+
+// Action row under a post (vote, comments...). The phone card separates it with a top line; the desktop look does not.
+export function PostActions({ children }) {
+  const flat = useFlatLook();
+  return (
+    <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5, ...(!flat && { pt: 1.5, borderTop: '1px solid', borderColor: 'divider' }) }}>
+      {children}
     </Stack>
   );
 }

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { alpha } from '@mui/material/styles';
 import { Alert, Box, Button, Divider, IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -24,10 +23,13 @@ import {
   EmptyBlock,
   FeedSkeleton,
   ItemMenu,
+  PostActions,
+  PostCard,
   ReportDialog,
   SegmentedTabs,
   VoteBar,
   clamp,
+  useFlatLook,
 } from './CommunityBits';
 import CommentSection from './CommentSection';
 import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
@@ -82,13 +84,7 @@ function ThreadForm({ initial, submitLabel, onSubmit, onCancel }) {
 
 function ThreadPost({ t, onOpen }) {
   return (
-    <Box component="article" sx={{
-        p: 2,
-        borderRadius: RADII_PX.card,
-        border: '1px solid',
-        borderColor: 'divider',
-        bgcolor: (t) => alpha(t.palette.text.primary, t.palette.mode === 'dark' ? 0.04 : 0.02),
-      }}>
+    <PostCard>
       <AuthorHeader author={t.author} createdAt={t.createdAt} editedAt={t.editedAt} isMine={t.isMine} />
       <Box
         role="button"
@@ -104,11 +100,11 @@ function ThreadPost({ t, onOpen }) {
           </Typography>
         )}
       </Box>
-      <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid', borderColor: 'divider' }}>
+      <PostActions>
         <VoteBar targetType="thread" targetId={t._id} score={t.score} myVote={t.myVote} isMine={t.isMine} />
         <ActionButton icon={<ChatBubbleOutlineRoundedIcon />} count={t.commentCount} label="Open comments" onClick={onOpen} />
-      </Stack>
-    </Box>
+      </PostActions>
+    </PostCard>
   );
 }
 
@@ -233,6 +229,7 @@ export default function DiscussionPanel({ slug }) {
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState('');
+  const flat = useFlatLook();
 
   // Debounce search so we don't hit the API on every keystroke.
   useEffect(() => {
@@ -316,7 +313,7 @@ export default function DiscussionPanel({ slug }) {
           placeholder="Search topics"
           value={qInput}
           onChange={(e) => setQInput(e.target.value.slice(0, 60))}
-          sx={{ '& .MuiOutlinedInput-root': { borderRadius: RADII_PX.pill, height: 48 } }}
+          sx={{ '& .MuiOutlinedInput-root': { borderRadius: flat ? RADII_PX.card : RADII_PX.pill, height: 48 } }}
           slotProps={{
             input: {
               startAdornment: (
@@ -353,7 +350,7 @@ export default function DiscussionPanel({ slug }) {
             text={q ? 'Try different words.' : 'Be the first to ask a question about this problem.'}
           />
         ) : (
-          <Stack spacing={1.5}>
+          <Stack spacing={flat ? 0 : 1.5}>
             {items.map((t) => (
               <ThreadPost key={t._id} t={t} onOpen={() => setView({ name: 'detail', id: t._id })} />
             ))}

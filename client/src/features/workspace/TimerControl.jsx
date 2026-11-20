@@ -14,7 +14,8 @@ import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designToken
 
 // Practice timer (personal, not shared): tap the clock to start, tap the time to pause.
 // lib: the phone workspace look (Library style: 40px round buttons and a 40px time pill).
-export default function TimerControl({ sw, size = 'md', lib = false }) {
+// flat: desktop workspace look, a paused timer has no grey fill.
+export default function TimerControl({ sw, size = 'md', lib = false, flat = false }) {
   if (lib) {
     if (!sw.running && sw.seconds === 0) {
       return (
@@ -72,7 +73,7 @@ export default function TimerControl({ sw, size = 'md', lib = false }) {
           gap: 0.5,
           borderRadius: `${WS.radius}px`,
           color: sw.running ? t.palette.primary.main : t.palette.text.secondary,
-          bgcolor: sw.running ? alpha(t.palette.primary.main, 0.12) : wsSurface(t).raised,
+          bgcolor: sw.running ? alpha(t.palette.primary.main, 0.12) : flat ? 'transparent' : wsSurface(t).raised,
           '& svg': { fontSize: FONT_SIZES.subheading },
         })}
       >

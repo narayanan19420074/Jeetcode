@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Alert, Box, Button, Chip, Skeleton, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, Skeleton, Stack, TextField, Typography } from '@mui/material';
 import ReplyRoundedIcon from '@mui/icons-material/ReplyRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
 import { communityApi } from '../../../api/communityApi';
 import { extractErrorMessage } from '../../../api/apiClient';
 import Markdown from './Markdown';
-import { UserAvatar, VoteBar, ItemMenu, ConfirmDialog, ReportDialog, timeAgo } from './CommunityBits';
+import { UserAvatar, VoteBar, ItemMenu, ConfirmDialog, ReportDialog, YouTag, timeAgo } from './CommunityBits';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../../app/design/designTokens';
 
 const MAX_DEPTH = 3; // keep in sync with MAX_COMMENT_DEPTH on the server
@@ -107,7 +107,7 @@ function CommentNode({ c, byParent, ctx }) {
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Stack direction="row" alignItems="center" spacing={0.75} flexWrap="wrap" useFlexGap>
               <Typography sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg }}>{c.author?.name || 'Unknown'}</Typography>
-              {c.isMine && <Chip size="small" label="You" color="primary" variant="outlined" sx={{ height: 20, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.semibold }} />}
+              {c.isMine && <YouTag />}
               <Typography color="text.secondary" sx={{ fontSize: FONT_SIZES.caption }}>
                 {timeAgo(c.createdAt)}
                 {c.editedAt ? ' · edited' : ''}

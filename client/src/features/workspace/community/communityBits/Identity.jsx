@@ -1,6 +1,7 @@
-import { Avatar, Box, Chip, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Stack, Typography } from '@mui/material';
 import { FONT_WEIGHTS, FONT_SIZES, hueTint } from '../../../../app/design/designTokens';
 import { timeAgo } from './bitsUtils';
+import { YouTag } from './Chips';
 
 // ---------------------------------------------------------------- identity
 
@@ -43,7 +44,7 @@ export function AuthorHeader({ author, createdAt, editedAt, isMine, size = 40, r
           <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.3 }}>
             {author?.name || 'Unknown'}
           </Typography>
-          {isMine && <Chip size="small" label="You" color="primary" variant="outlined" sx={{ height: 20, fontSize: FONT_SIZES.micro, fontWeight: FONT_WEIGHTS.semibold }} />}
+          {isMine && <YouTag />}
         </Stack>
         <Typography noWrap color="text.secondary" sx={{ fontSize: FONT_SIZES.caption }}>
           {timeAgo(createdAt)}

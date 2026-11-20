@@ -5,11 +5,11 @@ import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { submissionsApi } from '../../api/submissionsApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { timeAgo, LANG_LABEL } from './community/CommunityBits';
+import { timeAgo, LANG_LABEL, useFlatLook } from './community/CommunityBits';
 import { wsSurface } from './workspaceTheme';
 import { WS, mono } from './wsTokens';
 import { EmptyState, WsButton } from './wsUi';
-import { FONT_WEIGHTS, FONT_SIZES, MOTION } from '../../app/design/designTokens';
+import { FONT_WEIGHTS, FONT_SIZES, MOTION, RADII_PX } from '../../app/design/designTokens';
 
 const statusColor = (status) => {
   if (status === 'Accepted') return 'success.main';
@@ -17,9 +17,14 @@ const statusColor = (status) => {
   return 'error.main';
 };
 
+// Desktop workspace look: no grey fill on the open row or on hover, rows are separated by a divider instead.
+const flatRowSx = { borderBottom: '1px solid', borderColor: 'divider' };
+const flatRowButtonSx = (t) => ({ borderRadius: RADII_PX.square, '&:hover': { bgcolor: t.palette.action.hover } });
+
 function Row({ s, open, onToggle, onLoad }) {
+  const flat = useFlatLook();
   return (
-    <Box sx={(t) => ({ borderRadius: `${WS.radius + 2}px`, bgcolor: open ? wsSurface(t).raised : 'transparent' })}>
+    <Box sx={(t) => (flat ? flatRowSx : { borderRadius: `${WS.radius + 2}px`, bgcolor: open ? wsSurface(t).raised : 'transparent' })}>
       <ButtonBase
         onClick={onToggle}
         sx={(t) => ({
@@ -31,6 +36,7 @@ function Row({ s, open, onToggle, onLoad }) {
           py: 1,
           borderRadius: `${WS.radius + 2}px`,
           '&:hover': { bgcolor: open ? 'transparent' : wsSurface(t).raised },
+          ...(flat && flatRowButtonSx(t)),
         })}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -71,7 +77,7 @@ function Row({ s, open, onToggle, onLoad }) {
           >
             {s.code}
           </Box>
-          <WsButton variant="secondary" onClick={() => onLoad(s)} sx={{ mt: 1.5 }}>
+          <WsButton variant={flat ? 'ghost' : 'secondary'} onClick={() => onLoad(s)} sx={{ mt: 1.5 }}>
             Load in editor
           </WsButton>
         </Box>

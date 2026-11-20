@@ -97,6 +97,8 @@ export const SIZES = {
   progressAvatar: 28,
   chipHeight: 28,
   chipHeightSmall: 24,
+  // The "You" tag next to the author name on community posts and comments.
+  chipHeightTiny: 20,
   // `post` is the author photo on a feed post.
   // `xl` is the round photo on the Job profile top card; it overlaps the banner by half its height.
   avatar: { xs: 24, sm: 32, md: 40, post: 48, lg: 56, xl: 112 },

@@ -9,11 +9,12 @@ export const keepFocus = (e) => e.preventDefault();
 //   size        'md' | 'lg'
 //   isMobile    phone: keep the keyboard open, no shortcut hint
 //   iconActions / showKbd   from usePaneModes
-export function RunButton({ size, isMobile, iconActions, showKbd, loading, disabled, onClick }) {
+//   variant     'secondary' (tonal fill) or 'ghost' (no fill, desktop workspace toolbar)
+export function RunButton({ size, isMobile, iconActions, showKbd, loading, disabled, onClick, variant = 'secondary' }) {
   return (
     <WsButton
       size={size}
-      variant="secondary"
+      variant={variant}
       startIcon={<PlayArrowRoundedIcon />}
       loading={loading}
       disabled={disabled}
