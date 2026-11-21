@@ -8,14 +8,12 @@ import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
 import InsightsRoundedIcon from '@mui/icons-material/InsightsRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { NameDialog } from './ListDialogs';
 import { ListsHeader, NavButton } from './SidebarParts';
-import { OWN_JOB_PROFILE_PATH } from '../../jobProfile/common/jobProfilePaths';
 import { COLOR_PALETTE, FONT_SIZES } from '../../../app/design/designTokens';
 
 export const NAV_ITEMS = [
@@ -28,10 +26,9 @@ export const NAV_ITEMS = [
 ];
 
 // Pages (not dashboard views) that live in the same rail.
-// My stats comes first and the Profile (the Job profile) sits right under it. Friends are reached from Messages in Community.
+// My stats comes first. The Profile is reached from the account menu in the navbar; friends from Messages in Community.
 const PAGE_ITEMS = [
   { to: '/you', label: 'My stats', icon: InsightsRoundedIcon },
-  { to: OWN_JOB_PROFILE_PATH, label: 'Profile', icon: PersonRoundedIcon },
   { to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon },
 ];
 

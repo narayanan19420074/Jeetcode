@@ -34,9 +34,8 @@ export default function useNavbarActions() {
     licenseModalOpen,
     closeLicenseModal: () => setLicenseModalOpen(false),
     openLicenseModal,
-    // The Job profile is the main profile; the activity numbers live on My stats.
+    // The Job profile is the main profile. My stats is reached from the dashboard sidebar.
     goToProfile: goTo(OWN_JOB_PROFILE_PATH),
-    goToStats: goTo('/you'),
     goToSettings: goTo('/settings'),
     goToHelp: goTo('/help'),
     logout,
