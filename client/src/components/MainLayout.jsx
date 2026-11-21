@@ -44,9 +44,9 @@ function useScrollToTopOnNavigate(pathname, hash) {
   }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
-// The desktop Community page and the Aptitude topic and practice pages are plain white pages: no soft wash behind the cards.
+// The desktop Community page, the Job profile pages and the Aptitude topic and practice pages are plain white pages: no soft wash behind the cards.
 const APTITUDE_WHITE_PATH = /^\/aptitude\/[^/]+(\/practice)?\/?$/;
-const isFlatDesktopPath = (pathname) => pathname === '/community' || pathname.startsWith('/community/') || APTITUDE_WHITE_PATH.test(pathname);
+const isFlatDesktopPath = (pathname) => pathname === '/community' || pathname.startsWith('/community/') || pathname.startsWith('/job-profile') || APTITUDE_WHITE_PATH.test(pathname);
 
 // Phone home (light mode) is a flat warm page. The desktop dashboard, Problems page and Store use the same cream page.
 // Every other page keeps the soft wash.

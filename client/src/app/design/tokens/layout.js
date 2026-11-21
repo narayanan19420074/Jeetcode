@@ -142,6 +142,8 @@ export const SIZES = {
   chatCardMaxWidth: 320,
   // One suggested member card in the horizontal strip between feed posts on phones.
   memberCardWidth: 168,
+  // Right column of another member's Job profile on desktop (followers and more profiles).
+  memberProfileSidebar: 320,
   // Banner of the profile card at the top of the Community left column.
   communityBannerHeight: 56,
   // Preview of an attached image on the compose screen.

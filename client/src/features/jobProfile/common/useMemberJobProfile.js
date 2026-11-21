@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { jobProfileApi } from '../../../api/jobProfileApi';
 import { normalizeProfile } from './jobProfileEntries';
 
-const LOADING = { owner: null, profile: null, isFollowing: false, status: 'loading' };
+const LOADING = { owner: null, profile: null, isFollowing: false, followerCount: 0, status: 'loading' };
 
 // Loads another member's Job profile. It has the same shape as the editor of the member's own profile, with
 // `readOnly: true` so every screen hides its add, edit and delete controls.
@@ -13,8 +13,8 @@ export default function useMemberJobProfile(userId) {
     setState(LOADING);
     jobProfileApi
       .getMember(userId)
-      .then(({ data }) => setState({ owner: data.data.user, profile: normalizeProfile(data.data.profile), isFollowing: data.data.isFollowing, status: 'ready' }))
-      .catch(() => setState({ owner: null, profile: null, isFollowing: false, status: 'error' }));
+      .then(({ data }) => setState({ owner: data.data.user, profile: normalizeProfile(data.data.profile), isFollowing: data.data.isFollowing, followerCount: data.data.followerCount ?? 0, status: 'ready' }))
+      .catch(() => setState({ ...LOADING, status: 'error' }));
   }, [userId]);
 
   useEffect(() => {
