@@ -5,7 +5,7 @@ import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES, withAlpha } from '../app/des
 const SELECTED_ROW_ALPHA = 0.05;
 
 // Fill of the open row and of a hovered row: a touch darker than the card.
-export const menuRowFill = (pal) => withAlpha(pal.text, SELECTED_ROW_ALPHA);
+const menuRowFill = (pal) => withAlpha(pal.text, SELECTED_ROW_ALPHA);
 
 // A soft grey menu card with a centred title and a hairline under it. The sidebars of the Aptitude and Problems pages
 // share it. The rows scroll inside the card when the window is short.
@@ -46,10 +46,4 @@ export function MenuRowLabel({ label, count, selected }) {
       {count !== undefined && count !== '' && <Typography variant="caption" sx={{ flexShrink: 0, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>{count}</Typography>}
     </Box>
   );
-}
-
-// Small heading that splits the rows of a card into groups.
-export function MenuSection({ children }) {
-  const pal = useLibraryPalette();
-  return <Typography component="h3" sx={{ mt: 1, px: 1.5, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.semibold, color: pal.muted, textTransform: 'uppercase' }}>{children}</Typography>;
 }
