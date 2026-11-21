@@ -25,7 +25,7 @@ function StatusIcon({ status }) {
 
 function ListHeader() {
   return (
-    <Box sx={[rowGridSx, { py: 1, bgcolor: 'action.hover', borderBottom: '1px solid', borderColor: 'divider' }]}>
+    <Box sx={[rowGridSx, { py: 1, borderBottom: '1px solid', borderColor: 'divider' }]}>
       {COLUMN_TITLES.map((title, index) => (
         <Typography key={title || index} variant="caption" sx={{ fontWeight: FONT_WEIGHTS.bold, color: 'text.secondary', textAlign: index >= FIRST_RIGHT_ALIGNED_COLUMN ? 'right' : 'left' }}>{title}</Typography>
       ))}

@@ -43,8 +43,9 @@ function useScrollToTopOnNavigate(pathname, hash) {
   }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
-// The desktop Community page is a plain white page: no soft wash behind the cards.
-const isCommunityPath = (pathname) => pathname === '/community' || pathname.startsWith('/community/');
+// The desktop Community page and the Aptitude topic and practice pages are plain white pages: no soft wash behind the cards.
+const APTITUDE_WHITE_PATH = /^\/aptitude\/[^/]+(\/practice)?\/?$/;
+const isFlatDesktopPath = (pathname) => pathname === '/community' || pathname.startsWith('/community/') || APTITUDE_WHITE_PATH.test(pathname);
 
 // Phone home (light mode) is a flat warm page. The desktop dashboard, Problems page and Store use the same cream page.
 // Every other page keeps the soft wash.
@@ -75,7 +76,7 @@ export default function MainLayout() {
   useScrollToTopOnNavigate(pathname, hash);
 
   const bottomNav = showMobileBottomNav(pathname);
-  const pageLook = { libraryLook: isLibraryRoute(pathname, search), desktopLook: usesDesktopLook(pathname), flatDesktop: isCommunityPath(pathname) };
+  const pageLook = { libraryLook: isLibraryRoute(pathname, search), desktopLook: usesDesktopLook(pathname), flatDesktop: isFlatDesktopPath(pathname) };
 
   return (
     <Box sx={(t) => ({ minHeight: '100vh', ...pageBackgroundSx(t, pageLook) })}>
