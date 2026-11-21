@@ -4,7 +4,7 @@ import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/d
 import { initialsFromName } from '../../../components/navbar/navConfig';
 import AddSectionMenu from './AddSectionMenu';
 import { IconAction } from './ProfileCard';
-import MemberProfileActions from '../mobile/MemberProfileActions';
+import MemberProfileActions from './MemberProfileActions';
 import ProfileBanner from './ProfileBanner';
 
 // Current company and latest school, shown under the headline like the LinkedIn top card.
@@ -81,7 +81,7 @@ export default function IdentityHeader({ editor }) {
       <HeaderText user={user} profile={profile} readOnly={readOnly} />
       <StatusChips profile={profile} />
       {!readOnly && <OwnerActions editor={editor} />}
-      {readOnly && isMobile && <MemberProfileActions editor={editor} />}
+      {readOnly && <MemberProfileActions editor={editor} />}
     </Paper>
   );
 }

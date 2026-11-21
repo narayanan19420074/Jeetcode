@@ -154,6 +154,8 @@ export const SIZES = {
   scrollbar: { regular: 10, slim: 4, thin: 6 },
   // Desktop Leaderboard (Dashboard, Leaderboard view). Filter pills match the Library pills; the table columns
   // (`statsCoding` shows Easy, Medium and Hard, `statsSingle` shows one count) are shared by the header and the rows.
+  // Chat window opened from another member's Job profile on desktop.
+  memberChatDialog: { width: 480, height: 680 },
   leaderboard: {
     pillHeight: 34,
     controlSize: 40,

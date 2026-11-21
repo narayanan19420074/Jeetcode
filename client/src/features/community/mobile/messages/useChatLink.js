@@ -4,7 +4,7 @@ import { useSnackbar } from 'notistack';
 import { jobProfileApi } from '../../../../api/jobProfileApi';
 import { COMMUNITY_CHAT_PARAM } from '../../common/communityChatLink';
 
-const toChatPerson = (user) => ({ userId: String(user._id), name: user.name, handle: user.handle, avatarUrl: user.avatarUrl || null });
+export const toChatPerson = (user) => ({ userId: String(user._id), name: user.name, handle: user.handle, avatarUrl: user.avatarUrl || null });
 
 // Reads the member id of a chat link, removes it from the address so a refresh does not open the chat again, and hands
 // the member to `onPersonFound`.

@@ -9,6 +9,9 @@ import ChatThread from './ChatThread';
 import useChatThread from './useChatThread';
 import useThreadScroll from './useThreadScroll';
 
+// Desktop: the chat is a window of its own size instead of the whole screen.
+const windowedPaperSx = { width: SIZES.memberChatDialog.width, height: SIZES.memberChatDialog.height, maxWidth: SIZES.fill, maxHeight: SIZES.fill };
+
 function ChatContent({ friend, onClose, actions }) {
   const me = useSelector((state) => state.auth.user);
   const thread = useChatThread(friend.userId);
@@ -27,12 +30,12 @@ function ChatContent({ friend, onClose, actions }) {
   );
 }
 
-// One conversation, full screen on top of the inbox, in the LinkedIn layout. It is a Dialog like the inbox itself:
+// One conversation, full screen on phones (`fullScreen`) or a window on desktop, on top of the inbox, in the LinkedIn layout. It is a Dialog like the inbox itself:
 // a Drawer would open behind the full-screen inbox Dialog and the tap would seem to do nothing.
 // `friend` is null while the chat is closed. `actions` = { openProfile, invitePairRoom, removeFriend }.
-export default function ChatScreen({ friend, onClose, actions }) {
+export default function ChatScreen({ friend, onClose, actions, fullScreen = true }) {
   return (
-    <Dialog fullScreen open={Boolean(friend)} onClose={onClose} aria-label="Chat">
+    <Dialog fullScreen={fullScreen} open={Boolean(friend)} onClose={onClose} aria-label="Chat" slotProps={fullScreen ? undefined : { paper: { sx: windowedPaperSx } }}>
       <LibraryFont sx={{ flexGrow: 1, minHeight: SIZES.flexShrinkMinHeight, display: 'flex', flexDirection: 'column', bgcolor: 'background.paper' }}>
         {friend && (
           <ChatErrorBoundary key={friend.userId} onClose={onClose}>
