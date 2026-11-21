@@ -1,3 +1,4 @@
+import { Link as RouterLink } from 'react-router-dom';
 import { Box, ButtonBase, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
@@ -7,12 +8,24 @@ import { CountUp, YouChip, activeLabel } from '../lbShared';
 import { MEDAL_INK, FOCUS_RING, TABULAR } from './lbLook';
 import { PlayerAvatar, RankMove, RankTile, RecentCount, SolvedStats, StreakCount, TierDot } from './RowParts';
 
+// The name opens the player's job profile (your own profile for the signed-in player). It must not also open the row details.
+function PlayerNameLink({ row, isMe }) {
+  return (
+    <Typography
+      component={RouterLink} to={isMe ? '/job-profile' : `/job-profile/${row.userId}`} noWrap onClick={(event) => event.stopPropagation()}
+      sx={{ minWidth: SIZES.flexShrinkMinWidth, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, lineHeight: 1.3, color: 'inherit', textDecoration: 'none', '&:hover': { color: LIB_ACCENT, textDecoration: 'underline' } }}
+    >
+      {row.name}
+    </Typography>
+  );
+}
+
 function PlayerIdentity({ row, isMe, tier }) {
   const pal = useLibraryPalette();
   return (
     <Box sx={{ minWidth: SIZES.flexShrinkMinWidth, flex: 1 }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minWidth: SIZES.flexShrinkMinWidth }}>
-        <Typography noWrap sx={{ minWidth: SIZES.flexShrinkMinWidth, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, lineHeight: 1.3 }}>{row.name}</Typography>
+        <PlayerNameLink row={row} isMe={isMe} />
         {isMe && <YouChip />}
         <RankMove row={row} />
       </Box>
@@ -43,7 +56,7 @@ const rowButtonSx = { width: SIZES.fill, display: 'flex', alignItems: 'center', 
 function PlayerRowButton({ row, isMe, track, wide, animated, onPick }) {
   const { tier } = tierFor(row.score);
   return (
-    <ButtonBase onClick={(event) => onPick(event, row)} sx={rowButtonSx}>
+    <ButtonBase component="div" onClick={(event) => onPick(event, row)} sx={rowButtonSx}>
       <RankTile rank={row.rank} />
       <PlayerAvatar row={row} live={activeLabel(row.lastActive).live} />
       <PlayerIdentity row={row} isMe={isMe} tier={tier} />
