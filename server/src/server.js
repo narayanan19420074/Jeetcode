@@ -7,6 +7,7 @@ import { env } from './config/env.js';
 import { logger } from './utils/logger.js';
 import { attachRealtime } from './realtime/socket.js';
 import { autoSeedProblems } from './services/autoSeed.service.js';
+import { autoSeedAptitude } from './services/autoSeedAptitude.service.js';
 import { cleanupOldSeed } from './services/cleanupOldSeed.service.js';
 
 
@@ -24,10 +25,11 @@ async function main() {
   // Pair-coding rooms: Socket.IO shares this HTTP server (same port, same origin).
   attachRealtime(server);
 
-  // Background, non-blocking: optional one-time cleanup, then insert any missing seed problems.
+  // Background, non-blocking: optional one-time cleanup, then insert any missing seed problems and sync the aptitude question bank.
   (async () => {
     await cleanupOldSeed();
     await autoSeedProblems();
+    await autoSeedAptitude();
   })().catch((err) => logger.error('Seed/cleanup failed', err));
 
   // Graceful shutdown — let in-flight requests finish instead of dropping
