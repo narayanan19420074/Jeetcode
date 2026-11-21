@@ -31,7 +31,7 @@ export async function getJobProfile(userId) {
 // follows them, and how many members follow them. Private account data (email, coins, progress) is never selected.
 export async function getMemberJobProfile(userId, viewerId) {
   if (!mongoose.isValidObjectId(userId)) throw ApiError.notFound('Profile not found');
-  const user = await User.findById(userId).select('name handle avatarUrl location').lean();
+  const user = await User.findById(userId).select('name handle avatarUrl location createdAt').lean();
   if (!user) throw ApiError.notFound('Profile not found');
   const [profile, followed, followerCount] = await Promise.all([getJobProfile(userId), findFollowedUserIds(viewerId, [userId]), Follow.countDocuments({ following: userId })]);
   return { user, profile, isFollowing: followed.has(String(userId)), followerCount };

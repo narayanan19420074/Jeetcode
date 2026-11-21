@@ -1,8 +1,10 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { ButtonBase, Paper, Stack, Typography } from '@mui/material';
+import { Button, ButtonBase, Paper, Stack, Typography } from '@mui/material';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { UserAvatar } from '../../workspace/community/CommunityBits';
 import useSuggestedMembers from '../../community/mobile/members/useSuggestedMembers';
-import MemberFollowButton from '../../community/mobile/members/MemberFollowButton';
+import { useFollowUser } from '../../community/common/usePostEngagement';
 import { jobProfilePathOf } from '../common/jobProfilePaths';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
@@ -10,13 +12,14 @@ const SUGGESTION_LIMIT = 5;
 
 const cardSx = { p: 2, borderRadius: RADII_PX.card };
 
-function FollowersCard({ count }) {
+// Outlined pill like the Follow buttons of the profile suggestions on LinkedIn.
+function SuggestedFollowButton({ member }) {
+  const follow = useFollowUser(member.userId, member.isFollowing);
+  const label = follow.on ? 'Following' : 'Follow';
   return (
-    <Paper variant="outlined" sx={cardSx}>
-      <Typography component="p" sx={{ fontSize: FONT_SIZES.heading, fontWeight: FONT_WEIGHTS.bold }}>
-        {count.toLocaleString()} <Typography component="span" color="text.secondary" sx={{ fontSize: FONT_SIZES.body }}>{count === 1 ? 'follower' : 'followers'}</Typography>
-      </Typography>
-    </Paper>
+    <Button variant="outlined" size="small" disabled={follow.busy} aria-pressed={follow.on} aria-label={`${label} ${member.name}`} startIcon={follow.on ? <CheckRoundedIcon /> : <AddRoundedIcon />} onClick={follow.toggle} sx={{ mt: 1, borderRadius: RADII_PX.pill, textTransform: 'none', fontWeight: FONT_WEIGHTS.semibold }}>
+      {label}
+    </Button>
   );
 }
 
@@ -31,7 +34,7 @@ function SuggestedMemberRow({ member }) {
             {member.headline || `@${member.handle}`}
           </Typography>
         </ButtonBase>
-        <MemberFollowButton member={member} />
+        <SuggestedFollowButton member={member} />
       </Stack>
     </Stack>
   );
@@ -52,11 +55,10 @@ function MoreProfilesCard({ ownerId }) {
   );
 }
 
-// Right column of another member's Job profile: how many people follow them, then members to follow next.
+// Right column of another member's Job profile: members to follow next. It is hidden when printing the profile.
 export default function MemberProfileSidebar({ editor }) {
   return (
-    <Stack spacing={2}>
-      <FollowersCard count={editor.followerCount} />
+    <Stack data-print-hide spacing={2}>
       <MoreProfilesCard ownerId={editor.owner._id} />
     </Stack>
   );

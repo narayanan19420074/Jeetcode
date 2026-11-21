@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography } from '@mui/material';
+import { Box, Container, GlobalStyles, Stack, Typography } from '@mui/material';
 import BackToDashboard from '../../../components/BackToDashboard';
 import { SIZES } from '../../../app/design/designTokens';
 import JobProfileGate from '../common/JobProfileGate';
@@ -23,9 +23,13 @@ function OwnProfileLayout({ editor }) {
 }
 
 // Another member's profile: no title or back button, the profile on the left and followers and more profiles on the right.
+// "Save to PDF" prints the page, so the navigation bar and the buttons are left out of the print.
+const PRINT_STYLES = { '@media print': { '.MuiAppBar-root, [data-print-hide]': { display: 'none' } } };
+
 function MemberProfileLayout({ editor }) {
   return (
     <Container maxWidth="lg" sx={{ pt: 3, pb: 4 }}>
+      <GlobalStyles styles={PRINT_STYLES} />
       <Box sx={{ display: 'grid', gap: 3, alignItems: 'start', gridTemplateColumns: `minmax(0, 1fr) ${SIZES.memberProfileSidebar}px` }}>
         <JobProfileGate editor={editor}>
           <JobProfileSections editor={editor} spacing={2} />

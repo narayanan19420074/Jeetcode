@@ -1,10 +1,12 @@
-import { Avatar, Box, Button, Chip, Paper, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { useState } from 'react';
+import { Avatar, Box, Button, ButtonBase, Chip, Paper, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 import { initialsFromName } from '../../../components/navbar/navConfig';
 import AddSectionMenu from './AddSectionMenu';
 import { IconAction } from './ProfileCard';
 import MemberProfileActions from './MemberProfileActions';
+import { ContactInfoDialog } from './MemberInfoDialogs';
 import ProfileBanner from './ProfileBanner';
 
 // Current company and latest school, shown under the headline like the LinkedIn top card.
@@ -25,7 +27,23 @@ function ProfilePhoto({ user }) {
   );
 }
 
-function HeaderText({ user, profile, readOnly }) {
+// "Contact info" and the follower count, shown under the location of another member's profile.
+function MemberReach({ user, followerCount }) {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  return (
+    <>
+      <ButtonBase onClick={() => setIsContactOpen(true)} sx={{ display: 'block', mt: 1, fontFamily: 'inherit', color: 'primary.main', fontWeight: FONT_WEIGHTS.semibold }}>
+        Contact info
+      </ButtonBase>
+      <Typography variant="body2" color="text.secondary">
+        {followerCount.toLocaleString()} {followerCount === 1 ? 'follower' : 'followers'}
+      </Typography>
+      <ContactInfoDialog owner={user} open={isContactOpen} onClose={() => setIsContactOpen(false)} />
+    </>
+  );
+}
+
+function HeaderText({ user, profile, readOnly, followerCount }) {
   return (
     <Box sx={{ px: 2, pb: 2 }}>
       <Typography component="h1" variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold, wordBreak: 'break-word' }}>
@@ -40,6 +58,7 @@ function HeaderText({ user, profile, readOnly }) {
       <Typography variant="body2" color="text.secondary">
         {user.location}
       </Typography>
+      {readOnly && <MemberReach user={user} followerCount={followerCount} />}
     </Box>
   );
 }
@@ -78,7 +97,7 @@ export default function IdentityHeader({ editor }) {
         <ProfilePhoto user={user} />
         {!readOnly && <IconAction label="Edit intro" icon={EditRoundedIcon} onClick={editor.editIntro} />}
       </Stack>
-      <HeaderText user={user} profile={profile} readOnly={readOnly} />
+      <HeaderText user={user} profile={profile} readOnly={readOnly} followerCount={editor.followerCount ?? 0} />
       <StatusChips profile={profile} />
       {!readOnly && <OwnerActions editor={editor} />}
       {readOnly && <MemberProfileActions editor={editor} />}
