@@ -18,22 +18,5 @@ export const PRO_FEATURES = [
   'Unlimited mock test attempts',
 ];
 
-const FREE_PLAN_DETAIL = 'Upgrade to Pro for company-tagged problems, unlimited AI hints and unlimited mock tests.';
-
 // Only Monthly and Yearly renew automatically and can be cancelled. License keys and quest rewards simply expire.
 export const isRecurringPlan = (proPlan) => BILLED_PLANS.includes(proPlan);
-
-const formatDate = (iso) => new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-
-function describeProPlan(status, isRecurring) {
-  if (!status) return undefined;
-  const name = PLAN_LABEL[status.proPlan] || 'Pro';
-  if (!status.proExpiresAt) return `${name} · No expiry`;
-  return `${name} · ${isRecurring ? 'Current period ends' : 'Active until'} ${formatDate(status.proExpiresAt)}`;
-}
-
-// What the "Current plan" card shows: the plan name and, for Pro, the billing period or expiry date.
-export function describeCurrentPlan({ isPro, status, isRecurring }) {
-  if (!isPro) return { title: 'Free', detail: FREE_PLAN_DETAIL };
-  return { title: 'Pro', detail: describeProPlan(status, isRecurring) };
-}
